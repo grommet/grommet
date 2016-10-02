@@ -351,7 +351,7 @@ var Distribution = function (_Component) {
   }, {
     key: '_onPreviousDistribution',
     value: function _onPreviousDistribution(event) {
-      if (document.activeElement === this._distributionRef) {
+      if (this._distributionRef.contains(document.activeElement)) {
         event.preventDefault();
 
         if (this.state.activeIndex - 1 >= 0) {
@@ -365,7 +365,7 @@ var Distribution = function (_Component) {
   }, {
     key: '_onNextDistribution',
     value: function _onNextDistribution(event) {
-      if (document.activeElement === this._distributionRef) {
+      if (this._distributionRef.contains(document.activeElement)) {
         event.preventDefault();
         var totalDistributionCount = _reactDom2.default.findDOMNode(this.distributionItemsRef).childNodes.length;
 
@@ -380,7 +380,7 @@ var Distribution = function (_Component) {
   }, {
     key: '_onEnter',
     value: function _onEnter(event) {
-      if (document.activeElement === this._distributionRef) {
+      if (this._distributionRef.contains(document.activeElement)) {
         if (this.activeDistributionRef) {
           var index = this.activeDistributionRef.getAttribute('data-index');
 
@@ -405,7 +405,7 @@ var Distribution = function (_Component) {
       this.setState({ activeIndex: index }, function () {
         var activeMessage = _this3.activeDistributionRef.getAttribute('aria-label');
         var clickable = _this3.state.items[_this3.state.activeIndex].datum.onClick;
-        var enterSelectMessage = _Intl2.default.getMessage(intl, 'Enter Select');
+        var enterSelectMessage = '(' + _Intl2.default.getMessage(intl, 'Enter Select') + ')';
         (0, _Announcer.announce)(activeMessage + ' ' + (clickable ? enterSelectMessage : ''));
       });
     }
@@ -515,13 +515,14 @@ var Distribution = function (_Component) {
       }
 
       var value = datum.labelValue !== undefined ? datum.labelValue : datum.value;
-      var labelMessage = value + ' ' + (units || '') + ', ' + datum.label;
+      var labelMessage = value + ' ' + (units || '') + ' ' + datum.label;
 
       return _react2.default.createElement(
         'g',
         { key: index, className: itemClasses,
           onMouseOver: this._onActivate.bind(this, index),
-          onMouseLeave: this._onDeactivate, role: 'row',
+          onMouseLeave: this._onDeactivate, tabIndex: '-1',
+          role: datum.onClick ? 'button' : 'row',
           ref: activeDistributionRef, 'aria-label': labelMessage,
           'data-index': index, onClick: datum.onClick },
         contents
@@ -604,7 +605,8 @@ var Distribution = function (_Component) {
 
       var role = 'group';
       var ariaLabel = a11yTitle || _Intl2.default.getMessage(intl, 'Distribution');
-
+      var navigationHelpMessage = _Intl2.default.getMessage(intl, 'Navigation Help');
+      ariaLabel += ' (' + navigationHelpMessage + ')';
       if (boxes.length === 0) {
         boxes.push(this._renderLoading());
         role = 'img';
