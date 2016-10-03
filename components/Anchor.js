@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -63,24 +71,38 @@ var Anchor = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var icon = void 0;
-      if (this.props.icon) {
-        icon = this.props.icon;
-      } else if (this.props.primary) {
-        icon = _react2.default.createElement(_LinkNext2.default, {
-          a11yTitle: this.props.id ? this.props.id + '-icon' : 'link next' });
+      var _props = this.props;
+      var animateIcon = _props.animateIcon;
+      var children = _props.children;
+      var className = _props.className;
+      var disabled = _props.disabled;
+      var icon = _props.icon;
+      var id = _props.id;
+      var label = _props.label;
+      var primary = _props.primary;
+      var reverse = _props.reverse;
+      var tag = _props.tag;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['animateIcon', 'children', 'className', 'disabled', 'icon', 'id', 'label', 'primary', 'reverse', 'tag']);
+
+
+      var anchorIcon = void 0;
+      if (icon) {
+        anchorIcon = icon;
+      } else if (primary) {
+        anchorIcon = _react2.default.createElement(_LinkNext2.default, {
+          a11yTitle: id ? id + '-icon' : 'link next' });
       }
 
-      if (icon && !this.props.primary && !this.props.label) {
-        icon = _react2.default.createElement(
+      if (anchorIcon && !primary && !label) {
+        anchorIcon = _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + '__icon' },
-          icon
+          anchorIcon
         );
       }
 
-      var hasIcon = icon !== undefined;
-      var children = _react.Children.map(this.props.children, function (child) {
+      var hasIcon = anchorIcon !== undefined;
+      var anchorChildren = _react.Children.map(children, function (child) {
         if (child && child.type && child.type.icon) {
           hasIcon = true;
           child = _react2.default.createElement(
@@ -92,23 +114,19 @@ var Anchor = function (_Component) {
         return child;
       });
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--animate-icon', hasIcon && this.props.animateIcon !== false), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', this.props.disabled), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon', icon || hasIcon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon-label', hasIcon && this.props.label), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', this.props.primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--reverse', this.props.reverse), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--animate-icon', hasIcon && animateIcon !== false), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', disabled), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon', anchorIcon || hasIcon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon-label', hasIcon && label), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--reverse', reverse), _classnames), className);
 
-      if (!children) {
-        children = this.props.label;
+      if (!anchorChildren) {
+        anchorChildren = label;
       }
 
-      var first = this.props.reverse ? children : icon;
-      var second = this.props.reverse ? icon : children;
+      var first = reverse ? anchorChildren : anchorIcon;
+      var second = reverse ? anchorIcon : anchorChildren;
 
-      var Component = this.props.tag;
+      var Component = tag;
       return _react2.default.createElement(
         Component,
-        { id: this.props.id, className: classes,
-          href: this.props.href,
-          target: this.props.target,
-          onClick: this.props.onClick,
-          'aria-label': this.props.a11yTitle },
+        (0, _extends3.default)({}, props, { id: id, className: classes }),
         first,
         second
       );
