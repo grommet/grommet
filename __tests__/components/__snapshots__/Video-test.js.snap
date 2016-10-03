@@ -64,20 +64,13 @@ exports[`Video has correct default options 1`] = `
           <span
             className="grommetux-button__icon">
             <svg
-              aria-labelledby="play-title"
+              aria-label="play"
               className="grommetux-control-icon grommetux-control-icon-play grommetux-control-icon--large grommetux-control-icon--responsive"
               height="24px"
               role="img"
               version="1.1"
               viewBox="0 0 24 24.3317"
               width="24px">
-              <title
-                id="play-title">
-                <span
-                  id="play">
-                  play
-                </span>
-              </title>
               <g>
                 <rect
                   fill="none"

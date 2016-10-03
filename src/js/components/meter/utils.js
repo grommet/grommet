@@ -11,7 +11,6 @@ export var baseDimension = baseUnit * 8;
 export var propTypes = {
   activeIndex: PropTypes.number,
   a11yTitle: PropTypes.string,
-  a11yTitleId: PropTypes.string,
   max: PropTypes.number.isRequired,
   min: PropTypes.number.isRequired,
   onActivate: PropTypes.func.isRequired,

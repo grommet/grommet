@@ -22,20 +22,13 @@ exports[`Select has correct default options 1`] = `
     <span
       className="grommetux-button__icon">
       <svg
-        aria-labelledby="caret-down-title"
+        aria-label="caret-down"
         className="grommetux-control-icon grommetux-control-icon-caret-down grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
         viewBox="0 0 24 24"
         width="24px">
-        <title
-          id="caret-down-title">
-          <span
-            id="caret-down">
-            caret-down
-          </span>
-        </title>
         <g>
           <rect
             fill="none"

@@ -35,20 +35,13 @@ exports[`Accordion has correct default options 1`] = `
           tabIndex={undefined}>
           First Title
           <svg
-            aria-labelledby="tab-next-title"
+            aria-label="tab-next"
             className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
             height="24px"
             role="img"
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <title
-              id="tab-next-title">
-              <span
-                id="tab-next">
-                tab-next
-              </span>
-            </title>
             <g>
               <rect
                 fill="none"
@@ -110,20 +103,13 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
           tabIndex={undefined}>
           First Title
           <svg
-            aria-labelledby="tab-next-title"
+            aria-label="tab-next"
             className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
             height="24px"
             role="img"
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <title
-              id="tab-next-title">
-              <span
-                id="tab-next">
-                tab-next
-              </span>
-            </title>
             <g>
               <rect
                 fill="none"
@@ -190,20 +176,13 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
           tabIndex={undefined}>
           Second Title
           <svg
-            aria-labelledby="tab-next-title"
+            aria-label="tab-next"
             className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
             height="24px"
             role="img"
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <title
-              id="tab-next-title">
-              <span
-                id="tab-next">
-                tab-next
-              </span>
-            </title>
             <g>
               <rect
                 fill="none"
@@ -265,20 +244,13 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
           tabIndex={undefined}>
           First Title
           <svg
-            aria-labelledby="tab-next-title"
+            aria-label="tab-next"
             className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
             height="24px"
             role="img"
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <title
-              id="tab-next-title">
-              <span
-                id="tab-next">
-                tab-next
-              </span>
-            </title>
             <g>
               <rect
                 fill="none"
@@ -345,20 +317,13 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
           tabIndex={undefined}>
           Second Title
           <svg
-            aria-labelledby="tab-next-title"
+            aria-label="tab-next"
             className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
             height="24px"
             role="img"
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <title
-              id="tab-next-title">
-              <span
-                id="tab-next">
-                tab-next
-              </span>
-            </title>
             <g>
               <rect
                 fill="none"
@@ -433,20 +398,13 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
           tabIndex={undefined}>
           First Title
           <svg
-            aria-labelledby="tab-next-title"
+            aria-label="tab-next"
             className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
             height="24px"
             role="img"
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <title
-              id="tab-next-title">
-              <span
-                id="tab-next">
-                tab-next
-              </span>
-            </title>
             <g>
               <rect
                 fill="none"
@@ -513,20 +471,13 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
           tabIndex={undefined}>
           Second Title
           <svg
-            aria-labelledby="tab-next-title"
+            aria-label="tab-next"
             className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
             height="24px"
             role="img"
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <title
-              id="tab-next-title">
-              <span
-                id="tab-next">
-                tab-next
-              </span>
-            </title>
             <g>
               <rect
                 fill="none"
