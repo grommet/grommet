@@ -47,4 +47,12 @@ describe('CheckBox', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('has correct microdata property rendering', () => {
+    const component = renderer.create(
+      <CheckBox id="test" label="Test CheckBox" itemScope={true} 
+        itemType="http://schema.org/Boolean" itemProp="test"/>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

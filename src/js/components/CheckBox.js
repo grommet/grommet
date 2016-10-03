@@ -16,11 +16,11 @@ export default class CheckBox extends Component {
     } = this.props;
 
     const classes = classnames(
-      CLASS_ROOT,
-      className, {
+      CLASS_ROOT, {
         [`${CLASS_ROOT}--toggle`]: toggle,
         [`${CLASS_ROOT}--disabled`]: disabled
-      }
+      },
+      className
     );
     const restProps = Props.omit(this.props, Object.keys(CheckBox.propTypes));
 
