@@ -363,13 +363,6 @@ var Menu = function (_Component2) {
   (0, _createClass3.default)(Menu, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      if (this.controlRef) {
-        var controlElement = this.controlRef.firstChild;
-        this.setState({
-          controlHeight: controlElement.clientHeight
-        });
-      }
-
       if (this.state.responsive) {
         this._responsive = _Responsive2.default.start(this._onResponsive);
       }
@@ -517,7 +510,6 @@ var Menu = function (_Component2) {
         _Button2.default,
         { plain: true, className: CLASS_ROOT + '__control',
           a11yTitle: menuTitle,
-          style: { lineHeight: this.state.controlHeight + 'px' },
           onClick: this._onClose },
         this._renderControlContents()
       );
@@ -577,7 +569,6 @@ var Menu = function (_Component2) {
             { plain: true, id: this.props.id,
               className: classes,
               tabIndex: '0',
-              style: { lineHeight: this.state.controlHeight + 'px' },
               onClick: this._onOpen,
               a11yTitle: menuTitle,
               onFocus: this._onFocusControl,
