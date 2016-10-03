@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,6 +32,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
@@ -46,8 +54,9 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.NUMBER_INPUT; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.NUMBER_INPUT;
 var INPUT = _CSSClassnames2.default.INPUT;
 
 var NumberInput = function (_Component) {
@@ -85,15 +94,19 @@ var NumberInput = function (_Component) {
   }, {
     key: '_onAdd',
     value: function _onAdd() {
+      var _props = this.props;
+      var max = _props.max;
+      var step = _props.step;
+
       var input = this.inputRef;
       try {
         input.stepUp();
       } catch (e) {
         // IE11 workaround. See known issue #5 at
         // http://caniuse.com/#search=number
-        var value = (parseFloat(input.value) || 0) + (this.props.step || 1);
-        if (this.props.max !== undefined) {
-          value = Math.min(value, this.props.max);
+        var value = (parseFloat(input.value) || 0) + (step || 1);
+        if (max !== undefined) {
+          value = Math.min(value, max);
         }
         input.value = value;
       }
@@ -102,15 +115,19 @@ var NumberInput = function (_Component) {
   }, {
     key: '_onSubtract',
     value: function _onSubtract() {
+      var _props2 = this.props;
+      var min = _props2.min;
+      var step = _props2.step;
+
       var input = this.inputRef;
       try {
         input.stepDown();
       } catch (e) {
         // IE11 workaround. See known issue #5 at
         // http://caniuse.com/#search=number
-        var value = (parseFloat(input.value) || 0) - (this.props.step || 1);
-        if (this.props.min !== undefined) {
-          value = Math.max(value, this.props.min);
+        var value = (parseFloat(input.value) || 0) - (step || 1);
+        if (min !== undefined) {
+          value = Math.max(value, min);
         }
         input.value = value;
       }
@@ -121,37 +138,42 @@ var NumberInput = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var classes = [CLASS_ROOT];
-      var labelId = 'number-label';
-      if (this.props.disabled) {
-        classes.push(CLASS_ROOT + "--disabled");
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
-      var onSubtract = !this.props.disabled ? this._onSubtract : undefined;
-      var onAdd = !this.props.disabled ? this._onAdd : undefined;
+      var _props3 = this.props;
+      var className = _props3.className;
+      var defaultValue = _props3.defaultValue;
+      var disabled = _props3.disabled;
+      var id = _props3.id;
+      var max = _props3.max;
+      var min = _props3.min;
+      var name = _props3.name;
+      var onChange = _props3.onChange;
+      var step = _props3.step;
+      var value = _props3.value;
+
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--disabled', disabled));
+
+      var onSubtract = !disabled ? this._onSubtract : undefined;
+      var onAdd = !disabled ? this._onAdd : undefined;
 
       return _react2.default.createElement(
         'span',
-        { className: classes.join(' '),
-          'aria-describedby': this.props.ariaDescribedby,
-          'aria-labelledby': labelId },
+        { className: classes },
         _react2.default.createElement('input', { ref: function ref(_ref) {
             return _this2.inputRef = _ref;
           },
           tabIndex: '0', className: INPUT + ' ' + CLASS_ROOT + '__input',
-          id: this.props.id, name: this.props.name, type: 'number',
-          disabled: this.props.disabled,
-          value: this.props.value,
-          defaultValue: this.props.defaultValue,
-          min: this.props.min,
-          max: this.props.max,
-          step: this.props.step,
-          onChange: this.props.onChange }),
-        _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Subtract2.default, null), className: CLASS_ROOT + "__subtract",
+          id: id, name: name, type: 'number',
+          disabled: disabled,
+          value: value,
+          defaultValue: defaultValue,
+          min: min,
+          max: max,
+          step: step,
+          onChange: onChange }),
+        _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Subtract2.default, null), className: CLASS_ROOT + '__subtract',
           onClick: onSubtract }),
-        _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Add2.default, null), className: CLASS_ROOT + "__add",
+        _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Add2.default, null), className: CLASS_ROOT + '__add',
           onClick: onAdd })
       );
     }
@@ -164,7 +186,6 @@ exports.default = NumberInput;
 
 
 NumberInput.propTypes = {
-  ariaDescribedby: _react.PropTypes.string,
   defaultValue: _react.PropTypes.number,
   disabled: _react.PropTypes.bool,
   id: _react.PropTypes.string,
