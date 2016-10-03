@@ -8,13 +8,13 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -48,15 +48,9 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
-var _Props = require('../utils/Props');
-
-var _Props2 = _interopRequireDefault(_Props);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.CHECK_BOX;
+var CLASS_ROOT = _CSSClassnames2.default.CHECK_BOX; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CheckBox = function (_Component) {
   (0, _inherits3.default)(CheckBox, _Component);
@@ -74,18 +68,15 @@ var CheckBox = function (_Component) {
       var _props = this.props;
       var checked = _props.checked;
       var className = _props.className;
-      var defaultChecked = _props.defaultChecked;
       var disabled = _props.disabled;
-      var id = _props.id;
       var label = _props.label;
       var name = _props.name;
       var onChange = _props.onChange;
       var reverse = _props.reverse;
       var toggle = _props.toggle;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['checked', 'className', 'disabled', 'label', 'name', 'onChange', 'reverse', 'toggle']);
 
-
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--toggle', toggle), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', disabled), _classnames));
-      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(CheckBox.propTypes));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--toggle', toggle), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', disabled), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--reverse', reverse), _classnames), className);
 
       var labelNode = void 0;
       if (label) {
@@ -104,12 +95,11 @@ var CheckBox = function (_Component) {
       var children = [_react2.default.createElement(
         'span',
         { key: 'checkbox' },
-        _react2.default.createElement('input', { tabIndex: '0', className: CLASS_ROOT + '__input',
-          id: id, name: name, type: 'checkbox',
+        _react2.default.createElement('input', (0, _extends3.default)({}, props, { tabIndex: '0', className: CLASS_ROOT + '__input',
+          name: name, type: 'checkbox',
           disabled: disabled,
           checked: checked,
-          defaultChecked: defaultChecked,
-          onChange: onChange }),
+          onChange: onChange })),
         _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + '__control' },
@@ -124,9 +114,7 @@ var CheckBox = function (_Component) {
 
       return _react2.default.createElement(
         'label',
-        (0, _extends3.default)({}, restProps, {
-          className: classes,
-          'aria-label': label }),
+        { className: classes, 'aria-label': label },
         reverse ? children.reverse() : children,
         hidden
       );
@@ -141,9 +129,7 @@ exports.default = CheckBox;
 
 CheckBox.propTypes = {
   checked: _react.PropTypes.bool,
-  defaultChecked: _react.PropTypes.bool,
   disabled: _react.PropTypes.bool,
-  id: _react.PropTypes.string,
   label: _react.PropTypes.node,
   name: _react.PropTypes.string,
   onChange: _react.PropTypes.func,

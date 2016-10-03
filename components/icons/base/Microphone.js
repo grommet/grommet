@@ -36,13 +36,13 @@ var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _FormattedMessage = require('../../../components/FormattedMessage');
-
-var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
-
 var _CSSClassnames = require('../../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
+var _Intl = require('../../../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -65,27 +65,22 @@ var Icon = function (_Component) {
       var _classnames;
 
       var _props = this.props;
-      var a11yTitleId = _props.a11yTitleId;
       var className = _props.className;
       var colorIndex = _props.colorIndex;
       var _props2 = this.props;
       var a11yTitle = _props2.a11yTitle;
       var size = _props2.size;
       var responsive = _props2.responsive;
+      var intl = this.context.intl;
 
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '-microphone', className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), (0, _defineProperty3.default)(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), _classnames));
 
-      a11yTitle = a11yTitle || _react2.default.createElement(_FormattedMessage2.default, { id: 'microphone', defaultMessage: 'microphone' });
+      a11yTitle = a11yTitle || _Intl2.default.getMessage(intl, 'microphone');
 
       return _react2.default.createElement(
         'svg',
-        { version: '1.1', viewBox: '0 0 24 24.2101', width: '24px', height: '24px', role: 'img', className: classes, 'aria-labelledby': a11yTitleId },
-        _react2.default.createElement(
-          'title',
-          { id: a11yTitleId },
-          a11yTitle
-        ),
+        { version: '1.1', viewBox: '0 0 24 24.2101', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
         _react2.default.createElement(
           'g',
           null,
@@ -102,20 +97,22 @@ Icon.displayName = 'Icon';
 exports.default = Icon;
 ;
 
+Icon.contextTypes = {
+  intl: _react.PropTypes.object
+};
+
+Icon.defaultProps = {
+  responsive: true
+};
+
+Icon.displayName = 'Microphone';
+
+Icon.icon = true;
+
 Icon.propTypes = {
   a11yTitle: _react.PropTypes.string,
-  a11yTitleId: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
   responsive: _react.PropTypes.bool
 };
-
-Icon.defaultProps = {
-  a11yTitleId: 'microphone-title',
-  responsive: true
-};
-
-Icon.icon = true;
-
-Icon.displayName = 'Microphone';
 module.exports = exports['default'];

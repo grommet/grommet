@@ -30,7 +30,6 @@ var baseDimension = exports.baseDimension = _Graphics.baseUnit * 8;
 var propTypes = exports.propTypes = {
   activeIndex: _react.PropTypes.number,
   a11yTitle: _react.PropTypes.string,
-  a11yTitleId: _react.PropTypes.string,
   max: _react.PropTypes.number.isRequired,
   min: _react.PropTypes.number.isRequired,
   onActivate: _react.PropTypes.func.isRequired,

@@ -129,6 +129,18 @@
   }
 }
 
+.#{$grommet-namespace}check-box--reverse {
+  .#{$grommet-namespace}check-box__control {
+    margin-right: 0;
+    margin-left: halve($inuit-base-spacing-unit);
+
+    html.rtl & {
+      margin-left: 0;
+      margin-right: halve($inuit-base-spacing-unit);
+    }
+  }
+}
+
 .#{$grommet-namespace}check-box--toggle {
 
   &:hover:not(.#{$grommet-namespace}check-box--disabled) {

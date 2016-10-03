@@ -8,6 +8,18 @@ var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -74,11 +86,13 @@ var _Intl2 = _interopRequireDefault(_Intl);
 
 var _Announcer = require('../utils/Announcer');
 
+var _Props = require('../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.CAROUSEL;
+var CLASS_ROOT = _CSSClassnames2.default.CAROUSEL; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var Carousel = function (_Component) {
   (0, _inherits3.default)(Carousel, _Component);
@@ -360,13 +374,16 @@ var Carousel = function (_Component) {
       var a11yTitle = _props5.a11yTitle;
       var children = _props5.children;
       var className = _props5.className;
+      var props = (0, _objectWithoutProperties3.default)(_props5, ['a11yTitle', 'children', 'className']);
+
+      var restProps = _Props2.default.omit((0, _extends3.default)({}, props), (0, _keys2.default)(Carousel.propTypes));
       var _state = this.state;
       var activeIndex = _state.activeIndex;
       var hideControls = _state.hideControls;
       var width = _state.width;
       var intl = this.context.intl;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--hide-controls', hideControls));
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--hide-controls', hideControls), className);
 
       var trackWidth = width * children.length;
       var trackPosition = -(width * activeIndex);
@@ -407,12 +424,12 @@ var Carousel = function (_Component) {
       var carouselMessage = a11yTitle || _Intl2.default.getMessage(intl, 'Carousel');
       return _react2.default.createElement(
         'div',
-        { ref: function ref(_ref) {
+        (0, _extends3.default)({ ref: function ref(_ref) {
             return _this6.carouselRef = _ref;
-          }, className: classes,
-          role: 'group', 'aria-label': carouselMessage,
+          } }, restProps, {
+          className: classes, role: 'group', 'aria-label': carouselMessage,
           onFocus: this._stopAutoplay, onBlur: this._startAutoplay,
-          onMouseOver: this._stopAutoplay, onMouseOut: this._startAutoplay },
+          onMouseOver: this._stopAutoplay, onMouseOut: this._startAutoplay }),
         _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + '__track',

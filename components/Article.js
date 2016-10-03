@@ -126,7 +126,7 @@ var Article = function (_Component) {
 
     // Necessary to detect for Firefox or Edge to implement accessibility
     // tabbing
-    var accessibilityTabbingCompatible = typeof navigator !== 'undefined' && navigator.userAgent.indexOf("Firefox") === -1 && navigator.userAgent.indexOf("Edge") === -1;
+    var accessibilityTabbingCompatible = typeof navigator !== 'undefined' && navigator.userAgent.indexOf('Firefox') === -1 && navigator.userAgent.indexOf('Edge') === -1;
 
     _this.state = {
       selectedIndex: props.selected || 0,
@@ -618,17 +618,14 @@ var Article = function (_Component) {
               plain: true, a11yTitle: a11yTitle.previous,
               className: CONTROL_CLASS_PREFIX + '-left',
               onClick: this._onPrevious, icon: _react2.default.createElement(_LinkPrevious2.default, {
-                a11yTitle: 'article-previous-title',
-                a11yTitleId: 'article-previous-title-id',
-                size: 'large' }) }));
+                a11yTitle: 'article-previous-title', size: 'large' }) }));
           }
           if (this.state.selectedIndex < childCount - 1) {
             controls.push(_react2.default.createElement(_Button2.default, { key: 'next',
               plain: true, a11yTitle: a11yTitle.next,
               className: CONTROL_CLASS_PREFIX + '-right',
               onClick: this._onNext, icon: _react2.default.createElement(_LinkNext2.default, { size: 'large',
-                a11yTitle: 'article-next-title',
-                a11yTitleId: 'article-next-title-id' }) }));
+                a11yTitle: 'article-next-title' }) }));
           }
         }
       } else {
@@ -645,12 +642,9 @@ var Article = function (_Component) {
         if (this.state.selectedIndex < childCount - 1) {
           controls.push(_react2.default.createElement(
             _Button2.default,
-            { key: 'next',
-              plain: true, a11yTitle: a11yTitle.next,
-              className: CONTROL_CLASS_PREFIX + '-down',
-              onClick: this._onNext },
-            _react2.default.createElement(_Down2.default, { a11yTitle: 'article-down',
-              a11yTitleId: 'article-down-id' })
+            { key: 'next', plain: true, a11yTitle: a11yTitle.next,
+              className: CONTROL_CLASS_PREFIX + '-down', onClick: this._onNext },
+            _react2.default.createElement(_Down2.default, { a11yTitle: 'article-down' })
           ));
         }
       }
