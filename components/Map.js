@@ -8,13 +8,13 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
 var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -40,17 +40,23 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames2 = require('classnames');
+var _classnames3 = require('classnames');
 
-var _classnames3 = _interopRequireDefault(_classnames2);
+var _classnames4 = _interopRequireDefault(_classnames3);
 
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Intl = require('../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.MAP; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.MAP;
 
 var ResourceMap = function (_Component) {
   (0, _inherits3.default)(ResourceMap, _Component);
@@ -65,6 +71,9 @@ var ResourceMap = function (_Component) {
     _this._draw = _this._draw.bind(_this);
     _this._onEnter = _this._onEnter.bind(_this);
     _this._onLeave = _this._onLeave.bind(_this);
+    _this._getChildren = _this._getChildren.bind(_this);
+    _this._getParent = _this._getParent.bind(_this);
+    _this._mapNode = _this._mapNode.bind(_this);
 
     _this.state = { canvasHeight: 100, canvasWidth: 100 };
     return _this;
@@ -75,15 +84,11 @@ var ResourceMap = function (_Component) {
     value: function componentDidMount() {
       window.addEventListener('resize', this._onResize);
       this._layout();
-      clearTimeout(this._drawTimer);
-      this._drawTimer = setTimeout(this._draw, 50);
     }
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
       this._layout();
-      clearTimeout(this._drawTimer);
-      this._drawTimer = setTimeout(this._draw, 50);
     }
   }, {
     key: 'componentWillUnmount',
@@ -112,6 +117,7 @@ var ResourceMap = function (_Component) {
       var _this2 = this;
 
       var vertical = this.props.vertical;
+      var dark = this.context.dark;
 
       var canvasElement = this.canvasRef;
       var highlightCanvasElement = this.highlightRef;
@@ -124,9 +130,9 @@ var ResourceMap = function (_Component) {
           baseContext.clearRect(0, 0, canvasRect.width, canvasRect.height);
           highlightContext.clearRect(0, 0, canvasRect.width, canvasRect.height);
 
-          baseContext.strokeStyle = '#000000';
+          baseContext.strokeStyle = dark ? '#ffffff' : '#000000';
           baseContext.lineWidth = 1;
-          highlightContext.strokeStyle = '#000000';
+          highlightContext.strokeStyle = dark ? '#ffffff' : '#000000';
           highlightContext.lineWidth = 2;
 
           _this2.props.data.links.forEach(function (link) {
@@ -180,6 +186,8 @@ var ResourceMap = function (_Component) {
             canvasHeight: mapElement.scrollHeight
           });
         }
+        clearTimeout(this._drawTimer);
+        this._drawTimer = setTimeout(this._draw, 50);
       }
     }
   }, {
@@ -200,21 +208,91 @@ var ResourceMap = function (_Component) {
       this.setState({ activeId: undefined });
     }
   }, {
+    key: '_getChildren',
+    value: function _getChildren(parentId) {
+      var data = this.props.data;
+
+      var children = [];
+      data.links.forEach(function (link) {
+        if (link.parentId === parentId) {
+          children.push(link.childId);
+        }
+      });
+      if (children.length > 0) {
+        return this._mapNode(children);
+      } else {
+        return undefined;
+      }
+    }
+  }, {
+    key: '_getParent',
+    value: function _getParent(childId) {
+      var data = this.props.data;
+
+      var parent = [];
+      data.links.forEach(function (link) {
+        if (link.childId === childId) {
+          parent.push(link.parentId);
+        }
+      });
+      if (parent.length > 0) {
+        return this._mapNode(parent);
+      } else {
+        return undefined;
+      }
+    }
+  }, {
+    key: '_mapNode',
+    value: function _mapNode(elements) {
+      var data = this.props.data;
+
+      return elements.map(function (element) {
+        var node = void 0;
+        data.categories.some(function (category) {
+          return category.items.some(function (item) {
+            if (item.id === element) {
+              node = item.node;
+              return true;
+            }
+          });
+        });
+        return node;
+      });
+    }
+  }, {
     key: '_renderItems',
     value: function _renderItems(items) {
       var _this3 = this;
 
+      var data = this.props.data;
+      var activeId = this.state.activeId;
+      var intl = this.context.intl;
+
       return items.map(function (item, index) {
-        var classes = [CLASS_ROOT + '__item'];
-        var active = _this3.state.activeId === item.id || _this3.props.data.links.some(function (link) {
-          return (link.parentId === item.id || link.childId === item.id) && (link.parentId === _this3.state.activeId || link.childId === _this3.state.activeId);
+        var active = activeId === item.id || data.links.some(function (link) {
+          return (link.parentId === item.id || link.childId === item.id) && (link.parentId === activeId || link.childId === activeId);
         });
-        if (active) {
-          classes.push(CLASS_ROOT + '__item--active');
+        var classes = (0, _classnames4.default)(CLASS_ROOT + '__item', (0, _defineProperty3.default)({}, CLASS_ROOT + '__item--active', active));
+        var children = _this3._getChildren(item.id);
+        var parent = _this3._getParent(item.id);
+
+        var relationshipMessage = '';
+        if (!children && !parent) {
+          relationshipMessage = _Intl2.default.getMessage(intl, 'No Relationship');
+        } else {
+          if (parent) {
+            var parentMessage = _Intl2.default.getMessage(intl, 'Parent');
+            relationshipMessage += ', ' + parentMessage + ': (' + parent.join() + ')';
+          }
+          if (children) {
+            var childrenMessage = _Intl2.default.getMessage(intl, 'Children');
+            relationshipMessage += ', ' + childrenMessage + ': (' + children.join() + ')';
+          }
         }
         return _react2.default.createElement(
           'li',
-          { key: index, id: item.id, className: classes.join(' '),
+          { key: index, id: item.id, className: classes,
+            role: 'text', 'aria-label': item.node + ' ' + relationshipMessage,
             onMouseEnter: _this3._onEnter.bind(_this3, item.id),
             onMouseLeave: _this3._onLeave.bind(_this3, item.id) },
           item.node
@@ -257,7 +335,7 @@ var ResourceMap = function (_Component) {
       var canvasHeight = _state.canvasHeight;
       var canvasWidth = _state.canvasWidth;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--vertical', vertical), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--vertical', vertical), className);
 
       var categories = void 0;
       if (data.categories) {
@@ -292,6 +370,11 @@ var ResourceMap = function (_Component) {
 ResourceMap.displayName = 'ResourceMap';
 exports.default = ResourceMap;
 
+
+ResourceMap.contextTypes = {
+  dark: _react.PropTypes.bool,
+  intl: _react.PropTypes.object
+};
 
 ResourceMap.propTypes = {
   data: _react.PropTypes.shape({
