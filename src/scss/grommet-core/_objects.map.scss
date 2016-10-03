@@ -92,3 +92,9 @@
     margin-right: 0;
   }
 }
+
+#{$dark-background-context} {
+  .#{$grommet-namespace}map__item {
+    color: $text-color;
+  }
+}

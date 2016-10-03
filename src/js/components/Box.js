@@ -13,6 +13,19 @@ const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 export default class Box extends Component {
 
+  getChildContext() {
+    const { colorIndex } = this.props;
+
+    if (colorIndex) {
+      const darkMode = (
+        colorIndex && colorIndex !== 'accent' && colorIndex !== 'light' &&
+        colorIndex !== 'warning' && colorIndex !== 'disabled' &&
+        colorIndex !== 'unknown'
+      );
+      return { dark: darkMode };
+    }
+  }
+
   componentDidMount () {
     const { onClick } = this.props;
     if (onClick) {
@@ -130,10 +143,8 @@ export default class Box extends Component {
       if (containerClassName) {
         containerClasses.push(containerClassName);
       }
-    } else {
-      if (colorIndex) {
-        classes.push(`${BACKGROUND_COLOR_INDEX}-${colorIndex}`);
-      }
+    } else if (colorIndex) {
+      classes.push(`${BACKGROUND_COLOR_INDEX}-${colorIndex}`);
     }
 
     let a11yProps = {};
@@ -287,6 +298,10 @@ Box.propTypes = {
     PropTypes.string
   ]),
   wrap: PropTypes.bool
+};
+
+Box.childContextTypes = {
+  dark: PropTypes.bool
 };
 
 Box.contextTypes = {

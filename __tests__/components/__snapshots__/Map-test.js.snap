@@ -20,24 +20,30 @@ exports[`Map has correct default options 1`] = `
       <ul
         className="grommetux-map__category-items">
         <li
+          aria-label="First item , Children: (Fifth item)"
           className="grommetux-map__item"
           id="item-1-1"
           onMouseEnter={[Function bound bound _onEnter]}
-          onMouseLeave={[Function bound bound _onLeave]}>
+          onMouseLeave={[Function bound bound _onLeave]}
+          role="text">
           First item
         </li>
         <li
+          aria-label="Second item , Children: (Fifth item,Fourth item)"
           className="grommetux-map__item"
           id="item-1-2"
           onMouseEnter={[Function bound bound _onEnter]}
-          onMouseLeave={[Function bound bound _onLeave]}>
+          onMouseLeave={[Function bound bound _onLeave]}
+          role="text">
           Second item
         </li>
         <li
+          aria-label="Third item No Relationship"
           className="grommetux-map__item"
           id="item-1-3"
           onMouseEnter={[Function bound bound _onEnter]}
-          onMouseLeave={[Function bound bound _onLeave]}>
+          onMouseLeave={[Function bound bound _onLeave]}
+          role="text">
           Third item
         </li>
       </ul>
@@ -51,17 +57,21 @@ exports[`Map has correct default options 1`] = `
       <ul
         className="grommetux-map__category-items">
         <li
+          aria-label="Fourth item , Parent: (Second item), Children: (Seventh item)"
           className="grommetux-map__item"
           id="item-2-1"
           onMouseEnter={[Function bound bound _onEnter]}
-          onMouseLeave={[Function bound bound _onLeave]}>
+          onMouseLeave={[Function bound bound _onLeave]}
+          role="text">
           Fourth item
         </li>
         <li
+          aria-label="Fifth item , Parent: (First item,Second item), Children: (Sixth item)"
           className="grommetux-map__item"
           id="item-2-2"
           onMouseEnter={[Function bound bound _onEnter]}
-          onMouseLeave={[Function bound bound _onLeave]}>
+          onMouseLeave={[Function bound bound _onLeave]}
+          role="text">
           Fifth item
         </li>
       </ul>
@@ -75,17 +85,21 @@ exports[`Map has correct default options 1`] = `
       <ul
         className="grommetux-map__category-items">
         <li
+          aria-label="Sixth item , Parent: (Fifth item)"
           className="grommetux-map__item"
           id="item-3-1"
           onMouseEnter={[Function bound bound _onEnter]}
-          onMouseLeave={[Function bound bound _onLeave]}>
+          onMouseLeave={[Function bound bound _onLeave]}
+          role="text">
           Sixth item
         </li>
         <li
+          aria-label="Seventh item , Parent: (Fourth item)"
           className="grommetux-map__item"
           id="item-3-2"
           onMouseEnter={[Function bound bound _onEnter]}
-          onMouseLeave={[Function bound bound _onLeave]}>
+          onMouseLeave={[Function bound bound _onLeave]}
+          role="text">
           Seventh item
         </li>
       </ul>
