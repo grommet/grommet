@@ -1,7 +1,5 @@
 exports[`NumberInput has correct default options 1`] = `
 <span
-  aria-describedby={undefined}
-  aria-labelledby="number-label"
   className="grommetux-number-input">
   <input
     className="grommetux-input grommetux-number-input__input"
@@ -18,29 +16,26 @@ exports[`NumberInput has correct default options 1`] = `
     value={10} />
   <button
     aria-label={undefined}
-    className="grommetux-button grommetux-number-input__subtract grommetux-button--plain grommetux-button--icon"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-number-input__subtract"
     disabled={false}
     href={undefined}
     id={undefined}
+    onBlur={[Function onBlur]}
     onClick={[Function bound _onSubtract]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
     type="button">
     <span
       className="grommetux-button__icon">
       <svg
-        aria-labelledby="subtract-title"
+        aria-label="subtract"
         className="grommetux-control-icon grommetux-control-icon-subtract grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
         viewBox="0 0 24 24"
         width="24px">
-        <title
-          id="subtract-title">
-          <span
-            id="subtract">
-            subtract
-          </span>
-        </title>
         <g>
           <rect
             fill="none"
@@ -63,29 +58,26 @@ exports[`NumberInput has correct default options 1`] = `
   </button>
   <button
     aria-label={undefined}
-    className="grommetux-button grommetux-number-input__add grommetux-button--plain grommetux-button--icon"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-number-input__add"
     disabled={false}
     href={undefined}
     id={undefined}
+    onBlur={[Function onBlur]}
     onClick={[Function bound _onAdd]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
     type="button">
     <span
       className="grommetux-button__icon">
       <svg
-        aria-labelledby="add-title"
+        aria-label="add"
         className="grommetux-control-icon grommetux-control-icon-add grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
         viewBox="0 0 24 24"
         width="24px">
-        <title
-          id="add-title">
-          <span
-            id="add">
-            add
-          </span>
-        </title>
         <g>
           <rect
             fill="none"

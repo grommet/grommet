@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import Button from './Button';
 import AddIcon from './icons/base/Add';
 import SubtractIcon from './icons/base/Subtract';
@@ -37,15 +38,16 @@ export default class NumberInput extends Component {
   }
 
   _onAdd () {
+    const { max, step } = this.props;
     const input = this.inputRef;
     try {
       input.stepUp();
     } catch (e) {
       // IE11 workaround. See known issue #5 at
       // http://caniuse.com/#search=number
-      let value = (parseInt(input.value, 10) || 0) + (this.props.step || 1);
-      if (this.props.max !== undefined) {
-        value = Math.min(value, this.props.max);
+      let value = (parseFloat(input.value) || 0) + (step || 1);
+      if (max !== undefined) {
+        value = Math.min(value, max);
       }
       input.value = value;
     }
@@ -53,15 +55,16 @@ export default class NumberInput extends Component {
   }
 
   _onSubtract () {
+    const { min, step } = this.props;
     const input = this.inputRef;
     try {
       input.stepDown();
     } catch (e) {
       // IE11 workaround. See known issue #5 at
       // http://caniuse.com/#search=number
-      let value = (parseInt(input.value, 10) || 0) - (this.props.step || 1);
-      if (this.props.min !== undefined) {
-        value = Math.max(value, this.props.min);
+      let value = (parseFloat(input.value) || 0) - (step || 1);
+      if (min !== undefined) {
+        value = Math.max(value, min);
       }
       input.value = value;
     }
@@ -69,37 +72,38 @@ export default class NumberInput extends Component {
   }
 
   render () {
-    let classes = [CLASS_ROOT];
-    const labelId = 'number-label';
-    if (this.props.disabled) {
-      classes.push(CLASS_ROOT + "--disabled");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-    const onSubtract = (! this.props.disabled ? this._onSubtract : undefined);
-    const onAdd = (! this.props.disabled ? this._onAdd : undefined);
+    const {
+      className, defaultValue, disabled, id, max, min, name, onChange, step,
+      value
+    } = this.props;
+
+    const classes = classnames(
+      CLASS_ROOT,
+      className, {
+        [`${CLASS_ROOT}--disabled`]: disabled
+      }
+    );
+
+    const onSubtract = (! disabled ? this._onSubtract : undefined);
+    const onAdd = (! disabled ? this._onAdd : undefined);
 
     return (
-      <span className={classes.join(' ')}
-        aria-describedby={this.props.ariaDescribedby}
-        aria-labelledby={labelId}>
-
+      <span className={classes}>
         <input ref={ref => this.inputRef = ref}
           tabIndex="0" className={`${INPUT} ${CLASS_ROOT}__input`}
-          id={this.props.id} name={this.props.name} type="number"
-          disabled={this.props.disabled}
-          value={this.props.value}
-          defaultValue={this.props.defaultValue}
-          min={this.props.min}
-          max={this.props.max}
-          step={this.props.step}
-          onChange={this.props.onChange} />
+          id={id} name={name} type="number"
+          disabled={disabled}
+          value={value}
+          defaultValue={defaultValue}
+          min={min}
+          max={max}
+          step={step}
+          onChange={onChange} />
 
-        <Button icon={<SubtractIcon />} className={CLASS_ROOT + "__subtract"}
+        <Button icon={<SubtractIcon />} className={`${CLASS_ROOT}__subtract`}
           onClick={onSubtract} />
 
-        <Button icon={<AddIcon />} className={CLASS_ROOT + "__add"}
+        <Button icon={<AddIcon />} className={`${CLASS_ROOT}__add`}
           onClick={onAdd} />
       </span>
     );
@@ -108,7 +112,6 @@ export default class NumberInput extends Component {
 }
 
 NumberInput.propTypes = {
-  ariaDescribedby: PropTypes.string,
   defaultValue: PropTypes.number,
   disabled: PropTypes.bool,
   id: PropTypes.string,

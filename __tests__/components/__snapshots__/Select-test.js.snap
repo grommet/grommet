@@ -9,29 +9,26 @@ exports[`Select has correct default options 1`] = `
     value="one" />
   <button
     aria-label={undefined}
-    className="grommetux-button grommetux-select__control grommetux-button--plain grommetux-button--icon"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-select__control"
     disabled={false}
     href={undefined}
     id={undefined}
+    onBlur={[Function onBlur]}
     onClick={[Function bound _onAddDrop]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
     type="button">
     <span
       className="grommetux-button__icon">
       <svg
-        aria-labelledby="caret-down-title"
+        aria-label="caret-down"
         className="grommetux-control-icon grommetux-control-icon-caret-down grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
         viewBox="0 0 24 24"
         width="24px">
-        <title
-          id="caret-down-title">
-          <span
-            id="caret-down">
-            caret-down
-          </span>
-        </title>
         <g>
           <rect
             fill="none"
@@ -42,7 +39,8 @@ exports[`Select has correct default options 1`] = `
           <polygon
             fill="none"
             id="drop-carrot"
-            points="4.8571,8 19.1429,8 12,18"            stroke="#000000"
+            points="4.8571,8 19.1429,8 12,18"
+            stroke="#000000"
             strokeMiterlimit="10"
             strokeWidth="2" />
         </g>

@@ -1,9 +1,10 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-import { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import DOM from './DOM';
 import CSSClassnames from './CSSClassnames';
+import KeyboardAccelerators from './KeyboardAccelerators';
 
 const CLASS_ROOT = CSSClassnames.DROP;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
@@ -15,6 +16,89 @@ const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 const VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
 const HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
+
+class DropContents extends Component {
+  constructor(props, context) {
+    super(props, context);
+
+    this._processTab = this._processTab.bind(this);
+  }
+
+  getChildContext () {
+    return {...this.props.drop.options.context};
+  }
+
+  componentDidMount () {
+    const { drop } = this.props;
+    if (drop.options.focusControl) {
+      this.originalFocusedElement = document.activeElement;
+      this.anchorStepRef.focus();
+      this.anchorStepRef.scrollIntoView();
+
+      this._keyboardHandlers = {
+        tab: this._processTab
+      };
+      KeyboardAccelerators.startListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
+    }
+  }
+
+  componentWillUnmount () {
+    const { drop } = this.props;
+    if (drop.options.focusControl) {
+      KeyboardAccelerators.stopListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
+
+      this.originalFocusedElement.focus();
+    }
+  }
+
+  _processTab (event) {
+    let items = this.containerRef.getElementsByTagName('*');
+    items = DOM.filterByFocusable(items);
+    if (!items || items.length === 0) {
+      event.preventDefault();
+    } else {
+      if (event.shiftKey) {
+        if (event.target === items[0]) {
+          items[items.length - 1].focus();
+          event.preventDefault();
+        }
+      } else if (event.target === items[items.length - 1]) {
+        items[0].focus();
+        event.preventDefault();
+      }
+    }
+  }
+
+
+  render () {
+    const { drop, content } = this.props;
+
+    let anchorStep;
+    if (drop.options.focusControl) {
+      anchorStep = (
+        <a tabIndex="-1" aria-hidden='true'
+          ref={(ref) => this.anchorStepRef = ref} />
+      );
+    }
+    return (
+      <div ref={(ref) => this.containerRef = ref}>
+        {anchorStep}
+        {content}
+      </div>
+    );
+  }
+}
+
+DropContents.childContextTypes = {
+  history: PropTypes.object,
+  intl: PropTypes.object,
+  router: PropTypes.any,
+  store: PropTypes.object
+};
 
 export default {
 
@@ -109,7 +193,7 @@ export default {
     // prepend in body to avoid browser scroll issues
     document.body.insertBefore(drop.container, document.body.firstChild);
 
-    render(content, drop.container);
+    render(<DropContents drop={drop} content={content} />, drop.container);
 
     drop.scrollParents = DOM.findScrollParents(drop.control);
     drop.place = this._place.bind(this, drop);
@@ -142,17 +226,11 @@ export default {
     // position content
     this._place(drop);
 
-    var items = drop.container.firstChild.getElementsByTagName('*');
-    var firstFocusable = DOM.getBestFirstFocusable(items);
-    if (firstFocusable) {
-      firstFocusable.focus();
-    }
-
     return drop;
   },
 
   _render (drop, content) {
-    render(content, drop.container);
+    render(<DropContents drop={drop} content={content} />, drop.container);
     // in case content changed, re-place
     setTimeout(this._place.bind(this, drop), 1);
   },
@@ -273,5 +351,6 @@ export default {
     // but that didn't work on mobile browsers as well.
     container.style.top = `${top - bodyRect.top}px`;
     container.style.maxHeight = `${maxHeight}px`;
+
   }
 };

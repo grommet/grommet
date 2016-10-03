@@ -8,7 +8,7 @@ import Image from '../../src/js/components/Image';
 describe('Image', () => {
   it('has correct default options', () => {
     const component = renderer.create(
-      <Image src='test.png' />
+      <Image src="test.png" data-flavor="coconut" />
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

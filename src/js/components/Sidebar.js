@@ -3,29 +3,26 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Box from './Box';
-import Props from '../utils/Props';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.SIDEBAR;
 
 export default class Sidebar extends Component {
   render () {
+    const { children, className, fixed, full, size, ...props } = this.props;
     let classes = classnames(
       CLASS_ROOT,
-      this.props.className,
       {
-        [`${CLASS_ROOT}--fixed`]: this.props.fixed,
-        [`${CLASS_ROOT}--full`]: this.props.full,
-        [`${CLASS_ROOT}--${this.props.size}`]: this.props.size
-      }
+        [`${CLASS_ROOT}--fixed`]: fixed,
+        [`${CLASS_ROOT}--full`]: full,
+        [`${CLASS_ROOT}--${size}`]: size
+      },
+      className
     );
 
-    const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
-    const restProps = Props.omit(this.props, Object.keys(Sidebar.propTypes));
-
     return (
-      <Box {...restProps} {...boxProps} className={classes}>
-        {this.props.children}
+      <Box {...props} className={classes}>
+        {children}
       </Box>
     );
   }

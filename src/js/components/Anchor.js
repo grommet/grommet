@@ -22,12 +22,7 @@ export default class Anchor extends Component {
     } else if (primary) {
       anchorIcon = (
         <LinkNextIcon
-          a11yTitle={id ? `${id}-icon` : 'link next'}
-          a11yTitleId={id ?
-            `${id}-icon` :
-            'anchor-next-title-id'
-          }
-        />
+          a11yTitle={id ? `${id}-icon` : 'link next'} />
       );
     }
 

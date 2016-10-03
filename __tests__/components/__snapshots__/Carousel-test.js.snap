@@ -1,8 +1,12 @@
 exports[`Carousel has correct default options 1`] = `
 <div
+  aria-label="Carousel"
   className="grommetux-carousel"
-  onMouseEnter={[Function bound _onMouseOver]}
-  onMouseLeave={[Function bound _onMouseOut]}>
+  onBlur={[Function bound _startAutoplay]}
+  onFocus={[Function bound _stopAutoplay]}
+  onMouseOut={[Function bound _startAutoplay]}
+  onMouseOver={[Function bound _stopAutoplay]}
+  role="group">
   <div
     className="grommetux-carousel__track"
     style={
@@ -19,6 +23,7 @@ exports[`Carousel has correct default options 1`] = `
       style={Object {}}
       tabIndex={undefined}>
       <div
+        aria-hidden={false}
         className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-tile grommetux-carousel__item grommetux-none-hover-color-index-disabled grommetux-tile--hover-border-small"
         id={undefined}
         onClick={undefined}
@@ -29,6 +34,7 @@ exports[`Carousel has correct default options 1`] = `
           src="/img/carousel-1.png" />
       </div>
       <div
+        aria-hidden={true}
         className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-tile grommetux-carousel__item grommetux-none-hover-color-index-disabled grommetux-tile--hover-border-small"
         id={undefined}
         onClick={undefined}
@@ -41,30 +47,27 @@ exports[`Carousel has correct default options 1`] = `
     </div>
   </div>
   <button
-    aria-label={undefined}
-    className="grommetux-button grommetux-carousel__arrow grommetux-carousel__arrow--prev grommetux-button--plain grommetux-button--icon"
+    aria-label="Previous Slide"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-carousel__arrow grommetux-carousel__arrow--prev"
     disabled={false}
     href={undefined}
     id={undefined}
+    onBlur={[Function onBlur]}
     onClick={[Function bound _slidePrev]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
     type="button">
     <span
       className="grommetux-button__icon">
       <svg
-        aria-labelledby="previous-title"
+        aria-label="previous"
         className="grommetux-control-icon grommetux-control-icon-previous grommetux-control-icon--large grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
         viewBox="0 0 24 25.2071"
         width="24px">
-        <title
-          id="previous-title">
-          <span
-            id="previous">
-            previous
-          </span>
-        </title>
         <g>
           <rect
             fill="none"
@@ -82,30 +85,27 @@ exports[`Carousel has correct default options 1`] = `
     </span>
   </button>
   <button
-    aria-label={undefined}
-    className="grommetux-button grommetux-carousel__arrow grommetux-carousel__arrow--next grommetux-button--plain grommetux-button--icon"
+    aria-label="Next Slide"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-carousel__arrow grommetux-carousel__arrow--next"
     disabled={false}
     href={undefined}
     id={undefined}
+    onBlur={[Function onBlur]}
     onClick={[Function bound _slideNext]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
     type="button">
     <span
       className="grommetux-button__icon">
       <svg
-        aria-labelledby="next-title"
+        aria-label="next"
         className="grommetux-control-icon grommetux-control-icon-next grommetux-control-icon--large grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
         viewBox="0 0 24 24"
         width="24px">
-        <title
-          id="next-title">
-          <span
-            id="next">
-            next
-          </span>
-        </title>
         <g>
           <rect
             fill="none"
@@ -130,26 +130,413 @@ exports[`Carousel has correct default options 1`] = `
     role={undefined}
     style={Object {}}
     tabIndex={undefined}>
-    <svg
-      className="grommetux-carousel__control grommetux-carousel__control--active"
+    <button
+      aria-label="Activate Slide Number (Currently Active)"
+      className="grommetux-button grommetux-button--plain"
+      disabled={false}
+      href={undefined}
+      id={undefined}
+      onBlur={[Function onBlur]}
       onClick={[Function bound bound _onSelect]}
-      version="1.1"
-      viewBox="0 0 24 24">
-      <circle
-        cx={12}
-        cy={12}
-        r={6} />
-    </svg>
-    <svg
-      className="grommetux-carousel__control"
+      onFocus={[Function onFocus]}
+      onMouseDown={[Function onMouseDown]}
+      onMouseUp={[Function onMouseUp]}
+      type="button">
+      <svg
+        className="grommetux-carousel__control grommetux-carousel__control--active"
+        version="1.1"
+        viewBox="0 0 24 24">
+        <circle
+          cx={12}
+          cy={12}
+          r={6} />
+      </svg>
+    </button>
+    <button
+      aria-label="Activate Slide Number "
+      className="grommetux-button grommetux-button--plain"
+      disabled={false}
+      href={undefined}
+      id={undefined}
+      onBlur={[Function onBlur]}
       onClick={[Function bound bound _onSelect]}
-      version="1.1"
-      viewBox="0 0 24 24">
-      <circle
-        cx={12}
-        cy={12}
-        r={6} />
-    </svg>
+      onFocus={[Function onFocus]}
+      onMouseDown={[Function onMouseDown]}
+      onMouseUp={[Function onMouseUp]}
+      type="button">
+      <svg
+        className="grommetux-carousel__control"
+        version="1.1"
+        viewBox="0 0 24 24">
+        <circle
+          cx={12}
+          cy={12}
+          r={6} />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Carousel renders class name properties 1`] = `
+<div
+  aria-label="Carousel"
+  className="grommetux-carousel test"
+  onBlur={[Function bound _startAutoplay]}
+  onFocus={[Function bound _stopAutoplay]}
+  onMouseOut={[Function bound _startAutoplay]}
+  onMouseOver={[Function bound _stopAutoplay]}
+  role="group">
+  <div
+    className="grommetux-carousel__track"
+    style={
+      Object {
+        "marginLeft": -0,
+        "width": ""
+      }
+    }>
+    <div
+      className="grommetux-box grommetux-box--direction-row grommetux-box--justify-start grommetux-box--pad-small grommetux-tiles grommetux-tiles--fill grommetux-tiles--flush"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}>
+      <div
+        aria-hidden={false}
+        className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-tile grommetux-carousel__item grommetux-none-hover-color-index-disabled grommetux-tile--hover-border-small"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}>
+        <img
+          src="/img/carousel-1.png" />
+      </div>
+      <div
+        aria-hidden={true}
+        className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-tile grommetux-carousel__item grommetux-none-hover-color-index-disabled grommetux-tile--hover-border-small"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}>
+        <img
+          src="/img/carousel-2.png" />
+      </div>
+    </div>
+  </div>
+  <button
+    aria-label="Previous Slide"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-carousel__arrow grommetux-carousel__arrow--prev"
+    disabled={false}
+    href={undefined}
+    id={undefined}
+    onBlur={[Function onBlur]}
+    onClick={[Function bound _slidePrev]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
+    type="button">
+    <span
+      className="grommetux-button__icon">
+      <svg
+        aria-label="previous"
+        className="grommetux-control-icon grommetux-control-icon-previous grommetux-control-icon--large grommetux-control-icon--responsive"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 25.2071"
+        width="24px">
+        <g>
+          <rect
+            fill="none"
+            height="24"
+            width="24"
+            y="1.2071" />
+          <polyline
+            fill="none"
+            points="16.1397,0.7071 5.1397,11.7071 16.1397,22.7071 	"
+            stroke="#000000"
+            strokeMiterlimit="10"
+            strokeWidth="2" />
+        </g>
+      </svg>
+    </span>
+  </button>
+  <button
+    aria-label="Next Slide"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-carousel__arrow grommetux-carousel__arrow--next"
+    disabled={false}
+    href={undefined}
+    id={undefined}
+    onBlur={[Function onBlur]}
+    onClick={[Function bound _slideNext]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
+    type="button">
+    <span
+      className="grommetux-button__icon">
+      <svg
+        aria-label="next"
+        className="grommetux-control-icon grommetux-control-icon-next grommetux-control-icon--large grommetux-control-icon--responsive"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px">
+        <g>
+          <rect
+            fill="none"
+            height="24"
+            width="24"
+            x="0"
+            y="0" />
+          <polyline
+            fill="none"
+            points="8,1.2101 19,12.2101 8,23.2101 	"
+            stroke="#000000"
+            strokeMiterlimit="10"
+            strokeWidth="2" />
+        </g>
+      </svg>
+    </span>
+  </button>
+  <div
+    className="grommetux-box grommetux-box--direction-row grommetux-box--justify-center grommetux-box--pad-none grommetux-carousel__controls"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}>
+    <button
+      aria-label="Activate Slide Number (Currently Active)"
+      className="grommetux-button grommetux-button--plain"
+      disabled={false}
+      href={undefined}
+      id={undefined}
+      onBlur={[Function onBlur]}
+      onClick={[Function bound bound _onSelect]}
+      onFocus={[Function onFocus]}
+      onMouseDown={[Function onMouseDown]}
+      onMouseUp={[Function onMouseUp]}
+      type="button">
+      <svg
+        className="grommetux-carousel__control grommetux-carousel__control--active"
+        version="1.1"
+        viewBox="0 0 24 24">
+        <circle
+          cx={12}
+          cy={12}
+          r={6} />
+      </svg>
+    </button>
+    <button
+      aria-label="Activate Slide Number "
+      className="grommetux-button grommetux-button--plain"
+      disabled={false}
+      href={undefined}
+      id={undefined}
+      onBlur={[Function onBlur]}
+      onClick={[Function bound bound _onSelect]}
+      onFocus={[Function onFocus]}
+      onMouseDown={[Function onMouseDown]}
+      onMouseUp={[Function onMouseUp]}
+      type="button">
+      <svg
+        className="grommetux-carousel__control"
+        version="1.1"
+        viewBox="0 0 24 24">
+        <circle
+          cx={12}
+          cy={12}
+          r={6} />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Carousel renders microdata properties 1`] = `
+<div
+  aria-label="Carousel"
+  className="grommetux-carousel"
+  itemProp="test"
+  itemScope={true}
+  itemType="http://schema.org/Article"
+  onBlur={[Function bound _startAutoplay]}
+  onFocus={[Function bound _stopAutoplay]}
+  onMouseOut={[Function bound _startAutoplay]}
+  onMouseOver={[Function bound _stopAutoplay]}
+  role="group">
+  <div
+    className="grommetux-carousel__track"
+    style={
+      Object {
+        "marginLeft": -0,
+        "width": ""
+      }
+    }>
+    <div
+      className="grommetux-box grommetux-box--direction-row grommetux-box--justify-start grommetux-box--pad-small grommetux-tiles grommetux-tiles--fill grommetux-tiles--flush"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}>
+      <div
+        aria-hidden={false}
+        className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-tile grommetux-carousel__item grommetux-none-hover-color-index-disabled grommetux-tile--hover-border-small"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}>
+        <img
+          src="/img/carousel-1.png" />
+      </div>
+      <div
+        aria-hidden={true}
+        className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-tile grommetux-carousel__item grommetux-none-hover-color-index-disabled grommetux-tile--hover-border-small"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}>
+        <img
+          src="/img/carousel-2.png" />
+      </div>
+    </div>
+  </div>
+  <button
+    aria-label="Previous Slide"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-carousel__arrow grommetux-carousel__arrow--prev"
+    disabled={false}
+    href={undefined}
+    id={undefined}
+    onBlur={[Function onBlur]}
+    onClick={[Function bound _slidePrev]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
+    type="button">
+    <span
+      className="grommetux-button__icon">
+      <svg
+        aria-label="previous"
+        className="grommetux-control-icon grommetux-control-icon-previous grommetux-control-icon--large grommetux-control-icon--responsive"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 25.2071"
+        width="24px">
+        <g>
+          <rect
+            fill="none"
+            height="24"
+            width="24"
+            y="1.2071" />
+          <polyline
+            fill="none"
+            points="16.1397,0.7071 5.1397,11.7071 16.1397,22.7071 	"
+            stroke="#000000"
+            strokeMiterlimit="10"
+            strokeWidth="2" />
+        </g>
+      </svg>
+    </span>
+  </button>
+  <button
+    aria-label="Next Slide"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-carousel__arrow grommetux-carousel__arrow--next"
+    disabled={false}
+    href={undefined}
+    id={undefined}
+    onBlur={[Function onBlur]}
+    onClick={[Function bound _slideNext]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
+    type="button">
+    <span
+      className="grommetux-button__icon">
+      <svg
+        aria-label="next"
+        className="grommetux-control-icon grommetux-control-icon-next grommetux-control-icon--large grommetux-control-icon--responsive"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px">
+        <g>
+          <rect
+            fill="none"
+            height="24"
+            width="24"
+            x="0"
+            y="0" />
+          <polyline
+            fill="none"
+            points="8,1.2101 19,12.2101 8,23.2101 	"
+            stroke="#000000"
+            strokeMiterlimit="10"
+            strokeWidth="2" />
+        </g>
+      </svg>
+    </span>
+  </button>
+  <div
+    className="grommetux-box grommetux-box--direction-row grommetux-box--justify-center grommetux-box--pad-none grommetux-carousel__controls"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}>
+    <button
+      aria-label="Activate Slide Number (Currently Active)"
+      className="grommetux-button grommetux-button--plain"
+      disabled={false}
+      href={undefined}
+      id={undefined}
+      onBlur={[Function onBlur]}
+      onClick={[Function bound bound _onSelect]}
+      onFocus={[Function onFocus]}
+      onMouseDown={[Function onMouseDown]}
+      onMouseUp={[Function onMouseUp]}
+      type="button">
+      <svg
+        className="grommetux-carousel__control grommetux-carousel__control--active"
+        version="1.1"
+        viewBox="0 0 24 24">
+        <circle
+          cx={12}
+          cy={12}
+          r={6} />
+      </svg>
+    </button>
+    <button
+      aria-label="Activate Slide Number "
+      className="grommetux-button grommetux-button--plain"
+      disabled={false}
+      href={undefined}
+      id={undefined}
+      onBlur={[Function onBlur]}
+      onClick={[Function bound bound _onSelect]}
+      onFocus={[Function onFocus]}
+      onMouseDown={[Function onMouseDown]}
+      onMouseUp={[Function onMouseUp]}
+      type="button">
+      <svg
+        className="grommetux-carousel__control"
+        version="1.1"
+        viewBox="0 0 24 24">
+        <circle
+          cx={12}
+          cy={12}
+          r={6} />
+      </svg>
+    </button>
   </div>
 </div>
 `;

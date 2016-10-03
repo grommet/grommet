@@ -30,17 +30,12 @@
         fill: $active-colored-text-color;
       }
 
-      &:not(.#{$grommet-namespace}notification--disabled) {
-        &:hover {
-          box-shadow: 0px 0px 0px 2px $color;
-        }
-      }
     }
   }
 }
 
 .#{$grommet-namespace}notification__message {
-  @include inuit-font-size($control-large-font-size, $inuit-base-spacing-unit);
+  @include inuit-font-size($content-large-font-size, $inuit-base-spacing-unit);
 
   + * {
     margin-top: $inuit-base-spacing-unit;
@@ -62,14 +57,5 @@
     &__message {
       @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
     }
-  }
-}
-
-.#{$grommet-namespace}notification:not(.#{$grommet-namespace}notification--disabled) {
-  cursor: pointer;
-
-  &:hover {
-    z-index: 1;
-    box-shadow: 0px 0px 0px 2px $brand-color;
   }
 }

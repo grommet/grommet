@@ -1,9 +1,9 @@
 exports[`SunBurst has correct default options 1`] = `
 <div
-  className="grommetux-sun-burst__container">
+  className="grommetux-sun-burst grommetux-sun-burst--xlarge">
   <svg
     aria-label="SunBurstLabel"
-    className="grommetux-sun-burst grommetux-sun-burst--xlarge"
+    className="grommetux-sun-burst__graphic"
     onBlur={[Function bound _onSunBurstBlur]}
     onFocus={[Function bound _onSunBurstFocus]}
     role="group"

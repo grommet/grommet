@@ -1,6 +1,6 @@
 exports[`Split has correct default options 1`] = `
 <div
-  className="grommetux-split grommetux-split--flex-both grommetux-split--fixed">
+  className="grommetux-split grommetux-split--fixed">
   <div
     className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--flex grommetux-box--pad-none grommetux-split--full"
     id={undefined}

@@ -1,7 +1,9 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
+import Intl from '../utils/Intl';
 
 const CLASS_ROOT = CSSClassnames.MAP;
 
@@ -15,6 +17,9 @@ export default class ResourceMap extends Component {
     this._draw = this._draw.bind(this);
     this._onEnter = this._onEnter.bind(this);
     this._onLeave = this._onLeave.bind(this);
+    this._getChildren = this._getChildren.bind(this);
+    this._getParent = this._getParent.bind(this);
+    this._mapNode = this._mapNode.bind(this);
 
     this.state = { canvasHeight: 100, canvasWidth: 100 };
   }
@@ -22,14 +27,10 @@ export default class ResourceMap extends Component {
   componentDidMount () {
     window.addEventListener('resize', this._onResize);
     this._layout();
-    clearTimeout(this._drawTimer);
-    this._drawTimer = setTimeout(this._draw, 50);
   }
 
   componentDidUpdate () {
     this._layout();
-    clearTimeout(this._drawTimer);
-    this._drawTimer = setTimeout(this._draw, 50);
   }
 
   componentWillUnmount () {
@@ -53,6 +54,7 @@ export default class ResourceMap extends Component {
 
   _draw () {
     const { vertical } = this.props;
+    const { dark } = this.context;
     const canvasElement = this.canvasRef;
     const highlightCanvasElement = this.highlightRef;
     // don't draw if we don't have a canvas to draw on, such as a unit test
@@ -63,9 +65,9 @@ export default class ResourceMap extends Component {
       baseContext.clearRect(0, 0, canvasRect.width, canvasRect.height);
       highlightContext.clearRect(0, 0, canvasRect.width, canvasRect.height);
 
-      baseContext.strokeStyle = '#000000';
+      baseContext.strokeStyle = dark ? '#ffffff' : '#000000';
       baseContext.lineWidth = 1;
-      highlightContext.strokeStyle = '#000000';
+      highlightContext.strokeStyle = dark ? '#ffffff' : '#000000';
       highlightContext.lineWidth = 2;
 
       this.props.data.links.forEach(link => {
@@ -123,6 +125,8 @@ export default class ResourceMap extends Component {
           canvasHeight: mapElement.scrollHeight
         });
       }
+      clearTimeout(this._drawTimer);
+      this._drawTimer = setTimeout(this._draw, 50);
     }
   }
 
@@ -140,21 +144,92 @@ export default class ResourceMap extends Component {
     this.setState({activeId: undefined});
   }
 
+  _getChildren (parentId) {
+    const { data } = this.props;
+    let children = [];
+    data.links.forEach((link) => {
+      if (link.parentId === parentId) {
+        children.push(link.childId);
+      }
+    });
+    if (children.length > 0) {
+      return this._mapNode(children);
+    } else {
+      return undefined;
+    }
+  }
+
+  _getParent (childId) {
+    const { data } = this.props;
+    let parent = [];
+    data.links.forEach((link) => {
+      if (link.childId === childId) {
+        parent.push(link.parentId);
+      }
+    });
+    if (parent.length > 0) {
+      return this._mapNode(parent);
+    } else {
+      return undefined;
+    }
+  }
+
+  _mapNode (elements) {
+    const { data } = this.props;
+    return elements.map((element) => {
+      let node;
+      data.categories.some((category) => {
+        return category.items.some((item) => {
+          if (item.id === element) {
+            node = item.node;
+            return true;
+          }
+        });
+      });
+      return node;
+    });
+  }
+
   _renderItems (items) {
+    const { data } = this.props;
+    const { activeId } = this.state;
+    const { intl } = this.context;
     return items.map((item, index) => {
-      let classes = [`${CLASS_ROOT}__item`];
-      const active = this.state.activeId === item.id ||
-        this.props.data.links.some(link => {
+      const active = activeId === item.id ||
+        data.links.some(link => {
           return ((link.parentId === item.id ||
             link.childId === item.id) &&
-            (link.parentId === this.state.activeId ||
-            link.childId === this.state.activeId));
+            (link.parentId === activeId ||
+            link.childId === activeId));
         });
-      if (active) {
-        classes.push(`${CLASS_ROOT}__item--active`);
+      const classes = classnames(
+        `${CLASS_ROOT}__item`, {
+          [`${CLASS_ROOT}__item--active`]: active
+        }
+      );
+      const children = this._getChildren(item.id);
+      const parent = this._getParent(item.id);
+
+      let relationshipMessage = '';
+      if (!children && !parent) {
+        relationshipMessage = Intl.getMessage(intl, 'No Relationship');
+      } else {
+        if (parent) {
+          const parentMessage = Intl.getMessage(intl, 'Parent');
+          relationshipMessage += (
+            `, ${parentMessage}: (${parent.join()})`
+          );
+        }
+        if (children) {
+          const childrenMessage = Intl.getMessage(intl, 'Children');
+          relationshipMessage += (
+            `, ${childrenMessage}: (${children.join()})`
+          );
+        }
       }
       return (
-        <li key={index} id={item.id} className={classes.join(' ')}
+        <li key={index} id={item.id} className={classes}
+          role='text' aria-label={`${item.node} ${relationshipMessage}`}
           onMouseEnter={this._onEnter.bind(this, item.id)}
           onMouseLeave={this._onLeave.bind(this, item.id)}>
           {item.node}
@@ -179,15 +254,15 @@ export default class ResourceMap extends Component {
   }
 
   render () {
-    const { data, vertical } = this.props;
+    const { className, data, vertical, ...props } = this.props;
     const { canvasHeight, canvasWidth } = this.state;
-    let className = [CLASS_ROOT];
-    if (vertical) {
-      className.push(`${CLASS_ROOT}--vertical`);
-    }
-    if (this.props.className) {
-      className.push(this.props.className);
-    }
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--vertical`]: vertical
+      },
+      className
+    );
 
     let categories;
     if (data.categories) {
@@ -195,7 +270,7 @@ export default class ResourceMap extends Component {
     }
 
     return (
-      <div ref={ref => this.mapRef = ref} className={className.join(' ')}>
+      <div ref={ref => this.mapRef = ref} {...props} className={classes}>
         <canvas ref={ref => this.canvasRef = ref} width={canvasWidth}
           height={canvasHeight} className={`${CLASS_ROOT}__canvas`}  />
         <canvas ref={ref => this.highlightRef = ref}
@@ -209,6 +284,11 @@ export default class ResourceMap extends Component {
   }
 
 }
+
+ResourceMap.contextTypes = {
+  dark: PropTypes.bool,
+  intl: PropTypes.object
+};
 
 ResourceMap.propTypes = {
   data: PropTypes.shape({

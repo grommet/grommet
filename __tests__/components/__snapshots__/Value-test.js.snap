@@ -1,7 +1,6 @@
 exports[`Value has correct active=true rendering 1`] = `
 <div
-  className="grommetux-value grommetux-value--align-center grommetux-value--active"
-  onClick={undefined}>
+  className="grommetux-value grommetux-value--align-center grommetux-value--active">
   <div
     className="grommetux-value__annotated">
     <span
@@ -14,8 +13,7 @@ exports[`Value has correct active=true rendering 1`] = `
 
 exports[`Value has correct className rendering 1`] = `
 <div
-  className="grommetux-value grommetux-value--align-center testing"
-  onClick={undefined}>
+  className="grommetux-value grommetux-value--align-center testing">
   <div
     className="grommetux-value__annotated">
     <span
@@ -28,8 +26,7 @@ exports[`Value has correct className rendering 1`] = `
 
 exports[`Value has correct colorIndex rendering 1`] = `
 <div
-  className="grommetux-value grommetux-value--align-center grommetux-color-index-neutral-1"
-  onClick={undefined}>
+  className="grommetux-value grommetux-value--align-center grommetux-color-index-neutral-1">
   <div
     className="grommetux-value__annotated">
     <span
@@ -42,8 +39,7 @@ exports[`Value has correct colorIndex rendering 1`] = `
 
 exports[`Value has correct default options 1`] = `
 <div
-  className="grommetux-value grommetux-value--align-center"
-  onClick={undefined}>
+  className="grommetux-value grommetux-value--align-center">
   <div
     className="grommetux-value__annotated">
     <span
@@ -56,8 +52,7 @@ exports[`Value has correct default options 1`] = `
 
 exports[`Value has correct label rendering 1`] = `
 <div
-  className="grommetux-value grommetux-value--align-center"
-  onClick={undefined}>
+  className="grommetux-value grommetux-value--align-center">
   <div
     className="grommetux-value__annotated">
     <span
@@ -102,8 +97,7 @@ exports[`Value has correct onClick rendering 2`] = `
 
 exports[`Value has correct size="large" rendering 1`] = `
 <div
-  className="grommetux-value grommetux-value--large grommetux-value--align-center"
-  onClick={undefined}>
+  className="grommetux-value grommetux-value--large grommetux-value--align-center">
   <div
     className="grommetux-value__annotated">
     <span
@@ -116,8 +110,7 @@ exports[`Value has correct size="large" rendering 1`] = `
 
 exports[`Value has correct units=% rendering 1`] = `
 <div
-  className="grommetux-value grommetux-value--align-center"
-  onClick={undefined}>
+  className="grommetux-value grommetux-value--align-center">
   <div
     className="grommetux-value__annotated">
     <span

@@ -31,4 +31,45 @@ describe('Article', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('renders a classname', () => {
+    const component = renderer.create(
+      <Article className="test">
+        <Heading>
+          Title
+        </Heading>
+        <Section>
+          <h2>
+            Heading
+          </h2>
+          <p>
+            Lorem ipsum ...
+          </p>
+        </Section>
+      </Article>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders microdata properties', () => {
+    const component = renderer.create(
+      <Article itemScope={true} itemType="http://schema.org/Article" 
+        itemProp="test">
+        <Heading>
+          Title
+        </Heading>
+        <Section>
+          <h2>
+            Heading
+          </h2>
+          <p>
+            Lorem ipsum ...
+          </p>
+        </Section>
+      </Article>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -62,7 +62,11 @@ exports[`LoginForm has correct default options 1`] = `
       disabled={false}
       href={undefined}
       id={undefined}
+      onBlur={[Function onBlur]}
       onClick={[Function bound _onSubmit]}
+      onFocus={[Function onFocus]}
+      onMouseDown={[Function onMouseDown]}
+      onMouseUp={[Function onMouseUp]}
       type="submit">
       <span
         id="Log_In">

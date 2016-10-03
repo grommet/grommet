@@ -26,13 +26,14 @@ $sun-burst-xlarge-slice-width: round($inuit-base-spacing-unit * 3);
 }
 
 .#{$grommet-namespace}sun-burst {
+  position: relative;
+  height: $size-medium;
   width: $size-medium;
   max-width: 100%;
-  @include animation('fade-in 2.5s');
 }
 
-.#{$grommet-namespace}sun-burst__container {
-  position: relative;
+.#{$grommet-namespace}sun-burst__graphic {
+  @include animation('fade-in 2.5s');
 }
 
 .#{$grommet-namespace}sun-burst__label {
@@ -69,14 +70,17 @@ $sun-burst-xlarge-slice-width: round($inuit-base-spacing-unit * 3);
 }
 
 .#{$grommet-namespace}sun-burst--small {
+  height: $size-small;
   width: $size-small;
 }
 
 .#{$grommet-namespace}sun-burst--large {
+  height: $size-large;
   width: $size-large;
 }
 
 .#{$grommet-namespace}sun-burst--xlarge {
+  height: $size-xlarge;
   width: $size-xlarge;
 }
 

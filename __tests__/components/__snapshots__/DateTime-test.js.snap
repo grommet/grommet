@@ -9,30 +9,27 @@ exports[`DateTime has correct default options 1`] = `
     placeholder="M/D/YYYY h:mm a"
     value="4/7/2015 10:00 am" />
   <button
-    aria-label={undefined}
-    className="grommetux-button grommetux-date-time__control grommetux-button--plain grommetux-button--icon"
+    aria-label="Date Time Icon"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-date-time__control"
     disabled={false}
     href={undefined}
     id={undefined}
+    onBlur={[Function onBlur]}
     onClick={[Function bound _onControlClick]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
     type="button">
     <span
       className="grommetux-button__icon">
       <svg
-        aria-labelledby="clock-title"
+        aria-label="clock"
         className="grommetux-control-icon grommetux-control-icon-clock grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
         viewBox="0 0 24 24"
         width="24px">
-        <title
-          id="clock-title">
-          <span
-            id="clock">
-            clock
-          </span>
-        </title>
         <g>
           <rect
             fill="none"

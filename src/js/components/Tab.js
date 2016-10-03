@@ -2,7 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import Button from './Button';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.TAB;
@@ -13,20 +13,6 @@ export default class Tab extends Component {
     super();
 
     this._onClickTab = this._onClickTab.bind(this);
-    this._startKeyboardListener = this._startKeyboardListener.bind(this);
-    this._stopKeybardListener = this._stopKeybardListener.bind(this);
-  }
-
-  _startKeyboardListener () {
-    this._listeners = {
-      space: this._onClickTab,
-      enter: this._onClickTab
-    };
-    KeyboardAccelerators.startListeningToKeyboard(this.tabRef, this._listeners);
-  }
-
-  _stopKeybardListener () {
-    KeyboardAccelerators.stopListeningToKeyboard(this.tabRef, this._listeners);
   }
 
   _onClickTab (event) {
@@ -48,14 +34,12 @@ export default class Tab extends Component {
 
     return (
       <li className={classes} id={id}>
-        <a href='#' role='tab' ref={(ref) => this.tabRef = ref}
-          onClick={this._onClickTab} aria-expanded={active}
-          onFocus={this._startKeyboardListener} aria-selected={active}
-          onBlur={this._stopKeybardListener}>
+        <Button plain={true} role='tab' aria-selected={active}
+          onClick={this._onClickTab} aria-expanded={active}>
           <label className={`${CLASS_ROOT}__label`} htmlFor={id}>
             {title}
           </label>
-        </a>
+        </Button>
       </li>
     );
   }

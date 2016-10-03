@@ -6,38 +6,52 @@ exports[`Tabs has correct default options 1`] = `
     <li
       className="grommetux-tab grommetux-tab--active"
       id="tab-0">
-      <a
+      <button
         aria-expanded={true}
+        aria-label={undefined}
         aria-selected={true}
-        href="#"
-        onBlur={[Function bound _stopKeybardListener]}
+        className="grommetux-button grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        id={undefined}
+        onBlur={[Function onBlur]}
         onClick={[Function bound _onClickTab]}
-        onFocus={[Function bound _startKeyboardListener]}
-        role="tab">
+        onFocus={[Function onFocus]}
+        onMouseDown={[Function onMouseDown]}
+        onMouseUp={[Function onMouseUp]}
+        role="tab"
+        type="button">
         <label
           className="grommetux-tab__label"
           htmlFor="tab-0">
           Tab Title
         </label>
-      </a>
+      </button>
     </li>
     <li
       className="grommetux-tab"
       id="tab-1">
-      <a
+      <button
         aria-expanded={false}
+        aria-label={undefined}
         aria-selected={false}
-        href="#"
-        onBlur={[Function bound _stopKeybardListener]}
+        className="grommetux-button grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        id={undefined}
+        onBlur={[Function onBlur]}
         onClick={[Function bound _onClickTab]}
-        onFocus={[Function bound _startKeyboardListener]}
-        role="tab">
+        onFocus={[Function onFocus]}
+        onMouseDown={[Function onMouseDown]}
+        onMouseUp={[Function onMouseUp]}
+        role="tab"
+        type="button">
         <label
           className="grommetux-tab__label"
           htmlFor="tab-1">
           Tab Title 2
         </label>
-      </a>
+      </button>
     </li>
   </ul>
   <div
@@ -58,38 +72,52 @@ exports[`Tabs has correct initialIndex=0 rendering 1`] = `
     <li
       className="grommetux-tab grommetux-tab--active"
       id="tab-0">
-      <a
+      <button
         aria-expanded={true}
+        aria-label={undefined}
         aria-selected={true}
-        href="#"
-        onBlur={[Function bound _stopKeybardListener]}
+        className="grommetux-button grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        id={undefined}
+        onBlur={[Function onBlur]}
         onClick={[Function bound _onClickTab]}
-        onFocus={[Function bound _startKeyboardListener]}
-        role="tab">
+        onFocus={[Function onFocus]}
+        onMouseDown={[Function onMouseDown]}
+        onMouseUp={[Function onMouseUp]}
+        role="tab"
+        type="button">
         <label
           className="grommetux-tab__label"
           htmlFor="tab-0">
           Tab Title
         </label>
-      </a>
+      </button>
     </li>
     <li
       className="grommetux-tab"
       id="tab-1">
-      <a
+      <button
         aria-expanded={false}
+        aria-label={undefined}
         aria-selected={false}
-        href="#"
-        onBlur={[Function bound _stopKeybardListener]}
+        className="grommetux-button grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        id={undefined}
+        onBlur={[Function onBlur]}
         onClick={[Function bound _onClickTab]}
-        onFocus={[Function bound _startKeyboardListener]}
-        role="tab">
+        onFocus={[Function onFocus]}
+        onMouseDown={[Function onMouseDown]}
+        onMouseUp={[Function onMouseUp]}
+        role="tab"
+        type="button">
         <label
           className="grommetux-tab__label"
           htmlFor="tab-1">
           Tab Title 2
         </label>
-      </a>
+      </button>
     </li>
   </ul>
   <div
@@ -110,38 +138,52 @@ exports[`Tabs has correct initialIndex=0 rendering 2`] = `
     <li
       className="grommetux-tab"
       id="tab-0">
-      <a
+      <button
         aria-expanded={false}
+        aria-label={undefined}
         aria-selected={false}
-        href="#"
-        onBlur={[Function bound _stopKeybardListener]}
+        className="grommetux-button grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        id={undefined}
+        onBlur={[Function onBlur]}
         onClick={[Function bound _onClickTab]}
-        onFocus={[Function bound _startKeyboardListener]}
-        role="tab">
+        onFocus={[Function onFocus]}
+        onMouseDown={[Function onMouseDown]}
+        onMouseUp={[Function onMouseUp]}
+        role="tab"
+        type="button">
         <label
           className="grommetux-tab__label"
           htmlFor="tab-0">
           Tab Title
         </label>
-      </a>
+      </button>
     </li>
     <li
       className="grommetux-tab grommetux-tab--active"
       id="tab-1">
-      <a
+      <button
         aria-expanded={true}
+        aria-label={undefined}
         aria-selected={true}
-        href="#"
-        onBlur={[Function bound _stopKeybardListener]}
+        className="grommetux-button grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        id={undefined}
+        onBlur={[Function onBlur]}
         onClick={[Function bound _onClickTab]}
-        onFocus={[Function bound _startKeyboardListener]}
-        role="tab">
+        onFocus={[Function onFocus]}
+        onMouseDown={[Function onMouseDown]}
+        onMouseUp={[Function onMouseUp]}
+        role="tab"
+        type="button">
         <label
           className="grommetux-tab__label"
           htmlFor="tab-1">
           Tab Title 2
         </label>
-      </a>
+      </button>
     </li>
   </ul>
   <div

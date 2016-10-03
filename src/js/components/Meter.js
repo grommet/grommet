@@ -1,13 +1,13 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import Props from '../utils/Props';
+import classnames from 'classnames';
 import Responsive from '../utils/Responsive';
+import CSSClassnames from '../utils/CSSClassnames';
 import Bar from './meter/Bar';
 import Spiral from './meter/Spiral';
 import Circle from './meter/Circle';
 import Arc from './meter/Arc';
-import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.METER;
 
@@ -244,40 +244,47 @@ export default class Meter extends Component {
 
   render () {
     const {
-      active, label, size, stacked, tabIndex, type, vertical
+      active, a11yTitle, className, label, size, stacked,
+      tabIndex, type, vertical, ...props
     } = this.props;
-    const { limitMeterSize, series } = this.state;
-    let classes = [CLASS_ROOT];
-    classes.push(`${CLASS_ROOT}--${type}`);
-    if (vertical) {
-      classes.push(`${CLASS_ROOT}--vertical`);
-    }
-    if (stacked) {
-      classes.push(`${CLASS_ROOT}--stacked`);
-    }
+    delete props.activeIndex;
+    delete props.colorIndex;
+    delete props.max;
+    delete props.min;
+    delete props.onActive;
+    delete props.series;
+    delete props.threshold;
+    delete props.thresholds;
+    delete props.value;
+    delete props.responsive;
+    const {
+      activeIndex, limitMeterSize, max, min, series, thresholds, total
+    } = this.state;
+
+    let responsiveSize;
     if (size) {
-      let responsiveSize = size;
+      responsiveSize = size;
       // shrink Meter to medium size if large and up
       if (limitMeterSize && (size === 'large' || size === 'xlarge')) {
         responsiveSize = 'medium';
       }
-      classes.push(`${CLASS_ROOT}--${responsiveSize}`);
-    }
-    if (series.length === 0) {
-      classes.push(`${CLASS_ROOT}--loading`);
-    } else if (series.length === 1) {
-      classes.push(`${CLASS_ROOT}--single`);
-    } else {
-      classes.push(`${CLASS_ROOT}--count-${series.length}`);
-    }
-    if (active) {
-      classes.push(`${CLASS_ROOT}--active`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
     }
 
-    const restProps = Props.omit(this.props, Object.keys(Meter.propTypes));
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--${type}`]: type,
+        [`${CLASS_ROOT}--stacked`]: stacked,
+        [`${CLASS_ROOT}--vertical`]: vertical,
+        [`${CLASS_ROOT}--loading`]: series.length === 0,
+        [`${CLASS_ROOT}--single`]: series.length === 1,
+        [`${CLASS_ROOT}--count-${series.length}`]: series.length > 1,
+        [`${CLASS_ROOT}--${responsiveSize}`]: responsiveSize,
+        [`${CLASS_ROOT}--active`]: active
+      },
+      className
+    );
+
 
     let labelElement;
     if (label) {
@@ -287,26 +294,26 @@ export default class Meter extends Component {
     let GraphicComponent = TYPE_COMPONENT[this.props.type];
     let graphic = (
       <GraphicComponent
-        a11yTitle={this.props.a11yTitle}
-        activeIndex={this.state.activeIndex}
-        min={this.state.min} max={this.state.max}
+        a11yTitle={a11yTitle}
+        activeIndex={activeIndex}
+        min={min} max={max}
         onActivate={this._onActivate}
         series={series}
         stacked={stacked}
         tabIndex={tabIndex}
-        thresholds={this.state.thresholds}
-        total={this.state.total}
+        thresholds={thresholds}
+        total={total}
         vertical={vertical} />
     );
 
     const graphicContainer = (
-      <div {...restProps} className={`${CLASS_ROOT}__graphic-container`}>
+      <div {...props} className={`${CLASS_ROOT}__graphic-container`}>
         {graphic}
       </div>
     );
 
     return (
-      <div className={classes.join(' ')}>
+      <div className={classes}>
         <div ref={ref => this.activeGraphicRef = ref}
           className={`${CLASS_ROOT}__value-container`}>
           {graphicContainer}

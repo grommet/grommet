@@ -28,7 +28,7 @@ $attribute-value-width: round($inuit-base-spacing-unit * 16);
 .#{$grommet-namespace}object__attribute-name {
   display: block;
   color: $secondary-text-color;
-  @include inuit-font-size($label-font-size);
+  @include inuit-font-size($content-small-font-size);
 }
 
 .#{$grommet-namespace}object__attribute-value {

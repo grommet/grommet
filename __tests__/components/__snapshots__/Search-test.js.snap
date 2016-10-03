@@ -2,29 +2,27 @@ exports[`Search has correct default options 1`] = `
 <div>
   <button
     aria-label={undefined}
-    className="grommetux-button grommetux-search grommetux-search--controlled grommetux-search--icon-align-end grommetux-button--plain grommetux-button--icon"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-search grommetux-search--controlled grommetux-search--icon-align-end"
     disabled={false}
     href={undefined}
     id={undefined}
+    onBlur={[Function bound _onBlurControl]}
     onClick={[Function bound _onAddDrop]}
+    onFocus={[Function bound _onFocusControl]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
+    tabIndex="0"
     type="button">
     <span
       className="grommetux-button__icon">
       <svg
-        aria-labelledby="search-title"
+        aria-label="search"
         className="grommetux-control-icon grommetux-control-icon-search grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
         viewBox="0 0 24 24"
         width="24px">
-        <title
-          id="search-title">
-          <span
-            id="search">
-            search
-          </span>
-        </title>
         <g>
           <rect
             fill="none"

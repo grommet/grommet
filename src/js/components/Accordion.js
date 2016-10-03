@@ -28,7 +28,7 @@ export default class Accordion extends Component {
 
   componentWillReceiveProps (newProps) {
     if (newProps.active !== this.props.active) {
-      this.setState({active: newProps.active || []});
+      this.setState({ active: newProps.active || [] });
     }
   }
 
@@ -77,7 +77,7 @@ export default class Accordion extends Component {
 
     const restProps = Props.omit(this.props, Object.keys(Accordion.propTypes));
     return (
-      <List role="tablist" className={classes} {...restProps}>
+      <List role='tablist' className={classes} {...restProps}>
         {accordionChildren}
       </List>
     );

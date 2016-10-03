@@ -42,10 +42,11 @@ $fonts-path: "https://fonts.gstatic.com/s/sourcesanspro/v9" !default;
     url("#{$fonts-path}/M2Jd71oPJhLKp0zdtTvoMzpKUtbt71woJ25xl7KOGD0.ttf") format('truetype');
 }
 
-$label-font-size: 14px !default;
 $content-font-size: 16px !default;
+$content-small-font-size: 14px !default;
+$content-large-font-size: 24px !default;
+$content-xlarge-font-size: 32px !default;
 $control-font-size: 19px !default;
-$control-large-font-size: 24px !default;
 $menu-font-size: 19px !default;
 $small-menu-font-size: 16px !default;
 $large-menu-font-size: 24px !default;
@@ -81,7 +82,9 @@ $h5-font-size: 16px !default;
 $h5-line-height: 1.375 !default;
 $h6-font-size: 16px !default;
 $h6-line-height: 1.375 !default;
-$large-input-font-size: 54px !default;
+$input-small-font-size: $content-font-size !default;
+$input-medium-font-size: 24px !default;
+$input-large-font-size: 54px !default;
 $value-font-size: 36px !default;
 $value-xsmall-font-size: 20px !default;
 $value-small-font-size: 24px !default;

@@ -30,7 +30,7 @@ var _onKeyboardAcceleratorKeyPress = (e) => {
     if (_keyboardAccelerators[listener]) {
       var handlers = _keyboardAccelerators[listener].handlers;
       if (handlers.hasOwnProperty(key)) {
-        if (handlers[key](e)) {
+        if (handlers[key] && handlers[key](e)) {
           return true;
         }
       }
