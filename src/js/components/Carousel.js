@@ -12,6 +12,7 @@ import DOM from '../utils/DOM';
 import CSSClassnames from '../utils/CSSClassnames';
 import Intl from '../utils/Intl';
 import { announce } from '../utils/Announcer';
+import Props from '../utils/Props';
 
 const CLASS_ROOT = CSSClassnames.CAROUSEL;
 
@@ -246,14 +247,15 @@ export default class Carousel extends Component {
   }
 
   render () {
-    const { a11yTitle, children, className } = this.props;
+    const { a11yTitle, children, className, ...props } = this.props;
+    const restProps = Props.omit({...props}, Object.keys(Carousel.propTypes));
     const { activeIndex, hideControls, width } = this.state;
     const { intl } = this.context;
     const classes = classnames(
-      CLASS_ROOT,
-      className, {
+      CLASS_ROOT, {
         [`${CLASS_ROOT}--hide-controls`]: hideControls
-      }
+      },
+      className
     );
 
     const trackWidth = width * children.length;
@@ -300,8 +302,8 @@ export default class Carousel extends Component {
 
     const carouselMessage = a11yTitle || Intl.getMessage(intl, 'Carousel');
     return (
-      <div ref={ref => this.carouselRef = ref} className={classes}
-        role='group' aria-label={carouselMessage}
+      <div ref={ref => this.carouselRef = ref} {...restProps} 
+        className={classes} role='group' aria-label={carouselMessage}
         onFocus={this._stopAutoplay} onBlur={this._startAutoplay}
         onMouseOver={this._stopAutoplay} onMouseOut={this._startAutoplay}>
         <div className={`${CLASS_ROOT}__track`}

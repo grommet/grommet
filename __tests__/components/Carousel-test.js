@@ -20,4 +20,25 @@ describe('Carousel', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('renders class name properties', () => {
+    const component = renderer.create(
+      <Carousel className="test">
+        <img src="/img/carousel-1.png" />
+        <img src="/img/carousel-2.png" />
+      </Carousel>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders microdata properties', () => {
+    const component = renderer.create(
+      <Carousel itemScope={true} itemType="http://schema.org/Article"
+        itemProp="test">
+        <img src="/img/carousel-1.png" />
+        <img src="/img/carousel-2.png" />
+      </Carousel>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
