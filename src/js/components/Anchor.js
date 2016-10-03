@@ -11,22 +11,27 @@ const CLASS_ROOT = CSSClassnames.ANCHOR;
 export default class Anchor extends Component {
 
   render () {
-    let icon;
-    if (this.props.icon) {
-      icon = this.props.icon;
-    } else if (this.props.primary) {
-      icon = (
+    const {
+      animateIcon, children, className, disabled, icon, id, label, primary,
+      reverse, tag, ...props
+    } = this.props;
+
+    let anchorIcon;
+    if (icon) {
+      anchorIcon = icon;
+    } else if (primary) {
+      anchorIcon = (
         <LinkNextIcon
-          a11yTitle={this.props.id ? `${this.props.id}-icon` : 'link next'} />
+          a11yTitle={id ? `${id}-icon` : 'link next'} />
       );
     }
 
-    if (icon && !this.props.primary && !this.props.label) {
-      icon = <span className={`${CLASS_ROOT}__icon`}>{icon}</span>;
+    if (anchorIcon && !primary && !label) {
+      anchorIcon = <span className={`${CLASS_ROOT}__icon`}>{anchorIcon}</span>;
     }
 
-    let hasIcon = icon !== undefined;
-    let children = Children.map(this.props.children, child => {
+    let hasIcon = anchorIcon !== undefined;
+    let anchorChildren = Children.map(children, child => {
       if (child && child.type && child.type.icon) {
         hasIcon = true;
         child = <span className={`${CLASS_ROOT}__icon`}>{child}</span>;
@@ -36,32 +41,27 @@ export default class Anchor extends Component {
 
     let classes = classnames(
       CLASS_ROOT,
-      this.props.className,
       {
-        [`${CLASS_ROOT}--animate-icon`]: hasIcon &&
-          this.props.animateIcon !== false,
-        [`${CLASS_ROOT}--disabled`]: this.props.disabled,
-        [`${CLASS_ROOT}--icon`]: icon || hasIcon,
-        [`${CLASS_ROOT}--icon-label`]: hasIcon && this.props.label,
-        [`${CLASS_ROOT}--primary`]: this.props.primary,
-        [`${CLASS_ROOT}--reverse`]: this.props.reverse
-      }
+        [`${CLASS_ROOT}--animate-icon`]: hasIcon && animateIcon !== false,
+        [`${CLASS_ROOT}--disabled`]: disabled,
+        [`${CLASS_ROOT}--icon`]: anchorIcon || hasIcon,
+        [`${CLASS_ROOT}--icon-label`]: hasIcon && label,
+        [`${CLASS_ROOT}--primary`]: primary,
+        [`${CLASS_ROOT}--reverse`]: reverse
+      },
+      className
     );
 
-    if (!children) {
-      children = this.props.label;
+    if (!anchorChildren) {
+      anchorChildren = label;
     }
 
-    const first = this.props.reverse ? children : icon;
-    const second = this.props.reverse ? icon : children;
+    const first = reverse ? anchorChildren : anchorIcon;
+    const second = reverse ? anchorIcon : anchorChildren;
 
-    const Component = this.props.tag;
+    const Component = tag;
     return (
-      <Component id={this.props.id} className={classes}
-        href={this.props.href}
-        target={this.props.target}
-        onClick={this.props.onClick}
-        aria-label={this.props.a11yTitle}>
+      <Component {...props} id={id} className={classes}>
         {first}
         {second}
       </Component>
