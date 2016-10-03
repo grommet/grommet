@@ -161,10 +161,8 @@ class MenuDrop extends Component {
     const {
       dropAlign, size, children, control, colorIndex, onClick, ...props
     } = this.props;
-    delete props.history;
-    delete props.intl;
-    delete props.router;
-    delete props.store;
+    const restProps = Props.omit(props,
+      Object.keys(MenuDrop.childContextTypes));
 
     // Put nested Menus inline
     const menuDropChildren = React.Children.map(children, child => {
@@ -179,7 +177,7 @@ class MenuDrop extends Component {
 
     let contents = [
       React.cloneElement(control, {key: 'control', fill: true}),
-      <Box {...props} key="nav" ref={ref => this.navContainerRef = ref}
+      <Box {...restProps} key="nav" ref={ref => this.navContainerRef = ref}
         role="menu" tag="nav" className={`${CLASS_ROOT}__contents`}
         primary={false}>
         {menuDropChildren}
