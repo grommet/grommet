@@ -143,7 +143,7 @@ var DateTimeDrop = function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
+      _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
     }
   }, {
     key: '_buildDateRows',

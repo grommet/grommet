@@ -85,7 +85,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var CLASS_ROOT = _CSSClassnames2.default.DATE_TIME;
 var INPUT = _CSSClassnames2.default.INPUT;
 var FORM_FIELD = _CSSClassnames2.default.FORM_FIELD;
-var DATE_TIME_DROP = _CSSClassnames2.default.DATE_TIME_DROP;
 var FORMATS = {
   M: 'months',
   D: 'days',
@@ -246,8 +245,7 @@ var DateTime = function (_Component) {
   }, {
     key: '_onClose',
     value: function _onClose(event) {
-      var drop = document.getElementById(DATE_TIME_DROP);
-      if (!(0, _DOM.isDescendant)(this.containerRef, event.target) && !(0, _DOM.isDescendant)(drop, event.target)) {
+      if (!(0, _DOM.isDescendant)(this.containerRef, event.target)) {
         this.setState({ dropActive: false, cursor: -1 });
       }
     }
