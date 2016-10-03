@@ -259,13 +259,6 @@ export default class Menu extends Component {
   }
 
   componentDidMount () {
-    if (this.controlRef) {
-      let controlElement = this.controlRef.firstChild;
-      this.setState({
-        controlHeight: controlElement.clientHeight
-      });
-    }
-
     if (this.state.responsive) {
       this._responsive = Responsive.start(this._onResponsive);
     }
@@ -418,7 +411,6 @@ export default class Menu extends Component {
     let control = (
       <Button plain={true} className={`${CLASS_ROOT}__control`}
         a11yTitle={menuTitle}
-        style={{lineHeight: this.state.controlHeight + 'px'}}
         onClick={this._onClose}>
         {this._renderControlContents()}
       </Button>
@@ -487,7 +479,6 @@ export default class Menu extends Component {
           <Button plain={true} id={this.props.id}
             className={classes}
             tabIndex="0"
-            style={{lineHeight: this.state.controlHeight + 'px'}}
             onClick={this._onOpen}
             a11yTitle={menuTitle}
             onFocus={this._onFocusControl}
