@@ -78,6 +78,9 @@ var Tabs = function (_Component) {
     key: '_activateTab',
     value: function _activateTab(index) {
       this.setState({ activeIndex: index });
+      if (this.props.onActive) {
+        this.props.onActive(index);
+      }
     }
   }, {
     key: 'render',
@@ -147,7 +150,8 @@ exports.default = Tabs;
 Tabs.propTypes = {
   activeIndex: _react.PropTypes.number,
   justify: _react.PropTypes.oneOf(['start', 'center', 'end']),
-  responsive: _react.PropTypes.bool
+  responsive: _react.PropTypes.bool,
+  onActive: _react.PropTypes.func
 };
 
 Tabs.contextTypes = {
