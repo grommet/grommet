@@ -1,7 +1,5 @@
 exports[`NumberInput has correct default options 1`] = `
 <span
-  aria-describedby={undefined}
-  aria-labelledby="number-label"
   className="grommetux-number-input">
   <input
     className="grommetux-input grommetux-number-input__input"
