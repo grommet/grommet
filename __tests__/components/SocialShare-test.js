@@ -57,4 +57,12 @@ describe('SocialShare', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('has correct className rendering', () => {
+    const component = renderer.create(
+      <SocialShare type="linkedin" link="http://grommet.io"
+         className="testing" />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
