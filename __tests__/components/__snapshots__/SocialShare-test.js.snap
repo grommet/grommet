@@ -1,10 +1,7 @@
 exports[`SocialShare has correct className rendering 1`] = `
 <a
-  aria-label={undefined}
-  className="grommetux-anchor testing grommetux-anchor--animate-icon grommetux-anchor--icon"
+  className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon testing"
   href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fgrommet.io&title=&summary="
-  id={undefined}
-  onClick={undefined}
   target="_blank">
   <span
     className="grommetux-anchor__icon">
@@ -31,7 +28,6 @@ exports[`SocialShare has correct email rendering 1`] = `
 <a
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href="mailto:?subject=&body=%0D%0Ahttp%3A%2F%2Fgrommet.io"
-  id={undefined}
   target="_self">
   <span
     className="grommetux-anchor__icon">
@@ -58,7 +54,6 @@ exports[`SocialShare has correct facebook rendering 1`] = `
 <a
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fgrommet.io"
-  id={undefined}
   target="_blank">
   <span
     className="grommetux-anchor__icon">
@@ -85,7 +80,6 @@ exports[`SocialShare has correct google rendering 1`] = `
 <a
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fgrommet.io&title=&summary="
-  id={undefined}
   target="_blank">
   <span
     className="grommetux-anchor__icon">
@@ -112,7 +106,6 @@ exports[`SocialShare has correct linkedin rendering 1`] = `
 <a
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fgrommet.io&title=&summary="
-  id={undefined}
   target="_blank">
   <span
     className="grommetux-anchor__icon">
@@ -139,7 +132,6 @@ exports[`SocialShare has correct text rendering 1`] = `
 <a
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fgrommet.io&title=&summary=testing"
-  id={undefined}
   target="_blank">
   <span
     className="grommetux-anchor__icon">
@@ -166,7 +158,6 @@ exports[`SocialShare has correct title rendering 1`] = `
 <a
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fgrommet.io&title=testing&summary="
-  id={undefined}
   target="_blank">
   <span
     className="grommetux-anchor__icon">
@@ -193,7 +184,6 @@ exports[`SocialShare has correct twitter rendering 1`] = `
 <a
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fgrommet.io&text="
-  id={undefined}
   target="_blank">
   <span
     className="grommetux-anchor__icon">

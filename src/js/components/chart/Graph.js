@@ -124,30 +124,22 @@ export default class Graph extends Component {
     }
     classes.push(`${COLOR_INDEX}-${colorIndex || 'graph-1'}`);
 
-    let scale, step;
-    if (max - min === 0) {
-      min = 0;
-    }
+    let scale = 1;
+    let step;
     if (vertical) {
       if (values.length <= 1) {
-        scale = 1;
         step = height - (2 * pad);
       } else {
-        if (max - min === 0) {
-          scale = 1;
-        } else {
+        if (max - min > 0) {
           scale = (width - (2 * pad)) / (max - min);
         }
         step = (height - (2 * pad)) / (values.length - 1);
       }
     } else {
       if (values.length <= 1) {
-        scale = 1;
         step = width - (2 * pad);
       } else {
-        if (max - min === 0) {
-          scale = 1;
-        } else {
+        if (max - min > 0) {
           scale = (height - (2 * pad)) / (max - min);
         }
         step = (width - (2 * pad)) / (values.length - 1);

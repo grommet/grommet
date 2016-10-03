@@ -61,7 +61,7 @@ export default class Anchor extends Component {
 
     const Component = tag;
     return (
-      <Component {...props} id={id} className={classes}>
+      <Component {...props} className={classes}>
         {first}
         {second}
       </Component>
