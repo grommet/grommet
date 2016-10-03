@@ -61,20 +61,13 @@ exports[`Carousel has correct default options 1`] = `
     <span
       className="grommetux-button__icon">
       <svg
-        aria-labelledby="previous-title"
+        aria-label="previous"
         className="grommetux-control-icon grommetux-control-icon-previous grommetux-control-icon--large grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
         viewBox="0 0 24 25.2071"
         width="24px">
-        <title
-          id="previous-title">
-          <span
-            id="previous">
-            previous
-          </span>
-        </title>
         <g>
           <rect
             fill="none"
@@ -106,20 +99,13 @@ exports[`Carousel has correct default options 1`] = `
     <span
       className="grommetux-button__icon">
       <svg
-        aria-labelledby="next-title"
+        aria-label="next"
         className="grommetux-control-icon grommetux-control-icon-next grommetux-control-icon--large grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
         viewBox="0 0 24 24"
         width="24px">
-        <title
-          id="next-title">
-          <span
-            id="next">
-            next
-          </span>
-        </title>
         <g>
           <rect
             fill="none"
@@ -255,20 +241,13 @@ exports[`Carousel renders class name properties 1`] = `
     <span
       className="grommetux-button__icon">
       <svg
-        aria-labelledby="previous-title"
+        aria-label="previous"
         className="grommetux-control-icon grommetux-control-icon-previous grommetux-control-icon--large grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
         viewBox="0 0 24 25.2071"
         width="24px">
-        <title
-          id="previous-title">
-          <span
-            id="previous">
-            previous
-          </span>
-        </title>
         <g>
           <rect
             fill="none"
@@ -300,20 +279,13 @@ exports[`Carousel renders class name properties 1`] = `
     <span
       className="grommetux-button__icon">
       <svg
-        aria-labelledby="next-title"
+        aria-label="next"
         className="grommetux-control-icon grommetux-control-icon-next grommetux-control-icon--large grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
         viewBox="0 0 24 24"
         width="24px">
-        <title
-          id="next-title">
-          <span
-            id="next">
-            next
-          </span>
-        </title>
         <g>
           <rect
             fill="none"
@@ -452,20 +424,13 @@ exports[`Carousel renders microdata properties 1`] = `
     <span
       className="grommetux-button__icon">
       <svg
-        aria-labelledby="previous-title"
+        aria-label="previous"
         className="grommetux-control-icon grommetux-control-icon-previous grommetux-control-icon--large grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
         viewBox="0 0 24 25.2071"
         width="24px">
-        <title
-          id="previous-title">
-          <span
-            id="previous">
-            previous
-          </span>
-        </title>
         <g>
           <rect
             fill="none"
@@ -497,20 +462,13 @@ exports[`Carousel renders microdata properties 1`] = `
     <span
       className="grommetux-button__icon">
       <svg
-        aria-labelledby="next-title"
+        aria-label="next"
         className="grommetux-control-icon grommetux-control-icon-next grommetux-control-icon--large grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
         viewBox="0 0 24 24"
         width="24px">
-        <title
-          id="next-title">
-          <span
-            id="next">
-            next
-          </span>
-        </title>
         <g>
           <rect
             fill="none"
