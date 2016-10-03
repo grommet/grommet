@@ -8,10 +8,9 @@ const CLASS_ROOT = CSSClassnames.FORM;
 
 export default class Form extends Component {
   render () {
-    let { className, compact, fill, pad } = this.props;
-    let classes = classnames(
+    const { className, compact, fill, pad, ...props } = this.props;
+    const classes = classnames(
       CLASS_ROOT,
-      className,
       {
         [`${CLASS_ROOT}--compact`]: compact,
         [`${CLASS_ROOT}--fill`]: fill,
@@ -20,11 +19,12 @@ export default class Form extends Component {
           typeof pad === 'object' && 'horizontal' in pad,
         [`${CLASS_ROOT}--pad-vertical-${pad.vertical}`]:
           typeof pad === 'object' && 'vertical' in pad
-      }
+      },
+      className
     );
 
     return (
-      <form className={classes} onSubmit={this.props.onSubmit}>
+      <form className={classes} {...props} onSubmit={this.props.onSubmit}>
         {this.props.children}
       </form>
     );
