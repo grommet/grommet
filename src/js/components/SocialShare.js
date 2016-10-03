@@ -10,7 +10,9 @@ import SocialEmailIcon from './icons/base/SocialEmail';
 
 export default class SocialShare extends Component {
   render () {
-    const { colorIndex, type, link, text, title, a11yTitle } = this.props;
+    const {
+      colorIndex, type, link, text, title, a11yTitle, ...props
+    } = this.props;
 
     let socialIcon = undefined;
     let href = '';
@@ -49,7 +51,7 @@ export default class SocialShare extends Component {
     }
 
     return (
-      <Anchor href={href} icon={socialIcon} target={target} />
+      <Anchor {...props} href={href} icon={socialIcon} target={target} />
     );
   }
 };
@@ -65,6 +67,6 @@ SocialShare.propTypes = {
 };
 
 SocialShare.defaultProps = {
-  title: '',
-  text: ''
+  text: '',
+  title: ''
 };
