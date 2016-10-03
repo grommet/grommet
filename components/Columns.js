@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
@@ -46,13 +50,19 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Props = require('../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
+
 var _Responsive = require('../utils/Responsive');
 
 var _Responsive2 = _interopRequireDefault(_Responsive);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.COLUMNS; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.COLUMNS;
 
 var Columns = function (_Component) {
   (0, _inherits3.default)(Columns, _Component);
@@ -257,11 +267,13 @@ var Columns = function (_Component) {
           _this4 = this;
 
       var _props = this.props;
+      var className = _props.className;
       var justify = _props.justify;
       var responsive = _props.responsive;
       var size = _props.size;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--justify-' + justify, justify), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--justify-' + justify, justify), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames), className);
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Columns.propTypes));
 
       var groups = this._renderColumns();
       var columns = groups.map(function (group, index) {
@@ -274,9 +286,10 @@ var Columns = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: function ref(_ref) {
+        (0, _extends3.default)({ ref: function ref(_ref) {
             return _this4.containerRef = _ref;
-          }, className: classes },
+          } }, restProps, {
+          className: classes }),
         columns
       );
     }

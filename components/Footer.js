@@ -8,13 +8,13 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -129,16 +129,26 @@ var Footer = function (_Component) {
           _classnames2,
           _this2 = this;
 
-      var classes = (0, _classnames5.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size && typeof this.props.size === 'string'), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--float', this.props.float), _classnames));
+      var _props = this.props;
+      var children = _props.children;
+      var className = _props.className;
+      var colorIndex = _props.colorIndex;
+      var fixed = _props.fixed;
+      var float = _props.float;
+      var primary = _props.primary;
+      var size = _props.size;
 
-      var containerClasses = (0, _classnames5.default)(CLASS_ROOT + '__container', (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--float', this.props.float), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--fixed', this.props.fixed), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--fill',
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Footer.propTypes));
+      var classes = (0, _classnames5.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size && typeof size === 'string'), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--float', float), _classnames), className);
+
+      var containerClasses = (0, _classnames5.default)(CLASS_ROOT + '__container', (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--float', float), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--fixed', fixed), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--fill',
       // add default color index if none is provided
-      this.props.fixed && !this.props.colorIndex), _classnames2));
+      fixed && !colorIndex), _classnames2));
 
-      var wrapperClasses = (0, _classnames5.default)(CLASS_ROOT + '__wrapper', (0, _defineProperty3.default)({}, CLASS_ROOT + '__wrapper--' + this.props.size, this.props.size && typeof this.props.size === 'string'));
+      var wrapperClasses = (0, _classnames5.default)(CLASS_ROOT + '__wrapper', (0, _defineProperty3.default)({}, CLASS_ROOT + '__wrapper--' + size, size && typeof size === 'string'));
 
       var footerSkipLink = void 0;
-      if (this.props.primary) {
+      if (primary) {
         footerSkipLink = _react2.default.createElement(_SkipLinkAnchor2.default, { label: 'Footer' });
       }
 
@@ -146,10 +156,10 @@ var Footer = function (_Component) {
       // don't transfer size to Box since it means something different
       delete boxProps.size;
 
-      if (this.props.fixed) {
+      if (fixed) {
         return _react2.default.createElement(
           'div',
-          { className: containerClasses },
+          (0, _extends3.default)({ className: containerClasses }, restProps),
           _react2.default.createElement('div', { ref: function ref(_ref) {
               return _this2.mirrorRef = _ref;
             },
@@ -165,18 +175,18 @@ var Footer = function (_Component) {
               }, boxProps, { tag: 'footer', className: classes,
                 primary: false }),
               footerSkipLink,
-              this.props.children
+              children
             )
           )
         );
       } else {
         return _react2.default.createElement(
           _Box2.default,
-          (0, _extends3.default)({}, boxProps, { tag: 'footer', className: classes,
+          (0, _extends3.default)({}, restProps, boxProps, { tag: 'footer', className: classes,
             containerClassName: containerClasses,
             primary: false }),
           footerSkipLink,
-          this.props.children
+          children
         );
       }
     }
@@ -191,8 +201,8 @@ exports.default = Footer;
 Footer.propTypes = (0, _extends3.default)({
   fixed: _react.PropTypes.bool,
   float: _react.PropTypes.bool,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
-  primary: _react.PropTypes.bool
+  primary: _react.PropTypes.bool,
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
 }, _Box2.default.propTypes);
 
 Footer.defaultProps = {
