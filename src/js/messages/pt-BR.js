@@ -40,7 +40,7 @@ export default {
   Distribution: 'Distribuição',
   down: 'baixo',
   Email: 'Email',
-  'Enter Select': 'Pressione enter ou espaço para selecionar',
+  'Enter Select': 'Pressione enter para selecionar',
   Error: 'Erro',
   Filter: 'Filtro',
   filter: 'filtro',
@@ -89,6 +89,11 @@ export default {
   Running: 'Executando',
   Search: 'Buscar',
   search: 'buscar',
+  'Search Suggestions': `{count, plural,
+      =0 {Não existe sugestão}
+      one {Existe # sugestão}
+      other {Existem # sugestões}
+  }`,
   second: 'segundo',
   Selected: 'Selecionada(o)',
   'Skip to': 'Saltar para',

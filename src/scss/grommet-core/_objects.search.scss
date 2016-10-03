@@ -51,6 +51,7 @@
   .#{$grommet-namespace}search__suggestion {
     padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
     cursor: pointer;
+    outline: none;
 
     // limit width of suggestions so that search icon + input do not wrap
     // for long suggestions

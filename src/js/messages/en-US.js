@@ -40,7 +40,7 @@ export default {
   Disabled: 'Disabled',
   Distribution: 'Distribution',
   Email: 'Email',
-  'Enter Select': 'Press enter or space to select it',
+  'Enter Select': 'Press enter to select it',
   Error: 'Error',
   Filter: 'Filter',
   Footer: 'Footer',
@@ -83,6 +83,11 @@ export default {
   Resource: 'Resource',
   Running: 'Running',
   Search: 'Search',
+  'Search Suggestions': `There {count, plural,
+      =0 {is no match}
+      one {is # match}
+      other {are # matches}
+  }`,
   second: 'second',
   Selected: 'Selected',
   'Skip to': 'Skip to',

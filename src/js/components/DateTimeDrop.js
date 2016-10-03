@@ -62,7 +62,7 @@ export default class DateTimeDrop extends Component {
   }
 
   componentWillUnmount () {
-    KeyboardAccelerators.startListeningToKeyboard(this, this._keyboardHandlers);
+    KeyboardAccelerators.stopListeningToKeyboard(this, this._keyboardHandlers);
   }
 
   _buildDateRows (state) {

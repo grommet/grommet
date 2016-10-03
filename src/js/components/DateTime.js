@@ -16,7 +16,6 @@ import Intl from '../utils/Intl';
 const CLASS_ROOT = CSSClassnames.DATE_TIME;
 const INPUT = CSSClassnames.INPUT;
 const FORM_FIELD = CSSClassnames.FORM_FIELD;
-const DATE_TIME_DROP = CSSClassnames.DATE_TIME_DROP;
 const FORMATS = {
   M: 'months',
   D: 'days',
@@ -150,9 +149,7 @@ export default class DateTime extends Component {
   }
 
   _onClose (event) {
-    const drop = document.getElementById(DATE_TIME_DROP);
-    if (! isDescendant(this.containerRef, event.target) &&
-      ! isDescendant(drop, event.target)) {
+    if (! isDescendant(this.containerRef, event.target)) {
       this.setState({ dropActive: false, cursor: -1 });
     }
   }
