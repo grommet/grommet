@@ -16,6 +16,10 @@ var _keys = require('babel-runtime/core-js/object/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
 
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -254,20 +258,16 @@ var MenuDrop = function (_Component) {
       var _props = this.props;
       var dropAlign = _props.dropAlign;
       var size = _props.size;
+      var children = _props.children;
       var control = _props.control;
       var colorIndex = _props.colorIndex;
       var onClick = _props.onClick;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['dropAlign', 'size', 'children', 'control', 'colorIndex', 'onClick']);
 
-      var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
-      // manage colorIndex at the outer menuDrop element
-      delete boxProps.colorIndex;
-
-      delete boxProps.onClick;
-
-      delete boxProps.size;
+      var restProps = _Props2.default.omit(props, (0, _keys2.default)(MenuDrop.childContextTypes));
 
       // Put nested Menus inline
-      var children = _react2.default.Children.map(this.props.children, function (child) {
+      var menuDropChildren = _react2.default.Children.map(children, function (child) {
         var result = child;
         if (child && isFunction(child.type) && child.type.prototype._renderMenuDrop) {
           result = _react2.default.cloneElement(child, { inline: 'explode', direction: 'column' });
@@ -277,12 +277,12 @@ var MenuDrop = function (_Component) {
 
       var contents = [_react2.default.cloneElement(control, { key: 'control', fill: true }), _react2.default.createElement(
         _Box2.default,
-        (0, _extends3.default)({}, boxProps, { key: 'nav', ref: function ref(_ref) {
+        (0, _extends3.default)({}, restProps, { key: 'nav', ref: function ref(_ref) {
             return _this2.navContainerRef = _ref;
           },
           role: 'menu', tag: 'nav', className: CLASS_ROOT + '__contents',
           primary: false }),
-        children
+        menuDropChildren
       )];
 
       if (dropAlign.bottom) {
@@ -307,18 +307,18 @@ var MenuDrop = function (_Component) {
 MenuDrop.displayName = 'MenuDrop';
 
 
-MenuDrop.propTypes = (0, _extends3.default)({}, _Box2.default.propTypes, {
+MenuDrop.propTypes = (0, _extends3.default)({
   control: _react.PropTypes.node,
   dropAlign: _Drop2.default.alignPropType,
   onClick: _react.PropTypes.func.isRequired,
   router: _react.PropTypes.any,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
   store: _react.PropTypes.any
-});
+}, _Box2.default.propTypes);
 
 MenuDrop.childContextTypes = {
-  intl: _react.PropTypes.any,
   history: _react.PropTypes.any,
+  intl: _react.PropTypes.any,
   router: _react.PropTypes.any,
   store: _react.PropTypes.any
 };
@@ -533,31 +533,47 @@ var Menu = function (_Component2) {
       var _classnames2,
           _this4 = this;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, this.props.className, (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + this.props.direction, this.props.direction), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + this.props.size, this.props.size), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--primary', this.props.primary), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--inline', this.state.inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--explode', 'explode' === this.state.inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--controlled', !this.state.inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__control', !this.state.inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--labelled', !this.state.inline && this.props.label), _classnames2));
+      var _props2 = this.props;
+      var a11yTitle = _props2.a11yTitle;
+      var children = _props2.children;
+      var className = _props2.className;
+      var direction = _props2.direction;
+      var label = _props2.label;
+      var primary = _props2.primary;
+      var size = _props2.size;
+      var pad = _props2.pad;
+      var props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'children', 'className', 'direction', 'label', 'primary', 'size', 'pad']);
 
-      if (this.state.inline) {
-        var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
-        var label = void 0;
-        if ('explode' === this.state.inline) {
-          label = _react2.default.createElement(
+      delete props.closeOnClick;
+      delete props.dropAlign;
+      delete props.icon;
+      delete props.inline;
+      var inline = this.state.inline;
+
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + direction, direction), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--primary', primary), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--inline', inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--controlled', !inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__control', !inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--labelled', !inline && label), _classnames2), className);
+
+      if (inline) {
+        var menuLabel = void 0;
+        if ('explode' === inline) {
+          menuLabel = _react2.default.createElement(
             'div',
             { className: CLASS_ROOT + '__label' },
-            this.props.label
+            label
           );
         }
 
         return _react2.default.createElement(
           _Box2.default,
-          (0, _extends3.default)({}, boxProps, { tag: 'nav', id: this.props.id,
+          (0, _extends3.default)({}, props, { pad: pad, direction: direction, tag: 'nav',
             className: classes, primary: false }),
-          label,
-          this.props.children
+          menuLabel,
+          children
         );
       } else {
         var controlContents = this._renderControlContents();
         var openLabel = _Intl2.default.getMessage(this.context.intl, 'Open');
-        var menuLabel = _Intl2.default.getMessage(this.context.intl, 'Menu');
-        var menuTitle = openLabel + ' ' + (this.props.a11yTitle || this.props.label || '') + ' ' + ('' + menuLabel);
+        var _menuLabel = _Intl2.default.getMessage(this.context.intl, 'Menu');
+        var menuTitle = openLabel + ' ' + (a11yTitle || label || '') + ' ' + ('' + _menuLabel);
 
         return _react2.default.createElement(
           'div',
@@ -566,13 +582,13 @@ var Menu = function (_Component2) {
             } },
           _react2.default.createElement(
             _Button2.default,
-            { plain: true, id: this.props.id,
+            (0, _extends3.default)({}, props, { plain: true,
               className: classes,
               tabIndex: '0',
               onClick: this._onOpen,
               a11yTitle: menuTitle,
               onFocus: this._onFocusControl,
-              onBlur: this._onBlurControl },
+              onBlur: this._onBlurControl }),
             controlContents
           )
         );
@@ -598,8 +614,8 @@ Menu.propTypes = (0, _extends3.default)({
 }, _Box2.default.propTypes);
 
 Menu.contextTypes = {
-  intl: _react.PropTypes.any,
   history: _react.PropTypes.any,
+  intl: _react.PropTypes.any,
   router: _react.PropTypes.any,
   store: _react.PropTypes.any
 };

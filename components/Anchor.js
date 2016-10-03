@@ -126,7 +126,7 @@ var Anchor = function (_Component) {
       var Component = tag;
       return _react2.default.createElement(
         Component,
-        (0, _extends3.default)({}, props, { id: id, className: classes }),
+        (0, _extends3.default)({}, props, { className: classes }),
         first,
         second
       );

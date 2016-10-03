@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -72,6 +80,7 @@ var SocialShare = function (_Component) {
       var text = _props.text;
       var title = _props.title;
       var a11yTitle = _props.a11yTitle;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['colorIndex', 'type', 'link', 'text', 'title', 'a11yTitle']);
 
 
       var socialIcon = undefined;
@@ -106,7 +115,7 @@ var SocialShare = function (_Component) {
         target = '_self';
       }
 
-      return _react2.default.createElement(_Anchor2.default, { href: href, icon: socialIcon, target: target });
+      return _react2.default.createElement(_Anchor2.default, (0, _extends3.default)({}, props, { href: href, icon: socialIcon, target: target }));
     }
   }]);
   return SocialShare;
@@ -126,7 +135,7 @@ SocialShare.propTypes = {
 };
 
 SocialShare.defaultProps = {
-  title: '',
-  text: ''
+  text: '',
+  title: ''
 };
 module.exports = exports['default'];

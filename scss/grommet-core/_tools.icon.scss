@@ -1,0 +1,30 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+@mixin icon-color($icon-color) {
+  fill: $icon-color;
+  stroke: $icon-color;
+}
+
+@mixin icon-hover-grow($icon-hover-color) {
+  fill: $icon-hover-color;
+  stroke: $icon-hover-color;
+  transform: scale(1.1);
+}
+
+@mixin dark-background-context-icon {
+  #{$dark-background-context} & {
+    color: $colored-text-color;
+
+    .#{$grommet-namespace}control-icon {
+      @include icon-color($colored-icon-color);
+    }
+
+    &:hover {
+      color: $active-colored-text-color;
+
+     .#{$grommet-namespace}control-icon {
+        @include icon-color($active-colored-icon-color);
+      }
+    }
+  }
+}
