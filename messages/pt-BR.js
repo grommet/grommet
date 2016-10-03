@@ -77,6 +77,7 @@ exports.default = {
   'Next Month': 'Próximo Mês',
   'Next Slide': 'Próximo Slide',
   'No Relationship': 'Sem Relacionamento',
+  'Notification': 'Notificação',
   OK: 'OK',
   Open: 'Abrir',
   Parent: 'Pai',

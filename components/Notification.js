@@ -90,10 +90,15 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Announcer = require('../utils/Announcer');
+
+var _Announcer2 = _interopRequireDefault(_Announcer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.NOTIFICATION; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.NOTIFICATION;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Notification = function (_Component) {
@@ -101,92 +106,125 @@ var Notification = function (_Component) {
 
   function Notification() {
     (0, _classCallCheck3.default)(this, Notification);
-    return (0, _possibleConstructorReturn3.default)(this, (Notification.__proto__ || (0, _getPrototypeOf2.default)(Notification)).apply(this, arguments));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Notification.__proto__ || (0, _getPrototypeOf2.default)(Notification)).call(this));
+
+    _this._announce = _this._announce.bind(_this);
+    return _this;
   }
 
   (0, _createClass3.default)(Notification, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this._announce();
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      this._announce();
+    }
+  }, {
+    key: '_announce',
+    value: function _announce() {
+      var _props = this.props;
+      var announce = _props.announce;
+      var message = _props.message;
+      var intl = this.context.intl;
+
+      if (announce) {
+        var notificationMessage = _Intl2.default.getMessage(intl, 'Notification');
+        _Announcer2.default.announce(notificationMessage + ': ' + message);
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var _classnames;
+      var _props2 = this.props;
+      var children = _props2.children;
+      var className = _props2.className;
+      var closer = _props2.closer;
+      var context = _props2.context;
+      var percentComplete = _props2.percentComplete;
+      var message = _props2.message;
+      var onClose = _props2.onClose;
+      var timestamp = _props2.timestamp;
+      var size = _props2.size;
+      var state = _props2.state;
+      var status = _props2.status;
+      var intl = this.context.intl;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--status-' + this.props.status.toLowerCase(), BACKGROUND_COLOR_INDEX + '-' + this.props.status.toLowerCase(), this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + this.props.size, this.props.size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', !this.props.onClick), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--status-' + status.toLowerCase(), BACKGROUND_COLOR_INDEX + '-' + status.toLowerCase(), className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--' + size, size));
 
-      var status = void 0;
-      if (this.props.status) {
-        status = _react2.default.createElement(_Status2.default, { className: CLASS_ROOT + '__status',
-          value: this.props.status, size: this.props.size });
+      var statusNode = void 0;
+      if (status) {
+        statusNode = _react2.default.createElement(_Status2.default, { className: CLASS_ROOT + '__status',
+          value: status, size: size });
       }
 
-      var state = void 0;
-      if (this.props.state) {
-        state = _react2.default.createElement(
+      var stateNode = void 0;
+      if (state) {
+        stateNode = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + '__state' },
-          this.props.state
+          state
         );
       }
 
       var progress = void 0;
-      if (this.props.percentComplete || 0 === this.props.percentComplete) {
+      if (percentComplete || 0 === percentComplete) {
         progress = _react2.default.createElement(
           _Box2.default,
           { direction: 'row', align: 'center' },
           _react2.default.createElement(_Meter2.default, {
             series: [{
-              value: this.props.percentComplete,
+              value: percentComplete,
               colorIndex: 'light-1'
             }] }),
-          _react2.default.createElement(_Value2.default, { value: this.props.percentComplete, units: '%', size: 'small' })
+          _react2.default.createElement(_Value2.default, { value: percentComplete, units: '%', size: 'small' })
         );
       }
 
-      var timestamp = void 0;
-      if (this.props.timestamp) {
-        var timestampFormatted = this.props.timestamp.toString();
-        if (this.context.intl) {
-          timestampFormatted = _react2.default.createElement(_reactIntl.FormattedDate, { value: this.props.timestamp,
-            weekday: 'long',
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric',
-            hour: 'numeric',
-            minute: 'numeric',
+      var timestampNode = void 0;
+      if (timestamp) {
+        var timestampFormatted = timestamp.toString();
+        if (intl) {
+          timestampFormatted = _react2.default.createElement(_reactIntl.FormattedDate, { value: timestamp, weekday: 'long', day: 'numeric',
+            month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric',
             second: 'numeric' });
         }
 
-        timestamp = _react2.default.createElement(
+        timestampNode = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + '__timestamp' },
           timestampFormatted
         );
       }
 
-      var closer = void 0;
-      if ((0, _typeof3.default)(this.props.closer) === 'object') {
-        closer = this.props.closer;
-      } else if (this.props.onClose && this.props.closer) {
-        closer = _react2.default.createElement(_Button2.default, { plain: true, onClick: this.props.onClose,
+      var closerNode = void 0;
+      if ((typeof closer === 'undefined' ? 'undefined' : (0, _typeof3.default)(closer)) === 'object') {
+        closerNode = closer;
+      } else if (onClose && closer) {
+        closerNode = _react2.default.createElement(_Button2.default, { plain: true, onClick: onClose,
           icon: _react2.default.createElement(_Close2.default, { className: CLASS_ROOT + '__close' }),
-          a11yTitle: _Intl2.default.getMessage(this.context.intl, 'Close Notification') });
+          a11yTitle: _Intl2.default.getMessage(intl, 'Close Notification') });
       }
 
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
+      boxProps.announce = false;
       var fullBox = boxProps.hasOwnProperty('full') ? boxProps.full : 'horizontal';
 
       return _react2.default.createElement(
         _Animate2.default,
-        {
-          enter: { animation: 'fade', duration: 1000 },
+        { enter: { animation: 'fade', duration: 1000 },
           leave: { animation: 'fade', duration: 1000 } },
         _react2.default.createElement(
           _Box2.default,
-          (0, _extends3.default)({}, boxProps, { className: classes, pad: 'small',
-            direction: 'row', align: 'start', responsive: false,
-            full: fullBox }),
+          (0, _extends3.default)({}, boxProps, { className: classes, pad: 'small', direction: 'row',
+            align: 'start', responsive: false, full: fullBox }),
           _react2.default.createElement(
             _Box2.default,
             { pad: 'small' },
-            status
+            statusNode
           ),
           _react2.default.createElement(
             _Box2.default,
@@ -194,15 +232,15 @@ var Notification = function (_Component) {
             _react2.default.createElement(
               'span',
               { className: CLASS_ROOT + '__message' },
-              this.props.message
+              message
             ),
-            this.props.context,
-            timestamp,
-            state,
+            context,
+            timestampNode,
+            stateNode,
             progress,
-            this.props.children
+            children
           ),
-          closer
+          closerNode
         )
       );
     }
