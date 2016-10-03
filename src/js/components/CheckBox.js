@@ -2,27 +2,25 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-
 import CSSClassnames from '../utils/CSSClassnames';
-import Props from '../utils/Props';
 
 const CLASS_ROOT = CSSClassnames.CHECK_BOX;
 
 export default class CheckBox extends Component {
   render () {
     const {
-      checked, className, defaultChecked, disabled,
-      id, label, name, onChange, reverse, toggle
+      checked, className, disabled, label, name, onChange, reverse, toggle,
+      ...props
     } = this.props;
-
     const classes = classnames(
       CLASS_ROOT,
-      className, {
+      {
         [`${CLASS_ROOT}--toggle`]: toggle,
-        [`${CLASS_ROOT}--disabled`]: disabled
-      }
+        [`${CLASS_ROOT}--disabled`]: disabled,
+        [`${CLASS_ROOT}--reverse`]: reverse
+      },
+      className
     );
-    const restProps = Props.omit(this.props, Object.keys(CheckBox.propTypes));
 
     let labelNode;
     if (label) {
@@ -42,11 +40,10 @@ export default class CheckBox extends Component {
 
     const children = [
       <span key='checkbox'>
-        <input tabIndex='0' className={`${CLASS_ROOT}__input`}
-          id={id} name={name} type='checkbox'
+        <input {...props} tabIndex='0' className={`${CLASS_ROOT}__input`}
+          name={name} type='checkbox'
           disabled={disabled}
           checked={checked}
-          defaultChecked={defaultChecked}
           onChange={onChange} />
         <span className={`${CLASS_ROOT}__control`}>
           <svg className={`${CLASS_ROOT}__control-check`} viewBox='0 0 24 24'
@@ -59,10 +56,7 @@ export default class CheckBox extends Component {
     ];
 
     return (
-      <label
-        {...restProps}
-        className={classes}
-        aria-label={label}>
+      <label className={classes} aria-label={label}>
         {reverse ? children.reverse() : children}
         {hidden}
       </label>
@@ -73,9 +67,7 @@ export default class CheckBox extends Component {
 
 CheckBox.propTypes = {
   checked: PropTypes.bool,
-  defaultChecked: PropTypes.bool,
   disabled: PropTypes.bool,
-  id: PropTypes.string,
   label: PropTypes.node,
   name: PropTypes.string,
   onChange: PropTypes.func,
