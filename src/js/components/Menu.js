@@ -53,8 +53,8 @@ class MenuDrop extends Component {
     };
     KeyboardAccelerators.startListeningToKeyboard(this, this._keyboardHandlers);
 
-    let container = ReactDOM.findDOMNode(this.navContainerRef);
-    let menuItems = container.childNodes;
+    const container = ReactDOM.findDOMNode(this.navContainerRef);
+    const menuItems = container.childNodes;
     for (let i = 0; i < menuItems.length; i++) {
       let classes = menuItems[i].className.toString();
       let tagName = menuItems[i].tagName.toLowerCase();
@@ -80,7 +80,7 @@ class MenuDrop extends Component {
 
   _processTab (event) {
     let container = ReactDOM.findDOMNode(this.menuDropRef);
-    var items = container.getElementsByTagName('*');
+    let items = container.getElementsByTagName('*');
     items = DOMUtils.filterByFocusable(items);
 
     if (!items || items.length === 0) {
@@ -100,7 +100,7 @@ class MenuDrop extends Component {
 
   _onUpKeyPress (event) {
     event.preventDefault();
-    var container = ReactDOM.findDOMNode(this.navContainerRef);
+    const container = ReactDOM.findDOMNode(this.navContainerRef);
     let menuItems = container.childNodes;
     if (!this.activeMenuItem) {
       let lastMenuItem = menuItems[menuItems.length - 1];
@@ -130,7 +130,7 @@ class MenuDrop extends Component {
 
   _onDownKeyPress (event) {
     event.preventDefault();
-    var container = ReactDOM.findDOMNode(this.navContainerRef);
+    const container = ReactDOM.findDOMNode(this.navContainerRef);
     let menuItems = container.childNodes;
     if (!this.activeMenuItem) {
       this.activeMenuItem = menuItems[0];
@@ -158,17 +158,14 @@ class MenuDrop extends Component {
   }
 
   render () {
-    let { dropAlign, size, control, colorIndex, onClick } = this.props;
-    let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
-    // manage colorIndex at the outer menuDrop element
-    delete boxProps.colorIndex;
-
-    delete boxProps.onClick;
-
-    delete boxProps.size;
+    const {
+      dropAlign, size, children, control, colorIndex, onClick, ...props
+    } = this.props;
+    const restProps = Props.omit(props,
+      Object.keys(MenuDrop.childContextTypes));
 
     // Put nested Menus inline
-    const children = React.Children.map(this.props.children, child => {
+    const menuDropChildren = React.Children.map(children, child => {
       let result = child;
       if (child && isFunction(child.type) &&
         child.type.prototype._renderMenuDrop) {
@@ -180,10 +177,10 @@ class MenuDrop extends Component {
 
     let contents = [
       React.cloneElement(control, {key: 'control', fill: true}),
-      <Box {...boxProps} key="nav" ref={ref => this.navContainerRef = ref}
+      <Box {...restProps} key="nav" ref={ref => this.navContainerRef = ref}
         role="menu" tag="nav" className={`${CLASS_ROOT}__contents`}
         primary={false}>
-        {children}
+        {menuDropChildren}
       </Box>
     ];
 
@@ -209,18 +206,18 @@ class MenuDrop extends Component {
 }
 
 MenuDrop.propTypes = {
-  ...Box.propTypes,
   control: PropTypes.node,
   dropAlign: Drop.alignPropType,
   onClick: PropTypes.func.isRequired,
   router: PropTypes.any,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  store: PropTypes.any
+  store: PropTypes.any,
+  ...Box.propTypes
 };
 
 MenuDrop.childContextTypes = {
-  intl: PropTypes.any,
   history: PropTypes.any,
+  intl: PropTypes.any,
   router: PropTypes.any,
   store: PropTypes.any
 };
@@ -431,52 +428,59 @@ export default class Menu extends Component {
   }
 
   render () {
-    let classes = classnames(
+    const {
+      a11yTitle, children, className, direction, label, primary, size,
+      pad, ...props
+    } = this.props;
+    delete props.closeOnClick;
+    delete props.dropAlign;
+    delete props.icon;
+    delete props.inline;
+    const { inline } = this.state;
+    const classes = classnames(
       CLASS_ROOT,
-      this.props.className,
       {
-        [`${CLASS_ROOT}--${this.props.direction}`]: this.props.direction,
-        [`${CLASS_ROOT}--${this.props.size}`]: this.props.size,
-        [`${CLASS_ROOT}--primary`]: this.props.primary,
-        [`${CLASS_ROOT}--inline`]: this.state.inline,
-        [`${CLASS_ROOT}--explode`]: 'explode' === this.state.inline,
-        [`${CLASS_ROOT}--controlled`]: !this.state.inline,
-        [`${CLASS_ROOT}__control`]: !this.state.inline,
-        [`${CLASS_ROOT}--labelled`]: !this.state.inline && this.props.label
-      }
+        [`${CLASS_ROOT}--${direction}`]: direction,
+        [`${CLASS_ROOT}--${size}`]: size,
+        [`${CLASS_ROOT}--primary`]: primary,
+        [`${CLASS_ROOT}--inline`]: inline,
+        [`${CLASS_ROOT}--controlled`]: !inline,
+        [`${CLASS_ROOT}__control`]: !inline,
+        [`${CLASS_ROOT}--labelled`]: !inline && label
+      },
+      className
     );
 
-    if (this.state.inline) {
-      let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
-      let label;
-      if ('explode' === this.state.inline) {
-        label = (
+    if (inline) {
+      let menuLabel;
+      if ('explode' === inline) {
+        menuLabel = (
           <div className={`${CLASS_ROOT}__label`}>
-            {this.props.label}
+            {label}
           </div>
         );
       }
 
       return (
-        <Box {...boxProps} tag="nav" id={this.props.id}
+        <Box {...props} pad={pad} direction={direction} tag="nav"
           className={classes} primary={false}>
-          {label}
-          {this.props.children}
+          {menuLabel}
+          {children}
         </Box>
       );
 
     } else {
-      let controlContents = this._renderControlContents();
-      let openLabel = Intl.getMessage(this.context.intl, 'Open');
-      let menuLabel = Intl.getMessage(this.context.intl, 'Menu');
-      let menuTitle = (
-        `${openLabel} ${this.props.a11yTitle || this.props.label || ''} ` +
+      const controlContents = this._renderControlContents();
+      const openLabel = Intl.getMessage(this.context.intl, 'Open');
+      const menuLabel = Intl.getMessage(this.context.intl, 'Menu');
+      const menuTitle = (
+        `${openLabel} ${a11yTitle || label || ''} ` +
         `${menuLabel}`
       );
 
       return (
         <div ref={ref => this.controlRef = ref}>
-          <Button plain={true} id={this.props.id}
+          <Button {...props} plain={true}
             className={classes}
             tabIndex="0"
             onClick={this._onOpen}
@@ -505,8 +509,8 @@ Menu.propTypes = {
 };
 
 Menu.contextTypes = {
-  intl: PropTypes.any,
   history: PropTypes.any,
+  intl: PropTypes.any,
   router: PropTypes.any,
   store: PropTypes.any
 };
