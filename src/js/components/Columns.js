@@ -4,6 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
+import Props from '../utils/Props';
 import Responsive from '../utils/Responsive';
 
 const CLASS_ROOT = CSSClassnames.COLUMNS;
@@ -182,16 +183,17 @@ export default class Columns extends Component {
   }
 
   render () {
-    const { justify, responsive, size } = this.props;
+    const { className, justify, responsive, size } = this.props;
     let classes = classnames(
       CLASS_ROOT,
-      this.props.className,
       {
         [`${CLASS_ROOT}--justify-${justify}`]: justify,
         [`${CLASS_ROOT}--responsive`]: responsive,
         [`${CLASS_ROOT}--${size}`]: size
-      }
+      },
+      className
     );
+    const restProps = Props.omit(this.props, Object.keys(Columns.propTypes));
 
     const groups = this._renderColumns();
     const columns = groups.map((group, index) => (
@@ -201,7 +203,8 @@ export default class Columns extends Component {
     ));
 
     return (
-      <div ref={ref => this.containerRef = ref} className={classes}>
+      <div ref={ref => this.containerRef = ref} {...restProps} 
+        className={classes}>
         {columns}
       </div>
     );
