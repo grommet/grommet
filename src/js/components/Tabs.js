@@ -29,6 +29,9 @@ export default class Tabs extends Component {
 
   _activateTab (index) {
     this.setState({ activeIndex: index });
+    if (this.props.onActive) {
+      this.props.onActive(index);
+    }
   }
 
   render () {
@@ -86,7 +89,8 @@ export default class Tabs extends Component {
 Tabs.propTypes = {
   activeIndex: PropTypes.number,
   justify: PropTypes.oneOf(['start', 'center', 'end']),
-  responsive: PropTypes.bool
+  responsive: PropTypes.bool,
+  onActive: PropTypes.func
 };
 
 Tabs.contextTypes = {
