@@ -72,6 +72,7 @@ export default {
   'Next Month': 'Next Month',
   'Next Slide': 'Next Slide',
   'No Relationship': 'No Relationship',
+  'Notification': 'Notification',
   OK: 'OK',
   Open: 'Open',
   Parent: 'Parent',

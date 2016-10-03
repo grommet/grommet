@@ -3,7 +3,7 @@ exports[`Notification has correct default options 1`] = `
   className={undefined}
   style={Object {}}>
   <div
-    className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-unknown grommetux-background-color-index-unknown grommetux-notification--disabled"
+    className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-unknown grommetux-background-color-index-unknown"
     id={undefined}
     onClick={undefined}
     role={undefined}
@@ -73,7 +73,7 @@ exports[`Notification renders with a padding 1`] = `
   className={undefined}
   style={Object {}}>
   <div
-    className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-critical grommetux-background-color-index-critical grommetux-notification--disabled"
+    className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-critical grommetux-background-color-index-critical"
     id={undefined}
     onClick={undefined}
     role={undefined}
@@ -141,7 +141,7 @@ exports[`Notification renders with closer set to true 1`] = `
   className={undefined}
   style={Object {}}>
   <div
-    className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-unknown grommetux-background-color-index-unknown grommetux-notification--disabled"
+    className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-unknown grommetux-background-color-index-unknown"
     id={undefined}
     onClick={undefined}
     role={undefined}
@@ -211,7 +211,7 @@ exports[`Notification renders with padding set 1`] = `
   className={undefined}
   style={Object {}}>
   <div
-    className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-unknown grommetux-background-color-index-unknown grommetux-notification--disabled"
+    className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-unknown grommetux-background-color-index-unknown"
     id={undefined}
     onClick={undefined}
     role={undefined}
@@ -281,7 +281,7 @@ exports[`Notification renders with status option given 1`] = `
   className={undefined}
   style={Object {}}>
   <div
-    className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-warning grommetux-background-color-index-warning grommetux-notification--disabled"
+    className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-warning grommetux-background-color-index-warning"
     id={undefined}
     onClick={undefined}
     role={undefined}
