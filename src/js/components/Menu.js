@@ -64,15 +64,7 @@ class MenuDrop extends Component {
         continue;
       }
       menuItems[i].setAttribute('role', 'menuitem');
-
-      if (!menuItems[i].getAttribute('id')) {
-        menuItems[i].setAttribute('id', `menu_item_${i}`);
-      }
     }
-
-    container.setAttribute('aria-activedescendant',
-      menuItems[0].getAttribute('id'));
-
   }
 
   componentWillUnmount () {
@@ -131,8 +123,6 @@ class MenuDrop extends Component {
     }
 
     this.activeMenuItem.focus();
-    container.setAttribute('aria-activedescendant',
-      this.activeMenuItem.getAttribute('id'));
     // Stops KeyboardAccelerators from calling the other listeners.
     // Works limilar to event.stopPropagation().
     return true;
@@ -162,15 +152,13 @@ class MenuDrop extends Component {
     }
 
     this.activeMenuItem.focus();
-    container.setAttribute('aria-activedescendant',
-      this.activeMenuItem.getAttribute('id'));
     // Stops KeyboardAccelerators from calling the other listeners.
     // Works limilar to event.stopPropagation().
     return true;
   }
 
   render () {
-    let { dropAlign, size, control, id, colorIndex, onClick } = this.props;
+    let { dropAlign, size, control, colorIndex, onClick } = this.props;
     let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
     // manage colorIndex at the outer menuDrop element
     delete boxProps.colorIndex;
@@ -212,7 +200,7 @@ class MenuDrop extends Component {
     );
 
     return (
-      <Box ref={ref => this.menuDropRef = ref} id={id} className={classes}
+      <Box ref={ref => this.menuDropRef = ref} className={classes}
         colorIndex={colorIndex} onClick={onClick} tabIndex='-1'>
         {contents}
       </Box>
@@ -224,7 +212,6 @@ MenuDrop.propTypes = {
   ...Box.propTypes,
   control: PropTypes.node,
   dropAlign: Drop.alignPropType,
-  id: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   router: PropTypes.any,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
@@ -267,8 +254,7 @@ export default class Menu extends Component {
       state: 'collapsed',
       initialInline: inline,
       inline: inline,
-      responsive: responsive,
-      dropId: 'menuDrop'
+      responsive: responsive
     };
   }
 
@@ -276,7 +262,6 @@ export default class Menu extends Component {
     if (this.controlRef) {
       let controlElement = this.controlRef.firstChild;
       this.setState({
-        dropId: 'menu-drop-' + DOMUtils.generateId(controlElement),
         controlHeight: controlElement.clientHeight
       });
     }
@@ -447,7 +432,6 @@ export default class Menu extends Component {
         dropAlign={this.props.dropAlign}
         size={this.props.size}
         onClick={onClick}
-        id={this.state.dropId}
         control={control}>
         {this.props.children}
       </MenuDrop>
