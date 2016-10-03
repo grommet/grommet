@@ -6,6 +6,7 @@ import classnames from 'classnames';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Intl from '../utils/Intl';
 import CSSClassnames from '../utils/CSSClassnames';
+import { announce } from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.DISTRIBUTION;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
@@ -40,6 +41,7 @@ export default class Distribution extends Component {
     this.state.width = DEFAULT_WIDTH;
     this.state.height = DEFAULT_HEIGHT;
     this.state.activeIndex = 0;
+    this.state.mouseActive = false;
   }
 
   componentDidMount () {
@@ -273,15 +275,10 @@ export default class Distribution extends Component {
   }
 
   _onPreviousDistribution (event) {
-    if (document.activeElement === this._distributionRef) {
+    if (this._distributionRef.contains(document.activeElement)) {
       event.preventDefault();
-      var totalDistributionCount = (
-        ReactDOM.findDOMNode(this.distributionItemsRef).childNodes.length
-      );
 
-      if (this.state.activeIndex - 1 < 0) {
-        this._onActivate(totalDistributionCount - 1);
-      } else {
+      if (this.state.activeIndex - 1 >= 0) {
         this._onActivate(this.state.activeIndex - 1);
       }
 
@@ -291,15 +288,13 @@ export default class Distribution extends Component {
   }
 
   _onNextDistribution (event) {
-    if (document.activeElement === this._distributionRef) {
+    if (this._distributionRef.contains(document.activeElement)) {
       event.preventDefault();
       var totalDistributionCount = (
         ReactDOM.findDOMNode(this.distributionItemsRef).childNodes.length
       );
 
-      if (this.state.activeIndex + 1 >= totalDistributionCount) {
-        this._onActivate(0);
-      } else {
+      if (this.state.activeIndex + 1 < totalDistributionCount) {
         this._onActivate(this.state.activeIndex + 1);
       }
 
@@ -309,7 +304,7 @@ export default class Distribution extends Component {
   }
 
   _onEnter (event) {
-    if (document.activeElement === this._distributionRef) {
+    if (this._distributionRef.contains(document.activeElement)) {
       if (this.activeDistributionRef) {
         let index = this.activeDistributionRef.getAttribute('data-index');
 
@@ -326,38 +321,39 @@ export default class Distribution extends Component {
   }
 
   _onActivate (index) {
-    this.setState({activeIndex: index});
+    const { intl } = this.context;
+    this.setState({ activeIndex: index }, () => {
+      let activeMessage = this.activeDistributionRef.getAttribute('aria-label');
+      const clickable = this.state.items[this.state.activeIndex].datum.onClick;
+      const enterSelectMessage = `(${Intl.getMessage(intl, 'Enter Select')})`;
+      announce(`${activeMessage} ${clickable ? enterSelectMessage : ''}`);
+    });
   }
 
   _onDeactivate () {
-    this.setState({activeIndex: 0});
+    this.setState({ activeIndex: 0 });
   }
 
   _renderItemLabel (datum, labelRect, index) {
-    let labelClasses = [`${CLASS_ROOT}__label`];
-    if (! datum.icon) {
-      labelClasses.push(`${COLOR_INDEX}-${this._itemColorIndex(datum, index)}`);
-    }
-    if (datum.icon) {
-      labelClasses.push(`${CLASS_ROOT}__label--icons`);
-    }
-    if (labelRect.width < SMALL_SIZE || labelRect.height < SMALL_SIZE) {
-      labelClasses.push(`${CLASS_ROOT}__label--small`);
-    }
-    if (labelRect.height < THIN_HEIGHT) {
-      labelClasses.push(`${CLASS_ROOT}__label--thin`);
-    }
-
-    if (index === this.state.activeIndex) {
-      labelClasses.push(`${CLASS_ROOT}__label--active`);
-    }
+    const { activeIndex } = this.state;
+    const labelClasses = classnames(
+      `${CLASS_ROOT}__label`, {
+        [`${COLOR_INDEX}-${this._itemColorIndex(datum, index)}`]: !datum.icon,
+        [`${CLASS_ROOT}__label--icons`]: datum.icon,
+        [`${CLASS_ROOT}__label--small`]: (
+          labelRect.width < SMALL_SIZE || labelRect.height < SMALL_SIZE
+        ),
+        [`${CLASS_ROOT}__label--thin`]: labelRect.height < THIN_HEIGHT,
+        [`${CLASS_ROOT}__label--active`]: index === activeIndex
+      }
+    );
 
     const value =
       (datum.labelValue !== undefined ? datum.labelValue : datum.value);
 
     return (
-      <div key={index} className={labelClasses.join(' ')}
-        data-box-index={index} role="tab"
+      <div key={index} className={labelClasses}
+        data-box-index={index} role='presentation'
         style={{ top: labelRect.y, left: labelRect.x, maxWidth: labelRect.width,
           maxHeight: labelRect.height }}>
         <span className={`${CLASS_ROOT}__label-value`}>
@@ -374,21 +370,23 @@ export default class Distribution extends Component {
   }
 
   _renderItemBox (boxRect, colorIndex) {
-    let boxClasses = [`${CLASS_ROOT}__item-box`];
-    if (colorIndex) {
-      boxClasses.push(`${COLOR_INDEX}-${colorIndex}`);
-    }
+    const boxClasses = classnames(
+      `${CLASS_ROOT}__item-box`, {
+        [`${COLOR_INDEX}-${colorIndex}`]: colorIndex
+      }
+    );
 
     return (
-      <rect className={boxClasses.join(' ')}
-        x={boxRect.x} y={boxRect.y}
+      <rect className={boxClasses} x={boxRect.x} y={boxRect.y}
         width={boxRect.width} height={boxRect.height} />
     );
   }
 
   _renderItemIcon (icon, itemRect, colorIndex) {
-    let iconClasses = [`${CLASS_ROOT}__item-icons`];
-    iconClasses.push(`${COLOR_INDEX}-${colorIndex}`);
+    const iconClasses = classnames(
+      `${CLASS_ROOT}__item-icons`,
+      `${COLOR_INDEX}-${colorIndex}`
+    );
 
     let icons = [];
     // fill box with icons
@@ -414,26 +412,27 @@ export default class Distribution extends Component {
     }
 
     return (
-      <g className={iconClasses.join(' ')}>
+      <g className={iconClasses}>
         {icons}
       </g>
     );
   }
 
   _renderItem (datum, rect, index) {
-    let itemClass = `${CLASS_ROOT}__item`;
-    let itemClasses = [itemClass];
+    const { units } = this.props;
 
-    if (datum.onClick) {
-      itemClasses.push(`${itemClass}--clickable`);
-    }
+    const itemClasses = classnames(
+      `${CLASS_ROOT}__item`, {
+        [`${CLASS_ROOT}__item--clickable`]: datum.onClick
+      }
+    );
 
     let activeDistributionRef;
     if (index === this.state.activeIndex) {
       activeDistributionRef = (ref) => this.activeDistributionRef = ref;
     }
 
-    let colorIndex = this._itemColorIndex(datum, index);
+    const colorIndex = this._itemColorIndex(datum, index);
 
     let contents;
     if (datum.icon) {
@@ -442,11 +441,16 @@ export default class Distribution extends Component {
       contents = this._renderItemBox(rect, colorIndex);
     }
 
+    const value =
+      (datum.labelValue !== undefined ? datum.labelValue : datum.value);
+    const labelMessage = `${value} ${units || ''} ${datum.label}`;
+
     return (
-      <g key={index} className={itemClasses.join(' ')}
+      <g key={index} className={itemClasses}
         onMouseOver={this._onActivate.bind(this, index)}
-        onMouseLeave={this._onDeactivate}
-        ref={activeDistributionRef} role="presentation"
+        onMouseLeave={this._onDeactivate} tabIndex='-1'
+        role={datum.onClick ? 'button' : 'row'}
+        ref={activeDistributionRef} aria-label={labelMessage}
         data-index={index} onClick={datum.onClick}>
         {contents}
       </g>
@@ -466,15 +470,18 @@ export default class Distribution extends Component {
   }
 
   _renderLoading () {
-    let loadingClasses = [`${CLASS_ROOT}__loading-indicator`];
-    loadingClasses.push(`${COLOR_INDEX}-loading`);
-    let loadingHeight = this.state.height / 2;
-    let loadingWidth = this.state.width;
-    let commands = `M0,${loadingHeight} L${loadingWidth},${loadingHeight}`;
+    const { height, width } = this.state;
+    const loadingClasses = classnames(
+      `${CLASS_ROOT}__loading-indicator`,
+      `${COLOR_INDEX}-loading`
+    );
+    const loadingHeight = height / 2;
+    const loadingWidth = width;
+    const commands = `M0,${loadingHeight} L${loadingWidth},${loadingHeight}`;
 
     return (
-      <g key="loading">
-        <path stroke="none" className={loadingClasses.join(' ')} d={commands} />
+      <g key='loading'>
+        <path stroke='none' className={loadingClasses} d={commands} />
       </g>
     );
   }
@@ -485,23 +492,23 @@ export default class Distribution extends Component {
     } = this.props;
     delete props.series;
     const { intl } = this.context;
-    const { allIcons, height, items, width } = this.state;
+    const { allIcons, focus, height, items, mouseActive, width } = this.state;
     const classes = classnames(
       CLASS_ROOT,
+      className,
       {
         [`${CLASS_ROOT}--full`]: full,
         [`${CLASS_ROOT}--icons`]: allIcons,
         [`${CLASS_ROOT}--${size}`]: size,
         [`${CLASS_ROOT}--vertical`]: vertical,
         [`${CLASS_ROOT}--loading`]: (items || []).length === 0
-      },
-      className
+      }
     );
 
     let background;
-    if (! this.state.allIcons) {
+    if (!allIcons) {
       background = (
-        <rect className={`${CLASS_ROOT}__background`} x={0} y={0} stroke="none"
+        <rect className={`${CLASS_ROOT}__background`} x={0} y={0} stroke='none'
           width={width} height={height} />
       );
     }
@@ -513,27 +520,45 @@ export default class Distribution extends Component {
       labels = this._renderLabels();
     }
 
-    let role = 'tablist';
+    let role = 'group';
     let ariaLabel = a11yTitle || Intl.getMessage(intl, 'Distribution');
-
+    const navigationHelpMessage = Intl.getMessage(intl, 'Navigation Help');
+    ariaLabel += ` (${navigationHelpMessage})`;
     if (boxes.length === 0) {
       boxes.push(this._renderLoading());
       role = 'img';
       ariaLabel = Intl.getMessage(intl, 'Loading');
     }
 
+    const graphicClasses = classnames(
+      `${CLASS_ROOT}__graphic`, {
+        [`${CLASS_ROOT}__graphic--focus`]: focus
+      }
+    );
+
     return (
       <div ref={ref => this._containerRef = ref} {...props} className={classes}>
         <svg ref={ref => this._distributionRef = ref}
-          className={`${CLASS_ROOT}__graphic`}
+          className={graphicClasses}
           viewBox={`0 0 ${this.state.width} ${this.state.height}`}
-          preserveAspectRatio="none" tabIndex="0" role={role}
-          aria-label={ariaLabel}>
+          preserveAspectRatio='none' tabIndex='0' role={role}
+          aria-label={ariaLabel}
+          onMouseDown={() => this.setState({ mouseActive: true })}
+          onMouseUp={() => this.setState({ mouseActive: false })}
+          onFocus={() => {
+            if (mouseActive === false) {
+              this.setState({ focus: true });
+            }
+          }}
+          onBlur={() => this.setState({
+            focus: false
+          })}>
           {background}
           {boxes}
         </svg>
         <div ref={ref => this.distributionItemsRef = ref}
-          className={`${CLASS_ROOT}__labels`}>
+          className={`${CLASS_ROOT}__labels`} role='presentation'
+          aria-hidden={true}>
           {labels}
         </div>
       </div>
@@ -548,7 +573,7 @@ Distribution.contextTypes = {
 
 Distribution.propTypes = {
   a11yTitle: PropTypes.string,
-  full: PropTypes.bool, // deprecated, use size="full"
+  full: PropTypes.bool, // deprecated, use size='full'
   series: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.node,
     value: PropTypes.number.isRequired,

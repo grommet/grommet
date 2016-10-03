@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes, Children } from 'react';
 import {findDOMNode} from 'react-dom';
+import classnames from 'classnames';
 import Box from './Box';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import DOMUtils from '../utils/DOM';
@@ -45,8 +46,8 @@ export default class Article extends Component {
     // tabbing
     const accessibilityTabbingCompatible =
       typeof navigator !== 'undefined' &&
-      navigator.userAgent.indexOf("Firefox") === -1 &&
-      navigator.userAgent.indexOf("Edge") === -1;
+      navigator.userAgent.indexOf('Firefox') === -1 &&
+      navigator.userAgent.indexOf('Edge') === -1;
 
     this.state = {
       selectedIndex: props.selected || 0,
@@ -514,24 +515,21 @@ export default class Article extends Component {
       if (! this.state.narrow || this.state.atBottom) {
         if (this.state.selectedIndex > 0) {
           controls.push(
-            <Button key="previous"
+            <Button key='previous'
               plain={true} a11yTitle={a11yTitle.previous}
               className={`${CONTROL_CLASS_PREFIX}-left`}
               onClick={this._onPrevious} icon={<PreviousIcon
-                a11yTitle='article-previous-title'
-                a11yTitleId='article-previous-title-id'
-                size="large" />
+                a11yTitle='article-previous-title' size='large' />
               } />
           );
         }
         if (this.state.selectedIndex < (childCount - 1)) {
           controls.push(
-            <Button key="next"
+            <Button key='next'
               plain={true} a11yTitle={a11yTitle.next}
               className={`${CONTROL_CLASS_PREFIX}-right`}
-              onClick={this._onNext} icon={<NextIcon size="large"
-                a11yTitle='article-next-title'
-                a11yTitleId='article-next-title-id' />
+              onClick={this._onNext} icon={<NextIcon size='large'
+                a11yTitle='article-next-title' />
               } />
           );
         }
@@ -539,7 +537,7 @@ export default class Article extends Component {
     } else {
       if (this.state.selectedIndex > 0) {
         controls.push(
-          <Button key="previous"
+          <Button key='previous'
             plain={true} a11yTitle={a11yTitle.previous}
             className={`${CONTROL_CLASS_PREFIX}-up`}
             onClick={this._onPrevious}><UpIcon /></Button>
@@ -547,11 +545,10 @@ export default class Article extends Component {
       }
       if (this.state.selectedIndex < (childCount - 1)) {
         controls.push(
-          <Button key="next"
-            plain={true} a11yTitle={a11yTitle.next}
-            className={`${CONTROL_CLASS_PREFIX}-down`}
-            onClick={this._onNext}><DownIcon a11yTitle='article-down'
-              a11yTitleId='article-down-id' /></Button>
+          <Button key='next' plain={true} a11yTitle={a11yTitle.next}
+            className={`${CONTROL_CLASS_PREFIX}-down`} onClick={this._onNext}>
+            <DownIcon a11yTitle='article-down'/ >
+          </Button>
         );
       }
     }
@@ -560,15 +557,16 @@ export default class Article extends Component {
   }
 
   render () {
-    let classes = [CLASS_ROOT];
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--scroll-step`]: this.props.scrollStep
+      },
+      this.props.className
+    );
+
     const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
     const restProps = Props.omit(this.props, Object.keys(Article.propTypes));
-    if (this.props.scrollStep) {
-      classes.push(`${CLASS_ROOT}--scroll-step`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
 
     let controls;
     if (this.props.controls) {
@@ -578,7 +576,7 @@ export default class Article extends Component {
     let anchorStepNode;
     if (this.state.accessibilityTabbingCompatible) {
       anchorStepNode = (
-        <a tabIndex="-1" aria-hidden='true'
+        <a tabIndex='-1' aria-hidden='true'
           ref={ref => this.anchorStepRef = ref} />
       );
     }
@@ -618,7 +616,7 @@ export default class Article extends Component {
 
     return (
       <Box {...restProps} {...boxProps} ref={ref => this.componentRef = ref}
-        tag="article" className={classes.join(' ')} primary={this.props.primary}
+        tag='article' className={classes} primary={this.props.primary}
         onFocus={this._onFocusChange} onScroll={this._onScroll}
         onTouchStart={this._onTouchStart} onTouchMove={this._onTouchMove}>
         {anchorStepNode}

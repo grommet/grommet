@@ -17,4 +17,19 @@ describe('Footer', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('renders a class name', () => {
+    const component = renderer.create(
+      <Footer className="test">Testing</Footer>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders microdata properties', () => {
+    const component = renderer.create(
+      <Footer itemScope={true} itemType="http://schema.org/WPFooter"
+        itemProp="test">Testing</Footer>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
