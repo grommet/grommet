@@ -302,11 +302,10 @@ export default class Carousel extends Component {
 
     const carouselMessage = a11yTitle || Intl.getMessage(intl, 'Carousel');
     return (
-      <div ref={ref => this.carouselRef = ref} className={classes}
-        role='group' aria-label={carouselMessage}
+      <div ref={ref => this.carouselRef = ref} {...restProps} 
+        className={classes} role='group' aria-label={carouselMessage}
         onFocus={this._stopAutoplay} onBlur={this._startAutoplay}
-        onMouseOver={this._stopAutoplay} onMouseOut={this._startAutoplay}
-        {...restProps}>
+        onMouseOver={this._stopAutoplay} onMouseOut={this._startAutoplay}>
         <div className={`${CLASS_ROOT}__track`}
           style={{
             width: (trackWidth && trackWidth > 0) ? trackWidth : '',
