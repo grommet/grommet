@@ -152,13 +152,7 @@ var MenuDrop = function (_Component) {
           continue;
         }
         menuItems[i].setAttribute('role', 'menuitem');
-
-        if (!menuItems[i].getAttribute('id')) {
-          menuItems[i].setAttribute('id', 'menu_item_' + i);
-        }
       }
-
-      container.setAttribute('aria-activedescendant', menuItems[0].getAttribute('id'));
     }
   }, {
     key: 'componentWillUnmount',
@@ -218,7 +212,6 @@ var MenuDrop = function (_Component) {
       }
 
       this.activeMenuItem.focus();
-      container.setAttribute('aria-activedescendant', this.activeMenuItem.getAttribute('id'));
       // Stops KeyboardAccelerators from calling the other listeners.
       // Works limilar to event.stopPropagation().
       return true;
@@ -248,7 +241,6 @@ var MenuDrop = function (_Component) {
       }
 
       this.activeMenuItem.focus();
-      container.setAttribute('aria-activedescendant', this.activeMenuItem.getAttribute('id'));
       // Stops KeyboardAccelerators from calling the other listeners.
       // Works limilar to event.stopPropagation().
       return true;
@@ -263,7 +255,6 @@ var MenuDrop = function (_Component) {
       var dropAlign = _props.dropAlign;
       var size = _props.size;
       var control = _props.control;
-      var id = _props.id;
       var colorIndex = _props.colorIndex;
       var onClick = _props.onClick;
 
@@ -304,7 +295,7 @@ var MenuDrop = function (_Component) {
         _Box2.default,
         { ref: function ref(_ref2) {
             return _this2.menuDropRef = _ref2;
-          }, id: id, className: classes,
+          }, className: classes,
           colorIndex: colorIndex, onClick: onClick, tabIndex: '-1' },
         contents
       );
@@ -319,7 +310,6 @@ MenuDrop.displayName = 'MenuDrop';
 MenuDrop.propTypes = (0, _extends3.default)({}, _Box2.default.propTypes, {
   control: _react.PropTypes.node,
   dropAlign: _Drop2.default.alignPropType,
-  id: _react.PropTypes.string.isRequired,
   onClick: _react.PropTypes.func.isRequired,
   router: _react.PropTypes.any,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
@@ -365,8 +355,7 @@ var Menu = function (_Component2) {
       state: 'collapsed',
       initialInline: inline,
       inline: inline,
-      responsive: responsive,
-      dropId: 'menuDrop'
+      responsive: responsive
     };
     return _this3;
   }
@@ -377,7 +366,6 @@ var Menu = function (_Component2) {
       if (this.controlRef) {
         var controlElement = this.controlRef.firstChild;
         this.setState({
-          dropId: 'menu-drop-' + _DOM2.default.generateId(controlElement),
           controlHeight: controlElement.clientHeight
         });
       }
@@ -543,7 +531,6 @@ var Menu = function (_Component2) {
           dropAlign: this.props.dropAlign,
           size: this.props.size,
           onClick: onClick,
-          id: this.state.dropId,
           control: control }),
         this.props.children
       );
