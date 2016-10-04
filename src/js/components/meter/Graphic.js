@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import classnames from 'classnames';
 import Intl from '../../utils/Intl';
 import KeyboardAccelerators from '../../utils/KeyboardAccelerators';
 import CSSClassnames from '../../utils/CSSClassnames';
@@ -68,18 +69,17 @@ export default class Graphic extends Component {
 
   _renderSlice (trackIndex, item, itemIndex, startValue, max, track,
     threshold) {
+    const { activeIndex, onActivate } = this.props;
     let path;
     if (! item.hidden) {
-      let classes = [`${CLASS_ROOT}__slice`];
-      if (itemIndex === this.props.activeIndex) {
-        classes.push(`${CLASS_ROOT}__slice--active`);
-      }
-      if (item.onClick) {
-        classes.push(CLASS_ROOT + "__slice--clickable");
-      }
-      if (item.colorIndex) {
-        classes.push(`${COLOR_INDEX}-${item.colorIndex}`);
-      }
+      const classes = classnames(
+        `${CLASS_ROOT}__slice`,
+        {
+          [`${CLASS_ROOT}__slice--active`]: (itemIndex === activeIndex),
+          [`${CLASS_ROOT}__slice--clickable`]: item.onClick,
+          [`${COLOR_INDEX}-${item.colorIndex}`]: item.colorIndex
+        }
+      );
 
       let commands = this._sliceCommands(trackIndex, item, startValue, max);
 
@@ -87,12 +87,12 @@ export default class Graphic extends Component {
         path = buildPath(itemIndex, commands, classes);
       } else if (track) {
         path = buildPath(itemIndex, commands, classes,
-          this.props.onActivate, item.onClick);
+          onActivate, item.onClick);
       } else {
         const a11yTitle = `${item.value}`;
         const role = this.props.series.length > 1 ? 'img' : undefined;
         path = buildPath(itemIndex, commands, classes,
-          this.props.onActivate, item.onClick, a11yTitle, role);
+          onActivate, item.onClick, a11yTitle, role);
       }
     }
 
@@ -152,12 +152,14 @@ export default class Graphic extends Component {
   }
 
   _renderLoading () {
-    let classes = [`${CLASS_ROOT}__slice`];
-    classes.push(`${CLASS_ROOT}__slice--loading`);
-    classes.push(`${COLOR_INDEX}-loading`);
+    const classes = classnames(
+      `${CLASS_ROOT}__slice`,
+      `${CLASS_ROOT}__slice--loading`,
+      `${COLOR_INDEX}-loading`
+    );
     let commands = this._loadingCommands();
     return [
-      <path key="loading" className={classes.join(' ')} d={commands} />
+      <path key="loading" className={classes} d={commands} />
     ];
   }
 
@@ -269,11 +271,8 @@ export default class Graphic extends Component {
   }
 
   render () {
-    let classes = [CLASS_ROOT];
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
+    const { series, tabIndex } = this.props;
+    const { viewBoxHeight, viewBoxWidth } = this.state;
     let tracks = this._renderTracks();
     let values = this._renderValues();
     let thresholds = this._renderThresholds();
@@ -281,15 +280,14 @@ export default class Graphic extends Component {
 
     let a11yTitle = this._renderA11YTitle();
 
-    const role = this.props.series.length > 1 ? 'group' : 'img';
+    const role = series.length > 1 ? 'group' : 'img';
 
     return (
       <svg className={`${CLASS_ROOT}__graphic`}
-        tabIndex={role === 'img' ? undefined : this.props.tabIndex || '0'}
-        width={this.state.viewBoxWidth} role={role}
-        height={this.state.viewBoxHeight}
-        viewBox={"0 0 " + this.state.viewBoxWidth +
-          " " + this.state.viewBoxHeight}
+        tabIndex={role === 'img' ? undefined : tabIndex || '0'}
+        width={viewBoxWidth} role={role}
+        height={viewBoxHeight}
+        viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
         preserveAspectRatio="xMidYMid meet"
         aria-label={a11yTitle} onFocus={this._onGraphicFocus}
         onBlur={this._onGraphicBlur}>

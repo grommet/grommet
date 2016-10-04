@@ -54,7 +54,7 @@ export default class Meter extends Component {
 
   componentWillReceiveProps (nextProps) {
     let state = this._stateFromProps(nextProps);
-    this.setState(state);
+    this.setState({ ...state });
   }
 
   componentWillUnmount () {
@@ -62,30 +62,6 @@ export default class Meter extends Component {
 
     if (this._responsive) {
       this._responsive.stop();
-    }
-  }
-
-  _initialTimeout () {
-    this.setState({
-      initial: false,
-      activeIndex: this.state.activeIndex
-    });
-    clearTimeout(this._initialTimer);
-  }
-
-  _onResponsive (small) {
-    if (small) {
-      this.setState({limitMeterSize: true});
-    } else {
-      this.setState({limitMeterSize: false});
-    }
-  }
-
-  _onActivate (index) {
-    const { activeIndex, onActive } = this.props;
-    this.setState({initial: false, activeIndex: activeIndex});
-    if (onActive) {
-      onActive(index);
     }
   }
 
@@ -108,7 +84,7 @@ export default class Meter extends Component {
       if (! item.colorIndex) {
         // see which threshold color index to use
         let cumulative = 0;
-        thresholds.some(function (threshold) {
+        thresholds.some(threshold => {
           cumulative += threshold.value;
           if (item.value < cumulative) {
             item.colorIndex = threshold.colorIndex || 'graph-1';
@@ -118,7 +94,7 @@ export default class Meter extends Component {
         });
       }
     } else {
-      series.forEach(function (item, index) {
+      series.forEach((item, index) => {
         if (! item.colorIndex) {
           item.colorIndex = `graph-${index + 1}`;
         }
@@ -172,7 +148,7 @@ export default class Meter extends Component {
 
   _seriesMax (series) {
     let max = 0;
-    series.some(function (item) {
+    series.some(item => {
       max = Math.max(max, item.value);
     });
     return max;
@@ -205,7 +181,7 @@ export default class Meter extends Component {
     // Normalize simple value prop to a series, if needed.
     const series = this._normalizeSeries(props, thresholds);
 
-    let state = {
+    let nextState = {
       series: series,
       thresholds: thresholds,
       min: min,
@@ -214,44 +190,43 @@ export default class Meter extends Component {
     };
 
     if (props.hasOwnProperty('activeIndex')) {
-      state.activeIndex = props.activeIndex;
+      nextState.activeIndex = props.activeIndex;
     } else if (props.hasOwnProperty('active')) {
-      state.activeIndex = props.active ? 0 : undefined;
+      nextState.activeIndex = props.active ? 0 : undefined;
     }
 
-    return state;
+    return nextState;
   }
 
-  _getActiveFields () {
-    const { activeIndex, total, series } = this.state;
-    let fields;
-    if (undefined === activeIndex) {
-      fields = {
-        value: total
-      };
-    } else {
-      let active = series[activeIndex];
-      if (!active) {
-        active = series[0];
-      }
-      fields = {
-        value: active.value,
-        onClick: active.onClick
-      };
+  _initialTimeout () {
+    this.setState({
+      initial: false,
+      activeIndex: this.state.activeIndex
+    });
+    clearTimeout(this._initialTimer);
+  }
+
+  _onResponsive (small) {
+    this.setState({ limitMeterSize: small ? true : false });
+  }
+
+  _onActivate (index) {
+    const { onActive } = this.props;
+    this.setState({ initial: false, activeIndex: index });
+    if (onActive) {
+      onActive(index);
     }
-    return fields;
   }
 
   render () {
     const {
-      active, a11yTitle, className, label, size, stacked,
+      active, a11yTitle, className, label, onActive, size, stacked,
       tabIndex, type, vertical, ...props
     } = this.props;
     delete props.activeIndex;
     delete props.colorIndex;
     delete props.max;
     delete props.min;
-    delete props.onActive;
     delete props.series;
     delete props.threshold;
     delete props.thresholds;
@@ -291,13 +266,18 @@ export default class Meter extends Component {
       labelElement = <div className={`${CLASS_ROOT}__label`}>{label}</div>;
     }
 
+    let onActivate;
+    if (onActive || series.length > 1 || series[0].onClick) {
+      onActivate = this._onActivate;
+    }
+
     let GraphicComponent = TYPE_COMPONENT[this.props.type];
     let graphic = (
       <GraphicComponent
         a11yTitle={a11yTitle}
         activeIndex={activeIndex}
         min={min} max={max}
-        onActivate={this._onActivate}
+        onActivate={onActivate}
         series={series}
         stacked={stacked}
         tabIndex={tabIndex}
