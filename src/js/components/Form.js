@@ -24,7 +24,7 @@ export default class Form extends Component {
     );
 
     return (
-      <form className={classes} {...props} onSubmit={this.props.onSubmit}>
+      <form {...props} className={classes} onSubmit={this.props.onSubmit}>
         {this.props.children}
       </form>
     );
