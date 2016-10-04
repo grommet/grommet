@@ -3,6 +3,7 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
+import Props from '../utils/Props';
 import VideoControls from './video/Controls';
 import VideoOverlay from './video/Overlay';
 import throttle from '../utils/Throttle';
@@ -199,8 +200,10 @@ export default class Video extends Component {
   }
 
   render () {
-    let { autoPlay, className, colorIndex, full, loop, muted, poster,
-      showControls, size } = this.props;
+    let {
+      autoPlay, className, colorIndex, full, loop, muted, poster,
+      showControls, size
+    } = this.props;
     let { ended, hasPlayed, interacting, playing} = this.state;
     let classes = classnames(
       CLASS_ROOT,
@@ -215,15 +218,13 @@ export default class Video extends Component {
       },
       className
     );
+    const restProps = Props.omit(this.props, Object.keys(Video.propTypes));
 
     return (
       <div className={classes} onMouseMove={this._onMouseMove}>
-        <video ref={el => this._video = el}
-          poster={poster}
-          autoPlay={autoPlay ? 'autoplay' : false}
-          loop={loop ? 'loop' : false}
-          muted={muted}
-          {...this._mediaEventProps}>
+        <video ref={el => this._video = el} {...restProps}
+          poster={poster} autoPlay={autoPlay ? 'autoplay' : false}
+          loop={loop ? 'loop' : false} muted={muted} {...this._mediaEventProps}>
           {this.props.children}
         </video>
         {showControls ? this._renderControls() : undefined}
