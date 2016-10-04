@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,6 +36,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 var _FormattedMessage = require('../../FormattedMessage');
 
 var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
@@ -38,7 +50,9 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var STATUS_ICON = _CSSClassnames2.default.STATUS_ICON; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.STATUS_ICON;
 
 var Disabled = function (_Component) {
   (0, _inherits3.default)(Disabled, _Component);
@@ -51,22 +65,17 @@ var Disabled = function (_Component) {
   (0, _createClass3.default)(Disabled, [{
     key: 'render',
     value: function render() {
-      var className = STATUS_ICON + ' ' + STATUS_ICON + '-disabled';
-      var a11yTitle = this.props.a11yTitle;
-      if (this.props.className) {
-        className += ' ' + this.props.className;
-      }
-      if (typeof this.props.a11yTitle === "undefined") {
-        // this.props.a11yTitle emplty string is an acceptable value.
-        // Only if undefined
-        // should use the default title value.
-        a11yTitle = 'Disabled';
-      }
+      var _props = this.props;
+      var a11yTitle = _props.a11yTitle;
+      var className = _props.className;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className']);
+
+      var classes = (0, _classnames2.default)(CLASS_ROOT, CLASS_ROOT + '-disabled', className);
       var disabledTitleId = 'disabled-title';
       return _react2.default.createElement(
         'svg',
-        { className: className, viewBox: '0 0 24 24', role: 'img',
-          'aria-labelledby': disabledTitleId, version: '1.1' },
+        (0, _extends3.default)({}, props, { className: classes, viewBox: '0 0 24 24', role: 'img',
+          'aria-labelledby': disabledTitleId, version: '1.1' }),
         _react2.default.createElement(
           'title',
           { id: disabledTitleId },
@@ -74,13 +83,13 @@ var Disabled = function (_Component) {
         ),
         _react2.default.createElement(
           'g',
-          { className: STATUS_ICON + '__base' },
+          { className: CLASS_ROOT + '__base' },
           _react2.default.createElement('path', { role: 'presentation', stroke: 'none',
             d: "M21,24 L3,24 C1.3,24 0,22.7 0,21 L0,3 C0,1.3 1.3,0 3,0 " + "L21,0 C22.7,0 24,1.3 24,3 L24,21 C24,22.7 22.7,24 21,24 " + "L21,24 Z" })
         ),
         _react2.default.createElement(
           'g',
-          { className: STATUS_ICON + '__detail', strokeWidth: '2' },
+          { className: CLASS_ROOT + '__detail', strokeWidth: '2' },
           _react2.default.createElement('path', { d: 'M6,12 L18,12' })
         )
       );
@@ -95,5 +104,9 @@ exports.default = Disabled;
 
 Disabled.propTypes = {
   a11yTitle: _react.PropTypes.string
+};
+
+Disabled.defaultProps = {
+  a11yTitle: 'Disabled'
 };
 module.exports = exports['default'];
