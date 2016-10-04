@@ -4,6 +4,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,15 +40,17 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.FORM_FIELD;
+var CLASS_ROOT = _CSSClassnames2.default.FORM_FIELD; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var FormField = function (_Component) {
   (0, _inherits3.default)(FormField, _Component);
@@ -96,68 +110,55 @@ var FormField = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _classnames,
+          _this2 = this;
 
-      var classes = [CLASS_ROOT];
-      if (this.state.focus) {
-        classes.push(CLASS_ROOT + "--focus");
-      }
-      if (this.props.hidden) {
-        classes.push(CLASS_ROOT + "--hidden");
-      }
-      if (this.props.htmlFor) {
-        classes.push(CLASS_ROOT + "--text");
-      }
-      if (this.props.size) {
-        classes.push(CLASS_ROOT + "--size-" + this.props.size);
-      }
-      if (this.props.strong) {
-        classes.push(CLASS_ROOT + '--strong');
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var _props = this.props;
+      var children = _props.children;
+      var className = _props.className;
+      var help = _props.help;
+      var hidden = _props.hidden;
+      var htmlFor = _props.htmlFor;
+      var label = _props.label;
+      var size = _props.size;
+      var strong = _props.strong;
+      var error = _props.error;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'help', 'hidden', 'htmlFor', 'label', 'size', 'strong', 'error']);
 
-      var error = void 0;
-      if (this.props.error) {
-        classes.push(CLASS_ROOT + "--error");
-        error = _react2.default.createElement(
-          'span',
-          { className: CLASS_ROOT + "__error" },
-          this.props.error
-        );
-      }
-      var help = void 0;
-      if (this.props.help !== null && this.props.help !== undefined) {
-        help = _react2.default.createElement(
-          'span',
-          { className: CLASS_ROOT + "__help" },
-          this.props.help
-        );
-      }
 
-      var labelNode = void 0;
-      if (this.props.label) {
-        labelNode = _react2.default.createElement(
-          'label',
-          { className: CLASS_ROOT + "__label", htmlFor: this.props.htmlFor },
-          this.props.label
-        );
-      }
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--focus', this.state.focus), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hidden', hidden), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--text', htmlFor), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--size-' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--strong', strong), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--error', error), _classnames), className);
+
+      var fieldError = error ? _react2.default.createElement(
+        'span',
+        { className: CLASS_ROOT + "__error" },
+        error
+      ) : undefined;
+
+      var fieldHelp = help !== null && help !== undefined ? _react2.default.createElement(
+        'span',
+        { className: CLASS_ROOT + "__help" },
+        this.props.help
+      ) : undefined;
+
+      var labelNode = label ? _react2.default.createElement(
+        'label',
+        { className: CLASS_ROOT + "__label", htmlFor: htmlFor },
+        label
+      ) : undefined;
 
       return _react2.default.createElement(
         'div',
-        { className: classes.join(' '), onClick: this._onClick },
-        error,
+        (0, _extends3.default)({ className: classes }, props, { onClick: this._onClick }),
+        fieldError,
         labelNode,
-        help,
+        fieldHelp,
         _react2.default.createElement(
           'span',
           { ref: function ref(_ref) {
               return _this2.contentsRef = _ref;
             },
             className: CLASS_ROOT + "__contents" },
-          this.props.children
+          children
         )
       );
     }
