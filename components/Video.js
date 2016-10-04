@@ -8,6 +8,10 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
@@ -48,6 +52,10 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Props = require('../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
+
 var _Controls = require('./video/Controls');
 
 var _Controls2 = _interopRequireDefault(_Controls);
@@ -62,9 +70,8 @@ var _Throttle2 = _interopRequireDefault(_Throttle);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.VIDEO; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.VIDEO;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Video = function (_Component) {
@@ -271,6 +278,7 @@ var Video = function (_Component) {
       var playing = _state.playing;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interacting', interacting), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--playing', playing), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hasPlayed', hasPlayed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--ended', ended), (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '--' + colorIndex, colorIndex), _classnames), className);
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Video.propTypes));
 
       return _react2.default.createElement(
         'div',
@@ -279,12 +287,9 @@ var Video = function (_Component) {
           'video',
           (0, _extends3.default)({ ref: function ref(el) {
               return _this4._video = el;
-            },
-            poster: poster,
-            autoPlay: autoPlay ? 'autoplay' : false,
-            loop: loop ? 'loop' : false,
-            muted: muted
-          }, this._mediaEventProps),
+            } }, restProps, {
+            poster: poster, autoPlay: autoPlay ? 'autoplay' : false,
+            loop: loop ? 'loop' : false, muted: muted }, this._mediaEventProps),
           this.props.children
         ),
         showControls ? this._renderControls() : undefined
