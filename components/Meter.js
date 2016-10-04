@@ -4,10 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
@@ -15,6 +11,10 @@ var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -124,7 +124,7 @@ var Meter = function (_Component) {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       var state = this._stateFromProps(nextProps);
-      this.setState(state);
+      this.setState((0, _extends3.default)({}, state));
     }
   }, {
     key: 'componentWillUnmount',
@@ -133,36 +133,6 @@ var Meter = function (_Component) {
 
       if (this._responsive) {
         this._responsive.stop();
-      }
-    }
-  }, {
-    key: '_initialTimeout',
-    value: function _initialTimeout() {
-      this.setState({
-        initial: false,
-        activeIndex: this.state.activeIndex
-      });
-      clearTimeout(this._initialTimer);
-    }
-  }, {
-    key: '_onResponsive',
-    value: function _onResponsive(small) {
-      if (small) {
-        this.setState({ limitMeterSize: true });
-      } else {
-        this.setState({ limitMeterSize: false });
-      }
-    }
-  }, {
-    key: '_onActivate',
-    value: function _onActivate(index) {
-      var _props = this.props;
-      var activeIndex = _props.activeIndex;
-      var onActive = _props.onActive;
-
-      this.setState({ initial: false, activeIndex: activeIndex });
-      if (onActive) {
-        onActive(index);
       }
     }
   }, {
@@ -286,7 +256,7 @@ var Meter = function (_Component) {
       // Normalize simple value prop to a series, if needed.
       var series = this._normalizeSeries(props, thresholds);
 
-      var state = {
+      var nextState = {
         series: series,
         thresholds: thresholds,
         min: min,
@@ -295,37 +265,36 @@ var Meter = function (_Component) {
       };
 
       if (props.hasOwnProperty('activeIndex')) {
-        state.activeIndex = props.activeIndex;
+        nextState.activeIndex = props.activeIndex;
       } else if (props.hasOwnProperty('active')) {
-        state.activeIndex = props.active ? 0 : undefined;
+        nextState.activeIndex = props.active ? 0 : undefined;
       }
 
-      return state;
+      return nextState;
     }
   }, {
-    key: '_getActiveFields',
-    value: function _getActiveFields() {
-      var _state = this.state;
-      var activeIndex = _state.activeIndex;
-      var total = _state.total;
-      var series = _state.series;
+    key: '_initialTimeout',
+    value: function _initialTimeout() {
+      this.setState({
+        initial: false,
+        activeIndex: this.state.activeIndex
+      });
+      clearTimeout(this._initialTimer);
+    }
+  }, {
+    key: '_onResponsive',
+    value: function _onResponsive(small) {
+      this.setState({ limitMeterSize: small ? true : false });
+    }
+  }, {
+    key: '_onActivate',
+    value: function _onActivate(index) {
+      var onActive = this.props.onActive;
 
-      var fields = void 0;
-      if (undefined === activeIndex) {
-        fields = {
-          value: total
-        };
-      } else {
-        var active = series[activeIndex];
-        if (!active) {
-          active = series[0];
-        }
-        fields = {
-          value: active.value,
-          onClick: active.onClick
-        };
+      this.setState({ initial: false, activeIndex: index });
+      if (onActive) {
+        onActive(index);
       }
-      return fields;
     }
   }, {
     key: 'render',
@@ -333,36 +302,36 @@ var Meter = function (_Component) {
       var _classnames,
           _this2 = this;
 
-      var _props2 = this.props;
-      var active = _props2.active;
-      var a11yTitle = _props2.a11yTitle;
-      var className = _props2.className;
-      var label = _props2.label;
-      var size = _props2.size;
-      var stacked = _props2.stacked;
-      var tabIndex = _props2.tabIndex;
-      var type = _props2.type;
-      var vertical = _props2.vertical;
-      var props = (0, _objectWithoutProperties3.default)(_props2, ['active', 'a11yTitle', 'className', 'label', 'size', 'stacked', 'tabIndex', 'type', 'vertical']);
+      var _props = this.props;
+      var active = _props.active;
+      var a11yTitle = _props.a11yTitle;
+      var className = _props.className;
+      var label = _props.label;
+      var onActive = _props.onActive;
+      var size = _props.size;
+      var stacked = _props.stacked;
+      var tabIndex = _props.tabIndex;
+      var type = _props.type;
+      var vertical = _props.vertical;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['active', 'a11yTitle', 'className', 'label', 'onActive', 'size', 'stacked', 'tabIndex', 'type', 'vertical']);
 
       delete props.activeIndex;
       delete props.colorIndex;
       delete props.max;
       delete props.min;
-      delete props.onActive;
       delete props.series;
       delete props.threshold;
       delete props.thresholds;
       delete props.value;
       delete props.responsive;
-      var _state2 = this.state;
-      var activeIndex = _state2.activeIndex;
-      var limitMeterSize = _state2.limitMeterSize;
-      var max = _state2.max;
-      var min = _state2.min;
-      var series = _state2.series;
-      var thresholds = _state2.thresholds;
-      var total = _state2.total;
+      var _state = this.state;
+      var activeIndex = _state.activeIndex;
+      var limitMeterSize = _state.limitMeterSize;
+      var max = _state.max;
+      var min = _state.min;
+      var series = _state.series;
+      var thresholds = _state.thresholds;
+      var total = _state.total;
 
 
       var responsiveSize = void 0;
@@ -385,12 +354,17 @@ var Meter = function (_Component) {
         );
       }
 
+      var onActivate = void 0;
+      if (onActive || series.length > 1 || series[0].onClick) {
+        onActivate = this._onActivate;
+      }
+
       var GraphicComponent = TYPE_COMPONENT[this.props.type];
       var graphic = _react2.default.createElement(GraphicComponent, {
         a11yTitle: a11yTitle,
         activeIndex: activeIndex,
         min: min, max: max,
-        onActivate: this._onActivate,
+        onActivate: onActivate,
         series: series,
         stacked: stacked,
         tabIndex: tabIndex,

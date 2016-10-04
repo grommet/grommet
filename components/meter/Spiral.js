@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,6 +32,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _Graphics = require('../../utils/Graphics');
 
 var _CSSClassnames = require('../../utils/CSSClassnames');
@@ -42,7 +50,9 @@ var _Graphic3 = _interopRequireDefault(_Graphic2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.METER; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.METER;
 
 var SPIRAL_WIDTH = _utils.baseDimension;
 var SPIRAL_RADIUS = _utils.baseDimension / 2 - _Graphics.baseUnit / 2;
@@ -100,15 +110,15 @@ var Spiral = function (_Graphic) {
   }, {
     key: '_renderTopLayer',
     value: function _renderTopLayer() {
+      var _this2 = this;
+
+      var activeIndex = this.props.activeIndex;
       var viewBoxRadius = this.state.viewBoxRadius;
 
       var x = viewBoxRadius + RING_THICKNESS * 0.5;
       var y = viewBoxRadius + RING_THICKNESS * 1.75;
       var labels = this.props.series.map(function (item, index) {
-        var classes = [CLASS_ROOT + "__label"];
-        if (index === this.props.activeIndex) {
-          classes.push(CLASS_ROOT + "__label--active");
-        }
+        var classes = (0, _classnames3.default)(CLASS_ROOT + '__label', (0, _defineProperty3.default)({}, CLASS_ROOT + '__label--active', index === activeIndex));
 
         var textX = x;
         var textY = y;
@@ -119,13 +129,13 @@ var Spiral = function (_Graphic) {
           'text',
           { key: item.label || index, x: textX, y: textY,
             textAnchor: 'start', fontSize: 16,
-            className: classes.join(' '),
-            onMouseOver: this.props.onActivate.bind(null, index),
-            onMouseOut: this.props.onActivate.bind(null, null),
+            className: classes,
+            onMouseOver: _this2.props.onActivate.bind(null, index),
+            onMouseOut: _this2.props.onActivate.bind(null, null),
             onClick: item.onClick },
           item.label
         );
-      }, this);
+      });
 
       return _react2.default.createElement(
         'g',

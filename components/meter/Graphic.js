@@ -8,6 +8,10 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -36,6 +40,10 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _Intl = require('../../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
@@ -52,9 +60,8 @@ var _utils = require('./utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.METER; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.METER;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Graphic = function (_Component) {
@@ -127,29 +134,26 @@ var Graphic = function (_Component) {
   }, {
     key: '_renderSlice',
     value: function _renderSlice(trackIndex, item, itemIndex, startValue, max, track, threshold) {
+      var _props = this.props;
+      var activeIndex = _props.activeIndex;
+      var onActivate = _props.onActivate;
+
       var path = void 0;
       if (!item.hidden) {
-        var classes = [CLASS_ROOT + '__slice'];
-        if (itemIndex === this.props.activeIndex) {
-          classes.push(CLASS_ROOT + '__slice--active');
-        }
-        if (item.onClick) {
-          classes.push(CLASS_ROOT + "__slice--clickable");
-        }
-        if (item.colorIndex) {
-          classes.push(COLOR_INDEX + '-' + item.colorIndex);
-        }
+        var _classnames;
+
+        var classes = (0, _classnames3.default)(CLASS_ROOT + '__slice', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__slice--active', itemIndex === activeIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__slice--clickable', item.onClick), (0, _defineProperty3.default)(_classnames, COLOR_INDEX + '-' + item.colorIndex, item.colorIndex), _classnames));
 
         var commands = this._sliceCommands(trackIndex, item, startValue, max);
 
         if (threshold) {
           path = (0, _utils.buildPath)(itemIndex, commands, classes);
         } else if (track) {
-          path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick);
+          path = (0, _utils.buildPath)(itemIndex, commands, classes, onActivate, item.onClick);
         } else {
           var a11yTitle = '' + item.value;
           var role = this.props.series.length > 1 ? 'img' : undefined;
-          path = (0, _utils.buildPath)(itemIndex, commands, classes, this.props.onActivate, item.onClick, a11yTitle, role);
+          path = (0, _utils.buildPath)(itemIndex, commands, classes, onActivate, item.onClick, a11yTitle, role);
         }
       }
 
@@ -160,9 +164,9 @@ var Graphic = function (_Component) {
     value: function _renderSlices(series, trackIndex, track, threshold) {
       var _this2 = this;
 
-      var _props = this.props;
-      var min = _props.min;
-      var max = _props.max;
+      var _props2 = this.props;
+      var min = _props2.min;
+      var max = _props2.max;
 
       var startValue = min;
 
@@ -212,20 +216,18 @@ var Graphic = function (_Component) {
   }, {
     key: '_renderLoading',
     value: function _renderLoading() {
-      var classes = [CLASS_ROOT + '__slice'];
-      classes.push(CLASS_ROOT + '__slice--loading');
-      classes.push(COLOR_INDEX + '-loading');
+      var classes = (0, _classnames3.default)(CLASS_ROOT + '__slice', CLASS_ROOT + '__slice--loading', COLOR_INDEX + '-loading');
       var commands = this._loadingCommands();
-      return [_react2.default.createElement('path', { key: 'loading', className: classes.join(' '), d: commands })];
+      return [_react2.default.createElement('path', { key: 'loading', className: classes, d: commands })];
     }
   }, {
     key: '_renderValues',
     value: function _renderValues() {
       var _this3 = this;
 
-      var _props2 = this.props;
-      var min = _props2.min;
-      var max = _props2.max;
+      var _props3 = this.props;
+      var min = _props3.min;
+      var max = _props3.max;
 
       var values = void 0;
       if (this.props.stacked) {
@@ -252,9 +254,9 @@ var Graphic = function (_Component) {
     value: function _renderTracks() {
       var _this4 = this;
 
-      var _props3 = this.props;
-      var min = _props3.min;
-      var max = _props3.max;
+      var _props4 = this.props;
+      var min = _props4.min;
+      var max = _props4.max;
 
       var trackValue = { value: max };
       var tracks = void 0;
@@ -349,10 +351,12 @@ var Graphic = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var classes = [CLASS_ROOT];
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var _props5 = this.props;
+      var series = _props5.series;
+      var tabIndex = _props5.tabIndex;
+      var _state = this.state;
+      var viewBoxHeight = _state.viewBoxHeight;
+      var viewBoxWidth = _state.viewBoxWidth;
 
       var tracks = this._renderTracks();
       var values = this._renderValues();
@@ -361,15 +365,15 @@ var Graphic = function (_Component) {
 
       var a11yTitle = this._renderA11YTitle();
 
-      var role = this.props.series.length > 1 ? 'group' : 'img';
+      var role = series.length > 1 ? 'group' : 'img';
 
       return _react2.default.createElement(
         'svg',
         { className: CLASS_ROOT + '__graphic',
-          tabIndex: role === 'img' ? undefined : this.props.tabIndex || '0',
-          width: this.state.viewBoxWidth, role: role,
-          height: this.state.viewBoxHeight,
-          viewBox: "0 0 " + this.state.viewBoxWidth + " " + this.state.viewBoxHeight,
+          tabIndex: role === 'img' ? undefined : tabIndex || '0',
+          width: viewBoxWidth, role: role,
+          height: viewBoxHeight,
+          viewBox: '0 0 ' + viewBoxWidth + ' ' + viewBoxHeight,
           preserveAspectRatio: 'xMidYMid meet',
           'aria-label': a11yTitle, onFocus: this._onGraphicFocus,
           onBlur: this._onGraphicBlur },

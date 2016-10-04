@@ -32,7 +32,7 @@ var propTypes = exports.propTypes = {
   a11yTitle: _react.PropTypes.string,
   max: _react.PropTypes.number.isRequired,
   min: _react.PropTypes.number.isRequired,
-  onActivate: _react.PropTypes.func.isRequired,
+  onActivate: _react.PropTypes.func,
   series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     label: _react.PropTypes.string,
     value: _react.PropTypes.number.isRequired,
@@ -56,13 +56,13 @@ function buildPath(itemIndex, commands, classes, onActivate, onClick, a11yTitle,
     return _react2.default.createElement(
       'g',
       (0, _extends3.default)({ key: itemIndex }, a11yRoles),
-      _react2.default.createElement('path', { className: classes.join(' '), d: commands,
+      _react2.default.createElement('path', { className: classes, d: commands,
         'data-index': itemIndex, onFocus: onOver, onBlur: onOut }),
       _react2.default.createElement('path', { className: CLASS_ROOT + '__hot', d: commands, fill: 'none',
         onMouseOver: onOver, onMouseOut: onOut,
         onClick: onClick })
     );
   } else {
-    return _react2.default.createElement('path', { key: itemIndex, className: classes.join(' '), d: commands });
+    return _react2.default.createElement('path', { key: itemIndex, className: classes, d: commands });
   }
 };
