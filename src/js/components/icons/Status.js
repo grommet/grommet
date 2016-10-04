@@ -18,7 +18,6 @@ export default class Status extends Component {
   render () {
     let { className, size, value, ...props } = this.props;
     const classes = classnames(
-      CLASS_ROOT,
       {
         [`${CLASS_ROOT}--${size}`]: size
       },
