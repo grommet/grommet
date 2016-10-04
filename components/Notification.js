@@ -153,7 +153,7 @@ var Notification = function (_Component) {
       var status = _props2.status;
       var intl = this.context.intl;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--status-' + status.toLowerCase(), BACKGROUND_COLOR_INDEX + '-' + status.toLowerCase(), className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--' + size, size));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--status-' + status.toLowerCase(), BACKGROUND_COLOR_INDEX + '-' + status.toLowerCase(), (0, _defineProperty3.default)({}, CLASS_ROOT + '--' + size, size), className);
 
       var statusNode = void 0;
       if (status) {
@@ -210,6 +210,7 @@ var Notification = function (_Component) {
       }
 
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Notification.propTypes));
       boxProps.announce = false;
       var fullBox = boxProps.hasOwnProperty('full') ? boxProps.full : 'horizontal';
 
@@ -219,8 +220,9 @@ var Notification = function (_Component) {
           leave: { animation: 'fade', duration: 1000 } },
         _react2.default.createElement(
           _Box2.default,
-          (0, _extends3.default)({}, boxProps, { className: classes, pad: 'small', direction: 'row',
-            align: 'start', responsive: false, full: fullBox }),
+          (0, _extends3.default)({}, restProps, boxProps, { className: classes,
+            pad: 'small', direction: 'row', align: 'start', responsive: false,
+            full: fullBox }),
           _react2.default.createElement(
             _Box2.default,
             { pad: 'small' },
@@ -269,7 +271,6 @@ Notification.contextTypes = {
 
 Notification.defaultProps = {
   closer: false,
-  flush: true,
   status: 'unknown',
   pad: 'medium'
 };
