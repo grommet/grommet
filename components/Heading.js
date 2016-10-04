@@ -4,6 +4,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,15 +40,17 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.HEADING;
+var CLASS_ROOT = _CSSClassnames2.default.HEADING; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var Heading = function (_Component) {
   (0, _inherits3.default)(Heading, _Component);
@@ -49,32 +63,25 @@ var Heading = function (_Component) {
   (0, _createClass3.default)(Heading, [{
     key: 'render',
     value: function render() {
-      var classes = [CLASS_ROOT];
-      if (this.props.size) {
-        classes.push(CLASS_ROOT + '--' + this.props.size);
-      }
-      if (this.props.strong) {
-        classes.push(CLASS_ROOT + '--strong');
-      }
-      if (this.props.align) {
-        classes.push(CLASS_ROOT + '--align-' + this.props.align);
-      }
-      if (this.props.margin) {
-        classes.push(CLASS_ROOT + '--margin-' + this.props.margin);
-      }
-      if (this.props.uppercase) {
-        classes.push(CLASS_ROOT + '--uppercase');
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var _classnames;
 
-      // we handle dangerouslySetInnerHTML to allow using Heading with Markdown.
+      var _props = this.props;
+      var align = _props.align;
+      var children = _props.children;
+      var className = _props.className;
+      var margin = _props.margin;
+      var size = _props.size;
+      var strong = _props.strong;
+      var Tag = _props.tag;
+      var uppercase = _props.uppercase;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['align', 'children', 'className', 'margin', 'size', 'strong', 'tag', 'uppercase']);
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--strong', strong), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + margin, margin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--uppercase', uppercase), _classnames), className);
+
       return _react2.default.createElement(
-        this.props.tag,
-        { id: this.props.id, className: classes.join(' '),
-          dangerouslySetInnerHTML: this.props.dangerouslySetInnerHTML },
-        this.props.children
+        Tag,
+        (0, _extends3.default)({}, props, { className: classes }),
+        children
       );
     }
   }]);
