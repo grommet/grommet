@@ -2,7 +2,7 @@ exports[`Map has correct default options 1`] = `
 <div
   className="grommetux-map">
   <svg
-    className="grommetux-map__graphic"
+    className="grommetux-map__links"
     height={100}
     preserveAspectRatio="xMidYMid meet"
     viewBox="0 0 100 100"

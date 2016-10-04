@@ -172,17 +172,17 @@ export default class ResourceMap extends Component {
           ` ${p2[0]},${p2[1]}`;
       }
 
-      let className = `${CLASS_ROOT}__path`;
-      if (activeId === link.parentId || activeId === link.childId) {
-        className += ` ${CLASS_ROOT}__path--active`;
-      }
       const pathColorIndex = link.colorIndex || linkColorIndex;
-      if (pathColorIndex) {
-        className += ` ${COLOR_INDEX}-${pathColorIndex}`;
-      }
+      const classes = classnames(
+        `${CLASS_ROOT}__path`, {
+          [`${CLASS_ROOT}__path--active`]:
+            (activeId === link.parentId || activeId === link.childId),
+          [`${COLOR_INDEX}-${pathColorIndex}`]: pathColorIndex
+        }
+      );
 
       return (
-        <path key={index} fill="none" className={className} d={commands} />
+        <path key={index} fill="none" className={classes} d={commands} />
       );
     });
 
@@ -288,7 +288,7 @@ export default class ResourceMap extends Component {
 
     return (
       <div ref={ref => this._mapRef = ref} {...props} className={classes}>
-        <svg className={`${CLASS_ROOT}__graphic`}
+        <svg className={`${CLASS_ROOT}__links`}
           width={width} height={height} viewBox={`0 0 ${width} ${height}`}
           preserveAspectRatio="xMidYMid meet">
           {paths}
