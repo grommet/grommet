@@ -6,17 +6,20 @@
 
   @include media-query(lap-and-up) {
     display: flex;
+    flex-direction: row;
   }
 }
 
-.#{$grommet-namespace}split--hidden {
+.#{$grommet-namespace}split__column--hidden {
   display: none;
 }
 
-.#{$grommet-namespace}split--full {
-  > * {
-    width: 100%;
-  }
+.#{$grommet-namespace}split__column--fixed {
+  flex: 0 0 auto;
+}
+
+.#{$grommet-namespace}split__column--full {
+  flex: 1 1;
 }
 
 @include media-query(lap-and-up) {

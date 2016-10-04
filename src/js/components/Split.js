@@ -3,7 +3,6 @@
 import React, { Component, PropTypes, Children } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
-import Box from './Box';
 
 const CLASS_ROOT = CSSClassnames.SPLIT;
 const BREAK_WIDTH = 720; //adds the breakpoint of single/multiple split
@@ -100,25 +99,36 @@ export default class Split extends Component {
 
     const filteredChildren = Children.toArray(children).filter(child => child);
     const boxedChildren = filteredChildren.map((child, index) => {
-      let boxFlex = true;
-      let className;
+      let hidden;
+      let fixed;
+      let full;
       // When we only have room to show one child, hide the appropriate one
       if ('single' === responsive &&
         (('left' === priority && index > 0) ||
         ('right' === priority && index === 0 &&
           filteredChildren.length > 1))) {
-        className = `${CLASS_ROOT}--hidden`;
+        hidden = true;
       } else if (filteredChildren.length > 1 &&
         ((flex === 'right' && index === 0) ||
         (flex === 'left' && index === filteredChildren.length - 1))) {
-        boxFlex = false;
+        fixed = true;
       } else {
-        className = `${CLASS_ROOT}--full`;
+        full = true;
       }
+      const classes = classnames(
+        `${CLASS_ROOT}__column`,
+        {
+          [`${CLASS_ROOT}__column--hidden`]: hidden,
+          [`${CLASS_ROOT}__column--fixed`]: fixed,
+          [`${CLASS_ROOT}__column--full`]: full
+        }
+      );
+      // Don't use a Box here because we don't want to constrain the child
+      // in a flexbox container.
       return (
-        <Box key={index} className={className} flex={boxFlex}>
+        <div key={index} className={classes}>
           {child}
-        </Box>
+        </div>
       );
     });
 
