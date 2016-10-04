@@ -4,6 +4,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,15 +40,17 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.SPINNING;
+var CLASS_ROOT = _CSSClassnames2.default.SPINNING; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var Spinning = function (_Component) {
   (0, _inherits3.default)(Spinning, _Component);
@@ -49,17 +63,17 @@ var Spinning = function (_Component) {
   (0, _createClass3.default)(Spinning, [{
     key: 'render',
     value: function render() {
-      var classes = [CLASS_ROOT];
-      if (this.props.small) {
-        classes.push(CLASS_ROOT + "--small");
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var _props = this.props;
+      var className = _props.className;
+      var small = _props.small;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'small']);
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--small', small), className);
+
       return _react2.default.createElement(
         'svg',
-        { className: classes.join(' '), viewBox: '0 0 48 48', version: '1.1',
-          role: 'img' },
+        (0, _extends3.default)({}, props, { className: classes, viewBox: '0 0 48 48', version: '1.1',
+          role: 'img' }),
         _react2.default.createElement(
           'title',
           null,
@@ -77,4 +91,9 @@ var Spinning = function (_Component) {
 
 Spinning.displayName = 'Spinning';
 exports.default = Spinning;
+
+
+Spinning.propTypes = {
+  small: _react.PropTypes.bool
+};
 module.exports = exports['default'];
