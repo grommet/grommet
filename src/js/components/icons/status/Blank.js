@@ -16,8 +16,7 @@ export default class Blank extends Component {
     );
     return (
       <svg {...props} className={classes} viewBox='0 0 24 24' role='img'
-        version='1.1' aria-label={a11yTitle}>
-      </svg>
+        version='1.1' aria-label={a11yTitle} />
     );
   }
 }
