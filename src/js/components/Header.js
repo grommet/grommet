@@ -2,9 +2,10 @@
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
 import Props from '../utils/Props';
 import Box from './Box';
-import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.HEADER;
 
@@ -53,56 +54,57 @@ export default class Header extends Component {
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    var containerClasses = [`${CLASS_ROOT}__container`];
-    var wrapperClasses = [`${CLASS_ROOT}__wrapper`];
+    const {
+      children, className, colorIndex, fixed, float, role, size, splash
+    } = this.props;
+    const classes = classnames(
+      CLASS_ROOT, {
+        [`${CLASS_ROOT}--float`]: float,
+        [`${CLASS_ROOT}--splash`]: splash
+      },
+      className
+    );
+    const containerClasses = classnames(
+      `${CLASS_ROOT}__container`, {
+        [`${CLASS_ROOT}--${size}`]: (size && typeof size === 'string'),
+        [`${CLASS_ROOT}__container--fixed`]: fixed,
+        // add default color index if none is provided
+        [`${CLASS_ROOT}__container--fill`]: (fixed && !colorIndex),
+        [`${CLASS_ROOT}__container--float`]: float
+      }
+    );
+    const wrapperClasses = classnames(
+      `${CLASS_ROOT}__wrapper`, {
+        [`${CLASS_ROOT}__wrapper--${size}`]: (size && typeof size === 'string')
+      }
+    );
     var other = Props.pick(this.props, Object.keys(Box.propTypes));
     let restProps = Props.omit(this.props, Object.keys(Header.propTypes));
-    if (this.props.fixed) {
-      containerClasses.push(`${CLASS_ROOT}__container--fixed`);
-
-      // add default color index if none is provided
-      if (!this.props.colorIndex) {
-        containerClasses.push(`${CLASS_ROOT}__container--fill`);
-      }
-    }
-    if (this.props.float) {
-      classes.push(`${CLASS_ROOT}--float`);
-      containerClasses.push(`${CLASS_ROOT}__container--float`);
-    }
-    if (this.props.size && typeof this.props.size === 'string') {
-      classes.push(`${CLASS_ROOT}--${this.props.size}`);
-      wrapperClasses.push(`${CLASS_ROOT}__wrapper--${this.props.size}`);
+    if (size && typeof size === 'string') {
       // don't transfer size to Box since it means something different
       delete other.size;
     }
-    if (this.props.splash) {
-      classes.push(`${CLASS_ROOT}--splash`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
 
-    if (this.props.fixed) {
+    if (fixed) {
       return (
-        <div className={containerClasses.join(' ')}>
+        <div className={containerClasses}>
           <div ref={ref => this.mirrorRef = ref}
             className={`${CLASS_ROOT}__mirror`} />
-          <div className={wrapperClasses.join(' ')}>
+          <div className={wrapperClasses}>
             <Box ref={ref => this.contentRef = ref}
-              tag="header" {...other} {...restProps}
-              className={classes.join(' ')}>
-              {this.props.children}
+              {...other} {...restProps} tag="header"
+              className={classes}>
+              {children}
             </Box>
           </div>
         </div>
       );
     } else {
       return (
-        <Box tag="header" {...other} {...restProps} role={this.props.role}
-          className={classes.join(' ')}
-          containerClassName={containerClasses.join(' ')}>
-          {this.props.children}
+        <Box {...other} {...restProps} tag="header" role={role}
+          className={classes}
+          containerClassName={containerClasses}>
+          {children}
         </Box>
       );
     }
