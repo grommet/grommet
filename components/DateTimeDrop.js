@@ -600,7 +600,7 @@ var DateTimeDrop = function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        { id: CLASS_ROOT, className: CLASS_ROOT, align: 'center' },
+        { className: CLASS_ROOT, align: 'center' },
         date,
         time
       );

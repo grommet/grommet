@@ -253,7 +253,7 @@ var DateTime = function (_Component) {
   }, {
     key: '_onClose',
     value: function _onClose(event) {
-      if (!(0, _DOM.isDescendant)(this.containerRef, event.target)) {
+      if (!(0, _DOM.isDescendant)(this.containerRef, event.target) && !(0, _DOM.isDescendant)(this._drop.container, event.target)) {
         this.setState({ dropActive: false, cursor: -1 });
       }
     }

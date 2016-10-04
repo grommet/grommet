@@ -40,19 +40,13 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _FormattedMessage = require('../../FormattedMessage');
-
-var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
-
 var _CSSClassnames = require('../../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.STATUS_ICON;
+var CLASS_ROOT = _CSSClassnames2.default.STATUS_ICON; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CriticalStatus = function (_Component) {
   (0, _inherits3.default)(CriticalStatus, _Component);
@@ -71,26 +65,20 @@ var CriticalStatus = function (_Component) {
       var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className']);
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, CLASS_ROOT + '-critical', className);
-      var criticalTitleId = 'critical-title';
       return _react2.default.createElement(
         'svg',
-        (0, _extends3.default)({}, props, { className: classes, viewBox: '0 0 24 24',
-          'aria-labelledby': criticalTitleId, role: 'img', version: '1.1' }),
-        _react2.default.createElement(
-          'title',
-          { id: criticalTitleId },
-          _react2.default.createElement(_FormattedMessage2.default, { id: a11yTitle, defaultMessage: a11yTitle })
-        ),
+        (0, _extends3.default)({}, props, { className: classes, viewBox: '0 0 24 24', role: 'img',
+          version: '1.1', 'aria-label': a11yTitle }),
         _react2.default.createElement(
           'g',
           { className: CLASS_ROOT + '__base', stroke: 'none' },
-          _react2.default.createElement('path', { role: 'presentation', d: 'M12,0 L24,12 L12,24 L0,12 Z' })
+          _react2.default.createElement('path', { d: 'M12,0 L24,12 L12,24 L0,12 Z' })
         ),
         _react2.default.createElement(
           'g',
           { className: CLASS_ROOT + '__detail', fill: 'none' },
-          _react2.default.createElement('path', { role: 'presentation', d: 'M8,8 L16,16', strokeWidth: '2' }),
-          _react2.default.createElement('path', { role: 'presentation', d: 'M8,16 L16,8', strokeWidth: '2' })
+          _react2.default.createElement('path', { d: 'M8,8 L16,16', strokeWidth: '2' }),
+          _react2.default.createElement('path', { d: 'M8,16 L16,8', strokeWidth: '2' })
         )
       );
     }
@@ -103,7 +91,8 @@ exports.default = CriticalStatus;
 
 
 CriticalStatus.propTypes = {
-  a11yTitle: _react.PropTypes.string
+  a11yTitle: _react.PropTypes.string,
+  className: _react.PropTypes.string
 };
 
 CriticalStatus.defaultProps = {

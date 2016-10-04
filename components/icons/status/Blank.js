@@ -40,19 +40,13 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _FormattedMessage = require('../../FormattedMessage');
-
-var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
-
 var _CSSClassnames = require('../../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.STATUS_ICON;
+var CLASS_ROOT = _CSSClassnames2.default.STATUS_ICON; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var Blank = function (_Component) {
   (0, _inherits3.default)(Blank, _Component);
@@ -71,17 +65,8 @@ var Blank = function (_Component) {
       var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className']);
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, CLASS_ROOT + '-blank', className);
-      var blankTitleId = 'blank-title';
-      return _react2.default.createElement(
-        'svg',
-        (0, _extends3.default)({}, props, { className: classes, viewBox: '0 0 24 24', role: 'img',
-          'aria-labelledby': blankTitleId, version: '1.1' }),
-        _react2.default.createElement(
-          'title',
-          { id: blankTitleId },
-          _react2.default.createElement(_FormattedMessage2.default, { id: a11yTitle, defaultMessage: a11yTitle })
-        )
-      );
+      return _react2.default.createElement('svg', (0, _extends3.default)({}, props, { className: classes, viewBox: '0 0 24 24', role: 'img',
+        version: '1.1', 'aria-label': a11yTitle }));
     }
   }]);
   return Blank;
@@ -92,7 +77,8 @@ exports.default = Blank;
 
 
 Blank.propTypes = {
-  a11yTitle: _react.PropTypes.string
+  a11yTitle: _react.PropTypes.string,
+  className: _react.PropTypes.string
 };
 
 Blank.defaultProps = {

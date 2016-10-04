@@ -40,19 +40,13 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _FormattedMessage = require('../../FormattedMessage');
-
-var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
-
 var _CSSClassnames = require('../../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.STATUS_ICON;
+var CLASS_ROOT = _CSSClassnames2.default.STATUS_ICON; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var Warning = function (_Component) {
   (0, _inherits3.default)(Warning, _Component);
@@ -71,16 +65,10 @@ var Warning = function (_Component) {
       var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className']);
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, CLASS_ROOT + '-warning', className);
-      var warningTitleId = 'warning-title';
       return _react2.default.createElement(
         'svg',
         (0, _extends3.default)({}, props, { className: classes, viewBox: '0 0 24 24', role: 'img',
-          'aria-labelledby': warningTitleId, version: '1.1' }),
-        _react2.default.createElement(
-          'title',
-          { id: warningTitleId },
-          _react2.default.createElement(_FormattedMessage2.default, { id: a11yTitle, defaultMessage: a11yTitle })
-        ),
+          'aria-label': a11yTitle, version: '1.1' }),
         _react2.default.createElement(
           'g',
           { className: CLASS_ROOT + '__base' },
@@ -105,7 +93,8 @@ exports.default = Warning;
 
 
 Warning.propTypes = {
-  a11yTitle: _react.PropTypes.string
+  a11yTitle: _react.PropTypes.string,
+  className: _react.PropTypes.string
 };
 
 Warning.defaultProps = {

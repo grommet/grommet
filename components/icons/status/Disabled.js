@@ -40,19 +40,13 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _FormattedMessage = require('../../FormattedMessage');
-
-var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
-
 var _CSSClassnames = require('../../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.STATUS_ICON;
+var CLASS_ROOT = _CSSClassnames2.default.STATUS_ICON; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var Disabled = function (_Component) {
   (0, _inherits3.default)(Disabled, _Component);
@@ -71,21 +65,15 @@ var Disabled = function (_Component) {
       var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className']);
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, CLASS_ROOT + '-disabled', className);
-      var disabledTitleId = 'disabled-title';
       return _react2.default.createElement(
         'svg',
         (0, _extends3.default)({}, props, { className: classes, viewBox: '0 0 24 24', role: 'img',
-          'aria-labelledby': disabledTitleId, version: '1.1' }),
-        _react2.default.createElement(
-          'title',
-          { id: disabledTitleId },
-          _react2.default.createElement(_FormattedMessage2.default, { id: a11yTitle, defaultMessage: a11yTitle })
-        ),
+          version: '1.1', 'aria-label': a11yTitle }),
         _react2.default.createElement(
           'g',
           { className: CLASS_ROOT + '__base' },
-          _react2.default.createElement('path', { role: 'presentation', stroke: 'none',
-            d: "M21,24 L3,24 C1.3,24 0,22.7 0,21 L0,3 C0,1.3 1.3,0 3,0 " + "L21,0 C22.7,0 24,1.3 24,3 L24,21 C24,22.7 22.7,24 21,24 " + "L21,24 Z" })
+          _react2.default.createElement('path', { stroke: 'none',
+            d: 'M21,24 L3,24 C1.3,24 0,22.7 0,21 L0,3 C0,1.3 1.3,0 3,0 ' + 'L21,0 C22.7,0 24,1.3 24,3 L24,21 C24,22.7 22.7,24 21,24 ' + 'L21,24 Z' })
         ),
         _react2.default.createElement(
           'g',
@@ -103,7 +91,8 @@ exports.default = Disabled;
 
 
 Disabled.propTypes = {
-  a11yTitle: _react.PropTypes.string
+  a11yTitle: _react.PropTypes.string,
+  className: _react.PropTypes.string
 };
 
 Disabled.defaultProps = {

@@ -40,19 +40,13 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _FormattedMessage = require('../../FormattedMessage');
-
-var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
-
 var _CSSClassnames = require('../../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.STATUS_ICON;
+var CLASS_ROOT = _CSSClassnames2.default.STATUS_ICON; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var OK = function (_Component) {
   (0, _inherits3.default)(OK, _Component);
@@ -71,26 +65,20 @@ var OK = function (_Component) {
       var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className']);
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, CLASS_ROOT + '-ok', className);
-      var okTitleId = 'ok-title';
       return _react2.default.createElement(
         'svg',
         (0, _extends3.default)({}, props, { className: classes, viewBox: '0 0 24 24', role: 'img',
-          'aria-labelledby': okTitleId, version: '1.1' }),
-        _react2.default.createElement(
-          'title',
-          { id: okTitleId },
-          _react2.default.createElement(_FormattedMessage2.default, { id: a11yTitle, defaultMessage: a11yTitle })
-        ),
+          'aria-label': a11yTitle, version: '1.1' }),
         _react2.default.createElement(
           'g',
           { className: CLASS_ROOT + '__base' },
-          _react2.default.createElement('circle', { role: 'presentation', cx: '12', cy: '12', r: '12', stroke: 'none' })
+          _react2.default.createElement('circle', { cx: '12', cy: '12', r: '12', stroke: 'none' })
         ),
         _react2.default.createElement(
           'g',
           { className: CLASS_ROOT + '__detail' },
-          _react2.default.createElement('path', { role: 'presentation',
-            d: "M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 " + "L10,17.4 Z", stroke: 'none' })
+          _react2.default.createElement('path', {
+            d: 'M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 ' + 'L10,17.4 Z', stroke: 'none' })
         )
       );
     }
@@ -103,7 +91,8 @@ exports.default = OK;
 
 
 OK.propTypes = {
-  a11yTitle: _react.PropTypes.string
+  a11yTitle: _react.PropTypes.string,
+  className: _react.PropTypes.string
 };
 
 OK.defaultProps = {
