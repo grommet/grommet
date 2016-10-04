@@ -1,4 +1,8 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+const COLOR_REGEXP =
+  /rgb\((\d+), (\d+), (\d+)\)|rgba\((\d+), (\d+), (\d+), (\d+)\)/;
+
 function hash(input) {
   var hash = 0, i, chr, len;
   if (input.length === 0) return hash;
@@ -9,8 +13,6 @@ function hash(input) {
   }
   return hash;
 };
-
-const COLOR_REGEXP = /rgb\((\d+), (\d+), (\d+)\)/;
 
 export default {
 
