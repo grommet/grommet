@@ -17,4 +17,12 @@ describe('DateTime', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('transfers arbitrary props', () => {
+    const component = renderer.create(
+      <DateTime value='4/7/2015 10:00 am' data-flavor='coconut' />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -257,20 +257,24 @@ export default class DateTime extends Component {
   }
 
   render () {
-    const { className, format, id, name } = this.props;
+    const { className, format, value, ...props } = this.props;
+    delete props.onChange;
+    delete props.step;
     const { dropActive } = this.state;
     const { intl } = this.context;
-    let { value } = this.props;
     let classes = classnames(
       CLASS_ROOT,
-      className, {
+      {
         [`${CLASS_ROOT}--active`]: dropActive
-      }
+      },
+      className
     );
+
+    let inputValue = value;
     if (value instanceof Date) {
-      value = moment(value).format(format);
+      inputValue = moment(value).format(format);
     } else if (value && typeof value === 'object') {
-      value = value.format(format);
+      inputValue = value.format(format);
     }
     const Icon = (TIME_REGEXP.test(format) ? ClockIcon : CalendarIcon);
 
@@ -280,10 +284,9 @@ export default class DateTime extends Component {
 
     return (
       <div ref={(ref) => this.containerRef = ref} className={classes}>
-        <input ref={(ref) => this.inputRef = ref} placeholder={format}
-          className={`${INPUT} ${CLASS_ROOT}__input`}
-          id={id} name={name}
-          value={value || ''} onChange={this._onInputChange} />
+        <input ref={(ref) => this.inputRef = ref} {...props}
+          className={`${INPUT} ${CLASS_ROOT}__input`} placeholder={format}
+          value={inputValue || ''} onChange={this._onInputChange} />
         <Button className={`${CLASS_ROOT}__control`} icon={<Icon />}
           a11yTitle={dateTimeIconMessage}
           onClick={this._onControlClick} />
@@ -304,6 +307,7 @@ DateTime.defaultProps = {
 
 DateTime.propTypes = {
   format: PropTypes.string,
+  id: PropTypes.string,
   name: PropTypes.string,
   onChange: PropTypes.func,
   step: PropTypes.number,
