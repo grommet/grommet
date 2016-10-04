@@ -52,10 +52,10 @@ export default class Notification extends Component {
       CLASS_ROOT,
       `${CLASS_ROOT}--status-${status.toLowerCase()}`,
       `${BACKGROUND_COLOR_INDEX}-${status.toLowerCase()}`,
-      className,
       {
         [`${CLASS_ROOT}--${size}`]: size
-      }
+      },
+      className
     );
 
     let statusNode;
@@ -119,6 +119,8 @@ export default class Notification extends Component {
     }
 
     const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    const restProps =
+      Props.omit(this.props, Object.keys(Notification.propTypes));
     boxProps.announce = false;
     const fullBox =
       boxProps.hasOwnProperty('full') ? boxProps.full : 'horizontal';
@@ -126,8 +128,9 @@ export default class Notification extends Component {
     return (
       <Animate enter={{ animation: 'fade', duration: 1000 }}
         leave={{ animation: 'fade', duration: 1000 }}>
-        <Box {...boxProps} className={classes} pad='small' direction='row'
-          align='start' responsive={false} full={fullBox}>
+        <Box {...restProps} {...boxProps} className={classes}
+          pad='small' direction='row' align='start' responsive={false}
+          full={fullBox}>
           <Box pad='small'>
             {statusNode}
           </Box>
@@ -170,7 +173,6 @@ Notification.contextTypes = {
 
 Notification.defaultProps = {
   closer: false,
-  flush: true,
   status: 'unknown',
   pad: 'medium'
 };
