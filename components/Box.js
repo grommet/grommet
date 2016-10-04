@@ -77,17 +77,6 @@ var Box = function (_Component) {
   }
 
   (0, _createClass3.default)(Box, [{
-    key: 'getChildContext',
-    value: function getChildContext() {
-      var colorIndex = this.props.colorIndex;
-
-
-      if (colorIndex) {
-        var darkMode = colorIndex && colorIndex !== 'accent' && colorIndex !== 'light' && colorIndex !== 'warning' && colorIndex !== 'disabled' && colorIndex !== 'unknown';
-        return { dark: darkMode };
-      }
-    }
-  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var onClick = this.props.onClick;
@@ -374,10 +363,6 @@ Box.propTypes = {
   textAlign: _react.PropTypes.oneOf(['left', 'center', 'right']),
   texture: _react.PropTypes.oneOfType([_react.PropTypes.node, _react.PropTypes.string]),
   wrap: _react.PropTypes.bool
-};
-
-Box.childContextTypes = {
-  dark: _react.PropTypes.bool
 };
 
 Box.contextTypes = {
