@@ -76,6 +76,7 @@ export default {
   OK: 'OK',
   Open: 'Open',
   Parent: 'Parent',
+  Parents: 'Parents',
   Password: 'Password',
   'Previous Month': 'Previous Month',
   'Previous Slide': 'Previous Slide',
