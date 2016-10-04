@@ -47,7 +47,7 @@ export default class Timestamp extends Component {
       date = dateObj.toLocaleDateString(locale, dateOptions);
     }
 
-    // Hours, Minutes, and Seconds. 
+    // Hours, Minutes, and Seconds.
     // Time only.
     let time;
     if (_showField('time', fields)) {
@@ -59,7 +59,7 @@ export default class Timestamp extends Component {
 
     // Hours only.
     let hours;
-    if (_showField('hours', fields) && !_showField('minutes', fields) 
+    if (_showField('hours', fields) && !_showField('minutes', fields)
       && !_showField('time', fields)) {
       const timeOptions = { hour: '2-digit' };
       hours = dateObj.toLocaleTimeString(locale, timeOptions);
@@ -75,7 +75,7 @@ export default class Timestamp extends Component {
 
     // Minutes only.
     let minutes;
-    if (_showField('minutes', fields) && !_showField('hours', fields) 
+    if (_showField('minutes', fields) && !_showField('hours', fields)
       &&!_showField('time', fields)) {
       const timeOptions = { minute: '2-digit' };
       minutes = dateObj.toLocaleTimeString(locale, timeOptions);
@@ -86,7 +86,7 @@ export default class Timestamp extends Component {
     if (_showField('seconds', fields) && !_showField('time', fields)) {
       if (!_showField('hours', fields) || !_showField('minutes', fields)) {
         const timeOptions = { second: '2-digit' };
-        // This avoids spacing issues when Seconds is used with 
+        // This avoids spacing issues when Seconds is used with
         // Hours or Minutes.
         seconds = (Array.isArray(fields))
           ? ` ${dateObj.toLocaleTimeString(locale, timeOptions)}`
@@ -94,9 +94,9 @@ export default class Timestamp extends Component {
       }
     }
 
-    this.setState({ 
-      date: date, 
-      time: time, 
+    this.setState({
+      date: date,
+      time: time,
       hours: hours,
       minutes: minutes,
       seconds: seconds
@@ -104,23 +104,24 @@ export default class Timestamp extends Component {
   }
 
   render () {
-    const { align, className } = this.props;
-
+    const { align, className, ...props } = this.props;
+    delete props.fields;
+    delete props.value;
     const classes = classnames(
       CLASS_ROOT,
-      { 
-        [`${CLASS_ROOT}--${align}`]: align 
+      {
+        [`${CLASS_ROOT}--${align}`]: align
       },
       className
     );
 
 
-    const date = (this.state.date) 
+    const date = (this.state.date)
       ? <span className={`${CLASS_ROOT}__date`}>{this.state.date}</span>
       : null;
 
     const time = (this.state.time || this.state.hours || this.state.minutes
-      || this.state.seconds) 
+      || this.state.seconds)
       ? <span className={`${CLASS_ROOT}__time`}>
           {this.state.time}
           {this.state.hours}
@@ -130,7 +131,7 @@ export default class Timestamp extends Component {
       : null;
 
     return (
-      <span className={classes}>
+      <span {...props} className={classes}>
         {date} {time}
       </span>
     );
@@ -138,7 +139,7 @@ export default class Timestamp extends Component {
 
 }
 
-const FIELD_TYPES = PropTypes.oneOf(['date', 'time', 'hours', 'minutes', 
+const FIELD_TYPES = PropTypes.oneOf(['date', 'time', 'hours', 'minutes',
   'seconds']);
 
 Timestamp.propTypes = {
