@@ -154,10 +154,13 @@ export default class WorldMap extends Component {
   _renderContinent (seriesData, index) {
     const continent = seriesData.continent;
     const colorIndex = seriesData.colorIndex || `graph-${index}`;
-    let classes = [`${CLASS_ROOT}__continent`, `${COLOR_INDEX}-${colorIndex}`];
-    if (index === this.state.activeIndex) {
-      classes.push(`${CLASS_ROOT}__continent--active`);
-    }
+
+    const classes = classnames(
+      `${CLASS_ROOT}__continent`,
+      `${COLOR_INDEX}-${colorIndex}`, {
+        [`${CLASS_ROOT}__continent--active`]: index === this.state.activeIndex
+      }
+    );
     let onMouseOver, onMouseLeave, onClick, area;
     if (seriesData.onClick) {
       onMouseOver = this._onActivate.bind(this, index);
@@ -171,7 +174,7 @@ export default class WorldMap extends Component {
     // We add the area so the mouse events work for the whole region,
     // not just the dots
     return (
-      <g key={continent} id={continent} className={classes.join(' ')}
+      <g key={continent} id={continent} className={classes}
         onMouseOver={onMouseOver} onMouseLeave={onMouseLeave} onClick={onClick}>
         {area}
         <path d={this.state.dots[continent]} />

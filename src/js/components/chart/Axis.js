@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
 import Intl from '../../utils/Intl';
 
@@ -49,47 +50,38 @@ export default class Axis extends Component {
   }
 
   render () {
-    const { a11yTitle, align, reverse, ticks, vertical, 
-      tickAlign } = this.props;
+    const {
+      a11yTitle, align, className, reverse, ticks, vertical, tickAlign, ...props
+    } = this.props;
+    delete props.count;
+    delete props.labels;
     const { items } = this.state;
     const { intl } = this.context;
 
-    let classes = [CLASS_ROOT];
-    if (reverse) {
-      classes.push(`${CLASS_ROOT}--reverse`);
-    }
-    if (vertical) {
-      classes.push(`${CLASS_ROOT}--vertical`);
-    }
-    if (align) {
-      classes.push(`${CLASS_ROOT}--align-${align}`);
-    }
-    if (ticks) {
-      classes.push(`${CLASS_ROOT}--ticks`);
-    }
-    if (tickAlign) {
-      classes.push(`${CLASS_ROOT}--ticks--${tickAlign}`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const classes = classnames(
+      CLASS_ROOT, {
+        [`${CLASS_ROOT}--reverse`]: reverse,
+        [`${CLASS_ROOT}--vertical`]: vertical,
+        [`${CLASS_ROOT}--align-${align}`]: align,
+        [`${CLASS_ROOT}--ticks`]: ticks,
+        [`${CLASS_ROOT}--ticks-${tickAlign}`]: tickAlign
+      },
+      className
+    );
 
     let elements = items.map(item => {
 
-      let classes = [`${CLASS_ROOT}__slot`];
-
-      if (item.placeholder) {
-        classes.push(`${CLASS_ROOT}__slot--placeholder`);
-      }
-      if (item.colorIndex) {
-        classes.push(`${COLOR_INDEX}-${item.colorIndex}`);
-      }
+      const classes = classnames(
+        `${CLASS_ROOT}__slot`, {
+          [`${CLASS_ROOT}__slot--placeholder`]: item.placeholder,
+          [`${COLOR_INDEX}-${item.colorIndex}`]: item.colorIndex
+        }
+      );
       const role = item.label && item.label !== '' ? 'row' : undefined;
       const label = item.label ? <span>{item.label}</span> : null;
-      
+
       return (
-        <div key={item.value || item.index}
-          className={classes.join(' ')} role={role}
+        <div key={item.value || item.index} className={classes} role={role}
           style={{ flexBasis: `${item.basis}%` }}>
           {label}
         </div>
@@ -101,8 +93,8 @@ export default class Axis extends Component {
     });
 
     return (
-      <div id={this.props.id} role='rowgroup' aria-label={axisLabel}
-        className={classes.join(' ')} style={this.props.style}>
+      <div {...props} role='rowgroup' aria-label={axisLabel}
+        className={classes}>
         {elements}
       </div>
     );

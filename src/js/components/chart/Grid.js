@@ -1,8 +1,9 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import { padding, debounceDelay } from './utils';
+import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
+import { padding, debounceDelay } from './utils';
 
 const CLASS_ROOT = CSSClassnames.CHART_GRID;
 
@@ -43,8 +44,15 @@ export default class Grid extends Component {
   }
 
   render () {
-    const { columns, rows } = this.props;
+    const { className, columns, rows, ...props } = this.props;
+    delete props.height;
+    delete props.width;
     const { height, width } = this.state;
+    const classes = classnames(
+      CLASS_ROOT,
+      className
+    );
+
     let commands = '';
 
     if (columns) {
@@ -66,7 +74,7 @@ export default class Grid extends Component {
     }
 
     return (
-      <svg ref={ref => this.gridRef = ref} className={CLASS_ROOT}
+      <svg ref={ref => this.gridRef = ref} {...props} className={classes}
         viewBox={`0 0 ${width} ${height}`}
         preserveAspectRatio="none">
         <path fill="none" d={commands} />

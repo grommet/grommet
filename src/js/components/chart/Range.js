@@ -1,9 +1,10 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import { padding } from './utils';
-import DragIcon from '../icons/base/Drag';
+import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
+import DragIcon from '../icons/base/Drag';
+import { padding } from './utils';
 
 const CLASS_ROOT = CSSClassnames.CHART_RANGE;
 
@@ -141,19 +142,18 @@ export default class Range extends Component {
   }
 
   render () {
-    const { active, count, onActive, vertical, ...otherProps } = this.props;
+    const {
+      active, className, count, onActive, vertical, ...props
+    } = this.props;
     const { mouseDown, mouseDownIndex, mouseMoveIndex } = this.state;
 
-    let classes = [CLASS_ROOT];
-    if (vertical) {
-      classes.push(`${CLASS_ROOT}--vertical`);
-    }
-    if (mouseDown) {
-      classes.push(`${CLASS_ROOT}--dragging`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const classes = classnames(
+      CLASS_ROOT, {
+        [`${CLASS_ROOT}--vertical`]: vertical,
+        [`${CLASS_ROOT}--dragging`]: mouseDown
+      },
+      className
+    );
 
     let indicator;
     if (active || mouseDown) {
@@ -194,7 +194,7 @@ export default class Range extends Component {
       }
 
       indicator = (
-        <div {...otherProps} className={`${CLASS_ROOT}__active`} style={style}
+        <div {...props} className={`${CLASS_ROOT}__active`} style={style}
           onMouseDown={this._mouseDown('active')}>
           <div className={`${CLASS_ROOT}__active-start`}
             onMouseDown={onActive ? this._mouseDown('start') : undefined}>
@@ -214,7 +214,7 @@ export default class Range extends Component {
     }
 
     return (
-      <div ref={ref => this.rangeRef = ref} className={classes.join(' ')}
+      <div ref={ref => this.rangeRef = ref} className={classes}
         style={{ padding: padding }} onMouseMove={onMouseMove}
         onMouseDown={onActive ? this._mouseDown('range') : undefined}>
         {indicator}

@@ -5,8 +5,7 @@ exports[`Calendar has correct default options 1`] = `
   role="group">
   <div
     aria-label="AxisLabel"
-    className="grommetux-chart-axis grommetux-chart-axis--vertical grommetux-chart-axis--align-end grommetux-chart-axis--ticks grommetux-chart-axis--ticks--end"
-    id={undefined}
+    className="grommetux-chart-axis grommetux-chart-axis--vertical grommetux-chart-axis--align-end grommetux-chart-axis--ticks grommetux-chart-axis--ticks-end"
     role="rowgroup"
     style={
       Object {
@@ -71,7 +70,6 @@ exports[`Calendar has correct default options 1`] = `
     tabIndex="-1">
     <div
       className="grommetux-chart-marker-label grommetux-chart-marker-label--align-end"
-      id={undefined}
       style={
         Object {
           "marginLeft": 0,
@@ -380,7 +378,6 @@ exports[`Calendar has correct default options 1`] = `
     <div
       aria-label="AxisLabel"
       className="grommetux-chart-axis grommetux-chart-axis--align-start grommetux-chart-axis--ticks"
-      id={undefined}
       role="rowgroup"
       style={
         Object {
@@ -416,7 +413,6 @@ exports[`Calendar has correct default options 1`] = `
   </div>
   <div
     className="grommetux-chart-marker-label grommetux-chart-marker-label--vertical grommetux-chart-marker-label--align-start"
-    id={undefined}
     style={
       Object {
         "height": 0,
