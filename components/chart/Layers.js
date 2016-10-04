@@ -8,6 +8,10 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -32,15 +36,17 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.CHART_LAYERS;
+var CLASS_ROOT = _CSSClassnames2.default.CHART_LAYERS; // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 var Layers = function (_Component) {
   (0, _inherits3.default)(Layers, _Component);
@@ -54,9 +60,12 @@ var Layers = function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var className = _props.className;
       var height = _props.height;
       var width = _props.width;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'height', 'width']);
 
+      var classes = (0, _classnames2.default)(CLASS_ROOT, className);
 
       var style = (0, _extends3.default)({}, this.props.style);
       if (height) {
@@ -76,7 +85,7 @@ var Layers = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: CLASS_ROOT, style: style },
+        (0, _extends3.default)({}, props, { className: classes, style: style }),
         children
       );
     }

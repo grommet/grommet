@@ -4,6 +4,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,9 +40,17 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames3 = require('classnames');
+
+var _classnames4 = _interopRequireDefault(_classnames3);
+
 var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
+var _Props = require('../../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
 
 var _Announcer = require('../../utils/Announcer');
 
@@ -88,23 +108,19 @@ var MarkerLabel = function (_Component) {
   }, {
     key: '_renderPlaceholder',
     value: function _renderPlaceholder(basis) {
-      var classes = [CLASS_ROOT + '__slot', CLASS_ROOT + '__slot--placeholder'];
-      return _react2.default.createElement('div', { key: 'placeholder', className: classes.join(' '), 'aria-hidden': 'true',
+      var classes = (0, _classnames4.default)(CLASS_ROOT + '__slot', CLASS_ROOT + '__slot--placeholder');
+      return _react2.default.createElement('div', { key: 'placeholder', className: classes, 'aria-hidden': 'true',
         style: { flexBasis: basis + '%' } });
     }
   }, {
     key: '_renderLabel',
     value: function _renderLabel(basis, flip) {
+      var _classnames;
+
       var colorIndex = this.props.colorIndex;
       var label = this.props.label;
 
-      var classes = [CLASS_ROOT + '__slot'];
-      if (flip) {
-        classes.push(CLASS_ROOT + '__slot--flip');
-      }
-      if (colorIndex) {
-        classes.push(COLOR_INDEX + '-' + colorIndex);
-      }
+      var classes = (0, _classnames4.default)(CLASS_ROOT + '__slot', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__slot--flip', flip), (0, _defineProperty3.default)(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), _classnames));
       if (typeof label === 'string' || typeof label === 'number') {
         label = _react2.default.createElement(
           'span',
@@ -119,7 +135,7 @@ var MarkerLabel = function (_Component) {
       }
       return _react2.default.createElement(
         'div',
-        { key: 'label', className: classes.join(' '),
+        { key: 'label', className: classes,
           style: { flexBasis: basis + '%' } },
         label
       );
@@ -127,26 +143,18 @@ var MarkerLabel = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _classnames2;
+
       var _props = this.props;
       var align = _props.align;
+      var className = _props.className;
       var reverse = _props.reverse;
       var vertical = _props.vertical;
       var valueBasis = this.state.valueBasis;
 
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(MarkerLabel.propTypes));
 
-      var classes = [CLASS_ROOT];
-      if (reverse) {
-        classes.push(CLASS_ROOT + '--reverse');
-      }
-      if (vertical) {
-        classes.push(CLASS_ROOT + '--vertical');
-      }
-      if (align) {
-        classes.push(CLASS_ROOT + '--align-' + align);
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--reverse', reverse), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--align-' + align, align), _classnames2), className);
 
       var firstItem = void 0,
           secondItem = void 0;
@@ -162,8 +170,7 @@ var MarkerLabel = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { id: this.props.id, className: classes.join(' '),
-          style: this.props.style },
+        (0, _extends3.default)({}, restProps, { className: classes }),
         firstItem,
         secondItem
       );

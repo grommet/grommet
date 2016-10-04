@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -145,10 +153,15 @@ var HotSpots = function (_Component) {
       var onActive = _props4.onActive;
       var onClick = _props4.onClick;
       var vertical = _props4.vertical;
+      var props = (0, _objectWithoutProperties3.default)(_props4, ['a11yTitle', 'activeIndex', 'className', 'count', 'onActive', 'onClick', 'vertical']);
+
+      delete props.height;
+      delete props.width;
+
       var intl = this.context.intl;
 
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--clickable', onClick), _classnames));
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--clickable', onClick), _classnames), className);
 
       var defaultBasis = 100 / (count - 1);
       var items = [];
@@ -182,10 +195,10 @@ var HotSpots = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: classes, style: { padding: _utils.padding },
+        (0, _extends3.default)({}, props, { className: classes, style: { padding: _utils.padding },
           tabIndex: '0', onFocus: this._onHotSpotFocus,
           onBlur: this._onHotSpotBlur, role: 'group',
-          'aria-label': hotSpotsLabel },
+          'aria-label': hotSpotsLabel }),
         items
       );
     }

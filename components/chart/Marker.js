@@ -4,6 +4,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -28,16 +40,21 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _utils = require('./utils');
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _utils = require('./utils');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.CHART_MARKER; // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.CHART_MARKER;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var DOUBLE_PADDING = 2 * _utils.padding;
@@ -89,6 +106,7 @@ var Marker = function (_Component) {
       var _this2 = this;
 
       var _props = this.props;
+      var className = _props.className;
       var colorIndex = _props.colorIndex;
       var count = _props.count;
       var index = _props.index;
@@ -97,6 +115,10 @@ var Marker = function (_Component) {
       var reverse = _props.reverse;
       var value = _props.value;
       var vertical = _props.vertical;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'colorIndex', 'count', 'index', 'max', 'min', 'reverse', 'value', 'vertical']);
+
+      delete props.height;
+      delete props.width;
       var _state = this.state;
       var _state$size = _state.size;
       var height = _state$size.height;
@@ -104,13 +126,7 @@ var Marker = function (_Component) {
       var graphWidth = _state.graphWidth;
       var graphHeight = _state.graphHeight;
 
-      var classes = [CLASS_ROOT];
-      if (colorIndex) {
-        classes.push(COLOR_INDEX + '-' + colorIndex);
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, COLOR_INDEX + '-' + colorIndex, colorIndex), className);
 
       var path = void 0;
       if (count > 1 && index >= 1 && index < count || value >= min && value <= max) {
@@ -145,11 +161,11 @@ var Marker = function (_Component) {
 
       return _react2.default.createElement(
         'svg',
-        { ref: function ref(_ref) {
+        (0, _extends3.default)({ ref: function ref(_ref) {
             return _this2.svgRef = _ref;
-          }, className: classes.join(' '),
+          } }, props, { className: classes,
           viewBox: '0 0 ' + width + ' ' + height, 'aria-hidden': 'true',
-          preserveAspectRatio: 'none' },
+          preserveAspectRatio: 'none' }),
         path
       );
     }

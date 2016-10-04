@@ -8,6 +8,10 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
@@ -36,19 +40,21 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _utils = require('./utils');
+var _classnames2 = require('classnames');
 
-var _Drag = require('../icons/base/Drag');
-
-var _Drag2 = _interopRequireDefault(_Drag);
+var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _Drag = require('../icons/base/Drag');
 
-// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+var _Drag2 = _interopRequireDefault(_Drag);
+
+var _utils = require('./utils');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var CLASS_ROOT = _CSSClassnames2.default.CHART_RANGE;
 
@@ -56,6 +62,8 @@ var CLASS_ROOT = _CSSClassnames2.default.CHART_RANGE;
 // Click to select one.
 // Press and Drag to select multiple.
 // Drag edges to adjust.
+
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 var Range = function (_Component) {
   (0, _inherits3.default)(Range, _Component);
@@ -217,30 +225,23 @@ var Range = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _classnames,
+          _this3 = this;
 
       var _props4 = this.props;
       var active = _props4.active;
+      var className = _props4.className;
       var count = _props4.count;
       var onActive = _props4.onActive;
       var vertical = _props4.vertical;
-      var otherProps = (0, _objectWithoutProperties3.default)(_props4, ['active', 'count', 'onActive', 'vertical']);
+      var props = (0, _objectWithoutProperties3.default)(_props4, ['active', 'className', 'count', 'onActive', 'vertical']);
       var _state3 = this.state;
       var mouseDown = _state3.mouseDown;
       var mouseDownIndex = _state3.mouseDownIndex;
       var mouseMoveIndex = _state3.mouseMoveIndex;
 
 
-      var classes = [CLASS_ROOT];
-      if (vertical) {
-        classes.push(CLASS_ROOT + '--vertical');
-      }
-      if (mouseDown) {
-        classes.push(CLASS_ROOT + '--dragging');
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--dragging', mouseDown), _classnames), className);
 
       var indicator = void 0;
       if (active || mouseDown) {
@@ -283,7 +284,7 @@ var Range = function (_Component) {
 
         indicator = _react2.default.createElement(
           'div',
-          (0, _extends3.default)({}, otherProps, { className: CLASS_ROOT + '__active', style: style,
+          (0, _extends3.default)({}, props, { className: CLASS_ROOT + '__active', style: style,
             onMouseDown: this._mouseDown('active') }),
           _react2.default.createElement(
             'div',
@@ -309,7 +310,7 @@ var Range = function (_Component) {
         'div',
         { ref: function ref(_ref) {
             return _this3.rangeRef = _ref;
-          }, className: classes.join(' '),
+          }, className: classes,
           style: { padding: _utils.padding }, onMouseMove: onMouseMove,
           onMouseDown: onActive ? this._mouseDown('range') : undefined },
         indicator

@@ -8,9 +8,13 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _keys = require('babel-runtime/core-js/object/keys');
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
-var _keys2 = _interopRequireDefault(_keys);
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -36,9 +40,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Props = require('../../utils/Props');
+var _classnames2 = require('classnames');
 
-var _Props2 = _interopRequireDefault(_Props);
+var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _CSSClassnames = require('../../utils/CSSClassnames');
 
@@ -64,37 +68,30 @@ var Base = function (_Component) {
   (0, _createClass3.default)(Base, [{
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _classnames;
 
-      var vertical = this.props.vertical;
+      var _props = this.props;
+      var children = _props.children;
+      var className = _props.className;
+      var height = _props.height;
+      var vertical = _props.vertical;
+      var width = _props.width;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'height', 'vertical', 'width']);
 
-      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Base.propTypes));
-      var childCount = _react.Children.count(this.props.children);
-      var width = !childCount && !this.props.width ? 'medium' : this.props.width;
-      var height = !childCount && !this.props.height ? 'medium' : this.props.height;
+      var childCount = _react.Children.count(children);
+      var finalHeight = !childCount && !height ? 'medium' : height;
+      var finalWidth = !childCount && !width ? 'medium' : width;
 
-      var classes = [CLASS_ROOT];
-      if (vertical) {
-        classes.push(CLASS_ROOT + '--vertical');
-      }
-      if (height) {
-        classes.push(CLASS_ROOT + '--height-' + height);
-      }
-      if (width) {
-        classes.push(CLASS_ROOT + '--width-' + width);
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--height-' + finalHeight, finalHeight), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--width-' + finalWidth, finalWidth), _classnames), className);
 
-      var children = this.props.children;
+      var mappedChildren = children;
       // We can't distribute children when vertical because our height isn't
       // known.
       if (!vertical) {
         (function () {
           // Round to hundredths of a % so things line up reasonably accurately
           var basis = Math.floor(10000 / childCount) / 100.0 + '%';
-          children = _react.Children.map(_this2.props.children, function (child) {
+          mappedChildren = _react.Children.map(children, function (child) {
             return child ? _react2.default.cloneElement(child, { style: { flexBasis: basis } }) : child;
           });
         })();
@@ -102,8 +99,8 @@ var Base = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        (0, _extends3.default)({}, restProps, { className: classes.join(' ') }),
-        children
+        (0, _extends3.default)({}, props, { className: classes }),
+        mappedChildren
       );
     }
   }]);

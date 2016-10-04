@@ -12,6 +12,10 @@ var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProp
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -36,9 +40,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require('classnames');
+var _classnames2 = require('classnames');
 
-var _classnames2 = _interopRequireDefault(_classnames);
+var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _CSSClassnames = require('../utils/CSSClassnames');
 
@@ -147,10 +151,8 @@ var WorldMap = function (_Component) {
     value: function _renderContinent(seriesData, index) {
       var continent = seriesData.continent;
       var colorIndex = seriesData.colorIndex || 'graph-' + index;
-      var classes = [CLASS_ROOT + '__continent', COLOR_INDEX + '-' + colorIndex];
-      if (index === this.state.activeIndex) {
-        classes.push(CLASS_ROOT + '__continent--active');
-      }
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT + '__continent', COLOR_INDEX + '-' + colorIndex, (0, _defineProperty3.default)({}, CLASS_ROOT + '__continent--active', index === this.state.activeIndex));
       var onMouseOver = void 0,
           onMouseLeave = void 0,
           onClick = void 0,
@@ -166,7 +168,7 @@ var WorldMap = function (_Component) {
       // not just the dots
       return _react2.default.createElement(
         'g',
-        { key: continent, id: continent, className: classes.join(' '),
+        { key: continent, id: continent, className: classes,
           onMouseOver: onMouseOver, onMouseLeave: onMouseLeave, onClick: onClick },
         area,
         _react2.default.createElement('path', { d: this.state.dots[continent] })
@@ -183,7 +185,7 @@ var WorldMap = function (_Component) {
       var width = _state.width;
       var height = _state.height;
 
-      var classes = (0, _classnames2.default)(CLASS_ROOT, className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className);
       var continents = series.map(this._renderContinent);
 
       return _react2.default.createElement(

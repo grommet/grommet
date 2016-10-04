@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
@@ -32,6 +40,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames3 = require('classnames');
+
+var _classnames4 = _interopRequireDefault(_classnames3);
+
 var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
@@ -42,8 +54,9 @@ var _Intl2 = _interopRequireDefault(_Intl);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.CHART_AXIS; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.CHART_AXIS;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Axis = function (_Component) {
@@ -106,47 +119,30 @@ var Axis = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _classnames;
+
       var _props = this.props;
       var a11yTitle = _props.a11yTitle;
       var align = _props.align;
+      var className = _props.className;
       var reverse = _props.reverse;
       var ticks = _props.ticks;
       var vertical = _props.vertical;
       var tickAlign = _props.tickAlign;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'align', 'className', 'reverse', 'ticks', 'vertical', 'tickAlign']);
+
+      delete props.count;
+      delete props.labels;
       var items = this.state.items;
       var intl = this.context.intl;
 
 
-      var classes = [CLASS_ROOT];
-      if (reverse) {
-        classes.push(CLASS_ROOT + '--reverse');
-      }
-      if (vertical) {
-        classes.push(CLASS_ROOT + '--vertical');
-      }
-      if (align) {
-        classes.push(CLASS_ROOT + '--align-' + align);
-      }
-      if (ticks) {
-        classes.push(CLASS_ROOT + '--ticks');
-      }
-      if (tickAlign) {
-        classes.push(CLASS_ROOT + '--ticks--' + tickAlign);
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--reverse', reverse), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--ticks', ticks), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--ticks-' + tickAlign, tickAlign), _classnames), className);
 
       var elements = items.map(function (item) {
+        var _classnames2;
 
-        var classes = [CLASS_ROOT + '__slot'];
-
-        if (item.placeholder) {
-          classes.push(CLASS_ROOT + '__slot--placeholder');
-        }
-        if (item.colorIndex) {
-          classes.push(COLOR_INDEX + '-' + item.colorIndex);
-        }
+        var classes = (0, _classnames4.default)(CLASS_ROOT + '__slot', (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__slot--placeholder', item.placeholder), (0, _defineProperty3.default)(_classnames2, COLOR_INDEX + '-' + item.colorIndex, item.colorIndex), _classnames2));
         var role = item.label && item.label !== '' ? 'row' : undefined;
         var label = item.label ? _react2.default.createElement(
           'span',
@@ -156,8 +152,7 @@ var Axis = function (_Component) {
 
         return _react2.default.createElement(
           'div',
-          { key: item.value || item.index,
-            className: classes.join(' '), role: role,
+          { key: item.value || item.index, className: classes, role: role,
             style: { flexBasis: item.basis + '%' } },
           label
         );
@@ -169,8 +164,8 @@ var Axis = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { id: this.props.id, role: 'rowgroup', 'aria-label': axisLabel,
-          className: classes.join(' '), style: this.props.style },
+        (0, _extends3.default)({}, props, { role: 'rowgroup', 'aria-label': axisLabel,
+          className: classes }),
         elements
       );
     }

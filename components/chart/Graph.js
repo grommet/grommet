@@ -8,6 +8,14 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
@@ -36,7 +44,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _utils = require('./utils');
+var _classnames3 = require('classnames');
+
+var _classnames4 = _interopRequireDefault(_classnames3);
 
 var _CSSClassnames = require('../../utils/CSSClassnames');
 
@@ -46,11 +56,12 @@ var _Intl = require('../../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
 
+var _utils = require('./utils');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.CHART_GRAPH; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.CHART_GRAPH;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Graph = function (_Component) {
@@ -186,6 +197,7 @@ var Graph = function (_Component) {
 
       var _props3 = this.props;
       var activeIndex = _props3.activeIndex;
+      var className = _props3.className;
       var colorIndex = _props3.colorIndex;
       var max = _props3.max;
       var min = _props3.min;
@@ -194,17 +206,18 @@ var Graph = function (_Component) {
       var type = _props3.type;
       var values = _props3.values;
       var vertical = _props3.vertical;
+      var props = (0, _objectWithoutProperties3.default)(_props3, ['activeIndex', 'className', 'colorIndex', 'max', 'min', 'reverse', 'smooth', 'type', 'values', 'vertical']);
+
+      delete props.height;
+      delete props.width;
+      delete props.points;
       var _state = this.state;
       var height = _state.height;
       var width = _state.width;
 
       var pad = Math.min(width, height) < _utils.padding * 8 ? 2 : _utils.padding;
 
-      var classes = [CLASS_ROOT, CLASS_ROOT + '--' + type];
-      if (vertical) {
-        classes.push(CLASS_ROOT + '--vertical');
-      }
-      classes.push(COLOR_INDEX + '-' + (colorIndex || 'graph-1'));
+      var classes = (0, _classnames4.default)(CLASS_ROOT, CLASS_ROOT + '--' + type, (0, _defineProperty3.default)({}, CLASS_ROOT + '--vertical', vertical), COLOR_INDEX + '-' + (colorIndex || 'graph-1'), className);
 
       var scale = 1;
       var step = void 0;
@@ -241,13 +254,12 @@ var Graph = function (_Component) {
           }
 
           if ((_this2.props.points || index === activeIndex) && !_this2.props.sparkline) {
-            var _classes = [CLASS_ROOT + '__point', COLOR_INDEX + '-' + (colorIndex || 'graph-1')];
+            var _classes = (0, _classnames4.default)(CLASS_ROOT + '__point', COLOR_INDEX + '-' + (colorIndex || 'graph-1'), (0, _defineProperty3.default)({}, CLASS_ROOT + '__point--active', index === activeIndex));
             var radius = _utils.pointSize / 3;
             if (index === activeIndex) {
-              _classes.push(CLASS_ROOT + '__point--active');
               radius = _utils.pointSize / 2;
             }
-            points.push(_react2.default.createElement('circle', { key: index, className: _classes.join(' '),
+            points.push(_react2.default.createElement('circle', { key: index, className: _classes,
               cx: coordinate[0], cy: coordinate[1], r: radius }));
           }
         }
@@ -324,11 +336,11 @@ var Graph = function (_Component) {
 
       return _react2.default.createElement(
         'svg',
-        { ref: function ref(_ref) {
+        (0, _extends3.default)({ ref: function ref(_ref) {
             return _this2.graphRef = _ref;
-          }, className: classes.join(' '),
+          } }, props, { className: classes,
           viewBox: '0 0 ' + width + ' ' + height, preserveAspectRatio: 'none',
-          role: 'img', 'aria-label': this._renderA11YTitle() },
+          role: 'img', 'aria-label': this._renderA11YTitle() }),
         _react2.default.createElement(
           'g',
           null,
