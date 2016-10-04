@@ -375,9 +375,9 @@
         margin-bottom: halve($inuit-base-spacing-unit);
       }
 
-      .#{$grommet-namespace}menu {
-        margin-bottom: round($inuit-base-spacing-unit * 1.5);
-      }
+      // .#{$grommet-namespace}menu {
+      //   margin-bottom: round($inuit-base-spacing-unit * 1.5);
+      // }
     }
   }
 }
