@@ -163,13 +163,18 @@ export default class Search extends Component {
   }
 
   _onInputKeyDown (event) {
-    const { suggestions } = this.props;
+    const { inline, suggestions } = this.props;
+    const { dropActive } = this.state;
     if (suggestions) {
       const up = 38;
       const down = 40;
       if (event.keyCode === up || event.keyCode === down) {
         // stop the input to move the cursor when suggestions are present
         event.preventDefault();
+
+        if (event.keyCode === down && !dropActive && inline) {
+          this._onAddDrop(event);
+        }
       }
     }
   }
