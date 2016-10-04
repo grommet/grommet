@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _stringify = require('babel-runtime/core-js/json/stringify');
 
@@ -281,10 +289,22 @@ var Table = function (_Component) {
       var _classnames,
           _this3 = this;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, this.props.className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--small', this.state.small), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', this.props.selectable), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--scrollable', this.props.scrollable), _classnames));
+      var _props = this.props;
+      var children = _props.children;
+      var className = _props.className;
+      var onMore = _props.onMore;
+      var scrollable = _props.scrollable;
+      var selectable = _props.selectable;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'onMore', 'scrollable', 'selectable']);
+
+      delete props.onSelect;
+      delete props.selected;
+      var small = this.state.small;
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--small', small), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', selectable), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--scrollable', scrollable), _classnames), className);
 
       var mirror = void 0;
-      if (this.props.scrollable) {
+      if (scrollable) {
         mirror = _react2.default.createElement(
           'table',
           { ref: function ref(_ref) {
@@ -300,7 +320,7 @@ var Table = function (_Component) {
       }
 
       var more = void 0;
-      if (this.props.onMore) {
+      if (onMore) {
         more = _react2.default.createElement(
           'div',
           { ref: function ref(_ref2) {
@@ -312,9 +332,9 @@ var Table = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: function ref(_ref4) {
+        (0, _extends3.default)({ ref: function ref(_ref4) {
             return _this3.containerRef = _ref4;
-          }, className: classes },
+          } }, props, { className: classes }),
         mirror,
         _react2.default.createElement(
           'table',
@@ -322,7 +342,7 @@ var Table = function (_Component) {
               return _this3.tableRef = _ref3;
             },
             className: CLASS_ROOT + '__table', onClick: this._onClick },
-          this.props.children
+          children
         ),
         more
       );
