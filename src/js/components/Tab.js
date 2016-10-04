@@ -24,16 +24,17 @@ export default class Tab extends Component {
   }
 
   render () {
-    const { active, id, title } = this.props;
-
+    const { active, className, id, title, ...props } = this.props;
+    delete props.onRequestForActive;
     const classes = classnames(
       CLASS_ROOT, {
         [`${CLASS_ROOT}--active`]: active
-      }
+      },
+      className
     );
 
     return (
-      <li className={classes} id={id}>
+      <li {...props} className={classes} id={id}>
         <Button plain={true} role='tab' aria-selected={active}
           onClick={this._onClickTab} aria-expanded={active}>
           <label className={`${CLASS_ROOT}__label`} htmlFor={id}>
@@ -48,5 +49,6 @@ export default class Tab extends Component {
 Tab.propTypes = {
   title: PropTypes.string.isRequired,
   active: PropTypes.bool,
-  id: PropTypes.string
+  id: PropTypes.string,
+  onRequestForActive: PropTypes.func // from Tabs
 };

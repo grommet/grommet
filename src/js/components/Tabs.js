@@ -35,16 +35,18 @@ export default class Tabs extends Component {
   }
 
   render () {
-    const { children, className, justify, responsive } = this.props;
+    const { children, className, justify, responsive, ...props } = this.props;
+    delete props.activeIndex;
+    delete props.onActive;
     const { activeIndex } = this.state;
     const { intl } = this.context;
     const classes = classnames(
       CLASS_ROOT,
-      className,
       {
         [`${CLASS_ROOT}--justify-${justify}`]: justify,
         [`${CLASS_ROOT}--responsive`]: responsive
-      }
+      },
+      className
     );
 
     let activeContainer;
@@ -75,7 +77,7 @@ export default class Tabs extends Component {
 
     return (
       <div role='tablist'>
-        <ul className={classes}>
+        <ul {...props} className={classes}>
           {tabs}
         </ul>
         <div aria-label={tabContentTitle} role='tabpanel'>
