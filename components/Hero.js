@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -130,9 +138,10 @@ var Hero = function (_Component) {
       var responsiveBackgroundPosition = _props.responsiveBackgroundPosition;
       var separator = _props.separator;
       var size = _props.size;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['backgroundImage', 'backgroundVideo', 'children', 'className', 'flush', 'image', 'justify', 'responsiveBackgroundPosition', 'separator', 'size']);
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--bg-' + responsiveBackgroundPosition, responsiveBackgroundPosition), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--mobile-separator', separator), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--bg-' + responsiveBackgroundPosition, responsiveBackgroundPosition), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--mobile-separator', separator), _classnames), className);
 
       var full = flush ? 'horizontal' : false;
       var pad = flush ? 'none' : 'large';
@@ -191,7 +200,7 @@ var Hero = function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        { className: classes, colorIndex: this.state.colorIndex },
+        (0, _extends3.default)({}, props, { className: classes, colorIndex: this.state.colorIndex }),
         backgroundMarkup,
         contentMarkup
       );
