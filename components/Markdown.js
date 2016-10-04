@@ -72,9 +72,7 @@ var Markdown = function Markdown(props) {
     }
   }, heading, components);
 
-  return (0, _markdownToJsx2.default)(content, {
-    gfm: true
-  }, options);
+  return (0, _markdownToJsx2.default)(content, { overrides: options });
 };
 
 Markdown.propTypes = {
