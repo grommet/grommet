@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
@@ -40,6 +48,14 @@ var _classnames3 = require('classnames');
 
 var _classnames4 = _interopRequireDefault(_classnames3);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
+var _Props = require('../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
+
 var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
 var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
@@ -62,16 +78,11 @@ var _CaretDown = require('./icons/base/CaretDown');
 
 var _CaretDown2 = _interopRequireDefault(_CaretDown);
 
-var _CSSClassnames = require('../utils/CSSClassnames');
-
-var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.SELECT;
-// import SearchIcon from './icons/base/Search';
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.SELECT;
 var INPUT = _CSSClassnames2.default.INPUT;
 var FORM_FIELD = _CSSClassnames2.default.FORM_FIELD;
 
@@ -290,10 +301,13 @@ var Select = function (_Component) {
 
       var _props4 = this.props;
       var className = _props4.className;
+      var id = _props4.id;
+      var name = _props4.name;
       var value = _props4.value;
       var active = this.state.active;
 
       var classes = (0, _classnames4.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', active), className);
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Select.propTypes));
 
       return _react2.default.createElement(
         'div',
@@ -301,8 +315,9 @@ var Select = function (_Component) {
             return _this3.componentRef = _ref;
           }, className: classes,
           onClick: this._onAddDrop },
-        _react2.default.createElement('input', { className: INPUT + ' ' + CLASS_ROOT + '__input',
-          value: this._renderLabel(value), disabled: true }),
+        _react2.default.createElement('input', (0, _extends3.default)({}, restProps, { className: INPUT + ' ' + CLASS_ROOT + '__input',
+          id: id, name: name, disabled: true,
+          value: this._renderLabel(value) })),
         _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control', icon: _react2.default.createElement(_CaretDown2.default, null),
           onClick: this._onAddDrop })
       );
