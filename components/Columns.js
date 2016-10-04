@@ -78,7 +78,8 @@ var Columns = function (_Component) {
       count: 1,
       maxCount: _this.props.maxCount,
       columnBreakpoints: null,
-      initMobile: false
+      initMobile: false,
+      margin: _this.props.margin
     };
     return _this;
   }
@@ -88,7 +89,12 @@ var Columns = function (_Component) {
     value: function componentDidMount() {
       if (this.props.masonry) {
         var columnBreakpoints = this._getColumnBreakpoints();
-        var initialState = { columnBreakpoints: columnBreakpoints };
+        // resolves collapsed margin issue in Safari
+        var childMarginSize = this._getChildMarginSize();
+        var initialState = {
+          columnBreakpoints: columnBreakpoints,
+          margin: this.state.margin || childMarginSize
+        };
 
         // make sure to recalculate columnBreakpoints if starting
         // with smaller screen width and resizing
@@ -112,14 +118,19 @@ var Columns = function (_Component) {
     value: function _onResize() {
       var _this2 = this;
 
-      var initMobile = this.state.initMobile;
+      var _state = this.state;
+      var initMobile = _state.initMobile;
+      var margin = _state.margin;
 
       if (initMobile) {
         if (window.innerWidth > _Responsive2.default.smallSize()) {
           var columnBreakpoints = this._getColumnBreakpoints();
+          var childMarginSize = margin || this._getChildMarginSize();
+
           this.setState({
             initMobile: false,
-            columnBreakpoints: columnBreakpoints
+            columnBreakpoints: columnBreakpoints,
+            margin: childMarginSize
           }, function () {
             clearTimeout(_this2._layoutTimer);
             _this2._layoutTimer = setTimeout(_this2._layout, 50);
@@ -129,6 +140,33 @@ var Columns = function (_Component) {
         clearTimeout(this._layoutTimer);
         this._layoutTimer = setTimeout(this._layout, 50);
       }
+    }
+  }, {
+    key: '_getChildMarginSize',
+    value: function _getChildMarginSize() {
+      var childMargin = void 0;
+      var container = (0, _reactDom.findDOMNode)(this.containerRef);
+      var column = container.childNodes[0];
+      var child = column.childNodes[0];
+
+      if (child) {
+        var childStyles = window.getComputedStyle(child);
+        if (childStyles) {
+          var childLeftMargin = childStyles.marginLeft ? parseFloat(childStyles.marginLeft) : 0;
+          var childRightMargin = childStyles.marginRight ? parseFloat(childStyles.marginRight) : 0;
+          childMargin = childLeftMargin + childRightMargin;
+
+          if (childMargin === 48) {
+            return 'large';
+          } else if (childMargin === 24) {
+            return 'medium';
+          } else if (childMargin === 12) {
+            return 'small';
+          }
+        }
+      }
+
+      return null;
     }
   }, {
     key: '_getColumnBreakpoints',
@@ -143,7 +181,9 @@ var Columns = function (_Component) {
       if (child) {
         var childStyles = window.getComputedStyle(child);
         if (childStyles && childStyles.width) {
-          minColumnWidth = parseFloat(childStyles.width);
+          var childLeftMargin = childStyles.marginLeft ? parseFloat(childStyles.marginLeft) : 0;
+          var childRightMargin = childStyles.marginRight ? parseFloat(childStyles.marginRight) : 0;
+          minColumnWidth = parseFloat(childStyles.width) + childLeftMargin + childRightMargin;
         }
       }
 
@@ -271,8 +311,9 @@ var Columns = function (_Component) {
       var justify = _props.justify;
       var responsive = _props.responsive;
       var size = _props.size;
+      var margin = this.state.margin;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--justify-' + justify, justify), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--justify-' + justify, justify), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + margin, margin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames), className);
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Columns.propTypes));
 
       var groups = this._renderColumns();
@@ -303,6 +344,7 @@ exports.default = Columns;
 
 Columns.propTypes = {
   justify: _react.PropTypes.oneOf(['start', 'center', 'between', 'end']),
+  margin: _react.PropTypes.oneOf(['small', 'medium', 'large']),
   masonry: _react.PropTypes.bool,
   maxCount: _react.PropTypes.number,
   responsive: _react.PropTypes.bool,
