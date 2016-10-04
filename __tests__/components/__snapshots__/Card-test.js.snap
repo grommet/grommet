@@ -31,9 +31,7 @@ exports[`Card has correct default options 1`] = `
       Featured Post
     </label>
     <h2
-      className="grommetux-heading grommetux-heading--strong"
-      dangerouslySetInnerHTML={undefined}
-      id={undefined}>
+      className="grommetux-heading grommetux-heading--strong">
       The Key Steps to Reducing Software Spend
     </h2>
   </div>

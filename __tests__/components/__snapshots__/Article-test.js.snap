@@ -14,9 +14,7 @@ exports[`Article has correct default options 1`] = `
     aria-hidden="true"
     tabIndex="-1" />
   <h1
-    className="grommetux-heading"
-    dangerouslySetInnerHTML={undefined}
-    id={undefined}>
+    className="grommetux-heading">
     Title
   </h1>
   <section
@@ -52,9 +50,7 @@ exports[`Article renders a classname 1`] = `
     aria-hidden="true"
     tabIndex="-1" />
   <h1
-    className="grommetux-heading"
-    dangerouslySetInnerHTML={undefined}
-    id={undefined}>
+    className="grommetux-heading">
     Title
   </h1>
   <section
@@ -93,9 +89,7 @@ exports[`Article renders microdata properties 1`] = `
     aria-hidden="true"
     tabIndex="-1" />
   <h1
-    className="grommetux-heading"
-    dangerouslySetInnerHTML={undefined}
-    id={undefined}>
+    className="grommetux-heading">
     Title
   </h1>
   <section
