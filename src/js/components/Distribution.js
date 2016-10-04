@@ -491,6 +491,7 @@ export default class Distribution extends Component {
       a11yTitle, className, full, size, vertical, ...props
     } = this.props;
     delete props.series;
+    delete props.units;
     const { intl } = this.context;
     const { allIcons, focus, height, items, mouseActive, width } = this.state;
     const classes = classnames(
