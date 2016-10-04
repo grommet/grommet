@@ -44,6 +44,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require('react-dom');
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -94,6 +96,8 @@ var _Announcer = require('../utils/Announcer');
 
 var _Announcer2 = _interopRequireDefault(_Announcer);
 
+var _DOM = require('../utils/DOM');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
@@ -110,6 +114,7 @@ var Notification = function (_Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (Notification.__proto__ || (0, _getPrototypeOf2.default)(Notification)).call(this));
 
     _this._announce = _this._announce.bind(_this);
+    _this.state = {};
     return _this;
   }
 
@@ -117,11 +122,29 @@ var Notification = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       this._announce();
+      // Measure the actual background color brightness to determine whether
+      // to set a dark or light context.
+      var container = (0, _reactDom.findDOMNode)(this._containerRef);
+      this.setState({ darkBackground: (0, _DOM.hasDarkBackground)(container) });
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.status !== this.props.status) {
+        this.setState({ updateDarkBackground: true });
+      }
     }
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
       this._announce();
+      if (this.state.updateDarkBackground) {
+        var container = (0, _reactDom.findDOMNode)(this._containerRef);
+        this.setState({
+          updateDarkBackground: false,
+          darkBackground: (0, _DOM.hasDarkBackground)(container)
+        });
+      }
     }
   }, {
     key: '_announce',
@@ -139,6 +162,9 @@ var Notification = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _classnames,
+          _this2 = this;
+
       var _props2 = this.props;
       var children = _props2.children;
       var className = _props2.className;
@@ -152,8 +178,9 @@ var Notification = function (_Component) {
       var state = _props2.state;
       var status = _props2.status;
       var intl = this.context.intl;
+      var darkBackground = this.state.darkBackground;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--status-' + status.toLowerCase(), BACKGROUND_COLOR_INDEX + '-' + status.toLowerCase(), (0, _defineProperty3.default)({}, CLASS_ROOT + '--' + size, size), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--status-' + status.toLowerCase(), BACKGROUND_COLOR_INDEX + '-' + status.toLowerCase(), (_classnames = {}, (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '--dark', darkBackground), (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '--light', !darkBackground), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames), className);
 
       var statusNode = void 0;
       if (status) {
@@ -220,7 +247,10 @@ var Notification = function (_Component) {
           leave: { animation: 'fade', duration: 1000 } },
         _react2.default.createElement(
           _Box2.default,
-          (0, _extends3.default)({}, restProps, boxProps, { className: classes,
+          (0, _extends3.default)({ ref: function ref(_ref) {
+              return _this2._containerRef = _ref;
+            }
+          }, restProps, boxProps, { className: classes,
             pad: 'small', direction: 'row', align: 'start', responsive: false,
             full: fullBox }),
           _react2.default.createElement(

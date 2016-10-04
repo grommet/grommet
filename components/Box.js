@@ -40,6 +40,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require('react-dom');
+
 var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
 var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
@@ -51,6 +53,8 @@ var _Intl2 = _interopRequireDefault(_Intl);
 var _Props = require('../utils/Props');
 
 var _Props2 = _interopRequireDefault(_Props);
+
+var _DOM = require('../utils/DOM');
 
 var _SkipLinkAnchor = require('./SkipLinkAnchor');
 
@@ -73,13 +77,19 @@ var Box = function (_Component) {
 
   function Box() {
     (0, _classCallCheck3.default)(this, Box);
-    return (0, _possibleConstructorReturn3.default)(this, (Box.__proto__ || (0, _getPrototypeOf2.default)(Box)).apply(this, arguments));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Box.__proto__ || (0, _getPrototypeOf2.default)(Box)).call(this));
+
+    _this.state = {};
+    return _this;
   }
 
   (0, _createClass3.default)(Box, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var onClick = this.props.onClick;
+      var _props = this.props;
+      var colorIndex = _props.colorIndex;
+      var onClick = _props.onClick;
 
       if (onClick) {
         var clickCallback = function () {
@@ -93,12 +103,36 @@ var Box = function (_Component) {
           space: clickCallback
         });
       }
+      // Measure the actual background color brightness to determine whether
+      // to set a dark or light context.
+      if (colorIndex) {
+        var box = (0, _reactDom.findDOMNode)(this.boxContainerRef);
+        this.setState({ darkBackground: (0, _DOM.hasDarkBackground)(box) });
+      }
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.colorIndex !== this.props.colorIndex) {
+        if (this.props.colorIndex) {
+          this.setState({ updateDarkBackground: true });
+        } else {
+          this.setState({ darkBackground: undefined });
+        }
+      }
     }
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
       if (this.props.announce) {
         (0, _Announcer.announce)(this.boxContainerRef.textContent);
+      }
+      if (this.state.updateDarkBackground) {
+        var box = (0, _reactDom.findDOMNode)(this.boxContainerRef);
+        this.setState({
+          updateDarkBackground: false,
+          darkBackground: (0, _DOM.hasDarkBackground)(box)
+        });
       }
     }
   }, {
@@ -141,24 +175,25 @@ var Box = function (_Component) {
     value: function render() {
       var _this3 = this;
 
-      var _props = this.props;
-      var a11yTitle = _props.a11yTitle;
-      var appCentered = _props.appCentered;
-      var backgroundImage = _props.backgroundImage;
-      var children = _props.children;
-      var className = _props.className;
-      var colorIndex = _props.colorIndex;
-      var containerClassName = _props.containerClassName;
-      var focusable = _props.focusable;
-      var id = _props.id;
-      var onClick = _props.onClick;
-      var pad = _props.pad;
-      var primary = _props.primary;
-      var role = _props.role;
-      var size = _props.size;
-      var tabIndex = _props.tabIndex;
-      var tag = _props.tag;
-      var texture = _props.texture;
+      var _props2 = this.props;
+      var a11yTitle = _props2.a11yTitle;
+      var appCentered = _props2.appCentered;
+      var backgroundImage = _props2.backgroundImage;
+      var children = _props2.children;
+      var className = _props2.className;
+      var colorIndex = _props2.colorIndex;
+      var containerClassName = _props2.containerClassName;
+      var focusable = _props2.focusable;
+      var id = _props2.id;
+      var onClick = _props2.onClick;
+      var pad = _props2.pad;
+      var primary = _props2.primary;
+      var role = _props2.role;
+      var size = _props2.size;
+      var tabIndex = _props2.tabIndex;
+      var tag = _props2.tag;
+      var texture = _props2.texture;
+      var darkBackground = this.state.darkBackground;
 
       var classes = [CLASS_ROOT];
       var containerClasses = [CLASS_ROOT + '__container'];
@@ -215,12 +250,20 @@ var Box = function (_Component) {
         this._addPropertyClass(containerClasses, 'full', { elementName: CLASS_ROOT + '__container' });
         if (colorIndex) {
           containerClasses.push(BACKGROUND_COLOR_INDEX + '-' + colorIndex);
+          if (darkBackground) {
+            containerClasses.push(BACKGROUND_COLOR_INDEX + '--dark');
+          }
         }
         if (containerClassName) {
           containerClasses.push(containerClassName);
         }
       } else if (colorIndex) {
         classes.push(BACKGROUND_COLOR_INDEX + '-' + colorIndex);
+        if (darkBackground) {
+          classes.push(BACKGROUND_COLOR_INDEX + '--dark');
+        } else {
+          classes.push(BACKGROUND_COLOR_INDEX + '--light');
+        }
       }
 
       var a11yProps = {};

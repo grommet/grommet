@@ -101,9 +101,6 @@ $inverse-background-color: nth($brand-neutral-colors, 1);
 $inverse-color: #fff;
 
 $dark-background-context:
-  '[class*="background-color-index-"]' +
-  ':not([class*="background-color-index-accent"])' +
-  ':not([class*="background-color-index-light"])' +
-  ':not([class*="background-color-index-warning"])' +
-  ':not([class*="background-color-index-disabled"])' +
-  ':not([class*="background-color-index-unknown"])' !default;
+  '.#{$grommet-namespace}background-color-index--dark' !default;
+$light-background-context:
+  '.#{$grommet-namespace}background-color-index--light' !default;

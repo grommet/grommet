@@ -3,6 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _slicedToArray2 = require('babel-runtime/helpers/slicedToArray');
+
+var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 function hash(input) {
   var hash = 0,
@@ -17,6 +24,8 @@ function hash(input) {
   }
   return hash;
 };
+
+var COLOR_REGEXP = /rgb\((\d+), (\d+), (\d+)\)/;
 
 exports.default = {
   findScrollParents: function findScrollParents(element, horizontal) {
@@ -118,6 +127,31 @@ exports.default = {
     }
     var uuid = '' + S4() + S4() + ('-' + S4() + '-4' + S4().substr(0, 3)) + ('-' + S4() + '-' + S4() + S4() + S4()).toLowerCase();
     return uuid;
+  },
+  hasDarkBackground: function hasDarkBackground(element) {
+    // Measure the actual background color brightness to determine whether
+    // to set a dark or light context.
+    var result = void 0;
+    if (element && window.getComputedStyle) {
+      var color = window.getComputedStyle(element).backgroundColor;
+      var match = color.match(COLOR_REGEXP);
+
+      var _match$slice$map = match.slice(1).map(function (n) {
+        return parseInt(n, 10);
+      });
+
+      var _match$slice$map2 = (0, _slicedToArray3.default)(_match$slice$map, 3);
+
+      var red = _match$slice$map2[0];
+      var green = _match$slice$map2[1];
+      var blue = _match$slice$map2[2];
+      // http://www.had2know.com/technology/
+      //  color-contrast-calculator-web-design.html
+
+      var brightness = (299 * red + 587 * green + 114 * blue) / 1000;
+      result = brightness < 125;
+    }
+    return result;
   }
 };
 module.exports = exports['default'];
