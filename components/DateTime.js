@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _typeof2 = require('babel-runtime/helpers/typeof');
 
 var _typeof3 = _interopRequireDefault(_typeof2);
@@ -11,6 +15,10 @@ var _typeof3 = _interopRequireDefault(_typeof2);
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -364,17 +372,21 @@ var DateTime = function (_Component) {
       var _props4 = this.props;
       var className = _props4.className;
       var format = _props4.format;
-      var id = _props4.id;
-      var name = _props4.name;
+      var value = _props4.value;
+      var props = (0, _objectWithoutProperties3.default)(_props4, ['className', 'format', 'value']);
+
+      delete props.onChange;
+      delete props.step;
       var dropActive = this.state.dropActive;
       var intl = this.context.intl;
-      var value = this.props.value;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', dropActive));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', dropActive), className);
+
+      var inputValue = value;
       if (value instanceof Date) {
-        value = (0, _moment2.default)(value).format(format);
+        inputValue = (0, _moment2.default)(value).format(format);
       } else if (value && (typeof value === 'undefined' ? 'undefined' : (0, _typeof3.default)(value)) === 'object') {
-        value = value.format(format);
+        inputValue = value.format(format);
       }
       var Icon = TIME_REGEXP.test(format) ? _Clock2.default : _Calendar2.default;
 
@@ -385,12 +397,11 @@ var DateTime = function (_Component) {
         { ref: function ref(_ref2) {
             return _this2.containerRef = _ref2;
           }, className: classes },
-        _react2.default.createElement('input', { ref: function ref(_ref) {
+        _react2.default.createElement('input', (0, _extends3.default)({ ref: function ref(_ref) {
             return _this2.inputRef = _ref;
-          }, placeholder: format,
-          className: INPUT + ' ' + CLASS_ROOT + '__input',
-          id: id, name: name,
-          value: value || '', onChange: this._onInputChange }),
+          } }, props, {
+          className: INPUT + ' ' + CLASS_ROOT + '__input', placeholder: format,
+          value: inputValue || '', onChange: this._onInputChange })),
         _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control', icon: _react2.default.createElement(Icon, null),
           a11yTitle: dateTimeIconMessage,
           onClick: this._onControlClick })
@@ -415,6 +426,7 @@ DateTime.defaultProps = {
 
 DateTime.propTypes = {
   format: _react.PropTypes.string,
+  id: _react.PropTypes.string,
   name: _react.PropTypes.string,
   onChange: _react.PropTypes.func,
   step: _react.PropTypes.number,
