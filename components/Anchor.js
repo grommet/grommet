@@ -72,6 +72,7 @@ var Anchor = function (_Component) {
       var _classnames;
 
       var _props = this.props;
+      var a11yTitle = _props.a11yTitle;
       var animateIcon = _props.animateIcon;
       var children = _props.children;
       var className = _props.className;
@@ -82,7 +83,7 @@ var Anchor = function (_Component) {
       var primary = _props.primary;
       var reverse = _props.reverse;
       var tag = _props.tag;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['animateIcon', 'children', 'className', 'disabled', 'icon', 'id', 'label', 'primary', 'reverse', 'tag']);
+      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'animateIcon', 'children', 'className', 'disabled', 'icon', 'id', 'label', 'primary', 'reverse', 'tag']);
 
 
       var anchorIcon = void 0;
@@ -126,7 +127,7 @@ var Anchor = function (_Component) {
       var Component = tag;
       return _react2.default.createElement(
         Component,
-        (0, _extends3.default)({}, props, { className: classes }),
+        (0, _extends3.default)({}, props, { className: classes, 'aria-label': a11yTitle }),
         first,
         second
       );

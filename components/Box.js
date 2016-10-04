@@ -107,7 +107,9 @@ var Box = function (_Component) {
       // to set a dark or light context.
       if (colorIndex) {
         var box = (0, _reactDom.findDOMNode)(this.boxContainerRef);
-        this.setState({ darkBackground: (0, _DOM.hasDarkBackground)(box) });
+        this.setState({
+          darkBackground: 'dark' === colorIndex || (0, _DOM.hasDarkBackground)(box)
+        });
       }
     }
   }, {
@@ -131,7 +133,7 @@ var Box = function (_Component) {
         var box = (0, _reactDom.findDOMNode)(this.boxContainerRef);
         this.setState({
           updateDarkBackground: false,
-          darkBackground: (0, _DOM.hasDarkBackground)(box)
+          darkBackground: 'dark' === this.props.colorIndex || (0, _DOM.hasDarkBackground)(box)
         });
       }
     }

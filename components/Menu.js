@@ -574,6 +574,7 @@ var Menu = function (_Component2) {
         var openLabel = _Intl2.default.getMessage(this.context.intl, 'Open');
         var _menuLabel = _Intl2.default.getMessage(this.context.intl, 'Menu');
         var menuTitle = openLabel + ' ' + (a11yTitle || label || '') + ' ' + ('' + _menuLabel);
+        delete props.colorIndex;
 
         return _react2.default.createElement(
           'div',
