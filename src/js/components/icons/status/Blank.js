@@ -27,10 +27,10 @@ export default class Blank extends Component {
   }
 }
 
-Blank.defaultProps = {
-  a11yTitle: 'Blank'
-};
-
 Blank.propTypes = {
   a11yTitle: PropTypes.string
+};
+
+Blank.defaultProps = {
+  a11yTitle: 'Blank'
 };

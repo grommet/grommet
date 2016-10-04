@@ -35,10 +35,10 @@ export default class OK extends Component {
   }
 }
 
-OK.defaultProps = {
-  a11yTitle: 'OK'
-};
-
 OK.propTypes = {
   a11yTitle: PropTypes.string
+};
+
+OK.defaultProps = {
+  a11yTitle: 'OK'
 };

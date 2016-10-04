@@ -36,10 +36,10 @@ export default class Disabled extends Component {
   }
 }
 
-Disabled.defaultProps = {
-  a11yTitle: 'Disabled'
-};
-
 Disabled.propTypes = {
   a11yTitle: PropTypes.string
+};
+
+Disabled.defaultProps = {
+  a11yTitle: 'Disabled'
 };

@@ -28,34 +28,30 @@ export default class Status extends Component {
     switch (value.toLowerCase()) {
       case 'ok':
       case 'normal':
-        icon = <OK className={classes} {...props} />;
+        icon = <OK {...props} className={classes} />;
         break;
       case 'warning':
-        icon = <Warning className={classes} {...props} />;
+        icon = <Warning {...props} className={classes} />;
         break;
       case 'critical':
-        icon = <CriticalStatus className={classes} {...props} />;
+        icon = <CriticalStatus {...props} className={classes} />;
         break;
       case 'disabled':
-        icon = <Disabled className={classes} {...props} />;
+        icon = <Disabled {...props} className={classes} />;
         break;
       case 'unknown':
-        icon = <Unknown className={classes} {...props} />;
+        icon = <Unknown {...props} className={classes} />;
         break;
       case 'blank':
-        icon = <Blank className={classes} {...props} />;
+        icon = <Blank {...props} className={classes} />;
         break;
       case 'label':
-        icon = <Label className={classes} {...props} />;
+        icon = <Label {...props} className={classes} />;
         break;
     }
     return icon;
   }
 }
-
-Status.defaultProps = {
-  value: 'unknown'
-};
 
 Status.propTypes = {
   a11yTitle: PropTypes.string,
@@ -63,4 +59,8 @@ Status.propTypes = {
   value: PropTypes.oneOf(['critical', 'warning', 'ok', 'unknown',
     'disabled', 'label',
     'Critical', 'Warning', 'OK', 'Unknown', 'Disabled', 'Label', 'blank'])
+};
+
+Status.defaultProps = {
+  value: 'unknown'
 };

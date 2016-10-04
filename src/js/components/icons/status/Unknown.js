@@ -42,10 +42,10 @@ export default class Unknown extends Component {
   }
 }
 
-Unknown.defaultProps = {
-  a11yTitle: 'Unknown'
-};
-
 Unknown.propTypes = {
   a11yTitle: PropTypes.string
+};
+
+Unknown.defaultProps = {
+  a11yTitle: 'Unknown'
 };

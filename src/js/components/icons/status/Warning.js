@@ -36,10 +36,10 @@ export default class Warning extends Component {
   }
 }
 
-Warning.defaultProps = {
-  a11yTitle: 'Warning'
-};
-
 Warning.propTypes = {
   a11yTitle: PropTypes.string
+};
+
+Warning.defaultProps = {
+  a11yTitle: 'Warning'
 };

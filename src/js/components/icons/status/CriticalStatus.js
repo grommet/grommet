@@ -34,10 +34,10 @@ export default class CriticalStatus extends Component {
   }
 }
 
-CriticalStatus.defaultProps = {
-  a11yTitle: 'Critical'
-};
-
 CriticalStatus.propTypes = {
   a11yTitle: PropTypes.string
+};
+
+CriticalStatus.defaultProps = {
+  a11yTitle: 'Critical'
 };
