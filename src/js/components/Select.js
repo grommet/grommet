@@ -2,14 +2,14 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
+import Props from '../utils/Props';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
 import { findAncestor } from '../utils/DOM';
 import Button from './Button';
 import Search from './Search';
 import CaretDownIcon from './icons/base/CaretDown';
-// import SearchIcon from './icons/base/Search';
-import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.SELECT;
 const INPUT = CSSClassnames.INPUT;
@@ -203,7 +203,7 @@ export default class Select extends Component {
   }
 
   render () {
-    const { className, value } = this.props;
+    const { className, id, name, value } = this.props;
     const { active } = this.state;
     let classes = classnames(
       CLASS_ROOT,
@@ -212,12 +212,14 @@ export default class Select extends Component {
       },
       className
     );
+    const restProps = Props.omit(this.props, Object.keys(Select.propTypes));
 
     return (
       <div ref={ref => this.componentRef = ref} className={classes}
         onClick={this._onAddDrop}>
-        <input className={`${INPUT} ${CLASS_ROOT}__input`}
-          value={this._renderLabel(value)} disabled={true} />
+        <input {...restProps} className={`${INPUT} ${CLASS_ROOT}__input`}
+          id={id} name={name} disabled={true}
+          value={this._renderLabel(value)} />
         <Button className={`${CLASS_ROOT}__control`} icon={<CaretDownIcon />}
           onClick={this._onAddDrop} />
       </div>

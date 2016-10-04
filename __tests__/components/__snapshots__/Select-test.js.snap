@@ -5,6 +5,8 @@ exports[`Select has correct default options 1`] = `
   <input
     className="grommetux-input grommetux-select__input"
     disabled={true}
+    id="item1"
+    name="item-1"
     value="one" />
   <button
     aria-label={undefined}
