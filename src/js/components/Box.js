@@ -1,9 +1,11 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Intl from '../utils/Intl';
 import Props from '../utils/Props';
+import { hasDarkBackground } from '../utils/DOM';
 import SkipLinkAnchor from './SkipLinkAnchor';
 import CSSClassnames from '../utils/CSSClassnames';
 import { announce } from '../utils/Announcer';
@@ -13,8 +15,13 @@ const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 export default class Box extends Component {
 
+  constructor () {
+    super();
+    this.state = {};
+  }
+
   componentDidMount () {
-    const { onClick } = this.props;
+    const { colorIndex, onClick } = this.props;
     if (onClick) {
       let clickCallback = function () {
         if (this.boxContainerRef === document.activeElement) {
@@ -27,11 +34,34 @@ export default class Box extends Component {
         space: clickCallback
       });
     }
+    // Measure the actual background color brightness to determine whether
+    // to set a dark or light context.
+    if (colorIndex) {
+      const box = findDOMNode(this.boxContainerRef);
+      this.setState({ darkBackground: hasDarkBackground(box) });
+    }
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.colorIndex !== this.props.colorIndex) {
+      if (this.props.colorIndex) {
+        this.setState({ updateDarkBackground: true });
+      } else {
+        this.setState({ darkBackground: undefined });
+      }
+    }
   }
 
   componentDidUpdate () {
     if (this.props.announce) {
       announce(this.boxContainerRef.textContent);
+    }
+    if (this.state.updateDarkBackground) {
+      const box = findDOMNode(this.boxContainerRef);
+      this.setState({
+        updateDarkBackground: false,
+        darkBackground: hasDarkBackground(box)
+      });
     }
   }
 
@@ -67,6 +97,7 @@ export default class Box extends Component {
     const { a11yTitle, appCentered, backgroundImage, children, className,
       colorIndex, containerClassName, focusable, id, onClick, pad, primary,
       role, size, tabIndex, tag, texture } = this.props;
+    const { darkBackground } = this.state;
     let classes = [CLASS_ROOT];
     let containerClasses = [`${CLASS_ROOT}__container`];
     let restProps = Props.omit(this.props, Object.keys(Box.propTypes));
@@ -124,14 +155,21 @@ export default class Box extends Component {
       this._addPropertyClass(containerClasses, 'full',
         { elementName: `${CLASS_ROOT}__container` });
       if (colorIndex) {
-        containerClasses.push(
-          `${BACKGROUND_COLOR_INDEX}-${colorIndex}`);
+        containerClasses.push(`${BACKGROUND_COLOR_INDEX}-${colorIndex}`);
+        if (darkBackground) {
+          containerClasses.push(`${BACKGROUND_COLOR_INDEX}--dark`);
+        }
       }
       if (containerClassName) {
         containerClasses.push(containerClassName);
       }
     } else if (colorIndex) {
       classes.push(`${BACKGROUND_COLOR_INDEX}-${colorIndex}`);
+      if (darkBackground) {
+        classes.push(`${BACKGROUND_COLOR_INDEX}--dark`);
+      } else {
+        classes.push(`${BACKGROUND_COLOR_INDEX}--light`);
+      }
     }
 
     let a11yProps = {};
@@ -166,8 +204,7 @@ export default class Box extends Component {
         style.backgroundImage = `url(${texture})`;
       }
     } else if (backgroundImage) {
-      style.background =
-        backgroundImage + " no-repeat center center";
+      style.background = backgroundImage + " no-repeat center center";
       style.backgroundSize = "cover";
     }
     style = {...style, ...restProps.style};

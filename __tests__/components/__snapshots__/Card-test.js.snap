@@ -136,7 +136,7 @@ exports[`Card renders correctly when the headingStrong is false 1`] = `
 
 exports[`Card renders correctly with a non-default colorIndex 1`] = `
 <div
-  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--width-medium grommetux-box--size grommetux-background-color-index-light-2 grommetux-card"
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--width-medium grommetux-box--size grommetux-background-color-index-light-2 grommetux-background-color-index--light grommetux-card"
   id={undefined}
   onClick={undefined}
   role={undefined}

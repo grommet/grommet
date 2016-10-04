@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
 import { FormattedDate } from 'react-intl';
 import Intl from '../utils/Intl';
@@ -14,6 +15,7 @@ import CloseIcon from './icons/base/Close';
 import Props from '../utils/Props';
 import CSSClassnames from '../utils/CSSClassnames';
 import Announcer from '../utils/Announcer';
+import { hasDarkBackground } from '../utils/DOM';
 
 const CLASS_ROOT = CSSClassnames.NOTIFICATION;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
@@ -23,14 +25,32 @@ export default class Notification extends Component {
   constructor () {
     super();
     this._announce = this._announce.bind(this);
+    this.state = {};
   }
 
   componentDidMount () {
     this._announce();
+    // Measure the actual background color brightness to determine whether
+    // to set a dark or light context.
+    const container = findDOMNode(this._containerRef);
+    this.setState({ darkBackground: hasDarkBackground(container) });
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.status !== this.props.status) {
+      this.setState({ updateDarkBackground: true });
+    }
   }
 
   componentDidUpdate () {
     this._announce();
+    if (this.state.updateDarkBackground) {
+      const container = findDOMNode(this._containerRef);
+      this.setState({
+        updateDarkBackground: false,
+        darkBackground: hasDarkBackground(container)
+      });
+    }
   }
 
   _announce () {
@@ -48,11 +68,14 @@ export default class Notification extends Component {
       onClose, timestamp, size, state, status
     } = this.props;
     const { intl } = this.context;
+    const { darkBackground } = this.state;
     const classes = classnames(
       CLASS_ROOT,
       `${CLASS_ROOT}--status-${status.toLowerCase()}`,
       `${BACKGROUND_COLOR_INDEX}-${status.toLowerCase()}`,
       {
+        [`${BACKGROUND_COLOR_INDEX}--dark`]: darkBackground,
+        [`${BACKGROUND_COLOR_INDEX}--light`]: !darkBackground,
         [`${CLASS_ROOT}--${size}`]: size
       },
       className
@@ -128,7 +151,8 @@ export default class Notification extends Component {
     return (
       <Animate enter={{ animation: 'fade', duration: 1000 }}
         leave={{ animation: 'fade', duration: 1000 }}>
-        <Box {...restProps} {...boxProps} className={classes}
+        <Box ref={(ref) => this._containerRef = ref}
+          {...restProps} {...boxProps} className={classes}
           pad='small' direction='row' align='start' responsive={false}
           full={fullBox}>
           <Box pad='small'>
