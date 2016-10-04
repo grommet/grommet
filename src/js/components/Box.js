@@ -13,19 +13,6 @@ const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 export default class Box extends Component {
 
-  getChildContext() {
-    const { colorIndex } = this.props;
-
-    if (colorIndex) {
-      const darkMode = (
-        colorIndex && colorIndex !== 'accent' && colorIndex !== 'light' &&
-        colorIndex !== 'warning' && colorIndex !== 'disabled' &&
-        colorIndex !== 'unknown'
-      );
-      return { dark: darkMode };
-    }
-  }
-
   componentDidMount () {
     const { onClick } = this.props;
     if (onClick) {
@@ -298,10 +285,6 @@ Box.propTypes = {
     PropTypes.string
   ]),
   wrap: PropTypes.bool
-};
-
-Box.childContextTypes = {
-  dark: PropTypes.bool
 };
 
 Box.contextTypes = {
