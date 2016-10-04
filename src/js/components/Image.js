@@ -9,11 +9,12 @@ const CLASS_ROOT = CSSClassnames.IMAGE;
 
 export default class Image extends Component {
   render () {
-    const { caption, className, full, mask, size, ...props } = this.props;
+    const { caption, className, full, mask, size, fit, ...props } = this.props;
     const classes = classnames(
       CLASS_ROOT,
       {
         [`${CLASS_ROOT}--${size}`]: size,
+        [`${CLASS_ROOT}--${fit}`]: fit,
         [`${CLASS_ROOT}--full`]: typeof full === 'boolean' && full,
         [`${CLASS_ROOT}--full-${full}`]: typeof full === 'string',
         [`${CLASS_ROOT}--mask`]: mask
@@ -51,6 +52,7 @@ Image.propTypes = {
   caption: PropTypes.oneOfType([
     PropTypes.bool, PropTypes.string
   ]),
+  fit: PropTypes.oneOf(['contain', 'cover']),
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   mask: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'thumb']),
