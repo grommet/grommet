@@ -18,7 +18,7 @@ export default class Button extends Component {
 
   render () {
     const {
-      a11yTitle, accent, align, children, className, fill, href, icon, id, 
+      a11yTitle, accent, align, children, className, fill, href, icon, id,
       label, onClick, plain, primary, secondary, type, ...props
     } = this.props;
 

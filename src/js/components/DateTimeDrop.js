@@ -433,7 +433,7 @@ export default class DateTimeDrop extends Component {
     }
 
     return (
-      <Box id={CLASS_ROOT} className={CLASS_ROOT} align='center'>
+      <Box className={CLASS_ROOT} align='center'>
         {date}
         {time}
       </Box>

@@ -16,8 +16,7 @@ exports[`LoginForm has correct default options 1`] = `
       <label
         className="grommetux-form-field__label"
         htmlFor="username">
-        <span
-          id="Email">
+        <span>
           Email
         </span>
       </label>
@@ -35,8 +34,7 @@ exports[`LoginForm has correct default options 1`] = `
       <label
         className="grommetux-form-field__label"
         htmlFor="password">
-        <span
-          id="Password">
+        <span>
           Password
         </span>
       </label>
@@ -68,8 +66,7 @@ exports[`LoginForm has correct default options 1`] = `
       onMouseDown={[Function onMouseDown]}
       onMouseUp={[Function onMouseUp]}
       type="submit">
-      <span
-        id="Log_In">
+      <span>
         Log In
       </span>
     </button>

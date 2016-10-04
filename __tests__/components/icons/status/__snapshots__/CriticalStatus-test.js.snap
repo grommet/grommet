@@ -1,34 +1,24 @@
 exports[`CriticalStatus has correct className rendering 1`] = `
 <svg
-  aria-labelledby="critical-title"
+  aria-label="Critical"
   className="grommetux-status-icon grommetux-status-icon-critical testing"
   role="img"
   version="1.1"
   viewBox="0 0 24 24">
-  <title
-    id="critical-title">
-    <span
-      id="Critical">
-      Critical
-    </span>
-  </title>
   <g
     className="grommetux-status-icon__base"
     stroke="none">
     <path
-      d="M12,0 L24,12 L12,24 L0,12 Z"
-      role="presentation" />
+      d="M12,0 L24,12 L12,24 L0,12 Z" />
   </g>
   <g
     className="grommetux-status-icon__detail"
     fill="none">
     <path
       d="M8,8 L16,16"
-      role="presentation"
       strokeWidth="2" />
     <path
       d="M8,16 L16,8"
-      role="presentation"
       strokeWidth="2" />
   </g>
 </svg>
@@ -36,35 +26,25 @@ exports[`CriticalStatus has correct className rendering 1`] = `
 
 exports[`CriticalStatus has correct default options 1`] = `
 <svg
-  aria-labelledby="critical-title"
+  aria-label="Critical"
   className="grommetux-status-icon grommetux-status-icon-critical"
   role="img"
   version="1.1"
   viewBox="0 0 24 24">
-  <title
-    id="critical-title">
-    <span
-      id="Critical">
-      Critical
-    </span>
-  </title>
   <g
     className="grommetux-status-icon__base"
     stroke="none">
     <path
-      d="M12,0 L24,12 L12,24 L0,12 Z"
-      role="presentation" />
+      d="M12,0 L24,12 L12,24 L0,12 Z" />
   </g>
   <g
     className="grommetux-status-icon__detail"
     fill="none">
     <path
       d="M8,8 L16,16"
-      role="presentation"
       strokeWidth="2" />
     <path
       d="M8,16 L16,8"
-      role="presentation"
       strokeWidth="2" />
   </g>
 </svg>

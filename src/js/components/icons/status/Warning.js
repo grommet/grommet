@@ -2,7 +2,6 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import FormattedMessage from '../../FormattedMessage';
 import CSSClassnames from '../../../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.STATUS_ICON;
@@ -15,13 +14,9 @@ export default class Warning extends Component {
       `${CLASS_ROOT}-warning`,
       className
     );
-    const warningTitleId = 'warning-title';
     return (
       <svg {...props} className={classes} viewBox="0 0 24 24" role="img"
-        aria-labelledby={warningTitleId} version="1.1">
-        <title id={warningTitleId}>
-          <FormattedMessage id={a11yTitle} defaultMessage={a11yTitle} />
-        </title>
+        aria-label={a11yTitle} version="1.1">
         <g className={`${CLASS_ROOT}__base`}>
           <path role="presentation" d="M12,0 L0,22 L24,22 L12,0 L12,0 Z"
             stroke="none" />
@@ -37,7 +32,8 @@ export default class Warning extends Component {
 }
 
 Warning.propTypes = {
-  a11yTitle: PropTypes.string
+  a11yTitle: PropTypes.string,
+  className: PropTypes.string
 };
 
 Warning.defaultProps = {

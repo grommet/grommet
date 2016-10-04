@@ -2,7 +2,6 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import FormattedMessage from '../../FormattedMessage';
 import CSSClassnames from '../../../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.STATUS_ICON;
@@ -15,19 +14,15 @@ export default class CriticalStatus extends Component {
       `${CLASS_ROOT}-critical`,
       className
     );
-    const criticalTitleId = 'critical-title';
     return (
-      <svg {...props} className={classes} viewBox="0 0 24 24"
-        aria-labelledby={criticalTitleId} role="img" version="1.1">
-        <title id={criticalTitleId}>
-          <FormattedMessage id={a11yTitle} defaultMessage={a11yTitle} />
-        </title>
-        <g className={`${CLASS_ROOT}__base`} stroke="none">
-          <path role="presentation" d="M12,0 L24,12 L12,24 L0,12 Z" />
+      <svg {...props} className={classes} viewBox='0 0 24 24' role='img'
+        version='1.1' aria-label={a11yTitle}>
+        <g className={`${CLASS_ROOT}__base`} stroke='none'>
+          <path d='M12,0 L24,12 L12,24 L0,12 Z' />
         </g>
-        <g className={`${CLASS_ROOT}__detail`} fill="none">
-          <path role="presentation" d="M8,8 L16,16" strokeWidth="2" />
-          <path role="presentation" d="M8,16 L16,8" strokeWidth="2" />
+        <g className={`${CLASS_ROOT}__detail`} fill='none'>
+          <path d='M8,8 L16,16' strokeWidth='2' />
+          <path d='M8,16 L16,8' strokeWidth='2' />
         </g>
       </svg>
     );
@@ -35,7 +30,8 @@ export default class CriticalStatus extends Component {
 }
 
 CriticalStatus.propTypes = {
-  a11yTitle: PropTypes.string
+  a11yTitle: PropTypes.string,
+  className: PropTypes.string
 };
 
 CriticalStatus.defaultProps = {

@@ -149,7 +149,8 @@ export default class DateTime extends Component {
   }
 
   _onClose (event) {
-    if (! isDescendant(this.containerRef, event.target)) {
+    if (! isDescendant(this.containerRef, event.target) &&
+      ! isDescendant(this._drop.container, event.target)) {
       this.setState({ dropActive: false, cursor: -1 });
     }
   }

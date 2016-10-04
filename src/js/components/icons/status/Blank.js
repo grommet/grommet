@@ -2,7 +2,6 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import FormattedMessage from '../../FormattedMessage';
 import CSSClassnames from '../../../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.STATUS_ICON;
@@ -15,20 +14,17 @@ export default class Blank extends Component {
       `${CLASS_ROOT}-blank`,
       className
     );
-    const blankTitleId = 'blank-title';
     return (
-      <svg {...props} className={classes} viewBox="0 0 24 24" role="img"
-        aria-labelledby={blankTitleId} version="1.1">
-        <title id={blankTitleId}>
-          <FormattedMessage id={a11yTitle} defaultMessage={a11yTitle} />
-        </title>
+      <svg {...props} className={classes} viewBox='0 0 24 24' role='img'
+        version='1.1' aria-label={a11yTitle}>
       </svg>
     );
   }
 }
 
 Blank.propTypes = {
-  a11yTitle: PropTypes.string
+  a11yTitle: PropTypes.string,
+  className: PropTypes.string
 };
 
 Blank.defaultProps = {
