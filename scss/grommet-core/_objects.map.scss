@@ -9,7 +9,7 @@ $map-active-stroke-width: round($inuit-base-spacing-unit / 4);
   // padding: $inuit-base-spacing-unit;
 }
 
-.#{$grommet-namespace}map__graphic {
+.#{$grommet-namespace}map__links {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -24,10 +24,6 @@ $map-active-stroke-width: round($inuit-base-spacing-unit / 4);
 .#{$grommet-namespace}map__path--active {
   stroke-width: $map-active-stroke-width;
 }
-
-// .#{$grommet-namespace}map__canvas--highlight {
-//   opacity: 1;
-// }
 
 .#{$grommet-namespace}map__categories {
   margin: 0px;

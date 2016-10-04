@@ -2,6 +2,8 @@
 
 $outer-pad: round($inuit-base-spacing-unit * 2);
 $inner-pad: round($inuit-base-spacing-unit * 0.25);
+$topology-stroke-width: round($inuit-base-spacing-unit / 12);
+$topology-active-stroke-width: round($inuit-base-spacing-unit / 4);
 
 .#{$grommet-namespace}topology {
   position: relative;
@@ -9,13 +11,25 @@ $inner-pad: round($inuit-base-spacing-unit * 0.25);
   // put status icons above canvas so lines start under them
   .#{$grommet-namespace}status-icon {
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
 }
 
-.#{$grommet-namespace}topology__canvas {
+.#{$grommet-namespace}topology__links {
   position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
   pointer-events: none;
+}
+
+.#{$grommet-namespace}topology__path {
+  stroke-width: $topology-stroke-width;
+  @include graph-stroke-color();
+}
+
+.#{$grommet-namespace}topology__path--active {
+  stroke-width: $topology-active-stroke-width;
 }
 
 .#{$grommet-namespace}topology__contents

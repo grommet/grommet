@@ -4,6 +4,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -30,20 +42,24 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = require('react-dom');
 
-var _Status = require('./icons/Status');
+var _classnames4 = require('classnames');
 
-var _Status2 = _interopRequireDefault(_Status);
+var _classnames5 = _interopRequireDefault(_classnames4);
 
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Status = require('./icons/Status');
+
+var _Status2 = _interopRequireDefault(_Status);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.TOPOLOGY; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.TOPOLOGY;
 var STATUS_ICON = _CSSClassnames2.default.STATUS_ICON;
+var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Label = function (_Component) {
@@ -80,51 +96,50 @@ var Part = function (_Component2) {
   (0, _createClass3.default)(Part, [{
     key: 'render',
     value: function render() {
-      var classes = [CLASS_ROOT + "__part"];
-      classes.push(CLASS_ROOT + "__part--direction-" + this.props.direction);
-      classes.push(CLASS_ROOT + "__part--justify-" + this.props.justify);
-      classes.push(CLASS_ROOT + "__part--align-" + this.props.align);
-      if (this.props.demarcate) {
-        classes.push(CLASS_ROOT + "__part--demarcate");
-      }
-      if (this.props.reverse) {
-        classes.push(CLASS_ROOT + "__part--reverse");
-      }
-      // handle undefined children
+      var _classnames;
+
+      var _props = this.props;
+      var align = _props.align;
+      var children = _props.children;
+      var className = _props.className;
+      var demarcate = _props.demarcate;
+      var direction = _props.direction;
+      var justify = _props.justify;
+      var label = _props.label;
+      var reverse = _props.reverse;
+      var status = _props.status;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['align', 'children', 'className', 'demarcate', 'direction', 'justify', 'label', 'reverse', 'status']);
+
       var realChildren = 0;
-      _react2.default.Children.forEach(this.props.children, function (child) {
+      _react.Children.forEach(children, function (child) {
         if (child) {
           realChildren += 1;
         }
       });
-      if (!this.props.status && !this.props.label && realChildren === 0) {
-        classes.push(CLASS_ROOT + "__part--empty");
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
+      var classes = (0, _classnames5.default)(CLASS_ROOT + '__part', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--direction-' + direction, direction), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--justify-' + justify, justify), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--demarcate', demarcate), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--reverse', reverse), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--empty', !status && !label && realChildren === 0), _classnames), className);
+
+      var statusIcon = void 0;
+      if (status) {
+        statusIcon = _react2.default.createElement(_Status2.default, { value: status, size: 'small' });
       }
 
-      var status;
-      if (this.props.status) {
-        status = _react2.default.createElement(_Status2.default, { value: this.props.status, size: 'small' });
-      }
-      var label;
-      if (this.props.label) {
-        label = _react2.default.createElement(
+      var labelLabel = void 0;
+      if (label) {
+        labelLabel = _react2.default.createElement(
           Label,
           null,
-          this.props.label
+          label
         );
       }
 
       return _react2.default.createElement(
         'div',
-        { className: classes.join(' '), id: this.props.id,
+        (0, _extends3.default)({}, props, { className: classes,
           onMouseEnter: this.props.onMouseEnter,
-          onMouseLeave: this.props.onMouseLeave },
-        status,
-        label,
-        this.props.children
+          onMouseLeave: this.props.onMouseLeave }),
+        statusIcon,
+        labelLabel,
+        children
       );
     }
   }]);
@@ -173,17 +188,20 @@ var Parts = function (_Component3) {
   }, {
     key: '_makeUniform',
     value: function _makeUniform() {
-      if (this.props.uniform) {
-        var parts = this.componentRef.children;
+      var _props2 = this.props;
+      var direction = _props2.direction;
+      var uniform = _props2.uniform;
+
+      if (uniform) {
+        var parts = this._componentRef.children;
         // clear old basis
         for (var i = 0; i < parts.length; i += 1) {
-          parts[i].style.webkitFlexBasis = null;
           parts[i].style.flexBasis = null;
         }
         // find max
         var max = 0;
         for (var _i = 0; _i < parts.length; _i += 1) {
-          if ('column' === this.props.direction) {
+          if ('column' === direction) {
             max = Math.max(max, parts[_i].offsetHeight);
           } else {
             max = Math.max(max, parts[_i].offsetWidth);
@@ -191,7 +209,6 @@ var Parts = function (_Component3) {
         }
         // set basis
         for (var _i2 = 0; _i2 < parts.length; _i2 += 1) {
-          parts[_i2].style.webkitFlexBasis = '' + max + 'px';
           parts[_i2].style.flexBasis = '' + max + 'px';
         }
       }
@@ -199,22 +216,22 @@ var Parts = function (_Component3) {
   }, {
     key: 'render',
     value: function render() {
-      var _this4 = this;
+      var _classnames2,
+          _this4 = this;
 
-      var classes = [CLASS_ROOT + "__parts"];
-      classes.push(CLASS_ROOT + "__parts--direction-" + this.props.direction);
-      if (this.props.align) {
-        classes.push(CLASS_ROOT + "__parts--align-" + this.props.align);
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var _props3 = this.props;
+      var align = _props3.align;
+      var children = _props3.children;
+      var className = _props3.className;
+      var direction = _props3.direction;
+
+      var classes = (0, _classnames5.default)(CLASS_ROOT + '__parts', (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__parts--direction-' + direction, direction), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__part--align-' + align, align), _classnames2), className);
       return _react2.default.createElement(
         'div',
         { ref: function ref(_ref) {
-            return _this4.componentRef = _ref;
-          }, className: classes.join(' ') },
-        this.props.children
+            return _this4._componentRef = _ref;
+          }, className: classes },
+        children
       );
     }
   }]);
@@ -248,51 +265,34 @@ var Topology = function (_Component4) {
     _this5._onMouseLeave = _this5._onMouseLeave.bind(_this5);
 
     _this5.state = {
-      canvasWidth: 100,
-      canvasHeight: 100,
-      highlighting: false,
-      highlights: {}
+      height: 100,
+      activeIds: {},
+      paths: [],
+      width: 100
     };
-
-    _this5.linkRefs = {};
     return _this5;
   }
 
   (0, _createClass3.default)(Topology, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var topology = this.topologyRef;
-      if (topology) {
-        topology.addEventListener('mousemove', this._onMouseMove);
-        topology.addEventListener('mouseleave', this._onMouseLeave);
-        window.addEventListener('resize', this._onResize);
-        this._layout();
-        this._cacheLinkIds(this.props.links);
-      }
+      window.addEventListener('resize', this._onResize);
+      this._layout();
     }
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      this._cacheLinkIds(nextProps.links);
-    }
-  }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
       this._layout();
-      this._draw();
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      var topology = this.topologyRef;
-      topology.removeEventListener('mousemove', this._onMouseMove);
-      topology.removeEventListener('mouseleave', this._onMouseLeave);
       clearTimeout(this._resizeTimer);
       window.removeEventListener('resize', this._onResize);
     }
   }, {
     key: '_coords',
-    value: function _coords(id, canvasRect) {
+    value: function _coords(id, containerRect) {
       var result;
       var element = document.getElementById(id);
       if (!element) {
@@ -305,80 +305,76 @@ var Topology = function (_Component4) {
         if (statusElements.length === 1) {
           rect = statusElements[0].getBoundingClientRect();
         }
-        result = [rect.left - canvasRect.left + rect.width / 2, rect.top - canvasRect.top + rect.height / 2];
+        result = [rect.left - containerRect.left + rect.width / 2, rect.top - containerRect.top + rect.height / 2];
       }
       return result;
     }
   }, {
-    key: '_draw',
-    value: function _draw() {
-      var canvasElement = this.canvasRef;
-      // don't draw if we don't have a canvas to draw on, such as a unit test
-      if (canvasElement.getContext) {
-        var context = canvasElement.getContext('2d');
-        var canvasRect = canvasElement.getBoundingClientRect();
-        context.clearRect(0, 0, canvasRect.width, canvasRect.height);
-        var linkOffset = this.props.linkOffset;
+    key: '_buildPaths',
+    value: function _buildPaths(contents) {
+      var _this6 = this;
 
-        this.props.links.forEach(function (link, linkIndex) {
+      var _props4 = this.props;
+      var linkOffset = _props4.linkOffset;
+      var links = _props4.links;
+      var activeIds = this.state.activeIds;
 
-          var key = this.linkRefs[link.colorIndex];
-          var style = window.getComputedStyle((0, _reactDom.findDOMNode)(key));
-          var color = style.getPropertyValue('background-color');
-          context.strokeStyle = color;
-          context.lineWidth = 2;
-          if (this.state.highlighting) {
-            context.lineWidth = 1;
+      var rect = contents.getBoundingClientRect();
+
+      var paths = links.map(function (link, linkIndex) {
+        var _classnames3;
+
+        var commands = '';
+        var active = false;
+
+        var p1 = _this6._coords(link.ids[0], rect);
+        link.ids.forEach(function (id, idIndex) {
+          if (activeIds[id]) {
+            active = true;
           }
-          context.lineCap = 'round';
-          var p1 = this._coords(link.ids[0], canvasRect);
-          if (this.state.highlights[link.ids[0]]) {
-            context.lineWidth = 4;
-          }
+          if (idIndex > 0) {
+            var p2 = _this6._coords(id, rect);
+            var delta = [Math.abs(p1[0] - p2[0]), Math.abs(p1[1] - p2[1])];
+            commands += ' M' + p1[0] + ',' + p1[1];
+            var cp1 = void 0;
+            var cp2 = void 0;
 
-          link.ids.forEach(function (id, idIndex) {
-            if (idIndex > 0) {
-              var p2 = this._coords(id, canvasRect);
-              var delta = [Math.abs(p1[0] - p2[0]), Math.abs(p1[1] - p2[1])];
-              context.beginPath();
-              context.moveTo(p1[0], p1[1]);
-              var cp1 = void 0;
-              var cp2 = void 0;
-
-              if (this.state.highlights[id]) {
-                context.lineWidth = 4;
-              }
-
-              if (delta[0] > delta[1]) {
-                // larger X delta
-                cp1 = [p1[0], Math.min(p1[1], p2[1]) + Math.max(linkOffset, delta[1] / 2) + linkIndex * 2];
-                cp2 = [p2[0], cp1[1]];
+            if (delta[0] > delta[1]) {
+              // larger X delta
+              cp1 = [p1[0], Math.min(p1[1], p2[1]) + Math.max(linkOffset, delta[1] / 2) + linkIndex * 2];
+              cp2 = [p2[0], cp1[1]];
+            } else {
+              // larger Y delta or equal
+              var cp1xDelta = Math.max(linkOffset, delta[0] / 2 + linkIndex * 2);
+              if (p1[0] > p2[0]) {
+                cp1 = [p2[0] + cp1xDelta, p1[1]];
               } else {
-                // larger Y delta or equal
-                var cp1xDelta = Math.max(linkOffset, delta[0] / 2 + linkIndex * 2);
-                if (p1[0] > p2[0]) {
-                  cp1 = [p2[0] + cp1xDelta, p1[1]];
-                } else {
-                  cp1 = [p1[0] - cp1xDelta, p1[1]];
-                }
-                cp2 = [cp1[0], p2[1]];
+                cp1 = [p1[0] - cp1xDelta, p1[1]];
               }
-
-              context.bezierCurveTo(cp1[0], cp1[1], cp2[0], cp2[1], p2[0], p2[1]);
-              context.stroke();
+              cp2 = [cp1[0], p2[1]];
             }
-          }, this);
-        }, this);
-      }
+
+            commands += ' C' + cp1[0] + ',' + cp1[1] + ' ' + cp2[0] + ',' + cp2[1] + ' ' + p2[0] + ',' + p2[1];
+            p1 = p2;
+          }
+        });
+
+        var classes = (0, _classnames5.default)(CLASS_ROOT + '__path', (_classnames3 = {}, (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '__path--active', active), (0, _defineProperty3.default)(_classnames3, COLOR_INDEX + '-' + link.colorIndex, link.colorIndex), _classnames3));
+
+        return _react2.default.createElement('path', { key: linkIndex, fill: 'none', className: classes, d: commands });
+      });
+
+      return paths;
     }
   }, {
     key: '_layout',
     value: function _layout() {
-      var element = this.contentsRef;
-      if (element.scrollWidth !== this.state.canvasWidth || element.scrollHeight !== this.state.canvasHeight) {
+      var contents = (0, _reactDom.findDOMNode)(this._contentsRef);
+      if (contents) {
         this.setState({
-          canvasWidth: element.scrollWidth,
-          canvasHeight: element.scrollHeight
+          width: contents.scrollWidth,
+          height: contents.scrollHeight,
+          paths: this._buildPaths(contents)
         });
       }
     }
@@ -390,92 +386,86 @@ var Topology = function (_Component4) {
       this._resizeTimer = setTimeout(this._layout, 50);
     }
   }, {
-    key: '_highlight',
-    value: function _highlight(element) {
-      var topology = this.topologyRef;
-      var highlighting = false;
-      var highlights = {};
+    key: '_activate',
+    value: function _activate(element) {
+      var topology = this._topologyRef;
+      var activeIds = {};
       while (element && element !== topology) {
         var id = element.getAttribute('id');
-        if (id && this.state.linkIds[id]) {
-          // see if we are linking to this id
-          highlighting = true;
-          highlights[id] = true;
+        if (id) {
+          activeIds[id] = true;
         }
         element = element.parentNode;
       }
-      this.setState({ highlighting: highlighting, highlights: highlights });
+      this.setState({ activeIds: activeIds }, this._layout);
     }
   }, {
     key: '_onMouseMove',
     value: function _onMouseMove(event) {
       // debounce
       clearTimeout(this._mouseMoveTimer);
-      this._mouseMoveTimer = setTimeout(this._highlight.bind(this, event.target), 100);
+      this._mouseMoveTimer = setTimeout(this._activate.bind(this, event.target), 100);
     }
   }, {
     key: '_onMouseLeave',
     value: function _onMouseLeave() {
-      this.setState({ highlights: {} });
-    }
-  }, {
-    key: '_cacheLinkIds',
-    value: function _cacheLinkIds(links) {
-      // Remember which ids are used in links. This makes highlighting faster.
-      var linkIds = {};
-      links.forEach(function (link) {
-        link.ids.forEach(function (id) {
-          linkIds[id] = true;
-        });
-      });
-      this.setState({ linkIds: linkIds });
+      clearTimeout(this._mouseMoveTimer);
+      this.setState({ activeIds: {} }, this._layout);
     }
   }, {
     key: 'render',
     value: function render() {
       var _this7 = this;
 
-      var classes = [CLASS_ROOT];
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
+      var _props5 = this.props;
+      var children = _props5.children;
+      var className = _props5.className;
+      var links = _props5.links;
+      var props = (0, _objectWithoutProperties3.default)(_props5, ['children', 'className', 'links']);
+
+      delete props.linkOffset;
+      var _state = this.state;
+      var height = _state.height;
+      var paths = _state.paths;
+      var width = _state.width;
+
+      var classes = (0, _classnames5.default)(CLASS_ROOT, {}, className);
 
       var colorKeys = [];
       var colors = {};
-      this.props.links.forEach(function (link) {
-        var _this6 = this;
-
+      links.forEach(function (link) {
         if (link.colorIndex && !colors[link.colorIndex]) {
           colorKeys.push(_react2.default.createElement('div', { key: link.colorIndex,
-            ref: function ref(_ref2) {
-              return _this6.linkRefs[link.colorIndex] = _ref2;
-            },
             className: BACKGROUND_COLOR_INDEX + '-' + link.colorIndex }));
           colors[link.colorIndex] = true;
         }
-      }, this);
+      });
 
       return _react2.default.createElement(
         'div',
-        { ref: function ref(_ref5) {
-            return _this7.topologyRef = _ref5;
-          }, className: classes.join(' ') },
-        _react2.default.createElement('canvas', { ref: function ref(_ref3) {
-            return _this7.canvasRef = _ref3;
-          },
-          className: CLASS_ROOT + "__canvas",
-          width: this.state.canvasWidth, height: this.state.canvasHeight }),
+        (0, _extends3.default)({ ref: function ref(_ref3) {
+            return _this7._topologyRef = _ref3;
+          } }, props, { className: classes }),
         _react2.default.createElement(
-          'div',
-          { ref: function ref(_ref4) {
-              return _this7.contentsRef = _ref4;
-            },
-            className: CLASS_ROOT + "__contents" },
-          this.props.children
+          'svg',
+          { className: CLASS_ROOT + '__links',
+            width: width, height: height, viewBox: '0 0 ' + width + ' ' + height,
+            preserveAspectRatio: 'xMidYMid meet' },
+          paths
         ),
         _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + "__color-key" },
+          { ref: function ref(_ref2) {
+              return _this7._contentsRef = _ref2;
+            },
+            className: CLASS_ROOT + '__contents',
+            onMouseMove: this._onMouseMove,
+            onMouseLeave: this._onMouseLeave },
+          children
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: CLASS_ROOT + '__color-key' },
           colorKeys
         )
       );

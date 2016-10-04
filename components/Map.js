@@ -42,9 +42,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = require('react-dom');
 
-var _classnames3 = require('classnames');
+var _classnames4 = require('classnames');
 
-var _classnames4 = _interopRequireDefault(_classnames3);
+var _classnames5 = _interopRequireDefault(_classnames4);
 
 var _CSSClassnames = require('../utils/CSSClassnames');
 
@@ -214,6 +214,7 @@ var ResourceMap = function (_Component) {
       var rect = map.getBoundingClientRect();
 
       var paths = links.map(function (link, index) {
+        var _classnames;
 
         var parentCoords = _this3._coords(link.parentId, rect);
         var childCoords = _this3._coords(link.childId, rect);
@@ -249,16 +250,10 @@ var ResourceMap = function (_Component) {
           commands += ' Q ' + p2[0] + ',' + (midY - (p1[1] - midY) / 2) + (' ' + p2[0] + ',' + p2[1]);
         }
 
-        var className = CLASS_ROOT + '__path';
-        if (activeId === link.parentId || activeId === link.childId) {
-          className += ' ' + CLASS_ROOT + '__path--active';
-        }
         var pathColorIndex = link.colorIndex || linkColorIndex;
-        if (pathColorIndex) {
-          className += ' ' + COLOR_INDEX + '-' + pathColorIndex;
-        }
+        var classes = (0, _classnames5.default)(CLASS_ROOT + '__path', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__path--active', activeId === link.parentId || activeId === link.childId), (0, _defineProperty3.default)(_classnames, COLOR_INDEX + '-' + pathColorIndex, pathColorIndex), _classnames));
 
-        return _react2.default.createElement('path', { key: index, fill: 'none', className: className, d: commands });
+        return _react2.default.createElement('path', { key: index, fill: 'none', className: classes, d: commands });
       });
 
       return paths;
@@ -309,12 +304,12 @@ var ResourceMap = function (_Component) {
       var ariaLabels = _state.ariaLabels;
 
       return items.map(function (item, index) {
-        var _classnames;
+        var _classnames2;
 
         var active = activeId === item.id || data.links.some(function (link) {
           return (link.parentId === item.id || link.childId === item.id) && (link.parentId === activeId || link.childId === activeId);
         });
-        var classes = (0, _classnames4.default)(CLASS_ROOT + '__item', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__item--active', active), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__item--plain', item.node && typeof item.node !== 'string'), _classnames));
+        var classes = (0, _classnames5.default)(CLASS_ROOT + '__item', (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__item--active', active), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__item--plain', item.node && typeof item.node !== 'string'), _classnames2));
 
         return _react2.default.createElement(
           'li',
@@ -368,7 +363,7 @@ var ResourceMap = function (_Component) {
       var paths = _state2.paths;
       var width = _state2.width;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--vertical', vertical), className);
+      var classes = (0, _classnames5.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--vertical', vertical), className);
 
       var categories = void 0;
       if (data.categories) {
@@ -382,7 +377,7 @@ var ResourceMap = function (_Component) {
           } }, props, { className: classes }),
         _react2.default.createElement(
           'svg',
-          { className: CLASS_ROOT + '__graphic',
+          { className: CLASS_ROOT + '__links',
             width: width, height: height, viewBox: '0 0 ' + width + ' ' + height,
             preserveAspectRatio: 'xMidYMid meet' },
           paths
