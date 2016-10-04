@@ -37,14 +37,14 @@ export default class TextInput extends Component {
   componentDidUpdate (prevProps, prevState) {
     // Set up keyboard listeners appropriate to the current state.
 
-    let activeKeyboardHandlers = {
+    const activeKeyboardHandlers = {
       esc: this._onRemoveDrop,
       tab: this._onRemoveDrop,
       up: this._onPreviousSuggestion,
       down: this._onNextSuggestion,
       enter: this._onEnter
     };
-    let focusedKeyboardHandlers = {
+    const focusedKeyboardHandlers = {
       down: this._onAddDrop
     };
 
@@ -121,14 +121,14 @@ export default class TextInput extends Component {
     event.preventDefault();
     // Get values of suggestions, so we can highlight selected suggestion
     if (this.props.suggestions) {
-      let suggestionValues = this.props.suggestions.map((suggestion) => {
+      const suggestionValues = this.props.suggestions.map((suggestion) => {
         if (typeof suggestion === 'object') {
           return suggestion.value;
         } else {
           return suggestion;
         }
       });
-      let activeSuggestionIndex = suggestionValues.indexOf(this.props.value);
+      const activeSuggestionIndex = suggestionValues.indexOf(this.props.value);
       this.setState({
         dropActive: true,
         activeSuggestionIndex: activeSuggestionIndex
@@ -195,53 +195,56 @@ export default class TextInput extends Component {
   }
 
   _renderDrop () {
-    let suggestions = null;
-    if (this.props.suggestions) {
-      suggestions = this.props.suggestions.map(function (suggestion, index) {
+    const { suggestions } = this.props;
+    const { activeSuggestionIndex } = this.state;
+    let items;
+    if (suggestions) {
+      items = suggestions.map((suggestion, index) => {
         let classes = classnames(
           {
             [`${CLASS_ROOT}__suggestion`]: true,
             [`${CLASS_ROOT}__suggestion--active`]:
-              index === this.state.activeSuggestionIndex
+              index === activeSuggestionIndex
           }
         );
         return (
-          <li key={index}
-            className={classes}
+          <li key={index} className={classes}
             onClick={this._onClickSuggestion.bind(this, suggestion)}>
             {this._renderLabel(suggestion)}
           </li>
         );
-      }, this);
+      });
     }
 
     return (
       <ol className={`${CLASS_ROOT}__suggestions`} onClick={this._onRemoveDrop}>
-        {suggestions}
+        {items}
       </ol>
     );
   }
 
   render () {
+    const {
+      className, defaultValue, value, ...props
+    } = this.props;
+    delete props.suggestions;
+    delete props.onDOMChange;
+    delete props.onSelect;
     let classes = classnames(
       CLASS_ROOT,
       INPUT,
       {
         [`${CLASS_ROOT}--active`]: this.state.active
       },
-      this.props.className
+      className
     );
 
     return (
-      <input ref={ref => this.componentRef = ref}
-        id={this.props.id} name={this.props.name}
-        className={classes}
-        value={this._renderLabel(this.props.value)}
-        defaultValue={this._renderLabel(this.props.defaultValue)}
-        placeholder={this.props.placeHolder}
-        autoComplete="off"
-        onChange={this._onInputChange}
-        onFocus={this._onFocus} />
+      <input ref={ref => this.componentRef = ref} {...props}
+        className={classes} autoComplete="off"
+        defaultValue={this._renderLabel(defaultValue)}
+        value={this._renderLabel(value)}
+        onChange={this._onInputChange} onFocus={this._onFocus} />
     );
   }
 

@@ -7,6 +7,5 @@ exports[`TextInput has correct default options 1`] = `
   name="item-1"
   onChange={[Function bound _onInputChange]}
   onFocus={[Function bound _onFocus]}
-  placeholder={undefined}
   value="one" />
 `;

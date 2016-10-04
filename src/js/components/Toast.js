@@ -30,14 +30,14 @@ class ToastContents extends Component {
       store: this.props.store
     };
   }
-  
-  componentWillUnmount () {
-    clearTimeout(this._timer);
-    this._timer = undefined;
-  }
 
   componentDidMount () {
     this._timer = setTimeout(this._onClose, DURATION);
+  }
+
+  componentWillUnmount () {
+    clearTimeout(this._timer);
+    this._timer = undefined;
   }
 
   _onClose () {
