@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -77,15 +85,17 @@ var Tab = function (_Component) {
     value: function render() {
       var _props = this.props;
       var active = _props.active;
+      var className = _props.className;
       var id = _props.id;
       var title = _props.title;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['active', 'className', 'id', 'title']);
 
-
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', active));
+      delete props.onRequestForActive;
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', active), className);
 
       return _react2.default.createElement(
         'li',
-        { className: classes, id: id },
+        (0, _extends3.default)({}, props, { className: classes, id: id }),
         _react2.default.createElement(
           _Button2.default,
           { plain: true, role: 'tab', 'aria-selected': active,
@@ -109,6 +119,7 @@ exports.default = Tab;
 Tab.propTypes = {
   title: _react.PropTypes.string.isRequired,
   active: _react.PropTypes.bool,
-  id: _react.PropTypes.string
+  id: _react.PropTypes.string,
+  onRequestForActive: _react.PropTypes.func // from Tabs
 };
 module.exports = exports['default'];

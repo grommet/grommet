@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -93,10 +101,14 @@ var Tabs = function (_Component) {
       var className = _props.className;
       var justify = _props.justify;
       var responsive = _props.responsive;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'justify', 'responsive']);
+
+      delete props.activeIndex;
+      delete props.onActive;
       var activeIndex = this.state.activeIndex;
       var intl = this.context.intl;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--justify-' + justify, justify), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--justify-' + justify, justify), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), _classnames), className);
 
       var activeContainer = void 0;
       var activeTitle = void 0;
@@ -129,7 +141,7 @@ var Tabs = function (_Component) {
         { role: 'tablist' },
         _react2.default.createElement(
           'ul',
-          { className: classes },
+          (0, _extends3.default)({}, props, { className: classes }),
           tabs
         ),
         _react2.default.createElement(
