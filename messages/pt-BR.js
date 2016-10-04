@@ -98,7 +98,7 @@ exports.default = {
   'Slide Number': 'Slide {slideNumber}',
   State: 'Estado',
   Status: 'Situaçāo',
-  SubBurstLabel: 'SubBurst: pressione setas de nevegação para interagir',
+  SubBurst: 'SubBurst',
   Subtract: 'Subtrair',
   subtract: 'subtrair',
   'Tab Contents': '{activeTitle} Conteúdo da Tab',

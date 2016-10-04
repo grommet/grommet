@@ -34,6 +34,12 @@ $sun-burst-xlarge-slice-width: round($inuit-base-spacing-unit * 3);
 
 .#{$grommet-namespace}sun-burst__graphic {
   @include animation('fade-in 2.5s');
+  outline: none;
+}
+
+.#{$grommet-namespace}sun-burst__graphic--focus {
+  border-color: $focus-border-color;
+  box-shadow: 0 0 1px 1px $focus-border-color;
 }
 
 .#{$grommet-namespace}sun-burst__label {
@@ -57,6 +63,7 @@ $sun-burst-xlarge-slice-width: round($inuit-base-spacing-unit * 3);
 
 .#{$grommet-namespace}sun-burst__slice--hot {
   cursor: pointer;
+  outline: none;
 }
 
 .#{$grommet-namespace}sun-burst--active {

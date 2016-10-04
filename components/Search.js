@@ -257,7 +257,10 @@ var Search = function (_Component) {
   }, {
     key: '_onInputKeyDown',
     value: function _onInputKeyDown(event) {
-      var suggestions = this.props.suggestions;
+      var _props3 = this.props;
+      var inline = _props3.inline;
+      var suggestions = _props3.suggestions;
+      var dropActive = this.state.dropActive;
 
       if (suggestions) {
         var up = 38;
@@ -265,6 +268,10 @@ var Search = function (_Component) {
         if (event.keyCode === up || event.keyCode === down) {
           // stop the input to move the cursor when suggestions are present
           event.preventDefault();
+
+          if (event.keyCode === down && !dropActive && inline) {
+            this._onAddDrop(event);
+          }
         }
       }
     }
@@ -352,10 +359,10 @@ var Search = function (_Component) {
     value: function _onEnter(event) {
       var _this2 = this;
 
-      var _props3 = this.props;
-      var inline = _props3.inline;
-      var onSelect = _props3.onSelect;
-      var suggestions = _props3.suggestions;
+      var _props4 = this.props;
+      var inline = _props4.inline;
+      var onSelect = _props4.onSelect;
+      var suggestions = _props4.suggestions;
       var activeSuggestionIndex = this.state.activeSuggestionIndex;
       var intl = this.context.intl;
       // for not inline search the enter should NOT submit the form
@@ -435,12 +442,12 @@ var Search = function (_Component) {
       var _classnames,
           _this3 = this;
 
-      var _props4 = this.props;
-      var defaultValue = _props4.defaultValue;
-      var dropAlign = _props4.dropAlign;
-      var dropColorIndex = _props4.dropColorIndex;
-      var suggestions = _props4.suggestions;
-      var value = _props4.value;
+      var _props5 = this.props;
+      var defaultValue = _props5.defaultValue;
+      var dropAlign = _props5.dropAlign;
+      var dropColorIndex = _props5.dropColorIndex;
+      var suggestions = _props5.suggestions;
+      var value = _props5.value;
       var _state3 = this.state;
       var inline = _state3.inline;
       var activeSuggestionIndex = _state3.activeSuggestionIndex;
@@ -509,16 +516,16 @@ var Search = function (_Component) {
       var _classnames3,
           _this4 = this;
 
-      var _props5 = this.props;
-      var className = _props5.className;
-      var defaultValue = _props5.defaultValue;
-      var iconAlign = _props5.iconAlign;
-      var id = _props5.id;
-      var fill = _props5.fill;
-      var pad = _props5.pad;
-      var placeHolder = _props5.placeHolder;
-      var size = _props5.size;
-      var value = _props5.value;
+      var _props6 = this.props;
+      var className = _props6.className;
+      var defaultValue = _props6.defaultValue;
+      var iconAlign = _props6.iconAlign;
+      var id = _props6.id;
+      var fill = _props6.fill;
+      var pad = _props6.pad;
+      var placeHolder = _props6.placeHolder;
+      var size = _props6.size;
+      var value = _props6.value;
       var inline = this.state.inline;
 
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Search.propTypes));
