@@ -38,4 +38,32 @@ describe('Form', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('renders a class name', () => {
+    const component = renderer.create(
+      <Form className="test"
+        onSubmit={(e) => e}>
+        <FormFields>
+          <FormField label="Item 1" htmlFor="item1">
+            <input id="item1" type="text" />
+          </FormField>
+        </FormFields>
+      </Form>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders microdata properties', () => {
+    const component = renderer.create(
+      <Form itemScope={true} itemType="http://schema.org/Article"
+        itemProp="test" onSubmit={(e) => e}>
+        <FormFields>
+          <FormField label="Item 1" htmlFor="item1">
+            <input id="item1" type="text" />
+          </FormField>
+        </FormFields>
+      </Form>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
