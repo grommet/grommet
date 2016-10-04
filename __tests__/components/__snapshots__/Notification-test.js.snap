@@ -18,7 +18,7 @@ exports[`Notification has correct default options 1`] = `
       tabIndex={undefined}>
       <svg
         aria-labelledby="unknown-title"
-        className="grommetux-status-icon grommetux-status-icon-unknown grommetux-notification__status"
+        className="grommetux-status-icon grommetux-status-icon-unknown grommetux-status-icon grommetux-notification__status"
         role="img"
         version="1.1"
         viewBox="0 0 24 24">
@@ -88,7 +88,7 @@ exports[`Notification renders with a padding 1`] = `
       tabIndex={undefined}>
       <svg
         aria-labelledby="critical-title"
-        className="grommetux-status-icon grommetux-status-icon-critical grommetux-notification__status"
+        className="grommetux-status-icon grommetux-status-icon-critical grommetux-status-icon grommetux-notification__status"
         role="img"
         version="1.1"
         viewBox="0 0 24 24">
@@ -156,7 +156,7 @@ exports[`Notification renders with closer set to true 1`] = `
       tabIndex={undefined}>
       <svg
         aria-labelledby="unknown-title"
-        className="grommetux-status-icon grommetux-status-icon-unknown grommetux-notification__status"
+        className="grommetux-status-icon grommetux-status-icon-unknown grommetux-status-icon grommetux-notification__status"
         role="img"
         version="1.1"
         viewBox="0 0 24 24">
@@ -226,7 +226,7 @@ exports[`Notification renders with padding set 1`] = `
       tabIndex={undefined}>
       <svg
         aria-labelledby="unknown-title"
-        className="grommetux-status-icon grommetux-status-icon-unknown grommetux-notification__status"
+        className="grommetux-status-icon grommetux-status-icon-unknown grommetux-status-icon grommetux-notification__status"
         role="img"
         version="1.1"
         viewBox="0 0 24 24">
@@ -296,7 +296,7 @@ exports[`Notification renders with status option given 1`] = `
       tabIndex={undefined}>
       <svg
         aria-labelledby="warning-title"
-        className="grommetux-status-icon grommetux-status-icon-warning grommetux-notification__status"
+        className="grommetux-status-icon grommetux-status-icon-warning grommetux-status-icon grommetux-notification__status"
         role="img"
         version="1.1"
         viewBox="0 0 24 24">
