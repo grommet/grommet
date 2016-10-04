@@ -12,6 +12,10 @@ var _keys = require('babel-runtime/core-js/object/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -40,6 +44,14 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _classnames4 = require('classnames');
+
+var _classnames5 = _interopRequireDefault(_classnames4);
+
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 var _Props = require('../utils/Props');
 
 var _Props2 = _interopRequireDefault(_Props);
@@ -48,13 +60,11 @@ var _Box = require('./Box');
 
 var _Box2 = _interopRequireDefault(_Box);
 
-var _CSSClassnames = require('../utils/CSSClassnames');
-
-var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.HEADER; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.HEADER;
 
 var Header = function (_Component) {
   (0, _inherits3.default)(Header, _Component);
@@ -112,67 +122,59 @@ var Header = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _classnames,
+          _classnames2,
+          _this2 = this;
 
-      var classes = [CLASS_ROOT];
-      var containerClasses = [CLASS_ROOT + '__container'];
-      var wrapperClasses = [CLASS_ROOT + '__wrapper'];
+      var _props = this.props;
+      var children = _props.children;
+      var className = _props.className;
+      var colorIndex = _props.colorIndex;
+      var fixed = _props.fixed;
+      var float = _props.float;
+      var role = _props.role;
+      var size = _props.size;
+      var splash = _props.splash;
+
+      var classes = (0, _classnames5.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--float', float), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--splash', splash), _classnames), className);
+      var containerClasses = (0, _classnames5.default)(CLASS_ROOT + '__container', (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + size, size && typeof size === 'string'), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--fixed', fixed), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--fill', fixed && !colorIndex), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--float', float), _classnames2));
+      var wrapperClasses = (0, _classnames5.default)(CLASS_ROOT + '__wrapper', (0, _defineProperty3.default)({}, CLASS_ROOT + '__wrapper--' + size, size && typeof size === 'string'));
       var other = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Header.propTypes));
-      if (this.props.fixed) {
-        containerClasses.push(CLASS_ROOT + '__container--fixed');
-
-        // add default color index if none is provided
-        if (!this.props.colorIndex) {
-          containerClasses.push(CLASS_ROOT + '__container--fill');
-        }
-      }
-      if (this.props.float) {
-        classes.push(CLASS_ROOT + '--float');
-        containerClasses.push(CLASS_ROOT + '__container--float');
-      }
-      if (this.props.size && typeof this.props.size === 'string') {
-        classes.push(CLASS_ROOT + '--' + this.props.size);
-        wrapperClasses.push(CLASS_ROOT + '__wrapper--' + this.props.size);
+      if (size && typeof size === 'string') {
         // don't transfer size to Box since it means something different
         delete other.size;
       }
-      if (this.props.splash) {
-        classes.push(CLASS_ROOT + '--splash');
-      }
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
 
-      if (this.props.fixed) {
+      if (fixed) {
         return _react2.default.createElement(
           'div',
-          { className: containerClasses.join(' ') },
+          { className: containerClasses },
           _react2.default.createElement('div', { ref: function ref(_ref) {
               return _this2.mirrorRef = _ref;
             },
             className: CLASS_ROOT + '__mirror' }),
           _react2.default.createElement(
             'div',
-            { className: wrapperClasses.join(' ') },
+            { className: wrapperClasses },
             _react2.default.createElement(
               _Box2.default,
               (0, _extends3.default)({ ref: function ref(_ref2) {
                   return _this2.contentRef = _ref2;
-                },
-                tag: 'header' }, other, restProps, {
-                className: classes.join(' ') }),
-              this.props.children
+                }
+              }, other, restProps, { tag: 'header',
+                className: classes }),
+              children
             )
           )
         );
       } else {
         return _react2.default.createElement(
           _Box2.default,
-          (0, _extends3.default)({ tag: 'header' }, other, restProps, { role: this.props.role,
-            className: classes.join(' '),
-            containerClassName: containerClasses.join(' ') }),
-          this.props.children
+          (0, _extends3.default)({}, other, restProps, { tag: 'header', role: role,
+            className: classes,
+            containerClassName: containerClasses }),
+          children
         );
       }
     }
