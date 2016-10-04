@@ -2,10 +2,10 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
 import Button from './Button';
 import AddIcon from './icons/base/Add';
 import SubtractIcon from './icons/base/Subtract';
-import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.NUMBER_INPUT;
 const INPUT = CSSClassnames.INPUT;
@@ -72,16 +72,14 @@ export default class NumberInput extends Component {
   }
 
   render () {
-    const {
-      className, defaultValue, disabled, id, max, min, name, onChange, step,
-      value
-    } = this.props;
+    const { className, disabled, ...props } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
-      className, {
+      {
         [`${CLASS_ROOT}--disabled`]: disabled
-      }
+      },
+      className
     );
 
     const onSubtract = (! disabled ? this._onSubtract : undefined);
@@ -89,16 +87,10 @@ export default class NumberInput extends Component {
 
     return (
       <span className={classes}>
-        <input ref={ref => this.inputRef = ref}
-          tabIndex="0" className={`${INPUT} ${CLASS_ROOT}__input`}
-          id={id} name={name} type="number"
-          disabled={disabled}
-          value={value}
-          defaultValue={defaultValue}
-          min={min}
-          max={max}
-          step={step}
-          onChange={onChange} />
+        <input ref={ref => this.inputRef = ref} {...props}
+          className={`${INPUT} ${CLASS_ROOT}__input`}
+          type="number" tabIndex="0"
+          disabled={disabled} />
 
         <Button icon={<SubtractIcon />} className={`${CLASS_ROOT}__subtract`}
           onClick={onSubtract} />

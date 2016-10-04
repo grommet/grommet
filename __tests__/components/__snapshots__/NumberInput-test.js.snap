@@ -3,14 +3,9 @@ exports[`NumberInput has correct default options 1`] = `
   className="grommetux-number-input">
   <input
     className="grommetux-input grommetux-number-input__input"
-    defaultValue={undefined}
     disabled={undefined}
     id="item2"
-    max={undefined}
-    min={undefined}
     name="item2"
-    onChange={undefined}
-    step={undefined}
     tabIndex="0"
     type="number"
     value={10} />
