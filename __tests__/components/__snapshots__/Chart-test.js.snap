@@ -1,4 +1,4 @@
-exports[`Calendar has correct default options 1`] = `
+exports[`normalization has correct default options 1`] = `
 <div
   aria-label="Chart"
   className="grommetux-chart"
