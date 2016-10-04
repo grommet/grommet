@@ -1,12 +1,14 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Children, Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
-import Status from './icons/Status';
+import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
+import Status from './icons/Status';
 
 const CLASS_ROOT = CSSClassnames.TOPOLOGY;
 const STATUS_ICON = CSSClassnames.STATUS_ICON;
+const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 class Label extends Component {
@@ -19,46 +21,47 @@ class Label extends Component {
 
 class Part extends Component {
   render () {
-    var classes = [CLASS_ROOT + "__part"];
-    classes.push(CLASS_ROOT + "__part--direction-" + this.props.direction);
-    classes.push(CLASS_ROOT + "__part--justify-" + this.props.justify);
-    classes.push(CLASS_ROOT + "__part--align-" + this.props.align);
-    if (this.props.demarcate) {
-      classes.push(CLASS_ROOT + "__part--demarcate");
-    }
-    if (this.props.reverse) {
-      classes.push(CLASS_ROOT + "__part--reverse");
-    }
-    // handle undefined children
-    var realChildren = 0;
-    React.Children.forEach(this.props.children, function (child) {
+    const {
+      align, children, className, demarcate, direction, justify, label,
+      reverse, status, ...props
+    } = this.props;
+    let realChildren = 0;
+    Children.forEach(children, (child) => {
       if (child) {
         realChildren += 1;
       }
     });
-    if (! this.props.status && ! this.props.label && realChildren === 0) {
-      classes.push(CLASS_ROOT + "__part--empty");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
+    const classes = classnames(
+      `${CLASS_ROOT}__part`,
+      {
+        [`${CLASS_ROOT}__part--direction-${direction}`]: direction,
+        [`${CLASS_ROOT}__part--justify-${justify}`]: justify,
+        [`${CLASS_ROOT}__part--align-${align}`]: align,
+        [`${CLASS_ROOT}__part--demarcate`]: demarcate,
+        [`${CLASS_ROOT}__part--reverse`]: reverse,
+        [`${CLASS_ROOT}__part--empty`]:
+          (! status && ! label && realChildren === 0)
+      },
+      className
+    );
+
+    let statusIcon;
+    if (status) {
+      statusIcon = <Status value={status} size="small" />;
     }
 
-    var status;
-    if (this.props.status) {
-      status = <Status value={this.props.status} size="small" />;
-    }
-    var label;
-    if (this.props.label) {
-      label = <Label>{this.props.label}</Label>;
+    let labelLabel;
+    if (label) {
+      labelLabel = <Label>{label}</Label>;
     }
 
     return (
-      <div className={classes.join(' ')} id={this.props.id}
+      <div {...props} className={classes}
         onMouseEnter={this.props.onMouseEnter}
         onMouseLeave={this.props.onMouseLeave}>
-        {status}
-        {label}
-        {this.props.children}
+        {statusIcon}
+        {labelLabel}
+        {children}
       </div>
     );
   }
@@ -93,17 +96,17 @@ class Parts extends Component {
   }
 
   _makeUniform () {
-    if (this.props.uniform) {
-      let parts = this.componentRef.children;
+    const { direction, uniform } = this.props;
+    if (uniform) {
+      let parts = this._componentRef.children;
       // clear old basis
       for (let i = 0; i < parts.length; i += 1) {
-        parts[i].style.webkitFlexBasis = null;
         parts[i].style.flexBasis = null;
       }
       // find max
       let max = 0;
       for (let i = 0; i < parts.length; i += 1) {
-        if ('column' === this.props.direction) {
+        if ('column' === direction) {
           max = Math.max(max, parts[i].offsetHeight);
         } else {
           max = Math.max(max, parts[i].offsetWidth);
@@ -111,24 +114,24 @@ class Parts extends Component {
       }
       // set basis
       for (let i = 0; i < parts.length; i += 1) {
-        parts[i].style.webkitFlexBasis = '' + max + 'px';
         parts[i].style.flexBasis = '' + max + 'px';
       }
     }
   }
 
   render () {
-    var classes = [CLASS_ROOT + "__parts"];
-    classes.push(CLASS_ROOT + "__parts--direction-" + this.props.direction);
-    if (this.props.align) {
-      classes.push(CLASS_ROOT + "__parts--align-" + this.props.align);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const { align, children, className, direction } = this.props;
+    const classes = classnames(
+      `${CLASS_ROOT}__parts`,
+      {
+        [`${CLASS_ROOT}__parts--direction-${direction}`]: direction,
+        [`${CLASS_ROOT}__part--align-${align}`]: align
+      },
+      className
+    );
     return (
-      <div ref={ref => this.componentRef = ref} className={classes.join(' ')}>
-        {this.props.children}
+      <div ref={ref => this._componentRef = ref} className={classes}>
+        {children}
       </div>
     );
   }
@@ -155,44 +158,28 @@ export default class Topology extends Component {
     this._onMouseLeave = this._onMouseLeave.bind(this);
 
     this.state = {
-      canvasWidth: 100,
-      canvasHeight: 100,
-      highlighting: false,
-      highlights: {}
+      height: 100,
+      activeIds: {},
+      paths: [],
+      width: 100
     };
-
-    this.linkRefs = {};
   }
 
   componentDidMount () {
-    var topology = this.topologyRef;
-    if (topology) {
-      topology.addEventListener('mousemove', this._onMouseMove);
-      topology.addEventListener('mouseleave', this._onMouseLeave);
-      window.addEventListener('resize', this._onResize);
-      this._layout();
-      this._cacheLinkIds(this.props.links);
-    }
+    window.addEventListener('resize', this._onResize);
+    this._layout();
   }
 
   componentWillReceiveProps (nextProps) {
-    this._cacheLinkIds(nextProps.links);
-  }
-
-  componentDidUpdate () {
     this._layout();
-    this._draw();
   }
 
   componentWillUnmount () {
-    var topology = this.topologyRef;
-    topology.removeEventListener('mousemove', this._onMouseMove);
-    topology.removeEventListener('mouseleave', this._onMouseLeave);
     clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
   }
 
-  _coords (id, canvasRect) {
+  _coords (id, containerRect) {
     var result;
     let element = document.getElementById(id);
     if (! element) {
@@ -207,84 +194,80 @@ export default class Topology extends Component {
         rect = statusElements[0].getBoundingClientRect();
       }
       result = [
-        rect.left - canvasRect.left + (rect.width / 2),
-        rect.top - canvasRect.top + (rect.height / 2)
+        rect.left - containerRect.left + (rect.width / 2),
+        rect.top - containerRect.top + (rect.height / 2)
       ];
     }
     return result;
   }
 
-  _draw () {
-    var canvasElement = this.canvasRef;
-    // don't draw if we don't have a canvas to draw on, such as a unit test
-    if (canvasElement.getContext) {
-      var context = canvasElement.getContext('2d');
-      var canvasRect = canvasElement.getBoundingClientRect();
-      context.clearRect(0, 0, canvasRect.width, canvasRect.height);
-      var linkOffset = this.props.linkOffset;
+  _buildPaths (contents) {
+    const { linkOffset, links } = this.props;
+    const { activeIds } = this.state;
+    const rect = contents.getBoundingClientRect();
 
-      this.props.links.forEach(function (link, linkIndex) {
+    const paths = links.map((link, linkIndex) => {
+      let commands = '';
+      let active = false;
 
-        let key = this.linkRefs[link.colorIndex];
-        let style = window.getComputedStyle(findDOMNode(key));
-        let color = style.getPropertyValue('background-color');
-        context.strokeStyle = color;
-        context.lineWidth = 2;
-        if (this.state.highlighting) {
-          context.lineWidth = 1;
+      let p1 = this._coords(link.ids[0], rect);
+      link.ids.forEach((id, idIndex) => {
+        if (activeIds[id]) {
+          active = true;
         }
-        context.lineCap = 'round';
-        var p1 = this._coords(link.ids[0], canvasRect);
-        if (this.state.highlights[link.ids[0]]) {
-          context.lineWidth = 4;
-        }
+        if (idIndex > 0) {
+          const p2 = this._coords(id, rect);
+          const delta = [Math.abs(p1[0] - p2[0]), Math.abs(p1[1] - p2[1])];
+          commands += ` M${p1[0]},${p1[1]}`;
+          let cp1;
+          let cp2;
 
-        link.ids.forEach(function (id, idIndex) {
-          if (idIndex > 0) {
-            let p2 = this._coords(id, canvasRect);
-            var delta = [Math.abs(p1[0] - p2[0]), Math.abs(p1[1] - p2[1])];
-            context.beginPath();
-            context.moveTo(p1[0], p1[1]);
-            let cp1;
-            let cp2;
-
-            if (this.state.highlights[id]) {
-              context.lineWidth = 4;
-            }
-
-            if (delta[0] > delta[1]) {
-              // larger X delta
-              cp1 = [p1[0],
-                Math.min(p1[1], p2[1]) +
-                  Math.max(linkOffset, (delta[1] / 2)) + (linkIndex * 2)];
-              cp2 = [p2[0], cp1[1]];
+          if (delta[0] > delta[1]) {
+            // larger X delta
+            cp1 = [p1[0],
+              Math.min(p1[1], p2[1]) +
+                Math.max(linkOffset, (delta[1] / 2)) + (linkIndex * 2)];
+            cp2 = [p2[0], cp1[1]];
+          } else {
+            // larger Y delta or equal
+            let cp1xDelta =
+              Math.max(linkOffset, (delta[0] / 2) + (linkIndex * 2));
+            if (p1[0] > p2[0]) {
+              cp1 = [p2[0] + cp1xDelta, p1[1]];
             } else {
-              // larger Y delta or equal
-              let cp1xDelta =
-                Math.max(linkOffset, (delta[0] / 2) + (linkIndex * 2));
-              if (p1[0] > p2[0]) {
-                cp1 = [p2[0] + cp1xDelta, p1[1]];
-              } else {
-                cp1 = [p1[0] - cp1xDelta, p1[1]];
-              }
-              cp2 = [cp1[0], p2[1]];
+              cp1 = [p1[0] - cp1xDelta, p1[1]];
             }
-
-            context.bezierCurveTo(cp1[0], cp1[1], cp2[0], cp2[1], p2[0], p2[1]);
-            context.stroke();
+            cp2 = [cp1[0], p2[1]];
           }
-        }, this);
-      }, this);
-    }
+
+          commands +=
+            ` C${cp1[0]},${cp1[1]} ${cp2[0]},${cp2[1]} ${p2[0]},${p2[1]}`;
+          p1 = p2;
+        }
+      });
+
+      const classes = classnames(
+        `${CLASS_ROOT}__path`, {
+          [`${CLASS_ROOT}__path--active`]: active,
+          [`${COLOR_INDEX}-${link.colorIndex}`]: link.colorIndex
+        }
+      );
+
+      return (
+        <path key={linkIndex} fill="none" className={classes} d={commands} />
+      );
+    });
+
+    return paths;
   }
 
   _layout () {
-    var element = this.contentsRef;
-    if (element.scrollWidth !== this.state.canvasWidth ||
-      element.scrollHeight !== this.state.canvasHeight) {
+    const contents = findDOMNode(this._contentsRef);
+    if (contents) {
       this.setState({
-        canvasWidth: element.scrollWidth,
-        canvasHeight: element.scrollHeight
+        width: contents.scrollWidth,
+        height: contents.scrollHeight,
+        paths: this._buildPaths(contents)
       });
     }
   }
@@ -295,71 +278,61 @@ export default class Topology extends Component {
     this._resizeTimer = setTimeout(this._layout, 50);
   }
 
-  _highlight (element) {
-    let topology = this.topologyRef;
-    let highlighting = false;
-    let highlights = {};
+  _activate (element) {
+    let topology = this._topologyRef;
+    let activeIds = {};
     while (element && element !== topology) {
       let id = element.getAttribute('id');
-      if (id && this.state.linkIds[id]) {
-        // see if we are linking to this id
-        highlighting = true;
-        highlights[id] = true;
+      if (id) {
+        activeIds[id] = true;
       }
       element = element.parentNode;
     }
-    this.setState({highlighting: highlighting, highlights: highlights});
+    this.setState({ activeIds: activeIds }, this._layout);
   }
 
   _onMouseMove (event) {
     // debounce
     clearTimeout(this._mouseMoveTimer);
     this._mouseMoveTimer =
-      setTimeout(this._highlight.bind(this, event.target), 100);
+      setTimeout(this._activate.bind(this, event.target), 100);
   }
 
   _onMouseLeave () {
-    this.setState({highlights: {}});
-  }
-
-  _cacheLinkIds (links) {
-    // Remember which ids are used in links. This makes highlighting faster.
-    var linkIds = {};
-    links.forEach(function (link) {
-      link.ids.forEach(function (id) {
-        linkIds[id] = true;
-      });
-    });
-    this.setState({linkIds: linkIds});
+    clearTimeout(this._mouseMoveTimer);
+    this.setState({ activeIds: {} }, this._layout);
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const { children, className, links, ...props } = this.props;
+    delete props.linkOffset;
+    const { height, paths, width } = this.state;
+    const classes = classnames( CLASS_ROOT, {}, className );
 
     var colorKeys = [];
     var colors = {};
-    this.props.links.forEach(function (link) {
+    links.forEach(link => {
       if (link.colorIndex && ! colors[link.colorIndex]) {
         colorKeys.push(<div key={link.colorIndex}
-          ref={(ref) => this.linkRefs[link.colorIndex] = ref}
           className={`${BACKGROUND_COLOR_INDEX}-${link.colorIndex}`} />);
         colors[link.colorIndex] = true;
       }
-    }, this);
+    });
 
     return (
-      <div ref={ref => this.topologyRef = ref} className={classes.join(' ')}>
-        <canvas ref={ref => this.canvasRef = ref}
-          className={CLASS_ROOT + "__canvas"}
-          width={this.state.canvasWidth} height={this.state.canvasHeight} />
-        <div ref={ref => this.contentsRef = ref}
-          className={CLASS_ROOT + "__contents"}>
-          {this.props.children}
+      <div ref={ref => this._topologyRef = ref} {...props} className={classes}>
+        <svg className={`${CLASS_ROOT}__links`}
+          width={width} height={height} viewBox={`0 0 ${width} ${height}`}
+          preserveAspectRatio="xMidYMid meet">
+          {paths}
+        </svg>
+        <div ref={ref => this._contentsRef = ref}
+          className={`${CLASS_ROOT}__contents`}
+          onMouseMove={this._onMouseMove}
+          onMouseLeave={this._onMouseLeave}>
+          {children}
         </div>
-        <div className={CLASS_ROOT + "__color-key"}>
+        <div className={`${CLASS_ROOT}__color-key`}>
           {colorKeys}
         </div>
       </div>

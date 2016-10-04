@@ -10,6 +10,7 @@ import Props from '../utils/Props';
 const CLASS_ROOT = CSSClassnames.ACCORDION;
 
 export default class Accordion extends Component {
+
   constructor(props, context) {
     super(props, context);
     this._onPanelChange = this._onPanelChange.bind(this);
@@ -20,34 +21,19 @@ export default class Accordion extends Component {
     } else {
       active = this.props.active || [];
     }
-    if (props.initialIndex) {
-      console.warn(
-        'Accordion: initialIndex prop has been deprecated. Use active instead.'
-      );
-      active.push(props.initialIndex);
-    }
-    React.Children.forEach(props.children, (child, index) => {
-      if (child.props.active) {
-        console.warn(
-          'AccordionPanel: active prop has been deprecated.' +
-          'Use active prop at the Accordion component level.'
-        );
-        active.push(index);
-      }
-    });
     this.state = {
       active: active
     };
   }
 
   componentWillReceiveProps (newProps) {
-    if (newProps.active !== this.state.active) {
-      this.setState({active: newProps.active || []});
+    if (newProps.active !== this.props.active) {
+      this.setState({ active: newProps.active || [] });
     }
   }
 
   _onPanelChange (index) {
-    let { active } = this.state;
+    let active = [...this.state.active];
     const { onActive, openMulti } = this.props;
 
     const activeIndex = active.indexOf(index);
@@ -91,7 +77,7 @@ export default class Accordion extends Component {
 
     const restProps = Props.omit(this.props, Object.keys(Accordion.propTypes));
     return (
-      <List role="tablist" className={classes} {...restProps}>
+      <List role='tablist' className={classes} {...restProps}>
         {accordionChildren}
       </List>
     );
@@ -105,8 +91,7 @@ Accordion.propTypes = {
   ]),
   animate: PropTypes.bool,
   onActive: PropTypes.func,
-  openMulti: PropTypes.bool,
-  initialIndex: PropTypes.number // remove in 1.0, use {active: }
+  openMulti: PropTypes.bool
 };
 
 Accordion.defaultProps = {

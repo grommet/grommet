@@ -15,72 +15,12 @@
   max-width: 100%;
   overflow: hidden;
 
-  &-controls {
-    &__control {
-      width: round($inuit-base-spacing-unit * 1.5);
-      height: round($inuit-base-spacing-unit * 1.5);
-      stroke: #fff;
-      fill: transparent;
-      cursor: pointer;
-      filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
-      -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
-
-      &:hover {
-        stroke-width: 2px;
-      }
-
-      &--active {
-        stroke: $brand-color;
-        fill: $brand-color;
-      }
-    }
-  }
-
-  &__track {
-    display: flex;
-    max-width: none;
-    transition: all 0.8s;
-  }
-
   .#{$grommet-namespace}tiles.#{$grommet-namespace}box--direction-row > .#{$grommet-namespace}tile.#{$grommet-namespace}carousel__item {
     flex: 1 1 100%;
     box-sizing: border-box;
 
     > * {
       width: 100%;
-    }
-  }
-
-  &__arrow {
-    @include animation('carousel-reveal 1s');
-    z-index: 1;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-
-    .#{$grommet-namespace}control-icon {
-      filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
-      -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
-
-      polyline {
-        stroke: $colored-icon-color;
-        stroke-width: 1px;
-      }
-    }
-
-    &:hover {
-      .#{$grommet-namespace}control-icon polyline {
-        stroke: $active-colored-icon-color;
-      }
-    }
-
-    &--next {
-      right: 0;
-    }
-
-    &--prev {
-      left: 0;
     }
   }
 
@@ -92,41 +32,6 @@
     left: 0;
   }
 
-  &__controls {
-    @include animation('carousel-reveal 1s');
-    margin-left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    bottom: halve($inuit-base-spacing-unit);
-    text-align: center;
-    z-index: 1;
-  }
-
-  &__control {
-    display: inline-block;
-    width: round($inuit-base-spacing-unit * 1.5);
-    height: round($inuit-base-spacing-unit * 1.5);
-    stroke: $colored-icon-color;
-    fill: transparent;
-    cursor: pointer;
-    filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
-    -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
-
-    &--active {
-      stroke: $brand-color;
-      fill: $brand-color;
-    }
-  }
-
-  &--hide-controls {
-    .#{$grommet-namespace}control-icon-previous,
-    .#{$grommet-namespace}control-icon-next,
-    .#{$grommet-namespace}carousel__controls {
-      opacity: 0;
-      @include animation('carousel-hide 1s');
-    }
-  }
-
   // Disable image dragging in carousel
   img {
     -webkit-user-drag: none;
@@ -134,6 +39,99 @@
     -moz-user-drag: none;
     -o-user-drag: none;
     user-drag: none;
+  }
+}
+
+.#{$grommet-namespace}carousel-controls__control {
+  width: round($inuit-base-spacing-unit * 1.5);
+  height: round($inuit-base-spacing-unit * 1.5);
+  stroke: #fff;
+  fill: transparent;
+  cursor: pointer;
+  filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+  -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+}
+
+.#{$grommet-namespace}carousel-controls__control:hover {
+  stroke-width: 2px;
+}
+
+.#{$grommet-namespace}carousel-controls__control--active {
+  stroke: $brand-color;
+  fill: $brand-color;
+}
+
+.#{$grommet-namespace}carousel__track {
+  display: flex;
+  max-width: none;
+  transition: all 0.8s;
+}
+
+.#{$grommet-namespace}carousel__arrow {
+  @include animation('carousel-reveal 1s');
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  .#{$grommet-namespace}control-icon {
+    filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+    -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+
+    polyline {
+      stroke: $colored-icon-color;
+      stroke-width: 1px;
+    }
+  }
+}
+
+.#{$grommet-namespace}carousel__arrow:hover {
+  .#{$grommet-namespace}control-icon polyline {
+    stroke: $active-colored-icon-color;
+  }
+}
+
+.#{$grommet-namespace}carousel__arrow--next {
+  right: 0;
+}
+
+.#{$grommet-namespace}carousel__arrow--prev {
+  left: 0;
+}
+
+.#{$grommet-namespace}carousel__controls {
+  @include animation('carousel-reveal 1s');
+  margin-left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: halve($inuit-base-spacing-unit);
+  text-align: center;
+  z-index: 1;
+}
+
+.#{$grommet-namespace}carousel__control {
+  display: inline-block;
+  width: round($inuit-base-spacing-unit * 1.5);
+  height: round($inuit-base-spacing-unit * 1.5);
+  stroke: $colored-icon-color;
+  fill: transparent;
+  cursor: pointer;
+  filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+  -webkit-filter: drop-shadow(1px 1px 1px $button-drop-shadow-color);
+}
+
+.#{$grommet-namespace}carousel__control--active {
+  stroke: $brand-color;
+  fill: $brand-color;
+}
+
+.#{$grommet-namespace}carousel--hide-controls {
+  .#{$grommet-namespace}control-icon-previous,
+  .#{$grommet-namespace}control-icon-next,
+  .#{$grommet-namespace}carousel__controls {
+    opacity: 0;
+    @include animation('carousel-hide 1s');
   }
 }
 

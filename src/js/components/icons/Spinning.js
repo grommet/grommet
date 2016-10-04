@@ -1,22 +1,25 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.SPINNING;
 
 export default class Spinning extends Component {
   render () {
-    var classes = [CLASS_ROOT];
-    if (this.props.small) {
-      classes.push(CLASS_ROOT + "--small");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const { className, small, ...props } = this.props;
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--small`]: small
+      },
+      className
+    );
+
     return (
-      <svg className={classes.join(' ')} viewBox="0 0 48 48" version="1.1"
-        role='img'>
+      <svg {...props} className={classes} viewBox="0 0 48 48" version="1.1"
+        role="img">
         <title>Spinning</title>
         <circle stroke="#ddd" strokeWidth="4" strokeDasharray="24px 8px"
           fill="none" cx="24" cy="24" r="20" />
@@ -26,3 +29,7 @@ export default class Spinning extends Component {
     );
   }
 }
+
+Spinning.propTypes = {
+  small: PropTypes.bool
+};

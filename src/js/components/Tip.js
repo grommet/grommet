@@ -17,10 +17,7 @@ export default class Tip extends Component {
   }
 
   componentDidMount () {
-    const { onClose, colorIndex, targetId } = this.props;
-    if (targetId) {
-      console.warn('Tip: targetId prop has been deprecated use target instead');
-    }
+    const { onClose, colorIndex } = this.props;
     const target = this._getTarget();
     if (target) {
       const rect = target.getBoundingClientRect();
@@ -75,11 +72,11 @@ export default class Tip extends Component {
   }
 
   _getTarget () {
-    const { target, targetId } = this.props;
+    const { target } = this.props;
 
     return (
-      document.getElementById(target || targetId) ||
-      document.querySelector(`.${target || targetId}`)
+      document.getElementById(target) ||
+      document.querySelector(`.${target}`)
     );
   }
   _renderDrop () {
@@ -102,7 +99,6 @@ export default class Tip extends Component {
 Tip.propTypes = {
   colorIndex: PropTypes.string,
   onClose: PropTypes.func.isRequired,
-  targetId: PropTypes.string, // remove in 1.0, use size: {target: }
   target: PropTypes.string.isRequired
 };
 

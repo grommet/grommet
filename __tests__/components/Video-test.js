@@ -19,4 +19,14 @@ describe('Video', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('transfers arbitrary props', () => {
+    const component = renderer.create(
+      <Video data-flavor="coconut">
+        <source src="/video/test.mp4" type="video/mp4" />
+      </Video>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

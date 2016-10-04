@@ -10,7 +10,10 @@ function hash(input) {
   return hash;
 };
 
+const COLOR_REGEXP = /rgb\((\d+), (\d+), (\d+)\)/;
+
 export default {
+
   findScrollParents (element, horizontal) {
     var result = [];
     var parent = element.parentNode;
@@ -113,7 +116,8 @@ export default {
       return id;
     }
   },
-  generateUUID() {
+
+  generateUUID () {
     function S4() {
       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
     }
@@ -121,5 +125,21 @@ export default {
       `-${S4()}-4${S4().substr(0, 3)}` +
       `-${S4()}-${S4()}${S4()}${S4()}`.toLowerCase();
     return uuid;
+  },
+
+  hasDarkBackground (element) {
+    // Measure the actual background color brightness to determine whether
+    // to set a dark or light context.
+    let result;
+    if (element && window.getComputedStyle) {
+      const color = window.getComputedStyle(element).backgroundColor;
+      const match = color.match(COLOR_REGEXP);
+      const [red, green, blue] = match.slice(1).map(n => parseInt(n, 10));
+      // http://www.had2know.com/technology/
+      //  color-contrast-calculator-web-design.html
+      const brightness = ( (299 * red) + (587 * green) + (114 * blue) ) / 1000;
+      result = brightness < 125;
+    }
+    return result;
   }
 };

@@ -212,18 +212,24 @@ export default class Table extends Component {
   }
 
   render () {
+    const {
+      children, className, onMore, scrollable, selectable, ...props
+    } = this.props;
+    delete props.onSelect;
+    delete props.selected;
+    const { small } = this.state;
     let classes = classnames(
       CLASS_ROOT,
-      this.props.className,
       {
-        [`${CLASS_ROOT}--small`]: this.state.small,
-        [`${CLASS_ROOT}--selectable`]: this.props.selectable,
-        [`${CLASS_ROOT}--scrollable`]: this.props.scrollable
-      }
+        [`${CLASS_ROOT}--small`]: small,
+        [`${CLASS_ROOT}--selectable`]: selectable,
+        [`${CLASS_ROOT}--scrollable`]: scrollable
+      },
+      className
     );
 
     let mirror;
-    if (this.props.scrollable) {
+    if (scrollable) {
       mirror = (
         <table ref={ref => this.mirrorRef = ref}
           className={`${CLASS_ROOT}__mirror`}>
@@ -235,7 +241,7 @@ export default class Table extends Component {
     }
 
     let more;
-    if (this.props.onMore) {
+    if (onMore) {
       more = (
         <div ref={ref => this.moreRef = ref} className={`${CLASS_ROOT}__more`}>
           <SpinningIcon />
@@ -244,11 +250,11 @@ export default class Table extends Component {
     }
 
     return (
-      <div ref={ref => this.containerRef = ref} className={classes}>
+      <div ref={ref => this.containerRef = ref} {...props} className={classes}>
         {mirror}
         <table ref={ref => this.tableRef = ref}
           className={`${CLASS_ROOT}__table`} onClick={this._onClick}>
-          {this.props.children}
+          {children}
         </table>
         {more}
       </div>

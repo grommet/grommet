@@ -33,26 +33,9 @@ describe('Notification', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it('renders with closer set to true', () => {
-    const component = renderer.create(
-      <Notification flush
-        message="You will need a tray. The food is hot." />
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
   it('renders with padding set', () => {
     const component = renderer.create(
-      <Notification padding={{ horizontal: 'large', vertical: 'large' }}
-        message="You will need a tray. The food is hot." />
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-  it('renders with a padding', () => {
-    const component = renderer.create(
-      <Notification flush closer status="critical"
-        padding={{ horizontal: 'medium', vertical: 'medium' }}
+      <Notification pad={{ horizontal: 'large', vertical: 'large' }}
         message="You will need a tray. The food is hot." />
     );
     const tree = component.toJSON();

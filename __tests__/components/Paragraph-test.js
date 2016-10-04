@@ -8,7 +8,7 @@ import Paragraph from '../../src/js/components/Paragraph';
 describe('Paragraph', () => {
   it('has correct default options', () => {
     const component = renderer.create(
-      <Paragraph>Testing</Paragraph>
+      <Paragraph data-flavor="coconut">Testing</Paragraph>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

@@ -53,7 +53,7 @@ describe('Accordion', () => {
     expect(tree).toMatchSnapshot();
 
     // activating the second panel
-    const panelHeaders = findAllByType(tree, 'header');
+    const panelHeaders = findAllByType(tree, 'button');
     panelHeaders[1].props.onClick();
 
     tree = component.toJSON();

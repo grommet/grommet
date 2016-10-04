@@ -3,39 +3,37 @@ exports[`SearchInput has correct default options 1`] = `
   className="grommetux-search-input">
   <input
     autoComplete="off"
-    className="grommetux-search-input__input"
+    className="grommetux-input grommetux-search-input__input"
     defaultValue={undefined}
     id="item1"
     name="item-1"
     onChange={[Function bound _onInputChange]}
     onFocus={[Function bound _onFocus]}
+    onKeyDown={[Function bound _onInputKeyDown]}
     placeholder={undefined}
     value="one" />
   <button
     aria-label={undefined}
-    className="grommetux-button grommetux-search-input__control grommetux-button--plain grommetux-button--icon"
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-search-input__control"
     disabled={false}
     href={undefined}
     id={undefined}
+    onBlur={[Function onBlur]}
     onClick={[Function bound _onAddDrop]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
     type="button">
     <span
       className="grommetux-button__icon">
       <svg
-        aria-labelledby="search-title"
+        aria-label="search"
         className="grommetux-control-icon grommetux-control-icon-search grommetux-control-icon--responsive"
         height="24px"
         role="img"
         version="1.1"
         viewBox="0 0 24 24"
         width="24px">
-        <title
-          id="search-title">
-          <span
-            id="search">
-            search
-          </span>
-        </title>
         <g>
           <rect
             fill="none"

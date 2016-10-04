@@ -1,6 +1,7 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 import { announce } from '../utils/Announcer';
 
@@ -16,56 +17,52 @@ export default class Value extends Component {
   }
 
   render () {
-    const classes = [CLASS_ROOT];
-    if (this.props.size) {
-      classes.push(`${CLASS_ROOT}--${this.props.size}`);
-    }
-    if (this.props.align) {
-      classes.push(`${CLASS_ROOT}--align-${this.props.align}`);
-    }
-    if (this.props.onClick) {
-      classes.push(`${CLASS_ROOT}--interactive`);
-    }
-    if (this.props.colorIndex) {
-      classes.push(`${COLOR_INDEX}-${this.props.colorIndex}`);
-    }
-    if (this.props.active) {
-      classes.push(`${CLASS_ROOT}--active`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const {
+      active, align, className, colorIndex, icon, label, size, trendIcon,
+      units, value, ...props
+    } = this.props;
+    delete props.announce;
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--${size}`]: size,
+        [`${CLASS_ROOT}--align-${align}`]: align,
+        [`${COLOR_INDEX}-${colorIndex}`]: colorIndex,
+        [`${CLASS_ROOT}--interactive`]: props.onClick,
+        [`${CLASS_ROOT}--active`]: active
+      },
+      className
+    );
 
-    let units;
-    if (this.props.units) {
-      units = (
+    let unitsSpan;
+    if (units) {
+      unitsSpan = (
         <span className={`${CLASS_ROOT}__units`}>
-          {this.props.units}
+          {units}
         </span>
       );
     }
 
-    let label;
-    if (this.props.label) {
-      label = (
+    let labelSpan;
+    if (label) {
+      labelSpan = (
         <span className={`${CLASS_ROOT}__label`}>
-          {this.props.label}
+          {label}
         </span>
       );
     }
 
     return (
-      <div ref={(ref) => this.valueRef = ref}
-        className={classes.join(' ')} onClick={this.props.onClick}>
+      <div ref={(ref) => this.valueRef = ref} {...props} className={classes}>
         <div className={`${CLASS_ROOT}__annotated`}>
-          {this.props.icon}
+          {icon}
           <span className={`${CLASS_ROOT}__value`}>
-            {this.props.value}
+            {value}
           </span>
-          {units}
-          {this.props.trendIcon}
+          {unitsSpan}
+          {trendIcon}
         </div>
-        {label}
+        {labelSpan}
       </div>
     );
   }

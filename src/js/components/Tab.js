@@ -1,70 +1,54 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import classnames from 'classnames';
+import Button from './Button';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.TAB;
 
 export default class Tab extends Component {
 
-  constructor(props, context) {
-    super(props, context);
+  constructor() {
+    super();
 
-    this._processSpace = this._processSpace.bind(this);
     this._onClickTab = this._onClickTab.bind(this);
   }
 
-  componentDidMount () {
-    KeyboardAccelerators.startListeningToKeyboard(this, {
-      space: this._processSpace
-    });
-  }
-
-  componentWillUnmount () {
-    KeyboardAccelerators.stopListeningToKeyboard(this, {
-      space: this._processSpace
-    });
-  }
-
-  _processSpace (event) {
-    if (event.target === this.tabRef) {
-      this._onClickTab(event);
-    }
-  }
-
   _onClickTab (event) {
+    const { onRequestForActive } = this.props;
     if (event) {
       event.preventDefault();
     }
-    this.props.onRequestForActive();
+    onRequestForActive();
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-
-    if (this.props.active) {
-      classes.push(CLASS_ROOT + "--active");
-    }
+    const { active, className, id, title, ...props } = this.props;
+    delete props.onRequestForActive;
+    const classes = classnames(
+      CLASS_ROOT, {
+        [`${CLASS_ROOT}--active`]: active
+      },
+      className
+    );
 
     return (
-      <li className={classes.join(' ')} id={this.props.id}>
-        <a ref={(ref) => this.tabRef = ref} role="tab"
-          href="#" onClick={this._onClickTab}
-          aria-expanded={this.props.active} aria-selected={this.props.active}
-          className={CLASS_ROOT + "__link"} aria-labelledby={this.props.id}>
-          <label className={CLASS_ROOT + '__label'} htmlFor={this.props.id}>
-            {this.props.title}
+      <li {...props} className={classes} id={id}>
+        <Button plain={true} role='tab' aria-selected={active}
+          onClick={this._onClickTab} aria-expanded={active}>
+          <label className={`${CLASS_ROOT}__label`} htmlFor={id}>
+            {title}
           </label>
-        </a>
+        </Button>
       </li>
     );
   }
-
 }
 
 Tab.propTypes = {
   title: PropTypes.string.isRequired,
   active: PropTypes.bool,
-  id: PropTypes.string
+  id: PropTypes.string,
+  onRequestForActive: PropTypes.func // from Tabs
 };

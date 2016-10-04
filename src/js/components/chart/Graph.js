@@ -1,9 +1,10 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import { padding, pointSize, debounceDelay } from './utils';
+import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
 import Intl from '../../utils/Intl';
+import { padding, pointSize, debounceDelay } from './utils';
 
 const CLASS_ROOT = CSSClassnames.CHART_GRAPH;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
@@ -113,32 +114,43 @@ export default class Graph extends Component {
   }
 
   render () {
-    const { activeIndex, colorIndex, max, min, reverse, smooth, type,
-      values, vertical } = this.props;
+    const {
+      activeIndex, className, colorIndex, max, min, reverse, smooth, type,
+      values, vertical, ...props
+    } = this.props;
+    delete props.height;
+    delete props.width;
+    delete props.points;
     const { height, width } = this.state;
     const pad = Math.min(width, height) < (padding * 8) ? 2 : padding;
 
-    let classes = [CLASS_ROOT, `${CLASS_ROOT}--${type}`];
-    if (vertical) {
-      classes.push(`${CLASS_ROOT}--vertical`);
-    }
-    classes.push(`${COLOR_INDEX}-${colorIndex || 'graph-1'}`);
+    const classes = classnames(
+      CLASS_ROOT,
+      `${CLASS_ROOT}--${type}`, {
+        [`${CLASS_ROOT}--vertical`]: vertical
+      },
+      `${COLOR_INDEX}-${colorIndex || 'graph-1'}`,
+      className
+    );
 
-    let scale, step;
+    let scale = 1;
+    let step;
     if (vertical) {
       if (values.length <= 1) {
-        scale = 1;
         step = height - (2 * pad);
       } else {
-        scale = (width - (2 * pad)) / (max - min);
+        if (max - min > 0) {
+          scale = (width - (2 * pad)) / (max - min);
+        }
         step = (height - (2 * pad)) / (values.length - 1);
       }
     } else {
       if (values.length <= 1) {
-        scale = 1;
         step = width - (2 * pad);
       } else {
-        scale = (height - (2 * pad)) / (max - min);
+        if (max - min > 0) {
+          scale = (height - (2 * pad)) / (max - min);
+        }
         step = (width - (2 * pad)) / (values.length - 1);
       }
     }
@@ -165,15 +177,18 @@ export default class Graph extends Component {
 
         if ((this.props.points || index === activeIndex) &&
           ! this.props.sparkline) {
-          const classes = [`${CLASS_ROOT}__point`,
-            `${COLOR_INDEX}-${colorIndex || 'graph-1'}`];
+          const classes = classnames(
+            `${CLASS_ROOT}__point`,
+            `${COLOR_INDEX}-${colorIndex || 'graph-1'}`, {
+              [`${CLASS_ROOT}__point--active`]: (index === activeIndex)
+            }
+          );
           let radius = pointSize / 3;
           if (index === activeIndex) {
-            classes.push(`${CLASS_ROOT}__point--active`);
             radius = pointSize / 2;
           }
           points.push(
-            <circle key={index} className={classes.join(' ')}
+            <circle key={index} className={classes}
               cx={coordinate[0]} cy={coordinate[1]} r={radius} />
           );
         }
@@ -253,7 +268,7 @@ export default class Graph extends Component {
     }
 
     return (
-      <svg ref={ref => this.graphRef = ref} className={classes.join(' ')}
+      <svg ref={ref => this.graphRef = ref} {...props} className={classes}
         viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"
         role="img" aria-label={this._renderA11YTitle()}>
         <g>

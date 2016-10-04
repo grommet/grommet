@@ -42,7 +42,7 @@ describe('Tabs', () => {
     expect(tree).toMatchSnapshot();
 
     // activating the second panel
-    const panelHeaders = findAllByType(tree, 'a');
+    const panelHeaders = findAllByType(tree, 'button');
     panelHeaders[1].props.onClick();
 
     tree = component.toJSON();

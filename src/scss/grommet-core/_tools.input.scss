@@ -1,0 +1,50 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+// We use mixins for some text styles to make it easier to modularize the
+// CSS. For example `.grommet p` uses the same styles as
+// `.#{$grommet-namespace}paragraph` while avoiding issues with the
+// grommet component not being able to customize styles for various
+// flavors without running into prcedence issues with the higher specificity
+// of the generic style under `.grommet`.
+
+@mixin input() {
+  // Align overall height with regular text line height, reduce
+  // top and bottom padding by an extra 2px.
+  padding: (halve($inuit-base-spacing-unit) - $input-border-width)
+    ($inuit-base-spacing-unit - $input-border-width);
+  border: $input-border-width solid $border-color;
+  border-radius: $border-radius;
+  outline: none;
+  background-color: transparent; // inherit; doesn't work on IE
+  color: inherit;
+  font: inherit;
+  margin: 0;
+
+  &:focus {
+    border-width: $input-focus-border-width;
+    border-color: $focus-border-color;
+    padding: (halve($inuit-base-spacing-unit) - ($input-border-width + 1))
+      ($inuit-base-spacing-unit - ($input-border-width + 1));
+  }
+
+  &::-moz-focus-inner {
+    border: none;
+    outline: none;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $placeholder-text-color;
+  }
+
+  &::-moz-placeholder {
+    color: $placeholder-text-color;
+  }
+
+  &:-ms-input-placeholder {
+     color: $placeholder-text-color;
+  }
+
+  &.error {
+    border-color: map-get($brand-status-colors, critical);
+  }
+}

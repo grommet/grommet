@@ -1,17 +1,10 @@
 exports[`Warning has correct className rendering 1`] = `
 <svg
-  aria-labelledby="warning-title"
+  aria-label="Warning"
   className="grommetux-status-icon grommetux-status-icon-warning testing"
   role="img"
   version="1.1"
   viewBox="0 0 24 24">
-  <title
-    id="warning-title">
-    <span
-      id="Warning">
-      Warning
-    </span>
-  </title>
   <g
     className="grommetux-status-icon__base">
     <path
@@ -37,18 +30,11 @@ exports[`Warning has correct className rendering 1`] = `
 
 exports[`Warning has correct default options 1`] = `
 <svg
-  aria-labelledby="warning-title"
+  aria-label="Warning"
   className="grommetux-status-icon grommetux-status-icon-warning"
   role="img"
   version="1.1"
   viewBox="0 0 24 24">
-  <title
-    id="warning-title">
-    <span
-      id="Warning">
-      Warning
-    </span>
-  </title>
   <g
     className="grommetux-status-icon__base">
     <path

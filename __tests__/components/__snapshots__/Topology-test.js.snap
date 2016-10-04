@@ -1,22 +1,24 @@
 exports[`Topology has correct default options 1`] = `
 <div
   className="grommetux-topology">
-  <canvas
-    className="grommetux-topology__canvas"
+  <svg
+    className="grommetux-topology__links"
     height={100}
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 100 100"
     width={100} />
   <div
-    className="grommetux-topology__contents">
+    className="grommetux-topology__contents"
+    onMouseLeave={[Function bound _onMouseLeave]}
+    onMouseMove={[Function bound _onMouseMove]}>
     <div
       className="grommetux-topology__parts grommetux-topology__parts--direction-row">
       <div
         className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate rack"
-        id={undefined}
         onMouseEnter={undefined}
         onMouseLeave={undefined}>
         <div
           className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate switch"
-          id={undefined}
           onMouseEnter={undefined}
           onMouseLeave={undefined}>
           <div
@@ -27,32 +29,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -67,32 +60,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -107,32 +91,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -147,32 +122,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -187,32 +153,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -227,32 +184,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -267,32 +215,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -307,32 +246,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -349,12 +279,10 @@ exports[`Topology has correct default options 1`] = `
         </div>
         <div
           className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate enclosure"
-          id={undefined}
           onMouseEnter={undefined}
           onMouseLeave={undefined}>
           <div
             className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
-            id={undefined}
             onMouseEnter={undefined}
             onMouseLeave={undefined}>
             <span
@@ -364,7 +292,6 @@ exports[`Topology has correct default options 1`] = `
           </div>
           <div
             className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
-            id={undefined}
             onMouseEnter={undefined}
             onMouseLeave={undefined}>
             <span
@@ -376,7 +303,6 @@ exports[`Topology has correct default options 1`] = `
             className="grommetux-topology__parts grommetux-topology__parts--direction-row">
             <div
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
-              id={undefined}
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <div
@@ -387,32 +313,23 @@ exports[`Topology has correct default options 1`] = `
                   onMouseEnter={undefined}
                   onMouseLeave={undefined}>
                   <svg
-                    aria-labelledby="ok-title"
+                    aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
                     version="1.1"
                     viewBox="0 0 24 24">
-                    <title
-                      id="ok-title">
-                      <span
-                        id="OK">
-                        OK
-                      </span>
-                    </title>
                     <g
                       className="grommetux-status-icon__base">
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        role="presentation"
                         stroke="none" />
                     </g>
                     <g
                       className="grommetux-status-icon__detail">
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                        role="presentation"
                         stroke="none" />
                     </g>
                   </svg>
@@ -427,32 +344,23 @@ exports[`Topology has correct default options 1`] = `
                   onMouseEnter={undefined}
                   onMouseLeave={undefined}>
                   <svg
-                    aria-labelledby="ok-title"
+                    aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
                     version="1.1"
                     viewBox="0 0 24 24">
-                    <title
-                      id="ok-title">
-                      <span
-                        id="OK">
-                        OK
-                      </span>
-                    </title>
                     <g
                       className="grommetux-status-icon__base">
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        role="presentation"
                         stroke="none" />
                     </g>
                     <g
                       className="grommetux-status-icon__detail">
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                        role="presentation"
                         stroke="none" />
                     </g>
                   </svg>
@@ -465,36 +373,26 @@ exports[`Topology has correct default options 1`] = `
             </div>
             <div
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
-              id={undefined}
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -505,41 +403,30 @@ exports[`Topology has correct default options 1`] = `
             </div>
             <div
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate grommetux-topology__part--empty fan"
-              id={undefined}
               onMouseEnter={undefined}
               onMouseLeave={undefined} />
             <div
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
-              id={undefined}
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -551,7 +438,6 @@ exports[`Topology has correct default options 1`] = `
           </div>
           <div
             className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
-            id={undefined}
             onMouseEnter={undefined}
             onMouseLeave={undefined}>
             <span
@@ -563,7 +449,6 @@ exports[`Topology has correct default options 1`] = `
             className="grommetux-topology__parts grommetux-topology__parts--direction-row">
             <div
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
-              id={undefined}
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <div
@@ -574,32 +459,23 @@ exports[`Topology has correct default options 1`] = `
                   onMouseEnter={undefined}
                   onMouseLeave={undefined}>
                   <svg
-                    aria-labelledby="ok-title"
+                    aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
                     version="1.1"
                     viewBox="0 0 24 24">
-                    <title
-                      id="ok-title">
-                      <span
-                        id="OK">
-                        OK
-                      </span>
-                    </title>
                     <g
                       className="grommetux-status-icon__base">
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        role="presentation"
                         stroke="none" />
                     </g>
                     <g
                       className="grommetux-status-icon__detail">
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                        role="presentation"
                         stroke="none" />
                     </g>
                   </svg>
@@ -614,32 +490,23 @@ exports[`Topology has correct default options 1`] = `
                   onMouseEnter={undefined}
                   onMouseLeave={undefined}>
                   <svg
-                    aria-labelledby="ok-title"
+                    aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
                     version="1.1"
                     viewBox="0 0 24 24">
-                    <title
-                      id="ok-title">
-                      <span
-                        id="OK">
-                        OK
-                      </span>
-                    </title>
                     <g
                       className="grommetux-status-icon__base">
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        role="presentation"
                         stroke="none" />
                     </g>
                     <g
                       className="grommetux-status-icon__detail">
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                        role="presentation"
                         stroke="none" />
                     </g>
                   </svg>
@@ -652,36 +519,26 @@ exports[`Topology has correct default options 1`] = `
             </div>
             <div
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
-              id={undefined}
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -692,36 +549,26 @@ exports[`Topology has correct default options 1`] = `
             </div>
             <div
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
-              id={undefined}
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -732,36 +579,26 @@ exports[`Topology has correct default options 1`] = `
             </div>
             <div
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
-              id={undefined}
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -775,12 +612,10 @@ exports[`Topology has correct default options 1`] = `
       </div>
       <div
         className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate rack"
-        id={undefined}
         onMouseEnter={undefined}
         onMouseLeave={undefined}>
         <div
           className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate switch"
-          id={undefined}
           onMouseEnter={undefined}
           onMouseLeave={undefined}>
           <div
@@ -791,32 +626,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -831,32 +657,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -871,32 +688,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -911,32 +719,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -951,32 +750,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -991,32 +781,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1031,32 +812,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1071,32 +843,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1111,32 +874,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1151,32 +905,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1198,32 +943,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1238,32 +974,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1278,32 +1005,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1318,32 +1036,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1358,32 +1067,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1398,32 +1098,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1438,32 +1129,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1478,32 +1160,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1518,32 +1191,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1558,32 +1222,23 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1596,14 +1251,12 @@ exports[`Topology has correct default options 1`] = `
         </div>
         <div
           className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate enclosure"
-          id={undefined}
           onMouseEnter={undefined}
           onMouseLeave={undefined}>
           <div
             className="grommetux-topology__parts grommetux-topology__parts--direction-row">
             <div
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
-              id={undefined}
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <div
@@ -1614,32 +1267,23 @@ exports[`Topology has correct default options 1`] = `
                   onMouseEnter={undefined}
                   onMouseLeave={undefined}>
                   <svg
-                    aria-labelledby="ok-title"
+                    aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
                     version="1.1"
                     viewBox="0 0 24 24">
-                    <title
-                      id="ok-title">
-                      <span
-                        id="OK">
-                        OK
-                      </span>
-                    </title>
                     <g
                       className="grommetux-status-icon__base">
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        role="presentation"
                         stroke="none" />
                     </g>
                     <g
                       className="grommetux-status-icon__detail">
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                        role="presentation"
                         stroke="none" />
                     </g>
                   </svg>
@@ -1654,32 +1298,23 @@ exports[`Topology has correct default options 1`] = `
                   onMouseEnter={undefined}
                   onMouseLeave={undefined}>
                   <svg
-                    aria-labelledby="ok-title"
+                    aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
                     version="1.1"
                     viewBox="0 0 24 24">
-                    <title
-                      id="ok-title">
-                      <span
-                        id="OK">
-                        OK
-                      </span>
-                    </title>
                     <g
                       className="grommetux-status-icon__base">
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        role="presentation"
                         stroke="none" />
                     </g>
                     <g
                       className="grommetux-status-icon__detail">
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                        role="presentation"
                         stroke="none" />
                     </g>
                   </svg>
@@ -1692,36 +1327,26 @@ exports[`Topology has correct default options 1`] = `
             </div>
             <div
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
-              id={undefined}
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1732,36 +1357,26 @@ exports[`Topology has correct default options 1`] = `
             </div>
             <div
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
-              id={undefined}
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1772,36 +1387,26 @@ exports[`Topology has correct default options 1`] = `
             </div>
             <div
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
-              id={undefined}
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1813,7 +1418,6 @@ exports[`Topology has correct default options 1`] = `
           </div>
           <div
             className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
-            id={undefined}
             onMouseEnter={undefined}
             onMouseLeave={undefined}>
             <span
@@ -1825,7 +1429,6 @@ exports[`Topology has correct default options 1`] = `
             className="grommetux-topology__parts grommetux-topology__parts--direction-row">
             <div
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
-              id={undefined}
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <div
@@ -1836,32 +1439,23 @@ exports[`Topology has correct default options 1`] = `
                   onMouseEnter={undefined}
                   onMouseLeave={undefined}>
                   <svg
-                    aria-labelledby="ok-title"
+                    aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
                     version="1.1"
                     viewBox="0 0 24 24">
-                    <title
-                      id="ok-title">
-                      <span
-                        id="OK">
-                        OK
-                      </span>
-                    </title>
                     <g
                       className="grommetux-status-icon__base">
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        role="presentation"
                         stroke="none" />
                     </g>
                     <g
                       className="grommetux-status-icon__detail">
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                        role="presentation"
                         stroke="none" />
                     </g>
                   </svg>
@@ -1876,32 +1470,23 @@ exports[`Topology has correct default options 1`] = `
                   onMouseEnter={undefined}
                   onMouseLeave={undefined}>
                   <svg
-                    aria-labelledby="ok-title"
+                    aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
                     version="1.1"
                     viewBox="0 0 24 24">
-                    <title
-                      id="ok-title">
-                      <span
-                        id="OK">
-                        OK
-                      </span>
-                    </title>
                     <g
                       className="grommetux-status-icon__base">
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        role="presentation"
                         stroke="none" />
                     </g>
                     <g
                       className="grommetux-status-icon__detail">
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                        role="presentation"
                         stroke="none" />
                     </g>
                   </svg>
@@ -1914,36 +1499,26 @@ exports[`Topology has correct default options 1`] = `
             </div>
             <div
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
-              id={undefined}
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1954,36 +1529,26 @@ exports[`Topology has correct default options 1`] = `
             </div>
             <div
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
-              id={undefined}
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>
@@ -1994,36 +1559,26 @@ exports[`Topology has correct default options 1`] = `
             </div>
             <div
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
-              id={undefined}
               onMouseEnter={undefined}
               onMouseLeave={undefined}>
               <svg
-                aria-labelledby="ok-title"
+                aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
-                <title
-                  id="ok-title">
-                  <span
-                    id="OK">
-                    OK
-                  </span>
-                </title>
                 <g
                   className="grommetux-status-icon__base">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    role="presentation"
                     stroke="none" />
                 </g>
                 <g
                   className="grommetux-status-icon__detail">
                   <path
                     d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
-                    role="presentation"
                     stroke="none" />
                 </g>
               </svg>

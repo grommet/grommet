@@ -50,4 +50,19 @@ describe('Button', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('has className property rendering', () => {
+    const component = renderer.create(
+      <Button className="test">test</Button>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('has microdata properties rendering', () => {
+    const component = renderer.create(
+      <Button itemScope={true} itemType="http://schema.org/Article"
+        itemProp="test">test</Button>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -8,20 +8,23 @@ const CLASS_ROOT = CSSClassnames.HEADLINE;
 
 export default class Headline extends Component {
   render () {
-    let classes = classnames(
+    const {
+      align, children, className, margin, size, strong, ...props
+    } = this.props;
+    const classes = classnames(
       CLASS_ROOT,
       {
-        [`${CLASS_ROOT}--${this.props.size}`]: this.props.size,
-        [`${CLASS_ROOT}--align-${this.props.align}`]: this.props.align,
-        [`${CLASS_ROOT}--margin-${this.props.margin}`]: this.props.margin,
-        [`${CLASS_ROOT}--strong`]: this.props.strong
+        [`${CLASS_ROOT}--${size}`]: size,
+        [`${CLASS_ROOT}--align-${align}`]: align,
+        [`${CLASS_ROOT}--margin-${margin}`]: margin,
+        [`${CLASS_ROOT}--strong`]: strong
       },
-      this.props.className
+      className
     );
 
     return (
-      <div className={classes}>
-        {this.props.children}
+      <div {...props} className={classes}>
+        {children}
       </div>
     );
   }

@@ -1,6 +1,7 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, Children, PropTypes } from 'react';
+import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.CHART_LAYERS;
@@ -8,9 +9,13 @@ const CLASS_ROOT = CSSClassnames.CHART_LAYERS;
 export default class Layers extends Component {
 
   render () {
-    const { height, width } = this.props;
+    const { className, height, width, ...props } = this.props;
+    const classes = classnames(
+      CLASS_ROOT,
+      className
+    );
 
-    let style = {...this.props.style};
+    let style = { ...this.props.style };
     if (height) {
       style.height = `${height}px`;
     }
@@ -27,7 +32,7 @@ export default class Layers extends Component {
     });
 
     return (
-      <div className={CLASS_ROOT} style={style}>
+      <div {...props} className={classes} style={style}>
         {children}
       </div>
     );

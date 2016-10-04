@@ -1,0 +1,52 @@
+exports[`Select has correct default options 1`] = `
+<div
+  className="grommetux-select"
+  onClick={[Function bound _onAddDrop]}>
+  <input
+    className="grommetux-input grommetux-select__input"
+    disabled={true}
+    id="item1"
+    name="item-1"
+    value="one" />
+  <button
+    aria-label={undefined}
+    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-select__control"
+    disabled={false}
+    href={undefined}
+    id={undefined}
+    onBlur={[Function onBlur]}
+    onClick={[Function bound _onAddDrop]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
+    type="button">
+    <span
+      className="grommetux-button__icon">
+      <svg
+        aria-label="caret-down"
+        className="grommetux-control-icon grommetux-control-icon-caret-down grommetux-control-icon--responsive"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px">
+        <g>
+          <rect
+            fill="none"
+            height="24"
+            width="24"
+            x="0"
+            y="0" />
+          <polygon
+            fill="none"
+            id="drop-carrot"
+            points="4.8571,8 19.1429,8 12,18"
+            stroke="#000000"
+            strokeMiterlimit="10"
+            strokeWidth="2" />
+        </g>
+      </svg>
+    </span>
+  </button>
+</div>
+`;

@@ -71,20 +71,21 @@ export default class HotSpots extends Component {
 
   render () {
     const {
-      a11yTitle, activeIndex, className, count, onActive, onClick, vertical
+      a11yTitle, activeIndex, className, count, onActive, onClick, vertical,
+      ...props
     } = this.props;
+    delete props.height;
+    delete props.width;
 
-    const {
-      intl
-    } = this.context;
+    const { intl } = this.context;
 
     const classes = classnames(
       CLASS_ROOT,
-      className,
       {
         [`${CLASS_ROOT}--vertical`]: vertical,
         [`${CLASS_ROOT}--clickable`]: onClick
-      }
+      },
+      className
     );
 
     const defaultBasis = 100 / (count - 1);
@@ -114,7 +115,7 @@ export default class HotSpots extends Component {
     const hotSpotsLabel = a11yTitle || Intl.getMessage(intl, 'HotSpotsLabel');
 
     return (
-      <div className={classes} style={{ padding: padding }}
+      <div {...props} className={classes} style={{ padding: padding }}
         tabIndex='0' onFocus={this._onHotSpotFocus}
         onBlur={this._onHotSpotBlur} role='group'
         aria-label={hotSpotsLabel}>

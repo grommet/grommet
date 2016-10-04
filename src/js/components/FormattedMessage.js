@@ -10,7 +10,7 @@ import { FormattedMessage } from 'react-intl';
 
 const GrommetFormattedMessage = (props, context) => (
   context.intl ? <FormattedMessage {...props} />
-    : <span id={props.id.replace(' ', '_')}>
+    : <span>
         {props.defaultMessage || props.id}
       </span>
 );

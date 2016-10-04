@@ -8,7 +8,7 @@ import Headline from '../../src/js/components/Headline';
 describe('Headline', () => {
   it('has correct default options', () => {
     const component = renderer.create(
-      <Headline>Testing</Headline>
+      <Headline data-flavor="coconut">Testing</Headline>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

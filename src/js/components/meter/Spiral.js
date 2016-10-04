@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React from 'react';
+import classnames from 'classnames';
 import { baseUnit, translateEndAngle, arcCommands } from '../../utils/Graphics';
 import CSSClassnames from '../../utils/CSSClassnames';
 import { baseDimension } from './utils';
@@ -28,7 +29,7 @@ export default class Spiral extends Graphic {
 
     const state = {
       startAngle: 0,
-      anglePer: 270.0 / props.max.value,
+      anglePer: 270.0 / props.max,
       angleOffset: 180,
       // The last spiral ends out near but not quite at the edge of the
       // view box.
@@ -61,14 +62,17 @@ export default class Spiral extends Graphic {
   }
 
   _renderTopLayer () {
+    const { activeIndex } = this.props;
     const { viewBoxRadius } = this.state;
     const x = viewBoxRadius + (RING_THICKNESS * 0.5);
     let y = viewBoxRadius + (RING_THICKNESS * 1.75);
-    const labels = this.props.series.map(function (item, index) {
-      let classes = [CLASS_ROOT + "__label"];
-      if (index === this.props.activeIndex) {
-        classes.push(CLASS_ROOT + "__label--active");
-      }
+    const labels = this.props.series.map((item, index) => {
+      const classes = classnames(
+        `${CLASS_ROOT}__label`,
+        {
+          [`${CLASS_ROOT}__label--active`]: (index === activeIndex)
+        }
+      );
 
       const textX = x;
       const textY = y;
@@ -78,14 +82,14 @@ export default class Spiral extends Graphic {
       return (
         <text key={item.label || index} x={textX} y={textY}
           textAnchor="start" fontSize={16}
-          className={classes.join(' ')}
+          className={classes}
           onMouseOver={this.props.onActivate.bind(null, index)}
           onMouseOut={this.props.onActivate.bind(null, null)}
           onClick={item.onClick} >
           {item.label}
         </text>
       );
-    }, this);
+    });
 
     return (
       <g className={CLASS_ROOT + "__labels"}>

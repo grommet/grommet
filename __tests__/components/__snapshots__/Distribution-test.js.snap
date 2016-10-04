@@ -1,10 +1,13 @@
 exports[`Distribution has correct default options 1`] = `
 <div
-  className="grommetux-distribution grommetux-distribution--legend-bottom grommetux-distribution--loading">
+  className="grommetux-distribution grommetux-distribution--medium grommetux-distribution--loading">
   <svg
-    aria-activedescendant="distribution-title_item_0"
-    aria-labelledby="distribution-title distribution-desc"
+    aria-label="Loading"
     className="grommetux-distribution__graphic"
+    onBlur={[Function onBlur]}
+    onFocus={[Function onFocus]}
+    onMouseDown={[Function onMouseDown]}
+    onMouseUp={[Function onMouseUp]}
     preserveAspectRatio="none"
     role="img"
     tabIndex="0"
@@ -16,10 +19,6 @@ exports[`Distribution has correct default options 1`] = `
       width={400}
       x={0}
       y={0} />
-    <title
-      id="distribution-title">
-      Loading
-    </title>
     <g>
       <path
         className="grommetux-distribution__loading-indicator grommetux-color-index-loading"
@@ -28,6 +27,8 @@ exports[`Distribution has correct default options 1`] = `
     </g>
   </svg>
   <div
-    className="grommetux-distribution__labels" />
+    aria-hidden={true}
+    className="grommetux-distribution__labels"
+    role="presentation" />
 </div>
 `;

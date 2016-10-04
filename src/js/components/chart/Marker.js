@@ -1,8 +1,9 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import { graphValue, trackSize, padding } from './utils';
+import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
+import { graphValue, trackSize, padding } from './utils';
 
 const CLASS_ROOT = CSSClassnames.CHART_MARKER;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
@@ -42,16 +43,19 @@ export default class Marker extends Component {
   }
 
   render () {
-    const { colorIndex, count, index, max, min, reverse, value, vertical  } =
-      this.props;
+    const {
+      className, colorIndex, count, index, max, min, reverse, value, vertical,
+      ...props
+    } = this.props;
+    delete props.height;
+    delete props.width;
     const { size: { height, width }, graphWidth, graphHeight } = this.state;
-    let classes = [CLASS_ROOT];
-    if (colorIndex) {
-      classes.push(`${COLOR_INDEX}-${colorIndex}`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const classes = classnames(
+      CLASS_ROOT, {
+        [`${COLOR_INDEX}-${colorIndex}`]: colorIndex
+      },
+      className
+    );
 
     let path;
     if ((count > 1 && index >= 1 && index < count) ||
@@ -86,7 +90,7 @@ export default class Marker extends Component {
     }
 
     return (
-      <svg ref={ref => this.svgRef = ref} className={classes.join(' ')}
+      <svg ref={ref => this.svgRef = ref} {...props} className={classes}
         viewBox={`0 0 ${width} ${height}`} aria-hidden='true'
         preserveAspectRatio="none">
         {path}

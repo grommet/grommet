@@ -1,6 +1,7 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.WORLD_MAP;
@@ -8,7 +9,7 @@ const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 const CONTINENTS = [
   {
-    id: "Australia",
+    id: 'Australia',
     origin: [74, 32],
     area: [[4, 0], [7, 1], [15, 7], [13, 9], [0, 6], [0, 2]],
     dots: [
@@ -17,7 +18,7 @@ const CONTINENTS = [
       [13, 9, 1]
     ]
   }, {
-    id: "Asia",
+    id: 'Asia',
     origin: [52, 1],
     area: [
       [16, 0], [38, 5], [40, 7], [28, 17], [24, 25], [29, 29], [19, 29],
@@ -40,7 +41,7 @@ const CONTINENTS = [
     ]
   }, {
     // 21X, 40Y
-    id: "Africa",
+    id: 'Africa',
     origin: [40, 19],
     area: [
       [3, 0], [6, 0], [11, 2], [16, 7], [16, 15], [11, 18], [9, 18], [0, 6],
@@ -53,7 +54,7 @@ const CONTINENTS = [
       [8, 15, 5], [15, 15, 2], [8, 16, 5], [9, 17, 3], [9, 18, 3]
     ]
   }, {
-    id: "Europe",
+    id: 'Europe',
     origin: [39, 2],
     area: [
       [8, 0], [10, 0], [20, 2], [19, 11], [18, 13], [14, 16], [3, 16], [0, 7]
@@ -67,7 +68,7 @@ const CONTINENTS = [
       [10, 15, 5], [6, 15, 2], [3, 16, 2], [10, 16, 5]
     ]
   }, {
-    id: "SouthAmerica",
+    id: 'SouthAmerica',
     origin: [22, 26],
     area: [[2, 0], [5, 0], [11, 4], [11, 8], [3, 18], [2, 17], [0, 4], [0, 3]],
     dots: [
@@ -77,7 +78,7 @@ const CONTINENTS = [
       [3, 18, 1]
     ]
   }, {
-    id: "NorthAmerica",
+    id: 'NorthAmerica',
     origin: [0, 0],
     area: [[21, 0], [39, 0], [39, 6], [22, 26], [16, 23], [2, 12], [0, 7]],
     dots: [
@@ -153,24 +154,27 @@ export default class WorldMap extends Component {
   _renderContinent (seriesData, index) {
     const continent = seriesData.continent;
     const colorIndex = seriesData.colorIndex || `graph-${index}`;
-    let classes = [`${CLASS_ROOT}__continent`, `${COLOR_INDEX}-${colorIndex}`];
-    if (index === this.state.activeIndex) {
-      classes.push(`${CLASS_ROOT}__continent--active`);
-    }
+
+    const classes = classnames(
+      `${CLASS_ROOT}__continent`,
+      `${COLOR_INDEX}-${colorIndex}`, {
+        [`${CLASS_ROOT}__continent--active`]: index === this.state.activeIndex
+      }
+    );
     let onMouseOver, onMouseLeave, onClick, area;
     if (seriesData.onClick) {
       onMouseOver = this._onActivate.bind(this, index);
       onMouseLeave = this._onDeactivate;
       onClick = seriesData.onClick;
       area = (
-        <path stroke="none" fill="#fff" fillOpacity="0.01"
+        <path stroke='none' fill='#fff' fillOpacity='0.01'
           d={this.state.area[continent]} />
       );
     }
     // We add the area so the mouse events work for the whole region,
     // not just the dots
     return (
-      <g key={continent} id={continent} className={classes.join(' ')}
+      <g key={continent} className={classes}
         onMouseOver={onMouseOver} onMouseLeave={onMouseLeave} onClick={onClick}>
         {area}
         <path d={this.state.dots[continent]} />
@@ -179,15 +183,19 @@ export default class WorldMap extends Component {
   }
 
   render () {
-    const { series } = this.props;
+    const { className, series, ...props } = this.props;
     const { width, height } = this.state;
+    const classes = classnames(
+      CLASS_ROOT,
+      className
+    );
     const continents = series.map(this._renderContinent);
 
     return (
-      <svg className={CLASS_ROOT} version="1.1"
-        preserveAspectRatio="xMidYMid meet"
+      <svg {...props} className={classes} version='1.1'
+        preserveAspectRatio='xMidYMid meet'
         width={`${width}px`} viewBox={`0 0 ${width} ${height}`}>
-        <g stroke="none" fill="none" fillRule="evenodd">
+        <g stroke='none' fill='none' fillRule='evenodd'>
           {continents}
         </g>
       </svg>

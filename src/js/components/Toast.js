@@ -35,6 +35,11 @@ class ToastContents extends Component {
     this._timer = setTimeout(this._onClose, DURATION);
   }
 
+  componentWillUnmount () {
+    clearTimeout(this._timer);
+    this._timer = undefined;
+  }
+
   _onClose () {
     const { onClose } = this.props;
     clearTimeout(this._timer);

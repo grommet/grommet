@@ -1,9 +1,10 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, Children, PropTypes } from 'react';
-import { padding, debounceDelay } from './utils';
+import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
 import Intl from '../../utils/Intl';
+import { padding, debounceDelay } from './utils';
 
 import Meter from '../Meter';
 
@@ -156,23 +157,24 @@ export default class Chart extends Component {
   }
 
   render () {
-    const { a11yTitle, full, loading, vertical } = this.props;
+    const {
+      a11yTitle, className, full, loading, vertical, ...props
+    } = this.props;
+    delete props.horizontalAlignWith;
+    delete props.onMaxCount;
+    delete props.verticalAlignWith;
     const { alignBottom, alignHeight, alignLeft, alignRight, alignTop,
       alignWidth, padAlign } = this.state;
     const { intl } = this.context;
-    let classes = [CLASS_ROOT];
-    if (vertical) {
-      classes.push(`${CLASS_ROOT}--vertical`);
-    }
-    if (full) {
-      classes.push(`${CLASS_ROOT}--full`);
-    }
-    if (loading) {
-      classes.push(`${CLASS_ROOT}--loading`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--full`]: full,
+        [`${CLASS_ROOT}--loading`]: loading,
+        [`${CLASS_ROOT}--vertical`]: vertical
+      },
+      className
+    );
 
     // Align Axis children towards the Base|Layers|Chart
     let axisAlign = 'end';
@@ -245,7 +247,7 @@ export default class Chart extends Component {
 
     if (loading) {
       children.push(
-        <svg key="loading" className={`${CLASS_ROOT}-loading`}
+        <svg key="loading" className={classes}
           viewBox={`0 0 ${alignWidth} ${alignHeight}`}>
           <path d={`M0,${alignHeight / 2} L${alignWidth},${alignHeight / 2}`} />
         </svg>
@@ -257,8 +259,8 @@ export default class Chart extends Component {
     );
 
     return (
-      <div ref={ref => this.chartRef = ref} aria-label={ariaLabel}
-        className={classes.join(' ')} role="group">
+      <div ref={ref => this.chartRef = ref} {...props} className={classes}
+        aria-label={ariaLabel} role="group">
         {children}
       </div>
     );

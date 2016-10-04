@@ -43,11 +43,7 @@ let Markdown = (props) => {
     }
   }, heading, components);
 
-  return (
-    markdownToJSX(content, {
-      gfm: true
-    }, options)
-  );
+  return markdownToJSX(content, {overrides: options});
 };
 
 Markdown.propTypes = {

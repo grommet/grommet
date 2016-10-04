@@ -11,147 +11,141 @@ $large-pad-palm: $inuit-base-spacing-unit;
 $xlarge-pad-palm: double($inuit-base-spacing-unit);
 
 @mixin pad {
-  &--pad {
-    &-none {
-      padding: 0px;
+  &--pad-none {
+    padding: 0px;
+  }
+
+  @include media-query(lap-and-up) {
+    &--pad-small {
+      padding: $small-pad-lap;
     }
 
-    @include media-query(lap-and-up) {
-      &-small {
-        padding: $small-pad-lap;
-      }
-
-      &-medium {
-        padding: $medium-pad-lap;
-      }
-
-      &-large {
-        padding: $large-pad-lap;
-      }
-
-      &-xlarge {
-        padding: $xlarge-pad-lap;
-      }
+    &--pad-medium {
+      padding: $medium-pad-lap;
     }
 
-    @include media-query(palm) {
-      &-small {
-        padding: $small-pad-palm;
-      }
-
-      &-medium {
-        padding: $medium-pad-palm;
-      }
-
-      &-large {
-        padding: $large-pad-palm;
-      }
-
-      &-xlarge {
-        padding: $xlarge-pad-palm;
-      }
+    &--pad-large {
+      padding: $large-pad-lap;
     }
 
-    &-horizontal {
-      &-none {
-        padding-left: 0px;
-        padding-right: 0px;
-      }
+    &--pad-xlarge {
+      padding: $xlarge-pad-lap;
+    }
+  }
 
-      @include media-query(lap-and-up) {
-        &-small {
-          padding-left: $small-pad-lap;
-          padding-right: $small-pad-lap;
-        }
-
-        &-medium {
-          padding-left: $medium-pad-lap;
-          padding-right: $medium-pad-lap;
-        }
-
-        &-large {
-          padding-left: $large-pad-lap;
-          padding-right: $large-pad-lap;
-        }
-
-        &-xlarge {
-          padding-left: $xlarge-pad-lap;
-          padding-right: $xlarge-pad-lap;
-        }
-      }
-
-      @include media-query(palm) {
-        &-small {
-          padding-left: $small-pad-palm;
-          padding-right: $small-pad-palm;
-        }
-
-        &-medium {
-          padding-left: $medium-pad-palm;
-          padding-right: $medium-pad-palm;
-        }
-
-        &-large {
-          padding-left: $large-pad-palm;
-          padding-right: $large-pad-palm;
-        }
-
-        &-xlarge {
-          padding-left: $xlarge-pad-palm;
-          padding-right: $xlarge-pad-palm;
-        }
-      }
+  @include media-query(palm) {
+    &--pad-small {
+      padding: $small-pad-palm;
     }
 
-    &-vertical {
-      &-none {
-        padding-top: 0px;
-        padding-bottom: 0px;
-      }
+    &--pad-medium {
+      padding: $medium-pad-palm;
+    }
 
-      @include media-query(lap-and-up) {
-        &-small {
-          padding-top: $small-pad-lap;
-          padding-bottom: $small-pad-lap;
-        }
+    &--pad-large {
+      padding: $large-pad-palm;
+    }
 
-        &-medium {
-          padding-top: $medium-pad-lap;
-          padding-bottom: $medium-pad-lap;
-        }
+    &--pad-xlarge {
+      padding: $xlarge-pad-palm;
+    }
+  }
 
-        &-large {
-          padding-top: $large-pad-lap;
-          padding-bottom: $large-pad-lap;
-        }
+  &--pad-horizontal-none {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 
-        &-xlarge {
-          padding-top: $xlarge-pad-lap;
-          padding-bottom: $xlarge-pad-lap;
-        }
-      }
+  @include media-query(lap-and-up) {
+    &--pad-horizontal-small {
+      padding-left: $small-pad-lap;
+      padding-right: $small-pad-lap;
+    }
 
-      @include media-query(palm) {
-        &-small {
-          padding-top: $small-pad-palm;
-          padding-bottom: $small-pad-palm;
-        }
+    &--pad-horizontal-medium {
+      padding-left: $medium-pad-lap;
+      padding-right: $medium-pad-lap;
+    }
 
-        &-medium {
-          padding-top: $medium-pad-palm;
-          padding-bottom: $medium-pad-palm;
-        }
+    &--pad-horizontal-large {
+      padding-left: $large-pad-lap;
+      padding-right: $large-pad-lap;
+    }
 
-        &-large {
-          padding-top: $large-pad-palm;
-          padding-bottom: $large-pad-palm;
-        }
+    &--pad-horizontal-xlarge {
+      padding-left: $xlarge-pad-lap;
+      padding-right: $xlarge-pad-lap;
+    }
+  }
 
-        &-xlarge {
-          padding-top: $xlarge-pad-palm;
-          padding-bottom: $xlarge-pad-palm;
-        }
-      }
+  @include media-query(palm) {
+    &--pad-horizontal-small {
+      padding-left: $small-pad-palm;
+      padding-right: $small-pad-palm;
+    }
+
+    &--pad-horizontal-medium {
+      padding-left: $medium-pad-palm;
+      padding-right: $medium-pad-palm;
+    }
+
+    &--pad-horizontal-large {
+      padding-left: $large-pad-palm;
+      padding-right: $large-pad-palm;
+    }
+
+    &--pad-horizontal-xlarge {
+      padding-left: $xlarge-pad-palm;
+      padding-right: $xlarge-pad-palm;
+    }
+  }
+
+  &--pad-vertical-none {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  @include media-query(lap-and-up) {
+    &--pad-vertical-small {
+      padding-top: $small-pad-lap;
+      padding-bottom: $small-pad-lap;
+    }
+
+    &--pad-vertical-medium {
+      padding-top: $medium-pad-lap;
+      padding-bottom: $medium-pad-lap;
+    }
+
+    &--pad-vertical-large {
+      padding-top: $large-pad-lap;
+      padding-bottom: $large-pad-lap;
+    }
+
+    &--pad-vertical-xlarge {
+      padding-top: $xlarge-pad-lap;
+      padding-bottom: $xlarge-pad-lap;
+    }
+  }
+
+  @include media-query(palm) {
+    &--pad-vertical-small {
+      padding-top: $small-pad-palm;
+      padding-bottom: $small-pad-palm;
+    }
+
+    &--pad-vertical-medium {
+      padding-top: $medium-pad-palm;
+      padding-bottom: $medium-pad-palm;
+    }
+
+    &--pad-vertical-large {
+      padding-top: $large-pad-palm;
+      padding-bottom: $large-pad-palm;
+    }
+
+    &--pad-vertical-xlarge {
+      padding-top: $xlarge-pad-palm;
+      padding-bottom: $xlarge-pad-palm;
     }
   }
 }

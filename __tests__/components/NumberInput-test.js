@@ -12,7 +12,7 @@ jest.mock('react-dom');
 describe('NumberInput', () => {
   it('has correct default options', () => {
     const component = renderer.create(
-       <NumberInput id="item2" name="item2" label="Item 2" value={10} />
+       <NumberInput id="item2" name="item2" value={10} />
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

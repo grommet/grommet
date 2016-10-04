@@ -8,7 +8,7 @@ import Label from '../../src/js/components/Label';
 describe('Label', () => {
   it('has correct default options', () => {
     const component = renderer.create(
-      <Label>Testing</Label>
+      <Label data-flavor="coconut">Testing</Label>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

@@ -253,12 +253,6 @@
     }
   }
 
-  // &.#{$grommet-namespace}box--direction-column {
-  //   a:not(.#{$grommet-namespace}button) {
-  //     margin-bottom: quarter($inuit-base-spacing-unit);
-  //   }
-  // }
-
   &.#{$grommet-namespace}menu--small {
     @include inuit-font-size($small-menu-font-size, inherit);
   }
@@ -381,9 +375,9 @@
         margin-bottom: halve($inuit-base-spacing-unit);
       }
 
-      .#{$grommet-namespace}menu {
-        margin-bottom: round($inuit-base-spacing-unit * 1.5);
-      }
+      // .#{$grommet-namespace}menu {
+      //   margin-bottom: round($inuit-base-spacing-unit * 1.5);
+      // }
     }
   }
 }

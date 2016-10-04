@@ -2,6 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import moment from 'moment';
+import classnames from 'classnames';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
 import { findAncestor, isDescendant } from '../utils/DOM';
@@ -10,10 +11,11 @@ import ClockIcon from './icons/base/Clock';
 import CalendarIcon from './icons/base/Calendar';
 import DateTimeDrop from './DateTimeDrop';
 import CSSClassnames from '../utils/CSSClassnames';
+import Intl from '../utils/Intl';
 
 const CLASS_ROOT = CSSClassnames.DATE_TIME;
+const INPUT = CSSClassnames.INPUT;
 const FORM_FIELD = CSSClassnames.FORM_FIELD;
-const DATE_TIME_DROP = CSSClassnames.DATE_TIME_DROP;
 const FORMATS = {
   M: 'months',
   D: 'days',
@@ -35,7 +37,6 @@ export default class DateTime extends Component {
     this._onForceClose = this._onForceClose.bind(this);
     this._onControlClick = this._onControlClick.bind(this);
     this._onClose = this._onClose.bind(this);
-    this._onCloseDrop = this._onCloseDrop.bind(this);
     this._onNext = this._onNext.bind(this);
     this._onPrevious = this._onPrevious.bind(this);
     this._cursorScope = this._cursorScope.bind(this);
@@ -55,17 +56,18 @@ export default class DateTime extends Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
+    const { cursor, dropActive } = this.state;
     // Set up keyboard listeners appropriate to the current state.
-    if (prevState.dropActive !== this.state.dropActive) {
-      this._activation(this.state.dropActive);
+    if (prevState.dropActive !== dropActive) {
+      this._activation(dropActive);
     }
 
-    if (this.state.dropActive) {
+    if (dropActive) {
       this._drop.render(this._renderDrop());
     }
 
-    if (this.state.cursor >= 0) {
-      this.inputRef.setSelectionRange(this.state.cursor,this.state.cursor);
+    if (cursor >= 0) {
+      this.inputRef.setSelectionRange(cursor, cursor);
     }
   }
 
@@ -94,30 +96,36 @@ export default class DateTime extends Component {
   }
 
   _onInputChange (event) {
-    const { format, onChange } = this.props;
-    const value = event.target.value;
-    if (value.length > 0) {
-      const date = moment(value, format);
+    const { format, onChange, value } = this.props;
+    const currentValue = event.target.value;
+    if (currentValue.length > 0) {
+      const date = moment(currentValue, format);
       // Only notify if the value looks valid
       if (date.isValid() && ! date.parsingFlags().charsLeftOver) {
         if (onChange) {
-          onChange(value);
+          onChange(currentValue);
         }
-      } else if (typeof this.props.value === 'string' &&
-        value.length < this.props.value.length) {
+      } else if (typeof value === 'string' &&
+        currentValue.length < value.length) {
         // or if the user is removing characters
         if (onChange) {
-          onChange(value);
+          onChange(currentValue);
         }
       }
     } else if (onChange) {
-      onChange(value);
+      onChange(currentValue);
     }
   }
 
-  _notify (date) {
-    if (this.props.onChange) {
-      this.props.onChange(date);
+  _notify (date, day) {
+    const { format, onChange } = this.props;
+    if (onChange) {
+      onChange(date);
+      if (day && !TIME_REGEXP.test(format)) {
+        // check to close the drop only if the user selected a day
+        // and the format of the date does not include time
+        this.setState({dropActive: false, cursor: -1});
+      }
     }
   }
 
@@ -125,67 +133,66 @@ export default class DateTime extends Component {
     event.preventDefault();
     event.stopPropagation();
     if (this.state.dropActive) {
-      this.setState({dropActive: false, cursor: -1});
+      this.setState({ dropActive: false, cursor: -1 });
     } else {
-      this.setState({dropActive: true});
+      this.setState({ dropActive: true });
     }
   }
 
   _onForceClose () {
-    this.setState({dropActive: false, cursor: -1});
+    this.setState({ dropActive: false, cursor: -1 });
   }
 
   _onOpen (event) {
     event.preventDefault();
-    this.setState({dropActive: true});
+    this.setState({ dropActive: true });
   }
 
   _onClose (event) {
-    const drop = document.getElementById(DATE_TIME_DROP);
-    const isCalendarOnly = !TIME_REGEXP.test(this.props.format);
     if (! isDescendant(this.containerRef, event.target) &&
-      ! isDescendant(drop, event.target) || isCalendarOnly) {
-      this.setState({dropActive: false, cursor: -1});
-    }
-  }
-
-  _onCloseDrop (event) {
-    const drop = document.getElementById(DATE_TIME_DROP);
-    if (! isDescendant(drop, event.target)) {
-      this.setState({dropActive: false, cursor: -1});
+      ! isDescendant(this._drop.container, event.target)) {
+      this.setState({ dropActive: false, cursor: -1 });
     }
   }
 
   _onNext (event) {
-    event.preventDefault();
-    let date = this.state.current.clone();
-    const scope = this._cursorScope();
-    if ('a' === scope) {
-      if (date.hours() < 12) {
-        date.add(12, 'hours');
+    if (this.inputRef === document.activeElement) {
+      const { step } = this.props;
+      const { current } = this.state;
+      event.preventDefault();
+      let date = current.clone();
+      const scope = this._cursorScope();
+      if ('a' === scope) {
+        if (date.hours() < 12) {
+          date.add(12, 'hours');
+        }
+      } else if ('m' === scope) {
+        date.add(step, FORMATS[scope]);
+      } else {
+        date.add(1, FORMATS[scope]);
       }
-    } else if ('m' === scope) {
-      date.add(this.props.step, FORMATS[scope]);
-    } else {
-      date.add(1, FORMATS[scope]);
+      this.setState({ current: date }, this._notify(date));
     }
-    this.setState({ current: date }, this._notify(date));
   }
 
   _onPrevious (event) {
-    event.preventDefault();
-    let date = this.state.current.clone();
-    const scope = this._cursorScope();
-    if ('a' === scope) {
-      if (date.hours() >= 12) {
-        date.subtract(12, 'hours');
+    if (this.inputRef === document.activeElement) {
+      const { step } = this.props;
+      const { current } = this.state;
+      event.preventDefault();
+      let date = current.clone();
+      const scope = this._cursorScope();
+      if ('a' === scope) {
+        if (date.hours() >= 12) {
+          date.subtract(12, 'hours');
+        }
+      } else if ('m' === scope) {
+        date.subtract(step, FORMATS[scope]);
+      } else {
+        date.subtract(1, FORMATS[scope]);
       }
-    } else if ('m' === scope) {
-      date.subtract(this.props.step, FORMATS[scope]);
-    } else {
-      date.subtract(1, FORMATS[scope]);
+      this.setState({ current: date }, this._notify(date));
     }
-    this.setState({ current: date }, this._notify(date));
   }
 
   _cursorScope () {
@@ -209,8 +216,6 @@ export default class DateTime extends Component {
   _activation (dropActive) {
     var listeners = {
       esc: this._onForceClose,
-      tab: this._onCloseDrop,
-      enter: this._onSelectDate,
       up: this._onPrevious,
       down: this._onNext
     };
@@ -225,7 +230,11 @@ export default class DateTime extends Component {
         findAncestor(this.containerRef, `.${FORM_FIELD}`) ||
         this.containerRef;
       this._drop = Drop.add(control,
-        this._renderDrop(), { align: {top: 'bottom', left: 'left'} });
+        this._renderDrop(), {
+          align: {top: 'bottom', left: 'left'},
+          focusControl: true,
+          context: this.context
+        });
 
     } else {
 
@@ -234,48 +243,68 @@ export default class DateTime extends Component {
 
       if (this._drop) {
         this._drop.remove();
-        this._drop = null;
+        this._drop = undefined;
       }
     }
   }
 
   _renderDrop () {
+    const { format, step } = this.props;
+    const { current } = this.state;
     return (
-      <DateTimeDrop format={this.props.format} value={this.state.current}
-        step={this.props.step} onChange={this._notify} />
+      <DateTimeDrop format={format} value={current}
+        step={step} onChange={this._notify} />
     );
   }
 
   render () {
-    const { className, format, id, name } = this.props;
+    const { className, format, value, ...props } = this.props;
+    delete props.onChange;
+    delete props.step;
     const { dropActive } = this.state;
-    let { value } = this.props;
-    let classes = [CLASS_ROOT];
-    if (dropActive) {
-      classes.push(`${CLASS_ROOT}--active`);
-    }
-    if (className) {
-      classes.push(className);
-    }
+    const { intl } = this.context;
+    let classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--active`]: dropActive
+      },
+      className
+    );
+
+    let inputValue = value;
     if (value instanceof Date) {
-      value = moment(value).format(format);
+      inputValue = moment(value).format(format);
     } else if (value && typeof value === 'object') {
-      value = value.format(format);
+      inputValue = value.format(format);
     }
     const Icon = (TIME_REGEXP.test(format) ? ClockIcon : CalendarIcon);
 
+    const dateTimeIconMessage = Intl.getMessage(
+      intl, 'Date Time Icon'
+    );
+
     return (
-      <div ref={(ref) => this.containerRef = ref} className={classes.join(' ')}>
-        <input ref={(ref) => this.inputRef = ref} placeholder={format}
-          className={`${CLASS_ROOT}__input`} id={id} name={name}
-          value={value || ''} onChange={this._onInputChange} />
+      <div ref={(ref) => this.containerRef = ref} className={classes}>
+        <input ref={(ref) => this.inputRef = ref} {...props}
+          className={`${INPUT} ${CLASS_ROOT}__input`} placeholder={format}
+          value={inputValue || ''} onChange={this._onInputChange} />
         <Button className={`${CLASS_ROOT}__control`} icon={<Icon />}
+          a11yTitle={dateTimeIconMessage}
           onClick={this._onControlClick} />
       </div>
     );
   }
 
 }
+
+DateTime.contextTypes = {
+  intl: PropTypes.object
+};
+
+DateTime.defaultProps = {
+  format: 'M/D/YYYY h:mm a',
+  step: 1
+};
 
 DateTime.propTypes = {
   format: PropTypes.string,
@@ -284,9 +313,4 @@ DateTime.propTypes = {
   onChange: PropTypes.func,
   step: PropTypes.number,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
-};
-
-DateTime.defaultProps = {
-  format: 'M/D/YYYY h:mm a',
-  step: 1
 };

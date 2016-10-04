@@ -8,17 +8,28 @@ import CSSClassnames from '../utils/CSSClassnames';
 const CLASS_ROOT = CSSClassnames.BUTTON;
 
 export default class Button extends Component {
+  constructor () {
+    super();
+    this.state = {
+      mouseActive: false,
+      focus: false
+    };
+  }
+
   render () {
-    const plain = (this.props.plain !== undefined ? this.props.plain :
-      (this.props.icon && ! this.props.label));
+    const {
+      a11yTitle, accent, align, children, className, fill, href, icon, id,
+      label, onClick, plain, primary, secondary, type, ...props
+    } = this.props;
 
-    let icon;
-    if (this.props.icon) {
-      icon = <span className={`${CLASS_ROOT}__icon`}>{this.props.icon}</span>;
-    }
+    const buttonPlain = (plain !== undefined ? plain : (icon && ! label));
 
-    let hasIcon = icon !== undefined;
-    let children = React.Children.map(this.props.children, child => {
+    let buttonIcon;
+    if (icon) buttonIcon =
+      <span className={`${CLASS_ROOT}__icon`}>{icon}</span>;
+
+    let hasIcon = buttonIcon !== undefined;
+    let buttonChildren = React.Children.map(children, child => {
       if (child && child.type && child.type.icon) {
         hasIcon = true;
         child = <span className={`${CLASS_ROOT}__icon`}>{child}</span>;
@@ -26,37 +37,48 @@ export default class Button extends Component {
       return child;
     });
 
-    let classes = classnames(
+    const classes = classnames(
       CLASS_ROOT,
-      this.props.className,
       {
-        [`${CLASS_ROOT}--primary`]: this.props.primary,
-        [`${CLASS_ROOT}--secondary`]: this.props.secondary,
-        [`${CLASS_ROOT}--accent`]: this.props.accent,
-        [`${CLASS_ROOT}--disabled`]: !this.props.onClick && !this.props.href,
-        [`${CLASS_ROOT}--fill`]: this.props.fill,
-        [`${CLASS_ROOT}--plain`]: plain,
-        [`${CLASS_ROOT}--icon`]: this.props.icon || hasIcon,
-        [`${CLASS_ROOT}--align-${this.props.align}`]: this.props.align
-      }
+        [`${CLASS_ROOT}--focus`]: this.state.focus,
+        [`${CLASS_ROOT}--primary`]: primary,
+        [`${CLASS_ROOT}--secondary`]: secondary,
+        [`${CLASS_ROOT}--accent`]: accent,
+        [`${CLASS_ROOT}--disabled`]: !onClick && !href,
+        [`${CLASS_ROOT}--fill`]: fill,
+        [`${CLASS_ROOT}--plain`]: buttonPlain,
+        [`${CLASS_ROOT}--icon`]: icon || hasIcon,
+        [`${CLASS_ROOT}--align-${align}`]: align
+      },
+      className
     );
 
-    if (!children) {
-      children = this.props.label;
+    if (!buttonChildren) {
+      buttonChildren = label;
     }
 
-    let Tag = this.props.href ? 'a' : 'button';
-    let type;
-    if (!this.props.href) {
-      type = this.props.type;
+    const Tag = href ? 'a' : 'button';
+    let buttonType;
+    if (!href) {
+      buttonType = type;
     }
+
     return (
-      <Tag href={this.props.href} id={this.props.id} type={type}
-        className={classes} aria-label={this.props.a11yTitle}
-        onClick={this.props.onClick}
-        disabled={!this.props.onClick && !this.props.href}>
-        {icon}
-        {children}
+      <Tag href={href} id={id} type={buttonType}
+        className={classes} aria-label={a11yTitle}
+        onClick={onClick}
+        disabled={!onClick && !href}
+        onMouseDown={() => this.setState({ mouseActive: true })}
+        onMouseUp={() => this.setState({ mouseActive: false })}
+        onFocus={() => {
+          if (this.state.mouseActive === false) {
+            this.setState({ focus: true });
+          }
+        }}
+        onBlur={() => this.setState({ focus: false })}
+        {...props}>
+        {buttonIcon}
+        {buttonChildren}
       </Tag>
     );
   }
@@ -67,6 +89,7 @@ Button.propTypes = {
   accent: PropTypes.bool,
   align: PropTypes.oneOf(['start', 'center', 'end']),
   fill: PropTypes.bool,
+  href: PropTypes.string,
   icon: PropTypes.element,
   id: PropTypes.string,
   label: PropTypes.node,

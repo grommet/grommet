@@ -1,9 +1,14 @@
 exports[`LoginForm has correct default options 1`] = `
 <form
-  className="grommetux-form grommetux-login-form grommetux-form--pad-none"
+  className="grommetux-form grommetux-form--pad-medium grommetux-login-form"
   onSubmit={[Function bound _onSubmit]}>
   <div
-    className="grommetux-login-form__header" />
+    className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined} />
   <fieldset>
     <div
       className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
@@ -11,8 +16,7 @@ exports[`LoginForm has correct default options 1`] = `
       <label
         className="grommetux-form-field__label"
         htmlFor="username">
-        <span
-          id="Email">
+        <span>
           Email
         </span>
       </label>
@@ -30,8 +34,7 @@ exports[`LoginForm has correct default options 1`] = `
       <label
         className="grommetux-form-field__label"
         htmlFor="password">
-        <span
-          id="Password">
+        <span>
           Password
         </span>
       </label>
@@ -45,7 +48,7 @@ exports[`LoginForm has correct default options 1`] = `
     </div>
   </fieldset>
   <footer
-    className="grommetux-box grommetux-box--direction-column grommetux-box--pad-vertical-medium grommetux-box--pad-between-medium grommetux-footer grommetux-footer--small"
+    className="grommetux-box grommetux-box--direction-column grommetux-box--align-stretch grommetux-box--pad-vertical-none grommetux-box--pad-between-medium grommetux-footer grommetux-footer--small"
     id={undefined}
     onClick={undefined}
     role={undefined}
@@ -53,14 +56,17 @@ exports[`LoginForm has correct default options 1`] = `
     tabIndex={undefined}>
     <button
       aria-label={undefined}
-      className="grommetux-button grommetux-login-form__submit grommetux-button--primary"
+      className="grommetux-button grommetux-button--primary grommetux-button--fill"
       disabled={false}
       href={undefined}
       id={undefined}
+      onBlur={[Function onBlur]}
       onClick={[Function bound _onSubmit]}
+      onFocus={[Function onFocus]}
+      onMouseDown={[Function onMouseDown]}
+      onMouseUp={[Function onMouseUp]}
       type="submit">
-      <span
-        id="Log_In">
+      <span>
         Log In
       </span>
     </button>

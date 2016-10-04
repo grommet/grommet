@@ -55,18 +55,20 @@ export default class Hero extends Component {
   }
 
   render () {
-    const { backgroundImage, backgroundVideo, children, className, flush, image,
-     justify, responsiveBackgroundPosition, separator, size } = this.props;
+    const {
+      backgroundImage, backgroundVideo, children, className, flush, image,
+      justify, responsiveBackgroundPosition, separator, size, ...props
+    } = this.props;
 
     let classes = classnames(
       CLASS_ROOT,
-      className,
       {
         [`${CLASS_ROOT}--${size}`]: size,
         [`${CLASS_ROOT}--bg-${responsiveBackgroundPosition}`]:
           responsiveBackgroundPosition,
         [`${CLASS_ROOT}--mobile-separator`]: separator
-      }
+      },
+      className
     );
 
     let full = flush ? 'horizontal' : false;
@@ -122,7 +124,7 @@ export default class Hero extends Component {
     }
 
     return (
-      <Box className={classes} colorIndex={this.state.colorIndex}>
+      <Box {...props} className={classes} colorIndex={this.state.colorIndex}>
         {backgroundMarkup}
         {contentMarkup}
       </Box>

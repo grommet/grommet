@@ -56,7 +56,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
 
 .#{$grommet-namespace}form-field__label {
   display: block;
-  @include inuit-font-size($label-font-size, $inuit-base-spacing-unit);
+  @include inuit-font-size($content-small-font-size, $inuit-base-spacing-unit);
   color: $secondary-text-color;
 
   #{$dark-background-context} & {
@@ -91,6 +91,8 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > .#{$grommet-namespace}search-input input,
   > .#{$grommet-namespace}calendar input,
   > .#{$grommet-namespace}date-time input,
+  > .#{$grommet-namespace}text-input,
+  > .#{$grommet-namespace}select input,
   > textarea {
     @include form-field-content();
   }
@@ -98,7 +100,8 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
 
   > .#{$grommet-namespace}search-input input,
   > .#{$grommet-namespace}calendar input,
-  > .#{$grommet-namespace}date-time input {
+  > .#{$grommet-namespace}date-time input,
+  > .#{$grommet-namespace}select input {
     // align left padding with other form inputs
     padding-left: $inuit-base-spacing-unit;
   }
@@ -126,7 +129,9 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > select,
   > .#{$grommet-namespace}search-input input,
   > .#{$grommet-namespace}calendar input,
-  > .#{$grommet-namespace}date-time input {
+  > .#{$grommet-namespace}date-time input,
+  > .#{$grommet-namespace}text-input,
+  > .#{$grommet-namespace}select input {
     height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
     // for IE 11.
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -314,7 +319,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
 
 .#{$grommet-namespace}form-field__help {
   display: block;
-  @include inuit-font-size($label-font-size - 1);
+  @include inuit-font-size($content-small-font-size);
   color: $secondary-text-color;
 
   #{$dark-background-context} & {

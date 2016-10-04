@@ -20,4 +20,25 @@ describe('Columns', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('renders correct className', () => {
+    const component = renderer.create(
+      <Columns className="test">
+        <span>test1</span>
+        <span>test2</span>
+      </Columns>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders microdata properties', () => {
+    const component = renderer.create(
+      <Columns itemScope={true} itemType="http://schema.org/Article"
+        itemProp="test">
+        <span>test1</span>
+        <span>test2</span>
+      </Columns>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

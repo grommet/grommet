@@ -26,13 +26,20 @@ $sun-burst-xlarge-slice-width: round($inuit-base-spacing-unit * 3);
 }
 
 .#{$grommet-namespace}sun-burst {
+  position: relative;
+  height: $size-medium;
   width: $size-medium;
   max-width: 100%;
-  @include animation('fade-in 2.5s');
 }
 
-.#{$grommet-namespace}sun-burst__container {
-  position: relative;
+.#{$grommet-namespace}sun-burst__graphic {
+  @include animation('fade-in 2.5s');
+  outline: none;
+}
+
+.#{$grommet-namespace}sun-burst__graphic--focus {
+  border-color: $focus-border-color;
+  box-shadow: 0 0 1px 1px $focus-border-color;
 }
 
 .#{$grommet-namespace}sun-burst__label {
@@ -56,6 +63,7 @@ $sun-burst-xlarge-slice-width: round($inuit-base-spacing-unit * 3);
 
 .#{$grommet-namespace}sun-burst__slice--hot {
   cursor: pointer;
+  outline: none;
 }
 
 .#{$grommet-namespace}sun-burst--active {
@@ -69,14 +77,17 @@ $sun-burst-xlarge-slice-width: round($inuit-base-spacing-unit * 3);
 }
 
 .#{$grommet-namespace}sun-burst--small {
+  height: $size-small;
   width: $size-small;
 }
 
 .#{$grommet-namespace}sun-burst--large {
+  height: $size-large;
   width: $size-large;
 }
 
 .#{$grommet-namespace}sun-burst--xlarge {
+  height: $size-xlarge;
   width: $size-xlarge;
 }
 

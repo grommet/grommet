@@ -19,4 +19,23 @@ describe('FormField', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('renders a class name', () => {
+    const component = renderer.create(
+      <FormField label="Item 1" htmlFor="item1" className="test">
+        <input id="item1" type="text" />
+      </FormField>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('renders microdata properties', () => {
+    const component = renderer.create(
+      <FormField label="Item 1" htmlFor="item1" itemScope={true} 
+        itemType="http://schema.org/Article" itemProp="test">
+        <input id="item1" type="text" />
+      </FormField>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

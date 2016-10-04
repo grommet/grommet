@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.FORM_FIELD;
@@ -54,58 +55,46 @@ export default class FormField extends Component {
   }
 
   render () {
-    let classes = [CLASS_ROOT];
-    if (this.state.focus) {
-      classes.push(CLASS_ROOT + "--focus");
-    }
-    if (this.props.required) {
-      classes.push(CLASS_ROOT + "--required");
-    }
-    if (this.props.hidden) {
-      classes.push(CLASS_ROOT + "--hidden");
-    }
-    if (this.props.htmlFor) {
-      classes.push(CLASS_ROOT + "--text");
-    }
-    if (this.props.size) {
-      classes.push(CLASS_ROOT + "--size-" + this.props.size);
-    }
-    if (this.props.strong) {
-      classes.push(`${CLASS_ROOT}--strong`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const { 
+      children, className, help, hidden, htmlFor, label, size, strong, error, 
+      ...props
+    } = this.props;
 
-    let error;
-    if (this.props.error) {
-      classes.push(CLASS_ROOT + "--error");
-      error = (
-        <span className={CLASS_ROOT + "__error"}>{this.props.error}</span>
-      );
-    }
-    let help;
-    if (this.props.help !== null && this.props.help !== undefined) {
-      help = <span className={CLASS_ROOT + "__help"}>{this.props.help}</span>;
-    }
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--focus`]: this.state.focus,
+        [`${CLASS_ROOT}--hidden`]: hidden,
+        [`${CLASS_ROOT}--text`]: htmlFor,
+        [`${CLASS_ROOT}--size-${size}`]: size,
+        [`${CLASS_ROOT}--strong`]: strong,
+        [`${CLASS_ROOT}--error`]: error
+      },
+      className
+    );
 
-    let labelNode;
-    if (this.props.label) {
-      labelNode = (
-        <label className={CLASS_ROOT + "__label"} htmlFor={this.props.htmlFor}>
-          {this.props.label}
+    const fieldError = (error)
+      ? <span className={CLASS_ROOT + "__error"}>{error}</span>
+      : undefined;
+
+    const fieldHelp = (help !== null && help !== undefined)
+      ? <span className={CLASS_ROOT + "__help"}>{this.props.help}</span>
+      : undefined;
+
+    const labelNode = (label)
+      ? <label className={CLASS_ROOT + "__label"} htmlFor={htmlFor}>
+          {label}
         </label>
-      );
-    }
+      : undefined;
 
     return (
-      <div className={classes.join(' ')} onClick={this._onClick}>
-        {error}
+      <div className={classes} {...props} onClick={this._onClick}>
+        {fieldError}
         {labelNode}
-        {help}
+        {fieldHelp}
         <span ref={ref => this.contentsRef = ref}
           className={CLASS_ROOT + "__contents"}>
-          {this.props.children}
+          {children}
         </span>
       </div>
     );
@@ -119,7 +108,6 @@ FormField.propTypes = {
   hidden: PropTypes.bool,
   htmlFor: PropTypes.string,
   label: PropTypes.node,
-  required: PropTypes.bool,
   size: PropTypes.oneOf(['medium', 'large']),
   strong: PropTypes.bool
 };

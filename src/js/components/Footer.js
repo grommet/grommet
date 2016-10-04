@@ -55,48 +55,52 @@ export default class Footer extends Component {
   }
 
   render () {
-    let classes = classnames(
+    const { 
+      children, className, colorIndex, fixed, float, primary, size
+    } = this.props;
+    const restProps = Props.omit(this.props, Object.keys(Footer.propTypes));
+    const classes = classnames(
       CLASS_ROOT,
-      this.props.className,
       {
-        [`${CLASS_ROOT}--${this.props.size}`]: (
-          this.props.size && typeof this.props.size === 'string'),
-        [`${CLASS_ROOT}--float`]: this.props.float
-      }
+        [`${CLASS_ROOT}--${size}`]: (
+          size && typeof size === 'string'),
+        [`${CLASS_ROOT}--float`]: float
+      },
+      className
     );
 
-    let containerClasses = classnames(
+    const containerClasses = classnames(
       `${CLASS_ROOT}__container`,
       {
-        [`${CLASS_ROOT}__container--float`]: this.props.float,
-        [`${CLASS_ROOT}__container--fixed`]: this.props.fixed,
+        [`${CLASS_ROOT}__container--float`]: float,
+        [`${CLASS_ROOT}__container--fixed`]: fixed,
         [`${CLASS_ROOT}__container--fill`]: (
           // add default color index if none is provided
-          this.props.fixed && !this.props.colorIndex
+          fixed && !colorIndex
         )
       }
     );
 
-    let wrapperClasses = classnames(
+    const wrapperClasses = classnames(
       `${CLASS_ROOT}__wrapper`,
       {
-        [`${CLASS_ROOT}__wrapper--${this.props.size}`]: (
-          this.props.size && typeof this.props.size === 'string')
+        [`${CLASS_ROOT}__wrapper--${size}`]: (
+          size && typeof size === 'string')
       }
     );
 
     let footerSkipLink;
-    if (this.props.primary) {
+    if (primary) {
       footerSkipLink = <SkipLinkAnchor label="Footer" />;
     }
 
-    let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
     // don't transfer size to Box since it means something different
     delete boxProps.size;
 
-    if (this.props.fixed) {
+    if (fixed) {
       return (
-        <div className={containerClasses}>
+        <div className={containerClasses} {...restProps}>
           <div ref={ref => this.mirrorRef = ref}
             className={`${CLASS_ROOT}__mirror`} />
           <div className={wrapperClasses}>
@@ -104,18 +108,18 @@ export default class Footer extends Component {
               {...boxProps} tag="footer" className={classes}
               primary={false}>
               {footerSkipLink}
-              {this.props.children}
+              {children}
             </Box>
           </div>
         </div>
       );
     } else {
       return (
-        <Box {...boxProps} tag="footer" className={classes}
+        <Box {...restProps} {...boxProps} tag="footer" className={classes}
           containerClassName={containerClasses}
           primary={false}>
           {footerSkipLink}
-          {this.props.children}
+          {children}
         </Box>
       );
     }
@@ -125,8 +129,8 @@ export default class Footer extends Component {
 Footer.propTypes = {
   fixed: PropTypes.bool,
   float: PropTypes.bool,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
   primary: PropTypes.bool,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   ...Box.propTypes
 };
 

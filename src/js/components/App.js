@@ -45,20 +45,20 @@ export default class App extends Component {
   }
 
   render() {
-    const { centered, children, className, inline } = this.props;
+    const { centered, children, className, inline, ...props } = this.props;
     const { lang } = this.state;
 
     const classes = classnames(
       'grommet',
-      className,
       CLASS_ROOT, {
         [`${CLASS_ROOT}--centered`]: centered,
         [`${CLASS_ROOT}--inline`]: inline
-      }
+      },
+      className
     );
 
     return (
-      <div lang={lang} className={classes}>
+      <div lang={lang} className={classes} {...props}>
         {children}
         <SkipLinks />
         <div className={`${CLASS_ROOT}__announcer`} aria-live='polite' />
@@ -67,10 +67,11 @@ export default class App extends Component {
   }
 }
 
-App.defaultProps = {
-  centered: true
+App.propTypes = {
+  centered: PropTypes.bool,
+  inline: PropTypes.bool
 };
 
-App.propTypes = {
-  centered: PropTypes.bool
+App.defaultProps = {
+  centered: true
 };

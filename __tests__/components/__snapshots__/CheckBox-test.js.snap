@@ -6,7 +6,6 @@ exports[`CheckBox has correct checked=true rendering 1`] = `
     <input
       checked={true}
       className="grommetux-check-box__input"
-      defaultChecked={undefined}
       disabled={undefined}
       id="test"
       name={undefined}
@@ -40,7 +39,6 @@ exports[`CheckBox has correct className rendering 1`] = `
     <input
       checked={undefined}
       className="grommetux-check-box__input"
-      defaultChecked={undefined}
       disabled={undefined}
       id="test"
       name={undefined}
@@ -74,7 +72,6 @@ exports[`CheckBox has correct default options 1`] = `
     <input
       checked={undefined}
       className="grommetux-check-box__input"
-      defaultChecked={undefined}
       disabled={undefined}
       id="test"
       name={undefined}
@@ -108,7 +105,6 @@ exports[`CheckBox has correct disabled=true rendering 1`] = `
     <input
       checked={undefined}
       className="grommetux-check-box__input"
-      defaultChecked={undefined}
       disabled={true}
       id="test"
       name={undefined}
@@ -137,7 +133,7 @@ exports[`CheckBox has correct disabled=true rendering 1`] = `
 exports[`CheckBox has correct reverse=true rendering 1`] = `
 <label
   aria-label="Test CheckBox"
-  className="grommetux-check-box">
+  className="grommetux-check-box grommetux-check-box--reverse">
   <span
     className="grommetux-check-box__label">
     Test CheckBox
@@ -146,7 +142,6 @@ exports[`CheckBox has correct reverse=true rendering 1`] = `
     <input
       checked={undefined}
       className="grommetux-check-box__input"
-      defaultChecked={undefined}
       disabled={undefined}
       id="test"
       name={undefined}
@@ -176,7 +171,6 @@ exports[`CheckBox has correct toggle=true rendering 1`] = `
     <input
       checked={undefined}
       className="grommetux-check-box__input"
-      defaultChecked={undefined}
       disabled={undefined}
       id="test"
       name={undefined}

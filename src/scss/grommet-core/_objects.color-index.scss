@@ -12,6 +12,10 @@
   color: $active-colored-text-color;
 }
 
+#{$light-background-context} {
+  color: $text-color;
+}
+
 .#{$grommet-namespace}background-color-index-brand {
   background-color: $brand-color;
 

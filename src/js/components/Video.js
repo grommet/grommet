@@ -3,6 +3,7 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
+import Props from '../utils/Props';
 import VideoControls from './video/Controls';
 import VideoOverlay from './video/Overlay';
 import throttle from '../utils/Throttle';
@@ -175,8 +176,7 @@ export default class Video extends Component {
   _renderControls () {
     let extendedProps = Object.assign({
       title: this.props.title,
-      videoHeader: this.props.videoHeader,
-      togglePlay: this.props.onClick || this._togglePlay,
+      togglePlay: this._togglePlay,
       toggleMute: this._toggleMute,
       play: this._play,
       pause: this._pause,
@@ -200,8 +200,10 @@ export default class Video extends Component {
   }
 
   render () {
-    let { autoPlay, className, colorIndex, full, loop, muted, poster,
-      showControls, size } = this.props;
+    let {
+      autoPlay, className, colorIndex, full, loop, muted, poster,
+      showControls, size
+    } = this.props;
     let { ended, hasPlayed, interacting, playing} = this.state;
     let classes = classnames(
       CLASS_ROOT,
@@ -216,26 +218,13 @@ export default class Video extends Component {
       },
       className
     );
-
-    const deprecatedProps = [];
-    if (this.props.videoHeader)
-      deprecatedProps.push('videoHeader');
-    if (this.props.onClick)
-      deprecatedProps.push('onClick');
-    if (this.props.duration)
-      deprecatedProps.push('duration');
-    if (deprecatedProps.length > 0)
-      console.warn(`Video: ${deprecatedProps.join(', ')} ` +
-        'prop has been deprecated.');
+    const restProps = Props.omit(this.props, Object.keys(Video.propTypes));
 
     return (
       <div className={classes} onMouseMove={this._onMouseMove}>
-        <video ref={el => this._video = el}
-          poster={poster}
-          autoPlay={autoPlay ? 'autoplay' : false}
-          loop={loop ? 'loop' : false}
-          muted={muted}
-          {...this._mediaEventProps}>
+        <video ref={el => this._video = el} {...restProps}
+          poster={poster} autoPlay={autoPlay ? 'autoplay' : false}
+          loop={loop ? 'loop' : false} muted={muted} {...this._mediaEventProps}>
           {this.props.children}
         </video>
         {showControls ? this._renderControls() : undefined}
@@ -245,26 +234,23 @@ export default class Video extends Component {
 }
 
 Video.propTypes = {
+  allowFullScreen: PropTypes.bool,
+  autoPlay: PropTypes.bool,
   colorIndex: PropTypes.string,
-  duration: PropTypes.number, // remove in 1.0
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
+  loop: PropTypes.bool,
+  muted: PropTypes.bool,
   poster: PropTypes.string,
+  shareLink: PropTypes.string,
+  shareHeadline: PropTypes.string,
+  shareText: PropTypes.string,
+  showControls: PropTypes.bool,
   size: React.PropTypes.oneOf(['small', 'medium', 'large']),
   timeline: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     time: PropTypes.number
   })),
-  title: PropTypes.node,
-  videoHeader: PropTypes.node, // remove in 1.0
-  onClick: PropTypes.func, // remove in 1.0
-  allowFullScreen: PropTypes.bool,
-  autoPlay: PropTypes.bool,
-  shareLink: PropTypes.string,
-  shareHeadline: PropTypes.string,
-  shareText: PropTypes.string,
-  showControls: PropTypes.bool,
-  muted: PropTypes.bool,
-  loop: PropTypes.bool
+  title: PropTypes.node
 };
 
 Video.defaultProps = {
