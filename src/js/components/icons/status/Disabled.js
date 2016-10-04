@@ -1,38 +1,34 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import FormattedMessage from '../../FormattedMessage';
 import CSSClassnames from '../../../utils/CSSClassnames';
 
-const STATUS_ICON = CSSClassnames.STATUS_ICON;
+const CLASS_ROOT = CSSClassnames.STATUS_ICON;
 
 export default class Disabled extends Component {
   render() {
-    var className = `${STATUS_ICON} ${STATUS_ICON}-disabled`;
-    var a11yTitle = this.props.a11yTitle;
-    if (this.props.className) {
-      className += ' ' + this.props.className;
-    }
-    if (typeof this.props.a11yTitle === "undefined") {
-      // this.props.a11yTitle emplty string is an acceptable value.
-      // Only if undefined
-      // should use the default title value.
-      a11yTitle = 'Disabled';
-    }
-    var disabledTitleId = 'disabled-title';
+    const { a11yTitle, className, ...props } = this.props;
+    const classes = classnames(
+      CLASS_ROOT,
+      `${CLASS_ROOT}-disabled`,
+      className
+    );
+    const disabledTitleId = 'disabled-title';
     return (
-      <svg className={className} viewBox="0 0 24 24" role="img"
+      <svg {...props} className={classes} viewBox="0 0 24 24" role="img"
         aria-labelledby={disabledTitleId} version="1.1">
         <title id={disabledTitleId}>
           <FormattedMessage id={a11yTitle} defaultMessage={a11yTitle} />
         </title>
-        <g className={`${STATUS_ICON}__base`}>
+        <g className={`${CLASS_ROOT}__base`}>
           <path role="presentation" stroke="none"
             d={"M21,24 L3,24 C1.3,24 0,22.7 0,21 L0,3 C0,1.3 1.3,0 3,0 " +
               "L21,0 C22.7,0 24,1.3 24,3 L24,21 C24,22.7 22.7,24 21,24 " +
               "L21,24 Z"} />
         </g>
-        <g className={`${STATUS_ICON}__detail`} strokeWidth="2">
+        <g className={`${CLASS_ROOT}__detail`} strokeWidth="2">
           <path d="M6,12 L18,12" />
         </g>
       </svg>
@@ -42,4 +38,8 @@ export default class Disabled extends Component {
 
 Disabled.propTypes = {
   a11yTitle: PropTypes.string
+};
+
+Disabled.defaultProps = {
+  a11yTitle: 'Disabled'
 };
