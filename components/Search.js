@@ -44,6 +44,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require('react-dom');
+
 var _classnames4 = require('classnames');
 
 var _classnames5 = _interopRequireDefault(_classnames4);
@@ -84,8 +86,9 @@ var _Announcer = require('../utils/Announcer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.SEARCH; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.SEARCH;
 var INPUT = _CSSClassnames2.default.INPUT;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
@@ -126,11 +129,15 @@ var Search = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _props = this.props;
+      var initialFocus = _props.initialFocus;
       var inline = _props.inline;
       var responsive = _props.responsive;
 
       if (inline && responsive) {
         this._responsive = _Responsive2.default.start(this._onResponsive);
+      }
+      if (initialFocus) {
+        (0, _reactDom.findDOMNode)(this.inputRef).focus();
       }
     }
   }, {
@@ -230,6 +237,14 @@ var Search = function (_Component) {
       }
       if (this._drop) {
         this._drop.remove();
+      }
+    }
+  }, {
+    key: 'focus',
+    value: function focus() {
+      var input = this.inputRef;
+      if (input) {
+        (0, _reactDom.findDOMNode)(input).focus();
       }
     }
   }, {
@@ -566,6 +581,7 @@ Search.propTypes = {
   fill: _react.PropTypes.bool,
   iconAlign: _react.PropTypes.oneOf(['start', 'end']),
   id: _react.PropTypes.string,
+  initialFocus: _react.PropTypes.bool,
   inline: _react.PropTypes.bool,
   onDOMChange: _react.PropTypes.func,
   onSelect: _react.PropTypes.func,

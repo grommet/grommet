@@ -90,7 +90,6 @@ var Select = function (_Component) {
     _this._onPreviousOption = _this._onPreviousOption.bind(_this);
     _this._onEnter = _this._onEnter.bind(_this);
     _this._onClickOption = _this._onClickOption.bind(_this);
-    _this._onFocus = _this._onFocus.bind(_this);
 
     _this.state = {
       activeOptionIndex: -1,
@@ -114,15 +113,8 @@ var Select = function (_Component) {
         down: this._onNextOption,
         enter: this._onEnter
       };
-      var focusedKeyboardHandlers = {
-        down: this._onAddDrop
-      };
 
       // the order here is important, need to turn off keys before turning on
-
-      if (!this.state.focused && prevState.focused) {
-        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, focusedKeyboardHandlers);
-      }
 
       if (!this.state.dropActive && prevState.dropActive) {
         document.removeEventListener('click', this._onRemoveDrop);
@@ -131,10 +123,6 @@ var Select = function (_Component) {
           this._drop.remove();
           this._drop = null;
         }
-      }
-
-      if (this.state.focused && !prevState.focused) {
-        _KeyboardAccelerators2.default.startListeningToKeyboard(this, focusedKeyboardHandlers);
       }
 
       if (this.state.dropActive && !prevState.dropActive) {
@@ -171,17 +159,21 @@ var Select = function (_Component) {
   }, {
     key: '_onAddDrop',
     value: function _onAddDrop(event) {
+      var _props = this.props;
+      var options = _props.options;
+      var value = _props.value;
+
       event.preventDefault();
       // Get values of options, so we can highlight selected option
-      if (this.props.options) {
-        var optionValues = this.props.options.map(function (option) {
+      if (options) {
+        var optionValues = options.map(function (option) {
           if ((typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
             return option.value;
           } else {
             return option;
           }
         });
-        var activeOptionIndex = optionValues.indexOf(this.props.value);
+        var activeOptionIndex = optionValues.indexOf(value);
         this.setState({
           dropActive: true,
           activeOptionIndex: activeOptionIndex
@@ -210,9 +202,9 @@ var Select = function (_Component) {
   }, {
     key: '_onEnter',
     value: function _onEnter(event) {
-      var _props = this.props;
-      var onChange = _props.onChange;
-      var options = _props.options;
+      var _props2 = this.props;
+      var onChange = _props2.onChange;
+      var options = _props2.options;
       var activeOptionIndex = this.state.activeOptionIndex;
 
       this.setState({ dropActive: false });
@@ -234,17 +226,6 @@ var Select = function (_Component) {
       }
     }
   }, {
-    key: '_onFocus',
-    value: function _onFocus() {
-      var _this2 = this;
-
-      this.setState({ focused: true, activeOptionIndex: -1 });
-      // delay to wait out subsequent render after state change
-      setTimeout(function () {
-        return _this2.inputRef.select();
-      }, 10);
-    }
-  }, {
     key: '_renderLabel',
     value: function _renderLabel(option) {
       if ((typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
@@ -256,20 +237,21 @@ var Select = function (_Component) {
   }, {
     key: '_renderDrop',
     value: function _renderDrop() {
-      var _this3 = this;
+      var _this2 = this;
 
-      var _props2 = this.props;
-      var onSearch = _props2.onSearch;
-      var placeHolder = _props2.placeHolder;
-      var options = _props2.options;
+      var _props3 = this.props;
+      var onSearch = _props3.onSearch;
+      var placeHolder = _props3.placeHolder;
+      var options = _props3.options;
       var _state = this.state;
       var activeOptionIndex = _state.activeOptionIndex;
       var searchText = _state.searchText;
 
       var search = void 0;
       if (onSearch) {
-        search = _react2.default.createElement(_Search2.default, { inline: true, fill: true, responsive: false, pad: 'medium',
-          placeHolder: placeHolder, value: searchText,
+        search = _react2.default.createElement(_Search2.default, { className: CLASS_ROOT + '__search',
+          inline: true, fill: true, responsive: false, pad: 'medium',
+          placeHolder: placeHolder, initialFocus: true, value: searchText,
           onDOMChange: this._onSearchChange });
       }
 
@@ -283,8 +265,8 @@ var Select = function (_Component) {
             'li',
             { key: index,
               className: classes,
-              onClick: _this3._onClickOption.bind(_this3, option) },
-            _this3._renderLabel(option)
+              onClick: _this2._onClickOption.bind(_this2, option) },
+            _this2._renderLabel(option)
           );
         });
       }
@@ -304,11 +286,11 @@ var Select = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this4 = this;
+      var _this3 = this;
 
-      var _props3 = this.props;
-      var className = _props3.className;
-      var value = _props3.value;
+      var _props4 = this.props;
+      var className = _props4.className;
+      var value = _props4.value;
       var active = this.state.active;
 
       var classes = (0, _classnames4.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', active), className);
@@ -316,12 +298,11 @@ var Select = function (_Component) {
       return _react2.default.createElement(
         'div',
         { ref: function ref(_ref) {
-            return _this4.componentRef = _ref;
+            return _this3.componentRef = _ref;
           }, className: classes,
           onClick: this._onAddDrop },
         _react2.default.createElement('input', { className: INPUT + ' ' + CLASS_ROOT + '__input',
-          value: this._renderLabel(value), disabled: true,
-          onFocus: this._onFocus }),
+          value: this._renderLabel(value), disabled: true }),
         _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control', icon: _react2.default.createElement(_CaretDown2.default, null),
           onClick: this._onAddDrop })
       );
