@@ -11,6 +11,9 @@ var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var COLOR_REGEXP = /rgb\((\d+), (\d+), (\d+)\)|rgba\((\d+), (\d+), (\d+), (\d+)\)/;
+
 function hash(input) {
   var hash = 0,
       i,
@@ -24,8 +27,6 @@ function hash(input) {
   }
   return hash;
 };
-
-var COLOR_REGEXP = /rgb\((\d+), (\d+), (\d+)\)/;
 
 exports.default = {
   findScrollParents: function findScrollParents(element, horizontal) {
