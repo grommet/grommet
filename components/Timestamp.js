@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -99,7 +107,7 @@ var Timestamp = function (_Component) {
         date = dateObj.toLocaleDateString(locale, dateOptions);
       }
 
-      // Hours, Minutes, and Seconds. 
+      // Hours, Minutes, and Seconds.
       // Time only.
       var time = void 0;
       if (_showField('time', fields)) {
@@ -132,7 +140,7 @@ var Timestamp = function (_Component) {
       if (_showField('seconds', fields) && !_showField('time', fields)) {
         if (!_showField('hours', fields) || !_showField('minutes', fields)) {
           var _timeOptions4 = { second: '2-digit' };
-          // This avoids spacing issues when Seconds is used with 
+          // This avoids spacing issues when Seconds is used with
           // Hours or Minutes.
           seconds = Array.isArray(fields) ? ' ' + dateObj.toLocaleTimeString(locale, _timeOptions4) : dateObj.toLocaleTimeString(locale, _timeOptions4);
         }
@@ -152,8 +160,10 @@ var Timestamp = function (_Component) {
       var _props = this.props;
       var align = _props.align;
       var className = _props.className;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['align', 'className']);
 
-
+      delete props.fields;
+      delete props.value;
       var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--' + align, align), className);
 
       var date = this.state.date ? _react2.default.createElement(
@@ -173,7 +183,7 @@ var Timestamp = function (_Component) {
 
       return _react2.default.createElement(
         'span',
-        { className: classes },
+        (0, _extends3.default)({}, props, { className: classes }),
         date,
         ' ',
         time
