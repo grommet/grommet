@@ -98,7 +98,7 @@ export default {
   State: 'State',
   Status: 'Status',
   Subtract: 'Subtract',
-  SunBurstLabel: 'SunBurst: press arrow keys to interact with it',
+  SunBurst: 'SunBurst',
   'Tab Contents': '{activeTitle} Tab Contents',
   Tasks: 'Tasks',
   Time: 'Time',

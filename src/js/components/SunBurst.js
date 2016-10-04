@@ -6,6 +6,7 @@ import { baseUnit, translateEndAngle, arcCommands } from '../utils/Graphics';
 import CSSClassnames from '../utils/CSSClassnames';
 import Intl from '../utils/Intl';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import { announce } from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.SUN_BURST;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
@@ -26,8 +27,12 @@ export default class SunBurst extends Component {
     this._onSunBurstFocus = this._onSunBurstFocus.bind(this);
     this._onSunBurstBlur = this._onSunBurstBlur.bind(this);
     this._onSunBurstClick = this._onSunBurstClick.bind(this);
+    this._onActiveSunBurst = this._onActiveSunBurst.bind(this);
+    this._announceSunBurst = this._announceSunBurst.bind(this);
 
-    this.state = { height: 100, width: 100, activeSunBurst: [-1] };
+    this.state = {
+      height: 100, width: 100, activeSunBurst: [-1], mouseActive: false
+    };
 
     this.sunBurstPaths = {};
   }
@@ -47,6 +52,7 @@ export default class SunBurst extends Component {
   }
 
   _onSunBurstFocus () {
+    const { mouseActive } = this.state;
     this._keyboardHandlers = {
       left: this._onPreviousSunBurst,
       up: this._onParentSunBurst,
@@ -57,12 +63,26 @@ export default class SunBurst extends Component {
     KeyboardAccelerators.startListeningToKeyboard(
       this, this._keyboardHandlers
     );
+    if (mouseActive === false) {
+      this.setState({ focus: true });
+    }
   }
 
   _onSunBurstBlur () {
     KeyboardAccelerators.stopListeningToKeyboard(
       this, this._keyboardHandlers
     );
+
+    this.setState({ focus: false });
+  }
+
+  _announceSunBurst () {
+    const { activeSunBurst } = this.state;
+
+    const sunBurstRef = this.sunBurstPaths[activeSunBurst.join(',')];
+    if (sunBurstRef) {
+      announce(sunBurstRef.getAttribute('aria-label'));
+    }
   }
 
   _onPreviousSunBurst () {
@@ -73,7 +93,8 @@ export default class SunBurst extends Component {
     const id = previousSunBurst.join(',');
     if (this.sunBurstPaths[id]) {
       onActive(previousSunBurst);
-      this.setState({ activeSunBurst: previousSunBurst });
+      this.setState({ activeSunBurst: previousSunBurst },
+        this._announceSunBurst);
     }
 
     //stop event propagation
@@ -90,7 +111,8 @@ export default class SunBurst extends Component {
     const id = parentSunBurst.join(',');
     if (this.sunBurstPaths[id]) {
       onActive(parentSunBurst);
-      this.setState({ activeSunBurst: parentSunBurst });
+      this.setState({ activeSunBurst: parentSunBurst },
+        this._announceSunBurst);
     }
 
     //stop event propagation
@@ -106,7 +128,8 @@ export default class SunBurst extends Component {
     const id = childSunBurst.join(',');
     if (this.sunBurstPaths[id]) {
       onActive(childSunBurst);
-      this.setState({ activeSunBurst: childSunBurst });
+      this.setState({ activeSunBurst: childSunBurst },
+        this._announceSunBurst);
     }
 
     //stop event propagation
@@ -121,7 +144,8 @@ export default class SunBurst extends Component {
     const id = nextSunBurst.join(',');
     if (this.sunBurstPaths[id]) {
       onActive(nextSunBurst);
-      this.setState({ activeSunBurst: nextSunBurst });
+      this.setState({ activeSunBurst: nextSunBurst },
+        this._announceSunBurst);
     }
 
     //stop event propagation
@@ -150,11 +174,21 @@ export default class SunBurst extends Component {
     }
   }
 
+  _onActiveSunBurst (sunBurst) {
+    const { onActive } = this.props;
+    this.setState({
+      activeSunBurst: sunBurst ? sunBurst : [-1]
+    });
+    if (sunBurst && onActive) {
+      onActive(sunBurst);
+    }
+  }
   _renderData (path, data, total, centerX, centerY, radius, startAngle,
     endAngle, role, value) {
 
     const { active, onActive, onClick } = this.props;
     const { width } = this.state;
+    const { intl } = this.context;
     const unit = width / UNIT_FACTOR;
     const ringPad = width / PAD_FACTOR;
     if (! total) {
@@ -170,28 +204,34 @@ export default class SunBurst extends Component {
     data.forEach((datum, index) => {
       const datumPath = path.concat([index]);
       const colorIndex = datum.colorIndex || `graph-${(index % 4) + 1}`;
-      let className = [`${CLASS_ROOT}__slice`, `${COLOR_INDEX}-${colorIndex}`];
-      if (onActive || onClick) {
-        className.push(`${CLASS_ROOT}__slice--hot`);
-      }
-      if (active && active.length === datumPath.length &&
-        active.every((v,i) => v === datumPath[i])) {
-        className.push(`${CLASS_ROOT}__slice--active`);
-      }
+      const className = classnames(
+        `${CLASS_ROOT}__slice`,
+        `${COLOR_INDEX}-${colorIndex}`, {
+          [`${CLASS_ROOT}__slice--hot`]: onActive || onClick,
+          [`${CLASS_ROOT}__slice--active`]: (
+            active && active.length === datumPath.length &&
+            active.every((v,i) => v === datumPath[i])
+          )
+        }
+      );
       const endAngle = translateEndAngle(startAngle, anglePer, datum.value);
       const commands = arcCommands(centerX, centerY, radius,
         startAngle, endAngle);
 
       const id = datumPath.join(',');
 
+      const enterSelectMessage = `(${Intl.getMessage(intl, 'Enter Select')})`;
+      let ariaLabel = `${datum.value} ${onClick ? enterSelectMessage : ''}`;
+
       result.push(
-        <path ref={ref => this.sunBurstPaths[id] = ref} id={id} key={id}
-          className={className.join(' ')}
-          fill="none" strokeWidth={unit * 2} d={commands}
-          aria-label={datum.children ? undefined : datum.value}
-          role={datum.children ? undefined: 'row'}
-          onMouseOver={onActive ? () => onActive(datumPath) : undefined}
-          onMouseOut={onActive ? () => onActive(undefined) : undefined}
+        <path ref={ref => this.sunBurstPaths[id] = ref} key={id}
+          className={className} tabIndex={onClick ? '-1' : undefined}
+          fill='none' strokeWidth={unit * 2} d={commands}
+          aria-label={ariaLabel} role='row'
+          onMouseOver={this._onActiveSunBurst.bind(this, datumPath)}
+          onMouseOut={this._onActiveSunBurst.bind(this, undefined)}
+          onFocus={this._onActiveSunBurst.bind(this, datumPath)}
+          onBlur={this._onActiveSunBurst.bind(this, undefined)}
           onClick={onClick ? () => onClick(datumPath) : undefined} />
       );
 
@@ -221,7 +261,7 @@ export default class SunBurst extends Component {
     } = this.props;
     delete props.onActive;
     delete props.onClick;
-    const { width, height } = this.state;
+    const { focus, height, width } = this.state;
     const { intl } = this.context;
     const classes = classnames(
       CLASS_ROOT,
@@ -247,14 +287,22 @@ export default class SunBurst extends Component {
       );
     }
 
-    const sunBurstLabel = a11yTitle || Intl.getMessage(intl, 'SunBurstLabel');
+    const sunBurstMessage = a11yTitle || Intl.getMessage(intl, 'SunBurst');
+    const navigationHelpMessage = Intl.getMessage(intl, 'Navigation Help');
 
+    const graphicClasses = classnames(
+      `${CLASS_ROOT}__graphic`, {
+        [`${CLASS_ROOT}__graphic--focus`]: focus
+      }
+    );
     return (
       <div ref={ref => this._containerRef = ref} {...props} className={classes}>
-        <svg className={`${CLASS_ROOT}__graphic`}
+        <svg className={graphicClasses} tabIndex='0'
           viewBox={`0 0 ${width} ${height}`} role='group'
-          aria-label={sunBurstLabel} tabIndex='0'
-          onFocus={this._onSunBurstFocus} onBlur={this._onSunBurstBlur}>
+          aria-label={`${sunBurstMessage} (${navigationHelpMessage})`}
+          onFocus={this._onSunBurstFocus} onBlur={this._onSunBurstBlur}
+          onMouseDown={() => this.setState({ mouseActive: true })}
+          onMouseUp={() => this.setState({ mouseActive: false })}>
           {paths}
         </svg>
         {labelElement}
