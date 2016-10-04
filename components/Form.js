@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
@@ -11,6 +15,10 @@ var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 var _typeof2 = require('babel-runtime/helpers/typeof');
 
 var _typeof3 = _interopRequireDefault(_typeof2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -66,12 +74,13 @@ var Form = function (_Component) {
       var compact = _props.compact;
       var fill = _props.fill;
       var pad = _props.pad;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'compact', 'fill', 'pad']);
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--compact', compact), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--pad-' + pad, typeof pad === 'string'), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--pad-horizontal-' + pad.horizontal, (typeof pad === 'undefined' ? 'undefined' : (0, _typeof3.default)(pad)) === 'object' && 'horizontal' in pad), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--pad-vertical-' + pad.vertical, (typeof pad === 'undefined' ? 'undefined' : (0, _typeof3.default)(pad)) === 'object' && 'vertical' in pad), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--compact', compact), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--pad-' + pad, typeof pad === 'string'), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--pad-horizontal-' + pad.horizontal, (typeof pad === 'undefined' ? 'undefined' : (0, _typeof3.default)(pad)) === 'object' && 'horizontal' in pad), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--pad-vertical-' + pad.vertical, (typeof pad === 'undefined' ? 'undefined' : (0, _typeof3.default)(pad)) === 'object' && 'vertical' in pad), _classnames), className);
 
       return _react2.default.createElement(
         'form',
-        { className: classes, onSubmit: this.props.onSubmit },
+        (0, _extends3.default)({}, props, { className: classes, onSubmit: this.props.onSubmit }),
         this.props.children
       );
     }
