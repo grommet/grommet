@@ -42,6 +42,10 @@
   right: quarter($inuit-base-spacing-unit);
 }
 
+.#{$grommet-namespace}select__search {
+  width: 100%;
+}
+
 .#{$grommet-namespace}select__options {
   margin: 0px;
   list-style-type: none;

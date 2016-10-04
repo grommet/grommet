@@ -27,7 +27,6 @@ export default class Select extends Component {
     this._onPreviousOption = this._onPreviousOption.bind(this);
     this._onEnter = this._onEnter.bind(this);
     this._onClickOption = this._onClickOption.bind(this);
-    this._onFocus = this._onFocus.bind(this);
 
     this.state = {
       activeOptionIndex: -1,
@@ -48,16 +47,8 @@ export default class Select extends Component {
       down: this._onNextOption,
       enter: this._onEnter
     };
-    const focusedKeyboardHandlers = {
-      down: this._onAddDrop
-    };
 
     // the order here is important, need to turn off keys before turning on
-
-    if (! this.state.focused && prevState.focused) {
-      KeyboardAccelerators.stopListeningToKeyboard(this,
-        focusedKeyboardHandlers);
-    }
 
     if (! this.state.dropActive && prevState.dropActive) {
       document.removeEventListener('click', this._onRemoveDrop);
@@ -67,11 +58,6 @@ export default class Select extends Component {
         this._drop.remove();
         this._drop = null;
       }
-    }
-
-    if (this.state.focused && ! prevState.focused) {
-      KeyboardAccelerators.startListeningToKeyboard(this,
-        focusedKeyboardHandlers);
     }
 
     if (this.state.dropActive && ! prevState.dropActive) {
@@ -108,17 +94,18 @@ export default class Select extends Component {
   }
 
   _onAddDrop (event) {
+    const { options, value } = this.props;
     event.preventDefault();
     // Get values of options, so we can highlight selected option
-    if (this.props.options) {
-      const optionValues = this.props.options.map((option) => {
+    if (options) {
+      const optionValues = options.map((option) => {
         if (typeof option === 'object') {
           return option.value;
         } else {
           return option;
         }
       });
-      const activeOptionIndex = optionValues.indexOf(this.props.value);
+      const activeOptionIndex = optionValues.indexOf(value);
       this.setState({
         dropActive: true,
         activeOptionIndex: activeOptionIndex
@@ -163,12 +150,6 @@ export default class Select extends Component {
     }
   }
 
-  _onFocus () {
-    this.setState({ focused: true, activeOptionIndex: -1 });
-    // delay to wait out subsequent render after state change
-    setTimeout(() => this.inputRef.select(), 10);
-  }
-
   _renderLabel (option) {
     if (typeof option === 'object') {
       return option.label || option.value;
@@ -183,8 +164,9 @@ export default class Select extends Component {
     let search;
     if (onSearch) {
       search = (
-        <Search inline={true} fill={true} responsive={false} pad="medium"
-          placeHolder={placeHolder} value={searchText}
+        <Search className={`${CLASS_ROOT}__search`}
+          inline={true} fill={true} responsive={false} pad="medium"
+          placeHolder={placeHolder} initialFocus={true} value={searchText}
           onDOMChange={this._onSearchChange} />
       );
     }
@@ -235,8 +217,7 @@ export default class Select extends Component {
       <div ref={ref => this.componentRef = ref} className={classes}
         onClick={this._onAddDrop}>
         <input className={`${INPUT} ${CLASS_ROOT}__input`}
-          value={this._renderLabel(value)} disabled={true}
-          onFocus={this._onFocus} />
+          value={this._renderLabel(value)} disabled={true} />
         <Button className={`${CLASS_ROOT}__control`} icon={<CaretDownIcon />}
           onClick={this._onAddDrop} />
       </div>

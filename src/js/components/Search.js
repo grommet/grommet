@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
@@ -46,9 +47,12 @@ export default class Search extends Component {
   }
 
   componentDidMount () {
-    const { inline, responsive } = this.props;
+    const { initialFocus, inline, responsive } = this.props;
     if (inline && responsive) {
       this._responsive = Responsive.start(this._onResponsive);
+    }
+    if (initialFocus) {
+      findDOMNode(this.inputRef).focus();
     }
   }
 
@@ -142,6 +146,13 @@ export default class Search extends Component {
     }
     if (this._drop) {
       this._drop.remove();
+    }
+  }
+
+  focus () {
+    const input = this.inputRef;
+    if (input) {
+      findDOMNode(input).focus();
     }
   }
 
@@ -441,6 +452,7 @@ Search.propTypes = {
   fill: PropTypes.bool,
   iconAlign: PropTypes.oneOf(['start', 'end']),
   id: PropTypes.string,
+  initialFocus: PropTypes.bool,
   inline: PropTypes.bool,
   onDOMChange: PropTypes.func,
   onSelect: PropTypes.func,
