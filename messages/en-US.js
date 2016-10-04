@@ -84,6 +84,7 @@ exports.default = (0, _extends3.default)({
   OK: 'OK',
   Open: 'Open',
   Parent: 'Parent',
+  Parents: 'Parents',
   Password: 'Password',
   'Previous Month': 'Previous Month',
   'Previous Slide': 'Previous Slide',

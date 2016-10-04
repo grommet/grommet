@@ -81,6 +81,7 @@ exports.default = {
   OK: 'OK',
   Open: 'Abrir',
   Parent: 'Pai',
+  Parents: 'Pais',
   Password: 'Senha',
   power: 'power',
   'Previous Month': 'Mês Anterior',
