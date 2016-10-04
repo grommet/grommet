@@ -27,6 +27,14 @@
   }
 }
 
+.#{$grommet-namespace}image--cover {
+  object-fit: cover;
+}
+
+.#{$grommet-namespace}image--contain {
+  object-fit: contain;
+}
+
 .#{$grommet-namespace}image--full {
   width: 100%;
 }
