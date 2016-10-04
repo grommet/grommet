@@ -579,6 +579,7 @@ var Distribution = function (_Component) {
       var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className', 'full', 'size', 'vertical']);
 
       delete props.series;
+      delete props.units;
       var intl = this.context.intl;
       var _state2 = this.state;
       var allIcons = _state2.allIcons;
