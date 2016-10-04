@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
@@ -259,46 +267,55 @@ var TextInput = function (_Component) {
   }, {
     key: '_renderDrop',
     value: function _renderDrop() {
-      var suggestions = null;
-      if (this.props.suggestions) {
-        suggestions = this.props.suggestions.map(function (suggestion, index) {
+      var _this3 = this;
+
+      var suggestions = this.props.suggestions;
+      var activeSuggestionIndex = this.state.activeSuggestionIndex;
+
+      var items = void 0;
+      if (suggestions) {
+        items = suggestions.map(function (suggestion, index) {
           var _classnames;
 
-          var classes = (0, _classnames4.default)((_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__suggestion', true), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__suggestion--active', index === this.state.activeSuggestionIndex), _classnames));
+          var classes = (0, _classnames4.default)((_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__suggestion', true), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__suggestion--active', index === activeSuggestionIndex), _classnames));
           return _react2.default.createElement(
             'li',
-            { key: index,
-              className: classes,
-              onClick: this._onClickSuggestion.bind(this, suggestion) },
-            this._renderLabel(suggestion)
+            { key: index, className: classes,
+              onClick: _this3._onClickSuggestion.bind(_this3, suggestion) },
+            _this3._renderLabel(suggestion)
           );
-        }, this);
+        });
       }
 
       return _react2.default.createElement(
         'ol',
         { className: CLASS_ROOT + '__suggestions', onClick: this._onRemoveDrop },
-        suggestions
+        items
       );
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, INPUT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', this.state.active), this.props.className);
+      var _props = this.props;
+      var className = _props.className;
+      var defaultValue = _props.defaultValue;
+      var value = _props.value;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'defaultValue', 'value']);
 
-      return _react2.default.createElement('input', { ref: function ref(_ref) {
-          return _this3.componentRef = _ref;
-        },
-        id: this.props.id, name: this.props.name,
-        className: classes,
-        value: this._renderLabel(this.props.value),
-        defaultValue: this._renderLabel(this.props.defaultValue),
-        placeholder: this.props.placeHolder,
-        autoComplete: 'off',
-        onChange: this._onInputChange,
-        onFocus: this._onFocus });
+      delete props.suggestions;
+      delete props.onDOMChange;
+      delete props.onSelect;
+      var classes = (0, _classnames4.default)(CLASS_ROOT, INPUT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', this.state.active), className);
+
+      return _react2.default.createElement('input', (0, _extends3.default)({ ref: function ref(_ref) {
+          return _this4.componentRef = _ref;
+        } }, props, {
+        className: classes, autoComplete: 'off',
+        defaultValue: this._renderLabel(defaultValue),
+        value: this._renderLabel(value),
+        onChange: this._onInputChange, onFocus: this._onFocus }));
     }
   }]);
   return TextInput;

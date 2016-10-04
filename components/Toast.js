@@ -93,15 +93,15 @@ var ToastContents = function (_Component) {
       };
     }
   }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this._timer = setTimeout(this._onClose, DURATION);
+    }
+  }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       clearTimeout(this._timer);
       this._timer = undefined;
-    }
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this._timer = setTimeout(this._onClose, DURATION);
     }
   }, {
     key: '_onClose',
