@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -36,6 +44,10 @@ var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
@@ -47,10 +59,6 @@ var _Add2 = _interopRequireDefault(_Add);
 var _Subtract = require('./icons/base/Subtract');
 
 var _Subtract2 = _interopRequireDefault(_Subtract);
-
-var _CSSClassnames = require('../utils/CSSClassnames');
-
-var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -140,18 +148,11 @@ var NumberInput = function (_Component) {
 
       var _props3 = this.props;
       var className = _props3.className;
-      var defaultValue = _props3.defaultValue;
       var disabled = _props3.disabled;
-      var id = _props3.id;
-      var max = _props3.max;
-      var min = _props3.min;
-      var name = _props3.name;
-      var onChange = _props3.onChange;
-      var step = _props3.step;
-      var value = _props3.value;
+      var props = (0, _objectWithoutProperties3.default)(_props3, ['className', 'disabled']);
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--disabled', disabled));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--disabled', disabled), className);
 
       var onSubtract = !disabled ? this._onSubtract : undefined;
       var onAdd = !disabled ? this._onAdd : undefined;
@@ -159,18 +160,12 @@ var NumberInput = function (_Component) {
       return _react2.default.createElement(
         'span',
         { className: classes },
-        _react2.default.createElement('input', { ref: function ref(_ref) {
+        _react2.default.createElement('input', (0, _extends3.default)({ ref: function ref(_ref) {
             return _this2.inputRef = _ref;
-          },
-          tabIndex: '0', className: INPUT + ' ' + CLASS_ROOT + '__input',
-          id: id, name: name, type: 'number',
-          disabled: disabled,
-          value: value,
-          defaultValue: defaultValue,
-          min: min,
-          max: max,
-          step: step,
-          onChange: onChange }),
+          } }, props, {
+          className: INPUT + ' ' + CLASS_ROOT + '__input',
+          type: 'number', tabIndex: '0',
+          disabled: disabled })),
         _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Subtract2.default, null), className: CLASS_ROOT + '__subtract',
           onClick: onSubtract }),
         _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Add2.default, null), className: CLASS_ROOT + '__add',
