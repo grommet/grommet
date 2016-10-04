@@ -1,5 +1,6 @@
 exports[`Anchor calls onClick after rendering 1`] = `
 <a
+  aria-label={undefined}
   className="grommetux-anchor"
   href="test"
   onClick={[Function anonymous]} />
@@ -7,6 +8,7 @@ exports[`Anchor calls onClick after rendering 1`] = `
 
 exports[`Anchor calls onClick after rendering 2`] = `
 <a
+  aria-label={undefined}
   className="grommetux-anchor"
   href="test"
   onClick={[Function anonymous]} />
@@ -14,18 +16,21 @@ exports[`Anchor calls onClick after rendering 2`] = `
 
 exports[`Anchor has correct default options 1`] = `
 <a
+  aria-label={undefined}
   className="grommetux-anchor"
   href="test" />
 `;
 
 exports[`Anchor has correct disabled=true rendering 1`] = `
 <a
+  aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--disabled"
   href="test" />
 `;
 
 exports[`Anchor has correct icon and label rendering 1`] = `
 <a
+  aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon grommetux-anchor--icon-label">
   <svg
     height="24px"
@@ -39,6 +44,7 @@ exports[`Anchor has correct icon and label rendering 1`] = `
 
 exports[`Anchor has correct icon as a child rendering 1`] = `
 <a
+  aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon">
   <span
     className="grommetux-anchor__icon">
@@ -54,6 +60,7 @@ exports[`Anchor has correct icon as a child rendering 1`] = `
 
 exports[`Anchor has correct icon rendering 1`] = `
 <a
+  aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon">
   <span
     className="grommetux-anchor__icon">
@@ -69,6 +76,7 @@ exports[`Anchor has correct icon rendering 1`] = `
 
 exports[`Anchor has correct primary=true rendering 1`] = `
 <a
+  aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon grommetux-anchor--primary"
   href="test">
   <svg
@@ -99,6 +107,7 @@ exports[`Anchor has correct primary=true rendering 1`] = `
 
 exports[`Anchor has correct text as a child rendering 1`] = `
 <a
+  aria-label={undefined}
   className="grommetux-anchor">
   test
 </a>

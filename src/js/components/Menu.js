@@ -477,6 +477,7 @@ export default class Menu extends Component {
         `${openLabel} ${a11yTitle || label || ''} ` +
         `${menuLabel}`
       );
+      delete props.colorIndex;
 
       return (
         <div ref={ref => this.controlRef = ref}>

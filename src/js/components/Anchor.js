@@ -12,8 +12,8 @@ export default class Anchor extends Component {
 
   render () {
     const {
-      animateIcon, children, className, disabled, icon, id, label, primary,
-      reverse, tag, ...props
+      a11yTitle, animateIcon, children, className, disabled, icon, id, label,
+      primary, reverse, tag, ...props
     } = this.props;
 
     let anchorIcon;
@@ -61,7 +61,7 @@ export default class Anchor extends Component {
 
     const Component = tag;
     return (
-      <Component {...props} className={classes}>
+      <Component {...props} className={classes} aria-label={a11yTitle}>
         {first}
         {second}
       </Component>
