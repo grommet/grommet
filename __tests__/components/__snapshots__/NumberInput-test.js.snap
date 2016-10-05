@@ -31,23 +31,11 @@ exports[`NumberInput has correct default options 1`] = `
         version="1.1"
         viewBox="0 0 24 24"
         width="24px">
-        <g>
-          <rect
-            fill="none"
-            height="24"
-            width="24"
-            x="0"
-            y="0" />
-          <line
-            fill="none"
-            stroke="#000000"
-            strokeMiterlimit="10"
-            strokeWidth="2"
-            x1="0"
-            x2="24"
-            y1="12"
-            y2="12" />
-        </g>
+        <path
+          d="M2,12 L22,12"
+          fill="none"
+          stroke="#000000"
+          strokeWidth="2" />
       </svg>
     </span>
   </button>
@@ -73,19 +61,11 @@ exports[`NumberInput has correct default options 1`] = `
         version="1.1"
         viewBox="0 0 24 24"
         width="24px">
-        <g>
-          <rect
-            fill="none"
-            height="24"
-            width="24"
-            x="0" />
-          <path
-            d="M0,12h24 M12,24V0"
-            fill="none"
-            stroke="#000000"
-            strokeMiterlimit="10"
-            strokeWidth="2" />
-        </g>
+        <path
+          d="M12,22 L12,2 M2,12 L22,12"
+          fill="none"
+          stroke="#000000"
+          strokeWidth="2" />
       </svg>
     </span>
   </button>

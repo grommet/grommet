@@ -12,7 +12,7 @@ import Markdown from './Markdown';
 import Anchor from './Anchor';
 import Layer from './Layer';
 import Video from './Video';
-import WatchIcon from './icons/base/Watch';
+import CirclePlayIcon from './icons/base/CirclePlay';
 
 const CLASS_ROOT = CSSClassnames.CARD;
 
@@ -112,8 +112,9 @@ export default class Card extends Component {
     if (typeof thumbnail === 'string') {
       const basis = 'row' === this.props.direction ? '1/3' : 'small';
       const videoIcon = (video) ?
-        <Anchor icon={<WatchIcon responsive={false} size="xlarge" />} /> :
-        null;
+        <Anchor icon={<CirclePlayIcon responsive={false} colorIndex='brand'
+          size="xlarge" />} /> :
+        undefined;
 
       result = (
         <Box className={`${CLASS_ROOT}__thumbnail`}

@@ -4,9 +4,9 @@ import React, { Component, PropTypes } from 'react';
 import Anchor from './Anchor';
 import SocialTwitterIcon from './icons/base/SocialTwitter';
 import SocialFacebookIcon from './icons/base/SocialFacebook';
-import SocialGoogleIcon from './icons/base/SocialGoogle';
+import SocialGooglePlusIcon from './icons/base/SocialGooglePlus';
 import SocialLinkedinIcon from './icons/base/SocialLinkedin';
-import SocialEmailIcon from './icons/base/SocialEmail';
+import SocialMailIcon from './icons/base/SocialMail';
 
 export default class SocialShare extends Component {
   render () {
@@ -35,7 +35,7 @@ export default class SocialShare extends Component {
       href = `https://www.linkedin.com/shareArticle?mini=true&url=` +
         `${encodedLink}&title=${encodedTitle}&summary=${encodedText}`;
     } else if (type === 'google') {
-      socialIcon = (<SocialGoogleIcon a11yTitle={calculatedA11yTitle}
+      socialIcon = (<SocialGooglePlusIcon a11yTitle={calculatedA11yTitle}
         colorIndex={colorIndex} />);
       href = `https://plus.google.com/share?url=${encodedLink}`;
     } else if (type === 'facebook') {
@@ -43,7 +43,7 @@ export default class SocialShare extends Component {
         colorIndex={colorIndex} />);
       href = `https://www.facebook.com/sharer/sharer.php?u=${encodedLink}`;
     } else if (type === 'email') {
-      socialIcon = (<SocialEmailIcon a11yTitle={calculatedA11yTitle}
+      socialIcon = (<SocialMailIcon a11yTitle={calculatedA11yTitle}
         colorIndex={colorIndex} />);
       href = `mailto:?subject=` +
         `${encodedTitle}&body=${encodedText}%0D%0A${encodedLink}`;

@@ -1,12 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 25 24" enable-background="new 0 0 25 24" xml:space="preserve">
-<g >
-	<rect  x="0" fill="none" width="24" height="24"/>
-	<path fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M6,1c9.9253,0,18,8.0747,18,18 M19,19
-		c0-7.1685-5.8315-13-13-13 M14,19c0-4.4111-3.5889-8-8-8 M6,16c-1.6569,0-3,1.3431-3,3s1.3431,3,3,3s3-1.3431,3-3S7.6569,16,6,16z
-		 M3,19v-8"/>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path fill="none" stroke="#000000" stroke-width="2" d="M5,16 C3.343,16 2,17.343 2,19 C2,20.657 3.343,22 5,22 C6.657,22 8,20.657 8,19 C8,17.343 6.657,16 5,16 L5,16 L5,16 Z M5,1 C14.925,1 23,9.075 23,19 L23,19 M18,19 C18,11.832 12.168,6 5,6 M13,19 C13,14.589 9.411,11 5,11 M2,11 L2,19 L2,19"/>
 </svg>

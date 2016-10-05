@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import Header from './Header';
 import Button from './Button';
 import ListItem from './ListItem';
-import TabNextIcon from './icons/base/TabNext';
+import CaretNextIcon from './icons/base/CaretNext';
 import Collapsible from './Collapsible';
 
 import CSSClassnames from '../utils/CSSClassnames';
@@ -56,7 +56,7 @@ export default class AccordionPanel extends Component {
               justify='between' align='center' responsive={false}
               className={`${CLASS_ROOT}__header`}>
               {heading}
-              <TabNextIcon className={`${CLASS_ROOT}__control`} />
+              <CaretNextIcon className={`${CLASS_ROOT}__control`} />
             </Header>
           </Button>
         </ListItem>

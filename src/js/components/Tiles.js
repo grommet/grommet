@@ -152,11 +152,15 @@ export default class Tiles extends Component {
     const { flush } = this.props;
 
     if (element) {
-      const elementClone = React.cloneElement(element, {
-        hoverBorder: !flush
-      });
+      // only clone tile children
+      if (element.type && element.type.displayName === 'Tile') {
+        const elementClone = React.cloneElement(element, {
+          hoverBorder: !flush
+        });
 
-      return elementClone;
+        return elementClone;
+      }
+      return element;
     }
 
     return undefined;

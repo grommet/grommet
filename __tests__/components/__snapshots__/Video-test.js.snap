@@ -69,21 +69,13 @@ exports[`Video has correct default options 1`] = `
               height="24px"
               role="img"
               version="1.1"
-              viewBox="0 0 24 24.3317"
+              viewBox="0 0 24 24"
               width="24px">
-              <g>
-                <rect
-                  fill="none"
-                  height="24"
-                  width="24"
-                  y="0.1658" />
-                <polygon
-                  fill="#000000"
-                  points="6,1.9658 6,22.3658 20,12.1658 	"
-                  stroke="#000000"
-                  strokeMiterlimit="10"
-                  strokeWidth="2" />
-              </g>
+              <polygon
+                fill="none"
+                points="3 22 21 12 3 2"
+                stroke="#000000"
+                strokeWidth="2" />
             </svg>
           </span>
         </button>
@@ -172,21 +164,13 @@ exports[`Video transfers arbitrary props 1`] = `
               height="24px"
               role="img"
               version="1.1"
-              viewBox="0 0 24 24.3317"
+              viewBox="0 0 24 24"
               width="24px">
-              <g>
-                <rect
-                  fill="none"
-                  height="24"
-                  width="24"
-                  y="0.1658" />
-                <polygon
-                  fill="#000000"
-                  points="6,1.9658 6,22.3658 20,12.1658 	"
-                  stroke="#000000"
-                  strokeMiterlimit="10"
-                  strokeWidth="2" />
-              </g>
+              <polygon
+                fill="none"
+                points="3 22 21 12 3 2"
+                stroke="#000000"
+                strokeWidth="2" />
             </svg>
           </span>
         </button>

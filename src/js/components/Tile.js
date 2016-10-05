@@ -13,13 +13,9 @@ export default class Tile extends Component {
 
   render () {
     const { children, className, onClick, wide, status,
-      hoverStyle, hoverColorIndex, hoverBorder, hoverBorderSize } = this.props;
-    const restProps = Props.omit(this.props, Object.keys(Box.propTypes));
-    delete restProps.hoverStyle;
-    delete restProps.hoverColorIndex;
-    delete restProps.hoverBorder;
-    delete restProps.hoverBorderSize;
-    delete restProps.wide;
+      hoverStyle, hoverColorIndex, hoverBorder, hoverBorderSize
+    } = this.props;
+    const restProps = Props.omit(this.props, Object.keys(Tile.propTypes));
 
     const statusClass = status ? status.toLowerCase() : undefined;
     // if Tiles flush is true, default borderSize to small (1px)
@@ -54,6 +50,7 @@ export default class Tile extends Component {
 Tile.propTypes = {
   hoverStyle: PropTypes.oneOf(['border', 'background', 'none']),
   hoverColorIndex: PropTypes.string,
+  hoverBorder: PropTypes.bool,
   hoverBorderSize: PropTypes.oneOf(['small', 'medium', 'large']),
   wide: PropTypes.bool, /// remove in 1.0? Box.basis='full'
   ...Box.propTypes

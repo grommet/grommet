@@ -220,23 +220,3 @@ $logo-dash-size: round($logo-size * 16);
     }
   }
 }
-
-.#{$grommet-namespace}control-icon-watch,
-.#{$grommet-namespace}anchor .#{$grommet-namespace}control-icon-watch,
-.#{$grommet-namespace}anchor:hover:not(.grommetux-anchor--disabled) .#{$grommet-namespace}control-icon-watch {
-  stroke: none;
-  fill: $control-brand-color;
-}
-
-// custom social icon colors for twitter, facebook, and linkedin
-.#{$grommet-namespace}control-icon-social-twitter {
-  @include icon-color($social-twitter-color);
-}
-
-.#{$grommet-namespace}control-icon-social-facebook {
-  @include icon-color($social-facebook-color);
-}
-
-.#{$grommet-namespace}control-icon-social-linkedin {
-  @include icon-color($social-linkedin-color);
-}

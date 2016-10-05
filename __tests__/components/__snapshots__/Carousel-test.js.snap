@@ -66,21 +66,14 @@ exports[`Carousel has correct default options 1`] = `
         height="24px"
         role="img"
         version="1.1"
-        viewBox="0 0 24 25.2071"
+        viewBox="0 0 24 24"
         width="24px">
-        <g>
-          <rect
-            fill="none"
-            height="24"
-            width="24"
-            y="1.2071" />
-          <polyline
-            fill="none"
-            points="16.1397,0.7071 5.1397,11.7071 16.1397,22.7071 	"
-            stroke="#000000"
-            strokeMiterlimit="10"
-            strokeWidth="2" />
-        </g>
+        <polyline
+          fill="none"
+          points="7 2 17 12 7 22"
+          stroke="#000000"
+          strokeWidth="2"
+          transform="matrix(-1 0 0 1 24 0)" />
       </svg>
     </span>
   </button>
@@ -106,20 +99,11 @@ exports[`Carousel has correct default options 1`] = `
         version="1.1"
         viewBox="0 0 24 24"
         width="24px">
-        <g>
-          <rect
-            fill="none"
-            height="24"
-            width="24"
-            x="0"
-            y="0" />
-          <polyline
-            fill="none"
-            points="8,1.2101 19,12.2101 8,23.2101 	"
-            stroke="#000000"
-            strokeMiterlimit="10"
-            strokeWidth="2" />
-        </g>
+        <polyline
+          fill="none"
+          points="7 2 17 12 7 22"
+          stroke="#000000"
+          strokeWidth="2" />
       </svg>
     </span>
   </button>
@@ -246,21 +230,14 @@ exports[`Carousel renders class name properties 1`] = `
         height="24px"
         role="img"
         version="1.1"
-        viewBox="0 0 24 25.2071"
+        viewBox="0 0 24 24"
         width="24px">
-        <g>
-          <rect
-            fill="none"
-            height="24"
-            width="24"
-            y="1.2071" />
-          <polyline
-            fill="none"
-            points="16.1397,0.7071 5.1397,11.7071 16.1397,22.7071 	"
-            stroke="#000000"
-            strokeMiterlimit="10"
-            strokeWidth="2" />
-        </g>
+        <polyline
+          fill="none"
+          points="7 2 17 12 7 22"
+          stroke="#000000"
+          strokeWidth="2"
+          transform="matrix(-1 0 0 1 24 0)" />
       </svg>
     </span>
   </button>
@@ -286,20 +263,11 @@ exports[`Carousel renders class name properties 1`] = `
         version="1.1"
         viewBox="0 0 24 24"
         width="24px">
-        <g>
-          <rect
-            fill="none"
-            height="24"
-            width="24"
-            x="0"
-            y="0" />
-          <polyline
-            fill="none"
-            points="8,1.2101 19,12.2101 8,23.2101 	"
-            stroke="#000000"
-            strokeMiterlimit="10"
-            strokeWidth="2" />
-        </g>
+        <polyline
+          fill="none"
+          points="7 2 17 12 7 22"
+          stroke="#000000"
+          strokeWidth="2" />
       </svg>
     </span>
   </button>
@@ -429,21 +397,14 @@ exports[`Carousel renders microdata properties 1`] = `
         height="24px"
         role="img"
         version="1.1"
-        viewBox="0 0 24 25.2071"
+        viewBox="0 0 24 24"
         width="24px">
-        <g>
-          <rect
-            fill="none"
-            height="24"
-            width="24"
-            y="1.2071" />
-          <polyline
-            fill="none"
-            points="16.1397,0.7071 5.1397,11.7071 16.1397,22.7071 	"
-            stroke="#000000"
-            strokeMiterlimit="10"
-            strokeWidth="2" />
-        </g>
+        <polyline
+          fill="none"
+          points="7 2 17 12 7 22"
+          stroke="#000000"
+          strokeWidth="2"
+          transform="matrix(-1 0 0 1 24 0)" />
       </svg>
     </span>
   </button>
@@ -469,20 +430,11 @@ exports[`Carousel renders microdata properties 1`] = `
         version="1.1"
         viewBox="0 0 24 24"
         width="24px">
-        <g>
-          <rect
-            fill="none"
-            height="24"
-            width="24"
-            x="0"
-            y="0" />
-          <polyline
-            fill="none"
-            points="8,1.2101 19,12.2101 8,23.2101 	"
-            stroke="#000000"
-            strokeMiterlimit="10"
-            strokeWidth="2" />
-        </g>
+        <polyline
+          fill="none"
+          points="7 2 17 12 7 22"
+          stroke="#000000"
+          strokeWidth="2" />
       </svg>
     </span>
   </button>

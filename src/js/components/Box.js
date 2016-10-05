@@ -224,7 +224,6 @@ export default class Box extends Component {
     }
 
     const Component = tag;
-
     if (appCentered) {
       return (
         <div {...restProps} ref={(ref) => this.boxContainerRef = ref}

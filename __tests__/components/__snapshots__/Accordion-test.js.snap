@@ -35,27 +35,25 @@ exports[`Accordion has correct default options 1`] = `
           tabIndex={undefined}>
           First Title
           <svg
-            aria-label="tab-next"
-            className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+            aria-label="caret-next"
+            className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
             height="24px"
             role="img"
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <g>
-              <rect
-                fill="none"
-                height="24"
-                width="24"
+            <defs>
+              <polygon
+                id="a"
+                points="6 2 18 12 6 22" />
+              <mask
+                fill="white"
+                height="20"
+                id="b"
+                width="12"
                 x="0"
                 y="0" />
-              <polygon
-                fill="none"
-                points="7.5,21.3768 7.5,3.0434 20.5,12.2101 	"
-                stroke="#000000"
-                strokeMiterlimit="10"
-                strokeWidth="2" />
-            </g>
+            </defs>
           </svg>
         </header>
       </button>
@@ -103,27 +101,25 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
           tabIndex={undefined}>
           First Title
           <svg
-            aria-label="tab-next"
-            className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+            aria-label="caret-next"
+            className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
             height="24px"
             role="img"
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <g>
-              <rect
-                fill="none"
-                height="24"
-                width="24"
+            <defs>
+              <polygon
+                id="a"
+                points="6 2 18 12 6 22" />
+              <mask
+                fill="white"
+                height="20"
+                id="b"
+                width="12"
                 x="0"
                 y="0" />
-              <polygon
-                fill="none"
-                points="7.5,21.3768 7.5,3.0434 20.5,12.2101 	"
-                stroke="#000000"
-                strokeMiterlimit="10"
-                strokeWidth="2" />
-            </g>
+            </defs>
           </svg>
         </header>
       </button>
@@ -176,27 +172,25 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
           tabIndex={undefined}>
           Second Title
           <svg
-            aria-label="tab-next"
-            className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+            aria-label="caret-next"
+            className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
             height="24px"
             role="img"
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <g>
-              <rect
-                fill="none"
-                height="24"
-                width="24"
+            <defs>
+              <polygon
+                id="a"
+                points="6 2 18 12 6 22" />
+              <mask
+                fill="white"
+                height="20"
+                id="b"
+                width="12"
                 x="0"
                 y="0" />
-              <polygon
-                fill="none"
-                points="7.5,21.3768 7.5,3.0434 20.5,12.2101 	"
-                stroke="#000000"
-                strokeMiterlimit="10"
-                strokeWidth="2" />
-            </g>
+            </defs>
           </svg>
         </header>
       </button>
@@ -244,27 +238,25 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
           tabIndex={undefined}>
           First Title
           <svg
-            aria-label="tab-next"
-            className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+            aria-label="caret-next"
+            className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
             height="24px"
             role="img"
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <g>
-              <rect
-                fill="none"
-                height="24"
-                width="24"
+            <defs>
+              <polygon
+                id="a"
+                points="6 2 18 12 6 22" />
+              <mask
+                fill="white"
+                height="20"
+                id="b"
+                width="12"
                 x="0"
                 y="0" />
-              <polygon
-                fill="none"
-                points="7.5,21.3768 7.5,3.0434 20.5,12.2101 	"
-                stroke="#000000"
-                strokeMiterlimit="10"
-                strokeWidth="2" />
-            </g>
+            </defs>
           </svg>
         </header>
       </button>
@@ -317,27 +309,25 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
           tabIndex={undefined}>
           Second Title
           <svg
-            aria-label="tab-next"
-            className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+            aria-label="caret-next"
+            className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
             height="24px"
             role="img"
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <g>
-              <rect
-                fill="none"
-                height="24"
-                width="24"
+            <defs>
+              <polygon
+                id="a"
+                points="6 2 18 12 6 22" />
+              <mask
+                fill="white"
+                height="20"
+                id="b"
+                width="12"
                 x="0"
                 y="0" />
-              <polygon
-                fill="none"
-                points="7.5,21.3768 7.5,3.0434 20.5,12.2101 	"
-                stroke="#000000"
-                strokeMiterlimit="10"
-                strokeWidth="2" />
-            </g>
+            </defs>
           </svg>
         </header>
       </button>
@@ -398,27 +388,25 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
           tabIndex={undefined}>
           First Title
           <svg
-            aria-label="tab-next"
-            className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+            aria-label="caret-next"
+            className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
             height="24px"
             role="img"
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <g>
-              <rect
-                fill="none"
-                height="24"
-                width="24"
+            <defs>
+              <polygon
+                id="a"
+                points="6 2 18 12 6 22" />
+              <mask
+                fill="white"
+                height="20"
+                id="b"
+                width="12"
                 x="0"
                 y="0" />
-              <polygon
-                fill="none"
-                points="7.5,21.3768 7.5,3.0434 20.5,12.2101 	"
-                stroke="#000000"
-                strokeMiterlimit="10"
-                strokeWidth="2" />
-            </g>
+            </defs>
           </svg>
         </header>
       </button>
@@ -471,27 +459,25 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
           tabIndex={undefined}>
           Second Title
           <svg
-            aria-label="tab-next"
-            className="grommetux-control-icon grommetux-control-icon-tab-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+            aria-label="caret-next"
+            className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
             height="24px"
             role="img"
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <g>
-              <rect
-                fill="none"
-                height="24"
-                width="24"
+            <defs>
+              <polygon
+                id="a"
+                points="6 2 18 12 6 22" />
+              <mask
+                fill="white"
+                height="20"
+                id="b"
+                width="12"
                 x="0"
                 y="0" />
-              <polygon
-                fill="none"
-                points="7.5,21.3768 7.5,3.0434 20.5,12.2101 	"
-                stroke="#000000"
-                strokeMiterlimit="10"
-                strokeWidth="2" />
-            </g>
+            </defs>
           </svg>
         </header>
       </button>
