@@ -4,22 +4,6 @@
   position: relative;
   @include inuit-font-size($menu-font-size);
 
-  &:focus {
-    outline: none;
-
-    &:not(.#{$grommet-namespace}menu--expanded):after {
-      content: '';
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      bottom: 0px;
-      right: 0px;
-      border: 1px solid $focus-border-color;
-      box-shadow: 0 0 1px 1px $focus-border-color;
-      pointer-events: none;
-    }
-  }
-
   > * {
     flex: 0 0 auto;
   }
@@ -56,10 +40,6 @@
 }
 
 .#{$grommet-namespace}menu__control {
-  &:focus:not(.#{$grommet-namespace}button--disabled) {
-    box-shadow: inset 0 0 1px 2px $focus-border-color;
-  }
-
   &:hover {
     .#{$grommet-namespace}menu__control-label {
       #{$dark-background-context} & {

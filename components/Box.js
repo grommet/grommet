@@ -80,7 +80,9 @@ var Box = function (_Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (Box.__proto__ || (0, _getPrototypeOf2.default)(Box)).call(this));
 
-    _this.state = {};
+    _this.state = {
+      mouseActive: false
+    };
     return _this;
   }
 
@@ -275,9 +277,31 @@ var Box = function (_Component) {
       }
 
       var a11yProps = {};
+      var clickableProps = {};
       if (onClick) {
         classes.push(CLASS_ROOT + "--clickable");
+        clickableProps = {
+          onMouseDown: function onMouseDown() {
+            return _this3.setState({ mouseActive: true });
+          },
+          onMouseUp: function onMouseUp() {
+            return _this3.setState({ mouseActive: false });
+          },
+          onFocus: function onFocus() {
+            if (_this3.state.mouseActive === false) {
+              _this3.setState({ focus: true });
+            }
+          },
+          onBlur: function onBlur() {
+            return _this3.setState({
+              focus: false
+            });
+          }
+        };
         if (focusable) {
+          if (this.state.focus) {
+            classes.push(CLASS_ROOT + '--focus');
+          }
           var boxLabel = a11yTitle || _Intl2.default.getMessage(this.context.intl, 'Box');
           a11yProps.tabIndex = tabIndex || 0;
           a11yProps["aria-label"] = this.props['aria-label'] || boxLabel;
@@ -341,7 +365,7 @@ var Box = function (_Component) {
             },
             id: id, className: classes.join(' '), style: style,
             role: role, tabIndex: tabIndex,
-            onClick: onClick }, a11yProps),
+            onClick: onClick }, a11yProps, clickableProps),
           skipLinkAnchor,
           textureMarkup,
           children

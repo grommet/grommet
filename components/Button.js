@@ -85,11 +85,15 @@ var Button = function (_Component) {
       var id = _props.id;
       var label = _props.label;
       var onClick = _props.onClick;
+      var _onBlur = _props.onBlur;
+      var _onFocus = _props.onFocus;
+      var _onMouseDown = _props.onMouseDown;
+      var _onMouseUp = _props.onMouseUp;
       var plain = _props.plain;
       var primary = _props.primary;
       var secondary = _props.secondary;
       var type = _props.type;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'accent', 'align', 'children', 'className', 'fill', 'href', 'icon', 'id', 'label', 'onClick', 'plain', 'primary', 'secondary', 'type']);
+      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'accent', 'align', 'children', 'className', 'fill', 'href', 'icon', 'id', 'label', 'onClick', 'onBlur', 'onFocus', 'onMouseDown', 'onMouseUp', 'plain', 'primary', 'secondary', 'type']);
 
 
       var buttonPlain = plain !== undefined ? plain : icon && !label;
@@ -128,25 +132,36 @@ var Button = function (_Component) {
 
       return _react2.default.createElement(
         Tag,
-        (0, _extends3.default)({ href: href, id: id, type: buttonType,
+        (0, _extends3.default)({}, props, { href: href, id: id, type: buttonType,
           className: classes, 'aria-label': a11yTitle,
           onClick: onClick,
           disabled: !onClick && !href,
-          onMouseDown: function onMouseDown() {
-            return _this2.setState({ mouseActive: true });
+          onMouseDown: function onMouseDown(event) {
+            _this2.setState({ mouseActive: true });
+            if (_onMouseDown) {
+              _onMouseDown(event);
+            }
           },
-          onMouseUp: function onMouseUp() {
-            return _this2.setState({ mouseActive: false });
+          onMouseUp: function onMouseUp(event) {
+            _this2.setState({ mouseActive: false });
+            if (_onMouseUp) {
+              _onMouseUp(event);
+            }
           },
-          onFocus: function onFocus() {
+          onFocus: function onFocus(event) {
             if (_this2.state.mouseActive === false) {
               _this2.setState({ focus: true });
             }
+            if (_onFocus) {
+              _onFocus(event);
+            }
           },
-          onBlur: function onBlur() {
-            return _this2.setState({ focus: false });
-          }
-        }, props),
+          onBlur: function onBlur(event) {
+            _this2.setState({ focus: false });
+            if (_onBlur) {
+              _onBlur(event);
+            }
+          } }),
         buttonIcon,
         buttonChildren
       );

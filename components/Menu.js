@@ -585,7 +585,6 @@ var Menu = function (_Component2) {
             _Button2.default,
             (0, _extends3.default)({}, props, { plain: true,
               className: classes,
-              tabIndex: '0',
               onClick: this._onOpen,
               a11yTitle: menuTitle,
               onFocus: this._onFocusControl,
