@@ -160,6 +160,7 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   }
 
   @include dark-background-context-icon();
+  @include light-background-context-icon();
 }
 
 .#{$grommet-namespace}button--disabled {

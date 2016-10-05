@@ -61,6 +61,13 @@
     }
   }
 
+  #{$light-background-context} {
+    p,
+    dd {
+      color: $text-color;
+    }
+  }
+
   blockquote {
     @include inuit-font-size(36px);
     margin-top: $inuit-base-spacing-unit;

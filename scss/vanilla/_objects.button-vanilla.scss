@@ -4,32 +4,36 @@ $button-accent-color: nth($brand-accent-colors, 1);
 $hover-darken: 15%;
 $active-darken: 20%;
 
+@mixin light-shadows() {
+  &:hover {
+    box-shadow: 0px 0px 0px 2px $button-border-color;
+  }
+
+  &.#{$grommet-namespace}button--primary {
+    &:hover {
+      box-shadow: 0px 0px 0px 2px $brand-color;
+    }
+  }
+
+  &.#{$grommet-namespace}button--secondary {
+    &:hover {
+      box-shadow: 0px 0px 0px 2px $button-secondary-color;
+    }
+  }
+
+  &.#{$grommet-namespace}button--accent {
+    &:hover {
+      box-shadow: 0px 0px 0px 2px $button-accent-color;
+    }
+  }
+}
+
 .#{$grommet-namespace}button {
   border-radius: 5px;
 
   &:not(.#{$grommet-namespace}button--disabled):not(.#{$grommet-namespace}button--plain):not(.#{$grommet-namespace}button--fill) {
 
-    &:hover {
-      box-shadow: 0px 0px 0px 2px $button-border-color;
-    }
-
-    &.#{$grommet-namespace}button--primary {
-      &:hover {
-        box-shadow: 0px 0px 0px 2px $brand-color;
-      }
-    }
-
-    &.#{$grommet-namespace}button--secondary {
-      &:hover {
-        box-shadow: 0px 0px 0px 2px $button-secondary-color;
-      }
-    }
-
-    &.#{$grommet-namespace}button--accent {
-      &:hover {
-        box-shadow: 0px 0px 0px 2px $button-accent-color;
-      }
-    }
+    @include light-shadows();
 
     #{$dark-background-context} & {
 
@@ -54,6 +58,10 @@ $active-darken: 20%;
           box-shadow: 0px 0px 0px 2px $button-accent-color;
         }
       }
+    }
+
+    #{$light-background-context} & {
+      @include light-shadows();
     }
   }
 
