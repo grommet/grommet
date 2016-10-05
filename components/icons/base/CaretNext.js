@@ -81,12 +81,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
-        _react2.default.createElement(
-          'defs',
-          null,
-          _react2.default.createElement('polygon', { id: 'a', points: '6 2 18 12 6 22' }),
-          _react2.default.createElement('mask', { id: 'b', width: '12', height: '20', x: '0', y: '0', fill: 'white' })
-        )
+        _react2.default.createElement('polygon', { fill: 'none', stroke: '#000000', strokeWidth: '2', points: '6 2 18 12 6 22' })
       );
     }
   }]);

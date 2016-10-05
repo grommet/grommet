@@ -13,13 +13,17 @@ $social-linkedin-color: #0077B5;
   stroke: $icon-color;
   flex: 0 0 auto;
 
+  g {
+    fill: inherit;
+  }
+
   *:not([stroke]) {
     &[fill="none"] {
       stroke-width: 0;
     }
   }
 
-  *[stroke] {
+  *[stroke*="#"] {
     stroke: inherit;
   }
 
