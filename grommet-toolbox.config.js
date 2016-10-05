@@ -64,11 +64,11 @@ export default {
   ],
   mainJs: 'src/js/index.js',
   mainScss: 'src/scss/grommet-core/index.scss',
-  icons: {
-    source: 'src/img/icons',
-    destination: 'src/js/components/icons/base',
-    context: '../../../'
-  },
+  // icons: {
+  //   source: 'src/img/icons',
+  //   destination: 'src/js/components/icons/base',
+  //   context: '../../../'
+  // },
   sync: {
     hostname: 'grommet.io',
     username: 'grommet',
