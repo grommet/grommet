@@ -3,6 +3,7 @@
 .#{$grommet-namespace}select {
   position: relative;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .#{$grommet-namespace}select__drop {
