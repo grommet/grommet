@@ -27,7 +27,7 @@ export default class Icon extends Component {
 
     a11yTitle = a11yTitle || Intl.getMessage(intl, 'caret-down');
 
-    return <svg version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><defs><polygon id="a" points="22 8 12 20 2 8"/><mask id="b" width="20" height="12" x="0" y="0" fill="white"/></defs></svg>;
+    return <svg version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><polygon fill="none" stroke="#000000" strokeWidth="2" points="22 8 12 20 2 8"/></svg>;
   }
 };
 

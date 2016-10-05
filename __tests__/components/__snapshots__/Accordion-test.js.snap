@@ -42,18 +42,11 @@ exports[`Accordion has correct default options 1`] = `
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <defs>
-              <polygon
-                id="a"
-                points="6 2 18 12 6 22" />
-              <mask
-                fill="white"
-                height="20"
-                id="b"
-                width="12"
-                x="0"
-                y="0" />
-            </defs>
+            <polygon
+              fill="none"
+              points="6 2 18 12 6 22"
+              stroke="#000000"
+              strokeWidth="2" />
           </svg>
         </header>
       </button>
@@ -108,18 +101,11 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <defs>
-              <polygon
-                id="a"
-                points="6 2 18 12 6 22" />
-              <mask
-                fill="white"
-                height="20"
-                id="b"
-                width="12"
-                x="0"
-                y="0" />
-            </defs>
+            <polygon
+              fill="none"
+              points="6 2 18 12 6 22"
+              stroke="#000000"
+              strokeWidth="2" />
           </svg>
         </header>
       </button>
@@ -179,18 +165,11 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <defs>
-              <polygon
-                id="a"
-                points="6 2 18 12 6 22" />
-              <mask
-                fill="white"
-                height="20"
-                id="b"
-                width="12"
-                x="0"
-                y="0" />
-            </defs>
+            <polygon
+              fill="none"
+              points="6 2 18 12 6 22"
+              stroke="#000000"
+              strokeWidth="2" />
           </svg>
         </header>
       </button>
@@ -245,18 +224,11 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <defs>
-              <polygon
-                id="a"
-                points="6 2 18 12 6 22" />
-              <mask
-                fill="white"
-                height="20"
-                id="b"
-                width="12"
-                x="0"
-                y="0" />
-            </defs>
+            <polygon
+              fill="none"
+              points="6 2 18 12 6 22"
+              stroke="#000000"
+              strokeWidth="2" />
           </svg>
         </header>
       </button>
@@ -316,18 +288,11 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <defs>
-              <polygon
-                id="a"
-                points="6 2 18 12 6 22" />
-              <mask
-                fill="white"
-                height="20"
-                id="b"
-                width="12"
-                x="0"
-                y="0" />
-            </defs>
+            <polygon
+              fill="none"
+              points="6 2 18 12 6 22"
+              stroke="#000000"
+              strokeWidth="2" />
           </svg>
         </header>
       </button>
@@ -395,18 +360,11 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <defs>
-              <polygon
-                id="a"
-                points="6 2 18 12 6 22" />
-              <mask
-                fill="white"
-                height="20"
-                id="b"
-                width="12"
-                x="0"
-                y="0" />
-            </defs>
+            <polygon
+              fill="none"
+              points="6 2 18 12 6 22"
+              stroke="#000000"
+              strokeWidth="2" />
           </svg>
         </header>
       </button>
@@ -466,18 +424,11 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
             version="1.1"
             viewBox="0 0 24 24"
             width="24px">
-            <defs>
-              <polygon
-                id="a"
-                points="6 2 18 12 6 22" />
-              <mask
-                fill="white"
-                height="20"
-                id="b"
-                width="12"
-                x="0"
-                y="0" />
-            </defs>
+            <polygon
+              fill="none"
+              points="6 2 18 12 6 22"
+              stroke="#000000"
+              strokeWidth="2" />
           </svg>
         </header>
       </button>
