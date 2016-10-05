@@ -48,7 +48,7 @@ export default class Box extends Component {
 
   componentWillReceiveProps (nextProps) {
     if (nextProps.colorIndex !== this.props.colorIndex) {
-      if (this.props.colorIndex) {
+      if (nextProps.colorIndex) {
         this.setState({ updateDarkBackground: true });
       } else {
         this.setState({ darkBackground: undefined });

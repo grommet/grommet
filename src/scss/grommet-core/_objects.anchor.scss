@@ -29,6 +29,7 @@
   }
 
   @include dark-background-context-icon();
+  @include light-background-context-icon();
 }
 
 .grommet a:not(.#{$grommet-namespace}anchor):not(.#{$grommet-namespace}button) {
@@ -74,7 +75,7 @@
 
   &:hover:not(.#{$grommet-namespace}anchor--disabled) {
     .#{$grommet-namespace}control-icon {
-      @include icon-hover-grow($control-brand-color);
+      @include icon-hover-grow();
     }
   }
 }
@@ -125,11 +126,29 @@
   display: inline-block;
 }
 
-#{$dark-background-context} a { // to generic, change
+#{$dark-background-context} a { // too generic, change
   color: $colored-text-color;
 
+  &:visited {
+    color: $colored-text-color;
+  }
+
+  &.active,
   &:hover {
     color: $active-colored-text-color;
+  }
+}
+
+#{$light-background-context} a { // too generic, change
+  color: $link-color;
+
+  &:visited {
+    color: $link-color;
+  }
+
+  &.active,
+  &:hover {
+    color: $hover-text-color;
   }
 }
 
