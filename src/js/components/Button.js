@@ -19,7 +19,8 @@ export default class Button extends Component {
   render () {
     const {
       a11yTitle, accent, align, children, className, fill, href, icon, id,
-      label, onClick, plain, primary, secondary, type, ...props
+      label, onClick, onBlur, onFocus, onMouseDown, onMouseUp, plain, primary,
+      secondary, type, ...props
     } = this.props;
 
     const buttonPlain = (plain !== undefined ? plain : (icon && ! label));
@@ -64,19 +65,36 @@ export default class Button extends Component {
     }
 
     return (
-      <Tag href={href} id={id} type={buttonType}
+      <Tag {...props} href={href} id={id} type={buttonType}
         className={classes} aria-label={a11yTitle}
         onClick={onClick}
         disabled={!onClick && !href}
-        onMouseDown={() => this.setState({ mouseActive: true })}
-        onMouseUp={() => this.setState({ mouseActive: false })}
-        onFocus={() => {
+        onMouseDown={(event) => {
+          this.setState({ mouseActive: true });
+          if (onMouseDown) {
+            onMouseDown(event);
+          }
+        }}
+        onMouseUp={(event) => {
+          this.setState({ mouseActive: false });
+          if (onMouseUp) {
+            onMouseUp(event);
+          }
+        }}
+        onFocus={(event) => {
           if (this.state.mouseActive === false) {
             this.setState({ focus: true });
           }
+          if (onFocus) {
+            onFocus(event);
+          }
         }}
-        onBlur={() => this.setState({ focus: false })}
-        {...props}>
+        onBlur={(event) => {
+          this.setState({ focus: false });
+          if (onBlur) {
+            onBlur(event);
+          }
+        }}>
         {buttonIcon}
         {buttonChildren}
       </Tag>

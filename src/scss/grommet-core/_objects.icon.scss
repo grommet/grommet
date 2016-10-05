@@ -17,18 +17,20 @@ $social-linkedin-color: #0077B5;
     fill: inherit;
   }
 
-  *:not([stroke]) {
-    &[fill="none"] {
-      stroke-width: 0;
+  &:not([class*="color-index-plain"]) {
+    *:not([stroke]) {
+      &[fill="none"] {
+        stroke-width: 0;
+      }
     }
-  }
 
-  *[stroke*="#"] {
-    stroke: inherit;
-  }
+    *[stroke*="#"] {
+      stroke: inherit;
+    }
 
-  *[fill*="#"] {
-    fill: inherit;
+    *[fill*="#"] {
+      fill: inherit;
+    }
   }
 
   @include graph-stroke-color();

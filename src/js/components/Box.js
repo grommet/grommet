@@ -17,7 +17,9 @@ export default class Box extends Component {
 
   constructor () {
     super();
-    this.state = {};
+    this.state = {
+      mouseActive: false
+    };
   }
 
   componentDidMount () {
@@ -181,9 +183,25 @@ export default class Box extends Component {
     }
 
     let a11yProps = {};
+    let clickableProps = {};
     if (onClick) {
       classes.push(CLASS_ROOT + "--clickable");
+      clickableProps = {
+        onMouseDown: () => this.setState({ mouseActive: true }),
+        onMouseUp: () => this.setState({ mouseActive: false }),
+        onFocus: () => {
+          if (this.state.mouseActive === false) {
+            this.setState({ focus: true });
+          }
+        },
+        onBlur: () => this.setState({
+          focus: false
+        })
+      };
       if (focusable) {
+        if (this.state.focus) {
+          classes.push(`${CLASS_ROOT}--focus`);
+        }
         let boxLabel = a11yTitle ||
           Intl.getMessage(this.context.intl, 'Box');
         a11yProps.tabIndex = tabIndex || 0;
@@ -241,7 +259,7 @@ export default class Box extends Component {
         <Component {...restProps} ref={(ref) => this.boxContainerRef = ref}
           id={id} className={classes.join(' ')} style={style}
           role={role} tabIndex={tabIndex}
-          onClick={onClick} {...a11yProps}>
+          onClick={onClick} {...a11yProps} {...clickableProps}>
           {skipLinkAnchor}
           {textureMarkup}
           {children}

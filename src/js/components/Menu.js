@@ -483,7 +483,6 @@ export default class Menu extends Component {
         <div ref={ref => this.controlRef = ref}>
           <Button {...props} plain={true}
             className={classes}
-            tabIndex="0"
             onClick={this._onOpen}
             a11yTitle={menuTitle}
             onFocus={this._onFocusControl}
