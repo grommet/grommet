@@ -260,6 +260,7 @@ var Search = function (_Component) {
       var _props3 = this.props;
       var inline = _props3.inline;
       var suggestions = _props3.suggestions;
+      var onKeyDown = _props3.onKeyDown;
       var dropActive = this.state.dropActive;
 
       if (suggestions) {
@@ -273,6 +274,9 @@ var Search = function (_Component) {
             this._onAddDrop(event);
           }
         }
+      }
+      if (onKeyDown) {
+        onKeyDown(event);
       }
     }
   }, {
@@ -288,10 +292,15 @@ var Search = function (_Component) {
     }
   }, {
     key: '_onFocusInput',
-    value: function _onFocusInput() {
+    value: function _onFocusInput(event) {
+      var onFocus = this.props.onFocus;
+
       this.setState({
         activeSuggestionIndex: -1
       });
+      if (onFocus) {
+        onFocus(event);
+      }
     }
   }, {
     key: '_fireDOMChange',
@@ -406,9 +415,14 @@ var Search = function (_Component) {
   }, {
     key: '_onMouseUp',
     value: function _onMouseUp(event) {
+      var onMouseUp = this.props.onMouseUp;
       // This fixes a Safari bug which prevents the input
       // text from being selected on focus.
+
       event.preventDefault();
+      if (onMouseUp) {
+        onMouseUp(event);
+      }
     }
   }, {
     key: '_onSink',

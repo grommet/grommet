@@ -84,8 +84,10 @@ var DropContents = function (_Component) {
 
       if (drop.options.focusControl) {
         this.originalFocusedElement = document.activeElement;
-        this.anchorStepRef.focus();
-        this.anchorStepRef.scrollIntoView();
+        if (!this.containerRef.contains(document.activeElement)) {
+          this.anchorStepRef.focus();
+          this.anchorStepRef.scrollIntoView();
+        }
 
         this._keyboardHandlers = {
           tab: this._processTab

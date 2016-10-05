@@ -44,6 +44,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require('react-dom');
+
 var _classnames3 = require('classnames');
 
 var _classnames4 = _interopRequireDefault(_classnames3);
@@ -78,11 +80,16 @@ var _CaretDown = require('./icons/base/CaretDown');
 
 var _CaretDown2 = _interopRequireDefault(_CaretDown);
 
+var _Intl = require('../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
+var _Announcer = require('../utils/Announcer');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.SELECT; // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.SELECT;
 var INPUT = _CSSClassnames2.default.INPUT;
 var FORM_FIELD = _CSSClassnames2.default.FORM_FIELD;
 
@@ -96,11 +103,15 @@ var Select = function (_Component) {
 
     _this._onAddDrop = _this._onAddDrop.bind(_this);
     _this._onRemoveDrop = _this._onRemoveDrop.bind(_this);
+    _this._onForceClose = _this._onForceClose.bind(_this);
     _this._onSearchChange = _this._onSearchChange.bind(_this);
     _this._onNextOption = _this._onNextOption.bind(_this);
     _this._onPreviousOption = _this._onPreviousOption.bind(_this);
     _this._onEnter = _this._onEnter.bind(_this);
     _this._onClickOption = _this._onClickOption.bind(_this);
+    _this._stopPropagation = _this._stopPropagation.bind(_this);
+    _this._onInputKeyDown = _this._onInputKeyDown.bind(_this);
+    _this._announceOptions = _this._announceOptions.bind(_this);
 
     _this.state = {
       activeOptionIndex: -1,
@@ -118,11 +129,13 @@ var Select = function (_Component) {
       // Set up keyboard listeners appropriate to the current state.
 
       var activeKeyboardHandlers = {
-        esc: this._onRemoveDrop,
-        tab: this._onRemoveDrop,
+        esc: this._onForceClose,
+        tab: this._onForceClose,
         up: this._onPreviousOption,
         down: this._onNextOption,
-        enter: this._onEnter
+        enter: this._onEnter,
+        left: this._stopPropagation,
+        right: this._stopPropagation
       };
 
       // the order here is important, need to turn off keys before turning on
@@ -132,7 +145,7 @@ var Select = function (_Component) {
         _KeyboardAccelerators2.default.stopListeningToKeyboard(this, activeKeyboardHandlers);
         if (this._drop) {
           this._drop.remove();
-          this._drop = null;
+          this._drop = undefined;
         }
       }
 
@@ -142,7 +155,12 @@ var Select = function (_Component) {
 
         // If this is inside a FormField, place the drop in reference to it.
         var control = (0, _DOM.findAncestor)(this.componentRef, FORM_FIELD) || this.componentRef;
-        this._drop = _Drop2.default.add(control, this._renderDrop(), { align: { top: 'bottom', left: 'left' } });
+        this._drop = _Drop2.default.add(control, this._renderDrop(), {
+          align: { top: 'bottom', left: 'left' },
+          focusControl: true,
+          context: this.context
+        });
+        this._searchRef.focus();
       } else if (this.state.dropActive && prevState.dropActive) {
         this._drop.render(this._renderDrop());
       }
@@ -153,6 +171,25 @@ var Select = function (_Component) {
       document.removeEventListener('click', this._onRemoveDrop);
       if (this._drop) {
         this._drop.remove();
+      }
+    }
+  }, {
+    key: '_announceOptions',
+    value: function _announceOptions(index) {
+      var intl = this.context.intl;
+
+      var labelMessage = this._renderLabel(this.props.options[index]);
+      var enterSelectMessage = _Intl2.default.getMessage(intl, 'Enter Select');
+      (0, _Announcer.announce)(labelMessage + ' ' + enterSelectMessage);
+    }
+  }, {
+    key: '_onInputKeyDown',
+    value: function _onInputKeyDown(event) {
+      var up = 38;
+      var down = 40;
+      if (event.keyCode === up || event.keyCode === down) {
+        // stop the input to move the cursor when options are present
+        event.preventDefault();
       }
     }
   }, {
@@ -193,7 +230,14 @@ var Select = function (_Component) {
     }
   }, {
     key: '_onRemoveDrop',
-    value: function _onRemoveDrop() {
+    value: function _onRemoveDrop(event) {
+      if (!(0, _reactDom.findDOMNode)(this._searchRef).contains(event.target)) {
+        this.setState({ dropActive: false });
+      }
+    }
+  }, {
+    key: '_onForceClose',
+    value: function _onForceClose() {
       this.setState({ dropActive: false });
     }
   }, {
@@ -201,31 +245,47 @@ var Select = function (_Component) {
     value: function _onNextOption() {
       var index = this.state.activeOptionIndex;
       index = Math.min(index + 1, this.props.options.length - 1);
-      this.setState({ activeOptionIndex: index });
+      this.setState({ activeOptionIndex: index }, this._announceOptions.bind(this, index));
     }
   }, {
     key: '_onPreviousOption',
     value: function _onPreviousOption() {
       var index = this.state.activeOptionIndex;
       index = Math.max(index - 1, 0);
-      this.setState({ activeOptionIndex: index });
+      this.setState({ activeOptionIndex: index }, this._announceOptions.bind(this, index));
     }
   }, {
     key: '_onEnter',
     value: function _onEnter(event) {
+      var _this2 = this;
+
       var _props2 = this.props;
       var onChange = _props2.onChange;
       var options = _props2.options;
       var activeOptionIndex = this.state.activeOptionIndex;
+      var intl = this.context.intl;
 
       this.setState({ dropActive: false });
       if (activeOptionIndex >= 0) {
-        event.preventDefault(); // prevent submitting forms
-        var option = options[activeOptionIndex];
-        this.setState({ value: option });
-        if (onChange) {
-          onChange({ target: this.inputRef, option: option });
-        }
+        (function () {
+          event.preventDefault(); // prevent submitting forms
+          var option = options[activeOptionIndex];
+          _this2.setState({ value: option }, function () {
+            var optionMessage = _this2._renderLabel(option);
+            var selectedMessage = _Intl2.default.getMessage(intl, 'Selected');
+            (0, _Announcer.announce)(optionMessage + ' ' + selectedMessage);
+          });
+          if (onChange) {
+            onChange({ target: _this2.inputRef, option: option });
+          }
+        })();
+      }
+    }
+  }, {
+    key: '_stopPropagation',
+    value: function _stopPropagation() {
+      if ((0, _reactDom.findDOMNode)(this._searchRef).contains(document.activeElement)) {
+        return true;
       }
     }
   }, {
@@ -248,7 +308,7 @@ var Select = function (_Component) {
   }, {
     key: '_renderDrop',
     value: function _renderDrop() {
-      var _this2 = this;
+      var _this3 = this;
 
       var _props3 = this.props;
       var onSearch = _props3.onSearch;
@@ -261,9 +321,13 @@ var Select = function (_Component) {
       var search = void 0;
       if (onSearch) {
         search = _react2.default.createElement(_Search2.default, { className: CLASS_ROOT + '__search',
+          ref: function ref(_ref) {
+            return _this3._searchRef = _ref;
+          },
           inline: true, fill: true, responsive: false, pad: 'medium',
-          placeHolder: placeHolder, initialFocus: true, value: searchText,
-          onDOMChange: this._onSearchChange });
+          placeHolder: placeHolder, value: searchText,
+          onDOMChange: this._onSearchChange,
+          onKeyDown: this._onInputKeyDown });
       }
 
       var items = void 0;
@@ -276,8 +340,8 @@ var Select = function (_Component) {
             'li',
             { key: index,
               className: classes,
-              onClick: _this2._onClickOption.bind(_this2, option) },
-            _this2._renderLabel(option)
+              onClick: _this3._onClickOption.bind(_this3, option) },
+            _this3._renderLabel(option)
           );
         });
       }
@@ -297,7 +361,7 @@ var Select = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       var _props4 = this.props;
       var className = _props4.className;
@@ -311,12 +375,15 @@ var Select = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { ref: function ref(_ref) {
-            return _this3.componentRef = _ref;
+        { ref: function ref(_ref3) {
+            return _this4.componentRef = _ref3;
           }, className: classes,
           onClick: this._onAddDrop },
         _react2.default.createElement('input', (0, _extends3.default)({}, restProps, { className: INPUT + ' ' + CLASS_ROOT + '__input',
           id: id, name: name, disabled: true,
+          ref: function ref(_ref2) {
+            return _this4.inputRef = _ref2;
+          },
           value: this._renderLabel(value) })),
         _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control', icon: _react2.default.createElement(_CaretDown2.default, null),
           onClick: this._onAddDrop })
@@ -329,6 +396,10 @@ var Select = function (_Component) {
 Select.displayName = 'Select';
 exports.default = Select;
 
+
+Select.contextTypes = {
+  intl: _react.PropTypes.object
+};
 
 Select.propTypes = {
   defaultValue: _react.PropTypes.oneOfType([_react.PropTypes.shape({

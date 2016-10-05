@@ -94,6 +94,7 @@ var AccordionPanel = function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var a11yTitle = _props.a11yTitle;
       var active = _props.active;
       var animate = _props.animate;
       var className = _props.className;
@@ -106,7 +107,7 @@ var AccordionPanel = function (_Component) {
       var classes = (0, _classnames3.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', active));
 
       var tabContentTitle = _Intl2.default.getMessage(intl, 'Tab Contents', {
-        activeTitle: heading
+        activeTitle: a11yTitle || heading
       });
 
       return _react2.default.createElement(
@@ -116,7 +117,7 @@ var AccordionPanel = function (_Component) {
           _ListItem2.default,
           { className: classes, direction: 'column', pad: 'none',
             'aria-expanded': active, 'aria-selected': active, role: 'tab',
-            'aria-label': heading },
+            'aria-label': a11yTitle || heading },
           _react2.default.createElement(
             _Button2.default,
             { fill: true, plain: true, onClick: this._onClickTab },
@@ -147,6 +148,7 @@ exports.default = AccordionPanel;
 ;
 
 AccordionPanel.propTypes = {
+  a11yTitle: _react.PropTypes.string,
   active: _react.PropTypes.bool, // set by Accordion
   animate: _react.PropTypes.bool,
   heading: _react.PropTypes.node.isRequired,
