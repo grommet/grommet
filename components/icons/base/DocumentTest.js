@@ -80,18 +80,8 @@ var Icon = function (_Component) {
 
       return _react2.default.createElement(
         'svg',
-        { version: '1.1', viewBox: '0 0 25 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
-        _react2.default.createElement(
-          'g',
-          null,
-          _react2.default.createElement('rect', { x: '1', y: '0', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('polyline', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '5,6 5,1 18.0002,1 23,5.9999 23,23 18,23 \r ' }),
-          _react2.default.createElement('polyline', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '17,2 17,7 23,7 \t' }),
-          _react2.default.createElement('line', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', x1: '4', y1: '9', x2: '12', y2: '9' }),
-          _react2.default.createElement('polyline', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '6,10 6,13.7727 1,21.9545 1,23 8,23 \t' }),
-          _react2.default.createElement('polyline', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '8,23 15,23 15,21.9545 10,13.7727 10,10 \t\r ' }),
-          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M12.4527,17.5795\r c-4.2577-2.3438-4.7917,1.946-8.5436-0.3977' })
-        )
+        { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
+        _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M4.99787498,5.99999999 L4.99787498,0.999999992 L19.4999998,0.999999992 L22.9999998,4.50000005 L23,23 L20,23 M18,1 L18,6 L23,6 M6,9 L14,9 M8,9 L8,13.5 L3,21.5 L3,23 L17,23 L17,21.4188612 L12,13.5 L12,9 M5.5,17.5 C5.5,17.5 7.5,19.0000002 10,17.5000001 C12.5,16 14.5,17.5000001 14.5,17.5000001' })
       );
     }
   }]);

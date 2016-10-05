@@ -81,12 +81,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
-        _react2.default.createElement(
-          'g',
-          null,
-          _react2.default.createElement('rect', { y: '0', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M21,23H4.5C3.1193,23,2,21.8807,2,20.5v0\r C2,19.1193,3.1193,18,4.5,18H20V1H4.5C3.1193,1,2,2.1193,2,3.5V4v17 M19.5,18c-1.3807,0-2.5,1.1193-2.5,2.5v0\r c0,1.3807,1.1193,2.5,2.5,2.5 M9,1v10l3-2l3,2V2' })
-        )
+        _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M10,1 L10,11 L13,9 L16,11 L16,1 M5.5,18 C4.11928813,18 3,19.1192881 3,20.5 C3,21.8807119 4.11928813,23 5.5,23 L22,23 M3,20.5 L3,3.5 C3,2.11928813 4.11928813,1 5.5,1 L21,1 L21,18.0073514 L5.49217286,18.0073514 M20.5,18 C19.1192881,18 18,19.1192881 18,20.5 C18,21.8807119 19.1192881,23 20.5,23 L20.5,23' })
       );
     }
   }]);

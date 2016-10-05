@@ -80,16 +80,8 @@ var Icon = function (_Component) {
 
       return _react2.default.createElement(
         'svg',
-        { version: '1.1', viewBox: '0 0 26 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
-        _react2.default.createElement(
-          'g',
-          null,
-          _react2.default.createElement('rect', { x: '2', y: '0', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('polyline', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '6,6 6,1 19.0002,1 24,5.9999 24,23 17,23 \r ' }),
-          _react2.default.createElement('polyline', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '18,2 18,7 24,7 \t' }),
-          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M5.375,12.8537v-1c0-1.6569,1.3431-3,3-3h4\r c1.6569,0,3,1.3431,3,3v1l1,0c1.6569,0,3,1.3431,3,3v0c0,1.6569-1.3431,3-3,3H9.9996' }),
-          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M14,18.8537v1c0,1.6569-1.3431,3-3,3H8\r c-1.6569,0-3-1.3431-3-3v-1H4c-1.6569,0-3-1.3431-3-3v0c0-1.6569,1.3431-3,3-3h6.375' })
-        )
+        { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
+        _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M4.99787498,6.99999999 L4.99787498,0.999999992 L19.4999998,0.999999992 L22.9999998,4.50000005 L23,23 L19,23 M18,1 L18,6 L23,6 M11,13 L6.00166547,13 C4.34389141,13 3,14.3465171 3,16 L3,16 C3,17.6568542 4.34306961,19 5.9906311,19 L7,19 L7,20.0093689 C7,21.6610488 8.33902013,23 10.0016655,23 L11.9983345,23 C13.6561086,23 15,21.6569304 15,20.0093689 L15,19 M11,19 L15.9983345,19 C17.6561086,19 19,17.6534829 19,16 L19,16 C19,14.3431458 17.6569304,13 16.0093689,13 L15,13 L15,11.9906311 C15,10.3389512 13.6609799,9 11.9983345,9 L10.0016655,9 C8.34389141,9 7,10.3430696 7,11.9906311 L7,13' })
       );
     }
   }]);

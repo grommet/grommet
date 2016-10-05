@@ -81,15 +81,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
-        _react2.default.createElement(
-          'g',
-          null,
-          _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('rect', { x: '18', y: '4', width: '2', height: '2' }),
-          _react2.default.createElement('rect', { x: '18', y: '10', width: '2', height: '2' }),
-          _react2.default.createElement('rect', { x: '18', y: '16', width: '2', height: '2' }),
-          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M23,20H1V2h22V20z M2,8h20 M4,5h13 M2,14h20 M4,11\r h13 M4,17h13 M1,2v21 M23,2v21' })
-        )
+        _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M1,23 L1,2 L23,2 L23,23 M1,8 L23,8 L1,8 Z M1,14 L23,14 L1,14 Z M1,20 L23,20 L1,20 Z M4,5 L16,5 L4,5 Z M18,5 L20,5 L18,5 Z M18,11 L20,11 L18,11 Z M18,17 L20,17 L18,17 Z M4,11 L16,11 L4,11 Z M4,17 L16,17 L4,17 Z' })
       );
     }
   }]);

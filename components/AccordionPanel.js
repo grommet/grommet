@@ -48,9 +48,9 @@ var _ListItem = require('./ListItem');
 
 var _ListItem2 = _interopRequireDefault(_ListItem);
 
-var _TabNext = require('./icons/base/TabNext');
+var _CaretNext = require('./icons/base/CaretNext');
 
-var _TabNext2 = _interopRequireDefault(_TabNext);
+var _CaretNext2 = _interopRequireDefault(_CaretNext);
 
 var _Collapsible = require('./Collapsible');
 
@@ -126,7 +126,7 @@ var AccordionPanel = function (_Component) {
                 justify: 'between', align: 'center', responsive: false,
                 className: CLASS_ROOT + '__header' },
               heading,
-              _react2.default.createElement(_TabNext2.default, { className: CLASS_ROOT + '__control' })
+              _react2.default.createElement(_CaretNext2.default, { className: CLASS_ROOT + '__control' })
             )
           )
         ),

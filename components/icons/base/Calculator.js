@@ -81,19 +81,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
-        _react2.default.createElement(
-          'g',
-          null,
-          _react2.default.createElement('rect', { x: '0', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('rect', { x: '2.5', y: '1', fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', width: '19', height: '22' }),
-          _react2.default.createElement('rect', { x: '5.5', y: '12', width: '3', height: '3' }),
-          _react2.default.createElement('rect', { x: '10.5', y: '12', width: '3', height: '3' }),
-          _react2.default.createElement('rect', { x: '15.5', y: '12', width: '3', height: '3' }),
-          _react2.default.createElement('rect', { x: '5.5', y: '17', width: '3', height: '3' }),
-          _react2.default.createElement('rect', { x: '10.5', y: '17', width: '3', height: '3' }),
-          _react2.default.createElement('rect', { x: '15.5', y: '17', width: '3', height: '3' }),
-          _react2.default.createElement('rect', { x: '6.5', y: '5', fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', width: '11', height: '4' })
-        )
+        _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M22,23 L2,23 L2,1 L22,1 L22,23 Z M16,17 L18,17 L18,19 L16,19 L16,17 Z M11,17 L13,17 L13,19 L11,19 L11,17 Z M16,12 L18,12 L18,14 L16,14 L16,12 Z M11,12 L13,12 L13,14 L11,14 L11,12 Z M6,17 L8,17 L8,19 L6,19 L6,17 Z M6,12 L8,12 L8,14 L6,14 L6,12 Z M18,9 L6,9 L6,5 L18,5 L18,9 Z' })
       );
     }
   }]);

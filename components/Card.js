@@ -84,9 +84,9 @@ var _Video = require('./Video');
 
 var _Video2 = _interopRequireDefault(_Video);
 
-var _Watch = require('./icons/base/Watch');
+var _CirclePlay = require('./icons/base/CirclePlay');
 
-var _Watch2 = _interopRequireDefault(_Watch);
+var _CirclePlay2 = _interopRequireDefault(_CirclePlay);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -210,7 +210,8 @@ var Card = function (_Component) {
       var result = thumbnail;
       if (typeof thumbnail === 'string') {
         var basis = 'row' === this.props.direction ? '1/3' : 'small';
-        var videoIcon = video ? _react2.default.createElement(_Anchor2.default, { icon: _react2.default.createElement(_Watch2.default, { responsive: false, size: 'xlarge' }) }) : null;
+        var videoIcon = video ? _react2.default.createElement(_Anchor2.default, { icon: _react2.default.createElement(_CirclePlay2.default, { responsive: false, colorIndex: 'brand',
+            size: 'xlarge' }) }) : undefined;
 
         result = _react2.default.createElement(
           _Box2.default,

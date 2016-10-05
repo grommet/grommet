@@ -81,16 +81,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
-        _react2.default.createElement(
-          'g',
-          null,
-          _react2.default.createElement('rect', { y: '0', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement(
-            'g',
-            null,
-            _react2.default.createElement('path', { d: 'M12,4.4722l2.2111,4.4222L14.7639,10H16h3.3419l-2.792,2.9393l-0.7562,0.7963l0.2659,1.0654l1.2408,4.9724l-4.2639-2.5836\r L12,16.5618l-1.0364,0.6281l-4.2639,2.5836l1.2408-4.9724l0.2659-1.0654l-0.7563-0.7963L4.6581,10H8h1.2361l0.5528-1.1056\r L12,4.4722 M12,0L8,8H0l6,6.3168L3.5836,24L12,18.9003L20.4164,24L18,14.3168L24,8h-8L12,0L12,0z' })
-          )
-        )
+        _react2.default.createElement('polygon', { fill: 'none', stroke: '#000000', strokeWidth: '2', points: '5 21 8 14 3 9 9 9 12 3 15 9 21 9 16 14 19 21 12 17' })
       );
     }
   }]);

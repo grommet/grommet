@@ -81,14 +81,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
-        _react2.default.createElement(
-          'g',
-          null,
-          _react2.default.createElement('rect', { y: '0', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('polyline', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '20,16 23,16 23,2 3,2 3,5 \t' }),
-          _react2.default.createElement('rect', { x: '10', y: '0', width: '6', height: '4' }),
-          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M10,10.5c0,1.933-1.567,3.5-3.5,3.5\r S3,12.433,3,10.5S4.567,7,6.5,7S10,8.567,10,10.5z M8,14H6c-2.7614,0-5,2.2386-5,5v4h11v-3.9515\r c0-0.6033,0.3584-1.1483,0.9169-1.3766C16.8134,16.0792,19,11,19,11l-2-2C11.7917,14.2083,8,14,8,14 M17,9l2-2' })
-        )
+        _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M19,7 C19,7 14,14 6.5,14 C4.5,14 1,15 1,19 L1,23 L12,23 L12,19 C12,16.5 15,18 19,11 L17.5,9.5 M3,5 L3,2 L23,2 L23,16 L20,16 M11,1 L15,1 L15,3 L11,3 L11,1 Z M6.5,14 C8.43299662,14 10,12.4329966 10,10.5 C10,8.56700338 8.43299662,7 6.5,7 C4.56700338,7 3,8.56700338 3,10.5 C3,12.4329966 4.56700338,14 6.5,14 Z' })
       );
     }
   }]);

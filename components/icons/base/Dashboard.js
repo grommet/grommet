@@ -80,13 +80,8 @@ var Icon = function (_Component) {
 
       return _react2.default.createElement(
         'svg',
-        { version: '1.1', viewBox: '0 0 24 24.5', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
-        _react2.default.createElement(
-          'g',
-          null,
-          _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M23,12.5c0,6.0751-4.9249,11-11,11\r s-11-4.9249-11-11s4.9249-11,11-11S23,6.4249,23,12.5z M2,16.5h20 M15,15.5c0-1.6569-1.3431-3-3-3s-3,1.3431-3,3 M12,12.5v-6\r M12,4.5v-2 M17.6569,6.8431l1.4142-1.4142 M20,12.5h2 M6,6.8431L4.5858,5.4289 M4,12.5H2' })
-        )
+        { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
+        _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M15,16 C15,14.3431458 13.6568542,13 12,13 C10.3431458,13 9,14.3431458 9,16 M5,5 L7,7 M12,7 L12,13 M12,3 L12,5 M19,12 L21,12 M3,12 L5,12 M17,7 L19,5 M3,17 L21,17' })
       );
     }
   }]);

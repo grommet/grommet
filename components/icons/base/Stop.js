@@ -81,7 +81,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
-        _react2.default.createElement('rect', { stroke: '#000000', strokeWidth: '2', fill: 'none', x: '4', y: '4', width: '16', height: '16' })
+        _react2.default.createElement('rect', { width: '16', height: '16', x: '4', y: '4', fill: 'none', stroke: '#000000', strokeWidth: '2' })
       );
     }
   }]);

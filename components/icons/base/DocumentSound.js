@@ -80,17 +80,8 @@ var Icon = function (_Component) {
 
       return _react2.default.createElement(
         'svg',
-        { version: '1.1', viewBox: '0 0 25 24.0806', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
-        _react2.default.createElement(
-          'g',
-          null,
-          _react2.default.createElement('rect', { x: '1', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('polyline', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '5,8 5,1 18.0002,1 23,5.9999 23,23 19,23 \r ' }),
-          _react2.default.createElement('polyline', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '17,2 17,7 23,7 \t' }),
-          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M11.5,13L11.5,13c1.6569,0,3,1.3431,3,3v0\r c0,1.6569-1.3431,3-3,3h0' }),
-          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M11.5,9L11.5,9c3.866,0,7,3.134,7,7v0\r c0,3.866-3.134,7-7,7h0' }),
-          _react2.default.createElement('polygon', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '4,14 1,14 1,18 4,18 9,22 9,10 \t' })
-        )
+        { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
+        _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M2.99787498,8.99999999 L2.99787498,0.999999992 L17.4999998,0.999999992 L20.9999998,4.50000005 L21,23 L18,23 M16,1 L16,6 L21,6 M1,14.0104121 L1,18.0104121 L4,18.0104121 L8,21.0104121 L8,11 L4,14.0104121 L1,14.0104121 Z M11,18 L11,18 C12.1045695,18 13,17.1045695 13,16 C13,14.8954305 12.1045695,14 11,14 M11,22 L11,22 C14.3137085,22 17,19.3137085 17,16 C17,12.6862915 14.3137085,10 11,10' })
       );
     }
   }]);

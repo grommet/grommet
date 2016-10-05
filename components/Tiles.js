@@ -251,11 +251,15 @@ var Tiles = function (_Component) {
 
 
       if (element) {
-        var elementClone = _react2.default.cloneElement(element, {
-          hoverBorder: !flush
-        });
+        // only clone tile children
+        if (element.type && element.type.displayName === 'Tile') {
+          var elementClone = _react2.default.cloneElement(element, {
+            hoverBorder: !flush
+          });
 
-        return elementClone;
+          return elementClone;
+        }
+        return element;
       }
 
       return undefined;

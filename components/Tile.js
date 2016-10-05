@@ -86,12 +86,7 @@ var Tile = function (_Component) {
       var hoverBorder = _props.hoverBorder;
       var hoverBorderSize = _props.hoverBorderSize;
 
-      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(_Box2.default.propTypes));
-      delete restProps.hoverStyle;
-      delete restProps.hoverColorIndex;
-      delete restProps.hoverBorder;
-      delete restProps.hoverBorderSize;
-      delete restProps.wide;
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Tile.propTypes));
 
       var statusClass = status ? status.toLowerCase() : undefined;
       // if Tiles flush is true, default borderSize to small (1px)
@@ -118,6 +113,7 @@ exports.default = Tile;
 Tile.propTypes = (0, _extends3.default)({
   hoverStyle: _react.PropTypes.oneOf(['border', 'background', 'none']),
   hoverColorIndex: _react.PropTypes.string,
+  hoverBorder: _react.PropTypes.bool,
   hoverBorderSize: _react.PropTypes.oneOf(['small', 'medium', 'large']),
   wide: _react.PropTypes.bool }, _Box2.default.propTypes);
 

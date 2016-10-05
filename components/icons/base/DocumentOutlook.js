@@ -81,15 +81,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
-        _react2.default.createElement(
-          'g',
-          null,
-          _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('polyline', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '4.4186,9 4.4186,1 17.4188,1 \r 22.4186,5.9999 22.4186,23 3.4186,23 \t' }),
-          _react2.default.createElement('polyline', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '16.4186,2 16.4186,7 22.4186,7 \t' }),
-          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M15.4186,7' }),
-          _react2.default.createElement('path', { d: 'M2.3379,15.4758v-0.0256c0-2.6643,1.653-4.75,4.094-4.75c2.4272,0,4.0674,2.0601,4.0674,4.7234v0.0266\r c0,2.6633-1.6402,4.75-4.0935,4.75C3.9519,20.2002,2.3379,18.1401,2.3379,15.4758z M8.4264,15.4758v-0.0256\r c0-1.6668-0.8137-2.9265-2.0206-2.9265c-1.2075,0-1.995,1.2203-1.995,2.8999v0.0266c0,1.6796,0.8009,2.9255,2.0211,2.9255\r S8.4264,17.1426,8.4264,15.4758z' })
-        )
+        _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M2.99787498,8.99999999 L2.99787498,0.999999992 L17.4999998,0.999999992 L20.9999998,4.50000005 L21,23 L2,23 M16,1 L16,6 L21,6 M7.75,15.75 C7.75,13.5 6.49999991,12 5,12 C3.50000009,12 2.25,13.5 2.25,15.75 C2.25,18 3.50000006,19.5000002 5.00000003,19.5000001 C6.5,19.5 7.75,18 7.75,15.75 Z M5,12 C7.42537405,12 8,14.5 8,15.75 C8,17 7.5,19.5 5,19.5 C2.5,19.5 2,17 2,15.75 C2,14.5 2.559,12 5,12 Z' })
       );
     }
   }]);

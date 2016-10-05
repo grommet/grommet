@@ -80,14 +80,8 @@ var Icon = function (_Component) {
 
       return _react2.default.createElement(
         'svg',
-        { version: '1.1', viewBox: '0 0 24 25.1473', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
-        _react2.default.createElement(
-          'g',
-          null,
-          _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('circle', { cx: '12', cy: '9', r: '2' }),
-          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M19.1848,17.4137\r C19.8089,18.0219,20,18.8468,20,19.707v3.6281c0,0.6476-0.581,0.8821-1.1339,0.5229l-2.7003-2.0099\r C15.6193,21.493,14.977,21,14.3201,21H12H9.6799c-0.6569,0-1.2195,0.493-1.7661,0.8481l-2.78,2.1616\r C4.581,24.369,4,23.9827,4,23.3351V19.707c0-0.8602,0.1911-1.6851,0.8152-2.2933l2.3703-2.4657\r c-0.1076-1.1416-0.1768-2.4289-0.1768-3.8817C7.0086,3.8449,12,2.1473,12,2.1473s4.9914,1.6976,4.9914,8.919\r c0,1.4528-0.0693,2.7401-0.1768,3.8817L19.1848,17.4137z M8,21l2,3h4l2-3' })
-        )
+        { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
+        _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M7,9 L7,14 C7,14 4,16 4,19 L4,20 L8,20 L10,23 L14,23 L16,20 L20,20 L20,19 C20,16 17,14 17,14 L17,9 C17,5 14,1 12,1 C10,1 7,5 7,9 Z M8,20 L16,20 M12,9 C12.5522847,9 13,8.55228475 13,8 C13,7.44771525 12.5522847,7 12,7 C11.4477153,7 11,7.44771525 11,8 C11,8.55228475 11.4477153,9 12,9 Z' })
       );
     }
   }]);

@@ -48,17 +48,17 @@ var _SocialFacebook = require('./icons/base/SocialFacebook');
 
 var _SocialFacebook2 = _interopRequireDefault(_SocialFacebook);
 
-var _SocialGoogle = require('./icons/base/SocialGoogle');
+var _SocialGooglePlus = require('./icons/base/SocialGooglePlus');
 
-var _SocialGoogle2 = _interopRequireDefault(_SocialGoogle);
+var _SocialGooglePlus2 = _interopRequireDefault(_SocialGooglePlus);
 
 var _SocialLinkedin = require('./icons/base/SocialLinkedin');
 
 var _SocialLinkedin2 = _interopRequireDefault(_SocialLinkedin);
 
-var _SocialEmail = require('./icons/base/SocialEmail');
+var _SocialMail = require('./icons/base/SocialMail');
 
-var _SocialEmail2 = _interopRequireDefault(_SocialEmail);
+var _SocialMail2 = _interopRequireDefault(_SocialMail);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -101,7 +101,7 @@ var SocialShare = function (_Component) {
           colorIndex: colorIndex });
         href = 'https://www.linkedin.com/shareArticle?mini=true&url=' + (encodedLink + '&title=' + encodedTitle + '&summary=' + encodedText);
       } else if (type === 'google') {
-        socialIcon = _react2.default.createElement(_SocialGoogle2.default, { a11yTitle: calculatedA11yTitle,
+        socialIcon = _react2.default.createElement(_SocialGooglePlus2.default, { a11yTitle: calculatedA11yTitle,
           colorIndex: colorIndex });
         href = 'https://plus.google.com/share?url=' + encodedLink;
       } else if (type === 'facebook') {
@@ -109,7 +109,7 @@ var SocialShare = function (_Component) {
           colorIndex: colorIndex });
         href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedLink;
       } else if (type === 'email') {
-        socialIcon = _react2.default.createElement(_SocialEmail2.default, { a11yTitle: calculatedA11yTitle,
+        socialIcon = _react2.default.createElement(_SocialMail2.default, { a11yTitle: calculatedA11yTitle,
           colorIndex: colorIndex });
         href = 'mailto:?subject=' + (encodedTitle + '&body=' + encodedText + '%0D%0A' + encodedLink);
         target = '_self';

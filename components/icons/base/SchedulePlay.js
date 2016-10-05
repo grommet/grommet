@@ -80,14 +80,8 @@ var Icon = function (_Component) {
 
       return _react2.default.createElement(
         'svg',
-        { version: '1.1', viewBox: '0 0 24.5 25', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
-        _react2.default.createElement(
-          'g',
-          null,
-          _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M12.5,20h-11V4h16v9 M2.5,8h14 M5.5,4V1 M14.5,12\r h-6 M6.5,12h-2 M12.5,16h-4 M6.5,16h-2 M13.5,4V1 M18,13c-3.0376,0-5.5,2.4624-5.5,5.5S14.9624,24,18,24s5.5-2.4624,5.5-5.5\r S21.0376,13,18,13z' }),
-          _react2.default.createElement('path', { d: 'M16.5,15.5c0.0521,0.0469,0,6,0,6l5-3L16.5,15.5z' })
-        )
+        { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
+        _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M14,0 L14,3 M1,7 L19,7 M6,0 L6,3 M4,11 L6,11 M8,11 L16,11 M4,15 L6,15 M8,15 L14,15 M13,19 L1,19 L1,3 L19,3 L19,13 M18,23 C20.7614237,23 23,20.7614237 23,18 C23,15.2385763 20.7614237,13 18,13 C15.2385763,13 13,15.2385763 13,18 C13,20.7614237 15.2385763,23 18,23 Z M17.5,17 L19,18 L17.5,19 L17.5,17 Z' })
       );
     }
   }]);

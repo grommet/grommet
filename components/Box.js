@@ -317,7 +317,6 @@ var Box = function (_Component) {
       }
 
       var Component = tag;
-
       if (appCentered) {
         return _react2.default.createElement(
           'div',

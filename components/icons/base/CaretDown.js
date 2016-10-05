@@ -82,10 +82,10 @@ var Icon = function (_Component) {
         'svg',
         { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
         _react2.default.createElement(
-          'g',
+          'defs',
           null,
-          _react2.default.createElement('rect', { x: '0', y: '0', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('polygon', { id: 'drop-carrot', fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', points: '4.8571,8 19.1429,8 12,18' })
+          _react2.default.createElement('polygon', { id: 'a', points: '22 8 12 20 2 8' }),
+          _react2.default.createElement('mask', { id: 'b', width: '20', height: '12', x: '0', y: '0', fill: 'white' })
         )
       );
     }

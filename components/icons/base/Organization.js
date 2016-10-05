@@ -81,17 +81,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
-        _react2.default.createElement(
-          'g',
-          null,
-          _react2.default.createElement('rect', { fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', strokeMiterlimit: '10', d: 'M19,4v19H5V4 M19,1H5 M21,1H2.9583v3H21V1z' }),
-          _react2.default.createElement('rect', { x: '8', y: '7', width: '3', height: '4' }),
-          _react2.default.createElement('rect', { x: '13', y: '7', width: '3', height: '4' }),
-          _react2.default.createElement('rect', { x: '8', y: '13', width: '3', height: '4' }),
-          _react2.default.createElement('rect', { x: '10', y: '19', width: '4', height: '4' }),
-          _react2.default.createElement('rect', { x: '13', y: '13', width: '3', height: '4' })
-        )
+        _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M20,3 L20,23 L4,23 L4,3 L20,3 Z M8.042,9 L10.042,9 L10.042,7 L8.042,7 L8.042,9 Z M14,9 L16,9 L16,7 L14,7 L14,9 Z M8.042,15 L10.042,15 L10.042,13 L8.042,13 L8.042,15 Z M10.042,23 L14.042,23 L14.042,19 L10.042,19 L10.042,23 Z M14,15 L16,15 L16,13 L14,13 L14,15 Z M2,3 L22,3 L22,1 L2,1 L2,3 Z' })
       );
     }
   }]);

@@ -81,17 +81,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
-        _react2.default.createElement(
-          'g',
-          null,
-          _react2.default.createElement('rect', { y: '0', fill: 'none', width: '24', height: '24' }),
-          _react2.default.createElement(
-            'g',
-            null,
-            _react2.default.createElement('path', { d: 'M12,4.4721l2.2112,4.4223L14.7639,10H16h3.3418l-2.7919,2.9393l-0.7563,0.7962l0.2659,1.0654l1.2409,4.9725\r l-4.2639-2.5836L12,16.5618l-1.0364,0.628l-4.2639,2.5836l1.2409-4.9725l0.2659-1.0654l-0.7563-0.7962L4.6582,10H8h1.2361\r l0.5528-1.1056L12,4.4721 M12,0L8,8H0l6,6.3167L3.5836,24L12,18.9003L20.4164,24L18,14.3167L24,8h-8L12,0L12,0z' })
-          ),
-          _react2.default.createElement('polygon', { points: '12,18.9003 3.5836,24 6,14.3167 0,8 8,8 12,0 \t' })
-        )
+        _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M5,21 L8,14 L3,9 L9,9 L12,3 L15,9 L21,9 L16,14 L19,21 L12,17 L5,21 Z M11,8 L11,16 L8,17.5 L9.5,14 L5.5,10 L10,10 L11,8 Z M8,11 L10,13 L10,11 L8,11 Z' })
       );
     }
   }]);
