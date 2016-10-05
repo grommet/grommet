@@ -181,7 +181,7 @@ var Legend = function (_Component) {
 
       var total = 0;
       series.forEach(function (item) {
-        return total += item.value === 'number' ? item.value : 0;
+        return total += typeof item.value === 'number' ? item.value : 0;
       });
       return total;
     }
