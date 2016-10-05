@@ -1,6 +1,7 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 import Props from '../utils/Props';
@@ -10,6 +11,8 @@ import { findAncestor } from '../utils/DOM';
 import Button from './Button';
 import Search from './Search';
 import CaretDownIcon from './icons/base/CaretDown';
+import Intl from '../utils/Intl';
+import { announce } from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.SELECT;
 const INPUT = CSSClassnames.INPUT;
@@ -22,11 +25,15 @@ export default class Select extends Component {
 
     this._onAddDrop = this._onAddDrop.bind(this);
     this._onRemoveDrop = this._onRemoveDrop.bind(this);
+    this._onForceClose = this._onForceClose.bind(this);
     this._onSearchChange = this._onSearchChange.bind(this);
     this._onNextOption = this._onNextOption.bind(this);
     this._onPreviousOption = this._onPreviousOption.bind(this);
     this._onEnter = this._onEnter.bind(this);
     this._onClickOption = this._onClickOption.bind(this);
+    this._stopPropagation = this._stopPropagation.bind(this);
+    this._onInputKeyDown = this._onInputKeyDown.bind(this);
+    this._announceOptions = this._announceOptions.bind(this);
 
     this.state = {
       activeOptionIndex: -1,
@@ -41,11 +48,13 @@ export default class Select extends Component {
     // Set up keyboard listeners appropriate to the current state.
 
     const activeKeyboardHandlers = {
-      esc: this._onRemoveDrop,
-      tab: this._onRemoveDrop,
+      esc: this._onForceClose,
+      tab: this._onForceClose,
       up: this._onPreviousOption,
       down: this._onNextOption,
-      enter: this._onEnter
+      enter: this._onEnter,
+      left: this._stopPropagation,
+      right: this._stopPropagation
     };
 
     // the order here is important, need to turn off keys before turning on
@@ -56,7 +65,7 @@ export default class Select extends Component {
         activeKeyboardHandlers);
       if (this._drop) {
         this._drop.remove();
-        this._drop = null;
+        this._drop = undefined;
       }
     }
 
@@ -69,7 +78,12 @@ export default class Select extends Component {
       const control =
         findAncestor(this.componentRef, FORM_FIELD) || this.componentRef;
       this._drop = Drop.add(control,
-        this._renderDrop(), { align: {top: 'bottom', left: 'left'} });
+        this._renderDrop(), {
+          align: {top: 'bottom', left: 'left'},
+          focusControl: true,
+          context: this.context
+        });
+      this._searchRef.focus();
     } else if (this.state.dropActive && prevState.dropActive) {
       this._drop.render(this._renderDrop());
     }
@@ -79,6 +93,22 @@ export default class Select extends Component {
     document.removeEventListener('click', this._onRemoveDrop);
     if (this._drop) {
       this._drop.remove();
+    }
+  }
+
+  _announceOptions (index) {
+    const { intl } = this.context;
+    const labelMessage = this._renderLabel(this.props.options[index]);
+    const enterSelectMessage = Intl.getMessage(intl, 'Enter Select');
+    announce(`${labelMessage} ${enterSelectMessage}`);
+  }
+
+  _onInputKeyDown (event) {
+    const up = 38;
+    const down = 40;
+    if (event.keyCode === up || event.keyCode === down) {
+      // stop the input to move the cursor when options are present
+      event.preventDefault();
     }
   }
 
@@ -113,33 +143,52 @@ export default class Select extends Component {
     }
   }
 
-  _onRemoveDrop () {
+  _onRemoveDrop (event) {
+    if (!findDOMNode(this._searchRef).contains(event.target)) {
+      this.setState({dropActive: false});
+    }
+  }
+
+  _onForceClose () {
     this.setState({dropActive: false});
   }
 
   _onNextOption () {
     let index = this.state.activeOptionIndex;
     index = Math.min(index + 1, this.props.options.length - 1);
-    this.setState({activeOptionIndex: index});
+    this.setState({activeOptionIndex: index},
+      this._announceOptions.bind(this, index));
   }
 
   _onPreviousOption () {
     let index = this.state.activeOptionIndex;
     index = Math.max(index - 1, 0);
-    this.setState({activeOptionIndex: index});
+    this.setState({activeOptionIndex: index},
+      this._announceOptions.bind(this, index));
   }
 
   _onEnter (event) {
     const { onChange, options } = this.props;
     const { activeOptionIndex } = this.state;
+    const { intl } = this.context;
     this.setState({dropActive: false});
     if (activeOptionIndex >= 0) {
       event.preventDefault(); // prevent submitting forms
       let option = options[activeOptionIndex];
-      this.setState({value: option});
+      this.setState({value: option}, () => {
+        const optionMessage = this._renderLabel(option);
+        const selectedMessage = Intl.getMessage(intl, 'Selected');
+        announce(`${optionMessage} ${selectedMessage}`);
+      });
       if (onChange) {
         onChange({target: this.inputRef, option: option});
       }
+    }
+  }
+
+  _stopPropagation () {
+    if (findDOMNode(this._searchRef).contains(document.activeElement)) {
+      return true;
     }
   }
 
@@ -165,9 +214,11 @@ export default class Select extends Component {
     if (onSearch) {
       search = (
         <Search className={`${CLASS_ROOT}__search`}
+          ref={(ref) => this._searchRef = ref}
           inline={true} fill={true} responsive={false} pad="medium"
-          placeHolder={placeHolder} initialFocus={true} value={searchText}
-          onDOMChange={this._onSearchChange} />
+          placeHolder={placeHolder} value={searchText}
+          onDOMChange={this._onSearchChange}
+          onKeyDown={this._onInputKeyDown} />
       );
     }
 
@@ -219,6 +270,7 @@ export default class Select extends Component {
         onClick={this._onAddDrop}>
         <input {...restProps} className={`${INPUT} ${CLASS_ROOT}__input`}
           id={id} name={name} disabled={true}
+          ref={ref => this.inputRef = ref}
           value={this._renderLabel(value)} />
         <Button className={`${CLASS_ROOT}__control`} icon={<CaretDownIcon />}
           onClick={this._onAddDrop} />
@@ -227,6 +279,10 @@ export default class Select extends Component {
   }
 
 }
+
+Select.contextTypes = {
+  intl: PropTypes.object
+};
 
 Select.propTypes = {
   defaultValue: PropTypes.oneOfType([

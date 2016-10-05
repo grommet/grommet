@@ -163,7 +163,7 @@ export default class Search extends Component {
   }
 
   _onInputKeyDown (event) {
-    const { inline, suggestions } = this.props;
+    const { inline, suggestions, onKeyDown } = this.props;
     const { dropActive } = this.state;
     if (suggestions) {
       const up = 38;
@@ -177,6 +177,9 @@ export default class Search extends Component {
         }
       }
     }
+    if (onKeyDown) {
+      onKeyDown(event);
+    }
   }
 
   _onAddDrop (event) {
@@ -188,10 +191,14 @@ export default class Search extends Component {
     this.setState({ dropActive: false });
   }
 
-  _onFocusInput () {
+  _onFocusInput (event) {
+    const { onFocus } = this.props;
     this.setState({
       activeSuggestionIndex: -1
     });
+    if (onFocus) {
+      onFocus(event);
+    }
   }
 
   _fireDOMChange () {
@@ -286,9 +293,13 @@ export default class Search extends Component {
   }
 
   _onMouseUp(event) {
+    const { onMouseUp } = this.props;
     // This fixes a Safari bug which prevents the input
     // text from being selected on focus.
     event.preventDefault();
+    if (onMouseUp) {
+      onMouseUp(event);
+    }
   }
 
   _onSink (event) {
