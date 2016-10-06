@@ -35,11 +35,11 @@ export default class List extends Component {
   }
 
   componentDidMount () {
-    const { selectable } = this.props;
+    const { onMore, selectable } = this.props;
     this._setSelection();
-    if (this.props.onMore) {
+    if (onMore) {
       this._scroll = InfiniteScroll.startListeningForScroll(
-        this.moreRef, this.props.onMore
+        this.moreRef, onMore
       );
     }
     if (selectable) {
@@ -71,14 +71,15 @@ export default class List extends Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
-    const { selectable } = this.props;
-    if (JSON.stringify(this.state.selected) !==
+    const { onMore, selectable } = this.props;
+    const { selected } = this.state;
+    if (JSON.stringify(selected) !==
       JSON.stringify(prevState.selected)) {
       this._setSelection();
     }
-    if (this.props.onMore && !this._scroll) {
+    if (onMore && !this._scroll) {
       this._scroll = InfiniteScroll.startListeningForScroll(this.moreRef,
-        this.props.onMore);
+        onMore);
     }
     if (selectable) {
       // only listen for navigation keys if the list row can be selected
@@ -215,28 +216,26 @@ export default class List extends Component {
   }
 
   _onClick (event) {
+    const { onSelect, selectable, selected } = this.props;
     if (!this.props.selectable) {
       return;
     }
 
-    let selected = Selection.onClick(event, {
+    let selection = Selection.onClick(event, {
       containerElement: this.listRef,
       childSelector: `.${LIST_ITEM}`,
       selectedClass: SELECTED_CLASS,
-      multiSelect: ('multiple' === this.props.selectable),
+      multiSelect: ('multiple' === selectable),
       priorSelectedIndexes: this.state.selected
     });
+
     // only set the selected state and classes if the caller isn't managing it.
-    if (! this.props.selected) {
-      this.setState({ selected: selected }, this._setSelection);
+    if (!selected) {
+      this.setState({ selected: selection }, this._setSelection);
     }
 
-    if (this.props.onSelect) {
-      // notify caller that the selection has changed
-      if (selected.length === 1) {
-        selected = selected[0];
-      }
-      this.props.onSelect(selected);
+    if (onSelect) {
+      onSelect(selection.length === 1 ? selection[0] : selection);
     }
   }
 
