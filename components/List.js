@@ -112,11 +112,13 @@ var List = function (_Component) {
   (0, _createClass3.default)(List, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var selectable = this.props.selectable;
+      var _props = this.props;
+      var onMore = _props.onMore;
+      var selectable = _props.selectable;
 
       this._setSelection();
-      if (this.props.onMore) {
-        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, this.props.onMore);
+      if (onMore) {
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, onMore);
       }
       if (selectable) {
         // only listen for navigation keys if the list row can be selected
@@ -147,13 +149,16 @@ var List = function (_Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      var selectable = this.props.selectable;
+      var _props2 = this.props;
+      var onMore = _props2.onMore;
+      var selectable = _props2.selectable;
+      var selected = this.state.selected;
 
-      if ((0, _stringify2.default)(this.state.selected) !== (0, _stringify2.default)(prevState.selected)) {
+      if ((0, _stringify2.default)(selected) !== (0, _stringify2.default)(prevState.selected)) {
         this._setSelection();
       }
-      if (this.props.onMore && !this._scroll) {
-        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, this.props.onMore);
+      if (onMore && !this._scroll) {
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, onMore);
       }
       if (selectable) {
         // only listen for navigation keys if the list row can be selected
@@ -306,28 +311,30 @@ var List = function (_Component) {
   }, {
     key: '_onClick',
     value: function _onClick(event) {
+      var _props3 = this.props;
+      var onSelect = _props3.onSelect;
+      var selectable = _props3.selectable;
+      var selected = _props3.selected;
+
       if (!this.props.selectable) {
         return;
       }
 
-      var selected = _Selection2.default.onClick(event, {
+      var selection = _Selection2.default.onClick(event, {
         containerElement: this.listRef,
         childSelector: '.' + LIST_ITEM,
         selectedClass: SELECTED_CLASS,
-        multiSelect: 'multiple' === this.props.selectable,
+        multiSelect: 'multiple' === selectable,
         priorSelectedIndexes: this.state.selected
       });
+
       // only set the selected state and classes if the caller isn't managing it.
-      if (!this.props.selected) {
-        this.setState({ selected: selected }, this._setSelection);
+      if (!selected) {
+        this.setState({ selected: selection }, this._setSelection);
       }
 
-      if (this.props.onSelect) {
-        // notify caller that the selection has changed
-        if (selected.length === 1) {
-          selected = selected[0];
-        }
-        this.props.onSelect(selected);
+      if (onSelect) {
+        onSelect(selection.length === 1 ? selection[0] : selection);
       }
     }
   }, {
@@ -336,18 +343,18 @@ var List = function (_Component) {
       var _classnames,
           _this4 = this;
 
-      var _props = this.props;
-      var a11yTitle = _props.a11yTitle;
-      var children = _props.children;
-      var className = _props.className;
-      var emptyIndicator = _props.emptyIndicator;
-      var _onBlur = _props.onBlur;
-      var _onFocus = _props.onFocus;
-      var onMore = _props.onMore;
-      var _onMouseDown = _props.onMouseDown;
-      var _onMouseUp = _props.onMouseUp;
-      var selectable = _props.selectable;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'children', 'className', 'emptyIndicator', 'onBlur', 'onFocus', 'onMore', 'onMouseDown', 'onMouseUp', 'selectable']);
+      var _props4 = this.props;
+      var a11yTitle = _props4.a11yTitle;
+      var children = _props4.children;
+      var className = _props4.className;
+      var emptyIndicator = _props4.emptyIndicator;
+      var _onBlur = _props4.onBlur;
+      var _onFocus = _props4.onFocus;
+      var onMore = _props4.onMore;
+      var _onMouseDown = _props4.onMouseDown;
+      var _onMouseUp = _props4.onMouseUp;
+      var selectable = _props4.selectable;
+      var props = (0, _objectWithoutProperties3.default)(_props4, ['a11yTitle', 'children', 'className', 'emptyIndicator', 'onBlur', 'onFocus', 'onMore', 'onMouseDown', 'onMouseUp', 'selectable']);
       var _state = this.state;
       var activeItem = _state.activeItem;
       var focus = _state.focus;

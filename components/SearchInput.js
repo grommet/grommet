@@ -246,10 +246,10 @@ var SearchInput = function (_Component) {
     key: '_onNextSuggestion',
     value: function _onNextSuggestion() {
       var suggestions = this.props.suggestions;
+      var activeSuggestionIndex = this.state.activeSuggestionIndex;
 
       if (suggestions) {
-        var index = this.state.activeSuggestionIndex;
-        index = Math.min(index + 1, suggestions.length - 1);
+        var index = Math.min(activeSuggestionIndex + 1, suggestions.length - 1);
         this.setState({ activeSuggestionIndex: index }, this._announceSuggestion.bind(this, index));
       }
     }

@@ -58,6 +58,12 @@ var _Drop2 = _interopRequireDefault(_Drop);
 
 var _DOM = require('../utils/DOM');
 
+var _Intl = require('../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
+var _Announcer = require('../utils/Announcer');
+
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
@@ -86,8 +92,12 @@ var TextInput = function (_Component) {
     _this._onEnter = _this._onEnter.bind(_this);
     _this._onClickSuggestion = _this._onClickSuggestion.bind(_this);
     _this._onFocus = _this._onFocus.bind(_this);
+    _this._onInputKeyDown = _this._onInputKeyDown.bind(_this);
+    _this._stopPropagation = _this._stopPropagation.bind(_this);
+    _this._announceSuggestion = _this._announceSuggestion.bind(_this);
 
     _this.state = {
+      announceChange: false,
       dropActive: false,
       defaultValue: props.defaultValue,
       value: props.value,
@@ -99,6 +109,12 @@ var TextInput = function (_Component) {
   (0, _createClass3.default)(TextInput, [{
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
+      var suggestions = this.props.suggestions;
+      var _state = this.state;
+      var announceChange = _state.announceChange;
+      var dropActive = _state.dropActive;
+      var focused = _state.focused;
+      var intl = this.context.intl;
       // Set up keyboard listeners appropriate to the current state.
 
       var activeKeyboardHandlers = {
@@ -114,11 +130,11 @@ var TextInput = function (_Component) {
 
       // the order here is important, need to turn off keys before turning on
 
-      if (!this.state.focused && prevState.focused) {
+      if (!focused && prevState.focused) {
         _KeyboardAccelerators2.default.stopListeningToKeyboard(this, focusedKeyboardHandlers);
       }
 
-      if (!this.state.dropActive && prevState.dropActive) {
+      if (!dropActive && prevState.dropActive) {
         document.removeEventListener('click', this._onRemoveDrop);
         _KeyboardAccelerators2.default.stopListeningToKeyboard(this, activeKeyboardHandlers);
         if (this._drop) {
@@ -127,19 +143,31 @@ var TextInput = function (_Component) {
         }
       }
 
-      if (this.state.focused && !prevState.focused) {
+      if (focused && !prevState.focused) {
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, focusedKeyboardHandlers);
       }
 
-      if (this.state.dropActive && !prevState.dropActive) {
+      if (dropActive && !prevState.dropActive) {
         document.addEventListener('click', this._onRemoveDrop);
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
 
         // If this is inside a FormField, place the drop in reference to it.
         var control = (0, _DOM.findAncestor)(this.componentRef, FORM_FIELD) || this.componentRef;
         this._drop = _Drop2.default.add(control, this._renderDrop(), { align: { top: 'bottom', left: 'left' } });
-      } else if (this.state.dropActive && prevState.dropActive) {
+      } else if (dropActive && prevState.dropActive) {
         this._drop.render(this._renderDrop());
+      }
+
+      if (announceChange && suggestions) {
+        var matchResultsMessage = _Intl2.default.getMessage(intl, 'Match Results', {
+          count: suggestions.length
+        });
+        var navigationHelpMessage = '';
+        if (suggestions.length) {
+          navigationHelpMessage = '(' + _Intl2.default.getMessage(intl, 'Navigation Help') + ')';
+        }
+        (0, _Announcer.announce)(matchResultsMessage + ' ' + navigationHelpMessage);
+        this.setState({ announceChange: false });
       }
     }
   }, {
@@ -151,8 +179,17 @@ var TextInput = function (_Component) {
       }
     }
   }, {
+    key: '_stopPropagation',
+    value: function _stopPropagation() {
+      if (document.activeElement === this.componentRef) {
+        return true;
+      }
+    }
+  }, {
     key: '_fireDOMChange',
     value: function _fireDOMChange() {
+      var onDOMChange = this.props.onDOMChange;
+
       var event = void 0;
       try {
         event = new Event('change', {
@@ -167,30 +204,48 @@ var TextInput = function (_Component) {
       // We use dispatchEvent to have the browser fill out the event fully.
       this.componentRef.dispatchEvent(event);
       // Manually dispatched events aren't delivered by React, so we notify too.
-      this.props.onDOMChange(event);
+      onDOMChange(event);
     }
   }, {
     key: '_onInputChange',
     value: function _onInputChange(event) {
-      this.setState({ dropActive: true, activeSuggestionIndex: -1 });
-      if (this.props.onDOMChange) {
+      var onDOMChange = this.props.onDOMChange;
+
+      this.setState({
+        activeSuggestionIndex: -1, announceChange: true
+      });
+      if (onDOMChange) {
         this._fireDOMChange();
       }
     }
   }, {
+    key: '_announceSuggestion',
+    value: function _announceSuggestion(index) {
+      var suggestions = this.props.suggestions;
+      var intl = this.context.intl;
+
+      var labelMessage = this._renderLabel(suggestions[index]);
+      var enterSelectMessage = _Intl2.default.getMessage(intl, 'Enter Select');
+      (0, _Announcer.announce)(labelMessage + ' ' + enterSelectMessage);
+    }
+  }, {
     key: '_onAddDrop',
     value: function _onAddDrop(event) {
-      event.preventDefault();
+      var _props = this.props;
+      var suggestions = _props.suggestions;
+      var value = _props.value;
       // Get values of suggestions, so we can highlight selected suggestion
-      if (this.props.suggestions) {
-        var suggestionValues = this.props.suggestions.map(function (suggestion) {
+
+      if (suggestions) {
+        event.preventDefault();
+        var suggestionValues = suggestions.map(function (suggestion) {
           if ((typeof suggestion === 'undefined' ? 'undefined' : (0, _typeof3.default)(suggestion)) === 'object') {
             return suggestion.value;
           } else {
             return suggestion;
           }
         });
-        var activeSuggestionIndex = suggestionValues.indexOf(this.props.value);
+        var activeSuggestionIndex = suggestionValues.indexOf(value);
         this.setState({
           dropActive: true,
           activeSuggestionIndex: activeSuggestionIndex
@@ -205,46 +260,67 @@ var TextInput = function (_Component) {
   }, {
     key: '_onNextSuggestion',
     value: function _onNextSuggestion() {
-      var index = this.state.activeSuggestionIndex;
-      index = Math.min(index + 1, this.props.suggestions.length - 1);
-      this.setState({ activeSuggestionIndex: index });
+      var suggestions = this.props.suggestions;
+      var activeSuggestionIndex = this.state.activeSuggestionIndex;
+
+      var index = Math.min(activeSuggestionIndex + 1, suggestions.length - 1);
+      this.setState({ activeSuggestionIndex: index }, this._announceSuggestion.bind(this, index));
     }
   }, {
     key: '_onPreviousSuggestion',
     value: function _onPreviousSuggestion() {
-      var index = this.state.activeSuggestionIndex;
-      index = Math.max(index - 1, 0);
-      this.setState({ activeSuggestionIndex: index });
+      var activeSuggestionIndex = this.state.activeSuggestionIndex;
+
+      var index = Math.max(activeSuggestionIndex - 1, 0);
+      this.setState({ activeSuggestionIndex: index }, this._announceSuggestion.bind(this, index));
     }
   }, {
     key: '_onEnter',
     value: function _onEnter(event) {
+      var _this2 = this;
+
+      var _props2 = this.props;
+      var onSelect = _props2.onSelect;
+      var suggestions = _props2.suggestions;
+      var activeSuggestionIndex = this.state.activeSuggestionIndex;
+      var intl = this.context.intl;
+
       this.setState({ dropActive: false });
-      if (this.state.activeSuggestionIndex >= 0) {
-        event.preventDefault(); // prevent submitting forms
-        var suggestion = this.props.suggestions[this.state.activeSuggestionIndex];
-        this.setState({ value: suggestion });
-        if (this.props.onSelect) {
-          this.props.onSelect({
-            target: this.componentRef, suggestion: suggestion
+      if (activeSuggestionIndex >= 0) {
+        (function () {
+          event.preventDefault(); // prevent submitting forms
+          var suggestion = suggestions[activeSuggestionIndex];
+          _this2.setState({ value: suggestion }, function () {
+            var suggestionMessage = _this2._renderLabel(suggestion);
+            var selectedMessage = _Intl2.default.getMessage(intl, 'Selected');
+            (0, _Announcer.announce)(suggestionMessage + ' ' + selectedMessage);
           });
-        }
+          if (onSelect) {
+            onSelect({
+              target: _this2.componentRef, suggestion: suggestion
+            });
+          }
+        })();
       }
     }
   }, {
     key: '_onClickSuggestion',
     value: function _onClickSuggestion(suggestion) {
+      var onSelect = this.props.onSelect;
+
       this.setState({ value: suggestion, dropActive: false });
-      if (this.props.onSelect) {
-        this.props.onSelect({
+      if (onSelect) {
+        onSelect({
           target: this.componentRef, suggestion: suggestion
         });
       }
     }
   }, {
     key: '_onFocus',
-    value: function _onFocus() {
-      var _this2 = this;
+    value: function _onFocus(event) {
+      var _this3 = this;
+
+      var onFocus = this.props.onFocus;
 
       this.setState({
         focused: true,
@@ -252,8 +328,37 @@ var TextInput = function (_Component) {
       });
       // delay to wait out subsequent render after state change
       setTimeout(function () {
-        _this2.componentRef.select();
+        _this3.componentRef.select();
       }, 10);
+
+      if (onFocus) {
+        onFocus(event);
+      }
+    }
+  }, {
+    key: '_onInputKeyDown',
+    value: function _onInputKeyDown(event) {
+      var _props3 = this.props;
+      var onKeyDown = _props3.onKeyDown;
+      var suggestions = _props3.suggestions;
+      var dropActive = this.state.dropActive;
+
+      if (suggestions) {
+        var up = 38;
+        var down = 40;
+        if (event.keyCode === up || event.keyCode === down) {
+          // stop the input to move the cursor when suggestions are present
+          event.preventDefault();
+
+          if (event.keyCode === down && !dropActive) {
+            this._onAddDrop(event);
+          }
+        }
+      }
+
+      if (onKeyDown) {
+        onKeyDown(event);
+      }
     }
   }, {
     key: '_renderLabel',
@@ -267,7 +372,7 @@ var TextInput = function (_Component) {
   }, {
     key: '_renderDrop',
     value: function _renderDrop() {
-      var _this3 = this;
+      var _this4 = this;
 
       var suggestions = this.props.suggestions;
       var activeSuggestionIndex = this.state.activeSuggestionIndex;
@@ -281,8 +386,8 @@ var TextInput = function (_Component) {
           return _react2.default.createElement(
             'li',
             { key: index, className: classes,
-              onClick: _this3._onClickSuggestion.bind(_this3, suggestion) },
-            _this3._renderLabel(suggestion)
+              onClick: _this4._onClickSuggestion.bind(_this4, suggestion) },
+            _this4._renderLabel(suggestion)
           );
         });
       }
@@ -296,13 +401,13 @@ var TextInput = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this4 = this;
+      var _this5 = this;
 
-      var _props = this.props;
-      var className = _props.className;
-      var defaultValue = _props.defaultValue;
-      var value = _props.value;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'defaultValue', 'value']);
+      var _props4 = this.props;
+      var className = _props4.className;
+      var defaultValue = _props4.defaultValue;
+      var value = _props4.value;
+      var props = (0, _objectWithoutProperties3.default)(_props4, ['className', 'defaultValue', 'value']);
 
       delete props.suggestions;
       delete props.onDOMChange;
@@ -310,12 +415,13 @@ var TextInput = function (_Component) {
       var classes = (0, _classnames4.default)(CLASS_ROOT, INPUT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', this.state.active), className);
 
       return _react2.default.createElement('input', (0, _extends3.default)({ ref: function ref(_ref) {
-          return _this4.componentRef = _ref;
+          return _this5.componentRef = _ref;
         } }, props, {
         className: classes, autoComplete: 'off',
         defaultValue: this._renderLabel(defaultValue),
         value: this._renderLabel(value),
-        onChange: this._onInputChange, onFocus: this._onFocus }));
+        onChange: this._onInputChange, onFocus: this._onFocus,
+        onKeyDown: this._onInputKeyDown }));
     }
   }]);
   return TextInput;
@@ -324,6 +430,10 @@ var TextInput = function (_Component) {
 TextInput.displayName = 'TextInput';
 exports.default = TextInput;
 
+
+TextInput.contextTypes = {
+  intl: _react.PropTypes.object
+};
 
 TextInput.propTypes = {
   defaultValue: _react.PropTypes.string,
