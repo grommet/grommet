@@ -215,14 +215,6 @@
       flex-direction: row-reverse;
       padding-left: 0;
     }
-
-    &::after {
-      display: block;
-      content: "";
-      height: halve(halve($inuit-base-spacing-unit));
-      width: 1px;
-      background-color: $border-color;
-    }
   }
 
   &.#{$grommet-namespace}chart-axis--align-start {
@@ -238,6 +230,14 @@
   }
 
   &.#{$grommet-namespace}chart-axis--ticks {
+    .#{$grommet-namespace}chart-axis__slot::after {
+      display: block;
+      content: "";
+      height: halve(halve($inuit-base-spacing-unit));
+      width: 1px;
+      background-color: $border-color;
+    }
+
     &.#{$grommet-namespace}chart-axis--ticks--end {
       .#{$grommet-namespace}chart-axis__slot:not(.#{$grommet-namespace}chart-axis__slot--placeholder) {
         align-items: flex-end;
