@@ -104,10 +104,12 @@ export default class Box extends Component {
   }
 
   render () {
-    const { a11yTitle, appCentered, backgroundImage, children, className,
-      colorIndex, containerClassName, focusable, id, onClick, pad, primary,
-      role, size, tabIndex, tag, texture } = this.props;
-    const { darkBackground } = this.state;
+    const {
+      a11yTitle, appCentered, backgroundImage, children, className,
+      colorIndex, containerClassName, focusable, id, onClick, onBlur, onFocus,
+      onMouseDown, onMouseUp, pad, primary, role, size, tabIndex, tag, texture
+    } = this.props;
+    const { darkBackground, mouseActive } = this.state;
     let classes = [CLASS_ROOT];
     let containerClasses = [`${CLASS_ROOT}__container`];
     let restProps = Props.omit(this.props, Object.keys(Box.propTypes));
@@ -187,16 +189,32 @@ export default class Box extends Component {
     if (onClick) {
       classes.push(CLASS_ROOT + "--clickable");
       clickableProps = {
-        onMouseDown: () => this.setState({ mouseActive: true }),
-        onMouseUp: () => this.setState({ mouseActive: false }),
-        onFocus: () => {
-          if (this.state.mouseActive === false) {
-            this.setState({ focus: true });
+        onMouseDown: (event) => {
+          this.setState({ mouseActive: true });
+          if (onMouseDown) {
+            onMouseDown(event);
           }
         },
-        onBlur: () => this.setState({
-          focus: false
-        })
+        onMouseUp: (event) => {
+          this.setState({ mouseActive: false });
+          if (onMouseUp) {
+            onMouseUp(event);
+          }
+        },
+        onFocus: (event) => {
+          if (mouseActive === false) {
+            this.setState({ focus: true });
+          }
+          if (onFocus) {
+            onFocus(event);
+          }
+        },
+        onBlur: (event) => {
+          this.setState({ focus: false });
+          if (onBlur) {
+            onBlur(event);
+          }
+        }
       };
       if (focusable) {
         if (this.state.focus) {
@@ -246,7 +264,7 @@ export default class Box extends Component {
       return (
         <div {...restProps} ref={(ref) => this.boxContainerRef = ref}
           className={containerClasses.join(' ')}
-          style={style} role={role} {...a11yProps}>
+          style={style} role={role} {...a11yProps} {...clickableProps}>
           {skipLinkAnchor}
           <Component id={id} className={classes.join(' ')}>
             {textureMarkup}
