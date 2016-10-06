@@ -295,7 +295,7 @@ export default class Layer extends Component {
 
     ReactDOM.unmountComponentAtNode(this._element);
     this._element.parentNode.removeChild(this._element);
-    this._element = null;
+    this._element = undefined;
   }
 
   render () {

@@ -69,7 +69,7 @@ export default class TextInput extends Component {
         activeKeyboardHandlers);
       if (this._drop) {
         this._drop.remove();
-        this._drop = null;
+        this._drop = undefined;
       }
     }
 

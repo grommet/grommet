@@ -20,8 +20,8 @@ export default {
   start (func) {
     var responsive = {
       func: func,
-      timer: null,
-      small: null,
+      timer: undefined,
+      small: undefined,
       smallSize: this.smallSize()
     };
     responsive.onResize = this._onResize.bind(this, responsive);

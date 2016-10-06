@@ -222,7 +222,7 @@ export default class Article extends Component {
         clearInterval(this._wheelTimer);
         clearInterval(this._wheelLongTimer);
         this._wheelLongTimer = setTimeout(() => {
-          this._wheelLongTimer = null;
+          this._wheelLongTimer = undefined;
         }, 2000);
       } else if (! this._wheelLongTimer) {
         if (delta > 10) {

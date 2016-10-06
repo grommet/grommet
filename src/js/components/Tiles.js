@@ -60,7 +60,7 @@ export default class Tiles extends Component {
     }
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
-      this._scroll = null;
+      this._scroll = undefined;
     }
   }
 
@@ -230,7 +230,7 @@ export default class Tiles extends Component {
 
     const other = Props.pick(this.props, Object.keys(Box.propTypes));
 
-    let more = null;
+    let more;
     if (onMore) {
       more = (
         <div ref={ref => this.moreRef = ref} className={`${CLASS_ROOT}__more`}>

@@ -78,7 +78,7 @@ export default class Axis extends Component {
         }
       );
       const role = item.label && item.label !== '' ? 'row' : undefined;
-      const label = item.label ? <span>{item.label}</span> : null;
+      const label = item.label ? <span>{item.label}</span> : undefined;
 
       return (
         <div key={item.value || item.index} className={classes} role={role}

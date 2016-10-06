@@ -61,7 +61,7 @@ export default class List extends Component {
   componentWillReceiveProps (nextProps) {
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
-      this._scroll = null;
+      this._scroll = undefined;
     }
     if (nextProps.hasOwnProperty('selected')) {
       this.setState({

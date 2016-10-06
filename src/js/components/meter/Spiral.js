@@ -58,7 +58,7 @@ export default class Spiral extends Graphic {
   }
 
   _renderThresholds () {
-    return null;
+    return undefined;
   }
 
   _renderTopLayer () {

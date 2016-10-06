@@ -161,7 +161,7 @@ export default class Toast extends Component {
   _removeLayer () {
     ReactDOM.unmountComponentAtNode(this._element);
     this._element.parentNode.removeChild(this._element);
-    this._element = null;
+    this._element = undefined;
   }
 
   render () {

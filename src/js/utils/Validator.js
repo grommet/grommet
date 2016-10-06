@@ -5,7 +5,7 @@ export default {
     var result = {
       valid: true,
       errors: {},
-      firstError: null
+      firstError: undefined
     };
 
     rules.forEach(function (rule) {
