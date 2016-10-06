@@ -163,6 +163,7 @@ class MenuDrop extends Component {
     } = this.props;
     const restProps = Props.omit(props,
       Object.keys(MenuDrop.childContextTypes));
+    delete restProps.dropColorIndex;
 
     // Put nested Menus inline
     const menuDropChildren = React.Children.map(children, child => {
@@ -433,6 +434,7 @@ export default class Menu extends Component {
       pad, ...props
     } = this.props;
     delete props.closeOnClick;
+    delete props.dropColorIndex;
     delete props.dropAlign;
     delete props.icon;
     delete props.inline;
