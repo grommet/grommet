@@ -83,7 +83,9 @@ export default class Select extends Component {
           focusControl: true,
           context: this.context
         });
-      this._searchRef.focus();
+      if (this._searchRef) {
+        this._searchRef.focus();
+      }
     } else if (this.state.dropActive && prevState.dropActive) {
       this._drop.render(this._renderDrop());
     }

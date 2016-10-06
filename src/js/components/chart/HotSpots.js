@@ -41,7 +41,8 @@ export default class HotSpots extends Component {
     );
   }
 
-  _onPreviousHotSpot () {
+  _onPreviousHotSpot (event) {
+    event.preventDefault();
     const { activeIndex, onActive } = this.props;
     const previousIndex = activeIndex - 1;
     if (previousIndex >= 0) {
@@ -51,7 +52,8 @@ export default class HotSpots extends Component {
     return true;
   }
 
-  _onNextHotSpot () {
+  _onNextHotSpot (event) {
+    event.preventDefault();
     const { activeIndex, count, onActive } = this.props;
     const nextIndex = activeIndex + 1;
     if (nextIndex < count) {
