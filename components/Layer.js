@@ -104,11 +104,15 @@ var LayerContents = function (_Component) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var onClose = this.props.onClose;
+      var _props = this.props;
+      var hidden = _props.hidden;
+      var onClose = _props.onClose;
 
 
-      this.anchorStepRef.focus();
-      this.anchorStepRef.scrollIntoView();
+      if (!hidden) {
+        this.anchorStepRef.focus();
+        this.anchorStepRef.scrollIntoView();
+      }
 
       this._keyboardHandlers = {
         tab: this._processTab
@@ -177,11 +181,11 @@ var LayerContents = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props = this.props;
-      var a11yTitle = _props.a11yTitle;
-      var children = _props.children;
-      var closer = _props.closer;
-      var onClose = _props.onClose;
+      var _props2 = this.props;
+      var a11yTitle = _props2.a11yTitle;
+      var children = _props2.children;
+      var closer = _props2.closer;
+      var onClose = _props2.onClose;
       var intl = this.context.intl;
 
 
@@ -298,13 +302,13 @@ var Layer = function (_Component2) {
     value: function _classesFromProps() {
       var _classnames;
 
-      var _props2 = this.props;
-      var align = _props2.align;
-      var className = _props2.className;
-      var closer = _props2.closer;
-      var flush = _props2.flush;
-      var hidden = _props2.hidden;
-      var peek = _props2.peek;
+      var _props3 = this.props;
+      var align = _props3.align;
+      var className = _props3.className;
+      var closer = _props3.closer;
+      var flush = _props3.flush;
+      var hidden = _props3.hidden;
+      var peek = _props3.peek;
 
 
       return (0, _classnames3.default)('grommet', CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + this.props.align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--closeable', closer), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--flush', flush), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hidden', hidden), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--peek', peek), _classnames));
