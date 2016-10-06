@@ -6,7 +6,6 @@ import classnames from 'classnames';
 import Button from './Button';
 import CloseIcon from './icons/base/Close';
 import CSSClassnames from '../utils/CSSClassnames';
-import Props from '../utils/Props';
 import DOMUtils from '../utils/DOM';
 import Intl from '../utils/Intl';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
@@ -106,8 +105,6 @@ class LayerContents extends Component {
   render () {
     const { a11yTitle, children, closer, onClose } = this.props;
     const { intl } = this.context;
-    const restProps = Props.omit(this.props,
-      Object.keys(LayerContents.propTypes));
 
     let closerNode;
     if (typeof closer === 'object') {
@@ -128,7 +125,7 @@ class LayerContents extends Component {
     }
 
     return (
-      <div ref={ref => this.containerRef = ref} {...restProps}
+      <div ref={ref => this.containerRef = ref}
         className={`${CLASS_ROOT}__container`}>
         <a tabIndex="-1" aria-hidden='true'
           ref={ref => this.anchorStepRef = ref} />

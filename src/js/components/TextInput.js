@@ -142,7 +142,7 @@ export default class TextInput extends Component {
   _onInputChange (event) {
     const { onDOMChange } = this.props;
     this.setState({
-      activeSuggestionIndex: -1, announceChange: true
+      activeSuggestionIndex: -1, announceChange: true, dropActive: true
     });
     if (onDOMChange) {
       this._fireDOMChange();
