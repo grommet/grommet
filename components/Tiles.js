@@ -182,7 +182,7 @@ var Tiles = function (_Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.selected) {
+      if (nextProps.selected !== undefined) {
         this.setState({
           selected: _Selection2.default.normalizeIndexes(nextProps.selected)
         });
@@ -484,7 +484,7 @@ var Tiles = function (_Component) {
         priorSelectedIndexes: this.state.selected
       });
       // only set the selected state and classes if the caller isn't managing it.
-      if (!selected) {
+      if (selected === undefined) {
         this.setState({ selected: selection }, this._setSelection);
       }
 

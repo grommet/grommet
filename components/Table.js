@@ -156,7 +156,7 @@ var Table = function (_Component) {
         _InfiniteScroll2.default.stopListeningForScroll(this._scroll);
         this._scroll = undefined;
       }
-      if (nextProps.hasOwnProperty('selected')) {
+      if (nextProps.selected !== undefined) {
         this.setState({
           selected: _Selection2.default.normalizeIndexes(nextProps.selected)
         });
@@ -381,9 +381,10 @@ var Table = function (_Component) {
       var _props3 = this.props;
       var onSelect = _props3.onSelect;
       var selectable = _props3.selectable;
+      var selected = _props3.selected;
 
 
-      var selected = _Selection2.default.onClick(event, {
+      var selection = _Selection2.default.onClick(event, {
         containerElement: this._container(),
         childSelector: 'tr',
         selectedClass: SELECTED_CLASS,
@@ -391,12 +392,12 @@ var Table = function (_Component) {
         priorSelectedIndexes: this.state.selected
       });
       // only set the selected state and classes if the caller isn't managing it.
-      if (!this.props.selected) {
-        this.setState({ selected: selected }, this._setSelection);
+      if (selected === undefined) {
+        this.setState({ selected: selection }, this._setSelection);
       }
 
       if (onSelect) {
-        onSelect(selected.length === 1 ? selected[0] : selected);
+        onSelect(selection.length === 1 ? selection[0] : selection);
       }
     }
   }, {
