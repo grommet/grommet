@@ -1,12 +1,10 @@
 exports[`Spinning has correct className rendering 1`] = `
 <svg
+  aria-label="Spinning"
   className="grommetux-icon-spinning testing"
   role="img"
   version="1.1"
   viewBox="0 0 48 48">
-  <title>
-    Spinning
-  </title>
   <circle
     cx="24"
     cy="24"
@@ -28,13 +26,11 @@ exports[`Spinning has correct className rendering 1`] = `
 
 exports[`Spinning has correct default options 1`] = `
 <svg
+  aria-label="Spinning"
   className="grommetux-icon-spinning"
   role="img"
   version="1.1"
   viewBox="0 0 48 48">
-  <title>
-    Spinning
-  </title>
   <circle
     cx="24"
     cy="24"
@@ -56,13 +52,11 @@ exports[`Spinning has correct default options 1`] = `
 
 exports[`Spinning has correct small=true rendering 1`] = `
 <svg
+  aria-label="Spinning"
   className="grommetux-icon-spinning grommetux-icon-spinning--small"
   role="img"
   version="1.1"
   viewBox="0 0 48 48">
-  <title>
-    Spinning
-  </title>
   <circle
     cx="24"
     cy="24"
@@ -84,6 +78,7 @@ exports[`Spinning has correct small=true rendering 1`] = `
 
 exports[`Spinning has microdata properties rendering 1`] = `
 <svg
+  aria-label="Spinning"
   className="grommetux-icon-spinning"
   itemProp="test"
   itemScope={true}
@@ -91,9 +86,6 @@ exports[`Spinning has microdata properties rendering 1`] = `
   role="img"
   version="1.1"
   viewBox="0 0 48 48">
-  <title>
-    Spinning
-  </title>
   <circle
     cx="24"
     cy="24"

@@ -2,8 +2,7 @@ exports[`Table has correct default options 1`] = `
 <div
   className="grommetux-table">
   <table
-    className="grommetux-table__table"
-    onClick={[Function bound _onClick]}>
+    className="grommetux-table__table">
     <tbody>
       <tr>
         <td>

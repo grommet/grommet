@@ -31,6 +31,8 @@
 
 .#{$grommet-namespace}table {
 
+  width: 100%;
+
   table {
     width: 100%;
     border-collapse: collapse;
@@ -90,9 +92,19 @@
 }
 
 .#{$grommet-namespace}table--selectable {
+  .#{$grommet-namespace}table__table {
+    outline: none;
+  }
+
+  .#{$grommet-namespace}table__table--focus {
+    border-color: $focus-border-color;
+    box-shadow: 0 0 1px 1px $focus-border-color;
+  }
+
   tbody {
     tr {
       cursor: pointer;
+      outline: none;
 
       td {
         transition: background-color 0.2s;
@@ -110,7 +122,8 @@
         }
       }
 
-      &:hover:not(.#{$grommet-namespace}table-row--selected) {
+      &.#{$grommet-namespace}table-row--active,
+      &:hover {
         td {
           background-color: $hover-background-color;
           color: $hover-text-color;
