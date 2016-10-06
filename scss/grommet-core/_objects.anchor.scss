@@ -100,6 +100,10 @@
 .#{$grommet-namespace}anchor--primary {
   color: $control-brand-color;
 
+  &.active {
+    color: $control-brand-color;
+  }
+
   // Only animate icon when it's a primary anchor
   &.#{$grommet-namespace}anchor--animate-icon:not(.#{$grommet-namespace}anchor--disabled) {
     &:hover {
@@ -150,13 +154,3 @@
     }
   }
 }
-
-// #{$dark-background-context},
-// #{$light-background-context} #{$dark-background-context} {
-//  .#{$grommet-namespace}anchor.#{$grommet-namespace}anchor--disabled:hover {
-//   color: $colored-text-color;
-//
-//   .#{$grommet-namespace}control-icon {
-//     @include icon-color($colored-icon-color);
-//   }
-// }
