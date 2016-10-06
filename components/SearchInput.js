@@ -205,7 +205,9 @@ var SearchInput = function (_Component) {
     value: function _onInputChange(event) {
       var onDOMChange = this.props.onDOMChange;
 
-      this.setState({ activeSuggestionIndex: -1, announceChange: true });
+      this.setState({
+        activeSuggestionIndex: -1, announceChange: true, dropActive: true
+      });
       if (onDOMChange) {
         this._fireDOMChange();
       }

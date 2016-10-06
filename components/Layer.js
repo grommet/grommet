@@ -4,21 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
 var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
+var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
 var _typeof2 = require('babel-runtime/helpers/typeof');
 
 var _typeof3 = _interopRequireDefault(_typeof2);
-
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -64,10 +60,6 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
-var _Props = require('../utils/Props');
-
-var _Props2 = _interopRequireDefault(_Props);
-
 var _DOM = require('../utils/DOM');
 
 var _DOM2 = _interopRequireDefault(_DOM);
@@ -82,9 +74,8 @@ var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.LAYER; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.LAYER;
 var APP = _CSSClassnames2.default.APP;
 
 var LayerContents = function (_Component) {
@@ -197,7 +188,6 @@ var LayerContents = function (_Component) {
       var onClose = _props2.onClose;
       var intl = this.context.intl;
 
-      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(LayerContents.propTypes));
 
       var closerNode = void 0;
       if ((typeof closer === 'undefined' ? 'undefined' : (0, _typeof3.default)(closer)) === 'object') {
@@ -220,10 +210,10 @@ var LayerContents = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        (0, _extends3.default)({ ref: function ref(_ref2) {
+        { ref: function ref(_ref2) {
             return _this2.containerRef = _ref2;
-          } }, restProps, {
-          className: CLASS_ROOT + '__container' }),
+          },
+          className: CLASS_ROOT + '__container' },
         _react2.default.createElement('a', { tabIndex: '-1', 'aria-hidden': 'true',
           ref: function ref(_ref) {
             return _this2.anchorStepRef = _ref;

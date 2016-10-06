@@ -212,7 +212,7 @@ var TextInput = function (_Component) {
       var onDOMChange = this.props.onDOMChange;
 
       this.setState({
-        activeSuggestionIndex: -1, announceChange: true
+        activeSuggestionIndex: -1, announceChange: true, dropActive: true
       });
       if (onDOMChange) {
         this._fireDOMChange();
