@@ -8,11 +8,12 @@ const CLASS_ROOT = CSSClassnames.FORM_FIELDS;
 
 export default class FormFields extends Component {
   render () {
-    let classes = classnames(CLASS_ROOT, this.props.className);
+    const { children, className, ...props } = this.props;
+    let classes = classnames(CLASS_ROOT, className);
 
     return (
-      <div className={classes}>
-        {this.props.children}
+      <div {...props} className={classes}>
+        {children}
       </div>
     );
   }

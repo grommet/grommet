@@ -8,18 +8,18 @@ const CLASS_ROOT = CSSClassnames.TABLE_ROW;
 
 export default class TableRow extends Component {
   render () {
-    const { children, className, onClick } = this.props;
+    const { children, className, onClick, ...props } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
-      className,
       {
         [`${CLASS_ROOT}--selectable`]: onClick
-      }
+      },
+      className
     );
 
     return (
-      <tr className={classes} onClick={onClick}>
+      <tr {...props} className={classes} onClick={onClick}>
         {children}
       </tr>
     );
