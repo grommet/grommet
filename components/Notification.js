@@ -201,7 +201,7 @@ var Notification = function (_Component) {
       if (percentComplete || 0 === percentComplete) {
         progress = _react2.default.createElement(
           _Box2.default,
-          { direction: 'row', align: 'center' },
+          { direction: 'row', align: 'center', pad: { between: 'medium' } },
           _react2.default.createElement(_Meter2.default, {
             series: [{
               value: percentComplete,
