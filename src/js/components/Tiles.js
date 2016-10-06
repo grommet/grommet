@@ -143,7 +143,10 @@ export default class Tiles extends Component {
   _announceTile (label) {
     const { intl } = this.context;
     const enterSelectMessage = Intl.getMessage(intl, 'Enter Select');
-    announce(`${label} ${enterSelectMessage}`);
+    // avoid a long text to be read by the screen reader
+    const labelMessage = label.length > 15 ?
+      `${label.substring(0, 15)}...` : label;
+    announce(`${labelMessage} ${enterSelectMessage}`);
   }
 
   _onPreviousTile (event) {
@@ -230,8 +233,11 @@ export default class Tiles extends Component {
       this._fireClick(rows[activeTile], event.shiftKey);
       rows[activeTile].classList.remove(ACTIVE_CLASS);
       const label = rows[activeTile].innerText;
+      // avoid a long text to be read by the screen reader
+      const labelMessage = label.length > 15 ?
+        `${label.substring(0, 15)}...` : label;
       const selectedMessage = Intl.getMessage(intl, 'Selected');
-      announce(`${label} ${selectedMessage}`);
+      announce(`${labelMessage} ${selectedMessage}`);
     }
   }
 
