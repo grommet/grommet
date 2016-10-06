@@ -115,12 +115,12 @@ var Search = function (_Component) {
     _this._stopPropagation = _this._stopPropagation.bind(_this);
 
     _this.state = {
+      announceChange: false,
       activeSuggestionIndex: -1,
       align: 'left',
       dropActive: false,
       inline: props.inline,
-      small: false,
-      announceChange: false
+      small: false
     };
     return _this;
   }
@@ -216,14 +216,14 @@ var Search = function (_Component) {
       }
 
       if (announceChange && suggestions) {
-        var searchSuggestionMessage = _Intl2.default.getMessage(intl, 'Search Suggestions', {
+        var matchResultsMessage = _Intl2.default.getMessage(intl, 'Match Results', {
           count: suggestions.length
         });
         var navigationHelpMessage = '';
         if (suggestions.length) {
           navigationHelpMessage = '(' + _Intl2.default.getMessage(intl, 'Navigation Help') + ')';
         }
-        (0, _Announcer.announce)(searchSuggestionMessage + ' ' + navigationHelpMessage);
+        (0, _Announcer.announce)(matchResultsMessage + ' ' + navigationHelpMessage);
         this.setState({ announceChange: false });
       }
     }

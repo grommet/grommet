@@ -97,11 +97,11 @@ var SearchInput = function (_Component) {
     _this._announceSuggestion = _this._announceSuggestion.bind(_this);
 
     _this.state = {
+      announceChange: false,
       dropActive: false,
       defaultValue: props.defaultValue,
       value: props.value,
-      activeSuggestionIndex: -1,
-      announceChange: false
+      activeSuggestionIndex: -1
     };
     return _this;
   }
@@ -152,14 +152,14 @@ var SearchInput = function (_Component) {
       }
 
       if (announceChange && suggestions) {
-        var searchSuggestionMessage = _Intl2.default.getMessage(intl, 'Search Suggestions', {
+        var matchResultsMessage = _Intl2.default.getMessage(intl, 'Match Results', {
           count: suggestions.length
         });
         var navigationHelpMessage = '';
         if (suggestions.length) {
           navigationHelpMessage = '(' + _Intl2.default.getMessage(intl, 'Navigation Help') + ')';
         }
-        (0, _Announcer.announce)(searchSuggestionMessage + ' ' + navigationHelpMessage);
+        (0, _Announcer.announce)(matchResultsMessage + ' ' + navigationHelpMessage);
         this.setState({ announceChange: false });
       }
     }

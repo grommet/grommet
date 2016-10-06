@@ -114,6 +114,7 @@ var Select = function (_Component) {
     _this._announceOptions = _this._announceOptions.bind(_this);
 
     _this.state = {
+      announceChange: false,
       activeOptionIndex: -1,
       dropActive: false,
       defaultValue: props.defaultValue,
@@ -126,6 +127,12 @@ var Select = function (_Component) {
   (0, _createClass3.default)(Select, [{
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
+      var options = this.props.options;
+      var _state = this.state;
+      var announceChange = _state.announceChange;
+      var dropActive = _state.dropActive;
+      var intl = this.context.intl;
+
       // Set up keyboard listeners appropriate to the current state.
 
       var activeKeyboardHandlers = {
@@ -139,8 +146,7 @@ var Select = function (_Component) {
       };
 
       // the order here is important, need to turn off keys before turning on
-
-      if (!this.state.dropActive && prevState.dropActive) {
+      if (!dropActive && prevState.dropActive) {
         document.removeEventListener('click', this._onRemoveDrop);
         _KeyboardAccelerators2.default.stopListeningToKeyboard(this, activeKeyboardHandlers);
         if (this._drop) {
@@ -149,7 +155,7 @@ var Select = function (_Component) {
         }
       }
 
-      if (this.state.dropActive && !prevState.dropActive) {
+      if (dropActive && !prevState.dropActive) {
         document.addEventListener('click', this._onRemoveDrop);
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
 
@@ -162,9 +168,22 @@ var Select = function (_Component) {
         });
         if (this._searchRef) {
           this._searchRef.focus();
+          this._searchRef.inputRef.select();
         }
-      } else if (this.state.dropActive && prevState.dropActive) {
+      } else if (dropActive && prevState.dropActive) {
         this._drop.render(this._renderDrop());
+      }
+
+      if (announceChange && options) {
+        var matchResultsMessage = _Intl2.default.getMessage(intl, 'Match Results', {
+          count: options.length
+        });
+        var navigationHelpMessage = '';
+        if (options.length) {
+          navigationHelpMessage = '(' + _Intl2.default.getMessage(intl, 'Navigation Help') + ')';
+        }
+        (0, _Announcer.announce)(matchResultsMessage + ' ' + navigationHelpMessage);
+        this.setState({ announceChange: false });
       }
     }
   }, {
@@ -180,7 +199,7 @@ var Select = function (_Component) {
     value: function _announceOptions(index) {
       var intl = this.context.intl;
 
-      var labelMessage = this._renderLabel(this.props.options[index]);
+      var labelMessage = this._renderLabel(this.props.options[index], true);
       var enterSelectMessage = _Intl2.default.getMessage(intl, 'Enter Select');
       (0, _Announcer.announce)(labelMessage + ' ' + enterSelectMessage);
     }
@@ -198,6 +217,7 @@ var Select = function (_Component) {
     key: '_onSearchChange',
     value: function _onSearchChange(event) {
       this.setState({
+        announceChange: true,
         activeOptionIndex: -1,
         dropActive: true,
         searchText: event.target.value
@@ -233,7 +253,7 @@ var Select = function (_Component) {
   }, {
     key: '_onRemoveDrop',
     value: function _onRemoveDrop(event) {
-      if (!(0, _reactDom.findDOMNode)(this._searchRef).contains(event.target)) {
+      if (!this._searchRef || !(0, _reactDom.findDOMNode)(this._searchRef).contains(event.target)) {
         this.setState({ dropActive: false });
       }
     }
@@ -245,13 +265,15 @@ var Select = function (_Component) {
   }, {
     key: '_onNextOption',
     value: function _onNextOption() {
+      event.preventDefault();
       var index = this.state.activeOptionIndex;
       index = Math.min(index + 1, this.props.options.length - 1);
       this.setState({ activeOptionIndex: index }, this._announceOptions.bind(this, index));
     }
   }, {
     key: '_onPreviousOption',
-    value: function _onPreviousOption() {
+    value: function _onPreviousOption(event) {
+      event.preventDefault();
       var index = this.state.activeOptionIndex;
       index = Math.max(index - 1, 0);
       this.setState({ activeOptionIndex: index }, this._announceOptions.bind(this, index));
@@ -273,7 +295,7 @@ var Select = function (_Component) {
           event.preventDefault(); // prevent submitting forms
           var option = options[activeOptionIndex];
           _this2.setState({ value: option }, function () {
-            var optionMessage = _this2._renderLabel(option);
+            var optionMessage = _this2._renderLabel(option, true);
             var selectedMessage = _Intl2.default.getMessage(intl, 'Selected');
             (0, _Announcer.announce)(optionMessage + ' ' + selectedMessage);
           });
@@ -300,9 +322,10 @@ var Select = function (_Component) {
     }
   }, {
     key: '_renderLabel',
-    value: function _renderLabel(option) {
+    value: function _renderLabel(option, announce) {
       if ((typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
-        return option.label || option.value;
+        // revert for announce as label is often a complex object
+        return announce ? option.value || option.label : option.label || option.value;
       } else {
         return option;
       }
@@ -316,9 +339,9 @@ var Select = function (_Component) {
       var onSearch = _props3.onSearch;
       var placeHolder = _props3.placeHolder;
       var options = _props3.options;
-      var _state = this.state;
-      var activeOptionIndex = _state.activeOptionIndex;
-      var searchText = _state.searchText;
+      var _state2 = this.state;
+      var activeOptionIndex = _state2.activeOptionIndex;
+      var searchText = _state2.searchText;
 
       var search = void 0;
       if (onSearch) {
@@ -371,10 +394,12 @@ var Select = function (_Component) {
       var name = _props4.name;
       var value = _props4.value;
       var active = this.state.active;
+      var intl = this.context.intl;
 
       var classes = (0, _classnames4.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', active), className);
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Select.propTypes));
 
+      var buttonMessage = _Intl2.default.getMessage(intl, 'Select Icon');
       return _react2.default.createElement(
         'div',
         { ref: function ref(_ref3) {
@@ -387,8 +412,8 @@ var Select = function (_Component) {
             return _this4.inputRef = _ref2;
           },
           value: this._renderLabel(value) })),
-        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control', icon: _react2.default.createElement(_CaretDown2.default, null),
-          onClick: this._onAddDrop })
+        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control', a11yTitle: buttonMessage,
+          icon: _react2.default.createElement(_CaretDown2.default, null), onClick: this._onAddDrop })
       );
     }
   }]);
