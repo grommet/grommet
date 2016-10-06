@@ -72,6 +72,7 @@ var SkipLinks = function (_Component) {
 
     _this._processTab = _this._processTab.bind(_this);
     _this._onFocus = _this._onFocus.bind(_this);
+    _this._onClick = _this._onClick.bind(_this);
     _this._updateAnchors = _this._updateAnchors.bind(_this);
     _this._checkForSkipLink = _this._checkForSkipLink.bind(_this);
     _this.state = { anchors: [], showLayer: false };
@@ -158,11 +159,12 @@ var SkipLinks = function (_Component) {
   }, {
     key: '_onClick',
     value: function _onClick(destId) {
-      return function (event) {
-        var dest = document.getElementById(destId);
-        dest.focus();
-        this.setState({ showLayer: false });
-      }.bind(this);
+      var dest = document.getElementById(destId);
+      this.setState({ showLayer: false }, function () {
+        setTimeout(function () {
+          return dest.focus();
+        }, 0);
+      });
     }
   }, {
     key: 'render',
@@ -175,7 +177,7 @@ var SkipLinks = function (_Component) {
           'a',
           { href: '#' + anchor.id,
             onFocus: this._onFocus,
-            onClick: this._onClick(anchor.id),
+            onClick: this._onClick.bind(this, anchor.id),
             id: 'skipLayer_' + anchor.id,
             key: 'skipLayerItem_' + index,
             'aria-label': a11yLabel },

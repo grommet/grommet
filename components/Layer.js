@@ -343,13 +343,14 @@ var Layer = function (_Component2) {
 
       if (grommetApps) {
         Array.prototype.slice.call(grommetApps).forEach(function (grommetApp) {
-          grommetApp.setAttribute('aria-hidden', ariaHidden);
           if (ariaHidden) {
+            grommetApp.setAttribute('aria-hidden', false);
             grommetApp.classList.remove(APP + '--hidden');
             // this must be null to work
             grommetApp.style.top = null;
             grommetApp.style.left = null;
           } else {
+            grommetApp.setAttribute('aria-hidden', true);
             grommetApp.classList.add(APP + '--hidden');
             // scroll body content to the original position
             grommetApp.style.top = '-' + _this5._originalScrollPosition.top + 'px';
@@ -375,6 +376,8 @@ var Layer = function (_Component2) {
         _reactDom2.default.render(contents, this._element, function () {
           if (!hidden) {
             _this6._handleAriaHidden(false);
+          } else {
+            _this6._handleAriaHidden(true);
           }
         });
       }
