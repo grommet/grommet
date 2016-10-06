@@ -99,7 +99,7 @@ export default class Notification extends Component {
     let progress;
     if (percentComplete || 0 === percentComplete) {
       progress = (
-        <Box direction='row' align='center'>
+        <Box direction='row' align='center' pad={{ between: 'medium' }}>
           <Meter
             series={[{
               value: percentComplete,
