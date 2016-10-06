@@ -76,7 +76,7 @@ exports.default = {
       clearTimeout(scrollState.scrollTimer);
       scrollState.scrollParent.removeEventListener("scroll", scrollState._onScroll);
       window.removeEventListener("resize", scrollState._onResize);
-      scrollState.scrollParent = null;
+      scrollState.scrollParent = undefined;
     }
   }
 };

@@ -394,7 +394,7 @@ var Menu = function (_Component2) {
             document.removeEventListener('click', this._onClose);
             if (this._drop) {
               this._drop.remove();
-              this._drop = null;
+              this._drop = undefined;
             }
             break;
           case 'focused':

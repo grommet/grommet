@@ -307,7 +307,7 @@ var Article = function (_Component) {
           clearInterval(this._wheelTimer);
           clearInterval(this._wheelLongTimer);
           this._wheelLongTimer = setTimeout(function () {
-            _this3._wheelLongTimer = null;
+            _this3._wheelLongTimer = undefined;
           }, 2000);
         } else if (!this._wheelLongTimer) {
           if (delta > 10) {

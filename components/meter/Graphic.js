@@ -299,7 +299,7 @@ var Graphic = function (_Component) {
   }, {
     key: '_renderTopLayer',
     value: function _renderTopLayer() {
-      return null;
+      return undefined;
     }
   }, {
     key: '_renderA11YTitle',

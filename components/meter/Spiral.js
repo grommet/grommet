@@ -105,7 +105,7 @@ var Spiral = function (_Graphic) {
   }, {
     key: '_renderThresholds',
     value: function _renderThresholds() {
-      return null;
+      return undefined;
     }
   }, {
     key: '_renderTopLayer',

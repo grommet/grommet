@@ -73,7 +73,7 @@ var Overlay = function (_Component) {
       if (small) {
         this.setState({ iconSize: 'small' });
       } else {
-        var iconSize = 'small' === this.props.size ? null : 'large';
+        var iconSize = 'small' === this.props.size ? undefined : 'large';
         this.setState({ iconSize: iconSize });
       }
     }
@@ -115,7 +115,7 @@ var Overlay = function (_Component) {
       // when iconSize is small (mobile screen sizes), remove the extra padding
       // so that the play control is centered
 
-      var emptyBox = this.state.iconSize === 'small' ? null : _react2.default.createElement(_Box2.default, null);
+      var emptyBox = this.state.iconSize === 'small' ? undefined : _react2.default.createElement(_Box2.default, null);
 
       return _react2.default.createElement(
         _Box2.default,

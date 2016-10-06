@@ -138,7 +138,7 @@ var List = function (_Component) {
     value: function componentWillReceiveProps(nextProps) {
       if (this._scroll) {
         _InfiniteScroll2.default.stopListeningForScroll(this._scroll);
-        this._scroll = null;
+        this._scroll = undefined;
       }
       if (nextProps.hasOwnProperty('selected')) {
         this.setState({

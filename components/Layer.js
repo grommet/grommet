@@ -394,7 +394,7 @@ var Layer = function (_Component2) {
 
       _reactDom2.default.unmountComponentAtNode(this._element);
       this._element.parentNode.removeChild(this._element);
-      this._element = null;
+      this._element = undefined;
     }
   }, {
     key: 'render',

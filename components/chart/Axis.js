@@ -148,7 +148,7 @@ var Axis = function (_Component) {
           'span',
           null,
           item.label
-        ) : null;
+        ) : undefined;
 
         return _react2.default.createElement(
           'div',

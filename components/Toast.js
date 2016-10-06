@@ -244,7 +244,7 @@ var Toast = function (_Component2) {
     value: function _removeLayer() {
       _reactDom2.default.unmountComponentAtNode(this._element);
       this._element.parentNode.removeChild(this._element);
-      this._element = null;
+      this._element = undefined;
     }
   }, {
     key: 'render',

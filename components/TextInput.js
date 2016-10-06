@@ -139,7 +139,7 @@ var TextInput = function (_Component) {
         _KeyboardAccelerators2.default.stopListeningToKeyboard(this, activeKeyboardHandlers);
         if (this._drop) {
           this._drop.remove();
-          this._drop = null;
+          this._drop = undefined;
         }
       }
 

@@ -170,7 +170,7 @@ var Timestamp = function (_Component) {
         'span',
         { className: CLASS_ROOT + '__date' },
         this.state.date
-      ) : null;
+      ) : undefined;
 
       var time = this.state.time || this.state.hours || this.state.minutes || this.state.seconds ? _react2.default.createElement(
         'span',
@@ -179,7 +179,7 @@ var Timestamp = function (_Component) {
         this.state.hours,
         this.state.minutes,
         this.state.seconds
-      ) : null;
+      ) : undefined;
 
       return _react2.default.createElement(
         'span',

@@ -149,7 +149,7 @@ var Tiles = function (_Component) {
       }
       if (this._scroll) {
         _InfiniteScroll2.default.stopListeningForScroll(this._scroll);
-        this._scroll = null;
+        this._scroll = undefined;
       }
     }
   }, {
@@ -333,7 +333,7 @@ var Tiles = function (_Component) {
 
       var other = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
 
-      var more = null;
+      var more = void 0;
       if (onMore) {
         more = _react2.default.createElement(
           'div',

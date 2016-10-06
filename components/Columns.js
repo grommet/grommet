@@ -77,7 +77,7 @@ var Columns = function (_Component) {
     _this.state = {
       count: 1,
       maxCount: _this.props.maxCount,
-      columnBreakpoints: null,
+      columnBreakpoints: undefined,
       initMobile: false,
       margin: _this.props.margin
     };
@@ -166,7 +166,7 @@ var Columns = function (_Component) {
         }
       }
 
-      return null;
+      return undefined;
     }
   }, {
     key: '_getColumnBreakpoints',
