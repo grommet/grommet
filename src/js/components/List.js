@@ -230,7 +230,7 @@ export default class List extends Component {
     });
 
     // only set the selected state and classes if the caller isn't managing it.
-    if (!selected) {
+    if (selected === undefined) {
       this.setState({ selected: selection }, this._setSelection);
     }
 

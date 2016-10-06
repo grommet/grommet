@@ -79,7 +79,7 @@ export default class Tiles extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    if (nextProps.selected) {
+    if (nextProps.selected !== undefined) {
       this.setState({
         selected: Selection.normalizeIndexes(nextProps.selected)
       });
@@ -343,7 +343,7 @@ export default class Tiles extends Component {
       priorSelectedIndexes: this.state.selected
     });
     // only set the selected state and classes if the caller isn't managing it.
-    if (!selected) {
+    if (selected === undefined) {
       this.setState({ selected: selection }, this._setSelection);
     }
 

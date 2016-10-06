@@ -78,7 +78,7 @@ export default class Table extends Component {
       InfiniteScroll.stopListeningForScroll(this._scroll);
       this._scroll = undefined;
     }
-    if (nextProps.hasOwnProperty('selected')) {
+    if (nextProps.selected !== undefined) {
       this.setState({
         selected: Selection.normalizeIndexes(nextProps.selected)
       });
@@ -275,9 +275,9 @@ export default class Table extends Component {
   }
 
   _onClick (event) {
-    const { onSelect, selectable } = this.props;
+    const { onSelect, selectable, selected } = this.props;
 
-    let selected = Selection.onClick(event, {
+    const selection = Selection.onClick(event, {
       containerElement: this._container(),
       childSelector: 'tr',
       selectedClass: SELECTED_CLASS,
@@ -285,12 +285,12 @@ export default class Table extends Component {
       priorSelectedIndexes: this.state.selected
     });
     // only set the selected state and classes if the caller isn't managing it.
-    if (!this.props.selected) {
-      this.setState({ selected: selected }, this._setSelection);
+    if (selected === undefined) {
+      this.setState({ selected: selection }, this._setSelection);
     }
 
     if (onSelect) {
-      onSelect(selected.length === 1 ? selected[0]  : selected);
+      onSelect(selection.length === 1 ? selection[0]  : selection);
     }
   }
 
