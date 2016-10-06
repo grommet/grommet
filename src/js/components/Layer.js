@@ -34,10 +34,12 @@ class LayerContents extends Component {
   }
 
   componentDidMount () {
-    const { onClose } = this.props;
+    const { hidden, onClose } = this.props;
 
-    this.anchorStepRef.focus();
-    this.anchorStepRef.scrollIntoView();
+    if (!hidden) {
+      this.anchorStepRef.focus();
+      this.anchorStepRef.scrollIntoView();
+    }
 
     this._keyboardHandlers = {
       tab: this._processTab
