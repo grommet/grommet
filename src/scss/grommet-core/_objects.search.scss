@@ -23,6 +23,22 @@
   &::-ms-clear {
     display: none;
   }
+
+  #{$dark-background-context} {
+    border-color: $colored-border-color;
+
+    &:focus {
+      border-color: $focus-border-color;
+    }
+  }
+
+  #{$light-background-context} {
+    border-color: $border-color;
+
+    &:focus {
+      border-color: $focus-border-color;
+    }
+  }
 }
 
 .#{$grommet-namespace}search__drop {
