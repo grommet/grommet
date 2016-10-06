@@ -42,7 +42,7 @@ export default class Table extends Component {
   }
 
   componentDidMount () {
-    const { onMore, scrollable } = this.props;
+    const { onMore, selectable, scrollable } = this.props;
     const { small } = this.state;
     this._setSelection();
     if (scrollable && !small) {
@@ -57,18 +57,20 @@ export default class Table extends Component {
     this._adjustBodyCells();
     window.addEventListener('resize', this._onResize);
 
-    this._keyboardHandlers = {
-      left: this._onPreviousRow,
-      up: this._onPreviousRow,
-      right: this._onNextRow,
-      down: this._onNextRow,
-      enter: this._onEnter,
-      space: this._onEnter
-    };
-    KeyboardAccelerators.startListeningToKeyboard(
-      this, this._keyboardHandlers
-    );
-
+    if (selectable) {
+      // only listen for navigation keys if the table row can be selected
+      this._keyboardHandlers = {
+        left: this._onPreviousRow,
+        up: this._onPreviousRow,
+        right: this._onNextRow,
+        down: this._onNextRow,
+        enter: this._onEnter,
+        space: this._onEnter
+      };
+      KeyboardAccelerators.startListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
+    }
   }
 
   componentWillReceiveProps (nextProps) {
@@ -88,7 +90,7 @@ export default class Table extends Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
-    const { onMore, scrollable } = this.props;
+    const { onMore, selectable, scrollable } = this.props;
     const { rebuildMirror, selected, small } = this.state;
     if (JSON.stringify(selected) !==
       JSON.stringify(prevState.selected)) {
@@ -108,18 +110,36 @@ export default class Table extends Component {
     }
     this._adjustBodyCells();
     this._layout();
+
+    if (selectable) {
+      // only listen for navigation keys if the table row can be selected
+      this._keyboardHandlers = {
+        left: this._onPreviousRow,
+        up: this._onPreviousRow,
+        right: this._onNextRow,
+        down: this._onNextRow,
+        enter: this._onEnter,
+        space: this._onEnter
+      };
+      KeyboardAccelerators.startListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
+    }
   }
 
   componentWillUnmount () {
+    const { selectable } = this.props;
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
     }
     clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
 
-    KeyboardAccelerators.stopListeningToKeyboard(
-      this, this._keyboardHandlers
-    );
+    if (selectable) {
+      KeyboardAccelerators.stopListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
+    }
   }
 
   _announceRow (label) {

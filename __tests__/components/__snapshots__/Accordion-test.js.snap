@@ -1,7 +1,6 @@
 exports[`Accordion has correct default options 1`] = `
 <ul
   className="grommetux-list grommetux-accordion"
-  onClick={[Function bound _onClick]}
   role="tablist">
   <div>
     <li
@@ -60,7 +59,6 @@ exports[`Accordion has correct default options 1`] = `
 exports[`Accordion has correct initialIndex=0 rendering 1`] = `
 <ul
   className="grommetux-list grommetux-accordion"
-  onClick={[Function bound _onClick]}
   role="tablist">
   <div>
     <li
@@ -183,7 +181,6 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
 exports[`Accordion has correct initialIndex=0 rendering 2`] = `
 <ul
   className="grommetux-list grommetux-accordion"
-  onClick={[Function bound _onClick]}
   role="tablist">
   <div>
     <li
@@ -319,7 +316,6 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
 exports[`Accordion has correct openMulti=true rendering 1`] = `
 <ul
   className="grommetux-list grommetux-accordion"
-  onClick={[Function bound _onClick]}
   role="tablist">
   <div>
     <li

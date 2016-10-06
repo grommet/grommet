@@ -7,6 +7,11 @@
   overflow: auto;
 }
 
+.#{$grommet-namespace}list--focus {
+  border-color: $focus-border-color;
+  box-shadow: 0 0 1px 1px $focus-border-color;
+}
+
 .#{$grommet-namespace}list__more,
 .#{$grommet-namespace}list__empty {
   padding-left: $inuit-base-spacing-unit;
@@ -55,6 +60,7 @@
 
 .#{$grommet-namespace}list-item--selectable {
   cursor: pointer;
+  outline: none;
 
   &:hover {
     background-color: $hover-background-color;
@@ -73,8 +79,11 @@
 }
 
 .#{$grommet-namespace}list--selectable {
+  outline: none;
+
   .#{$grommet-namespace}list-item {
     cursor: pointer;
+    outline: none;
     transition: background-color 0.2s;
   }
 
@@ -83,7 +92,8 @@
     color: $selected-text-color;
   }
 
-  .#{$grommet-namespace}list-item:hover:not(.#{$grommet-namespace}list-item--selected) {
+  .#{$grommet-namespace}list-item--active,
+  .#{$grommet-namespace}list-item:hover {
     background-color: $hover-background-color;
     color: $hover-text-color;
   }
