@@ -101,7 +101,8 @@ var HotSpots = function (_Component) {
     }
   }, {
     key: '_onPreviousHotSpot',
-    value: function _onPreviousHotSpot() {
+    value: function _onPreviousHotSpot(event) {
+      event.preventDefault();
       var _props = this.props;
       var activeIndex = _props.activeIndex;
       var onActive = _props.onActive;
@@ -115,7 +116,8 @@ var HotSpots = function (_Component) {
     }
   }, {
     key: '_onNextHotSpot',
-    value: function _onNextHotSpot() {
+    value: function _onNextHotSpot(event) {
+      event.preventDefault();
       var _props2 = this.props;
       var activeIndex = _props2.activeIndex;
       var count = _props2.count;
