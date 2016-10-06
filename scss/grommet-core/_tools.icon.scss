@@ -10,8 +10,7 @@
 }
 
 @mixin background-context-icon($light-color, $active-light-color) {
-  #{$dark-background-context} &,
-  #{$light-background-context} #{$dark-background-context} & {
+  #{$dark-background-context} {
     .#{$grommet-namespace}control-icon {
       @include icon-color($colored-icon-color);
     }
@@ -24,8 +23,7 @@
     }
   }
 
-  #{$light-background-context} &,
-  #{$dark-background-context} #{$light-background-context} & {
+  #{$light-background-context} {
     .#{$grommet-namespace}control-icon {
       @include icon-color($light-color);
     }

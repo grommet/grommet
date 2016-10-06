@@ -20,6 +20,14 @@
 
 .#{$grommet-namespace}distribution__background {
   fill: $secondary-background-color;
+
+  #{$dark-background-context} {
+    fill: $colored-active-background-color;
+  }
+
+  #{$light-background-context} {
+    fill: $secondary-background-color;
+  }
 }
 
 .#{$grommet-namespace}distribution__item--clickable {

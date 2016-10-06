@@ -56,6 +56,10 @@ $map-active-stroke-width: round($inuit-base-spacing-unit / 4);
   display: inline-block;
   margin-right: halve($inuit-base-spacing-unit);
   margin-bottom: halve($inuit-base-spacing-unit);
+
+  #{$dark-background-context} {
+    color: $text-color;
+  }
 }
 
 .#{$grommet-namespace}map__item:not(.#{$grommet-namespace}map__item--plain) {
@@ -105,11 +109,5 @@ $map-active-stroke-width: round($inuit-base-spacing-unit / 4);
   .#{$grommet-namespace}map__item {
     display: block;
     margin-right: 0;
-  }
-}
-
-#{$dark-background-context} {
-  .#{$grommet-namespace}map__item {
-    color: $text-color;
   }
 }

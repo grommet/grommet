@@ -268,8 +268,7 @@
 }
 
 @mixin background-context-color($light-color, $active-light-color) {
-  #{$dark-background-context} &,
-  #{$light-background-context} #{$dark-background-context} & {
+  #{$dark-background-context} {
     color: $colored-text-color;
 
     &:visited {
@@ -282,8 +281,7 @@
     }
   }
 
-  #{$light-background-context} &,
-  #{$dark-background-context} #{$light-background-context} & {
+  #{$light-background-context} {
     color: $light-color;
 
     &:visited {

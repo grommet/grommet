@@ -37,8 +37,12 @@ $meter-circle-dash: round($meter-size-default * 3.2);
     stroke-width: $meter-indicator-width;
     stroke: $threshold-color;
 
-    #{$dark-background-context} & {
+    #{$dark-background-context} {
       stroke: $colored-meter-background-color;
+    }
+
+    #{$light-background-context} {
+      stroke: $threshold-color;
     }
   }
 
