@@ -49,6 +49,7 @@ export default class Columns extends Component {
   componentWillUnmount () {
     window.removeEventListener('resize', this._onResize);
     clearTimeout(this._layoutTimer);
+    clearTimeout(this._childStylesTimer);
   }
 
   _onResize () {
@@ -104,13 +105,19 @@ export default class Columns extends Component {
   _getColumnBreakpoints () {
     // grab CSS styles from DOM after component mounted
     // default to small size ($size-small = 192px)
-    let minColumnWidth = 192;
     const container = findDOMNode(this.containerRef);
     const column = container.childNodes[0];
     const child = column.childNodes[0];
+    let minColumnWidth = 192;
+    let childStyles;
 
     if (child) {
-      const childStyles = window.getComputedStyle(child);
+      clearTimeout(this._childStylesTimer);
+      // IE11 takes longer to compute correct child width
+      this._childStylesTimer = setTimeout(() => {
+        childStyles = window.getComputedStyle(child);
+      }, 50);
+
       if (childStyles && childStyles.width) {
         let childLeftMargin = childStyles.marginLeft ?
           parseFloat(childStyles.marginLeft) :  0;
