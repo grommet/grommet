@@ -36,6 +36,7 @@ export default class Select extends Component {
     this._announceOptions = this._announceOptions.bind(this);
 
     this.state = {
+      announceChange: false,
       activeOptionIndex: -1,
       dropActive: false,
       defaultValue: props.defaultValue,
@@ -45,8 +46,11 @@ export default class Select extends Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
-    // Set up keyboard listeners appropriate to the current state.
+    const { options } = this.props;
+    const { announceChange, dropActive } = this.state;
+    const { intl } = this.context;
 
+    // Set up keyboard listeners appropriate to the current state.
     const activeKeyboardHandlers = {
       esc: this._onForceClose,
       tab: this._onForceClose,
@@ -58,8 +62,7 @@ export default class Select extends Component {
     };
 
     // the order here is important, need to turn off keys before turning on
-
-    if (! this.state.dropActive && prevState.dropActive) {
+    if (! dropActive && prevState.dropActive) {
       document.removeEventListener('click', this._onRemoveDrop);
       KeyboardAccelerators.stopListeningToKeyboard(this,
         activeKeyboardHandlers);
@@ -69,7 +72,7 @@ export default class Select extends Component {
       }
     }
 
-    if (this.state.dropActive && ! prevState.dropActive) {
+    if (dropActive && ! prevState.dropActive) {
       document.addEventListener('click', this._onRemoveDrop);
       KeyboardAccelerators.startListeningToKeyboard(this,
         activeKeyboardHandlers);
@@ -85,9 +88,24 @@ export default class Select extends Component {
         });
       if (this._searchRef) {
         this._searchRef.focus();
+        this._searchRef.inputRef.select();
       }
-    } else if (this.state.dropActive && prevState.dropActive) {
+    } else if (dropActive && prevState.dropActive) {
       this._drop.render(this._renderDrop());
+    }
+
+    if (announceChange && options) {
+      const matchResultsMessage = Intl.getMessage(
+        intl, 'Match Results', {
+          count: options.length
+        }
+      );
+      let navigationHelpMessage = '';
+      if (options.length) {
+        navigationHelpMessage = `(${Intl.getMessage(intl, 'Navigation Help')})`;
+      }
+      announce(`${matchResultsMessage} ${navigationHelpMessage}`);
+      this.setState({ announceChange: false });
     }
   }
 
@@ -100,7 +118,7 @@ export default class Select extends Component {
 
   _announceOptions (index) {
     const { intl } = this.context;
-    const labelMessage = this._renderLabel(this.props.options[index]);
+    const labelMessage = this._renderLabel(this.props.options[index], true);
     const enterSelectMessage = Intl.getMessage(intl, 'Enter Select');
     announce(`${labelMessage} ${enterSelectMessage}`);
   }
@@ -116,6 +134,7 @@ export default class Select extends Component {
 
   _onSearchChange (event) {
     this.setState({
+      announceChange: true,
       activeOptionIndex: -1,
       dropActive: true,
       searchText: event.target.value
@@ -146,7 +165,8 @@ export default class Select extends Component {
   }
 
   _onRemoveDrop (event) {
-    if (!findDOMNode(this._searchRef).contains(event.target)) {
+    if (!this._searchRef ||
+      !findDOMNode(this._searchRef).contains(event.target)) {
       this.setState({dropActive: false});
     }
   }
@@ -156,13 +176,15 @@ export default class Select extends Component {
   }
 
   _onNextOption () {
+    event.preventDefault();
     let index = this.state.activeOptionIndex;
     index = Math.min(index + 1, this.props.options.length - 1);
     this.setState({activeOptionIndex: index},
       this._announceOptions.bind(this, index));
   }
 
-  _onPreviousOption () {
+  _onPreviousOption (event) {
+    event.preventDefault();
     let index = this.state.activeOptionIndex;
     index = Math.max(index - 1, 0);
     this.setState({activeOptionIndex: index},
@@ -178,7 +200,7 @@ export default class Select extends Component {
       event.preventDefault(); // prevent submitting forms
       let option = options[activeOptionIndex];
       this.setState({value: option}, () => {
-        const optionMessage = this._renderLabel(option);
+        const optionMessage = this._renderLabel(option, true);
         const selectedMessage = Intl.getMessage(intl, 'Selected');
         announce(`${optionMessage} ${selectedMessage}`);
       });
@@ -201,9 +223,11 @@ export default class Select extends Component {
     }
   }
 
-  _renderLabel (option) {
+  _renderLabel (option, announce) {
     if (typeof option === 'object') {
-      return option.label || option.value;
+      // revert for announce as label is often a complex object
+      return announce ? option.value || option.label :
+        option.label || option.value;
     } else {
       return option;
     }
@@ -258,6 +282,7 @@ export default class Select extends Component {
   render () {
     const { className, id, name, value } = this.props;
     const { active } = this.state;
+    const { intl } = this.context;
     let classes = classnames(
       CLASS_ROOT,
       {
@@ -267,6 +292,7 @@ export default class Select extends Component {
     );
     const restProps = Props.omit(this.props, Object.keys(Select.propTypes));
 
+    const buttonMessage = Intl.getMessage(intl, 'Select Icon');
     return (
       <div ref={ref => this.componentRef = ref} className={classes}
         onClick={this._onAddDrop}>
@@ -274,8 +300,8 @@ export default class Select extends Component {
           id={id} name={name} disabled={true}
           ref={ref => this.inputRef = ref}
           value={this._renderLabel(value)} />
-        <Button className={`${CLASS_ROOT}__control`} icon={<CaretDownIcon />}
-          onClick={this._onAddDrop} />
+        <Button className={`${CLASS_ROOT}__control`} a11yTitle={buttonMessage}
+          icon={<CaretDownIcon />} onClick={this._onAddDrop} />
       </div>
     );
   }

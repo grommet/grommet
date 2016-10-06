@@ -9,7 +9,7 @@ exports[`Select has correct default options 1`] = `
     name="item-1"
     value="one" />
   <button
-    aria-label={undefined}
+    aria-label="Select Icon"
     className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-select__control"
     disabled={false}
     href={undefined}

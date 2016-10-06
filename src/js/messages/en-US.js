@@ -84,12 +84,13 @@ export default {
   Resource: 'Resource',
   Running: 'Running',
   Search: 'Search',
-  'Search Suggestions': `There {count, plural,
+  'Match Results': `There {count, plural,
       =0 {is no match}
       one {is # match}
       other {are # matches}
   }`,
   second: 'second',
+  'Select Icon': 'Open Select Drop',
   Selected: 'Selected',
   'Skip to': 'Skip to',
   'Slide Number': 'Slide {slideNumber}',

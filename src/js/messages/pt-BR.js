@@ -90,12 +90,13 @@ export default {
   Running: 'Executando',
   Search: 'Buscar',
   search: 'buscar',
-  'Search Suggestions': `{count, plural,
+  'Match Results': `{count, plural,
       =0 {Não existe sugestão}
       one {Existe # sugestão}
       other {Existem # sugestões}
   }`,
   second: 'segundo',
+  'Select Icon': 'Abrir menu de seleção',
   Selected: 'Selecionada(o)',
   'Skip to': 'Saltar para',
   'Slide Number': 'Slide {slideNumber}',
