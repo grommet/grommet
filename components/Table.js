@@ -121,6 +121,7 @@ var Table = function (_Component) {
     value: function componentDidMount() {
       var _props = this.props;
       var onMore = _props.onMore;
+      var selectable = _props.selectable;
       var scrollable = _props.scrollable;
       var small = this.state.small;
 
@@ -135,15 +136,18 @@ var Table = function (_Component) {
       this._adjustBodyCells();
       window.addEventListener('resize', this._onResize);
 
-      this._keyboardHandlers = {
-        left: this._onPreviousRow,
-        up: this._onPreviousRow,
-        right: this._onNextRow,
-        down: this._onNextRow,
-        enter: this._onEnter,
-        space: this._onEnter
-      };
-      _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
+      if (selectable) {
+        // only listen for navigation keys if the table row can be selected
+        this._keyboardHandlers = {
+          left: this._onPreviousRow,
+          up: this._onPreviousRow,
+          right: this._onNextRow,
+          down: this._onNextRow,
+          enter: this._onEnter,
+          space: this._onEnter
+        };
+        _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
+      }
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -167,6 +171,7 @@ var Table = function (_Component) {
     value: function componentDidUpdate(prevProps, prevState) {
       var _props2 = this.props;
       var onMore = _props2.onMore;
+      var selectable = _props2.selectable;
       var scrollable = _props2.scrollable;
       var _state = this.state;
       var rebuildMirror = _state.rebuildMirror;
@@ -188,17 +193,34 @@ var Table = function (_Component) {
       }
       this._adjustBodyCells();
       this._layout();
+
+      if (selectable) {
+        // only listen for navigation keys if the table row can be selected
+        this._keyboardHandlers = {
+          left: this._onPreviousRow,
+          up: this._onPreviousRow,
+          right: this._onNextRow,
+          down: this._onNextRow,
+          enter: this._onEnter,
+          space: this._onEnter
+        };
+        _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
+      }
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
+      var selectable = this.props.selectable;
+
       if (this._scroll) {
         _InfiniteScroll2.default.stopListeningForScroll(this._scroll);
       }
       clearTimeout(this._resizeTimer);
       window.removeEventListener('resize', this._onResize);
 
-      _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
+      if (selectable) {
+        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
+      }
     }
   }, {
     key: '_announceRow',
