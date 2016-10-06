@@ -136,11 +136,15 @@ export default {
     if (element && window.getComputedStyle) {
       const color = window.getComputedStyle(element).backgroundColor;
       const match = color.match(COLOR_REGEXP);
-      const [red, green, blue] = match.slice(1).map(n => parseInt(n, 10));
-      // http://www.had2know.com/technology/
-      //  color-contrast-calculator-web-design.html
-      const brightness = ( (299 * red) + (587 * green) + (114 * blue) ) / 1000;
-      result = brightness < 125;
+      if (match) {
+        const [red, green, blue] = match.slice(1).map(n => parseInt(n, 10));
+        // http://www.had2know.com/technology/
+        //  color-contrast-calculator-web-design.html
+        const brightness = (
+          (299 * red) + (587 * green) + (114 * blue)
+        ) / 1000;
+        result = brightness < 125;
+      }
     }
     return result;
   }
