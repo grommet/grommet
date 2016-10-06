@@ -169,9 +169,9 @@ export default class SearchInput extends Component {
 
   _onNextSuggestion () {
     const { suggestions } = this.props;
+    const { activeSuggestionIndex } = this.state;
     if (suggestions) {
-      let index = this.state.activeSuggestionIndex;
-      index = Math.min(index + 1, suggestions.length - 1);
+      const index = Math.min(activeSuggestionIndex + 1, suggestions.length - 1);
       this.setState({ activeSuggestionIndex: index },
         this._announceSuggestion.bind(this, index));
     }
