@@ -33,15 +33,19 @@ $social-linkedin-color: #0077B5;
     }
   }
 
+  #{$dark-background-context} {
+    @include icon-color($colored-icon-color);
+  }
+
+  #{$light-background-context} {
+    @include icon-color($icon-color);
+  }
+
   @include graph-stroke-color();
   @include graph-fill-color();
 
   @include media-query(lap-and-up) {
     transition: all $base-animation-duration ease-in-out;
-  }
-
-  #{$dark-background-context} &:not([class*="color-index"]) {
-    @include icon-color($colored-icon-color);
   }
 }
 

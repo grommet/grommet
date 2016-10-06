@@ -57,6 +57,14 @@
     font-weight: 100;
     @include inuit-font-size(20px);
     border-bottom: 1px solid $border-color;
+
+    #{$dark-background-context} {
+      border-color: $colored-border-color;
+    }
+
+    #{$light-background-context} {
+      border-color: $border-color;
+    }
   }
 }
 
@@ -115,9 +123,14 @@
           background-color: $selected-background-color;
           color: $selected-text-color;
 
-          #{$dark-background-context} & {
+          #{$dark-background-context} {
             background-color: $colored-active-background-color;
             color: $active-colored-text-color;
+          }
+
+          #{$light-background-context} {
+            background-color: $selected-background-color;
+            color: $selected-text-color;
           }
         }
       }
@@ -128,8 +141,12 @@
           background-color: $hover-background-color;
           color: $hover-text-color;
 
-          #{$dark-background-context} & {
+          #{$dark-background-context} {
             color: $active-colored-text-color;
+          }
+
+          #{$light-background-context} {
+            color: $hover-text-color;
           }
         }
       }

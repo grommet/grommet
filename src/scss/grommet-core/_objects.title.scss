@@ -67,9 +67,15 @@
     cursor: pointer;
   }
 
-  #{$dark-background-context} & {
+  #{$dark-background-context} {
     &:hover {
       color: $active-colored-text-color;
+    }
+  }
+
+  #{$light-background-context} {
+    &:hover {
+      color: $brand-color;
     }
   }
 }

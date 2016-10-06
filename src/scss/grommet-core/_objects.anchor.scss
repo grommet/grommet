@@ -85,6 +85,9 @@
       @include icon-hover-grow();
     }
   }
+
+  @include background-context-color($control-brand-color, $control-brand-color);
+  @include background-context-icon($control-brand-color, $control-brand-color);
 }
 
 .#{$grommet-namespace}anchor--reverse {
@@ -131,8 +134,7 @@
     color: $link-color;
   }
 
-  #{$dark-background-context} &,
-  #{$light-background-context} #{$dark-background-context} & {
+  #{$dark-background-context} {
     @include icon-color($colored-icon-color);
 
     &.#{$grommet-namespace}anchor--primary {
@@ -140,8 +142,7 @@
     }
   }
 
-  #{$light-background-context} &,
-  #{$dark-background-context} #{$light-background-context} & {
+  #{$light-background-context} {
     @include icon-color($link-color);
 
     &.#{$grommet-namespace}anchor--primary {

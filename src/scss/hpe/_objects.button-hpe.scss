@@ -27,7 +27,7 @@
       }
     }
 
-    #{$dark-background-context} & {
+    #{$dark-background-context} {
 
       &:hover {
         box-shadow: 0px 0px 0px 2px $button-colored-border-color;
@@ -43,7 +43,7 @@
         border-color: $colored-text-color;
 
         &:hover {
-          box-shadow: 0px 0px 0px 2px $button-secondary-color;
+          box-shadow: 0px 0px 0px 2px $colored-text-color;
         }
       }
 
@@ -54,9 +54,13 @@
       }
     }
 
-    #{$dark-background-context} #{$light-background-context} & {
+    #{$light-background-context} {
       &.#{$grommet-namespace}button--secondary {
         border-color: $button-secondary-color;
+
+        &:hover {
+          box-shadow: 0px 0px 0px 2px $button-secondary-color;
+        }
       }
     }
   }

@@ -98,10 +98,17 @@
 
 .#{$grommet-namespace}chart-axis--ticks {
   .#{$grommet-namespace}chart-axis__slot {
-    #{$dark-background-context} & {
+    #{$dark-background-context} {
       &::before,
       &::after {
         background-color: $colored-border-color;
+      }
+    }
+
+    #{$light-background-context} {
+      &::before,
+      &::after {
+        background-color: $border-color;
       }
     }
   }
@@ -495,8 +502,12 @@
   path {
     stroke: $border-color;
 
-    #{$dark-background-context} & {
+    #{$dark-background-context} {
       stroke: $colored-border-color;
+    }
+
+    #{$light-background-context} {
+      stroke: $border-color;
     }
   }
 }
@@ -508,8 +519,12 @@
   @include graph-stroke-color-translucent(0.7);
   @include animation('fade-in-chart 1s');
 
-  #{$dark-background-context} & {
+  #{$dark-background-context} {
     @include graph-stroke-color();
+  }
+
+  #{$light-background-context} {
+    @include graph-stroke-color-translucent(0.7);
   }
 }
 
@@ -564,7 +579,11 @@
   stroke: $background-color;
   @include graph-fill-color();
 
-  #{$dark-background-context} & {
+  #{$dark-background-context} {
     stroke: $colored-active-background-color;
+  }
+
+  #{$light-background-context} {
+    stroke: $background-color;
   }
 }

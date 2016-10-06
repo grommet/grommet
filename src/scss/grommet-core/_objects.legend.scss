@@ -17,8 +17,12 @@
 .#{$grommet-namespace}legend__total {
   color: $secondary-text-color;
 
-  #{$dark-background-context} & {
+  #{$dark-background-context} {
     color: $inactive-colored-text-color;
+  }
+
+  #{$light-background-context} {
+    color: $secondary-text-color;
   }
 }
 
@@ -78,10 +82,14 @@
       stroke-width: halve($inuit-base-spacing-unit);
     }
   }
-}
 
-#{$dark-background-context} .#{$grommet-namespace}legend__item--active {
-  color: $active-colored-text-color;
+  #{$dark-background-context} {
+    color: $active-colored-text-color;
+  }
+
+  #{$light-background-context} {
+    color: $text-color;
+  }
 }
 
 // need li to override .grommet li

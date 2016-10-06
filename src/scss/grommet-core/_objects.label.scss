@@ -14,8 +14,12 @@
   @include inuit-font-size($content-small-font-size);
   color: $secondary-text-color;
 
-  #{$dark-background-context} & {
+  #{$dark-background-context} {
     color: $inactive-colored-text-color;
+  }
+
+  #{$light-background-context} {
+    color: $secondary-text-color;
   }
 }
 

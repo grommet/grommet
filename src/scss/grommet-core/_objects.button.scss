@@ -72,6 +72,18 @@ $button-horizontal-padding:
     @include icon-color($active-icon-color);
     transition: none;
   }
+
+  #{$dark-background-context} {
+    .#{$grommet-namespace}control-icon {
+      @include icon-color($active-colored-icon-color);
+    }
+  }
+
+  #{$light-background-context} {
+    .#{$grommet-namespace}control-icon {
+      @include icon-color($active-icon-color);
+    }
+  }
 }
 
 .#{$grommet-namespace}button--icon,
@@ -80,6 +92,18 @@ $button-horizontal-padding:
     .#{$grommet-namespace}control-icon {
       @include icon-color($active-icon-color);
       transition: none;
+    }
+
+    #{$dark-background-context} {
+      .#{$grommet-namespace}control-icon {
+        @include icon-color($active-colored-icon-color);
+      }
+    }
+
+    #{$light-background-context} {
+      .#{$grommet-namespace}control-icon {
+        @include icon-color($active-icon-color);
+      }
     }
   }
 }
@@ -172,15 +196,12 @@ $button-horizontal-padding:
 }
 
 .#{$grommet-namespace}button--plain.#{$grommet-namespace}button--icon {
-  color: $link-color;
 
   .#{$grommet-namespace}control-icon {
     @include icon-color($icon-color);
   }
 
   &:hover {
-    color: $link-hover-color;
-
     .#{$grommet-namespace}control-icon {
       @include icon-hover-grow();
     }
@@ -188,6 +209,21 @@ $button-horizontal-padding:
 
   @include background-context-color($icon-color, $active-icon-color);
   @include background-context-icon($icon-color, $active-icon-color);
+}
+
+.#{$grommet-namespace}button--plain.#{$grommet-namespace}button--icon.#{$grommet-namespace}button--icon-label {
+  color: $control-brand-color;
+
+  .#{$grommet-namespace}control-icon {
+    @include icon-color($control-brand-color);
+  }
+
+  &:hover {
+    color: $control-brand-color;
+  }
+
+  @include background-context-color($control-brand-color, $control-brand-color);
+  @include background-context-icon($control-brand-color, $control-brand-color);
 }
 
 .#{$grommet-namespace}button--disabled {
@@ -206,15 +242,3 @@ $button-horizontal-padding:
   //used to add full height for button inside a flex container
   flex-grow: 1;
 }
-
-// #{$dark-background-context}
-// .#{$grommet-namespace}button:not(.#{$grommet-namespace}button--primary) {
-//   &:not(.#{$grommet-namespace}button--focus) {
-//     border-color: $button-colored-border-color;
-//   }
-//   color: $colored-text-color;
-//
-//   &.#{$grommet-namespace}button--accent:not(.#{$grommet-namespace}button--focus) {
-//     border-color: $button-accent-color;
-//   }
-// }

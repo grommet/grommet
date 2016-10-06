@@ -17,18 +17,29 @@
       color: $link-hover-color;
     }
 
-    #{$dark-background-context} & {
+    #{$dark-background-context} {
       &:hover {
         background-color: $colored-hover-background-color;
+      }
+    }
+
+    #{$light-background-context} {
+      &:hover {
+        background-color: none;
       }
     }
 
     &.active {
       color: $brand-color-darker;
 
-      #{$dark-background-context} & {
+      #{$dark-background-context} {
         color: $active-colored-text-color;
         background-color: $colored-active-background-color;
+      }
+
+      #{$light-background-context} {
+        color: $brand-color-darker;
+        background-color: none;
       }
     }
   }
@@ -42,8 +53,12 @@
 .#{$grommet-namespace}menu__control {
   &:hover {
     .#{$grommet-namespace}menu__control-label {
-      #{$dark-background-context} & {
+      #{$dark-background-context} {
         color: $active-colored-text-color;
+      }
+
+      #{$light-background-context} {
+        color: $text-color;
       }
     }
   }
@@ -99,11 +114,11 @@
     &:hover,
     &:focus {
       text-decoration: none;
-      background-color: $hover-background-color;
       color: $link-hover-color;
+      background-color: $hover-background-color;
     }
 
-    #{$dark-background-context} & {
+    #{$dark-background-context} {
       &.active {
         color: $active-colored-text-color;
         background-color: $colored-active-background-color;
@@ -113,6 +128,15 @@
       &:focus {
         color: $active-colored-text-color;
         background-color: $colored-hover-background-color;
+      }
+    }
+
+    #{$light-background-context} {
+      &.active,
+      &:hover,
+      &:focus {
+        color: $link-hover-color;
+        background-color: $hover-background-color;
       }
     }
   }
@@ -272,8 +296,12 @@
     &.active {
       border-color: $brand-color;
 
-      #{$dark-background-context} & {
+      #{$dark-background-context} {
         border-color: transparent;
+      }
+
+      #{$light-background-context} {
+        border-color: $brand-color;
       }
     }
   }
