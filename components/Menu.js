@@ -16,6 +16,10 @@ var _keys = require('babel-runtime/core-js/object/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
 
+var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
 var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
@@ -264,7 +268,7 @@ var MenuDrop = function (_Component) {
       var onClick = _props.onClick;
       var props = (0, _objectWithoutProperties3.default)(_props, ['dropAlign', 'size', 'children', 'control', 'colorIndex', 'onClick']);
 
-      var restProps = _Props2.default.omit(props, (0, _keys2.default)(MenuDrop.childContextTypes));
+      var restProps = _Props2.default.omit(props, [].concat((0, _toConsumableArray3.default)((0, _keys2.default)(MenuDrop.childContextTypes)), (0, _toConsumableArray3.default)((0, _keys2.default)(MenuDrop.propTypes))));
 
       // Put nested Menus inline
       var menuDropChildren = _react2.default.Children.map(children, function (child) {
@@ -310,6 +314,7 @@ MenuDrop.displayName = 'MenuDrop';
 MenuDrop.propTypes = (0, _extends3.default)({
   control: _react.PropTypes.node,
   dropAlign: _Drop2.default.alignPropType,
+  dropColorIndex: _react.PropTypes.string,
   onClick: _react.PropTypes.func.isRequired,
   router: _react.PropTypes.any,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
@@ -545,6 +550,7 @@ var Menu = function (_Component2) {
       var props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'children', 'className', 'direction', 'label', 'primary', 'size', 'pad']);
 
       delete props.closeOnClick;
+      delete props.dropColorIndex;
       delete props.dropAlign;
       delete props.icon;
       delete props.inline;
