@@ -251,7 +251,9 @@ var Tiles = function (_Component) {
       var intl = this.context.intl;
 
       var enterSelectMessage = _Intl2.default.getMessage(intl, 'Enter Select');
-      (0, _Announcer.announce)(label + ' ' + enterSelectMessage);
+      // avoid a long text to be read by the screen reader
+      var labelMessage = label.length > 15 ? label.substring(0, 15) + '...' : label;
+      (0, _Announcer.announce)(labelMessage + ' ' + enterSelectMessage);
     }
   }, {
     key: '_onPreviousTile',
@@ -352,8 +354,10 @@ var Tiles = function (_Component) {
         this._fireClick(rows[activeTile], event.shiftKey);
         rows[activeTile].classList.remove(ACTIVE_CLASS);
         var label = rows[activeTile].innerText;
+        // avoid a long text to be read by the screen reader
+        var labelMessage = label.length > 15 ? label.substring(0, 15) + '...' : label;
         var selectedMessage = _Intl2.default.getMessage(intl, 'Selected');
-        (0, _Announcer.announce)(label + ' ' + selectedMessage);
+        (0, _Announcer.announce)(labelMessage + ' ' + selectedMessage);
       }
     }
   }, {
