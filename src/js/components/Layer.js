@@ -251,13 +251,14 @@ export default class Layer extends Component {
 
     if (grommetApps) {
       Array.prototype.slice.call(grommetApps).forEach((grommetApp) => {
-        grommetApp.setAttribute('aria-hidden', ariaHidden);
         if (ariaHidden) {
+          grommetApp.setAttribute('aria-hidden', false);
           grommetApp.classList.remove(`${APP}--hidden`);
           // this must be null to work
           grommetApp.style.top = null;
           grommetApp.style.left = null;
         } else {
+          grommetApp.setAttribute('aria-hidden', true);
           grommetApp.classList.add(`${APP}--hidden`);
           // scroll body content to the original position
           grommetApp.style.top = `-${this._originalScrollPosition.top}px`;
@@ -281,6 +282,8 @@ export default class Layer extends Component {
       ReactDOM.render(contents, this._element, () => {
         if (!hidden) {
           this._handleAriaHidden(false);
+        } else {
+          this._handleAriaHidden(true);
         }
       });
     }
