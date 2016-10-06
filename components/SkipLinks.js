@@ -158,12 +158,12 @@ var SkipLinks = function (_Component) {
     }
   }, {
     key: '_onClick',
-    value: function _onClick(destId) {
+    value: function _onClick(destId, event) {
+      event.preventDefault();
       var dest = document.getElementById(destId);
       this.setState({ showLayer: false }, function () {
-        setTimeout(function () {
-          return dest.focus();
-        }, 0);
+        dest.focus();
+        dest.scrollIntoView();
       });
     }
   }, {
