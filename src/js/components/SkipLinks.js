@@ -98,10 +98,12 @@ export default class SkipLinks extends Component {
     }
   }
 
-  _onClick (destId) {
+  _onClick (destId, event) {
+    event.preventDefault();
     const dest = document.getElementById(destId);
     this.setState({showLayer: false}, () => {
-      setTimeout(() => dest.focus(), 0);
+      dest.focus();
+      dest.scrollIntoView();
     });
   }
 
