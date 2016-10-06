@@ -15,6 +15,11 @@
   @include pad();
 }
 
+.#{$grommet-namespace}tiles--focus {
+  border-color: $focus-border-color;
+  box-shadow: 0 0 1px 1px $focus-border-color;
+}
+
 .#{$grommet-namespace}tiles__container {
   display: flex;
   flex-direction: row;
@@ -99,8 +104,10 @@
 }
 
 .#{$grommet-namespace}tiles--selectable {
+  outline: none;
   .#{$grommet-namespace}tile {
     cursor: pointer;
+    outline: none;
     transition: all 0.2s;
   }
 
@@ -109,7 +116,8 @@
     color: $selected-text-color;
   }
 
-  .#{$grommet-namespace}tile:hover:not(.#{$grommet-namespace}tile--selected):not([class*="background-hover-color-index-"]) {
+  .#{$grommet-namespace}tile--active,
+  .#{$grommet-namespace}tile:hover:not([class*="background-hover-color-index-"]) {
     background-color: $hover-background-color;
     color: $hover-text-color;
   }
@@ -129,10 +137,6 @@
       flex-basis: $size-large;
     }
   }
-}
-
-.#{$grommet-namespace}tiles:focus {
-  outline: $focus-border-color solid 1px;
 }
 
 .#{$grommet-namespace}tile {
@@ -157,11 +161,6 @@
 .#{$grommet-namespace}tile--selectable.#{$grommet-namespace}tile--selected {
   background-color: $selected-background-color;
   color: $selected-text-color;
-}
-
-.#{$grommet-namespace}tile--selectable:hover:not(.#{$grommet-namespace}tile--selected) {
-  background-color: $hover-background-color;
-  color: $hover-text-color;
 }
 
 .#{$grommet-namespace}tile--eclipsed {

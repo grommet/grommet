@@ -20,6 +20,10 @@ var _from = require('babel-runtime/core-js/array/from');
 
 var _from2 = _interopRequireDefault(_from);
 
+var _typeof2 = require('babel-runtime/helpers/typeof');
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
 var _stringify = require('babel-runtime/core-js/json/stringify');
 
 var _stringify2 = _interopRequireDefault(_stringify);
@@ -82,6 +86,16 @@ var _Selection = require('../utils/Selection');
 
 var _Selection2 = _interopRequireDefault(_Selection);
 
+var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
+
+var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
+
+var _Intl = require('../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
+var _Announcer = require('../utils/Announcer');
+
 var _LinkPrevious = require('./icons/base/LinkPrevious');
 
 var _LinkPrevious2 = _interopRequireDefault(_LinkPrevious);
@@ -96,10 +110,12 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.TILES; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.TILES;
 var TILE = _CSSClassnames2.default.TILE;
 var SELECTED_CLASS = TILE + '--selected';
+var ACTIVE_CLASS = TILE + '--active';
 
 var Tiles = function (_Component) {
   (0, _inherits3.default)(Tiles, _Component);
@@ -116,8 +132,15 @@ var Tiles = function (_Component) {
     _this._onResize = _this._onResize.bind(_this);
     _this._layout = _this._layout.bind(_this);
     _this._onClick = _this._onClick.bind(_this);
+    _this._fireClick = _this._fireClick.bind(_this);
+    _this._announceTile = _this._announceTile.bind(_this);
+    _this._onPreviousTile = _this._onPreviousTile.bind(_this);
+    _this._onNextTile = _this._onNextTile.bind(_this);
+    _this._onEnter = _this._onEnter.bind(_this);
 
     _this.state = {
+      activeTile: undefined,
+      mouseActive: false,
       overflow: false,
       selected: _Selection2.default.normalizeIndexes(props.selected)
     };
@@ -127,16 +150,33 @@ var Tiles = function (_Component) {
   (0, _createClass3.default)(Tiles, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      var _props = this.props;
+      var direction = _props.direction;
+      var onMore = _props.onMore;
+      var selectable = _props.selectable;
+
       this._setSelection();
-      if (this.props.onMore) {
-        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, this.props.onMore);
+      if (onMore) {
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, onMore);
       }
-      if ('row' === this.props.direction) {
+      if ('row' === direction) {
         window.addEventListener('resize', this._onResize);
         document.addEventListener('wheel', this._onWheel);
         this._trackHorizontalScroll();
         // give browser a chance to stabilize
         setTimeout(this._layout, 10);
+      }
+      if (selectable) {
+        // only listen for navigation keys if the tile row can be selected
+        this._keyboardHandlers = {
+          left: this._onPreviousTile,
+          up: this._onPreviousTile,
+          right: this._onNextTile,
+          down: this._onNextTile,
+          enter: this._onEnter,
+          space: this._onEnter
+        };
+        _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
       }
     }
   }, {
@@ -155,29 +195,165 @@ var Tiles = function (_Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      if ((0, _stringify2.default)(this.state.selected) !== (0, _stringify2.default)(prevState.selected)) {
+      var _props2 = this.props;
+      var direction = _props2.direction;
+      var onMore = _props2.onMore;
+      var selectable = _props2.selectable;
+      var selected = this.state.selected;
+
+      if ((0, _stringify2.default)(selected) !== (0, _stringify2.default)(prevState.selected)) {
         this._setSelection();
       }
-      if (this.props.onMore && !this._scroll) {
-        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, this.props.onMore);
+      if (onMore && !this._scroll) {
+        this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, onMore);
       }
-      if ('row' === this.props.direction) {
+      if ('row' === direction) {
         this._trackHorizontalScroll();
+      }
+      if (selectable) {
+        // only listen for navigation keys if the list row can be selected
+        this._keyboardHandlers = {
+          left: this._onPreviousTile,
+          up: this._onPreviousTile,
+          right: this._onNextTile,
+          down: this._onNextTile,
+          enter: this._onEnter,
+          space: this._onEnter
+        };
+        _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
       }
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
+      var _props3 = this.props;
+      var direction = _props3.direction;
+      var selectable = _props3.selectable;
+
       if (this._scroll) {
         _InfiniteScroll2.default.stopListeningForScroll(this._scroll);
       }
-      if ('row' === this.props.direction) {
+      if ('row' === direction) {
         window.removeEventListener('resize', this._onResize);
         document.removeEventListener('wheel', this._onWheel);
         if (this._tracking) {
           var tiles = (0, _reactDom.findDOMNode)(this.tilesRef);
           tiles.removeEventListener('scroll', this._onScrollHorizontal);
         }
+      }
+      if (selectable) {
+        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
+      }
+    }
+  }, {
+    key: '_announceTile',
+    value: function _announceTile(label) {
+      var intl = this.context.intl;
+
+      var enterSelectMessage = _Intl2.default.getMessage(intl, 'Enter Select');
+      (0, _Announcer.announce)(label + ' ' + enterSelectMessage);
+    }
+  }, {
+    key: '_onPreviousTile',
+    value: function _onPreviousTile(event) {
+      var _this2 = this;
+
+      if ((0, _reactDom.findDOMNode)(this.tilesRef).contains(document.activeElement)) {
+        var _ret = function () {
+          event.preventDefault();
+          var activeTile = _this2.state.activeTile;
+
+          var rows = (0, _reactDom.findDOMNode)(_this2.tilesRef).querySelectorAll('.' + TILE);
+          if (rows && rows.length > 0) {
+            if (activeTile === undefined) {
+              rows[0].classList.add(ACTIVE_CLASS);
+              _this2.setState({ activeTile: 0 }, function () {
+                _this2._announceTile(rows[_this2.state.activeTile].innerText);
+              });
+            } else if (activeTile - 1 >= 0) {
+              rows[activeTile].classList.remove(ACTIVE_CLASS);
+              rows[activeTile - 1].classList.add(ACTIVE_CLASS);
+              _this2.setState({ activeTile: activeTile - 1 }, function () {
+                _this2._announceTile(rows[_this2.state.activeTile].innerText);
+              });
+            }
+          }
+
+          //stop event propagation
+          return {
+            v: true
+          };
+        }();
+
+        if ((typeof _ret === 'undefined' ? 'undefined' : (0, _typeof3.default)(_ret)) === "object") return _ret.v;
+      }
+    }
+  }, {
+    key: '_onNextTile',
+    value: function _onNextTile(event) {
+      var _this3 = this;
+
+      if ((0, _reactDom.findDOMNode)(this.tilesRef).contains(document.activeElement)) {
+        var _ret2 = function () {
+          event.preventDefault();
+          var activeTile = _this3.state.activeTile;
+
+          var rows = (0, _reactDom.findDOMNode)(_this3.tilesRef).querySelectorAll('.' + TILE);
+          if (rows && rows.length > 0) {
+            if (activeTile === undefined) {
+              rows[0].classList.add(ACTIVE_CLASS);
+              _this3.setState({ activeTile: 0 }, function () {
+                _this3._announceTile(rows[_this3.state.activeTile].innerText);
+              });
+            } else if (activeTile + 1 <= rows.length - 1) {
+              rows[activeTile].classList.remove(ACTIVE_CLASS);
+              rows[activeTile + 1].classList.add(ACTIVE_CLASS);
+              _this3.setState({ activeTile: activeTile + 1 }, function () {
+                _this3._announceTile(rows[_this3.state.activeTile].innerText);
+              });
+            }
+          }
+
+          //stop event propagation
+          return {
+            v: true
+          };
+        }();
+
+        if ((typeof _ret2 === 'undefined' ? 'undefined' : (0, _typeof3.default)(_ret2)) === "object") return _ret2.v;
+      }
+    }
+  }, {
+    key: '_fireClick',
+    value: function _fireClick(element, shiftKey) {
+      var event = void 0;
+      try {
+        event = new MouseEvent('click', {
+          'bubbles': true,
+          'cancelable': true,
+          'shiftKey': shiftKey
+        });
+      } catch (e) {
+        // IE11 workaround.
+        event = document.createEvent('Event');
+        event.initEvent('click', true, true);
+      }
+      // We use dispatchEvent to have the browser fill out the event fully.
+      element.dispatchEvent(event);
+    }
+  }, {
+    key: '_onEnter',
+    value: function _onEnter(event) {
+      var activeTile = this.state.activeTile;
+      var intl = this.context.intl;
+
+      if ((0, _reactDom.findDOMNode)(this.tilesRef).contains(document.activeElement) && activeTile !== undefined) {
+        var rows = (0, _reactDom.findDOMNode)(this.tilesRef).querySelectorAll('.' + TILE);
+        this._fireClick(rows[activeTile], event.shiftKey);
+        rows[activeTile].classList.remove(ACTIVE_CLASS);
+        var label = rows[activeTile].innerText;
+        var selectedMessage = _Intl2.default.getMessage(intl, 'Selected');
+        (0, _Announcer.announce)(label + ' ' + selectedMessage);
       }
     }
   }, {
@@ -213,16 +389,16 @@ var Tiles = function (_Component) {
   }, {
     key: '_layout',
     value: function _layout() {
-      var _this2 = this;
+      var _this4 = this;
 
       var direction = this.props.direction;
 
       if ('row' === direction) {
         (function () {
           // determine if we have more tiles than room to fit
-          var tiles = (0, _reactDom.findDOMNode)(_this2.tilesRef);
+          var tiles = (0, _reactDom.findDOMNode)(_this4.tilesRef);
           // 20 is to allow some fuzziness as scrollbars come and go
-          _this2.setState({
+          _this4.setState({
             overflow: tiles.scrollWidth > tiles.offsetWidth + 20,
             overflowStart: tiles.scrollLeft <= 20,
             overflowEnd: tiles.scrollLeft >= tiles.scrollWidth - tiles.offsetWidth
@@ -274,7 +450,9 @@ var Tiles = function (_Component) {
   }, {
     key: '_trackHorizontalScroll',
     value: function _trackHorizontalScroll() {
-      if (this.state.overflow && !this._tracking) {
+      var overflow = this.state.overflow;
+
+      if (overflow && !this._tracking) {
         var tiles = (0, _reactDom.findDOMNode)(this.tilesRef);
         tiles.addEventListener('scroll', this._onScrollHorizontal);
         this._tracking = true;
@@ -293,24 +471,25 @@ var Tiles = function (_Component) {
   }, {
     key: '_onClick',
     value: function _onClick(event) {
-      var selected = _Selection2.default.onClick(event, {
+      var _props4 = this.props;
+      var onSelect = _props4.onSelect;
+      var selectable = _props4.selectable;
+      var selected = _props4.selected;
+
+      var selection = _Selection2.default.onClick(event, {
         containerElement: (0, _reactDom.findDOMNode)(this.tilesRef),
         childSelector: '.' + TILE,
         selectedClass: SELECTED_CLASS,
-        multiSelect: 'multiple' === this.props.selectable,
+        multiSelect: 'multiple' === selectable,
         priorSelectedIndexes: this.state.selected
       });
       // only set the selected state and classes if the caller isn't managing it.
-      if (!this.props.selected) {
-        this.setState({ selected: selected }, this._setSelection);
+      if (!selected) {
+        this.setState({ selected: selection }, this._setSelection);
       }
 
-      if (this.props.onSelect) {
-        // notify caller that the selection has changed
-        if (selected.length === 1) {
-          selected = selected[0];
-        }
-        this.props.onSelect(selected);
+      if (onSelect) {
+        onSelect(selection.length === 1 ? selection[0] : selection);
       }
     }
 
@@ -320,16 +499,32 @@ var Tiles = function (_Component) {
     key: 'render',
     value: function render() {
       var _classnames,
-          _this3 = this;
+          _this5 = this;
 
-      var _props = this.props;
-      var onMore = _props.onMore;
-      var selectable = _props.selectable;
-      var direction = _props.direction;
-      var overflow = this.state.overflow;
+      var _props5 = this.props;
+      var a11yTitle = _props5.a11yTitle;
+      var className = _props5.className;
+      var children = _props5.children;
+      var direction = _props5.direction;
+      var fill = _props5.fill;
+      var flush = _props5.flush;
+      var _onBlur = _props5.onBlur;
+      var _onFocus = _props5.onFocus;
+      var onMore = _props5.onMore;
+      var _onMouseDown = _props5.onMouseDown;
+      var _onMouseUp = _props5.onMouseUp;
+      var selectable = _props5.selectable;
+      var _state = this.state;
+      var activeTile = _state.activeTile;
+      var focus = _state.focus;
+      var mouseActive = _state.mouseActive;
+      var overflow = _state.overflow;
+      var overflowEnd = _state.overflowEnd;
+      var overflowStart = _state.overflowStart;
+      var intl = this.context.intl;
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', this.props.fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--flush', this.props.flush), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', this.props.selectable), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--moreable', this.props.onMore), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--overflowed', this.state.overflow), _classnames), this.props.className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--flush', flush), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--focus', focus), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', selectable), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--moreable', onMore), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--overflowed', overflow), _classnames), className);
 
       var other = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
 
@@ -338,32 +533,67 @@ var Tiles = function (_Component) {
         more = _react2.default.createElement(
           'div',
           { ref: function ref(_ref) {
-              return _this3.moreRef = _ref;
+              return _this5.moreRef = _ref;
             }, className: CLASS_ROOT + '__more' },
           _react2.default.createElement(_Spinning2.default, null)
         );
       }
 
-      var onClickHandler = void 0;
-      if (selectable) {
-        onClickHandler = this._onClick;
-      }
-
-      var children = _react.Children.map(this.props.children, function (element) {
-        return _this3._renderChild(element);
+      var tileContents = _react.Children.map(children, function (element) {
+        return _this5._renderChild(element);
       });
+
+      var selectableProps = void 0;
+      if (selectable) {
+        var multiSelectMessage = selectable === 'multiple' ? '(' + _Intl2.default.getMessage(intl, 'Multi Select') + ')' : '';
+        var tilesMessage = a11yTitle || _Intl2.default.getMessage(intl, 'Tiles');
+        var navigationHelpMessage = _Intl2.default.getMessage(intl, 'Navigation Help');
+        selectableProps = {
+          'aria-label': tilesMessage + ' ' + multiSelectMessage + ' ' + navigationHelpMessage,
+          tabIndex: '0',
+          onClick: this._onClick,
+          onMouseDown: function onMouseDown(event) {
+            _this5.setState({ mouseActive: true });
+            if (_onMouseDown) {
+              _onMouseDown(event);
+            }
+          },
+          onMouseUp: function onMouseUp(event) {
+            _this5.setState({ mouseActive: false });
+            if (_onMouseUp) {
+              _onMouseUp(event);
+            }
+          },
+          onFocus: function onFocus(event) {
+            if (mouseActive === false) {
+              _this5.setState({ focus: true });
+            }
+            if (_onFocus) {
+              _onFocus(event);
+            }
+          },
+          onBlur: function onBlur(event) {
+            if (activeTile) {
+              var rows = (0, _reactDom.findDOMNode)(_this5.tilesRef).querySelectorAll('.' + TILE);
+              rows[activeTile].classList.remove(ACTIVE_CLASS);
+            }
+            _this5.setState({ focus: false, activeTile: undefined });
+            if (_onBlur) {
+              _onBlur(event);
+            }
+          }
+        };
+      }
 
       var contents = _react2.default.createElement(
         _Box2.default,
         (0, _extends3.default)({ ref: function ref(_ref2) {
-            return _this3.tilesRef = _ref2;
+            return _this5.tilesRef = _ref2;
           } }, other, {
           wrap: direction ? false : true,
           direction: direction ? direction : 'row',
-          className: classes,
-          onClick: onClickHandler,
-          focusable: false }),
-        children,
+          className: classes, focusable: false }, selectableProps),
+        tileContents,
         more
       );
 
@@ -371,13 +601,15 @@ var Tiles = function (_Component) {
         var left = void 0;
         var right = void 0;
 
-        if (!this.state.overflowStart) {
+        if (!overflowStart) {
+          var previousTilesMessage = _Intl2.default.getMessage(intl, 'Previous Tiles');
           left = _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__left', icon: _react2.default.createElement(_LinkPrevious2.default, null),
-            onClick: this._onLeft });
+            a11yTitle: previousTilesMessage, onClick: this._onLeft });
         }
-        if (!this.state.overflowEnd) {
+        if (!overflowEnd) {
+          var nextTilesMessage = _Intl2.default.getMessage(intl, 'Next Tiles');
           right = _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__right', icon: _react2.default.createElement(_LinkNext2.default, null),
-            onClick: this._onRight });
+            a11yTitle: nextTilesMessage, onClick: this._onRight });
         }
 
         contents = _react2.default.createElement(
@@ -398,6 +630,10 @@ var Tiles = function (_Component) {
 Tiles.displayName = 'Tiles';
 exports.default = Tiles;
 
+
+Tiles.contextTypes = {
+  intl: _react.PropTypes.object
+};
 
 Tiles.propTypes = (0, _extends3.default)({
   fill: _react.PropTypes.bool,

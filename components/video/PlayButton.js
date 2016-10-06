@@ -64,16 +64,12 @@ var FullscreenButton = function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
-      var playing = _props.playing;
+      var className = _props.className;
       var ended = _props.ended;
-      var togglePlay = _props.togglePlay;
       var iconSize = _props.iconSize;
+      var playing = _props.playing;
+      var togglePlay = _props.togglePlay;
 
-
-      var classes = [];
-      if (this.props.className) {
-        classes.push(this.props.className);
-      }
 
       var controlIconSize = iconSize;
       var controlIcon = playing ? _react2.default.createElement(_Pause2.default, { size: controlIconSize }) : ended ? _react2.default.createElement(_Refresh2.default, { size: controlIconSize }) : _react2.default.createElement(_Play2.default, { size: controlIconSize });
@@ -81,7 +77,7 @@ var FullscreenButton = function (_Component) {
 
       var a11yControlButtonTitle = _Intl2.default.getMessage(this.context.intl, a11yControlButtonMessage);
 
-      return _react2.default.createElement(_Button2.default, { className: classes.join(' '), plain: true,
+      return _react2.default.createElement(_Button2.default, { className: className, plain: true,
         primary: true, onClick: togglePlay,
         icon: controlIcon, a11yTitle: a11yControlButtonTitle });
     }

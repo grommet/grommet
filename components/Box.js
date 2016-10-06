@@ -196,6 +196,10 @@ var Box = function (_Component) {
       var focusable = _props2.focusable;
       var id = _props2.id;
       var onClick = _props2.onClick;
+      var _onBlur = _props2.onBlur;
+      var _onFocus = _props2.onFocus;
+      var _onMouseDown = _props2.onMouseDown;
+      var _onMouseUp = _props2.onMouseUp;
       var pad = _props2.pad;
       var primary = _props2.primary;
       var role = _props2.role;
@@ -203,7 +207,9 @@ var Box = function (_Component) {
       var tabIndex = _props2.tabIndex;
       var tag = _props2.tag;
       var texture = _props2.texture;
-      var darkBackground = this.state.darkBackground;
+      var _state = this.state;
+      var darkBackground = _state.darkBackground;
+      var mouseActive = _state.mouseActive;
 
       var classes = [CLASS_ROOT];
       var containerClasses = [CLASS_ROOT + '__container'];
@@ -281,21 +287,31 @@ var Box = function (_Component) {
       if (onClick) {
         classes.push(CLASS_ROOT + "--clickable");
         clickableProps = {
-          onMouseDown: function onMouseDown() {
-            return _this3.setState({ mouseActive: true });
-          },
-          onMouseUp: function onMouseUp() {
-            return _this3.setState({ mouseActive: false });
-          },
-          onFocus: function onFocus() {
-            if (_this3.state.mouseActive === false) {
-              _this3.setState({ focus: true });
+          onMouseDown: function onMouseDown(event) {
+            _this3.setState({ mouseActive: true });
+            if (_onMouseDown) {
+              _onMouseDown(event);
             }
           },
-          onBlur: function onBlur() {
-            return _this3.setState({
-              focus: false
-            });
+          onMouseUp: function onMouseUp(event) {
+            _this3.setState({ mouseActive: false });
+            if (_onMouseUp) {
+              _onMouseUp(event);
+            }
+          },
+          onFocus: function onFocus(event) {
+            if (mouseActive === false) {
+              _this3.setState({ focus: true });
+            }
+            if (_onFocus) {
+              _onFocus(event);
+            }
+          },
+          onBlur: function onBlur(event) {
+            _this3.setState({ focus: false });
+            if (_onBlur) {
+              _onBlur(event);
+            }
           }
         };
         if (focusable) {
@@ -348,7 +364,7 @@ var Box = function (_Component) {
               return _this3.boxContainerRef = _ref;
             },
             className: containerClasses.join(' '),
-            style: style, role: role }, a11yProps),
+            style: style, role: role }, a11yProps, clickableProps),
           skipLinkAnchor,
           _react2.default.createElement(
             Component,

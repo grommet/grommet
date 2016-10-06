@@ -589,7 +589,7 @@ var Distribution = function (_Component) {
       var mouseActive = _state2.mouseActive;
       var width = _state2.width;
 
-      var classes = (0, _classnames7.default)(CLASS_ROOT, className, (_classnames4 = {}, (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--icons', allIcons), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--loading', (items || []).length === 0), _classnames4));
+      var classes = (0, _classnames7.default)(CLASS_ROOT, (_classnames4 = {}, (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--icons', allIcons), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--loading', (items || []).length === 0), _classnames4), className);
 
       var background = void 0;
       if (!allIcons) {
