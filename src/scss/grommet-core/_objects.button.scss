@@ -1,7 +1,9 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-$button-vertical-padding: round($inuit-base-spacing-unit / 3) - $button-border-width;
-$button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-width;
+$button-vertical-padding:
+  round($inuit-base-spacing-unit / 3) - $button-border-width;
+$button-horizontal-padding:
+  round($inuit-base-spacing-unit) - $button-border-width;
 
 @mixin basic-button {
   padding: $button-vertical-padding $button-horizontal-padding;
@@ -50,6 +52,8 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
     border-color: $focus-border-color;
     box-shadow: 0 0 1px 1px $focus-border-color;
   }
+
+  @include background-context-color($button-text-color, $button-text-color);
 }
 
 .#{$grommet-namespace}button__icon {
@@ -59,6 +63,8 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   svg {
     vertical-align: top;
   }
+
+  @include background-context-icon($button-text-color, $button-text-color);
 }
 
 .#{$grommet-namespace}button:hover {
@@ -117,6 +123,9 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
       @include icon-color($active-colored-icon-color)
     }
   }
+
+  @include background-context-color($active-colored-text-color,
+    $active-colored-text-color);
 }
 
 .#{$grommet-namespace}button--secondary:not(.#{$grommet-namespace}button--focus) {
@@ -159,8 +168,26 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
     }
   }
 
-  @include dark-background-context-icon();
-  @include light-background-context-icon();
+  @include background-context-color($link-color, $hover-text-color);
+}
+
+.#{$grommet-namespace}button--plain.#{$grommet-namespace}button--icon {
+  color: $link-color;
+
+  .#{$grommet-namespace}control-icon {
+    @include icon-color($icon-color);
+  }
+
+  &:hover {
+    color: $link-hover-color;
+
+    .#{$grommet-namespace}control-icon {
+      @include icon-hover-grow();
+    }
+  }
+
+  @include background-context-color($icon-color, $active-icon-color);
+  @include background-context-icon($icon-color, $active-icon-color);
 }
 
 .#{$grommet-namespace}button--disabled {
@@ -180,13 +207,14 @@ $button-horizontal-padding: round($inuit-base-spacing-unit) - $button-border-wid
   flex-grow: 1;
 }
 
-#{$dark-background-context} .#{$grommet-namespace}button:not(.#{$grommet-namespace}button--primary) {
-  &:not(.#{$grommet-namespace}button--focus) {
-    border-color: $button-colored-border-color;
-  }
-  color: $colored-text-color;
-
-  &.#{$grommet-namespace}button--accent:not(.#{$grommet-namespace}button--focus) {
-    border-color: $button-accent-color;
-  }
-}
+// #{$dark-background-context}
+// .#{$grommet-namespace}button:not(.#{$grommet-namespace}button--primary) {
+//   &:not(.#{$grommet-namespace}button--focus) {
+//     border-color: $button-colored-border-color;
+//   }
+//   color: $colored-text-color;
+//
+//   &.#{$grommet-namespace}button--accent:not(.#{$grommet-namespace}button--focus) {
+//     border-color: $button-accent-color;
+//   }
+// }

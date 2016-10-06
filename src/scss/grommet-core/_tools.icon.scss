@@ -9,8 +9,9 @@
   transform: scale(1.1);
 }
 
-@mixin dark-background-context-icon {
-  #{$dark-background-context} & {
+@mixin background-context-icon($light-color, $active-light-color) {
+  #{$dark-background-context} &,
+  #{$light-background-context} #{$dark-background-context} & {
     .#{$grommet-namespace}control-icon {
       @include icon-color($colored-icon-color);
     }
@@ -22,18 +23,17 @@
       }
     }
   }
-}
 
-@mixin light-background-context-icon {
-  #{$light-background-context} & {
+  #{$light-background-context} &,
+  #{$dark-background-context} #{$light-background-context} & {
     .#{$grommet-namespace}control-icon {
-      @include icon-color($icon-color);
+      @include icon-color($light-color);
     }
 
     &:active,
     &:hover {
      .#{$grommet-namespace}control-icon {
-        @include icon-color($active-icon-color);
+        @include icon-color($active-light-color);
       }
     }
   }
