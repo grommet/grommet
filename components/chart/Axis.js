@@ -137,7 +137,7 @@ var Axis = function (_Component) {
       var intl = this.context.intl;
 
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--reverse', reverse), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--ticks', ticks), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--ticks-' + tickAlign, tickAlign), _classnames), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--reverse', reverse), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--ticks', ticks), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--ticks--' + tickAlign, tickAlign), _classnames), className);
 
       var elements = items.map(function (item) {
         var _classnames2;
