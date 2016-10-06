@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -59,13 +67,14 @@ var TableRow = function (_Component) {
       var children = _props.children;
       var className = _props.className;
       var onClick = _props.onClick;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'onClick']);
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--selectable', onClick));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--selectable', onClick), className);
 
       return _react2.default.createElement(
         'tr',
-        { className: classes, onClick: onClick },
+        (0, _extends3.default)({}, props, { className: classes, onClick: onClick }),
         children
       );
     }
