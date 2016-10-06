@@ -48,9 +48,15 @@ var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Intl = require('../../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.SPINNING; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.SPINNING;
 
 var Spinning = function (_Component) {
   (0, _inherits3.default)(Spinning, _Component);
@@ -64,21 +70,18 @@ var Spinning = function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var a11yTitle = _props.a11yTitle;
       var className = _props.className;
       var small = _props.small;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'small']);
+      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className', 'small']);
+      var intl = this.context.intl;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--small', small), className);
 
       return _react2.default.createElement(
         'svg',
         (0, _extends3.default)({}, props, { className: classes, viewBox: '0 0 48 48', version: '1.1',
-          role: 'img' }),
-        _react2.default.createElement(
-          'title',
-          null,
-          'Spinning'
-        ),
+          role: 'img', 'aria-label': a11yTitle || _Intl2.default.getMessage(intl, 'Spinning') }),
         _react2.default.createElement('circle', { stroke: '#ddd', strokeWidth: '4', strokeDasharray: '24px 8px',
           fill: 'none', cx: '24', cy: '24', r: '20' }),
         _react2.default.createElement('circle', { stroke: '#333', strokeWidth: '4', strokeDasharray: '24px 104px',
@@ -93,7 +96,13 @@ Spinning.displayName = 'Spinning';
 exports.default = Spinning;
 
 
+Spinning.contextTypes = {
+  intl: _react.PropTypes.object
+};
+
 Spinning.propTypes = {
+  a11yTitle: _react.PropTypes.string,
+  className: _react.PropTypes.string,
   small: _react.PropTypes.bool
 };
 module.exports = exports['default'];
