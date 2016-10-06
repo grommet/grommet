@@ -64,7 +64,7 @@ export default class Axis extends Component {
         [`${CLASS_ROOT}--vertical`]: vertical,
         [`${CLASS_ROOT}--align-${align}`]: align,
         [`${CLASS_ROOT}--ticks`]: ticks,
-        [`${CLASS_ROOT}--ticks-${tickAlign}`]: tickAlign
+        [`${CLASS_ROOT}--ticks--${tickAlign}`]: tickAlign
       },
       className
     );
