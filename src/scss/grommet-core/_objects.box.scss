@@ -9,6 +9,12 @@
       @include media-query (palm) {
         flex-basis: auto;
         max-width: none;
+
+        // IE11 specific fix to prevent width overflow
+        // in proportional boxes in mobile
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+          width: 100%;
+        }
       }
     }
   }
@@ -55,6 +61,12 @@
     > .#{$grommet-namespace}box--basis-3-4 {
       flex-basis: auto;
       max-width: none;
+
+      // IE11 specific fix to prevent width overflow
+      // in proportional boxes in mobile
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        width: 100%;
+      }
     }
   }
 }

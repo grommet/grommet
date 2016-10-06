@@ -41,6 +41,13 @@ $card-hover-color: #EBEBEB;
   }
 }
 
+.#{$grommet-namespace}card__content {
+  // IE11 specific fix to prevent width overflow
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    width: 100%;
+  }
+}
+
 .#{$grommet-namespace}card__content--truncate {
   // truncate text paragraphs after 8 lines
   .#{$grommet-namespace}paragraph {

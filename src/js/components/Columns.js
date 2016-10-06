@@ -112,11 +112,16 @@ export default class Columns extends Component {
     let childStyles;
 
     if (child) {
-      clearTimeout(this._childStylesTimer);
-      // IE11 takes longer to compute correct child width
-      this._childStylesTimer = setTimeout(() => {
+      if (navigator && navigator.userAgent.indexOf('MSIE') !== -1
+        || navigator.appVersion.indexOf('Trident/') > 0) {
+        // IE11 takes longer to compute correct child width
+        clearTimeout(this._childStylesTimer);
+        this._childStylesTimer = setTimeout(() => {
+          childStyles = window.getComputedStyle(child);
+        }, 10);
+      } else {
         childStyles = window.getComputedStyle(child);
-      }, 50);
+      }
 
       if (childStyles && childStyles.width) {
         let childLeftMargin = childStyles.marginLeft ?
