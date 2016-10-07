@@ -58,6 +58,10 @@
     }
   }
 
+  .#{$grommet-namespace}tiles {
+    overflow: auto;
+  }
+
   .#{$grommet-namespace}tiles__more {
     position: relative;
   }
