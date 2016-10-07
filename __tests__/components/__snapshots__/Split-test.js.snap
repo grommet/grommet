@@ -1,14 +1,14 @@
 exports[`Split has correct default options 1`] = `
 <div
-  className="grommetux-split grommetux-split--fixed">
+  className="grommetux-split">
   <div
-    className="grommetux-split__column grommetux-split__column--full">
+    className="grommetux-split__column grommetux-split__column--fixed grommetux-split__column--flex">
     <div>
       left
     </div>
   </div>
   <div
-    className="grommetux-split__column grommetux-split__column--full">
+    className="grommetux-split__column grommetux-split__column--fixed grommetux-split__column--flex">
     <div>
       right
     </div>
