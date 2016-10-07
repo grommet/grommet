@@ -70,6 +70,16 @@
 .#{$grommet-namespace}list-item--selected {
   background-color: $selected-background-color;
   color: $selected-text-color;
+
+  #{$dark-background-context} {
+    background-color: $colored-active-background-color;
+    color: $active-colored-text-color;
+  }
+
+  #{$light-background-context} {
+    background-color: $selected-background-color;
+    color: $selected-text-color;
+  }
 }
 
 .#{$grommet-namespace}list-item--row {
@@ -87,15 +97,20 @@
     transition: background-color 0.2s;
   }
 
-  .#{$grommet-namespace}list-item--selected {
-    background-color: $selected-background-color;
-    color: $selected-text-color;
-  }
-
   .#{$grommet-namespace}list-item--active,
   .#{$grommet-namespace}list-item:hover {
     background-color: $hover-background-color;
     color: $hover-text-color;
+
+    #{$dark-background-context} {
+      background-color: $colored-hover-background-color;
+      color: $active-colored-text-color;
+    }
+
+    #{$light-background-context} {
+      background-color: $hover-background-color;
+      color: $hover-text-color;
+    }
   }
 }
 

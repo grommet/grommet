@@ -290,6 +290,17 @@
 
       &:not(.active) {
         background-color: $hover-background-color;
+        color: $hover-text-color;
+
+        #{$dark-background-context} {
+          background-color: $colored-hover-background-color;
+          color: $active-colored-text-color;
+        }
+
+        #{$light-background-context} {
+          background-color: $hover-background-color;
+          color: $hover-text-color;
+        }
       }
     }
 

@@ -115,12 +115,32 @@
   .#{$grommet-namespace}tile--selected {
     background-color: $selected-background-color;
     color: $selected-text-color;
+
+    #{$dark-background-context} {
+      background-color: $colored-active-background-color;
+      color: $active-colored-text-color;
+    }
+
+    #{$light-background-context} {
+      background-color: $selected-background-color;
+      color: $selected-text-color;
+    }
   }
 
   .#{$grommet-namespace}tile--active,
   .#{$grommet-namespace}tile:hover:not([class*="background-hover-color-index-"]) {
     background-color: $hover-background-color;
     color: $hover-text-color;
+
+    #{$dark-background-context} {
+      background-color: $colored-hover-background-color;
+      color: $active-colored-text-color;
+    }
+
+    #{$light-background-context} {
+      background-color: $hover-background-color;
+      color: $hover-text-color;
+    }
   }
 }
 
@@ -157,11 +177,6 @@
 .#{$grommet-namespace}tile--selectable {
   cursor: pointer;
   transition: background-color 0.2s;
-}
-
-.#{$grommet-namespace}tile--selectable.#{$grommet-namespace}tile--selected {
-  background-color: $selected-background-color;
-  color: $selected-text-color;
 }
 
 .#{$grommet-namespace}tile--eclipsed {
