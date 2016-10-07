@@ -3,6 +3,7 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 
 const CLASS_ROOT = CSSClassnames.WORLD_MAP;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
@@ -108,8 +109,44 @@ export default class WorldMap extends Component {
     this._onActivate = this._onActivate.bind(this);
     this._onDeactivate = this._onDeactivate.bind(this);
     this._renderContinent = this._renderContinent.bind(this);
+    this._onEnter = this._onEnter.bind(this);
 
     this.state = this._buildState();
+
+    this.state.clickable = props.series.some((serie) => serie.onClick);
+  }
+
+  componentDidMount () {
+    const { clickable } = this.state;
+    if (clickable) {
+      this._keyboardHandlers = {
+        enter: this._onEnter,
+        space: this._onEnter
+      };
+      KeyboardAccelerators.startListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
+    }
+  }
+
+  componentWillUnmount () {
+    const { clickable } = this.state;
+    if (clickable) {
+      KeyboardAccelerators.stopListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
+    }
+  }
+
+  _onEnter () {
+    const { series } = this.props;
+    const { activeIndex } = this.state;
+    if (this._worldMapRef.contains(document.activeElement) && activeIndex) {
+      const continent = series[activeIndex];
+      if (continent.onClick) {
+        continent.onClick();
+      }
+    }
   }
 
   _buildState () {
@@ -152,30 +189,42 @@ export default class WorldMap extends Component {
   }
 
   _renderContinent (seriesData, index) {
+    const { activeIndex } = this.state;
     const continent = seriesData.continent;
     const colorIndex = seriesData.colorIndex || `graph-${index}`;
 
     const classes = classnames(
       `${CLASS_ROOT}__continent`,
       `${COLOR_INDEX}-${colorIndex}`, {
-        [`${CLASS_ROOT}__continent--active`]: index === this.state.activeIndex
+        [`${CLASS_ROOT}__continent--active`]: index === activeIndex
       }
     );
-    let onMouseOver, onMouseLeave, onClick, area;
+    let area;
+    let clickableProps = {};
     if (seriesData.onClick) {
-      onMouseOver = this._onActivate.bind(this, index);
-      onMouseLeave = this._onDeactivate;
-      onClick = seriesData.onClick;
       area = (
         <path stroke='none' fill='#fff' fillOpacity='0.01'
           d={this.state.area[continent]} />
       );
+      clickableProps = {
+        role: 'button',
+        'aria-label': continent,
+        tabIndex: '0',
+        onClick: seriesData.onClick,
+        onMouseOver: this._onActivate.bind(this, index),
+        onMouseLeave: this._onDeactivate,
+        onFocus: () => {
+          this._onActivate(index);
+        },
+        onBlur: () => {
+          this._onDeactivate();
+        }
+      };
     }
     // We add the area so the mouse events work for the whole region,
     // not just the dots
     return (
-      <g key={continent} className={classes}
-        onMouseOver={onMouseOver} onMouseLeave={onMouseLeave} onClick={onClick}>
+      <g key={continent} className={classes} {...clickableProps}>
         {area}
         <path d={this.state.dots[continent]} />
       </g>
@@ -192,7 +241,8 @@ export default class WorldMap extends Component {
     const continents = series.map(this._renderContinent);
 
     return (
-      <svg {...props} className={classes} version='1.1'
+      <svg {...props} ref={(ref) => this._worldMapRef = ref}
+        className={classes} version='1.1'
         preserveAspectRatio='xMidYMid meet'
         width={`${width}px`} viewBox={`0 0 ${width} ${height}`}>
         <g stroke='none' fill='none' fillRule='evenodd'>
