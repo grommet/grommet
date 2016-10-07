@@ -214,6 +214,7 @@ export default class WorldMap extends Component {
         onMouseOver: this._onActivate.bind(this, index),
         onMouseLeave: this._onDeactivate,
         onFocus: () => {
+          this._worldMapRef.scrollIntoView();
           this._onActivate(index);
         },
         onBlur: () => {
