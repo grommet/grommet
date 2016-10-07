@@ -109,6 +109,7 @@ var Search = function (_Component) {
     _this._announceSuggestion = _this._announceSuggestion.bind(_this);
     _this._onEnter = _this._onEnter.bind(_this);
     _this._onClickSuggestion = _this._onClickSuggestion.bind(_this);
+    _this._onMouseUp = _this._onMouseUp.bind(_this);
     _this._onInputKeyDown = _this._onInputKeyDown.bind(_this);
     _this._onSink = _this._onSink.bind(_this);
     _this._onResponsive = _this._onResponsive.bind(_this);
