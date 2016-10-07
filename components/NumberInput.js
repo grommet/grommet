@@ -95,7 +95,7 @@ var NumberInput = function (_Component) {
         event.initEvent('change', true, true);
       }
       // We use dispatchEvent to have the browser fill out the event fully.
-      this.inputRef.dispatchEvent(event);
+      this._inputRef.dispatchEvent(event);
       // Manually dispatched events aren't delivered by React, so we notify too.
       this.props.onChange(event);
     }
@@ -106,7 +106,7 @@ var NumberInput = function (_Component) {
       var max = _props.max;
       var step = _props.step;
 
-      var input = this.inputRef;
+      var input = this._inputRef;
       try {
         input.stepUp();
       } catch (e) {
@@ -127,7 +127,7 @@ var NumberInput = function (_Component) {
       var min = _props2.min;
       var step = _props2.step;
 
-      var input = this.inputRef;
+      var input = this._inputRef;
       try {
         input.stepDown();
       } catch (e) {
@@ -161,7 +161,7 @@ var NumberInput = function (_Component) {
         'span',
         { className: classes },
         _react2.default.createElement('input', (0, _extends3.default)({ ref: function ref(_ref) {
-            return _this2.inputRef = _ref;
+            return _this2._inputRef = _ref;
           } }, props, {
           className: INPUT + ' ' + CLASS_ROOT + '__input',
           type: 'number', tabIndex: '0',
@@ -189,6 +189,6 @@ NumberInput.propTypes = {
   name: _react.PropTypes.string,
   onChange: _react.PropTypes.func,
   step: _react.PropTypes.number,
-  value: _react.PropTypes.number
+  value: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string])
 };
 module.exports = exports['default'];
