@@ -19,8 +19,8 @@
 
         &.#{$grommet-namespace}status-icon-unknown {
           .#{$grommet-namespace}status-icon__detail {
-            stroke: $color;
-            fill: $color;
+            stroke: $active-colored-text-color;
+            fill: $active-colored-text-color;
           }
         }
       }
