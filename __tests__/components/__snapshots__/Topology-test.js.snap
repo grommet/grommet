@@ -1,10 +1,18 @@
 exports[`Topology has correct default options 1`] = `
 <div
-  className="grommetux-topology">
+  aria-label="Topology"
+  className="grommetux-topology"
+  onBlur={[Function onBlur]}
+  onFocus={[Function onFocus]}
+  onMouseDown={[Function onMouseDown]}
+  onMouseUp={[Function onMouseUp]}
+  role="group"
+  tabIndex="0">
   <svg
     className="grommetux-topology__links"
     height={100}
     preserveAspectRatio="xMidYMid meet"
+    role="presentation"
     viewBox="0 0 100 100"
     width={100} />
   <div
@@ -12,23 +20,42 @@ exports[`Topology has correct default options 1`] = `
     onMouseLeave={[Function bound _onMouseLeave]}
     onMouseMove={[Function bound _onMouseMove]}>
     <div
-      className="grommetux-topology__parts grommetux-topology__parts--direction-row">
+      aria-label="Parts"
+      className="grommetux-topology__parts grommetux-topology__parts--direction-row"
+      role="rowgroup"
+      tabIndex="-1">
       <div
+        aria-label="Part"
         className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate rack"
+        onFocus={[Function onFocus]}
         onMouseEnter={undefined}
-        onMouseLeave={undefined}>
+        onMouseLeave={undefined}
+        role="group"
+        tabIndex="-1">
         <div
+          aria-label="Part"
           className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate switch"
+          onFocus={[Function onFocus]}
           onMouseEnter={undefined}
-          onMouseLeave={undefined}>
+          onMouseLeave={undefined}
+          role="group"
+          tabIndex="-1">
           <div
-            className="grommetux-topology__parts grommetux-topology__parts--direction-row">
+            aria-label="Parts"
+            className="grommetux-topology__parts grommetux-topology__parts--direction-row"
+            role="rowgroup"
+            tabIndex="-1">
             <div
+              aria-label="ok 1"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s1p1"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -55,11 +82,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 2"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s1p2"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -86,11 +118,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 3"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s1p3"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -117,11 +154,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 4"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s1p4"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -148,11 +190,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 5"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s1p5"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -179,11 +226,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 6"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s1p6"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -210,11 +262,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 7"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s1p7"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -241,11 +298,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 8"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s1p8"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -278,41 +340,68 @@ exports[`Topology has correct default options 1`] = `
           </span>
         </div>
         <div
+          aria-label="Part"
           className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate enclosure"
+          onFocus={[Function onFocus]}
           onMouseEnter={undefined}
-          onMouseLeave={undefined}>
+          onMouseLeave={undefined}
+          role="group"
+          tabIndex="-1">
           <div
+            aria-label=" HP Virtual Connect FlexFabric-20/40 F8 Module"
             className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
+            onFocus={[Function onFocus]}
             onMouseEnter={undefined}
-            onMouseLeave={undefined}>
+            onMouseLeave={undefined}
+            role="row"
+            tabIndex="-1">
             <span
               className="grommetux-topology__label">
               HP Virtual Connect FlexFabric-20/40 F8 Module
             </span>
           </div>
           <div
+            aria-label=" HP Virtual Connect FlexFabric-20/40 F8 Module"
             className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
+            onFocus={[Function onFocus]}
             onMouseEnter={undefined}
-            onMouseLeave={undefined}>
+            onMouseLeave={undefined}
+            role="row"
+            tabIndex="-1">
             <span
               className="grommetux-topology__label">
               HP Virtual Connect FlexFabric-20/40 F8 Module
             </span>
           </div>
           <div
-            className="grommetux-topology__parts grommetux-topology__parts--direction-row">
+            aria-label="Parts"
+            className="grommetux-topology__parts grommetux-topology__parts--direction-row"
+            role="rowgroup"
+            tabIndex="-1">
             <div
+              aria-label="Part"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="group"
+              tabIndex="-1">
               <div
-                className="grommetux-topology__parts grommetux-topology__parts--direction-column">
+                aria-label="Parts"
+                className="grommetux-topology__parts grommetux-topology__parts--direction-column"
+                role="rowgroup"
+                tabIndex="-1">
                 <div
+                  aria-label="ok 1"
                   className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
                   id="em1p1"
+                  onFocus={[Function onFocus]}
                   onMouseEnter={undefined}
-                  onMouseLeave={undefined}>
+                  onMouseLeave={undefined}
+                  role="row"
+                  tabIndex="-1">
                   <svg
+                    aria-hidden="true"
                     aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
@@ -339,11 +428,16 @@ exports[`Topology has correct default options 1`] = `
                   </span>
                 </div>
                 <div
+                  aria-label="ok 2"
                   className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
                   id="em1p2"
+                  onFocus={[Function onFocus]}
                   onMouseEnter={undefined}
-                  onMouseLeave={undefined}>
+                  onMouseLeave={undefined}
+                  role="row"
+                  tabIndex="-1">
                   <svg
+                    aria-hidden="true"
                     aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
@@ -372,10 +466,15 @@ exports[`Topology has correct default options 1`] = `
               </div>
             </div>
             <div
+              aria-label="ok 1"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -402,14 +501,23 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="Part"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate grommetux-topology__part--empty fan"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined} />
+              onMouseLeave={undefined}
+              role="group"
+              tabIndex="-1" />
             <div
+              aria-label="ok 3"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -437,28 +545,47 @@ exports[`Topology has correct default options 1`] = `
             </div>
           </div>
           <div
+            aria-label=" HP Virtual Connect FlexFabric-20/40 F8 Module"
             className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
+            onFocus={[Function onFocus]}
             onMouseEnter={undefined}
-            onMouseLeave={undefined}>
+            onMouseLeave={undefined}
+            role="row"
+            tabIndex="-1">
             <span
               className="grommetux-topology__label">
               HP Virtual Connect FlexFabric-20/40 F8 Module
             </span>
           </div>
           <div
-            className="grommetux-topology__parts grommetux-topology__parts--direction-row">
+            aria-label="Parts"
+            className="grommetux-topology__parts grommetux-topology__parts--direction-row"
+            role="rowgroup"
+            tabIndex="-1">
             <div
+              aria-label="Part"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="group"
+              tabIndex="-1">
               <div
-                className="grommetux-topology__parts grommetux-topology__parts--direction-column">
+                aria-label="Parts"
+                className="grommetux-topology__parts grommetux-topology__parts--direction-column"
+                role="rowgroup"
+                tabIndex="-1">
                 <div
+                  aria-label="ok 1"
                   className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
                   id="em2p1"
+                  onFocus={[Function onFocus]}
                   onMouseEnter={undefined}
-                  onMouseLeave={undefined}>
+                  onMouseLeave={undefined}
+                  role="row"
+                  tabIndex="-1">
                   <svg
+                    aria-hidden="true"
                     aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
@@ -485,11 +612,16 @@ exports[`Topology has correct default options 1`] = `
                   </span>
                 </div>
                 <div
+                  aria-label="ok 2"
                   className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
                   id="em2p2"
+                  onFocus={[Function onFocus]}
                   onMouseEnter={undefined}
-                  onMouseLeave={undefined}>
+                  onMouseLeave={undefined}
+                  role="row"
+                  tabIndex="-1">
                   <svg
+                    aria-hidden="true"
                     aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
@@ -518,10 +650,15 @@ exports[`Topology has correct default options 1`] = `
               </div>
             </div>
             <div
+              aria-label="ok 4"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -548,10 +685,15 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 5"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -578,10 +720,15 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 6"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -611,21 +758,37 @@ exports[`Topology has correct default options 1`] = `
         </div>
       </div>
       <div
+        aria-label="Part"
         className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate rack"
+        onFocus={[Function onFocus]}
         onMouseEnter={undefined}
-        onMouseLeave={undefined}>
+        onMouseLeave={undefined}
+        role="group"
+        tabIndex="-1">
         <div
+          aria-label="Part"
           className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate switch"
+          onFocus={[Function onFocus]}
           onMouseEnter={undefined}
-          onMouseLeave={undefined}>
+          onMouseLeave={undefined}
+          role="group"
+          tabIndex="-1">
           <div
-            className="grommetux-topology__parts grommetux-topology__parts--direction-row">
+            aria-label="Parts"
+            className="grommetux-topology__parts grommetux-topology__parts--direction-row"
+            role="rowgroup"
+            tabIndex="-1">
             <div
+              aria-label="ok 1"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s2p1"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -652,11 +815,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 2"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s2p2"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -683,11 +851,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 3"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s2p3"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -714,11 +887,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 4"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s2p4"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -745,11 +923,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 5"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s2p5"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -776,11 +959,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 6"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s2p6"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -807,11 +995,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 7"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s2p7"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -838,11 +1031,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 8"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s2p8"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -869,11 +1067,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 9"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s2p9"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -900,11 +1103,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 10"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
               id="s2p10"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -936,13 +1144,21 @@ exports[`Topology has correct default options 1`] = `
             HP 5920AF-24XG
           </span>
           <div
-            className="grommetux-topology__parts grommetux-topology__parts--direction-row">
+            aria-label="Parts"
+            className="grommetux-topology__parts grommetux-topology__parts--direction-row"
+            role="rowgroup"
+            tabIndex="-1">
             <div
+              aria-label="ok 11"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
               id="s2p11"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -969,11 +1185,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 12"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
               id="s2p12"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -1000,11 +1221,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 13"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
               id="s2p13"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -1031,11 +1257,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 14"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
               id="s2p14"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -1062,11 +1293,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 15"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
               id="s2p15"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -1093,11 +1329,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 16"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
               id="s2p16"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -1124,11 +1365,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 17"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
               id="s2p17"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -1155,11 +1401,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 18"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
               id="s2p18"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -1186,11 +1437,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 19"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
               id="s2p19"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -1217,11 +1473,16 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 20"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
               id="s2p20"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -1250,23 +1511,42 @@ exports[`Topology has correct default options 1`] = `
           </div>
         </div>
         <div
+          aria-label="Part"
           className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate enclosure"
+          onFocus={[Function onFocus]}
           onMouseEnter={undefined}
-          onMouseLeave={undefined}>
+          onMouseLeave={undefined}
+          role="group"
+          tabIndex="-1">
           <div
-            className="grommetux-topology__parts grommetux-topology__parts--direction-row">
+            aria-label="Parts"
+            className="grommetux-topology__parts grommetux-topology__parts--direction-row"
+            role="rowgroup"
+            tabIndex="-1">
             <div
+              aria-label="Part"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="group"
+              tabIndex="-1">
               <div
-                className="grommetux-topology__parts grommetux-topology__parts--direction-column">
+                aria-label="Parts"
+                className="grommetux-topology__parts grommetux-topology__parts--direction-column"
+                role="rowgroup"
+                tabIndex="-1">
                 <div
+                  aria-label="ok 1"
                   className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
                   id="em3p1"
+                  onFocus={[Function onFocus]}
                   onMouseEnter={undefined}
-                  onMouseLeave={undefined}>
+                  onMouseLeave={undefined}
+                  role="row"
+                  tabIndex="-1">
                   <svg
+                    aria-hidden="true"
                     aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
@@ -1293,11 +1573,16 @@ exports[`Topology has correct default options 1`] = `
                   </span>
                 </div>
                 <div
+                  aria-label="ok 2"
                   className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
                   id="em3p2"
+                  onFocus={[Function onFocus]}
                   onMouseEnter={undefined}
-                  onMouseLeave={undefined}>
+                  onMouseLeave={undefined}
+                  role="row"
+                  tabIndex="-1">
                   <svg
+                    aria-hidden="true"
                     aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
@@ -1326,10 +1611,15 @@ exports[`Topology has correct default options 1`] = `
               </div>
             </div>
             <div
+              aria-label="ok 1"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -1356,10 +1646,15 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 2"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -1386,10 +1681,15 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 3"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -1417,28 +1717,47 @@ exports[`Topology has correct default options 1`] = `
             </div>
           </div>
           <div
+            aria-label=" HP Virtual Connect FlexFabric-20/40 F8 Module"
             className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
+            onFocus={[Function onFocus]}
             onMouseEnter={undefined}
-            onMouseLeave={undefined}>
+            onMouseLeave={undefined}
+            role="row"
+            tabIndex="-1">
             <span
               className="grommetux-topology__label">
               HP Virtual Connect FlexFabric-20/40 F8 Module
             </span>
           </div>
           <div
-            className="grommetux-topology__parts grommetux-topology__parts--direction-row">
+            aria-label="Parts"
+            className="grommetux-topology__parts grommetux-topology__parts--direction-row"
+            role="rowgroup"
+            tabIndex="-1">
             <div
+              aria-label="Part"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="group"
+              tabIndex="-1">
               <div
-                className="grommetux-topology__parts grommetux-topology__parts--direction-column">
+                aria-label="Parts"
+                className="grommetux-topology__parts grommetux-topology__parts--direction-column"
+                role="rowgroup"
+                tabIndex="-1">
                 <div
+                  aria-label="ok 1"
                   className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
                   id="em4p1"
+                  onFocus={[Function onFocus]}
                   onMouseEnter={undefined}
-                  onMouseLeave={undefined}>
+                  onMouseLeave={undefined}
+                  role="row"
+                  tabIndex="-1">
                   <svg
+                    aria-hidden="true"
                     aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
@@ -1465,11 +1784,16 @@ exports[`Topology has correct default options 1`] = `
                   </span>
                 </div>
                 <div
+                  aria-label="ok 2"
                   className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
                   id="em4p2"
+                  onFocus={[Function onFocus]}
                   onMouseEnter={undefined}
-                  onMouseLeave={undefined}>
+                  onMouseLeave={undefined}
+                  role="row"
+                  tabIndex="-1">
                   <svg
+                    aria-hidden="true"
                     aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
@@ -1498,10 +1822,15 @@ exports[`Topology has correct default options 1`] = `
               </div>
             </div>
             <div
+              aria-label="ok 4"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -1528,10 +1857,15 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 5"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -1558,10 +1892,15 @@ exports[`Topology has correct default options 1`] = `
               </span>
             </div>
             <div
+              aria-label="ok 6"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
+              onFocus={[Function onFocus]}
               onMouseEnter={undefined}
-              onMouseLeave={undefined}>
+              onMouseLeave={undefined}
+              role="row"
+              tabIndex="-1">
               <svg
+                aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
@@ -1593,7 +1932,8 @@ exports[`Topology has correct default options 1`] = `
     </div>
   </div>
   <div
-    className="grommetux-topology__color-key">
+    className="grommetux-topology__color-key"
+    role="presentation">
     <div
       className="grommetux-background-color-index-graph-1" />
     <div

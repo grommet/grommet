@@ -3,28 +3,30 @@
 import React, { Children, Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
-import CSSClassnames from '../utils/CSSClassnames';
 import Status from './icons/Status';
+import CSSClassnames from '../utils/CSSClassnames';
+import Intl from '../utils/Intl';
+import { announce } from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.TOPOLOGY;
 const STATUS_ICON = CSSClassnames.STATUS_ICON;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
-class Label extends Component {
-  render () {
-    return (
-      <span className={CLASS_ROOT + "__label"}>{this.props.children}</span>
-    );
-  }
-}
+const Label = (props) => {
+  const { children, restProps } = props;
+  return (
+    <span {...restProps} className={`${CLASS_ROOT}__label`}>{children}</span>
+  );
+};
 
 class Part extends Component {
   render () {
     const {
-      align, children, className, demarcate, direction, justify, label,
-      reverse, status, ...props
+      a11yTitle, align, children, className, demarcate, direction, justify,
+      label, reverse, status, ...props
     } = this.props;
+    const { intl } = this.context;
     let realChildren = 0;
     Children.forEach(children, (child) => {
       if (child) {
@@ -47,18 +49,44 @@ class Part extends Component {
 
     let statusIcon;
     if (status) {
-      statusIcon = <Status value={status} size="small" />;
+      statusIcon = (
+        <Status value={status} size='small' role='presentation'
+          aria-hidden='true' />
+      );
     }
 
     let labelLabel;
     if (label) {
-      labelLabel = <Label>{label}</Label>;
+      let hiddenProps;
+      if (status) {
+        // hide label if status is present and let aria-label handle
+        // description
+        hiddenProps = {
+          role: 'presentation',
+          'aria-hidden': true
+        };
+      }
+      labelLabel = <Label {...hiddenProps}>{label}</Label>;
     }
 
+    const role = !status && !label ? 'group' : 'row';
+    const partMessage = a11yTitle || (
+      role === 'group' ?
+        Intl.getMessage(intl, 'Part') : `${status || ''} ${label}`
+    );
     return (
-      <div {...props} className={classes}
+      <div {...props} ref={(ref) => this._partRef = ref} className={classes}
         onMouseEnter={this.props.onMouseEnter}
-        onMouseLeave={this.props.onMouseLeave}>
+        onMouseLeave={this.props.onMouseLeave}
+        tabIndex='-1' role={role} aria-label={partMessage}
+        onFocus={() => {
+          if (this._partRef) {
+            const connects = this._partRef.getAttribute('data-connects');
+            if (connects) {
+              announce(connects, 'polite');
+            }
+          }
+        }}>
         {statusIcon}
         {labelLabel}
         {children}
@@ -67,7 +95,12 @@ class Part extends Component {
   }
 }
 
+Part.contextTypes = {
+  intl: PropTypes.object
+};
+
 Part.propTypes = {
+  a11yTitle: PropTypes.string,
   align: PropTypes.oneOf(['start', 'center', 'between', 'end', 'stretch']),
   demarcate: PropTypes.bool,
   direction: PropTypes.oneOf(['row', 'column']).isRequired,
@@ -120,7 +153,8 @@ class Parts extends Component {
   }
 
   render () {
-    const { align, children, className, direction } = this.props;
+    const { a11yTitle, align, children, className, direction } = this.props;
+    const { intl } = this.context;
     const classes = classnames(
       `${CLASS_ROOT}__parts`,
       {
@@ -129,13 +163,19 @@ class Parts extends Component {
       },
       className
     );
+    const partsMessage = a11yTitle || Intl.getMessage(intl, 'Parts');
     return (
-      <div ref={ref => this._componentRef = ref} className={classes}>
+      <div ref={ref => this._componentRef = ref} className={classes}
+        tabIndex='-1' role='rowgroup' aria-label={partsMessage}>
         {children}
       </div>
     );
   }
 }
+
+Parts.contextTypes = {
+  intl: PropTypes.object
+};
 
 Parts.propTypes = {
   align: PropTypes.oneOf(['start', 'center', 'between', 'end', 'stretch']),
@@ -158,16 +198,55 @@ export default class Topology extends Component {
     this._onMouseLeave = this._onMouseLeave.bind(this);
 
     this.state = {
-      height: 100,
       activeIds: {},
+      height: 100,
+      mouseActive: false,
       paths: [],
       width: 100
     };
   }
 
   componentDidMount () {
+    const { links } = this.props;
+    const { intl } = this.context;
     window.addEventListener('resize', this._onResize);
     this._layout();
+    if (links && links.length > 0) {
+      const connectsMap = {};
+      links.forEach((link) => {
+        const startId = link.ids[0];
+        const startElement = document.getElementById(startId);
+        const endId = link.ids[1];
+        const endElement = document.getElementById(endId);
+        if (startElement && endElement) {
+          const startLabel = (
+            startElement.getAttribute('aria-label') || startElement.innerText
+          );
+          const endLabel = (
+            endElement.getAttribute('aria-label') || end.innerText
+          );
+          if (connectsMap[startId]) {
+            connectsMap[startId].push(endLabel);
+          } else {
+            connectsMap[startId] = [endLabel];
+          }
+
+          if (connectsMap[endId]) {
+            connectsMap[endId].push(startLabel);
+          } else {
+            connectsMap[endId] = [startLabel];
+          }
+        }
+      });
+
+      Object.keys(connectsMap).forEach((element) => {
+        const targetElement = document.getElementById(element);
+        const connectsMessage = Intl.getMessage(intl, 'Connects With');
+        targetElement.setAttribute('data-connects',
+          `${connectsMessage}: (${connectsMap[element].join()})`
+        );
+      });
+    }
   }
 
   componentWillReceiveProps (nextProps) {
@@ -254,7 +333,7 @@ export default class Topology extends Component {
       );
 
       return (
-        <path key={linkIndex} fill="none" className={classes} d={commands} />
+        <path key={linkIndex} fill='none' className={classes} d={commands} />
       );
     });
 
@@ -304,10 +383,16 @@ export default class Topology extends Component {
   }
 
   render () {
-    const { children, className, links, ...props } = this.props;
+    const {
+      a11yTitle, children, className, links, onBlur, onFocus, onMouseDown,
+      onMouseUp, ...props
+    } = this.props;
     delete props.linkOffset;
-    const { height, paths, width } = this.state;
-    const classes = classnames( CLASS_ROOT, {}, className );
+    const { focus, height, mouseActive, paths, width } = this.state;
+    const { intl } = this.context;
+    const classes = classnames( CLASS_ROOT, {
+      [`${CLASS_ROOT}--focus`]: focus
+    }, className );
 
     var colorKeys = [];
     var colors = {};
@@ -319,11 +404,39 @@ export default class Topology extends Component {
       }
     });
 
+    const topologyMessage = a11yTitle || Intl.getMessage(intl, 'Topology');
     return (
-      <div ref={ref => this._topologyRef = ref} {...props} className={classes}>
-        <svg className={`${CLASS_ROOT}__links`}
+      <div ref={ref => this._topologyRef = ref} {...props} className={classes}
+        aria-label={topologyMessage} tabIndex='0' role='group'
+        onMouseDown={(event) => {
+          this.setState({ mouseActive: true });
+          if (onMouseDown) {
+            onMouseDown(event);
+          }
+        }}
+        onMouseUp={(event) => {
+          this.setState({ mouseActive: false });
+          if (onMouseUp) {
+            onMouseUp(event);
+          }
+        }}
+        onFocus={(event) => {
+          if (mouseActive === false) {
+            this.setState({ focus: true });
+          }
+          if (onFocus) {
+            onFocus(event);
+          }
+        }}
+        onBlur={(event) => {
+          this.setState({ focus: false });
+          if (onBlur) {
+            onBlur(event);
+          }
+        }}>
+        <svg className={`${CLASS_ROOT}__links`} role='presentation'
           width={width} height={height} viewBox={`0 0 ${width} ${height}`}
-          preserveAspectRatio="xMidYMid meet">
+          preserveAspectRatio='xMidYMid meet'>
           {paths}
         </svg>
         <div ref={ref => this._contentsRef = ref}
@@ -332,7 +445,7 @@ export default class Topology extends Component {
           onMouseLeave={this._onMouseLeave}>
           {children}
         </div>
-        <div className={`${CLASS_ROOT}__color-key`}>
+        <div className={`${CLASS_ROOT}__color-key`} role='presentation'>
           {colorKeys}
         </div>
       </div>
@@ -341,7 +454,12 @@ export default class Topology extends Component {
 
 }
 
+Topology.contextTypes = {
+  intl: PropTypes.object
+};
+
 Topology.propTypes = {
+  a11yTitle: PropTypes.string,
   links: PropTypes.arrayOf(
     PropTypes.shape({
       colorIndex: PropTypes.string,

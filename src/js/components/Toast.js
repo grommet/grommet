@@ -7,6 +7,7 @@ import Button from './Button';
 import Status from './icons/Status';
 import CloseIcon from './icons/base/Close';
 import CSSClassnames from '../utils/CSSClassnames';
+import { announce } from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.TOAST;
 const APP = CSSClassnames.APP;
@@ -32,6 +33,7 @@ class ToastContents extends Component {
   }
 
   componentDidMount () {
+    announce(this._contentsRef.innerText);
     this._timer = setTimeout(this._onClose, DURATION);
   }
 
@@ -78,7 +80,8 @@ class ToastContents extends Component {
     return (
       <div className={classNames}>
         {statusIcon}
-        <div className={`${CLASS_ROOT}__contents`}>
+        <div ref={(ref) => this._contentsRef = ref}
+          className={`${CLASS_ROOT}__contents`}>
           {children}
         </div>
         {closeControl}
