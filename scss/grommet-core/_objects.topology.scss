@@ -7,12 +7,18 @@ $topology-active-stroke-width: round($inuit-base-spacing-unit / 4);
 
 .#{$grommet-namespace}topology {
   position: relative;
+  outline: none;
 
   // put status icons above canvas so lines start under them
   .#{$grommet-namespace}status-icon {
     position: relative;
     z-index: 2;
   }
+}
+
+.#{$grommet-namespace}topology--focus {
+  border-color: $focus-border-color;
+  box-shadow: 0 0 1px 1px $focus-border-color;
 }
 
 .#{$grommet-namespace}topology__links {
@@ -67,6 +73,7 @@ $topology-active-stroke-width: round($inuit-base-spacing-unit / 4);
 .#{$grommet-namespace}topology__parts {
   display: flex;
   align-items: stretch;
+  outline: none;
 }
 
 .#{$grommet-namespace}topology__parts--direction-row {
@@ -100,6 +107,7 @@ $topology-active-stroke-width: round($inuit-base-spacing-unit / 4);
   justify-content: center;
   align-items: stretch;
   overflow: hidden;
+  outline: none;
 
   > .#{$grommet-namespace}topology__parts .#{$grommet-namespace}topology__part {
     flex: 1;

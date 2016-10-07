@@ -4,9 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _keys = require('babel-runtime/core-js/object/keys');
 
-var _extends3 = _interopRequireDefault(_extends2);
+var _keys2 = _interopRequireDefault(_keys);
 
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
@@ -36,23 +36,33 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = require('react-dom');
 
-var _classnames4 = require('classnames');
+var _classnames5 = require('classnames');
 
-var _classnames5 = _interopRequireDefault(_classnames4);
+var _classnames6 = _interopRequireDefault(_classnames5);
+
+var _Status = require('./icons/Status');
+
+var _Status2 = _interopRequireDefault(_Status);
 
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
-var _Status = require('./icons/Status');
+var _Intl = require('../utils/Intl');
 
-var _Status2 = _interopRequireDefault(_Status);
+var _Intl2 = _interopRequireDefault(_Intl);
+
+var _Announcer = require('../utils/Announcer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -62,31 +72,19 @@ var STATUS_ICON = _CSSClassnames2.default.STATUS_ICON;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
-var Label = function (_Component) {
-  (0, _inherits3.default)(Label, _Component);
+var Label = function Label(props) {
+  var children = props.children;
+  var restProps = props.restProps;
 
-  function Label() {
-    (0, _classCallCheck3.default)(this, Label);
-    return (0, _possibleConstructorReturn3.default)(this, (Label.__proto__ || (0, _getPrototypeOf2.default)(Label)).apply(this, arguments));
-  }
+  return _react2.default.createElement(
+    'span',
+    (0, _extends3.default)({}, restProps, { className: CLASS_ROOT + '__label' }),
+    children
+  );
+};
 
-  (0, _createClass3.default)(Label, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'span',
-        { className: CLASS_ROOT + "__label" },
-        this.props.children
-      );
-    }
-  }]);
-  return Label;
-}(_react.Component);
-
-Label.displayName = 'Label';
-
-var Part = function (_Component2) {
-  (0, _inherits3.default)(Part, _Component2);
+var Part = function (_Component) {
+  (0, _inherits3.default)(Part, _Component);
 
   function Part() {
     (0, _classCallCheck3.default)(this, Part);
@@ -96,9 +94,11 @@ var Part = function (_Component2) {
   (0, _createClass3.default)(Part, [{
     key: 'render',
     value: function render() {
-      var _classnames;
+      var _classnames,
+          _this2 = this;
 
       var _props = this.props;
+      var a11yTitle = _props.a11yTitle;
       var align = _props.align;
       var children = _props.children;
       var className = _props.className;
@@ -108,7 +108,8 @@ var Part = function (_Component2) {
       var label = _props.label;
       var reverse = _props.reverse;
       var status = _props.status;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['align', 'children', 'className', 'demarcate', 'direction', 'justify', 'label', 'reverse', 'status']);
+      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'align', 'children', 'className', 'demarcate', 'direction', 'justify', 'label', 'reverse', 'status']);
+      var intl = this.context.intl;
 
       var realChildren = 0;
       _react.Children.forEach(children, function (child) {
@@ -116,27 +117,50 @@ var Part = function (_Component2) {
           realChildren += 1;
         }
       });
-      var classes = (0, _classnames5.default)(CLASS_ROOT + '__part', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--direction-' + direction, direction), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--justify-' + justify, justify), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--demarcate', demarcate), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--reverse', reverse), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--empty', !status && !label && realChildren === 0), _classnames), className);
+      var classes = (0, _classnames6.default)(CLASS_ROOT + '__part', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--direction-' + direction, direction), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--justify-' + justify, justify), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--demarcate', demarcate), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--reverse', reverse), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--empty', !status && !label && realChildren === 0), _classnames), className);
 
       var statusIcon = void 0;
       if (status) {
-        statusIcon = _react2.default.createElement(_Status2.default, { value: status, size: 'small' });
+        statusIcon = _react2.default.createElement(_Status2.default, { value: status, size: 'small', role: 'presentation',
+          'aria-hidden': 'true' });
       }
 
       var labelLabel = void 0;
       if (label) {
+        var hiddenProps = void 0;
+        if (status) {
+          // hide label if status is present and let aria-label handle
+          // description
+          hiddenProps = {
+            role: 'presentation',
+            'aria-hidden': true
+          };
+        }
         labelLabel = _react2.default.createElement(
           Label,
-          null,
+          hiddenProps,
           label
         );
       }
 
+      var role = !status && !label ? 'group' : 'row';
+      var partMessage = a11yTitle || (role === 'group' ? _Intl2.default.getMessage(intl, 'Part') : (status || '') + ' ' + label);
       return _react2.default.createElement(
         'div',
-        (0, _extends3.default)({}, props, { className: classes,
+        (0, _extends3.default)({}, props, { ref: function ref(_ref) {
+            return _this2._partRef = _ref;
+          }, className: classes,
           onMouseEnter: this.props.onMouseEnter,
-          onMouseLeave: this.props.onMouseLeave }),
+          onMouseLeave: this.props.onMouseLeave,
+          tabIndex: '-1', role: role, 'aria-label': partMessage,
+          onFocus: function onFocus() {
+            if (_this2._partRef) {
+              var connects = _this2._partRef.getAttribute('data-connects');
+              if (connects) {
+                (0, _Announcer.announce)(connects, 'polite');
+              }
+            }
+          } }),
         statusIcon,
         labelLabel,
         children
@@ -149,7 +173,12 @@ var Part = function (_Component2) {
 Part.displayName = 'Part';
 
 
+Part.contextTypes = {
+  intl: _react.PropTypes.object
+};
+
 Part.propTypes = {
+  a11yTitle: _react.PropTypes.string,
   align: _react.PropTypes.oneOf(['start', 'center', 'between', 'end', 'stretch']),
   demarcate: _react.PropTypes.bool,
   direction: _react.PropTypes.oneOf(['row', 'column']).isRequired,
@@ -167,8 +196,8 @@ Part.defaultProps = {
   align: 'stretch'
 };
 
-var Parts = function (_Component3) {
-  (0, _inherits3.default)(Parts, _Component3);
+var Parts = function (_Component2) {
+  (0, _inherits3.default)(Parts, _Component2);
 
   function Parts() {
     (0, _classCallCheck3.default)(this, Parts);
@@ -220,17 +249,21 @@ var Parts = function (_Component3) {
           _this4 = this;
 
       var _props3 = this.props;
+      var a11yTitle = _props3.a11yTitle;
       var align = _props3.align;
       var children = _props3.children;
       var className = _props3.className;
       var direction = _props3.direction;
+      var intl = this.context.intl;
 
-      var classes = (0, _classnames5.default)(CLASS_ROOT + '__parts', (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__parts--direction-' + direction, direction), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__part--align-' + align, align), _classnames2), className);
+      var classes = (0, _classnames6.default)(CLASS_ROOT + '__parts', (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__parts--direction-' + direction, direction), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__part--align-' + align, align), _classnames2), className);
+      var partsMessage = a11yTitle || _Intl2.default.getMessage(intl, 'Parts');
       return _react2.default.createElement(
         'div',
-        { ref: function ref(_ref) {
-            return _this4._componentRef = _ref;
-          }, className: classes },
+        { ref: function ref(_ref2) {
+            return _this4._componentRef = _ref2;
+          }, className: classes,
+          tabIndex: '-1', role: 'rowgroup', 'aria-label': partsMessage },
         children
       );
     }
@@ -240,6 +273,10 @@ var Parts = function (_Component3) {
 
 Parts.displayName = 'Parts';
 
+
+Parts.contextTypes = {
+  intl: _react.PropTypes.object
+};
 
 Parts.propTypes = {
   align: _react.PropTypes.oneOf(['start', 'center', 'between', 'end', 'stretch']),
@@ -251,8 +288,8 @@ Parts.defaultProps = {
   direction: 'column'
 };
 
-var Topology = function (_Component4) {
-  (0, _inherits3.default)(Topology, _Component4);
+var Topology = function (_Component3) {
+  (0, _inherits3.default)(Topology, _Component3);
 
   function Topology(props, context) {
     (0, _classCallCheck3.default)(this, Topology);
@@ -265,8 +302,9 @@ var Topology = function (_Component4) {
     _this5._onMouseLeave = _this5._onMouseLeave.bind(_this5);
 
     _this5.state = {
-      height: 100,
       activeIds: {},
+      height: 100,
+      mouseActive: false,
       paths: [],
       width: 100
     };
@@ -276,8 +314,43 @@ var Topology = function (_Component4) {
   (0, _createClass3.default)(Topology, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      var links = this.props.links;
+      var intl = this.context.intl;
+
       window.addEventListener('resize', this._onResize);
       this._layout();
+      if (links && links.length > 0) {
+        (function () {
+          var connectsMap = {};
+          links.forEach(function (link) {
+            var startId = link.ids[0];
+            var startElement = document.getElementById(startId);
+            var endId = link.ids[1];
+            var endElement = document.getElementById(endId);
+            if (startElement && endElement) {
+              var startLabel = startElement.getAttribute('aria-label') || startElement.innerText;
+              var endLabel = endElement.getAttribute('aria-label') || end.innerText;
+              if (connectsMap[startId]) {
+                connectsMap[startId].push(endLabel);
+              } else {
+                connectsMap[startId] = [endLabel];
+              }
+
+              if (connectsMap[endId]) {
+                connectsMap[endId].push(startLabel);
+              } else {
+                connectsMap[endId] = [startLabel];
+              }
+            }
+          });
+
+          (0, _keys2.default)(connectsMap).forEach(function (element) {
+            var targetElement = document.getElementById(element);
+            var connectsMessage = _Intl2.default.getMessage(intl, 'Connects With');
+            targetElement.setAttribute('data-connects', connectsMessage + ': (' + connectsMap[element].join() + ')');
+          });
+        })();
+      }
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -359,7 +432,7 @@ var Topology = function (_Component4) {
           }
         });
 
-        var classes = (0, _classnames5.default)(CLASS_ROOT + '__path', (_classnames3 = {}, (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '__path--active', active), (0, _defineProperty3.default)(_classnames3, COLOR_INDEX + '-' + link.colorIndex, link.colorIndex), _classnames3));
+        var classes = (0, _classnames6.default)(CLASS_ROOT + '__path', (_classnames3 = {}, (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '__path--active', active), (0, _defineProperty3.default)(_classnames3, COLOR_INDEX + '-' + link.colorIndex, link.colorIndex), _classnames3));
 
         return _react2.default.createElement('path', { key: linkIndex, fill: 'none', className: classes, d: commands });
       });
@@ -418,18 +491,26 @@ var Topology = function (_Component4) {
       var _this7 = this;
 
       var _props5 = this.props;
+      var a11yTitle = _props5.a11yTitle;
       var children = _props5.children;
       var className = _props5.className;
       var links = _props5.links;
-      var props = (0, _objectWithoutProperties3.default)(_props5, ['children', 'className', 'links']);
+      var _onBlur = _props5.onBlur;
+      var _onFocus = _props5.onFocus;
+      var _onMouseDown = _props5.onMouseDown;
+      var _onMouseUp = _props5.onMouseUp;
+      var props = (0, _objectWithoutProperties3.default)(_props5, ['a11yTitle', 'children', 'className', 'links', 'onBlur', 'onFocus', 'onMouseDown', 'onMouseUp']);
 
       delete props.linkOffset;
       var _state = this.state;
+      var focus = _state.focus;
       var height = _state.height;
+      var mouseActive = _state.mouseActive;
       var paths = _state.paths;
       var width = _state.width;
+      var intl = this.context.intl;
 
-      var classes = (0, _classnames5.default)(CLASS_ROOT, {}, className);
+      var classes = (0, _classnames6.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--focus', focus), className);
 
       var colorKeys = [];
       var colors = {};
@@ -441,22 +522,50 @@ var Topology = function (_Component4) {
         }
       });
 
+      var topologyMessage = a11yTitle || _Intl2.default.getMessage(intl, 'Topology');
       return _react2.default.createElement(
         'div',
-        (0, _extends3.default)({ ref: function ref(_ref3) {
-            return _this7._topologyRef = _ref3;
-          } }, props, { className: classes }),
+        (0, _extends3.default)({ ref: function ref(_ref4) {
+            return _this7._topologyRef = _ref4;
+          } }, props, { className: classes,
+          'aria-label': topologyMessage, tabIndex: '0', role: 'group',
+          onMouseDown: function onMouseDown(event) {
+            _this7.setState({ mouseActive: true });
+            if (_onMouseDown) {
+              _onMouseDown(event);
+            }
+          },
+          onMouseUp: function onMouseUp(event) {
+            _this7.setState({ mouseActive: false });
+            if (_onMouseUp) {
+              _onMouseUp(event);
+            }
+          },
+          onFocus: function onFocus(event) {
+            if (mouseActive === false) {
+              _this7.setState({ focus: true });
+            }
+            if (_onFocus) {
+              _onFocus(event);
+            }
+          },
+          onBlur: function onBlur(event) {
+            _this7.setState({ focus: false });
+            if (_onBlur) {
+              _onBlur(event);
+            }
+          } }),
         _react2.default.createElement(
           'svg',
-          { className: CLASS_ROOT + '__links',
+          { className: CLASS_ROOT + '__links', role: 'presentation',
             width: width, height: height, viewBox: '0 0 ' + width + ' ' + height,
             preserveAspectRatio: 'xMidYMid meet' },
           paths
         ),
         _react2.default.createElement(
           'div',
-          { ref: function ref(_ref2) {
-              return _this7._contentsRef = _ref2;
+          { ref: function ref(_ref3) {
+              return _this7._contentsRef = _ref3;
             },
             className: CLASS_ROOT + '__contents',
             onMouseMove: this._onMouseMove,
@@ -465,7 +574,7 @@ var Topology = function (_Component4) {
         ),
         _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + '__color-key' },
+          { className: CLASS_ROOT + '__color-key', role: 'presentation' },
           colorKeys
         )
       );
@@ -478,7 +587,12 @@ Topology.displayName = 'Topology';
 exports.default = Topology;
 
 
+Topology.contextTypes = {
+  intl: _react.PropTypes.object
+};
+
 Topology.propTypes = {
+  a11yTitle: _react.PropTypes.string,
   links: _react.PropTypes.arrayOf(_react.PropTypes.shape({
     colorIndex: _react.PropTypes.string,
     ids: _react.PropTypes.arrayOf(_react.PropTypes.string).isRequired

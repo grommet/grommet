@@ -60,10 +60,13 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Announcer = require('../utils/Announcer');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.TOAST; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.TOAST;
 var APP = _CSSClassnames2.default.APP;
 
 var DURATION = 8000;
@@ -95,6 +98,7 @@ var ToastContents = function (_Component) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
+      (0, _Announcer.announce)(this._contentsRef.innerText);
       this._timer = setTimeout(this._onClose, DURATION);
     }
   }, {
@@ -116,6 +120,8 @@ var ToastContents = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var _props = this.props;
       var children = _props.children;
       var onClose = _props.onClose;
@@ -146,7 +152,10 @@ var ToastContents = function (_Component) {
         statusIcon,
         _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + '__contents' },
+          { ref: function ref(_ref) {
+              return _this2._contentsRef = _ref;
+            },
+            className: CLASS_ROOT + '__contents' },
           children
         ),
         closeControl
