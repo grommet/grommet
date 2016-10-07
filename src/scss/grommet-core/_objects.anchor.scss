@@ -52,6 +52,7 @@
   &:hover {
     .#{$grommet-namespace}control-icon {
       @include icon-color($active-icon-color);
+      @include icon-hover-grow();
     }
   }
 
