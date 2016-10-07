@@ -14,7 +14,7 @@ const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 const Label = (props) => {
-  const { children, restProps } = props;
+  const { children, ...restProps } = props;
   return (
     <span {...restProps} className={`${CLASS_ROOT}__label`}>{children}</span>
   );
@@ -312,9 +312,9 @@ export default class Topology extends Component {
             let cp1xDelta =
               Math.max(linkOffset, (delta[0] / 2) + (linkIndex * 2));
             if (p1[0] > p2[0]) {
-              cp1 = [p2[0] + cp1xDelta, p1[1]];
+              cp1 = [Math.min(p2[0] + cp1xDelta, width), p1[1]];
             } else {
-              cp1 = [p1[0] - cp1xDelta, p1[1]];
+              cp1 = [Math.max(0, p1[0] - cp1xDelta), p1[1]];
             }
             cp2 = [cp1[0], p2[1]];
           }

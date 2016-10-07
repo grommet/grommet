@@ -77,7 +77,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 1
               </span>
             </div>
@@ -113,7 +115,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 2
               </span>
             </div>
@@ -149,7 +153,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 3
               </span>
             </div>
@@ -185,7 +191,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 4
               </span>
             </div>
@@ -221,7 +229,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 5
               </span>
             </div>
@@ -257,7 +267,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 6
               </span>
             </div>
@@ -293,7 +305,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 7
               </span>
             </div>
@@ -329,7 +343,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 8
               </span>
             </div>
@@ -423,7 +439,9 @@ exports[`Topology has correct default options 1`] = `
                     </g>
                   </svg>
                   <span
-                    className="grommetux-topology__label">
+                    aria-hidden={true}
+                    className="grommetux-topology__label"
+                    role="presentation">
                     1
                   </span>
                 </div>
@@ -459,7 +477,9 @@ exports[`Topology has correct default options 1`] = `
                     </g>
                   </svg>
                   <span
-                    className="grommetux-topology__label">
+                    aria-hidden={true}
+                    className="grommetux-topology__label"
+                    role="presentation">
                     2
                   </span>
                 </div>
@@ -496,7 +516,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 1
               </span>
             </div>
@@ -539,7 +561,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 3
               </span>
             </div>
@@ -607,7 +631,9 @@ exports[`Topology has correct default options 1`] = `
                     </g>
                   </svg>
                   <span
-                    className="grommetux-topology__label">
+                    aria-hidden={true}
+                    className="grommetux-topology__label"
+                    role="presentation">
                     1
                   </span>
                 </div>
@@ -643,7 +669,9 @@ exports[`Topology has correct default options 1`] = `
                     </g>
                   </svg>
                   <span
-                    className="grommetux-topology__label">
+                    aria-hidden={true}
+                    className="grommetux-topology__label"
+                    role="presentation">
                     2
                   </span>
                 </div>
@@ -680,7 +708,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 4
               </span>
             </div>
@@ -715,7 +745,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 5
               </span>
             </div>
@@ -750,7 +782,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 6
               </span>
             </div>
@@ -810,7 +844,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 1
               </span>
             </div>
@@ -846,7 +882,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 2
               </span>
             </div>
@@ -882,7 +920,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 3
               </span>
             </div>
@@ -918,7 +958,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 4
               </span>
             </div>
@@ -954,7 +996,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 5
               </span>
             </div>
@@ -990,7 +1034,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 6
               </span>
             </div>
@@ -1026,7 +1072,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 7
               </span>
             </div>
@@ -1062,7 +1110,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 8
               </span>
             </div>
@@ -1098,7 +1148,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 9
               </span>
             </div>
@@ -1134,7 +1186,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 10
               </span>
             </div>
@@ -1180,7 +1234,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 11
               </span>
             </div>
@@ -1216,7 +1272,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 12
               </span>
             </div>
@@ -1252,7 +1310,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 13
               </span>
             </div>
@@ -1288,7 +1348,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 14
               </span>
             </div>
@@ -1324,7 +1386,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 15
               </span>
             </div>
@@ -1360,7 +1424,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 16
               </span>
             </div>
@@ -1396,7 +1462,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 17
               </span>
             </div>
@@ -1432,7 +1500,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 18
               </span>
             </div>
@@ -1468,7 +1538,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 19
               </span>
             </div>
@@ -1504,7 +1576,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 20
               </span>
             </div>
@@ -1568,7 +1642,9 @@ exports[`Topology has correct default options 1`] = `
                     </g>
                   </svg>
                   <span
-                    className="grommetux-topology__label">
+                    aria-hidden={true}
+                    className="grommetux-topology__label"
+                    role="presentation">
                     1
                   </span>
                 </div>
@@ -1604,7 +1680,9 @@ exports[`Topology has correct default options 1`] = `
                     </g>
                   </svg>
                   <span
-                    className="grommetux-topology__label">
+                    aria-hidden={true}
+                    className="grommetux-topology__label"
+                    role="presentation">
                     2
                   </span>
                 </div>
@@ -1641,7 +1719,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 1
               </span>
             </div>
@@ -1676,7 +1756,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 2
               </span>
             </div>
@@ -1711,7 +1793,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 3
               </span>
             </div>
@@ -1779,7 +1863,9 @@ exports[`Topology has correct default options 1`] = `
                     </g>
                   </svg>
                   <span
-                    className="grommetux-topology__label">
+                    aria-hidden={true}
+                    className="grommetux-topology__label"
+                    role="presentation">
                     1
                   </span>
                 </div>
@@ -1815,7 +1901,9 @@ exports[`Topology has correct default options 1`] = `
                     </g>
                   </svg>
                   <span
-                    className="grommetux-topology__label">
+                    aria-hidden={true}
+                    className="grommetux-topology__label"
+                    role="presentation">
                     2
                   </span>
                 </div>
@@ -1852,7 +1940,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 4
               </span>
             </div>
@@ -1887,7 +1977,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 5
               </span>
             </div>
@@ -1922,7 +2014,9 @@ exports[`Topology has correct default options 1`] = `
                 </g>
               </svg>
               <span
-                className="grommetux-topology__label">
+                aria-hidden={true}
+                className="grommetux-topology__label"
+                role="presentation">
                 6
               </span>
             </div>
