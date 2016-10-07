@@ -98,6 +98,11 @@
 
 .#{$grommet-namespace}chart-axis--ticks {
   .#{$grommet-namespace}chart-axis__slot {
+    &::before,
+    &::after {
+      background-color: $border-color;
+    }
+
     #{$dark-background-context} {
       &::before,
       &::after {
@@ -151,7 +156,6 @@
         content: "";
         height: 1px;
         width: halve(halve($inuit-base-spacing-unit));
-        background-color: $border-color;
       }
     }
 
@@ -235,7 +239,6 @@
       content: "";
       height: halve(halve($inuit-base-spacing-unit));
       width: 1px;
-      background-color: $border-color;
     }
 
     &.#{$grommet-namespace}chart-axis--ticks--end {
