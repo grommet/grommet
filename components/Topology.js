@@ -12,10 +12,6 @@ var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -39,6 +35,10 @@ var _inherits3 = _interopRequireDefault(_inherits2);
 var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _react = require('react');
 
@@ -74,7 +74,7 @@ var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Label = function Label(props) {
   var children = props.children;
-  var restProps = props.restProps;
+  var restProps = (0, _objectWithoutProperties3.default)(props, ['children']);
 
   return _react2.default.createElement(
     'span',
@@ -420,9 +420,9 @@ var Topology = function (_Component3) {
               // larger Y delta or equal
               var cp1xDelta = Math.max(linkOffset, delta[0] / 2 + linkIndex * 2);
               if (p1[0] > p2[0]) {
-                cp1 = [p2[0] + cp1xDelta, p1[1]];
+                cp1 = [Math.min(p2[0] + cp1xDelta, width), p1[1]];
               } else {
-                cp1 = [p1[0] - cp1xDelta, p1[1]];
+                cp1 = [Math.max(0, p1[0] - cp1xDelta), p1[1]];
               }
               cp2 = [cp1[0], p2[1]];
             }
