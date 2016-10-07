@@ -127,6 +127,10 @@ function onClick (event, options) {
           }
         }
 
+        if (indexInPrior > -1) {
+          selectedIndexes.splice(indexInPrior, 1);
+        }
+
         // Remove text selection. This often happens when shift multi-selecting
         window.getSelection().removeAllRanges();
 
