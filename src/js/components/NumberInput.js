@@ -32,14 +32,14 @@ export default class NumberInput extends Component {
       event.initEvent('change', true, true);
     }
     // We use dispatchEvent to have the browser fill out the event fully.
-    this.inputRef.dispatchEvent(event);
+    this._inputRef.dispatchEvent(event);
     // Manually dispatched events aren't delivered by React, so we notify too.
     this.props.onChange(event);
   }
 
   _onAdd () {
     const { max, step } = this.props;
-    const input = this.inputRef;
+    const input = this._inputRef;
     try {
       input.stepUp();
     } catch (e) {
@@ -56,7 +56,7 @@ export default class NumberInput extends Component {
 
   _onSubtract () {
     const { min, step } = this.props;
-    const input = this.inputRef;
+    const input = this._inputRef;
     try {
       input.stepDown();
     } catch (e) {
@@ -87,7 +87,7 @@ export default class NumberInput extends Component {
 
     return (
       <span className={classes}>
-        <input ref={ref => this.inputRef = ref} {...props}
+        <input ref={ref => this._inputRef = ref} {...props}
           className={`${INPUT} ${CLASS_ROOT}__input`}
           type="number" tabIndex="0"
           disabled={disabled} />
@@ -112,5 +112,5 @@ NumberInput.propTypes = {
   name: PropTypes.string,
   onChange: PropTypes.func,
   step: PropTypes.number,
-  value: PropTypes.number
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };
