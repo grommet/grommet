@@ -71,16 +71,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var CLASS_ROOT = _CSSClassnames2.default.BOX; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
+var LIGHT_HINT_REGEXP = /^light/;
 
 var Box = function (_Component) {
   (0, _inherits3.default)(Box, _Component);
 
-  function Box() {
+  function Box(props) {
     (0, _classCallCheck3.default)(this, Box);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Box.__proto__ || (0, _getPrototypeOf2.default)(Box)).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Box.__proto__ || (0, _getPrototypeOf2.default)(Box)).call(this, props));
 
     _this.state = {
+      darkBackground: props.colorIndex && !LIGHT_HINT_REGEXP.test(props.colorIndex),
       mouseActive: false
     };
     return _this;
