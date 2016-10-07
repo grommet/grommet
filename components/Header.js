@@ -136,8 +136,8 @@ var Header = function (_Component) {
       var size = _props.size;
       var splash = _props.splash;
 
-      var classes = (0, _classnames5.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--float', float), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--splash', splash), _classnames), className);
-      var containerClasses = (0, _classnames5.default)(CLASS_ROOT + '__container', (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + size, size && typeof size === 'string'), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--fixed', fixed), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--fill', fixed && !colorIndex), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--float', float), _classnames2));
+      var classes = (0, _classnames5.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size && typeof size === 'string'), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--float', float), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--splash', splash), _classnames), className);
+      var containerClasses = (0, _classnames5.default)(CLASS_ROOT + '__container', (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--fixed', fixed), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--fill', fixed && !colorIndex), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--float', float), _classnames2));
       var wrapperClasses = (0, _classnames5.default)(CLASS_ROOT + '__wrapper', (0, _defineProperty3.default)({}, CLASS_ROOT + '__wrapper--' + size, size && typeof size === 'string'));
       var other = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Header.propTypes));
