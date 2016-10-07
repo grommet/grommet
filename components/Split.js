@@ -40,9 +40,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames3 = require('classnames');
+var _classnames2 = require('classnames');
 
-var _classnames4 = _interopRequireDefault(_classnames3);
+var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _CSSClassnames = require('../utils/CSSClassnames');
 
@@ -142,8 +142,7 @@ var Split = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _classnames,
-          _this2 = this;
+      var _this2 = this;
 
       var _props = this.props;
       var children = _props.children;
@@ -158,26 +157,26 @@ var Split = function (_Component) {
       delete props.showOnResponsive;
       var responsive = this.state.responsive;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fixed', fixed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--separator', separator), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className);
 
       var filteredChildren = _react.Children.toArray(children).filter(function (child) {
         return child;
       });
       var boxedChildren = filteredChildren.map(function (child, index) {
-        var _classnames2;
+        var _classnames;
 
+        var lastChild = index === filteredChildren.length - 1;
         var hidden = void 0;
-        var fixed = void 0;
-        var full = void 0;
+        var childFlex = true;
         // When we only have room to show one child, hide the appropriate one
         if ('single' === responsive && ('left' === priority && index > 0 || 'right' === priority && index === 0 && filteredChildren.length > 1)) {
           hidden = true;
-        } else if (filteredChildren.length > 1 && (flex === 'right' && index === 0 || flex === 'left' && index === filteredChildren.length - 1)) {
-          fixed = true;
+        } else if (filteredChildren.length > 1 && (flex === 'right' && index === 0 || flex === 'left' && lastChild)) {
+          childFlex = false;
         } else {
-          full = true;
+          childFlex = true;
         }
-        var classes = (0, _classnames4.default)(CLASS_ROOT + '__column', (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__column--hidden', hidden), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__column--fixed', fixed), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__column--full', full), _classnames2));
+        var classes = (0, _classnames3.default)(CLASS_ROOT + '__column', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__column--fixed', fixed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__column--hidden', hidden), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__column--flex', childFlex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__column--separator', separator && !lastChild), _classnames));
         // Don't use a Box here because we don't want to constrain the child
         // in a flexbox container.
         return _react2.default.createElement(
