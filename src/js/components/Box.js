@@ -12,12 +12,15 @@ import { announce } from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.BOX;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
+const LIGHT_HINT_REGEXP = /^light/;
 
 export default class Box extends Component {
 
-  constructor () {
-    super();
+  constructor (props) {
+    super(props);
     this.state = {
+      darkBackground:
+        (props.colorIndex && ! LIGHT_HINT_REGEXP.test(props.colorIndex)),
       mouseActive: false
     };
   }
