@@ -96,6 +96,16 @@
   background-color: $active-background-color;
   color: $text-color;
 
+  #{$dark-background-context} {
+    background-color: $colored-active-background-color;
+    color: $colored-text-color;
+  }
+
+  #{$light-background-context} {
+    background-color: $active-background-color;
+    color: $text-color;
+  }
+
   .label-value {
     line-height: 1;
   }
