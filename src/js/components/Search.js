@@ -31,6 +31,7 @@ export default class Search extends Component {
     this._announceSuggestion = this._announceSuggestion.bind(this);
     this._onEnter = this._onEnter.bind(this);
     this._onClickSuggestion = this._onClickSuggestion.bind(this);
+    this._onMouseUp = this._onMouseUp.bind(this);
     this._onInputKeyDown = this._onInputKeyDown.bind(this);
     this._onSink = this._onSink.bind(this);
     this._onResponsive = this._onResponsive.bind(this);
