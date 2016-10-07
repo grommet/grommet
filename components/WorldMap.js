@@ -4,13 +4,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
 var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
 
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
@@ -48,10 +48,15 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
+
+var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.WORLD_MAP; // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.WORLD_MAP;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var CONTINENTS = [{
@@ -100,12 +105,52 @@ var WorldMap = function (_Component) {
     _this._onActivate = _this._onActivate.bind(_this);
     _this._onDeactivate = _this._onDeactivate.bind(_this);
     _this._renderContinent = _this._renderContinent.bind(_this);
+    _this._onEnter = _this._onEnter.bind(_this);
 
     _this.state = _this._buildState();
+
+    _this.state.clickable = props.series.some(function (serie) {
+      return serie.onClick;
+    });
     return _this;
   }
 
   (0, _createClass3.default)(WorldMap, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var clickable = this.state.clickable;
+
+      if (clickable) {
+        this._keyboardHandlers = {
+          enter: this._onEnter,
+          space: this._onEnter
+        };
+        _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      var clickable = this.state.clickable;
+
+      if (clickable) {
+        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
+      }
+    }
+  }, {
+    key: '_onEnter',
+    value: function _onEnter() {
+      var series = this.props.series;
+      var activeIndex = this.state.activeIndex;
+
+      if (this._worldMapRef.contains(document.activeElement) && activeIndex) {
+        var continent = series[activeIndex];
+        if (continent.onClick) {
+          continent.onClick();
+        }
+      }
+    }
+  }, {
     key: '_buildState',
     value: function _buildState() {
       var state = { activeIndex: -1, dots: {}, area: {} };
@@ -149,27 +194,39 @@ var WorldMap = function (_Component) {
   }, {
     key: '_renderContinent',
     value: function _renderContinent(seriesData, index) {
+      var _this2 = this;
+
+      var activeIndex = this.state.activeIndex;
+
       var continent = seriesData.continent;
       var colorIndex = seriesData.colorIndex || 'graph-' + index;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT + '__continent', COLOR_INDEX + '-' + colorIndex, (0, _defineProperty3.default)({}, CLASS_ROOT + '__continent--active', index === this.state.activeIndex));
-      var onMouseOver = void 0,
-          onMouseLeave = void 0,
-          onClick = void 0,
-          area = void 0;
+      var classes = (0, _classnames3.default)(CLASS_ROOT + '__continent', COLOR_INDEX + '-' + colorIndex, (0, _defineProperty3.default)({}, CLASS_ROOT + '__continent--active', index === activeIndex));
+      var area = void 0;
+      var clickableProps = {};
       if (seriesData.onClick) {
-        onMouseOver = this._onActivate.bind(this, index);
-        onMouseLeave = this._onDeactivate;
-        onClick = seriesData.onClick;
         area = _react2.default.createElement('path', { stroke: 'none', fill: '#fff', fillOpacity: '0.01',
           d: this.state.area[continent] });
+        clickableProps = {
+          role: 'button',
+          'aria-label': continent,
+          tabIndex: '0',
+          onClick: seriesData.onClick,
+          onMouseOver: this._onActivate.bind(this, index),
+          onMouseLeave: this._onDeactivate,
+          onFocus: function onFocus() {
+            _this2._onActivate(index);
+          },
+          onBlur: function onBlur() {
+            _this2._onDeactivate();
+          }
+        };
       }
       // We add the area so the mouse events work for the whole region,
       // not just the dots
       return _react2.default.createElement(
         'g',
-        { key: continent, className: classes,
-          onMouseOver: onMouseOver, onMouseLeave: onMouseLeave, onClick: onClick },
+        (0, _extends3.default)({ key: continent, className: classes }, clickableProps),
         area,
         _react2.default.createElement('path', { d: this.state.dots[continent] })
       );
@@ -177,6 +234,8 @@ var WorldMap = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       var _props = this.props;
       var className = _props.className;
       var series = _props.series;
@@ -190,7 +249,10 @@ var WorldMap = function (_Component) {
 
       return _react2.default.createElement(
         'svg',
-        (0, _extends3.default)({}, props, { className: classes, version: '1.1',
+        (0, _extends3.default)({}, props, { ref: function ref(_ref) {
+            return _this3._worldMapRef = _ref;
+          },
+          className: classes, version: '1.1',
           preserveAspectRatio: 'xMidYMid meet',
           width: width + 'px', viewBox: '0 0 ' + width + ' ' + height }),
         _react2.default.createElement(
