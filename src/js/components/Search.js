@@ -53,14 +53,14 @@ export default class Search extends Component {
       this._responsive = Responsive.start(this._onResponsive);
     }
     if (initialFocus) {
-      findDOMNode(this.inputRef).focus();
+      findDOMNode(this._inputRef).focus();
     }
   }
 
   componentWillReceiveProps (nextProps) {
     const { dropActive, inline, small } = this.state;
     if (nextProps.suggestions && nextProps.suggestions.length > 0 &&
-      ! dropActive && this.inputRef === document.activeElement) {
+      ! dropActive && this._inputRef === document.activeElement) {
       this.setState({ dropActive: true });
     } else if ((! nextProps.suggestions || nextProps.suggestions.length === 0)
       && inline) {
@@ -107,10 +107,10 @@ export default class Search extends Component {
         activeKeyboardHandlers);
 
       let baseElement;
-      if (this.controlRef) {
-        baseElement = this.controlRef.firstChild;
+      if (this._controlRef) {
+        baseElement = this._controlRef.firstChild;
       } else {
-        baseElement = this.inputRef;
+        baseElement = this._inputRef;
       }
       const align = dropAlign || {
         top: (inline ? 'bottom' : 'top'),
@@ -119,7 +119,7 @@ export default class Search extends Component {
       this._drop = Drop.add(baseElement, this._renderDrop(),
         { align: align, focusControl: true });
 
-      this.inputRef.focus();
+      this._inputRef.focus();
     } else if (this._drop) {
       this._drop.render(this._renderDrop());
     }
@@ -151,14 +151,14 @@ export default class Search extends Component {
   }
 
   focus () {
-    const input = this.inputRef;
+    const input = this._inputRef;
     if (input) {
       findDOMNode(input).focus();
     }
   }
 
   _stopPropagation () {
-    if (document.activeElement === this.inputRef) {
+    if (document.activeElement === this._inputRef) {
       return true;
     }
   }
@@ -215,7 +215,7 @@ export default class Search extends Component {
       event = document.createEvent('Event');
       event.initEvent('change', true, true);
     }
-    const target = this.inputRef;
+    const target = this._inputRef;
     target.dispatchEvent(event);
     onDOMChange(event);
   }
@@ -275,7 +275,7 @@ export default class Search extends Component {
       });
       if (onSelect) {
         onSelect({
-          target: this.inputRef || this.controlRef,
+          target: this._inputRef || this._controlRef,
           suggestion: suggestion
         }, true);
       }
@@ -287,7 +287,7 @@ export default class Search extends Component {
     this._onRemoveDrop();
     if (onSelect) {
       onSelect({
-        target: this.inputRef || this.controlRef,
+        target: this._inputRef || this._controlRef,
         suggestion: suggestion
       }, true);
     }
@@ -342,7 +342,7 @@ export default class Search extends Component {
     let input;
     if (!inline) {
       input = (
-        <input {...restProps} key='input' ref={(ref) => this.inputRef = ref}
+        <input {...restProps} key='input' ref={(ref) => this._inputRef = ref}
           type='search' autoComplete='off' value={value}
           defaultValue={defaultValue} onChange={this._onChangeInput}
           className={`${INPUT} ${CLASS_ROOT}__input`}
@@ -424,9 +424,8 @@ export default class Search extends Component {
     if (inline) {
       return (
         <div className={classes}>
-          <input {...restProps} ref={(ref) => this.inputRef = ref} type='search'
-            id={id}
-            placeholder={placeHolder}
+          <input {...restProps} ref={(ref) => this._inputRef = ref}
+            type='search' id={id} placeholder={placeHolder}
             autoComplete='off'
             defaultValue={this._renderLabel(defaultValue)}
             value={this._renderLabel(value)}
@@ -441,10 +440,9 @@ export default class Search extends Component {
 
     } else {
       return (
-        <div ref={(ref) => this.controlRef = ref}>
-          <Button id={id} className={className} icon={<SearchIcon />}
-            onClick={this._onAddDrop} />
-        </div>
+        <Button ref={(ref) => this._controlRef = ref}
+          id={id} className={className} icon={<SearchIcon />}
+          onClick={this._onAddDrop} />
       );
     }
   }

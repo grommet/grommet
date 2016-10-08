@@ -193,7 +193,7 @@
 
 .#{$grommet-namespace}box--flex {
   flex: 1 1;
-  //need to fix flexbox issue with min-width: auto for some tags
+  // need to fix flexbox issue with min-width: auto for some tags
   min-width: 0;
 
   // IE11 specific fix for box with flex option being squashed vertically
@@ -208,7 +208,12 @@
 
 .#{$grommet-namespace}box--flex-grow {
   flex: 1 0;
-  //need to fix flexbox issue with min-width: auto for some tags
+
+  &:not([class^=".#{$grommet-namespace}box--basis"]) {
+    flex-basis: auto;
+  }
+
+  // need to fix flexbox issue with min-width: auto for some tags
   min-width: 0;
 }
 
