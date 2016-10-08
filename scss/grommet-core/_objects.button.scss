@@ -192,7 +192,7 @@ $button-horizontal-padding:
     }
   }
 
-  @include background-context-color($link-color, $hover-text-color);
+  @include background-context-color($text-color, $hover-text-color);
 }
 
 .#{$grommet-namespace}button--plain.#{$grommet-namespace}button--icon {
@@ -209,21 +209,6 @@ $button-horizontal-padding:
 
   @include background-context-color($icon-color, $active-icon-color);
   @include background-context-icon($icon-color, $active-icon-color);
-}
-
-.#{$grommet-namespace}button--plain.#{$grommet-namespace}button--icon.#{$grommet-namespace}button--icon-label {
-  color: $control-brand-color;
-
-  .#{$grommet-namespace}control-icon {
-    @include icon-color($control-brand-color);
-  }
-
-  &:hover {
-    color: $control-brand-color;
-  }
-
-  @include background-context-color($control-brand-color, $control-brand-color);
-  @include background-context-icon($control-brand-color, $control-brand-color);
 }
 
 .#{$grommet-namespace}button--disabled {

@@ -69,7 +69,6 @@
   .#{$grommet-namespace}control-icon {
     vertical-align: middle;
     margin-right: halve($inuit-base-spacing-unit);
-    @include icon-color($control-brand-color);
 
     html.rtl & {
       margin-right: 0;
@@ -86,9 +85,6 @@
       @include icon-hover-grow();
     }
   }
-
-  @include background-context-color($control-brand-color, $control-brand-color);
-  @include background-context-icon($control-brand-color, $control-brand-color);
 }
 
 .#{$grommet-namespace}anchor--reverse {
@@ -98,8 +94,36 @@
   }
 }
 
+.#{$grommet-namespace}anchor--icon-label:not(.#{$grommet-namespace}anchor--primary) {
+  color: $text-color;
+
+  &:visited {
+    color: $text-color;
+  }
+
+  .#{$grommet-namespace}control-icon {
+    @include icon-color($icon-color);
+  }
+
+  &:hover:not(.#{$grommet-namespace}anchor--disabled) {
+    color: $hover-text-color;
+    text-decoration: none;
+
+    .#{$grommet-namespace}control-icon {
+      @include icon-hover-grow();
+    }
+  }
+
+  @include background-context-color($icon-color, $active-icon-color);
+  @include background-context-icon($icon-color, $active-icon-color);
+}
+
 .#{$grommet-namespace}anchor--primary {
   color: $control-brand-color;
+
+  .#{$grommet-namespace}control-icon {
+    @include icon-color($control-brand-color);
+  }
 
   &.active {
     color: $control-brand-color;
@@ -108,6 +132,8 @@
   // Only animate icon when it's a primary anchor
   &.#{$grommet-namespace}anchor--animate-icon:not(.#{$grommet-namespace}anchor--disabled) {
     &:hover {
+      text-decoration: none;
+
       .#{$grommet-namespace}control-icon {
         transform: translateX(round($inuit-base-spacing-unit * 0.125));
       }
