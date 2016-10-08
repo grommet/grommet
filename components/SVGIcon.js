@@ -8,13 +8,13 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -44,21 +44,19 @@ var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _Intl = require('../utils/Intl');
-
-var _Intl2 = _interopRequireDefault(_Intl);
-
-var _Props = require('../utils/Props');
-
-var _Props2 = _interopRequireDefault(_Props);
-
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Intl = require('../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var CLASS_ROOT = {
   'control': _CSSClassnames2.default.CONTROL_ICON,
@@ -86,22 +84,19 @@ var SVGIcon = function (_Component) {
       var colorIndex = _props.colorIndex;
       var size = _props.size;
       var type = _props.type;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'children', 'className', 'colorIndex', 'size', 'type']);
 
 
       var classRoot = CLASS_ROOT[type];
-      var classes = (0, _classnames3.default)(classRoot, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, classRoot + '--' + size, size), (0, _defineProperty3.default)(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), _classnames));
+      var classes = (0, _classnames3.default)(classRoot, (_classnames = {}, (0, _defineProperty3.default)(_classnames, classRoot + '--' + size, size), (0, _defineProperty3.default)(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), _classnames), className);
 
       var iconMessage = _Intl2.default.getMessage(this.context.intl, 'icon');
       var typeMessage = _Intl2.default.getMessage(this.context.intl, type);
       var defaultTitle = typeMessage + ' ' + iconMessage;
 
-      var svgProps = _Props2.default.omit(this.props, (0, _keys2.default)(SVGIcon.propTypes));
-      delete svgProps.children;
-      delete svgProps.className;
-
       return _react2.default.createElement(
         'svg',
-        (0, _extends3.default)({}, svgProps, { className: classes, role: 'img' }),
+        (0, _extends3.default)({}, props, { className: classes, role: 'img' }),
         _react2.default.createElement(
           'title',
           null,

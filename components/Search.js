@@ -138,7 +138,7 @@ var Search = function (_Component) {
         this._responsive = _Responsive2.default.start(this._onResponsive);
       }
       if (initialFocus) {
-        (0, _reactDom.findDOMNode)(this.inputRef).focus();
+        (0, _reactDom.findDOMNode)(this._inputRef).focus();
       }
     }
   }, {
@@ -149,7 +149,7 @@ var Search = function (_Component) {
       var inline = _state.inline;
       var small = _state.small;
 
-      if (nextProps.suggestions && nextProps.suggestions.length > 0 && !dropActive && this.inputRef === document.activeElement) {
+      if (nextProps.suggestions && nextProps.suggestions.length > 0 && !dropActive && this._inputRef === document.activeElement) {
         this.setState({ dropActive: true });
       } else if ((!nextProps.suggestions || nextProps.suggestions.length === 0) && inline) {
         this.setState({ dropActive: false });
@@ -200,10 +200,10 @@ var Search = function (_Component) {
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
 
         var baseElement = void 0;
-        if (this.controlRef) {
-          baseElement = this.controlRef.firstChild;
+        if (this._controlRef) {
+          baseElement = this._controlRef.firstChild;
         } else {
-          baseElement = this.inputRef;
+          baseElement = this._inputRef;
         }
         var align = dropAlign || {
           top: inline ? 'bottom' : 'top',
@@ -211,7 +211,7 @@ var Search = function (_Component) {
         };
         this._drop = _Drop2.default.add(baseElement, this._renderDrop(), { align: align, focusControl: true });
 
-        this.inputRef.focus();
+        this._inputRef.focus();
       } else if (this._drop) {
         this._drop.render(this._renderDrop());
       }
@@ -243,7 +243,7 @@ var Search = function (_Component) {
   }, {
     key: 'focus',
     value: function focus() {
-      var input = this.inputRef;
+      var input = this._inputRef;
       if (input) {
         (0, _reactDom.findDOMNode)(input).focus();
       }
@@ -251,7 +251,7 @@ var Search = function (_Component) {
   }, {
     key: '_stopPropagation',
     value: function _stopPropagation() {
-      if (document.activeElement === this.inputRef) {
+      if (document.activeElement === this._inputRef) {
         return true;
       }
     }
@@ -319,7 +319,7 @@ var Search = function (_Component) {
         event = document.createEvent('Event');
         event.initEvent('change', true, true);
       }
-      var target = this.inputRef;
+      var target = this._inputRef;
       target.dispatchEvent(event);
       onDOMChange(event);
     }
@@ -393,7 +393,7 @@ var Search = function (_Component) {
           });
           if (onSelect) {
             onSelect({
-              target: _this2.inputRef || _this2.controlRef,
+              target: _this2._inputRef || _this2._controlRef,
               suggestion: suggestion
             }, true);
           }
@@ -408,7 +408,7 @@ var Search = function (_Component) {
       this._onRemoveDrop();
       if (onSelect) {
         onSelect({
-          target: this.inputRef || this.controlRef,
+          target: this._inputRef || this._controlRef,
           suggestion: suggestion
         }, true);
       }
@@ -473,7 +473,7 @@ var Search = function (_Component) {
       var input = void 0;
       if (!inline) {
         input = _react2.default.createElement('input', (0, _extends3.default)({}, restProps, { key: 'input', ref: function ref(_ref) {
-            return _this3.inputRef = _ref;
+            return _this3._inputRef = _ref;
           },
           type: 'search', autoComplete: 'off', value: value,
           defaultValue: defaultValue, onChange: this._onChangeInput,
@@ -551,10 +551,9 @@ var Search = function (_Component) {
           'div',
           { className: classes },
           _react2.default.createElement('input', (0, _extends3.default)({}, restProps, { ref: function ref(_ref2) {
-              return _this4.inputRef = _ref2;
-            }, type: 'search',
-            id: id,
-            placeholder: placeHolder,
+              return _this4._inputRef = _ref2;
+            },
+            type: 'search', id: id, placeholder: placeHolder,
             autoComplete: 'off',
             defaultValue: this._renderLabel(defaultValue),
             value: this._renderLabel(value),
@@ -566,14 +565,11 @@ var Search = function (_Component) {
           _react2.default.createElement(_Search2.default, null)
         );
       } else {
-        return _react2.default.createElement(
-          'div',
-          { ref: function ref(_ref3) {
-              return _this4.controlRef = _ref3;
-            } },
-          _react2.default.createElement(_Button2.default, { id: id, className: className, icon: _react2.default.createElement(_Search2.default, null),
-            onClick: this._onAddDrop })
-        );
+        return _react2.default.createElement(_Button2.default, { ref: function ref(_ref3) {
+            return _this4._controlRef = _ref3;
+          },
+          id: id, className: className, icon: _react2.default.createElement(_Search2.default, null),
+          onClick: this._onAddDrop });
       }
     }
   }]);
