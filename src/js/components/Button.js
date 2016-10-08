@@ -49,7 +49,6 @@ export default class Button extends Component {
         [`${CLASS_ROOT}--fill`]: fill,
         [`${CLASS_ROOT}--plain`]: buttonPlain,
         [`${CLASS_ROOT}--icon`]: icon || hasIcon,
-        [`${CLASS_ROOT}--icon-label`]: hasIcon && label,
         [`${CLASS_ROOT}--align-${align}`]: align
       },
       className
