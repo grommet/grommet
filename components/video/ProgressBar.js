@@ -107,6 +107,8 @@ var ProgressBar = function (_Component) {
             _react2.default.createElement('div', { className: tickClasses,
               onMouseOver: _this2._onMouseOver.bind(_this2, index),
               onMouseOut: _this2.props.onChapterHover,
+              onFocus: _this2._onMouseOver.bind(_this2, index),
+              onBlur: _this2.props.onChapterHover,
               onClick: _this2._onChapterClick.bind(_this2, chapter.time) }),
             _react2.default.createElement('div', { className: CLASS_ROOT + '__chapter-marker-track' })
           );

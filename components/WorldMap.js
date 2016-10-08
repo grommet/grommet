@@ -215,6 +215,7 @@ var WorldMap = function (_Component) {
           onMouseOver: this._onActivate.bind(this, index),
           onMouseLeave: this._onDeactivate,
           onFocus: function onFocus() {
+            _this2._worldMapRef.scrollIntoView();
             _this2._onActivate(index);
           },
           onBlur: function onBlur() {

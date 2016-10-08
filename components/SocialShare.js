@@ -74,13 +74,14 @@ var SocialShare = function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props;
+      var className = _props.className;
       var colorIndex = _props.colorIndex;
       var type = _props.type;
       var link = _props.link;
       var text = _props.text;
       var title = _props.title;
       var a11yTitle = _props.a11yTitle;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['colorIndex', 'type', 'link', 'text', 'title', 'a11yTitle']);
+      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'colorIndex', 'type', 'link', 'text', 'title', 'a11yTitle']);
 
 
       var socialIcon = undefined;
@@ -94,23 +95,23 @@ var SocialShare = function (_Component) {
 
       if (type === 'twitter') {
         socialIcon = _react2.default.createElement(_SocialTwitter2.default, { a11yTitle: calculatedA11yTitle,
-          colorIndex: colorIndex });
+          className: className, colorIndex: colorIndex });
         href = 'https://twitter.com/intent/tweet?url=' + (encodedLink + '&text=' + encodedText);
       } else if (type === 'linkedin') {
         socialIcon = _react2.default.createElement(_SocialLinkedin2.default, { a11yTitle: calculatedA11yTitle,
-          colorIndex: colorIndex });
+          className: className, colorIndex: colorIndex });
         href = 'https://www.linkedin.com/shareArticle?mini=true&url=' + (encodedLink + '&title=' + encodedTitle + '&summary=' + encodedText);
       } else if (type === 'google') {
         socialIcon = _react2.default.createElement(_SocialGooglePlus2.default, { a11yTitle: calculatedA11yTitle,
-          colorIndex: colorIndex });
+          className: className, colorIndex: colorIndex });
         href = 'https://plus.google.com/share?url=' + encodedLink;
       } else if (type === 'facebook') {
         socialIcon = _react2.default.createElement(_SocialFacebook2.default, { a11yTitle: calculatedA11yTitle,
-          colorIndex: colorIndex });
+          className: className, colorIndex: colorIndex });
         href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedLink;
       } else if (type === 'email') {
         socialIcon = _react2.default.createElement(_SocialMail2.default, { a11yTitle: calculatedA11yTitle,
-          colorIndex: colorIndex });
+          className: className, colorIndex: colorIndex });
         href = 'mailto:?subject=' + (encodedTitle + '&body=' + encodedText + '%0D%0A' + encodedLink);
         target = '_self';
       }
@@ -127,6 +128,7 @@ exports.default = SocialShare;
 
 SocialShare.propTypes = {
   a11yTitle: _react.PropTypes.string,
+  className: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,
   link: _react.PropTypes.string.isRequired,
   text: _react.PropTypes.string,

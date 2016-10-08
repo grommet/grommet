@@ -4,10 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
 var _keys = require('babel-runtime/core-js/object/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
@@ -15,6 +11,10 @@ var _keys2 = _interopRequireDefault(_keys);
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
 
 var _assign = require('babel-runtime/core-js/object/assign');
 
@@ -44,6 +44,8 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require('react-dom');
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -70,8 +72,9 @@ var _Throttle2 = _interopRequireDefault(_Throttle);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.VIDEO; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var CLASS_ROOT = _CSSClassnames2.default.VIDEO;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Video = function (_Component) {
@@ -91,9 +94,13 @@ var Video = function (_Component) {
     _this._mute = _this._mute.bind(_this);
     _this._unmute = _this._unmute.bind(_this);
     _this._fullscreen = _this._fullscreen.bind(_this);
-    _this._onMouseMove = _this._onMouseMove.bind(_this);
+    _this._onInterationStart = _this._onInterationStart.bind(_this);
+    _this._onInteractionOver = _this._onInteractionOver.bind(_this);
+    _this._renderControls = _this._renderControls.bind(_this);
 
-    _this.state = {};
+    _this.state = {
+      mouseActive: false
+    };
     return _this;
   }
 
@@ -141,6 +148,11 @@ var Video = function (_Component) {
         this._hasPlayed = true;
       }
 
+      var interacting = this.state.interacting;
+      if (this._video.ended) {
+        interacting = false;
+      };
+
       this.setState({
         duration: this._video.duration,
         currentTime: this._video.currentTime,
@@ -150,7 +162,7 @@ var Video = function (_Component) {
         volume: this._video.volume,
         ended: this._video.ended,
         readyState: this._video.readyState,
-
+        interacting: interacting,
         // computed values
         hasPlayed: this._hasPlayed,
         playing: !this._video.paused && !this._video.loading,
@@ -218,19 +230,24 @@ var Video = function (_Component) {
       }
     }
   }, {
-    key: '_onMouseMove',
-    value: function _onMouseMove() {
-      var _this3 = this;
-
+    key: '_onInterationStart',
+    value: function _onInterationStart() {
       this.setState({ interacting: true });
-      clearTimeout(this._moveTimer);
-      this._moveTimer = setTimeout(function () {
-        _this3.setState({ interacting: false });
-      }, 1000);
+    }
+  }, {
+    key: '_onInteractionOver',
+    value: function _onInteractionOver() {
+      var focus = this.state.focus;
+
+      if (!focus) {
+        this.setState({ interacting: false });
+      }
     }
   }, {
     key: '_renderControls',
     value: function _renderControls() {
+      var _this3 = this;
+
       var extendedProps = (0, _assign2.default)({
         title: this.props.title,
         togglePlay: this._togglePlay,
@@ -245,14 +262,18 @@ var Video = function (_Component) {
         shareLink: this.props.shareLink,
         shareHeadline: this.props.shareHeadline,
         shareText: this.props.shareText,
-        allowFullScreen: this.props.allowFullScreen
+        allowFullScreen: this.props.allowFullScreen,
+        size: this.props.size
       }, this.state);
 
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(_Overlay2.default, extendedProps),
-        _react2.default.createElement(_Controls2.default, extendedProps)
+        _react2.default.createElement(_Controls2.default, (0, _extends3.default)({ ref: function ref(_ref) {
+            return _this3._controlRef = _ref;
+          }
+        }, extendedProps))
       );
     }
   }, {
@@ -275,6 +296,7 @@ var Video = function (_Component) {
       var ended = _state.ended;
       var hasPlayed = _state.hasPlayed;
       var interacting = _state.interacting;
+      var mouseActive = _state.mouseActive;
       var playing = _state.playing;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interacting', interacting), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--playing', playing), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hasPlayed', hasPlayed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--ended', ended), (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '--' + colorIndex, colorIndex), _classnames), className);
@@ -282,7 +304,50 @@ var Video = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        { className: classes, onMouseMove: this._onMouseMove },
+        { className: classes, ref: function ref(_ref2) {
+            return _this4._containerRef = _ref2;
+          },
+          onMouseEnter: function onMouseEnter() {
+            if (!ended) {
+              _this4._onInterationStart();
+            }
+          },
+          onMouseMove: function onMouseMove(event) {
+            // needed to avoid react synthatic event pooling
+            event.persist();
+            if (!ended || (0, _reactDom.findDOMNode)(_this4._controlRef).contains(event.target)) {
+              _this4._onInterationStart();
+            } else if (ended) {
+              _this4._onInteractionOver();
+            }
+            clearTimeout(_this4._moveTimer);
+            _this4._moveTimer = setTimeout(function () {
+              var element = (0, _reactDom.findDOMNode)(_this4._controlRef);
+              if (element && !element.contains(event.target)) {
+                _this4._onInteractionOver();
+              }
+            }, 1000);
+          },
+          onMouseLeave: this._onInteractionOver,
+          onMouseDown: function onMouseDown() {
+            _this4.setState({ mouseActive: true });
+          },
+          onMouseUp: function onMouseUp() {
+            _this4.setState({ mouseActive: false });
+          },
+          onFocus: function onFocus() {
+            if (mouseActive === false) {
+              _this4._onInterationStart();
+              _this4.setState({ focus: true });
+            }
+          },
+          onBlur: function onBlur() {
+            _this4.setState({ focus: false }, function () {
+              if (!_this4._containerRef.contains(document.activeElement)) {
+                _this4._onInteractionOver();
+              }
+            });
+          } },
         _react2.default.createElement(
           'video',
           (0, _extends3.default)({ ref: function ref(el) {

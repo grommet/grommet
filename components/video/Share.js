@@ -46,9 +46,15 @@ var _FormField = require('../FormField');
 
 var _FormField2 = _interopRequireDefault(_FormField);
 
+var _CSSClassnames = require('../../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.VIDEO; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var BUTTON_CLASS = CLASS_ROOT + '__button';
 
 var Overlay = function (_Component) {
   (0, _inherits3.default)(Overlay, _Component);
@@ -77,8 +83,9 @@ var Overlay = function (_Component) {
       var shareHeadline = _props.shareHeadline;
       var shareText = _props.shareText;
 
+      // this has to be null to be a valid react children
 
-      var shareContent = void 0;
+      var shareContent = null;
       if (shareLink) {
         shareContent = _react2.default.createElement(
           _Box2.default,
@@ -98,14 +105,18 @@ var Overlay = function (_Component) {
           ),
           _react2.default.createElement(
             _Box2.default,
-            { direction: 'row' },
-            _react2.default.createElement(_SocialShare2.default, { type: 'email', link: shareLink,
+            { direction: 'row', className: BUTTON_CLASS },
+            _react2.default.createElement(_SocialShare2.default, { type: 'email', link: shareLink, colorIndex: 'brand',
+              className: BUTTON_CLASS + '__icon',
               title: shareHeadline, text: shareText }),
-            _react2.default.createElement(_SocialShare2.default, { type: 'twitter',
+            _react2.default.createElement(_SocialShare2.default, { type: 'twitter', colorIndex: 'brand',
+              className: BUTTON_CLASS + '__icon',
               link: shareLink, text: shareHeadline }),
-            _react2.default.createElement(_SocialShare2.default, { type: 'facebook',
+            _react2.default.createElement(_SocialShare2.default, { type: 'facebook', colorIndex: 'brand',
+              className: BUTTON_CLASS + '__icon',
               link: shareLink }),
-            _react2.default.createElement(_SocialShare2.default, { type: 'linkedin',
+            _react2.default.createElement(_SocialShare2.default, { type: 'linkedin', colorIndex: 'brand',
+              className: BUTTON_CLASS + '__icon',
               link: shareLink, title: shareHeadline, text: shareText })
           )
         );

@@ -32,6 +32,10 @@ var _Intl = require('../../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
 
+var _CSSClassnames = require('../../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 var _Button = require('../Button');
 
 var _Button2 = _interopRequireDefault(_Button);
@@ -42,7 +46,9 @@ var _Expand2 = _interopRequireDefault(_Expand);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.VIDEO; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var BUTTON_CLASS = CLASS_ROOT + '__button';
 
 var FullscreenButton = function (_Component) {
   (0, _inherits3.default)(FullscreenButton, _Component);
@@ -66,9 +72,12 @@ var FullscreenButton = function (_Component) {
     value: function render() {
       var a11yExpandButtonTitle = _Intl2.default.getMessage(this.context.intl, 'Toggle Fullscreen');
 
-      return _react2.default.createElement(_Button2.default, { plain: true, primary: true,
-        onClick: this.props.onClick, icon: _react2.default.createElement(_Expand2.default, null),
-        a11yTitle: a11yExpandButtonTitle });
+      return _react2.default.createElement(
+        _Button2.default,
+        { plain: true, className: BUTTON_CLASS, onClick: this.props.onClick,
+          a11yTitle: a11yExpandButtonTitle },
+        _react2.default.createElement(_Expand2.default, { className: BUTTON_CLASS + '__icon', colorIndex: 'brand' })
+      );
     }
   }]);
   return FullscreenButton;

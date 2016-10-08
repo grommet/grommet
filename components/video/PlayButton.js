@@ -32,9 +32,17 @@ var _Intl = require('../../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
 
+var _CSSClassnames = require('../../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
 var _Button = require('../Button');
 
 var _Button2 = _interopRequireDefault(_Button);
+
+var _CirclePlay = require('../icons/base/CirclePlay');
+
+var _CirclePlay2 = _interopRequireDefault(_CirclePlay);
 
 var _Play = require('../icons/base/Play');
 
@@ -52,51 +60,63 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var FullscreenButton = function (_Component) {
-  (0, _inherits3.default)(FullscreenButton, _Component);
+var CLASS_ROOT = _CSSClassnames2.default.VIDEO;
+var BUTTON_CLASS = CLASS_ROOT + '__button';
 
-  function FullscreenButton() {
-    (0, _classCallCheck3.default)(this, FullscreenButton);
-    return (0, _possibleConstructorReturn3.default)(this, (FullscreenButton.__proto__ || (0, _getPrototypeOf2.default)(FullscreenButton)).apply(this, arguments));
+var PlayButton = function (_Component) {
+  (0, _inherits3.default)(PlayButton, _Component);
+
+  function PlayButton() {
+    (0, _classCallCheck3.default)(this, PlayButton);
+    return (0, _possibleConstructorReturn3.default)(this, (PlayButton.__proto__ || (0, _getPrototypeOf2.default)(PlayButton)).apply(this, arguments));
   }
 
-  (0, _createClass3.default)(FullscreenButton, [{
+  (0, _createClass3.default)(PlayButton, [{
     key: 'render',
     value: function render() {
       var _props = this.props;
-      var className = _props.className;
       var ended = _props.ended;
       var iconSize = _props.iconSize;
       var playing = _props.playing;
+      var primary = _props.primary;
       var togglePlay = _props.togglePlay;
+      var intl = this.context.intl;
 
 
-      var controlIconSize = iconSize;
-      var controlIcon = playing ? _react2.default.createElement(_Pause2.default, { size: controlIconSize }) : ended ? _react2.default.createElement(_Refresh2.default, { size: controlIconSize }) : _react2.default.createElement(_Play2.default, { size: controlIconSize });
+      var PlayIcon = primary ? _CirclePlay2.default : _Play2.default;
+      var Icon = playing ? _Pause2.default : ended ? _Refresh2.default : PlayIcon;
+      var controlIcon = _react2.default.createElement(Icon, { className: BUTTON_CLASS + '__icon', size: iconSize,
+        colorIndex: 'brand' });
+
       var a11yControlButtonMessage = playing ? 'Pause Video' : ended ? 'Restart Video' : 'Play Video';
 
-      var a11yControlButtonTitle = _Intl2.default.getMessage(this.context.intl, a11yControlButtonMessage);
+      var a11yControlButtonTitle = _Intl2.default.getMessage(intl, a11yControlButtonMessage);
 
-      return _react2.default.createElement(_Button2.default, { className: className, plain: true,
-        primary: true, onClick: togglePlay,
-        icon: controlIcon, a11yTitle: a11yControlButtonTitle });
+      return _react2.default.createElement(
+        _Button2.default,
+        { plain: true, className: BUTTON_CLASS, onClick: togglePlay,
+          a11yTitle: a11yControlButtonTitle },
+        controlIcon
+      );
     }
   }]);
-  return FullscreenButton;
+  return PlayButton;
 }(_react.Component);
 
-FullscreenButton.displayName = 'FullscreenButton';
-exports.default = FullscreenButton;
+PlayButton.displayName = 'PlayButton';
+exports.default = PlayButton;
 
 
-FullscreenButton.propTypes = {
+PlayButton.propTypes = {
   iconSize: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
   playing: _react.PropTypes.bool,
+  primary: _react.PropTypes.bool,
   ended: _react.PropTypes.bool,
   togglePlay: _react.PropTypes.func
 };
 
-FullscreenButton.defaultProps = {
-  iconSize: 'medium'
+PlayButton.defaultProps = {
+  iconSize: 'xlarge',
+  primary: true
 };
 module.exports = exports['default'];

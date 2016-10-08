@@ -57,23 +57,34 @@ var CLASS_ROOT = _CSSClassnames2.default.VIDEO;
 var Overlay = function (_Component) {
   (0, _inherits3.default)(Overlay, _Component);
 
-  function Overlay() {
+  function Overlay(props, context) {
     (0, _classCallCheck3.default)(this, Overlay);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Overlay.__proto__ || (0, _getPrototypeOf2.default)(Overlay)).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Overlay.__proto__ || (0, _getPrototypeOf2.default)(Overlay)).call(this, props, context));
 
     _this._onResponsive = _this._onResponsive.bind(_this);
-    _this.state = { iconSize: 'large' };
+    _this.state = {
+      iconSize: props.size && (props.size === 'small' || props.size === 'medium') ? 'large' : 'xlarge'
+    };
     return _this;
   }
 
   (0, _createClass3.default)(Overlay, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(newProps) {
+      if (newProps.size !== this.props.size) {
+        this.setState({
+          iconSize: newProps.size && (newProps.size === 'small' || newProps.size === 'medium') ? 'large' : 'xlarge'
+        });
+      }
+    }
+  }, {
     key: '_onResponsive',
     value: function _onResponsive(small) {
       if (small) {
-        this.setState({ iconSize: 'small' });
+        this.setState({ iconSize: 'medium' });
       } else {
-        var iconSize = 'small' === this.props.size ? undefined : 'large';
+        var iconSize = 'small' === this.props.size ? undefined : 'xlarge';
         this.setState({ iconSize: iconSize });
       }
     }
@@ -112,10 +123,7 @@ var Overlay = function (_Component) {
       var playing = _props2.playing;
       var togglePlay = _props2.togglePlay;
       var videoHeader = _props2.videoHeader;
-      // when iconSize is small (mobile screen sizes), remove the extra padding
-      // so that the play control is centered
 
-      var emptyBox = this.state.iconSize === 'small' ? undefined : _react2.default.createElement(_Box2.default, null);
 
       return _react2.default.createElement(
         _Box2.default,
@@ -126,13 +134,11 @@ var Overlay = function (_Component) {
           _Box2.default,
           { pad: 'none', align: 'center', justify: 'center' },
           _react2.default.createElement(_PlayButton2.default, { iconSize: this.state.iconSize,
-            className: CLASS_ROOT + '__play',
             playing: playing,
             ended: ended,
             togglePlay: togglePlay })
         ),
-        this._renderReplayMenu(),
-        emptyBox
+        this._renderReplayMenu()
       );
     }
   }]);

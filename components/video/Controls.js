@@ -4,9 +4,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -76,11 +84,18 @@ var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Intl = require('../../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
 var _FormatTime = require('../../utils/FormatTime');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.VIDEO; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.VIDEO;
+var BUTTON_CLASS = CLASS_ROOT + '__button';
 
 var Controls = function (_Component) {
   (0, _inherits3.default)(Controls, _Component);
@@ -124,15 +139,31 @@ var Controls = function (_Component) {
   }, {
     key: '_renderMuteButton',
     value: function _renderMuteButton() {
-      return _react2.default.createElement(_Button2.default, { plain: true, primary: true,
-        onClick: this.props.toggleMute, icon: this.props.muted ? _react2.default.createElement(_VolumeMute2.default, null) : _react2.default.createElement(_Volume2.default, null) });
+      var _props = this.props;
+      var muted = _props.muted;
+      var toggleMute = _props.toggleMute;
+      var intl = this.context.intl;
+
+      var buttonMessage = _Intl2.default.getMessage(intl, 'Mute');
+      var Icon = _VolumeMute2.default;
+      if (muted) {
+        Icon = _Volume2.default;
+        buttonMessage = _Intl2.default.getMessage(intl, 'Unmute');
+      }
+      return _react2.default.createElement(
+        _Button2.default,
+        { plain: true, onClick: toggleMute, className: BUTTON_CLASS,
+          a11yTitle: buttonMessage },
+        _react2.default.createElement(Icon, { className: BUTTON_CLASS + '__icon', colorIndex: 'brand' })
+      );
     }
   }, {
     key: '_renderChapterLabels',
     value: function _renderChapterLabels() {
-      var _props = this.props;
-      var duration = _props.duration;
-      var timeline = _props.timeline;
+      var _props2 = this.props;
+      var duration = _props2.duration;
+      var timeline = _props2.timeline;
+      var props = (0, _objectWithoutProperties3.default)(_props2, ['duration', 'timeline']);
       var activeChapterIndex = this.state.activeChapterIndex;
 
 
@@ -162,8 +193,8 @@ var Controls = function (_Component) {
 
         return _react2.default.createElement(
           _Box2.default,
-          { pad: 'none', className: CLASS_ROOT + '__chapter-labels',
-            direction: 'row' },
+          (0, _extends3.default)({}, props, { pad: 'none', className: CLASS_ROOT + '__chapter-labels',
+            direction: 'row' }),
           chapterLabels
         );
       }
@@ -171,18 +202,18 @@ var Controls = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props2 = this.props;
-      var togglePlay = _props2.togglePlay;
-      var hasPlayed = _props2.hasPlayed;
-      var playing = _props2.playing;
-      var ended = _props2.ended;
-      var currentTime = _props2.currentTime;
-      var duration = _props2.duration;
-      var percentagePlayed = _props2.percentagePlayed;
-      var seek = _props2.seek;
-      var timeline = _props2.timeline;
-      var allowFullScreen = _props2.allowFullScreen;
-      var fullscreen = _props2.fullscreen;
+      var _props3 = this.props;
+      var togglePlay = _props3.togglePlay;
+      var hasPlayed = _props3.hasPlayed;
+      var playing = _props3.playing;
+      var ended = _props3.ended;
+      var currentTime = _props3.currentTime;
+      var duration = _props3.duration;
+      var percentagePlayed = _props3.percentagePlayed;
+      var seek = _props3.seek;
+      var timeline = _props3.timeline;
+      var allowFullScreen = _props3.allowFullScreen;
+      var fullscreen = _props3.fullscreen;
 
 
       if (!hasPlayed) {
@@ -205,9 +236,8 @@ var Controls = function (_Component) {
             _Box2.default,
             { direction: 'row', align: 'center',
               pad: { horizontal: 'small', vertical: 'none' } },
-            _react2.default.createElement(_PlayButton2.default, {
-              playing: playing, ended: ended,
-              togglePlay: togglePlay }),
+            _react2.default.createElement(_PlayButton2.default, { playing: playing, ended: ended, iconSize: 'medium',
+              togglePlay: togglePlay, primary: false }),
             this._renderTitle()
           ),
           _react2.default.createElement(
@@ -229,4 +259,9 @@ var Controls = function (_Component) {
 
 Controls.displayName = 'Controls';
 exports.default = Controls;
+
+
+Controls.contextTypes = {
+  intl: _react.PropTypes.object
+};
 module.exports = exports['default'];
