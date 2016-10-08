@@ -12,7 +12,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var COLOR_REGEXP = /rgb\((\d+), (\d+), (\d+)\)|rgba\((\d+), (\d+), (\d+), (\d+)\)/;
+var COLOR_RGB_REGEXP = /rgb\((\d+), (\d+), (\d+)\)/;
+var COLOR_RGBA_REGEXP = /rgba\((\d+), (\d+), (\d+), ([\d\.]+)\)/;
 
 function hash(input) {
   var hash = 0,
@@ -135,7 +136,7 @@ exports.default = {
     var result = void 0;
     if (element && window.getComputedStyle) {
       var color = window.getComputedStyle(element).backgroundColor;
-      var match = color.match(COLOR_REGEXP);
+      var match = color.match(COLOR_RGB_REGEXP) || color.match(COLOR_RGBA_REGEXP);
       if (match) {
         var _match$slice$map = match.slice(1).map(function (n) {
           return parseInt(n, 10);
