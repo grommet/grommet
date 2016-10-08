@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-const COLOR_REGEXP =
-  /rgb\((\d+), (\d+), (\d+)\)|rgba\((\d+), (\d+), (\d+), (\d+)\)/;
+const COLOR_RGB_REGEXP = /rgb\((\d+), (\d+), (\d+)\)/;
+const COLOR_RGBA_REGEXP = /rgba\((\d+), (\d+), (\d+), ([\d\.]+)\)/;
 
 function hash(input) {
   var hash = 0, i, chr, len;
@@ -135,7 +135,8 @@ export default {
     let result;
     if (element && window.getComputedStyle) {
       const color = window.getComputedStyle(element).backgroundColor;
-      const match = color.match(COLOR_REGEXP);
+      const match = color.match(COLOR_RGB_REGEXP) ||
+        color.match(COLOR_RGBA_REGEXP);
       if (match) {
         const [red, green, blue] = match.slice(1).map(n => parseInt(n, 10));
         // http://www.had2know.com/technology/
