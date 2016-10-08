@@ -13,6 +13,12 @@
     width: 100%;
     display: block;
   }
+
+}
+
+.#{$grommet-namespace}video__button:hover .#{$grommet-namespace}video__button__icon {
+  fill: $brand-color;
+  stroke: $brand-color;
 }
 
 @include media-query(palm) {
@@ -81,35 +87,9 @@
   background-color: rgba(nth($brand-grey-colors, 1), 0.9);
   color: $inverse-color;
 
-  .#{$grommet-namespace}button--primary {
-    background-color: transparent;
-  }
-
-  .#{$grommet-namespace}button--primary:active,
-  .#{$grommet-namespace}button--primary:focus {
-    border-color: transparent;
-    box-shadow: none;
-
-    .#{$grommet-namespace}control-icon {
-      fill: $brand-color;
-      stroke: $brand-color;
-    }
-  }
-
   h3 {
     font-weight: 400;
   }
-}
-
-.#{$grommet-namespace}video__play.#{$grommet-namespace}button--primary {
-  flex: 0 0 auto;
-  width: quadruple($inuit-base-spacing-unit);
-  height: quadruple($inuit-base-spacing-unit);
-  border-radius: double($inuit-base-spacing-unit);
-  border-width: 2px;
-  border-style: solid;
-  background-color: transparent;
-  color: $colored-icon-color;
 }
 
 .#{$grommet-namespace}video__progress {
@@ -124,23 +104,6 @@
   & + .#{$grommet-namespace}video__chapter-labels,
   & ~ .#{$grommet-namespace}video__controls-primary {
     transition: ease-in-out 0.3s;
-  }
-
-  &:hover {
-    height: halve($inuit-base-spacing-unit);
-
-    .#{$grommet-namespace}video__progress-bar-fill:after {
-      opacity: 1;
-    }
-
-    & + .#{$grommet-namespace}video__chapter-labels {
-      visibility: visible;
-    }
-
-    & ~ .#{$grommet-namespace}video__controls-primary {
-      visibility: hidden;
-      opacity: 0;
-    }
   }
 
   input[type=range] {
@@ -158,6 +121,18 @@
     cursor: pointer;
     outline: none;
     z-index: 30;
+  }
+}
+
+.#{$grommet-namespace}video--interacting .#{$grommet-namespace}video__progress:hover {
+  height: halve($inuit-base-spacing-unit);
+
+  .#{$grommet-namespace}video__progress-bar-fill:after {
+    opacity: 1;
+  }
+
+  & + .#{$grommet-namespace}video__chapter-labels {
+    visibility: visible;
   }
 }
 
@@ -289,8 +264,17 @@
 }
 
 .#{$grommet-namespace}video--ended {
-  .#{$grommet-namespace}video__play {
-    border-style: none;
+  &:not(.#{$grommet-namespace}video--interacting) {
+    .#{$grommet-namespace}video__controls-primary,
+    .#{$grommet-namespace}video__chapter-labels {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .#{$grommet-namespace}video__progress {
+      bottom: 0px;
+      transition: ease-in-out 1s;
+    }
   }
 
   .#{$grommet-namespace}video__overlay {
@@ -310,11 +294,6 @@
       @include inuit-font-size($control-font-size);
       color: $colored-text-color;
       text-align: center;
-    }
-
-    .#{$grommet-namespace}control-icon {
-      fill: #fff;
-      stroke: #fff;
     }
   }
 }
