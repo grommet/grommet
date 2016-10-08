@@ -1,7 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-
 import Intl from '../../utils/Intl';
 import Button from '../Button';
 import PlayIcon from '../icons/base/Play';
@@ -11,12 +10,7 @@ import RefreshIcon from '../icons/base/Refresh';
 export default class FullscreenButton extends Component {
 
   render () {
-    const { playing, ended, togglePlay, iconSize } = this.props;
-
-    let classes = [];
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const { className, ended, iconSize, playing, togglePlay } = this.props;
 
     let controlIconSize = iconSize;
     let controlIcon = (playing ?
@@ -32,7 +26,7 @@ export default class FullscreenButton extends Component {
       Intl.getMessage(this.context.intl, a11yControlButtonMessage);
 
     return (
-      <Button className={classes.join(' ')} plain={true}
+      <Button className={className} plain={true}
         primary={true} onClick={togglePlay}
         icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
     );

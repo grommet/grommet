@@ -15,6 +15,11 @@
 .#{$grommet-namespace}chart {
   position: relative;
   display: flex;
+
+  .#{$grommet-namespace}chart {
+    min-width: 0; // looks odd but needed for flexbox to work right
+    max-width: 100%;
+  }
 }
 
 .#{$grommet-namespace}chart--full {
@@ -57,6 +62,10 @@
 
 .#{$grommet-namespace}chart-base--width-large {
   width: $size-large;
+
+  @include media-query(palm) {
+    max-width: 100%;
+  }
 }
 
 .#{$grommet-namespace}chart-base--width-full {
@@ -69,10 +78,18 @@
 
 .#{$grommet-namespace}chart-base--height-medium {
   height: $size-medium;
+
+  @include media-query(palm) {
+    height: $size-small;
+  }
 }
 
 .#{$grommet-namespace}chart-base--height-large {
   height: $size-large;
+
+  @include media-query(palm) {
+    height: $size-medium;
+  }
 }
 
 .#{$grommet-namespace}chart-base--height-sparkline {
@@ -98,10 +115,22 @@
 
 .#{$grommet-namespace}chart-axis--ticks {
   .#{$grommet-namespace}chart-axis__slot {
-    #{$dark-background-context} & {
+    &::before,
+    &::after {
+      background-color: $border-color;
+    }
+
+    #{$dark-background-context} {
       &::before,
       &::after {
         background-color: $colored-border-color;
+      }
+    }
+
+    #{$light-background-context} {
+      &::before,
+      &::after {
+        background-color: $border-color;
       }
     }
   }
@@ -144,7 +173,6 @@
         content: "";
         height: 1px;
         width: halve(halve($inuit-base-spacing-unit));
-        background-color: $border-color;
       }
     }
 
@@ -208,14 +236,6 @@
       flex-direction: row-reverse;
       padding-left: 0;
     }
-
-    &::after {
-      display: block;
-      content: "";
-      height: halve(halve($inuit-base-spacing-unit));
-      width: 1px;
-      background-color: $border-color;
-    }
   }
 
   &.#{$grommet-namespace}chart-axis--align-start {
@@ -231,6 +251,13 @@
   }
 
   &.#{$grommet-namespace}chart-axis--ticks {
+    .#{$grommet-namespace}chart-axis__slot::after {
+      display: block;
+      content: "";
+      height: halve(halve($inuit-base-spacing-unit));
+      width: 1px;
+    }
+
     &.#{$grommet-namespace}chart-axis--ticks--end {
       .#{$grommet-namespace}chart-axis__slot:not(.#{$grommet-namespace}chart-axis__slot--placeholder) {
         align-items: flex-end;
@@ -495,8 +522,12 @@
   path {
     stroke: $border-color;
 
-    #{$dark-background-context} & {
+    #{$dark-background-context} {
       stroke: $colored-border-color;
+    }
+
+    #{$light-background-context} {
+      stroke: $border-color;
     }
   }
 }
@@ -508,8 +539,12 @@
   @include graph-stroke-color-translucent(0.7);
   @include animation('fade-in-chart 1s');
 
-  #{$dark-background-context} & {
+  #{$dark-background-context} {
     @include graph-stroke-color();
+  }
+
+  #{$light-background-context} {
+    @include graph-stroke-color-translucent(0.7);
   }
 }
 
@@ -564,7 +599,11 @@
   stroke: $background-color;
   @include graph-fill-color();
 
-  #{$dark-background-context} & {
+  #{$dark-background-context} {
     stroke: $colored-active-background-color;
+  }
+
+  #{$light-background-context} {
+    stroke: $background-color;
   }
 }

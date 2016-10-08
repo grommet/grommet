@@ -135,9 +135,14 @@
   }
 }
 
-#{$dark-background-context}
 .#{$grommet-namespace}box[class*="#{$grommet-namespace}box--separator"] {
-  border-color: $colored-border-color;
+  #{$dark-background-context} {
+    border-color: $colored-border-color;
+  }
+
+  #{$light-background-context} {
+    border-color: $border-color;
+  }
 }
 
 // Interaction

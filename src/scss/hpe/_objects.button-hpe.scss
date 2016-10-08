@@ -1,7 +1,5 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-$button-accent-color: #ff8d6d;
-
 .#{$grommet-namespace}button {
   letter-spacing: 0.04167em;
 
@@ -29,7 +27,7 @@ $button-accent-color: #ff8d6d;
       }
     }
 
-    #{$dark-background-context} & {
+    #{$dark-background-context} {
 
       &:hover {
         box-shadow: 0px 0px 0px 2px $button-colored-border-color;
@@ -42,14 +40,26 @@ $button-accent-color: #ff8d6d;
       }
 
       &.#{$grommet-namespace}button--secondary {
+        border-color: $colored-text-color;
+
         &:hover {
-          box-shadow: 0px 0px 0px 2px $button-colored-border-color;
+          box-shadow: 0px 0px 0px 2px $colored-text-color;
         }
       }
 
       &.#{$grommet-namespace}button--accent {
         &:hover {
           box-shadow: 0px 0px 0px 2px $button-accent-color;
+        }
+      }
+    }
+
+    #{$light-background-context} {
+      &.#{$grommet-namespace}button--secondary {
+        border-color: $button-secondary-color;
+
+        &:hover {
+          box-shadow: 0px 0px 0px 2px $button-secondary-color;
         }
       }
     }

@@ -23,7 +23,7 @@ export default class Overlay extends Component {
     if (small) {
       this.setState({ iconSize: 'small' });
     } else {
-      let iconSize = (('small' === this.props.size) ? null : 'large');
+      let iconSize = (('small' === this.props.size) ? undefined : 'large');
       this.setState({ iconSize: iconSize });
     }
   }
@@ -49,7 +49,7 @@ export default class Overlay extends Component {
     const { ended, playing, togglePlay, videoHeader } = this.props;
     // when iconSize is small (mobile screen sizes), remove the extra padding
     // so that the play control is centered
-    let emptyBox = this.state.iconSize === 'small' ? null : <Box />;
+    let emptyBox = this.state.iconSize === 'small' ? undefined : <Box />;
 
     return (
       <Box pad="none" align="center" justify="center"

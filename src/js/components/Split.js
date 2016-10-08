@@ -88,20 +88,13 @@ export default class Split extends Component {
     delete props.onResponsive;
     delete props.showOnResponsive;
     const { responsive } = this.state;
-    const classes = classnames(
-      CLASS_ROOT,
-      {
-        [`${CLASS_ROOT}--fixed`]: fixed,
-        [`${CLASS_ROOT}--separator`]: separator
-      },
-      className
-    );
+    const classes = classnames( CLASS_ROOT, className );
 
     const filteredChildren = Children.toArray(children).filter(child => child);
     const boxedChildren = filteredChildren.map((child, index) => {
+      const lastChild = (index === filteredChildren.length - 1);
       let hidden;
-      let fixed;
-      let full;
+      let childFlex = true;
       // When we only have room to show one child, hide the appropriate one
       if ('single' === responsive &&
         (('left' === priority && index > 0) ||
@@ -110,17 +103,18 @@ export default class Split extends Component {
         hidden = true;
       } else if (filteredChildren.length > 1 &&
         ((flex === 'right' && index === 0) ||
-        (flex === 'left' && index === filteredChildren.length - 1))) {
-        fixed = true;
+        (flex === 'left' && lastChild))) {
+        childFlex = false;
       } else {
-        full = true;
+        childFlex = true;
       }
       const classes = classnames(
         `${CLASS_ROOT}__column`,
         {
-          [`${CLASS_ROOT}__column--hidden`]: hidden,
           [`${CLASS_ROOT}__column--fixed`]: fixed,
-          [`${CLASS_ROOT}__column--full`]: full
+          [`${CLASS_ROOT}__column--hidden`]: hidden,
+          [`${CLASS_ROOT}__column--flex`]: childFlex,
+          [`${CLASS_ROOT}__column--separator`]: (separator && ! lastChild)
         }
       );
       // Don't use a Box here because we don't want to constrain the child

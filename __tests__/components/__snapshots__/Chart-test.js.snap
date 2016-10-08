@@ -5,7 +5,7 @@ exports[`normalization has correct default options 1`] = `
   role="group">
   <div
     aria-label="AxisLabel"
-    className="grommetux-chart-axis grommetux-chart-axis--vertical grommetux-chart-axis--align-end grommetux-chart-axis--ticks grommetux-chart-axis--ticks-end"
+    className="grommetux-chart-axis grommetux-chart-axis--vertical grommetux-chart-axis--align-end grommetux-chart-axis--ticks grommetux-chart-axis--ticks--end"
     role="rowgroup"
     style={
       Object {

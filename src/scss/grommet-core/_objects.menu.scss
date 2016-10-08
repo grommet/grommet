@@ -14,22 +14,6 @@
 
     &:hover {
       text-decoration: none;
-      color: $link-hover-color;
-    }
-
-    #{$dark-background-context} & {
-      &:hover {
-        background-color: $colored-hover-background-color;
-      }
-    }
-
-    &.active {
-      color: $brand-color-darker;
-
-      #{$dark-background-context} & {
-        color: $active-colored-text-color;
-        background-color: $colored-active-background-color;
-      }
     }
   }
 
@@ -42,8 +26,12 @@
 .#{$grommet-namespace}menu__control {
   &:hover {
     .#{$grommet-namespace}menu__control-label {
-      #{$dark-background-context} & {
+      #{$dark-background-context} {
         color: $active-colored-text-color;
+      }
+
+      #{$light-background-context} {
+        color: $text-color;
       }
     }
   }
@@ -99,11 +87,11 @@
     &:hover,
     &:focus {
       text-decoration: none;
-      background-color: $hover-background-color;
       color: $link-hover-color;
+      background-color: $hover-background-color;
     }
 
-    #{$dark-background-context} & {
+    #{$dark-background-context} {
       &.active {
         color: $active-colored-text-color;
         background-color: $colored-active-background-color;
@@ -113,6 +101,15 @@
       &:focus {
         color: $active-colored-text-color;
         background-color: $colored-hover-background-color;
+      }
+    }
+
+    #{$light-background-context} {
+      &.active,
+      &:hover,
+      &:focus {
+        color: $link-hover-color;
+        background-color: $hover-background-color;
       }
     }
   }
@@ -175,7 +172,7 @@
   &.#{$grommet-namespace}menu__drop--large {
     @include inuit-font-size($large-menu-font-size);
   }
-}
+} // .#{$grommet-namespace}menu__drop
 
 .#{$grommet-namespace}menu--inline {
 
@@ -266,14 +263,29 @@
 
       &:not(.active) {
         background-color: $hover-background-color;
+        color: $hover-text-color;
+
+        #{$dark-background-context} {
+          background-color: $colored-hover-background-color;
+          color: $active-colored-text-color;
+        }
+
+        #{$light-background-context} {
+          background-color: $hover-background-color;
+          color: $hover-text-color;
+        }
       }
     }
 
     &.active {
       border-color: $brand-color;
 
-      #{$dark-background-context} & {
+      #{$dark-background-context} {
         border-color: transparent;
+      }
+
+      #{$light-background-context} {
+        border-color: $brand-color;
       }
     }
   }
@@ -354,10 +366,6 @@
         width: 100%;
         margin-bottom: halve($inuit-base-spacing-unit);
       }
-
-      // .#{$grommet-namespace}menu {
-      //   margin-bottom: round($inuit-base-spacing-unit * 1.5);
-      // }
     }
   }
 }

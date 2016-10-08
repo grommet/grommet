@@ -38,8 +38,12 @@
     height: $control-border-width;
     background-color: $control-background-color;
 
-    #{$dark-background-context} & {
+    #{$dark-background-context} {
       background-color: $colored-meter-background-color;
+    }
+
+    #{$light-background-context} {
+      background-color: $control-background-color;
     }
   }
 
@@ -130,8 +134,12 @@
       background: $brand-color;
       border-color: transparent;
 
-      #{$dark-background-context} & {
+      #{$dark-background-context} {
         background: #fff;
+      }
+
+      #{$light-background-context} {
+        background: $brand-color;
       }
     }
 
@@ -139,8 +147,12 @@
       background: $control-background-color;
       border-color: transparent;
 
-      #{$dark-background-context} & {
+      #{$dark-background-context} {
         background: $colored-meter-background-color;
+      }
+
+      #{$light-background-context} {
+        background: $control-background-color;
       }
     }
 
@@ -152,32 +164,39 @@
       border-radius: $control-size;
       background-color: $background-color;
 
-      #{$dark-background-context} & {
+      #{$dark-background-context} {
         border-color: $active-colored-icon-color;
+      }
+
+      #{$light-background-context} {
+        border-color: $icon-color;
       }
     }
 
     &:hover::-ms-thumb {
       border-color: $active-icon-color;
 
-      #{$dark-background-context} & {
+      #{$dark-background-context} {
         border-color: $active-colored-icon-color;
         background-color: $active-colored-icon-color;
       }
-    }
-  }
 
-  #{$dark-background-context} input[type=range] {
-    &::-webkit-slider-thumb {
-      background-color: $active-colored-icon-color;
-      border: $control-border-width solid $active-colored-icon-color;
+      #{$light-background-context} {
+        border-color: $active-icon-color;
+        background-color: $background-color;
+      }
     }
-  }
 
-  #{$dark-background-context} {
-    input[type=range]::-moz-range-thumb {
-      background-color: $active-colored-icon-color;
-      border: $control-border-width solid $active-colored-icon-color;
+    #{$dark-background-context} {
+      &::-webkit-slider-thumb {
+        background-color: $active-colored-icon-color;
+        border: $control-border-width solid $active-colored-icon-color;
+      }
+
+      &::-moz-range-thumb {
+        background-color: $active-colored-icon-color;
+        border: $control-border-width solid $active-colored-icon-color;
+      }
     }
   }
 }

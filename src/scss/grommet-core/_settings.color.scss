@@ -15,6 +15,7 @@ $brand-status-colors: (
   unknown: #a8a8a8,
   disabled: #a8a8a8
 ) !default;
+$brand-error-colored-color: #F59F9F !default;
 $brand-grey-colors: (#333333, #444444, #555555, #666666) !default;
 $brand-graph-colors: $brand-neutral-colors !default;
 $brand-light-colors: (#ffffff, #f5f5f5) !default;
@@ -81,7 +82,7 @@ $button-text-color: $text-color !default;
 $button-secondary-color: rgba(#333, 0.6) !default;
 $button-accent-color: nth($brand-accent-colors, 1) !default;
 $button-drop-shadow-color: rgba(170, 170, 170, 0.5) !default;
-$button-colored-border-color: rgba(255, 255, 255, 0.7) !default;
+$button-colored-border-color: $brand-color !default; ///rgba(255, 255, 255, 0.7) !default;
 
 $layer-overlay-background-color: rgba(0, 0, 0, 0.5);
 $layer-background-color: #fff !default; // rgba($background-color, 0.95); ///inherit; //rgba(255, 255, 255, 0.95);
@@ -100,7 +101,13 @@ $sort-placeholder-background-color: rgba(0, 0, 255, 0.1); // TODO: recolor
 $inverse-background-color: nth($brand-neutral-colors, 1);
 $inverse-color: #fff;
 
+$dark-background:
+  '.#{$grommet-namespace}background-color-index--dark, .#{$grommet-namespace}background-color-index--light .#{$grommet-namespace}background-color-index--dark' !default;
+$light-background:
+  '.#{$grommet-namespace}background-color-index--light, .#{$grommet-namespace}background-color-index--dark .#{$grommet-namespace}background-color-index--light',  !default;
+
+
 $dark-background-context:
-  '.#{$grommet-namespace}background-color-index--dark' !default;
+  '.#{$grommet-namespace}background-color-index--dark &, .#{$grommet-namespace}background-color-index--light .#{$grommet-namespace}background-color-index--dark &' !default;
 $light-background-context:
-  '.#{$grommet-namespace}background-color-index--light' !default;
+  '.#{$grommet-namespace}background-color-index--light &, .#{$grommet-namespace}background-color-index--dark .#{$grommet-namespace}background-color-index--light &',  !default;

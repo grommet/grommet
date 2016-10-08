@@ -54,20 +54,6 @@
     @include paragraph();
   }
 
-  #{$dark-background-context} {
-    p,
-    dd {
-      color: $colored-text-color;
-    }
-  }
-
-  #{$light-background-context} {
-    p,
-    dd {
-      color: $text-color;
-    }
-  }
-
   blockquote {
     @include inuit-font-size(36px);
     margin-top: $inuit-base-spacing-unit;
@@ -101,5 +87,35 @@
 
   svg {
     max-width: 100%;
+  }
+
+  #{$dark-background} {
+    p:not(.#{$grommet-namespace}paragraph),
+    dd {
+      color: $colored-text-color;
+    }
+
+    .secondary {
+      color: $colored-text-color;
+    }
+
+    .error {
+      color: $brand-error-colored-color;
+    }
+  }
+
+  #{$light-background} {
+    p:not(.#{$grommet-namespace}paragraph),
+    dd {
+      color: $text-color;
+    }
+
+    .secondary {
+      color: $secondary-text-color;
+    }
+
+    .error {
+      color: map-get($brand-status-colors, critical);
+    }
   }
 }

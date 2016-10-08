@@ -111,7 +111,8 @@ export default class Legend extends Component {
   _seriesTotal () {
     const { series } = this.props;
     let total = 0;
-    series.forEach(item => total += item.value === 'number' ? item.value  : 0 );
+    series.forEach(item =>
+      total += typeof item.value === 'number' ? item.value  : 0 );
     return total;
   }
 

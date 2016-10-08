@@ -496,14 +496,14 @@ export default class Distribution extends Component {
     const { allIcons, focus, height, items, mouseActive, width } = this.state;
     const classes = classnames(
       CLASS_ROOT,
-      className,
       {
         [`${CLASS_ROOT}--full`]: full,
         [`${CLASS_ROOT}--icons`]: allIcons,
         [`${CLASS_ROOT}--${size}`]: size,
         [`${CLASS_ROOT}--vertical`]: vertical,
         [`${CLASS_ROOT}--loading`]: (items || []).length === 0
-      }
+      },
+      className
     );
 
     let background;

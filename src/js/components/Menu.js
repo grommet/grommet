@@ -161,8 +161,10 @@ class MenuDrop extends Component {
     const {
       dropAlign, size, children, control, colorIndex, onClick, ...props
     } = this.props;
-    const restProps = Props.omit(props,
-      Object.keys(MenuDrop.childContextTypes));
+    const restProps = Props.omit(props, [
+      ...Object.keys(MenuDrop.childContextTypes),
+      ...Object.keys(MenuDrop.propTypes)
+    ]);
 
     // Put nested Menus inline
     const menuDropChildren = React.Children.map(children, child => {
@@ -208,6 +210,7 @@ class MenuDrop extends Component {
 MenuDrop.propTypes = {
   control: PropTypes.node,
   dropAlign: Drop.alignPropType,
+  dropColorIndex: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   router: PropTypes.any,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
@@ -289,7 +292,7 @@ export default class Menu extends Component {
           document.removeEventListener('click', this._onClose);
           if (this._drop) {
             this._drop.remove();
-            this._drop = null;
+            this._drop = undefined;
           }
           break;
         case 'focused':
@@ -433,6 +436,7 @@ export default class Menu extends Component {
       pad, ...props
     } = this.props;
     delete props.closeOnClick;
+    delete props.dropColorIndex;
     delete props.dropAlign;
     delete props.icon;
     delete props.inline;

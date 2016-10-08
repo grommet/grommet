@@ -31,18 +31,19 @@ export default class Search extends Component {
     this._announceSuggestion = this._announceSuggestion.bind(this);
     this._onEnter = this._onEnter.bind(this);
     this._onClickSuggestion = this._onClickSuggestion.bind(this);
+    this._onMouseUp = this._onMouseUp.bind(this);
     this._onInputKeyDown = this._onInputKeyDown.bind(this);
     this._onSink = this._onSink.bind(this);
     this._onResponsive = this._onResponsive.bind(this);
     this._stopPropagation = this._stopPropagation.bind(this);
 
     this.state = {
+      announceChange: false,
       activeSuggestionIndex: -1,
       align: 'left',
       dropActive: false,
       inline: props.inline,
-      small: false,
-      announceChange: false
+      small: false
     };
   }
 
@@ -124,8 +125,8 @@ export default class Search extends Component {
     }
 
     if (announceChange && suggestions) {
-      const searchSuggestionMessage = Intl.getMessage(
-        intl, 'Search Suggestions', {
+      const matchResultsMessage = Intl.getMessage(
+        intl, 'Match Results', {
           count: suggestions.length
         }
       );
@@ -133,7 +134,7 @@ export default class Search extends Component {
       if (suggestions.length) {
         navigationHelpMessage = `(${Intl.getMessage(intl, 'Navigation Help')})`;
       }
-      announce(`${searchSuggestionMessage} ${navigationHelpMessage}`);
+      announce(`${matchResultsMessage} ${navigationHelpMessage}`);
       this.setState({ announceChange: false });
     }
   }
@@ -163,7 +164,7 @@ export default class Search extends Component {
   }
 
   _onInputKeyDown (event) {
-    const { inline, suggestions } = this.props;
+    const { inline, suggestions, onKeyDown } = this.props;
     const { dropActive } = this.state;
     if (suggestions) {
       const up = 38;
@@ -177,6 +178,9 @@ export default class Search extends Component {
         }
       }
     }
+    if (onKeyDown) {
+      onKeyDown(event);
+    }
   }
 
   _onAddDrop (event) {
@@ -188,10 +192,14 @@ export default class Search extends Component {
     this.setState({ dropActive: false });
   }
 
-  _onFocusInput () {
+  _onFocusInput (event) {
+    const { onFocus } = this.props;
     this.setState({
       activeSuggestionIndex: -1
     });
+    if (onFocus) {
+      onFocus(event);
+    }
   }
 
   _fireDOMChange () {
@@ -286,9 +294,13 @@ export default class Search extends Component {
   }
 
   _onMouseUp(event) {
+    const { onMouseUp } = this.props;
     // This fixes a Safari bug which prevents the input
     // text from being selected on focus.
     event.preventDefault();
+    if (onMouseUp) {
+      onMouseUp(event);
+    }
   }
 
   _onSink (event) {

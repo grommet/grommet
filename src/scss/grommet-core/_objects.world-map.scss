@@ -9,6 +9,7 @@
   stroke-width: 6px;
   stroke-linecap: round;
   transition: stroke-width $base-animation-duration;
+  outline: none;
 }
 
 .#{$grommet-namespace}world-map__continent--active {

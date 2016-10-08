@@ -118,7 +118,7 @@ export default class Timestamp extends Component {
 
     const date = (this.state.date)
       ? <span className={`${CLASS_ROOT}__date`}>{this.state.date}</span>
-      : null;
+    : undefined;
 
     const time = (this.state.time || this.state.hours || this.state.minutes
       || this.state.seconds)
@@ -128,7 +128,7 @@ export default class Timestamp extends Component {
           {this.state.minutes}
           {this.state.seconds}
         </span>
-      : null;
+      : undefined;
 
     return (
       <span {...props} className={classes}>

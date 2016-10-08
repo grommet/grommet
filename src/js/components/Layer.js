@@ -3,10 +3,8 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
-
 import Button from './Button';
 import CloseIcon from './icons/base/Close';
-
 import CSSClassnames from '../utils/CSSClassnames';
 import DOMUtils from '../utils/DOM';
 import Intl from '../utils/Intl';
@@ -34,10 +32,12 @@ class LayerContents extends Component {
   }
 
   componentDidMount () {
-    const { onClose } = this.props;
+    const { hidden, onClose } = this.props;
 
-    this.anchorStepRef.focus();
-    this.anchorStepRef.scrollIntoView();
+    if (!hidden) {
+      this.anchorStepRef.focus();
+      this.anchorStepRef.scrollIntoView();
+    }
 
     this._keyboardHandlers = {
       tab: this._processTab
@@ -209,14 +209,14 @@ export default class Layer extends Component {
     return classnames(
       'grommet',
       CLASS_ROOT,
-      className,
       {
         [`${CLASS_ROOT}--align-${this.props.align}`]: align,
         [`${CLASS_ROOT}--closeable`]: closer,
         [`${CLASS_ROOT}--flush`]: flush,
         [`${CLASS_ROOT}--hidden`]: hidden,
         [`${CLASS_ROOT}--peek`]: peek
-      }
+      },
+      className
     );
   }
 
@@ -251,13 +251,14 @@ export default class Layer extends Component {
 
     if (grommetApps) {
       Array.prototype.slice.call(grommetApps).forEach((grommetApp) => {
-        grommetApp.setAttribute('aria-hidden', ariaHidden);
         if (ariaHidden) {
+          grommetApp.setAttribute('aria-hidden', false);
           grommetApp.classList.remove(`${APP}--hidden`);
           // this must be null to work
           grommetApp.style.top = null;
           grommetApp.style.left = null;
         } else {
+          grommetApp.setAttribute('aria-hidden', true);
           grommetApp.classList.add(`${APP}--hidden`);
           // scroll body content to the original position
           grommetApp.style.top = `-${this._originalScrollPosition.top}px`;
@@ -281,6 +282,8 @@ export default class Layer extends Component {
       ReactDOM.render(contents, this._element, () => {
         if (!hidden) {
           this._handleAriaHidden(false);
+        } else {
+          this._handleAriaHidden(true);
         }
       });
     }
@@ -292,7 +295,7 @@ export default class Layer extends Component {
 
     ReactDOM.unmountComponentAtNode(this._element);
     this._element.parentNode.removeChild(this._element);
-    this._element = null;
+    this._element = undefined;
   }
 
   render () {

@@ -16,6 +16,7 @@ export default class SkipLinks extends Component {
     super(props, context);
     this._processTab = this._processTab.bind(this);
     this._onFocus = this._onFocus.bind(this);
+    this._onClick = this._onClick.bind(this);
     this._updateAnchors = this._updateAnchors.bind(this);
     this._checkForSkipLink = this._checkForSkipLink.bind(this);
     this.state = {anchors: [], showLayer: false};
@@ -97,12 +98,13 @@ export default class SkipLinks extends Component {
     }
   }
 
-  _onClick (destId) {
-    return function (event) {
-      let dest = document.getElementById(destId);
+  _onClick (destId, event) {
+    event.preventDefault();
+    const dest = document.getElementById(destId);
+    this.setState({showLayer: false}, () => {
       dest.focus();
-      this.setState({showLayer: false});
-    }.bind(this);
+      dest.scrollIntoView();
+    });
   }
 
   render () {
@@ -113,7 +115,7 @@ export default class SkipLinks extends Component {
       return (
         <a href={'#' + anchor.id}
            onFocus={this._onFocus}
-           onClick={this._onClick(anchor.id)}
+           onClick={this._onClick.bind(this, anchor.id)}
            id={`skipLayer_${anchor.id}`}
            key={`skipLayerItem_${index}`}
            aria-label={a11yLabel}>

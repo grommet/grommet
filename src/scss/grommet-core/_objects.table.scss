@@ -31,6 +31,8 @@
 
 .#{$grommet-namespace}table {
 
+  width: 100%;
+
   table {
     width: 100%;
     border-collapse: collapse;
@@ -55,6 +57,14 @@
     font-weight: 100;
     @include inuit-font-size(20px);
     border-bottom: 1px solid $border-color;
+
+    #{$dark-background-context} {
+      border-color: $colored-border-color;
+    }
+
+    #{$light-background-context} {
+      border-color: $border-color;
+    }
   }
 }
 
@@ -90,9 +100,19 @@
 }
 
 .#{$grommet-namespace}table--selectable {
+  .#{$grommet-namespace}table__table {
+    outline: none;
+  }
+
+  .#{$grommet-namespace}table__table--focus {
+    border-color: $focus-border-color;
+    box-shadow: 0 0 1px 1px $focus-border-color;
+  }
+
   tbody {
     tr {
       cursor: pointer;
+      outline: none;
 
       td {
         transition: background-color 0.2s;
@@ -103,20 +123,32 @@
           background-color: $selected-background-color;
           color: $selected-text-color;
 
-          #{$dark-background-context} & {
+          #{$dark-background-context} {
             background-color: $colored-active-background-color;
             color: $active-colored-text-color;
+          }
+
+          #{$light-background-context} {
+            background-color: $selected-background-color;
+            color: $selected-text-color;
           }
         }
       }
 
-      &:hover:not(.#{$grommet-namespace}table-row--selected) {
+      &.#{$grommet-namespace}table-row--active,
+      &:hover {
         td {
           background-color: $hover-background-color;
           color: $hover-text-color;
 
-          #{$dark-background-context} & {
+          #{$dark-background-context} {
+            background-color: $colored-hover-background-color;
             color: $active-colored-text-color;
+          }
+
+          #{$light-background-context} {
+            background-color: $hover-background-color;
+            color: $hover-text-color;
           }
         }
       }

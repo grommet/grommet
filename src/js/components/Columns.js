@@ -18,7 +18,7 @@ export default class Columns extends Component {
     this.state = {
       count: 1,
       maxCount: this.props.maxCount,
-      columnBreakpoints: null,
+      columnBreakpoints: undefined,
       initMobile: false,
       margin: this.props.margin
     };
@@ -99,7 +99,7 @@ export default class Columns extends Component {
       }
     }
 
-    return null;
+    return undefined;
   }
 
   _getColumnBreakpoints () {

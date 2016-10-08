@@ -58,7 +58,7 @@ $active-darken: 20%;
       }
     }
 
-    #{$dark-background-context} & {
+    #{$dark-background-context} {
 
       &:hover {
         border-color: darken($button-colored-border-color, $hover-darken);

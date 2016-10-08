@@ -5,6 +5,10 @@ import renderer from 'react/lib/ReactTestRenderer';
 
 import Markdown from '../../src/js/components/Markdown';
 
+// needed because this:
+// https://github.com/facebook/jest/issues/1353
+jest.mock('react-dom');
+
 describe('Markdown', () => {
   it('has correct default options', () => {
     const component = renderer.create(

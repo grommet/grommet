@@ -34,11 +34,11 @@ export default class SearchInput extends Component {
     this._announceSuggestion = this._announceSuggestion.bind(this);
 
     this.state = {
+      announceChange: false,
       dropActive: false,
       defaultValue: props.defaultValue,
       value: props.value,
-      activeSuggestionIndex: -1,
-      announceChange: false
+      activeSuggestionIndex: -1
     };
   }
 
@@ -87,8 +87,8 @@ export default class SearchInput extends Component {
     }
 
     if (announceChange && suggestions) {
-      const searchSuggestionMessage = Intl.getMessage(
-        intl, 'Search Suggestions', {
+      const matchResultsMessage = Intl.getMessage(
+        intl, 'Match Results', {
           count: suggestions.length
         }
       );
@@ -96,7 +96,7 @@ export default class SearchInput extends Component {
       if (suggestions.length) {
         navigationHelpMessage = `(${Intl.getMessage(intl, 'Navigation Help')})`;
       }
-      announce(`${searchSuggestionMessage} ${navigationHelpMessage}`);
+      announce(`${matchResultsMessage} ${navigationHelpMessage}`);
       this.setState({ announceChange: false });
     }
   }
@@ -136,7 +136,9 @@ export default class SearchInput extends Component {
 
   _onInputChange (event) {
     const { onDOMChange } = this.props;
-    this.setState({ activeSuggestionIndex: -1, announceChange: true });
+    this.setState({
+      activeSuggestionIndex: -1, announceChange: true, dropActive: true 
+    });
     if (onDOMChange) {
       this._fireDOMChange();
     }
@@ -169,9 +171,9 @@ export default class SearchInput extends Component {
 
   _onNextSuggestion () {
     const { suggestions } = this.props;
+    const { activeSuggestionIndex } = this.state;
     if (suggestions) {
-      let index = this.state.activeSuggestionIndex;
-      index = Math.min(index + 1, suggestions.length - 1);
+      const index = Math.min(activeSuggestionIndex + 1, suggestions.length - 1);
       this.setState({ activeSuggestionIndex: index },
         this._announceSuggestion.bind(this, index));
     }

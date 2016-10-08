@@ -30,7 +30,7 @@ export default class AccordionPanel extends Component {
 
   render () {
     const {
-      active, animate, className, children, heading, pad
+      a11yTitle, active, animate, className, children, heading, pad
     } = this.props;
     const { intl } = this.context;
 
@@ -43,14 +43,14 @@ export default class AccordionPanel extends Component {
     );
 
     const tabContentTitle = Intl.getMessage(intl, 'Tab Contents', {
-      activeTitle: heading
+      activeTitle: a11yTitle || heading
     });
 
     return (
       <div>
         <ListItem className={classes} direction='column' pad='none'
           aria-expanded={active} aria-selected={active} role='tab'
-          aria-label={heading}>
+          aria-label={a11yTitle || heading}>
           <Button fill={true} plain={true} onClick={this._onClickTab}>
             <Header pad={pad} full='horizontal' direction='row'
               justify='between' align='center' responsive={false}
@@ -70,6 +70,7 @@ export default class AccordionPanel extends Component {
 };
 
 AccordionPanel.propTypes = {
+  a11yTitle: PropTypes.string,
   active: PropTypes.bool, // set by Accordion
   animate: PropTypes.bool,
   heading: PropTypes.node.isRequired,

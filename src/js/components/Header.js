@@ -59,6 +59,7 @@ export default class Header extends Component {
     } = this.props;
     const classes = classnames(
       CLASS_ROOT, {
+        [`${CLASS_ROOT}--${size}`]: (size && typeof size === 'string'),
         [`${CLASS_ROOT}--float`]: float,
         [`${CLASS_ROOT}--splash`]: splash
       },
@@ -66,7 +67,6 @@ export default class Header extends Component {
     );
     const containerClasses = classnames(
       `${CLASS_ROOT}__container`, {
-        [`${CLASS_ROOT}--${size}`]: (size && typeof size === 'string'),
         [`${CLASS_ROOT}__container--fixed`]: fixed,
         // add default color index if none is provided
         [`${CLASS_ROOT}__container--fill`]: (fixed && !colorIndex),

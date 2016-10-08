@@ -51,7 +51,11 @@ describe('Legend', () => {
         }
       ]} units="B" />
     );
+
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+
+    // should properly calculate total
+    expect(component.getInstance()._seriesTotal()).toBe(125);
   });
 });

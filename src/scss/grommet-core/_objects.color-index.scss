@@ -8,11 +8,11 @@
   @return tint($color, 5%);
 }
 
-#{$dark-background-context} {
+#{$dark-background} {
   color: $active-colored-text-color;
 }
 
-#{$light-background-context} {
+#{$light-background} {
   color: $text-color;
 }
 

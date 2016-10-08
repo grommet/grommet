@@ -224,7 +224,7 @@ export default class Graphic extends Component {
   }
 
   _renderTopLayer () {
-    return null;
+    return undefined;
   }
 
   _renderA11YTitle () {
