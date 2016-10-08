@@ -2,11 +2,14 @@
 
 import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
-
 import Box from '../Box';
 import SocialShare from '../SocialShare';
 import Form from '../Form';
 import FormField from '../FormField';
+import CSSClassnames from '../../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.VIDEO;
+const BUTTON_CLASS = `${CLASS_ROOT}__button`;
 
 export default class Overlay extends Component {
 
@@ -23,7 +26,8 @@ export default class Overlay extends Component {
   render() {
     const { shareLink, shareHeadline, shareText } = this.props;
 
-    let shareContent;
+    // this has to be null to be a valid react children
+    let shareContent = null;
     if (shareLink) {
       shareContent = (
         <Box align='center'>
@@ -34,14 +38,18 @@ export default class Overlay extends Component {
                 onClick={this._onClickShareLink} readOnly />
             </FormField>
           </Form>
-          <Box direction='row'>
-            <SocialShare type='email' link={shareLink}
+          <Box direction='row' className={BUTTON_CLASS}>
+            <SocialShare type='email' link={shareLink} colorIndex='brand'
+              className={`${BUTTON_CLASS}__icon`}
               title={shareHeadline} text={shareText} />
-            <SocialShare type='twitter'
+            <SocialShare type='twitter' colorIndex='brand'
+              className={`${BUTTON_CLASS}__icon`}
               link={shareLink} text={shareHeadline} />
-            <SocialShare type='facebook'
+            <SocialShare type='facebook' colorIndex='brand'
+              className={`${BUTTON_CLASS}__icon`}
               link={shareLink} />
-            <SocialShare type='linkedin'
+            <SocialShare type='linkedin' colorIndex='brand'
+              className={`${BUTTON_CLASS}__icon`}
               link={shareLink} title={shareHeadline} text={shareText} />
           </Box>
         </Box>

@@ -2,44 +2,56 @@
 
 import React, { Component, PropTypes } from 'react';
 import Intl from '../../utils/Intl';
+import CSSClassnames from '../../utils/CSSClassnames';
 import Button from '../Button';
-import PlayIcon from '../icons/base/Play';
+import CirclePlay from '../icons/base/CirclePlay';
+import Play from '../icons/base/Play';
 import PauseIcon from '../icons/base/Pause';
 import RefreshIcon from '../icons/base/Refresh';
 
-export default class FullscreenButton extends Component {
+const CLASS_ROOT = CSSClassnames.VIDEO;
+const BUTTON_CLASS = `${CLASS_ROOT}__button`;
+
+export default class PlayButton extends Component {
 
   render () {
-    const { className, ended, iconSize, playing, togglePlay } = this.props;
+    const {
+      ended, iconSize, playing, primary, togglePlay
+    } = this.props;
+    const { intl } = this.context;
 
-    let controlIconSize = iconSize;
-    let controlIcon = (playing ?
-      <PauseIcon size={controlIconSize} /> : (ended ?
-        <RefreshIcon size={controlIconSize} /> :
-          <PlayIcon size={controlIconSize} />));
-    let a11yControlButtonMessage = (playing ?
-      'Pause Video' : (ended ?
-        'Restart Video' :
-          'Play Video'));
+    const PlayIcon = primary ? CirclePlay : Play;
+    const Icon = (playing ? PauseIcon : (ended ? RefreshIcon : PlayIcon));
+    const controlIcon = (
+      <Icon className={`${BUTTON_CLASS}__icon`} size={iconSize}
+        colorIndex='brand' />
+    );
 
-    let a11yControlButtonTitle =
-      Intl.getMessage(this.context.intl, a11yControlButtonMessage);
+    const a11yControlButtonMessage = (playing ?
+      'Pause Video' : (ended ? 'Restart Video' :'Play Video')
+    );
+
+    const a11yControlButtonTitle =
+      Intl.getMessage(intl, a11yControlButtonMessage);
 
     return (
-      <Button className={className} plain={true}
-        primary={true} onClick={togglePlay}
-        icon={controlIcon} a11yTitle={a11yControlButtonTitle} />
+      <Button plain={true} className={BUTTON_CLASS} onClick={togglePlay}
+        a11yTitle={a11yControlButtonTitle}>
+        {controlIcon}
+      </Button>
     );
   }
 }
 
-FullscreenButton.propTypes = {
+PlayButton.propTypes = {
   iconSize: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
   playing: PropTypes.bool,
+  primary: PropTypes.bool,
   ended: PropTypes.bool,
   togglePlay: PropTypes.func
 };
 
-FullscreenButton.defaultProps = {
-  iconSize: 'medium'
+PlayButton.defaultProps = {
+  iconSize: 'xlarge',
+  primary: true
 };

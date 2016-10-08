@@ -52,6 +52,8 @@ export default class ProgressBar extends Component {
             <div className={tickClasses}
               onMouseOver={this._onMouseOver.bind(this, index)}
               onMouseOut={this.props.onChapterHover}
+              onFocus={this._onMouseOver.bind(this, index)}
+              onBlur={this.props.onChapterHover}
               onClick={this._onChapterClick.bind(this, chapter.time)} />
             <div className={`${CLASS_ROOT}__chapter-marker-track`} />
           </div>

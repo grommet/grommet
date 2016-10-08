@@ -1,14 +1,14 @@
 exports[`SocialShare has correct className rendering 1`] = `
 <a
   aria-label={undefined}
-  className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon testing"
+  className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fgrommet.io&title=&summary="
   target="_blank">
   <span
     className="grommetux-anchor__icon">
     <svg
       aria-label="Share on Linkedin"
-      className="grommetux-control-icon grommetux-control-icon-social-linkedin grommetux-control-icon--responsive"
+      className="grommetux-control-icon grommetux-control-icon-social-linkedin testing grommetux-control-icon--responsive"
       height="24px"
       role="img"
       version="1.1"

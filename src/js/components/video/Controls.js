@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
 import Button from '../Button';
@@ -13,9 +13,11 @@ import VideoFullscreenButton from './FullscreenButton';
 import VideoProgressBar from './ProgressBar';
 import VideoPlayButton from './PlayButton';
 import CSSClassnames from '../../utils/CSSClassnames';
+import Intl from '../../utils/Intl';
 import { formatTime } from '../../utils/FormatTime';
 
 const CLASS_ROOT = CSSClassnames.VIDEO;
+const BUTTON_CLASS = `${CLASS_ROOT}__button`;
 
 export default class Controls extends Component {
 
@@ -47,15 +49,24 @@ export default class Controls extends Component {
   }
 
   _renderMuteButton () {
+    const { muted, toggleMute } = this.props;
+    const { intl } = this.context;
+    let buttonMessage = Intl.getMessage(intl, 'Mute');
+    let Icon = VolumeMuteIcon;
+    if (muted) {
+      Icon = VolumeIcon;
+      buttonMessage = Intl.getMessage(intl, 'Unmute');
+    }
     return (
-      <Button plain={true} primary={true}
-        onClick={this.props.toggleMute} icon={this.props.muted ?
-          <VolumeMuteIcon /> : <VolumeIcon />} />
+      <Button plain={true} onClick={toggleMute} className={BUTTON_CLASS}
+        a11yTitle={buttonMessage}>
+        <Icon className={`${BUTTON_CLASS}__icon`} colorIndex='brand' />
+      </Button>
     );
   }
 
   _renderChapterLabels () {
-    const { duration, timeline } = this.props;
+    const { duration, timeline, ...props } = this.props;
     const { activeChapterIndex } = this.state;
 
     if (timeline) {
@@ -80,7 +91,7 @@ export default class Controls extends Component {
       });
 
       return (
-        <Box pad="none" className={`${CLASS_ROOT}__chapter-labels`}
+        <Box {...props} pad="none" className={`${CLASS_ROOT}__chapter-labels`}
           direction="row">
           {chapterLabels}
         </Box>
@@ -118,9 +129,8 @@ export default class Controls extends Component {
           direction="row" justify="between">
           <Box direction="row" align="center"
             pad={{ horizontal: 'small', vertical: 'none'}}>
-            <VideoPlayButton
-              playing={playing} ended={ended}
-              togglePlay={togglePlay} />
+            <VideoPlayButton playing={playing} ended={ended} iconSize='medium'
+              togglePlay={togglePlay} primary={false} />
             {this._renderTitle()}
           </Box>
           <Box direction="row" align="center"
@@ -137,3 +147,7 @@ export default class Controls extends Component {
     return overlayContent;
   }
 }
+
+Controls.contextTypes = {
+  intl: PropTypes.object
+};

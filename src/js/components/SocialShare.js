@@ -11,7 +11,7 @@ import SocialMailIcon from './icons/base/SocialMail';
 export default class SocialShare extends Component {
   render () {
     const {
-      colorIndex, type, link, text, title, a11yTitle, ...props
+      className, colorIndex, type, link, text, title, a11yTitle, ...props
     } = this.props;
 
     let socialIcon = undefined;
@@ -26,25 +26,25 @@ export default class SocialShare extends Component {
 
     if (type === 'twitter') {
       socialIcon = (<SocialTwitterIcon a11yTitle={calculatedA11yTitle}
-        colorIndex={colorIndex} />);
+        className={className} colorIndex={colorIndex} />);
       href = `https://twitter.com/intent/tweet?url=` +
         `${encodedLink}&text=${encodedText}`;
     } else if (type === 'linkedin') {
       socialIcon = (<SocialLinkedinIcon a11yTitle={calculatedA11yTitle}
-        colorIndex={colorIndex} />);
+        className={className} colorIndex={colorIndex} />);
       href = `https://www.linkedin.com/shareArticle?mini=true&url=` +
         `${encodedLink}&title=${encodedTitle}&summary=${encodedText}`;
     } else if (type === 'google') {
       socialIcon = (<SocialGooglePlusIcon a11yTitle={calculatedA11yTitle}
-        colorIndex={colorIndex} />);
+        className={className} colorIndex={colorIndex} />);
       href = `https://plus.google.com/share?url=${encodedLink}`;
     } else if (type === 'facebook') {
       socialIcon = (<SocialFacebookIcon a11yTitle={calculatedA11yTitle}
-        colorIndex={colorIndex} />);
+        className={className} colorIndex={colorIndex} />);
       href = `https://www.facebook.com/sharer/sharer.php?u=${encodedLink}`;
     } else if (type === 'email') {
       socialIcon = (<SocialMailIcon a11yTitle={calculatedA11yTitle}
-        colorIndex={colorIndex} />);
+        className={className} colorIndex={colorIndex} />);
       href = `mailto:?subject=` +
         `${encodedTitle}&body=${encodedText}%0D%0A${encodedLink}`;
       target = '_self';
@@ -58,6 +58,7 @@ export default class SocialShare extends Component {
 
 SocialShare.propTypes = {
   a11yTitle: PropTypes.string,
+  className: PropTypes.string,
   colorIndex: PropTypes.string,
   link: PropTypes.string.isRequired,
   text: PropTypes.string,
