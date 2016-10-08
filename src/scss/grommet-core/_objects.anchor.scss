@@ -60,6 +60,10 @@
   @include background-context-icon($icon-color, $active-icon-color);
 }
 
+.#{$grommet-namespace}anchor--icon {
+  flex: 0 0 auto;
+}
+
 .#{$grommet-namespace}anchor--primary,
 .#{$grommet-namespace}anchor--icon-label {
   @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
