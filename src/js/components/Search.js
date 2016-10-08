@@ -66,7 +66,7 @@ export default class Search extends Component {
       && inline) {
       this.setState({ dropActive: false });
     }
-    if (! small) {
+    if (! small && nextProps.inline !== this.props.inline) {
       this.setState({ inline: nextProps.inline });
     }
   }
