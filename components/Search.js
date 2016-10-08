@@ -154,7 +154,7 @@ var Search = function (_Component) {
       } else if ((!nextProps.suggestions || nextProps.suggestions.length === 0) && inline) {
         this.setState({ dropActive: false });
       }
-      if (!small) {
+      if (!small && nextProps.inline !== this.props.inline) {
         this.setState({ inline: nextProps.inline });
       }
     }
