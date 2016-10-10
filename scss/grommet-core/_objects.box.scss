@@ -9,6 +9,8 @@
       @include media-query (palm) {
         flex-basis: auto;
         max-width: none;
+        // prevent width overflow in proportional boxes in mobile
+        width: 100%;
       }
     }
   }
@@ -55,6 +57,8 @@
     > .#{$grommet-namespace}box--basis-3-4 {
       flex-basis: auto;
       max-width: none;
+      // prevent width overflow in proportional boxes in mobile
+      width: 100%;
     }
   }
 }
@@ -191,6 +195,11 @@
   flex: 1 1;
   // need to fix flexbox issue with min-width: auto for some tags
   min-width: 0;
+
+  // IE11 specific fix for box with flex option being squashed vertically
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    flex-basis: auto;
+  }
 }
 
 .#{$grommet-namespace}box--flex-off {
