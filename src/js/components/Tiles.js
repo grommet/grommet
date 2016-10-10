@@ -269,23 +269,24 @@ export default class Tiles extends Component {
   }
 
   _layout () {
-    const { direction } = this.props;
+    const { children, direction } = this.props;
     if ('row' === direction) {
       // determine if we have more tiles than room to fit
       const tiles = findDOMNode(this.tilesRef);
       // mark any tiles that might be clipped
       const rect = tiles.getBoundingClientRect();
-      const children = tiles.querySelectorAll(`.${TILE}`);
 
-      const eclipsed = [];
-
-      Array.from(children).map((child, index) => {
-        const childRect = child.getBoundingClientRect();
-        // 12 accounts for padding
-        if ((childRect.left + 12) < rect.left ||
-          (childRect.right - 12) > rect.right) {
-          eclipsed.push(index);
+      const eclipsed = children.map((child, index) => {
+        if (this[`tileRef${index}`]) {
+          const tile = findDOMNode(this[`tileRef${index}`]);
+          const tileRect = tile.getBoundingClientRect();
+          // 12 accounts for padding
+          if ((tileRect.left + 12) < rect.left ||
+            (tileRect.right - 12) > rect.right) {
+            return index;
+          }
         }
+        return undefined;
       });
 
       this.setState({
@@ -307,7 +308,8 @@ export default class Tiles extends Component {
       if (element.type && element.type.displayName === 'Tile') {
         const elementClone = React.cloneElement(element, {
           eclipsed: this.state.eclipsed.indexOf(index) > -1,
-          hoverBorder: !flush
+          hoverBorder: !flush,
+          ref: ref => this[`tileRef${index}`] = ref
         });
 
         return elementClone;
