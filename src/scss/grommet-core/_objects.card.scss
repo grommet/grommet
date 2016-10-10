@@ -20,17 +20,6 @@ $card-hover-color: #EBEBEB;
 }
 
 .#{$grommet-namespace}card {
-  // IE11 fix for card box width overflowing outermost card div
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    &.#{$grommet-namespace}box--direction-column {
-      width: 100%;
-    }
-
-    > div { // too generic, change
-      width: 100%;
-    }
-  }
-
   @include media-query(palm) {
     padding: 0;
 
@@ -49,6 +38,13 @@ $card-hover-color: #EBEBEB;
   div:focus, // too generic, change
   a:focus {
     outline: none;
+  }
+}
+
+.#{$grommet-namespace}card__content {
+  // IE11 specific fix to prevent width overflow
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    width: 100%;
   }
 }
 
