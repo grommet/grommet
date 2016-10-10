@@ -12,8 +12,9 @@ const NAMESPACE = CSSClassnames.NAMESPACE;
 export default class Tile extends Component {
 
   render () {
-    const { children, className, onClick, wide, status,
-      hoverStyle, hoverColorIndex, hoverBorder, hoverBorderSize
+    const {
+      children, className, eclipsed, hoverBorder, hoverBorderSize,
+      hoverColorIndex, hoverStyle, onClick, status, wide
     } = this.props;
     const restProps = Props.omit(this.props, Object.keys(Tile.propTypes));
 
@@ -32,7 +33,8 @@ export default class Tile extends Component {
         [`${NAMESPACE}${hoverStyle}${(hoverStyle == 'border') ?
           ((borderSize) ? `-${borderSize}` : '-medium') : ''
         }-hover-color-index-${hoverColorIndex}`]: hoverStyle,
-        [`${CLASS_ROOT}--hover-border-${borderSize}`]: borderSize
+        [`${CLASS_ROOT}--hover-border-${borderSize}`]: borderSize,
+        [`${CLASS_ROOT}--eclipsed`]: eclipsed
       }
     );
 
@@ -48,6 +50,7 @@ export default class Tile extends Component {
 }
 
 Tile.propTypes = {
+  eclipsed: PropTypes.bool,
   hoverStyle: PropTypes.oneOf(['border', 'background', 'none']),
   hoverColorIndex: PropTypes.string,
   hoverBorder: PropTypes.bool,
