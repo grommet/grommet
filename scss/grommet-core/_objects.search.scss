@@ -72,7 +72,7 @@
     // limit width of suggestions so that search icon + input do not wrap
     // for long suggestions
     @include media-query(palm) {
-      width: calc(100vw - #{round($inuit-base-spacing-unit * 3)});
+      width: 100vw;
     }
 
     &:hover,
