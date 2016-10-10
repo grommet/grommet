@@ -201,7 +201,7 @@ var Search = function (_Component) {
 
         var baseElement = void 0;
         if (this._controlRef) {
-          baseElement = this._controlRef.firstChild;
+          baseElement = (0, _reactDom.findDOMNode)(this._controlRef);
         } else {
           baseElement = this._inputRef;
         }
