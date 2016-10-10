@@ -108,7 +108,7 @@ export default class Search extends Component {
 
       let baseElement;
       if (this._controlRef) {
-        baseElement = this._controlRef.firstChild;
+        baseElement = findDOMNode(this._controlRef);
       } else {
         baseElement = this._inputRef;
       }
