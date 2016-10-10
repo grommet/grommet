@@ -209,6 +209,8 @@ var Tiles = function (_Component) {
       }
       if ('row' === direction) {
         this._trackHorizontalScroll();
+        // give browser a chance to stabilize
+        setTimeout(this._layout, 10);
       }
       if (selectable) {
         // only listen for navigation keys if the list row can be selected
