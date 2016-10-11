@@ -62,6 +62,7 @@ exports.default = (0, _extends3.default)({
   hour: 'hour',
   'Grommet Logo': 'Grommet Logo',
   'Layer': 'Layer',
+  List: 'List',
   line: 'line',
   'Loading': 'Loading',
   loginInvalidPassword: 'Please provide Username and Password.',
