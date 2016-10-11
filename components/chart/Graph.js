@@ -340,7 +340,7 @@ var Graph = function (_Component) {
             return _this2.graphRef = _ref;
           } }, props, { className: classes,
           viewBox: '0 0 ' + width + ' ' + height, preserveAspectRatio: 'none',
-          role: 'img', 'aria-label': this._renderA11YTitle() }),
+          role: 'row', 'aria-label': this._renderA11YTitle() }),
         _react2.default.createElement(
           'g',
           null,

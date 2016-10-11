@@ -177,7 +177,9 @@ var HotSpots = function (_Component) {
           basis = defaultBasis;
         }
         var style = { flexBasis: basis + '%' };
-        items.push(_react2.default.createElement('div', { key: index, className: bandClasses, style: style, role: 'row',
+        items.push(_react2.default.createElement('div', { key: index, className: bandClasses, style: style,
+          role: onClick ? 'button' : 'row',
+          'aria-label': a11yTitle,
           onMouseOver: onActive ? function () {
             return onActive(index);
           } : undefined,
@@ -193,7 +195,7 @@ var HotSpots = function (_Component) {
         _loop(index);
       }
 
-      var hotSpotsLabel = a11yTitle || _Intl2.default.getMessage(intl, 'HotSpotsLabel');
+      var hotSpotsLabel = _Intl2.default.getMessage(intl, 'HotSpotsLabel');
 
       return _react2.default.createElement(
         'div',
