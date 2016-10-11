@@ -52,19 +52,6 @@ class MenuDrop extends Component {
       right: this._onDownKeyPress
     };
     KeyboardAccelerators.startListeningToKeyboard(this, this._keyboardHandlers);
-
-    const container = ReactDOM.findDOMNode(this.navContainerRef);
-    const menuItems = container.childNodes;
-    for (let i = 0; i < menuItems.length; i++) {
-      let classes = menuItems[i].className.toString();
-      let tagName = menuItems[i].tagName.toLowerCase();
-      // want to skip items of the menu that are not focusable.
-      if (tagName !== 'button' && tagName !== 'a' &&
-        classes.indexOf('check-box') === -1) {
-        continue;
-      }
-      menuItems[i].setAttribute('role', 'menuitem');
-    }
   }
 
   componentWillUnmount () {
@@ -180,7 +167,7 @@ class MenuDrop extends Component {
     let contents = [
       React.cloneElement(control, {key: 'control', fill: true}),
       <Box {...restProps} key="nav" ref={ref => this.navContainerRef = ref}
-        role="menu" tag="nav" className={`${CLASS_ROOT}__contents`}
+        tag="nav" className={`${CLASS_ROOT}__contents`}
         primary={false}>
         {menuDropChildren}
       </Box>
@@ -200,7 +187,7 @@ class MenuDrop extends Component {
 
     return (
       <Box ref={ref => this.menuDropRef = ref} className={classes}
-        colorIndex={colorIndex} onClick={onClick} tabIndex='-1'>
+        colorIndex={colorIndex} onClick={onClick} focusable={false}>
         {contents}
       </Box>
     );
