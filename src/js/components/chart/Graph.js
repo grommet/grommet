@@ -269,8 +269,8 @@ export default class Graph extends Component {
 
     return (
       <svg ref={ref => this.graphRef = ref} {...props} className={classes}
-        viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"
-        role="img" aria-label={this._renderA11YTitle()}>
+        viewBox={`0 0 ${width} ${height}`} preserveAspectRatio='none'
+        role='row' aria-label={this._renderA11YTitle()}>
         <g>
           {path}
         </g>

@@ -143,7 +143,7 @@ exports[`normalization has correct default options 1`] = `
         aria-label="area , Min: 0 , Max: 100. GraphValues"
         className="grommetux-chart-graph grommetux-chart-graph--area grommetux-color-index-graph-1"
         preserveAspectRatio="none"
-        role="img"
+        role="row"
         viewBox="0 0 1 1">
         <g>
           <path
@@ -161,7 +161,7 @@ exports[`normalization has correct default options 1`] = `
         aria-label="line , Min: 0 , Max: 100. GraphValues"
         className="grommetux-chart-graph grommetux-chart-graph--line grommetux-color-index-accent-1"
         preserveAspectRatio="none"
-        role="img"
+        role="row"
         viewBox="0 0 1 1">
         <g>
           <path
@@ -242,6 +242,7 @@ exports[`normalization has correct default options 1`] = `
         }
         tabIndex="0">
         <div
+          aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
           onClick={undefined}
           onMouseOut={undefined}
@@ -253,6 +254,7 @@ exports[`normalization has correct default options 1`] = `
             }
           } />
         <div
+          aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
           onClick={undefined}
           onMouseOut={undefined}
@@ -264,6 +266,7 @@ exports[`normalization has correct default options 1`] = `
             }
           } />
         <div
+          aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
           onClick={undefined}
           onMouseOut={undefined}
@@ -275,6 +278,7 @@ exports[`normalization has correct default options 1`] = `
             }
           } />
         <div
+          aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
           onClick={undefined}
           onMouseOut={undefined}
@@ -286,6 +290,7 @@ exports[`normalization has correct default options 1`] = `
             }
           } />
         <div
+          aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
           onClick={undefined}
           onMouseOut={undefined}
@@ -297,6 +302,7 @@ exports[`normalization has correct default options 1`] = `
             }
           } />
         <div
+          aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
           onClick={undefined}
           onMouseOut={undefined}
@@ -308,6 +314,7 @@ exports[`normalization has correct default options 1`] = `
             }
           } />
         <div
+          aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
           onClick={undefined}
           onMouseOut={undefined}
@@ -319,6 +326,7 @@ exports[`normalization has correct default options 1`] = `
             }
           } />
         <div
+          aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
           onClick={undefined}
           onMouseOut={undefined}
@@ -330,6 +338,7 @@ exports[`normalization has correct default options 1`] = `
             }
           } />
         <div
+          aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
           onClick={undefined}
           onMouseOut={undefined}
@@ -341,6 +350,7 @@ exports[`normalization has correct default options 1`] = `
             }
           } />
         <div
+          aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
           onClick={undefined}
           onMouseOut={undefined}
@@ -352,6 +362,7 @@ exports[`normalization has correct default options 1`] = `
             }
           } />
         <div
+          aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
           onClick={undefined}
           onMouseOut={undefined}
@@ -363,6 +374,7 @@ exports[`normalization has correct default options 1`] = `
             }
           } />
         <div
+          aria-label={undefined}
           className="grommetux-chart-hot-spots__band grommetux-chart-hot-spots__band--active"
           onClick={undefined}
           onMouseOut={undefined}
