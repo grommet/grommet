@@ -301,18 +301,17 @@ export default class Distribution extends Component {
   }
 
   _onEnter (event) {
-    if (this._distributionRef.contains(document.activeElement)) {
-      if (this.activeDistributionRef) {
-        let index = this.activeDistributionRef.getAttribute('data-index');
+    if (this._distributionRef.contains(document.activeElement) &&
+      this.activeDistributionRef) {
+      let index = this.activeDistributionRef.getAttribute('data-index');
 
-        let activeDistribution = this.props.series.filter(function(item) {
-          return item.value > 0;
-        })[index];
+      let activeDistribution = this.props.series.filter(function(item) {
+        return item.value > 0;
+      })[index];
 
-        //trigger click on active distribution
-        if (activeDistribution.onClick) {
-          activeDistribution.onClick();
-        }
+      //trigger click on active distribution
+      if (activeDistribution.onClick) {
+        activeDistribution.onClick();
       }
     }
   }
@@ -448,6 +447,7 @@ export default class Distribution extends Component {
         onMouseLeave={this._onDeactivate} tabIndex='-1'
         role={datum.onClick ? 'button' : 'row'}
         ref={activeDistributionRef} aria-label={labelMessage}
+        onFocus={() => this.setState({ activeIndex: index })}
         data-index={index} onClick={datum.onClick}>
         {contents}
       </g>
