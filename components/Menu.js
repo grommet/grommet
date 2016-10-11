@@ -149,18 +149,6 @@ var MenuDrop = function (_Component) {
         right: this._onDownKeyPress
       };
       _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
-
-      var container = _reactDom2.default.findDOMNode(this.navContainerRef);
-      var menuItems = container.childNodes;
-      for (var i = 0; i < menuItems.length; i++) {
-        var classes = menuItems[i].className.toString();
-        var tagName = menuItems[i].tagName.toLowerCase();
-        // want to skip items of the menu that are not focusable.
-        if (tagName !== 'button' && tagName !== 'a' && classes.indexOf('check-box') === -1) {
-          continue;
-        }
-        menuItems[i].setAttribute('role', 'menuitem');
-      }
     }
   }, {
     key: 'componentWillUnmount',
@@ -284,7 +272,7 @@ var MenuDrop = function (_Component) {
         (0, _extends3.default)({}, restProps, { key: 'nav', ref: function ref(_ref) {
             return _this2.navContainerRef = _ref;
           },
-          role: 'menu', tag: 'nav', className: CLASS_ROOT + '__contents',
+          tag: 'nav', className: CLASS_ROOT + '__contents',
           primary: false }),
         menuDropChildren
       )];
@@ -300,7 +288,7 @@ var MenuDrop = function (_Component) {
         { ref: function ref(_ref2) {
             return _this2.menuDropRef = _ref2;
           }, className: classes,
-          colorIndex: colorIndex, onClick: onClick, tabIndex: '-1' },
+          colorIndex: colorIndex, onClick: onClick, focusable: false },
         contents
       );
     }
