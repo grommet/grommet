@@ -154,6 +154,7 @@
   .#{$grommet-namespace}anchor__icon {
     padding-left: 0;
     vertical-align: middle;
+    height: inherit;
   }
 
   .#{$grommet-namespace}anchor--reverse .#{$grommet-namespace}anchor__icon {
