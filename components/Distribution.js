@@ -351,47 +351,42 @@ var Distribution = function (_Component) {
   }, {
     key: '_onPreviousDistribution',
     value: function _onPreviousDistribution(event) {
+      event.preventDefault();
       if (this._distributionRef.contains(document.activeElement)) {
-        event.preventDefault();
-
         if (this.state.activeIndex - 1 >= 0) {
           this._onActivate(this.state.activeIndex - 1);
         }
-
-        //stop event propagation
-        return true;
       }
+      //stop event propagation
+      return true;
     }
   }, {
     key: '_onNextDistribution',
     value: function _onNextDistribution(event) {
+      event.preventDefault();
       if (this._distributionRef.contains(document.activeElement)) {
-        event.preventDefault();
         var totalDistributionCount = _reactDom2.default.findDOMNode(this.distributionItemsRef).childNodes.length;
 
         if (this.state.activeIndex + 1 < totalDistributionCount) {
           this._onActivate(this.state.activeIndex + 1);
         }
-
-        //stop event propagation
-        return true;
       }
+      //stop event propagation
+      return true;
     }
   }, {
     key: '_onEnter',
     value: function _onEnter(event) {
-      if (this._distributionRef.contains(document.activeElement)) {
-        if (this.activeDistributionRef) {
-          var index = this.activeDistributionRef.getAttribute('data-index');
+      if (this._distributionRef.contains(document.activeElement) && this.activeDistributionRef) {
+        var index = this.activeDistributionRef.getAttribute('data-index');
 
-          var activeDistribution = this.props.series.filter(function (item) {
-            return item.value > 0;
-          })[index];
+        var activeDistribution = this.props.series.filter(function (item) {
+          return item.value > 0;
+        })[index];
 
-          //trigger click on active distribution
-          if (activeDistribution.onClick) {
-            activeDistribution.onClick();
-          }
+        //trigger click on active distribution
+        if (activeDistribution.onClick) {
+          activeDistribution.onClick();
         }
       }
     }
@@ -524,6 +519,9 @@ var Distribution = function (_Component) {
           onMouseLeave: this._onDeactivate, tabIndex: '-1',
           role: datum.onClick ? 'button' : 'row',
           ref: activeDistributionRef, 'aria-label': labelMessage,
+          onFocus: function onFocus() {
+            return _this4.setState({ activeIndex: index });
+          },
           'data-index': index, onClick: datum.onClick },
         contents
       );
