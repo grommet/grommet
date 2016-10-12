@@ -252,8 +252,9 @@ export default class Menu extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    if (this.props.inline !== nextProps.inline) {
-      this.setState({ inline: nextProps.inline });
+    if (this.props.inline !== nextProps.inline ||
+      this.props.icon !== nextProps.icon) {
+      this.setState({ inline: nextProps.inline || !nextProps.icon });
     }
   }
 
