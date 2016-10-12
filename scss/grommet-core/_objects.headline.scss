@@ -8,33 +8,33 @@
   @include vertical-margin();
 
   @include media-query(lap-and-up) {
-    @include inuit-font-size(64px, 1);
+    @include inuit-font-size($headline-font-size, 1);
   }
   @include media-query(palm) {
-    @include inuit-font-size(48px, 1);
+    @include inuit-font-size($headline-palm-font-size, 1);
+  }
+}
+
+.#{$grommet-namespace}headline--small {
+  @include inuit-font-size($headline-small-font-size, 1);
+}
+
+.#{$grommet-namespace}headline--large {
+  @include media-query(lap-and-up) {
+    @include inuit-font-size($headline-large-font-size, 1);
+  }
+  @include media-query(palm) {
+    @include inuit-font-size($headline-large-palm-font-size, 1);
   }
 }
 
 .#{$grommet-namespace}headline--xlarge {
   @include media-query(lap-and-up) {
-    @include inuit-font-size(192px, 1);
+    @include inuit-font-size($headline-xlarge-font-size, 1);
   }
   @include media-query(palm) {
-    @include inuit-font-size(72px, 1);
+    @include inuit-font-size($headline-xlarge-palm-font-size, 1);
   }
-}
-
-.#{$grommet-namespace}headline--large {
-  @include media-query(lap-and-up) {
-    @include inuit-font-size(96px, 1);
-  }
-  @include media-query(palm) {
-    @include inuit-font-size(60px, 1);
-  }
-}
-
-.#{$grommet-namespace}headline--small {
-  @include inuit-font-size(30px, 1);
 }
 
 .#{$grommet-namespace}headline--strong {
