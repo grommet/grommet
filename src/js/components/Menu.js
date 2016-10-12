@@ -255,7 +255,8 @@ export default class Menu extends Component {
     if (this.props.inline !== nextProps.inline ||
       this.props.icon !== nextProps.icon) {
       this.setState({
-        inline: nextProps.inline || (!nextProps.label && !nextProps.icon)
+        inline: nextProps.hasOwnProperty('inline') ? nextProps.inline
+          : (!nextProps.label && !nextProps.icon)
       });
     }
   }
