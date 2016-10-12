@@ -150,7 +150,8 @@ var SunBurst = function (_Component) {
     }
   }, {
     key: '_onPreviousSunBurst',
-    value: function _onPreviousSunBurst() {
+    value: function _onPreviousSunBurst(event) {
+      event.preventDefault();
       var onActive = this.props.onActive;
 
       var previousSunBurst = this.state.activeSunBurst.slice();
@@ -202,7 +203,8 @@ var SunBurst = function (_Component) {
     }
   }, {
     key: '_onNextSunBurst',
-    value: function _onNextSunBurst() {
+    value: function _onNextSunBurst(event) {
+      event.preventDefault();
       var onActive = this.props.onActive;
 
       var nextSunBurst = this.state.activeSunBurst.slice();
