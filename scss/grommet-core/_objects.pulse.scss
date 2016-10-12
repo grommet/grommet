@@ -41,7 +41,8 @@ $base-size: double($inuit-base-spacing-unit);
 }
 
 .#{$grommet-namespace}pulse:hover {
-  transform: scale(1.2);
+  // `rotate` is used to trick the browser into rendering the image better
+  transform: scale(1.2) rotate(0.0001deg);
   cursor: pointer;
 
   .#{$grommet-namespace}pulse__icon-anim {
