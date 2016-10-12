@@ -20,4 +20,12 @@ describe('Pulse', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('has microdata properties rendering', () => {
+    const component = renderer.create(
+      <Pulse itemScope={true} itemType="http://schema.org/gameTip"
+        itemProp="test" />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
