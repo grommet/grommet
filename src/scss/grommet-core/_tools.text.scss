@@ -34,13 +34,21 @@
 }
 
 @mixin h1() {
-  font-size: $h1-font-size;
-  line-height: $h1-line-height;
+  @include media-query(lap-and-up) {
+    @include inuit-font-size($h1-font-size, $h1-line-height);
+  }
+  @include media-query(palm) {
+    @include inuit-font-size($h1-palm-font-size, $h1-line-height);
+  }
 }
 
 @mixin h2() {
-  font-size: $h2-font-size;
-  line-height: $h2-line-height;
+  @include media-query(lap-and-up) {
+    @include inuit-font-size($h2-font-size, $h2-line-height);
+  }
+  @include media-query(palm) {
+    @include inuit-font-size($h2-palm-font-size, $h2-line-height);
+  }
 }
 
 @mixin h3() {
