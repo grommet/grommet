@@ -85,7 +85,8 @@ export default class SunBurst extends Component {
     }
   }
 
-  _onPreviousSunBurst () {
+  _onPreviousSunBurst (event) {
+    event.preventDefault();
     const { onActive } = this.props;
     let previousSunBurst = this.state.activeSunBurst.slice();
 
@@ -136,7 +137,8 @@ export default class SunBurst extends Component {
     return true;
   }
 
-  _onNextSunBurst () {
+  _onNextSunBurst (event) {
+    event.preventDefault();
     const { onActive } = this.props;
     let nextSunBurst = this.state.activeSunBurst.slice();
 
