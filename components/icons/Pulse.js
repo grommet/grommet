@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+
+var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -57,15 +65,20 @@ var Pulse = function (_Component) {
   (0, _createClass3.default)(Pulse, [{
     key: 'render',
     value: function render() {
-      var classes = (0, _classnames2.default)(CLASS_ROOT, this.props.className);
+      var _props = this.props;
+      var className = _props.className;
+      var icon = _props.icon;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'icon']);
+
+      var classes = (0, _classnames2.default)(CLASS_ROOT, className);
 
       return _react2.default.createElement(
         'div',
-        { className: classes },
+        (0, _extends3.default)({}, props, { className: classes }),
         _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + '__icon' },
-          this.props.icon
+          icon
         ),
         _react2.default.createElement('div', { className: CLASS_ROOT + '__icon-anim' })
       );
