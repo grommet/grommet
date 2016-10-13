@@ -90,6 +90,7 @@ var LoginForm = function (_Component) {
     _this._onUsernameChange = _this._onUsernameChange.bind(_this);
     _this._onPasswordChange = _this._onPasswordChange.bind(_this);
     _this._onRememberMeChange = _this._onRememberMeChange.bind(_this);
+    _this._onChange = _this._onChange.bind(_this);
 
     _this.state = {
       password: '',
@@ -107,19 +108,35 @@ var LoginForm = function (_Component) {
       }
     }
   }, {
+    key: '_onChange',
+    value: function _onChange(args) {
+      var onChange = this.props.onChange;
+
+
+      if (onChange) {
+        onChange(args);
+      }
+    }
+  }, {
     key: '_onUsernameChange',
     value: function _onUsernameChange(event) {
-      this.setState({ username: event.target.value });
+      var username = event.target.value;
+      this.setState({ username: username });
+      this._onChange({ event: event, username: username });
     }
   }, {
     key: '_onPasswordChange',
     value: function _onPasswordChange(event) {
-      this.setState({ password: event.target.value });
+      var password = event.target.value;
+      this.setState({ password: password });
+      this._onChange({ event: event, password: password });
     }
   }, {
     key: '_onRememberMeChange',
     value: function _onRememberMeChange(event) {
-      this.setState({ rememberMe: event.target.checked });
+      var rememberMe = event.target.checked;
+      this.setState({ rememberMe: rememberMe });
+      this._onChange({ event: event, rememberMe: rememberMe });
     }
   }, {
     key: '_onSubmit',
@@ -263,6 +280,7 @@ LoginForm.propTypes = {
   forgotPassword: _react.PropTypes.node,
   logo: _react.PropTypes.node,
   onSubmit: _react.PropTypes.func,
+  onChange: _react.PropTypes.func,
   rememberMe: _react.PropTypes.bool,
   secondaryText: _react.PropTypes.string,
   title: _react.PropTypes.string,
