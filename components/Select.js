@@ -168,7 +168,7 @@ var Select = function (_Component) {
         });
         if (this._searchRef) {
           this._searchRef.focus();
-          this._searchRef.inputRef.select();
+          this._searchRef._inputRef.select();
         }
       } else if (dropActive && prevState.dropActive) {
         this._drop.render(this._renderDrop());
