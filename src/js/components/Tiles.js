@@ -42,6 +42,7 @@ export default class Tiles extends Component {
 
     this.state = {
       activeTile: undefined,
+      eclipsed: [],
       mouseActive: false,
       overflow: false,
       selected: Selection.normalizeIndexes(props.selected)
@@ -270,43 +271,47 @@ export default class Tiles extends Component {
   }
 
   _layout () {
-    const { direction } = this.props;
+    const { children, direction } = this.props;
     if ('row' === direction) {
       // determine if we have more tiles than room to fit
       const tiles = findDOMNode(this.tilesRef);
-      // 20 is to allow some fuzziness as scrollbars come and go
+      // mark any tiles that might be clipped
+      const rect = tiles.getBoundingClientRect();
+
+      const eclipsed = children.map((child, index) => {
+        if (this[`tileRef${index}`]) {
+          const tile = findDOMNode(this[`tileRef${index}`]);
+          const tileRect = tile.getBoundingClientRect();
+          // 12 accounts for padding
+          if ((tileRect.left + 12) < rect.left ||
+            (tileRect.right - 12) > rect.right) {
+            return index;
+          }
+        }
+        return undefined;
+      });
+
       this.setState({
+        eclipsed,
+        // 20 is to allow some fuzziness as scrollbars come and go
         overflow: (tiles.scrollWidth > (tiles.offsetWidth + 20)),
         overflowStart: (tiles.scrollLeft <= 20),
         overflowEnd:
           (tiles.scrollLeft >= (tiles.scrollWidth - tiles.offsetWidth))
       });
-
-      // mark any tiles that might be clipped
-      const rect = tiles.getBoundingClientRect();
-      const children = tiles.querySelectorAll(`.${TILE}`);
-
-      Array.from(children).map((child, index) => {
-        const childRect = child.getBoundingClientRect();
-        // 12 accounts for padding
-        if ((childRect.left + 12) < rect.left ||
-          (childRect.right - 12) > rect.right) {
-          child.classList.add(`${TILE}--eclipsed`);
-        } else {
-          child.classList.remove(`${TILE}--eclipsed`);
-        }
-      });
     }
   }
 
-  _renderChild (element) {
+  _renderChild (element, index) {
     const { flush } = this.props;
 
     if (element) {
       // only clone tile children
       if (element.type && element.type.displayName === 'Tile') {
         const elementClone = React.cloneElement(element, {
-          hoverBorder: !flush
+          eclipsed: this.state.eclipsed.indexOf(index) > -1,
+          hoverBorder: !flush,
+          ref: ref => this[`tileRef${index}`] = ref
         });
 
         return elementClone;
@@ -395,8 +400,8 @@ export default class Tiles extends Component {
       );
     }
 
-    const tileContents = Children.map(children, (element) => {
-      return this._renderChild(element);
+    const tileContents = Children.map(children, (element, index) => {
+      return this._renderChild(element, index);
     });
 
     let selectableProps;
