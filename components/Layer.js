@@ -117,13 +117,12 @@ var LayerContents = function (_Component) {
       this._keyboardHandlers = {
         tab: this._processTab
       };
-      _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
-
       if (this.props.onClose) {
         var layerParent = this.containerRef.parentNode;
         this._keyboardHandlers.esc = onClose;
         layerParent.addEventListener('click', this._onClick.bind(this));
       }
+      _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
     }
   }, {
     key: 'componentDidUpdate',
