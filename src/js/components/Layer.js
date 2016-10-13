@@ -42,15 +42,14 @@ class LayerContents extends Component {
     this._keyboardHandlers = {
       tab: this._processTab
     };
-    KeyboardAccelerators.startListeningToKeyboard(
-      this, this._keyboardHandlers
-    );
-
     if (this.props.onClose) {
       const layerParent = this.containerRef.parentNode;
       this._keyboardHandlers.esc = onClose;
       layerParent.addEventListener('click', this._onClick.bind(this));
     }
+    KeyboardAccelerators.startListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
   }
 
   componentDidUpdate () {
