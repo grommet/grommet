@@ -35,7 +35,7 @@ export default {
   'Connects With': 'Verbinding maken met',
   created: 'Gemaakt',
   Critical: 'Kritiek',
-  'Currently Active': 'Momenteel aktief,
+  'Currently Active': 'Momenteel aktief',
   'Date Selector': 'Datum selectie',
   'Date Time Icon': 'Open datum & tijd selectie',
   Disabled: 'Uitgeschakeld',
