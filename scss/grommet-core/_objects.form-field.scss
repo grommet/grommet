@@ -169,10 +169,15 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > select {
     display: block;
     background-image: $select-drop-caret;
+    padding-right: double($inuit-base-spacing-unit);
     background-position: center right #{$form-horizontal-padding - quarter($inuit-base-spacing-unit)};
     // Extra padding is added by Firefox (more) and IE (less).
     // Leave it alone as Safari, Chrome, and Opera don't want this.
     // padding-left: #{$form-horizontal-padding - 2};
+
+    &:focus {
+      padding-right: double($inuit-base-spacing-unit);
+    }
 
     // Firefox hack for left-aligning select with other inputs.
     _:-moz-tree-row(hover),
@@ -294,7 +299,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
       // For some reason, .number-input input causes form fields to be
       // too wide in compact forms.
       .#{$grommet-namespace}form--compact & {
-        width: round($inuit-base-spacing-unit * 6);
+        min-width: round($inuit-base-spacing-unit * 3);
       }
     }
   }

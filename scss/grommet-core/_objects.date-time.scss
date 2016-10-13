@@ -3,7 +3,7 @@
 .#{$grommet-namespace}date-time {
   position: relative;
   display: inline-block;
-  min-width: round($inuit-base-spacing-unit * 12);
+  // min-width: round($inuit-base-spacing-unit * 8);
 }
 
 .#{$grommet-namespace}date-time__input {
