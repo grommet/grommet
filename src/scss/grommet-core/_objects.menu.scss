@@ -283,6 +283,8 @@
 
       #{$dark-background-context} {
         border-color: transparent;
+        background-color: $colored-active-background-color;
+        color: $active-colored-text-color;
       }
 
       #{$light-background-context} {
