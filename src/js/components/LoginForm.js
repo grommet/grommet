@@ -26,6 +26,7 @@ export default class LoginForm extends Component {
     this._onUsernameChange = this._onUsernameChange.bind(this);
     this._onPasswordChange = this._onPasswordChange.bind(this);
     this._onRememberMeChange = this._onRememberMeChange.bind(this);
+    this._onChange = this._onChange.bind(this);
 
     this.state = {
       password: '',
@@ -40,16 +41,30 @@ export default class LoginForm extends Component {
     }
   }
 
+  _onChange (args) {
+    const { onChange } = this.props;
+
+    if (onChange) {
+      onChange(args);
+    }
+  }
+
   _onUsernameChange (event) {
-    this.setState({ username: event.target.value });
+    const username = event.target.value;
+    this.setState({ username });
+    this._onChange({ event, username });
   }
 
   _onPasswordChange (event) {
-    this.setState({ password: event.target.value });
+    const password = event.target.value;
+    this.setState({ password });
+    this._onChange({ event, password });
   }
 
   _onRememberMeChange (event) {
-    this.setState({ rememberMe: event.target.checked });
+    const rememberMe = event.target.checked;
+    this.setState({ rememberMe });
+    this._onChange({ event, rememberMe });
   }
 
   _onSubmit (event) {
@@ -163,6 +178,7 @@ LoginForm.propTypes = {
   forgotPassword: PropTypes.node,
   logo: PropTypes.node,
   onSubmit: PropTypes.func,
+  onChange: PropTypes.func,
   rememberMe: PropTypes.bool,
   secondaryText: PropTypes.string,
   title: PropTypes.string,
