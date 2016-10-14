@@ -86,7 +86,7 @@ var SELECTED_CLASS = CLASS_ROOT + '-row--selected';
 var ACTIVE_CLASS = CLASS_ROOT + '-row--active';
 // empirical number describing a minimum cell width for a
 // table to be presented in column-mode.
-var MIN_CELL_WIDTH = 96;
+var MIN_CELL_WIDTH = 120;
 
 var Table = function (_Component) {
   (0, _inherits3.default)(Table, _Component);
@@ -134,6 +134,7 @@ var Table = function (_Component) {
         this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, onMore);
       }
       this._adjustBodyCells();
+      this._layout();
       window.addEventListener('resize', this._onResize);
 
       if (selectable) {
@@ -235,16 +236,18 @@ var Table = function (_Component) {
     value: function _onResponsive() {
       var small = this.state.small;
 
-      var availableSize = this.containerRef.offsetWidth;
-      var numberOfCells = this.tableRef.querySelectorAll('thead th').length;
+      if (this.containerRef && this.tableRef) {
+        var availableSize = this.containerRef.offsetWidth;
+        var numberOfCells = this.tableRef.querySelectorAll('thead th').length;
 
-      if (numberOfCells * MIN_CELL_WIDTH > availableSize) {
-        if (small === false) {
-          this.setState({ small: true });
-        }
-      } else {
-        if (small === true) {
-          this.setState({ small: false });
+        if (numberOfCells * MIN_CELL_WIDTH > availableSize) {
+          if (small === false) {
+            this.setState({ small: true });
+          }
+        } else {
+          if (small === true) {
+            this.setState({ small: false });
+          }
         }
       }
     }
