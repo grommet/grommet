@@ -15,7 +15,7 @@ const SELECTED_CLASS = `${CLASS_ROOT}-row--selected`;
 const ACTIVE_CLASS = `${CLASS_ROOT}-row--active`;
 // empirical number describing a minimum cell width for a
 // table to be presented in column-mode.
-const MIN_CELL_WIDTH = 96;
+const MIN_CELL_WIDTH = 120;
 
 export default class Table extends Component {
 
@@ -55,6 +55,7 @@ export default class Table extends Component {
       );
     }
     this._adjustBodyCells();
+    this._layout();
     window.addEventListener('resize', this._onResize);
 
     if (selectable) {
@@ -150,16 +151,18 @@ export default class Table extends Component {
 
   _onResponsive () {
     const { small } = this.state;
-    const availableSize = this.containerRef.offsetWidth;
-    const numberOfCells = this.tableRef.querySelectorAll('thead th').length;
+    if (this.containerRef && this.tableRef) {
+      const availableSize = this.containerRef.offsetWidth;
+      const numberOfCells = this.tableRef.querySelectorAll('thead th').length;
 
-    if ((numberOfCells * MIN_CELL_WIDTH) > availableSize) {
-      if (small === false) {
-        this.setState({ small: true });
-      }
-    } else {
-      if (small === true) {
-        this.setState({ small: false });
+      if ((numberOfCells * MIN_CELL_WIDTH) > availableSize) {
+        if (small === false) {
+          this.setState({ small: true });
+        }
+      } else {
+        if (small === true) {
+          this.setState({ small: false });
+        }
       }
     }
   }
