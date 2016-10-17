@@ -179,7 +179,10 @@ export default class DateTimeDrop extends Component {
     }
   }
 
-  _onDay (date) {
+  _onDay (date, event) {
+    event.stopPropagation();
+    // using native event to avoid document click in DateTime to be invoked
+    event.nativeEvent.stopImmediatePropagation();
     const { format, onChange } = this.props;
     const { intl } = this.context;
     this.setState({
@@ -199,7 +202,7 @@ export default class DateTimeDrop extends Component {
     const today = moment().startOf('day').add(timeOfDay);
     this.setState({ value: today }, () => {
       const dateFormatted = today.format(format);
-      onChange(dateFormatted);
+      onChange(dateFormatted, true);
       const selectedMessage = Intl.getMessage(intl, 'Selected');
       announce(`${dateFormatted} ${selectedMessage}`);
     });

@@ -117,14 +117,14 @@ export default class DateTime extends Component {
     }
   }
 
-  _notify (date, day) {
+  _notify (date, checkClose) {
     const { format, onChange } = this.props;
     if (onChange) {
       onChange(date);
-      if (day && !TIME_REGEXP.test(format)) {
+      if (checkClose && !TIME_REGEXP.test(format)) {
         // check to close the drop only if the user selected a day
         // and the format of the date does not include time
-        this.setState({dropActive: false, cursor: -1});
+        this.setState({ dropActive: false, cursor: -1 });
       }
     }
   }

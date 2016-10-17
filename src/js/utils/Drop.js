@@ -232,9 +232,14 @@ export default {
   },
 
   _render (drop, content) {
-    render(<DropContents drop={drop} content={content} />, drop.container);
-    // in case content changed, re-place
-    setTimeout(this._place.bind(this, drop), 1);
+    const originalScrollPosition = drop.container.scrollTop;
+    render(<DropContents drop={drop} content={content} />, drop.container,
+      () => {
+        this._place.bind(this, drop);
+        // reset container to its original scroll position
+        drop.container.scrollTop = originalScrollPosition;
+      }
+    );
   },
 
   _remove (drop) {
