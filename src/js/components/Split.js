@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes, Children } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 
@@ -90,41 +90,46 @@ export default class Split extends Component {
     const { responsive } = this.state;
     const classes = classnames( CLASS_ROOT, className );
 
-    const filteredChildren = Children.toArray(children).filter(child => child);
-    const boxedChildren = filteredChildren.map((child, index) => {
-      const lastChild = (index === filteredChildren.length - 1);
-      let hidden;
-      let childFlex = true;
-      // When we only have room to show one child, hide the appropriate one
-      if ('single' === responsive &&
-        (('left' === priority && index > 0) ||
-        ('right' === priority && index === 0 &&
-          filteredChildren.length > 1))) {
-        hidden = true;
-      } else if (filteredChildren.length > 1 &&
-        ((flex === 'right' && index === 0) ||
-        (flex === 'left' && lastChild))) {
-        childFlex = false;
-      } else {
-        childFlex = true;
-      }
-      const classes = classnames(
-        `${CLASS_ROOT}__column`,
-        {
-          [`${CLASS_ROOT}__column--fixed`]: fixed,
-          [`${CLASS_ROOT}__column--hidden`]: hidden,
-          [`${CLASS_ROOT}__column--flex`]: childFlex,
-          [`${CLASS_ROOT}__column--separator`]: (separator && ! lastChild)
+    const boxedChildren = !Array.isArray(children) ? children :
+      children.map((child, index) => {
+        if (!child) {
+          // skip the empty children but keep original index
+          // this avoid the right element to remount
+          return undefined;
         }
-      );
-      // Don't use a Box here because we don't want to constrain the child
-      // in a flexbox container.
-      return (
-        <div key={index} className={classes}>
-          {child}
-        </div>
-      );
-    });
+        const lastChild = (index === children.length - 1);
+        let hidden;
+        let childFlex = true;
+        // When we only have room to show one child, hide the appropriate one
+        if ('single' === responsive &&
+          (('left' === priority && index > 0) ||
+          ('right' === priority && index === 0 &&
+            children.length > 1))) {
+          hidden = true;
+        } else if (children.length > 1 &&
+          ((flex === 'right' && index === 0) ||
+          (flex === 'left' && lastChild))) {
+          childFlex = false;
+        } else {
+          childFlex = true;
+        }
+        const classes = classnames(
+          `${CLASS_ROOT}__column`,
+          {
+            [`${CLASS_ROOT}__column--fixed`]: fixed,
+            [`${CLASS_ROOT}__column--hidden`]: hidden,
+            [`${CLASS_ROOT}__column--flex`]: childFlex,
+            [`${CLASS_ROOT}__column--separator`]: (separator && ! lastChild)
+          }
+        );
+        // Don't use a Box here because we don't want to constrain the child
+        // in a flexbox container.
+        return (
+          <div key={index} className={classes}>
+            {child}
+          </div>
+        );
+      });
 
     return (
       <div ref={ref => this.splitRef = ref} {...props} className={classes}>
@@ -135,6 +140,7 @@ export default class Split extends Component {
 }
 
 Split.propTypes = {
+  children: PropTypes.arrayOf(React.PropTypes.node).isRequired,
   fixed: PropTypes.bool,
   flex: PropTypes.oneOf(['left', 'right', 'both']),
   onResponsive: PropTypes.func,
