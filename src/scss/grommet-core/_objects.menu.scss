@@ -2,6 +2,7 @@
 
 .#{$grommet-namespace}menu {
   position: relative;
+  white-space: nowrap;
   @include inuit-font-size($menu-font-size);
 
   > * {
