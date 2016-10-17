@@ -100,6 +100,7 @@ $map-active-stroke-width: round($inuit-base-spacing-unit / 4);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .#{$grommet-namespace}map__category-items {
