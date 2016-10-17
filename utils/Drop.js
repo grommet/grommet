@@ -277,9 +277,14 @@ exports.default = {
     return drop;
   },
   _render: function _render(drop, content) {
-    (0, _reactDom.render)(_react2.default.createElement(DropContents, { drop: drop, content: content }), drop.container);
-    // in case content changed, re-place
-    setTimeout(this._place.bind(this, drop), 1);
+    var _this3 = this;
+
+    var originalScrollPosition = drop.container.scrollTop;
+    (0, _reactDom.render)(_react2.default.createElement(DropContents, { drop: drop, content: content }), drop.container, function () {
+      _this3._place.bind(_this3, drop);
+      // reset container to its original scroll position
+      drop.container.scrollTop = originalScrollPosition;
+    });
   },
   _remove: function _remove(drop) {
     drop.scrollParents.forEach(function (scrollParent) {

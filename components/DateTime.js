@@ -214,14 +214,14 @@ var DateTime = function (_Component) {
     }
   }, {
     key: '_notify',
-    value: function _notify(date, day) {
+    value: function _notify(date, checkClose) {
       var _props2 = this.props;
       var format = _props2.format;
       var onChange = _props2.onChange;
 
       if (onChange) {
         onChange(date);
-        if (day && !TIME_REGEXP.test(format)) {
+        if (checkClose && !TIME_REGEXP.test(format)) {
           // check to close the drop only if the user selected a day
           // and the format of the date does not include time
           this.setState({ dropActive: false, cursor: -1 });

@@ -285,7 +285,10 @@ var DateTimeDrop = function (_Component) {
     }
   }, {
     key: '_onDay',
-    value: function _onDay(date) {
+    value: function _onDay(date, event) {
+      event.stopPropagation();
+      // using native event to avoid document click in DateTime to be invoked
+      event.nativeEvent.stopImmediatePropagation();
       var _props = this.props;
       var format = _props.format;
       var onChange = _props.onChange;
@@ -312,7 +315,7 @@ var DateTimeDrop = function (_Component) {
       var today = (0, _moment2.default)().startOf('day').add(timeOfDay);
       this.setState({ value: today }, function () {
         var dateFormatted = today.format(format);
-        onChange(dateFormatted);
+        onChange(dateFormatted, true);
         var selectedMessage = _Intl2.default.getMessage(intl, 'Selected');
         (0, _Announcer.announce)(dateFormatted + ' ' + selectedMessage);
       });
