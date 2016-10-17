@@ -159,19 +159,21 @@ var Split = function (_Component) {
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, className);
 
-      var filteredChildren = _react.Children.toArray(children).filter(function (child) {
-        return child;
-      });
-      var boxedChildren = filteredChildren.map(function (child, index) {
+      var boxedChildren = !Array.isArray(children) ? children : children.map(function (child, index) {
         var _classnames;
 
-        var lastChild = index === filteredChildren.length - 1;
+        if (!child) {
+          // skip the empty children but keep original index
+          // this avoid the right element to remount
+          return undefined;
+        }
+        var lastChild = index === children.length - 1;
         var hidden = void 0;
         var childFlex = true;
         // When we only have room to show one child, hide the appropriate one
-        if ('single' === responsive && ('left' === priority && index > 0 || 'right' === priority && index === 0 && filteredChildren.length > 1)) {
+        if ('single' === responsive && ('left' === priority && index > 0 || 'right' === priority && index === 0 && children.length > 1)) {
           hidden = true;
-        } else if (filteredChildren.length > 1 && (flex === 'right' && index === 0 || flex === 'left' && lastChild)) {
+        } else if (children.length > 1 && (flex === 'right' && index === 0 || flex === 'left' && lastChild)) {
           childFlex = false;
         } else {
           childFlex = true;
@@ -203,6 +205,7 @@ exports.default = Split;
 
 
 Split.propTypes = {
+  children: _react.PropTypes.arrayOf(_react2.default.PropTypes.node).isRequired,
   fixed: _react.PropTypes.bool,
   flex: _react.PropTypes.oneOf(['left', 'right', 'both']),
   onResponsive: _react.PropTypes.func,
