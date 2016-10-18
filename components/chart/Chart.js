@@ -152,7 +152,8 @@ var Chart = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       window.addEventListener('resize', this._onResize);
-      this._layout();
+      // give sometime for the ui to render
+      setTimeout(this._layout, 50);
     }
   }, {
     key: 'componentWillReceiveProps',
