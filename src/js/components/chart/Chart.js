@@ -62,7 +62,8 @@ export default class Chart extends Component {
 
   componentDidMount () {
     window.addEventListener('resize', this._onResize);
-    this._layout();
+    // give sometime for the ui to render
+    setTimeout(this._layout, 50);
   }
 
   componentWillReceiveProps (nextProps) {
