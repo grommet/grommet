@@ -60,6 +60,7 @@ var Button = function (_Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (Button.__proto__ || (0, _getPrototypeOf2.default)(Button)).call(this));
 
+    _this._onClick = _this._onClick.bind(_this);
     _this.state = {
       mouseActive: false,
       focus: false
@@ -68,32 +69,58 @@ var Button = function (_Component) {
   }
 
   (0, _createClass3.default)(Button, [{
+    key: '_onClick',
+    value: function _onClick(event) {
+      var _props = this.props;
+      var method = _props.method;
+      var onClick = _props.onClick;
+      var path = _props.path;
+      var router = this.context.router;
+
+
+      event.preventDefault();
+
+      if ('push' === method) {
+        router.push(path);
+      } else if ('replace' === method) {
+        router.replace(path);
+      }
+
+      if (onClick) {
+        onClick();
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _classnames,
           _this2 = this;
 
-      var _props = this.props;
-      var a11yTitle = _props.a11yTitle;
-      var accent = _props.accent;
-      var align = _props.align;
-      var children = _props.children;
-      var className = _props.className;
-      var fill = _props.fill;
-      var href = _props.href;
-      var icon = _props.icon;
-      var id = _props.id;
-      var label = _props.label;
-      var onClick = _props.onClick;
-      var _onBlur = _props.onBlur;
-      var _onFocus = _props.onFocus;
-      var _onMouseDown = _props.onMouseDown;
-      var _onMouseUp = _props.onMouseUp;
-      var plain = _props.plain;
-      var primary = _props.primary;
-      var secondary = _props.secondary;
-      var type = _props.type;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'accent', 'align', 'children', 'className', 'fill', 'href', 'icon', 'id', 'label', 'onClick', 'onBlur', 'onFocus', 'onMouseDown', 'onMouseUp', 'plain', 'primary', 'secondary', 'type']);
+      var _props2 = this.props;
+      var a11yTitle = _props2.a11yTitle;
+      var accent = _props2.accent;
+      var align = _props2.align;
+      var children = _props2.children;
+      var className = _props2.className;
+      var fill = _props2.fill;
+      var href = _props2.href;
+      var icon = _props2.icon;
+      var id = _props2.id;
+      var label = _props2.label;
+      var onClick = _props2.onClick;
+      var _onBlur = _props2.onBlur;
+      var _onFocus = _props2.onFocus;
+      var _onMouseDown = _props2.onMouseDown;
+      var _onMouseUp = _props2.onMouseUp;
+      var path = _props2.path;
+      var plain = _props2.plain;
+      var primary = _props2.primary;
+      var secondary = _props2.secondary;
+      var type = _props2.type;
+      var props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'accent', 'align', 'children', 'className', 'fill', 'href', 'icon', 'id', 'label', 'onClick', 'onBlur', 'onFocus', 'onMouseDown', 'onMouseUp', 'path', 'plain', 'primary', 'secondary', 'type']);
+
+      delete props.method;
+      var router = this.context.router;
 
 
       var buttonPlain = plain !== undefined ? plain : icon && !label;
@@ -118,24 +145,28 @@ var Button = function (_Component) {
         return child;
       });
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--focus', this.state.focus), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--secondary', secondary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--accent', accent), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', !onClick && !href), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--plain', buttonPlain), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon', icon || hasIcon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), _classnames), className);
+      var adjustedHref = path && router ? router.createPath(path) : href;
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--focus', this.state.focus), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--secondary', secondary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--accent', accent), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', !onClick && !adjustedHref), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--plain', buttonPlain), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon', icon || hasIcon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), _classnames), className);
+
+      var adjustedOnClick = path && router ? this._onClick : onClick;
 
       if (!buttonChildren) {
         buttonChildren = label;
       }
 
-      var Tag = href ? 'a' : 'button';
+      var Tag = adjustedHref ? 'a' : 'button';
       var buttonType = void 0;
-      if (!href) {
+      if (!adjustedHref) {
         buttonType = type;
       }
 
       return _react2.default.createElement(
         Tag,
-        (0, _extends3.default)({}, props, { href: href, id: id, type: buttonType,
+        (0, _extends3.default)({}, props, { href: adjustedHref, id: id, type: buttonType,
           className: classes, 'aria-label': a11yTitle,
-          onClick: onClick,
-          disabled: !onClick && !href,
+          onClick: adjustedOnClick,
+          disabled: !onClick && !adjustedHref,
           onMouseDown: function onMouseDown(event) {
             _this2.setState({ mouseActive: true });
             if (_onMouseDown) {
@@ -183,7 +214,9 @@ Button.propTypes = {
   icon: _react.PropTypes.element,
   id: _react.PropTypes.string,
   label: _react.PropTypes.node,
+  method: _react.PropTypes.oneOf(['push', 'replace']),
   onClick: _react.PropTypes.func,
+  path: _react.PropTypes.string,
   plain: _react.PropTypes.bool,
   primary: _react.PropTypes.bool,
   secondary: _react.PropTypes.bool,
@@ -191,6 +224,11 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  method: 'push',
   type: 'button'
+};
+
+Button.contextTypes = {
+  router: _react.PropTypes.object
 };
 module.exports = exports['default'];

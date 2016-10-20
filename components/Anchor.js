@@ -63,27 +63,59 @@ var Anchor = function (_Component) {
 
   function Anchor() {
     (0, _classCallCheck3.default)(this, Anchor);
-    return (0, _possibleConstructorReturn3.default)(this, (Anchor.__proto__ || (0, _getPrototypeOf2.default)(Anchor)).apply(this, arguments));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Anchor.__proto__ || (0, _getPrototypeOf2.default)(Anchor)).call(this));
+
+    _this._onClick = _this._onClick.bind(_this);
+    return _this;
   }
 
   (0, _createClass3.default)(Anchor, [{
+    key: '_onClick',
+    value: function _onClick(event) {
+      var _props = this.props;
+      var method = _props.method;
+      var onClick = _props.onClick;
+      var path = _props.path;
+      var router = this.context.router;
+
+
+      event.preventDefault();
+
+      if ('push' === method) {
+        router.push(path);
+      } else if ('replace' === method) {
+        router.replace(path);
+      }
+
+      if (onClick) {
+        onClick();
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _classnames;
 
-      var _props = this.props;
-      var a11yTitle = _props.a11yTitle;
-      var animateIcon = _props.animateIcon;
-      var children = _props.children;
-      var className = _props.className;
-      var disabled = _props.disabled;
-      var icon = _props.icon;
-      var id = _props.id;
-      var label = _props.label;
-      var primary = _props.primary;
-      var reverse = _props.reverse;
-      var tag = _props.tag;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'animateIcon', 'children', 'className', 'disabled', 'icon', 'id', 'label', 'primary', 'reverse', 'tag']);
+      var _props2 = this.props;
+      var a11yTitle = _props2.a11yTitle;
+      var animateIcon = _props2.animateIcon;
+      var children = _props2.children;
+      var className = _props2.className;
+      var disabled = _props2.disabled;
+      var href = _props2.href;
+      var icon = _props2.icon;
+      var id = _props2.id;
+      var label = _props2.label;
+      var onClick = _props2.onClick;
+      var path = _props2.path;
+      var primary = _props2.primary;
+      var reverse = _props2.reverse;
+      var tag = _props2.tag;
+      var props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'animateIcon', 'children', 'className', 'disabled', 'href', 'icon', 'id', 'label', 'onClick', 'path', 'primary', 'reverse', 'tag']);
+
+      delete props.method;
+      var router = this.context.router;
 
 
       var anchorIcon = void 0;
@@ -115,7 +147,11 @@ var Anchor = function (_Component) {
         return child;
       });
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--animate-icon', hasIcon && animateIcon !== false), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', disabled), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon', anchorIcon || hasIcon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon-label', hasIcon && label), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--reverse', reverse), _classnames), className);
+      var adjustedHref = path && router ? router.createPath(path) : href;
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--animate-icon', hasIcon && animateIcon !== false), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', disabled), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon', anchorIcon || hasIcon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon-label', hasIcon && label), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--reverse', reverse), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--active', router && path && router.isActive(path)), _classnames), className);
+
+      var adjustedOnClick = path && router ? this._onClick : onClick;
 
       if (!anchorChildren) {
         anchorChildren = label;
@@ -127,7 +163,8 @@ var Anchor = function (_Component) {
       var Component = tag;
       return _react2.default.createElement(
         Component,
-        (0, _extends3.default)({}, props, { className: classes, 'aria-label': a11yTitle }),
+        (0, _extends3.default)({}, props, { href: adjustedHref, className: classes,
+          'aria-label': a11yTitle, onClick: adjustedOnClick }),
         first,
         second
       );
@@ -148,7 +185,9 @@ Anchor.propTypes = {
   icon: _react.PropTypes.element,
   id: _react.PropTypes.string,
   label: _react.PropTypes.node,
+  method: _react.PropTypes.oneOf(['push', 'replace']),
   onClick: _react.PropTypes.func,
+  path: _react.PropTypes.string,
   primary: _react.PropTypes.bool,
   reverse: _react.PropTypes.bool,
   tag: _react.PropTypes.string,
@@ -156,6 +195,11 @@ Anchor.propTypes = {
 };
 
 Anchor.defaultProps = {
+  method: 'push',
   tag: 'a'
+};
+
+Anchor.contextTypes = {
+  router: _react.PropTypes.object
 };
 module.exports = exports['default'];
