@@ -13,7 +13,6 @@ import Selection from '../utils/Selection';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Intl from '../utils/Intl';
 import { announce } from '../utils/Announcer';
-import FeatureDetects from '../utils/FeatureDetects';
 
 import LinkPreviousIcon from './icons/base/LinkPrevious';
 import LinkNextIcon from './icons/base/LinkNext';
@@ -58,8 +57,7 @@ export default class Tiles extends Component {
     }
     if ('row' === direction) {
       window.addEventListener('resize', this._onResize);
-      document.addEventListener('wheel', this._onWheel,
-        FeatureDetects.passiveEvents() ? { passive: true } : false);
+      document.addEventListener('wheel', this._onWheel, { passive: true });
       this._trackHorizontalScroll();
       // give browser a chance to stabilize
       setTimeout(this._layout, 10);
