@@ -48,6 +48,7 @@
     "react-addons-transition-group": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-intl": "^2.1.2",
+    "react-router": "^2.8.1",
     "superagent": "^2.2.0"
   },
   "devDependencies": {
