@@ -340,6 +340,14 @@ TextInput.propTypes = {
   onDOMChange: PropTypes.func,
   onSelect: PropTypes.func,
   placeHolder: PropTypes.string,
-  suggestions: PropTypes.arrayOf(PropTypes.string),
+  suggestions: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.shape({
+        label: PropTypes.node,
+        value: PropTypes.any
+      }),
+      PropTypes.string
+    ])
+  ),
   value: PropTypes.string
 };
