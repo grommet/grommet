@@ -8,20 +8,41 @@ import CSSClassnames from '../utils/CSSClassnames';
 const CLASS_ROOT = CSSClassnames.BUTTON;
 
 export default class Button extends Component {
+
   constructor () {
     super();
+    this._onClick = this._onClick.bind(this);
     this.state = {
       mouseActive: false,
       focus: false
     };
   }
 
+  _onClick (event) {
+    const { method, onClick, path} = this.props;
+    const { router } = this.context;
+
+    event.preventDefault();
+
+    if ('push' === method) {
+      router.push(path);
+    } else if ('replace' === method) {
+      router.replace(path);
+    }
+
+    if (onClick) {
+      onClick();
+    }
+  }
+
   render () {
     const {
       a11yTitle, accent, align, children, className, fill, href, icon, id,
-      label, onClick, onBlur, onFocus, onMouseDown, onMouseUp, plain, primary,
-      secondary, type, ...props
+      label, onClick, onBlur, onFocus, onMouseDown, onMouseUp,
+      path, plain, primary, secondary, type, ...props
     } = this.props;
+    delete props.method;
+    const { router } = this.context;
 
     const buttonPlain = (plain !== undefined ? plain : (icon && ! label));
 
@@ -38,6 +59,8 @@ export default class Button extends Component {
       return child;
     });
 
+    let adjustedHref = (path && router) ? router.createPath(path) : href;
+
     const classes = classnames(
       CLASS_ROOT,
       {
@@ -45,7 +68,7 @@ export default class Button extends Component {
         [`${CLASS_ROOT}--primary`]: primary,
         [`${CLASS_ROOT}--secondary`]: secondary,
         [`${CLASS_ROOT}--accent`]: accent,
-        [`${CLASS_ROOT}--disabled`]: !onClick && !href,
+        [`${CLASS_ROOT}--disabled`]: !onClick && !adjustedHref,
         [`${CLASS_ROOT}--fill`]: fill,
         [`${CLASS_ROOT}--plain`]: buttonPlain,
         [`${CLASS_ROOT}--icon`]: icon || hasIcon,
@@ -54,21 +77,23 @@ export default class Button extends Component {
       className
     );
 
+    let adjustedOnClick = (path && router ? this._onClick : onClick);
+
     if (!buttonChildren) {
       buttonChildren = label;
     }
 
-    const Tag = href ? 'a' : 'button';
+    const Tag = adjustedHref ? 'a' : 'button';
     let buttonType;
-    if (!href) {
+    if (!adjustedHref) {
       buttonType = type;
     }
 
     return (
-      <Tag {...props} href={href} id={id} type={buttonType}
+      <Tag {...props} href={adjustedHref} id={id} type={buttonType}
         className={classes} aria-label={a11yTitle}
-        onClick={onClick}
-        disabled={!onClick && !href}
+        onClick={adjustedOnClick}
+        disabled={!onClick && !adjustedHref}
         onMouseDown={(event) => {
           this.setState({ mouseActive: true });
           if (onMouseDown) {
@@ -111,7 +136,9 @@ Button.propTypes = {
   icon: PropTypes.element,
   id: PropTypes.string,
   label: PropTypes.node,
+  method: PropTypes.oneOf(['push', 'replace']),
   onClick: PropTypes.func,
+  path: PropTypes.string,
   plain: PropTypes.bool,
   primary: PropTypes.bool,
   secondary: PropTypes.bool,
@@ -119,5 +146,10 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  method: 'push',
   type: 'button'
+};
+
+Button.contextTypes = {
+  router: PropTypes.object
 };

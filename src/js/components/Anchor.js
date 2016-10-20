@@ -10,11 +10,35 @@ const CLASS_ROOT = CSSClassnames.ANCHOR;
 
 export default class Anchor extends Component {
 
+  constructor () {
+    super();
+    this._onClick = this._onClick.bind(this);
+  }
+
+  _onClick (event) {
+    const { method, onClick, path} = this.props;
+    const { router } = this.context;
+
+    event.preventDefault();
+
+    if ('push' === method) {
+      router.push(path);
+    } else if ('replace' === method) {
+      router.replace(path);
+    }
+
+    if (onClick) {
+      onClick();
+    }
+  }
+
   render () {
     const {
-      a11yTitle, animateIcon, children, className, disabled, icon, id, label,
-      primary, reverse, tag, ...props
+      a11yTitle, animateIcon, children, className, disabled, href, icon, id,
+      label, onClick, path, primary, reverse, tag, ...props
     } = this.props;
+    delete props.method;
+    const { router } = this.context;
 
     let anchorIcon;
     if (icon) {
@@ -39,6 +63,8 @@ export default class Anchor extends Component {
       return child;
     });
 
+    let adjustedHref = (path && router) ? router.createPath(path) : href;
+
     let classes = classnames(
       CLASS_ROOT,
       {
@@ -47,10 +73,13 @@ export default class Anchor extends Component {
         [`${CLASS_ROOT}--icon`]: anchorIcon || hasIcon,
         [`${CLASS_ROOT}--icon-label`]: hasIcon && label,
         [`${CLASS_ROOT}--primary`]: primary,
-        [`${CLASS_ROOT}--reverse`]: reverse
+        [`${CLASS_ROOT}--reverse`]: reverse,
+        [`${CLASS_ROOT}--active`]: (router && path && router.isActive(path))
       },
       className
     );
+
+    let adjustedOnClick = (path && router ? this._onClick : onClick);
 
     if (!anchorChildren) {
       anchorChildren = label;
@@ -61,7 +90,8 @@ export default class Anchor extends Component {
 
     const Component = tag;
     return (
-      <Component {...props} className={classes} aria-label={a11yTitle}>
+      <Component {...props} href={adjustedHref} className={classes}
+        aria-label={a11yTitle} onClick={adjustedOnClick}>
         {first}
         {second}
       </Component>
@@ -77,7 +107,9 @@ Anchor.propTypes = {
   icon: PropTypes.element,
   id: PropTypes.string,
   label: PropTypes.node,
+  method: PropTypes.oneOf(['push', 'replace']),
   onClick: PropTypes.func,
+  path: PropTypes.string,
   primary: PropTypes.bool,
   reverse: PropTypes.bool,
   tag: PropTypes.string,
@@ -85,5 +117,10 @@ Anchor.propTypes = {
 };
 
 Anchor.defaultProps = {
+  method: 'push',
   tag: 'a'
+};
+
+Anchor.contextTypes = {
+  router: PropTypes.object
 };
