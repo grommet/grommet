@@ -57,7 +57,7 @@
 .#{$grommet-namespace}hero__overlay.#{$grommet-namespace}box {
   z-index: 1;
 
-  .#{$grommet-namespace}box {
+  & > .#{$grommet-namespace}box {
     width: 50%;
 
     @include media-query(palm) {
