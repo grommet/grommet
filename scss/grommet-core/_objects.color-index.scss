@@ -24,6 +24,14 @@
   }
 }
 
+.#{$grommet-namespace}border-color-index-brand {
+  border-color: $brand-color;
+
+  &-a {
+    border-color: rgba($brand-color, 0.94);
+  }
+}
+
 @for $i from 1 through length($brand-neutral-colors) {
   .#{$grommet-namespace}background-color-index-neutral-#{$i},
   .#{$grommet-namespace}background-color-index-neutral-#{$i + length($brand-neutral-colors)} {

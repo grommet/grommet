@@ -161,7 +161,7 @@ var Tiles = function (_Component) {
       }
       if ('row' === direction) {
         window.addEventListener('resize', this._onResize);
-        document.addEventListener('wheel', this._onWheel);
+        document.addEventListener('wheel', this._onWheel, { passive: true });
         this._trackHorizontalScroll();
         // give browser a chance to stabilize
         setTimeout(this._layout, 10);

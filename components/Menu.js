@@ -400,6 +400,7 @@ var Menu = function (_Component2) {
             _KeyboardAccelerators2.default.stopListeningToKeyboard(this, focusedKeyboardHandlers);
             _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
             document.addEventListener('click', this._onClose);
+            document.addEventListener('touchstart', this._onClose);
             this._drop = _Drop2.default.add(this.controlRef, this._renderMenuDrop(), {
               align: this.props.dropAlign,
               colorIndex: this.props.dropColorIndex,
@@ -415,6 +416,7 @@ var Menu = function (_Component2) {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       document.removeEventListener('click', this._onClose);
+      document.removeEventListener('touchstart', this._onClose);
       _KeyboardAccelerators2.default.stopListeningToKeyboard(this);
       if (this._drop) {
         this._drop.remove();
