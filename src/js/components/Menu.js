@@ -302,6 +302,7 @@ export default class Menu extends Component {
             this, activeKeyboardHandlers
           );
           document.addEventListener('click', this._onClose);
+          document.addEventListener('touchstart', this._onClose);
           this._drop = Drop.add(this.controlRef,
             this._renderMenuDrop(),
             {
@@ -318,6 +319,7 @@ export default class Menu extends Component {
 
   componentWillUnmount () {
     document.removeEventListener('click', this._onClose);
+    document.removeEventListener('touchstart', this._onClose);
     KeyboardAccelerators.stopListeningToKeyboard(this);
     if (this._drop) {
       this._drop.remove();
