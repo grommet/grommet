@@ -114,10 +114,11 @@ exports[`Select inline + multiple 1`] = `
             </svg>
           </span>
         </span>
-        <span
-          className="grommetux-check-box__label">
+        <label
+          className="grommetux-check-box__label"
+          htmlFor="undefined-one">
           one
-        </span>
+        </label>
       </label>
     </li>
     <li
@@ -148,10 +149,11 @@ exports[`Select inline + multiple 1`] = `
             </svg>
           </span>
         </span>
-        <span
-          className="grommetux-check-box__label">
+        <label
+          className="grommetux-check-box__label"
+          htmlFor="undefined-two">
           two
-        </span>
+        </label>
       </label>
     </li>
   </ol>
@@ -177,10 +179,11 @@ exports[`Select inline 1`] = `
           type="radio" />
         <span
           className="grommetux-radio-button__control" />
-        <span
-          className="grommetux-radio-button__label">
+        <label
+          className="grommetux-radio-button__label"
+          htmlFor="undefined-one">
           one
-        </span>
+        </label>
       </label>
     </li>
     <li
@@ -196,10 +199,11 @@ exports[`Select inline 1`] = `
           type="radio" />
         <span
           className="grommetux-radio-button__control" />
-        <span
-          className="grommetux-radio-button__label">
+        <label
+          className="grommetux-radio-button__label"
+          htmlFor="undefined-two">
           two
-        </span>
+        </label>
       </label>
     </li>
   </ol>

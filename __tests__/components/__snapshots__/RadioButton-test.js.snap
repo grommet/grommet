@@ -9,9 +9,10 @@ exports[`RadioButton has correct default options 1`] = `
     type="radio" />
   <span
     className="grommetux-radio-button__control" />
-  <span
-    className="grommetux-radio-button__label">
+  <label
+    className="grommetux-radio-button__label"
+    htmlFor="choice">
     Choice
-  </span>
+  </label>
 </label>
 `;
