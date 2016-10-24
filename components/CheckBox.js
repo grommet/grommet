@@ -81,8 +81,9 @@ var CheckBox = function (_Component) {
       var labelNode = void 0;
       if (label) {
         labelNode = _react2.default.createElement(
-          'span',
-          { key: 'label', className: CLASS_ROOT + '__label' },
+          'label',
+          { key: 'label', htmlFor: props.id,
+            className: CLASS_ROOT + '__label' },
           label
         );
       }

@@ -77,8 +77,8 @@ var RadioButton = function (_Component) {
           type: 'radio' })),
         _react2.default.createElement('span', { className: CLASS_ROOT + '__control' }),
         _react2.default.createElement(
-          'span',
-          { className: CLASS_ROOT + '__label' },
+          'label',
+          { htmlFor: props.id, className: CLASS_ROOT + '__label' },
           label
         )
       );
