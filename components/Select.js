@@ -4,13 +4,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
 var _keys = require('babel-runtime/core-js/object/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
+
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
 
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
@@ -72,6 +72,14 @@ var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
+var _CheckBox = require('./CheckBox');
+
+var _CheckBox2 = _interopRequireDefault(_CheckBox);
+
+var _RadioButton = require('./RadioButton');
+
+var _RadioButton2 = _interopRequireDefault(_RadioButton);
+
 var _Search = require('./Search');
 
 var _Search2 = _interopRequireDefault(_Search);
@@ -108,7 +116,6 @@ var Select = function (_Component) {
     _this._onNextOption = _this._onNextOption.bind(_this);
     _this._onPreviousOption = _this._onPreviousOption.bind(_this);
     _this._onEnter = _this._onEnter.bind(_this);
-    _this._onClickOption = _this._onClickOption.bind(_this);
     _this._stopPropagation = _this._stopPropagation.bind(_this);
     _this._onInputKeyDown = _this._onInputKeyDown.bind(_this);
     _this._announceOptions = _this._announceOptions.bind(_this);
@@ -119,15 +126,24 @@ var Select = function (_Component) {
       dropActive: false,
       defaultValue: props.defaultValue,
       searchText: '',
-      value: props.value
+      value: _this._normalizeValue(props, {})
     };
     return _this;
   }
 
   (0, _createClass3.default)(Select, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.hasOwnProperty('value')) {
+        this.setState({ value: this._normalizeValue(nextProps, this.state) });
+      }
+    }
+  }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      var options = this.props.options;
+      var _props = this.props;
+      var inline = _props.inline;
+      var options = _props.options;
       var _state = this.state;
       var announceChange = _state.announceChange;
       var dropActive = _state.dropActive;
@@ -136,14 +152,17 @@ var Select = function (_Component) {
       // Set up keyboard listeners appropriate to the current state.
 
       var activeKeyboardHandlers = {
-        esc: this._onForceClose,
-        tab: this._onForceClose,
         up: this._onPreviousOption,
         down: this._onNextOption,
         enter: this._onEnter,
         left: this._stopPropagation,
         right: this._stopPropagation
       };
+
+      if (!inline) {
+        activeKeyboardHandlers.esc = this._onForceClose;
+        activeKeyboardHandlers.tab = this._onForceClose;
+      }
 
       // the order here is important, need to turn off keys before turning on
       if (!dropActive && prevState.dropActive) {
@@ -155,23 +174,30 @@ var Select = function (_Component) {
         }
       }
 
-      if (dropActive && !prevState.dropActive) {
-        document.addEventListener('click', this._onRemoveDrop);
+      if (inline && !prevProps.inline || dropActive && !prevState.dropActive) {
+
+        if (!inline) {
+          document.addEventListener('click', this._onRemoveDrop);
+        }
+
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
 
-        // If this is inside a FormField, place the drop in reference to it.
-        var control = (0, _DOM.findAncestor)(this.componentRef, FORM_FIELD) || this.componentRef;
-        this._drop = _Drop2.default.add(control, this._renderDrop(), {
-          align: { top: 'bottom', left: 'left' },
-          focusControl: true,
-          context: this.context
-        });
+        if (!inline) {
+          // If this is inside a FormField, place the drop in reference to it.
+          var control = (0, _DOM.findAncestor)(this.componentRef, FORM_FIELD) || this.componentRef;
+          this._drop = _Drop2.default.add(control, this._renderOptions(CLASS_ROOT + '__drop'), {
+            align: { top: 'bottom', left: 'left' },
+            focusControl: true,
+            context: this.context
+          });
+        }
+
         if (this._searchRef) {
           this._searchRef.focus();
           this._searchRef._inputRef.select();
         }
       } else if (dropActive && prevState.dropActive) {
-        this._drop.render(this._renderDrop());
+        this._drop.render(this._renderOptions(CLASS_ROOT + '__drop'));
       }
 
       if (announceChange && options) {
@@ -195,6 +221,24 @@ var Select = function (_Component) {
       }
     }
   }, {
+    key: '_normalizeValue',
+    value: function _normalizeValue(props, state) {
+      var multiple = props.multiple;
+      var value = props.value;
+
+      var normalizedValue = value;
+      if (multiple) {
+        if (value) {
+          if (!Array.isArray(value)) {
+            normalizedValue = [value];
+          }
+        } else {
+          normalizedValue = [];
+        }
+      }
+      return normalizedValue;
+    }
+  }, {
     key: '_announceOptions',
     value: function _announceOptions(index) {
       var intl = this.context.intl;
@@ -216,10 +260,12 @@ var Select = function (_Component) {
   }, {
     key: '_onSearchChange',
     value: function _onSearchChange(event) {
+      var inline = this.props.inline;
+
       this.setState({
         announceChange: true,
         activeOptionIndex: -1,
-        dropActive: true,
+        dropActive: !inline,
         searchText: event.target.value
       });
       if (this.props.onSearch) {
@@ -229,9 +275,9 @@ var Select = function (_Component) {
   }, {
     key: '_onAddDrop',
     value: function _onAddDrop(event) {
-      var _props = this.props;
-      var options = _props.options;
-      var value = _props.value;
+      var _props2 = this.props;
+      var options = _props2.options;
+      var value = _props2.value;
 
       event.preventDefault();
       // Get values of options, so we can highlight selected option
@@ -264,7 +310,7 @@ var Select = function (_Component) {
     }
   }, {
     key: '_onNextOption',
-    value: function _onNextOption() {
+    value: function _onNextOption(event) {
       event.preventDefault();
       var index = this.state.activeOptionIndex;
       index = Math.min(index + 1, this.props.options.length - 1);
@@ -283,9 +329,9 @@ var Select = function (_Component) {
     value: function _onEnter(event) {
       var _this2 = this;
 
-      var _props2 = this.props;
-      var onChange = _props2.onChange;
-      var options = _props2.options;
+      var _props3 = this.props;
+      var onChange = _props3.onChange;
+      var options = _props3.options;
       var activeOptionIndex = this.state.activeOptionIndex;
       var intl = this.context.intl;
 
@@ -315,9 +361,33 @@ var Select = function (_Component) {
   }, {
     key: '_onClickOption',
     value: function _onClickOption(option) {
-      this.setState({ value: option, dropActive: false });
+      var multiple = this.props.multiple;
+      var value = this.state.value;
+
+      var nextValue = void 0;
+      if (multiple) {
+        nextValue = value.slice(0);
+        var index = void 0;
+        for (index = 0; index < nextValue.length; index += 1) {
+          if (this._valueEqualsOption(nextValue[index], option)) {
+            break;
+          }
+        }
+        if (index < nextValue.length) {
+          // already existing, remove
+          nextValue.splice(index, 1);
+        } else {
+          // not there, add
+          nextValue.push(option);
+        }
+      } else {
+        nextValue = option;
+      }
+      this.setState({ value: nextValue, dropActive: false });
       if (this.props.onChange) {
-        this.props.onChange({ target: this.inputRef, option: option });
+        this.props.onChange({
+          target: this.inputRef, option: option, value: nextValue
+        });
       }
     }
   }, {
@@ -325,29 +395,63 @@ var Select = function (_Component) {
     value: function _renderLabel(option, announce) {
       if ((typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
         // revert for announce as label is often a complex object
-        return announce ? option.value || option.label : option.label || option.value;
+        return announce ? option.value || option.label || '' : option.label || option.value || '';
       } else {
-        return option;
+        return option || '';
       }
     }
   }, {
-    key: '_renderDrop',
-    value: function _renderDrop() {
+    key: '_valueEqualsOption',
+    value: function _valueEqualsOption(value, option) {
+      var result = false;
+      if ((typeof value === 'undefined' ? 'undefined' : (0, _typeof3.default)(value)) === 'object') {
+        result = value.value === option.value;
+      } else {
+        result = value === option;
+      }
+      return result;
+    }
+  }, {
+    key: '_optionSelected',
+    value: function _optionSelected(option, value) {
       var _this3 = this;
 
-      var _props3 = this.props;
-      var onSearch = _props3.onSearch;
-      var placeHolder = _props3.placeHolder;
-      var options = _props3.options;
+      var result = false;
+      if (value) {
+        if (Array.isArray(value)) {
+          result = value.some(function (val) {
+            return _this3._valueEqualsOption(val, option);
+          });
+        } else {
+          result = this._valueEqualsOption(value, option);
+        }
+      }
+      return result;
+    }
+  }, {
+    key: '_renderOptions',
+    value: function _renderOptions(className) {
+      var _this4 = this;
+
+      var restProps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      var _props4 = this.props;
+      var id = _props4.id;
+      var inline = _props4.inline;
+      var multiple = _props4.multiple;
+      var options = _props4.options;
+      var onSearch = _props4.onSearch;
+      var placeHolder = _props4.placeHolder;
+      var value = _props4.value;
       var _state2 = this.state;
       var activeOptionIndex = _state2.activeOptionIndex;
       var searchText = _state2.searchText;
+
 
       var search = void 0;
       if (onSearch) {
         search = _react2.default.createElement(_Search2.default, { className: CLASS_ROOT + '__search',
           ref: function ref(_ref) {
-            return _this3._searchRef = _ref;
+            return _this4._searchRef = _ref;
           },
           inline: true, fill: true, responsive: false, pad: 'medium',
           placeHolder: placeHolder, value: searchText,
@@ -361,24 +465,49 @@ var Select = function (_Component) {
           var _classnames;
 
           var classes = (0, _classnames4.default)((_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__option', true), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__option--active', index === activeOptionIndex), _classnames));
+
+          var content = _this4._renderLabel(option);
+          if (option.icon) {
+            content = _react2.default.createElement(
+              'span',
+              null,
+              option.icon,
+              ' ',
+              content
+            );
+          }
+
+          var itemOnClick = void 0;
+          if (inline) {
+            var itemId = id + '-' + (option.value || option);
+            var checked = _this4._optionSelected(option, value);
+            var Type = multiple ? _CheckBox2.default : _RadioButton2.default;
+            content = _react2.default.createElement(Type, { key: itemId, id: itemId, label: content, checked: checked,
+              onChange: _this4._onClickOption.bind(_this4, option) });
+          } else {
+            itemOnClick = _this4._onClickOption.bind(_this4, option);
+          }
+
           return _react2.default.createElement(
             'li',
-            { key: index,
-              className: classes,
-              onClick: _this3._onClickOption.bind(_this3, option) },
-            _this3._renderLabel(option)
+            { key: index, className: classes, onClick: itemOnClick },
+            content
           );
         });
       }
 
+      var onClick = void 0;
+      if (!inline) {
+        onClick = this._onRemoveDrop;
+      }
+
       return _react2.default.createElement(
         'div',
-        { className: CLASS_ROOT + '__drop' },
+        (0, _extends3.default)({}, restProps, { className: className }),
         search,
         _react2.default.createElement(
           'ol',
-          { className: CLASS_ROOT + '__options',
-            onClick: this._onRemoveDrop },
+          { className: CLASS_ROOT + '__options', onClick: onClick },
           items
         )
       );
@@ -386,34 +515,52 @@ var Select = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this4 = this;
+      var _classnames2,
+          _this5 = this;
 
-      var _props4 = this.props;
-      var className = _props4.className;
-      var id = _props4.id;
-      var name = _props4.name;
-      var value = _props4.value;
+      var _props5 = this.props;
+      var className = _props5.className;
+      var inline = _props5.inline;
+      var value = _props5.value;
       var active = this.state.active;
       var intl = this.context.intl;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', active), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--active', active), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--inline', inline), _classnames2), className);
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Select.propTypes));
 
-      var buttonMessage = _Intl2.default.getMessage(intl, 'Select Icon');
+      if (inline) {
+        return this._renderOptions(classes, restProps);
+      } else {
+        return _react2.default.createElement(
+          'div',
+          { ref: function ref(_ref3) {
+              return _this5.componentRef = _ref3;
+            }, className: classes,
+            onClick: this._onAddDrop },
+          _react2.default.createElement('input', (0, _extends3.default)({}, restProps, { ref: function ref(_ref2) {
+              return _this5.inputRef = _ref2;
+            },
+            className: INPUT + ' ' + CLASS_ROOT + '__input',
+            disabled: true, value: this._renderLabel(value) })),
+          _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control',
+            a11yTitle: _Intl2.default.getMessage(intl, 'Select Icon'),
+            icon: _react2.default.createElement(_CaretDown2.default, null), onClick: this._onAddDrop })
+        );
+      }
+
       return _react2.default.createElement(
         'div',
-        { ref: function ref(_ref3) {
-            return _this4.componentRef = _ref3;
+        { ref: function ref(_ref5) {
+            return _this5.componentRef = _ref5;
           }, className: classes,
-          onClick: this._onAddDrop },
-        _react2.default.createElement('input', (0, _extends3.default)({}, restProps, { className: INPUT + ' ' + CLASS_ROOT + '__input',
-          id: id, name: name, disabled: true,
-          ref: function ref(_ref2) {
-            return _this4.inputRef = _ref2;
+          onClick: onClick },
+        _react2.default.createElement('input', (0, _extends3.default)({}, restProps, { ref: function ref(_ref4) {
+            return _this5.inputRef = _ref4;
           },
-          value: this._renderLabel(value) })),
-        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control', a11yTitle: buttonMessage,
-          icon: _react2.default.createElement(_CaretDown2.default, null), onClick: this._onAddDrop })
+          className: INPUT + ' ' + CLASS_ROOT + '__input',
+          disabled: true, value: this._renderLabel(value) })),
+        button,
+        drop
       );
     }
   }]);
@@ -424,27 +571,24 @@ Select.displayName = 'Select';
 exports.default = Select;
 
 
-Select.contextTypes = {
-  intl: _react.PropTypes.object
-};
+var valueType = _react.PropTypes.oneOfType([_react.PropTypes.shape({
+  label: _react.PropTypes.node,
+  value: _react.PropTypes.any
+}), _react.PropTypes.string]);
 
 Select.propTypes = {
-  defaultValue: _react.PropTypes.oneOfType([_react.PropTypes.shape({
-    label: _react.PropTypes.string,
-    value: _react.PropTypes.string
-  }), _react.PropTypes.string]),
-  id: _react.PropTypes.string,
-  name: _react.PropTypes.string,
+  // deprecate?
+  defaultValue: _react.PropTypes.oneOfType([valueType, _react.PropTypes.arrayOf(valueType)]),
+  inline: _react.PropTypes.bool,
+  multiple: _react.PropTypes.bool,
   onSearch: _react.PropTypes.func,
-  onChange: _react.PropTypes.func,
+  onChange: _react.PropTypes.func, // (value(s))
   placeHolder: _react.PropTypes.string,
-  options: _react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.shape({
-    label: _react.PropTypes.node,
-    value: _react.PropTypes.any
-  }), _react.PropTypes.string])),
-  value: _react.PropTypes.oneOfType([_react.PropTypes.shape({
-    label: _react.PropTypes.string,
-    value: _react.PropTypes.string
-  }), _react.PropTypes.string])
+  options: _react.PropTypes.arrayOf(valueType).isRequired,
+  value: _react.PropTypes.oneOfType([valueType, _react.PropTypes.arrayOf(valueType)])
+};
+
+Select.contextTypes = {
+  intl: _react.PropTypes.object
 };
 module.exports = exports['default'];
