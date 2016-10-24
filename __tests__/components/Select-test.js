@@ -12,7 +12,32 @@ jest.mock('react-dom');
 describe('Select', () => {
   it('has correct default options', () => {
     const component = renderer.create(
-       <Select id="item1" name="item-1" value="one" />
+      <Select options={['one', 'two']} />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('accepts initial value', () => {
+    const component = renderer.create(
+      <Select options={['one', 'two']} value="one" />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('inline', () => {
+    const component = renderer.create(
+      <Select inline={true} options={['one', 'two']} value={['one']} />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('inline + multiple', () => {
+    const component = renderer.create(
+      <Select inline={true} multiple={true} options={['one', 'two']}
+        value={['one']} />
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();

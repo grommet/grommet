@@ -6,11 +6,6 @@
   overflow: hidden;
 }
 
-.#{$grommet-namespace}select__drop {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-}
-
 .#{$grommet-namespace}select__input {
   @include input();
   padding-right: round($inuit-base-spacing-unit * 2.5);
@@ -57,11 +52,20 @@
 }
 
 .#{$grommet-namespace}select__option {
-  padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+  padding: quarter($inuit-base-spacing-unit) 0;
   cursor: pointer;
+}
 
-  &:hover,
-  &--active {
-    background-color: $hover-background-color;
+.#{$grommet-namespace}select__drop {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+
+  .#{$grommet-namespace}select__option {
+    padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+
+    &:hover,
+    &--active {
+      background-color: $hover-background-color;
+    }
   }
 }

@@ -9,6 +9,8 @@ import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
 import { findAncestor } from '../utils/DOM';
 import Button from './Button';
+import CheckBox from './CheckBox';
+import RadioButton from './RadioButton';
 import Search from './Search';
 import CaretDownIcon from './icons/base/CaretDown';
 import Intl from '../utils/Intl';
@@ -30,7 +32,6 @@ export default class Select extends Component {
     this._onNextOption = this._onNextOption.bind(this);
     this._onPreviousOption = this._onPreviousOption.bind(this);
     this._onEnter = this._onEnter.bind(this);
-    this._onClickOption = this._onClickOption.bind(this);
     this._stopPropagation = this._stopPropagation.bind(this);
     this._onInputKeyDown = this._onInputKeyDown.bind(this);
     this._announceOptions = this._announceOptions.bind(this);
@@ -41,25 +42,34 @@ export default class Select extends Component {
       dropActive: false,
       defaultValue: props.defaultValue,
       searchText: '',
-      value: props.value
+      value: this._normalizeValue(props, {})
     };
   }
 
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.hasOwnProperty('value')) {
+      this.setState({ value: this._normalizeValue(nextProps, this.state) });
+    }
+  }
+
   componentDidUpdate (prevProps, prevState) {
-    const { options } = this.props;
+    const { inline, options } = this.props;
     const { announceChange, dropActive } = this.state;
     const { intl } = this.context;
 
     // Set up keyboard listeners appropriate to the current state.
-    const activeKeyboardHandlers = {
-      esc: this._onForceClose,
-      tab: this._onForceClose,
+    let activeKeyboardHandlers = {
       up: this._onPreviousOption,
       down: this._onNextOption,
       enter: this._onEnter,
       left: this._stopPropagation,
       right: this._stopPropagation
     };
+
+    if (! inline) {
+      activeKeyboardHandlers.esc = this._onForceClose;
+      activeKeyboardHandlers.tab = this._onForceClose;
+    }
 
     // the order here is important, need to turn off keys before turning on
     if (! dropActive && prevState.dropActive) {
@@ -72,26 +82,35 @@ export default class Select extends Component {
       }
     }
 
-    if (dropActive && ! prevState.dropActive) {
-      document.addEventListener('click', this._onRemoveDrop);
+    if ((inline && ! prevProps.inline) ||
+      (dropActive && ! prevState.dropActive)) {
+
+      if (! inline) {
+        document.addEventListener('click', this._onRemoveDrop);
+      }
+
       KeyboardAccelerators.startListeningToKeyboard(this,
         activeKeyboardHandlers);
 
-      // If this is inside a FormField, place the drop in reference to it.
-      const control =
-        findAncestor(this.componentRef, FORM_FIELD) || this.componentRef;
-      this._drop = Drop.add(control,
-        this._renderDrop(), {
-          align: {top: 'bottom', left: 'left'},
-          focusControl: true,
-          context: this.context
-        });
+      if (! inline) {
+        // If this is inside a FormField, place the drop in reference to it.
+        const control =
+          findAncestor(this.componentRef, FORM_FIELD) || this.componentRef;
+        this._drop = Drop.add(control,
+          this._renderOptions(`${CLASS_ROOT}__drop`), {
+            align: {top: 'bottom', left: 'left'},
+            focusControl: true,
+            context: this.context
+          });
+      }
+
       if (this._searchRef) {
         this._searchRef.focus();
         this._searchRef._inputRef.select();
       }
+
     } else if (dropActive && prevState.dropActive) {
-      this._drop.render(this._renderDrop());
+      this._drop.render(this._renderOptions(`${CLASS_ROOT}__drop`));
     }
 
     if (announceChange && options) {
@@ -116,6 +135,21 @@ export default class Select extends Component {
     }
   }
 
+  _normalizeValue (props, state) {
+    const { multiple, value } = props;
+    let normalizedValue = value;
+    if (multiple) {
+      if (value) {
+        if (! Array.isArray(value)) {
+          normalizedValue = [value];
+        }
+      } else {
+        normalizedValue = [];
+      }
+    }
+    return normalizedValue;
+  }
+
   _announceOptions (index) {
     const { intl } = this.context;
     const labelMessage = this._renderLabel(this.props.options[index], true);
@@ -133,10 +167,11 @@ export default class Select extends Component {
   }
 
   _onSearchChange (event) {
+    const { inline } = this.props;
     this.setState({
       announceChange: true,
       activeOptionIndex: -1,
-      dropActive: true,
+      dropActive: ! inline,
       searchText: event.target.value
     });
     if (this.props.onSearch) {
@@ -175,7 +210,7 @@ export default class Select extends Component {
     this.setState({dropActive: false});
   }
 
-  _onNextOption () {
+  _onNextOption (event) {
     event.preventDefault();
     let index = this.state.activeOptionIndex;
     index = Math.min(index + 1, this.props.options.length - 1);
@@ -217,25 +252,73 @@ export default class Select extends Component {
   }
 
   _onClickOption (option) {
-    this.setState({value: option, dropActive: false});
+    const { multiple } = this.props;
+    const { value } = this.state;
+    let nextValue;
+    if (multiple) {
+      nextValue = value.slice(0);
+      let index;
+      for (index = 0; index < nextValue.length; index += 1) {
+        if (this._valueEqualsOption(nextValue[index], option)) {
+          break;
+        }
+      }
+      if (index < nextValue.length) {
+        // already existing, remove
+        nextValue.splice(index, 1);
+      } else {
+        // not there, add
+        nextValue.push(option);
+      }
+    } else {
+      nextValue = option;
+    }
+    this.setState({ value: nextValue, dropActive: false });
     if (this.props.onChange) {
-      this.props.onChange({target: this.inputRef, option: option});
+      this.props.onChange({
+        target: this.inputRef, option: option, value: nextValue
+      });
     }
   }
 
   _renderLabel (option, announce) {
     if (typeof option === 'object') {
       // revert for announce as label is often a complex object
-      return announce ? option.value || option.label :
-        option.label || option.value;
+      return announce ? option.value || option.label || '' :
+        option.label || option.value || '';
     } else {
-      return option;
+      return option || '';
     }
   }
 
-  _renderDrop () {
-    const { onSearch, placeHolder, options } = this.props;
+  _valueEqualsOption (value, option) {
+    let result = false;
+    if (typeof value === 'object') {
+      result = value.value === option.value;
+    } else {
+      result = value === option;
+    }
+    return result;
+  }
+
+  _optionSelected (option, value) {
+    let result = false;
+    if (value) {
+      if (Array.isArray(value)) {
+        result = value.some(val => this._valueEqualsOption(val, option));
+      } else {
+        result = this._valueEqualsOption(value, option);
+      }
+    }
+    return result;
+  }
+
+  _renderOptions (className, restProps={}) {
+    const {
+      id, inline, multiple, options, onSearch, placeHolder, value
+    } = this.props;
     const { activeOptionIndex, searchText } = this.state;
+
     let search;
     if (onSearch) {
       search = (
@@ -258,21 +341,44 @@ export default class Select extends Component {
               index === activeOptionIndex
           }
         );
+
+        let content = this._renderLabel(option);
+        if (option.icon) {
+          content = (
+            <span>{option.icon} {content}</span>
+          );
+        }
+
+        let itemOnClick;
+        if (inline) {
+          const itemId = `${id}-${option.value || option}`;
+          const checked = this._optionSelected(option, value);
+          const Type = (multiple ? CheckBox : RadioButton );
+          content = (
+            <Type key={itemId} id={itemId} label={content} checked={checked}
+              onChange={this._onClickOption.bind(this, option)} />
+          );
+        } else {
+          itemOnClick = this._onClickOption.bind(this, option);
+        }
+
         return (
-          <li key={index}
-            className={classes}
-            onClick={this._onClickOption.bind(this, option)}>
-            {this._renderLabel(option)}
+          <li key={index} className={classes} onClick={itemOnClick}>
+            {content}
           </li>
         );
       });
     }
 
+    let onClick;
+    if (! inline) {
+      onClick = this._onRemoveDrop;
+    }
+
     return (
-      <div className={`${CLASS_ROOT}__drop`}>
+      <div {...restProps} className={className}>
         {search}
-        <ol className={`${CLASS_ROOT}__options`}
-          onClick={this._onRemoveDrop}>
+        <ol className={`${CLASS_ROOT}__options`} onClick={onClick}>
           {items}
         </ol>
       </div>
@@ -280,65 +386,69 @@ export default class Select extends Component {
   }
 
   render () {
-    const { className, id, name, value } = this.props;
+    const { className, inline, value } = this.props;
     const { active } = this.state;
     const { intl } = this.context;
     let classes = classnames(
       CLASS_ROOT,
       {
-        [`${CLASS_ROOT}--active`]: active
+        [`${CLASS_ROOT}--active`]: active,
+        [`${CLASS_ROOT}--inline`]: inline
       },
       className
     );
     const restProps = Props.omit(this.props, Object.keys(Select.propTypes));
 
-    const buttonMessage = Intl.getMessage(intl, 'Select Icon');
+    if (inline) {
+      return this._renderOptions(classes, restProps);
+    } else {
+      return (
+        <div ref={ref => this.componentRef = ref} className={classes}
+          onClick={this._onAddDrop}>
+          <input {...restProps} ref={ref => this.inputRef = ref}
+            className={`${INPUT} ${CLASS_ROOT}__input`}
+            disabled={true} value={this._renderLabel(value)} />
+          <Button className={`${CLASS_ROOT}__control`}
+            a11yTitle={Intl.getMessage(intl, 'Select Icon')}
+            icon={<CaretDownIcon />} onClick={this._onAddDrop} />
+        </div>
+      );
+    }
+
     return (
       <div ref={ref => this.componentRef = ref} className={classes}
-        onClick={this._onAddDrop}>
-        <input {...restProps} className={`${INPUT} ${CLASS_ROOT}__input`}
-          id={id} name={name} disabled={true}
-          ref={ref => this.inputRef = ref}
-          value={this._renderLabel(value)} />
-        <Button className={`${CLASS_ROOT}__control`} a11yTitle={buttonMessage}
-          icon={<CaretDownIcon />} onClick={this._onAddDrop} />
+        onClick={onClick}>
+        <input {...restProps} ref={ref => this.inputRef = ref}
+          className={`${INPUT} ${CLASS_ROOT}__input`}
+          disabled={true} value={this._renderLabel(value)} />
+        {button}
+        {drop}
       </div>
     );
   }
 
 }
 
-Select.contextTypes = {
-  intl: PropTypes.object
-};
+const valueType = PropTypes.oneOfType([
+  PropTypes.shape({
+    label: PropTypes.node,
+    value: PropTypes.any
+  }),
+  PropTypes.string
+]);
 
 Select.propTypes = {
-  defaultValue: PropTypes.oneOfType([
-    PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.string
-    }),
-    PropTypes.string
-  ]),
-  id: PropTypes.string,
-  name: PropTypes.string,
+  // deprecate?
+  defaultValue: PropTypes.oneOfType([valueType, PropTypes.arrayOf(valueType)]),
+  inline: PropTypes.bool,
+  multiple: PropTypes.bool,
   onSearch: PropTypes.func,
-  onChange: PropTypes.func,
+  onChange: PropTypes.func, // (value(s))
   placeHolder: PropTypes.string,
-  options: PropTypes.arrayOf(
-    PropTypes.oneOfType([
-      PropTypes.shape({
-        label: PropTypes.node,
-        value: PropTypes.any
-      }),
-      PropTypes.string
-    ])
-  ),
-  value: PropTypes.oneOfType([
-    PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.string
-    }),
-    PropTypes.string
-  ])
+  options: PropTypes.arrayOf(valueType).isRequired,
+  value: PropTypes.oneOfType([valueType, PropTypes.arrayOf(valueType)])
+};
+
+Select.contextTypes = {
+  intl: PropTypes.object
 };
