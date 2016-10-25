@@ -44,6 +44,8 @@ var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
+var _reactDesc = require('react-desc');
+
 var _LinkNext = require('./icons/base/LinkNext');
 
 var _LinkNext2 = _interopRequireDefault(_LinkNext);
@@ -54,9 +56,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-var CLASS_ROOT = _CSSClassnames2.default.ANCHOR;
+var CLASS_ROOT = _CSSClassnames2.default.ANCHOR; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var Anchor = function (_Component) {
   (0, _inherits3.default)(Anchor, _Component);
@@ -177,21 +177,27 @@ Anchor.displayName = 'Anchor';
 exports.default = Anchor;
 ;
 
+var description = 'A text link. We have a separate component from the browser\nbase so we can style it. You can either set the icon and/or label properties\nor just use children.';
+var usage = 'import Anchor from \'grommet/components/Anchor\';\n<Anchor href={location} label="Label" />\n';
+(0, _reactDesc.docComponent)(description, Anchor, {
+  usage: usage
+});
+
 Anchor.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  animateIcon: _react.PropTypes.bool,
-  disabled: _react.PropTypes.bool,
-  href: _react.PropTypes.string,
-  icon: _react.PropTypes.element,
-  id: _react.PropTypes.string,
-  label: _react.PropTypes.node,
-  method: _react.PropTypes.oneOf(['push', 'replace']),
-  onClick: _react.PropTypes.func,
-  path: _react.PropTypes.string,
-  primary: _react.PropTypes.bool,
-  reverse: _react.PropTypes.bool,
-  tag: _react.PropTypes.string,
-  target: _react.PropTypes.string
+  a11yTitle: (0, _reactDesc.docPropType)('Accessibility title.', _reactDesc.PropTypes.string),
+  animateIcon: (0, _reactDesc.docPropType)('Whether to animate the icon on hover.', _reactDesc.PropTypes.bool),
+  disabled: (0, _reactDesc.docPropType)('Whether to disable the anchor.', _reactDesc.PropTypes.bool),
+  href: (0, _reactDesc.docPropType)('Hyperlink reference to place in the anchor.', _reactDesc.PropTypes.string),
+  icon: (0, _reactDesc.docPropType)('Icon element to place in the anchor.', _reactDesc.PropTypes.element),
+  id: (0, _reactDesc.docPropType)('Anchor identifier.', _reactDesc.PropTypes.string),
+  label: (0, _reactDesc.docPropType)('Label text to place in the anchor.', _reactDesc.PropTypes.node),
+  method: (0, _reactDesc.docPropType)('Valid only when used with path. Indicates whether the browser history' + ' should be appended to or replaced.', _reactDesc.PropTypes.oneOf(['push', 'replace'])),
+  onClick: (0, _reactDesc.docPropType)('Click handler.', _reactDesc.PropTypes.func),
+  path: (0, _reactDesc.docPropType)('React-router path to navigate to when clicked.', _reactDesc.PropTypes.string),
+  primary: (0, _reactDesc.docPropType)('Whether this is a primary anchor.', _reactDesc.PropTypes.bool),
+  reverse: (0, _reactDesc.docPropType)('Whether an icon and label should be reversed so that the icon is at the' + 'end of the anchor.', _reactDesc.PropTypes.bool),
+  tag: (0, _reactDesc.docPropType)('The DOM tag to use for the element. The default is <a>. This should be' + ' used in conjunction with components like Link from React Router. In' + ' this case, Link controls the navigation while Anchor controls the' + ' styling.', _reactDesc.PropTypes.string),
+  target: (0, _reactDesc.docPropType)('Target of the link.', _reactDesc.PropTypes.string)
 };
 
 Anchor.defaultProps = {
@@ -200,6 +206,6 @@ Anchor.defaultProps = {
 };
 
 Anchor.contextTypes = {
-  router: _react.PropTypes.object
+  router: _react2.default.PropTypes.object
 };
 module.exports = exports['default'];
