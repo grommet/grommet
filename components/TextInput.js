@@ -442,7 +442,10 @@ TextInput.propTypes = {
   onDOMChange: _react.PropTypes.func,
   onSelect: _react.PropTypes.func,
   placeHolder: _react.PropTypes.string,
-  suggestions: _react.PropTypes.arrayOf(_react.PropTypes.string),
+  suggestions: _react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.shape({
+    label: _react.PropTypes.node,
+    value: _react.PropTypes.any
+  }), _react.PropTypes.string])),
   value: _react.PropTypes.string
 };
 module.exports = exports['default'];
