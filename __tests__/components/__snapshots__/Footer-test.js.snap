@@ -1,6 +1,6 @@
 exports[`Footer has correct default options 1`] = `
 <footer
-  className="grommetux-box grommetux-box--direction-row grommetux-box--pad-none grommetux-footer"
+  className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-footer"
   id={undefined}
   onClick={undefined}
   role={undefined}
@@ -12,7 +12,7 @@ exports[`Footer has correct default options 1`] = `
 
 exports[`Footer renders a class name 1`] = `
 <footer
-  className="grommetux-box grommetux-box--direction-row grommetux-box--pad-none grommetux-footer test"
+  className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-footer test"
   id={undefined}
   onClick={undefined}
   role={undefined}
@@ -24,7 +24,7 @@ exports[`Footer renders a class name 1`] = `
 
 exports[`Footer renders microdata properties 1`] = `
 <footer
-  className="grommetux-box grommetux-box--direction-row grommetux-box--pad-none grommetux-footer"
+  className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-footer"
   id={undefined}
   itemProp="test"
   itemScope={true}

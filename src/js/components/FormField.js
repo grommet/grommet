@@ -55,8 +55,8 @@ export default class FormField extends Component {
   }
 
   render () {
-    const { 
-      children, className, help, hidden, htmlFor, label, size, strong, error, 
+    const {
+      children, className, help, hidden, htmlFor, label, size, strong, error,
       ...props
     } = this.props;
 

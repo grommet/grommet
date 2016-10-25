@@ -25,9 +25,10 @@ export default class CheckBox extends Component {
     let labelNode;
     if (label) {
       labelNode = (
-        <span key='label' className={`${CLASS_ROOT}__label`}>
+        <label key='label' htmlFor={props.id}
+          className={`${CLASS_ROOT}__label`}>
           {label}
-        </span>
+        </label>
       );
     }
 

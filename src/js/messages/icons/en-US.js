@@ -284,6 +284,7 @@ export default {
   tree: 'tree',
   trigger: 'trigger',
   trophy: 'trophy',
+  troubleshoot: 'troubleshoot',
   troubleshooting: 'troubleshooting',
   unlock: 'unlock',
   up: 'up',

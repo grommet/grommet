@@ -22,9 +22,9 @@ export default class RadioButton extends Component {
         <input {...props} className={`${CLASS_ROOT}__input`}
           type="radio" />
         <span className={`${CLASS_ROOT}__control`} />
-          <span className={`${CLASS_ROOT}__label`}>
+          <label htmlFor={props.id} className={`${CLASS_ROOT}__label`}>
             {label}
-          </span>
+          </label>
       </label>
     );
   }
