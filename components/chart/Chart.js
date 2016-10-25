@@ -112,7 +112,7 @@ var CHART_BASE = _CSSClassnames2.default.CHART_BASE;
 function traverseAndUpdateChildren(children) {
   return _react.Children.map(children, function (child) {
     if (!child || !child.type) {
-      return;
+      return child;
     }
 
     // remove tabIndex from child elements to avoid

@@ -219,7 +219,7 @@ HotSpots.contextTypes = {
 };
 
 HotSpots.propTypes = {
-  a11yTitle: _react.PropTypes.string,
+  a11yTitle: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number]),
   activeIndex: _react.PropTypes.number,
   count: _react.PropTypes.number.isRequired,
   onActive: _react.PropTypes.func,
