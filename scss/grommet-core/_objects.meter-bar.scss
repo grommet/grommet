@@ -27,6 +27,7 @@ $meter-bar-cross-default:
 }
 
 .#{$grommet-namespace}meter--bar {
+  line-height: 0;
 
   .#{$grommet-namespace}meter__slice {
     stroke-linecap: butt;
