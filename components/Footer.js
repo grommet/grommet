@@ -206,6 +206,7 @@ Footer.propTypes = (0, _extends3.default)({
 }, _Box2.default.propTypes);
 
 Footer.defaultProps = {
+  align: 'center',
   direction: 'row',
   responsive: false
 };
