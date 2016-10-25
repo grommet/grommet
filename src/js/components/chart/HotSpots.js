@@ -135,7 +135,7 @@ HotSpots.contextTypes = {
 };
 
 HotSpots.propTypes = {
-  a11yTitle: PropTypes.string,
+  a11yTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   activeIndex: PropTypes.number,
   count: PropTypes.number.isRequired,
   onActive: PropTypes.func,
