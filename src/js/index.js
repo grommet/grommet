@@ -1,6 +1,9 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 var Grommet = {
-  // Components
+  /**
+   * Components.  Note that Collapsible and DateTimeDrop are private
+   * and shouldn't be exposed here.
+   */
   Accordion: require('./components/Accordion'),
   AccordionPanel: require('./components/AccordionPanel'),
   Anchor: require('./components/Anchor'),
@@ -26,10 +29,8 @@ var Grommet = {
     Range: require('./components/chart/Range')
   },
   CheckBox: require('./components/CheckBox'),
-  Collapsible: require('./components/Collapsible'),
   Columns: require('./components/Columns'),
   DateTime: require('./components/DateTime'),
-  DateTimeDrop: require('./components/DateTimeDrop'),
   Distribution: require('./components/Distribution'),
   Footer: require('./components/Footer'),
   Form: require('./components/Form'),
