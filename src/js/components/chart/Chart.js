@@ -26,7 +26,7 @@ const CHART_BASE = CSSClassnames.CHART_BASE;
 function traverseAndUpdateChildren (children) {
   return Children.map(children, child => {
     if (!child || !child.type) {
-      return;
+      return child;
     }
 
     // remove tabIndex from child elements to avoid
