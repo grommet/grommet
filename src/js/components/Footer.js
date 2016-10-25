@@ -55,7 +55,7 @@ export default class Footer extends Component {
   }
 
   render () {
-    const { 
+    const {
       children, className, colorIndex, fixed, float, primary, size
     } = this.props;
     const restProps = Props.omit(this.props, Object.keys(Footer.propTypes));
@@ -135,6 +135,7 @@ Footer.propTypes = {
 };
 
 Footer.defaultProps = {
+  align: 'center',
   direction: 'row',
   responsive: false
 };
