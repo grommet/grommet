@@ -308,7 +308,6 @@ export default class TextInput extends Component {
     delete props.suggestions;
     delete props.onDOMChange;
     delete props.onSelect;
-    delete props.placeHolder;
     let classes = classnames(
       CLASS_ROOT,
       INPUT,
