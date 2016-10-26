@@ -16,9 +16,7 @@ var CLASS_ROOT = _CSSClassnames2.default.APP; // (C) Copyright 2014-2016 Hewlett
 
 function clearAnnouncer() {
   var announcer = document.querySelector('.' + CLASS_ROOT + '__announcer');
-  if (announcer) {
-    announcer.innerHTML = '';
-  }
+  announcer.innerHTML = '';
 };
 
 function announcePageLoaded(title) {
@@ -29,12 +27,10 @@ function announce(message) {
   var mode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'assertive';
 
   var announcer = document.querySelector('.' + CLASS_ROOT + '__announcer');
-  if (announcer) {
-    announcer.setAttribute('aria-live', 'off');
-    announcer.innerHTML = message;
-    setTimeout(clearAnnouncer, 500);
-    announcer.setAttribute('aria-live', mode);
-  }
+  announcer.setAttribute('aria-live', 'off');
+  announcer.innerHTML = message;
+  setTimeout(clearAnnouncer, 500);
+  announcer.setAttribute('aria-live', mode);
 }
 
 exports.default = { announce: announce, announcePageLoaded: announcePageLoaded };
