@@ -407,7 +407,8 @@ var TextInput = function (_Component) {
       var className = _props4.className;
       var defaultValue = _props4.defaultValue;
       var value = _props4.value;
-      var props = (0, _objectWithoutProperties3.default)(_props4, ['className', 'defaultValue', 'value']);
+      var placeHolder = _props4.placeHolder;
+      var props = (0, _objectWithoutProperties3.default)(_props4, ['className', 'defaultValue', 'value', 'placeHolder']);
 
       delete props.suggestions;
       delete props.onDOMChange;
@@ -420,6 +421,7 @@ var TextInput = function (_Component) {
         className: classes, autoComplete: 'off',
         defaultValue: this._renderLabel(defaultValue),
         value: this._renderLabel(value),
+        placeholder: placeHolder,
         onChange: this._onInputChange, onFocus: this._onFocus,
         onKeyDown: this._onInputKeyDown }));
     }
