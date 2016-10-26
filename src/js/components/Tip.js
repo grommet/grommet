@@ -64,8 +64,9 @@ export default class Tip extends Component {
   componentWillUnmount () {
     const { onClose } = this.props;
     const target = this._getTarget();
+    this._drop.remove();
+    
     if (target) {
-      this._drop.remove();
       target.removeEventListener('click', onClose);
       target.removeEventListener('blur', onClose);
     }
