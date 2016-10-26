@@ -25,17 +25,6 @@
 }
 
 .#{$grommet-namespace}menu__control {
-  &:hover {
-    .#{$grommet-namespace}menu__control-label {
-      #{$dark-background-context} {
-        color: $active-colored-text-color;
-      }
-
-      #{$light-background-context} {
-        color: $text-color;
-      }
-    }
-  }
 
   .#{$grommet-namespace}control-icon-down {
     width: halve($inuit-base-spacing-unit);
@@ -314,10 +303,6 @@
     height: 1px;
     background-color: $border-color;
     border: none;
-  }
-
-  .#{$grommet-namespace}menu__control-label {
-    font-size: $control-font-size;
   }
 
   a {

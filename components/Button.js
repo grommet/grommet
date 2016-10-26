@@ -61,6 +61,10 @@ var Button = function (_Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (Button.__proto__ || (0, _getPrototypeOf2.default)(Button)).call(this));
 
     _this._onClick = _this._onClick.bind(_this);
+    _this._onMouseDown = _this._onMouseDown.bind(_this);
+    _this._onMouseUp = _this._onMouseDown.bind(_this);
+    _this._onFocus = _this._onFocus.bind(_this);
+    _this._onBlur = _this._onBlur.bind(_this);
     _this.state = {
       mouseActive: false,
       focus: false
@@ -91,10 +95,52 @@ var Button = function (_Component) {
       }
     }
   }, {
+    key: '_onMouseDown',
+    value: function _onMouseDown(event) {
+      var onMouseDown = this.props.onMouseDown;
+
+      this.setState({ mouseActive: true });
+      if (onMouseDown) {
+        onMouseDown(event);
+      }
+    }
+  }, {
+    key: '_onMouseUp',
+    value: function _onMouseUp(event) {
+      var onMouseUp = this.props.onMouseUp;
+
+      this.setState({ mouseActive: false });
+      if (onMouseUp) {
+        onMouseUp(event);
+      }
+    }
+  }, {
+    key: '_onFocus',
+    value: function _onFocus(event) {
+      var onFocus = this.props.onFocus;
+      var mouseActive = this.state.mouseActive;
+
+      if (mouseActive === false) {
+        this.setState({ focus: true });
+      }
+      if (onFocus) {
+        onFocus(event);
+      }
+    }
+  }, {
+    key: '_onBlur',
+    value: function _onBlur(event) {
+      var onBlur = this.props.onBlur;
+
+      this.setState({ focus: false });
+      if (onBlur) {
+        onBlur(event);
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var _classnames,
-          _this2 = this;
+      var _classnames;
 
       var _props2 = this.props;
       var a11yTitle = _props2.a11yTitle;
@@ -105,55 +151,43 @@ var Button = function (_Component) {
       var fill = _props2.fill;
       var href = _props2.href;
       var icon = _props2.icon;
-      var id = _props2.id;
       var label = _props2.label;
       var onClick = _props2.onClick;
-      var _onBlur = _props2.onBlur;
-      var _onFocus = _props2.onFocus;
-      var _onMouseDown = _props2.onMouseDown;
-      var _onMouseUp = _props2.onMouseUp;
       var path = _props2.path;
       var plain = _props2.plain;
       var primary = _props2.primary;
+      var reverse = _props2.reverse;
       var secondary = _props2.secondary;
       var type = _props2.type;
-      var props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'accent', 'align', 'children', 'className', 'fill', 'href', 'icon', 'id', 'label', 'onClick', 'onBlur', 'onFocus', 'onMouseDown', 'onMouseUp', 'path', 'plain', 'primary', 'secondary', 'type']);
+      var props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'accent', 'align', 'children', 'className', 'fill', 'href', 'icon', 'label', 'onClick', 'path', 'plain', 'primary', 'reverse', 'secondary', 'type']);
 
       delete props.method;
       var router = this.context.router;
 
 
-      var buttonPlain = plain !== undefined ? plain : icon && !label;
-
       var buttonIcon = void 0;
-      if (icon) buttonIcon = _react2.default.createElement(
-        'span',
-        { className: CLASS_ROOT + '__icon' },
-        icon
-      );
+      if (icon) {
+        buttonIcon = _react2.default.createElement(
+          'span',
+          { className: CLASS_ROOT + '__icon' },
+          icon
+        );
+      }
 
-      var hasIcon = buttonIcon !== undefined;
-      var buttonChildren = _react2.default.Children.map(children, function (child) {
-        if (child && child.type && child.type.icon) {
-          hasIcon = true;
-          child = _react2.default.createElement(
-            'span',
-            { className: CLASS_ROOT + '__icon' },
-            child
-          );
-        }
-        return child;
-      });
+      var buttonLabel = void 0;
+      if (label) {
+        buttonLabel = _react2.default.createElement(
+          'span',
+          { className: CLASS_ROOT + '__label' },
+          label
+        );
+      }
 
       var adjustedHref = path && router ? router.createPath(path) : href;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--focus', this.state.focus), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--secondary', secondary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--accent', accent), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', !onClick && !adjustedHref), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--plain', buttonPlain), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon', icon || hasIcon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--focus', this.state.focus), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--secondary', secondary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--accent', accent), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', !onClick && !adjustedHref), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--plain', plain || _react.Children.count(children) > 0 || icon && !label), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), _classnames), className);
 
       var adjustedOnClick = path && router ? this._onClick : onClick;
-
-      if (!buttonChildren) {
-        buttonChildren = label;
-      }
 
       var Tag = adjustedHref ? 'a' : 'button';
       var buttonType = void 0;
@@ -161,40 +195,20 @@ var Button = function (_Component) {
         buttonType = type;
       }
 
+      var first = reverse ? buttonLabel : buttonIcon;
+      var second = reverse ? buttonIcon : buttonLabel;
+
       return _react2.default.createElement(
         Tag,
-        (0, _extends3.default)({}, props, { href: adjustedHref, id: id, type: buttonType,
+        (0, _extends3.default)({}, props, { href: adjustedHref, type: buttonType,
           className: classes, 'aria-label': a11yTitle,
           onClick: adjustedOnClick,
           disabled: !onClick && !adjustedHref,
-          onMouseDown: function onMouseDown(event) {
-            _this2.setState({ mouseActive: true });
-            if (_onMouseDown) {
-              _onMouseDown(event);
-            }
-          },
-          onMouseUp: function onMouseUp(event) {
-            _this2.setState({ mouseActive: false });
-            if (_onMouseUp) {
-              _onMouseUp(event);
-            }
-          },
-          onFocus: function onFocus(event) {
-            if (_this2.state.mouseActive === false) {
-              _this2.setState({ focus: true });
-            }
-            if (_onFocus) {
-              _onFocus(event);
-            }
-          },
-          onBlur: function onBlur(event) {
-            _this2.setState({ focus: false });
-            if (_onBlur) {
-              _onBlur(event);
-            }
-          } }),
-        buttonIcon,
-        buttonChildren
+          onMouseDown: this._onMouseDown, onMouseUp: this._onMouseUp,
+          onFocus: this._onFocus, onBlur: this._onBlur }),
+        first,
+        second,
+        children
       );
     }
   }]);
@@ -212,13 +226,13 @@ Button.propTypes = {
   fill: _react.PropTypes.bool,
   href: _react.PropTypes.string,
   icon: _react.PropTypes.element,
-  id: _react.PropTypes.string,
   label: _react.PropTypes.node,
   method: _react.PropTypes.oneOf(['push', 'replace']),
   onClick: _react.PropTypes.func,
   path: _react.PropTypes.string,
   plain: _react.PropTypes.bool,
   primary: _react.PropTypes.bool,
+  reverse: _react.PropTypes.bool,
   secondary: _react.PropTypes.bool,
   type: _react.PropTypes.oneOf(['button', 'reset', 'submit'])
 };

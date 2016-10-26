@@ -474,27 +474,28 @@ var Menu = function (_Component2) {
       }
     }
   }, {
-    key: '_renderControlContents',
-    value: function _renderControlContents() {
-      var icon = void 0,
-          label = void 0;
+    key: '_renderButtonProps',
+    value: function _renderButtonProps() {
+      var _props2 = this.props;
+      var icon = _props2.icon;
+      var label = _props2.label;
+
+      var buttonIcon = void 0,
+          buttonLabel = void 0;
 
       // If this is a collapsed inline Menu, use any icon and/or label provided,
       // revert to default icon if neither.
-      if (this.props.icon) {
-        icon = _react2.default.cloneElement(this.props.icon, { key: 'icon' });
+      if (icon) {
+        buttonIcon = icon;
       }
-      if (this.props.label) {
-        label = [_react2.default.createElement(
-          'span',
-          { key: 'label', className: CLASS_ROOT + '__control-label' },
-          this.props.label
-        ), _react2.default.createElement(_Down2.default, { key: 'caret', a11yTitle: 'menu-down' })];
+      if (label) {
+        buttonLabel = label;
+        buttonIcon = _react2.default.createElement(_Down2.default, { a11yTitle: 'menu-down' });
       }
-      if (!icon && !label) {
-        icon = _react2.default.createElement(_More2.default, { key: 'icon' });
+      if (!buttonIcon && !buttonLabel) {
+        buttonIcon = _react2.default.createElement(_More2.default, null);
       }
-      return [icon, label];
+      return { icon: buttonIcon, label: buttonLabel };
     }
   }, {
     key: '_renderMenuDrop',
@@ -503,13 +504,9 @@ var Menu = function (_Component2) {
       var menuLabel = _Intl2.default.getMessage(this.context.intl, 'Menu');
       var menuTitle = closeLabel + ' ' + (this.props.a11yTitle || this.props.label || '') + ' ' + ('' + menuLabel);
 
-      var control = _react2.default.createElement(
-        _Button2.default,
-        { plain: true, className: CLASS_ROOT + '__control',
-          a11yTitle: menuTitle,
-          onClick: this._onClose },
-        this._renderControlContents()
-      );
+      var control = _react2.default.createElement(_Button2.default, (0, _extends3.default)({ className: CLASS_ROOT + '__control', plain: true,
+        a11yTitle: menuTitle, reverse: true
+      }, this._renderButtonProps(), { onClick: this._onClose }));
 
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
       var onClick = this.props.closeOnClick ? this._onClose : this._onSink;
@@ -530,16 +527,16 @@ var Menu = function (_Component2) {
       var _classnames2,
           _this4 = this;
 
-      var _props2 = this.props;
-      var a11yTitle = _props2.a11yTitle;
-      var children = _props2.children;
-      var className = _props2.className;
-      var direction = _props2.direction;
-      var label = _props2.label;
-      var primary = _props2.primary;
-      var size = _props2.size;
-      var pad = _props2.pad;
-      var props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'children', 'className', 'direction', 'label', 'primary', 'size', 'pad']);
+      var _props3 = this.props;
+      var a11yTitle = _props3.a11yTitle;
+      var children = _props3.children;
+      var className = _props3.className;
+      var direction = _props3.direction;
+      var label = _props3.label;
+      var primary = _props3.primary;
+      var size = _props3.size;
+      var pad = _props3.pad;
+      var props = (0, _objectWithoutProperties3.default)(_props3, ['a11yTitle', 'children', 'className', 'direction', 'label', 'primary', 'size', 'pad']);
 
       delete props.closeOnClick;
       delete props.dropColorIndex;
@@ -568,7 +565,6 @@ var Menu = function (_Component2) {
           children
         );
       } else {
-        var controlContents = this._renderControlContents();
         var openLabel = _Intl2.default.getMessage(this.context.intl, 'Open');
         var _menuLabel = _Intl2.default.getMessage(this.context.intl, 'Menu');
         var menuTitle = openLabel + ' ' + (a11yTitle || label || '') + ' ' + ('' + _menuLabel);
@@ -579,16 +575,10 @@ var Menu = function (_Component2) {
           { ref: function ref(_ref3) {
               return _this4.controlRef = _ref3;
             } },
-          _react2.default.createElement(
-            _Button2.default,
-            (0, _extends3.default)({}, props, { plain: true,
-              className: classes,
-              onClick: this._onOpen,
-              a11yTitle: menuTitle,
-              onFocus: this._onFocusControl,
-              onBlur: this._onBlurControl }),
-            controlContents
-          )
+          _react2.default.createElement(_Button2.default, (0, _extends3.default)({}, props, { className: classes, plain: true, reverse: true,
+            a11yTitle: menuTitle }, this._renderButtonProps(), {
+            onClick: this._onOpen,
+            onFocus: this._onFocusControl, onBlur: this._onBlurControl }))
         );
       }
     }
