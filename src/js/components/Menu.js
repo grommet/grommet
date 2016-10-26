@@ -308,7 +308,7 @@ export default class Menu extends Component {
             {
               align: this.props.dropAlign,
               colorIndex: this.props.dropColorIndex,
-              focusControl: true
+              focusControl: this.props.focusControl
             });
           break;
       }
@@ -487,6 +487,7 @@ Menu.propTypes = {
   closeOnClick: PropTypes.bool,
   dropAlign: Drop.alignPropType,
   dropColorIndex: PropTypes.string,
+  focusControl: PropTypes.bool,
   icon: PropTypes.node,
   id: PropTypes.string,
   inline: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['expand'])]),
@@ -506,5 +507,6 @@ Menu.defaultProps = {
   closeOnClick: true,
   direction: 'column',
   dropAlign: {top: 'top', left: 'left'},
+  focusControl: true,
   pad: 'none'
 };
