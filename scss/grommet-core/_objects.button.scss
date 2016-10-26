@@ -98,6 +98,10 @@ $button-horizontal-padding:
     }
   }
 
+  .#{$grommet-namespace}control-icon {
+    @include icon-color($active-colored-icon-color);
+  }
+
   @include background-context-color($active-colored-text-color,
     $active-colored-text-color);
 }
