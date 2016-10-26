@@ -303,7 +303,7 @@ export default class TextInput extends Component {
 
   render () {
     const {
-      className, defaultValue, value, ...props
+      className, defaultValue, value, placeHolder, ...props
     } = this.props;
     delete props.suggestions;
     delete props.onDOMChange;
@@ -322,6 +322,7 @@ export default class TextInput extends Component {
         className={classes} autoComplete="off"
         defaultValue={this._renderLabel(defaultValue)}
         value={this._renderLabel(value)}
+        placeholder={placeHolder}
         onChange={this._onInputChange} onFocus={this._onFocus}
         onKeyDown={this._onInputKeyDown} />
     );
