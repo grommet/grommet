@@ -110,8 +110,9 @@ var Tip = function (_Component) {
       var onClose = this.props.onClose;
 
       var target = this._getTarget();
+      this._drop.remove();
+
       if (target) {
-        this._drop.remove();
         target.removeEventListener('click', onClose);
         target.removeEventListener('blur', onClose);
       }
