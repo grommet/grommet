@@ -48,9 +48,13 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Announcer = require('../utils/Announcer');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.LABEL; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.LABEL;
 
 var Label = function (_Component) {
   (0, _inherits3.default)(Label, _Component);
@@ -61,9 +65,17 @@ var Label = function (_Component) {
   }
 
   (0, _createClass3.default)(Label, [{
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (this.props.announce) {
+        (0, _Announcer.announce)(this.labelRef.textContent);
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var _classnames;
+      var _classnames,
+          _this2 = this;
 
       var _props = this.props;
       var children = _props.children;
@@ -74,12 +86,16 @@ var Label = function (_Component) {
       var uppercase = _props.uppercase;
       var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'labelFor', 'margin', 'size', 'uppercase']);
 
+      delete props.announce;
       var labelMargin = margin ? margin : 'small' === size ? 'none' : 'medium';
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--uppercase', uppercase), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + labelMargin, labelMargin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames), className);
 
       return _react2.default.createElement(
         'label',
-        (0, _extends3.default)({}, props, { className: classes, htmlFor: labelFor }),
+        (0, _extends3.default)({ ref: function ref(_ref) {
+            return _this2.labelRef = _ref;
+          } }, props, {
+          className: classes, htmlFor: labelFor }),
         children
       );
     }
@@ -92,6 +108,7 @@ exports.default = Label;
 ;
 
 Label.propTypes = {
+  announce: _react.PropTypes.bool,
   labelFor: _react.PropTypes.string,
   margin: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
   size: _react.PropTypes.oneOf(['small', 'medium']),

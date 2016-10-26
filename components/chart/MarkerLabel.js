@@ -127,7 +127,7 @@ var MarkerLabel = function (_Component) {
           null,
           label
         );
-      } else {
+      } else if (label.propTypes && label.propTypes.announce) {
         // added for a11y to announce changes in the values
         label = _react2.default.cloneElement(label, {
           announce: true
