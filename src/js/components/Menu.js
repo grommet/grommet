@@ -371,26 +371,23 @@ export default class Menu extends Component {
     }
   }
 
-  _renderControlContents () {
-    let icon, label;
+  _renderButtonProps () {
+    const { icon, label } = this.props;
+    let buttonIcon, buttonLabel;
 
     // If this is a collapsed inline Menu, use any icon and/or label provided,
     // revert to default icon if neither.
-    if (this.props.icon) {
-      icon = React.cloneElement(this.props.icon, {key: 'icon'});
+    if (icon) {
+      buttonIcon = icon;
     }
-    if (this.props.label) {
-      label = [
-        <span key="label" className={`${CLASS_ROOT}__control-label`}>
-          {this.props.label}
-        </span>,
-        <DropCaretIcon key="caret" a11yTitle='menu-down' />
-      ];
+    if (label) {
+      buttonLabel = label;
+      buttonIcon = <DropCaretIcon a11yTitle='menu-down' />;
     }
-    if (! icon && ! label) {
-      icon = <MoreIcon key="icon" />;
+    if (! buttonIcon && ! buttonLabel) {
+      buttonIcon = <MoreIcon />;
     }
-    return [icon, label];
+    return { icon: buttonIcon, label: buttonLabel };
   }
 
   _renderMenuDrop () {
@@ -402,11 +399,9 @@ export default class Menu extends Component {
     );
 
     let control = (
-      <Button plain={true} className={`${CLASS_ROOT}__control`}
-        a11yTitle={menuTitle}
-        onClick={this._onClose}>
-        {this._renderControlContents()}
-      </Button>
+      <Button className={`${CLASS_ROOT}__control`} plain={true}
+        a11yTitle={menuTitle} reverse={true}
+        {...this._renderButtonProps()} onClick={this._onClose} />
     );
 
     let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
@@ -467,7 +462,6 @@ export default class Menu extends Component {
       );
 
     } else {
-      const controlContents = this._renderControlContents();
       const openLabel = Intl.getMessage(this.context.intl, 'Open');
       const menuLabel = Intl.getMessage(this.context.intl, 'Menu');
       const menuTitle = (
@@ -478,14 +472,10 @@ export default class Menu extends Component {
 
       return (
         <div ref={ref => this.controlRef = ref}>
-          <Button {...props} plain={true}
-            className={classes}
+          <Button {...props} className={classes} plain={true} reverse={true}
+            a11yTitle={menuTitle} {...this._renderButtonProps()}
             onClick={this._onOpen}
-            a11yTitle={menuTitle}
-            onFocus={this._onFocusControl}
-            onBlur={this._onBlurControl}>
-            {controlContents}
-          </Button>
+            onFocus={this._onFocusControl} onBlur={this._onBlurControl} />
         </div>
       );
 

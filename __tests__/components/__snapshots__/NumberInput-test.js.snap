@@ -11,15 +11,14 @@ exports[`NumberInput has correct default options 1`] = `
     value={10} />
   <button
     aria-label={undefined}
-    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-number-input__subtract"
+    className="grommetux-button grommetux-button--plain grommetux-number-input__subtract"
     disabled={false}
     href={undefined}
-    id={undefined}
-    onBlur={[Function onBlur]}
+    onBlur={[Function bound _onBlur]}
     onClick={[Function bound _onSubtract]}
-    onFocus={[Function onFocus]}
-    onMouseDown={[Function onMouseDown]}
-    onMouseUp={[Function onMouseUp]}
+    onFocus={[Function bound _onFocus]}
+    onMouseDown={[Function bound _onMouseDown]}
+    onMouseUp={[Function bound bound _onMouseDown]}
     type="button">
     <span
       className="grommetux-button__icon">
@@ -41,15 +40,14 @@ exports[`NumberInput has correct default options 1`] = `
   </button>
   <button
     aria-label={undefined}
-    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-number-input__add"
+    className="grommetux-button grommetux-button--plain grommetux-number-input__add"
     disabled={false}
     href={undefined}
-    id={undefined}
-    onBlur={[Function onBlur]}
+    onBlur={[Function bound _onBlur]}
     onClick={[Function bound _onAdd]}
-    onFocus={[Function onFocus]}
-    onMouseDown={[Function onMouseDown]}
-    onMouseUp={[Function onMouseUp]}
+    onFocus={[Function bound _onFocus]}
+    onMouseDown={[Function bound _onMouseDown]}
+    onMouseUp={[Function bound bound _onMouseDown]}
     type="button">
     <span
       className="grommetux-button__icon">

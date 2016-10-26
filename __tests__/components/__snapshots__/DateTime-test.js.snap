@@ -8,15 +8,14 @@ exports[`DateTime has correct default options 1`] = `
     value="4/7/2015 10:00 am" />
   <button
     aria-label="Date Time Icon"
-    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-date-time__control"
+    className="grommetux-button grommetux-button--plain grommetux-date-time__control"
     disabled={false}
     href={undefined}
-    id={undefined}
-    onBlur={[Function onBlur]}
+    onBlur={[Function bound _onBlur]}
     onClick={[Function bound _onControlClick]}
-    onFocus={[Function onFocus]}
-    onMouseDown={[Function onMouseDown]}
-    onMouseUp={[Function onMouseUp]}
+    onFocus={[Function bound _onFocus]}
+    onMouseDown={[Function bound _onMouseDown]}
+    onMouseUp={[Function bound bound _onMouseDown]}
     type="button">
     <span
       className="grommetux-button__icon">
@@ -50,15 +49,14 @@ exports[`DateTime transfers arbitrary props 1`] = `
     value="4/7/2015 10:00 am" />
   <button
     aria-label="Date Time Icon"
-    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-date-time__control"
+    className="grommetux-button grommetux-button--plain grommetux-date-time__control"
     disabled={false}
     href={undefined}
-    id={undefined}
-    onBlur={[Function onBlur]}
+    onBlur={[Function bound _onBlur]}
     onClick={[Function bound _onControlClick]}
-    onFocus={[Function onFocus]}
-    onMouseDown={[Function onMouseDown]}
-    onMouseUp={[Function onMouseUp]}
+    onFocus={[Function bound _onFocus]}
+    onMouseDown={[Function bound _onMouseDown]}
+    onMouseUp={[Function bound bound _onMouseDown]}
     type="button">
     <span
       className="grommetux-button__icon">

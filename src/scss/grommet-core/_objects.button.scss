@@ -56,17 +56,6 @@ $button-horizontal-padding:
   @include background-context-color($button-text-color, $button-text-color);
 }
 
-.#{$grommet-namespace}button__icon {
-  display: inline-block;
-  padding: halve($inuit-base-spacing-unit);
-
-  svg {
-    vertical-align: top;
-  }
-
-  @include background-context-icon($button-text-color, $button-text-color);
-}
-
 .#{$grommet-namespace}button:hover {
   .#{$grommet-namespace}control-icon {
     @include icon-color($active-icon-color);
@@ -86,32 +75,11 @@ $button-horizontal-padding:
   }
 }
 
-.#{$grommet-namespace}button--icon,
 .#{$grommet-namespace}button__icon {
-  &:hover {
-    .#{$grommet-namespace}control-icon {
-      @include icon-color($active-icon-color);
-      transition: none;
-    }
+  display: inline-block;
 
-    #{$dark-background-context} {
-      .#{$grommet-namespace}control-icon {
-        @include icon-color($active-colored-icon-color);
-      }
-    }
-
-    #{$light-background-context} {
-      .#{$grommet-namespace}control-icon {
-        @include icon-color($active-icon-color);
-      }
-    }
-  }
-}
-
-.#{$grommet-namespace}button:not(.#{$grommet-namespace}button--plain) {
-  .#{$grommet-namespace}button__icon {
-    padding: 0;
-    margin-right: halve($inuit-base-spacing-unit);
+  .#{$grommet-namespace}control-icon {
+    vertical-align: bottom;
   }
 }
 
@@ -159,34 +127,28 @@ $button-horizontal-padding:
   max-width: none;
   font-weight: inherit;
 
-  &.#{$grommet-namespace}button--primary {
-    background-color: $brand-color;
+  .#{$grommet-namespace}button__label {
+    margin: 0 halve($inuit-base-spacing-unit);
   }
 
-  > span:not(.#{$grommet-namespace}button__icon) {
+  .#{$grommet-namespace}button__icon {
+    padding: halve($inuit-base-spacing-unit);
 
-    &:first-child {
-      margin-left: halve($inuit-base-spacing-unit);
-    }
-
-    &:last-child {
-      margin-right: halve($inuit-base-spacing-unit);
+    + .#{$grommet-namespace}button__label {
+      margin-left: 0;
     }
   }
-
-  @include background-context-color($text-color, $hover-text-color);
 }
 
-.#{$grommet-namespace}button--plain.#{$grommet-namespace}button--icon {
+.#{$grommet-namespace}button:not(.#{$grommet-namespace}button--plain) {
+  .#{$grommet-namespace}button__icon {
 
-  &:hover {
-    .#{$grommet-namespace}control-icon {
-      @include icon-hover-grow();
+    @include background-context-icon($button-text-color, $button-text-color);
+
+    + .#{$grommet-namespace}button__label {
+      margin-left: halve($inuit-base-spacing-unit);
     }
   }
-
-  @include background-context-color($icon-color, $active-icon-color);
-  @include background-context-icon($icon-color, $active-icon-color);
 }
 
 .#{$grommet-namespace}button--disabled {
@@ -194,7 +156,6 @@ $button-horizontal-padding:
   cursor: default;
 }
 
-.#{$grommet-namespace}button--icon,
 .#{$grommet-namespace}button:not(.#{$grommet-namespace}button--fill) {
   flex: 0 0 auto;
 }
@@ -202,6 +163,6 @@ $button-horizontal-padding:
 .#{$grommet-namespace}button--fill {
   width: 100%;
   max-width: none;
-  //used to add full height for button inside a flex container
+  // used to add full height for button inside a flex container
   flex-grow: 1;
 }

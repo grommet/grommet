@@ -8,15 +8,14 @@ exports[`Select accepts initial value 1`] = `
     value="one" />
   <button
     aria-label="Select Icon"
-    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-select__control"
+    className="grommetux-button grommetux-button--plain grommetux-select__control"
     disabled={false}
     href={undefined}
-    id={undefined}
-    onBlur={[Function onBlur]}
+    onBlur={[Function bound _onBlur]}
     onClick={[Function bound _onAddDrop]}
-    onFocus={[Function onFocus]}
-    onMouseDown={[Function onMouseDown]}
-    onMouseUp={[Function onMouseUp]}
+    onFocus={[Function bound _onFocus]}
+    onMouseDown={[Function bound _onMouseDown]}
+    onMouseUp={[Function bound bound _onMouseDown]}
     type="button">
     <span
       className="grommetux-button__icon">
@@ -49,15 +48,14 @@ exports[`Select has correct default options 1`] = `
     value="" />
   <button
     aria-label="Select Icon"
-    className="grommetux-button grommetux-button--plain grommetux-button--icon grommetux-select__control"
+    className="grommetux-button grommetux-button--plain grommetux-select__control"
     disabled={false}
     href={undefined}
-    id={undefined}
-    onBlur={[Function onBlur]}
+    onBlur={[Function bound _onBlur]}
     onClick={[Function bound _onAddDrop]}
-    onFocus={[Function onFocus]}
-    onMouseDown={[Function onMouseDown]}
-    onMouseUp={[Function onMouseUp]}
+    onFocus={[Function bound _onFocus]}
+    onMouseDown={[Function bound _onMouseDown]}
+    onMouseUp={[Function bound bound _onMouseDown]}
     type="button">
     <span
       className="grommetux-button__icon">

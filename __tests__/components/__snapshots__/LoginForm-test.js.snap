@@ -59,15 +59,17 @@ exports[`LoginForm has correct default options 1`] = `
       className="grommetux-button grommetux-button--primary grommetux-button--fill"
       disabled={false}
       href={undefined}
-      id={undefined}
-      onBlur={[Function onBlur]}
+      onBlur={[Function bound _onBlur]}
       onClick={[Function bound _onSubmit]}
-      onFocus={[Function onFocus]}
-      onMouseDown={[Function onMouseDown]}
-      onMouseUp={[Function onMouseUp]}
+      onFocus={[Function bound _onFocus]}
+      onMouseDown={[Function bound _onMouseDown]}
+      onMouseUp={[Function bound bound _onMouseDown]}
       type="submit">
-      <span>
-        Log In
+      <span
+        className="grommetux-button__label">
+        <span>
+          Log In
+        </span>
       </span>
     </button>
   </footer>

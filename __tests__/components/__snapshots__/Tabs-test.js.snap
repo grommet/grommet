@@ -13,12 +13,11 @@ exports[`Tabs has correct default options 1`] = `
         className="grommetux-button grommetux-button--plain"
         disabled={false}
         href={undefined}
-        id={undefined}
-        onBlur={[Function onBlur]}
+        onBlur={[Function bound _onBlur]}
         onClick={[Function bound _onClickTab]}
-        onFocus={[Function onFocus]}
-        onMouseDown={[Function onMouseDown]}
-        onMouseUp={[Function onMouseUp]}
+        onFocus={[Function bound _onFocus]}
+        onMouseDown={[Function bound _onMouseDown]}
+        onMouseUp={[Function bound bound _onMouseDown]}
         role="tab"
         type="button">
         <label
@@ -38,12 +37,11 @@ exports[`Tabs has correct default options 1`] = `
         className="grommetux-button grommetux-button--plain"
         disabled={false}
         href={undefined}
-        id={undefined}
-        onBlur={[Function onBlur]}
+        onBlur={[Function bound _onBlur]}
         onClick={[Function bound _onClickTab]}
-        onFocus={[Function onFocus]}
-        onMouseDown={[Function onMouseDown]}
-        onMouseUp={[Function onMouseUp]}
+        onFocus={[Function bound _onFocus]}
+        onMouseDown={[Function bound _onMouseDown]}
+        onMouseUp={[Function bound bound _onMouseDown]}
         role="tab"
         type="button">
         <label
@@ -79,12 +77,11 @@ exports[`Tabs has correct initialIndex=0 rendering 1`] = `
         className="grommetux-button grommetux-button--plain"
         disabled={false}
         href={undefined}
-        id={undefined}
-        onBlur={[Function onBlur]}
+        onBlur={[Function bound _onBlur]}
         onClick={[Function bound _onClickTab]}
-        onFocus={[Function onFocus]}
-        onMouseDown={[Function onMouseDown]}
-        onMouseUp={[Function onMouseUp]}
+        onFocus={[Function bound _onFocus]}
+        onMouseDown={[Function bound _onMouseDown]}
+        onMouseUp={[Function bound bound _onMouseDown]}
         role="tab"
         type="button">
         <label
@@ -104,12 +101,11 @@ exports[`Tabs has correct initialIndex=0 rendering 1`] = `
         className="grommetux-button grommetux-button--plain"
         disabled={false}
         href={undefined}
-        id={undefined}
-        onBlur={[Function onBlur]}
+        onBlur={[Function bound _onBlur]}
         onClick={[Function bound _onClickTab]}
-        onFocus={[Function onFocus]}
-        onMouseDown={[Function onMouseDown]}
-        onMouseUp={[Function onMouseUp]}
+        onFocus={[Function bound _onFocus]}
+        onMouseDown={[Function bound _onMouseDown]}
+        onMouseUp={[Function bound bound _onMouseDown]}
         role="tab"
         type="button">
         <label
@@ -145,12 +141,11 @@ exports[`Tabs has correct initialIndex=0 rendering 2`] = `
         className="grommetux-button grommetux-button--plain"
         disabled={false}
         href={undefined}
-        id={undefined}
-        onBlur={[Function onBlur]}
+        onBlur={[Function bound _onBlur]}
         onClick={[Function bound _onClickTab]}
-        onFocus={[Function onFocus]}
-        onMouseDown={[Function onMouseDown]}
-        onMouseUp={[Function onMouseUp]}
+        onFocus={[Function bound _onFocus]}
+        onMouseDown={[Function bound _onMouseDown]}
+        onMouseUp={[Function bound bound _onMouseDown]}
         role="tab"
         type="button">
         <label
@@ -170,12 +165,11 @@ exports[`Tabs has correct initialIndex=0 rendering 2`] = `
         className="grommetux-button grommetux-button--plain"
         disabled={false}
         href={undefined}
-        id={undefined}
-        onBlur={[Function onBlur]}
+        onBlur={[Function bound _onBlur]}
         onClick={[Function bound _onClickTab]}
-        onFocus={[Function onFocus]}
-        onMouseDown={[Function onMouseDown]}
-        onMouseUp={[Function onMouseUp]}
+        onFocus={[Function bound _onFocus]}
+        onMouseDown={[Function bound _onMouseDown]}
+        onMouseUp={[Function bound bound _onMouseDown]}
         role="tab"
         type="button">
         <label
