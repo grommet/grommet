@@ -3,14 +3,23 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
+import { announce } from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.LABEL;
 
 export default class Label extends Component {
+
+  componentDidUpdate () {
+    if (this.props.announce) {
+      announce(this.labelRef.textContent);
+    }
+  }
+
   render () {
     const {
       children, className, labelFor, margin, size, uppercase, ...props
     } = this.props;
+    delete props.announce;
     let labelMargin = margin ? margin : ('small' === size ? 'none' : 'medium');
     let classes = classnames(
       CLASS_ROOT,
@@ -23,7 +32,8 @@ export default class Label extends Component {
     );
 
     return (
-      <label {...props} className={classes} htmlFor={labelFor}>
+      <label ref={(ref) => this.labelRef = ref} {...props}
+        className={classes} htmlFor={labelFor}>
         {children}
       </label>
     );
@@ -31,6 +41,7 @@ export default class Label extends Component {
 };
 
 Label.propTypes = {
+  announce: PropTypes.bool,
   labelFor: PropTypes.string,
   margin: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
   size: PropTypes.oneOf(['small', 'medium']),

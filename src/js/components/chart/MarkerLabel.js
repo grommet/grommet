@@ -65,7 +65,8 @@ export default class MarkerLabel extends Component {
     );
     if (typeof label === 'string' || typeof label === 'number') {
       label = <span>{label}</span>;
-    } else { // added for a11y to announce changes in the values
+    } else if (label.propTypes && label.propTypes.announce) {
+      // added for a11y to announce changes in the values
       label = React.cloneElement(label, {
         announce: true
       });
