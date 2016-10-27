@@ -405,9 +405,17 @@ var Select = function (_Component) {
     value: function _valueEqualsOption(value, option) {
       var result = false;
       if ((typeof value === 'undefined' ? 'undefined' : (0, _typeof3.default)(value)) === 'object') {
-        result = value.value === option.value;
+        if ((typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
+          result = value.value === option.value;
+        } else {
+          result = value.value === option;
+        }
       } else {
-        result = value === option;
+        if ((typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
+          result = value === option.value;
+        } else {
+          result = value === option;
+        }
       }
       return result;
     }
@@ -417,14 +425,12 @@ var Select = function (_Component) {
       var _this3 = this;
 
       var result = false;
-      if (value) {
-        if (Array.isArray(value)) {
-          result = value.some(function (val) {
-            return _this3._valueEqualsOption(val, option);
-          });
-        } else {
-          result = this._valueEqualsOption(value, option);
-        }
+      if (value && Array.isArray(value)) {
+        result = value.some(function (val) {
+          return _this3._valueEqualsOption(val, option);
+        });
+      } else {
+        result = this._valueEqualsOption(value, option);
       }
       return result;
     }
