@@ -226,9 +226,15 @@ export default class Card extends Component {
       }
     }
 
+    // Special handling for screenreaders.
+    // If the entire card is a link, write out blank aria-label, otherwise
+    // it will prevent some screenreaders from reading the inner card contents.
+    let a11yTitle = ((link || onCardClick) && !this.props.a11yTitle) ?
+      '' : 'Box';
+
     return (
       <Box {...boxProps} {...restProps} className={classes}
-        justify={cardJustify} onClick={onCardClick}>
+        justify={cardJustify} onClick={onCardClick} a11yTitle={a11yTitle}>
         {thumbnail}
         {text}
         {videoLayer}
