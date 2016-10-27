@@ -145,6 +145,9 @@
 }
 
 .#{$grommet-namespace}check-box__label {
+  // display and vertical-align are needed for rich custom labels
+  display: inline-block;
+  vertical-align: middle;
   color: $secondary-text-color;
 
   #{$dark-background-context} {
