@@ -294,21 +294,27 @@ export default class Select extends Component {
   _valueEqualsOption (value, option) {
     let result = false;
     if (typeof value === 'object') {
-      result = value.value === option.value;
+      if (typeof option === 'object') {
+        result = (value.value === option.value);
+      } else {
+        result = (value.value === option);
+      }
     } else {
-      result = value === option;
+      if (typeof option === 'object') {
+        result = (value === option.value);
+      } else {
+        result = (value === option);
+      }
     }
     return result;
   }
 
   _optionSelected (option, value) {
     let result = false;
-    if (value) {
-      if (Array.isArray(value)) {
-        result = value.some(val => this._valueEqualsOption(val, option));
-      } else {
-        result = this._valueEqualsOption(value, option);
-      }
+    if (value && Array.isArray(value)) {
+      result = value.some(val => this._valueEqualsOption(val, option));
+    } else {
+      result = this._valueEqualsOption(value, option);
     }
     return result;
   }
