@@ -187,7 +187,6 @@ var Select = function (_Component) {
           var control = (0, _DOM.findAncestor)(this.componentRef, FORM_FIELD) || this.componentRef;
           this._drop = _Drop2.default.add(control, this._renderOptions(CLASS_ROOT + '__drop'), {
             align: { top: 'bottom', left: 'left' },
-            focusControl: true,
             context: this.context
           });
         }

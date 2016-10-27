@@ -311,7 +311,6 @@ exports.default = {
     // get bounds
     var controlRect = control.getBoundingClientRect();
     var containerRect = container.getBoundingClientRect();
-    var bodyRect = document.body.getBoundingClientRect();
 
     // set width
     var width = Math.min(Math.max(controlRect.width, containerRect.width), windowWidth);
@@ -396,7 +395,7 @@ exports.default = {
     // We use position:absolute and the body element's position
     // to handle mobile browsers better. We used to use position:fixed
     // but that didn't work on mobile browsers as well.
-    container.style.top = top - bodyRect.top + 'px';
+    container.style.top = top + document.body.scrollTop + 'px';
     container.style.maxHeight = maxHeight + 'px';
   }
 };
