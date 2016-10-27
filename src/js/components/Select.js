@@ -99,7 +99,6 @@ export default class Select extends Component {
         this._drop = Drop.add(control,
           this._renderOptions(`${CLASS_ROOT}__drop`), {
             align: {top: 'bottom', left: 'left'},
-            focusControl: true,
             context: this.context
           });
       }
