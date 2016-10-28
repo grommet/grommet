@@ -105,14 +105,13 @@ var Anchor = function (_Component) {
       var disabled = _props2.disabled;
       var href = _props2.href;
       var icon = _props2.icon;
-      var id = _props2.id;
       var label = _props2.label;
       var onClick = _props2.onClick;
       var path = _props2.path;
       var primary = _props2.primary;
       var reverse = _props2.reverse;
       var tag = _props2.tag;
-      var props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'animateIcon', 'children', 'className', 'disabled', 'href', 'icon', 'id', 'label', 'onClick', 'path', 'primary', 'reverse', 'tag']);
+      var props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'animateIcon', 'children', 'className', 'disabled', 'href', 'icon', 'label', 'onClick', 'path', 'primary', 'reverse', 'tag']);
 
       delete props.method;
       var router = this.context.router;
@@ -122,8 +121,7 @@ var Anchor = function (_Component) {
       if (icon) {
         anchorIcon = icon;
       } else if (primary) {
-        anchorIcon = _react2.default.createElement(_LinkNext2.default, {
-          a11yTitle: id ? id + '-icon' : 'link next' });
+        anchorIcon = _react2.default.createElement(_LinkNext2.default, { a11yTitle: 'link next' });
       }
 
       if (anchorIcon && !primary && !label) {
