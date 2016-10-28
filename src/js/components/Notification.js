@@ -148,6 +148,10 @@ export default class Notification extends Component {
     const fullBox =
       boxProps.hasOwnProperty('full') ? boxProps.full : 'horizontal';
 
+    if (size && typeof size === 'string') {
+      // don't transfer size to Box since it means something different
+      delete boxProps.size;
+    }
     return (
       <Animate enter={{ animation: 'fade', duration: 1000 }}
         leave={{ animation: 'fade', duration: 1000 }}>
