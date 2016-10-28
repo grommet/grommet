@@ -3,7 +3,7 @@ exports[`DateTime has correct default options 1`] = `
   className="grommetux-date-time">
   <input
     className="grommetux-input grommetux-date-time__input"
-    onChange={[Function bound _onInputChange]}
+    onChange={[Function]}
     placeholder="M/D/YYYY h:mm a"
     value="4/7/2015 10:00 am" />
   <button
@@ -11,11 +11,11 @@ exports[`DateTime has correct default options 1`] = `
     className="grommetux-button grommetux-button--plain grommetux-date-time__control"
     disabled={false}
     href={undefined}
-    onBlur={[Function bound _onBlur]}
-    onClick={[Function bound _onControlClick]}
-    onFocus={[Function bound _onFocus]}
-    onMouseDown={[Function bound _onMouseDown]}
-    onMouseUp={[Function bound bound _onMouseDown]}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
     type="button">
     <span
       className="grommetux-button__icon">
@@ -44,7 +44,7 @@ exports[`DateTime transfers arbitrary props 1`] = `
   <input
     className="grommetux-input grommetux-date-time__input"
     data-flavor="coconut"
-    onChange={[Function bound _onInputChange]}
+    onChange={[Function]}
     placeholder="M/D/YYYY h:mm a"
     value="4/7/2015 10:00 am" />
   <button
@@ -52,11 +52,11 @@ exports[`DateTime transfers arbitrary props 1`] = `
     className="grommetux-button grommetux-button--plain grommetux-date-time__control"
     disabled={false}
     href={undefined}
-    onBlur={[Function bound _onBlur]}
-    onClick={[Function bound _onControlClick]}
-    onFocus={[Function bound _onFocus]}
-    onMouseDown={[Function bound _onMouseDown]}
-    onMouseUp={[Function bound bound _onMouseDown]}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
     type="button">
     <span
       className="grommetux-button__icon">

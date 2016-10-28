@@ -11,7 +11,7 @@ exports[`normalization has correct default options 1`] = `
       Object {
         "height": 0,
         "marginBottom": undefined,
-        "marginTop": 0
+        "marginTop": 0,
       }
     }>
     <div
@@ -19,7 +19,7 @@ exports[`normalization has correct default options 1`] = `
       role={undefined}
       style={
         Object {
-          "flexBasis": "12.5%"
+          "flexBasis": "12.5%",
         }
       } />
     <div
@@ -27,7 +27,7 @@ exports[`normalization has correct default options 1`] = `
       role={undefined}
       style={
         Object {
-          "flexBasis": "12.5%"
+          "flexBasis": "12.5%",
         }
       } />
     <div
@@ -35,7 +35,7 @@ exports[`normalization has correct default options 1`] = `
       role="row"
       style={
         Object {
-          "flexBasis": "25%"
+          "flexBasis": "25%",
         }
       }>
       <span>
@@ -47,7 +47,7 @@ exports[`normalization has correct default options 1`] = `
       role={undefined}
       style={
         Object {
-          "flexBasis": "25%"
+          "flexBasis": "25%",
         }
       } />
     <div
@@ -55,7 +55,7 @@ exports[`normalization has correct default options 1`] = `
       role="row"
       style={
         Object {
-          "flexBasis": "25%"
+          "flexBasis": "25%",
         }
       }>
       <span>
@@ -73,14 +73,14 @@ exports[`normalization has correct default options 1`] = `
       style={
         Object {
           "marginLeft": 0,
-          "marginRight": undefined
+          "marginRight": undefined,
         }
       }>
       <div
         className="grommetux-chart-marker-label__slot"
         style={
           Object {
-            "flexBasis": "100%"
+            "flexBasis": "100%",
           }
         }>
         <div
@@ -99,7 +99,7 @@ exports[`normalization has correct default options 1`] = `
         className="grommetux-chart-marker-label__slot grommetux-chart-marker-label__slot--placeholder"
         style={
           Object {
-            "flexBasis": "0%"
+            "flexBasis": "0%",
           }
         } />
     </div>
@@ -110,7 +110,7 @@ exports[`normalization has correct default options 1`] = `
       style={
         Object {
           "left": 0,
-          "top": 0
+          "top": 0,
         }
       }>
       <svg
@@ -232,12 +232,12 @@ exports[`normalization has correct default options 1`] = `
       <div
         aria-label="HotSpotsLabel"
         className="grommetux-chart-hot-spots"
-        onBlur={[Function bound _onHotSpotBlur]}
-        onFocus={[Function bound _onHotSpotFocus]}
+        onBlur={[Function]}
+        onFocus={[Function]}
         role="group"
         style={
           Object {
-            "padding": 8
+            "padding": 8,
           }
         }
         tabIndex="0">
@@ -250,7 +250,7 @@ exports[`normalization has correct default options 1`] = `
           role="row"
           style={
             Object {
-              "flexBasis": "4.545454545454546%"
+              "flexBasis": "4.545454545454546%",
             }
           } />
         <div
@@ -262,7 +262,7 @@ exports[`normalization has correct default options 1`] = `
           role="row"
           style={
             Object {
-              "flexBasis": "9.090909090909092%"
+              "flexBasis": "9.090909090909092%",
             }
           } />
         <div
@@ -274,7 +274,7 @@ exports[`normalization has correct default options 1`] = `
           role="row"
           style={
             Object {
-              "flexBasis": "9.090909090909092%"
+              "flexBasis": "9.090909090909092%",
             }
           } />
         <div
@@ -286,7 +286,7 @@ exports[`normalization has correct default options 1`] = `
           role="row"
           style={
             Object {
-              "flexBasis": "9.090909090909092%"
+              "flexBasis": "9.090909090909092%",
             }
           } />
         <div
@@ -298,7 +298,7 @@ exports[`normalization has correct default options 1`] = `
           role="row"
           style={
             Object {
-              "flexBasis": "9.090909090909092%"
+              "flexBasis": "9.090909090909092%",
             }
           } />
         <div
@@ -310,7 +310,7 @@ exports[`normalization has correct default options 1`] = `
           role="row"
           style={
             Object {
-              "flexBasis": "9.090909090909092%"
+              "flexBasis": "9.090909090909092%",
             }
           } />
         <div
@@ -322,7 +322,7 @@ exports[`normalization has correct default options 1`] = `
           role="row"
           style={
             Object {
-              "flexBasis": "9.090909090909092%"
+              "flexBasis": "9.090909090909092%",
             }
           } />
         <div
@@ -334,7 +334,7 @@ exports[`normalization has correct default options 1`] = `
           role="row"
           style={
             Object {
-              "flexBasis": "9.090909090909092%"
+              "flexBasis": "9.090909090909092%",
             }
           } />
         <div
@@ -346,7 +346,7 @@ exports[`normalization has correct default options 1`] = `
           role="row"
           style={
             Object {
-              "flexBasis": "9.090909090909092%"
+              "flexBasis": "9.090909090909092%",
             }
           } />
         <div
@@ -358,7 +358,7 @@ exports[`normalization has correct default options 1`] = `
           role="row"
           style={
             Object {
-              "flexBasis": "9.090909090909092%"
+              "flexBasis": "9.090909090909092%",
             }
           } />
         <div
@@ -370,7 +370,7 @@ exports[`normalization has correct default options 1`] = `
           role="row"
           style={
             Object {
-              "flexBasis": "9.090909090909092%"
+              "flexBasis": "9.090909090909092%",
             }
           } />
         <div
@@ -382,7 +382,7 @@ exports[`normalization has correct default options 1`] = `
           role="row"
           style={
             Object {
-              "flexBasis": "4.545454545454546%"
+              "flexBasis": "4.545454545454546%",
             }
           } />
       </div>
@@ -394,7 +394,7 @@ exports[`normalization has correct default options 1`] = `
       style={
         Object {
           "marginLeft": 0,
-          "marginRight": undefined
+          "marginRight": undefined,
         }
       }>
       <div
@@ -402,7 +402,7 @@ exports[`normalization has correct default options 1`] = `
         role="row"
         style={
           Object {
-            "flexBasis": "50%"
+            "flexBasis": "50%",
           }
         }>
         <span>
@@ -414,7 +414,7 @@ exports[`normalization has correct default options 1`] = `
         role="row"
         style={
           Object {
-            "flexBasis": "50%"
+            "flexBasis": "50%",
           }
         }>
         <span>
@@ -429,14 +429,14 @@ exports[`normalization has correct default options 1`] = `
       Object {
         "height": 0,
         "marginBottom": undefined,
-        "marginTop": 0
+        "marginTop": 0,
       }
     }>
     <div
       className="grommetux-chart-marker-label__slot grommetux-color-index-critical"
       style={
         Object {
-          "flexBasis": "90%"
+          "flexBasis": "90%",
         }
       }>
       <span>
@@ -448,7 +448,7 @@ exports[`normalization has correct default options 1`] = `
       className="grommetux-chart-marker-label__slot grommetux-chart-marker-label__slot--placeholder"
       style={
         Object {
-          "flexBasis": "10%"
+          "flexBasis": "10%",
         }
       } />
   </div>

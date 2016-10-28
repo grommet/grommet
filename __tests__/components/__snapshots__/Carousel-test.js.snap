@@ -2,17 +2,17 @@ exports[`Carousel has correct default options 1`] = `
 <div
   aria-label="Carousel"
   className="grommetux-carousel"
-  onBlur={[Function bound _startAutoplay]}
-  onFocus={[Function bound _stopAutoplay]}
-  onMouseOut={[Function bound _startAutoplay]}
-  onMouseOver={[Function bound _stopAutoplay]}
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
   role="group">
   <div
     className="grommetux-carousel__track"
     style={
       Object {
         "marginLeft": -0,
-        "width": ""
+        "width": "",
       }
     }>
     <div
@@ -51,11 +51,11 @@ exports[`Carousel has correct default options 1`] = `
     className="grommetux-button grommetux-button--plain grommetux-carousel__arrow grommetux-carousel__arrow--prev"
     disabled={false}
     href={undefined}
-    onBlur={[Function bound _onBlur]}
-    onClick={[Function bound _slidePrev]}
-    onFocus={[Function bound _onFocus]}
-    onMouseDown={[Function bound _onMouseDown]}
-    onMouseUp={[Function bound bound _onMouseDown]}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
     type="button">
     <span
       className="grommetux-button__icon">
@@ -81,11 +81,11 @@ exports[`Carousel has correct default options 1`] = `
     className="grommetux-button grommetux-button--plain grommetux-carousel__arrow grommetux-carousel__arrow--next"
     disabled={false}
     href={undefined}
-    onBlur={[Function bound _onBlur]}
-    onClick={[Function bound _slideNext]}
-    onFocus={[Function bound _onFocus]}
-    onMouseDown={[Function bound _onMouseDown]}
-    onMouseUp={[Function bound bound _onMouseDown]}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
     type="button">
     <span
       className="grommetux-button__icon">
@@ -117,11 +117,11 @@ exports[`Carousel has correct default options 1`] = `
       className="grommetux-button grommetux-button--plain"
       disabled={false}
       href={undefined}
-      onBlur={[Function bound _onBlur]}
-      onClick={[Function bound bound _onSelect]}
-      onFocus={[Function bound _onFocus]}
-      onMouseDown={[Function bound _onMouseDown]}
-      onMouseUp={[Function bound bound _onMouseDown]}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
       type="button">
       <svg
         className="grommetux-carousel__control grommetux-carousel__control--active"
@@ -138,11 +138,11 @@ exports[`Carousel has correct default options 1`] = `
       className="grommetux-button grommetux-button--plain"
       disabled={false}
       href={undefined}
-      onBlur={[Function bound _onBlur]}
-      onClick={[Function bound bound _onSelect]}
-      onFocus={[Function bound _onFocus]}
-      onMouseDown={[Function bound _onMouseDown]}
-      onMouseUp={[Function bound bound _onMouseDown]}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
       type="button">
       <svg
         className="grommetux-carousel__control"
@@ -162,17 +162,17 @@ exports[`Carousel renders class name properties 1`] = `
 <div
   aria-label="Carousel"
   className="grommetux-carousel test"
-  onBlur={[Function bound _startAutoplay]}
-  onFocus={[Function bound _stopAutoplay]}
-  onMouseOut={[Function bound _startAutoplay]}
-  onMouseOver={[Function bound _stopAutoplay]}
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
   role="group">
   <div
     className="grommetux-carousel__track"
     style={
       Object {
         "marginLeft": -0,
-        "width": ""
+        "width": "",
       }
     }>
     <div
@@ -211,11 +211,11 @@ exports[`Carousel renders class name properties 1`] = `
     className="grommetux-button grommetux-button--plain grommetux-carousel__arrow grommetux-carousel__arrow--prev"
     disabled={false}
     href={undefined}
-    onBlur={[Function bound _onBlur]}
-    onClick={[Function bound _slidePrev]}
-    onFocus={[Function bound _onFocus]}
-    onMouseDown={[Function bound _onMouseDown]}
-    onMouseUp={[Function bound bound _onMouseDown]}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
     type="button">
     <span
       className="grommetux-button__icon">
@@ -241,11 +241,11 @@ exports[`Carousel renders class name properties 1`] = `
     className="grommetux-button grommetux-button--plain grommetux-carousel__arrow grommetux-carousel__arrow--next"
     disabled={false}
     href={undefined}
-    onBlur={[Function bound _onBlur]}
-    onClick={[Function bound _slideNext]}
-    onFocus={[Function bound _onFocus]}
-    onMouseDown={[Function bound _onMouseDown]}
-    onMouseUp={[Function bound bound _onMouseDown]}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
     type="button">
     <span
       className="grommetux-button__icon">
@@ -277,11 +277,11 @@ exports[`Carousel renders class name properties 1`] = `
       className="grommetux-button grommetux-button--plain"
       disabled={false}
       href={undefined}
-      onBlur={[Function bound _onBlur]}
-      onClick={[Function bound bound _onSelect]}
-      onFocus={[Function bound _onFocus]}
-      onMouseDown={[Function bound _onMouseDown]}
-      onMouseUp={[Function bound bound _onMouseDown]}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
       type="button">
       <svg
         className="grommetux-carousel__control grommetux-carousel__control--active"
@@ -298,11 +298,11 @@ exports[`Carousel renders class name properties 1`] = `
       className="grommetux-button grommetux-button--plain"
       disabled={false}
       href={undefined}
-      onBlur={[Function bound _onBlur]}
-      onClick={[Function bound bound _onSelect]}
-      onFocus={[Function bound _onFocus]}
-      onMouseDown={[Function bound _onMouseDown]}
-      onMouseUp={[Function bound bound _onMouseDown]}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
       type="button">
       <svg
         className="grommetux-carousel__control"
@@ -325,17 +325,17 @@ exports[`Carousel renders microdata properties 1`] = `
   itemProp="test"
   itemScope={true}
   itemType="http://schema.org/Article"
-  onBlur={[Function bound _startAutoplay]}
-  onFocus={[Function bound _stopAutoplay]}
-  onMouseOut={[Function bound _startAutoplay]}
-  onMouseOver={[Function bound _stopAutoplay]}
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onMouseOut={[Function]}
+  onMouseOver={[Function]}
   role="group">
   <div
     className="grommetux-carousel__track"
     style={
       Object {
         "marginLeft": -0,
-        "width": ""
+        "width": "",
       }
     }>
     <div
@@ -374,11 +374,11 @@ exports[`Carousel renders microdata properties 1`] = `
     className="grommetux-button grommetux-button--plain grommetux-carousel__arrow grommetux-carousel__arrow--prev"
     disabled={false}
     href={undefined}
-    onBlur={[Function bound _onBlur]}
-    onClick={[Function bound _slidePrev]}
-    onFocus={[Function bound _onFocus]}
-    onMouseDown={[Function bound _onMouseDown]}
-    onMouseUp={[Function bound bound _onMouseDown]}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
     type="button">
     <span
       className="grommetux-button__icon">
@@ -404,11 +404,11 @@ exports[`Carousel renders microdata properties 1`] = `
     className="grommetux-button grommetux-button--plain grommetux-carousel__arrow grommetux-carousel__arrow--next"
     disabled={false}
     href={undefined}
-    onBlur={[Function bound _onBlur]}
-    onClick={[Function bound _slideNext]}
-    onFocus={[Function bound _onFocus]}
-    onMouseDown={[Function bound _onMouseDown]}
-    onMouseUp={[Function bound bound _onMouseDown]}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
     type="button">
     <span
       className="grommetux-button__icon">
@@ -440,11 +440,11 @@ exports[`Carousel renders microdata properties 1`] = `
       className="grommetux-button grommetux-button--plain"
       disabled={false}
       href={undefined}
-      onBlur={[Function bound _onBlur]}
-      onClick={[Function bound bound _onSelect]}
-      onFocus={[Function bound _onFocus]}
-      onMouseDown={[Function bound _onMouseDown]}
-      onMouseUp={[Function bound bound _onMouseDown]}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
       type="button">
       <svg
         className="grommetux-carousel__control grommetux-carousel__control--active"
@@ -461,11 +461,11 @@ exports[`Carousel renders microdata properties 1`] = `
       className="grommetux-button grommetux-button--plain"
       disabled={false}
       href={undefined}
-      onBlur={[Function bound _onBlur]}
-      onClick={[Function bound bound _onSelect]}
-      onFocus={[Function bound _onFocus]}
-      onMouseDown={[Function bound _onMouseDown]}
-      onMouseUp={[Function bound bound _onMouseDown]}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
       type="button">
       <svg
         className="grommetux-carousel__control"

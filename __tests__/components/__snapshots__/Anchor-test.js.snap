@@ -3,7 +3,7 @@ exports[`Anchor calls onClick after rendering 1`] = `
   aria-label={undefined}
   className="grommetux-anchor"
   href="test"
-  onClick={[Function anonymous]} />
+  onClick={[Function]} />
 `;
 
 exports[`Anchor calls onClick after rendering 2`] = `
@@ -11,7 +11,7 @@ exports[`Anchor calls onClick after rendering 2`] = `
   aria-label={undefined}
   className="grommetux-anchor"
   href="test"
-  onClick={[Function anonymous]} />
+  onClick={[Function]} />
 `;
 
 exports[`Anchor has correct default options 1`] = `
