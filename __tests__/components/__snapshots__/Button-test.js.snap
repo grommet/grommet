@@ -4,11 +4,11 @@ exports[`Button has className property rendering 1`] = `
   className="grommetux-button grommetux-button--disabled grommetux-button--plain test"
   disabled={true}
   href={undefined}
-  onBlur={[Function bound _onBlur]}
+  onBlur={[Function]}
   onClick={undefined}
-  onFocus={[Function bound _onFocus]}
-  onMouseDown={[Function bound _onMouseDown]}
-  onMouseUp={[Function bound bound _onMouseDown]}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
   type="button">
   test
 </button>
@@ -20,11 +20,11 @@ exports[`Button has correct default options 1`] = `
   className="grommetux-button grommetux-button--disabled"
   disabled={true}
   href={undefined}
-  onBlur={[Function bound _onBlur]}
+  onBlur={[Function]}
   onClick={undefined}
-  onFocus={[Function bound _onFocus]}
-  onMouseDown={[Function bound _onMouseDown]}
-  onMouseUp={[Function bound bound _onMouseDown]}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
   type="button">
   <span
     className="grommetux-button__label">
@@ -39,11 +39,11 @@ exports[`Button has correct icon as children rendering 1`] = `
   className="grommetux-button grommetux-button--disabled grommetux-button--plain"
   disabled={true}
   href={undefined}
-  onBlur={[Function bound _onBlur]}
+  onBlur={[Function]}
   onClick={undefined}
-  onFocus={[Function bound _onFocus]}
-  onMouseDown={[Function bound _onMouseDown]}
-  onMouseUp={[Function bound bound _onMouseDown]}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
   type="button">
   <svg
     height="24px"
@@ -60,11 +60,11 @@ exports[`Button has correct icon rendering 1`] = `
   className="grommetux-button grommetux-button--disabled grommetux-button--plain"
   disabled={true}
   href={undefined}
-  onBlur={[Function bound _onBlur]}
+  onBlur={[Function]}
   onClick={undefined}
-  onFocus={[Function bound _onFocus]}
-  onMouseDown={[Function bound _onMouseDown]}
-  onMouseUp={[Function bound bound _onMouseDown]}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
   type="button">
   <span
     className="grommetux-button__icon">
@@ -84,11 +84,11 @@ exports[`Button has correct plain={true} rendering 1`] = `
   className="grommetux-button grommetux-button--disabled grommetux-button--plain"
   disabled={true}
   href={undefined}
-  onBlur={[Function bound _onBlur]}
+  onBlur={[Function]}
   onClick={undefined}
-  onFocus={[Function bound _onFocus]}
-  onMouseDown={[Function bound _onMouseDown]}
-  onMouseUp={[Function bound bound _onMouseDown]}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
   type="button">
   <span
     className="grommetux-button__label">
@@ -103,11 +103,11 @@ exports[`Button has correct primary={true} rendering 1`] = `
   className="grommetux-button grommetux-button--primary grommetux-button--disabled"
   disabled={true}
   href={undefined}
-  onBlur={[Function bound _onBlur]}
+  onBlur={[Function]}
   onClick={undefined}
-  onFocus={[Function bound _onFocus]}
-  onMouseDown={[Function bound _onMouseDown]}
-  onMouseUp={[Function bound bound _onMouseDown]}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
   type="button">
   <span
     className="grommetux-button__label">
@@ -125,11 +125,11 @@ exports[`Button has microdata properties rendering 1`] = `
   itemProp="test"
   itemScope={true}
   itemType="http://schema.org/Article"
-  onBlur={[Function bound _onBlur]}
+  onBlur={[Function]}
   onClick={undefined}
-  onFocus={[Function bound _onFocus]}
-  onMouseDown={[Function bound _onMouseDown]}
-  onMouseUp={[Function bound bound _onMouseDown]}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
   type="button">
   test
 </button>
@@ -141,11 +141,11 @@ exports[`Button has text as children rendering 1`] = `
   className="grommetux-button grommetux-button--disabled grommetux-button--plain"
   disabled={true}
   href={undefined}
-  onBlur={[Function bound _onBlur]}
+  onBlur={[Function]}
   onClick={undefined}
-  onFocus={[Function bound _onFocus]}
-  onMouseDown={[Function bound _onMouseDown]}
-  onMouseUp={[Function bound bound _onMouseDown]}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
   type="button">
   test
 </button>

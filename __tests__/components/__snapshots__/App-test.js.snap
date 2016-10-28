@@ -5,7 +5,7 @@ exports[`App has correct className rendering 1`] = `
   <span
     style={
       Object {
-        "display": "none"
+        "display": "none",
       }
     } />
   <div
@@ -24,7 +24,7 @@ exports[`App has correct default options 1`] = `
   <span
     style={
       Object {
-        "display": "none"
+        "display": "none",
       }
     } />
   <div
@@ -40,7 +40,7 @@ exports[`App has correct inline=true rendering 1`] = `
   <span
     style={
       Object {
-        "display": "none"
+        "display": "none",
       }
     } />
   <div
@@ -56,7 +56,7 @@ exports[`App has correct lang="pt=BR" rendering 1`] = `
   <span
     style={
       Object {
-        "display": "none"
+        "display": "none",
       }
     } />
   <div
@@ -75,7 +75,7 @@ exports[`App has microdata properties rendering 1`] = `
   <span
     style={
       Object {
-        "display": "none"
+        "display": "none",
       }
     } />
   <div

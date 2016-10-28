@@ -70,4 +70,11 @@ describe('Anchor', () => {
     expect(tree).toMatchSnapshot();
     expect(onAnchorClick).toBeCalled();
   });
+  it('preserves id after rendering', () => {
+    const component = renderer.create(
+      <Anchor id='test' href='test' />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

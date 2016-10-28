@@ -4,8 +4,8 @@ exports[`Legend has correct default options 1`] = `
   <li
     className="grommetux-legend__item"
     onClick={undefined}
-    onMouseOut={[Function bound bound _onActive]}
-    onMouseOver={[Function bound bound _onActive]}>
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}>
     <span
       className="grommetux-legend__item-label">
       <svg
@@ -29,8 +29,8 @@ exports[`Legend has correct default options 1`] = `
   <li
     className="grommetux-legend__item"
     onClick={undefined}
-    onMouseOut={[Function bound bound _onActive]}
-    onMouseOver={[Function bound bound _onActive]}>
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}>
     <span
       className="grommetux-legend__item-label">
       <svg
@@ -54,8 +54,8 @@ exports[`Legend has correct default options 1`] = `
   <li
     className="grommetux-legend__item"
     onClick={undefined}
-    onMouseOut={[Function bound bound _onActive]}
-    onMouseOver={[Function bound bound _onActive]}>
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}>
     <span
       className="grommetux-legend__item-label">
       <svg
@@ -79,8 +79,8 @@ exports[`Legend has correct default options 1`] = `
   <li
     className="grommetux-legend__item"
     onClick={undefined}
-    onMouseOut={[Function bound bound _onActive]}
-    onMouseOver={[Function bound bound _onActive]}>
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}>
     <span
       className="grommetux-legend__item-label">
       <svg
@@ -104,8 +104,8 @@ exports[`Legend has correct default options 1`] = `
   <li
     className="grommetux-legend__item"
     onClick={undefined}
-    onMouseOut={[Function bound bound _onActive]}
-    onMouseOver={[Function bound bound _onActive]}>
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}>
     <span
       className="grommetux-legend__item-label">
       <svg
@@ -129,8 +129,8 @@ exports[`Legend has correct default options 1`] = `
   <li
     className="grommetux-legend__item"
     onClick={undefined}
-    onMouseOut={[Function bound bound _onActive]}
-    onMouseOver={[Function bound bound _onActive]}>
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}>
     <span
       className="grommetux-legend__item-label">
       <svg

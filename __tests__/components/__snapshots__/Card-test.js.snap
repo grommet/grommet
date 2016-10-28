@@ -14,7 +14,7 @@ exports[`Card has correct default options 1`] = `
     style={
       Object {
         "background": "url(http://grommet.github.io/img/carousel-1.png) no-repeat center center",
-        "backgroundSize": "cover"
+        "backgroundSize": "cover",
       }
     }
     tabIndex={undefined} />

@@ -70,7 +70,7 @@ exports[`Value has correct label rendering 1`] = `
 exports[`Value has correct onClick rendering 1`] = `
 <div
   className="grommetux-value grommetux-value--align-center grommetux-value--interactive"
-  onClick={[Function anonymous]}>
+  onClick={[Function]}>
   <div
     className="grommetux-value__annotated">
     <span
@@ -84,7 +84,7 @@ exports[`Value has correct onClick rendering 1`] = `
 exports[`Value has correct onClick rendering 2`] = `
 <div
   className="grommetux-value grommetux-value--align-center grommetux-value--interactive"
-  onClick={[Function anonymous]}>
+  onClick={[Function]}>
   <div
     className="grommetux-value__annotated">
     <span

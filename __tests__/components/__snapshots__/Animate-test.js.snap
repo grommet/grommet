@@ -4,7 +4,7 @@ exports[`Animate renders correctly with keep set to true 1`] = `
   style={
     Object {
       "transitionDelay": "undefinedms",
-      "transitionDuration": "1000ms"
+      "transitionDuration": "1000ms",
     }
   }>
   <p

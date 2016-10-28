@@ -1,7 +1,7 @@
 exports[`LoginForm has correct default options 1`] = `
 <form
   className="grommetux-form grommetux-form--pad-medium grommetux-login-form"
-  onSubmit={[Function bound _onSubmit]}>
+  onSubmit={[Function]}>
   <div
     className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none"
     id={undefined}
@@ -12,7 +12,7 @@ exports[`LoginForm has correct default options 1`] = `
   <fieldset>
     <div
       className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
-      onClick={[Function bound _onClick]}>
+      onClick={[Function]}>
       <label
         className="grommetux-form-field__label"
         htmlFor="username">
@@ -23,14 +23,14 @@ exports[`LoginForm has correct default options 1`] = `
       <span
         className="grommetux-form-field__contents">
         <input
-          onChange={[Function bound _onUsernameChange]}
+          onChange={[Function]}
           type="email"
           value="" />
       </span>
     </div>
     <div
       className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
-      onClick={[Function bound _onClick]}>
+      onClick={[Function]}>
       <label
         className="grommetux-form-field__label"
         htmlFor="password">
@@ -41,7 +41,7 @@ exports[`LoginForm has correct default options 1`] = `
       <span
         className="grommetux-form-field__contents">
         <input
-          onChange={[Function bound _onPasswordChange]}
+          onChange={[Function]}
           type="password"
           value="" />
       </span>
@@ -59,11 +59,11 @@ exports[`LoginForm has correct default options 1`] = `
       className="grommetux-button grommetux-button--primary grommetux-button--fill"
       disabled={false}
       href={undefined}
-      onBlur={[Function bound _onBlur]}
-      onClick={[Function bound _onSubmit]}
-      onFocus={[Function bound _onFocus]}
-      onMouseDown={[Function bound _onMouseDown]}
-      onMouseUp={[Function bound bound _onMouseDown]}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
       type="submit">
       <span
         className="grommetux-button__label">

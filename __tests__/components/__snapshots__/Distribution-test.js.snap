@@ -4,10 +4,10 @@ exports[`Distribution has correct default options 1`] = `
   <svg
     aria-label="Loading"
     className="grommetux-distribution__graphic"
-    onBlur={[Function onBlur]}
-    onFocus={[Function onFocus]}
-    onMouseDown={[Function onMouseDown]}
-    onMouseUp={[Function onMouseUp]}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
     preserveAspectRatio="none"
     role="img"
     tabIndex="0"

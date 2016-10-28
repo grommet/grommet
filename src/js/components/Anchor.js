@@ -35,7 +35,7 @@ export default class Anchor extends Component {
 
   render () {
     const {
-      a11yTitle, animateIcon, children, className, disabled, href, icon, id,
+      a11yTitle, animateIcon, children, className, disabled, href, icon,
       label, onClick, path, primary, reverse, tag, ...props
     } = this.props;
     delete props.method;
@@ -46,8 +46,7 @@ export default class Anchor extends Component {
       anchorIcon = icon;
     } else if (primary) {
       anchorIcon = (
-        <LinkNextIcon
-          a11yTitle={id ? `${id}-icon` : 'link next'} />
+        <LinkNextIcon a11yTitle='link next' />
       );
     }
 
