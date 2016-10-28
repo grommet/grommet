@@ -36,7 +36,7 @@ exports[`Title has correct onClick rendering 1`] = `
   onFocus={[Function]}
   onMouseDown={[Function]}
   onMouseUp={[Function]}
-  role="link"
+  role="group"
   style={Object {}}
   tabIndex={0}>
   <span>
@@ -55,7 +55,7 @@ exports[`Title has correct onClick rendering 2`] = `
   onFocus={[Function]}
   onMouseDown={[Function]}
   onMouseUp={[Function]}
-  role="link"
+  role="group"
   style={Object {}}
   tabIndex={0}>
   <span>

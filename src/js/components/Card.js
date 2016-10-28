@@ -170,7 +170,7 @@ export default class Card extends Component {
   }
 
   render () {
-    const { children, className, contentPad,
+    const { a11yTitle, children, className, contentPad,
       onClick, reverse, truncate, video } = this.props;
     const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
     const restProps = Props.omit(this.props, Object.keys(Card.propTypes));
@@ -228,7 +228,7 @@ export default class Card extends Component {
 
     return (
       <Box {...boxProps} {...restProps} className={classes}
-        justify={cardJustify} onClick={onCardClick}>
+        justify={cardJustify} onClick={onCardClick} a11yTitle={a11yTitle}>
         {thumbnail}
         {text}
         {videoLayer}
@@ -270,6 +270,7 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
+  a11yTitle: 'Card',
   contentPad: 'medium',
   headingStrong: true,
   textSize: 'small'

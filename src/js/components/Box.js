@@ -223,11 +223,11 @@ export default class Box extends Component {
         if (this.state.focus) {
           classes.push(`${CLASS_ROOT}--focus`);
         }
-        let boxLabel = a11yTitle ||
-          Intl.getMessage(this.context.intl, 'Box');
+        let boxLabel = (typeof a11yTitle !== 'undefined') ?
+          a11yTitle : Intl.getMessage(this.context.intl, 'Box');
         a11yProps.tabIndex = tabIndex || 0;
         a11yProps["aria-label"] = this.props['aria-label'] || boxLabel;
-        a11yProps.role = role || 'link';
+        a11yProps.role = role || 'group';
       }
     }
 
