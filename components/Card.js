@@ -277,6 +277,7 @@ var Card = function (_Component) {
       var _classnames2;
 
       var _props5 = this.props;
+      var a11yTitle = _props5.a11yTitle;
       var children = _props5.children;
       var className = _props5.className;
       var contentPad = _props5.contentPad;
@@ -331,7 +332,7 @@ var Card = function (_Component) {
       return _react2.default.createElement(
         _Box2.default,
         (0, _extends3.default)({}, boxProps, restProps, { className: classes,
-          justify: cardJustify, onClick: onCardClick }),
+          justify: cardJustify, onClick: onCardClick, a11yTitle: a11yTitle }),
         thumbnail,
         text,
         videoLayer
@@ -362,6 +363,7 @@ Card.propTypes = (0, _extends3.default)({
 }, _Box2.default.propTypes);
 
 Card.defaultProps = {
+  a11yTitle: 'Card',
   contentPad: 'medium',
   headingStrong: true,
   textSize: 'small'

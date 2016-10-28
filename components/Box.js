@@ -320,10 +320,10 @@ var Box = function (_Component) {
           if (this.state.focus) {
             classes.push(CLASS_ROOT + '--focus');
           }
-          var boxLabel = a11yTitle || _Intl2.default.getMessage(this.context.intl, 'Box');
+          var boxLabel = typeof a11yTitle !== 'undefined' ? a11yTitle : _Intl2.default.getMessage(this.context.intl, 'Box');
           a11yProps.tabIndex = tabIndex || 0;
           a11yProps["aria-label"] = this.props['aria-label'] || boxLabel;
-          a11yProps.role = role || 'link';
+          a11yProps.role = role || 'group';
         }
       }
 
