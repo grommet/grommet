@@ -180,9 +180,11 @@ export default class DateTimeDrop extends Component {
   }
 
   _onDay (date, event) {
-    event.stopPropagation();
-    // using native event to avoid document click in DateTime to be invoked
-    event.nativeEvent.stopImmediatePropagation();
+    if (event) {
+      event.stopPropagation();
+      // using native event to avoid document click in DateTime to be invoked
+      event.nativeEvent.stopImmediatePropagation();
+    }
     const { format, onChange } = this.props;
     const { intl } = this.context;
     this.setState({
