@@ -58,7 +58,7 @@
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "del": "^2.2.0",
-    "grommet-toolbox": "^0.4.0",
+    "grommet-toolbox": "^1.0.0",
     "gulp-bump": "^2.1.0",
     "gulp-coveralls": "^0.1.4",
     "gulp-cssnano": "^2.1.1",
