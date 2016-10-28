@@ -114,3 +114,12 @@ exports[`Anchor has correct text as a child rendering 1`] = `
   test
 </a>
 `;
+
+exports[`Anchor preserves id after rendering 1`] = `
+<a
+  aria-label={undefined}
+  className="grommetux-anchor"
+  href="test"
+  id="test"
+  onClick={undefined} />
+`;
