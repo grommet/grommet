@@ -241,6 +241,10 @@ var Notification = function (_Component) {
       boxProps.announce = false;
       var fullBox = boxProps.hasOwnProperty('full') ? boxProps.full : 'horizontal';
 
+      if (size && typeof size === 'string') {
+        // don't transfer size to Box since it means something different
+        delete boxProps.size;
+      }
       return _react2.default.createElement(
         _Animate2.default,
         { enter: { animation: 'fade', duration: 1000 },
