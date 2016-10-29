@@ -286,9 +286,11 @@ var DateTimeDrop = function (_Component) {
   }, {
     key: '_onDay',
     value: function _onDay(date, event) {
-      event.stopPropagation();
-      // using native event to avoid document click in DateTime to be invoked
-      event.nativeEvent.stopImmediatePropagation();
+      if (event) {
+        event.stopPropagation();
+        // using native event to avoid document click in DateTime to be invoked
+        event.nativeEvent.stopImmediatePropagation();
+      }
       var _props = this.props;
       var format = _props.format;
       var onChange = _props.onChange;
