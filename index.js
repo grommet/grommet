@@ -74,6 +74,7 @@ var Grommet = {
   SVGIcon: require('./components/SVGIcon'),
   Tab: require('./components/Tab'),
   Table: require('./components/Table'),
+  TableHeader: require('./components/TableHeader'),
   TableRow: require('./components/TableRow'),
   Tabs: require('./components/Tabs'),
   TBD: require('./components/TBD'),
