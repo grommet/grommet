@@ -50,7 +50,9 @@ export default class Base extends Component {
 };
 
 Base.propTypes = {
-  height: PropTypes.oneOf(['small', 'medium', 'large', 'sparkline']),
+  height: PropTypes.oneOf([
+    'xxsmall', 'xsmall', 'small', 'medium', 'large', 'sparkline'
+  ]),
   vertical: PropTypes.bool,
   width: PropTypes.oneOf(['small', 'medium', 'large', 'full'])
 };

@@ -13,6 +13,7 @@ $footer-height: round($inuit-base-spacing-unit * 1.5) !default;
 $large-footer-height: round($inuit-base-spacing-unit * 4) !default;
 
 // general layout t-shirt sizing
+$size-xxsmall: round($inuit-base-spacing-unit * 2) !default; // 48px
 $size-xsmall: round($inuit-base-spacing-unit * 4) !default; // 96px
 $size-small: round($inuit-base-spacing-unit * 8) !default; // 192px
 $size-medium: round($inuit-base-spacing-unit * 16) !default; // 384px
