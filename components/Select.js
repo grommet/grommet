@@ -124,7 +124,6 @@ var Select = function (_Component) {
       announceChange: false,
       activeOptionIndex: -1,
       dropActive: false,
-      defaultValue: props.defaultValue,
       searchText: '',
       value: _this._normalizeValue(props, {})
     };
@@ -582,8 +581,6 @@ var valueType = _react.PropTypes.oneOfType([_react.PropTypes.shape({
 }), _react.PropTypes.string]);
 
 Select.propTypes = {
-  // deprecate?
-  defaultValue: _react.PropTypes.oneOfType([valueType, _react.PropTypes.arrayOf(valueType)]),
   inline: _react.PropTypes.bool,
   multiple: _react.PropTypes.bool,
   onSearch: _react.PropTypes.func,
