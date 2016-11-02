@@ -66,17 +66,38 @@ var Base = function (_Component) {
   }
 
   (0, _createClass3.default)(Base, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      var _props = this.props;
+      var height = _props.height;
+      var width = _props.width;
+
+      if (nextProps.width !== width || nextProps.height !== height) {
+        this._notifySizeChange = true;
+      }
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (this._notifySizeChange) {
+        this._notifySizeChange = false;
+        var event = document.createEvent('HTMLEvents');
+        event.initEvent('resize', true, false);
+        window.dispatchEvent(event);
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _classnames;
 
-      var _props = this.props;
-      var children = _props.children;
-      var className = _props.className;
-      var height = _props.height;
-      var vertical = _props.vertical;
-      var width = _props.width;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'height', 'vertical', 'width']);
+      var _props2 = this.props;
+      var children = _props2.children;
+      var className = _props2.className;
+      var height = _props2.height;
+      var vertical = _props2.vertical;
+      var width = _props2.width;
+      var props = (0, _objectWithoutProperties3.default)(_props2, ['children', 'className', 'height', 'vertical', 'width']);
 
       var childCount = _react.Children.count(children);
       var finalHeight = !childCount && !height ? 'medium' : height;
