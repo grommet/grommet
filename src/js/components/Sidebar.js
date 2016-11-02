@@ -30,7 +30,7 @@ export default class Sidebar extends Component {
 
 Sidebar.propTypes = {
   fixed: PropTypes.bool,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
   full: PropTypes.bool,
   ...Box.propTypes
 };
