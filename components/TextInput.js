@@ -186,27 +186,6 @@ var TextInput = function (_Component) {
       }
     }
   }, {
-    key: '_fireDOMChange',
-    value: function _fireDOMChange() {
-      var onDOMChange = this.props.onDOMChange;
-
-      var event = void 0;
-      try {
-        event = new Event('change', {
-          'bubbles': true,
-          'cancelable': true
-        });
-      } catch (e) {
-        // IE11 workaround.
-        event = document.createEvent('Event');
-        event.initEvent('change', true, true);
-      }
-      // We use dispatchEvent to have the browser fill out the event fully.
-      this.componentRef.dispatchEvent(event);
-      // Manually dispatched events aren't delivered by React, so we notify too.
-      onDOMChange(event);
-    }
-  }, {
     key: '_onInputChange',
     value: function _onInputChange(event) {
       var onDOMChange = this.props.onDOMChange;
@@ -215,7 +194,7 @@ var TextInput = function (_Component) {
         activeSuggestionIndex: -1, announceChange: true, dropActive: true
       });
       if (onDOMChange) {
-        this._fireDOMChange();
+        onDOMChange(event);
       }
     }
   }, {
