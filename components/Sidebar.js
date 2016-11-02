@@ -97,7 +97,7 @@ exports.default = Sidebar;
 
 Sidebar.propTypes = (0, _extends3.default)({
   fixed: _react.PropTypes.bool,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
+  size: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
   full: _react.PropTypes.bool
 }, _Box2.default.propTypes);
 

@@ -27,6 +27,12 @@
   }
 }
 
+.#{$grommet-namespace}sidebar--xsmall {
+  @include media-query(lap-and-up) {
+    width: $sidebar-xsmall-width;
+  }
+}
+
 .#{$grommet-namespace}sidebar--small {
   @include media-query(lap-and-up) {
     width: $sidebar-small-width;
