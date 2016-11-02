@@ -40,7 +40,6 @@ export default class Select extends Component {
       announceChange: false,
       activeOptionIndex: -1,
       dropActive: false,
-      defaultValue: props.defaultValue,
       searchText: '',
       value: this._normalizeValue(props, {})
     };
@@ -443,8 +442,6 @@ const valueType = PropTypes.oneOfType([
 ]);
 
 Select.propTypes = {
-  // deprecate?
-  defaultValue: PropTypes.oneOfType([valueType, PropTypes.arrayOf(valueType)]),
   inline: PropTypes.bool,
   multiple: PropTypes.bool,
   onSearch: PropTypes.func,
