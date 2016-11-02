@@ -242,7 +242,7 @@
     width: 100%;
     border-width: $active-border-width;
     border-color: transparent;
-    border-right-style: solid;
+    border-left-style: solid;
 
     .grommet.rtl & {
       border-right-style: none;
