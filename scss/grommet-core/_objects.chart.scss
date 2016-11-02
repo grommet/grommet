@@ -72,6 +72,14 @@
   width: 100%;
 }
 
+.#{$grommet-namespace}chart-base--height-xxsmall {
+  height: $size-xxsmall;
+}
+
+.#{$grommet-namespace}chart-base--height-xsmall {
+  height: $size-xsmall;
+}
+
 .#{$grommet-namespace}chart-base--height-small {
   height: $size-small;
 }

@@ -112,7 +112,7 @@ exports.default = Base;
 ;
 
 Base.propTypes = {
-  height: _react.PropTypes.oneOf(['small', 'medium', 'large', 'sparkline']),
+  height: _react.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'sparkline']),
   vertical: _react.PropTypes.bool,
   width: _react.PropTypes.oneOf(['small', 'medium', 'large', 'full'])
 };
