@@ -8,6 +8,14 @@
   text-align: right;
 }
 
+.#{$grommet-namespace}timestamp__date {
+  white-space: nowrap;
+
+  + .#{$grommet-namespace}timestamp__time {
+    margin-left: 0.2em;
+  }
+}
+
 .#{$grommet-namespace}timestamp__time {
   text-transform: lowercase;
   white-space: nowrap;

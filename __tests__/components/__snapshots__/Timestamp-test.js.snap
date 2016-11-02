@@ -5,7 +5,6 @@ exports[`Timestamp aligns to end 1`] = `
     className="grommetux-timestamp__date">
     Apr 7, 2015
   </span>
-   
   <span
     className="grommetux-timestamp__time">
     10:00 AM
@@ -20,7 +19,6 @@ exports[`Timestamp displays a classname 1`] = `
     className="grommetux-timestamp__date">
     Apr 7, 2015
   </span>
-   
   <span
     className="grommetux-timestamp__time">
     10:00 AM
@@ -35,7 +33,6 @@ exports[`Timestamp displays date 1`] = `
     className="grommetux-timestamp__date">
     Apr 7, 2015
   </span>
-   
 </span>
 `;
 
@@ -46,7 +43,6 @@ exports[`Timestamp displays date and time 1`] = `
     className="grommetux-timestamp__date">
     Apr 7, 2015
   </span>
-   
   <span
     className="grommetux-timestamp__time">
     10:00 AM
@@ -61,7 +57,6 @@ exports[`Timestamp displays date, time, seconds 1`] = `
     className="grommetux-timestamp__date">
     Apr 7, 2015
   </span>
-   
   <span
     className="grommetux-timestamp__time">
     10:00:01 AM
@@ -72,7 +67,6 @@ exports[`Timestamp displays date, time, seconds 1`] = `
 exports[`Timestamp displays time 1`] = `
 <span
   className="grommetux-timestamp">
-   
   <span
     className="grommetux-timestamp__time">
     10:00 AM
@@ -83,7 +77,6 @@ exports[`Timestamp displays time 1`] = `
 exports[`Timestamp displays time with seconds 1`] = `
 <span
   className="grommetux-timestamp">
-   
   <span
     className="grommetux-timestamp__time">
     10:00:01 AM
@@ -98,7 +91,6 @@ exports[`Timestamp has correct default options 1`] = `
     className="grommetux-timestamp__date">
     Apr 7, 2015
   </span>
-   
   <span
     className="grommetux-timestamp__time">
     10:00 AM

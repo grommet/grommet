@@ -7,6 +7,15 @@ import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.TIMESTAMP;
 
+const FORMATS = {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit'
+};
+
 function _showField(field, fields) {
   let result = true;
   if (fields) {
@@ -37,74 +46,50 @@ export default class Timestamp extends Component {
 
   _formatForLocale ({value, fields}) {
     const locale = getCurrentLocale();
-    const dateObj =
-      (typeof value === 'string') ? new Date(value) : value;
+    const dateObj = (typeof value === 'string') ? new Date(value) : value;
+    let dateOptions = {};
+    let timeOptions = {};
 
-    // Date only.
-    let date;
     if (_showField('date', fields)) {
-      const dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
-      date = dateObj.toLocaleDateString(locale, dateOptions);
+      dateOptions.year = FORMATS.year;
+      dateOptions.month = FORMATS.month;
+      dateOptions.day = FORMATS.day;
+    }
+    if (_showField('year', fields)) {
+      dateOptions.year = FORMATS.year;
+    }
+    if (_showField('month', fields)) {
+      dateOptions.month = FORMATS.month;
+    }
+    if (_showField('day', fields)) {
+      dateOptions.day = FORMATS.day;
     }
 
-    // Hours, Minutes, and Seconds.
-    // Time only.
-    let time;
     if (_showField('time', fields)) {
-      const timeOptions = (!_showField('seconds', fields))
-        ? { hour: '2-digit', minute: '2-digit' }
-        : { hour: '2-digit', minute: '2-digit', second: '2-digit' };
-      time = dateObj.toLocaleTimeString(locale, timeOptions);
+      timeOptions.hour = FORMATS.hour;
+      timeOptions.minute = FORMATS.minute;
+    }
+    if (_showField('hour', fields) || _showField('hours', fields)) {
+      timeOptions.hour = FORMATS.hour;
+    }
+    if (_showField('minute', fields) || _showField('minutes', fields)) {
+      timeOptions.minute = FORMATS.minute;
+    }
+    if (_showField('second', fields) || _showField('seconds', fields)) {
+      timeOptions.second = FORMATS.second;
     }
 
-    // Hours only.
-    let hours;
-    if (_showField('hours', fields) && !_showField('minutes', fields)
-      && !_showField('time', fields)) {
-      const timeOptions = { hour: '2-digit' };
-      hours = dateObj.toLocaleTimeString(locale, timeOptions);
-    }
+    const date = Object.keys(dateOptions).length > 0 ?
+      dateObj.toLocaleDateString(locale, dateOptions) : undefined;
+    const time = Object.keys(timeOptions).length > 0 ?
+      dateObj.toLocaleTimeString(locale, timeOptions) : undefined;
 
-    // Hours and Minutes.
-    if (_showField('hours', fields) && _showField('minutes', fields)) {
-      const timeOptions = (!_showField('seconds', fields))
-        ? { hour: '2-digit', minute: '2-digit' }
-        : { hour: '2-digit', minute: '2-digit', second: '2-digit' };
-      time = dateObj.toLocaleTimeString(locale, timeOptions);
-    }
-
-    // Minutes only.
-    let minutes;
-    if (_showField('minutes', fields) && !_showField('hours', fields)
-      &&!_showField('time', fields)) {
-      const timeOptions = { minute: '2-digit' };
-      minutes = dateObj.toLocaleTimeString(locale, timeOptions);
-    }
-
-    // Seconds only.
-    let seconds;
-    if (_showField('seconds', fields) && !_showField('time', fields)) {
-      if (!_showField('hours', fields) || !_showField('minutes', fields)) {
-        const timeOptions = { second: '2-digit' };
-        // This avoids spacing issues when Seconds is used with
-        // Hours or Minutes.
-        seconds = (Array.isArray(fields))
-          ? ` ${dateObj.toLocaleTimeString(locale, timeOptions)}`
-          : dateObj.toLocaleTimeString(locale, timeOptions);
-      }
-    }
-
-    this.setState({
-      date: date,
-      time: time,
-      hours: hours,
-      minutes: minutes,
-      seconds: seconds
-    });
+    this.setState({ date, time });
   }
 
   render () {
     const { align, className, ...props } = this.props;
+    const { date, time } = this.state;
     delete props.fields;
     delete props.value;
     const classes = classnames(
@@ -116,31 +101,30 @@ export default class Timestamp extends Component {
     );
 
 
-    const date = (this.state.date)
-      ? <span className={`${CLASS_ROOT}__date`}>{this.state.date}</span>
-    : undefined;
+    let dateElement;
+    if (date) {
+      dateElement = <span className={`${CLASS_ROOT}__date`}>{date}</span>;
+    }
 
-    const time = (this.state.time || this.state.hours || this.state.minutes
-      || this.state.seconds)
-      ? <span className={`${CLASS_ROOT}__time`}>
-          {this.state.time}
-          {this.state.hours}
-          {this.state.minutes}
-          {this.state.seconds}
-        </span>
-      : undefined;
+    let timeElement;
+    if (time) {
+      timeElement = <span className={`${CLASS_ROOT}__time`}>{time}</span>;
+    }
 
     return (
       <span {...props} className={classes}>
-        {date} {time}
+        {dateElement}
+        {timeElement}
       </span>
     );
   }
 
 }
 
-const FIELD_TYPES = PropTypes.oneOf(['date', 'time', 'hours', 'minutes',
-  'seconds']);
+const FIELD_TYPES = PropTypes.oneOf([
+  'date', 'time', 'year', 'month', 'day', 'hour', 'minute', 'second',
+  'hours', 'minutes', 'seconds' // deprecated
+]);
 
 Timestamp.propTypes = {
   align: PropTypes.oneOf(['start', 'center', 'end']),

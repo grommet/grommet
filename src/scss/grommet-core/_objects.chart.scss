@@ -279,7 +279,7 @@
     }
 
     .#{$grommet-namespace}chart-axis__slot:not(.#{$grommet-namespace}chart-axis__slot--placeholder) {
-      span {
+      > span {
         padding: 0 quarter($inuit-base-spacing-unit);
       }
     }
