@@ -120,32 +120,13 @@ export default class TextInput extends Component {
     }
   }
 
-  _fireDOMChange () {
-    const { onDOMChange } = this.props;
-    let event;
-    try {
-      event = new Event('change', {
-        'bubbles': true,
-        'cancelable': true
-      });
-    } catch (e) {
-      // IE11 workaround.
-      event = document.createEvent('Event');
-      event.initEvent('change', true, true);
-    }
-    // We use dispatchEvent to have the browser fill out the event fully.
-    this.componentRef.dispatchEvent(event);
-    // Manually dispatched events aren't delivered by React, so we notify too.
-    onDOMChange(event);
-  }
-
   _onInputChange (event) {
     const { onDOMChange } = this.props;
     this.setState({
       activeSuggestionIndex: -1, announceChange: true, dropActive: true
     });
     if (onDOMChange) {
-      this._fireDOMChange();
+      onDOMChange(event);
     }
   }
 
