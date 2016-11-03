@@ -148,7 +148,7 @@
 
 .#{$grommet-namespace}search--small {
   .#{$grommet-namespace}search__input {
-    @include inuit-font-size($input-small-font-size, inherit);
+    @include inuit-font-size($input-small-font-size, normal);
     padding: (($inuit-base-spacing-unit - $control-font-size) - $input-border-width)
       ($control-font-size - $input-border-width);
     padding-right: ($inuit-base-spacing-unit - $input-border-width);
@@ -163,7 +163,7 @@
 
 .#{$grommet-namespace}search--medium {
   .#{$grommet-namespace}search__input {
-    @include inuit-font-size($input-medium-font-size, inherit);
+    @include inuit-font-size($input-medium-font-size, normal);
   }
 }
 
