@@ -215,7 +215,7 @@ var Graph = function (_Component) {
       var height = _state.height;
       var width = _state.width;
 
-      var pad = Math.min(width, height) < _utils.padding * 8 ? 2 : _utils.padding;
+      var pad = Math.min(width, height) < _utils.padding * 6 ? 2 : _utils.padding;
 
       var classes = (0, _classnames4.default)(CLASS_ROOT, CLASS_ROOT + '--' + type, (0, _defineProperty3.default)({}, CLASS_ROOT + '--vertical', vertical), COLOR_INDEX + '-' + (colorIndex || 'graph-1'), className);
 
