@@ -91,6 +91,8 @@ var Box = function (_Component) {
   (0, _createClass3.default)(Box, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      var _this2 = this;
+
       var _props = this.props;
       var colorIndex = _props.colorIndex;
       var onClick = _props.onClick;
@@ -107,15 +109,18 @@ var Box = function (_Component) {
           space: clickCallback
         });
       }
+
       // Measure the actual background color brightness to determine whether
       // to set a dark or light context.
       if (colorIndex) {
-        var darkBackground = 'dark' === colorIndex;
-        if (!darkBackground) {
-          var box = (0, _reactDom.findDOMNode)(this.boxContainerRef);
-          darkBackground = (0, _DOM.hasDarkBackground)(box);
-        }
-        this.setState({ darkBackground: darkBackground });
+        setTimeout(function () {
+          var darkBackground = 'dark' === colorIndex;
+          if (!darkBackground) {
+            var box = (0, _reactDom.findDOMNode)(_this2.boxContainerRef);
+            darkBackground = (0, _DOM.hasDarkBackground)(box);
+          }
+          _this2.setState({ darkBackground: darkBackground });
+        }, 1);
       }
     }
   }, {
@@ -162,7 +167,7 @@ var Box = function (_Component) {
   }, {
     key: '_addPropertyClass',
     value: function _addPropertyClass(classes, property) {
-      var _this2 = this;
+      var _this3 = this;
 
       var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
@@ -174,7 +179,7 @@ var Box = function (_Component) {
           classes.push(elementName + '--' + prefix + '-' + this._normalize(value));
         } else if ((typeof value === 'undefined' ? 'undefined' : (0, _typeof3.default)(value)) === 'object') {
           (0, _keys2.default)(value).forEach(function (key) {
-            _this2._addPropertyClass(classes, key, {
+            _this3._addPropertyClass(classes, key, {
               object: value, prefix: prefix + '-' + key });
           });
         } else {
@@ -185,7 +190,7 @@ var Box = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       var _props2 = this.props;
       var a11yTitle = _props2.a11yTitle;
@@ -240,7 +245,7 @@ var Box = function (_Component) {
       if (size) {
         if ((typeof size === 'undefined' ? 'undefined' : (0, _typeof3.default)(size)) === 'object') {
           (0, _keys2.default)(size).forEach(function (key) {
-            _this3._addPropertyClass(classes, key, { object: size });
+            _this4._addPropertyClass(classes, key, { object: size });
           });
         } else {
           this._addPropertyClass(classes, 'size');
@@ -290,27 +295,27 @@ var Box = function (_Component) {
         classes.push(CLASS_ROOT + "--clickable");
         clickableProps = {
           onMouseDown: function onMouseDown(event) {
-            _this3.setState({ mouseActive: true });
+            _this4.setState({ mouseActive: true });
             if (_onMouseDown) {
               _onMouseDown(event);
             }
           },
           onMouseUp: function onMouseUp(event) {
-            _this3.setState({ mouseActive: false });
+            _this4.setState({ mouseActive: false });
             if (_onMouseUp) {
               _onMouseUp(event);
             }
           },
           onFocus: function onFocus(event) {
             if (mouseActive === false) {
-              _this3.setState({ focus: true });
+              _this4.setState({ focus: true });
             }
             if (_onFocus) {
               _onFocus(event);
             }
           },
           onBlur: function onBlur(event) {
-            _this3.setState({ focus: false });
+            _this4.setState({ focus: false });
             if (_onBlur) {
               _onBlur(event);
             }
@@ -363,7 +368,7 @@ var Box = function (_Component) {
         return _react2.default.createElement(
           'div',
           (0, _extends3.default)({}, restProps, { ref: function ref(_ref) {
-              return _this3.boxContainerRef = _ref;
+              return _this4.boxContainerRef = _ref;
             },
             className: containerClasses.join(' '),
             style: style, role: role }, a11yProps, clickableProps),
@@ -379,7 +384,7 @@ var Box = function (_Component) {
         return _react2.default.createElement(
           Component,
           (0, _extends3.default)({}, restProps, { ref: function ref(_ref2) {
-              return _this3.boxContainerRef = _ref2;
+              return _this4.boxContainerRef = _ref2;
             },
             id: id, className: classes.join(' '), style: style,
             role: role, tabIndex: tabIndex,
