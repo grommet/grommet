@@ -40,9 +40,12 @@ export default class Box extends Component {
       });
     }
 
-    // Measure the actual background color brightness to determine whether
-    // to set a dark or light context.
     if (colorIndex) {
+      // Measure the actual background color brightness to determine whether
+      // to set a dark or light context. We delay this to allow the browser
+      // time to recognize the background color. Without this delay, the
+      // browser doesn't report the background color correctly.
+      // Emprically determined.
       setTimeout(() => {
         let darkBackground = ('dark' === colorIndex);
         if (! darkBackground) {
@@ -50,7 +53,7 @@ export default class Box extends Component {
           darkBackground = hasDarkBackground(box);
         }
         this.setState({ darkBackground: darkBackground });
-      }, 1);
+      }, 10);
     }
   }
 
