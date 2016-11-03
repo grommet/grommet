@@ -39,15 +39,18 @@ export default class Box extends Component {
         space: clickCallback
       });
     }
+
     // Measure the actual background color brightness to determine whether
     // to set a dark or light context.
     if (colorIndex) {
-      let darkBackground = ('dark' === colorIndex);
-      if (! darkBackground) {
-        const box = findDOMNode(this.boxContainerRef);
-        darkBackground = hasDarkBackground(box);
-      }
-      this.setState({ darkBackground: darkBackground });
+      setTimeout(() => {
+        let darkBackground = ('dark' === colorIndex);
+        if (! darkBackground) {
+          const box = findDOMNode(this.boxContainerRef);
+          darkBackground = hasDarkBackground(box);
+        }
+        this.setState({ darkBackground: darkBackground });
+      }, 1);
     }
   }
 
