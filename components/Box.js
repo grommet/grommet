@@ -110,9 +110,12 @@ var Box = function (_Component) {
         });
       }
 
-      // Measure the actual background color brightness to determine whether
-      // to set a dark or light context.
       if (colorIndex) {
+        // Measure the actual background color brightness to determine whether
+        // to set a dark or light context. We delay this to allow the browser
+        // time to recognize the background color. Without this delay, the
+        // browser doesn't report the background color correctly.
+        // Emprically determined.
         setTimeout(function () {
           var darkBackground = 'dark' === colorIndex;
           if (!darkBackground) {
@@ -120,7 +123,7 @@ var Box = function (_Component) {
             darkBackground = (0, _DOM.hasDarkBackground)(box);
           }
           _this2.setState({ darkBackground: darkBackground });
-        }, 1);
+        }, 10);
       }
     }
   }, {
