@@ -122,7 +122,7 @@ export default class Graph extends Component {
     delete props.width;
     delete props.points;
     const { height, width } = this.state;
-    const pad = Math.min(width, height) < (padding * 8) ? 2 : padding;
+    const pad = Math.min(width, height) < (padding * 6) ? 2 : padding;
 
     const classes = classnames(
       CLASS_ROOT,
