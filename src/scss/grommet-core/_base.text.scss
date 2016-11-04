@@ -85,9 +85,10 @@
     color: map-get($brand-status-colors, critical);
   }
 
-  svg {
-    max-width: 100%;
-  }
+  // Removed as this was causing issues with icons inside table cells.
+  // svg {
+  //   max-width: 100%;
+  // }
 
   #{$dark-background} {
     p:not(.#{$grommet-namespace}paragraph),
