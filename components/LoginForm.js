@@ -201,7 +201,7 @@ var LoginForm = function (_Component) {
       if (secondaryText) {
         secondaryTextNode = _react2.default.createElement(
           _Paragraph2.default,
-          { margin: 'none' },
+          { align: align, margin: 'none' },
           secondaryText
         );
       }
