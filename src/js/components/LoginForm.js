@@ -108,7 +108,9 @@ export default class LoginForm extends Component {
 
     let secondaryTextNode;
     if (secondaryText) {
-      secondaryTextNode = <Paragraph margin="none">{secondaryText}</Paragraph>;
+      secondaryTextNode = (
+        <Paragraph align={align} margin="none">{secondaryText}</Paragraph>
+      );
     }
 
     let rememberMeNode;
