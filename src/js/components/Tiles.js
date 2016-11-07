@@ -271,16 +271,31 @@ export default class Tiles extends Component {
 
   _layout () {
     const { direction } = this.props;
+
     if ('row' === direction) {
       // determine if we have more tiles than room to fit
       const tiles = findDOMNode(this.tilesRef);
+
       // 20 is to allow some fuzziness as scrollbars come and go
-      this.setState({
+      const newState = {
         overflow: (tiles.scrollWidth > (tiles.offsetWidth + 20)),
         overflowStart: (tiles.scrollLeft <= 20),
-        overflowEnd:
-          (tiles.scrollLeft >= (tiles.scrollWidth - tiles.offsetWidth))
-      });
+        overflowEnd: 
+          (tiles.scrollLeft >= (tiles.scrollWidth - tiles.offsetWidth)),
+        scrollWidth: tiles.scrollWidth
+      };
+
+      const state = {
+        overflow: this.state.overflow,
+        overflowStart: this.state.overflowStart,
+        overflowEnd: this.state.overflowEnd,
+        scrollWidth: this.state.scrollWidth
+      };
+
+      // Shallow compare states.
+      if (JSON.stringify(newState) !== JSON.stringify(state)) {
+        this.setState({ ...newState });
+      }
 
       // mark any tiles that might be clipped
       const rect = tiles.getBoundingClientRect();
