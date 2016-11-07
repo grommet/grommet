@@ -1,6 +1,6 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.legend {
+.#{$grommet-namespace}legend {
   text-align: left;
   list-style-type: none;
   white-space: normal;
@@ -11,119 +11,100 @@
   html.rtl & {
     text-align: right;
   }
+}
 
-  &__item,
-  &__total {
+.#{$grommet-namespace}legend__item,
+.#{$grommet-namespace}legend__total {
+  color: $secondary-text-color;
+
+  #{$dark-background-context} {
+    color: $inactive-colored-text-color;
+  }
+
+  #{$light-background-context} {
     color: $secondary-text-color;
-
-    > * {
-      vertical-align: top;
-    }
-
-    &-label {
-      display: inline-block;
-      width: round($inuit-base-spacing-unit * 3);
-    }
-
-    &-value {
-      display: inline-block;
-      width: round($inuit-base-spacing-unit * 3);
-      text-align: right;
-
-      html.rtl & {
-        text-align: left;
-      }
-    }
-
-    &-units {
-      display: inline-block;
-      margin-left: quarter($inuit-base-spacing-unit);
-
-      html.rtl & {
-        margin-left: 0;
-        margin-right: quarter($inuit-base-spacing-unit);
-      }
-    }
   }
+}
 
-  &__item {
+.#{$grommet-namespace}legend__item-label {
+  margin-right: halve($inuit-base-spacing-unit);
+}
 
-    &--clickable {
-      cursor: pointer;
-    }
+.#{$grommet-namespace}legend__item-units,
+.#{$grommet-namespace}legend__total-units {
+  display: inline-block;
+  margin-left: quarter($inuit-base-spacing-unit);
 
-    svg.legend__item-swatch {
-      width: halve($inuit-base-spacing-unit);
-      height: halve($inuit-base-spacing-unit);
-      margin-top: quarter($inuit-base-spacing-unit);
-      margin-right: halve($inuit-base-spacing-unit);
-      overflow: visible;
-
-      @include graph-stroke-color();
-
-      html.rtl & {
-        margin-right: 0;
-        margin-left: halve($inuit-base-spacing-unit);
-      }
-
-      path {
-        stroke-width: halve($inuit-base-spacing-unit);
-        transition-property: stroke-width;
-        transition-duration: $base-animation-duration;
-        transition-timing-function: ease-in-out;
-      }
-    }
-
-    &--active {
-      color: $text-color;
-
-      svg.legend__item-swatch {
-        path {
-          stroke-width: halve($inuit-base-spacing-unit);
-        }
-      }
-    }
+  html.rtl & {
+    margin-left: 0;
+    margin-right: quarter($inuit-base-spacing-unit);
   }
+}
 
-  &__total {
-    margin-left: $inuit-base-spacing-unit;
+.#{$grommet-namespace}legend__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  svg.#{$grommet-namespace}legend__item-swatch {
+    width: halve($inuit-base-spacing-unit);
+    height: halve($inuit-base-spacing-unit);
+    // margin-top: quarter($inuit-base-spacing-unit);
+    margin-right: halve($inuit-base-spacing-unit);
+    overflow: visible;
+
+    @include graph-stroke-color();
 
     html.rtl & {
-      margin-left: 0;
-      margin-right: $inuit-base-spacing-unit;
+      margin-right: 0;
+      margin-left: halve($inuit-base-spacing-unit);
     }
 
-    > * {
-      margin-top: quarter($inuit-base-spacing-unit);
-      padding-top: quarter($inuit-base-spacing-unit);
-      border-top: 1px dotted $border-color;
+    path {
+      stroke-width: halve($inuit-base-spacing-unit);
+      transition-property: stroke-width;
+      transition-duration: $base-animation-duration;
+      transition-timing-function: ease-in-out;
+    }
+  }
+}
+
+.#{$grommet-namespace}legend__item--clickable {
+  cursor: pointer;
+}
+
+.#{$grommet-namespace}legend__item--active {
+  color: $text-color;
+
+  svg.#{$grommet-namespace}legend__item-swatch {
+    path {
+      stroke-width: halve($inuit-base-spacing-unit);
     }
   }
 
-  &--single {
-    .legend__item {
-      &-swatch,
-      &-label {
-        //display: none;
-      }
+  #{$dark-background-context} {
+    color: $active-colored-text-color;
+  }
 
-      &-value {
-        @include inuit-font-size($large-number-font-size);
-        font-weight: bold;
-        width: auto;
-      }
+  #{$light-background-context} {
+    color: $text-color;
+  }
+}
 
-      &-units {
-        @include inuit-font-size($inuit-heading-size-3, inherit);
-        margin-left: quarter($inuit-base-spacing-unit);
-        color: $secondary-text-color;
-        font-weight: normal;
+// need li to override .grommet li
+li.#{$grommet-namespace}legend__total {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: $inuit-base-spacing-unit;
+  margin-top: quarter($inuit-base-spacing-unit);
+  padding-top: quarter($inuit-base-spacing-unit);
+  border-top: 1px dotted $border-color;
 
-        html.rtl & {
-          margin-left: 0;
-          margin-right: quarter($inuit-base-spacing-unit);
-        }
-      }
-    }
+  html.rtl & {
+    margin-left: 0;
+    margin-right: $inuit-base-spacing-unit;
   }
 }

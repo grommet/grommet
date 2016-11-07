@@ -1,16 +1,14 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-// turn off webkit elastic scrolling
-html,
-body {
+.grommet {
+  // inuit-box-sizing sets in on the 'html' element, we only want it here
+  box-sizing: border-box;
 
   &.rtl {
     direction: rtl;
   }
 
-  @include media-query(lap-and-up) {
-    height: 100%;
-    width: 100%;
-    overflow: visible;
+  * {
+    box-sizing: inherit;
   }
 }

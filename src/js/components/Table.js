@@ -1,52 +1,77 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import isEqual from 'lodash/lang/isEqual';
 import SpinningIcon from './icons/Spinning';
 import InfiniteScroll from '../utils/InfiniteScroll';
 import Selection from '../utils/Selection';
+import CSSClassnames from '../utils/CSSClassnames';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import Intl from '../utils/Intl';
+import { announce } from '../utils/Announcer';
 
-const CLASS_ROOT = 'table';
+const CLASS_ROOT = CSSClassnames.TABLE;
 const SELECTED_CLASS = `${CLASS_ROOT}-row--selected`;
+const ACTIVE_CLASS = `${CLASS_ROOT}-row--active`;
 // empirical number describing a minimum cell width for a
 // table to be presented in column-mode.
-const MIN_CELL_WIDTH = 96;
+const MIN_CELL_WIDTH = 120;
 
 export default class Table extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._onClick = this._onClick.bind(this);
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);
+    this._onResponsive = this._onResponsive.bind(this);
+    this._onPreviousRow = this._onPreviousRow.bind(this);
+    this._onNextRow = this._onNextRow.bind(this);
+    this._onEnter = this._onEnter.bind(this);
+    this._fireClick = this._fireClick.bind(this);
+    this._announceRow = this._announceRow.bind(this);
 
-    if (props.selection) {
-      console.warn('The "selection" property of Table has been deprecated.' +
-      ' Instead, use the "selected" property. The behavior is the same.' +
-      ' The property name was changed to align with List and Tiles.');
-    }
     this.state = {
-      selected: Selection.normalizeIndexes(props.selected || props.selection),
-      rebuildMirror: props.scrollable,
-      small: false
+      activeRow: undefined,
+      mouseActive: false,
+      selected: Selection.normalizeIndexes(props.selected),
+      small: false,
+      rebuildMirror: props.scrollable
     };
   }
 
   componentDidMount () {
+    const { onMore, selectable, scrollable } = this.props;
+    const { small } = this.state;
     this._setSelection();
-    if (this.props.scrollable && ! this.state.small) {
+    if (scrollable && !small) {
       this._buildMirror();
       this._alignMirror();
     }
     if (this.props.onMore) {
       this._scroll = InfiniteScroll.startListeningForScroll(
-        this.refs.more, this.props.onMore
+        this.moreRef, onMore
       );
     }
     this._adjustBodyCells();
+    this._layout();
     window.addEventListener('resize', this._onResize);
+
+    if (selectable) {
+      // only listen for navigation keys if the table row can be selected
+      this._keyboardHandlers = {
+        left: this._onPreviousRow,
+        up: this._onPreviousRow,
+        right: this._onNextRow,
+        down: this._onNextRow,
+        enter: this._onEnter,
+        space: this._onEnter
+      };
+      KeyboardAccelerators.startListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
+    }
   }
 
   componentWillReceiveProps (nextProps) {
@@ -54,85 +79,221 @@ export default class Table extends Component {
       InfiniteScroll.stopListeningForScroll(this._scroll);
       this._scroll = undefined;
     }
-    if (nextProps.hasOwnProperty('selected') ||
-      nextProps.hasOwnProperty('selection')) {
+    if (nextProps.selected !== undefined) {
       this.setState({
-        selected: Selection.normalizeIndexes(
-          nextProps.selected || nextProps.selection
-        )
+        selected: Selection.normalizeIndexes(nextProps.selected)
       });
     }
-    this.setState({rebuildMirror: nextProps.scrollable});
+
+    this.setState({
+      rebuildMirror: nextProps.scrollable
+    });
   }
 
   componentDidUpdate (prevProps, prevState) {
-    if (! isEqual(this.state.selected, prevState.selected)) {
+    const { onMore, selectable, scrollable } = this.props;
+    const { rebuildMirror, selected, small } = this.state;
+    if (JSON.stringify(selected) !==
+      JSON.stringify(prevState.selected)) {
       this._setSelection();
     }
-    if (this.state.rebuildMirror && ! this.state.small) {
+    if (rebuildMirror && !small) {
       this._buildMirror();
       this.setState({rebuildMirror: false});
     }
-    if (this.props.scrollable && ! this.state.small) {
+    if (scrollable && !small) {
       this._alignMirror();
     }
-    if (this.props.onMore && !this._scroll) {
+    if (onMore && !this._scroll) {
       this._scroll = InfiniteScroll.startListeningForScroll(
-        this.refs.more, this.props.onMore
+        this.moreRef, onMore
       );
     }
     this._adjustBodyCells();
+    this._layout();
+
+    if (selectable) {
+      // only listen for navigation keys if the table row can be selected
+      this._keyboardHandlers = {
+        left: this._onPreviousRow,
+        up: this._onPreviousRow,
+        right: this._onNextRow,
+        down: this._onNextRow,
+        enter: this._onEnter,
+        space: this._onEnter
+      };
+      KeyboardAccelerators.startListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
+    }
   }
 
   componentWillUnmount () {
+    const { selectable } = this.props;
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
     }
     clearTimeout(this._resizeTimer);
     window.removeEventListener('resize', this._onResize);
+
+    if (selectable) {
+      KeyboardAccelerators.stopListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
+    }
+  }
+
+  _announceRow (label) {
+    const { intl } = this.context;
+    const enterSelectMessage = Intl.getMessage(intl, 'Enter Select');
+    announce(`${label} ${enterSelectMessage}`);
+  }
+
+  _onResponsive () {
+    const { small } = this.state;
+    if (this.containerRef && this.tableRef) {
+      const availableSize = this.containerRef.offsetWidth;
+      const numberOfCells = this.tableRef.querySelectorAll('thead th').length;
+
+      if ((numberOfCells * MIN_CELL_WIDTH) > availableSize) {
+        if (small === false) {
+          this.setState({ small: true });
+        }
+      } else {
+        if (small === true) {
+          this.setState({ small: false });
+        }
+      }
+    }
   }
 
   _container () {
-    let containerElement = this.refs.table;
-    let tableBodies = containerElement.getElementsByTagName("TBODY");
-    if (tableBodies.length > 0) {
-      containerElement = tableBodies[0];
+    let containerElement = this.tableRef;
+    if (containerElement) {
+      let tableBodies = containerElement.getElementsByTagName('TBODY');
+      if (tableBodies.length > 0) {
+        containerElement = tableBodies[0];
+      }
     }
     return containerElement;
   }
 
   _setSelection () {
+    const { selected } = this.state;
     Selection.setClassFromIndexes({
       containerElement: this._container(),
       childSelector: 'tr',
       selectedClass: SELECTED_CLASS,
-      selectedIndexes: this.state.selected
+      selectedIndexes: selected
     });
   }
 
-  _onClick (event) {
-    if (!this.props.selectable) {
-      return;
-    }
+  _onPreviousRow (event) {
+    if (this.tableRef.contains(document.activeElement)) {
+      event.preventDefault();
+      const { activeRow } = this.state;
+      const rows = this.tableRef.querySelectorAll('tbody tr');
+      if (rows && rows.length > 0) {
+        if (activeRow === undefined) {
+          rows[0].classList.add(ACTIVE_CLASS);
+          this.setState({ activeRow: 0 }, () => {
+            this._announceRow(
+              rows[this.state.activeRow].innerText
+            );
+          });
+        } else if (activeRow - 1 >= 0) {
+          rows[activeRow].classList.remove(ACTIVE_CLASS);
+          rows[activeRow - 1].classList.add(ACTIVE_CLASS);
+          this.setState({ activeRow: activeRow - 1 }, () => {
+            this._announceRow(
+              rows[this.state.activeRow].innerText
+            );
+          });
+        }
+      }
 
-    let selected = Selection.onClick(event, {
+      //stop event propagation
+      return true;
+    }
+  }
+
+  _onNextRow (event) {
+    if (this.tableRef.contains(document.activeElement)) {
+      event.preventDefault();
+      const { activeRow } = this.state;
+      const rows = this.tableRef.querySelectorAll('tbody tr');
+      if (rows && rows.length > 0) {
+        if (activeRow === undefined) {
+          rows[0].classList.add(ACTIVE_CLASS);
+          this.setState({ activeRow: 0 }, () => {
+            this._announceRow(
+              rows[this.state.activeRow].innerText
+            );
+          });
+        } else if (activeRow + 1 <= rows.length - 1) {
+          rows[activeRow].classList.remove(ACTIVE_CLASS);
+          rows[activeRow + 1].classList.add(ACTIVE_CLASS);
+          this.setState({ activeRow: activeRow + 1 }, () => {
+            this._announceRow(
+              rows[this.state.activeRow].innerText
+            );
+          });
+        }
+      }
+
+      //stop event propagation
+      return true;
+    }
+  }
+
+  _fireClick (element, shiftKey) {
+    let event;
+    try {
+      event = new MouseEvent('click', {
+        'bubbles': true,
+        'cancelable': true,
+        'shiftKey': shiftKey
+      });
+    } catch (e) {
+      // IE11 workaround.
+      event = document.createEvent('Event');
+      event.initEvent('click', true, true);
+    }
+    // We use dispatchEvent to have the browser fill out the event fully.
+    element.dispatchEvent(event);
+  }
+
+  _onEnter (event) {
+    const { activeRow } = this.state;
+    const { intl } = this.context;
+    if (this.tableRef.contains(document.activeElement) &&
+      activeRow !== undefined) {
+      const rows = this.tableRef.querySelectorAll('tbody tr');
+      this._fireClick(rows[activeRow], event.shiftKey);
+      rows[activeRow].classList.remove(ACTIVE_CLASS);
+      const label = rows[activeRow].innerText;
+      const selectedMessage = Intl.getMessage(intl, 'Selected');
+      announce(`${label} ${selectedMessage}`);
+    }
+  }
+
+  _onClick (event) {
+    const { onSelect, selectable, selected } = this.props;
+
+    const selection = Selection.onClick(event, {
       containerElement: this._container(),
       childSelector: 'tr',
       selectedClass: SELECTED_CLASS,
-      multiSelect: ('multiple' === this.props.selectable),
+      multiSelect: ('multiple' === selectable),
       priorSelectedIndexes: this.state.selected
     });
     // only set the selected state and classes if the caller isn't managing it.
-    if (! this.props.selected) {
-      this.setState({ selected: selected }, this._setSelection);
+    if (selected === undefined) {
+      this.setState({ selected: selection }, this._setSelection);
     }
 
-    if (this.props.onSelect) {
-      // notify caller that the selection has changed
-      if (selected.length === 1) {
-        selected = selected[0];
-      }
-      this.props.onSelect(selected);
+    if (onSelect) {
+      onSelect(selection.length === 1 ? selection[0]  : selection);
     }
   }
 
@@ -141,15 +302,18 @@ export default class Table extends Component {
     // so that in responsive mode it displays the text as content in css.
     // IMPORTANT: non-text header cells, such as icon, are rendered as empty
     // headers.
-    let headerCells = this.refs.table.querySelectorAll('thead th');
-    if (headerCells.length > 0) {
-      let rows = this.refs.table.querySelectorAll('tbody tr');
+    if (this.tableRef) {
+      let headerCells = this.tableRef.querySelectorAll('thead th');
+      if (headerCells.length > 0) {
+        let rows = this.tableRef.querySelectorAll('tbody tr');
 
-      [].forEach.call(rows, (row) => {
-        [].forEach.call(row.cells, (cell, index) => {
-          cell.setAttribute('data-th', headerCells[index].innerText);
+        [].forEach.call(rows, (row) => {
+          [].forEach.call(row.cells, (cell, index) => {
+            cell.setAttribute('data-th',
+              headerCells[index].innerText || headerCells[index].textContent);
+          });
         });
-      });
+      }
     }
   }
 
@@ -161,47 +325,44 @@ export default class Table extends Component {
 
   _layout () {
     this._alignMirror();
-
-    let availableSize = this.refs.container.offsetWidth;
-    let numberOfCells = this.refs.table.querySelectorAll('thead th').length;
-
-    if ((numberOfCells * MIN_CELL_WIDTH) > availableSize) {
-      this.setState({small: true});
-    } else {
-      this.setState({small: false});
-    }
+    this._onResponsive();
   }
 
   _buildMirror () {
-    let tableElement = this.refs.table;
-    let cells = tableElement.querySelectorAll('thead tr th');
-    let mirrorElement = this.refs.mirror;
-    if (mirrorElement) {
-      let mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
-      while (mirrorRow.hasChildNodes()) {
-        mirrorRow.removeChild(mirrorRow.lastChild);
-      }
-      for (let i = 0; i < cells.length; i++) {
-        mirrorRow.appendChild(cells[i].cloneNode(true));
+    const tableElement = this.tableRef;
+    if (tableElement) {
+      let cells = tableElement.querySelectorAll('thead tr th');
+      let mirrorElement = this.mirrorRef;
+      if (mirrorElement) {
+        let mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
+        while (mirrorRow.hasChildNodes()) {
+          mirrorRow.removeChild(mirrorRow.lastChild);
+        }
+        for (let i = 0; i < cells.length; i++) {
+          mirrorRow.appendChild(cells[i].cloneNode(true));
+        }
       }
     }
   }
 
   _alignMirror () {
-    if (this.refs.mirror) {
-      let tableElement = this.refs.table;
-      let cells = tableElement.querySelectorAll('thead tr th');
-      let mirrorElement = this.refs.mirror;
-      let mirrorCells = mirrorElement.querySelectorAll('thead tr th');
+    if (this.mirrorRef) {
+      const tableElement = this.tableRef;
+      const cells = tableElement.querySelectorAll('thead tr th');
+      const mirrorElement = this.mirrorRef;
+      const mirrorCells = mirrorElement.querySelectorAll('thead tr th');
 
       let rect = tableElement.getBoundingClientRect();
-      mirrorElement.style.width = '' + Math.floor(rect.right - rect.left) + 'px';
+      mirrorElement.style.width =
+        '' + Math.floor(rect.right - rect.left) + 'px';
 
       let height = 0;
       for (let i = 0; i < cells.length; i++) {
         rect = cells[i].getBoundingClientRect();
-        mirrorCells[i].style.width = '' + Math.floor(rect.right - rect.left) + 'px';
-        mirrorCells[i].style.height = '' + Math.floor(rect.bottom - rect.top) + 'px';
+        mirrorCells[i].style.width =
+          '' + Math.floor(rect.right - rect.left) + 'px';
+        mirrorCells[i].style.height =
+          '' + Math.floor(rect.bottom - rect.top) + 'px';
         height = Math.max(height, Math.floor(rect.bottom - rect.top));
       }
       mirrorElement.style.height = '' + height + 'px';
@@ -209,42 +370,102 @@ export default class Table extends Component {
   }
 
   render () {
+    const {
+      a11yTitle, children, className, onBlur, onFocus, onMore, onMouseDown,
+      onMouseUp, scrollable, selectable, ...props
+    } = this.props;
+    delete props.onSelect;
+    delete props.selected;
+    const { activeRow, focus, mouseActive, small } = this.state;
+    const { intl } = this.context;
     let classes = classnames(
       CLASS_ROOT,
-      this.props.className,
       {
-        [`${CLASS_ROOT}--small`]: this.state.small,
-        [`${CLASS_ROOT}--selectable`]: this.props.selectable,
-        [`${CLASS_ROOT}--scrollable`]: this.props.scrollable
-      }
+        [`${CLASS_ROOT}--small`]: small,
+        [`${CLASS_ROOT}--selectable`]: selectable,
+        [`${CLASS_ROOT}--scrollable`]: scrollable
+      },
+      className
     );
 
     let mirror;
-    if (this.props.scrollable) {
+    if (scrollable) {
       mirror = (
-        <table ref="mirror" className={`${CLASS_ROOT}__mirror`}>
+        <table ref={ref => this.mirrorRef = ref}
+          className={`${CLASS_ROOT}__mirror`}>
           <thead>
-            <tr></tr>
+            <tr />
           </thead>
         </table>
       );
     }
 
     let more;
-    if (this.props.onMore) {
+    if (onMore) {
       more = (
-        <div ref="more" className={`${CLASS_ROOT}__more`}>
+        <div ref={ref => this.moreRef = ref} className={`${CLASS_ROOT}__more`}>
           <SpinningIcon />
         </div>
       );
     }
 
+    let selectableProps;
+    if (selectable) {
+      const multiSelectMessage = selectable === 'multiple' ?
+        `(${Intl.getMessage(intl, 'Multi Select')})` : '';
+      const tableMessage = a11yTitle || Intl.getMessage(intl, 'Table');
+      const navigationHelpMessage = Intl.getMessage(intl, 'Navigation Help');
+      selectableProps = {
+        'aria-label': (
+          `${tableMessage} ${multiSelectMessage} ${navigationHelpMessage}`
+        ),
+        tabIndex: '0',
+        onClick: this._onClick,
+        onMouseDown: (event) => {
+          this.setState({ mouseActive: true });
+          if (onMouseDown) {
+            onMouseDown(event);
+          }
+        },
+        onMouseUp: (event) => {
+          this.setState({ mouseActive: false });
+          if (onMouseUp) {
+            onMouseUp(event);
+          }
+        },
+        onFocus: (event) => {
+          if (mouseActive === false) {
+            this.setState({ focus: true });
+          }
+          if (onFocus) {
+            onFocus(event);
+          }
+        },
+        onBlur: (event) => {
+          if (activeRow) {
+            const rows = this.tableRef.querySelectorAll('tbody tr');
+            rows[activeRow].classList.remove(ACTIVE_CLASS);
+          }
+          this.setState({ focus: false, activeRow: undefined });
+          if (onBlur) {
+            onBlur(event);
+          }
+        }
+      };
+    }
+
+    const tableClasses = classnames(
+      `${CLASS_ROOT}__table`, {
+        [`${CLASS_ROOT}__table--focus`]: focus
+      }
+    );
+
     return (
-      <div ref="container" className={classes}>
+      <div ref={ref => this.containerRef = ref} {...props} className={classes}>
         {mirror}
-        <table ref="table" className={`${CLASS_ROOT}__table`}
-          onClick={this._onClick}>
-          {this.props.children}
+        <table ref={ref => this.tableRef = ref} {...selectableProps}
+          className={tableClasses}>
+          {children}
         </table>
         {more}
       </div>
@@ -252,7 +473,12 @@ export default class Table extends Component {
   }
 }
 
+Table.contextTypes = {
+  intl: PropTypes.object
+};
+
 Table.propTypes = {
+  a11yTitle: PropTypes.string,
   onMore: PropTypes.func,
   onSelect: PropTypes.func,
   scrollable: PropTypes.bool,

@@ -1,34 +1,55 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import Box from './Box';
 import Intl from '../utils/Intl';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "title";
+const CLASS_ROOT = CSSClassnames.TITLE;
 
 export default class Title extends Component {
-  render () {
-    let classes = [CLASS_ROOT];
-    if (this.props.responsive) {
-      classes.push(CLASS_ROOT + "--responsive");
-    }
-    if (this.props.onClick) {
-      classes.push(CLASS_ROOT + "--interactive");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
 
-    let a11yTitle = Intl.getMessage(this.context.intl, this.props.a11yTitle);
+  render () {
+    const {
+      a11yTitle, children, className, responsive, ...props
+    } = this.props;
+    const { intl } = this.context;
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--responsive`]: responsive,
+        [`${CLASS_ROOT}--interactive`]: props.onClick
+      },
+      className
+    );
+
+    const boxTitle = a11yTitle || Intl.getMessage(intl, 'Title');
+
+    let content;
+    if( typeof children === 'string' ) {
+      content = (
+        <span>{children}</span>
+      );
+    } else if (Array.isArray(children)) {
+      content = children.map((child, index) => {
+        if (child && typeof child === 'string') {
+          return <span key={index}>{child}</span>;
+        }
+        return child;
+      });
+    } else {
+      content = children;
+    }
 
     return (
-      <Box align="center" direction="row" responsive={false}
-        className={classes.join(' ')} a11yTitle={a11yTitle}
-        onClick={this.props.onClick}>
-        {this.props.children}
+      <Box {...props} align="center" direction="row" responsive={false}
+        className={classes} a11yTitle={boxTitle}>
+        {content}
       </Box>
     );
   }
+
 }
 
 Title.propTypes = {
@@ -42,6 +63,5 @@ Title.contextTypes = {
 };
 
 Title.defaultProps = {
-  responsive: true,
-  a11yTitle: 'Title'
+  responsive: true
 };

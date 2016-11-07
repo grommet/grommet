@@ -1,29 +1,70 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.image {
+.#{$grommet-namespace}image {
+  max-width: 100%;
+}
 
-  &--medium {
-    width: $image-width;
+.#{$grommet-namespace}image--small {
+  width: $size-small;
+}
+
+.#{$grommet-namespace}image--medium {
+  width: $size-medium;
+}
+
+.#{$grommet-namespace}image--large {
+  width: $size-large;
+}
+
+.#{$grommet-namespace}image--thumb {
+  width: double($inuit-base-spacing-unit);
+  height: double($inuit-base-spacing-unit);
+  flex: 0 0 auto;
+  object-fit: cover;
+
+  &.#{$grommet-namespace}image--mask {
+    border-radius: $inuit-base-spacing-unit;
   }
+}
 
-  &--large {
-    width: $image-large-width;
-  }
+.#{$grommet-namespace}image--cover {
+  object-fit: cover;
+}
 
-  &--small {
-    width: $image-small-width;
-  }
+.#{$grommet-namespace}image--contain {
+  object-fit: contain;
+}
 
-  &--full {
-    width: 100%;
-    height: 100%;
-  }
+.#{$grommet-namespace}image--full {
+  width: 100%;
+}
 
-  &--full-horizontal {
-    width: 100%;
-  }
+.#{$grommet-namespace}image--full-horizontal {
+  width: 100%;
+}
 
-  &--full-vertical {
-    height: 100%;
-  }
+.#{$grommet-namespace}image--full-vertical {
+  height: 100%;
+}
+
+.#{$grommet-namespace}image__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.#{$grommet-namespace}image__caption {
+  text-align: center;
+  padding: halve($inuit-base-spacing-unit);
+}
+
+.#{$grommet-namespace}image__caption--small {
+  max-width: $size-small;
+}
+
+.#{$grommet-namespace}image__caption--medium {
+  max-width: $size-medium;
+}
+
+.#{$grommet-namespace}image__caption--large {
+  max-width: $size-large;
 }

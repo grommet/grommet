@@ -1,0 +1,10 @@
+exports[`SVGIcon has correct default options 1`] = `
+<svg
+  className="grommetux-control-icon"
+  role="img">
+  <title>
+    control icon
+  </title>
+  Testing
+</svg>
+`;

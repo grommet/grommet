@@ -4,35 +4,20 @@ import { PropTypes } from 'react';
 
 export default {
   activeIndex: PropTypes.number,
-  a11yDesc: PropTypes.string,
-  a11yDescId: PropTypes.string,
-  legend: PropTypes.shape({
-    position: PropTypes.oneOf(['right', 'bottom', 'inline'])
-  }),
-  max: PropTypes.shape({
-    value: PropTypes.number,
-    label: PropTypes.string
-  }).isRequired,
-  min: PropTypes.shape({
-    value: PropTypes.number,
-    label: PropTypes.string
-  }).isRequired,
+  max: PropTypes.number.isRequired,
+  min: PropTypes.number.isRequired,
   onActivate: PropTypes.func.isRequired,
-  // size: PropTypes.oneOf(['small', 'medium', 'large']).isRequired,
   series: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string,
+    label: PropTypes.string, // used in Spiral
     value: PropTypes.number.isRequired,
     colorIndex: PropTypes.string,
-    important: PropTypes.bool,
     onClick: PropTypes.func
   })).isRequired,
   stacked: PropTypes.bool,
   thresholds: PropTypes.arrayOf(PropTypes.shape({
-    label: PropTypes.string,
     value: PropTypes.number.isRequired,
     colorIndex: PropTypes.string
   })).isRequired,
   total: PropTypes.number.isRequired,
-  units: PropTypes.string,
   vertical: PropTypes.bool
 };

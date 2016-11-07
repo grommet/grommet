@@ -1,10 +1,11 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.layer {
+.#{$grommet-namespace}layer {
   position: relative;
   z-index: 10; // stay above app header
   background-color: $layer-overlay-background-color;
   height: 100vh;
+  overflow: auto;
 
   @include media-query(lap-and-up) {
     position: fixed;
@@ -15,16 +16,23 @@
   }
 
   @include media-query(palm) {
-    &:not(.layer--hidden) + .app {
-      display: none;
+    &:not(.#{$grommet-namespace}layer--hidden) + .#{$grommet-namespace}app {
+      left: -100%;
+      right: 100%;
+      z-index: -1;
+      position: fixed;
     }
   }
 
-  &__container {
+  .#{$grommet-namespace}layer__container {
+    display: flex;
+    flex-direction: column;
     background-color: $layer-background-color;
 
     @include media-query(palm) {
       padding: 0 $inuit-base-spacing-unit;
+      min-height: 100%;
+      min-width: 100%;
     }
 
     @include media-query(lap-and-up) {
@@ -33,158 +41,150 @@
       max-width: 100%;
       overflow: auto;
       padding: 0 double($inuit-base-spacing-unit);
-      // padding: round($inuit-base-spacing-unit * 0.75) double($inuit-base-spacing-unit) double($inuit-base-spacing-unit);
       border-radius: $border-radius;
       box-shadow: $layer-box-shadow;
     }
   }
 
-  &__closer {
+  .#{$grommet-namespace}layer__closer {
     position: absolute;
     top: 0px;
     right: 0px;
     z-index: 1;
 
-    html.rtl & {
+    .grommet.rtl & {
       right: auto;
       left: 0px;
     }
   }
 
-  &--flush {
-    .layer__container {
-      padding: 0px;
-
-      .box--full {
-        width: auto;
-      }
-    }
+  .#{$grommet-namespace}tiles {
+    overflow: auto;
   }
 
-  &--align {
-    &-center:not(.layer--hidden) {
+  .#{$grommet-namespace}tiles__more {
+    position: relative;
+  }
+}
 
-      @include media-query(lap-and-up) {
-        .layer__container {
-          left: 50%;
-          top: 50%;
-          max-height: calc(100vh - #{double($inuit-base-spacing-unit)});
-          max-width: calc(100vw - #{double($inuit-base-spacing-unit)});
-          transform: translate(-50%, -50%);
-        }
-      }
-    }
+.#{$grommet-namespace}layer.#{$grommet-namespace}layer--flush {
+  .#{$grommet-namespace}layer__container {
+    padding: 0px;
+  }
+}
 
-    &-left:not(.layer--hidden) {
-      .layer__container {
-        top: 0px;
-        bottom: 0px;
-        left: 0px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+.#{$grommet-namespace}layer--align-center:not(.#{$grommet-namespace}layer--hidden) {
 
-        @include media-query(lap-and-up) {
-          @include animation('slide-right 0.2s ease-in-out forwards');
-        }
-      }
-
-      html.rtl & {
-        .layer__container {
-          left: auto;
-          right: 0px;
-
-          @include media-query(lap-and-up) {
-            @include animation('slide-left 0.2s ease-in-out forwards');
-          }
-        }
-      }
-    }
-
-    &-right:not(.layer--hidden) {
-      .layer__container {
-        top: 0px;
-        bottom: 0px;
-        right: 0px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        @include media-query(lap-and-up) {
-          @include animation('slide-left 0.2s ease-in-out forwards');
-        }
-      }
-
-      html.rtl & {
-        .layer__container {
-          right: auto;
-          left: 0px;
-
-          @include media-query(lap-and-up) {
-            @include animation('slide-right 0.2s ease-in-out forwards');
-          }
-        }
-      }
-    }
-
-    &-top:not(.layer--hidden) {
-      @include media-query(lap-and-up) {
-        .layer__container {
-          left: 50%;
-          transform: translateX(-50%);
-
-          @include media-query(lap-and-up) {
-            @include animation('slide-down 0.2s ease-in-out forwards');
-          }
-        }
-      }
-    }
-
-    &-bottom:not(.layer--hidden) {
-      .layer__container {
-        bottom: 0px;
-      }
+  @include media-query(lap-and-up) {
+    .#{$grommet-namespace}layer__container {
+      left: 50%;
+      top: 50%;
+      max-height: calc(100vh - #{double($inuit-base-spacing-unit)});
+      max-width: calc(100vw - #{double($inuit-base-spacing-unit)});
+      transform: translate(-50%, -50%);
     }
   }
+}
 
-  &--hidden {
-
-    left: -100vw;
-    right: 100vw;
-    z-index: -1;
-
-    &.layer--align {
-
-      &-left {
-        right: auto;
-
-        .layer__container {
-          left: -100vw;
-        }
-      }
-    }
-
-    @include media-query(palm) {
-      display: none;
-    }
+.#{$grommet-namespace}layer--align-left:not(.#{$grommet-namespace}layer--hidden) {
+  .#{$grommet-namespace}layer__container {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
 
     @include media-query(lap-and-up) {
-      &.layer--peek {
+      @include animation('slide-right 0.2s ease-in-out forwards');
+    }
+  }
 
-        left: 0;
-        z-index: 10;
+  .grommet.rtl & {
+    .#{$grommet-namespace}layer__container {
+      left: auto;
+      right: 0px;
 
-        &.layer--align {
+      @include media-query(lap-and-up) {
+        @include animation('slide-left 0.2s ease-in-out forwards');
+      }
+    }
+  }
+}
 
-          &-left {
-            right: auto;
+.#{$grommet-namespace}layer--align-right:not(.#{$grommet-namespace}layer--hidden) {
+  .#{$grommet-namespace}layer__container {
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
 
-            .layer__container {
-              left: auto;
-              right: - halve($inuit-base-spacing-unit);
-              border-right: 10px solid $brand-color;
-              @include animation('peek-right 0.5s ease-in-out alternate 5');
-            }
+    @include media-query(lap-and-up) {
+      @include animation('slide-left 0.2s ease-in-out forwards');
+    }
+  }
+
+  .grommet.rtl & {
+    .#{$grommet-namespace}layer__container {
+      right: auto;
+      left: 0px;
+
+      @include media-query(lap-and-up) {
+        @include animation('slide-right 0.2s ease-in-out forwards');
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}layer--align-top:not(.#{$grommet-namespace}layer--hidden) {
+  @include media-query(lap-and-up) {
+    .#{$grommet-namespace}layer__container {
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include media-query(lap-and-up) {
+        @include animation('slide-down 0.2s ease-in-out forwards');
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}layer--align-bottom:not(.#{$grommet-namespace}layer--hidden) {
+  .#{$grommet-namespace}layer__container {
+    bottom: 0px;
+  }
+}
+
+.#{$grommet-namespace}layer.#{$grommet-namespace}layer--hidden {
+
+  left: -100%;
+  right: 100%;
+  z-index: -1;
+  position: fixed;
+
+  &.#{$grommet-namespace}layer--align {
+
+    &-left {
+      right: auto;
+
+      .#{$grommet-namespace}layer__container {
+        left: -100vw;
+      }
+    }
+  }
+
+  @include media-query(lap-and-up) {
+    &.#{$grommet-namespace}layer--peek {
+
+      left: 0;
+      z-index: 10;
+
+      &.#{$grommet-namespace}layer--align {
+
+        &-left {
+          right: auto;
+
+          .#{$grommet-namespace}layer__container {
+            left: auto;
+            right: - halve($inuit-base-spacing-unit);
+            border-right: 10px solid $brand-color;
+            @include animation('peek-right 0.5s ease-in-out alternate 5');
           }
         }
       }

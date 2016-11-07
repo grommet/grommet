@@ -1,61 +1,71 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-$button-accent-color: #ff8d6d;
-
-.button {
+.#{$grommet-namespace}button {
   letter-spacing: 0.04167em;
 
-  &:not(.button--disabled):not(.button--plain):not(.button--fill) {
+  &:not(.#{$grommet-namespace}button--disabled):not(.#{$grommet-namespace}button--plain):not(.#{$grommet-namespace}button--fill) {
 
     &:hover {
       box-shadow: 0px 0px 0px 2px $button-border-color;
     }
 
-    &.button--primary {
+    &.#{$grommet-namespace}button--primary {
       &:hover {
         box-shadow: 0px 0px 0px 2px $brand-color;
       }
     }
 
-    &.button--secondary {
+    &.#{$grommet-namespace}button--secondary {
       &:hover {
         box-shadow: 0px 0px 0px 2px $button-secondary-color;
       }
     }
 
-    &.button--accent {
+    &.#{$grommet-namespace}button--accent {
       &:hover {
         box-shadow: 0px 0px 0px 2px $button-accent-color;
       }
     }
 
-    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+    #{$dark-background-context} {
 
       &:hover {
-        box-shadow: 0px 0px 0px 2px $colored-border-color;
+        box-shadow: 0px 0px 0px 2px $button-colored-border-color;
       }
 
-      &.button--primary {
+      &.#{$grommet-namespace}button--primary {
         &:hover {
           box-shadow: 0px 0px 0px 2px $brand-color;
         }
       }
 
-      &.button--secondary {
+      &.#{$grommet-namespace}button--secondary {
+        border-color: $colored-text-color;
+
         &:hover {
-          box-shadow: 0px 0px 0px 2px $colored-border-color;
+          box-shadow: 0px 0px 0px 2px $colored-text-color;
         }
       }
 
-      &.button--accent {
+      &.#{$grommet-namespace}button--accent {
         &:hover {
           box-shadow: 0px 0px 0px 2px $button-accent-color;
         }
       }
     }
+
+    #{$light-background-context} {
+      &.#{$grommet-namespace}button--secondary {
+        border-color: $button-secondary-color;
+
+        &:hover {
+          box-shadow: 0px 0px 0px 2px $button-secondary-color;
+        }
+      }
+    }
   }
 
-  &--fill:not(.button--disabled):not(.button--plain) {
+  &--fill:not(.#{$grommet-namespace}button--disabled):not(.#{$grommet-namespace}button--plain) {
     &:hover {
       padding: ($button-vertical-padding - ($button-border-width))
         ($button-horizontal-padding - ($button-border-width));

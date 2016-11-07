@@ -1,0 +1,34 @@
+exports[`Table has correct default options 1`] = `
+<div
+  className="grommetux-table">
+  <table
+    className="grommetux-table__table">
+    <tbody>
+      <tr>
+        <td>
+          first
+        </td>
+        <td>
+          note 1
+        </td>
+      </tr>
+      <tr>
+        <td>
+          second
+        </td>
+        <td>
+          note 2
+        </td>
+      </tr>
+      <tr>
+        <td>
+          third
+        </td>
+        <td>
+          note 3
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

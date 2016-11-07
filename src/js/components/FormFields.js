@@ -1,20 +1,20 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'form-fields';
+const CLASS_ROOT = CSSClassnames.FORM_FIELDS;
 
-const FormFields = props => {
-  let classes = classnames(CLASS_ROOT, props.className);
+export default class FormFields extends Component {
+  render () {
+    const { children, className, ...props } = this.props;
+    let classes = classnames(CLASS_ROOT, className);
 
-  return (
-    <div className={classes}>
-      {props.children}
-    </div>
-  );
+    return (
+      <div {...props} className={classes}>
+        {children}
+      </div>
+    );
+  }
 };
-
-FormFields.displayName = 'FormFields';
-
-export default FormFields;

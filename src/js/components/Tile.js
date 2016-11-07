@@ -1,37 +1,46 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import pick from 'lodash/object/pick';
-import keys from 'lodash/object/keys';
+import classnames from 'classnames';
+import Props from '../utils/Props';
 import Box from './Box';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "tile";
+const CLASS_ROOT = CSSClassnames.TILE;
+const NAMESPACE = CSSClassnames.NAMESPACE;
 
 export default class Tile extends Component {
 
   render () {
-    var classes = [CLASS_ROOT];
-    var other = pick(this.props, keys(Box.propTypes));
-    if (this.props.status) {
-      classes.push(CLASS_ROOT + "--status-" + this.props.status.toLowerCase());
-    }
-    if (this.props.wide) {
-      classes.push(CLASS_ROOT + "--wide");
-    }
-    if (this.props.onClick) {
-      classes.push(CLASS_ROOT + "--selectable");
-    }
-    if (this.props.selected) {
-      classes.push(CLASS_ROOT + "--selected");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const { children, className, onClick, wide, status,
+      hoverStyle, hoverColorIndex, hoverBorder, hoverBorderSize
+    } = this.props;
+    const restProps = Props.omit(this.props, Object.keys(Tile.propTypes));
+
+    const statusClass = status ? status.toLowerCase() : undefined;
+    // if Tiles flush is true, default borderSize to small (1px)
+    let borderSize = (hoverBorder) ?
+      ((hoverBorderSize) ? hoverBorderSize : 'large') : 'small';
+
+    const classes = classnames(
+      CLASS_ROOT,
+      className,
+      {
+        [`${CLASS_ROOT}--status-${statusClass}`]: status,
+        [`${CLASS_ROOT}--wide`]: wide,
+        [`${CLASS_ROOT}--selectable`]: onClick,
+        [`${NAMESPACE}${hoverStyle}${(hoverStyle == 'border') ?
+          ((borderSize) ? `-${borderSize}` : '-medium') : ''
+        }-hover-color-index-${hoverColorIndex}`]: hoverStyle,
+        [`${CLASS_ROOT}--hover-border-${borderSize}`]: borderSize
+      }
+    );
+
+    const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
 
     return (
-      <Box className={classes.join(' ')} {...other}
-        onClick={this.props.onClick} a11yTitle={this.props.a11yTitle}>
-        {this.props.children}
+      <Box {...restProps} {...boxProps} className={classes}>
+        {children}
       </Box>
     );
   }
@@ -39,15 +48,18 @@ export default class Tile extends Component {
 }
 
 Tile.propTypes = {
-  onClick: PropTypes.func,
-  selected: PropTypes.bool,
-  status: PropTypes.string, // deprecated, will be removed
-  wide: PropTypes.bool,
+  hoverStyle: PropTypes.oneOf(['border', 'background', 'none']),
+  hoverColorIndex: PropTypes.string,
+  hoverBorder: PropTypes.bool,
+  hoverBorderSize: PropTypes.oneOf(['small', 'medium', 'large']),
+  wide: PropTypes.bool, /// remove in 1.0? Box.basis='full'
   ...Box.propTypes
 };
 
 Tile.defaultProps = {
   pad: 'none',
   direction: 'column',
-  align: 'center'
+  align: 'center',
+  hoverStyle: 'none',
+  hoverColorIndex: 'disabled'
 };

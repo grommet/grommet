@@ -1,0 +1,134 @@
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+
+.#{$grommet-namespace}hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.#{$grommet-namespace}hero__background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 0;
+}
+
+.#{$grommet-namespace}hero__background-video {
+  overflow: hidden;
+
+  .#{$grommet-namespace}video {
+    min-height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translate(0%, -50%);
+
+    &::before {
+      content: "";
+      display: block;
+      height: 0px;
+      padding-bottom: 57%;
+    }
+
+    video {
+      width: auto;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+  }
+}
+
+.#{$grommet-namespace}hero--bg-left > .#{$grommet-namespace}hero__background {
+  @include media-query(palm) {
+    background-position: top left;
+  }
+}
+
+.#{$grommet-namespace}hero--bg-right > .#{$grommet-namespace}hero__background {
+  @include media-query(palm) {
+    background-position: top right;
+  }
+}
+
+.#{$grommet-namespace}hero__overlay.#{$grommet-namespace}box {
+  z-index: 1;
+
+  & > .#{$grommet-namespace}box {
+    width: 50%;
+
+    @include media-query(palm) {
+      width: 100%;
+    }
+  }
+}
+
+.#{$grommet-namespace}hero--large {
+  height: 75vh;
+
+  @include media-query(palm) {
+    height: auto;
+  }
+
+  .#{$grommet-namespace}hero__background {
+    height: 75vh;
+
+    @include media-query(palm) {
+      height: $inuit-base-spacing-unit * 12.5;
+    }
+  }
+
+  .#{$grommet-namespace}hero__overlay.#{$grommet-namespace}box {
+    height: 75vh;
+
+    @include media-query(palm) {
+      height: auto;
+    }
+  }
+
+  .#{$grommet-namespace}hero__image {
+    @include media-query(palm) {
+      height: $inuit-base-spacing-unit * 12.5;
+    }
+  }
+}
+
+.#{$grommet-namespace}hero--small {
+  height: 60vh;
+
+  @include media-query(palm) {
+    height: auto;
+  }
+
+  .#{$grommet-namespace}hero__background {
+    height: 60vh;
+
+    @include media-query(palm) {
+      height: $inuit-base-spacing-unit * 11.25;
+    }
+  }
+
+  .#{$grommet-namespace}hero__overlay.#{$grommet-namespace}box {
+    height: 60vh;
+
+    @include media-query(palm) {
+      height: auto;
+    }
+  }
+
+  .#{$grommet-namespace}hero__image {
+    @include media-query(palm) {
+      height: $inuit-base-spacing-unit * 11.25;
+    }
+  }
+}
+
+.#{$grommet-namespace}hero--mobile-separator {
+  @include media-query(palm) {
+    border-bottom: 1px solid $border-color;
+    margin-bottom: $inuit-base-spacing-unit;
+  }
+}

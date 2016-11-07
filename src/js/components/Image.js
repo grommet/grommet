@@ -1,31 +1,65 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import Label from './Label';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'image';
+const CLASS_ROOT = CSSClassnames.IMAGE;
 
-const Image = props => {
-  let { size, full } = props;
-  let classes = classnames(
-    CLASS_ROOT,
-    props.className,
-    {
-      [`${CLASS_ROOT}--${size}`]: size,
-      [`${CLASS_ROOT}--full`]: typeof full === 'boolean' && full,
-      [`${CLASS_ROOT}--full-${full}`]: typeof full === 'string'
-    }
-  );
+export default class Image extends Component {
+  render () {
+    const { caption, className, full, mask, size, fit, ...props } = this.props;
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--${size}`]: size,
+        [`${CLASS_ROOT}--${fit}`]: fit,
+        [`${CLASS_ROOT}--full`]: typeof full === 'boolean' && full,
+        [`${CLASS_ROOT}--full-${full}`]: typeof full === 'string',
+        [`${CLASS_ROOT}--mask`]: mask
+      },
+      className
+    );
 
-  return <img id={props.id} className={classes} src={props.src} />;
+    const captionText = (typeof caption === 'string') ? caption : props.alt;
+    const imgNode = (
+      <img {...props} className={classes} />
+    );
+
+    const labelRoot = `${CLASS_ROOT}__caption`;
+    const labelClasses = classnames(
+      labelRoot,
+      {
+        [`${labelRoot}--${size}`]: size
+      }
+    );
+    return caption && captionText ? (
+      <span className={`${CLASS_ROOT}__container`}>
+        {imgNode}
+        <Label className={labelClasses}>
+          {captionText}
+        </Label>
+      </span>
+    ) : (
+      imgNode
+    );
+  }
 };
 
 Image.propTypes = {
+  alt: PropTypes.string,
+  caption: PropTypes.oneOfType([
+    PropTypes.bool, PropTypes.string
+  ]),
+  fit: PropTypes.oneOf(['contain', 'cover']),
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
+  mask: PropTypes.bool,
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'thumb']),
   src: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'medium', 'large'])
+  title: PropTypes.string
 };
 
-Image.displayName = 'Image';
-
-export default Image;
+Image.defaultProps = {
+  size: 'medium'
+};

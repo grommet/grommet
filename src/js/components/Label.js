@@ -1,33 +1,53 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
+import { announce } from '../utils/Announcer';
 
-const CLASS_ROOT = 'label';
+const CLASS_ROOT = CSSClassnames.LABEL;
 
-const Label = props => {
-  let classes = classnames(
-    CLASS_ROOT,
-    props.className,
-    {
-      [`${CLASS_ROOT}--uppercase`]: props.uppercase,
-      [`${CLASS_ROOT}--margin-${props.margin}`]: props.margin
+export default class Label extends Component {
+
+  componentDidUpdate () {
+    if (this.props.announce) {
+      announce(this.labelRef.textContent);
     }
-  );
+  }
 
-  return (
-    <label className={classes} htmlFor={props.labelFor}>
-      {props.children}
-    </label>
-  );
+  render () {
+    const {
+      children, className, labelFor, margin, size, uppercase, ...props
+    } = this.props;
+    delete props.announce;
+    let labelMargin = margin ? margin : ('small' === size ? 'none' : 'medium');
+    let classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--uppercase`]: uppercase,
+        [`${CLASS_ROOT}--margin-${labelMargin}`]: labelMargin,
+        [`${CLASS_ROOT}--${size}`]: size
+      },
+      className
+    );
+
+    return (
+      <label ref={(ref) => this.labelRef = ref} {...props}
+        className={classes} htmlFor={labelFor}>
+        {children}
+      </label>
+    );
+  }
 };
 
 Label.propTypes = {
+  announce: PropTypes.bool,
   labelFor: PropTypes.string,
   margin: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium']),
   uppercase: PropTypes.bool
 };
 
-Label.displayName = 'Label';
-
-export default Label;
+Label.defaultProps = {
+  size: 'medium'
+};

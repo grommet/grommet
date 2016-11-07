@@ -1,106 +1,161 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.footer {
+.#{$grommet-namespace}footer {
   min-height: $footer-height;
-  line-height: $footer-height;
   width: 100%;
 
-  &.box--direction-row {
-    > h1,
-    > h2,
-    > h3,
-    > h4 {
-      margin-bottom: 0px;
+  // Height is needed to coerce IE11 into aligning center even though
+  // this is ignored by min-height. (Also needed on header--large and
+  // header--small.) We need to subtract 1 unit in order to allow
+  // min-height to keep the header height dynamic.
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    height: $footer-height - 1;
+  }
+}
+
+.#{$grommet-namespace}footer--small {
+  min-height: $small-footer-height;
+
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    height: $small-header-height - 1;
+  }
+}
+
+.#{$grommet-namespace}footer--large {
+  min-height: $large-footer-height;
+
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    height: $large-footer-height - 1;
+  }
+}
+
+.#{$grommet-namespace}footer__content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: $inuit-base-spacing-unit;
+  padding-right: $inuit-base-spacing-unit;
+
+  > * {
+    margin-right: double($inuit-base-spacing-unit);
+
+    &:last-child {
+      margin-right: 0px;
+      text-align: left;
     }
   }
+}
 
-  &__content {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding-left: $inuit-base-spacing-unit;
-    padding-right: $inuit-base-spacing-unit;
+.#{$grommet-namespace}footer--primary {
+  height: auto;
+  padding: $inuit-base-spacing-unit;
 
-    @include flexible();
+  .#{$grommet-namespace}footer__content {
+    position: relative;
+    color: $secondary-text-color;
+    display: block;
+  }
+}
+
+.#{$grommet-namespace}footer--centered {
+  .#{$grommet-namespace}footer__content {
+    display: block;
+    text-align: center;
 
     > * {
-      margin-right: double($inuit-base-spacing-unit);
-
-      &:last-child {
-        margin-right: 0px;
-        text-align: left;
-      }
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
     }
   }
+}
 
-  &--primary {
-    height: auto;
-    padding: $inuit-base-spacing-unit;
-
-    .footer {
-      &__content {
-        position: relative;
-        color: $secondary-text-color;
-        display: block;
-
-        p {
-          padding-top: halve($inuit-base-spacing-unit);
-          margin: 0;
-          max-width: none;
-          text-align: right;
-          line-height: $inuit-base-spacing-unit;
-        }
-      }
-    }
+.#{$grommet-namespace}footer--flush {
+  .#{$grommet-namespace}footer__content,
+  .#{$grommet-namespace}footer__wrapper {
+    padding-left: 0px;
+    padding-right: 0px;
   }
+}
 
-  &--centered {
-    .footer {
-      &__content {
-        display: block;
-        text-align: center;
-
-        > * {
-          margin-right: auto;
-          margin-left: auto;
-          text-align: center;
-        }
-      }
-    }
-  }
-
-  &--flush {
-    .footer__content {
-      padding-left: 0px;
-      padding-right: 0px;
-    }
-  }
-
-  &--large {
-    min-height: $large-footer-height;
-    line-height: $large-footer-height;
-  }
-
-  &--small {
-    min-height: $small-footer-height;
-    line-height: $small-footer-height;
-  }
-
-  &__container {
-    &--float {
-      position: absolute;
-      bottom: 0px;
-      left: 0px;
-      right: 0px;
-      padding-left: $inuit-base-spacing-unit;
-      padding-right: $inuit-base-spacing-unit;
-    }
-  }
-
-  *:not(.footer__container--float) > &--float {
+.#{$grommet-namespace}footer--fixed {
+  .#{$grommet-namespace}footer__wrapper {
     position: absolute;
     bottom: 0px;
     left: 0px;
     right: 0px;
+    z-index: 3;
   }
+
+  .#{$grommet-namespace}footer__wrapper--fill {
+    .#{$grommet-namespace}footer__wrapper {
+      background-color: $footer-background-color;
+    }
+  }
+}
+
+.#{$grommet-namespace}footer--fixed.#{$grommet-namespace}footer--primary {
+  .#{$grommet-namespace}footer__wrapper {
+    position: fixed;
+  }
+
+  .#{$grommet-namespace}footer__wrapper--fill {
+    .#{$grommet-namespace}footer__wrapper {
+      background-color: $footer-background-color;
+    }
+  }
+
+  .#{$grommet-namespace}footer__content {
+    position: static;
+    background-color: transparent;
+  }
+}
+
+.#{$grommet-namespace}footer__container {
+  flex-shrink: 0;
+}
+
+.#{$grommet-namespace}footer__container--float {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.#{$grommet-namespace}footer__container--fill {
+  .#{$grommet-namespace}footer {
+    background-color: $footer-background-color;
+  }
+}
+
+.#{$grommet-namespace}footer__container--fixed {
+  position: relative;
+  width: 100%;
+
+  .#{$grommet-namespace}footer__wrapper {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 3;
+  }
+}
+
+.#{$grommet-namespace}footer__wrapper {
+  height: $footer-height;
+}
+
+.#{$grommet-namespace}footer__wrapper--large {
+  height: $large-footer-height;
+}
+
+.#{$grommet-namespace}footer__wrapper--small {
+  height: $small-footer-height;
+}
+
+*:not(.#{$grommet-namespace}footer__container--float) > .#{$grommet-namespace}footer--float {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }

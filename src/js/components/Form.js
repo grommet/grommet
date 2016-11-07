@@ -1,29 +1,34 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'form';
+const CLASS_ROOT = CSSClassnames.FORM;
 
-const Form = props => {
-  let { className, compact, fill, pad } = props;
-  let classes = classnames(
-    CLASS_ROOT,
-    className,
-    {
-      [`${CLASS_ROOT}--compact`]: compact,
-      [`${CLASS_ROOT}--fill`]: fill,
-      [`${CLASS_ROOT}--pad-${pad}`]: typeof pad === 'string',
-      [`${CLASS_ROOT}--pad-horizontal-${pad.horizontal}`]: typeof pad === 'object' && 'horizontal' in pad,
-      [`${CLASS_ROOT}--pad-vertical-${pad.vertical}`]: typeof pad === 'object' && 'vertical' in pad
-    }
-  );
+export default class Form extends Component {
+  render () {
+    const { className, compact, fill, pad, ...props } = this.props;
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--compact`]: compact,
+        [`${CLASS_ROOT}--fill`]: fill,
+        [`${CLASS_ROOT}--pad-${pad}`]: typeof pad === 'string',
+        [`${CLASS_ROOT}--pad-horizontal-${pad.horizontal}`]:
+          typeof pad === 'object' && 'horizontal' in pad,
+        [`${CLASS_ROOT}--pad-vertical-${pad.vertical}`]:
+          typeof pad === 'object' && 'vertical' in pad
+      },
+      className
+    );
 
-  return (
-    <form className={classes} onSubmit={props.onSubmit}>
-      {props.children}
-    </form>
-  );
+    return (
+      <form {...props} className={classes} onSubmit={this.props.onSubmit}>
+        {this.props.children}
+      </form>
+    );
+  }
 };
 
 Form.propTypes = {
@@ -44,7 +49,3 @@ Form.defaultProps = {
   fill: false,
   pad: 'none'
 };
-
-Form.displayName = 'Form';
-
-export default Form;

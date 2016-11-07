@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- '5'
+- '6.1.0'
 sudo: false
 cache:
   directories:
@@ -8,9 +8,9 @@ cache:
 before_script:
 - npm install -g gulp
 - npm install -g codeclimate-test-reporter
-- gem install scss_lint -v 0.38.0
-- gulp preprocess
 - gulp generate-index-icons
+- gulp preprocess
+- gulp dist-css
 script:
 - |
   if [ "$TEST_TYPE" = build ]; then
@@ -23,11 +23,12 @@ after_success:
   if [ "$TEST_TYPE" = build ]; then
     gulp coveralls
     codeclimate-test-reporter < coverage/lcov.info
-    if [ "$TRAVIS_BRANCH" = "master" ]; then
+    if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
       git config credential.helper "store --file=.git/credentials"
       echo "https://${GH_TOKEN}:@github.com" > .git/credentials
       git config --global user.name "Grommet Community Bot"
       git config --global user.email "asouza@hp.com"
+      gulp dist
       gulp release:stable
     fi
   fi

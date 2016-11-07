@@ -1,35 +1,61 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Children, Component, PropTypes } from 'react';
+import React, { Children, Component } from 'react';
 import classnames from 'classnames';
-import iconsMap from '../index-icons';
+import { docComponent, docPropType, PropTypes } from 'react-desc';
+import LinkNextIcon from './icons/base/LinkNext';
 
-const CLASS_ROOT = 'anchor';
+import CSSClassnames from '../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.ANCHOR;
 
 export default class Anchor extends Component {
 
+  constructor () {
+    super();
+    this._onClick = this._onClick.bind(this);
+  }
+
+  _onClick (event) {
+    const { method, onClick, path} = this.props;
+    const { router } = this.context;
+
+    event.preventDefault();
+
+    if ('push' === method) {
+      router.push(path);
+    } else if ('replace' === method) {
+      router.replace(path);
+    }
+
+    if (onClick) {
+      onClick();
+    }
+  }
+
   render () {
-    let icon;
-    if (this.props.icon) {
-      let CustomIcon  = iconsMap[this.props.icon];
-      if (! CustomIcon) {
-        console.warn(
-          `Warning: Anchor is unable to find the icon named ${this.props.icon}`
-        );
-      } else {
-        icon = <CustomIcon />;
-      }
-    } else if (this.props.primary) {
-      let LinkNextIcon = iconsMap.LinkNext;
-      icon = <LinkNextIcon />;
+    const {
+      a11yTitle, animateIcon, children, className, disabled, href, icon,
+      label, onClick, path, primary, reverse, tag, ...props
+    } = this.props;
+    delete props.method;
+    const { router } = this.context;
+
+    let anchorIcon;
+    if (icon) {
+      anchorIcon = icon;
+    } else if (primary) {
+      anchorIcon = (
+        <LinkNextIcon a11yTitle='link next' />
+      );
     }
 
-    if (icon && !this.props.primary && !this.props.label) {
-      icon = <span className={`${CLASS_ROOT}__icon`}>{icon}</span>;
+    if (anchorIcon && !primary && !label) {
+      anchorIcon = <span className={`${CLASS_ROOT}__icon`}>{anchorIcon}</span>;
     }
 
-    let hasIcon = icon !== undefined;
-    let children = Children.map(this.props.children, child => {
+    let hasIcon = anchorIcon !== undefined;
+    let anchorChildren = Children.map(children, child => {
       if (child && child.type && child.type.icon) {
         hasIcon = true;
         child = <span className={`${CLASS_ROOT}__icon`}>{child}</span>;
@@ -37,52 +63,101 @@ export default class Anchor extends Component {
       return child;
     });
 
+    let adjustedHref = (path && router) ? router.createPath(path) : href;
+
     let classes = classnames(
       CLASS_ROOT,
-      this.props.className,
       {
-        [`${CLASS_ROOT}--disabled`]: this.props.disabled,
-        [`${CLASS_ROOT}--icon`]: icon,
-        [`${CLASS_ROOT}--icon-label`]: hasIcon && this.props.label,
-        [`${CLASS_ROOT}--primary`]: this.props.primary,
-        [`${CLASS_ROOT}--reverse`]: this.props.reverse
-      }
+        [`${CLASS_ROOT}--animate-icon`]: hasIcon && animateIcon !== false,
+        [`${CLASS_ROOT}--disabled`]: disabled,
+        [`${CLASS_ROOT}--icon`]: anchorIcon || hasIcon,
+        [`${CLASS_ROOT}--icon-label`]: hasIcon && label,
+        [`${CLASS_ROOT}--primary`]: primary,
+        [`${CLASS_ROOT}--reverse`]: reverse,
+        [`${CLASS_ROOT}--active`]: (router && path && router.isActive(path))
+      },
+      className
     );
 
-    if (!children) {
-      children = this.props.label;
+    let adjustedOnClick = (path && router ? this._onClick : onClick);
+
+    if (!anchorChildren) {
+      anchorChildren = label;
     }
 
-    const first = this.props.reverse ? children : icon;
-    const second = this.props.reverse ? icon : children;
+    const first = reverse ? anchorChildren : anchorIcon;
+    const second = reverse ? anchorIcon : anchorChildren;
 
+    const Component = tag;
     return (
-      <this.props.tag id={this.props.id} className={classes}
-        href={this.props.href}
-        target={this.props.target}
-        onClick={this.props.onClick}
-        aria-label={this.props.a11yTitle}>
+      <Component {...props} href={adjustedHref} className={classes}
+        aria-label={a11yTitle} onClick={adjustedOnClick}>
         {first}
         {second}
-      </this.props.tag>
+      </Component>
     );
   }
 };
 
+const description = `A text link. We have a separate component from the browser
+base so we can style it. You can either set the icon and/or label properties
+or just use children.`;
+const usage = `import Anchor from 'grommet/components/Anchor';
+<Anchor href={location} label="Label" />
+`;
+docComponent(
+  description,
+  Anchor, {
+    usage
+  }
+);
+
 Anchor.propTypes = {
-  a11yTitle: PropTypes.string,
-  icon: PropTypes.string,
-  disabled: PropTypes.bool,
-  href: PropTypes.string,
-  id: PropTypes.string,
-  label: PropTypes.node,
-  onClick: PropTypes.func,
-  primary: PropTypes.bool,
-  tag: PropTypes.string,
-  target: PropTypes.string,
-  reverse: PropTypes.bool
+  a11yTitle: docPropType('Accessibility title.', PropTypes.string),
+  animateIcon: docPropType(
+    'Whether to animate the icon on hover.', PropTypes.bool
+  ),
+  disabled: docPropType('Whether to disable the anchor.', PropTypes.bool),
+  href: docPropType(
+    'Hyperlink reference to place in the anchor.', PropTypes.string
+  ),
+  icon: docPropType(
+    'Icon element to place in the anchor.', PropTypes.element
+  ),
+  id: docPropType(
+    'Anchor identifier.', PropTypes.string
+  ),
+  label: docPropType('Label text to place in the anchor.', PropTypes.node),
+  method: docPropType(
+    'Valid only when used with path. Indicates whether the browser history' +
+    ' should be appended to or replaced.',
+    PropTypes.oneOf(['push', 'replace'])
+  ),
+  onClick: docPropType('Click handler.', PropTypes.func),
+  path: docPropType(
+    'React-router path to navigate to when clicked.', PropTypes.string
+  ),
+  primary: docPropType('Whether this is a primary anchor.', PropTypes.bool),
+  reverse: docPropType(
+    'Whether an icon and label should be reversed so that the icon is at the' +
+    'end of the anchor.',
+    PropTypes.bool
+  ),
+  tag: docPropType(
+    'The DOM tag to use for the element. The default is <a>. This should be' +
+    ' used in conjunction with components like Link from React Router. In' +
+    ' this case, Link controls the navigation while Anchor controls the' +
+    ' styling.',
+    PropTypes.string
+  ),
+  target: docPropType('Target of the link.', PropTypes.string)
 };
 
 Anchor.defaultProps = {
+  method: 'push',
   tag: 'a'
+};
+
+Anchor.contextTypes = {
+  router: React.PropTypes.object
 };

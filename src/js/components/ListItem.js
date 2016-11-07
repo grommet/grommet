@@ -1,72 +1,46 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { PropTypes } from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 import Box from './Box';
 import Props from '../utils/Props';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'list-item';
+const CLASS_ROOT = CSSClassnames.LIST_ITEM;
 
-const ListItem = props => {
-  let classes = classnames(
-    CLASS_ROOT,
-    props.className,
-    {
-      [`${CLASS_ROOT}--selected`]: props.selected,
-      [`${CLASS_ROOT}--selectable`]: props.onClick
-    }
-  );
+export default class ListItem extends Component {
 
-  let children;
+  render () {
+    const { children, className, onClick } = this.props;
 
-  if (props.label) {
-    let image;
-    if (props.image) {
-      image = (
-        <span className={`${CLASS_ROOT}__image`}>
-          {props.image}
-        </span>
-      );
-    }
-    children = [
-      image,
-      <span key="label" className={`${CLASS_ROOT}__label`}>
-        {props.label}
-      </span>,
-      <span key="annotation" className={`${CLASS_ROOT}__annotation`}>
-        {props.annotation}
-      </span>
-    ];
-  } else {
-    children = props.children;
+    const classes = classnames(
+      CLASS_ROOT,
+      className,
+      {
+        [`${CLASS_ROOT}--selectable`]: onClick
+      }
+    );
+
+    const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    const restProps = Props.omit(this.props, Object.keys(ListItem.propTypes));
+
+    return (
+      <Box {...boxProps} {...restProps} tag="li" className={classes}>
+        {children}
+      </Box>
+    );
   }
 
-  let boxProps = Props.pick(props, Box);
-
-  return (
-    <Box {...boxProps} tag="li" className={classes} onClick={props.onClick}>
-      {children}
-    </Box>
-  );
 };
 
 ListItem.propTypes = {
-  onClick: PropTypes.func,
-  selected: PropTypes.bool,
-  ...Box.propTypes,
-  // deprecated properties
-  annotation: PropTypes.node,
-  image: PropTypes.node,
-  label: PropTypes.node
+  ...Box.propTypes
 };
 
 ListItem.defaultProps = {
   align: 'center',
   direction: 'row',
   pad: {horizontal: 'medium', vertical: 'small'},
-  separator: 'bottom'
+  separator: 'bottom',
+  role: 'listitem'
 };
-
-ListItem.displayName = 'ListItem';
-
-export default ListItem;

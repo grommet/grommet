@@ -1,17 +1,18 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import pick from 'lodash/object/pick';
-import keys from 'lodash/object/keys';
+import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
+import Props from '../utils/Props';
 import Box from './Box';
 
-const CLASS_ROOT = "header";
+const CLASS_ROOT = CSSClassnames.HEADER;
 
 export default class Header extends Component {
 
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onResize = this._onResize.bind(this);
   }
@@ -40,58 +41,70 @@ export default class Header extends Component {
   }
 
   _alignMirror () {
-    var contentElement = ReactDOM.findDOMNode(this.refs.content);
-    var mirrorElement = this.refs.mirror;
+    var contentElement = ReactDOM.findDOMNode(this.contentRef);
+    var mirrorElement = this.mirrorRef;
 
     // constrain fixed content to the width of the mirror
     var mirrorRect = mirrorElement.getBoundingClientRect();
-    contentElement.style.width = '' + Math.floor(mirrorRect.width) + 'px';
+    contentElement.style.width = `${Math.floor(mirrorRect.width)}px`;
 
     // align the mirror height with the content's height
     var contentRect = contentElement.getBoundingClientRect();
-    mirrorElement.style.height = '' + Math.floor(contentRect.height) + 'px';
+    mirrorElement.style.height = `${Math.floor(contentRect.height)}px`;
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    var containerClasses = [CLASS_ROOT + "__container"];
-    var other = pick(this.props, keys(Box.propTypes));
-    if (this.props.fixed) {
-      containerClasses.push(CLASS_ROOT + "__container--fixed");
-    }
-    if (this.props.float) {
-      classes.push(CLASS_ROOT + "--float");
-      containerClasses.push(CLASS_ROOT + "__container--float");
-    }
-    if (this.props.size) {
-      classes.push(CLASS_ROOT + "--" + this.props.size);
-    }
-    if (this.props.splash) {
-      classes.push(CLASS_ROOT + "--splash");
-    }
-    if (this.props.strong) {
-      classes.push(CLASS_ROOT + "--strong");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
+    const {
+      children, className, colorIndex, fixed, float, role, size, splash
+    } = this.props;
+    const classes = classnames(
+      CLASS_ROOT, {
+        [`${CLASS_ROOT}--${size}`]: (size && typeof size === 'string'),
+        [`${CLASS_ROOT}--float`]: float,
+        [`${CLASS_ROOT}--splash`]: splash
+      },
+      className
+    );
+    const containerClasses = classnames(
+      `${CLASS_ROOT}__container`, {
+        [`${CLASS_ROOT}__container--fixed`]: fixed,
+        // add default color index if none is provided
+        [`${CLASS_ROOT}__container--fill`]: (fixed && !colorIndex),
+        [`${CLASS_ROOT}__container--float`]: float
+      }
+    );
+    const wrapperClasses = classnames(
+      `${CLASS_ROOT}__wrapper`, {
+        [`${CLASS_ROOT}__wrapper--${size}`]: (size && typeof size === 'string')
+      }
+    );
+    var other = Props.pick(this.props, Object.keys(Box.propTypes));
+    let restProps = Props.omit(this.props, Object.keys(Header.propTypes));
+    if (size && typeof size === 'string') {
+      // don't transfer size to Box since it means something different
+      delete other.size;
     }
 
-    if (this.props.fixed) {
+    if (fixed) {
       return (
-        <div className={containerClasses.join(' ')}>
-          <div ref="mirror" className={CLASS_ROOT + "__mirror"}></div>
-          <div className={CLASS_ROOT + "__wrapper"}>
-            <Box ref="content" tag={this.props.header} {...other} className={classes.join(' ')}>
-              {this.props.children}
+        <div className={containerClasses}>
+          <div ref={ref => this.mirrorRef = ref}
+            className={`${CLASS_ROOT}__mirror`} />
+          <div className={wrapperClasses}>
+            <Box ref={ref => this.contentRef = ref}
+              {...other} {...restProps} tag="header"
+              className={classes}>
+              {children}
             </Box>
           </div>
         </div>
       );
     } else {
       return (
-        <Box tag={this.props.header} {...other} className={classes.join(' ')}
-          containerClassName={containerClasses.join(' ')}>
-          {this.props.children}
+        <Box {...other} {...restProps} tag="header" role={role}
+          className={classes}
+          containerClassName={containerClasses}>
+          {children}
         </Box>
       );
     }
@@ -104,15 +117,12 @@ Header.propTypes = {
   float: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   splash: PropTypes.bool,
-  strong: PropTypes.bool,
-  tag: PropTypes.string,
   ...Box.propTypes
 };
 
 Header.defaultProps = {
-  pad: 'none',
+  pad: { horizontal: 'none', vertical: 'none', between: 'small'},
   direction: 'row',
   align: 'center',
-  responsive: false,
-  tag: 'header'
+  responsive: false
 };

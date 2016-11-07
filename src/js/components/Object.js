@@ -1,8 +1,10 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "object";
+const CLASS_ROOT = CSSClassnames.OBJECT;
+const LIST_ITEM = CSSClassnames.LIST_ITEM;
 
 export default class GrommetObject extends Component {
 
@@ -13,7 +15,7 @@ export default class GrommetObject extends Component {
         itemContent = this._renderObject(item);
       }
       return (
-        <li key={'i_' + index} className="list-item">{itemContent}</li>
+        <li key={'i_' + index} className={LIST_ITEM}>{itemContent}</li>
       );
     }, this);
   }

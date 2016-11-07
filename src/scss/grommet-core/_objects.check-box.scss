@@ -1,6 +1,6 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.check-box {
+.#{$grommet-namespace}check-box {
   margin-right: halve($inuit-base-spacing-unit);
   white-space: nowrap;
 
@@ -8,207 +8,288 @@
     margin-right: $inuit-base-spacing-unit;
     margin-left: halve($inuit-base-spacing-unit);
   }
+}
 
-  &:not(.check-box--disabled) {
-    cursor: pointer;
+.#{$grommet-namespace}check-box:not(.#{$grommet-namespace}check-box--disabled) {
+  cursor: pointer;
+}
+
+.#{$grommet-namespace}check-box:hover:not(.#{$grommet-namespace}check-box--disabled) {
+  .#{$grommet-namespace}check-box__control {
+    border-color: $active-icon-color;
+
+    #{$dark-background-context} {
+      border-color: $active-colored-icon-color;
+    }
+
+    #{$light-background-context} {
+      border-color: $active-icon-color;
+    }
   }
 
-  &:hover:not(.check-box--disabled) {
-    .check-box {
-      &__control {
-        border-color: $active-icon-color;
+  .#{$grommet-namespace}check-box__input:checked +
+  .#{$grommet-namespace}check-box__control {
+    border-color: $active-icon-color;
 
-        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-          border-color: $active-colored-icon-color;
-        }
+    #{$dark-background-context} {
+      border-color: $active-colored-icon-color;
+    }
+
+    #{$light-background-context} {
+      border-color: $active-icon-color;
+    }
+  }
+
+  .#{$grommet-namespace}check-box__label {
+    color: $hover-text-color;
+
+    #{$dark-background-context} {
+      color: $active-colored-text-color;
+    }
+
+    #{$light-background-context} {
+      color: $hover-text-color;
+    }
+  }
+}
+
+  // > :first-child {
+  //   margin-right: halve($inuit-base-spacing-unit);
+  //
+  //   html.rtl & {
+  //     margin-right: 0;
+  //     margin-left: halve($inuit-base-spacing-unit);
+  //   }
+  // }
+
+.#{$grommet-namespace}check-box__input {
+  opacity: 0;
+  position: absolute;
+
+  &:checked + .#{$grommet-namespace}check-box__control {
+    border-color: $brand-color;
+
+    #{$dark-background-context} {
+      border-color: $active-colored-icon-color;
+    }
+
+    #{$light-background-context} {
+      border-color: $brand-color;
+    }
+
+    .#{$grommet-namespace}check-box__control-check {
+      display: block;
+    }
+
+    + .#{$grommet-namespace}check-box__label {
+      color: $text-color;
+
+      #{$dark-background-context} {
+        color: $active-colored-text-color;
       }
 
-      &__input:checked + .check-box__control {
-        border-color: $active-icon-color;
-
-        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-          border-color: $active-colored-icon-color;
-        }
-      }
-
-      &__label {
-        color: $hover-text-color;
-
-        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-          color: $active-colored-text-color;
-        }
+      #{$light-background-context} {
+        color: $text-color;
       }
     }
   }
 
-  > :first-child {
-    margin-right: halve($inuit-base-spacing-unit);
+  &:focus + .#{$grommet-namespace}check-box__control {
+    border-color: $focus-border-color;
+    box-shadow: 0 0 1px 1px $focus-border-color;
+  }
+}
+
+.#{$grommet-namespace}check-box__control {
+  position: relative;
+  top: -1px;
+	display: inline-block;
+  width: $control-size;
+  height: $control-size;
+  margin-right: halve($inuit-base-spacing-unit);
+  vertical-align: middle;
+  background-color: inherit;
+  border: $control-border-width solid $icon-color;
+  border-radius: $border-radius;
+
+  html.rtl & {
+    margin-right: 0;
+    margin-left: halve($inuit-base-spacing-unit);
+  }
+
+  #{$dark-background-context} {
+    border-color: $colored-icon-color;
+  }
+
+  #{$light-background-context} {
+    border-color: $icon-color;
+  }
+}
+
+.#{$grommet-namespace}check-box__control-check {
+  position: absolute;
+  top: -2px;
+  display: none;
+  width: $control-size;
+  height: $control-size;
+  stroke-width: round($control-border-width * 2);
+  stroke: $brand-color;
+
+  #{$dark-background-context} {
+    stroke: $active-colored-icon-color;
+  }
+
+  #{$light-background-context} {
+    stroke: $brand-color;
+  }
+}
+
+.#{$grommet-namespace}check-box__label {
+  // display and vertical-align are needed for rich custom labels
+  display: inline-block;
+  vertical-align: middle;
+  color: $secondary-text-color;
+
+  #{$dark-background-context} {
+    color: $colored-text-color;
+  }
+
+  #{$light-background-context} {
+    color: $secondary-text-color;
+  }
+}
+
+.#{$grommet-namespace}check-box--disabled {
+  .#{$grommet-namespace}check-box__control {
+    opacity: 0.5;
+  }
+}
+
+.#{$grommet-namespace}check-box--reverse {
+  .#{$grommet-namespace}check-box__control {
+    margin-right: 0;
+    margin-left: halve($inuit-base-spacing-unit);
 
     html.rtl & {
-      margin-right: 0;
-      margin-left: halve($inuit-base-spacing-unit);
+      margin-left: 0;
+      margin-right: halve($inuit-base-spacing-unit);
     }
   }
+}
 
-  &__input {
-    opacity: 0;
-    position: absolute;
+.#{$grommet-namespace}check-box--toggle {
 
-    &:checked + .check-box__control {
-      border-color: $brand-color;
+  &:hover:not(.#{$grommet-namespace}check-box--disabled) {
+    .#{$grommet-namespace}check-box__control:after {
+      content: "";
+      border-color: $active-icon-color;
 
-      [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      #{$dark-background-context} {
+        background-color: $active-colored-icon-color;
         border-color: $active-colored-icon-color;
       }
 
-      .check-box__control-check {
-        display: block;
-      }
-
-      + .check-box__label {
-        color: $text-color;
-
-        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-          color: $active-colored-text-color;
-        }
+      #{$light-background-context} {
+        background-color: none;
+        border-color: $active-icon-color;
       }
     }
 
-    &:focus + .check-box__control {
-      border-color: $focus-border-color;
-      box-shadow: 0 0 1px 1px $focus-border-color;
+    .#{$grommet-namespace}check-box__input:checked + .#{$grommet-namespace}check-box__control:after {
+      content: "";
+      border-color: $active-icon-color;
+
+      #{$dark-background-context} {
+        background-color: $active-colored-icon-color;
+        border-color: $active-colored-icon-color;
+      }
+
+      #{$light-background-context} {
+        background-color: none;
+        border-color: $active-icon-color;
+      }
     }
   }
 
-  &__control {
-    position: relative;
-    top: -1px;
-  	display: inline-block;
-    width: $control-size;
+  // track
+  .#{$grommet-namespace}check-box__control {
+    width: double($control-size);
     height: $control-size;
-    vertical-align: middle;
-    background-color: inherit;
-    border: $control-border-width solid $icon-color;
-    border-radius: $border-radius;
+    border-radius: $control-size;
+    background-color: $control-background-color;
+    border: none;
+    transition: background-color 0.3s;
 
-    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-      border-color: $colored-icon-color;
+    #{$dark-background-context} {
+      background-color: $colored-meter-background-color;
     }
 
-    &-check {
+    #{$light-background-context} {
+      background-color: $control-background-color;
+    }
+
+    // knob
+    &:after {
+      content: "";
+      display: block;
       position: absolute;
-      top: -2px;
-      left: -2px;
-      display: none;
-      width: $control-size;
-      height: $control-size;
-      stroke-width: round($control-border-width * 2);
-      stroke: $brand-color;
-
-      [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-        stroke: $active-colored-icon-color;
-      }
-    }
-  }
-
-  &__label {
-    color: $secondary-text-color;
-
-    [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-      color: $colored-text-color;
-    }
-  }
-
-  &--disabled {
-    .check-box__control {
-      opacity: 0.5;
-    }
-  }
-
-  &--toggle {
-
-    &:hover:not(.check-box--disabled) {
-      .check-box__control:after {
-        content: "";
-        border-color: $active-icon-color;
-
-        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-          background-color: $active-colored-icon-color;
-          border-color: $active-colored-icon-color;
-        }
-      }
-
-      .check-box__input:checked + .check-box__control:after {
-        content: "";
-        border-color: $active-icon-color;
-
-        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-          background-color: $active-colored-icon-color;
-          border-color: $active-colored-icon-color;
-        }
-      }
-    }
-
-    .check-box__control {
-      width: double($control-size);
-      height: $control-size;
+      top: - $control-border-width;
+      left: 0px;
+      width: $control-size + double($control-border-width);
+      height: $control-size + double($control-border-width);
+      background-color: #fff;
+      border: $control-border-width solid $icon-color;
       border-radius: $control-size;
-      background-color: $meter-background-color;
-      border: none;
-      transition: background-color 0.3s;
+      //box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      transition: margin-left 0.3s;
+      box-sizing: border-box;
 
-      [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
+      #{$dark-background-context} {
+        background-color: #fff;
+        border-color: $colored-icon-color;
+      }
+
+      #{$light-background-context} {
+        border-color: $icon-color;
+      }
+    }
+  }
+
+  .#{$grommet-namespace}check-box__input {
+
+    &:checked + .#{$grommet-namespace}check-box__control {
+      background-color: $brand-color;
+
+      #{$dark-background-context} {
         background-color: $colored-meter-background-color;
+
+        .#{$grommet-namespace}check-box__control-check {
+          stroke: transparent;
+        }
+      }
+
+      #{$light-background-context} {
+        background-color: $brand-color;
       }
 
       &:after {
         content: "";
-        display: block;
-        position: absolute;
-        top: - $control-border-width;
-        left: 0px;
-        width: $control-size + double($control-border-width);
-        height: $control-size + double($control-border-width);
         background-color: #fff;
-        border: $control-border-width solid $icon-color;
-        border-radius: $control-size;
-        //box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        transition: margin-left 0.3s;
+        border-color: $brand-color;
+        margin-left: $control-size;
 
-        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-          background-color: transparent;
+        #{$dark-background-context} {
+          background-color: #fff;
           border-color: $colored-icon-color;
         }
-      }
-    }
 
-    .check-box__input {
-
-      &:checked + .check-box__control {
-        background-color: $brand-color;
-
-        [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-          background-color: $colored-meter-background-color;
-
-          .check-box__control-check {
-            stroke: transparent;
-          }
-        }
-
-        &:after {
-          content: "";
-          background-color: #fff;
+        #{$light-background-context} {
           border-color: $brand-color;
-          margin-left: $control-size;
-
-          [class*="background-color-index-"]:not([class*="background-color-index-light"]) & {
-            border-color: $colored-icon-color;
-          }
         }
+      }
 
-        .check-box__control-check {
-          display: none;
-        }
+      .#{$grommet-namespace}check-box__control-check {
+        display: none;
       }
     }
   }

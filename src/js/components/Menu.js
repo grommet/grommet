@@ -1,27 +1,32 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import pick from 'lodash/object/pick';
-import keys from 'lodash/object/keys';
+import classnames from 'classnames';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import DOMUtils from '../utils/DOM';
 import Drop from '../utils/Drop';
+import Intl from '../utils/Intl';
+import Props from '../utils/Props';
 import Responsive from '../utils/Responsive';
 import Box from './Box';
 import Button from './Button';
-import MoreIcon from './icons/base/More';
 import DropCaretIcon from './icons/base/Down';
-import Intl from '../utils/Intl';
-import DOMUtils from '../utils/DOM';
+import MoreIcon from './icons/base/More';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'menu';
+const CLASS_ROOT = CSSClassnames.MENU;
+
+function isFunction (obj) {
+  return obj && obj.constructor && obj.call && obj.apply;
+}
 
 // We have a separate module for the drop component
 // so we can transfer the router context.
 class MenuDrop extends Component {
 
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onUpKeyPress = this._onUpKeyPress.bind(this);
     this._onDownKeyPress = this._onDownKeyPress.bind(this);
@@ -32,7 +37,8 @@ class MenuDrop extends Component {
     return {
       intl: this.props.intl,
       history: this.props.history,
-      router: this.props.router
+      router: this.props.router,
+      store: this.props.store
     };
   }
 
@@ -46,44 +52,22 @@ class MenuDrop extends Component {
       right: this._onDownKeyPress
     };
     KeyboardAccelerators.startListeningToKeyboard(this, this._keyboardHandlers);
-
-    let container = ReactDOM.findDOMNode(this.refs.navContainer);
-    let menuItems = container.childNodes;
-    for (let i = 0; i < menuItems.length; i++) {
-      let classes = menuItems[i].className.toString();
-      let tagName = menuItems[i].tagName.toLowerCase();
-      // want to skip items of the menu that are not focusable.
-      if (tagName !== 'button' && tagName !== 'a' &&
-        classes.indexOf('check-box') === -1) {
-        continue;
-      }
-      menuItems[i].setAttribute('role', 'menuitem');
-
-      if (!menuItems[i].getAttribute('id')) {
-        menuItems[i].setAttribute('id',
-          menuItems[i].getAttribute('data-reactid'));
-      }
-    }
-
-    container.setAttribute('aria-activedescendant',
-      menuItems[0].getAttribute('id'));
-
-    let menuDrop = ReactDOM.findDOMNode(this.refs.menuDrop);
-    var items = menuDrop.getElementsByTagName('*');
-    var firstFocusable = DOMUtils.getBestFirstFocusable(items);
-    if (firstFocusable) {
-      firstFocusable.focus();
-    }
   }
 
   componentWillUnmount () {
-    this._originalFocusedElement.focus();
+    if (this._originalFocusedElement.focus) {
+      this._originalFocusedElement.focus();
+    } else if (this._originalFocusedElement.parentNode &&
+      this._originalFocusedElement.parentNode.focus) {
+      // required for IE11 and Edge
+      this._originalFocusedElement.parentNode.focus();
+    }
     KeyboardAccelerators.stopListeningToKeyboard(this, this._keyboardHandlers);
   }
 
   _processTab (event) {
-    let container = ReactDOM.findDOMNode(this.refs.menuDrop);
-    var items = container.getElementsByTagName('*');
+    let container = ReactDOM.findDOMNode(this.menuDropRef);
+    let items = container.getElementsByTagName('*');
     items = DOMUtils.filterByFocusable(items);
 
     if (!items || items.length === 0) {
@@ -103,7 +87,7 @@ class MenuDrop extends Component {
 
   _onUpKeyPress (event) {
     event.preventDefault();
-    var container = ReactDOM.findDOMNode(this.refs.navContainer);
+    const container = ReactDOM.findDOMNode(this.navContainerRef);
     let menuItems = container.childNodes;
     if (!this.activeMenuItem) {
       let lastMenuItem = menuItems[menuItems.length - 1];
@@ -126,8 +110,6 @@ class MenuDrop extends Component {
     }
 
     this.activeMenuItem.focus();
-    container.setAttribute('aria-activedescendant',
-      this.activeMenuItem.getAttribute('id'));
     // Stops KeyboardAccelerators from calling the other listeners.
     // Works limilar to event.stopPropagation().
     return true;
@@ -135,7 +117,7 @@ class MenuDrop extends Component {
 
   _onDownKeyPress (event) {
     event.preventDefault();
-    var container = ReactDOM.findDOMNode(this.refs.navContainer);
+    const container = ReactDOM.findDOMNode(this.navContainerRef);
     let menuItems = container.childNodes;
     if (!this.activeMenuItem) {
       this.activeMenuItem = menuItems[0];
@@ -157,44 +139,57 @@ class MenuDrop extends Component {
     }
 
     this.activeMenuItem.focus();
-    container.setAttribute('aria-activedescendant',
-      this.activeMenuItem.getAttribute('id'));
     // Stops KeyboardAccelerators from calling the other listeners.
     // Works limilar to event.stopPropagation().
     return true;
   }
 
   render () {
-    let classes = [`${CLASS_ROOT}__drop`];
-    let other = pick(this.props, keys(Box.propTypes));
+    const {
+      dropAlign, size, children, control, colorIndex, onClick, ...props
+    } = this.props;
+    const restProps = Props.omit(props, [
+      ...Object.keys(MenuDrop.childContextTypes),
+      ...Object.keys(MenuDrop.propTypes)
+    ]);
 
-    delete other.onClick;
+    // Put nested Menus inline
+    const menuDropChildren = React.Children.map(children, child => {
+      let result = child;
+      if (child && isFunction(child.type) &&
+        child.type.prototype._renderMenuDrop) {
+        result = React.cloneElement(child,
+          {inline: 'explode', direction: 'column'});
+      }
+      return result;
+    });
 
     let contents = [
-      React.cloneElement(this.props.control, {key: 'control'}),
-      <Box key="nav" ref="navContainer"
-        role="menu" tag="nav" {...other} className={`${CLASS_ROOT}__contents`}>
-        {this.props.children}
+      React.cloneElement(control, {key: 'control', fill: true}),
+      <Box {...restProps} key="nav" ref={ref => this.navContainerRef = ref}
+        tag="nav" className={`${CLASS_ROOT}__contents`}
+        primary={false}>
+        {menuDropChildren}
       </Box>
     ];
-    if (this.props.dropAlign.bottom) {
+
+    if (dropAlign.bottom) {
       contents.reverse();
     }
-    if (this.props.dropAlign.right) {
-      classes.push(`${CLASS_ROOT}__drop--align-right`);
-    }
-    if (this.props.dropColorIndex) {
-      classes.push(`background-color-index-${this.props.dropColorIndex}`);
-    }
-    if (this.props.size) {
-      classes.push(`${CLASS_ROOT}__drop--${this.props.size}`);
-    }
+
+    let classes = classnames(
+      `${CLASS_ROOT}__drop`,
+      {
+        [`${CLASS_ROOT}__drop--align-right`]: dropAlign.right,
+        [`${CLASS_ROOT}__drop--${size}`]: size
+      }
+    );
 
     return (
-      <div ref="menuDrop" id={this.props.id} className={classes.join(' ')}
-        onClick={this.props.onClick}>
+      <Box ref={ref => this.menuDropRef = ref} className={classes}
+        colorIndex={colorIndex} onClick={onClick} focusable={false}>
         {contents}
-      </div>
+      </Box>
     );
   }
 }
@@ -203,23 +198,24 @@ MenuDrop.propTypes = {
   control: PropTypes.node,
   dropAlign: Drop.alignPropType,
   dropColorIndex: PropTypes.string,
-  id: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   router: PropTypes.any,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
+  store: PropTypes.any,
   ...Box.propTypes
 };
 
 MenuDrop.childContextTypes = {
-  intl: PropTypes.object,
-  history: PropTypes.object,
-  router: PropTypes.any
+  history: PropTypes.any,
+  intl: PropTypes.any,
+  router: PropTypes.any,
+  store: PropTypes.any
 };
 
 export default class Menu extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._onOpen = this._onOpen.bind(this);
     this._onClose = this._onClose.bind(this);
@@ -245,22 +241,23 @@ export default class Menu extends Component {
       state: 'collapsed',
       initialInline: inline,
       inline: inline,
-      responsive: responsive,
-      dropId: 'menuDrop'
+      responsive: responsive
     };
   }
 
   componentDidMount () {
-    if (this.refs.control) {
-      let controlElement = this.refs.control.firstChild;
-      this.setState({
-        dropId: 'menu-drop-' + controlElement.getAttribute('data-reactid'),
-        controlHeight: controlElement.clientHeight
-      });
-    }
-
     if (this.state.responsive) {
       this._responsive = Responsive.start(this._onResponsive);
+    }
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (this.props.inline !== nextProps.inline ||
+      this.props.icon !== nextProps.icon) {
+      this.setState({
+        inline: nextProps.hasOwnProperty('inline') ? nextProps.inline
+          : (!nextProps.label && !nextProps.icon)
+      });
     }
   }
 
@@ -286,7 +283,7 @@ export default class Menu extends Component {
           document.removeEventListener('click', this._onClose);
           if (this._drop) {
             this._drop.remove();
-            this._drop = null;
+            this._drop = undefined;
           }
           break;
         case 'focused':
@@ -305,18 +302,24 @@ export default class Menu extends Component {
             this, activeKeyboardHandlers
           );
           document.addEventListener('click', this._onClose);
-          this._drop = Drop.add(this.refs.control,
-            this._renderDrop(), this.props.dropAlign);
-          this._drop.render(this._renderDrop());
+          document.addEventListener('touchstart', this._onClose);
+          this._drop = Drop.add(this.controlRef,
+            this._renderMenuDrop(),
+            {
+              align: this.props.dropAlign,
+              colorIndex: this.props.dropColorIndex,
+              focusControl: true
+            });
           break;
       }
     } else if (this.state.state === 'expanded') {
-      this._drop.render(this._renderDrop());
+      this._drop.render(this._renderMenuDrop());
     }
   }
 
   componentWillUnmount () {
     document.removeEventListener('click', this._onClose);
+    document.removeEventListener('touchstart', this._onClose);
     KeyboardAccelerators.stopListeningToKeyboard(this);
     if (this._drop) {
       this._drop.remove();
@@ -368,133 +371,111 @@ export default class Menu extends Component {
     }
   }
 
-  _renderControlContents (clickable) {
-    let icon;
-    let label;
-
-    let controlClassName = `${CLASS_ROOT}__control`;
+  _renderButtonProps () {
+    const { icon, label } = this.props;
+    let buttonIcon, buttonLabel;
 
     // If this is a collapsed inline Menu, use any icon and/or label provided,
     // revert to default icon if neither.
-    if (this.props.icon) {
-      icon = React.cloneElement(this.props.icon, {key: 'icon'});
+    if (icon) {
+      buttonIcon = icon;
     }
-    if (this.props.label) {
-      label = [
-        <span key="label" className={controlClassName + "-label"}>
-          {this.props.label}
-        </span>,
-        <DropCaretIcon key="caret" />
-      ];
+    if (label) {
+      buttonLabel = label;
+      buttonIcon = <DropCaretIcon a11yTitle='menu-down' />;
     }
-    if (! icon && ! label) {
-      icon = <MoreIcon key="icon" />;
+    if (! buttonIcon && ! buttonLabel) {
+      buttonIcon = <MoreIcon />;
     }
-    return [icon, label];
+    return { icon: buttonIcon, label: buttonLabel };
   }
 
-  _renderDrop () {
-    let other = pick(this.props, keys(Box.propTypes));
-
+  _renderMenuDrop () {
     let closeLabel = Intl.getMessage(this.context.intl, 'Close');
     let menuLabel = Intl.getMessage(this.context.intl, 'Menu');
     let menuTitle = (
-      `${closeLabel} ${this.props.a11yTitle || this.props.label || ''} ${menuLabel}`
+      `${closeLabel} ${this.props.a11yTitle || this.props.label || ''} ` +
+      `${menuLabel}`
     );
 
     let control = (
-      <Button plain={true} className={`${CLASS_ROOT}__control`}
-        a11yTitle={menuTitle}
-        style={{lineHeight: this.state.controlHeight + 'px'}}
-        onClick={this._onClose}>
-        {this._renderControlContents()}
-      </Button>
+      <Button className={`${CLASS_ROOT}__control`} plain={true}
+        a11yTitle={menuTitle} reverse={true}
+        {...this._renderButtonProps()} onClick={this._onClose} />
     );
 
-    let onClick;
-    if (this.props.closeOnClick) {
-      onClick = this._onClose;
-    } else {
-      onClick = this._onSink;
-    }
+    let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    let onClick = this.props.closeOnClick ? this._onClose : this._onSink;
+
     return (
-      <MenuDrop intl={this.context.intl}
-        history={this.context.history}
-        router={this.context.router}
+      <MenuDrop {...boxProps} {...this.context}
         dropAlign={this.props.dropAlign}
-        dropColorIndex={this.props.dropColorIndex}
         size={this.props.size}
-        {...other}
         onClick={onClick}
-        id={this.state.dropId}
         control={control}>
         {this.props.children}
       </MenuDrop>
     );
   }
 
-  _classes (prefix) {
-    let classes = [prefix];
-
-    if (this.props.direction) {
-      classes.push(prefix + "--" + this.props.direction);
-    }
-    if (this.props.size) {
-      classes.push(prefix + "--" + this.props.size);
-    }
-    if (this.props.primary) {
-      classes.push(prefix + "--primary");
-    }
-
-    return classes;
-  }
-
   render () {
-    let classes = this._classes(CLASS_ROOT);
-    if (this.state.inline) {
-      classes.push(`${CLASS_ROOT}--inline`);
-    } else {
-      classes.push(`${CLASS_ROOT}--controlled`);
-      if (this.props.label) {
-        classes.push(`${CLASS_ROOT}--labelled`);
-      }
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const {
+      a11yTitle, children, className, direction, label, primary, size,
+      pad, ...props
+    } = this.props;
+    delete props.closeOnClick;
+    delete props.dropColorIndex;
+    delete props.dropAlign;
+    delete props.icon;
+    delete props.inline;
+    const { inline } = this.state;
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--${direction}`]: direction,
+        [`${CLASS_ROOT}--${size}`]: size,
+        [`${CLASS_ROOT}--primary`]: primary,
+        [`${CLASS_ROOT}--inline`]: inline,
+        [`${CLASS_ROOT}--controlled`]: !inline,
+        [`${CLASS_ROOT}__control`]: !inline,
+        [`${CLASS_ROOT}--labelled`]: !inline && label
+      },
+      className
+    );
 
-    if (this.state.inline) {
-      let other = pick(this.props, keys(Box.propTypes));
+    if (inline) {
+      let menuLabel;
+      if ('explode' === inline) {
+        menuLabel = (
+          <div className={`${CLASS_ROOT}__label`}>
+            {label}
+          </div>
+        );
+      }
 
       return (
-        <Box tag="nav" id={this.props.id} {...other}
-          className={classes.join(' ')}>
-          {this.props.children}
+        <Box {...props} pad={pad} direction={direction} tag="nav"
+          className={classes} primary={false}>
+          {menuLabel}
+          {children}
         </Box>
       );
 
     } else {
-      classes.push(`${CLASS_ROOT}__control`);
-
-      let controlContents = this._renderControlContents();
-      let openLabel = Intl.getMessage(this.context.intl, 'Open');
-      let menuLabel = Intl.getMessage(this.context.intl, 'Menu');
-      let menuTitle = (
-        `${openLabel} ${this.props.a11yTitle || this.props.label || ''} ${menuLabel}`
+      const openLabel = Intl.getMessage(this.context.intl, 'Open');
+      const menuLabel = Intl.getMessage(this.context.intl, 'Menu');
+      const menuTitle = (
+        `${openLabel} ${a11yTitle || label || ''} ` +
+        `${menuLabel}`
       );
+      delete props.colorIndex;
 
       return (
-        <div ref="control">
-          <Button plain={true} id={this.props.id}
-            className={classes.join(' ')}
-            tabIndex="0"
-            style={{lineHeight: this.state.controlHeight + 'px'}}
+        <div ref={ref => this.controlRef = ref}>
+          <Button {...props} className={classes} plain={true} reverse={true}
+            a11yTitle={menuTitle} {...this._renderButtonProps()}
             onClick={this._onOpen}
-            a11yTitle={menuTitle}
-            onFocus={this._onFocusControl}
-            onBlur={this._onBlurControl}>
-            {controlContents}
-          </Button>
+            onFocus={this._onFocusControl} onBlur={this._onBlurControl} />
         </div>
       );
 
@@ -508,17 +489,17 @@ Menu.propTypes = {
   dropColorIndex: PropTypes.string,
   icon: PropTypes.node,
   id: PropTypes.string,
-  inline: PropTypes.bool,
+  inline: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['expand'])]),
   label: PropTypes.string,
-  primary: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   ...Box.propTypes
 };
 
 Menu.contextTypes = {
-  intl: PropTypes.object,
-  history: PropTypes.object,
-  router: PropTypes.any
+  history: PropTypes.any,
+  intl: PropTypes.any,
+  router: PropTypes.any,
+  store: PropTypes.any
 };
 
 Menu.defaultProps = {

@@ -1,0 +1,6 @@
+exports[`Grommet has correct default options 1`] = `
+<div
+  className="grommet">
+  Sample Grommet
+</div>
+`;

@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import Cookies from './Cookies';
 
@@ -23,7 +23,8 @@ export function getCurrentLocale() {
     let cookieLanguages = Cookies.get('languages');
     let locale = cookieLanguages ? JSON.parse(cookieLanguages)[0] : undefined;
     if (!locale) {
-      locale = window.navigator.languages ? window.navigator.languages[0] : (window.navigator.language || window.navigator.userLanguage);
+      locale = window.navigator.languages ? window.navigator.languages[0] :
+        (window.navigator.language || window.navigator.userLanguage);
     }
 
     return normalizeLocale(locale);

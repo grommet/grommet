@@ -1,65 +1,135 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Children, Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import iconsMap from '../index-icons';
 
-const CLASS_ROOT = 'button';
+import CSSClassnames from '../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.BUTTON;
 
 export default class Button extends Component {
+
+  constructor () {
+    super();
+    this._onClick = this._onClick.bind(this);
+    this._onMouseDown = this._onMouseDown.bind(this);
+    this._onMouseUp = this._onMouseDown.bind(this);
+    this._onFocus = this._onFocus.bind(this);
+    this._onBlur = this._onBlur.bind(this);
+    this.state = {
+      mouseActive: false,
+      focus: false
+    };
+  }
+
+  _onClick (event) {
+    const { method, onClick, path} = this.props;
+    const { router } = this.context;
+
+    event.preventDefault();
+
+    if ('push' === method) {
+      router.push(path);
+    } else if ('replace' === method) {
+      router.replace(path);
+    }
+
+    if (onClick) {
+      onClick();
+    }
+  }
+
+  _onMouseDown (event) {
+    const { onMouseDown } = this.props;
+    this.setState({ mouseActive: true });
+    if (onMouseDown) {
+      onMouseDown(event);
+    }
+  }
+
+  _onMouseUp (event) {
+    const { onMouseUp } = this.props;
+    this.setState({ mouseActive: false });
+    if (onMouseUp) {
+      onMouseUp(event);
+    }
+  }
+
+  _onFocus (event) {
+    const { onFocus } = this.props;
+    const { mouseActive } = this.state;
+    if (mouseActive === false) {
+      this.setState({ focus: true });
+    }
+    if (onFocus) {
+      onFocus(event);
+    }
+  }
+
+  _onBlur (event) {
+    const { onBlur } = this.props;
+    this.setState({ focus: false });
+    if (onBlur) {
+      onBlur(event);
+    }
+  }
+
   render () {
-    const plain = (this.props.plain !== undefined ? this.props.plain :
-      (this.props.icon && ! this.props.label) || 'icon' === this.props.type);
-    let classes = classnames(
+    const {
+      a11yTitle, accent, align, children, className, fill, href, icon,
+      label, onClick, path, plain, primary, reverse, secondary, type, ...props
+    } = this.props;
+    delete props.method;
+    const { router } = this.context;
+
+    let buttonIcon;
+    if (icon) {
+      buttonIcon = <span className={`${CLASS_ROOT}__icon`}>{icon}</span>;
+    }
+
+    let buttonLabel;
+    if (label) {
+      buttonLabel = <span className={`${CLASS_ROOT}__label`}>{label}</span>;
+    }
+
+    let adjustedHref = (path && router) ? router.createPath(path) : href;
+
+    const classes = classnames(
       CLASS_ROOT,
-      this.props.className,
       {
-        [`${CLASS_ROOT}--primary`]: this.props.primary,
-        [`${CLASS_ROOT}--secondary`]: this.props.secondary,
-        [`${CLASS_ROOT}--accent`]: this.props.accent,
-        [`${CLASS_ROOT}--disabled`]: !this.props.onClick && !this.props.href,
-        [`${CLASS_ROOT}--fill`]: this.props.fill,
-        [`${CLASS_ROOT}--plain`]: plain
-      }
+        [`${CLASS_ROOT}--focus`]: this.state.focus,
+        [`${CLASS_ROOT}--primary`]: primary,
+        [`${CLASS_ROOT}--secondary`]: secondary,
+        [`${CLASS_ROOT}--accent`]: accent,
+        [`${CLASS_ROOT}--disabled`]: !onClick && !adjustedHref,
+        [`${CLASS_ROOT}--fill`]: fill,
+        [`${CLASS_ROOT}--plain`]: plain || Children.count(children) > 0 ||
+          (icon && ! label),
+        [`${CLASS_ROOT}--align-${align}`]: align
+      },
+      className
     );
 
-    // if ('icon' === this.props.type) {
-    //   console.warn('Button type="icon" is deprecated, use plain={true} instead.');
-    // }
+    let adjustedOnClick = (path && router ? this._onClick : onClick);
 
-    let type = this.props.type === 'icon' ? 'button' : this.props.type;
-
-    let icon;
-    if (this.props.icon) {
-      let CustomIcon  = iconsMap[this.props.icon];
-      if (! CustomIcon) {
-        console.warn(
-          `Warning: Button is unable to find the icon named ${this.props.icon}`
-        );
-      } else {
-        icon = <span className={`${CLASS_ROOT}__icon`}><CustomIcon /></span>;
-      }
+    const Tag = adjustedHref ? 'a' : 'button';
+    let buttonType;
+    if (!adjustedHref) {
+      buttonType = type;
     }
 
-    let children = React.Children.map(this.props.children, child => {
-      if (child && child.type && child.type.icon) {
-        child = <span className={`${CLASS_ROOT}__icon`}>{child}</span>;
-      }
-
-      return child;
-    });
-
-    if (!children) {
-      children = this.props.label;
-    }
-
-    let Tag = this.props.href ? 'a' : 'button';
+    const first = reverse ? buttonLabel : buttonIcon;
+    const second = reverse ? buttonIcon : buttonLabel;
 
     return (
-      <Tag href={this.props.href} id={this.props.id} type={type}
-        className={classes} aria-label={this.props.a11yTitle}
-        onClick={this.props.onClick} disabled={!this.props.onClick}>
-        {icon}
+      <Tag {...props} href={adjustedHref} type={buttonType}
+        className={classes} aria-label={a11yTitle}
+        onClick={adjustedOnClick}
+        disabled={!onClick && !adjustedHref}
+        onMouseDown={this._onMouseDown} onMouseUp={this._onMouseUp}
+        onFocus={this._onFocus} onBlur={this._onBlur}>
+        {first}
+        {second}
         {children}
       </Tag>
     );
@@ -69,17 +139,26 @@ export default class Button extends Component {
 Button.propTypes = {
   a11yTitle: PropTypes.string,
   accent: PropTypes.bool,
+  align: PropTypes.oneOf(['start', 'center', 'end']),
   fill: PropTypes.bool,
-  icon: PropTypes.string,
-  id: PropTypes.string,
+  href: PropTypes.string,
+  icon: PropTypes.element,
   label: PropTypes.node,
+  method: PropTypes.oneOf(['push', 'replace']),
   onClick: PropTypes.func,
+  path: PropTypes.string,
   plain: PropTypes.bool,
   primary: PropTypes.bool,
+  reverse: PropTypes.bool,
   secondary: PropTypes.bool,
-  type: PropTypes.oneOf(['button', 'reset', 'submit', 'icon']) // deprecate icon
+  type: PropTypes.oneOf(['button', 'reset', 'submit'])
 };
 
 Button.defaultProps = {
+  method: 'push',
   type: 'button'
+};
+
+Button.contextTypes = {
+  router: PropTypes.object
 };

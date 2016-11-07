@@ -1,0 +1,59 @@
+exports[`Warning has correct className rendering 1`] = `
+<svg
+  aria-label="Warning"
+  className="grommetux-status-icon grommetux-status-icon-warning testing"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24">
+  <g
+    className="grommetux-status-icon__base">
+    <path
+      d="M12,0 L0,22 L24,22 L12,0 L12,0 Z"
+      role="presentation"
+      stroke="none" />
+  </g>
+  <g
+    className="grommetux-status-icon__detail"
+    strokeWidth="2"
+    transform="translate(11.000000, 8.000000)">
+    <path
+      d="M1,0 L1,6"
+      fill="none"
+      role="presentation" />
+    <path
+      d="M1,8 L1,10"
+      fill="none"
+      role="presentation" />
+  </g>
+</svg>
+`;
+
+exports[`Warning has correct default options 1`] = `
+<svg
+  aria-label="Warning"
+  className="grommetux-status-icon grommetux-status-icon-warning"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24">
+  <g
+    className="grommetux-status-icon__base">
+    <path
+      d="M12,0 L0,22 L24,22 L12,0 L12,0 Z"
+      role="presentation"
+      stroke="none" />
+  </g>
+  <g
+    className="grommetux-status-icon__detail"
+    strokeWidth="2"
+    transform="translate(11.000000, 8.000000)">
+    <path
+      d="M1,0 L1,6"
+      fill="none"
+      role="presentation" />
+    <path
+      d="M1,8 L1,10"
+      fill="none"
+      role="presentation" />
+  </g>
+</svg>
+`;

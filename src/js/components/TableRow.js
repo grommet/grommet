@@ -1,32 +1,31 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'table-row';
+const CLASS_ROOT = CSSClassnames.TABLE_ROW;
 
-const TableRow = props => {
-  let classes = classnames(
-    CLASS_ROOT,
-    props.className,
-    {
-      [`${CLASS_ROOT}--selected`]: props.selected,
-      [`${CLASS_ROOT}--selectable`]: props.onClick
-    }
-  );
+export default class TableRow extends Component {
+  render () {
+    const { children, className, onClick, ...props } = this.props;
 
-  return (
-    <tr className={classes} onClick={props.onClick}>
-      {props.children}
-    </tr>
-  );
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--selectable`]: onClick
+      },
+      className
+    );
+
+    return (
+      <tr {...props} className={classes} onClick={onClick}>
+        {children}
+      </tr>
+    );
+  }
 };
 
 TableRow.propTypes = {
-  onClick: PropTypes.func,
-  selected: PropTypes.bool
+  onClick: PropTypes.func
 };
-
-TableRow.displayName = 'TableRow';
-
-export default TableRow;

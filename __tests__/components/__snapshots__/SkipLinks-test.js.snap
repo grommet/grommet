@@ -1,0 +1,8 @@
+exports[`SkipLinks has correct default options 1`] = `
+<span
+  style={
+    Object {
+      "display": "none",
+    }
+  } />
+`;

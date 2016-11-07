@@ -1,8 +1,6 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.sidebar {
-  min-height: 100vh;
-
+.#{$grommet-namespace}sidebar {
   @include media-query(palm) {
     max-width: 100%;
     width: 100vw;
@@ -11,35 +9,42 @@
   @include media-query(lap-and-up) {
     width: $sidebar-width;
   }
+}
 
-  &--fixed {
-    display: flex;
-    flex-direction: column;
+.#{$grommet-namespace}sidebar--fixed {
+  display: flex;
+  flex-direction: column;
 
-    > * {
-      flex: 1;
-      overflow: auto;
+  > * {
+    //flex: 1 does not work with IE11.
+    flex: 1 1 auto;
+    overflow: auto;
 
-      &.header,
-      &.footer {
-        flex: 0 0 auto;
-      }
+    &.#{$grommet-namespace}header,
+    &.#{$grommet-namespace}footer {
+      flex: 0 0 auto;
     }
   }
+}
 
-  &--primary {
-    background-color: $secondary-background-color;
+.#{$grommet-namespace}sidebar--xsmall {
+  @include media-query(lap-and-up) {
+    width: $sidebar-xsmall-width;
   }
+}
 
-  &--small {
-    @include media-query(lap-and-up) {
-      width: $sidebar-small-width;
-    }
+.#{$grommet-namespace}sidebar--small {
+  @include media-query(lap-and-up) {
+    width: $sidebar-small-width;
   }
+}
 
-  &--large {
-    @include media-query(lap-and-up) {
-      width: $sidebar-large-width;
-    }
+.#{$grommet-namespace}sidebar--large {
+  @include media-query(lap-and-up) {
+    width: $sidebar-large-width;
   }
+}
+
+.#{$grommet-namespace}sidebar--full {
+  min-height: 100vh;
 }

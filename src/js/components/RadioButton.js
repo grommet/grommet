@@ -1,47 +1,42 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'radio-button';
+const CLASS_ROOT = CSSClassnames.RADIO_BUTTON;
 
-const RadioButton = props => {
-  let classes = classnames(
-    CLASS_ROOT,
-    props.className,
-    {
-      [`${CLASS_ROOT}--disabled`]: props.disabled
-    }
-  );
+export default class RadioButton extends Component {
+  render () {
+    const { className, label, ...props } = this.props;
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--disabled`]: props.disabled
+      },
+      className
+    );
 
-  return (
-    <label className={classes}>
-      <input className={`${CLASS_ROOT}__input`}
-        id={props.id} name={props.name} type="radio"
-        disabled={props.disabled}
-        checked={props.checked}
-        defaultChecked={props.defaultChecked}
-        value={props.value}
-        onChange={props.onChange} />
-      <span className={`${CLASS_ROOT}__control`}></span>
-        <span className={`${CLASS_ROOT}__label`}>
-          {props.label}
-        </span>
-    </label>
-  );
+    return (
+      <label className={classes}>
+        <input {...props} className={`${CLASS_ROOT}__input`}
+          type="radio" />
+        <span className={`${CLASS_ROOT}__control`} />
+          <label htmlFor={props.id} className={`${CLASS_ROOT}__label`}>
+            {label}
+          </label>
+      </label>
+    );
+  }
 };
 
 RadioButton.propTypes = {
   checked: PropTypes.bool,
-  disabled: PropTypes.bool,
   defaultChecked: PropTypes.bool,
+  disabled: PropTypes.bool,
   id: PropTypes.string.isRequired,
   label: PropTypes.node.isRequired,
   name: PropTypes.string,
   onChange: PropTypes.func,
   value: PropTypes.string
 };
-
-RadioButton.displayName = 'RadioButton';
-
-export default RadioButton;

@@ -1,52 +1,45 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import FormattedMessage from '../FormattedMessage';
+import classnames from 'classnames';
+import CSSClassnames from '../../utils/CSSClassnames';
+import Intl from '../../utils/Intl';
 
-const CLASS_ROOT = "logo-icon";
+const CLASS_ROOT = CSSClassnames.LOGO_ICON;
 
 export default class Grommet extends Component {
   render () {
-    var classes = [CLASS_ROOT];
-    if (this.props.small || 'small' === this.props.size) {
-      classes.push(CLASS_ROOT + "--small");
-    }
-    if (this.props.large || 'large' === this.props.size) {
-      classes.push(CLASS_ROOT + "--large");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-    let title;
-    if (this.props.a11yTitle) {
-      title = (
-        <title id={this.props.a11yTitleId}>
-          <FormattedMessage id={this.props.a11yTitle}
-            defaultMessage={this.props.a11yTitle} />
-        </title>
-      );
-    }
+    const { a11yTitle, className, large, size, small } = this.props;
+    const { intl } = this.context;
+    const classes = classnames(
+      CLASS_ROOT,
+      className, {
+        [`${CLASS_ROOT}--small`]: small,
+        [`${CLASS_ROOT}--large`]: large,
+        [`${CLASS_ROOT}--${size}`]: size
+      }
+    );
     return (
-      <svg className={classes.join(' ')} viewBox="0 0 140 140" width="140" height="140"
-        version="1.1" role="img" aria-labelledby={this.props.a11yTitleId}>
-        {title}
-        <path role="presentation" d="M119.49603,20.5014878 L100.989057,39.0094878 C105.89805,43.9184878 109.859044,49.7734878 111.669042,55.3734878 C122.692025,89.4684878 93.3250687,120.604488 59.5321185,112.820488 C44.9911399,109.470488 30.5211612,94.9984878 27.1751661,80.4564878 C20.432176,51.1514878 42.9571429,25.1854878 71.2931012,25.9974878 L93.3090687,3.98048778 C86.0960794,1.43348778 78.3420908,0.0304877767 70.2641027,0.000487776719 C32.014159,-0.141512223 0.549205302,30.7384878 0.00720609982,68.9844878 C-0.547793083,108.124488 31.0271604,140.024488 70.045103,139.999488 C108.802046,139.975488 140,108.756488 140,70.0004878 C140,50.6694878 132.164012,33.1694878 119.49603,20.5014878 L119.49603,20.5014878 Z" fill="#8C50FF"></path>
-        <path role="presentation" d="M27.1736636,80.457549 C30.5194807,94.999549 44.98869,109.472549 59.5288954,112.821549 C93.3190487,120.605549 122.685444,89.469549 111.663046,55.374549 C109.852145,49.774549 105.891362,43.918549 100.98363,39.010549 L69.9953234,70.000549 L100.083679,70.001549 C100.083679,86.762549 86.3804279,100.322549 69.5663468,100.089549 C53.4302287,99.865549 40.23095,86.746549 39.9119674,70.611549 C39.7429767,62.061549 43.140791,54.304549 48.7174862,48.725549 L48.6404904,48.648549 L71.2872528,25.998549 C42.9548011,25.186549 20.4310321,51.152549 27.1736636,80.457549 L27.1736636,80.457549 Z" fill="#333333"></path>
+      <svg className={classes} viewBox='0 0 182 182'
+        width='182' height='182'
+        version='1.1' role='img' aria-label={Intl.getMessage(intl, a11yTitle)}>
+        <path role='presentation' strokeWidth='18' stroke='#865CD6' fill='none'
+          d='M 91,91 m 0,-82 a 82,82 0 1,1 0,164 a 82,82 0 1,1 0,-164' />
       </svg>
     );
   }
 }
 
+Grommet.contextTypes = {
+  intl: PropTypes.object
+};
+
 Grommet.defaultProps = {
-  a11yTitle: 'Grommet',
-  a11yTitleId: 'grommet-logo-title'
+  a11yTitle: 'Grommet'
 };
 
 Grommet.propTypes = {
   a11yTitle: React.PropTypes.string,
-  a11yTitleId: PropTypes.string,
   colorIndex: PropTypes.string,
-  large: React.PropTypes.bool,
-  size: React.PropTypes.oneOf(['small', 'medium', 'large']),
-  small: React.PropTypes.bool
+  size: React.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge'])
 };

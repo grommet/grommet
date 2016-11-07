@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 $brand-font-family: 'Metric', Arial, sans-serif;
 $brand-large-number-font-family: 'Metric', Arial, sans-serif;
@@ -18,35 +18,30 @@ $brand-link-color: inherit;
 $link-hover-color: #000;
 $brand-link-text-decoration: underline;
 $brand-grey-colors: (#333333, #3B3B3B, #434343, #666666);
-$brand-graph-colors: (
-  lighten(#425563, 15%),
-  lighten(#5F7A76, 20%),
-  lighten(#80746E, 10%),
-  lighten(#614767, 15%)
-);
+$brand-graph-colors: $brand-neutral-colors;
 
-$hpe-fonts-path: "https://hpefonts.s3.amazonaws.com" !default;
+$hpe-fonts-path: "https://hpefonts.s3.amazonaws.com/web" !default;
 
 @font-face {
   font-family: "Metric";
-  src: url("#{$hpe-fonts-path}/MetricWeb-Regular.woff") format('woff');
+  src: url("#{$hpe-fonts-path}/MetricHPE-Web-Regular.woff") format('woff');
 }
 
 @font-face {
   font-family: "Metric";
-  src: url("#{$hpe-fonts-path}/MetricWeb-Bold.woff") format('woff');
+  src: url("#{$hpe-fonts-path}/MetricHPE-Web-Bold.woff") format('woff');
   font-weight: 700;
 }
 
 @font-face {
   font-family: "Metric";
-  src: url("#{$hpe-fonts-path}/MetricWeb-Semibold.woff") format('woff');
+  src: url("#{$hpe-fonts-path}/MetricHPE-Web-Semibold.woff") format('woff');
   font-weight: 600;
 }
 
 @font-face {
   font-family: "Metric";
-  src: url("#{$hpe-fonts-path}/MetricWeb-Light.woff") format('woff');
+  src: url("#{$hpe-fonts-path}/MetricHPE-Web-Light.woff") format('woff');
   font-weight: 100;
 }
 

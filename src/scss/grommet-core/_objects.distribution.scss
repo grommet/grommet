@@ -1,142 +1,159 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.distribution {
+.#{$grommet-namespace}distribution {
   position: relative;
+}
 
-  &__graphic {
-    width: 100%;
-    height: $graphic-size;
-    max-height: calc(100vh - #{double($header-height)});
+.#{$grommet-namespace}distribution__graphic {
+  // We position the SVG absolutely so we can size it based on the container
+  // without it influcing the size itself.
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  outline: none;
+}
 
-    &:focus {
-      outline: $focus-border-color solid 1px;
-    }
+.#{$grommet-namespace}distribution__graphic--focus {
+  border-color: $focus-border-color;
+  box-shadow: 0 0 1px 1px $focus-border-color;
+}
+
+.#{$grommet-namespace}distribution__background {
+  fill: $secondary-background-color;
+
+  #{$dark-background-context} {
+    fill: $colored-active-background-color;
   }
 
-  &__background {
+  #{$light-background-context} {
     fill: $secondary-background-color;
   }
+}
 
-  &__item {
-    &--clickable {
-      cursor: pointer;
-    }
+.#{$grommet-namespace}distribution__item--clickable {
+  cursor: pointer;
+  outline: none;
+}
 
-    &-box {
-      @include graph-fill-color();
-    }
+.#{$grommet-namespace}distribution__item-box {
+  @include graph-fill-color();
+}
 
-    &-icons {
-      @include graph-stroke-color();
-    }
+.#{$grommet-namespace}distribution__item-icons {
+  @include graph-stroke-color();
+}
 
+.#{$grommet-namespace}distribution__label {
+  position: absolute;
+  // padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
+  font-family: $brand-large-number-font-family;
+  overflow: hidden;
+  text-align: left;
+  pointer-events: none;
+  @include filled-text-color();
+}
+
+.#{$grommet-namespace}distribution__label-value {
+  display: block;
+  @include inuit-font-size($large-number-font-size);
+  font-weight: bold;
+}
+
+.#{$grommet-namespace}distribution__label-units {
+  @include inuit-font-size($inuit-heading-size-3, inherit);
+  margin-left: quarter($inuit-base-spacing-unit);
+  font-weight: normal;
+}
+
+.#{$grommet-namespace}distribution__label-label {
+  display: block;
+}
+
+.#{$grommet-namespace}distribution__label--active {
+  color: $text-color;
+}
+
+.#{$grommet-namespace}distribution__label--thin {
+  .#{$grommet-namespace}distribution__label-value,
+  .#{$grommet-namespace}distribution__label-label {
+    display: inline-block;
+  }
+}
+
+.#{$grommet-namespace}distribution__label--small {
+  // padding: 0 halve($inuit-base-spacing-unit)
+  //   halve($inuit-base-spacing-unit) quarter($inuit-base-spacing-unit);
+
+  .#{$grommet-namespace}distribution__label-value,
+  .#{$grommet-namespace}distribution__label-units {
+    @include inuit-font-size($small-large-number-font-size, 1);
+    margin-right: 4px;
+  }
+}
+
+.#{$grommet-namespace}distribution__label--icons {
+  padding: 0 halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit) 0;
+  background-color: $active-background-color;
+  color: $text-color;
+
+  #{$dark-background-context} {
+    background-color: $colored-active-background-color;
+    color: $colored-text-color;
   }
 
-  &__label {
-    position: absolute;
-    padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
-    font-family: $brand-large-number-font-family;
-    overflow: hidden;
-    text-align: left;
-    pointer-events: none;
-    @include filled-text-color();
-
-    &-value {
-      display: block;
-      @include inuit-font-size($large-number-font-size);
-      font-weight: bold;
-    }
-
-    &-units {
-      @include inuit-font-size($inuit-heading-size-3, inherit);
-      margin-left: quarter($inuit-base-spacing-unit);
-      font-weight: normal;
-    }
-
-    &-label {
-      display: block;
-    }
-
-    &--active {
-      color: $text-color;
-    }
-
-    &--thin {
-      .distribution__label-value,
-      .distribution__label-label {
-        display: inline-block;
-      }
-    }
-
-    &--small {
-      // padding: 0 halve($inuit-base-spacing-unit)
-      //   halve($inuit-base-spacing-unit) quarter($inuit-base-spacing-unit);
-
-      .distribution__label-value,
-      .distribution__label-units {
-        @include inuit-font-size($small-large-number-font-size, 1);
-        margin-right: 4px;
-      }
-    }
-
-    &--icons {
-      padding: 0 halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit) 0;
-      background-color: $active-background-color;
-      color: $text-color;
-
-      .label {
-        &-value {
-          line-height: 1;
-        }
-
-        &-units {
-          color: $secondary-text-color;
-        }
-
-        &-label {
-          display: block;
-        }
-      }
-    }
+  #{$light-background-context} {
+    background-color: $active-background-color;
+    color: $text-color;
   }
 
-  &__loading-indicator {
-    stroke-width: $inuit-base-spacing-unit;
-    @include graph-stroke-color();
+  .label-value {
+    line-height: 1;
   }
 
-  &--icons {
-    .distribution {
-      &__label {
-        padding: 0 halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit) 0;
-
-        &-value {
-          line-height: 1;
-        }
-      }
-    }
+  .label-units {
+    color: $secondary-text-color;
   }
 
-  &--small {
-    .distribution__graphic {
-      height: $graphic-small-size;
-    }
+  .label-label {
+    display: block;
+  }
+}
+
+.#{$grommet-namespace}distribution__loading-indicator {
+  stroke-width: $inuit-base-spacing-unit;
+  @include graph-stroke-color();
+}
+
+.#{$grommet-namespace}distribution--icons {
+  .#{$grommet-namespace}distribution__label {
+    padding: 0 halve($inuit-base-spacing-unit) halve($inuit-base-spacing-unit) 0;
   }
 
-  &--large {
-    .distribution__graphic {
-      height: $graphic-large-size;
-    }
+  .#{$grommet-namespace}distribution__label-value {
+    line-height: 1;
   }
+}
 
-  &--full {
-    height: 100%;
+.#{$grommet-namespace}distribution--small {
+  height: $size-small;
+}
 
-    .distribution__graphic {
-      width: auto;
-      height: auto;
-      max-height: 100%;
-      max-width: 100%;
-    }
+.#{$grommet-namespace}distribution--medium {
+  height: $size-medium;
+}
+
+.#{$grommet-namespace}distribution--large {
+  height: $size-large;
+}
+
+.#{$grommet-namespace}distribution--full {
+  height: 100%;
+  flex: 1 1;
+
+  .#{$grommet-namespace}distribution__graphic {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
   }
 }

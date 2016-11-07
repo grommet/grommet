@@ -18,18 +18,21 @@ function normalizeIndexes (selectedIndexes) {
 // Clears any selected items
 // options: {containerElement: , selectedClass: }
 function clearClass (options) {
-  const items = options.containerElement
-    .querySelectorAll("." + options.selectedClass);
-  for (let i = 0; i < items.length; i++) {
-    items[i].classList.remove(options.selectedClass);
+  if (options && options.containerElement) {
+    const items = options.containerElement
+      .querySelectorAll("." + options.selectedClass);
+    for (let i = 0; i < items.length; i++) {
+      items[i].classList.remove(options.selectedClass);
+    }
   }
 }
 
 // Sets the selectedClass on all children whose index is in selectedIndexes.
-// options: {containerElement: , childSelector: , selectedClass: , selectedIndexes: []}
+// options: {containerElement: , childSelector: , selectedClass: ,
+//    selectedIndexes: []}
 function setClassFromIndexes (options) {
   clearClass(options);
-  if (options.selectedIndexes) {
+  if (options && options.containerElement && options.selectedIndexes) {
     const items = options.containerElement
       .querySelectorAll(options.childSelector);
     options.selectedIndexes.forEach((index) => {
@@ -40,7 +43,8 @@ function setClassFromIndexes (options) {
   }
 }
 
-// Gets the selected selectedClass on all children whose index is in selectedIndexes.
+// Gets the selected selectedClass on all children whose index is in
+// selectedIndexes.
 // options: {containerElement: , childSelector: , selectedClass: }
 function getIndexesFromClass (options) {
   const items = options.containerElement
@@ -61,14 +65,13 @@ function onClick (event, options) {
 
   // Go up the DOM tree until we match the childSelector
   let item = event.target;
-  if (item.matches) {
-    while (item && ! item.matches(options.childSelector)) {
-      item = item.parentNode;
-    }
-  } else if (item.matchesElement) {
-    while (item && ! item.matchesElement(options.childSelector)) {
-      item = item.parentNode;
-    }
+  var matchFunction =
+    item.matches || item.matchesElement || item.msMatchesSelector;
+  while (matchFunction && item &&
+    !matchFunction.bind(item, options.childSelector)()) {
+    item = item.parentNode;
+    matchFunction =
+      item.matches || item.matchesElement || item.msMatchesSelector;
   }
 
   // determine the index of the clicked element
@@ -109,7 +112,8 @@ function onClick (event, options) {
         selectedIndexes.forEach(function (selectIndex, arrayIndex) {
           if (-1 === closestIndex) {
             closestIndex = selectIndex;
-          } else if (Math.abs(indexInContainer - selectIndex) < Math.abs(indexInContainer - closestIndex)) {
+          } else if (Math.abs(indexInContainer - selectIndex) <
+            Math.abs(indexInContainer - closestIndex)) {
             closestIndex = selectIndex;
           }
         });
@@ -121,6 +125,10 @@ function onClick (event, options) {
           } else {
             i += 1;
           }
+        }
+
+        if (indexInPrior > -1) {
+          selectedIndexes.splice(indexInPrior, 1);
         }
 
         // Remove text selection. This often happens when shift multi-selecting

@@ -1,0 +1,155 @@
+exports[`Legend has correct default options 1`] = `
+<ol
+  className="grommetux-legend">
+  <li
+    className="grommetux-legend__item"
+    onClick={undefined}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}>
+    <span
+      className="grommetux-legend__item-label">
+      <svg
+        className="grommetux-legend__item-swatch grommetux-color-index-graph-1"
+        viewBox="0 0 12 12">
+        <path
+          className={undefined}
+          d="M 5 0 l 0 12" />
+      </svg>
+      North America
+    </span>
+    <span
+      className="grommetux-legend__item-value">
+      40
+      <span
+        className="grommetux-legend__item-units">
+        B
+      </span>
+    </span>
+  </li>
+  <li
+    className="grommetux-legend__item"
+    onClick={undefined}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}>
+    <span
+      className="grommetux-legend__item-label">
+      <svg
+        className="grommetux-legend__item-swatch grommetux-color-index-accent-2"
+        viewBox="0 0 12 12">
+        <path
+          className={undefined}
+          d="M 5 0 l 0 12" />
+      </svg>
+      South America
+    </span>
+    <span
+      className="grommetux-legend__item-value">
+      30
+      <span
+        className="grommetux-legend__item-units">
+        B
+      </span>
+    </span>
+  </li>
+  <li
+    className="grommetux-legend__item"
+    onClick={undefined}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}>
+    <span
+      className="grommetux-legend__item-label">
+      <svg
+        className="grommetux-legend__item-swatch grommetux-color-index-unset"
+        viewBox="0 0 12 12">
+        <path
+          className={undefined}
+          d="M 5 0 l 0 12" />
+      </svg>
+      Europe
+    </span>
+    <span
+      className="grommetux-legend__item-value">
+      20
+      <span
+        className="grommetux-legend__item-units">
+        B
+      </span>
+    </span>
+  </li>
+  <li
+    className="grommetux-legend__item"
+    onClick={undefined}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}>
+    <span
+      className="grommetux-legend__item-label">
+      <svg
+        className="grommetux-legend__item-swatch grommetux-color-index-graph-2"
+        viewBox="0 0 12 12">
+        <path
+          className={undefined}
+          d="M 5 0 l 0 12" />
+      </svg>
+      Africa
+    </span>
+    <span
+      className="grommetux-legend__item-value">
+      10
+      <span
+        className="grommetux-legend__item-units">
+        B
+      </span>
+    </span>
+  </li>
+  <li
+    className="grommetux-legend__item"
+    onClick={undefined}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}>
+    <span
+      className="grommetux-legend__item-label">
+      <svg
+        className="grommetux-legend__item-swatch grommetux-color-index-graph-3"
+        viewBox="0 0 12 12">
+        <path
+          className={undefined}
+          d="M 5 0 l 0 12" />
+      </svg>
+      Asia
+    </span>
+    <span
+      className="grommetux-legend__item-value">
+      15
+      <span
+        className="grommetux-legend__item-units">
+        B
+      </span>
+    </span>
+  </li>
+  <li
+    className="grommetux-legend__item"
+    onClick={undefined}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}>
+    <span
+      className="grommetux-legend__item-label">
+      <svg
+        className="grommetux-legend__item-swatch grommetux-color-index-graph-4"
+        viewBox="0 0 12 12">
+        <path
+          className={undefined}
+          d="M 5 0 l 0 12" />
+      </svg>
+      Australia
+    </span>
+    <span
+      className="grommetux-legend__item-value">
+      10
+      <span
+        className="grommetux-legend__item-units">
+        B
+      </span>
+    </span>
+  </li>
+</ol>
+`;

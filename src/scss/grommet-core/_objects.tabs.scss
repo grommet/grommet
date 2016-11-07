@@ -1,7 +1,7 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.tabs {
-  margin: 0;
+.#{$grommet-namespace}tabs {
+  margin: halve($inuit-base-spacing-unit) 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -9,35 +9,30 @@
   list-style: none;
   border-bottom: 1px solid $border-color;
 
-  &__content {
-    padding: $inuit-base-spacing-unit 0;
-  }
-
-  &--justify {
-    &-center {
-      justify-content: center;
-    }
-
-    &-start {
-      justify-content: flex-start;
-    }
-
-    &-end {
-      justify-content: flex-end;
-    }
-
-    &-start,
-    &-end {
-      &.tabs--responsive {
-        @include media-query(palm) {
-          flex-direction: column;
-          text-align: center;
-        }
-      }
-    }
-  }
-
   + div:focus {
     outline: none;
+  }
+}
+
+.#{$grommet-namespace}tabs--justify-center {
+  justify-content: center;
+}
+
+.#{$grommet-namespace}tabs--justify-start {
+  justify-content: flex-start;
+}
+
+.#{$grommet-namespace}tabs--justify-end {
+  justify-content: flex-end;
+}
+
+.#{$grommet-namespace}tabs--justify-start,
+.#{$grommet-namespace}tabs--justify-center,
+.#{$grommet-namespace}tabs--justify-end {
+  &.#{$grommet-namespace}tabs--responsive {
+    @include media-query(palm) {
+      flex-direction: column;
+      text-align: center;
+    }
   }
 }

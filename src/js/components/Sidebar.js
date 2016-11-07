@@ -1,44 +1,41 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Box from './Box';
-import Props from '../utils/Props';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'sidebar';
+const CLASS_ROOT = CSSClassnames.SIDEBAR;
 
-const Sidebar = props => {
-  let classes = classnames(
-    CLASS_ROOT,
-    props.className,
-    {
-      [`${CLASS_ROOT}--primary`]: props.primary,
-      [`${CLASS_ROOT}--fixed`]: props.fixed,
-      [`${CLASS_ROOT}--${props.size}`]: props.size
-    }
-  );
+export default class Sidebar extends Component {
+  render () {
+    const { children, className, fixed, full, size, ...props } = this.props;
+    let classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--fixed`]: fixed,
+        [`${CLASS_ROOT}--full`]: full,
+        [`${CLASS_ROOT}--${size}`]: size
+      },
+      className
+    );
 
-  let boxProps = Props.pick(props, Box);
-
-  return (
-    <Box {...boxProps} className={classes}>
-      {props.children}
-    </Box>
-  );
+    return (
+      <Box {...props} className={classes}>
+        {children}
+      </Box>
+    );
+  }
 };
 
 Sidebar.propTypes = {
   fixed: PropTypes.bool,
-  primary: PropTypes.bool, // Deprecated
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
+  full: PropTypes.bool,
   ...Box.propTypes
 };
 
 Sidebar.defaultProps = {
   direction: 'column',
-  primary: false
+  full: true
 };
-
-Sidebar.displayName = 'Sidebar';
-
-export default Sidebar;

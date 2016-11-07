@@ -1,71 +1,101 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
 import Button from './Button';
+import AddIcon from './icons/base/Add';
+import SubtractIcon from './icons/base/Subtract';
 
-const CLASS_ROOT = "number-input";
+const CLASS_ROOT = CSSClassnames.NUMBER_INPUT;
+const INPUT = CSSClassnames.INPUT;
 
 export default class NumberInput extends Component {
 
-  constructor () {
-    super();
+  constructor(props, context) {
+    super(props, context);
 
     this._onAdd = this._onAdd.bind(this);
     this._onSubtract = this._onSubtract.bind(this);
   }
 
   _fireChange () {
-    var event = new Event('change', {
-      'bubbles': true,
-      'cancelable': true
-    });
+    let event;
+    try {
+      event = new Event('change', {
+        'bubbles': true,
+        'cancelable': true
+      });
+    } catch (e) {
+      // IE11 workaround.
+      event = document.createEvent('Event');
+      event.initEvent('change', true, true);
+    }
     // We use dispatchEvent to have the browser fill out the event fully.
-    this.refs.input.dispatchEvent(event);
+    this._inputRef.dispatchEvent(event);
     // Manually dispatched events aren't delivered by React, so we notify too.
     this.props.onChange(event);
   }
 
   _onAdd () {
-    this.refs.input.stepUp();
+    const { max, step } = this.props;
+    const input = this._inputRef;
+    try {
+      input.stepUp();
+    } catch (e) {
+      // IE11 workaround. See known issue #5 at
+      // http://caniuse.com/#search=number
+      let value = (parseFloat(input.value) || 0) + (step || 1);
+      if (max !== undefined) {
+        value = Math.min(value, max);
+      }
+      input.value = value;
+    }
     this._fireChange();
   }
 
   _onSubtract () {
-    this.refs.input.stepDown();
+    const { min, step } = this.props;
+    const input = this._inputRef;
+    try {
+      input.stepDown();
+    } catch (e) {
+      // IE11 workaround. See known issue #5 at
+      // http://caniuse.com/#search=number
+      let value = (parseFloat(input.value) || 0) - (step || 1);
+      if (min !== undefined) {
+        value = Math.max(value, min);
+      }
+      input.value = value;
+    }
     this._fireChange();
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    var labelId = 'number-label';
-    if (this.props.disabled) {
-      classes.push(CLASS_ROOT + "--disabled");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-    const onSubtract = (! this.props.disabled ? this._onSubtract : undefined);
-    const onAdd = (! this.props.disabled ? this._onAdd : undefined);
+    const { className, disabled, ...props } = this.props;
+
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--disabled`]: disabled
+      },
+      className
+    );
+
+    const onSubtract = (! disabled ? this._onSubtract : undefined);
+    const onAdd = (! disabled ? this._onAdd : undefined);
 
     return (
-      <span className={classes.join(' ')}
-        aria-describedby={this.props.ariaDescribedby}
-        aria-labelledby={labelId}>
+      <span className={classes}>
+        <input ref={ref => this._inputRef = ref} {...props}
+          className={`${INPUT} ${CLASS_ROOT}__input`}
+          type="number" tabIndex="0"
+          disabled={disabled} />
 
-        <input ref="input" tabIndex="0" className={CLASS_ROOT + "__input"}
-          id={this.props.id} name={this.props.name} type="number"
-          disabled={this.props.disabled}
-          value={this.props.value}
-          defaultValue={this.props.defaultValue}
-          min={this.props.min}
-          max={this.props.max}
-          step={this.props.step}
-          onChange={this.props.onChange} />
-
-        <Button icon="Subtract" className={CLASS_ROOT + "__subtract"}
+        <Button icon={<SubtractIcon />} className={`${CLASS_ROOT}__subtract`}
           onClick={onSubtract} />
 
-        <Button icon="Add" className={CLASS_ROOT + "__add"}
+        <Button icon={<AddIcon />} className={`${CLASS_ROOT}__add`}
           onClick={onAdd} />
       </span>
     );
@@ -74,14 +104,13 @@ export default class NumberInput extends Component {
 }
 
 NumberInput.propTypes = {
-  ariaDescribedby: PropTypes.string,
   defaultValue: PropTypes.number,
   disabled: PropTypes.bool,
   id: PropTypes.string,
-  name: PropTypes.string,
   max: PropTypes.number,
   min: PropTypes.number,
+  name: PropTypes.string,
   onChange: PropTypes.func,
   step: PropTypes.number,
-  value: PropTypes.number
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };

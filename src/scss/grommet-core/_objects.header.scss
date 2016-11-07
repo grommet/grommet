@@ -1,186 +1,142 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.header {
+.#{$grommet-namespace}header {
   min-height: $header-height;
   width: 100%;
   margin-bottom: 0px;
 
-  &.box--direction-row {
-    > *:not(:last-child) {
-      margin-right: halve($inuit-base-spacing-unit);
-    }
-
-    > h1,
-    > h2,
-    > h3,
-    > h4 {
-      margin-bottom: 0px;
-    }
+  // Height is needed to coerce IE11 into aligning center even though
+  // this is ignored by min-height. (Also needed on header--large and
+  // header--small.) We need to subtract 1 unit in order to allow
+  // min-height to keep the header height dynamic.
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    height: $header-height - 1;
   }
 
-  a {
-    color: inherit;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  .status-icon {
+  .#{$grommet-namespace}status-icon {
     flex-grow: 0;
     flex-shrink: 0;
   }
+}
 
-  &--large {
-    min-height: $large-header-height;
-  }
+.#{$grommet-namespace}header--large {
+  min-height: $large-header-height;
 
-  &--small {
-    min-height: $small-header-height;
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    height: $large-header-height - 1;
   }
 }
 
-header.header {
-  @include inuit-font-size($header-font-size, inherit);
+.#{$grommet-namespace}header--small {
+  min-height: $small-header-height;
 
-  *:not(.header__container--float) > &--float {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-  }
-
-  &--primary {
-    .header__wrapper {
-      border-bottom: none;
-    }
-  }
-
-  @include transform(translate(0, 0));
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    margin-bottom: 0;
-  }
-
-  &.header--splash {
-    @include transform(translate(0, 40vh));
-  }
-
-  &.box--direction-row {
-    > * {
-      margin-bottom: 0px;
-    }
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    height: $small-header-height - 1;
   }
 }
 
-.header:not(header) {
-  &.box--separator {
-    &-top {
-      padding-top: quarter($inuit-base-spacing-unit);
-    }
+.#{$grommet-namespace}header--splash {
+  @include transform(translate(0, 40vh));
+}
 
-    &-bottom {
-      padding-bottom: quarter($inuit-base-spacing-unit);
-    }
+*:not(.#{$grommet-namespace}header__container--float)
+> header.#{$grommet-namespace}header--float {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+header.#{$grommet-namespace}header--primary {
+  .#{$grommet-namespace}header__wrapper {
+    border-bottom: none;
+  }
+}
+
+.#{$grommet-namespace}header:not(header) {
+  &.#{$grommet-namespace}box--separator-top {
+    padding-top: quarter($inuit-base-spacing-unit);
+  }
+
+  &.#{$grommet-namespace}box--separator-bottom {
+    padding-bottom: quarter($inuit-base-spacing-unit);
   }
 }
 
 // header with container and wrapper elements
-div.header {
+.#{$grommet-namespace}header__container {
+  flex-shrink: 0;
+}
 
-  &__container {
-    flex-shrink: 0;
-
-    &--fixed {
-      position: relative;
-
-      .header__wrapper {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        z-index: 3;
-
-        .header {
-          @include media-query(lap-and-up) {
-            position: fixed;
-
-            &:not(.header--float) {
-              background-color: $header-background-color;
-            }
-          }
-        }
-      }
-    }
-
-    &--float {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      right: 0px;
-      padding-left: $inuit-base-spacing-unit;
-      padding-right: $inuit-base-spacing-unit;
-    }
+.#{$grommet-namespace}header__container--fill {
+  .#{$grommet-namespace}header {
+    background-color: $header-background-color;
   }
+}
 
-  &__wrapper {
-    height: $header-height;
-  }
+.#{$grommet-namespace}header__container--fixed {
+  position: relative;
 
-  &--large {
-    .header__wrapper {
-      height: $large-header-height;
-    }
+  .#{$grommet-namespace}header__wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 3;
 
-    .header__content {
-      line-height: $large-header-height;
-    }
-  }
-
-  &--small {
-    .header__wrapper {
-      height: $small-header-height;
-    }
-
-    .header__content {
-      line-height: $small-header-height;
-    }
-  }
-
-  &--fixed {
-    .header__wrapper {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      right: 0px;
-      background-color: $header-background-color;
-      z-index: 3;
-    }
-
-    &.header--primary {
-      .header__wrapper {
+    .#{$grommet-namespace}header {
+      @include media-query(lap-and-up) {
         position: fixed;
-        background-color: $header-background-color;
-      }
-
-      .header__content {
-        position: static;
-        background-color: transparent;
       }
     }
   }
+}
 
-  &--flush {
-    .header__wrapper {
-      padding-left: 0px;
-      padding-right: 0px;
-    }
+.#{$grommet-namespace}header__container--float {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.#{$grommet-namespace}header__wrapper {
+  height: $header-height;
+}
+
+.#{$grommet-namespace}header__wrapper--large {
+  height: $large-header-height;
+}
+
+.#{$grommet-namespace}header__wrapper--small {
+  height: $small-header-height;
+}
+
+.#{$grommet-namespace}header--fixed {
+  .#{$grommet-namespace}header__wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: $header-background-color;
+    z-index: 3;
+  }
+}
+
+.#{$grommet-namespace}header--fixed.#{$grommet-namespace}header--primary {
+  .#{$grommet-namespace}header__wrapper {
+    position: fixed;
+    background-color: $header-background-color;
+  }
+
+  .#{$grommet-namespace}header__content {
+    position: static;
+    background-color: transparent;
+  }
+}
+
+.#{$grommet-namespace}header--flush {
+  .#{$grommet-namespace}header__wrapper {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }

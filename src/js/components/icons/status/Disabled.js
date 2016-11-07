@@ -1,31 +1,29 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import FormattedMessage from '../../FormattedMessage';
+import classnames from 'classnames';
+import CSSClassnames from '../../../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.STATUS_ICON;
 
 export default class Disabled extends Component {
   render() {
-    var className = 'status-icon status-icon-disabled';
-    var a11yTitle = this.props.a11yTitle;
-    if (this.props.className) {
-      className += ' ' + this.props.className;
-    }
-    if (typeof this.props.a11yTitle === "undefined") {
-      // this.props.a11yTitle emplty string is an acceptable value. Only if undefined
-      // should use the default title value.
-      a11yTitle = 'Disabled';
-    }
-    var disabledTitleId = 'disabled-title';
+    const { a11yTitle, className, ...props } = this.props;
+    const classes = classnames(
+      CLASS_ROOT,
+      `${CLASS_ROOT}-disabled`,
+      className);
     return (
-      <svg className={className} viewBox="0 0 24 24" role="img" aria-labelledby={disabledTitleId} version="1.1">
-        <title id={disabledTitleId}>
-          <FormattedMessage id={a11yTitle} defaultMessage={a11yTitle} />
-        </title>
-        <g className={"status-icon__base"}>
-          <path role="presentation" stroke="none" d="M21,24 L3,24 C1.3,24 0,22.7 0,21 L0,3 C0,1.3 1.3,0 3,0 L21,0 C22.7,0 24,1.3 24,3 L24,21 C24,22.7 22.7,24 21,24 L21,24 Z"></path>
+      <svg {...props} className={classes} viewBox='0 0 24 24' role='img'
+        version='1.1' aria-label={a11yTitle}>
+        <g className={`${CLASS_ROOT}__base`}>
+          <path stroke='none'
+            d={'M21,24 L3,24 C1.3,24 0,22.7 0,21 L0,3 C0,1.3 1.3,0 3,0 ' +
+              'L21,0 C22.7,0 24,1.3 24,3 L24,21 C24,22.7 22.7,24 21,24 ' +
+              'L21,24 Z'} />
         </g>
-        <g className={"status-icon__detail"} strokeWidth="2">
-          <path d="M6,12 L18,12"></path>
+        <g className={`${CLASS_ROOT}__detail`} strokeWidth='2'>
+          <path d='M6,12 L18,12' />
         </g>
       </svg>
     );
@@ -33,5 +31,10 @@ export default class Disabled extends Component {
 }
 
 Disabled.propTypes = {
-  a11yTitle: PropTypes.string
+  a11yTitle: PropTypes.string,
+  className: PropTypes.string
+};
+
+Disabled.defaultProps = {
+  a11yTitle: 'Disabled'
 };

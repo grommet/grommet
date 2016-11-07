@@ -1,935 +1,100 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-$meter-size: $graphic-size;
-$meter-small-size: $graphic-small-size;
-$meter-large-size: $graphic-large-size;
+$meter-size-default: $size-small;
 
 $meter-slice-width: round($inuit-base-spacing-unit / 6);
 $meter-slice-active-width: round($inuit-base-spacing-unit / 2);
 $meter-threshold-slice-width: $meter-slice-width;
 $meter-indicator-width: round($inuit-base-spacing-unit / 6);
 
-$meter-arc-size: $meter-size - double($inuit-base-spacing-unit);
-$meter-arc-small-size: $meter-small-size - $inuit-base-spacing-unit;
-$meter-arc-large-size: $meter-large-size - round($inuit-base-spacing-unit * 3);
 $meter-label-width: double($inuit-base-spacing-unit);
 $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 
-@include keyframes(draw-meter) {
-  0% {
-    stroke-dashoffset: $meter-size;
-  }
-
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-@include keyframes(draw-arc) {
-  0% {
-    stroke-dashoffset: - $meter-size;
-  }
-
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-.meter {
+.#{$grommet-namespace}meter {
   display: inline-block;
   position: relative;
+}
 
-  &__slice {
-    stroke-width: $meter-slice-width;
+.#{$grommet-namespace}meter__slice {
+  stroke-width: $meter-slice-width;
+  fill: none;
+  stroke: $meter-background-color;
+}
+
+.#{$grommet-namespace}meter__hot {
+  stroke-width: double($meter-slice-active-width);
+  stroke: rgba(0, 0, 0, 0.001);
+}
+
+.#{$grommet-namespace}meter__threshold {
+  stroke: $threshold-color;
+}
+
+.#{$grommet-namespace}meter__value-container {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.#{$grommet-namespace}meter__graphic-container {
+  white-space: normal;
+
+  > a {
+    text-decoration: none;
+  }
+}
+
+.#{$grommet-namespace}meter__graphic {
+  &:focus {
+    outline: $focus-border-color solid 1px;
   }
 
-  &__threshold {
-    stroke: $threshold-color;
+  text {
+    fill: $secondary-text-color;
   }
+}
 
-  &__value-container {
-    position: relative;
+.#{$grommet-namespace}meter:not(.#{$grommet-namespace}meter--vertical) {
+
+  .#{$grommet-namespace}meter__graphic-container {
     display: inline-block;
   }
+}
 
-  &__graphic-container {
-    white-space: normal;
+.#{$grommet-namespace}meter--vertical {
 
-    > a {
-      text-decoration: none;
-    }
+  .#{$grommet-namespace}meter__graphic-container {
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
+.#{$grommet-namespace}meter--small,
+.#{$grommet-namespace}meter--xsmall {
+
+  .#{$grommet-namespace}meter__slice {
+    stroke-width: double($meter-slice-width);
   }
 
-  &__graphic {
-    &:focus {
-      outline: $focus-border-color solid 1px;
-    }
-  }
-
-  &__value {
-    white-space: normal;
-    pointer-events: none;
-
-    &--active {
-      pointer-events: auto;
-      cursor: pointer;
-    }
-
-    &-value {
-      @include inuit-font-size($large-number-font-size, $inuit-heading-size-1 + 2);
-      font-weight: bold;
-    }
-
-    &-units {
-      @include inuit-font-size($large-number-units-font-size, inherit);
-      margin-left: quarter($inuit-base-spacing-unit);
-      color: $secondary-text-color;
-      font-weight: normal;
-
-      html.rtl & {
-        margin-left: 0;
-        margin-right: quarter($inuit-base-spacing-unit);
-      }
-    }
-
-    &-label {
-      display: block;
-    }
-  }
-
-  &__minmax-container {
-    display: block;
-  }
-
-  &__minmax {
-    display: flex;
-    justify-content: space-between;
-    color: $secondary-text-color;
-    @include inuit-font-size($label-font-size);
-  }
-
-  &__label-min,
-  &__label-max {
-    flex: 0 0 $meter-label-width;
-  }
-
-  &__label-max {
-    text-align: right;
-  }
-
-  &__label {
-    fill: $secondary-text-color;
-
-    &--active {
-      fill: $hover-text-color;
-    }
-  }
-
-  &--legend {
-    &-right {
-      white-space: nowrap;
-
-      .meter {
-        &__legend {
-          vertical-align: top;
-          margin-left: $inuit-base-spacing-unit;
-
-          html.rtl & {
-            margin-left: 0;
-            margin-right: $inuit-base-spacing-unit;
-          }
-        }
-      }
-
-      &:not(.meter--tall-legend) {
-        .meter__legend {
-          position: relative;
-          @include transform(translateY(-50%));
-        }
-      }
-    }
-
-    &-bottom {
-      .meter {
-        &__legend {
-          margin-top: $inuit-base-spacing-unit;
-          display: block;
-        }
-      }
-    }
-  }
-
-  &:not(.meter--vertical) {
-    .meter {
-
-      &__graphic-container {
-        display: inline-block;
-      }
-
-      &__minmax-container {
-        display: block;
-        width: $meter-size;
-      }
-
-      &__minmax {
-        width: 100%;
-      }
-    }
-
-    &.meter--small {
-      .meter {
-        &__minmax-container {
-          width: $meter-small-size;
-        }
-      }
-    }
-
-    &.meter--large {
-      .meter {
-        &__minmax-container {
-          width: $meter-large-size;
-        }
-      }
-    }
-  }
-
-  &--vertical {
-    .meter {
-
-      &__graphic-container {
-        display: inline-block;
-        white-space: nowrap;
-      }
-
-      &__minmax-container {
-        height: $meter-size;
-      }
-
-      &__minmax {
-        flex-direction: column;
-        height: 100%;
-
-        &-min {
-          order: 1;
-        }
-
-        &-max {
-          order: 0;
-        }
-      }
-
-      &__label-min,
-      &__label-max {
-        flex: 0 0 auto;
-        text-align: left;
-      }
-
-      &__label-min {
-        order: 1;
-      }
-
-      &__label-max {
-        order: 0;
-      }
-
-      &__value {
-        &-label {
-          display: block;
-        }
-      }
-    }
-
-    &.meter--small {
-      .meter {
-        &__minmax-container {
-          height: $meter-small-size;
-        }
-      }
-    }
-
-    &.meter--large {
-      .meter {
-        &__minmax-container {
-          height: $meter-large-size;
-        }
-      }
-    }
-  }
-
-  &--small {
-    .meter {
-      &__slice {
-        stroke-width: double($meter-slice-width);
-      }
-
-      &__values .meter__slice {
-        &:hover {
-          stroke-width: double($meter-slice-active-width);
-        }
-      }
-
-      &__value {
-        &-value {
-          @include inuit-font-size($small-large-number-font-size);
-        }
-
-        &-units {
-          @include inuit-font-size($small-large-number-units-font-size);
-        }
-      }
-    }
-  }
-
-  &--large {
-    .meter__value {
-      &-value {
-        @include inuit-font-size($large-large-number-font-size);
-      }
-
-      &-units {
-        @include inuit-font-size($large-large-number-units-font-size);
-      }
-    }
-  }
-
-  &.meter--active {
-    .meter {
-      &__values .meter__slice {
-        &:hover {
-          stroke-width: $meter-slice-active-width;
-        }
-      }
-    }
-
-    &:not(.meter--single) {
-      .meter__values .meter__slice.meter__slice--active {
-        stroke-width: $meter-slice-active-width;
-      }
-    }
-  }
-
-  // BAR
-
-  &--bar {
-    .meter {
-      &__slice {
-        stroke-linecap: butt;
-        stroke-dasharray: $meter-size $meter-size;
-        stroke-dashoffset: 0;
-      }
-
-      &__values .meter__slice {
-        // stroke-width: $meter-slice-width;
-        @include graph-stroke-color();
-
-        &--clickable {
-          cursor: pointer;
-        }
-
-        @include media-query(lap-and-up) {
-          transition: stroke-width 0.2s;
-          @include animation('draw-meter 1.5s linear');
-        }
-      }
-
-      &__thresholds .meter__slice,
-      &__tracks .meter__slice {
-        // stroke-width: $meter-threshold-slice-width;
-        @include graph-stroke-color-translucent(0.5);
-      }
-
-      &__value {
-        text-align: left;
-
-        &-label {
-          // width: 50%;
-          // margin: 0px auto;
-          // margin-left: round($inuit-base-spacing-unit / 6);
-          @include inuit-font-size($label-font-size, $label-font-size + 2);
-        }
-      }
-    }
-
-    &:not(.meter--vertical) {
-      .meter {
-        &__minmax-container {
-          // display: inline-block;
-
-          > a {
-            vertical-align: top;
-            display: block;
-            height: $inuit-base-spacing-unit;
-          }
-        }
-
-        &__graphic {
-          width: $meter-size;
-          height: 100%;
-        }
-
-        &__value {
-          display: inline-block;
-          vertical-align: top;
-          margin-left: halve($inuit-base-spacing-unit);
-
-          html.rtl & {
-            margin-left: 0;
-            margin-right: halve($inuit-base-spacing-unit);
-          }
-
-          &-value {
-            @include inuit-font-size($number-font-size);
-          }
-
-          &-units {
-            @include inuit-font-size($number-units-font-size);
-          }
-        }
-      }
-
-      &.meter--single,
-      &.meter--stacked {
-        .meter__value {
-          &-label {
-            display: inline-block;
-            margin-left: round($inuit-base-spacing-unit / 6);
-
-            html.rtl & {
-              margin-left: 0;
-              margin-right: round($inuit-base-spacing-unit / 6);
-            }
-          }
-        }
-
-        &.meter--legend-right {
-          .meter__value {
-            min-width: $inuit-base-spacing-unit * 3.5;
-          }
-        }
-      }
-
-      &.meter--legend-right {
-        .meter__legend {
-          top: 0px;
-          @include transform(none);
-        }
-
-        .meter__value {
-          min-width: $inuit-base-spacing-unit * 2;
-        }
-      }
-
-      &.meter--small {
-        svg.meter__graphic {
-          width: $meter-small-size;
-        }
-
-        .meter__value-value,
-        .meter__value-units {
-          @include inuit-font-size($inuit-base-font-size);
-        }
-
-        &.meter--legend-right {
-          .meter__value {
-            min-width: double($inuit-base-spacing-unit) * 0.875;
-          }
-
-          &.meter--stacked {
-            .meter__value {
-              min-width: $inuit-base-spacing-unit * 3;
-            }
-          }
-        }
-      }
-
-      &.meter--large {
-        svg.meter__graphic {
-          width: $meter-large-size;
-        }
-
-        .meter__value {
-          margin-left: $inuit-base-font-size;
-
-          html.rtl & {
-            margin-left: 0;
-            margin-right: $inuit-base-font-size;
-          }
-
-          &-value,
-          &-units {
-            @include inuit-font-size($number-font-size + 2, inherit);
-          }
-        }
-      }
-    }
-
-    &.meter--vertical {
-      white-space: nowrap;
-
-      svg.meter__graphic {
-        height: $meter-size;
-      }
-
-      .meter {
-
-        &__labeled-graphic {
-          display: inline-block;
-        }
-
-        &__value {
-          position: relative;
-          vertical-align: top;
-          top: halve($meter-size);
-          @include transform(translateY(-50%));
-          display: inline-block;
-          // margin-left: halve($inuit-base-spacing-unit);
-        }
-
-        &__minmax-container {
-          position: absolute;
-          top: 0px;
-          left: $inuit-base-spacing-unit;
-        }
-      }
-
-      &.meter--legend-right {
-        .meter__legend {
-          top: halve($meter-size);
-        }
-
-        .meter__value {
-          min-width: $inuit-base-spacing-unit * 2 + halve($inuit-base-spacing-unit);
-        }
-      }
-
-      &.meter--small {
-        svg.meter__graphic {
-          height: $meter-small-size;
-        }
-
-        .meter__value {
-          top: halve($meter-small-size);
-        }
-
-        &.meter--legend-right {
-          .meter__legend {
-            top: halve($meter-small-size);
-          }
-
-          .meter__value {
-            min-width: double($inuit-base-spacing-unit) * 0.875;
-          }
-        }
-      }
-
-      &.meter--large {
-        svg.meter__graphic {
-          height: $meter-large-size;
-        }
-
-        .meter__value {
-          top: halve($meter-large-size);
-        }
-
-        &.meter--legend-right {
-          .meter__legend {
-            top: halve($meter-large-size);
-          }
-        }
-      }
-    }
-  }
-
-  // CIRCLE, ARC, SPIRAL
-
-  &--circle,
-  &--arc,
-  &--spiral {
-    @include media-query(palm) {
-      margin: 0px auto;
-    }
-
-    svg.meter__graphic {
-      display: block;
-    }
-
-    .meter {
-
-      &.series-pre {
-        path {
-          stroke-dashoffset: quadruple($meter-size);
-        }
-      }
-
-      &__slice {
-        stroke-linecap: butt;
-        stroke-dasharray: quadruple($meter-size) quadruple($meter-size);
-        stroke-dashoffset: 0;
-        fill: none;
-        stroke: $meter-background-color;
-
-        &-indicator {
-          stroke-linecap: square;
-          stroke-width: $meter-indicator-width;
-          stroke: $threshold-color;
-        }
-      }
-
-      &__values .meter__slice {
-        @include graph-stroke-color();
-
-        &--clickable {
-          cursor: pointer;
-        }
-
-        @include media-query(lap-and-up) {
-          transition: stroke-width 0.2s;
-          @include animation('draw-arc 1.5s linear');
-        }
-      }
-
-      &__thresholds .meter__slice,
-      &__tracks .meter__slice {
-        // stroke-width: $meter-threshold-slice-width;
-        @include graph-stroke-color-translucent(0.5);
-      }
-
-      &__threshold {
-        //stroke-width: $inuit-base-spacing-unit;
-        stroke-linecap: butt;
-      }
-
-      &__value {
-        &-label {
-          display: block;
-        }
-      }
-    }
-  }
-
-  // CIRCLE, ARC
-
-  &--circle,
-  &--arc {
-    @include media-query(palm) {
-      width: $meter-size;
-    }
-
-    .meter {
-      &__value {
-        white-space: normal;
-        pointer-events: none;
-        text-align: center;
-
-        &--active {
-          pointer-events: auto;
-          cursor: pointer;
-        }
-      }
-    }
-  }
-
-  &--circle,
-  &--arc:not(.meter--vertical) {
-    .meter {
-      &__minmax-container {
-        width: $meter-size;
-      }
-
-      &__value {
-        position: absolute;
-        left: 50%;
-      }
-    }
-
-    &.meter--small {
-      .meter {
-        &__minmax-container {
-          width: $meter-small-size;
-        }
-      }
-    }
-
-    &.meter--large {
-      .meter {
-        &__minmax-container {
-          width: $meter-large-size;
-        }
-      }
-    }
-  }
-
-  &--circle,
-  &--arc.meter--vertical {
-    &.meter--legend-right {
-      .meter__legend {
-        top: halve($meter-size);
-      }
-
-      &.meter--small {
-        .meter__legend {
-          top: halve($meter-small-size);
-        }
-      }
-
-      &.meter--large {
-        .meter__legend {
-          top: halve($meter-large-size);
-        }
-      }
-    }
-  }
-
-  // CIRCLE
-
-  &--circle {
-    svg.meter__graphic {
-      width: $meter-size;
-      height: $meter-size;
-    }
-
-    .meter__value {
-      top: halve($meter-size);
-      @include transform(translateX(-50%) translateY(-50%));
-      max-width: $meter-size - double($inuit-base-spacing-unit);
-    }
-
-    &.meter--small {
-      svg.meter__graphic {
-        width: $meter-small-size;
-        height: $meter-small-size;
-      }
-
-      .meter__value {
-        top: halve($meter-small-size);
-        max-width: $meter-small-size - $inuit-base-spacing-unit;
-      }
-    }
-
-    &.meter--large {
-      svg.meter__graphic {
-        width: $meter-large-size;
-        height: $meter-large-size;
-      }
-
-      .meter__value {
-        top: halve($meter-large-size);
-        max-width: $meter-large-size - round($inuit-base-spacing-unit * 3);
-      }
-    }
-
-    &:not(.meter--stacked):not(.meter--single) {
-      .meter__value {
-        position: static;
-        margin: 0 auto;
-        @include transform(none);
-      }
-    }
-  }
-
-  // ARC
-
-  &--arc {
-    &:not(.meter--vertical) {
-      svg.meter__graphic {
-        width: $meter-size;
-        height: $meter-arc-size;
-      }
-
-      .meter__value {
-        top: halve($meter-size) + halve($inuit-base-spacing-unit);
-        @include transform(translateX(-50%));
-        max-width: $meter-size - round($inuit-base-spacing-unit * 3);
-      }
-
-      &.meter--legend-right {
-        .meter__legend {
-          top: halve($meter-arc-size);
-        }
-      }
-
-      &.meter--small {
-        svg.meter__graphic {
-          width: $meter-small-size;
-          height: $meter-arc-small-size;
-        }
-
-        .meter__value {
-          top: halve($meter-small-size) + halve($inuit-base-spacing-unit);
-          max-width: $meter-small-size - round($inuit-base-spacing-unit * 1.5);
-        }
-      }
-
-      &.meter--large {
-        svg.meter__graphic {
-          width: $meter-large-size;
-          height: $meter-arc-large-size;
-        }
-
-        .meter__value {
-          top: halve($meter-large-size) + halve($inuit-base-spacing-unit);
-          max-width: $meter-large-size - round($inuit-base-spacing-unit * 4.5);
-        }
-      }
-    }
-
-    &.meter--vertical {
-
-      svg.meter__graphic {
-        display: inline;
-        width: $meter-arc-size;
-        height: $meter-size;
-      }
-
-      .meter {
-
-        &__value {
-          position: relative;
-          top: halve($meter-size);
-          @include transform(translateY(-50%));
-          display: inline-block;
-          margin-left: - ($meter-size - $meter-arc-size) + $inuit-base-spacing-unit;
-          vertical-align: top;
-
-          html.rtl & {
-            margin-left: 0;
-            margin-right: - ($meter-size - $meter-arc-size) + $inuit-base-spacing-unit;
-          }
-        }
-
-        &__minmax-container {
-          display: inline-block;
-          vertical-align: top;
-          margin-left: halve($inuit-base-spacing-unit);
-          padding-top: halve($inuit-base-spacing-unit);
-          padding-bottom: halve($inuit-base-spacing-unit);
-
-          html.rtl & {
-            margin-left: 0;
-            margin-right: halve($inuit-base-spacing-unit);
-          }
-        }
-      }
-
-      &.meter--small {
-        svg.meter__graphic {
-          width: $meter-arc-small-size;
-          height: $meter-small-size;
-        }
-
-        .meter {
-          &__value {
-            top: halve($meter-small-size);
-            margin-left: - halve($inuit-base-spacing-unit);
-
-            html.rtl & {
-              margin-left: 0;
-              margin-right: - halve($inuit-base-spacing-unit);
-            }
-          }
-
-          &__minmax-container {
-            padding-top: 0px;
-            padding-bottom: 0px;
-          }
-        }
-      }
-
-      &.meter--large {
-        svg.meter__graphic {
-          width: $meter-arc-large-size;
-          height: $meter-large-size;
-        }
-
-        .meter {
-          &__value {
-            top: halve($meter-large-size);
-            margin-left: - ($meter-large-size - $meter-arc-large-size) + $inuit-base-spacing-unit;
-
-            html.rtl & {
-              margin-left: 0;
-              margin-right: - ($meter-large-size - $meter-arc-large-size) + $inuit-base-spacing-unit;
-            }
-          }
-        }
-      }
-
-      &.meter--minmax {
-        .meter__value {
-          margin-left: - halve($meter-size) + $inuit-base-spacing-unit;
-
-          html.rtl & {
-            margin-left: 0;
-            margin-right: - halve($meter-size) + $inuit-base-spacing-unit;
-          }
-        }
-
-        &.meter--small {
-          .meter__value {
-            margin-left: - ($meter-small-size - $meter-arc-small-size) - round($inuit-base-spacing-unit * 1.5);
-
-            html.rtl & {
-              margin-left: 0;
-              margin-right: - ($meter-small-size - $meter-arc-small-size) - round($inuit-base-spacing-unit * 1.5);
-            }
-          }
-        }
-      }
-
-      &.meter--legend-right {
-        &.meter--small {
-          .meter__value {
-            min-width: $inuit-base-spacing-unit * 3 + halve(halve($inuit-base-spacing-unit));
-          }
-        }
-
-        .meter__value {
-          min-width: $inuit-base-spacing-unit * 5;
-        }
-      }
-    }
-  }
-
-  // SPIRAL
-
-  &--spiral {
-    .meter {
-      &__value {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        white-space: normal;
-        text-align: right;
-
-        &-value {
-          display: block;
-          @include inuit-font-size($number-font-size);
-          margin-bottom: quarter($inuit-base-spacing-unit);
-        }
-
-        &-units {
-          @include inuit-font-size($number-units-font-size);
-          color: $secondary-text-color;
-          margin-left: 0.2em;
-
-          html.rtl & {
-            margin-left: 0;
-            margin-right: 0.2em;
-          }
-        }
-
-        &-label {
-          display: block;
-          @include inuit-font-size($label-font-size, $label-font-size + 2);
-        }
-      }
-    }
-  }
-
-  &--loading {
-    .meter__thresholds,
-    .meter__value {
-      display: none;
+  .#{$grommet-namespace}meter__values .#{$grommet-namespace}meter__slice {
+    &:hover {
+      stroke-width: double($meter-slice-active-width);
     }
   }
 }
+
+.#{$grommet-namespace}meter--active {
+  .#{$grommet-namespace}meter__values .#{$grommet-namespace}meter__slice {
+    stroke-width: $meter-slice-active-width;
+  }
+}
+
+.#{$grommet-namespace}meter__values .#{$grommet-namespace}meter__slice--active {
+  stroke-width: $meter-slice-active-width;
+}
+
+@import "objects.meter-bar";
+@import "objects.meter-curved";
+@import "objects.meter-circle";
+@import "objects.meter-arc";
+@import "objects.meter-spiral";

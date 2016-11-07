@@ -1,33 +1,28 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import FormattedMessage from '../../FormattedMessage';
+import classnames from 'classnames';
+import CSSClassnames from '../../../utils/CSSClassnames';
+
+const CLASS_ROOT = CSSClassnames.STATUS_ICON;
 
 export default class CriticalStatus extends Component {
   render() {
-    var className = 'status-icon status-icon-critical';
-    var a11yTitle = this.props.a11yTitle;
-    if (this.props.className) {
-      className += ' ' + this.props.className;
-    }
-    if (typeof a11yTitle === "undefined") {
-      // this.props.a11yTitle emplty string is an acceptable value.
-      // only if undefined should use the default title value.
-      a11yTitle ='Critical';
-    }
-    var criticalTitleId = 'critical-title';
+    const { a11yTitle, className, ...props } = this.props;
+    const classes = classnames(
+      CLASS_ROOT,
+      `${CLASS_ROOT}-critical`,
+      className
+    );
     return (
-      <svg className={className} viewBox="0 0 24 24"
-        aria-labelledby={criticalTitleId} role="img" version="1.1">
-        <title id={criticalTitleId}>
-          <FormattedMessage id={a11yTitle} defaultMessage={a11yTitle} />
-        </title>
-        <g className={"status-icon__base"} stroke="none">
-          <path role="presentation" d="M12,0 L24,12 L12,24 L0,12 Z"></path>
+      <svg {...props} className={classes} viewBox='0 0 24 24' role='img'
+        version='1.1' aria-label={a11yTitle}>
+        <g className={`${CLASS_ROOT}__base`} stroke='none'>
+          <path d='M12,0 L24,12 L12,24 L0,12 Z' />
         </g>
-        <g className={"status-icon__detail"} fill="none">
-          <path role="presentation" d="M8,8 L16,16" strokeWidth="2"></path>
-          <path role="presentation" d="M8,16 L16,8" strokeWidth="2"></path>
+        <g className={`${CLASS_ROOT}__detail`} fill='none'>
+          <path d='M8,8 L16,16' strokeWidth='2' />
+          <path d='M8,16 L16,8' strokeWidth='2' />
         </g>
       </svg>
     );
@@ -35,5 +30,10 @@ export default class CriticalStatus extends Component {
 }
 
 CriticalStatus.propTypes = {
-  a11yTitle: PropTypes.string
+  a11yTitle: PropTypes.string,
+  className: PropTypes.string
+};
+
+CriticalStatus.defaultProps = {
+  a11yTitle: 'Critical'
 };

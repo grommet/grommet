@@ -15,8 +15,10 @@ function _evaluate(scrollState) {
       bottom = scrollState.scrollParent.getBoundingClientRect().bottom;
     }
     var indicatorRect = scrollState.indicatorElement.getBoundingClientRect();
-    // Only if bottom isn't zero. This can happen when content hasn't arrived yet.
-    if (bottom && indicatorRect.bottom <= bottom) {
+    // Only if bottom isn't zero. This can happen when content hasn't
+    // arrived yet.
+    // 10px offset is to ensure onEnd() gets called
+    if (bottom && indicatorRect.bottom <= (bottom + 10)) {
       scrollState.onEnd();
     }
   }
@@ -46,13 +48,14 @@ export default {
       scrollParent: DOM.findScrollParents(indicatorElement)[0]
     };
 
-    scrollState._onResize = _onResize.bind(null, scrollState);
-    scrollState._onScroll = _onScroll.bind(null, scrollState);
+    scrollState._onResize = _onResize.bind(this, scrollState);
+    scrollState._onScroll = _onScroll.bind(this, scrollState);
 
     scrollState.scrollParent.addEventListener("scroll", scrollState._onScroll);
     window.addEventListener("resize", scrollState._onResize);
     // check in case we're already at the bottom and the indicator is visible
-    if (scrollState.scrollParent === document) {
+    if (scrollState.scrollParent === document ||
+      scrollState.scrollParent === document.body) {
       var rect = indicatorElement.getBoundingClientRect();
       if (rect.top < window.innerHeight) {
         scrollState.scrollTimer = setTimeout(onEnd, SCROLL_MORE_INITIAL_DELAY);
@@ -64,9 +67,10 @@ export default {
   stopListeningForScroll (scrollState) {
     if (scrollState.scrollParent) {
       clearTimeout(scrollState.scrollTimer);
-      scrollState.scrollParent.removeEventListener("scroll", scrollState._onScroll);
+      scrollState.scrollParent.removeEventListener("scroll",
+        scrollState._onScroll);
       window.removeEventListener("resize", scrollState._onResize);
-      scrollState.scrollParent = null;
+      scrollState.scrollParent = undefined;
     }
   }
 };

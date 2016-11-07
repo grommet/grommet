@@ -1,62 +1,44 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.tab {
+.#{$grommet-namespace}tab {
+  padding: 0 halve($inuit-base-spacing-unit);
 
-  padding: halve($inuit-base-spacing-unit);
-
-  .tabs--justify-start &:first-of-type,
-  .tabs--justify-end &:first-of-type {
+  .#{$grommet-namespace}tabs--justify-start &:first-of-type,
+  .#{$grommet-namespace}tabs--justify-end &:first-of-type {
     padding-left: 0;
   }
 
-  .tabs--justify-start &:last-of-type,
-  .tabs--justify-end &:last-of-type {
+  .#{$grommet-namespace}tabs--justify-start &:last-of-type,
+  .#{$grommet-namespace}tabs--justify-end &:last-of-type {
     padding-right: 0;
   }
 
-  .tabs--responsive &:first-of-type,
-  .tabs--responsive &:last-of-type {
+  .#{$grommet-namespace}tabs--responsive &:first-of-type,
+  .#{$grommet-namespace}tabs--responsive &:last-of-type {
     @include media-query(palm) {
       padding-left: halve($inuit-base-spacing-unit);
       padding-right: halve($inuit-base-spacing-unit);
     }
   }
+}
 
-  a {
-    text-decoration: none;
+.#{$grommet-namespace}tab__label {
+  display: inline-block;
+  cursor: pointer;
+  padding-bottom: quarter($inuit-base-spacing-unit) + $active-border-width;
+  color: $secondary-text-color;
+  border-bottom: $active-border-width solid transparent;
+}
 
-    &:hover,
-    &:visited,
-    &:link,
-    &:active {
-      text-decoration: none;
-    }
-
-    &:focus {
-      .tab__label {
-        border-bottom: 4px solid;
-      }
-    }
+.#{$grommet-namespace}tab--active {
+  .#{$grommet-namespace}tab__label {
+    color: $hover-text-color;
+    border-color: $hover-text-color;
   }
+}
 
-  &__label {
-    cursor: pointer;
-    padding-bottom: halve($inuit-base-spacing-unit);
-    color: $secondary-text-color;
-  }
-
-  &--active {
-    .tab__label {
-      color: #000;
-      border-bottom: 4px solid #000;
-      font-weight: 600;
-    }
-  }
-
-  &:hover,
-  &:focus {
-    .tab__label {
-      border-bottom: 4px solid;
-    }
+.#{$grommet-namespace}tab:hover:not(.#{$grommet-namespace}tab--active) {
+  .#{$grommet-namespace}tab__label {
+    border-color: $border-color;
   }
 }

@@ -1,17 +1,16 @@
-var gulpWebpack = require('webpack-stream');
-var sass = require('gulp-sass');
-var rename = require('gulp-rename');
-var minifyCss = require('gulp-cssnano');
-var file = require('gulp-file');
-var gulpif = require('gulp-if');
-var merge = require('lodash/object/merge');
-var webpack = require('webpack');
-var path = require('path');
-var fs = require('fs');
-var del = require('del');
-var runSequence = require('run-sequence');
+import gulpWebpack from 'webpack-stream';
+import sass from 'gulp-sass';
+import rename from 'gulp-rename';
+import minifyCss from 'gulp-cssnano';
+import file from 'gulp-file';
+import gulpif from 'gulp-if';
+import webpack from 'webpack';
+import path from 'path';
+import fs from 'fs';
+import del from 'del';
+import runSequence from 'run-sequence';
 
-var gulpUtils = require('./gulpfile-utils');
+import {getPackageJSON} from './grommet-toolbox.config';
 
 var bowerWebpackConfig = {
   output: {
@@ -61,7 +60,7 @@ var bowerWebpackConfig = {
   ]
 };
 
-var bowerMinWebpackConfig = merge({}, bowerWebpackConfig, {
+var bowerMinWebpackConfig = Object.assign({}, bowerWebpackConfig, {
   output: {
     filename: 'grommet.min.js',
     libraryTarget: 'var',
@@ -77,10 +76,10 @@ var bowerMinWebpackConfig = merge({}, bowerWebpackConfig, {
   ]
 });
 
-module.exports = function(gulp, opts) {
+module.exports = function(gulp) {
 
-  gulp.task('generate-index-icons', ['generate-icons'], function (done) {
-    var iconsFolder = path.join(__dirname, 'src/img/icons');
+  gulp.task('generate-index-icons', function (done) {
+    var iconsFolder = path.join(__dirname, './src/img/icons');
     var iconsMap = ['module.exports = {'];
     fs.readdir(iconsFolder, function(err, icons) {
       icons.forEach(function (icon, index) {
@@ -100,7 +99,7 @@ module.exports = function(gulp, opts) {
           if (index === icons.length - 1) {
             iconsMap.push('};\n');
 
-            var destinationFile = path.join(__dirname, 'src/js/index-icons.js');
+            var destinationFile = path.join(__dirname, './src/js/index-icons.js');
             fs.writeFile(destinationFile, iconsMap.join(''), function(err) {
               if (err) {
                 throw err;
@@ -116,7 +115,7 @@ module.exports = function(gulp, opts) {
     });
   });
 
-  gulp.task('dist-css', function() {
+  gulp.task('dist-css', () => {
     gulp.src('src/scss/hpinc/*.scss')
       .pipe(sass({
         includePaths: [path.resolve(__dirname, './node_modules')]
@@ -141,7 +140,7 @@ module.exports = function(gulp, opts) {
       .pipe(minifyCss())
       .pipe(gulp.dest('dist/'));
 
-    return gulp.src('src/scss/grommet-core/*.scss')
+    return gulp.src('src/scss/vanilla/*.scss')
       .pipe(sass({
         includePaths: [path.resolve(__dirname, './node_modules')]
       }))
@@ -151,7 +150,7 @@ module.exports = function(gulp, opts) {
   });
 
   function distCss(path, name, minify) {
-    gulp.src(path)
+    return gulp.src(path)
       .pipe(sass({
         includePaths: ['node_modules']
       }))
@@ -160,26 +159,22 @@ module.exports = function(gulp, opts) {
       .pipe(gulp.dest('dist-bower/css'));
   }
 
-  function distBower(config) {
-    return gulp.src(opts.mainJs)
+  function distBower(config, done) {
+    return gulp.src('src/js/index.js')
       .pipe(gulpWebpack(config))
-      .pipe(gulp.dest('dist-bower'));
+      .pipe(gulp.dest('dist-bower')).on('end', done);
   }
 
-  gulp.task('dist-bower:exploded', function() {
-    distBower(bowerWebpackConfig);
+  gulp.task('dist-bower:exploded', function(done) {
+    distBower(bowerWebpackConfig, done);
   });
 
-  gulp.task('dist-bower:minified', function() {
-    distBower(bowerMinWebpackConfig);
+  gulp.task('dist-bower:minified', function(done) {
+    distBower(bowerMinWebpackConfig, done);
   });
 
-  gulp.task('dist-bower:preprocess', ['generate-index-icons'], function(done) {
+  gulp.task('dist-bower:preprocess', ['generate-index-icons'], (done) => {
     del.sync(['dist-bower']);
-    runSequence(['dist-bower:exploded', 'dist-bower:minified'], done);
-  });
-
-  gulp.task('dist-bower', ['dist-bower:preprocess'], function() {
 
     distCss('src/scss/grommet-core/*.scss', 'grommet.css');
     distCss('src/scss/grommet-core/*.scss', 'grommet.min.css', true);
@@ -190,9 +185,14 @@ module.exports = function(gulp, opts) {
     distCss('src/scss/aruba/*.scss', 'grommet-aruba.css');
     distCss('src/scss/aruba/*.scss', 'grommet-aruba.min.css', true);
 
-    var bowerJSON = gulpUtils.getPackageJSON();
+    runSequence(['dist-bower:exploded', 'dist-bower:minified'], done);
+  });
+
+  gulp.task('dist-bower', ['dist-bower:preprocess'], () => {
+
+    var bowerJSON = getPackageJSON();
     bowerJSON.dependencies = {
-      'react': '^0.14.2',
+      'react': '^15.0.2',
       'grommet': '^' + bowerJSON.version
     };
     bowerJSON.ignore = [];

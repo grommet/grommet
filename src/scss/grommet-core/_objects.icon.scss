@@ -1,27 +1,44 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-.control-icon {
+$social-twitter-color: #1DA1F2;
+$social-facebook-color: #3B5998;
+$social-linkedin-color: #0077B5;
+
+.#{$grommet-namespace}control-icon {
   display: inline-block;
   width: $inuit-base-spacing-unit;
   height: $inuit-base-spacing-unit;
-  vertical-align: middle;
-  cursor: pointer;
+  // vertical-align: middle;
   fill: $icon-color;
   stroke: $icon-color;
   flex: 0 0 auto;
 
-  *:not([stroke]) {
-    &[fill="none"] {
-      stroke-width: 0;
+  g {
+    fill: inherit;
+  }
+
+  &:not([class*="color-index-plain"]) {
+    *:not([stroke]) {
+      &[fill="none"] {
+        stroke-width: 0;
+      }
+    }
+
+    *[stroke*="#"] {
+      stroke: inherit;
+    }
+
+    *[fill*="#"] {
+      fill: inherit;
     }
   }
 
-  *[stroke] {
-    stroke: inherit;
+  #{$dark-background-context} {
+    @include icon-color($colored-icon-color);
   }
 
-  *[fill*="#"] {
-    fill: inherit;
+  #{$light-background-context} {
+    @include icon-color($icon-color);
   }
 
   @include graph-stroke-color();
@@ -30,122 +47,107 @@
   @include media-query(lap-and-up) {
     transition: all $base-animation-duration ease-in-out;
   }
+}
 
-  a:hover &,
-  .anchor:hover &,
-  .button:hover &,
-  .menu__control:hover & {
-    fill: $active-icon-color;
-    stroke: $active-icon-color;
+.#{$grommet-namespace}control-icon__badge {
+  circle {
+    fill: $icon-badge-background-color;
   }
 
-  .anchor.anchor--disabled:hover & {
-    fill: $icon-color;
-    stroke: $icon-color;
-  }
-
-  .button.button--disabled:hover & {
-    fill: $icon-color;
-    stroke: $icon-color;
-  }
-
-  &__badge {
-    circle {
-      fill: $icon-badge-background-color;
-    }
-
-    text {
-      stroke: $icon-badge-text-color;
-      fill: $icon-badge-text-color;
-    }
-  }
-
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) &:not([class*="color-index"]),
-  .button--primary & {
-    fill: $colored-icon-color;
-    stroke: $colored-icon-color;
-  }
-
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) a:hover > &,
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .anchor:hover > &,
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .button:hover > &,
-  [class*="background-color-index-"]:not([class*="background-color-index-light"]) .menu__control:hover > &,
-  .button--primary:hover & {
-    fill: $active-colored-icon-color;
-    stroke: $active-colored-icon-color;
-  }
-
-  &--active {
-    fill: $active-icon-color;
-    stroke: $active-icon-color;
-  }
-
-  &--large {
-    width: double($inuit-base-spacing-unit);
-    height: double($inuit-base-spacing-unit);
-  }
-
-  &--huge {
-    width: $inuit-base-spacing-unit * 12;
-    height: $inuit-base-spacing-unit * 12;
+  text {
+    stroke: $icon-badge-text-color;
+    fill: $icon-badge-text-color;
   }
 }
 
-.status-icon {
+.#{$grommet-namespace}control-icon--active {
+  fill: $active-icon-color;
+  stroke: $active-icon-color;
+}
+
+.#{$grommet-namespace}control-icon--large {
+  width: round($inuit-base-spacing-unit * 2);
+  height: round($inuit-base-spacing-unit * 2);
+}
+
+.#{$grommet-namespace}control-icon--xlarge {
+  width: round($inuit-base-spacing-unit * 6);
+  height: round($inuit-base-spacing-unit * 6);
+}
+
+.#{$grommet-namespace}control-icon--huge {
+  width: round($inuit-base-spacing-unit * 12);
+  height: round($inuit-base-spacing-unit * 12);
+}
+
+.#{$grommet-namespace}control-icon--xlarge.#{$grommet-namespace}control-icon--responsive,
+.#{$grommet-namespace}control-icon--huge.#{$grommet-namespace}control-icon--responsive {
+  @include media-query(palm) {
+    width: round($inuit-base-spacing-unit * 2);
+    height: round($inuit-base-spacing-unit * 2);
+  }
+}
+
+.#{$grommet-namespace}status-icon {
   width: $inuit-base-spacing-unit;
   height: $inuit-base-spacing-unit;
   vertical-align: middle;
   flex: 0 0 auto;
 
-  .status-icon__base {
+  .#{$grommet-namespace}status-icon__base {
     fill: map-get($brand-status-colors, unknown);
   }
+}
 
-  @each $status, $color in $brand-status-colors {
-    &-#{$status} {
-      .status-icon__base {
-        fill: $color;
-      }
-    }
+.#{$grommet-namespace}status-icon-label {
+  .#{$grommet-namespace}status-icon__base {
+    fill: map-get($brand-status-colors, unknown);
   }
+}
 
-  &-label {
-    .status-icon__base {
-      fill: map-get($brand-status-colors, unknown);
-    }
+.#{$grommet-namespace}status-icon__detail {
+  fill: $background-color;
+  stroke: $background-color;
+}
+
+.#{$grommet-namespace}status-icon-unknown {
+  .#{$grommet-namespace}status-icon__detail {
+    fill: map-get($brand-status-colors, unknown);
+    stroke: map-get($brand-status-colors, unknown);
   }
+}
 
-  &__detail {
-    fill: $background-color;
-    stroke: $background-color;
+.#{$grommet-namespace}status-icon--large {
+  width: double($inuit-base-spacing-unit);
+  height: double($inuit-base-spacing-unit);
+}
+
+.#{$grommet-namespace}status-icon--xlarge {
+  width: round($inuit-base-spacing-unit * 6);
+  height: round($inuit-base-spacing-unit * 6);
+}
+
+.#{$grommet-namespace}status-icon--huge {
+  width: round($inuit-base-spacing-unit * 12);
+  height: round($inuit-base-spacing-unit * 12);
+}
+
+.#{$grommet-namespace}status-icon--small {
+  width: halve($inuit-base-spacing-unit);
+  height: halve($inuit-base-spacing-unit);
+  // adjust margin so it aligns with text better
+  margin-top: quarter($inuit-base-spacing-unit);
+  margin-bottom: quarter($inuit-base-spacing-unit);
+
+  .#{$grommet-namespace}status-icon__detail {
+    display: none;
   }
+}
 
-  &-unknown {
-    .status-icon__detail {
-      fill: map-get($brand-status-colors, unknown);
-      stroke: map-get($brand-status-colors, unknown);
-    }
-  }
-
-  &--large {
-    width: double($inuit-base-spacing-unit);
-    height: double($inuit-base-spacing-unit);
-  }
-
-  &--huge {
-    width: $inuit-base-spacing-unit * 12;
-    height: $inuit-base-spacing-unit * 12;
-  }
-
-  &--small {
-    width: halve($inuit-base-spacing-unit);
-    height: halve($inuit-base-spacing-unit);
-    // adjust margin so it aligns with text better
-    margin-top: quarter($inuit-base-spacing-unit);
-    margin-bottom: quarter($inuit-base-spacing-unit);
-
-    .status-icon__detail {
-      display: none;
+@each $status, $color in $brand-status-colors {
+  .#{$grommet-namespace}status-icon-#{$status} {
+    .#{$grommet-namespace}status-icon__base {
+      fill: $color;
     }
   }
 }
@@ -154,48 +156,63 @@
   100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
 
-.icon-changing {
-  width: $inuit-base-spacing-unit;
-  height: $inuit-base-spacing-unit;
-  @include animation('rotate 1.5s linear infinite');
-
-  &--small {
-    width: halve($inuit-base-spacing-unit);
-    height: halve($inuit-base-spacing-unit);
-  }
-}
-
-.icon-spinning {
+.#{$grommet-namespace}icon-spinning {
   width: $inuit-base-spacing-unit;
   height: $inuit-base-spacing-unit;
   @include animation('rotate 4s steps(4, end) infinite');
+}
 
-  &--small {
-    width: halve($inuit-base-spacing-unit);
-    height: halve($inuit-base-spacing-unit);
+.#{$grommet-namespace}icon-spinning--small {
+  width: halve($inuit-base-spacing-unit);
+  height: halve($inuit-base-spacing-unit);
+}
+
+$logo-size: double($inuit-base-spacing-unit);
+$logo-dash-size: round($logo-size * 16);
+
+@include keyframes(draw-logo) {
+  0% {
+    stroke-dashoffset: $logo-dash-size;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
   }
 }
 
-.logo-icon {
-  width: double($inuit-base-spacing-unit);
-  height: double($inuit-base-spacing-unit);
+.#{$grommet-namespace}logo-icon {
+  width: $logo-size;
+  height: $logo-size;
 
   @include graph-stroke-color();
 
-  &--small {
-    width: $inuit-base-spacing-unit;
-    height: $inuit-base-spacing-unit;
+  @include media-query(lap-and-up) {
+    path {
+      stroke-dasharray: $logo-dash-size $logo-dash-size;
+      stroke-dashoffset: 0;
+      @include animation('draw-logo 2.5s linear');
+    }
   }
+}
 
-  &--large {
-    width: quadruple($inuit-base-spacing-unit);
-    height: quadruple($inuit-base-spacing-unit);
-  }
+.#{$grommet-namespace}logo-icon--small {
+  width: halve($logo-size);
+  height: halve($logo-size);
+}
 
-  &--huge {
-    width: $inuit-base-spacing-unit * 12;
-    height: $inuit-base-spacing-unit * 12;
-  }
+.#{$grommet-namespace}logo-icon--large {
+  width: double($logo-size);
+  height: double($logo-size);
+}
+
+.#{$grommet-namespace}logo-icon--xlarge {
+  width: quadruple($logo-size);
+  height: quadruple($logo-size);
+}
+
+.#{$grommet-namespace}logo-icon--huge {
+  width: round($logo-size * 8);
+  height: round($logo-size * 8);
 }
 
 .right-left-icon {

@@ -17,8 +17,8 @@ function getLabel(label, count, colorIndex) {
 
 export default class TodoAppDashboard extends Component {
 
-  constructor () {
-    super();
+  constructor(props, context) {
+    super(props, context);
     this.state = {
       tasks: [
         {

@@ -1,35 +1,38 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = 'paragraph';
+const CLASS_ROOT = CSSClassnames.PARAGRAPH;
 
-const Paragraph = props => {
-  var classes = classnames(
-    CLASS_ROOT,
-    props.className,
-    {
-      [`${CLASS_ROOT}--${props.size}`]: props.size,
-      [`${CLASS_ROOT}--align-${props.align}`]: props.align,
-      [`${CLASS_ROOT}--margin-${props.margin}`]: props.margin
-    }
-  );
+export default class Paragraph extends Component {
+  render () {
+    const {
+      align, children, className, margin, size, width, ...props
+    } = this.props;
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--${size}`]: size,
+        [`${CLASS_ROOT}--align-${align}`]: align,
+        [`${CLASS_ROOT}--margin-${margin}`]: margin,
+        [`${CLASS_ROOT}--width-${width}`]: width
+      },
+      className
+    );
 
-  return (
-    <p id={props.id} className={classes}>
-      {props.children}
-    </p>
-  );
+    return (
+      <p {...props} className={classes}>
+        {children}
+      </p>
+    );
+  }
 };
 
 Paragraph.propTypes = {
   align: PropTypes.oneOf(['start', 'center', 'end']),
-  id: PropTypes.string,
   margin: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-  size: PropTypes.oneOf(['small', 'medium', 'large'])
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+  width: PropTypes.oneOf(['small', 'medium', 'large'])
 };
-
-Paragraph.displayName = 'Paragraph';
-
-export default Paragraph;

@@ -1,0 +1,49 @@
+exports[`Animate renders correctly with keep set to true 1`] = `
+<div
+  className="animate fade--enter"
+  style={
+    Object {
+      "transitionDelay": "undefinedms",
+      "transitionDuration": "1000ms",
+    }
+  }>
+  <p
+    className="grommetux-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  </p>
+</div>
+`;
+
+exports[`Animate renders correctly with visibility set to true 1`] = `
+<div
+  className={undefined}
+  style={Object {}}
+  visibility={true}>
+  <p
+    className="grommetux-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  </p>
+</div>
+`;
+
+exports[`Animate renders with a component set as a span 1`] = `
+<span
+  className={undefined}
+  style={Object {}}>
+  <p
+    className="grommetux-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  </p>
+</span>
+`;
+
+exports[`Animate renders with the correct default options 1`] = `
+<div
+  className={undefined}
+  style={Object {}}>
+  <p
+    className="grommetux-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  </p>
+</div>
+`;

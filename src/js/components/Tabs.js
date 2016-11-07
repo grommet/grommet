@@ -1,43 +1,61 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 import Intl from '../utils/Intl';
-import Box from './Box';
+import CSSClassnames from '../utils/CSSClassnames';
 
-const CLASS_ROOT = "tabs";
+const CLASS_ROOT = CSSClassnames.TABS;
 
 export default class Tabs extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
     this._activateTab = this._activateTab.bind(this);
 
     this.state = {
-      activeIndex: props.initialIndex,
+      activeIndex: props.activeIndex,
       justify: props.justify
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if ((nextProps.activeIndex || 0 === nextProps.activeIndex) &&
+      this.state.activeIndex !== nextProps.activeIndex) {
+      this.setState({activeIndex: nextProps.activeIndex});
+    }
+  }
+
   _activateTab (index) {
-    this.setState({activeIndex: index});
+    this.setState({ activeIndex: index });
+    if (this.props.onActive) {
+      this.props.onActive(index);
+    }
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    classes.push(CLASS_ROOT + '--justify-' + this.props.justify);
-    if (this.props.responsive) {
-      classes.push(CLASS_ROOT + '--responsive');
-    }
+    const { children, className, justify, responsive, ...props } = this.props;
+    delete props.activeIndex;
+    delete props.onActive;
+    const { activeIndex } = this.state;
+    const { intl } = this.context;
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--justify-${justify}`]: justify,
+        [`${CLASS_ROOT}--responsive`]: responsive
+      },
+      className
+    );
 
-    var activeContainer;
-    var activeTitle;
+    let activeContainer;
+    let activeTitle;
+    const tabs = React.Children.map(children, (tab, index) => {
 
-    var tabs = React.Children.map(this.props.children, function(tab, index) {
+      const tabProps = tab.props || tab._store.props || {};
 
-      var tabProps = tab.props || tab._store.props || {};
-
-      var isTabActive = index === this.state.activeIndex;
+      const isTabActive = index === activeIndex;
 
       if (isTabActive) {
         activeContainer = tabProps.children;
@@ -46,30 +64,24 @@ export default class Tabs extends Component {
 
       return React.cloneElement(tab, {
         active: isTabActive,
-        id: 'tab-' + index,
-        onRequestForActive: function () {
+        id: `tab-${index}`,
+        onRequestForActive: () => {
           this._activateTab(index);
-        }.bind(this)
+        }
       });
-    }.bind(this));
+    }, this);
 
-    var tabContentTitle = Intl.getMessage(this.context.intl, 'Tab Contents', {
+    const tabContentTitle = Intl.getMessage(intl, 'Tab Contents', {
       activeTitle: activeTitle
     });
 
-    // TODO: Since there could be multiple Tabs on the page, we need a more
-    // robust means of identifying the association between title and aria label.
     return (
-      <div role="tablist">
-        <ul className={classes.join(' ')}>
+      <div role='tablist'>
+        <ul {...props} className={classes}>
           {tabs}
         </ul>
-        <div ref="tabContent" tabIndex="0" aria-label={tabContentTitle}
-          role="tabpanel">
-          <Box className={CLASS_ROOT + '__content'}
-            aria-label={tabContentTitle}>
-            {activeContainer}
-          </Box>
+        <div aria-label={tabContentTitle} role='tabpanel'>
+          {activeContainer}
         </div>
       </div>
     );
@@ -79,7 +91,8 @@ export default class Tabs extends Component {
 Tabs.propTypes = {
   activeIndex: PropTypes.number,
   justify: PropTypes.oneOf(['start', 'center', 'end']),
-  responsive: PropTypes.bool
+  responsive: PropTypes.bool,
+  onActive: PropTypes.func
 };
 
 Tabs.contextTypes = {
@@ -87,7 +100,7 @@ Tabs.contextTypes = {
 };
 
 Tabs.defaultProps = {
-  initialIndex: 0,
+  activeIndex: 0,
   justify: 'center',
   responsive: true
 };
