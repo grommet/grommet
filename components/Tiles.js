@@ -4,10 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
 var _keys = require('babel-runtime/core-js/object/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
@@ -19,6 +15,10 @@ var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 var _from = require('babel-runtime/core-js/array/from');
 
 var _from2 = _interopRequireDefault(_from);
+
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
 
 var _typeof2 = require('babel-runtime/helpers/typeof');
 
@@ -399,16 +399,31 @@ var Tiles = function (_Component) {
 
       var direction = this.props.direction;
 
+
       if ('row' === direction) {
         (function () {
           // determine if we have more tiles than room to fit
           var tiles = (0, _reactDom.findDOMNode)(_this4.tilesRef);
+
           // 20 is to allow some fuzziness as scrollbars come and go
-          _this4.setState({
+          var newState = {
             overflow: tiles.scrollWidth > tiles.offsetWidth + 20,
             overflowStart: tiles.scrollLeft <= 20,
-            overflowEnd: tiles.scrollLeft >= tiles.scrollWidth - tiles.offsetWidth
-          });
+            overflowEnd: tiles.scrollLeft >= tiles.scrollWidth - tiles.offsetWidth,
+            scrollWidth: tiles.scrollWidth
+          };
+
+          var state = {
+            overflow: _this4.state.overflow,
+            overflowStart: _this4.state.overflowStart,
+            overflowEnd: _this4.state.overflowEnd,
+            scrollWidth: _this4.state.scrollWidth
+          };
+
+          // Shallow compare states.
+          if ((0, _stringify2.default)(newState) !== (0, _stringify2.default)(state)) {
+            _this4.setState((0, _extends3.default)({}, newState));
+          }
 
           // mark any tiles that might be clipped
           var rect = tiles.getBoundingClientRect();
