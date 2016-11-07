@@ -287,7 +287,8 @@ export default class DateTime extends Component {
       <div ref={(ref) => this.containerRef = ref} className={classes}>
         <input ref={(ref) => this.inputRef = ref} {...props}
           className={`${INPUT} ${CLASS_ROOT}__input`} placeholder={format}
-          value={inputValue || ''} onChange={this._onInputChange} disabled={disabled} />
+          value={inputValue || ''} onChange={this._onInputChange}
+          disabled={disabled} />
         <Button className={`${CLASS_ROOT}__control`} icon={<Icon />}
           a11yTitle={dateTimeIconMessage}
           onClick={this._onControlClick} disabled={disabled} />
