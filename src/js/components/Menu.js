@@ -219,6 +219,7 @@ export default class Menu extends Component {
 
     this._onOpen = this._onOpen.bind(this);
     this._onClose = this._onClose.bind(this);
+    this._checkOnClose = this._checkOnClose.bind(this);
     this._onSink = this._onSink.bind(this);
     this._onResponsive = this._onResponsive.bind(this);
     this._onFocusControl = this._onFocusControl.bind(this);
@@ -280,7 +281,8 @@ export default class Menu extends Component {
           KeyboardAccelerators.stopListeningToKeyboard(
             this, activeKeyboardHandlers
           );
-          document.removeEventListener('click', this._onClose);
+          document.removeEventListener('click', this._checkOnClose);
+          document.removeEventListener('touchstart', this._checkOnClose);
           if (this._drop) {
             this._drop.remove();
             this._drop = undefined;
@@ -301,8 +303,8 @@ export default class Menu extends Component {
           KeyboardAccelerators.startListeningToKeyboard(
             this, activeKeyboardHandlers
           );
-          document.addEventListener('click', this._onClose);
-          document.addEventListener('touchstart', this._onClose);
+          document.addEventListener('click', this._checkOnClose);
+          document.addEventListener('touchstart', this._checkOnClose);
           this._drop = Drop.add(this.controlRef,
             this._renderMenuDrop(),
             {
@@ -318,8 +320,8 @@ export default class Menu extends Component {
   }
 
   componentWillUnmount () {
-    document.removeEventListener('click', this._onClose);
-    document.removeEventListener('touchstart', this._onClose);
+    document.removeEventListener('click', this._checkOnClose);
+    document.removeEventListener('touchstart', this._checkOnClose);
     KeyboardAccelerators.stopListeningToKeyboard(this);
     if (this._drop) {
       this._drop.remove();
@@ -335,6 +337,13 @@ export default class Menu extends Component {
 
   _onClose () {
     this.setState({state: 'collapsed'});
+  }
+
+  _checkOnClose (event) {
+    const drop = ReactDOM.findDOMNode(this._menuDrop);
+    if (drop && !drop.contains(event.target)) {
+      this._onClose();
+    }
   }
 
   _onSink (event) {
@@ -412,7 +421,7 @@ export default class Menu extends Component {
         dropAlign={this.props.dropAlign}
         size={this.props.size}
         onClick={onClick}
-        control={control}>
+        control={control} ref={(ref) => this._menuDrop = ref}>
         {this.props.children}
       </MenuDrop>
     );
