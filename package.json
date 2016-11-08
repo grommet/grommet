@@ -1,7 +1,7 @@
 {
   "name": "grommet",
   "version": "1.0.1",
-  "main": "src/js/index.js",
+  "main": "index.js",
   "description": "The most advanced UX framework for enterprise applications.",
   "authors": [
     "Alan Souza",
@@ -19,9 +19,6 @@
   "engine-strict": true,
   "engines": {
     "node": ">= 4.4.0"
-  },
-  "scripts": {
-    "test": "gulp test:coverage"
   },
   "dependencies": {
     "classnames": "^2.2.3",
