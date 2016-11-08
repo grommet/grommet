@@ -1,0 +1,4 @@
+exports[`Collapsible has correct default options 1`] = `
+<span
+  className="grommetux-collapsible__wrapper" />
+`;
