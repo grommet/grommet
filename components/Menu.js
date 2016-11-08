@@ -326,6 +326,7 @@ var Menu = function (_Component2) {
 
     _this3._onOpen = _this3._onOpen.bind(_this3);
     _this3._onClose = _this3._onClose.bind(_this3);
+    _this3._checkOnClose = _this3._checkOnClose.bind(_this3);
     _this3._onSink = _this3._onSink.bind(_this3);
     _this3._onResponsive = _this3._onResponsive.bind(_this3);
     _this3._onFocusControl = _this3._onFocusControl.bind(_this3);
@@ -386,7 +387,8 @@ var Menu = function (_Component2) {
           case 'collapsed':
             _KeyboardAccelerators2.default.stopListeningToKeyboard(this, focusedKeyboardHandlers);
             _KeyboardAccelerators2.default.stopListeningToKeyboard(this, activeKeyboardHandlers);
-            document.removeEventListener('click', this._onClose);
+            document.removeEventListener('click', this._checkOnClose);
+            document.removeEventListener('touchstart', this._checkOnClose);
             if (this._drop) {
               this._drop.remove();
               this._drop = undefined;
@@ -399,8 +401,8 @@ var Menu = function (_Component2) {
           case 'expanded':
             _KeyboardAccelerators2.default.stopListeningToKeyboard(this, focusedKeyboardHandlers);
             _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
-            document.addEventListener('click', this._onClose);
-            document.addEventListener('touchstart', this._onClose);
+            document.addEventListener('click', this._checkOnClose);
+            document.addEventListener('touchstart', this._checkOnClose);
             this._drop = _Drop2.default.add(this.controlRef, this._renderMenuDrop(), {
               align: this.props.dropAlign,
               colorIndex: this.props.dropColorIndex,
@@ -415,8 +417,8 @@ var Menu = function (_Component2) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      document.removeEventListener('click', this._onClose);
-      document.removeEventListener('touchstart', this._onClose);
+      document.removeEventListener('click', this._checkOnClose);
+      document.removeEventListener('touchstart', this._checkOnClose);
       _KeyboardAccelerators2.default.stopListeningToKeyboard(this);
       if (this._drop) {
         this._drop.remove();
@@ -434,6 +436,14 @@ var Menu = function (_Component2) {
     key: '_onClose',
     value: function _onClose() {
       this.setState({ state: 'collapsed' });
+    }
+  }, {
+    key: '_checkOnClose',
+    value: function _checkOnClose(event) {
+      var drop = _reactDom2.default.findDOMNode(this._menuDrop);
+      if (drop && !drop.contains(event.target)) {
+        this._onClose();
+      }
     }
   }, {
     key: '_onSink',
@@ -500,6 +510,8 @@ var Menu = function (_Component2) {
   }, {
     key: '_renderMenuDrop',
     value: function _renderMenuDrop() {
+      var _this4 = this;
+
       var closeLabel = _Intl2.default.getMessage(this.context.intl, 'Close');
       var menuLabel = _Intl2.default.getMessage(this.context.intl, 'Menu');
       var menuTitle = closeLabel + ' ' + (this.props.a11yTitle || this.props.label || '') + ' ' + ('' + menuLabel);
@@ -517,7 +529,9 @@ var Menu = function (_Component2) {
           dropAlign: this.props.dropAlign,
           size: this.props.size,
           onClick: onClick,
-          control: control }),
+          control: control, ref: function ref(_ref3) {
+            return _this4._menuDrop = _ref3;
+          } }),
         this.props.children
       );
     }
@@ -525,7 +539,7 @@ var Menu = function (_Component2) {
     key: 'render',
     value: function render() {
       var _classnames2,
-          _this4 = this;
+          _this5 = this;
 
       var _props3 = this.props;
       var a11yTitle = _props3.a11yTitle;
@@ -572,8 +586,8 @@ var Menu = function (_Component2) {
 
         return _react2.default.createElement(
           'div',
-          { ref: function ref(_ref3) {
-              return _this4.controlRef = _ref3;
+          { ref: function ref(_ref4) {
+              return _this5.controlRef = _ref4;
             } },
           _react2.default.createElement(_Button2.default, (0, _extends3.default)({}, props, { className: classes, plain: true, reverse: true,
             a11yTitle: menuTitle }, this._renderButtonProps(), {
