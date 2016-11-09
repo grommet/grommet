@@ -4,6 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../../../utils/CSSClassnames';
 import Intl from '../../../utils/Intl';
+import Props from '../../../utils/Props';
 
 const CLASS_ROOT = CSSClassnames.CONTROL_ICON;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
@@ -27,7 +28,8 @@ export default class Icon extends Component {
 
     a11yTitle = a11yTitle || Intl.getMessage(intl, 'brand-hpe-labs-insignia');
 
-    return <svg version="1.1" viewBox="0 0 34 48" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><polyline fill="none" stroke="#01A982" strokeWidth="4" points="20 46 2 46 2 2 26 2 26 30 18 30 18 10 10 10 10 38 34 38"/></svg>;
+    const restProps = Props.omit(this.props, Object.keys(Icon.propTypes));
+    return <svg {...restProps} version="1.1" viewBox="0 0 34 48" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><polyline fill="none" stroke="#01A982" strokeWidth="4" points="20 46 2 46 2 2 26 2 26 30 18 30 18 10 10 10 10 38 34 38"/></svg>;
   }
 };
 
