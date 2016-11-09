@@ -44,6 +44,10 @@
     &.plain {
       border: none;
     }
+
+    &:focus {
+      padding-right: double($inuit-base-spacing-unit);
+    }
   }
 
   input[type=range] {
