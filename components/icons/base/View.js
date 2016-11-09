@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
@@ -44,11 +52,14 @@ var _Intl = require('../../../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
 
+var _Props = require('../../../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.CONTROL_ICON; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.CONTROL_ICON;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Icon = function (_Component) {
@@ -78,9 +89,10 @@ var Icon = function (_Component) {
 
       a11yTitle = a11yTitle || _Intl2.default.getMessage(intl, 'view');
 
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Icon.propTypes));
       return _react2.default.createElement(
         'svg',
-        { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
+        (0, _extends3.default)({}, restProps, { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle }),
         _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M12,21 C7,21 1,16 1,12 C1,8 7,3 12,3 C17,3 23,8 23,12 C23,16 17,21 12,21 Z M12,7 C9.23875,7 7,9.23875 7,12 C7,14.76125 9.23875,17 12,17 C14.76125,17 17,14.76125 17,12 C17,9.23875 14.76125,7 12,7 L12,7 Z' })
       );
     }

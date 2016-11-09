@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
@@ -44,11 +52,14 @@ var _Intl = require('../../../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
 
+var _Props = require('../../../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.CONTROL_ICON; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.CONTROL_ICON;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Icon = function (_Component) {
@@ -78,9 +89,10 @@ var Icon = function (_Component) {
 
       a11yTitle = a11yTitle || _Intl2.default.getMessage(intl, 'standards-3d-effects');
 
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Icon.propTypes));
       return _react2.default.createElement(
         'svg',
-        { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
+        (0, _extends3.default)({}, restProps, { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle }),
         _react2.default.createElement('polygon', { fill: '#231F20', fillRule: 'evenodd', points: '13.009 1 6.844 2.988 20.203 7.315 20.203 15.838 11.301 18.715 3.787 16.287 3.787 7.934 11.051 10.282 17.216 8.294 3.837 3.958 0 5.206 0 19.045 11.301 22.702 24 18.595 24 4.547', stroke: 'none' })
       );
     }

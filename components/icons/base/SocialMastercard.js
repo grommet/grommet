@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
@@ -44,11 +52,14 @@ var _Intl = require('../../../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
 
+var _Props = require('../../../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.CONTROL_ICON; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.CONTROL_ICON;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Icon = function (_Component) {
@@ -78,9 +89,10 @@ var Icon = function (_Component) {
 
       a11yTitle = a11yTitle || _Intl2.default.getMessage(intl, 'social-mastercard');
 
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Icon.propTypes));
       return _react2.default.createElement(
         'svg',
-        { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
+        (0, _extends3.default)({}, restProps, { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle }),
         _react2.default.createElement('path', { fill: '#000000', fillRule: 'evenodd', d: 'M9.17131814,12.4194933 C9.17131814,10.0493774 10.2842421,7.94718763 11.9948475,6.58694718 C10.7376556,5.59768141 9.15070843,5 7.41949332,5 C3.31816229,5 0,8.31816229 0,12.4194933 C0,16.5208244 3.31816229,19.8389866 7.41949332,19.8389866 C9.15070843,19.8389866 10.7376556,19.2413052 11.9948475,18.2520395 C10.2842421,16.9124087 9.17131814,14.7896092 9.17131814,12.4194933 L9.17131814,12.4194933 Z M24,12.4194933 C24,16.5208244 20.6818377,19.8389866 16.5805067,19.8389866 C14.8492916,19.8389866 13.2623444,19.2413052 12.0051525,18.2520395 C13.7363676,16.891799 14.8286819,14.7896092 14.8286819,12.4194933 C14.8286819,10.0493774 13.7157579,7.94718763 12.0051525,6.58694718 C13.2623444,5.59768141 14.8492916,5 16.5805067,5 C20.6818377,5 24,8.338772 24,12.4194933 L24,12.4194933 Z', stroke: 'none' })
       );
     }

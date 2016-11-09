@@ -4,6 +4,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
+var _keys = require('babel-runtime/core-js/object/keys');
+
+var _keys2 = _interopRequireDefault(_keys);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
@@ -44,11 +52,14 @@ var _Intl = require('../../../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
 
+var _Props = require('../../../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.CONTROL_ICON; // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.CONTROL_ICON;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Icon = function (_Component) {
@@ -78,9 +89,10 @@ var Icon = function (_Component) {
 
       a11yTitle = a11yTitle || _Intl2.default.getMessage(intl, 'platform-google');
 
+      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Icon.propTypes));
       return _react2.default.createElement(
         'svg',
-        { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle },
+        (0, _extends3.default)({}, restProps, { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle }),
         _react2.default.createElement('path', { fill: '#000000', fillRule: 'evenodd', d: 'M0.0320526775,11.3995579 C0.135923164,5.21758766 5.84921048,-0.196179793 12.0637858,0.0100628571 C15.0415433,-0.127568377 17.8407092,1.16134608 20.1213438,2.97178899 C19.1479172,4.07202205 18.140004,5.13182339 17.0631175,6.12301332 C14.3214293,4.23824138 10.4223858,3.69956008 7.68069759,5.87674734 C3.75866298,8.57505464 3.58007143,14.9461147 7.35266392,17.8506647 C11.0213859,21.1623907 17.9556646,19.5181671 18.9693256,14.4474567 C16.6714477,14.413151 14.3674115,14.4474567 12.0695336,14.3731277 C12.0637858,13.0094758 12.058038,11.6458239 12.0637858,10.2825804 C15.9053516,10.2711452 19.7469173,10.2650192 23.5942309,10.2940157 C23.8245524,13.5024162 23.398396,16.9170593 21.4170562,19.5696257 C18.4163077,23.7692161 12.39223,24.9952368 7.69219314,23.1962291 C2.9753235,21.4086567 -0.365364836,16.4527071 0.0320526775,11.3995579', stroke: 'none' })
       );
     }
