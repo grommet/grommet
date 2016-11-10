@@ -195,11 +195,6 @@
   flex: 1 1;
   // need to fix flexbox issue with min-width: auto for some tags
   min-width: 0;
-
-  // IE11 specific fix for box with flex option being squashed vertically
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    flex-basis: auto;
-  }
 }
 
 .#{$grommet-namespace}box--flex-off {

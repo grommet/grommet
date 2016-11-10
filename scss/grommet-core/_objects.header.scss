@@ -5,14 +5,6 @@
   width: 100%;
   margin-bottom: 0px;
 
-  // Height is needed to coerce IE11 into aligning center even though
-  // this is ignored by min-height. (Also needed on header--large and
-  // header--small.) We need to subtract 1 unit in order to allow
-  // min-height to keep the header height dynamic.
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    height: $header-height - 1;
-  }
-
   .#{$grommet-namespace}status-icon {
     flex-grow: 0;
     flex-shrink: 0;
@@ -22,17 +14,11 @@
 .#{$grommet-namespace}header--large {
   min-height: $large-header-height;
 
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    height: $large-header-height - 1;
-  }
 }
 
 .#{$grommet-namespace}header--small {
   min-height: $small-header-height;
 
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    height: $small-header-height - 1;
-  }
 }
 
 .#{$grommet-namespace}header--splash {
