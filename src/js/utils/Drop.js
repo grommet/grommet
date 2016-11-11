@@ -350,12 +350,17 @@ export default {
       }
     }
 
+    //for Chrome, Safari, and Opera, use document.body
+    //for Firefox and IE, use document.documentElement
+    let scrollTop = (document.documentElement
+      && document.documentElement.scrollTop) || document.body.scrollTop;
+
     container.style.left = `${left}px`;
     container.style.width = `${width}px`;
     // We use position:absolute and the body element's position
     // to handle mobile browsers better. We used to use position:fixed
     // but that didn't work on mobile browsers as well.
-    container.style.top = `${top + document.body.scrollTop}px`;
+    container.style.top = `${top + scrollTop}px`;
     container.style.maxHeight = `${maxHeight}px`;
 
   }
