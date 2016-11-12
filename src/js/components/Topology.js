@@ -312,7 +312,7 @@ export default class Topology extends Component {
             let cp1xDelta =
               Math.max(linkOffset, (delta[0] / 2) + (linkIndex * 2));
             if (p1[0] > p2[0]) {
-              cp1 = [Math.min(p2[0] + cp1xDelta, width), p1[1]];
+              cp1 = [Math.min(p2[0] + cp1xDelta, rect.width), p1[1]];
             } else {
               cp1 = [Math.max(0, p1[0] - cp1xDelta), p1[1]];
             }
