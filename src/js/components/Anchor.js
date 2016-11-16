@@ -20,6 +20,8 @@ export default class Anchor extends Component {
     const { method, onClick, path} = this.props;
     const { router } = this.context;
 
+    event.preventDefault();
+
     if ('push' === method) {
       router.push(path);
     } else if ('replace' === method) {
@@ -27,7 +29,6 @@ export default class Anchor extends Component {
     }
 
     if (onClick) {
-      event.preventDefault();
       onClick();
     }
   }
