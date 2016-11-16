@@ -185,6 +185,7 @@ export default class SunBurst extends Component {
       onActive(sunBurst);
     }
   }
+  
   _renderData (path, data, total, centerX, centerY, radius, startAngle,
     endAngle, role, value) {
 

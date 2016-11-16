@@ -17,7 +17,7 @@ exports[`SunBurst has correct default options 1`] = `
       <path
         aria-label="50 "
         className="grommetux-sun-burst__slice grommetux-color-index-graph-1"
-        d="M 50.29085498119859 61.10730361083952 A 11.11111111111111 11.11111111111111 0 0 0 50 38.888888888888886"
+        d="M 50.2908549812 61.1073036108 A 11.1111111111 11.1111111111 0 0 0 50.0000000000 38.8888888889"
         fill="none"
         onBlur={[Function]}
         onClick={undefined}
@@ -33,7 +33,7 @@ exports[`SunBurst has correct default options 1`] = `
         <path
           aria-label="20 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-1"
-          d="M 71.45176531096106 42.44564092417272 A 22.743055555555554 22.743055555555554 0 0 0 50 27.256944444444446"
+          d="M 71.4517653110 42.4456409242 A 22.7430555556 22.7430555556 0 0 0 50.0000000000 27.2569444444"
           fill="none"
           onBlur={[Function]}
           onClick={undefined}
@@ -49,7 +49,7 @@ exports[`SunBurst has correct default options 1`] = `
           <path
             aria-label="5 "
             className="grommetux-sun-burst__slice grommetux-color-index-graph-1"
-            d="M 69.61827888915234 21.772995936028924 A 34.375 34.375 0 0 0 50 15.625"
+            d="M 69.6182788892 21.7729959360 A 34.3750000000 34.3750000000 0 0 0 50.0000000000 15.6250000000"
             fill="none"
             onBlur={[Function]}
             onClick={undefined}
@@ -62,7 +62,7 @@ exports[`SunBurst has correct default options 1`] = `
           <path
             aria-label="1 "
             className="grommetux-sun-burst__slice grommetux-color-index-graph-2"
-            d="M 73.33818089106543 24.76173663470665 A 34.375 34.375 0 0 0 70.10792007768553 22.119681222241894"
+            d="M 73.3381808911 24.7617366347 A 34.3750000000 34.3750000000 0 0 0 70.1079200777 22.1196812222"
             fill="none"
             onBlur={[Function]}
             onClick={undefined}
@@ -76,7 +76,7 @@ exports[`SunBurst has correct default options 1`] = `
         <path
           aria-label="20 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-2"
-          d="M 63.93937917162152 67.97053934396101 A 22.743055555555554 22.743055555555554 0 0 0 71.58033984816475 42.82117641665444"
+          d="M 63.9393791716 67.9705393440 A 22.7430555556 22.7430555556 0 0 0 71.5803398482 42.8211764167"
           fill="none"
           onBlur={[Function]}
           onClick={undefined}
@@ -89,7 +89,7 @@ exports[`SunBurst has correct default options 1`] = `
         <path
           aria-label="10 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-3"
-          d="M 50.595343789640864 72.73526207843716 A 22.743055555555554 22.743055555555554 0 0 0 63.623626980128776 68.2110780545632"
+          d="M 50.5953437896 72.7352620784 A 22.7430555556 22.7430555556 0 0 0 63.6236269801 68.2110780546"
           fill="none"
           onBlur={[Function]}
           onClick={undefined}
@@ -103,7 +103,7 @@ exports[`SunBurst has correct default options 1`] = `
       <path
         aria-label="30 "
         className="grommetux-sun-burst__slice grommetux-color-index-graph-2"
-        d="M 39.35197139483186 46.8256848066114 A 11.11111111111111 11.11111111111111 0 0 0 50.096961505537486 61.11068803404635"
+        d="M 39.3519713948 46.8256848066 A 11.1111111111 11.1111111111 0 0 0 50.0969615055 61.1106880340"
         fill="none"
         onBlur={[Function]}
         onClick={undefined}
@@ -119,7 +119,7 @@ exports[`SunBurst has correct default options 1`] = `
         <path
           aria-label="15 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-1"
-          d="M 32.066015407718815 63.986378110393964 A 22.743055555555554 22.743055555555554 0 0 0 50.19846808164704 72.74218956968862"
+          d="M 32.0660154077 63.9863781104 A 22.7430555556 22.7430555556 0 0 0 50.1984680816 72.7421895697"
           fill="none"
           onBlur={[Function]}
           onClick={undefined}
@@ -132,7 +132,7 @@ exports[`SunBurst has correct default options 1`] = `
         <path
           aria-label="10 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-2"
-          d="M 27.26966851977751 50.76066208154008 A 22.743055555555554 22.743055555555554 0 0 0 31.8246508850693 63.67125672911873"
+          d="M 27.2696685198 50.7606620815 A 22.7430555556 22.7430555556 0 0 0 31.8246508851 63.6712567291"
           fill="none"
           onBlur={[Function]}
           onClick={undefined}
@@ -145,7 +145,7 @@ exports[`SunBurst has correct default options 1`] = `
         <path
           aria-label="5 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-3"
-          d="M 28.204816448796453 43.50257358853271 A 22.743055555555554 22.743055555555554 0 0 0 27.259855075550313 50.363847245573695"
+          d="M 28.2048164488 43.5025735885 A 22.7430555556 22.7430555556 0 0 0 27.2598550756 50.3638472456"
           fill="none"
           onBlur={[Function]}
           onClick={undefined}
@@ -159,7 +159,7 @@ exports[`SunBurst has correct default options 1`] = `
       <path
         aria-label="20 "
         className="grommetux-sun-burst__slice grommetux-color-index-graph-3"
-        d="M 49.806084372919074 38.89058116492899 A 11.11111111111111 11.11111111111111 0 0 0 39.40899258007837 46.64033454721728"
+        d="M 49.8060843729 38.8905811649 A 11.1111111111 11.1111111111 0 0 0 39.4089925801 46.6403345472"
         fill="none"
         onBlur={[Function]}
         onClick={undefined}
@@ -175,7 +175,7 @@ exports[`SunBurst has correct default options 1`] = `
         <path
           aria-label="10 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-1"
-          d="M 36.092006551329185 32.00515923285744 A 22.743055555555554 22.743055555555554 0 0 0 28.32153168734791 43.12318477633537"
+          d="M 36.0920065513 32.0051592329 A 22.7430555556 22.7430555556 0 0 0 28.3215316873 43.1231847763"
           fill="none"
           onBlur={[Function]}
           onClick={undefined}
@@ -188,7 +188,7 @@ exports[`SunBurst has correct default options 1`] = `
         <path
           aria-label="7 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-2"
-          d="M 45.1123857842269 27.788340825574082 A 22.743055555555554 22.743055555555554 0 0 0 36.40817808093867 31.765171979872964"
+          d="M 45.1123857842 27.7883408256 A 22.7430555556 22.7430555556 0 0 0 36.4081780809 31.7651719799"
           fill="none"
           onBlur={[Function]}
           onClick={undefined}
@@ -201,7 +201,7 @@ exports[`SunBurst has correct default options 1`] = `
         <path
           aria-label="3 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-3"
-          d="M 49.60307895081873 27.26040832196402 A 22.743055555555554 22.743055555555554 0 0 0 45.50077709510416 27.706423139048614"
+          d="M 49.6030789508 27.2604083220 A 22.7430555556 22.7430555556 0 0 0 45.5007770951 27.7064231390"
           fill="none"
           onBlur={[Function]}
           onClick={undefined}
