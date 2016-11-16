@@ -155,7 +155,7 @@ export default class Range extends Component {
       className
     );
 
-    let indicator;
+    let layers;
     if (active || mouseDown) {
 
       let start, end;
@@ -180,21 +180,11 @@ export default class Range extends Component {
       start = Math.max(0, Math.min(count - 1, start));
       end = Math.max(0, Math.min(count - 1, end));
 
-      let style;
-      if (vertical) {
-        style = {
-          top: `${this._percentForIndex(start)}%`,
-          height: `${this._percentForIndex(end - start)}%`
-        };
-      } else {
-        style = {
-          marginLeft: `${this._percentForIndex(start)}%`,
-          width: `${this._percentForIndex(end - start)}%`
-        };
-      }
-
-      indicator = (
-        <div {...props} className={`${CLASS_ROOT}__active`} style={style}
+      layers = [
+        <div key='before' className={`${CLASS_ROOT}__inactive`}
+          style={{ flexBasis: `${this._percentForIndex(start)}%` }} />,
+        <div key='active' {...props} className={`${CLASS_ROOT}__active`}
+          style={{ flexBasis: `${this._percentForIndex(end - start)}%` }}
           onMouseDown={this._mouseDown('active')}>
           <div className={`${CLASS_ROOT}__active-start`}
             onMouseDown={onActive ? this._mouseDown('start') : undefined}>
@@ -204,8 +194,12 @@ export default class Range extends Component {
             onMouseDown={onActive ? this._mouseDown('end') : undefined}>
             <DragIcon />
           </div>
-        </div>
-      );
+        </div>,
+        <div key='after' className={`${CLASS_ROOT}__inactive`}
+          style={{
+            flexBasis: `${this._percentForIndex((count - 1) - end)}%`
+          }} />
+      ];
     }
 
     let onMouseMove;
@@ -217,7 +211,7 @@ export default class Range extends Component {
       <div ref={ref => this.rangeRef = ref} className={classes}
         style={{ padding: padding }} onMouseMove={onMouseMove}
         onMouseDown={onActive ? this._mouseDown('range') : undefined}>
-        {indicator}
+        {layers}
       </div>
     );
   }
