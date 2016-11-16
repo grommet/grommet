@@ -80,6 +80,8 @@ var Anchor = function (_Component) {
       var router = this.context.router;
 
 
+      event.preventDefault();
+
       if ('push' === method) {
         router.push(path);
       } else if ('replace' === method) {
@@ -87,7 +89,6 @@ var Anchor = function (_Component) {
       }
 
       if (onClick) {
-        event.preventDefault();
         onClick();
       }
     }
