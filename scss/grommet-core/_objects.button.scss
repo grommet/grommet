@@ -129,6 +129,7 @@ $button-horizontal-padding:
   height: auto;
   min-width: 0;
   max-width: none;
+  text-align: inherit;
   font-weight: inherit;
 
   .#{$grommet-namespace}button__label {
