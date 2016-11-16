@@ -243,7 +243,7 @@ var Range = function (_Component) {
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--dragging', mouseDown), _classnames), className);
 
-      var indicator = void 0;
+      var layers = void 0;
       if (active || mouseDown) {
 
         var start = void 0,
@@ -269,22 +269,11 @@ var Range = function (_Component) {
         start = Math.max(0, Math.min(count - 1, start));
         end = Math.max(0, Math.min(count - 1, end));
 
-        var style = void 0;
-        if (vertical) {
-          style = {
-            top: this._percentForIndex(start) + '%',
-            height: this._percentForIndex(end - start) + '%'
-          };
-        } else {
-          style = {
-            marginLeft: this._percentForIndex(start) + '%',
-            width: this._percentForIndex(end - start) + '%'
-          };
-        }
-
-        indicator = _react2.default.createElement(
+        layers = [_react2.default.createElement('div', { key: 'before', className: CLASS_ROOT + '__inactive',
+          style: { flexBasis: this._percentForIndex(start) + '%' } }), _react2.default.createElement(
           'div',
-          (0, _extends3.default)({}, props, { className: CLASS_ROOT + '__active', style: style,
+          (0, _extends3.default)({ key: 'active' }, props, { className: CLASS_ROOT + '__active',
+            style: { flexBasis: this._percentForIndex(end - start) + '%' },
             onMouseDown: this._mouseDown('active') }),
           _react2.default.createElement(
             'div',
@@ -298,7 +287,10 @@ var Range = function (_Component) {
               onMouseDown: onActive ? this._mouseDown('end') : undefined },
             _react2.default.createElement(_Drag2.default, null)
           )
-        );
+        ), _react2.default.createElement('div', { key: 'after', className: CLASS_ROOT + '__inactive',
+          style: {
+            flexBasis: this._percentForIndex(count - 1 - end) + '%'
+          } })];
       }
 
       var onMouseMove = void 0;
@@ -313,7 +305,7 @@ var Range = function (_Component) {
           }, className: classes,
           style: { padding: _utils.padding }, onMouseMove: onMouseMove,
           onMouseDown: onActive ? this._mouseDown('range') : undefined },
-        indicator
+        layers
       );
     }
   }]);

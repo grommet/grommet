@@ -476,7 +476,14 @@
 
 // Range
 
+$range-inactive-background-color: rgba(#fff, 0.5);
+$range-inactive-colored-background-color: rgba(#000, 0.4);
+$range-control-background-color: rgba(#fff, 0.7);
+$range-control-colored-background-color: rgba(#000, 0.5);
+
 .#{$grommet-namespace}chart-range {
+  display: flex;
+  flex-direction: row;
   cursor: pointer;
 }
 
@@ -486,7 +493,18 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgba($brand-color-lighter, 0.4);
+}
+
+.#{$grommet-namespace}chart-range__inactive {
+  background-color: $range-inactive-background-color;
+
+  #{$dark-background-context} {
+    background-color: $range-inactive-colored-background-color;
+  }
+
+  #{$light-background-context} {
+    background-color: $range-inactive-background-color;
+  }
 }
 
 .#{$grommet-namespace}chart-range__active-start,
@@ -495,10 +513,32 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: rgba($brand-color-lighter, 0.3);
+  background-color: $range-control-background-color;
+  border: 1px solid $border-color;
+
+  #{$dark-background-context} {
+    background-color: $range-control-colored-background-color;
+    border-color: $colored-border-color;
+  }
+
+  #{$light-background-context} {
+    background-color: $range-control-background-color;
+    border-color: $border-color;
+  }
 
   &:hover {
-    background-color: rgba($brand-color-lighter, 0.8);
+    background-color: $background-color;
+    border-color: $strong-border-color;
+
+    #{$dark-background-context} {
+      background-color: $range-control-colored-background-color;
+      border-color: $colored-strong-border-color;
+    }
+
+    #{$light-background-context} {
+      background-color: $background-color;
+      border-color: $strong-border-color;
+    }
   }
 
   svg {
@@ -510,6 +550,8 @@
 }
 
 .#{$grommet-namespace}chart-range--vertical {
+  flex-direction: column;
+
   .#{$grommet-namespace}chart-range__active {
     flex-direction: column;
   }
