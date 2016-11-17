@@ -14,6 +14,7 @@
 .#{$grommet-namespace}sidebar--fixed {
   display: flex;
   flex-direction: column;
+  max-height: 100vh;
 
   > * {
     //flex: 1 does not work with IE11.
