@@ -48,4 +48,9 @@
 
 .#{$grommet-namespace}sidebar--full {
   min-height: 100vh;
+
+  // The following is needed for IE11 since it doesn't work with just min/max.
+  .#{$grommet-namespace}sidebar--fixed {
+    height: 100vh;
+  }
 }
