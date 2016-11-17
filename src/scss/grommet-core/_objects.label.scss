@@ -5,6 +5,14 @@
   font-weight: 100;
 }
 
+.#{$grommet-namespace}label--truncate {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .#{$grommet-namespace}label--uppercase {
   text-transform: uppercase;
   letter-spacing: 0.2em;

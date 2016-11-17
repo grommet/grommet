@@ -43,6 +43,12 @@ h6.#{$grommet-namespace}heading {
   font-weight: 600;
 }
 
+.#{$grommet-namespace}heading--truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .#{$grommet-namespace}heading--uppercase {
   text-transform: uppercase;
   letter-spacing: 0.2em;

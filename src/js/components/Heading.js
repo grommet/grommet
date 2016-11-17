@@ -9,8 +9,8 @@ const CLASS_ROOT = CSSClassnames.HEADING;
 export default class Heading extends Component {
   render() {
     const {
-      align, children, className, margin, size, strong, tag: Tag, uppercase,
-      ...props
+      align, children, className, margin, size, strong, tag: Tag, truncate,
+      uppercase, ...props
     } = this.props;
     const classes = classnames(
       CLASS_ROOT, {
@@ -18,6 +18,7 @@ export default class Heading extends Component {
         [`${CLASS_ROOT}--strong`]: strong,
         [`${CLASS_ROOT}--align-${align}`]: align,
         [`${CLASS_ROOT}--margin-${margin}`]: margin,
+        [`${CLASS_ROOT}--truncate`]: truncate,
         [`${CLASS_ROOT}--uppercase`]: uppercase
       },
       className
@@ -37,6 +38,7 @@ Heading.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   strong: PropTypes.bool,
   tag: PropTypes.string,
+  truncate: PropTypes.bool,
   uppercase: PropTypes.bool
 };
 

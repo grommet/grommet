@@ -17,13 +17,14 @@ export default class Label extends Component {
 
   render () {
     const {
-      children, className, labelFor, margin, size, uppercase, ...props
+      children, className, labelFor, margin, size, truncate, uppercase, ...props
     } = this.props;
     delete props.announce;
     let labelMargin = margin ? margin : ('small' === size ? 'none' : 'medium');
     let classes = classnames(
       CLASS_ROOT,
       {
+        [`${CLASS_ROOT}--truncate`]: truncate,
         [`${CLASS_ROOT}--uppercase`]: uppercase,
         [`${CLASS_ROOT}--margin-${labelMargin}`]: labelMargin,
         [`${CLASS_ROOT}--${size}`]: size
@@ -45,6 +46,7 @@ Label.propTypes = {
   labelFor: PropTypes.string,
   margin: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
   size: PropTypes.oneOf(['small', 'medium']),
+  truncate: PropTypes.bool,
   uppercase: PropTypes.bool
 };
 

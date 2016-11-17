@@ -12,13 +12,14 @@ export default class Title extends Component {
 
   render () {
     const {
-      a11yTitle, children, className, responsive, ...props
+      a11yTitle, children, className, responsive, truncate, ...props
     } = this.props;
     const { intl } = this.context;
     const classes = classnames(
       CLASS_ROOT,
       {
         [`${CLASS_ROOT}--responsive`]: responsive,
+        [`${CLASS_ROOT}--truncate`]: truncate,
         [`${CLASS_ROOT}--interactive`]: props.onClick
       },
       className
@@ -55,7 +56,8 @@ export default class Title extends Component {
 Title.propTypes = {
   a11yTitle: PropTypes.string,
   onClick: PropTypes.func,
-  responsive: PropTypes.bool
+  responsive: PropTypes.bool,
+  truncate: PropTypes.bool
 };
 
 Title.contextTypes = {
@@ -63,5 +65,6 @@ Title.contextTypes = {
 };
 
 Title.defaultProps = {
-  responsive: true
+  responsive: true,
+  truncate: true
 };

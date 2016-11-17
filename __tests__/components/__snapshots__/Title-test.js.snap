@@ -1,6 +1,6 @@
 exports[`Title has correct className rendering 1`] = `
 <div
-  className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-title grommetux-title--responsive testing"
+  className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-title grommetux-title--responsive grommetux-title--truncate testing"
   id={undefined}
   onClick={undefined}
   role={undefined}
@@ -14,7 +14,7 @@ exports[`Title has correct className rendering 1`] = `
 
 exports[`Title has correct default options 1`] = `
 <div
-  className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-title grommetux-title--responsive"
+  className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-title grommetux-title--responsive grommetux-title--truncate"
   id={undefined}
   onClick={undefined}
   role={undefined}
@@ -29,7 +29,7 @@ exports[`Title has correct default options 1`] = `
 exports[`Title has correct onClick rendering 1`] = `
 <div
   aria-label="Title"
-  className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-box--clickable grommetux-title grommetux-title--responsive grommetux-title--interactive"
+  className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-box--clickable grommetux-title grommetux-title--responsive grommetux-title--truncate grommetux-title--interactive"
   id={undefined}
   onBlur={[Function]}
   onClick={[Function]}
@@ -48,7 +48,7 @@ exports[`Title has correct onClick rendering 1`] = `
 exports[`Title has correct onClick rendering 2`] = `
 <div
   aria-label="Title"
-  className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-box--clickable grommetux-title grommetux-title--responsive grommetux-title--interactive"
+  className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-box--clickable grommetux-title grommetux-title--responsive grommetux-title--truncate grommetux-title--interactive"
   id={undefined}
   onBlur={[Function]}
   onClick={[Function]}
