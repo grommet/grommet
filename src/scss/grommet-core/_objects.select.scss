@@ -8,10 +8,10 @@
 
 .#{$grommet-namespace}select__input {
   @include input();
+  width: 100%;
   padding-right: round($inuit-base-spacing-unit * 2.5);
   cursor: inherit;
   color: inherit;
-  max-width: 100%;
 
   &:disabled {
     color: $text-color;
