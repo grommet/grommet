@@ -78,10 +78,11 @@ var Title = function (_Component) {
       var children = _props.children;
       var className = _props.className;
       var responsive = _props.responsive;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'children', 'className', 'responsive']);
+      var truncate = _props.truncate;
+      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'children', 'className', 'responsive', 'truncate']);
       var intl = this.context.intl;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interactive', props.onClick), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--truncate', truncate), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interactive', props.onClick), _classnames), className);
 
       var boxTitle = a11yTitle || _Intl2.default.getMessage(intl, 'Title');
 
@@ -125,7 +126,8 @@ exports.default = Title;
 Title.propTypes = {
   a11yTitle: _react.PropTypes.string,
   onClick: _react.PropTypes.func,
-  responsive: _react.PropTypes.bool
+  responsive: _react.PropTypes.bool,
+  truncate: _react.PropTypes.bool
 };
 
 Title.contextTypes = {
@@ -133,6 +135,7 @@ Title.contextTypes = {
 };
 
 Title.defaultProps = {
-  responsive: true
+  responsive: true,
+  truncate: true
 };
 module.exports = exports['default'];

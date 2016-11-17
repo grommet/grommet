@@ -83,12 +83,13 @@ var Label = function (_Component) {
       var labelFor = _props.labelFor;
       var margin = _props.margin;
       var size = _props.size;
+      var truncate = _props.truncate;
       var uppercase = _props.uppercase;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'labelFor', 'margin', 'size', 'uppercase']);
+      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'labelFor', 'margin', 'size', 'truncate', 'uppercase']);
 
       delete props.announce;
       var labelMargin = margin ? margin : 'small' === size ? 'none' : 'medium';
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--uppercase', uppercase), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + labelMargin, labelMargin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--truncate', truncate), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--uppercase', uppercase), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + labelMargin, labelMargin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames), className);
 
       return _react2.default.createElement(
         'label',
@@ -112,6 +113,7 @@ Label.propTypes = {
   labelFor: _react.PropTypes.string,
   margin: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
   size: _react.PropTypes.oneOf(['small', 'medium']),
+  truncate: _react.PropTypes.bool,
   uppercase: _react.PropTypes.bool
 };
 

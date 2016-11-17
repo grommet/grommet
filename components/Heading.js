@@ -73,10 +73,11 @@ var Heading = function (_Component) {
       var size = _props.size;
       var strong = _props.strong;
       var Tag = _props.tag;
+      var truncate = _props.truncate;
       var uppercase = _props.uppercase;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['align', 'children', 'className', 'margin', 'size', 'strong', 'tag', 'uppercase']);
+      var props = (0, _objectWithoutProperties3.default)(_props, ['align', 'children', 'className', 'margin', 'size', 'strong', 'tag', 'truncate', 'uppercase']);
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--strong', strong), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + margin, margin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--uppercase', uppercase), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--strong', strong), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + margin, margin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--truncate', truncate), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--uppercase', uppercase), _classnames), className);
 
       return _react2.default.createElement(
         Tag,
@@ -98,6 +99,7 @@ Heading.propTypes = {
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
   strong: _react.PropTypes.bool,
   tag: _react.PropTypes.string,
+  truncate: _react.PropTypes.bool,
   uppercase: _react.PropTypes.bool
 };
 
