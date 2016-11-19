@@ -237,7 +237,9 @@
   }
 
   > a:not(.#{$grommet-namespace}button) {
-    padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+    padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit
+      halve($inuit-base-spacing-unit)
+      ($inuit-base-spacing-unit - $active-border-width);
     margin-bottom: 0px;
     width: 100%;
     border-width: $active-border-width;
