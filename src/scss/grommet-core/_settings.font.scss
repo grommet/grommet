@@ -1,45 +1,59 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-$brand-font-family: 'Source Sans Pro', Arial, sans-serif !default;
-$brand-large-number-font-family: 'Source Sans Pro', Arial, sans-serif !default;
+$brand-font-family: 'Work Sans', Arial, sans-serif !default;
+$brand-large-number-font-family: 'Work Sans', Arial, sans-serif !default;
 $code-font-family: Consolas, Menlo, 'DejaVu Sans Mono', 'Liberation Mono', monospace !default;
 
-$fonts-path: "https://fonts.gstatic.com/s/sourcesanspro/v9" !default;
+$fonts-path: "https://fonts.googleapis.com/css?family=Work+Sans" !default;
 
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: 'Work Sans';
   font-style: normal;
   font-weight: 300;
-  src: local('Source Sans Pro Light'),
-    local('SourceSansPro-Light'),
-    url("#{$fonts-path}/toadOcfmlt9b38dHJxOBGPS42wKzre0cxmO5m5GyTsY.ttf") format('truetype');
+  src:
+    local('Work Sans Light'),
+    local('WorkSans-Light'),
+    url("#{$fonts-path}:300") format('truetype');
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: 'Work Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Source Sans Pro'),
-    local('SourceSansPro-Regular'),
-    url("#{$fonts-path}/ODelI1aHBYDBqgeIAH2zlEY6Fu39Tt9XkmtSosaMoEA.ttf") format('truetype');
+  src:
+    local('Work Sans'),
+    local('WorkSans-Regular'),
+    url("#{$fonts-path}:400") format('truetype');
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local('Work Sans Semi Bold'),
+    local('WorkSans-SemiBold'),
+    url("#{$fonts-path}:600") format('truetype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
   font-style: normal;
   font-weight: 700;
-  src: local('Source Sans Pro Bold'),
-    local('SourceSansPro-Bold'),
-    url("#{$fonts-path}/toadOcfmlt9b38dHJxOBGLlcMrNrsnL9dgADnXgYJjs.ttf") format('truetype');
+  src:
+    local('Work Sans Bold'),
+    local('WorkSans-Bold'),
+    url("#{$fonts-path}:700") format('truetype');
 }
 
 @font-face {
-  font-family: 'Source Sans Pro';
+  font-family: 'Work Sans';
   font-style: italic;
   font-weight: 400;
-  src: local('Source Sans Pro Italic'),
-    local('SourceSansPro-It'),
-    url("#{$fonts-path}/M2Jd71oPJhLKp0zdtTvoMzpKUtbt71woJ25xl7KOGD0.ttf") format('truetype');
+  src:
+    local('Work Sans'),
+    local('WorkSans-It'),
+    url("#{$fonts-path}:400") format('truetype');
 }
 
 $content-font-size: 16px !default;
