@@ -2,7 +2,7 @@
   @include inuit-font-size($control-font-size);
   @include text-align();
   @include vertical-margin();
-  font-weight: 100;
+  font-weight: $text-font-weight;
 }
 
 .#{$grommet-namespace}label--truncate {

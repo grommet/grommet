@@ -438,6 +438,6 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
 
 .#{$grommet-namespace}form-field--strong {
   input[type="text"] {
-    font-weight: 600;
+    font-weight: $text-strong-font-weight;
   }
 }

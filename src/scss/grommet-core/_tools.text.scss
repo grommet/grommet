@@ -13,13 +13,13 @@
   margin-top: $inuit-base-spacing-unit;
   margin-bottom: $inuit-base-spacing-unit;
   font-size: $paragraph-font-size;
-  font-weight: 100;
+  font-weight: $text-font-weight;
   line-height: $paragraph-line-height;
   color: $paragraph-text-color;
 }
 
 @mixin heading() {
-  font-weight: 100;
+  font-weight: $text-font-weight;
   max-width: 100%;
 
   a,

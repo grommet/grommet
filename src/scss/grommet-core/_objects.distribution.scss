@@ -57,13 +57,13 @@
 .#{$grommet-namespace}distribution__label-value {
   display: block;
   @include inuit-font-size($large-number-font-size);
-  font-weight: bold;
+  font-weight: $text-strong-font-weight;
 }
 
 .#{$grommet-namespace}distribution__label-units {
   @include inuit-font-size($inuit-heading-size-3, inherit);
   margin-left: quarter($inuit-base-spacing-unit);
-  font-weight: normal;
+  font-weight: $text-font-weight;
 }
 
 .#{$grommet-namespace}distribution__label-label {

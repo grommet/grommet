@@ -1,9 +1,9 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-$brand-color: #865CD6 !default;
-$brand-neutral-colors: (#0A64A0, #DC2878, #501EB4) !default;
-$brand-accent-colors: (#00CCEB, #FF7D28) !default;
-$brand-link-color: #865CD6 !default;
+$brand-color: #865CD6;
+$brand-neutral-colors: (#0A64A0, #DC2878, #501EB4);
+$brand-accent-colors: (#00CCEB, #FF7D28);
+$brand-link-color: #865CD6;
 $brand-status-colors: (
   critical: #FF324D,
   error: #FF324D,
@@ -12,7 +12,7 @@ $brand-status-colors: (
   unknown: #a8a8a8,
   disabled: #a8a8a8
 ) !default;
-$brand-grey-colors: (#333333, #3B3B3B, #434343, #666666) !default;
+$brand-grey-colors: (#333333, #3B3B3B, #434343, #666666);
 @if not variable-exists(brand-graph-colors) {
   $brand-graph-colors: ();
   $brand-graph-colors: join($brand-graph-colors, $brand-accent-colors);
@@ -20,3 +20,59 @@ $brand-grey-colors: (#333333, #3B3B3B, #434343, #666666) !default;
 };
 
 $button-secondary-color: nth($brand-neutral-colors, 2);
+
+$brand-font-family: 'Work Sans', Arial, sans-serif;
+$brand-large-number-font-family: 'Work Sans', Arial, sans-serif;
+$code-font-family: Consolas, Menlo, 'DejaVu Sans Mono', 'Liberation Mono', monospace;
+
+$fonts-path: "https://fonts.googleapis.com/css?family=Work+Sans";
+
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 300;
+  src:
+    local('Work Sans Light'),
+    local('WorkSans-Light'),
+    url("#{$fonts-path}:300") format('truetype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Work Sans'),
+    local('WorkSans-Regular'),
+    url("#{$fonts-path}:400") format('truetype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local('Work Sans Semi Bold'),
+    local('WorkSans-SemiBold'),
+    url("#{$fonts-path}:600") format('truetype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Work Sans Bold'),
+    local('WorkSans-Bold'),
+    url("#{$fonts-path}:700") format('truetype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-style: italic;
+  font-weight: 400;
+  src:
+    local('Work Sans'),
+    local('WorkSans-It'),
+    url("#{$fonts-path}:400") format('truetype');
+}
