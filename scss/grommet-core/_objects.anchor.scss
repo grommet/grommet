@@ -67,7 +67,7 @@
 .#{$grommet-namespace}anchor--primary,
 .#{$grommet-namespace}anchor--icon-label {
   @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
-  font-weight: 600;
+  font-weight: $control-font-weight;
   text-decoration: none;
 
   .#{$grommet-namespace}control-icon {

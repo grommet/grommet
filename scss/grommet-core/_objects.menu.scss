@@ -114,7 +114,7 @@
 
   .#{$grommet-namespace}menu__label {
     padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
-    font-weight: 600;
+    font-weight: $control-font-weight;
   }
 
   &.#{$grommet-namespace}menu__drop--align-right {

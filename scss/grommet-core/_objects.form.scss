@@ -35,7 +35,7 @@
 
     > legend {
       @include inuit-font-size(24px);
-      font-weight: 600;
+      font-weight: $text-strong-font-weight;
       margin-bottom: halve($inuit-base-spacing-unit);
     }
 

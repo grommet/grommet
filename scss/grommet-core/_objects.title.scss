@@ -4,7 +4,7 @@
   max-height: 100%;
   // overflow: hidden;
   // text-overflow: ellipsis;
-  font-weight: normal;
+  font-weight: $text-font-weight;
   // white-space: nowrap;
   @include inuit-font-size(24px);
   line-height: initial;
@@ -12,7 +12,7 @@
   // flex: 0 1 auto;
 
   @include media-query(lap-and-up) {
-    font-weight: 600;
+    font-weight: $text-strong-font-weight;
   }
 
   > *:not(:last-child) {

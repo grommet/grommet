@@ -12,7 +12,7 @@ $button-horizontal-padding:
   border-radius: $border-radius;
   color: $button-text-color;
   @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
-  font-weight: $button-font-weight;
+  font-weight: $control-font-weight;
   cursor: pointer;
   text-align: center;
   outline: none;

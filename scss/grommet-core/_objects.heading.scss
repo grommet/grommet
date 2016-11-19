@@ -40,7 +40,7 @@ h6.#{$grommet-namespace}heading {
 }
 
 .#{$grommet-namespace}heading--strong {
-  font-weight: 600;
+  font-weight: $text-strong-font-weight;
 }
 
 .#{$grommet-namespace}heading--truncate {

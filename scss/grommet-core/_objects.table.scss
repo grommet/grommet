@@ -10,7 +10,7 @@
     display: block;
 
     &:before {
-      font-weight: 100;
+      font-weight: $text-font-weight;
       @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
       content: attr(data-th);
       display: block;
@@ -56,7 +56,7 @@
   }
 
   th {
-    font-weight: 100;
+    font-weight: $text-font-weight;
     @include inuit-font-size(20px);
     border-bottom: 1px solid $border-color;
 
