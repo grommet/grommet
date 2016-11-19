@@ -66,18 +66,20 @@ var Grommet = function (_Component) {
       var _props = this.props;
       var a11yTitle = _props.a11yTitle;
       var className = _props.className;
+      var invert = _props.invert;
       var large = _props.large;
       var size = _props.size;
       var small = _props.small;
       var intl = this.context.intl;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--small', small), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--large', large), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--small', small), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--large', large), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames), className);
+      var stroke = invert ? '#fff' : '#865CD6';
       return _react2.default.createElement(
         'svg',
         { className: classes, viewBox: '0 0 182 182',
           width: '182', height: '182',
           version: '1.1', role: 'img', 'aria-label': _Intl2.default.getMessage(intl, a11yTitle) },
-        _react2.default.createElement('path', { role: 'presentation', strokeWidth: '18', stroke: '#865CD6', fill: 'none',
+        _react2.default.createElement('path', { role: 'presentation', strokeWidth: '18', stroke: stroke, fill: 'none',
           d: 'M 91,91 m 0,-82 a 82,82 0 1,1 0,164 a 82,82 0 1,1 0,-164' })
       );
     }
@@ -99,7 +101,7 @@ Grommet.defaultProps = {
 
 Grommet.propTypes = {
   a11yTitle: _react2.default.PropTypes.string,
-  colorIndex: _react.PropTypes.string,
+  invert: _react.PropTypes.bool,
   size: _react2.default.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge'])
 };
 module.exports = exports['default'];
