@@ -13,6 +13,7 @@ import Anchor from './Anchor';
 import Layer from './Layer';
 import Video from './Video';
 import CirclePlayIcon from './icons/base/CirclePlay';
+import Responsive from '../utils/Responsive';
 
 const CLASS_ROOT = CSSClassnames.CARD;
 
@@ -56,7 +57,22 @@ export default class Card extends Component {
   constructor (props) {
     super(props);
     this._onClick = this._onClick.bind(this);
-    this.state = { activeVideo: false };
+    this._onResponsive = this._onResponsive.bind(this);
+    this.state = { activeVideo: false, small: false };
+  }
+
+  componentDidMount () {
+    this._responsive = Responsive.start(this._onResponsive);
+  }
+
+  componentWillUnmount () {
+    if (this._responsive) {
+      this._responsive.stop();
+    }
+  }
+
+  _onResponsive (small) {
+    this.setState({ small: !!small });
   }
 
   _onClick (event) {
@@ -107,18 +123,23 @@ export default class Card extends Component {
   }
 
   _renderThumbnail () {
-    const { thumbnail, video } = this.props;
+    const { direction, thumbnail, video } = this.props;
+    const { small } = this.state;
     let result = thumbnail;
     if (typeof thumbnail === 'string') {
-      const basis = 'row' === this.props.direction ? '1/3' : 'small';
+      const size = small ? 'large' : 'xlarge';
       const videoIcon = (video) ?
-        <Anchor icon={<CirclePlayIcon responsive={false} colorIndex='brand'
-          size="xlarge" />} /> :
+        (
+          <Anchor icon={<CirclePlayIcon responsive={false} colorIndex='brand'
+            size={size} />} />
+        ):
         undefined;
 
+      const flex = 'row' === direction ? 'grow' : undefined;
+
       result = (
-        <Box className={`${CLASS_ROOT}__thumbnail`}
-          backgroundImage={`url(${thumbnail})`} basis={basis} flex={false}
+        <Box className={`${CLASS_ROOT}__thumbnail`} flex={flex}
+          backgroundImage={`url(${thumbnail})`} basis='small'
           justify="center" align="center">
           {videoIcon}
         </Box>
@@ -171,22 +192,17 @@ export default class Card extends Component {
 
   render () {
     const { a11yTitle, children, className, contentPad,
-      onClick, reverse, truncate, video } = this.props;
+      onClick, reverse, truncate } = this.props;
     const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
     const restProps = Props.omit(this.props, Object.keys(Card.propTypes));
 
     const classes = classnames(
       CLASS_ROOT,
       {
-        [`${CLASS_ROOT}--selectable`]: (onClick || video)
+        [`${CLASS_ROOT}--selectable`]: (onClick)
       },
       className
     );
-
-    let onCardClick = onClick;
-    if (!onCardClick && video) {
-      onCardClick = this._onClick;
-    }
 
     let thumbnail = this._renderThumbnail();
     let label = this._renderLabel();
@@ -202,8 +218,10 @@ export default class Card extends Component {
       }
     );
 
+    const basis = 'row' === this.props.direction ? '2/3' : undefined;
     const text = (
-      <Box className={contentClasses} flex={true} pad={contentPad}>
+      <Box className={contentClasses} pad={contentPad}
+        basis={basis}>
         {label}
         {heading}
         {description}
@@ -227,8 +245,8 @@ export default class Card extends Component {
     }
 
     return (
-      <Box {...boxProps} {...restProps} className={classes}
-        justify={cardJustify} onClick={onCardClick} a11yTitle={a11yTitle}>
+      <Box {...boxProps} {...restProps} className={classes} wrap={true}
+        justify={cardJustify} onClick={onClick} a11yTitle={a11yTitle}>
         {thumbnail}
         {text}
         {videoLayer}
