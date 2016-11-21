@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React from 'react';
-import renderer from 'react/lib/ReactTestRenderer';
+import renderer from 'react-test-renderer';
 
 import Header from '../../src/js/components/Header';
 

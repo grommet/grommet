@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react/lib/ReactTestRenderer';
+import renderer from 'react-test-renderer';
 
 import Form from '../../src/js/components/Form';
 import FormFields from '../../src/js/components/FormFields';

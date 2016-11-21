@@ -2,7 +2,7 @@
 
 import React from 'react';
 import CheckBox from '../../src/js/components/CheckBox';
-import renderer from 'react/lib/ReactTestRenderer';
+import renderer from 'react-test-renderer';
 
 describe('CheckBox', () => {
   it('has correct default options', () => {
