@@ -61,10 +61,10 @@ var TableHeader = function (_Component) {
   (0, _createClass3.default)(TableHeader, [{
     key: '_onSort',
     value: function _onSort(index) {
-      var _props = this.props;
-      var onSort = _props.onSort;
-      var sortAscending = _props.sortAscending;
-      var sortIndex = _props.sortIndex;
+      var _props = this.props,
+          onSort = _props.onSort,
+          sortAscending = _props.sortAscending,
+          sortIndex = _props.sortIndex;
 
       var nextAscending = void 0;
       if (index !== sortIndex) {
@@ -79,12 +79,12 @@ var TableHeader = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props2 = this.props;
-      var labels = _props2.labels;
-      var onSort = _props2.onSort;
-      var sortAscending = _props2.sortAscending;
-      var sortIndex = _props2.sortIndex;
-      var props = (0, _objectWithoutProperties3.default)(_props2, ['labels', 'onSort', 'sortAscending', 'sortIndex']);
+      var _props2 = this.props,
+          labels = _props2.labels,
+          onSort = _props2.onSort,
+          sortAscending = _props2.sortAscending,
+          sortIndex = _props2.sortIndex,
+          props = (0, _objectWithoutProperties3.default)(_props2, ['labels', 'onSort', 'sortAscending', 'sortIndex']);
 
 
       var cells = labels.map(function (label, index) {

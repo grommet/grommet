@@ -247,14 +247,14 @@ var MenuDrop = function (_Component) {
       var _this2 = this,
           _classnames;
 
-      var _props = this.props;
-      var dropAlign = _props.dropAlign;
-      var size = _props.size;
-      var children = _props.children;
-      var control = _props.control;
-      var colorIndex = _props.colorIndex;
-      var onClick = _props.onClick;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['dropAlign', 'size', 'children', 'control', 'colorIndex', 'onClick']);
+      var _props = this.props,
+          dropAlign = _props.dropAlign,
+          size = _props.size,
+          children = _props.children,
+          control = _props.control,
+          colorIndex = _props.colorIndex,
+          onClick = _props.onClick,
+          props = (0, _objectWithoutProperties3.default)(_props, ['dropAlign', 'size', 'children', 'control', 'colorIndex', 'onClick']);
 
       var restProps = _Props2.default.omit(props, [].concat((0, _toConsumableArray3.default)((0, _keys2.default)(MenuDrop.childContextTypes)), (0, _toConsumableArray3.default)((0, _keys2.default)(MenuDrop.propTypes))));
 
@@ -486,9 +486,9 @@ var Menu = function (_Component2) {
   }, {
     key: '_renderButtonProps',
     value: function _renderButtonProps() {
-      var _props2 = this.props;
-      var icon = _props2.icon;
-      var label = _props2.label;
+      var _props2 = this.props,
+          icon = _props2.icon,
+          label = _props2.label;
 
       var buttonIcon = void 0,
           buttonLabel = void 0;
@@ -541,16 +541,16 @@ var Menu = function (_Component2) {
       var _classnames2,
           _this5 = this;
 
-      var _props3 = this.props;
-      var a11yTitle = _props3.a11yTitle;
-      var children = _props3.children;
-      var className = _props3.className;
-      var direction = _props3.direction;
-      var label = _props3.label;
-      var primary = _props3.primary;
-      var size = _props3.size;
-      var pad = _props3.pad;
-      var props = (0, _objectWithoutProperties3.default)(_props3, ['a11yTitle', 'children', 'className', 'direction', 'label', 'primary', 'size', 'pad']);
+      var _props3 = this.props,
+          a11yTitle = _props3.a11yTitle,
+          children = _props3.children,
+          className = _props3.className,
+          direction = _props3.direction,
+          label = _props3.label,
+          primary = _props3.primary,
+          size = _props3.size,
+          pad = _props3.pad,
+          props = (0, _objectWithoutProperties3.default)(_props3, ['a11yTitle', 'children', 'className', 'direction', 'label', 'primary', 'size', 'pad']);
 
       delete props.closeOnClick;
       delete props.dropColorIndex;

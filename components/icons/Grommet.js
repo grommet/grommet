@@ -63,13 +63,13 @@ var Grommet = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props = this.props;
-      var a11yTitle = _props.a11yTitle;
-      var className = _props.className;
-      var invert = _props.invert;
-      var large = _props.large;
-      var size = _props.size;
-      var small = _props.small;
+      var _props = this.props,
+          a11yTitle = _props.a11yTitle,
+          className = _props.className,
+          invert = _props.invert,
+          large = _props.large,
+          size = _props.size,
+          small = _props.small;
       var intl = this.context.intl;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--small', small), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--large', large), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames), className);

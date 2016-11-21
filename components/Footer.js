@@ -129,14 +129,14 @@ var Footer = function (_Component) {
           _classnames2,
           _this2 = this;
 
-      var _props = this.props;
-      var children = _props.children;
-      var className = _props.className;
-      var colorIndex = _props.colorIndex;
-      var fixed = _props.fixed;
-      var float = _props.float;
-      var primary = _props.primary;
-      var size = _props.size;
+      var _props = this.props,
+          children = _props.children,
+          className = _props.className,
+          colorIndex = _props.colorIndex,
+          fixed = _props.fixed,
+          float = _props.float,
+          primary = _props.primary,
+          size = _props.size;
 
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Footer.propTypes));
       var classes = (0, _classnames5.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size && typeof size === 'string'), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--float', float), _classnames), className);

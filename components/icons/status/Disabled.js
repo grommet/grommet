@@ -59,10 +59,10 @@ var Disabled = function (_Component) {
   (0, _createClass3.default)(Disabled, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var a11yTitle = _props.a11yTitle;
-      var className = _props.className;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className']);
+      var _props = this.props,
+          a11yTitle = _props.a11yTitle,
+          className = _props.className,
+          props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className']);
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, CLASS_ROOT + '-disabled', className);
       return _react2.default.createElement(

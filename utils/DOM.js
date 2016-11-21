@@ -140,15 +140,14 @@ exports.default = {
       if (match) {
         var _match$slice$map = match.slice(1).map(function (n) {
           return parseInt(n, 10);
-        });
-
-        var _match$slice$map2 = (0, _slicedToArray3.default)(_match$slice$map, 3);
-
-        var red = _match$slice$map2[0];
-        var green = _match$slice$map2[1];
-        var blue = _match$slice$map2[2];
+        }),
+            _match$slice$map2 = (0, _slicedToArray3.default)(_match$slice$map, 3),
+            red = _match$slice$map2[0],
+            green = _match$slice$map2[1],
+            blue = _match$slice$map2[2];
         // http://www.had2know.com/technology/
         //  color-contrast-calculator-web-design.html
+
 
         var brightness = (299 * red + 587 * green + 114 * blue) / 1000;
         result = brightness < 125;

@@ -93,9 +93,9 @@ var Box = function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      var _props = this.props;
-      var colorIndex = _props.colorIndex;
-      var onClick = _props.onClick;
+      var _props = this.props,
+          colorIndex = _props.colorIndex,
+          onClick = _props.onClick;
 
       if (onClick) {
         var clickCallback = function () {
@@ -195,31 +195,31 @@ var Box = function (_Component) {
     value: function render() {
       var _this4 = this;
 
-      var _props2 = this.props;
-      var a11yTitle = _props2.a11yTitle;
-      var appCentered = _props2.appCentered;
-      var backgroundImage = _props2.backgroundImage;
-      var children = _props2.children;
-      var className = _props2.className;
-      var colorIndex = _props2.colorIndex;
-      var containerClassName = _props2.containerClassName;
-      var focusable = _props2.focusable;
-      var id = _props2.id;
-      var onClick = _props2.onClick;
-      var _onBlur = _props2.onBlur;
-      var _onFocus = _props2.onFocus;
-      var _onMouseDown = _props2.onMouseDown;
-      var _onMouseUp = _props2.onMouseUp;
-      var pad = _props2.pad;
-      var primary = _props2.primary;
-      var role = _props2.role;
-      var size = _props2.size;
-      var tabIndex = _props2.tabIndex;
-      var tag = _props2.tag;
-      var texture = _props2.texture;
-      var _state = this.state;
-      var darkBackground = _state.darkBackground;
-      var mouseActive = _state.mouseActive;
+      var _props2 = this.props,
+          a11yTitle = _props2.a11yTitle,
+          appCentered = _props2.appCentered,
+          backgroundImage = _props2.backgroundImage,
+          children = _props2.children,
+          className = _props2.className,
+          colorIndex = _props2.colorIndex,
+          containerClassName = _props2.containerClassName,
+          focusable = _props2.focusable,
+          id = _props2.id,
+          onClick = _props2.onClick,
+          _onBlur = _props2.onBlur,
+          _onFocus = _props2.onFocus,
+          _onMouseDown = _props2.onMouseDown,
+          _onMouseUp = _props2.onMouseUp,
+          pad = _props2.pad,
+          primary = _props2.primary,
+          role = _props2.role,
+          size = _props2.size,
+          tabIndex = _props2.tabIndex,
+          tag = _props2.tag,
+          texture = _props2.texture;
+      var _state = this.state,
+          darkBackground = _state.darkBackground,
+          mouseActive = _state.mouseActive;
 
       var classes = [CLASS_ROOT];
       var containerClasses = [CLASS_ROOT + '__container'];

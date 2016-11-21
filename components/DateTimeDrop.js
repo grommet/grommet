@@ -149,9 +149,9 @@ var DateTimeDrop = function (_Component) {
     key: '_buildDateRows',
     value: function _buildDateRows(state) {
       state = state || this.state;
-      var _state = state;
-      var timeOfDay = _state.timeOfDay;
-      var value = _state.value;
+      var _state = state,
+          timeOfDay = _state.timeOfDay,
+          value = _state.value;
 
       var start = (0, _moment2.default)(value).startOf('month').startOf('week').add(timeOfDay);
       var end = (0, _moment2.default)(value).endOf('month').endOf('week').add(timeOfDay);
@@ -207,9 +207,9 @@ var DateTimeDrop = function (_Component) {
   }, {
     key: '_announceActiveCell',
     value: function _announceActiveCell() {
-      var _state2 = this.state;
-      var activeCell = _state2.activeCell;
-      var dateRows = _state2.dateRows;
+      var _state2 = this.state,
+          activeCell = _state2.activeCell,
+          dateRows = _state2.dateRows;
       var intl = this.context.intl;
 
       var weekDay = WEEK_DAYS[activeCell[1]];
@@ -247,9 +247,9 @@ var DateTimeDrop = function (_Component) {
     key: '_onNextRow',
     value: function _onNextRow(event) {
       event.preventDefault();
-      var _state3 = this.state;
-      var dateRows = _state3.dateRows;
-      var activeCell = _state3.activeCell;
+      var _state3 = this.state,
+          dateRows = _state3.dateRows,
+          activeCell = _state3.activeCell;
 
       if (this.tableRef.contains(document.activeElement)) {
         if (activeCell[0] + 1 <= dateRows.length - 1) {
@@ -274,9 +274,9 @@ var DateTimeDrop = function (_Component) {
   }, {
     key: '_onSelectDay',
     value: function _onSelectDay() {
-      var _state4 = this.state;
-      var activeCell = _state4.activeCell;
-      var dateRows = _state4.dateRows;
+      var _state4 = this.state,
+          activeCell = _state4.activeCell,
+          dateRows = _state4.dateRows;
 
       if (this.tableRef.contains(document.activeElement)) {
         var date = dateRows[activeCell[0]][activeCell[1]];
@@ -291,9 +291,9 @@ var DateTimeDrop = function (_Component) {
         // using native event to avoid document click in DateTime to be invoked
         event.nativeEvent.stopImmediatePropagation();
       }
-      var _props = this.props;
-      var format = _props.format;
-      var onChange = _props.onChange;
+      var _props = this.props,
+          format = _props.format,
+          onChange = _props.onChange;
       var intl = this.context.intl;
 
       this.setState({
@@ -308,9 +308,9 @@ var DateTimeDrop = function (_Component) {
   }, {
     key: '_onToday',
     value: function _onToday() {
-      var _props2 = this.props;
-      var format = _props2.format;
-      var onChange = _props2.onChange;
+      var _props2 = this.props,
+          format = _props2.format,
+          onChange = _props2.onChange;
       var timeOfDay = this.state.timeOfDay;
       var intl = this.context.intl;
 
@@ -325,13 +325,13 @@ var DateTimeDrop = function (_Component) {
   }, {
     key: '_onPrevious',
     value: function _onPrevious(scope) {
-      var _props3 = this.props;
-      var format = _props3.format;
-      var step = _props3.step;
-      var onChange = _props3.onChange;
-      var _state5 = this.state;
-      var stepScope = _state5.stepScope;
-      var value = _state5.value;
+      var _props3 = this.props,
+          format = _props3.format,
+          step = _props3.step,
+          onChange = _props3.onChange;
+      var _state5 = this.state,
+          stepScope = _state5.stepScope,
+          value = _state5.value;
 
       var delta = scope === stepScope ? step : 1;
       if (scope === 'ampm') {
@@ -351,13 +351,13 @@ var DateTimeDrop = function (_Component) {
   }, {
     key: '_onNext',
     value: function _onNext(scope) {
-      var _props4 = this.props;
-      var format = _props4.format;
-      var step = _props4.step;
-      var onChange = _props4.onChange;
-      var _state6 = this.state;
-      var stepScope = _state6.stepScope;
-      var value = _state6.value;
+      var _props4 = this.props,
+          format = _props4.format,
+          step = _props4.step,
+          onChange = _props4.onChange;
+      var _state6 = this.state,
+          stepScope = _state6.stepScope,
+          value = _state6.value;
 
       var delta = scope === stepScope ? step : 1;
       if (scope === 'ampm') {
@@ -379,12 +379,12 @@ var DateTimeDrop = function (_Component) {
     value: function _renderDate() {
       var _this2 = this;
 
-      var _state7 = this.state;
-      var activeCell = _state7.activeCell;
-      var dateRows = _state7.dateRows;
-      var focus = _state7.focus;
-      var mouseActive = _state7.mouseActive;
-      var value = _state7.value;
+      var _state7 = this.state,
+          activeCell = _state7.activeCell,
+          dateRows = _state7.dateRows,
+          focus = _state7.focus,
+          mouseActive = _state7.mouseActive,
+          value = _state7.value;
       var intl = this.context.intl;
 
 

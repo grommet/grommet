@@ -126,15 +126,15 @@ var Header = function (_Component) {
           _classnames2,
           _this2 = this;
 
-      var _props = this.props;
-      var children = _props.children;
-      var className = _props.className;
-      var colorIndex = _props.colorIndex;
-      var fixed = _props.fixed;
-      var float = _props.float;
-      var role = _props.role;
-      var size = _props.size;
-      var splash = _props.splash;
+      var _props = this.props,
+          children = _props.children,
+          className = _props.className,
+          colorIndex = _props.colorIndex,
+          fixed = _props.fixed,
+          float = _props.float,
+          role = _props.role,
+          size = _props.size,
+          splash = _props.splash;
 
       var classes = (0, _classnames5.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size && typeof size === 'string'), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--float', float), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--splash', splash), _classnames), className);
       var containerClasses = (0, _classnames5.default)(CLASS_ROOT + '__container', (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--fixed', fixed), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--fill', fixed && !colorIndex), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__container--float', float), _classnames2));

@@ -122,10 +122,10 @@ var ToastContents = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props = this.props;
-      var children = _props.children;
-      var onClose = _props.onClose;
-      var status = _props.status;
+      var _props = this.props,
+          children = _props.children,
+          onClose = _props.onClose,
+          status = _props.status;
       var closing = this.state.closing;
 
 

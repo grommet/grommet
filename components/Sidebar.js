@@ -71,13 +71,13 @@ var Sidebar = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props = this.props;
-      var children = _props.children;
-      var className = _props.className;
-      var fixed = _props.fixed;
-      var full = _props.full;
-      var size = _props.size;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'fixed', 'full', 'size']);
+      var _props = this.props,
+          children = _props.children,
+          className = _props.className,
+          fixed = _props.fixed,
+          full = _props.full,
+          size = _props.size,
+          props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'fixed', 'full', 'size']);
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fixed', fixed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames), className);
 

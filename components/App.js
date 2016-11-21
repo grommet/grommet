@@ -103,12 +103,12 @@ var App = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props = this.props;
-      var centered = _props.centered;
-      var children = _props.children;
-      var className = _props.className;
-      var inline = _props.inline;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['centered', 'children', 'className', 'inline']);
+      var _props = this.props,
+          centered = _props.centered,
+          children = _props.children,
+          className = _props.className,
+          inline = _props.inline,
+          props = (0, _objectWithoutProperties3.default)(_props, ['centered', 'children', 'className', 'inline']);
       var lang = this.state.lang;
 
 

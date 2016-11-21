@@ -101,11 +101,11 @@ var AnimateChild = function (_Component) {
   }, {
     key: 'enter',
     value: function enter(callback) {
-      var _props = this.props;
-      var _props$enter = _props.enter;
-      var enterAnimation = _props$enter.animation;
-      var delay = _props$enter.delay;
-      var leaveAnimation = _props.leave.animation;
+      var _props = this.props,
+          _props$enter = _props.enter,
+          enterAnimation = _props$enter.animation,
+          delay = _props$enter.delay,
+          leaveAnimation = _props.leave.animation;
 
       var node = _reactDom2.default.findDOMNode(this);
 
@@ -143,9 +143,9 @@ var AnimateChild = function (_Component) {
     value: function leave(callback) {
       var _this2 = this;
 
-      var _props$leave = this.props.leave;
-      var duration = _props$leave.duration;
-      var delay = _props$leave.delay;
+      var _props$leave = this.props.leave,
+          duration = _props$leave.duration,
+          delay = _props$leave.delay;
 
       var node = _reactDom2.default.findDOMNode(this);
 
@@ -209,9 +209,9 @@ var Animate = function (_Component2) {
     value: function componentWillReceiveProps(nextProps) {
       var _this4 = this;
 
-      var _props2 = this.props;
-      var visible = _props2.visible;
-      var keep = _props2.keep;
+      var _props2 = this.props,
+          visible = _props2.visible,
+          keep = _props2.keep;
       var animationState = this.state.animationState;
 
 
@@ -243,16 +243,16 @@ var Animate = function (_Component2) {
   }, {
     key: 'render',
     value: function render() {
-      var _props3 = this.props;
-      var enter = _props3.enter;
-      var leave = _props3.leave;
-      var className = _props3.className;
-      var children = _props3.children;
-      var component = _props3.component;
-      var visible = _props3.visible;
-      var keep = _props3.keep;
-      var style = _props3.style;
-      var props = (0, _objectWithoutProperties3.default)(_props3, ['enter', 'leave', 'className', 'children', 'component', 'visible', 'keep', 'style']);
+      var _props3 = this.props,
+          enter = _props3.enter,
+          leave = _props3.leave,
+          className = _props3.className,
+          children = _props3.children,
+          component = _props3.component,
+          visible = _props3.visible,
+          keep = _props3.keep,
+          style = _props3.style,
+          props = (0, _objectWithoutProperties3.default)(_props3, ['enter', 'leave', 'className', 'children', 'component', 'visible', 'keep', 'style']);
 
 
       var animateChildren = _react2.default.Children.map(children, function (child, index) {

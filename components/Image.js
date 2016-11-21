@@ -71,14 +71,14 @@ var Image = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props = this.props;
-      var caption = _props.caption;
-      var className = _props.className;
-      var full = _props.full;
-      var mask = _props.mask;
-      var size = _props.size;
-      var fit = _props.fit;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['caption', 'className', 'full', 'mask', 'size', 'fit']);
+      var _props = this.props,
+          caption = _props.caption,
+          className = _props.className,
+          full = _props.full,
+          mask = _props.mask,
+          size = _props.size,
+          fit = _props.fit,
+          props = (0, _objectWithoutProperties3.default)(_props, ['caption', 'className', 'full', 'mask', 'size', 'fit']);
 
       var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + fit, fit), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', typeof full === 'boolean' && full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full-' + full, typeof full === 'string'), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--mask', mask), _classnames), className);
 

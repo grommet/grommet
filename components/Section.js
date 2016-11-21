@@ -65,9 +65,9 @@ var Section = function (_Component) {
   (0, _createClass3.default)(Section, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var className = _props.className;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['className']);
+      var _props = this.props,
+          className = _props.className,
+          props = (0, _objectWithoutProperties3.default)(_props, ['className']);
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, className);
 

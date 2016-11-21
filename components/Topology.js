@@ -73,8 +73,8 @@ var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Label = function Label(props) {
-  var children = props.children;
-  var restProps = (0, _objectWithoutProperties3.default)(props, ['children']);
+  var children = props.children,
+      restProps = (0, _objectWithoutProperties3.default)(props, ['children']);
 
   return _react2.default.createElement(
     'span',
@@ -97,18 +97,18 @@ var Part = function (_Component) {
       var _classnames,
           _this2 = this;
 
-      var _props = this.props;
-      var a11yTitle = _props.a11yTitle;
-      var align = _props.align;
-      var children = _props.children;
-      var className = _props.className;
-      var demarcate = _props.demarcate;
-      var direction = _props.direction;
-      var justify = _props.justify;
-      var label = _props.label;
-      var reverse = _props.reverse;
-      var status = _props.status;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'align', 'children', 'className', 'demarcate', 'direction', 'justify', 'label', 'reverse', 'status']);
+      var _props = this.props,
+          a11yTitle = _props.a11yTitle,
+          align = _props.align,
+          children = _props.children,
+          className = _props.className,
+          demarcate = _props.demarcate,
+          direction = _props.direction,
+          justify = _props.justify,
+          label = _props.label,
+          reverse = _props.reverse,
+          status = _props.status,
+          props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'align', 'children', 'className', 'demarcate', 'direction', 'justify', 'label', 'reverse', 'status']);
       var intl = this.context.intl;
 
       var realChildren = 0;
@@ -217,9 +217,9 @@ var Parts = function (_Component2) {
   }, {
     key: '_makeUniform',
     value: function _makeUniform() {
-      var _props2 = this.props;
-      var direction = _props2.direction;
-      var uniform = _props2.uniform;
+      var _props2 = this.props,
+          direction = _props2.direction,
+          uniform = _props2.uniform;
 
       if (uniform) {
         var parts = this._componentRef.children;
@@ -248,12 +248,12 @@ var Parts = function (_Component2) {
       var _classnames2,
           _this4 = this;
 
-      var _props3 = this.props;
-      var a11yTitle = _props3.a11yTitle;
-      var align = _props3.align;
-      var children = _props3.children;
-      var className = _props3.className;
-      var direction = _props3.direction;
+      var _props3 = this.props,
+          a11yTitle = _props3.a11yTitle,
+          align = _props3.align,
+          children = _props3.children,
+          className = _props3.className,
+          direction = _props3.direction;
       var intl = this.context.intl;
 
       var classes = (0, _classnames6.default)(CLASS_ROOT + '__parts', (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__parts--direction-' + direction, direction), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__part--align-' + align, align), _classnames2), className);
@@ -387,9 +387,9 @@ var Topology = function (_Component3) {
     value: function _buildPaths(contents) {
       var _this6 = this;
 
-      var _props4 = this.props;
-      var linkOffset = _props4.linkOffset;
-      var links = _props4.links;
+      var _props4 = this.props,
+          linkOffset = _props4.linkOffset,
+          links = _props4.links;
       var activeIds = this.state.activeIds;
 
       var rect = contents.getBoundingClientRect();
@@ -490,24 +490,24 @@ var Topology = function (_Component3) {
     value: function render() {
       var _this7 = this;
 
-      var _props5 = this.props;
-      var a11yTitle = _props5.a11yTitle;
-      var children = _props5.children;
-      var className = _props5.className;
-      var links = _props5.links;
-      var _onBlur = _props5.onBlur;
-      var _onFocus = _props5.onFocus;
-      var _onMouseDown = _props5.onMouseDown;
-      var _onMouseUp = _props5.onMouseUp;
-      var props = (0, _objectWithoutProperties3.default)(_props5, ['a11yTitle', 'children', 'className', 'links', 'onBlur', 'onFocus', 'onMouseDown', 'onMouseUp']);
+      var _props5 = this.props,
+          a11yTitle = _props5.a11yTitle,
+          children = _props5.children,
+          className = _props5.className,
+          links = _props5.links,
+          _onBlur = _props5.onBlur,
+          _onFocus = _props5.onFocus,
+          _onMouseDown = _props5.onMouseDown,
+          _onMouseUp = _props5.onMouseUp,
+          props = (0, _objectWithoutProperties3.default)(_props5, ['a11yTitle', 'children', 'className', 'links', 'onBlur', 'onFocus', 'onMouseDown', 'onMouseUp']);
 
       delete props.linkOffset;
-      var _state = this.state;
-      var focus = _state.focus;
-      var height = _state.height;
-      var mouseActive = _state.mouseActive;
-      var paths = _state.paths;
-      var width = _state.width;
+      var _state = this.state,
+          focus = _state.focus,
+          height = _state.height,
+          mouseActive = _state.mouseActive,
+          paths = _state.paths,
+          width = _state.width;
       var intl = this.context.intl;
 
       var classes = (0, _classnames6.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--focus', focus), className);

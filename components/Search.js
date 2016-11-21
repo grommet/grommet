@@ -129,10 +129,10 @@ var Search = function (_Component) {
   (0, _createClass3.default)(Search, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var _props = this.props;
-      var initialFocus = _props.initialFocus;
-      var inline = _props.inline;
-      var responsive = _props.responsive;
+      var _props = this.props,
+          initialFocus = _props.initialFocus,
+          inline = _props.inline,
+          responsive = _props.responsive;
 
       if (inline && responsive) {
         this._responsive = _Responsive2.default.start(this._onResponsive);
@@ -144,10 +144,10 @@ var Search = function (_Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      var _state = this.state;
-      var dropActive = _state.dropActive;
-      var inline = _state.inline;
-      var small = _state.small;
+      var _state = this.state,
+          dropActive = _state.dropActive,
+          inline = _state.inline,
+          small = _state.small;
 
       if (nextProps.suggestions && nextProps.suggestions.length > 0 && !dropActive && this._inputRef === document.activeElement) {
         this.setState({ dropActive: true });
@@ -161,13 +161,13 @@ var Search = function (_Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      var _props2 = this.props;
-      var dropAlign = _props2.dropAlign;
-      var suggestions = _props2.suggestions;
-      var _state2 = this.state;
-      var announceChange = _state2.announceChange;
-      var dropActive = _state2.dropActive;
-      var inline = _state2.inline;
+      var _props2 = this.props,
+          dropAlign = _props2.dropAlign,
+          suggestions = _props2.suggestions;
+      var _state2 = this.state,
+          announceChange = _state2.announceChange,
+          dropActive = _state2.dropActive,
+          inline = _state2.inline;
       var intl = this.context.intl;
       // Set up keyboard listeners appropriate to the current state.
 
@@ -258,10 +258,10 @@ var Search = function (_Component) {
   }, {
     key: '_onInputKeyDown',
     value: function _onInputKeyDown(event) {
-      var _props3 = this.props;
-      var inline = _props3.inline;
-      var suggestions = _props3.suggestions;
-      var onKeyDown = _props3.onKeyDown;
+      var _props3 = this.props,
+          inline = _props3.inline,
+          suggestions = _props3.suggestions,
+          onKeyDown = _props3.onKeyDown;
       var dropActive = this.state.dropActive;
 
       if (suggestions) {
@@ -369,10 +369,10 @@ var Search = function (_Component) {
     value: function _onEnter(event) {
       var _this2 = this;
 
-      var _props4 = this.props;
-      var inline = _props4.inline;
-      var onSelect = _props4.onSelect;
-      var suggestions = _props4.suggestions;
+      var _props4 = this.props,
+          inline = _props4.inline,
+          onSelect = _props4.onSelect,
+          suggestions = _props4.suggestions;
       var activeSuggestionIndex = this.state.activeSuggestionIndex;
       var intl = this.context.intl;
       // for not inline search the enter should NOT submit the form
@@ -457,15 +457,15 @@ var Search = function (_Component) {
       var _classnames,
           _this3 = this;
 
-      var _props5 = this.props;
-      var defaultValue = _props5.defaultValue;
-      var dropAlign = _props5.dropAlign;
-      var dropColorIndex = _props5.dropColorIndex;
-      var suggestions = _props5.suggestions;
-      var value = _props5.value;
-      var _state3 = this.state;
-      var inline = _state3.inline;
-      var activeSuggestionIndex = _state3.activeSuggestionIndex;
+      var _props5 = this.props,
+          defaultValue = _props5.defaultValue,
+          dropAlign = _props5.dropAlign,
+          dropColorIndex = _props5.dropColorIndex,
+          suggestions = _props5.suggestions,
+          value = _props5.value;
+      var _state3 = this.state,
+          inline = _state3.inline,
+          activeSuggestionIndex = _state3.activeSuggestionIndex;
 
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Search.propTypes));
       var classes = (0, _classnames5.default)(CLASS_ROOT + '__drop', (_classnames = {}, (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '-' + dropColorIndex, dropColorIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--controlled', !inline), _classnames));
@@ -531,16 +531,16 @@ var Search = function (_Component) {
       var _classnames3,
           _this4 = this;
 
-      var _props6 = this.props;
-      var className = _props6.className;
-      var defaultValue = _props6.defaultValue;
-      var iconAlign = _props6.iconAlign;
-      var id = _props6.id;
-      var fill = _props6.fill;
-      var pad = _props6.pad;
-      var placeHolder = _props6.placeHolder;
-      var size = _props6.size;
-      var value = _props6.value;
+      var _props6 = this.props,
+          className = _props6.className,
+          defaultValue = _props6.defaultValue,
+          iconAlign = _props6.iconAlign,
+          id = _props6.id,
+          fill = _props6.fill,
+          pad = _props6.pad,
+          placeHolder = _props6.placeHolder,
+          size = _props6.size,
+          value = _props6.value;
       var inline = this.state.inline;
 
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Search.propTypes));

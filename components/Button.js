@@ -75,10 +75,10 @@ var Button = function (_Component) {
   (0, _createClass3.default)(Button, [{
     key: '_onClick',
     value: function _onClick(event) {
-      var _props = this.props;
-      var method = _props.method;
-      var onClick = _props.onClick;
-      var path = _props.path;
+      var _props = this.props,
+          method = _props.method,
+          onClick = _props.onClick,
+          path = _props.path;
       var router = this.context.router;
 
 
@@ -142,24 +142,24 @@ var Button = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props2 = this.props;
-      var a11yTitle = _props2.a11yTitle;
-      var accent = _props2.accent;
-      var align = _props2.align;
-      var children = _props2.children;
-      var className = _props2.className;
-      var fill = _props2.fill;
-      var href = _props2.href;
-      var icon = _props2.icon;
-      var label = _props2.label;
-      var onClick = _props2.onClick;
-      var path = _props2.path;
-      var plain = _props2.plain;
-      var primary = _props2.primary;
-      var reverse = _props2.reverse;
-      var secondary = _props2.secondary;
-      var type = _props2.type;
-      var props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'accent', 'align', 'children', 'className', 'fill', 'href', 'icon', 'label', 'onClick', 'path', 'plain', 'primary', 'reverse', 'secondary', 'type']);
+      var _props2 = this.props,
+          a11yTitle = _props2.a11yTitle,
+          accent = _props2.accent,
+          align = _props2.align,
+          children = _props2.children,
+          className = _props2.className,
+          fill = _props2.fill,
+          href = _props2.href,
+          icon = _props2.icon,
+          label = _props2.label,
+          onClick = _props2.onClick,
+          path = _props2.path,
+          plain = _props2.plain,
+          primary = _props2.primary,
+          reverse = _props2.reverse,
+          secondary = _props2.secondary,
+          type = _props2.type,
+          props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'accent', 'align', 'children', 'className', 'fill', 'href', 'icon', 'label', 'onClick', 'path', 'plain', 'primary', 'reverse', 'secondary', 'type']);
 
       delete props.method;
       var router = this.context.router;

@@ -112,9 +112,9 @@ var List = function (_Component) {
   (0, _createClass3.default)(List, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var _props = this.props;
-      var onMore = _props.onMore;
-      var selectable = _props.selectable;
+      var _props = this.props,
+          onMore = _props.onMore,
+          selectable = _props.selectable;
 
       this._setSelection();
       if (onMore) {
@@ -149,9 +149,9 @@ var List = function (_Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      var _props2 = this.props;
-      var onMore = _props2.onMore;
-      var selectable = _props2.selectable;
+      var _props2 = this.props,
+          onMore = _props2.onMore,
+          selectable = _props2.selectable;
       var selected = this.state.selected;
 
       if ((0, _stringify2.default)(selected) !== (0, _stringify2.default)(prevState.selected)) {
@@ -311,10 +311,10 @@ var List = function (_Component) {
   }, {
     key: '_onClick',
     value: function _onClick(event) {
-      var _props3 = this.props;
-      var onSelect = _props3.onSelect;
-      var selectable = _props3.selectable;
-      var selected = _props3.selected;
+      var _props3 = this.props,
+          onSelect = _props3.onSelect,
+          selectable = _props3.selectable,
+          selected = _props3.selected;
 
       if (!this.props.selectable) {
         return;
@@ -343,22 +343,22 @@ var List = function (_Component) {
       var _classnames,
           _this4 = this;
 
-      var _props4 = this.props;
-      var a11yTitle = _props4.a11yTitle;
-      var children = _props4.children;
-      var className = _props4.className;
-      var emptyIndicator = _props4.emptyIndicator;
-      var _onBlur = _props4.onBlur;
-      var _onFocus = _props4.onFocus;
-      var onMore = _props4.onMore;
-      var _onMouseDown = _props4.onMouseDown;
-      var _onMouseUp = _props4.onMouseUp;
-      var selectable = _props4.selectable;
-      var props = (0, _objectWithoutProperties3.default)(_props4, ['a11yTitle', 'children', 'className', 'emptyIndicator', 'onBlur', 'onFocus', 'onMore', 'onMouseDown', 'onMouseUp', 'selectable']);
-      var _state = this.state;
-      var activeItem = _state.activeItem;
-      var focus = _state.focus;
-      var mouseActive = _state.mouseActive;
+      var _props4 = this.props,
+          a11yTitle = _props4.a11yTitle,
+          children = _props4.children,
+          className = _props4.className,
+          emptyIndicator = _props4.emptyIndicator,
+          _onBlur = _props4.onBlur,
+          _onFocus = _props4.onFocus,
+          onMore = _props4.onMore,
+          _onMouseDown = _props4.onMouseDown,
+          _onMouseUp = _props4.onMouseUp,
+          selectable = _props4.selectable,
+          props = (0, _objectWithoutProperties3.default)(_props4, ['a11yTitle', 'children', 'className', 'emptyIndicator', 'onBlur', 'onFocus', 'onMore', 'onMouseDown', 'onMouseUp', 'selectable']);
+      var _state = this.state,
+          activeItem = _state.activeItem,
+          focus = _state.focus,
+          mouseActive = _state.mouseActive;
       var intl = this.context.intl;
 
 

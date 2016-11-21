@@ -91,9 +91,9 @@ var Grid = function (_Component) {
   }, {
     key: '_layout',
     value: function _layout() {
-      var _props = this.props;
-      var height = _props.height;
-      var width = _props.width;
+      var _props = this.props,
+          height = _props.height,
+          width = _props.width;
 
       var grid = this.gridRef;
       var rect = grid.getBoundingClientRect();
@@ -105,17 +105,17 @@ var Grid = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props2 = this.props;
-      var className = _props2.className;
-      var columns = _props2.columns;
-      var rows = _props2.rows;
-      var props = (0, _objectWithoutProperties3.default)(_props2, ['className', 'columns', 'rows']);
+      var _props2 = this.props,
+          className = _props2.className,
+          columns = _props2.columns,
+          rows = _props2.rows,
+          props = (0, _objectWithoutProperties3.default)(_props2, ['className', 'columns', 'rows']);
 
       delete props.height;
       delete props.width;
-      var _state = this.state;
-      var height = _state.height;
-      var width = _state.width;
+      var _state = this.state,
+          height = _state.height,
+          width = _state.width;
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, className);
 

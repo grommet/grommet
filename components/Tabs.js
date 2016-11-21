@@ -96,12 +96,12 @@ var Tabs = function (_Component) {
       var _classnames,
           _this2 = this;
 
-      var _props = this.props;
-      var children = _props.children;
-      var className = _props.className;
-      var justify = _props.justify;
-      var responsive = _props.responsive;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'justify', 'responsive']);
+      var _props = this.props,
+          children = _props.children,
+          className = _props.className,
+          justify = _props.justify,
+          responsive = _props.responsive,
+          props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'justify', 'responsive']);
 
       delete props.activeIndex;
       delete props.onActive;

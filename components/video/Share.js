@@ -78,10 +78,10 @@ var Overlay = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props = this.props;
-      var shareLink = _props.shareLink;
-      var shareHeadline = _props.shareHeadline;
-      var shareText = _props.shareText;
+      var _props = this.props,
+          shareLink = _props.shareLink,
+          shareHeadline = _props.shareHeadline,
+          shareText = _props.shareText;
 
       // this has to be null to be a valid react children
 

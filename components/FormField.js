@@ -113,17 +113,17 @@ var FormField = function (_Component) {
       var _classnames,
           _this2 = this;
 
-      var _props = this.props;
-      var children = _props.children;
-      var className = _props.className;
-      var help = _props.help;
-      var hidden = _props.hidden;
-      var htmlFor = _props.htmlFor;
-      var label = _props.label;
-      var size = _props.size;
-      var strong = _props.strong;
-      var error = _props.error;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'help', 'hidden', 'htmlFor', 'label', 'size', 'strong', 'error']);
+      var _props = this.props,
+          children = _props.children,
+          className = _props.className,
+          help = _props.help,
+          hidden = _props.hidden,
+          htmlFor = _props.htmlFor,
+          label = _props.label,
+          size = _props.size,
+          strong = _props.strong,
+          error = _props.error,
+          props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'help', 'hidden', 'htmlFor', 'label', 'size', 'strong', 'error']);
 
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--focus', this.state.focus), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hidden', hidden), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--text', htmlFor), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--size-' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--strong', strong), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--error', error), _classnames), className);

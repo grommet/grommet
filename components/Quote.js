@@ -75,13 +75,13 @@ var Quote = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props = this.props;
-      var borderColorIndex = _props.borderColorIndex;
-      var children = _props.children;
-      var className = _props.className;
-      var credit = _props.credit;
-      var emphasizeCredit = _props.emphasizeCredit;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['borderColorIndex', 'children', 'className', 'credit', 'emphasizeCredit']);
+      var _props = this.props,
+          borderColorIndex = _props.borderColorIndex,
+          children = _props.children,
+          className = _props.className,
+          credit = _props.credit,
+          emphasizeCredit = _props.emphasizeCredit,
+          props = (0, _objectWithoutProperties3.default)(_props, ['borderColorIndex', 'children', 'className', 'credit', 'emphasizeCredit']);
 
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, BORDER_COLOR_INDEX + '-' + borderColorIndex, borderColorIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--small', 'small' === props.size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--emphasize-credit', emphasizeCredit), _classnames), className);

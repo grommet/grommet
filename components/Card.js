@@ -88,9 +88,15 @@ var _CirclePlay = require('./icons/base/CirclePlay');
 
 var _CirclePlay2 = _interopRequireDefault(_CirclePlay);
 
+var _Responsive = require('../utils/Responsive');
+
+var _Responsive2 = _interopRequireDefault(_Responsive);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.CARD; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.CARD;
 
 var LABEL_SIZES = {
   xlarge: 'medium',
@@ -136,11 +142,29 @@ var Card = function (_Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (Card.__proto__ || (0, _getPrototypeOf2.default)(Card)).call(this, props));
 
     _this._onClick = _this._onClick.bind(_this);
-    _this.state = { activeVideo: false };
+    _this._onResponsive = _this._onResponsive.bind(_this);
+    _this.state = { activeVideo: false, small: false };
     return _this;
   }
 
   (0, _createClass3.default)(Card, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this._responsive = _Responsive2.default.start(this._onResponsive);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      if (this._responsive) {
+        this._responsive.stop();
+      }
+    }
+  }, {
+    key: '_onResponsive',
+    value: function _onResponsive(small) {
+      this.setState({ small: !!small });
+    }
+  }, {
     key: '_onClick',
     value: function _onClick(event) {
       var video = this.props.video;
@@ -153,9 +177,9 @@ var Card = function (_Component) {
   }, {
     key: '_renderLabel',
     value: function _renderLabel() {
-      var _props = this.props;
-      var label = _props.label;
-      var textSize = _props.textSize;
+      var _props = this.props,
+          label = _props.label,
+          textSize = _props.textSize;
 
       var result = label;
       if (typeof label === 'string') {
@@ -170,10 +194,10 @@ var Card = function (_Component) {
   }, {
     key: '_renderHeading',
     value: function _renderHeading() {
-      var _props2 = this.props;
-      var heading = _props2.heading;
-      var headingStrong = _props2.headingStrong;
-      var textSize = _props2.textSize;
+      var _props2 = this.props,
+          heading = _props2.heading,
+          headingStrong = _props2.headingStrong,
+          textSize = _props2.textSize;
 
       var result = heading;
       if (typeof heading === 'string') {
@@ -203,20 +227,24 @@ var Card = function (_Component) {
   }, {
     key: '_renderThumbnail',
     value: function _renderThumbnail() {
-      var _props3 = this.props;
-      var thumbnail = _props3.thumbnail;
-      var video = _props3.video;
+      var _props3 = this.props,
+          direction = _props3.direction,
+          thumbnail = _props3.thumbnail,
+          video = _props3.video;
+      var small = this.state.small;
 
       var result = thumbnail;
       if (typeof thumbnail === 'string') {
-        var basis = 'row' === this.props.direction ? '1/3' : 'small';
+        var size = small ? 'large' : 'xlarge';
         var videoIcon = video ? _react2.default.createElement(_Anchor2.default, { icon: _react2.default.createElement(_CirclePlay2.default, { responsive: false, colorIndex: 'brand',
-            size: 'xlarge' }) }) : undefined;
+            size: size }) }) : undefined;
+
+        var flex = 'row' === direction ? 'grow' : undefined;
 
         result = _react2.default.createElement(
           _Box2.default,
-          { className: CLASS_ROOT + '__thumbnail',
-            backgroundImage: 'url(' + thumbnail + ')', basis: basis, flex: false,
+          { className: CLASS_ROOT + '__thumbnail', flex: flex,
+            backgroundImage: 'url(' + thumbnail + ')', basis: 'small',
             justify: 'center', align: 'center' },
           videoIcon
         );
@@ -255,9 +283,9 @@ var Card = function (_Component) {
   }, {
     key: '_renderDescription',
     value: function _renderDescription() {
-      var _props4 = this.props;
-      var description = _props4.description;
-      var textSize = _props4.textSize;
+      var _props4 = this.props,
+          description = _props4.description,
+          textSize = _props4.textSize;
 
       var result = description;
       if (typeof description === 'string') {
@@ -276,25 +304,19 @@ var Card = function (_Component) {
     value: function render() {
       var _classnames2;
 
-      var _props5 = this.props;
-      var a11yTitle = _props5.a11yTitle;
-      var children = _props5.children;
-      var className = _props5.className;
-      var contentPad = _props5.contentPad;
-      var onClick = _props5.onClick;
-      var reverse = _props5.reverse;
-      var truncate = _props5.truncate;
-      var video = _props5.video;
+      var _props5 = this.props,
+          a11yTitle = _props5.a11yTitle,
+          children = _props5.children,
+          className = _props5.className,
+          contentPad = _props5.contentPad,
+          onClick = _props5.onClick,
+          reverse = _props5.reverse,
+          truncate = _props5.truncate;
 
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Card.propTypes));
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--selectable', onClick || video), className);
-
-      var onCardClick = onClick;
-      if (!onCardClick && video) {
-        onCardClick = this._onClick;
-      }
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--selectable', onClick), className);
 
       var thumbnail = this._renderThumbnail();
       var label = this._renderLabel();
@@ -305,9 +327,11 @@ var Card = function (_Component) {
 
       var contentClasses = (0, _classnames4.default)((_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__content', true), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__content--truncate', truncate), _classnames2));
 
+      var basis = 'row' === this.props.direction ? '2/3' : undefined;
       var text = _react2.default.createElement(
         _Box2.default,
-        { className: contentClasses, flex: true, pad: contentPad },
+        { className: contentClasses, pad: contentPad,
+          basis: basis },
         label,
         heading,
         description,
@@ -331,8 +355,8 @@ var Card = function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        (0, _extends3.default)({}, boxProps, restProps, { className: classes,
-          justify: cardJustify, onClick: onCardClick, a11yTitle: a11yTitle }),
+        (0, _extends3.default)({}, boxProps, restProps, { className: classes, wrap: true,
+          justify: cardJustify, onClick: onClick, a11yTitle: a11yTitle }),
         thumbnail,
         text,
         videoLayer

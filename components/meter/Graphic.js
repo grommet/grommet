@@ -134,9 +134,9 @@ var Graphic = function (_Component) {
   }, {
     key: '_renderSlice',
     value: function _renderSlice(trackIndex, item, itemIndex, startValue, max, track, threshold) {
-      var _props = this.props;
-      var activeIndex = _props.activeIndex;
-      var onActivate = _props.onActivate;
+      var _props = this.props,
+          activeIndex = _props.activeIndex,
+          onActivate = _props.onActivate;
 
       var path = void 0;
       if (!item.hidden) {
@@ -164,9 +164,9 @@ var Graphic = function (_Component) {
     value: function _renderSlices(series, trackIndex, track, threshold) {
       var _this2 = this;
 
-      var _props2 = this.props;
-      var min = _props2.min;
-      var max = _props2.max;
+      var _props2 = this.props,
+          min = _props2.min,
+          max = _props2.max;
 
       var startValue = min;
 
@@ -225,9 +225,9 @@ var Graphic = function (_Component) {
     value: function _renderValues() {
       var _this3 = this;
 
-      var _props3 = this.props;
-      var min = _props3.min;
-      var max = _props3.max;
+      var _props3 = this.props,
+          min = _props3.min,
+          max = _props3.max;
 
       var values = void 0;
       if (this.props.stacked) {
@@ -254,9 +254,9 @@ var Graphic = function (_Component) {
     value: function _renderTracks() {
       var _this4 = this;
 
-      var _props4 = this.props;
-      var min = _props4.min;
-      var max = _props4.max;
+      var _props4 = this.props,
+          min = _props4.min,
+          max = _props4.max;
 
       var trackValue = { value: max };
       var tracks = void 0;
@@ -351,12 +351,12 @@ var Graphic = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props5 = this.props;
-      var series = _props5.series;
-      var tabIndex = _props5.tabIndex;
-      var _state = this.state;
-      var viewBoxHeight = _state.viewBoxHeight;
-      var viewBoxWidth = _state.viewBoxWidth;
+      var _props5 = this.props,
+          series = _props5.series,
+          tabIndex = _props5.tabIndex;
+      var _state = this.state,
+          viewBoxHeight = _state.viewBoxHeight,
+          viewBoxWidth = _state.viewBoxWidth;
 
       var tracks = this._renderTracks();
       var values = this._renderValues();

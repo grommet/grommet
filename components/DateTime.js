@@ -141,9 +141,9 @@ var DateTime = function (_Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      var _state = this.state;
-      var cursor = _state.cursor;
-      var dropActive = _state.dropActive;
+      var _state = this.state,
+          cursor = _state.cursor,
+          dropActive = _state.dropActive;
       // Set up keyboard listeners appropriate to the current state.
 
       if (prevState.dropActive !== dropActive) {
@@ -166,8 +166,8 @@ var DateTime = function (_Component) {
   }, {
     key: '_stateFromProps',
     value: function _stateFromProps(props) {
-      var value = props.value;
-      var format = props.format;
+      var value = props.value,
+          format = props.format;
 
       var result = { current: undefined };
       var date = (0, _moment2.default)(value, format);
@@ -189,10 +189,10 @@ var DateTime = function (_Component) {
   }, {
     key: '_onInputChange',
     value: function _onInputChange(event) {
-      var _props = this.props;
-      var format = _props.format;
-      var onChange = _props.onChange;
-      var value = _props.value;
+      var _props = this.props,
+          format = _props.format,
+          onChange = _props.onChange,
+          value = _props.value;
 
       var currentValue = event.target.value;
       if (currentValue.length > 0) {
@@ -215,9 +215,9 @@ var DateTime = function (_Component) {
   }, {
     key: '_notify',
     value: function _notify(date, checkClose) {
-      var _props2 = this.props;
-      var format = _props2.format;
-      var onChange = _props2.onChange;
+      var _props2 = this.props,
+          format = _props2.format,
+          onChange = _props2.onChange;
 
       if (onChange) {
         onChange(date);
@@ -356,9 +356,9 @@ var DateTime = function (_Component) {
   }, {
     key: '_renderDrop',
     value: function _renderDrop() {
-      var _props3 = this.props;
-      var format = _props3.format;
-      var step = _props3.step;
+      var _props3 = this.props,
+          format = _props3.format,
+          step = _props3.step;
       var current = this.state.current;
 
       return _react2.default.createElement(_DateTimeDrop2.default, { format: format, value: current,
@@ -369,11 +369,11 @@ var DateTime = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props4 = this.props;
-      var className = _props4.className;
-      var format = _props4.format;
-      var value = _props4.value;
-      var props = (0, _objectWithoutProperties3.default)(_props4, ['className', 'format', 'value']);
+      var _props4 = this.props,
+          className = _props4.className,
+          format = _props4.format,
+          value = _props4.value,
+          props = (0, _objectWithoutProperties3.default)(_props4, ['className', 'format', 'value']);
 
       delete props.onChange;
       delete props.step;

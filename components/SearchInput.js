@@ -110,9 +110,9 @@ var SearchInput = function (_Component) {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
       var suggestions = this.props.suggestions;
-      var _state = this.state;
-      var announceChange = _state.announceChange;
-      var dropActive = _state.dropActive;
+      var _state = this.state,
+          announceChange = _state.announceChange,
+          dropActive = _state.dropActive;
       var intl = this.context.intl;
       // Set up keyboard listeners appropriate to the current state.
 
@@ -224,9 +224,9 @@ var SearchInput = function (_Component) {
   }, {
     key: '_onAddDrop',
     value: function _onAddDrop(event) {
-      var _props = this.props;
-      var suggestions = _props.suggestions;
-      var value = _props.value;
+      var _props = this.props,
+          suggestions = _props.suggestions,
+          value = _props.value;
       // Get values of suggestions, so we can highlight selected suggestion
 
       if (suggestions) {
@@ -267,9 +267,9 @@ var SearchInput = function (_Component) {
     value: function _onEnter(event) {
       var _this2 = this;
 
-      var _props2 = this.props;
-      var suggestions = _props2.suggestions;
-      var onSelect = _props2.onSelect;
+      var _props2 = this.props,
+          suggestions = _props2.suggestions,
+          onSelect = _props2.onSelect;
       var activeSuggestionIndex = this.state.activeSuggestionIndex;
       var intl = this.context.intl;
 
@@ -366,13 +366,13 @@ var SearchInput = function (_Component) {
     value: function render() {
       var _this4 = this;
 
-      var _props3 = this.props;
-      var className = _props3.className;
-      var defaultValue = _props3.defaultValue;
-      var id = _props3.id;
-      var name = _props3.name;
-      var placeHolder = _props3.placeHolder;
-      var value = _props3.value;
+      var _props3 = this.props,
+          className = _props3.className,
+          defaultValue = _props3.defaultValue,
+          id = _props3.id,
+          name = _props3.name,
+          placeHolder = _props3.placeHolder,
+          value = _props3.value;
       var active = this.state.active;
 
       var classes = (0, _classnames4.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', active), className);

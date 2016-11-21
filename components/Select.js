@@ -140,12 +140,12 @@ var Select = function (_Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      var _props = this.props;
-      var inline = _props.inline;
-      var options = _props.options;
-      var _state = this.state;
-      var announceChange = _state.announceChange;
-      var dropActive = _state.dropActive;
+      var _props = this.props,
+          inline = _props.inline,
+          options = _props.options;
+      var _state = this.state,
+          announceChange = _state.announceChange,
+          dropActive = _state.dropActive;
       var intl = this.context.intl;
 
       // Set up keyboard listeners appropriate to the current state.
@@ -221,8 +221,8 @@ var Select = function (_Component) {
   }, {
     key: '_normalizeValue',
     value: function _normalizeValue(props, state) {
-      var multiple = props.multiple;
-      var value = props.value;
+      var multiple = props.multiple,
+          value = props.value;
 
       var normalizedValue = value;
       if (multiple) {
@@ -273,9 +273,9 @@ var Select = function (_Component) {
   }, {
     key: '_onAddDrop',
     value: function _onAddDrop(event) {
-      var _props2 = this.props;
-      var options = _props2.options;
-      var value = _props2.value;
+      var _props2 = this.props,
+          options = _props2.options,
+          value = _props2.value;
 
       event.preventDefault();
       // Get values of options, so we can highlight selected option
@@ -327,9 +327,9 @@ var Select = function (_Component) {
     value: function _onEnter(event) {
       var _this2 = this;
 
-      var _props3 = this.props;
-      var onChange = _props3.onChange;
-      var options = _props3.options;
+      var _props3 = this.props,
+          onChange = _props3.onChange,
+          options = _props3.options;
       var activeOptionIndex = this.state.activeOptionIndex;
       var intl = this.context.intl;
 
@@ -438,17 +438,17 @@ var Select = function (_Component) {
       var _this4 = this;
 
       var restProps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-      var _props4 = this.props;
-      var id = _props4.id;
-      var inline = _props4.inline;
-      var multiple = _props4.multiple;
-      var options = _props4.options;
-      var onSearch = _props4.onSearch;
-      var placeHolder = _props4.placeHolder;
-      var value = _props4.value;
-      var _state2 = this.state;
-      var activeOptionIndex = _state2.activeOptionIndex;
-      var searchText = _state2.searchText;
+      var _props4 = this.props,
+          id = _props4.id,
+          inline = _props4.inline,
+          multiple = _props4.multiple,
+          options = _props4.options,
+          onSearch = _props4.onSearch,
+          placeHolder = _props4.placeHolder,
+          value = _props4.value;
+      var _state2 = this.state,
+          activeOptionIndex = _state2.activeOptionIndex,
+          searchText = _state2.searchText;
 
 
       var search = void 0;
@@ -522,10 +522,10 @@ var Select = function (_Component) {
       var _classnames2,
           _this5 = this;
 
-      var _props5 = this.props;
-      var className = _props5.className;
-      var inline = _props5.inline;
-      var value = _props5.value;
+      var _props5 = this.props,
+          className = _props5.className,
+          inline = _props5.inline,
+          value = _props5.value;
       var active = this.state.active;
       var intl = this.context.intl;
 

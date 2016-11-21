@@ -105,26 +105,26 @@ var Marker = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props = this.props;
-      var className = _props.className;
-      var colorIndex = _props.colorIndex;
-      var count = _props.count;
-      var index = _props.index;
-      var max = _props.max;
-      var min = _props.min;
-      var reverse = _props.reverse;
-      var value = _props.value;
-      var vertical = _props.vertical;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'colorIndex', 'count', 'index', 'max', 'min', 'reverse', 'value', 'vertical']);
+      var _props = this.props,
+          className = _props.className,
+          colorIndex = _props.colorIndex,
+          count = _props.count,
+          index = _props.index,
+          max = _props.max,
+          min = _props.min,
+          reverse = _props.reverse,
+          value = _props.value,
+          vertical = _props.vertical,
+          props = (0, _objectWithoutProperties3.default)(_props, ['className', 'colorIndex', 'count', 'index', 'max', 'min', 'reverse', 'value', 'vertical']);
 
       delete props.height;
       delete props.width;
-      var _state = this.state;
-      var _state$size = _state.size;
-      var height = _state$size.height;
-      var width = _state$size.width;
-      var graphWidth = _state.graphWidth;
-      var graphHeight = _state.graphHeight;
+      var _state = this.state,
+          _state$size = _state.size,
+          height = _state$size.height,
+          width = _state$size.width,
+          graphWidth = _state.graphWidth,
+          graphHeight = _state.graphHeight;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, COLOR_INDEX + '-' + colorIndex, colorIndex), className);
 

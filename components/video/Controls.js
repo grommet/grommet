@@ -139,9 +139,9 @@ var Controls = function (_Component) {
   }, {
     key: '_renderMuteButton',
     value: function _renderMuteButton() {
-      var _props = this.props;
-      var muted = _props.muted;
-      var toggleMute = _props.toggleMute;
+      var _props = this.props,
+          muted = _props.muted,
+          toggleMute = _props.toggleMute;
       var intl = this.context.intl;
 
       var buttonMessage = _Intl2.default.getMessage(intl, 'Mute');
@@ -160,10 +160,10 @@ var Controls = function (_Component) {
   }, {
     key: '_renderChapterLabels',
     value: function _renderChapterLabels() {
-      var _props2 = this.props;
-      var duration = _props2.duration;
-      var timeline = _props2.timeline;
-      var props = (0, _objectWithoutProperties3.default)(_props2, ['duration', 'timeline']);
+      var _props2 = this.props,
+          duration = _props2.duration,
+          timeline = _props2.timeline,
+          props = (0, _objectWithoutProperties3.default)(_props2, ['duration', 'timeline']);
       var activeChapterIndex = this.state.activeChapterIndex;
 
 
@@ -202,18 +202,18 @@ var Controls = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props3 = this.props;
-      var togglePlay = _props3.togglePlay;
-      var hasPlayed = _props3.hasPlayed;
-      var playing = _props3.playing;
-      var ended = _props3.ended;
-      var currentTime = _props3.currentTime;
-      var duration = _props3.duration;
-      var percentagePlayed = _props3.percentagePlayed;
-      var seek = _props3.seek;
-      var timeline = _props3.timeline;
-      var allowFullScreen = _props3.allowFullScreen;
-      var fullscreen = _props3.fullscreen;
+      var _props3 = this.props,
+          togglePlay = _props3.togglePlay,
+          hasPlayed = _props3.hasPlayed,
+          playing = _props3.playing,
+          ended = _props3.ended,
+          currentTime = _props3.currentTime,
+          duration = _props3.duration,
+          percentagePlayed = _props3.percentagePlayed,
+          seek = _props3.seek,
+          timeline = _props3.timeline,
+          allowFullScreen = _props3.allowFullScreen,
+          fullscreen = _props3.fullscreen;
 
 
       if (!hasPlayed) {

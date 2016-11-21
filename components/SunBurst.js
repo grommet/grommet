@@ -262,10 +262,10 @@ var SunBurst = function (_Component) {
     value: function _renderData(path, data, total, centerX, centerY, radius, startAngle, endAngle, role, value) {
       var _this2 = this;
 
-      var _props = this.props;
-      var active = _props.active;
-      var onActive = _props.onActive;
-      var onClick = _props.onClick;
+      var _props = this.props,
+          active = _props.active,
+          onActive = _props.onActive,
+          onClick = _props.onClick;
       var width = this.state.width;
       var intl = this.context.intl;
 
@@ -333,21 +333,21 @@ var SunBurst = function (_Component) {
       var _classnames2,
           _this3 = this;
 
-      var _props2 = this.props;
-      var a11yTitle = _props2.a11yTitle;
-      var active = _props2.active;
-      var className = _props2.className;
-      var data = _props2.data;
-      var label = _props2.label;
-      var size = _props2.size;
-      var props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'active', 'className', 'data', 'label', 'size']);
+      var _props2 = this.props,
+          a11yTitle = _props2.a11yTitle,
+          active = _props2.active,
+          className = _props2.className,
+          data = _props2.data,
+          label = _props2.label,
+          size = _props2.size,
+          props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'active', 'className', 'data', 'label', 'size']);
 
       delete props.onActive;
       delete props.onClick;
-      var _state = this.state;
-      var focus = _state.focus;
-      var height = _state.height;
-      var width = _state.width;
+      var _state = this.state,
+          focus = _state.focus,
+          height = _state.height,
+          width = _state.width;
       var intl = this.context.intl;
 
       var classes = (0, _classnames5.default)(CLASS_ROOT, (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--active', active), _classnames2), className);

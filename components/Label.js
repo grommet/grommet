@@ -77,15 +77,15 @@ var Label = function (_Component) {
       var _classnames,
           _this2 = this;
 
-      var _props = this.props;
-      var children = _props.children;
-      var className = _props.className;
-      var labelFor = _props.labelFor;
-      var margin = _props.margin;
-      var size = _props.size;
-      var truncate = _props.truncate;
-      var uppercase = _props.uppercase;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'labelFor', 'margin', 'size', 'truncate', 'uppercase']);
+      var _props = this.props,
+          children = _props.children,
+          className = _props.className,
+          labelFor = _props.labelFor,
+          margin = _props.margin,
+          size = _props.size,
+          truncate = _props.truncate,
+          uppercase = _props.uppercase,
+          props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'labelFor', 'margin', 'size', 'truncate', 'uppercase']);
 
       delete props.announce;
       var labelMargin = margin ? margin : 'small' === size ? 'none' : 'medium';

@@ -282,22 +282,22 @@ var Video = function (_Component) {
       var _classnames,
           _this4 = this;
 
-      var _props = this.props;
-      var autoPlay = _props.autoPlay;
-      var className = _props.className;
-      var colorIndex = _props.colorIndex;
-      var full = _props.full;
-      var loop = _props.loop;
-      var muted = _props.muted;
-      var poster = _props.poster;
-      var showControls = _props.showControls;
-      var size = _props.size;
-      var _state = this.state;
-      var ended = _state.ended;
-      var hasPlayed = _state.hasPlayed;
-      var interacting = _state.interacting;
-      var mouseActive = _state.mouseActive;
-      var playing = _state.playing;
+      var _props = this.props,
+          autoPlay = _props.autoPlay,
+          className = _props.className,
+          colorIndex = _props.colorIndex,
+          full = _props.full,
+          loop = _props.loop,
+          muted = _props.muted,
+          poster = _props.poster,
+          showControls = _props.showControls,
+          size = _props.size;
+      var _state = this.state,
+          ended = _state.ended,
+          hasPlayed = _state.hasPlayed,
+          interacting = _state.interacting,
+          mouseActive = _state.mouseActive,
+          playing = _state.playing;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interacting', interacting), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--playing', playing), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hasPlayed', hasPlayed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--ended', ended), (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '--' + colorIndex, colorIndex), _classnames), className);
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Video.propTypes));

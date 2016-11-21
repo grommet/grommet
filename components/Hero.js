@@ -127,18 +127,18 @@ var Hero = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props = this.props;
-      var backgroundImage = _props.backgroundImage;
-      var backgroundVideo = _props.backgroundVideo;
-      var children = _props.children;
-      var className = _props.className;
-      var flush = _props.flush;
-      var image = _props.image;
-      var justify = _props.justify;
-      var responsiveBackgroundPosition = _props.responsiveBackgroundPosition;
-      var separator = _props.separator;
-      var size = _props.size;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['backgroundImage', 'backgroundVideo', 'children', 'className', 'flush', 'image', 'justify', 'responsiveBackgroundPosition', 'separator', 'size']);
+      var _props = this.props,
+          backgroundImage = _props.backgroundImage,
+          backgroundVideo = _props.backgroundVideo,
+          children = _props.children,
+          className = _props.className,
+          flush = _props.flush,
+          image = _props.image,
+          justify = _props.justify,
+          responsiveBackgroundPosition = _props.responsiveBackgroundPosition,
+          separator = _props.separator,
+          size = _props.size,
+          props = (0, _objectWithoutProperties3.default)(_props, ['backgroundImage', 'backgroundVideo', 'children', 'className', 'flush', 'image', 'justify', 'responsiveBackgroundPosition', 'separator', 'size']);
 
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--bg-' + responsiveBackgroundPosition, responsiveBackgroundPosition), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--mobile-separator', separator), _classnames), className);

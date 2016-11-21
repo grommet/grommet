@@ -68,9 +68,9 @@ var Base = function (_Component) {
   (0, _createClass3.default)(Base, [{
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      var _props = this.props;
-      var height = _props.height;
-      var width = _props.width;
+      var _props = this.props,
+          height = _props.height,
+          width = _props.width;
 
       if (nextProps.width !== width || nextProps.height !== height) {
         this._notifySizeChange = true;
@@ -91,13 +91,13 @@ var Base = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props2 = this.props;
-      var children = _props2.children;
-      var className = _props2.className;
-      var height = _props2.height;
-      var vertical = _props2.vertical;
-      var width = _props2.width;
-      var props = (0, _objectWithoutProperties3.default)(_props2, ['children', 'className', 'height', 'vertical', 'width']);
+      var _props2 = this.props,
+          children = _props2.children,
+          className = _props2.className,
+          height = _props2.height,
+          vertical = _props2.vertical,
+          width = _props2.width,
+          props = (0, _objectWithoutProperties3.default)(_props2, ['children', 'className', 'height', 'vertical', 'width']);
 
       var childCount = _react.Children.count(children);
       var finalHeight = !childCount && !height ? 'medium' : height;

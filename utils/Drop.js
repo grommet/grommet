@@ -130,9 +130,9 @@ var DropContents = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props = this.props;
-      var drop = _props.drop;
-      var content = _props.content;
+      var _props = this.props,
+          drop = _props.drop,
+          content = _props.content;
 
 
       var anchorStep = void 0;

@@ -141,9 +141,9 @@ var Columns = function (_Component) {
     value: function _getColumnBreakpoints() {
       var _this2 = this;
 
-      var _state = this.state;
-      var initMobile = _state.initMobile;
-      var margin = _state.margin;
+      var _state = this.state,
+          initMobile = _state.initMobile,
+          margin = _state.margin;
       // grab CSS styles from DOM after component mounted
       // default to small size ($size-small = 192px)
 
@@ -295,11 +295,11 @@ var Columns = function (_Component) {
       var _classnames,
           _this4 = this;
 
-      var _props = this.props;
-      var className = _props.className;
-      var justify = _props.justify;
-      var responsive = _props.responsive;
-      var size = _props.size;
+      var _props = this.props,
+          className = _props.className,
+          justify = _props.justify,
+          responsive = _props.responsive,
+          size = _props.size;
       var margin = this.state.margin;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--justify-' + justify, justify), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + margin, margin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames), className);

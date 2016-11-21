@@ -65,10 +65,10 @@ var Pulse = function (_Component) {
   (0, _createClass3.default)(Pulse, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var className = _props.className;
-      var icon = _props.icon;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'icon']);
+      var _props = this.props,
+          className = _props.className,
+          icon = _props.icon,
+          props = (0, _objectWithoutProperties3.default)(_props, ['className', 'icon']);
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, className);
 

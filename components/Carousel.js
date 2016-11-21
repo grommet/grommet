@@ -228,9 +228,9 @@ var Carousel = function (_Component) {
       this._slideAnimation = setInterval(function () {
         var _this5 = this;
 
-        var _props = this.props;
-        var children = _props.children;
-        var infinite = _props.infinite;
+        var _props = this.props,
+            children = _props.children,
+            infinite = _props.infinite;
         var activeIndex = this.state.activeIndex;
         var intl = this.context.intl;
 
@@ -263,9 +263,9 @@ var Carousel = function (_Component) {
   }, {
     key: '_stopAutoplay',
     value: function _stopAutoplay() {
-      var _props2 = this.props;
-      var autoplay = _props2.autoplay;
-      var persistentNav = _props2.persistentNav;
+      var _props2 = this.props,
+          autoplay = _props2.autoplay,
+          persistentNav = _props2.persistentNav;
 
       if (autoplay) {
         clearInterval(this._slideAnimation);
@@ -281,11 +281,11 @@ var Carousel = function (_Component) {
     key: '_startAutoplay',
     value: function _startAutoplay() {
       var activeIndex = this.state.activeIndex;
-      var _props3 = this.props;
-      var autoplay = _props3.autoplay;
-      var children = _props3.children;
-      var infinite = _props3.infinite;
-      var persistentNav = _props3.persistentNav;
+      var _props3 = this.props,
+          autoplay = _props3.autoplay,
+          children = _props3.children,
+          infinite = _props3.infinite,
+          persistentNav = _props3.persistentNav;
 
       if (autoplay && (infinite || activeIndex !== children.length - 1) &&
       // making sure to only start autoplay if the focus is not inside
@@ -349,9 +349,9 @@ var Carousel = function (_Component) {
   }, {
     key: '_renderNextButton',
     value: function _renderNextButton() {
-      var _props4 = this.props;
-      var children = _props4.children;
-      var infinite = _props4.infinite;
+      var _props4 = this.props,
+          children = _props4.children,
+          infinite = _props4.infinite;
       var activeIndex = this.state.activeIndex;
       var intl = this.context.intl;
 
@@ -370,17 +370,17 @@ var Carousel = function (_Component) {
     value: function render() {
       var _this6 = this;
 
-      var _props5 = this.props;
-      var a11yTitle = _props5.a11yTitle;
-      var children = _props5.children;
-      var className = _props5.className;
-      var props = (0, _objectWithoutProperties3.default)(_props5, ['a11yTitle', 'children', 'className']);
+      var _props5 = this.props,
+          a11yTitle = _props5.a11yTitle,
+          children = _props5.children,
+          className = _props5.className,
+          props = (0, _objectWithoutProperties3.default)(_props5, ['a11yTitle', 'children', 'className']);
 
       var restProps = _Props2.default.omit((0, _extends3.default)({}, props), (0, _keys2.default)(Carousel.propTypes));
-      var _state = this.state;
-      var activeIndex = _state.activeIndex;
-      var hideControls = _state.hideControls;
-      var width = _state.width;
+      var _state = this.state,
+          activeIndex = _state.activeIndex,
+          hideControls = _state.hideControls,
+          width = _state.width;
       var intl = this.context.intl;
 
       var classes = (0, _classnames4.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--hide-controls', hideControls), className);

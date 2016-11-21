@@ -75,16 +75,16 @@ var Tile = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props = this.props;
-      var children = _props.children;
-      var className = _props.className;
-      var onClick = _props.onClick;
-      var wide = _props.wide;
-      var status = _props.status;
-      var hoverStyle = _props.hoverStyle;
-      var hoverColorIndex = _props.hoverColorIndex;
-      var hoverBorder = _props.hoverBorder;
-      var hoverBorderSize = _props.hoverBorderSize;
+      var _props = this.props,
+          children = _props.children,
+          className = _props.className,
+          onClick = _props.onClick,
+          wide = _props.wide,
+          status = _props.status,
+          hoverStyle = _props.hoverStyle,
+          hoverColorIndex = _props.hoverColorIndex,
+          hoverBorder = _props.hoverBorder,
+          hoverBorderSize = _props.hoverBorderSize;
 
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Tile.propTypes));
 

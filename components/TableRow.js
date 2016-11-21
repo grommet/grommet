@@ -63,11 +63,11 @@ var TableRow = function (_Component) {
   (0, _createClass3.default)(TableRow, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var children = _props.children;
-      var className = _props.className;
-      var onClick = _props.onClick;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'onClick']);
+      var _props = this.props,
+          children = _props.children,
+          className = _props.className,
+          onClick = _props.onClick,
+          props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'onClick']);
 
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--selectable', onClick), className);

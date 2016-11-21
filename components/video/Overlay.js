@@ -91,11 +91,11 @@ var Overlay = function (_Component) {
   }, {
     key: '_renderReplayMenu',
     value: function _renderReplayMenu() {
-      var _props = this.props;
-      var ended = _props.ended;
-      var shareLink = _props.shareLink;
-      var shareHeadline = _props.shareHeadline;
-      var shareText = _props.shareText;
+      var _props = this.props,
+          ended = _props.ended,
+          shareLink = _props.shareLink,
+          shareHeadline = _props.shareHeadline,
+          shareText = _props.shareText;
 
 
       var replayContent = void 0;
@@ -118,11 +118,11 @@ var Overlay = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props2 = this.props;
-      var ended = _props2.ended;
-      var playing = _props2.playing;
-      var togglePlay = _props2.togglePlay;
-      var videoHeader = _props2.videoHeader;
+      var _props2 = this.props,
+          ended = _props2.ended,
+          playing = _props2.playing,
+          togglePlay = _props2.togglePlay,
+          videoHeader = _props2.videoHeader;
 
 
       return _react2.default.createElement(

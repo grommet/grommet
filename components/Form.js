@@ -69,12 +69,12 @@ var Form = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props = this.props;
-      var className = _props.className;
-      var compact = _props.compact;
-      var fill = _props.fill;
-      var pad = _props.pad;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'compact', 'fill', 'pad']);
+      var _props = this.props,
+          className = _props.className,
+          compact = _props.compact,
+          fill = _props.fill,
+          pad = _props.pad,
+          props = (0, _objectWithoutProperties3.default)(_props, ['className', 'compact', 'fill', 'pad']);
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--compact', compact), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--pad-' + pad, typeof pad === 'string'), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--pad-horizontal-' + pad.horizontal, (typeof pad === 'undefined' ? 'undefined' : (0, _typeof3.default)(pad)) === 'object' && 'horizontal' in pad), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--pad-vertical-' + pad.vertical, (typeof pad === 'undefined' ? 'undefined' : (0, _typeof3.default)(pad)) === 'object' && 'vertical' in pad), _classnames), className);
 

@@ -143,10 +143,10 @@ var LoginForm = function (_Component) {
     value: function _onSubmit(event) {
       event.preventDefault();
       var onSubmit = this.props.onSubmit;
-      var _state = this.state;
-      var password = _state.password;
-      var rememberMe = _state.rememberMe;
-      var username = _state.username;
+      var _state = this.state,
+          password = _state.password,
+          rememberMe = _state.rememberMe,
+          username = _state.username;
 
 
       username = username.trim();
@@ -161,16 +161,16 @@ var LoginForm = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props = this.props;
-      var align = _props.align;
-      var errors = _props.errors;
-      var forgotPassword = _props.forgotPassword;
-      var logo = _props.logo;
-      var onSubmit = _props.onSubmit;
-      var rememberMe = _props.rememberMe;
-      var secondaryText = _props.secondaryText;
-      var title = _props.title;
-      var usernameType = _props.usernameType;
+      var _props = this.props,
+          align = _props.align,
+          errors = _props.errors,
+          forgotPassword = _props.forgotPassword,
+          logo = _props.logo,
+          onSubmit = _props.onSubmit,
+          rememberMe = _props.rememberMe,
+          secondaryText = _props.secondaryText,
+          title = _props.title,
+          usernameType = _props.usernameType;
 
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, this.props.className);

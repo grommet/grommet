@@ -228,9 +228,9 @@ var Legend = function (_Component) {
   }, {
     key: '_renderTotal',
     value: function _renderTotal() {
-      var _props = this.props;
-      var total = _props.total;
-      var units = _props.units;
+      var _props = this.props,
+          total = _props.total,
+          units = _props.units;
 
       var totalValue = void 0;
       if (total !== true) {
@@ -277,11 +277,11 @@ var Legend = function (_Component) {
     value: function render() {
       var _this3 = this;
 
-      var _props2 = this.props;
-      var className = _props2.className;
-      var series = _props2.series;
-      var total = _props2.total;
-      var props = (0, _objectWithoutProperties3.default)(_props2, ['className', 'series', 'total']);
+      var _props2 = this.props,
+          className = _props2.className,
+          series = _props2.series,
+          total = _props2.total,
+          props = (0, _objectWithoutProperties3.default)(_props2, ['className', 'series', 'total']);
 
       delete props.activeIndex;
       delete props.announce;

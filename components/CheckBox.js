@@ -65,16 +65,16 @@ var CheckBox = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props = this.props;
-      var checked = _props.checked;
-      var className = _props.className;
-      var disabled = _props.disabled;
-      var label = _props.label;
-      var name = _props.name;
-      var onChange = _props.onChange;
-      var reverse = _props.reverse;
-      var toggle = _props.toggle;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['checked', 'className', 'disabled', 'label', 'name', 'onChange', 'reverse', 'toggle']);
+      var _props = this.props,
+          checked = _props.checked,
+          className = _props.className,
+          disabled = _props.disabled,
+          label = _props.label,
+          name = _props.name,
+          onChange = _props.onChange,
+          reverse = _props.reverse,
+          toggle = _props.toggle,
+          props = (0, _objectWithoutProperties3.default)(_props, ['checked', 'className', 'disabled', 'label', 'name', 'onChange', 'reverse', 'toggle']);
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--toggle', toggle), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', disabled), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--reverse', reverse), _classnames), className);
 

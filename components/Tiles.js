@@ -150,10 +150,10 @@ var Tiles = function (_Component) {
   (0, _createClass3.default)(Tiles, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var _props = this.props;
-      var direction = _props.direction;
-      var onMore = _props.onMore;
-      var selectable = _props.selectable;
+      var _props = this.props,
+          direction = _props.direction,
+          onMore = _props.onMore,
+          selectable = _props.selectable;
 
       this._setSelection();
       if (onMore) {
@@ -195,10 +195,10 @@ var Tiles = function (_Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      var _props2 = this.props;
-      var direction = _props2.direction;
-      var onMore = _props2.onMore;
-      var selectable = _props2.selectable;
+      var _props2 = this.props,
+          direction = _props2.direction,
+          onMore = _props2.onMore,
+          selectable = _props2.selectable;
       var selected = this.state.selected;
 
       if ((0, _stringify2.default)(selected) !== (0, _stringify2.default)(prevState.selected)) {
@@ -228,9 +228,9 @@ var Tiles = function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      var _props3 = this.props;
-      var direction = _props3.direction;
-      var selectable = _props3.selectable;
+      var _props3 = this.props,
+          direction = _props3.direction,
+          selectable = _props3.selectable;
 
       if (this._scroll) {
         _InfiniteScroll2.default.stopListeningForScroll(this._scroll);
@@ -492,10 +492,10 @@ var Tiles = function (_Component) {
   }, {
     key: '_onClick',
     value: function _onClick(event) {
-      var _props4 = this.props;
-      var onSelect = _props4.onSelect;
-      var selectable = _props4.selectable;
-      var selected = _props4.selected;
+      var _props4 = this.props,
+          onSelect = _props4.onSelect,
+          selectable = _props4.selectable,
+          selected = _props4.selected;
 
       var selection = _Selection2.default.onClick(event, {
         containerElement: (0, _reactDom.findDOMNode)(this.tilesRef),
@@ -522,26 +522,26 @@ var Tiles = function (_Component) {
       var _classnames,
           _this5 = this;
 
-      var _props5 = this.props;
-      var a11yTitle = _props5.a11yTitle;
-      var className = _props5.className;
-      var children = _props5.children;
-      var direction = _props5.direction;
-      var fill = _props5.fill;
-      var flush = _props5.flush;
-      var _onBlur = _props5.onBlur;
-      var _onFocus = _props5.onFocus;
-      var onMore = _props5.onMore;
-      var _onMouseDown = _props5.onMouseDown;
-      var _onMouseUp = _props5.onMouseUp;
-      var selectable = _props5.selectable;
-      var _state = this.state;
-      var activeTile = _state.activeTile;
-      var focus = _state.focus;
-      var mouseActive = _state.mouseActive;
-      var overflow = _state.overflow;
-      var overflowEnd = _state.overflowEnd;
-      var overflowStart = _state.overflowStart;
+      var _props5 = this.props,
+          a11yTitle = _props5.a11yTitle,
+          className = _props5.className,
+          children = _props5.children,
+          direction = _props5.direction,
+          fill = _props5.fill,
+          flush = _props5.flush,
+          _onBlur = _props5.onBlur,
+          _onFocus = _props5.onFocus,
+          onMore = _props5.onMore,
+          _onMouseDown = _props5.onMouseDown,
+          _onMouseUp = _props5.onMouseUp,
+          selectable = _props5.selectable;
+      var _state = this.state,
+          activeTile = _state.activeTile,
+          focus = _state.focus,
+          mouseActive = _state.mouseActive,
+          overflow = _state.overflow,
+          overflowEnd = _state.overflowEnd,
+          overflowStart = _state.overflowStart;
       var intl = this.context.intl;
 
 

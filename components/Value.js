@@ -78,18 +78,18 @@ var Value = function (_Component) {
       var _classnames,
           _this2 = this;
 
-      var _props = this.props;
-      var active = _props.active;
-      var align = _props.align;
-      var className = _props.className;
-      var colorIndex = _props.colorIndex;
-      var icon = _props.icon;
-      var label = _props.label;
-      var size = _props.size;
-      var trendIcon = _props.trendIcon;
-      var units = _props.units;
-      var value = _props.value;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['active', 'align', 'className', 'colorIndex', 'icon', 'label', 'size', 'trendIcon', 'units', 'value']);
+      var _props = this.props,
+          active = _props.active,
+          align = _props.align,
+          className = _props.className,
+          colorIndex = _props.colorIndex,
+          icon = _props.icon,
+          label = _props.label,
+          size = _props.size,
+          trendIcon = _props.trendIcon,
+          units = _props.units,
+          value = _props.value,
+          props = (0, _objectWithoutProperties3.default)(_props, ['active', 'align', 'className', 'colorIndex', 'icon', 'label', 'size', 'trendIcon', 'units', 'value']);
 
       delete props.announce;
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interactive', props.onClick), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--active', active), _classnames), className);

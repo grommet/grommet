@@ -57,9 +57,9 @@ var Time = function (_Component) {
   (0, _createClass3.default)(Time, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var currentTime = _props.currentTime;
-      var duration = _props.duration;
+      var _props = this.props,
+          currentTime = _props.currentTime,
+          duration = _props.duration;
 
 
       return _react2.default.createElement(

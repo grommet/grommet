@@ -83,12 +83,12 @@ var Tab = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var active = _props.active;
-      var className = _props.className;
-      var id = _props.id;
-      var title = _props.title;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['active', 'className', 'id', 'title']);
+      var _props = this.props,
+          active = _props.active,
+          className = _props.className,
+          id = _props.id,
+          title = _props.title,
+          props = (0, _objectWithoutProperties3.default)(_props, ['active', 'className', 'id', 'title']);
 
       delete props.onRequestForActive;
       var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', active), className);

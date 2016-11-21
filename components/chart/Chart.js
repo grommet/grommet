@@ -187,11 +187,11 @@ var Chart = function (_Component) {
     value: function _layout() {
       var _this2 = this;
 
-      var _props = this.props;
-      var horizontalAlignWith = _props.horizontalAlignWith;
-      var verticalAlignWith = _props.verticalAlignWith;
-      var vertical = _props.vertical;
-      var onMaxCount = _props.onMaxCount;
+      var _props = this.props,
+          horizontalAlignWith = _props.horizontalAlignWith,
+          verticalAlignWith = _props.verticalAlignWith,
+          vertical = _props.vertical,
+          onMaxCount = _props.onMaxCount;
 
       var chart = this.chartRef;
       if (chart) {
@@ -270,25 +270,25 @@ var Chart = function (_Component) {
       var _classnames,
           _this3 = this;
 
-      var _props2 = this.props;
-      var a11yTitle = _props2.a11yTitle;
-      var className = _props2.className;
-      var full = _props2.full;
-      var loading = _props2.loading;
-      var vertical = _props2.vertical;
-      var props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'className', 'full', 'loading', 'vertical']);
+      var _props2 = this.props,
+          a11yTitle = _props2.a11yTitle,
+          className = _props2.className,
+          full = _props2.full,
+          loading = _props2.loading,
+          vertical = _props2.vertical,
+          props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'className', 'full', 'loading', 'vertical']);
 
       delete props.horizontalAlignWith;
       delete props.onMaxCount;
       delete props.verticalAlignWith;
-      var _state = this.state;
-      var alignBottom = _state.alignBottom;
-      var alignHeight = _state.alignHeight;
-      var alignLeft = _state.alignLeft;
-      var alignRight = _state.alignRight;
-      var alignTop = _state.alignTop;
-      var alignWidth = _state.alignWidth;
-      var padAlign = _state.padAlign;
+      var _state = this.state,
+          alignBottom = _state.alignBottom,
+          alignHeight = _state.alignHeight,
+          alignLeft = _state.alignLeft,
+          alignRight = _state.alignRight,
+          alignTop = _state.alignTop,
+          alignWidth = _state.alignWidth,
+          padAlign = _state.padAlign;
       var intl = this.context.intl;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--loading', loading), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), _classnames), className);

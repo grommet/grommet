@@ -69,11 +69,11 @@ var Spinning = function (_Component) {
   (0, _createClass3.default)(Spinning, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var a11yTitle = _props.a11yTitle;
-      var className = _props.className;
-      var small = _props.small;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className', 'small']);
+      var _props = this.props,
+          a11yTitle = _props.a11yTitle,
+          className = _props.className,
+          small = _props.small,
+          props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className', 'small']);
       var intl = this.context.intl;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--small', small), className);

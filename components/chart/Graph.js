@@ -102,9 +102,9 @@ var Graph = function (_Component) {
   }, {
     key: '_layout',
     value: function _layout() {
-      var _props = this.props;
-      var height = _props.height;
-      var width = _props.width;
+      var _props = this.props,
+          height = _props.height,
+          width = _props.width;
 
       var graph = this.graphRef;
       var rect = graph.parentNode.getBoundingClientRect();
@@ -160,12 +160,12 @@ var Graph = function (_Component) {
   }, {
     key: '_renderA11YTitle',
     value: function _renderA11YTitle() {
-      var _props2 = this.props;
-      var a11yTitle = _props2.a11yTitle;
-      var max = _props2.max;
-      var min = _props2.min;
-      var type = _props2.type;
-      var values = _props2.values;
+      var _props2 = this.props,
+          a11yTitle = _props2.a11yTitle,
+          max = _props2.max,
+          min = _props2.min,
+          type = _props2.type,
+          values = _props2.values;
       var intl = this.context.intl;
 
 
@@ -195,25 +195,25 @@ var Graph = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props3 = this.props;
-      var activeIndex = _props3.activeIndex;
-      var className = _props3.className;
-      var colorIndex = _props3.colorIndex;
-      var max = _props3.max;
-      var min = _props3.min;
-      var reverse = _props3.reverse;
-      var smooth = _props3.smooth;
-      var type = _props3.type;
-      var values = _props3.values;
-      var vertical = _props3.vertical;
-      var props = (0, _objectWithoutProperties3.default)(_props3, ['activeIndex', 'className', 'colorIndex', 'max', 'min', 'reverse', 'smooth', 'type', 'values', 'vertical']);
+      var _props3 = this.props,
+          activeIndex = _props3.activeIndex,
+          className = _props3.className,
+          colorIndex = _props3.colorIndex,
+          max = _props3.max,
+          min = _props3.min,
+          reverse = _props3.reverse,
+          smooth = _props3.smooth,
+          type = _props3.type,
+          values = _props3.values,
+          vertical = _props3.vertical,
+          props = (0, _objectWithoutProperties3.default)(_props3, ['activeIndex', 'className', 'colorIndex', 'max', 'min', 'reverse', 'smooth', 'type', 'values', 'vertical']);
 
       delete props.height;
       delete props.width;
       delete props.points;
-      var _state = this.state;
-      var height = _state.height;
-      var width = _state.width;
+      var _state = this.state,
+          height = _state.height,
+          width = _state.width;
 
       var pad = Math.min(width, height) < _utils.padding * 6 ? 2 : _utils.padding;
 

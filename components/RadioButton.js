@@ -63,10 +63,10 @@ var RadioButton = function (_Component) {
   (0, _createClass3.default)(RadioButton, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var className = _props.className;
-      var label = _props.label;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'label']);
+      var _props = this.props,
+          className = _props.className,
+          label = _props.label,
+          props = (0, _objectWithoutProperties3.default)(_props, ['className', 'label']);
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--disabled', props.disabled), className);
 

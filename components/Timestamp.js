@@ -107,8 +107,8 @@ var Timestamp = function (_Component) {
   }, {
     key: '_formatForLocale',
     value: function _formatForLocale(_ref) {
-      var value = _ref.value;
-      var fields = _ref.fields;
+      var value = _ref.value,
+          fields = _ref.fields;
 
       var locale = (0, _Locale.getCurrentLocale)();
       var dateObj = typeof value === 'string' ? new Date(value) : value;
@@ -152,13 +152,13 @@ var Timestamp = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var align = _props.align;
-      var className = _props.className;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['align', 'className']);
-      var _state = this.state;
-      var date = _state.date;
-      var time = _state.time;
+      var _props = this.props,
+          align = _props.align,
+          className = _props.className,
+          props = (0, _objectWithoutProperties3.default)(_props, ['align', 'className']);
+      var _state = this.state,
+          date = _state.date,
+          time = _state.time;
 
       delete props.fields;
       delete props.value;

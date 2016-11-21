@@ -237,13 +237,13 @@ var WorldMap = function (_Component) {
     value: function render() {
       var _this3 = this;
 
-      var _props = this.props;
-      var className = _props.className;
-      var series = _props.series;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'series']);
-      var _state = this.state;
-      var width = _state.width;
-      var height = _state.height;
+      var _props = this.props,
+          className = _props.className,
+          series = _props.series,
+          props = (0, _objectWithoutProperties3.default)(_props, ['className', 'series']);
+      var _state = this.state,
+          width = _state.width,
+          height = _state.height;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, className);
       var continents = series.map(this._renderContinent);

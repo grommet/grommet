@@ -65,17 +65,17 @@ var Heading = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props = this.props;
-      var align = _props.align;
-      var children = _props.children;
-      var className = _props.className;
-      var margin = _props.margin;
-      var size = _props.size;
-      var strong = _props.strong;
-      var Tag = _props.tag;
-      var truncate = _props.truncate;
-      var uppercase = _props.uppercase;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['align', 'children', 'className', 'margin', 'size', 'strong', 'tag', 'truncate', 'uppercase']);
+      var _props = this.props,
+          align = _props.align,
+          children = _props.children,
+          className = _props.className,
+          margin = _props.margin,
+          size = _props.size,
+          strong = _props.strong,
+          Tag = _props.tag,
+          truncate = _props.truncate,
+          uppercase = _props.uppercase,
+          props = (0, _objectWithoutProperties3.default)(_props, ['align', 'children', 'className', 'margin', 'size', 'strong', 'tag', 'truncate', 'uppercase']);
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--strong', strong), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + margin, margin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--truncate', truncate), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--uppercase', uppercase), _classnames), className);
 

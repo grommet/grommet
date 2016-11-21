@@ -27,9 +27,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var CLASS_ROOT = "grommet";
 
 exports.default = function (props) {
-  var children = props.children;
-  var className = props.className;
-  var restProps = (0, _objectWithoutProperties3.default)(props, ['children', 'className']);
+  var children = props.children,
+      className = props.className,
+      restProps = (0, _objectWithoutProperties3.default)(props, ['children', 'className']);
 
   var classes = (0, _classnames2.default)(CLASS_ROOT, className);
 

@@ -90,9 +90,9 @@ var ProgressBar = function (_Component) {
     value: function _renderChapterMarkers() {
       var _this2 = this;
 
-      var _props = this.props;
-      var duration = _props.duration;
-      var timeline = _props.timeline;
+      var _props = this.props,
+          duration = _props.duration,
+          timeline = _props.timeline;
 
 
       if (timeline) {
@@ -124,9 +124,9 @@ var ProgressBar = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props2 = this.props;
-      var progress = _props2.progress;
-      var timeline = _props2.timeline;
+      var _props2 = this.props,
+          progress = _props2.progress,
+          timeline = _props2.timeline;
 
 
       return _react2.default.createElement(

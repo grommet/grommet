@@ -71,10 +71,10 @@ var ListItem = function (_Component) {
   (0, _createClass3.default)(ListItem, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var children = _props.children;
-      var className = _props.className;
-      var onClick = _props.onClick;
+      var _props = this.props,
+          children = _props.children,
+          className = _props.className,
+          onClick = _props.onClick;
 
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, CLASS_ROOT + '--selectable', onClick));

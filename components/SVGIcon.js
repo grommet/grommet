@@ -77,14 +77,14 @@ var SVGIcon = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props = this.props;
-      var a11yTitle = _props.a11yTitle;
-      var children = _props.children;
-      var className = _props.className;
-      var colorIndex = _props.colorIndex;
-      var size = _props.size;
-      var type = _props.type;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'children', 'className', 'colorIndex', 'size', 'type']);
+      var _props = this.props,
+          a11yTitle = _props.a11yTitle,
+          children = _props.children,
+          className = _props.className,
+          colorIndex = _props.colorIndex,
+          size = _props.size,
+          type = _props.type,
+          props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'children', 'className', 'colorIndex', 'size', 'type']);
 
 
       var classRoot = CLASS_ROOT[type];

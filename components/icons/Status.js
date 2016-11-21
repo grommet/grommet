@@ -93,11 +93,11 @@ var Status = function (_Component) {
   (0, _createClass3.default)(Status, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var className = _props.className;
-      var size = _props.size;
-      var value = _props.value;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'size', 'value']);
+      var _props = this.props,
+          className = _props.className,
+          size = _props.size,
+          value = _props.value,
+          props = (0, _objectWithoutProperties3.default)(_props, ['className', 'size', 'value']);
 
       var classes = (0, _classnames3.default)((0, _defineProperty3.default)({}, CLASS_ROOT + '--' + size, size), className);
 

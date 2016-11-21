@@ -73,10 +73,10 @@ var Anchor = function (_Component) {
   (0, _createClass3.default)(Anchor, [{
     key: '_onClick',
     value: function _onClick(event) {
-      var _props = this.props;
-      var method = _props.method;
-      var onClick = _props.onClick;
-      var path = _props.path;
+      var _props = this.props,
+          method = _props.method,
+          onClick = _props.onClick,
+          path = _props.path;
       var router = this.context.router;
 
 
@@ -97,21 +97,21 @@ var Anchor = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props2 = this.props;
-      var a11yTitle = _props2.a11yTitle;
-      var animateIcon = _props2.animateIcon;
-      var children = _props2.children;
-      var className = _props2.className;
-      var disabled = _props2.disabled;
-      var href = _props2.href;
-      var icon = _props2.icon;
-      var label = _props2.label;
-      var onClick = _props2.onClick;
-      var path = _props2.path;
-      var primary = _props2.primary;
-      var reverse = _props2.reverse;
-      var tag = _props2.tag;
-      var props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'animateIcon', 'children', 'className', 'disabled', 'href', 'icon', 'label', 'onClick', 'path', 'primary', 'reverse', 'tag']);
+      var _props2 = this.props,
+          a11yTitle = _props2.a11yTitle,
+          animateIcon = _props2.animateIcon,
+          children = _props2.children,
+          className = _props2.className,
+          disabled = _props2.disabled,
+          href = _props2.href,
+          icon = _props2.icon,
+          label = _props2.label,
+          onClick = _props2.onClick,
+          path = _props2.path,
+          primary = _props2.primary,
+          reverse = _props2.reverse,
+          tag = _props2.tag,
+          props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'animateIcon', 'children', 'className', 'disabled', 'href', 'icon', 'label', 'onClick', 'path', 'primary', 'reverse', 'tag']);
 
       delete props.method;
       var router = this.context.router;

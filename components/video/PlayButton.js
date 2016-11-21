@@ -74,12 +74,12 @@ var PlayButton = function (_Component) {
   (0, _createClass3.default)(PlayButton, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var ended = _props.ended;
-      var iconSize = _props.iconSize;
-      var playing = _props.playing;
-      var primary = _props.primary;
-      var togglePlay = _props.togglePlay;
+      var _props = this.props,
+          ended = _props.ended,
+          iconSize = _props.iconSize,
+          playing = _props.playing,
+          primary = _props.primary,
+          togglePlay = _props.togglePlay;
       var intl = this.context.intl;
 
 

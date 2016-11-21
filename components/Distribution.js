@@ -547,9 +547,9 @@ var Distribution = function (_Component) {
   }, {
     key: '_renderLoading',
     value: function _renderLoading() {
-      var _state = this.state;
-      var height = _state.height;
-      var width = _state.width;
+      var _state = this.state,
+          height = _state.height,
+          width = _state.width;
 
       var loadingClasses = (0, _classnames7.default)(CLASS_ROOT + '__loading-indicator', COLOR_INDEX + '-loading');
       var loadingHeight = height / 2;
@@ -568,24 +568,24 @@ var Distribution = function (_Component) {
       var _classnames4,
           _this7 = this;
 
-      var _props = this.props;
-      var a11yTitle = _props.a11yTitle;
-      var className = _props.className;
-      var full = _props.full;
-      var size = _props.size;
-      var vertical = _props.vertical;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className', 'full', 'size', 'vertical']);
+      var _props = this.props,
+          a11yTitle = _props.a11yTitle,
+          className = _props.className,
+          full = _props.full,
+          size = _props.size,
+          vertical = _props.vertical,
+          props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className', 'full', 'size', 'vertical']);
 
       delete props.series;
       delete props.units;
       var intl = this.context.intl;
-      var _state2 = this.state;
-      var allIcons = _state2.allIcons;
-      var focus = _state2.focus;
-      var height = _state2.height;
-      var items = _state2.items;
-      var mouseActive = _state2.mouseActive;
-      var width = _state2.width;
+      var _state2 = this.state,
+          allIcons = _state2.allIcons,
+          focus = _state2.focus,
+          height = _state2.height,
+          items = _state2.items,
+          mouseActive = _state2.mouseActive,
+          width = _state2.width;
 
       var classes = (0, _classnames7.default)(CLASS_ROOT, (_classnames4 = {}, (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--icons', allIcons), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--loading', (items || []).length === 0), _classnames4), className);
 

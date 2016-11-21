@@ -73,13 +73,13 @@ var Title = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props = this.props;
-      var a11yTitle = _props.a11yTitle;
-      var children = _props.children;
-      var className = _props.className;
-      var responsive = _props.responsive;
-      var truncate = _props.truncate;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'children', 'className', 'responsive', 'truncate']);
+      var _props = this.props,
+          a11yTitle = _props.a11yTitle,
+          children = _props.children,
+          className = _props.className,
+          responsive = _props.responsive,
+          truncate = _props.truncate,
+          props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'children', 'className', 'responsive', 'truncate']);
       var intl = this.context.intl;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--truncate', truncate), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interactive', props.onClick), _classnames), className);

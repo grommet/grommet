@@ -75,13 +75,13 @@ var Icon = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props = this.props;
-      var className = _props.className;
-      var colorIndex = _props.colorIndex;
-      var _props2 = this.props;
-      var a11yTitle = _props2.a11yTitle;
-      var size = _props2.size;
-      var responsive = _props2.responsive;
+      var _props = this.props,
+          className = _props.className,
+          colorIndex = _props.colorIndex;
+      var _props2 = this.props,
+          a11yTitle = _props2.a11yTitle,
+          size = _props2.size,
+          responsive = _props2.responsive;
       var intl = this.context.intl;
 
 

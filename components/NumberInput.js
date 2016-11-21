@@ -102,9 +102,9 @@ var NumberInput = function (_Component) {
   }, {
     key: '_onAdd',
     value: function _onAdd() {
-      var _props = this.props;
-      var max = _props.max;
-      var step = _props.step;
+      var _props = this.props,
+          max = _props.max,
+          step = _props.step;
 
       var input = this._inputRef;
       try {
@@ -123,9 +123,9 @@ var NumberInput = function (_Component) {
   }, {
     key: '_onSubtract',
     value: function _onSubtract() {
-      var _props2 = this.props;
-      var min = _props2.min;
-      var step = _props2.step;
+      var _props2 = this.props,
+          min = _props2.min,
+          step = _props2.step;
 
       var input = this._inputRef;
       try {
@@ -146,10 +146,10 @@ var NumberInput = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props3 = this.props;
-      var className = _props3.className;
-      var disabled = _props3.disabled;
-      var props = (0, _objectWithoutProperties3.default)(_props3, ['className', 'disabled']);
+      var _props3 = this.props,
+          className = _props3.className,
+          disabled = _props3.disabled,
+          props = (0, _objectWithoutProperties3.default)(_props3, ['className', 'disabled']);
 
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--disabled', disabled), className);

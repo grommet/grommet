@@ -93,14 +93,14 @@ var AccordionPanel = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var a11yTitle = _props.a11yTitle;
-      var active = _props.active;
-      var animate = _props.animate;
-      var className = _props.className;
-      var children = _props.children;
-      var heading = _props.heading;
-      var pad = _props.pad;
+      var _props = this.props,
+          a11yTitle = _props.a11yTitle,
+          active = _props.active,
+          animate = _props.animate,
+          className = _props.className,
+          children = _props.children,
+          heading = _props.heading,
+          pad = _props.pad;
       var intl = this.context.intl;
 
 

@@ -119,10 +119,10 @@ var Table = function (_Component) {
   (0, _createClass3.default)(Table, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var _props = this.props;
-      var onMore = _props.onMore;
-      var selectable = _props.selectable;
-      var scrollable = _props.scrollable;
+      var _props = this.props,
+          onMore = _props.onMore,
+          selectable = _props.selectable,
+          scrollable = _props.scrollable;
       var small = this.state.small;
 
       this._setSelection();
@@ -170,14 +170,14 @@ var Table = function (_Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      var _props2 = this.props;
-      var onMore = _props2.onMore;
-      var selectable = _props2.selectable;
-      var scrollable = _props2.scrollable;
-      var _state = this.state;
-      var rebuildMirror = _state.rebuildMirror;
-      var selected = _state.selected;
-      var small = _state.small;
+      var _props2 = this.props,
+          onMore = _props2.onMore,
+          selectable = _props2.selectable,
+          scrollable = _props2.scrollable;
+      var _state = this.state,
+          rebuildMirror = _state.rebuildMirror,
+          selected = _state.selected,
+          small = _state.small;
 
       if ((0, _stringify2.default)(selected) !== (0, _stringify2.default)(prevState.selected)) {
         this._setSelection();
@@ -381,10 +381,10 @@ var Table = function (_Component) {
   }, {
     key: '_onClick',
     value: function _onClick(event) {
-      var _props3 = this.props;
-      var onSelect = _props3.onSelect;
-      var selectable = _props3.selectable;
-      var selected = _props3.selected;
+      var _props3 = this.props,
+          onSelect = _props3.onSelect,
+          selectable = _props3.selectable,
+          selected = _props3.selected;
 
 
       var selection = _Selection2.default.onClick(event, {
@@ -486,26 +486,26 @@ var Table = function (_Component) {
       var _classnames,
           _this5 = this;
 
-      var _props4 = this.props;
-      var a11yTitle = _props4.a11yTitle;
-      var children = _props4.children;
-      var className = _props4.className;
-      var _onBlur = _props4.onBlur;
-      var _onFocus = _props4.onFocus;
-      var onMore = _props4.onMore;
-      var _onMouseDown = _props4.onMouseDown;
-      var _onMouseUp = _props4.onMouseUp;
-      var scrollable = _props4.scrollable;
-      var selectable = _props4.selectable;
-      var props = (0, _objectWithoutProperties3.default)(_props4, ['a11yTitle', 'children', 'className', 'onBlur', 'onFocus', 'onMore', 'onMouseDown', 'onMouseUp', 'scrollable', 'selectable']);
+      var _props4 = this.props,
+          a11yTitle = _props4.a11yTitle,
+          children = _props4.children,
+          className = _props4.className,
+          _onBlur = _props4.onBlur,
+          _onFocus = _props4.onFocus,
+          onMore = _props4.onMore,
+          _onMouseDown = _props4.onMouseDown,
+          _onMouseUp = _props4.onMouseUp,
+          scrollable = _props4.scrollable,
+          selectable = _props4.selectable,
+          props = (0, _objectWithoutProperties3.default)(_props4, ['a11yTitle', 'children', 'className', 'onBlur', 'onFocus', 'onMore', 'onMouseDown', 'onMouseUp', 'scrollable', 'selectable']);
 
       delete props.onSelect;
       delete props.selected;
-      var _state2 = this.state;
-      var activeRow = _state2.activeRow;
-      var focus = _state2.focus;
-      var mouseActive = _state2.mouseActive;
-      var small = _state2.small;
+      var _state2 = this.state,
+          activeRow = _state2.activeRow,
+          focus = _state2.focus,
+          mouseActive = _state2.mouseActive,
+          small = _state2.small;
       var intl = this.context.intl;
 
       var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--small', small), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', selectable), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--scrollable', scrollable), _classnames), className);

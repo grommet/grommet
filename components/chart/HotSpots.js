@@ -103,9 +103,9 @@ var HotSpots = function (_Component) {
     key: '_onPreviousHotSpot',
     value: function _onPreviousHotSpot(event) {
       event.preventDefault();
-      var _props = this.props;
-      var activeIndex = _props.activeIndex;
-      var onActive = _props.onActive;
+      var _props = this.props,
+          activeIndex = _props.activeIndex,
+          onActive = _props.onActive;
 
       var previousIndex = activeIndex - 1;
       if (previousIndex >= 0) {
@@ -118,10 +118,10 @@ var HotSpots = function (_Component) {
     key: '_onNextHotSpot',
     value: function _onNextHotSpot(event) {
       event.preventDefault();
-      var _props2 = this.props;
-      var activeIndex = _props2.activeIndex;
-      var count = _props2.count;
-      var onActive = _props2.onActive;
+      var _props2 = this.props,
+          activeIndex = _props2.activeIndex,
+          count = _props2.count,
+          onActive = _props2.onActive;
 
       var nextIndex = activeIndex + 1;
       if (nextIndex < count) {
@@ -133,9 +133,9 @@ var HotSpots = function (_Component) {
   }, {
     key: '_onHotSpotClick',
     value: function _onHotSpotClick() {
-      var _props3 = this.props;
-      var activeIndex = _props3.activeIndex;
-      var onClick = _props3.onClick;
+      var _props3 = this.props,
+          activeIndex = _props3.activeIndex,
+          onClick = _props3.onClick;
 
 
       if (activeIndex !== undefined && onClick) {
@@ -147,15 +147,15 @@ var HotSpots = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props4 = this.props;
-      var a11yTitle = _props4.a11yTitle;
-      var activeIndex = _props4.activeIndex;
-      var className = _props4.className;
-      var count = _props4.count;
-      var onActive = _props4.onActive;
-      var onClick = _props4.onClick;
-      var vertical = _props4.vertical;
-      var props = (0, _objectWithoutProperties3.default)(_props4, ['a11yTitle', 'activeIndex', 'className', 'count', 'onActive', 'onClick', 'vertical']);
+      var _props4 = this.props,
+          a11yTitle = _props4.a11yTitle,
+          activeIndex = _props4.activeIndex,
+          className = _props4.className,
+          count = _props4.count,
+          onActive = _props4.onActive,
+          onClick = _props4.onClick,
+          vertical = _props4.vertical,
+          props = (0, _objectWithoutProperties3.default)(_props4, ['a11yTitle', 'activeIndex', 'className', 'count', 'onActive', 'onClick', 'vertical']);
 
       delete props.height;
       delete props.width;

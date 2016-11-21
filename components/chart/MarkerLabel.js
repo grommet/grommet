@@ -91,11 +91,11 @@ var MarkerLabel = function (_Component) {
   }, {
     key: '_valueBasis',
     value: function _valueBasis(props) {
-      var count = props.count;
-      var index = props.index;
-      var max = props.max;
-      var min = props.min;
-      var value = props.value;
+      var count = props.count,
+          index = props.index,
+          max = props.max,
+          min = props.min,
+          value = props.value;
 
       var valueBasis = void 0;
       if (count) {
@@ -145,11 +145,11 @@ var MarkerLabel = function (_Component) {
     value: function render() {
       var _classnames2;
 
-      var _props = this.props;
-      var align = _props.align;
-      var className = _props.className;
-      var reverse = _props.reverse;
-      var vertical = _props.vertical;
+      var _props = this.props,
+          align = _props.align,
+          className = _props.className,
+          reverse = _props.reverse,
+          vertical = _props.vertical;
       var valueBasis = this.state.valueBasis;
 
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(MarkerLabel.propTypes));

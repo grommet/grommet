@@ -59,10 +59,10 @@ var FormFields = function (_Component) {
   (0, _createClass3.default)(FormFields, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var children = _props.children;
-      var className = _props.className;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className']);
+      var _props = this.props,
+          children = _props.children,
+          className = _props.className,
+          props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className']);
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, className);
 

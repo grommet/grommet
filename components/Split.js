@@ -144,14 +144,14 @@ var Split = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props = this.props;
-      var children = _props.children;
-      var className = _props.className;
-      var fixed = _props.fixed;
-      var flex = _props.flex;
-      var priority = _props.priority;
-      var separator = _props.separator;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'fixed', 'flex', 'priority', 'separator']);
+      var _props = this.props,
+          children = _props.children,
+          className = _props.className,
+          fixed = _props.fixed,
+          flex = _props.flex,
+          priority = _props.priority,
+          separator = _props.separator,
+          props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'fixed', 'flex', 'priority', 'separator']);
 
       delete props.onResponsive;
       delete props.showOnResponsive;

@@ -73,15 +73,15 @@ var SocialShare = function (_Component) {
   (0, _createClass3.default)(SocialShare, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var className = _props.className;
-      var colorIndex = _props.colorIndex;
-      var type = _props.type;
-      var link = _props.link;
-      var text = _props.text;
-      var title = _props.title;
-      var a11yTitle = _props.a11yTitle;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'colorIndex', 'type', 'link', 'text', 'title', 'a11yTitle']);
+      var _props = this.props,
+          className = _props.className,
+          colorIndex = _props.colorIndex,
+          type = _props.type,
+          link = _props.link,
+          text = _props.text,
+          title = _props.title,
+          a11yTitle = _props.a11yTitle,
+          props = (0, _objectWithoutProperties3.default)(_props, ['className', 'colorIndex', 'type', 'link', 'text', 'title', 'a11yTitle']);
 
 
       var socialIcon = undefined;

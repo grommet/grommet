@@ -81,8 +81,8 @@ var Axis = function (_Component) {
   }, {
     key: '_buildItems',
     value: function _buildItems(props) {
-      var count = props.count;
-      var labels = props.labels;
+      var count = props.count,
+          labels = props.labels;
 
       var items = [];
       var basis = 100.0 / (count - 1);
@@ -121,15 +121,15 @@ var Axis = function (_Component) {
     value: function render() {
       var _classnames;
 
-      var _props = this.props;
-      var a11yTitle = _props.a11yTitle;
-      var align = _props.align;
-      var className = _props.className;
-      var reverse = _props.reverse;
-      var ticks = _props.ticks;
-      var vertical = _props.vertical;
-      var tickAlign = _props.tickAlign;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'align', 'className', 'reverse', 'ticks', 'vertical', 'tickAlign']);
+      var _props = this.props,
+          a11yTitle = _props.a11yTitle,
+          align = _props.align,
+          className = _props.className,
+          reverse = _props.reverse,
+          ticks = _props.ticks,
+          vertical = _props.vertical,
+          tickAlign = _props.tickAlign,
+          props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'align', 'className', 'reverse', 'ticks', 'vertical', 'tickAlign']);
 
       delete props.count;
       delete props.labels;

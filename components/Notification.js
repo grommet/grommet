@@ -149,9 +149,9 @@ var Notification = function (_Component) {
   }, {
     key: '_announce',
     value: function _announce() {
-      var _props = this.props;
-      var announce = _props.announce;
-      var message = _props.message;
+      var _props = this.props,
+          announce = _props.announce,
+          message = _props.message;
       var intl = this.context.intl;
 
       if (announce) {
@@ -165,18 +165,18 @@ var Notification = function (_Component) {
       var _classnames,
           _this2 = this;
 
-      var _props2 = this.props;
-      var children = _props2.children;
-      var className = _props2.className;
-      var closer = _props2.closer;
-      var context = _props2.context;
-      var percentComplete = _props2.percentComplete;
-      var message = _props2.message;
-      var onClose = _props2.onClose;
-      var timestamp = _props2.timestamp;
-      var size = _props2.size;
-      var state = _props2.state;
-      var status = _props2.status;
+      var _props2 = this.props,
+          children = _props2.children,
+          className = _props2.className,
+          closer = _props2.closer,
+          context = _props2.context,
+          percentComplete = _props2.percentComplete,
+          message = _props2.message,
+          onClose = _props2.onClose,
+          timestamp = _props2.timestamp,
+          size = _props2.size,
+          state = _props2.state,
+          status = _props2.status;
       var intl = this.context.intl;
       var darkBackground = this.state.darkBackground;
 

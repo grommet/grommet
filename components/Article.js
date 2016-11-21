@@ -242,9 +242,9 @@ var Article = function (_Component) {
   }, {
     key: '_visibleIndexes',
     value: function _visibleIndexes() {
-      var _props = this.props;
-      var children = _props.children;
-      var direction = _props.direction;
+      var _props = this.props,
+          children = _props.children,
+          direction = _props.direction;
 
       var result = [];
       var childCount = _react2.default.Children.count(children);

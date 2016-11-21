@@ -205,10 +205,10 @@ var ResourceMap = function (_Component) {
     value: function _buildPaths(map) {
       var _this3 = this;
 
-      var _props = this.props;
-      var linkColorIndex = _props.linkColorIndex;
-      var links = _props.data.links;
-      var vertical = _props.vertical;
+      var _props = this.props,
+          linkColorIndex = _props.linkColorIndex,
+          links = _props.data.links,
+          vertical = _props.vertical;
       var activeId = this.state.activeId;
 
       var rect = map.getBoundingClientRect();
@@ -299,9 +299,9 @@ var ResourceMap = function (_Component) {
       var _this4 = this;
 
       var data = this.props.data;
-      var _state = this.state;
-      var activeId = _state.activeId;
-      var ariaLabels = _state.ariaLabels;
+      var _state = this.state,
+          activeId = _state.activeId,
+          ariaLabels = _state.ariaLabels;
 
       return items.map(function (item, index) {
         var _classnames2;
@@ -348,20 +348,20 @@ var ResourceMap = function (_Component) {
     value: function render() {
       var _this6 = this;
 
-      var _props2 = this.props;
-      var className = _props2.className;
-      var data = _props2.data;
-      var vertical = _props2.vertical;
-      var props = (0, _objectWithoutProperties3.default)(_props2, ['className', 'data', 'vertical']);
+      var _props2 = this.props,
+          className = _props2.className,
+          data = _props2.data,
+          vertical = _props2.vertical,
+          props = (0, _objectWithoutProperties3.default)(_props2, ['className', 'data', 'vertical']);
 
       delete props.active;
       delete props.colorIndex;
       delete props.linkColorIndex;
       delete props.onActive;
-      var _state2 = this.state;
-      var height = _state2.height;
-      var paths = _state2.paths;
-      var width = _state2.width;
+      var _state2 = this.state,
+          height = _state2.height,
+          paths = _state2.paths,
+          width = _state2.width;
 
       var classes = (0, _classnames5.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--vertical', vertical), className);
 

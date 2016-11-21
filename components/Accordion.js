@@ -97,9 +97,9 @@ var Accordion = function (_Component) {
     key: '_onPanelChange',
     value: function _onPanelChange(index) {
       var active = [].concat((0, _toConsumableArray3.default)(this.state.active));
-      var _props = this.props;
-      var onActive = _props.onActive;
-      var openMulti = _props.openMulti;
+      var _props = this.props,
+          onActive = _props.onActive,
+          openMulti = _props.openMulti;
 
 
       var activeIndex = active.indexOf(index);
@@ -127,10 +127,10 @@ var Accordion = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props2 = this.props;
-      var animate = _props2.animate;
-      var className = _props2.className;
-      var children = _props2.children;
+      var _props2 = this.props,
+          animate = _props2.animate,
+          className = _props2.className,
+          children = _props2.children;
 
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, className);

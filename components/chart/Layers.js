@@ -59,11 +59,11 @@ var Layers = function (_Component) {
   (0, _createClass3.default)(Layers, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var className = _props.className;
-      var height = _props.height;
-      var width = _props.width;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['className', 'height', 'width']);
+      var _props = this.props,
+          className = _props.className,
+          height = _props.height,
+          width = _props.width,
+          props = (0, _objectWithoutProperties3.default)(_props, ['className', 'height', 'width']);
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, className);
 

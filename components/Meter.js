@@ -302,18 +302,18 @@ var Meter = function (_Component) {
       var _classnames,
           _this2 = this;
 
-      var _props = this.props;
-      var active = _props.active;
-      var a11yTitle = _props.a11yTitle;
-      var className = _props.className;
-      var label = _props.label;
-      var onActive = _props.onActive;
-      var size = _props.size;
-      var stacked = _props.stacked;
-      var tabIndex = _props.tabIndex;
-      var type = _props.type;
-      var vertical = _props.vertical;
-      var props = (0, _objectWithoutProperties3.default)(_props, ['active', 'a11yTitle', 'className', 'label', 'onActive', 'size', 'stacked', 'tabIndex', 'type', 'vertical']);
+      var _props = this.props,
+          active = _props.active,
+          a11yTitle = _props.a11yTitle,
+          className = _props.className,
+          label = _props.label,
+          onActive = _props.onActive,
+          size = _props.size,
+          stacked = _props.stacked,
+          tabIndex = _props.tabIndex,
+          type = _props.type,
+          vertical = _props.vertical,
+          props = (0, _objectWithoutProperties3.default)(_props, ['active', 'a11yTitle', 'className', 'label', 'onActive', 'size', 'stacked', 'tabIndex', 'type', 'vertical']);
 
       delete props.activeIndex;
       delete props.colorIndex;
@@ -324,14 +324,14 @@ var Meter = function (_Component) {
       delete props.thresholds;
       delete props.value;
       delete props.responsive;
-      var _state = this.state;
-      var activeIndex = _state.activeIndex;
-      var limitMeterSize = _state.limitMeterSize;
-      var max = _state.max;
-      var min = _state.min;
-      var series = _state.series;
-      var thresholds = _state.thresholds;
-      var total = _state.total;
+      var _state = this.state,
+          activeIndex = _state.activeIndex,
+          limitMeterSize = _state.limitMeterSize,
+          max = _state.max,
+          min = _state.min,
+          series = _state.series,
+          thresholds = _state.thresholds,
+          total = _state.total;
 
 
       var responsiveSize = void 0;

@@ -69,9 +69,9 @@ var Tip = function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      var _props = this.props;
-      var onClose = _props.onClose;
-      var colorIndex = _props.colorIndex;
+      var _props = this.props,
+          onClose = _props.onClose,
+          colorIndex = _props.colorIndex;
 
       var target = this._getTarget();
       if (target) {

@@ -91,9 +91,9 @@ var Range = function (_Component) {
   }, {
     key: '_valueToIndex',
     value: function _valueToIndex(value) {
-      var _props = this.props;
-      var count = _props.count;
-      var vertical = _props.vertical;
+      var _props = this.props,
+          count = _props.count,
+          vertical = _props.vertical;
 
       var rect = this.rangeRef.getBoundingClientRect();
       var total = vertical ? rect.height : rect.width;
@@ -109,13 +109,13 @@ var Range = function (_Component) {
   }, {
     key: '_mouseIndex',
     value: function _mouseIndex(event) {
-      var _props2 = this.props;
-      var active = _props2.active;
-      var count = _props2.count;
-      var vertical = _props2.vertical;
-      var _state = this.state;
-      var mouseDown = _state.mouseDown;
-      var mouseDownIndex = _state.mouseDownIndex;
+      var _props2 = this.props,
+          active = _props2.active,
+          count = _props2.count,
+          vertical = _props2.vertical;
+      var _state = this.state,
+          mouseDown = _state.mouseDown,
+          mouseDownIndex = _state.mouseDownIndex;
 
       var rect = this.rangeRef.getBoundingClientRect();
       var value = vertical ? event.clientY - rect.top : event.clientX - rect.left;
@@ -157,14 +157,14 @@ var Range = function (_Component) {
     key: '_onMouseUp',
     value: function _onMouseUp(event) {
       window.removeEventListener('mouseup', this._onMouseUp);
-      var _props3 = this.props;
-      var active = _props3.active;
-      var onActive = _props3.onActive;
-      var count = _props3.count;
-      var _state2 = this.state;
-      var mouseDown = _state2.mouseDown;
-      var mouseDownIndex = _state2.mouseDownIndex;
-      var moved = _state2.moved;
+      var _props3 = this.props,
+          active = _props3.active,
+          onActive = _props3.onActive,
+          count = _props3.count;
+      var _state2 = this.state,
+          mouseDown = _state2.mouseDown,
+          mouseDownIndex = _state2.mouseDownIndex,
+          moved = _state2.moved;
 
       var mouseUpIndex = this._mouseIndex(event);
 
@@ -228,17 +228,17 @@ var Range = function (_Component) {
       var _classnames,
           _this3 = this;
 
-      var _props4 = this.props;
-      var active = _props4.active;
-      var className = _props4.className;
-      var count = _props4.count;
-      var onActive = _props4.onActive;
-      var vertical = _props4.vertical;
-      var props = (0, _objectWithoutProperties3.default)(_props4, ['active', 'className', 'count', 'onActive', 'vertical']);
-      var _state3 = this.state;
-      var mouseDown = _state3.mouseDown;
-      var mouseDownIndex = _state3.mouseDownIndex;
-      var mouseMoveIndex = _state3.mouseMoveIndex;
+      var _props4 = this.props,
+          active = _props4.active,
+          className = _props4.className,
+          count = _props4.count,
+          onActive = _props4.onActive,
+          vertical = _props4.vertical,
+          props = (0, _objectWithoutProperties3.default)(_props4, ['active', 'className', 'count', 'onActive', 'vertical']);
+      var _state3 = this.state,
+          mouseDown = _state3.mouseDown,
+          mouseDownIndex = _state3.mouseDownIndex,
+          mouseMoveIndex = _state3.mouseMoveIndex;
 
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--dragging', mouseDown), _classnames), className);
