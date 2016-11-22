@@ -159,22 +159,35 @@ var Header = function (_Component) {
             { className: wrapperClasses },
             _react2.default.createElement(
               _Box2.default,
-              (0, _extends3.default)({ ref: function ref(_ref2) {
-                  return _this2.contentRef = _ref2;
-                }
-              }, other, restProps, { tag: 'header',
-                className: classes }),
-              children
+              { pad: 'none' },
+              _react2.default.createElement(
+                _Box2.default,
+                (0, _extends3.default)({ ref: function ref(_ref2) {
+                    return _this2.contentRef = _ref2;
+                  }
+                }, other, restProps, { tag: 'header',
+                  className: classes }),
+                children
+              )
             )
           )
         );
       } else {
-        return _react2.default.createElement(
-          _Box2.default,
-          (0, _extends3.default)({}, other, restProps, { tag: 'header', role: role,
-            className: classes,
-            containerClassName: containerClasses }),
-          children
+        return (
+          // ie11 does not work with align center and min-height
+          // adding a wrapper flex div with column direction fixes the issue
+          // https://github.com/philipwalton/flexbugs
+          _react2.default.createElement(
+            _Box2.default,
+            { pad: 'none' },
+            _react2.default.createElement(
+              _Box2.default,
+              (0, _extends3.default)({}, other, restProps, { tag: 'header', role: role,
+                className: classes,
+                containerClassName: containerClasses }),
+              children
+            )
+          )
         );
       }
     }
