@@ -91,20 +91,31 @@ export default class Header extends Component {
           <div ref={ref => this.mirrorRef = ref}
             className={`${CLASS_ROOT}__mirror`} />
           <div className={wrapperClasses}>
-            <Box ref={ref => this.contentRef = ref}
-              {...other} {...restProps} tag="header"
-              className={classes}>
-              {children}
+            {/* ie11 does not work with align center and min-height
+              adding a wrapper flex div with column direction fixes the issue
+              https://github.com/philipwalton/flexbugs
+            */}
+            <Box pad='none'>
+              <Box ref={ref => this.contentRef = ref}
+                {...other} {...restProps} tag="header"
+                className={classes}>
+                {children}
+              </Box>
             </Box>
           </div>
         </div>
       );
     } else {
       return (
-        <Box {...other} {...restProps} tag="header" role={role}
-          className={classes}
-          containerClassName={containerClasses}>
-          {children}
+        // ie11 does not work with align center and min-height
+        // adding a wrapper flex div with column direction fixes the issue
+        // https://github.com/philipwalton/flexbugs
+        <Box pad='none'>
+          <Box {...other} {...restProps} tag="header" role={role}
+            className={classes}
+            containerClassName={containerClasses}>
+            {children}
+          </Box>
         </Box>
       );
     }

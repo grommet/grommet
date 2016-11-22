@@ -24,29 +24,37 @@ exports[`Accordion has correct default options 1`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         type="button">
-        <header
-          className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+        <div
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
           id={undefined}
           onClick={undefined}
           role={undefined}
           style={Object {}}
           tabIndex={undefined}>
-          First Title
-          <svg
-            aria-label="caret-next"
-            className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px">
-            <polygon
-              fill="none"
-              points="6 2 18 12 6 22"
-              stroke="#000000"
-              strokeWidth="2" />
-          </svg>
-        </header>
+          <header
+            className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            id={undefined}
+            onClick={undefined}
+            role={undefined}
+            style={Object {}}
+            tabIndex={undefined}>
+            First Title
+            <svg
+              aria-label="caret-next"
+              className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px">
+              <polygon
+                fill="none"
+                points="6 2 18 12 6 22"
+                stroke="#000000"
+                strokeWidth="2" />
+            </svg>
+          </header>
+        </div>
       </button>
     </li>
     <span
@@ -81,29 +89,37 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         type="button">
-        <header
-          className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+        <div
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
           id={undefined}
           onClick={undefined}
           role={undefined}
           style={Object {}}
           tabIndex={undefined}>
-          First Title
-          <svg
-            aria-label="caret-next"
-            className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px">
-            <polygon
-              fill="none"
-              points="6 2 18 12 6 22"
-              stroke="#000000"
-              strokeWidth="2" />
-          </svg>
-        </header>
+          <header
+            className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            id={undefined}
+            onClick={undefined}
+            role={undefined}
+            style={Object {}}
+            tabIndex={undefined}>
+            First Title
+            <svg
+              aria-label="caret-next"
+              className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px">
+              <polygon
+                fill="none"
+                points="6 2 18 12 6 22"
+                stroke="#000000"
+                strokeWidth="2" />
+            </svg>
+          </header>
+        </div>
       </button>
     </li>
     <span
@@ -144,29 +160,37 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         type="button">
-        <header
-          className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+        <div
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
           id={undefined}
           onClick={undefined}
           role={undefined}
           style={Object {}}
           tabIndex={undefined}>
-          Second Title
-          <svg
-            aria-label="caret-next"
-            className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px">
-            <polygon
-              fill="none"
-              points="6 2 18 12 6 22"
-              stroke="#000000"
-              strokeWidth="2" />
-          </svg>
-        </header>
+          <header
+            className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            id={undefined}
+            onClick={undefined}
+            role={undefined}
+            style={Object {}}
+            tabIndex={undefined}>
+            Second Title
+            <svg
+              aria-label="caret-next"
+              className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px">
+              <polygon
+                fill="none"
+                points="6 2 18 12 6 22"
+                stroke="#000000"
+                strokeWidth="2" />
+            </svg>
+          </header>
+        </div>
       </button>
     </li>
     <span
@@ -201,29 +225,37 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         type="button">
-        <header
-          className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+        <div
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
           id={undefined}
           onClick={undefined}
           role={undefined}
           style={Object {}}
           tabIndex={undefined}>
-          First Title
-          <svg
-            aria-label="caret-next"
-            className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px">
-            <polygon
-              fill="none"
-              points="6 2 18 12 6 22"
-              stroke="#000000"
-              strokeWidth="2" />
-          </svg>
-        </header>
+          <header
+            className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            id={undefined}
+            onClick={undefined}
+            role={undefined}
+            style={Object {}}
+            tabIndex={undefined}>
+            First Title
+            <svg
+              aria-label="caret-next"
+              className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px">
+              <polygon
+                fill="none"
+                points="6 2 18 12 6 22"
+                stroke="#000000"
+                strokeWidth="2" />
+            </svg>
+          </header>
+        </div>
       </button>
     </li>
     <span
@@ -264,29 +296,37 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         type="button">
-        <header
-          className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+        <div
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
           id={undefined}
           onClick={undefined}
           role={undefined}
           style={Object {}}
           tabIndex={undefined}>
-          Second Title
-          <svg
-            aria-label="caret-next"
-            className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px">
-            <polygon
-              fill="none"
-              points="6 2 18 12 6 22"
-              stroke="#000000"
-              strokeWidth="2" />
-          </svg>
-        </header>
+          <header
+            className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            id={undefined}
+            onClick={undefined}
+            role={undefined}
+            style={Object {}}
+            tabIndex={undefined}>
+            Second Title
+            <svg
+              aria-label="caret-next"
+              className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px">
+              <polygon
+                fill="none"
+                points="6 2 18 12 6 22"
+                stroke="#000000"
+                strokeWidth="2" />
+            </svg>
+          </header>
+        </div>
       </button>
     </li>
     <span
@@ -334,29 +374,37 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         type="button">
-        <header
-          className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+        <div
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
           id={undefined}
           onClick={undefined}
           role={undefined}
           style={Object {}}
           tabIndex={undefined}>
-          First Title
-          <svg
-            aria-label="caret-next"
-            className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px">
-            <polygon
-              fill="none"
-              points="6 2 18 12 6 22"
-              stroke="#000000"
-              strokeWidth="2" />
-          </svg>
-        </header>
+          <header
+            className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            id={undefined}
+            onClick={undefined}
+            role={undefined}
+            style={Object {}}
+            tabIndex={undefined}>
+            First Title
+            <svg
+              aria-label="caret-next"
+              className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px">
+              <polygon
+                fill="none"
+                points="6 2 18 12 6 22"
+                stroke="#000000"
+                strokeWidth="2" />
+            </svg>
+          </header>
+        </div>
       </button>
     </li>
     <span
@@ -397,29 +445,37 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         type="button">
-        <header
-          className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+        <div
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
           id={undefined}
           onClick={undefined}
           role={undefined}
           style={Object {}}
           tabIndex={undefined}>
-          Second Title
-          <svg
-            aria-label="caret-next"
-            className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
-            height="24px"
-            role="img"
-            version="1.1"
-            viewBox="0 0 24 24"
-            width="24px">
-            <polygon
-              fill="none"
-              points="6 2 18 12 6 22"
-              stroke="#000000"
-              strokeWidth="2" />
-          </svg>
-        </header>
+          <header
+            className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            id={undefined}
+            onClick={undefined}
+            role={undefined}
+            style={Object {}}
+            tabIndex={undefined}>
+            Second Title
+            <svg
+              aria-label="caret-next"
+              className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px">
+              <polygon
+                fill="none"
+                points="6 2 18 12 6 22"
+                stroke="#000000"
+                strokeWidth="2" />
+            </svg>
+          </header>
+        </div>
       </button>
     </li>
     <span
