@@ -2,7 +2,7 @@
 
 .#{$grommet-namespace}form {
   position: relative;
-  width: $form-width;
+  min-width: $form-width;
   max-width: 100%;
 
   @include media-query(lap-and-up) {
