@@ -67,41 +67,33 @@ var Tip = function (_Component) {
   (0, _createClass3.default)(Tip, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var _this2 = this;
-
       var _props = this.props,
           onClose = _props.onClose,
           colorIndex = _props.colorIndex;
 
       var target = this._getTarget();
       if (target) {
-        (function () {
-          var _classnames;
+        var _classnames;
 
-          var rect = target.getBoundingClientRect();
-          var align = {
-            left: rect.left < window.innerWidth - rect.right ? 'left' : undefined,
-            right: rect.left >= window.innerWidth - rect.right ? 'right' : undefined,
-            top: rect.top < window.innerHeight - rect.bottom ? 'bottom' : undefined,
-            bottom: rect.top >= window.innerHeight - rect.bottom ? 'top' : undefined
-          };
+        var rect = target.getBoundingClientRect();
+        var align = {
+          left: rect.left < window.innerWidth - rect.right ? 'left' : undefined,
+          right: rect.left >= window.innerWidth - rect.right ? 'right' : undefined,
+          top: rect.top < window.innerHeight - rect.bottom ? 'bottom' : undefined,
+          bottom: rect.top >= window.innerHeight - rect.bottom ? 'top' : undefined
+        };
 
-          var classNames = (0, _classnames3.default)(CLASS_ROOT + '__drop', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--left', align.left), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--right', align.right), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--top', align.top), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--bottom', align.bottom), _classnames));
+        var classNames = (0, _classnames3.default)(CLASS_ROOT + '__drop', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--left', align.left), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--right', align.right), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--top', align.top), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--bottom', align.bottom), _classnames));
 
-          // we need a timeout here to avoid wrong bounding rect
-          // for the target element
-          setTimeout(function () {
-            _this2._drop = _Drop2.default.add(target, _this2._renderDrop(), {
-              align: align,
-              className: classNames,
-              colorIndex: colorIndex,
-              responsive: false
-            });
-          }, 1);
+        this._drop = _Drop2.default.add(target, this._renderDrop(), {
+          align: align,
+          className: classNames,
+          colorIndex: colorIndex,
+          responsive: false
+        });
 
-          target.addEventListener('click', onClose);
-          target.addEventListener('blur', onClose);
-        })();
+        target.addEventListener('click', onClose);
+        target.addEventListener('blur', onClose);
       }
     }
   }, {
@@ -110,7 +102,11 @@ var Tip = function (_Component) {
       var onClose = this.props.onClose;
 
       var target = this._getTarget();
-      this._drop.remove();
+
+      // if the drop was created successfully, remove it
+      if (this._drop) {
+        this._drop.remove();
+      }
 
       if (target) {
         target.removeEventListener('click', onClose);
