@@ -164,7 +164,9 @@ function checkDarkBackgroundBackoff (element, handler, backoffDurations) {
 export function checkDarkBackground (colorIndex, element, handler) {
   // skip if this is a 'light-*' color index
   if (colorIndex) {
-    if (LIGHT_HINT_REGEXP.test(colorIndex)) {
+    if ('dark' === colorIndex) {
+      handler(true);
+    } else if (LIGHT_HINT_REGEXP.test(colorIndex)) {
       handler(false);
     } else {
       // Measure the actual background color brightness to determine whether
