@@ -45,16 +45,12 @@ export default class Tip extends Component {
         }
       );
 
-      // we need a timeout here to avoid wrong bounding rect
-      // for the target element
-      setTimeout(() => {
-        this._drop = Drop.add(target, this._renderDrop(), {
-          align: align,
-          className: classNames,
-          colorIndex: colorIndex,
-          responsive: false
-        });
-      }, 1);
+      this._drop = Drop.add(target, this._renderDrop(), {
+        align: align,
+        className: classNames,
+        colorIndex: colorIndex,
+        responsive: false
+      });
 
       target.addEventListener('click', onClose);
       target.addEventListener('blur', onClose);
@@ -64,7 +60,11 @@ export default class Tip extends Component {
   componentWillUnmount () {
     const { onClose } = this.props;
     const target = this._getTarget();
-    this._drop.remove();
+
+    // if the drop was created successfully, remove it
+    if (this._drop) {
+      this._drop.remove();
+    }
     
     if (target) {
       target.removeEventListener('click', onClose);
