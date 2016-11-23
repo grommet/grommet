@@ -8,10 +8,6 @@ var _reactDom = require('react-dom');
 
 var _DOM = require('./DOM');
 
-var _DOM2 = _interopRequireDefault(_DOM);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 // Allow callers to use key labels instead of key code numbers.
 // This makes their code easier to read.
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
@@ -55,32 +51,32 @@ var _onKeyboardAcceleratorKeyPress = function _onKeyboardAcceleratorKeyPress(e) 
 // Remove listeners using stopListeningToKeyboard().
 exports.default = {
   _initKeyboardAccelerators: function _initKeyboardAccelerators(element) {
-    var id = _DOM2.default.generateId(element);
+    var id = (0, _DOM.generateId)(element);
     _keyboardAccelerators[id] = {
       handlers: {}
     };
   },
   _getKeyboardAcceleratorHandlers: function _getKeyboardAcceleratorHandlers(element) {
-    var id = _DOM2.default.generateId(element);
+    var id = (0, _DOM.generateId)(element);
     return _keyboardAccelerators[id].handlers;
   },
   _getDowns: function _getDowns(element) {
-    var id = _DOM2.default.generateId(element);
+    var id = (0, _DOM.generateId)(element);
     return _keyboardAccelerators[id].downs;
   },
   _isComponentListening: function _isComponentListening(element) {
-    var id = _DOM2.default.generateId(element);
+    var id = (0, _DOM.generateId)(element);
 
     return _listeners.some(function (listener) {
       return listener === id;
     });
   },
   _subscribeComponent: function _subscribeComponent(element) {
-    var id = _DOM2.default.generateId(element);
+    var id = (0, _DOM.generateId)(element);
     _listeners.push(id);
   },
   _unsubscribeComponent: function _unsubscribeComponent(element) {
-    var id = _DOM2.default.generateId(element);
+    var id = (0, _DOM.generateId)(element);
 
     var removeListenerIndex = _listeners.indexOf(id);
     _listeners.splice(removeListenerIndex, 1);

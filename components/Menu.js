@@ -62,8 +62,6 @@ var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
 var _DOM = require('../utils/DOM');
 
-var _DOM2 = _interopRequireDefault(_DOM);
-
 var _Drop = require('../utils/Drop');
 
 var _Drop2 = _interopRequireDefault(_Drop);
@@ -166,7 +164,7 @@ var MenuDrop = function (_Component) {
     value: function _processTab(event) {
       var container = _reactDom2.default.findDOMNode(this.menuDropRef);
       var items = container.getElementsByTagName('*');
-      items = _DOM2.default.filterByFocusable(items);
+      items = (0, _DOM.filterByFocusable)(items);
 
       if (!items || items.length === 0) {
         event.preventDefault();

@@ -74,8 +74,6 @@ var _Next2 = _interopRequireDefault(_Next);
 
 var _DOM = require('../utils/DOM');
 
-var _DOM2 = _interopRequireDefault(_DOM);
-
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
@@ -138,7 +136,7 @@ var Carousel = function (_Component) {
         this._updateHammer();
 
         this._handleScroll();
-        var scrollParents = _DOM2.default.findScrollParents(this.carouselRef);
+        var scrollParents = (0, _DOM.findScrollParents)(this.carouselRef);
         scrollParents.forEach(function (scrollParent) {
           scrollParent.addEventListener('scroll', _this2._handleScroll);
         }, this);
@@ -158,7 +156,7 @@ var Carousel = function (_Component) {
 
       window.removeEventListener('resize', this._onResize);
 
-      var scrollParents = _DOM2.default.findScrollParents(this.carouselRef);
+      var scrollParents = (0, _DOM.findScrollParents)(this.carouselRef);
       scrollParents.forEach(function (scrollParent) {
         scrollParent.removeEventListener('scroll', _this3._handleScroll);
       }, this);

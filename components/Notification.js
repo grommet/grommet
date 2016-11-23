@@ -124,8 +124,7 @@ var Notification = function (_Component) {
       this._announce();
       // Measure the actual background color brightness to determine whether
       // to set a dark or light context.
-      var container = (0, _reactDom.findDOMNode)(this._containerRef);
-      this.setState({ darkBackground: (0, _DOM.hasDarkBackground)(container) });
+      this._setDarkBackground();
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -139,12 +138,21 @@ var Notification = function (_Component) {
     value: function componentDidUpdate() {
       this._announce();
       if (this.state.updateDarkBackground) {
-        var container = (0, _reactDom.findDOMNode)(this._containerRef);
-        this.setState({
-          updateDarkBackground: false,
-          darkBackground: (0, _DOM.hasDarkBackground)(container)
-        });
+        this.setState({ updateDarkBackground: false });
+        this._setDarkBackground();
       }
+    }
+  }, {
+    key: '_setDarkBackground',
+    value: function _setDarkBackground() {
+      var _this2 = this;
+
+      var colorIndex = this.props.colorIndex;
+
+      var box = (0, _reactDom.findDOMNode)(this.boxContainerRef);
+      (0, _DOM.checkDarkBackground)(colorIndex, box, function (darkBackground) {
+        return _this2.setState({ darkBackground: darkBackground });
+      });
     }
   }, {
     key: '_announce',
@@ -163,7 +171,7 @@ var Notification = function (_Component) {
     key: 'render',
     value: function render() {
       var _classnames,
-          _this2 = this;
+          _this3 = this;
 
       var _props2 = this.props,
           children = _props2.children,
@@ -252,7 +260,7 @@ var Notification = function (_Component) {
         _react2.default.createElement(
           _Box2.default,
           (0, _extends3.default)({ ref: function ref(_ref) {
-              return _this2._containerRef = _ref;
+              return _this3._containerRef = _ref;
             }
           }, restProps, boxProps, { className: classes,
             pad: 'small', direction: 'row', align: 'start', responsive: false,

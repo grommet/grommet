@@ -62,8 +62,6 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 var _DOM = require('../utils/DOM');
 
-var _DOM2 = _interopRequireDefault(_DOM);
-
 var _Intl = require('../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
@@ -159,7 +157,7 @@ var LayerContents = function (_Component) {
     key: '_processTab',
     value: function _processTab(event) {
       var items = this.containerRef.getElementsByTagName('*');
-      items = _DOM2.default.filterByFocusable(items);
+      items = (0, _DOM.filterByFocusable)(items);
 
       if (!items || items.length === 0) {
         event.preventDefault();

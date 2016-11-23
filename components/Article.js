@@ -56,8 +56,6 @@ var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
 var _DOM = require('../utils/DOM');
 
-var _DOM2 = _interopRequireDefault(_DOM);
-
 var _Props = require('../utils/Props');
 
 var _Props2 = _interopRequireDefault(_Props);
@@ -415,7 +413,7 @@ var Article = function (_Component) {
     key: '_onNext',
     value: function _onNext(event, wrap) {
       // only process if the focus is NOT in a form element
-      if (!_DOM2.default.isFormElement(document.activeElement)) {
+      if (!(0, _DOM.isFormElement)(document.activeElement)) {
         var children = this.props.children;
         var selectedIndex = this.state.selectedIndex;
 
@@ -438,7 +436,7 @@ var Article = function (_Component) {
     key: '_onPrevious',
     value: function _onPrevious(event) {
       // only process if the focus is NOT in a form element
-      if (!_DOM2.default.isFormElement(document.activeElement)) {
+      if (!(0, _DOM.isFormElement)(document.activeElement)) {
         var selectedIndex = this.state.selectedIndex;
 
         if (event) {
@@ -554,7 +552,7 @@ var Article = function (_Component) {
   }, {
     key: '_toggleDisableChapter',
     value: function _toggleDisableChapter(chapter, disabled) {
-      var elements = _DOM2.default.filterByFocusable(chapter.getElementsByTagName('*'));
+      var elements = (0, _DOM.filterByFocusable)(chapter.getElementsByTagName('*'));
 
       if (elements) {
         elements.forEach(function (element) {

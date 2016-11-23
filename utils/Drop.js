@@ -36,8 +36,6 @@ var _reactDom = require('react-dom');
 
 var _DOM = require('./DOM');
 
-var _DOM2 = _interopRequireDefault(_DOM);
-
 var _CSSClassnames = require('./CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
@@ -110,7 +108,7 @@ var DropContents = function (_Component) {
     key: '_processTab',
     value: function _processTab(event) {
       var items = this.containerRef.getElementsByTagName('*');
-      items = _DOM2.default.filterByFocusable(items);
+      items = (0, _DOM.filterByFocusable)(items);
       if (!items || items.length === 0) {
         event.preventDefault();
       } else {
@@ -243,7 +241,7 @@ exports.default = {
 
     (0, _reactDom.render)(_react2.default.createElement(DropContents, { drop: drop, content: content }), drop.container);
 
-    drop.scrollParents = _DOM2.default.findScrollParents(drop.control);
+    drop.scrollParents = (0, _DOM.findScrollParents)(drop.control);
     drop.place = this._place.bind(this, drop);
     drop.render = this._render.bind(this, drop);
     drop.remove = this._remove.bind(this, drop);
@@ -262,7 +260,7 @@ exports.default = {
         scrollParent.removeEventListener('scroll', drop.place);
       });
 
-      drop.scrollParents = _DOM2.default.findScrollParents(drop.control);
+      drop.scrollParents = DOM.findScrollParents(drop.control);
 
       drop.scrollParents.forEach(function (scrollParent) {
         scrollParent.addEventListener('scroll', drop.place);
