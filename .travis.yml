@@ -1,12 +1,11 @@
 language: node_js
 node_js:
-- '6.1.0'
+- '6.9.1'
 sudo: false
 cache:
   directories:
   - node_modules
 before_script:
-- npm install -g gulp
 - npm install -g codeclimate-test-reporter
 - gulp generate-index-icons
 - gulp preprocess
