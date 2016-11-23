@@ -42,6 +42,7 @@
     "inuit-responsive-settings": "~0.1.2",
     "inuit-responsive-tools": "~0.1.1",
     "inuit-shared": "~0.1.5",
+    "lodash": "^4.17.2",
     "markdown-to-jsx": "^4.0.3",
     "moment": "^2.13.0",
     "react": "^15.3.0",
