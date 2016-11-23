@@ -158,7 +158,7 @@ function checkDarkBackgroundBackoff (element, handler, backoffDurations) {
     } else {
       handler(dark);
     }
-  }, backoffDurations.pop());
+  }, backoffDurations.shift());
 }
 
 export function checkDarkBackground (colorIndex, element, handler) {
@@ -170,7 +170,7 @@ export function checkDarkBackground (colorIndex, element, handler) {
       // Measure the actual background color brightness to determine whether
       // to set a dark or light context.
       if (element && window.getComputedStyle) {
-        checkDarkBackgroundBackoff(element, handler, [20, 400]);
+        checkDarkBackgroundBackoff(element, handler, [0, 20, 80, 200]);
       }
     }
   }
