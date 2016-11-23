@@ -21,7 +21,7 @@
     "node": ">= 4.4.0"
   },
   "scripts": {
-    "test": "gulp test:coverage"
+    "test": "gulp test:coverage --runInBand"
   },
   "dependencies": {
     "classnames": "^2.2.3",
