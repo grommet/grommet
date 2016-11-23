@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
-import DOMUtils from '../utils/DOM';
+import { filterByFocusable } from '../utils/DOM';
 import Drop from '../utils/Drop';
 import Intl from '../utils/Intl';
 import Props from '../utils/Props';
@@ -68,7 +68,7 @@ class MenuDrop extends Component {
   _processTab (event) {
     let container = ReactDOM.findDOMNode(this.menuDropRef);
     let items = container.getElementsByTagName('*');
-    items = DOMUtils.filterByFocusable(items);
+    items = filterByFocusable(items);
 
     if (!items || items.length === 0) {
       event.preventDefault();

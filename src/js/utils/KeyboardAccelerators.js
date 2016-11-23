@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import { findDOMNode } from 'react-dom';
-import DOMUtils from './DOM';
+import { generateId } from './DOM';
 
 // Allow callers to use key labels instead of key code numbers.
 // This makes their code easier to read.
@@ -44,24 +44,24 @@ var _onKeyboardAcceleratorKeyPress = (e) => {
 // Remove listeners using stopListeningToKeyboard().
 export default {
   _initKeyboardAccelerators (element) {
-    const id = DOMUtils.generateId(element);
+    const id = generateId(element);
     _keyboardAccelerators[id] = {
       handlers: {}
     };
   },
 
   _getKeyboardAcceleratorHandlers (element) {
-    const id = DOMUtils.generateId(element);
+    const id = generateId(element);
     return _keyboardAccelerators[id].handlers;
   },
 
   _getDowns (element) {
-    const id = DOMUtils.generateId(element);
+    const id = generateId(element);
     return _keyboardAccelerators[id].downs;
   },
 
   _isComponentListening (element) {
-    const id = DOMUtils.generateId(element);
+    const id = generateId(element);
 
     return _listeners.some(function (listener) {
       return listener === id;
@@ -69,12 +69,12 @@ export default {
   },
 
   _subscribeComponent (element) {
-    const id = DOMUtils.generateId(element);
+    const id = generateId(element);
     _listeners.push(id);
   },
 
   _unsubscribeComponent (element) {
-    const id = DOMUtils.generateId(element);
+    const id = generateId(element);
 
     var removeListenerIndex = _listeners.indexOf(id);
     _listeners.splice(removeListenerIndex, 1);

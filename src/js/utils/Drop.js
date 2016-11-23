@@ -2,7 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
-import DOM from './DOM';
+import { filterByFocusable, findScrollParents } from './DOM';
 import CSSClassnames from './CSSClassnames';
 import KeyboardAccelerators from './KeyboardAccelerators';
 
@@ -59,7 +59,7 @@ class DropContents extends Component {
 
   _processTab (event) {
     let items = this.containerRef.getElementsByTagName('*');
-    items = DOM.filterByFocusable(items);
+    items = filterByFocusable(items);
     if (!items || items.length === 0) {
       event.preventDefault();
     } else {
@@ -197,7 +197,7 @@ export default {
 
     render(<DropContents drop={drop} content={content} />, drop.container);
 
-    drop.scrollParents = DOM.findScrollParents(drop.control);
+    drop.scrollParents = findScrollParents(drop.control);
     drop.place = this._place.bind(this, drop);
     drop.render = this._render.bind(this, drop);
     drop.remove = this._remove.bind(this, drop);

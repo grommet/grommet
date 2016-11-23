@@ -5,34 +5,29 @@ import { findDOMNode } from 'react-dom';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Intl from '../utils/Intl';
 import Props from '../utils/Props';
-import { hasDarkBackground } from '../utils/DOM';
+import { checkDarkBackground } from '../utils/DOM';
 import SkipLinkAnchor from './SkipLinkAnchor';
 import CSSClassnames from '../utils/CSSClassnames';
 import { announce } from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.BOX;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
-const LIGHT_HINT_REGEXP = /^light/;
 
 export default class Box extends Component {
 
   constructor (props) {
     super(props);
-    this.state = {
-      darkBackground:
-        (props.colorIndex && ! LIGHT_HINT_REGEXP.test(props.colorIndex)),
-      mouseActive: false
-    };
+    this.state = { mouseActive: false };
   }
 
   componentDidMount () {
-    const { colorIndex, onClick } = this.props;
+    const { onClick } = this.props;
     if (onClick) {
-      let clickCallback = function () {
+      let clickCallback = () => {
         if (this.boxContainerRef === document.activeElement) {
           onClick();
         }
-      }.bind(this);
+      };
 
       KeyboardAccelerators.startListeningToKeyboard(this, {
         enter: clickCallback,
@@ -40,21 +35,7 @@ export default class Box extends Component {
       });
     }
 
-    if (colorIndex) {
-      // Measure the actual background color brightness to determine whether
-      // to set a dark or light context. We delay this to allow the browser
-      // time to recognize the background color. Without this delay, the
-      // browser doesn't report the background color correctly.
-      // Emprically determined.
-      setTimeout(() => {
-        let darkBackground = ('dark' === colorIndex);
-        if (! darkBackground) {
-          const box = findDOMNode(this.boxContainerRef);
-          darkBackground = hasDarkBackground(box);
-        }
-        this.setState({ darkBackground: darkBackground });
-      }, 10);
-    }
+    this._setDarkBackground();
   }
 
   componentWillReceiveProps (nextProps) {
@@ -72,15 +53,8 @@ export default class Box extends Component {
       announce(this.boxContainerRef.textContent);
     }
     if (this.state.updateDarkBackground) {
-      let darkBackground = ('dark' === this.props.colorIndex);
-      if (! darkBackground) {
-        const box = findDOMNode(this.boxContainerRef);
-        darkBackground = hasDarkBackground(box);
-      }
-      this.setState({
-        updateDarkBackground: false,
-        darkBackground: darkBackground
-      });
+      this.setState({ updateDarkBackground: false });
+      this._setDarkBackground();
     }
   }
 
@@ -88,6 +62,13 @@ export default class Box extends Component {
     if (this.props.onClick) {
       KeyboardAccelerators.stopListeningToKeyboard(this);
     }
+  }
+
+  _setDarkBackground () {
+    const { colorIndex } = this.props;
+    const box = findDOMNode(this.boxContainerRef);
+    checkDarkBackground(colorIndex, box,
+      (darkBackground) => this.setState({ darkBackground }));
   }
 
   _normalize (string) {

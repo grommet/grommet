@@ -15,7 +15,7 @@ import CloseIcon from './icons/base/Close';
 import Props from '../utils/Props';
 import CSSClassnames from '../utils/CSSClassnames';
 import Announcer from '../utils/Announcer';
-import { hasDarkBackground } from '../utils/DOM';
+import { checkDarkBackground } from '../utils/DOM';
 
 const CLASS_ROOT = CSSClassnames.NOTIFICATION;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
@@ -32,8 +32,7 @@ export default class Notification extends Component {
     this._announce();
     // Measure the actual background color brightness to determine whether
     // to set a dark or light context.
-    const container = findDOMNode(this._containerRef);
-    this.setState({ darkBackground: hasDarkBackground(container) });
+    this._setDarkBackground();
   }
 
   componentWillReceiveProps (nextProps) {
@@ -45,12 +44,16 @@ export default class Notification extends Component {
   componentDidUpdate () {
     this._announce();
     if (this.state.updateDarkBackground) {
-      const container = findDOMNode(this._containerRef);
-      this.setState({
-        updateDarkBackground: false,
-        darkBackground: hasDarkBackground(container)
-      });
+      this.setState({ updateDarkBackground: false });
+      this._setDarkBackground();
     }
+  }
+
+  _setDarkBackground () {
+    const { colorIndex } = this.props;
+    const box = findDOMNode(this.boxContainerRef);
+    checkDarkBackground(colorIndex, box,
+      (darkBackground) => this.setState({ darkBackground }));
   }
 
   _announce () {

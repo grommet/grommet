@@ -1,6 +1,6 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import DOM from '../utils/DOM';
+import { findScrollParents } from './DOM';
 
 const SCROLL_MORE_DELAY = 500; // when the user scrolls
 const SCROLL_MORE_INITIAL_DELAY = 50; // when we start out at the bottom already
@@ -45,7 +45,7 @@ export default {
     var scrollState = {
       onEnd: onEnd,
       indicatorElement: indicatorElement,
-      scrollParent: DOM.findScrollParents(indicatorElement)[0]
+      scrollParent: findScrollParents(indicatorElement)[0]
     };
 
     scrollState._onResize = _onResize.bind(this, scrollState);

@@ -1,6 +1,6 @@
 exports[`Hero has correct default options 1`] = `
 <div
-  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-background-color-index-grey-1 grommetux-background-color-index--dark grommetux-hero grommetux-hero--large grommetux-hero--bg-center"
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-background-color-index-grey-1 grommetux-background-color-index--light grommetux-hero grommetux-hero--large grommetux-hero--bg-center"
   id={undefined}
   onClick={undefined}
   role={undefined}
@@ -52,7 +52,7 @@ exports[`Hero has correct default options 1`] = `
 
 exports[`Hero transfers random props 1`] = `
 <div
-  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-background-color-index-grey-1 grommetux-background-color-index--dark grommetux-hero grommetux-hero--large grommetux-hero--bg-center"
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-background-color-index-grey-1 grommetux-background-color-index--light grommetux-hero grommetux-hero--large grommetux-hero--bg-center"
   data-flavor="coconut"
   id={undefined}
   onClick={undefined}

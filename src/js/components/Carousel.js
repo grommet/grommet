@@ -8,7 +8,7 @@ import Tile from './Tile';
 import Button from './Button';
 import Previous from './icons/base/Previous';
 import Next from './icons/base/Next';
-import DOM from '../utils/DOM';
+import { findScrollParents } from '../utils/DOM';
 import CSSClassnames from '../utils/CSSClassnames';
 import Intl from '../utils/Intl';
 import { announce } from '../utils/Announcer';
@@ -52,7 +52,7 @@ export default class Carousel extends Component {
       this._updateHammer();
 
       this._handleScroll();
-      const scrollParents = DOM.findScrollParents(this.carouselRef);
+      const scrollParents = findScrollParents(this.carouselRef);
       scrollParents.forEach((scrollParent) => {
         scrollParent.addEventListener('scroll', this._handleScroll);
       }, this);
@@ -68,7 +68,7 @@ export default class Carousel extends Component {
 
     window.removeEventListener('resize', this._onResize);
 
-    const scrollParents = DOM.findScrollParents(this.carouselRef);
+    const scrollParents = findScrollParents(this.carouselRef);
     scrollParents.forEach((scrollParent) => {
       scrollParent.removeEventListener('scroll', this._handleScroll);
     }, this);
@@ -302,7 +302,7 @@ export default class Carousel extends Component {
 
     const carouselMessage = a11yTitle || Intl.getMessage(intl, 'Carousel');
     return (
-      <div ref={ref => this.carouselRef = ref} {...restProps} 
+      <div ref={ref => this.carouselRef = ref} {...restProps}
         className={classes} role='group' aria-label={carouselMessage}
         onFocus={this._stopAutoplay} onBlur={this._startAutoplay}
         onMouseOver={this._stopAutoplay} onMouseOut={this._startAutoplay}>

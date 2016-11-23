@@ -1,11 +1,11 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes, Children } from 'react';
-import {findDOMNode} from 'react-dom';
+import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
 import Box from './Box';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
-import DOMUtils from '../utils/DOM';
+import { isFormElement, filterByFocusable } from '../utils/DOM';
 import Props from '../utils/Props';
 import Scroll from '../utils/Scroll';
 import Responsive from '../utils/Responsive';
@@ -319,7 +319,7 @@ export default class Article extends Component {
 
   _onNext (event, wrap) {
     // only process if the focus is NOT in a form element
-    if (!DOMUtils.isFormElement(document.activeElement)) {
+    if (! isFormElement(document.activeElement)) {
       const { children } = this.props;
       const { selectedIndex } = this.state;
       const childCount = React.Children.count(children);
@@ -340,7 +340,7 @@ export default class Article extends Component {
 
   _onPrevious (event) {
     // only process if the focus is NOT in a form element
-    if (!DOMUtils.isFormElement(document.activeElement)) {
+    if (! isFormElement(document.activeElement)) {
       const { selectedIndex } = this.state;
       if (event) {
         this._stop();
@@ -445,9 +445,7 @@ export default class Article extends Component {
   }
 
   _toggleDisableChapter (chapter, disabled) {
-    const elements = DOMUtils.filterByFocusable(
-      chapter.getElementsByTagName('*')
-    );
+    const elements = filterByFocusable(chapter.getElementsByTagName('*'));
 
     if (elements) {
       elements.forEach((element) => {

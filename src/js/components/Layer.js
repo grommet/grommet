@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import Button from './Button';
 import CloseIcon from './icons/base/Close';
 import CSSClassnames from '../utils/CSSClassnames';
-import DOMUtils from '../utils/DOM';
+import { filterByFocusable } from '../utils/DOM';
 import Intl from '../utils/Intl';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 
@@ -84,7 +84,7 @@ class LayerContents extends Component {
 
   _processTab (event) {
     let items = this.containerRef.getElementsByTagName('*');
-    items = DOMUtils.filterByFocusable(items);
+    items = filterByFocusable(items);
 
     if (!items || items.length === 0) {
       event.preventDefault();
