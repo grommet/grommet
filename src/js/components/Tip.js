@@ -14,6 +14,7 @@ export default class Tip extends Component {
   constructor (props) {
     super();
     this._getTarget = this._getTarget.bind(this);
+    this._onResize = this._onResize.bind(this);
   }
 
   componentDidMount () {
@@ -54,6 +55,7 @@ export default class Tip extends Component {
 
       target.addEventListener('click', onClose);
       target.addEventListener('blur', onClose);
+      window.addEventListener('resize', this._onResize);
     }
   }
 
@@ -65,10 +67,16 @@ export default class Tip extends Component {
     if (this._drop) {
       this._drop.remove();
     }
-    
     if (target) {
       target.removeEventListener('click', onClose);
       target.removeEventListener('blur', onClose);
+      window.removeEventListener('resize', this._onResize);
+    }
+  }
+
+  _onResize () {
+    if (this._drop) {
+      this._drop.place();
     }
   }
 
