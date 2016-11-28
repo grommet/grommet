@@ -61,6 +61,7 @@ var Tip = function (_Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (Tip.__proto__ || (0, _getPrototypeOf2.default)(Tip)).call(this));
 
     _this._getTarget = _this._getTarget.bind(_this);
+    _this._onResize = _this._onResize.bind(_this);
     return _this;
   }
 
@@ -94,6 +95,7 @@ var Tip = function (_Component) {
 
         target.addEventListener('click', onClose);
         target.addEventListener('blur', onClose);
+        window.addEventListener('resize', this._onResize);
       }
     }
   }, {
@@ -107,10 +109,17 @@ var Tip = function (_Component) {
       if (this._drop) {
         this._drop.remove();
       }
-
       if (target) {
         target.removeEventListener('click', onClose);
         target.removeEventListener('blur', onClose);
+        window.removeEventListener('resize', this._onResize);
+      }
+    }
+  }, {
+    key: '_onResize',
+    value: function _onResize() {
+      if (this._drop) {
+        this._drop.place();
       }
     }
   }, {
