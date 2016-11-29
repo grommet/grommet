@@ -43,6 +43,21 @@
       padding: 0 double($inuit-base-spacing-unit);
       border-radius: $border-radius;
       box-shadow: $layer-box-shadow;
+
+      /* avoid problems with ie11 with max-width: 100%;
+       * See: http://stackoverflow.com/questions/40855067/flexbox-div-with-column-direction-and-inner-max-width-breaks-in-ie11
+      */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        :not(.#{$grommet-namespace}sidebar) {
+          .#{$grommet-namespace}form {
+            max-width: calc(100vw - #{double($inuit-base-spacing-unit)});
+          }
+        }
+
+        > .#{$grommet-namespace}form {
+          max-width: calc(100vw - #{double($inuit-base-spacing-unit)});
+        }
+      }
     }
 
     .#{$grommet-namespace}box--full {
@@ -90,11 +105,11 @@
 
   @include media-query(lap-and-up) {
     .#{$grommet-namespace}layer__container {
-      left: 50%;
-      top: 50%;
+      bottom: 50%;
+      right: 50%;
       max-height: calc(100vh - #{double($inuit-base-spacing-unit)});
       max-width: calc(100vw - #{double($inuit-base-spacing-unit)});
-      transform: translate(-50%, -50%);
+      transform: translate(50%, 50%);
     }
   }
 }
