@@ -44,18 +44,15 @@
       border-radius: $border-radius;
       box-shadow: $layer-box-shadow;
 
-      /* avoid problems with ie11 with max-width: 100%;
-       * See: http://stackoverflow.com/questions/40855067/flexbox-div-with-column-direction-and-inner-max-width-breaks-in-ie11
-      */
+      // avoid problems with ie11 with max-width: 100%;
+      // See: http://stackoverflow.com/questions/40855067/flexbox-div-with-column-direction-and-inner-max-width-breaks-in-ie11
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        :not(.#{$grommet-namespace}sidebar) {
-          .#{$grommet-namespace}form {
-            max-width: calc(100vw - #{double($inuit-base-spacing-unit)});
-          }
+        .#{$grommet-namespace}form {
+          max-width: 100vw;
         }
 
-        > .#{$grommet-namespace}form {
-          max-width: calc(100vw - #{double($inuit-base-spacing-unit)});
+        .#{$grommet-namespace}sidebar .#{$grommet-namespace}form {
+          max-width: 100%;
         }
       }
     }
@@ -98,6 +95,18 @@
 .#{$grommet-namespace}layer.#{$grommet-namespace}layer--flush {
   .#{$grommet-namespace}layer__container {
     padding: 0px;
+
+    // avoid problems with ie11 with max-width: 100%;
+    // See: http://stackoverflow.com/questions/40855067/flexbox-div-with-column-direction-and-inner-max-width-breaks-in-ie11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .#{$grommet-namespace}form {
+        max-width: 100vw;
+      }
+
+      .#{$grommet-namespace}sidebar .#{$grommet-namespace}form {
+        max-width: 100%;
+      }
+    }
   }
 }
 

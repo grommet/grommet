@@ -81,11 +81,11 @@ export default class FormField extends Component {
       ? <span className={CLASS_ROOT + "__help"}>{this.props.help}</span>
       : undefined;
 
-    const labelNode = (label)
-      ? <label className={CLASS_ROOT + "__label"} htmlFor={htmlFor}>
-          {label}
-        </label>
-      : undefined;
+    const labelNode = (label) ? (
+      <label className={CLASS_ROOT + "__label"} htmlFor={htmlFor}>
+        {label}
+      </label>
+    ) : undefined;
 
     return (
       <div className={classes} {...props} onClick={this._onClick}>
