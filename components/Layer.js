@@ -338,10 +338,12 @@ var Layer = function (_Component2) {
       var ariaHidden = hideOverlay || false;
       this._element.setAttribute('aria-hidden', ariaHidden);
       var grommetApps = document.querySelectorAll('.' + APP);
+      var layers = document.querySelectorAll('.' + CLASS_ROOT + ':not(.' + CLASS_ROOT + '--hidden)');
 
       if (grommetApps) {
         Array.prototype.slice.call(grommetApps).forEach(function (grommetApp) {
-          if (ariaHidden) {
+          if (ariaHidden && layers.length === 0) {
+            // make sure to only show grommet apps if there is no other layer
             grommetApp.setAttribute('aria-hidden', false);
             grommetApp.classList.remove(APP + '--hidden');
             // this must be null to work
@@ -362,8 +364,6 @@ var Layer = function (_Component2) {
     value: function _renderLayer() {
       var _this6 = this;
 
-      var hidden = this.props.hidden;
-
       if (this._element) {
         this._element.className = this._classesFromProps();
         var contents = _react2.default.createElement(LayerContents, (0, _extends3.default)({}, this.props, {
@@ -372,10 +372,12 @@ var Layer = function (_Component2) {
           router: this.context.router,
           store: this.context.store }));
         _reactDom2.default.render(contents, this._element, function () {
-          if (!hidden) {
-            _this6._handleAriaHidden(false);
-          } else {
+          var hidden = _this6.props.hidden;
+
+          if (hidden) {
             _this6._handleAriaHidden(true);
+          } else {
+            _this6._handleAriaHidden(false);
           }
         });
       }
