@@ -5,7 +5,7 @@
   z-index: 10; // stay above app header
   background-color: $layer-overlay-background-color;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
 
   @include media-query(lap-and-up) {
     position: fixed;

@@ -246,10 +246,14 @@ export default class Layer extends Component {
     const ariaHidden = hideOverlay || false;
     this._element.setAttribute('aria-hidden', ariaHidden);
     const grommetApps = document.querySelectorAll(`.${APP}`);
+    const layers = document.querySelectorAll(
+      `.${CLASS_ROOT}:not(.${CLASS_ROOT}--hidden)`
+    );
 
     if (grommetApps) {
       Array.prototype.slice.call(grommetApps).forEach((grommetApp) => {
-        if (ariaHidden) {
+        if (ariaHidden && layers.length === 0) {
+          // make sure to only show grommet apps if there is no other layer
           grommetApp.setAttribute('aria-hidden', false);
           grommetApp.classList.remove(`${APP}--hidden`);
           // this must be null to work
@@ -267,7 +271,6 @@ export default class Layer extends Component {
   }
 
   _renderLayer () {
-    const { hidden } = this.props;
     if (this._element) {
       this._element.className = this._classesFromProps();
       const contents = (
@@ -278,10 +281,11 @@ export default class Layer extends Component {
           store={this.context.store} />
       );
       ReactDOM.render(contents, this._element, () => {
-        if (!hidden) {
-          this._handleAriaHidden(false);
-        } else {
+        const { hidden } = this.props;
+        if (hidden) {
           this._handleAriaHidden(true);
+        } else {
+          this._handleAriaHidden(false);
         }
       });
     }
