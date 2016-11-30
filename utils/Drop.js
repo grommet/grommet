@@ -260,7 +260,7 @@ exports.default = {
         scrollParent.removeEventListener('scroll', drop.place);
       });
 
-      drop.scrollParents = DOM.findScrollParents(drop.control);
+      drop.scrollParents = (0, _DOM.findScrollParents)(drop.control);
 
       drop.scrollParents.forEach(function (scrollParent) {
         scrollParent.addEventListener('scroll', drop.place);
