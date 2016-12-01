@@ -149,7 +149,7 @@ export default class Notification extends Component {
       Props.omit(this.props, Object.keys(Notification.propTypes));
     boxProps.announce = false;
     const fullBox =
-      boxProps.hasOwnProperty('full') ? boxProps.full : 'horizontal';
+      boxProps.hasOwnProperty('full') ? boxProps.full : undefined;
 
     if (size && typeof size === 'string') {
       // don't transfer size to Box since it means something different
