@@ -32,7 +32,7 @@ exports[`Accordion has correct default options 1`] = `
           style={Object {}}
           tabIndex={undefined}>
           <header
-            className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
             id={undefined}
             onClick={undefined}
             role={undefined}
@@ -97,7 +97,7 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
           style={Object {}}
           tabIndex={undefined}>
           <header
-            className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
             id={undefined}
             onClick={undefined}
             role={undefined}
@@ -168,7 +168,7 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
           style={Object {}}
           tabIndex={undefined}>
           <header
-            className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
             id={undefined}
             onClick={undefined}
             role={undefined}
@@ -233,7 +233,7 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
           style={Object {}}
           tabIndex={undefined}>
           <header
-            className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
             id={undefined}
             onClick={undefined}
             role={undefined}
@@ -304,7 +304,7 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
           style={Object {}}
           tabIndex={undefined}>
           <header
-            className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
             id={undefined}
             onClick={undefined}
             role={undefined}
@@ -382,7 +382,7 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
           style={Object {}}
           tabIndex={undefined}>
           <header
-            className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
             id={undefined}
             onClick={undefined}
             role={undefined}
@@ -453,7 +453,7 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
           style={Object {}}
           tabIndex={undefined}>
           <header
-            className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
             id={undefined}
             onClick={undefined}
             role={undefined}

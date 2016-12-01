@@ -52,7 +52,7 @@ export default class AccordionPanel extends Component {
           aria-expanded={active} aria-selected={active} role='tab'
           aria-label={a11yTitle || heading}>
           <Button fill={true} plain={true} onClick={this._onClickTab}>
-            <Header pad={pad} full='horizontal' direction='row'
+            <Header pad={pad} direction='row'
               justify='between' align='center' responsive={false}
               className={`${CLASS_ROOT}__header`}>
               {heading}
