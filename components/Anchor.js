@@ -175,33 +175,30 @@ Anchor.displayName = 'Anchor';
 exports.default = Anchor;
 ;
 
-var description = 'A text link. We have a separate component from the browser\nbase so we can style it. You can either set the icon and/or label properties\nor just use children.';
-var usage = 'import Anchor from \'grommet/components/Anchor\';\n<Anchor href={location} label="Label" />\n';
-(0, _reactDesc.docComponent)(description, Anchor, {
-  usage: usage
+(0, _reactDesc.schema)(Anchor, {
+  description: 'A text link. We have a separate component from the browser\n  base so we can style it. You can either set the icon and/or label properties\n  or just use children.',
+  usage: 'import Anchor from \'grommet/components/Anchor\';\n  <Anchor href={location} label="Label" />',
+  props: {
+    a11yTitle: [_reactDesc.PropTypes.string, 'Accessibility title.'],
+    animateIcon: [_reactDesc.PropTypes.bool, 'Whether to animate the icon on hover.'],
+    disabled: [_reactDesc.PropTypes.bool, 'Whether to disable the anchor.'],
+    href: [_reactDesc.PropTypes.string, 'Hyperlink reference to place in the anchor.'],
+    icon: [_reactDesc.PropTypes.element, 'Icon element to place in the anchor.'],
+    id: [_reactDesc.PropTypes.string, 'Anchor identifier.'],
+    label: [_reactDesc.PropTypes.node, 'Label text to place in the anchor.'],
+    method: [_reactDesc.PropTypes.oneOf(['push', 'replace']), 'Valid only when used with path. Indicates whether the browser history' + ' should be appended to or replaced.', {
+      defaultProp: 'push'
+    }],
+    onClick: [_reactDesc.PropTypes.func, 'Click handler.'],
+    path: [_reactDesc.PropTypes.string, 'React-router path to navigate to when clicked.'],
+    primary: [_reactDesc.PropTypes.bool, 'Whether this is a primary anchor.'],
+    reverse: [_reactDesc.PropTypes.bool, 'Whether an icon and label should be reversed so that the icon is at ' + 'the end of the anchor.'],
+    tag: [_reactDesc.PropTypes.string, 'The DOM tag to use for the element. The default is <a>. This should be' + ' used in conjunction with components like Link from React Router. In' + ' this case, Link controls the navigation while Anchor controls the' + ' styling.', {
+      defaultProp: 'a'
+    }],
+    target: [_reactDesc.PropTypes.string, 'Target of the link.']
+  }
 });
-
-Anchor.propTypes = {
-  a11yTitle: (0, _reactDesc.docPropType)('Accessibility title.', _reactDesc.PropTypes.string),
-  animateIcon: (0, _reactDesc.docPropType)('Whether to animate the icon on hover.', _reactDesc.PropTypes.bool),
-  disabled: (0, _reactDesc.docPropType)('Whether to disable the anchor.', _reactDesc.PropTypes.bool),
-  href: (0, _reactDesc.docPropType)('Hyperlink reference to place in the anchor.', _reactDesc.PropTypes.string),
-  icon: (0, _reactDesc.docPropType)('Icon element to place in the anchor.', _reactDesc.PropTypes.element),
-  id: (0, _reactDesc.docPropType)('Anchor identifier.', _reactDesc.PropTypes.string),
-  label: (0, _reactDesc.docPropType)('Label text to place in the anchor.', _reactDesc.PropTypes.node),
-  method: (0, _reactDesc.docPropType)('Valid only when used with path. Indicates whether the browser history' + ' should be appended to or replaced.', _reactDesc.PropTypes.oneOf(['push', 'replace'])),
-  onClick: (0, _reactDesc.docPropType)('Click handler.', _reactDesc.PropTypes.func),
-  path: (0, _reactDesc.docPropType)('React-router path to navigate to when clicked.', _reactDesc.PropTypes.string),
-  primary: (0, _reactDesc.docPropType)('Whether this is a primary anchor.', _reactDesc.PropTypes.bool),
-  reverse: (0, _reactDesc.docPropType)('Whether an icon and label should be reversed so that the icon is at the' + 'end of the anchor.', _reactDesc.PropTypes.bool),
-  tag: (0, _reactDesc.docPropType)('The DOM tag to use for the element. The default is <a>. This should be' + ' used in conjunction with components like Link from React Router. In' + ' this case, Link controls the navigation while Anchor controls the' + ' styling.', _reactDesc.PropTypes.string),
-  target: (0, _reactDesc.docPropType)('Target of the link.', _reactDesc.PropTypes.string)
-};
-
-Anchor.defaultProps = {
-  method: 'push',
-  tag: 'a'
-};
 
 Anchor.contextTypes = {
   router: _react2.default.PropTypes.object

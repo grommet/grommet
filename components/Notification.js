@@ -247,7 +247,7 @@ var Notification = function (_Component) {
       var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Notification.propTypes));
       boxProps.announce = false;
-      var fullBox = boxProps.hasOwnProperty('full') ? boxProps.full : 'horizontal';
+      var fullBox = boxProps.hasOwnProperty('full') ? boxProps.full : undefined;
 
       if (size && typeof size === 'string') {
         // don't transfer size to Box since it means something different
