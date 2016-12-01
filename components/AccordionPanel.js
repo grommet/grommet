@@ -123,7 +123,7 @@ var AccordionPanel = function (_Component) {
             { fill: true, plain: true, onClick: this._onClickTab },
             _react2.default.createElement(
               _Header2.default,
-              { pad: pad, full: 'horizontal', direction: 'row',
+              { pad: pad, direction: 'row',
                 justify: 'between', align: 'center', responsive: false,
                 className: CLASS_ROOT + '__header' },
               heading,
