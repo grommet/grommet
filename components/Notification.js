@@ -114,6 +114,7 @@ var Notification = function (_Component) {
     var _this = (0, _possibleConstructorReturn3.default)(this, (Notification.__proto__ || (0, _getPrototypeOf2.default)(Notification)).call(this));
 
     _this._announce = _this._announce.bind(_this);
+    _this._setDarkBackground = _this._setDarkBackground.bind(_this);
     _this.state = {};
     return _this;
   }
@@ -147,10 +148,10 @@ var Notification = function (_Component) {
     value: function _setDarkBackground() {
       var _this2 = this;
 
-      var colorIndex = this.props.colorIndex;
+      var status = this.props.status;
 
-      var box = (0, _reactDom.findDOMNode)(this.boxContainerRef);
-      (0, _DOM.checkDarkBackground)(colorIndex, box, function (darkBackground) {
+      var box = (0, _reactDom.findDOMNode)(this._containerRef);
+      (0, _DOM.checkDarkBackground)(status, box, function (darkBackground) {
         return _this2.setState({ darkBackground: darkBackground });
       });
     }
