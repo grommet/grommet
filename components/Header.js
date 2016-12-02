@@ -159,7 +159,7 @@ var Header = function (_Component) {
             { className: wrapperClasses },
             _react2.default.createElement(
               _Box2.default,
-              { pad: 'none' },
+              { pad: 'none', flex: false },
               _react2.default.createElement(
                 _Box2.default,
                 (0, _extends3.default)({ ref: function ref(_ref2) {
@@ -179,7 +179,7 @@ var Header = function (_Component) {
           // https://github.com/philipwalton/flexbugs
           _react2.default.createElement(
             _Box2.default,
-            { pad: 'none' },
+            { pad: 'none', flex: false },
             _react2.default.createElement(
               _Box2.default,
               (0, _extends3.default)({}, other, restProps, { tag: 'header', role: role,
