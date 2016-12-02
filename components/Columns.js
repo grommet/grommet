@@ -95,6 +95,19 @@ var Columns = function (_Component) {
       setTimeout(this._layout, 10);
     }
   }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      this.setState({ relayout: true });
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (this.state.relayout) {
+        this.setState({ relayout: false });
+        this._layout();
+      }
+    }
+  }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       window.removeEventListener('resize', this._onResize);
