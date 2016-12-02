@@ -544,11 +544,12 @@ var Menu = function (_Component2) {
           children = _props3.children,
           className = _props3.className,
           direction = _props3.direction,
+          fill = _props3.fill,
           label = _props3.label,
           primary = _props3.primary,
           size = _props3.size,
           pad = _props3.pad,
-          props = (0, _objectWithoutProperties3.default)(_props3, ['a11yTitle', 'children', 'className', 'direction', 'label', 'primary', 'size', 'pad']);
+          props = (0, _objectWithoutProperties3.default)(_props3, ['a11yTitle', 'children', 'className', 'direction', 'fill', 'label', 'primary', 'size', 'pad']);
 
       delete props.closeOnClick;
       delete props.dropColorIndex;
@@ -557,7 +558,7 @@ var Menu = function (_Component2) {
       delete props.inline;
       var inline = this.state.inline;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + direction, direction), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--primary', primary), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--inline', inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--controlled', !inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__control', !inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--labelled', !inline && label), _classnames2), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + direction, direction), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--primary', primary), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--inline', inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--controlled', !inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__control', !inline), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--labelled', !inline && label), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--fill', fill), _classnames2), className);
 
       if (inline) {
         var menuLabel = void 0;
@@ -609,6 +610,7 @@ Menu.propTypes = (0, _extends3.default)({
   icon: _react.PropTypes.node,
   id: _react.PropTypes.string,
   inline: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf(['expand'])]),
+  fill: _react.PropTypes.bool,
   label: _react.PropTypes.string,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
 }, _Box2.default.propTypes);

@@ -24,6 +24,13 @@
   }
 }
 
+.#{$grommet-namespace}menu--fill {
+  // width: 100%;
+  max-width: none;
+  //used to add full height for button inside a flex container
+  flex-grow: 1;
+}
+
 .#{$grommet-namespace}menu__control {
 
   .#{$grommet-namespace}control-icon-down {
