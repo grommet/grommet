@@ -25,7 +25,7 @@ exports[`Accordion has correct default options 1`] = `
         onMouseUp={[Function]}
         type="button">
         <div
-          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
           id={undefined}
           onClick={undefined}
           role={undefined}
@@ -90,7 +90,7 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
         onMouseUp={[Function]}
         type="button">
         <div
-          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
           id={undefined}
           onClick={undefined}
           role={undefined}
@@ -161,7 +161,7 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
         onMouseUp={[Function]}
         type="button">
         <div
-          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
           id={undefined}
           onClick={undefined}
           role={undefined}
@@ -226,7 +226,7 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
         onMouseUp={[Function]}
         type="button">
         <div
-          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
           id={undefined}
           onClick={undefined}
           role={undefined}
@@ -297,7 +297,7 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
         onMouseUp={[Function]}
         type="button">
         <div
-          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
           id={undefined}
           onClick={undefined}
           role={undefined}
@@ -375,7 +375,7 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
         onMouseUp={[Function]}
         type="button">
         <div
-          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
           id={undefined}
           onClick={undefined}
           role={undefined}
@@ -446,7 +446,7 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
         onMouseUp={[Function]}
         type="button">
         <div
-          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
           id={undefined}
           onClick={undefined}
           role={undefined}

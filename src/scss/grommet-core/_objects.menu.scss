@@ -25,10 +25,9 @@
 }
 
 .#{$grommet-namespace}menu--fill {
-  // width: 100%;
-  max-width: none;
   //used to add full height for button inside a flex container
-  flex-grow: 1;
+  flex: 1 1 auto;
+  overflow: auto;
 }
 
 .#{$grommet-namespace}menu__control {
