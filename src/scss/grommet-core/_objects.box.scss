@@ -436,7 +436,7 @@
 .#{$grommet-namespace}box--full {
   position: relative;
   max-width: 100%;
-  min-width: 100vw;
+  width: 100vw;
   min-height: 100vh;
   height: 100%;
 
@@ -449,7 +449,7 @@
 
 .#{$grommet-namespace}box--full-horizontal {
   max-width: 100%;
-  min-width: 100vw;
+  width: 100vw;
 }
 
 .#{$grommet-namespace}box--full-vertical {
@@ -458,6 +458,7 @@
   // IE11 specific fix for aligning content vertically centered
   // height gets over written by the > min-height
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    min-height: 100vh;
     height: 50vh;
   }
 }
