@@ -33,6 +33,17 @@ export default class Columns extends Component {
     setTimeout(this._layout, 10);
   }
 
+  componentWillReceiveProps (nextProps) {
+    this.setState({ relayout: true });
+  }
+
+  componentDidUpdate () {
+    if (this.state.relayout) {
+      this.setState({ relayout: false });
+      this._layout();
+    }
+  }
+
   componentWillUnmount () {
     window.removeEventListener('resize', this._onResize);
     clearTimeout(this._layoutTimer);
