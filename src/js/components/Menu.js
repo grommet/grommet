@@ -429,7 +429,7 @@ export default class Menu extends Component {
 
   render () {
     const {
-      a11yTitle, children, className, direction, label, primary, size,
+      a11yTitle, children, className, direction, fill, label, primary, size,
       pad, ...props
     } = this.props;
     delete props.closeOnClick;
@@ -447,7 +447,8 @@ export default class Menu extends Component {
         [`${CLASS_ROOT}--inline`]: inline,
         [`${CLASS_ROOT}--controlled`]: !inline,
         [`${CLASS_ROOT}__control`]: !inline,
-        [`${CLASS_ROOT}--labelled`]: !inline && label
+        [`${CLASS_ROOT}--labelled`]: !inline && label,
+        [`${CLASS_ROOT}--fill`]: fill
       },
       className
     );
@@ -499,6 +500,7 @@ Menu.propTypes = {
   icon: PropTypes.node,
   id: PropTypes.string,
   inline: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['expand'])]),
+  fill: PropTypes.bool,
   label: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   ...Box.propTypes

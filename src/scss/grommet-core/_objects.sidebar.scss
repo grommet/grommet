@@ -15,17 +15,6 @@
   display: flex;
   flex-direction: column;
   max-height: 100vh;
-
-  > * {
-    //flex: 1 does not work with IE11.
-    flex: 1 1 auto;
-    overflow: auto;
-
-    &.#{$grommet-namespace}header,
-    &.#{$grommet-namespace}footer {
-      flex: 0 0 auto;
-    }
-  }
 }
 
 .#{$grommet-namespace}sidebar--xsmall {
