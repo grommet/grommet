@@ -25,6 +25,7 @@ export default class Notification extends Component {
   constructor () {
     super();
     this._announce = this._announce.bind(this);
+    this._setDarkBackground = this._setDarkBackground.bind(this);
     this.state = {};
   }
 
@@ -50,9 +51,9 @@ export default class Notification extends Component {
   }
 
   _setDarkBackground () {
-    const { colorIndex } = this.props;
-    const box = findDOMNode(this.boxContainerRef);
-    checkDarkBackground(colorIndex, box,
+    const { status } = this.props;
+    const box = findDOMNode(this._containerRef);
+    checkDarkBackground(status, box,
       (darkBackground) => this.setState({ darkBackground }));
   }
 
