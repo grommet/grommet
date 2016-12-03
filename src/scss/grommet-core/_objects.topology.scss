@@ -117,10 +117,26 @@ $topology-active-stroke-width: round($inuit-base-spacing-unit / 4);
 .#{$grommet-namespace}topology__part--demarcate {
   border: 1px solid $border-color;
 
+  #{$dark-background-context} {
+    border-color: $colored-border-color;
+  }
+
+  #{$light-background-context} {
+    border-color: $border-color;
+  }
+
   &.#{$grommet-namespace}topology__part--empty {
     background-color: $secondary-background-color;
     min-width: $inuit-base-spacing-unit;
     min-height: $inuit-base-spacing-unit;
+
+    #{$dark-background-context} {
+      background-color: $colored-active-background-color;
+    }
+
+    #{$light-background-context} {
+      background-color: $secondary-background-color;
+    }
   }
 }
 
