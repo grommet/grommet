@@ -345,11 +345,27 @@
     > a {
       padding: quarter($inuit-base-spacing-unit) 0;
     }
+
+    &.#{$grommet-namespace}menu--primary {
+      > a {
+        padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit
+          quarter($inuit-base-spacing-unit)
+          ($inuit-base-spacing-unit - $active-border-width);
+      }
+    }
   }
 
   &.#{$grommet-namespace}menu--large {
     > a {
       padding: $inuit-base-spacing-unit 0;
+    }
+
+    &.#{$grommet-namespace}menu--primary {
+      > a {
+        padding: $inuit-base-spacing-unit $inuit-base-spacing-unit
+          $inuit-base-spacing-unit
+          ($inuit-base-spacing-unit - $active-border-width);
+      }
     }
   }
 
