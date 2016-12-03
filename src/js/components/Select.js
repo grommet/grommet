@@ -285,7 +285,7 @@ export default class Select extends Component {
       return announce ? option.value || option.label || '' :
         option.label || option.value || '';
     } else {
-      return option || '';
+      return (undefined === option || null === option) ? '' : option;
     }
   }
 
