@@ -39,6 +39,14 @@ export default class Split extends Component {
         window.dispatchEvent(event);
       }, 500);
     }
+    this.setState({ relayout: true });
+  }
+
+  componentDidUpdate () {
+    if (this.state.relayout) {
+      this.setState({ relayout: false });
+      this._layout();
+    }
   }
 
   componentWillUnmount () {
