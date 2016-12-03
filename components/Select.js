@@ -395,7 +395,7 @@ var Select = function (_Component) {
         // revert for announce as label is often a complex object
         return announce ? option.value || option.label || '' : option.label || option.value || '';
       } else {
-        return option || '';
+        return undefined === option || null === option ? '' : option;
       }
     }
   }, {
