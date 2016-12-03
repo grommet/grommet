@@ -185,3 +185,15 @@
     }
   }
 }
+
+.#{$grommet-namespace}anchor--align-start {
+  text-align: left;
+}
+
+.#{$grommet-namespace}anchor--align-center {
+  text-align: center;
+}
+
+.#{$grommet-namespace}anchor--align-end {
+  text-align: right;
+}

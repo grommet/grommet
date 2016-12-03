@@ -35,7 +35,7 @@ export default class Anchor extends Component {
 
   render () {
     const {
-      a11yTitle, animateIcon, children, className, disabled, href, icon,
+      a11yTitle, align, animateIcon, children, className, disabled, href, icon,
       label, onClick, path, primary, reverse, tag, ...props
     } = this.props;
     delete props.method;
@@ -72,6 +72,7 @@ export default class Anchor extends Component {
         [`${CLASS_ROOT}--disabled`]: disabled,
         [`${CLASS_ROOT}--icon`]: anchorIcon || hasIcon,
         [`${CLASS_ROOT}--icon-label`]: hasIcon && label,
+        [`${CLASS_ROOT}--align-${align}`]: align,
         [`${CLASS_ROOT}--primary`]: primary,
         [`${CLASS_ROOT}--reverse`]: reverse,
         [`${CLASS_ROOT}--active`]: (router && path && router.isActive(path))
@@ -107,6 +108,7 @@ schema(Anchor, {
   <Anchor href={location} label="Label" />`,
   props: {
     a11yTitle: [PropTypes.string, 'Accessibility title.'],
+    align: [PropTypes.oneOf(['start', 'center', 'end']), 'Text alignment.'],
     animateIcon: [PropTypes.bool, 'Whether to animate the icon on hover.'],
     disabled: [PropTypes.bool, 'Whether to disable the anchor.'],
     href: [PropTypes.string, 'Hyperlink reference to place in the anchor.'],
