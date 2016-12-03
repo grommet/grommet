@@ -92,6 +92,15 @@ var Split = function (_Component) {
           window.dispatchEvent(event);
         }, 500);
       }
+      this.setState({ relayout: true });
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (this.state.relayout) {
+        this.setState({ relayout: false });
+        this._layout();
+      }
     }
   }, {
     key: 'componentWillUnmount',
