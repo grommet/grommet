@@ -99,6 +99,7 @@ var Anchor = function (_Component) {
 
       var _props2 = this.props,
           a11yTitle = _props2.a11yTitle,
+          align = _props2.align,
           animateIcon = _props2.animateIcon,
           children = _props2.children,
           className = _props2.className,
@@ -111,7 +112,7 @@ var Anchor = function (_Component) {
           primary = _props2.primary,
           reverse = _props2.reverse,
           tag = _props2.tag,
-          props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'animateIcon', 'children', 'className', 'disabled', 'href', 'icon', 'label', 'onClick', 'path', 'primary', 'reverse', 'tag']);
+          props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'align', 'animateIcon', 'children', 'className', 'disabled', 'href', 'icon', 'label', 'onClick', 'path', 'primary', 'reverse', 'tag']);
 
       delete props.method;
       var router = this.context.router;
@@ -147,7 +148,7 @@ var Anchor = function (_Component) {
 
       var adjustedHref = path && router ? router.createPath(path) : href;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--animate-icon', hasIcon && animateIcon !== false), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', disabled), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon', anchorIcon || hasIcon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon-label', hasIcon && label), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--reverse', reverse), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--active', router && path && router.isActive(path)), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--animate-icon', hasIcon && animateIcon !== false), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', disabled), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon', anchorIcon || hasIcon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon-label', hasIcon && label), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--reverse', reverse), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--active', router && path && router.isActive(path)), _classnames), className);
 
       var adjustedOnClick = path && router ? this._onClick : onClick;
 
@@ -180,6 +181,7 @@ exports.default = Anchor;
   usage: 'import Anchor from \'grommet/components/Anchor\';\n  <Anchor href={location} label="Label" />',
   props: {
     a11yTitle: [_reactDesc.PropTypes.string, 'Accessibility title.'],
+    align: [_reactDesc.PropTypes.oneOf(['start', 'center', 'end']), 'Text alignment.'],
     animateIcon: [_reactDesc.PropTypes.bool, 'Whether to animate the icon on hover.'],
     disabled: [_reactDesc.PropTypes.bool, 'Whether to disable the anchor.'],
     href: [_reactDesc.PropTypes.string, 'Hyperlink reference to place in the anchor.'],
