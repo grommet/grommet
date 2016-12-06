@@ -34,8 +34,6 @@ export default class TextInput extends Component {
     this.state = {
       announceChange: false,
       dropActive: false,
-      defaultValue: props.defaultValue,
-      value: props.value,
       activeSuggestionIndex: -1
     };
   }
