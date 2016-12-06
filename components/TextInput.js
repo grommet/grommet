@@ -99,8 +99,6 @@ var TextInput = function (_Component) {
     _this.state = {
       announceChange: false,
       dropActive: false,
-      defaultValue: props.defaultValue,
-      value: props.value,
       activeSuggestionIndex: -1
     };
     return _this;

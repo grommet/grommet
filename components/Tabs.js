@@ -78,7 +78,7 @@ var Tabs = function (_Component) {
   (0, _createClass3.default)(Tabs, [{
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      if ((nextProps.activeIndex || 0 === nextProps.activeIndex) && this.state.activeIndex !== nextProps.activeIndex) {
+      if (nextProps.activeIndex && this.state.activeIndex !== nextProps.activeIndex) {
         this.setState({ activeIndex: nextProps.activeIndex });
       }
     }
