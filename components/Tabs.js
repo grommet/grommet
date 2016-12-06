@@ -69,7 +69,7 @@ var Tabs = function (_Component) {
     _this._activateTab = _this._activateTab.bind(_this);
 
     _this.state = {
-      activeIndex: props.activeIndex,
+      activeIndex: props.activeIndex || 0,
       justify: props.justify
     };
     return _this;
@@ -78,14 +78,16 @@ var Tabs = function (_Component) {
   (0, _createClass3.default)(Tabs, [{
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.activeIndex && this.state.activeIndex !== nextProps.activeIndex) {
+      if ((nextProps.activeIndex || 0 === nextProps.activeIndex) && this.state.activeIndex !== nextProps.activeIndex) {
         this.setState({ activeIndex: nextProps.activeIndex });
       }
     }
   }, {
     key: '_activateTab',
     value: function _activateTab(index) {
-      this.setState({ activeIndex: index });
+      if (!this.props.hasOwnProperty('activeIndex')) {
+        this.setState({ activeIndex: index });
+      }
       if (this.props.onActive) {
         this.props.onActive(index);
       }
@@ -171,7 +173,6 @@ Tabs.contextTypes = {
 };
 
 Tabs.defaultProps = {
-  activeIndex: 0,
   justify: 'center',
   responsive: true
 };

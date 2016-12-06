@@ -77,3 +77,7 @@ $active-darken: 20%;
     }
   }
 }
+
+.#{$grommet-namespace}tab__button {
+  border-radius: 0;
+}

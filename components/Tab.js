@@ -98,7 +98,8 @@ var Tab = function (_Component) {
         (0, _extends3.default)({}, props, { className: classes, id: id }),
         _react2.default.createElement(
           _Button2.default,
-          { plain: true, role: 'tab', 'aria-selected': active,
+          { className: CLASS_ROOT + '__button', plain: true,
+            role: 'tab', 'aria-selected': active,
             onClick: this._onClickTab, 'aria-expanded': active },
           _react2.default.createElement(
             'label',
