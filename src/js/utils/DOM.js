@@ -128,6 +128,8 @@ export function generateUUID () {
   return uuid;
 }
 
+const CHECK_DARK_BACKGROUND_BACKOFFS = [0, 20, 80, 200];
+
 function hasDarkBackground (element) {
   let result = false;
   const color = window.getComputedStyle(element).backgroundColor;
@@ -162,17 +164,19 @@ function checkDarkBackgroundBackoff (element, handler, backoffDurations) {
 }
 
 export function checkDarkBackground (colorIndex, element, handler) {
-  // skip if this is a 'light-*' color index
   if (colorIndex) {
     if ('dark' === colorIndex) {
+      // caller knows
       handler(true);
     } else if (LIGHT_HINT_REGEXP.test(colorIndex)) {
+      // skip if this is a 'light-*' color index
       handler(false);
     } else {
       // Measure the actual background color brightness to determine whether
       // to set a dark or light context.
       if (element && window.getComputedStyle) {
-        checkDarkBackgroundBackoff(element, handler, [0, 20, 80, 200]);
+        checkDarkBackgroundBackoff(element, handler,
+          CHECK_DARK_BACKGROUND_BACKOFFS);
       }
     }
   }

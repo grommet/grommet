@@ -93,6 +93,18 @@ export default class Box extends Component {
     }
   }
 
+  _backgroundContextClass (darkBackground) {
+    let result;
+    if (undefined === darkBackground) {
+      result = `${BACKGROUND_COLOR_INDEX}--pending`;
+    } else if (darkBackground) {
+      result = `${BACKGROUND_COLOR_INDEX}--dark`;
+    } else {
+      result = `${BACKGROUND_COLOR_INDEX}--light`;
+    }
+    return result;
+  }
+
   render () {
     const {
       a11yTitle, appCentered, backgroundImage, children, className,
@@ -158,20 +170,14 @@ export default class Box extends Component {
         { elementName: `${CLASS_ROOT}__container` });
       if (colorIndex) {
         containerClasses.push(`${BACKGROUND_COLOR_INDEX}-${colorIndex}`);
-        if (darkBackground) {
-          containerClasses.push(`${BACKGROUND_COLOR_INDEX}--dark`);
-        }
+        containerClasses.push(this._backgroundContextClass(darkBackground));
       }
       if (containerClassName) {
         containerClasses.push(containerClassName);
       }
     } else if (colorIndex) {
       classes.push(`${BACKGROUND_COLOR_INDEX}-${colorIndex}`);
-      if (darkBackground) {
-        classes.push(`${BACKGROUND_COLOR_INDEX}--dark`);
-      } else {
-        classes.push(`${BACKGROUND_COLOR_INDEX}--light`);
-      }
+      classes.push(this._backgroundContextClass(darkBackground));
     }
 
     let a11yProps = {};
