@@ -50,7 +50,6 @@ section:not(.#{$grommet-namespace}section) {
     > dt {
       margin-top: $inuit-base-spacing-unit;
       margin-bottom: quarter($inuit-base-spacing-unit);
-      text-transform: uppercase;
 
       code {
         text-transform: none;
