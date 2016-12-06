@@ -129,6 +129,7 @@
 .#{$grommet-namespace}check-box__control-check {
   position: absolute;
   top: -2px;
+  left: -2px;
   display: none;
   width: $control-size;
   height: $control-size;
