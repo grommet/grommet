@@ -40,13 +40,13 @@
   li:not(.#{$grommet-namespace}list-item) {
     max-width: $readable-text-width;
     margin-left: 0px;
+    color: $paragraph-text-color;
   }
 
   dd {
     font-size: $paragraph-font-size;
     font-weight: $text-font-weight;
     line-height: $paragraph-line-height;
-    color: $paragraph-text-color;
     margin-bottom: halve($inuit-base-spacing-unit);
   }
 
