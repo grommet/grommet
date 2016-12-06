@@ -498,7 +498,7 @@ var DateTimeDrop = function (_Component) {
         )
       ), _react2.default.createElement(
         _Box2.default,
-        { key: 'today', pad: { vertical: 'small' } },
+        { key: 'today', alignSelf: 'center', pad: { vertical: 'small' } },
         _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__today', label: todayMessage,
           onClick: this._onToday })
       )];
@@ -582,7 +582,7 @@ var DateTimeDrop = function (_Component) {
       }
       return _react2.default.createElement(
         _Box2.default,
-        { direction: 'row', className: CLASS_ROOT + '__time',
+        { className: CLASS_ROOT + '__time', direction: 'row', alignSelf: 'center',
           responsive: false },
         elements
       );
@@ -605,7 +605,7 @@ var DateTimeDrop = function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        { className: CLASS_ROOT, align: 'center' },
+        { className: CLASS_ROOT },
         date,
         time
       );

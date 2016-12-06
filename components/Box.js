@@ -399,7 +399,7 @@ exports.default = Box;
 
 
 var FIXED_SIZES = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'];
-var RELATIVE_SIZES = ['max', 'full', '1/2', '1/3', '2/3', '1/4', '3/4'];
+var RELATIVE_SIZES = ['full', '1/2', '1/3', '2/3', '1/4', '3/4'];
 var SIZES = FIXED_SIZES.concat(RELATIVE_SIZES);
 var MARGIN_SIZES = ['small', 'medium', 'large', 'none'];
 var PAD_SIZES = ['small', 'medium', 'large', 'none'];
