@@ -86,15 +86,24 @@ var LayerContents = function (_Component) {
 
     _this._onClick = _this._onClick.bind(_this);
     _this._processTab = _this._processTab.bind(_this);
+
+    _this.state = {
+      dropActive: false
+    };
     return _this;
   }
 
   (0, _createClass3.default)(LayerContents, [{
     key: 'getChildContext',
     value: function getChildContext() {
+      var _this2 = this;
+
       return {
         history: this.props.history,
         intl: this.props.intl,
+        onDropChange: function onDropChange(active) {
+          _this2.setState({ dropActive: active });
+        },
         router: this.props.router,
         store: this.props.store
       };
@@ -145,12 +154,16 @@ var LayerContents = function (_Component) {
   }, {
     key: '_onClick',
     value: function _onClick(event) {
-      var onClose = this.props.onClose;
+      var dropActive = this.state.dropActive;
 
-      var layerContents = this.containerRef;
+      if (!dropActive) {
+        var onClose = this.props.onClose;
 
-      if (layerContents && !layerContents.contains(event.target)) {
-        onClose();
+        var layerContents = this.containerRef;
+
+        if (layerContents && !layerContents.contains(event.target)) {
+          onClose();
+        }
       }
     }
   }, {
@@ -176,7 +189,7 @@ var LayerContents = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var _props2 = this.props,
           a11yTitle = _props2.a11yTitle,
@@ -205,12 +218,12 @@ var LayerContents = function (_Component) {
       return _react2.default.createElement(
         'div',
         { ref: function ref(_ref2) {
-            return _this2.containerRef = _ref2;
+            return _this3.containerRef = _ref2;
           },
           className: CLASS_ROOT + '__container' },
         _react2.default.createElement('a', { tabIndex: '-1', 'aria-hidden': 'true',
           ref: function ref(_ref) {
-            return _this2.anchorStepRef = _ref;
+            return _this3.anchorStepRef = _ref;
           } }),
         closerNode,
         children
@@ -241,6 +254,7 @@ LayerContents.propTypes = {
 LayerContents.childContextTypes = {
   history: _react.PropTypes.object,
   intl: _react.PropTypes.object,
+  onDropChange: _react.PropTypes.func,
   router: _react.PropTypes.any,
   store: _react.PropTypes.object
 };
@@ -272,15 +286,15 @@ var Layer = function (_Component2) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      var _this4 = this;
+      var _this5 = this;
 
       if (this._originalFocusedElement) {
         if (this._originalFocusedElement.focus) {
           // wait for the fixed positioning to come back to normal
           // see layer styling for reference
           setTimeout(function () {
-            _this4._originalFocusedElement.focus();
-            window.scrollTo(_this4._originalScrollPosition.left, _this4._originalScrollPosition.top);
+            _this5._originalFocusedElement.focus();
+            window.scrollTo(_this5._originalScrollPosition.left, _this5._originalScrollPosition.top);
           }, 0);
         } else if (this._originalFocusedElement.parentNode && this._originalFocusedElement.parentNode.focus) {
           // required for IE11 and Edge
@@ -333,7 +347,7 @@ var Layer = function (_Component2) {
   }, {
     key: '_handleAriaHidden',
     value: function _handleAriaHidden(hideOverlay) {
-      var _this5 = this;
+      var _this6 = this;
 
       var ariaHidden = hideOverlay || false;
       this._element.setAttribute('aria-hidden', ariaHidden);
@@ -353,8 +367,8 @@ var Layer = function (_Component2) {
             grommetApp.setAttribute('aria-hidden', true);
             grommetApp.classList.add(APP + '--hidden');
             // scroll body content to the original position
-            grommetApp.style.top = '-' + _this5._originalScrollPosition.top + 'px';
-            grommetApp.style.left = '-' + _this5._originalScrollPosition.left + 'px';
+            grommetApp.style.top = '-' + _this6._originalScrollPosition.top + 'px';
+            grommetApp.style.left = '-' + _this6._originalScrollPosition.left + 'px';
           }
         }, this);
       }
@@ -362,7 +376,7 @@ var Layer = function (_Component2) {
   }, {
     key: '_renderLayer',
     value: function _renderLayer() {
-      var _this6 = this;
+      var _this7 = this;
 
       if (this._element) {
         this._element.className = this._classesFromProps();
@@ -372,12 +386,12 @@ var Layer = function (_Component2) {
           router: this.context.router,
           store: this.context.store }));
         _reactDom2.default.render(contents, this._element, function () {
-          var hidden = _this6.props.hidden;
+          var hidden = _this7.props.hidden;
 
           if (hidden) {
-            _this6._handleAriaHidden(true);
+            _this7._handleAriaHidden(true);
           } else {
-            _this6._handleAriaHidden(false);
+            _this7._handleAriaHidden(false);
           }
         });
       }

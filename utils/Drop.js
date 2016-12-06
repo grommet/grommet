@@ -159,6 +159,7 @@ DropContents.displayName = 'DropContents';
 DropContents.childContextTypes = {
   history: _react.PropTypes.object,
   intl: _react.PropTypes.object,
+  onDropChange: _react.PropTypes.func,
   router: _react.PropTypes.any,
   store: _react.PropTypes.object
 };

@@ -324,6 +324,9 @@ var DateTime = function (_Component) {
   }, {
     key: '_activation',
     value: function _activation(dropActive) {
+      var onDropChange = this.context.onDropChange;
+
+
       var listeners = {
         esc: this._onForceClose,
         up: this._onPrevious,
@@ -351,6 +354,10 @@ var DateTime = function (_Component) {
           this._drop.remove();
           this._drop = undefined;
         }
+      }
+
+      if (onDropChange) {
+        onDropChange(dropActive);
       }
     }
   }, {
@@ -416,7 +423,8 @@ exports.default = DateTime;
 
 
 DateTime.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _react.PropTypes.object,
+  onDropChange: _react.PropTypes.func
 };
 
 DateTime.defaultProps = {
