@@ -8,6 +8,10 @@
   @return tint($color, 5%);
 }
 
+#{$pending-background} {
+  color: transparent;
+}
+
 #{$dark-background} {
   color: $active-colored-text-color;
 }

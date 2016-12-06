@@ -102,12 +102,15 @@ $sort-placeholder-background-color: rgba(0, 0, 255, 0.1); // TODO: recolor
 $inverse-background-color: nth($brand-neutral-colors, 1);
 $inverse-color: #fff;
 
+$pending-background:
+  '.#{$grommet-namespace}background-color-index--pending' !default;
 $dark-background:
   '.#{$grommet-namespace}background-color-index--dark, .#{$grommet-namespace}background-color-index--light .#{$grommet-namespace}background-color-index--dark' !default;
 $light-background:
   '.#{$grommet-namespace}background-color-index--light, .#{$grommet-namespace}background-color-index--dark .#{$grommet-namespace}background-color-index--light',  !default;
 
-
+$pending-background-context:
+  '.#{$grommet-namespace}background-color-index--pending &' !default;
 $dark-background-context:
   '.#{$grommet-namespace}background-color-index--dark &, .#{$grommet-namespace}background-color-index--light .#{$grommet-namespace}background-color-index--dark &' !default;
 $light-background-context:

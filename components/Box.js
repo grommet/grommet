@@ -176,6 +176,19 @@ var Box = function (_Component) {
       }
     }
   }, {
+    key: '_backgroundContextClass',
+    value: function _backgroundContextClass(darkBackground) {
+      var result = void 0;
+      if (undefined === darkBackground) {
+        result = BACKGROUND_COLOR_INDEX + '--pending';
+      } else if (darkBackground) {
+        result = BACKGROUND_COLOR_INDEX + '--dark';
+      } else {
+        result = BACKGROUND_COLOR_INDEX + '--light';
+      }
+      return result;
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this5 = this;
@@ -261,20 +274,14 @@ var Box = function (_Component) {
         this._addPropertyClass(containerClasses, 'full', { elementName: CLASS_ROOT + '__container' });
         if (colorIndex) {
           containerClasses.push(BACKGROUND_COLOR_INDEX + '-' + colorIndex);
-          if (darkBackground) {
-            containerClasses.push(BACKGROUND_COLOR_INDEX + '--dark');
-          }
+          containerClasses.push(this._backgroundContextClass(darkBackground));
         }
         if (containerClassName) {
           containerClasses.push(containerClassName);
         }
       } else if (colorIndex) {
         classes.push(BACKGROUND_COLOR_INDEX + '-' + colorIndex);
-        if (darkBackground) {
-          classes.push(BACKGROUND_COLOR_INDEX + '--dark');
-        } else {
-          classes.push(BACKGROUND_COLOR_INDEX + '--light');
-        }
+        classes.push(this._backgroundContextClass(darkBackground));
       }
 
       var a11yProps = {};

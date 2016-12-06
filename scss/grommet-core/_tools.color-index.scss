@@ -293,4 +293,14 @@
       color: $active-light-color;
     }
   }
+
+  #{$pending-background-context} {
+    color: transparent;
+
+    &:visited,
+    &.active,
+    &:hover {
+      color: transparent;
+    }
+  }
 }
