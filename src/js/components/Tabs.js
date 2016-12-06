@@ -15,20 +15,22 @@ export default class Tabs extends Component {
     this._activateTab = this._activateTab.bind(this);
 
     this.state = {
-      activeIndex: props.activeIndex,
+      activeIndex: props.activeIndex || 0,
       justify: props.justify
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.activeIndex &&
+    if ((nextProps.activeIndex || 0 === nextProps.activeIndex) &&
       this.state.activeIndex !== nextProps.activeIndex) {
-      this.setState({activeIndex: nextProps.activeIndex});
+      this.setState({ activeIndex: nextProps.activeIndex });
     }
   }
 
   _activateTab (index) {
-    this.setState({ activeIndex: index });
+    if (! this.props.hasOwnProperty('activeIndex')) {
+      this.setState({ activeIndex: index });
+    }
     if (this.props.onActive) {
       this.props.onActive(index);
     }
@@ -100,7 +102,6 @@ Tabs.contextTypes = {
 };
 
 Tabs.defaultProps = {
-  activeIndex: 0,
   justify: 'center',
   responsive: true
 };

@@ -35,7 +35,8 @@ export default class Tab extends Component {
 
     return (
       <li {...props} className={classes} id={id}>
-        <Button plain={true} role='tab' aria-selected={active}
+        <Button className={`${CLASS_ROOT}__button`} plain={true}
+          role='tab' aria-selected={active}
           onClick={this._onClickTab} aria-expanded={active}>
           <label className={`${CLASS_ROOT}__label`} htmlFor={id}>
             {title}
