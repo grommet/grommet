@@ -95,7 +95,7 @@ export default class Header extends Component {
               adding a wrapper flex div with column direction fixes the issue
               https://github.com/philipwalton/flexbugs
             */}
-            <Box pad='none' flex={false}>
+            <Box pad='none' flex={false} size={{ width: 'max' }}>
               <Box ref={ref => this.contentRef = ref}
                 {...other} {...restProps} tag="header"
                 className={classes}>
@@ -110,7 +110,7 @@ export default class Header extends Component {
         // ie11 does not work with align center and min-height
         // adding a wrapper flex div with column direction fixes the issue
         // https://github.com/philipwalton/flexbugs
-        <Box pad='none' flex={false}>
+        <Box pad='none' flex={false} size={{ width: 'max' }}>
           <Box {...other} {...restProps} tag="header" role={role}
             className={classes}
             containerClassName={containerClasses}>
