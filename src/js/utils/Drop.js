@@ -98,6 +98,7 @@ class DropContents extends Component {
 DropContents.childContextTypes = {
   history: PropTypes.object,
   intl: PropTypes.object,
+  onDropChange: PropTypes.func,
   router: PropTypes.any,
   store: PropTypes.object
 };

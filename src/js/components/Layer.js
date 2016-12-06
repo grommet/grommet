@@ -20,12 +20,19 @@ class LayerContents extends Component {
 
     this._onClick = this._onClick.bind(this);
     this._processTab = this._processTab.bind(this);
+
+    this.state = {
+      dropActive: false
+    };
   }
 
   getChildContext () {
     return {
       history: this.props.history,
       intl: this.props.intl,
+      onDropChange: (active) => {
+        this.setState({ dropActive: active });
+      },
       router: this.props.router,
       store: this.props.store
     };
@@ -74,11 +81,14 @@ class LayerContents extends Component {
   }
 
   _onClick (event) {
-    const { onClose } = this.props;
-    const layerContents = this.containerRef;
+    const { dropActive } = this.state;
+    if (!dropActive) {
+      const { onClose } = this.props;
+      const layerContents = this.containerRef;
 
-    if (layerContents && !layerContents.contains(event.target)) {
-      onClose();
+      if (layerContents && !layerContents.contains(event.target)) {
+        onClose();
+      }
     }
   }
 
@@ -155,6 +165,7 @@ LayerContents.propTypes = {
 LayerContents.childContextTypes = {
   history: PropTypes.object,
   intl: PropTypes.object,
+  onDropChange: PropTypes.func,
   router: PropTypes.any,
   store: PropTypes.object
 };

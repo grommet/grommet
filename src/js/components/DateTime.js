@@ -214,6 +214,8 @@ export default class DateTime extends Component {
   }
 
   _activation (dropActive) {
+    const { onDropChange } =  this.context;
+
     var listeners = {
       esc: this._onForceClose,
       up: this._onPrevious,
@@ -245,6 +247,10 @@ export default class DateTime extends Component {
         this._drop.remove();
         this._drop = undefined;
       }
+    }
+
+    if (onDropChange) {
+      onDropChange(dropActive);
     }
   }
 
@@ -298,7 +304,8 @@ export default class DateTime extends Component {
 }
 
 DateTime.contextTypes = {
-  intl: PropTypes.object
+  intl: PropTypes.object,
+  onDropChange: PropTypes.func
 };
 
 DateTime.defaultProps = {
