@@ -24,6 +24,7 @@ $button-secondary-color: nth($brand-neutral-colors, 2);
 $brand-font-family: 'Work Sans', Arial, sans-serif;
 $brand-large-number-font-family: 'Work Sans', Arial, sans-serif;
 $code-font-family: Consolas, Menlo, 'DejaVu Sans Mono', 'Liberation Mono', monospace;
+$text-strong-font-weight: 500;
 
 $fonts-path: "https://fonts.gstatic.com/s/worksans/v2";
 
@@ -45,6 +46,16 @@ $fonts-path: "https://fonts.gstatic.com/s/worksans/v2";
     local('Work Sans'),
     local('WorkSans-Regular'),
     url("#{$fonts-path}//ElUAY9q6T0Ayx4zWzW63VJBw1xU1rKptJj_0jans920.woff2") format('woff2');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('Work Sans Medium'),
+    local('WorkSans-Medium'),
+    url("#{$fonts-path}/Nbre-U_bp6Xktt8cpgwaJBampu5_7CjHW5spxoeN3Vs.woff2") format('woff2');
 }
 
 @font-face {
