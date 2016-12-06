@@ -336,7 +336,7 @@ export default class DateTimeDrop extends Component {
           </tbody>
         </table>
       </div>,
-      <Box key='today' pad={{vertical: 'small'}}>
+      <Box key='today' alignSelf='center' pad={{vertical: 'small'}}>
         <Button className={`${CLASS_ROOT}__today`} label={todayMessage}
           onClick={this._onToday} />
       </Box>
@@ -418,7 +418,7 @@ export default class DateTimeDrop extends Component {
       );
     }
     return (
-      <Box direction='row' className={`${CLASS_ROOT}__time`}
+      <Box className={`${CLASS_ROOT}__time`} direction='row' alignSelf='center'
         responsive={false}>
         {elements}
       </Box>
@@ -438,7 +438,7 @@ export default class DateTimeDrop extends Component {
     }
 
     return (
-      <Box className={CLASS_ROOT} align='center'>
+      <Box className={CLASS_ROOT}>
         {date}
         {time}
       </Box>

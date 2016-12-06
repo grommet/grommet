@@ -1,6 +1,6 @@
 exports[`Header has correct default options 1`] = `
 <div
-  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off grommetux-box--width-max grommetux-box--size"
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
   id={undefined}
   onClick={undefined}
   role={undefined}
