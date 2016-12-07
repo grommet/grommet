@@ -259,11 +259,7 @@ var Animate = function (_Component2) {
         var key = child && child.key ? child.key : 'animate-' + index;
         return _react2.default.createElement(
           AnimateChild,
-          {
-            key: key,
-            enter: enter,
-            leave: leave
-          },
+          { key: key, enter: enter, leave: leave },
           child
         );
       });
@@ -280,11 +276,8 @@ var Animate = function (_Component2) {
 
       return _react2.default.createElement(
         _reactAddonsTransitionGroup2.default,
-        (0, _extends3.default)({}, props, {
-          className: classes,
-          component: component || 'div',
-          style: styles
-        }),
+        (0, _extends3.default)({}, props, { className: classes,
+          component: component || 'div', style: styles }),
         (visible || visible === undefined || keep) && animateChildren
       );
     }
@@ -293,23 +286,24 @@ var Animate = function (_Component2) {
 }(_react.Component);
 
 Animate.displayName = 'Animate';
+exports.default = Animate;
 ;
+
+var ANIMATIONS = ['fade', 'slide-up', 'slide-down', 'slide-left', 'slide-right'];
 
 Animate.propTypes = {
   component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.func]),
   enter: _react.PropTypes.shape({
-    animation: _react.PropTypes.string,
+    animation: _react.PropTypes.oneOf(ANIMATIONS).isRequired,
     duration: _react.PropTypes.number,
     delay: _react.PropTypes.number
-  }),
+  }).isRequired,
   keep: _react.PropTypes.bool,
   leave: _react.PropTypes.shape({
-    animation: _react.PropTypes.string,
+    animation: _react.PropTypes.oneOf(ANIMATIONS).isRequired,
     duration: _react.PropTypes.number,
     delay: _react.PropTypes.number
   }),
   visible: _react.PropTypes.bool
 };
-
-exports.default = Animate;
 module.exports = exports['default'];
