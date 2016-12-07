@@ -3,30 +3,14 @@
 .#{$grommet-namespace}footer {
   min-height: $footer-height;
   width: 100%;
-
-  // Height is needed to coerce IE11 into aligning center even though
-  // this is ignored by min-height. (Also needed on header--large and
-  // header--small.) We need to subtract 1 unit in order to allow
-  // min-height to keep the header height dynamic.
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    height: $footer-height - 1;
-  }
 }
 
 .#{$grommet-namespace}footer--small {
   min-height: $small-footer-height;
-
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    height: $small-header-height - 1;
-  }
 }
 
 .#{$grommet-namespace}footer--large {
   min-height: $large-footer-height;
-
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    height: $large-footer-height - 1;
-  }
 }
 
 .#{$grommet-namespace}footer__content {
