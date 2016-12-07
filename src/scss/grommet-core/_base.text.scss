@@ -40,7 +40,7 @@
   li:not(.#{$grommet-namespace}list-item) {
     max-width: $readable-text-width;
     margin-left: 0px;
-    color: $paragraph-text-color;
+    @include text();
   }
 
   dd {
