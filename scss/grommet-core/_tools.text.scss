@@ -7,15 +7,19 @@
 // flavors without running into prcedence issues with the higher specificity
 // of the generic style under `.grommet`.
 
+@mixin text() {
+  font-size: $paragraph-font-size;
+  font-weight: $text-font-weight;
+  line-height: $paragraph-line-height;
+  color: $paragraph-text-color;
+}
+
 @mixin paragraph() {
   max-width: $readable-text-width;
   margin-left: 0px;
   margin-top: $inuit-base-spacing-unit;
   margin-bottom: $inuit-base-spacing-unit;
-  font-size: $paragraph-font-size;
-  font-weight: $text-font-weight;
-  line-height: $paragraph-line-height;
-  color: $paragraph-text-color;
+  @include text();
 }
 
 @mixin heading() {
