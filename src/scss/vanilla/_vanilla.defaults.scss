@@ -12,7 +12,7 @@ $brand-status-colors: (
   unknown: #a8a8a8,
   disabled: #a8a8a8
 ) !default;
-$brand-grey-colors: (#333333, #3B3B3B, #434343, #666666);
+$brand-grey-colors: (#000001, #333333, #3B3B3B, #434343, #666666);
 @if not variable-exists(brand-graph-colors) {
   $brand-graph-colors: ();
   $brand-graph-colors: join($brand-graph-colors, $brand-accent-colors);
