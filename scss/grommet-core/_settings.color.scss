@@ -83,7 +83,7 @@ $button-text-color: $text-color !default;
 $button-secondary-color: rgba(#333, 0.6) !default;
 $button-accent-color: nth($brand-accent-colors, 1) !default;
 $button-drop-shadow-color: rgba(170, 170, 170, 0.5) !default;
-$button-colored-border-color: $brand-color !default; ///rgba(255, 255, 255, 0.7) !default;
+$button-colored-border-color: rgba(255, 255, 255, 0.7) !default; ///rgba(255, 255, 255, 0.7) !default;
 
 $layer-overlay-background-color: rgba(0, 0, 0, 0.5);
 $layer-background-color: #fff !default; // rgba($background-color, 0.95); ///inherit; //rgba(255, 255, 255, 0.95);

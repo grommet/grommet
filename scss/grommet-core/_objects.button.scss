@@ -22,6 +22,14 @@ $button-horizontal-padding:
   @include media-query(lap-and-up) {
     transition: 0.1s ease-in-out;
   }
+
+  #{$dark-background-context} {
+    border-color: $button-colored-border-color;
+  }
+
+  #{$light-background-context} {
+    border-color: $button-border-color;
+  }
 }
 
 .grommet {
