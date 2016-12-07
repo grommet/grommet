@@ -38,13 +38,8 @@ class AnimateChild extends Component {
 
   enter (callback) {
     const {
-      enter: {
-        animation: enterAnimation,
-        delay
-      },
-      leave: {
-        animation: leaveAnimation
-      }
+      enter: { animation: enterAnimation, delay },
+      leave: { animation: leaveAnimation }
     } = this.props;
     const node = ReactDOM.findDOMNode(this);
 
@@ -115,8 +110,8 @@ AnimateChild.defaultProps = {
   leave: {}
 };
 
+export default class Animate extends Component {
 
-class Animate extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -158,25 +153,14 @@ class Animate extends Component {
 
   render () {
     const {
-      enter,
-      leave,
-      className,
-      children,
-      component,
-      visible,
-      keep,
-      style,
+      enter, leave, className, children, component, visible, keep, style,
       ...props
     } = this.props;
 
     const animateChildren = React.Children.map(children, (child, index) => {
       const key = (child && child.key) ? child.key : `animate-${index}`;
       return (
-        <AnimateChild
-          key={key}
-          enter={enter}
-          leave={leave}
-        >
+        <AnimateChild key={key} enter={enter} leave={leave}>
           {child}
         </AnimateChild>
       );
@@ -200,19 +184,16 @@ class Animate extends Component {
     }
 
     return (
-      <TransitionGroup
-        {...props}
-        className={classes}
-        component={component || 'div'}
-        style={styles}
-      >
-        {(visible || visible === undefined || keep) &&
-          animateChildren
-        }
+      <TransitionGroup {...props} className={classes}
+        component={component || 'div'} style={styles}>
+        {(visible || visible === undefined || keep) && animateChildren}
       </TransitionGroup>
     );
   }
 };
+
+const ANIMATIONS =
+  ['fade', 'slide-up', 'slide-down', 'slide-left', 'slide-right'];
 
 Animate.propTypes = {
   component: PropTypes.oneOfType([
@@ -220,17 +201,15 @@ Animate.propTypes = {
     PropTypes.func
   ]),
   enter: PropTypes.shape({
-    animation: PropTypes.string,
+    animation: PropTypes.oneOf(ANIMATIONS).isRequired,
     duration: PropTypes.number,
     delay: PropTypes.number
-  }),
+  }).isRequired,
   keep: PropTypes.bool,
   leave: PropTypes.shape({
-    animation: PropTypes.string,
+    animation: PropTypes.oneOf(ANIMATIONS).isRequired,
     duration: PropTypes.number,
     delay: PropTypes.number
   }),
   visible: PropTypes.bool
 };
-
-export default Animate;
