@@ -1,104 +1,24 @@
 exports[`Hero has correct default options 1`] = `
 <div
-  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-background-color-index-grey-1 grommetux-background-color-index--pending grommetux-hero grommetux-hero--large grommetux-hero--bg-center"
-  id={undefined}
-  onClick={undefined}
-  role={undefined}
-  style={Object {}}
-  tabIndex={undefined}>
+  className="grommetux-hero grommetux-hero--large">
   <div
-    className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-hero__overlay"
-    id={undefined}
-    onClick={undefined}
-    role={undefined}
-    style={Object {}}
-    tabIndex={undefined}>
-    <a
-      aria-hidden="true"
-      className="grommetux-skip-link-anchor"
-      id="skip-link-main_content"
-      tabIndex="-1">
-      Main Content
-    </a>
-    <div
-      className="grommetux-box grommetux-box--direction-column grommetux-box--justify-center grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-hero__image"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
-      style={Object {}}
-      tabIndex={undefined}>
-      <div
-        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
-        id={undefined}
-        onClick={undefined}
-        role={undefined}
-        style={Object {}}
-        tabIndex={undefined} />
-    </div>
-    <div
-      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-horizontal-large grommetux-box--pad-vertical-large grommetux-box--pad-between-medium"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
-      style={Object {}}
-      tabIndex={undefined}>
-      <h1>
-        This is a Hero
-      </h1>
-    </div>
+    className="grommetux-hero__foreground">
+    <h1>
+      This is a Hero
+    </h1>
   </div>
 </div>
 `;
 
 exports[`Hero transfers random props 1`] = `
 <div
-  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-background-color-index-grey-1 grommetux-background-color-index--pending grommetux-hero grommetux-hero--large grommetux-hero--bg-center"
-  data-flavor="coconut"
-  id={undefined}
-  onClick={undefined}
-  role={undefined}
-  style={Object {}}
-  tabIndex={undefined}>
+  className="grommetux-hero grommetux-hero--large"
+  data-flavor="coconut">
   <div
-    className="grommetux-box grommetux-box--full-horizontal grommetux-box--direction-row grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-hero__overlay"
-    id={undefined}
-    onClick={undefined}
-    role={undefined}
-    style={Object {}}
-    tabIndex={undefined}>
-    <a
-      aria-hidden="true"
-      className="grommetux-skip-link-anchor"
-      id="skip-link-main_content"
-      tabIndex="-1">
-      Main Content
-    </a>
-    <div
-      className="grommetux-box grommetux-box--direction-column grommetux-box--justify-center grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-hero__image"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
-      style={Object {}}
-      tabIndex={undefined}>
-      <div
-        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none"
-        id={undefined}
-        onClick={undefined}
-        role={undefined}
-        style={Object {}}
-        tabIndex={undefined} />
-    </div>
-    <div
-      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-horizontal-large grommetux-box--pad-vertical-large grommetux-box--pad-between-medium"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
-      style={Object {}}
-      tabIndex={undefined}>
-      <h1>
-        This is a Hero
-      </h1>
-    </div>
+    className="grommetux-hero__foreground">
+    <h1>
+      This is a Hero
+    </h1>
   </div>
 </div>
 `;

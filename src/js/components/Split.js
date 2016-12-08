@@ -3,9 +3,9 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
+import { smallSize } from '../utils/Responsive';
 
 const CLASS_ROOT = CSSClassnames.SPLIT;
-const BREAK_WIDTH = 720; //adds the breakpoint of single/multiple split
 
 export default class Split extends Component {
 
@@ -80,7 +80,7 @@ export default class Split extends Component {
   _layout () {
     const splitElement = this.splitRef;
     if (splitElement) {
-      if (splitElement.offsetWidth < BREAK_WIDTH &&
+      if (splitElement.offsetWidth < smallSize() &&
         this.props.showOnResponsive === 'priority') {
         this._setResponsive('single');
       } else {

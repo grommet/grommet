@@ -66,6 +66,18 @@ export default class Notification extends Component {
     }
   }
 
+  _backgroundContextClass (darkBackground) {
+    let result;
+    if (undefined === darkBackground) {
+      result = `${BACKGROUND_COLOR_INDEX}--pending`;
+    } else if (darkBackground) {
+      result = `${BACKGROUND_COLOR_INDEX}--dark`;
+    } else {
+      result = `${BACKGROUND_COLOR_INDEX}--light`;
+    }
+    return result;
+  }
+
   render () {
     const {
       children, className, closer, context, percentComplete, message,
@@ -77,9 +89,8 @@ export default class Notification extends Component {
       CLASS_ROOT,
       `${CLASS_ROOT}--status-${status.toLowerCase()}`,
       `${BACKGROUND_COLOR_INDEX}-${status.toLowerCase()}`,
+      this._backgroundContextClass(darkBackground),
       {
-        [`${BACKGROUND_COLOR_INDEX}--dark`]: darkBackground,
-        [`${BACKGROUND_COLOR_INDEX}--light`]: !darkBackground,
         [`${CLASS_ROOT}--${size}`]: size
       },
       className
