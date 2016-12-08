@@ -216,7 +216,7 @@ export default class Video extends Component {
 
   render () {
     let {
-      autoPlay, className, colorIndex, full, loop, muted, poster,
+      autoPlay, className, colorIndex, fit, full, loop, muted, poster,
       showControls, size
     } = this.props;
     let { ended, hasPlayed, interacting, mouseActive, playing} = this.state;
@@ -224,7 +224,8 @@ export default class Video extends Component {
       CLASS_ROOT,
       {
         [`${CLASS_ROOT}--${size}`]: size,
-        [`${CLASS_ROOT}--full`]: full,
+        [`${CLASS_ROOT}--${fit}`]: fit,
+        [`${CLASS_ROOT}--full`]: fit || full,
         [`${CLASS_ROOT}--interacting`]: interacting,
         [`${CLASS_ROOT}--playing`]: playing,
         [`${CLASS_ROOT}--hasPlayed`]: hasPlayed,
@@ -293,6 +294,7 @@ Video.propTypes = {
   allowFullScreen: PropTypes.bool,
   autoPlay: PropTypes.bool,
   colorIndex: PropTypes.string,
+  fit: PropTypes.oneOf(['contain', 'cover']),
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   loop: PropTypes.bool,
   muted: PropTypes.bool,
@@ -314,5 +316,6 @@ Video.defaultProps = {
   autoPlay: false,
   loop: false,
   muted: false,
+  size: 'medium',
   showControls: true
 };

@@ -176,7 +176,9 @@ export default class Hero extends Component {
       {
         [`${CLASS_ROOT}--${size}`]: size,
         [this._backgroundContextClass(darkBackground)]:
-          (! responsiveSmall && backgroundColorIndex)
+          (! responsiveSmall && backgroundColorIndex),
+        // until component level media queries are available
+        [`${CLASS_ROOT}--stack`]: responsiveSmall
       },
       className
     );

@@ -1,6 +1,6 @@
 exports[`Video has correct default options 1`] = `
 <div
-  className="grommetux-video"
+  className="grommetux-video grommetux-video--medium"
   onBlur={[Function]}
   onFocus={[Function]}
   onMouseDown={[Function]}
@@ -68,7 +68,7 @@ exports[`Video has correct default options 1`] = `
           type="button">
           <svg
             aria-label="circle-play"
-            className="grommetux-control-icon grommetux-control-icon-circle-play grommetux-video__button__icon grommetux-control-icon--xlarge grommetux-control-icon--responsive grommetux-color-index-brand"
+            className="grommetux-control-icon grommetux-control-icon-circle-play grommetux-video__button__icon grommetux-control-icon--large grommetux-control-icon--responsive grommetux-color-index-brand"
             height="24px"
             role="img"
             version="1.1"
@@ -89,7 +89,7 @@ exports[`Video has correct default options 1`] = `
 
 exports[`Video transfers arbitrary props 1`] = `
 <div
-  className="grommetux-video"
+  className="grommetux-video grommetux-video--medium"
   onBlur={[Function]}
   onFocus={[Function]}
   onMouseDown={[Function]}
@@ -158,7 +158,7 @@ exports[`Video transfers arbitrary props 1`] = `
           type="button">
           <svg
             aria-label="circle-play"
-            className="grommetux-control-icon grommetux-control-icon-circle-play grommetux-video__button__icon grommetux-control-icon--xlarge grommetux-control-icon--responsive grommetux-color-index-brand"
+            className="grommetux-control-icon grommetux-control-icon-circle-play grommetux-video__button__icon grommetux-control-icon--large grommetux-control-icon--responsive grommetux-color-index-brand"
             height="24px"
             role="img"
             version="1.1"

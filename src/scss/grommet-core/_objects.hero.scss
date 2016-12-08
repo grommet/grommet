@@ -1,20 +1,11 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-.#{$grommet-namespace}hero__background {
-  > * {
-    min-width: 100%;
-    min-height: 100%;
-  }
-}
-
-@include media-query(lap-and-up) {
-  .#{$grommet-namespace}hero {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.#{$grommet-namespace}hero:not(.#{$grommet-namespace}hero--stack) {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .#{$grommet-namespace}hero__background {
     position: absolute;
@@ -22,6 +13,8 @@
     z-index: 0;
     min-width: 100%;
     min-height: 100%;
+    width: 100%;
+    height: 100%;
   }
 
   .#{$grommet-namespace}hero__foreground {
@@ -30,7 +23,7 @@
     min-height: 100%;
   }
 
-  .#{$grommet-namespace}hero--small {
+  &.#{$grommet-namespace}hero--small {
     min-height: 40vh;
 
     // deprecated
@@ -39,11 +32,11 @@
     }
   }
 
-  .#{$grommet-namespace}hero--medium {
+  &.#{$grommet-namespace}hero--medium {
     min-height: 60vh;
   }
 
-  .#{$grommet-namespace}hero--large {
+  &.#{$grommet-namespace}hero--large {
     min-height: 75vh;
 
     // deprecated
@@ -53,7 +46,7 @@
   }
 }
 
-@include media-query(palm) {
+.#{$grommet-namespace}hero.#{$grommet-namespace}hero--stack {
   .#{$grommet-namespace}hero__background {
     position: relative;
     overflow: hidden;
@@ -70,13 +63,13 @@
     }
   }
 
-  .#{$grommet-namespace}hero--medium {
+  &.#{$grommet-namespace}hero--medium {
     .#{$grommet-namespace}hero__background {
       height: 40vh;
     }
   }
 
-  .#{$grommet-namespace}hero--large {
+  &.#{$grommet-namespace}hero--large {
     .#{$grommet-namespace}hero__background {
       height: 60vh;
     }
