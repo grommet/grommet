@@ -48,11 +48,13 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Responsive = require('../utils/Responsive');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.SPLIT; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var BREAK_WIDTH = 720; //adds the breakpoint of single/multiple split
+var CLASS_ROOT = _CSSClassnames2.default.SPLIT;
 
 var Split = function (_Component) {
   (0, _inherits3.default)(Split, _Component);
@@ -141,7 +143,7 @@ var Split = function (_Component) {
     value: function _layout() {
       var splitElement = this.splitRef;
       if (splitElement) {
-        if (splitElement.offsetWidth < BREAK_WIDTH && this.props.showOnResponsive === 'priority') {
+        if (splitElement.offsetWidth < (0, _Responsive.smallSize)() && this.props.showOnResponsive === 'priority') {
           this._setResponsive('single');
         } else {
           this._setResponsive('multiple');

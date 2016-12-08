@@ -1,18 +1,94 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-.#{$grommet-namespace}hero {
-  position: relative;
-  overflow: hidden;
-}
-
 .#{$grommet-namespace}hero__background {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  padding: 0;
+  > * {
+    min-width: 100%;
+    min-height: 100%;
+  }
 }
 
+@include media-query(lap-and-up) {
+  .#{$grommet-namespace}hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .#{$grommet-namespace}hero__background {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .#{$grommet-namespace}hero__foreground {
+    position: relative;
+    z-index: 1;
+    min-height: 100%;
+  }
+
+  .#{$grommet-namespace}hero--small {
+    min-height: 40vh;
+
+    // deprecated
+    .#{$grommet-namespace}hero__overlay.#{$grommet-namespace}box {
+      height: 60vh;
+    }
+  }
+
+  .#{$grommet-namespace}hero--medium {
+    min-height: 60vh;
+  }
+
+  .#{$grommet-namespace}hero--large {
+    min-height: 75vh;
+
+    // deprecated
+    .#{$grommet-namespace}hero__overlay.#{$grommet-namespace}box {
+      height: 75vh;
+    }
+  }
+}
+
+@include media-query(palm) {
+  .#{$grommet-namespace}hero__background {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .#{$grommet-namespace}hero--small {
+    .#{$grommet-namespace}hero__background {
+      height: 20vh;
+    }
+
+    // deprecated
+    .#{$grommet-namespace}hero__image {
+      height: $inuit-base-spacing-unit * 11.25;
+    }
+  }
+
+  .#{$grommet-namespace}hero--medium {
+    .#{$grommet-namespace}hero__background {
+      height: 40vh;
+    }
+  }
+
+  .#{$grommet-namespace}hero--large {
+    .#{$grommet-namespace}hero__background {
+      height: 60vh;
+    }
+
+    // deprecated
+    .#{$grommet-namespace}hero__image {
+      height: $inuit-base-spacing-unit * 12.5;
+    }
+  }
+}
+
+// deprecated
 .#{$grommet-namespace}hero__background-video {
   overflow: hidden;
 
@@ -42,18 +118,21 @@
   }
 }
 
+// deprecated
 .#{$grommet-namespace}hero--bg-left > .#{$grommet-namespace}hero__background {
   @include media-query(palm) {
     background-position: top left;
   }
 }
 
+// deprecated
 .#{$grommet-namespace}hero--bg-right > .#{$grommet-namespace}hero__background {
   @include media-query(palm) {
     background-position: top right;
   }
 }
 
+// deprecated
 .#{$grommet-namespace}hero__overlay.#{$grommet-namespace}box {
   z-index: 1;
 
@@ -65,66 +144,66 @@
     }
   }
 }
-
-.#{$grommet-namespace}hero--large {
-  height: 75vh;
-
-  @include media-query(palm) {
-    height: auto;
-  }
-
-  .#{$grommet-namespace}hero__background {
-    height: 75vh;
-
-    @include media-query(palm) {
-      height: $inuit-base-spacing-unit * 12.5;
-    }
-  }
-
-  .#{$grommet-namespace}hero__overlay.#{$grommet-namespace}box {
-    height: 75vh;
-
-    @include media-query(palm) {
-      height: auto;
-    }
-  }
-
-  .#{$grommet-namespace}hero__image {
-    @include media-query(palm) {
-      height: $inuit-base-spacing-unit * 12.5;
-    }
-  }
-}
-
-.#{$grommet-namespace}hero--small {
-  height: 60vh;
-
-  @include media-query(palm) {
-    height: auto;
-  }
-
-  .#{$grommet-namespace}hero__background {
-    height: 60vh;
-
-    @include media-query(palm) {
-      height: $inuit-base-spacing-unit * 11.25;
-    }
-  }
-
-  .#{$grommet-namespace}hero__overlay.#{$grommet-namespace}box {
-    height: 60vh;
-
-    @include media-query(palm) {
-      height: auto;
-    }
-  }
-
-  .#{$grommet-namespace}hero__image {
-    @include media-query(palm) {
-      height: $inuit-base-spacing-unit * 11.25;
-    }
-  }
-}
+//
+// .#{$grommet-namespace}hero--large {
+//   height: 75vh;
+//
+//   @include media-query(palm) {
+//     height: auto;
+//   }
+//
+//   .#{$grommet-namespace}hero__background {
+//     height: 75vh;
+//
+//     @include media-query(palm) {
+//       height: $inuit-base-spacing-unit * 12.5;
+//     }
+//   }
+//
+//   .#{$grommet-namespace}hero__overlay.#{$grommet-namespace}box {
+//     height: 75vh;
+//
+//     @include media-query(palm) {
+//       height: auto;
+//     }
+//   }
+//
+//   // .#{$grommet-namespace}hero__image {
+//   //   @include media-query(palm) {
+//   //     height: $inuit-base-spacing-unit * 12.5;
+//   //   }
+//   // }
+// }
+//
+// .#{$grommet-namespace}hero--small {
+//   height: 60vh;
+//
+//   @include media-query(palm) {
+//     height: auto;
+//   }
+//
+//   .#{$grommet-namespace}hero__background {
+//     height: 60vh;
+//
+//     @include media-query(palm) {
+//       height: $inuit-base-spacing-unit * 11.25;
+//     }
+//   }
+//
+//   .#{$grommet-namespace}hero__overlay.#{$grommet-namespace}box {
+//     height: 60vh;
+//
+//     @include media-query(palm) {
+//       height: auto;
+//     }
+//   }
+//
+//   // .#{$grommet-namespace}hero__image {
+//   //   @include media-query(palm) {
+//   //     height: $inuit-base-spacing-unit * 11.25;
+//   //   }
+//   // }
+// }
 
 .#{$grommet-namespace}hero--mobile-separator {
   @include media-query(palm) {

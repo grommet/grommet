@@ -169,10 +169,22 @@ var Notification = function (_Component) {
       }
     }
   }, {
+    key: '_backgroundContextClass',
+    value: function _backgroundContextClass(darkBackground) {
+      var result = void 0;
+      if (undefined === darkBackground) {
+        result = BACKGROUND_COLOR_INDEX + '--pending';
+      } else if (darkBackground) {
+        result = BACKGROUND_COLOR_INDEX + '--dark';
+      } else {
+        result = BACKGROUND_COLOR_INDEX + '--light';
+      }
+      return result;
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var _classnames,
-          _this3 = this;
+      var _this3 = this;
 
       var _props2 = this.props,
           children = _props2.children,
@@ -189,7 +201,7 @@ var Notification = function (_Component) {
       var intl = this.context.intl;
       var darkBackground = this.state.darkBackground;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--status-' + status.toLowerCase(), BACKGROUND_COLOR_INDEX + '-' + status.toLowerCase(), (_classnames = {}, (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '--dark', darkBackground), (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '--light', !darkBackground), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--status-' + status.toLowerCase(), BACKGROUND_COLOR_INDEX + '-' + status.toLowerCase(), this._backgroundContextClass(darkBackground), (0, _defineProperty3.default)({}, CLASS_ROOT + '--' + size, size), className);
 
       var statusNode = void 0;
       if (status) {

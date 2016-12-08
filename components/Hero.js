@@ -40,9 +40,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames2 = require('classnames');
+var _classnames3 = require('classnames');
 
-var _classnames3 = _interopRequireDefault(_classnames2);
+var _classnames4 = _interopRequireDefault(_classnames3);
 
 var _CSSClassnames = require('../utils/CSSClassnames');
 
@@ -50,7 +50,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 var _Responsive = require('../utils/Responsive');
 
-var _Responsive2 = _interopRequireDefault(_Responsive);
+var _DOM = require('../utils/DOM');
 
 var _Box = require('./Box');
 
@@ -62,9 +62,9 @@ var _Image2 = _interopRequireDefault(_Image);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.HERO; // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.HERO;
+var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Hero = function (_Component) {
   (0, _inherits3.default)(Hero, _Component);
@@ -74,57 +74,84 @@ var Hero = function (_Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (Hero.__proto__ || (0, _getPrototypeOf2.default)(Hero)).call(this, props, context));
 
-    _this._setReverse = _this._setReverse.bind(_this);
-    _this._setBackgroundColorIndex = _this._setBackgroundColorIndex.bind(_this);
-
-    _this.state = {
-      colorIndex: props.colorIndex,
-      reverse: props.justify === 'start' ? true : false
-    };
+    _this._onResize = _this._onResize.bind(_this);
+    _this._layout = _this._layout.bind(_this);
+    _this.state = {};
     return _this;
   }
 
   (0, _createClass3.default)(Hero, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      window.addEventListener('resize', this._setReverse);
-      window.addEventListener('resize', this._setBackgroundColorIndex);
-      this._setReverse();
-      this._setBackgroundColorIndex();
+      window.addEventListener('resize', this._onResize);
+      this._layout();
+      this._setDarkBackground();
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.backgroundColorIndex !== this.props.backgroundColorIndex) {
+        this.setState({ updateDarkBackground: true });
+      }
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      if (this.state.updateDarkBackground) {
+        this.setState({ updateDarkBackground: false });
+        this._setDarkBackground();
+      }
     }
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      window.removeEventListener('resize', this._setReverse);
-      window.removeEventListener('resize', this._setBackgroundColorIndex);
+      window.removeEventListener('resize', this._onResize);
     }
   }, {
-    key: '_setBackgroundColorIndex',
-    value: function _setBackgroundColorIndex() {
-      var colorIndex = this.props.colorIndex;
-
-
-      if (window.innerWidth < _Responsive2.default.smallSize()) {
-        this.setState({ colorIndex: 'light-1' });
-      } else {
-        this.setState({ colorIndex: colorIndex });
+    key: '_onResize',
+    value: function _onResize() {
+      clearTimeout(this._resizeTimer);
+      this._resizeTimer = setTimeout(this._layout, 50);
+    }
+  }, {
+    key: '_layout',
+    value: function _layout() {
+      var container = this._containerRef;
+      if (container) {
+        var responsiveSmall = container.offsetWidth < (0, _Responsive.smallSize)() ? true : false;
+        this.setState({ responsiveSmall: responsiveSmall });
       }
     }
   }, {
-    key: '_setReverse',
-    value: function _setReverse() {
-      var justify = this.props.justify;
+    key: '_setDarkBackground',
+    value: function _setDarkBackground() {
+      var _this2 = this;
 
+      var backgroundColorIndex = this.props.backgroundColorIndex;
 
-      if (window.innerWidth < _Responsive2.default.smallSize()) {
-        this.setState({ reverse: false });
-      } else {
-        this.setState({ reverse: justify === 'start' ? true : false });
+      if (backgroundColorIndex) {
+        var container = this._containerRef;
+        (0, _DOM.checkDarkBackground)(backgroundColorIndex, container, function (darkBackground) {
+          return _this2.setState({ darkBackground: darkBackground });
+        });
       }
     }
   }, {
-    key: 'render',
-    value: function render() {
+    key: '_backgroundContextClass',
+    value: function _backgroundContextClass(darkBackground) {
+      var result = void 0;
+      if (undefined === darkBackground) {
+        result = BACKGROUND_COLOR_INDEX + '--pending';
+      } else if (darkBackground) {
+        result = BACKGROUND_COLOR_INDEX + '--dark';
+      } else {
+        result = BACKGROUND_COLOR_INDEX + '--light';
+      }
+      return result;
+    }
+  }, {
+    key: 'oldRender',
+    value: function oldRender() {
       var _classnames;
 
       var _props = this.props,
@@ -132,43 +159,49 @@ var Hero = function (_Component) {
           backgroundVideo = _props.backgroundVideo,
           children = _props.children,
           className = _props.className,
+          colorIndex = _props.colorIndex,
           flush = _props.flush,
           image = _props.image,
           justify = _props.justify,
           responsiveBackgroundPosition = _props.responsiveBackgroundPosition,
           separator = _props.separator,
           size = _props.size,
-          props = (0, _objectWithoutProperties3.default)(_props, ['backgroundImage', 'backgroundVideo', 'children', 'className', 'flush', 'image', 'justify', 'responsiveBackgroundPosition', 'separator', 'size']);
+          props = (0, _objectWithoutProperties3.default)(_props, ['backgroundImage', 'backgroundVideo', 'children', 'className', 'colorIndex', 'flush', 'image', 'justify', 'responsiveBackgroundPosition', 'separator', 'size']);
+      var responsiveSmall = this.state.responsiveSmall;
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--bg-' + responsiveBackgroundPosition, responsiveBackgroundPosition), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--mobile-separator', separator), _classnames), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--bg-' + responsiveBackgroundPosition, responsiveBackgroundPosition), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--mobile-separator', separator), _classnames), className);
 
       var full = flush ? 'horizontal' : false;
       var pad = flush ? 'none' : 'large';
 
-      var backgroundMarkup = void 0;
+      var background = void 0;
       if (backgroundImage) {
-        backgroundMarkup = _react2.default.createElement(_Box2.default, { containerClassName: CLASS_ROOT + "__background",
+        background = _react2.default.createElement(_Box2.default, { containerClassName: CLASS_ROOT + '__background',
           appCentered: true, pad: pad,
           backgroundImage: 'url(' + backgroundImage + ')', full: full });
       } else if (backgroundVideo) {
-        backgroundMarkup = _react2.default.createElement(
+        background = _react2.default.createElement(
           _Box2.default,
-          { className: CLASS_ROOT + "__background " + CLASS_ROOT + "__background-video" },
+          { className: CLASS_ROOT + '__background ' + CLASS_ROOT + '__background-video' },
           backgroundVideo
         );
       }
 
-      var imageMarkup = _react2.default.createElement(_Box2.default, null);
+      var imageMarkup = void 0;
       if (image) {
-        imageMarkup = _react2.default.createElement(_Image2.default, { src: 'url(' + image + ')' });
+        if (typeof image === 'string') {
+          imageMarkup = _react2.default.createElement(_Image2.default, { src: image });
+        } else {
+          imageMarkup = image;
+        }
       }
 
-      var contentMarkup = void 0;
+      var contents = void 0;
       if (justify === 'center') {
-        contentMarkup = _react2.default.createElement(
+        contents = _react2.default.createElement(
           _Box2.default,
-          { className: CLASS_ROOT + "__overlay", justify: justify,
+          { className: CLASS_ROOT + '__overlay', justify: justify,
             align: 'center', primary: true, full: full, direction: 'row' },
           _react2.default.createElement(
             _Box2.default,
@@ -178,21 +211,20 @@ var Hero = function (_Component) {
           )
         );
       } else {
-        contentMarkup = _react2.default.createElement(
+        contents = _react2.default.createElement(
           _Box2.default,
-          { className: CLASS_ROOT + "__overlay", align: 'center',
+          { className: CLASS_ROOT + '__overlay', justify: 'end', align: 'center',
             primary: true, full: full, direction: 'row',
-            reverse: this.state.reverse },
+            reverse: responsiveSmall ? false : justify === 'start' },
           _react2.default.createElement(
             _Box2.default,
-            { className: CLASS_ROOT + "__image", align: 'center',
-              justify: 'center' },
+            { basis: '1/2', justify: 'center', align: 'center' },
             imageMarkup
           ),
           _react2.default.createElement(
             _Box2.default,
-            { pad: { horizontal: 'large', vertical: 'large',
-                between: 'medium' } },
+            { basis: '1/2',
+              pad: { horizontal: 'large', vertical: 'large', between: 'medium' } },
             children
           )
         );
@@ -200,10 +232,75 @@ var Hero = function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        (0, _extends3.default)({}, props, { className: classes, colorIndex: this.state.colorIndex }),
-        backgroundMarkup,
-        contentMarkup
+        (0, _extends3.default)({}, props, { className: classes,
+          colorIndex: responsiveSmall ? 'light-1' : colorIndex }),
+        background,
+        contents
       );
+    }
+  }, {
+    key: 'newRender',
+    value: function newRender() {
+      var _classnames2,
+          _this3 = this;
+
+      var _props2 = this.props,
+          background = _props2.background,
+          backgroundColorIndex = _props2.backgroundColorIndex,
+          children = _props2.children,
+          className = _props2.className,
+          size = _props2.size,
+          props = (0, _objectWithoutProperties3.default)(_props2, ['background', 'backgroundColorIndex', 'children', 'className', 'size']);
+
+      delete props.colorIndex;
+      delete props.flush;
+      delete props.justify;
+      delete props.responsiveBackgroundPosition;
+      var _state = this.state,
+          darkBackground = _state.darkBackground,
+          responsiveSmall = _state.responsiveSmall;
+
+
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames2, this._backgroundContextClass(darkBackground), !responsiveSmall && backgroundColorIndex), _classnames2), className);
+
+      var backgroundContainer = void 0;
+      if (background) {
+        backgroundContainer = _react2.default.createElement(
+          'div',
+          { ref: function ref(_ref) {
+              return _this3._backgroundRef = _ref;
+            },
+            className: CLASS_ROOT + '__background' },
+          background
+        );
+      }
+
+      return _react2.default.createElement(
+        'div',
+        (0, _extends3.default)({ ref: function ref(_ref2) {
+            return _this3._containerRef = _ref2;
+          },
+          className: classes }, props),
+        backgroundContainer,
+        _react2.default.createElement(
+          'div',
+          { className: CLASS_ROOT + '__foreground' },
+          children
+        )
+      );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props3 = this.props,
+          backgroundImage = _props3.backgroundImage,
+          backgroundVideo = _props3.backgroundVideo,
+          image = _props3.image;
+
+      if (backgroundImage || backgroundVideo || image) {
+        return this.oldRender();
+      }
+      return this.newRender();
     }
   }]);
   return Hero;
@@ -214,23 +311,37 @@ exports.default = Hero;
 
 
 Hero.propTypes = {
+  background: _react.PropTypes.element,
+  // backgroundAlign: PropTypes.oneOfType([
+  //   PropTypes.oneOf(['center']),
+  //   PropTypes.shape({
+  //     bottom: PropTypes.boolean,
+  //     left: PropTypes.boolean,
+  //     right: PropTypes.boolean,
+  //     top: PropTypes.boolean
+  //   })
+  // ]),
+  backgroundColorIndex: _react.PropTypes.string,
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
+  // below props are all deprecated
   backgroundImage: _react.PropTypes.string,
-  backgroundVideo: _react.PropTypes.object,
+  backgroundPosition: _react.PropTypes.oneOf(['left', 'center', 'right']),
+  backgroundVideo: _react.PropTypes.element,
   colorIndex: _react.PropTypes.string,
   flush: _react.PropTypes.bool,
   image: _react.PropTypes.string,
   justify: _react.PropTypes.oneOf(['start', 'center', 'end']),
   responsiveBackgroundPosition: _react.PropTypes.oneOf(['left', 'center', 'right']),
-  separator: _react.PropTypes.bool,
-  size: _react.PropTypes.oneOf(['small', 'large'])
+  separator: _react.PropTypes.bool
 };
 
 Hero.defaultProps = {
-  colorIndex: 'grey-1',
+  // backgroundAlign: 'center',
+  size: 'large',
+  // deprecated
+  colorIndex: 'grey-2',
   flush: true,
   justify: 'end',
-  responsiveBackgroundPosition: 'center',
-  separator: false,
-  size: 'large'
+  responsiveBackgroundPosition: 'center'
 };
 module.exports = exports['default'];
