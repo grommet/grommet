@@ -261,7 +261,7 @@ var Hero = function (_Component) {
           responsiveSmall = _state.responsiveSmall;
 
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames2, this._backgroundContextClass(darkBackground), !responsiveSmall && backgroundColorIndex), _classnames2), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames2, this._backgroundContextClass(darkBackground), !responsiveSmall && backgroundColorIndex), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--stack', responsiveSmall), _classnames2), className);
 
       var backgroundContainer = void 0;
       if (background) {

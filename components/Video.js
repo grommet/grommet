@@ -286,6 +286,7 @@ var Video = function (_Component) {
           autoPlay = _props.autoPlay,
           className = _props.className,
           colorIndex = _props.colorIndex,
+          fit = _props.fit,
           full = _props.full,
           loop = _props.loop,
           muted = _props.muted,
@@ -299,7 +300,7 @@ var Video = function (_Component) {
           mouseActive = _state.mouseActive,
           playing = _state.playing;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interacting', interacting), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--playing', playing), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hasPlayed', hasPlayed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--ended', ended), (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '--' + colorIndex, colorIndex), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + fit, fit), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', fit || full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interacting', interacting), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--playing', playing), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hasPlayed', hasPlayed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--ended', ended), (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '--' + colorIndex, colorIndex), _classnames), className);
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Video.propTypes));
 
       return _react2.default.createElement(
@@ -372,6 +373,7 @@ Video.propTypes = {
   allowFullScreen: _react.PropTypes.bool,
   autoPlay: _react.PropTypes.bool,
   colorIndex: _react.PropTypes.string,
+  fit: _react.PropTypes.oneOf(['contain', 'cover']),
   full: _react.PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
   loop: _react.PropTypes.bool,
   muted: _react.PropTypes.bool,
@@ -393,6 +395,7 @@ Video.defaultProps = {
   autoPlay: false,
   loop: false,
   muted: false,
+  size: 'medium',
   showControls: true
 };
 module.exports = exports['default'];

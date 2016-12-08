@@ -80,7 +80,7 @@ var Image = function (_Component) {
           fit = _props.fit,
           props = (0, _objectWithoutProperties3.default)(_props, ['caption', 'className', 'full', 'mask', 'size', 'fit']);
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + fit, fit), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', typeof full === 'boolean' && full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full-' + full, typeof full === 'string'), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--mask', mask), _classnames), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + fit, fit), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', fit || typeof full === 'boolean' && full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full-' + full, typeof full === 'string'), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--mask', mask), _classnames), className);
 
       var captionText = typeof caption === 'string' ? caption : props.alt;
       var imgNode = _react2.default.createElement('img', (0, _extends3.default)({}, props, { className: classes }));

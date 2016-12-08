@@ -2,6 +2,7 @@
 
 .#{$grommet-namespace}video {
   position: relative;
+  max-width: 100%;
   height: auto;
 
   @include media-query(palm) {
@@ -10,10 +11,60 @@
   }
 
   video {
-    width: 100%;
+    max-width: 100%;
     display: block;
   }
 
+}
+
+.#{$grommet-namespace}video--small {
+  width: $size-small;
+
+  video {
+    width: $size-small;
+  }
+}
+
+.#{$grommet-namespace}video--medium {
+  width: $size-medium;
+
+  video {
+    width: $size-medium;
+  }
+}
+
+.#{$grommet-namespace}video--large {
+  width: $size-large;
+
+  video {
+    width: $size-large;
+  }
+}
+
+.#{$grommet-namespace}video--full {
+  width: 100%;
+  // height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+
+  video {
+    width: 100%;
+    // height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+  }
+}
+
+.#{$grommet-namespace}video--cover {
+  video {
+    object-fit: cover;
+  }
+}
+
+.#{$grommet-namespace}video--contain {
+  video {
+    object-fit: contain;
+  }
 }
 
 .#{$grommet-namespace}video__button:hover .#{$grommet-namespace}video__button__icon {
@@ -38,18 +89,6 @@
 }
 
 @include media-query(lap-and-up) {
-  .#{$grommet-namespace}video--small {
-    width: $size-small;
-  }
-
-  .#{$grommet-namespace}video--medium {
-    width: $size-medium;
-  }
-
-  .#{$grommet-namespace}video--large {
-    width: $size-large;
-  }
-
   .#{$grommet-namespace}video--has-timeline {
     bottom: round($inuit-base-spacing-unit * 3);
   }
@@ -59,10 +98,6 @@
   .#{$grommet-namespace}video--small .#{$grommet-namespace}video__replay {
     display: none;
   }
-}
-
-.#{$grommet-namespace}video--full {
-  width: 100%;
 }
 
 .#{$grommet-namespace}video__overlay {
