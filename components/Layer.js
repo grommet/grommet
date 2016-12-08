@@ -350,25 +350,24 @@ var Layer = function (_Component2) {
       var _this6 = this;
 
       var ariaHidden = hideOverlay || false;
-      this._element.setAttribute('aria-hidden', ariaHidden);
       var grommetApps = document.querySelectorAll('.' + APP);
-      var layers = document.querySelectorAll('.' + CLASS_ROOT + ':not(.' + CLASS_ROOT + '--hidden)');
+      var visibleLayers = document.querySelectorAll('.' + CLASS_ROOT + ':not(.' + CLASS_ROOT + '--hidden)');
 
       if (grommetApps) {
         Array.prototype.slice.call(grommetApps).forEach(function (grommetApp) {
-          if (ariaHidden && layers.length === 0) {
+          if (ariaHidden && visibleLayers.length === 0) {
             // make sure to only show grommet apps if there is no other layer
             grommetApp.setAttribute('aria-hidden', false);
             grommetApp.classList.remove(APP + '--hidden');
-            // this must be null to work
-            grommetApp.style.top = null;
-            grommetApp.style.left = null;
-          } else {
-            grommetApp.setAttribute('aria-hidden', true);
-            grommetApp.classList.add(APP + '--hidden');
             // scroll body content to the original position
             grommetApp.style.top = '-' + _this6._originalScrollPosition.top + 'px';
             grommetApp.style.left = '-' + _this6._originalScrollPosition.left + 'px';
+          } else {
+            grommetApp.setAttribute('aria-hidden', true);
+            grommetApp.classList.add(APP + '--hidden');
+            // this must be null to work
+            grommetApp.style.top = null;
+            grommetApp.style.left = null;
           }
         }, this);
       }
@@ -400,11 +399,13 @@ var Layer = function (_Component2) {
     key: '_removeLayer',
     value: function _removeLayer() {
       this._element.removeEventListener('animationend', this._onAnimationEnd);
-      this._handleAriaHidden(true);
 
       _reactDom2.default.unmountComponentAtNode(this._element);
       this._element.parentNode.removeChild(this._element);
       this._element = undefined;
+
+      // make sure to handle aria attributes after the layer is removed
+      this._handleAriaHidden(true);
     }
   }, {
     key: 'render',
