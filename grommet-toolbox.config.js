@@ -25,28 +25,8 @@ export default {
       dist: 'dist/scss/'
     },
     {
-      asset: 'src/utils/**',
-      dist: 'dist/utils/'
-    },
-    {
       asset: 'src/img/**',
       dist: 'dist/img/'
-    },
-    {
-      asset: 'bin/**',
-      dist: 'dist/bin/'
-    },
-    {
-      asset: 'templates/**',
-      dist: 'dist/templates/'
-    },
-    {
-      asset: 'examples/**',
-      dist: 'dist/examples/',
-      ignores: [
-        'node_modules/',
-        'dist/'
-      ]
     },
     {
       filename: 'package.json',
