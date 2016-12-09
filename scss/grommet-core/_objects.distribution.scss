@@ -51,7 +51,7 @@
   overflow: hidden;
   text-align: left;
   pointer-events: none;
-  @include filled-text-color();
+  @include overlayed-text-color();
 }
 
 .#{$grommet-namespace}distribution__label-value {

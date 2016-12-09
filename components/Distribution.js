@@ -67,6 +67,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var CLASS_ROOT = _CSSClassnames2.default.DISTRIBUTION; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
+var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var DEFAULT_WIDTH = 400;
 var DEFAULT_HEIGHT = 200;
@@ -416,7 +417,7 @@ var Distribution = function (_Component) {
 
       var activeIndex = this.state.activeIndex;
 
-      var labelClasses = (0, _classnames7.default)(CLASS_ROOT + '__label', (_classnames = {}, (0, _defineProperty3.default)(_classnames, COLOR_INDEX + '-' + this._itemColorIndex(datum, index), !datum.icon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--icons', datum.icon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--small', labelRect.width < SMALL_SIZE || labelRect.height < SMALL_SIZE), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--thin', labelRect.height < THIN_HEIGHT), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--active', index === activeIndex), _classnames));
+      var labelClasses = (0, _classnames7.default)(CLASS_ROOT + '__label', (_classnames = {}, (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '-' + this._itemColorIndex(datum, index), !datum.icon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--icons', datum.icon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--small', labelRect.width < SMALL_SIZE || labelRect.height < SMALL_SIZE), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--thin', labelRect.height < THIN_HEIGHT), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--active', index === activeIndex), _classnames));
 
       var value = datum.labelValue !== undefined ? datum.labelValue : datum.value;
 
