@@ -240,7 +240,7 @@ Hero.propTypes = {
 
 Hero.defaultProps = {
   // backgroundAlign: 'center',
-  size: 'large',
+  size: 'medium',
   // deprecated
   colorIndex: 'grey-2',
   flush: true,

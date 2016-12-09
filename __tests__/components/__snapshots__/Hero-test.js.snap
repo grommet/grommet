@@ -1,6 +1,6 @@
 exports[`Hero has correct default options 1`] = `
 <div
-  className="grommetux-hero grommetux-hero--large">
+  className="grommetux-hero grommetux-hero--medium">
   <div
     className="grommetux-hero__foreground">
     <h1>
@@ -12,7 +12,7 @@ exports[`Hero has correct default options 1`] = `
 
 exports[`Hero transfers random props 1`] = `
 <div
-  className="grommetux-hero grommetux-hero--large"
+  className="grommetux-hero grommetux-hero--medium"
   data-flavor="coconut">
   <div
     className="grommetux-hero__foreground">
