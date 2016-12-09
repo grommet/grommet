@@ -10,6 +10,7 @@ import { announce } from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.DISTRIBUTION;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
+const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 const DEFAULT_WIDTH = 400;
 const DEFAULT_HEIGHT = 200;
@@ -334,7 +335,8 @@ export default class Distribution extends Component {
     const { activeIndex } = this.state;
     const labelClasses = classnames(
       `${CLASS_ROOT}__label`, {
-        [`${COLOR_INDEX}-${this._itemColorIndex(datum, index)}`]: !datum.icon,
+        [`${BACKGROUND_COLOR_INDEX}-${this._itemColorIndex(datum, index)}`]:
+          !datum.icon,
         [`${CLASS_ROOT}__label--icons`]: datum.icon,
         [`${CLASS_ROOT}__label--small`]: (
           labelRect.width < SMALL_SIZE || labelRect.height < SMALL_SIZE
