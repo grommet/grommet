@@ -298,6 +298,7 @@ var Hero = function (_Component) {
           image = _props3.image;
 
       if (backgroundImage || backgroundVideo || image) {
+        console.warn('backgroundImage, backgroundVideo, and image are ' + 'deprecated in Grommet\'s Hero component. Use background instead.');
         return this.oldRender();
       }
       return this.newRender();
@@ -312,15 +313,6 @@ exports.default = Hero;
 
 Hero.propTypes = {
   background: _react.PropTypes.element,
-  // backgroundAlign: PropTypes.oneOfType([
-  //   PropTypes.oneOf(['center']),
-  //   PropTypes.shape({
-  //     bottom: PropTypes.boolean,
-  //     left: PropTypes.boolean,
-  //     right: PropTypes.boolean,
-  //     top: PropTypes.boolean
-  //   })
-  // ]),
   backgroundColorIndex: _react.PropTypes.string,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
   // below props are all deprecated
@@ -336,8 +328,7 @@ Hero.propTypes = {
 };
 
 Hero.defaultProps = {
-  // backgroundAlign: 'center',
-  size: 'large',
+  size: 'medium',
   // deprecated
   colorIndex: 'grey-2',
   flush: true,

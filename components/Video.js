@@ -283,6 +283,7 @@ var Video = function (_Component) {
           _this4 = this;
 
       var _props = this.props,
+          align = _props.align,
           autoPlay = _props.autoPlay,
           className = _props.className,
           colorIndex = _props.colorIndex,
@@ -300,7 +301,7 @@ var Video = function (_Component) {
           mouseActive = _state.mouseActive,
           playing = _state.playing;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + fit, fit), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', fit || full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interacting', interacting), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--playing', playing), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hasPlayed', hasPlayed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--ended', ended), (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '--' + colorIndex, colorIndex), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + fit, fit), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', fit || full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interacting', interacting), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--playing', playing), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hasPlayed', hasPlayed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--ended', ended), (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '--' + colorIndex, colorIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-top', align && align.top), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-bottom', align && align.bottom), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-left', align && align.left), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-right', align && align.right), _classnames), className);
       var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Video.propTypes));
 
       return _react2.default.createElement(
@@ -370,6 +371,12 @@ exports.default = Video;
 
 
 Video.propTypes = {
+  align: _react.PropTypes.shape({
+    bottom: _react.PropTypes.boolean,
+    left: _react.PropTypes.boolean,
+    right: _react.PropTypes.boolean,
+    top: _react.PropTypes.boolean
+  }),
   allowFullScreen: _react.PropTypes.bool,
   autoPlay: _react.PropTypes.bool,
   colorIndex: _react.PropTypes.string,

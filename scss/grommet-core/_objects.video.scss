@@ -43,15 +43,63 @@
 
 .#{$grommet-namespace}video--full {
   width: 100%;
-  // height: 100%;
+  height: 100%;
   min-width: 100%;
   min-height: 100%;
 
   video {
     width: 100%;
-    // height: 100%;
+    height: 100%;
     min-width: 100%;
     min-height: 100%;
+  }
+}
+
+.#{$grommet-namespace}video--align-top.#{$grommet-namespace}video--align-left {
+  video {
+    object-position: 0 0;
+  }
+}
+
+.#{$grommet-namespace}video--align-top.#{$grommet-namespace}video--align-right {
+  video {
+    object-position: 100% 0;
+  }
+}
+
+.#{$grommet-namespace}video--align-top:not(.#{$grommet-namespace}video--align-left):not(.#{$grommet-namespace}video--align-right) {
+  video {
+    object-position: 50% 0%;
+  }
+}
+
+.#{$grommet-namespace}video--align-bottom.#{$grommet-namespace}video--align-left {
+  video {
+    object-position: 0 100%;
+  }
+}
+
+.#{$grommet-namespace}video--align-bottom.#{$grommet-namespace}video--align-right {
+  video {
+    object-position: 100% 100%;
+  }
+}
+
+.#{$grommet-namespace}video--align-bottom:not(.#{$grommet-namespace}video--align-left):not(.#{$grommet-namespace}video--align-right) {
+  video {
+    object-position: 50% 100%;
+  }
+}
+
+.#{$grommet-namespace}video--align-left:not(.#{$grommet-namespace}video--align-top):not(.#{$grommet-namespace}video--align-bottom) {
+  video {
+    object-position: 0 50%;
+  }
+}
+
+.#{$grommet-namespace}video--align-right:not(.#{$grommet-namespace}video--align-top):not(.#{$grommet-namespace}video--align-bottom) {
+  video {
+    object-position: 100% 50%;
   }
 }
 
@@ -331,4 +379,91 @@
       text-align: center;
     }
   }
+}
+
+// IE11 doesn't support object-fit :(
+@mixin ie-video-hack () {
+  .#{$grommet-namespace}video--full {
+    video {
+      width: auto;
+      height: auto;
+      max-width: none;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .#{$grommet-namespace}video--align-top.#{$grommet-namespace}video--align-left {
+    video {
+      top: 0%;
+      left: 0%;
+      transform: none;
+    }
+  }
+
+  .#{$grommet-namespace}video--align-top.#{$grommet-namespace}video--align-right {
+    video {
+      top: 0%;
+      left: 100%;
+      transform: translate(-100%, 0%);
+    }
+  }
+
+  .#{$grommet-namespace}video--align-top:not(.#{$grommet-namespace}video--align-left):not(.#{$grommet-namespace}video--align-right) {
+    video {
+      top: 0%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .#{$grommet-namespace}video--align-bottom.#{$grommet-namespace}video--align-left {
+    video {
+      top: 100%;
+      left: 0%;
+      transform: translate(0%, -100%);
+    }
+  }
+
+  .#{$grommet-namespace}video--align-bottom.#{$grommet-namespace}video--align-right {
+    video {
+      top: 100%;
+      left: 100%;
+      transform: translate(-100%, -100%);
+    }
+  }
+
+  .#{$grommet-namespace}video--align-bottom:not(.#{$grommet-namespace}video--align-left):not(.#{$grommet-namespace}video--align-right) {
+    video {
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -100%);
+    }
+  }
+
+  .#{$grommet-namespace}video--align-left:not(.#{$grommet-namespace}video--align-top):not(.#{$grommet-namespace}video--align-bottom) {
+    video {
+      top: 50%;
+      left: 0%;
+      transform: translate(0%, -50%);
+    }
+  }
+
+  .#{$grommet-namespace}video--align-right:not(.#{$grommet-namespace}video--align-top):not(.#{$grommet-namespace}video--align-bottom) {
+    video {
+      top: 50%;
+      left: 100%;
+      transform: translate(-100%, -50%);
+    }
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  @include ie-video-hack();
+}
+
+@supports (-ms-ime-align: auto) {
+  @include ie-video-hack();
 }

@@ -4,23 +4,24 @@
   position: relative;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  // This could be column, but IE11 doesn't work with that. :(
+  flex-direction: row;
+  align-items: center;
 
   .#{$grommet-namespace}hero__background {
     position: absolute;
     top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     z-index: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: 100%;
-    height: 100%;
   }
 
   .#{$grommet-namespace}hero__foreground {
-    position: relative;
+    // position: relative;
     z-index: 1;
-    min-height: 100%;
+    flex: 1 1;
+    // min-height: 100%;
   }
 
   &.#{$grommet-namespace}hero--small {
@@ -137,66 +138,6 @@
     }
   }
 }
-//
-// .#{$grommet-namespace}hero--large {
-//   height: 75vh;
-//
-//   @include media-query(palm) {
-//     height: auto;
-//   }
-//
-//   .#{$grommet-namespace}hero__background {
-//     height: 75vh;
-//
-//     @include media-query(palm) {
-//       height: $inuit-base-spacing-unit * 12.5;
-//     }
-//   }
-//
-//   .#{$grommet-namespace}hero__overlay.#{$grommet-namespace}box {
-//     height: 75vh;
-//
-//     @include media-query(palm) {
-//       height: auto;
-//     }
-//   }
-//
-//   // .#{$grommet-namespace}hero__image {
-//   //   @include media-query(palm) {
-//   //     height: $inuit-base-spacing-unit * 12.5;
-//   //   }
-//   // }
-// }
-//
-// .#{$grommet-namespace}hero--small {
-//   height: 60vh;
-//
-//   @include media-query(palm) {
-//     height: auto;
-//   }
-//
-//   .#{$grommet-namespace}hero__background {
-//     height: 60vh;
-//
-//     @include media-query(palm) {
-//       height: $inuit-base-spacing-unit * 11.25;
-//     }
-//   }
-//
-//   .#{$grommet-namespace}hero__overlay.#{$grommet-namespace}box {
-//     height: 60vh;
-//
-//     @include media-query(palm) {
-//       height: auto;
-//     }
-//   }
-//
-//   // .#{$grommet-namespace}hero__image {
-//   //   @include media-query(palm) {
-//   //     height: $inuit-base-spacing-unit * 11.25;
-//   //   }
-//   // }
-// }
 
 .#{$grommet-namespace}hero--mobile-separator {
   @include media-query(palm) {
