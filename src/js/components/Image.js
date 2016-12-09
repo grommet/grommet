@@ -9,7 +9,9 @@ const CLASS_ROOT = CSSClassnames.IMAGE;
 
 export default class Image extends Component {
   render () {
-    const { caption, className, full, mask, size, fit, ...props } = this.props;
+    const {
+      align, caption, className, full, mask, size, fit, ...props
+    } = this.props;
     const classes = classnames(
       CLASS_ROOT,
       {
@@ -17,7 +19,11 @@ export default class Image extends Component {
         [`${CLASS_ROOT}--${fit}`]: fit,
         [`${CLASS_ROOT}--full`]: fit || (typeof full === 'boolean' && full),
         [`${CLASS_ROOT}--full-${full}`]: typeof full === 'string',
-        [`${CLASS_ROOT}--mask`]: mask
+        [`${CLASS_ROOT}--mask`]: mask,
+        [`${CLASS_ROOT}--align-top`]: align && align.top,
+        [`${CLASS_ROOT}--align-bottom`]: align && align.bottom,
+        [`${CLASS_ROOT}--align-left`]: align && align.left,
+        [`${CLASS_ROOT}--align-right`]: align && align.right
       },
       className
     );
@@ -48,6 +54,12 @@ export default class Image extends Component {
 };
 
 Image.propTypes = {
+  align: PropTypes.shape({
+    bottom: PropTypes.boolean,
+    left: PropTypes.boolean,
+    right: PropTypes.boolean,
+    top: PropTypes.boolean
+  }),
   alt: PropTypes.string,
   caption: PropTypes.oneOfType([
     PropTypes.bool, PropTypes.string

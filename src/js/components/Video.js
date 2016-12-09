@@ -216,7 +216,7 @@ export default class Video extends Component {
 
   render () {
     let {
-      autoPlay, className, colorIndex, fit, full, loop, muted, poster,
+      align, autoPlay, className, colorIndex, fit, full, loop, muted, poster,
       showControls, size
     } = this.props;
     let { ended, hasPlayed, interacting, mouseActive, playing} = this.state;
@@ -230,7 +230,11 @@ export default class Video extends Component {
         [`${CLASS_ROOT}--playing`]: playing,
         [`${CLASS_ROOT}--hasPlayed`]: hasPlayed,
         [`${CLASS_ROOT}--ended`]: ended,
-        [`${BACKGROUND_COLOR_INDEX}--${colorIndex}`]: colorIndex
+        [`${BACKGROUND_COLOR_INDEX}--${colorIndex}`]: colorIndex,
+        [`${CLASS_ROOT}--align-top`]: align && align.top,
+        [`${CLASS_ROOT}--align-bottom`]: align && align.bottom,
+        [`${CLASS_ROOT}--align-left`]: align && align.left,
+        [`${CLASS_ROOT}--align-right`]: align && align.right
       },
       className
     );
@@ -291,6 +295,12 @@ export default class Video extends Component {
 }
 
 Video.propTypes = {
+  align: PropTypes.shape({
+    bottom: PropTypes.boolean,
+    left: PropTypes.boolean,
+    right: PropTypes.boolean,
+    top: PropTypes.boolean
+  }),
   allowFullScreen: PropTypes.bool,
   autoPlay: PropTypes.bool,
   colorIndex: PropTypes.string,
