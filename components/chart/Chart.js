@@ -152,8 +152,8 @@ var Chart = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       window.addEventListener('resize', this._onResize);
-      // give sometime for the ui to render
-      setTimeout(this._layout, 50);
+      // Give sometime for the ui to render. Why is this needed though?
+      setTimeout(this._layout, 150);
     }
   }, {
     key: 'componentWillReceiveProps',

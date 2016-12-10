@@ -57,71 +57,29 @@ var CLASS_ROOT = _CSSClassnames2.default.CHART_GRID;
 var Grid = function (_Component) {
   (0, _inherits3.default)(Grid, _Component);
 
-  function Grid(props, context) {
+  function Grid() {
     (0, _classCallCheck3.default)(this, Grid);
-
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Grid.__proto__ || (0, _getPrototypeOf2.default)(Grid)).call(this, props, context));
-
-    _this._onResize = _this._onResize.bind(_this);
-    _this._layout = _this._layout.bind(_this);
-    _this.state = { height: 1, width: 1 };
-    return _this;
+    return (0, _possibleConstructorReturn3.default)(this, (Grid.__proto__ || (0, _getPrototypeOf2.default)(Grid)).apply(this, arguments));
   }
 
   (0, _createClass3.default)(Grid, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      window.addEventListener('resize', this._onResize);
-      this._onResize();
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      clearTimeout(this._resizeTimer);
-      window.removeEventListener('resize', this._onResize);
-    }
-  }, {
-    key: '_onResize',
-    value: function _onResize() {
-      // debounce
-      clearTimeout(this._resizeTimer);
-      // delay should be greater than Chart's delay
-      this._resizeTimer = setTimeout(this._layout, _utils.debounceDelay + 10);
-    }
-  }, {
-    key: '_layout',
-    value: function _layout() {
-      var _props = this.props,
-          height = _props.height,
-          width = _props.width;
-
-      var grid = this.gridRef;
-      var rect = grid.getBoundingClientRect();
-      this.setState({ height: height || rect.height });
-      this.setState({ width: width || rect.width });
-    }
-  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      var _props2 = this.props,
-          className = _props2.className,
-          columns = _props2.columns,
-          rows = _props2.rows,
-          props = (0, _objectWithoutProperties3.default)(_props2, ['className', 'columns', 'rows']);
-
-      delete props.height;
-      delete props.width;
-      var _state = this.state,
-          height = _state.height,
-          width = _state.width;
+      var _props = this.props,
+          className = _props.className,
+          columns = _props.columns,
+          rows = _props.rows,
+          width = _props.width,
+          height = _props.height,
+          props = (0, _objectWithoutProperties3.default)(_props, ['className', 'columns', 'rows', 'width', 'height']);
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, className);
 
       var commands = '';
 
-      if (columns) {
+      if (columns > 1) {
         var basis = (width - 2 * _utils.padding) / (columns - 1);
         for (var i = 0; i < columns; i += 1) {
           var x = i * basis;
@@ -129,7 +87,7 @@ var Grid = function (_Component) {
         }
       }
 
-      if (rows) {
+      if (rows > 1) {
         var _basis = (height - 2 * _utils.padding) / (rows - 1);
         for (var _i = 0; _i < rows; _i += 1) {
           var y = _i * _basis;

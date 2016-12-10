@@ -72,56 +72,19 @@ var Graph = function (_Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (Graph.__proto__ || (0, _getPrototypeOf2.default)(Graph)).call(this, props, context));
 
-    _this._onResize = _this._onResize.bind(_this);
-    _this._layout = _this._layout.bind(_this);
     _this._renderA11YTitle = _this._renderA11YTitle.bind(_this);
-    _this.state = { height: props.height || 1, width: props.width || 1 };
     return _this;
   }
 
+  // Determines what the appropriate control coordinates are on
+  // either side of the coordinate at the specified index.
+  // This calculation is a simplified smoothing function that
+  // just looks at whether the line through this coordinate is
+  // ascending, descending or not. Peaks, valleys, and flats are
+  // treated the same.
+
+
   (0, _createClass3.default)(Graph, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      window.addEventListener('resize', this._onResize);
-      this._onResize();
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      clearTimeout(this._resizeTimer);
-      window.removeEventListener('resize', this._onResize);
-    }
-  }, {
-    key: '_onResize',
-    value: function _onResize() {
-      // debounce
-      clearTimeout(this._resizeTimer);
-      // delay should be greater than Chart's delay
-      this._resizeTimer = setTimeout(this._layout, _utils.debounceDelay + 10);
-    }
-  }, {
-    key: '_layout',
-    value: function _layout() {
-      var _props = this.props,
-          height = _props.height,
-          width = _props.width;
-
-      var graph = this.graphRef;
-      var rect = graph.parentNode.getBoundingClientRect();
-      this.setState({
-        height: height || Math.floor(rect.height),
-        width: width || Math.floor(rect.width)
-      });
-    }
-
-    // Determines what the appropriate control coordinates are on
-    // either side of the coordinate at the specified index.
-    // This calculation is a simplified smoothing function that
-    // just looks at whether the line through this coordinate is
-    // ascending, descending or not. Peaks, valleys, and flats are
-    // treated the same.
-
-  }, {
     key: '_controlCoordinates',
     value: function _controlCoordinates(coordinates, index) {
       var current = coordinates[index];
@@ -160,12 +123,12 @@ var Graph = function (_Component) {
   }, {
     key: '_renderA11YTitle',
     value: function _renderA11YTitle() {
-      var _props2 = this.props,
-          a11yTitle = _props2.a11yTitle,
-          max = _props2.max,
-          min = _props2.min,
-          type = _props2.type,
-          values = _props2.values;
+      var _props = this.props,
+          a11yTitle = _props.a11yTitle,
+          max = _props.max,
+          min = _props.min,
+          type = _props.type,
+          values = _props.values;
       var intl = this.context.intl;
 
 
@@ -195,26 +158,22 @@ var Graph = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props3 = this.props,
-          activeIndex = _props3.activeIndex,
-          className = _props3.className,
-          colorIndex = _props3.colorIndex,
-          max = _props3.max,
-          min = _props3.min,
-          reverse = _props3.reverse,
-          smooth = _props3.smooth,
-          type = _props3.type,
-          values = _props3.values,
-          vertical = _props3.vertical,
-          props = (0, _objectWithoutProperties3.default)(_props3, ['activeIndex', 'className', 'colorIndex', 'max', 'min', 'reverse', 'smooth', 'type', 'values', 'vertical']);
+      var _props2 = this.props,
+          activeIndex = _props2.activeIndex,
+          className = _props2.className,
+          colorIndex = _props2.colorIndex,
+          max = _props2.max,
+          min = _props2.min,
+          reverse = _props2.reverse,
+          smooth = _props2.smooth,
+          type = _props2.type,
+          values = _props2.values,
+          vertical = _props2.vertical,
+          width = _props2.width,
+          height = _props2.height,
+          props = (0, _objectWithoutProperties3.default)(_props2, ['activeIndex', 'className', 'colorIndex', 'max', 'min', 'reverse', 'smooth', 'type', 'values', 'vertical', 'width', 'height']);
 
-      delete props.height;
-      delete props.width;
       delete props.points;
-      var _state = this.state,
-          height = _state.height,
-          width = _state.width;
-
       var pad = Math.min(width, height) < _utils.padding * 6 ? 2 : _utils.padding;
 
       var classes = (0, _classnames4.default)(CLASS_ROOT, CLASS_ROOT + '--' + type, (0, _defineProperty3.default)({}, CLASS_ROOT + '--vertical', vertical), COLOR_INDEX + '-' + (colorIndex || 'graph-1'), className);
