@@ -116,9 +116,9 @@ exports[`normalization has correct default options 1`] = `
       <svg
         className="grommetux-chart-grid"
         preserveAspectRatio="none"
-        viewBox="0 0 1 1">
+        viewBox="0 0 0 0">
         <path
-          d="M8,8 L8,-7 M4.25,8 L4.25,-7 M0.5,8 L0.5,-7 M-3.25,8 L-3.25,-7 M-7,8 L-7,-7 M8,8 L-7,8 M8,0.5 L-7,0.5 M8,-7 L-7,-7 "
+          d="M8,8 L8,-8 M4,8 L4,-8 M0,8 L0,-8 M-4,8 L-4,-8 M-8,8 L-8,-8 M8,8 L-8,8 M8,0 L-8,0 M8,-8 L-8,-8 "
           fill="none" />
       </svg>
       <svg
@@ -144,16 +144,16 @@ exports[`normalization has correct default options 1`] = `
         className="grommetux-chart-graph grommetux-chart-graph--area grommetux-color-index-graph-1"
         preserveAspectRatio="none"
         role="row"
-        viewBox="0 0 1 1">
+        viewBox="0 0 0 0">
         <g>
           <path
-            d="M2,0.5 L1.7272727272727273,0.34999999999999987 L1.4545454545454546,-0.10000000000000009 L1.1818181818181819,0.050000000000000044 L0.9090909090909092,-1 L0.6363636363636365,-0.8500000000000001 L0.36363636363636376,-0.7000000000000002 L0.09090909090909105,-0.5499999999999998 L-0.18181818181818166,1.25 L-0.45454545454545414,1.4 L-0.7272727272727271,1.6999999999999997 L-1,2L-1,-1
-                        L2,-1 Z"
+            d="M2,0 L1.6363636363636362,-0.20000000000000018 L1.2727272727272727,-0.7999999999999998 L0.9090909090909092,-0.5999999999999996 L0.5454545454545454,-2 L0.18181818181818166,-1.7999999999999998 L-0.18181818181818166,-1.6 L-0.5454545454545454,-1.4 L-0.9090909090909092,1 L-1.272727272727273,1.2000000000000002 L-1.6363636363636367,1.6 L-2,2L-2,-2
+                        L2,-2 Z"
             stroke="none" />
         </g>
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-graph-1 grommetux-chart-graph__point--active"
-          cx={-1}
+          cx={-2}
           cy={2}
           r={6} />
       </svg>
@@ -162,10 +162,10 @@ exports[`normalization has correct default options 1`] = `
         className="grommetux-chart-graph grommetux-chart-graph--line grommetux-color-index-accent-1"
         preserveAspectRatio="none"
         role="row"
-        viewBox="0 0 1 1">
+        viewBox="0 0 0 0">
         <g>
           <path
-            d="M2,2 L1.7272727272727273,1.85 L1.4545454545454546,1.4 L1.1818181818181819,1.46 L0.9090909090909092,1.25 L0.6363636363636365,1.1 L0.36363636363636376,0.7999999999999998 L0.09090909090909105,0.6499999999999999 L-0.18181818181818166,-1 L-0.45454545454545414,-0.5499999999999998 L-0.7272727272727271,0.19999999999999996 L-1,0.5"
+            d="M2,2 L1.6363636363636362,1.8000000000000003 L1.2727272727272727,1.2000000000000002 L0.9090909090909092,1.2800000000000002 L0.5454545454545454,1 L0.18181818181818166,0.8000000000000003 L-0.18181818181818166,0.3999999999999999 L-0.5454545454545454,0.20000000000000018 L-0.9090909090909092,-2 L-1.272727272727273,-1.4 L-1.6363636363636367,-0.3999999999999999 L-2,0"
             fill="none" />
         </g>
         <circle
@@ -175,58 +175,58 @@ exports[`normalization has correct default options 1`] = `
           r={4} />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
-          cx={1.7272727272727273}
-          cy={1.85}
+          cx={1.6363636363636362}
+          cy={1.8000000000000003}
           r={4} />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
-          cx={1.4545454545454546}
-          cy={1.4}
-          r={4} />
-        <circle
-          className="grommetux-chart-graph__point grommetux-color-index-accent-1"
-          cx={1.1818181818181819}
-          cy={1.46}
+          cx={1.2727272727272727}
+          cy={1.2000000000000002}
           r={4} />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
           cx={0.9090909090909092}
-          cy={1.25}
+          cy={1.2800000000000002}
           r={4} />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
-          cx={0.6363636363636365}
-          cy={1.1}
+          cx={0.5454545454545454}
+          cy={1}
           r={4} />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
-          cx={0.36363636363636376}
-          cy={0.7999999999999998}
-          r={4} />
-        <circle
-          className="grommetux-chart-graph__point grommetux-color-index-accent-1"
-          cx={0.09090909090909105}
-          cy={0.6499999999999999}
+          cx={0.18181818181818166}
+          cy={0.8000000000000003}
           r={4} />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
           cx={-0.18181818181818166}
-          cy={-1}
+          cy={0.3999999999999999}
           r={4} />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
-          cx={-0.45454545454545414}
-          cy={-0.5499999999999998}
+          cx={-0.5454545454545454}
+          cy={0.20000000000000018}
           r={4} />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
-          cx={-0.7272727272727271}
-          cy={0.19999999999999996}
+          cx={-0.9090909090909092}
+          cy={-2}
+          r={4} />
+        <circle
+          className="grommetux-chart-graph__point grommetux-color-index-accent-1"
+          cx={-1.272727272727273}
+          cy={-1.4}
+          r={4} />
+        <circle
+          className="grommetux-chart-graph__point grommetux-color-index-accent-1"
+          cx={-1.6363636363636367}
+          cy={-0.3999999999999999}
           r={4} />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1 grommetux-chart-graph__point--active"
-          cx={-1}
-          cy={0.5}
+          cx={-2}
+          cy={0}
           r={6} />
       </svg>
       <div

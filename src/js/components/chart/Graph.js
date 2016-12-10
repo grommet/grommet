@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
 import Intl from '../../utils/Intl';
-import { padding, pointSize, debounceDelay } from './utils';
+import { padding, pointSize } from './utils';
 
 const CLASS_ROOT = CSSClassnames.CHART_GRAPH;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
@@ -13,37 +13,7 @@ export default class Graph extends Component {
 
   constructor(props, context) {
     super(props, context);
-    this._onResize = this._onResize.bind(this);
-    this._layout = this._layout.bind(this);
     this._renderA11YTitle = this._renderA11YTitle.bind(this);
-    this.state = { height: props.height || 1, width: props.width || 1 };
-  }
-
-  componentDidMount () {
-    window.addEventListener('resize', this._onResize);
-    this._onResize();
-  }
-
-  componentWillUnmount () {
-    clearTimeout(this._resizeTimer);
-    window.removeEventListener('resize', this._onResize);
-  }
-
-  _onResize () {
-    // debounce
-    clearTimeout(this._resizeTimer);
-    // delay should be greater than Chart's delay
-    this._resizeTimer = setTimeout(this._layout, debounceDelay + 10);
-  }
-
-  _layout () {
-    const { height, width } = this.props;
-    const graph = this.graphRef;
-    const rect = graph.parentNode.getBoundingClientRect();
-    this.setState({
-      height: height || Math.floor(rect.height),
-      width: width || Math.floor(rect.width)
-    });
   }
 
   // Determines what the appropriate control coordinates are on
@@ -116,12 +86,9 @@ export default class Graph extends Component {
   render () {
     const {
       activeIndex, className, colorIndex, max, min, reverse, smooth, type,
-      values, vertical, ...props
+      values, vertical, width, height, ...props
     } = this.props;
-    delete props.height;
-    delete props.width;
     delete props.points;
-    const { height, width } = this.state;
     const pad = Math.min(width, height) < (padding * 6) ? 2 : padding;
 
     const classes = classnames(
