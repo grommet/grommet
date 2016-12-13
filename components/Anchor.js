@@ -76,20 +76,23 @@ var Anchor = function (_Component) {
       var _props = this.props,
           method = _props.method,
           onClick = _props.onClick,
-          path = _props.path;
+          path = _props.path,
+          disabled = _props.disabled;
       var router = this.context.router;
 
 
       event.preventDefault();
 
-      if ('push' === method) {
-        router.push(path);
-      } else if ('replace' === method) {
-        router.replace(path);
-      }
+      if (!disabled) {
+        if ('push' === method) {
+          router.push(path);
+        } else if ('replace' === method) {
+          router.replace(path);
+        }
 
-      if (onClick) {
-        onClick();
+        if (onClick) {
+          onClick();
+        }
       }
     }
   }, {
