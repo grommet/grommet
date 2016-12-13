@@ -46,6 +46,7 @@
     "lodash": "^4.17.2",
     "markdown-to-jsx": "^4.0.3",
     "moment": "^2.13.0",
+    "node-sass": "^3.4.2",
     "react": "^15.3.0",
     "react-addons-transition-group": "^15.3.0",
     "react-desc": "^1.0.0",
