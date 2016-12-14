@@ -1,11 +1,16 @@
 exports[`Legend has correct default options 1`] = `
-<ol
-  className="grommetux-legend">
+<ul
+  className="grommetux-list grommetux-legend"
+  role="list">
   <li
-    className="grommetux-legend__item"
+    className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-horizontal-small grommetux-box--separator-none grommetux-list-item grommetux-legend__item"
+    id={undefined}
     onClick={undefined}
     onMouseOut={[Function]}
-    onMouseOver={[Function]}>
+    onMouseOver={[Function]}
+    role="listitem"
+    style={Object {}}
+    tabIndex={undefined}>
     <span
       className="grommetux-legend__item-label">
       <svg
@@ -27,10 +32,14 @@ exports[`Legend has correct default options 1`] = `
     </span>
   </li>
   <li
-    className="grommetux-legend__item"
+    className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-horizontal-small grommetux-box--separator-none grommetux-list-item grommetux-legend__item"
+    id={undefined}
     onClick={undefined}
     onMouseOut={[Function]}
-    onMouseOver={[Function]}>
+    onMouseOver={[Function]}
+    role="listitem"
+    style={Object {}}
+    tabIndex={undefined}>
     <span
       className="grommetux-legend__item-label">
       <svg
@@ -52,10 +61,14 @@ exports[`Legend has correct default options 1`] = `
     </span>
   </li>
   <li
-    className="grommetux-legend__item"
+    className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-horizontal-small grommetux-box--separator-none grommetux-list-item grommetux-legend__item"
+    id={undefined}
     onClick={undefined}
     onMouseOut={[Function]}
-    onMouseOver={[Function]}>
+    onMouseOver={[Function]}
+    role="listitem"
+    style={Object {}}
+    tabIndex={undefined}>
     <span
       className="grommetux-legend__item-label">
       <svg
@@ -77,10 +90,14 @@ exports[`Legend has correct default options 1`] = `
     </span>
   </li>
   <li
-    className="grommetux-legend__item"
+    className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-horizontal-small grommetux-box--separator-none grommetux-list-item grommetux-legend__item"
+    id={undefined}
     onClick={undefined}
     onMouseOut={[Function]}
-    onMouseOver={[Function]}>
+    onMouseOver={[Function]}
+    role="listitem"
+    style={Object {}}
+    tabIndex={undefined}>
     <span
       className="grommetux-legend__item-label">
       <svg
@@ -102,10 +119,14 @@ exports[`Legend has correct default options 1`] = `
     </span>
   </li>
   <li
-    className="grommetux-legend__item"
+    className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-horizontal-small grommetux-box--separator-none grommetux-list-item grommetux-legend__item"
+    id={undefined}
     onClick={undefined}
     onMouseOut={[Function]}
-    onMouseOver={[Function]}>
+    onMouseOver={[Function]}
+    role="listitem"
+    style={Object {}}
+    tabIndex={undefined}>
     <span
       className="grommetux-legend__item-label">
       <svg
@@ -127,10 +148,14 @@ exports[`Legend has correct default options 1`] = `
     </span>
   </li>
   <li
-    className="grommetux-legend__item"
+    className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-horizontal-small grommetux-box--separator-none grommetux-list-item grommetux-legend__item"
+    id={undefined}
     onClick={undefined}
     onMouseOut={[Function]}
-    onMouseOver={[Function]}>
+    onMouseOver={[Function]}
+    role="listitem"
+    style={Object {}}
+    tabIndex={undefined}>
     <span
       className="grommetux-legend__item-label">
       <svg
@@ -151,5 +176,5 @@ exports[`Legend has correct default options 1`] = `
       </span>
     </span>
   </li>
-</ol>
+</ul>
 `;

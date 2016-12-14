@@ -3,6 +3,8 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import FormattedMessage from './FormattedMessage';
+import List from './List';
+import ListItem from './ListItem';
 import CSSClassnames from '../utils/CSSClassnames';
 import Announcer from '../utils/Announcer';
 
@@ -144,13 +146,14 @@ export default class Legend extends Component {
       }
 
       return (
-        <li onClick={item.onClick}
+        <ListItem onClick={item.onClick} justify='between'
+          separator='none' pad={{ horizontal: 'small' }}
           key={item.label || index} className={legendClasses}
           onMouseOver={this._onActive.bind(this, index)}
           onMouseOut={this._onActive.bind(this, undefined)} >
           {label}
           {value}
-        </li>
+        </ListItem>
       );
     }, this);
   }
@@ -184,7 +187,8 @@ export default class Legend extends Component {
     }
 
     return (
-      <li className={`${CLASS_ROOT}__total`}>
+      <ListItem className={`${CLASS_ROOT}__total`}
+        justify='between' separator='none' pad={{ horizontal: 'small' }}>
         <span className={`${CLASS_ROOT}__total-label`}>
           <FormattedMessage id="Total" defaultMessage="Total" />
         </span>
@@ -193,7 +197,7 @@ export default class Legend extends Component {
           {totalValue}
           {unitsSuffix}
         </span>
-      </li>
+      </ListItem>
     );
   }
 
@@ -220,10 +224,10 @@ export default class Legend extends Component {
     }
 
     return (
-      <ol ref={ref => this.legendRef = ref} {...props} className={classes}>
+      <List ref={ref => this.legendRef = ref} {...props} className={classes}>
         {items.reverse()}
         {totalNode}
-      </ol>
+      </List>
     );
   }
 
