@@ -48,6 +48,14 @@ var _FormattedMessage = require('./FormattedMessage');
 
 var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
 
+var _List = require('./List');
+
+var _List2 = _interopRequireDefault(_List);
+
+var _ListItem = require('./ListItem');
+
+var _ListItem2 = _interopRequireDefault(_ListItem);
+
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
@@ -215,8 +223,9 @@ var Legend = function (_Component) {
         }
 
         return _react2.default.createElement(
-          'li',
-          { onClick: item.onClick,
+          _ListItem2.default,
+          { onClick: item.onClick, justify: 'between',
+            separator: 'none', pad: { horizontal: 'small' },
             key: item.label || index, className: legendClasses,
             onMouseOver: _this2._onActive.bind(_this2, index),
             onMouseOut: _this2._onActive.bind(_this2, undefined) },
@@ -256,8 +265,9 @@ var Legend = function (_Component) {
       }
 
       return _react2.default.createElement(
-        'li',
-        { className: CLASS_ROOT + '__total' },
+        _ListItem2.default,
+        { className: CLASS_ROOT + '__total',
+          justify: 'between', separator: 'none', pad: { horizontal: 'small' } },
         _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + '__total-label' },
@@ -301,7 +311,7 @@ var Legend = function (_Component) {
       }
 
       return _react2.default.createElement(
-        'ol',
+        _List2.default,
         (0, _extends3.default)({ ref: function ref(_ref) {
             return _this3.legendRef = _ref;
           } }, props, { className: classes }),
