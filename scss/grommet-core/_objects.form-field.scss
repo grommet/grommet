@@ -101,6 +101,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > input[type=password],
   > input[type=number],
   > input[type=file],
+  > input[type=color],
   > select,
   > .#{$grommet-namespace}search-input input,
   > .#{$grommet-namespace}calendar input,
@@ -125,6 +126,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > input[type=password],
   > input[type=number],
   > input[type=file],
+  > input[type=color],
   > select,
   > textarea {
     padding: 0 $form-horizontal-padding;
@@ -140,6 +142,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > input[type=password],
   > input[type=number],
   > input[type=file],
+  > input[type=color],
   > select,
   > .#{$grommet-namespace}search-input input,
   > .#{$grommet-namespace}calendar input,
