@@ -1,58 +1,65 @@
 exports[`Notification has correct default options 1`] = `
 <div
-  className={undefined}
-  style={Object {}}>
+  className="grommetux-animate">
   <div
-    className="grommetux-box grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-unknown grommetux-background-color-index-unknown grommetux-background-color-index--pending"
-    id={undefined}
-    onClick={undefined}
-    role={undefined}
-    style={Object {}}
-    tabIndex={undefined}>
+    className="grommetux-animate__child grommetux-animate__child--fade grommetux-animate__child--inactive "
+    style={
+      Object {
+        "transitionDuration": "1000ms",
+      }
+    }>
     <div
-      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-small"
+      className="grommetux-box grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-unknown grommetux-background-color-index-unknown grommetux-background-color-index--pending"
       id={undefined}
       onClick={undefined}
       role={undefined}
       style={Object {}}
       tabIndex={undefined}>
-      <svg
-        aria-label="Unknown"
-        className="grommetux-status-icon grommetux-status-icon-unknown grommetux-notification__status"
-        role="img"
-        version="1.1"
-        viewBox="0 0 24 24">
-        <g
-          className="grommetux-status-icon__base">
-          <path
-            d="M12,2 C17.5,2 22,6.5 22,12 C22,17.5 17.5,22 12,22 C6.5,22 2,17.5 2,12 C2,6.5 6.5,2 12,2 L12,2 Z M12,0 C5.4,0 0,5.4 0,12 C0,18.6 5.4,24 12,24 C18.6,24 24,18.6 24,12 C24,5.4 18.6,0 12,0 L12,0 L12,0 Z"
-            stroke="none" />
-        </g>
-        <g
-          className="grommetux-status-icon__detail">
-          <path
-            d="M9,10.4 C9,8.8 10.4,7.6 12,7.6 C13.6,7.6 14.9,9 15,10.4 C15,11.7 14.1,12.7 12.9,13.1 C12.4,13.2 12,13.7 12,14.2 L12,15.5"
-            fill="none"
-            strokeWidth="2" />
-          <circle
-            cx="12"
-            cy="17.6"
-            r="1"
-            stroke="none" />
-        </g>
-      </svg>
-    </div>
-    <div
-      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--flex grommetux-box--pad-small"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
-      style={Object {}}
-      tabIndex={undefined}>
-      <span
-        className="grommetux-notification__message">
-        You will need a tray. The food is hot.
-      </span>
+      <div
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-small"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}>
+        <svg
+          aria-label="Unknown"
+          className="grommetux-status-icon grommetux-status-icon-unknown grommetux-notification__status"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24">
+          <g
+            className="grommetux-status-icon__base">
+            <path
+              d="M12,2 C17.5,2 22,6.5 22,12 C22,17.5 17.5,22 12,22 C6.5,22 2,17.5 2,12 C2,6.5 6.5,2 12,2 L12,2 Z M12,0 C5.4,0 0,5.4 0,12 C0,18.6 5.4,24 12,24 C18.6,24 24,18.6 24,12 C24,5.4 18.6,0 12,0 L12,0 L12,0 Z"
+              stroke="none" />
+          </g>
+          <g
+            className="grommetux-status-icon__detail">
+            <path
+              d="M9,10.4 C9,8.8 10.4,7.6 12,7.6 C13.6,7.6 14.9,9 15,10.4 C15,11.7 14.1,12.7 12.9,13.1 C12.4,13.2 12,13.7 12,14.2 L12,15.5"
+              fill="none"
+              strokeWidth="2" />
+            <circle
+              cx="12"
+              cy="17.6"
+              r="1"
+              stroke="none" />
+          </g>
+        </svg>
+      </div>
+      <div
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--flex grommetux-box--pad-small"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}>
+        <span
+          className="grommetux-notification__message">
+          You will need a tray. The food is hot.
+        </span>
+      </div>
     </div>
   </div>
 </div>
@@ -60,59 +67,66 @@ exports[`Notification has correct default options 1`] = `
 
 exports[`Notification renders with closer set to true 1`] = `
 <div
-  className={undefined}
-  style={Object {}}>
+  className="grommetux-animate">
   <div
-    className="grommetux-box grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-unknown grommetux-background-color-index-unknown grommetux-background-color-index--pending"
-    id={undefined}
-    onClick={undefined}
-    role={undefined}
-    style={Object {}}
-    tabIndex={undefined}>
+    className="grommetux-animate__child grommetux-animate__child--fade grommetux-animate__child--inactive "
+    style={
+      Object {
+        "transitionDuration": "1000ms",
+      }
+    }>
     <div
-      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-small"
+      className="grommetux-box grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-unknown grommetux-background-color-index-unknown grommetux-background-color-index--pending"
       id={undefined}
       onClick={undefined}
       role={undefined}
       style={Object {}}
       tabIndex={undefined}>
-      <svg
-        aria-label="Unknown"
-        className="grommetux-status-icon grommetux-status-icon-unknown grommetux-notification__status"
-        role="img"
-        version="1.1"
-        viewBox="0 0 24 24">
-        <g
-          className="grommetux-status-icon__base">
-          <path
-            d="M12,2 C17.5,2 22,6.5 22,12 C22,17.5 17.5,22 12,22 C6.5,22 2,17.5 2,12 C2,6.5 6.5,2 12,2 L12,2 Z M12,0 C5.4,0 0,5.4 0,12 C0,18.6 5.4,24 12,24 C18.6,24 24,18.6 24,12 C24,5.4 18.6,0 12,0 L12,0 L12,0 Z"
-            stroke="none" />
-        </g>
-        <g
-          className="grommetux-status-icon__detail">
-          <path
-            d="M9,10.4 C9,8.8 10.4,7.6 12,7.6 C13.6,7.6 14.9,9 15,10.4 C15,11.7 14.1,12.7 12.9,13.1 C12.4,13.2 12,13.7 12,14.2 L12,15.5"
-            fill="none"
-            strokeWidth="2" />
-          <circle
-            cx="12"
-            cy="17.6"
-            r="1"
-            stroke="none" />
-        </g>
-      </svg>
-    </div>
-    <div
-      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--flex grommetux-box--pad-small"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
-      style={Object {}}
-      tabIndex={undefined}>
-      <span
-        className="grommetux-notification__message">
-        You will need a tray. The food is hot.
-      </span>
+      <div
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-small"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}>
+        <svg
+          aria-label="Unknown"
+          className="grommetux-status-icon grommetux-status-icon-unknown grommetux-notification__status"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24">
+          <g
+            className="grommetux-status-icon__base">
+            <path
+              d="M12,2 C17.5,2 22,6.5 22,12 C22,17.5 17.5,22 12,22 C6.5,22 2,17.5 2,12 C2,6.5 6.5,2 12,2 L12,2 Z M12,0 C5.4,0 0,5.4 0,12 C0,18.6 5.4,24 12,24 C18.6,24 24,18.6 24,12 C24,5.4 18.6,0 12,0 L12,0 L12,0 Z"
+              stroke="none" />
+          </g>
+          <g
+            className="grommetux-status-icon__detail">
+            <path
+              d="M9,10.4 C9,8.8 10.4,7.6 12,7.6 C13.6,7.6 14.9,9 15,10.4 C15,11.7 14.1,12.7 12.9,13.1 C12.4,13.2 12,13.7 12,14.2 L12,15.5"
+              fill="none"
+              strokeWidth="2" />
+            <circle
+              cx="12"
+              cy="17.6"
+              r="1"
+              stroke="none" />
+          </g>
+        </svg>
+      </div>
+      <div
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--flex grommetux-box--pad-small"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}>
+        <span
+          className="grommetux-notification__message">
+          You will need a tray. The food is hot.
+        </span>
+      </div>
     </div>
   </div>
 </div>
@@ -120,59 +134,66 @@ exports[`Notification renders with closer set to true 1`] = `
 
 exports[`Notification renders with padding set 1`] = `
 <div
-  className={undefined}
-  style={Object {}}>
+  className="grommetux-animate">
   <div
-    className="grommetux-box grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-unknown grommetux-background-color-index-unknown grommetux-background-color-index--pending"
-    id={undefined}
-    onClick={undefined}
-    role={undefined}
-    style={Object {}}
-    tabIndex={undefined}>
+    className="grommetux-animate__child grommetux-animate__child--fade grommetux-animate__child--inactive "
+    style={
+      Object {
+        "transitionDuration": "1000ms",
+      }
+    }>
     <div
-      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-small"
+      className="grommetux-box grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-unknown grommetux-background-color-index-unknown grommetux-background-color-index--pending"
       id={undefined}
       onClick={undefined}
       role={undefined}
       style={Object {}}
       tabIndex={undefined}>
-      <svg
-        aria-label="Unknown"
-        className="grommetux-status-icon grommetux-status-icon-unknown grommetux-notification__status"
-        role="img"
-        version="1.1"
-        viewBox="0 0 24 24">
-        <g
-          className="grommetux-status-icon__base">
-          <path
-            d="M12,2 C17.5,2 22,6.5 22,12 C22,17.5 17.5,22 12,22 C6.5,22 2,17.5 2,12 C2,6.5 6.5,2 12,2 L12,2 Z M12,0 C5.4,0 0,5.4 0,12 C0,18.6 5.4,24 12,24 C18.6,24 24,18.6 24,12 C24,5.4 18.6,0 12,0 L12,0 L12,0 Z"
-            stroke="none" />
-        </g>
-        <g
-          className="grommetux-status-icon__detail">
-          <path
-            d="M9,10.4 C9,8.8 10.4,7.6 12,7.6 C13.6,7.6 14.9,9 15,10.4 C15,11.7 14.1,12.7 12.9,13.1 C12.4,13.2 12,13.7 12,14.2 L12,15.5"
-            fill="none"
-            strokeWidth="2" />
-          <circle
-            cx="12"
-            cy="17.6"
-            r="1"
-            stroke="none" />
-        </g>
-      </svg>
-    </div>
-    <div
-      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--flex grommetux-box--pad-small"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
-      style={Object {}}
-      tabIndex={undefined}>
-      <span
-        className="grommetux-notification__message">
-        You will need a tray. The food is hot.
-      </span>
+      <div
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-small"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}>
+        <svg
+          aria-label="Unknown"
+          className="grommetux-status-icon grommetux-status-icon-unknown grommetux-notification__status"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24">
+          <g
+            className="grommetux-status-icon__base">
+            <path
+              d="M12,2 C17.5,2 22,6.5 22,12 C22,17.5 17.5,22 12,22 C6.5,22 2,17.5 2,12 C2,6.5 6.5,2 12,2 L12,2 Z M12,0 C5.4,0 0,5.4 0,12 C0,18.6 5.4,24 12,24 C18.6,24 24,18.6 24,12 C24,5.4 18.6,0 12,0 L12,0 L12,0 Z"
+              stroke="none" />
+          </g>
+          <g
+            className="grommetux-status-icon__detail">
+            <path
+              d="M9,10.4 C9,8.8 10.4,7.6 12,7.6 C13.6,7.6 14.9,9 15,10.4 C15,11.7 14.1,12.7 12.9,13.1 C12.4,13.2 12,13.7 12,14.2 L12,15.5"
+              fill="none"
+              strokeWidth="2" />
+            <circle
+              cx="12"
+              cy="17.6"
+              r="1"
+              stroke="none" />
+          </g>
+        </svg>
+      </div>
+      <div
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--flex grommetux-box--pad-small"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}>
+        <span
+          className="grommetux-notification__message">
+          You will need a tray. The food is hot.
+        </span>
+      </div>
     </div>
   </div>
 </div>
@@ -180,61 +201,68 @@ exports[`Notification renders with padding set 1`] = `
 
 exports[`Notification renders with status option given 1`] = `
 <div
-  className={undefined}
-  style={Object {}}>
+  className="grommetux-animate">
   <div
-    className="grommetux-box grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-warning grommetux-background-color-index-warning grommetux-background-color-index--pending"
-    id={undefined}
-    onClick={undefined}
-    role={undefined}
-    style={Object {}}
-    tabIndex={undefined}>
+    className="grommetux-animate__child grommetux-animate__child--fade grommetux-animate__child--inactive "
+    style={
+      Object {
+        "transitionDuration": "1000ms",
+      }
+    }>
     <div
-      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-small"
+      className="grommetux-box grommetux-box--direction-row grommetux-box--align-start grommetux-box--pad-small grommetux-notification grommetux-notification--status-warning grommetux-background-color-index-warning grommetux-background-color-index--pending"
       id={undefined}
       onClick={undefined}
       role={undefined}
       style={Object {}}
       tabIndex={undefined}>
-      <svg
-        aria-label="Warning"
-        className="grommetux-status-icon grommetux-status-icon-warning grommetux-notification__status"
-        role="img"
-        version="1.1"
-        viewBox="0 0 24 24">
-        <g
-          className="grommetux-status-icon__base">
-          <path
-            d="M12,0 L0,22 L24,22 L12,0 L12,0 Z"
-            role="presentation"
-            stroke="none" />
-        </g>
-        <g
-          className="grommetux-status-icon__detail"
-          strokeWidth="2"
-          transform="translate(11.000000, 8.000000)">
-          <path
-            d="M1,0 L1,6"
-            fill="none"
-            role="presentation" />
-          <path
-            d="M1,8 L1,10"
-            fill="none"
-            role="presentation" />
-        </g>
-      </svg>
-    </div>
-    <div
-      className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--flex grommetux-box--pad-small"
-      id={undefined}
-      onClick={undefined}
-      role={undefined}
-      style={Object {}}
-      tabIndex={undefined}>
-      <span
-        className="grommetux-notification__message">
-        You will need a tray. The food is hot.
-      </span>
+      <div
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-small"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}>
+        <svg
+          aria-label="Warning"
+          className="grommetux-status-icon grommetux-status-icon-warning grommetux-notification__status"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24">
+          <g
+            className="grommetux-status-icon__base">
+            <path
+              d="M12,0 L0,22 L24,22 L12,0 L12,0 Z"
+              role="presentation"
+              stroke="none" />
+          </g>
+          <g
+            className="grommetux-status-icon__detail"
+            strokeWidth="2"
+            transform="translate(11.000000, 8.000000)">
+            <path
+              d="M1,0 L1,6"
+              fill="none"
+              role="presentation" />
+            <path
+              d="M1,8 L1,10"
+              fill="none"
+              role="presentation" />
+          </g>
+        </svg>
+      </div>
+      <div
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--flex grommetux-box--pad-small"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}>
+        <span
+          className="grommetux-notification__message">
+          You will need a tray. The food is hot.
+        </span>
+      </div>
     </div>
   </div>
 </div>

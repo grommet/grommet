@@ -1,94 +1,106 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
+import { findDOMNode } from 'react-dom';
 import TransitionGroup from 'react-addons-transition-group';
 import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
+import { findScrollParents } from '../utils/DOM';
 
-const CLASS_ROOT = 'animate';
+const CLASS_ROOT = CSSClassnames.ANIMATE;
 
 class AnimateChild extends Component {
+
   constructor(props, context) {
     super(props, context);
+    const { enter, leave } = props;
+    // leave will reuse enter if leave is not defined
     this.state = {
-      enterClass: '',
-      leaveClass: ''
+      enter: enter,
+      leave: leave || enter,
+      state: 'inactive'
     };
   }
 
+  componentWillReceiveProps (nextProps) {
+    const { enter, leave } = nextProps;
+    this.setState({ enter: enter, leave: leave || enter });
+    if (nextProps.visible !== this.props.visible) {
+      const [ nextState, lastState ] = nextProps.visible ?
+        [ 'enter', 'active' ] : [ 'leave', 'inactive' ];
+      this._delay(nextState, this._done.bind(this, lastState));
+    }
+  }
+
+  componentWillUnmount () {
+    if (this._timer) {
+      clearTimeout(this._timer);
+      this._timer = undefined;
+    }
+  }
+
   componentWillAppear (callback) {
-    this.enter(callback);
+    if (true === this.props.visible) {
+      this._delay('enter', callback);
+    }
   }
 
   componentWillEnter (callback) {
-    this.enter(callback);
+    if (true === this.props.visible) {
+      this._delay('enter', callback);
+    }
   }
 
   componentDidAppear () {
-    this.entered();
+    this._done('active');
   }
 
   componentDidEnter () {
-    this.entered();
+    this._done('active');
   }
 
   componentWillLeave (callback) {
-    this.leave(callback);
+    this._delay('leave', callback);
   }
 
-  enter (callback) {
-    const {
-      enter: { animation: enterAnimation, delay },
-      leave: { animation: leaveAnimation }
-    } = this.props;
-    const node = ReactDOM.findDOMNode(this);
-
-    const enterClass = enterAnimation;
-    const leaveClass = leaveAnimation || enterAnimation;
-    this.setState({enterClass});
-    this.setState({leaveClass});
-
-    if (node) {
-      node.style.transitionDuration = '';
-      node.classList.remove('animate', `${leaveClass}--leave`);
-      node.classList.add(`${enterClass}--enter`);
-      setTimeout(callback, delay || 50);
-    }
+  componentDidLeave (callback) {
+    this._done('inactive');
   }
 
-  entered () {
-    const { enter: { duration } } = this.props;
-    const node = ReactDOM.findDOMNode(this);
-    const enterClass = this.state.enterClass;
-    node.classList.remove(`${enterClass}--enter`);
-    if (duration) {
-      node.style.transitionDuration = `${duration}ms`;
+  _delay (state, callback) {
+    const { delay } = this.state[state];
+    // ensure we start out inactive in case we aren't being kept in the DOM
+    if ('enter' === state) {
+      this.setState({ state: 'inactive '});
     }
-    node.classList.add('animate', `${enterClass}--enter-active`);
-    setTimeout(() => {
-      node.style.transitionDuration = '';
-      node.classList.remove('animate');
-    }, parseFloat(getComputedStyle(node).transitionDuration) * 1000);
+    clearTimeout(this._timer);
+    this._timer = setTimeout(this._start.bind(this, state, callback),
+      delay || 1);
   }
 
-  leave (callback) {
-    const { leave: { duration, delay } } = this.props;
-    const node = ReactDOM.findDOMNode(this);
+  _start (state, callback) {
+    const { duration } = this.state[state];
+    this.setState({ state });
+    this._timer = setTimeout(callback, duration);
+  }
 
-    if (duration) {
-      node.style.transitionDuration = `${duration}ms`;
-    }
-
-    return setTimeout(() => {
-      node.classList.remove(`${this.state.enterClass}--enter-active`);
-      node.classList.add('animate', `${this.state.leaveClass}--leave`);
-      setTimeout(callback,
-        parseFloat(getComputedStyle(node).transitionDuration) * 1000);
-    }, delay);
+  _done (state) {
+    this.setState({ state });
   }
 
   render () {
-    return this.props.children;
+    const { children } = this.props;
+    const { enter, leave, state } = this.state;
+    const animation = (this.state[state] || this.state.enter).animation;
+    const className = classnames(
+      `${CLASS_ROOT}__child`,
+      `${CLASS_ROOT}__child--${animation}`,
+      `${CLASS_ROOT}__child--${state}`
+    );
+    const duration = ('enter' === state || 'inactive' === state) ?
+      enter.duration : leave.duration;
+    const style = { transitionDuration: `${duration || 0}ms` };
+    return <div className={className} style={style}>{children}</div>;
   }
 };
 
@@ -97,103 +109,108 @@ AnimateChild.propTypes = {
     animation: PropTypes.string,
     duration: PropTypes.number,
     delay: PropTypes.number
-  }),
+  }).isRequired,
   leave: PropTypes.shape({
     animation: PropTypes.string,
     duration: PropTypes.number,
     delay: PropTypes.number
-  })
+  }),
+  visible: PropTypes.bool
 };
 
 AnimateChild.defaultProps = {
-  enter: {},
-  leave: {}
+  visible: false
 };
 
 export default class Animate extends Component {
 
   constructor(props, context) {
     super(props, context);
-    this.state = {
-      animationState: 'enter',
-      animation: props.enter.animation
-    };
+    this._checkScroll = this._checkScroll.bind(this);
+    this.state = { visible: true === props.visible };
+  }
+
+  componentDidMount () {
+    if ('scroll' === this.props.visible) {
+      this._listenForScroll();
+    }
   }
 
   componentWillReceiveProps (nextProps) {
-    const { visible, keep } = this.props;
-    const { animationState } = this.state;
-
-    if (keep && visible !== nextProps.visible) {
-      let state = '';
-      if (!nextProps.visible) {
-        state = (animationState === 'leave') ? 'enter' : 'leave';
+    const { visible } = this.props;
+    if (visible !== nextProps.visible) {
+      if ('scroll' === visible) {
+        this._unlistenForScroll();
+      } else if ('scroll' === nextProps.visible) {
+        this._listenForScroll();
       }
+      this.setState({ visible: true === nextProps.visible });
+    }
+  }
 
-      const animateState = nextProps[state] || nextProps.enter;
-      this.setState({
-        animationState: state,
-        animation: state ? animateState.animation : ''
-      });
+  componentWillUnmount () {
+    if ('scroll' === this.props.visible) {
+      this._unlistenForScroll();
+    }
+  }
 
-      // Reset animation state back to enter after leave animation is finished
-      if (state === 'leave') {
-        const node = ReactDOM.findDOMNode(this);
-        clearTimeout(this.animationTimer);
-        this.animationTimer = setTimeout(() => {
-          this.setState({
-            animationState: 'enter',
-            animation: nextProps.enter.animation
-          });
-        }, (parseFloat(getComputedStyle(node).transitionDuration) +
-        parseFloat(getComputedStyle(node).transitionDelay)) * 1000);
+  _listenForScroll () {
+    this._scrollParents = findScrollParents(this);
+    this._scrollParents.forEach((scrollParent) => {
+      scrollParent.addEventListener('scroll', this._checkScroll);
+    });
+  }
+
+  _unlistenForScroll () {
+    this._scrollParents.forEach((scrollParent) => {
+      scrollParent.removeEventListener('scroll', this._checkScroll);
+    });
+    this._scrollParents = undefined;
+  }
+
+  _checkScroll () {
+    const group = findDOMNode(this);
+    const rect = group.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      if (! this.state.visible) {
+        this.setState({ visible: true });
+      }
+    } else {
+      if (this.state.visible) {
+        this.setState({ visible: false });
       }
     }
   }
 
   render () {
     const {
-      enter, leave, className, children, component, visible, keep, style,
-      ...props
+      enter, leave, className, children, component, keep, ...props
     } = this.props;
+    delete props.visible;
+    const { visible } = this.state;
 
-    const animateChildren = React.Children.map(children, (child, index) => {
-      const key = (child && child.key) ? child.key : `animate-${index}`;
-      return (
-        <AnimateChild key={key} enter={enter} leave={leave}>
+    const classes = classnames( CLASS_ROOT, className );
+
+    let animateChildren;
+    if (keep || visible) {
+      animateChildren = React.Children.map(children, (child, index) => (
+        <AnimateChild key={index} enter={enter} leave={leave}
+          visible={visible}>
           {child}
         </AnimateChild>
-      );
-    });
-
-    let classes = className;
-    let styles = {...style};
-    if (keep) {
-      classes = classnames(
-        CLASS_ROOT,
-        className,
-        {
-          [`${this.state.animation}--${this.state.animationState}`]: !visible
-        }
-      );
-      styles = {
-        ...style,
-        transitionDuration: `${enter.duration}ms`,
-        transitionDelay: `${enter.delay}ms`
-      };
+      ));
     }
 
     return (
-      <TransitionGroup {...props} className={classes}
-        component={component || 'div'} style={styles}>
-        {(visible || visible === undefined || keep) && animateChildren}
+      <TransitionGroup {...props} className={classes} component={component}>
+        {animateChildren}
       </TransitionGroup>
     );
   }
 };
 
 const ANIMATIONS =
-  ['fade', 'slide-up', 'slide-down', 'slide-left', 'slide-right'];
+  ['fade', 'slide-up', 'slide-down', 'slide-left', 'slide-right', 'jiggle'];
 
 Animate.propTypes = {
   component: PropTypes.oneOfType([
@@ -211,5 +228,14 @@ Animate.propTypes = {
     duration: PropTypes.number,
     delay: PropTypes.number
   }),
-  visible: PropTypes.bool
+  visible: PropTypes.oneOfType([
+    PropTypes.oneOf(['scroll']),
+    PropTypes.bool
+  ])
+};
+
+Animate.defaultProps = {
+  component: 'div',
+  enter: { animation: 'fade', duration: 300 },
+  visible: true
 };

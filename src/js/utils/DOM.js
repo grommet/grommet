@@ -61,7 +61,7 @@ export function findAncestor (element, className) {
 }
 
 export function filterByFocusable (elements) {
-  return Array.prototype.filter.call(elements || [], function(element) {
+  return Array.prototype.filter.call(elements || [], (element) => {
     var currentTag = element.tagName.toLowerCase();
     var validTags = /(svg|a|area|input|select|textarea|button|iframe|div)$/;
     var isValidTag = currentTag.match(validTags) && element.focus;
@@ -80,7 +80,7 @@ export function filterByFocusable (elements) {
 export function getBestFirstFocusable (elements) {
   var bestFirstFocusable;
 
-  Array.prototype.some.call(elements || [], function(element) {
+  Array.prototype.some.call(elements || [], (element) => {
     var currentTag = element.tagName.toLowerCase();
     var isValidTag = currentTag.match(/(input|select|textarea)$/);
     return isValidTag ? ((bestFirstFocusable = element), true) : false;

@@ -1,4 +1,4 @@
-$base-animation-duration: 0.3s;
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 $fade-in-duration: 0.5s;
 
@@ -46,40 +46,4 @@ $fade-in-duration: 0.5s;
 @mixin transform($args...) {
   -webkit-transform: $args;
   transform: $args;
-}
-
-$animation-duration: 1s;
-
-@mixin slide-animation($opacity, $transform...) {
-  opacity: $opacity;
-  transform: $transform;
-}
-
-.animate {
-  transition: all $animation-duration;
-}
-
-.fade--enter,
-.fade--leave {
-  opacity: 0;
-}
-
-.slide-up--enter,
-.slide-down--leave {
-  @include slide-animation(0, translateY(50%));
-}
-
-.slide-up--leave,
-.slide-down--enter {
-  @include slide-animation(0, translateY(-50%));
-}
-
-.slide-left--enter,
-.slide-right--leave {
-  @include slide-animation(0, translateX(50%));
-}
-
-.slide-left--leave,
-.slide-right--enter {
-  @include slide-animation(0, translateX(-50%));
 }

@@ -2,7 +2,6 @@
 
 import React, { Children, Component, PropTypes } from 'react';
 import classnames from 'classnames';
-
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.BUTTON;

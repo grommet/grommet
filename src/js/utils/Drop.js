@@ -203,7 +203,7 @@ export default {
     drop.render = this._render.bind(this, drop);
     drop.remove = this._remove.bind(this, drop);
 
-    drop.scrollParents.forEach(function (scrollParent) {
+    drop.scrollParents.forEach((scrollParent) => {
       scrollParent.addEventListener('scroll', drop.place);
     });
 
@@ -213,13 +213,13 @@ export default {
     window.addEventListener('resize', () => {
       // we need to update scroll parents as Responsive options may change
       // the parent for the target element
-      drop.scrollParents.forEach(function (scrollParent) {
+      drop.scrollParents.forEach((scrollParent) => {
         scrollParent.removeEventListener('scroll', drop.place);
       });
 
       drop.scrollParents = findScrollParents(drop.control);
 
-      drop.scrollParents.forEach(function (scrollParent) {
+      drop.scrollParents.forEach((scrollParent) => {
         scrollParent.addEventListener('scroll', drop.place);
       });
 
@@ -244,7 +244,7 @@ export default {
   },
 
   _remove (drop) {
-    drop.scrollParents.forEach(function (scrollParent) {
+    drop.scrollParents.forEach((scrollParent) => {
       scrollParent.removeEventListener('scroll', drop.place);
     });
     window.removeEventListener('resize', drop.place);
