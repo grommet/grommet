@@ -4,10 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
 var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
@@ -15,6 +11,10 @@ var _extends3 = _interopRequireDefault(_extends2);
 var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
 
 var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+var _slicedToArray2 = require('babel-runtime/helpers/slicedToArray');
+
+var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -42,21 +42,25 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = require('react-dom');
 
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
 var _reactAddonsTransitionGroup = require('react-addons-transition-group');
 
 var _reactAddonsTransitionGroup2 = _interopRequireDefault(_reactAddonsTransitionGroup);
 
-var _classnames2 = require('classnames');
+var _classnames = require('classnames');
 
-var _classnames3 = _interopRequireDefault(_classnames2);
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
+var _DOM = require('../utils/DOM');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = 'animate';
+var CLASS_ROOT = _CSSClassnames2.default.ANIMATE;
 
 var AnimateChild = function (_Component) {
   (0, _inherits3.default)(AnimateChild, _Component);
@@ -66,103 +70,119 @@ var AnimateChild = function (_Component) {
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (AnimateChild.__proto__ || (0, _getPrototypeOf2.default)(AnimateChild)).call(this, props, context));
 
+    var enter = props.enter,
+        leave = props.leave;
+    // leave will reuse enter if leave is not defined
+
     _this.state = {
-      enterClass: '',
-      leaveClass: ''
+      enter: enter,
+      leave: leave || enter,
+      state: 'inactive'
     };
     return _this;
   }
 
   (0, _createClass3.default)(AnimateChild, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      var enter = nextProps.enter,
+          leave = nextProps.leave;
+
+      this.setState({ enter: enter, leave: leave || enter });
+      if (nextProps.visible !== this.props.visible) {
+        var _ref = nextProps.visible ? ['enter', 'active'] : ['leave', 'inactive'],
+            _ref2 = (0, _slicedToArray3.default)(_ref, 2),
+            nextState = _ref2[0],
+            lastState = _ref2[1];
+
+        this._delay(nextState, this._done.bind(this, lastState));
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      if (this._timer) {
+        clearTimeout(this._timer);
+        this._timer = undefined;
+      }
+    }
+  }, {
     key: 'componentWillAppear',
     value: function componentWillAppear(callback) {
-      this.enter(callback);
+      if (true === this.props.visible) {
+        this._delay('enter', callback);
+      }
     }
   }, {
     key: 'componentWillEnter',
     value: function componentWillEnter(callback) {
-      this.enter(callback);
+      if (true === this.props.visible) {
+        this._delay('enter', callback);
+      }
     }
   }, {
     key: 'componentDidAppear',
     value: function componentDidAppear() {
-      this.entered();
+      this._done('active');
     }
   }, {
     key: 'componentDidEnter',
     value: function componentDidEnter() {
-      this.entered();
+      this._done('active');
     }
   }, {
     key: 'componentWillLeave',
     value: function componentWillLeave(callback) {
-      this.leave(callback);
+      this._delay('leave', callback);
     }
   }, {
-    key: 'enter',
-    value: function enter(callback) {
-      var _props = this.props,
-          _props$enter = _props.enter,
-          enterAnimation = _props$enter.animation,
-          delay = _props$enter.delay,
-          leaveAnimation = _props.leave.animation;
-
-      var node = _reactDom2.default.findDOMNode(this);
-
-      var enterClass = enterAnimation;
-      var leaveClass = leaveAnimation || enterAnimation;
-      this.setState({ enterClass: enterClass });
-      this.setState({ leaveClass: leaveClass });
-
-      if (node) {
-        node.style.transitionDuration = '';
-        node.classList.remove('animate', leaveClass + '--leave');
-        node.classList.add(enterClass + '--enter');
-        setTimeout(callback, delay || 50);
-      }
+    key: 'componentDidLeave',
+    value: function componentDidLeave(callback) {
+      this._done('inactive');
     }
   }, {
-    key: 'entered',
-    value: function entered() {
-      var duration = this.props.enter.duration;
+    key: '_delay',
+    value: function _delay(state, callback) {
+      var delay = this.state[state].delay;
+      // ensure we start out inactive in case we aren't being kept in the DOM
 
-      var node = _reactDom2.default.findDOMNode(this);
-      var enterClass = this.state.enterClass;
-      node.classList.remove(enterClass + '--enter');
-      if (duration) {
-        node.style.transitionDuration = duration + 'ms';
+      if ('enter' === state) {
+        this.setState({ state: 'inactive ' });
       }
-      node.classList.add('animate', enterClass + '--enter-active');
-      setTimeout(function () {
-        node.style.transitionDuration = '';
-        node.classList.remove('animate');
-      }, parseFloat(getComputedStyle(node).transitionDuration) * 1000);
+      clearTimeout(this._timer);
+      this._timer = setTimeout(this._start.bind(this, state, callback), delay || 1);
     }
   }, {
-    key: 'leave',
-    value: function leave(callback) {
-      var _this2 = this;
+    key: '_start',
+    value: function _start(state, callback) {
+      var duration = this.state[state].duration;
 
-      var _props$leave = this.props.leave,
-          duration = _props$leave.duration,
-          delay = _props$leave.delay;
-
-      var node = _reactDom2.default.findDOMNode(this);
-
-      if (duration) {
-        node.style.transitionDuration = duration + 'ms';
-      }
-
-      return setTimeout(function () {
-        node.classList.remove(_this2.state.enterClass + '--enter-active');
-        node.classList.add('animate', _this2.state.leaveClass + '--leave');
-        setTimeout(callback, parseFloat(getComputedStyle(node).transitionDuration) * 1000);
-      }, delay);
+      this.setState({ state: state });
+      this._timer = setTimeout(callback, duration);
+    }
+  }, {
+    key: '_done',
+    value: function _done(state) {
+      this.setState({ state: state });
     }
   }, {
     key: 'render',
     value: function render() {
-      return this.props.children;
+      var children = this.props.children;
+      var _state = this.state,
+          enter = _state.enter,
+          leave = _state.leave,
+          state = _state.state;
+
+      var animation = (this.state[state] || this.state.enter).animation;
+      var className = (0, _classnames2.default)(CLASS_ROOT + '__child', CLASS_ROOT + '__child--' + animation, CLASS_ROOT + '__child--' + state);
+      var duration = 'enter' === state || 'inactive' === state ? enter.duration : leave.duration;
+      var style = { transitionDuration: (duration || 0) + 'ms' };
+      return _react2.default.createElement(
+        'div',
+        { className: className, style: style },
+        children
+      );
     }
   }]);
   return AnimateChild;
@@ -176,17 +196,17 @@ AnimateChild.propTypes = {
     animation: _react.PropTypes.string,
     duration: _react.PropTypes.number,
     delay: _react.PropTypes.number
-  }),
+  }).isRequired,
   leave: _react.PropTypes.shape({
     animation: _react.PropTypes.string,
     duration: _react.PropTypes.number,
     delay: _react.PropTypes.number
-  })
+  }),
+  visible: _react.PropTypes.bool
 };
 
 AnimateChild.defaultProps = {
-  enter: {},
-  leave: {}
+  visible: false
 };
 
 var Animate = function (_Component2) {
@@ -195,90 +215,110 @@ var Animate = function (_Component2) {
   function Animate(props, context) {
     (0, _classCallCheck3.default)(this, Animate);
 
-    var _this3 = (0, _possibleConstructorReturn3.default)(this, (Animate.__proto__ || (0, _getPrototypeOf2.default)(Animate)).call(this, props, context));
+    var _this2 = (0, _possibleConstructorReturn3.default)(this, (Animate.__proto__ || (0, _getPrototypeOf2.default)(Animate)).call(this, props, context));
 
-    _this3.state = {
-      animationState: 'enter',
-      animation: props.enter.animation
-    };
-    return _this3;
+    _this2._checkScroll = _this2._checkScroll.bind(_this2);
+    _this2.state = { visible: true === props.visible };
+    return _this2;
   }
 
   (0, _createClass3.default)(Animate, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if ('scroll' === this.props.visible) {
+        this._listenForScroll();
+      }
+    }
+  }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
+      var visible = this.props.visible;
+
+      if (visible !== nextProps.visible) {
+        if ('scroll' === visible) {
+          this._unlistenForScroll();
+        } else if ('scroll' === nextProps.visible) {
+          this._listenForScroll();
+        }
+        this.setState({ visible: true === nextProps.visible });
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      if ('scroll' === this.props.visible) {
+        this._unlistenForScroll();
+      }
+    }
+  }, {
+    key: '_listenForScroll',
+    value: function _listenForScroll() {
+      var _this3 = this;
+
+      this._scrollParents = (0, _DOM.findScrollParents)(this);
+      this._scrollParents.forEach(function (scrollParent) {
+        scrollParent.addEventListener('scroll', _this3._checkScroll);
+      });
+    }
+  }, {
+    key: '_unlistenForScroll',
+    value: function _unlistenForScroll() {
       var _this4 = this;
 
-      var _props2 = this.props,
-          visible = _props2.visible,
-          keep = _props2.keep;
-      var animationState = this.state.animationState;
-
-
-      if (keep && visible !== nextProps.visible) {
-        var state = '';
-        if (!nextProps.visible) {
-          state = animationState === 'leave' ? 'enter' : 'leave';
+      this._scrollParents.forEach(function (scrollParent) {
+        scrollParent.removeEventListener('scroll', _this4._checkScroll);
+      });
+      this._scrollParents = undefined;
+    }
+  }, {
+    key: '_checkScroll',
+    value: function _checkScroll() {
+      var group = (0, _reactDom.findDOMNode)(this);
+      var rect = group.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        if (!this.state.visible) {
+          this.setState({ visible: true });
         }
-
-        var animateState = nextProps[state] || nextProps.enter;
-        this.setState({
-          animationState: state,
-          animation: state ? animateState.animation : ''
-        });
-
-        // Reset animation state back to enter after leave animation is finished
-        if (state === 'leave') {
-          var node = _reactDom2.default.findDOMNode(this);
-          clearTimeout(this.animationTimer);
-          this.animationTimer = setTimeout(function () {
-            _this4.setState({
-              animationState: 'enter',
-              animation: nextProps.enter.animation
-            });
-          }, (parseFloat(getComputedStyle(node).transitionDuration) + parseFloat(getComputedStyle(node).transitionDelay)) * 1000);
+      } else {
+        if (this.state.visible) {
+          this.setState({ visible: false });
         }
       }
     }
   }, {
     key: 'render',
     value: function render() {
-      var _props3 = this.props,
-          enter = _props3.enter,
-          leave = _props3.leave,
-          className = _props3.className,
-          children = _props3.children,
-          component = _props3.component,
-          visible = _props3.visible,
-          keep = _props3.keep,
-          style = _props3.style,
-          props = (0, _objectWithoutProperties3.default)(_props3, ['enter', 'leave', 'className', 'children', 'component', 'visible', 'keep', 'style']);
+      var _props = this.props,
+          enter = _props.enter,
+          leave = _props.leave,
+          className = _props.className,
+          children = _props.children,
+          component = _props.component,
+          keep = _props.keep,
+          props = (0, _objectWithoutProperties3.default)(_props, ['enter', 'leave', 'className', 'children', 'component', 'keep']);
+
+      delete props.visible;
+      var visible = this.state.visible;
 
 
-      var animateChildren = _react2.default.Children.map(children, function (child, index) {
-        var key = child && child.key ? child.key : 'animate-' + index;
-        return _react2.default.createElement(
-          AnimateChild,
-          { key: key, enter: enter, leave: leave },
-          child
-        );
-      });
+      var classes = (0, _classnames2.default)(CLASS_ROOT, className);
 
-      var classes = className;
-      var styles = (0, _extends3.default)({}, style);
-      if (keep) {
-        classes = (0, _classnames3.default)(CLASS_ROOT, className, (0, _defineProperty3.default)({}, this.state.animation + '--' + this.state.animationState, !visible));
-        styles = (0, _extends3.default)({}, style, {
-          transitionDuration: enter.duration + 'ms',
-          transitionDelay: enter.delay + 'ms'
+      var animateChildren = void 0;
+      if (keep || visible) {
+        animateChildren = _react2.default.Children.map(children, function (child, index) {
+          return _react2.default.createElement(
+            AnimateChild,
+            { key: index, enter: enter, leave: leave,
+              visible: visible },
+            child
+          );
         });
       }
 
       return _react2.default.createElement(
         _reactAddonsTransitionGroup2.default,
-        (0, _extends3.default)({}, props, { className: classes,
-          component: component || 'div', style: styles }),
-        (visible || visible === undefined || keep) && animateChildren
+        (0, _extends3.default)({}, props, { className: classes, component: component }),
+        animateChildren
       );
     }
   }]);
@@ -289,7 +329,7 @@ Animate.displayName = 'Animate';
 exports.default = Animate;
 ;
 
-var ANIMATIONS = ['fade', 'slide-up', 'slide-down', 'slide-left', 'slide-right'];
+var ANIMATIONS = ['fade', 'slide-up', 'slide-down', 'slide-left', 'slide-right', 'jiggle'];
 
 Animate.propTypes = {
   component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.func]),
@@ -304,6 +344,12 @@ Animate.propTypes = {
     duration: _react.PropTypes.number,
     delay: _react.PropTypes.number
   }),
-  visible: _react.PropTypes.bool
+  visible: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(['scroll']), _react.PropTypes.bool])
+};
+
+Animate.defaultProps = {
+  component: 'div',
+  enter: { animation: 'fade', duration: 300 },
+  visible: true
 };
 module.exports = exports['default'];

@@ -11,6 +11,7 @@ exports.default = {
   ACCORDION: namespace + 'accordion',
   ACCORDION_PANEL: namespace + 'accordion-panel',
   ANCHOR: namespace + 'anchor',
+  ANIMATE: namespace + 'animate',
   APP: namespace + 'app',
   ARTICLE: namespace + 'article',
   ATTRIBUTE: namespace + 'attribute',

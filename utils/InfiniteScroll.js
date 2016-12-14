@@ -34,14 +34,14 @@ function _onScroll(scrollState) {
   // delay a bit to ride out quick users
   clearTimeout(scrollState.scrollTimer);
   scrollState.scrollTimer = setTimeout(function () {
-    _evaluate(scrollState);
+    return _evaluate(scrollState);
   }, SCROLL_MORE_DELAY);
 }
 
 function _onResize(scrollState) {
   clearTimeout(scrollState.scrollTimer);
   scrollState.scrollTimer = setTimeout(function () {
-    _evaluate(scrollState);
+    return _evaluate(scrollState);
   }, SCROLL_MORE_DELAY);
 }
 

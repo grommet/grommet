@@ -1,3 +1,5 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
 // Settings
 @import "inuit-defaults/settings.defaults";
 @import "settings.defaults";
@@ -9,6 +11,7 @@
 @import "inuit-functions/tools.functions";
 @import "inuit-mixins/tools.mixins";
 @import "inuit-responsive-tools/tools.responsive";
+@import "tools.animation";
 @import "tools.color-index";
 @import "tools.icon";
 @import "tools.input";
