@@ -50,8 +50,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = require('react-dom');
 
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
 var _classnames3 = require('classnames');
 
 var _classnames4 = _interopRequireDefault(_classnames3);
@@ -162,7 +160,7 @@ var MenuDrop = function (_Component) {
   }, {
     key: '_processTab',
     value: function _processTab(event) {
-      var container = _reactDom2.default.findDOMNode(this.menuDropRef);
+      var container = (0, _reactDom.findDOMNode)(this.menuDropRef);
       var items = container.getElementsByTagName('*');
       items = (0, _DOM.filterByFocusable)(items);
 
@@ -184,7 +182,7 @@ var MenuDrop = function (_Component) {
     key: '_onUpKeyPress',
     value: function _onUpKeyPress(event) {
       event.preventDefault();
-      var container = _reactDom2.default.findDOMNode(this.navContainerRef);
+      var container = (0, _reactDom.findDOMNode)(this.navContainerRef);
       var menuItems = container.childNodes;
       if (!this.activeMenuItem) {
         var lastMenuItem = menuItems[menuItems.length - 1];
@@ -214,7 +212,7 @@ var MenuDrop = function (_Component) {
     key: '_onDownKeyPress',
     value: function _onDownKeyPress(event) {
       event.preventDefault();
-      var container = _reactDom2.default.findDOMNode(this.navContainerRef);
+      var container = (0, _reactDom.findDOMNode)(this.navContainerRef);
       var menuItems = container.childNodes;
       if (!this.activeMenuItem) {
         this.activeMenuItem = menuItems[0];
@@ -401,7 +399,7 @@ var Menu = function (_Component2) {
             _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
             document.addEventListener('click', this._checkOnClose);
             document.addEventListener('touchstart', this._checkOnClose);
-            this._drop = _Drop2.default.add(this.controlRef, this._renderMenuDrop(), {
+            this._drop = _Drop2.default.add((0, _reactDom.findDOMNode)(this._controlRef), this._renderMenuDrop(), {
               align: this.props.dropAlign,
               colorIndex: this.props.dropColorIndex,
               focusControl: true
@@ -438,7 +436,7 @@ var Menu = function (_Component2) {
   }, {
     key: '_checkOnClose',
     value: function _checkOnClose(event) {
-      var drop = _reactDom2.default.findDOMNode(this._menuDrop);
+      var drop = (0, _reactDom.findDOMNode)(this._menuDrop);
       if (drop && !drop.contains(event.target)) {
         this._onClose();
       }
@@ -581,14 +579,13 @@ var Menu = function (_Component2) {
         var openLabel = _Intl2.default.getMessage(this.context.intl, 'Open');
         var _menuLabel = _Intl2.default.getMessage(this.context.intl, 'Menu');
         var menuTitle = openLabel + ' ' + (a11yTitle || label || '') + ' ' + ('' + _menuLabel);
-        delete props.colorIndex;
 
         return _react2.default.createElement(
-          'div',
-          { ref: function ref(_ref4) {
-              return _this5.controlRef = _ref4;
-            } },
-          _react2.default.createElement(_Button2.default, (0, _extends3.default)({}, props, { className: classes, plain: true, reverse: true,
+          _Box2.default,
+          (0, _extends3.default)({ ref: function ref(_ref4) {
+              return _this5._controlRef = _ref4;
+            } }, props, { className: classes }),
+          _react2.default.createElement(_Button2.default, (0, _extends3.default)({ plain: true, reverse: true,
             a11yTitle: menuTitle }, this._renderButtonProps(), {
             onClick: this._onOpen,
             onFocus: this._onFocusControl, onBlur: this._onBlurControl }))
