@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
+import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import { filterByFocusable } from '../utils/DOM';
@@ -66,7 +66,7 @@ class MenuDrop extends Component {
   }
 
   _processTab (event) {
-    let container = ReactDOM.findDOMNode(this.menuDropRef);
+    let container = findDOMNode(this.menuDropRef);
     let items = container.getElementsByTagName('*');
     items = filterByFocusable(items);
 
@@ -87,7 +87,7 @@ class MenuDrop extends Component {
 
   _onUpKeyPress (event) {
     event.preventDefault();
-    const container = ReactDOM.findDOMNode(this.navContainerRef);
+    const container = findDOMNode(this.navContainerRef);
     let menuItems = container.childNodes;
     if (!this.activeMenuItem) {
       let lastMenuItem = menuItems[menuItems.length - 1];
@@ -117,7 +117,7 @@ class MenuDrop extends Component {
 
   _onDownKeyPress (event) {
     event.preventDefault();
-    const container = ReactDOM.findDOMNode(this.navContainerRef);
+    const container = findDOMNode(this.navContainerRef);
     let menuItems = container.childNodes;
     if (!this.activeMenuItem) {
       this.activeMenuItem = menuItems[0];
@@ -305,7 +305,7 @@ export default class Menu extends Component {
           );
           document.addEventListener('click', this._checkOnClose);
           document.addEventListener('touchstart', this._checkOnClose);
-          this._drop = Drop.add(this.controlRef,
+          this._drop = Drop.add(findDOMNode(this._controlRef),
             this._renderMenuDrop(),
             {
               align: this.props.dropAlign,
@@ -340,7 +340,7 @@ export default class Menu extends Component {
   }
 
   _checkOnClose (event) {
-    const drop = ReactDOM.findDOMNode(this._menuDrop);
+    const drop = findDOMNode(this._menuDrop);
     if (drop && !drop.contains(event.target)) {
       this._onClose();
     }
@@ -478,15 +478,14 @@ export default class Menu extends Component {
         `${openLabel} ${a11yTitle || label || ''} ` +
         `${menuLabel}`
       );
-      delete props.colorIndex;
 
       return (
-        <div ref={ref => this.controlRef = ref}>
-          <Button {...props} className={classes} plain={true} reverse={true}
+        <Box ref={ref => this._controlRef = ref} {...props} className={classes}>
+          <Button plain={true} reverse={true}
             a11yTitle={menuTitle} {...this._renderButtonProps()}
             onClick={this._onOpen}
             onFocus={this._onFocusControl} onBlur={this._onBlurControl} />
-        </div>
+        </Box>
       );
 
     }
