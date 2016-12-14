@@ -243,6 +243,10 @@ export default class TextInput extends Component {
       }
     }
 
+    if(event.keyCode === tab){
+        this.setState( { focused: false });
+    }
+
     if (onKeyDown) {
       onKeyDown(event);
     }
