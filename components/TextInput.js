@@ -323,6 +323,7 @@ var TextInput = function (_Component) {
       if (suggestions) {
         var up = 38;
         var down = 40;
+        var tab = 9;
         if (event.keyCode === up || event.keyCode === down) {
           // stop the input to move the cursor when suggestions are present
           event.preventDefault();
@@ -330,6 +331,10 @@ var TextInput = function (_Component) {
           if (event.keyCode === down && !dropActive) {
             this._onAddDrop(event);
           }
+        }
+
+        if (event.keyCode === tab) {
+          this.setState({ focused: false });
         }
       }
 
