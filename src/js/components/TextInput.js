@@ -228,6 +228,7 @@ export default class TextInput extends Component {
     if (suggestions) {
       const up = 38;
       const down = 40;
+      const tab = 9;
       if (event.keyCode === up || event.keyCode === down) {
         // stop the input to move the cursor when suggestions are present
         event.preventDefault();
@@ -235,6 +236,10 @@ export default class TextInput extends Component {
         if (event.keyCode === down && !dropActive) {
           this._onAddDrop(event);
         }
+      }
+
+      if(event.keyCode === tab) {
+        this.setState({ focused: false });
       }
     }
 
