@@ -62,7 +62,7 @@ export default class Spiral extends Graphic {
   }
 
   _renderTopLayer () {
-    const { activeIndex } = this.props;
+    const { activeIndex, onActivate } = this.props;
     const { viewBoxRadius } = this.state;
     const x = viewBoxRadius + (RING_THICKNESS * 0.5);
     let y = viewBoxRadius + (RING_THICKNESS * 1.75);
@@ -79,13 +79,19 @@ export default class Spiral extends Graphic {
 
       y += RING_THICKNESS;
 
+      let hoverEvents;
+      if (onActivate) {
+        hoverEvents = {
+          onMouseOver: this.props.onActivate.bind(null, index),
+          onMouseOut: this.props.onActivate.bind(null, null)
+        };
+      }
+
       return (
         <text key={item.label || index} x={textX} y={textY}
           textAnchor="start" fontSize={16}
           className={classes}
-          onMouseOver={this.props.onActivate.bind(null, index)}
-          onMouseOut={this.props.onActivate.bind(null, null)}
-          onClick={item.onClick} >
+          onClick={item.onClick} {...hoverEvents}>
           {item.label}
         </text>
       );
