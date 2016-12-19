@@ -111,11 +111,11 @@ export default class Legend extends Component {
   }
 
   _seriesTotal () {
-    const { series } = this.props;
+    const { series, precision } = this.props;
     let total = 0;
     series.forEach(item =>
       total += typeof item.value === 'number' ? item.value  : 0 );
-    return total;
+    return Number(total.toFixed(precision));
   }
 
   _renderSeries () {
@@ -207,6 +207,7 @@ export default class Legend extends Component {
     delete props.announce;
     delete props.onActive;
     delete props.units;
+    delete props.precision;
 
     const classes = classnames(
       CLASS_ROOT,
@@ -270,5 +271,6 @@ Legend.propTypes = {
       prefix: PropTypes.string,
       suffix: PropTypes.string
     })
-  ])
+  ]),
+  precision: PropTypes.number
 };
