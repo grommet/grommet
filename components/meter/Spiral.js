@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
@@ -112,7 +116,9 @@ var Spiral = function (_Graphic) {
     value: function _renderTopLayer() {
       var _this2 = this;
 
-      var activeIndex = this.props.activeIndex;
+      var _props = this.props,
+          activeIndex = _props.activeIndex,
+          onActivate = _props.onActivate;
       var viewBoxRadius = this.state.viewBoxRadius;
 
       var x = viewBoxRadius + RING_THICKNESS * 0.5;
@@ -125,14 +131,20 @@ var Spiral = function (_Graphic) {
 
         y += RING_THICKNESS;
 
+        var hoverEvents = void 0;
+        if (onActivate) {
+          hoverEvents = {
+            onMouseOver: _this2.props.onActivate.bind(null, index),
+            onMouseOut: _this2.props.onActivate.bind(null, null)
+          };
+        }
+
         return _react2.default.createElement(
           'text',
-          { key: item.label || index, x: textX, y: textY,
+          (0, _extends3.default)({ key: item.label || index, x: textX, y: textY,
             textAnchor: 'start', fontSize: 16,
             className: classes,
-            onMouseOver: _this2.props.onActivate.bind(null, index),
-            onMouseOut: _this2.props.onActivate.bind(null, null),
-            onClick: item.onClick },
+            onClick: item.onClick }, hoverEvents),
           item.label
         );
       });

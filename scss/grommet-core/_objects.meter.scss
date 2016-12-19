@@ -22,6 +22,7 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 }
 
 .#{$grommet-namespace}meter__hot {
+  cursor: pointer;
   stroke-width: double($meter-slice-active-width);
   stroke: rgba(0, 0, 0, 0.001);
 }
