@@ -127,8 +127,9 @@ export default class Legend extends Component {
     const { series } = this.props;
     const maxDecimalDigits = getMaxDecimalDigits(series);
     let total = 0;
-    series.forEach(item => (
-      total += (typeof item.value === 'number' ? item.value : 0) * maxDecimalDigits );
+    series.forEach(item => 
+      total += (typeof item.value === 'number' ?
+       item.value : 0) * maxDecimalDigits );
     return total / maxDecimalDigits;
   }
 
