@@ -70,6 +70,19 @@ var CLASS_ROOT = _CSSClassnames2.default.LEGEND; // (C) Copyright 2014-2016 Hewl
 
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
+function getMaxDecimalDigits(series) {
+  var maxDigits = 0;
+  series.forEach(function (item) {
+    var currentDigitsGroup = /\.(\d*)$/.exec(item.value.toString());
+    if (currentDigitsGroup) {
+      var currentDigits = currentDigitsGroup[1].length;
+      maxDigits = Math.max(maxDigits, currentDigits);
+    }
+  });
+
+  return Math.pow(10, maxDigits);
+}
+
 var Legend = function (_Component) {
   (0, _inherits3.default)(Legend, _Component);
 
@@ -187,11 +200,12 @@ var Legend = function (_Component) {
     value: function _seriesTotal() {
       var series = this.props.series;
 
+      var maxDecimalDigits = getMaxDecimalDigits(series);
       var total = 0;
       series.forEach(function (item) {
-        return total += typeof item.value === 'number' ? item.value : 0;
+        return total += (typeof item.value === 'number' ? item.value : 0) * maxDecimalDigits;
       });
-      return total;
+      return total / maxDecimalDigits;
     }
   }, {
     key: '_renderSeries',
