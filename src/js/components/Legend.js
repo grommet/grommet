@@ -11,6 +11,19 @@ import Announcer from '../utils/Announcer';
 const CLASS_ROOT = CSSClassnames.LEGEND;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
+function getMaxDecimalDigits(series) {
+  let maxDigits = 0;
+  series.forEach((item) => {
+    const currentDigitsGroup = /\.(\d*)$/.exec(item.value.toString());
+    if (currentDigitsGroup) {
+      const currentDigits = currentDigitsGroup[1].length;
+      maxDigits = Math.max(maxDigits, currentDigits);
+    }
+  });
+
+  return Math.pow(10, maxDigits);
+}
+
 export default class Legend extends Component {
 
   constructor(props, context) {
@@ -112,10 +125,12 @@ export default class Legend extends Component {
 
   _seriesTotal () {
     const { series } = this.props;
+    const maxDecimalDigits = getMaxDecimalDigits(series);
     let total = 0;
-    series.forEach(item =>
-      total += typeof item.value === 'number' ? item.value  : 0 );
-    return total;
+    series.forEach(item => 
+      total += (typeof item.value === 'number' ?
+       item.value : 0) * maxDecimalDigits );
+    return total / maxDecimalDigits;
   }
 
   _renderSeries () {
