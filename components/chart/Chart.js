@@ -158,9 +158,9 @@ var Chart = function (_Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      if (this.props.vertical !== nextProps.vertical) {
-        this.setState({ layoutNeeded: true });
-      }
+      // Always layout when new props come. This takes care of a contained
+      // Base having children that change.
+      this.setState({ layoutNeeded: true });
     }
   }, {
     key: 'componentDidUpdate',
