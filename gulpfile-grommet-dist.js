@@ -176,8 +176,8 @@ module.exports = function(gulp) {
   gulp.task('dist-bower:preprocess', ['generate-index-icons'], (done) => {
     del.sync(['dist-bower']);
 
-    distCss('src/scss/grommet-core/*.scss', 'grommet.css');
-    distCss('src/scss/grommet-core/*.scss', 'grommet.min.css', true);
+    distCss('src/scss/vanilla/*.scss', 'grommet.css');
+    distCss('src/scss/vanilla/*.scss', 'grommet.min.css', true);
     distCss('src/scss/hpe/*.scss', 'grommet-hpe.css');
     distCss('src/scss/hpe/*.scss', 'grommet-hpe.min.css', true);
     distCss('src/scss/hpinc/*.scss', 'grommet-hpinc.css');
