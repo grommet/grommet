@@ -77,7 +77,8 @@ export default class Anchor extends Component {
         [`${CLASS_ROOT}--align-${align}`]: align,
         [`${CLASS_ROOT}--primary`]: primary,
         [`${CLASS_ROOT}--reverse`]: reverse,
-        [`${CLASS_ROOT}--active`]: (router && path && router.isActive(path, indexLink))
+        [`${CLASS_ROOT}--active`]: (router && path &&
+                                    router.isActive(path, indexLink))
       },
       className
     );
@@ -140,7 +141,9 @@ schema(Anchor, {
       }
     ],
     target: [PropTypes.string, 'Target of the link.'],
-    indexLink: [PropTypes.bool, 'If true, the link will not be set as active unless the path matches exactly.'],
+    indexLink: [PropTypes.bool, 'If true, the link will not be set' +
+      'as active unless the path matches exactly.'
+    ]
   }
 });
 
