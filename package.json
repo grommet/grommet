@@ -43,14 +43,14 @@
     "lodash": "^4.17.2",
     "markdown-to-jsx": "^4.0.3",
     "moment": "^2.13.0",
-    "node-sass": "^3.4.2",
+    "node-sass": "^4.1.1",
     "react": "^15.3.0",
     "react-addons-transition-group": "^15.3.0",
     "react-desc": "^1.0.0",
     "react-dom": "^15.3.0",
     "react-intl": "^2.1.2",
     "react-router": "2 - 3",
-    "superagent": "^2.2.0"
+    "superagent": "^3.3.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.0.0",
@@ -70,7 +70,7 @@
     "gulp-if": "^2.0.0",
     "gulp-prompt": "^0.2.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.2.0",
+    "gulp-sass": "^3.0.0",
     "guppy-pre-commit": "^0.4.0",
     "react-test-renderer": "^15.3.0",
     "mkdirp": "^0.5.1",
