@@ -14,9 +14,9 @@ var _isInteger2 = _interopRequireDefault(_isInteger);
 
 exports.normalize = normalize;
 
-var _zip = require('lodash/zip');
+var _lodash = require('lodash.zip');
 
-var _zip2 = _interopRequireDefault(_zip);
+var _lodash2 = _interopRequireDefault(_lodash);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -197,7 +197,7 @@ function normalize(Series, granularity) {
   if (!Array.isArray(Series[0][0])) {
     (function () {
       var seriesYValues = [];
-      var SeriesZip = _zip2.default.apply(undefined, (0, _toConsumableArray3.default)(Series));
+      var SeriesZip = _lodash2.default.apply(undefined, (0, _toConsumableArray3.default)(Series));
       xAxis.map(function (xValue) {
         var index = SeriesZip[0].indexOf(xValue);
         if (index > -1) {
@@ -211,7 +211,7 @@ function normalize(Series, granularity) {
   } else {
     Series.map(function (series) {
       var seriesYValues = [];
-      var seriesZip = _zip2.default.apply(undefined, (0, _toConsumableArray3.default)(series));
+      var seriesZip = _lodash2.default.apply(undefined, (0, _toConsumableArray3.default)(series));
       xAxis.map(function (xValue) {
         var index = seriesZip[0].indexOf(xValue);
         if (index > -1) {
