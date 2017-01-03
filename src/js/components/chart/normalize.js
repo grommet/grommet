@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import zip from 'lodash/zip';
+import zip from 'lodash.zip';
 
 /**
  * The normalize util includes a normalize method in order to help
