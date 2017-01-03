@@ -7,6 +7,7 @@ cache:
   - node_modules
 before_script:
 - npm install -g codeclimate-test-reporter
+- npm rebuild node-sass
 - gulp generate-index-icons
 - gulp preprocess
 - gulp dist-css
