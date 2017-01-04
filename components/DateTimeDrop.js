@@ -337,6 +337,7 @@ var DateTimeDrop = function (_Component) {
   }, {
     key: '_onPrevious',
     value: function _onPrevious(scope) {
+      var notify = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
       var _props3 = this.props,
           format = _props3.format,
           step = _props3.step,
@@ -358,11 +359,14 @@ var DateTimeDrop = function (_Component) {
           (0, _Announcer.announce)(newValue.format(format));
         }
       });
-      onChange(newValue.format(format));
+      if (notify) {
+        onChange(newValue.format(format));
+      }
     }
   }, {
     key: '_onNext',
     value: function _onNext(scope) {
+      var notify = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
       var _props4 = this.props,
           format = _props4.format,
           step = _props4.step,
@@ -384,7 +388,9 @@ var DateTimeDrop = function (_Component) {
           (0, _Announcer.announce)(newValue.format(format));
         }
       });
-      onChange(newValue.format(format));
+      if (notify) {
+        onChange(newValue.format(format));
+      }
     }
   }, {
     key: '_renderGrid',
@@ -513,7 +519,7 @@ var DateTimeDrop = function (_Component) {
         { key: 'header', justify: 'between', colorIndex: 'neutral-1' },
         _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__previous',
           icon: _react2.default.createElement(_LinkPrevious2.default, null), a11yTitle: previousMonthMessage,
-          onClick: this._onPrevious.bind(this, 'month') }),
+          onClick: this._onPrevious.bind(this, 'month', false) }),
         _react2.default.createElement(
           _Title2.default,
           { className: CLASS_ROOT + '__title', responsive: false },
@@ -521,7 +527,7 @@ var DateTimeDrop = function (_Component) {
         ),
         _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__next', icon: _react2.default.createElement(_LinkNext2.default, null),
           a11yTitle: nextMonthMessage,
-          onClick: this._onNext.bind(this, 'month') })
+          onClick: this._onNext.bind(this, 'month', false) })
       ), grid, _react2.default.createElement(
         _Box2.default,
         { key: 'today', alignSelf: 'center', pad: { vertical: 'small' } },
