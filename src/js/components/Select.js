@@ -441,7 +441,8 @@ const valueType = PropTypes.oneOfType([
     label: PropTypes.node,
     value: PropTypes.any
   }),
-  PropTypes.string
+  PropTypes.string,
+  PropTypes.number
 ]);
 
 Select.propTypes = {
