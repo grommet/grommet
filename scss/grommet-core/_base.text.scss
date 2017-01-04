@@ -37,7 +37,7 @@
   }
 
   dd,
-  li:not(.#{$grommet-namespace}list-item) {
+  li:not([class^="#{$grommet-namespace}"]) {
     max-width: $readable-text-width;
     margin-left: 0px;
     @include text();

@@ -62,10 +62,16 @@
   border-top-right-radius: 0px;
 
   .#{$grommet-namespace}select__option {
+    @include text();
     padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
 
     &:hover,
     &--active {
+      background-color: $hover-background-color;
+    }
+
+    &--selected {
+      color: $hover-text-color;
       background-color: $hover-background-color;
     }
   }

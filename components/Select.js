@@ -391,7 +391,19 @@ var Select = function (_Component) {
   }, {
     key: '_renderLabel',
     value: function _renderLabel(option, announce) {
-      if ((typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
+      var intl = this.context.intl;
+
+      if (Array.isArray(option)) {
+        // Could be an Array when !inline+multiple
+        if (1 === option.length) {
+          return this._renderLabel(option[0]);
+        } else if (option.length > 1) {
+          var selectedMultiple = _Intl2.default.getMessage(intl, 'Selected Multiple', {
+            count: option.length
+          });
+          return selectedMultiple;
+        }
+      } else if ((typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
         // revert for announce as label is often a complex object
         return announce ? option.value || option.label || '' : option.label || option.value || '';
       } else {
@@ -468,7 +480,8 @@ var Select = function (_Component) {
         items = options.map(function (option, index) {
           var _classnames;
 
-          var classes = (0, _classnames4.default)((_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__option', true), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__option--active', index === activeOptionIndex), _classnames));
+          var selected = _this4._optionSelected(option, value);
+          var classes = (0, _classnames4.default)((_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__option', true), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__option--selected', selected), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__option--active', index === activeOptionIndex), _classnames));
 
           var content = _this4._renderLabel(option);
           if (option.icon) {
@@ -484,9 +497,8 @@ var Select = function (_Component) {
           var itemOnClick = void 0;
           if (inline) {
             var itemId = id + '-' + (option.value || option);
-            var checked = _this4._optionSelected(option, value);
             var Type = multiple ? _CheckBox2.default : _RadioButton2.default;
-            content = _react2.default.createElement(Type, { key: itemId, id: itemId, label: content, checked: checked,
+            content = _react2.default.createElement(Type, { key: itemId, id: itemId, label: content, checked: selected,
               onChange: _this4._onClickOption.bind(_this4, option) });
           } else {
             itemOnClick = _this4._onClickOption.bind(_this4, option);
@@ -551,21 +563,6 @@ var Select = function (_Component) {
             icon: _react2.default.createElement(_CaretDown2.default, null), onClick: this._onAddDrop })
         );
       }
-
-      return _react2.default.createElement(
-        'div',
-        { ref: function ref(_ref5) {
-            return _this5.componentRef = _ref5;
-          }, className: classes,
-          onClick: onClick },
-        _react2.default.createElement('input', (0, _extends3.default)({}, restProps, { ref: function ref(_ref4) {
-            return _this5.inputRef = _ref4;
-          },
-          className: INPUT + ' ' + CLASS_ROOT + '__input',
-          disabled: true, value: this._renderLabel(value) })),
-        button,
-        drop
-      );
     }
   }]);
   return Select;

@@ -102,6 +102,7 @@ exports.default = (0, _extends3.default)({
   second: 'second',
   'Select Icon': 'Open Select Drop',
   Selected: 'Selected',
+  'Selected Multiple': '{count, plural,\n      =0 {none}\n      one {# value}\n      other {# values}\n  }',
   'Skip to': 'Skip to',
   'Slide Number': 'Slide {slideNumber}',
   Sort: 'Sort',
