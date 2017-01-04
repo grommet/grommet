@@ -15,6 +15,7 @@ export default {
   add: 'add',
   Alerts: 'Alerts',
   All: 'All',
+  ampm: 'ampm',
   Arc: 'Arc',
   AxisLabel: '{orientation} Axis',
   area: 'area',
@@ -38,6 +39,7 @@ export default {
   'Currently Active': 'Currently Active',
   'Date Selector': 'Date Selector',
   'Date Time Icon': 'Open Date and Time Selector',
+  day: 'day',
   Disabled: 'Disabled',
   Distribution: 'Distribution',
   Email: 'Email',
@@ -69,6 +71,7 @@ export default {
   model: 'Model',
   modified: 'Modified',
   monitor: 'monitor',
+  month: 'month',
   'Multi Select': 'Multi Select',
   Name: 'Name',
   'Navigation Help': 'Use arrow keys to navigate',
@@ -126,5 +129,6 @@ export default {
   Username: 'Username',
   uri: 'URI',
   Value: 'Value',
-  Warning: 'Warning'
+  Warning: 'Warning',
+  year: 'year'
 };

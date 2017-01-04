@@ -18,8 +18,20 @@ import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 
 const CLASS_ROOT = CSSClassnames.DATE_TIME_DROP;
 const WEEK_DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-const DATE_REGEXP = new RegExp('[MDY]');
+// const DATE_REGEXP = new RegExp('[DMY]');
+const DAY_REGEXP = new RegExp('[D]');
+const MONTHYEAR_REGEXP = new RegExp('[MY]');
 const TIME_REGEXP = new RegExp('[hHmsa]');
+const UNITS = {
+  M: 'month',
+  D: 'day',
+  Y: 'year',
+  h: 'hour',
+  H: 'hour',
+  m: 'minute',
+  s: 'second',
+  a: 'ampm'
+};
 
 export default class DateTimeDrop extends Component {
 
@@ -248,9 +260,12 @@ export default class DateTimeDrop extends Component {
     onChange(newValue.format(format));
   }
 
-  _renderDate () {
+  _renderGrid () {
     const { activeCell, dateRows, focus, mouseActive, value } = this.state;
     const { intl } = this.context;
+
+    const dateSelectorMessage = Intl.getMessage(intl, 'Date Selector');
+    const navigationHelpMessage = Intl.getMessage(intl, 'Navigation Help');
 
     const headerCells = WEEK_DAYS.map((day) => {
       return <th key={day}>{day}</th>;
@@ -291,29 +306,13 @@ export default class DateTimeDrop extends Component {
       return <tr key={`date_row_${rowIndex}`}>{days}</tr>;
     });
 
-    const previousMonthMessage = Intl.getMessage(intl, 'Previous Month');
-    const nextMonthMessage = Intl.getMessage(intl, 'Next Month');
-    const todayMessage = Intl.getMessage(intl, 'Today');
-    const dateSelectorMessage = Intl.getMessage(intl, 'Date Selector');
-    const navigationHelpMessage = Intl.getMessage(intl, 'Navigation Help');
-
     const gridClasses = classnames(
       `${CLASS_ROOT}__grid`, {
         [`${CLASS_ROOT}__grid--focus`]: focus
       }
     );
-    return [
-      <Header key='header' justify='between' colorIndex='neutral-1'>
-        <Button className={`${CLASS_ROOT}__previous`}
-          icon={<LinkPreviousIcon />} a11yTitle={previousMonthMessage}
-          onClick={this._onPrevious.bind(this, 'month')} />
-        <Title className={`${CLASS_ROOT}__title`} responsive={false}>
-          {value.format('MMMM YYYY')}
-        </Title>
-        <Button className={`${CLASS_ROOT}__next`} icon={<LinkNextIcon />}
-          a11yTitle={nextMonthMessage}
-          onClick={this._onNext.bind(this, 'month')} />
-      </Header>,
+
+    return (
       <div key='grid' className={gridClasses}>
         <table ref={(ref) => this.tableRef = ref} tabIndex='0'
           aria-label={`${dateSelectorMessage} (${navigationHelpMessage})`}
@@ -335,7 +334,36 @@ export default class DateTimeDrop extends Component {
             {rows}
           </tbody>
         </table>
-      </div>,
+      </div>
+    );
+  }
+
+  _renderCalendar () {
+    const { format } = this.props;
+    const { value } = this.state;
+    const { intl } = this.context;
+
+    const previousMonthMessage = Intl.getMessage(intl, 'Previous Month');
+    const nextMonthMessage = Intl.getMessage(intl, 'Next Month');
+    const todayMessage = Intl.getMessage(intl, 'Today');
+
+    const grid = (
+      format.match(/D/) ? this._renderGrid() : <span key='grid' />
+    );
+
+    return [
+      <Header key='header' justify='between' colorIndex='neutral-1'>
+        <Button className={`${CLASS_ROOT}__previous`}
+          icon={<LinkPreviousIcon />} a11yTitle={previousMonthMessage}
+          onClick={this._onPrevious.bind(this, 'month')} />
+        <Title className={`${CLASS_ROOT}__title`} responsive={false}>
+          {value.format('MMMM YYYY')}
+        </Title>
+        <Button className={`${CLASS_ROOT}__next`} icon={<LinkNextIcon />}
+          a11yTitle={nextMonthMessage}
+          onClick={this._onNext.bind(this, 'month')} />
+      </Header>,
+      grid,
       <Box key='today' alignSelf='center' pad={{vertical: 'small'}}>
         <Button className={`${CLASS_ROOT}__today`} label={todayMessage}
           onClick={this._onToday} />
@@ -343,80 +371,52 @@ export default class DateTimeDrop extends Component {
     ];
   }
 
-  _renderTime () {
+  _renderCounters (includeDate) {
     const { format } = this.props;
     const { value } = this.state;
     const { intl } = this.context;
+
+    // break the format up into chunks
+    let chunks = [];
+    let index = 0;
+    while (index < format.length) {
+      let chunk = format[index];
+      index += 1;
+      while (format[index] === chunk[0]) {
+        chunk += format[index];
+        index += 1;
+      }
+      chunks.push(chunk);
+    }
+
     const addMessage = Intl.getMessage(intl, 'Add');
     const subtractMessage = Intl.getMessage(intl, 'Subtract');
-    const hourMessage = Intl.getMessage(intl, 'hour');
-    const minuteMessage = Intl.getMessage(intl, 'minute');
-    const secondMessage = Intl.getMessage(intl, 'second');
-    let elements = [];
-    if (format.indexOf('h') !== -1) {
-      elements.push(
-        <Box key='hour' align='center'>
-          <Button icon={<SubtractIcon />}
-            a11yTitle={`${subtractMessage} ${hourMessage}`}
-            onClick={this._onPrevious.bind(this, 'hour')} />
-          {value.format('h')}
-          <Button icon={<AddIcon />}
-            a11yTitle={`${addMessage} ${hourMessage}`}
-            onClick={this._onNext.bind(this, 'hour')} />
-        </Box>
-      );
-    } else if (format.indexOf('H') !== -1) {
-      elements.push(
-        <Box key='hour' align='center'>
-          <Button icon={<SubtractIcon />}
-            a11yTitle={`${subtractMessage} ${hourMessage}`}
-            onClick={this._onPrevious.bind(this, 'hour')} />
-          {value.format('H')}
-          <Button icon={<AddIcon />}
-            a11yTitle={`${addMessage} ${hourMessage}`}
-            onClick={this._onNext.bind(this, 'hour')} />
-        </Box>
-      );
-    }
-    if (format.indexOf('m') !== -1) {
-      elements.push(
-        <Box key='minute' align='center'>
-          <Button icon={<SubtractIcon />}
-            a11yTitle={`${subtractMessage} ${minuteMessage}`}
-            onClick={this._onPrevious.bind(this, 'minute')} />
-          {value.format('mm')}
-          <Button icon={<AddIcon />}
-            a11yTitle={`${addMessage} ${minuteMessage}`}
-            onClick={this._onNext.bind(this, 'minute')} />
-        </Box>
-      );
-    }
-    if (format.indexOf('s') !== -1) {
-      elements.push(
-        <Box key='second' align='center'>
-          <Button icon={<SubtractIcon />}
-            a11yTitle={`${subtractMessage} ${secondMessage}`}
-            onClick={this._onPrevious.bind(this, 'second')} />
-          {value.format('ss')}
-          <Button icon={<AddIcon />}
-            a11yTitle={`${addMessage} ${secondMessage}`}
-            onClick={this._onNext.bind(this, 'second')} />
-        </Box>
-      );
-    }
-    if (format.indexOf('a') !== -1) {
-      elements.push(
-        <Box key='ampm' align='center'>
-          <Button icon={<SubtractIcon />}
-            a11yTitle={`${subtractMessage} am, pm`}
-            onClick={this._onPrevious.bind(this, 'ampm')} />
-          {value.format('a')}
-          <Button icon={<AddIcon />}
-            a11yTitle={`${addMessage} am, pm`}
-            onClick={this._onNext.bind(this, 'ampm')} />
-        </Box>
-      );
-    }
+
+    let elements = chunks.map((chunk, index) => {
+      const unit = UNITS[chunk[0]];
+      if (unit) {
+        const unitMessage = Intl.getMessage(intl, unit);
+        return (
+          <Box key={index} align='center'>
+            <Button icon={<SubtractIcon />}
+              a11yTitle={`${subtractMessage} ${unitMessage}`}
+              onClick={this._onPrevious.bind(this, unit)} />
+            {value.format('M' === chunk ? 'MMM' : chunk)}
+            <Button icon={<AddIcon />}
+              a11yTitle={`${addMessage} ${unitMessage}`}
+              onClick={this._onNext.bind(this, unit)} />
+          </Box>
+        );
+      } else {
+        return (
+          <Box key={index} align='center' justify='center'
+            className='secondary'>
+            {chunk}
+          </Box>
+        );
+      }
+    });
+
     return (
       <Box className={`${CLASS_ROOT}__time`} direction='row' alignSelf='center'
         responsive={false}>
@@ -428,19 +428,20 @@ export default class DateTimeDrop extends Component {
   render () {
     const { format } = this.props;
 
-    let date, time;
-    if (DATE_REGEXP.test(format)) {
-      date = this._renderDate();
+    let calendar, counters;
+    if (DAY_REGEXP.test(format)) {
+      calendar = this._renderCalendar();
     }
 
-    if (TIME_REGEXP.test(format)) {
-      time = this._renderTime();
+    if (TIME_REGEXP.test(format) ||
+      (MONTHYEAR_REGEXP.test(format) && ! DAY_REGEXP.test(format))) {
+      counters = this._renderCounters(! DAY_REGEXP.test(format));
     }
 
     return (
       <Box className={CLASS_ROOT}>
-        {date}
-        {time}
+        {calendar}
+        {counters}
       </Box>
     );
   }
