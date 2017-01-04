@@ -15,29 +15,33 @@ export default class Header extends Component {
     super(props, context);
 
     this._onResize = this._onResize.bind(this);
+    this._alignMirror = this._alignMirror.bind(this);
   }
 
   componentDidMount () {
     if (this.props.fixed) {
-      this._alignMirror();
       window.addEventListener('resize', this._onResize);
+      this._onResize();
     }
   }
 
   componentDidUpdate () {
     if (this.props.fixed) {
-      this._alignMirror();
+      this._onResize();
     }
   }
 
   componentWillUnmount () {
     if (this.props.fixed) {
+      clearTimeout(this._resizeTimer);
       window.removeEventListener('resize', this._onResize);
     }
   }
 
   _onResize () {
-    this._alignMirror();
+    // give just a little time for the DOM to stabilize
+    clearTimeout(this._resizeTimer);
+    this._resizeTimer = setTimeout(this._alignMirror, 10);
   }
 
   _alignMirror () {
