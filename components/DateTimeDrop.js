@@ -91,8 +91,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var CLASS_ROOT = _CSSClassnames2.default.DATE_TIME_DROP; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var WEEK_DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-var DATE_REGEXP = new RegExp('[MDY]');
+// const DATE_REGEXP = new RegExp('[DMY]');
+var DAY_REGEXP = new RegExp('[D]');
+var MONTHYEAR_REGEXP = new RegExp('[MY]');
 var TIME_REGEXP = new RegExp('[hHmsa]');
+var UNITS = {
+  M: 'month',
+  D: 'day',
+  Y: 'year',
+  h: 'hour',
+  H: 'hour',
+  m: 'minute',
+  s: 'second',
+  a: 'ampm'
+};
 
 var DateTimeDrop = function (_Component) {
   (0, _inherits3.default)(DateTimeDrop, _Component);
@@ -375,8 +387,8 @@ var DateTimeDrop = function (_Component) {
       onChange(newValue.format(format));
     }
   }, {
-    key: '_renderDate',
-    value: function _renderDate() {
+    key: '_renderGrid',
+    value: function _renderGrid() {
       var _this2 = this;
 
       var _state7 = this.state,
@@ -387,6 +399,9 @@ var DateTimeDrop = function (_Component) {
           value = _state7.value;
       var intl = this.context.intl;
 
+
+      var dateSelectorMessage = _Intl2.default.getMessage(intl, 'Date Selector');
+      var navigationHelpMessage = _Intl2.default.getMessage(intl, 'Navigation Help');
 
       var headerCells = WEEK_DAYS.map(function (day) {
         return _react2.default.createElement(
@@ -434,28 +449,9 @@ var DateTimeDrop = function (_Component) {
         );
       });
 
-      var previousMonthMessage = _Intl2.default.getMessage(intl, 'Previous Month');
-      var nextMonthMessage = _Intl2.default.getMessage(intl, 'Next Month');
-      var todayMessage = _Intl2.default.getMessage(intl, 'Today');
-      var dateSelectorMessage = _Intl2.default.getMessage(intl, 'Date Selector');
-      var navigationHelpMessage = _Intl2.default.getMessage(intl, 'Navigation Help');
-
       var gridClasses = (0, _classnames4.default)(CLASS_ROOT + '__grid', (0, _defineProperty3.default)({}, CLASS_ROOT + '__grid--focus', focus));
-      return [_react2.default.createElement(
-        _Header2.default,
-        { key: 'header', justify: 'between', colorIndex: 'neutral-1' },
-        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__previous',
-          icon: _react2.default.createElement(_LinkPrevious2.default, null), a11yTitle: previousMonthMessage,
-          onClick: this._onPrevious.bind(this, 'month') }),
-        _react2.default.createElement(
-          _Title2.default,
-          { className: CLASS_ROOT + '__title', responsive: false },
-          value.format('MMMM YYYY')
-        ),
-        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__next', icon: _react2.default.createElement(_LinkNext2.default, null),
-          a11yTitle: nextMonthMessage,
-          onClick: this._onNext.bind(this, 'month') })
-      ), _react2.default.createElement(
+
+      return _react2.default.createElement(
         'div',
         { key: 'grid', className: gridClasses },
         _react2.default.createElement(
@@ -496,7 +492,37 @@ var DateTimeDrop = function (_Component) {
             rows
           )
         )
-      ), _react2.default.createElement(
+      );
+    }
+  }, {
+    key: '_renderCalendar',
+    value: function _renderCalendar() {
+      var format = this.props.format;
+      var value = this.state.value;
+      var intl = this.context.intl;
+
+
+      var previousMonthMessage = _Intl2.default.getMessage(intl, 'Previous Month');
+      var nextMonthMessage = _Intl2.default.getMessage(intl, 'Next Month');
+      var todayMessage = _Intl2.default.getMessage(intl, 'Today');
+
+      var grid = format.match(/D/) ? this._renderGrid() : _react2.default.createElement('span', { key: 'grid' });
+
+      return [_react2.default.createElement(
+        _Header2.default,
+        { key: 'header', justify: 'between', colorIndex: 'neutral-1' },
+        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__previous',
+          icon: _react2.default.createElement(_LinkPrevious2.default, null), a11yTitle: previousMonthMessage,
+          onClick: this._onPrevious.bind(this, 'month') }),
+        _react2.default.createElement(
+          _Title2.default,
+          { className: CLASS_ROOT + '__title', responsive: false },
+          value.format('MMMM YYYY')
+        ),
+        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__next', icon: _react2.default.createElement(_LinkNext2.default, null),
+          a11yTitle: nextMonthMessage,
+          onClick: this._onNext.bind(this, 'month') })
+      ), grid, _react2.default.createElement(
         _Box2.default,
         { key: 'today', alignSelf: 'center', pad: { vertical: 'small' } },
         _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__today', label: todayMessage,
@@ -504,82 +530,56 @@ var DateTimeDrop = function (_Component) {
       )];
     }
   }, {
-    key: '_renderTime',
-    value: function _renderTime() {
+    key: '_renderCounters',
+    value: function _renderCounters(includeDate) {
+      var _this3 = this;
+
       var format = this.props.format;
       var value = this.state.value;
       var intl = this.context.intl;
 
+      // break the format up into chunks
+
+      var chunks = [];
+      var index = 0;
+      while (index < format.length) {
+        var chunk = format[index];
+        index += 1;
+        while (format[index] === chunk[0]) {
+          chunk += format[index];
+          index += 1;
+        }
+        chunks.push(chunk);
+      }
+
       var addMessage = _Intl2.default.getMessage(intl, 'Add');
       var subtractMessage = _Intl2.default.getMessage(intl, 'Subtract');
-      var hourMessage = _Intl2.default.getMessage(intl, 'hour');
-      var minuteMessage = _Intl2.default.getMessage(intl, 'minute');
-      var secondMessage = _Intl2.default.getMessage(intl, 'second');
-      var elements = [];
-      if (format.indexOf('h') !== -1) {
-        elements.push(_react2.default.createElement(
-          _Box2.default,
-          { key: 'hour', align: 'center' },
-          _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Subtract2.default, null),
-            a11yTitle: subtractMessage + ' ' + hourMessage,
-            onClick: this._onPrevious.bind(this, 'hour') }),
-          value.format('h'),
-          _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Add2.default, null),
-            a11yTitle: addMessage + ' ' + hourMessage,
-            onClick: this._onNext.bind(this, 'hour') })
-        ));
-      } else if (format.indexOf('H') !== -1) {
-        elements.push(_react2.default.createElement(
-          _Box2.default,
-          { key: 'hour', align: 'center' },
-          _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Subtract2.default, null),
-            a11yTitle: subtractMessage + ' ' + hourMessage,
-            onClick: this._onPrevious.bind(this, 'hour') }),
-          value.format('H'),
-          _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Add2.default, null),
-            a11yTitle: addMessage + ' ' + hourMessage,
-            onClick: this._onNext.bind(this, 'hour') })
-        ));
-      }
-      if (format.indexOf('m') !== -1) {
-        elements.push(_react2.default.createElement(
-          _Box2.default,
-          { key: 'minute', align: 'center' },
-          _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Subtract2.default, null),
-            a11yTitle: subtractMessage + ' ' + minuteMessage,
-            onClick: this._onPrevious.bind(this, 'minute') }),
-          value.format('mm'),
-          _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Add2.default, null),
-            a11yTitle: addMessage + ' ' + minuteMessage,
-            onClick: this._onNext.bind(this, 'minute') })
-        ));
-      }
-      if (format.indexOf('s') !== -1) {
-        elements.push(_react2.default.createElement(
-          _Box2.default,
-          { key: 'second', align: 'center' },
-          _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Subtract2.default, null),
-            a11yTitle: subtractMessage + ' ' + secondMessage,
-            onClick: this._onPrevious.bind(this, 'second') }),
-          value.format('ss'),
-          _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Add2.default, null),
-            a11yTitle: addMessage + ' ' + secondMessage,
-            onClick: this._onNext.bind(this, 'second') })
-        ));
-      }
-      if (format.indexOf('a') !== -1) {
-        elements.push(_react2.default.createElement(
-          _Box2.default,
-          { key: 'ampm', align: 'center' },
-          _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Subtract2.default, null),
-            a11yTitle: subtractMessage + ' am, pm',
-            onClick: this._onPrevious.bind(this, 'ampm') }),
-          value.format('a'),
-          _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Add2.default, null),
-            a11yTitle: addMessage + ' am, pm',
-            onClick: this._onNext.bind(this, 'ampm') })
-        ));
-      }
+
+      var elements = chunks.map(function (chunk, index) {
+        var unit = UNITS[chunk[0]];
+        if (unit) {
+          var unitMessage = _Intl2.default.getMessage(intl, unit);
+          return _react2.default.createElement(
+            _Box2.default,
+            { key: index, align: 'center' },
+            _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Subtract2.default, null),
+              a11yTitle: subtractMessage + ' ' + unitMessage,
+              onClick: _this3._onPrevious.bind(_this3, unit) }),
+            value.format('M' === chunk ? 'MMM' : chunk),
+            _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Add2.default, null),
+              a11yTitle: addMessage + ' ' + unitMessage,
+              onClick: _this3._onNext.bind(_this3, unit) })
+          );
+        } else {
+          return _react2.default.createElement(
+            _Box2.default,
+            { key: index, align: 'center', justify: 'center',
+              className: 'secondary' },
+            chunk
+          );
+        }
+      });
+
       return _react2.default.createElement(
         _Box2.default,
         { className: CLASS_ROOT + '__time', direction: 'row', alignSelf: 'center',
@@ -593,21 +593,21 @@ var DateTimeDrop = function (_Component) {
       var format = this.props.format;
 
 
-      var date = void 0,
-          time = void 0;
-      if (DATE_REGEXP.test(format)) {
-        date = this._renderDate();
+      var calendar = void 0,
+          counters = void 0;
+      if (DAY_REGEXP.test(format)) {
+        calendar = this._renderCalendar();
       }
 
-      if (TIME_REGEXP.test(format)) {
-        time = this._renderTime();
+      if (TIME_REGEXP.test(format) || MONTHYEAR_REGEXP.test(format) && !DAY_REGEXP.test(format)) {
+        counters = this._renderCounters(!DAY_REGEXP.test(format));
       }
 
       return _react2.default.createElement(
         _Box2.default,
         { className: CLASS_ROOT },
-        date,
-        time
+        calendar,
+        counters
       );
     }
   }]);

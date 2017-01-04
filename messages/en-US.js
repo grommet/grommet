@@ -26,6 +26,7 @@ exports.default = (0, _extends3.default)({
   add: 'add',
   Alerts: 'Alerts',
   All: 'All',
+  ampm: 'ampm',
   Arc: 'Arc',
   AxisLabel: '{orientation} Axis',
   area: 'area',
@@ -49,6 +50,7 @@ exports.default = (0, _extends3.default)({
   'Currently Active': 'Currently Active',
   'Date Selector': 'Date Selector',
   'Date Time Icon': 'Open Date and Time Selector',
+  day: 'day',
   Disabled: 'Disabled',
   Distribution: 'Distribution',
   Email: 'Email',
@@ -77,6 +79,7 @@ exports.default = (0, _extends3.default)({
   model: 'Model',
   modified: 'Modified',
   monitor: 'monitor',
+  month: 'month',
   'Multi Select': 'Multi Select',
   Name: 'Name',
   'Navigation Help': 'Use arrow keys to navigate',
@@ -126,7 +129,8 @@ exports.default = (0, _extends3.default)({
   Username: 'Username',
   uri: 'URI',
   Value: 'Value',
-  Warning: 'Warning'
+  Warning: 'Warning',
+  year: 'year'
 }); // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 module.exports = exports['default'];

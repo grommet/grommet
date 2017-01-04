@@ -44,6 +44,7 @@ exports.default = {
   checkmark: 'checkmark',
   'circular-view': 'circular view',
   clipboard: 'clipboard',
+  clock: 'clock',
   clone: 'clone',
   close: 'close',
   'cloud-computer': 'cloud computer',
