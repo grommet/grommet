@@ -85,7 +85,7 @@ exports[`Select inline + multiple 1`] = `
     className="grommetux-select__options"
     onClick={undefined}>
     <li
-      className="grommetux-select__option"
+      className="grommetux-select__option grommetux-select__option--selected"
       onClick={undefined}>
       <label
         aria-label="one"
@@ -165,7 +165,7 @@ exports[`Select inline 1`] = `
     className="grommetux-select__options"
     onClick={undefined}>
     <li
-      className="grommetux-select__option"
+      className="grommetux-select__option grommetux-select__option--selected"
       onClick={undefined}>
       <label
         className="grommetux-radio-button">

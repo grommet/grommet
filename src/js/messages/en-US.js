@@ -98,6 +98,11 @@ export default {
   second: 'second',
   'Select Icon': 'Open Select Drop',
   Selected: 'Selected',
+  'Selected Multiple': `{count, plural,
+      =0 {none}
+      one {# value}
+      other {# values}
+  }`,
   'Skip to': 'Skip to',
   'Slide Number': 'Slide {slideNumber}',
   Sort: 'Sort',

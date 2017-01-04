@@ -280,7 +280,20 @@ export default class Select extends Component {
   }
 
   _renderLabel (option, announce) {
-    if (typeof option === 'object') {
+    const { intl } = this.context;
+    if (Array.isArray(option)) {
+      // Could be an Array when !inline+multiple
+      if (1 === option.length) {
+        return this._renderLabel(option[0]);
+      } else if (option.length > 1) {
+        const selectedMultiple = Intl.getMessage(
+          intl, 'Selected Multiple', {
+            count: option.length
+          }
+        );
+        return selectedMultiple;
+      }
+    } else if (typeof option === 'object') {
       // revert for announce as label is often a complex object
       return announce ? option.value || option.label || '' :
         option.label || option.value || '';
@@ -338,9 +351,11 @@ export default class Select extends Component {
     let items;
     if (options) {
       items = options.map((option, index) => {
+        const selected = this._optionSelected(option, value);
         let classes = classnames(
           {
             [`${CLASS_ROOT}__option`]: true,
+            [`${CLASS_ROOT}__option--selected`]: selected,
             [`${CLASS_ROOT}__option--active`]:
               index === activeOptionIndex
           }
@@ -356,10 +371,9 @@ export default class Select extends Component {
         let itemOnClick;
         if (inline) {
           const itemId = `${id}-${option.value || option}`;
-          const checked = this._optionSelected(option, value);
           const Type = (multiple ? CheckBox : RadioButton );
           content = (
-            <Type key={itemId} id={itemId} label={content} checked={checked}
+            <Type key={itemId} id={itemId} label={content} checked={selected}
               onChange={this._onClickOption.bind(this, option)} />
           );
         } else {
@@ -418,17 +432,6 @@ export default class Select extends Component {
         </div>
       );
     }
-
-    return (
-      <div ref={ref => this.componentRef = ref} className={classes}
-        onClick={onClick}>
-        <input {...restProps} ref={ref => this.inputRef = ref}
-          className={`${INPUT} ${CLASS_ROOT}__input`}
-          disabled={true} value={this._renderLabel(value)} />
-        {button}
-        {drop}
-      </div>
-    );
   }
 
 }
