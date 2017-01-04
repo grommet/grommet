@@ -222,7 +222,7 @@ export default class DateTimeDrop extends Component {
     });
   }
 
-  _onPrevious (scope) {
+  _onPrevious (scope, notify=true) {
     const { format, step, onChange } = this.props;
     const { stepScope, value } = this.state;
     let delta = (scope === stepScope ? step : 1);
@@ -238,10 +238,12 @@ export default class DateTimeDrop extends Component {
         announce(newValue.format(format));
       }
     });
-    onChange(newValue.format(format));
+    if (notify) {
+      onChange(newValue.format(format));
+    }
   }
 
-  _onNext (scope) {
+  _onNext (scope, notify=true) {
     const { format, step, onChange } = this.props;
     const { stepScope, value } = this.state;
     let delta = (scope === stepScope ? step : 1);
@@ -257,7 +259,9 @@ export default class DateTimeDrop extends Component {
         announce(newValue.format(format));
       }
     });
-    onChange(newValue.format(format));
+    if (notify) {
+      onChange(newValue.format(format));
+    }
   }
 
   _renderGrid () {
@@ -355,13 +359,13 @@ export default class DateTimeDrop extends Component {
       <Header key='header' justify='between' colorIndex='neutral-1'>
         <Button className={`${CLASS_ROOT}__previous`}
           icon={<LinkPreviousIcon />} a11yTitle={previousMonthMessage}
-          onClick={this._onPrevious.bind(this, 'month')} />
+          onClick={this._onPrevious.bind(this, 'month', false)} />
         <Title className={`${CLASS_ROOT}__title`} responsive={false}>
           {value.format('MMMM YYYY')}
         </Title>
         <Button className={`${CLASS_ROOT}__next`} icon={<LinkNextIcon />}
           a11yTitle={nextMonthMessage}
-          onClick={this._onNext.bind(this, 'month')} />
+          onClick={this._onNext.bind(this, 'month', false)} />
       </Header>,
       grid,
       <Box key='today' alignSelf='center' pad={{vertical: 'small'}}>
