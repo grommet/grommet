@@ -575,7 +575,7 @@ exports.default = Select;
 var valueType = _react.PropTypes.oneOfType([_react.PropTypes.shape({
   label: _react.PropTypes.node,
   value: _react.PropTypes.any
-}), _react.PropTypes.string]);
+}), _react.PropTypes.string, _react.PropTypes.number]);
 
 Select.propTypes = {
   inline: _react.PropTypes.bool,
