@@ -60,8 +60,11 @@ export default class Article extends Component {
   }
 
   componentDidMount () {
-
     if (this.props.scrollStep) {
+      if (this.props.full) {
+        console.warn('Article cannot use `scrollStep` with `full`.');
+      }
+
       this._keys = {up: this._onPrevious, down: this._onNext};
       if ('row' === this.props.direction) {
         this._keys = {
