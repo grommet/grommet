@@ -1,0 +1,52 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+.#{$grommet-namespace}search-input {
+  position: relative;
+  display: inline-block;
+}
+
+.#{$grommet-namespace}search-input__input {
+  @include input();
+  padding-right: round($inuit-base-spacing-unit * 2.5);
+}
+
+.#{$grommet-namespace}search-input__input:focus {
+  padding-right: round($inuit-base-spacing-unit * 2.5 -
+    ($input-border-width + 1));
+}
+
+// Disable IE's clear icon
+.#{$grommet-namespace}search-input__input::-ms-clear {
+  display: none;
+}
+
+.#{$grommet-namespace}search-input__control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: quarter($inuit-base-spacing-unit);
+}
+
+.#{$grommet-namespace}search-input__suggestions {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+.#{$grommet-namespace}search-input__suggestion {
+  padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+  cursor: pointer;
+
+  &:hover,
+  &--active {
+    background-color: $hover-background-color;
+  }
+}
+
+.#{$grommet-namespace}search-input--active {
+  .#{$grommet-namespace}search-input__input {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}
