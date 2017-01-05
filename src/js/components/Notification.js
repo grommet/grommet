@@ -50,10 +50,19 @@ export default class Notification extends Component {
     }
   }
 
+  componentWillUnmount () {
+    if (this._checkBackground) {
+      this._checkBackground.stop();
+    }
+  }
+
   _setDarkBackground () {
     const { status } = this.props;
-    const box = findDOMNode(this._containerRef);
-    checkDarkBackground(status, box,
+    const container = findDOMNode(this._containerRef);
+    if (this._checkBackground) {
+      this._checkBackground.stop();
+    }
+    this._checkBackground = checkDarkBackground(status, container,
       (darkBackground) => this.setState({ darkBackground }));
   }
 

@@ -62,12 +62,18 @@ export default class Box extends Component {
     if (this.props.onClick) {
       KeyboardAccelerators.stopListeningToKeyboard(this);
     }
+    if (this._checkBackground) {
+      this._checkBackground.stop();
+    }
   }
 
   _setDarkBackground () {
     const { colorIndex } = this.props;
     const box = findDOMNode(this.boxContainerRef);
-    checkDarkBackground(colorIndex, box,
+    if (this._checkBackground) {
+      this._checkBackground.stop();
+    }
+    this._checkBackground = checkDarkBackground(colorIndex, box,
       (darkBackground) => this.setState({ darkBackground }));
   }
 

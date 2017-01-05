@@ -153,7 +153,7 @@ function hasDarkBackground (element) {
 }
 
 function checkDarkBackgroundBackoff (element, handler, backoffDurations) {
-  setTimeout(() => {
+  return setTimeout(() => {
     let dark = hasDarkBackground(element);
     if (undefined === dark && backoffDurations.length > 0) {
       checkDarkBackgroundBackoff(element, handler, backoffDurations);
@@ -164,6 +164,7 @@ function checkDarkBackgroundBackoff (element, handler, backoffDurations) {
 }
 
 export function checkDarkBackground (colorIndex, element, handler) {
+  let timer;
   if (colorIndex) {
     if ('dark' === colorIndex) {
       // caller knows
@@ -175,9 +176,10 @@ export function checkDarkBackground (colorIndex, element, handler) {
       // Measure the actual background color brightness to determine whether
       // to set a dark or light context.
       if (element && window.getComputedStyle) {
-        checkDarkBackgroundBackoff(element, handler,
+        timer = checkDarkBackgroundBackoff(element, handler,
           CHECK_DARK_BACKGROUND_BACKOFFS);
       }
     }
   }
+  return { stop: () => clearTimeout(timer) };
 }

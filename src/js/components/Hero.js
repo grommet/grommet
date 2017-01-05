@@ -41,6 +41,9 @@ export default class Hero extends Component {
 
   componentWillUnmount () {
     window.removeEventListener('resize', this._onResize);
+    if (this._checkBackground) {
+      this._checkBackground.stop();
+    }
   }
 
   _onResize () {
@@ -59,11 +62,12 @@ export default class Hero extends Component {
 
   _setDarkBackground () {
     const { backgroundColorIndex } = this.props;
-    if (backgroundColorIndex) {
-      const container = this._containerRef;
-      checkDarkBackground(backgroundColorIndex, container,
-        (darkBackground) => this.setState({ darkBackground }));
+    const container = this._containerRef;
+    if (this._checkBackground) {
+      this._checkBackground.stop();
     }
+    this._checkBackground = checkDarkBackground(backgroundColorIndex,
+      container, (darkBackground) => this.setState({ darkBackground }));
   }
 
   _backgroundContextClass (darkBackground) {
