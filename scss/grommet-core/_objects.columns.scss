@@ -1,0 +1,95 @@
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+
+@mixin column-flex-basis ($original-basis) {
+  @include media-query(lap-and-up) {
+    > .#{$grommet-namespace}columns__column {
+      flex-basis: calc(#{$original-basis});
+    }
+
+    &.#{$grommet-namespace}columns--margin-small {
+      > .#{$grommet-namespace}columns__column {
+        flex-basis: calc(#{$original-basis} + #{halve($inuit-base-spacing-unit)});
+      }
+    }
+
+    &.#{$grommet-namespace}columns--margin-medium {
+      > .#{$grommet-namespace}columns__column {
+        flex-basis: calc(#{$original-basis} + #{$inuit-base-spacing-unit});
+      }
+    }
+
+    &.#{$grommet-namespace}columns--margin-large {
+      > .#{$grommet-namespace}columns__column {
+        flex-basis: calc(#{$original-basis} + #{double($inuit-base-spacing-unit)});
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}columns {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  @include column-flex-basis($size-medium);
+
+  @include media-query(palm) {
+    flex-direction: column;
+  }
+}
+
+.#{$grommet-namespace}columns__column {
+  flex: 0 0 $size-medium; //$size-medium;
+  display: flex;
+  flex-direction: column;
+
+  @include media-query(palm) {
+    flex-basis: auto;
+  }
+}
+
+.#{$grommet-namespace}columns--responsive {
+  > .#{$grommet-namespace}columns__column {
+    @include media-query(palm) {
+      flex: 0 1 auto;
+    }
+  }
+
+  &.#{$grommet-namespace}columns--small,
+  &.#{$grommet-namespace}columns--medium,
+  &.#{$grommet-namespace}columns--large {
+    > .#{$grommet-namespace}columns__column {
+      @include media-query(palm) {
+        flex: 0 1 auto;
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}columns--small {
+  @include column-flex-basis($size-small);
+}
+
+.#{$grommet-namespace}columns--medium {
+  @include column-flex-basis($size-medium);
+}
+
+.#{$grommet-namespace}columns--large {
+  @include column-flex-basis($size-large);
+}
+
+.#{$grommet-namespace}columns--justify-start {
+  justify-content: flex-start;
+}
+
+.#{$grommet-namespace}columns--justify-center {
+  justify-content: center;
+}
+
+.#{$grommet-namespace}columns--justify-between {
+  justify-content: space-between;
+}
+
+.#{$grommet-namespace}columns--justify-end {
+  justify-content: flex-end;
+}

@@ -1,0 +1,147 @@
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+
+.#{$grommet-namespace}hero:not(.#{$grommet-namespace}hero--stack) {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  // This could be column, but IE11 doesn't work with that. :(
+  flex-direction: row;
+  align-items: center;
+
+  .#{$grommet-namespace}hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+  }
+
+  .#{$grommet-namespace}hero__foreground {
+    // position: relative;
+    z-index: 1;
+    flex: 1 1;
+    // min-height: 100%;
+  }
+
+  &.#{$grommet-namespace}hero--small {
+    min-height: 40vh;
+
+    // deprecated
+    .#{$grommet-namespace}hero__overlay.#{$grommet-namespace}box {
+      height: 60vh;
+    }
+  }
+
+  &.#{$grommet-namespace}hero--medium {
+    min-height: 60vh;
+  }
+
+  &.#{$grommet-namespace}hero--large {
+    min-height: 75vh;
+
+    // deprecated
+    .#{$grommet-namespace}hero__overlay.#{$grommet-namespace}box {
+      height: 75vh;
+    }
+  }
+}
+
+.#{$grommet-namespace}hero.#{$grommet-namespace}hero--stack {
+  .#{$grommet-namespace}hero__background {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .#{$grommet-namespace}hero--small {
+    .#{$grommet-namespace}hero__background {
+      height: 20vh;
+    }
+
+    // deprecated
+    .#{$grommet-namespace}hero__image {
+      height: $inuit-base-spacing-unit * 11.25;
+    }
+  }
+
+  &.#{$grommet-namespace}hero--medium {
+    .#{$grommet-namespace}hero__background {
+      height: 40vh;
+    }
+  }
+
+  &.#{$grommet-namespace}hero--large {
+    .#{$grommet-namespace}hero__background {
+      height: 60vh;
+    }
+
+    // deprecated
+    .#{$grommet-namespace}hero__image {
+      height: $inuit-base-spacing-unit * 12.5;
+    }
+  }
+}
+
+// deprecated
+.#{$grommet-namespace}hero__background-video {
+  overflow: hidden;
+
+  .#{$grommet-namespace}video {
+    min-height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translate(0%, -50%);
+
+    &::before {
+      content: "";
+      display: block;
+      height: 0px;
+      padding-bottom: 57%;
+    }
+
+    video {
+      width: auto;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+  }
+}
+
+// deprecated
+.#{$grommet-namespace}hero--bg-left > .#{$grommet-namespace}hero__background {
+  @include media-query(palm) {
+    background-position: top left;
+  }
+}
+
+// deprecated
+.#{$grommet-namespace}hero--bg-right > .#{$grommet-namespace}hero__background {
+  @include media-query(palm) {
+    background-position: top right;
+  }
+}
+
+// deprecated
+.#{$grommet-namespace}hero__overlay.#{$grommet-namespace}box {
+  z-index: 1;
+
+  & > .#{$grommet-namespace}box {
+    width: 50%;
+
+    @include media-query(palm) {
+      width: 100%;
+    }
+  }
+}
+
+.#{$grommet-namespace}hero--mobile-separator {
+  @include media-query(palm) {
+    border-bottom: 1px solid $border-color;
+    margin-bottom: $inuit-base-spacing-unit;
+  }
+}

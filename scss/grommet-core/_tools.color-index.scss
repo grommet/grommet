@@ -1,0 +1,306 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+@mixin graph-stroke-color {
+  &.#{$grommet-namespace}color-index-loading {
+    stroke: $unset-color;
+    stroke-dasharray: 1px 10px;
+    stroke-dashoffset: 0;
+  }
+
+  &.#{$grommet-namespace}color-index-unset {
+    stroke: $unset-color;
+  }
+
+  &.#{$grommet-namespace}color-index-brand {
+    stroke: $brand-color;
+  }
+
+  @each $status, $color in $brand-status-colors {
+    &.#{$grommet-namespace}color-index-#{$status} {
+      stroke: $color;
+    }
+  }
+
+  @for $i from 1 through length($brand-graph-colors) {
+    &.#{$grommet-namespace}color-index-graph-#{$i},
+    &.#{$grommet-namespace}color-index-graph-#{$i + length($brand-graph-colors)} {
+      stroke: nth($brand-graph-colors, $i);
+    }
+  }
+
+  @for $i from 1 through length($brand-grey-colors) {
+    &.#{$grommet-namespace}color-index-grey-#{$i},
+    &.#{$grommet-namespace}color-index-grey-#{$i + length($brand-grey-colors)} {
+      stroke: nth($brand-grey-colors, $i);
+    }
+  }
+
+  @for $i from 1 through length($brand-accent-colors) {
+    &.#{$grommet-namespace}color-index-accent-#{$i},
+    &.#{$grommet-namespace}color-index-accent-#{$i + length($brand-accent-colors)} {
+      stroke: nth($brand-accent-colors, $i);
+    }
+  }
+
+  @for $i from 1 through length($brand-neutral-colors) {
+    &.#{$grommet-namespace}color-index-neutral-#{$i},
+    &.#{$grommet-namespace}color-index-neutral-#{$i + length($brand-neutral-colors)} {
+      stroke: nth($brand-neutral-colors, $i);
+    }
+  }
+
+  @for $i from 1 through length($brand-light-colors) {
+    &.#{$grommet-namespace}color-index-light-#{$i},
+    &.#{$grommet-namespace}color-index-light-#{$i + length($brand-light-colors)} {
+      stroke: nth($brand-light-colors, $i);
+    }
+  }
+}
+
+@mixin graph-stroke-color-translucent($opacity) {
+
+  &.#{$grommet-namespace}color-index-unset {
+    stroke: rgba($unset-color, $opacity);
+  }
+
+  &.#{$grommet-namespace}color-index-brand {
+    stroke: rgba($brand-color, $opacity);
+  }
+
+  @each $status, $color in $brand-status-colors {
+    &.#{$grommet-namespace}color-index-#{$status} {
+      stroke: rgba($color, $opacity);
+    }
+  }
+
+  @for $i from 1 through length($brand-graph-colors) {
+    &.#{$grommet-namespace}color-index-graph-#{$i},
+    &.#{$grommet-namespace}color-index-graph-#{$i + length($brand-graph-colors)} {
+      stroke: rgba(nth($brand-graph-colors, $i), $opacity);
+    }
+  }
+
+  @for $i from 1 through length($brand-accent-colors) {
+    &.#{$grommet-namespace}color-index-accent-#{$i},
+    &.#{$grommet-namespace}color-index-accent-#{$i + length($brand-accent-colors)} {
+      stroke: rgba(nth($brand-accent-colors, $i), $opacity);
+    }
+  }
+
+  @for $i from 1 through length($brand-grey-colors) {
+    &.color-index-grey-#{$i},
+    &.color-index-grey-#{$i + length($brand-grey-colors)} {
+      stroke: rgba(nth($brand-grey-colors, $i), $opacity);
+    }
+  }
+}
+
+@mixin graph-fill-color {
+  &.#{$grommet-namespace}color-index-unset {
+    fill: $unset-color;
+  }
+
+  &.#{$grommet-namespace}color-index-brand {
+    fill: $brand-color;
+  }
+
+  @each $status, $color in $brand-status-colors {
+    &.#{$grommet-namespace}color-index-#{$status} {
+      fill: $color;
+    }
+  }
+
+  @for $i from 1 through length($brand-graph-colors) {
+    &.#{$grommet-namespace}color-index-graph-#{$i},
+    &.#{$grommet-namespace}color-index-graph-#{$i + length($brand-graph-colors)} {
+      fill: nth($brand-graph-colors, $i);
+    }
+  }
+
+  @for $i from 1 through length($brand-accent-colors) {
+    &.#{$grommet-namespace}color-index-accent-#{$i},
+    &.#{$grommet-namespace}color-index-accent-#{$i + length($brand-accent-colors)} {
+      fill: nth($brand-accent-colors, $i);
+    }
+  }
+
+  @for $i from 1 through length($brand-grey-colors) {
+    &.#{$grommet-namespace}color-index-grey-#{$i},
+    &.#{$grommet-namespace}color-index-grey-#{$i + length($brand-grey-colors)} {
+      fill: nth($brand-grey-colors, $i);
+    }
+  }
+}
+
+@mixin graph-fill-color-translucent($opacity) {
+
+  &.#{$grommet-namespace}color-index-unset {
+    fill: rgba($unset-color, $opacity);
+  }
+
+  &.#{$grommet-namespace}color-index-brand {
+    fill: rgba($brand-color, $opacity);
+  }
+
+  @each $status, $color in $brand-status-colors {
+    &.#{$grommet-namespace}color-index-#{$status} {
+      fill: rgba($color, $opacity);
+    }
+  }
+
+  @for $i from 1 through length($brand-graph-colors) {
+    &.#{$grommet-namespace}color-index-graph-#{$i},
+    &.#{$grommet-namespace}color-index-graph-#{$i + length($brand-graph-colors)} {
+      fill: rgba(nth($brand-graph-colors, $i), $opacity);
+    }
+  }
+
+  @for $i from 1 through length($brand-accent-colors) {
+    &.#{$grommet-namespace}color-index-accent-#{$i},
+    &.#{$grommet-namespace}color-index-accent-#{$i + length($brand-accent-colors)} {
+      fill: rgba(nth($brand-accent-colors, $i), $opacity);
+    }
+  }
+
+  @for $i from 1 through length($brand-grey-colors) {
+    &.color-index-grey-#{$i},
+    &.color-index-grey-#{$i + length($brand-grey-colors)} {
+      fill: rgba(nth($brand-grey-colors, $i), $opacity);
+    }
+  }
+}
+
+@mixin graph-fill-color-gradient() {
+  @each $status, $color in $brand-status-colors {
+    &.#{$grommet-namespace}color-index-#{$status} {
+      .begin {
+        stop-color: $color;
+      }
+
+      .mid {
+        stop-color: $color;
+        stop-opacity: 0.5;
+      }
+
+      .end {
+        stop-color: $color;
+        stop-opacity: 0;
+      }
+    }
+  }
+
+  @for $i from 1 through length($brand-graph-colors) {
+    &.#{$grommet-namespace}color-index-graph-#{$i},
+    &.#{$grommet-namespace}color-index-graph-#{$i + length($brand-graph-colors)} {
+      .begin {
+        stop-color: nth($brand-graph-colors, $i);
+      }
+
+      .mid {
+        stop-color: nth($brand-graph-colors, $i);
+        stop-opacity: 0.5;
+      }
+
+      .end {
+        stop-color: nth($brand-graph-colors, $i);
+        stop-opacity: 0;
+      }
+    }
+  }
+}
+
+@mixin overlayed-text-color {
+  &.#{$grommet-namespace}background-color-index-unset {
+    @if lightness($unset-color) < $colored-text-color-lightness-threshold {
+      color: $active-colored-text-color;
+    }
+  }
+
+  &.#{$grommet-namespace}background-color-index-brand {
+    @if lightness($brand-color) < $colored-text-color-lightness-threshold {
+      color: $active-colored-text-color;
+    }
+  }
+
+  @each $status, $color in $brand-status-colors {
+    &.#{$grommet-namespace}background-color-index-#{$status} {
+      @if lightness($color) < $colored-text-color-lightness-threshold {
+        color: $active-colored-text-color;
+      }
+    }
+  }
+
+  @for $i from 1 through length($brand-neutral-colors) {
+    &.#{$grommet-namespace}background-color-index-neutral-#{$i},
+    &.#{$grommet-namespace}background-color-index-neutral-#{$i + length($brand-neutral-colors)} {
+      @if lightness(nth($brand-neutral-colors, $i)) < $colored-text-color-lightness-threshold {
+        color: $active-colored-text-color;
+      }
+    }
+  }
+
+  @for $i from 1 through length($brand-graph-colors) {
+    &.#{$grommet-namespace}background-color-index-graph-#{$i},
+    &.#{$grommet-namespace}background-color-index-graph-#{$i + length($brand-graph-colors)} {
+      @if lightness(nth($brand-graph-colors, $i)) < $colored-text-color-lightness-threshold {
+        color: $active-colored-text-color;
+      }
+    }
+  }
+
+  @for $i from 1 through length($brand-accent-colors) {
+    &.#{$grommet-namespace}background-color-index-accent-#{$i},
+    &.#{$grommet-namespace}background-color-index-accent-#{$i + length($brand-accent-colors)} {
+      @if lightness(nth($brand-accent-colors, $i)) < $colored-text-color-lightness-threshold {
+        color: $active-colored-text-color;
+      }
+    }
+  }
+
+  @for $i from 1 through length($brand-grey-colors) {
+    &.#{$grommet-namespace}background-color-index-grey-#{$i},
+    &.#{$grommet-namespace}background-color-index-grey-#{$i + length($brand-grey-colors)} {
+      @if lightness(nth($brand-grey-colors, $i)) < $colored-text-color-lightness-threshold {
+        color: $active-colored-text-color;
+      }
+    }
+  }
+}
+
+@mixin background-context-color($light-color, $active-light-color) {
+  #{$dark-background-context} {
+    color: $colored-text-color;
+
+    &:visited {
+      color: $colored-text-color;
+    }
+
+    &.active,
+    &:hover {
+      color: $active-colored-text-color;
+    }
+  }
+
+  #{$light-background-context} {
+    color: $light-color;
+
+    &:visited {
+      color: $light-color;
+    }
+
+    &.active,
+    &:hover {
+      color: $active-light-color;
+    }
+  }
+
+  #{$pending-background-context} {
+    color: transparent;
+
+    &:visited,
+    &.active,
+    &:hover {
+      color: transparent;
+    }
+  }
+}
