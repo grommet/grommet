@@ -173,6 +173,7 @@ var DateTime = function (_Component) {
       var date = (0, _moment2.default)(value, format);
       if (date.isValid()) {
         result.current = date;
+        result.textValue = undefined;
       } else {
         result.current = (0, _moment2.default)().startOf('hour').add(1, 'hour');
       }
@@ -195,6 +196,10 @@ var DateTime = function (_Component) {
           value = _props.value;
 
       var currentValue = event.target.value;
+      // Always set textValue to what the user types.
+      // If the user subsequently passes in a value property, we will
+      // clear this textValue and use the new value.
+      this.setState({ textValue: currentValue });
       if (currentValue.length > 0) {
         var date = (0, _moment2.default)(currentValue, format);
         // Only notify if the value looks valid
@@ -384,12 +389,14 @@ var DateTime = function (_Component) {
 
       delete props.onChange;
       delete props.step;
-      var dropActive = this.state.dropActive;
+      var _state2 = this.state,
+          dropActive = _state2.dropActive,
+          textValue = _state2.textValue;
       var intl = this.context.intl;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', dropActive), className);
 
-      var inputValue = value;
+      var inputValue = textValue || value;
       if (value instanceof Date) {
         inputValue = (0, _moment2.default)(value).format(format);
       } else if (value && (typeof value === 'undefined' ? 'undefined' : (0, _typeof3.default)(value)) === 'object') {
