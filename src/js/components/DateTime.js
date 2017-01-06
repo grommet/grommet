@@ -81,6 +81,7 @@ export default class DateTime extends Component {
     const date = moment(value, format);
     if (date.isValid()) {
       result.current = date;
+      result.textValue = undefined;
     } else {
       result.current = moment().startOf('hour').add(1, 'hour');
     }
@@ -98,6 +99,10 @@ export default class DateTime extends Component {
   _onInputChange (event) {
     const { format, onChange, value } = this.props;
     const currentValue = event.target.value;
+    // Always set textValue to what the user types.
+    // If the user subsequently passes in a value property, we will
+    // clear this textValue and use the new value.
+    this.setState({ textValue: currentValue });
     if (currentValue.length > 0) {
       const date = moment(currentValue, format);
       // Only notify if the value looks valid
@@ -267,7 +272,7 @@ export default class DateTime extends Component {
     const { className, format, value, ...props } = this.props;
     delete props.onChange;
     delete props.step;
-    const { dropActive } = this.state;
+    const { dropActive, textValue } = this.state;
     const { intl } = this.context;
     let classes = classnames(
       CLASS_ROOT,
@@ -277,7 +282,7 @@ export default class DateTime extends Component {
       className
     );
 
-    let inputValue = value;
+    let inputValue = textValue || value;
     if (value instanceof Date) {
       inputValue = moment(value).format(format);
     } else if (value && typeof value === 'object') {
