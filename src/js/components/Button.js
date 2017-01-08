@@ -34,7 +34,7 @@ export default class Button extends Component {
     }
 
     if (onClick) {
-      onClick();
+      onClick(...arguments);
     }
   }
 
