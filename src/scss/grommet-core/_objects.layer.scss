@@ -56,19 +56,6 @@
         }
       }
     }
-
-    .#{$grommet-namespace}box--full {
-      min-width: calc(100vw - #{double(double($inuit-base-spacing-unit))});
-      min-height: calc(100vh - #{double(double($inuit-base-spacing-unit))});
-    }
-
-    .#{$grommet-namespace}box--full-horizontal {
-      min-width: calc(100vw - #{double(double($inuit-base-spacing-unit))});
-    }
-
-    .#{$grommet-namespace}box--full-vertical {
-      min-height: calc(100vh - #{double(double($inuit-base-spacing-unit))});
-    }
   }
 
   .#{$grommet-namespace}layer__closer {
