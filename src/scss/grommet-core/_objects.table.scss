@@ -57,7 +57,7 @@
 
   th {
     font-weight: $text-font-weight;
-    @include inuit-font-size(20px);
+    // @include inuit-font-size(20px);
     border-bottom: 1px solid $border-color;
 
     #{$dark-background-context} {
