@@ -1,0 +1,72 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+// CIRCLE, ARC, SPIRAL
+
+$meter-circle-dash: round($meter-size-default * 3.2);
+
+@include keyframes(draw-meter-circle) {
+  0% {
+    stroke-dashoffset: - $meter-circle-dash;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.#{$grommet-namespace}meter--circle,
+.#{$grommet-namespace}meter--arc,
+.#{$grommet-namespace}meter--spiral {
+
+  @include media-query(palm) {
+    margin: 0px auto;
+  }
+
+  .#{$grommet-namespace}meter.series-pre {
+    path {
+      stroke-dashoffset: quadruple($meter-size-default);
+    }
+  }
+
+  .#{$grommet-namespace}meter__slice {
+    stroke-linecap: butt;
+  }
+
+  .#{$grommet-namespace}meter__slice-indicator {
+    stroke-linecap: square;
+    stroke-width: $meter-indicator-width;
+    stroke: $threshold-color;
+
+    #{$dark-background-context} {
+      stroke: $colored-meter-background-color;
+    }
+
+    #{$light-background-context} {
+      stroke: $threshold-color;
+    }
+  }
+
+  .#{$grommet-namespace}meter__values .#{$grommet-namespace}meter__slice {
+    @include graph-stroke-color();
+
+    &--clickable {
+      cursor: pointer;
+    }
+
+    @include media-query(lap-and-up) {
+      stroke-dasharray: $meter-circle-dash $meter-circle-dash;
+      stroke-dashoffset: 0;
+      transition: stroke-width 0.2s;
+      @include animation('draw-meter-circle 1s ease-in');
+    }
+  }
+
+  .#{$grommet-namespace}meter__thresholds .#{$grommet-namespace}meter__slice,
+  .#{$grommet-namespace}meter__tracks .#{$grommet-namespace}meter__slice {
+    @include graph-stroke-color-translucent(0.5);
+  }
+
+  .#{$grommet-namespace}meter__threshold {
+    stroke-linecap: butt;
+  }
+}

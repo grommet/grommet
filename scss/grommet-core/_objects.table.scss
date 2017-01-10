@@ -1,0 +1,163 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+@mixin small-table {
+
+  thead {
+    display: none;
+  }
+
+  td {
+    display: block;
+
+    &:before {
+      font-weight: $text-font-weight;
+      @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
+      content: attr(data-th);
+      display: block;
+
+      padding-right: halve($inuit-base-spacing-unit);
+    }
+  }
+
+  tr {
+    border-bottom: 1px solid $border-color;
+  }
+
+  td,
+  th {
+    padding-left: $inuit-base-spacing-unit;
+  }
+}
+
+.#{$grommet-namespace}table {
+
+  width: 100%;
+  max-width: 100%;
+
+  table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  td,
+  th {
+    // -1 to accommodate border
+    padding: (halve($inuit-base-spacing-unit) - 1) halve($inuit-base-spacing-unit);
+    text-align: left;
+
+    &:first-child {
+      padding-left: $inuit-base-spacing-unit;
+    }
+
+    &:last-child {
+      padding-right: $inuit-base-spacing-unit;
+    }
+  }
+
+  th {
+    font-weight: $text-font-weight;
+    // @include inuit-font-size(20px);
+    border-bottom: 1px solid $border-color;
+
+    #{$dark-background-context} {
+      border-color: $colored-border-color;
+    }
+
+    #{$light-background-context} {
+      border-color: $border-color;
+    }
+  }
+}
+
+.#{$grommet-namespace}table__mirror {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+
+  > thead {
+    position: fixed;
+    background-color: $header-background-color;
+  }
+}
+
+.#{$grommet-namespace}table__more {
+  margin-top: $inuit-base-spacing-unit;
+  text-align: center;
+}
+
+.#{$grommet-namespace}table--scrollable {
+  position: relative;
+
+  .#{$grommet-namespace}table__table {
+    thead {
+      visibility: hidden;
+    }
+
+    th {
+      border-bottom: none;
+    }
+  }
+}
+
+.#{$grommet-namespace}table--selectable {
+  .#{$grommet-namespace}table__table {
+    outline: none;
+  }
+
+  .#{$grommet-namespace}table__table--focus {
+    border-color: $focus-border-color;
+    box-shadow: 0 0 1px 1px $focus-border-color;
+  }
+
+  tbody {
+    tr {
+      cursor: pointer;
+      outline: none;
+
+      td {
+        transition: background-color 0.2s;
+      }
+
+      &.#{$grommet-namespace}table-row--selected {
+        td {
+          background-color: $selected-background-color;
+          color: $selected-text-color;
+
+          #{$dark-background-context} {
+            background-color: $colored-active-background-color;
+            color: $active-colored-text-color;
+          }
+
+          #{$light-background-context} {
+            background-color: $selected-background-color;
+            color: $selected-text-color;
+          }
+        }
+      }
+
+      &.#{$grommet-namespace}table-row--active,
+      &:hover {
+        td {
+          background-color: $hover-background-color;
+          color: $hover-text-color;
+
+          #{$dark-background-context} {
+            background-color: $colored-hover-background-color;
+            color: $active-colored-text-color;
+          }
+
+          #{$light-background-context} {
+            background-color: $hover-background-color;
+            color: $hover-text-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}table--small {
+  @include small-table();
+}

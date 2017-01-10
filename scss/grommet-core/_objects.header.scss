@@ -1,0 +1,127 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+.#{$grommet-namespace}header {
+  min-height: $header-height;
+  width: 100%;
+  margin-bottom: 0px;
+
+  .#{$grommet-namespace}status-icon {
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+}
+
+.#{$grommet-namespace}header--large {
+  min-height: $large-header-height;
+}
+
+.#{$grommet-namespace}header--small {
+  min-height: $small-header-height;
+
+}
+
+.#{$grommet-namespace}header--splash {
+  @include transform(translate(0, 40vh));
+}
+
+*:not(.#{$grommet-namespace}header__container--float)
+> header.#{$grommet-namespace}header--float {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+header.#{$grommet-namespace}header--primary {
+  .#{$grommet-namespace}header__wrapper {
+    border-bottom: none;
+  }
+}
+
+.#{$grommet-namespace}header:not(header) {
+  &.#{$grommet-namespace}box--separator-top {
+    padding-top: quarter($inuit-base-spacing-unit);
+  }
+
+  &.#{$grommet-namespace}box--separator-bottom {
+    padding-bottom: quarter($inuit-base-spacing-unit);
+  }
+}
+
+// header with container and wrapper elements
+.#{$grommet-namespace}header__container {
+  flex-shrink: 0;
+}
+
+.#{$grommet-namespace}header__container--fill {
+  .#{$grommet-namespace}header {
+    background-color: $header-background-color;
+  }
+}
+
+.#{$grommet-namespace}header__container--fixed {
+  position: relative;
+
+  .#{$grommet-namespace}header__wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 3;
+
+    .#{$grommet-namespace}header {
+      @include media-query(lap-and-up) {
+        position: fixed;
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}header__container--float {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.#{$grommet-namespace}header__wrapper {
+  height: $header-height;
+}
+
+.#{$grommet-namespace}header__wrapper--large {
+  height: $large-header-height;
+}
+
+.#{$grommet-namespace}header__wrapper--small {
+  height: $small-header-height;
+}
+
+.#{$grommet-namespace}header--fixed {
+  .#{$grommet-namespace}header__wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: $header-background-color;
+    z-index: 3;
+  }
+}
+
+.#{$grommet-namespace}header--fixed.#{$grommet-namespace}header--primary {
+  .#{$grommet-namespace}header__wrapper {
+    position: fixed;
+    background-color: $header-background-color;
+  }
+
+  .#{$grommet-namespace}header__content {
+    position: static;
+    background-color: transparent;
+  }
+}
+
+.#{$grommet-namespace}header--flush {
+  .#{$grommet-namespace}header__wrapper {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}

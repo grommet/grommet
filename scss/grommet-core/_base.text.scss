@@ -1,0 +1,118 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+.grommet {
+  @include inuit-font-size($content-font-size, $inuit-base-spacing-unit);
+
+  h1:not(.#{$grommet-namespace}heading) {
+    @include h1();
+  }
+
+  h2:not(.#{$grommet-namespace}heading) {
+    @include h2();
+  }
+
+  h3:not(.#{$grommet-namespace}heading) {
+    @include h3();
+  }
+
+  h4:not(.#{$grommet-namespace}heading) {
+    @include h4();
+  }
+
+  h5:not(.#{$grommet-namespace}heading) {
+    @include h5();
+  }
+
+  h6:not(.#{$grommet-namespace}heading) {
+    @include h6();
+  }
+
+  h1:not(.#{$grommet-namespace}heading),
+  h2:not(.#{$grommet-namespace}heading),
+  h3:not(.#{$grommet-namespace}heading),
+  h4:not(.#{$grommet-namespace}heading),
+  h5:not(.#{$grommet-namespace}heading),
+  h6:not(.#{$grommet-namespace}heading) {
+    @include heading();
+  }
+
+  dd,
+  li:not([class^="#{$grommet-namespace}"]) {
+    max-width: $readable-text-width;
+    margin-left: 0px;
+    @include text();
+  }
+
+  dd {
+    font-size: $paragraph-font-size;
+    font-weight: $text-font-weight;
+    line-height: $paragraph-line-height;
+    margin-bottom: halve($inuit-base-spacing-unit);
+  }
+
+  p:not(.#{$grommet-namespace}paragraph) {
+    @include paragraph();
+  }
+
+  blockquote {
+    @include inuit-font-size(36px);
+    margin-top: $inuit-base-spacing-unit;
+    margin-bottom: $inuit-base-spacing-unit;
+  }
+
+  b,
+  strong {
+    font-weight: $text-strong-font-weight;
+  }
+
+  code {
+    font-family: $code-font-family;
+  }
+
+  .large-number-font {
+    font-family: $brand-large-number-font-family;
+  }
+
+  .secondary {
+    color: $secondary-text-color;
+  }
+
+  .error {
+    color: map-get($brand-status-colors, critical);
+  }
+
+  // Removed as this was causing issues with icons inside table cells.
+  // svg {
+  //   max-width: 100%;
+  // }
+
+  #{$dark-background} {
+    p:not(.#{$grommet-namespace}paragraph),
+    dd {
+      color: $colored-text-color;
+    }
+
+    .secondary {
+      color: $colored-text-color;
+    }
+
+    .error {
+      color: $brand-error-colored-color;
+    }
+  }
+
+  #{$light-background} {
+    p:not(.#{$grommet-namespace}paragraph),
+    dd {
+      color: $text-color;
+    }
+
+    .secondary {
+      color: $secondary-text-color;
+    }
+
+    .error {
+      color: map-get($brand-status-colors, critical);
+    }
+  }
+}

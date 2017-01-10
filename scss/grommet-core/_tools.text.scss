@@ -1,0 +1,76 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+// We use mixins for some text styles to make it easier to modularize the
+// CSS. For example `.grommet p` uses the same styles as
+// `.#{$grommet-namespace}paragraph` while avoiding issues with the
+// grommet component not being able to customize styles for various
+// flavors without running into prcedence issues with the higher specificity
+// of the generic style under `.grommet`.
+
+@mixin text() {
+  font-size: $paragraph-font-size;
+  font-weight: $text-font-weight;
+  line-height: $paragraph-line-height;
+  color: $paragraph-text-color;
+}
+
+@mixin paragraph() {
+  max-width: $readable-text-width;
+  margin-left: 0px;
+  margin-top: $inuit-base-spacing-unit;
+  margin-bottom: $inuit-base-spacing-unit;
+  @include text();
+}
+
+@mixin heading() {
+  font-weight: $text-font-weight;
+  max-width: 100%;
+
+  a,
+  .#{$grommet-namespace}anchor {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin h1() {
+  @include media-query(lap-and-up) {
+    @include inuit-font-size($h1-font-size, $h1-line-height);
+  }
+  @include media-query(palm) {
+    @include inuit-font-size($h1-palm-font-size, $h1-line-height);
+  }
+}
+
+@mixin h2() {
+  @include media-query(lap-and-up) {
+    @include inuit-font-size($h2-font-size, $h2-line-height);
+  }
+  @include media-query(palm) {
+    @include inuit-font-size($h2-palm-font-size, $h2-line-height);
+  }
+}
+
+@mixin h3() {
+  font-size: $h3-font-size;
+  line-height: $h3-line-height;
+}
+
+@mixin h4() {
+  font-size: $h4-font-size;
+  line-height: $h4-line-height;
+}
+
+@mixin h5() {
+  font-size: $h5-font-size;
+  line-height: $h5-line-height;
+}
+
+@mixin h6() {
+  font-size: $h6-font-size;
+  line-height: $h6-line-height;
+}
