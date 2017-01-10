@@ -30,7 +30,7 @@ export default class Anchor extends Component {
       }
 
       if (onClick) {
-        onClick();
+        onClick(...arguments);
       }
     }
   }
