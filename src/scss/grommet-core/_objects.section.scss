@@ -37,7 +37,7 @@ section:not(.#{$grommet-namespace}section) {
   }
 
   > ol,
-  > ul {
+  > ul:not([class^="#{$grommet-namespace}"]) {
     @include media-query(palm) {
       margin-left: 2rem;
     }
