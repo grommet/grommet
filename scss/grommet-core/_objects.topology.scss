@@ -1,0 +1,203 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+$outer-pad: round($inuit-base-spacing-unit * 2);
+$inner-pad: round($inuit-base-spacing-unit * 0.25);
+$topology-stroke-width: round($inuit-base-spacing-unit / 12);
+$topology-active-stroke-width: round($inuit-base-spacing-unit / 4);
+
+.#{$grommet-namespace}topology {
+  position: relative;
+  outline: none;
+
+  // put status icons above canvas so lines start under them
+  .#{$grommet-namespace}status-icon {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.#{$grommet-namespace}topology--focus {
+  border-color: $focus-border-color;
+  box-shadow: 0 0 1px 1px $focus-border-color;
+}
+
+.#{$grommet-namespace}topology__links {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.#{$grommet-namespace}topology__path {
+  stroke-width: $topology-stroke-width;
+  @include graph-stroke-color();
+}
+
+.#{$grommet-namespace}topology__path--active {
+  stroke-width: $topology-active-stroke-width;
+}
+
+.#{$grommet-namespace}topology__contents
+> .#{$grommet-namespace}topology__parts--direction-row
+> .#{$grommet-namespace}topology__part {
+
+  @include media-query(lap-and-up) {
+    margin-right: $outer-pad;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @include media-query(palm) {
+    margin-bottom: $outer-pad;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.#{$grommet-namespace}topology__contents
+> .#{$grommet-namespace}topology__parts--direction-column
+> .#{$grommet-namespace}topology__part {
+
+  margin-bottom: $outer-pad;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.#{$grommet-namespace}topology__parts {
+  display: flex;
+  align-items: stretch;
+  outline: none;
+}
+
+.#{$grommet-namespace}topology__parts--direction-row {
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.#{$grommet-namespace}topology__parts--direction-column {
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.#{$grommet-namespace}topology__parts--align-start {
+  align-items: flex-start;
+}
+
+.#{$grommet-namespace}topology__parts--align-center {
+  align-items: center;
+}
+
+.#{$grommet-namespace}topology__parts--align-end {
+  align-items: flex-end;
+}
+
+.#{$grommet-namespace}topology__parts--align-stretch {
+  align-items: stretch;
+}
+
+.#{$grommet-namespace}topology__part {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  overflow: hidden;
+  outline: none;
+
+  > .#{$grommet-namespace}topology__parts .#{$grommet-namespace}topology__part {
+    flex: 1;
+  }
+}
+
+.#{$grommet-namespace}topology__part--demarcate {
+  border: 1px solid $border-color;
+
+  #{$dark-background-context} {
+    border-color: $colored-border-color;
+  }
+
+  #{$light-background-context} {
+    border-color: $border-color;
+  }
+
+  &.#{$grommet-namespace}topology__part--empty {
+    background-color: $secondary-background-color;
+    min-width: $inuit-base-spacing-unit;
+    min-height: $inuit-base-spacing-unit;
+
+    #{$dark-background-context} {
+      background-color: $colored-active-background-color;
+    }
+
+    #{$light-background-context} {
+      background-color: $secondary-background-color;
+    }
+  }
+}
+
+.#{$grommet-namespace}topology__part--justify-start {
+  justify-content: flex-start;
+}
+
+.#{$grommet-namespace}topology__part--justify-center {
+  justify-content: center;
+}
+
+.#{$grommet-namespace}topology__part--justify-between {
+  justify-content: space-between;
+}
+
+.#{$grommet-namespace}topology__part--justify-end {
+  justify-content: flex-end;
+}
+
+.#{$grommet-namespace}topology__part--align-start {
+  align-items: flex-start;
+}
+
+.#{$grommet-namespace}topology__part--align-center {
+  align-items: center;
+}
+
+.#{$grommet-namespace}topology__part--align-end {
+  align-items: flex-end;
+}
+
+.#{$grommet-namespace}topology__part--align-stretch {
+  align-items: stretch;
+}
+
+.#{$grommet-namespace}topology__part--direction-row {
+  flex-direction: row;
+
+  &.#{$grommet-namespace}topology__part--reverse {
+    flex-direction: row-reverse;
+  }
+
+  > *:not(.#{$grommet-namespace}topology__parts):not(.#{$grommet-namespace}topology__part) {
+    margin: $inner-pad;
+  }
+}
+
+.#{$grommet-namespace}topology__part--direction-column {
+  flex-direction: column;
+
+  &.#{$grommet-namespace}topology__part--reverse {
+    flex-direction: column-reverse;
+  }
+
+  > *:not(.#{$grommet-namespace}topology__parts):not(.#{$grommet-namespace}topology__part) {
+    margin: $inner-pad;
+  }
+}
+
+.#{$grommet-namespace}topology__label {
+  font-size: $content-small-font-size;
+  margin-left: halve($inuit-base-spacing-unit);
+  margin-right: halve($inuit-base-spacing-unit);
+}

@@ -1,0 +1,83 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+$button-accent-color: nth($brand-accent-colors, 1);
+$hover-darken: 15%;
+$active-darken: 20%;
+
+@mixin light-shadows() {
+  &:hover {
+    box-shadow: 0px 0px 0px 2px $button-border-color;
+  }
+
+  &.#{$grommet-namespace}button--primary {
+    &:hover {
+      box-shadow: 0px 0px 0px 2px $brand-color;
+    }
+  }
+
+  &.#{$grommet-namespace}button--secondary {
+    &:hover {
+      box-shadow: 0px 0px 0px 2px $button-secondary-color;
+    }
+  }
+
+  &.#{$grommet-namespace}button--accent {
+    &:hover {
+      box-shadow: 0px 0px 0px 2px $button-accent-color;
+    }
+  }
+}
+
+.#{$grommet-namespace}button {
+  border-radius: 5px;
+
+  &:not(.#{$grommet-namespace}button--disabled):not(.#{$grommet-namespace}button--plain):not(.#{$grommet-namespace}button--fill) {
+
+    @include light-shadows();
+
+    #{$dark-background-context} {
+
+      &:hover {
+        box-shadow: 0px 0px 0px 2px $button-colored-border-color;
+      }
+
+      &.#{$grommet-namespace}button--primary {
+        &:hover {
+          box-shadow: 0px 0px 0px 2px $brand-color;
+        }
+      }
+
+      &.#{$grommet-namespace}button--secondary {
+        &:hover {
+          box-shadow: 0px 0px 0px 2px $button-secondary-color;
+        }
+      }
+
+      &.#{$grommet-namespace}button--accent {
+        &:hover {
+          box-shadow: 0px 0px 0px 2px $button-accent-color;
+        }
+      }
+    }
+
+    #{$light-background-context} {
+      @include light-shadows();
+    }
+  }
+
+  &--fill:not(.#{$grommet-namespace}button--disabled):not(.#{$grommet-namespace}button--plain) {
+    &:hover {
+      padding: ($button-vertical-padding - ($button-border-width))
+        ($button-horizontal-padding - ($button-border-width));
+      border-width: double($button-border-width);
+    }
+
+    @include media-query(lap-and-up) {
+      transition: none;
+    }
+  }
+}
+
+.#{$grommet-namespace}tab__button {
+  border-radius: 0;
+}
