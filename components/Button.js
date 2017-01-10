@@ -91,7 +91,7 @@ var Button = function (_Component) {
       }
 
       if (onClick) {
-        onClick();
+        onClick.apply(undefined, arguments);
       }
     }
   }, {
