@@ -53,7 +53,7 @@ export default class DateTimeDrop extends Component {
     this.state = this._stateFromProps(props);
     this.state.mouseActive = false;
 
-    this._buildDateRows();
+    this._buildDateRows(this.state);
   }
 
   componentDidMount () {
@@ -78,7 +78,6 @@ export default class DateTimeDrop extends Component {
   }
 
   _buildDateRows (state) {
-    state = state || this.state;
     const { timeOfDay, value } = state;
     const start = moment(value).startOf('month').startOf('week').add(timeOfDay);
     const end = moment(value).endOf('month').endOf('week').add(timeOfDay);
@@ -224,7 +223,7 @@ export default class DateTimeDrop extends Component {
 
   _onPrevious (scope, notify=true) {
     const { format, step, onChange } = this.props;
-    const { stepScope, value } = this.state;
+    const { stepScope, timeOfDay, value } = this.state;
     let delta = (scope === stepScope ? step : 1);
     if (scope === 'ampm') {
       delta = 12;
@@ -240,12 +239,17 @@ export default class DateTimeDrop extends Component {
     });
     if (notify) {
       onChange(newValue.format(format));
+    } else {
+      // rebuild grid
+      let state = { timeOfDay, value: newValue };
+      this._buildDateRows(state);
+      this.setState(state);
     }
   }
 
   _onNext (scope, notify=true) {
     const { format, step, onChange } = this.props;
-    const { stepScope, value } = this.state;
+    const { stepScope, timeOfDay, value } = this.state;
     let delta = (scope === stepScope ? step : 1);
     if (scope === 'ampm') {
       delta = 12;
@@ -261,10 +265,16 @@ export default class DateTimeDrop extends Component {
     });
     if (notify) {
       onChange(newValue.format(format));
+    } else {
+      // rebuild grid
+      let state = { timeOfDay, value: newValue };
+      this._buildDateRows(state);
+      this.setState(state);
     }
   }
 
   _renderGrid () {
+    const { value: propsValue } = this.props;
     const { activeCell, dateRows, focus, mouseActive, value } = this.state;
     const { intl } = this.context;
 
@@ -279,7 +289,7 @@ export default class DateTimeDrop extends Component {
       const days = row.map((date, columnIndex) => {
         const classes = classnames(
           `${CLASS_ROOT}__day`, {
-            [`${CLASS_ROOT}__day--active`]: date.isSame(value, 'day'),
+            [`${CLASS_ROOT}__day--active`]: date.isSame(propsValue, 'day'),
             [`${CLASS_ROOT}__day--hover`]: (
               !date.isSame(value, 'day') &&
               [rowIndex, columnIndex].toString() === activeCell.toString()
