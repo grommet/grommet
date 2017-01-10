@@ -61,16 +61,54 @@ var CLASS_ROOT = _CSSClassnames2.default.ANCHOR; // (C) Copyright 2014-2016 Hewl
 var Anchor = function (_Component) {
   (0, _inherits3.default)(Anchor, _Component);
 
-  function Anchor() {
+  function Anchor(props, context) {
     (0, _classCallCheck3.default)(this, Anchor);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Anchor.__proto__ || (0, _getPrototypeOf2.default)(Anchor)).call(this));
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Anchor.__proto__ || (0, _getPrototypeOf2.default)(Anchor)).call(this, props, context));
 
     _this._onClick = _this._onClick.bind(_this);
+    _this._onLocationChange = _this._onLocationChange.bind(_this);
+
+    var path = props.path;
+    var router = context.router;
+
+
+    _this.state = {
+      active: router && path && router.isActive(path)
+    };
     return _this;
   }
 
   (0, _createClass3.default)(Anchor, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var path = this.props.path;
+
+      if (path) {
+        var router = this.context.router;
+
+        this._unlisten = router.listen(this._onLocationChange);
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      var path = this.props.path;
+
+      if (path) {
+        this._unlisten();
+      }
+    }
+  }, {
+    key: '_onLocationChange',
+    value: function _onLocationChange(location) {
+      var path = this.props.path;
+      var router = this.context.router;
+
+      var active = router && location.pathname === path;
+      this.setState({ active: active });
+    }
+  }, {
     key: '_onClick',
     value: function _onClick(event) {
       var _props = this.props,
@@ -118,6 +156,7 @@ var Anchor = function (_Component) {
           props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'align', 'animateIcon', 'children', 'className', 'disabled', 'href', 'icon', 'label', 'onClick', 'path', 'primary', 'reverse', 'tag']);
 
       delete props.method;
+      var active = this.state.active;
       var router = this.context.router;
 
 
@@ -151,7 +190,7 @@ var Anchor = function (_Component) {
 
       var adjustedHref = path && router ? router.createPath(path) : href;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--animate-icon', hasIcon && animateIcon !== false), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', disabled), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon', anchorIcon || hasIcon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon-label', hasIcon && label), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--reverse', reverse), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--active', router && path && router.isActive(path)), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--animate-icon', hasIcon && animateIcon !== false), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', disabled), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon', anchorIcon || hasIcon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon-label', hasIcon && label), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--reverse', reverse), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--active', active), _classnames), className);
 
       var adjustedOnClick = path && router ? this._onClick : onClick;
 
