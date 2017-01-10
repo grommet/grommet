@@ -11,9 +11,39 @@ const CLASS_ROOT = CSSClassnames.ANCHOR;
 
 export default class Anchor extends Component {
 
-  constructor () {
-    super();
+  constructor (props, context) {
+    super(props, context);
     this._onClick = this._onClick.bind(this);
+    this._onLocationChange = this._onLocationChange.bind(this);
+
+    const { path } = props;
+    const { router } = context;
+
+    this.state = {
+      active: router && path && router.isActive(path)
+    };
+  }
+
+  componentDidMount () {
+    const { path } = this.props;
+    if (path) {
+      const { router } = this.context;
+      this._unlisten = router.listen(this._onLocationChange);
+    }
+  }
+
+  componentWillUnmount () {
+    const { path } = this.props;
+    if (path) {
+      this._unlisten();
+    }
+  }
+
+  _onLocationChange (location) {
+    const { path } = this.props;
+    const { router } = this.context;
+    const active = router && location.pathname === path;
+    this.setState({ active });
   }
 
   _onClick (event) {
@@ -41,6 +71,7 @@ export default class Anchor extends Component {
       label, onClick, path, primary, reverse, tag, ...props
     } = this.props;
     delete props.method;
+    const { active } = this.state;
     const { router } = this.context;
 
     let anchorIcon;
@@ -77,7 +108,7 @@ export default class Anchor extends Component {
         [`${CLASS_ROOT}--align-${align}`]: align,
         [`${CLASS_ROOT}--primary`]: primary,
         [`${CLASS_ROOT}--reverse`]: reverse,
-        [`${CLASS_ROOT}--active`]: (router && path && router.isActive(path))
+        [`${CLASS_ROOT}--active`]: active
       },
       className
     );
