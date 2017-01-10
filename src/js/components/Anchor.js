@@ -38,7 +38,7 @@ export default class Anchor extends Component {
   render () {
     const {
       a11yTitle, align, animateIcon, children, className, disabled, href, icon,
-      label, onClick, path, primary, reverse, tag, ...props
+      label, onClick, path, primary, reverse, tag, indexLink, ...props
     } = this.props;
     delete props.method;
     const { router } = this.context;
@@ -77,7 +77,8 @@ export default class Anchor extends Component {
         [`${CLASS_ROOT}--align-${align}`]: align,
         [`${CLASS_ROOT}--primary`]: primary,
         [`${CLASS_ROOT}--reverse`]: reverse,
-        [`${CLASS_ROOT}--active`]: (router && path && router.isActive(path))
+        [`${CLASS_ROOT}--active`]: (router && path &&
+                                    router.isActive(path, indexLink))
       },
       className
     );
@@ -139,7 +140,10 @@ schema(Anchor, {
         defaultProp: 'a'
       }
     ],
-    target: [PropTypes.string, 'Target of the link.']
+    target: [PropTypes.string, 'Target of the link.'],
+    indexLink: [PropTypes.bool, 'If true, the link will not be set' +
+      'as active unless the path matches exactly.'
+    ]
   }
 });
 
