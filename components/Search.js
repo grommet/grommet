@@ -209,7 +209,11 @@ var Search = function (_Component) {
           top: inline ? 'bottom' : 'top',
           left: 'left'
         };
-        this._drop = new _Drop2.default(baseElement, this._renderDropContent(), { align: align, focusControl: true });
+        this._drop = new _Drop2.default(baseElement, this._renderDropContent(), {
+          align: align,
+          focusControl: true,
+          responsive: false // so suggestion changes don't re-align
+        });
 
         this._inputRef.focus();
       } else if (this._drop) {

@@ -143,7 +143,8 @@ var SearchInput = function (_Component) {
         // If this is inside a FormField, place the drop in reference to it.
         var control = (0, _DOM.findAncestor)(this.componentRef, FORM_FIELD) || this.componentRef;
         this._drop = new _Drop2.default(control, this._renderDropContent(), {
-          align: { top: 'bottom', left: 'left' }
+          align: { top: 'bottom', left: 'left' },
+          responsive: false // so suggestion changes don't re-align
         });
 
         this.inputRef.focus();
