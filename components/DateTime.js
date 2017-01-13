@@ -93,6 +93,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var CLASS_ROOT = _CSSClassnames2.default.DATE_TIME;
 var INPUT = _CSSClassnames2.default.INPUT;
 var FORM_FIELD = _CSSClassnames2.default.FORM_FIELD;
+var DATE_TIME_DROP = _CSSClassnames2.default.DATE_TIME_DROP;
+
 var FORMATS = {
   M: 'months',
   D: 'days',
@@ -155,7 +157,7 @@ var DateTime = function (_Component) {
       }
 
       if (cursor >= 0) {
-        this.inputRef.setSelectionRange(cursor, cursor);
+        this._inputRef.setSelectionRange(cursor, cursor);
       }
     }
   }, {
@@ -258,14 +260,15 @@ var DateTime = function (_Component) {
   }, {
     key: '_onClose',
     value: function _onClose(event) {
-      if (!(0, _DOM.isDescendant)(this.containerRef, event.target) && !(0, _DOM.isDescendant)(this._drop.container, event.target)) {
+      var dropElement = document.querySelector('.' + DATE_TIME_DROP);
+      if (!(0, _DOM.isDescendant)(this._containerRef, event.target) && (!dropElement || !(0, _DOM.isDescendant)(dropElement, event.target))) {
         this.setState({ dropActive: false, cursor: -1 });
       }
     }
   }, {
     key: '_onNext',
     value: function _onNext(event) {
-      if (this.inputRef === document.activeElement) {
+      if (this._inputRef === document.activeElement) {
         var step = this.props.step;
         var current = this.state.current;
 
@@ -287,7 +290,7 @@ var DateTime = function (_Component) {
   }, {
     key: '_onPrevious',
     value: function _onPrevious(event) {
-      if (this.inputRef === document.activeElement) {
+      if (this._inputRef === document.activeElement) {
         var step = this.props.step;
         var current = this.state.current;
 
@@ -311,7 +314,7 @@ var DateTime = function (_Component) {
     value: function _cursorScope() {
       var format = this.props.format;
 
-      var input = this.inputRef;
+      var input = this._inputRef;
       var value = input.value;
       var end = input.selectionEnd;
       this.setState({ cursor: end });
@@ -344,8 +347,8 @@ var DateTime = function (_Component) {
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, listeners);
 
         // If this is inside a FormField, place the drop in reference to it.
-        var control = (0, _DOM.findAncestor)(this.containerRef, '.' + FORM_FIELD) || this.containerRef;
-        this._drop = _Drop2.default.add(control, this._renderDrop(), {
+        var control = (0, _DOM.findAncestor)(this._containerRef, '.' + FORM_FIELD) || this._containerRef;
+        this._drop = new _Drop2.default(control, this._renderDrop(), {
           align: { top: 'bottom', left: 'left' },
           focusControl: true,
           context: this.context
@@ -409,10 +412,10 @@ var DateTime = function (_Component) {
       return _react2.default.createElement(
         'div',
         { ref: function ref(_ref2) {
-            return _this2.containerRef = _ref2;
+            return _this2._containerRef = _ref2;
           }, className: classes },
         _react2.default.createElement('input', (0, _extends3.default)({ ref: function ref(_ref) {
-            return _this2.inputRef = _ref;
+            return _this2._inputRef = _ref;
           } }, props, {
           className: INPUT + ' ' + CLASS_ROOT + '__input', placeholder: format,
           value: inputValue || '', onChange: this._onInputChange })),

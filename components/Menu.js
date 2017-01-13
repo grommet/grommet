@@ -297,7 +297,7 @@ MenuDrop.displayName = 'MenuDrop';
 
 MenuDrop.propTypes = (0, _extends3.default)({
   control: _react.PropTypes.node,
-  dropAlign: _Drop2.default.alignPropType,
+  dropAlign: _Drop.dropAlignPropType,
   dropColorIndex: _react.PropTypes.string,
   onClick: _react.PropTypes.func.isRequired,
   router: _react.PropTypes.any,
@@ -399,7 +399,7 @@ var Menu = function (_Component2) {
             _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
             document.addEventListener('click', this._checkOnClose);
             document.addEventListener('touchstart', this._checkOnClose);
-            this._drop = _Drop2.default.add((0, _reactDom.findDOMNode)(this._controlRef), this._renderMenuDrop(), {
+            this._drop = new _Drop2.default((0, _reactDom.findDOMNode)(this._controlRef), this._renderMenuDrop(), {
               align: this.props.dropAlign,
               colorIndex: this.props.dropColorIndex,
               focusControl: true
@@ -602,7 +602,7 @@ exports.default = Menu;
 
 Menu.propTypes = (0, _extends3.default)({
   closeOnClick: _react.PropTypes.bool,
-  dropAlign: _Drop2.default.alignPropType,
+  dropAlign: _Drop.dropAlignPropType,
   dropColorIndex: _react.PropTypes.string,
   icon: _react.PropTypes.node,
   id: _react.PropTypes.string,

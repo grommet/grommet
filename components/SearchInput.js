@@ -142,13 +142,13 @@ var SearchInput = function (_Component) {
 
         // If this is inside a FormField, place the drop in reference to it.
         var control = (0, _DOM.findAncestor)(this.componentRef, FORM_FIELD) || this.componentRef;
-        this._drop = _Drop2.default.add(control, this._renderDrop(), {
+        this._drop = new _Drop2.default(control, this._renderDropContent(), {
           align: { top: 'bottom', left: 'left' }
         });
 
         this.inputRef.focus();
       } else if (dropActive && prevState.dropActive) {
-        this._drop.render(this._renderDrop());
+        this._drop.render(this._renderDropContent());
       }
 
       if (announceChange && suggestions) {
@@ -335,8 +335,8 @@ var SearchInput = function (_Component) {
       }
     }
   }, {
-    key: '_renderDrop',
-    value: function _renderDrop() {
+    key: '_renderDropContent',
+    value: function _renderDropContent() {
       var _this3 = this;
 
       var suggestions = this.props.suggestions;

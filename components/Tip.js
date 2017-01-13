@@ -86,7 +86,7 @@ var Tip = function (_Component) {
 
         var classNames = (0, _classnames3.default)(CLASS_ROOT + '__drop', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--left', align.left), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--right', align.right), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--top', align.top), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--bottom', align.bottom), _classnames));
 
-        this._drop = _Drop2.default.add(target, this._renderDrop(), {
+        this._drop = new _Drop2.default(target, this._renderDropContent(), {
           align: align,
           className: classNames,
           colorIndex: colorIndex,
@@ -131,8 +131,8 @@ var Tip = function (_Component) {
       return document.getElementById(target) || document.querySelector('.' + target);
     }
   }, {
-    key: '_renderDrop',
-    value: function _renderDrop() {
+    key: '_renderDropContent',
+    value: function _renderDropContent() {
       var onClose = this.props.onClose;
 
       return _react2.default.createElement(

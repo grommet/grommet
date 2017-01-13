@@ -209,11 +209,11 @@ var Search = function (_Component) {
           top: inline ? 'bottom' : 'top',
           left: 'left'
         };
-        this._drop = _Drop2.default.add(baseElement, this._renderDrop(), { align: align, focusControl: true });
+        this._drop = new _Drop2.default(baseElement, this._renderDropContent(), { align: align, focusControl: true });
 
         this._inputRef.focus();
       } else if (this._drop) {
-        this._drop.render(this._renderDrop());
+        this._drop.render(this._renderDropContent());
       }
 
       if (announceChange && suggestions) {
@@ -452,8 +452,8 @@ var Search = function (_Component) {
       }
     }
   }, {
-    key: '_renderDrop',
-    value: function _renderDrop() {
+    key: '_renderDropContent',
+    value: function _renderDropContent() {
       var _classnames,
           _this3 = this;
 
@@ -594,7 +594,7 @@ Search.defaultProps = {
 Search.propTypes = {
   align: _react.PropTypes.string,
   defaultValue: _react.PropTypes.string,
-  dropAlign: _Drop2.default.alignPropType,
+  dropAlign: _Drop.dropAlignPropType,
   dropColorIndex: _react.PropTypes.string,
   fill: _react.PropTypes.bool,
   iconAlign: _react.PropTypes.oneOf(['start', 'end']),

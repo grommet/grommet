@@ -184,7 +184,7 @@ var Select = function (_Component) {
         if (!inline) {
           // If this is inside a FormField, place the drop in reference to it.
           var control = (0, _DOM.findAncestor)(this.componentRef, FORM_FIELD) || this.componentRef;
-          this._drop = _Drop2.default.add(control, this._renderOptions(CLASS_ROOT + '__drop'), {
+          this._drop = new _Drop2.default(control, this._renderOptions(CLASS_ROOT + '__drop'), {
             align: { top: 'bottom', left: 'left' },
             context: this.context
           });
@@ -241,7 +241,7 @@ var Select = function (_Component) {
     value: function _announceOptions(index) {
       var intl = this.context.intl;
 
-      var labelMessage = this._renderLabel(this.props.options[index], true);
+      var labelMessage = this._renderValue(this.props.options[index]);
       var enterSelectMessage = _Intl2.default.getMessage(intl, 'Enter Select');
       (0, _Announcer.announce)(labelMessage + ' ' + enterSelectMessage);
     }
@@ -323,42 +323,8 @@ var Select = function (_Component) {
       this.setState({ activeOptionIndex: index }, this._announceOptions.bind(this, index));
     }
   }, {
-    key: '_onEnter',
-    value: function _onEnter(event) {
-      var _this2 = this;
-
-      var _props3 = this.props,
-          onChange = _props3.onChange,
-          options = _props3.options;
-      var activeOptionIndex = this.state.activeOptionIndex;
-      var intl = this.context.intl;
-
-      this.setState({ dropActive: false });
-      if (activeOptionIndex >= 0) {
-        (function () {
-          event.preventDefault(); // prevent submitting forms
-          var option = options[activeOptionIndex];
-          _this2.setState({ value: option }, function () {
-            var optionMessage = _this2._renderLabel(option, true);
-            var selectedMessage = _Intl2.default.getMessage(intl, 'Selected');
-            (0, _Announcer.announce)(optionMessage + ' ' + selectedMessage);
-          });
-          if (onChange) {
-            onChange({ target: _this2.inputRef, option: option });
-          }
-        })();
-      }
-    }
-  }, {
-    key: '_stopPropagation',
-    value: function _stopPropagation() {
-      if ((0, _reactDom.findDOMNode)(this._searchRef).contains(document.activeElement)) {
-        return true;
-      }
-    }
-  }, {
-    key: '_onClickOption',
-    value: function _onClickOption(option) {
+    key: '_valueForSelectedOption',
+    value: function _valueForSelectedOption(option) {
       var multiple = this.props.multiple;
       var value = this.state.value;
 
@@ -381,22 +347,74 @@ var Select = function (_Component) {
       } else {
         nextValue = option;
       }
-      this.setState({ value: nextValue, dropActive: false });
-      if (this.props.onChange) {
-        this.props.onChange({
-          target: this.inputRef, option: option, value: nextValue
-        });
+      return nextValue;
+    }
+  }, {
+    key: '_onEnter',
+    value: function _onEnter(event) {
+      var _this2 = this;
+
+      var _props3 = this.props,
+          onChange = _props3.onChange,
+          options = _props3.options;
+      var activeOptionIndex = this.state.activeOptionIndex;
+      var intl = this.context.intl;
+
+      if (activeOptionIndex >= 0) {
+        (function () {
+          event.preventDefault(); // prevent submitting forms
+          var option = options[activeOptionIndex];
+          var value = _this2._valueForSelectedOption(option);
+          _this2.setState({ dropActive: false, value: value }, function () {
+            var optionMessage = _this2._renderLabel(option);
+            var selectedMessage = _Intl2.default.getMessage(intl, 'Selected');
+            (0, _Announcer.announce)(optionMessage + ' ' + selectedMessage);
+          });
+          if (onChange) {
+            onChange({ target: _this2.inputRef, option: option, value: value });
+          }
+        })();
+      } else {
+        this.setState({ dropActive: false });
+      }
+    }
+  }, {
+    key: '_stopPropagation',
+    value: function _stopPropagation() {
+      if ((0, _reactDom.findDOMNode)(this._searchRef).contains(document.activeElement)) {
+        return true;
+      }
+    }
+  }, {
+    key: '_onClickOption',
+    value: function _onClickOption(option) {
+      var onChange = this.props.onChange;
+
+      var value = this._valueForSelectedOption(option);
+      this.setState({ dropActive: false, value: value });
+      if (onChange) {
+        onChange({ target: this.inputRef, option: option, value: value });
       }
     }
   }, {
     key: '_renderLabel',
-    value: function _renderLabel(option, announce) {
+    value: function _renderLabel(option) {
+      if ((typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
+        // revert for announce as label is often a complex object
+        return option.label || option.value || '';
+      } else {
+        return undefined === option || null === option ? '' : option;
+      }
+    }
+  }, {
+    key: '_renderValue',
+    value: function _renderValue(option) {
       var intl = this.context.intl;
 
       if (Array.isArray(option)) {
         // Could be an Array when !inline+multiple
         if (1 === option.length) {
-          return this._renderLabel(option[0]);
+          return this._renderValue(option[0]);
         } else if (option.length > 1) {
           var selectedMultiple = _Intl2.default.getMessage(intl, 'Selected Multiple', {
             count: option.length
@@ -404,8 +422,7 @@ var Select = function (_Component) {
           return selectedMultiple;
         }
       } else if ((typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
-        // revert for announce as label is often a complex object
-        return announce ? option.value || option.label || '' : option.label || option.value || '';
+        return typeof option.label === 'string' ? option.label : option.value || '';
       } else {
         return undefined === option || null === option ? '' : option;
       }
@@ -557,7 +574,7 @@ var Select = function (_Component) {
               return _this5.inputRef = _ref2;
             },
             className: INPUT + ' ' + CLASS_ROOT + '__input',
-            disabled: true, value: this._renderLabel(value) })),
+            disabled: true, value: this._renderValue(value) || '' })),
           _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control',
             a11yTitle: _Intl2.default.getMessage(intl, 'Select Icon'),
             icon: _react2.default.createElement(_CaretDown2.default, null), onClick: this._onAddDrop })
