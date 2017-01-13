@@ -153,6 +153,20 @@ const _normalizeOptions = (options) => {
   return options;
 };
 
+// Drop options:
+//
+// align: See dropAlignPropType
+// className: PropTypes.string
+// colorIndex: PropTypes.string
+//    Background color
+// context: PropTypes.object
+//    React context to pass through
+// focusControl: PropTypes.bool
+//    Whether to focus inside the dropped content when added
+// responsive: PropTypes.bool
+//    Whether to dynamically re-place when resized
+//
+
 export default class Drop {
 
   constructor (control, content, options) {

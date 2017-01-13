@@ -98,7 +98,8 @@ export default class Select extends Component {
         this._drop = new Drop(control,
           this._renderOptions(`${CLASS_ROOT}__drop`), {
             align: { top: 'bottom', left: 'left' },
-            context: this.context
+            context: this.context,
+            responsive: false // so suggestion changes don't re-align
           });
       }
 

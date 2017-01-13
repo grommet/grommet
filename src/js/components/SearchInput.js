@@ -78,7 +78,8 @@ export default class SearchInput extends Component {
         findAncestor(this.componentRef, FORM_FIELD) || this.componentRef;
       this._drop = new Drop(control,
         this._renderDropContent(), {
-          align: {top: 'bottom', left: 'left'}
+          align: {top: 'bottom', left: 'left'},
+          responsive: false // so suggestion changes don't re-align
         });
 
       this.inputRef.focus();

@@ -85,7 +85,10 @@ export default class TextInput extends Component {
       const control =
         findAncestor(this.componentRef, FORM_FIELD) || this.componentRef;
       this._drop = new Drop(control,
-        this._renderDropContent(), { align: {top: 'bottom', left: 'left'} });
+        this._renderDropContent(), {
+          align: {top: 'bottom', left: 'left'},
+          responsive: false // so suggestion changes don't re-align
+        });
     } else if (dropActive && prevState.dropActive) {
       this._drop.render(this._renderDropContent());
     }
