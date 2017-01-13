@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
-import Drop from '../utils/Drop';
+import Drop, { dropAlignPropType } from '../utils/Drop';
 import Props from '../utils/Props';
 import Responsive from '../utils/Responsive';
 import Button from './Button';
@@ -116,12 +116,12 @@ export default class Search extends Component {
         top: (inline ? 'bottom' : 'top'),
         left: 'left'
       };
-      this._drop = Drop.add(baseElement, this._renderDrop(),
+      this._drop = new Drop(baseElement, this._renderDropContent(),
         { align: align, focusControl: true });
 
       this._inputRef.focus();
     } else if (this._drop) {
-      this._drop.render(this._renderDrop());
+      this._drop.render(this._renderDropContent());
     }
 
     if (announceChange && suggestions) {
@@ -325,7 +325,7 @@ export default class Search extends Component {
     }
   }
 
-  _renderDrop () {
+  _renderDropContent () {
     const {
       defaultValue, dropAlign, dropColorIndex, suggestions, value
     } = this.props;
@@ -462,7 +462,7 @@ Search.defaultProps = {
 Search.propTypes = {
   align: PropTypes.string,
   defaultValue: PropTypes.string,
-  dropAlign: Drop.alignPropType,
+  dropAlign: dropAlignPropType,
   dropColorIndex: PropTypes.string,
   fill: PropTypes.bool,
   iconAlign: PropTypes.oneOf(['start', 'end']),

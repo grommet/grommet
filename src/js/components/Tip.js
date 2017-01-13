@@ -46,7 +46,7 @@ export default class Tip extends Component {
         }
       );
 
-      this._drop = Drop.add(target, this._renderDrop(), {
+      this._drop = new Drop(target, this._renderDropContent(), {
         align: align,
         className: classNames,
         colorIndex: colorIndex,
@@ -88,7 +88,8 @@ export default class Tip extends Component {
       document.querySelector(`.${target}`)
     );
   }
-  _renderDrop () {
+
+  _renderDropContent () {
     const { onClose } = this.props;
     return (
       <Box className={CLASS_ROOT}

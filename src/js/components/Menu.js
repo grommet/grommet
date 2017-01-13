@@ -5,7 +5,7 @@ import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import { filterByFocusable } from '../utils/DOM';
-import Drop from '../utils/Drop';
+import Drop, { dropAlignPropType } from '../utils/Drop';
 import Intl from '../utils/Intl';
 import Props from '../utils/Props';
 import Responsive from '../utils/Responsive';
@@ -196,7 +196,7 @@ class MenuDrop extends Component {
 
 MenuDrop.propTypes = {
   control: PropTypes.node,
-  dropAlign: Drop.alignPropType,
+  dropAlign: dropAlignPropType,
   dropColorIndex: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   router: PropTypes.any,
@@ -305,7 +305,7 @@ export default class Menu extends Component {
           );
           document.addEventListener('click', this._checkOnClose);
           document.addEventListener('touchstart', this._checkOnClose);
-          this._drop = Drop.add(findDOMNode(this._controlRef),
+          this._drop = new Drop(findDOMNode(this._controlRef),
             this._renderMenuDrop(),
             {
               align: this.props.dropAlign,
@@ -494,7 +494,7 @@ export default class Menu extends Component {
 
 Menu.propTypes = {
   closeOnClick: PropTypes.bool,
-  dropAlign: Drop.alignPropType,
+  dropAlign: dropAlignPropType,
   dropColorIndex: PropTypes.string,
   icon: PropTypes.node,
   id: PropTypes.string,

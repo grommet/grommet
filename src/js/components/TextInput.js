@@ -84,10 +84,10 @@ export default class TextInput extends Component {
       // If this is inside a FormField, place the drop in reference to it.
       const control =
         findAncestor(this.componentRef, FORM_FIELD) || this.componentRef;
-      this._drop = Drop.add(control,
-        this._renderDrop(), { align: {top: 'bottom', left: 'left'} });
+      this._drop = new Drop(control,
+        this._renderDropContent(), { align: {top: 'bottom', left: 'left'} });
     } else if (dropActive && prevState.dropActive) {
-      this._drop.render(this._renderDrop());
+      this._drop.render(this._renderDropContent());
     }
 
     if (announceChange && suggestions) {
@@ -256,7 +256,7 @@ export default class TextInput extends Component {
     }
   }
 
-  _renderDrop () {
+  _renderDropContent () {
     const { suggestions } = this.props;
     const { activeSuggestionIndex } = this.state;
     let items;

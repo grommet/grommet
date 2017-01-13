@@ -16,6 +16,8 @@ import Intl from '../utils/Intl';
 const CLASS_ROOT = CSSClassnames.DATE_TIME;
 const INPUT = CSSClassnames.INPUT;
 const FORM_FIELD = CSSClassnames.FORM_FIELD;
+const DATE_TIME_DROP = CSSClassnames.DATE_TIME_DROP;
+
 const FORMATS = {
   M: 'months',
   D: 'days',
@@ -67,7 +69,7 @@ export default class DateTime extends Component {
     }
 
     if (cursor >= 0) {
-      this.inputRef.setSelectionRange(cursor, cursor);
+      this._inputRef.setSelectionRange(cursor, cursor);
     }
   }
 
@@ -154,14 +156,15 @@ export default class DateTime extends Component {
   }
 
   _onClose (event) {
-    if (! isDescendant(this.containerRef, event.target) &&
-      ! isDescendant(this._drop.container, event.target)) {
+    const dropElement = document.querySelector(`.${DATE_TIME_DROP}`);
+    if (! isDescendant(this._containerRef, event.target) &&
+      (! dropElement || ! isDescendant(dropElement, event.target))) {
       this.setState({ dropActive: false, cursor: -1 });
     }
   }
 
   _onNext (event) {
-    if (this.inputRef === document.activeElement) {
+    if (this._inputRef === document.activeElement) {
       const { step } = this.props;
       const { current } = this.state;
       event.preventDefault();
@@ -181,7 +184,7 @@ export default class DateTime extends Component {
   }
 
   _onPrevious (event) {
-    if (this.inputRef === document.activeElement) {
+    if (this._inputRef === document.activeElement) {
       const { step } = this.props;
       const { current } = this.state;
       event.preventDefault();
@@ -202,7 +205,7 @@ export default class DateTime extends Component {
 
   _cursorScope () {
     const { format } = this.props;
-    const input = this.inputRef;
+    const input = this._inputRef;
     const value = input.value;
     const end = input.selectionEnd;
     this.setState({ cursor: end });
@@ -234,9 +237,9 @@ export default class DateTime extends Component {
 
       // If this is inside a FormField, place the drop in reference to it.
       const control =
-        findAncestor(this.containerRef, `.${FORM_FIELD}`) ||
-        this.containerRef;
-      this._drop = Drop.add(control,
+        findAncestor(this._containerRef, `.${FORM_FIELD}`) ||
+        this._containerRef;
+      this._drop = new Drop(control,
         this._renderDrop(), {
           align: {top: 'bottom', left: 'left'},
           focusControl: true,
@@ -295,8 +298,8 @@ export default class DateTime extends Component {
     );
 
     return (
-      <div ref={(ref) => this.containerRef = ref} className={classes}>
-        <input ref={(ref) => this.inputRef = ref} {...props}
+      <div ref={(ref) => this._containerRef = ref} className={classes}>
+        <input ref={(ref) => this._inputRef = ref} {...props}
           className={`${INPUT} ${CLASS_ROOT}__input`} placeholder={format}
           value={inputValue || ''} onChange={this._onInputChange} />
         <Button className={`${CLASS_ROOT}__control`} icon={<Icon />}

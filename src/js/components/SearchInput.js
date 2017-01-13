@@ -76,14 +76,14 @@ export default class SearchInput extends Component {
       // If this is inside a FormField, place the drop in reference to it.
       const control =
         findAncestor(this.componentRef, FORM_FIELD) || this.componentRef;
-      this._drop = Drop.add(control,
-        this._renderDrop(), {
+      this._drop = new Drop(control,
+        this._renderDropContent(), {
           align: {top: 'bottom', left: 'left'}
         });
 
       this.inputRef.focus();
     } else if (dropActive && prevState.dropActive) {
-      this._drop.render(this._renderDrop());
+      this._drop.render(this._renderDropContent());
     }
 
     if (announceChange && suggestions) {
@@ -137,7 +137,7 @@ export default class SearchInput extends Component {
   _onInputChange (event) {
     const { onDOMChange } = this.props;
     this.setState({
-      activeSuggestionIndex: -1, announceChange: true, dropActive: true 
+      activeSuggestionIndex: -1, announceChange: true, dropActive: true
     });
     if (onDOMChange) {
       this._fireDOMChange();
@@ -244,7 +244,7 @@ export default class SearchInput extends Component {
     }
   }
 
-  _renderDrop () {
+  _renderDropContent () {
     const { suggestions } = this.props;
     const { activeSuggestionIndex } = this.state;
     let suggestionsNode;

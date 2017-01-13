@@ -95,9 +95,9 @@ export default class Select extends Component {
         // If this is inside a FormField, place the drop in reference to it.
         const control =
           findAncestor(this.componentRef, FORM_FIELD) || this.componentRef;
-        this._drop = Drop.add(control,
+        this._drop = new Drop(control,
           this._renderOptions(`${CLASS_ROOT}__drop`), {
-            align: {top: 'bottom', left: 'left'},
+            align: { top: 'bottom', left: 'left' },
             context: this.context
           });
       }
@@ -150,7 +150,7 @@ export default class Select extends Component {
 
   _announceOptions (index) {
     const { intl } = this.context;
-    const labelMessage = this._renderLabel(this.props.options[index], true);
+    const labelMessage = this._renderValue(this.props.options[index]);
     const enterSelectMessage = Intl.getMessage(intl, 'Enter Select');
     announce(`${labelMessage} ${enterSelectMessage}`);
   }
@@ -224,32 +224,7 @@ export default class Select extends Component {
       this._announceOptions.bind(this, index));
   }
 
-  _onEnter (event) {
-    const { onChange, options } = this.props;
-    const { activeOptionIndex } = this.state;
-    const { intl } = this.context;
-    this.setState({dropActive: false});
-    if (activeOptionIndex >= 0) {
-      event.preventDefault(); // prevent submitting forms
-      let option = options[activeOptionIndex];
-      this.setState({value: option}, () => {
-        const optionMessage = this._renderLabel(option, true);
-        const selectedMessage = Intl.getMessage(intl, 'Selected');
-        announce(`${optionMessage} ${selectedMessage}`);
-      });
-      if (onChange) {
-        onChange({target: this.inputRef, option: option});
-      }
-    }
-  }
-
-  _stopPropagation () {
-    if (findDOMNode(this._searchRef).contains(document.activeElement)) {
-      return true;
-    }
-  }
-
-  _onClickOption (option) {
+  _valueForSelectedOption (option) {
     const { multiple } = this.props;
     const { value } = this.state;
     let nextValue;
@@ -271,20 +246,60 @@ export default class Select extends Component {
     } else {
       nextValue = option;
     }
-    this.setState({ value: nextValue, dropActive: false });
-    if (this.props.onChange) {
-      this.props.onChange({
-        target: this.inputRef, option: option, value: nextValue
+    return nextValue;
+  }
+
+  _onEnter (event) {
+    const { onChange, options } = this.props;
+    const { activeOptionIndex } = this.state;
+    const { intl } = this.context;
+    if (activeOptionIndex >= 0) {
+      event.preventDefault(); // prevent submitting forms
+      const option = options[activeOptionIndex];
+      const value = this._valueForSelectedOption(option);
+      this.setState({ dropActive: false, value }, () => {
+        const optionMessage = this._renderLabel(option);
+        const selectedMessage = Intl.getMessage(intl, 'Selected');
+        announce(`${optionMessage} ${selectedMessage}`);
       });
+      if (onChange) {
+        onChange({ target: this.inputRef, option, value });
+      }
+    } else {
+      this.setState({ dropActive: false });
     }
   }
 
-  _renderLabel (option, announce) {
+  _stopPropagation () {
+    if (findDOMNode(this._searchRef).contains(document.activeElement)) {
+      return true;
+    }
+  }
+
+  _onClickOption (option) {
+    const { onChange } = this.props;
+    const value = this._valueForSelectedOption(option);
+    this.setState({ dropActive: false, value });
+    if (onChange) {
+      onChange({ target: this.inputRef, option, value });
+    }
+  }
+
+  _renderLabel (option) {
+    if (typeof option === 'object') {
+      // revert for announce as label is often a complex object
+      return option.label || option.value || '';
+    } else {
+      return (undefined === option || null === option) ? '' : option;
+    }
+  }
+
+  _renderValue (option) {
     const { intl } = this.context;
     if (Array.isArray(option)) {
       // Could be an Array when !inline+multiple
       if (1 === option.length) {
-        return this._renderLabel(option[0]);
+        return this._renderValue(option[0]);
       } else if (option.length > 1) {
         const selectedMultiple = Intl.getMessage(
           intl, 'Selected Multiple', {
@@ -294,9 +309,8 @@ export default class Select extends Component {
         return selectedMultiple;
       }
     } else if (typeof option === 'object') {
-      // revert for announce as label is often a complex object
-      return announce ? option.value || option.label || '' :
-        option.label || option.value || '';
+      return (typeof option.label === 'string' ?
+        option.label : option.value || '');
     } else {
       return (undefined === option || null === option) ? '' : option;
     }
@@ -425,7 +439,7 @@ export default class Select extends Component {
           onClick={this._onAddDrop}>
           <input {...restProps} ref={ref => this.inputRef = ref}
             className={`${INPUT} ${CLASS_ROOT}__input`}
-            disabled={true} value={this._renderLabel(value)} />
+            disabled={true} value={this._renderValue(value) || ''} />
           <Button className={`${CLASS_ROOT}__control`}
             a11yTitle={Intl.getMessage(intl, 'Select Icon')}
             icon={<CaretDownIcon />} onClick={this._onAddDrop} />
