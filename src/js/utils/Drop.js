@@ -32,12 +32,6 @@ class DropContents extends Component {
   componentDidMount () {
     const { focusControl } = this.props;
     if (focusControl) {
-      this.originalFocusedElement = document.activeElement;
-      if (!this.containerRef.contains(document.activeElement)) {
-        this.anchorStepRef.focus();
-        this.anchorStepRef.scrollIntoView();
-      }
-
       this._keyboardHandlers = {
         tab: this._processTab
       };
@@ -53,13 +47,11 @@ class DropContents extends Component {
       KeyboardAccelerators.stopListeningToKeyboard(
         this, this._keyboardHandlers
       );
-
-      this.originalFocusedElement.focus();
     }
   }
 
   _processTab (event) {
-    let items = this.containerRef.getElementsByTagName('*');
+    let items = this._containerRef.getElementsByTagName('*');
     items = filterByFocusable(items);
     if (!items || items.length === 0) {
       event.preventDefault();
@@ -83,11 +75,11 @@ class DropContents extends Component {
     if (focusControl) {
       anchorStep = (
         <a tabIndex="-1" aria-hidden='true'
-          ref={(ref) => this.anchorStepRef = ref} />
+          className={`${CLASS_ROOT}__anchor`} />
       );
     }
     return (
-      <div ref={(ref) => this.containerRef = ref}>
+      <div ref={(ref) => this._containerRef = ref}>
         {anchorStep}
         {content}
       </div>
@@ -199,7 +191,10 @@ export default class Drop {
     const scrollParents = findScrollParents(control);
 
     // initialize state
-    this.state = { container, control, options, scrollParents };
+    this.state = {
+      container, control, initialFocusNeeded: focusControl, options,
+      scrollParents
+    };
 
     this._listen();
 
@@ -238,7 +233,9 @@ export default class Drop {
   }
 
   place () {
-    const { control, container, options: { align, responsive } } = this.state;
+    const {
+      control, container, initialFocusNeeded, options: { align, responsive }
+    } = this.state;
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
@@ -350,6 +347,24 @@ export default class Drop {
     // but that didn't work on mobile browsers as well.
     container.style.top = `${top + scrollTop}px`;
     container.style.maxHeight = `${maxHeight}px`;
+
+    if (initialFocusNeeded) {
+      // Now that we've placed it, focus on it
+      this._focus();
+    }
+  }
+
+  _focus () {
+    const { container } = this.state;
+    this.state.originalFocusedElement = document.activeElement;
+    if (! container.contains(document.activeElement)) {
+      const anchor = container.querySelector(`${CLASS_ROOT}__anchor`);
+      if (anchor) {
+        anchor.focus();
+        anchor.scrollIntoView();
+      }
+    }
+    delete this.state.initialFocusNeeded;
   }
 
   render (content) {
@@ -368,7 +383,7 @@ export default class Drop {
   }
 
   remove () {
-    const { container, scrollParents } = this.state;
+    const { container, originalFocusedElement, scrollParents } = this.state;
     scrollParents.forEach(scrollParent => {
       scrollParent.removeEventListener('scroll', this.place);
     });
@@ -376,6 +391,10 @@ export default class Drop {
 
     unmountComponentAtNode(container);
     document.body.removeChild(container);
+
+    if (originalFocusedElement) {
+      originalFocusedElement.focus();
+    }
 
     this.state = undefined;
   }
