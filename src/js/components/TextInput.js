@@ -215,10 +215,7 @@ export default class TextInput extends Component {
       focused: true,
       activeSuggestionIndex: -1
     });
-    // delay to wait out subsequent render after state change
-    setTimeout(() => {
-      this.componentRef.select();
-    }, 10);
+    this.componentRef.select();
 
     if (onFocus) {
       onFocus(event);
