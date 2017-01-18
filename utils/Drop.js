@@ -84,12 +84,6 @@ var DropContents = function (_Component) {
       var focusControl = this.props.focusControl;
 
       if (focusControl) {
-        this.originalFocusedElement = document.activeElement;
-        if (!this.containerRef.contains(document.activeElement)) {
-          this.anchorStepRef.focus();
-          this.anchorStepRef.scrollIntoView();
-        }
-
         this._keyboardHandlers = {
           tab: this._processTab
         };
@@ -103,14 +97,12 @@ var DropContents = function (_Component) {
 
       if (focusControl) {
         _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
-
-        this.originalFocusedElement.focus();
       }
     }
   }, {
     key: '_processTab',
     value: function _processTab(event) {
-      var items = this.containerRef.getElementsByTagName('*');
+      var items = this._containerRef.getElementsByTagName('*');
       items = (0, _DOM.filterByFocusable)(items);
       if (!items || items.length === 0) {
         event.preventDefault();
@@ -139,14 +131,12 @@ var DropContents = function (_Component) {
       var anchorStep = void 0;
       if (focusControl) {
         anchorStep = _react2.default.createElement('a', { tabIndex: '-1', 'aria-hidden': 'true',
-          ref: function ref(_ref) {
-            return _this2.anchorStepRef = _ref;
-          } });
+          className: CLASS_ROOT + '__anchor' });
       }
       return _react2.default.createElement(
         'div',
-        { ref: function ref(_ref2) {
-            return _this2.containerRef = _ref2;
+        { ref: function ref(_ref) {
+            return _this2._containerRef = _ref;
           } },
         anchorStep,
         content
@@ -249,7 +239,10 @@ var Drop = function () {
     var scrollParents = (0, _DOM.findScrollParents)(control);
 
     // initialize state
-    this.state = { container: container, control: control, options: options, scrollParents: scrollParents };
+    this.state = {
+      container: container, control: control, initialFocusNeeded: focusControl, options: options,
+      scrollParents: scrollParents
+    };
 
     this._listen();
 
@@ -301,6 +294,7 @@ var Drop = function () {
       var _state = this.state,
           control = _state.control,
           container = _state.container,
+          initialFocusNeeded = _state.initialFocusNeeded,
           _state$options = _state.options,
           align = _state$options.align,
           responsive = _state$options.responsive;
@@ -407,6 +401,26 @@ var Drop = function () {
       // but that didn't work on mobile browsers as well.
       container.style.top = top + scrollTop + 'px';
       container.style.maxHeight = maxHeight + 'px';
+
+      if (initialFocusNeeded) {
+        // Now that we've placed it, focus on it
+        this._focus();
+      }
+    }
+  }, {
+    key: '_focus',
+    value: function _focus() {
+      var container = this.state.container;
+
+      this.state.originalFocusedElement = document.activeElement;
+      if (!container.contains(document.activeElement)) {
+        var anchor = container.querySelector(CLASS_ROOT + '__anchor');
+        if (anchor) {
+          anchor.focus();
+          anchor.scrollIntoView();
+        }
+      }
+      delete this.state.initialFocusNeeded;
     }
   }, {
     key: 'render',
@@ -434,6 +448,7 @@ var Drop = function () {
 
       var _state3 = this.state,
           container = _state3.container,
+          originalFocusedElement = _state3.originalFocusedElement,
           scrollParents = _state3.scrollParents;
 
       scrollParents.forEach(function (scrollParent) {
@@ -443,6 +458,10 @@ var Drop = function () {
 
       (0, _reactDom.unmountComponentAtNode)(container);
       document.body.removeChild(container);
+
+      if (originalFocusedElement) {
+        originalFocusedElement.focus();
+      }
 
       this.state = undefined;
     }
