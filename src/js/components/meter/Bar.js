@@ -7,6 +7,7 @@ import Graphic from './Graphic';
 const BAR_LENGTH = baseDimension;
 const BAR_THICKNESS = baseUnit;
 const MID_BAR_THICKNESS = BAR_THICKNESS / 2;
+// const MINIMUM_THICKNESS = BAR_THICKNESS / 6;
 
 export default class Bar extends Graphic {
 
@@ -56,8 +57,9 @@ export default class Bar extends Graphic {
   _sliceCommands (trackIndex, item, startValue) {
     const value = item.value - this.props.min;
     const start = this._translateBarWidth(startValue);
-    const distance = Math.max((item.value > 0 ? MID_BAR_THICKNESS : 0),
-      this._translateBarWidth(value));
+    const distance = this._translateBarWidth(value);
+    // const distance = Math.max((item.value > 0 ? MINIMUM_THICKNESS : 0),
+    //   this._translateBarWidth(value));
     let commands;
     let spot = (trackIndex * BAR_THICKNESS) + MID_BAR_THICKNESS;
     if (this.props.vertical) {
