@@ -18,7 +18,6 @@ class LayerContents extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this._onClick = this._onClick.bind(this);
     this._processTab = this._processTab.bind(this);
 
     this.state = {
@@ -49,10 +48,8 @@ class LayerContents extends Component {
     this._keyboardHandlers = {
       tab: this._processTab
     };
-    if (this.props.onClose) {
-      const layerParent = this.containerRef.parentNode;
+    if (onClose) {
       this._keyboardHandlers.esc = onClose;
-      layerParent.addEventListener('click', this._onClick.bind(this));
     }
     KeyboardAccelerators.startListeningToKeyboard(
       this, this._keyboardHandlers
@@ -69,27 +66,9 @@ class LayerContents extends Component {
   }
 
   componentWillUnmount () {
-    const layerParent = this.containerRef.parentNode;
-
     KeyboardAccelerators.stopListeningToKeyboard(
       this, this._keyboardHandlers
     );
-
-    if (this.props.onClose) {
-      layerParent.removeEventListener('click', this._onClick.bind(this));
-    }
-  }
-
-  _onClick (event) {
-    const { dropActive } = this.state;
-    if (!dropActive) {
-      const { onClose } = this.props;
-      const layerContents = this.containerRef;
-
-      if (layerContents && !layerContents.contains(event.target)) {
-        onClose();
-      }
-    }
   }
 
   _processTab (event) {
