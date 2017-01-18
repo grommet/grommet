@@ -38,6 +38,7 @@ var BAR_LENGTH = _utils.baseDimension; // (C) Copyright 2014-2016 Hewlett Packar
 
 var BAR_THICKNESS = _Graphics.baseUnit;
 var MID_BAR_THICKNESS = BAR_THICKNESS / 2;
+// const MINIMUM_THICKNESS = BAR_THICKNESS / 6;
 
 var Bar = function (_Graphic) {
   (0, _inherits3.default)(Bar, _Graphic);
@@ -97,7 +98,9 @@ var Bar = function (_Graphic) {
     value: function _sliceCommands(trackIndex, item, startValue) {
       var value = item.value - this.props.min;
       var start = this._translateBarWidth(startValue);
-      var distance = Math.max(item.value > 0 ? MID_BAR_THICKNESS : 0, this._translateBarWidth(value));
+      var distance = this._translateBarWidth(value);
+      // const distance = Math.max((item.value > 0 ? MINIMUM_THICKNESS : 0),
+      //   this._translateBarWidth(value));
       var commands = void 0;
       var spot = trackIndex * BAR_THICKNESS + MID_BAR_THICKNESS;
       if (this.props.vertical) {
