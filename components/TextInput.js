@@ -298,18 +298,13 @@ var TextInput = function (_Component) {
   }, {
     key: '_onFocus',
     value: function _onFocus(event) {
-      var _this3 = this;
-
       var onFocus = this.props.onFocus;
 
       this.setState({
         focused: true,
         activeSuggestionIndex: -1
       });
-      // delay to wait out subsequent render after state change
-      setTimeout(function () {
-        _this3.componentRef.select();
-      }, 10);
+      this.componentRef.select();
 
       if (onFocus) {
         onFocus(event);
@@ -357,7 +352,7 @@ var TextInput = function (_Component) {
   }, {
     key: '_renderDropContent',
     value: function _renderDropContent() {
-      var _this4 = this;
+      var _this3 = this;
 
       var suggestions = this.props.suggestions;
       var activeSuggestionIndex = this.state.activeSuggestionIndex;
@@ -371,8 +366,8 @@ var TextInput = function (_Component) {
           return _react2.default.createElement(
             'li',
             { key: index, className: classes,
-              onClick: _this4._onClickSuggestion.bind(_this4, suggestion) },
-            _this4._renderLabel(suggestion)
+              onClick: _this3._onClickSuggestion.bind(_this3, suggestion) },
+            _this3._renderLabel(suggestion)
           );
         });
       }
@@ -386,7 +381,7 @@ var TextInput = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this5 = this;
+      var _this4 = this;
 
       var _props4 = this.props,
           className = _props4.className,
@@ -401,7 +396,7 @@ var TextInput = function (_Component) {
       var classes = (0, _classnames4.default)(CLASS_ROOT, INPUT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', this.state.active), className);
 
       return _react2.default.createElement('input', (0, _extends3.default)({ ref: function ref(_ref) {
-          return _this5.componentRef = _ref;
+          return _this4.componentRef = _ref;
         } }, props, {
         className: classes, autoComplete: 'off',
         defaultValue: this._renderLabel(defaultValue),
