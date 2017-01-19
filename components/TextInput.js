@@ -99,8 +99,7 @@ var TextInput = function (_Component) {
     _this.state = {
       announceChange: false,
       dropActive: false,
-      activeSuggestionIndex: -1,
-      value: props.value || ''
+      activeSuggestionIndex: -1
     };
     return _this;
   }
@@ -192,13 +191,12 @@ var TextInput = function (_Component) {
     value: function _onInputChange(event) {
       var onDOMChange = this.props.onDOMChange;
 
+      this.setState({
+        activeSuggestionIndex: -1, announceChange: true, dropActive: true
+      });
       if (onDOMChange) {
         onDOMChange(event);
       }
-      this.setState({
-        actiaveSuggestionIndex: -1, announceChange: true, dropActive: true,
-        value: event.target.value
-      });
     }
   }, {
     key: '_announceSuggestion',
@@ -213,8 +211,9 @@ var TextInput = function (_Component) {
   }, {
     key: '_onAddDrop',
     value: function _onAddDrop(event) {
-      var suggestions = this.props.suggestions;
-      var value = this.state.value;
+      var _props = this.props,
+          suggestions = _props.suggestions,
+          value = _props.value;
       // Get values of suggestions, so we can highlight selected suggestion
 
       if (suggestions) {
@@ -260,9 +259,9 @@ var TextInput = function (_Component) {
     value: function _onEnter(event) {
       var _this2 = this;
 
-      var _props = this.props,
-          onSelect = _props.onSelect,
-          suggestions = _props.suggestions;
+      var _props2 = this.props,
+          onSelect = _props2.onSelect,
+          suggestions = _props2.suggestions;
       var activeSuggestionIndex = this.state.activeSuggestionIndex;
       var intl = this.context.intl;
 
@@ -314,9 +313,9 @@ var TextInput = function (_Component) {
   }, {
     key: '_onInputKeyDown',
     value: function _onInputKeyDown(event) {
-      var _props2 = this.props,
-          onKeyDown = _props2.onKeyDown,
-          suggestions = _props2.suggestions;
+      var _props3 = this.props,
+          onKeyDown = _props3.onKeyDown,
+          suggestions = _props3.suggestions;
       var dropActive = this.state.dropActive;
 
       if (suggestions) {
@@ -384,12 +383,12 @@ var TextInput = function (_Component) {
     value: function render() {
       var _this4 = this;
 
-      var _props3 = this.props,
-          className = _props3.className,
-          defaultValue = _props3.defaultValue,
-          placeHolder = _props3.placeHolder,
-          props = (0, _objectWithoutProperties3.default)(_props3, ['className', 'defaultValue', 'placeHolder']);
-      var value = this.state.value;
+      var _props4 = this.props,
+          className = _props4.className,
+          defaultValue = _props4.defaultValue,
+          value = _props4.value,
+          placeHolder = _props4.placeHolder,
+          props = (0, _objectWithoutProperties3.default)(_props4, ['className', 'defaultValue', 'value', 'placeHolder']);
 
       delete props.suggestions;
       delete props.onDOMChange;
