@@ -36,9 +36,10 @@
 }
 
 .#{$grommet-namespace}sidebar--full {
-  // the following is needed for IE11 since flex grow 1 1 auto on child elements
-  // need that specified
-  height: 100%;
+  // Disabled because this doesn't work in all situations :(
+  // // the following is needed for IE11 since flex grow 1 1 auto on child elements
+  // // need that specified
+  // height: 100%;
   min-height: 100vh;
 
   // The following is needed for IE11 since it doesn't work with just min/max.
