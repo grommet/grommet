@@ -197,7 +197,7 @@ var LayerContents = function (_Component) {
             return _this3.containerRef = _ref2;
           },
           className: CLASS_ROOT + '__container' },
-        _react2.default.createElement('a', { tabIndex: '-1', 'aria-hidden': 'true',
+        _react2.default.createElement('a', { tabIndex: '-1', 'aria-hidden': 'true', style: { outline: 'none' },
           ref: function ref(_ref) {
             return _this3.anchorStepRef = _ref;
           } }),
