@@ -114,7 +114,7 @@ class LayerContents extends Component {
     return (
       <div ref={ref => this.containerRef = ref}
         className={`${CLASS_ROOT}__container`}>
-        <a tabIndex="-1" aria-hidden='true'
+        <a tabIndex="-1" aria-hidden='true' style={{ outline: 'none' }}
           ref={ref => this.anchorStepRef = ref} />
         {closerNode}
         {children}
