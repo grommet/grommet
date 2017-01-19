@@ -145,7 +145,8 @@ function hasDarkBackground (element) {
     if (0 === brightness) {
       // Browsers return 0,0,0 when they don't know yet.
       result = undefined;
-    } else if (brightness < 125) {
+      // changed threshold below to accomodate the Aruba theme for now
+    } else if (brightness < 137) { ///125) {
       result = true;
     }
   }
