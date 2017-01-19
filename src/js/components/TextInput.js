@@ -34,8 +34,7 @@ export default class TextInput extends Component {
     this.state = {
       announceChange: false,
       dropActive: false,
-      activeSuggestionIndex: -1,
-      value: props.value || ''
+      activeSuggestionIndex: -1
     };
   }
 
@@ -124,13 +123,12 @@ export default class TextInput extends Component {
 
   _onInputChange (event) {
     const { onDOMChange } = this.props;
+    this.setState({
+      activeSuggestionIndex: -1, announceChange: true, dropActive: true
+    });
     if (onDOMChange) {
       onDOMChange(event);
     }
-    this.setState({
-      actiaveSuggestionIndex: -1, announceChange: true, dropActive: true,
-      value: event.target.value
-    });
   }
 
   _announceSuggestion (index) {
@@ -142,8 +140,7 @@ export default class TextInput extends Component {
   }
 
   _onAddDrop (event) {
-    const { suggestions } = this.props;
-    const { value } = this.state;
+    const { suggestions, value } = this.props;
     // Get values of suggestions, so we can highlight selected suggestion
     if (suggestions) {
       event.preventDefault();
@@ -290,9 +287,8 @@ export default class TextInput extends Component {
 
   render () {
     const {
-      className, defaultValue, placeHolder, ...props
+      className, defaultValue, value, placeHolder, ...props
     } = this.props;
-    const { value } = this.state;
     delete props.suggestions;
     delete props.onDOMChange;
     delete props.onSelect;
