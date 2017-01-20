@@ -297,17 +297,15 @@ export default class Article extends Component {
   }
 
   _onTouchMove (event) {
-    if (! this.state.ignoreScroll) {
-      const touched = event.changedTouches[0];
-      const deltaX = touched.clientX - this._touchStartX;
-      const deltaY = touched.clientY - this._touchStartY;
-      // Only step if the user isn't scrolling vertically, bias vertically
-      if (Math.abs(deltaY) < Math.abs(deltaX * 2)) {
-        if (deltaX < 0) {
-          this._onNext();
-        } else {
-          this._onPrevious();
-        }
+    const touched = event.changedTouches[0];
+    const deltaX = touched.clientX - this._touchStartX;
+    const deltaY = touched.clientY - this._touchStartY;
+    // Only step if the user isn't scrolling vertically, bias vertically
+    if (Math.abs(deltaY) < Math.abs(deltaX * 2)) {
+      if (deltaX < 0) {
+        this._onNext();
+      } else {
+        this._onPrevious();
       }
     }
   }
