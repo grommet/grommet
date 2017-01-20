@@ -294,7 +294,7 @@ const FIXED_SIZES = ['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge'];
 const RELATIVE_SIZES = ['full', '1/2', '1/3', '2/3', '1/4', '3/4'];
 const SIZES = FIXED_SIZES.concat(RELATIVE_SIZES);
 const MARGIN_SIZES = ['small', 'medium', 'large', 'none'];
-const PAD_SIZES = ['small', 'medium', 'large', 'none'];
+const PAD_SIZES = ['small', 'medium', 'large', 'xlarge', 'none'];
 
 Box.propTypes = {
   a11yTitle: PropTypes.string,
