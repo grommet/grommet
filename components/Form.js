@@ -74,9 +74,10 @@ var Form = function (_Component) {
           compact = _props.compact,
           fill = _props.fill,
           pad = _props.pad,
-          props = (0, _objectWithoutProperties3.default)(_props, ['className', 'compact', 'fill', 'pad']);
+          plain = _props.plain,
+          props = (0, _objectWithoutProperties3.default)(_props, ['className', 'compact', 'fill', 'pad', 'plain']);
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--compact', compact), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--pad-' + pad, typeof pad === 'string'), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--pad-horizontal-' + pad.horizontal, (typeof pad === 'undefined' ? 'undefined' : (0, _typeof3.default)(pad)) === 'object' && 'horizontal' in pad), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--pad-vertical-' + pad.vertical, (typeof pad === 'undefined' ? 'undefined' : (0, _typeof3.default)(pad)) === 'object' && 'vertical' in pad), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--compact', compact), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--pad-' + pad, typeof pad === 'string'), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--pad-horizontal-' + pad.horizontal, (typeof pad === 'undefined' ? 'undefined' : (0, _typeof3.default)(pad)) === 'object' && 'horizontal' in pad), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--pad-vertical-' + pad.vertical, (typeof pad === 'undefined' ? 'undefined' : (0, _typeof3.default)(pad)) === 'object' && 'vertical' in pad), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--plain', plain), _classnames), className);
 
       return _react2.default.createElement(
         'form',
@@ -99,7 +100,8 @@ Form.propTypes = {
   pad: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(['none', 'small', 'medium', 'large']), _react.PropTypes.shape({
     horizontal: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
     vertical: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large'])
-  })])
+  })]),
+  plain: _react.PropTypes.bool
 };
 
 Form.defaultProps = {

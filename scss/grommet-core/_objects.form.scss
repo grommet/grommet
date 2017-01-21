@@ -2,7 +2,6 @@
 
 .#{$grommet-namespace}form {
   position: relative;
-  width: $form-width;
   max-width: 100%;
 
   @include media-query(lap-and-up) {
@@ -20,6 +19,8 @@
   }
 
   fieldset {
+    // needed to avoid form fields overflow form element
+    min-width: 0;
     border: none;
     margin: 0px;
     margin-bottom: 2rem;
@@ -60,6 +61,10 @@
       }
     }
   }
+}
+
+.#{$grommet-namespace}form:not(.#{$grommet-namespace}form--plain) {
+  width: $form-width;
 }
 
 .#{$grommet-namespace}form--fill {
