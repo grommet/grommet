@@ -387,17 +387,15 @@ var Article = function (_Component) {
   }, {
     key: '_onTouchMove',
     value: function _onTouchMove(event) {
-      if (!this.state.ignoreScroll) {
-        var touched = event.changedTouches[0];
-        var deltaX = touched.clientX - this._touchStartX;
-        var deltaY = touched.clientY - this._touchStartY;
-        // Only step if the user isn't scrolling vertically, bias vertically
-        if (Math.abs(deltaY) < Math.abs(deltaX * 2)) {
-          if (deltaX < 0) {
-            this._onNext();
-          } else {
-            this._onPrevious();
-          }
+      var touched = event.changedTouches[0];
+      var deltaX = touched.clientX - this._touchStartX;
+      var deltaY = touched.clientY - this._touchStartY;
+      // Only step if the user isn't scrolling vertically, bias vertically
+      if (Math.abs(deltaY) < Math.abs(deltaX * 2)) {
+        if (deltaX < 0) {
+          this._onNext();
+        } else {
+          this._onPrevious();
         }
       }
     }
