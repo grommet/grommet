@@ -8,7 +8,7 @@ const CLASS_ROOT = CSSClassnames.FORM;
 
 export default class Form extends Component {
   render () {
-    const { className, compact, fill, pad, ...props } = this.props;
+    const { className, compact, fill, pad, plain, ...props } = this.props;
     const classes = classnames(
       CLASS_ROOT,
       {
@@ -18,7 +18,8 @@ export default class Form extends Component {
         [`${CLASS_ROOT}--pad-horizontal-${pad.horizontal}`]:
           typeof pad === 'object' && 'horizontal' in pad,
         [`${CLASS_ROOT}--pad-vertical-${pad.vertical}`]:
-          typeof pad === 'object' && 'vertical' in pad
+          typeof pad === 'object' && 'vertical' in pad,
+        [`${CLASS_ROOT}--plain`]: plain
       },
       className
     );
@@ -41,7 +42,8 @@ Form.propTypes = {
       horizontal: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
       vertical: PropTypes.oneOf(['none', 'small', 'medium', 'large'])
     })
-  ])
+  ]),
+  plain: PropTypes.bool
 };
 
 Form.defaultProps = {
