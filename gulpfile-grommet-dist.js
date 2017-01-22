@@ -114,6 +114,42 @@ module.exports = function(gulp) {
       });
     });
   });
+  
+  gulp.task('generate-icon-messages', function(done) {
+    var iconsFolder = path.join(__dirname, './src/img/icons');
+    var iconsMap = ['export default {\n'];
+    fs.readdir(iconsFolder, function(err, icons) {
+      icons.forEach(function(icon, index) {
+        if (/\.svg$/.test(icon)) {
+          var componentName = icon.replace('.svg', '');
+          var joinedName = "  \'" + componentName + "\': ";
+          var unjoinedName = componentName
+            .split('-')
+            .join(' ');
+
+          iconsMap.push(
+            joinedName + "\'" + unjoinedName + "\', \n"
+          );
+
+          if (index === icons.length - 1) {
+            iconsMap.push('};\n');
+
+            var destinationFile = path.join(
+              __dirname,
+              './src/js/messages/icons/en-US.js'
+            );
+            fs.writeFile(destinationFile, iconsMap.join(''), function(err) {
+              if (err) {
+                throw err;
+              }
+
+              done();
+            });
+          }
+        }
+      });
+    });
+  });
 
   gulp.task('dist-css', () => {
     gulp.src('src/scss/hpinc/*.scss')
