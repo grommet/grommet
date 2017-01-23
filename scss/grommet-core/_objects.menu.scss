@@ -362,8 +362,8 @@
 
     &.#{$grommet-namespace}menu--primary {
       > a {
-        padding: $inuit-base-spacing-unit $inuit-base-spacing-unit
-          $inuit-base-spacing-unit
+        padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit
+          halve($inuit-base-spacing-unit)
           ($inuit-base-spacing-unit - $active-border-width);
       }
     }
