@@ -65,7 +65,7 @@ export default {
       'react-addons-transition-group': 'React.addons.TransitionGroup'
     }
   },
-  distPreprocess: ['generate-index-icons', 'dist-css'],
+  distPreprocess: ['generate-index-icons', 'generate-icon-messages', 'dist-css'],
   testPaths: [
     '__tests__',
     '!__tests__/utils/',
