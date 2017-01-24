@@ -372,7 +372,7 @@ export default class Table extends Component {
   render () {
     const {
       a11yTitle, children, className, onBlur, onFocus, onMore, onMouseDown,
-      onMouseUp, scrollable, selectable, ...props
+      onMouseUp, responsive, scrollable, selectable, ...props
     } = this.props;
     delete props.onSelect;
     delete props.selected;
@@ -381,7 +381,7 @@ export default class Table extends Component {
     let classes = classnames(
       CLASS_ROOT,
       {
-        [`${CLASS_ROOT}--small`]: small,
+        [`${CLASS_ROOT}--small`]: responsive && small,
         [`${CLASS_ROOT}--selectable`]: selectable,
         [`${CLASS_ROOT}--scrollable`]: scrollable
       },
@@ -481,6 +481,7 @@ Table.propTypes = {
   a11yTitle: PropTypes.string,
   onMore: PropTypes.func,
   onSelect: PropTypes.func,
+  responsive: PropTypes.bool,
   scrollable: PropTypes.bool,
   selectable: PropTypes.oneOfType([
     PropTypes.bool,
@@ -490,4 +491,8 @@ Table.propTypes = {
     PropTypes.number,
     PropTypes.arrayOf(PropTypes.number)
   ])
+};
+
+Table.defaultProps = {
+  responsive: true
 };
