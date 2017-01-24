@@ -32,9 +32,7 @@ export function findScrollParents (element, horizontal) {
     }
     parent = parent.parentNode;
   }
-  if (result.length === 0) {
-    result.push(document);
-  }
+  result.push(document);
   return result;
 }
 
