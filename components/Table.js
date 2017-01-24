@@ -495,9 +495,10 @@ var Table = function (_Component) {
           onMore = _props4.onMore,
           _onMouseDown = _props4.onMouseDown,
           _onMouseUp = _props4.onMouseUp,
+          responsive = _props4.responsive,
           scrollable = _props4.scrollable,
           selectable = _props4.selectable,
-          props = (0, _objectWithoutProperties3.default)(_props4, ['a11yTitle', 'children', 'className', 'onBlur', 'onFocus', 'onMore', 'onMouseDown', 'onMouseUp', 'scrollable', 'selectable']);
+          props = (0, _objectWithoutProperties3.default)(_props4, ['a11yTitle', 'children', 'className', 'onBlur', 'onFocus', 'onMore', 'onMouseDown', 'onMouseUp', 'responsive', 'scrollable', 'selectable']);
 
       delete props.onSelect;
       delete props.selected;
@@ -508,7 +509,7 @@ var Table = function (_Component) {
           small = _state2.small;
       var intl = this.context.intl;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--small', small), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', selectable), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--scrollable', scrollable), _classnames), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--small', responsive && small), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', selectable), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--scrollable', scrollable), _classnames), className);
 
       var mirror = void 0;
       if (scrollable) {
@@ -614,8 +615,13 @@ Table.propTypes = {
   a11yTitle: _react.PropTypes.string,
   onMore: _react.PropTypes.func,
   onSelect: _react.PropTypes.func,
+  responsive: _react.PropTypes.bool,
   scrollable: _react.PropTypes.bool,
   selectable: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf(['multiple'])]),
   selected: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)])
+};
+
+Table.defaultProps = {
+  responsive: true
 };
 module.exports = exports['default'];
