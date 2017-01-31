@@ -347,7 +347,7 @@ export default class Select extends Component {
 
   _renderOptions (className, restProps={}) {
     const {
-      id, inline, multiple, options, onSearch, placeHolder, value
+      id, inline, multiple, options, onSearch, value
     } = this.props;
     const { activeOptionIndex, searchText } = this.state;
 
@@ -357,7 +357,7 @@ export default class Select extends Component {
         <Search className={`${CLASS_ROOT}__search`}
           ref={(ref) => this._searchRef = ref}
           inline={true} fill={true} responsive={false} pad="medium"
-          placeHolder={placeHolder} value={searchText}
+          placeHolder='Search' value={searchText}
           onDOMChange={this._onSearchChange}
           onKeyDown={this._onInputKeyDown} />
       );
@@ -419,7 +419,7 @@ export default class Select extends Component {
   }
 
   render () {
-    const { className, inline, value } = this.props;
+    const { className, inline, placeHolder, value } = this.props;
     const { active } = this.state;
     const { intl } = this.context;
     let classes = classnames(
@@ -440,6 +440,7 @@ export default class Select extends Component {
           onClick={this._onAddDrop}>
           <input {...restProps} ref={ref => this.inputRef = ref}
             className={`${INPUT} ${CLASS_ROOT}__input`}
+            placeholder={placeHolder}
             disabled={true} value={this._renderValue(value) || ''} />
           <Button className={`${CLASS_ROOT}__control`}
             a11yTitle={Intl.getMessage(intl, 'Select Icon')}

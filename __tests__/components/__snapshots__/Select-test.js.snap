@@ -5,6 +5,7 @@ exports[`Select accepts initial value 1`] = `
   <input
     className="grommetux-input grommetux-select__input"
     disabled={true}
+    placeholder={undefined}
     value="one" />
   <button
     aria-label="Select Icon"
@@ -45,6 +46,7 @@ exports[`Select has correct default options 1`] = `
   <input
     className="grommetux-input grommetux-select__input"
     disabled={true}
+    placeholder={undefined}
     value="" />
   <button
     aria-label="Select Icon"
