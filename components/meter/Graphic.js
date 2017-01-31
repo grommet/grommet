@@ -89,6 +89,13 @@ var Graphic = function (_Component) {
       this.setState(state);
     }
   }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      if (this._keyboardHandlers) {
+        this._onGraphicBlur();
+      }
+    }
+  }, {
     key: '_onGraphicFocus',
     value: function _onGraphicFocus() {
       this._keyboardHandlers = {
@@ -104,6 +111,7 @@ var Graphic = function (_Component) {
     key: '_onGraphicBlur',
     value: function _onGraphicBlur() {
       _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
+      this._keyboardHandlers = undefined;
     }
   }, {
     key: '_onBandClick',

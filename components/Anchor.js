@@ -98,15 +98,18 @@ var Anchor = function (_Component) {
       if (path) {
         this._unlisten();
       }
+      this._unmounted = true;
     }
   }, {
     key: '_onLocationChange',
     value: function _onLocationChange(location) {
-      var path = this.props.path;
-      var router = this.context.router;
+      if (!this._unmounted) {
+        var path = this.props.path;
+        var router = this.context.router;
 
-      var active = router && location.pathname === path;
-      this.setState({ active: active });
+        var active = router && location.pathname === path;
+        this.setState({ active: active });
+      }
     }
   }, {
     key: '_onClick',
