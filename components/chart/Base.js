@@ -101,7 +101,7 @@ var Base = function (_Component) {
 
       var childCount = _react.Children.count(children);
       var finalHeight = !childCount && !height ? 'medium' : height;
-      var finalWidth = !childCount && !width ? 'medium' : width;
+      var finalWidth = !childCount && !width && 'sparkline' !== height ? 'medium' : width;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--height-' + finalHeight, finalHeight), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--width-' + finalWidth, finalWidth), _classnames), className);
 
@@ -135,6 +135,6 @@ exports.default = Base;
 Base.propTypes = {
   height: _react.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'sparkline']),
   vertical: _react.PropTypes.bool,
-  width: _react.PropTypes.oneOf(['small', 'medium', 'large', 'full'])
+  width: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full'])
 };
 module.exports = exports['default'];
