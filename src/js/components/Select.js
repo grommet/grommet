@@ -184,7 +184,7 @@ export default class Select extends Component {
     // Get values of options, so we can highlight selected option
     if (options) {
       const optionValues = options.map((option) => {
-        if (typeof option === 'object') {
+        if (option && typeof option === 'object') {
           return option.value;
         } else {
           return option;
@@ -287,7 +287,7 @@ export default class Select extends Component {
   }
 
   _renderLabel (option) {
-    if (typeof option === 'object') {
+    if (option && typeof option === 'object') {
       // revert for announce as label is often a complex object
       return option.label || option.value || '';
     } else {
@@ -309,7 +309,7 @@ export default class Select extends Component {
         );
         return selectedMultiple;
       }
-    } else if (typeof option === 'object') {
+    } else if (option && typeof option === 'object') {
       return (typeof option.label === 'string' ?
         option.label : option.value || '');
     } else {
@@ -319,14 +319,14 @@ export default class Select extends Component {
 
   _valueEqualsOption (value, option) {
     let result = false;
-    if (typeof value === 'object') {
-      if (typeof option === 'object') {
+    if (value && typeof value === 'object') {
+      if (option && typeof option === 'object') {
         result = (value.value === option.value);
       } else {
         result = (value.value === option);
       }
     } else {
-      if (typeof option === 'object') {
+      if (option && typeof option === 'object') {
         result = (value === option.value);
       } else {
         result = (value === option);
