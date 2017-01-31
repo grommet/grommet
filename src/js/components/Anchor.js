@@ -37,13 +37,16 @@ export default class Anchor extends Component {
     if (path) {
       this._unlisten();
     }
+    this._unmounted = true;
   }
 
   _onLocationChange (location) {
-    const { path } = this.props;
-    const { router } = this.context;
-    const active = router && location.pathname === path;
-    this.setState({ active });
+    if (! this._unmounted) {
+      const { path } = this.props;
+      const { router } = this.context;
+      const active = router && location.pathname === path;
+      this.setState({ active });
+    }
   }
 
   _onClick (event) {

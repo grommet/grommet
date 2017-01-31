@@ -29,6 +29,12 @@ export default class Graphic extends Component {
     this.setState(state);
   }
 
+  componentWillUnmount () {
+    if (this._keyboardHandlers) {
+      this._onGraphicBlur();
+    }
+  }
+
   _onGraphicFocus () {
     this._keyboardHandlers = {
       left: this._onPreviousBand,
@@ -46,6 +52,7 @@ export default class Graphic extends Component {
     KeyboardAccelerators.stopListeningToKeyboard(
       this, this._keyboardHandlers
     );
+    this._keyboardHandlers = undefined;
   }
 
   _onBandClick () {
