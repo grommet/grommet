@@ -474,7 +474,6 @@ var Select = function (_Component) {
           multiple = _props4.multiple,
           options = _props4.options,
           onSearch = _props4.onSearch,
-          placeHolder = _props4.placeHolder,
           value = _props4.value;
       var _state2 = this.state,
           activeOptionIndex = _state2.activeOptionIndex,
@@ -488,7 +487,7 @@ var Select = function (_Component) {
             return _this4._searchRef = _ref;
           },
           inline: true, fill: true, responsive: false, pad: 'medium',
-          placeHolder: placeHolder, value: searchText,
+          placeHolder: 'Search', value: searchText,
           onDOMChange: this._onSearchChange,
           onKeyDown: this._onInputKeyDown });
       }
@@ -555,6 +554,7 @@ var Select = function (_Component) {
       var _props5 = this.props,
           className = _props5.className,
           inline = _props5.inline,
+          placeHolder = _props5.placeHolder,
           value = _props5.value;
       var active = this.state.active;
       var intl = this.context.intl;
@@ -575,6 +575,7 @@ var Select = function (_Component) {
               return _this5.inputRef = _ref2;
             },
             className: INPUT + ' ' + CLASS_ROOT + '__input',
+            placeholder: placeHolder,
             disabled: true, value: this._renderValue(value) || '' })),
           _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control',
             a11yTitle: _Intl2.default.getMessage(intl, 'Select Icon'),
