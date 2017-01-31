@@ -1,8 +1,8 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 .grommet.#{$grommet-namespace}tip__drop {
-  overflow: visible;
-  max-width: $size-small;
+  overflow: visible; // needed so caret can be seen
+  max-width: $size-medium;
 }
 
 .#{$grommet-namespace}tip__drop {
@@ -69,4 +69,8 @@
     content: '';
     right: halve($inuit-base-spacing-unit);
   }
+}
+
+.#{$grommet-namespace}tip {
+  overflow: hidden;
 }
