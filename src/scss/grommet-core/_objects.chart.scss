@@ -103,6 +103,26 @@
 .#{$grommet-namespace}chart-base--height-sparkline {
   height: $sparkline-height;
   width: $sparkline-height * 4;
+
+  &.#{$grommet-namespace}chart-base--width-xsmall {
+    width: $size-xsmall;
+  }
+
+  &.#{$grommet-namespace}chart-base--width-small {
+    width: $size-small;
+  }
+
+  &.#{$grommet-namespace}chart-base--width-medium {
+    width: $size-medium;
+  }
+
+  &.#{$grommet-namespace}chart-base--width-large {
+    width: $size-large;
+
+    @include media-query(palm) {
+      max-width: 100%;
+    }
+  }
 }
 
 // Axis

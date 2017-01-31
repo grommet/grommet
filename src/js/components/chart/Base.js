@@ -33,7 +33,8 @@ export default class Base extends Component {
     } = this.props;
     const childCount = Children.count(children);
     const finalHeight = (! childCount && ! height ? 'medium' : height);
-    const finalWidth = (! childCount && ! width ? 'medium' : width);
+    const finalWidth = (! childCount && ! width && 'sparkline' !== height ?
+      'medium' : width);
 
     const classes = classnames(
       CLASS_ROOT, {
@@ -70,5 +71,5 @@ Base.propTypes = {
     'xxsmall', 'xsmall', 'small', 'medium', 'large', 'sparkline'
   ]),
   vertical: PropTypes.bool,
-  width: PropTypes.oneOf(['small', 'medium', 'large', 'full'])
+  width: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full'])
 };
