@@ -282,7 +282,7 @@ var Select = function (_Component) {
       // Get values of options, so we can highlight selected option
       if (options) {
         var optionValues = options.map(function (option) {
-          if ((typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
+          if (option && (typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
             return option.value;
           } else {
             return option;
@@ -400,7 +400,7 @@ var Select = function (_Component) {
   }, {
     key: '_renderLabel',
     value: function _renderLabel(option) {
-      if ((typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
+      if (option && (typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
         // revert for announce as label is often a complex object
         return option.label || option.value || '';
       } else {
@@ -422,7 +422,7 @@ var Select = function (_Component) {
           });
           return selectedMultiple;
         }
-      } else if ((typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
+      } else if (option && (typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
         return typeof option.label === 'string' ? option.label : option.value || '';
       } else {
         return undefined === option || null === option ? '' : option;
@@ -432,14 +432,14 @@ var Select = function (_Component) {
     key: '_valueEqualsOption',
     value: function _valueEqualsOption(value, option) {
       var result = false;
-      if ((typeof value === 'undefined' ? 'undefined' : (0, _typeof3.default)(value)) === 'object') {
-        if ((typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
+      if (value && (typeof value === 'undefined' ? 'undefined' : (0, _typeof3.default)(value)) === 'object') {
+        if (option && (typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
           result = value.value === option.value;
         } else {
           result = value.value === option;
         }
       } else {
-        if ((typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
+        if (option && (typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
           result = value === option.value;
         } else {
           result = value === option;
