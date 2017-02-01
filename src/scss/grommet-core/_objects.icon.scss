@@ -189,6 +189,29 @@ $social-linkedin-color: #0077B5;
   height: halve($inuit-base-spacing-unit);
 }
 
+.#{$grommet-namespace}icon-spinning--large {
+  width: round($inuit-base-spacing-unit * 2);
+  height: round($inuit-base-spacing-unit * 2);
+}
+
+.#{$grommet-namespace}icon-spinning--xlarge {
+  width: round($inuit-base-spacing-unit * 6);
+  height: round($inuit-base-spacing-unit * 6);
+}
+
+.#{$grommet-namespace}icon-spinning--huge {
+  width: round($inuit-base-spacing-unit * 12);
+  height: round($inuit-base-spacing-unit * 12);
+}
+
+.#{$grommet-namespace}icon-spinning--xlarge.#{$grommet-namespace}icon-spinning--responsive,
+.#{$grommet-namespace}icon-spinning--huge.#{$grommet-namespace}icon-spinning--responsive {
+  @include media-query(palm) {
+    width: round($inuit-base-spacing-unit * 2);
+    height: round($inuit-base-spacing-unit * 2);
+  }
+}
+
 $logo-size: double($inuit-base-spacing-unit);
 $logo-dash-size: round($logo-size * 16);
 

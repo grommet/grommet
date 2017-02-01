@@ -9,12 +9,18 @@ const CLASS_ROOT = CSSClassnames.SPINNING;
 
 export default class Spinning extends Component {
   render () {
-    const { a11yTitle, className, small, ...props } = this.props;
+    const {
+      a11yTitle, className, small, size, responsive, ...props
+    } = this.props;
     const { intl } = this.context;
+
+    let sizeOverride = small ? 'small' : size;
+
     const classes = classnames(
       CLASS_ROOT,
       {
-        [`${CLASS_ROOT}--small`]: small
+        [`${CLASS_ROOT}--${sizeOverride}`]: sizeOverride,
+        [`${CLASS_ROOT}--responsive`]: responsive
       },
       className
     );
@@ -35,8 +41,14 @@ Spinning.contextTypes = {
   intl: PropTypes.object
 };
 
+Spinning.defaultProps = {
+  responsive: true
+};
+
 Spinning.propTypes = {
   a11yTitle: PropTypes.string,
   className: PropTypes.string,
-  small: PropTypes.bool
+  small: PropTypes.bool,
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
+  responsive: PropTypes.bool
 };
