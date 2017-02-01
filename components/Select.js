@@ -501,7 +501,7 @@ var Select = function (_Component) {
           var classes = (0, _classnames4.default)((_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__option', true), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__option--selected', selected), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__option--active', index === activeOptionIndex), _classnames));
 
           var content = _this4._renderLabel(option);
-          if (option.icon) {
+          if (option && option.icon) {
             content = _react2.default.createElement(
               'span',
               null,
@@ -513,7 +513,7 @@ var Select = function (_Component) {
 
           var itemOnClick = void 0;
           if (inline) {
-            var itemId = id + '-' + (option.value || option);
+            var itemId = id + '-' + (option ? option.value || option : index);
             var Type = multiple ? _CheckBox2.default : _RadioButton2.default;
             content = _react2.default.createElement(Type, { key: itemId, id: itemId, label: content, checked: selected,
               onChange: _this4._onClickOption.bind(_this4, option) });
