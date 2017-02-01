@@ -20,6 +20,41 @@ describe('Spinning', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('has correct rendering when size=small', () => {
+    const component = renderer.create(
+      <Spinning size="small" />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('has correct rendering when size=medium', () => {
+    const component = renderer.create(
+      <Spinning size="medium" />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('has correct rendering when size=large', () => {
+    const component = renderer.create(
+      <Spinning size="large" />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('has correct rendering when size=xlarge', () => {
+    const component = renderer.create(
+      <Spinning size="xlarge" />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it('has correct rendering when size=huge', () => {
+    const component = renderer.create(
+      <Spinning size="huge" />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
   it('has correct className rendering', () => {
     const component = renderer.create(
       <Spinning className='testing' />
