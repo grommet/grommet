@@ -53,6 +53,8 @@
 }
 
 .#{$grommet-namespace}select__option {
+  // min-height handles blank options
+  min-height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
   padding: quarter($inuit-base-spacing-unit) 0;
   cursor: pointer;
 }

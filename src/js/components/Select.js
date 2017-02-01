@@ -377,7 +377,7 @@ export default class Select extends Component {
         );
 
         let content = this._renderLabel(option);
-        if (option.icon) {
+        if (option && option.icon) {
           content = (
             <span>{option.icon} {content}</span>
           );
@@ -385,7 +385,7 @@ export default class Select extends Component {
 
         let itemOnClick;
         if (inline) {
-          const itemId = `${id}-${option.value || option}`;
+          const itemId = `${id}-${option ? (option.value || option) : index}`;
           const Type = (multiple ? CheckBox : RadioButton );
           content = (
             <Type key={itemId} id={itemId} label={content} checked={selected}

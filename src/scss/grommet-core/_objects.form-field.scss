@@ -236,6 +236,13 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     color: inherit;
   }
 
+  > .#{$grommet-namespace}select {
+    .#{$grommet-namespace}select__options {
+      margin-left: $form-horizontal-padding;
+      margin-right: $form-horizontal-padding;
+    }
+  }
+
   // Prevent textarea from adding extra bottom margin
   > textarea {
     vertical-align: top;
