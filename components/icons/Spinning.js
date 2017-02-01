@@ -69,14 +69,21 @@ var Spinning = function (_Component) {
   (0, _createClass3.default)(Spinning, [{
     key: 'render',
     value: function render() {
+      var _classnames;
+
       var _props = this.props,
           a11yTitle = _props.a11yTitle,
           className = _props.className,
           small = _props.small,
-          props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className', 'small']);
+          size = _props.size,
+          responsive = _props.responsive,
+          props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className', 'small', 'size', 'responsive']);
       var intl = this.context.intl;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--small', small), className);
+
+      var sizeOverride = small ? 'small' : size;
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + sizeOverride, sizeOverride), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), _classnames), className);
 
       return _react2.default.createElement(
         'svg',
@@ -100,9 +107,15 @@ Spinning.contextTypes = {
   intl: _react.PropTypes.object
 };
 
+Spinning.defaultProps = {
+  responsive: true
+};
+
 Spinning.propTypes = {
   a11yTitle: _react.PropTypes.string,
   className: _react.PropTypes.string,
-  small: _react.PropTypes.bool
+  small: _react.PropTypes.bool,
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
+  responsive: _react.PropTypes.bool
 };
 module.exports = exports['default'];
