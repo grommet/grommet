@@ -6,6 +6,8 @@ import CSSClassnames from '../../../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.STATUS_ICON;
 
+let _lastId = 0;
+
 export default class CriticalStatus extends Component {
   render() {
     const { a11yTitle, className, ...props } = this.props;
@@ -14,15 +16,22 @@ export default class CriticalStatus extends Component {
       `${CLASS_ROOT}-critical`,
       className
     );
+    // generate an id to avoid duplication in the DOM
+    const maskId = `mask-critical-${_lastId++}`;
     return (
       <svg {...props} className={classes} viewBox='0 0 24 24' role='img'
         version='1.1' aria-label={a11yTitle}>
-        <g className={`${CLASS_ROOT}__base`} stroke='none'>
-          <path d='M12,0 L24,12 L12,24 L0,12 Z' />
-        </g>
-        <g className={`${CLASS_ROOT}__detail`} fill='none'>
-          <path d='M8,8 L16,16' strokeWidth='2' />
-          <path d='M8,16 L16,8' strokeWidth='2' />
+        <defs>
+          <mask id={maskId}>
+            <g className={`${CLASS_ROOT}__detail`} >
+              <rect x='0' y='0' width='24' height='24' fill='#fff' />
+              <path d='M8,8 L16,16' strokeWidth='2' stroke='#000' fill='none' />
+              <path d='M8,16 L16,8' strokeWidth='2' stroke='#000' fill='none' />
+            </g>
+          </mask>
+        </defs>
+        <g className={`${CLASS_ROOT}__base`} mask={`url(#${maskId})`}>
+          <path d='M12,0 L24,12 L12,24 L0,12 Z' stroke='none' />
         </g>
       </svg>
     );

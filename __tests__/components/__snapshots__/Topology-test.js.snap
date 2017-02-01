@@ -61,18 +61,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-0">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-0)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -99,18 +112,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-1">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-1)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -137,18 +163,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-2">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-2)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -175,18 +214,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-3">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-3)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -213,18 +265,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-4">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-4)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -251,18 +316,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-5">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-5)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -289,18 +367,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-6">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-6)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -327,18 +418,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-7">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-7)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -423,18 +527,31 @@ exports[`Topology has correct default options 1`] = `
                     role="img"
                     version="1.1"
                     viewBox="0 0 24 24">
+                    <defs>
+                      <mask
+                        id="mask-ok-8">
+                        <g
+                          className="grommetux-status-icon__detail">
+                          <rect
+                            fill="#fff"
+                            height="24"
+                            width="24"
+                            x="0"
+                            y="0" />
+                          <path
+                            d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                            fill="#000"
+                            stroke="none" />
+                        </g>
+                      </mask>
+                    </defs>
                     <g
-                      className="grommetux-status-icon__base">
+                      className="grommetux-status-icon__base"
+                      mask="url(#mask-ok-8)">
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        stroke="none" />
-                    </g>
-                    <g
-                      className="grommetux-status-icon__detail">
-                      <path
-                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         stroke="none" />
                     </g>
                   </svg>
@@ -461,18 +578,31 @@ exports[`Topology has correct default options 1`] = `
                     role="img"
                     version="1.1"
                     viewBox="0 0 24 24">
+                    <defs>
+                      <mask
+                        id="mask-ok-9">
+                        <g
+                          className="grommetux-status-icon__detail">
+                          <rect
+                            fill="#fff"
+                            height="24"
+                            width="24"
+                            x="0"
+                            y="0" />
+                          <path
+                            d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                            fill="#000"
+                            stroke="none" />
+                        </g>
+                      </mask>
+                    </defs>
                     <g
-                      className="grommetux-status-icon__base">
+                      className="grommetux-status-icon__base"
+                      mask="url(#mask-ok-9)">
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        stroke="none" />
-                    </g>
-                    <g
-                      className="grommetux-status-icon__detail">
-                      <path
-                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         stroke="none" />
                     </g>
                   </svg>
@@ -500,18 +630,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-10">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-10)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -545,18 +688,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-11">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-11)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -615,18 +771,31 @@ exports[`Topology has correct default options 1`] = `
                     role="img"
                     version="1.1"
                     viewBox="0 0 24 24">
+                    <defs>
+                      <mask
+                        id="mask-ok-12">
+                        <g
+                          className="grommetux-status-icon__detail">
+                          <rect
+                            fill="#fff"
+                            height="24"
+                            width="24"
+                            x="0"
+                            y="0" />
+                          <path
+                            d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                            fill="#000"
+                            stroke="none" />
+                        </g>
+                      </mask>
+                    </defs>
                     <g
-                      className="grommetux-status-icon__base">
+                      className="grommetux-status-icon__base"
+                      mask="url(#mask-ok-12)">
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        stroke="none" />
-                    </g>
-                    <g
-                      className="grommetux-status-icon__detail">
-                      <path
-                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         stroke="none" />
                     </g>
                   </svg>
@@ -653,18 +822,31 @@ exports[`Topology has correct default options 1`] = `
                     role="img"
                     version="1.1"
                     viewBox="0 0 24 24">
+                    <defs>
+                      <mask
+                        id="mask-ok-13">
+                        <g
+                          className="grommetux-status-icon__detail">
+                          <rect
+                            fill="#fff"
+                            height="24"
+                            width="24"
+                            x="0"
+                            y="0" />
+                          <path
+                            d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                            fill="#000"
+                            stroke="none" />
+                        </g>
+                      </mask>
+                    </defs>
                     <g
-                      className="grommetux-status-icon__base">
+                      className="grommetux-status-icon__base"
+                      mask="url(#mask-ok-13)">
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        stroke="none" />
-                    </g>
-                    <g
-                      className="grommetux-status-icon__detail">
-                      <path
-                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         stroke="none" />
                     </g>
                   </svg>
@@ -692,18 +874,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-14">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-14)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -729,18 +924,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-15">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-15)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -766,18 +974,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-16">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-16)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -828,18 +1049,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-17">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-17)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -866,18 +1100,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-18">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-18)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -904,18 +1151,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-19">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-19)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -942,18 +1202,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-20">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-20)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -980,18 +1253,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-21">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-21)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1018,18 +1304,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-22">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-22)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1056,18 +1355,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-23">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-23)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1094,18 +1406,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-24">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-24)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1132,18 +1457,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-25">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-25)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1170,18 +1508,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-26">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-26)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1218,18 +1569,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-27">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-27)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1256,18 +1620,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-28">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-28)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1294,18 +1671,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-29">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-29)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1332,18 +1722,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-30">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-30)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1370,18 +1773,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-31">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-31)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1408,18 +1824,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-32">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-32)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1446,18 +1875,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-33">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-33)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1484,18 +1926,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-34">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-34)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1522,18 +1977,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-35">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-35)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1560,18 +2028,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-36">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-36)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1626,18 +2107,31 @@ exports[`Topology has correct default options 1`] = `
                     role="img"
                     version="1.1"
                     viewBox="0 0 24 24">
+                    <defs>
+                      <mask
+                        id="mask-ok-37">
+                        <g
+                          className="grommetux-status-icon__detail">
+                          <rect
+                            fill="#fff"
+                            height="24"
+                            width="24"
+                            x="0"
+                            y="0" />
+                          <path
+                            d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                            fill="#000"
+                            stroke="none" />
+                        </g>
+                      </mask>
+                    </defs>
                     <g
-                      className="grommetux-status-icon__base">
+                      className="grommetux-status-icon__base"
+                      mask="url(#mask-ok-37)">
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        stroke="none" />
-                    </g>
-                    <g
-                      className="grommetux-status-icon__detail">
-                      <path
-                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         stroke="none" />
                     </g>
                   </svg>
@@ -1664,18 +2158,31 @@ exports[`Topology has correct default options 1`] = `
                     role="img"
                     version="1.1"
                     viewBox="0 0 24 24">
+                    <defs>
+                      <mask
+                        id="mask-ok-38">
+                        <g
+                          className="grommetux-status-icon__detail">
+                          <rect
+                            fill="#fff"
+                            height="24"
+                            width="24"
+                            x="0"
+                            y="0" />
+                          <path
+                            d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                            fill="#000"
+                            stroke="none" />
+                        </g>
+                      </mask>
+                    </defs>
                     <g
-                      className="grommetux-status-icon__base">
+                      className="grommetux-status-icon__base"
+                      mask="url(#mask-ok-38)">
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        stroke="none" />
-                    </g>
-                    <g
-                      className="grommetux-status-icon__detail">
-                      <path
-                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         stroke="none" />
                     </g>
                   </svg>
@@ -1703,18 +2210,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-39">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-39)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1740,18 +2260,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-40">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-40)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1777,18 +2310,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-41">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-41)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1847,18 +2393,31 @@ exports[`Topology has correct default options 1`] = `
                     role="img"
                     version="1.1"
                     viewBox="0 0 24 24">
+                    <defs>
+                      <mask
+                        id="mask-ok-42">
+                        <g
+                          className="grommetux-status-icon__detail">
+                          <rect
+                            fill="#fff"
+                            height="24"
+                            width="24"
+                            x="0"
+                            y="0" />
+                          <path
+                            d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                            fill="#000"
+                            stroke="none" />
+                        </g>
+                      </mask>
+                    </defs>
                     <g
-                      className="grommetux-status-icon__base">
+                      className="grommetux-status-icon__base"
+                      mask="url(#mask-ok-42)">
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        stroke="none" />
-                    </g>
-                    <g
-                      className="grommetux-status-icon__detail">
-                      <path
-                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         stroke="none" />
                     </g>
                   </svg>
@@ -1885,18 +2444,31 @@ exports[`Topology has correct default options 1`] = `
                     role="img"
                     version="1.1"
                     viewBox="0 0 24 24">
+                    <defs>
+                      <mask
+                        id="mask-ok-43">
+                        <g
+                          className="grommetux-status-icon__detail">
+                          <rect
+                            fill="#fff"
+                            height="24"
+                            width="24"
+                            x="0"
+                            y="0" />
+                          <path
+                            d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                            fill="#000"
+                            stroke="none" />
+                        </g>
+                      </mask>
+                    </defs>
                     <g
-                      className="grommetux-status-icon__base">
+                      className="grommetux-status-icon__base"
+                      mask="url(#mask-ok-43)">
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        stroke="none" />
-                    </g>
-                    <g
-                      className="grommetux-status-icon__detail">
-                      <path
-                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         stroke="none" />
                     </g>
                   </svg>
@@ -1924,18 +2496,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-44">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-44)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1961,18 +2546,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-45">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-45)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
@@ -1998,18 +2596,31 @@ exports[`Topology has correct default options 1`] = `
                 role="img"
                 version="1.1"
                 viewBox="0 0 24 24">
+                <defs>
+                  <mask
+                    id="mask-ok-46">
+                    <g
+                      className="grommetux-status-icon__detail">
+                      <rect
+                        fill="#fff"
+                        height="24"
+                        width="24"
+                        x="0"
+                        y="0" />
+                      <path
+                        d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+                        fill="#000"
+                        stroke="none" />
+                    </g>
+                  </mask>
+                </defs>
                 <g
-                  className="grommetux-status-icon__base">
+                  className="grommetux-status-icon__base"
+                  mask="url(#mask-ok-46)">
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
-                </g>
-                <g
-                  className="grommetux-status-icon__detail">
-                  <path
-                    d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                     stroke="none" />
                 </g>
               </svg>
