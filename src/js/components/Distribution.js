@@ -19,10 +19,6 @@ const SMALL_SIZE = 120;
 const THIN_HEIGHT = 72;
 
 const GUTTER_SIZE = 4;
-// We pad the labels here instead of CSS to keep the DOM simple for handling
-// text overflow.
-const LABEL_PAD_VERTICAL = 6;
-const LABEL_PAD_HORIZONTAL = 12;
 
 export default class Distribution extends Component {
 
@@ -140,12 +136,7 @@ export default class Distribution extends Component {
   }
 
   _labelRect (boxRect) {
-    // pad the labels here to keep the DOM simple w.r.t overflow text
     let labelRect = { ...boxRect };
-    labelRect.x += LABEL_PAD_HORIZONTAL;
-    labelRect.width -= (LABEL_PAD_HORIZONTAL * 2);
-    labelRect.y += LABEL_PAD_VERTICAL;
-    labelRect.height -= (LABEL_PAD_VERTICAL * 2);
     return labelRect;
   }
 
@@ -332,7 +323,7 @@ export default class Distribution extends Component {
   }
 
   _renderItemLabel (datum, labelRect, index) {
-    const { activeIndex } = this.state;
+    const { activeIndex, width } = this.state;
     const labelClasses = classnames(
       `${CLASS_ROOT}__label`, {
         [`${BACKGROUND_COLOR_INDEX}-${this._itemColorIndex(datum, index)}`]:
@@ -348,12 +339,24 @@ export default class Distribution extends Component {
 
     const value =
       (datum.labelValue !== undefined ? datum.labelValue : datum.value);
+    const style = { top: labelRect.y };
+    if (index !== activeIndex) {
+      style.left = labelRect.x;
+      style.maxWidth = labelRect.width;
+      style.maxHeight = labelRect.height;
+    } else {
+      if (labelRect.width < SMALL_SIZE &&
+        (labelRect.x + labelRect.width) >= width) {
+        style.right = width - (labelRect.x + labelRect.width);
+      } else {
+        style.left = labelRect.x;
+      }
+    }
 
     return (
       <div key={index} className={labelClasses}
         data-box-index={index} role='presentation'
-        style={{ top: labelRect.y, left: labelRect.x, maxWidth: labelRect.width,
-          maxHeight: labelRect.height }}>
+        style={style}>
         <span className={`${CLASS_ROOT}__label-value`}>
           {value}
           <span className={`${CLASS_ROOT}__label-units`}>
