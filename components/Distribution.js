@@ -76,10 +76,6 @@ var SMALL_SIZE = 120;
 var THIN_HEIGHT = 72;
 
 var GUTTER_SIZE = 4;
-// We pad the labels here instead of CSS to keep the DOM simple for handling
-// text overflow.
-var LABEL_PAD_VERTICAL = 6;
-var LABEL_PAD_HORIZONTAL = 12;
 
 var Distribution = function (_Component) {
   (0, _inherits3.default)(Distribution, _Component);
@@ -206,12 +202,7 @@ var Distribution = function (_Component) {
   }, {
     key: '_labelRect',
     value: function _labelRect(boxRect) {
-      // pad the labels here to keep the DOM simple w.r.t overflow text
       var labelRect = (0, _extends3.default)({}, boxRect);
-      labelRect.x += LABEL_PAD_HORIZONTAL;
-      labelRect.width -= LABEL_PAD_HORIZONTAL * 2;
-      labelRect.y += LABEL_PAD_VERTICAL;
-      labelRect.height -= LABEL_PAD_VERTICAL * 2;
       return labelRect;
     }
   }, {
@@ -415,18 +406,31 @@ var Distribution = function (_Component) {
     value: function _renderItemLabel(datum, labelRect, index) {
       var _classnames;
 
-      var activeIndex = this.state.activeIndex;
+      var _state = this.state,
+          activeIndex = _state.activeIndex,
+          width = _state.width;
 
       var labelClasses = (0, _classnames7.default)(CLASS_ROOT + '__label', (_classnames = {}, (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '-' + this._itemColorIndex(datum, index), !datum.icon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--icons', datum.icon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--small', labelRect.width < SMALL_SIZE || labelRect.height < SMALL_SIZE), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--thin', labelRect.height < THIN_HEIGHT), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--active', index === activeIndex), _classnames));
 
       var value = datum.labelValue !== undefined ? datum.labelValue : datum.value;
+      var style = { top: labelRect.y };
+      if (index !== activeIndex) {
+        style.left = labelRect.x;
+        style.maxWidth = labelRect.width;
+        style.maxHeight = labelRect.height;
+      } else {
+        if (labelRect.width < SMALL_SIZE && labelRect.x + labelRect.width >= width) {
+          style.right = width - (labelRect.x + labelRect.width);
+        } else {
+          style.left = labelRect.x;
+        }
+      }
 
       return _react2.default.createElement(
         'div',
         { key: index, className: labelClasses,
           'data-box-index': index, role: 'presentation',
-          style: { top: labelRect.y, left: labelRect.x, maxWidth: labelRect.width,
-            maxHeight: labelRect.height } },
+          style: style },
         _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + '__label-value' },
@@ -548,9 +552,9 @@ var Distribution = function (_Component) {
   }, {
     key: '_renderLoading',
     value: function _renderLoading() {
-      var _state = this.state,
-          height = _state.height,
-          width = _state.width;
+      var _state2 = this.state,
+          height = _state2.height,
+          width = _state2.width;
 
       var loadingClasses = (0, _classnames7.default)(CLASS_ROOT + '__loading-indicator', COLOR_INDEX + '-loading');
       var loadingHeight = height / 2;
@@ -580,13 +584,13 @@ var Distribution = function (_Component) {
       delete props.series;
       delete props.units;
       var intl = this.context.intl;
-      var _state2 = this.state,
-          allIcons = _state2.allIcons,
-          focus = _state2.focus,
-          height = _state2.height,
-          items = _state2.items,
-          mouseActive = _state2.mouseActive,
-          width = _state2.width;
+      var _state3 = this.state,
+          allIcons = _state3.allIcons,
+          focus = _state3.focus,
+          height = _state3.height,
+          items = _state3.items,
+          mouseActive = _state3.mouseActive,
+          width = _state3.width;
 
       var classes = (0, _classnames7.default)(CLASS_ROOT, (_classnames4 = {}, (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--icons', allIcons), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--loading', (items || []).length === 0), _classnames4), className);
 
