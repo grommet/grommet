@@ -48,6 +48,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var CLASS_ROOT = _CSSClassnames2.default.STATUS_ICON; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var _lastId = 0;
+
 var Warning = function (_Component) {
   (0, _inherits3.default)(Warning, _Component);
 
@@ -65,22 +67,37 @@ var Warning = function (_Component) {
           props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className']);
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, CLASS_ROOT + '-warning', className);
+      // generate an id to avoid duplication in the DOM
+      var maskId = 'mask-warning-' + _lastId++;
       return _react2.default.createElement(
         'svg',
         (0, _extends3.default)({}, props, { className: classes, viewBox: '0 0 24 24', role: 'img',
           'aria-label': a11yTitle, version: '1.1' }),
         _react2.default.createElement(
-          'g',
-          { className: CLASS_ROOT + '__base' },
-          _react2.default.createElement('path', { role: 'presentation', d: 'M12,0 L0,22 L24,22 L12,0 L12,0 Z',
-            stroke: 'none' })
+          'defs',
+          null,
+          _react2.default.createElement(
+            'mask',
+            { id: maskId },
+            _react2.default.createElement(
+              'g',
+              { className: CLASS_ROOT + '__detail' },
+              _react2.default.createElement('rect', { x: '0', y: '0', width: '24', height: '24', fill: '#fff' }),
+              _react2.default.createElement(
+                'g',
+                { strokeWidth: '2', stroke: '#000',
+                  transform: 'translate(11.000000, 8.000000)' },
+                _react2.default.createElement('path', { role: 'presentation', d: 'M1,0 L1,6', fill: 'none' }),
+                _react2.default.createElement('path', { role: 'presentation', d: 'M1,8 L1,10', fill: 'none' })
+              )
+            )
+          )
         ),
         _react2.default.createElement(
           'g',
-          { className: CLASS_ROOT + '__detail', strokeWidth: '2',
-            transform: 'translate(11.000000, 8.000000)' },
-          _react2.default.createElement('path', { role: 'presentation', d: 'M1,0 L1,6', fill: 'none' }),
-          _react2.default.createElement('path', { role: 'presentation', d: 'M1,8 L1,10', fill: 'none' })
+          { className: CLASS_ROOT + '__base', mask: 'url(#' + maskId + ')' },
+          _react2.default.createElement('path', { role: 'presentation', d: 'M12,0 L0,22 L24,22 L12,0 L12,0 Z',
+            stroke: 'none' })
         )
       );
     }

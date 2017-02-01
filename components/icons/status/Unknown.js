@@ -48,6 +48,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var CLASS_ROOT = _CSSClassnames2.default.STATUS_ICON; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var _lastId = 0;
+
 var Unknown = function (_Component) {
   (0, _inherits3.default)(Unknown, _Component);
 
@@ -65,23 +67,36 @@ var Unknown = function (_Component) {
           props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className']);
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, CLASS_ROOT + '-unknown', className);
+      // generate an id to avoid duplication in the DOM
+      var maskId = 'mask-uknown-' + _lastId++;
       return _react2.default.createElement(
         'svg',
         (0, _extends3.default)({}, props, { className: classes, viewBox: '0 0 24 24', role: 'img',
           'aria-label': a11yTitle, version: '1.1' }),
         _react2.default.createElement(
-          'g',
-          { className: CLASS_ROOT + '__base' },
-          _react2.default.createElement('path', {
-            d: 'M12,2 C17.5,2 22,6.5 22,12 C22,17.5 17.5,22 12,22 ' + 'C6.5,22 2,17.5 2,12 C2,6.5 6.5,2 12,2 L12,2 Z M12,0 ' + 'C5.4,0 0,5.4 0,12 C0,18.6 5.4,24 12,24 ' + 'C18.6,24 24,18.6 24,12 C24,5.4 18.6,0 12,0 L12,0 L12,0 Z',
-            stroke: 'none' })
+          'defs',
+          null,
+          _react2.default.createElement(
+            'mask',
+            { id: maskId },
+            _react2.default.createElement(
+              'g',
+              { className: CLASS_ROOT + '__detail' },
+              _react2.default.createElement('rect', { x: '0', y: '0', width: '24', height: '24', fill: '#fff' }),
+              _react2.default.createElement('circle', { cx: '12', cy: '12', r: '10', stroke: 'none', fill: '#000' }),
+              _react2.default.createElement('path', {
+                d: 'M9,10.4 C9,8.8 10.4,7.6 12,7.6 C13.6,7.6 14.9,9 15,10.4 ' + 'C15,11.7 14.1,12.7 12.9,13.1 C12.4,13.2 12,13.7 12,14.2 ' + 'L12,15.5', fill: 'none', strokeWidth: '2', stroke: '#fff' }),
+              _react2.default.createElement('circle', { stroke: 'none', cx: '12', cy: '17.6', r: '1', fill: '#fff' })
+            )
+          )
         ),
         _react2.default.createElement(
           'g',
-          { className: CLASS_ROOT + '__detail' },
-          _react2.default.createElement('path', {
-            d: 'M9,10.4 C9,8.8 10.4,7.6 12,7.6 C13.6,7.6 14.9,9 15,10.4 ' + 'C15,11.7 14.1,12.7 12.9,13.1 C12.4,13.2 12,13.7 12,14.2 ' + 'L12,15.5', fill: 'none', strokeWidth: '2' }),
-          _react2.default.createElement('circle', { stroke: 'none', cx: '12', cy: '17.6', r: '1' })
+          { className: CLASS_ROOT + '__base', mask: 'url(#' + maskId + ')' },
+          _react2.default.createElement('circle', { className: CLASS_ROOT + '__normal',
+            cx: '12', cy: '12', r: '12', stroke: 'none' }),
+          _react2.default.createElement('circle', { className: CLASS_ROOT + '__small',
+            cx: '12', cy: '12', r: '11', strokeWidth: '3', fill: 'none' })
         )
       );
     }

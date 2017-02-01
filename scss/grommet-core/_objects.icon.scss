@@ -96,6 +96,24 @@ $social-linkedin-color: #0077B5;
 
   .#{$grommet-namespace}status-icon__base {
     fill: map-get($brand-status-colors, unknown);
+
+    #{$dark-background-context} {
+      @include icon-color($colored-status-color);
+    }
+  }
+
+  .#{$grommet-namespace}status-icon__detail {
+    fill: $background-color;
+    stroke: $background-color;
+  }
+
+  .#{$grommet-namespace}status-icon__small {
+    display: none;
+    stroke: map-get($brand-status-colors, unknown);
+
+    #{$dark-background-context} {
+      stroke: $colored-status-color;
+    }
   }
 }
 
@@ -103,11 +121,6 @@ $social-linkedin-color: #0077B5;
   .#{$grommet-namespace}status-icon__base {
     fill: map-get($brand-status-colors, unknown);
   }
-}
-
-.#{$grommet-namespace}status-icon__detail {
-  fill: $background-color;
-  stroke: $background-color;
 }
 
 .#{$grommet-namespace}status-icon-unknown {
@@ -139,8 +152,17 @@ $social-linkedin-color: #0077B5;
   margin-top: quarter($inuit-base-spacing-unit);
   margin-bottom: quarter($inuit-base-spacing-unit);
 
-  .#{$grommet-namespace}status-icon__detail {
+  .#{$grommet-namespace}status-icon__base {
+    mask: none;
+  }
+
+  .#{$grommet-namespace}status-icon__detail,
+  .#{$grommet-namespace}status-icon__normal {
     display: none;
+  }
+
+  .#{$grommet-namespace}status-icon__small {
+    display: block;
   }
 }
 

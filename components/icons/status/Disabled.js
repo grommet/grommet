@@ -48,6 +48,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var CLASS_ROOT = _CSSClassnames2.default.STATUS_ICON; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+var _lastId = 0;
+
 var Disabled = function (_Component) {
   (0, _inherits3.default)(Disabled, _Component);
 
@@ -65,20 +67,31 @@ var Disabled = function (_Component) {
           props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className']);
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, CLASS_ROOT + '-disabled', className);
+      // generate an id to avoid duplication in the DOM
+      var maskId = 'mask-disabled-' + _lastId++;
       return _react2.default.createElement(
         'svg',
         (0, _extends3.default)({}, props, { className: classes, viewBox: '0 0 24 24', role: 'img',
           version: '1.1', 'aria-label': a11yTitle }),
         _react2.default.createElement(
-          'g',
-          { className: CLASS_ROOT + '__base' },
-          _react2.default.createElement('path', { stroke: 'none',
-            d: 'M21,24 L3,24 C1.3,24 0,22.7 0,21 L0,3 C0,1.3 1.3,0 3,0 ' + 'L21,0 C22.7,0 24,1.3 24,3 L24,21 C24,22.7 22.7,24 21,24 ' + 'L21,24 Z' })
+          'defs',
+          null,
+          _react2.default.createElement(
+            'mask',
+            { id: maskId },
+            _react2.default.createElement(
+              'g',
+              { className: CLASS_ROOT + '__detail' },
+              _react2.default.createElement('rect', { x: '0', y: '0', width: '24', height: '24', fill: '#fff' }),
+              _react2.default.createElement('path', { d: 'M6,12 L18,12', strokeWidth: '2', stroke: '#000' })
+            )
+          )
         ),
         _react2.default.createElement(
           'g',
-          { className: CLASS_ROOT + '__detail', strokeWidth: '2' },
-          _react2.default.createElement('path', { d: 'M6,12 L18,12' })
+          { className: CLASS_ROOT + '__base', mask: 'url(#' + maskId + ')' },
+          _react2.default.createElement('path', { stroke: 'none',
+            d: 'M21,24 L3,24 C1.3,24 0,22.7 0,21 L0,3 C0,1.3 1.3,0 3,0 ' + 'L21,0 C22.7,0 24,1.3 24,3 L24,21 C24,22.7 22.7,24 21,24 ' + 'L21,24 Z' })
         )
       );
     }
