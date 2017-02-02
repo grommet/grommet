@@ -78,6 +78,7 @@ var Label = function (_Component) {
           _this2 = this;
 
       var _props = this.props,
+          align = _props.align,
           children = _props.children,
           className = _props.className,
           labelFor = _props.labelFor,
@@ -85,11 +86,11 @@ var Label = function (_Component) {
           size = _props.size,
           truncate = _props.truncate,
           uppercase = _props.uppercase,
-          props = (0, _objectWithoutProperties3.default)(_props, ['children', 'className', 'labelFor', 'margin', 'size', 'truncate', 'uppercase']);
+          props = (0, _objectWithoutProperties3.default)(_props, ['align', 'children', 'className', 'labelFor', 'margin', 'size', 'truncate', 'uppercase']);
 
       delete props.announce;
       var labelMargin = margin ? margin : 'small' === size ? 'none' : 'medium';
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--truncate', truncate), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--uppercase', uppercase), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + labelMargin, labelMargin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--truncate', truncate), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--uppercase', uppercase), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--margin-' + labelMargin, labelMargin), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), _classnames), className);
 
       return _react2.default.createElement(
         'label',
@@ -109,6 +110,7 @@ exports.default = Label;
 ;
 
 Label.propTypes = {
+  align: _react.PropTypes.oneOf(['start', 'center', 'end']),
   announce: _react.PropTypes.bool,
   labelFor: _react.PropTypes.string,
   margin: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
