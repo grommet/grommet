@@ -7,7 +7,7 @@ import { FormattedDate } from 'react-intl';
 import Intl from '../utils/Intl';
 import Box from './Box';
 import Value from './Value';
-import Animate from './Animate';
+// import Animate from './Animate';
 import Meter from './Meter';
 import Button from './Button';
 import StatusIcon from './icons/Status';
@@ -176,29 +176,31 @@ export default class Notification extends Component {
       // don't transfer size to Box since it means something different
       delete boxProps.size;
     }
+    /*
+    <Animate enter={{ animation: 'fade', duration: 1000 }}
+      leave={{ animation: 'fade', duration: 1000 }}>
+    </Animate>
+    */
     return (
-      <Animate enter={{ animation: 'fade', duration: 1000 }}
-        leave={{ animation: 'fade', duration: 1000 }}>
-        <Box ref={(ref) => this._containerRef = ref}
-          {...restProps} {...boxProps} className={classes}
-          pad='small' direction='row' align='start' responsive={false}
-          full={fullBox}>
-          <Box pad='small'>
-            {statusNode}
-          </Box>
-          <Box flex={true} pad='small'>
-            <span className={`${CLASS_ROOT}__message`}>
-              {message}
-            </span>
-            {context}
-            {timestampNode}
-            {stateNode}
-            {progress}
-            {children}
-          </Box>
-          {closerNode}
+      <Box ref={(ref) => this._containerRef = ref}
+        {...restProps} {...boxProps} className={classes}
+        pad='small' direction='row' align='start' responsive={false}
+        full={fullBox}>
+        <Box pad='small'>
+          {statusNode}
         </Box>
-      </Animate>
+        <Box flex={true} pad='small'>
+          <span className={`${CLASS_ROOT}__message`}>
+            {message}
+          </span>
+          {context}
+          {timestampNode}
+          {stateNode}
+          {progress}
+          {children}
+        </Box>
+        {closerNode}
+      </Box>
     );
   }
 };
