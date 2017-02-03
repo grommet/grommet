@@ -64,10 +64,6 @@ var _Value = require('./Value');
 
 var _Value2 = _interopRequireDefault(_Value);
 
-var _Animate = require('./Animate');
-
-var _Animate2 = _interopRequireDefault(_Animate);
-
 var _Meter = require('./Meter');
 
 var _Meter2 = _interopRequireDefault(_Meter);
@@ -100,9 +96,9 @@ var _DOM = require('../utils/DOM');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// import Animate from './Animate';
+var CLASS_ROOT = _CSSClassnames2.default.NOTIFICATION; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-var CLASS_ROOT = _CSSClassnames2.default.NOTIFICATION;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Notification = function (_Component) {
@@ -276,39 +272,39 @@ var Notification = function (_Component) {
         // don't transfer size to Box since it means something different
         delete boxProps.size;
       }
+      /*
+      <Animate enter={{ animation: 'fade', duration: 1000 }}
+        leave={{ animation: 'fade', duration: 1000 }}>
+      </Animate>
+      */
       return _react2.default.createElement(
-        _Animate2.default,
-        { enter: { animation: 'fade', duration: 1000 },
-          leave: { animation: 'fade', duration: 1000 } },
+        _Box2.default,
+        (0, _extends3.default)({ ref: function ref(_ref) {
+            return _this3._containerRef = _ref;
+          }
+        }, restProps, boxProps, { className: classes,
+          pad: 'small', direction: 'row', align: 'start', responsive: false,
+          full: fullBox }),
         _react2.default.createElement(
           _Box2.default,
-          (0, _extends3.default)({ ref: function ref(_ref) {
-              return _this3._containerRef = _ref;
-            }
-          }, restProps, boxProps, { className: classes,
-            pad: 'small', direction: 'row', align: 'start', responsive: false,
-            full: fullBox }),
+          { pad: 'small' },
+          statusNode
+        ),
+        _react2.default.createElement(
+          _Box2.default,
+          { flex: true, pad: 'small' },
           _react2.default.createElement(
-            _Box2.default,
-            { pad: 'small' },
-            statusNode
+            'span',
+            { className: CLASS_ROOT + '__message' },
+            message
           ),
-          _react2.default.createElement(
-            _Box2.default,
-            { flex: true, pad: 'small' },
-            _react2.default.createElement(
-              'span',
-              { className: CLASS_ROOT + '__message' },
-              message
-            ),
-            context,
-            timestampNode,
-            stateNode,
-            progress,
-            children
-          ),
-          closerNode
-        )
+          context,
+          timestampNode,
+          stateNode,
+          progress,
+          children
+        ),
+        closerNode
       );
     }
   }]);
