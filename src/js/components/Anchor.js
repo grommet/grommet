@@ -20,7 +20,9 @@ export default class Anchor extends Component {
     const { router } = context;
 
     this.state = {
-      active: router && path && router.isActive(path)
+      active: router && path && router.isActive(path.path || path, {
+        indexLink: path.index
+      })
     };
   }
 
@@ -41,12 +43,10 @@ export default class Anchor extends Component {
   }
 
   _onLocationChange (location) {
-    if (! this._unmounted) {
-      const { path } = this.props;
-      const { router } = this.context;
-      const active = router && location.pathname === path;
-      this.setState({ active });
-    }
+    const { path } = this.props;
+    const { router } = this.context;
+    const active = router && location.pathname === (path.path || path);
+    this.setState({ active });
   }
 
   _onClick (event) {
@@ -56,10 +56,12 @@ export default class Anchor extends Component {
     event.preventDefault();
 
     if (!disabled) {
-      if ('push' === method) {
-        router.push(path);
-      } else if ('replace' === method) {
-        router.replace(path);
+      if (path) {
+        if ('push' === method) {
+          router.push(path.path || path);
+        } else if ('replace' === method) {
+          router.replace(path.path || path);
+        }
       }
 
       if (onClick) {
@@ -99,7 +101,8 @@ export default class Anchor extends Component {
       return child;
     });
 
-    let adjustedHref = (path && router) ? router.createPath(path) : href;
+    let adjustedHref = (path && router) ?
+      router.createPath(path.path || path) : href;
 
     let classes = classnames(
       CLASS_ROOT,
@@ -158,7 +161,12 @@ schema(Anchor, {
       }
     ],
     onClick: [PropTypes.func, 'Click handler.'],
-    path: [PropTypes.string, 'React-router path to navigate to when clicked.'],
+    path: [
+      PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+      'React-router path to navigate to when clicked.' +
+      ' Use path={{ path: '/', index: true }} if you want the Anchor to be' +
+      ' active only when the index route is current.'
+    ],
     primary: [PropTypes.bool, 'Whether this is a primary anchor.'],
     reverse: [
       PropTypes.bool,
