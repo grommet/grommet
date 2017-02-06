@@ -127,14 +127,14 @@ export default class Legend extends Component {
     const { series } = this.props;
     const maxDecimalDigits = getMaxDecimalDigits(series);
     let total = 0;
-    series.forEach(item => 
+    series.forEach(item =>
       total += (typeof item.value === 'number' ?
        item.value : 0) * maxDecimalDigits );
     return total / maxDecimalDigits;
   }
 
   _renderSeries () {
-    const { series } = this.props;
+    const { series, responsive } = this.props;
     const { activeIndex } = this.state;
 
     return series.map((item, index) => {
@@ -165,7 +165,8 @@ export default class Legend extends Component {
           separator='none' pad={{ horizontal: 'small' }}
           key={item.label || index} className={legendClasses}
           onMouseOver={this._onActive.bind(this, index)}
-          onMouseOut={this._onActive.bind(this, undefined)} >
+          onMouseOut={this._onActive.bind(this, undefined)}
+          responsive={responsive} >
           {label}
           {value}
         </ListItem>
@@ -174,7 +175,7 @@ export default class Legend extends Component {
   }
 
   _renderTotal () {
-    const { total, units } = this.props;
+    const { total, units, responsive } = this.props;
     let totalValue;
     if (total !== true) {
       totalValue = total;
@@ -203,7 +204,8 @@ export default class Legend extends Component {
 
     return (
       <ListItem className={`${CLASS_ROOT}__total`}
-        justify='between' separator='none' pad={{ horizontal: 'small' }}>
+        justify='between' separator='none' pad={{ horizontal: 'small' }}
+        responsive={responsive} >
         <span className={`${CLASS_ROOT}__total-label`}>
           <FormattedMessage id="Total" defaultMessage="Total" />
         </span>
@@ -222,6 +224,7 @@ export default class Legend extends Component {
     delete props.announce;
     delete props.onActive;
     delete props.units;
+    delete props.responsive;
 
     const classes = classnames(
       CLASS_ROOT,
@@ -285,5 +288,6 @@ Legend.propTypes = {
       prefix: PropTypes.string,
       suffix: PropTypes.string
     })
-  ])
+  ]),
+  responsive: PropTypes.bool
 };
