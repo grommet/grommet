@@ -74,7 +74,9 @@ var Anchor = function (_Component) {
 
 
     _this.state = {
-      active: router && path && router.isActive(path)
+      active: router && path && router.isActive(path.path || path, {
+        indexLink: path.index
+      })
     };
     return _this;
   }
@@ -103,13 +105,11 @@ var Anchor = function (_Component) {
   }, {
     key: '_onLocationChange',
     value: function _onLocationChange(location) {
-      if (!this._unmounted) {
-        var path = this.props.path;
-        var router = this.context.router;
+      var path = this.props.path;
+      var router = this.context.router;
 
-        var active = router && location.pathname === path;
-        this.setState({ active: active });
-      }
+      var active = router && location.pathname === (path.path || path);
+      this.setState({ active: active });
     }
   }, {
     key: '_onClick',
@@ -125,10 +125,12 @@ var Anchor = function (_Component) {
       event.preventDefault();
 
       if (!disabled) {
-        if ('push' === method) {
-          router.push(path);
-        } else if ('replace' === method) {
-          router.replace(path);
+        if (path) {
+          if ('push' === method) {
+            router.push(path.path || path);
+          } else if ('replace' === method) {
+            router.replace(path.path || path);
+          }
         }
 
         if (onClick) {
@@ -191,7 +193,7 @@ var Anchor = function (_Component) {
         return child;
       });
 
-      var adjustedHref = path && router ? router.createPath(path) : href;
+      var adjustedHref = path && router ? router.createPath(path.path || path) : href;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--animate-icon', hasIcon && animateIcon !== false), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--disabled', disabled), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon', anchorIcon || hasIcon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--icon-label', hasIcon && label), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--primary', primary), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--reverse', reverse), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--active', active), _classnames), className);
 
@@ -237,7 +239,7 @@ exports.default = Anchor;
       defaultProp: 'push'
     }],
     onClick: [_reactDesc.PropTypes.func, 'Click handler.'],
-    path: [_reactDesc.PropTypes.string, 'React-router path to navigate to when clicked.'],
+    path: [_reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.object, _reactDesc.PropTypes.string]), 'React-router path to navigate to when clicked.' + ' Use path={{ path: ' / ', index: true }} if you want the Anchor to be' + ' active only when the index route is current.'],
     primary: [_reactDesc.PropTypes.bool, 'Whether this is a primary anchor.'],
     reverse: [_reactDesc.PropTypes.bool, 'Whether an icon and label should be reversed so that the icon is at ' + 'the end of the anchor.'],
     tag: [_reactDesc.PropTypes.string, 'The DOM tag to use for the element. The default is <a>. This should be' + ' used in conjunction with components like Link from React Router. In' + ' this case, Link controls the navigation while Anchor controls the' + ' styling.', {
