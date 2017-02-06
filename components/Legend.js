@@ -212,7 +212,9 @@ var Legend = function (_Component) {
     value: function _renderSeries() {
       var _this2 = this;
 
-      var series = this.props.series;
+      var _props = this.props,
+          series = _props.series,
+          responsive = _props.responsive;
       var activeIndex = this.state.activeIndex;
 
 
@@ -242,7 +244,8 @@ var Legend = function (_Component) {
             separator: 'none', pad: { horizontal: 'small' },
             key: item.label || index, className: legendClasses,
             onMouseOver: _this2._onActive.bind(_this2, index),
-            onMouseOut: _this2._onActive.bind(_this2, undefined) },
+            onMouseOut: _this2._onActive.bind(_this2, undefined),
+            responsive: responsive },
           label,
           value
         );
@@ -251,9 +254,10 @@ var Legend = function (_Component) {
   }, {
     key: '_renderTotal',
     value: function _renderTotal() {
-      var _props = this.props,
-          total = _props.total,
-          units = _props.units;
+      var _props2 = this.props,
+          total = _props2.total,
+          units = _props2.units,
+          responsive = _props2.responsive;
 
       var totalValue = void 0;
       if (total !== true) {
@@ -281,7 +285,8 @@ var Legend = function (_Component) {
       return _react2.default.createElement(
         _ListItem2.default,
         { className: CLASS_ROOT + '__total',
-          justify: 'between', separator: 'none', pad: { horizontal: 'small' } },
+          justify: 'between', separator: 'none', pad: { horizontal: 'small' },
+          responsive: responsive },
         _react2.default.createElement(
           'span',
           { className: CLASS_ROOT + '__total-label' },
@@ -301,16 +306,17 @@ var Legend = function (_Component) {
     value: function render() {
       var _this3 = this;
 
-      var _props2 = this.props,
-          className = _props2.className,
-          series = _props2.series,
-          total = _props2.total,
-          props = (0, _objectWithoutProperties3.default)(_props2, ['className', 'series', 'total']);
+      var _props3 = this.props,
+          className = _props3.className,
+          series = _props3.series,
+          total = _props3.total,
+          props = (0, _objectWithoutProperties3.default)(_props3, ['className', 'series', 'total']);
 
       delete props.activeIndex;
       delete props.announce;
       delete props.onActive;
       delete props.units;
+      delete props.responsive;
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, className);
 
@@ -365,6 +371,7 @@ Legend.propTypes = {
   units: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.shape({
     prefix: _react.PropTypes.string,
     suffix: _react.PropTypes.string
-  })])
+  })]),
+  responsive: _react.PropTypes.bool
 };
 module.exports = exports['default'];
