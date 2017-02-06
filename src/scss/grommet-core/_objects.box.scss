@@ -195,6 +195,7 @@
   flex: 1 1;
   // need to fix flexbox issue with min-width: auto for some tags
   min-width: 0;
+  overflow: auto;
 }
 
 .#{$grommet-namespace}box--flex-off {
@@ -450,6 +451,7 @@
 }
 
 .#{$grommet-namespace}box--full-vertical {
+  height: 100%;
   min-height: 100vh;
 
   // IE11 specific fix for aligning content vertically centered
