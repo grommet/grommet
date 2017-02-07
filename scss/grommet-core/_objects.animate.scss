@@ -7,6 +7,10 @@ $animation-duration: 1s;
   transform: $transform;
 }
 
+.#{$grommet-namespace}animate {
+  max-width: 100%;
+}
+
 .#{$grommet-namespace}animate .#{$grommet-namespace}animate__child {
   transition: all $animation-duration;
 }
