@@ -51,11 +51,12 @@ class ToastContents extends Component {
   }
 
   render () {
-    const { children, onClose, status } = this.props;
+    const { children, onClose, size, status } = this.props;
     const { closing } = this.state;
 
     const classNames = classnames(
       CLASS_ROOT, {
+        [`${CLASS_ROOT}--${size}`]: size,
         [`${CLASS_ROOT}--closing`]: closing
       }
     );
@@ -63,7 +64,8 @@ class ToastContents extends Component {
     let statusIcon;
     if (status) {
       statusIcon = (
-        <Status className={`${CLASS_ROOT}__status`} value={status} />
+        <Status className={`${CLASS_ROOT}__status`} value={status}
+          size={size === 'large' ? 'medium' : size} />
       );
     }
 
@@ -93,6 +95,7 @@ ToastContents.propTypes = {
   intl: PropTypes.object,
   onClose: PropTypes.func,
   router: PropTypes.any,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   store: PropTypes.any
 };
 
@@ -172,5 +175,10 @@ export default class Toast extends Component {
 
 Toast.propTypes = {
   onClose: PropTypes.func,
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   status: PropTypes.string
+};
+
+Toast.defaultProps = {
+  size: 'medium'
 };
