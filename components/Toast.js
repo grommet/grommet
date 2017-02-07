@@ -120,20 +120,23 @@ var ToastContents = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _classnames,
+          _this2 = this;
 
       var _props = this.props,
           children = _props.children,
           onClose = _props.onClose,
+          size = _props.size,
           status = _props.status;
       var closing = this.state.closing;
 
 
-      var classNames = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--closing', closing));
+      var classNames = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--closing', closing), _classnames));
 
       var statusIcon = void 0;
       if (status) {
-        statusIcon = _react2.default.createElement(_Status2.default, { className: CLASS_ROOT + '__status', value: status });
+        statusIcon = _react2.default.createElement(_Status2.default, { className: CLASS_ROOT + '__status', value: status,
+          size: size === 'large' ? 'medium' : size });
       }
 
       var closeControl = void 0;
@@ -169,6 +172,7 @@ ToastContents.propTypes = {
   intl: _react.PropTypes.object,
   onClose: _react.PropTypes.func,
   router: _react.PropTypes.any,
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
   store: _react.PropTypes.any
 };
 
@@ -266,6 +270,11 @@ exports.default = Toast;
 
 Toast.propTypes = {
   onClose: _react.PropTypes.func,
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
   status: _react.PropTypes.string
+};
+
+Toast.defaultProps = {
+  size: 'medium'
 };
 module.exports = exports['default'];
