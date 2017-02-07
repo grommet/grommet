@@ -220,7 +220,7 @@
 
 @include keyframes(slide-right) {
   0% {
-    left: -100vw;
+    left: -100%;
   }
 
   100% {
@@ -230,7 +230,7 @@
 
 @include keyframes(slide-left) {
   0% {
-    right: -100vw;
+    right: -100%;
   }
 
   100% {
