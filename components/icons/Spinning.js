@@ -89,10 +89,8 @@ var Spinning = function (_Component) {
         'svg',
         (0, _extends3.default)({}, props, { className: classes, viewBox: '0 0 48 48', version: '1.1',
           role: 'img', 'aria-label': a11yTitle || _Intl2.default.getMessage(intl, 'Spinning') }),
-        _react2.default.createElement('circle', { stroke: '#ddd', strokeWidth: '4', strokeDasharray: '24px 8px',
-          fill: 'none', cx: '24', cy: '24', r: '20' }),
-        _react2.default.createElement('circle', { stroke: '#333', strokeWidth: '4', strokeDasharray: '24px 104px',
-          fill: 'none', cx: '24', cy: '24', r: '20' })
+        _react2.default.createElement('circle', { cx: '24', cy: '24', r: '21',
+          stroke: '#979797', strokeWidth: '6', fill: 'none' })
       );
     }
   }]);

@@ -177,14 +177,25 @@ $social-linkedin-color: #0077B5;
   }
 }
 
-@include keyframes(rotate) {
-  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+$spinning-dash: round($inuit-base-spacing-unit * 2 * 3.1416);
+
+@include keyframes(drawAndReverse) {
+  0% {
+    stroke-dashoffset: $spinning-dash;
+  }
+
+  100% {
+    stroke-dashoffset: - ($spinning-dash - 20); // empirical
+  }
 }
 
 .#{$grommet-namespace}icon-spinning {
   width: $inuit-base-spacing-unit;
   height: $inuit-base-spacing-unit;
-  @include animation('rotate 4s steps(4, end) infinite');
+  stroke-dasharray: $spinning-dash $spinning-dash;
+  stroke-dashoffset: 0;
+  transform: rotate(90deg);
+  @include animation('drawAndReverse 4s alternate infinite ease-in-out');
 }
 
 .#{$grommet-namespace}icon-spinning--small {
