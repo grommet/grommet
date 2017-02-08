@@ -308,7 +308,14 @@ $meter-bar-cross-default:
   &.#{$grommet-namespace}meter--medium {
 
     .#{$grommet-namespace}meter__graphic {
-      width: $size-medium;
+      @include media-query(palm) {
+        width: $size-small;
+      }
+
+      @include media-query(lap-and-up) {
+        width: $size-medium;
+      }
+
       height: $meter-bar-cross-medium;
     }
 
@@ -337,7 +344,14 @@ $meter-bar-cross-default:
     // line-height: round($inuit-base-spacing-unit * 1.5);
 
     .#{$grommet-namespace}meter__graphic {
-      width: $size-large;
+      @include media-query(palm) {
+        width: $size-small;
+      }
+
+      @include media-query(lap-and-up) {
+        width: $size-large;
+      }
+
       height: $meter-bar-cross-large;
     }
 
@@ -365,7 +379,14 @@ $meter-bar-cross-default:
   &.#{$grommet-namespace}meter--xlarge {
 
     .#{$grommet-namespace}meter__graphic {
-      width: $size-xlarge;
+      @include media-query(palm) {
+        width: $size-small;
+      }
+
+      @include media-query(lap-and-up) {
+        width: $size-xlarge;
+      }
+
       height: $meter-bar-cross-xlarge;
     }
 
