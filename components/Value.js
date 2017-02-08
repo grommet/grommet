@@ -85,14 +85,15 @@ var Value = function (_Component) {
           colorIndex = _props.colorIndex,
           icon = _props.icon,
           label = _props.label,
+          responsive = _props.responsive,
           size = _props.size,
           trendIcon = _props.trendIcon,
           units = _props.units,
           value = _props.value,
-          props = (0, _objectWithoutProperties3.default)(_props, ['active', 'align', 'className', 'colorIndex', 'icon', 'label', 'size', 'trendIcon', 'units', 'value']);
+          props = (0, _objectWithoutProperties3.default)(_props, ['active', 'align', 'className', 'colorIndex', 'icon', 'label', 'responsive', 'size', 'trendIcon', 'units', 'value']);
 
       delete props.announce;
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interactive', props.onClick), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--active', active), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + align, align), (0, _defineProperty3.default)(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interactive', props.onClick), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--active', active), _classnames), className);
 
       var unitsSpan = void 0;
       if (units) {
@@ -148,6 +149,7 @@ Value.propTypes = {
   icon: _react.PropTypes.node,
   label: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.node]),
   onClick: _react.PropTypes.func,
+  responsive: _react.PropTypes.bool,
   size: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   trendIcon: _react.PropTypes.node,
   value: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string, _react.PropTypes.node]),

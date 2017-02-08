@@ -80,11 +80,14 @@ $social-linkedin-color: #0077B5;
   height: round($inuit-base-spacing-unit * 12);
 }
 
-.#{$grommet-namespace}control-icon--xlarge.#{$grommet-namespace}control-icon--responsive,
-.#{$grommet-namespace}control-icon--huge.#{$grommet-namespace}control-icon--responsive {
-  @include media-query(palm) {
-    width: round($inuit-base-spacing-unit * 2);
-    height: round($inuit-base-spacing-unit * 2);
+@include media-query(palm) {
+  .#{$grommet-namespace}control-icon--responsive {
+    &.#{$grommet-namespace}control-icon--large,
+    &.#{$grommet-namespace}control-icon--xlarge,
+    &.#{$grommet-namespace}control-icon--huge {
+      width: $inuit-base-spacing-unit;
+      height: $inuit-base-spacing-unit;
+    }
   }
 }
 
