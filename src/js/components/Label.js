@@ -48,7 +48,7 @@ Label.propTypes = {
   announce: PropTypes.bool,
   labelFor: PropTypes.string,
   margin: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-  size: PropTypes.oneOf(['small', 'medium']),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   truncate: PropTypes.bool,
   uppercase: PropTypes.bool
 };
