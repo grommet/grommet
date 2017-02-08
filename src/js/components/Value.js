@@ -18,8 +18,8 @@ export default class Value extends Component {
 
   render () {
     const {
-      active, align, className, colorIndex, icon, label, size, trendIcon,
-      units, value, ...props
+      active, align, className, colorIndex, icon, label, responsive,
+      size, trendIcon, units, value, ...props
     } = this.props;
     delete props.announce;
     const classes = classnames(
@@ -28,6 +28,7 @@ export default class Value extends Component {
         [`${CLASS_ROOT}--${size}`]: size,
         [`${CLASS_ROOT}--align-${align}`]: align,
         [`${COLOR_INDEX}-${colorIndex}`]: colorIndex,
+        [`${CLASS_ROOT}--responsive`]: responsive,
         [`${CLASS_ROOT}--interactive`]: props.onClick,
         [`${CLASS_ROOT}--active`]: active
       },
@@ -77,6 +78,7 @@ Value.propTypes = {
   icon: PropTypes.node,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   onClick: PropTypes.func,
+  responsive: PropTypes.bool,
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   trendIcon: PropTypes.node,
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string,
