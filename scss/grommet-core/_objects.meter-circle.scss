@@ -36,24 +36,45 @@
   &.#{$grommet-namespace}meter--medium {
 
     .#{$grommet-namespace}meter__graphic {
-      width: $size-medium;
-      height: $size-medium;
+      @include media-query(palm) {
+        width: $size-small;
+        height: $size-small;
+      }
+
+      @include media-query(lap-and-up) {
+        width: $size-medium;
+        height: $size-medium;
+      }
     }
   }
 
   &.#{$grommet-namespace}meter--large {
 
     .#{$grommet-namespace}meter__graphic {
-      width: $size-large;
-      height: $size-large;
+      @include media-query(palm) {
+        width: $size-small;
+        height: $size-small;
+      }
+
+      @include media-query(lap-and-up) {
+        width: $size-large;
+        height: $size-large;
+      }
     }
   }
 
   &.#{$grommet-namespace}meter--xlarge {
 
     .#{$grommet-namespace}meter__graphic {
-      width: $size-xlarge;
-      height: $size-xlarge;
+      @include media-query(palm) {
+        width: $size-small;
+        height: $size-small;
+      }
+
+      @include media-query(lap-and-up) {
+        width: $size-xlarge;
+        height: $size-xlarge;
+      }
     }
   }
 }

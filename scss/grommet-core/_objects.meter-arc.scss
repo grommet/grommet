@@ -35,24 +35,45 @@ $meter-arc-size-default: $meter-arc-size-small;
   &.#{$grommet-namespace}meter--medium {
 
     .#{$grommet-namespace}meter__graphic {
-      width: $size-medium;
-      height: $meter-arc-size-medium;
+      @include media-query(palm) {
+        width: $size-small;
+        height: $meter-arc-size-small;
+      }
+
+      @include media-query(lap-and-up) {
+        width: $size-medium;
+        height: $meter-arc-size-medium;
+      }
     }
   }
 
   &.#{$grommet-namespace}meter--large {
 
     .#{$grommet-namespace}meter__graphic {
-      width: $size-large;
-      height: $meter-arc-size-large;
+      @include media-query(palm) {
+        width: $size-small;
+        height: $meter-arc-size-small;
+      }
+
+      @include media-query(lap-and-up) {
+        width: $size-large;
+        height: $meter-arc-size-large;
+      }
     }
   }
 
   &.#{$grommet-namespace}meter--xlarge {
 
     .#{$grommet-namespace}meter__graphic {
-      width: $size-xlarge;
-      height: $meter-arc-size-xlarge;
+      @include media-query(palm) {
+        width: $size-small;
+        height: $meter-arc-size-small;
+      }
+
+      @include media-query(lap-and-up) {
+        width: $size-xlarge;
+        height: $meter-arc-size-xlarge;
+      }
     }
   }
 }
@@ -84,24 +105,45 @@ $meter-arc-size-default: $meter-arc-size-small;
   &.#{$grommet-namespace}meter--medium {
 
     .#{$grommet-namespace}meter__graphic {
-      width: $meter-arc-size-medium;
-      height: $size-medium;
+      @include media-query(palm) {
+        width: $meter-arc-size-small;
+        height: $size-small;
+      }
+
+      @include media-query(lap-and-up) {
+        width: $meter-arc-size-medium;
+        height: $size-medium;
+      }
     }
   }
 
   &.#{$grommet-namespace}meter--large {
 
     .#{$grommet-namespace}meter__graphic {
-      width: $meter-arc-size-large;
-      height: $size-large;
+      @include media-query(palm) {
+        width: $meter-arc-size-small;
+        height: $size-small;
+      }
+
+      @include media-query(lap-and-up) {
+        width: $meter-arc-size-large;
+        height: $size-large;
+      }
     }
   }
 
   &.#{$grommet-namespace}meter--xlarge {
 
     .#{$grommet-namespace}meter__graphic {
-      width: $meter-arc-size-xlarge;
-      height: $size-xlarge;
+      @include media-query(palm) {
+        width: $meter-arc-size-small;
+        height: $size-small;
+      }
+
+      @include media-query(lap-and-up) {
+        width: $meter-arc-size-xlarge;
+        height: $size-xlarge;
+      }
     }
   }
 }
