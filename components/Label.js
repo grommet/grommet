@@ -114,7 +114,7 @@ Label.propTypes = {
   announce: _react.PropTypes.bool,
   labelFor: _react.PropTypes.string,
   margin: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-  size: _react.PropTypes.oneOf(['small', 'medium']),
+  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
   truncate: _react.PropTypes.bool,
   uppercase: _react.PropTypes.bool
 };
