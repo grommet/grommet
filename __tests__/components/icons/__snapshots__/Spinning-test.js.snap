@@ -9,18 +9,9 @@ exports[`Spinning has correct className rendering 1`] = `
     cx="24"
     cy="24"
     fill="none"
-    r="20"
-    stroke="#ddd"
-    strokeDasharray="24px 8px"
-    strokeWidth="4" />
-  <circle
-    cx="24"
-    cy="24"
-    fill="none"
-    r="20"
-    stroke="#333"
-    strokeDasharray="24px 104px"
-    strokeWidth="4" />
+    r="21"
+    stroke="#979797"
+    strokeWidth="6" />
 </svg>
 `;
 
@@ -35,18 +26,9 @@ exports[`Spinning has correct default options 1`] = `
     cx="24"
     cy="24"
     fill="none"
-    r="20"
-    stroke="#ddd"
-    strokeDasharray="24px 8px"
-    strokeWidth="4" />
-  <circle
-    cx="24"
-    cy="24"
-    fill="none"
-    r="20"
-    stroke="#333"
-    strokeDasharray="24px 104px"
-    strokeWidth="4" />
+    r="21"
+    stroke="#979797"
+    strokeWidth="6" />
 </svg>
 `;
 
@@ -61,18 +43,9 @@ exports[`Spinning has correct rendering when size=huge 1`] = `
     cx="24"
     cy="24"
     fill="none"
-    r="20"
-    stroke="#ddd"
-    strokeDasharray="24px 8px"
-    strokeWidth="4" />
-  <circle
-    cx="24"
-    cy="24"
-    fill="none"
-    r="20"
-    stroke="#333"
-    strokeDasharray="24px 104px"
-    strokeWidth="4" />
+    r="21"
+    stroke="#979797"
+    strokeWidth="6" />
 </svg>
 `;
 
@@ -87,18 +60,9 @@ exports[`Spinning has correct rendering when size=large 1`] = `
     cx="24"
     cy="24"
     fill="none"
-    r="20"
-    stroke="#ddd"
-    strokeDasharray="24px 8px"
-    strokeWidth="4" />
-  <circle
-    cx="24"
-    cy="24"
-    fill="none"
-    r="20"
-    stroke="#333"
-    strokeDasharray="24px 104px"
-    strokeWidth="4" />
+    r="21"
+    stroke="#979797"
+    strokeWidth="6" />
 </svg>
 `;
 
@@ -113,18 +77,9 @@ exports[`Spinning has correct rendering when size=medium 1`] = `
     cx="24"
     cy="24"
     fill="none"
-    r="20"
-    stroke="#ddd"
-    strokeDasharray="24px 8px"
-    strokeWidth="4" />
-  <circle
-    cx="24"
-    cy="24"
-    fill="none"
-    r="20"
-    stroke="#333"
-    strokeDasharray="24px 104px"
-    strokeWidth="4" />
+    r="21"
+    stroke="#979797"
+    strokeWidth="6" />
 </svg>
 `;
 
@@ -139,18 +94,9 @@ exports[`Spinning has correct rendering when size=small 1`] = `
     cx="24"
     cy="24"
     fill="none"
-    r="20"
-    stroke="#ddd"
-    strokeDasharray="24px 8px"
-    strokeWidth="4" />
-  <circle
-    cx="24"
-    cy="24"
-    fill="none"
-    r="20"
-    stroke="#333"
-    strokeDasharray="24px 104px"
-    strokeWidth="4" />
+    r="21"
+    stroke="#979797"
+    strokeWidth="6" />
 </svg>
 `;
 
@@ -165,18 +111,9 @@ exports[`Spinning has correct rendering when size=xlarge 1`] = `
     cx="24"
     cy="24"
     fill="none"
-    r="20"
-    stroke="#ddd"
-    strokeDasharray="24px 8px"
-    strokeWidth="4" />
-  <circle
-    cx="24"
-    cy="24"
-    fill="none"
-    r="20"
-    stroke="#333"
-    strokeDasharray="24px 104px"
-    strokeWidth="4" />
+    r="21"
+    stroke="#979797"
+    strokeWidth="6" />
 </svg>
 `;
 
@@ -191,18 +128,9 @@ exports[`Spinning has correct small=true rendering 1`] = `
     cx="24"
     cy="24"
     fill="none"
-    r="20"
-    stroke="#ddd"
-    strokeDasharray="24px 8px"
-    strokeWidth="4" />
-  <circle
-    cx="24"
-    cy="24"
-    fill="none"
-    r="20"
-    stroke="#333"
-    strokeDasharray="24px 104px"
-    strokeWidth="4" />
+    r="21"
+    stroke="#979797"
+    strokeWidth="6" />
 </svg>
 `;
 
@@ -220,17 +148,8 @@ exports[`Spinning has microdata properties rendering 1`] = `
     cx="24"
     cy="24"
     fill="none"
-    r="20"
-    stroke="#ddd"
-    strokeDasharray="24px 8px"
-    strokeWidth="4" />
-  <circle
-    cx="24"
-    cy="24"
-    fill="none"
-    r="20"
-    stroke="#333"
-    strokeDasharray="24px 104px"
-    strokeWidth="4" />
+    r="21"
+    stroke="#979797"
+    strokeWidth="6" />
 </svg>
 `;

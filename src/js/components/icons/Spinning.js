@@ -28,10 +28,8 @@ export default class Spinning extends Component {
     return (
       <svg {...props} className={classes} viewBox='0 0 48 48' version='1.1'
         role='img' aria-label={a11yTitle || Intl.getMessage(intl, 'Spinning')}>
-        <circle stroke='#ddd' strokeWidth='4' strokeDasharray='24px 8px'
-          fill='none' cx='24' cy='24' r='20' />
-        <circle stroke='#333' strokeWidth='4' strokeDasharray='24px 104px'
-          fill='none' cx='24' cy='24' r='20' />
+        <circle cx="24" cy="24" r="21"
+          stroke="#979797" strokeWidth="6" fill="none" />
       </svg>
     );
   }
