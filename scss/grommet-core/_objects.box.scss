@@ -435,14 +435,23 @@
   position: relative;
   max-width: 100%;
   width: 100vw;
-  min-height: 100vh;
-  height: 100%;
 
-  // IE11 specific fix for aligning content vertically centered
-  // height gets over written by the > min-height
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    height: 50vh;
+  @include media-query(palm) {
+    min-height: 100vh;
+    height: 100%;
   }
+
+  @include media-query(lap-and-up) {
+    height: 100vh;
+    max-height: 100%;
+    overflow: auto;
+  }
+
+  // // IE11 specific fix for aligning content vertically centered
+  // // height gets over written by the > min-height
+  // @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  //   height: 50vh;
+  // }
 }
 
 .#{$grommet-namespace}box--full-horizontal {
@@ -451,15 +460,23 @@
 }
 
 .#{$grommet-namespace}box--full-vertical {
-  height: 100%;
-  min-height: 100vh;
-
-  // IE11 specific fix for aligning content vertically centered
-  // height gets over written by the > min-height
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  @include media-query(palm) {
     min-height: 100vh;
-    height: 50vh;
+    height: 100%;
   }
+
+  @include media-query(lap-and-up) {
+    height: 100vh;
+    max-height: 100%;
+    overflow: auto;
+  }
+
+  // // IE11 specific fix for aligning content vertically centered
+  // // height gets over written by the > min-height
+  // @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  //   min-height: 100vh;
+  //   height: 50vh;
+  // }
 }
 
 .#{$grommet-namespace}box--size {
