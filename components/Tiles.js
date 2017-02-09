@@ -20,13 +20,13 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _typeof2 = require('babel-runtime/helpers/typeof');
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
 var _stringify = require('babel-runtime/core-js/json/stringify');
 
 var _stringify2 = _interopRequireDefault(_stringify);
+
+var _typeof2 = require('babel-runtime/helpers/typeof');
+
+var _typeof3 = _interopRequireDefault(_typeof2);
 
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
@@ -199,11 +199,7 @@ var Tiles = function (_Component) {
           direction = _props2.direction,
           onMore = _props2.onMore,
           selectable = _props2.selectable;
-      var selected = this.state.selected;
 
-      if ((0, _stringify2.default)(selected) !== (0, _stringify2.default)(prevState.selected)) {
-        this._setSelection();
-      }
       if (onMore && !this._scroll) {
         this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, onMore);
       }
@@ -213,6 +209,7 @@ var Tiles = function (_Component) {
         setTimeout(this._layout, 10);
       }
       if (selectable) {
+        this._setSelection();
         // only listen for navigation keys if the list row can be selected
         this._keyboardHandlers = {
           left: this._onPreviousTile,
@@ -442,26 +439,6 @@ var Tiles = function (_Component) {
       }
     }
   }, {
-    key: '_renderChild',
-    value: function _renderChild(element) {
-      var flush = this.props.flush;
-
-
-      if (element) {
-        // only clone tile children
-        if (element.type && element.type.displayName === 'Tile') {
-          var elementClone = _react2.default.cloneElement(element, {
-            hoverBorder: !flush
-          });
-
-          return elementClone;
-        }
-        return element;
-      }
-
-      return undefined;
-    }
-  }, {
     key: '_onResize',
     value: function _onResize() {
       // debounce
@@ -512,6 +489,26 @@ var Tiles = function (_Component) {
       if (onSelect) {
         onSelect(selection.length === 1 ? selection[0] : selection);
       }
+    }
+  }, {
+    key: '_renderChild',
+    value: function _renderChild(element) {
+      var flush = this.props.flush;
+
+
+      if (element) {
+        // only clone tile children
+        if (element.type && element.type.displayName === 'Tile') {
+          var elementClone = _react2.default.cloneElement(element, {
+            hoverBorder: !flush
+          });
+
+          return elementClone;
+        }
+        return element;
+      }
+
+      return undefined;
     }
 
     // children should be an array of Tile
