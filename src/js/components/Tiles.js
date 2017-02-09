@@ -92,11 +92,6 @@ export default class Tiles extends Component {
 
   componentDidUpdate (prevProps, prevState) {
     const { direction, onMore, selectable } = this.props;
-    const { selected } = this.state;
-    if (JSON.stringify(selected) !==
-      JSON.stringify(prevState.selected)) {
-      this._setSelection();
-    }
     if (onMore && !this._scroll) {
       this._scroll = InfiniteScroll.startListeningForScroll(this.moreRef,
         onMore);
@@ -107,6 +102,7 @@ export default class Tiles extends Component {
       setTimeout(this._layout, 10);
     }
     if (selectable) {
+      this._setSelection();
       // only listen for navigation keys if the list row can be selected
       this._keyboardHandlers = {
         left: this._onPreviousTile,
@@ -280,7 +276,7 @@ export default class Tiles extends Component {
       const newState = {
         overflow: (tiles.scrollWidth > (tiles.offsetWidth + 20)),
         overflowStart: (tiles.scrollLeft <= 20),
-        overflowEnd: 
+        overflowEnd:
           (tiles.scrollLeft >= (tiles.scrollWidth - tiles.offsetWidth)),
         scrollWidth: tiles.scrollWidth
       };
@@ -312,24 +308,6 @@ export default class Tiles extends Component {
         }
       });
     }
-  }
-
-  _renderChild (element) {
-    const { flush } = this.props;
-
-    if (element) {
-      // only clone tile children
-      if (element.type && element.type.displayName === 'Tile') {
-        const elementClone = React.cloneElement(element, {
-          hoverBorder: !flush
-        });
-
-        return elementClone;
-      }
-      return element;
-    }
-
-    return undefined;
   }
 
   _onResize () {
@@ -373,6 +351,24 @@ export default class Tiles extends Component {
     if (onSelect) {
       onSelect(selection.length === 1 ? selection[0] : selection);
     }
+  }
+
+  _renderChild (element) {
+    const { flush } = this.props;
+
+    if (element) {
+      // only clone tile children
+      if (element.type && element.type.displayName === 'Tile') {
+        const elementClone = React.cloneElement(element, {
+          hoverBorder: !flush
+        });
+
+        return elementClone;
+      }
+      return element;
+    }
+
+    return undefined;
   }
 
   // children should be an array of Tile
