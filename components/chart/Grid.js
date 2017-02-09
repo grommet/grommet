@@ -87,11 +87,14 @@ var Grid = function (_Component) {
         }
       }
 
-      if (rows > 1) {
+      if (rows === 1) {
+        var y = height - 2 * _utils.padding;
+        commands += 'M' + _utils.padding + ',' + (y + _utils.padding) + ' L' + (width - _utils.padding) + ',' + (y + _utils.padding) + ' ';
+      } else if (rows > 1) {
         var _basis = (height - 2 * _utils.padding) / (rows - 1);
         for (var _i = 0; _i < rows; _i += 1) {
-          var y = _i * _basis;
-          commands += 'M' + _utils.padding + ',' + (y + _utils.padding) + ' L' + (width - _utils.padding) + ',' + (y + _utils.padding) + ' ';
+          var _y = _i * _basis;
+          commands += 'M' + _utils.padding + ',' + (_y + _utils.padding) + ' L' + (width - _utils.padding) + ',' + (_y + _utils.padding) + ' ';
         }
       }
 
