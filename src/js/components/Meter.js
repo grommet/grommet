@@ -267,7 +267,8 @@ export default class Meter extends Component {
     }
 
     let onActivate;
-    if (onActive || series.length > 1 || series[0].onClick) {
+    if (onActive || series.length > 1 ||
+      (series.length === 1 && series[0].onClick)) {
       onActivate = this._onActivate;
     }
 
