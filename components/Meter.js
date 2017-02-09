@@ -355,7 +355,7 @@ var Meter = function (_Component) {
       }
 
       var onActivate = void 0;
-      if (onActive || series.length > 1 || series[0].onClick) {
+      if (onActive || series.length > 1 || series.length === 1 && series[0].onClick) {
         onActivate = this._onActivate;
       }
 
