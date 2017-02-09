@@ -23,16 +23,20 @@ export default class Grid extends Component {
     if (columns > 1) {
       const basis = ((width - (2 * padding)) / (columns - 1));
       for (let i=0; i<columns; i+=1) {
-        let x = i * basis;
+        const x = i * basis;
         commands +=
           `M${x + padding},${padding} L${x + padding},${height - padding} `;
       }
     }
 
-    if (rows > 1) {
+    if (rows === 1) {
+      const y = (height - (2 * padding));
+      commands +=
+        `M${padding},${y + padding} L${width - padding},${y + padding} `;
+    } else if (rows > 1) {
       const basis = ((height - (2 * padding)) / (rows - 1));
       for (let i=0; i<rows; i+=1) {
-        let y = i * basis;
+        const y = i * basis;
         commands +=
           `M${padding},${y + padding} L${width - padding},${y + padding} `;
       }
