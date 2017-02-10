@@ -81,7 +81,7 @@ export default class Legend extends Component {
       return (
         <span className={`${CLASS_ROOT}__item-label`}>
           {swatch}
-          {item.label}
+          <span>{item.label}</span>
         </span>
       );
     } else {
@@ -219,7 +219,7 @@ export default class Legend extends Component {
   }
 
   render () {
-    const { className, series, total, ...props } = this.props;
+    const { className, series, size, total, ...props } = this.props;
     delete props.activeIndex;
     delete props.announce;
     delete props.onActive;
@@ -228,6 +228,9 @@ export default class Legend extends Component {
 
     const classes = classnames(
       CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--${size}`]: size
+      },
       className
     );
 
@@ -278,6 +281,7 @@ Legend.propTypes = {
     ]),
     onClick: PropTypes.func
   })).isRequired,
+  size: PropTypes.oneOf(['medium', 'large']),
   total: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.node

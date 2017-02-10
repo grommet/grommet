@@ -20,7 +20,9 @@ exports[`Legend has correct default options 1`] = `
           className={undefined}
           d="M 5 0 l 0 12" />
       </svg>
-      North America
+      <span>
+        North America
+      </span>
     </span>
     <span
       className="grommetux-legend__item-value">
@@ -49,7 +51,9 @@ exports[`Legend has correct default options 1`] = `
           className={undefined}
           d="M 5 0 l 0 12" />
       </svg>
-      South America
+      <span>
+        South America
+      </span>
     </span>
     <span
       className="grommetux-legend__item-value">
@@ -78,7 +82,9 @@ exports[`Legend has correct default options 1`] = `
           className={undefined}
           d="M 5 0 l 0 12" />
       </svg>
-      Europe
+      <span>
+        Europe
+      </span>
     </span>
     <span
       className="grommetux-legend__item-value">
@@ -107,7 +113,9 @@ exports[`Legend has correct default options 1`] = `
           className={undefined}
           d="M 5 0 l 0 12" />
       </svg>
-      Africa
+      <span>
+        Africa
+      </span>
     </span>
     <span
       className="grommetux-legend__item-value">
@@ -136,7 +144,9 @@ exports[`Legend has correct default options 1`] = `
           className={undefined}
           d="M 5 0 l 0 12" />
       </svg>
-      Asia
+      <span>
+        Asia
+      </span>
     </span>
     <span
       className="grommetux-legend__item-value">
@@ -165,7 +175,9 @@ exports[`Legend has correct default options 1`] = `
           className={undefined}
           d="M 5 0 l 0 12" />
       </svg>
-      Australia
+      <span>
+        Australia
+      </span>
     </span>
     <span
       className="grommetux-legend__item-value">
