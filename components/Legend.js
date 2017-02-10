@@ -40,9 +40,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames2 = require('classnames');
+var _classnames3 = require('classnames');
 
-var _classnames3 = _interopRequireDefault(_classnames2);
+var _classnames4 = _interopRequireDefault(_classnames3);
 
 var _FormattedMessage = require('./FormattedMessage');
 
@@ -152,7 +152,11 @@ var Legend = function (_Component) {
           'span',
           { className: CLASS_ROOT + '__item-label' },
           swatch,
-          item.label
+          _react2.default.createElement(
+            'span',
+            null,
+            item.label
+          )
         );
       } else {
         return _react2.default.createElement(
@@ -221,7 +225,7 @@ var Legend = function (_Component) {
       return series.map(function (item, index) {
         var _classnames;
 
-        var legendClasses = (0, _classnames3.default)(CLASS_ROOT + '__item', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__item--active', index === activeIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__item--clickable', item.onClick), _classnames));
+        var legendClasses = (0, _classnames4.default)(CLASS_ROOT + '__item', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__item--active', index === activeIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__item--clickable', item.onClick), _classnames));
 
         var swatch = void 0;
         if (item.hasOwnProperty('colorIndex')) {
@@ -309,8 +313,9 @@ var Legend = function (_Component) {
       var _props3 = this.props,
           className = _props3.className,
           series = _props3.series,
+          size = _props3.size,
           total = _props3.total,
-          props = (0, _objectWithoutProperties3.default)(_props3, ['className', 'series', 'total']);
+          props = (0, _objectWithoutProperties3.default)(_props3, ['className', 'series', 'size', 'total']);
 
       delete props.activeIndex;
       delete props.announce;
@@ -318,7 +323,7 @@ var Legend = function (_Component) {
       delete props.units;
       delete props.responsive;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--' + size, size), className);
 
       var items = this._renderSeries();
 
@@ -367,6 +372,7 @@ Legend.propTypes = {
     ]),
     onClick: _react.PropTypes.func
   })).isRequired,
+  size: _react.PropTypes.oneOf(['medium', 'large']),
   total: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.node]),
   units: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.shape({
     prefix: _react.PropTypes.string,
