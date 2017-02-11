@@ -58,4 +58,23 @@ describe('Legend', () => {
     // should properly calculate total
     expect(component.getInstance()._seriesTotal()).toBe(125);
   });
+
+  it('has no floating point errors in the total', () => {
+    const component = renderer.create(
+      <Legend
+        units="apples"
+        total
+        series={[
+          {value: 2.53, Label: "a"},
+          {value: 2.01, Label: "c"}
+        ]}
+        max="10"
+      />);
+
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+
+    // should properly calculate total
+    expect(component.getInstance()._seriesTotal()).toBe(4.54);
+  });
 });
