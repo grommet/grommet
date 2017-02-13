@@ -80,7 +80,7 @@ function getMaxDecimalDigits(series) {
     }
   });
 
-  return Math.pow(10, maxDigits);
+  return maxDigits;
 }
 
 var Legend = function (_Component) {
@@ -207,9 +207,9 @@ var Legend = function (_Component) {
       var maxDecimalDigits = getMaxDecimalDigits(series);
       var total = 0;
       series.forEach(function (item) {
-        return total += (typeof item.value === 'number' ? item.value : 0) * maxDecimalDigits;
+        return total += typeof item.value === 'number' ? item.value : 0;
       });
-      return total / maxDecimalDigits;
+      return parseFloat(total.toFixed(maxDecimalDigits));
     }
   }, {
     key: '_renderSeries',
