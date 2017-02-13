@@ -190,3 +190,69 @@ exports[`Legend has correct default options 1`] = `
   </li>
 </ul>
 `;
+
+exports[`Legend has no floating point errors in the total 1`] = `
+<ul
+  className="grommetux-list grommetux-legend"
+  max="10"
+  role="list">
+  <li
+    className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-horizontal-small grommetux-box--separator-none grommetux-list-item grommetux-legend__item"
+    id={undefined}
+    onClick={undefined}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    role="listitem"
+    style={Object {}}
+    tabIndex={undefined}>
+    <span
+      className="grommetux-legend__item-value">
+      2.53
+      <span
+        className="grommetux-legend__item-units">
+        apples
+      </span>
+    </span>
+  </li>
+  <li
+    className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-horizontal-small grommetux-box--separator-none grommetux-list-item grommetux-legend__item"
+    id={undefined}
+    onClick={undefined}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    role="listitem"
+    style={Object {}}
+    tabIndex={undefined}>
+    <span
+      className="grommetux-legend__item-value">
+      2.01
+      <span
+        className="grommetux-legend__item-units">
+        apples
+      </span>
+    </span>
+  </li>
+  <li
+    className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-horizontal-small grommetux-box--separator-none grommetux-list-item grommetux-legend__total"
+    id={undefined}
+    onClick={undefined}
+    role="listitem"
+    style={Object {}}
+    tabIndex={undefined}>
+    <span
+      className="grommetux-legend__total-label">
+      <span>
+        Total
+      </span>
+    </span>
+    <span
+      className="grommetux-legend__total-value">
+      4.54
+      <span
+        className="grommetux-legend__total-units">
+        apples
+      </span>
+    </span>
+  </li>
+</ul>
+`;

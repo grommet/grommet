@@ -21,7 +21,7 @@ function getMaxDecimalDigits(series) {
     }
   });
 
-  return Math.pow(10, maxDigits);
+  return maxDigits;
 }
 
 export default class Legend extends Component {
@@ -129,8 +129,8 @@ export default class Legend extends Component {
     let total = 0;
     series.forEach(item =>
       total += (typeof item.value === 'number' ?
-       item.value : 0) * maxDecimalDigits );
-    return total / maxDecimalDigits;
+       item.value : 0));
+    return parseFloat(total.toFixed(maxDecimalDigits));
   }
 
   _renderSeries () {
