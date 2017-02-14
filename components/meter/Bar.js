@@ -107,3 +107,4 @@ var Bar = function (_Graphic) {
 
 exports.default = Bar;
 Bar.displayName = 'Bar';
+module.exports = exports['default'];

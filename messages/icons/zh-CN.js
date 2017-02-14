@@ -318,3 +318,4 @@ exports.default = {
   workshop: '工作室',
   'zoom-in': '放大'
 };
+module.exports = exports['default'];

@@ -26,3 +26,4 @@ exports.default = {
     return text;
   }
 };
+module.exports = exports["default"];

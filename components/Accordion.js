@@ -148,3 +148,4 @@ Accordion.defaultProps = {
   openMulti: false,
   animate: true
 };
+module.exports = exports['default'];

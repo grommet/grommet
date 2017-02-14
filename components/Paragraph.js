@@ -80,3 +80,4 @@ Paragraph.propTypes = {
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   width: _react.PropTypes.oneOf(['small', 'medium', 'large'])
 };
+module.exports = exports['default'];

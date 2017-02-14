@@ -107,3 +107,4 @@ PlayButton.defaultProps = {
   iconSize: 'xlarge',
   primary: true
 };
+module.exports = exports['default'];

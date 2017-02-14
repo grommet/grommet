@@ -134,3 +134,4 @@ var Overlay = function (_Component) {
 
 Overlay.displayName = 'Overlay';
 exports.default = Overlay;
+module.exports = exports['default'];

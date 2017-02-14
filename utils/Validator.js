@@ -36,3 +36,4 @@ exports.default = {
     return result;
   }
 };
+module.exports = exports['default'];

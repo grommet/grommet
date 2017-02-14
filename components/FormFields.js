@@ -65,3 +65,4 @@ var FormFields = function (_Component) {
 FormFields.displayName = 'FormFields';
 exports.default = FormFields;
 ;
+module.exports = exports['default'];

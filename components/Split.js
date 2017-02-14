@@ -212,3 +212,4 @@ Split.defaultProps = {
   priority: 'right',
   showOnResponsive: 'priority'
 };
+module.exports = exports['default'];

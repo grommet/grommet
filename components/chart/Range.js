@@ -307,3 +307,4 @@ Range.propTypes = {
   onActive: _react.PropTypes.func, // (start, end)
   vertical: _react.PropTypes.bool
 };
+module.exports = exports['default'];

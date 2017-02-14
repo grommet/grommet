@@ -97,3 +97,4 @@ CriticalStatus.propTypes = {
 CriticalStatus.defaultProps = {
   a11yTitle: 'Critical'
 };
+module.exports = exports['default'];

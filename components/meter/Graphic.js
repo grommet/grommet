@@ -400,3 +400,4 @@ Graphic.contextTypes = {
 Graphic.defaultProps = {
   tabIndex: '0'
 };
+module.exports = exports['default'];

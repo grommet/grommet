@@ -315,3 +315,4 @@ Notification.defaultProps = {
   status: 'unknown',
   pad: 'medium'
 };
+module.exports = exports['default'];

@@ -87,3 +87,4 @@ Sidebar.defaultProps = {
   direction: 'column',
   full: true
 };
+module.exports = exports['default'];

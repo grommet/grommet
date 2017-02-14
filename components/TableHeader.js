@@ -135,3 +135,4 @@ TableHeader.propTypes = {
   sortAscending: _react.PropTypes.bool,
   sortIndex: _react.PropTypes.number
 };
+module.exports = exports['default'];

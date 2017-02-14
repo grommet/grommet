@@ -87,3 +87,4 @@ ListItem.defaultProps = {
   separator: 'bottom',
   role: 'listitem'
 };
+module.exports = exports['default'];

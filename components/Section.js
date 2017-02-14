@@ -70,3 +70,4 @@ Section.propTypes = _extends({}, _Box2.default.propTypes);
 Section.defaultProps = {
   pad: { vertical: 'medium' }
 };
+module.exports = exports['default'];

@@ -66,3 +66,4 @@ var Label = function (_Component) {
 
 Label.displayName = 'Label';
 exports.default = Label;
+module.exports = exports['default'];

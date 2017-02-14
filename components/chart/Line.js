@@ -38,3 +38,4 @@ Line.defaultProps = _extends({}, _Graph3.default.defaultProps, {
 });
 
 Line.displayName = 'Line';
+module.exports = exports['default'];

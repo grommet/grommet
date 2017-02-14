@@ -91,3 +91,4 @@ Form.defaultProps = {
   fill: false,
   pad: 'none'
 };
+module.exports = exports['default'];

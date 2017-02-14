@@ -189,3 +189,4 @@ Timestamp.propTypes = {
 Timestamp.defaultProps = {
   fields: ["date", "time"]
 };
+module.exports = exports['default'];

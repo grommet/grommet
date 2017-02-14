@@ -87,3 +87,4 @@ Layers.propTypes = {
   height: _react.PropTypes.number, // only from Chart
   width: _react.PropTypes.number // only from Chart
 };
+module.exports = exports['default'];

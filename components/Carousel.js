@@ -456,3 +456,4 @@ Carousel.propTypes = {
   infinite: _react.PropTypes.bool,
   persistentNav: _react.PropTypes.bool
 };
+module.exports = exports['default'];

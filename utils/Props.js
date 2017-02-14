@@ -26,3 +26,4 @@ exports.default = {
     return obj;
   }
 };
+module.exports = exports["default"];

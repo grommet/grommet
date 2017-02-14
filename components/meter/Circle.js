@@ -83,3 +83,4 @@ var Circle = function (_Graphic) {
 
 exports.default = Circle;
 Circle.displayName = 'Circle';
+module.exports = exports['default'];

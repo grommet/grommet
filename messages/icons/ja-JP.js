@@ -318,3 +318,4 @@ exports.default = {
   workshop: 'ワークショップ',
   'zoom-in': 'ズームイン'
 };
+module.exports = exports['default'];

@@ -83,3 +83,4 @@ Pulse.propTypes = {
 Pulse.defaultProps = {
   icon: _react2.default.createElement(_Add2.default, null)
 };
+module.exports = exports['default'];

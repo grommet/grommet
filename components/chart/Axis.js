@@ -176,3 +176,4 @@ Axis.propTypes = {
   tickAlign: _react.PropTypes.oneOf(['start', 'end']),
   vertical: _react.PropTypes.bool
 };
+module.exports = exports['default'];

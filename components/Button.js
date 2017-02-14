@@ -228,3 +228,4 @@ Button.defaultProps = {
 Button.contextTypes = {
   router: _react.PropTypes.object
 };
+module.exports = exports['default'];

@@ -99,3 +99,4 @@ Spinning.propTypes = {
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
   responsive: _react.PropTypes.bool
 };
+module.exports = exports['default'];

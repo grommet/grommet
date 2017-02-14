@@ -380,3 +380,4 @@ Video.defaultProps = {
   size: 'medium',
   showControls: true
 };
+module.exports = exports['default'];

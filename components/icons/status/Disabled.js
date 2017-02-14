@@ -97,3 +97,4 @@ Disabled.propTypes = {
 Disabled.defaultProps = {
   a11yTitle: 'Disabled'
 };
+module.exports = exports['default'];

@@ -636,3 +636,4 @@ Tiles.defaultProps = {
   justify: 'start',
   pad: 'small'
 };
+module.exports = exports['default'];

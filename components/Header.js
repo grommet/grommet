@@ -195,3 +195,4 @@ Header.defaultProps = {
   align: 'center',
   responsive: false
 };
+module.exports = exports['default'];

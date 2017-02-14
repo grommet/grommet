@@ -130,3 +130,4 @@ Overlay.defaultProps = {
   shareHeadline: '',
   shareText: ''
 };
+module.exports = exports['default'];

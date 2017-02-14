@@ -149,3 +149,4 @@ ProgressBar.defaultProps = {
   duration: 0,
   progress: 0
 };
+module.exports = exports['default'];

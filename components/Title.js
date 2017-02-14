@@ -123,3 +123,4 @@ Title.defaultProps = {
   responsive: true,
   truncate: true
 };
+module.exports = exports['default'];

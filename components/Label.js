@@ -104,3 +104,4 @@ Label.propTypes = {
 Label.defaultProps = {
   size: 'medium'
 };
+module.exports = exports['default'];

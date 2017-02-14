@@ -171,3 +171,4 @@ NumberInput.propTypes = {
   step: _react.PropTypes.number,
   value: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string])
 };
+module.exports = exports['default'];

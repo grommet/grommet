@@ -122,3 +122,4 @@ App.propTypes = {
 App.defaultProps = {
   centered: true
 };
+module.exports = exports['default'];

@@ -90,3 +90,4 @@ Grommet.propTypes = {
   invert: _react.PropTypes.bool,
   size: _react2.default.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge'])
 };
+module.exports = exports['default'];

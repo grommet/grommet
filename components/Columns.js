@@ -337,3 +337,4 @@ Columns.defaultProps = {
   justify: 'start',
   responsive: true
 };
+module.exports = exports['default'];

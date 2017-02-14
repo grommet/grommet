@@ -38,3 +38,4 @@ Area.defaultProps = _extends({}, _Graph3.default.defaultProps, {
 });
 
 Area.displayName = 'Area';
+module.exports = exports['default'];

@@ -96,3 +96,4 @@ OK.propTypes = {
 OK.defaultProps = {
   a11yTitle: 'OK'
 };
+module.exports = exports['default'];

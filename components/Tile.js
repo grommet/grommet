@@ -105,3 +105,4 @@ Tile.defaultProps = {
   hoverStyle: 'none',
   hoverColorIndex: 'disabled'
 };
+module.exports = exports['default'];

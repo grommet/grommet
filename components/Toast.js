@@ -262,3 +262,4 @@ Toast.propTypes = {
 Toast.defaultProps = {
   size: 'medium'
 };
+module.exports = exports['default'];

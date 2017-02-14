@@ -38,3 +38,4 @@ Bar.defaultProps = _extends({}, _Graph3.default.defaultProps, {
 });
 
 Bar.displayName = 'Bar';
+module.exports = exports['default'];

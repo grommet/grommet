@@ -72,3 +72,4 @@ exports.default = TableRow;
 TableRow.propTypes = {
   onClick: _react.PropTypes.func
 };
+module.exports = exports['default'];

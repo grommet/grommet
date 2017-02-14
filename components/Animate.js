@@ -334,3 +334,4 @@ Animate.defaultProps = {
   enter: { animation: 'fade', duration: 300 },
   visible: true
 };
+module.exports = exports['default'];

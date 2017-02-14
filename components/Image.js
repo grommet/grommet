@@ -109,3 +109,4 @@ Image.propTypes = {
 Image.defaultProps = {
   size: 'medium'
 };
+module.exports = exports['default'];

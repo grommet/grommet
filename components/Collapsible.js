@@ -146,3 +146,4 @@ Collapsible.defaultProps = {
 };
 
 exports.default = Collapsible;
+module.exports = exports['default'];

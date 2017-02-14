@@ -321,3 +321,4 @@ Graph.propTypes = {
   vertical: _react.PropTypes.bool,
   width: _react.PropTypes.number // only from Chart
 };
+module.exports = exports['default'];

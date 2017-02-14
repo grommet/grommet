@@ -125,3 +125,4 @@ SocialShare.defaultProps = {
   text: '',
   title: ''
 };
+module.exports = exports['default'];

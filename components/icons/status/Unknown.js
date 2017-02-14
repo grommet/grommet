@@ -102,3 +102,4 @@ Unknown.propTypes = {
 Unknown.defaultProps = {
   a11yTitle: 'Unknown'
 };
+module.exports = exports['default'];

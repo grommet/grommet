@@ -104,3 +104,4 @@ Tab.propTypes = {
   id: _react.PropTypes.string,
   onRequestForActive: _react.PropTypes.func // from Tabs
 };
+module.exports = exports['default'];

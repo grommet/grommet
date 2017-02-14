@@ -409,3 +409,4 @@ ResourceMap.propTypes = {
 ResourceMap.defaultProps = {
   linkColorIndex: 'graph-1'
 };
+module.exports = exports['default'];

@@ -90,3 +90,4 @@ Heading.propTypes = {
 Heading.defaultProps = {
   tag: 'h1'
 };
+module.exports = exports['default'];

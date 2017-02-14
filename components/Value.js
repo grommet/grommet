@@ -142,3 +142,4 @@ Value.defaultProps = {
   align: 'center',
   announce: false
 };
+module.exports = exports['default'];

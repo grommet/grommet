@@ -240,3 +240,4 @@ exports.default = Anchor;
 Anchor.contextTypes = {
   router: _react2.default.PropTypes.object
 };
+module.exports = exports['default'];

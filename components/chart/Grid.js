@@ -104,3 +104,4 @@ Grid.propTypes = {
   columns: _react.PropTypes.number,
   rows: _react.PropTypes.number
 };
+module.exports = exports['default'];

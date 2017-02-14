@@ -207,3 +207,4 @@ HotSpots.propTypes = {
   onClick: _react.PropTypes.func,
   vertical: _react.PropTypes.bool
 };
+module.exports = exports['default'];

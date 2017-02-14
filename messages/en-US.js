@@ -130,3 +130,4 @@ exports.default = _extends({
   Warning: 'Warning',
   year: 'year'
 });
+module.exports = exports['default'];

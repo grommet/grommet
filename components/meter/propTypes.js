@@ -25,3 +25,5 @@ exports.default = {
   total: _react.PropTypes.number.isRequired,
   vertical: _react.PropTypes.bool
 }; // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+
+module.exports = exports['default'];

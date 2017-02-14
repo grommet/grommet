@@ -119,3 +119,4 @@ Base.propTypes = {
   vertical: _react.PropTypes.bool,
   width: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full'])
 };
+module.exports = exports['default'];

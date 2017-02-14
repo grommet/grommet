@@ -152,3 +152,4 @@ Tip.propTypes = {
 Tip.defaultProps = {
   colorIndex: 'accent-1'
 };
+module.exports = exports['default'];

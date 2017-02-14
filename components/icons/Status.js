@@ -131,3 +131,4 @@ Status.propTypes = {
 Status.defaultProps = {
   value: 'unknown'
 };
+module.exports = exports['default'];

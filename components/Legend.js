@@ -362,3 +362,4 @@ Legend.propTypes = {
   })]),
   responsive: _react.PropTypes.bool
 };
+module.exports = exports['default'];

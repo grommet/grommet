@@ -127,3 +127,4 @@ exports.default = {
   Value: 'Valor',
   Warning: 'Alerta'
 };
+module.exports = exports['default'];

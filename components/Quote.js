@@ -122,3 +122,4 @@ Quote.defaultProps = {
   size: 'large',
   emphasizeCredit: true
 };
+module.exports = exports['default'];

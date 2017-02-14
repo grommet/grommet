@@ -33,3 +33,5 @@ exports.default = function (props) {
     children
   );
 };
+
+module.exports = exports['default'];

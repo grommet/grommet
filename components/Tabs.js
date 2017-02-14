@@ -157,3 +157,4 @@ Tabs.defaultProps = {
   justify: 'center',
   responsive: true
 };
+module.exports = exports['default'];

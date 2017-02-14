@@ -108,3 +108,4 @@ SVGIcon.propTypes = {
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
   type: _react.PropTypes.oneOf(['control', 'logo', 'status'])
 };
+module.exports = exports['default'];

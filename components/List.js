@@ -437,3 +437,4 @@ List.propTypes = {
 List.defaultProps = {
   role: 'list'
 };
+module.exports = exports['default'];

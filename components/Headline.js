@@ -80,3 +80,4 @@ Headline.propTypes = {
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
   strong: _react.PropTypes.bool
 };
+module.exports = exports['default'];

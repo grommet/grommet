@@ -600,3 +600,4 @@ Table.propTypes = {
 Table.defaultProps = {
   responsive: true
 };
+module.exports = exports['default'];

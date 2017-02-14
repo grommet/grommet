@@ -371,3 +371,4 @@ Card.defaultProps = {
   headingStrong: true,
   textSize: 'small'
 };
+module.exports = exports['default'];

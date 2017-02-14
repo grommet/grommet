@@ -76,3 +76,4 @@ Time.propTypes = {
   currentTime: _react.PropTypes.number,
   duration: _react.PropTypes.number
 };
+module.exports = exports['default'];

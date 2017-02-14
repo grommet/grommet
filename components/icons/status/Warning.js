@@ -103,3 +103,4 @@ Warning.propTypes = {
 Warning.defaultProps = {
   a11yTitle: 'Warning'
 };
+module.exports = exports['default'];

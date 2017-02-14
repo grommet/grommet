@@ -591,3 +591,4 @@ Topology.defaultProps = {
 Topology.Parts = Parts;
 Topology.Part = Part;
 Topology.Label = Label;
+module.exports = exports['default'];

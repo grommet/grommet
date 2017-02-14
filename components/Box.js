@@ -455,3 +455,4 @@ Box.defaultProps = {
   responsive: true,
   focusable: true
 };
+module.exports = exports['default'];

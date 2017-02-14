@@ -429,3 +429,4 @@ DateTime.propTypes = {
   step: _react.PropTypes.number,
   value: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.object])
 };
+module.exports = exports['default'];

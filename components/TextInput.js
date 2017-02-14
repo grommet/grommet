@@ -412,3 +412,4 @@ TextInput.propTypes = {
   }), _react.PropTypes.string])),
   value: _react.PropTypes.string
 };
+module.exports = exports['default'];

@@ -49,3 +49,4 @@ var TBD = function (_Component) {
 
 TBD.displayName = 'TBD';
 exports.default = TBD;
+module.exports = exports['default'];

@@ -124,3 +124,4 @@ exports.default = GrommetObject;
 GrommetObject.propTypes = {
   data: _react.PropTypes.object
 };
+module.exports = exports['default'];

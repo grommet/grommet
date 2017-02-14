@@ -121,3 +121,4 @@ CheckBox.propTypes = {
   reverse: _react.PropTypes.bool,
   toggle: _react.PropTypes.bool
 };
+module.exports = exports['default'];

@@ -70,3 +70,4 @@ Blank.propTypes = {
 Blank.defaultProps = {
   a11yTitle: 'Blank'
 };
+module.exports = exports['default'];

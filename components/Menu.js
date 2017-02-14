@@ -601,3 +601,4 @@ Menu.defaultProps = {
   dropAlign: { top: 'top', left: 'left' },
   pad: 'none'
 };
+module.exports = exports['default'];

@@ -631,3 +631,4 @@ DateTimeDrop.propTypes = {
   step: _react.PropTypes.number.isRequired,
   value: _react.PropTypes.object.isRequired
 };
+module.exports = exports['default'];

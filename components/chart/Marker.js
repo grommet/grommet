@@ -174,3 +174,4 @@ Marker.defaultProps = {
   max: 100,
   min: 0
 };
+module.exports = exports['default'];

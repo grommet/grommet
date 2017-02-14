@@ -157,3 +157,4 @@ exports.default = {
   setClassFromIndexes: setClassFromIndexes,
   onClick: onClick
 };
+module.exports = exports["default"];

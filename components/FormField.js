@@ -166,3 +166,4 @@ FormField.defaultProps = {
   size: 'medium',
   strong: false
 };
+module.exports = exports['default'];

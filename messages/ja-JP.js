@@ -84,3 +84,4 @@ exports.default = _extends({
   Value: '値',
   Warning: '警告'
 });
+module.exports = exports['default'];

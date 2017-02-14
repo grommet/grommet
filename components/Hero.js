@@ -322,3 +322,4 @@ Hero.defaultProps = {
   justify: 'end',
   responsiveBackgroundPosition: 'center'
 };
+module.exports = exports['default'];

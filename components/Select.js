@@ -587,3 +587,4 @@ Select.propTypes = {
 Select.contextTypes = {
   intl: _react.PropTypes.object
 };
+module.exports = exports['default'];
