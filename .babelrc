@@ -2,8 +2,6 @@
   "presets": [ "es2015", "react" ],
   "plugins": [
     "transform-object-rest-spread",
-    "add-module-exports",
-    "transform-react-es6-displayname",
-    "transform-runtime"
+    "transform-react-es6-displayname"
   ]
 }

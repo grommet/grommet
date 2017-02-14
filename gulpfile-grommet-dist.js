@@ -80,7 +80,7 @@ module.exports = function(gulp) {
 
   gulp.task('generate-index-icons', function (done) {
     var iconsFolder = path.join(__dirname, './src/img/icons');
-    var iconsMap = ['module.exports = {'];
+    var iconsMap = [];
     fs.readdir(iconsFolder, function(err, icons) {
       icons.forEach(function (icon, index) {
 
@@ -90,31 +90,27 @@ module.exports = function(gulp) {
             return g.length > 1 ? g[1].toUpperCase() : g.toUpperCase();
           });
 
-          var grommetIconPath = "./components/icons/base/";
+          var grommetIconPath = "./";
           iconsMap.push(
-            "\"" + componentName.replace('.js', '') + "\":" +
-            " require('" + grommetIconPath + componentName + "')"
+            `export { default as ${componentName.replace('.js', '').replace(/^3d/, 'ThreeD').replace('-', '')}Icon } from '${grommetIconPath}${componentName}';`
           );
 
           if (index === icons.length - 1) {
-            iconsMap.push('};\n');
 
-            var destinationFile = path.join(__dirname, './src/js/index-icons.js');
-            fs.writeFile(destinationFile, iconsMap.join(''), function(err) {
+            var destinationFile = path.join(__dirname, './src/js/components/icons/base/index.js');
+            fs.writeFile(destinationFile, iconsMap.join('\n'), function(err) {
               if (err) {
                 throw err;
               }
 
               done();
             });
-          } else {
-            iconsMap.push(',');
           }
         }
       });
     });
   });
-  
+
   gulp.task('generate-icon-messages', function(done) {
     var iconsFolder = path.join(__dirname, './src/img/icons');
     var iconsMap = ['export default {\n'];

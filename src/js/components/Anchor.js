@@ -43,10 +43,15 @@ export default class Anchor extends Component {
   }
 
   _onLocationChange (location) {
-    const { path } = this.props;
-    const { router } = this.context;
-    const active = router && location.pathname === (path.path || path);
-    this.setState({ active });
+    // sometimes react router is still calling the listen callback even
+    // if we called unlisten. So we added this check here to prevent
+    // calling setState in a unmounted component
+    if (!this._unmounted) {
+      const { path } = this.props;
+      const { router } = this.context;
+      const active = router && location.pathname === (path.path || path);
+      this.setState({ active });
+    }
   }
 
   _onClick (event) {

@@ -35,7 +35,7 @@ export default {
   ],
   scssAssets: ['src/scss/**/*.scss'],
   jsAssets: ['src/js/**/*.js'],
-  mainJs: 'src/js/index.js',
+  mainJs: 'src/js/index-commonjs.js',
   mainScss: 'src/scss/grommet-core/index.scss',
   // icons: {
   //   source: 'src/img/icons',
