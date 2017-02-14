@@ -4,37 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -54,19 +26,28 @@ var _Intl2 = _interopRequireDefault(_Intl);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.SPINNING;
 
 var Spinning = function (_Component) {
-  (0, _inherits3.default)(Spinning, _Component);
+  _inherits(Spinning, _Component);
 
   function Spinning() {
-    (0, _classCallCheck3.default)(this, Spinning);
-    return (0, _possibleConstructorReturn3.default)(this, (Spinning.__proto__ || (0, _getPrototypeOf2.default)(Spinning)).apply(this, arguments));
+    _classCallCheck(this, Spinning);
+
+    return _possibleConstructorReturn(this, (Spinning.__proto__ || Object.getPrototypeOf(Spinning)).apply(this, arguments));
   }
 
-  (0, _createClass3.default)(Spinning, [{
+  _createClass(Spinning, [{
     key: 'render',
     value: function render() {
       var _classnames;
@@ -77,23 +58,25 @@ var Spinning = function (_Component) {
           small = _props.small,
           size = _props.size,
           responsive = _props.responsive,
-          props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className', 'small', 'size', 'responsive']);
+          props = _objectWithoutProperties(_props, ['a11yTitle', 'className', 'small', 'size', 'responsive']);
+
       var intl = this.context.intl;
 
 
       var sizeOverride = small ? 'small' : size;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + sizeOverride, sizeOverride), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--responsive', responsive), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + sizeOverride, sizeOverride), _defineProperty(_classnames, CLASS_ROOT + '--responsive', responsive), _classnames), className);
 
       return _react2.default.createElement(
         'svg',
-        (0, _extends3.default)({}, props, { className: classes, viewBox: '0 0 48 48', version: '1.1',
+        _extends({}, props, { className: classes, viewBox: '0 0 48 48', version: '1.1',
           role: 'img', 'aria-label': a11yTitle || _Intl2.default.getMessage(intl, 'Spinning') }),
         _react2.default.createElement('circle', { cx: '24', cy: '24', r: '21',
           stroke: '#979797', strokeWidth: '6', fill: 'none' })
       );
     }
   }]);
+
   return Spinning;
 }(_react.Component);
 
@@ -116,4 +99,3 @@ Spinning.propTypes = {
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
   responsive: _react.PropTypes.bool
 };
-module.exports = exports['default'];

@@ -45,4 +45,3 @@ exports.default = {
     return aa.length - bb.length;
   }
 };
-module.exports = exports["default"];

@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.smallSize = smallSize;
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 /*
@@ -11,6 +12,15 @@ Object.defineProperty(exports, "__esModule", {
  */
 
 var SMALL_WIDTH_EM = 44.9375; // align with _settings.responsive.scss
+
+function smallSize() {
+  var fontSize = '16px';
+  // unit tests don't have getComputedStyle
+  if (window.getComputedStyle) {
+    fontSize = window.getComputedStyle(document.documentElement).fontSize;
+  }
+  return SMALL_WIDTH_EM * parseFloat(fontSize);
+}
 
 exports.default = {
 
@@ -58,13 +68,7 @@ exports.default = {
       }
     }
   },
-  smallSize: function smallSize() {
-    var fontSize = '16px';
-    // unit tests don't have getComputedStyle
-    if (window.getComputedStyle) {
-      fontSize = window.getComputedStyle(document.documentElement).fontSize;
-    }
-    return SMALL_WIDTH_EM * parseFloat(fontSize);
-  }
+
+
+  smallSize: smallSize
 };
-module.exports = exports['default'];

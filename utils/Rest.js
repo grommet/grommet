@@ -5,13 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.headers = undefined;
 
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _promise = require('babel-runtime/core-js/promise');
-
-var _promise2 = _interopRequireDefault(_promise);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 exports.buildParams = buildParams;
 exports.buildQuery = buildQuery;
@@ -61,15 +55,15 @@ function buildQuery(object) {
 // reject promise of response isn't ok
 function processStatus(response) {
   if (response.ok) {
-    return _promise2.default.resolve(response);
+    return Promise.resolve(response);
   } else {
-    return _promise2.default.reject(response.statusText || 'Error ' + response.status);
+    return Promise.reject(response.statusText || 'Error ' + response.status);
   }
 }
 
 // Deprecated superagent functions
 
-var _headers = (0, _extends3.default)({}, headers);
+var _headers = _extends({}, headers);
 
 var _timeout = 10000; // 10s
 

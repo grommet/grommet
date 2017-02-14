@@ -88,4 +88,3 @@ Markdown.defaultProps = {
 };
 
 exports.default = Markdown;
-module.exports = exports['default'];

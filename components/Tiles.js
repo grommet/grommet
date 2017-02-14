@@ -4,49 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _keys = require('babel-runtime/core-js/object/keys');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _keys2 = _interopRequireDefault(_keys);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _from = require('babel-runtime/core-js/array/from');
-
-var _from2 = _interopRequireDefault(_from);
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _stringify = require('babel-runtime/core-js/json/stringify');
-
-var _stringify2 = _interopRequireDefault(_stringify);
-
-var _typeof2 = require('babel-runtime/helpers/typeof');
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -110,7 +72,13 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.TILES;
 var TILE = _CSSClassnames2.default.TILE;
@@ -118,12 +86,12 @@ var SELECTED_CLASS = TILE + '--selected';
 var ACTIVE_CLASS = TILE + '--active';
 
 var Tiles = function (_Component) {
-  (0, _inherits3.default)(Tiles, _Component);
+  _inherits(Tiles, _Component);
 
   function Tiles(props, context) {
-    (0, _classCallCheck3.default)(this, Tiles);
+    _classCallCheck(this, Tiles);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Tiles.__proto__ || (0, _getPrototypeOf2.default)(Tiles)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (Tiles.__proto__ || Object.getPrototypeOf(Tiles)).call(this, props, context));
 
     _this._onLeft = _this._onLeft.bind(_this);
     _this._onRight = _this._onRight.bind(_this);
@@ -147,7 +115,7 @@ var Tiles = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(Tiles, [{
+  _createClass(Tiles, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _props = this.props,
@@ -286,7 +254,7 @@ var Tiles = function (_Component) {
           };
         }();
 
-        if ((typeof _ret === 'undefined' ? 'undefined' : (0, _typeof3.default)(_ret)) === "object") return _ret.v;
+        if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
       }
     }
   }, {
@@ -321,7 +289,7 @@ var Tiles = function (_Component) {
           };
         }();
 
-        if ((typeof _ret2 === 'undefined' ? 'undefined' : (0, _typeof3.default)(_ret2)) === "object") return _ret2.v;
+        if ((typeof _ret2 === 'undefined' ? 'undefined' : _typeof(_ret2)) === "object") return _ret2.v;
       }
     }
   }, {
@@ -418,15 +386,15 @@ var Tiles = function (_Component) {
           };
 
           // Shallow compare states.
-          if ((0, _stringify2.default)(newState) !== (0, _stringify2.default)(state)) {
-            _this4.setState((0, _extends3.default)({}, newState));
+          if (JSON.stringify(newState) !== JSON.stringify(state)) {
+            _this4.setState(_extends({}, newState));
           }
 
           // mark any tiles that might be clipped
           var rect = tiles.getBoundingClientRect();
           var children = tiles.querySelectorAll('.' + TILE);
 
-          (0, _from2.default)(children).map(function (child, index) {
+          Array.from(children).map(function (child, index) {
             var childRect = child.getBoundingClientRect();
             // 12 accounts for padding
             if (childRect.left + 12 < rect.left || childRect.right - 12 > rect.right) {
@@ -542,9 +510,9 @@ var Tiles = function (_Component) {
       var intl = this.context.intl;
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--fill', fill), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--flush', flush), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--focus', focus), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', selectable), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--moreable', onMore), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--overflowed', overflow), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--fill', fill), _defineProperty(_classnames, CLASS_ROOT + '--flush', flush), _defineProperty(_classnames, CLASS_ROOT + '--focus', focus), _defineProperty(_classnames, CLASS_ROOT + '--selectable', selectable), _defineProperty(_classnames, CLASS_ROOT + '--moreable', onMore), _defineProperty(_classnames, CLASS_ROOT + '--overflowed', overflow), _classnames), className);
 
-      var other = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
+      var other = _Props2.default.pick(this.props, Object.keys(_Box2.default.propTypes));
 
       var more = void 0;
       if (onMore) {
@@ -605,7 +573,7 @@ var Tiles = function (_Component) {
 
       var contents = _react2.default.createElement(
         _Box2.default,
-        (0, _extends3.default)({ ref: function ref(_ref2) {
+        _extends({ ref: function ref(_ref2) {
             return _this5.tilesRef = _ref2;
           } }, other, {
           wrap: direction ? false : true,
@@ -642,6 +610,7 @@ var Tiles = function (_Component) {
       return contents;
     }
   }]);
+
   return Tiles;
 }(_react.Component);
 
@@ -653,7 +622,7 @@ Tiles.contextTypes = {
   intl: _react.PropTypes.object
 };
 
-Tiles.propTypes = (0, _extends3.default)({
+Tiles.propTypes = _extends({
   fill: _react.PropTypes.bool,
   flush: _react.PropTypes.bool,
   onMore: _react.PropTypes.func,
@@ -667,4 +636,3 @@ Tiles.defaultProps = {
   justify: 'start',
   pad: 'small'
 };
-module.exports = exports['default'];

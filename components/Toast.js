@@ -4,33 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -64,7 +40,13 @@ var _Announcer = require('../utils/Announcer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.TOAST;
 var APP = _CSSClassnames2.default.APP;
@@ -73,19 +55,19 @@ var DURATION = 8000;
 var ANIMATION_DURATION = 1000;
 
 var ToastContents = function (_Component) {
-  (0, _inherits3.default)(ToastContents, _Component);
+  _inherits(ToastContents, _Component);
 
   function ToastContents() {
-    (0, _classCallCheck3.default)(this, ToastContents);
+    _classCallCheck(this, ToastContents);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (ToastContents.__proto__ || (0, _getPrototypeOf2.default)(ToastContents)).call(this));
+    var _this = _possibleConstructorReturn(this, (ToastContents.__proto__ || Object.getPrototypeOf(ToastContents)).call(this));
 
     _this._onClose = _this._onClose.bind(_this);
     _this.state = {};
     return _this;
   }
 
-  (0, _createClass3.default)(ToastContents, [{
+  _createClass(ToastContents, [{
     key: 'getChildContext',
     value: function getChildContext() {
       return {
@@ -131,7 +113,7 @@ var ToastContents = function (_Component) {
       var closing = this.state.closing;
 
 
-      var classNames = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--closing', closing), _classnames));
+      var classNames = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames, CLASS_ROOT + '--closing', closing), _classnames));
 
       var statusIcon = void 0;
       if (status) {
@@ -161,6 +143,7 @@ var ToastContents = function (_Component) {
       );
     }
   }]);
+
   return ToastContents;
 }(_react.Component);
 
@@ -189,14 +172,15 @@ ToastContents.childContextTypes = {
 };
 
 var Toast = function (_Component2) {
-  (0, _inherits3.default)(Toast, _Component2);
+  _inherits(Toast, _Component2);
 
   function Toast() {
-    (0, _classCallCheck3.default)(this, Toast);
-    return (0, _possibleConstructorReturn3.default)(this, (Toast.__proto__ || (0, _getPrototypeOf2.default)(Toast)).apply(this, arguments));
+    _classCallCheck(this, Toast);
+
+    return _possibleConstructorReturn(this, (Toast.__proto__ || Object.getPrototypeOf(Toast)).apply(this, arguments));
   }
 
-  (0, _createClass3.default)(Toast, [{
+  _createClass(Toast, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       this._addLayer();
@@ -240,7 +224,7 @@ var Toast = function (_Component2) {
     value: function _renderLayer() {
       if (this._element) {
         this._element.className = CLASS_ROOT + '__container';
-        var contents = _react2.default.createElement(ToastContents, (0, _extends3.default)({}, this.props, {
+        var contents = _react2.default.createElement(ToastContents, _extends({}, this.props, {
           history: this.context.history,
           intl: this.context.intl,
           router: this.context.router,
@@ -261,6 +245,7 @@ var Toast = function (_Component2) {
       return _react2.default.createElement('span', { style: { display: 'none' } });
     }
   }]);
+
   return Toast;
 }(_react.Component);
 
@@ -277,4 +262,3 @@ Toast.propTypes = {
 Toast.defaultProps = {
   size: 'medium'
 };
-module.exports = exports['default'];

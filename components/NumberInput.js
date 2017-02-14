@@ -4,37 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -62,25 +34,33 @@ var _Subtract2 = _interopRequireDefault(_Subtract);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.NUMBER_INPUT;
 var INPUT = _CSSClassnames2.default.INPUT;
 
 var NumberInput = function (_Component) {
-  (0, _inherits3.default)(NumberInput, _Component);
+  _inherits(NumberInput, _Component);
 
   function NumberInput(props, context) {
-    (0, _classCallCheck3.default)(this, NumberInput);
+    _classCallCheck(this, NumberInput);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (NumberInput.__proto__ || (0, _getPrototypeOf2.default)(NumberInput)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (NumberInput.__proto__ || Object.getPrototypeOf(NumberInput)).call(this, props, context));
 
     _this._onAdd = _this._onAdd.bind(_this);
     _this._onSubtract = _this._onSubtract.bind(_this);
     return _this;
   }
 
-  (0, _createClass3.default)(NumberInput, [{
+  _createClass(NumberInput, [{
     key: '_fireChange',
     value: function _fireChange() {
       var event = void 0;
@@ -149,10 +129,9 @@ var NumberInput = function (_Component) {
       var _props3 = this.props,
           className = _props3.className,
           disabled = _props3.disabled,
-          props = (0, _objectWithoutProperties3.default)(_props3, ['className', 'disabled']);
+          props = _objectWithoutProperties(_props3, ['className', 'disabled']);
 
-
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--disabled', disabled), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, _defineProperty({}, CLASS_ROOT + '--disabled', disabled), className);
 
       var onSubtract = !disabled ? this._onSubtract : undefined;
       var onAdd = !disabled ? this._onAdd : undefined;
@@ -160,7 +139,7 @@ var NumberInput = function (_Component) {
       return _react2.default.createElement(
         'span',
         { className: classes },
-        _react2.default.createElement('input', (0, _extends3.default)({ ref: function ref(_ref) {
+        _react2.default.createElement('input', _extends({ ref: function ref(_ref) {
             return _this2._inputRef = _ref;
           } }, props, {
           className: INPUT + ' ' + CLASS_ROOT + '__input',
@@ -173,6 +152,7 @@ var NumberInput = function (_Component) {
       );
     }
   }]);
+
   return NumberInput;
 }(_react.Component);
 
@@ -191,4 +171,3 @@ NumberInput.propTypes = {
   step: _react.PropTypes.number,
   value: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string])
 };
-module.exports = exports['default'];

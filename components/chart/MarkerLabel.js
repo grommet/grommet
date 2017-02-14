@@ -4,37 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -56,17 +28,24 @@ var _Announcer = require('../../utils/Announcer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.CHART_MARKER_LABEL; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.CHART_MARKER_LABEL;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var MarkerLabel = function (_Component) {
-  (0, _inherits3.default)(MarkerLabel, _Component);
+  _inherits(MarkerLabel, _Component);
 
   function MarkerLabel(props, context) {
-    (0, _classCallCheck3.default)(this, MarkerLabel);
+    _classCallCheck(this, MarkerLabel);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (MarkerLabel.__proto__ || (0, _getPrototypeOf2.default)(MarkerLabel)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (MarkerLabel.__proto__ || Object.getPrototypeOf(MarkerLabel)).call(this, props, context));
 
     _this.state = {
       valueBasis: _this._valueBasis(props)
@@ -74,7 +53,7 @@ var MarkerLabel = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(MarkerLabel, [{
+  _createClass(MarkerLabel, [{
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       var nextValueBasis = this._valueBasis(nextProps);
@@ -120,7 +99,7 @@ var MarkerLabel = function (_Component) {
       var colorIndex = this.props.colorIndex;
       var label = this.props.label;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT + '__slot', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__slot--flip', flip), (0, _defineProperty3.default)(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), _classnames));
+      var classes = (0, _classnames4.default)(CLASS_ROOT + '__slot', (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '__slot--flip', flip), _defineProperty(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), _classnames));
       if (typeof label === 'string' || typeof label === 'number') {
         label = _react2.default.createElement(
           'span',
@@ -152,9 +131,9 @@ var MarkerLabel = function (_Component) {
           vertical = _props.vertical;
       var valueBasis = this.state.valueBasis;
 
-      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(MarkerLabel.propTypes));
+      var restProps = _Props2.default.omit(this.props, Object.keys(MarkerLabel.propTypes));
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--reverse', reverse), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--align-' + align, align), _classnames2), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames2 = {}, _defineProperty(_classnames2, CLASS_ROOT + '--reverse', reverse), _defineProperty(_classnames2, CLASS_ROOT + '--vertical', vertical), _defineProperty(_classnames2, CLASS_ROOT + '--align-' + align, align), _classnames2), className);
 
       var firstItem = void 0,
           secondItem = void 0;
@@ -170,12 +149,13 @@ var MarkerLabel = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        (0, _extends3.default)({}, restProps, { className: classes }),
+        _extends({}, restProps, { className: classes }),
         firstItem,
         secondItem
       );
     }
   }]);
+
   return MarkerLabel;
 }(_react.Component);
 
@@ -201,4 +181,3 @@ MarkerLabel.defaultProps = {
   max: 100,
   min: 0
 };
-module.exports = exports['default'];

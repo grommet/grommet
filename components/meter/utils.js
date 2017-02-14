@@ -5,9 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.propTypes = exports.baseDimension = undefined;
 
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 exports.buildPath = buildPath;
 
@@ -23,7 +21,7 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.METER; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var CLASS_ROOT = _CSSClassnames2.default.METER;
 
 var baseDimension = exports.baseDimension = _Graphics.baseUnit * 8;
 
@@ -55,7 +53,7 @@ function buildPath(itemIndex, commands, classes, onActivate, onClick, a11yTitle,
 
     return _react2.default.createElement(
       'g',
-      (0, _extends3.default)({ key: itemIndex }, a11yRoles),
+      _extends({ key: itemIndex }, a11yRoles),
       _react2.default.createElement('path', { className: classes, d: commands,
         'data-index': itemIndex, onFocus: onOver, onBlur: onOut }),
       _react2.default.createElement('path', { className: CLASS_ROOT + '__hot', d: commands, fill: 'none',

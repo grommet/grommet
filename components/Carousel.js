@@ -4,41 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -90,15 +58,25 @@ var _Props2 = _interopRequireDefault(_Props);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.CAROUSEL; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.CAROUSEL;
 
 var Carousel = function (_Component) {
-  (0, _inherits3.default)(Carousel, _Component);
+  _inherits(Carousel, _Component);
 
   function Carousel(props, context) {
-    (0, _classCallCheck3.default)(this, Carousel);
+    _classCallCheck(this, Carousel);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Carousel.__proto__ || (0, _getPrototypeOf2.default)(Carousel)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (Carousel.__proto__ || Object.getPrototypeOf(Carousel)).call(this, props, context));
 
     _this._onSelect = _this._onSelect.bind(_this);
     _this._stopAutoplay = _this._stopAutoplay.bind(_this);
@@ -119,7 +97,7 @@ var Carousel = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(Carousel, [{
+  _createClass(Carousel, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _this2 = this;
@@ -372,16 +350,16 @@ var Carousel = function (_Component) {
           a11yTitle = _props5.a11yTitle,
           children = _props5.children,
           className = _props5.className,
-          props = (0, _objectWithoutProperties3.default)(_props5, ['a11yTitle', 'children', 'className']);
+          props = _objectWithoutProperties(_props5, ['a11yTitle', 'children', 'className']);
 
-      var restProps = _Props2.default.omit((0, _extends3.default)({}, props), (0, _keys2.default)(Carousel.propTypes));
+      var restProps = _Props2.default.omit(_extends({}, props), Object.keys(Carousel.propTypes));
       var _state = this.state,
           activeIndex = _state.activeIndex,
           hideControls = _state.hideControls,
           width = _state.width;
       var intl = this.context.intl;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--hide-controls', hideControls), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, _defineProperty({}, CLASS_ROOT + '--hide-controls', hideControls), className);
 
       var trackWidth = width * children.length;
       var trackPosition = -(width * activeIndex);
@@ -397,7 +375,7 @@ var Carousel = function (_Component) {
 
       var controls = _react2.default.Children.map(children, function (child, index) {
         var active = index === activeIndex;
-        var controlClasses = (0, _classnames4.default)(CLASS_ROOT + '__control', (0, _defineProperty3.default)({}, CLASS_ROOT + '__control--active', active));
+        var controlClasses = (0, _classnames4.default)(CLASS_ROOT + '__control', _defineProperty({}, CLASS_ROOT + '__control--active', active));
         var activateMessage = _Intl2.default.getMessage(intl, 'Activate');
         var slideNumberMessage = _Intl2.default.getMessage(intl, 'Slide Number', {
           slideNumber: index + 1
@@ -422,7 +400,7 @@ var Carousel = function (_Component) {
       var carouselMessage = a11yTitle || _Intl2.default.getMessage(intl, 'Carousel');
       return _react2.default.createElement(
         'div',
-        (0, _extends3.default)({ ref: function ref(_ref) {
+        _extends({ ref: function ref(_ref) {
             return _this6.carouselRef = _ref;
           } }, restProps, {
           className: classes, role: 'group', 'aria-label': carouselMessage,
@@ -452,6 +430,7 @@ var Carousel = function (_Component) {
       );
     }
   }]);
+
   return Carousel;
 }(_react.Component);
 
@@ -477,4 +456,3 @@ Carousel.propTypes = {
   infinite: _react.PropTypes.bool,
   persistentNav: _react.PropTypes.bool
 };
-module.exports = exports['default'];

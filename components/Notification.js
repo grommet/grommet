@@ -4,41 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
-var _typeof2 = require('babel-runtime/helpers/typeof');
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -96,18 +66,27 @@ var _DOM = require('../utils/DOM');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import Animate from './Animate';
-var CLASS_ROOT = _CSSClassnames2.default.NOTIFICATION; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+// import Animate from './Animate';
+
+
+var CLASS_ROOT = _CSSClassnames2.default.NOTIFICATION;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Notification = function (_Component) {
-  (0, _inherits3.default)(Notification, _Component);
+  _inherits(Notification, _Component);
 
   function Notification() {
-    (0, _classCallCheck3.default)(this, Notification);
+    _classCallCheck(this, Notification);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Notification.__proto__ || (0, _getPrototypeOf2.default)(Notification)).call(this));
+    var _this = _possibleConstructorReturn(this, (Notification.__proto__ || Object.getPrototypeOf(Notification)).call(this));
 
     _this._announce = _this._announce.bind(_this);
     _this._setDarkBackground = _this._setDarkBackground.bind(_this);
@@ -115,7 +94,7 @@ var Notification = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(Notification, [{
+  _createClass(Notification, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       this._announce();
@@ -207,7 +186,7 @@ var Notification = function (_Component) {
       var intl = this.context.intl;
       var darkBackground = this.state.darkBackground;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--status-' + status.toLowerCase(), BACKGROUND_COLOR_INDEX + '-' + status.toLowerCase(), this._backgroundContextClass(darkBackground), (0, _defineProperty3.default)({}, CLASS_ROOT + '--' + size, size), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '--status-' + status.toLowerCase(), BACKGROUND_COLOR_INDEX + '-' + status.toLowerCase(), this._backgroundContextClass(darkBackground), _defineProperty({}, CLASS_ROOT + '--' + size, size), className);
 
       var statusNode = void 0;
       if (status) {
@@ -255,7 +234,7 @@ var Notification = function (_Component) {
       }
 
       var closerNode = void 0;
-      if ((typeof closer === 'undefined' ? 'undefined' : (0, _typeof3.default)(closer)) === 'object') {
+      if ((typeof closer === 'undefined' ? 'undefined' : _typeof(closer)) === 'object') {
         closerNode = closer;
       } else if (onClose && closer) {
         closerNode = _react2.default.createElement(_Button2.default, { plain: true, onClick: onClose,
@@ -263,8 +242,8 @@ var Notification = function (_Component) {
           a11yTitle: _Intl2.default.getMessage(intl, 'Close Notification') });
       }
 
-      var boxProps = _Props2.default.pick(this.props, (0, _keys2.default)(_Box2.default.propTypes));
-      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Notification.propTypes));
+      var boxProps = _Props2.default.pick(this.props, Object.keys(_Box2.default.propTypes));
+      var restProps = _Props2.default.omit(this.props, Object.keys(Notification.propTypes));
       boxProps.announce = false;
       var fullBox = boxProps.hasOwnProperty('full') ? boxProps.full : undefined;
 
@@ -279,7 +258,7 @@ var Notification = function (_Component) {
       */
       return _react2.default.createElement(
         _Box2.default,
-        (0, _extends3.default)({ ref: function ref(_ref) {
+        _extends({ ref: function ref(_ref) {
             return _this3._containerRef = _ref;
           }
         }, restProps, boxProps, { className: classes,
@@ -308,6 +287,7 @@ var Notification = function (_Component) {
       );
     }
   }]);
+
   return Notification;
 }(_react.Component);
 
@@ -315,7 +295,7 @@ Notification.displayName = 'Notification';
 exports.default = Notification;
 ;
 
-Notification.propTypes = (0, _extends3.default)({
+Notification.propTypes = _extends({
   closer: _react.PropTypes.oneOfType([_react.PropTypes.node, _react.PropTypes.bool]),
   context: _react.PropTypes.node,
   message: _react.PropTypes.string.isRequired,
@@ -335,4 +315,3 @@ Notification.defaultProps = {
   status: 'unknown',
   pad: 'medium'
 };
-module.exports = exports['default'];

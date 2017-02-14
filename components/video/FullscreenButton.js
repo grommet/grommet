@@ -4,25 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -46,19 +28,25 @@ var _Expand2 = _interopRequireDefault(_Expand);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.VIDEO; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.VIDEO;
 var BUTTON_CLASS = CLASS_ROOT + '__button';
 
 var FullscreenButton = function (_Component) {
-  (0, _inherits3.default)(FullscreenButton, _Component);
+  _inherits(FullscreenButton, _Component);
 
   function FullscreenButton() {
-    (0, _classCallCheck3.default)(this, FullscreenButton);
-    return (0, _possibleConstructorReturn3.default)(this, (FullscreenButton.__proto__ || (0, _getPrototypeOf2.default)(FullscreenButton)).apply(this, arguments));
+    _classCallCheck(this, FullscreenButton);
+
+    return _possibleConstructorReturn(this, (FullscreenButton.__proto__ || Object.getPrototypeOf(FullscreenButton)).apply(this, arguments));
   }
 
-  (0, _createClass3.default)(FullscreenButton, [{
+  _createClass(FullscreenButton, [{
     key: 'shouldComponentUpdate',
 
 
@@ -80,6 +68,7 @@ var FullscreenButton = function (_Component) {
       );
     }
   }]);
+
   return FullscreenButton;
 }(_react.Component);
 
@@ -90,4 +79,3 @@ exports.default = FullscreenButton;
 FullscreenButton.propTypes = {
   onClick: _react.PropTypes.func
 };
-module.exports = exports['default'];

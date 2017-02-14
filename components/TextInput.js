@@ -4,41 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _typeof2 = require('babel-runtime/helpers/typeof');
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -70,19 +40,27 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.TEXT_INPUT;
 var INPUT = _CSSClassnames2.default.INPUT;
 var FORM_FIELD = _CSSClassnames2.default.FORM_FIELD;
 
 var TextInput = function (_Component) {
-  (0, _inherits3.default)(TextInput, _Component);
+  _inherits(TextInput, _Component);
 
   function TextInput(props, context) {
-    (0, _classCallCheck3.default)(this, TextInput);
+    _classCallCheck(this, TextInput);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (TextInput.__proto__ || (0, _getPrototypeOf2.default)(TextInput)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (TextInput.__proto__ || Object.getPrototypeOf(TextInput)).call(this, props, context));
 
     _this._onInputChange = _this._onInputChange.bind(_this);
     _this._onAddDrop = _this._onAddDrop.bind(_this);
@@ -104,7 +82,7 @@ var TextInput = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(TextInput, [{
+  _createClass(TextInput, [{
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
       var suggestions = this.props.suggestions;
@@ -219,7 +197,7 @@ var TextInput = function (_Component) {
       if (suggestions) {
         event.preventDefault();
         var suggestionValues = suggestions.map(function (suggestion) {
-          if ((typeof suggestion === 'undefined' ? 'undefined' : (0, _typeof3.default)(suggestion)) === 'object') {
+          if ((typeof suggestion === 'undefined' ? 'undefined' : _typeof(suggestion)) === 'object') {
             return suggestion.value;
           } else {
             return suggestion;
@@ -346,7 +324,7 @@ var TextInput = function (_Component) {
   }, {
     key: '_renderLabel',
     value: function _renderLabel(suggestion) {
-      if ((typeof suggestion === 'undefined' ? 'undefined' : (0, _typeof3.default)(suggestion)) === 'object') {
+      if ((typeof suggestion === 'undefined' ? 'undefined' : _typeof(suggestion)) === 'object') {
         return suggestion.label || suggestion.value;
       } else {
         return suggestion;
@@ -365,7 +343,7 @@ var TextInput = function (_Component) {
         items = suggestions.map(function (suggestion, index) {
           var _classnames;
 
-          var classes = (0, _classnames4.default)((_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__suggestion', true), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__suggestion--active', index === activeSuggestionIndex), _classnames));
+          var classes = (0, _classnames4.default)((_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '__suggestion', true), _defineProperty(_classnames, CLASS_ROOT + '__suggestion--active', index === activeSuggestionIndex), _classnames));
           return _react2.default.createElement(
             'li',
             { key: index, className: classes,
@@ -391,14 +369,14 @@ var TextInput = function (_Component) {
           defaultValue = _props4.defaultValue,
           value = _props4.value,
           placeHolder = _props4.placeHolder,
-          props = (0, _objectWithoutProperties3.default)(_props4, ['className', 'defaultValue', 'value', 'placeHolder']);
+          props = _objectWithoutProperties(_props4, ['className', 'defaultValue', 'value', 'placeHolder']);
 
       delete props.suggestions;
       delete props.onDOMChange;
       delete props.onSelect;
-      var classes = (0, _classnames4.default)(CLASS_ROOT, INPUT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', this.state.active), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, INPUT, _defineProperty({}, CLASS_ROOT + '--active', this.state.active), className);
 
-      return _react2.default.createElement('input', (0, _extends3.default)({ ref: function ref(_ref) {
+      return _react2.default.createElement('input', _extends({ ref: function ref(_ref) {
           return _this4.componentRef = _ref;
         } }, props, {
         className: classes, autoComplete: 'off',
@@ -409,6 +387,7 @@ var TextInput = function (_Component) {
         onKeyDown: this._onInputKeyDown }));
     }
   }]);
+
   return TextInput;
 }(_react.Component);
 
@@ -433,4 +412,3 @@ TextInput.propTypes = {
   }), _react.PropTypes.string])),
   value: _react.PropTypes.string
 };
-module.exports = exports['default'];

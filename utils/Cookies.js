@@ -81,4 +81,3 @@ exports.default = {
     return aKeys;
   }
 };
-module.exports = exports["default"];

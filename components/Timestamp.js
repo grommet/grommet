@@ -4,41 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -56,7 +24,15 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.TIMESTAMP;
 
@@ -82,19 +58,19 @@ function _showField(field, fields) {
 }
 
 var Timestamp = function (_Component) {
-  (0, _inherits3.default)(Timestamp, _Component);
+  _inherits(Timestamp, _Component);
 
   function Timestamp(props, context) {
-    (0, _classCallCheck3.default)(this, Timestamp);
+    _classCallCheck(this, Timestamp);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Timestamp.__proto__ || (0, _getPrototypeOf2.default)(Timestamp)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (Timestamp.__proto__ || Object.getPrototypeOf(Timestamp)).call(this, props, context));
 
     _this._formatForLocale = _this._formatForLocale.bind(_this);
     _this.state = {};
     return _this;
   }
 
-  (0, _createClass3.default)(Timestamp, [{
+  _createClass(Timestamp, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       this._formatForLocale(this.props);
@@ -144,8 +120,8 @@ var Timestamp = function (_Component) {
         timeOptions.second = FORMATS.second;
       }
 
-      var date = (0, _keys2.default)(dateOptions).length > 0 ? dateObj.toLocaleDateString(locale, dateOptions) : undefined;
-      var time = (0, _keys2.default)(timeOptions).length > 0 ? dateObj.toLocaleTimeString(locale, timeOptions) : undefined;
+      var date = Object.keys(dateOptions).length > 0 ? dateObj.toLocaleDateString(locale, dateOptions) : undefined;
+      var time = Object.keys(timeOptions).length > 0 ? dateObj.toLocaleTimeString(locale, timeOptions) : undefined;
 
       this.setState({ date: date, time: time });
     }
@@ -155,14 +131,15 @@ var Timestamp = function (_Component) {
       var _props = this.props,
           align = _props.align,
           className = _props.className,
-          props = (0, _objectWithoutProperties3.default)(_props, ['align', 'className']);
+          props = _objectWithoutProperties(_props, ['align', 'className']);
+
       var _state = this.state,
           date = _state.date,
           time = _state.time;
 
       delete props.fields;
       delete props.value;
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--' + align, align), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, _defineProperty({}, CLASS_ROOT + '--' + align, align), className);
 
       var dateElement = void 0;
       if (date) {
@@ -184,12 +161,13 @@ var Timestamp = function (_Component) {
 
       return _react2.default.createElement(
         'span',
-        (0, _extends3.default)({}, props, { className: classes }),
+        _extends({}, props, { className: classes }),
         dateElement,
         timeElement
       );
     }
   }]);
+
   return Timestamp;
 }(_react.Component);
 
@@ -211,4 +189,3 @@ Timestamp.propTypes = {
 Timestamp.defaultProps = {
   fields: ["date", "time"]
 };
-module.exports = exports['default'];

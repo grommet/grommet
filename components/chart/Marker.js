@@ -4,37 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -52,7 +24,15 @@ var _utils = require('./utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.CHART_MARKER;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
@@ -60,12 +40,12 @@ var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 var DOUBLE_PADDING = 2 * _utils.padding;
 
 var Marker = function (_Component) {
-  (0, _inherits3.default)(Marker, _Component);
+  _inherits(Marker, _Component);
 
   function Marker(props, context) {
-    (0, _classCallCheck3.default)(this, Marker);
+    _classCallCheck(this, Marker);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Marker.__proto__ || (0, _getPrototypeOf2.default)(Marker)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (Marker.__proto__ || Object.getPrototypeOf(Marker)).call(this, props, context));
 
     _this.state = {
       size: { width: 0, height: 0 },
@@ -76,7 +56,7 @@ var Marker = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(Marker, [{
+  _createClass(Marker, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       this._size.start(this.svgRef);
@@ -115,7 +95,7 @@ var Marker = function (_Component) {
           reverse = _props.reverse,
           value = _props.value,
           vertical = _props.vertical,
-          props = (0, _objectWithoutProperties3.default)(_props, ['className', 'colorIndex', 'count', 'index', 'max', 'min', 'reverse', 'value', 'vertical']);
+          props = _objectWithoutProperties(_props, ['className', 'colorIndex', 'count', 'index', 'max', 'min', 'reverse', 'value', 'vertical']);
 
       delete props.height;
       delete props.width;
@@ -126,7 +106,7 @@ var Marker = function (_Component) {
           graphWidth = _state.graphWidth,
           graphHeight = _state.graphHeight;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, COLOR_INDEX + '-' + colorIndex, colorIndex), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, _defineProperty({}, COLOR_INDEX + '-' + colorIndex, colorIndex), className);
 
       var path = void 0;
       if (count > 1 && index >= 1 && index < count || value >= min && value <= max) {
@@ -161,7 +141,7 @@ var Marker = function (_Component) {
 
       return _react2.default.createElement(
         'svg',
-        (0, _extends3.default)({ ref: function ref(_ref) {
+        _extends({ ref: function ref(_ref) {
             return _this2.svgRef = _ref;
           } }, props, { className: classes,
           viewBox: '0 0 ' + width + ' ' + height, 'aria-hidden': 'true',
@@ -170,6 +150,7 @@ var Marker = function (_Component) {
       );
     }
   }]);
+
   return Marker;
 }(_react.Component);
 
@@ -193,4 +174,3 @@ Marker.defaultProps = {
   max: 100,
   min: 0
 };
-module.exports = exports['default'];

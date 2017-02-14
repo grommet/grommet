@@ -1,5 +1,17 @@
 'use strict';
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-module.exports = require('./pt-BR');
+var _ptBR = require('./pt-BR');
+
+Object.keys(_ptBR).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _ptBR[key];
+    }
+  });
+});

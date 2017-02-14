@@ -4,41 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
-
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -60,17 +28,28 @@ var _utils = require('./utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.CHART_GRAPH; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.CHART_GRAPH;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var Graph = function (_Component) {
-  (0, _inherits3.default)(Graph, _Component);
+  _inherits(Graph, _Component);
 
   function Graph(props, context) {
-    (0, _classCallCheck3.default)(this, Graph);
+    _classCallCheck(this, Graph);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Graph.__proto__ || (0, _getPrototypeOf2.default)(Graph)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (Graph.__proto__ || Object.getPrototypeOf(Graph)).call(this, props, context));
 
     _this._renderA11YTitle = _this._renderA11YTitle.bind(_this);
     return _this;
@@ -84,7 +63,7 @@ var Graph = function (_Component) {
   // treated the same.
 
 
-  (0, _createClass3.default)(Graph, [{
+  _createClass(Graph, [{
     key: '_controlCoordinates',
     value: function _controlCoordinates(coordinates, index) {
       var current = coordinates[index];
@@ -147,8 +126,8 @@ var Graph = function (_Component) {
       });
       var valueLabel = _Intl2.default.getMessage(intl, 'GraphValues', {
         count: values.length,
-        highest: Math.max.apply(Math, (0, _toConsumableArray3.default)(definedValues)).toString(),
-        smallest: Math.min.apply(Math, (0, _toConsumableArray3.default)(definedValues)).toString()
+        highest: Math.max.apply(Math, _toConsumableArray(definedValues)).toString(),
+        smallest: Math.min.apply(Math, _toConsumableArray(definedValues)).toString()
       });
 
       return typeLabel + ' ' + minLabel + ' ' + maxLabel + '. ' + valueLabel;
@@ -171,12 +150,12 @@ var Graph = function (_Component) {
           vertical = _props2.vertical,
           width = _props2.width,
           height = _props2.height,
-          props = (0, _objectWithoutProperties3.default)(_props2, ['activeIndex', 'className', 'colorIndex', 'max', 'min', 'reverse', 'smooth', 'type', 'values', 'vertical', 'width', 'height']);
+          props = _objectWithoutProperties(_props2, ['activeIndex', 'className', 'colorIndex', 'max', 'min', 'reverse', 'smooth', 'type', 'values', 'vertical', 'width', 'height']);
 
       delete props.points;
       var pad = Math.min(width, height) < _utils.padding * 6 ? 2 : _utils.padding;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, CLASS_ROOT + '--' + type, (0, _defineProperty3.default)({}, CLASS_ROOT + '--vertical', vertical), COLOR_INDEX + '-' + (colorIndex || 'graph-1'), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, CLASS_ROOT + '--' + type, _defineProperty({}, CLASS_ROOT + '--vertical', vertical), COLOR_INDEX + '-' + (colorIndex || 'graph-1'), className);
 
       var scale = 1;
       var step = void 0;
@@ -213,7 +192,7 @@ var Graph = function (_Component) {
           }
 
           if ((_this2.props.points || index === activeIndex) && !_this2.props.sparkline) {
-            var _classes = (0, _classnames4.default)(CLASS_ROOT + '__point', COLOR_INDEX + '-' + (colorIndex || 'graph-1'), (0, _defineProperty3.default)({}, CLASS_ROOT + '__point--active', index === activeIndex));
+            var _classes = (0, _classnames4.default)(CLASS_ROOT + '__point', COLOR_INDEX + '-' + (colorIndex || 'graph-1'), _defineProperty({}, CLASS_ROOT + '__point--active', index === activeIndex));
             var radius = _utils.pointSize / 3;
             if (index === activeIndex) {
               radius = _utils.pointSize / 2;
@@ -290,12 +269,12 @@ var Graph = function (_Component) {
           pathProps.fill = 'none';
         }
 
-        path = _react2.default.createElement('path', (0, _extends3.default)({}, pathProps, { d: commands }));
+        path = _react2.default.createElement('path', _extends({}, pathProps, { d: commands }));
       }
 
       return _react2.default.createElement(
         'svg',
-        (0, _extends3.default)({ ref: function ref(_ref) {
+        _extends({ ref: function ref(_ref) {
             return _this2.graphRef = _ref;
           } }, props, { className: classes,
           viewBox: '0 0 ' + width + ' ' + height, preserveAspectRatio: 'none',
@@ -309,6 +288,7 @@ var Graph = function (_Component) {
       );
     }
   }]);
+
   return Graph;
 }(_react.Component);
 
@@ -341,4 +321,3 @@ Graph.propTypes = {
   vertical: _react.PropTypes.bool,
   width: _react.PropTypes.number // only from Chart
 };
-module.exports = exports['default'];

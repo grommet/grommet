@@ -4,45 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _typeof2 = require('babel-runtime/helpers/typeof');
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
-var _stringify = require('babel-runtime/core-js/json/stringify');
-
-var _stringify2 = _interopRequireDefault(_stringify);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -80,19 +46,28 @@ var _Announcer = require('../utils/Announcer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.LIST; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.LIST;
 var LIST_ITEM = _CSSClassnames2.default.LIST_ITEM;
 var SELECTED_CLASS = CLASS_ROOT + '-item--selected';
 var ACTIVE_CLASS = CLASS_ROOT + '-item--active';
 
 var List = function (_Component) {
-  (0, _inherits3.default)(List, _Component);
+  _inherits(List, _Component);
 
   function List(props, context) {
-    (0, _classCallCheck3.default)(this, List);
+    _classCallCheck(this, List);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (List.__proto__ || (0, _getPrototypeOf2.default)(List)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (List.__proto__ || Object.getPrototypeOf(List)).call(this, props, context));
 
     _this._onClick = _this._onClick.bind(_this);
     _this._fireClick = _this._fireClick.bind(_this);
@@ -109,7 +84,7 @@ var List = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(List, [{
+  _createClass(List, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _props = this.props,
@@ -154,7 +129,7 @@ var List = function (_Component) {
           selectable = _props2.selectable;
       var selected = this.state.selected;
 
-      if ((0, _stringify2.default)(selected) !== (0, _stringify2.default)(prevState.selected)) {
+      if (JSON.stringify(selected) !== JSON.stringify(prevState.selected)) {
         this._setSelection();
       }
       if (onMore && !this._scroll) {
@@ -237,7 +212,7 @@ var List = function (_Component) {
           };
         }();
 
-        if ((typeof _ret === 'undefined' ? 'undefined' : (0, _typeof3.default)(_ret)) === "object") return _ret.v;
+        if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
       }
     }
   }, {
@@ -272,7 +247,7 @@ var List = function (_Component) {
           };
         }();
 
-        if ((typeof _ret2 === 'undefined' ? 'undefined' : (0, _typeof3.default)(_ret2)) === "object") return _ret2.v;
+        if ((typeof _ret2 === 'undefined' ? 'undefined' : _typeof(_ret2)) === "object") return _ret2.v;
       }
     }
   }, {
@@ -354,7 +329,8 @@ var List = function (_Component) {
           _onMouseDown = _props4.onMouseDown,
           _onMouseUp = _props4.onMouseUp,
           selectable = _props4.selectable,
-          props = (0, _objectWithoutProperties3.default)(_props4, ['a11yTitle', 'children', 'className', 'emptyIndicator', 'onBlur', 'onFocus', 'onMore', 'onMouseDown', 'onMouseUp', 'selectable']);
+          props = _objectWithoutProperties(_props4, ['a11yTitle', 'children', 'className', 'emptyIndicator', 'onBlur', 'onFocus', 'onMore', 'onMouseDown', 'onMouseUp', 'selectable']);
+
       var _state = this.state,
           activeItem = _state.activeItem,
           focus = _state.focus,
@@ -362,7 +338,7 @@ var List = function (_Component) {
       var intl = this.context.intl;
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--focus', focus), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', selectable), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--moreable', onMore), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--focus', focus), _defineProperty(_classnames, CLASS_ROOT + '--selectable', selectable), _defineProperty(_classnames, CLASS_ROOT + '--moreable', onMore), _classnames), className);
 
       var empty = void 0;
       if (emptyIndicator) {
@@ -428,7 +404,7 @@ var List = function (_Component) {
 
       return _react2.default.createElement(
         'ul',
-        (0, _extends3.default)({}, props, { ref: function ref(_ref2) {
+        _extends({}, props, { ref: function ref(_ref2) {
             return _this4.listRef = _ref2;
           }, className: classes
         }, selectableProps),
@@ -438,6 +414,7 @@ var List = function (_Component) {
       );
     }
   }]);
+
   return List;
 }(_react.Component);
 
@@ -460,4 +437,3 @@ List.propTypes = {
 List.defaultProps = {
   role: 'list'
 };
-module.exports = exports['default'];

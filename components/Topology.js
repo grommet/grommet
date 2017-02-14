@@ -4,41 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _keys = require('babel-runtime/core-js/object/keys');
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _keys2 = _interopRequireDefault(_keys);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _react = require('react');
 
@@ -66,32 +34,42 @@ var _Announcer = require('../utils/Announcer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.TOPOLOGY; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.TOPOLOGY;
 var STATUS_ICON = _CSSClassnames2.default.STATUS_ICON;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Label = function Label(props) {
   var children = props.children,
-      restProps = (0, _objectWithoutProperties3.default)(props, ['children']);
+      restProps = _objectWithoutProperties(props, ['children']);
 
   return _react2.default.createElement(
     'span',
-    (0, _extends3.default)({}, restProps, { className: CLASS_ROOT + '__label' }),
+    _extends({}, restProps, { className: CLASS_ROOT + '__label' }),
     children
   );
 };
 
 var Part = function (_Component) {
-  (0, _inherits3.default)(Part, _Component);
+  _inherits(Part, _Component);
 
   function Part() {
-    (0, _classCallCheck3.default)(this, Part);
-    return (0, _possibleConstructorReturn3.default)(this, (Part.__proto__ || (0, _getPrototypeOf2.default)(Part)).apply(this, arguments));
+    _classCallCheck(this, Part);
+
+    return _possibleConstructorReturn(this, (Part.__proto__ || Object.getPrototypeOf(Part)).apply(this, arguments));
   }
 
-  (0, _createClass3.default)(Part, [{
+  _createClass(Part, [{
     key: 'render',
     value: function render() {
       var _classnames,
@@ -108,7 +86,8 @@ var Part = function (_Component) {
           label = _props.label,
           reverse = _props.reverse,
           status = _props.status,
-          props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'align', 'children', 'className', 'demarcate', 'direction', 'justify', 'label', 'reverse', 'status']);
+          props = _objectWithoutProperties(_props, ['a11yTitle', 'align', 'children', 'className', 'demarcate', 'direction', 'justify', 'label', 'reverse', 'status']);
+
       var intl = this.context.intl;
 
       var realChildren = 0;
@@ -117,7 +96,7 @@ var Part = function (_Component) {
           realChildren += 1;
         }
       });
-      var classes = (0, _classnames6.default)(CLASS_ROOT + '__part', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--direction-' + direction, direction), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--justify-' + justify, justify), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--align-' + align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--demarcate', demarcate), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--reverse', reverse), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__part--empty', !status && !label && realChildren === 0), _classnames), className);
+      var classes = (0, _classnames6.default)(CLASS_ROOT + '__part', (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '__part--direction-' + direction, direction), _defineProperty(_classnames, CLASS_ROOT + '__part--justify-' + justify, justify), _defineProperty(_classnames, CLASS_ROOT + '__part--align-' + align, align), _defineProperty(_classnames, CLASS_ROOT + '__part--demarcate', demarcate), _defineProperty(_classnames, CLASS_ROOT + '__part--reverse', reverse), _defineProperty(_classnames, CLASS_ROOT + '__part--empty', !status && !label && realChildren === 0), _classnames), className);
 
       var statusIcon = void 0;
       if (status) {
@@ -147,7 +126,7 @@ var Part = function (_Component) {
       var partMessage = a11yTitle || (role === 'group' ? _Intl2.default.getMessage(intl, 'Part') : (status || '') + ' ' + label);
       return _react2.default.createElement(
         'div',
-        (0, _extends3.default)({}, props, { ref: function ref(_ref) {
+        _extends({}, props, { ref: function ref(_ref) {
             return _this2._partRef = _ref;
           }, className: classes,
           onMouseEnter: this.props.onMouseEnter,
@@ -167,6 +146,7 @@ var Part = function (_Component) {
       );
     }
   }]);
+
   return Part;
 }(_react.Component);
 
@@ -197,14 +177,15 @@ Part.defaultProps = {
 };
 
 var Parts = function (_Component2) {
-  (0, _inherits3.default)(Parts, _Component2);
+  _inherits(Parts, _Component2);
 
   function Parts() {
-    (0, _classCallCheck3.default)(this, Parts);
-    return (0, _possibleConstructorReturn3.default)(this, (Parts.__proto__ || (0, _getPrototypeOf2.default)(Parts)).apply(this, arguments));
+    _classCallCheck(this, Parts);
+
+    return _possibleConstructorReturn(this, (Parts.__proto__ || Object.getPrototypeOf(Parts)).apply(this, arguments));
   }
 
-  (0, _createClass3.default)(Parts, [{
+  _createClass(Parts, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       this._makeUniform();
@@ -256,7 +237,7 @@ var Parts = function (_Component2) {
           direction = _props3.direction;
       var intl = this.context.intl;
 
-      var classes = (0, _classnames6.default)(CLASS_ROOT + '__parts', (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__parts--direction-' + direction, direction), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__part--align-' + align, align), _classnames2), className);
+      var classes = (0, _classnames6.default)(CLASS_ROOT + '__parts', (_classnames2 = {}, _defineProperty(_classnames2, CLASS_ROOT + '__parts--direction-' + direction, direction), _defineProperty(_classnames2, CLASS_ROOT + '__part--align-' + align, align), _classnames2), className);
       var partsMessage = a11yTitle || _Intl2.default.getMessage(intl, 'Parts');
       return _react2.default.createElement(
         'div',
@@ -268,6 +249,7 @@ var Parts = function (_Component2) {
       );
     }
   }]);
+
   return Parts;
 }(_react.Component);
 
@@ -289,12 +271,12 @@ Parts.defaultProps = {
 };
 
 var Topology = function (_Component3) {
-  (0, _inherits3.default)(Topology, _Component3);
+  _inherits(Topology, _Component3);
 
   function Topology(props, context) {
-    (0, _classCallCheck3.default)(this, Topology);
+    _classCallCheck(this, Topology);
 
-    var _this5 = (0, _possibleConstructorReturn3.default)(this, (Topology.__proto__ || (0, _getPrototypeOf2.default)(Topology)).call(this, props, context));
+    var _this5 = _possibleConstructorReturn(this, (Topology.__proto__ || Object.getPrototypeOf(Topology)).call(this, props, context));
 
     _this5._layout = _this5._layout.bind(_this5);
     _this5._onResize = _this5._onResize.bind(_this5);
@@ -311,7 +293,7 @@ var Topology = function (_Component3) {
     return _this5;
   }
 
-  (0, _createClass3.default)(Topology, [{
+  _createClass(Topology, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       var links = this.props.links;
@@ -344,7 +326,7 @@ var Topology = function (_Component3) {
             }
           });
 
-          (0, _keys2.default)(connectsMap).forEach(function (element) {
+          Object.keys(connectsMap).forEach(function (element) {
             var targetElement = document.getElementById(element);
             var connectsMessage = _Intl2.default.getMessage(intl, 'Connects With');
             targetElement.setAttribute('data-connects', connectsMessage + ': (' + connectsMap[element].join() + ')');
@@ -432,7 +414,7 @@ var Topology = function (_Component3) {
           }
         });
 
-        var classes = (0, _classnames6.default)(CLASS_ROOT + '__path', (_classnames3 = {}, (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '__path--active', active), (0, _defineProperty3.default)(_classnames3, COLOR_INDEX + '-' + link.colorIndex, link.colorIndex), _classnames3));
+        var classes = (0, _classnames6.default)(CLASS_ROOT + '__path', (_classnames3 = {}, _defineProperty(_classnames3, CLASS_ROOT + '__path--active', active), _defineProperty(_classnames3, COLOR_INDEX + '-' + link.colorIndex, link.colorIndex), _classnames3));
 
         return _react2.default.createElement('path', { key: linkIndex, fill: 'none', className: classes, d: commands });
       });
@@ -499,7 +481,7 @@ var Topology = function (_Component3) {
           _onFocus = _props5.onFocus,
           _onMouseDown = _props5.onMouseDown,
           _onMouseUp = _props5.onMouseUp,
-          props = (0, _objectWithoutProperties3.default)(_props5, ['a11yTitle', 'children', 'className', 'links', 'onBlur', 'onFocus', 'onMouseDown', 'onMouseUp']);
+          props = _objectWithoutProperties(_props5, ['a11yTitle', 'children', 'className', 'links', 'onBlur', 'onFocus', 'onMouseDown', 'onMouseUp']);
 
       delete props.linkOffset;
       var _state = this.state,
@@ -510,7 +492,7 @@ var Topology = function (_Component3) {
           width = _state.width;
       var intl = this.context.intl;
 
-      var classes = (0, _classnames6.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--focus', focus), className);
+      var classes = (0, _classnames6.default)(CLASS_ROOT, _defineProperty({}, CLASS_ROOT + '--focus', focus), className);
 
       var colorKeys = [];
       var colors = {};
@@ -525,7 +507,7 @@ var Topology = function (_Component3) {
       var topologyMessage = a11yTitle || _Intl2.default.getMessage(intl, 'Topology');
       return _react2.default.createElement(
         'div',
-        (0, _extends3.default)({ ref: function ref(_ref4) {
+        _extends({ ref: function ref(_ref4) {
             return _this7._topologyRef = _ref4;
           } }, props, { className: classes,
           'aria-label': topologyMessage, tabIndex: '0', role: 'group',
@@ -580,6 +562,7 @@ var Topology = function (_Component3) {
       );
     }
   }]);
+
   return Topology;
 }(_react.Component);
 
@@ -608,4 +591,3 @@ Topology.defaultProps = {
 Topology.Parts = Parts;
 Topology.Part = Part;
 Topology.Label = Label;
-module.exports = exports['default'];

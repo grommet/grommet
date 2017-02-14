@@ -3,6 +3,7 @@
   @include text-align();
   @include vertical-margin();
   font-weight: $text-font-weight;
+  cursor: inherit;
 }
 
 .#{$grommet-namespace}label--truncate {

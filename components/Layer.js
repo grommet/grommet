@@ -4,37 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _typeof2 = require('babel-runtime/helpers/typeof');
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -72,17 +46,24 @@ var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.LAYER; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.LAYER;
 var APP = _CSSClassnames2.default.APP;
 
 var LayerContents = function (_Component) {
-  (0, _inherits3.default)(LayerContents, _Component);
+  _inherits(LayerContents, _Component);
 
   function LayerContents(props, context) {
-    (0, _classCallCheck3.default)(this, LayerContents);
+    _classCallCheck(this, LayerContents);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (LayerContents.__proto__ || (0, _getPrototypeOf2.default)(LayerContents)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (LayerContents.__proto__ || Object.getPrototypeOf(LayerContents)).call(this, props, context));
 
     _this._processTab = _this._processTab.bind(_this);
 
@@ -92,7 +73,7 @@ var LayerContents = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(LayerContents, [{
+  _createClass(LayerContents, [{
     key: 'getChildContext',
     value: function getChildContext() {
       var _this2 = this;
@@ -176,7 +157,7 @@ var LayerContents = function (_Component) {
 
 
       var closerNode = void 0;
-      if ((typeof closer === 'undefined' ? 'undefined' : (0, _typeof3.default)(closer)) === 'object') {
+      if ((typeof closer === 'undefined' ? 'undefined' : _typeof(closer)) === 'object') {
         closerNode = closer;
       } else if (onClose && closer) {
         var closeLabel = _Intl2.default.getMessage(intl, 'Close');
@@ -206,6 +187,7 @@ var LayerContents = function (_Component) {
       );
     }
   }]);
+
   return LayerContents;
 }(_react.Component);
 
@@ -236,14 +218,15 @@ LayerContents.childContextTypes = {
 };
 
 var Layer = function (_Component2) {
-  (0, _inherits3.default)(Layer, _Component2);
+  _inherits(Layer, _Component2);
 
   function Layer() {
-    (0, _classCallCheck3.default)(this, Layer);
-    return (0, _possibleConstructorReturn3.default)(this, (Layer.__proto__ || (0, _getPrototypeOf2.default)(Layer)).apply(this, arguments));
+    _classCallCheck(this, Layer);
+
+    return _possibleConstructorReturn(this, (Layer.__proto__ || Object.getPrototypeOf(Layer)).apply(this, arguments));
   }
 
-  (0, _createClass3.default)(Layer, [{
+  _createClass(Layer, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       this._originalFocusedElement = document.activeElement;
@@ -295,7 +278,7 @@ var Layer = function (_Component2) {
           peek = _props3.peek;
 
 
-      return (0, _classnames3.default)('grommet', CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-' + this.props.align, align), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--closeable', closer), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--flush', flush), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hidden', hidden), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--peek', peek), _classnames), className);
+      return (0, _classnames3.default)('grommet', CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--align-' + this.props.align, align), _defineProperty(_classnames, CLASS_ROOT + '--closeable', closer), _defineProperty(_classnames, CLASS_ROOT + '--flush', flush), _defineProperty(_classnames, CLASS_ROOT + '--hidden', hidden), _defineProperty(_classnames, CLASS_ROOT + '--peek', peek), _classnames), className);
     }
   }, {
     key: '_addLayer',
@@ -355,7 +338,7 @@ var Layer = function (_Component2) {
 
       if (this._element) {
         this._element.className = this._classesFromProps();
-        var contents = _react2.default.createElement(LayerContents, (0, _extends3.default)({}, this.props, {
+        var contents = _react2.default.createElement(LayerContents, _extends({}, this.props, {
           history: this.context.history,
           intl: this.context.intl,
           router: this.context.router,
@@ -389,6 +372,7 @@ var Layer = function (_Component2) {
       return _react2.default.createElement('span', { style: { display: 'none' } });
     }
   }]);
+
   return Layer;
 }(_react.Component);
 
@@ -415,4 +399,3 @@ Layer.contextTypes = {
 Layer.defaultProps = {
   align: 'center'
 };
-module.exports = exports['default'];

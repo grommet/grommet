@@ -39,4 +39,3 @@ GrommetFormattedMessage.propTypes = {
 GrommetFormattedMessage.displayName = 'GrommetFormattedMessage';
 
 exports.default = GrommetFormattedMessage;
-module.exports = exports['default'];

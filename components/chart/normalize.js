@@ -3,15 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
-
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
-
-var _isInteger = require('babel-runtime/core-js/number/is-integer');
-
-var _isInteger2 = _interopRequireDefault(_isInteger);
-
 exports.normalize = normalize;
 
 var _lodash = require('lodash.zip');
@@ -19,6 +10,8 @@ var _lodash = require('lodash.zip');
 var _lodash2 = _interopRequireDefault(_lodash);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 /**
  * The normalize util includes a normalize method in order to help
@@ -43,9 +36,7 @@ function getXValues(data) {
   return (data || []).map(function (dataPoint) {
     return parseInt(dataPoint[0], 10);
   });
-} // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-;
+};
 
 /**
  * With a given a array of 2D arrays, the function will return the common
@@ -100,7 +91,7 @@ function getXAxis(series, granularity) {
   }
 
   var normalizedXAxisLength = (max - min) / granularity + 1;
-  if (!(0, _isInteger2.default)(normalizedXAxisLength)) {
+  if (!Number.isInteger(normalizedXAxisLength)) {
     console.warn('X values are not corresponding to the given granularity');
     normalizedXAxisLength = Math.floor(normalizedXAxisLength);
   }
@@ -197,7 +188,7 @@ function normalize(Series, granularity) {
   if (!Array.isArray(Series[0][0])) {
     (function () {
       var seriesYValues = [];
-      var SeriesZip = _lodash2.default.apply(undefined, (0, _toConsumableArray3.default)(Series));
+      var SeriesZip = _lodash2.default.apply(undefined, _toConsumableArray(Series));
       xAxis.map(function (xValue) {
         var index = SeriesZip[0].indexOf(xValue);
         if (index > -1) {
@@ -211,7 +202,7 @@ function normalize(Series, granularity) {
   } else {
     Series.map(function (series) {
       var seriesYValues = [];
-      var seriesZip = _lodash2.default.apply(undefined, (0, _toConsumableArray3.default)(series));
+      var seriesZip = _lodash2.default.apply(undefined, _toConsumableArray(series));
       xAxis.map(function (xValue) {
         var index = seriesZip[0].indexOf(xValue);
         if (index > -1) {

@@ -4,37 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -62,19 +34,28 @@ var _Announcer = require('../utils/Announcer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.SUN_BURST; // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.SUN_BURST;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 var UNIT_FACTOR = _Graphics.baseUnit * 0.75;
 var PAD_FACTOR = _Graphics.baseUnit * 8;
 
 var SunBurst = function (_Component) {
-  (0, _inherits3.default)(SunBurst, _Component);
+  _inherits(SunBurst, _Component);
 
   function SunBurst(props, context) {
-    (0, _classCallCheck3.default)(this, SunBurst);
+    _classCallCheck(this, SunBurst);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (SunBurst.__proto__ || (0, _getPrototypeOf2.default)(SunBurst)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (SunBurst.__proto__ || Object.getPrototypeOf(SunBurst)).call(this, props, context));
 
     _this._layout = _this._layout.bind(_this);
     _this._onResize = _this._onResize.bind(_this);
@@ -96,7 +77,7 @@ var SunBurst = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(SunBurst, [{
+  _createClass(SunBurst, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       window.addEventListener('resize', this._onResize);
@@ -287,7 +268,7 @@ var SunBurst = function (_Component) {
 
         var datumPath = path.concat([index]);
         var colorIndex = datum.colorIndex || 'graph-' + (index % 4 + 1);
-        var className = (0, _classnames5.default)(CLASS_ROOT + '__slice', COLOR_INDEX + '-' + colorIndex, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__slice--hot', onActive || onClick), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__slice--active', active && active.length === datumPath.length && active.every(function (v, i) {
+        var className = (0, _classnames5.default)(CLASS_ROOT + '__slice', COLOR_INDEX + '-' + colorIndex, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '__slice--hot', onActive || onClick), _defineProperty(_classnames, CLASS_ROOT + '__slice--active', active && active.length === datumPath.length && active.every(function (v, i) {
           return v === datumPath[i];
         })), _classnames));
         var endAngle = (0, _Graphics.translateEndAngle)(startAngle, anglePer, datum.value);
@@ -340,7 +321,7 @@ var SunBurst = function (_Component) {
           data = _props2.data,
           label = _props2.label,
           size = _props2.size,
-          props = (0, _objectWithoutProperties3.default)(_props2, ['a11yTitle', 'active', 'className', 'data', 'label', 'size']);
+          props = _objectWithoutProperties(_props2, ['a11yTitle', 'active', 'className', 'data', 'label', 'size']);
 
       delete props.onActive;
       delete props.onClick;
@@ -350,7 +331,7 @@ var SunBurst = function (_Component) {
           width = _state.width;
       var intl = this.context.intl;
 
-      var classes = (0, _classnames5.default)(CLASS_ROOT, (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--active', active), _classnames2), className);
+      var classes = (0, _classnames5.default)(CLASS_ROOT, (_classnames2 = {}, _defineProperty(_classnames2, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames2, CLASS_ROOT + '--active', active), _classnames2), className);
 
       var unit = width / UNIT_FACTOR;
       var centerX = width / 2;
@@ -369,10 +350,10 @@ var SunBurst = function (_Component) {
       var sunBurstMessage = a11yTitle || _Intl2.default.getMessage(intl, 'SunBurst');
       var navigationHelpMessage = _Intl2.default.getMessage(intl, 'Navigation Help');
 
-      var graphicClasses = (0, _classnames5.default)(CLASS_ROOT + '__graphic', (0, _defineProperty3.default)({}, CLASS_ROOT + '__graphic--focus', focus));
+      var graphicClasses = (0, _classnames5.default)(CLASS_ROOT + '__graphic', _defineProperty({}, CLASS_ROOT + '__graphic--focus', focus));
       return _react2.default.createElement(
         'div',
-        (0, _extends3.default)({ ref: function ref(_ref2) {
+        _extends({ ref: function ref(_ref2) {
             return _this3._containerRef = _ref2;
           } }, props, { className: classes }),
         _react2.default.createElement(
@@ -393,6 +374,7 @@ var SunBurst = function (_Component) {
       );
     }
   }]);
+
   return SunBurst;
 }(_react.Component);
 
@@ -422,4 +404,3 @@ SunBurst.defaultProps = {
 SunBurst.contextTypes = {
   intl: _react.PropTypes.object
 };
-module.exports = exports['default'];

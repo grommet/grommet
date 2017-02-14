@@ -54,4 +54,3 @@ exports.default = {
     }, 8);
   }
 };
-module.exports = exports["default"];

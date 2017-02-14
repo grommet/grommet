@@ -4,37 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -56,29 +28,38 @@ var _Intl2 = _interopRequireDefault(_Intl);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.MAP; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.MAP;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 
 var ResourceMap = function (_Component) {
-  (0, _inherits3.default)(ResourceMap, _Component);
+  _inherits(ResourceMap, _Component);
 
   function ResourceMap(props, context) {
-    (0, _classCallCheck3.default)(this, ResourceMap);
+    _classCallCheck(this, ResourceMap);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (ResourceMap.__proto__ || (0, _getPrototypeOf2.default)(ResourceMap)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (ResourceMap.__proto__ || Object.getPrototypeOf(ResourceMap)).call(this, props, context));
 
     _this._onResize = _this._onResize.bind(_this);
     _this._layout = _this._layout.bind(_this);
     _this._onEnter = _this._onEnter.bind(_this);
     _this._onLeave = _this._onLeave.bind(_this);
 
-    _this.state = (0, _extends3.default)({}, _this._stateFromProps(props), {
+    _this.state = _extends({}, _this._stateFromProps(props), {
       height: 100, width: 100, paths: [] });
     return _this;
   }
 
-  (0, _createClass3.default)(ResourceMap, [{
+  _createClass(ResourceMap, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       window.addEventListener('resize', this._onResize);
@@ -251,7 +232,7 @@ var ResourceMap = function (_Component) {
         }
 
         var pathColorIndex = link.colorIndex || linkColorIndex;
-        var classes = (0, _classnames5.default)(CLASS_ROOT + '__path', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__path--active', activeId === link.parentId || activeId === link.childId), (0, _defineProperty3.default)(_classnames, COLOR_INDEX + '-' + pathColorIndex, pathColorIndex), _classnames));
+        var classes = (0, _classnames5.default)(CLASS_ROOT + '__path', (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '__path--active', activeId === link.parentId || activeId === link.childId), _defineProperty(_classnames, COLOR_INDEX + '-' + pathColorIndex, pathColorIndex), _classnames));
 
         return _react2.default.createElement('path', { key: index, fill: 'none', className: classes, d: commands });
       });
@@ -309,7 +290,7 @@ var ResourceMap = function (_Component) {
         var active = activeId === item.id || data.links.some(function (link) {
           return (link.parentId === item.id || link.childId === item.id) && (link.parentId === activeId || link.childId === activeId);
         });
-        var classes = (0, _classnames5.default)(CLASS_ROOT + '__item', (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__item--active', active), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '__item--plain', item.node && typeof item.node !== 'string'), _classnames2));
+        var classes = (0, _classnames5.default)(CLASS_ROOT + '__item', (_classnames2 = {}, _defineProperty(_classnames2, CLASS_ROOT + '__item--active', active), _defineProperty(_classnames2, CLASS_ROOT + '__item--plain', item.node && typeof item.node !== 'string'), _classnames2));
 
         return _react2.default.createElement(
           'li',
@@ -352,7 +333,7 @@ var ResourceMap = function (_Component) {
           className = _props2.className,
           data = _props2.data,
           vertical = _props2.vertical,
-          props = (0, _objectWithoutProperties3.default)(_props2, ['className', 'data', 'vertical']);
+          props = _objectWithoutProperties(_props2, ['className', 'data', 'vertical']);
 
       delete props.active;
       delete props.colorIndex;
@@ -363,7 +344,7 @@ var ResourceMap = function (_Component) {
           paths = _state2.paths,
           width = _state2.width;
 
-      var classes = (0, _classnames5.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--vertical', vertical), className);
+      var classes = (0, _classnames5.default)(CLASS_ROOT, _defineProperty({}, CLASS_ROOT + '--vertical', vertical), className);
 
       var categories = void 0;
       if (data.categories) {
@@ -372,7 +353,7 @@ var ResourceMap = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        (0, _extends3.default)({ ref: function ref(_ref) {
+        _extends({ ref: function ref(_ref) {
             return _this6._mapRef = _ref;
           } }, props, { className: classes }),
         _react2.default.createElement(
@@ -390,6 +371,7 @@ var ResourceMap = function (_Component) {
       );
     }
   }]);
+
   return ResourceMap;
 }(_react.Component);
 
@@ -427,4 +409,3 @@ ResourceMap.propTypes = {
 ResourceMap.defaultProps = {
   linkColorIndex: 'graph-1'
 };
-module.exports = exports['default'];

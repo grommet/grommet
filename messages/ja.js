@@ -1,5 +1,17 @@
 'use strict';
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-module.exports = require('./ja-JP');
+var _jaJP = require('./ja-JP');
+
+Object.keys(_jaJP).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _jaJP[key];
+    }
+  });
+});

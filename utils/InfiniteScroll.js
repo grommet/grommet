@@ -78,4 +78,3 @@ exports.default = {
     scrollState.scrollParents = undefined;
   }
 };
-module.exports = exports["default"];

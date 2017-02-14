@@ -4,9 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 exports.setLocale = setLocale;
 exports.getCurrentLocale = getCurrentLocale;
@@ -18,7 +16,7 @@ var _Cookies2 = _interopRequireDefault(_Cookies);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var currentLocale = 'en-US'; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var currentLocale = 'en-US';
 
 function normalizeLocale(locale) {
   var locales = locale.replace(/_/g, '-').split('-');
@@ -59,7 +57,7 @@ function getLocaleData() {
     grommetMessages = {};
   }
 
-  var messages = (0, _extends3.default)({}, grommetMessages, appMessages);
+  var messages = _extends({}, grommetMessages, appMessages);
 
   return { locale: locale, messages: messages };
 }

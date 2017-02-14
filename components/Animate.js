@@ -4,37 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _slicedToArray2 = require('babel-runtime/helpers/slicedToArray');
-
-var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -58,17 +32,23 @@ var _DOM = require('../utils/DOM');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.ANIMATE;
 
 var AnimateChild = function (_Component) {
-  (0, _inherits3.default)(AnimateChild, _Component);
+  _inherits(AnimateChild, _Component);
 
   function AnimateChild(props, context) {
-    (0, _classCallCheck3.default)(this, AnimateChild);
+    _classCallCheck(this, AnimateChild);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (AnimateChild.__proto__ || (0, _getPrototypeOf2.default)(AnimateChild)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (AnimateChild.__proto__ || Object.getPrototypeOf(AnimateChild)).call(this, props, context));
 
     var enter = props.enter,
         leave = props.leave;
@@ -82,7 +62,7 @@ var AnimateChild = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(AnimateChild, [{
+  _createClass(AnimateChild, [{
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       var enter = nextProps.enter,
@@ -91,7 +71,7 @@ var AnimateChild = function (_Component) {
       this.setState({ enter: enter, leave: leave || enter });
       if (nextProps.visible !== this.props.visible) {
         var _ref = nextProps.visible ? ['enter', 'active'] : ['leave', 'inactive'],
-            _ref2 = (0, _slicedToArray3.default)(_ref, 2),
+            _ref2 = _slicedToArray(_ref, 2),
             nextState = _ref2[0],
             lastState = _ref2[1];
 
@@ -185,6 +165,7 @@ var AnimateChild = function (_Component) {
       );
     }
   }]);
+
   return AnimateChild;
 }(_react.Component);
 
@@ -210,19 +191,19 @@ AnimateChild.defaultProps = {
 };
 
 var Animate = function (_Component2) {
-  (0, _inherits3.default)(Animate, _Component2);
+  _inherits(Animate, _Component2);
 
   function Animate(props, context) {
-    (0, _classCallCheck3.default)(this, Animate);
+    _classCallCheck(this, Animate);
 
-    var _this2 = (0, _possibleConstructorReturn3.default)(this, (Animate.__proto__ || (0, _getPrototypeOf2.default)(Animate)).call(this, props, context));
+    var _this2 = _possibleConstructorReturn(this, (Animate.__proto__ || Object.getPrototypeOf(Animate)).call(this, props, context));
 
     _this2._checkScroll = _this2._checkScroll.bind(_this2);
     _this2.state = { visible: true === props.visible };
     return _this2;
   }
 
-  (0, _createClass3.default)(Animate, [{
+  _createClass(Animate, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       if ('scroll' === this.props.visible) {
@@ -295,7 +276,7 @@ var Animate = function (_Component2) {
           children = _props.children,
           component = _props.component,
           keep = _props.keep,
-          props = (0, _objectWithoutProperties3.default)(_props, ['enter', 'leave', 'className', 'children', 'component', 'keep']);
+          props = _objectWithoutProperties(_props, ['enter', 'leave', 'className', 'children', 'component', 'keep']);
 
       delete props.visible;
       var visible = this.state.visible;
@@ -317,11 +298,12 @@ var Animate = function (_Component2) {
 
       return _react2.default.createElement(
         _reactAddonsTransitionGroup2.default,
-        (0, _extends3.default)({}, props, { className: classes, component: component }),
+        _extends({}, props, { className: classes, component: component }),
         animateChildren
       );
     }
   }]);
+
   return Animate;
 }(_react.Component);
 
@@ -352,4 +334,3 @@ Animate.defaultProps = {
   enter: { animation: 'fade', duration: 300 },
   visible: true
 };
-module.exports = exports['default'];

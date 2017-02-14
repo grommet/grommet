@@ -4,45 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _typeof2 = require('babel-runtime/helpers/typeof');
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
-var _stringify = require('babel-runtime/core-js/json/stringify');
-
-var _stringify2 = _interopRequireDefault(_stringify);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -80,8 +46,17 @@ var _Announcer = require('../utils/Announcer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.TABLE; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.TABLE;
 var SELECTED_CLASS = CLASS_ROOT + '-row--selected';
 var ACTIVE_CLASS = CLASS_ROOT + '-row--active';
 // empirical number describing a minimum cell width for a
@@ -89,12 +64,12 @@ var ACTIVE_CLASS = CLASS_ROOT + '-row--active';
 var MIN_CELL_WIDTH = 120;
 
 var Table = function (_Component) {
-  (0, _inherits3.default)(Table, _Component);
+  _inherits(Table, _Component);
 
   function Table(props, context) {
-    (0, _classCallCheck3.default)(this, Table);
+    _classCallCheck(this, Table);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Table.__proto__ || (0, _getPrototypeOf2.default)(Table)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (Table.__proto__ || Object.getPrototypeOf(Table)).call(this, props, context));
 
     _this._onClick = _this._onClick.bind(_this);
     _this._onResize = _this._onResize.bind(_this);
@@ -116,7 +91,7 @@ var Table = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(Table, [{
+  _createClass(Table, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _props = this.props,
@@ -179,7 +154,7 @@ var Table = function (_Component) {
           selected = _state.selected,
           small = _state.small;
 
-      if ((0, _stringify2.default)(selected) !== (0, _stringify2.default)(prevState.selected)) {
+      if (JSON.stringify(selected) !== JSON.stringify(prevState.selected)) {
         this._setSelection();
       }
       if (rebuildMirror && !small) {
@@ -307,7 +282,7 @@ var Table = function (_Component) {
           };
         }();
 
-        if ((typeof _ret === 'undefined' ? 'undefined' : (0, _typeof3.default)(_ret)) === "object") return _ret.v;
+        if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
       }
     }
   }, {
@@ -342,7 +317,7 @@ var Table = function (_Component) {
           };
         }();
 
-        if ((typeof _ret2 === 'undefined' ? 'undefined' : (0, _typeof3.default)(_ret2)) === "object") return _ret2.v;
+        if ((typeof _ret2 === 'undefined' ? 'undefined' : _typeof(_ret2)) === "object") return _ret2.v;
       }
     }
   }, {
@@ -498,7 +473,7 @@ var Table = function (_Component) {
           responsive = _props4.responsive,
           scrollable = _props4.scrollable,
           selectable = _props4.selectable,
-          props = (0, _objectWithoutProperties3.default)(_props4, ['a11yTitle', 'children', 'className', 'onBlur', 'onFocus', 'onMore', 'onMouseDown', 'onMouseUp', 'responsive', 'scrollable', 'selectable']);
+          props = _objectWithoutProperties(_props4, ['a11yTitle', 'children', 'className', 'onBlur', 'onFocus', 'onMore', 'onMouseDown', 'onMouseUp', 'responsive', 'scrollable', 'selectable']);
 
       delete props.onSelect;
       delete props.selected;
@@ -509,7 +484,7 @@ var Table = function (_Component) {
           small = _state2.small;
       var intl = this.context.intl;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--small', responsive && small), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--selectable', selectable), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--scrollable', scrollable), _classnames), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--small', responsive && small), _defineProperty(_classnames, CLASS_ROOT + '--selectable', selectable), _defineProperty(_classnames, CLASS_ROOT + '--scrollable', scrollable), _classnames), className);
 
       var mirror = void 0;
       if (scrollable) {
@@ -580,17 +555,17 @@ var Table = function (_Component) {
         };
       }
 
-      var tableClasses = (0, _classnames4.default)(CLASS_ROOT + '__table', (0, _defineProperty3.default)({}, CLASS_ROOT + '__table--focus', focus));
+      var tableClasses = (0, _classnames4.default)(CLASS_ROOT + '__table', _defineProperty({}, CLASS_ROOT + '__table--focus', focus));
 
       return _react2.default.createElement(
         'div',
-        (0, _extends3.default)({ ref: function ref(_ref4) {
+        _extends({ ref: function ref(_ref4) {
             return _this5.containerRef = _ref4;
           } }, props, { className: classes }),
         mirror,
         _react2.default.createElement(
           'table',
-          (0, _extends3.default)({ ref: function ref(_ref3) {
+          _extends({ ref: function ref(_ref3) {
               return _this5.tableRef = _ref3;
             } }, selectableProps, {
             className: tableClasses }),
@@ -600,6 +575,7 @@ var Table = function (_Component) {
       );
     }
   }]);
+
   return Table;
 }(_react.Component);
 
@@ -624,4 +600,3 @@ Table.propTypes = {
 Table.defaultProps = {
   responsive: true
 };
-module.exports = exports['default'];

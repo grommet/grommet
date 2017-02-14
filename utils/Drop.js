@@ -5,29 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.dropAlignPropType = undefined;
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -47,8 +27,13 @@ var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.DROP; // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.DROP;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 /*
@@ -60,23 +45,23 @@ var VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
 var HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
 var DropContents = function (_Component) {
-  (0, _inherits3.default)(DropContents, _Component);
+  _inherits(DropContents, _Component);
 
   function DropContents(props, context) {
-    (0, _classCallCheck3.default)(this, DropContents);
+    _classCallCheck(this, DropContents);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (DropContents.__proto__ || (0, _getPrototypeOf2.default)(DropContents)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (DropContents.__proto__ || Object.getPrototypeOf(DropContents)).call(this, props, context));
 
     _this._processTab = _this._processTab.bind(_this);
     return _this;
   }
 
-  (0, _createClass3.default)(DropContents, [{
+  _createClass(DropContents, [{
     key: 'getChildContext',
     value: function getChildContext() {
       var context = this.props.context;
 
-      return (0, _extends3.default)({}, context);
+      return _extends({}, context);
     }
   }, {
     key: 'componentDidMount',
@@ -143,6 +128,7 @@ var DropContents = function (_Component) {
       );
     }
   }]);
+
   return DropContents;
 }(_react.Component);
 
@@ -164,7 +150,7 @@ DropContents.childContextTypes = {
 };
 
 var _normalizeOptions = function _normalizeOptions(options) {
-  options = (0, _extends3.default)({}, options);
+  options = _extends({}, options);
   // normalize for older interface that just had align content
   if (options.top || options.bottom || options.left || options.right) {
     options = { align: options };
@@ -209,7 +195,7 @@ var _normalizeOptions = function _normalizeOptions(options) {
 
 var Drop = function () {
   function Drop(control, content, options) {
-    (0, _classCallCheck3.default)(this, Drop);
+    _classCallCheck(this, Drop);
 
     options = _normalizeOptions(options);
     var _options = options,
@@ -250,7 +236,7 @@ var Drop = function () {
     this.place();
   }
 
-  (0, _createClass3.default)(Drop, [{
+  _createClass(Drop, [{
     key: '_listen',
     value: function _listen() {
       var _this3 = this;
@@ -466,6 +452,7 @@ var Drop = function () {
       this.state = undefined;
     }
   }]);
+
   return Drop;
 }();
 

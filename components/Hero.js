@@ -4,37 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -62,17 +34,26 @@ var _Image2 = _interopRequireDefault(_Image);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.HERO; // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.HERO;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Hero = function (_Component) {
-  (0, _inherits3.default)(Hero, _Component);
+  _inherits(Hero, _Component);
 
   function Hero(props, context) {
-    (0, _classCallCheck3.default)(this, Hero);
+    _classCallCheck(this, Hero);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Hero.__proto__ || (0, _getPrototypeOf2.default)(Hero)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (Hero.__proto__ || Object.getPrototypeOf(Hero)).call(this, props, context));
 
     _this._onResize = _this._onResize.bind(_this);
     _this._layout = _this._layout.bind(_this);
@@ -80,7 +61,7 @@ var Hero = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(Hero, [{
+  _createClass(Hero, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       window.addEventListener('resize', this._onResize);
@@ -170,11 +151,12 @@ var Hero = function (_Component) {
           responsiveBackgroundPosition = _props.responsiveBackgroundPosition,
           separator = _props.separator,
           size = _props.size,
-          props = (0, _objectWithoutProperties3.default)(_props, ['backgroundImage', 'backgroundVideo', 'children', 'className', 'colorIndex', 'flush', 'image', 'justify', 'responsiveBackgroundPosition', 'separator', 'size']);
+          props = _objectWithoutProperties(_props, ['backgroundImage', 'backgroundVideo', 'children', 'className', 'colorIndex', 'flush', 'image', 'justify', 'responsiveBackgroundPosition', 'separator', 'size']);
+
       var responsiveSmall = this.state.responsiveSmall;
 
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--bg-' + responsiveBackgroundPosition, responsiveBackgroundPosition), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--mobile-separator', separator), _classnames), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames, CLASS_ROOT + '--bg-' + responsiveBackgroundPosition, responsiveBackgroundPosition), _defineProperty(_classnames, CLASS_ROOT + '--mobile-separator', separator), _classnames), className);
 
       var full = flush ? 'horizontal' : false;
       var pad = flush ? 'none' : 'large';
@@ -236,7 +218,7 @@ var Hero = function (_Component) {
 
       return _react2.default.createElement(
         _Box2.default,
-        (0, _extends3.default)({}, props, { className: classes,
+        _extends({}, props, { className: classes,
           colorIndex: responsiveSmall ? 'light-1' : colorIndex }),
         background,
         contents
@@ -254,7 +236,7 @@ var Hero = function (_Component) {
           children = _props2.children,
           className = _props2.className,
           size = _props2.size,
-          props = (0, _objectWithoutProperties3.default)(_props2, ['background', 'backgroundColorIndex', 'children', 'className', 'size']);
+          props = _objectWithoutProperties(_props2, ['background', 'backgroundColorIndex', 'children', 'className', 'size']);
 
       delete props.colorIndex;
       delete props.flush;
@@ -265,7 +247,7 @@ var Hero = function (_Component) {
           responsiveSmall = _state.responsiveSmall;
 
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames2, this._backgroundContextClass(darkBackground), !responsiveSmall && backgroundColorIndex), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--stack', responsiveSmall), _classnames2), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames2 = {}, _defineProperty(_classnames2, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames2, this._backgroundContextClass(darkBackground), !responsiveSmall && backgroundColorIndex), _defineProperty(_classnames2, CLASS_ROOT + '--stack', responsiveSmall), _classnames2), className);
 
       var backgroundContainer = void 0;
       if (background) {
@@ -281,7 +263,7 @@ var Hero = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        (0, _extends3.default)({ ref: function ref(_ref2) {
+        _extends({ ref: function ref(_ref2) {
             return _this3._containerRef = _ref2;
           },
           className: classes }, props),
@@ -308,6 +290,7 @@ var Hero = function (_Component) {
       return this.newRender();
     }
   }]);
+
   return Hero;
 }(_react.Component);
 
@@ -339,4 +322,3 @@ Hero.defaultProps = {
   justify: 'end',
   responsiveBackgroundPosition: 'center'
 };
-module.exports = exports['default'];

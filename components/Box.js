@@ -4,37 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
-var _typeof2 = require('babel-runtime/helpers/typeof');
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -68,23 +42,28 @@ var _Announcer = require('../utils/Announcer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.BOX; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.BOX;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Box = function (_Component) {
-  (0, _inherits3.default)(Box, _Component);
+  _inherits(Box, _Component);
 
   function Box(props) {
-    (0, _classCallCheck3.default)(this, Box);
+    _classCallCheck(this, Box);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Box.__proto__ || (0, _getPrototypeOf2.default)(Box)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Box.__proto__ || Object.getPrototypeOf(Box)).call(this, props));
 
     _this.state = { mouseActive: false };
     return _this;
   }
 
-  (0, _createClass3.default)(Box, [{
+  _createClass(Box, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _this2 = this;
@@ -171,8 +150,8 @@ var Box = function (_Component) {
       if (value) {
         if (typeof value === 'string') {
           classes.push(elementName + '--' + prefix + '-' + this._normalize(value));
-        } else if ((typeof value === 'undefined' ? 'undefined' : (0, _typeof3.default)(value)) === 'object') {
-          (0, _keys2.default)(value).forEach(function (key) {
+        } else if ((typeof value === 'undefined' ? 'undefined' : _typeof(value)) === 'object') {
+          Object.keys(value).forEach(function (key) {
             _this4._addPropertyClass(classes, key, {
               object: value, prefix: prefix + '-' + key });
           });
@@ -227,7 +206,7 @@ var Box = function (_Component) {
 
       var classes = [CLASS_ROOT];
       var containerClasses = [CLASS_ROOT + '__container'];
-      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Box.propTypes));
+      var restProps = _Props2.default.omit(this.props, Object.keys(Box.propTypes));
       this._addPropertyClass(classes, 'full');
       this._addPropertyClass(classes, 'direction');
       this._addPropertyClass(classes, 'justify');
@@ -250,8 +229,8 @@ var Box = function (_Component) {
         }
       }
       if (size) {
-        if ((typeof size === 'undefined' ? 'undefined' : (0, _typeof3.default)(size)) === 'object') {
-          (0, _keys2.default)(size).forEach(function (key) {
+        if ((typeof size === 'undefined' ? 'undefined' : _typeof(size)) === 'object') {
+          Object.keys(size).forEach(function (key) {
             _this5._addPropertyClass(classes, key, { object: size });
           });
         } else {
@@ -354,9 +333,9 @@ var Box = function (_Component) {
         style.background = backgroundImage + " no-repeat center center";
         style.backgroundSize = "cover";
       }
-      style = (0, _extends3.default)({}, style, restProps.style);
+      style = _extends({}, style, restProps.style);
       var textureMarkup = void 0;
-      if ('object' === (typeof texture === 'undefined' ? 'undefined' : (0, _typeof3.default)(texture))) {
+      if ('object' === (typeof texture === 'undefined' ? 'undefined' : _typeof(texture))) {
         textureMarkup = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + "__texture" },
@@ -368,7 +347,7 @@ var Box = function (_Component) {
       if (appCentered) {
         return _react2.default.createElement(
           'div',
-          (0, _extends3.default)({}, restProps, { ref: function ref(_ref) {
+          _extends({}, restProps, { ref: function ref(_ref) {
               return _this5.boxContainerRef = _ref;
             },
             className: containerClasses.join(' '),
@@ -384,7 +363,7 @@ var Box = function (_Component) {
       } else {
         return _react2.default.createElement(
           Component,
-          (0, _extends3.default)({}, restProps, { ref: function ref(_ref2) {
+          _extends({}, restProps, { ref: function ref(_ref2) {
               return _this5.boxContainerRef = _ref2;
             },
             id: id, className: classes.join(' '), style: style,
@@ -397,6 +376,7 @@ var Box = function (_Component) {
       }
     }
   }]);
+
   return Box;
 }(_react.Component);
 
@@ -475,4 +455,3 @@ Box.defaultProps = {
   responsive: true,
   focusable: true
 };
-module.exports = exports['default'];

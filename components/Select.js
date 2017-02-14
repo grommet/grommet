@@ -4,41 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _keys = require('babel-runtime/core-js/object/keys');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _keys2 = _interopRequireDefault(_keys);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _typeof2 = require('babel-runtime/helpers/typeof');
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -96,18 +66,25 @@ var _Announcer = require('../utils/Announcer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.SELECT; // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.SELECT;
 var INPUT = _CSSClassnames2.default.INPUT;
 var FORM_FIELD = _CSSClassnames2.default.FORM_FIELD;
 
 var Select = function (_Component) {
-  (0, _inherits3.default)(Select, _Component);
+  _inherits(Select, _Component);
 
   function Select(props, context) {
-    (0, _classCallCheck3.default)(this, Select);
+    _classCallCheck(this, Select);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Select.__proto__ || (0, _getPrototypeOf2.default)(Select)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (Select.__proto__ || Object.getPrototypeOf(Select)).call(this, props, context));
 
     _this._onAddDrop = _this._onAddDrop.bind(_this);
     _this._onRemoveDrop = _this._onRemoveDrop.bind(_this);
@@ -130,7 +107,7 @@ var Select = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(Select, [{
+  _createClass(Select, [{
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if (nextProps.hasOwnProperty('value')) {
@@ -282,7 +259,7 @@ var Select = function (_Component) {
       // Get values of options, so we can highlight selected option
       if (options) {
         var optionValues = options.map(function (option) {
-          if (option && (typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
+          if (option && (typeof option === 'undefined' ? 'undefined' : _typeof(option)) === 'object') {
             return option.value;
           } else {
             return option;
@@ -400,7 +377,7 @@ var Select = function (_Component) {
   }, {
     key: '_renderLabel',
     value: function _renderLabel(option) {
-      if (option && (typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
+      if (option && (typeof option === 'undefined' ? 'undefined' : _typeof(option)) === 'object') {
         // revert for announce as label is often a complex object
         return option.label || option.value || '';
       } else {
@@ -422,7 +399,7 @@ var Select = function (_Component) {
           });
           return selectedMultiple;
         }
-      } else if (option && (typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
+      } else if (option && (typeof option === 'undefined' ? 'undefined' : _typeof(option)) === 'object') {
         return typeof option.label === 'string' ? option.label : option.value || '';
       } else {
         return undefined === option || null === option ? '' : option;
@@ -432,14 +409,14 @@ var Select = function (_Component) {
     key: '_valueEqualsOption',
     value: function _valueEqualsOption(value, option) {
       var result = false;
-      if (value && (typeof value === 'undefined' ? 'undefined' : (0, _typeof3.default)(value)) === 'object') {
-        if (option && (typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
+      if (value && (typeof value === 'undefined' ? 'undefined' : _typeof(value)) === 'object') {
+        if (option && (typeof option === 'undefined' ? 'undefined' : _typeof(option)) === 'object') {
           result = value.value === option.value;
         } else {
           result = value.value === option;
         }
       } else {
-        if (option && (typeof option === 'undefined' ? 'undefined' : (0, _typeof3.default)(option)) === 'object') {
+        if (option && (typeof option === 'undefined' ? 'undefined' : _typeof(option)) === 'object') {
           result = value === option.value;
         } else {
           result = value === option;
@@ -498,7 +475,7 @@ var Select = function (_Component) {
           var _classnames;
 
           var selected = _this4._optionSelected(option, value);
-          var classes = (0, _classnames4.default)((_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__option', true), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__option--selected', selected), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__option--active', index === activeOptionIndex), _classnames));
+          var classes = (0, _classnames4.default)((_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '__option', true), _defineProperty(_classnames, CLASS_ROOT + '__option--selected', selected), _defineProperty(_classnames, CLASS_ROOT + '__option--active', index === activeOptionIndex), _classnames));
 
           var content = _this4._renderLabel(option);
           if (option && option.icon) {
@@ -536,7 +513,7 @@ var Select = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        (0, _extends3.default)({}, restProps, { className: className }),
+        _extends({}, restProps, { className: className }),
         search,
         _react2.default.createElement(
           'ol',
@@ -559,8 +536,8 @@ var Select = function (_Component) {
       var active = this.state.active;
       var intl = this.context.intl;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames2 = {}, (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--active', active), (0, _defineProperty3.default)(_classnames2, CLASS_ROOT + '--inline', inline), _classnames2), className);
-      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Select.propTypes));
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames2 = {}, _defineProperty(_classnames2, CLASS_ROOT + '--active', active), _defineProperty(_classnames2, CLASS_ROOT + '--inline', inline), _classnames2), className);
+      var restProps = _Props2.default.omit(this.props, Object.keys(Select.propTypes));
 
       if (inline) {
         return this._renderOptions(classes, restProps);
@@ -571,7 +548,7 @@ var Select = function (_Component) {
               return _this5.componentRef = _ref3;
             }, className: classes,
             onClick: this._onAddDrop },
-          _react2.default.createElement('input', (0, _extends3.default)({}, restProps, { ref: function ref(_ref2) {
+          _react2.default.createElement('input', _extends({}, restProps, { ref: function ref(_ref2) {
               return _this5.inputRef = _ref2;
             },
             className: INPUT + ' ' + CLASS_ROOT + '__input',
@@ -584,6 +561,7 @@ var Select = function (_Component) {
       }
     }
   }]);
+
   return Select;
 }(_react.Component);
 
@@ -609,4 +587,3 @@ Select.propTypes = {
 Select.contextTypes = {
   intl: _react.PropTypes.object
 };
-module.exports = exports['default'];

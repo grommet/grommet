@@ -3,19 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.trackSize = exports.debounceDelay = exports.padding = exports.pointSize = undefined;
 
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 exports.graphValue = graphValue;
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
@@ -30,7 +23,7 @@ var debounceDelay = exports.debounceDelay = 50;
 
 var trackSize = exports.trackSize = function () {
   function trackSize(props, onSize) {
-    (0, _classCallCheck3.default)(this, trackSize);
+    _classCallCheck(this, trackSize);
 
     this._onResize = this._onResize.bind(this);
     this._measure = this._measure.bind(this);
@@ -40,7 +33,7 @@ var trackSize = exports.trackSize = function () {
     this._onSize = onSize;
   }
 
-  (0, _createClass3.default)(trackSize, [{
+  _createClass(trackSize, [{
     key: '_measure',
     value: function _measure() {
       if (this._element) {
@@ -89,5 +82,6 @@ var trackSize = exports.trackSize = function () {
       this._element = undefined;
     }
   }]);
+
   return trackSize;
 }();

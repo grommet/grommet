@@ -4,41 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _keys = require('babel-runtime/core-js/object/keys');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _keys2 = _interopRequireDefault(_keys);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _assign = require('babel-runtime/core-js/object/assign');
-
-var _assign2 = _interopRequireDefault(_assign);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -72,18 +40,24 @@ var _Throttle2 = _interopRequireDefault(_Throttle);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.VIDEO;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Video = function (_Component) {
-  (0, _inherits3.default)(Video, _Component);
+  _inherits(Video, _Component);
 
   function Video(props, context) {
-    (0, _classCallCheck3.default)(this, Video);
+    _classCallCheck(this, Video);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Video.__proto__ || (0, _getPrototypeOf2.default)(Video)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (Video.__proto__ || Object.getPrototypeOf(Video)).call(this, props, context));
 
     _this._hasPlayed = false;
     _this._play = _this._play.bind(_this);
@@ -104,7 +78,7 @@ var Video = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(Video, [{
+  _createClass(Video, [{
     key: 'componentWillMount',
     value: function componentWillMount() {
       this._update = (0, _Throttle2.default)(this._update.bind(this), 100, this);
@@ -248,7 +222,7 @@ var Video = function (_Component) {
     value: function _renderControls() {
       var _this3 = this;
 
-      var extendedProps = (0, _assign2.default)({
+      var extendedProps = Object.assign({
         title: this.props.title,
         togglePlay: this._togglePlay,
         toggleMute: this._toggleMute,
@@ -270,7 +244,7 @@ var Video = function (_Component) {
         'div',
         null,
         _react2.default.createElement(_Overlay2.default, extendedProps),
-        _react2.default.createElement(_Controls2.default, (0, _extends3.default)({ ref: function ref(_ref) {
+        _react2.default.createElement(_Controls2.default, _extends({ ref: function ref(_ref) {
             return _this3._controlRef = _ref;
           }
         }, extendedProps))
@@ -301,8 +275,8 @@ var Video = function (_Component) {
           mouseActive = _state.mouseActive,
           playing = _state.playing;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--' + fit, fit), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--full', fit || full), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--interacting', interacting), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--playing', playing), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--hasPlayed', hasPlayed), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--ended', ended), (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '--' + colorIndex, colorIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-top', align && align.top), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-bottom', align && align.bottom), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-left', align && align.left), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--align-right', align && align.right), _classnames), className);
-      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Video.propTypes));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames, CLASS_ROOT + '--' + fit, fit), _defineProperty(_classnames, CLASS_ROOT + '--full', fit || full), _defineProperty(_classnames, CLASS_ROOT + '--interacting', interacting), _defineProperty(_classnames, CLASS_ROOT + '--playing', playing), _defineProperty(_classnames, CLASS_ROOT + '--hasPlayed', hasPlayed), _defineProperty(_classnames, CLASS_ROOT + '--ended', ended), _defineProperty(_classnames, BACKGROUND_COLOR_INDEX + '--' + colorIndex, colorIndex), _defineProperty(_classnames, CLASS_ROOT + '--align-top', align && align.top), _defineProperty(_classnames, CLASS_ROOT + '--align-bottom', align && align.bottom), _defineProperty(_classnames, CLASS_ROOT + '--align-left', align && align.left), _defineProperty(_classnames, CLASS_ROOT + '--align-right', align && align.right), _classnames), className);
+      var restProps = _Props2.default.omit(this.props, Object.keys(Video.propTypes));
 
       return _react2.default.createElement(
         'div',
@@ -352,7 +326,7 @@ var Video = function (_Component) {
           } },
         _react2.default.createElement(
           'video',
-          (0, _extends3.default)({ ref: function ref(el) {
+          _extends({ ref: function ref(el) {
               return _this4._video = el;
             } }, restProps, {
             poster: poster, autoPlay: autoPlay ? 'autoplay' : false,
@@ -363,6 +337,7 @@ var Video = function (_Component) {
       );
     }
   }]);
+
   return Video;
 }(_react.Component);
 
@@ -405,4 +380,3 @@ Video.defaultProps = {
   size: 'medium',
   showControls: true
 };
-module.exports = exports['default'];

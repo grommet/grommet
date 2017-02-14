@@ -25,5 +25,3 @@ exports.default = function (fn) {
     }
   };
 };
-
-module.exports = exports["default"]; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP

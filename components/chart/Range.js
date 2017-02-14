@@ -4,37 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -56,6 +28,16 @@ var _utils = require('./utils');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+
 var CLASS_ROOT = _CSSClassnames2.default.CHART_RANGE;
 
 // Allows selecting a region.
@@ -63,15 +45,13 @@ var CLASS_ROOT = _CSSClassnames2.default.CHART_RANGE;
 // Press and Drag to select multiple.
 // Drag edges to adjust.
 
-// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
-
 var Range = function (_Component) {
-  (0, _inherits3.default)(Range, _Component);
+  _inherits(Range, _Component);
 
   function Range(props, context) {
-    (0, _classCallCheck3.default)(this, Range);
+    _classCallCheck(this, Range);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Range.__proto__ || (0, _getPrototypeOf2.default)(Range)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (Range.__proto__ || Object.getPrototypeOf(Range)).call(this, props, context));
 
     _this._onMouseMove = _this._onMouseMove.bind(_this);
     _this._onMouseUp = _this._onMouseUp.bind(_this);
@@ -79,7 +59,7 @@ var Range = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(Range, [{
+  _createClass(Range, [{
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       var mouseDown = this.state.mouseDown;
@@ -234,14 +214,15 @@ var Range = function (_Component) {
           count = _props4.count,
           onActive = _props4.onActive,
           vertical = _props4.vertical,
-          props = (0, _objectWithoutProperties3.default)(_props4, ['active', 'className', 'count', 'onActive', 'vertical']);
+          props = _objectWithoutProperties(_props4, ['active', 'className', 'count', 'onActive', 'vertical']);
+
       var _state3 = this.state,
           mouseDown = _state3.mouseDown,
           mouseDownIndex = _state3.mouseDownIndex,
           mouseMoveIndex = _state3.mouseMoveIndex;
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--dragging', mouseDown), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--vertical', vertical), _defineProperty(_classnames, CLASS_ROOT + '--dragging', mouseDown), _classnames), className);
 
       var layers = void 0;
       if (active || mouseDown) {
@@ -272,7 +253,7 @@ var Range = function (_Component) {
         layers = [_react2.default.createElement('div', { key: 'before', className: CLASS_ROOT + '__inactive',
           style: { flexBasis: this._percentForIndex(start) + '%' } }), _react2.default.createElement(
           'div',
-          (0, _extends3.default)({ key: 'active' }, props, { className: CLASS_ROOT + '__active',
+          _extends({ key: 'active' }, props, { className: CLASS_ROOT + '__active',
             style: { flexBasis: this._percentForIndex(end - start) + '%' },
             onMouseDown: this._mouseDown('active') }),
           _react2.default.createElement(
@@ -309,6 +290,7 @@ var Range = function (_Component) {
       );
     }
   }]);
+
   return Range;
 }(_react.Component);
 
@@ -325,4 +307,3 @@ Range.propTypes = {
   onActive: _react.PropTypes.func, // (start, end)
   vertical: _react.PropTypes.bool
 };
-module.exports = exports['default'];

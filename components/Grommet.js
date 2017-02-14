@@ -4,13 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _react = require('react');
 
@@ -22,22 +16,20 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; } // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = "grommet";
 
 exports.default = function (props) {
   var children = props.children,
       className = props.className,
-      restProps = (0, _objectWithoutProperties3.default)(props, ['children', 'className']);
+      restProps = _objectWithoutProperties(props, ['children', 'className']);
 
   var classes = (0, _classnames2.default)(CLASS_ROOT, className);
 
   return _react2.default.createElement(
     'div',
-    (0, _extends3.default)({}, restProps, { className: classes }),
+    _extends({}, restProps, { className: classes }),
     children
   );
 };
-
-module.exports = exports['default'];

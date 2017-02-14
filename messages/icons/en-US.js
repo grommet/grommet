@@ -444,4 +444,3 @@ exports.default = {
   'zoom-in': 'zoom in',
   'zoom-out': 'zoom out'
 };
-module.exports = exports['default'];

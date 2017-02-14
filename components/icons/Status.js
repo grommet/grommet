@@ -4,37 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -78,28 +50,37 @@ var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.STATUS_ICON;
 
 var Status = function (_Component) {
-  (0, _inherits3.default)(Status, _Component);
+  _inherits(Status, _Component);
 
   function Status() {
-    (0, _classCallCheck3.default)(this, Status);
-    return (0, _possibleConstructorReturn3.default)(this, (Status.__proto__ || (0, _getPrototypeOf2.default)(Status)).apply(this, arguments));
+    _classCallCheck(this, Status);
+
+    return _possibleConstructorReturn(this, (Status.__proto__ || Object.getPrototypeOf(Status)).apply(this, arguments));
   }
 
-  (0, _createClass3.default)(Status, [{
+  _createClass(Status, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
           className = _props.className,
           size = _props.size,
           value = _props.value,
-          props = (0, _objectWithoutProperties3.default)(_props, ['className', 'size', 'value']);
+          props = _objectWithoutProperties(_props, ['className', 'size', 'value']);
 
-      var classes = (0, _classnames3.default)((0, _defineProperty3.default)({}, CLASS_ROOT + '--' + size, size), className);
+      var classes = (0, _classnames3.default)(_defineProperty({}, CLASS_ROOT + '--' + size, size), className);
 
       var icon = _react2.default.createElement(
         'span',
@@ -109,30 +90,31 @@ var Status = function (_Component) {
       switch (value.toLowerCase()) {
         case 'ok':
         case 'normal':
-          icon = _react2.default.createElement(_OK2.default, (0, _extends3.default)({}, props, { className: classes }));
+          icon = _react2.default.createElement(_OK2.default, _extends({}, props, { className: classes }));
           break;
         case 'warning':
-          icon = _react2.default.createElement(_Warning2.default, (0, _extends3.default)({}, props, { className: classes }));
+          icon = _react2.default.createElement(_Warning2.default, _extends({}, props, { className: classes }));
           break;
         case 'critical':
-          icon = _react2.default.createElement(_CriticalStatus2.default, (0, _extends3.default)({}, props, { className: classes }));
+          icon = _react2.default.createElement(_CriticalStatus2.default, _extends({}, props, { className: classes }));
           break;
         case 'disabled':
-          icon = _react2.default.createElement(_Disabled2.default, (0, _extends3.default)({}, props, { className: classes }));
+          icon = _react2.default.createElement(_Disabled2.default, _extends({}, props, { className: classes }));
           break;
         case 'unknown':
-          icon = _react2.default.createElement(_Unknown2.default, (0, _extends3.default)({}, props, { className: classes }));
+          icon = _react2.default.createElement(_Unknown2.default, _extends({}, props, { className: classes }));
           break;
         case 'blank':
-          icon = _react2.default.createElement(_Blank2.default, (0, _extends3.default)({}, props, { className: classes }));
+          icon = _react2.default.createElement(_Blank2.default, _extends({}, props, { className: classes }));
           break;
         case 'label':
-          icon = _react2.default.createElement(_Label2.default, (0, _extends3.default)({}, props, { className: classes }));
+          icon = _react2.default.createElement(_Label2.default, _extends({}, props, { className: classes }));
           break;
       }
       return icon;
     }
   }]);
+
   return Status;
 }(_react.Component);
 
@@ -149,4 +131,3 @@ Status.propTypes = {
 Status.defaultProps = {
   value: 'unknown'
 };
-module.exports = exports['default'];

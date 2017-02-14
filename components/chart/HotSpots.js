@@ -4,37 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -60,19 +32,27 @@ var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.CHART_HOT_SPOTS;
 
 // Interactive regions.
 
 var HotSpots = function (_Component) {
-  (0, _inherits3.default)(HotSpots, _Component);
+  _inherits(HotSpots, _Component);
 
   function HotSpots() {
-    (0, _classCallCheck3.default)(this, HotSpots);
+    _classCallCheck(this, HotSpots);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (HotSpots.__proto__ || (0, _getPrototypeOf2.default)(HotSpots)).call(this));
+    var _this = _possibleConstructorReturn(this, (HotSpots.__proto__ || Object.getPrototypeOf(HotSpots)).call(this));
 
     _this._onPreviousHotSpot = _this._onPreviousHotSpot.bind(_this);
     _this._onNextHotSpot = _this._onNextHotSpot.bind(_this);
@@ -82,7 +62,7 @@ var HotSpots = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(HotSpots, [{
+  _createClass(HotSpots, [{
     key: '_onHotSpotFocus',
     value: function _onHotSpotFocus() {
       this._keyboardHandlers = {
@@ -155,7 +135,7 @@ var HotSpots = function (_Component) {
           onActive = _props4.onActive,
           onClick = _props4.onClick,
           vertical = _props4.vertical,
-          props = (0, _objectWithoutProperties3.default)(_props4, ['a11yTitle', 'activeIndex', 'className', 'count', 'onActive', 'onClick', 'vertical']);
+          props = _objectWithoutProperties(_props4, ['a11yTitle', 'activeIndex', 'className', 'count', 'onActive', 'onClick', 'vertical']);
 
       delete props.height;
       delete props.width;
@@ -163,13 +143,13 @@ var HotSpots = function (_Component) {
       var intl = this.context.intl;
 
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '--clickable', onClick), _classnames), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--vertical', vertical), _defineProperty(_classnames, CLASS_ROOT + '--clickable', onClick), _classnames), className);
 
       var defaultBasis = 100 / (count - 1);
       var items = [];
 
       var _loop = function _loop(index) {
-        var bandClasses = (0, _classnames4.default)(CLASS_ROOT + '__band', (0, _defineProperty3.default)({}, CLASS_ROOT + '__band--active', index === activeIndex));
+        var bandClasses = (0, _classnames4.default)(CLASS_ROOT + '__band', _defineProperty({}, CLASS_ROOT + '__band--active', index === activeIndex));
         var basis = void 0;
         if (0 === index || index === count - 1) {
           basis = defaultBasis / 2;
@@ -199,7 +179,7 @@ var HotSpots = function (_Component) {
 
       return _react2.default.createElement(
         'div',
-        (0, _extends3.default)({}, props, { className: classes, style: { padding: _utils.padding },
+        _extends({}, props, { className: classes, style: { padding: _utils.padding },
           tabIndex: '0', onFocus: this._onHotSpotFocus,
           onBlur: this._onHotSpotBlur, role: 'group',
           'aria-label': hotSpotsLabel }),
@@ -207,6 +187,7 @@ var HotSpots = function (_Component) {
       );
     }
   }]);
+
   return HotSpots;
 }(_react.Component);
 
@@ -226,4 +207,3 @@ HotSpots.propTypes = {
   onClick: _react.PropTypes.func,
   vertical: _react.PropTypes.bool
 };
-module.exports = exports['default'];

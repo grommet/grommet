@@ -4,33 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -62,15 +38,24 @@ var _SocialMail2 = _interopRequireDefault(_SocialMail);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
 var SocialShare = function (_Component) {
-  (0, _inherits3.default)(SocialShare, _Component);
+  _inherits(SocialShare, _Component);
 
   function SocialShare() {
-    (0, _classCallCheck3.default)(this, SocialShare);
-    return (0, _possibleConstructorReturn3.default)(this, (SocialShare.__proto__ || (0, _getPrototypeOf2.default)(SocialShare)).apply(this, arguments));
+    _classCallCheck(this, SocialShare);
+
+    return _possibleConstructorReturn(this, (SocialShare.__proto__ || Object.getPrototypeOf(SocialShare)).apply(this, arguments));
   }
 
-  (0, _createClass3.default)(SocialShare, [{
+  _createClass(SocialShare, [{
     key: 'render',
     value: function render() {
       var _props = this.props,
@@ -81,8 +66,7 @@ var SocialShare = function (_Component) {
           text = _props.text,
           title = _props.title,
           a11yTitle = _props.a11yTitle,
-          props = (0, _objectWithoutProperties3.default)(_props, ['className', 'colorIndex', 'type', 'link', 'text', 'title', 'a11yTitle']);
-
+          props = _objectWithoutProperties(_props, ['className', 'colorIndex', 'type', 'link', 'text', 'title', 'a11yTitle']);
 
       var socialIcon = undefined;
       var href = '';
@@ -116,11 +100,12 @@ var SocialShare = function (_Component) {
         target = '_self';
       }
 
-      return _react2.default.createElement(_Anchor2.default, (0, _extends3.default)({}, props, { href: href, icon: socialIcon, target: target }));
+      return _react2.default.createElement(_Anchor2.default, _extends({}, props, { href: href, icon: socialIcon, target: target }));
     }
   }]);
+
   return SocialShare;
-}(_react.Component); // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+}(_react.Component);
 
 SocialShare.displayName = 'SocialShare';
 exports.default = SocialShare;
@@ -140,4 +125,3 @@ SocialShare.defaultProps = {
   text: '',
   title: ''
 };
-module.exports = exports['default'];

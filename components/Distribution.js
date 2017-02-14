@@ -4,37 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -64,8 +36,17 @@ var _Announcer = require('../utils/Announcer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var CLASS_ROOT = _CSSClassnames2.default.DISTRIBUTION; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.DISTRIBUTION;
 var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
@@ -78,12 +59,12 @@ var THIN_HEIGHT = 72;
 var GUTTER_SIZE = 4;
 
 var Distribution = function (_Component) {
-  (0, _inherits3.default)(Distribution, _Component);
+  _inherits(Distribution, _Component);
 
   function Distribution(props, context) {
-    (0, _classCallCheck3.default)(this, Distribution);
+    _classCallCheck(this, Distribution);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Distribution.__proto__ || (0, _getPrototypeOf2.default)(Distribution)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (Distribution.__proto__ || Object.getPrototypeOf(Distribution)).call(this, props, context));
 
     _this._onEnter = _this._onEnter.bind(_this);
     _this._onPreviousDistribution = _this._onPreviousDistribution.bind(_this);
@@ -102,7 +83,7 @@ var Distribution = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(Distribution, [{
+  _createClass(Distribution, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       this._keyboardHandlers = {
@@ -178,7 +159,7 @@ var Distribution = function (_Component) {
     key: '_boxRect',
     value: function _boxRect(itemRect, width, height) {
       // leave a gutter between items, if we're not at the edge
-      var boxRect = (0, _extends3.default)({}, itemRect);
+      var boxRect = _extends({}, itemRect);
       if (0 !== boxRect.x && width > boxRect.x + boxRect.width) {
         boxRect.x += GUTTER_SIZE / 2;
         boxRect.width -= GUTTER_SIZE;
@@ -202,7 +183,7 @@ var Distribution = function (_Component) {
   }, {
     key: '_labelRect',
     value: function _labelRect(boxRect) {
-      var labelRect = (0, _extends3.default)({}, boxRect);
+      var labelRect = _extends({}, boxRect);
       return labelRect;
     }
   }, {
@@ -410,7 +391,7 @@ var Distribution = function (_Component) {
           activeIndex = _state.activeIndex,
           width = _state.width;
 
-      var labelClasses = (0, _classnames7.default)(CLASS_ROOT + '__label', (_classnames = {}, (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '-' + this._itemColorIndex(datum, index), !datum.icon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--icons', datum.icon), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--small', labelRect.width < SMALL_SIZE || labelRect.height < SMALL_SIZE), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--thin', labelRect.height < THIN_HEIGHT), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__label--active', index === activeIndex), _classnames));
+      var labelClasses = (0, _classnames7.default)(CLASS_ROOT + '__label', (_classnames = {}, _defineProperty(_classnames, BACKGROUND_COLOR_INDEX + '-' + this._itemColorIndex(datum, index), !datum.icon), _defineProperty(_classnames, CLASS_ROOT + '__label--icons', datum.icon), _defineProperty(_classnames, CLASS_ROOT + '__label--small', labelRect.width < SMALL_SIZE || labelRect.height < SMALL_SIZE), _defineProperty(_classnames, CLASS_ROOT + '__label--thin', labelRect.height < THIN_HEIGHT), _defineProperty(_classnames, CLASS_ROOT + '__label--active', index === activeIndex), _classnames));
 
       var value = datum.labelValue !== undefined ? datum.labelValue : datum.value;
       var style = { top: labelRect.y };
@@ -451,7 +432,7 @@ var Distribution = function (_Component) {
   }, {
     key: '_renderItemBox',
     value: function _renderItemBox(boxRect, colorIndex) {
-      var boxClasses = (0, _classnames7.default)(CLASS_ROOT + '__item-box', (0, _defineProperty3.default)({}, COLOR_INDEX + '-' + colorIndex, colorIndex));
+      var boxClasses = (0, _classnames7.default)(CLASS_ROOT + '__item-box', _defineProperty({}, COLOR_INDEX + '-' + colorIndex, colorIndex));
 
       return _react2.default.createElement('rect', { className: boxClasses, x: boxRect.x, y: boxRect.y,
         width: boxRect.width, height: boxRect.height });
@@ -496,7 +477,7 @@ var Distribution = function (_Component) {
       var units = this.props.units;
 
 
-      var itemClasses = (0, _classnames7.default)(CLASS_ROOT + '__item', (0, _defineProperty3.default)({}, CLASS_ROOT + '__item--clickable', datum.onClick));
+      var itemClasses = (0, _classnames7.default)(CLASS_ROOT + '__item', _defineProperty({}, CLASS_ROOT + '__item--clickable', datum.onClick));
 
       var activeDistributionRef = void 0;
       if (index === this.state.activeIndex) {
@@ -579,7 +560,7 @@ var Distribution = function (_Component) {
           full = _props.full,
           size = _props.size,
           vertical = _props.vertical,
-          props = (0, _objectWithoutProperties3.default)(_props, ['a11yTitle', 'className', 'full', 'size', 'vertical']);
+          props = _objectWithoutProperties(_props, ['a11yTitle', 'className', 'full', 'size', 'vertical']);
 
       delete props.series;
       delete props.units;
@@ -592,7 +573,7 @@ var Distribution = function (_Component) {
           mouseActive = _state3.mouseActive,
           width = _state3.width;
 
-      var classes = (0, _classnames7.default)(CLASS_ROOT, (_classnames4 = {}, (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--full', full), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--icons', allIcons), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--' + size, size), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--vertical', vertical), (0, _defineProperty3.default)(_classnames4, CLASS_ROOT + '--loading', (items || []).length === 0), _classnames4), className);
+      var classes = (0, _classnames7.default)(CLASS_ROOT, (_classnames4 = {}, _defineProperty(_classnames4, CLASS_ROOT + '--full', full), _defineProperty(_classnames4, CLASS_ROOT + '--icons', allIcons), _defineProperty(_classnames4, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames4, CLASS_ROOT + '--vertical', vertical), _defineProperty(_classnames4, CLASS_ROOT + '--loading', (items || []).length === 0), _classnames4), className);
 
       var background = void 0;
       if (!allIcons) {
@@ -617,11 +598,11 @@ var Distribution = function (_Component) {
         ariaLabel = _Intl2.default.getMessage(intl, 'Loading');
       }
 
-      var graphicClasses = (0, _classnames7.default)(CLASS_ROOT + '__graphic', (0, _defineProperty3.default)({}, CLASS_ROOT + '__graphic--focus', focus));
+      var graphicClasses = (0, _classnames7.default)(CLASS_ROOT + '__graphic', _defineProperty({}, CLASS_ROOT + '__graphic--focus', focus));
 
       return _react2.default.createElement(
         'div',
-        (0, _extends3.default)({ ref: function ref(_ref3) {
+        _extends({ ref: function ref(_ref3) {
             return _this7._containerRef = _ref3;
           } }, props, { className: classes }),
         _react2.default.createElement(
@@ -664,6 +645,7 @@ var Distribution = function (_Component) {
       );
     }
   }]);
+
   return Distribution;
 }(_react.Component);
 
@@ -698,4 +680,3 @@ Distribution.propTypes = {
 Distribution.defaultProps = {
   size: 'medium'
 };
-module.exports = exports['default'];

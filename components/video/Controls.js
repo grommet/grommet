@@ -4,37 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -92,18 +64,26 @@ var _FormatTime = require('../../utils/FormatTime');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.VIDEO;
 var BUTTON_CLASS = CLASS_ROOT + '__button';
 
 var Controls = function (_Component) {
-  (0, _inherits3.default)(Controls, _Component);
+  _inherits(Controls, _Component);
 
   function Controls() {
-    (0, _classCallCheck3.default)(this, Controls);
+    _classCallCheck(this, Controls);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Controls.__proto__ || (0, _getPrototypeOf2.default)(Controls)).call(this));
+    var _this = _possibleConstructorReturn(this, (Controls.__proto__ || Object.getPrototypeOf(Controls)).call(this));
 
     _this._onChapterTickHover = _this._onChapterTickHover.bind(_this);
 
@@ -113,7 +93,7 @@ var Controls = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(Controls, [{
+  _createClass(Controls, [{
     key: '_onChapterTickHover',
     value: function _onChapterTickHover(index) {
       this.setState({ activeChapterIndex: index });
@@ -163,7 +143,8 @@ var Controls = function (_Component) {
       var _props2 = this.props,
           duration = _props2.duration,
           timeline = _props2.timeline,
-          props = (0, _objectWithoutProperties3.default)(_props2, ['duration', 'timeline']);
+          props = _objectWithoutProperties(_props2, ['duration', 'timeline']);
+
       var activeChapterIndex = this.state.activeChapterIndex;
 
 
@@ -172,7 +153,7 @@ var Controls = function (_Component) {
           var _classnames;
 
           var percent = chapter.time / duration * 100;
-          var classes = (0, _classnames3.default)(CLASS_ROOT + '__chapter-label', (_classnames = {}, (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__chapter-label-start', percent === 0), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__chapter-label-active', activeChapterIndex === index), _classnames));
+          var classes = (0, _classnames3.default)(CLASS_ROOT + '__chapter-label', (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '__chapter-label-start', percent === 0), _defineProperty(_classnames, CLASS_ROOT + '__chapter-label-active', activeChapterIndex === index), _classnames));
 
           return _react2.default.createElement(
             'div',
@@ -193,7 +174,7 @@ var Controls = function (_Component) {
 
         return _react2.default.createElement(
           _Box2.default,
-          (0, _extends3.default)({}, props, { pad: 'none', className: CLASS_ROOT + '__chapter-labels',
+          _extends({}, props, { pad: 'none', className: CLASS_ROOT + '__chapter-labels',
             direction: 'row' }),
           chapterLabels
         );
@@ -254,6 +235,7 @@ var Controls = function (_Component) {
       return overlayContent;
     }
   }]);
+
   return Controls;
 }(_react.Component);
 
@@ -264,4 +246,3 @@ exports.default = Controls;
 Controls.contextTypes = {
   intl: _react.PropTypes.object
 };
-module.exports = exports['default'];

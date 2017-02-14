@@ -4,41 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _typeof2 = require('babel-runtime/helpers/typeof');
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _objectWithoutProperties2 = require('babel-runtime/helpers/objectWithoutProperties');
-
-var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -88,7 +58,15 @@ var _Intl2 = _interopRequireDefault(_Intl);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.DATE_TIME;
 var INPUT = _CSSClassnames2.default.INPUT;
@@ -107,12 +85,12 @@ var FORMATS = {
 var TIME_REGEXP = new RegExp('[hmsa]');
 
 var DateTime = function (_Component) {
-  (0, _inherits3.default)(DateTime, _Component);
+  _inherits(DateTime, _Component);
 
   function DateTime(props, context) {
-    (0, _classCallCheck3.default)(this, DateTime);
+    _classCallCheck(this, DateTime);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (DateTime.__proto__ || (0, _getPrototypeOf2.default)(DateTime)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (DateTime.__proto__ || Object.getPrototypeOf(DateTime)).call(this, props, context));
 
     _this._onInputChange = _this._onInputChange.bind(_this);
     _this._onOpen = _this._onOpen.bind(_this);
@@ -130,7 +108,7 @@ var DateTime = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(DateTime, [{
+  _createClass(DateTime, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       this._activation(this.state.dropActive);
@@ -388,7 +366,7 @@ var DateTime = function (_Component) {
           className = _props4.className,
           format = _props4.format,
           value = _props4.value,
-          props = (0, _objectWithoutProperties3.default)(_props4, ['className', 'format', 'value']);
+          props = _objectWithoutProperties(_props4, ['className', 'format', 'value']);
 
       delete props.onChange;
       delete props.step;
@@ -397,12 +375,12 @@ var DateTime = function (_Component) {
           textValue = _state2.textValue;
       var intl = this.context.intl;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (0, _defineProperty3.default)({}, CLASS_ROOT + '--active', dropActive), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, _defineProperty({}, CLASS_ROOT + '--active', dropActive), className);
 
       var inputValue = textValue || value;
       if (value instanceof Date) {
         inputValue = (0, _moment2.default)(value).format(format);
-      } else if (value && (typeof value === 'undefined' ? 'undefined' : (0, _typeof3.default)(value)) === 'object') {
+      } else if (value && (typeof value === 'undefined' ? 'undefined' : _typeof(value)) === 'object') {
         inputValue = value.format(format);
       }
       var Icon = TIME_REGEXP.test(format) ? _Clock2.default : _Calendar2.default;
@@ -414,7 +392,7 @@ var DateTime = function (_Component) {
         { ref: function ref(_ref2) {
             return _this2._containerRef = _ref2;
           }, className: classes },
-        _react2.default.createElement('input', (0, _extends3.default)({ ref: function ref(_ref) {
+        _react2.default.createElement('input', _extends({ ref: function ref(_ref) {
             return _this2._inputRef = _ref;
           } }, props, {
           className: INPUT + ' ' + CLASS_ROOT + '__input', placeholder: format,
@@ -425,6 +403,7 @@ var DateTime = function (_Component) {
       );
     }
   }]);
+
   return DateTime;
 }(_react.Component);
 
@@ -450,4 +429,3 @@ DateTime.propTypes = {
   step: _react.PropTypes.number,
   value: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.object])
 };
-module.exports = exports['default'];

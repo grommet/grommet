@@ -4,41 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _extends3 = _interopRequireDefault(_extends2);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
-
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
-
-var _keys = require('babel-runtime/core-js/object/keys');
-
-var _keys2 = _interopRequireDefault(_keys);
-
-var _typeof2 = require('babel-runtime/helpers/typeof');
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
 
@@ -86,19 +56,25 @@ var _Announcer = require('../utils/Announcer');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.SEARCH;
 var INPUT = _CSSClassnames2.default.INPUT;
 var BACKGROUND_COLOR_INDEX = _CSSClassnames2.default.BACKGROUND_COLOR_INDEX;
 
 var Search = function (_Component) {
-  (0, _inherits3.default)(Search, _Component);
+  _inherits(Search, _Component);
 
   function Search(props, context) {
-    (0, _classCallCheck3.default)(this, Search);
+    _classCallCheck(this, Search);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Search.__proto__ || (0, _getPrototypeOf2.default)(Search)).call(this, props, context));
+    var _this = _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this, props, context));
 
     _this._onAddDrop = _this._onAddDrop.bind(_this);
     _this._onRemoveDrop = _this._onRemoveDrop.bind(_this);
@@ -126,7 +102,7 @@ var Search = function (_Component) {
     return _this;
   }
 
-  (0, _createClass3.default)(Search, [{
+  _createClass(Search, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _props = this.props,
@@ -449,7 +425,7 @@ var Search = function (_Component) {
   }, {
     key: '_renderLabel',
     value: function _renderLabel(suggestion) {
-      if ((typeof suggestion === 'undefined' ? 'undefined' : (0, _typeof3.default)(suggestion)) === 'object') {
+      if ((typeof suggestion === 'undefined' ? 'undefined' : _typeof(suggestion)) === 'object') {
         return suggestion.label || suggestion.value;
       } else {
         return suggestion;
@@ -471,12 +447,12 @@ var Search = function (_Component) {
           inline = _state3.inline,
           activeSuggestionIndex = _state3.activeSuggestionIndex;
 
-      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Search.propTypes));
-      var classes = (0, _classnames5.default)(CLASS_ROOT + '__drop', (_classnames = {}, (0, _defineProperty3.default)(_classnames, BACKGROUND_COLOR_INDEX + '-' + dropColorIndex, dropColorIndex), (0, _defineProperty3.default)(_classnames, CLASS_ROOT + '__drop--controlled', !inline), _classnames));
+      var restProps = _Props2.default.omit(this.props, Object.keys(Search.propTypes));
+      var classes = (0, _classnames5.default)(CLASS_ROOT + '__drop', (_classnames = {}, _defineProperty(_classnames, BACKGROUND_COLOR_INDEX + '-' + dropColorIndex, dropColorIndex), _defineProperty(_classnames, CLASS_ROOT + '__drop--controlled', !inline), _classnames));
 
       var input = void 0;
       if (!inline) {
-        input = _react2.default.createElement('input', (0, _extends3.default)({}, restProps, { key: 'input', ref: function ref(_ref) {
+        input = _react2.default.createElement('input', _extends({}, restProps, { key: 'input', ref: function ref(_ref) {
             return _this3._inputRef = _ref;
           },
           type: 'search', autoComplete: 'off', value: value,
@@ -488,7 +464,7 @@ var Search = function (_Component) {
       var suggestionsNode = void 0;
       if (suggestions) {
         suggestionsNode = suggestions.map(function (suggestion, index) {
-          var classes = (0, _classnames5.default)(CLASS_ROOT + '__suggestion', (0, _defineProperty3.default)({}, CLASS_ROOT + '__suggestion--active', index === activeSuggestionIndex));
+          var classes = (0, _classnames5.default)(CLASS_ROOT + '__suggestion', _defineProperty({}, CLASS_ROOT + '__suggestion--active', index === activeSuggestionIndex));
 
           return _react2.default.createElement(
             'div',
@@ -547,14 +523,14 @@ var Search = function (_Component) {
           value = _props6.value;
       var inline = this.state.inline;
 
-      var restProps = _Props2.default.omit(this.props, (0, _keys2.default)(Search.propTypes));
-      var classes = (0, _classnames5.default)(CLASS_ROOT, (_classnames3 = {}, (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--controlled', !inline), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--fill', fill), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--icon-align-' + iconAlign, iconAlign), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--pad-' + pad, pad), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--inline', inline), (0, _defineProperty3.default)(_classnames3, CLASS_ROOT + '--' + size, size), _classnames3), className);
+      var restProps = _Props2.default.omit(this.props, Object.keys(Search.propTypes));
+      var classes = (0, _classnames5.default)(CLASS_ROOT, (_classnames3 = {}, _defineProperty(_classnames3, CLASS_ROOT + '--controlled', !inline), _defineProperty(_classnames3, CLASS_ROOT + '--fill', fill), _defineProperty(_classnames3, CLASS_ROOT + '--icon-align-' + iconAlign, iconAlign), _defineProperty(_classnames3, CLASS_ROOT + '--pad-' + pad, pad), _defineProperty(_classnames3, CLASS_ROOT + '--inline', inline), _defineProperty(_classnames3, CLASS_ROOT + '--' + size, size), _classnames3), className);
 
       if (inline) {
         return _react2.default.createElement(
           'div',
           { className: classes },
-          _react2.default.createElement('input', (0, _extends3.default)({}, restProps, { ref: function ref(_ref2) {
+          _react2.default.createElement('input', _extends({}, restProps, { ref: function ref(_ref2) {
               return _this4._inputRef = _ref2;
             },
             type: 'search', id: id, placeholder: placeHolder,
@@ -577,6 +553,7 @@ var Search = function (_Component) {
       }
     }
   }]);
+
   return Search;
 }(_react.Component);
 
@@ -617,4 +594,3 @@ Search.propTypes = {
   }), _react.PropTypes.string])),
   value: _react.PropTypes.string
 };
-module.exports = exports['default'];
