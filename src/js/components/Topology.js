@@ -223,7 +223,7 @@ export default class Topology extends Component {
             startElement.getAttribute('aria-label') || startElement.innerText
           );
           const endLabel = (
-            endElement.getAttribute('aria-label') || end.innerText
+            endElement.getAttribute('aria-label') || endElement.innerText
           );
           if (connectsMap[startId]) {
             connectsMap[startId].push(endLabel);
