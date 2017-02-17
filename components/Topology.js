@@ -311,7 +311,7 @@ var Topology = function (_Component3) {
             var endElement = document.getElementById(endId);
             if (startElement && endElement) {
               var startLabel = startElement.getAttribute('aria-label') || startElement.innerText;
-              var endLabel = endElement.getAttribute('aria-label') || end.innerText;
+              var endLabel = endElement.getAttribute('aria-label') || endElement.innerText;
               if (connectsMap[startId]) {
                 connectsMap[startId].push(endLabel);
               } else {
