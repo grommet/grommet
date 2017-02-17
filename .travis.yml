@@ -5,8 +5,10 @@ sudo: false
 cache:
   directories:
   - node_modules
-before_script:
+install:
+- npm install
 - npm install -g codeclimate-test-reporter
+before_script:
 - npm rebuild node-sass
 - gulp generate-index-icons
 - gulp preprocess
