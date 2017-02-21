@@ -259,7 +259,7 @@ export default class Carousel extends Component {
     );
 
     const trackWidth = width * children.length;
-    const trackPosition = -(width * activeIndex);
+    const trackOffset = width * activeIndex;
 
     const tiles = React.Children.map(children, (child, index) => {
       const ariaHidden = activeIndex !== index ? true : false;
@@ -309,7 +309,8 @@ export default class Carousel extends Component {
         <div className={`${CLASS_ROOT}__track`}
           style={{
             width: (trackWidth && trackWidth > 0) ? trackWidth : '',
-            marginLeft: trackPosition
+            marginLeft: - trackOffset,
+            marginRight: - (trackWidth - trackOffset - width)
           }}>
           <Tiles fill={true} responsive={false} wrap={false} direction="row">
             {tiles}

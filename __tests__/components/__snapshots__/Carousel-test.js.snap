@@ -12,6 +12,7 @@ exports[`Carousel has correct default options 1`] = `
     style={
       Object {
         "marginLeft": -0,
+        "marginRight": -0,
         "width": "",
       }
     }>
@@ -172,6 +173,7 @@ exports[`Carousel renders class name properties 1`] = `
     style={
       Object {
         "marginLeft": -0,
+        "marginRight": -0,
         "width": "",
       }
     }>
@@ -335,6 +337,7 @@ exports[`Carousel renders microdata properties 1`] = `
     style={
       Object {
         "marginLeft": -0,
+        "marginRight": -0,
         "width": "",
       }
     }>
