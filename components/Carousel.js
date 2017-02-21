@@ -362,7 +362,7 @@ var Carousel = function (_Component) {
       var classes = (0, _classnames4.default)(CLASS_ROOT, _defineProperty({}, CLASS_ROOT + '--hide-controls', hideControls), className);
 
       var trackWidth = width * children.length;
-      var trackPosition = -(width * activeIndex);
+      var trackOffset = width * activeIndex;
 
       var tiles = _react2.default.Children.map(children, function (child, index) {
         var ariaHidden = activeIndex !== index ? true : false;
@@ -411,7 +411,8 @@ var Carousel = function (_Component) {
           { className: CLASS_ROOT + '__track',
             style: {
               width: trackWidth && trackWidth > 0 ? trackWidth : '',
-              marginLeft: trackPosition
+              marginLeft: -trackOffset,
+              marginRight: -(trackWidth - trackOffset - width)
             } },
           _react2.default.createElement(
             _Tiles2.default,
