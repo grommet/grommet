@@ -10,9 +10,6 @@ exports[`Article has correct default options 1`] = `
   role={undefined}
   style={Object {}}
   tabIndex={undefined}>
-  <a
-    aria-hidden="true"
-    tabIndex="-1" />
   <h1
     className="grommetux-heading">
     Title
@@ -31,6 +28,9 @@ exports[`Article has correct default options 1`] = `
       Lorem ipsum ...
     </p>
   </section>
+  <a
+    aria-hidden="true"
+    tabIndex="-1" />
 </article>
 `;
 
@@ -46,9 +46,6 @@ exports[`Article renders a classname 1`] = `
   role={undefined}
   style={Object {}}
   tabIndex={undefined}>
-  <a
-    aria-hidden="true"
-    tabIndex="-1" />
   <h1
     className="grommetux-heading">
     Title
@@ -67,6 +64,9 @@ exports[`Article renders a classname 1`] = `
       Lorem ipsum ...
     </p>
   </section>
+  <a
+    aria-hidden="true"
+    tabIndex="-1" />
 </article>
 `;
 
@@ -85,9 +85,6 @@ exports[`Article renders microdata properties 1`] = `
   role={undefined}
   style={Object {}}
   tabIndex={undefined}>
-  <a
-    aria-hidden="true"
-    tabIndex="-1" />
   <h1
     className="grommetux-heading">
     Title
@@ -106,5 +103,8 @@ exports[`Article renders microdata properties 1`] = `
       Lorem ipsum ...
     </p>
   </section>
+  <a
+    aria-hidden="true"
+    tabIndex="-1" />
 </article>
 `;
