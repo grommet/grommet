@@ -69,6 +69,7 @@ export default class CheckBox extends Component {
 CheckBox.propTypes = {
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
+  id: PropTypes.string,
   label: PropTypes.node,
   name: PropTypes.string,
   onChange: PropTypes.func,
