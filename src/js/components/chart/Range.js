@@ -118,14 +118,14 @@ export default class Range extends Component {
 
       } else if ('start' === mouseDown) {
         nextActive = {
-          start: mouseUpIndex,
+          start: Math.min(mouseUpIndex, active.end - 1),
           end: active.end
         };
 
       } else if ('end' === mouseDown) {
         nextActive = {
           start: active.start,
-          end: mouseUpIndex
+          end: Math.max(mouseUpIndex, active.start + 1)
         };
       }
 
@@ -167,11 +167,11 @@ export default class Range extends Component {
         start = active.start + delta;
         end = active.end + delta;
       } else if ('start' === mouseDown && mouseMoveIndex >= 0) {
-        start = mouseMoveIndex;
+        start = Math.min(mouseMoveIndex, active.end - 1);
         end = active.end;
       } else if ('end' === mouseDown && mouseMoveIndex >= 0) {
         start = active.start;
-        end = mouseMoveIndex;
+        end = Math.max(mouseMoveIndex, active.start + 1);
       } else {
         start = active.start;
         end = active.end;
