@@ -80,6 +80,7 @@ var Search = function (_Component) {
     _this._onRemoveDrop = _this._onRemoveDrop.bind(_this);
     _this._onFocusInput = _this._onFocusInput.bind(_this);
     _this._onChangeInput = _this._onChangeInput.bind(_this);
+    _this._onClickBody = _this._onClickBody.bind(_this);
     _this._onNextSuggestion = _this._onNextSuggestion.bind(_this);
     _this._onPreviousSuggestion = _this._onPreviousSuggestion.bind(_this);
     _this._announceSuggestion = _this._announceSuggestion.bind(_this);
@@ -158,7 +159,7 @@ var Search = function (_Component) {
       };
 
       if (!dropActive && prevState.dropActive) {
-        document.removeEventListener('click', this._onRemoveDrop);
+        document.removeEventListener('click', this._onClickBody);
         _KeyboardAccelerators2.default.stopListeningToKeyboard(this, activeKeyboardHandlers);
         if (this._drop) {
           this._drop.remove();
@@ -167,12 +168,7 @@ var Search = function (_Component) {
       }
 
       if (dropActive && !prevState.dropActive) {
-        // Slow down adding the click handler,
-        // otherwise the drop will close when the mouse is released.
-        // Not observable in Safari, 1ms is sufficient for Chrome,
-        // Firefox needs 100ms though. :(
-        // TODO: re-evaluate how to solve this without a timeout.
-        document.addEventListener('click', this._onRemoveDrop);
+        document.addEventListener('click', this._onClickBody);
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
 
         var baseElement = void 0;
@@ -187,7 +183,7 @@ var Search = function (_Component) {
         };
         this._drop = new _Drop2.default(baseElement, this._renderDropContent(), {
           align: align,
-          focusControl: true,
+          focusControl: !inline,
           responsive: false // so suggestion changes don't re-align
         });
 
@@ -211,7 +207,7 @@ var Search = function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      document.removeEventListener('click', this._onRemoveDrop);
+      document.removeEventListener('click', this._onClickBody);
       _KeyboardAccelerators2.default.stopListeningToKeyboard(this);
       if (this._responsive) {
         this._responsive.stop();
@@ -252,7 +248,7 @@ var Search = function (_Component) {
           event.preventDefault();
 
           if (event.keyCode === down && !dropActive && inline) {
-            this._onAddDrop(event);
+            this._onAddDrop();
           }
         }
       }
@@ -261,9 +257,16 @@ var Search = function (_Component) {
       }
     }
   }, {
+    key: '_onClickBody',
+    value: function _onClickBody(event) {
+      // don't close drop when clicking on input
+      if (event.target !== this._inputRef) {
+        this._onRemoveDrop();
+      }
+    }
+  }, {
     key: '_onAddDrop',
-    value: function _onAddDrop(event) {
-      event.preventDefault();
+    value: function _onAddDrop() {
       this.setState({ dropActive: true, activeSuggestionIndex: -1 });
     }
   }, {
@@ -276,12 +279,10 @@ var Search = function (_Component) {
     value: function _onFocusInput(event) {
       var onFocus = this.props.onFocus;
 
-      this.setState({
-        activeSuggestionIndex: -1
-      });
       if (onFocus) {
         onFocus(event);
       }
+      this._onAddDrop();
     }
   }, {
     key: '_fireDOMChange',
