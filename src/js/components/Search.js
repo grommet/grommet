@@ -26,6 +26,7 @@ export default class Search extends Component {
     this._onRemoveDrop = this._onRemoveDrop.bind(this);
     this._onFocusInput = this._onFocusInput.bind(this);
     this._onChangeInput = this._onChangeInput.bind(this);
+    this._onClickBody = this._onClickBody.bind(this);
     this._onNextSuggestion = this._onNextSuggestion.bind(this);
     this._onPreviousSuggestion = this._onPreviousSuggestion.bind(this);
     this._announceSuggestion = this._announceSuggestion.bind(this);
@@ -87,7 +88,7 @@ export default class Search extends Component {
     };
 
     if (! dropActive && prevState.dropActive) {
-      document.removeEventListener('click', this._onRemoveDrop);
+      document.removeEventListener('click', this._onClickBody);
       KeyboardAccelerators.stopListeningToKeyboard(this,
         activeKeyboardHandlers);
       if (this._drop) {
@@ -97,12 +98,7 @@ export default class Search extends Component {
     }
 
     if (dropActive && ! prevState.dropActive) {
-      // Slow down adding the click handler,
-      // otherwise the drop will close when the mouse is released.
-      // Not observable in Safari, 1ms is sufficient for Chrome,
-      // Firefox needs 100ms though. :(
-      // TODO: re-evaluate how to solve this without a timeout.
-      document.addEventListener('click', this._onRemoveDrop);
+      document.addEventListener('click', this._onClickBody);
       KeyboardAccelerators.startListeningToKeyboard(this,
         activeKeyboardHandlers);
 
@@ -118,7 +114,7 @@ export default class Search extends Component {
       };
       this._drop = new Drop(baseElement, this._renderDropContent(), {
         align: align,
-        focusControl: true,
+        focusControl: ! inline,
         responsive: false // so suggestion changes don't re-align
       });
 
@@ -143,7 +139,7 @@ export default class Search extends Component {
   }
 
   componentWillUnmount () {
-    document.removeEventListener('click', this._onRemoveDrop);
+    document.removeEventListener('click', this._onClickBody);
     KeyboardAccelerators.stopListeningToKeyboard(this);
     if (this._responsive) {
       this._responsive.stop();
@@ -177,7 +173,7 @@ export default class Search extends Component {
         event.preventDefault();
 
         if (event.keyCode === down && !dropActive && inline) {
-          this._onAddDrop(event);
+          this._onAddDrop();
         }
       }
     }
@@ -186,8 +182,14 @@ export default class Search extends Component {
     }
   }
 
-  _onAddDrop (event) {
-    event.preventDefault();
+  _onClickBody (event) {
+    // don't close drop when clicking on input
+    if (event.target !== this._inputRef) {
+      this._onRemoveDrop();
+    }
+  }
+
+  _onAddDrop () {
     this.setState({ dropActive: true, activeSuggestionIndex: -1 });
   }
 
@@ -197,12 +199,10 @@ export default class Search extends Component {
 
   _onFocusInput (event) {
     const { onFocus } = this.props;
-    this.setState({
-      activeSuggestionIndex: -1
-    });
     if (onFocus) {
       onFocus(event);
     }
+    this._onAddDrop();
   }
 
   _fireDOMChange () {
