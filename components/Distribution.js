@@ -97,7 +97,8 @@ var Distribution = function (_Component) {
       _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
 
       window.addEventListener('resize', this._onResize);
-      this._onResize();
+      // delay to allow page layout to settle
+      this._resizeTimer = setTimeout(this._layout, 200);
     }
   }, {
     key: 'componentWillReceiveProps',
