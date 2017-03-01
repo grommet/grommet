@@ -487,16 +487,21 @@ var Search = function (_Component) {
       var contents = [input, suggestionsNode];
 
       if (!inline) {
-        contents = [_react2.default.createElement(_Button2.default, { key: 'icon', icon: _react2.default.createElement(_Search2.default, null),
-          className: CLASS_ROOT + '__drop-control',
-          onClick: this._onRemoveDrop }), _react2.default.createElement(
+        contents = [_react2.default.createElement(
           'div',
           { key: 'contents', className: CLASS_ROOT + '__drop-contents',
             onClick: this._onSink },
           contents
         )];
-        if (dropAlign && !dropAlign.left) {
-          contents.reverse();
+        if (!dropAlign || !dropAlign.top && !dropAlign.bottom) {
+          var control = _react2.default.createElement(_Button2.default, { key: 'icon', icon: _react2.default.createElement(_Search2.default, null),
+            className: CLASS_ROOT + '__drop-control',
+            onClick: this._onRemoveDrop });
+          if (!dropAlign || dropAlign.left === 'left') {
+            contents.unshift(control);
+          } else if (dropAlign.right === 'right') {
+            contents.push(control);
+          }
         }
       }
 
