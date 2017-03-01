@@ -384,16 +384,22 @@ export default class Search extends Component {
 
     if (!inline) {
       contents = [
-        <Button key='icon' icon={<SearchIcon />}
-          className={`${CLASS_ROOT}__drop-control`}
-          onClick={this._onRemoveDrop} />,
         <div key='contents' className={`${CLASS_ROOT}__drop-contents`}
           onClick={this._onSink}>
           {contents}
         </div>
       ];
-      if (dropAlign && ! dropAlign.left) {
-        contents.reverse();
+      if (! dropAlign || (! dropAlign.top && ! dropAlign.bottom)) {
+        const control = (
+          <Button key='icon' icon={<SearchIcon />}
+            className={`${CLASS_ROOT}__drop-control`}
+            onClick={this._onRemoveDrop} />
+        );
+        if (! dropAlign || dropAlign.left === 'left') {
+          contents.unshift(control);
+        } else if (dropAlign.right === 'right') {
+          contents.push(control);
+        }
       }
     }
 
