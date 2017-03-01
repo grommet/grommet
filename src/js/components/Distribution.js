@@ -37,7 +37,7 @@ export default class Distribution extends Component {
     this.state = this._stateFromProps(props);
     this.state.width = DEFAULT_WIDTH;
     this.state.height = DEFAULT_HEIGHT;
-    this.state.activeIndex = 0;
+    this.state.activeIndex = -1;
     this.state.mouseActive = false;
   }
 
@@ -319,7 +319,7 @@ export default class Distribution extends Component {
   }
 
   _onDeactivate () {
-    this.setState({ activeIndex: 0 });
+    this.setState({ activeIndex: -1 });
   }
 
   _renderItemLabel (datum, labelRect, index) {
@@ -345,12 +345,15 @@ export default class Distribution extends Component {
       style.maxWidth = labelRect.width;
       style.maxHeight = labelRect.height;
     } else {
+      // 4 is to align with styled border width
       if (labelRect.width < SMALL_SIZE &&
         (labelRect.x + labelRect.width) >= width) {
-        style.right = width - (labelRect.x + labelRect.width);
+        style.right = width - (labelRect.x + labelRect.width + 4);
       } else {
-        style.left = labelRect.x;
+        style.left = labelRect.x - 2;
       }
+      style.minWidth = labelRect.width + 4;
+      style.minHeight = labelRect.height;
     }
 
     return (
