@@ -71,7 +71,11 @@
 }
 
 .#{$grommet-namespace}distribution__label--active {
+  z-index: 10;
   color: $text-color;
+  border-right: 2px solid $secondary-background-color;
+  border-left: 2px solid $secondary-background-color;
+  opacity: 0.9;
 }
 
 .#{$grommet-namespace}distribution__label--thin {

@@ -78,7 +78,7 @@ var Distribution = function (_Component) {
     _this.state = _this._stateFromProps(props);
     _this.state.width = DEFAULT_WIDTH;
     _this.state.height = DEFAULT_HEIGHT;
-    _this.state.activeIndex = 0;
+    _this.state.activeIndex = -1;
     _this.state.mouseActive = false;
     return _this;
   }
@@ -380,7 +380,7 @@ var Distribution = function (_Component) {
   }, {
     key: '_onDeactivate',
     value: function _onDeactivate() {
-      this.setState({ activeIndex: 0 });
+      this.setState({ activeIndex: -1 });
     }
   }, {
     key: '_renderItemLabel',
@@ -400,11 +400,14 @@ var Distribution = function (_Component) {
         style.maxWidth = labelRect.width;
         style.maxHeight = labelRect.height;
       } else {
+        // 4 is to align with styled border width
         if (labelRect.width < SMALL_SIZE && labelRect.x + labelRect.width >= width) {
-          style.right = width - (labelRect.x + labelRect.width);
+          style.right = width - (labelRect.x + labelRect.width + 4);
         } else {
-          style.left = labelRect.x;
+          style.left = labelRect.x - 2;
         }
+        style.minWidth = labelRect.width + 4;
+        style.minHeight = labelRect.height;
       }
 
       return _react2.default.createElement(

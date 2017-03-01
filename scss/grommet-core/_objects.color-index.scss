@@ -265,3 +265,7 @@
     box-shadow: 0 0 0 $inuit-base-spacing-unit nth($brand-light-colors, $i);
   }
 }
+
+.#{$grommet-namespace}background-color-index-unset {
+  background-color: $unset-color;
+}
