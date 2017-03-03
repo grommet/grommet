@@ -80,7 +80,7 @@ export default class DateTimeDrop extends Component {
   _buildDateRows (state) {
     const { timeOfDay, value } = state;
     const start = moment(value).startOf('month').startOf('week').add(timeOfDay);
-    const end = moment(start).add(41, 'days');
+    const end = moment(start).add(41, 'days').add(timeOfDay);
     let date = moment(start);
     const dateRows = [];
     let activeCell;
