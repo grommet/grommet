@@ -34,8 +34,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   opacity: 1; // for --hidden
 
   @include media-query(lap-and-up) {
-    max-width: 100%;
-    width: $form-width;
+    width: 100%;
     overflow: auto;
     transition: all 0.4s, padding-top 0.3s 0.1s, padding-bottom 0.3s 0.1s;
   }
