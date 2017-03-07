@@ -80,7 +80,9 @@ export default class DateTimeDrop extends Component {
   _buildDateRows (state) {
     const { timeOfDay, value } = state;
     const start = moment(value).startOf('month').startOf('week').add(timeOfDay);
-    const end = moment(value).endOf('month').endOf('week').add(timeOfDay);
+    // Always display 6 weeks in the calendar, to keep the date/time
+    // change controls from jumping around.
+    const end = moment(start).add(41, 'days').add(timeOfDay);
     let date = moment(start);
     const dateRows = [];
     let activeCell;
