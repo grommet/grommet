@@ -149,7 +149,9 @@ var DateTimeDrop = function (_Component) {
           value = state.value;
 
       var start = (0, _moment2.default)(value).startOf('month').startOf('week').add(timeOfDay);
-      var end = (0, _moment2.default)(value).endOf('month').endOf('week').add(timeOfDay);
+      // Always display 6 weeks in the calendar, to keep the date/time
+      // change controls from jumping around.
+      var end = (0, _moment2.default)(start).add(41, 'days').add(timeOfDay);
       var date = (0, _moment2.default)(start);
       var dateRows = [];
       var activeCell = void 0;
