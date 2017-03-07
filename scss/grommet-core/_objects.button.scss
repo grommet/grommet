@@ -91,29 +91,6 @@ $button-horizontal-padding:
   }
 }
 
-.#{$grommet-namespace}button--primary {
-  &:not(.#{$grommet-namespace}button--focus) {
-    border-color: $brand-color;
-  }
-  background-color: $brand-color;
-  color: $active-colored-text-color;
-
-  &:hover:not(.#{$grommet-namespace}button--disabled) {
-    color: $active-colored-text-color;
-
-   .#{$grommet-namespace}button__icon .#{$grommet-namespace}control-icon {
-      @include icon-color($active-colored-icon-color)
-    }
-  }
-
-  .#{$grommet-namespace}control-icon {
-    @include icon-color($active-colored-icon-color);
-  }
-
-  @include background-context-color($active-colored-text-color,
-    $active-colored-text-color);
-}
-
 .#{$grommet-namespace}button--secondary:not(.#{$grommet-namespace}button--focus) {
   border-color: $button-secondary-color;
 }
@@ -156,12 +133,37 @@ $button-horizontal-padding:
 .#{$grommet-namespace}button:not(.#{$grommet-namespace}button--plain) {
   .#{$grommet-namespace}button__icon {
 
-    @include background-context-icon($button-text-color, $button-text-color);
+    // @include background-context-icon($button-text-color, $button-text-color);
 
     + .#{$grommet-namespace}button__label {
       margin-left: halve($inuit-base-spacing-unit);
     }
   }
+}
+
+.#{$grommet-namespace}button--primary {
+  &:not(.#{$grommet-namespace}button--focus) {
+    border-color: $brand-color;
+  }
+  background-color: $brand-color;
+  color: $active-colored-text-color;
+
+  &:hover:not(.#{$grommet-namespace}button--disabled) {
+    color: $active-colored-text-color;
+
+   .#{$grommet-namespace}button__icon .#{$grommet-namespace}control-icon {
+      @include icon-color($active-colored-icon-color)
+    }
+  }
+
+  .#{$grommet-namespace}control-icon {
+    @include icon-color($active-colored-icon-color);
+  }
+
+  @include background-context-color($active-colored-text-color,
+    $active-colored-text-color);
+
+  @include background-context-icon($active-colored-text-color, $active-colored-text-color);
 }
 
 .#{$grommet-namespace}button--disabled {
