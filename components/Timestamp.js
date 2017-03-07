@@ -39,6 +39,7 @@ var CLASS_ROOT = _CSSClassnames2.default.TIMESTAMP;
 var FORMATS = {
   year: 'numeric',
   month: 'short',
+  'month-full': 'long',
   day: 'numeric',
   hour: '2-digit',
   minute: '2-digit',
@@ -101,6 +102,8 @@ var Timestamp = function (_Component) {
       }
       if (_showField('month', fields)) {
         dateOptions.month = FORMATS.month;
+      } else if (_showField('month-full', fields)) {
+        dateOptions.month = FORMATS['month-full'];
       }
       if (_showField('day', fields)) {
         dateOptions.day = FORMATS.day;
@@ -175,7 +178,7 @@ Timestamp.displayName = 'Timestamp';
 exports.default = Timestamp;
 
 
-var FIELD_TYPES = _react.PropTypes.oneOf(['date', 'time', 'year', 'month', 'day', 'hour', 'minute', 'second', 'hours', 'minutes', 'seconds' // deprecated
+var FIELD_TYPES = _react.PropTypes.oneOf(['date', 'time', 'year', 'month', 'month-full', 'day', 'hour', 'minute', 'second', 'hours', 'minutes', 'seconds' // deprecated
 ]);
 
 Timestamp.propTypes = {
