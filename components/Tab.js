@@ -99,7 +99,7 @@ exports.default = Tab;
 
 
 Tab.propTypes = {
-  title: _react.PropTypes.string.isRequired,
+  title: _react.PropTypes.node.isRequired,
   active: _react.PropTypes.bool,
   id: _react.PropTypes.string,
   onRequestForActive: _react.PropTypes.func // from Tabs
