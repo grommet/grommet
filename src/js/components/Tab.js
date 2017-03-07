@@ -48,7 +48,7 @@ export default class Tab extends Component {
 }
 
 Tab.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.node.isRequired,
   active: PropTypes.bool,
   id: PropTypes.string,
   onRequestForActive: PropTypes.func // from Tabs
