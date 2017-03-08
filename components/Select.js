@@ -552,8 +552,8 @@ var Select = function (_Component) {
               return _this5.inputRef = _ref2;
             },
             className: INPUT + ' ' + CLASS_ROOT + '__input',
-            placeholder: placeHolder,
-            disabled: true, value: this._renderValue(value) || '' })),
+            placeholder: placeHolder, readOnly: true,
+            value: this._renderValue(value) || '' })),
           _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control',
             a11yTitle: _Intl2.default.getMessage(intl, 'Select Icon'),
             icon: _react2.default.createElement(_CaretDown2.default, null), onClick: this._onAddDrop })

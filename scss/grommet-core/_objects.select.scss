@@ -12,8 +12,9 @@
   padding-right: round($inuit-base-spacing-unit * 2.5);
   cursor: inherit;
   color: inherit;
+  pointer-events: none;
 
-  &:disabled {
+  &[readonly] {
     color: $text-color;
 
     #{$dark-background-context} {
