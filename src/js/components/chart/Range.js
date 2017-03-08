@@ -23,34 +23,24 @@ export default class Range extends Component {
   }
 
   componentWillUnmount () {
-    const { mouseDown } = this.state;
-    if (mouseDown) {
+    const { mouseDownSource } = this.state;
+    if (mouseDownSource) {
       window.removeEventListener('mouseup', this._onMouseUp);
     }
   }
 
-  _valueToIndex (value) {
-    const { count, vertical } = this.props;
-    const rect = this.rangeRef.getBoundingClientRect();
-    const total = vertical ? rect.height : rect.width;
-    return Math.round((value / total) * (count - 1));
-  }
-
-  _percentForIndex (index) {
-    const { count } = this.props;
-    return (100 / (count - 1)) * Math.min(index, count - 1);
-  }
-
-  _mouseIndex (event) {
+  _mouseIndex (event, source) {
     const { active, count, vertical } = this.props;
-    const { mouseDown, mouseDownIndex } = this.state;
-    const rect = this.rangeRef.getBoundingClientRect();
+    const { mouseDownIndex } = this.state;
+    const rect = this._rangeRef.getBoundingClientRect();
     const value = (vertical ? (event.clientY - rect.top) :
       (event.clientX - rect.left));
-    let index = this._valueToIndex(value);
+    // convert value to index
+    const total = vertical ? rect.height : rect.width;
+    let index = Math.round((value / total) * (count - 1));
 
     // constrain index to keep it within range as needed
-    if ('active' === mouseDown && mouseDownIndex >= 0) {
+    if ('active' === source && mouseDownIndex >= 0) {
       if (index > mouseDownIndex) {
         // moving right/down
         index = Math.min(mouseDownIndex + count - 1 - active.end, index);
@@ -58,9 +48,9 @@ export default class Range extends Component {
         // moving up/left
         index = Math.max(mouseDownIndex - active.start, index);
       }
-    } else if ('start' === mouseDown) {
+    } else if ('start' === source) {
       index = Math.min(active.end, index);
-    } else if ('end' === mouseDown) {
+    } else if ('end' === source) {
       index = Math.max(active.start, index);
     }
 
@@ -70,9 +60,9 @@ export default class Range extends Component {
   _mouseDown (source) {
     return (event) => {
       event.stopPropagation(); // so start and end don't trigger range
-      const index = this._mouseIndex(event);
+      const index = this._mouseIndex(event, source);
       this.setState({
-        mouseDown: source,
+        mouseDownSource: source,
         mouseDownIndex: index
       });
       window.addEventListener('mouseup', this._onMouseUp);
@@ -82,8 +72,8 @@ export default class Range extends Component {
   _onMouseUp (event) {
     window.removeEventListener('mouseup', this._onMouseUp);
     const { active, onActive, count } = this.props;
-    const { mouseDown, mouseDownIndex, moved } = this.state;
-    let mouseUpIndex = this._mouseIndex(event);
+    const { mouseDownSource, mouseDownIndex, moved } = this.state;
+    let mouseUpIndex = this._mouseIndex(event, mouseDownSource);
 
     if (mouseUpIndex < 0) {
       mouseUpIndex = 0;
@@ -92,7 +82,7 @@ export default class Range extends Component {
     }
 
     this.setState({
-      mouseDown: false,
+      mouseDownSource: false,
       mouseDownIndex: undefined,
       mouseMoveIndex: undefined,
       moved: false
@@ -101,7 +91,7 @@ export default class Range extends Component {
     if (onActive) {
       let nextActive;
 
-      if ('range' === mouseDown) {
+      if ('range' === mouseDownSource) {
         if (moved) {
           nextActive = {
             start: Math.min(mouseDownIndex, mouseUpIndex),
@@ -109,23 +99,23 @@ export default class Range extends Component {
           };
         }
 
-      } else if ('active' === mouseDown) {
+      } else if ('active' === mouseDownSource) {
         const delta = mouseUpIndex - mouseDownIndex;
         nextActive = {
           start: active.start + delta,
           end: active.end + delta
         };
 
-      } else if ('start' === mouseDown) {
+      } else if ('start' === mouseDownSource) {
         nextActive = {
-          start: Math.min(mouseUpIndex, active.end - 1),
+          start: Math.min(mouseUpIndex, active.end),
           end: active.end
         };
 
-      } else if ('end' === mouseDown) {
+      } else if ('end' === mouseDownSource) {
         nextActive = {
           start: active.start,
-          end: Math.max(mouseUpIndex, active.start + 1)
+          end: Math.max(mouseUpIndex, active.start)
         };
       }
 
@@ -134,8 +124,8 @@ export default class Range extends Component {
   }
 
   _onMouseMove (event) {
-    const { mouseMoveIndex } = this.state;
-    const index = this._mouseIndex(event);
+    const { mouseDownSource, mouseMoveIndex } = this.state;
+    const index = this._mouseIndex(event, mouseDownSource);
     if (index !== mouseMoveIndex) {
       this.setState({ mouseMoveIndex: index, moved: true });
     }
@@ -145,33 +135,33 @@ export default class Range extends Component {
     const {
       active, className, count, onActive, vertical, ...props
     } = this.props;
-    const { mouseDown, mouseDownIndex, mouseMoveIndex } = this.state;
+    const { mouseDownSource, mouseDownIndex, mouseMoveIndex } = this.state;
 
     const classes = classnames(
       CLASS_ROOT, {
         [`${CLASS_ROOT}--vertical`]: vertical,
-        [`${CLASS_ROOT}--dragging`]: mouseDown
+        [`${CLASS_ROOT}--dragging`]: mouseDownSource
       },
       className
     );
 
     let layers;
-    if (active || mouseDown) {
+    if (active || mouseDownSource) {
 
       let start, end;
-      if ('range' === mouseDown) {
+      if ('range' === mouseDownSource) {
         start = Math.min(mouseDownIndex, mouseMoveIndex);
         end = Math.max(mouseDownIndex, mouseMoveIndex);
-      } else if ('active' === mouseDown && mouseMoveIndex >= 0) {
+      } else if ('active' === mouseDownSource && mouseMoveIndex >= 0) {
         const delta = mouseMoveIndex - mouseDownIndex;
         start = active.start + delta;
         end = active.end + delta;
-      } else if ('start' === mouseDown && mouseMoveIndex >= 0) {
-        start = Math.min(mouseMoveIndex, active.end - 1);
+      } else if ('start' === mouseDownSource && mouseMoveIndex >= 0) {
+        start = Math.min(mouseMoveIndex, active.end);
         end = active.end;
-      } else if ('end' === mouseDown && mouseMoveIndex >= 0) {
+      } else if ('end' === mouseDownSource && mouseMoveIndex >= 0) {
         start = active.start;
-        end = Math.max(mouseMoveIndex, active.start + 1);
+        end = Math.max(mouseMoveIndex, active.start);
       } else {
         start = active.start;
         end = active.end;
@@ -179,37 +169,59 @@ export default class Range extends Component {
       // in case the user resizes the window
       start = Math.max(0, Math.min(count - 1, start));
       end = Math.max(0, Math.min(count - 1, end));
+      console.log('!!!', start, end, count);
+      // calculate flex basis
+      const beforePercent =
+        Math.max(0, (100 / (count - 1)) * Math.min(start, count - 1));
+      const beforeOffset = beforePercent * (padding * 2) / 100;
+      const beforeBasis = `calc(${beforePercent}% - ${beforeOffset}px)`;
+      const afterPercent =
+        Math.min(100, (100 / (count - 1)) * Math.max(count - 1 - end, 0));
+      const afterOffset = afterPercent * (padding * 2) / 100;
+      const afterBasis = `calc(${afterPercent}% - ${afterOffset}px)`;
+
+      // We need a class when on the edge so we can keep the control visible.
+      const startClasses = [`${CLASS_ROOT}__start`];
+      if (beforePercent < 5) {
+        startClasses.push(`${CLASS_ROOT}__start--edge`);
+      }
+      const beforeClasses = [`${CLASS_ROOT}__before`];
+      if (beforePercent > 95) {
+        beforeClasses.push(`${CLASS_ROOT}__before--end`);
+      }
+      const endClasses = [`${CLASS_ROOT}__end`];
+      if (afterPercent < 5) {
+        endClasses.push(`${CLASS_ROOT}__end--edge`);
+      }
 
       layers = [
-        <div key='before' className={`${CLASS_ROOT}__inactive`}
-          style={{ flexBasis: `${this._percentForIndex(start)}%` }} />,
-        <div key='active' {...props} className={`${CLASS_ROOT}__active`}
-          style={{ flexBasis: `${this._percentForIndex(end - start)}%` }}
-          onMouseDown={this._mouseDown('active')}>
-          <div className={`${CLASS_ROOT}__active-start`}
+        <div key='before' className={beforeClasses.join(' ')}
+          style={{ flexBasis: beforeBasis }}>
+          <div className={startClasses.join(' ')}
             onMouseDown={onActive ? this._mouseDown('start') : undefined}>
             <DragIcon />
           </div>
-          <div className={`${CLASS_ROOT}__active-end`}
+        </div>,
+        <div key='active' {...props} className={`${CLASS_ROOT}__active`}
+          onMouseDown={this._mouseDown('active')} />,
+        <div key='after' className={`${CLASS_ROOT}__after`}
+          style={{ flexBasis: afterBasis }}>
+          <div className={endClasses.join(' ')}
             onMouseDown={onActive ? this._mouseDown('end') : undefined}>
             <DragIcon />
           </div>
-        </div>,
-        <div key='after' className={`${CLASS_ROOT}__inactive`}
-          style={{
-            flexBasis: `${this._percentForIndex((count - 1) - end)}%`
-          }} />
+        </div>
       ];
     }
 
     let onMouseMove;
-    if (onActive && mouseDown) {
+    if (onActive && mouseDownSource) {
       onMouseMove = this._onMouseMove;
     }
 
     return (
-      <div ref={ref => this.rangeRef = ref} className={classes}
-        style={{ padding: padding }} onMouseMove={onMouseMove}
+      <div ref={ref => this._rangeRef = ref} className={classes}
+        onMouseMove={onMouseMove}
         onMouseDown={onActive ? this._mouseDown('range') : undefined}>
         {layers}
       </div>
