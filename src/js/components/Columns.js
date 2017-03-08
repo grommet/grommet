@@ -89,42 +89,46 @@ export default class Columns extends Component {
     // grab CSS styles from DOM after component mounted
     // default to small size ($size-small = 192px)
     const container = findDOMNode(this.containerRef);
-    const column = container.childNodes[0];
-    const child = column.childNodes[0];
-    let minColumnWidth = 192;
-    let currentMobile =
-      (initMobile && window.innerWidth <= Responsive.smallSize());
+    if (container) {
+      const column = container.childNodes[0];
+      const child = column.childNodes[0];
+      let minColumnWidth = 192;
+      let currentMobile =
+        (initMobile && window.innerWidth <= Responsive.smallSize());
 
-    if (child) {
-      clearTimeout(this._childStylesTimer);
-      this._childStylesTimer = setTimeout(() => {
-        let childStyles = window.getComputedStyle(child);
+      if (child) {
+        clearTimeout(this._childStylesTimer);
+        this._childStylesTimer = setTimeout(() => {
+          let childStyles = window.getComputedStyle(child);
 
-        if (childStyles && childStyles.width) {
-          let childLeftMargin = childStyles.marginLeft ?
-            parseFloat(childStyles.marginLeft) :  0;
-          let childRightMargin = childStyles.marginRight ?
-            parseFloat(childStyles.marginRight) :  0;
-          minColumnWidth =
-            parseFloat(childStyles.width) + childLeftMargin + childRightMargin;
-        }
+          if (childStyles && childStyles.width) {
+            let childLeftMargin = childStyles.marginLeft ?
+              parseFloat(childStyles.marginLeft) :  0;
+            let childRightMargin = childStyles.marginRight ?
+              parseFloat(childStyles.marginRight) :  0;
+            minColumnWidth = (
+              parseFloat(childStyles.width) + childLeftMargin + childRightMargin
+            );
+          }
 
-        let childMarginSize = margin || this._getChildMarginSize(childStyles);
+          let childMarginSize = margin || this._getChildMarginSize(childStyles);
 
-        // create array of breakpoints for 1 through this.props.maxCount
-        // number of columns of minColumnWidth width.
-        const columnBreakpoints = Array.apply(null, Array(this.props.maxCount))
-          .map((currentMaxCount, index) => (index + 1) * minColumnWidth);
+          // create array of breakpoints for 1 through this.props.maxCount
+          // number of columns of minColumnWidth width.
+          const columnBreakpoints = Array.apply(
+              undefined, Array(this.props.maxCount)
+            ).map((currentMaxCount, index) => (index + 1) * minColumnWidth);
 
-        this.setState({
-          columnBreakpoints: columnBreakpoints,
-          margin: childMarginSize,
-          initMobile: currentMobile
-        }, () => {
-          clearTimeout(this._layoutTimer);
-          this._layoutTimer = setTimeout(this._layout, 50);
-        });
-      }, 200);
+          this.setState({
+            columnBreakpoints: columnBreakpoints,
+            margin: childMarginSize,
+            initMobile: currentMobile
+          }, () => {
+            clearTimeout(this._layoutTimer);
+            this._layoutTimer = setTimeout(this._layout, 50);
+          });
+        }, 200);
+      }
     }
   }
 

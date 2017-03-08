@@ -41,4 +41,14 @@ describe('Columns', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('renders masonry properties', () => {
+    const component = renderer.create(
+      <Columns masonry={true}>
+        <span>test1</span>
+        <span>test2</span>
+      </Columns>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
