@@ -139,39 +139,43 @@ var Columns = function (_Component) {
       // default to small size ($size-small = 192px)
 
       var container = (0, _reactDom.findDOMNode)(this.containerRef);
-      var column = container.childNodes[0];
-      var child = column.childNodes[0];
-      var minColumnWidth = 192;
-      var currentMobile = initMobile && window.innerWidth <= _Responsive2.default.smallSize();
+      if (container) {
+        (function () {
+          var column = container.childNodes[0];
+          var child = column.childNodes[0];
+          var minColumnWidth = 192;
+          var currentMobile = initMobile && window.innerWidth <= _Responsive2.default.smallSize();
 
-      if (child) {
-        clearTimeout(this._childStylesTimer);
-        this._childStylesTimer = setTimeout(function () {
-          var childStyles = window.getComputedStyle(child);
+          if (child) {
+            clearTimeout(_this2._childStylesTimer);
+            _this2._childStylesTimer = setTimeout(function () {
+              var childStyles = window.getComputedStyle(child);
 
-          if (childStyles && childStyles.width) {
-            var childLeftMargin = childStyles.marginLeft ? parseFloat(childStyles.marginLeft) : 0;
-            var childRightMargin = childStyles.marginRight ? parseFloat(childStyles.marginRight) : 0;
-            minColumnWidth = parseFloat(childStyles.width) + childLeftMargin + childRightMargin;
+              if (childStyles && childStyles.width) {
+                var childLeftMargin = childStyles.marginLeft ? parseFloat(childStyles.marginLeft) : 0;
+                var childRightMargin = childStyles.marginRight ? parseFloat(childStyles.marginRight) : 0;
+                minColumnWidth = parseFloat(childStyles.width) + childLeftMargin + childRightMargin;
+              }
+
+              var childMarginSize = margin || _this2._getChildMarginSize(childStyles);
+
+              // create array of breakpoints for 1 through this.props.maxCount
+              // number of columns of minColumnWidth width.
+              var columnBreakpoints = Array.apply(undefined, Array(_this2.props.maxCount)).map(function (currentMaxCount, index) {
+                return (index + 1) * minColumnWidth;
+              });
+
+              _this2.setState({
+                columnBreakpoints: columnBreakpoints,
+                margin: childMarginSize,
+                initMobile: currentMobile
+              }, function () {
+                clearTimeout(_this2._layoutTimer);
+                _this2._layoutTimer = setTimeout(_this2._layout, 50);
+              });
+            }, 200);
           }
-
-          var childMarginSize = margin || _this2._getChildMarginSize(childStyles);
-
-          // create array of breakpoints for 1 through this.props.maxCount
-          // number of columns of minColumnWidth width.
-          var columnBreakpoints = Array.apply(null, Array(_this2.props.maxCount)).map(function (currentMaxCount, index) {
-            return (index + 1) * minColumnWidth;
-          });
-
-          _this2.setState({
-            columnBreakpoints: columnBreakpoints,
-            margin: childMarginSize,
-            initMobile: currentMobile
-          }, function () {
-            clearTimeout(_this2._layoutTimer);
-            _this2._layoutTimer = setTimeout(_this2._layout, 50);
-          });
-        }, 200);
+        })();
       }
     }
   }, {
