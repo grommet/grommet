@@ -4,8 +4,8 @@ exports[`Select accepts initial value 1`] = `
   onClick={[Function]}>
   <input
     className="grommetux-input grommetux-select__input"
-    disabled={true}
     placeholder={undefined}
+    readOnly={true}
     value="one" />
   <button
     aria-label="Select Icon"
@@ -45,8 +45,8 @@ exports[`Select has correct default options 1`] = `
   onClick={[Function]}>
   <input
     className="grommetux-input grommetux-select__input"
-    disabled={true}
     placeholder={undefined}
+    readOnly={true}
     value="" />
   <button
     aria-label="Select Icon"
