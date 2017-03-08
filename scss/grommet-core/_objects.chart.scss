@@ -496,7 +496,7 @@
 
 // Range
 
-$range-inactive-background-color: rgba(#fff, 0.5);
+$range-inactive-background-color: rgba(#fff, 0.7);
 $range-inactive-colored-background-color: rgba(#000, 0.4);
 $range-control-background-color: rgba(#fff, 0.7);
 $range-control-colored-background-color: rgba(#000, 0.5);
@@ -504,19 +504,24 @@ $range-control-colored-background-color: rgba(#000, 0.5);
 .#{$grommet-namespace}chart-range {
   display: flex;
   flex-direction: row;
-  cursor: pointer;
 }
 
 .#{$grommet-namespace}chart-range__active {
   position: relative;
   height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex: 1 1;
+  cursor: ew-resize;
 }
 
-.#{$grommet-namespace}chart-range__inactive {
+.#{$grommet-namespace}chart-range__before,
+.#{$grommet-namespace}chart-range__after {
+  position: relative;
+  flex: 0 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   background-color: $range-inactive-background-color;
+  z-index: 1;
 
   #{$dark-background-context} {
     background-color: $range-inactive-colored-background-color;
@@ -527,14 +532,33 @@ $range-control-colored-background-color: rgba(#000, 0.5);
   }
 }
 
-.#{$grommet-namespace}chart-range__active-start,
-.#{$grommet-namespace}chart-range__active-end {
-  flex: 0 0 $inuit-base-spacing-unit;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.#{$grommet-namespace}chart-range__before {
+  justify-content: flex-end;
+  border-color: $border-color;
+  border-width: 1px;
+  border-style: none solid none none;
+}
+
+.#{$grommet-namespace}chart-range__before--end {
+  z-index: 2;
+}
+
+.#{$grommet-namespace}chart-range__after {
+  justify-content: flex-start;
+  border-color: $border-color;
+  border-width: 1px;
+  border-style: none none none solid;
+}
+
+.#{$grommet-namespace}chart-range__start,
+.#{$grommet-namespace}chart-range__end {
+  position: absolute;
+  flex: 0 1 $inuit-base-spacing-unit;
   background-color: $range-control-background-color;
   border: 1px solid $border-color;
+  padding: quarter($inuit-base-spacing-unit) 0;
+  height: round($inuit-base-spacing-unit * 1.5);
+  cursor: col-resize;
 
   #{$dark-background-context} {
     background-color: $range-control-colored-background-color;
@@ -569,16 +593,67 @@ $range-control-colored-background-color: rgba(#000, 0.5);
   }
 }
 
+.#{$grommet-namespace}chart-range__start {
+  right: -1px;
+}
+
+.#{$grommet-namespace}chart-range__start--edge {
+  right: -($inuit-base-spacing-unit + 2px); // account for border
+}
+
+.#{$grommet-namespace}chart-range__end {
+  left: -1px;
+}
+
+.#{$grommet-namespace}chart-range__end--edge {
+  left: -($inuit-base-spacing-unit + 2px); // account for border
+}
+
 .#{$grommet-namespace}chart-range--vertical {
   flex-direction: column;
 
   .#{$grommet-namespace}chart-range__active {
+    width: 100%;
+    cursor: ns-resize;
+  }
+
+  .#{$grommet-namespace}chart-range__before,
+  .#{$grommet-namespace}chart-range__after {
     flex-direction: column;
   }
 
-  .#{$grommet-namespace}chart-range__active-start,
-  .#{$grommet-namespace}chart-range__active-end {
-    flex-direction: row;
+  .#{$grommet-namespace}chart-range__before {
+    border-style: none none solid;
+  }
+
+  .#{$grommet-namespace}chart-range__after {
+    border-style: solid none none;
+  }
+
+  .#{$grommet-namespace}chart-range__start,
+  .#{$grommet-namespace}chart-range__end {
+    padding: 0 quarter($inuit-base-spacing-unit);
+    height: $inuit-base-spacing-unit + 2px;
+    // width: round($inuit-base-spacing-unit * 1.5);
+    cursor: row-resize;
+  }
+
+  .#{$grommet-namespace}chart-range__start {
+    right: auto;
+    bottom: -1px;
+  }
+
+  .#{$grommet-namespace}chart-range__start--edge {
+    bottom: -($inuit-base-spacing-unit + 2px); // account for border
+  }
+
+  .#{$grommet-namespace}chart-range__end {
+    left: auto;
+    top: -1px;
+  }
+
+  .#{$grommet-namespace}chart-range__end--edge {
+    top: -($inuit-base-spacing-unit + 2px); // account for border
   }
 
   svg {

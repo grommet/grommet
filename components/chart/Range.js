@@ -62,47 +62,29 @@ var Range = function (_Component) {
   _createClass(Range, [{
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
-      var mouseDown = this.state.mouseDown;
+      var mouseDownSource = this.state.mouseDownSource;
 
-      if (mouseDown) {
+      if (mouseDownSource) {
         window.removeEventListener('mouseup', this._onMouseUp);
       }
     }
   }, {
-    key: '_valueToIndex',
-    value: function _valueToIndex(value) {
+    key: '_mouseIndex',
+    value: function _mouseIndex(event, source) {
       var _props = this.props,
+          active = _props.active,
           count = _props.count,
           vertical = _props.vertical;
+      var mouseDownIndex = this.state.mouseDownIndex;
 
-      var rect = this.rangeRef.getBoundingClientRect();
-      var total = vertical ? rect.height : rect.width;
-      return Math.round(value / total * (count - 1));
-    }
-  }, {
-    key: '_percentForIndex',
-    value: function _percentForIndex(index) {
-      var count = this.props.count;
-
-      return 100 / (count - 1) * Math.min(index, count - 1);
-    }
-  }, {
-    key: '_mouseIndex',
-    value: function _mouseIndex(event) {
-      var _props2 = this.props,
-          active = _props2.active,
-          count = _props2.count,
-          vertical = _props2.vertical;
-      var _state = this.state,
-          mouseDown = _state.mouseDown,
-          mouseDownIndex = _state.mouseDownIndex;
-
-      var rect = this.rangeRef.getBoundingClientRect();
+      var rect = this._rangeRef.getBoundingClientRect();
       var value = vertical ? event.clientY - rect.top : event.clientX - rect.left;
-      var index = this._valueToIndex(value);
+      // convert value to index
+      var total = vertical ? rect.height : rect.width;
+      var index = Math.round(value / total * (count - 1));
 
       // constrain index to keep it within range as needed
-      if ('active' === mouseDown && mouseDownIndex >= 0) {
+      if ('active' === source && mouseDownIndex >= 0) {
         if (index > mouseDownIndex) {
           // moving right/down
           index = Math.min(mouseDownIndex + count - 1 - active.end, index);
@@ -110,9 +92,9 @@ var Range = function (_Component) {
           // moving up/left
           index = Math.max(mouseDownIndex - active.start, index);
         }
-      } else if ('start' === mouseDown) {
+      } else if ('start' === source) {
         index = Math.min(active.end, index);
-      } else if ('end' === mouseDown) {
+      } else if ('end' === source) {
         index = Math.max(active.start, index);
       }
 
@@ -125,9 +107,9 @@ var Range = function (_Component) {
 
       return function (event) {
         event.stopPropagation(); // so start and end don't trigger range
-        var index = _this2._mouseIndex(event);
+        var index = _this2._mouseIndex(event, source);
         _this2.setState({
-          mouseDown: source,
+          mouseDownSource: source,
           mouseDownIndex: index
         });
         window.addEventListener('mouseup', _this2._onMouseUp);
@@ -137,16 +119,16 @@ var Range = function (_Component) {
     key: '_onMouseUp',
     value: function _onMouseUp(event) {
       window.removeEventListener('mouseup', this._onMouseUp);
-      var _props3 = this.props,
-          active = _props3.active,
-          onActive = _props3.onActive,
-          count = _props3.count;
-      var _state2 = this.state,
-          mouseDown = _state2.mouseDown,
-          mouseDownIndex = _state2.mouseDownIndex,
-          moved = _state2.moved;
+      var _props2 = this.props,
+          active = _props2.active,
+          onActive = _props2.onActive,
+          count = _props2.count;
+      var _state = this.state,
+          mouseDownSource = _state.mouseDownSource,
+          mouseDownIndex = _state.mouseDownIndex,
+          moved = _state.moved;
 
-      var mouseUpIndex = this._mouseIndex(event);
+      var mouseUpIndex = this._mouseIndex(event, mouseDownSource);
 
       if (mouseUpIndex < 0) {
         mouseUpIndex = 0;
@@ -155,7 +137,7 @@ var Range = function (_Component) {
       }
 
       this.setState({
-        mouseDown: false,
+        mouseDownSource: false,
         mouseDownIndex: undefined,
         mouseMoveIndex: undefined,
         moved: false
@@ -164,28 +146,28 @@ var Range = function (_Component) {
       if (onActive) {
         var nextActive = void 0;
 
-        if ('range' === mouseDown) {
+        if ('range' === mouseDownSource) {
           if (moved) {
             nextActive = {
               start: Math.min(mouseDownIndex, mouseUpIndex),
               end: Math.max(mouseDownIndex, mouseUpIndex)
             };
           }
-        } else if ('active' === mouseDown) {
+        } else if ('active' === mouseDownSource) {
           var delta = mouseUpIndex - mouseDownIndex;
           nextActive = {
             start: active.start + delta,
             end: active.end + delta
           };
-        } else if ('start' === mouseDown) {
+        } else if ('start' === mouseDownSource) {
           nextActive = {
-            start: Math.min(mouseUpIndex, active.end - 1),
+            start: Math.min(mouseUpIndex, active.end),
             end: active.end
           };
-        } else if ('end' === mouseDown) {
+        } else if ('end' === mouseDownSource) {
           nextActive = {
             start: active.start,
-            end: Math.max(mouseUpIndex, active.start + 1)
+            end: Math.max(mouseUpIndex, active.start)
           };
         }
 
@@ -195,9 +177,11 @@ var Range = function (_Component) {
   }, {
     key: '_onMouseMove',
     value: function _onMouseMove(event) {
-      var mouseMoveIndex = this.state.mouseMoveIndex;
+      var _state2 = this.state,
+          mouseDownSource = _state2.mouseDownSource,
+          mouseMoveIndex = _state2.mouseMoveIndex;
 
-      var index = this._mouseIndex(event);
+      var index = this._mouseIndex(event, mouseDownSource);
       if (index !== mouseMoveIndex) {
         this.setState({ mouseMoveIndex: index, moved: true });
       }
@@ -208,40 +192,40 @@ var Range = function (_Component) {
       var _classnames,
           _this3 = this;
 
-      var _props4 = this.props,
-          active = _props4.active,
-          className = _props4.className,
-          count = _props4.count,
-          onActive = _props4.onActive,
-          vertical = _props4.vertical,
-          props = _objectWithoutProperties(_props4, ['active', 'className', 'count', 'onActive', 'vertical']);
+      var _props3 = this.props,
+          active = _props3.active,
+          className = _props3.className,
+          count = _props3.count,
+          onActive = _props3.onActive,
+          vertical = _props3.vertical,
+          props = _objectWithoutProperties(_props3, ['active', 'className', 'count', 'onActive', 'vertical']);
 
       var _state3 = this.state,
-          mouseDown = _state3.mouseDown,
+          mouseDownSource = _state3.mouseDownSource,
           mouseDownIndex = _state3.mouseDownIndex,
           mouseMoveIndex = _state3.mouseMoveIndex;
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--vertical', vertical), _defineProperty(_classnames, CLASS_ROOT + '--dragging', mouseDown), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--vertical', vertical), _defineProperty(_classnames, CLASS_ROOT + '--dragging', mouseDownSource), _classnames), className);
 
       var layers = void 0;
-      if (active || mouseDown) {
+      if (active || mouseDownSource) {
 
         var start = void 0,
             end = void 0;
-        if ('range' === mouseDown) {
+        if ('range' === mouseDownSource) {
           start = Math.min(mouseDownIndex, mouseMoveIndex);
           end = Math.max(mouseDownIndex, mouseMoveIndex);
-        } else if ('active' === mouseDown && mouseMoveIndex >= 0) {
+        } else if ('active' === mouseDownSource && mouseMoveIndex >= 0) {
           var delta = mouseMoveIndex - mouseDownIndex;
           start = active.start + delta;
           end = active.end + delta;
-        } else if ('start' === mouseDown && mouseMoveIndex >= 0) {
-          start = Math.min(mouseMoveIndex, active.end - 1);
+        } else if ('start' === mouseDownSource && mouseMoveIndex >= 0) {
+          start = Math.min(mouseMoveIndex, active.end);
           end = active.end;
-        } else if ('end' === mouseDown && mouseMoveIndex >= 0) {
+        } else if ('end' === mouseDownSource && mouseMoveIndex >= 0) {
           start = active.start;
-          end = Math.max(mouseMoveIndex, active.start + 1);
+          end = Math.max(mouseMoveIndex, active.start);
         } else {
           start = active.start;
           end = active.end;
@@ -249,42 +233,64 @@ var Range = function (_Component) {
         // in case the user resizes the window
         start = Math.max(0, Math.min(count - 1, start));
         end = Math.max(0, Math.min(count - 1, end));
+        console.log('!!!', start, end, count);
+        // calculate flex basis
+        var beforePercent = Math.max(0, 100 / (count - 1) * Math.min(start, count - 1));
+        var beforeOffset = beforePercent * (_utils.padding * 2) / 100;
+        var beforeBasis = 'calc(' + beforePercent + '% - ' + beforeOffset + 'px)';
+        var afterPercent = Math.min(100, 100 / (count - 1) * Math.max(count - 1 - end, 0));
+        var afterOffset = afterPercent * (_utils.padding * 2) / 100;
+        var afterBasis = 'calc(' + afterPercent + '% - ' + afterOffset + 'px)';
 
-        layers = [_react2.default.createElement('div', { key: 'before', className: CLASS_ROOT + '__inactive',
-          style: { flexBasis: this._percentForIndex(start) + '%' } }), _react2.default.createElement(
+        // We need a class when on the edge so we can keep the control visible.
+        var startClasses = [CLASS_ROOT + '__start'];
+        if (beforePercent < 5) {
+          startClasses.push(CLASS_ROOT + '__start--edge');
+        }
+        var beforeClasses = [CLASS_ROOT + '__before'];
+        if (beforePercent > 95) {
+          beforeClasses.push(CLASS_ROOT + '__before--end');
+        }
+        var endClasses = [CLASS_ROOT + '__end'];
+        if (afterPercent < 5) {
+          endClasses.push(CLASS_ROOT + '__end--edge');
+        }
+
+        layers = [_react2.default.createElement(
           'div',
-          _extends({ key: 'active' }, props, { className: CLASS_ROOT + '__active',
-            style: { flexBasis: this._percentForIndex(end - start) + '%' },
-            onMouseDown: this._mouseDown('active') }),
+          { key: 'before', className: beforeClasses.join(' '),
+            style: { flexBasis: beforeBasis } },
           _react2.default.createElement(
             'div',
-            { className: CLASS_ROOT + '__active-start',
+            { className: startClasses.join(' '),
               onMouseDown: onActive ? this._mouseDown('start') : undefined },
             _react2.default.createElement(_Drag2.default, null)
-          ),
+          )
+        ), _react2.default.createElement('div', _extends({ key: 'active' }, props, { className: CLASS_ROOT + '__active',
+          onMouseDown: this._mouseDown('active') })), _react2.default.createElement(
+          'div',
+          { key: 'after', className: CLASS_ROOT + '__after',
+            style: { flexBasis: afterBasis } },
           _react2.default.createElement(
             'div',
-            { className: CLASS_ROOT + '__active-end',
+            { className: endClasses.join(' '),
               onMouseDown: onActive ? this._mouseDown('end') : undefined },
             _react2.default.createElement(_Drag2.default, null)
           )
-        ), _react2.default.createElement('div', { key: 'after', className: CLASS_ROOT + '__inactive',
-          style: {
-            flexBasis: this._percentForIndex(count - 1 - end) + '%'
-          } })];
+        )];
       }
 
       var onMouseMove = void 0;
-      if (onActive && mouseDown) {
+      if (onActive && mouseDownSource) {
         onMouseMove = this._onMouseMove;
       }
 
       return _react2.default.createElement(
         'div',
         { ref: function ref(_ref) {
-            return _this3.rangeRef = _ref;
+            return _this3._rangeRef = _ref;
           }, className: classes,
-          style: { padding: _utils.padding }, onMouseMove: onMouseMove,
+          onMouseMove: onMouseMove,
           onMouseDown: onActive ? this._mouseDown('range') : undefined },
         layers
       );
