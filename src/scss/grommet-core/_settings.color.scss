@@ -26,43 +26,43 @@ $brand-color-darker: darken($brand-color, 9%) !default;
 $text-color: #333 !default;
 $secondary-text-color: #666 !default; // meets AA accessibility
 $hover-text-color: #000 !default;
-$placeholder-text-color: #aaa;
-$colored-text-color: rgba(255, 255, 255, 0.85); //#dbdbdb;
-$active-colored-text-color: #fff;
-$inactive-colored-text-color: rgba(255, 255, 255, 0.7);
+$placeholder-text-color: #aaa !default;
+$colored-text-color: rgba(255, 255, 255, 0.85) !default; //#dbdbdb;
+$active-colored-text-color: #fff !default;
+$inactive-colored-text-color: rgba(255, 255, 255, 0.7) !default;
 $link-color: $brand-link-color !default;
 $link-hover-color: $brand-color-darker !default;
 // 63 was empirically determined based on HPE critical and warning colors
 $colored-text-color-lightness-threshold: 63 !default;
 
-$background-color: #fff;
-$secondary-background-color: #f5f5f5;
-$hover-background-color: rgba(#ddd, 0.5);
-$colored-active-background-color: rgba(0, 0, 0, 0.15);
-$colored-hover-background-color: rgba(0, 0, 0, 0.1);
+$background-color: #fff !default;
+$secondary-background-color: #f5f5f5 !default;
+$hover-background-color: rgba(#ddd, 0.5) !default;
+$colored-active-background-color: rgba(0, 0, 0, 0.15) !default;
+$colored-hover-background-color: rgba(0, 0, 0, 0.1) !default;
 $selected-background-color: $brand-color-lighter !default;
 $selected-text-color: $text-color !default;
 $selected-primary-background-color: $brand-color !default;
 $selected-primary-text-color: $colored-text-color !default;
 
-$border-color: rgba(0, 0, 0, 0.15);
-$strong-border-color: #000;
+$border-color: rgba(0, 0, 0, 0.15) !default;
+$strong-border-color: #000 !default;
 $colored-border-color: rgba(255, 255, 255, 0.5) !default;
-$colored-strong-border-color: #fff;
+$colored-strong-border-color: #fff !default;
 
 $heading-text-color: $text-color !default;
 $paragraph-text-color: $secondary-text-color !default;
 
 // Control Icons
 
-$icon-color: #666; // meets AA accessibility
-$active-icon-color: #000;
-$disabled-icon-color: #ccc;
-$colored-icon-color: rgba(255, 255, 255, 0.7); //#dbdbdb;
-$colored-status-color: rgba(255, 255, 255, 0.9); //#dbdbdb;
-$active-colored-icon-color: #fff;
-$icon-badge-background-color: nth($brand-accent-colors, 1);
-$icon-badge-text-color: $text-color;
+$icon-color: #666 !default; // meets AA accessibility
+$active-icon-color: #000 !default;
+$disabled-icon-color: #ccc !default;
+$colored-icon-color: rgba(255, 255, 255, 0.7) !default; //#dbdbdb;
+$colored-status-color: rgba(255, 255, 255, 0.9) !default; //#dbdbdb;
+$active-colored-icon-color: #fff !default;
+$icon-badge-background-color: nth($brand-accent-colors, 1) !default;
+$icon-badge-text-color: $text-color !default;
 
 $unset-color: #ddd !default;
 $control-background-color: rgba($text-color, 0.2) !default;
@@ -86,7 +86,7 @@ $button-accent-color: nth($brand-accent-colors, 1) !default;
 $button-drop-shadow-color: rgba(170, 170, 170, 0.5) !default;
 $button-colored-border-color: rgba(255, 255, 255, 0.7) !default; ///rgba(255, 255, 255, 0.7) !default;
 
-$layer-overlay-background-color: rgba(0, 0, 0, 0.5);
+$layer-overlay-background-color: rgba(0, 0, 0, 0.5) !default;
 $layer-background-color: #fff !default; // rgba($background-color, 0.95); ///inherit; //rgba(255, 255, 255, 0.95);
 $layer-border: none !default; // 1px solid $brand-color;
 $layer-box-shadow: none !default; // 0px 2px 4px rgba(0, 0, 0, 0.3) !default;
@@ -94,14 +94,14 @@ $drop-background: rgba(#f8f8f8, 0.95) !default;
 $drop-border: none !default; // 1px solid $border-color !default;
 $drop-box-shadow: none !default; // 0px 2px 4px rgba(0, 0, 0, 0.3) !default;
 $form-field-background-color: #fff !default;
-$drop-background-color: rgba(255, 255, 255, 0.9);
-$header-background-color: rgba(255, 255, 255, 0.9);
-$footer-background-color: rgba(255, 255, 255, 0.9);
-$active-background-color: rgba(255, 255, 255, 0.8);
-$sort-placeholder-background-color: rgba(0, 0, 255, 0.1); // TODO: recolor
+$drop-background-color: rgba(255, 255, 255, 0.9) !default;
+$header-background-color: rgba(255, 255, 255, 0.9) !default;
+$footer-background-color: rgba(255, 255, 255, 0.9) !default;
+$active-background-color: rgba(255, 255, 255, 0.8) !default;
+$sort-placeholder-background-color: rgba(0, 0, 255, 0.1) !default; // TODO: recolor
 
-$inverse-background-color: nth($brand-neutral-colors, 1);
-$inverse-color: #fff;
+$inverse-background-color: nth($brand-neutral-colors, 1) !default;
+$inverse-color: #fff !default;
 
 $pending-background:
   '.#{$grommet-namespace}background-color-index--pending' !default;
