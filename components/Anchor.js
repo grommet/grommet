@@ -50,7 +50,7 @@ var Anchor = function (_Component) {
 
     _this._onClick = _this._onClick.bind(_this);
     _this._onLocationChange = _this._onLocationChange.bind(_this);
-
+    _this._attachUnlisten = _this._attachUnlisten.bind(_this);
     var path = props.path;
     var router = context.router;
 
@@ -69,9 +69,14 @@ var Anchor = function (_Component) {
       var path = this.props.path;
 
       if (path) {
-        var router = this.context.router;
-
-        this._unlisten = router.listen(this._onLocationChange);
+        this._attachUnlisten(this.context.router);
+      }
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.path && nextProps.path !== this.props.path) {
+        this._attachUnlisten(this.context.router);
       }
     }
   }, {
@@ -83,6 +88,11 @@ var Anchor = function (_Component) {
         this._unlisten();
       }
       this._unmounted = true;
+    }
+  }, {
+    key: '_attachUnlisten',
+    value: function _attachUnlisten(router) {
+      this._unlisten = router.listen(this._onLocationChange);
     }
   }, {
     key: '_onLocationChange',
