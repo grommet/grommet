@@ -15,7 +15,7 @@ export default class Anchor extends Component {
     super(props, context);
     this._onClick = this._onClick.bind(this);
     this._onLocationChange = this._onLocationChange.bind(this);
-
+    this._attachUnlisten = this._attachUnlisten.bind(this);
     const { path } = props;
     const { router } = context;
 
@@ -29,8 +29,13 @@ export default class Anchor extends Component {
   componentDidMount () {
     const { path } = this.props;
     if (path) {
-      const { router } = this.context;
-      this._unlisten = router.listen(this._onLocationChange);
+      this._attachUnlisten(this.context.router);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.path && nextProps.path !== this.props.path) {
+      this._attachUnlisten(this.context.router);
     }
   }
 
@@ -40,6 +45,10 @@ export default class Anchor extends Component {
       this._unlisten();
     }
     this._unmounted = true;
+  }
+
+  _attachUnlisten(router) {
+    this._unlisten = router.listen(this._onLocationChange);
   }
 
   _onLocationChange (location) {
