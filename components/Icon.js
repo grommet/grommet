@@ -16,15 +16,11 @@ var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _CSSClassnames = require('../../../utils/CSSClassnames');
+var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
-var _Intl = require('../../../utils/Intl');
-
-var _Intl2 = _interopRequireDefault(_Intl);
-
-var _Props = require('../../../utils/Props');
+var _Props = require('../utils/Props');
 
 var _Props2 = _interopRequireDefault(_Props);
 
@@ -56,30 +52,39 @@ var Icon = function (_Component) {
       console.warn('Base icons are not deprecated, use raw svg with Icon component');
     }
   }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.warn('Base icons are not deprecated, use raw svg with Icon component');
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _classnames;
 
       var _props = this.props,
           className = _props.className,
+          children = _props.children,
           colorIndex = _props.colorIndex;
       var _props2 = this.props,
           a11yTitle = _props2.a11yTitle,
           size = _props2.size,
           responsive = _props2.responsive;
-      var intl = this.context.intl;
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '-link-bottom', className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames, CLASS_ROOT + '--responsive', responsive), _defineProperty(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames, CLASS_ROOT + '--responsive', responsive), _defineProperty(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), _classnames));
 
-      a11yTitle = a11yTitle || _Intl2.default.getMessage(intl, 'link-bottom');
+      a11yTitle = a11yTitle;
 
       var restProps = _Props2.default.omit(this.props, Object.keys(Icon.propTypes));
-      return _react2.default.createElement(
-        'svg',
-        _extends({}, restProps, { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle }),
-        _react2.default.createElement('path', { fill: 'none', stroke: '#000000', strokeWidth: '2', d: 'M12,5 L12,23 M4,13 L12,5 L20,13 M2,2 L22,2', transform: 'matrix(1 0 0 -1 0 24)' })
-      );
+      return _react2.default.cloneElement(_react2.default.Children.only(children), _extends({}, restProps, {
+        'aria-label': a11yTitle,
+        className: classes,
+        version: '1.1',
+        viewBox: '0 0 24 24',
+        width: '24px',
+        height: '24px',
+        role: 'img'
+      }));
     }
   }]);
 
@@ -90,20 +95,15 @@ Icon.displayName = 'Icon';
 exports.default = Icon;
 ;
 
-Icon.contextTypes = {
-  intl: _react.PropTypes.object
-};
-
 Icon.defaultProps = {
   responsive: true
 };
-
-Icon.displayName = 'LinkBottom';
 
 Icon.icon = true;
 
 Icon.propTypes = {
   a11yTitle: _react.PropTypes.string,
+  children: _react.PropTypes.node.isRequired,
   colorIndex: _react.PropTypes.string,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
   responsive: _react.PropTypes.bool

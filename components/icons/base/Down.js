@@ -51,6 +51,11 @@ var Icon = function (_Component) {
   }
 
   _createClass(Icon, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.warn('Base icons are not deprecated, use raw svg with Icon component');
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _classnames;
