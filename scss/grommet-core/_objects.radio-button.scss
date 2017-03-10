@@ -135,6 +135,7 @@
   color: $secondary-text-color;
   white-space: normal;
   margin-right: $inuit-base-spacing-unit;
+  word-break: break-word;
 
   #{$dark-background-context} {
     color: $colored-text-color;
