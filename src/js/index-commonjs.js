@@ -42,6 +42,7 @@ var Grommet = {
   Heading: require('./components/Heading'),
   Headline: require('./components/Headline'),
   Hero: require('./components/Hero'),
+  Icon: require('./components/Icon'),
   Image: require('./components/Image'),
   Label: require('./components/Label'),
   Layer: require('./components/Layer'),
@@ -92,7 +93,9 @@ var Grommet = {
     Pulse: require('./components/icons/Pulse'),
     Spinning: require('./components/icons/Spinning'),
     Status: require('./components/icons/Status'),
-    Base: require('./components/icons/base')
+    //TODO: deprecated remove in 1.4
+    Base: require('./components/icons/base'),
+    Raw: require('../img/icons')
   },
   // Utils
   Cookies: require('./utils/Cookies'),

@@ -10,6 +10,11 @@ const CLASS_ROOT = CSSClassnames.CONTROL_ICON;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 export default class Icon extends Component {
+  componentDidMount() {
+    console.warn(
+      'Base icons are not deprecated, use raw svg with Icon component'
+    );
+  }
   render () {
     const { className, colorIndex } = this.props;
     let { a11yTitle, size, responsive } = this.props;
@@ -51,4 +56,3 @@ Icon.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
   responsive: PropTypes.bool
 };
-

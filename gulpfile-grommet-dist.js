@@ -85,56 +85,20 @@ module.exports = function(gulp) {
       icons.forEach(function (icon, index) {
 
         if (/\.svg$/.test(icon)) {
-          var componentName = icon.replace('.svg', '.js');
-          componentName = componentName.replace(/^(.)|-([a-z])/g, function (g) {
+          const componentName = icon.replace(/^(.)|-([a-z])/g, function (g) {
             return g.length > 1 ? g[1].toUpperCase() : g.toUpperCase();
           });
 
-          var grommetIconPath = "./";
           iconsMap.push(
-            `export { default as ${componentName.replace('.js', '').replace(/^3d/, 'ThreeD').replace('-', '')}Icon } from '${grommetIconPath}${componentName}';`
+            `export { default as ${componentName.replace('.svg', '').replace(/^3d/, 'ThreeD').replace('-', '')}Icon } from './${icon}';`
           );
 
           if (index === icons.length - 1) {
 
-            var destinationFile = path.join(__dirname, './src/js/components/icons/base/index.js');
-            fs.writeFile(destinationFile, iconsMap.join('\n'), function(err) {
-              if (err) {
-                throw err;
-              }
-
-              done();
-            });
-          }
-        }
-      });
-    });
-  });
-
-  gulp.task('generate-icon-messages', function(done) {
-    var iconsFolder = path.join(__dirname, './src/img/icons');
-    var iconsMap = ['export default {\n'];
-    fs.readdir(iconsFolder, function(err, icons) {
-      icons.forEach(function(icon, index) {
-        if (/\.svg$/.test(icon)) {
-          var componentName = icon.replace('.svg', '');
-          var joinedName = "  \'" + componentName + "\': ";
-          var unjoinedName = componentName
-            .split('-')
-            .join(' ');
-
-          iconsMap.push(
-            joinedName + "\'" + unjoinedName + "\', \n"
-          );
-
-          if (index === icons.length - 1) {
-            iconsMap.push('};\n');
-
-            var destinationFile = path.join(
-              __dirname,
-              './src/js/messages/icons/en-US.js'
+            const destinationFile = path.join(
+              __dirname, './src/img/icons/index.js'
             );
-            fs.writeFile(destinationFile, iconsMap.join(''), function(err) {
+            fs.writeFile(destinationFile, iconsMap.join('\n'), function(err) {
               if (err) {
                 throw err;
               }

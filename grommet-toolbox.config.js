@@ -63,13 +63,21 @@ export default {
       'react': 'React',
       'react-dom': 'ReactDOM',
       'react-addons-transition-group': 'React.addons.TransitionGroup'
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.svg$/,
+          loader: 'babel!react-svg'
+        }
+      ]
     }
   },
-  distPreprocess: ['generate-index-icons', 'generate-icon-messages', 'dist-css'],
+  distPreprocess: ['generate-index-icons', 'dist-css'],
   testPaths: [
     '__tests__',
     '!__tests__/utils/',
     '!__tests__/mocks/'
   ],
-  preCommitTasks: ['generate-icons', 'jslint', 'scsslint', 'test']
+  preCommitTasks: ['generate-index-icons', 'jslint', 'scsslint', 'test']
 };

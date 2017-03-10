@@ -1,3 +1,4 @@
+//TODO: deprecated remove in 1.4
 export { default as ThreeDIcon } from './3d.js';
 export { default as AccessAccessibilityIcon } from './AccessAccessibility.js';
 export { default as AccessAdIcon } from './AccessAd.js';
