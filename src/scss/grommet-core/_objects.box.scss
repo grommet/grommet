@@ -221,68 +221,128 @@
 // flex-basis
 
 .#{$grommet-namespace}box--basis-xsmall {
-  // max-width: $size-xsmall;
   flex-basis: $size-xsmall;
 }
 
 .#{$grommet-namespace}box--basis-small {
-  // max-width: $size-small;
   flex-basis: $size-small;
 }
 
 .#{$grommet-namespace}box--basis-medium {
-  // max-width: $size-medium;
   flex-basis: $size-medium;
 }
 
 .#{$grommet-namespace}box--basis-large {
-  // max-width: $size-large;
   flex-basis: $size-large;
 }
 
 .#{$grommet-namespace}box--basis-xlarge {
-  // max-width: $size-xlarge;
   flex-basis: $size-xlarge;
 }
 
 .#{$grommet-namespace}box--basis-xxlarge {
-  // max-width: $size-xxlarge;
   flex-basis: $size-xxlarge;
 }
 
 .#{$grommet-namespace}box--basis-full {
-  // max-width: 100%;
   flex-basis: 100%;
 }
 
 .#{$grommet-namespace}box--basis-1-2 {
-  // max-width: 50%;
   flex-basis: 50%;
+
+  &.#{$grommet-namespace}box--separator-all,
+  &.#{$grommet-namespace}box--separator-vertical {
+    // account for border to avoid ie11 problems
+    flex-basis: calc(50% - 2px);
+  }
+
+  &.#{$grommet-namespace}box--separator-right,
+  &.#{$grommet-namespace}box--separator-left {
+    // account for border to avoid ie11 problems
+    flex-basis: calc(50% - 1px);
+  }
 }
 
 .#{$grommet-namespace}box--basis-1-3 {
   // max-width: 33.33%;
   flex-basis: 33.33%;
+
+  &.#{$grommet-namespace}box--separator-all,
+  &.#{$grommet-namespace}box--separator-vertical {
+    // account for border to avoid ie11 problems
+    flex-basis: calc(33.33% - 2px);
+  }
+
+  &.#{$grommet-namespace}box--separator-right,
+  &.#{$grommet-namespace}box--separator-left {
+    // account for border to avoid ie11 problems
+    flex-basis: calc(33.33% - 1px);
+  }
 }
 
 .#{$grommet-namespace}box--basis-2-3 {
-  // max-width: 66.66%;
   flex-basis: 66.66%;
+
+  &.#{$grommet-namespace}box--separator-all,
+  &.#{$grommet-namespace}box--separator-vertical {
+    // account for border to avoid ie11 problems
+    flex-basis: calc(66.66% - 2px);
+  }
+
+  &.#{$grommet-namespace}box--separator-right,
+  &.#{$grommet-namespace}box--separator-left {
+    // account for border to avoid ie11 problems
+    flex-basis: calc(66.66% - 1px);
+  }
 }
 
 .#{$grommet-namespace}box--basis-1-4 {
-  // max-width: 25%;
   flex-basis: 25%;
 
+  &.#{$grommet-namespace}box--separator-all,
+  &.#{$grommet-namespace}box--separator-vertical {
+    // account for border to avoid ie11 problems
+    flex-basis: calc(25% - 2px);
+  }
+
+  &.#{$grommet-namespace}box--separator-right,
+  &.#{$grommet-namespace}box--separator-left {
+    // account for border to avoid ie11 problems
+    flex-basis: calc(25% - 1px);
+  }
+
   @include media-query(portable) { // needed?
-    // max-width: 50%;
     flex-basis: 50%;
+
+    &.#{$grommet-namespace}box--separator-all,
+    &.#{$grommet-namespace}box--separator-vertical {
+      // account for border to avoid ie11 problems
+      flex-basis: calc(50% - 2px);
+    }
+
+    &.#{$grommet-namespace}box--separator-right,
+    &.#{$grommet-namespace}box--separator-left {
+      // account for border to avoid ie11 problems
+      flex-basis: calc(50% - 1px);
+    }
   }
 }
 
 .#{$grommet-namespace}box--basis-3-4 {
-  // max-width: 75%;
   flex-basis: 75%;
+
+  &.#{$grommet-namespace}box--separator-all,
+  &.#{$grommet-namespace}box--separator-vertical {
+    // account for border to avoid ie11 problems
+    flex-basis: calc(75% - 2px);
+  }
+
+  &.#{$grommet-namespace}box--separator-right,
+  &.#{$grommet-namespace}box--separator-left {
+    // account for border to avoid ie11 problems
+    flex-basis: calc(75% - 1px);
+  }
 }
 
 // width
