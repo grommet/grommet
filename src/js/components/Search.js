@@ -198,11 +198,13 @@ export default class Search extends Component {
   }
 
   _onFocusInput (event) {
-    const { onFocus } = this.props;
+    const { onFocus, suggestions } = this.props;
     if (onFocus) {
       onFocus(event);
     }
-    this._onAddDrop();
+    if (suggestions && suggestions.length > 0) {
+      this._onAddDrop();
+    }
   }
 
   _fireDOMChange () {
