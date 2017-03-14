@@ -61,7 +61,7 @@
 }
 
 .#{$grommet-namespace}distribution__label-units {
-  @include inuit-font-size($inuit-heading-size-3, inherit);
+  @include inuit-font-size($h3-font-size, inherit);
   margin-left: quarter($inuit-base-spacing-unit);
   font-weight: $text-font-weight;
 }
