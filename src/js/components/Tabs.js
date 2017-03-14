@@ -54,6 +54,7 @@ export default class Tabs extends Component {
     let activeContainer;
     let activeTitle;
     const tabs = React.Children.map(children, (tab, index) => {
+      if (!tab) return null;
 
       const tabProps = tab.props || tab._store.props || {};
 
