@@ -169,7 +169,6 @@ export default class Range extends Component {
       // in case the user resizes the window
       start = Math.max(0, Math.min(count - 1, start));
       end = Math.max(0, Math.min(count - 1, end));
-      console.log('!!!', start, end, count);
       // calculate flex basis
       const beforePercent =
         Math.max(0, (100 / (count - 1)) * Math.min(start, count - 1));
