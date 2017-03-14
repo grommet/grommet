@@ -351,7 +351,7 @@ var Topology = function (_Component3) {
       var result;
       var element = document.getElementById(id);
       if (!element) {
-        console.log('!!! Topology is unable to find the link target with id:', id);
+        console.warn('!!! Topology is unable to find the link target with id:', id);
         result = [0, 0];
       } else {
         var rect = element.getBoundingClientRect();

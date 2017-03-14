@@ -233,7 +233,6 @@ var Range = function (_Component) {
         // in case the user resizes the window
         start = Math.max(0, Math.min(count - 1, start));
         end = Math.max(0, Math.min(count - 1, end));
-        console.log('!!!', start, end, count);
         // calculate flex basis
         var beforePercent = Math.max(0, 100 / (count - 1) * Math.min(start, count - 1));
         var beforeOffset = beforePercent * (_utils.padding * 2) / 100;
