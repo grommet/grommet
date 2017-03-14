@@ -277,12 +277,16 @@ var Search = function (_Component) {
   }, {
     key: '_onFocusInput',
     value: function _onFocusInput(event) {
-      var onFocus = this.props.onFocus;
+      var _props4 = this.props,
+          onFocus = _props4.onFocus,
+          suggestions = _props4.suggestions;
 
       if (onFocus) {
         onFocus(event);
       }
-      this._onAddDrop();
+      if (suggestions && suggestions.length > 0) {
+        this._onAddDrop();
+      }
     }
   }, {
     key: '_fireDOMChange',
@@ -350,10 +354,10 @@ var Search = function (_Component) {
     value: function _onEnter(event) {
       var _this2 = this;
 
-      var _props4 = this.props,
-          inline = _props4.inline,
-          onSelect = _props4.onSelect,
-          suggestions = _props4.suggestions;
+      var _props5 = this.props,
+          inline = _props5.inline,
+          onSelect = _props5.onSelect,
+          suggestions = _props5.suggestions;
       var activeSuggestionIndex = this.state.activeSuggestionIndex;
       var intl = this.context.intl;
       // for not inline search the enter should NOT submit the form
@@ -438,12 +442,12 @@ var Search = function (_Component) {
       var _classnames,
           _this3 = this;
 
-      var _props5 = this.props,
-          defaultValue = _props5.defaultValue,
-          dropAlign = _props5.dropAlign,
-          dropColorIndex = _props5.dropColorIndex,
-          suggestions = _props5.suggestions,
-          value = _props5.value;
+      var _props6 = this.props,
+          defaultValue = _props6.defaultValue,
+          dropAlign = _props6.dropAlign,
+          dropColorIndex = _props6.dropColorIndex,
+          suggestions = _props6.suggestions,
+          value = _props6.value;
       var _state3 = this.state,
           inline = _state3.inline,
           activeSuggestionIndex = _state3.activeSuggestionIndex;
@@ -517,16 +521,16 @@ var Search = function (_Component) {
       var _classnames3,
           _this4 = this;
 
-      var _props6 = this.props,
-          className = _props6.className,
-          defaultValue = _props6.defaultValue,
-          iconAlign = _props6.iconAlign,
-          id = _props6.id,
-          fill = _props6.fill,
-          pad = _props6.pad,
-          placeHolder = _props6.placeHolder,
-          size = _props6.size,
-          value = _props6.value;
+      var _props7 = this.props,
+          className = _props7.className,
+          defaultValue = _props7.defaultValue,
+          iconAlign = _props7.iconAlign,
+          id = _props7.id,
+          fill = _props7.fill,
+          pad = _props7.pad,
+          placeHolder = _props7.placeHolder,
+          size = _props7.size,
+          value = _props7.value;
       var inline = this.state.inline;
 
       var restProps = _Props2.default.omit(this.props, Object.keys(Search.propTypes));

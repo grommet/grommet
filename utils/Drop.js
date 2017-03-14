@@ -208,6 +208,7 @@ var Drop = function () {
     this.remove = this.remove.bind(this);
     this.place = this.place.bind(this);
     this._onResize = this._onResize.bind(this);
+    this._control = control;
 
     // setup DOM
     var container = document.createElement('div');
