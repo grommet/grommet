@@ -30,7 +30,7 @@ export default class Carousel extends Component {
     this._handleScroll = this._handleScroll.bind(this);
 
     this.state = {
-      activeIndex: 0,
+      activeIndex: props.activeIndex || 0,
       hideControls: ! props.persistentNav,
       priorIndex: 0,
       sequence: 1,
@@ -56,6 +56,13 @@ export default class Carousel extends Component {
       scrollParents.forEach((scrollParent) => {
         scrollParent.addEventListener('scroll', this._handleScroll);
       }, this);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if ((nextProps.activeIndex || 0 === nextProps.activeIndex) &&
+      this.state.activeIndex !== nextProps.activeIndex) {
+      this.setState({ activeIndex: nextProps.activeIndex });
     }
   }
 
@@ -133,28 +140,41 @@ export default class Carousel extends Component {
       const { activeIndex } = this.state;
       const { intl } = this.context;
       const numSlides = children.length;
-
-      this.setState({
-        activeIndex: (activeIndex + 1) % numSlides
-      }, () => {
+      const index = (activeIndex + 1) % numSlides;
+      const announceFunc = () => {
         const slideNumber = Intl.getMessage(intl, 'Slide Number', {
           slideNumber: this.state.activeIndex + 1
         });
         const activatedMessage = Intl.getMessage(intl, 'Activated');
         announce(`${slideNumber} ${activatedMessage}`, 'polite');
-      });
+      };
 
+      if (! this.props.hasOwnProperty('activeIndex')) {
+        this.setState({
+          activeIndex: index
+        }, announceFunc );
+      }
       if (!infinite && activeIndex === numSlides - 1) {
         clearInterval(this._slideAnimation);
+      }
+
+      if (this.props.onActive) {
+        this.props.onActive(index);
+        announceFunc();
       }
     }.bind(this), autoplaySpeed);
   }
 
   _onSelect (index) {
-    if (index !== this.state.activeIndex) {
+    if (! this.props.hasOwnProperty('activeIndex') 
+        && index !== this.state.activeIndex) {
       this.setState({
         activeIndex: index
       });
+    }
+
+    if (this.props.onActive) {
+      this.props.onActive(index);
     }
   }
 
@@ -198,18 +218,34 @@ export default class Carousel extends Component {
     const { children } = this.props;
     const { activeIndex } = this.state;
     const numSlides = children.length;
-    this.setState({
-      activeIndex: (activeIndex + numSlides - 1) % numSlides
-    });
+    const index = (activeIndex + numSlides - 1) % numSlides;
+
+    if(! this.props.hasOwnProperty('activeIndex')) {
+      this.setState({
+        activeIndex: index
+      });
+    }
+
+    if (this.props.onActive) {
+      this.props.onActive(index);
+    }
   }
 
   _slideNext () {
     const { children } = this.props;
     const { activeIndex } = this.state;
     const numSlides = children.length;
-    this.setState({
-      activeIndex: (activeIndex + 1) % numSlides
-    });
+    const index = (activeIndex + 1) % numSlides;
+
+    if(! this.props.hasOwnProperty('activeIndex')) {
+      this.setState({
+        activeIndex: index
+      });
+    }
+
+    if (this.props.onActive) {
+      this.props.onActive(index);
+    }
   }
 
   _renderPrevButton () {
@@ -248,6 +284,8 @@ export default class Carousel extends Component {
 
   render () {
     const { a11yTitle, children, className, ...props } = this.props;
+    delete props.activeIndex;
+    delete props.onActive;
     const restProps = Props.omit({...props}, Object.keys(Carousel.propTypes));
     const { activeIndex, hideControls, width } = this.state;
     const { intl } = this.context;
@@ -340,8 +378,10 @@ Carousel.defaultProps = {
 
 Carousel.propTypes = {
   a11yTitle: PropTypes.string,
+  activeIndex: PropTypes.number,
   autoplay: PropTypes.bool,
   autoplaySpeed: PropTypes.number,
   infinite: PropTypes.bool,
+  onActive: PropTypes.func,
   persistentNav: PropTypes.bool
 };
