@@ -553,6 +553,8 @@ $range-control-colored-background-color: rgba(#000, 0.5);
 .#{$grommet-namespace}chart-range__start,
 .#{$grommet-namespace}chart-range__end {
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   flex: 0 1 $inuit-base-spacing-unit;
   background-color: $range-control-background-color;
   border: 1px solid $border-color;
