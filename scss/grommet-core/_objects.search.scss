@@ -42,7 +42,7 @@
 }
 
 .#{$grommet-namespace}search__drop {
-  @include inuit-font-size($inuit-heading-size-4, inherit);
+  @include inuit-font-size($h4-font-size, inherit);
 
   @include media-query(palm) {
     max-width: 100%;
