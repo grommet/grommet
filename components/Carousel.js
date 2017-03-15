@@ -87,7 +87,7 @@ var Carousel = function (_Component) {
     _this._handleScroll = _this._handleScroll.bind(_this);
 
     _this.state = {
-      activeIndex: 0,
+      activeIndex: props.activeIndex || 0,
       hideControls: !props.persistentNav,
       priorIndex: 0,
       sequence: 1,
@@ -118,6 +118,13 @@ var Carousel = function (_Component) {
         scrollParents.forEach(function (scrollParent) {
           scrollParent.addEventListener('scroll', _this2._handleScroll);
         }, this);
+      }
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if ((nextProps.activeIndex || 0 === nextProps.activeIndex) && this.state.activeIndex !== nextProps.activeIndex) {
+        this.setState({ activeIndex: nextProps.activeIndex });
       }
     }
   }, {
@@ -211,29 +218,41 @@ var Carousel = function (_Component) {
         var intl = this.context.intl;
 
         var numSlides = children.length;
-
-        this.setState({
-          activeIndex: (activeIndex + 1) % numSlides
-        }, function () {
+        var index = (activeIndex + 1) % numSlides;
+        var announceFunc = function announceFunc() {
           var slideNumber = _Intl2.default.getMessage(intl, 'Slide Number', {
             slideNumber: _this5.state.activeIndex + 1
           });
           var activatedMessage = _Intl2.default.getMessage(intl, 'Activated');
           (0, _Announcer.announce)(slideNumber + ' ' + activatedMessage, 'polite');
-        });
+        };
 
+        if (!this.props.hasOwnProperty('activeIndex')) {
+          this.setState({
+            activeIndex: index
+          }, announceFunc);
+        }
         if (!infinite && activeIndex === numSlides - 1) {
           clearInterval(this._slideAnimation);
+        }
+
+        if (this.props.onActive) {
+          this.props.onActive(index);
+          announceFunc();
         }
       }.bind(this), autoplaySpeed);
     }
   }, {
     key: '_onSelect',
     value: function _onSelect(index) {
-      if (index !== this.state.activeIndex) {
+      if (!this.props.hasOwnProperty('activeIndex') && index !== this.state.activeIndex) {
         this.setState({
           activeIndex: index
         });
+      }
+
+      if (this.props.onActive) {
+        this.props.onActive(index);
       }
     }
   }, {
@@ -290,9 +309,17 @@ var Carousel = function (_Component) {
       var activeIndex = this.state.activeIndex;
 
       var numSlides = children.length;
-      this.setState({
-        activeIndex: (activeIndex + numSlides - 1) % numSlides
-      });
+      var index = (activeIndex + numSlides - 1) % numSlides;
+
+      if (!this.props.hasOwnProperty('activeIndex')) {
+        this.setState({
+          activeIndex: index
+        });
+      }
+
+      if (this.props.onActive) {
+        this.props.onActive(index);
+      }
     }
   }, {
     key: '_slideNext',
@@ -301,9 +328,17 @@ var Carousel = function (_Component) {
       var activeIndex = this.state.activeIndex;
 
       var numSlides = children.length;
-      this.setState({
-        activeIndex: (activeIndex + 1) % numSlides
-      });
+      var index = (activeIndex + 1) % numSlides;
+
+      if (!this.props.hasOwnProperty('activeIndex')) {
+        this.setState({
+          activeIndex: index
+        });
+      }
+
+      if (this.props.onActive) {
+        this.props.onActive(index);
+      }
     }
   }, {
     key: '_renderPrevButton',
@@ -352,6 +387,8 @@ var Carousel = function (_Component) {
           className = _props5.className,
           props = _objectWithoutProperties(_props5, ['a11yTitle', 'children', 'className']);
 
+      delete props.activeIndex;
+      delete props.onActive;
       var restProps = _Props2.default.omit(_extends({}, props), Object.keys(Carousel.propTypes));
       var _state = this.state,
           activeIndex = _state.activeIndex,
@@ -452,9 +489,11 @@ Carousel.defaultProps = {
 
 Carousel.propTypes = {
   a11yTitle: _react.PropTypes.string,
+  activeIndex: _react.PropTypes.number,
   autoplay: _react.PropTypes.bool,
   autoplaySpeed: _react.PropTypes.number,
   infinite: _react.PropTypes.bool,
+  onActive: _react.PropTypes.func,
   persistentNav: _react.PropTypes.bool
 };
 module.exports = exports['default'];
