@@ -70,8 +70,8 @@ var PlayButton = function (_Component) {
       var intl = this.context.intl;
 
 
-      var PlayIcon = primary ? _CirclePlay2.default : _Play2.default;
-      var Icon = playing ? _Pause2.default : ended ? _Refresh2.default : PlayIcon;
+      var PIcon = primary ? _CirclePlay2.default : _Play2.default;
+      var Icon = playing ? _Pause2.default : ended ? _Refresh2.default : PIcon;
       var controlIcon = _react2.default.createElement(Icon, { className: BUTTON_CLASS + '__icon', size: iconSize,
         colorIndex: 'brand' });
 

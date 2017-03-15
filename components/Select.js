@@ -556,7 +556,8 @@ var Select = function (_Component) {
             value: this._renderValue(value) || '' })),
           _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control',
             a11yTitle: _Intl2.default.getMessage(intl, 'Select Icon'),
-            icon: _react2.default.createElement(_CaretDown2.default, null), onClick: this._onAddDrop })
+            icon: _react2.default.createElement(_CaretDown2.default, { skipWarn: true }),
+            onClick: this._onAddDrop })
         );
       }
     }

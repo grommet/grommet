@@ -352,7 +352,8 @@ var Carousel = function (_Component) {
       var prevButton = void 0;
       if (infinite || activeIndex !== 0) {
         var prevMessage = _Intl2.default.getMessage(intl, 'Previous Slide');
-        prevButton = _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Previous2.default, { size: 'large' }), a11yTitle: prevMessage,
+        prevButton = _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Previous2.default, { skipWarn: true, size: 'large' }),
+          a11yTitle: prevMessage,
           className: CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--prev',
           onClick: this._slidePrev });
       }
@@ -371,7 +372,8 @@ var Carousel = function (_Component) {
       var nextButton = void 0;
       if (infinite || activeIndex !== children.length - 1) {
         var nextMessage = _Intl2.default.getMessage(intl, 'Next Slide');
-        nextButton = _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Next2.default, { size: 'large' }), a11yTitle: nextMessage,
+        nextButton = _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Next2.default, { skipWarn: true, size: 'large' }),
+          a11yTitle: nextMessage,
           className: CLASS_ROOT + '__arrow ' + CLASS_ROOT + '__arrow--next',
           onClick: this._slideNext });
       }

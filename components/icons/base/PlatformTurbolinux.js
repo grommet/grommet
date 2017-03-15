@@ -53,7 +53,11 @@ var Icon = function (_Component) {
   _createClass(Icon, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      console.warn('Base icons are not deprecated, use raw svg with Icon component');
+      var skipWarn = this.props.skipWarn;
+
+      if (!skipWarn) {
+        console.warn('Base icons are now deprecated, use raw svg with grommet-icon-loader');
+      }
     }
   }, {
     key: 'render',
@@ -78,7 +82,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         _extends({}, restProps, { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle }),
-        _react2.default.createElement('path', { fill: '#000000', fillRule: 'evenodd', d: 'M9.41886316,6.22224 L6,6.22224 L6.61541053,7.45268211 L9.96581053,7.45268211 L9.41886316,6.22224 Z M13.1110105,12.1706526 L8.18785263,10.8034105 L14.6833895,24 L12.5636842,14.4267789 L16.7346316,16.4785263 L14.9569895,8.20509474 L17.1449053,8.20509474 L17.8971158,6.15397895 L14.5465895,6.15397895 L14.1364421,4.17056842 L7.09383158,0 L13.1110105,12.1706526 Z', stroke: 'none' })
+        _react2.default.createElement('path', { stroke: 'none', fill: '#000000', fillRule: 'evenodd', d: 'M9.41886316,6.22224 L6,6.22224 L6.61541053,7.45268211 L9.96581053,7.45268211 L9.41886316,6.22224 Z M13.1110105,12.1706526 L8.18785263,10.8034105 L14.6833895,24 L12.5636842,14.4267789 L16.7346316,16.4785263 L14.9569895,8.20509474 L17.1449053,8.20509474 L17.8971158,6.15397895 L14.5465895,6.15397895 L14.1364421,4.17056842 L7.09383158,0 L13.1110105,12.1706526 Z' })
       );
     }
   }]);
@@ -106,6 +110,7 @@ Icon.propTypes = {
   a11yTitle: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
-  responsive: _react.PropTypes.bool
+  responsive: _react.PropTypes.bool,
+  skipWarn: _react.PropTypes.bool
 };
 module.exports = exports['default'];

@@ -53,7 +53,11 @@ var Icon = function (_Component) {
   _createClass(Icon, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      console.warn('Base icons are not deprecated, use raw svg with Icon component');
+      var skipWarn = this.props.skipWarn;
+
+      if (!skipWarn) {
+        console.warn('Base icons are now deprecated, use raw svg with grommet-icon-loader');
+      }
     }
   }, {
     key: 'render',
@@ -78,7 +82,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         _extends({}, restProps, { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle }),
-        _react2.default.createElement('path', { fill: '#000000', fillRule: 'evenodd', d: 'M23.9901437,3 L18.6973306,3 L14.9519507,6.73552361 L20.2447639,6.73552361 L23.9901437,3 Z M12.0246407,6.73552361 L15.7601643,3 L10.4673511,3 L6.72197125,6.73552361 L12.0246407,6.73552361 Z M20.2546201,17.6464066 L3.73552361,17.6464066 L3.73552361,6.77494867 L7.52032854,3 L2.21765914,3 L0,5.21765914 L0,21.3917864 L24,21.3917864 L24,6.73552361 L20.2546201,6.73552361 L20.2546201,17.6464066 Z', stroke: 'none' })
+        _react2.default.createElement('path', { stroke: 'none', fill: '#000000', fillRule: 'evenodd', d: 'M23.9901437,3 L18.6973306,3 L14.9519507,6.73552361 L20.2447639,6.73552361 L23.9901437,3 Z M12.0246407,6.73552361 L15.7601643,3 L10.4673511,3 L6.72197125,6.73552361 L12.0246407,6.73552361 Z M20.2546201,17.6464066 L3.73552361,17.6464066 L3.73552361,6.77494867 L7.52032854,3 L2.21765914,3 L0,5.21765914 L0,21.3917864 L24,21.3917864 L24,6.73552361 L20.2546201,6.73552361 L20.2546201,17.6464066 Z' })
       );
     }
   }]);
@@ -106,6 +110,7 @@ Icon.propTypes = {
   a11yTitle: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
-  responsive: _react.PropTypes.bool
+  responsive: _react.PropTypes.bool,
+  skipWarn: _react.PropTypes.bool
 };
 module.exports = exports['default'];

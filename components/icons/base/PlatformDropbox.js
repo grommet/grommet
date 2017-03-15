@@ -53,7 +53,11 @@ var Icon = function (_Component) {
   _createClass(Icon, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      console.warn('Base icons are not deprecated, use raw svg with Icon component');
+      var skipWarn = this.props.skipWarn;
+
+      if (!skipWarn) {
+        console.warn('Base icons are now deprecated, use raw svg with grommet-icon-loader');
+      }
     }
   }, {
     key: 'render',
@@ -78,7 +82,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         _extends({}, restProps, { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle }),
-        _react2.default.createElement('path', { fill: '#000000', fillRule: 'evenodd', d: 'M11.9998861,5.17831096 L4.95498114,9.52849791 L11.9998164,13.8787284 L19.0451308,9.52856802 L11.9998861,5.17831096 Z M11.9998865,5.09510125 L7.09366507,1 L0,5.6316555 L4.86638378,9.52849941 L0,13.425799 L7.09366507,18.0574545 L12.0001376,13.9621062 L16.9063349,18.0572249 L24,13.4255694 L19.1337313,9.52840727 L24,5.6316555 L16.9063349,1 L11.9998865,5.09510125 Z M11.9315598,14.7799043 L6.95333971,18.91089 L4.82296651,17.5200383 L4.82296651,19.0792344 L11.9315598,23.3420478 L19.0401531,19.0792344 L19.0401531,17.5200383 L16.9097799,18.91089 L11.9315598,14.7799043 Z', stroke: 'none' })
+        _react2.default.createElement('path', { stroke: 'none', fill: '#000000', fillRule: 'evenodd', d: 'M11.9998861,5.17831096 L4.95498114,9.52849791 L11.9998164,13.8787284 L19.0451308,9.52856802 L11.9998861,5.17831096 Z M11.9998865,5.09510125 L7.09366507,1 L0,5.6316555 L4.86638378,9.52849941 L0,13.425799 L7.09366507,18.0574545 L12.0001376,13.9621062 L16.9063349,18.0572249 L24,13.4255694 L19.1337313,9.52840727 L24,5.6316555 L16.9063349,1 L11.9998865,5.09510125 Z M11.9315598,14.7799043 L6.95333971,18.91089 L4.82296651,17.5200383 L4.82296651,19.0792344 L11.9315598,23.3420478 L19.0401531,19.0792344 L19.0401531,17.5200383 L16.9097799,18.91089 L11.9315598,14.7799043 Z' })
       );
     }
   }]);
@@ -106,6 +110,7 @@ Icon.propTypes = {
   a11yTitle: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
-  responsive: _react.PropTypes.bool
+  responsive: _react.PropTypes.bool,
+  skipWarn: _react.PropTypes.bool
 };
 module.exports = exports['default'];

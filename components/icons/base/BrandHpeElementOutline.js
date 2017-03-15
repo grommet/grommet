@@ -53,7 +53,11 @@ var Icon = function (_Component) {
   _createClass(Icon, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      console.warn('Base icons are not deprecated, use raw svg with Icon component');
+      var skipWarn = this.props.skipWarn;
+
+      if (!skipWarn) {
+        console.warn('Base icons are now deprecated, use raw svg with grommet-icon-loader');
+      }
     }
   }, {
     key: 'render',
@@ -78,7 +82,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         _extends({}, restProps, { version: '1.1', viewBox: '0 0 40 12', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle }),
-        _react2.default.createElement('path', { fill: '#01A982', fillRule: 'evenodd', d: 'M0,12 L40,12 L40,0 L0,0 L0,12 Z M3,3 L37,3 L37,9 L3,9 L3,3 Z', stroke: 'none' })
+        _react2.default.createElement('path', { stroke: 'none', fill: '#01A982', fillRule: 'evenodd', d: 'M0,12 L40,12 L40,0 L0,0 L0,12 Z M3,3 L37,3 L37,9 L3,9 L3,3 Z' })
       );
     }
   }]);
@@ -106,6 +110,7 @@ Icon.propTypes = {
   a11yTitle: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
-  responsive: _react.PropTypes.bool
+  responsive: _react.PropTypes.bool,
+  skipWarn: _react.PropTypes.bool
 };
 module.exports = exports['default'];

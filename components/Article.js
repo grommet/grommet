@@ -649,15 +649,15 @@ var Article = function (_Component) {
             controls.push(_react2.default.createElement(_Button2.default, { key: 'previous',
               plain: true, a11yTitle: a11yTitle.previous,
               className: CONTROL_CLASS_PREFIX + '-left',
-              onClick: this._onPrevious, icon: _react2.default.createElement(_LinkPrevious2.default, {
+              onClick: this._onPrevious, icon: _react2.default.createElement(_LinkPrevious2.default, { skipWarn: true,
                 a11yTitle: 'article-previous-title', size: 'large' }) }));
           }
           if (selectedIndex < childCount - 1) {
             controls.push(_react2.default.createElement(_Button2.default, { key: 'next',
               plain: true, a11yTitle: a11yTitle.next,
               className: CONTROL_CLASS_PREFIX + '-right',
-              onClick: this._onNext, icon: _react2.default.createElement(_LinkNext2.default, { size: 'large',
-                a11yTitle: 'article-next-title' }) }));
+              onClick: this._onNext, icon: _react2.default.createElement(_LinkNext2.default, { skipWarn: true,
+                size: 'large', a11yTitle: 'article-next-title' }) }));
           }
         }
       } else {
@@ -668,7 +668,7 @@ var Article = function (_Component) {
               plain: true, a11yTitle: a11yTitle.previous,
               className: CONTROL_CLASS_PREFIX + '-up',
               onClick: this._onPrevious },
-            _react2.default.createElement(_Up2.default, null)
+            _react2.default.createElement(_Up2.default, { skipWarn: true })
           ));
         }
         if (selectedIndex < childCount - 1) {
@@ -676,7 +676,7 @@ var Article = function (_Component) {
             _Button2.default,
             { key: 'next', plain: true, a11yTitle: a11yTitle.next,
               className: CONTROL_CLASS_PREFIX + '-down', onClick: this._onNext },
-            _react2.default.createElement(_Down2.default, { a11yTitle: 'article-down' })
+            _react2.default.createElement(_Down2.default, { skipWarn: true, a11yTitle: 'article-down' })
           ));
         }
       }

@@ -471,10 +471,10 @@ var Menu = function (_Component2) {
       }
       if (label) {
         buttonLabel = label;
-        buttonIcon = _react2.default.createElement(_Down2.default, { a11yTitle: 'menu-down' });
+        buttonIcon = _react2.default.createElement(_Down2.default, { skipWarn: true, a11yTitle: 'menu-down' });
       }
       if (!buttonIcon && !buttonLabel) {
-        buttonIcon = _react2.default.createElement(_More2.default, null);
+        buttonIcon = _react2.default.createElement(_More2.default, { skipWarn: true });
       }
       return { icon: buttonIcon, label: buttonLabel };
     }

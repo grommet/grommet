@@ -53,7 +53,11 @@ var Icon = function (_Component) {
   _createClass(Icon, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      console.warn('Base icons are not deprecated, use raw svg with Icon component');
+      var skipWarn = this.props.skipWarn;
+
+      if (!skipWarn) {
+        console.warn('Base icons are now deprecated, use raw svg with grommet-icon-loader');
+      }
     }
   }, {
     key: 'render',
@@ -78,7 +82,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         _extends({}, restProps, { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle }),
-        _react2.default.createElement('path', { fill: '#000000', fillRule: 'evenodd', d: 'M24,11.9985002 C24,18.6306712 18.6276715,23.9970004 11.9985002,23.9970004 C5.37232846,23.9970004 0,18.6306712 0,11.9985002 C0,5.37832771 5.37232846,0 11.9985002,0 C18.6291714,0 24,5.37832771 24,11.9985002 L24,11.9985002 Z M11.9985002,15.1181102 L7.42407199,18.8211474 L9.53130859,13.3243345 L4.59542557,10.1177353 L10.4776903,10.4221972 L11.9985002,4.73340832 L13.528309,10.4221972 L19.4075741,10.1177353 L14.4701912,13.3243345 L16.5789276,18.8211474 L11.9985002,15.1181102 Z', stroke: 'none' })
+        _react2.default.createElement('path', { stroke: 'none', fill: '#000000', fillRule: 'evenodd', d: 'M24,11.9985002 C24,18.6306712 18.6276715,23.9970004 11.9985002,23.9970004 C5.37232846,23.9970004 0,18.6306712 0,11.9985002 C0,5.37832771 5.37232846,0 11.9985002,0 C18.6291714,0 24,5.37832771 24,11.9985002 L24,11.9985002 Z M11.9985002,15.1181102 L7.42407199,18.8211474 L9.53130859,13.3243345 L4.59542557,10.1177353 L10.4776903,10.4221972 L11.9985002,4.73340832 L13.528309,10.4221972 L19.4075741,10.1177353 L14.4701912,13.3243345 L16.5789276,18.8211474 L11.9985002,15.1181102 Z' })
       );
     }
   }]);
@@ -106,6 +110,7 @@ Icon.propTypes = {
   a11yTitle: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
-  responsive: _react.PropTypes.bool
+  responsive: _react.PropTypes.bool,
+  skipWarn: _react.PropTypes.bool
 };
 module.exports = exports['default'];

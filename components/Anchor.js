@@ -166,7 +166,7 @@ var Anchor = function (_Component) {
       if (icon) {
         anchorIcon = icon;
       } else if (primary) {
-        anchorIcon = _react2.default.createElement(_LinkNext2.default, { a11yTitle: 'link next' });
+        anchorIcon = _react2.default.createElement(_LinkNext2.default, { skipWarn: true, a11yTitle: 'link next' });
       }
 
       if (anchorIcon && !primary && !label) {

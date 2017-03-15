@@ -54,6 +54,11 @@ var SVGIcon = function (_Component) {
   }
 
   _createClass(SVGIcon, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.log('SVGIcon has been deprecated please use Icon instead.');
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _classnames;

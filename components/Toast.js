@@ -124,7 +124,7 @@ var ToastContents = function (_Component) {
       var closeControl = void 0;
       if (onClose) {
         closeControl = _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__closer',
-          icon: _react2.default.createElement(_Close2.default, null), onClick: this._onClose });
+          icon: _react2.default.createElement(_Close2.default, { skipWarn: true }), onClick: this._onClose });
       }
 
       return _react2.default.createElement(

@@ -113,7 +113,8 @@ var AccordionPanel = function (_Component) {
                 justify: 'between', align: 'center', responsive: false,
                 className: CLASS_ROOT + '__header' },
               heading,
-              _react2.default.createElement(_CaretNext2.default, { className: CLASS_ROOT + '__control' })
+              _react2.default.createElement(_CaretNext2.default, { skipWarn: true,
+                className: CLASS_ROOT + '__control' })
             )
           )
         ),

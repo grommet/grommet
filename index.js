@@ -232,15 +232,6 @@ Object.defineProperty(exports, 'Hero', {
   }
 });
 
-var _Icon = require('./components/Icon');
-
-Object.defineProperty(exports, 'Icon', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_Icon).default;
-  }
-});
-
 var _Image = require('./components/Image');
 
 Object.defineProperty(exports, 'Image', {

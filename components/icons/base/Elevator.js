@@ -16,11 +16,15 @@ var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _CSSClassnames = require('../utils/CSSClassnames');
+var _CSSClassnames = require('../../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
-var _Props = require('../utils/Props');
+var _Intl = require('../../../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
+var _Props = require('../../../utils/Props');
 
 var _Props2 = _interopRequireDefault(_Props);
 
@@ -49,12 +53,11 @@ var Icon = function (_Component) {
   _createClass(Icon, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      console.warn('Base icons are not deprecated, use raw svg with Icon component');
-    }
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      console.warn('Base icons are not deprecated, use raw svg with Icon component');
+      var skipWarn = this.props.skipWarn;
+
+      if (!skipWarn) {
+        console.warn('Base icons are now deprecated, use raw svg with grommet-icon-loader');
+      }
     }
   }, {
     key: 'render',
@@ -63,28 +66,24 @@ var Icon = function (_Component) {
 
       var _props = this.props,
           className = _props.className,
-          children = _props.children,
           colorIndex = _props.colorIndex;
       var _props2 = this.props,
           a11yTitle = _props2.a11yTitle,
           size = _props2.size,
           responsive = _props2.responsive;
+      var intl = this.context.intl;
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames, CLASS_ROOT + '--responsive', responsive), _defineProperty(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '-elevator', className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames, CLASS_ROOT + '--responsive', responsive), _defineProperty(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), _classnames));
 
-      a11yTitle = a11yTitle;
+      a11yTitle = a11yTitle || _Intl2.default.getMessage(intl, 'elevator');
 
       var restProps = _Props2.default.omit(this.props, Object.keys(Icon.propTypes));
-      return _react2.default.cloneElement(_react2.default.Children.only(children), _extends({}, restProps, {
-        'aria-label': a11yTitle,
-        className: classes,
-        version: '1.1',
-        viewBox: '0 0 24 24',
-        width: '24px',
-        height: '24px',
-        role: 'img'
-      }));
+      return _react2.default.createElement(
+        'svg',
+        _extends({}, restProps, { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle }),
+        _react2.default.createElement('path', { fill: 'none', stroke: '#000', strokeLinecap: 'round', strokeWidth: '2', d: 'M1,2.991155 C1,1.89147046 1.88967395,1 2.991155,1 L21.008845,1 C22.1085295,1 23,1.88967395 23,2.991155 L23,21.008845 C23,22.1085295 22.1103261,23 21.008845,23 L2.991155,23 C1.89147046,23 1,22.1103261 1,21.008845 L1,2.991155 Z M16.5,8 L18,10 L15,10 L16.5,8 Z M16.5,16 L18,14 L15,14 L16.5,16 Z M5,13 L6.55613518,9.88772964 C6.80127495,9.3974501 7.44386482,9 8,9 L8,9 C8.55228475,9 9.19907951,9.39815903 9.44386482,9.88772964 L11,13 M6.5,18 L7.75,10 L8,10 L8.25,10 L9.5,18 M8,7 C8.55228475,7 9,6.55228475 9,6 C9,5.44771525 8.55228475,5 8,5 C7.44771525,5 7,5.44771525 7,6 C7,6.55228475 7.44771525,7 8,7 Z' })
+      );
     }
   }]);
 
@@ -95,17 +94,23 @@ Icon.displayName = 'Icon';
 exports.default = Icon;
 ;
 
+Icon.contextTypes = {
+  intl: _react.PropTypes.object
+};
+
 Icon.defaultProps = {
   responsive: true
 };
+
+Icon.displayName = 'Elevator';
 
 Icon.icon = true;
 
 Icon.propTypes = {
   a11yTitle: _react.PropTypes.string,
-  children: _react.PropTypes.node.isRequired,
   colorIndex: _react.PropTypes.string,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
-  responsive: _react.PropTypes.bool
+  responsive: _react.PropTypes.bool,
+  skipWarn: _react.PropTypes.bool
 };
 module.exports = exports['default'];

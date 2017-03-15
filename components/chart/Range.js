@@ -263,7 +263,7 @@ var Range = function (_Component) {
             'div',
             { className: startClasses.join(' '),
               onMouseDown: onActive ? this._mouseDown('start') : undefined },
-            _react2.default.createElement(_Drag2.default, null)
+            _react2.default.createElement(_Drag2.default, { skipWarn: true })
           )
         ), _react2.default.createElement('div', _extends({ key: 'active' }, props, { className: CLASS_ROOT + '__active',
           onMouseDown: this._mouseDown('active') })), _react2.default.createElement(
@@ -274,7 +274,7 @@ var Range = function (_Component) {
             'div',
             { className: endClasses.join(' '),
               onMouseDown: onActive ? this._mouseDown('end') : undefined },
-            _react2.default.createElement(_Drag2.default, null)
+            _react2.default.createElement(_Drag2.default, { skipWarn: true })
           )
         )];
       }
