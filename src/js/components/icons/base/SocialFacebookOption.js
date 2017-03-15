@@ -11,9 +11,12 @@ const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 export default class Icon extends Component {
   componentDidMount() {
-    console.warn(
-      'Base icons are not deprecated, use raw svg with Icon component'
-    );
+    const { skipWarn } = this.props;
+    if (!skipWarn) {
+      console.warn(
+        'Base icons are now deprecated, use raw svg with grommet-icon-loader'
+      );
+    }
   }
   render () {
     const { className, colorIndex } = this.props;
@@ -34,7 +37,7 @@ export default class Icon extends Component {
     a11yTitle = a11yTitle || Intl.getMessage(intl, 'social-facebook-option');
 
     const restProps = Props.omit(this.props, Object.keys(Icon.propTypes));
-    return <svg {...restProps} version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><path fill="#000000" fillRule="evenodd" d="M9.94474914,22 L9.94474914,13.1657526 L7,13.1657526 L7,9.48481614 L9.94474914,9.48481614 L9.94474914,6.54006699 C9.94474914,3.49740494 11.8713513,2 14.5856738,2 C15.8857805,2 17.0033128,2.09717672 17.3287076,2.13987558 L17.3287076,5.32020466 L15.4462767,5.32094085 C13.9702212,5.32094085 13.6256856,6.02252733 13.6256856,7.05171716 L13.6256856,9.48481614 L17.306622,9.48481614 L16.5704347,13.1657526 L13.6256856,13.1657526 L13.6845806,22" stroke="none"/></svg>;
+    return <svg {...restProps} version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><path stroke="none" fill="#000000" fillRule="evenodd" d="M9.94474914,22 L9.94474914,13.1657526 L7,13.1657526 L7,9.48481614 L9.94474914,9.48481614 L9.94474914,6.54006699 C9.94474914,3.49740494 11.8713513,2 14.5856738,2 C15.8857805,2 17.0033128,2.09717672 17.3287076,2.13987558 L17.3287076,5.32020466 L15.4462767,5.32094085 C13.9702212,5.32094085 13.6256856,6.02252733 13.6256856,7.05171716 L13.6256856,9.48481614 L17.306622,9.48481614 L16.5704347,13.1657526 L13.6256856,13.1657526 L13.6845806,22"/></svg>;
   }
 };
 
@@ -54,6 +57,7 @@ Icon.propTypes = {
   a11yTitle: PropTypes.string,
   colorIndex: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
-  responsive: PropTypes.bool
+  responsive: PropTypes.bool,
+  skipWarn: PropTypes.bool
 };
 

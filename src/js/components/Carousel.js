@@ -6,8 +6,8 @@ import Box from './Box';
 import Tiles from './Tiles';
 import Tile from './Tile';
 import Button from './Button';
-import Previous from './icons/base/Previous';
-import Next from './icons/base/Next';
+import PreviousIcon from './icons/base/Previous';
+import NextIcon from './icons/base/Next';
 import { findScrollParents } from '../utils/DOM';
 import CSSClassnames from '../utils/CSSClassnames';
 import Intl from '../utils/Intl';
@@ -261,7 +261,8 @@ export default class Carousel extends Component {
     if (infinite || activeIndex !== 0) {
       const prevMessage = Intl.getMessage(intl, 'Previous Slide');
       prevButton = (
-        <Button icon={<Previous size="large" />} a11yTitle={prevMessage}
+        <Button icon={<PreviousIcon skipWarn={true} size="large" />}
+          a11yTitle={prevMessage}
           className={`${CLASS_ROOT}__arrow ${CLASS_ROOT}__arrow--prev`}
           onClick={this._slidePrev} />
       );
@@ -278,7 +279,8 @@ export default class Carousel extends Component {
     if (infinite || activeIndex !== children.length - 1) {
       const nextMessage = Intl.getMessage(intl, 'Next Slide');
       nextButton = (
-        <Button icon={<Next size="large" />} a11yTitle={nextMessage}
+        <Button icon={<NextIcon skipWarn={true} size="large" />}
+          a11yTitle={nextMessage}
           className={`${CLASS_ROOT}__arrow ${CLASS_ROOT}__arrow--next`}
           onClick={this._slideNext} />
       );

@@ -14,6 +14,9 @@ const CLASS_ROOT = {
 };
 
 export default class SVGIcon extends Component {
+  componentDidMount() {
+    console.log('SVGIcon has been deprecated please use Icon instead.');
+  }
   render () {
     const {
       a11yTitle, children, className, colorIndex, size, type, ...props

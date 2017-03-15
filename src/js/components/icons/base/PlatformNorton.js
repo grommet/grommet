@@ -11,9 +11,12 @@ const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 export default class Icon extends Component {
   componentDidMount() {
-    console.warn(
-      'Base icons are not deprecated, use raw svg with Icon component'
-    );
+    const { skipWarn } = this.props;
+    if (!skipWarn) {
+      console.warn(
+        'Base icons are now deprecated, use raw svg with grommet-icon-loader'
+      );
+    }
   }
   render () {
     const { className, colorIndex } = this.props;
@@ -34,7 +37,7 @@ export default class Icon extends Component {
     a11yTitle = a11yTitle || Intl.getMessage(intl, 'platform-norton');
 
     const restProps = Props.omit(this.props, Object.keys(Icon.propTypes));
-    return <svg {...restProps} version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><polygon fill="#000000" fillRule="evenodd" points="2 0 2 22.794 6.028 22.794 6.028 9.571 21.636 24 21.636 .423 17.607 .423 17.607 14.429" stroke="none"/></svg>;
+    return <svg {...restProps} version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><polygon stroke="none" fill="#000000" fillRule="evenodd" points="2 0 2 22.794 6.028 22.794 6.028 9.571 21.636 24 21.636 .423 17.607 .423 17.607 14.429"/></svg>;
   }
 };
 
@@ -54,6 +57,7 @@ Icon.propTypes = {
   a11yTitle: PropTypes.string,
   colorIndex: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
-  responsive: PropTypes.bool
+  responsive: PropTypes.bool,
+  skipWarn: PropTypes.bool
 };
 

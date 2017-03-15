@@ -474,14 +474,16 @@ export default class Tiles extends Component {
       if (!overflowStart) {
         const previousTilesMessage = Intl.getMessage(intl, 'Previous Tiles');
         left = (
-          <Button className={`${CLASS_ROOT}__left`} icon={<LinkPreviousIcon />}
+          <Button className={`${CLASS_ROOT}__left`}
+            icon={<LinkPreviousIcon skipWarn={true} />}
             a11yTitle={previousTilesMessage} onClick={this._onLeft} />
         );
       }
       if (!overflowEnd) {
         const nextTilesMessage = Intl.getMessage(intl, 'Next Tiles');
         right = (
-          <Button className={`${CLASS_ROOT}__right`} icon={<LinkNextIcon />}
+          <Button className={`${CLASS_ROOT}__right`}
+            icon={<LinkNextIcon skipWarn={true} />}
             a11yTitle={nextTilesMessage} onClick={this._onRight} />
         );
       }

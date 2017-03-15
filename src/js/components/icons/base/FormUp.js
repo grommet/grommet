@@ -2,29 +2,30 @@
 
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import CSSClassnames from '../utils/CSSClassnames';
-import Props from '../utils/Props';
+import CSSClassnames from '../../../utils/CSSClassnames';
+import Intl from '../../../utils/Intl';
+import Props from '../../../utils/Props';
 
 const CLASS_ROOT = CSSClassnames.CONTROL_ICON;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 export default class Icon extends Component {
   componentDidMount() {
-    console.warn(
-      'Base icons are not deprecated, use raw svg with Icon component'
-    );
-  }
-  componentDidMount() {
-    console.warn(
-      'Base icons are not deprecated, use raw svg with Icon component'
-    );
+    const { skipWarn } = this.props;
+    if (!skipWarn) {
+      console.warn(
+        'Base icons are now deprecated, use raw svg with grommet-icon-loader'
+      );
+    }
   }
   render () {
-    const { className, children, colorIndex } = this.props;
+    const { className, colorIndex } = this.props;
     let { a11yTitle, size, responsive } = this.props;
+    let { intl } = this.context;
 
     const classes = classnames(
       CLASS_ROOT,
+      `${CLASS_ROOT}-form-up`,
       className,
       {
         [`${CLASS_ROOT}--${size}`]: size,
@@ -33,32 +34,30 @@ export default class Icon extends Component {
       }
     );
 
-    a11yTitle = a11yTitle;
+    a11yTitle = a11yTitle || Intl.getMessage(intl, 'form-up');
 
     const restProps = Props.omit(this.props, Object.keys(Icon.propTypes));
-    return React.cloneElement(React.Children.only(children), {
-      ...restProps,
-      'aria-label': a11yTitle,
-      className: classes,
-      version: '1.1',
-      viewBox: '0 0 24 24',
-      width: '24px',
-      height: '24px',
-      role: 'img'
-    });
+    return <svg {...restProps} version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><polyline fill="none" stroke="#000" strokeWidth="2" points="18 9 12 15 6 9" transform="matrix(1 0 0 -1 0 24)"/></svg>;
   }
+};
+
+Icon.contextTypes = {
+  intl: PropTypes.object
 };
 
 Icon.defaultProps = {
   responsive: true
 };
 
+Icon.displayName = 'FormUp';
+
 Icon.icon = true;
 
 Icon.propTypes = {
   a11yTitle: PropTypes.string,
-  children: PropTypes.node.isRequired,
   colorIndex: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
-  responsive: PropTypes.bool
+  responsive: PropTypes.bool,
+  skipWarn: PropTypes.bool
 };
+

@@ -295,8 +295,8 @@ export default class SearchInput extends Component {
           placeholder={placeHolder} autoComplete='off'
           onChange={this._onInputChange} onFocus={this._onFocus}
           onKeyDown={this._onInputKeyDown} />
-        <Button className={`${CLASS_ROOT}__control`} icon={<SearchIcon />}
-          onClick={this._onAddDrop} />
+        <Button className={`${CLASS_ROOT}__control`}
+          icon={<SearchIcon skipWarn={true} />} onClick={this._onAddDrop} />
       </div>
     );
   }

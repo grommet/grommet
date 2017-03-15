@@ -37,11 +37,6 @@ export default {
   jsAssets: ['src/js/**/*.js'],
   mainJs: 'src/js/index-commonjs.js',
   mainScss: 'src/scss/grommet-core/index.scss',
-  // icons: {
-  //   source: 'src/img/icons',
-  //   destination: 'src/js/components/icons/base',
-  //   context: '../../../'
-  // },
   sync: {
     hostname: 'grommet.io',
     username: 'grommet',
@@ -68,7 +63,7 @@ export default {
       loaders: [
         {
           test: /\.svg$/,
-          loader: 'babel!react-svg'
+          loader: 'babel!grommet-icon'
         }
       ]
     }

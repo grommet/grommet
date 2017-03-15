@@ -4,8 +4,8 @@ import React, { Component, PropTypes } from 'react';
 import Intl from '../../utils/Intl';
 import CSSClassnames from '../../utils/CSSClassnames';
 import Button from '../Button';
-import CirclePlay from '../icons/base/CirclePlay';
-import Play from '../icons/base/Play';
+import CirclePlayIcon from '../icons/base/CirclePlay';
+import PlayIcon from '../icons/base/Play';
 import PauseIcon from '../icons/base/Pause';
 import RefreshIcon from '../icons/base/Refresh';
 
@@ -20,8 +20,8 @@ export default class PlayButton extends Component {
     } = this.props;
     const { intl } = this.context;
 
-    const PlayIcon = primary ? CirclePlay : Play;
-    const Icon = (playing ? PauseIcon : (ended ? RefreshIcon : PlayIcon));
+    const PIcon = primary ? CirclePlayIcon : PlayIcon;
+    const Icon = (playing ? PauseIcon : (ended ? RefreshIcon : PIcon));
     const controlIcon = (
       <Icon className={`${BUTTON_CLASS}__icon`} size={iconSize}
         colorIndex='brand' />

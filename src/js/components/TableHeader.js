@@ -23,12 +23,15 @@ export default class TableHeader extends Component {
     const { labels, onSort, sortAscending, sortIndex, ...props } = this.props;
 
     const cells = labels.map((label, index) => {
-      
+
       let content = label;
       if (sortIndex >= 0) {
         let sortIndicator;
         if (index === sortIndex) {
-          sortIndicator = (sortAscending ? <AscIcon /> : <DescIcon />);
+          sortIndicator = (
+            sortAscending ?
+              <AscIcon skipWarn={true} /> : <DescIcon skipWarn={true} />
+          );
         }
         content = (
           <Box direction='row' justify='start' align='center'

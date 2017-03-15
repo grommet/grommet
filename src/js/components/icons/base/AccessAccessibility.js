@@ -11,9 +11,12 @@ const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 export default class Icon extends Component {
   componentDidMount() {
-    console.warn(
-      'Base icons are not deprecated, use raw svg with Icon component'
-    );
+    const { skipWarn } = this.props;
+    if (!skipWarn) {
+      console.warn(
+        'Base icons are now deprecated, use raw svg with grommet-icon-loader'
+      );
+    }
   }
   render () {
     const { className, colorIndex } = this.props;
@@ -34,7 +37,7 @@ export default class Icon extends Component {
     a11yTitle = a11yTitle || Intl.getMessage(intl, 'access-accessibility');
 
     const restProps = Props.omit(this.props, Object.keys(Icon.propTypes));
-    return <svg {...restProps} version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><path fill="none" stroke="#000000" strokeWidth="2" d="M4,8 L11,8 L11,14 L7,21 M20,8 L13,8 L13,14 L17,21 M12,5 C12.5522847,5 13,4.55228475 13,4 C13,3.44771525 12.5522847,3 12,3 C11.4477153,3 11,3.44771525 11,4 C11,4.55228475 11.4477153,5 12,5 Z M11,8 L13,8 L13,13 L11,13 L11,8 Z" transform="translate(-3 -2)" /></svg>;
+    return <svg {...restProps} version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><path fill="none" stroke="#000000" strokeWidth="2" d="M4,8 L11,8 L11,14 L7,21 M20,8 L13,8 L13,14 L17,21 M12,5 C12.5522847,5 13,4.55228475 13,4 C13,3.44771525 12.5522847,3 12,3 C11.4477153,3 11,3.44771525 11,4 C11,4.55228475 11.4477153,5 12,5 Z M11,8 L13,8 L13,13 L11,13 L11,8 Z" transform="translate(-3 -2)"/></svg>;
   }
 };
 
@@ -54,5 +57,7 @@ Icon.propTypes = {
   a11yTitle: PropTypes.string,
   colorIndex: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
-  responsive: PropTypes.bool
+  responsive: PropTypes.bool,
+  skipWarn: PropTypes.bool
 };
+

@@ -11,9 +11,12 @@ const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 export default class Icon extends Component {
   componentDidMount() {
-    console.warn(
-      'Base icons are not deprecated, use raw svg with Icon component'
-    );
+    const { skipWarn } = this.props;
+    if (!skipWarn) {
+      console.warn(
+        'Base icons are now deprecated, use raw svg with grommet-icon-loader'
+      );
+    }
   }
   render () {
     const { className, colorIndex } = this.props;
@@ -54,5 +57,7 @@ Icon.propTypes = {
   a11yTitle: PropTypes.string,
   colorIndex: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
-  responsive: PropTypes.bool
+  responsive: PropTypes.bool,
+  skipWarn: PropTypes.bool
 };
+

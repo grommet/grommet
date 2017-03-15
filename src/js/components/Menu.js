@@ -391,10 +391,10 @@ export default class Menu extends Component {
     }
     if (label) {
       buttonLabel = label;
-      buttonIcon = <DropCaretIcon a11yTitle='menu-down' />;
+      buttonIcon = <DropCaretIcon skipWarn={true} a11yTitle='menu-down' />;
     }
     if (! buttonIcon && ! buttonLabel) {
-      buttonIcon = <MoreIcon />;
+      buttonIcon = <MoreIcon skipWarn={true} />;
     }
     return { icon: buttonIcon, label: buttonLabel };
   }

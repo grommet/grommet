@@ -56,7 +56,8 @@ export default class AccordionPanel extends Component {
               justify='between' align='center' responsive={false}
               className={`${CLASS_ROOT}__header`}>
               {heading}
-              <CaretNextIcon className={`${CLASS_ROOT}__control`} />
+              <CaretNextIcon skipWarn={true}
+                className={`${CLASS_ROOT}__control`} />
             </Header>
           </Button>
         </ListItem>

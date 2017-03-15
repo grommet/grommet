@@ -11,9 +11,12 @@ const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
 export default class Icon extends Component {
   componentDidMount() {
-    console.warn(
-      'Base icons are not deprecated, use raw svg with Icon component'
-    );
+    const { skipWarn } = this.props;
+    if (!skipWarn) {
+      console.warn(
+        'Base icons are now deprecated, use raw svg with grommet-icon-loader'
+      );
+    }
   }
   render () {
     const { className, colorIndex } = this.props;
@@ -34,7 +37,7 @@ export default class Icon extends Component {
     a11yTitle = a11yTitle || Intl.getMessage(intl, 'standards-sematics');
 
     const restProps = Props.omit(this.props, Object.keys(Icon.propTypes));
-    return <svg {...restProps} version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><path fill="#000000" fillRule="evenodd" d="M12.0026703,0 L0,6.06607718 L0,10.0551619 L12.0026703,3.98917843 L24,10.0551619 L24,6.06607718 L12.0026703,0 Z M12.0026703,6.96290918 L0,13.0289864 L0,17.0180711 L12.0026703,10.9520876 L24,17.0180711 L24,13.0289864 L12.0026703,6.96290918 Z M12.0026703,13.9277859 L0,19.9938631 L0,23.9829478 L12.0026703,17.9169643 L24,23.9829478 L24,19.9938631 L12.0026703,13.9277859 Z" stroke="none"/></svg>;
+    return <svg {...restProps} version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><path stroke="none" fill="#000000" fillRule="evenodd" d="M12.0026703,0 L0,6.06607718 L0,10.0551619 L12.0026703,3.98917843 L24,10.0551619 L24,6.06607718 L12.0026703,0 Z M12.0026703,6.96290918 L0,13.0289864 L0,17.0180711 L12.0026703,10.9520876 L24,17.0180711 L24,13.0289864 L12.0026703,6.96290918 Z M12.0026703,13.9277859 L0,19.9938631 L0,23.9829478 L12.0026703,17.9169643 L24,23.9829478 L24,19.9938631 L12.0026703,13.9277859 Z"/></svg>;
   }
 };
 
@@ -54,6 +57,7 @@ Icon.propTypes = {
   a11yTitle: PropTypes.string,
   colorIndex: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
-  responsive: PropTypes.bool
+  responsive: PropTypes.bool,
+  skipWarn: PropTypes.bool
 };
 

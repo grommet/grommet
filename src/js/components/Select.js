@@ -444,7 +444,8 @@ export default class Select extends Component {
             value={this._renderValue(value) || ''} />
           <Button className={`${CLASS_ROOT}__control`}
             a11yTitle={Intl.getMessage(intl, 'Select Icon')}
-            icon={<CaretDownIcon />} onClick={this._onAddDrop} />
+            icon={<CaretDownIcon skipWarn={true} />}
+            onClick={this._onAddDrop} />
         </div>
       );
     }

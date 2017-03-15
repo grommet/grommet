@@ -98,7 +98,7 @@ export default class Anchor extends Component {
       anchorIcon = icon;
     } else if (primary) {
       anchorIcon = (
-        <LinkNextIcon a11yTitle='link next' />
+        <LinkNextIcon skipWarn={true} a11yTitle='link next' />
       );
     }
 

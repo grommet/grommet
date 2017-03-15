@@ -25,25 +25,30 @@ export default class SocialShare extends Component {
     const encodedText = encodeURIComponent(text);
 
     if (type === 'twitter') {
-      socialIcon = (<SocialTwitterIcon a11yTitle={calculatedA11yTitle}
+      socialIcon = (<SocialTwitterIcon skipWarn={true}
+        a11yTitle={calculatedA11yTitle}
         className={className} colorIndex={colorIndex} />);
       href = `https://twitter.com/intent/tweet?url=` +
         `${encodedLink}&text=${encodedText}`;
     } else if (type === 'linkedin') {
-      socialIcon = (<SocialLinkedinIcon a11yTitle={calculatedA11yTitle}
+      socialIcon = (<SocialLinkedinIcon skipWarn={true}
+        a11yTitle={calculatedA11yTitle}
         className={className} colorIndex={colorIndex} />);
       href = `https://www.linkedin.com/shareArticle?mini=true&url=` +
         `${encodedLink}&title=${encodedTitle}&summary=${encodedText}`;
     } else if (type === 'google') {
-      socialIcon = (<SocialGooglePlusIcon a11yTitle={calculatedA11yTitle}
+      socialIcon = (<SocialGooglePlusIcon skipWarn={true}
+        a11yTitle={calculatedA11yTitle}
         className={className} colorIndex={colorIndex} />);
       href = `https://plus.google.com/share?url=${encodedLink}`;
     } else if (type === 'facebook') {
-      socialIcon = (<SocialFacebookIcon a11yTitle={calculatedA11yTitle}
+      socialIcon = (<SocialFacebookIcon skipWarn={true}
+        a11yTitle={calculatedA11yTitle}
         className={className} colorIndex={colorIndex} />);
       href = `https://www.facebook.com/sharer/sharer.php?u=${encodedLink}`;
     } else if (type === 'email') {
-      socialIcon = (<SocialMailIcon a11yTitle={calculatedA11yTitle}
+      socialIcon = (<SocialMailIcon skipWarn={true}
+        a11yTitle={calculatedA11yTitle}
         className={className} colorIndex={colorIndex} />);
       href = `mailto:?subject=` +
         `${encodedTitle}&body=${encodedText}%0D%0A${encodedLink}`;

@@ -24,7 +24,7 @@ var bowerWebpackConfig = {
       path.resolve(__dirname, 'src/scss'),
       path.resolve(__dirname, 'node_modules')
     ],
-    extensions: ['', '.js', '.json', '.htm', '.html', '.scss']
+    extensions: ['', '.js', '.json', '.htm', '.html', '.scss', '.svg']
   },
   externals: {
     'react': 'React',

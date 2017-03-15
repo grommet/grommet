@@ -130,8 +130,8 @@ export default class Card extends Component {
       const size = small ? 'large' : 'xlarge';
       const videoIcon = (video) ?
         (
-          <Anchor icon={<CirclePlayIcon responsive={false} colorIndex='brand'
-            size={size} />} />
+          <Anchor icon={<CirclePlayIcon skipWarn={true} responsive={false} 
+            colorIndex='brand' size={size} />} />
         ):
         undefined;
 
