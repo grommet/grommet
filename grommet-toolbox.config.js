@@ -26,11 +26,17 @@ export default {
     },
     {
       asset: 'src/img/**',
-      dist: 'dist/img/'
+      dist: 'dist/img/',
+      ignores: ['index.js']
     },
     {
       filename: 'package.json',
       asset: JSON.stringify(getPackageJSON(), null, 2)
+    },
+    {
+      asset: 'src/img/icons/index.js',
+      dist: 'dist/img/icons',
+      babel: true
     }
   ],
   scssAssets: ['src/scss/**/*.scss'],
