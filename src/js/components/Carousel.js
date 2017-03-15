@@ -160,13 +160,12 @@ export default class Carousel extends Component {
 
       if (this.props.onActive) {
         this.props.onActive(index);
-        announceFunc();
       }
     }.bind(this), autoplaySpeed);
   }
 
   _onSelect (index) {
-    if (! this.props.hasOwnProperty('activeIndex') 
+    if (! this.props.hasOwnProperty('activeIndex')
         && index !== this.state.activeIndex) {
       this.setState({
         activeIndex: index
