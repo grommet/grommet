@@ -85,6 +85,7 @@ var Carousel = function (_Component) {
     _this._slidePrev = _this._slidePrev.bind(_this);
     _this._slideNext = _this._slideNext.bind(_this);
     _this._handleScroll = _this._handleScroll.bind(_this);
+    _this._announce = _this._announce.bind(_this);
 
     _this.state = {
       activeIndex: props.activeIndex || 0,
@@ -124,7 +125,7 @@ var Carousel = function (_Component) {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if ((nextProps.activeIndex || 0 === nextProps.activeIndex) && this.state.activeIndex !== nextProps.activeIndex) {
-        this.setState({ activeIndex: nextProps.activeIndex });
+        this.setState({ activeIndex: nextProps.activeIndex }, this._announce);
       }
     }
   }, {
@@ -203,34 +204,36 @@ var Carousel = function (_Component) {
       }
     }
   }, {
+    key: '_announce',
+    value: function _announce() {
+      var intl = this.context.intl;
+
+      var slideNumber = _Intl2.default.getMessage(intl, 'Slide Number', {
+        slideNumber: this.state.activeIndex + 1
+      });
+      var activatedMessage = _Intl2.default.getMessage(intl, 'Activated');
+      (0, _Announcer.announce)(slideNumber + ' ' + activatedMessage, 'polite');
+    }
+  }, {
     key: '_setSlideInterval',
     value: function _setSlideInterval() {
       var autoplaySpeed = this.props.autoplaySpeed;
 
       clearInterval(this._slideAnimation);
       this._slideAnimation = setInterval(function () {
-        var _this5 = this;
-
         var _props = this.props,
             children = _props.children,
             infinite = _props.infinite;
         var activeIndex = this.state.activeIndex;
-        var intl = this.context.intl;
+
 
         var numSlides = children.length;
         var index = (activeIndex + 1) % numSlides;
-        var announceFunc = function announceFunc() {
-          var slideNumber = _Intl2.default.getMessage(intl, 'Slide Number', {
-            slideNumber: _this5.state.activeIndex + 1
-          });
-          var activatedMessage = _Intl2.default.getMessage(intl, 'Activated');
-          (0, _Announcer.announce)(slideNumber + ' ' + activatedMessage, 'polite');
-        };
 
         if (!this.props.hasOwnProperty('activeIndex')) {
           this.setState({
             activeIndex: index
-          }, announceFunc);
+          }, this._announce);
         }
         if (!infinite && activeIndex === numSlides - 1) {
           clearInterval(this._slideAnimation);
@@ -247,7 +250,7 @@ var Carousel = function (_Component) {
       if (!this.props.hasOwnProperty('activeIndex') && index !== this.state.activeIndex) {
         this.setState({
           activeIndex: index
-        });
+        }, this._announce);
       }
 
       if (this.props.onActive) {
@@ -313,7 +316,7 @@ var Carousel = function (_Component) {
       if (!this.props.hasOwnProperty('activeIndex')) {
         this.setState({
           activeIndex: index
-        });
+        }, this._announce);
       }
 
       if (this.props.onActive) {
@@ -332,7 +335,7 @@ var Carousel = function (_Component) {
       if (!this.props.hasOwnProperty('activeIndex')) {
         this.setState({
           activeIndex: index
-        });
+        }, this._announce);
       }
 
       if (this.props.onActive) {
@@ -378,7 +381,7 @@ var Carousel = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this6 = this;
+      var _this5 = this;
 
       var _props5 = this.props,
           a11yTitle = _props5.a11yTitle,
@@ -423,7 +426,7 @@ var Carousel = function (_Component) {
         }
         return _react2.default.createElement(
           _Button2.default,
-          { plain: true, onClick: _this6._onSelect.bind(_this6, index),
+          { plain: true, onClick: _this5._onSelect.bind(_this5, index),
             a11yTitle: activateMessage + ' ' + slideNumberMessage + ' ' + currentlyActiveMessage },
           _react2.default.createElement(
             'svg',
@@ -437,7 +440,7 @@ var Carousel = function (_Component) {
       return _react2.default.createElement(
         'div',
         _extends({ ref: function ref(_ref) {
-            return _this6.carouselRef = _ref;
+            return _this5.carouselRef = _ref;
           } }, restProps, {
           className: classes, role: 'group', 'aria-label': carouselMessage,
           onFocus: this._stopAutoplay, onBlur: this._startAutoplay,
