@@ -28,6 +28,7 @@ export default class Carousel extends Component {
     this._slidePrev = this._slidePrev.bind(this);
     this._slideNext = this._slideNext.bind(this);
     this._handleScroll = this._handleScroll.bind(this);
+    this._announce = this._announce.bind(this);
 
     this.state = {
       activeIndex: props.activeIndex || 0,
@@ -62,7 +63,10 @@ export default class Carousel extends Component {
   componentWillReceiveProps(nextProps) {
     if ((nextProps.activeIndex || 0 === nextProps.activeIndex) &&
       this.state.activeIndex !== nextProps.activeIndex) {
-      this.setState({ activeIndex: nextProps.activeIndex });
+      this.setState(
+        { activeIndex: nextProps.activeIndex },
+        this._announce
+      );
     }
   }
 
@@ -132,27 +136,29 @@ export default class Carousel extends Component {
     }
   }
 
+  _announce() {
+    const { intl } = this.context;
+    const slideNumber = Intl.getMessage(intl, 'Slide Number', {
+      slideNumber: this.state.activeIndex + 1
+    });
+    const activatedMessage = Intl.getMessage(intl, 'Activated');
+    announce(`${slideNumber} ${activatedMessage}`, 'polite');
+  }
+
   _setSlideInterval () {
     const { autoplaySpeed } = this.props;
     clearInterval(this._slideAnimation);
     this._slideAnimation = setInterval(function () {
       const { children, infinite } = this.props;
       const { activeIndex } = this.state;
-      const { intl } = this.context;
+
       const numSlides = children.length;
       const index = (activeIndex + 1) % numSlides;
-      const announceFunc = () => {
-        const slideNumber = Intl.getMessage(intl, 'Slide Number', {
-          slideNumber: this.state.activeIndex + 1
-        });
-        const activatedMessage = Intl.getMessage(intl, 'Activated');
-        announce(`${slideNumber} ${activatedMessage}`, 'polite');
-      };
 
       if (! this.props.hasOwnProperty('activeIndex')) {
         this.setState({
           activeIndex: index
-        }, announceFunc );
+        }, this._announce );
       }
       if (!infinite && activeIndex === numSlides - 1) {
         clearInterval(this._slideAnimation);
@@ -169,7 +175,7 @@ export default class Carousel extends Component {
         && index !== this.state.activeIndex) {
       this.setState({
         activeIndex: index
-      });
+      }, this._announce);
     }
 
     if (this.props.onActive) {
@@ -222,7 +228,7 @@ export default class Carousel extends Component {
     if(! this.props.hasOwnProperty('activeIndex')) {
       this.setState({
         activeIndex: index
-      });
+      }, this._announce);
     }
 
     if (this.props.onActive) {
@@ -239,7 +245,7 @@ export default class Carousel extends Component {
     if(! this.props.hasOwnProperty('activeIndex')) {
       this.setState({
         activeIndex: index
-      });
+      }, this._announce);
     }
 
     if (this.props.onActive) {
