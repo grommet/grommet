@@ -238,7 +238,6 @@ var Carousel = function (_Component) {
 
         if (this.props.onActive) {
           this.props.onActive(index);
-          announceFunc();
         }
       }.bind(this), autoplaySpeed);
     }
