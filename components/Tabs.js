@@ -95,6 +95,7 @@ var Tabs = function (_Component) {
       var activeContainer = void 0;
       var activeTitle = void 0;
       var tabs = _react2.default.Children.map(children, function (tab, index) {
+        if (!tab) return null;
 
         var tabProps = tab.props || tab._store.props || {};
 
