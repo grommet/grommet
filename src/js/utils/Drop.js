@@ -347,7 +347,7 @@ export default class Drop {
     // to handle mobile browsers better. We used to use position:fixed
     // but that didn't work on mobile browsers as well.
     container.style.top = `${top + scrollTop}px`;
-    container.style.maxHeight = `${maxHeight}px`;
+    container.style.maxHeight = `${windowHeight - (top + scrollTop)}px`;
 
     if (initialFocusNeeded) {
       // Now that we've placed it, focus on it
