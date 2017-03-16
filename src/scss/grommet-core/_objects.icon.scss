@@ -4,10 +4,17 @@ $social-twitter-color: #1DA1F2;
 $social-facebook-color: #3B5998;
 $social-linkedin-color: #0077B5;
 
+$icon-xsmall-size: halve($inuit-base-spacing-unit) !default;
+$icon-small-size: $inuit-base-spacing-unit !default;
+$icon-medium-size: round($inuit-base-spacing-unit + halve($inuit-base-spacing-unit)) !default;
+$icon-large-size: round($inuit-base-spacing-unit * 2) !default;
+$icon-xlarge-size: round($inuit-base-spacing-unit * 6) !default;
+$icon-huge-size: round($inuit-base-spacing-unit * 12) !default;
+
 .#{$grommet-namespace}control-icon {
   display: inline-block;
-  width: $inuit-base-spacing-unit;
-  height: $inuit-base-spacing-unit;
+  width: $icon-small-size;
+  height: $icon-small-size;
   // vertical-align: middle;
   fill: $icon-color;
   stroke: $icon-color;
@@ -65,19 +72,29 @@ $social-linkedin-color: #0077B5;
   stroke: $active-icon-color;
 }
 
+.#{$grommet-namespace}control-icon--xsmall {
+  width: $icon-xsmall-size;
+  height: $icon-xsmall-size;
+}
+
+.#{$grommet-namespace}control-icon--medium {
+  width: $icon-medium-size;
+  height: $icon-medium-size;
+}
+
 .#{$grommet-namespace}control-icon--large {
-  width: round($inuit-base-spacing-unit * 2);
-  height: round($inuit-base-spacing-unit * 2);
+  width: $icon-large-size;
+  height: $icon-large-size;
 }
 
 .#{$grommet-namespace}control-icon--xlarge {
-  width: round($inuit-base-spacing-unit * 6);
-  height: round($inuit-base-spacing-unit * 6);
+  width: $icon-xlarge-size;
+  height: $icon-xlarge-size;
 }
 
 .#{$grommet-namespace}control-icon--huge {
-  width: round($inuit-base-spacing-unit * 12);
-  height: round($inuit-base-spacing-unit * 12);
+  width: $icon-huge-size;
+  height: $icon-huge-size;
 }
 
 @include media-query(palm) {
@@ -133,19 +150,29 @@ $social-linkedin-color: #0077B5;
   }
 }
 
+.#{$grommet-namespace}status-icon--xsmall {
+  width: $icon-xsmall-size;
+  height: $icon-xsmall-size;
+}
+
+.#{$grommet-namespace}status-icon--medium {
+  width: $icon-medium-size;
+  height: $icon-medium-size;
+}
+
 .#{$grommet-namespace}status-icon--large {
-  width: double($inuit-base-spacing-unit);
-  height: double($inuit-base-spacing-unit);
+  width: $icon-large-size;
+  height: $icon-large-size;
 }
 
 .#{$grommet-namespace}status-icon--xlarge {
-  width: round($inuit-base-spacing-unit * 6);
-  height: round($inuit-base-spacing-unit * 6);
+  width: $icon-xlarge-size;
+  height: $icon-xlarge-size;
 }
 
 .#{$grommet-namespace}status-icon--huge {
-  width: round($inuit-base-spacing-unit * 12);
-  height: round($inuit-base-spacing-unit * 12);
+  width: $icon-huge-size;
+  height: $icon-huge-size;
 }
 
 .#{$grommet-namespace}status-icon--small {
@@ -198,24 +225,29 @@ $spinning-dash: round($inuit-base-spacing-unit * 2 * 3.1416);
   @include animation('drawAndReverse 4s alternate infinite ease-in-out');
 }
 
-.#{$grommet-namespace}icon-spinning--small {
-  width: halve($inuit-base-spacing-unit);
-  height: halve($inuit-base-spacing-unit);
+.#{$grommet-namespace}icon-spinning--xsmall {
+  width: $icon-xsmall-size;
+  height: $icon-xsmall-size;
+}
+
+.#{$grommet-namespace}icon-spinning--medium {
+  width: $icon-medium-size;
+  height: $icon-medium-size;
 }
 
 .#{$grommet-namespace}icon-spinning--large {
-  width: round($inuit-base-spacing-unit * 2);
-  height: round($inuit-base-spacing-unit * 2);
+  width: $icon-large-size;
+  height: $icon-large-size;
 }
 
 .#{$grommet-namespace}icon-spinning--xlarge {
-  width: round($inuit-base-spacing-unit * 6);
-  height: round($inuit-base-spacing-unit * 6);
+  width: $icon-xlarge-size;
+  height: $icon-xlarge-size;
 }
 
 .#{$grommet-namespace}icon-spinning--huge {
-  width: round($inuit-base-spacing-unit * 12);
-  height: round($inuit-base-spacing-unit * 12);
+  width: $icon-huge-size;
+  height: $icon-huge-size;
 }
 
 .#{$grommet-namespace}icon-spinning--xlarge.#{$grommet-namespace}icon-spinning--responsive,
