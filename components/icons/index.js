@@ -53,4 +53,3 @@ Object.keys(_base).forEach(function (key) {
 });
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-//TODO: deprecated remove in 1.4

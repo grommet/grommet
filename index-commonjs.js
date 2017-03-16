@@ -94,9 +94,7 @@ var Grommet = {
     Pulse: require('./components/icons/Pulse'),
     Spinning: require('./components/icons/Spinning'),
     Status: require('./components/icons/Status'),
-    //TODO: deprecated remove in 1.4
-    Base: require('./components/icons/base'),
-    Raw: require('../img/icons')
+    Base: require('./components/icons/base')
   },
   // Utils
   Cookies: require('./utils/Cookies'),
