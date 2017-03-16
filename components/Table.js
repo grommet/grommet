@@ -38,6 +38,10 @@ var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
 
 var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
+var _Responsive = require('../utils/Responsive');
+
+var _Responsive2 = _interopRequireDefault(_Responsive);
+
 var _Intl = require('../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
@@ -80,13 +84,15 @@ var Table = function (_Component) {
     _this._onEnter = _this._onEnter.bind(_this);
     _this._fireClick = _this._fireClick.bind(_this);
     _this._announceRow = _this._announceRow.bind(_this);
+    _this._onViewPortChange = _this._onViewPortChange.bind(_this);
 
     _this.state = {
       activeRow: undefined,
       mouseActive: false,
       selected: _Selection2.default.normalizeIndexes(props.selected),
-      small: false,
-      rebuildMirror: props.scrollable
+      columnMode: false,
+      rebuildMirror: props.scrollable,
+      small: false
     };
     return _this;
   }
@@ -98,10 +104,12 @@ var Table = function (_Component) {
           onMore = _props.onMore,
           selectable = _props.selectable,
           scrollable = _props.scrollable;
-      var small = this.state.small;
+      var _state = this.state,
+          columnMode = _state.columnMode,
+          small = _state.small;
 
       this._setSelection();
-      if (scrollable && !small) {
+      if (scrollable && !columnMode && !small) {
         this._buildMirror();
         this._alignMirror();
       }
@@ -109,7 +117,7 @@ var Table = function (_Component) {
         this._scroll = _InfiniteScroll2.default.startListeningForScroll(this.moreRef, onMore);
       }
       this._adjustBodyCells();
-      this._layout();
+      setTimeout(this._layout, 50);
       window.addEventListener('resize', this._onResize);
 
       if (selectable) {
@@ -124,6 +132,8 @@ var Table = function (_Component) {
         };
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
       }
+
+      this._responsive = _Responsive2.default.start(this._onViewPortChange);
     }
   }, {
     key: 'componentWillReceiveProps',
@@ -149,19 +159,20 @@ var Table = function (_Component) {
           onMore = _props2.onMore,
           selectable = _props2.selectable,
           scrollable = _props2.scrollable;
-      var _state = this.state,
-          rebuildMirror = _state.rebuildMirror,
-          selected = _state.selected,
-          small = _state.small;
+      var _state2 = this.state,
+          columnMode = _state2.columnMode,
+          rebuildMirror = _state2.rebuildMirror,
+          selected = _state2.selected,
+          small = _state2.small;
 
       if (JSON.stringify(selected) !== JSON.stringify(prevState.selected)) {
         this._setSelection();
       }
-      if (rebuildMirror && !small) {
+      if (rebuildMirror && !columnMode) {
         this._buildMirror();
         this.setState({ rebuildMirror: false });
       }
-      if (scrollable && !small) {
+      if (scrollable && !columnMode && !small) {
         this._alignMirror();
       }
       if (onMore && !this._scroll) {
@@ -197,6 +208,13 @@ var Table = function (_Component) {
       if (selectable) {
         _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
       }
+
+      this._responsive.stop();
+    }
+  }, {
+    key: '_onViewPortChange',
+    value: function _onViewPortChange(small) {
+      this.setState({ small: small, rebuildMirror: true });
     }
   }, {
     key: '_announceRow',
@@ -209,19 +227,19 @@ var Table = function (_Component) {
   }, {
     key: '_onResponsive',
     value: function _onResponsive() {
-      var small = this.state.small;
+      var columnMode = this.state.columnMode;
 
       if (this.containerRef && this.tableRef) {
         var availableSize = this.containerRef.offsetWidth;
         var numberOfCells = this.tableRef.querySelectorAll('thead th').length;
 
         if (numberOfCells * MIN_CELL_WIDTH > availableSize) {
-          if (small === false) {
-            this.setState({ small: true });
+          if (columnMode === false) {
+            this.setState({ columnMode: true });
           }
         } else {
-          if (small === true) {
-            this.setState({ small: false });
+          if (columnMode === true) {
+            this.setState({ columnMode: false });
           }
         }
       }
@@ -477,17 +495,18 @@ var Table = function (_Component) {
 
       delete props.onSelect;
       delete props.selected;
-      var _state2 = this.state,
-          activeRow = _state2.activeRow,
-          focus = _state2.focus,
-          mouseActive = _state2.mouseActive,
-          small = _state2.small;
+      var _state3 = this.state,
+          activeRow = _state3.activeRow,
+          columnMode = _state3.columnMode,
+          focus = _state3.focus,
+          mouseActive = _state3.mouseActive,
+          small = _state3.small;
       var intl = this.context.intl;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--small', responsive && small), _defineProperty(_classnames, CLASS_ROOT + '--selectable', selectable), _defineProperty(_classnames, CLASS_ROOT + '--scrollable', scrollable), _classnames), className);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--small', responsive && columnMode), _defineProperty(_classnames, CLASS_ROOT + '--selectable', selectable), _defineProperty(_classnames, CLASS_ROOT + '--scrollable', scrollable && !small), _classnames), className);
 
       var mirror = void 0;
-      if (scrollable) {
+      if (scrollable && !small) {
         mirror = _react2.default.createElement(
           'table',
           { ref: function ref(_ref) {
