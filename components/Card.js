@@ -214,7 +214,7 @@ var Card = function (_Component) {
       var result = thumbnail;
       if (typeof thumbnail === 'string') {
         var size = small ? 'large' : 'xlarge';
-        var videoIcon = video ? _react2.default.createElement(_Anchor2.default, { icon: _react2.default.createElement(_CirclePlay2.default, { skipWarn: true, responsive: false,
+        var videoIcon = video ? _react2.default.createElement(_Anchor2.default, { icon: _react2.default.createElement(_CirclePlay2.default, { responsive: false,
             colorIndex: 'brand', size: size }) }) : undefined;
 
         var flex = 'row' === direction ? 'grow' : undefined;

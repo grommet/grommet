@@ -167,7 +167,7 @@ var LayerContents = function (_Component) {
         closerNode = _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + '__closer' },
-          _react2.default.createElement(_Button2.default, { plain: true, icon: _react2.default.createElement(_Close2.default, { skipWarn: true,
+          _react2.default.createElement(_Button2.default, { plain: true, icon: _react2.default.createElement(_Close2.default, {
               a11yTitle: closeIconTitle }),
             onClick: onClose })
         );

@@ -51,15 +51,6 @@ var Icon = function (_Component) {
   }
 
   _createClass(Icon, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var skipWarn = this.props.skipWarn;
-
-      if (!skipWarn) {
-        console.warn('Base icons are now deprecated, use raw svg with grommet-icon-loader');
-      }
-    }
-  }, {
     key: 'render',
     value: function render() {
       var _classnames;
@@ -115,7 +106,6 @@ Icon.propTypes = {
   a11yTitle: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,
   size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
-  responsive: _react.PropTypes.bool,
-  skipWarn: _react.PropTypes.bool
+  responsive: _react.PropTypes.bool
 };
 module.exports = exports['default'];

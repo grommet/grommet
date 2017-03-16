@@ -498,7 +498,7 @@ var Search = function (_Component) {
           contents
         )];
         if (!dropAlign || !dropAlign.top && !dropAlign.bottom) {
-          var control = _react2.default.createElement(_Button2.default, { key: 'icon', icon: _react2.default.createElement(_Search2.default, { skipWarn: true }),
+          var control = _react2.default.createElement(_Button2.default, { key: 'icon', icon: _react2.default.createElement(_Search2.default, null),
             className: CLASS_ROOT + '__drop-control',
             onClick: this._onRemoveDrop });
           if (!dropAlign || dropAlign.left === 'left') {
@@ -552,13 +552,13 @@ var Search = function (_Component) {
             onChange: this._onChangeInput,
             onMouseUp: this._onMouseUp,
             onKeyDown: this._onInputKeyDown })),
-          _react2.default.createElement(_Search2.default, { skipWarn: true })
+          _react2.default.createElement(_Search2.default, null)
         );
       } else {
         return _react2.default.createElement(_Button2.default, { ref: function ref(_ref3) {
             return _this4._controlRef = _ref3;
           },
-          id: id, className: className, icon: _react2.default.createElement(_Search2.default, { skipWarn: true }),
+          id: id, className: className, icon: _react2.default.createElement(_Search2.default, null),
           onClick: this._onAddDrop });
       }
     }

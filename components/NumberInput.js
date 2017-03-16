@@ -145,9 +145,9 @@ var NumberInput = function (_Component) {
           className: INPUT + ' ' + CLASS_ROOT + '__input',
           type: 'number', tabIndex: '0',
           disabled: disabled })),
-        _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Subtract2.default, { skipWarn: true }),
+        _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Subtract2.default, null),
           className: CLASS_ROOT + '__subtract', onClick: onSubtract }),
-        _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Add2.default, { skipWarn: true }),
+        _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Add2.default, null),
           className: CLASS_ROOT + '__add', onClick: onAdd })
       );
     }

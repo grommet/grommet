@@ -516,7 +516,7 @@ var DateTimeDrop = function (_Component) {
         _Header2.default,
         { key: 'header', justify: 'between', colorIndex: 'neutral-1' },
         _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__previous',
-          icon: _react2.default.createElement(_LinkPrevious2.default, { skipWarn: true }),
+          icon: _react2.default.createElement(_LinkPrevious2.default, null),
           a11yTitle: previousMonthMessage,
           onClick: this._onPrevious.bind(this, 'month', false) }),
         _react2.default.createElement(
@@ -524,8 +524,7 @@ var DateTimeDrop = function (_Component) {
           { className: CLASS_ROOT + '__title', responsive: false },
           value.format('MMMM YYYY')
         ),
-        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__next', icon: _react2.default.createElement(_LinkNext2.default, {
-            skipWarn: true }),
+        _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__next', icon: _react2.default.createElement(_LinkNext2.default, null),
           a11yTitle: nextMonthMessage,
           onClick: this._onNext.bind(this, 'month', false) })
       ), grid, _react2.default.createElement(
@@ -568,11 +567,11 @@ var DateTimeDrop = function (_Component) {
           return _react2.default.createElement(
             _Box2.default,
             { key: index, align: 'center' },
-            _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Subtract2.default, { skipWarn: true }),
+            _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Subtract2.default, null),
               a11yTitle: subtractMessage + ' ' + unitMessage,
               onClick: _this3._onPrevious.bind(_this3, unit) }),
             value.format('M' === chunk ? 'MMM' : chunk),
-            _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Add2.default, { skipWarn: true }),
+            _react2.default.createElement(_Button2.default, { icon: _react2.default.createElement(_Add2.default, null),
               a11yTitle: addMessage + ' ' + unitMessage,
               onClick: _this3._onNext.bind(_this3, unit) })
           );

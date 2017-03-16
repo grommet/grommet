@@ -64,7 +64,7 @@ var FullscreenButton = function (_Component) {
         _Button2.default,
         { plain: true, className: BUTTON_CLASS, onClick: this.props.onClick,
           a11yTitle: a11yExpandButtonTitle },
-        _react2.default.createElement(_Expand2.default, { skipWarn: true, className: BUTTON_CLASS + '__icon',
+        _react2.default.createElement(_Expand2.default, { className: BUTTON_CLASS + '__icon',
           colorIndex: 'brand' })
       );
     }

@@ -590,13 +590,13 @@ var Tiles = function (_Component) {
         if (!overflowStart) {
           var previousTilesMessage = _Intl2.default.getMessage(intl, 'Previous Tiles');
           left = _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__left',
-            icon: _react2.default.createElement(_LinkPrevious2.default, { skipWarn: true }),
+            icon: _react2.default.createElement(_LinkPrevious2.default, null),
             a11yTitle: previousTilesMessage, onClick: this._onLeft });
         }
         if (!overflowEnd) {
           var nextTilesMessage = _Intl2.default.getMessage(intl, 'Next Tiles');
           right = _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__right',
-            icon: _react2.default.createElement(_LinkNext2.default, { skipWarn: true }),
+            icon: _react2.default.createElement(_LinkNext2.default, null),
             a11yTitle: nextTilesMessage, onClick: this._onRight });
         }
 

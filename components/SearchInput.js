@@ -375,7 +375,7 @@ var SearchInput = function (_Component) {
           onChange: this._onInputChange, onFocus: this._onFocus,
           onKeyDown: this._onInputKeyDown }),
         _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control',
-          icon: _react2.default.createElement(_Search2.default, { skipWarn: true }), onClick: this._onAddDrop })
+          icon: _react2.default.createElement(_Search2.default, null), onClick: this._onAddDrop })
       );
     }
   }]);

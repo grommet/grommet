@@ -79,7 +79,7 @@ var TableHeader = function (_Component) {
         if (sortIndex >= 0) {
           var sortIndicator = void 0;
           if (index === sortIndex) {
-            sortIndicator = sortAscending ? _react2.default.createElement(_LinkDown2.default, { skipWarn: true }) : _react2.default.createElement(_LinkUp2.default, { skipWarn: true });
+            sortIndicator = sortAscending ? _react2.default.createElement(_LinkDown2.default, null) : _react2.default.createElement(_LinkUp2.default, null);
           }
           content = _react2.default.createElement(
             _Box2.default,

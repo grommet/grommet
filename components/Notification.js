@@ -238,7 +238,7 @@ var Notification = function (_Component) {
         closerNode = closer;
       } else if (onClose && closer) {
         closerNode = _react2.default.createElement(_Button2.default, { plain: true, onClick: onClose,
-          icon: _react2.default.createElement(_Close2.default, { skipWarn: true,
+          icon: _react2.default.createElement(_Close2.default, {
             className: CLASS_ROOT + '__close' }),
           a11yTitle: _Intl2.default.getMessage(intl, 'Close Notification') });
       }

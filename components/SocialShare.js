@@ -78,27 +78,27 @@ var SocialShare = function (_Component) {
       var encodedText = encodeURIComponent(text);
 
       if (type === 'twitter') {
-        socialIcon = _react2.default.createElement(_SocialTwitter2.default, { skipWarn: true,
+        socialIcon = _react2.default.createElement(_SocialTwitter2.default, {
           a11yTitle: calculatedA11yTitle,
           className: className, colorIndex: colorIndex });
         href = 'https://twitter.com/intent/tweet?url=' + (encodedLink + '&text=' + encodedText);
       } else if (type === 'linkedin') {
-        socialIcon = _react2.default.createElement(_SocialLinkedin2.default, { skipWarn: true,
+        socialIcon = _react2.default.createElement(_SocialLinkedin2.default, {
           a11yTitle: calculatedA11yTitle,
           className: className, colorIndex: colorIndex });
         href = 'https://www.linkedin.com/shareArticle?mini=true&url=' + (encodedLink + '&title=' + encodedTitle + '&summary=' + encodedText);
       } else if (type === 'google') {
-        socialIcon = _react2.default.createElement(_SocialGooglePlus2.default, { skipWarn: true,
+        socialIcon = _react2.default.createElement(_SocialGooglePlus2.default, {
           a11yTitle: calculatedA11yTitle,
           className: className, colorIndex: colorIndex });
         href = 'https://plus.google.com/share?url=' + encodedLink;
       } else if (type === 'facebook') {
-        socialIcon = _react2.default.createElement(_SocialFacebook2.default, { skipWarn: true,
+        socialIcon = _react2.default.createElement(_SocialFacebook2.default, {
           a11yTitle: calculatedA11yTitle,
           className: className, colorIndex: colorIndex });
         href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedLink;
       } else if (type === 'email') {
-        socialIcon = _react2.default.createElement(_SocialMail2.default, { skipWarn: true,
+        socialIcon = _react2.default.createElement(_SocialMail2.default, {
           a11yTitle: calculatedA11yTitle,
           className: className, colorIndex: colorIndex });
         href = 'mailto:?subject=' + (encodedTitle + '&body=' + encodedText + '%0D%0A' + encodedLink);
