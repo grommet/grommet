@@ -7,6 +7,7 @@ import InfiniteScroll from '../utils/InfiniteScroll';
 import Selection from '../utils/Selection';
 import CSSClassnames from '../utils/CSSClassnames';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import Responsive from '../utils/Responsive';
 import Intl from '../utils/Intl';
 import { announce } from '../utils/Announcer';
 
@@ -31,21 +32,23 @@ export default class Table extends Component {
     this._onEnter = this._onEnter.bind(this);
     this._fireClick = this._fireClick.bind(this);
     this._announceRow = this._announceRow.bind(this);
+    this._onViewPortChange = this._onViewPortChange.bind(this);
 
     this.state = {
       activeRow: undefined,
       mouseActive: false,
       selected: Selection.normalizeIndexes(props.selected),
-      small: false,
-      rebuildMirror: props.scrollable
+      columnMode: false,
+      rebuildMirror: props.scrollable,
+      small: false
     };
   }
 
   componentDidMount () {
     const { onMore, selectable, scrollable } = this.props;
-    const { small } = this.state;
+    const { columnMode, small } = this.state;
     this._setSelection();
-    if (scrollable && !small) {
+    if (scrollable && !columnMode && !small) {
       this._buildMirror();
       this._alignMirror();
     }
@@ -55,7 +58,7 @@ export default class Table extends Component {
       );
     }
     this._adjustBodyCells();
-    this._layout();
+    setTimeout(this._layout, 50);
     window.addEventListener('resize', this._onResize);
 
     if (selectable) {
@@ -72,6 +75,8 @@ export default class Table extends Component {
         this, this._keyboardHandlers
       );
     }
+
+    this._responsive = Responsive.start(this._onViewPortChange);
   }
 
   componentWillReceiveProps (nextProps) {
@@ -92,16 +97,16 @@ export default class Table extends Component {
 
   componentDidUpdate (prevProps, prevState) {
     const { onMore, selectable, scrollable } = this.props;
-    const { rebuildMirror, selected, small } = this.state;
+    const { columnMode, rebuildMirror, selected, small } = this.state;
     if (JSON.stringify(selected) !==
       JSON.stringify(prevState.selected)) {
       this._setSelection();
     }
-    if (rebuildMirror && !small) {
+    if (rebuildMirror && !columnMode) {
       this._buildMirror();
       this.setState({rebuildMirror: false});
     }
-    if (scrollable && !small) {
+    if (scrollable && !columnMode && !small) {
       this._alignMirror();
     }
     if (onMore && !this._scroll) {
@@ -141,6 +146,12 @@ export default class Table extends Component {
         this, this._keyboardHandlers
       );
     }
+
+    this._responsive.stop();
+  }
+
+  _onViewPortChange(small) {
+    this.setState({ small, rebuildMirror: true });
   }
 
   _announceRow (label) {
@@ -150,18 +161,18 @@ export default class Table extends Component {
   }
 
   _onResponsive () {
-    const { small } = this.state;
+    const { columnMode } = this.state;
     if (this.containerRef && this.tableRef) {
       const availableSize = this.containerRef.offsetWidth;
       const numberOfCells = this.tableRef.querySelectorAll('thead th').length;
 
       if ((numberOfCells * MIN_CELL_WIDTH) > availableSize) {
-        if (small === false) {
-          this.setState({ small: true });
+        if (columnMode === false) {
+          this.setState({ columnMode: true });
         }
       } else {
-        if (small === true) {
-          this.setState({ small: false });
+        if (columnMode === true) {
+          this.setState({ columnMode: false });
         }
       }
     }
@@ -376,20 +387,20 @@ export default class Table extends Component {
     } = this.props;
     delete props.onSelect;
     delete props.selected;
-    const { activeRow, focus, mouseActive, small } = this.state;
+    const { activeRow, columnMode, focus, mouseActive, small } = this.state;
     const { intl } = this.context;
     let classes = classnames(
       CLASS_ROOT,
       {
-        [`${CLASS_ROOT}--small`]: responsive && small,
+        [`${CLASS_ROOT}--small`]: responsive && columnMode,
         [`${CLASS_ROOT}--selectable`]: selectable,
-        [`${CLASS_ROOT}--scrollable`]: scrollable
+        [`${CLASS_ROOT}--scrollable`]: scrollable && !small
       },
       className
     );
 
     let mirror;
-    if (scrollable) {
+    if (scrollable && !small) {
       mirror = (
         <table ref={ref => this.mirrorRef = ref}
           className={`${CLASS_ROOT}__mirror`}>
