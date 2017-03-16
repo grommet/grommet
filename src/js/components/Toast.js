@@ -73,7 +73,7 @@ class ToastContents extends Component {
     if (onClose) {
       closeControl = (
         <Button className={`${CLASS_ROOT}__closer`}
-          icon={<CloseIcon skipWarn={true} />} onClick={this._onClose} />
+          icon={<CloseIcon />} onClick={this._onClose} />
       );
     }
 

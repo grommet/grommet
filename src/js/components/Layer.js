@@ -105,7 +105,7 @@ class LayerContents extends Component {
 
       closerNode = (
         <div className={`${CLASS_ROOT}__closer`}>
-          <Button plain={true} icon={<CloseIcon skipWarn={true}
+          <Button plain={true} icon={<CloseIcon
             a11yTitle={closeIconTitle} />}
             onClick={onClose} />
         </div>

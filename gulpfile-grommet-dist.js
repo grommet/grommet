@@ -90,13 +90,13 @@ module.exports = function(gulp) {
           });
 
           iconsMap.push(
-            `export { default as ${componentName.replace('.svg', '').replace(/^3d/, 'ThreeD').replace('-', '')}Icon } from './${icon}';`
+            `export { default as ${componentName.replace('.svg', '').replace(/^3d/, 'ThreeD').replace('-', '')}Icon } from './${componentName.replace('.svg', '')}';`
           );
 
           if (index === icons.length - 1) {
 
             const destinationFile = path.join(
-              __dirname, './src/img/icons/index.js'
+              __dirname, './src/js/components/icons/base/index.js'
             );
             fs.writeFile(destinationFile, iconsMap.join('\n'), function(err) {
               if (err) {

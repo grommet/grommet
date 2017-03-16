@@ -26,23 +26,22 @@ export default {
     },
     {
       asset: 'src/img/**',
-      dist: 'dist/img/',
-      ignores: ['index.js']
+      dist: 'dist/img/'
     },
     {
       filename: 'package.json',
       asset: JSON.stringify(getPackageJSON(), null, 2)
-    },
-    {
-      asset: 'src/img/icons/index.js',
-      dist: 'dist/img/icons',
-      babel: true
     }
   ],
   scssAssets: ['src/scss/**/*.scss'],
   jsAssets: ['src/js/**/*.js'],
   mainJs: 'src/js/index-commonjs.js',
   mainScss: 'src/scss/grommet-core/index.scss',
+  icons: {
+    source: 'src/img/icons',
+    destination: 'src/js/components/icons/base',
+    context: '../../../'
+  },
   sync: {
     hostname: 'grommet.io',
     username: 'grommet',
@@ -64,14 +63,6 @@ export default {
       'react': 'React',
       'react-dom': 'ReactDOM',
       'react-addons-transition-group': 'React.addons.TransitionGroup'
-    },
-    module: {
-      loaders: [
-        {
-          test: /\.svg$/,
-          loader: 'babel!grommet-icon'
-        }
-      ]
     }
   },
   distPreprocess: ['generate-index-icons', 'dist-css'],

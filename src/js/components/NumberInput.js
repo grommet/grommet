@@ -92,10 +92,10 @@ export default class NumberInput extends Component {
           type="number" tabIndex="0"
           disabled={disabled} />
 
-        <Button icon={<SubtractIcon skipWarn={true} />}
+        <Button icon={<SubtractIcon />}
           className={`${CLASS_ROOT}__subtract`} onClick={onSubtract} />
 
-        <Button icon={<AddIcon skipWarn={true} />}
+        <Button icon={<AddIcon />}
           className={`${CLASS_ROOT}__add`} onClick={onAdd} />
       </span>
     );

@@ -261,7 +261,7 @@ export default class Carousel extends Component {
     if (infinite || activeIndex !== 0) {
       const prevMessage = Intl.getMessage(intl, 'Previous Slide');
       prevButton = (
-        <Button icon={<PreviousIcon skipWarn={true} size="large" />}
+        <Button icon={<PreviousIcon size="large" />}
           a11yTitle={prevMessage}
           className={`${CLASS_ROOT}__arrow ${CLASS_ROOT}__arrow--prev`}
           onClick={this._slidePrev} />
@@ -279,7 +279,7 @@ export default class Carousel extends Component {
     if (infinite || activeIndex !== children.length - 1) {
       const nextMessage = Intl.getMessage(intl, 'Next Slide');
       nextButton = (
-        <Button icon={<NextIcon skipWarn={true} size="large" />}
+        <Button icon={<NextIcon size="large" />}
           a11yTitle={nextMessage}
           className={`${CLASS_ROOT}__arrow ${CLASS_ROOT}__arrow--next`}
           onClick={this._slideNext} />

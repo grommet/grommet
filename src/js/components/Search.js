@@ -393,7 +393,7 @@ export default class Search extends Component {
       ];
       if (! dropAlign || (! dropAlign.top && ! dropAlign.bottom)) {
         const control = (
-          <Button key='icon' icon={<SearchIcon skipWarn={true} />}
+          <Button key='icon' icon={<SearchIcon />}
             className={`${CLASS_ROOT}__drop-control`}
             onClick={this._onRemoveDrop} />
         );
@@ -445,14 +445,14 @@ export default class Search extends Component {
             onChange={this._onChangeInput}
             onMouseUp={this._onMouseUp}
             onKeyDown={this._onInputKeyDown} />
-          <SearchIcon skipWarn={true} />
+          <SearchIcon />
         </div>
       );
 
     } else {
       return (
         <Button ref={(ref) => this._controlRef = ref}
-          id={id} className={className} icon={<SearchIcon skipWarn={true} />}
+          id={id} className={className} icon={<SearchIcon />}
           onClick={this._onAddDrop} />
       );
     }

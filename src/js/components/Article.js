@@ -548,7 +548,7 @@ export default class Article extends Component {
             <Button key='previous'
               plain={true} a11yTitle={a11yTitle.previous}
               className={`${CONTROL_CLASS_PREFIX}-left`}
-              onClick={this._onPrevious} icon={<PreviousIcon skipWarn={true}
+              onClick={this._onPrevious} icon={<PreviousIcon
                 a11yTitle='article-previous-title' size='large' />
               } />
           );
@@ -558,7 +558,7 @@ export default class Article extends Component {
             <Button key='next'
               plain={true} a11yTitle={a11yTitle.next}
               className={`${CONTROL_CLASS_PREFIX}-right`}
-              onClick={this._onNext} icon={<NextIcon skipWarn={true}
+              onClick={this._onNext} icon={<NextIcon
                 size='large' a11yTitle='article-next-title' />
               } />
           );
@@ -570,14 +570,14 @@ export default class Article extends Component {
           <Button key='previous'
             plain={true} a11yTitle={a11yTitle.previous}
             className={`${CONTROL_CLASS_PREFIX}-up`}
-            onClick={this._onPrevious}><UpIcon skipWarn={true} /></Button>
+            onClick={this._onPrevious}><UpIcon /></Button>
         );
       }
       if (selectedIndex < (childCount - 1)) {
         controls.push(
           <Button key='next' plain={true} a11yTitle={a11yTitle.next}
             className={`${CONTROL_CLASS_PREFIX}-down`} onClick={this._onNext}>
-            <DownIcon skipWarn={true} a11yTitle='article-down'/ >
+            <DownIcon a11yTitle='article-down'/ >
           </Button>
         );
       }

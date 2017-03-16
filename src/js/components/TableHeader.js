@@ -30,7 +30,7 @@ export default class TableHeader extends Component {
         if (index === sortIndex) {
           sortIndicator = (
             sortAscending ?
-              <AscIcon skipWarn={true} /> : <DescIcon skipWarn={true} />
+              <AscIcon /> : <DescIcon />
           );
         }
         content = (

@@ -25,29 +25,29 @@ export default class SocialShare extends Component {
     const encodedText = encodeURIComponent(text);
 
     if (type === 'twitter') {
-      socialIcon = (<SocialTwitterIcon skipWarn={true}
+      socialIcon = (<SocialTwitterIcon
         a11yTitle={calculatedA11yTitle}
         className={className} colorIndex={colorIndex} />);
       href = `https://twitter.com/intent/tweet?url=` +
         `${encodedLink}&text=${encodedText}`;
     } else if (type === 'linkedin') {
-      socialIcon = (<SocialLinkedinIcon skipWarn={true}
+      socialIcon = (<SocialLinkedinIcon
         a11yTitle={calculatedA11yTitle}
         className={className} colorIndex={colorIndex} />);
       href = `https://www.linkedin.com/shareArticle?mini=true&url=` +
         `${encodedLink}&title=${encodedTitle}&summary=${encodedText}`;
     } else if (type === 'google') {
-      socialIcon = (<SocialGooglePlusIcon skipWarn={true}
+      socialIcon = (<SocialGooglePlusIcon
         a11yTitle={calculatedA11yTitle}
         className={className} colorIndex={colorIndex} />);
       href = `https://plus.google.com/share?url=${encodedLink}`;
     } else if (type === 'facebook') {
-      socialIcon = (<SocialFacebookIcon skipWarn={true}
+      socialIcon = (<SocialFacebookIcon
         a11yTitle={calculatedA11yTitle}
         className={className} colorIndex={colorIndex} />);
       href = `https://www.facebook.com/sharer/sharer.php?u=${encodedLink}`;
     } else if (type === 'email') {
-      socialIcon = (<SocialMailIcon skipWarn={true}
+      socialIcon = (<SocialMailIcon
         a11yTitle={calculatedA11yTitle}
         className={className} colorIndex={colorIndex} />);
       href = `mailto:?subject=` +

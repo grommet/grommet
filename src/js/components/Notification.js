@@ -158,7 +158,7 @@ export default class Notification extends Component {
     } else if (onClose && closer) {
       closerNode = (
         <Button plain={true} onClick={onClose}
-          icon={<CloseIcon skipWarn={true}
+          icon={<CloseIcon
             className={`${CLASS_ROOT}__close`} />}
           a11yTitle={
             Intl.getMessage(intl, 'Close Notification')

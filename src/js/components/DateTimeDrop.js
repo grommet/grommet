@@ -370,14 +370,14 @@ export default class DateTimeDrop extends Component {
     return [
       <Header key='header' justify='between' colorIndex='neutral-1'>
         <Button className={`${CLASS_ROOT}__previous`}
-          icon={<LinkPreviousIcon skipWarn={true} />}
+          icon={<LinkPreviousIcon />}
           a11yTitle={previousMonthMessage}
           onClick={this._onPrevious.bind(this, 'month', false)} />
         <Title className={`${CLASS_ROOT}__title`} responsive={false}>
           {value.format('MMMM YYYY')}
         </Title>
         <Button className={`${CLASS_ROOT}__next`} icon={<LinkNextIcon
-          skipWarn={true} />}
+          />}
           a11yTitle={nextMonthMessage}
           onClick={this._onNext.bind(this, 'month', false)} />
       </Header>,
@@ -416,11 +416,11 @@ export default class DateTimeDrop extends Component {
         const unitMessage = Intl.getMessage(intl, unit);
         return (
           <Box key={index} align='center'>
-            <Button icon={<SubtractIcon skipWarn={true} />}
+            <Button icon={<SubtractIcon />}
               a11yTitle={`${subtractMessage} ${unitMessage}`}
               onClick={this._onPrevious.bind(this, unit)} />
             {value.format('M' === chunk ? 'MMM' : chunk)}
-            <Button icon={<AddIcon skipWarn={true} />}
+            <Button icon={<AddIcon />}
               a11yTitle={`${addMessage} ${unitMessage}`}
               onClick={this._onNext.bind(this, unit)} />
           </Box>

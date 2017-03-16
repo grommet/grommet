@@ -475,7 +475,7 @@ export default class Tiles extends Component {
         const previousTilesMessage = Intl.getMessage(intl, 'Previous Tiles');
         left = (
           <Button className={`${CLASS_ROOT}__left`}
-            icon={<LinkPreviousIcon skipWarn={true} />}
+            icon={<LinkPreviousIcon />}
             a11yTitle={previousTilesMessage} onClick={this._onLeft} />
         );
       }
@@ -483,7 +483,7 @@ export default class Tiles extends Component {
         const nextTilesMessage = Intl.getMessage(intl, 'Next Tiles');
         right = (
           <Button className={`${CLASS_ROOT}__right`}
-            icon={<LinkNextIcon skipWarn={true} />}
+            icon={<LinkNextIcon />}
             a11yTitle={nextTilesMessage} onClick={this._onRight} />
         );
       }

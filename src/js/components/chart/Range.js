@@ -198,7 +198,7 @@ export default class Range extends Component {
           style={{ flexBasis: beforeBasis }}>
           <div className={startClasses.join(' ')}
             onMouseDown={onActive ? this._mouseDown('start') : undefined}>
-            <DragIcon skipWarn={true} />
+            <DragIcon />
           </div>
         </div>,
         <div key='active' {...props} className={`${CLASS_ROOT}__active`}
@@ -207,7 +207,7 @@ export default class Range extends Component {
           style={{ flexBasis: afterBasis }}>
           <div className={endClasses.join(' ')}
             onMouseDown={onActive ? this._mouseDown('end') : undefined}>
-            <DragIcon skipWarn={true} />
+            <DragIcon />
           </div>
         </div>
       ];
