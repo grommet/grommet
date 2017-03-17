@@ -409,13 +409,28 @@ var Table = function (_Component) {
         (function () {
           var headerCells = _this4.tableRef.querySelectorAll('thead th');
           if (headerCells.length > 0) {
-            var rows = _this4.tableRef.querySelectorAll('tbody tr');
-
-            [].forEach.call(rows, function (row) {
-              [].forEach.call(row.cells, function (cell, index) {
-                cell.setAttribute('data-th', headerCells[index].innerText || headerCells[index].textContent);
+            (function () {
+              var increments = [];
+              [].forEach.call(headerCells, function (cell) {
+                var colspan = cell.getAttribute('colspan');
+                increments.push(colspan ? parseInt(colspan) : 1);
               });
-            });
+
+              var rows = _this4.tableRef.querySelectorAll('tbody tr');
+
+              var incrementCount = 0;
+              var headerIndex = 0;
+              [].forEach.call(rows, function (row) {
+                [].forEach.call(row.cells, function (cell) {
+                  cell.setAttribute('data-th', headerCells[headerIndex].innerText || headerCells[headerIndex].textContent);
+                  incrementCount++;
+                  if (incrementCount === increments[headerIndex]) {
+                    incrementCount = 0;
+                    headerIndex++;
+                  }
+                });
+              });
+            })();
           }
         })();
       }
