@@ -73,7 +73,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         _extends({}, restProps, { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle }),
-        _react2.default.createElement('polygon', { fill: 'none', stroke: '#000000', strokeWidth: '2', points: '3 6 10 13 10 21 14 21 14 13 21 6 21 3 3 3' })
+        _react2.default.createElement('polygon', { fill: 'none', stroke: '#000', strokeWidth: '2', points: '3 6 10 13 10 21 14 21 14 13 21 6 21 3 3 3' })
       );
     }
   }]);

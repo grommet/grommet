@@ -73,7 +73,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         _extends({}, restProps, { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle }),
-        _react2.default.createElement('circle', { cx: '12', cy: '12', r: '11', fill: 'none', stroke: '#000000', strokeWidth: '2' })
+        _react2.default.createElement('circle', { cx: '12', cy: '12', r: '11', fill: 'none', stroke: '#000', strokeWidth: '2' })
       );
     }
   }]);

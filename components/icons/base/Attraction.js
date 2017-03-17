@@ -77,9 +77,9 @@ var Icon = function (_Component) {
           'g',
           { fill: 'none', fillRule: 'evenodd' },
           _react2.default.createElement('polygon', { stroke: '#000', strokeWidth: '2', points: '12 4 21 10 21 12 3 12 3 10', fill: 'none' }),
-          _react2.default.createElement('polygon', { stroke: 'none', fill: '#000', points: '12 0 15.5 1.25 12 2.5' }),
+          _react2.default.createElement('polygon', { fill: '#000', points: '12 0 15.5 1.25 12 2.5', stroke: 'none' }),
           _react2.default.createElement('path', { stroke: '#000', strokeWidth: '2', d: 'M4.5,12 L19.5,12 C19.5,16.1666667 21,22 21,22 L3,22 C3,22 4.5,16.1666667 4.5,12 Z', fill: 'none' }),
-          _react2.default.createElement('polygon', { stroke: 'none', fill: '#000', strokeWidth: '2', points: '14 15.5 16 22 12 22' })
+          _react2.default.createElement('polygon', { fill: '#000', stroke: 'none', strokeWidth: '2', points: '14 15.5 16 22 12 22' })
         )
       );
     }
