@@ -316,12 +316,27 @@ export default class Table extends Component {
     if (this.tableRef) {
       let headerCells = this.tableRef.querySelectorAll('thead th');
       if (headerCells.length > 0) {
+        const increments = [];
+        [].forEach.call(headerCells, (cell) => {
+          const colspan = cell.getAttribute('colspan');
+          increments.push(colspan ? parseInt(colspan) : 1);
+        });
+
         let rows = this.tableRef.querySelectorAll('tbody tr');
 
+        let incrementCount = 0;
+        let headerIndex = 0;
         [].forEach.call(rows, (row) => {
-          [].forEach.call(row.cells, (cell, index) => {
-            cell.setAttribute('data-th',
-              headerCells[index].innerText || headerCells[index].textContent);
+          [].forEach.call(row.cells, (cell) => {
+            cell.setAttribute('data-th', (
+              headerCells[headerIndex].innerText ||
+              headerCells[headerIndex].textContent
+            ));
+            incrementCount++;
+            if (incrementCount === increments[headerIndex]) {
+              incrementCount = 0;
+              headerIndex++;
+            }
           });
         });
       }
