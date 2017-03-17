@@ -34,7 +34,7 @@ exports[`TableHeader has correct default options 1`] = `
             <path
               d="M12,2 L12,22 M3,11 L12,2 L21,11"
               fill="none"
-              stroke="#000000"
+              stroke="#000"
               strokeWidth="2"
               transform="matrix(1 0 0 -1 0 24)" />
           </svg>

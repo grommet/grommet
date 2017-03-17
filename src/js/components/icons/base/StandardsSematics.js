@@ -29,7 +29,7 @@ export default class Icon extends Component {
     a11yTitle = a11yTitle || Intl.getMessage(intl, 'standards-sematics');
 
     const restProps = Props.omit(this.props, Object.keys(Icon.propTypes));
-    return <svg {...restProps} version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><path stroke="none" fill="#000000" fillRule="evenodd" d="M12.0026703,0 L0,6.06607718 L0,10.0551619 L12.0026703,3.98917843 L24,10.0551619 L24,6.06607718 L12.0026703,0 Z M12.0026703,6.96290918 L0,13.0289864 L0,17.0180711 L12.0026703,10.9520876 L24,17.0180711 L24,13.0289864 L12.0026703,6.96290918 Z M12.0026703,13.9277859 L0,19.9938631 L0,23.9829478 L12.0026703,17.9169643 L24,23.9829478 L24,19.9938631 L12.0026703,13.9277859 Z"/></svg>;
+    return <svg {...restProps} version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><path fillRule="evenodd" d="M12.0026703,0 L24,6.06607718 L24,10.0551619 L12.0026703,3.98917843 L0,10.0551619 L0,6.06607718 L12.0026703,0 Z M12.0026703,6.96290918 L24,13.0289864 L24,17.0180711 L12.0026703,10.9520876 L0,17.0180711 L0,13.0289864 L12.0026703,6.96290918 Z M12.0026703,13.9277859 L24,19.9938631 L24,23.9829478 L12.0026703,17.9169643 L0,23.9829478 L0,19.9938631 L12.0026703,13.9277859 Z"/></svg>;
   }
 };
 

@@ -29,7 +29,7 @@ export default class Icon extends Component {
     a11yTitle = a11yTitle || Intl.getMessage(intl, 'personal-computer');
 
     const restProps = Props.omit(this.props, Object.keys(Icon.propTypes));
-    return <svg {...restProps} version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><path fill="none" stroke="#000000" strokeWidth="2" d="M3,18 L21,18 L21,4 L3,4 L3,18 Z M1,21 L23,21 L23,18 L1,18 L1,21 Z M6,15 L18,15 L18,7 L6,7 L6,15 Z"/></svg>;
+    return <svg {...restProps} version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><path fill="none" stroke="#000" strokeWidth="2" d="M3,18 L21,18 L21,4 L3,4 L3,18 Z M1,21 L23,21 L23,18 L1,18 L1,21 Z M6,15 L18,15 L18,7 L6,7 L6,15 Z"/></svg>;
   }
 };
 

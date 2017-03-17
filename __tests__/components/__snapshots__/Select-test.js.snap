@@ -31,7 +31,7 @@ exports[`Select accepts initial value 1`] = `
         <polygon
           fill="none"
           points="22 8 12 20 2 8"
-          stroke="#000000"
+          stroke="#000"
           strokeWidth="2" />
       </svg>
     </span>
@@ -72,7 +72,7 @@ exports[`Select has correct default options 1`] = `
         <polygon
           fill="none"
           points="22 8 12 20 2 8"
-          stroke="#000000"
+          stroke="#000"
           strokeWidth="2" />
       </svg>
     </span>

@@ -38,6 +38,10 @@ $icon-huge-size: round($inuit-base-spacing-unit * 12) !default;
     *[fill*="#"] {
       fill: inherit;
     }
+
+    *[fill-rule] {
+      stroke: none;
+    }
   }
 
   #{$dark-background-context} {

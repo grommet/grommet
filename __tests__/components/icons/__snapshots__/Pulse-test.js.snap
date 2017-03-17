@@ -14,7 +14,7 @@ exports[`Pulse has correct className rendering 1`] = `
       <path
         d="M12,22 L12,2 M2,12 L22,12"
         fill="none"
-        stroke="#000000"
+        stroke="#000"
         strokeWidth="2" />
     </svg>
   </div>
@@ -39,7 +39,7 @@ exports[`Pulse has correct default options 1`] = `
       <path
         d="M12,22 L12,2 M2,12 L22,12"
         fill="none"
-        stroke="#000000"
+        stroke="#000"
         strokeWidth="2" />
     </svg>
   </div>
@@ -67,7 +67,7 @@ exports[`Pulse has microdata properties rendering 1`] = `
       <path
         d="M12,22 L12,2 M2,12 L22,12"
         fill="none"
-        stroke="#000000"
+        stroke="#000"
         strokeWidth="2" />
     </svg>
   </div>

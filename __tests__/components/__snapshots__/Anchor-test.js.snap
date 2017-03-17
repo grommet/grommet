@@ -99,7 +99,7 @@ exports[`Anchor has correct primary=true rendering 1`] = `
     <path
       d="M2,12 L22,12 M13,3 L22,12 L13,21"
       fill="none"
-      stroke="#000000"
+      stroke="#000"
       strokeWidth="2" />
   </svg>
 </a>

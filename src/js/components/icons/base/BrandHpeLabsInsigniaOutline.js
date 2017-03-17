@@ -29,7 +29,7 @@ export default class Icon extends Component {
     a11yTitle = a11yTitle || Intl.getMessage(intl, 'brand-hpe-labs-insignia-outline');
 
     const restProps = Props.omit(this.props, Object.keys(Icon.propTypes));
-    return <svg {...restProps} version="1.1" viewBox="0 0 34 48" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><polygon stroke="none" fill="#01A982" fillRule="evenodd" points="20 44 4 44 4 4 24 4 24 28 20 28 20 8 8 8 8 40 34 40 34 36 12 36 12 12 16 12 16 32 26 32 28 32 28 0 0 0 0 48 20 48"/></svg>;
+    return <svg {...restProps} version="1.1" viewBox="0 0 34 48" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><polygon fill="#01A982" points="20 44 4 44 4 4 24 4 24 28 20 28 20 8 8 8 8 40 34 40 34 36 12 36 12 12 16 12 16 32 26 32 28 32 28 0 0 0 0 48 20 48" stroke="none"/></svg>;
   }
 };
 

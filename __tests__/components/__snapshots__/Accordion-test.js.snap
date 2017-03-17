@@ -50,7 +50,7 @@ exports[`Accordion has correct default options 1`] = `
               <polygon
                 fill="none"
                 points="6 2 18 12 6 22"
-                stroke="#000000"
+                stroke="#000"
                 strokeWidth="2" />
             </svg>
           </header>
@@ -115,7 +115,7 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
               <polygon
                 fill="none"
                 points="6 2 18 12 6 22"
-                stroke="#000000"
+                stroke="#000"
                 strokeWidth="2" />
             </svg>
           </header>
@@ -186,7 +186,7 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
               <polygon
                 fill="none"
                 points="6 2 18 12 6 22"
-                stroke="#000000"
+                stroke="#000"
                 strokeWidth="2" />
             </svg>
           </header>
@@ -251,7 +251,7 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
               <polygon
                 fill="none"
                 points="6 2 18 12 6 22"
-                stroke="#000000"
+                stroke="#000"
                 strokeWidth="2" />
             </svg>
           </header>
@@ -322,7 +322,7 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
               <polygon
                 fill="none"
                 points="6 2 18 12 6 22"
-                stroke="#000000"
+                stroke="#000"
                 strokeWidth="2" />
             </svg>
           </header>
@@ -400,7 +400,7 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
               <polygon
                 fill="none"
                 points="6 2 18 12 6 22"
-                stroke="#000000"
+                stroke="#000"
                 strokeWidth="2" />
             </svg>
           </header>
@@ -471,7 +471,7 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
               <polygon
                 fill="none"
                 points="6 2 18 12 6 22"
-                stroke="#000000"
+                stroke="#000"
                 strokeWidth="2" />
             </svg>
           </header>
