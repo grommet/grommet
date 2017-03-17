@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.Validator = exports.Rest = exports.Locale = exports.KeyboardAccelerators = exports.DOM = exports.Cookies = exports.WorldMap = exports.Video = exports.Value = exports.Topology = exports.Toast = exports.Title = exports.Tip = exports.Timestamp = exports.Tiles = exports.Tile = exports.TextInput = exports.TBD = exports.Tabs = exports.TableRow = exports.TableHeader = exports.Table = exports.Tab = exports.SVGIcon = exports.SunBurst = exports.Split = exports.SocialShare = exports.SkipLinks = exports.SkipLinkAnchor = exports.Sidebar = exports.Select = exports.Section = exports.SearchInput = exports.Search = exports.RadioButton = exports.Quote = exports.Paragraph = exports.Object = exports.NumberInput = exports.Notification = exports.Meter = exports.Menu = exports.Markdown = exports.Map = exports.LoginForm = exports.ListItem = exports.List = exports.Legend = exports.Layer = exports.Label = exports.Image = exports.Hero = exports.Headline = exports.Heading = exports.Header = exports.Grommet = exports.FormFields = exports.FormField = exports.FormattedMessage = exports.Form = exports.Footer = exports.Distribution = exports.DateTime = exports.Columns = exports.CheckBox = exports.Carousel = exports.Card = exports.Button = exports.Box = exports.Article = exports.App = exports.Animate = exports.Anchor = exports.AccordionPanel = exports.Accordion = exports.Icons = undefined;
 
 var _Accordion = require('./components/Accordion');
 
@@ -703,4 +704,17 @@ Object.defineProperty(exports, 'Validator', {
   }
 });
 
+var _indexCommonjs = require('./index-commonjs');
+
+var _indexCommonjs2 = _interopRequireDefault(_indexCommonjs);
+
+var IconSet = _interopRequireWildcard(_icons);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+var Icons = exports.Icons = IconSet;
+
+exports.default = { Grommet: _indexCommonjs2.default };
