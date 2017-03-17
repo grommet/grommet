@@ -86,28 +86,6 @@
       color: $link-hover-color;
       background-color: $hover-background-color;
     }
-
-    #{$dark-background-context} {
-      &.active {
-        color: $active-colored-text-color;
-        background-color: $colored-active-background-color;
-      }
-
-      &:hover,
-      &:focus {
-        color: $active-colored-text-color;
-        background-color: $colored-hover-background-color;
-      }
-    }
-
-    #{$light-background-context} {
-      &.active,
-      &:hover,
-      &:focus {
-        color: $link-hover-color;
-        background-color: $hover-background-color;
-      }
-    }
   }
 
   .#{$grommet-namespace}menu__control {
@@ -169,6 +147,33 @@
   &.#{$grommet-namespace}menu__drop--large {
     @include inuit-font-size($large-menu-font-size);
   }
+
+  #{$dark-background-and} {
+    .#{$grommet-namespace}anchor {
+      &.active {
+        color: $active-colored-text-color;
+        background-color: $colored-active-background-color;
+      }
+
+      &:hover,
+      &:focus {
+        color: $active-colored-text-color;
+        background-color: $colored-hover-background-color;
+      }
+    }
+  }
+
+  #{$light-background-and} {
+    .#{$grommet-namespace}anchor {
+      &.active,
+      &:hover,
+      &:focus {
+        color: $link-hover-color;
+        background-color: $hover-background-color;
+      }
+    }
+  }
+
 } // .#{$grommet-namespace}menu__drop
 
 .#{$grommet-namespace}menu--inline {

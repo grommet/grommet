@@ -116,3 +116,10 @@ $dark-background-context:
   '.#{$grommet-namespace}background-color-index--dark &, .#{$grommet-namespace}background-color-index--light .#{$grommet-namespace}background-color-index--dark &' !default;
 $light-background-context:
   '.#{$grommet-namespace}background-color-index--light &, .#{$grommet-namespace}background-color-index--dark .#{$grommet-namespace}background-color-index--light &',  !default;
+
+$pending-background-and:
+  '&.#{$grommet-namespace}background-color-index--pending' !default;
+$dark-background-and:
+  '&.#{$grommet-namespace}background-color-index--dark, .#{$grommet-namespace}background-color-index--light &.#{$grommet-namespace}background-color-index--dark' !default;
+$light-background-and:
+  '&.#{$grommet-namespace}background-color-index--light, .#{$grommet-namespace}background-color-index--dark &.#{$grommet-namespace}background-color-index--light',  !default;
