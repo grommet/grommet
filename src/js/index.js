@@ -1,4 +1,8 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+import Grommet from './index-commonjs';
+import * as IconSet from './components/icons';
+
+export const Icons = IconSet;
 
 export { default as Accordion } from './components/Accordion';
 export { default as AccordionPanel } from './components/AccordionPanel';
@@ -77,3 +81,5 @@ export { default as KeyboardAccelerators } from './utils/KeyboardAccelerators';
 export { default as Locale } from './utils/Locale';
 export { default as Rest } from './utils/Rest';
 export { default as Validator } from './utils/Validator';
+
+export default { Grommet };
