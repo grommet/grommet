@@ -2,7 +2,9 @@
 import Grommet from './index-commonjs';
 import * as IconSet from './components/icons';
 
-export const Icons = IconSet;
+export const Icons = { 
+  ...Grommet.Icons
+};
 
 export { default as Accordion } from './components/Accordion';
 export { default as AccordionPanel } from './components/AccordionPanel';
@@ -82,4 +84,4 @@ export { default as Locale } from './utils/Locale';
 export { default as Rest } from './utils/Rest';
 export { default as Validator } from './utils/Validator';
 
-export default { Grommet };
+export default { ...Grommet };
