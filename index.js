@@ -5,6 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Validator = exports.Rest = exports.Locale = exports.KeyboardAccelerators = exports.DOM = exports.Cookies = exports.WorldMap = exports.Video = exports.Value = exports.Topology = exports.Toast = exports.Title = exports.Tip = exports.Timestamp = exports.Tiles = exports.Tile = exports.TextInput = exports.TBD = exports.Tabs = exports.TableRow = exports.TableHeader = exports.Table = exports.Tab = exports.SVGIcon = exports.SunBurst = exports.Split = exports.SocialShare = exports.SkipLinks = exports.SkipLinkAnchor = exports.Sidebar = exports.Select = exports.Section = exports.SearchInput = exports.Search = exports.RadioButton = exports.Quote = exports.Paragraph = exports.Object = exports.NumberInput = exports.Notification = exports.Meter = exports.Menu = exports.Markdown = exports.Map = exports.LoginForm = exports.ListItem = exports.List = exports.Legend = exports.Layer = exports.Label = exports.Image = exports.Hero = exports.Headline = exports.Heading = exports.Header = exports.Grommet = exports.FormFields = exports.FormField = exports.FormattedMessage = exports.Form = exports.Footer = exports.Distribution = exports.DateTime = exports.Columns = exports.CheckBox = exports.Carousel = exports.Card = exports.Button = exports.Box = exports.Article = exports.App = exports.Animate = exports.Anchor = exports.AccordionPanel = exports.Accordion = exports.Icons = undefined;
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+
 var _Accordion = require('./components/Accordion');
 
 Object.defineProperty(exports, 'Accordion', {
@@ -714,7 +717,6 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-var Icons = exports.Icons = IconSet;
+var Icons = exports.Icons = _extends({}, _indexCommonjs2.default.Icons);
 
-exports.default = { Grommet: _indexCommonjs2.default };
+exports.default = _extends({}, _indexCommonjs2.default);
