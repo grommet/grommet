@@ -324,9 +324,9 @@ export default class Table extends Component {
 
         let rows = this.tableRef.querySelectorAll('tbody tr');
 
-        let incrementCount = 0;
-        let headerIndex = 0;
         [].forEach.call(rows, (row) => {
+          let incrementCount = 0;
+          let headerIndex = 0;
           [].forEach.call(row.cells, (cell) => {
             cell.setAttribute('data-th', (
               headerCells[headerIndex].innerText ||
