@@ -418,9 +418,9 @@ var Table = function (_Component) {
 
               var rows = _this4.tableRef.querySelectorAll('tbody tr');
 
-              var incrementCount = 0;
-              var headerIndex = 0;
               [].forEach.call(rows, function (row) {
+                var incrementCount = 0;
+                var headerIndex = 0;
                 [].forEach.call(row.cells, function (cell) {
                   cell.setAttribute('data-th', headerCells[headerIndex].innerText || headerCells[headerIndex].textContent);
                   incrementCount++;
