@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _react = require('react');
 
+var _react2 = _interopRequireDefault(_react);
+
 var _markdownToJsx = require('markdown-to-jsx');
 
 var _markdownToJsx2 = _interopRequireDefault(_markdownToJsx);
@@ -38,7 +40,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-var Markdown = function Markdown(props) {
+var GrommetMarkdown = function GrommetMarkdown(props) {
   var content = props.content,
       components = props.components;
 
@@ -72,20 +74,24 @@ var Markdown = function Markdown(props) {
     }
   }, heading, components);
 
-  return (0, _markdownToJsx2.default)(content, { overrides: options });
+  return _react2.default.createElement(
+    _markdownToJsx2.default,
+    { options: { overrides: options } },
+    content
+  );
 };
 
-Markdown.propTypes = {
+GrommetMarkdown.propTypes = {
   content: _react.PropTypes.string,
   components: _react.PropTypes.shape({
     props: _react.PropTypes.object
   })
 };
 
-Markdown.defaultProps = {
+GrommetMarkdown.defaultProps = {
   components: {},
   content: ''
 };
 
-exports.default = Markdown;
+exports.default = GrommetMarkdown;
 module.exports = exports['default'];
