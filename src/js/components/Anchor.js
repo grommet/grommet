@@ -3,6 +3,7 @@
 import React, { Children, Component } from 'react';
 import classnames from 'classnames';
 import { schema, PropTypes } from 'react-desc';
+import { matchPath } from 'react-router';
 import LinkNextIcon from './icons/base/LinkNext';
 
 import CSSClassnames from '../utils/CSSClassnames';
@@ -16,26 +17,27 @@ export default class Anchor extends Component {
     this._onClick = this._onClick.bind(this);
     this._onLocationChange = this._onLocationChange.bind(this);
     this._attachUnlisten = this._attachUnlisten.bind(this);
+    this._isRouteActive = this._isRouteActive.bind(this);
     const { path } = props;
     const { router } = context;
 
-    this.state = {
-      active: router && path && router.isActive(path.path || path, {
-        indexLink: path.index
-      })
-    };
+    const active = this._isRouteActive(path, router);
+
+    this.state = { active };
   }
 
   componentDidMount () {
     const { path } = this.props;
     if (path) {
-      this._attachUnlisten(this.context.router);
+      this._attachUnlisten(this.context.router.history || this.context.router);
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.path && nextProps.path !== this.props.path) {
-      this._attachUnlisten(this.context.router);
+    const { path } = nextProps;
+    const { router } = this.context;
+    if (path && path !== this.props.path) {
+      this._attachUnlisten(router);
     }
   }
 
@@ -45,6 +47,23 @@ export default class Anchor extends Component {
       this._unlisten();
     }
     this._unmounted = true;
+  }
+
+  _isRouteActive(path, router) {
+    let active;
+    if (router && router.isActive) {
+      active = router && router.isActive && 
+        path && router.isActive(path.path || path, {
+          indexLink: path.index
+        });
+    } else if(router && matchPath) {
+      active = !!matchPath(
+        router.history.location.pathname, 
+        { path: path.path || path, exact: !!path.index }
+      );
+    }
+
+    return active;
   }
 
   _attachUnlisten(router) {
@@ -58,7 +77,14 @@ export default class Anchor extends Component {
     if (!this._unmounted) {
       const { path } = this.props;
       const { router } = this.context;
-      const active = router && location.pathname === (path.path || path);
+      const active = matchPath ? (
+        !!matchPath(
+          location.pathname, 
+          { path: path.path || path, exact: !!path.index }
+        )
+      ) : (
+        router && location.pathname === (path.path || path)
+      );
       this.setState({ active });
     }
   }
@@ -72,9 +98,9 @@ export default class Anchor extends Component {
     if (!disabled) {
       if (path) {
         if ('push' === method) {
-          router.push(path.path || path);
+          (router.history || router).push(path.path || path);
         } else if ('replace' === method) {
-          router.replace(path.path || path);
+          (router.history || router).replace(path.path || path);
         }
       }
 
@@ -115,8 +141,17 @@ export default class Anchor extends Component {
       return child;
     });
 
-    let adjustedHref = (path && router) ?
-      router.createPath(path.path || path) : href;
+    const target = path ? path.path || path : undefined;
+    let adjustedHref;
+    if (router && router.createPath) {
+      adjustedHref = (path && router) ?
+        router.createPath(target) : href;
+    } else {
+      adjustedHref = (path && router && router.history) ?
+        router.history.createHref(
+          typeof target === 'string' ? { pathname: target } : target
+        ) : href;
+    } 
 
     let classes = classnames(
       CLASS_ROOT,
@@ -143,6 +178,7 @@ export default class Anchor extends Component {
     const second = reverse ? anchorIcon : anchorChildren;
 
     const Component = tag;
+    
     return (
       <Component {...props} href={adjustedHref} className={classes}
         aria-label={a11yTitle} onClick={adjustedOnClick}>
