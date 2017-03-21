@@ -1,6 +1,5 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 import Grommet from './index-commonjs';
-import * as IconSet from './components/icons';
 
 export const Icons = { 
   ...Grommet.Icons
