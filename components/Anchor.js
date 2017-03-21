@@ -18,6 +18,8 @@ var _classnames3 = _interopRequireDefault(_classnames2);
 
 var _reactDesc = require('react-desc');
 
+var _reactRouter = require('react-router');
+
 var _LinkNext = require('./icons/base/LinkNext');
 
 var _LinkNext2 = _interopRequireDefault(_LinkNext);
@@ -51,15 +53,14 @@ var Anchor = function (_Component) {
     _this._onClick = _this._onClick.bind(_this);
     _this._onLocationChange = _this._onLocationChange.bind(_this);
     _this._attachUnlisten = _this._attachUnlisten.bind(_this);
+    _this._isRouteActive = _this._isRouteActive.bind(_this);
     var path = props.path;
     var router = context.router;
 
 
-    _this.state = {
-      active: router && path && router.isActive(path.path || path, {
-        indexLink: path.index
-      })
-    };
+    var active = _this._isRouteActive(path, router);
+
+    _this.state = { active: active };
     return _this;
   }
 
@@ -69,14 +70,17 @@ var Anchor = function (_Component) {
       var path = this.props.path;
 
       if (path) {
-        this._attachUnlisten(this.context.router);
+        this._attachUnlisten(this.context.router.history || this.context.router);
       }
     }
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.path && nextProps.path !== this.props.path) {
-        this._attachUnlisten(this.context.router);
+      var path = nextProps.path;
+      var router = this.context.router;
+
+      if (path && path !== this.props.path) {
+        this._attachUnlisten(router);
       }
     }
   }, {
@@ -88,6 +92,20 @@ var Anchor = function (_Component) {
         this._unlisten();
       }
       this._unmounted = true;
+    }
+  }, {
+    key: '_isRouteActive',
+    value: function _isRouteActive(path, router) {
+      var active = void 0;
+      if (router && router.isActive) {
+        active = router && router.isActive && path && router.isActive(path.path || path, {
+          indexLink: path.index
+        });
+      } else if (router && _reactRouter.matchPath) {
+        active = !!(0, _reactRouter.matchPath)(router.history.location.pathname, { path: path.path || path, exact: !!path.index });
+      }
+
+      return active;
     }
   }, {
     key: '_attachUnlisten',
@@ -104,7 +122,7 @@ var Anchor = function (_Component) {
         var path = this.props.path;
         var router = this.context.router;
 
-        var active = router && location.pathname === (path.path || path);
+        var active = _reactRouter.matchPath ? !!(0, _reactRouter.matchPath)(location.pathname, { path: path.path || path, exact: !!path.index }) : router && location.pathname === (path.path || path);
         this.setState({ active: active });
       }
     }
@@ -124,9 +142,9 @@ var Anchor = function (_Component) {
       if (!disabled) {
         if (path) {
           if ('push' === method) {
-            router.push(path.path || path);
+            (router.history || router).push(path.path || path);
           } else if ('replace' === method) {
-            router.replace(path.path || path);
+            (router.history || router).replace(path.path || path);
           }
         }
 
@@ -190,7 +208,13 @@ var Anchor = function (_Component) {
         return child;
       });
 
-      var adjustedHref = path && router ? router.createPath(path.path || path) : href;
+      var target = path ? path.path || path : undefined;
+      var adjustedHref = void 0;
+      if (router && router.createPath) {
+        adjustedHref = path && router ? router.createPath(target) : href;
+      } else {
+        adjustedHref = path && router && router.history ? router.history.createHref(typeof target === 'string' ? { pathname: target } : target) : href;
+      }
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--animate-icon', hasIcon && animateIcon !== false), _defineProperty(_classnames, CLASS_ROOT + '--disabled', disabled), _defineProperty(_classnames, CLASS_ROOT + '--icon', anchorIcon || hasIcon), _defineProperty(_classnames, CLASS_ROOT + '--icon-label', hasIcon && label), _defineProperty(_classnames, CLASS_ROOT + '--align-' + align, align), _defineProperty(_classnames, CLASS_ROOT + '--primary', primary), _defineProperty(_classnames, CLASS_ROOT + '--reverse', reverse), _defineProperty(_classnames, CLASS_ROOT + '--active', active), _classnames), className);
 
@@ -204,6 +228,7 @@ var Anchor = function (_Component) {
       var second = reverse ? anchorIcon : anchorChildren;
 
       var Component = tag;
+
       return _react2.default.createElement(
         Component,
         _extends({}, props, { href: adjustedHref, className: classes,
