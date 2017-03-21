@@ -252,7 +252,9 @@ exports.default = Anchor;
   props: {
     a11yTitle: [_reactDesc.PropTypes.string, 'Accessibility title.'],
     align: [_reactDesc.PropTypes.oneOf(['start', 'center', 'end']), 'Text alignment.'],
-    animateIcon: [_reactDesc.PropTypes.bool, 'Whether to animate the icon on hover.'],
+    animateIcon: [_reactDesc.PropTypes.bool, 'Whether to animate the icon on hover.', {
+      defaultProp: true
+    }],
     disabled: [_reactDesc.PropTypes.bool, 'Whether to disable the anchor.'],
     href: [_reactDesc.PropTypes.string, 'Hyperlink reference to place in the anchor.'],
     icon: [_reactDesc.PropTypes.element, 'Icon element to place in the anchor.'],
