@@ -711,10 +711,6 @@ var _indexCommonjs = require('./index-commonjs');
 
 var _indexCommonjs2 = _interopRequireDefault(_indexCommonjs);
 
-var IconSet = _interopRequireWildcard(_icons);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Icons = exports.Icons = _extends({}, _indexCommonjs2.default.Icons);
