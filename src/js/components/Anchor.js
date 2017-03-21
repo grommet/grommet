@@ -198,7 +198,9 @@ schema(Anchor, {
   props: {
     a11yTitle: [PropTypes.string, 'Accessibility title.'],
     align: [PropTypes.oneOf(['start', 'center', 'end']), 'Text alignment.'],
-    animateIcon: [PropTypes.bool, 'Whether to animate the icon on hover.'],
+    animateIcon: [PropTypes.bool, 'Whether to animate the icon on hover.', {
+      defaultProp: true
+    }],
     disabled: [PropTypes.bool, 'Whether to disable the anchor.'],
     href: [PropTypes.string, 'Hyperlink reference to place in the anchor.'],
     icon: [PropTypes.element, 'Icon element to place in the anchor.'],

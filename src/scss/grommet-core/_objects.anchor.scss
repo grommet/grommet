@@ -52,12 +52,17 @@
   &:hover {
     .#{$grommet-namespace}control-icon {
       @include icon-color($active-icon-color);
-      @include icon-hover-grow();
     }
   }
 
   @include background-context-color($icon-color, $active-icon-color);
   @include background-context-icon($icon-color, $active-icon-color);
+}
+
+.#{$grommet-namespace}anchor--animate-icon:hover {
+  .#{$grommet-namespace}control-icon {
+    @include icon-hover-grow();
+  }
 }
 
 .#{$grommet-namespace}anchor--icon {
@@ -83,12 +88,6 @@
   > span { // too generic, change
     vertical-align: middle;
   }
-
-  &:hover:not(.#{$grommet-namespace}anchor--disabled) {
-    .#{$grommet-namespace}control-icon {
-      @include icon-hover-grow();
-    }
-  }
 }
 
 .#{$grommet-namespace}anchor--reverse {
@@ -112,10 +111,6 @@
   &:hover:not(.#{$grommet-namespace}anchor--disabled) {
     color: $hover-text-color;
     text-decoration: none;
-
-    .#{$grommet-namespace}control-icon {
-      @include icon-hover-grow();
-    }
   }
 
   @include background-context-color($icon-color, $active-icon-color);
