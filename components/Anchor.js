@@ -96,6 +96,9 @@ var Anchor = function (_Component) {
   }, {
     key: '_isRouteActive',
     value: function _isRouteActive(path, router) {
+      if (!path) {
+        return false;
+      }
       var active = void 0;
       if (router && router.isActive) {
         active = router && router.isActive && path && router.isActive(path.path || path, {
