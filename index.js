@@ -713,6 +713,12 @@ var _indexCommonjs2 = _interopRequireDefault(_indexCommonjs);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Icons = exports.Icons = _extends({}, _indexCommonjs2.default.Icons);
+var BaseIcons = {};
+
+Object.keys(_indexCommonjs2.default.Icons.Base).forEach(function (icon) {
+  BaseIcons[icon.replace('Icon', '')] = _indexCommonjs2.default.Icons.Base[icon];
+});
+
+var Icons = exports.Icons = Object.assign({}, _indexCommonjs2.default.Icons, { Base: BaseIcons });
 
 exports.default = _extends({}, _indexCommonjs2.default);

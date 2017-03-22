@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _d = require('./3d');
 
-Object.defineProperty(exports, 'ThreeD', {
+Object.defineProperty(exports, 'ThreeDIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_d).default;
@@ -15,7 +15,7 @@ Object.defineProperty(exports, 'ThreeD', {
 
 var _AccessAccessibility = require('./AccessAccessibility');
 
-Object.defineProperty(exports, 'AccessAccessibility', {
+Object.defineProperty(exports, 'AccessAccessibilityIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_AccessAccessibility).default;
@@ -24,7 +24,7 @@ Object.defineProperty(exports, 'AccessAccessibility', {
 
 var _AccessAd = require('./AccessAd');
 
-Object.defineProperty(exports, 'AccessAd', {
+Object.defineProperty(exports, 'AccessAdIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_AccessAd).default;
@@ -33,7 +33,7 @@ Object.defineProperty(exports, 'AccessAd', {
 
 var _AccessAssistListening = require('./AccessAssistListening');
 
-Object.defineProperty(exports, 'AccessAssistListening', {
+Object.defineProperty(exports, 'AccessAssistListeningIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_AccessAssistListening).default;
@@ -42,7 +42,7 @@ Object.defineProperty(exports, 'AccessAssistListening', {
 
 var _AccessBraille = require('./AccessBraille');
 
-Object.defineProperty(exports, 'AccessBraille', {
+Object.defineProperty(exports, 'AccessBrailleIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_AccessBraille).default;
@@ -51,7 +51,7 @@ Object.defineProperty(exports, 'AccessBraille', {
 
 var _AccessSign = require('./AccessSign');
 
-Object.defineProperty(exports, 'AccessSign', {
+Object.defineProperty(exports, 'AccessSignIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_AccessSign).default;
@@ -60,7 +60,7 @@ Object.defineProperty(exports, 'AccessSign', {
 
 var _AccessTty = require('./AccessTty');
 
-Object.defineProperty(exports, 'AccessTty', {
+Object.defineProperty(exports, 'AccessTtyIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_AccessTty).default;
@@ -69,7 +69,7 @@ Object.defineProperty(exports, 'AccessTty', {
 
 var _AccessVolumeControl = require('./AccessVolumeControl');
 
-Object.defineProperty(exports, 'AccessVolumeControl', {
+Object.defineProperty(exports, 'AccessVolumeControlIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_AccessVolumeControl).default;
@@ -78,7 +78,7 @@ Object.defineProperty(exports, 'AccessVolumeControl', {
 
 var _AccessWheelchairActive = require('./AccessWheelchairActive');
 
-Object.defineProperty(exports, 'AccessWheelchairActive', {
+Object.defineProperty(exports, 'AccessWheelchairActiveIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_AccessWheelchairActive).default;
@@ -87,7 +87,7 @@ Object.defineProperty(exports, 'AccessWheelchairActive', {
 
 var _AccessWheelchair = require('./AccessWheelchair');
 
-Object.defineProperty(exports, 'AccessWheelchair', {
+Object.defineProperty(exports, 'AccessWheelchairIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_AccessWheelchair).default;
@@ -96,7 +96,7 @@ Object.defineProperty(exports, 'AccessWheelchair', {
 
 var _Accessible = require('./Accessible');
 
-Object.defineProperty(exports, 'Accessible', {
+Object.defineProperty(exports, 'AccessibleIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Accessible).default;
@@ -105,7 +105,7 @@ Object.defineProperty(exports, 'Accessible', {
 
 var _Achievement = require('./Achievement');
 
-Object.defineProperty(exports, 'Achievement', {
+Object.defineProperty(exports, 'AchievementIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Achievement).default;
@@ -114,7 +114,7 @@ Object.defineProperty(exports, 'Achievement', {
 
 var _Action = require('./Action');
 
-Object.defineProperty(exports, 'Action', {
+Object.defineProperty(exports, 'ActionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Action).default;
@@ -123,7 +123,7 @@ Object.defineProperty(exports, 'Action', {
 
 var _Actions = require('./Actions');
 
-Object.defineProperty(exports, 'Actions', {
+Object.defineProperty(exports, 'ActionsIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Actions).default;
@@ -132,7 +132,7 @@ Object.defineProperty(exports, 'Actions', {
 
 var _AddChapter = require('./AddChapter');
 
-Object.defineProperty(exports, 'AddChapter', {
+Object.defineProperty(exports, 'AddChapterIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_AddChapter).default;
@@ -141,7 +141,7 @@ Object.defineProperty(exports, 'AddChapter', {
 
 var _AddCircle = require('./AddCircle');
 
-Object.defineProperty(exports, 'AddCircle', {
+Object.defineProperty(exports, 'AddCircleIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_AddCircle).default;
@@ -150,7 +150,7 @@ Object.defineProperty(exports, 'AddCircle', {
 
 var _Add = require('./Add');
 
-Object.defineProperty(exports, 'Add', {
+Object.defineProperty(exports, 'AddIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Add).default;
@@ -159,7 +159,7 @@ Object.defineProperty(exports, 'Add', {
 
 var _Aed = require('./Aed');
 
-Object.defineProperty(exports, 'Aed', {
+Object.defineProperty(exports, 'AedIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Aed).default;
@@ -168,7 +168,7 @@ Object.defineProperty(exports, 'Aed', {
 
 var _Aggregate = require('./Aggregate');
 
-Object.defineProperty(exports, 'Aggregate', {
+Object.defineProperty(exports, 'AggregateIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Aggregate).default;
@@ -177,7 +177,7 @@ Object.defineProperty(exports, 'Aggregate', {
 
 var _AidOption = require('./AidOption');
 
-Object.defineProperty(exports, 'AidOption', {
+Object.defineProperty(exports, 'AidOptionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_AidOption).default;
@@ -186,7 +186,7 @@ Object.defineProperty(exports, 'AidOption', {
 
 var _Aid = require('./Aid');
 
-Object.defineProperty(exports, 'Aid', {
+Object.defineProperty(exports, 'AidIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Aid).default;
@@ -195,7 +195,7 @@ Object.defineProperty(exports, 'Aid', {
 
 var _Alarm = require('./Alarm');
 
-Object.defineProperty(exports, 'Alarm', {
+Object.defineProperty(exports, 'AlarmIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Alarm).default;
@@ -204,7 +204,7 @@ Object.defineProperty(exports, 'Alarm', {
 
 var _Alert = require('./Alert');
 
-Object.defineProperty(exports, 'Alert', {
+Object.defineProperty(exports, 'AlertIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Alert).default;
@@ -213,7 +213,7 @@ Object.defineProperty(exports, 'Alert', {
 
 var _Analytics = require('./Analytics');
 
-Object.defineProperty(exports, 'Analytics', {
+Object.defineProperty(exports, 'AnalyticsIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Analytics).default;
@@ -222,7 +222,7 @@ Object.defineProperty(exports, 'Analytics', {
 
 var _Announce = require('./Announce');
 
-Object.defineProperty(exports, 'Announce', {
+Object.defineProperty(exports, 'AnnounceIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Announce).default;
@@ -231,7 +231,7 @@ Object.defineProperty(exports, 'Announce', {
 
 var _Apps = require('./Apps');
 
-Object.defineProperty(exports, 'Apps', {
+Object.defineProperty(exports, 'AppsIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Apps).default;
@@ -240,7 +240,7 @@ Object.defineProperty(exports, 'Apps', {
 
 var _Archive = require('./Archive');
 
-Object.defineProperty(exports, 'Archive', {
+Object.defineProperty(exports, 'ArchiveIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Archive).default;
@@ -249,7 +249,7 @@ Object.defineProperty(exports, 'Archive', {
 
 var _Article = require('./Article');
 
-Object.defineProperty(exports, 'Article', {
+Object.defineProperty(exports, 'ArticleIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Article).default;
@@ -258,7 +258,7 @@ Object.defineProperty(exports, 'Article', {
 
 var _Ascend = require('./Ascend');
 
-Object.defineProperty(exports, 'Ascend', {
+Object.defineProperty(exports, 'AscendIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Ascend).default;
@@ -267,7 +267,7 @@ Object.defineProperty(exports, 'Ascend', {
 
 var _Atm = require('./Atm');
 
-Object.defineProperty(exports, 'Atm', {
+Object.defineProperty(exports, 'AtmIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Atm).default;
@@ -276,7 +276,7 @@ Object.defineProperty(exports, 'Atm', {
 
 var _Attachment = require('./Attachment');
 
-Object.defineProperty(exports, 'Attachment', {
+Object.defineProperty(exports, 'AttachmentIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Attachment).default;
@@ -285,7 +285,7 @@ Object.defineProperty(exports, 'Attachment', {
 
 var _Attraction = require('./Attraction');
 
-Object.defineProperty(exports, 'Attraction', {
+Object.defineProperty(exports, 'AttractionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Attraction).default;
@@ -294,7 +294,7 @@ Object.defineProperty(exports, 'Attraction', {
 
 var _Baby = require('./Baby');
 
-Object.defineProperty(exports, 'Baby', {
+Object.defineProperty(exports, 'BabyIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Baby).default;
@@ -303,7 +303,7 @@ Object.defineProperty(exports, 'Baby', {
 
 var _BackTen = require('./BackTen');
 
-Object.defineProperty(exports, 'BackTen', {
+Object.defineProperty(exports, 'BackTenIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_BackTen).default;
@@ -312,7 +312,7 @@ Object.defineProperty(exports, 'BackTen', {
 
 var _BarChart = require('./BarChart');
 
-Object.defineProperty(exports, 'BarChart', {
+Object.defineProperty(exports, 'BarChartIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_BarChart).default;
@@ -321,7 +321,7 @@ Object.defineProperty(exports, 'BarChart', {
 
 var _Bar = require('./Bar');
 
-Object.defineProperty(exports, 'Bar', {
+Object.defineProperty(exports, 'BarIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Bar).default;
@@ -330,7 +330,7 @@ Object.defineProperty(exports, 'Bar', {
 
 var _Basket = require('./Basket');
 
-Object.defineProperty(exports, 'Basket', {
+Object.defineProperty(exports, 'BasketIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Basket).default;
@@ -339,7 +339,7 @@ Object.defineProperty(exports, 'Basket', {
 
 var _Blog = require('./Blog');
 
-Object.defineProperty(exports, 'Blog', {
+Object.defineProperty(exports, 'BlogIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Blog).default;
@@ -348,7 +348,7 @@ Object.defineProperty(exports, 'Blog', {
 
 var _Book = require('./Book');
 
-Object.defineProperty(exports, 'Book', {
+Object.defineProperty(exports, 'BookIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Book).default;
@@ -357,7 +357,7 @@ Object.defineProperty(exports, 'Book', {
 
 var _Bookmark = require('./Bookmark');
 
-Object.defineProperty(exports, 'Bookmark', {
+Object.defineProperty(exports, 'BookmarkIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Bookmark).default;
@@ -366,7 +366,7 @@ Object.defineProperty(exports, 'Bookmark', {
 
 var _BottomCorner = require('./BottomCorner');
 
-Object.defineProperty(exports, 'BottomCorner', {
+Object.defineProperty(exports, 'BottomCornerIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_BottomCorner).default;
@@ -375,7 +375,7 @@ Object.defineProperty(exports, 'BottomCorner', {
 
 var _BrandAppleAppStore = require('./BrandAppleAppStore');
 
-Object.defineProperty(exports, 'BrandAppleAppStore', {
+Object.defineProperty(exports, 'BrandAppleAppStoreIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_BrandAppleAppStore).default;
@@ -384,7 +384,7 @@ Object.defineProperty(exports, 'BrandAppleAppStore', {
 
 var _BrandCodepenEdit = require('./BrandCodepenEdit');
 
-Object.defineProperty(exports, 'BrandCodepenEdit', {
+Object.defineProperty(exports, 'BrandCodepenEditIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_BrandCodepenEdit).default;
@@ -393,7 +393,7 @@ Object.defineProperty(exports, 'BrandCodepenEdit', {
 
 var _BrandCodepenTry = require('./BrandCodepenTry');
 
-Object.defineProperty(exports, 'BrandCodepenTry', {
+Object.defineProperty(exports, 'BrandCodepenTryIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_BrandCodepenTry).default;
@@ -402,7 +402,7 @@ Object.defineProperty(exports, 'BrandCodepenTry', {
 
 var _BrandGooglePlay = require('./BrandGooglePlay');
 
-Object.defineProperty(exports, 'BrandGooglePlay', {
+Object.defineProperty(exports, 'BrandGooglePlayIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_BrandGooglePlay).default;
@@ -411,7 +411,7 @@ Object.defineProperty(exports, 'BrandGooglePlay', {
 
 var _BrandGrommetOutline = require('./BrandGrommetOutline');
 
-Object.defineProperty(exports, 'BrandGrommetOutline', {
+Object.defineProperty(exports, 'BrandGrommetOutlineIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_BrandGrommetOutline).default;
@@ -420,7 +420,7 @@ Object.defineProperty(exports, 'BrandGrommetOutline', {
 
 var _BrandGrommetPath = require('./BrandGrommetPath');
 
-Object.defineProperty(exports, 'BrandGrommetPath', {
+Object.defineProperty(exports, 'BrandGrommetPathIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_BrandGrommetPath).default;
@@ -429,7 +429,7 @@ Object.defineProperty(exports, 'BrandGrommetPath', {
 
 var _BrandHpeElementOutline = require('./BrandHpeElementOutline');
 
-Object.defineProperty(exports, 'BrandHpeElementOutline', {
+Object.defineProperty(exports, 'BrandHpeElementOutlineIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_BrandHpeElementOutline).default;
@@ -438,7 +438,7 @@ Object.defineProperty(exports, 'BrandHpeElementOutline', {
 
 var _BrandHpeElementPath = require('./BrandHpeElementPath');
 
-Object.defineProperty(exports, 'BrandHpeElementPath', {
+Object.defineProperty(exports, 'BrandHpeElementPathIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_BrandHpeElementPath).default;
@@ -447,7 +447,7 @@ Object.defineProperty(exports, 'BrandHpeElementPath', {
 
 var _BrandHpeLabsInsigniaOutline = require('./BrandHpeLabsInsigniaOutline');
 
-Object.defineProperty(exports, 'BrandHpeLabsInsigniaOutline', {
+Object.defineProperty(exports, 'BrandHpeLabsInsigniaOutlineIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_BrandHpeLabsInsigniaOutline).default;
@@ -456,7 +456,7 @@ Object.defineProperty(exports, 'BrandHpeLabsInsigniaOutline', {
 
 var _BrandHpeLabsInsignia = require('./BrandHpeLabsInsignia');
 
-Object.defineProperty(exports, 'BrandHpeLabsInsignia', {
+Object.defineProperty(exports, 'BrandHpeLabsInsigniaIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_BrandHpeLabsInsignia).default;
@@ -465,7 +465,7 @@ Object.defineProperty(exports, 'BrandHpeLabsInsignia', {
 
 var _BrandHpeStackCentered = require('./BrandHpeStackCentered');
 
-Object.defineProperty(exports, 'BrandHpeStackCentered', {
+Object.defineProperty(exports, 'BrandHpeStackCenteredIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_BrandHpeStackCentered).default;
@@ -474,7 +474,7 @@ Object.defineProperty(exports, 'BrandHpeStackCentered', {
 
 var _BrandHpeStack = require('./BrandHpeStack');
 
-Object.defineProperty(exports, 'BrandHpeStack', {
+Object.defineProperty(exports, 'BrandHpeStackIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_BrandHpeStack).default;
@@ -483,7 +483,7 @@ Object.defineProperty(exports, 'BrandHpeStack', {
 
 var _Briefcase = require('./Briefcase');
 
-Object.defineProperty(exports, 'Briefcase', {
+Object.defineProperty(exports, 'BriefcaseIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Briefcase).default;
@@ -492,7 +492,7 @@ Object.defineProperty(exports, 'Briefcase', {
 
 var _Brush = require('./Brush');
 
-Object.defineProperty(exports, 'Brush', {
+Object.defineProperty(exports, 'BrushIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Brush).default;
@@ -501,7 +501,7 @@ Object.defineProperty(exports, 'Brush', {
 
 var _Bug = require('./Bug');
 
-Object.defineProperty(exports, 'Bug', {
+Object.defineProperty(exports, 'BugIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Bug).default;
@@ -510,7 +510,7 @@ Object.defineProperty(exports, 'Bug', {
 
 var _Bundle = require('./Bundle');
 
-Object.defineProperty(exports, 'Bundle', {
+Object.defineProperty(exports, 'BundleIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Bundle).default;
@@ -519,7 +519,7 @@ Object.defineProperty(exports, 'Bundle', {
 
 var _Bus = require('./Bus');
 
-Object.defineProperty(exports, 'Bus', {
+Object.defineProperty(exports, 'BusIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Bus).default;
@@ -528,7 +528,7 @@ Object.defineProperty(exports, 'Bus', {
 
 var _BusinessService = require('./BusinessService');
 
-Object.defineProperty(exports, 'BusinessService', {
+Object.defineProperty(exports, 'BusinessServiceIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_BusinessService).default;
@@ -537,7 +537,7 @@ Object.defineProperty(exports, 'BusinessService', {
 
 var _Cafeteria = require('./Cafeteria');
 
-Object.defineProperty(exports, 'Cafeteria', {
+Object.defineProperty(exports, 'CafeteriaIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Cafeteria).default;
@@ -546,7 +546,7 @@ Object.defineProperty(exports, 'Cafeteria', {
 
 var _Calculator = require('./Calculator');
 
-Object.defineProperty(exports, 'Calculator', {
+Object.defineProperty(exports, 'CalculatorIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Calculator).default;
@@ -555,7 +555,7 @@ Object.defineProperty(exports, 'Calculator', {
 
 var _Calendar = require('./Calendar');
 
-Object.defineProperty(exports, 'Calendar', {
+Object.defineProperty(exports, 'CalendarIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Calendar).default;
@@ -564,7 +564,7 @@ Object.defineProperty(exports, 'Calendar', {
 
 var _Camera = require('./Camera');
 
-Object.defineProperty(exports, 'Camera', {
+Object.defineProperty(exports, 'CameraIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Camera).default;
@@ -573,7 +573,7 @@ Object.defineProperty(exports, 'Camera', {
 
 var _Capacity = require('./Capacity');
 
-Object.defineProperty(exports, 'Capacity', {
+Object.defineProperty(exports, 'CapacityIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Capacity).default;
@@ -582,7 +582,7 @@ Object.defineProperty(exports, 'Capacity', {
 
 var _Car = require('./Car');
 
-Object.defineProperty(exports, 'Car', {
+Object.defineProperty(exports, 'CarIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Car).default;
@@ -591,7 +591,7 @@ Object.defineProperty(exports, 'Car', {
 
 var _CaretBack = require('./CaretBack');
 
-Object.defineProperty(exports, 'CaretBack', {
+Object.defineProperty(exports, 'CaretBackIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CaretBack).default;
@@ -600,7 +600,7 @@ Object.defineProperty(exports, 'CaretBack', {
 
 var _CaretDown = require('./CaretDown');
 
-Object.defineProperty(exports, 'CaretDown', {
+Object.defineProperty(exports, 'CaretDownIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CaretDown).default;
@@ -609,7 +609,7 @@ Object.defineProperty(exports, 'CaretDown', {
 
 var _CaretNext = require('./CaretNext');
 
-Object.defineProperty(exports, 'CaretNext', {
+Object.defineProperty(exports, 'CaretNextIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CaretNext).default;
@@ -618,7 +618,7 @@ Object.defineProperty(exports, 'CaretNext', {
 
 var _CaretPrevious = require('./CaretPrevious');
 
-Object.defineProperty(exports, 'CaretPrevious', {
+Object.defineProperty(exports, 'CaretPreviousIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CaretPrevious).default;
@@ -627,7 +627,7 @@ Object.defineProperty(exports, 'CaretPrevious', {
 
 var _CaretUp = require('./CaretUp');
 
-Object.defineProperty(exports, 'CaretUp', {
+Object.defineProperty(exports, 'CaretUpIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CaretUp).default;
@@ -636,7 +636,7 @@ Object.defineProperty(exports, 'CaretUp', {
 
 var _Cart = require('./Cart');
 
-Object.defineProperty(exports, 'Cart', {
+Object.defineProperty(exports, 'CartIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Cart).default;
@@ -645,7 +645,7 @@ Object.defineProperty(exports, 'Cart', {
 
 var _CatalogOption = require('./CatalogOption');
 
-Object.defineProperty(exports, 'CatalogOption', {
+Object.defineProperty(exports, 'CatalogOptionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CatalogOption).default;
@@ -654,7 +654,7 @@ Object.defineProperty(exports, 'CatalogOption', {
 
 var _Catalog = require('./Catalog');
 
-Object.defineProperty(exports, 'Catalog', {
+Object.defineProperty(exports, 'CatalogIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Catalog).default;
@@ -663,7 +663,7 @@ Object.defineProperty(exports, 'Catalog', {
 
 var _Channel = require('./Channel');
 
-Object.defineProperty(exports, 'Channel', {
+Object.defineProperty(exports, 'ChannelIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Channel).default;
@@ -672,7 +672,7 @@ Object.defineProperty(exports, 'Channel', {
 
 var _ChapterAdd = require('./ChapterAdd');
 
-Object.defineProperty(exports, 'ChapterAdd', {
+Object.defineProperty(exports, 'ChapterAddIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_ChapterAdd).default;
@@ -681,7 +681,7 @@ Object.defineProperty(exports, 'ChapterAdd', {
 
 var _ChapterNext = require('./ChapterNext');
 
-Object.defineProperty(exports, 'ChapterNext', {
+Object.defineProperty(exports, 'ChapterNextIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_ChapterNext).default;
@@ -690,7 +690,7 @@ Object.defineProperty(exports, 'ChapterNext', {
 
 var _ChapterPrevious = require('./ChapterPrevious');
 
-Object.defineProperty(exports, 'ChapterPrevious', {
+Object.defineProperty(exports, 'ChapterPreviousIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_ChapterPrevious).default;
@@ -699,7 +699,7 @@ Object.defineProperty(exports, 'ChapterPrevious', {
 
 var _Chat = require('./Chat');
 
-Object.defineProperty(exports, 'Chat', {
+Object.defineProperty(exports, 'ChatIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Chat).default;
@@ -708,7 +708,7 @@ Object.defineProperty(exports, 'Chat', {
 
 var _CheckboxSelected = require('./CheckboxSelected');
 
-Object.defineProperty(exports, 'CheckboxSelected', {
+Object.defineProperty(exports, 'CheckboxSelectedIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CheckboxSelected).default;
@@ -717,7 +717,7 @@ Object.defineProperty(exports, 'CheckboxSelected', {
 
 var _Checkbox = require('./Checkbox');
 
-Object.defineProperty(exports, 'Checkbox', {
+Object.defineProperty(exports, 'CheckboxIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Checkbox).default;
@@ -726,7 +726,7 @@ Object.defineProperty(exports, 'Checkbox', {
 
 var _Checkmark = require('./Checkmark');
 
-Object.defineProperty(exports, 'Checkmark', {
+Object.defineProperty(exports, 'CheckmarkIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Checkmark).default;
@@ -735,7 +735,7 @@ Object.defineProperty(exports, 'Checkmark', {
 
 var _CircleInformation = require('./CircleInformation');
 
-Object.defineProperty(exports, 'CircleInformation', {
+Object.defineProperty(exports, 'CircleInformationIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CircleInformation).default;
@@ -744,7 +744,7 @@ Object.defineProperty(exports, 'CircleInformation', {
 
 var _CirclePlay = require('./CirclePlay');
 
-Object.defineProperty(exports, 'CirclePlay', {
+Object.defineProperty(exports, 'CirclePlayIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CirclePlay).default;
@@ -753,7 +753,7 @@ Object.defineProperty(exports, 'CirclePlay', {
 
 var _CircleQuestion = require('./CircleQuestion');
 
-Object.defineProperty(exports, 'CircleQuestion', {
+Object.defineProperty(exports, 'CircleQuestionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CircleQuestion).default;
@@ -762,7 +762,7 @@ Object.defineProperty(exports, 'CircleQuestion', {
 
 var _ClearOption = require('./ClearOption');
 
-Object.defineProperty(exports, 'ClearOption', {
+Object.defineProperty(exports, 'ClearOptionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_ClearOption).default;
@@ -771,7 +771,7 @@ Object.defineProperty(exports, 'ClearOption', {
 
 var _Clear = require('./Clear');
 
-Object.defineProperty(exports, 'Clear', {
+Object.defineProperty(exports, 'ClearIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Clear).default;
@@ -780,7 +780,7 @@ Object.defineProperty(exports, 'Clear', {
 
 var _Cli = require('./Cli');
 
-Object.defineProperty(exports, 'Cli', {
+Object.defineProperty(exports, 'CliIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Cli).default;
@@ -789,7 +789,7 @@ Object.defineProperty(exports, 'Cli', {
 
 var _Clipboard = require('./Clipboard');
 
-Object.defineProperty(exports, 'Clipboard', {
+Object.defineProperty(exports, 'ClipboardIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Clipboard).default;
@@ -798,7 +798,7 @@ Object.defineProperty(exports, 'Clipboard', {
 
 var _Clock = require('./Clock');
 
-Object.defineProperty(exports, 'Clock', {
+Object.defineProperty(exports, 'ClockIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Clock).default;
@@ -807,7 +807,7 @@ Object.defineProperty(exports, 'Clock', {
 
 var _Clone = require('./Clone');
 
-Object.defineProperty(exports, 'Clone', {
+Object.defineProperty(exports, 'CloneIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Clone).default;
@@ -816,7 +816,7 @@ Object.defineProperty(exports, 'Clone', {
 
 var _Close = require('./Close');
 
-Object.defineProperty(exports, 'Close', {
+Object.defineProperty(exports, 'CloseIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Close).default;
@@ -825,7 +825,7 @@ Object.defineProperty(exports, 'Close', {
 
 var _ClosedCaption = require('./ClosedCaption');
 
-Object.defineProperty(exports, 'ClosedCaption', {
+Object.defineProperty(exports, 'ClosedCaptionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_ClosedCaption).default;
@@ -834,7 +834,7 @@ Object.defineProperty(exports, 'ClosedCaption', {
 
 var _CloudComputer = require('./CloudComputer');
 
-Object.defineProperty(exports, 'CloudComputer', {
+Object.defineProperty(exports, 'CloudComputerIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CloudComputer).default;
@@ -843,7 +843,7 @@ Object.defineProperty(exports, 'CloudComputer', {
 
 var _CloudDownload = require('./CloudDownload');
 
-Object.defineProperty(exports, 'CloudDownload', {
+Object.defineProperty(exports, 'CloudDownloadIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CloudDownload).default;
@@ -852,7 +852,7 @@ Object.defineProperty(exports, 'CloudDownload', {
 
 var _CloudSoftware = require('./CloudSoftware');
 
-Object.defineProperty(exports, 'CloudSoftware', {
+Object.defineProperty(exports, 'CloudSoftwareIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CloudSoftware).default;
@@ -861,7 +861,7 @@ Object.defineProperty(exports, 'CloudSoftware', {
 
 var _CloudUpload = require('./CloudUpload');
 
-Object.defineProperty(exports, 'CloudUpload', {
+Object.defineProperty(exports, 'CloudUploadIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CloudUpload).default;
@@ -870,7 +870,7 @@ Object.defineProperty(exports, 'CloudUpload', {
 
 var _Cloud = require('./Cloud');
 
-Object.defineProperty(exports, 'Cloud', {
+Object.defineProperty(exports, 'CloudIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Cloud).default;
@@ -879,7 +879,7 @@ Object.defineProperty(exports, 'Cloud', {
 
 var _Cluster = require('./Cluster');
 
-Object.defineProperty(exports, 'Cluster', {
+Object.defineProperty(exports, 'ClusterIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Cluster).default;
@@ -888,7 +888,7 @@ Object.defineProperty(exports, 'Cluster', {
 
 var _CoatCheck = require('./CoatCheck');
 
-Object.defineProperty(exports, 'CoatCheck', {
+Object.defineProperty(exports, 'CoatCheckIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CoatCheck).default;
@@ -897,7 +897,7 @@ Object.defineProperty(exports, 'CoatCheck', {
 
 var _Code = require('./Code');
 
-Object.defineProperty(exports, 'Code', {
+Object.defineProperty(exports, 'CodeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Code).default;
@@ -906,7 +906,7 @@ Object.defineProperty(exports, 'Code', {
 
 var _Columns = require('./Columns');
 
-Object.defineProperty(exports, 'Columns', {
+Object.defineProperty(exports, 'ColumnsIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Columns).default;
@@ -915,7 +915,7 @@ Object.defineProperty(exports, 'Columns', {
 
 var _Compare = require('./Compare');
 
-Object.defineProperty(exports, 'Compare', {
+Object.defineProperty(exports, 'CompareIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Compare).default;
@@ -924,7 +924,7 @@ Object.defineProperty(exports, 'Compare', {
 
 var _Compass = require('./Compass');
 
-Object.defineProperty(exports, 'Compass', {
+Object.defineProperty(exports, 'CompassIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Compass).default;
@@ -933,7 +933,7 @@ Object.defineProperty(exports, 'Compass', {
 
 var _Compliance = require('./Compliance');
 
-Object.defineProperty(exports, 'Compliance', {
+Object.defineProperty(exports, 'ComplianceIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Compliance).default;
@@ -942,7 +942,7 @@ Object.defineProperty(exports, 'Compliance', {
 
 var _Configure = require('./Configure');
 
-Object.defineProperty(exports, 'Configure', {
+Object.defineProperty(exports, 'ConfigureIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Configure).default;
@@ -951,7 +951,7 @@ Object.defineProperty(exports, 'Configure', {
 
 var _Connect = require('./Connect');
 
-Object.defineProperty(exports, 'Connect', {
+Object.defineProperty(exports, 'ConnectIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Connect).default;
@@ -960,7 +960,7 @@ Object.defineProperty(exports, 'Connect', {
 
 var _ContactInfo = require('./ContactInfo');
 
-Object.defineProperty(exports, 'ContactInfo', {
+Object.defineProperty(exports, 'ContactInfoIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_ContactInfo).default;
@@ -969,7 +969,7 @@ Object.defineProperty(exports, 'ContactInfo', {
 
 var _Contact = require('./Contact');
 
-Object.defineProperty(exports, 'Contact', {
+Object.defineProperty(exports, 'ContactIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Contact).default;
@@ -978,7 +978,7 @@ Object.defineProperty(exports, 'Contact', {
 
 var _Contract = require('./Contract');
 
-Object.defineProperty(exports, 'Contract', {
+Object.defineProperty(exports, 'ContractIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Contract).default;
@@ -987,7 +987,7 @@ Object.defineProperty(exports, 'Contract', {
 
 var _Copy = require('./Copy');
 
-Object.defineProperty(exports, 'Copy', {
+Object.defineProperty(exports, 'CopyIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Copy).default;
@@ -996,7 +996,7 @@ Object.defineProperty(exports, 'Copy', {
 
 var _CreditCard = require('./CreditCard');
 
-Object.defineProperty(exports, 'CreditCard', {
+Object.defineProperty(exports, 'CreditCardIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_CreditCard).default;
@@ -1005,7 +1005,7 @@ Object.defineProperty(exports, 'CreditCard', {
 
 var _Cube = require('./Cube');
 
-Object.defineProperty(exports, 'Cube', {
+Object.defineProperty(exports, 'CubeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Cube).default;
@@ -1014,7 +1014,7 @@ Object.defineProperty(exports, 'Cube', {
 
 var _Cubes = require('./Cubes');
 
-Object.defineProperty(exports, 'Cubes', {
+Object.defineProperty(exports, 'CubesIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Cubes).default;
@@ -1023,7 +1023,7 @@ Object.defineProperty(exports, 'Cubes', {
 
 var _Currency = require('./Currency');
 
-Object.defineProperty(exports, 'Currency', {
+Object.defineProperty(exports, 'CurrencyIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Currency).default;
@@ -1032,7 +1032,7 @@ Object.defineProperty(exports, 'Currency', {
 
 var _Cursor = require('./Cursor');
 
-Object.defineProperty(exports, 'Cursor', {
+Object.defineProperty(exports, 'CursorIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Cursor).default;
@@ -1041,7 +1041,7 @@ Object.defineProperty(exports, 'Cursor', {
 
 var _Cut = require('./Cut');
 
-Object.defineProperty(exports, 'Cut', {
+Object.defineProperty(exports, 'CutIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Cut).default;
@@ -1050,7 +1050,7 @@ Object.defineProperty(exports, 'Cut', {
 
 var _Cycle = require('./Cycle');
 
-Object.defineProperty(exports, 'Cycle', {
+Object.defineProperty(exports, 'CycleIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Cycle).default;
@@ -1059,7 +1059,7 @@ Object.defineProperty(exports, 'Cycle', {
 
 var _Dashboard = require('./Dashboard');
 
-Object.defineProperty(exports, 'Dashboard', {
+Object.defineProperty(exports, 'DashboardIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Dashboard).default;
@@ -1068,7 +1068,7 @@ Object.defineProperty(exports, 'Dashboard', {
 
 var _Database = require('./Database');
 
-Object.defineProperty(exports, 'Database', {
+Object.defineProperty(exports, 'DatabaseIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Database).default;
@@ -1077,7 +1077,7 @@ Object.defineProperty(exports, 'Database', {
 
 var _Deliver = require('./Deliver');
 
-Object.defineProperty(exports, 'Deliver', {
+Object.defineProperty(exports, 'DeliverIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Deliver).default;
@@ -1086,7 +1086,7 @@ Object.defineProperty(exports, 'Deliver', {
 
 var _Deploy = require('./Deploy');
 
-Object.defineProperty(exports, 'Deploy', {
+Object.defineProperty(exports, 'DeployIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Deploy).default;
@@ -1095,7 +1095,7 @@ Object.defineProperty(exports, 'Deploy', {
 
 var _Descend = require('./Descend');
 
-Object.defineProperty(exports, 'Descend', {
+Object.defineProperty(exports, 'DescendIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Descend).default;
@@ -1104,7 +1104,7 @@ Object.defineProperty(exports, 'Descend', {
 
 var _Desktop = require('./Desktop');
 
-Object.defineProperty(exports, 'Desktop', {
+Object.defineProperty(exports, 'DesktopIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Desktop).default;
@@ -1113,7 +1113,7 @@ Object.defineProperty(exports, 'Desktop', {
 
 var _Detach = require('./Detach');
 
-Object.defineProperty(exports, 'Detach', {
+Object.defineProperty(exports, 'DetachIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Detach).default;
@@ -1122,7 +1122,7 @@ Object.defineProperty(exports, 'Detach', {
 
 var _Diamond = require('./Diamond');
 
-Object.defineProperty(exports, 'Diamond', {
+Object.defineProperty(exports, 'DiamondIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Diamond).default;
@@ -1131,7 +1131,7 @@ Object.defineProperty(exports, 'Diamond', {
 
 var _Directions = require('./Directions');
 
-Object.defineProperty(exports, 'Directions', {
+Object.defineProperty(exports, 'DirectionsIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Directions).default;
@@ -1140,7 +1140,7 @@ Object.defineProperty(exports, 'Directions', {
 
 var _Dislike = require('./Dislike');
 
-Object.defineProperty(exports, 'Dislike', {
+Object.defineProperty(exports, 'DislikeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Dislike).default;
@@ -1149,7 +1149,7 @@ Object.defineProperty(exports, 'Dislike', {
 
 var _DocumentCloud = require('./DocumentCloud');
 
-Object.defineProperty(exports, 'DocumentCloud', {
+Object.defineProperty(exports, 'DocumentCloudIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentCloud).default;
@@ -1158,7 +1158,7 @@ Object.defineProperty(exports, 'DocumentCloud', {
 
 var _DocumentConfig = require('./DocumentConfig');
 
-Object.defineProperty(exports, 'DocumentConfig', {
+Object.defineProperty(exports, 'DocumentConfigIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentConfig).default;
@@ -1167,7 +1167,7 @@ Object.defineProperty(exports, 'DocumentConfig', {
 
 var _DocumentCsv = require('./DocumentCsv');
 
-Object.defineProperty(exports, 'DocumentCsv', {
+Object.defineProperty(exports, 'DocumentCsvIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentCsv).default;
@@ -1176,7 +1176,7 @@ Object.defineProperty(exports, 'DocumentCsv', {
 
 var _DocumentDownload = require('./DocumentDownload');
 
-Object.defineProperty(exports, 'DocumentDownload', {
+Object.defineProperty(exports, 'DocumentDownloadIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentDownload).default;
@@ -1185,7 +1185,7 @@ Object.defineProperty(exports, 'DocumentDownload', {
 
 var _DocumentExcel = require('./DocumentExcel');
 
-Object.defineProperty(exports, 'DocumentExcel', {
+Object.defineProperty(exports, 'DocumentExcelIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentExcel).default;
@@ -1194,7 +1194,7 @@ Object.defineProperty(exports, 'DocumentExcel', {
 
 var _DocumentExe = require('./DocumentExe');
 
-Object.defineProperty(exports, 'DocumentExe', {
+Object.defineProperty(exports, 'DocumentExeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentExe).default;
@@ -1203,7 +1203,7 @@ Object.defineProperty(exports, 'DocumentExe', {
 
 var _DocumentImage = require('./DocumentImage');
 
-Object.defineProperty(exports, 'DocumentImage', {
+Object.defineProperty(exports, 'DocumentImageIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentImage).default;
@@ -1212,7 +1212,7 @@ Object.defineProperty(exports, 'DocumentImage', {
 
 var _DocumentLocked = require('./DocumentLocked');
 
-Object.defineProperty(exports, 'DocumentLocked', {
+Object.defineProperty(exports, 'DocumentLockedIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentLocked).default;
@@ -1221,7 +1221,7 @@ Object.defineProperty(exports, 'DocumentLocked', {
 
 var _DocumentMissing = require('./DocumentMissing');
 
-Object.defineProperty(exports, 'DocumentMissing', {
+Object.defineProperty(exports, 'DocumentMissingIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentMissing).default;
@@ -1230,7 +1230,7 @@ Object.defineProperty(exports, 'DocumentMissing', {
 
 var _DocumentNotes = require('./DocumentNotes');
 
-Object.defineProperty(exports, 'DocumentNotes', {
+Object.defineProperty(exports, 'DocumentNotesIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentNotes).default;
@@ -1239,7 +1239,7 @@ Object.defineProperty(exports, 'DocumentNotes', {
 
 var _DocumentOutlook = require('./DocumentOutlook');
 
-Object.defineProperty(exports, 'DocumentOutlook', {
+Object.defineProperty(exports, 'DocumentOutlookIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentOutlook).default;
@@ -1248,7 +1248,7 @@ Object.defineProperty(exports, 'DocumentOutlook', {
 
 var _DocumentPdf = require('./DocumentPdf');
 
-Object.defineProperty(exports, 'DocumentPdf', {
+Object.defineProperty(exports, 'DocumentPdfIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentPdf).default;
@@ -1257,7 +1257,7 @@ Object.defineProperty(exports, 'DocumentPdf', {
 
 var _DocumentPerformance = require('./DocumentPerformance');
 
-Object.defineProperty(exports, 'DocumentPerformance', {
+Object.defineProperty(exports, 'DocumentPerformanceIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentPerformance).default;
@@ -1266,7 +1266,7 @@ Object.defineProperty(exports, 'DocumentPerformance', {
 
 var _DocumentPpt = require('./DocumentPpt');
 
-Object.defineProperty(exports, 'DocumentPpt', {
+Object.defineProperty(exports, 'DocumentPptIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentPpt).default;
@@ -1275,7 +1275,7 @@ Object.defineProperty(exports, 'DocumentPpt', {
 
 var _DocumentRtf = require('./DocumentRtf');
 
-Object.defineProperty(exports, 'DocumentRtf', {
+Object.defineProperty(exports, 'DocumentRtfIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentRtf).default;
@@ -1284,7 +1284,7 @@ Object.defineProperty(exports, 'DocumentRtf', {
 
 var _DocumentSound = require('./DocumentSound');
 
-Object.defineProperty(exports, 'DocumentSound', {
+Object.defineProperty(exports, 'DocumentSoundIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentSound).default;
@@ -1293,7 +1293,7 @@ Object.defineProperty(exports, 'DocumentSound', {
 
 var _DocumentStore = require('./DocumentStore');
 
-Object.defineProperty(exports, 'DocumentStore', {
+Object.defineProperty(exports, 'DocumentStoreIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentStore).default;
@@ -1302,7 +1302,7 @@ Object.defineProperty(exports, 'DocumentStore', {
 
 var _DocumentTest = require('./DocumentTest');
 
-Object.defineProperty(exports, 'DocumentTest', {
+Object.defineProperty(exports, 'DocumentTestIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentTest).default;
@@ -1311,7 +1311,7 @@ Object.defineProperty(exports, 'DocumentTest', {
 
 var _DocumentText = require('./DocumentText');
 
-Object.defineProperty(exports, 'DocumentText', {
+Object.defineProperty(exports, 'DocumentTextIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentText).default;
@@ -1320,7 +1320,7 @@ Object.defineProperty(exports, 'DocumentText', {
 
 var _DocumentThreat = require('./DocumentThreat');
 
-Object.defineProperty(exports, 'DocumentThreat', {
+Object.defineProperty(exports, 'DocumentThreatIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentThreat).default;
@@ -1329,7 +1329,7 @@ Object.defineProperty(exports, 'DocumentThreat', {
 
 var _DocumentTime = require('./DocumentTime');
 
-Object.defineProperty(exports, 'DocumentTime', {
+Object.defineProperty(exports, 'DocumentTimeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentTime).default;
@@ -1338,7 +1338,7 @@ Object.defineProperty(exports, 'DocumentTime', {
 
 var _DocumentTransfer = require('./DocumentTransfer');
 
-Object.defineProperty(exports, 'DocumentTransfer', {
+Object.defineProperty(exports, 'DocumentTransferIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentTransfer).default;
@@ -1347,7 +1347,7 @@ Object.defineProperty(exports, 'DocumentTransfer', {
 
 var _DocumentTxt = require('./DocumentTxt');
 
-Object.defineProperty(exports, 'DocumentTxt', {
+Object.defineProperty(exports, 'DocumentTxtIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentTxt).default;
@@ -1356,7 +1356,7 @@ Object.defineProperty(exports, 'DocumentTxt', {
 
 var _DocumentUpdate = require('./DocumentUpdate');
 
-Object.defineProperty(exports, 'DocumentUpdate', {
+Object.defineProperty(exports, 'DocumentUpdateIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentUpdate).default;
@@ -1365,7 +1365,7 @@ Object.defineProperty(exports, 'DocumentUpdate', {
 
 var _DocumentUpload = require('./DocumentUpload');
 
-Object.defineProperty(exports, 'DocumentUpload', {
+Object.defineProperty(exports, 'DocumentUploadIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentUpload).default;
@@ -1374,7 +1374,7 @@ Object.defineProperty(exports, 'DocumentUpload', {
 
 var _DocumentUser = require('./DocumentUser');
 
-Object.defineProperty(exports, 'DocumentUser', {
+Object.defineProperty(exports, 'DocumentUserIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentUser).default;
@@ -1383,7 +1383,7 @@ Object.defineProperty(exports, 'DocumentUser', {
 
 var _DocumentVerified = require('./DocumentVerified');
 
-Object.defineProperty(exports, 'DocumentVerified', {
+Object.defineProperty(exports, 'DocumentVerifiedIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentVerified).default;
@@ -1392,7 +1392,7 @@ Object.defineProperty(exports, 'DocumentVerified', {
 
 var _DocumentVideo = require('./DocumentVideo');
 
-Object.defineProperty(exports, 'DocumentVideo', {
+Object.defineProperty(exports, 'DocumentVideoIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentVideo).default;
@@ -1401,7 +1401,7 @@ Object.defineProperty(exports, 'DocumentVideo', {
 
 var _DocumentWindows = require('./DocumentWindows');
 
-Object.defineProperty(exports, 'DocumentWindows', {
+Object.defineProperty(exports, 'DocumentWindowsIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentWindows).default;
@@ -1410,7 +1410,7 @@ Object.defineProperty(exports, 'DocumentWindows', {
 
 var _DocumentWord = require('./DocumentWord');
 
-Object.defineProperty(exports, 'DocumentWord', {
+Object.defineProperty(exports, 'DocumentWordIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentWord).default;
@@ -1419,7 +1419,7 @@ Object.defineProperty(exports, 'DocumentWord', {
 
 var _DocumentZip = require('./DocumentZip');
 
-Object.defineProperty(exports, 'DocumentZip', {
+Object.defineProperty(exports, 'DocumentZipIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DocumentZip).default;
@@ -1428,7 +1428,7 @@ Object.defineProperty(exports, 'DocumentZip', {
 
 var _Document = require('./Document');
 
-Object.defineProperty(exports, 'Document', {
+Object.defineProperty(exports, 'DocumentIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Document).default;
@@ -1437,7 +1437,7 @@ Object.defineProperty(exports, 'Document', {
 
 var _Domain = require('./Domain');
 
-Object.defineProperty(exports, 'Domain', {
+Object.defineProperty(exports, 'DomainIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Domain).default;
@@ -1446,7 +1446,7 @@ Object.defineProperty(exports, 'Domain', {
 
 var _Down = require('./Down');
 
-Object.defineProperty(exports, 'Down', {
+Object.defineProperty(exports, 'DownIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Down).default;
@@ -1455,7 +1455,7 @@ Object.defineProperty(exports, 'Down', {
 
 var _Download = require('./Download');
 
-Object.defineProperty(exports, 'Download', {
+Object.defineProperty(exports, 'DownloadIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Download).default;
@@ -1464,7 +1464,7 @@ Object.defineProperty(exports, 'Download', {
 
 var _Drag = require('./Drag');
 
-Object.defineProperty(exports, 'Drag', {
+Object.defineProperty(exports, 'DragIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Drag).default;
@@ -1473,7 +1473,7 @@ Object.defineProperty(exports, 'Drag', {
 
 var _DriveCage = require('./DriveCage');
 
-Object.defineProperty(exports, 'DriveCage', {
+Object.defineProperty(exports, 'DriveCageIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_DriveCage).default;
@@ -1482,7 +1482,7 @@ Object.defineProperty(exports, 'DriveCage', {
 
 var _Duplicate = require('./Duplicate');
 
-Object.defineProperty(exports, 'Duplicate', {
+Object.defineProperty(exports, 'DuplicateIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Duplicate).default;
@@ -1491,7 +1491,7 @@ Object.defineProperty(exports, 'Duplicate', {
 
 var _Edit = require('./Edit');
 
-Object.defineProperty(exports, 'Edit', {
+Object.defineProperty(exports, 'EditIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Edit).default;
@@ -1500,7 +1500,7 @@ Object.defineProperty(exports, 'Edit', {
 
 var _Eject = require('./Eject');
 
-Object.defineProperty(exports, 'Eject', {
+Object.defineProperty(exports, 'EjectIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Eject).default;
@@ -1509,7 +1509,7 @@ Object.defineProperty(exports, 'Eject', {
 
 var _Elevator = require('./Elevator');
 
-Object.defineProperty(exports, 'Elevator', {
+Object.defineProperty(exports, 'ElevatorIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Elevator).default;
@@ -1518,7 +1518,7 @@ Object.defineProperty(exports, 'Elevator', {
 
 var _Emergency = require('./Emergency');
 
-Object.defineProperty(exports, 'Emergency', {
+Object.defineProperty(exports, 'EmergencyIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Emergency).default;
@@ -1527,7 +1527,7 @@ Object.defineProperty(exports, 'Emergency', {
 
 var _EmptyCircle = require('./EmptyCircle');
 
-Object.defineProperty(exports, 'EmptyCircle', {
+Object.defineProperty(exports, 'EmptyCircleIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_EmptyCircle).default;
@@ -1536,7 +1536,7 @@ Object.defineProperty(exports, 'EmptyCircle', {
 
 var _Escalator = require('./Escalator');
 
-Object.defineProperty(exports, 'Escalator', {
+Object.defineProperty(exports, 'EscalatorIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Escalator).default;
@@ -1545,7 +1545,7 @@ Object.defineProperty(exports, 'Escalator', {
 
 var _Expand = require('./Expand');
 
-Object.defineProperty(exports, 'Expand', {
+Object.defineProperty(exports, 'ExpandIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Expand).default;
@@ -1554,7 +1554,7 @@ Object.defineProperty(exports, 'Expand', {
 
 var _Fan = require('./Fan');
 
-Object.defineProperty(exports, 'Fan', {
+Object.defineProperty(exports, 'FanIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Fan).default;
@@ -1563,7 +1563,7 @@ Object.defineProperty(exports, 'Fan', {
 
 var _FastForward = require('./FastForward');
 
-Object.defineProperty(exports, 'FastForward', {
+Object.defineProperty(exports, 'FastForwardIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FastForward).default;
@@ -1572,7 +1572,7 @@ Object.defineProperty(exports, 'FastForward', {
 
 var _Favorite = require('./Favorite');
 
-Object.defineProperty(exports, 'Favorite', {
+Object.defineProperty(exports, 'FavoriteIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Favorite).default;
@@ -1581,7 +1581,7 @@ Object.defineProperty(exports, 'Favorite', {
 
 var _Filter = require('./Filter');
 
-Object.defineProperty(exports, 'Filter', {
+Object.defineProperty(exports, 'FilterIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Filter).default;
@@ -1590,7 +1590,7 @@ Object.defineProperty(exports, 'Filter', {
 
 var _FingerPrint = require('./FingerPrint');
 
-Object.defineProperty(exports, 'FingerPrint', {
+Object.defineProperty(exports, 'FingerPrintIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FingerPrint).default;
@@ -1599,7 +1599,7 @@ Object.defineProperty(exports, 'FingerPrint', {
 
 var _Flag = require('./Flag');
 
-Object.defineProperty(exports, 'Flag', {
+Object.defineProperty(exports, 'FlagIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Flag).default;
@@ -1608,7 +1608,7 @@ Object.defineProperty(exports, 'Flag', {
 
 var _FolderCycle = require('./FolderCycle');
 
-Object.defineProperty(exports, 'FolderCycle', {
+Object.defineProperty(exports, 'FolderCycleIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FolderCycle).default;
@@ -1617,7 +1617,7 @@ Object.defineProperty(exports, 'FolderCycle', {
 
 var _FolderOpen = require('./FolderOpen');
 
-Object.defineProperty(exports, 'FolderOpen', {
+Object.defineProperty(exports, 'FolderOpenIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FolderOpen).default;
@@ -1626,7 +1626,7 @@ Object.defineProperty(exports, 'FolderOpen', {
 
 var _Folder = require('./Folder');
 
-Object.defineProperty(exports, 'Folder', {
+Object.defineProperty(exports, 'FolderIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Folder).default;
@@ -1635,7 +1635,7 @@ Object.defineProperty(exports, 'Folder', {
 
 var _FormAdd = require('./FormAdd');
 
-Object.defineProperty(exports, 'FormAdd', {
+Object.defineProperty(exports, 'FormAddIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormAdd).default;
@@ -1644,7 +1644,7 @@ Object.defineProperty(exports, 'FormAdd', {
 
 var _FormAttachment = require('./FormAttachment');
 
-Object.defineProperty(exports, 'FormAttachment', {
+Object.defineProperty(exports, 'FormAttachmentIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormAttachment).default;
@@ -1653,7 +1653,7 @@ Object.defineProperty(exports, 'FormAttachment', {
 
 var _FormCalendar = require('./FormCalendar');
 
-Object.defineProperty(exports, 'FormCalendar', {
+Object.defineProperty(exports, 'FormCalendarIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormCalendar).default;
@@ -1662,7 +1662,7 @@ Object.defineProperty(exports, 'FormCalendar', {
 
 var _FormCheckmark = require('./FormCheckmark');
 
-Object.defineProperty(exports, 'FormCheckmark', {
+Object.defineProperty(exports, 'FormCheckmarkIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormCheckmark).default;
@@ -1671,7 +1671,7 @@ Object.defineProperty(exports, 'FormCheckmark', {
 
 var _FormClock = require('./FormClock');
 
-Object.defineProperty(exports, 'FormClock', {
+Object.defineProperty(exports, 'FormClockIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormClock).default;
@@ -1680,7 +1680,7 @@ Object.defineProperty(exports, 'FormClock', {
 
 var _FormClose = require('./FormClose');
 
-Object.defineProperty(exports, 'FormClose', {
+Object.defineProperty(exports, 'FormCloseIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormClose).default;
@@ -1689,7 +1689,7 @@ Object.defineProperty(exports, 'FormClose', {
 
 var _FormCut = require('./FormCut');
 
-Object.defineProperty(exports, 'FormCut', {
+Object.defineProperty(exports, 'FormCutIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormCut).default;
@@ -1698,7 +1698,7 @@ Object.defineProperty(exports, 'FormCut', {
 
 var _FormDown = require('./FormDown');
 
-Object.defineProperty(exports, 'FormDown', {
+Object.defineProperty(exports, 'FormDownIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormDown).default;
@@ -1707,7 +1707,7 @@ Object.defineProperty(exports, 'FormDown', {
 
 var _FormEdit = require('./FormEdit');
 
-Object.defineProperty(exports, 'FormEdit', {
+Object.defineProperty(exports, 'FormEditIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormEdit).default;
@@ -1716,7 +1716,7 @@ Object.defineProperty(exports, 'FormEdit', {
 
 var _FormFilter = require('./FormFilter');
 
-Object.defineProperty(exports, 'FormFilter', {
+Object.defineProperty(exports, 'FormFilterIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormFilter).default;
@@ -1725,7 +1725,7 @@ Object.defineProperty(exports, 'FormFilter', {
 
 var _FormFolder = require('./FormFolder');
 
-Object.defineProperty(exports, 'FormFolder', {
+Object.defineProperty(exports, 'FormFolderIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormFolder).default;
@@ -1734,7 +1734,7 @@ Object.defineProperty(exports, 'FormFolder', {
 
 var _FormLocation = require('./FormLocation');
 
-Object.defineProperty(exports, 'FormLocation', {
+Object.defineProperty(exports, 'FormLocationIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormLocation).default;
@@ -1743,7 +1743,7 @@ Object.defineProperty(exports, 'FormLocation', {
 
 var _FormLock = require('./FormLock');
 
-Object.defineProperty(exports, 'FormLock', {
+Object.defineProperty(exports, 'FormLockIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormLock).default;
@@ -1752,7 +1752,7 @@ Object.defineProperty(exports, 'FormLock', {
 
 var _FormNextLink = require('./FormNextLink');
 
-Object.defineProperty(exports, 'FormNextLink', {
+Object.defineProperty(exports, 'FormNextLinkIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormNextLink).default;
@@ -1761,7 +1761,7 @@ Object.defineProperty(exports, 'FormNextLink', {
 
 var _FormNext = require('./FormNext');
 
-Object.defineProperty(exports, 'FormNext', {
+Object.defineProperty(exports, 'FormNextIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormNext).default;
@@ -1770,7 +1770,7 @@ Object.defineProperty(exports, 'FormNext', {
 
 var _FormPreviousLink = require('./FormPreviousLink');
 
-Object.defineProperty(exports, 'FormPreviousLink', {
+Object.defineProperty(exports, 'FormPreviousLinkIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormPreviousLink).default;
@@ -1779,7 +1779,7 @@ Object.defineProperty(exports, 'FormPreviousLink', {
 
 var _FormPrevious = require('./FormPrevious');
 
-Object.defineProperty(exports, 'FormPrevious', {
+Object.defineProperty(exports, 'FormPreviousIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormPrevious).default;
@@ -1788,7 +1788,7 @@ Object.defineProperty(exports, 'FormPrevious', {
 
 var _FormRefresh = require('./FormRefresh');
 
-Object.defineProperty(exports, 'FormRefresh', {
+Object.defineProperty(exports, 'FormRefreshIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormRefresh).default;
@@ -1797,7 +1797,7 @@ Object.defineProperty(exports, 'FormRefresh', {
 
 var _FormSchedule = require('./FormSchedule');
 
-Object.defineProperty(exports, 'FormSchedule', {
+Object.defineProperty(exports, 'FormScheduleIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormSchedule).default;
@@ -1806,7 +1806,7 @@ Object.defineProperty(exports, 'FormSchedule', {
 
 var _FormSearch = require('./FormSearch');
 
-Object.defineProperty(exports, 'FormSearch', {
+Object.defineProperty(exports, 'FormSearchIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormSearch).default;
@@ -1815,7 +1815,7 @@ Object.defineProperty(exports, 'FormSearch', {
 
 var _FormSubtract = require('./FormSubtract');
 
-Object.defineProperty(exports, 'FormSubtract', {
+Object.defineProperty(exports, 'FormSubtractIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormSubtract).default;
@@ -1824,7 +1824,7 @@ Object.defineProperty(exports, 'FormSubtract', {
 
 var _FormTrash = require('./FormTrash');
 
-Object.defineProperty(exports, 'FormTrash', {
+Object.defineProperty(exports, 'FormTrashIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormTrash).default;
@@ -1833,7 +1833,7 @@ Object.defineProperty(exports, 'FormTrash', {
 
 var _FormUp = require('./FormUp');
 
-Object.defineProperty(exports, 'FormUp', {
+Object.defineProperty(exports, 'FormUpIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormUp).default;
@@ -1842,7 +1842,7 @@ Object.defineProperty(exports, 'FormUp', {
 
 var _FormUpload = require('./FormUpload');
 
-Object.defineProperty(exports, 'FormUpload', {
+Object.defineProperty(exports, 'FormUploadIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_FormUpload).default;
@@ -1851,7 +1851,7 @@ Object.defineProperty(exports, 'FormUpload', {
 
 var _ForwardTen = require('./ForwardTen');
 
-Object.defineProperty(exports, 'ForwardTen', {
+Object.defineProperty(exports, 'ForwardTenIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_ForwardTen).default;
@@ -1860,7 +1860,7 @@ Object.defineProperty(exports, 'ForwardTen', {
 
 var _Gallery = require('./Gallery');
 
-Object.defineProperty(exports, 'Gallery', {
+Object.defineProperty(exports, 'GalleryIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Gallery).default;
@@ -1869,7 +1869,7 @@ Object.defineProperty(exports, 'Gallery', {
 
 var _Gamepad = require('./Gamepad');
 
-Object.defineProperty(exports, 'Gamepad', {
+Object.defineProperty(exports, 'GamepadIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Gamepad).default;
@@ -1878,7 +1878,7 @@ Object.defineProperty(exports, 'Gamepad', {
 
 var _Gift = require('./Gift');
 
-Object.defineProperty(exports, 'Gift', {
+Object.defineProperty(exports, 'GiftIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Gift).default;
@@ -1887,7 +1887,7 @@ Object.defineProperty(exports, 'Gift', {
 
 var _Globe = require('./Globe');
 
-Object.defineProperty(exports, 'Globe', {
+Object.defineProperty(exports, 'GlobeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Globe).default;
@@ -1896,7 +1896,7 @@ Object.defineProperty(exports, 'Globe', {
 
 var _Grid = require('./Grid');
 
-Object.defineProperty(exports, 'Grid', {
+Object.defineProperty(exports, 'GridIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Grid).default;
@@ -1905,7 +1905,7 @@ Object.defineProperty(exports, 'Grid', {
 
 var _Group = require('./Group');
 
-Object.defineProperty(exports, 'Group', {
+Object.defineProperty(exports, 'GroupIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Group).default;
@@ -1914,7 +1914,7 @@ Object.defineProperty(exports, 'Group', {
 
 var _Grow = require('./Grow');
 
-Object.defineProperty(exports, 'Grow', {
+Object.defineProperty(exports, 'GrowIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Grow).default;
@@ -1923,7 +1923,7 @@ Object.defineProperty(exports, 'Grow', {
 
 var _Halt = require('./Halt');
 
-Object.defineProperty(exports, 'Halt', {
+Object.defineProperty(exports, 'HaltIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Halt).default;
@@ -1932,7 +1932,7 @@ Object.defineProperty(exports, 'Halt', {
 
 var _Help = require('./Help');
 
-Object.defineProperty(exports, 'Help', {
+Object.defineProperty(exports, 'HelpIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Help).default;
@@ -1941,7 +1941,7 @@ Object.defineProperty(exports, 'Help', {
 
 var _History = require('./History');
 
-Object.defineProperty(exports, 'History', {
+Object.defineProperty(exports, 'HistoryIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_History).default;
@@ -1950,7 +1950,7 @@ Object.defineProperty(exports, 'History', {
 
 var _Home = require('./Home');
 
-Object.defineProperty(exports, 'Home', {
+Object.defineProperty(exports, 'HomeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Home).default;
@@ -1959,7 +1959,7 @@ Object.defineProperty(exports, 'Home', {
 
 var _HostMaintenance = require('./HostMaintenance');
 
-Object.defineProperty(exports, 'HostMaintenance', {
+Object.defineProperty(exports, 'HostMaintenanceIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_HostMaintenance).default;
@@ -1968,7 +1968,7 @@ Object.defineProperty(exports, 'HostMaintenance', {
 
 var _Host = require('./Host');
 
-Object.defineProperty(exports, 'Host', {
+Object.defineProperty(exports, 'HostIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Host).default;
@@ -1977,7 +1977,7 @@ Object.defineProperty(exports, 'Host', {
 
 var _IceCream = require('./IceCream');
 
-Object.defineProperty(exports, 'IceCream', {
+Object.defineProperty(exports, 'IceCreamIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_IceCream).default;
@@ -1986,7 +1986,7 @@ Object.defineProperty(exports, 'IceCream', {
 
 var _Image = require('./Image');
 
-Object.defineProperty(exports, 'Image', {
+Object.defineProperty(exports, 'ImageIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Image).default;
@@ -1995,7 +1995,7 @@ Object.defineProperty(exports, 'Image', {
 
 var _Impact = require('./Impact');
 
-Object.defineProperty(exports, 'Impact', {
+Object.defineProperty(exports, 'ImpactIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Impact).default;
@@ -2004,7 +2004,7 @@ Object.defineProperty(exports, 'Impact', {
 
 var _InProgress = require('./InProgress');
 
-Object.defineProperty(exports, 'InProgress', {
+Object.defineProperty(exports, 'InProgressIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_InProgress).default;
@@ -2013,7 +2013,7 @@ Object.defineProperty(exports, 'InProgress', {
 
 var _Inbox = require('./Inbox');
 
-Object.defineProperty(exports, 'Inbox', {
+Object.defineProperty(exports, 'InboxIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Inbox).default;
@@ -2022,7 +2022,7 @@ Object.defineProperty(exports, 'Inbox', {
 
 var _Indicator = require('./Indicator');
 
-Object.defineProperty(exports, 'Indicator', {
+Object.defineProperty(exports, 'IndicatorIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Indicator).default;
@@ -2031,7 +2031,7 @@ Object.defineProperty(exports, 'Indicator', {
 
 var _Info = require('./Info');
 
-Object.defineProperty(exports, 'Info', {
+Object.defineProperty(exports, 'InfoIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Info).default;
@@ -2040,7 +2040,7 @@ Object.defineProperty(exports, 'Info', {
 
 var _Inherit = require('./Inherit');
 
-Object.defineProperty(exports, 'Inherit', {
+Object.defineProperty(exports, 'InheritIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Inherit).default;
@@ -2049,7 +2049,7 @@ Object.defineProperty(exports, 'Inherit', {
 
 var _Inspect = require('./Inspect');
 
-Object.defineProperty(exports, 'Inspect', {
+Object.defineProperty(exports, 'InspectIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Inspect).default;
@@ -2058,7 +2058,7 @@ Object.defineProperty(exports, 'Inspect', {
 
 var _InstallOption = require('./InstallOption');
 
-Object.defineProperty(exports, 'InstallOption', {
+Object.defineProperty(exports, 'InstallOptionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_InstallOption).default;
@@ -2067,7 +2067,7 @@ Object.defineProperty(exports, 'InstallOption', {
 
 var _Install = require('./Install');
 
-Object.defineProperty(exports, 'Install', {
+Object.defineProperty(exports, 'InstallIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Install).default;
@@ -2076,7 +2076,7 @@ Object.defineProperty(exports, 'Install', {
 
 var _Integration = require('./Integration');
 
-Object.defineProperty(exports, 'Integration', {
+Object.defineProperty(exports, 'IntegrationIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Integration).default;
@@ -2085,7 +2085,7 @@ Object.defineProperty(exports, 'Integration', {
 
 var _Iteration = require('./Iteration');
 
-Object.defineProperty(exports, 'Iteration', {
+Object.defineProperty(exports, 'IterationIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Iteration).default;
@@ -2094,7 +2094,7 @@ Object.defineProperty(exports, 'Iteration', {
 
 var _Java = require('./Java');
 
-Object.defineProperty(exports, 'Java', {
+Object.defineProperty(exports, 'JavaIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Java).default;
@@ -2103,7 +2103,7 @@ Object.defineProperty(exports, 'Java', {
 
 var _Language = require('./Language');
 
-Object.defineProperty(exports, 'Language', {
+Object.defineProperty(exports, 'LanguageIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Language).default;
@@ -2112,7 +2112,7 @@ Object.defineProperty(exports, 'Language', {
 
 var _Launch = require('./Launch');
 
-Object.defineProperty(exports, 'Launch', {
+Object.defineProperty(exports, 'LaunchIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Launch).default;
@@ -2121,7 +2121,7 @@ Object.defineProperty(exports, 'Launch', {
 
 var _Layer = require('./Layer');
 
-Object.defineProperty(exports, 'Layer', {
+Object.defineProperty(exports, 'LayerIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Layer).default;
@@ -2130,7 +2130,7 @@ Object.defineProperty(exports, 'Layer', {
 
 var _License = require('./License');
 
-Object.defineProperty(exports, 'License', {
+Object.defineProperty(exports, 'LicenseIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_License).default;
@@ -2139,7 +2139,7 @@ Object.defineProperty(exports, 'License', {
 
 var _Like = require('./Like');
 
-Object.defineProperty(exports, 'Like', {
+Object.defineProperty(exports, 'LikeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Like).default;
@@ -2148,7 +2148,7 @@ Object.defineProperty(exports, 'Like', {
 
 var _LineChart = require('./LineChart');
 
-Object.defineProperty(exports, 'LineChart', {
+Object.defineProperty(exports, 'LineChartIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_LineChart).default;
@@ -2157,7 +2157,7 @@ Object.defineProperty(exports, 'LineChart', {
 
 var _LinkBottom = require('./LinkBottom');
 
-Object.defineProperty(exports, 'LinkBottom', {
+Object.defineProperty(exports, 'LinkBottomIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_LinkBottom).default;
@@ -2166,7 +2166,7 @@ Object.defineProperty(exports, 'LinkBottom', {
 
 var _LinkDown = require('./LinkDown');
 
-Object.defineProperty(exports, 'LinkDown', {
+Object.defineProperty(exports, 'LinkDownIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_LinkDown).default;
@@ -2175,7 +2175,7 @@ Object.defineProperty(exports, 'LinkDown', {
 
 var _LinkNext = require('./LinkNext');
 
-Object.defineProperty(exports, 'LinkNext', {
+Object.defineProperty(exports, 'LinkNextIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_LinkNext).default;
@@ -2184,7 +2184,7 @@ Object.defineProperty(exports, 'LinkNext', {
 
 var _LinkPrevious = require('./LinkPrevious');
 
-Object.defineProperty(exports, 'LinkPrevious', {
+Object.defineProperty(exports, 'LinkPreviousIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_LinkPrevious).default;
@@ -2193,7 +2193,7 @@ Object.defineProperty(exports, 'LinkPrevious', {
 
 var _LinkTop = require('./LinkTop');
 
-Object.defineProperty(exports, 'LinkTop', {
+Object.defineProperty(exports, 'LinkTopIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_LinkTop).default;
@@ -2202,7 +2202,7 @@ Object.defineProperty(exports, 'LinkTop', {
 
 var _LinkUp = require('./LinkUp');
 
-Object.defineProperty(exports, 'LinkUp', {
+Object.defineProperty(exports, 'LinkUpIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_LinkUp).default;
@@ -2211,7 +2211,7 @@ Object.defineProperty(exports, 'LinkUp', {
 
 var _Link = require('./Link');
 
-Object.defineProperty(exports, 'Link', {
+Object.defineProperty(exports, 'LinkIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Link).default;
@@ -2220,7 +2220,7 @@ Object.defineProperty(exports, 'Link', {
 
 var _Local = require('./Local');
 
-Object.defineProperty(exports, 'Local', {
+Object.defineProperty(exports, 'LocalIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Local).default;
@@ -2229,7 +2229,7 @@ Object.defineProperty(exports, 'Local', {
 
 var _LocationPin = require('./LocationPin');
 
-Object.defineProperty(exports, 'LocationPin', {
+Object.defineProperty(exports, 'LocationPinIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_LocationPin).default;
@@ -2238,7 +2238,7 @@ Object.defineProperty(exports, 'LocationPin', {
 
 var _Location = require('./Location');
 
-Object.defineProperty(exports, 'Location', {
+Object.defineProperty(exports, 'LocationIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Location).default;
@@ -2247,7 +2247,7 @@ Object.defineProperty(exports, 'Location', {
 
 var _Lock = require('./Lock');
 
-Object.defineProperty(exports, 'Lock', {
+Object.defineProperty(exports, 'LockIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Lock).default;
@@ -2256,7 +2256,7 @@ Object.defineProperty(exports, 'Lock', {
 
 var _Login = require('./Login');
 
-Object.defineProperty(exports, 'Login', {
+Object.defineProperty(exports, 'LoginIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Login).default;
@@ -2265,7 +2265,7 @@ Object.defineProperty(exports, 'Login', {
 
 var _Logout = require('./Logout');
 
-Object.defineProperty(exports, 'Logout', {
+Object.defineProperty(exports, 'LogoutIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Logout).default;
@@ -2274,7 +2274,7 @@ Object.defineProperty(exports, 'Logout', {
 
 var _Lounge = require('./Lounge');
 
-Object.defineProperty(exports, 'Lounge', {
+Object.defineProperty(exports, 'LoungeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Lounge).default;
@@ -2283,7 +2283,7 @@ Object.defineProperty(exports, 'Lounge', {
 
 var _Magic = require('./Magic');
 
-Object.defineProperty(exports, 'Magic', {
+Object.defineProperty(exports, 'MagicIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Magic).default;
@@ -2292,7 +2292,7 @@ Object.defineProperty(exports, 'Magic', {
 
 var _MailOption = require('./MailOption');
 
-Object.defineProperty(exports, 'MailOption', {
+Object.defineProperty(exports, 'MailOptionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_MailOption).default;
@@ -2301,7 +2301,7 @@ Object.defineProperty(exports, 'MailOption', {
 
 var _Mail = require('./Mail');
 
-Object.defineProperty(exports, 'Mail', {
+Object.defineProperty(exports, 'MailIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Mail).default;
@@ -2310,7 +2310,7 @@ Object.defineProperty(exports, 'Mail', {
 
 var _Manual = require('./Manual');
 
-Object.defineProperty(exports, 'Manual', {
+Object.defineProperty(exports, 'ManualIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Manual).default;
@@ -2319,7 +2319,7 @@ Object.defineProperty(exports, 'Manual', {
 
 var _MapLocation = require('./MapLocation');
 
-Object.defineProperty(exports, 'MapLocation', {
+Object.defineProperty(exports, 'MapLocationIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_MapLocation).default;
@@ -2328,7 +2328,7 @@ Object.defineProperty(exports, 'MapLocation', {
 
 var _Map = require('./Map');
 
-Object.defineProperty(exports, 'Map', {
+Object.defineProperty(exports, 'MapIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Map).default;
@@ -2337,7 +2337,7 @@ Object.defineProperty(exports, 'Map', {
 
 var _Menu = require('./Menu');
 
-Object.defineProperty(exports, 'Menu', {
+Object.defineProperty(exports, 'MenuIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Menu).default;
@@ -2346,7 +2346,7 @@ Object.defineProperty(exports, 'Menu', {
 
 var _Microphone = require('./Microphone');
 
-Object.defineProperty(exports, 'Microphone', {
+Object.defineProperty(exports, 'MicrophoneIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Microphone).default;
@@ -2355,7 +2355,7 @@ Object.defineProperty(exports, 'Microphone', {
 
 var _Money = require('./Money');
 
-Object.defineProperty(exports, 'Money', {
+Object.defineProperty(exports, 'MoneyIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Money).default;
@@ -2364,7 +2364,7 @@ Object.defineProperty(exports, 'Money', {
 
 var _Monitor = require('./Monitor');
 
-Object.defineProperty(exports, 'Monitor', {
+Object.defineProperty(exports, 'MonitorIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Monitor).default;
@@ -2373,7 +2373,7 @@ Object.defineProperty(exports, 'Monitor', {
 
 var _More = require('./More');
 
-Object.defineProperty(exports, 'More', {
+Object.defineProperty(exports, 'MoreIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_More).default;
@@ -2382,7 +2382,7 @@ Object.defineProperty(exports, 'More', {
 
 var _Multiple = require('./Multiple');
 
-Object.defineProperty(exports, 'Multiple', {
+Object.defineProperty(exports, 'MultipleIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Multiple).default;
@@ -2391,7 +2391,7 @@ Object.defineProperty(exports, 'Multiple', {
 
 var _Music = require('./Music');
 
-Object.defineProperty(exports, 'Music', {
+Object.defineProperty(exports, 'MusicIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Music).default;
@@ -2400,7 +2400,7 @@ Object.defineProperty(exports, 'Music', {
 
 var _Navigate = require('./Navigate');
 
-Object.defineProperty(exports, 'Navigate', {
+Object.defineProperty(exports, 'NavigateIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Navigate).default;
@@ -2409,7 +2409,7 @@ Object.defineProperty(exports, 'Navigate', {
 
 var _NewWindow = require('./NewWindow');
 
-Object.defineProperty(exports, 'NewWindow', {
+Object.defineProperty(exports, 'NewWindowIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_NewWindow).default;
@@ -2418,7 +2418,7 @@ Object.defineProperty(exports, 'NewWindow', {
 
 var _New = require('./New');
 
-Object.defineProperty(exports, 'New', {
+Object.defineProperty(exports, 'NewIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_New).default;
@@ -2427,7 +2427,7 @@ Object.defineProperty(exports, 'New', {
 
 var _Next = require('./Next');
 
-Object.defineProperty(exports, 'Next', {
+Object.defineProperty(exports, 'NextIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Next).default;
@@ -2436,7 +2436,7 @@ Object.defineProperty(exports, 'Next', {
 
 var _Nodes = require('./Nodes');
 
-Object.defineProperty(exports, 'Nodes', {
+Object.defineProperty(exports, 'NodesIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Nodes).default;
@@ -2445,7 +2445,7 @@ Object.defineProperty(exports, 'Nodes', {
 
 var _Note = require('./Note');
 
-Object.defineProperty(exports, 'Note', {
+Object.defineProperty(exports, 'NoteIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Note).default;
@@ -2454,7 +2454,7 @@ Object.defineProperty(exports, 'Note', {
 
 var _Notes = require('./Notes');
 
-Object.defineProperty(exports, 'Notes', {
+Object.defineProperty(exports, 'NotesIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Notes).default;
@@ -2463,7 +2463,7 @@ Object.defineProperty(exports, 'Notes', {
 
 var _Notification = require('./Notification');
 
-Object.defineProperty(exports, 'Notification', {
+Object.defineProperty(exports, 'NotificationIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Notification).default;
@@ -2472,7 +2472,7 @@ Object.defineProperty(exports, 'Notification', {
 
 var _ObjectGroup = require('./ObjectGroup');
 
-Object.defineProperty(exports, 'ObjectGroup', {
+Object.defineProperty(exports, 'ObjectGroupIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_ObjectGroup).default;
@@ -2481,7 +2481,7 @@ Object.defineProperty(exports, 'ObjectGroup', {
 
 var _ObjectUngroup = require('./ObjectUngroup');
 
-Object.defineProperty(exports, 'ObjectUngroup', {
+Object.defineProperty(exports, 'ObjectUngroupIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_ObjectUngroup).default;
@@ -2490,7 +2490,7 @@ Object.defineProperty(exports, 'ObjectUngroup', {
 
 var _Optimize = require('./Optimize');
 
-Object.defineProperty(exports, 'Optimize', {
+Object.defineProperty(exports, 'OptimizeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Optimize).default;
@@ -2499,7 +2499,7 @@ Object.defineProperty(exports, 'Optimize', {
 
 var _Organization = require('./Organization');
 
-Object.defineProperty(exports, 'Organization', {
+Object.defineProperty(exports, 'OrganizationIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Organization).default;
@@ -2508,7 +2508,7 @@ Object.defineProperty(exports, 'Organization', {
 
 var _Overview = require('./Overview');
 
-Object.defineProperty(exports, 'Overview', {
+Object.defineProperty(exports, 'OverviewIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Overview).default;
@@ -2517,7 +2517,7 @@ Object.defineProperty(exports, 'Overview', {
 
 var _Paint = require('./Paint');
 
-Object.defineProperty(exports, 'Paint', {
+Object.defineProperty(exports, 'PaintIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Paint).default;
@@ -2526,7 +2526,7 @@ Object.defineProperty(exports, 'Paint', {
 
 var _Pan = require('./Pan');
 
-Object.defineProperty(exports, 'Pan', {
+Object.defineProperty(exports, 'PanIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Pan).default;
@@ -2535,7 +2535,7 @@ Object.defineProperty(exports, 'Pan', {
 
 var _PauseFill = require('./PauseFill');
 
-Object.defineProperty(exports, 'PauseFill', {
+Object.defineProperty(exports, 'PauseFillIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PauseFill).default;
@@ -2544,7 +2544,7 @@ Object.defineProperty(exports, 'PauseFill', {
 
 var _Pause = require('./Pause');
 
-Object.defineProperty(exports, 'Pause', {
+Object.defineProperty(exports, 'PauseIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Pause).default;
@@ -2553,7 +2553,7 @@ Object.defineProperty(exports, 'Pause', {
 
 var _PersonalComputer = require('./PersonalComputer');
 
-Object.defineProperty(exports, 'PersonalComputer', {
+Object.defineProperty(exports, 'PersonalComputerIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PersonalComputer).default;
@@ -2562,7 +2562,7 @@ Object.defineProperty(exports, 'PersonalComputer', {
 
 var _PieChart = require('./PieChart');
 
-Object.defineProperty(exports, 'PieChart', {
+Object.defineProperty(exports, 'PieChartIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PieChart).default;
@@ -2571,7 +2571,7 @@ Object.defineProperty(exports, 'PieChart', {
 
 var _Pin = require('./Pin');
 
-Object.defineProperty(exports, 'Pin', {
+Object.defineProperty(exports, 'PinIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Pin).default;
@@ -2580,7 +2580,7 @@ Object.defineProperty(exports, 'Pin', {
 
 var _Plan = require('./Plan');
 
-Object.defineProperty(exports, 'Plan', {
+Object.defineProperty(exports, 'PlanIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Plan).default;
@@ -2589,7 +2589,7 @@ Object.defineProperty(exports, 'Plan', {
 
 var _PlatformAmazon = require('./PlatformAmazon');
 
-Object.defineProperty(exports, 'PlatformAmazon', {
+Object.defineProperty(exports, 'PlatformAmazonIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformAmazon).default;
@@ -2598,7 +2598,7 @@ Object.defineProperty(exports, 'PlatformAmazon', {
 
 var _PlatformAndroid = require('./PlatformAndroid');
 
-Object.defineProperty(exports, 'PlatformAndroid', {
+Object.defineProperty(exports, 'PlatformAndroidIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformAndroid).default;
@@ -2607,7 +2607,7 @@ Object.defineProperty(exports, 'PlatformAndroid', {
 
 var _PlatformApple = require('./PlatformApple');
 
-Object.defineProperty(exports, 'PlatformApple', {
+Object.defineProperty(exports, 'PlatformAppleIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformApple).default;
@@ -2616,7 +2616,7 @@ Object.defineProperty(exports, 'PlatformApple', {
 
 var _PlatformArchlinux = require('./PlatformArchlinux');
 
-Object.defineProperty(exports, 'PlatformArchlinux', {
+Object.defineProperty(exports, 'PlatformArchlinuxIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformArchlinux).default;
@@ -2625,7 +2625,7 @@ Object.defineProperty(exports, 'PlatformArchlinux', {
 
 var _PlatformAruba = require('./PlatformAruba');
 
-Object.defineProperty(exports, 'PlatformAruba', {
+Object.defineProperty(exports, 'PlatformArubaIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformAruba).default;
@@ -2634,7 +2634,7 @@ Object.defineProperty(exports, 'PlatformAruba', {
 
 var _PlatformCentos = require('./PlatformCentos');
 
-Object.defineProperty(exports, 'PlatformCentos', {
+Object.defineProperty(exports, 'PlatformCentosIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformCentos).default;
@@ -2643,7 +2643,7 @@ Object.defineProperty(exports, 'PlatformCentos', {
 
 var _PlatformChrome = require('./PlatformChrome');
 
-Object.defineProperty(exports, 'PlatformChrome', {
+Object.defineProperty(exports, 'PlatformChromeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformChrome).default;
@@ -2652,7 +2652,7 @@ Object.defineProperty(exports, 'PlatformChrome', {
 
 var _PlatformCloudlinux = require('./PlatformCloudlinux');
 
-Object.defineProperty(exports, 'PlatformCloudlinux', {
+Object.defineProperty(exports, 'PlatformCloudlinuxIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformCloudlinux).default;
@@ -2661,7 +2661,7 @@ Object.defineProperty(exports, 'PlatformCloudlinux', {
 
 var _PlatformDebian = require('./PlatformDebian');
 
-Object.defineProperty(exports, 'PlatformDebian', {
+Object.defineProperty(exports, 'PlatformDebianIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformDebian).default;
@@ -2670,7 +2670,7 @@ Object.defineProperty(exports, 'PlatformDebian', {
 
 var _PlatformDocker = require('./PlatformDocker');
 
-Object.defineProperty(exports, 'PlatformDocker', {
+Object.defineProperty(exports, 'PlatformDockerIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformDocker).default;
@@ -2679,7 +2679,7 @@ Object.defineProperty(exports, 'PlatformDocker', {
 
 var _PlatformDos = require('./PlatformDos');
 
-Object.defineProperty(exports, 'PlatformDos', {
+Object.defineProperty(exports, 'PlatformDosIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformDos).default;
@@ -2688,7 +2688,7 @@ Object.defineProperty(exports, 'PlatformDos', {
 
 var _PlatformDropbox = require('./PlatformDropbox');
 
-Object.defineProperty(exports, 'PlatformDropbox', {
+Object.defineProperty(exports, 'PlatformDropboxIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformDropbox).default;
@@ -2697,7 +2697,7 @@ Object.defineProperty(exports, 'PlatformDropbox', {
 
 var _PlatformEdge = require('./PlatformEdge');
 
-Object.defineProperty(exports, 'PlatformEdge', {
+Object.defineProperty(exports, 'PlatformEdgeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformEdge).default;
@@ -2706,7 +2706,7 @@ Object.defineProperty(exports, 'PlatformEdge', {
 
 var _PlatformFedora = require('./PlatformFedora');
 
-Object.defineProperty(exports, 'PlatformFedora', {
+Object.defineProperty(exports, 'PlatformFedoraIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformFedora).default;
@@ -2715,7 +2715,7 @@ Object.defineProperty(exports, 'PlatformFedora', {
 
 var _PlatformFirefox = require('./PlatformFirefox');
 
-Object.defineProperty(exports, 'PlatformFirefox', {
+Object.defineProperty(exports, 'PlatformFirefoxIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformFirefox).default;
@@ -2724,7 +2724,7 @@ Object.defineProperty(exports, 'PlatformFirefox', {
 
 var _PlatformFreebsd = require('./PlatformFreebsd');
 
-Object.defineProperty(exports, 'PlatformFreebsd', {
+Object.defineProperty(exports, 'PlatformFreebsdIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformFreebsd).default;
@@ -2733,7 +2733,7 @@ Object.defineProperty(exports, 'PlatformFreebsd', {
 
 var _PlatformGoogle = require('./PlatformGoogle');
 
-Object.defineProperty(exports, 'PlatformGoogle', {
+Object.defineProperty(exports, 'PlatformGoogleIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformGoogle).default;
@@ -2742,7 +2742,7 @@ Object.defineProperty(exports, 'PlatformGoogle', {
 
 var _PlatformHadoop = require('./PlatformHadoop');
 
-Object.defineProperty(exports, 'PlatformHadoop', {
+Object.defineProperty(exports, 'PlatformHadoopIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformHadoop).default;
@@ -2751,7 +2751,7 @@ Object.defineProperty(exports, 'PlatformHadoop', {
 
 var _PlatformHeroku = require('./PlatformHeroku');
 
-Object.defineProperty(exports, 'PlatformHeroku', {
+Object.defineProperty(exports, 'PlatformHerokuIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformHeroku).default;
@@ -2760,7 +2760,7 @@ Object.defineProperty(exports, 'PlatformHeroku', {
 
 var _PlatformHorton = require('./PlatformHorton');
 
-Object.defineProperty(exports, 'PlatformHorton', {
+Object.defineProperty(exports, 'PlatformHortonIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformHorton).default;
@@ -2769,7 +2769,7 @@ Object.defineProperty(exports, 'PlatformHorton', {
 
 var _PlatformHp = require('./PlatformHp');
 
-Object.defineProperty(exports, 'PlatformHp', {
+Object.defineProperty(exports, 'PlatformHpIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformHp).default;
@@ -2778,7 +2778,7 @@ Object.defineProperty(exports, 'PlatformHp', {
 
 var _PlatformHpi = require('./PlatformHpi');
 
-Object.defineProperty(exports, 'PlatformHpi', {
+Object.defineProperty(exports, 'PlatformHpiIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformHpi).default;
@@ -2787,7 +2787,7 @@ Object.defineProperty(exports, 'PlatformHpi', {
 
 var _PlatformInternetExplorer = require('./PlatformInternetExplorer');
 
-Object.defineProperty(exports, 'PlatformInternetExplorer', {
+Object.defineProperty(exports, 'PlatformInternetExplorerIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformInternetExplorer).default;
@@ -2796,7 +2796,7 @@ Object.defineProperty(exports, 'PlatformInternetExplorer', {
 
 var _PlatformJava = require('./PlatformJava');
 
-Object.defineProperty(exports, 'PlatformJava', {
+Object.defineProperty(exports, 'PlatformJavaIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformJava).default;
@@ -2805,7 +2805,7 @@ Object.defineProperty(exports, 'PlatformJava', {
 
 var _PlatformMandriva = require('./PlatformMandriva');
 
-Object.defineProperty(exports, 'PlatformMandriva', {
+Object.defineProperty(exports, 'PlatformMandrivaIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformMandriva).default;
@@ -2814,7 +2814,7 @@ Object.defineProperty(exports, 'PlatformMandriva', {
 
 var _PlatformMysql = require('./PlatformMysql');
 
-Object.defineProperty(exports, 'PlatformMysql', {
+Object.defineProperty(exports, 'PlatformMysqlIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformMysql).default;
@@ -2823,7 +2823,7 @@ Object.defineProperty(exports, 'PlatformMysql', {
 
 var _PlatformNorton = require('./PlatformNorton');
 
-Object.defineProperty(exports, 'PlatformNorton', {
+Object.defineProperty(exports, 'PlatformNortonIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformNorton).default;
@@ -2832,7 +2832,7 @@ Object.defineProperty(exports, 'PlatformNorton', {
 
 var _PlatformOnedrive = require('./PlatformOnedrive');
 
-Object.defineProperty(exports, 'PlatformOnedrive', {
+Object.defineProperty(exports, 'PlatformOnedriveIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformOnedrive).default;
@@ -2841,7 +2841,7 @@ Object.defineProperty(exports, 'PlatformOnedrive', {
 
 var _PlatformOpera = require('./PlatformOpera');
 
-Object.defineProperty(exports, 'PlatformOpera', {
+Object.defineProperty(exports, 'PlatformOperaIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformOpera).default;
@@ -2850,7 +2850,7 @@ Object.defineProperty(exports, 'PlatformOpera', {
 
 var _PlatformOracle = require('./PlatformOracle');
 
-Object.defineProperty(exports, 'PlatformOracle', {
+Object.defineProperty(exports, 'PlatformOracleIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformOracle).default;
@@ -2859,7 +2859,7 @@ Object.defineProperty(exports, 'PlatformOracle', {
 
 var _PlatformPiedPiper = require('./PlatformPiedPiper');
 
-Object.defineProperty(exports, 'PlatformPiedPiper', {
+Object.defineProperty(exports, 'PlatformPiedPiperIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformPiedPiper).default;
@@ -2868,7 +2868,7 @@ Object.defineProperty(exports, 'PlatformPiedPiper', {
 
 var _PlatformRaspberry = require('./PlatformRaspberry');
 
-Object.defineProperty(exports, 'PlatformRaspberry', {
+Object.defineProperty(exports, 'PlatformRaspberryIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformRaspberry).default;
@@ -2877,7 +2877,7 @@ Object.defineProperty(exports, 'PlatformRaspberry', {
 
 var _PlatformReactjs = require('./PlatformReactjs');
 
-Object.defineProperty(exports, 'PlatformReactjs', {
+Object.defineProperty(exports, 'PlatformReactjsIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformReactjs).default;
@@ -2886,7 +2886,7 @@ Object.defineProperty(exports, 'PlatformReactjs', {
 
 var _PlatformRedhat = require('./PlatformRedhat');
 
-Object.defineProperty(exports, 'PlatformRedhat', {
+Object.defineProperty(exports, 'PlatformRedhatIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformRedhat).default;
@@ -2895,7 +2895,7 @@ Object.defineProperty(exports, 'PlatformRedhat', {
 
 var _PlatformSafariOption = require('./PlatformSafariOption');
 
-Object.defineProperty(exports, 'PlatformSafariOption', {
+Object.defineProperty(exports, 'PlatformSafariOptionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformSafariOption).default;
@@ -2904,7 +2904,7 @@ Object.defineProperty(exports, 'PlatformSafariOption', {
 
 var _PlatformSafari = require('./PlatformSafari');
 
-Object.defineProperty(exports, 'PlatformSafari', {
+Object.defineProperty(exports, 'PlatformSafariIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformSafari).default;
@@ -2913,7 +2913,7 @@ Object.defineProperty(exports, 'PlatformSafari', {
 
 var _PlatformSco = require('./PlatformSco');
 
-Object.defineProperty(exports, 'PlatformSco', {
+Object.defineProperty(exports, 'PlatformScoIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformSco).default;
@@ -2922,7 +2922,7 @@ Object.defineProperty(exports, 'PlatformSco', {
 
 var _PlatformSolaris = require('./PlatformSolaris');
 
-Object.defineProperty(exports, 'PlatformSolaris', {
+Object.defineProperty(exports, 'PlatformSolarisIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformSolaris).default;
@@ -2931,7 +2931,7 @@ Object.defineProperty(exports, 'PlatformSolaris', {
 
 var _PlatformSuse = require('./PlatformSuse');
 
-Object.defineProperty(exports, 'PlatformSuse', {
+Object.defineProperty(exports, 'PlatformSuseIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformSuse).default;
@@ -2940,7 +2940,7 @@ Object.defineProperty(exports, 'PlatformSuse', {
 
 var _PlatformSwift = require('./PlatformSwift');
 
-Object.defineProperty(exports, 'PlatformSwift', {
+Object.defineProperty(exports, 'PlatformSwiftIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformSwift).default;
@@ -2949,7 +2949,7 @@ Object.defineProperty(exports, 'PlatformSwift', {
 
 var _PlatformTurbolinux = require('./PlatformTurbolinux');
 
-Object.defineProperty(exports, 'PlatformTurbolinux', {
+Object.defineProperty(exports, 'PlatformTurbolinuxIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformTurbolinux).default;
@@ -2958,7 +2958,7 @@ Object.defineProperty(exports, 'PlatformTurbolinux', {
 
 var _PlatformUbuntu = require('./PlatformUbuntu');
 
-Object.defineProperty(exports, 'PlatformUbuntu', {
+Object.defineProperty(exports, 'PlatformUbuntuIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformUbuntu).default;
@@ -2967,7 +2967,7 @@ Object.defineProperty(exports, 'PlatformUbuntu', {
 
 var _PlatformUnixware = require('./PlatformUnixware');
 
-Object.defineProperty(exports, 'PlatformUnixware', {
+Object.defineProperty(exports, 'PlatformUnixwareIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformUnixware).default;
@@ -2976,7 +2976,7 @@ Object.defineProperty(exports, 'PlatformUnixware', {
 
 var _PlatformVmware = require('./PlatformVmware');
 
-Object.defineProperty(exports, 'PlatformVmware', {
+Object.defineProperty(exports, 'PlatformVmwareIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformVmware).default;
@@ -2985,7 +2985,7 @@ Object.defineProperty(exports, 'PlatformVmware', {
 
 var _PlatformWindowsLegacy = require('./PlatformWindowsLegacy');
 
-Object.defineProperty(exports, 'PlatformWindowsLegacy', {
+Object.defineProperty(exports, 'PlatformWindowsLegacyIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformWindowsLegacy).default;
@@ -2994,7 +2994,7 @@ Object.defineProperty(exports, 'PlatformWindowsLegacy', {
 
 var _PlatformWindows = require('./PlatformWindows');
 
-Object.defineProperty(exports, 'PlatformWindows', {
+Object.defineProperty(exports, 'PlatformWindowsIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlatformWindows).default;
@@ -3003,7 +3003,7 @@ Object.defineProperty(exports, 'PlatformWindows', {
 
 var _PlayFill = require('./PlayFill');
 
-Object.defineProperty(exports, 'PlayFill', {
+Object.defineProperty(exports, 'PlayFillIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_PlayFill).default;
@@ -3012,7 +3012,7 @@ Object.defineProperty(exports, 'PlayFill', {
 
 var _Play = require('./Play');
 
-Object.defineProperty(exports, 'Play', {
+Object.defineProperty(exports, 'PlayIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Play).default;
@@ -3021,7 +3021,7 @@ Object.defineProperty(exports, 'Play', {
 
 var _Power = require('./Power');
 
-Object.defineProperty(exports, 'Power', {
+Object.defineProperty(exports, 'PowerIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Power).default;
@@ -3030,7 +3030,7 @@ Object.defineProperty(exports, 'Power', {
 
 var _Previous = require('./Previous');
 
-Object.defineProperty(exports, 'Previous', {
+Object.defineProperty(exports, 'PreviousIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Previous).default;
@@ -3039,7 +3039,7 @@ Object.defineProperty(exports, 'Previous', {
 
 var _Print = require('./Print');
 
-Object.defineProperty(exports, 'Print', {
+Object.defineProperty(exports, 'PrintIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Print).default;
@@ -3048,7 +3048,7 @@ Object.defineProperty(exports, 'Print', {
 
 var _RadialSelected = require('./RadialSelected');
 
-Object.defineProperty(exports, 'RadialSelected', {
+Object.defineProperty(exports, 'RadialSelectedIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_RadialSelected).default;
@@ -3057,7 +3057,7 @@ Object.defineProperty(exports, 'RadialSelected', {
 
 var _Radial = require('./Radial');
 
-Object.defineProperty(exports, 'Radial', {
+Object.defineProperty(exports, 'RadialIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Radial).default;
@@ -3066,7 +3066,7 @@ Object.defineProperty(exports, 'Radial', {
 
 var _Refresh = require('./Refresh');
 
-Object.defineProperty(exports, 'Refresh', {
+Object.defineProperty(exports, 'RefreshIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Refresh).default;
@@ -3075,7 +3075,7 @@ Object.defineProperty(exports, 'Refresh', {
 
 var _Resources = require('./Resources');
 
-Object.defineProperty(exports, 'Resources', {
+Object.defineProperty(exports, 'ResourcesIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Resources).default;
@@ -3084,7 +3084,7 @@ Object.defineProperty(exports, 'Resources', {
 
 var _Restaurant = require('./Restaurant');
 
-Object.defineProperty(exports, 'Restaurant', {
+Object.defineProperty(exports, 'RestaurantIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Restaurant).default;
@@ -3093,7 +3093,7 @@ Object.defineProperty(exports, 'Restaurant', {
 
 var _RestroomMen = require('./RestroomMen');
 
-Object.defineProperty(exports, 'RestroomMen', {
+Object.defineProperty(exports, 'RestroomMenIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_RestroomMen).default;
@@ -3102,7 +3102,7 @@ Object.defineProperty(exports, 'RestroomMen', {
 
 var _RestroomWomen = require('./RestroomWomen');
 
-Object.defineProperty(exports, 'RestroomWomen', {
+Object.defineProperty(exports, 'RestroomWomenIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_RestroomWomen).default;
@@ -3111,7 +3111,7 @@ Object.defineProperty(exports, 'RestroomWomen', {
 
 var _Restroom = require('./Restroom');
 
-Object.defineProperty(exports, 'Restroom', {
+Object.defineProperty(exports, 'RestroomIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Restroom).default;
@@ -3120,7 +3120,7 @@ Object.defineProperty(exports, 'Restroom', {
 
 var _Resume = require('./Resume');
 
-Object.defineProperty(exports, 'Resume', {
+Object.defineProperty(exports, 'ResumeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Resume).default;
@@ -3129,7 +3129,7 @@ Object.defineProperty(exports, 'Resume', {
 
 var _Revert = require('./Revert');
 
-Object.defineProperty(exports, 'Revert', {
+Object.defineProperty(exports, 'RevertIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Revert).default;
@@ -3138,7 +3138,7 @@ Object.defineProperty(exports, 'Revert', {
 
 var _Rewind = require('./Rewind');
 
-Object.defineProperty(exports, 'Rewind', {
+Object.defineProperty(exports, 'RewindIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Rewind).default;
@@ -3147,7 +3147,7 @@ Object.defineProperty(exports, 'Rewind', {
 
 var _Risk = require('./Risk');
 
-Object.defineProperty(exports, 'Risk', {
+Object.defineProperty(exports, 'RiskIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Risk).default;
@@ -3156,7 +3156,7 @@ Object.defineProperty(exports, 'Risk', {
 
 var _Robot = require('./Robot');
 
-Object.defineProperty(exports, 'Robot', {
+Object.defineProperty(exports, 'RobotIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Robot).default;
@@ -3165,7 +3165,7 @@ Object.defineProperty(exports, 'Robot', {
 
 var _Rss = require('./Rss');
 
-Object.defineProperty(exports, 'Rss', {
+Object.defineProperty(exports, 'RssIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Rss).default;
@@ -3174,7 +3174,7 @@ Object.defineProperty(exports, 'Rss', {
 
 var _Run = require('./Run');
 
-Object.defineProperty(exports, 'Run', {
+Object.defineProperty(exports, 'RunIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Run).default;
@@ -3183,7 +3183,7 @@ Object.defineProperty(exports, 'Run', {
 
 var _Satellite = require('./Satellite');
 
-Object.defineProperty(exports, 'Satellite', {
+Object.defineProperty(exports, 'SatelliteIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Satellite).default;
@@ -3192,7 +3192,7 @@ Object.defineProperty(exports, 'Satellite', {
 
 var _Save = require('./Save');
 
-Object.defineProperty(exports, 'Save', {
+Object.defineProperty(exports, 'SaveIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Save).default;
@@ -3201,7 +3201,7 @@ Object.defineProperty(exports, 'Save', {
 
 var _Scan = require('./Scan');
 
-Object.defineProperty(exports, 'Scan', {
+Object.defineProperty(exports, 'ScanIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Scan).default;
@@ -3210,7 +3210,7 @@ Object.defineProperty(exports, 'Scan', {
 
 var _ScheduleNew = require('./ScheduleNew');
 
-Object.defineProperty(exports, 'ScheduleNew', {
+Object.defineProperty(exports, 'ScheduleNewIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_ScheduleNew).default;
@@ -3219,7 +3219,7 @@ Object.defineProperty(exports, 'ScheduleNew', {
 
 var _SchedulePlay = require('./SchedulePlay');
 
-Object.defineProperty(exports, 'SchedulePlay', {
+Object.defineProperty(exports, 'SchedulePlayIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SchedulePlay).default;
@@ -3228,7 +3228,7 @@ Object.defineProperty(exports, 'SchedulePlay', {
 
 var _Schedule = require('./Schedule');
 
-Object.defineProperty(exports, 'Schedule', {
+Object.defineProperty(exports, 'ScheduleIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Schedule).default;
@@ -3237,7 +3237,7 @@ Object.defineProperty(exports, 'Schedule', {
 
 var _Schedules = require('./Schedules');
 
-Object.defineProperty(exports, 'Schedules', {
+Object.defineProperty(exports, 'SchedulesIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Schedules).default;
@@ -3246,7 +3246,7 @@ Object.defineProperty(exports, 'Schedules', {
 
 var _Scorecard = require('./Scorecard');
 
-Object.defineProperty(exports, 'Scorecard', {
+Object.defineProperty(exports, 'ScorecardIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Scorecard).default;
@@ -3255,7 +3255,7 @@ Object.defineProperty(exports, 'Scorecard', {
 
 var _SearchAdvanced = require('./SearchAdvanced');
 
-Object.defineProperty(exports, 'SearchAdvanced', {
+Object.defineProperty(exports, 'SearchAdvancedIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SearchAdvanced).default;
@@ -3264,7 +3264,7 @@ Object.defineProperty(exports, 'SearchAdvanced', {
 
 var _Search = require('./Search');
 
-Object.defineProperty(exports, 'Search', {
+Object.defineProperty(exports, 'SearchIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Search).default;
@@ -3273,7 +3273,7 @@ Object.defineProperty(exports, 'Search', {
 
 var _Secure = require('./Secure');
 
-Object.defineProperty(exports, 'Secure', {
+Object.defineProperty(exports, 'SecureIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Secure).default;
@@ -3282,7 +3282,7 @@ Object.defineProperty(exports, 'Secure', {
 
 var _Select = require('./Select');
 
-Object.defineProperty(exports, 'Select', {
+Object.defineProperty(exports, 'SelectIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Select).default;
@@ -3291,7 +3291,7 @@ Object.defineProperty(exports, 'Select', {
 
 var _Selection = require('./Selection');
 
-Object.defineProperty(exports, 'Selection', {
+Object.defineProperty(exports, 'SelectionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Selection).default;
@@ -3300,7 +3300,7 @@ Object.defineProperty(exports, 'Selection', {
 
 var _Send = require('./Send');
 
-Object.defineProperty(exports, 'Send', {
+Object.defineProperty(exports, 'SendIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Send).default;
@@ -3309,7 +3309,7 @@ Object.defineProperty(exports, 'Send', {
 
 var _ServerCluster = require('./ServerCluster');
 
-Object.defineProperty(exports, 'ServerCluster', {
+Object.defineProperty(exports, 'ServerClusterIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_ServerCluster).default;
@@ -3318,7 +3318,7 @@ Object.defineProperty(exports, 'ServerCluster', {
 
 var _Server = require('./Server');
 
-Object.defineProperty(exports, 'Server', {
+Object.defineProperty(exports, 'ServerIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Server).default;
@@ -3327,7 +3327,7 @@ Object.defineProperty(exports, 'Server', {
 
 var _Servers = require('./Servers');
 
-Object.defineProperty(exports, 'Servers', {
+Object.defineProperty(exports, 'ServersIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Servers).default;
@@ -3336,7 +3336,7 @@ Object.defineProperty(exports, 'Servers', {
 
 var _ServicePlay = require('./ServicePlay');
 
-Object.defineProperty(exports, 'ServicePlay', {
+Object.defineProperty(exports, 'ServicePlayIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_ServicePlay).default;
@@ -3345,7 +3345,7 @@ Object.defineProperty(exports, 'ServicePlay', {
 
 var _Services = require('./Services');
 
-Object.defineProperty(exports, 'Services', {
+Object.defineProperty(exports, 'ServicesIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Services).default;
@@ -3354,7 +3354,7 @@ Object.defineProperty(exports, 'Services', {
 
 var _SettignsOption = require('./SettignsOption');
 
-Object.defineProperty(exports, 'SettignsOption', {
+Object.defineProperty(exports, 'SettignsOptionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SettignsOption).default;
@@ -3363,7 +3363,7 @@ Object.defineProperty(exports, 'SettignsOption', {
 
 var _SettingsOption = require('./SettingsOption');
 
-Object.defineProperty(exports, 'SettingsOption', {
+Object.defineProperty(exports, 'SettingsOptionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SettingsOption).default;
@@ -3372,7 +3372,7 @@ Object.defineProperty(exports, 'SettingsOption', {
 
 var _Share = require('./Share');
 
-Object.defineProperty(exports, 'Share', {
+Object.defineProperty(exports, 'ShareIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Share).default;
@@ -3381,7 +3381,7 @@ Object.defineProperty(exports, 'Share', {
 
 var _ShieldSecurity = require('./ShieldSecurity');
 
-Object.defineProperty(exports, 'ShieldSecurity', {
+Object.defineProperty(exports, 'ShieldSecurityIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_ShieldSecurity).default;
@@ -3390,7 +3390,7 @@ Object.defineProperty(exports, 'ShieldSecurity', {
 
 var _Shield = require('./Shield');
 
-Object.defineProperty(exports, 'Shield', {
+Object.defineProperty(exports, 'ShieldIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Shield).default;
@@ -3399,7 +3399,7 @@ Object.defineProperty(exports, 'Shield', {
 
 var _Shift = require('./Shift');
 
-Object.defineProperty(exports, 'Shift', {
+Object.defineProperty(exports, 'ShiftIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Shift).default;
@@ -3408,7 +3408,7 @@ Object.defineProperty(exports, 'Shift', {
 
 var _Shop = require('./Shop');
 
-Object.defineProperty(exports, 'Shop', {
+Object.defineProperty(exports, 'ShopIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Shop).default;
@@ -3417,7 +3417,7 @@ Object.defineProperty(exports, 'Shop', {
 
 var _Sidebar = require('./Sidebar');
 
-Object.defineProperty(exports, 'Sidebar', {
+Object.defineProperty(exports, 'SidebarIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Sidebar).default;
@@ -3426,7 +3426,7 @@ Object.defineProperty(exports, 'Sidebar', {
 
 var _SocialAmazon = require('./SocialAmazon');
 
-Object.defineProperty(exports, 'SocialAmazon', {
+Object.defineProperty(exports, 'SocialAmazonIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialAmazon).default;
@@ -3435,7 +3435,7 @@ Object.defineProperty(exports, 'SocialAmazon', {
 
 var _SocialAmex = require('./SocialAmex');
 
-Object.defineProperty(exports, 'SocialAmex', {
+Object.defineProperty(exports, 'SocialAmexIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialAmex).default;
@@ -3444,7 +3444,7 @@ Object.defineProperty(exports, 'SocialAmex', {
 
 var _SocialBitcoin = require('./SocialBitcoin');
 
-Object.defineProperty(exports, 'SocialBitcoin', {
+Object.defineProperty(exports, 'SocialBitcoinIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialBitcoin).default;
@@ -3453,7 +3453,7 @@ Object.defineProperty(exports, 'SocialBitcoin', {
 
 var _SocialCodepen = require('./SocialCodepen');
 
-Object.defineProperty(exports, 'SocialCodepen', {
+Object.defineProperty(exports, 'SocialCodepenIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialCodepen).default;
@@ -3462,7 +3462,7 @@ Object.defineProperty(exports, 'SocialCodepen', {
 
 var _SocialCreativeCommons = require('./SocialCreativeCommons');
 
-Object.defineProperty(exports, 'SocialCreativeCommons', {
+Object.defineProperty(exports, 'SocialCreativeCommonsIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialCreativeCommons).default;
@@ -3471,7 +3471,7 @@ Object.defineProperty(exports, 'SocialCreativeCommons', {
 
 var _SocialDropbox = require('./SocialDropbox');
 
-Object.defineProperty(exports, 'SocialDropbox', {
+Object.defineProperty(exports, 'SocialDropboxIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialDropbox).default;
@@ -3480,7 +3480,7 @@ Object.defineProperty(exports, 'SocialDropbox', {
 
 var _SocialFacebookOption = require('./SocialFacebookOption');
 
-Object.defineProperty(exports, 'SocialFacebookOption', {
+Object.defineProperty(exports, 'SocialFacebookOptionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialFacebookOption).default;
@@ -3489,7 +3489,7 @@ Object.defineProperty(exports, 'SocialFacebookOption', {
 
 var _SocialFacebook = require('./SocialFacebook');
 
-Object.defineProperty(exports, 'SocialFacebook', {
+Object.defineProperty(exports, 'SocialFacebookIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialFacebook).default;
@@ -3498,7 +3498,7 @@ Object.defineProperty(exports, 'SocialFacebook', {
 
 var _SocialGithub = require('./SocialGithub');
 
-Object.defineProperty(exports, 'SocialGithub', {
+Object.defineProperty(exports, 'SocialGithubIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialGithub).default;
@@ -3507,7 +3507,7 @@ Object.defineProperty(exports, 'SocialGithub', {
 
 var _SocialGooglePlus = require('./SocialGooglePlus');
 
-Object.defineProperty(exports, 'SocialGooglePlus', {
+Object.defineProperty(exports, 'SocialGooglePlusIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialGooglePlus).default;
@@ -3516,7 +3516,7 @@ Object.defineProperty(exports, 'SocialGooglePlus', {
 
 var _SocialGoogleWallet = require('./SocialGoogleWallet');
 
-Object.defineProperty(exports, 'SocialGoogleWallet', {
+Object.defineProperty(exports, 'SocialGoogleWalletIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialGoogleWallet).default;
@@ -3525,7 +3525,7 @@ Object.defineProperty(exports, 'SocialGoogleWallet', {
 
 var _SocialInstagram = require('./SocialInstagram');
 
-Object.defineProperty(exports, 'SocialInstagram', {
+Object.defineProperty(exports, 'SocialInstagramIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialInstagram).default;
@@ -3534,7 +3534,7 @@ Object.defineProperty(exports, 'SocialInstagram', {
 
 var _SocialLinkedinOption = require('./SocialLinkedinOption');
 
-Object.defineProperty(exports, 'SocialLinkedinOption', {
+Object.defineProperty(exports, 'SocialLinkedinOptionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialLinkedinOption).default;
@@ -3543,7 +3543,7 @@ Object.defineProperty(exports, 'SocialLinkedinOption', {
 
 var _SocialLinkedin = require('./SocialLinkedin');
 
-Object.defineProperty(exports, 'SocialLinkedin', {
+Object.defineProperty(exports, 'SocialLinkedinIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialLinkedin).default;
@@ -3552,7 +3552,7 @@ Object.defineProperty(exports, 'SocialLinkedin', {
 
 var _SocialMail = require('./SocialMail');
 
-Object.defineProperty(exports, 'SocialMail', {
+Object.defineProperty(exports, 'SocialMailIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialMail).default;
@@ -3561,7 +3561,7 @@ Object.defineProperty(exports, 'SocialMail', {
 
 var _SocialMastercard = require('./SocialMastercard');
 
-Object.defineProperty(exports, 'SocialMastercard', {
+Object.defineProperty(exports, 'SocialMastercardIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialMastercard).default;
@@ -3570,7 +3570,7 @@ Object.defineProperty(exports, 'SocialMastercard', {
 
 var _SocialMedium = require('./SocialMedium');
 
-Object.defineProperty(exports, 'SocialMedium', {
+Object.defineProperty(exports, 'SocialMediumIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialMedium).default;
@@ -3579,7 +3579,7 @@ Object.defineProperty(exports, 'SocialMedium', {
 
 var _SocialPaypal = require('./SocialPaypal');
 
-Object.defineProperty(exports, 'SocialPaypal', {
+Object.defineProperty(exports, 'SocialPaypalIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialPaypal).default;
@@ -3588,7 +3588,7 @@ Object.defineProperty(exports, 'SocialPaypal', {
 
 var _SocialPinterest = require('./SocialPinterest');
 
-Object.defineProperty(exports, 'SocialPinterest', {
+Object.defineProperty(exports, 'SocialPinterestIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialPinterest).default;
@@ -3597,7 +3597,7 @@ Object.defineProperty(exports, 'SocialPinterest', {
 
 var _SocialProductHunt = require('./SocialProductHunt');
 
-Object.defineProperty(exports, 'SocialProductHunt', {
+Object.defineProperty(exports, 'SocialProductHuntIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialProductHunt).default;
@@ -3606,7 +3606,7 @@ Object.defineProperty(exports, 'SocialProductHunt', {
 
 var _SocialReddit = require('./SocialReddit');
 
-Object.defineProperty(exports, 'SocialReddit', {
+Object.defineProperty(exports, 'SocialRedditIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialReddit).default;
@@ -3615,7 +3615,7 @@ Object.defineProperty(exports, 'SocialReddit', {
 
 var _SocialSkype = require('./SocialSkype');
 
-Object.defineProperty(exports, 'SocialSkype', {
+Object.defineProperty(exports, 'SocialSkypeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialSkype).default;
@@ -3624,7 +3624,7 @@ Object.defineProperty(exports, 'SocialSkype', {
 
 var _SocialSlack = require('./SocialSlack');
 
-Object.defineProperty(exports, 'SocialSlack', {
+Object.defineProperty(exports, 'SocialSlackIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialSlack).default;
@@ -3633,7 +3633,7 @@ Object.defineProperty(exports, 'SocialSlack', {
 
 var _SocialSnapchat = require('./SocialSnapchat');
 
-Object.defineProperty(exports, 'SocialSnapchat', {
+Object.defineProperty(exports, 'SocialSnapchatIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialSnapchat).default;
@@ -3642,7 +3642,7 @@ Object.defineProperty(exports, 'SocialSnapchat', {
 
 var _SocialSquare = require('./SocialSquare');
 
-Object.defineProperty(exports, 'SocialSquare', {
+Object.defineProperty(exports, 'SocialSquareIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialSquare).default;
@@ -3651,7 +3651,7 @@ Object.defineProperty(exports, 'SocialSquare', {
 
 var _SocialStackOverflow = require('./SocialStackOverflow');
 
-Object.defineProperty(exports, 'SocialStackOverflow', {
+Object.defineProperty(exports, 'SocialStackOverflowIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialStackOverflow).default;
@@ -3660,7 +3660,7 @@ Object.defineProperty(exports, 'SocialStackOverflow', {
 
 var _SocialStripe = require('./SocialStripe');
 
-Object.defineProperty(exports, 'SocialStripe', {
+Object.defineProperty(exports, 'SocialStripeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialStripe).default;
@@ -3669,7 +3669,7 @@ Object.defineProperty(exports, 'SocialStripe', {
 
 var _SocialTumblr = require('./SocialTumblr');
 
-Object.defineProperty(exports, 'SocialTumblr', {
+Object.defineProperty(exports, 'SocialTumblrIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialTumblr).default;
@@ -3678,7 +3678,7 @@ Object.defineProperty(exports, 'SocialTumblr', {
 
 var _SocialTwitter = require('./SocialTwitter');
 
-Object.defineProperty(exports, 'SocialTwitter', {
+Object.defineProperty(exports, 'SocialTwitterIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialTwitter).default;
@@ -3687,7 +3687,7 @@ Object.defineProperty(exports, 'SocialTwitter', {
 
 var _SocialVimeo = require('./SocialVimeo');
 
-Object.defineProperty(exports, 'SocialVimeo', {
+Object.defineProperty(exports, 'SocialVimeoIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialVimeo).default;
@@ -3696,7 +3696,7 @@ Object.defineProperty(exports, 'SocialVimeo', {
 
 var _SocialVine = require('./SocialVine');
 
-Object.defineProperty(exports, 'SocialVine', {
+Object.defineProperty(exports, 'SocialVineIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialVine).default;
@@ -3705,7 +3705,7 @@ Object.defineProperty(exports, 'SocialVine', {
 
 var _SocialVisa = require('./SocialVisa');
 
-Object.defineProperty(exports, 'SocialVisa', {
+Object.defineProperty(exports, 'SocialVisaIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialVisa).default;
@@ -3714,7 +3714,7 @@ Object.defineProperty(exports, 'SocialVisa', {
 
 var _SocialWordpress = require('./SocialWordpress');
 
-Object.defineProperty(exports, 'SocialWordpress', {
+Object.defineProperty(exports, 'SocialWordpressIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialWordpress).default;
@@ -3723,7 +3723,7 @@ Object.defineProperty(exports, 'SocialWordpress', {
 
 var _SocialYoutube = require('./SocialYoutube');
 
-Object.defineProperty(exports, 'SocialYoutube', {
+Object.defineProperty(exports, 'SocialYoutubeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SocialYoutube).default;
@@ -3732,7 +3732,7 @@ Object.defineProperty(exports, 'SocialYoutube', {
 
 var _Sort = require('./Sort');
 
-Object.defineProperty(exports, 'Sort', {
+Object.defineProperty(exports, 'SortIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Sort).default;
@@ -3741,7 +3741,7 @@ Object.defineProperty(exports, 'Sort', {
 
 var _Split = require('./Split');
 
-Object.defineProperty(exports, 'Split', {
+Object.defineProperty(exports, 'SplitIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Split).default;
@@ -3750,7 +3750,7 @@ Object.defineProperty(exports, 'Split', {
 
 var _Splits = require('./Splits');
 
-Object.defineProperty(exports, 'Splits', {
+Object.defineProperty(exports, 'SplitsIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Splits).default;
@@ -3759,7 +3759,7 @@ Object.defineProperty(exports, 'Splits', {
 
 var _Stakeholder = require('./Stakeholder');
 
-Object.defineProperty(exports, 'Stakeholder', {
+Object.defineProperty(exports, 'StakeholderIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Stakeholder).default;
@@ -3768,7 +3768,7 @@ Object.defineProperty(exports, 'Stakeholder', {
 
 var _Standards3dEffects = require('./Standards-3dEffects');
 
-Object.defineProperty(exports, 'Standards3dEffects', {
+Object.defineProperty(exports, 'Standards3dEffectsIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Standards3dEffects).default;
@@ -3777,7 +3777,7 @@ Object.defineProperty(exports, 'Standards3dEffects', {
 
 var _StandardsConnectivity = require('./StandardsConnectivity');
 
-Object.defineProperty(exports, 'StandardsConnectivity', {
+Object.defineProperty(exports, 'StandardsConnectivityIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_StandardsConnectivity).default;
@@ -3786,7 +3786,7 @@ Object.defineProperty(exports, 'StandardsConnectivity', {
 
 var _StandardsCss = require('./StandardsCss3');
 
-Object.defineProperty(exports, 'StandardsCss3', {
+Object.defineProperty(exports, 'StandardsCss3Icon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_StandardsCss).default;
@@ -3795,7 +3795,7 @@ Object.defineProperty(exports, 'StandardsCss3', {
 
 var _StandardsDevice = require('./StandardsDevice');
 
-Object.defineProperty(exports, 'StandardsDevice', {
+Object.defineProperty(exports, 'StandardsDeviceIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_StandardsDevice).default;
@@ -3804,7 +3804,7 @@ Object.defineProperty(exports, 'StandardsDevice', {
 
 var _StandardsFireball = require('./StandardsFireball');
 
-Object.defineProperty(exports, 'StandardsFireball', {
+Object.defineProperty(exports, 'StandardsFireballIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_StandardsFireball).default;
@@ -3813,7 +3813,7 @@ Object.defineProperty(exports, 'StandardsFireball', {
 
 var _StandardsHtml = require('./StandardsHtml5');
 
-Object.defineProperty(exports, 'StandardsHtml5', {
+Object.defineProperty(exports, 'StandardsHtml5Icon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_StandardsHtml).default;
@@ -3822,7 +3822,7 @@ Object.defineProperty(exports, 'StandardsHtml5', {
 
 var _StandardsMultimedia = require('./StandardsMultimedia');
 
-Object.defineProperty(exports, 'StandardsMultimedia', {
+Object.defineProperty(exports, 'StandardsMultimediaIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_StandardsMultimedia).default;
@@ -3831,7 +3831,7 @@ Object.defineProperty(exports, 'StandardsMultimedia', {
 
 var _StandardsOfflineStorage = require('./StandardsOfflineStorage');
 
-Object.defineProperty(exports, 'StandardsOfflineStorage', {
+Object.defineProperty(exports, 'StandardsOfflineStorageIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_StandardsOfflineStorage).default;
@@ -3840,7 +3840,7 @@ Object.defineProperty(exports, 'StandardsOfflineStorage', {
 
 var _StandardsPerformance = require('./StandardsPerformance');
 
-Object.defineProperty(exports, 'StandardsPerformance', {
+Object.defineProperty(exports, 'StandardsPerformanceIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_StandardsPerformance).default;
@@ -3849,7 +3849,7 @@ Object.defineProperty(exports, 'StandardsPerformance', {
 
 var _StandardsSematics = require('./StandardsSematics');
 
-Object.defineProperty(exports, 'StandardsSematics', {
+Object.defineProperty(exports, 'StandardsSematicsIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_StandardsSematics).default;
@@ -3858,7 +3858,7 @@ Object.defineProperty(exports, 'StandardsSematics', {
 
 var _StarHalf = require('./StarHalf');
 
-Object.defineProperty(exports, 'StarHalf', {
+Object.defineProperty(exports, 'StarHalfIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_StarHalf).default;
@@ -3867,7 +3867,7 @@ Object.defineProperty(exports, 'StarHalf', {
 
 var _Star = require('./Star');
 
-Object.defineProperty(exports, 'Star', {
+Object.defineProperty(exports, 'StarIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Star).default;
@@ -3876,7 +3876,7 @@ Object.defineProperty(exports, 'Star', {
 
 var _StepsOption = require('./StepsOption');
 
-Object.defineProperty(exports, 'StepsOption', {
+Object.defineProperty(exports, 'StepsOptionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_StepsOption).default;
@@ -3885,7 +3885,7 @@ Object.defineProperty(exports, 'StepsOption', {
 
 var _Steps = require('./Steps');
 
-Object.defineProperty(exports, 'Steps', {
+Object.defineProperty(exports, 'StepsIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Steps).default;
@@ -3894,7 +3894,7 @@ Object.defineProperty(exports, 'Steps', {
 
 var _StopFill = require('./StopFill');
 
-Object.defineProperty(exports, 'StopFill', {
+Object.defineProperty(exports, 'StopFillIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_StopFill).default;
@@ -3903,7 +3903,7 @@ Object.defineProperty(exports, 'StopFill', {
 
 var _Stop = require('./Stop');
 
-Object.defineProperty(exports, 'Stop', {
+Object.defineProperty(exports, 'StopIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Stop).default;
@@ -3912,7 +3912,7 @@ Object.defineProperty(exports, 'Stop', {
 
 var _Storage = require('./Storage');
 
-Object.defineProperty(exports, 'Storage', {
+Object.defineProperty(exports, 'StorageIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Storage).default;
@@ -3921,7 +3921,7 @@ Object.defineProperty(exports, 'Storage', {
 
 var _StreetView = require('./StreetView');
 
-Object.defineProperty(exports, 'StreetView', {
+Object.defineProperty(exports, 'StreetViewIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_StreetView).default;
@@ -3930,7 +3930,7 @@ Object.defineProperty(exports, 'StreetView', {
 
 var _SubtractCircle = require('./SubtractCircle');
 
-Object.defineProperty(exports, 'SubtractCircle', {
+Object.defineProperty(exports, 'SubtractCircleIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_SubtractCircle).default;
@@ -3939,7 +3939,7 @@ Object.defineProperty(exports, 'SubtractCircle', {
 
 var _Subtract = require('./Subtract');
 
-Object.defineProperty(exports, 'Subtract', {
+Object.defineProperty(exports, 'SubtractIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Subtract).default;
@@ -3948,7 +3948,7 @@ Object.defineProperty(exports, 'Subtract', {
 
 var _Support = require('./Support');
 
-Object.defineProperty(exports, 'Support', {
+Object.defineProperty(exports, 'SupportIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Support).default;
@@ -3957,7 +3957,7 @@ Object.defineProperty(exports, 'Support', {
 
 var _Sync = require('./Sync');
 
-Object.defineProperty(exports, 'Sync', {
+Object.defineProperty(exports, 'SyncIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Sync).default;
@@ -3966,7 +3966,7 @@ Object.defineProperty(exports, 'Sync', {
 
 var _System = require('./System');
 
-Object.defineProperty(exports, 'System', {
+Object.defineProperty(exports, 'SystemIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_System).default;
@@ -3975,7 +3975,7 @@ Object.defineProperty(exports, 'System', {
 
 var _TableAdd = require('./TableAdd');
 
-Object.defineProperty(exports, 'TableAdd', {
+Object.defineProperty(exports, 'TableAddIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_TableAdd).default;
@@ -3984,7 +3984,7 @@ Object.defineProperty(exports, 'TableAdd', {
 
 var _Table = require('./Table');
 
-Object.defineProperty(exports, 'Table', {
+Object.defineProperty(exports, 'TableIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Table).default;
@@ -3993,7 +3993,7 @@ Object.defineProperty(exports, 'Table', {
 
 var _Tag = require('./Tag');
 
-Object.defineProperty(exports, 'Tag', {
+Object.defineProperty(exports, 'TagIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Tag).default;
@@ -4002,7 +4002,7 @@ Object.defineProperty(exports, 'Tag', {
 
 var _Target = require('./Target');
 
-Object.defineProperty(exports, 'Target', {
+Object.defineProperty(exports, 'TargetIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Target).default;
@@ -4011,7 +4011,7 @@ Object.defineProperty(exports, 'Target', {
 
 var _Task = require('./Task');
 
-Object.defineProperty(exports, 'Task', {
+Object.defineProperty(exports, 'TaskIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Task).default;
@@ -4020,7 +4020,7 @@ Object.defineProperty(exports, 'Task', {
 
 var _Tasks = require('./Tasks');
 
-Object.defineProperty(exports, 'Tasks', {
+Object.defineProperty(exports, 'TasksIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Tasks).default;
@@ -4029,7 +4029,7 @@ Object.defineProperty(exports, 'Tasks', {
 
 var _Technology = require('./Technology');
 
-Object.defineProperty(exports, 'Technology', {
+Object.defineProperty(exports, 'TechnologyIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Technology).default;
@@ -4038,7 +4038,7 @@ Object.defineProperty(exports, 'Technology', {
 
 var _Template = require('./Template');
 
-Object.defineProperty(exports, 'Template', {
+Object.defineProperty(exports, 'TemplateIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Template).default;
@@ -4047,7 +4047,7 @@ Object.defineProperty(exports, 'Template', {
 
 var _Terminal = require('./Terminal');
 
-Object.defineProperty(exports, 'Terminal', {
+Object.defineProperty(exports, 'TerminalIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Terminal).default;
@@ -4056,7 +4056,7 @@ Object.defineProperty(exports, 'Terminal', {
 
 var _TestDesktop = require('./TestDesktop');
 
-Object.defineProperty(exports, 'TestDesktop', {
+Object.defineProperty(exports, 'TestDesktopIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_TestDesktop).default;
@@ -4065,7 +4065,7 @@ Object.defineProperty(exports, 'TestDesktop', {
 
 var _Test = require('./Test');
 
-Object.defineProperty(exports, 'Test', {
+Object.defineProperty(exports, 'TestIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Test).default;
@@ -4074,7 +4074,7 @@ Object.defineProperty(exports, 'Test', {
 
 var _TextWrap = require('./TextWrap');
 
-Object.defineProperty(exports, 'TextWrap', {
+Object.defineProperty(exports, 'TextWrapIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_TextWrap).default;
@@ -4083,7 +4083,7 @@ Object.defineProperty(exports, 'TextWrap', {
 
 var _Threats = require('./Threats');
 
-Object.defineProperty(exports, 'Threats', {
+Object.defineProperty(exports, 'ThreatsIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Threats).default;
@@ -4092,7 +4092,7 @@ Object.defineProperty(exports, 'Threats', {
 
 var _Ticket = require('./Ticket');
 
-Object.defineProperty(exports, 'Ticket', {
+Object.defineProperty(exports, 'TicketIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Ticket).default;
@@ -4101,7 +4101,7 @@ Object.defineProperty(exports, 'Ticket', {
 
 var _Tip = require('./Tip');
 
-Object.defineProperty(exports, 'Tip', {
+Object.defineProperty(exports, 'TipIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Tip).default;
@@ -4110,7 +4110,7 @@ Object.defineProperty(exports, 'Tip', {
 
 var _Toast = require('./Toast');
 
-Object.defineProperty(exports, 'Toast', {
+Object.defineProperty(exports, 'ToastIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Toast).default;
@@ -4119,7 +4119,7 @@ Object.defineProperty(exports, 'Toast', {
 
 var _Tools = require('./Tools');
 
-Object.defineProperty(exports, 'Tools', {
+Object.defineProperty(exports, 'ToolsIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Tools).default;
@@ -4128,7 +4128,7 @@ Object.defineProperty(exports, 'Tools', {
 
 var _Tooltip = require('./Tooltip');
 
-Object.defineProperty(exports, 'Tooltip', {
+Object.defineProperty(exports, 'TooltipIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Tooltip).default;
@@ -4137,7 +4137,7 @@ Object.defineProperty(exports, 'Tooltip', {
 
 var _TopCorner = require('./TopCorner');
 
-Object.defineProperty(exports, 'TopCorner', {
+Object.defineProperty(exports, 'TopCornerIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_TopCorner).default;
@@ -4146,7 +4146,7 @@ Object.defineProperty(exports, 'TopCorner', {
 
 var _Transaction = require('./Transaction');
 
-Object.defineProperty(exports, 'Transaction', {
+Object.defineProperty(exports, 'TransactionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Transaction).default;
@@ -4155,7 +4155,7 @@ Object.defineProperty(exports, 'Transaction', {
 
 var _Trash = require('./Trash');
 
-Object.defineProperty(exports, 'Trash', {
+Object.defineProperty(exports, 'TrashIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Trash).default;
@@ -4164,7 +4164,7 @@ Object.defineProperty(exports, 'Trash', {
 
 var _TreeOption = require('./TreeOption');
 
-Object.defineProperty(exports, 'TreeOption', {
+Object.defineProperty(exports, 'TreeOptionIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_TreeOption).default;
@@ -4173,7 +4173,7 @@ Object.defineProperty(exports, 'TreeOption', {
 
 var _Tree = require('./Tree');
 
-Object.defineProperty(exports, 'Tree', {
+Object.defineProperty(exports, 'TreeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Tree).default;
@@ -4182,7 +4182,7 @@ Object.defineProperty(exports, 'Tree', {
 
 var _Trigger = require('./Trigger');
 
-Object.defineProperty(exports, 'Trigger', {
+Object.defineProperty(exports, 'TriggerIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Trigger).default;
@@ -4191,7 +4191,7 @@ Object.defineProperty(exports, 'Trigger', {
 
 var _Trophy = require('./Trophy');
 
-Object.defineProperty(exports, 'Trophy', {
+Object.defineProperty(exports, 'TrophyIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Trophy).default;
@@ -4200,7 +4200,7 @@ Object.defineProperty(exports, 'Trophy', {
 
 var _Troubleshoot = require('./Troubleshoot');
 
-Object.defineProperty(exports, 'Troubleshoot', {
+Object.defineProperty(exports, 'TroubleshootIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Troubleshoot).default;
@@ -4209,7 +4209,7 @@ Object.defineProperty(exports, 'Troubleshoot', {
 
 var _Unlink = require('./Unlink');
 
-Object.defineProperty(exports, 'Unlink', {
+Object.defineProperty(exports, 'UnlinkIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Unlink).default;
@@ -4218,7 +4218,7 @@ Object.defineProperty(exports, 'Unlink', {
 
 var _Unlock = require('./Unlock');
 
-Object.defineProperty(exports, 'Unlock', {
+Object.defineProperty(exports, 'UnlockIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Unlock).default;
@@ -4227,7 +4227,7 @@ Object.defineProperty(exports, 'Unlock', {
 
 var _Up = require('./Up');
 
-Object.defineProperty(exports, 'Up', {
+Object.defineProperty(exports, 'UpIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Up).default;
@@ -4236,7 +4236,7 @@ Object.defineProperty(exports, 'Up', {
 
 var _Update = require('./Update');
 
-Object.defineProperty(exports, 'Update', {
+Object.defineProperty(exports, 'UpdateIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Update).default;
@@ -4245,7 +4245,7 @@ Object.defineProperty(exports, 'Update', {
 
 var _Upgrade = require('./Upgrade');
 
-Object.defineProperty(exports, 'Upgrade', {
+Object.defineProperty(exports, 'UpgradeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Upgrade).default;
@@ -4254,7 +4254,7 @@ Object.defineProperty(exports, 'Upgrade', {
 
 var _Upload = require('./Upload');
 
-Object.defineProperty(exports, 'Upload', {
+Object.defineProperty(exports, 'UploadIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Upload).default;
@@ -4263,7 +4263,7 @@ Object.defineProperty(exports, 'Upload', {
 
 var _UserAdd = require('./UserAdd');
 
-Object.defineProperty(exports, 'UserAdd', {
+Object.defineProperty(exports, 'UserAddIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_UserAdd).default;
@@ -4272,7 +4272,7 @@ Object.defineProperty(exports, 'UserAdd', {
 
 var _UserAdmin = require('./UserAdmin');
 
-Object.defineProperty(exports, 'UserAdmin', {
+Object.defineProperty(exports, 'UserAdminIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_UserAdmin).default;
@@ -4281,7 +4281,7 @@ Object.defineProperty(exports, 'UserAdmin', {
 
 var _UserExpert = require('./UserExpert');
 
-Object.defineProperty(exports, 'UserExpert', {
+Object.defineProperty(exports, 'UserExpertIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_UserExpert).default;
@@ -4290,7 +4290,7 @@ Object.defineProperty(exports, 'UserExpert', {
 
 var _UserFemale = require('./UserFemale');
 
-Object.defineProperty(exports, 'UserFemale', {
+Object.defineProperty(exports, 'UserFemaleIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_UserFemale).default;
@@ -4299,7 +4299,7 @@ Object.defineProperty(exports, 'UserFemale', {
 
 var _UserManager = require('./UserManager');
 
-Object.defineProperty(exports, 'UserManager', {
+Object.defineProperty(exports, 'UserManagerIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_UserManager).default;
@@ -4308,7 +4308,7 @@ Object.defineProperty(exports, 'UserManager', {
 
 var _UserNew = require('./UserNew');
 
-Object.defineProperty(exports, 'UserNew', {
+Object.defineProperty(exports, 'UserNewIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_UserNew).default;
@@ -4317,7 +4317,7 @@ Object.defineProperty(exports, 'UserNew', {
 
 var _UserPolice = require('./UserPolice');
 
-Object.defineProperty(exports, 'UserPolice', {
+Object.defineProperty(exports, 'UserPoliceIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_UserPolice).default;
@@ -4326,7 +4326,7 @@ Object.defineProperty(exports, 'UserPolice', {
 
 var _UserSettings = require('./UserSettings');
 
-Object.defineProperty(exports, 'UserSettings', {
+Object.defineProperty(exports, 'UserSettingsIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_UserSettings).default;
@@ -4335,7 +4335,7 @@ Object.defineProperty(exports, 'UserSettings', {
 
 var _UserWorker = require('./UserWorker');
 
-Object.defineProperty(exports, 'UserWorker', {
+Object.defineProperty(exports, 'UserWorkerIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_UserWorker).default;
@@ -4344,7 +4344,7 @@ Object.defineProperty(exports, 'UserWorker', {
 
 var _User = require('./User');
 
-Object.defineProperty(exports, 'User', {
+Object.defineProperty(exports, 'UserIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_User).default;
@@ -4353,7 +4353,7 @@ Object.defineProperty(exports, 'User', {
 
 var _Validate = require('./Validate');
 
-Object.defineProperty(exports, 'Validate', {
+Object.defineProperty(exports, 'ValidateIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Validate).default;
@@ -4362,7 +4362,7 @@ Object.defineProperty(exports, 'Validate', {
 
 var _Video = require('./Video');
 
-Object.defineProperty(exports, 'Video', {
+Object.defineProperty(exports, 'VideoIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Video).default;
@@ -4371,7 +4371,7 @@ Object.defineProperty(exports, 'Video', {
 
 var _View = require('./View');
 
-Object.defineProperty(exports, 'View', {
+Object.defineProperty(exports, 'ViewIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_View).default;
@@ -4380,7 +4380,7 @@ Object.defineProperty(exports, 'View', {
 
 var _VirtualMachine = require('./VirtualMachine');
 
-Object.defineProperty(exports, 'VirtualMachine', {
+Object.defineProperty(exports, 'VirtualMachineIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_VirtualMachine).default;
@@ -4389,7 +4389,7 @@ Object.defineProperty(exports, 'VirtualMachine', {
 
 var _VmMaintenance = require('./VmMaintenance');
 
-Object.defineProperty(exports, 'VmMaintenance', {
+Object.defineProperty(exports, 'VmMaintenanceIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_VmMaintenance).default;
@@ -4398,7 +4398,7 @@ Object.defineProperty(exports, 'VmMaintenance', {
 
 var _VolumeLow = require('./VolumeLow');
 
-Object.defineProperty(exports, 'VolumeLow', {
+Object.defineProperty(exports, 'VolumeLowIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_VolumeLow).default;
@@ -4407,7 +4407,7 @@ Object.defineProperty(exports, 'VolumeLow', {
 
 var _VolumeMute = require('./VolumeMute');
 
-Object.defineProperty(exports, 'VolumeMute', {
+Object.defineProperty(exports, 'VolumeMuteIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_VolumeMute).default;
@@ -4416,7 +4416,7 @@ Object.defineProperty(exports, 'VolumeMute', {
 
 var _Volume = require('./Volume');
 
-Object.defineProperty(exports, 'Volume', {
+Object.defineProperty(exports, 'VolumeIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Volume).default;
@@ -4425,7 +4425,7 @@ Object.defineProperty(exports, 'Volume', {
 
 var _Vulnerability = require('./Vulnerability');
 
-Object.defineProperty(exports, 'Vulnerability', {
+Object.defineProperty(exports, 'VulnerabilityIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Vulnerability).default;
@@ -4434,7 +4434,7 @@ Object.defineProperty(exports, 'Vulnerability', {
 
 var _Waypoint = require('./Waypoint');
 
-Object.defineProperty(exports, 'Waypoint', {
+Object.defineProperty(exports, 'WaypointIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Waypoint).default;
@@ -4443,7 +4443,7 @@ Object.defineProperty(exports, 'Waypoint', {
 
 var _Workshop = require('./Workshop');
 
-Object.defineProperty(exports, 'Workshop', {
+Object.defineProperty(exports, 'WorkshopIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Workshop).default;
@@ -4452,7 +4452,7 @@ Object.defineProperty(exports, 'Workshop', {
 
 var _ZoomIn = require('./ZoomIn');
 
-Object.defineProperty(exports, 'ZoomIn', {
+Object.defineProperty(exports, 'ZoomInIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_ZoomIn).default;
@@ -4461,7 +4461,7 @@ Object.defineProperty(exports, 'ZoomIn', {
 
 var _ZoomOut = require('./ZoomOut');
 
-Object.defineProperty(exports, 'ZoomOut', {
+Object.defineProperty(exports, 'ZoomOutIcon', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_ZoomOut).default;
