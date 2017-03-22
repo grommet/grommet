@@ -295,6 +295,10 @@ export default class Search extends Component {
           suggestion: suggestion
         }, true);
       }
+    } else {
+      onSelect({
+        target: this._inputRef || this._controlRef
+      }, false);
     }
   }
 
