@@ -252,7 +252,7 @@ export default class TextInput extends Component {
   }
 
   _renderLabel (suggestion) {
-    if (typeof suggestion === 'object') {
+    if (typeof suggestion === 'object' && suggestion !== null) {
       return suggestion.label || suggestion.value;
     } else {
       return suggestion;
