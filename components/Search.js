@@ -236,8 +236,12 @@ var Search = function (_Component) {
     value: function _onInputKeyDown(event) {
       var _props3 = this.props,
           inline = _props3.inline,
+          onSelect = _props3.onSelect,
           suggestions = _props3.suggestions,
+          activeSuggestionIndex = _props3.activeSuggestionIndex,
           onKeyDown = _props3.onKeyDown;
+
+      var enter = 13;
       var dropActive = this.state.dropActive;
 
       if (suggestions) {
@@ -251,6 +255,14 @@ var Search = function (_Component) {
             this._onAddDrop();
           }
         }
+      }
+      if (!dropActive && onSelect && event.keyCode === enter) {
+        var suggestion = suggestions[activeSuggestionIndex];
+
+        onSelect({
+          target: this._inputRef || this._controlRef,
+          suggestion: suggestion
+        }, false);
       }
       if (onKeyDown) {
         onKeyDown(event);
@@ -383,6 +395,10 @@ var Search = function (_Component) {
             }, true);
           }
         })();
+      } else {
+        onSelect({
+          target: this._inputRef || this._controlRef
+        }, false);
       }
     }
   }, {
@@ -594,6 +610,7 @@ Search.propTypes = {
   inline: _react.PropTypes.bool,
   onDOMChange: _react.PropTypes.func,
   onSelect: _react.PropTypes.func,
+  onKeyDown: _react.PropTypes.func,
   pad: _react.PropTypes.oneOf(['small', 'medium']),
   placeHolder: _react.PropTypes.string,
   responsive: _react.PropTypes.bool,
