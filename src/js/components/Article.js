@@ -25,7 +25,6 @@ export default class Article extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this._onFocus = this._onFocus.bind(this);
     this._onScroll = this._onScroll.bind(this);
     this._onWheel = this._onWheel.bind(this);
     this._onTouchStart = this._onTouchStart.bind(this);
@@ -455,20 +454,6 @@ export default class Article extends Component {
     }
   }
 
-  _onFocus (e) {
-    const componentElement = findDOMNode(this._componentRef);
-    const children = componentElement.children;
-    // don't count controls added after main children
-    const childCount = React.Children.count(this.props.children);
-    for (let i = 0; i < childCount; i++) {
-      const child = children[i];
-      if (child.contains(e.target)) {
-        this._onSelect(i);
-        return false;
-      }
-    }
-  }
-
   _onResponsive (small) {
     this.setState({ narrow: small });
   }
@@ -644,8 +629,8 @@ export default class Article extends Component {
     return (
       <Box {...restProps} {...boxProps} ref={ref => this._componentRef = ref}
         tag='article' className={classes} primary={primary}
-        onFocus={this._onFocus} onScroll={this._onScroll}
-        onTouchStart={this._onTouchStart} onTouchMove={this._onTouchMove}>
+        onScroll={this._onScroll} onTouchStart={this._onTouchStart}
+        onTouchMove={this._onTouchMove}>
         {children}
         {controls}
         {anchorStepNode}
