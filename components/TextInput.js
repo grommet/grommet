@@ -324,7 +324,7 @@ var TextInput = function (_Component) {
   }, {
     key: '_renderLabel',
     value: function _renderLabel(suggestion) {
-      if ((typeof suggestion === 'undefined' ? 'undefined' : _typeof(suggestion)) === 'object') {
+      if (suggestion && (typeof suggestion === 'undefined' ? 'undefined' : _typeof(suggestion)) === 'object') {
         return suggestion.label || suggestion.value;
       } else {
         return suggestion;
