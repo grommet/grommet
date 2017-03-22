@@ -6,8 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -228,33 +226,27 @@ var Tiles = function (_Component) {
       var _this2 = this;
 
       if ((0, _reactDom.findDOMNode)(this.tilesRef).contains(document.activeElement)) {
-        var _ret = function () {
-          event.preventDefault();
-          var activeTile = _this2.state.activeTile;
+        event.preventDefault();
+        var activeTile = this.state.activeTile;
 
-          var rows = (0, _reactDom.findDOMNode)(_this2.tilesRef).querySelectorAll('.' + TILE);
-          if (rows && rows.length > 0) {
-            if (activeTile === undefined) {
-              rows[0].classList.add(ACTIVE_CLASS);
-              _this2.setState({ activeTile: 0 }, function () {
-                _this2._announceTile(rows[_this2.state.activeTile].innerText);
-              });
-            } else if (activeTile - 1 >= 0) {
-              rows[activeTile].classList.remove(ACTIVE_CLASS);
-              rows[activeTile - 1].classList.add(ACTIVE_CLASS);
-              _this2.setState({ activeTile: activeTile - 1 }, function () {
-                _this2._announceTile(rows[_this2.state.activeTile].innerText);
-              });
-            }
+        var rows = (0, _reactDom.findDOMNode)(this.tilesRef).querySelectorAll('.' + TILE);
+        if (rows && rows.length > 0) {
+          if (activeTile === undefined) {
+            rows[0].classList.add(ACTIVE_CLASS);
+            this.setState({ activeTile: 0 }, function () {
+              _this2._announceTile(rows[_this2.state.activeTile].innerText);
+            });
+          } else if (activeTile - 1 >= 0) {
+            rows[activeTile].classList.remove(ACTIVE_CLASS);
+            rows[activeTile - 1].classList.add(ACTIVE_CLASS);
+            this.setState({ activeTile: activeTile - 1 }, function () {
+              _this2._announceTile(rows[_this2.state.activeTile].innerText);
+            });
           }
+        }
 
-          //stop event propagation
-          return {
-            v: true
-          };
-        }();
-
-        if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
+        //stop event propagation
+        return true;
       }
     }
   }, {
@@ -263,33 +255,27 @@ var Tiles = function (_Component) {
       var _this3 = this;
 
       if ((0, _reactDom.findDOMNode)(this.tilesRef).contains(document.activeElement)) {
-        var _ret2 = function () {
-          event.preventDefault();
-          var activeTile = _this3.state.activeTile;
+        event.preventDefault();
+        var activeTile = this.state.activeTile;
 
-          var rows = (0, _reactDom.findDOMNode)(_this3.tilesRef).querySelectorAll('.' + TILE);
-          if (rows && rows.length > 0) {
-            if (activeTile === undefined) {
-              rows[0].classList.add(ACTIVE_CLASS);
-              _this3.setState({ activeTile: 0 }, function () {
-                _this3._announceTile(rows[_this3.state.activeTile].innerText);
-              });
-            } else if (activeTile + 1 <= rows.length - 1) {
-              rows[activeTile].classList.remove(ACTIVE_CLASS);
-              rows[activeTile + 1].classList.add(ACTIVE_CLASS);
-              _this3.setState({ activeTile: activeTile + 1 }, function () {
-                _this3._announceTile(rows[_this3.state.activeTile].innerText);
-              });
-            }
+        var rows = (0, _reactDom.findDOMNode)(this.tilesRef).querySelectorAll('.' + TILE);
+        if (rows && rows.length > 0) {
+          if (activeTile === undefined) {
+            rows[0].classList.add(ACTIVE_CLASS);
+            this.setState({ activeTile: 0 }, function () {
+              _this3._announceTile(rows[_this3.state.activeTile].innerText);
+            });
+          } else if (activeTile + 1 <= rows.length - 1) {
+            rows[activeTile].classList.remove(ACTIVE_CLASS);
+            rows[activeTile + 1].classList.add(ACTIVE_CLASS);
+            this.setState({ activeTile: activeTile + 1 }, function () {
+              _this3._announceTile(rows[_this3.state.activeTile].innerText);
+            });
           }
+        }
 
-          //stop event propagation
-          return {
-            v: true
-          };
-        }();
-
-        if ((typeof _ret2 === 'undefined' ? 'undefined' : _typeof(_ret2)) === "object") return _ret2.v;
+        //stop event propagation
+        return true;
       }
     }
   }, {
@@ -360,50 +346,46 @@ var Tiles = function (_Component) {
   }, {
     key: '_layout',
     value: function _layout() {
-      var _this4 = this;
-
       var direction = this.props.direction;
 
 
       if ('row' === direction) {
-        (function () {
-          // determine if we have more tiles than room to fit
-          var tiles = (0, _reactDom.findDOMNode)(_this4.tilesRef);
+        // determine if we have more tiles than room to fit
+        var tiles = (0, _reactDom.findDOMNode)(this.tilesRef);
 
-          // 20 is to allow some fuzziness as scrollbars come and go
-          var newState = {
-            overflow: tiles.scrollWidth > tiles.offsetWidth + 20,
-            overflowStart: tiles.scrollLeft <= 20,
-            overflowEnd: tiles.scrollLeft >= tiles.scrollWidth - tiles.offsetWidth,
-            scrollWidth: tiles.scrollWidth
-          };
+        // 20 is to allow some fuzziness as scrollbars come and go
+        var newState = {
+          overflow: tiles.scrollWidth > tiles.offsetWidth + 20,
+          overflowStart: tiles.scrollLeft <= 20,
+          overflowEnd: tiles.scrollLeft >= tiles.scrollWidth - tiles.offsetWidth,
+          scrollWidth: tiles.scrollWidth
+        };
 
-          var state = {
-            overflow: _this4.state.overflow,
-            overflowStart: _this4.state.overflowStart,
-            overflowEnd: _this4.state.overflowEnd,
-            scrollWidth: _this4.state.scrollWidth
-          };
+        var state = {
+          overflow: this.state.overflow,
+          overflowStart: this.state.overflowStart,
+          overflowEnd: this.state.overflowEnd,
+          scrollWidth: this.state.scrollWidth
+        };
 
-          // Shallow compare states.
-          if (JSON.stringify(newState) !== JSON.stringify(state)) {
-            _this4.setState(_extends({}, newState));
+        // Shallow compare states.
+        if (JSON.stringify(newState) !== JSON.stringify(state)) {
+          this.setState(_extends({}, newState));
+        }
+
+        // mark any tiles that might be clipped
+        var rect = tiles.getBoundingClientRect();
+        var children = tiles.querySelectorAll('.' + TILE);
+
+        Array.from(children).map(function (child, index) {
+          var childRect = child.getBoundingClientRect();
+          // 12 accounts for padding
+          if (childRect.left + 12 < rect.left || childRect.right - 12 > rect.right) {
+            child.classList.add(TILE + '--eclipsed');
+          } else {
+            child.classList.remove(TILE + '--eclipsed');
           }
-
-          // mark any tiles that might be clipped
-          var rect = tiles.getBoundingClientRect();
-          var children = tiles.querySelectorAll('.' + TILE);
-
-          Array.from(children).map(function (child, index) {
-            var childRect = child.getBoundingClientRect();
-            // 12 accounts for padding
-            if (childRect.left + 12 < rect.left || childRect.right - 12 > rect.right) {
-              child.classList.add(TILE + '--eclipsed');
-            } else {
-              child.classList.remove(TILE + '--eclipsed');
-            }
-          });
-        })();
+        });
       }
     }
   }, {
@@ -485,7 +467,7 @@ var Tiles = function (_Component) {
     key: 'render',
     value: function render() {
       var _classnames,
-          _this5 = this;
+          _this4 = this;
 
       var _props5 = this.props,
           a11yTitle = _props5.a11yTitle,
@@ -519,14 +501,14 @@ var Tiles = function (_Component) {
         more = _react2.default.createElement(
           'div',
           { ref: function ref(_ref) {
-              return _this5.moreRef = _ref;
+              return _this4.moreRef = _ref;
             }, className: CLASS_ROOT + '__more' },
           _react2.default.createElement(_Spinning2.default, null)
         );
       }
 
       var tileContents = _react.Children.map(children, function (element) {
-        return _this5._renderChild(element);
+        return _this4._renderChild(element);
       });
 
       var selectableProps = void 0;
@@ -539,20 +521,20 @@ var Tiles = function (_Component) {
           tabIndex: '0',
           onClick: this._onClick,
           onMouseDown: function onMouseDown(event) {
-            _this5.setState({ mouseActive: true });
+            _this4.setState({ mouseActive: true });
             if (_onMouseDown) {
               _onMouseDown(event);
             }
           },
           onMouseUp: function onMouseUp(event) {
-            _this5.setState({ mouseActive: false });
+            _this4.setState({ mouseActive: false });
             if (_onMouseUp) {
               _onMouseUp(event);
             }
           },
           onFocus: function onFocus(event) {
             if (mouseActive === false) {
-              _this5.setState({ focus: true });
+              _this4.setState({ focus: true });
             }
             if (_onFocus) {
               _onFocus(event);
@@ -560,10 +542,10 @@ var Tiles = function (_Component) {
           },
           onBlur: function onBlur(event) {
             if (activeTile) {
-              var rows = (0, _reactDom.findDOMNode)(_this5.tilesRef).querySelectorAll('.' + TILE);
+              var rows = (0, _reactDom.findDOMNode)(_this4.tilesRef).querySelectorAll('.' + TILE);
               rows[activeTile].classList.remove(ACTIVE_CLASS);
             }
-            _this5.setState({ focus: false, activeTile: undefined });
+            _this4.setState({ focus: false, activeTile: undefined });
             if (_onBlur) {
               _onBlur(event);
             }
@@ -574,7 +556,7 @@ var Tiles = function (_Component) {
       var contents = _react2.default.createElement(
         _Box2.default,
         _extends({ ref: function ref(_ref2) {
-            return _this5.tilesRef = _ref2;
+            return _this4.tilesRef = _ref2;
           } }, other, {
           wrap: direction ? false : true,
           direction: direction ? direction : 'row',

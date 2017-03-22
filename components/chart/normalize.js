@@ -186,19 +186,17 @@ function normalize(Series, granularity) {
 
   //Handling the case of single array that needs to be normalized
   if (!Array.isArray(Series[0][0])) {
-    (function () {
-      var seriesYValues = [];
-      var SeriesZip = _lodash2.default.apply(undefined, _toConsumableArray(Series));
-      xAxis.map(function (xValue) {
-        var index = SeriesZip[0].indexOf(xValue);
-        if (index > -1) {
-          seriesYValues.push(parseInt(SeriesZip[1][index], 10));
-        } else {
-          seriesYValues.push(undefined);
-        }
-      });
-      normalizedYValues = seriesYValues;
-    })();
+    var seriesYValues = [];
+    var SeriesZip = _lodash2.default.apply(undefined, _toConsumableArray(Series));
+    xAxis.map(function (xValue) {
+      var index = SeriesZip[0].indexOf(xValue);
+      if (index > -1) {
+        seriesYValues.push(parseInt(SeriesZip[1][index], 10));
+      } else {
+        seriesYValues.push(undefined);
+      }
+    });
+    normalizedYValues = seriesYValues;
   } else {
     Series.map(function (series) {
       var seriesYValues = [];

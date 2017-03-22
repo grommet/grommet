@@ -37,14 +37,12 @@ function clearClass(options) {
 function setClassFromIndexes(options) {
   clearClass(options);
   if (options && options.containerElement && options.selectedIndexes) {
-    (function () {
-      var items = options.containerElement.querySelectorAll(options.childSelector);
-      options.selectedIndexes.forEach(function (index) {
-        if (items[index]) {
-          items[index].classList.add(options.selectedClass);
-        }
-      });
-    })();
+    var items = options.containerElement.querySelectorAll(options.childSelector);
+    options.selectedIndexes.forEach(function (index) {
+      if (items[index]) {
+        items[index].classList.add(options.selectedClass);
+      }
+    });
   }
 }
 
@@ -106,36 +104,32 @@ function onClick(event, options) {
       selectedIndexes = options.priorSelectedIndexes.slice(0);
 
       if (event.shiftKey) {
-        var i;
 
-        (function () {
-
-          // select from nearest selected item to the currently selected item
-          var closestIndex = -1;
-          selectedIndexes.forEach(function (selectIndex, arrayIndex) {
-            if (-1 === closestIndex) {
-              closestIndex = selectIndex;
-            } else if (Math.abs(indexInContainer - selectIndex) < Math.abs(indexInContainer - closestIndex)) {
-              closestIndex = selectIndex;
-            }
-          });
-
-          for (i = indexInContainer; i !== closestIndex;) {
-            selectedIndexes.push(i);
-            if (closestIndex < indexInContainer) {
-              i -= 1;
-            } else {
-              i += 1;
-            }
+        // select from nearest selected item to the currently selected item
+        var closestIndex = -1;
+        selectedIndexes.forEach(function (selectIndex, arrayIndex) {
+          if (-1 === closestIndex) {
+            closestIndex = selectIndex;
+          } else if (Math.abs(indexInContainer - selectIndex) < Math.abs(indexInContainer - closestIndex)) {
+            closestIndex = selectIndex;
           }
+        });
 
-          if (indexInPrior > -1) {
-            selectedIndexes.splice(indexInPrior, 1);
+        for (var i = indexInContainer; i !== closestIndex;) {
+          selectedIndexes.push(i);
+          if (closestIndex < indexInContainer) {
+            i -= 1;
+          } else {
+            i += 1;
           }
+        }
 
-          // Remove text selection. This often happens when shift multi-selecting
-          window.getSelection().removeAllRanges();
-        })();
+        if (indexInPrior > -1) {
+          selectedIndexes.splice(indexInPrior, 1);
+        }
+
+        // Remove text selection. This often happens when shift multi-selecting
+        window.getSelection().removeAllRanges();
       } else {
         // toggle
         if (-1 === indexInPrior) {

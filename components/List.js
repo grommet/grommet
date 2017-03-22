@@ -6,8 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -186,33 +184,27 @@ var List = function (_Component) {
       var _this2 = this;
 
       if (this.listRef.contains(document.activeElement)) {
-        var _ret = function () {
-          event.preventDefault();
-          var activeItem = _this2.state.activeItem;
+        event.preventDefault();
+        var activeItem = this.state.activeItem;
 
-          var rows = _this2.listRef.querySelectorAll('ul li');
-          if (rows && rows.length > 0) {
-            if (activeItem === undefined) {
-              rows[0].classList.add(ACTIVE_CLASS);
-              _this2.setState({ activeItem: 0 }, function () {
-                _this2._announceItem(rows[_this2.state.activeItem].innerText);
-              });
-            } else if (activeItem - 1 >= 0) {
-              rows[activeItem].classList.remove(ACTIVE_CLASS);
-              rows[activeItem - 1].classList.add(ACTIVE_CLASS);
-              _this2.setState({ activeItem: activeItem - 1 }, function () {
-                _this2._announceItem(rows[_this2.state.activeItem].innerText);
-              });
-            }
+        var rows = this.listRef.querySelectorAll('ul li');
+        if (rows && rows.length > 0) {
+          if (activeItem === undefined) {
+            rows[0].classList.add(ACTIVE_CLASS);
+            this.setState({ activeItem: 0 }, function () {
+              _this2._announceItem(rows[_this2.state.activeItem].innerText);
+            });
+          } else if (activeItem - 1 >= 0) {
+            rows[activeItem].classList.remove(ACTIVE_CLASS);
+            rows[activeItem - 1].classList.add(ACTIVE_CLASS);
+            this.setState({ activeItem: activeItem - 1 }, function () {
+              _this2._announceItem(rows[_this2.state.activeItem].innerText);
+            });
           }
+        }
 
-          //stop event propagation
-          return {
-            v: true
-          };
-        }();
-
-        if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
+        //stop event propagation
+        return true;
       }
     }
   }, {
@@ -221,33 +213,27 @@ var List = function (_Component) {
       var _this3 = this;
 
       if (this.listRef.contains(document.activeElement)) {
-        var _ret2 = function () {
-          event.preventDefault();
-          var activeItem = _this3.state.activeItem;
+        event.preventDefault();
+        var activeItem = this.state.activeItem;
 
-          var rows = _this3.listRef.querySelectorAll('ul li');
-          if (rows && rows.length > 0) {
-            if (activeItem === undefined) {
-              rows[0].classList.add(ACTIVE_CLASS);
-              _this3.setState({ activeItem: 0 }, function () {
-                _this3._announceItem(rows[_this3.state.activeItem].innerText);
-              });
-            } else if (activeItem + 1 <= rows.length - 1) {
-              rows[activeItem].classList.remove(ACTIVE_CLASS);
-              rows[activeItem + 1].classList.add(ACTIVE_CLASS);
-              _this3.setState({ activeItem: activeItem + 1 }, function () {
-                _this3._announceItem(rows[_this3.state.activeItem].innerText);
-              });
-            }
+        var rows = this.listRef.querySelectorAll('ul li');
+        if (rows && rows.length > 0) {
+          if (activeItem === undefined) {
+            rows[0].classList.add(ACTIVE_CLASS);
+            this.setState({ activeItem: 0 }, function () {
+              _this3._announceItem(rows[_this3.state.activeItem].innerText);
+            });
+          } else if (activeItem + 1 <= rows.length - 1) {
+            rows[activeItem].classList.remove(ACTIVE_CLASS);
+            rows[activeItem + 1].classList.add(ACTIVE_CLASS);
+            this.setState({ activeItem: activeItem + 1 }, function () {
+              _this3._announceItem(rows[_this3.state.activeItem].innerText);
+            });
           }
+        }
 
-          //stop event propagation
-          return {
-            v: true
-          };
-        }();
-
-        if ((typeof _ret2 === 'undefined' ? 'undefined' : _typeof(_ret2)) === "object") return _ret2.v;
+        //stop event propagation
+        return true;
       }
     }
   }, {

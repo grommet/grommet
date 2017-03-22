@@ -258,18 +258,16 @@ var SearchInput = function (_Component) {
 
       this.setState({ dropActive: false });
       if (activeSuggestionIndex >= 0) {
-        (function () {
-          event.preventDefault(); // prevent submitting forms
-          var suggestion = suggestions[activeSuggestionIndex];
-          _this2.setState({ value: suggestion }, function () {
-            var suggestionMessage = _this2._renderLabel(suggestion);
-            var selectedMessage = _Intl2.default.getMessage(intl, 'Selected');
-            (0, _Announcer.announce)(suggestionMessage + ' ' + selectedMessage);
-          });
-          if (onSelect) {
-            onSelect({ target: _this2.inputRef, suggestion: suggestion });
-          }
-        })();
+        event.preventDefault(); // prevent submitting forms
+        var suggestion = suggestions[activeSuggestionIndex];
+        this.setState({ value: suggestion }, function () {
+          var suggestionMessage = _this2._renderLabel(suggestion);
+          var selectedMessage = _Intl2.default.getMessage(intl, 'Selected');
+          (0, _Announcer.announce)(suggestionMessage + ' ' + selectedMessage);
+        });
+        if (onSelect) {
+          onSelect({ target: this.inputRef, suggestion: suggestion });
+        }
       }
     }
   }, {

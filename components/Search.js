@@ -381,20 +381,18 @@ var Search = function (_Component) {
 
       this._onRemoveDrop();
       if (activeSuggestionIndex >= 0) {
-        (function () {
-          var suggestion = suggestions[activeSuggestionIndex];
-          _this2.setState({ value: suggestion }, function () {
-            var suggestionMessage = _this2._renderLabel(suggestion);
-            var selectedMessage = _Intl2.default.getMessage(intl, 'Selected');
-            (0, _Announcer.announce)(suggestionMessage + ' ' + selectedMessage);
-          });
-          if (onSelect) {
-            onSelect({
-              target: _this2._inputRef || _this2._controlRef,
-              suggestion: suggestion
-            }, true);
-          }
-        })();
+        var suggestion = suggestions[activeSuggestionIndex];
+        this.setState({ value: suggestion }, function () {
+          var suggestionMessage = _this2._renderLabel(suggestion);
+          var selectedMessage = _Intl2.default.getMessage(intl, 'Selected');
+          (0, _Announcer.announce)(suggestionMessage + ' ' + selectedMessage);
+        });
+        if (onSelect) {
+          onSelect({
+            target: this._inputRef || this._controlRef,
+            suggestion: suggestion
+          }, true);
+        }
       } else {
         onSelect({
           target: this._inputRef || this._controlRef

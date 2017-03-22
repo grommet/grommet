@@ -60,16 +60,14 @@ var Collapse = function (_Component) {
     value: function componentWillEnter(callback) {
       var node = _reactDom2.default.findDOMNode(this);
       if (node) {
-        (function () {
-          var contentHeight = node.clientHeight;
-          node.classList.remove('animate');
-          node.style.height = 0;
-          setTimeout(function () {
-            node.classList.add('animate');
-            node.style.height = contentHeight + 'px';
-            setTimeout(callback, parseFloat(getComputedStyle(node).transitionDuration) * 1000);
-          });
-        })();
+        var contentHeight = node.clientHeight;
+        node.classList.remove('animate');
+        node.style.height = 0;
+        setTimeout(function () {
+          node.classList.add('animate');
+          node.style.height = contentHeight + 'px';
+          setTimeout(callback, parseFloat(getComputedStyle(node).transitionDuration) * 1000);
+        });
       }
     }
   }, {

@@ -166,8 +166,6 @@ var Chart = function (_Component) {
   }, {
     key: '_layout',
     value: function _layout() {
-      var _this2 = this;
-
       var _props = this.props,
           horizontalAlignWith = _props.horizontalAlignWith,
           verticalAlignWith = _props.verticalAlignWith,
@@ -229,19 +227,17 @@ var Chart = function (_Component) {
         });
 
         if (onMaxCount) {
-          (function () {
-            var maxCount = void 0;
-            if (vertical) {
-              maxCount = Math.floor(alignWidth / (4 * _utils.padding));
-            } else {
-              maxCount = Math.floor(alignHeight / (4 * _utils.padding));
-            }
-            if (maxCount !== _this2.state.maxCount) {
-              _this2.setState({ maxCount: maxCount }, function () {
-                onMaxCount(maxCount);
-              });
-            }
-          })();
+          var maxCount = void 0;
+          if (vertical) {
+            maxCount = Math.floor(alignWidth / (4 * _utils.padding));
+          } else {
+            maxCount = Math.floor(alignHeight / (4 * _utils.padding));
+          }
+          if (maxCount !== this.state.maxCount) {
+            this.setState({ maxCount: maxCount }, function () {
+              onMaxCount(maxCount);
+            });
+          }
         }
       }
     }
@@ -249,7 +245,7 @@ var Chart = function (_Component) {
     key: 'render',
     value: function render() {
       var _classnames,
-          _this3 = this;
+          _this2 = this;
 
       var _props2 = this.props,
           a11yTitle = _props2.a11yTitle,
@@ -346,7 +342,7 @@ var Chart = function (_Component) {
       return _react2.default.createElement(
         'div',
         _extends({ ref: function ref(_ref) {
-            return _this3.chartRef = _ref;
+            return _this2.chartRef = _ref;
           } }, props, { className: classes,
           'aria-label': ariaLabel, role: 'group' }),
         children

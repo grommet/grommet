@@ -107,7 +107,7 @@ Icon.icon = true;
 Icon.propTypes = {
   a11yTitle: _react.PropTypes.string,
   colorIndex: _react.PropTypes.string,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
+  size: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'huge']),
   responsive: _react.PropTypes.bool
 };
 module.exports = exports['default'];

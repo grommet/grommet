@@ -354,22 +354,20 @@ var Article = function (_Component) {
             // prevent Article horizontal scrolling while scrolling vertically
             componentElement.scrollLeft += rect.left;
           } else {
-            (function () {
-              var scrollingRight = _this4._priorScrollLeft < componentElement.scrollLeft;
-              // once we stop scrolling, align with child boundaries
-              clearTimeout(_this4._scrollTimer);
-              _this4._scrollTimer = setTimeout(function () {
-                if (!_this4._resizing) {
-                  var indexes = _this4._visibleIndexes();
-                  if (indexes.length > 1 && scrollingRight) {
-                    _this4._onSelect(indexes[1]);
-                  } else {
-                    _this4._onSelect(indexes[0]);
-                  }
+            var scrollingRight = this._priorScrollLeft < componentElement.scrollLeft;
+            // once we stop scrolling, align with child boundaries
+            clearTimeout(this._scrollTimer);
+            this._scrollTimer = setTimeout(function () {
+              if (!_this4._resizing) {
+                var indexes = _this4._visibleIndexes();
+                if (indexes.length > 1 && scrollingRight) {
+                  _this4._onSelect(indexes[1]);
+                } else {
+                  _this4._onSelect(indexes[0]);
                 }
-              }, 100);
-              _this4._priorScrollLeft = componentElement.scrollLeft;
-            })();
+              }
+            }, 100);
+            this._priorScrollLeft = componentElement.scrollLeft;
           }
         } else if (event.target.parentNode === componentElement) {
           // scrolling child

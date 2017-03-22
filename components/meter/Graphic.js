@@ -308,8 +308,6 @@ var Graphic = function (_Component) {
   }, {
     key: '_renderA11YDesc',
     value: function _renderA11YDesc() {
-      var _this5 = this;
-
       var a11yDesc = this.props.a11yDesc;
       if (!a11yDesc) {
         var valueLabel = _Intl2.default.getMessage(this.context.intl, 'Value');
@@ -326,14 +324,12 @@ var Graphic = function (_Component) {
         }
 
         if (this.props.thresholds) {
-          (function () {
-            var thresholdLabel = _Intl2.default.getMessage(_this5.context.intl, 'Threshold');
-            _this5.props.thresholds.forEach(function (threshold) {
-              if (threshold.ariaLabel) {
-                a11yDesc += ', ' + thresholdLabel + ': ' + threshold.ariaLabel;
-              }
-            });
-          })();
+          var thresholdLabel = _Intl2.default.getMessage(this.context.intl, 'Threshold');
+          this.props.thresholds.forEach(function (threshold) {
+            if (threshold.ariaLabel) {
+              a11yDesc += ', ' + thresholdLabel + ': ' + threshold.ariaLabel;
+            }
+          });
         }
       }
 

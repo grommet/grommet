@@ -6,8 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -274,33 +272,27 @@ var Table = function (_Component) {
       var _this2 = this;
 
       if (this.tableRef.contains(document.activeElement)) {
-        var _ret = function () {
-          event.preventDefault();
-          var activeRow = _this2.state.activeRow;
+        event.preventDefault();
+        var activeRow = this.state.activeRow;
 
-          var rows = _this2.tableRef.querySelectorAll('tbody tr');
-          if (rows && rows.length > 0) {
-            if (activeRow === undefined) {
-              rows[0].classList.add(ACTIVE_CLASS);
-              _this2.setState({ activeRow: 0 }, function () {
-                _this2._announceRow(rows[_this2.state.activeRow].innerText);
-              });
-            } else if (activeRow - 1 >= 0) {
-              rows[activeRow].classList.remove(ACTIVE_CLASS);
-              rows[activeRow - 1].classList.add(ACTIVE_CLASS);
-              _this2.setState({ activeRow: activeRow - 1 }, function () {
-                _this2._announceRow(rows[_this2.state.activeRow].innerText);
-              });
-            }
+        var rows = this.tableRef.querySelectorAll('tbody tr');
+        if (rows && rows.length > 0) {
+          if (activeRow === undefined) {
+            rows[0].classList.add(ACTIVE_CLASS);
+            this.setState({ activeRow: 0 }, function () {
+              _this2._announceRow(rows[_this2.state.activeRow].innerText);
+            });
+          } else if (activeRow - 1 >= 0) {
+            rows[activeRow].classList.remove(ACTIVE_CLASS);
+            rows[activeRow - 1].classList.add(ACTIVE_CLASS);
+            this.setState({ activeRow: activeRow - 1 }, function () {
+              _this2._announceRow(rows[_this2.state.activeRow].innerText);
+            });
           }
+        }
 
-          //stop event propagation
-          return {
-            v: true
-          };
-        }();
-
-        if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
+        //stop event propagation
+        return true;
       }
     }
   }, {
@@ -309,33 +301,27 @@ var Table = function (_Component) {
       var _this3 = this;
 
       if (this.tableRef.contains(document.activeElement)) {
-        var _ret2 = function () {
-          event.preventDefault();
-          var activeRow = _this3.state.activeRow;
+        event.preventDefault();
+        var activeRow = this.state.activeRow;
 
-          var rows = _this3.tableRef.querySelectorAll('tbody tr');
-          if (rows && rows.length > 0) {
-            if (activeRow === undefined) {
-              rows[0].classList.add(ACTIVE_CLASS);
-              _this3.setState({ activeRow: 0 }, function () {
-                _this3._announceRow(rows[_this3.state.activeRow].innerText);
-              });
-            } else if (activeRow + 1 <= rows.length - 1) {
-              rows[activeRow].classList.remove(ACTIVE_CLASS);
-              rows[activeRow + 1].classList.add(ACTIVE_CLASS);
-              _this3.setState({ activeRow: activeRow + 1 }, function () {
-                _this3._announceRow(rows[_this3.state.activeRow].innerText);
-              });
-            }
+        var rows = this.tableRef.querySelectorAll('tbody tr');
+        if (rows && rows.length > 0) {
+          if (activeRow === undefined) {
+            rows[0].classList.add(ACTIVE_CLASS);
+            this.setState({ activeRow: 0 }, function () {
+              _this3._announceRow(rows[_this3.state.activeRow].innerText);
+            });
+          } else if (activeRow + 1 <= rows.length - 1) {
+            rows[activeRow].classList.remove(ACTIVE_CLASS);
+            rows[activeRow + 1].classList.add(ACTIVE_CLASS);
+            this.setState({ activeRow: activeRow + 1 }, function () {
+              _this3._announceRow(rows[_this3.state.activeRow].innerText);
+            });
           }
+        }
 
-          //stop event propagation
-          return {
-            v: true
-          };
-        }();
-
-        if ((typeof _ret2 === 'undefined' ? 'undefined' : _typeof(_ret2)) === "object") return _ret2.v;
+        //stop event propagation
+        return true;
       }
     }
   }, {
@@ -399,40 +385,34 @@ var Table = function (_Component) {
   }, {
     key: '_adjustBodyCells',
     value: function _adjustBodyCells() {
-      var _this4 = this;
-
       // adjust table body cells to have link to the header
       // so that in responsive mode it displays the text as content in css.
       // IMPORTANT: non-text header cells, such as icon, are rendered as empty
       // headers.
       if (this.tableRef) {
-        (function () {
-          var headerCells = _this4.tableRef.querySelectorAll('thead th');
-          if (headerCells.length > 0) {
-            (function () {
-              var increments = [];
-              [].forEach.call(headerCells, function (cell) {
-                var colspan = cell.getAttribute('colspan');
-                increments.push(colspan ? parseInt(colspan) : 1);
-              });
+        var headerCells = this.tableRef.querySelectorAll('thead th');
+        if (headerCells.length > 0) {
+          var increments = [];
+          [].forEach.call(headerCells, function (cell) {
+            var colspan = cell.getAttribute('colspan');
+            increments.push(colspan ? parseInt(colspan) : 1);
+          });
 
-              var rows = _this4.tableRef.querySelectorAll('tbody tr');
+          var rows = this.tableRef.querySelectorAll('tbody tr');
 
-              [].forEach.call(rows, function (row) {
-                var incrementCount = 0;
-                var headerIndex = 0;
-                [].forEach.call(row.cells, function (cell) {
-                  cell.setAttribute('data-th', headerCells[headerIndex].innerText || headerCells[headerIndex].textContent);
-                  incrementCount++;
-                  if (incrementCount === increments[headerIndex]) {
-                    incrementCount = 0;
-                    headerIndex++;
-                  }
-                });
-              });
-            })();
-          }
-        })();
+          [].forEach.call(rows, function (row) {
+            var incrementCount = 0;
+            var headerIndex = 0;
+            [].forEach.call(row.cells, function (cell) {
+              cell.setAttribute('data-th', headerCells[headerIndex].innerText || headerCells[headerIndex].textContent);
+              incrementCount++;
+              if (incrementCount === increments[headerIndex]) {
+                incrementCount = 0;
+                headerIndex++;
+              }
+            });
+          });
+        }
       }
     }
   }, {
@@ -492,7 +472,7 @@ var Table = function (_Component) {
     key: 'render',
     value: function render() {
       var _classnames,
-          _this5 = this;
+          _this4 = this;
 
       var _props4 = this.props,
           a11yTitle = _props4.a11yTitle,
@@ -525,7 +505,7 @@ var Table = function (_Component) {
         mirror = _react2.default.createElement(
           'table',
           { ref: function ref(_ref) {
-              return _this5.mirrorRef = _ref;
+              return _this4.mirrorRef = _ref;
             },
             className: CLASS_ROOT + '__mirror' },
           _react2.default.createElement(
@@ -541,7 +521,7 @@ var Table = function (_Component) {
         more = _react2.default.createElement(
           'div',
           { ref: function ref(_ref2) {
-              return _this5.moreRef = _ref2;
+              return _this4.moreRef = _ref2;
             }, className: CLASS_ROOT + '__more' },
           _react2.default.createElement(_Spinning2.default, null)
         );
@@ -557,20 +537,20 @@ var Table = function (_Component) {
           tabIndex: '0',
           onClick: this._onClick,
           onMouseDown: function onMouseDown(event) {
-            _this5.setState({ mouseActive: true });
+            _this4.setState({ mouseActive: true });
             if (_onMouseDown) {
               _onMouseDown(event);
             }
           },
           onMouseUp: function onMouseUp(event) {
-            _this5.setState({ mouseActive: false });
+            _this4.setState({ mouseActive: false });
             if (_onMouseUp) {
               _onMouseUp(event);
             }
           },
           onFocus: function onFocus(event) {
             if (mouseActive === false) {
-              _this5.setState({ focus: true });
+              _this4.setState({ focus: true });
             }
             if (_onFocus) {
               _onFocus(event);
@@ -578,10 +558,10 @@ var Table = function (_Component) {
           },
           onBlur: function onBlur(event) {
             if (activeRow) {
-              var rows = _this5.tableRef.querySelectorAll('tbody tr');
+              var rows = _this4.tableRef.querySelectorAll('tbody tr');
               rows[activeRow].classList.remove(ACTIVE_CLASS);
             }
-            _this5.setState({ focus: false, activeRow: undefined });
+            _this4.setState({ focus: false, activeRow: undefined });
             if (_onBlur) {
               _onBlur(event);
             }
@@ -594,13 +574,13 @@ var Table = function (_Component) {
       return _react2.default.createElement(
         'div',
         _extends({ ref: function ref(_ref4) {
-            return _this5.containerRef = _ref4;
+            return _this4.containerRef = _ref4;
           } }, props, { className: classes }),
         mirror,
         _react2.default.createElement(
           'table',
           _extends({ ref: function ref(_ref3) {
-              return _this5.tableRef = _ref3;
+              return _this4.tableRef = _ref3;
             } }, selectableProps, {
             className: tableClasses }),
           children

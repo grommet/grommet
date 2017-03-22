@@ -140,42 +140,40 @@ var Columns = function (_Component) {
 
       var container = (0, _reactDom.findDOMNode)(this.containerRef);
       if (container) {
-        (function () {
-          var column = container.childNodes[0];
-          var child = column.childNodes[0];
-          var minColumnWidth = 192;
-          var currentMobile = initMobile && window.innerWidth <= _Responsive2.default.smallSize();
+        var column = container.childNodes[0];
+        var child = column.childNodes[0];
+        var minColumnWidth = 192;
+        var currentMobile = initMobile && window.innerWidth <= _Responsive2.default.smallSize();
 
-          if (child) {
-            clearTimeout(_this2._childStylesTimer);
-            _this2._childStylesTimer = setTimeout(function () {
-              var childStyles = window.getComputedStyle(child);
+        if (child) {
+          clearTimeout(this._childStylesTimer);
+          this._childStylesTimer = setTimeout(function () {
+            var childStyles = window.getComputedStyle(child);
 
-              if (childStyles && childStyles.width) {
-                var childLeftMargin = childStyles.marginLeft ? parseFloat(childStyles.marginLeft) : 0;
-                var childRightMargin = childStyles.marginRight ? parseFloat(childStyles.marginRight) : 0;
-                minColumnWidth = parseFloat(childStyles.width) + childLeftMargin + childRightMargin;
-              }
+            if (childStyles && childStyles.width) {
+              var childLeftMargin = childStyles.marginLeft ? parseFloat(childStyles.marginLeft) : 0;
+              var childRightMargin = childStyles.marginRight ? parseFloat(childStyles.marginRight) : 0;
+              minColumnWidth = parseFloat(childStyles.width) + childLeftMargin + childRightMargin;
+            }
 
-              var childMarginSize = margin || _this2._getChildMarginSize(childStyles);
+            var childMarginSize = margin || _this2._getChildMarginSize(childStyles);
 
-              // create array of breakpoints for 1 through this.props.maxCount
-              // number of columns of minColumnWidth width.
-              var columnBreakpoints = Array.apply(undefined, Array(_this2.props.maxCount)).map(function (currentMaxCount, index) {
-                return (index + 1) * minColumnWidth;
-              });
+            // create array of breakpoints for 1 through this.props.maxCount
+            // number of columns of minColumnWidth width.
+            var columnBreakpoints = Array.apply(undefined, Array(_this2.props.maxCount)).map(function (currentMaxCount, index) {
+              return (index + 1) * minColumnWidth;
+            });
 
-              _this2.setState({
-                columnBreakpoints: columnBreakpoints,
-                margin: childMarginSize,
-                initMobile: currentMobile
-              }, function () {
-                clearTimeout(_this2._layoutTimer);
-                _this2._layoutTimer = setTimeout(_this2._layout, 50);
-              });
-            }, 200);
-          }
-        })();
+            _this2.setState({
+              columnBreakpoints: columnBreakpoints,
+              margin: childMarginSize,
+              initMobile: currentMobile
+            }, function () {
+              clearTimeout(_this2._layoutTimer);
+              _this2._layoutTimer = setTimeout(_this2._layout, 50);
+            });
+          }, 200);
+        }
       }
     }
   }, {
@@ -237,39 +235,35 @@ var Columns = function (_Component) {
   }, {
     key: '_renderColumns',
     value: function _renderColumns() {
-      var _this3 = this;
-
       var masonry = this.props.masonry;
 
       var children = _react2.default.Children.toArray(this.props.children);
       var groups = [];
 
       if (masonry) {
-        (function () {
-          // fill columns horizontally for masonry option
-          var maxCount = _this3.state.maxCount;
+        // fill columns horizontally for masonry option
+        var maxCount = this.state.maxCount;
 
-          var columnGroups = {};
+        var columnGroups = {};
 
-          _react2.default.Children.map(children, function (child, index) {
-            var currentColumn = index % maxCount;
+        _react2.default.Children.map(children, function (child, index) {
+          var currentColumn = index % maxCount;
 
-            if (!columnGroups[currentColumn]) {
-              columnGroups[currentColumn] = [];
-            }
+          if (!columnGroups[currentColumn]) {
+            columnGroups[currentColumn] = [];
+          }
 
-            // place children into appropriate column
-            if (child) {
-              columnGroups[currentColumn].push(child);
-            }
-          }, _this3);
+          // place children into appropriate column
+          if (child) {
+            columnGroups[currentColumn].push(child);
+          }
+        }, this);
 
-          Object.keys(columnGroups).map(function (key, index) {
-            if (columnGroups[index]) {
-              groups.push(columnGroups[index]);
-            }
-          });
-        })();
+        Object.keys(columnGroups).map(function (key, index) {
+          if (columnGroups[index]) {
+            groups.push(columnGroups[index]);
+          }
+        });
       } else {
         // fill columns vertically
         var count = this.state.count;
@@ -288,7 +282,7 @@ var Columns = function (_Component) {
     key: 'render',
     value: function render() {
       var _classnames,
-          _this4 = this;
+          _this3 = this;
 
       var _props = this.props,
           className = _props.className,
@@ -312,7 +306,7 @@ var Columns = function (_Component) {
       return _react2.default.createElement(
         'div',
         _extends({ ref: function ref(_ref) {
-            return _this4.containerRef = _ref;
+            return _this3.containerRef = _ref;
           } }, restProps, {
           className: classes }),
         columns

@@ -302,36 +302,34 @@ var Topology = function (_Component3) {
       window.addEventListener('resize', this._onResize);
       this._layout();
       if (links && links.length > 0) {
-        (function () {
-          var connectsMap = {};
-          links.forEach(function (link) {
-            var startId = link.ids[0];
-            var startElement = document.getElementById(startId);
-            var endId = link.ids[1];
-            var endElement = document.getElementById(endId);
-            if (startElement && endElement) {
-              var startLabel = startElement.getAttribute('aria-label') || startElement.innerText;
-              var endLabel = endElement.getAttribute('aria-label') || endElement.innerText;
-              if (connectsMap[startId]) {
-                connectsMap[startId].push(endLabel);
-              } else {
-                connectsMap[startId] = [endLabel];
-              }
-
-              if (connectsMap[endId]) {
-                connectsMap[endId].push(startLabel);
-              } else {
-                connectsMap[endId] = [startLabel];
-              }
+        var connectsMap = {};
+        links.forEach(function (link) {
+          var startId = link.ids[0];
+          var startElement = document.getElementById(startId);
+          var endId = link.ids[1];
+          var endElement = document.getElementById(endId);
+          if (startElement && endElement) {
+            var startLabel = startElement.getAttribute('aria-label') || startElement.innerText;
+            var endLabel = endElement.getAttribute('aria-label') || endElement.innerText;
+            if (connectsMap[startId]) {
+              connectsMap[startId].push(endLabel);
+            } else {
+              connectsMap[startId] = [endLabel];
             }
-          });
 
-          Object.keys(connectsMap).forEach(function (element) {
-            var targetElement = document.getElementById(element);
-            var connectsMessage = _Intl2.default.getMessage(intl, 'Connects With');
-            targetElement.setAttribute('data-connects', connectsMessage + ': (' + connectsMap[element].join() + ')');
-          });
-        })();
+            if (connectsMap[endId]) {
+              connectsMap[endId].push(startLabel);
+            } else {
+              connectsMap[endId] = [startLabel];
+            }
+          }
+        });
+
+        Object.keys(connectsMap).forEach(function (element) {
+          var targetElement = document.getElementById(element);
+          var connectsMessage = _Intl2.default.getMessage(intl, 'Connects With');
+          targetElement.setAttribute('data-connects', connectsMessage + ': (' + connectsMap[element].join() + ')');
+        });
       }
     }
   }, {

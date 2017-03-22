@@ -339,19 +339,17 @@ var Select = function (_Component) {
       var intl = this.context.intl;
 
       if (activeOptionIndex >= 0) {
-        (function () {
-          event.preventDefault(); // prevent submitting forms
-          var option = options[activeOptionIndex];
-          var value = _this2._valueForSelectedOption(option);
-          _this2.setState({ dropActive: false, value: value }, function () {
-            var optionMessage = _this2._renderLabel(option);
-            var selectedMessage = _Intl2.default.getMessage(intl, 'Selected');
-            (0, _Announcer.announce)(optionMessage + ' ' + selectedMessage);
-          });
-          if (onChange) {
-            onChange({ target: _this2.inputRef, option: option, value: value });
-          }
-        })();
+        event.preventDefault(); // prevent submitting forms
+        var option = options[activeOptionIndex];
+        var value = this._valueForSelectedOption(option);
+        this.setState({ dropActive: false, value: value }, function () {
+          var optionMessage = _this2._renderLabel(option);
+          var selectedMessage = _Intl2.default.getMessage(intl, 'Selected');
+          (0, _Announcer.announce)(optionMessage + ' ' + selectedMessage);
+        });
+        if (onChange) {
+          onChange({ target: this.inputRef, option: option, value: value });
+        }
       } else {
         this.setState({ dropActive: false });
       }

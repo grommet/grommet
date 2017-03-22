@@ -130,23 +130,19 @@ var Meter = function (_Component) {
 
       // set color index
       if (series.length === 1 && props.thresholds) {
-        (function () {
-          var item = series[0];
-          if (!item.colorIndex) {
-            (function () {
-              // see which threshold color index to use
-              var cumulative = 0;
-              thresholds.some(function (threshold) {
-                cumulative += threshold.value;
-                if (item.value < cumulative) {
-                  item.colorIndex = threshold.colorIndex || 'graph-1';
-                  return true;
-                }
-                return false;
-              });
-            })();
-          }
-        })();
+        var item = series[0];
+        if (!item.colorIndex) {
+          // see which threshold color index to use
+          var cumulative = 0;
+          thresholds.some(function (threshold) {
+            cumulative += threshold.value;
+            if (item.value < cumulative) {
+              item.colorIndex = threshold.colorIndex || 'graph-1';
+              return true;
+            }
+            return false;
+          });
+        }
       } else {
         series.forEach(function (item, index) {
           if (!item.colorIndex) {

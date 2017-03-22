@@ -90,13 +90,11 @@ var Base = function (_Component) {
       // We can't distribute children when vertical because our height isn't
       // known.
       if (!vertical) {
-        (function () {
-          // Round to hundredths of a % so things line up reasonably accurately
-          var basis = Math.floor(10000 / childCount) / 100.0 + '%';
-          mappedChildren = _react.Children.map(children, function (child) {
-            return child ? _react2.default.cloneElement(child, { style: { flexBasis: basis } }) : child;
-          });
-        })();
+        // Round to hundredths of a % so things line up reasonably accurately
+        var basis = Math.floor(10000 / childCount) / 100.0 + '%';
+        mappedChildren = _react.Children.map(children, function (child) {
+          return child ? _react2.default.cloneElement(child, { style: { flexBasis: basis } }) : child;
+        });
       }
 
       return _react2.default.createElement(

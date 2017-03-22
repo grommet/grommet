@@ -217,25 +217,23 @@ var Graph = function (_Component) {
         if ('area' === type || 'line' === type) {
 
           if (smooth) {
-            (function () {
-              var controlCoordinates = coordinates.map(function (coord, index) {
-                return _this2._controlCoordinates(coordinates, index);
-              });
-              commands = '';
-              coordinates.forEach(function (coord, index) {
-                if (0 === index) {
-                  commands += 'M' + coord.join(',');
-                } else {
-                  // Use the previous right control coordinate and the current
-                  // left control coordinate. We do this because we calculate
-                  // the left and right sides for a particular index together,
-                  // so the path is smooth but the SVG C command needs the
-                  // right one from the previous index and the left one from
-                  // the current index.
-                  commands += ' C' + controlCoordinates[index - 1][1].join(',') + '\n                ' + controlCoordinates[index][0].join(',') + ' ' + coord.join(',');
-                }
-              });
-            })();
+            var controlCoordinates = coordinates.map(function (coord, index) {
+              return _this2._controlCoordinates(coordinates, index);
+            });
+            commands = '';
+            coordinates.forEach(function (coord, index) {
+              if (0 === index) {
+                commands += 'M' + coord.join(',');
+              } else {
+                // Use the previous right control coordinate and the current
+                // left control coordinate. We do this because we calculate
+                // the left and right sides for a particular index together,
+                // so the path is smooth but the SVG C command needs the
+                // right one from the previous index and the left one from
+                // the current index.
+                commands += ' C' + controlCoordinates[index - 1][1].join(',') + '\n                ' + controlCoordinates[index][0].join(',') + ' ' + coord.join(',');
+              }
+            });
           } else {
             commands = 'M' + coordinates.map(function (c) {
               return c.join(',');
