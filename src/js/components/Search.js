@@ -163,7 +163,10 @@ export default class Search extends Component {
   }
 
   _onInputKeyDown (event) {
-    const { inline, suggestions, onKeyDown } = this.props;
+    const {
+      inline, onSelect, suggestions, activeSuggestionIndex, onKeyDown
+    } = this.props;
+    const enter = 13;
     const { dropActive } = this.state;
     if (suggestions) {
       const up = 38;
@@ -176,6 +179,14 @@ export default class Search extends Component {
           this._onAddDrop();
         }
       }
+    }
+    if (!dropActive && onSelect && event.keyCode === enter) {
+      const suggestion = suggestions[activeSuggestionIndex];
+
+      onSelect({
+        target: this._inputRef || this._controlRef,
+        suggestion: suggestion
+      }, false);
     }
     if (onKeyDown) {
       onKeyDown(event);
@@ -284,6 +295,10 @@ export default class Search extends Component {
           suggestion: suggestion
         }, true);
       }
+    } else {
+      onSelect({
+        target: this._inputRef || this._controlRef
+      }, false);
     }
   }
 
@@ -482,6 +497,7 @@ Search.propTypes = {
   inline: PropTypes.bool,
   onDOMChange: PropTypes.func,
   onSelect: PropTypes.func,
+  onKeyDown: PropTypes.func,
   pad: PropTypes.oneOf(['small', 'medium']),
   placeHolder: PropTypes.string,
   responsive: PropTypes.bool,
