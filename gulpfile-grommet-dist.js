@@ -90,7 +90,7 @@ module.exports = function(gulp) {
           });
 
           iconsMap.push(
-            `export { default as ${componentName.replace('.svg', '').replace(/^3d/, 'ThreeD').replace('-', '')} } from './${componentName.replace('.svg', '')}';`
+            `export { default as ${componentName.replace('.svg', '').replace(/^3d/, 'ThreeD').replace('-', '')}Icon } from './${componentName.replace('.svg', '')}';`
           );
 
           if (index === icons.length - 1) {

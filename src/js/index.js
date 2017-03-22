@@ -1,9 +1,13 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 import Grommet from './index-commonjs';
 
-export const Icons = { 
-  ...Grommet.Icons
-};
+const BaseIcons = {};
+
+Object.keys(Grommet.Icons.Base).forEach((icon) => {
+  BaseIcons[icon.replace('Icon', '')] = Grommet.Icons.Base[icon];
+});
+
+export const Icons = Object.assign({}, Grommet.Icons, { Base: BaseIcons });
 
 export { default as Accordion } from './components/Accordion';
 export { default as AccordionPanel } from './components/AccordionPanel';
