@@ -85,7 +85,6 @@ var Article = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Article.__proto__ || Object.getPrototypeOf(Article)).call(this, props, context));
 
-    _this._onFocus = _this._onFocus.bind(_this);
     _this._onScroll = _this._onScroll.bind(_this);
     _this._onWheel = _this._onWheel.bind(_this);
     _this._onTouchStart = _this._onTouchStart.bind(_this);
@@ -553,21 +552,6 @@ var Article = function (_Component) {
       }
     }
   }, {
-    key: '_onFocus',
-    value: function _onFocus(e) {
-      var componentElement = (0, _reactDom.findDOMNode)(this._componentRef);
-      var children = componentElement.children;
-      // don't count controls added after main children
-      var childCount = _react2.default.Children.count(this.props.children);
-      for (var i = 0; i < childCount; i++) {
-        var child = children[i];
-        if (child.contains(e.target)) {
-          this._onSelect(i);
-          return false;
-        }
-      }
-    }
-  }, {
     key: '_onResponsive',
     value: function _onResponsive(small) {
       this.setState({ narrow: small });
@@ -745,8 +729,8 @@ var Article = function (_Component) {
             return _this8._componentRef = _ref2;
           },
           tag: 'article', className: classes, primary: primary,
-          onFocus: this._onFocus, onScroll: this._onScroll,
-          onTouchStart: this._onTouchStart, onTouchMove: this._onTouchMove }),
+          onScroll: this._onScroll, onTouchStart: this._onTouchStart,
+          onTouchMove: this._onTouchMove }),
         children,
         controls,
         anchorStepNode
