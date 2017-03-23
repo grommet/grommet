@@ -281,7 +281,8 @@ var SunBurst = function (_Component) {
 
         result.push(_react2.default.createElement('path', { ref: function ref(_ref) {
             return _this2.sunBurstPaths[id] = _ref;
-          }, key: id,
+          },
+          key: datumPath + '_' + index,
           className: className, tabIndex: onClick ? '-1' : undefined,
           fill: 'none', strokeWidth: unit * 2, d: commands,
           'aria-label': ariaLabel, role: 'row',
@@ -303,7 +304,7 @@ var SunBurst = function (_Component) {
 
       return _react2.default.createElement(
         'g',
-        { key: '' + radius + total, role: role || 'rowgroup',
+        { key: path + '_' + radius + '_' + total, role: role || 'rowgroup',
           'aria-label': value || total },
         result
       );
