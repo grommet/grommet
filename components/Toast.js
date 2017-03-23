@@ -97,7 +97,9 @@ var ToastContents = function (_Component) {
       clearTimeout(this._timer);
       this._timer = undefined;
       this.setState({ closing: true });
-      setTimeout(onClose, ANIMATION_DURATION);
+      if (onClose) {
+        setTimeout(onClose, ANIMATION_DURATION);
+      }
     }
   }, {
     key: 'render',
