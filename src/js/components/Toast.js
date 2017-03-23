@@ -47,7 +47,9 @@ class ToastContents extends Component {
     clearTimeout(this._timer);
     this._timer = undefined;
     this.setState({ closing: true });
-    setTimeout(onClose, ANIMATION_DURATION);
+    if (onClose) {
+      setTimeout(onClose, ANIMATION_DURATION);
+    }
   }
 
   render () {

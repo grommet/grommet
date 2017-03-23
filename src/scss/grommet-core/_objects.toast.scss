@@ -29,6 +29,7 @@
 
 .#{$grommet-namespace}toast--closing {
   @include animation('toast-raise #{$animation-duration}');
+  animation-fill-mode: forwards;
 }
 
 .#{$grommet-namespace}toast__closer {
