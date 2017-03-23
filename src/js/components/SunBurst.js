@@ -227,7 +227,8 @@ export default class SunBurst extends Component {
       let ariaLabel = `${datum.value} ${onClick ? enterSelectMessage : ''}`;
 
       result.push(
-        <path ref={ref => this.sunBurstPaths[id] = ref} key={id}
+        <path ref={ref => this.sunBurstPaths[id] = ref} 
+          key={`${datumPath}_${index}`}
           className={className} tabIndex={onClick ? '-1' : undefined}
           fill='none' strokeWidth={unit * 2} d={commands}
           aria-label={ariaLabel} role='row'
@@ -249,9 +250,8 @@ export default class SunBurst extends Component {
       startAngle = endAngle + 1;
     });
 
-
     return (
-      <g key={`${radius}${total}`} role={role || 'rowgroup'}
+      <g key={`${path}_${radius}_${total}`} role={role || 'rowgroup'}
         aria-label={value || total}>
         {result}
       </g>
