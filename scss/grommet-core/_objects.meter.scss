@@ -46,6 +46,8 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
 }
 
 .#{$grommet-namespace}meter__graphic {
+  max-width: 100%;
+
   &:focus {
     outline: $focus-border-color solid 1px;
   }
