@@ -84,6 +84,7 @@ export { default as Cookies }from './utils/Cookies';
 export { default as DOM } from './utils/DOM';
 export { default as KeyboardAccelerators } from './utils/KeyboardAccelerators';
 export { default as Locale } from './utils/Locale';
+export { default as Responsive } from './utils/Responsive';
 export { default as Rest } from './utils/Rest';
 export { default as Validator } from './utils/Validator';
 

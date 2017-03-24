@@ -99,6 +99,7 @@ var Grommet = {
   DOM: require('./utils/DOM'),
   KeyboardAccelerators: require('./utils/KeyboardAccelerators'),
   Locale: require('./utils/Locale'),
+  Responsive: require('./utils/Responsive'),
   Rest: require('./utils/Rest'),
   Validator: require('./utils/Validator')
 };
