@@ -36,6 +36,10 @@
   @include anchor-style;
 }
 
+a:not(.#{$grommet-namespace}anchor):not(.#{$grommet-namespace}button) {
+  @include background-context-color($link-color, $link-hover-color);
+}
+
 .#{$grommet-namespace}anchor {
   @include anchor-style;
 }
