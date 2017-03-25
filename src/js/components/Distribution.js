@@ -126,11 +126,11 @@ export default class Distribution extends Component {
     boxRect.width -= GUTTER_SIZE;
     boxRect.height -= GUTTER_SIZE;
     // flush the right edge
-    if (boxRect.x + boxRect.width > width - (2 * GUTTER_SIZE)) {
+    if (boxRect.x + boxRect.width > width - (4 * GUTTER_SIZE)) {
       boxRect.width = width - boxRect.x;
     }
     // flush the bottom edge
-    if (boxRect.y + boxRect.height > height - (2 * GUTTER_SIZE)) {
+    if (boxRect.y + boxRect.height > height - (4 * GUTTER_SIZE)) {
       boxRect.height = height - boxRect.y;
     }
     return boxRect;
@@ -246,7 +246,7 @@ export default class Distribution extends Component {
   _onResize () {
     // debounce
     clearTimeout(this._resizeTimer);
-    this._resizeTimer = setTimeout(this._layout, 50);
+    this._resizeTimer = setTimeout(this._layout, 0);
   }
 
   _layout () {
@@ -452,8 +452,6 @@ export default class Distribution extends Component {
 
     return (
       <g key={index} className={itemClasses}
-        onMouseOver={this._onActivate.bind(this, index)}
-        onMouseLeave={this._onDeactivate} tabIndex='-1'
         role={datum.onClick ? 'button' : 'row'}
         ref={activeDistributionRef} aria-label={labelMessage}
         onFocus={() => this.setState({ activeIndex: index })}
