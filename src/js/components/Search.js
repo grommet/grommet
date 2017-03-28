@@ -281,7 +281,6 @@ export default class Search extends Component {
       event.preventDefault(); // prevent submitting forms
     }
 
-    this._onRemoveDrop();
     if (activeSuggestionIndex >= 0) {
       const suggestion = suggestions[activeSuggestionIndex];
       this.setState({ value: suggestion }, () => {
@@ -300,6 +299,8 @@ export default class Search extends Component {
         target: this._inputRef || this._controlRef
       }, false);
     }
+
+    this._onRemoveDrop();
   }
 
   _onClickSuggestion (suggestion) {
