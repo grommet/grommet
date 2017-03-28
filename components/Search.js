@@ -379,7 +379,6 @@ var Search = function (_Component) {
         event.preventDefault(); // prevent submitting forms
       }
 
-      this._onRemoveDrop();
       if (activeSuggestionIndex >= 0) {
         var suggestion = suggestions[activeSuggestionIndex];
         this.setState({ value: suggestion }, function () {
@@ -398,6 +397,8 @@ var Search = function (_Component) {
           target: this._inputRef || this._controlRef
         }, false);
       }
+
+      this._onRemoveDrop();
     }
   }, {
     key: '_onClickSuggestion',
