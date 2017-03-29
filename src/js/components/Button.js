@@ -28,9 +28,9 @@ export default class Button extends Component {
     event.preventDefault();
 
     if ('push' === method) {
-      router.push(path);
+      (router.history || router).push(path.path || path);
     } else if ('replace' === method) {
-      router.replace(path);
+      (router.history || router).replace(path.path || path);
     }
 
     if (onClick) {
@@ -91,7 +91,17 @@ export default class Button extends Component {
       buttonLabel = <span className={`${CLASS_ROOT}__label`}>{label}</span>;
     }
 
-    let adjustedHref = (path && router) ? router.createPath(path) : href;
+    const target = path ? path.path || path : undefined;
+    let adjustedHref;
+    if (router && router.createPath) {
+      adjustedHref = (path && router) ?
+        router.createPath(target) : href;
+    } else {
+      adjustedHref = (path && router && router.history) ?
+        router.history.createHref(
+          typeof target === 'string' ? { pathname: target } : target
+        ) : href;
+    }
 
     const classes = classnames(
       CLASS_ROOT,
