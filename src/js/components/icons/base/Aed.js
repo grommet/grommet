@@ -29,7 +29,7 @@ export default class Icon extends Component {
     a11yTitle = a11yTitle || Intl.getMessage(intl, 'aed');
 
     const restProps = Props.omit(this.props, Object.keys(Icon.propTypes));
-    return <svg {...restProps} version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><g fill="none" fillRule="evenodd"><path stroke="#000" strokeWidth="2" d="M2,8.4 C2,4 5,3 7,3 C9,3 11,5 12,6.5 C13,5 15,3 17,3 C19,3 22,4 22,8.4 C22,15 12,21 12,21 C12,21 2,15 2,8.4 Z" fill="none"/><polygon fill="#000" points="12 9 9 15 12 14.143 12 18 15 12 12 13" stroke="none"/></g></svg>;
+    return <svg {...restProps} version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><path fill="none" stroke="#000" strokeWidth="2" d="M2,8.4 C2,4 5,3 7,3 C9,3 11,5 12,6.5 C13,5 15,3 17,3 C19,3 22,4 22,8.4 C22,15 12,21 12,21 C12,21 2,15 2,8.4 Z M12,6 C11.5,5.5 10,10 10,10 L12,10 L12,12.5 L14,9 L12,9 C12,9 13,3 17,3 C13,3 12,6 12,6 Z"/></svg>;
   }
 };
 
