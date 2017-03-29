@@ -73,14 +73,7 @@ var Icon = function (_Component) {
       return _react2.default.createElement(
         'svg',
         _extends({}, restProps, { version: '1.1', viewBox: '0 0 24 24', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle }),
-        _react2.default.createElement(
-          'g',
-          { fill: 'none', fillRule: 'evenodd' },
-          _react2.default.createElement('polygon', { stroke: '#000', strokeWidth: '2', points: '12 4 21 10 21 12 3 12 3 10', fill: 'none' }),
-          _react2.default.createElement('polygon', { fill: '#000', points: '12 0 15.5 1.25 12 2.5', stroke: 'none' }),
-          _react2.default.createElement('path', { stroke: '#000', strokeWidth: '2', d: 'M4.5,12 L19.5,12 C19.5,16.1666667 21,22 21,22 L3,22 C3,22 4.5,16.1666667 4.5,12 Z', fill: 'none' }),
-          _react2.default.createElement('polygon', { fill: '#000', stroke: 'none', strokeWidth: '2', points: '14 15.5 16 22 12 22' })
-        )
+        _react2.default.createElement('path', { fill: 'none', stroke: '#000', strokeWidth: '2', d: 'M13,2 L14.5,2.5 L13,3 L13,2 Z M14,18 L15,23 L13,23 L14,18 Z M14,16.5 L16,23 L12,23 L14,16.5 Z M12,6 L21,11 L21,13 L3,13 L3,11 L12,6 Z M4.5,13 L19.5,13 C19.5,17.1666667 21,23 21,23 L3,23 C3,23 4.5,17.1666667 4.5,13 Z M4.5,13 L19.5,13 C19.5,17.1666667 21,23 21,23 L3,23 C3,23 4.5,17.1666667 4.5,13 Z' })
       );
     }
   }]);
