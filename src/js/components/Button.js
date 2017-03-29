@@ -100,7 +100,10 @@ export default class Button extends Component {
         [`${CLASS_ROOT}--primary`]: primary,
         [`${CLASS_ROOT}--secondary`]: secondary,
         [`${CLASS_ROOT}--accent`]: accent,
-        [`${CLASS_ROOT}--disabled`]: !onClick && !adjustedHref,
+        [`${CLASS_ROOT}--disabled`]:
+          !onClick &&
+          !adjustedHref &&
+          !['reset', 'submit'].includes(type),
         [`${CLASS_ROOT}--fill`]: fill,
         [`${CLASS_ROOT}--plain`]: plain || Children.count(children) > 0 ||
           (icon && ! label),
@@ -124,7 +127,11 @@ export default class Button extends Component {
       <Tag {...props} href={adjustedHref} type={buttonType}
         className={classes} aria-label={a11yTitle}
         onClick={adjustedOnClick}
-        disabled={!onClick && !adjustedHref}
+        disabled={
+          !onClick &&
+          !adjustedHref &&
+          !['reset', 'submit'].includes(type)
+        }
         onMouseDown={this._onMouseDown} onMouseUp={this._onMouseUp}
         onFocus={this._onFocus} onBlur={this._onBlur}>
         {first}
