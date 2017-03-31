@@ -67,9 +67,9 @@ var Button = function (_Component) {
       event.preventDefault();
 
       if ('push' === method) {
-        router.push(path);
+        (router.history || router).push(path);
       } else if ('replace' === method) {
-        router.replace(path);
+        (router.history || router).replace(path);
       }
 
       if (onClick) {
@@ -165,7 +165,12 @@ var Button = function (_Component) {
         );
       }
 
-      var adjustedHref = path && router ? router.createPath(path) : href;
+      var adjustedHref = void 0;
+      if (router && router.createPath) {
+        adjustedHref = path && router ? router.createPath(path) : href;
+      } else {
+        adjustedHref = path && router && router.history ? router.history.createHref({ pathname: path }) : href;
+      }
 
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--focus', this.state.focus), _defineProperty(_classnames, CLASS_ROOT + '--primary', primary), _defineProperty(_classnames, CLASS_ROOT + '--secondary', secondary), _defineProperty(_classnames, CLASS_ROOT + '--accent', accent), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !onClick && !adjustedHref && !['reset', 'submit'].includes(type)), _defineProperty(_classnames, CLASS_ROOT + '--fill', fill), _defineProperty(_classnames, CLASS_ROOT + '--plain', plain || _react.Children.count(children) > 0 || icon && !label), _defineProperty(_classnames, CLASS_ROOT + '--align-' + align, align), _classnames), className);
 
