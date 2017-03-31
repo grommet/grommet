@@ -167,7 +167,7 @@ var Button = function (_Component) {
 
       var adjustedHref = path && router ? router.createPath(path) : href;
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--focus', this.state.focus), _defineProperty(_classnames, CLASS_ROOT + '--primary', primary), _defineProperty(_classnames, CLASS_ROOT + '--secondary', secondary), _defineProperty(_classnames, CLASS_ROOT + '--accent', accent), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !onClick && !adjustedHref), _defineProperty(_classnames, CLASS_ROOT + '--fill', fill), _defineProperty(_classnames, CLASS_ROOT + '--plain', plain || _react.Children.count(children) > 0 || icon && !label), _defineProperty(_classnames, CLASS_ROOT + '--align-' + align, align), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--focus', this.state.focus), _defineProperty(_classnames, CLASS_ROOT + '--primary', primary), _defineProperty(_classnames, CLASS_ROOT + '--secondary', secondary), _defineProperty(_classnames, CLASS_ROOT + '--accent', accent), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !onClick && !adjustedHref && !['reset', 'submit'].includes(type)), _defineProperty(_classnames, CLASS_ROOT + '--fill', fill), _defineProperty(_classnames, CLASS_ROOT + '--plain', plain || _react.Children.count(children) > 0 || icon && !label), _defineProperty(_classnames, CLASS_ROOT + '--align-' + align, align), _classnames), className);
 
       var adjustedOnClick = path && router ? this._onClick : onClick;
 
@@ -185,7 +185,7 @@ var Button = function (_Component) {
         _extends({}, props, { href: adjustedHref, type: buttonType,
           className: classes, 'aria-label': a11yTitle,
           onClick: adjustedOnClick,
-          disabled: !onClick && !adjustedHref,
+          disabled: !onClick && !adjustedHref && !['reset', 'submit'].includes(type),
           onMouseDown: this._onMouseDown, onMouseUp: this._onMouseUp,
           onFocus: this._onFocus, onBlur: this._onBlur }),
         first,
