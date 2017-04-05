@@ -57,7 +57,7 @@ $button-horizontal-padding:
   @include basic-button();
 
   &--focus {
-    border: 1px solid $focus-border-color;
+    border: $button-border-width solid $focus-border-color;
     box-shadow: 0 0 1px 1px $focus-border-color;
   }
 
@@ -145,7 +145,7 @@ $button-horizontal-padding:
 }
 
 .#{$grommet-namespace}button--plain:not(.#{$grommet-namespace}button--focus) {
-  border: 1px solid transparent;
+  border: $button-border-width solid transparent;
 }
 
 .#{$grommet-namespace}button:not(.#{$grommet-namespace}button--plain) {
