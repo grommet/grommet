@@ -8,8 +8,8 @@ const CLASS_ROOT = CSSClassnames.BUTTON;
 
 export default class Button extends Component {
 
-  constructor () {
-    super();
+  constructor (props, context) {
+    super(props, context);
     this._onClick = this._onClick.bind(this);
     this._onMouseDown = this._onMouseDown.bind(this);
     this._onMouseUp = this._onMouseDown.bind(this);
@@ -19,6 +19,12 @@ export default class Button extends Component {
       mouseActive: false,
       focus: false
     };
+
+    if (props.hover && !props.plain) {
+      console.warn(
+        'Button: hover prop only works for plain buttons.'
+      );
+    }
   }
 
   _onClick (event) {
@@ -75,7 +81,7 @@ export default class Button extends Component {
 
   render () {
     const {
-      a11yTitle, accent, align, children, className, fill, href, icon,
+      a11yTitle, accent, align, children, className, fill, hover, href, icon,
       label, onClick, path, plain, primary, reverse, secondary, type, ...props
     } = this.props;
     delete props.method;
@@ -116,7 +122,8 @@ export default class Button extends Component {
         [`${CLASS_ROOT}--fill`]: fill,
         [`${CLASS_ROOT}--plain`]: plain || Children.count(children) > 0 ||
           (icon && ! label),
-        [`${CLASS_ROOT}--align-${align}`]: align
+        [`${CLASS_ROOT}--align-${align}`]: align,
+        [`${CLASS_ROOT}--hover`]: plain && hover
       },
       className
     );
@@ -156,6 +163,7 @@ Button.propTypes = {
   accent: PropTypes.bool,
   align: PropTypes.oneOf(['start', 'center', 'end']),
   fill: PropTypes.bool,
+  hover: PropTypes.bool,
   href: PropTypes.string,
   icon: PropTypes.element,
   label: PropTypes.node,

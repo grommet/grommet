@@ -57,11 +57,26 @@ $button-horizontal-padding:
   @include basic-button();
 
   &--focus {
-    border-color: $focus-border-color;
+    border: 1px solid $focus-border-color;
     box-shadow: 0 0 1px 1px $focus-border-color;
   }
 
   @include background-context-color($button-text-color, $button-text-color);
+}
+
+.#{$grommet-namespace}button--hover:hover:not([class*="background-hover-color-index-"]) {
+  background-color: $hover-background-color;
+  color: $hover-text-color;
+
+  #{$dark-background-context} {
+    background-color: $colored-hover-background-color;
+    color: $active-colored-text-color;
+  }
+
+  #{$light-background-context} {
+    background-color: $hover-background-color;
+    color: $hover-text-color;
+  }
 }
 
 .#{$grommet-namespace}button:hover {
@@ -108,7 +123,6 @@ $button-horizontal-padding:
 }
 
 .#{$grommet-namespace}button--plain {
-  border: none;
   padding: 0;
   width: auto;
   height: auto;
@@ -128,6 +142,10 @@ $button-horizontal-padding:
       margin-left: 0;
     }
   }
+}
+
+.#{$grommet-namespace}button--plain:not(.#{$grommet-namespace}button--focus) {
+  border: 1px solid transparent;
 }
 
 .#{$grommet-namespace}button:not(.#{$grommet-namespace}button--plain) {
