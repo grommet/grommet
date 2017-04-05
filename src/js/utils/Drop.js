@@ -258,10 +258,10 @@ export default class Drop {
 
     // determine correction when controlRect.width<24 to fix drop dislocation
     var locCorrection = 0;
-    if (controlRect.width<24){ 
-        locCorrection = Math.min(
-          16, (Math.max(0, (containerRect.width-controlRect.width)/2))
-        )};
+    if (controlRect.width<24) { 
+      locCorrection = Math.min(
+        16, (Math.max(0, (containerRect.width-controlRect.width)/2))
+      )};
 
     // set left position
     let left;
