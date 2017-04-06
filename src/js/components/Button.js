@@ -2,9 +2,22 @@
 
 import React, { Children, Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import CSSClassnames from '../utils/CSSClassnames';
+import CSSClassnames, { namespace } from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.BUTTON;
+
+function getHoverModifier(hoverIndicator) {
+  if (hoverIndicator) {
+    if (hoverIndicator.background) {
+      if (typeof hoverIndicator.background === 'string') {
+        const prefix = `${namespace}background-hover-color-index-`;
+        return `${prefix}${hoverIndicator.background}`;
+      }
+      return `${CLASS_ROOT}--hover-background`;
+    }
+    return (`${CLASS_ROOT}--hover-${hoverIndicator}`); 
+  }
+}
 
 export default class Button extends Component {
 
@@ -19,12 +32,6 @@ export default class Button extends Component {
       mouseActive: false,
       focus: false
     };
-
-    if (props.hover && !props.plain) {
-      console.warn(
-        'Button: hover prop only works for plain buttons.'
-      );
-    }
   }
 
   _onClick (event) {
@@ -81,8 +88,9 @@ export default class Button extends Component {
 
   render () {
     const {
-      a11yTitle, accent, align, children, className, fill, hover, href, icon,
-      label, onClick, path, plain, primary, reverse, secondary, type, ...props
+      a11yTitle, accent, align, children, className, fill, hoverIndicator,
+      href, icon, label, onClick, path, plain, primary, reverse, secondary,
+      type, ...props
     } = this.props;
     delete props.method;
     const { router } = this.context;
@@ -123,7 +131,7 @@ export default class Button extends Component {
         [`${CLASS_ROOT}--plain`]: plain || Children.count(children) > 0 ||
           (icon && ! label),
         [`${CLASS_ROOT}--align-${align}`]: align,
-        [`${CLASS_ROOT}--hover`]: plain && hover
+        [getHoverModifier(hoverIndicator)]: hoverIndicator
       },
       className
     );
@@ -163,7 +171,15 @@ Button.propTypes = {
   accent: PropTypes.bool,
   align: PropTypes.oneOf(['start', 'center', 'end']),
   fill: PropTypes.bool,
-  hover: PropTypes.bool,
+  hoverIndicator: PropTypes.oneOfType([
+    PropTypes.oneOf(['background']),
+    PropTypes.shape({
+      background: PropTypes.oneOfType([
+        PropTypes.bool,
+        PropTypes.string
+      ])
+    })
+  ]),
   href: PropTypes.string,
   icon: PropTypes.element,
   label: PropTypes.node,
