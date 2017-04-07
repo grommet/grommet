@@ -382,21 +382,17 @@ export default class Menu extends Component {
 
   _renderButtonProps () {
     const { icon, label } = this.props;
-    let buttonIcon, buttonLabel;
+    // Use default icon if no label or icon is provided
+    if (!label && !icon) {
+      return {icon: <MoreIcon />};
+    }
 
-    // If this is a collapsed inline Menu, use any icon and/or label provided,
-    // revert to default icon if neither.
-    if (icon) {
-      buttonIcon = icon;
-    }
-    if (label) {
-      buttonLabel = label;
-      buttonIcon = <DropCaretIcon a11yTitle='menu-down' />;
-    }
-    if (! buttonIcon && ! buttonLabel) {
-      buttonIcon = <MoreIcon />;
-    }
-    return { icon: buttonIcon, label: buttonLabel };
+    // Return provided label(if any) and provided icon, or default
+    // to DropCaretIcon
+    return {
+      label,
+      icon: icon || <DropCaretIcon a11yTitle='menu-down' />
+    };
   }
 
   _renderMenuDrop () {
