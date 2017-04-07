@@ -8,6 +8,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -30,9 +32,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var CLASS_ROOT = _CSSClassnames2.default.BUTTON;
+
+function getHoverModifier(hoverIndicator) {
+  if (hoverIndicator) {
+    if ((typeof hoverIndicator === 'undefined' ? 'undefined' : _typeof(hoverIndicator)) === 'object') {
+      if (hoverIndicator.background) {
+        if (typeof hoverIndicator.background === 'string') {
+          var prefix = _CSSClassnames.namespace + 'background-hover-color-index-';
+          return '' + prefix + hoverIndicator.background;
+        }
+        return CLASS_ROOT + '--hover-background';
+      }
+    } else if (typeof hoverIndicator === 'string') {
+      return CLASS_ROOT + '--hover-' + hoverIndicator;
+    }
+  }
+}
 
 var Button = function (_Component) {
   _inherits(Button, _Component);
@@ -131,6 +149,7 @@ var Button = function (_Component) {
           children = _props2.children,
           className = _props2.className,
           fill = _props2.fill,
+          hoverIndicator = _props2.hoverIndicator,
           href = _props2.href,
           icon = _props2.icon,
           label = _props2.label,
@@ -141,7 +160,7 @@ var Button = function (_Component) {
           reverse = _props2.reverse,
           secondary = _props2.secondary,
           type = _props2.type,
-          props = _objectWithoutProperties(_props2, ['a11yTitle', 'accent', 'align', 'children', 'className', 'fill', 'href', 'icon', 'label', 'onClick', 'path', 'plain', 'primary', 'reverse', 'secondary', 'type']);
+          props = _objectWithoutProperties(_props2, ['a11yTitle', 'accent', 'align', 'children', 'className', 'fill', 'hoverIndicator', 'href', 'icon', 'label', 'onClick', 'path', 'plain', 'primary', 'reverse', 'secondary', 'type']);
 
       delete props.method;
       var router = this.context.router;
@@ -172,7 +191,7 @@ var Button = function (_Component) {
         adjustedHref = path && router && router.history ? router.history.createHref({ pathname: path }) : href;
       }
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--focus', this.state.focus), _defineProperty(_classnames, CLASS_ROOT + '--primary', primary), _defineProperty(_classnames, CLASS_ROOT + '--secondary', secondary), _defineProperty(_classnames, CLASS_ROOT + '--accent', accent), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !onClick && !adjustedHref && !['reset', 'submit'].includes(type)), _defineProperty(_classnames, CLASS_ROOT + '--fill', fill), _defineProperty(_classnames, CLASS_ROOT + '--plain', plain || _react.Children.count(children) > 0 || icon && !label), _defineProperty(_classnames, CLASS_ROOT + '--align-' + align, align), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--focus', this.state.focus), _defineProperty(_classnames, CLASS_ROOT + '--primary', primary), _defineProperty(_classnames, CLASS_ROOT + '--secondary', secondary), _defineProperty(_classnames, CLASS_ROOT + '--accent', accent), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !onClick && !adjustedHref && !['reset', 'submit'].includes(type)), _defineProperty(_classnames, CLASS_ROOT + '--fill', fill), _defineProperty(_classnames, CLASS_ROOT + '--plain', plain || _react.Children.count(children) > 0 || icon && !label), _defineProperty(_classnames, CLASS_ROOT + '--align-' + align, align), _defineProperty(_classnames, getHoverModifier(hoverIndicator), hoverIndicator), _classnames), className);
 
       var adjustedOnClick = path && router ? this._onClick : onClick;
 
@@ -212,6 +231,9 @@ Button.propTypes = {
   accent: _react.PropTypes.bool,
   align: _react.PropTypes.oneOf(['start', 'center', 'end']),
   fill: _react.PropTypes.bool,
+  hoverIndicator: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(['background']), _react.PropTypes.shape({
+    background: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string])
+  })]),
   href: _react.PropTypes.string,
   icon: _react.PropTypes.element,
   label: _react.PropTypes.node,
