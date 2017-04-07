@@ -64,7 +64,7 @@ $button-horizontal-padding:
   @include background-context-color($button-text-color, $button-text-color);
 }
 
-.#{$grommet-namespace}button--hover-background:hover:not([class*="background-hover-color-index-"]) {
+.#{$grommet-namespace}button--hover-background:hover {
   background-color: $hover-background-color;
   color: $hover-text-color;
 

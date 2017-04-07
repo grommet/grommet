@@ -8,21 +8,24 @@ const CLASS_ROOT = CSSClassnames.BUTTON;
 
 function getHoverModifier(hoverIndicator) {
   if (hoverIndicator) {
-    if (hoverIndicator.background) {
-      if (typeof hoverIndicator.background === 'string') {
-        const prefix = `${namespace}background-hover-color-index-`;
-        return `${prefix}${hoverIndicator.background}`;
+    if (typeof hoverIndicator === 'object') {
+      if (hoverIndicator.background) {
+        if (typeof hoverIndicator.background === 'string') {
+          const prefix = `${namespace}background-hover-color-index-`;
+          return `${prefix}${hoverIndicator.background}`;
+        }
+        return `${CLASS_ROOT}--hover-background`;
       }
-      return `${CLASS_ROOT}--hover-background`;
+    } else if (typeof hoverIndicator === 'string') {
+      return (`${CLASS_ROOT}--hover-${hoverIndicator}`); 
     }
-    return (`${CLASS_ROOT}--hover-${hoverIndicator}`); 
   }
 }
 
 export default class Button extends Component {
 
-  constructor (props, context) {
-    super(props, context);
+  constructor () {
+    super();
     this._onClick = this._onClick.bind(this);
     this._onMouseDown = this._onMouseDown.bind(this);
     this._onMouseUp = this._onMouseDown.bind(this);
