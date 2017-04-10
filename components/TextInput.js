@@ -374,10 +374,13 @@ var TextInput = function (_Component) {
       delete props.onSelect;
       var classes = (0, _classnames4.default)(CLASS_ROOT, INPUT, _defineProperty({}, CLASS_ROOT + '--active', this.state.active), className);
 
-      return _react2.default.createElement('input', _extends({ ref: function ref(_ref) {
+      return _react2.default.createElement('input', _extends({
+        ref: function ref(_ref) {
           return _this4.componentRef = _ref;
-        } }, props, {
-        className: classes, autoComplete: 'off',
+        },
+        autoComplete: 'off'
+      }, props, {
+        className: classes,
         defaultValue: this._renderLabel(defaultValue),
         value: this._renderLabel(value),
         placeholder: placeHolder,
