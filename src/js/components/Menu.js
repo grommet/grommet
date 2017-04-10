@@ -159,7 +159,7 @@ class MenuDrop extends Component {
       if (child && isFunction(child.type) &&
         child.type.prototype._renderMenuDrop) {
         result = React.cloneElement(child,
-          {inline: 'explode', direction: 'column'});
+          { inline: 'explode', direction: 'column' });
       }
       return result;
     });
@@ -384,7 +384,7 @@ export default class Menu extends Component {
     const { icon, label } = this.props;
     // Use default icon if no label or icon is provided
     if (!label && !icon) {
-      return {icon: <MoreIcon />};
+      return { icon: <MoreIcon /> };
     }
 
     // Return provided label(if any) and provided icon, or default
