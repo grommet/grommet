@@ -17,4 +17,9 @@ describe('TextInput', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('can set autocomplete', () => {
+    expect(
+      renderer.create(<TextInput autoComplete="on" />).toJSON()
+    ).toMatchSnapshot();
+  });
 });

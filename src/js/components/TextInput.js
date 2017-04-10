@@ -305,8 +305,11 @@ export default class TextInput extends Component {
     );
 
     return (
-      <input ref={ref => this.componentRef = ref} {...props}
-        className={classes} autoComplete="off"
+      <input
+        ref={ref => this.componentRef = ref}
+        autoComplete="off"
+        {...props}
+        className={classes}
         defaultValue={this._renderLabel(defaultValue)}
         value={this._renderLabel(value)}
         placeholder={placeHolder}

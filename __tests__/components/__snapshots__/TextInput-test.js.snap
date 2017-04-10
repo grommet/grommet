@@ -1,3 +1,15 @@
+exports[`TextInput can set autocomplete 1`] = `
+<input
+  autoComplete="on"
+  className="grommetux-text-input grommetux-input"
+  defaultValue={undefined}
+  onChange={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  placeholder={undefined}
+  value={undefined} />
+`;
+
 exports[`TextInput has correct default options 1`] = `
 <input
   autoComplete="off"
