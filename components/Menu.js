@@ -460,23 +460,18 @@ var Menu = function (_Component2) {
       var _props2 = this.props,
           icon = _props2.icon,
           label = _props2.label;
+      // Use default icon if no label or icon is provided
 
-      var buttonIcon = void 0,
-          buttonLabel = void 0;
+      if (!label && !icon) {
+        return { icon: _react2.default.createElement(_More2.default, null) };
+      }
 
-      // If this is a collapsed inline Menu, use any icon and/or label provided,
-      // revert to default icon if neither.
-      if (icon) {
-        buttonIcon = icon;
-      }
-      if (label) {
-        buttonLabel = label;
-        buttonIcon = _react2.default.createElement(_Down2.default, { a11yTitle: 'menu-down' });
-      }
-      if (!buttonIcon && !buttonLabel) {
-        buttonIcon = _react2.default.createElement(_More2.default, null);
-      }
-      return { icon: buttonIcon, label: buttonLabel };
+      // Return provided label(if any) and provided icon, or default
+      // to DropCaretIcon
+      return {
+        label: label,
+        icon: icon || _react2.default.createElement(_Down2.default, { a11yTitle: 'menu-down' })
+      };
     }
   }, {
     key: '_renderMenuDrop',
