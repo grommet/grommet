@@ -28,16 +28,19 @@ export default class Anchor extends Component {
 
   componentDidMount () {
     const { path } = this.props;
+    const { router } = this.context;
+
     if (path) {
-      this._attachUnlisten(this.context.router.history || this.context.router);
+      this._attachUnlisten(router.history || router);
     }
   }
 
   componentWillReceiveProps(nextProps) {
     const { path } = nextProps;
     const { router } = this.context;
+
     if (path && path !== this.props.path) {
-      this._attachUnlisten(router);
+      this._attachUnlisten(router.history || router);
     }
   }
 
