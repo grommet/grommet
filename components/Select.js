@@ -398,7 +398,7 @@ var Select = function (_Component) {
           return selectedMultiple;
         }
       } else if (option && (typeof option === 'undefined' ? 'undefined' : _typeof(option)) === 'object') {
-        return typeof option.label === 'string' ? option.label : option.value || '';
+        return option.value || option.label || '';
       } else {
         return undefined === option || null === option ? '' : option;
       }
