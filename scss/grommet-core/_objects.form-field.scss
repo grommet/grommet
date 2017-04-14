@@ -254,8 +254,8 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > .#{$grommet-namespace}radio-button {
     display: block;
     @include inuit-font-size($content-font-size);
-    margin-top: double($form-vertical-padding);
-    margin-bottom: double($form-vertical-padding);
+    margin-top: $form-vertical-padding;
+    margin-bottom: $form-vertical-padding;
     margin-left: $form-horizontal-padding;
     margin-right: $form-horizontal-padding;
   }
