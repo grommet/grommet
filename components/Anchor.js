@@ -68,9 +68,11 @@ var Anchor = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var path = this.props.path;
+      var router = this.context.router;
+
 
       if (path) {
-        this._attachUnlisten(this.context.router.history || this.context.router);
+        this._attachUnlisten(router.history || router);
       }
     }
   }, {
@@ -79,8 +81,9 @@ var Anchor = function (_Component) {
       var path = nextProps.path;
       var router = this.context.router;
 
+
       if (path && path !== this.props.path) {
-        this._attachUnlisten(router);
+        this._attachUnlisten(router.history || router);
       }
     }
   }, {
