@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.SKIP_LINK_ANCHOR;
@@ -15,7 +16,7 @@ export default class SkipLinkAnchor extends Component {
       </a>
     );
   }
-};
+}
 
 SkipLinkAnchor.propTypes = {
   label: PropTypes.node.isRequired

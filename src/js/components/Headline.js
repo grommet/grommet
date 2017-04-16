@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 
@@ -28,7 +29,7 @@ export default class Headline extends Component {
       </div>
     );
   }
-};
+}
 
 Headline.propTypes = {
   align: PropTypes.oneOf(['start', 'center', 'end']),

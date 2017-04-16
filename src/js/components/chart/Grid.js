@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
 import { padding } from './utils';
@@ -51,7 +52,7 @@ export default class Grid extends Component {
     );
   }
 
-};
+}
 
 Grid.propTypes = {
   columns: PropTypes.number,

@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
 import { FormattedDate } from 'react-intl';
@@ -204,7 +205,7 @@ export default class Notification extends Component {
       </Box>
     );
   }
-};
+}
 
 Notification.propTypes = {
   closer: PropTypes.oneOfType([

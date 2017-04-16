@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import Box from './Box';
@@ -124,7 +125,7 @@ export default class Footer extends Component {
       );
     }
   }
-};
+}
 
 Footer.propTypes = {
   fixed: PropTypes.bool,

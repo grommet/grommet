@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import TransitionGroup from 'react-addons-transition-group';
 import classnames from 'classnames';
@@ -54,7 +55,7 @@ class Collapse extends Component {
     );
     return <Box {...this.props} className={classes} />;
   }
-};
+}
 
 class Collapsible extends Component {
   render () {
@@ -70,7 +71,7 @@ class Collapsible extends Component {
       </Component>
     );
   }
-};
+}
 
 Collapsible.propTypes = {
   active: PropTypes.bool,

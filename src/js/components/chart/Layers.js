@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, Children, PropTypes } from 'react';
+import React, { Component, Children } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
 
@@ -38,7 +39,7 @@ export default class Layers extends Component {
     );
   }
 
-};
+}
 
 Layers.propTypes = {
   height: PropTypes.number, // only from Chart

@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 import { smallSize } from '../utils/Responsive';
@@ -148,7 +149,7 @@ export default class Split extends Component {
 }
 
 Split.propTypes = {
-  children: PropTypes.arrayOf(React.PropTypes.node).isRequired,
+  children: PropTypes.arrayOf(PropTypes.node).isRequired,
   fixed: PropTypes.bool,
   flex: PropTypes.oneOf(['left', 'right', 'both']),
   onResponsive: PropTypes.func,

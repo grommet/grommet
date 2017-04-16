@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import Anchor from './Anchor';
 import SocialTwitterIcon from './icons/base/SocialTwitter';
 import SocialFacebookIcon from './icons/base/SocialFacebook';
@@ -59,7 +60,7 @@ export default class SocialShare extends Component {
       <Anchor {...props} href={href} icon={socialIcon} target={target} />
     );
   }
-};
+}
 
 SocialShare.propTypes = {
   a11yTitle: PropTypes.string,

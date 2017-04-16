@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import Button from './Button';
 import Box from './Box';
 import AscIcon from './icons/base/LinkDown';
@@ -62,7 +63,7 @@ export default class TableHeader extends Component {
       </thead>
     );
   }
-};
+}
 
 TableHeader.propTypes = {
   labels: PropTypes.arrayOf(PropTypes.node).isRequired,

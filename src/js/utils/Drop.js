@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { filterByFocusable, findScrollParents } from './DOM';
 import CSSClassnames from './CSSClassnames';

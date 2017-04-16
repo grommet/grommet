@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Children, Component } from 'react';
 import classnames from 'classnames';
-import { schema, PropTypes } from 'react-desc';
+import { schema } from 'react-desc';
 import { matchPath } from 'react-router';
 import LinkNextIcon from './icons/base/LinkNext';
 
@@ -193,7 +194,7 @@ export default class Anchor extends Component {
       </Component>
     );
   }
-};
+}
 
 schema(Anchor, {
   description: `A text link. We have a separate component from the browser
@@ -244,5 +245,5 @@ schema(Anchor, {
 });
 
 Anchor.contextTypes = {
-  router: React.PropTypes.object
+  router: PropTypes.object
 };

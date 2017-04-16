@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, Children, PropTypes } from 'react';
+import React, { Component, Children } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
 import Intl from '../../utils/Intl';
@@ -267,7 +268,7 @@ export default class Chart extends Component {
     );
   }
 
-};
+}
 
 Chart.contextTypes = {
   intl: PropTypes.object

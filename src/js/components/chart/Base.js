@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes, Children } from 'react';
+import React, { Component, Children } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
 
@@ -64,7 +65,7 @@ export default class Base extends Component {
     );
   }
 
-};
+}
 
 Base.propTypes = {
   height: PropTypes.oneOf([
