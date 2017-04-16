@@ -30,7 +30,8 @@ const UNITS = {
   H: 'hour',
   m: 'minute',
   s: 'second',
-  a: 'ampm'
+  a: 'ampm',
+  A: 'ampm'
 };
 
 export default class DateTimeDrop extends Component {
