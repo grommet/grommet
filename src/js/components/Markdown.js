@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
+import PropTypes from 'prop-types';
 import React from 'react';
 import Markdown from 'markdown-to-jsx';
 import deepAssign from 'deep-assign';

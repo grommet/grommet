@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
 
 export default {
+import PropTypes from 'prop-types';
   activeIndex: PropTypes.number,
   max: PropTypes.number.isRequired,
   min: PropTypes.number.isRequired,

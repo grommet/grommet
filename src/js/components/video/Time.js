@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
 import Box from '../Box';
