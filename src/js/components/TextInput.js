@@ -1,7 +1,7 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';

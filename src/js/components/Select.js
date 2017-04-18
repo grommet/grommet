@@ -1,7 +1,7 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
