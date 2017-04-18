@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { baseUnit } from '../../utils/Graphics';
 import CSSClassnames from '../../utils/CSSClassnames';
 
@@ -49,4 +50,4 @@ export function buildPath (itemIndex, commands, classes, onActivate,
       <path key={itemIndex} className={classes} d={commands} />
     );
   }
-};
+}

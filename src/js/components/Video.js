@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
@@ -313,7 +314,7 @@ Video.propTypes = {
   shareHeadline: PropTypes.string,
   shareText: PropTypes.string,
   showControls: PropTypes.bool,
-  size: React.PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   timeline: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     time: PropTypes.number

@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 import CSSClassnames from '../../../utils/CSSClassnames';
 import Intl from '../../../utils/Intl';
@@ -31,7 +32,7 @@ export default class Icon extends Component {
     const restProps = Props.omit(this.props, Object.keys(Icon.propTypes));
     return <svg {...restProps} version="1.1" viewBox="0 0 24 24" width="24px" height="24px" role="img" className={classes} aria-label={a11yTitle}><polygon fillRule="evenodd" points="2 0 2 22.794 6.028 22.794 6.028 9.571 21.636 24 21.636 .423 17.607 .423 17.607 14.429"/></svg>;
   }
-};
+}
 
 Icon.contextTypes = {
   intl: PropTypes.object

@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
 import Intl from '../../utils/Intl';
@@ -41,7 +42,7 @@ Grommet.defaultProps = {
 };
 
 Grommet.propTypes = {
-  a11yTitle: React.PropTypes.string,
+  a11yTitle: PropTypes.string,
   invert: PropTypes.bool,
-  size: React.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge'])
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge'])
 };

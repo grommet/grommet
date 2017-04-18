@@ -193,7 +193,7 @@ export default class Anchor extends Component {
       </Component>
     );
   }
-};
+}
 
 schema(Anchor, {
   description: `A text link. We have a separate component from the browser
@@ -244,5 +244,5 @@ schema(Anchor, {
 });
 
 Anchor.contextTypes = {
-  router: React.PropTypes.object
+  router: PropTypes.object
 };

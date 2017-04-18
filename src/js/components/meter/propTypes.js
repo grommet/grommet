@@ -1,6 +1,6 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-import { PropTypes } from 'react';
+import PropTypes from 'prop-types';
 
 export default {
   activeIndex: PropTypes.number,

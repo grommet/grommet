@@ -1,6 +1,7 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { baseUnit, translateEndAngle, arcCommands } from '../utils/Graphics';
 import CSSClassnames from '../utils/CSSClassnames';
