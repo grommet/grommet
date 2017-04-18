@@ -88,7 +88,8 @@ var UNITS = {
   H: 'hour',
   m: 'minute',
   s: 'second',
-  a: 'ampm'
+  a: 'ampm',
+  A: 'ampm'
 };
 
 var DateTimeDrop = function (_Component) {
