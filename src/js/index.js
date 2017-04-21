@@ -24,6 +24,7 @@ export { default as CheckBox } from './components/CheckBox';
 export { default as Columns } from './components/Columns';
 export { default as DateTime } from './components/DateTime';
 export { default as Distribution } from './components/Distribution';
+export { default as FileDropzone } from './utils/FileDropzone';
 export { default as Footer } from './components/Footer';
 export { default as Form } from './components/Form';
 export { default as FormattedMessage } from './components/FormattedMessage';
