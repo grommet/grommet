@@ -1,14 +1,14 @@
 import React, { PropTypes, Component } from 'react';
 import { findDOMNode } from 'react-dom';
-import Box from 'grommet/components/Box';
-import Image from 'grommet/components/Image';
-import Tiles from 'grommet/components/Tiles';
-import Tile from 'grommet/components/Tile';
-import Label from 'grommet/components/Label';
-import Button from 'grommet/components/Button';
-import CloseIcon from 'grommet/components/icons/base/Close';
-import DocumentIcon from 'grommet/components/icons/base/Document';
 import classnames from 'classnames';
+import Box from './Box';
+import Image from './Image';
+import Tiles from './Tiles';
+import Tile from './Tile';
+import Label from './Label';
+import Button from './Button';
+import CloseIcon from './icons/base/Close';
+import DocumentIcon from './icons/base/Document';
 import Props from '../utils/Props';
 import {
   isImage,  
@@ -216,8 +216,7 @@ class Dropzone extends Component {
             onClick={this._onClick}
           />
         }
-        <input accept="image/*, video/*"
-          ref="fileInput" multiple={multiple} onChange={this._onDrop}
+        <input ref="fileInput" multiple={multiple} onChange={this._onDrop}
           type="file" className={`${CLASS_ROOT}__input`} />
         {this._renderPreview(files)}
       </Box>

@@ -48,7 +48,7 @@ Icon.icon = true;
 Icon.propTypes = {
   a11yTitle: PropTypes.string,
   colorIndex: PropTypes.string,
-  size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'huge']),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
   responsive: PropTypes.bool
 };
 
