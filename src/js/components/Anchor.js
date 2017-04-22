@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Children, Component } from 'react';
+import ReactPropTypes from 'prop-types';
 import classnames from 'classnames';
 import { schema, PropTypes } from 'react-desc';
 import { matchPath } from 'react-router';
@@ -244,5 +245,5 @@ schema(Anchor, {
 });
 
 Anchor.contextTypes = {
-  router: React.PropTypes.object
+  router: ReactPropTypes.object
 };

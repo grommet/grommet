@@ -1,6 +1,7 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { padding } from './utils';
 import CSSClassnames from '../../utils/CSSClassnames';
@@ -128,7 +129,7 @@ export default class HotSpots extends Component {
     );
   }
 
-};
+}
 
 HotSpots.contextTypes = {
   intl: PropTypes.object

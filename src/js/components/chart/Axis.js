@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
 import Intl from '../../utils/Intl';
@@ -100,7 +101,7 @@ export default class Axis extends Component {
     );
   }
 
-};
+}
 
 Axis.contextTypes = {
   intl: PropTypes.object
