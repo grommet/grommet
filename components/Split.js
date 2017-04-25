@@ -127,7 +127,7 @@ var Split = function (_Component) {
     value: function _layout() {
       var splitElement = this.splitRef;
       if (splitElement) {
-        if (splitElement.offsetWidth < (0, _Responsive.smallSize)() && this.props.showOnResponsive === 'priority') {
+        if (splitElement.offsetWidth <= (0, _Responsive.smallSize)() && this.props.showOnResponsive === 'priority') {
           this._setResponsive('single');
         } else {
           this._setResponsive('multiple');
