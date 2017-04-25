@@ -81,7 +81,7 @@ export default class Split extends Component {
   _layout () {
     const splitElement = this.splitRef;
     if (splitElement) {
-      if (splitElement.offsetWidth < smallSize() &&
+      if (splitElement.offsetWidth <= smallSize() &&
         this.props.showOnResponsive === 'priority') {
         this._setResponsive('single');
       } else {
