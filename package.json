@@ -44,7 +44,7 @@
     "react-addons-transition-group": "^15.3.0",
     "react-desc": "^1.0.0",
     "react-dom": "^15.3.0",
-    "react-intl": "^2.1.2",
+    "react-intl": "^2.2.3",
     "react-router": "2 - 4",
     "superagent": "^3.3.1"
   },
