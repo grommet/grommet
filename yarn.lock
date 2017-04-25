@@ -2631,7 +2631,7 @@ grommet-icon-loader@^0.4.0:
     xmlbuilder "~2.6.4"
     yargs "~3.18.0"
 
-grommet-toolbox@^1.0.0:
+grommet-toolbox@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/grommet-toolbox/-/grommet-toolbox-1.1.1.tgz#12549de69e1af112af8d6f036102ee3efd0baf2f"
   dependencies:
