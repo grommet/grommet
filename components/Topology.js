@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _classnames5 = require('classnames');
@@ -154,19 +158,19 @@ Part.displayName = 'Part';
 
 
 Part.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Part.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  align: _react.PropTypes.oneOf(['start', 'center', 'between', 'end', 'stretch']),
-  demarcate: _react.PropTypes.bool,
-  direction: _react.PropTypes.oneOf(['row', 'column']).isRequired,
-  id: _react.PropTypes.string,
-  justify: _react.PropTypes.oneOf(['start', 'center', 'between', 'end']),
-  label: _react.PropTypes.string,
-  reverse: _react.PropTypes.bool,
-  status: _react.PropTypes.string
+  a11yTitle: _propTypes2.default.string,
+  align: _propTypes2.default.oneOf(['start', 'center', 'between', 'end', 'stretch']),
+  demarcate: _propTypes2.default.bool,
+  direction: _propTypes2.default.oneOf(['row', 'column']).isRequired,
+  id: _propTypes2.default.string,
+  justify: _propTypes2.default.oneOf(['start', 'center', 'between', 'end']),
+  label: _propTypes2.default.string,
+  reverse: _propTypes2.default.bool,
+  status: _propTypes2.default.string
 };
 
 Part.defaultProps = {
@@ -257,13 +261,13 @@ Parts.displayName = 'Parts';
 
 
 Parts.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Parts.propTypes = {
-  align: _react.PropTypes.oneOf(['start', 'center', 'between', 'end', 'stretch']),
-  direction: _react.PropTypes.oneOf(['row', 'column']).isRequired,
-  uniform: _react.PropTypes.bool
+  align: _propTypes2.default.oneOf(['start', 'center', 'between', 'end', 'stretch']),
+  direction: _propTypes2.default.oneOf(['row', 'column']).isRequired,
+  uniform: _propTypes2.default.bool
 };
 
 Parts.defaultProps = {
@@ -569,16 +573,16 @@ exports.default = Topology;
 
 
 Topology.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Topology.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  links: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    colorIndex: _react.PropTypes.string,
-    ids: _react.PropTypes.arrayOf(_react.PropTypes.string).isRequired
+  a11yTitle: _propTypes2.default.string,
+  links: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    colorIndex: _propTypes2.default.string,
+    ids: _propTypes2.default.arrayOf(_propTypes2.default.string).isRequired
   })),
-  linkOffset: _react.PropTypes.number
+  linkOffset: _propTypes2.default.number
 };
 
 Topology.defaultProps = {

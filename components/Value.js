@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -124,18 +128,18 @@ exports.default = Value;
 
 
 Value.propTypes = {
-  active: _react.PropTypes.bool,
-  align: _react.PropTypes.oneOf(['start', 'center', 'end']),
-  announce: _react.PropTypes.bool,
-  colorIndex: _react.PropTypes.string,
-  icon: _react.PropTypes.node,
-  label: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.node]),
-  onClick: _react.PropTypes.func,
-  responsive: _react.PropTypes.bool,
-  size: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-  trendIcon: _react.PropTypes.node,
-  value: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string, _react.PropTypes.node]),
-  units: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.node])
+  active: _propTypes2.default.bool,
+  align: _propTypes2.default.oneOf(['start', 'center', 'end']),
+  announce: _propTypes2.default.bool,
+  colorIndex: _propTypes2.default.string,
+  icon: _propTypes2.default.node,
+  label: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node]),
+  onClick: _propTypes2.default.func,
+  responsive: _propTypes2.default.bool,
+  size: _propTypes2.default.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+  trendIcon: _propTypes2.default.node,
+  value: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string, _propTypes2.default.node]),
+  units: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node])
 };
 
 Value.defaultProps = {

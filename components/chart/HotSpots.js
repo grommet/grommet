@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames3 = require('classnames');
 
 var _classnames4 = _interopRequireDefault(_classnames3);
@@ -193,18 +197,18 @@ var HotSpots = function (_Component) {
 
 HotSpots.displayName = 'HotSpots';
 exports.default = HotSpots;
-;
+
 
 HotSpots.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 HotSpots.propTypes = {
-  a11yTitle: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.number]),
-  activeIndex: _react.PropTypes.number,
-  count: _react.PropTypes.number.isRequired,
-  onActive: _react.PropTypes.func,
-  onClick: _react.PropTypes.func,
-  vertical: _react.PropTypes.bool
+  a11yTitle: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+  activeIndex: _propTypes2.default.number,
+  count: _propTypes2.default.number.isRequired,
+  onActive: _propTypes2.default.func,
+  onClick: _propTypes2.default.func,
+  vertical: _propTypes2.default.bool
 };
 module.exports = exports['default'];

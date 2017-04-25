@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -28,12 +32,12 @@ var GrommetFormattedMessage = function GrommetFormattedMessage(props, context) {
 };
 
 GrommetFormattedMessage.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 GrommetFormattedMessage.propTypes = {
-  id: _react.PropTypes.string.isRequired,
-  defaultMessage: _react.PropTypes.string
+  id: _propTypes2.default.string.isRequired,
+  defaultMessage: _propTypes2.default.string
 };
 
 GrommetFormattedMessage.displayName = 'GrommetFormattedMessage';

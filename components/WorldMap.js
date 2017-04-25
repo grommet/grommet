@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -254,12 +258,12 @@ exports.default = WorldMap;
 
 
 WorldMap.propTypes = {
-  series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    continent: _react.PropTypes.oneOf(['NorthAmerica', 'SouthAmerica', 'Europe', 'Africa', 'Asia', 'Australia']),
+  series: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    continent: _propTypes2.default.oneOf(['NorthAmerica', 'SouthAmerica', 'Europe', 'Africa', 'Asia', 'Australia']),
     // value: PropTypes.number,
-    colorIndex: _react.PropTypes.string,
+    colorIndex: _propTypes2.default.string,
     // important: PropTypes.bool,
-    onClick: _react.PropTypes.func
+    onClick: _propTypes2.default.func
   }))
 };
 module.exports = exports['default'];

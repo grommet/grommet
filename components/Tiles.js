@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _classnames2 = require('classnames');
@@ -603,16 +607,16 @@ exports.default = Tiles;
 
 
 Tiles.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Tiles.propTypes = _extends({
-  fill: _react.PropTypes.bool,
-  flush: _react.PropTypes.bool,
-  onMore: _react.PropTypes.func,
-  onSelect: _react.PropTypes.func,
-  selectable: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf(['multiple'])]),
-  selected: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)])
+  fill: _propTypes2.default.bool,
+  flush: _propTypes2.default.bool,
+  onMore: _propTypes2.default.func,
+  onSelect: _propTypes2.default.func,
+  selectable: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.oneOf(['multiple'])]),
+  selected: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.arrayOf(_propTypes2.default.number)])
 }, _Box2.default.propTypes);
 
 Tiles.defaultProps = {

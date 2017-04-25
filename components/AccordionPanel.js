@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -133,18 +137,18 @@ var AccordionPanel = function (_Component) {
 
 AccordionPanel.displayName = 'AccordionPanel';
 exports.default = AccordionPanel;
-;
+
 
 AccordionPanel.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  active: _react.PropTypes.bool, // set by Accordion
-  animate: _react.PropTypes.bool,
-  heading: _react.PropTypes.node.isRequired,
-  onChange: _react.PropTypes.func,
+  a11yTitle: _propTypes2.default.string,
+  active: _propTypes2.default.bool, // set by Accordion
+  animate: _propTypes2.default.bool,
+  heading: _propTypes2.default.node.isRequired,
+  onChange: _propTypes2.default.func,
   pad: _Header2.default.propTypes.pad
 };
 
 AccordionPanel.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 module.exports = exports['default'];

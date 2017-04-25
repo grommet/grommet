@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _Box = require('../Box');
 
 var _Box2 = _interopRequireDefault(_Box);
@@ -73,7 +77,7 @@ exports.default = Time;
 
 
 Time.propTypes = {
-  currentTime: _react.PropTypes.number,
-  duration: _react.PropTypes.number
+  currentTime: _propTypes2.default.number,
+  duration: _propTypes2.default.number
 };
 module.exports = exports['default'];

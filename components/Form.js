@@ -14,6 +14,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -73,17 +77,17 @@ var Form = function (_Component) {
 
 Form.displayName = 'Form';
 exports.default = Form;
-;
+
 
 Form.propTypes = {
-  compact: _react.PropTypes.bool,
-  fill: _react.PropTypes.bool,
-  onSubmit: _react.PropTypes.func,
-  pad: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(['none', 'small', 'medium', 'large']), _react.PropTypes.shape({
-    horizontal: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-    vertical: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large'])
+  compact: _propTypes2.default.bool,
+  fill: _propTypes2.default.bool,
+  onSubmit: _propTypes2.default.func,
+  pad: _propTypes2.default.oneOfType([_propTypes2.default.oneOf(['none', 'small', 'medium', 'large']), _propTypes2.default.shape({
+    horizontal: _propTypes2.default.oneOf(['none', 'small', 'medium', 'large']),
+    vertical: _propTypes2.default.oneOf(['none', 'small', 'medium', 'large'])
   })]),
-  plain: _react.PropTypes.bool
+  plain: _propTypes2.default.bool
 };
 
 Form.defaultProps = {

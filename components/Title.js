@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -109,14 +113,14 @@ exports.default = Title;
 
 
 Title.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  onClick: _react.PropTypes.func,
-  responsive: _react.PropTypes.bool,
-  truncate: _react.PropTypes.bool
+  a11yTitle: _propTypes2.default.string,
+  onClick: _propTypes2.default.func,
+  responsive: _propTypes2.default.bool,
+  truncate: _propTypes2.default.bool
 };
 
 Title.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Title.defaultProps = {

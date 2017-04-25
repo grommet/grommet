@@ -14,6 +14,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames3 = require('classnames');
 
 var _classnames4 = _interopRequireDefault(_classnames3);
@@ -397,20 +401,20 @@ exports.default = TextInput;
 
 
 TextInput.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 TextInput.propTypes = {
-  defaultValue: _react.PropTypes.string,
-  id: _react.PropTypes.string,
-  name: _react.PropTypes.string,
-  onDOMChange: _react.PropTypes.func,
-  onSelect: _react.PropTypes.func,
-  placeHolder: _react.PropTypes.string,
-  suggestions: _react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.shape({
-    label: _react.PropTypes.node,
-    value: _react.PropTypes.any
-  }), _react.PropTypes.string])),
-  value: _react.PropTypes.string
+  defaultValue: _propTypes2.default.string,
+  id: _propTypes2.default.string,
+  name: _propTypes2.default.string,
+  onDOMChange: _propTypes2.default.func,
+  onSelect: _propTypes2.default.func,
+  placeHolder: _propTypes2.default.string,
+  suggestions: _propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.shape({
+    label: _propTypes2.default.node,
+    value: _propTypes2.default.any
+  }), _propTypes2.default.string])),
+  value: _propTypes2.default.string
 };
 module.exports = exports['default'];

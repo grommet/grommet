@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -258,20 +262,20 @@ exports.default = LoginForm;
 
 
 LoginForm.propTypes = {
-  align: _react.PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
-  defaultValues: _react.PropTypes.shape({
-    username: _react.PropTypes.string,
-    rememberMe: _react.PropTypes.bool
+  align: _propTypes2.default.oneOf(['start', 'center', 'end', 'stretch']),
+  defaultValues: _propTypes2.default.shape({
+    username: _propTypes2.default.string,
+    rememberMe: _propTypes2.default.bool
   }),
-  errors: _react.PropTypes.arrayOf(_react.PropTypes.string),
-  forgotPassword: _react.PropTypes.node,
-  logo: _react.PropTypes.node,
-  onSubmit: _react.PropTypes.func,
-  onChange: _react.PropTypes.func,
-  rememberMe: _react.PropTypes.bool,
-  secondaryText: _react.PropTypes.string,
-  title: _react.PropTypes.string,
-  usernameType: _react.PropTypes.string
+  errors: _propTypes2.default.arrayOf(_propTypes2.default.string),
+  forgotPassword: _propTypes2.default.node,
+  logo: _propTypes2.default.node,
+  onSubmit: _propTypes2.default.func,
+  onChange: _propTypes2.default.func,
+  rememberMe: _propTypes2.default.bool,
+  secondaryText: _propTypes2.default.string,
+  title: _propTypes2.default.string,
+  usernameType: _propTypes2.default.string
 };
 
 LoginForm.defaultProps = {

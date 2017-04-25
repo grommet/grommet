@@ -14,6 +14,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -224,27 +228,27 @@ var Button = function (_Component) {
 
 Button.displayName = 'Button';
 exports.default = Button;
-;
+
 
 Button.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  accent: _react.PropTypes.bool,
-  align: _react.PropTypes.oneOf(['start', 'center', 'end']),
-  fill: _react.PropTypes.bool,
-  hoverIndicator: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(['background']), _react.PropTypes.shape({
-    background: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string])
+  a11yTitle: _propTypes2.default.string,
+  accent: _propTypes2.default.bool,
+  align: _propTypes2.default.oneOf(['start', 'center', 'end']),
+  fill: _propTypes2.default.bool,
+  hoverIndicator: _propTypes2.default.oneOfType([_propTypes2.default.oneOf(['background']), _propTypes2.default.shape({
+    background: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.string])
   })]),
-  href: _react.PropTypes.string,
-  icon: _react.PropTypes.element,
-  label: _react.PropTypes.node,
-  method: _react.PropTypes.oneOf(['push', 'replace']),
-  onClick: _react.PropTypes.func,
-  path: _react.PropTypes.string,
-  plain: _react.PropTypes.bool,
-  primary: _react.PropTypes.bool,
-  reverse: _react.PropTypes.bool,
-  secondary: _react.PropTypes.bool,
-  type: _react.PropTypes.oneOf(['button', 'reset', 'submit'])
+  href: _propTypes2.default.string,
+  icon: _propTypes2.default.element,
+  label: _propTypes2.default.node,
+  method: _propTypes2.default.oneOf(['push', 'replace']),
+  onClick: _propTypes2.default.func,
+  path: _propTypes2.default.string,
+  plain: _propTypes2.default.bool,
+  primary: _propTypes2.default.bool,
+  reverse: _propTypes2.default.bool,
+  secondary: _propTypes2.default.bool,
+  type: _propTypes2.default.oneOf(['button', 'reset', 'submit'])
 };
 
 Button.defaultProps = {
@@ -253,6 +257,6 @@ Button.defaultProps = {
 };
 
 Button.contextTypes = {
-  router: _react.PropTypes.object
+  router: _propTypes2.default.object
 };
 module.exports = exports['default'];

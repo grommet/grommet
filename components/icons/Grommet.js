@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -78,7 +82,7 @@ exports.default = Grommet;
 
 
 Grommet.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Grommet.defaultProps = {
@@ -86,8 +90,8 @@ Grommet.defaultProps = {
 };
 
 Grommet.propTypes = {
-  a11yTitle: _react2.default.PropTypes.string,
-  invert: _react.PropTypes.bool,
-  size: _react2.default.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge'])
+  a11yTitle: _propTypes2.default.string,
+  invert: _propTypes2.default.bool,
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large', 'xlarge'])
 };
 module.exports = exports['default'];

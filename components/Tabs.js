@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -144,14 +148,14 @@ exports.default = Tabs;
 
 
 Tabs.propTypes = {
-  activeIndex: _react.PropTypes.number,
-  justify: _react.PropTypes.oneOf(['start', 'center', 'end']),
-  responsive: _react.PropTypes.bool,
-  onActive: _react.PropTypes.func
+  activeIndex: _propTypes2.default.number,
+  justify: _propTypes2.default.oneOf(['start', 'center', 'end']),
+  responsive: _propTypes2.default.bool,
+  onActive: _propTypes2.default.func
 };
 
 Tabs.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Tabs.defaultProps = {

@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
@@ -103,7 +107,6 @@ var Collapse = function (_Component) {
 }(_react.Component);
 
 Collapse.displayName = 'Collapse';
-;
 
 var Collapsible = function (_Component2) {
   _inherits(Collapsible, _Component2);
@@ -132,11 +135,11 @@ var Collapsible = function (_Component2) {
 }(_react.Component);
 
 Collapsible.displayName = 'Collapsible';
-;
+
 
 Collapsible.propTypes = {
-  active: _react.PropTypes.bool,
-  animate: _react.PropTypes.bool
+  active: _propTypes2.default.bool,
+  animate: _propTypes2.default.bool
 };
 
 Collapsible.defaultProps = {

@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _Add = require('./base/Add');
 
 var _Add2 = _interopRequireDefault(_Add);
@@ -76,8 +80,8 @@ exports.default = Pulse;
 
 
 Pulse.propTypes = {
-  className: _react.PropTypes.string,
-  icon: _react.PropTypes.node
+  className: _propTypes2.default.string,
+  icon: _propTypes2.default.node
 };
 
 Pulse.defaultProps = {

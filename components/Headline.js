@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -72,12 +76,12 @@ var Headline = function (_Component) {
 
 Headline.displayName = 'Headline';
 exports.default = Headline;
-;
+
 
 Headline.propTypes = {
-  align: _react.PropTypes.oneOf(['start', 'center', 'end']),
-  margin: _react.PropTypes.oneOf(['none', 'small', 'medium', 'large']),
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
-  strong: _react.PropTypes.bool
+  align: _propTypes2.default.oneOf(['start', 'center', 'end']),
+  margin: _propTypes2.default.oneOf(['none', 'small', 'medium', 'large']),
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large', 'xlarge']),
+  strong: _propTypes2.default.bool
 };
 module.exports = exports['default'];

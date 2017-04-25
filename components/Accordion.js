@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -135,13 +139,13 @@ var Accordion = function (_Component) {
 
 Accordion.displayName = 'Accordion';
 exports.default = Accordion;
-;
+
 
 Accordion.propTypes = {
-  active: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)]),
-  animate: _react.PropTypes.bool,
-  onActive: _react.PropTypes.func,
-  openMulti: _react.PropTypes.bool
+  active: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.arrayOf(_propTypes2.default.number)]),
+  animate: _propTypes2.default.bool,
+  onActive: _propTypes2.default.func,
+  openMulti: _propTypes2.default.bool
 };
 
 Accordion.defaultProps = {

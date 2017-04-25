@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _Anchor = require('./Anchor');
 
 var _Anchor2 = _interopRequireDefault(_Anchor);
@@ -114,16 +118,16 @@ var SocialShare = function (_Component) {
 
 SocialShare.displayName = 'SocialShare';
 exports.default = SocialShare;
-;
+
 
 SocialShare.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  className: _react.PropTypes.string,
-  colorIndex: _react.PropTypes.string,
-  link: _react.PropTypes.string.isRequired,
-  text: _react.PropTypes.string,
-  title: _react.PropTypes.string,
-  type: _react.PropTypes.oneOf(['email', 'facebook', 'twitter', 'linkedin', 'google']).isRequired
+  a11yTitle: _propTypes2.default.string,
+  className: _propTypes2.default.string,
+  colorIndex: _propTypes2.default.string,
+  link: _propTypes2.default.string.isRequired,
+  text: _propTypes2.default.string,
+  title: _propTypes2.default.string,
+  type: _propTypes2.default.oneOf(['email', 'facebook', 'twitter', 'linkedin', 'google']).isRequired
 };
 
 SocialShare.defaultProps = {

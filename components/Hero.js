@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames3 = require('classnames');
 
 var _classnames4 = _interopRequireDefault(_classnames3);
@@ -299,19 +303,19 @@ exports.default = Hero;
 
 
 Hero.propTypes = {
-  background: _react.PropTypes.element,
-  backgroundColorIndex: _react.PropTypes.string,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
+  background: _propTypes2.default.element,
+  backgroundColorIndex: _propTypes2.default.string,
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large']),
   // below props are all deprecated
-  backgroundImage: _react.PropTypes.string,
-  backgroundPosition: _react.PropTypes.oneOf(['left', 'center', 'right']),
-  backgroundVideo: _react.PropTypes.element,
-  colorIndex: _react.PropTypes.string,
-  flush: _react.PropTypes.bool,
-  image: _react.PropTypes.string,
-  justify: _react.PropTypes.oneOf(['start', 'center', 'end']),
-  responsiveBackgroundPosition: _react.PropTypes.oneOf(['left', 'center', 'right']),
-  separator: _react.PropTypes.bool
+  backgroundImage: _propTypes2.default.string,
+  backgroundPosition: _propTypes2.default.oneOf(['left', 'center', 'right']),
+  backgroundVideo: _propTypes2.default.element,
+  colorIndex: _propTypes2.default.string,
+  flush: _propTypes2.default.bool,
+  image: _propTypes2.default.string,
+  justify: _propTypes2.default.oneOf(['start', 'center', 'end']),
+  responsiveBackgroundPosition: _propTypes2.default.oneOf(['left', 'center', 'right']),
+  separator: _propTypes2.default.bool
 };
 
 Hero.defaultProps = {

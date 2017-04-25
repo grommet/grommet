@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames3 = require('classnames');
 
 var _classnames4 = _interopRequireDefault(_classnames3);
@@ -159,22 +163,22 @@ var MarkerLabel = function (_Component) {
   return MarkerLabel;
 }(_react.Component);
 
+// Need either count and index or value, min, and max
+
+
 MarkerLabel.displayName = 'MarkerLabel';
 exports.default = MarkerLabel;
-;
-
-// Need either count and index or value, min, and max
 MarkerLabel.propTypes = {
-  align: _react.PropTypes.oneOf(['start', 'end']), // only from Chart
-  colorIndex: _react.PropTypes.string,
-  count: _react.PropTypes.number,
-  index: _react.PropTypes.number,
-  label: _react.PropTypes.node,
-  max: _react.PropTypes.number,
-  min: _react.PropTypes.number,
-  reverse: _react.PropTypes.bool,
-  value: _react.PropTypes.number,
-  vertical: _react.PropTypes.bool
+  align: _propTypes2.default.oneOf(['start', 'end']), // only from Chart
+  colorIndex: _propTypes2.default.string,
+  count: _propTypes2.default.number,
+  index: _propTypes2.default.number,
+  label: _propTypes2.default.node,
+  max: _propTypes2.default.number,
+  min: _propTypes2.default.number,
+  reverse: _propTypes2.default.bool,
+  value: _propTypes2.default.number,
+  vertical: _propTypes2.default.bool
 };
 
 MarkerLabel.defaultProps = {

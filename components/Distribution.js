@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
@@ -656,27 +660,27 @@ exports.default = Distribution;
 
 
 Distribution.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Distribution.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  full: _react.PropTypes.bool, // deprecated, use size='full'
-  series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    label: _react.PropTypes.node,
-    value: _react.PropTypes.number.isRequired,
-    colorIndex: _react.PropTypes.string,
-    important: _react.PropTypes.bool,
-    onClick: _react.PropTypes.func,
-    icon: _react.PropTypes.shape({
-      width: _react.PropTypes.number,
-      height: _react.PropTypes.number,
-      svgElement: _react.PropTypes.node
+  a11yTitle: _propTypes2.default.string,
+  full: _propTypes2.default.bool, // deprecated, use size='full'
+  series: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    label: _propTypes2.default.node,
+    value: _propTypes2.default.number.isRequired,
+    colorIndex: _propTypes2.default.string,
+    important: _propTypes2.default.bool,
+    onClick: _propTypes2.default.func,
+    icon: _propTypes2.default.shape({
+      width: _propTypes2.default.number,
+      height: _propTypes2.default.number,
+      svgElement: _propTypes2.default.node
     })
   })),
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'full']),
-  units: _react.PropTypes.string,
-  vertical: _react.PropTypes.bool
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large', 'full']),
+  units: _propTypes2.default.string,
+  vertical: _propTypes2.default.bool
 };
 
 Distribution.defaultProps = {

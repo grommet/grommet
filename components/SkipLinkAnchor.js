@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
@@ -51,9 +55,9 @@ var SkipLinkAnchor = function (_Component) {
 
 SkipLinkAnchor.displayName = 'SkipLinkAnchor';
 exports.default = SkipLinkAnchor;
-;
+
 
 SkipLinkAnchor.propTypes = {
-  label: _react.PropTypes.node.isRequired
+  label: _propTypes2.default.node.isRequired
 };
 module.exports = exports['default'];

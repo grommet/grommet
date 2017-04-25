@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -108,13 +112,13 @@ var Quote = function (_Component) {
 
 Quote.displayName = 'Quote';
 exports.default = Quote;
-;
+
 
 Quote.propTypes = _extends({
-  borderColorIndex: _react.PropTypes.string,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'full']),
-  credit: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
-  emphasizeCredit: _react.PropTypes.bool
+  borderColorIndex: _propTypes2.default.string,
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large', 'full']),
+  credit: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.element]),
+  emphasizeCredit: _propTypes2.default.bool
 }, _Box2.default.propTypes);
 
 Quote.defaultProps = {

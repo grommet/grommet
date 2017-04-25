@@ -4,26 +4,29 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = require('react');
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  activeIndex: _react.PropTypes.number,
-  max: _react.PropTypes.number.isRequired,
-  min: _react.PropTypes.number.isRequired,
-  onActivate: _react.PropTypes.func.isRequired,
-  series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    label: _react.PropTypes.string, // used in Spiral
-    value: _react.PropTypes.number.isRequired,
-    colorIndex: _react.PropTypes.string,
-    onClick: _react.PropTypes.func
+  activeIndex: _propTypes2.default.number,
+  max: _propTypes2.default.number.isRequired,
+  min: _propTypes2.default.number.isRequired,
+  onActivate: _propTypes2.default.func.isRequired,
+  series: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    label: _propTypes2.default.string, // used in Spiral
+    value: _propTypes2.default.number.isRequired,
+    colorIndex: _propTypes2.default.string,
+    onClick: _propTypes2.default.func
   })).isRequired,
-  stacked: _react.PropTypes.bool,
-  thresholds: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    value: _react.PropTypes.number.isRequired,
-    colorIndex: _react.PropTypes.string
+  stacked: _propTypes2.default.bool,
+  thresholds: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    value: _propTypes2.default.number.isRequired,
+    colorIndex: _propTypes2.default.string
   })).isRequired,
-  total: _react.PropTypes.number.isRequired,
-  vertical: _react.PropTypes.bool
-}; // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
-
+  total: _propTypes2.default.number.isRequired,
+  vertical: _propTypes2.default.bool
+};
 module.exports = exports['default'];

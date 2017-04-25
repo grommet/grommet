@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -73,16 +77,16 @@ var RadioButton = function (_Component) {
 
 RadioButton.displayName = 'RadioButton';
 exports.default = RadioButton;
-;
+
 
 RadioButton.propTypes = {
-  checked: _react.PropTypes.bool,
-  defaultChecked: _react.PropTypes.bool,
-  disabled: _react.PropTypes.bool,
-  id: _react.PropTypes.string.isRequired,
-  label: _react.PropTypes.node.isRequired,
-  name: _react.PropTypes.string,
-  onChange: _react.PropTypes.func,
-  value: _react.PropTypes.string
+  checked: _propTypes2.default.bool,
+  defaultChecked: _propTypes2.default.bool,
+  disabled: _propTypes2.default.bool,
+  id: _propTypes2.default.string.isRequired,
+  label: _propTypes2.default.node.isRequired,
+  name: _propTypes2.default.string,
+  onChange: _propTypes2.default.func,
+  value: _propTypes2.default.string
 };
 module.exports = exports['default'];

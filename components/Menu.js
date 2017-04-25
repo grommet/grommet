@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _classnames3 = require('classnames');
@@ -271,20 +275,20 @@ MenuDrop.displayName = 'MenuDrop';
 
 
 MenuDrop.propTypes = _extends({
-  control: _react.PropTypes.node,
+  control: _propTypes2.default.node,
   dropAlign: _Drop.dropAlignPropType,
-  dropColorIndex: _react.PropTypes.string,
-  onClick: _react.PropTypes.func.isRequired,
-  router: _react.PropTypes.any,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
-  store: _react.PropTypes.any
+  dropColorIndex: _propTypes2.default.string,
+  onClick: _propTypes2.default.func.isRequired,
+  router: _propTypes2.default.any,
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large']),
+  store: _propTypes2.default.any
 }, _Box2.default.propTypes);
 
 MenuDrop.childContextTypes = {
-  history: _react.PropTypes.any,
-  intl: _react.PropTypes.any,
-  router: _react.PropTypes.any,
-  store: _react.PropTypes.any
+  history: _propTypes2.default.any,
+  intl: _propTypes2.default.any,
+  router: _propTypes2.default.any,
+  store: _propTypes2.default.any
 };
 
 var Menu = function (_Component2) {
@@ -572,22 +576,22 @@ exports.default = Menu;
 
 
 Menu.propTypes = _extends({
-  closeOnClick: _react.PropTypes.bool,
+  closeOnClick: _propTypes2.default.bool,
   dropAlign: _Drop.dropAlignPropType,
-  dropColorIndex: _react.PropTypes.string,
-  icon: _react.PropTypes.node,
-  id: _react.PropTypes.string,
-  inline: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf(['expand'])]),
-  fill: _react.PropTypes.bool,
-  label: _react.PropTypes.string,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
+  dropColorIndex: _propTypes2.default.string,
+  icon: _propTypes2.default.node,
+  id: _propTypes2.default.string,
+  inline: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.oneOf(['expand'])]),
+  fill: _propTypes2.default.bool,
+  label: _propTypes2.default.string,
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large'])
 }, _Box2.default.propTypes);
 
 Menu.contextTypes = {
-  history: _react.PropTypes.any,
-  intl: _react.PropTypes.any,
-  router: _react.PropTypes.any,
-  store: _react.PropTypes.any
+  history: _propTypes2.default.any,
+  intl: _propTypes2.default.any,
+  router: _propTypes2.default.any,
+  store: _propTypes2.default.any
 };
 
 Menu.defaultProps = {

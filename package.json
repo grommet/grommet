@@ -36,6 +36,7 @@
     "lodash.zip": "^4.2.0",
     "markdown-to-jsx": "^5.0.0",
     "moment": "^2.13.0",
+    "prop-types": "^15.5.8",
     "react": "^15.3.0",
     "react-addons-transition-group": "^15.3.0",
     "react-desc": "^1.0.0",

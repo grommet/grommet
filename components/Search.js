@@ -14,6 +14,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _classnames4 = require('classnames');
@@ -587,7 +591,7 @@ exports.default = Search;
 
 
 Search.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Search.defaultProps = {
@@ -598,26 +602,26 @@ Search.defaultProps = {
 };
 
 Search.propTypes = {
-  align: _react.PropTypes.string,
-  defaultValue: _react.PropTypes.string,
+  align: _propTypes2.default.string,
+  defaultValue: _propTypes2.default.string,
   dropAlign: _Drop.dropAlignPropType,
-  dropColorIndex: _react.PropTypes.string,
-  fill: _react.PropTypes.bool,
-  iconAlign: _react.PropTypes.oneOf(['start', 'end']),
-  id: _react.PropTypes.string,
-  initialFocus: _react.PropTypes.bool,
-  inline: _react.PropTypes.bool,
-  onDOMChange: _react.PropTypes.func,
-  onSelect: _react.PropTypes.func,
-  onKeyDown: _react.PropTypes.func,
-  pad: _react.PropTypes.oneOf(['small', 'medium']),
-  placeHolder: _react.PropTypes.string,
-  responsive: _react.PropTypes.bool,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
-  suggestions: _react.PropTypes.arrayOf(_react.PropTypes.oneOfType([_react.PropTypes.shape({
-    label: _react.PropTypes.node,
-    value: _react.PropTypes.any
-  }), _react.PropTypes.string])),
-  value: _react.PropTypes.string
+  dropColorIndex: _propTypes2.default.string,
+  fill: _propTypes2.default.bool,
+  iconAlign: _propTypes2.default.oneOf(['start', 'end']),
+  id: _propTypes2.default.string,
+  initialFocus: _propTypes2.default.bool,
+  inline: _propTypes2.default.bool,
+  onDOMChange: _propTypes2.default.func,
+  onSelect: _propTypes2.default.func,
+  onKeyDown: _propTypes2.default.func,
+  pad: _propTypes2.default.oneOf(['small', 'medium']),
+  placeHolder: _propTypes2.default.string,
+  responsive: _propTypes2.default.bool,
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large']),
+  suggestions: _propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.shape({
+    label: _propTypes2.default.node,
+    value: _propTypes2.default.any
+  }), _propTypes2.default.string])),
+  value: _propTypes2.default.string
 };
 module.exports = exports['default'];

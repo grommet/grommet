@@ -14,6 +14,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
@@ -391,60 +395,60 @@ var MARGIN_SIZES = ['small', 'medium', 'large', 'none'];
 var PAD_SIZES = ['small', 'medium', 'large', 'xlarge', 'none'];
 
 Box.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  announce: _react.PropTypes.bool,
-  align: _react.PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']),
-  alignContent: _react.PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']),
-  alignSelf: _react.PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
-  appCentered: _react.PropTypes.bool,
-  backgroundImage: _react.PropTypes.string,
-  basis: _react.PropTypes.oneOf(SIZES),
-  colorIndex: _react.PropTypes.string,
-  containerClassName: _react.PropTypes.string,
-  direction: _react.PropTypes.oneOf(['row', 'column']),
-  focusable: _react.PropTypes.bool,
-  flex: _react.PropTypes.oneOf(['grow', 'shrink', true, false]),
-  full: _react.PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
+  a11yTitle: _propTypes2.default.string,
+  announce: _propTypes2.default.bool,
+  align: _propTypes2.default.oneOf(['start', 'center', 'end', 'baseline', 'stretch']),
+  alignContent: _propTypes2.default.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch']),
+  alignSelf: _propTypes2.default.oneOf(['start', 'center', 'end', 'stretch']),
+  appCentered: _propTypes2.default.bool,
+  backgroundImage: _propTypes2.default.string,
+  basis: _propTypes2.default.oneOf(SIZES),
+  colorIndex: _propTypes2.default.string,
+  containerClassName: _propTypes2.default.string,
+  direction: _propTypes2.default.oneOf(['row', 'column']),
+  focusable: _propTypes2.default.bool,
+  flex: _propTypes2.default.oneOf(['grow', 'shrink', true, false]),
+  full: _propTypes2.default.oneOf([true, 'horizontal', 'vertical', false]),
   // remove in 1.0?
-  onClick: _react.PropTypes.func,
-  justify: _react.PropTypes.oneOf(['start', 'center', 'between', 'end']),
-  margin: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(MARGIN_SIZES), _react.PropTypes.shape({
-    bottom: _react.PropTypes.oneOf(MARGIN_SIZES),
-    horizontal: _react.PropTypes.oneOf(MARGIN_SIZES),
-    left: _react.PropTypes.oneOf(MARGIN_SIZES),
-    right: _react.PropTypes.oneOf(MARGIN_SIZES),
-    top: _react.PropTypes.oneOf(MARGIN_SIZES),
-    vertical: _react.PropTypes.oneOf(MARGIN_SIZES)
+  onClick: _propTypes2.default.func,
+  justify: _propTypes2.default.oneOf(['start', 'center', 'between', 'end']),
+  margin: _propTypes2.default.oneOfType([_propTypes2.default.oneOf(MARGIN_SIZES), _propTypes2.default.shape({
+    bottom: _propTypes2.default.oneOf(MARGIN_SIZES),
+    horizontal: _propTypes2.default.oneOf(MARGIN_SIZES),
+    left: _propTypes2.default.oneOf(MARGIN_SIZES),
+    right: _propTypes2.default.oneOf(MARGIN_SIZES),
+    top: _propTypes2.default.oneOf(MARGIN_SIZES),
+    vertical: _propTypes2.default.oneOf(MARGIN_SIZES)
   })]),
-  pad: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(PAD_SIZES), _react.PropTypes.shape({
-    between: _react.PropTypes.oneOf(PAD_SIZES),
-    horizontal: _react.PropTypes.oneOf(PAD_SIZES),
-    vertical: _react.PropTypes.oneOf(PAD_SIZES)
+  pad: _propTypes2.default.oneOfType([_propTypes2.default.oneOf(PAD_SIZES), _propTypes2.default.shape({
+    between: _propTypes2.default.oneOf(PAD_SIZES),
+    horizontal: _propTypes2.default.oneOf(PAD_SIZES),
+    vertical: _propTypes2.default.oneOf(PAD_SIZES)
   })]),
-  primary: _react.PropTypes.bool,
-  reverse: _react.PropTypes.bool,
-  responsive: _react.PropTypes.bool,
-  role: _react.PropTypes.string,
-  separator: _react.PropTypes.oneOf(['top', 'bottom', 'left', 'right', 'horizontal', 'vertical', 'all', 'none']),
-  size: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(['auto', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'full']), // remove in 1.0?, use basis
-  _react.PropTypes.shape({
-    height: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(SIZES), _react.PropTypes.shape({
-      max: _react.PropTypes.oneOf(FIXED_SIZES),
-      min: _react.PropTypes.oneOf(FIXED_SIZES)
+  primary: _propTypes2.default.bool,
+  reverse: _propTypes2.default.bool,
+  responsive: _propTypes2.default.bool,
+  role: _propTypes2.default.string,
+  separator: _propTypes2.default.oneOf(['top', 'bottom', 'left', 'right', 'horizontal', 'vertical', 'all', 'none']),
+  size: _propTypes2.default.oneOfType([_propTypes2.default.oneOf(['auto', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'full']), // remove in 1.0?, use basis
+  _propTypes2.default.shape({
+    height: _propTypes2.default.oneOfType([_propTypes2.default.oneOf(SIZES), _propTypes2.default.shape({
+      max: _propTypes2.default.oneOf(FIXED_SIZES),
+      min: _propTypes2.default.oneOf(FIXED_SIZES)
     })]),
-    width: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(SIZES), _react.PropTypes.shape({
-      max: _react.PropTypes.oneOf(FIXED_SIZES),
-      min: _react.PropTypes.oneOf(FIXED_SIZES)
+    width: _propTypes2.default.oneOfType([_propTypes2.default.oneOf(SIZES), _propTypes2.default.shape({
+      max: _propTypes2.default.oneOf(FIXED_SIZES),
+      min: _propTypes2.default.oneOf(FIXED_SIZES)
     })])
   })]),
-  tag: _react.PropTypes.string,
-  textAlign: _react.PropTypes.oneOf(['left', 'center', 'right']),
-  texture: _react.PropTypes.oneOfType([_react.PropTypes.node, _react.PropTypes.string]),
-  wrap: _react.PropTypes.bool
+  tag: _propTypes2.default.string,
+  textAlign: _propTypes2.default.oneOf(['left', 'center', 'right']),
+  texture: _propTypes2.default.oneOfType([_propTypes2.default.node, _propTypes2.default.string]),
+  wrap: _propTypes2.default.bool
 };
 
 Box.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Box.defaultProps = {

@@ -14,6 +14,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _classnames2 = require('classnames');
@@ -294,21 +298,21 @@ var Notification = function (_Component) {
 
 Notification.displayName = 'Notification';
 exports.default = Notification;
-;
+
 
 Notification.propTypes = _extends({
-  closer: _react.PropTypes.oneOfType([_react.PropTypes.node, _react.PropTypes.bool]),
-  context: _react.PropTypes.node,
-  message: _react.PropTypes.string.isRequired,
-  onClose: _react.PropTypes.func,
-  percentComplete: _react.PropTypes.number,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
-  state: _react.PropTypes.string,
-  status: _react.PropTypes.string,
-  timestamp: _react.PropTypes.object }, _Box2.default.propTypes);
+  closer: _propTypes2.default.oneOfType([_propTypes2.default.node, _propTypes2.default.bool]),
+  context: _propTypes2.default.node,
+  message: _propTypes2.default.string.isRequired,
+  onClose: _propTypes2.default.func,
+  percentComplete: _propTypes2.default.number,
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large']),
+  state: _propTypes2.default.string,
+  status: _propTypes2.default.string,
+  timestamp: _propTypes2.default.object }, _Box2.default.propTypes);
 
 Notification.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Notification.defaultProps = {

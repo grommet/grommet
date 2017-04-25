@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -92,10 +96,10 @@ var SVGIcon = function (_Component) {
 
 SVGIcon.displayName = 'SVGIcon';
 exports.default = SVGIcon;
-;
+
 
 SVGIcon.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 SVGIcon.defaultProps = {
@@ -103,9 +107,9 @@ SVGIcon.defaultProps = {
 };
 
 SVGIcon.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  colorIndex: _react.PropTypes.string,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
-  type: _react.PropTypes.oneOf(['control', 'logo', 'status'])
+  a11yTitle: _propTypes2.default.string,
+  colorIndex: _propTypes2.default.string,
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
+  type: _propTypes2.default.oneOf(['control', 'logo', 'status'])
 };
 module.exports = exports['default'];

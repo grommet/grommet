@@ -14,6 +14,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
@@ -196,13 +200,13 @@ LayerContents.displayName = 'LayerContents';
 
 
 LayerContents.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  closer: _react.PropTypes.oneOfType([_react.PropTypes.node, _react.PropTypes.bool]),
-  history: _react.PropTypes.object,
-  intl: _react.PropTypes.object,
-  onClose: _react.PropTypes.func,
-  router: _react.PropTypes.any,
-  store: _react.PropTypes.any
+  a11yTitle: _propTypes2.default.string,
+  closer: _propTypes2.default.oneOfType([_propTypes2.default.node, _propTypes2.default.bool]),
+  history: _propTypes2.default.object,
+  intl: _propTypes2.default.object,
+  onClose: _propTypes2.default.func,
+  router: _propTypes2.default.any,
+  store: _propTypes2.default.any
 };
 
 // Because Layer creates a new DOM render context, the context
@@ -211,11 +215,11 @@ LayerContents.propTypes = {
 // whatever we find or have callers explicitly indicate which parts
 // of the context to transfer somehow.
 LayerContents.childContextTypes = {
-  history: _react.PropTypes.object,
-  intl: _react.PropTypes.object,
-  onDropChange: _react.PropTypes.func,
-  router: _react.PropTypes.any,
-  store: _react.PropTypes.object
+  history: _propTypes2.default.object,
+  intl: _propTypes2.default.object,
+  onDropChange: _propTypes2.default.func,
+  router: _propTypes2.default.any,
+  store: _propTypes2.default.object
 };
 
 var Layer = function (_Component2) {
@@ -382,19 +386,19 @@ exports.default = Layer;
 
 
 Layer.propTypes = {
-  align: _react.PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']),
-  closer: _react.PropTypes.oneOfType([_react.PropTypes.node, _react.PropTypes.bool]),
-  flush: _react.PropTypes.bool,
-  hidden: _react.PropTypes.bool,
-  peek: _react.PropTypes.bool,
-  onClose: _react.PropTypes.func
+  align: _propTypes2.default.oneOf(['center', 'top', 'bottom', 'left', 'right']),
+  closer: _propTypes2.default.oneOfType([_propTypes2.default.node, _propTypes2.default.bool]),
+  flush: _propTypes2.default.bool,
+  hidden: _propTypes2.default.bool,
+  peek: _propTypes2.default.bool,
+  onClose: _propTypes2.default.func
 };
 
 Layer.contextTypes = {
-  router: _react.PropTypes.any,
-  history: _react.PropTypes.object,
-  intl: _react.PropTypes.object,
-  store: _react.PropTypes.object
+  router: _propTypes2.default.any,
+  history: _propTypes2.default.object,
+  intl: _propTypes2.default.object,
+  store: _propTypes2.default.object
 };
 
 Layer.defaultProps = {

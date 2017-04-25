@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -81,10 +85,10 @@ var Layers = function (_Component) {
 
 Layers.displayName = 'Layers';
 exports.default = Layers;
-;
+
 
 Layers.propTypes = {
-  height: _react.PropTypes.number, // only from Chart
-  width: _react.PropTypes.number // only from Chart
+  height: _propTypes2.default.number, // only from Chart
+  width: _propTypes2.default.number // only from Chart
 };
 module.exports = exports['default'];

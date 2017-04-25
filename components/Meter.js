@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -378,32 +382,32 @@ exports.default = Meter;
 
 
 Meter.propTypes = {
-  active: _react.PropTypes.bool, // when single value
-  activeIndex: _react.PropTypes.number, // for series values
-  a11yTitle: _react.PropTypes.string,
-  colorIndex: _react.PropTypes.string,
-  label: _react.PropTypes.node,
-  max: _react.PropTypes.number,
-  min: _react.PropTypes.number,
-  onActive: _react.PropTypes.func,
-  series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    colorIndex: _react.PropTypes.string,
-    onClick: _react.PropTypes.func,
-    label: _react.PropTypes.string, // only for Spiral
-    value: _react.PropTypes.number.isRequired
+  active: _propTypes2.default.bool, // when single value
+  activeIndex: _propTypes2.default.number, // for series values
+  a11yTitle: _propTypes2.default.string,
+  colorIndex: _propTypes2.default.string,
+  label: _propTypes2.default.node,
+  max: _propTypes2.default.number,
+  min: _propTypes2.default.number,
+  onActive: _propTypes2.default.func,
+  series: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    colorIndex: _propTypes2.default.string,
+    onClick: _propTypes2.default.func,
+    label: _propTypes2.default.string, // only for Spiral
+    value: _propTypes2.default.number.isRequired
   })),
-  size: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-  stacked: _react.PropTypes.bool,
-  tabIndex: _react.PropTypes.string,
-  threshold: _react.PropTypes.number,
-  thresholds: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    value: _react.PropTypes.number.isRequired,
-    colorIndex: _react.PropTypes.string
+  size: _propTypes2.default.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+  stacked: _propTypes2.default.bool,
+  tabIndex: _propTypes2.default.string,
+  threshold: _propTypes2.default.number,
+  thresholds: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    value: _propTypes2.default.number.isRequired,
+    colorIndex: _propTypes2.default.string
   })),
-  type: _react.PropTypes.oneOf(['bar', 'arc', 'circle', 'spiral']),
-  value: _react.PropTypes.number,
-  vertical: _react.PropTypes.bool,
-  responsive: _react.PropTypes.bool
+  type: _propTypes2.default.oneOf(['bar', 'arc', 'circle', 'spiral']),
+  value: _propTypes2.default.number,
+  vertical: _propTypes2.default.bool,
+  responsive: _propTypes2.default.bool
 };
 
 Meter.defaultProps = {
@@ -411,6 +415,6 @@ Meter.defaultProps = {
 };
 
 Meter.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 module.exports = exports['default'];

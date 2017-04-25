@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _classnames2 = require('classnames');
@@ -346,30 +350,30 @@ exports.default = Video;
 
 
 Video.propTypes = {
-  align: _react.PropTypes.shape({
-    bottom: _react.PropTypes.boolean,
-    left: _react.PropTypes.boolean,
-    right: _react.PropTypes.boolean,
-    top: _react.PropTypes.boolean
+  align: _propTypes2.default.shape({
+    bottom: _propTypes2.default.boolean,
+    left: _propTypes2.default.boolean,
+    right: _propTypes2.default.boolean,
+    top: _propTypes2.default.boolean
   }),
-  allowFullScreen: _react.PropTypes.bool,
-  autoPlay: _react.PropTypes.bool,
-  colorIndex: _react.PropTypes.string,
-  fit: _react.PropTypes.oneOf(['contain', 'cover']),
-  full: _react.PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
-  loop: _react.PropTypes.bool,
-  muted: _react.PropTypes.bool,
-  poster: _react.PropTypes.string,
-  shareLink: _react.PropTypes.string,
-  shareHeadline: _react.PropTypes.string,
-  shareText: _react.PropTypes.string,
-  showControls: _react.PropTypes.bool,
-  size: _react2.default.PropTypes.oneOf(['small', 'medium', 'large']),
-  timeline: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    label: _react.PropTypes.string,
-    time: _react.PropTypes.number
+  allowFullScreen: _propTypes2.default.bool,
+  autoPlay: _propTypes2.default.bool,
+  colorIndex: _propTypes2.default.string,
+  fit: _propTypes2.default.oneOf(['contain', 'cover']),
+  full: _propTypes2.default.oneOf([true, 'horizontal', 'vertical', false]),
+  loop: _propTypes2.default.bool,
+  muted: _propTypes2.default.bool,
+  poster: _propTypes2.default.string,
+  shareLink: _propTypes2.default.string,
+  shareHeadline: _propTypes2.default.string,
+  shareText: _propTypes2.default.string,
+  showControls: _propTypes2.default.bool,
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large']),
+  timeline: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    label: _propTypes2.default.string,
+    time: _propTypes2.default.number
   })),
-  title: _react.PropTypes.node
+  title: _propTypes2.default.node
 };
 
 Video.defaultProps = {

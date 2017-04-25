@@ -14,6 +14,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _classnames3 = require('classnames');
@@ -568,22 +572,22 @@ Select.displayName = 'Select';
 exports.default = Select;
 
 
-var valueType = _react.PropTypes.oneOfType([_react.PropTypes.shape({
-  label: _react.PropTypes.node,
-  value: _react.PropTypes.any
-}), _react.PropTypes.string, _react.PropTypes.number]);
+var valueType = _propTypes2.default.oneOfType([_propTypes2.default.shape({
+  label: _propTypes2.default.node,
+  value: _propTypes2.default.any
+}), _propTypes2.default.string, _propTypes2.default.number]);
 
 Select.propTypes = {
-  inline: _react.PropTypes.bool,
-  multiple: _react.PropTypes.bool,
-  onSearch: _react.PropTypes.func,
-  onChange: _react.PropTypes.func, // (value(s))
-  placeHolder: _react.PropTypes.string,
-  options: _react.PropTypes.arrayOf(valueType).isRequired,
-  value: _react.PropTypes.oneOfType([valueType, _react.PropTypes.arrayOf(valueType)])
+  inline: _propTypes2.default.bool,
+  multiple: _propTypes2.default.bool,
+  onSearch: _propTypes2.default.func,
+  onChange: _propTypes2.default.func, // (value(s))
+  placeHolder: _propTypes2.default.string,
+  options: _propTypes2.default.arrayOf(valueType).isRequired,
+  value: _propTypes2.default.oneOfType([valueType, _propTypes2.default.arrayOf(valueType)])
 };
 
 Select.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 module.exports = exports['default'];

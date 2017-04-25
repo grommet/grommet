@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -75,12 +79,12 @@ var Sidebar = function (_Component) {
 
 Sidebar.displayName = 'Sidebar';
 exports.default = Sidebar;
-;
+
 
 Sidebar.propTypes = _extends({
-  fixed: _react.PropTypes.bool,
-  size: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
-  full: _react.PropTypes.bool
+  fixed: _propTypes2.default.bool,
+  size: _propTypes2.default.oneOf(['xsmall', 'small', 'medium', 'large']),
+  full: _propTypes2.default.bool
 }, _Box2.default.propTypes);
 
 Sidebar.defaultProps = {

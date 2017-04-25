@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -197,13 +201,13 @@ exports.default = Split;
 
 
 Split.propTypes = {
-  children: _react.PropTypes.arrayOf(_react2.default.PropTypes.node).isRequired,
-  fixed: _react.PropTypes.bool,
-  flex: _react.PropTypes.oneOf(['left', 'right', 'both']),
-  onResponsive: _react.PropTypes.func,
-  priority: _react.PropTypes.oneOf(['left', 'right']),
-  separator: _react.PropTypes.bool,
-  showOnResponsive: _react.PropTypes.oneOf(['priority', 'both'])
+  children: _propTypes2.default.arrayOf(_propTypes2.default.node).isRequired,
+  fixed: _propTypes2.default.bool,
+  flex: _propTypes2.default.oneOf(['left', 'right', 'both']),
+  onResponsive: _propTypes2.default.func,
+  priority: _propTypes2.default.oneOf(['left', 'right']),
+  separator: _propTypes2.default.bool,
+  showOnResponsive: _propTypes2.default.oneOf(['priority', 'both'])
 };
 
 Split.defaultProps = {

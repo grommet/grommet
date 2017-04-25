@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames3 = require('classnames');
 
 var _classnames4 = _interopRequireDefault(_classnames3);
@@ -156,24 +160,24 @@ var Axis = function (_Component) {
 
 Axis.displayName = 'Axis';
 exports.default = Axis;
-;
+
 
 Axis.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Axis.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  align: _react.PropTypes.oneOf(['start', 'end']), // only from Chart
-  count: _react.PropTypes.number.isRequired,
-  labels: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    colorIndex: _react.PropTypes.string,
-    index: _react.PropTypes.number.isRequired,
-    label: _react.PropTypes.node.isRequired
+  a11yTitle: _propTypes2.default.string,
+  align: _propTypes2.default.oneOf(['start', 'end']), // only from Chart
+  count: _propTypes2.default.number.isRequired,
+  labels: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    colorIndex: _propTypes2.default.string,
+    index: _propTypes2.default.number.isRequired,
+    label: _propTypes2.default.node.isRequired
   })),
-  reverse: _react.PropTypes.bool,
-  ticks: _react.PropTypes.bool,
-  tickAlign: _react.PropTypes.oneOf(['start', 'end']),
-  vertical: _react.PropTypes.bool
+  reverse: _propTypes2.default.bool,
+  ticks: _propTypes2.default.bool,
+  tickAlign: _propTypes2.default.oneOf(['start', 'end']),
+  vertical: _propTypes2.default.bool
 };
 module.exports = exports['default'];

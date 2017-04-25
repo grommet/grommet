@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -139,10 +143,10 @@ exports.default = ProgressBar;
 
 
 ProgressBar.propTypes = {
-  onClick: _react.PropTypes.func,
-  duration: _react.PropTypes.number,
-  progress: _react.PropTypes.number,
-  onChapterHover: _react.PropTypes.func
+  onClick: _propTypes2.default.func,
+  duration: _propTypes2.default.number,
+  progress: _propTypes2.default.number,
+  onChapterHover: _propTypes2.default.func
 };
 
 ProgressBar.defaultProps = {

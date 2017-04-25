@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _Intl = require('../../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
@@ -96,11 +100,11 @@ exports.default = PlayButton;
 
 
 PlayButton.propTypes = {
-  iconSize: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
-  playing: _react.PropTypes.bool,
-  primary: _react.PropTypes.bool,
-  ended: _react.PropTypes.bool,
-  togglePlay: _react.PropTypes.func
+  iconSize: _propTypes2.default.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
+  playing: _propTypes2.default.bool,
+  primary: _propTypes2.default.bool,
+  ended: _propTypes2.default.bool,
+  togglePlay: _propTypes2.default.func
 };
 
 PlayButton.defaultProps = {

@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -153,13 +157,13 @@ exports.default = FormField;
 
 
 FormField.propTypes = {
-  error: _react.PropTypes.node,
-  help: _react.PropTypes.node,
-  hidden: _react.PropTypes.bool,
-  htmlFor: _react.PropTypes.string,
-  label: _react.PropTypes.node,
-  size: _react.PropTypes.oneOf(['medium', 'large']),
-  strong: _react.PropTypes.bool
+  error: _propTypes2.default.node,
+  help: _propTypes2.default.node,
+  hidden: _propTypes2.default.bool,
+  htmlFor: _propTypes2.default.string,
+  label: _propTypes2.default.node,
+  size: _propTypes2.default.oneOf(['medium', 'large']),
+  strong: _propTypes2.default.bool
 };
 
 FormField.defaultProps = {

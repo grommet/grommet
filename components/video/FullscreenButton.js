@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _Intl = require('../../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
@@ -78,6 +82,6 @@ exports.default = FullscreenButton;
 
 
 FullscreenButton.propTypes = {
-  onClick: _react.PropTypes.func
+  onClick: _propTypes2.default.func
 };
 module.exports = exports['default'];

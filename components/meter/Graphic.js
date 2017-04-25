@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
@@ -380,17 +384,17 @@ exports.default = Graphic;
 
 
 Graphic.propTypes = _extends({
-  stacked: _react.PropTypes.bool,
-  tabIndex: _react.PropTypes.string,
-  thresholds: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    value: _react.PropTypes.number.isRequired,
-    colorIndex: _react.PropTypes.string
+  stacked: _propTypes2.default.bool,
+  tabIndex: _propTypes2.default.string,
+  thresholds: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    value: _propTypes2.default.number.isRequired,
+    colorIndex: _propTypes2.default.string
   })).isRequired,
-  vertical: _react.PropTypes.bool
+  vertical: _propTypes2.default.bool
 }, _utils.propTypes);
 
 Graphic.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Graphic.defaultProps = {

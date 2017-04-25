@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames3 = require('classnames');
 
 var _classnames4 = _interopRequireDefault(_classnames3);
@@ -347,22 +351,22 @@ var Card = function (_Component) {
 
 Card.displayName = 'Card';
 exports.default = Card;
-;
+
 
 Card.propTypes = _extends({
   contentPad: _Box2.default.propTypes.pad,
-  description: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
-  heading: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
-  headingStrong: _react.PropTypes.bool,
-  label: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
-  link: _react.PropTypes.element,
-  textSize: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-  thumbnail: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.element]),
-  truncate: _react.PropTypes.bool,
-  video: _react.PropTypes.oneOfType([_react.PropTypes.shape({
-    source: _react.PropTypes.string.isRequired,
-    type: _react.PropTypes.string
-  }), _react.PropTypes.element])
+  description: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.element]),
+  heading: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.element]),
+  headingStrong: _propTypes2.default.bool,
+  label: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.element]),
+  link: _propTypes2.default.element,
+  textSize: _propTypes2.default.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+  thumbnail: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.element]),
+  truncate: _propTypes2.default.bool,
+  video: _propTypes2.default.oneOfType([_propTypes2.default.shape({
+    source: _propTypes2.default.string.isRequired,
+    type: _propTypes2.default.string
+  }), _propTypes2.default.element])
 }, _Box2.default.propTypes);
 
 Card.defaultProps = {

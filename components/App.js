@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -115,8 +119,8 @@ exports.default = App;
 
 
 App.propTypes = {
-  centered: _react.PropTypes.bool,
-  inline: _react.PropTypes.bool
+  centered: _propTypes2.default.bool,
+  inline: _propTypes2.default.bool
 };
 
 App.defaultProps = {

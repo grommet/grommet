@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _classnames4 = require('classnames');
@@ -380,30 +384,30 @@ exports.default = ResourceMap;
 
 
 ResourceMap.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 ResourceMap.propTypes = {
-  active: _react.PropTypes.string,
-  data: _react.PropTypes.shape({
-    categories: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-      id: _react.PropTypes.string,
-      label: _react.PropTypes.node,
-      items: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-        id: _react.PropTypes.string,
-        label: _react.PropTypes.string,
-        node: _react.PropTypes.node
+  active: _propTypes2.default.string,
+  data: _propTypes2.default.shape({
+    categories: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+      id: _propTypes2.default.string,
+      label: _propTypes2.default.node,
+      items: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+        id: _propTypes2.default.string,
+        label: _propTypes2.default.string,
+        node: _propTypes2.default.node
       }))
     })),
-    links: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-      childId: _react.PropTypes.string.isRequired,
-      colorIndex: _react.PropTypes.string,
-      parentId: _react.PropTypes.string.isRequired
+    links: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+      childId: _propTypes2.default.string.isRequired,
+      colorIndex: _propTypes2.default.string,
+      parentId: _propTypes2.default.string.isRequired
     }))
   }).isRequired,
-  linkColorIndex: _react.PropTypes.string,
-  onActive: _react.PropTypes.func,
-  vertical: _react.PropTypes.bool
+  linkColorIndex: _propTypes2.default.string,
+  onActive: _propTypes2.default.func,
+  vertical: _propTypes2.default.bool
 };
 
 ResourceMap.defaultProps = {

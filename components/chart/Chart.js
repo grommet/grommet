@@ -13,6 +13,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -355,20 +359,20 @@ var Chart = function (_Component) {
 
 Chart.displayName = 'Chart';
 exports.default = Chart;
-;
+
 
 Chart.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Chart.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  full: _react.PropTypes.bool,
-  horizontalAlignWith: _react.PropTypes.string,
-  loading: _react.PropTypes.bool,
-  onMaxCount: _react.PropTypes.func,
-  vertical: _react.PropTypes.bool,
-  verticalAlignWith: _react.PropTypes.string
+  a11yTitle: _propTypes2.default.string,
+  full: _propTypes2.default.bool,
+  horizontalAlignWith: _propTypes2.default.string,
+  loading: _propTypes2.default.bool,
+  onMaxCount: _propTypes2.default.func,
+  vertical: _propTypes2.default.bool,
+  verticalAlignWith: _propTypes2.default.string
 };
 
 exports.Axis = _Axis2.default;

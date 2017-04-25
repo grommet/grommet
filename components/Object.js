@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
@@ -122,6 +126,6 @@ exports.default = GrommetObject;
 
 
 GrommetObject.propTypes = {
-  data: _react.PropTypes.object
+  data: _propTypes2.default.object
 };
 module.exports = exports['default'];

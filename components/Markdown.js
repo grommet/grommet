@@ -8,6 +8,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _markdownToJsx = require('markdown-to-jsx');
 
 var _markdownToJsx2 = _interopRequireDefault(_markdownToJsx);
@@ -37,8 +41,6 @@ var _Image = require('./Image');
 var _Image2 = _interopRequireDefault(_Image);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 var GrommetMarkdown = function GrommetMarkdown(props) {
   var content = props.content,
@@ -79,12 +81,12 @@ var GrommetMarkdown = function GrommetMarkdown(props) {
     { options: { overrides: options } },
     content
   );
-};
+}; // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
 GrommetMarkdown.propTypes = {
-  content: _react.PropTypes.string,
-  components: _react.PropTypes.shape({
-    props: _react.PropTypes.object
+  content: _propTypes2.default.string,
+  components: _propTypes2.default.shape({
+    props: _propTypes2.default.object
   })
 };
 

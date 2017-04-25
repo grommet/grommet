@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -98,10 +102,10 @@ var Grid = function (_Component) {
 
 Grid.displayName = 'Grid';
 exports.default = Grid;
-;
+
 
 Grid.propTypes = {
-  columns: _react.PropTypes.number,
-  rows: _react.PropTypes.number
+  columns: _propTypes2.default.number,
+  rows: _propTypes2.default.number
 };
 module.exports = exports['default'];

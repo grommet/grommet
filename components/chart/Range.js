@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -301,15 +305,15 @@ var Range = function (_Component) {
 
 Range.displayName = 'Range';
 exports.default = Range;
-;
+
 
 Range.propTypes = {
-  active: _react.PropTypes.shape({
-    end: _react.PropTypes.number.isRequired,
-    start: _react.PropTypes.number.isRequired
+  active: _propTypes2.default.shape({
+    end: _propTypes2.default.number.isRequired,
+    start: _propTypes2.default.number.isRequired
   }),
-  count: _react.PropTypes.number.isRequired,
-  onActive: _react.PropTypes.func, // (start, end)
-  vertical: _react.PropTypes.bool
+  count: _propTypes2.default.number.isRequired,
+  onActive: _propTypes2.default.func, // (start, end)
+  vertical: _propTypes2.default.bool
 };
 module.exports = exports['default'];

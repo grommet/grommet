@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
@@ -183,10 +187,10 @@ exports.default = Header;
 
 
 Header.propTypes = _extends({
-  fixed: _react.PropTypes.bool,
-  float: _react.PropTypes.bool,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
-  splash: _react.PropTypes.bool
+  fixed: _propTypes2.default.bool,
+  float: _propTypes2.default.bool,
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large']),
+  splash: _propTypes2.default.bool
 }, _Box2.default.propTypes);
 
 Header.defaultProps = {

@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -123,9 +127,9 @@ exports.default = Status;
 
 
 Status.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
-  value: _react.PropTypes.oneOf(['critical', 'warning', 'ok', 'unknown', 'disabled', 'label', 'Critical', 'Warning', 'OK', 'Unknown', 'Disabled', 'Label', 'blank'])
+  a11yTitle: _propTypes2.default.string,
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large']),
+  value: _propTypes2.default.oneOf(['critical', 'warning', 'ok', 'unknown', 'disabled', 'label', 'Critical', 'Warning', 'OK', 'Unknown', 'Disabled', 'Label', 'blank'])
 };
 
 Status.defaultProps = {

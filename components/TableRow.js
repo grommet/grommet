@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -67,9 +71,9 @@ var TableRow = function (_Component) {
 
 TableRow.displayName = 'TableRow';
 exports.default = TableRow;
-;
+
 
 TableRow.propTypes = {
-  onClick: _react.PropTypes.func
+  onClick: _propTypes2.default.func
 };
 module.exports = exports['default'];

@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -282,6 +286,6 @@ exports.default = Anchor;
 });
 
 Anchor.contextTypes = {
-  router: _react2.default.PropTypes.object
+  router: _propTypes2.default.object
 };
 module.exports = exports['default'];

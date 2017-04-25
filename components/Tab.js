@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -99,9 +103,9 @@ exports.default = Tab;
 
 
 Tab.propTypes = {
-  title: _react.PropTypes.node.isRequired,
-  active: _react.PropTypes.bool,
-  id: _react.PropTypes.string,
-  onRequestForActive: _react.PropTypes.func // from Tabs
+  title: _propTypes2.default.node.isRequired,
+  active: _propTypes2.default.bool,
+  id: _propTypes2.default.string,
+  onRequestForActive: _propTypes2.default.func // from Tabs
 };
 module.exports = exports['default'];

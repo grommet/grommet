@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames3 = require('classnames');
 
 var _classnames4 = _interopRequireDefault(_classnames3);
@@ -87,23 +91,23 @@ var Image = function (_Component) {
 
 Image.displayName = 'Image';
 exports.default = Image;
-;
+
 
 Image.propTypes = {
-  align: _react.PropTypes.shape({
-    bottom: _react.PropTypes.boolean,
-    left: _react.PropTypes.boolean,
-    right: _react.PropTypes.boolean,
-    top: _react.PropTypes.boolean
+  align: _propTypes2.default.shape({
+    bottom: _propTypes2.default.boolean,
+    left: _propTypes2.default.boolean,
+    right: _propTypes2.default.boolean,
+    top: _propTypes2.default.boolean
   }),
-  alt: _react.PropTypes.string,
-  caption: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.string]),
-  fit: _react.PropTypes.oneOf(['contain', 'cover']),
-  full: _react.PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
-  mask: _react.PropTypes.bool,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'thumb']),
-  src: _react.PropTypes.string,
-  title: _react.PropTypes.string
+  alt: _propTypes2.default.string,
+  caption: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.string]),
+  fit: _propTypes2.default.oneOf(['contain', 'cover']),
+  full: _propTypes2.default.oneOf([true, 'horizontal', 'vertical', false]),
+  mask: _propTypes2.default.bool,
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large', 'thumb']),
+  src: _propTypes2.default.string,
+  title: _propTypes2.default.string
 };
 
 Image.defaultProps = {

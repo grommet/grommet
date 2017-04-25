@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -154,20 +158,20 @@ var Marker = function (_Component) {
   return Marker;
 }(_react.Component);
 
+// Need either count and index or value, min, and max
+
+
 Marker.displayName = 'Marker';
 exports.default = Marker;
-;
-
-// Need either count and index or value, min, and max
 Marker.propTypes = {
-  colorIndex: _react.PropTypes.string,
-  count: _react.PropTypes.number,
-  index: _react.PropTypes.number,
-  max: _react.PropTypes.number,
-  min: _react.PropTypes.number,
-  reverse: _react.PropTypes.bool,
-  value: _react.PropTypes.number,
-  vertical: _react.PropTypes.bool
+  colorIndex: _propTypes2.default.string,
+  count: _propTypes2.default.number,
+  index: _propTypes2.default.number,
+  max: _propTypes2.default.number,
+  min: _propTypes2.default.number,
+  reverse: _propTypes2.default.bool,
+  value: _propTypes2.default.number,
+  vertical: _propTypes2.default.bool
 };
 
 Marker.defaultProps = {

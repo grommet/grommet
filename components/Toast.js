@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
@@ -153,12 +157,12 @@ ToastContents.displayName = 'ToastContents';
 
 
 ToastContents.propTypes = {
-  history: _react.PropTypes.object,
-  intl: _react.PropTypes.object,
-  onClose: _react.PropTypes.func,
-  router: _react.PropTypes.any,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
-  store: _react.PropTypes.any
+  history: _propTypes2.default.object,
+  intl: _propTypes2.default.object,
+  onClose: _propTypes2.default.func,
+  router: _propTypes2.default.any,
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large']),
+  store: _propTypes2.default.any
 };
 
 // Because Toast creates a new DOM render context, the context
@@ -167,10 +171,10 @@ ToastContents.propTypes = {
 // whatever we find or have callers explicitly indicate which parts
 // of the context to transfer somehow.
 ToastContents.childContextTypes = {
-  history: _react.PropTypes.object,
-  intl: _react.PropTypes.object,
-  router: _react.PropTypes.any,
-  store: _react.PropTypes.object
+  history: _propTypes2.default.object,
+  intl: _propTypes2.default.object,
+  router: _propTypes2.default.any,
+  store: _propTypes2.default.object
 };
 
 var Toast = function (_Component2) {
@@ -256,9 +260,9 @@ exports.default = Toast;
 
 
 Toast.propTypes = {
-  onClose: _react.PropTypes.func,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large']),
-  status: _react.PropTypes.string
+  onClose: _propTypes2.default.func,
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large']),
+  status: _propTypes2.default.string
 };
 
 Toast.defaultProps = {

@@ -14,6 +14,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _reactAddonsTransitionGroup = require('react-addons-transition-group');
@@ -170,20 +174,20 @@ var AnimateChild = function (_Component) {
 }(_react.Component);
 
 AnimateChild.displayName = 'AnimateChild';
-;
+
 
 AnimateChild.propTypes = {
-  enter: _react.PropTypes.shape({
-    animation: _react.PropTypes.string,
-    duration: _react.PropTypes.number,
-    delay: _react.PropTypes.number
+  enter: _propTypes2.default.shape({
+    animation: _propTypes2.default.string,
+    duration: _propTypes2.default.number,
+    delay: _propTypes2.default.number
   }).isRequired,
-  leave: _react.PropTypes.shape({
-    animation: _react.PropTypes.string,
-    duration: _react.PropTypes.number,
-    delay: _react.PropTypes.number
+  leave: _propTypes2.default.shape({
+    animation: _propTypes2.default.string,
+    duration: _propTypes2.default.number,
+    delay: _propTypes2.default.number
   }),
-  visible: _react.PropTypes.bool
+  visible: _propTypes2.default.bool
 };
 
 AnimateChild.defaultProps = {
@@ -309,24 +313,24 @@ var Animate = function (_Component2) {
 
 Animate.displayName = 'Animate';
 exports.default = Animate;
-;
+
 
 var ANIMATIONS = ['fade', 'slide-up', 'slide-down', 'slide-left', 'slide-right', 'jiggle'];
 
 Animate.propTypes = {
-  component: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.func]),
-  enter: _react.PropTypes.shape({
-    animation: _react.PropTypes.oneOf(ANIMATIONS).isRequired,
-    duration: _react.PropTypes.number,
-    delay: _react.PropTypes.number
+  component: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.func]),
+  enter: _propTypes2.default.shape({
+    animation: _propTypes2.default.oneOf(ANIMATIONS).isRequired,
+    duration: _propTypes2.default.number,
+    delay: _propTypes2.default.number
   }).isRequired,
-  keep: _react.PropTypes.bool,
-  leave: _react.PropTypes.shape({
-    animation: _react.PropTypes.oneOf(ANIMATIONS).isRequired,
-    duration: _react.PropTypes.number,
-    delay: _react.PropTypes.number
+  keep: _propTypes2.default.bool,
+  leave: _propTypes2.default.shape({
+    animation: _propTypes2.default.oneOf(ANIMATIONS).isRequired,
+    duration: _propTypes2.default.number,
+    delay: _propTypes2.default.number
   }),
-  visible: _react.PropTypes.oneOfType([_react.PropTypes.oneOf(['scroll']), _react.PropTypes.bool])
+  visible: _propTypes2.default.oneOfType([_propTypes2.default.oneOf(['scroll']), _propTypes2.default.bool])
 };
 
 Animate.defaultProps = {

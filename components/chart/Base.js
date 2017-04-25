@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -110,11 +114,11 @@ var Base = function (_Component) {
 
 Base.displayName = 'Base';
 exports.default = Base;
-;
+
 
 Base.propTypes = {
-  height: _react.PropTypes.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'sparkline']),
-  vertical: _react.PropTypes.bool,
-  width: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full'])
+  height: _propTypes2.default.oneOf(['xxsmall', 'xsmall', 'small', 'medium', 'large', 'sparkline']),
+  vertical: _propTypes2.default.bool,
+  width: _propTypes2.default.oneOf(['xsmall', 'small', 'medium', 'large', 'full'])
 };
 module.exports = exports['default'];

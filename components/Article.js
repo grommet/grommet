@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _classnames2 = require('classnames');
@@ -744,16 +748,16 @@ exports.default = Article;
 
 
 Article.propTypes = _extends({
-  controls: _react.PropTypes.bool
+  controls: _propTypes2.default.bool
 }, _Box2.default.propTypes, {
-  a11yTitle: _react.PropTypes.shape({
-    next: _react.PropTypes.string,
-    previous: _react.PropTypes.string
+  a11yTitle: _propTypes2.default.shape({
+    next: _propTypes2.default.string,
+    previous: _propTypes2.default.string
   }),
-  onProgress: _react.PropTypes.func,
-  onSelect: _react.PropTypes.func,
-  scrollStep: _react.PropTypes.bool,
-  selected: _react.PropTypes.number
+  onProgress: _propTypes2.default.func,
+  onSelect: _propTypes2.default.func,
+  scrollStep: _propTypes2.default.bool,
+  selected: _propTypes2.default.number
 });
 
 Article.defaultProps = {

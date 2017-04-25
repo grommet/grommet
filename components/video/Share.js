@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _Box = require('../Box');
@@ -121,9 +125,9 @@ exports.default = Overlay;
 
 
 Overlay.propTypes = {
-  shareLink: _react.PropTypes.string,
-  shareHeadline: _react.PropTypes.string,
-  shareText: _react.PropTypes.string
+  shareLink: _propTypes2.default.string,
+  shareHeadline: _propTypes2.default.string,
+  shareText: _propTypes2.default.string
 };
 
 Overlay.defaultProps = {

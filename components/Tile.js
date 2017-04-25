@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -92,11 +96,11 @@ exports.default = Tile;
 
 
 Tile.propTypes = _extends({
-  hoverStyle: _react.PropTypes.oneOf(['border', 'background', 'none']),
-  hoverColorIndex: _react.PropTypes.string,
-  hoverBorder: _react.PropTypes.bool,
-  hoverBorderSize: _react.PropTypes.oneOf(['small', 'medium', 'large']),
-  wide: _react.PropTypes.bool }, _Box2.default.propTypes);
+  hoverStyle: _propTypes2.default.oneOf(['border', 'background', 'none']),
+  hoverColorIndex: _propTypes2.default.string,
+  hoverBorder: _propTypes2.default.bool,
+  hoverBorderSize: _propTypes2.default.oneOf(['small', 'medium', 'large']),
+  wide: _propTypes2.default.bool }, _Box2.default.propTypes);
 
 Tile.defaultProps = {
   pad: 'none',

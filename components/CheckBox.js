@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -113,13 +117,13 @@ exports.default = CheckBox;
 
 
 CheckBox.propTypes = {
-  checked: _react.PropTypes.bool,
-  disabled: _react.PropTypes.bool,
-  id: _react.PropTypes.string,
-  label: _react.PropTypes.node,
-  name: _react.PropTypes.string,
-  onChange: _react.PropTypes.func,
-  reverse: _react.PropTypes.bool,
-  toggle: _react.PropTypes.bool
+  checked: _propTypes2.default.bool,
+  disabled: _propTypes2.default.bool,
+  id: _propTypes2.default.string,
+  label: _propTypes2.default.node,
+  name: _propTypes2.default.string,
+  onChange: _propTypes2.default.func,
+  reverse: _propTypes2.default.bool,
+  toggle: _propTypes2.default.bool
 };
 module.exports = exports['default'];

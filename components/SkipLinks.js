@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _FormattedMessage = require('./FormattedMessage');
 
 var _FormattedMessage2 = _interopRequireDefault(_FormattedMessage);
@@ -205,6 +209,6 @@ exports.default = SkipLinks;
 
 
 SkipLinks.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 module.exports = exports['default'];

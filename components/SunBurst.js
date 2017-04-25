@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames4 = require('classnames');
 
 var _classnames5 = _interopRequireDefault(_classnames4);
@@ -384,18 +388,18 @@ exports.default = SunBurst;
 
 
 SunBurst.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  active: _react.PropTypes.arrayOf(_react.PropTypes.number),
-  data: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    children: _react.PropTypes.arrayOf(_react.PropTypes.object),
-    colorIndex: _react.PropTypes.string,
-    total: _react.PropTypes.number, // sum of all values otherwise
-    value: _react.PropTypes.number.isRequired
+  a11yTitle: _propTypes2.default.string,
+  active: _propTypes2.default.arrayOf(_propTypes2.default.number),
+  data: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    children: _propTypes2.default.arrayOf(_propTypes2.default.object),
+    colorIndex: _propTypes2.default.string,
+    total: _propTypes2.default.number, // sum of all values otherwise
+    value: _propTypes2.default.number.isRequired
   })),
-  label: _react.PropTypes.node,
-  onActive: _react.PropTypes.func,
-  onClick: _react.PropTypes.func,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'full'])
+  label: _propTypes2.default.node,
+  onActive: _propTypes2.default.func,
+  onClick: _propTypes2.default.func,
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large', 'xlarge', 'full'])
 };
 
 SunBurst.defaultProps = {
@@ -403,6 +407,6 @@ SunBurst.defaultProps = {
 };
 
 SunBurst.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 module.exports = exports['default'];

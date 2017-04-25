@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames3 = require('classnames');
 
 var _classnames4 = _interopRequireDefault(_classnames3);
@@ -626,13 +630,13 @@ exports.default = DateTimeDrop;
 
 
 DateTimeDrop.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 DateTimeDrop.propTypes = {
-  format: _react.PropTypes.string,
-  onChange: _react.PropTypes.func.isRequired,
-  step: _react.PropTypes.number.isRequired,
-  value: _react.PropTypes.object.isRequired
+  format: _propTypes2.default.string,
+  onChange: _propTypes2.default.func.isRequired,
+  step: _propTypes2.default.number.isRequired,
+  value: _propTypes2.default.object.isRequired
 };
 module.exports = exports['default'];

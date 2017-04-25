@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
@@ -95,8 +99,8 @@ exports.default = Unknown;
 
 
 Unknown.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  className: _react.PropTypes.string
+  a11yTitle: _propTypes2.default.string,
+  className: _propTypes2.default.string
 };
 
 Unknown.defaultProps = {

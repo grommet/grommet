@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
@@ -127,12 +131,12 @@ var TableHeader = function (_Component) {
 
 TableHeader.displayName = 'TableHeader';
 exports.default = TableHeader;
-;
+
 
 TableHeader.propTypes = {
-  labels: _react.PropTypes.arrayOf(_react.PropTypes.node).isRequired,
-  onSort: _react.PropTypes.func, // (index, ascending?)
-  sortAscending: _react.PropTypes.bool,
-  sortIndex: _react.PropTypes.number
+  labels: _propTypes2.default.arrayOf(_propTypes2.default.node).isRequired,
+  onSort: _propTypes2.default.func, // (index, ascending?)
+  sortAscending: _propTypes2.default.bool,
+  sortIndex: _propTypes2.default.number
 };
 module.exports = exports['default'];

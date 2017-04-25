@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames3 = require('classnames');
 
 var _classnames4 = _interopRequireDefault(_classnames3);
@@ -339,27 +343,27 @@ Legend.defaultProps = {
 };
 
 Legend.propTypes = {
-  activeIndex: _react.PropTypes.number,
-  announce: _react.PropTypes.bool,
-  onActive: _react.PropTypes.func,
-  series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    label: _react.PropTypes.string,
-    value: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.node]),
-    units: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.shape({
-      prefix: _react.PropTypes.string,
-      suffix: _react.PropTypes.string
+  activeIndex: _propTypes2.default.number,
+  announce: _propTypes2.default.bool,
+  onActive: _propTypes2.default.func,
+  series: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    label: _propTypes2.default.string,
+    value: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.node]),
+    units: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.shape({
+      prefix: _propTypes2.default.string,
+      suffix: _propTypes2.default.string
     })]),
-    colorIndex: _react.PropTypes.oneOfType([_react.PropTypes.number, // 1-6
-    _react.PropTypes.string // status
+    colorIndex: _propTypes2.default.oneOfType([_propTypes2.default.number, // 1-6
+    _propTypes2.default.string // status
     ]),
-    onClick: _react.PropTypes.func
+    onClick: _propTypes2.default.func
   })).isRequired,
-  size: _react.PropTypes.oneOf(['medium', 'large']),
-  total: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.node]),
-  units: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.shape({
-    prefix: _react.PropTypes.string,
-    suffix: _react.PropTypes.string
+  size: _propTypes2.default.oneOf(['medium', 'large']),
+  total: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.node]),
+  units: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.shape({
+    prefix: _propTypes2.default.string,
+    suffix: _propTypes2.default.string
   })]),
-  responsive: _react.PropTypes.bool
+  responsive: _propTypes2.default.bool
 };
 module.exports = exports['default'];

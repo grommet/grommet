@@ -13,6 +13,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _DOM = require('./DOM');
@@ -136,17 +140,17 @@ DropContents.displayName = 'DropContents';
 
 
 DropContents.propTypes = {
-  content: _react.PropTypes.node.isRequired,
-  context: _react.PropTypes.any,
-  focusControl: _react.PropTypes.bool
+  content: _propTypes2.default.node.isRequired,
+  context: _propTypes2.default.any,
+  focusControl: _propTypes2.default.bool
 };
 
 DropContents.childContextTypes = {
-  history: _react.PropTypes.object,
-  intl: _react.PropTypes.object,
-  onDropChange: _react.PropTypes.func,
-  router: _react.PropTypes.any,
-  store: _react.PropTypes.object
+  history: _propTypes2.default.object,
+  intl: _propTypes2.default.object,
+  onDropChange: _propTypes2.default.func,
+  router: _propTypes2.default.any,
+  store: _propTypes2.default.object
 };
 
 var _normalizeOptions = function _normalizeOptions(options) {
@@ -462,11 +466,11 @@ var Drop = function () {
 
 
 exports.default = Drop;
-var dropAlignPropType = exports.dropAlignPropType = _react.PropTypes.shape({
-  top: _react.PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
-  bottom: _react.PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
-  left: _react.PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS),
-  right: _react.PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS)
+var dropAlignPropType = exports.dropAlignPropType = _propTypes2.default.shape({
+  top: _propTypes2.default.oneOf(VERTICAL_ALIGN_OPTIONS),
+  bottom: _propTypes2.default.oneOf(VERTICAL_ALIGN_OPTIONS),
+  left: _propTypes2.default.oneOf(HORIZONTAL_ALIGN_OPTIONS),
+  right: _propTypes2.default.oneOf(HORIZONTAL_ALIGN_OPTIONS)
 });
 
 Drop.add = function (control, content, options) {

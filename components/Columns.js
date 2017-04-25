@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _reactDom = require('react-dom');
 
 var _classnames2 = require('classnames');
@@ -322,12 +326,12 @@ exports.default = Columns;
 
 
 Columns.propTypes = {
-  justify: _react.PropTypes.oneOf(['start', 'center', 'between', 'end']),
-  margin: _react.PropTypes.oneOf(['small', 'medium', 'large']),
-  masonry: _react.PropTypes.bool,
-  maxCount: _react.PropTypes.number,
-  responsive: _react.PropTypes.bool,
-  size: _react.PropTypes.oneOf(['small', 'medium', 'large'])
+  justify: _propTypes2.default.oneOf(['start', 'center', 'between', 'end']),
+  margin: _propTypes2.default.oneOf(['small', 'medium', 'large']),
+  masonry: _propTypes2.default.bool,
+  maxCount: _propTypes2.default.number,
+  responsive: _propTypes2.default.bool,
+  size: _propTypes2.default.oneOf(['small', 'medium', 'large'])
 };
 
 Columns.defaultProps = {

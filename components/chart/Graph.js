@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames3 = require('classnames');
 
 var _classnames4 = _interopRequireDefault(_classnames3);
@@ -292,10 +296,10 @@ var Graph = function (_Component) {
 
 Graph.displayName = 'Graph';
 exports.default = Graph;
-;
+
 
 Graph.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Graph.defaultProps = {
@@ -304,19 +308,19 @@ Graph.defaultProps = {
 };
 
 Graph.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  activeIndex: _react.PropTypes.number,
-  colorIndex: _react.PropTypes.string,
-  height: _react.PropTypes.number, // only from Chart
-  max: _react.PropTypes.number.isRequired,
-  min: _react.PropTypes.number.isRequired,
-  points: _react.PropTypes.bool,
-  reverse: _react.PropTypes.bool,
-  smooth: _react.PropTypes.bool,
-  values: _react.PropTypes.arrayOf(_react.PropTypes.number).isRequired,
+  a11yTitle: _propTypes2.default.string,
+  activeIndex: _propTypes2.default.number,
+  colorIndex: _propTypes2.default.string,
+  height: _propTypes2.default.number, // only from Chart
+  max: _propTypes2.default.number.isRequired,
+  min: _propTypes2.default.number.isRequired,
+  points: _propTypes2.default.bool,
+  reverse: _propTypes2.default.bool,
+  smooth: _propTypes2.default.bool,
+  values: _propTypes2.default.arrayOf(_propTypes2.default.number).isRequired,
   // type comes from extending the component
-  type: _react.PropTypes.oneOf(['area', 'line', 'bar']).isRequired,
-  vertical: _react.PropTypes.bool,
-  width: _react.PropTypes.number // only from Chart
+  type: _propTypes2.default.oneOf(['area', 'line', 'bar']).isRequired,
+  vertical: _propTypes2.default.bool,
+  width: _propTypes2.default.number // only from Chart
 };
 module.exports = exports['default'];

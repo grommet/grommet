@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -178,14 +182,14 @@ Timestamp.displayName = 'Timestamp';
 exports.default = Timestamp;
 
 
-var FIELD_TYPES = _react.PropTypes.oneOf(['date', 'time', 'year', 'month', 'month-full', 'day', 'hour', 'minute', 'second', 'hours', 'minutes', 'seconds' // deprecated
+var FIELD_TYPES = _propTypes2.default.oneOf(['date', 'time', 'year', 'month', 'month-full', 'day', 'hour', 'minute', 'second', 'hours', 'minutes', 'seconds' // deprecated
 ]);
 
 Timestamp.propTypes = {
-  align: _react.PropTypes.oneOf(['start', 'center', 'end']),
-  fields: _react.PropTypes.oneOfType([_react.PropTypes.arrayOf(FIELD_TYPES), FIELD_TYPES]),
-  value: _react.PropTypes.oneOfType([_react.PropTypes.string, // ISO-8601 string
-  _react.PropTypes.object // Date object
+  align: _propTypes2.default.oneOf(['start', 'center', 'end']),
+  fields: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(FIELD_TYPES), FIELD_TYPES]),
+  value: _propTypes2.default.oneOfType([_propTypes2.default.string, // ISO-8601 string
+  _propTypes2.default.object // Date object
   ]).isRequired
 };
 

@@ -14,6 +14,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _moment = require('moment');
 
 var _moment2 = _interopRequireDefault(_moment);
@@ -412,8 +416,8 @@ exports.default = DateTime;
 
 
 DateTime.contextTypes = {
-  intl: _react.PropTypes.object,
-  onDropChange: _react.PropTypes.func
+  intl: _propTypes2.default.object,
+  onDropChange: _propTypes2.default.func
 };
 
 DateTime.defaultProps = {
@@ -422,11 +426,11 @@ DateTime.defaultProps = {
 };
 
 DateTime.propTypes = {
-  format: _react.PropTypes.string,
-  id: _react.PropTypes.string,
-  name: _react.PropTypes.string,
-  onChange: _react.PropTypes.func,
-  step: _react.PropTypes.number,
-  value: _react.PropTypes.oneOfType([_react.PropTypes.string, _react.PropTypes.object])
+  format: _propTypes2.default.string,
+  id: _propTypes2.default.string,
+  name: _propTypes2.default.string,
+  onChange: _propTypes2.default.func,
+  step: _propTypes2.default.number,
+  value: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object])
 };
 module.exports = exports['default'];

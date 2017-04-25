@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames3 = require('classnames');
 
 var _classnames4 = _interopRequireDefault(_classnames3);
@@ -481,7 +485,7 @@ exports.default = Carousel;
 
 
 Carousel.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Carousel.defaultProps = {
@@ -492,12 +496,12 @@ Carousel.defaultProps = {
 };
 
 Carousel.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  activeIndex: _react.PropTypes.number,
-  autoplay: _react.PropTypes.bool,
-  autoplaySpeed: _react.PropTypes.number,
-  infinite: _react.PropTypes.bool,
-  onActive: _react.PropTypes.func,
-  persistentNav: _react.PropTypes.bool
+  a11yTitle: _propTypes2.default.string,
+  activeIndex: _propTypes2.default.number,
+  autoplay: _propTypes2.default.bool,
+  autoplaySpeed: _propTypes2.default.number,
+  infinite: _propTypes2.default.bool,
+  onActive: _propTypes2.default.func,
+  persistentNav: _propTypes2.default.bool
 };
 module.exports = exports['default'];

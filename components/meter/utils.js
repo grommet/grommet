@@ -13,6 +13,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _Graphics = require('../../utils/Graphics');
 
 var _CSSClassnames = require('../../utils/CSSClassnames');
@@ -26,18 +30,18 @@ var CLASS_ROOT = _CSSClassnames2.default.METER;
 var baseDimension = exports.baseDimension = _Graphics.baseUnit * 8;
 
 var propTypes = exports.propTypes = {
-  activeIndex: _react.PropTypes.number,
-  a11yTitle: _react.PropTypes.string,
-  max: _react.PropTypes.number.isRequired,
-  min: _react.PropTypes.number.isRequired,
-  onActivate: _react.PropTypes.func,
-  series: _react.PropTypes.arrayOf(_react.PropTypes.shape({
-    label: _react.PropTypes.string,
-    value: _react.PropTypes.number.isRequired,
-    colorIndex: _react.PropTypes.string,
-    onClick: _react.PropTypes.func
+  activeIndex: _propTypes2.default.number,
+  a11yTitle: _propTypes2.default.string,
+  max: _propTypes2.default.number.isRequired,
+  min: _propTypes2.default.number.isRequired,
+  onActivate: _propTypes2.default.func,
+  series: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    label: _propTypes2.default.string,
+    value: _propTypes2.default.number.isRequired,
+    colorIndex: _propTypes2.default.string,
+    onClick: _propTypes2.default.func
   })).isRequired,
-  total: _react.PropTypes.number
+  total: _propTypes2.default.number
 };
 
 function buildPath(itemIndex, commands, classes, onActivate, onClick, a11yTitle, role) {
@@ -63,4 +67,4 @@ function buildPath(itemIndex, commands, classes, onActivate, onClick, a11yTitle,
   } else {
     return _react2.default.createElement('path', { key: itemIndex, className: classes, d: commands });
   }
-};
+}

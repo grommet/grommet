@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -161,14 +165,14 @@ exports.default = NumberInput;
 
 
 NumberInput.propTypes = {
-  defaultValue: _react.PropTypes.number,
-  disabled: _react.PropTypes.bool,
-  id: _react.PropTypes.string,
-  max: _react.PropTypes.number,
-  min: _react.PropTypes.number,
-  name: _react.PropTypes.string,
-  onChange: _react.PropTypes.func,
-  step: _react.PropTypes.number,
-  value: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.string])
+  defaultValue: _propTypes2.default.number,
+  disabled: _propTypes2.default.bool,
+  id: _propTypes2.default.string,
+  max: _propTypes2.default.number,
+  min: _propTypes2.default.number,
+  name: _propTypes2.default.string,
+  onChange: _propTypes2.default.func,
+  step: _propTypes2.default.number,
+  value: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string])
 };
 module.exports = exports['default'];

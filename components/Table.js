@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames3 = require('classnames');
 
 var _classnames4 = _interopRequireDefault(_classnames3);
@@ -598,17 +602,17 @@ exports.default = Table;
 
 
 Table.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Table.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  onMore: _react.PropTypes.func,
-  onSelect: _react.PropTypes.func,
-  responsive: _react.PropTypes.bool,
-  scrollable: _react.PropTypes.bool,
-  selectable: _react.PropTypes.oneOfType([_react.PropTypes.bool, _react.PropTypes.oneOf(['multiple'])]),
-  selected: _react.PropTypes.oneOfType([_react.PropTypes.number, _react.PropTypes.arrayOf(_react.PropTypes.number)])
+  a11yTitle: _propTypes2.default.string,
+  onMore: _propTypes2.default.func,
+  onSelect: _propTypes2.default.func,
+  responsive: _propTypes2.default.bool,
+  scrollable: _propTypes2.default.bool,
+  selectable: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.oneOf(['multiple'])]),
+  selected: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.arrayOf(_propTypes2.default.number)])
 };
 
 Table.defaultProps = {
