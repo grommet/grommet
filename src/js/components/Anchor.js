@@ -59,8 +59,9 @@ export default class Anchor extends Component {
     let active;
     if (router && router.isActive) {
       active = router && router.isActive && 
-        path && router.isActive(path.path || path, {
-          indexLink: path.index
+        path && router.isActive({
+          pathname: path.path || path,
+          query: { indexLink: path.index }
         });
     } else if(router && matchPath) {
       active = !!matchPath(
