@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 import TransitionGroup from 'react-addons-transition-group';
 import classnames from 'classnames';
@@ -102,7 +103,7 @@ class AnimateChild extends Component {
     const style = { transitionDuration: `${duration || 0}ms` };
     return <div className={className} style={style}>{children}</div>;
   }
-};
+}
 
 AnimateChild.propTypes = {
   enter: PropTypes.shape({
@@ -207,7 +208,7 @@ export default class Animate extends Component {
       </TransitionGroup>
     );
   }
-};
+}
 
 const ANIMATIONS =
   ['fade', 'slide-up', 'slide-down', 'slide-left', 'slide-right', 'jiggle'];
