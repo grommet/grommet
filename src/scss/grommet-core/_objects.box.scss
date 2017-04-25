@@ -565,20 +565,22 @@
 
 // deprecated use of the 'size' property
 
-.#{$grommet-namespace}box--size-xsmall {
-  width: $size-xsmall;
-}
+@include media-query(lap-and-up) {
+  .#{$grommet-namespace}box--size-xsmall {
+    width: $size-xsmall;
+  }
 
-.#{$grommet-namespace}box--size-small {
-  width: $size-small;
-}
+  .#{$grommet-namespace}box--size-small {
+    width: $size-small;
+  }
 
-.#{$grommet-namespace}box--size-medium {
-  width: $size-medium;
-}
+  .#{$grommet-namespace}box--size-medium {
+    width: $size-medium;
+  }
 
-.#{$grommet-namespace}box--size-large {
-  width: $size-large;
+  .#{$grommet-namespace}box--size-large {
+    width: $size-large;
+  }
 }
 
 // not necessary since this is the default
