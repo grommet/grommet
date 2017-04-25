@@ -104,8 +104,9 @@ var Anchor = function (_Component) {
       }
       var active = void 0;
       if (router && router.isActive) {
-        active = router && router.isActive && path && router.isActive(path.path || path, {
-          indexLink: path.index
+        active = router && router.isActive && path && router.isActive({
+          pathname: path.path || path,
+          query: { indexLink: path.index }
         });
       } else if (router && _reactRouter.matchPath) {
         active = !!(0, _reactRouter.matchPath)(router.history.location.pathname, { path: path.path || path, exact: !!path.index });

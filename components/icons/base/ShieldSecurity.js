@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
@@ -86,7 +90,7 @@ exports.default = Icon;
 ;
 
 Icon.contextTypes = {
-  intl: _react.PropTypes.object
+  intl: _propTypes2.default.object
 };
 
 Icon.defaultProps = {
@@ -98,9 +102,9 @@ Icon.displayName = 'ShieldSecurity';
 Icon.icon = true;
 
 Icon.propTypes = {
-  a11yTitle: _react.PropTypes.string,
-  colorIndex: _react.PropTypes.string,
-  size: _react.PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'huge']),
-  responsive: _react.PropTypes.bool
+  a11yTitle: _propTypes2.default.string,
+  colorIndex: _propTypes2.default.string,
+  size: _propTypes2.default.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'huge']),
+  responsive: _propTypes2.default.bool
 };
 module.exports = exports['default'];
