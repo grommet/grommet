@@ -1,0 +1,732 @@
+exports[`Hotspots renders with correct div widths for empty data 1`] = `
+<div
+  aria-label="HotSpotsLabel"
+  className="grommetux-chart-hot-spots"
+  normalizedValues={
+    Array [
+      Array [],
+    ]
+  }
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  style={
+    Object {
+      "padding": 8,
+    }
+  }
+  tabIndex="0" />
+`;
+
+exports[`Hotspots renders with correct div widths for merged data without gaps 1`] = `
+<div
+  aria-label="HotSpotsLabel"
+  className="grommetux-chart-hot-spots"
+  normalizedValues={
+    Array [
+      Array [
+        40,
+        43,
+        6,
+        7,
+        1,
+        0,
+      ],
+      Array [
+        2,
+        5,
+        56,
+        1,
+        6,
+      ],
+    ]
+  }
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  style={
+    Object {
+      "padding": 8,
+    }
+  }
+  tabIndex="0">
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "10%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "20%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "20%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "20%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "20%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "10%",
+      }
+    } />
+</div>
+`;
+
+exports[`Hotspots renders with correct widths for data with beginning gaps 1`] = `
+<div
+  aria-label="HotSpotsLabel"
+  className="grommetux-chart-hot-spots"
+  normalizedValues={
+    Array [
+      Array [
+        undefined,
+        1,
+        2,
+      ],
+    ]
+  }
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  style={
+    Object {
+      "padding": 8,
+    }
+  }
+  tabIndex="0">
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "75%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "25%",
+      }
+    } />
+</div>
+`;
+
+exports[`Hotspots renders with correct widths for data with end gaps 1`] = `
+<div
+  aria-label="HotSpotsLabel"
+  className="grommetux-chart-hot-spots"
+  normalizedValues={
+    Array [
+      Array [
+        1,
+        2,
+        undefined,
+      ],
+    ]
+  }
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  style={
+    Object {
+      "padding": 8,
+    }
+  }
+  tabIndex="0">
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "25%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "75%",
+      }
+    } />
+</div>
+`;
+
+exports[`Hotspots renders with correct widths for data with middle gaps 1`] = `
+<div
+  aria-label="HotSpotsLabel"
+  className="grommetux-chart-hot-spots"
+  normalizedValues={
+    Array [
+      Array [
+        0,
+        undefined,
+        undefined,
+        undefined,
+        1,
+        undefined,
+        undefined,
+        2,
+      ],
+    ]
+  }
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  style={
+    Object {
+      "padding": 8,
+    }
+  }
+  tabIndex="0">
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "28.571428571428573%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "50%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "21.42857142857143%",
+      }
+    } />
+</div>
+`;
+
+exports[`Hotspots renders with correct widths for merged data from multiple arrays 1`] = `
+<div
+  aria-label="HotSpotsLabel"
+  className="grommetux-chart-hot-spots"
+  normalizedValues={
+    Array [
+      Array [
+        8,
+        undefined,
+        undefined,
+        29,
+        undefined,
+        undefined,
+        undefined,
+        1,
+      ],
+      Array [
+        40,
+        undefined,
+        undefined,
+        undefined,
+        7,
+        1,
+        undefined,
+      ],
+      Array [
+        2,
+        5,
+        undefined,
+        undefined,
+        1,
+        6,
+      ],
+    ]
+  }
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  style={
+    Object {
+      "padding": 8,
+    }
+  }
+  tabIndex="0">
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "7.142857142857143%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "21.42857142857143%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "21.42857142857143%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "14.285714285714286%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "21.42857142857143%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "14.285714285714278%",
+      }
+    } />
+</div>
+`;
+
+exports[`Hotspots renders with correct widths for merged data with all gaps 1`] = `
+<div
+  aria-label="HotSpotsLabel"
+  className="grommetux-chart-hot-spots"
+  normalizedValues={
+    Array [
+      Array [
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+      ],
+      Array [
+        undefined,
+        undefined,
+      ],
+    ]
+  }
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  style={
+    Object {
+      "padding": 8,
+    }
+  }
+  tabIndex="0" />
+`;
+
+exports[`Hotspots renders with correct widths for merged data with beginning gaps 1`] = `
+<div
+  aria-label="HotSpotsLabel"
+  className="grommetux-chart-hot-spots"
+  normalizedValues={
+    Array [
+      Array [
+        undefined,
+        2,
+        5,
+        56,
+        1,
+        6,
+      ],
+      Array [
+        undefined,
+        40,
+        undefined,
+        6,
+        7,
+        1,
+      ],
+    ]
+  }
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  style={
+    Object {
+      "padding": 8,
+    }
+  }
+  tabIndex="0">
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "30%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "20%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "20%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "20%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "10%",
+      }
+    } />
+</div>
+`;
+
+exports[`Hotspots renders with correct widths for merged data with end gaps 1`] = `
+<div
+  aria-label="HotSpotsLabel"
+  className="grommetux-chart-hot-spots"
+  normalizedValues={
+    Array [
+      Array [
+        40,
+        undefined,
+        6,
+        7,
+        1,
+        undefined,
+      ],
+      Array [
+        2,
+        5,
+        56,
+        1,
+        6,
+      ],
+    ]
+  }
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  style={
+    Object {
+      "padding": 8,
+    }
+  }
+  tabIndex="0">
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "10%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "20%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "20%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "20%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "30%",
+      }
+    } />
+</div>
+`;
+
+exports[`Hotspots renders with correct widths for merged data with middle gaps 1`] = `
+<div
+  aria-label="HotSpotsLabel"
+  className="grommetux-chart-hot-spots"
+  normalizedValues={
+    Array [
+      Array [
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+      ],
+      Array [
+        undefined,
+        1,
+      ],
+    ]
+  }
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  style={
+    Object {
+      "padding": 8,
+    }
+  }
+  tabIndex="0">
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "100%",
+      }
+    } />
+</div>
+`;
+
+exports[`Hotspots renders with correct widths for regular data 1`] = `
+<div
+  aria-label="HotSpotsLabel"
+  className="grommetux-chart-hot-spots"
+  normalizedValues={
+    Array [
+      Array [
+        1,
+        2,
+        3,
+      ],
+    ]
+  }
+  onBlur={[Function]}
+  onFocus={[Function]}
+  role="group"
+  style={
+    Object {
+      "padding": 8,
+    }
+  }
+  tabIndex="0">
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "25%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "50%",
+      }
+    } />
+  <div
+    aria-label={undefined}
+    className="grommetux-chart-hot-spots__band"
+    onClick={undefined}
+    onMouseOut={undefined}
+    onMouseOver={undefined}
+    role="row"
+    style={
+      Object {
+        "flexBasis": "25%",
+      }
+    } />
+</div>
+`;

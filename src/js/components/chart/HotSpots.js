@@ -21,6 +21,149 @@ export default class HotSpots extends Component {
     this._onHotSpotFocus = this._onHotSpotFocus.bind(this);
     this._onHotSpotBlur = this._onHotSpotBlur.bind(this);
     this._onHotSpotClick = this._onHotSpotClick.bind(this);
+    this._mergeValues = this._mergeValues.bind(this);
+    this._calculateHotSpotWidths = this._calculateHotSpotWidths.bind(this);
+    this._makeHotspotToIndexMapping = this._makeHotspotToIndexMapping
+      .bind(this);
+    this.state = { percentBasis: undefined, hotspotToIndexMapping: undefined };
+  }
+
+  componentWillMount() {
+    if(this.props.normalizedValues) {
+      const mergedNormalizedValues = this._mergeValues(
+        this.props.normalizedValues
+      );
+      const percentBasis = this._calculateHotSpotWidths(
+        mergedNormalizedValues
+      );
+      const hotspotToIndexMapping = this._makeHotspotToIndexMapping(
+        mergedNormalizedValues, percentBasis
+      );
+      this.setState({
+        ...this.state,
+        percentBasis: percentBasis,
+        hotspotToIndexMapping: hotspotToIndexMapping
+      });
+    }
+  }
+
+  // Skips the lengthy operations of merging normalizedValues and
+  // calculating hotspot widths, if nextProps.normalizedValues are
+  // the same as this.props.normalizedValues.
+  componentWillReceiveProps(nextProps) {
+    if(!this.props.normalizedValues || !nextProps.normalizedValues ||
+      nextProps.normalizedValues === this.props.normalizedValues) {
+      return;
+    }
+    let isSameSize = false, hasSameElements = false;
+    isSameSize = this.props.normalizedValues.every((arr, i) => {
+      return nextProps.normalizedValues[i] &&
+       arr.length == nextProps.normalizedValues[i].length;
+    });
+    if(isSameSize) {
+      hasSameElements = this.props.normalizedValues.every((arr, i) => {
+        return arr.every((val, j) => {
+          return val === nextProps.normalizedValues[i][j];
+        });
+      });
+    }
+    if(!isSameSize || !hasSameElements) {
+      const mergedNormalizedValues = this._mergeValues(
+        nextProps.normalizedValues
+      );
+      const percentBasis = this._calculateHotSpotWidths(
+        mergedNormalizedValues
+      );
+      const hotspotToIndexMapping = this._makeHotspotToIndexMapping(
+        mergedNormalizedValues, percentBasis
+      );
+      this.setState({
+        ...this.state,
+        percentBasis: percentBasis,
+        hotspotToIndexMapping: hotspotToIndexMapping
+      });
+    }
+  }
+
+  // Finds the longest array of data points for a graph
+  // and attempts to replace its undefined indexes with
+  // the numeric values found at the same index
+  // in other arrays of points found in the normalizedValues object
+  // in order to generate a cohesive list
+  // of all the data points which require hotspots.
+  _mergeValues(normalizedValues) {
+    return normalizedValues.sort((a,b) => a.length < b.length)[0]
+      .map((currVal, i) => {
+        if(currVal !== undefined) {
+          return currVal;
+        } else {
+          return normalizedValues.reduce((mappedVal, currDataSet) => {
+            return currDataSet[i] !== undefined ? currDataSet[i] : mappedVal;
+          }, undefined);
+        }
+      });
+  }
+
+  // Calculates a percentage based representation of the width
+  // of HotSpots's divs.
+  // The width of the divs are calculated more precisely by extending the width
+  // of divs representing data point values if there are neighboring
+  // undefined values surrounding the data point
+  _calculateHotSpotWidths(mergedNormalizedValues) {
+    const singlePointBasis = 100 / (mergedNormalizedValues.length - 1);
+    const widths = [];
+    let currentWidth = 0, currentBetweenWidth = 0, totalWidth = 0;
+
+    for (let index = 0; index < mergedNormalizedValues.length; index += 1) {
+      let newBasis;
+      if (index === 0 || index === (mergedNormalizedValues.length - 1)) {
+        newBasis = singlePointBasis / 2;
+      } else {
+        newBasis = singlePointBasis;
+      }
+      if (mergedNormalizedValues[index] !== undefined) {
+        if (currentWidth > 0) {
+          widths.push(currentWidth + (currentBetweenWidth / 2));
+          totalWidth += currentWidth + (currentBetweenWidth / 2);
+          currentWidth = (currentBetweenWidth / 2) + newBasis;
+        } else {
+          // This can only be hit on the first defined point on the chart
+          // for this point, we want to include all previous between width
+          // and to not push any previous point on to the list
+          currentWidth = currentBetweenWidth + newBasis;
+        }
+        // once you have split the width of the undefined points between the
+        // previous point and the new point, reset between width to 0
+        currentBetweenWidth = 0;
+      } else {
+        currentBetweenWidth += newBasis;
+      }
+    }
+
+    if (currentWidth > 0) {
+      widths.push(100 - totalWidth);
+    }
+    return widths;
+  }
+
+  _makeHotspotToIndexMapping(mergedNormalizedValues, percentBasis) {
+    const hotspotToIndexMapping = new Map();
+    let lastHotspotIndex = 0, undefinedCount = 0;
+
+    mergedNormalizedValues.forEach((val, index) => {
+      if(val == undefined) {
+        undefinedCount++;
+        if(index < mergedNormalizedValues.length - 1
+          && mergedNormalizedValues[index + 1] != undefined) {
+          hotspotToIndexMapping.set(
+            lastHotspotIndex, lastHotspotIndex + undefinedCount
+          );
+        }
+      } else {
+        lastHotspotIndex++;
+      }
+    });
+    return hotspotToIndexMapping;
   }
 
   _onHotSpotFocus () {
@@ -93,27 +236,29 @@ export default class HotSpots extends Component {
 
     const defaultBasis = 100 / (count - 1);
     let items = [];
-    for (let index = 0; index < count; index += 1) {
+    let percentBasis = this.state.percentBasis;
+    const maxIndex = percentBasis ? percentBasis.length : count;
+    for (let index = 0; index < maxIndex; index += 1) {
       const bandClasses = classnames(
         `${CLASS_ROOT}__band`,
         {
           [`${CLASS_ROOT}__band--active`]: index === activeIndex
         }
       );
-      let basis;
-      if (0 === index || index === (count - 1)) {
+      let basis = percentBasis ? percentBasis[index] : defaultBasis;
+      if (!percentBasis && (0 === index || index === (count - 1))) {
         basis = defaultBasis / 2;
-      } else {
-        basis = defaultBasis;
       }
       const style = { flexBasis: `${basis}%` };
+      let mappedIndex = this.state.hotspotToIndexMapping ?
+        this.state.hotspotToIndexMapping.get(index) : index;
       items.push(
         <div key={index} className={bandClasses} style={style}
           role={onClick ? 'button' : 'row'}
           aria-label={a11yTitle}
-          onMouseOver={onActive ? () => onActive(index) : undefined}
+          onMouseOver={onActive ? () => onActive(mappedIndex) : undefined}
           onMouseOut={onActive ? () => onActive(undefined) : undefined}
-          onClick={onClick ? () => onClick(index) : undefined} />
+          onClick={onClick ? () => onClick(mappedIndex) : undefined} />
       );
     }
 
@@ -141,5 +286,6 @@ HotSpots.propTypes = {
   count: PropTypes.number.isRequired,
   onActive: PropTypes.func,
   onClick: PropTypes.func,
-  vertical: PropTypes.bool
+  vertical: PropTypes.bool,
+  normalizedValues: PropTypes.array
 };
