@@ -27,6 +27,12 @@
       }
     }
 
+    &.#{$grommet-namespace}button--critical {
+      &:hover {
+        box-shadow: 0px 0px 0px 2px $button-critical-color;
+      }
+    }
+
     #{$dark-background-context} {
 
       &:hover {
@@ -50,6 +56,14 @@
       &.#{$grommet-namespace}button--accent {
         &:hover {
           box-shadow: 0px 0px 0px 2px $button-accent-color;
+        }
+      }
+
+      &.#{$grommet-namespace}button--critical {
+        border-color: $button-critical-color;
+
+        &:hover {
+          box-shadow: 0px 0px 0px 2px $button-critical-color;
         }
       }
     }
