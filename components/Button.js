@@ -152,6 +152,7 @@ var Button = function (_Component) {
           align = _props2.align,
           children = _props2.children,
           className = _props2.className,
+          critical = _props2.critical,
           fill = _props2.fill,
           hoverIndicator = _props2.hoverIndicator,
           href = _props2.href,
@@ -164,7 +165,7 @@ var Button = function (_Component) {
           reverse = _props2.reverse,
           secondary = _props2.secondary,
           type = _props2.type,
-          props = _objectWithoutProperties(_props2, ['a11yTitle', 'accent', 'align', 'children', 'className', 'fill', 'hoverIndicator', 'href', 'icon', 'label', 'onClick', 'path', 'plain', 'primary', 'reverse', 'secondary', 'type']);
+          props = _objectWithoutProperties(_props2, ['a11yTitle', 'accent', 'align', 'children', 'className', 'critical', 'fill', 'hoverIndicator', 'href', 'icon', 'label', 'onClick', 'path', 'plain', 'primary', 'reverse', 'secondary', 'type']);
 
       delete props.method;
       var router = this.context.router;
@@ -195,7 +196,7 @@ var Button = function (_Component) {
         adjustedHref = path && router && router.history ? router.history.createHref({ pathname: path }) : href;
       }
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--focus', this.state.focus), _defineProperty(_classnames, CLASS_ROOT + '--primary', primary), _defineProperty(_classnames, CLASS_ROOT + '--secondary', secondary), _defineProperty(_classnames, CLASS_ROOT + '--accent', accent), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !onClick && !adjustedHref && !['reset', 'submit'].includes(type)), _defineProperty(_classnames, CLASS_ROOT + '--fill', fill), _defineProperty(_classnames, CLASS_ROOT + '--plain', plain || _react.Children.count(children) > 0 || icon && !label), _defineProperty(_classnames, CLASS_ROOT + '--align-' + align, align), _defineProperty(_classnames, getHoverModifier(hoverIndicator), hoverIndicator), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--critical', critical), _defineProperty(_classnames, CLASS_ROOT + '--focus', this.state.focus), _defineProperty(_classnames, CLASS_ROOT + '--primary', primary), _defineProperty(_classnames, CLASS_ROOT + '--secondary', secondary), _defineProperty(_classnames, CLASS_ROOT + '--accent', accent), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !onClick && !adjustedHref && !['reset', 'submit'].includes(type)), _defineProperty(_classnames, CLASS_ROOT + '--fill', fill), _defineProperty(_classnames, CLASS_ROOT + '--plain', plain || _react.Children.count(children) > 0 || icon && !label), _defineProperty(_classnames, CLASS_ROOT + '--align-' + align, align), _defineProperty(_classnames, getHoverModifier(hoverIndicator), hoverIndicator), _classnames), className);
 
       var adjustedOnClick = path && router ? this._onClick : onClick;
 
@@ -234,6 +235,7 @@ Button.propTypes = {
   a11yTitle: _propTypes2.default.string,
   accent: _propTypes2.default.bool,
   align: _propTypes2.default.oneOf(['start', 'center', 'end']),
+  critical: _propTypes2.default.bool,
   fill: _propTypes2.default.bool,
   hoverIndicator: _propTypes2.default.oneOfType([_propTypes2.default.oneOf(['background']), _propTypes2.default.shape({
     background: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.string])

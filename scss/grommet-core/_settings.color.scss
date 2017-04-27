@@ -83,6 +83,7 @@ $button-border-color: $brand-color !default;
 $button-text-color: $text-color !default;
 $button-secondary-color: rgba(#333, 0.6) !default;
 $button-accent-color: nth($brand-accent-colors, 1) !default;
+$button-critical-color: map-get($brand-status-colors, critical) !default;
 $button-drop-shadow-color: rgba(170, 170, 170, 0.5) !default;
 $button-colored-border-color: rgba(255, 255, 255, 0.7) !default; ///rgba(255, 255, 255, 0.7) !default;
 
