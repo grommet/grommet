@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CSSClassnames, { namespace } from '../utils/CSSClassnames';
 
+import Box from './Box';
+
 const CLASS_ROOT = CSSClassnames.BUTTON;
 
 function getHoverModifier(hoverIndicator) {
@@ -92,7 +94,7 @@ export default class Button extends Component {
 
   render () {
     const {
-      a11yTitle, accent, align, children, className, fill, hoverIndicator,
+      a11yTitle, accent, align, box, children, className, fill, hoverIndicator,
       href, icon, label, onClick, path, plain, primary, reverse, secondary,
       type, ...props
     } = this.props;
@@ -123,6 +125,7 @@ export default class Button extends Component {
     const classes = classnames(
       CLASS_ROOT,
       {
+        [`${CLASS_ROOT}--box`]: box,
         [`${CLASS_ROOT}--focus`]: this.state.focus,
         [`${CLASS_ROOT}--primary`]: primary,
         [`${CLASS_ROOT}--secondary`]: secondary,
@@ -132,8 +135,9 @@ export default class Button extends Component {
           !adjustedHref &&
           !['reset', 'submit'].includes(type),
         [`${CLASS_ROOT}--fill`]: fill,
-        [`${CLASS_ROOT}--plain`]: plain || Children.count(children) > 0 ||
-          (icon && ! label),
+        [`${CLASS_ROOT}--plain`]: (
+          plain || box || Children.count(children) > 0 || (icon && ! label)
+        ),
         [`${CLASS_ROOT}--align-${align}`]: align,
         [getHoverModifier(hoverIndicator)]: hoverIndicator
       },
@@ -142,17 +146,26 @@ export default class Button extends Component {
 
     let adjustedOnClick = (path && router ? this._onClick : onClick);
 
-    const Tag = adjustedHref ? 'a' : 'button';
+    let Tag = adjustedHref ? 'a' : 'button';
     let buttonType;
     if (!adjustedHref) {
       buttonType = type;
+    }
+
+    let boxProps;
+    if (box) {
+      // Let the root element of the Button be a Box element with tag prop
+      boxProps = {
+        tag: Tag
+      };
+      Tag = Box;
     }
 
     const first = reverse ? buttonLabel : buttonIcon;
     const second = reverse ? buttonIcon : buttonLabel;
 
     return (
-      <Tag {...props} href={adjustedHref} type={buttonType}
+      <Tag {...props} {...boxProps} href={adjustedHref} type={buttonType}
         className={classes} aria-label={a11yTitle}
         onClick={adjustedOnClick}
         disabled={
@@ -174,6 +187,7 @@ Button.propTypes = {
   a11yTitle: PropTypes.string,
   accent: PropTypes.bool,
   align: PropTypes.oneOf(['start', 'center', 'end']),
+  box: PropTypes.bool,
   fill: PropTypes.bool,
   hoverIndicator: PropTypes.oneOfType([
     PropTypes.oneOf(['background']),
