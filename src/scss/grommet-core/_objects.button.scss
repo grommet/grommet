@@ -117,6 +117,10 @@ $button-horizontal-padding:
   border-color: $button-accent-color;
 }
 
+.#{$grommet-namespace}button--critical:not(.#{$grommet-namespace}button--focus) {
+  border-color: $button-critical-color;
+}
+
 .#{$grommet-namespace}button--align-start {
   text-align: left;
 

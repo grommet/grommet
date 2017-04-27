@@ -94,9 +94,9 @@ export default class Button extends Component {
 
   render () {
     const {
-      a11yTitle, accent, align, box, children, className, fill, hoverIndicator,
-      href, icon, label, onClick, path, plain, primary, reverse, secondary,
-      type, ...props
+      a11yTitle, accent, align, box, children, className, critical, fill,
+      hoverIndicator, href, icon, label, onClick, path, plain, primary, reverse,
+      secondary, type, ...props
     } = this.props;
     delete props.method;
     const { router } = this.context;
@@ -126,6 +126,7 @@ export default class Button extends Component {
       CLASS_ROOT,
       {
         [`${CLASS_ROOT}--box`]: box,
+        [`${CLASS_ROOT}--critical`]: critical,
         [`${CLASS_ROOT}--focus`]: this.state.focus,
         [`${CLASS_ROOT}--primary`]: primary,
         [`${CLASS_ROOT}--secondary`]: secondary,
@@ -188,6 +189,7 @@ Button.propTypes = {
   accent: PropTypes.bool,
   align: PropTypes.oneOf(['start', 'center', 'end']),
   box: PropTypes.bool,
+  critical: PropTypes.bool,
   fill: PropTypes.bool,
   hoverIndicator: PropTypes.oneOfType([
     PropTypes.oneOf(['background']),
