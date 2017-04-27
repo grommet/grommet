@@ -26,6 +26,10 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _Box = require('./Box');
+
+var _Box2 = _interopRequireDefault(_Box);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -150,6 +154,7 @@ var Button = function (_Component) {
           a11yTitle = _props2.a11yTitle,
           accent = _props2.accent,
           align = _props2.align,
+          box = _props2.box,
           children = _props2.children,
           className = _props2.className,
           critical = _props2.critical,
@@ -165,7 +170,7 @@ var Button = function (_Component) {
           reverse = _props2.reverse,
           secondary = _props2.secondary,
           type = _props2.type,
-          props = _objectWithoutProperties(_props2, ['a11yTitle', 'accent', 'align', 'children', 'className', 'critical', 'fill', 'hoverIndicator', 'href', 'icon', 'label', 'onClick', 'path', 'plain', 'primary', 'reverse', 'secondary', 'type']);
+          props = _objectWithoutProperties(_props2, ['a11yTitle', 'accent', 'align', 'box', 'children', 'className', 'critical', 'fill', 'hoverIndicator', 'href', 'icon', 'label', 'onClick', 'path', 'plain', 'primary', 'reverse', 'secondary', 'type']);
 
       delete props.method;
       var router = this.context.router;
@@ -196,7 +201,7 @@ var Button = function (_Component) {
         adjustedHref = path && router && router.history ? router.history.createHref({ pathname: path }) : href;
       }
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--critical', critical), _defineProperty(_classnames, CLASS_ROOT + '--focus', this.state.focus), _defineProperty(_classnames, CLASS_ROOT + '--primary', primary), _defineProperty(_classnames, CLASS_ROOT + '--secondary', secondary), _defineProperty(_classnames, CLASS_ROOT + '--accent', accent), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !onClick && !adjustedHref && !['reset', 'submit'].includes(type)), _defineProperty(_classnames, CLASS_ROOT + '--fill', fill), _defineProperty(_classnames, CLASS_ROOT + '--plain', plain || _react.Children.count(children) > 0 || icon && !label), _defineProperty(_classnames, CLASS_ROOT + '--align-' + align, align), _defineProperty(_classnames, getHoverModifier(hoverIndicator), hoverIndicator), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--box', box), _defineProperty(_classnames, CLASS_ROOT + '--critical', critical), _defineProperty(_classnames, CLASS_ROOT + '--focus', this.state.focus), _defineProperty(_classnames, CLASS_ROOT + '--primary', primary), _defineProperty(_classnames, CLASS_ROOT + '--secondary', secondary), _defineProperty(_classnames, CLASS_ROOT + '--accent', accent), _defineProperty(_classnames, CLASS_ROOT + '--disabled', !onClick && !adjustedHref && !['reset', 'submit'].includes(type)), _defineProperty(_classnames, CLASS_ROOT + '--fill', fill), _defineProperty(_classnames, CLASS_ROOT + '--plain', plain || box || _react.Children.count(children) > 0 || icon && !label), _defineProperty(_classnames, CLASS_ROOT + '--align-' + align, align), _defineProperty(_classnames, getHoverModifier(hoverIndicator), hoverIndicator), _classnames), className);
 
       var adjustedOnClick = path && router ? this._onClick : onClick;
 
@@ -206,12 +211,21 @@ var Button = function (_Component) {
         buttonType = type;
       }
 
+      var boxProps = void 0;
+      if (box) {
+        // Let the root element of the Button be a Box element with tag prop
+        boxProps = {
+          tag: Tag
+        };
+        Tag = _Box2.default;
+      }
+
       var first = reverse ? buttonLabel : buttonIcon;
       var second = reverse ? buttonIcon : buttonLabel;
 
       return _react2.default.createElement(
         Tag,
-        _extends({}, props, { href: adjustedHref, type: buttonType,
+        _extends({}, props, boxProps, { href: adjustedHref, type: buttonType,
           className: classes, 'aria-label': a11yTitle,
           onClick: adjustedOnClick,
           disabled: !onClick && !adjustedHref && !['reset', 'submit'].includes(type),
@@ -235,6 +249,7 @@ Button.propTypes = {
   a11yTitle: _propTypes2.default.string,
   accent: _propTypes2.default.bool,
   align: _propTypes2.default.oneOf(['start', 'center', 'end']),
+  box: _propTypes2.default.bool,
   critical: _propTypes2.default.bool,
   fill: _propTypes2.default.bool,
   hoverIndicator: _propTypes2.default.oneOfType([_propTypes2.default.oneOf(['background']), _propTypes2.default.shape({
