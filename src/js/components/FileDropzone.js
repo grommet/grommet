@@ -138,14 +138,19 @@ class Dropzone extends Component {
     e.preventDefault();
     e.stopPropagation();
     e.dataTransfer.dropEffect = 'copy';
+    
+    // bugfix to make sure box gets highlighted
+    if (!this.state.dragActive) {
+      this.setState({
+        dragActive: true
+      });
+    }
+    
     return false;
   }
   
   _onDragEnter(e) {
-    e.preventDefault();
-    this.setState({
-      dragActive: true
-    });
+    e.preventDefault(); 
   }
   
   _onDragLeave(e) {
