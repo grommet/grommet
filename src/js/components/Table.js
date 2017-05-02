@@ -328,6 +328,12 @@ export default class Table extends Component {
         [].forEach.call(rows, (row) => {
           let incrementCount = 0;
           let headerIndex = 0;
+
+          if (row.cells.length !== headerCells.length) {
+            console.error(
+              'Table row cells do not match length of header cells.');
+          }
+
           [].forEach.call(row.cells, (cell) => {
             cell.setAttribute('data-th', (
               headerCells[headerIndex].innerText ||
