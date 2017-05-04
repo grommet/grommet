@@ -45,6 +45,17 @@ $active-darken: 20%;
       }
     }
 
+    &.#{$grommet-namespace}button--critical {
+
+      &:hover {
+        border-color: darken($button-critical-color, $hover-darken);
+      }
+
+      &:active {
+        border-color: darken($button-critical-color, $active-darken);
+      }
+    }
+
     &.#{$grommet-namespace}button--accent {
 
       &:hover {
@@ -74,6 +85,12 @@ $active-darken: 20%;
       &.#{$grommet-namespace}button--accent {
         &:hover {
           border-color: darken($button-accent-color, $hover-darken);
+        }
+      }
+
+      &.#{$grommet-namespace}button--critical {
+        &:hover {
+          border-color: darken($button-critical-color, $hover-darken);
         }
       }
     }

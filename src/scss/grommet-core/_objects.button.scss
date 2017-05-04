@@ -6,7 +6,10 @@ $button-horizontal-padding:
   round($inuit-base-spacing-unit) - $button-border-width;
 
 @mixin basic-button {
-  padding: $button-vertical-padding $button-horizontal-padding;
+  &:not(.#{$grommet-namespace}button--box) {
+    padding: $button-vertical-padding $button-horizontal-padding;
+  }
+  
   background-color: transparent;
   border: $button-border-width solid $button-border-color;
   border-radius: $border-radius;
@@ -114,6 +117,10 @@ $button-horizontal-padding:
   border-color: $button-accent-color;
 }
 
+.#{$grommet-namespace}button--critical:not(.#{$grommet-namespace}button--focus) {
+  border-color: $button-critical-color;
+}
+
 .#{$grommet-namespace}button--align-start {
   text-align: left;
 
@@ -122,8 +129,11 @@ $button-horizontal-padding:
   }
 }
 
-.#{$grommet-namespace}button--plain {
+.#{$grommet-namespace}button--plain:not(.#{$grommet-namespace}button--box) {
   padding: 0;
+}
+
+.#{$grommet-namespace}button--plain {
   width: auto;
   height: auto;
   min-width: 0;

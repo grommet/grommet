@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Label from './Label';
 import CSSClassnames from '../utils/CSSClassnames';
@@ -51,7 +52,7 @@ export default class Image extends Component {
       imgNode
     );
   }
-};
+}
 
 Image.propTypes = {
   align: PropTypes.shape({

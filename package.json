@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "1.3.4",
+  "version": "1.4.0",
   "main": "src/js/index.js",
   "description": "The most advanced UX framework for enterprise applications.",
   "authors": [
@@ -37,13 +37,14 @@
     "inuit-responsive-tools": "~0.1.1",
     "inuit-shared": "~0.1.5",
     "lodash.zip": "^4.2.0",
-    "markdown-to-jsx": "^5.0.0",
+    "markdown-to-jsx": "^5.3.3",
     "moment": "^2.13.0",
+    "prop-types": "^15.5.8",
     "react": "^15.3.0",
     "react-addons-transition-group": "^15.3.0",
     "react-desc": "^1.0.0",
     "react-dom": "^15.3.0",
-    "react-intl": "^2.1.2",
+    "react-intl": "^2.2.3",
     "react-router": "2 - 4",
     "superagent": "^3.3.1"
   },
@@ -58,7 +59,7 @@
     "babel-preset-react": "^6.3.13",
     "del": "^2.2.0",
     "eslint": "^3.13.1",
-    "grommet-toolbox": "^1.0.0",
+    "grommet-toolbox": "^1.1.1",
     "gulp": "^3.9.1",
     "gulp-bump": "^2.1.0",
     "gulp-coveralls": "^0.1.4",
