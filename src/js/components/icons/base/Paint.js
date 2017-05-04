@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CSSClassnames from '../../../utils/CSSClassnames';
 import Intl from '../../../utils/Intl';
@@ -48,7 +49,7 @@ Icon.icon = true;
 Icon.propTypes = {
   a11yTitle: PropTypes.string,
   colorIndex: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
+  size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'huge']),
   responsive: PropTypes.bool
 };
 
