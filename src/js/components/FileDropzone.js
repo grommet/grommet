@@ -22,7 +22,7 @@ const CSSClassnames = {
 };
 const CLASS_ROOT = CSSClassnames.DROPZONE;
 
-class Dropzone extends Component {
+class FileDropzone extends Component {
   
   constructor() {
     super();
@@ -50,7 +50,7 @@ class Dropzone extends Component {
   }
 
   componentDidMount() {
-    if (window) {
+    if (typeof window !== 'undefined') {
       const { fullDropTarget } = this.props;
       if (fullDropTarget) {
         window.addEventListener('drop', this._onDrop);
@@ -65,7 +65,7 @@ class Dropzone extends Component {
   }
 
   componentWillUnmount() {
-    if (window) {
+    if (typeof window !== 'undefined') {
       const { fullDropTarget } = this.props;
       if (fullDropTarget) {
         window.removeEventListener('drop', this._onDrop);
@@ -121,7 +121,7 @@ class Dropzone extends Component {
       onDOMChange.call(this, files, e);
     }
     files.forEach((file) => {
-      if (window) {
+      if (typeof window !== 'undefined') {
         file.preview = window.URL.createObjectURL(file);
       }
     });
@@ -194,7 +194,8 @@ class Dropzone extends Component {
     const {
       className,
       label,
-      multiple
+      multiple,
+      preview
     } = Props.omit(this.props, Object.keys(Box.propTypes));
     const { dragActive, files, dragDropSupported } = this.state;
     const classes = classnames(
@@ -223,13 +224,13 @@ class Dropzone extends Component {
         }
         <input ref="fileInput" multiple={multiple} onChange={this._onDrop}
           type="file" className={`${CLASS_ROOT}__input`} />
-        {this._renderPreview(files)}
+        {preview && this._renderPreview(files)}
       </Box>
     );
   }
 }
 
-Dropzone.propTypes = {
+FileDropzone.propTypes = {
   label: PropTypes.node,
   preview: PropTypes.bool,
   multiple: PropTypes.bool.isRequired,
@@ -238,11 +239,11 @@ Dropzone.propTypes = {
   ...Box.propTypes
 };
 
-Dropzone.defaultProps = {
+FileDropzone.defaultProps = {
   multiple: false,
   label: 'Click or drop a file to upload',
   preview: true,
   fullDropTarget: false
 };
 
-export default Dropzone;
+export default FileDropzone;

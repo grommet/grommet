@@ -26,7 +26,7 @@ export function getFileTransfer(event, allowMultiple) {
 };
 
 export function supportsDragDrop() {
-  if (document) {
+  if (typeof document !== 'undefined') {
     const element = document.createElement('div');
     return ('draggable' in element) ||
       ('ondragstart' in element && 'ondrop' in element);

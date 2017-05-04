@@ -19,7 +19,7 @@ describe('FileDropzone', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders with label props', () => {
+  it('should create a snapshot with label props', () => {
     const component = renderer.create(
       <FileDropzone label="Testing" />
     );
@@ -27,7 +27,7 @@ describe('FileDropzone', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders with preview prop set to false', () => {
+  it('should create a snapshot with preview prop set to false', () => {
     const component = renderer.create(
       <FileDropzone preview={false} />
     );
@@ -35,7 +35,7 @@ describe('FileDropzone', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders with multiple prop set to true', () => {
+  it('should create a snapshot with multiple prop set to true', () => {
     const component = renderer.create(
       <FileDropzone multiple={true} />
     );
@@ -43,7 +43,7 @@ describe('FileDropzone', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders with full screen drop target set to true', () => {
+  it('should create a snapshot with full screen drop target set to true', () => {
     const component = renderer.create(
       <FileDropzone fullDropTarget={true} />
     );
