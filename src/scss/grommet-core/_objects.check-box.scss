@@ -153,6 +153,7 @@
   white-space: normal;
   margin-right: $inuit-base-spacing-unit;
   word-break: break-word;
+  size: calc(100% - 36px);
 
   #{$dark-background-context} {
     color: $colored-text-color;
