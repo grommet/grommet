@@ -10,9 +10,8 @@ import Button from './Button';
 import CloseIcon from './icons/base/Close';
 import DocumentIcon from './icons/base/Document';
 import Props from '../utils/Props';
-import {
-  isImage,  
-  getFileTransfer,
+import FileUploader, {
+  isImage,
   supportsDragDrop
 } from '../utils/FileUpload';
 
@@ -116,7 +115,8 @@ class FileDropzone extends Component {
   _onDrop(e) {
     e.preventDefault();
     const { multiple, onDOMChange } = this.props;
-    const files = getFileTransfer(e, multiple);
+    const uploader = new FileUploader(e);
+    const files = uploader.getFileTransfer(multiple);
     if (typeof onDOMChange === 'function' && files.length) {
       onDOMChange.call(this, files, e);
     }
