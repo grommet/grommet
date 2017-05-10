@@ -115,8 +115,8 @@ class FileDropzone extends Component {
   _onDrop(e) {
     e.preventDefault();
     const { multiple, onDOMChange } = this.props;
-    const uploader = new FileUploader(e);
-    const files = uploader.getFileTransfer(multiple);
+    const uploader = new FileUploader(e, multiple);
+    const files = uploader.getFileTransfer();
     if (typeof onDOMChange === 'function' && files.length) {
       onDOMChange.call(this, files, e);
     }
