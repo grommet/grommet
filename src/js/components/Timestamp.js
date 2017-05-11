@@ -42,15 +42,15 @@ export default class Timestamp extends Component {
     const dateObj = (typeof value === 'string') ? 
       moment(value).lang(locale) : value;
 
-      let dateFormat;
-      let yearFormat;
-      let monthFormat;
-      let dayFormat;
+    let dateFormat;
+    let yearFormat;
+    let monthFormat;
+    let dayFormat;
 
-      let timeFormat;
-      let hourFormat;
-      let minuteFormat;
-      let secondFormat;
+    let timeFormat;
+    let hourFormat;
+    let minuteFormat;
+    let secondFormat;
 
     if (_showField('date', fields)) {
       dateFormat = 'll';
@@ -74,38 +74,38 @@ export default class Timestamp extends Component {
       dateFormat = 'LL';
     }
 
-   if (_showField('time', fields)) {
-     timeFormat = 'LT';
-   } 
+    if (_showField('time', fields)) {
+      timeFormat = 'LT';
+    } 
 
-   if (!timeFormat) {
-     if (_showField('hour', fields) || _showField('hours', fields)) {
-       hourFormat = 'hh';
-     }
-    if (_showField('minute', fields) || _showField('minutes', fields)) {
-      minuteFormat = (hourFormat ? ':' : '') + 'mm';
+    if (!timeFormat) {
+      if (_showField('hour', fields) || _showField('hours', fields)) {
+        hourFormat = 'hh';
+      }
+      if (_showField('minute', fields) || _showField('minutes', fields)) {
+        minuteFormat = (hourFormat ? ':' : '') + 'mm';
+      }
+      if (_showField('second', fields) || _showField('seconds', fields)) {
+        secondFormat = (minuteFormat ? ':' : '') + 'ss';
+      }
+    } else if (_showField('second', fields) || _showField('seconds', fields)) {
+      timeFormat = 'LTS';
     }
-    if (_showField('second', fields) || _showField('seconds', fields)) {
-      secondFormat = (minuteFormat ? ':' : '') + 'ss';
+
+    if (!dateFormat) {
+      dateFormat = (
+        `${monthFormat || ''} ${dayFormat || ''} ${yearFormat || ''}`
+      );
     }
-   } else if (_showField('second', fields) || _showField('seconds', fields)) {
-     timeFormat = 'LTS';
-   }
 
-   if (!dateFormat) {
-     dateFormat = (
-       `${monthFormat || ''} ${dayFormat || ''} ${yearFormat || ''}`
-     );
-   }
+    if (!timeFormat) {
+      timeFormat = (
+        `${hourFormat || ''}${minuteFormat || ''}${secondFormat || ''}`
+      );
+    }
 
-   if (!timeFormat) {
-     timeFormat = (
-       `${hourFormat || ''}${minuteFormat || ''}${secondFormat || ''}`
-     );
-   }
-
-   const date = dateFormat !== '' ? dateObj.format(dateFormat) : undefined;
-   const time = timeFormat !== '' ? dateObj.format(timeFormat) : undefined;
+    const date = dateFormat !== '  ' ? dateObj.format(dateFormat) : undefined;
+    const time = timeFormat !== '' ? dateObj.format(timeFormat) : undefined;
 
     this.setState({ date, time });
   }
@@ -122,7 +122,6 @@ export default class Timestamp extends Component {
       },
       className
     );
-
 
     let dateElement;
     if (date) {
