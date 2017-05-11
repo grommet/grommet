@@ -162,6 +162,7 @@ export default {
   'folder-cycle': 'folder cycle', 
   'folder-open': 'folder open', 
   'folder': 'folder', 
+  'form-edit': 'form edit',
   'forward-ten': 'forward ten', 
   'gallery': 'gallery', 
   'gamepad': 'gamepad', 
