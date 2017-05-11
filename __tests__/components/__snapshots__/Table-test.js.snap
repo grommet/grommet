@@ -32,3 +32,32 @@ exports[`Table has correct default options 1`] = `
   </table>
 </div>
 `;
+
+exports[`Table has mismatched headers and body columns 1`] = `
+<div
+  className="grommetux-table">
+  <table
+    className="grommetux-table__table">
+    <div
+      className="grommetux-table"
+      labels={
+        Array [
+          "one",
+        ]
+      }>
+      <table
+        className="grommetux-table__table" />
+    </div>
+    <tbody>
+      <tr>
+        <td>
+          one
+        </td>
+        <td>
+          two - one too many
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
