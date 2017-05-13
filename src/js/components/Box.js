@@ -312,7 +312,17 @@ Box.propTypes = {
   direction: PropTypes.oneOf(['row', 'column']),
   focusable: PropTypes.bool,
   flex: PropTypes.oneOf(['grow', 'shrink', true, false]),
-  full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
+  full: PropTypes.oneOfType(
+    [
+      PropTypes.bool,
+      PropTypes.string,
+      PropTypes.shape({
+        vertical: PropTypes.bool,
+        horizontal: PropTypes.bool,
+        keep: PropTypes.bool
+      })
+    ]
+  ),
     // remove in 1.0?
   onClick: PropTypes.func,
   justify: PropTypes.oneOf(['start', 'center', 'between', 'end']),
