@@ -315,7 +315,7 @@ Box.propTypes = {
   full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
     // remove in 1.0?
   onClick: PropTypes.func,
-  justify: PropTypes.oneOf(['start', 'center', 'between', 'end']),
+  justify: PropTypes.oneOf(['start', 'center', 'between', 'end', 'around']),
   margin: PropTypes.oneOfType([
     PropTypes.oneOf(MARGIN_SIZES),
     PropTypes.shape({
