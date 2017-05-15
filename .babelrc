@@ -3,6 +3,7 @@
   "plugins": [
     "add-module-exports",
     "transform-object-rest-spread",
-    "transform-react-es6-displayname"
+    "transform-react-es6-displayname",
+    "transform-object-assign"
   ]
 }

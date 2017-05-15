@@ -12,14 +12,7 @@ import Meter from '../Meter';
 import Axis from './Axis';
 import Layers from './Layers';
 import Base from './Base';
-import Grid from './Grid';
-import Area from './Area';
-import Line from './Line';
-import Bar from './Bar';
-import Marker from './Marker';
 import MarkerLabel from './MarkerLabel';
-import HotSpots from './HotSpots';
-import Range from './Range';
 
 const CLASS_ROOT = CSSClassnames.CHART;
 const CHART_BASE = CSSClassnames.CHART_BASE;
@@ -52,7 +45,7 @@ function traverseAndUpdateChildren (children) {
   });
 }
 
-export default class Chart extends Component {
+class Chart extends Component {
 
   constructor(props, context) {
     super(props, context);
@@ -284,5 +277,4 @@ Chart.propTypes = {
   verticalAlignWith: PropTypes.string
 };
 
-export { Axis, Layers, Base, Grid, Area, Line, Bar, Marker, MarkerLabel,
-  HotSpots, Range };
+export default Chart;
