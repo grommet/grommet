@@ -511,7 +511,7 @@
   max-height: 100%;
   overflow: auto;
 
-  &:not(.#{$grommet-namespace}box--full-keep) {
+  &.#{$grommet-namespace}box--full-responsive {
     @include media-query(palm) {
       min-height: 100vh;
       height: 100%;
@@ -535,7 +535,7 @@
   max-height: 100%;
   overflow: auto;
 
-  &:not(.#{$grommet-namespace}box--full-keep) {
+  &.#{$grommet-namespace}box--full-responsive {
     @include media-query(palm) {
       min-height: 100vh;
       height: 100%;
