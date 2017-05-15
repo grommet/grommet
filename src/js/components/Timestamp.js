@@ -1,22 +1,13 @@
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2017 Hewlett Packard Enterprise Development LP
 
 import React, { Component } from 'react';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { getCurrentLocale } from '../utils/Locale';
 import CSSClassnames from '../utils/CSSClassnames';
+import { getCurrentLocale } from '../utils/Locale';
 
 const CLASS_ROOT = CSSClassnames.TIMESTAMP;
-
-const FORMATS = {
-  year: 'numeric',
-  month: 'short',
-  'month-full': 'long',
-  day: 'numeric',
-  hour: '2-digit',
-  minute: '2-digit',
-  second: '2-digit'
-};
 
 function _showField(field, fields) {
   let result = true;
@@ -48,45 +39,73 @@ export default class Timestamp extends Component {
 
   _formatForLocale ({value, fields}) {
     const locale = getCurrentLocale();
-    const dateObj = (typeof value === 'string') ? new Date(value) : value;
-    let dateOptions = {};
-    let timeOptions = {};
+    const dateObj = (typeof value === 'string') ? 
+      moment(value).lang(locale) : value;
+
+    let dateFormat;
+    let yearFormat;
+    let monthFormat;
+    let dayFormat;
+
+    let timeFormat;
+    let hourFormat;
+    let minuteFormat;
+    let secondFormat;
 
     if (_showField('date', fields)) {
-      dateOptions.year = FORMATS.year;
-      dateOptions.month = FORMATS.month;
-      dateOptions.day = FORMATS.day;
+      dateFormat = 'll';
     }
-    if (_showField('year', fields)) {
-      dateOptions.year = FORMATS.year;
-    }
-    if (_showField('month', fields)) {
-      dateOptions.month = FORMATS.month;
+
+    if (!dateFormat) {
+      if (_showField('year', fields)) {
+        yearFormat = 'YYYY';
+      }
+
+      if (_showField('month', fields)) {
+        monthFormat = 'MMM';
+      } else if (_showField('month-full', fields)) {
+        monthFormat = 'MMMM';
+      }
+
+      if (_showField('day', fields)) {
+        dayFormat = 'D';
+      }
     } else if (_showField('month-full', fields)) {
-      dateOptions.month = FORMATS['month-full'];
-    }
-    if (_showField('day', fields)) {
-      dateOptions.day = FORMATS.day;
+      dateFormat = 'LL';
     }
 
     if (_showField('time', fields)) {
-      timeOptions.hour = FORMATS.hour;
-      timeOptions.minute = FORMATS.minute;
-    }
-    if (_showField('hour', fields) || _showField('hours', fields)) {
-      timeOptions.hour = FORMATS.hour;
-    }
-    if (_showField('minute', fields) || _showField('minutes', fields)) {
-      timeOptions.minute = FORMATS.minute;
-    }
-    if (_showField('second', fields) || _showField('seconds', fields)) {
-      timeOptions.second = FORMATS.second;
+      timeFormat = 'LT';
+    } 
+
+    if (!timeFormat) {
+      if (_showField('hour', fields) || _showField('hours', fields)) {
+        hourFormat = 'hh';
+      }
+      if (_showField('minute', fields) || _showField('minutes', fields)) {
+        minuteFormat = (hourFormat ? ':' : '') + 'mm';
+      }
+      if (_showField('second', fields) || _showField('seconds', fields)) {
+        secondFormat = (minuteFormat ? ':' : '') + 'ss';
+      }
+    } else if (_showField('second', fields) || _showField('seconds', fields)) {
+      timeFormat = 'LTS';
     }
 
-    const date = Object.keys(dateOptions).length > 0 ?
-      dateObj.toLocaleDateString(locale, dateOptions) : undefined;
-    const time = Object.keys(timeOptions).length > 0 ?
-      dateObj.toLocaleTimeString(locale, timeOptions) : undefined;
+    if (!dateFormat) {
+      dateFormat = (
+        `${monthFormat || ''} ${dayFormat || ''} ${yearFormat || ''}`
+      );
+    }
+
+    if (!timeFormat) {
+      timeFormat = (
+        `${hourFormat || ''}${minuteFormat || ''}${secondFormat || ''}`
+      );
+    }
+
+    const date = dateFormat !== '  ' ? dateObj.format(dateFormat) : undefined;
+    const time = timeFormat !== '' ? dateObj.format(timeFormat) : undefined;
 
     this.setState({ date, time });
   }
@@ -103,7 +122,6 @@ export default class Timestamp extends Component {
       },
       className
     );
-
 
     let dateElement;
     if (date) {
