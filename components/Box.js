@@ -191,6 +191,7 @@ var Box = function (_Component) {
           colorIndex = _props.colorIndex,
           containerClassName = _props.containerClassName,
           focusable = _props.focusable,
+          full = _props.full,
           id = _props.id,
           onClick = _props.onClick,
           _onBlur = _props.onBlur,
@@ -212,6 +213,10 @@ var Box = function (_Component) {
       var containerClasses = [CLASS_ROOT + '__container'];
       var restProps = _Props2.default.omit(this.props, Object.keys(Box.propTypes));
       this._addPropertyClass(classes, 'full');
+      if (full && full.responsive === undefined) {
+        // default is true for backwards compatibility sake
+        classes.push(CLASS_ROOT + '--full-responsive');
+      }
       this._addPropertyClass(classes, 'direction');
       this._addPropertyClass(classes, 'justify');
       this._addPropertyClass(classes, 'align');
@@ -408,7 +413,11 @@ Box.propTypes = {
   direction: _propTypes2.default.oneOf(['row', 'column']),
   focusable: _propTypes2.default.bool,
   flex: _propTypes2.default.oneOf(['grow', 'shrink', true, false]),
-  full: _propTypes2.default.oneOf([true, 'horizontal', 'vertical', false]),
+  full: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.string, _propTypes2.default.shape({
+    vertical: _propTypes2.default.bool,
+    horizontal: _propTypes2.default.bool,
+    responsive: _propTypes2.default.bool
+  })]),
   // remove in 1.0?
   onClick: _propTypes2.default.func,
   justify: _propTypes2.default.oneOf(['start', 'center', 'between', 'end']),

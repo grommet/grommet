@@ -407,6 +407,11 @@ var Table = function (_Component) {
           [].forEach.call(rows, function (row) {
             var incrementCount = 0;
             var headerIndex = 0;
+
+            if (row.cells.length !== headerCells.length) {
+              console.error('Table row cells do not match length of header cells.');
+            }
+
             [].forEach.call(row.cells, function (cell) {
               cell.setAttribute('data-th', headerCells[headerIndex].innerText || headerCells[headerIndex].textContent);
               incrementCount++;

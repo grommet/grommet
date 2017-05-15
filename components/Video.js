@@ -226,7 +226,7 @@ var Video = function (_Component) {
     value: function _renderControls() {
       var _this3 = this;
 
-      var extendedProps = Object.assign({
+      var extendedProps = _extends({
         title: this.props.title,
         togglePlay: this._togglePlay,
         toggleMute: this._toggleMute,

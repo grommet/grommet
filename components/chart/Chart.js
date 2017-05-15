@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Range = exports.HotSpots = exports.MarkerLabel = exports.Marker = exports.Bar = exports.Line = exports.Area = exports.Grid = exports.Base = exports.Layers = exports.Axis = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -47,37 +46,9 @@ var _Base = require('./Base');
 
 var _Base2 = _interopRequireDefault(_Base);
 
-var _Grid = require('./Grid');
-
-var _Grid2 = _interopRequireDefault(_Grid);
-
-var _Area = require('./Area');
-
-var _Area2 = _interopRequireDefault(_Area);
-
-var _Line = require('./Line');
-
-var _Line2 = _interopRequireDefault(_Line);
-
-var _Bar = require('./Bar');
-
-var _Bar2 = _interopRequireDefault(_Bar);
-
-var _Marker = require('./Marker');
-
-var _Marker2 = _interopRequireDefault(_Marker);
-
 var _MarkerLabel = require('./MarkerLabel');
 
 var _MarkerLabel2 = _interopRequireDefault(_MarkerLabel);
-
-var _HotSpots = require('./HotSpots');
-
-var _HotSpots2 = _interopRequireDefault(_HotSpots);
-
-var _Range = require('./Range');
-
-var _Range2 = _interopRequireDefault(_Range);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -358,7 +329,6 @@ var Chart = function (_Component) {
 }(_react.Component);
 
 Chart.displayName = 'Chart';
-exports.default = Chart;
 
 
 Chart.contextTypes = {
@@ -375,14 +345,5 @@ Chart.propTypes = {
   verticalAlignWith: _propTypes2.default.string
 };
 
-exports.Axis = _Axis2.default;
-exports.Layers = _Layers2.default;
-exports.Base = _Base2.default;
-exports.Grid = _Grid2.default;
-exports.Area = _Area2.default;
-exports.Line = _Line2.default;
-exports.Bar = _Bar2.default;
-exports.Marker = _Marker2.default;
-exports.MarkerLabel = _MarkerLabel2.default;
-exports.HotSpots = _HotSpots2.default;
-exports.Range = _Range2.default;
+exports.default = Chart;
+module.exports = exports['default'];

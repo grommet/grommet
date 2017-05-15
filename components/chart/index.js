@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.ChartRange = exports.ChartMarkerLabel = exports.ChartMarker = exports.ChartLine = exports.ChartLayers = exports.ChartHotSpots = exports.ChartGrid = exports.Chart = exports.ChartBase = exports.ChartBar = exports.ChartAxis = exports.ChartArea = undefined;
 
 var _Area = require('./Area');
 
@@ -42,7 +43,7 @@ Object.defineProperty(exports, 'ChartBase', {
 
 var _Chart = require('./Chart');
 
-Object.defineProperty(exports, 'ChartChart', {
+Object.defineProperty(exports, 'Chart', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_Chart).default;
@@ -112,4 +113,8 @@ Object.defineProperty(exports, 'ChartRange', {
   }
 });
 
+var _Chart2 = _interopRequireDefault(_Chart);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Chart2.default;

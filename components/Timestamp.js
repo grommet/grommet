@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _moment = require('moment');
+
+var _moment2 = _interopRequireDefault(_moment);
+
 var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
@@ -20,11 +24,11 @@ var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
-var _Locale = require('../utils/Locale');
-
 var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
+var _Locale = require('../utils/Locale');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36,19 +40,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2017 Hewlett Packard Enterprise Development LP
 
 var CLASS_ROOT = _CSSClassnames2.default.TIMESTAMP;
-
-var FORMATS = {
-  year: 'numeric',
-  month: 'short',
-  'month-full': 'long',
-  day: 'numeric',
-  hour: '2-digit',
-  minute: '2-digit',
-  second: '2-digit'
-};
 
 function _showField(field, fields) {
   var result = true;
@@ -92,43 +86,68 @@ var Timestamp = function (_Component) {
           fields = _ref.fields;
 
       var locale = (0, _Locale.getCurrentLocale)();
-      var dateObj = typeof value === 'string' ? new Date(value) : value;
-      var dateOptions = {};
-      var timeOptions = {};
+      var dateObj = typeof value === 'string' ? (0, _moment2.default)(value).lang(locale) : value;
+
+      var dateFormat = void 0;
+      var yearFormat = void 0;
+      var monthFormat = void 0;
+      var dayFormat = void 0;
+
+      var timeFormat = void 0;
+      var hourFormat = void 0;
+      var minuteFormat = void 0;
+      var secondFormat = void 0;
 
       if (_showField('date', fields)) {
-        dateOptions.year = FORMATS.year;
-        dateOptions.month = FORMATS.month;
-        dateOptions.day = FORMATS.day;
+        dateFormat = 'll';
       }
-      if (_showField('year', fields)) {
-        dateOptions.year = FORMATS.year;
-      }
-      if (_showField('month', fields)) {
-        dateOptions.month = FORMATS.month;
+
+      if (!dateFormat) {
+        if (_showField('year', fields)) {
+          yearFormat = 'YYYY';
+        }
+
+        if (_showField('month', fields)) {
+          monthFormat = 'MMM';
+        } else if (_showField('month-full', fields)) {
+          monthFormat = 'MMMM';
+        }
+
+        if (_showField('day', fields)) {
+          dayFormat = 'D';
+        }
       } else if (_showField('month-full', fields)) {
-        dateOptions.month = FORMATS['month-full'];
-      }
-      if (_showField('day', fields)) {
-        dateOptions.day = FORMATS.day;
+        dateFormat = 'LL';
       }
 
       if (_showField('time', fields)) {
-        timeOptions.hour = FORMATS.hour;
-        timeOptions.minute = FORMATS.minute;
-      }
-      if (_showField('hour', fields) || _showField('hours', fields)) {
-        timeOptions.hour = FORMATS.hour;
-      }
-      if (_showField('minute', fields) || _showField('minutes', fields)) {
-        timeOptions.minute = FORMATS.minute;
-      }
-      if (_showField('second', fields) || _showField('seconds', fields)) {
-        timeOptions.second = FORMATS.second;
+        timeFormat = 'LT';
       }
 
-      var date = Object.keys(dateOptions).length > 0 ? dateObj.toLocaleDateString(locale, dateOptions) : undefined;
-      var time = Object.keys(timeOptions).length > 0 ? dateObj.toLocaleTimeString(locale, timeOptions) : undefined;
+      if (!timeFormat) {
+        if (_showField('hour', fields) || _showField('hours', fields)) {
+          hourFormat = 'hh';
+        }
+        if (_showField('minute', fields) || _showField('minutes', fields)) {
+          minuteFormat = (hourFormat ? ':' : '') + 'mm';
+        }
+        if (_showField('second', fields) || _showField('seconds', fields)) {
+          secondFormat = (minuteFormat ? ':' : '') + 'ss';
+        }
+      } else if (_showField('second', fields) || _showField('seconds', fields)) {
+        timeFormat = 'LTS';
+      }
+
+      if (!dateFormat) {
+        dateFormat = (monthFormat || '') + ' ' + (dayFormat || '') + ' ' + (yearFormat || '');
+      }
+
+      if (!timeFormat) {
+        timeFormat = '' + (hourFormat || '') + (minuteFormat || '') + (secondFormat || '');
+      }
+
+      var date = dateFormat !== '  ' ? dateObj.format(dateFormat) : undefined;
+      var time = timeFormat !== '' ? dateObj.format(timeFormat) : undefined;
 
       this.setState({ date: date, time: time });
     }
