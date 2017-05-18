@@ -23,16 +23,6 @@ export default class CheckBox extends Component {
       className
     );
 
-    let labelNode;
-    if (label) {
-      labelNode = (
-        <label key='label' htmlFor={props.id}
-          className={`${CLASS_ROOT}__label`}>
-          {label}
-        </label>
-      );
-    }
-
     let hidden;
     if (disabled && checked) {
       hidden = (
@@ -54,13 +44,15 @@ export default class CheckBox extends Component {
           </svg>
         </span>
       </span>,
-      labelNode
+      label
     ];
 
     return (
       <label className={classes} aria-label={label}>
-        {reverse ? children.reverse() : children}
-        {hidden}
+        <label key='label' className={`${CLASS_ROOT}__label`}>
+          {reverse ? children.reverse() : children}
+          {hidden}
+        </label>
       </label>
     );
   }

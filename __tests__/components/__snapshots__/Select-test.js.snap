@@ -92,31 +92,30 @@ exports[`Select inline + multiple 1`] = `
       <label
         aria-label="one"
         className="grommetux-check-box">
-        <span>
-          <input
-            checked={true}
-            className="grommetux-check-box__input"
-            disabled={undefined}
-            id="undefined-one"
-            name={undefined}
-            onChange={[Function]}
-            tabIndex="0"
-            type="checkbox" />
-          <span
-            className="grommetux-check-box__control">
-            <svg
-              className="grommetux-check-box__control-check"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 24 24">
-              <path
-                d="M6,11.3 L10.3,16 L18,6.2"
-                fill="none" />
-            </svg>
-          </span>
-        </span>
         <label
-          className="grommetux-check-box__label"
-          htmlFor="undefined-one">
+          className="grommetux-check-box__label">
+          <span>
+            <input
+              checked={true}
+              className="grommetux-check-box__input"
+              disabled={undefined}
+              id="undefined-one"
+              name={undefined}
+              onChange={[Function]}
+              tabIndex="0"
+              type="checkbox" />
+            <span
+              className="grommetux-check-box__control">
+              <svg
+                className="grommetux-check-box__control-check"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24">
+                <path
+                  d="M6,11.3 L10.3,16 L18,6.2"
+                  fill="none" />
+              </svg>
+            </span>
+          </span>
           one
         </label>
       </label>
@@ -127,31 +126,30 @@ exports[`Select inline + multiple 1`] = `
       <label
         aria-label="two"
         className="grommetux-check-box">
-        <span>
-          <input
-            checked={false}
-            className="grommetux-check-box__input"
-            disabled={undefined}
-            id="undefined-two"
-            name={undefined}
-            onChange={[Function]}
-            tabIndex="0"
-            type="checkbox" />
-          <span
-            className="grommetux-check-box__control">
-            <svg
-              className="grommetux-check-box__control-check"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 24 24">
-              <path
-                d="M6,11.3 L10.3,16 L18,6.2"
-                fill="none" />
-            </svg>
-          </span>
-        </span>
         <label
-          className="grommetux-check-box__label"
-          htmlFor="undefined-two">
+          className="grommetux-check-box__label">
+          <span>
+            <input
+              checked={false}
+              className="grommetux-check-box__input"
+              disabled={undefined}
+              id="undefined-two"
+              name={undefined}
+              onChange={[Function]}
+              tabIndex="0"
+              type="checkbox" />
+            <span
+              className="grommetux-check-box__control">
+              <svg
+                className="grommetux-check-box__control-check"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 24 24">
+                <path
+                  d="M6,11.3 L10.3,16 L18,6.2"
+                  fill="none" />
+              </svg>
+            </span>
+          </span>
           two
         </label>
       </label>
