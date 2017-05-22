@@ -224,7 +224,13 @@ export default class Carousel extends Component {
     const { children } = this.props;
     const { activeIndex } = this.state;
     const numSlides = children.length;
-    const index = (activeIndex + numSlides - 1) % numSlides;
+    let index = (activeIndex + numSlides - 1) % numSlides;
+
+    if (!this.props.infinite) {
+      if(activeIndex == 0) {
+        index = activeIndex;
+      }
+    }
 
     if(! this.props.hasOwnProperty('activeIndex')) {
       this.setState({
@@ -241,7 +247,13 @@ export default class Carousel extends Component {
     const { children } = this.props;
     const { activeIndex } = this.state;
     const numSlides = children.length;
-    const index = (activeIndex + 1) % numSlides;
+    let index = (activeIndex + 1) % numSlides;
+
+    if (!this.props.infinite) {
+      if(activeIndex == children.length - 1) {
+        index = activeIndex;
+      }
+    }
 
     if(! this.props.hasOwnProperty('activeIndex')) {
       this.setState({
