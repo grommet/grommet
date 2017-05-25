@@ -192,17 +192,25 @@ export default class WorldMap extends Component {
   _renderContinent (seriesData, index) {
     const { activeIndex } = this.state;
     const continent = seriesData.continent;
-    const colorIndex = seriesData.colorIndex || `graph-${index}`;
-
+    let colorIndex = seriesData.colorIndex || `graph-${index}`;
+    let colorType;
+    if(seriesData.onClick && seriesData.hover) {
+      colorType = 'active';
+    } else {
+      colorType = seriesData.hover ? 'hover' : 'active';
+    }
+    if(index === activeIndex) {
+      colorIndex = seriesData.highlightColorIndex;
+    }
     const classes = classnames(
       `${CLASS_ROOT}__continent`,
       `${COLOR_INDEX}-${colorIndex}`, {
-        [`${CLASS_ROOT}__continent--active`]: index === activeIndex
+        [`${CLASS_ROOT}__continent--${colorType}`]: index === activeIndex
       }
     );
     let area;
     let clickableProps = {};
-    if (seriesData.onClick) {
+    if (seriesData.onClick || seriesData.hover) {
       area = (
         <path stroke='none' fill='#fff' fillOpacity='0.01'
           d={this.state.area[continent]} />
@@ -247,9 +255,9 @@ export default class WorldMap extends Component {
         className={classes} version='1.1'
         preserveAspectRatio='xMidYMid meet'
         width={`${width}px`} viewBox={`0 0 ${width} ${height}`}>
-        <g stroke='none' fill='none' fillRule='evenodd'>
-          {continents}
-        </g>
+          <g stroke='none' fill='none' fillRule='evenodd'>
+            {continents}
+          </g>
       </svg>
     );
   }
@@ -262,6 +270,8 @@ WorldMap.propTypes = {
     ),
     // value: PropTypes.number,
     colorIndex: PropTypes.string,
+    highlightColorIndex: PropTypes.string,
+    hover: PropTypes.bool,
     // important: PropTypes.bool,
     onClick: PropTypes.func
   }))
