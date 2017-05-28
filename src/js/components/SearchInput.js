@@ -204,6 +204,12 @@ export default class SearchInput extends Component {
       if (onSelect) {
         onSelect({ target: this.inputRef, suggestion: suggestion });
       }
+    } else if (this.props.onSubmit) {
+    /*
+	 * if user click enter after typing key word for search, then onSubmit call
+	 * back function will executed which will act like form submit
+	 */
+      this.props.onSubmit();
     }
   }
 
@@ -336,5 +342,6 @@ SearchInput.propTypes = {
       value: PropTypes.string
     }),
     PropTypes.string
-  ])
+  ]),
+  onSubmit: PropTypes.func
 };
