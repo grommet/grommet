@@ -1,49 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`LoginForm has correct default options 1`] = `
 <form
   className="grommetux-form grommetux-form--pad-medium grommetux-login-form"
-  onSubmit={[Function]}>
+  onSubmit={[Function]}
+>
   <div
     className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none"
     id={undefined}
     onClick={undefined}
     role={undefined}
     style={Object {}}
-    tabIndex={undefined} />
+    tabIndex={undefined}
+  />
   <fieldset>
     <div
       className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       <label
         className="grommetux-form-field__label"
-        htmlFor="username">
+        htmlFor="username"
+      >
         <span>
           Email
         </span>
       </label>
       <span
-        className="grommetux-form-field__contents">
+        className="grommetux-form-field__contents"
+      >
         <input
           onChange={[Function]}
           type="email"
-          value="" />
+          value=""
+        />
       </span>
     </div>
     <div
       className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       <label
         className="grommetux-form-field__label"
-        htmlFor="password">
+        htmlFor="password"
+      >
         <span>
           Password
         </span>
       </label>
       <span
-        className="grommetux-form-field__contents">
+        className="grommetux-form-field__contents"
+      >
         <input
           onChange={[Function]}
           type="password"
-          value="" />
+          value=""
+        />
       </span>
     </div>
   </fieldset>
@@ -53,7 +65,8 @@ exports[`LoginForm has correct default options 1`] = `
     onClick={undefined}
     role={undefined}
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <button
       aria-label={undefined}
       className="grommetux-button grommetux-button--primary grommetux-button--fill"
@@ -64,9 +77,11 @@ exports[`LoginForm has correct default options 1`] = `
       onFocus={[Function]}
       onMouseDown={[Function]}
       onMouseUp={[Function]}
-      type="submit">
+      type="submit"
+    >
       <span
-        className="grommetux-button__label">
+        className="grommetux-button__label"
+      >
         <span>
           Log In
         </span>

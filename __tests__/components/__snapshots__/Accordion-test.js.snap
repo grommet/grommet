@@ -1,7 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Accordion has correct default options 1`] = `
 <ul
   className="grommetux-list grommetux-accordion"
-  role="tablist">
+  role="tablist"
+>
   <div>
     <li
       aria-expanded={false}
@@ -12,7 +15,8 @@ exports[`Accordion has correct default options 1`] = `
       onClick={undefined}
       role="tab"
       style={Object {}}
-      tabIndex={undefined}>
+      tabIndex={undefined}
+    >
       <button
         aria-label={undefined}
         className="grommetux-button grommetux-button--fill grommetux-button--plain"
@@ -23,21 +27,24 @@ exports[`Accordion has correct default options 1`] = `
         onFocus={[Function]}
         onMouseDown={[Function]}
         onMouseUp={[Function]}
-        type="button">
+        type="button"
+      >
         <div
           className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
           id={undefined}
           onClick={undefined}
           role={undefined}
           style={Object {}}
-          tabIndex={undefined}>
+          tabIndex={undefined}
+        >
           <header
             className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
             id={undefined}
             onClick={undefined}
             role={undefined}
             style={Object {}}
-            tabIndex={undefined}>
+            tabIndex={undefined}
+          >
             First Title
             <svg
               aria-label="caret-next"
@@ -46,19 +53,22 @@ exports[`Accordion has correct default options 1`] = `
               role="img"
               version="1.1"
               viewBox="0 0 24 24"
-              width="24px">
+              width="24px"
+            >
               <polygon
                 fill="none"
                 points="6 2 18 12 6 22"
                 stroke="#000"
-                strokeWidth="2" />
+                strokeWidth="2"
+              />
             </svg>
           </header>
         </div>
       </button>
     </li>
     <span
-      className="grommetux-collapsible__wrapper" />
+      className="grommetux-collapsible__wrapper"
+    />
   </div>
 </ul>
 `;
@@ -66,7 +76,8 @@ exports[`Accordion has correct default options 1`] = `
 exports[`Accordion has correct initialIndex=0 rendering 1`] = `
 <ul
   className="grommetux-list grommetux-accordion"
-  role="tablist">
+  role="tablist"
+>
   <div>
     <li
       aria-expanded={true}
@@ -77,7 +88,8 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
       onClick={undefined}
       role="tab"
       style={Object {}}
-      tabIndex={undefined}>
+      tabIndex={undefined}
+    >
       <button
         aria-label={undefined}
         className="grommetux-button grommetux-button--fill grommetux-button--plain"
@@ -88,21 +100,24 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
         onFocus={[Function]}
         onMouseDown={[Function]}
         onMouseUp={[Function]}
-        type="button">
+        type="button"
+      >
         <div
           className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
           id={undefined}
           onClick={undefined}
           role={undefined}
           style={Object {}}
-          tabIndex={undefined}>
+          tabIndex={undefined}
+        >
           <header
             className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
             id={undefined}
             onClick={undefined}
             role={undefined}
             style={Object {}}
-            tabIndex={undefined}>
+            tabIndex={undefined}
+          >
             First Title
             <svg
               aria-label="caret-next"
@@ -111,19 +126,22 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
               role="img"
               version="1.1"
               viewBox="0 0 24 24"
-              width="24px">
+              width="24px"
+            >
               <polygon
                 fill="none"
                 points="6 2 18 12 6 22"
                 stroke="#000"
-                strokeWidth="2" />
+                strokeWidth="2"
+              />
             </svg>
           </header>
         </div>
       </button>
     </li>
     <span
-      className="grommetux-collapsible__wrapper">
+      className="grommetux-collapsible__wrapper"
+    >
       <div
         aria-label="Tab Contents"
         className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-collapsible"
@@ -131,7 +149,8 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
         onClick={undefined}
         role="tabpanel"
         style={Object {}}
-        tabIndex={undefined}>
+        tabIndex={undefined}
+      >
         <p>
           test 1
         </p>
@@ -148,7 +167,8 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
       onClick={undefined}
       role="tab"
       style={Object {}}
-      tabIndex={undefined}>
+      tabIndex={undefined}
+    >
       <button
         aria-label={undefined}
         className="grommetux-button grommetux-button--fill grommetux-button--plain"
@@ -159,21 +179,24 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
         onFocus={[Function]}
         onMouseDown={[Function]}
         onMouseUp={[Function]}
-        type="button">
+        type="button"
+      >
         <div
           className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
           id={undefined}
           onClick={undefined}
           role={undefined}
           style={Object {}}
-          tabIndex={undefined}>
+          tabIndex={undefined}
+        >
           <header
             className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
             id={undefined}
             onClick={undefined}
             role={undefined}
             style={Object {}}
-            tabIndex={undefined}>
+            tabIndex={undefined}
+          >
             Second Title
             <svg
               aria-label="caret-next"
@@ -182,19 +205,22 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
               role="img"
               version="1.1"
               viewBox="0 0 24 24"
-              width="24px">
+              width="24px"
+            >
               <polygon
                 fill="none"
                 points="6 2 18 12 6 22"
                 stroke="#000"
-                strokeWidth="2" />
+                strokeWidth="2"
+              />
             </svg>
           </header>
         </div>
       </button>
     </li>
     <span
-      className="grommetux-collapsible__wrapper" />
+      className="grommetux-collapsible__wrapper"
+    />
   </div>
 </ul>
 `;
@@ -202,7 +228,8 @@ exports[`Accordion has correct initialIndex=0 rendering 1`] = `
 exports[`Accordion has correct initialIndex=0 rendering 2`] = `
 <ul
   className="grommetux-list grommetux-accordion"
-  role="tablist">
+  role="tablist"
+>
   <div>
     <li
       aria-expanded={false}
@@ -213,7 +240,8 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
       onClick={undefined}
       role="tab"
       style={Object {}}
-      tabIndex={undefined}>
+      tabIndex={undefined}
+    >
       <button
         aria-label={undefined}
         className="grommetux-button grommetux-button--fill grommetux-button--plain"
@@ -224,21 +252,24 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
         onFocus={[Function]}
         onMouseDown={[Function]}
         onMouseUp={[Function]}
-        type="button">
+        type="button"
+      >
         <div
           className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
           id={undefined}
           onClick={undefined}
           role={undefined}
           style={Object {}}
-          tabIndex={undefined}>
+          tabIndex={undefined}
+        >
           <header
             className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
             id={undefined}
             onClick={undefined}
             role={undefined}
             style={Object {}}
-            tabIndex={undefined}>
+            tabIndex={undefined}
+          >
             First Title
             <svg
               aria-label="caret-next"
@@ -247,19 +278,22 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
               role="img"
               version="1.1"
               viewBox="0 0 24 24"
-              width="24px">
+              width="24px"
+            >
               <polygon
                 fill="none"
                 points="6 2 18 12 6 22"
                 stroke="#000"
-                strokeWidth="2" />
+                strokeWidth="2"
+              />
             </svg>
           </header>
         </div>
       </button>
     </li>
     <span
-      className="grommetux-collapsible__wrapper">
+      className="grommetux-collapsible__wrapper"
+    >
       <div
         aria-label="Tab Contents"
         className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-collapsible"
@@ -267,7 +301,8 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
         onClick={undefined}
         role="tabpanel"
         style={Object {}}
-        tabIndex={undefined}>
+        tabIndex={undefined}
+      >
         <p>
           test 1
         </p>
@@ -284,7 +319,8 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
       onClick={undefined}
       role="tab"
       style={Object {}}
-      tabIndex={undefined}>
+      tabIndex={undefined}
+    >
       <button
         aria-label={undefined}
         className="grommetux-button grommetux-button--fill grommetux-button--plain"
@@ -295,21 +331,24 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
         onFocus={[Function]}
         onMouseDown={[Function]}
         onMouseUp={[Function]}
-        type="button">
+        type="button"
+      >
         <div
           className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
           id={undefined}
           onClick={undefined}
           role={undefined}
           style={Object {}}
-          tabIndex={undefined}>
+          tabIndex={undefined}
+        >
           <header
             className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
             id={undefined}
             onClick={undefined}
             role={undefined}
             style={Object {}}
-            tabIndex={undefined}>
+            tabIndex={undefined}
+          >
             Second Title
             <svg
               aria-label="caret-next"
@@ -318,19 +357,22 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
               role="img"
               version="1.1"
               viewBox="0 0 24 24"
-              width="24px">
+              width="24px"
+            >
               <polygon
                 fill="none"
                 points="6 2 18 12 6 22"
                 stroke="#000"
-                strokeWidth="2" />
+                strokeWidth="2"
+              />
             </svg>
           </header>
         </div>
       </button>
     </li>
     <span
-      className="grommetux-collapsible__wrapper">
+      className="grommetux-collapsible__wrapper"
+    >
       <div
         aria-label="Tab Contents"
         className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-collapsible"
@@ -338,7 +380,8 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
         onClick={undefined}
         role="tabpanel"
         style={Object {}}
-        tabIndex={undefined}>
+        tabIndex={undefined}
+      >
         <p>
           test 2
         </p>
@@ -351,7 +394,8 @@ exports[`Accordion has correct initialIndex=0 rendering 2`] = `
 exports[`Accordion has correct openMulti=true rendering 1`] = `
 <ul
   className="grommetux-list grommetux-accordion"
-  role="tablist">
+  role="tablist"
+>
   <div>
     <li
       aria-expanded={true}
@@ -362,7 +406,8 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
       onClick={undefined}
       role="tab"
       style={Object {}}
-      tabIndex={undefined}>
+      tabIndex={undefined}
+    >
       <button
         aria-label={undefined}
         className="grommetux-button grommetux-button--fill grommetux-button--plain"
@@ -373,21 +418,24 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
         onFocus={[Function]}
         onMouseDown={[Function]}
         onMouseUp={[Function]}
-        type="button">
+        type="button"
+      >
         <div
           className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
           id={undefined}
           onClick={undefined}
           role={undefined}
           style={Object {}}
-          tabIndex={undefined}>
+          tabIndex={undefined}
+        >
           <header
             className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
             id={undefined}
             onClick={undefined}
             role={undefined}
             style={Object {}}
-            tabIndex={undefined}>
+            tabIndex={undefined}
+          >
             First Title
             <svg
               aria-label="caret-next"
@@ -396,19 +444,22 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
               role="img"
               version="1.1"
               viewBox="0 0 24 24"
-              width="24px">
+              width="24px"
+            >
               <polygon
                 fill="none"
                 points="6 2 18 12 6 22"
                 stroke="#000"
-                strokeWidth="2" />
+                strokeWidth="2"
+              />
             </svg>
           </header>
         </div>
       </button>
     </li>
     <span
-      className="grommetux-collapsible__wrapper">
+      className="grommetux-collapsible__wrapper"
+    >
       <div
         aria-label="Tab Contents"
         className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-collapsible"
@@ -416,7 +467,8 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
         onClick={undefined}
         role="tabpanel"
         style={Object {}}
-        tabIndex={undefined}>
+        tabIndex={undefined}
+      >
         <p>
           test 1
         </p>
@@ -433,7 +485,8 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
       onClick={undefined}
       role="tab"
       style={Object {}}
-      tabIndex={undefined}>
+      tabIndex={undefined}
+    >
       <button
         aria-label={undefined}
         className="grommetux-button grommetux-button--fill grommetux-button--plain"
@@ -444,21 +497,24 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
         onFocus={[Function]}
         onMouseDown={[Function]}
         onMouseUp={[Function]}
-        type="button">
+        type="button"
+      >
         <div
           className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
           id={undefined}
           onClick={undefined}
           role={undefined}
           style={Object {}}
-          tabIndex={undefined}>
+          tabIndex={undefined}
+        >
           <header
             className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
             id={undefined}
             onClick={undefined}
             role={undefined}
             style={Object {}}
-            tabIndex={undefined}>
+            tabIndex={undefined}
+          >
             Second Title
             <svg
               aria-label="caret-next"
@@ -467,19 +523,22 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
               role="img"
               version="1.1"
               viewBox="0 0 24 24"
-              width="24px">
+              width="24px"
+            >
               <polygon
                 fill="none"
                 points="6 2 18 12 6 22"
                 stroke="#000"
-                strokeWidth="2" />
+                strokeWidth="2"
+              />
             </svg>
           </header>
         </div>
       </button>
     </li>
     <span
-      className="grommetux-collapsible__wrapper">
+      className="grommetux-collapsible__wrapper"
+    >
       <div
         aria-label="Tab Contents"
         className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-collapsible"
@@ -487,7 +546,8 @@ exports[`Accordion has correct openMulti=true rendering 1`] = `
         onClick={undefined}
         role="tabpanel"
         style={Object {}}
-        tabIndex={undefined}>
+        tabIndex={undefined}
+      >
         <p>
           test 2
         </p>

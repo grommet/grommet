@@ -1,8 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`normalization has correct default options 1`] = `
 <div
   aria-label="Chart"
   className="grommetux-chart"
-  role="group">
+  role="group"
+>
   <div
     aria-label="AxisLabel"
     className="grommetux-chart-axis grommetux-chart-axis--vertical grommetux-chart-axis--align-end grommetux-chart-axis--ticks grommetux-chart-axis--ticks--end"
@@ -13,7 +16,8 @@ exports[`normalization has correct default options 1`] = `
         "marginBottom": undefined,
         "marginTop": 0,
       }
-    }>
+    }
+  >
     <div
       className="grommetux-chart-axis__slot"
       role={undefined}
@@ -21,7 +25,8 @@ exports[`normalization has correct default options 1`] = `
         Object {
           "flexBasis": "12.5%",
         }
-      } />
+      }
+    />
     <div
       className="grommetux-chart-axis__slot"
       role={undefined}
@@ -29,7 +34,8 @@ exports[`normalization has correct default options 1`] = `
         Object {
           "flexBasis": "12.5%",
         }
-      } />
+      }
+    />
     <div
       className="grommetux-chart-axis__slot"
       role="row"
@@ -37,7 +43,8 @@ exports[`normalization has correct default options 1`] = `
         Object {
           "flexBasis": "25%",
         }
-      }>
+      }
+    >
       <span>
         50
       </span>
@@ -49,7 +56,8 @@ exports[`normalization has correct default options 1`] = `
         Object {
           "flexBasis": "25%",
         }
-      } />
+      }
+    />
     <div
       className="grommetux-chart-axis__slot"
       role="row"
@@ -57,7 +65,8 @@ exports[`normalization has correct default options 1`] = `
         Object {
           "flexBasis": "25%",
         }
-      }>
+      }
+    >
       <span>
         100
       </span>
@@ -67,7 +76,8 @@ exports[`normalization has correct default options 1`] = `
     aria-label="Chart"
     className="grommetux-chart grommetux-chart--vertical"
     role="group"
-    tabIndex="-1">
+    tabIndex="-1"
+  >
     <div
       className="grommetux-chart-marker-label grommetux-chart-marker-label--align-end"
       style={
@@ -75,20 +85,25 @@ exports[`normalization has correct default options 1`] = `
           "marginLeft": 0,
           "marginRight": undefined,
         }
-      }>
+      }
+    >
       <div
         className="grommetux-chart-marker-label__slot"
         style={
           Object {
             "flexBasis": "100%",
           }
-        }>
+        }
+      >
         <div
-          className="grommetux-value grommetux-value--align-center">
+          className="grommetux-value grommetux-value--align-center"
+        >
           <div
-            className="grommetux-value__annotated">
+            className="grommetux-value__annotated"
+          >
             <span
-              className="grommetux-value__value">
+              className="grommetux-value__value"
+            >
               50
             </span>
           </div>
@@ -101,10 +116,12 @@ exports[`normalization has correct default options 1`] = `
           Object {
             "flexBasis": "0%",
           }
-        } />
+        }
+      />
     </div>
     <div
-      className="grommetux-chart-base grommetux-chart-base--height-medium grommetux-chart-base--width-large" />
+      className="grommetux-chart-base grommetux-chart-base--height-medium grommetux-chart-base--width-large"
+    />
     <div
       className="grommetux-chart-layers"
       style={
@@ -112,122 +129,146 @@ exports[`normalization has correct default options 1`] = `
           "left": 0,
           "top": 0,
         }
-      }>
+      }
+    >
       <svg
         className="grommetux-chart-grid"
         preserveAspectRatio="none"
-        viewBox="0 0 0 0">
+        viewBox="0 0 0 0"
+      >
         <path
           d="M8,8 L8,-8 M4,8 L4,-8 M0,8 L0,-8 M-4,8 L-4,-8 M-8,8 L-8,-8 M8,8 L-8,8 M8,0 L-8,0 M8,-8 L-8,-8 "
-          fill="none" />
+          fill="none"
+        />
       </svg>
       <svg
         aria-hidden="true"
         className="grommetux-chart-marker grommetux-color-index-critical"
         preserveAspectRatio="none"
-        viewBox="0 0 0 0">
+        viewBox="0 0 0 0"
+      >
         <path
           d="M0,8 L0,8"
-          fill="none" />
+          fill="none"
+        />
       </svg>
       <svg
         aria-hidden="true"
         className="grommetux-chart-marker grommetux-color-index-graph-2"
         preserveAspectRatio="none"
-        viewBox="0 0 0 0">
+        viewBox="0 0 0 0"
+      >
         <path
           d="M8,0 L8,0"
-          fill="none" />
+          fill="none"
+        />
       </svg>
       <svg
         aria-label="area , Min: 0 , Max: 100. GraphValues"
         className="grommetux-chart-graph grommetux-chart-graph--area grommetux-color-index-graph-1"
         preserveAspectRatio="none"
         role="row"
-        viewBox="0 0 0 0">
+        viewBox="0 0 0 0"
+      >
         <g>
           <path
             d="M2,0 L1.6363636363636362,-0.20000000000000018 L1.2727272727272727,-0.7999999999999998 L0.9090909090909092,-0.5999999999999996 L0.5454545454545454,-2 L0.18181818181818166,-1.7999999999999998 L-0.18181818181818166,-1.6 L-0.5454545454545454,-1.4 L-0.9090909090909092,1 L-1.272727272727273,1.2000000000000002 L-1.6363636363636367,1.6 L-2,2L-2,-2
                         L2,-2 Z"
-            stroke="none" />
+            stroke="none"
+          />
         </g>
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-graph-1 grommetux-chart-graph__point--active"
           cx={-2}
           cy={2}
-          r={6} />
+          r={6}
+        />
       </svg>
       <svg
         aria-label="line , Min: 0 , Max: 100. GraphValues"
         className="grommetux-chart-graph grommetux-chart-graph--line grommetux-color-index-accent-1"
         preserveAspectRatio="none"
         role="row"
-        viewBox="0 0 0 0">
+        viewBox="0 0 0 0"
+      >
         <g>
           <path
             d="M2,2 L1.6363636363636362,1.8000000000000003 L1.2727272727272727,1.2000000000000002 L0.9090909090909092,1.2800000000000002 L0.5454545454545454,1 L0.18181818181818166,0.8000000000000003 L-0.18181818181818166,0.3999999999999999 L-0.5454545454545454,0.20000000000000018 L-0.9090909090909092,-2 L-1.272727272727273,-1.4 L-1.6363636363636367,-0.3999999999999999 L-2,0"
-            fill="none" />
+            fill="none"
+          />
         </g>
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
           cx={2}
           cy={2}
-          r={4} />
+          r={4}
+        />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
           cx={1.6363636363636362}
           cy={1.8000000000000003}
-          r={4} />
+          r={4}
+        />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
           cx={1.2727272727272727}
           cy={1.2000000000000002}
-          r={4} />
+          r={4}
+        />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
           cx={0.9090909090909092}
           cy={1.2800000000000002}
-          r={4} />
+          r={4}
+        />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
           cx={0.5454545454545454}
           cy={1}
-          r={4} />
+          r={4}
+        />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
           cx={0.18181818181818166}
           cy={0.8000000000000003}
-          r={4} />
+          r={4}
+        />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
           cx={-0.18181818181818166}
           cy={0.3999999999999999}
-          r={4} />
+          r={4}
+        />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
           cx={-0.5454545454545454}
           cy={0.20000000000000018}
-          r={4} />
+          r={4}
+        />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
           cx={-0.9090909090909092}
           cy={-2}
-          r={4} />
+          r={4}
+        />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
           cx={-1.272727272727273}
           cy={-1.4}
-          r={4} />
+          r={4}
+        />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1"
           cx={-1.6363636363636367}
           cy={-0.3999999999999999}
-          r={4} />
+          r={4}
+        />
         <circle
           className="grommetux-chart-graph__point grommetux-color-index-accent-1 grommetux-chart-graph__point--active"
           cx={-2}
           cy={0}
-          r={6} />
+          r={6}
+        />
       </svg>
       <div
         aria-label="HotSpotsLabel"
@@ -240,7 +281,8 @@ exports[`normalization has correct default options 1`] = `
             "padding": 8,
           }
         }
-        tabIndex="0">
+        tabIndex="0"
+      >
         <div
           aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
@@ -252,7 +294,8 @@ exports[`normalization has correct default options 1`] = `
             Object {
               "flexBasis": "4.545454545454546%",
             }
-          } />
+          }
+        />
         <div
           aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
@@ -264,7 +307,8 @@ exports[`normalization has correct default options 1`] = `
             Object {
               "flexBasis": "9.090909090909092%",
             }
-          } />
+          }
+        />
         <div
           aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
@@ -276,7 +320,8 @@ exports[`normalization has correct default options 1`] = `
             Object {
               "flexBasis": "9.090909090909092%",
             }
-          } />
+          }
+        />
         <div
           aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
@@ -288,7 +333,8 @@ exports[`normalization has correct default options 1`] = `
             Object {
               "flexBasis": "9.090909090909092%",
             }
-          } />
+          }
+        />
         <div
           aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
@@ -300,7 +346,8 @@ exports[`normalization has correct default options 1`] = `
             Object {
               "flexBasis": "9.090909090909092%",
             }
-          } />
+          }
+        />
         <div
           aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
@@ -312,7 +359,8 @@ exports[`normalization has correct default options 1`] = `
             Object {
               "flexBasis": "9.090909090909092%",
             }
-          } />
+          }
+        />
         <div
           aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
@@ -324,7 +372,8 @@ exports[`normalization has correct default options 1`] = `
             Object {
               "flexBasis": "9.090909090909092%",
             }
-          } />
+          }
+        />
         <div
           aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
@@ -336,7 +385,8 @@ exports[`normalization has correct default options 1`] = `
             Object {
               "flexBasis": "9.090909090909092%",
             }
-          } />
+          }
+        />
         <div
           aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
@@ -348,7 +398,8 @@ exports[`normalization has correct default options 1`] = `
             Object {
               "flexBasis": "9.090909090909092%",
             }
-          } />
+          }
+        />
         <div
           aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
@@ -360,7 +411,8 @@ exports[`normalization has correct default options 1`] = `
             Object {
               "flexBasis": "9.090909090909092%",
             }
-          } />
+          }
+        />
         <div
           aria-label={undefined}
           className="grommetux-chart-hot-spots__band"
@@ -372,7 +424,8 @@ exports[`normalization has correct default options 1`] = `
             Object {
               "flexBasis": "9.090909090909092%",
             }
-          } />
+          }
+        />
         <div
           aria-label={undefined}
           className="grommetux-chart-hot-spots__band grommetux-chart-hot-spots__band--active"
@@ -384,7 +437,8 @@ exports[`normalization has correct default options 1`] = `
             Object {
               "flexBasis": "4.545454545454546%",
             }
-          } />
+          }
+        />
       </div>
     </div>
     <div
@@ -396,7 +450,8 @@ exports[`normalization has correct default options 1`] = `
           "marginLeft": 0,
           "marginRight": undefined,
         }
-      }>
+      }
+    >
       <div
         className="grommetux-chart-axis__slot"
         role="row"
@@ -404,7 +459,8 @@ exports[`normalization has correct default options 1`] = `
           Object {
             "flexBasis": "50%",
           }
-        }>
+        }
+      >
         <span>
           2014
         </span>
@@ -416,7 +472,8 @@ exports[`normalization has correct default options 1`] = `
           Object {
             "flexBasis": "50%",
           }
-        }>
+        }
+      >
         <span>
           2015
         </span>
@@ -431,14 +488,16 @@ exports[`normalization has correct default options 1`] = `
         "marginBottom": undefined,
         "marginTop": 0,
       }
-    }>
+    }
+  >
     <div
       className="grommetux-chart-marker-label__slot grommetux-color-index-critical"
       style={
         Object {
           "flexBasis": "90%",
         }
-      }>
+      }
+    >
       <span>
         90%
       </span>
@@ -450,7 +509,8 @@ exports[`normalization has correct default options 1`] = `
         Object {
           "flexBasis": "10%",
         }
-      } />
+      }
+    />
   </div>
 </div>
 `;

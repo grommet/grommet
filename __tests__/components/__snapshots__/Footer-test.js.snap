@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Footer has correct default options 1`] = `
 <footer
   className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-footer"
@@ -5,7 +7,8 @@ exports[`Footer has correct default options 1`] = `
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   Testing
 </footer>
 `;
@@ -17,7 +20,8 @@ exports[`Footer renders a class name 1`] = `
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   Testing
 </footer>
 `;
@@ -32,7 +36,8 @@ exports[`Footer renders microdata properties 1`] = `
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   Testing
 </footer>
 `;

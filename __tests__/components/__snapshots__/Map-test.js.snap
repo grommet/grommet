@@ -1,28 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Map has correct default options 1`] = `
 <div
-  className="grommetux-map">
+  className="grommetux-map"
+>
   <svg
     className="grommetux-map__links"
     height={100}
     preserveAspectRatio="xMidYMid meet"
     viewBox="0 0 100 100"
-    width={100} />
+    width={100}
+  />
   <ol
-    className="grommetux-map__categories">
+    className="grommetux-map__categories"
+  >
     <li
-      className="grommetux-map__category">
+      className="grommetux-map__category"
+    >
       <div
-        className="grommetux-map__category-label">
+        className="grommetux-map__category-label"
+      >
         First category
       </div>
       <ul
-        className="grommetux-map__category-items">
+        className="grommetux-map__category-items"
+      >
         <li
           aria-label="First item, Children: (Fifth item)"
           className="grommetux-map__item"
           id="item-1-1"
           onMouseEnter={[Function]}
-          onMouseLeave={[Function]}>
+          onMouseLeave={[Function]}
+        >
           First item
         </li>
         <li
@@ -30,7 +39,8 @@ exports[`Map has correct default options 1`] = `
           className="grommetux-map__item"
           id="item-1-2"
           onMouseEnter={[Function]}
-          onMouseLeave={[Function]}>
+          onMouseLeave={[Function]}
+        >
           Second item
         </li>
         <li
@@ -38,25 +48,30 @@ exports[`Map has correct default options 1`] = `
           className="grommetux-map__item"
           id="item-1-3"
           onMouseEnter={[Function]}
-          onMouseLeave={[Function]}>
+          onMouseLeave={[Function]}
+        >
           Third item
         </li>
       </ul>
     </li>
     <li
-      className="grommetux-map__category">
+      className="grommetux-map__category"
+    >
       <div
-        className="grommetux-map__category-label">
+        className="grommetux-map__category-label"
+      >
         Second category
       </div>
       <ul
-        className="grommetux-map__category-items">
+        className="grommetux-map__category-items"
+      >
         <li
           aria-label="Fourth item, Parents: (Second item), Children: (Seventh item)"
           className="grommetux-map__item"
           id="item-2-1"
           onMouseEnter={[Function]}
-          onMouseLeave={[Function]}>
+          onMouseLeave={[Function]}
+        >
           Fourth item
         </li>
         <li
@@ -64,25 +79,30 @@ exports[`Map has correct default options 1`] = `
           className="grommetux-map__item"
           id="item-2-2"
           onMouseEnter={[Function]}
-          onMouseLeave={[Function]}>
+          onMouseLeave={[Function]}
+        >
           Fifth item
         </li>
       </ul>
     </li>
     <li
-      className="grommetux-map__category">
+      className="grommetux-map__category"
+    >
       <div
-        className="grommetux-map__category-label">
+        className="grommetux-map__category-label"
+      >
         Third category
       </div>
       <ul
-        className="grommetux-map__category-items">
+        className="grommetux-map__category-items"
+      >
         <li
           aria-label="Sixth item, Parents: (Fifth item)"
           className="grommetux-map__item"
           id="item-3-1"
           onMouseEnter={[Function]}
-          onMouseLeave={[Function]}>
+          onMouseLeave={[Function]}
+        >
           Sixth item
         </li>
         <li
@@ -90,7 +110,8 @@ exports[`Map has correct default options 1`] = `
           className="grommetux-map__item"
           id="item-3-2"
           onMouseEnter={[Function]}
-          onMouseLeave={[Function]}>
+          onMouseLeave={[Function]}
+        >
           Seventh item
         </li>
       </ul>

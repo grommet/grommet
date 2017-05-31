@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Sidebar has correct default options 1`] = `
 <div
   className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-sidebar grommetux-sidebar--full"
@@ -5,7 +7,8 @@ exports[`Sidebar has correct default options 1`] = `
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   Testing
 </div>
 `;
@@ -17,7 +20,8 @@ exports[`Sidebar has correct size="large" and fixed=true rendering 1`] = `
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   Testing
 </div>
 `;

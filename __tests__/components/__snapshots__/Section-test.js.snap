@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Section has correct default options 1`] = `
 <section
   className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-vertical-medium grommetux-section"
@@ -5,5 +7,6 @@ exports[`Section has correct default options 1`] = `
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined} />
+  tabIndex={undefined}
+/>
 `;
