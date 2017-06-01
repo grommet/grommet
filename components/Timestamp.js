@@ -86,7 +86,7 @@ var Timestamp = function (_Component) {
           fields = _ref.fields;
 
       var locale = (0, _Locale.getCurrentLocale)();
-      var dateObj = typeof value === 'string' ? (0, _moment2.default)(value).lang(locale) : value;
+      var dateObj = (0, _moment2.default)(value).locale(locale);
 
       var dateFormat = void 0;
       var yearFormat = void 0;
