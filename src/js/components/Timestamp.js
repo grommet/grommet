@@ -39,8 +39,7 @@ export default class Timestamp extends Component {
 
   _formatForLocale ({value, fields}) {
     const locale = getCurrentLocale();
-    const dateObj = (typeof value === 'string') ? 
-      moment(value).lang(locale) : value;
+    const dateObj = moment(value).locale(locale);
 
     let dateFormat;
     let yearFormat;
