@@ -140,7 +140,6 @@ var LoginForm = function (_Component) {
 
 
       username = username.trim();
-      password = password.trim();
 
       if (onSubmit) {
         onSubmit({ username: username, password: password, rememberMe: rememberMe });
