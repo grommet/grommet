@@ -59,14 +59,14 @@ export default class Anchor extends Component {
     }
     let active;
     if (router && router.isActive) {
-      active = router && router.isActive && 
+      active = router && router.isActive &&
         path && router.isActive({
           pathname: path.path || path,
           query: { indexLink: path.index }
         });
     } else if(router && matchPath) {
       active = !!matchPath(
-        router.history.location.pathname, 
+        router.history.location.pathname,
         { path: path.path || path, exact: !!path.index }
       );
     }
@@ -87,7 +87,7 @@ export default class Anchor extends Component {
       const { router } = this.context;
       const active = matchPath ? (
         !!matchPath(
-          location.pathname, 
+          location.pathname,
           { path: path.path || path, exact: !!path.index }
         )
       ) : (
@@ -100,6 +100,11 @@ export default class Anchor extends Component {
   _onClick (event) {
     const { method, onClick, path, disabled } = this.props;
     const { router } = this.context;
+    const modifierKey = event.ctrlKey || event.metaKey;
+
+    if (modifierKey && !disabled && !onClick) {
+      return true;
+    }
 
     event.preventDefault();
 
@@ -159,7 +164,7 @@ export default class Anchor extends Component {
         router.history.createHref(
           typeof target === 'string' ? { pathname: target } : target
         ) : href;
-    } 
+    }
 
     let classes = classnames(
       CLASS_ROOT,
@@ -186,7 +191,7 @@ export default class Anchor extends Component {
     const second = reverse ? anchorIcon : anchorChildren;
 
     const Component = tag;
-    
+
     return (
       <Component {...props} href={adjustedHref} className={classes}
         aria-label={a11yTitle} onClick={adjustedOnClick}>
