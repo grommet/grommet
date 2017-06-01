@@ -16,3 +16,8 @@
   stroke-width: 8px;
   cursor: pointer;
 }
+
+.#{$grommet-namespace}world-map__continent--hover {
+  stroke-width: 8px;
+  cursor: default;
+}
