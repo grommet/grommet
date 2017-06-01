@@ -147,6 +147,11 @@ var Anchor = function (_Component) {
           disabled = _props.disabled;
       var router = this.context.router;
 
+      var modifierKey = event.ctrlKey || event.metaKey;
+
+      if (modifierKey && !disabled && !onClick) {
+        return true;
+      }
 
       event.preventDefault();
 
