@@ -217,10 +217,7 @@ class FileDropzone extends Component {
             </Label>
           </Box>
         :
-          <Button
-            label={label}
-            onClick={this._onClick}
-          />
+          <Button label={label} onClick={this._onClick} />
         }
         <input ref="fileInput" multiple={multiple} onChange={this._onDrop}
           type="file" className={`${CLASS_ROOT}__input`} />
