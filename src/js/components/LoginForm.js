@@ -74,7 +74,6 @@ export default class LoginForm extends Component {
     let { password, rememberMe, username } = this.state;
 
     username = username.trim();
-    password = password.trim();
 
     if (onSubmit) {
       onSubmit({username, password, rememberMe});
