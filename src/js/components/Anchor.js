@@ -100,6 +100,11 @@ export default class Anchor extends Component {
   _onClick (event) {
     const { method, onClick, path, disabled } = this.props;
     const { router } = this.context;
+    const modifierKey = event.ctrlKey || event.metaKey;
+
+    if (modifierKey && !disabled && !onClick) {
+      return true;
+    }
 
     event.preventDefault();
 
