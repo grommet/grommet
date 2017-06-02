@@ -20,7 +20,7 @@ function getHoverModifier(hoverIndicator) {
         return `${CLASS_ROOT}--hover-background`;
       }
     } else if (typeof hoverIndicator === 'string') {
-      return (`${CLASS_ROOT}--hover-${hoverIndicator}`); 
+      return (`${CLASS_ROOT}--hover-${hoverIndicator}`);
     }
   }
 }
