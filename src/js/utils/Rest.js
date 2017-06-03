@@ -86,9 +86,20 @@ export default {
   },
 
   post (uri, data) {
-    var op = request.post(uri).send(data);
+    var op = request.post(uri);
+    let multipartFormData;
+    if(_headers.hasOwnProperty("Content-Type") && _headers["Content-Type"] === "multipart/form-data") {
+      multipartFormData = new FormData();
+      Object.keys(data).map(key => {
+        multipartFormData.append(key, data[key]);
+      });
+      data = multipartFormData;
+      delete _headers["Content-Type"];
+    }
+    op.send(data);
     op.timeout(_timeout);
     op.set(_headers);
+
     return op;
   },
 
