@@ -37,7 +37,8 @@ export default class Carousel extends Component {
       priorIndex: 0,
       sequence: 1,
       width: 0,
-      slide: false
+      slide: false,
+      renderAnimation: false
     };
   }
 
@@ -149,6 +150,11 @@ export default class Carousel extends Component {
   _setSlideInterval () {
     const { autoplaySpeed } = this.props;
     clearInterval(this._slideAnimation);
+    if( !this.state.renderAnimation) {
+      this.setState({
+        renderAnimation: true
+      });
+    }
     this._slideAnimation = setInterval(function () {
       const { children, infinite } = this.props;
       const { activeIndex } = this.state;
@@ -226,6 +232,13 @@ export default class Carousel extends Component {
     const numSlides = children.length;
     const index = (activeIndex + numSlides - 1) % numSlides;
 
+    //At first user interaction we change the flag to allow animations
+    if( !this.state.renderAnimation) {
+      this.setState({
+        renderAnimation: true
+      });
+    }
+
     if(! this.props.hasOwnProperty('activeIndex')) {
       this.setState({
         activeIndex: index
@@ -242,6 +255,13 @@ export default class Carousel extends Component {
     const { activeIndex } = this.state;
     const numSlides = children.length;
     const index = (activeIndex + 1) % numSlides;
+
+    //At first user interaction we change the flag to allow animations
+    if( !this.state.renderAnimation) {
+      this.setState({
+        renderAnimation: true
+      });
+    }
 
     if(! this.props.hasOwnProperty('activeIndex')) {
       this.setState({
@@ -352,7 +372,9 @@ export default class Carousel extends Component {
         className={classes} role='group' aria-label={carouselMessage}
         onFocus={this._stopAutoplay} onBlur={this._startAutoplay}
         onMouseOver={this._stopAutoplay} onMouseOut={this._startAutoplay}>
-        <div className={`${CLASS_ROOT}__track`}
+        <div
+          className={this.state.renderAnimation ?
+            `${CLASS_ROOT}__track` : `${CLASS_ROOT}__static-track`}
           style={{
             width: (trackWidth && trackWidth > 0) ? trackWidth : '',
             marginLeft: - trackOffset,

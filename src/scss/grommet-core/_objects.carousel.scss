@@ -67,6 +67,12 @@
   transition: all 0.8s;
 }
 
+.#{$grommet-namespace}carousel__static-track {
+  display: flex;
+  max-width: none;
+  transition: none;
+}
+
 .#{$grommet-namespace}carousel__arrow {
   @include animation('carousel-reveal 1s');
   z-index: 1;
