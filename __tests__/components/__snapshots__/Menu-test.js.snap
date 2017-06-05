@@ -3,6 +3,7 @@
 exports[`Menu has correct default options 1`] = `
 <nav
   className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-menu grommetux-menu--column grommetux-menu--inline"
+  focusControl={true}
   id={undefined}
   onClick={undefined}
   role={undefined}
