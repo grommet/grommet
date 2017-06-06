@@ -315,7 +315,7 @@ var Carousel = function (_Component) {
       var activeIndex = this.state.activeIndex;
 
       var numSlides = children.length;
-      var index = (activeIndex + numSlides - 1) % numSlides;
+      var index = !this.props.infinite && activeIndex === 0 ? activeIndex : (activeIndex + numSlides - 1) % numSlides;
 
       if (!this.props.hasOwnProperty('activeIndex')) {
         this.setState({
@@ -334,7 +334,7 @@ var Carousel = function (_Component) {
       var activeIndex = this.state.activeIndex;
 
       var numSlides = children.length;
-      var index = (activeIndex + 1) % numSlides;
+      var index = !this.props.infinite && activeIndex === children.length - 1 ? activeIndex : (activeIndex + 1) % numSlides;
 
       if (!this.props.hasOwnProperty('activeIndex')) {
         this.setState({
