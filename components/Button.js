@@ -89,6 +89,11 @@ var Button = function (_Component) {
           path = _props.path;
       var router = this.context.router;
 
+      var modifierKey = event.ctrlKey || event.metaKey;
+
+      if (modifierKey && !disabled && !onClick) {
+        return true;
+      }
 
       event.preventDefault();
 
