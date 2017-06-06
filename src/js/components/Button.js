@@ -20,7 +20,7 @@ function getHoverModifier(hoverIndicator) {
         return `${CLASS_ROOT}--hover-background`;
       }
     } else if (typeof hoverIndicator === 'string') {
-      return (`${CLASS_ROOT}--hover-${hoverIndicator}`); 
+      return (`${CLASS_ROOT}--hover-${hoverIndicator}`);
     }
   }
 }
@@ -43,6 +43,11 @@ export default class Button extends Component {
   _onClick (event) {
     const { method, onClick, path} = this.props;
     const { router } = this.context;
+    const modifierKey = event.ctrlKey || event.metaKey;
+
+    if (modifierKey && !disabled && !onClick) {
+      return true;
+    }
 
     event.preventDefault();
 
