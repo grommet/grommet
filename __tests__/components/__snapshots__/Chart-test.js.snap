@@ -101,11 +101,13 @@ exports[`normalization has correct default options 1`] = `
           <div
             className="grommetux-value__annotated"
           >
-            <span
-              className="grommetux-value__value"
-            >
-              50
-            </span>
+            <div>
+              <span
+                className="grommetux-value__value"
+              >
+                50
+              </span>
+            </div>
           </div>
         </div>
       </div>

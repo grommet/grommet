@@ -20,7 +20,7 @@ export default class Value extends Component {
   render () {
     const {
       active, align, className, colorIndex, icon, label, responsive,
-      size, trendIcon, units, value, ...props
+      size, trendIcon, units, value, reverse, ...props
     } = this.props;
     delete props.announce;
     const classes = classnames(
@@ -54,14 +54,33 @@ export default class Value extends Component {
       );
     }
 
-    return (
-      <div ref={(ref) => this.valueRef = ref} {...props} className={classes}>
-        <div className={`${CLASS_ROOT}__annotated`}>
+    let contentNode;
+    if (reverse) {
+      contentNode = (
+        <div>
+          <span className={`${CLASS_ROOT}__value`}>
+            {value}
+          </span>
+          {unitsSpan}
+          {icon}
+        </div>
+      );
+    } else {
+      contentNode = (
+        <div>
           {icon}
           <span className={`${CLASS_ROOT}__value`}>
             {value}
           </span>
           {unitsSpan}
+        </div>
+      );
+    }
+
+    return (
+      <div ref={(ref) => this.valueRef = ref} {...props} className={classes}>
+        <div className={`${CLASS_ROOT}__annotated`}>
+          {contentNode}
           {trendIcon}
         </div>
         {labelSpan}
@@ -82,6 +101,7 @@ Value.propTypes = {
   responsive: PropTypes.bool,
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   trendIcon: PropTypes.node,
+  reverse: PropTypes.bool,
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string,
     PropTypes.node]),
   units: PropTypes.oneOfType([PropTypes.string, PropTypes.node])

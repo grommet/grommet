@@ -7,11 +7,13 @@ exports[`Value has correct active=true rendering 1`] = `
   <div
     className="grommetux-value__annotated"
   >
-    <span
-      className="grommetux-value__value"
-    >
-      75
-    </span>
+    <div>
+      <span
+        className="grommetux-value__value"
+      >
+        75
+      </span>
+    </div>
   </div>
 </div>
 `;
@@ -23,11 +25,13 @@ exports[`Value has correct className rendering 1`] = `
   <div
     className="grommetux-value__annotated"
   >
-    <span
-      className="grommetux-value__value"
-    >
-      75
-    </span>
+    <div>
+      <span
+        className="grommetux-value__value"
+      >
+        75
+      </span>
+    </div>
   </div>
 </div>
 `;
@@ -39,11 +43,13 @@ exports[`Value has correct colorIndex rendering 1`] = `
   <div
     className="grommetux-value__annotated"
   >
-    <span
-      className="grommetux-value__value"
-    >
-      75
-    </span>
+    <div>
+      <span
+        className="grommetux-value__value"
+      >
+        75
+      </span>
+    </div>
   </div>
 </div>
 `;
@@ -55,11 +61,13 @@ exports[`Value has correct default options 1`] = `
   <div
     className="grommetux-value__annotated"
   >
-    <span
-      className="grommetux-value__value"
-    >
-      75
-    </span>
+    <div>
+      <span
+        className="grommetux-value__value"
+      >
+        75
+      </span>
+    </div>
   </div>
 </div>
 `;
@@ -71,11 +79,13 @@ exports[`Value has correct label rendering 1`] = `
   <div
     className="grommetux-value__annotated"
   >
-    <span
-      className="grommetux-value__value"
-    >
-      75
-    </span>
+    <div>
+      <span
+        className="grommetux-value__value"
+      >
+        75
+      </span>
+    </div>
   </div>
   <span
     className="grommetux-value__label"
@@ -93,11 +103,13 @@ exports[`Value has correct onClick rendering 1`] = `
   <div
     className="grommetux-value__annotated"
   >
-    <span
-      className="grommetux-value__value"
-    >
-      75
-    </span>
+    <div>
+      <span
+        className="grommetux-value__value"
+      >
+        75
+      </span>
+    </div>
   </div>
 </div>
 `;
@@ -110,11 +122,13 @@ exports[`Value has correct onClick rendering 2`] = `
   <div
     className="grommetux-value__annotated"
   >
-    <span
-      className="grommetux-value__value"
-    >
-      75
-    </span>
+    <div>
+      <span
+        className="grommetux-value__value"
+      >
+        75
+      </span>
+    </div>
   </div>
 </div>
 `;
@@ -126,11 +140,13 @@ exports[`Value has correct size="large" rendering 1`] = `
   <div
     className="grommetux-value__annotated"
   >
-    <span
-      className="grommetux-value__value"
-    >
-      75
-    </span>
+    <div>
+      <span
+        className="grommetux-value__value"
+      >
+        75
+      </span>
+    </div>
   </div>
 </div>
 `;
@@ -142,16 +158,18 @@ exports[`Value has correct units=% rendering 1`] = `
   <div
     className="grommetux-value__annotated"
   >
-    <span
-      className="grommetux-value__value"
-    >
-      75
-    </span>
-    <span
-      className="grommetux-value__units"
-    >
-      %
-    </span>
+    <div>
+      <span
+        className="grommetux-value__value"
+      >
+        75
+      </span>
+      <span
+        className="grommetux-value__units"
+      >
+        %
+      </span>
+    </div>
   </div>
 </div>
 `;
