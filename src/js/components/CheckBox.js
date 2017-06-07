@@ -44,15 +44,15 @@ export default class CheckBox extends Component {
           </svg>
         </span>
       </span>,
-      label
+      <span key='label' className={`${CLASS_ROOT}__label`}>
+        {label}
+      </span>
     ];
 
     return (
-      <label className={classes} aria-label={label}>
-        <label key='label' className={`${CLASS_ROOT}__label`}>
-          {reverse ? children.reverse() : children}
-          {hidden}
-        </label>
+      <label className={classes} htmlFor={props.id} aria-label={label}>
+        {reverse ? children.reverse() : children}
+        {hidden}
       </label>
     );
   }
