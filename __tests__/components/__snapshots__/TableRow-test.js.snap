@@ -1,0 +1,8 @@
+exports[`TableRow has correct default options 1`] = `
+<tr
+  className="grommetux-table-row grommetux-table-row--disabled"
+  disabled={true}
+  onClick={null}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]} />
+`;

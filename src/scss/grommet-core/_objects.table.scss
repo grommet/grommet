@@ -161,3 +161,17 @@
 .#{$grommet-namespace}table--small {
   @include small-table();
 }
+
+.#{$grommet-namespace}table-row--selected {
+  background-color: $selected-background-color;
+}
+
+.#{$grommet-namespace}table-row--active {
+  background-color: $hover-background-color;
+  color: $hover-text-color;
+  cursor: pointer;
+}
+
+.#{$grommet-namespace}table-row--disabled {
+  background-color: $disabled-background-color;
+}
