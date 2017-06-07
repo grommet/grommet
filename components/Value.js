@@ -75,7 +75,8 @@ var Value = function (_Component) {
           trendIcon = _props.trendIcon,
           units = _props.units,
           value = _props.value,
-          props = _objectWithoutProperties(_props, ['active', 'align', 'className', 'colorIndex', 'icon', 'label', 'responsive', 'size', 'trendIcon', 'units', 'value']);
+          reverse = _props.reverse,
+          props = _objectWithoutProperties(_props, ['active', 'align', 'className', 'colorIndex', 'icon', 'label', 'responsive', 'size', 'trendIcon', 'units', 'value', 'reverse']);
 
       delete props.announce;
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames, CLASS_ROOT + '--align-' + align, align), _defineProperty(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), _defineProperty(_classnames, CLASS_ROOT + '--responsive', responsive), _defineProperty(_classnames, CLASS_ROOT + '--interactive', props.onClick), _defineProperty(_classnames, CLASS_ROOT + '--active', active), _classnames), className);
@@ -98,6 +99,33 @@ var Value = function (_Component) {
         );
       }
 
+      var contentNode = void 0;
+      if (reverse) {
+        contentNode = _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'span',
+            { className: CLASS_ROOT + '__value' },
+            value
+          ),
+          unitsSpan,
+          icon
+        );
+      } else {
+        contentNode = _react2.default.createElement(
+          'div',
+          null,
+          icon,
+          _react2.default.createElement(
+            'span',
+            { className: CLASS_ROOT + '__value' },
+            value
+          ),
+          unitsSpan
+        );
+      }
+
       return _react2.default.createElement(
         'div',
         _extends({ ref: function ref(_ref) {
@@ -106,13 +134,7 @@ var Value = function (_Component) {
         _react2.default.createElement(
           'div',
           { className: CLASS_ROOT + '__annotated' },
-          icon,
-          _react2.default.createElement(
-            'span',
-            { className: CLASS_ROOT + '__value' },
-            value
-          ),
-          unitsSpan,
+          contentNode,
           trendIcon
         ),
         labelSpan
@@ -138,6 +160,7 @@ Value.propTypes = {
   responsive: _propTypes2.default.bool,
   size: _propTypes2.default.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   trendIcon: _propTypes2.default.node,
+  reverse: _propTypes2.default.bool,
   value: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string, _propTypes2.default.node]),
   units: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node])
 };
