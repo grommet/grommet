@@ -156,8 +156,8 @@ export default class Layer extends Component {
   componentDidMount () {
     this._originalFocusedElement = document.activeElement;
     this._originalScrollPosition = {
-      top: window.scrollY,
-      left: window.scrollX
+      top: window.pageYOffset,
+      left: window.pageXOffset
     };
     this._addLayer();
     this._renderLayer();
