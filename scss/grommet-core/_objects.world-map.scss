@@ -1,0 +1,31 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+.#{$grommet-namespace}world-map {
+  width: 100%;
+}
+
+.#{$grommet-namespace}world-map__continent,
+.#{$grommet-namespace}world-map__place {
+  @include graph-stroke-color();
+  stroke-linecap: round;
+  transition: stroke-width $base-animation-duration;
+  outline: none;
+}
+
+.#{$grommet-namespace}world-map__continent {
+  stroke-width: 6px;
+}
+
+.#{$grommet-namespace}world-map__place {
+  stroke-width: 8px;
+}
+
+.#{$grommet-namespace}world-map__continent--active {
+  stroke-width: 8px;
+  cursor: pointer;
+}
+
+.#{$grommet-namespace}world-map__place--active {
+  stroke-width: 20px;
+  cursor: pointer;
+}

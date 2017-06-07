@@ -1,0 +1,153 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+.#{$grommet-namespace}radio-button {
+  margin-right: $inuit-base-spacing-unit;
+  white-space: nowrap;
+}
+
+.#{$grommet-namespace}radio-button:not(.#{$grommet-namespace}radio-button--disabled) {
+  cursor: pointer;
+}
+
+.#{$grommet-namespace}radio-button:hover:not(.#{$grommet-namespace}radio-button--disabled) {
+  .#{$grommet-namespace}radio-button__control {
+    border-color: $active-icon-color;
+
+    #{$dark-background-context} {
+      border-color: $active-colored-icon-color;
+    }
+
+    #{$light-background-context} {
+      border-color: $active-icon-color;
+    }
+  }
+
+  .#{$grommet-namespace}radio-button__input:checked + .#{$grommet-namespace}radio-button__control {
+    border-color: $active-icon-color;
+
+    #{$dark-background-context} {
+      border-color: $active-colored-icon-color;
+    }
+
+    #{$light-background-context} {
+      border-color: $active-icon-color;
+    }
+  }
+
+  .#{$grommet-namespace}radio-button__label {
+    color: $hover-text-color;
+
+    #{$dark-background-context} {
+      color: $active-colored-text-color;
+    }
+
+    #{$light-background-context} {
+      color: $hover-text-color;
+    }
+  }
+}
+
+.#{$grommet-namespace}radio-button__input {
+  opacity: 0;
+  position: absolute;
+}
+
+.#{$grommet-namespace}radio-button__input:checked + .#{$grommet-namespace}radio-button__control {
+  border-color: $brand-color;
+
+  #{$dark-background-context} {
+    border-color: $active-colored-icon-color;
+  }
+
+  #{$light-background-context} {
+    border-color: $brand-color;
+  }
+
+  + .#{$grommet-namespace}radio-button__label {
+    color: $text-color;
+
+    #{$dark-background-context} {
+      color: $active-colored-text-color;
+    }
+
+    #{$light-background-context} {
+      color: $text-color;
+    }
+  }
+}
+
+.#{$grommet-namespace}radio-button__input:checked + .#{$grommet-namespace}radio-button__control:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: quarter($control-size) - 1;
+  left: quarter($control-size) - 1;
+  width: halve($control-size) - 2;
+  height: halve($control-size) - 2;
+  background-color: $brand-color;
+  border-radius: halve($control-size);
+
+  #{$dark-background-context} {
+    background-color: $active-colored-icon-color;
+  }
+
+  #{$light-background-context} {
+    background-color: $brand-color;
+  }
+}
+
+.#{$grommet-namespace}radio-button__input:focus + .#{$grommet-namespace}radio-button__control {
+  content: "";
+  border-color: $focus-border-color;
+  box-shadow: 0 0 1px 1px $focus-border-color;
+}
+
+.#{$grommet-namespace}radio-button__control {
+  position: relative;
+  display: inline-block;
+  width: $control-size;
+  height: $control-size;
+  margin-right: halve($inuit-base-spacing-unit);
+  vertical-align: middle;
+  background-color: inherit;
+  color: $brand-color-darker;
+  border: $control-border-width solid $icon-color;
+  border-radius: $control-size;
+
+  html.rtl & {
+    margin-right: 0;
+    margin-left: halve($inuit-base-spacing-unit);
+  }
+
+  #{$dark-background-context} {
+    border-color: $colored-icon-color;
+  }
+
+  #{$light-background-context} {
+    border-color: $icon-color;
+  }
+}
+
+.#{$grommet-namespace}radio-button__label {
+  // display and vertical-align are needed for rich custom labels
+  display: inline-block;
+  vertical-align: middle;
+  color: $secondary-text-color;
+  white-space: normal;
+  margin-right: $inuit-base-spacing-unit;
+  word-break: break-word;
+
+  #{$dark-background-context} {
+    color: $colored-text-color;
+  }
+
+  #{$light-background-context} {
+    color: $secondary-text-color;
+  }
+}
+
+.#{$grommet-namespace}radio-button--disabled {
+  .#{$grommet-namespace}radio-button__control {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,66 @@
+// (C) Copyright 2014-2017 Hewlett Packard Enterprise Development LP
+
+.grommet {
+  // inuit-box-sizing sets in on the 'html' element, we only want it here
+  box-sizing: border-box;
+
+  // From inuit-page
+  //
+  // High-, page-level styling.
+  //
+  // 1. Set the default `font-size` and `line-height` for the entire project,
+  //    sourced from our default variables. The `font-size` is calculated to exist
+  //    in ems, the `line-height` is calculated to exist unitlessly.
+  // 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+  //    navigating between pages that do/do not have enough content to produce
+  //    scrollbars naturally.
+  // 4. Prevent certain mobile browsers from automatically zooming fonts.
+  // 5. Fonts on OSX will look more consistent with other systems that do not
+  //    render text using sub-pixel anti-aliasing.
+
+  font-size: ($inuit-base-font-size / 16px) * 1em;
+  line-height: $inuit-base-line-height / $inuit-base-font-size;
+  background-color: $background-color;
+  color: $text-color;
+  // overflow-y: scroll; // [2]
+  // min-height: 100%;   // [3]
+  -webkit-text-size-adjust: 100%; // [4]
+      -ms-text-size-adjust: 100%; // [4]
+  -moz-osx-font-smoothing: grayscale; // [5]
+   -webkit-font-smoothing: antialiased; // [5]
+
+  // From inuit-lists
+  //
+  // Remove extra vertical spacing when nesting lists.
+
+  li {
+    > ul,
+    > ol {
+      margin-bottom: 0;
+    }
+  }
+
+  // From inuit-images
+  //
+  // 1. Fluid images for responsive purposes.
+  // 2. Offset `alt` text from surrounding copy.
+  // 3. Setting `vertical-align` removes the whitespace that appears under `img`
+  //    elements when they are dropped into a page as-is. Safer alternative to
+  //    using `display: block;`.
+
+  img {
+    max-width: 100%; // [1]
+    font-style: italic; // [2]
+    vertical-align: middle; // [3]
+  }
+
+  // Right to left context
+
+  &.rtl {
+    direction: rtl;
+  }
+
+  * {
+    box-sizing: inherit;
+  }
+}

@@ -1,0 +1,37 @@
+.#{$grommet-namespace}label {
+  @include inuit-font-size($control-font-size);
+  @include text-align();
+  @include vertical-margin();
+  font-weight: $text-font-weight;
+  cursor: inherit;
+}
+
+.#{$grommet-namespace}label--truncate {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.#{$grommet-namespace}label--uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.#{$grommet-namespace}label--small {
+  @include inuit-font-size($content-small-font-size);
+  color: $secondary-text-color;
+
+  #{$dark-background-context} {
+    color: $inactive-colored-text-color;
+  }
+
+  #{$light-background-context} {
+    color: $secondary-text-color;
+  }
+}
+
+.#{$grommet-namespace}label--large {
+  @include inuit-font-size($content-large-font-size);
+}

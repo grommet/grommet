@@ -1,0 +1,404 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+.#{$grommet-namespace}menu {
+  position: relative;
+  white-space: nowrap;
+  @include inuit-font-size($menu-font-size);
+
+  > * {
+    flex: 0 0 auto;
+  }
+
+  a:not(.#{$grommet-namespace}button),
+  .#{$grommet-namespace}anchor {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &.#{$grommet-namespace}menu--controlled {
+    display: inline-block;
+    cursor: pointer;
+  }
+}
+
+.#{$grommet-namespace}menu--fill {
+  //used to add full height for button inside a flex container
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.#{$grommet-namespace}menu__control {
+
+  .#{$grommet-namespace}control-icon-down {
+    width: halve($inuit-base-spacing-unit);
+
+    path,
+    polyline {
+      stroke-width: 4px;
+    }
+  }
+
+  &.#{$grommet-namespace}menu--labelled {
+    // IE11 fix to vertically center labelled menu control
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      line-height: $inuit-base-spacing-unit;
+    }
+
+    // Removing icon transition style for labeled menus
+    .#{$grommet-namespace}control-icon {
+      @include media-query(lap-and-up) {
+        transition: none;
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}menu__drop {
+  @include inuit-font-size($menu-font-size);
+  max-height: 100vh;
+
+  // avoid flexbox shinking the content inside the drop container
+  > * {
+    flex-shrink: 0;
+  }
+
+  a:not(.#{$grommet-namespace}anchor--disabled) {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .#{$grommet-namespace}anchor {
+    padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+    white-space: nowrap;
+    display: block;
+    text-decoration: none;
+
+    &.active,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $link-hover-color;
+      background-color: $hover-background-color;
+    }
+  }
+
+  .#{$grommet-namespace}menu__control {
+    text-align: left;
+
+    .grommet.rtl & {
+      text-align: right;
+    }
+  }
+
+  .#{$grommet-namespace}menu__label {
+    padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+    font-weight: $control-font-weight;
+  }
+
+  &.#{$grommet-namespace}menu__drop--align-right {
+    text-align: right;
+
+    .grommet.rtl & {
+      text-align: left;
+    }
+
+    .#{$grommet-namespace}menu__control {
+      text-align: right;
+
+      .grommet.rtl & {
+        text-align: left;
+      }
+    }
+
+    .#{$grommet-namespace}menu__contents {
+      text-align: left;
+
+      .grommet.rtl & {
+        text-align: right;
+      }
+    }
+  }
+
+  .#{$grommet-namespace}anchor__icon {
+    padding-left: 0;
+    vertical-align: middle;
+    height: inherit;
+  }
+
+  .#{$grommet-namespace}anchor--reverse .#{$grommet-namespace}anchor__icon {
+    padding-right: 0;
+  }
+
+  &.#{$grommet-namespace}menu__drop--small {
+    @include inuit-font-size($small-menu-font-size);
+
+    .#{$grommet-namespace}anchor__icon {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &.#{$grommet-namespace}menu__drop--large {
+    @include inuit-font-size($large-menu-font-size);
+  }
+
+  #{$dark-background-and} {
+    .#{$grommet-namespace}anchor {
+      &.active {
+        color: $active-colored-text-color;
+        background-color: $colored-active-background-color;
+      }
+
+      &:hover,
+      &:focus {
+        color: $active-colored-text-color;
+        background-color: $colored-hover-background-color;
+      }
+    }
+  }
+
+  #{$light-background-and} {
+    .#{$grommet-namespace}anchor {
+      &.active,
+      &:hover,
+      &:focus {
+        color: $link-hover-color;
+        background-color: $hover-background-color;
+      }
+    }
+  }
+
+} // .#{$grommet-namespace}menu__drop
+
+.#{$grommet-namespace}menu--inline {
+
+  &.#{$grommet-namespace}menu--row {
+    line-height: double($inuit-base-spacing-unit);
+
+    &.#{$grommet-namespace}box--justify-end {
+      > *:not(.#{$grommet-namespace}control-icon) {
+        margin-left: $inuit-base-spacing-unit;
+        margin-right: 0;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        .grommet.rtl & {
+          margin-right: $inuit-base-spacing-unit;
+          margin-left: 0;
+
+          &:first-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    > *:not(.#{$grommet-namespace}control-icon):not(.#{$grommet-namespace}button) {
+      margin-left: 0;
+      margin-right: $inuit-base-spacing-unit;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .grommet.rtl & {
+        margin-right: 0;
+        margin-left: $inuit-base-spacing-unit;
+
+        &:last-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &.#{$grommet-namespace}--direction-row.#{$grommet-namespace}box--responsive {
+    @include media-query(palm) {
+      > * {
+        margin-right: 0;
+
+        .grommet.rtl & {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &.#{$grommet-namespace}menu--small {
+    @include inuit-font-size($small-menu-font-size, inherit);
+  }
+
+  &.#{$grommet-namespace}menu--large {
+    @include inuit-font-size($large-menu-font-size, inherit);
+  }
+}
+
+.#{$grommet-namespace}menu--primary {
+  width: 100%;
+
+  > .#{$grommet-namespace}menu {
+    width: 100%;
+  }
+
+  > a:not(.#{$grommet-namespace}button) {
+    padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit
+      halve($inuit-base-spacing-unit)
+      ($inuit-base-spacing-unit - $active-border-width);
+    margin-bottom: 0px;
+    width: 100%;
+    border-width: $active-border-width;
+    border-color: transparent;
+    border-left-style: solid;
+
+    .grommet.rtl & {
+      border-right-style: none;
+      border-left-style: solid;
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      &:not(.active) {
+        background-color: $hover-background-color;
+        color: $hover-text-color;
+
+        #{$dark-background-context} {
+          background-color: $colored-hover-background-color;
+          color: $active-colored-text-color;
+        }
+
+        #{$light-background-context} {
+          background-color: $hover-background-color;
+          color: $hover-text-color;
+        }
+      }
+    }
+
+    &.#{$grommet-namespace}anchor--active,
+    &.active {
+      border-color: $brand-color;
+
+      #{$dark-background-context} {
+        border-color: transparent;
+        background-color: $colored-active-background-color;
+        color: $active-colored-text-color;
+      }
+
+      #{$light-background-context} {
+        border-color: $brand-color;
+      }
+    }
+  }
+
+  @include media-query(palm) {
+    &.#{$grommet-namespace}menu--down {
+      display: block;
+
+      > * {
+        display: block;
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}menu--inline.#{$grommet-namespace}menu:not(.#{$grommet-namespace}box--direction-row),
+.#{$grommet-namespace}menu__drop {
+
+  > hr {
+    margin: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit
+      round($inuit-base-spacing-unit * 0.75);
+    height: 1px;
+    background-color: $border-color;
+    border: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &.#{$grommet-namespace}box--direction-column {
+    > .#{$grommet-namespace}menu:not(:first-of-type) {
+      h2,
+      h3 {
+        margin-top: $inuit-base-spacing-unit;
+      }
+    }
+  }
+
+  // Customize the separator for nested menus
+  &.#{$grommet-namespace}box.#{$grommet-namespace}box--separator-top {
+    border-color: transparent;
+
+    &:before {
+      content: '';
+      margin: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit
+        round($inuit-base-spacing-unit * 0.75);
+      height: 1px;
+      background-color: $border-color;
+    }
+  }
+
+  &.#{$grommet-namespace}menu--small {
+    > a {
+      padding: quarter($inuit-base-spacing-unit) 0;
+    }
+
+    &.#{$grommet-namespace}menu--primary {
+      > a {
+        padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit
+          quarter($inuit-base-spacing-unit)
+          ($inuit-base-spacing-unit - $active-border-width);
+      }
+    }
+  }
+
+  &.#{$grommet-namespace}menu--large {
+    > a {
+      padding: $inuit-base-spacing-unit 0;
+    }
+
+    &.#{$grommet-namespace}menu--primary {
+      > a {
+        padding: halve($inuit-base-spacing-unit) $inuit-base-spacing-unit
+          halve($inuit-base-spacing-unit)
+          ($inuit-base-spacing-unit - $active-border-width);
+      }
+    }
+  }
+
+  @include media-query(palm) {
+    &.#{$grommet-namespace}box--responsive {
+
+      > * {
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+
+      .#{$grommet-namespace}button {
+        width: 100%;
+        margin-bottom: halve($inuit-base-spacing-unit);
+      }
+    }
+  }
+}
+
+@include media-query(palm) {
+  .#{$grommet-namespace}menu__drop {
+    max-width: 100%;
+
+    // remove extra space under mobile menu drop button
+    &.#{$grommet-namespace}box--responsive {
+      .#{$grommet-namespace}button {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

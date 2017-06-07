@@ -1,0 +1,198 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+@mixin anchor-style() {
+  color: $link-color;
+  text-decoration: $brand-link-text-decoration;
+  cursor: pointer;
+
+  &.plain
+  &.#{$grommet-namespace}button {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:visited {
+    color: $link-color;
+  }
+
+  &.active {
+    color: $text-color;
+  }
+
+  // While it's tempting to use :not(.anchor--disabled) here, that makes it
+  // messier for things like Menu to adjust styling in its context.
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+
+  @include background-context-color($link-color, $link-hover-color);
+}
+
+.grommet a:not(.#{$grommet-namespace}anchor):not(.#{$grommet-namespace}button) {
+  @include anchor-style;
+}
+
+a:not(.#{$grommet-namespace}anchor):not(.#{$grommet-namespace}button) {
+  @include background-context-color($link-color, $link-hover-color);
+}
+
+.#{$grommet-namespace}anchor {
+  @include anchor-style;
+}
+
+.#{$grommet-namespace}anchor__icon {
+  display: inline-block;
+  height: double($inuit-base-spacing-unit);
+  padding: halve($inuit-base-spacing-unit);
+
+  .#{$grommet-namespace}control-icon {
+    @include icon-color($icon-color);
+  }
+
+  &:hover {
+    .#{$grommet-namespace}control-icon {
+      @include icon-color($active-icon-color);
+    }
+  }
+
+  @include background-context-color($icon-color, $active-icon-color);
+  @include background-context-icon($icon-color, $active-icon-color);
+}
+
+.#{$grommet-namespace}anchor--animate-icon:hover {
+  .#{$grommet-namespace}control-icon {
+    @include icon-hover-grow();
+  }
+}
+
+.#{$grommet-namespace}anchor--icon {
+  flex: 0 0 auto;
+}
+
+.#{$grommet-namespace}anchor--primary,
+.#{$grommet-namespace}anchor--icon-label {
+  @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
+  font-weight: $control-font-weight;
+  text-decoration: none;
+
+  .#{$grommet-namespace}control-icon {
+    vertical-align: middle;
+    margin-right: halve($inuit-base-spacing-unit);
+
+    html.rtl & {
+      margin-right: 0;
+      margin-left: halve($inuit-base-spacing-unit);
+    }
+  }
+
+  > span { // too generic, change
+    vertical-align: middle;
+  }
+}
+
+.#{$grommet-namespace}anchor--reverse {
+  .#{$grommet-namespace}control-icon {
+    margin-right: 0;
+    margin-left: halve($inuit-base-spacing-unit);
+  }
+}
+
+.#{$grommet-namespace}anchor--icon-label:not(.#{$grommet-namespace}anchor--primary) {
+  color: $text-color;
+
+  &:visited {
+    color: $text-color;
+  }
+
+  .#{$grommet-namespace}control-icon {
+    @include icon-color($icon-color);
+  }
+
+  &:hover:not(.#{$grommet-namespace}anchor--disabled) {
+    color: $hover-text-color;
+    text-decoration: none;
+  }
+
+  @include background-context-color($icon-color, $active-icon-color);
+  @include background-context-icon($icon-color, $active-icon-color);
+}
+
+.#{$grommet-namespace}anchor--primary {
+  color: $control-brand-color;
+
+  .#{$grommet-namespace}control-icon {
+    @include icon-color($control-brand-color);
+  }
+
+  &.active {
+    color: $control-brand-color;
+  }
+
+  // Only animate icon when it's a primary anchor
+  &.#{$grommet-namespace}anchor--animate-icon:not(.#{$grommet-namespace}anchor--disabled) {
+    &:hover {
+      text-decoration: none;
+
+      .#{$grommet-namespace}control-icon {
+        transform: translateX(round($inuit-base-spacing-unit * 0.125));
+      }
+    }
+  }
+
+  @include background-context-color($control-brand-color, $control-brand-color);
+  @include background-context-icon($control-brand-color, $control-brand-color);
+}
+
+.#{$grommet-namespace}anchor--disabled {
+  opacity: 0.3;
+  cursor: default;
+
+  .#{$grommet-namespace}control-icon {
+    cursor: default;
+  }
+}
+
+.#{$grommet-namespace}anchor--disabled:hover {
+  color: inherit;
+  text-decoration: none;
+
+  &.#{$grommet-namespace}anchor--primary {
+    color: $control-brand-color;
+  }
+
+  &.#{$grommet-namespace}anchor:not(.#{$grommet-namespace}anchor--primary) {
+    color: $link-color;
+  }
+
+  #{$dark-background-context} {
+    @include icon-color($colored-icon-color);
+
+    &.#{$grommet-namespace}anchor--primary {
+      color: $colored-icon-color;
+    }
+  }
+
+  #{$light-background-context} {
+    @include icon-color($link-color);
+
+    &.#{$grommet-namespace}anchor--primary {
+      color: $control-brand-color;
+    }
+  }
+}
+
+.#{$grommet-namespace}anchor--align-start {
+  text-align: left;
+}
+
+.#{$grommet-namespace}anchor--align-center {
+  text-align: center;
+}
+
+.#{$grommet-namespace}anchor--align-end {
+  text-align: right;
+}

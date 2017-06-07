@@ -1,0 +1,98 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+$button-accent-color: nth($brand-accent-colors, 1);
+$hover-darken: 15%;
+$active-darken: 20%;
+
+.#{$grommet-namespace}button {
+
+  &--accent {
+    background-color: $button-accent-color;
+    color: $colored-text-color;
+  }
+
+  &:not(.#{$grommet-namespace}button--disabled) {
+
+    &:hover {
+      border-color: darken($brand-color, $hover-darken);
+    }
+
+    &:active {
+      border-color: darken($brand-color, $active-darken);
+    }
+
+    &.#{$grommet-namespace}button--primary {
+
+      &:hover {
+        border-color: darken($brand-color, $hover-darken);
+        background-color: darken($brand-color, $hover-darken);
+      }
+
+      &:active {
+        border-color: darken($brand-color, $active-darken);
+        background-color: darken($brand-color, $active-darken);
+      }
+    }
+
+    &.#{$grommet-namespace}button--secondary {
+
+      &:hover {
+        border-color: darken($button-secondary-color, $hover-darken);
+      }
+
+      &:active {
+        border-color: darken($button-secondary-color, $active-darken);
+      }
+    }
+
+    &.#{$grommet-namespace}button--critical {
+
+      &:hover {
+        border-color: darken($button-critical-color, $hover-darken);
+      }
+
+      &:active {
+        border-color: darken($button-critical-color, $active-darken);
+      }
+    }
+
+    &.#{$grommet-namespace}button--accent {
+
+      &:hover {
+        border-color: darken($button-accent-color, $hover-darken);
+        background-color: darken($button-accent-color, $hover-darken);
+      }
+
+      &:active {
+        border-color: darken($button-accent-color, $active-darken);
+        background-color: darken($button-accent-color, $active-darken);
+      }
+    }
+
+    #{$dark-background-context} {
+
+      &:hover {
+        border-color: darken($button-colored-border-color, $hover-darken);
+      }
+
+      &.#{$grommet-namespace}button--primary {
+        &:hover {
+          border-color: darken($brand-color, $hover-darken);
+          background-color: darken($brand-color, $hover-darken);
+        }
+      }
+
+      &.#{$grommet-namespace}button--accent {
+        &:hover {
+          border-color: darken($button-accent-color, $hover-darken);
+        }
+      }
+
+      &.#{$grommet-namespace}button--critical {
+        &:hover {
+          border-color: darken($button-critical-color, $hover-darken);
+        }
+      }
+    }
+  }
+}

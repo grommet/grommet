@@ -1,0 +1,413 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+// BAR
+
+// For each size of meter, we calculate the proportional cross dimension
+$meter-bar-cross-xsmall:
+  round($inuit-base-spacing-unit * ($size-xsmall / $size-small));
+$meter-bar-cross-small:
+  round($inuit-base-spacing-unit * ($size-small / $size-small));
+$meter-bar-cross-medium:
+  round($inuit-base-spacing-unit * ($size-medium / $size-small));
+$meter-bar-cross-large:
+  round($inuit-base-spacing-unit * ($size-large / $size-small));
+$meter-bar-cross-xlarge:
+  round($inuit-base-spacing-unit * ($size-xlarge / $size-small));
+$meter-bar-cross-default:
+  round($inuit-base-spacing-unit * ($meter-size-default / $size-small));
+
+@include keyframes(draw-meter-bar-small) {
+  0% {
+    stroke-dashoffset: $meter-size-default;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.#{$grommet-namespace}meter--bar {
+  line-height: 0;
+
+  .#{$grommet-namespace}meter__slice {
+    stroke-linecap: butt;
+  }
+
+  .#{$grommet-namespace}meter__values .#{$grommet-namespace}meter__slice {
+    @include graph-stroke-color();
+
+    &--clickable {
+      cursor: pointer;
+    }
+
+    @include media-query(lap-and-up) {
+      stroke-dasharray: $meter-size-default $meter-size-default;
+      stroke-dashoffset: 0;
+      transition: stroke-width 0.2s;
+      @include animation('draw-meter-bar-small 1s ease-in');
+    }
+  }
+
+  .#{$grommet-namespace}meter__thresholds .#{$grommet-namespace}meter__slice,
+  .#{$grommet-namespace}meter__tracks .#{$grommet-namespace}meter__slice {
+    @include graph-stroke-color-translucent(0.5);
+  }
+
+  // This should be a separate section but SCSS MergableSelector won't allow it. :(
+  &.#{$grommet-namespace}meter--vertical {
+    white-space: nowrap;
+
+    .#{$grommet-namespace}meter__graphic {
+      height: $meter-size-default;
+      width: $meter-bar-cross-default;
+    }
+
+    &:not(.#{$grommet-namespace}meter--stacked) {
+      &.#{$grommet-namespace}meter--count-2 {
+        .#{$grommet-namespace}meter__graphic {
+          width: round($meter-bar-cross-default * 2);
+        }
+      }
+
+      &.#{$grommet-namespace}meter--count-3 {
+        .#{$grommet-namespace}meter__graphic {
+          width: round($meter-bar-cross-default * 3);
+        }
+      }
+
+      &.#{$grommet-namespace}meter--count-4 {
+        .#{$grommet-namespace}meter__graphic {
+          width: round($meter-bar-cross-default * 4);
+        }
+      }
+    }
+
+    .#{$grommet-namespace}meter__labeled-graphic {
+      display: inline-block;
+    }
+
+    &.#{$grommet-namespace}meter--xsmall {
+
+      .#{$grommet-namespace}meter__graphic {
+        height: $size-xsmall;
+        width: $meter-bar-cross-xsmall;
+      }
+
+      &:not(.#{$grommet-namespace}meter--stacked) {
+        &.#{$grommet-namespace}meter--count-2 {
+          .#{$grommet-namespace}meter__graphic {
+            width: round($meter-bar-cross-xsmall * 2);
+          }
+        }
+
+        &.#{$grommet-namespace}meter--count-3 {
+          .#{$grommet-namespace}meter__graphic {
+            width: round($meter-bar-cross-xsmall * 3);
+          }
+        }
+
+        &.#{$grommet-namespace}meter--count-4 {
+          .#{$grommet-namespace}meter__graphic {
+            width: round($meter-bar-cross-xsmall * 4);
+          }
+        }
+      }
+    }
+
+    &.#{$grommet-namespace}meter--small {
+
+      .#{$grommet-namespace}meter__graphic {
+        height: $size-small;
+        width: $meter-bar-cross-small;
+      }
+
+      &:not(.#{$grommet-namespace}meter--stacked) {
+        &.#{$grommet-namespace}meter--count-2 {
+          .#{$grommet-namespace}meter__graphic {
+            width: round($meter-bar-cross-small * 2);
+          }
+        }
+
+        &.#{$grommet-namespace}meter--count-3 {
+          .#{$grommet-namespace}meter__graphic {
+            width: round($meter-bar-cross-small * 3);
+          }
+        }
+
+        &.#{$grommet-namespace}meter--count-4 {
+          .#{$grommet-namespace}meter__graphic {
+            width: round($meter-bar-cross-small * 4);
+          }
+        }
+      }
+    }
+
+    &.#{$grommet-namespace}meter--medium {
+
+      .#{$grommet-namespace}meter__graphic {
+        height: $size-medium;
+        width: $meter-bar-cross-medium;
+      }
+
+      &:not(.#{$grommet-namespace}meter--stacked) {
+        &.#{$grommet-namespace}meter--count-2 {
+          .#{$grommet-namespace}meter__graphic {
+            width: round($meter-bar-cross-medium * 2);
+          }
+        }
+
+        &.#{$grommet-namespace}meter--count-3 {
+          .#{$grommet-namespace}meter__graphic {
+            width: round($meter-bar-cross-medium * 3);
+          }
+        }
+
+        &.#{$grommet-namespace}meter--count-4 {
+          .#{$grommet-namespace}meter__graphic {
+            width: round($meter-bar-cross-medium * 4);
+          }
+        }
+      }
+    }
+
+    &.#{$grommet-namespace}meter--large {
+
+      .#{$grommet-namespace}meter__graphic {
+        height: $size-large;
+        width: $meter-bar-cross-large;
+      }
+
+      &:not(.#{$grommet-namespace}meter--stacked) {
+        &.#{$grommet-namespace}meter--count-2 {
+          .#{$grommet-namespace}meter__graphic {
+            width: round($meter-bar-cross-large * 2);
+          }
+        }
+
+        &.#{$grommet-namespace}meter--count-3 {
+          .#{$grommet-namespace}meter__graphic {
+            width: round($meter-bar-cross-large * 3);
+          }
+        }
+
+        &.#{$grommet-namespace}meter--count-4 {
+          .#{$grommet-namespace}meter__graphic {
+            width: round($meter-bar-cross-large * 4);
+          }
+        }
+      }
+    }
+
+    &.#{$grommet-namespace}meter--xlarge {
+
+      .#{$grommet-namespace}meter__graphic {
+        height: $size-xlarge;
+        width: $meter-bar-cross-xlarge;
+      }
+
+      &:not(.#{$grommet-namespace}meter--stacked) {
+        &.#{$grommet-namespace}meter--count-2 {
+          .#{$grommet-namespace}meter__graphic {
+            width: round($meter-bar-cross-xlarge * 2);
+          }
+        }
+
+        &.#{$grommet-namespace}meter--count-3 {
+          .#{$grommet-namespace}meter__graphic {
+            width: round($meter-bar-cross-xlarge * 3);
+          }
+        }
+
+        &.#{$grommet-namespace}meter--count-4 {
+          .#{$grommet-namespace}meter__graphic {
+            width: round($meter-bar-cross-xlarge * 4);
+          }
+        }
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}meter--bar:not(.#{$grommet-namespace}meter--vertical) {
+
+  .#{$grommet-namespace}meter__graphic {
+    width: $size-small;
+    min-width: $size-xsmall;
+  }
+
+  &.#{$grommet-namespace}meter--xsmall {
+
+    .#{$grommet-namespace}meter__graphic {
+      width: $size-xsmall;
+      height: $meter-bar-cross-xsmall;
+    }
+
+    &.#{$grommet-namespace}meter--single,
+    &.#{$grommet-namespace}meter--stacked {
+      .#{$grommet-namespace}meter__graphic {
+        height: $meter-bar-cross-xsmall;
+      }
+    }
+
+    &:not(.#{$grommet-namespace}meter--stacked) {
+      &.#{$grommet-namespace}meter--count-2 {
+        .#{$grommet-namespace}meter__graphic {
+          height: round($meter-bar-cross-xsmall * 2);
+        }
+      }
+
+      &.#{$grommet-namespace}meter--count-3 {
+        .#{$grommet-namespace}meter__graphic {
+          height: round($meter-bar-cross-xsmall * 3);
+        }
+      }
+
+      &.#{$grommet-namespace}meter--count-4 {
+        .#{$grommet-namespace}meter__graphic {
+          height: round($meter-bar-cross-xsmall * 4);
+        }
+      }
+    }
+  }
+
+  &.#{$grommet-namespace}meter--small {
+
+    .#{$grommet-namespace}meter__graphic {
+      width: $size-small;
+      height: $meter-bar-cross-small;
+    }
+
+    &.#{$grommet-namespace}meter--single,
+    &.#{$grommet-namespace}meter--stacked {
+      .#{$grommet-namespace}meter__graphic {
+        height: $meter-bar-cross-small;
+      }
+    }
+
+    &:not(.#{$grommet-namespace}meter--stacked) {
+      &.#{$grommet-namespace}meter--count-2 {
+        .#{$grommet-namespace}meter__graphic {
+          height: round($meter-bar-cross-small * 2);
+        }
+      }
+
+      &.#{$grommet-namespace}meter--count-3 {
+        .#{$grommet-namespace}meter__graphic {
+          height: round($meter-bar-cross-small * 3);
+        }
+      }
+
+      &.#{$grommet-namespace}meter--count-4 {
+        .#{$grommet-namespace}meter__graphic {
+          height: round($meter-bar-cross-small * 4);
+        }
+      }
+    }
+  }
+
+  &.#{$grommet-namespace}meter--medium {
+
+    .#{$grommet-namespace}meter__graphic {
+      @include media-query(palm) {
+        width: $size-small;
+      }
+
+      @include media-query(lap-and-up) {
+        width: $size-medium;
+      }
+
+      height: $meter-bar-cross-medium;
+    }
+
+    &:not(.#{$grommet-namespace}meter--stacked) {
+      &.#{$grommet-namespace}meter--count-2 {
+        .#{$grommet-namespace}meter__graphic {
+          height: round($meter-bar-cross-medium * 2);
+        }
+      }
+
+      &.#{$grommet-namespace}meter--count-3 {
+        .#{$grommet-namespace}meter__graphic {
+          height: round($meter-bar-cross-medium * 3);
+        }
+      }
+
+      &.#{$grommet-namespace}meter--count-4 {
+        .#{$grommet-namespace}meter__graphic {
+          height: round($meter-bar-cross-medium * 4);
+        }
+      }
+    }
+  }
+
+  &.#{$grommet-namespace}meter--large {
+    // line-height: round($inuit-base-spacing-unit * 1.5);
+
+    .#{$grommet-namespace}meter__graphic {
+      @include media-query(palm) {
+        width: $size-small;
+      }
+
+      @include media-query(lap-and-up) {
+        width: $size-large;
+      }
+
+      height: $meter-bar-cross-large;
+    }
+
+    &:not(.#{$grommet-namespace}meter--stacked) {
+      &.#{$grommet-namespace}meter--count-2 {
+        .#{$grommet-namespace}meter__graphic {
+          height: round($meter-bar-cross-large * 2);
+        }
+      }
+
+      &.#{$grommet-namespace}meter--count-3 {
+        .#{$grommet-namespace}meter__graphic {
+          height: round($meter-bar-cross-large * 3);
+        }
+      }
+
+      &.#{$grommet-namespace}meter--count-4 {
+        .#{$grommet-namespace}meter__graphic {
+          height: round($meter-bar-cross-large * 4);
+        }
+      }
+    }
+  }
+
+  &.#{$grommet-namespace}meter--xlarge {
+
+    .#{$grommet-namespace}meter__graphic {
+      @include media-query(palm) {
+        width: $size-small;
+      }
+
+      @include media-query(lap-and-up) {
+        width: $size-xlarge;
+      }
+
+      height: $meter-bar-cross-xlarge;
+    }
+
+    &:not(.#{$grommet-namespace}meter--stacked) {
+      &.#{$grommet-namespace}meter--count-2 {
+        .#{$grommet-namespace}meter__graphic {
+          height: round($meter-bar-cross-xlarge * 2);
+        }
+      }
+
+      &.#{$grommet-namespace}meter--count-3 {
+        .#{$grommet-namespace}meter__graphic {
+          height: round($meter-bar-cross-xlarge * 3);
+        }
+      }
+
+      &.#{$grommet-namespace}meter--count-4 {
+        .#{$grommet-namespace}meter__graphic {
+          height: round($meter-bar-cross-xlarge * 4);
+        }
+      }
+    }
+  }
+}

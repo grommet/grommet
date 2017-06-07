@@ -1,0 +1,59 @@
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+
+.#{$grommet-namespace}toast__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+@include keyframes(toast-lower) {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0%); }
+}
+
+@include keyframes(toast-raise) {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-100%); }
+}
+
+.#{$grommet-namespace}toast {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: $header-height;
+  background-color: $toast-background-color;
+  @include animation('toast-lower #{$animation-duration}');
+}
+
+.#{$grommet-namespace}toast--closing {
+  @include animation('toast-raise #{$animation-duration}');
+  animation-fill-mode: forwards;
+}
+
+.#{$grommet-namespace}toast__closer {
+  flex: 0 0 auto;
+}
+
+.#{$grommet-namespace}toast__status {
+  flex: 0 0 auto;
+  padding-left: $inuit-base-spacing-unit;
+}
+
+.#{$grommet-namespace}toast__contents {
+  flex: 1;
+  padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+}
+
+.#{$grommet-namespace}toast--small {
+  min-height: $small-header-height;
+}
+
+.#{$grommet-namespace}toast--medium {
+  min-height: $header-height;
+}
+
+.#{$grommet-namespace}toast--large {
+  min-height: $large-header-height;
+}

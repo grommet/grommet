@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="152px" height="152px" viewBox="0 0 152 152" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>mobile-app-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="152---iPad">
+            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="152" height="152"></rect>
+            <path d="M76,124 C102.509668,124 124,102.509668 124,76 C124,49.490332 102.509668,28 76,28 C49.490332,28 28,49.490332 28,76 C28,102.509668 49.490332,124 76,124 Z" id="element" stroke="#865CD6" stroke-width="12"></path>
+        </g>
+    </g>
+</svg>

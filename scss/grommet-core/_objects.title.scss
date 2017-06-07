@@ -1,0 +1,101 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+.#{$grommet-namespace}title {
+  max-height: 100%;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+  font-weight: $text-font-weight;
+  // white-space: nowrap;
+  @include inuit-font-size(24px);
+  line-height: initial;
+  margin-right: halve($inuit-base-spacing-unit);
+  // flex: 0 1 auto;
+
+  @include media-query(lap-and-up) {
+    font-weight: $text-strong-font-weight;
+  }
+
+  > *:not(:last-child) {
+    margin-right: halve($inuit-base-spacing-unit);
+
+    html.rtl & {
+      margin-right: 0px;
+      margin-left: halve($inuit-base-spacing-unit);
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    [class*="background-color-index-"] & {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  svg,
+  img {
+    max-width: $size-medium;
+    flex: 0 0 auto;
+
+    &:not(:last-child) {
+      margin-right: halve($inuit-base-spacing-unit);
+    }
+  }
+}
+
+.#{$grommet-namespace}title--interactive {
+
+  cursor: pointer;
+
+  @include media-query(lap-and-up) {
+    transition: color $base-animation-duration ease-in-out;
+  }
+
+  &:hover {
+    color: $brand-color;
+    cursor: pointer;
+  }
+
+  #{$dark-background-context} {
+    &:hover {
+      color: $active-colored-text-color;
+    }
+  }
+
+  #{$light-background-context} {
+    &:hover {
+      color: $brand-color;
+    }
+  }
+}
+
+.#{$grommet-namespace}title--responsive {
+  @include media-query(palm) {
+    svg,
+    img {
+      margin-right: 0px;
+    }
+
+    > *:not(:first-child) {
+      display: none;
+    }
+  }
+}
+
+.#{$grommet-namespace}title--truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

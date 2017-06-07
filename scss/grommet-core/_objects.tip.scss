@@ -1,0 +1,76 @@
+// (C) Copyright 2016 Hewlett Packard Enterprise Development LP
+
+.grommet.#{$grommet-namespace}tip__drop {
+  overflow: visible; // needed so caret can be seen
+  max-width: $size-medium;
+}
+
+.#{$grommet-namespace}tip__drop {
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: halve($inuit-base-spacing-unit) solid transparent;
+    border-right: halve($inuit-base-spacing-unit) solid transparent;
+  }
+}
+
+.#{$grommet-namespace}tip__drop--top {
+  transform: translateY(#{halve($inuit-base-spacing-unit)});
+
+  &:after {
+    content: '';
+    top: - halve($inuit-base-spacing-unit);
+    border-bottom: halve($inuit-base-spacing-unit) solid $border-color;
+  }
+
+  @for $i from 1 through length($brand-accent-colors) {
+    &.#{$grommet-namespace}background-color-index-accent-#{$i},
+    &.#{$grommet-namespace}background-color-index-accent-#{$i + length($brand-accent-colors)} {
+      &:after {
+        content: '';
+        border-bottom-color: nth($brand-accent-colors, $i);
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}tip__drop--bottom {
+  transform: translateY(#{- halve($inuit-base-spacing-unit)});
+
+  &:after {
+    content: '';
+    bottom: - halve($inuit-base-spacing-unit);
+    border-top: halve($inuit-base-spacing-unit) solid $border-color;
+  }
+
+  @for $i from 1 through length($brand-accent-colors) {
+    &.#{$grommet-namespace}background-color-index-accent-#{$i},
+    &.#{$grommet-namespace}background-color-index-accent-#{$i + length($brand-accent-colors)} {
+      &:after {
+        content: '';
+        border-top-color: nth($brand-accent-colors, $i);
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}tip__drop--left {
+  &:after {
+    content: '';
+    left: halve($inuit-base-spacing-unit);
+  }
+}
+
+.#{$grommet-namespace}tip__drop--right {
+  &:after {
+    content: '';
+    right: halve($inuit-base-spacing-unit);
+  }
+}
+
+.#{$grommet-namespace}tip {
+  overflow: hidden;
+}

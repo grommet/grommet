@@ -1,0 +1,175 @@
+// (C) Copyright 2014-2017 Hewlett Packard Enterprise Development LP
+
+// IE11 fix for tiles, since hover borders will overlap with tiles
+// unless margins are doubled
+@mixin ie-tile-margin ($ie-margin-value) {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    margin: $ie-margin-value;
+  }
+}
+
+.#{$grommet-namespace}tiles {
+  width: 100%;
+
+  @include pad();
+}
+
+.#{$grommet-namespace}tiles--focus {
+  border-color: $focus-border-color;
+  box-shadow: 0 0 1px 1px $focus-border-color;
+}
+
+.#{$grommet-namespace}tiles__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+
+  .#{$grommet-namespace}tiles__left,
+  .#{$grommet-namespace}tiles__right {
+    flex: 0 0 auto;
+  }
+
+  .#{$grommet-namespace}tiles {
+    flex: 1;
+    margin: 0px;
+  }
+
+  .#{$grommet-namespace}tiles.#{$grommet-namespace}box--direction-row {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+.#{$grommet-namespace}tiles:not(.#{$grommet-namespace}tiles--flush) {
+  > .#{$grommet-namespace}tile {
+    margin: halve($inuit-base-spacing-unit);
+    @include ie-tile-margin($inuit-base-spacing-unit);
+
+    &--wide {
+      flex-basis: calc(100% - #{$inuit-base-spacing-unit});
+    }
+
+    &.#{$grommet-namespace}tile--hover-border-medium {
+      margin: quarter($inuit-base-spacing-unit);
+      @include ie-tile-margin(halve($inuit-base-spacing-unit));
+    }
+
+    &.#{$grommet-namespace}tile--hover-border-large {
+      margin: halve($inuit-base-spacing-unit);
+      @include ie-tile-margin($inuit-base-spacing-unit);
+    }
+  }
+}
+
+.#{$grommet-namespace}tiles--fill {
+  // IE11 fix to remove extra gap in Tiles
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    height: 100%;
+  }
+
+  &.#{$grommet-namespace}box--wrap {
+    justify-content: space-around;
+
+    > .#{$grommet-namespace}tile {
+      flex-grow: 1;
+    }
+  }
+}
+
+.#{$grommet-namespace}tiles--flush {
+  padding: 0px;
+
+  > .#{$grommet-namespace}tile {
+    margin: 0px;
+
+    &--wide {
+      flex-basis: 100%;
+    }
+  }
+}
+
+.#{$grommet-namespace}tiles__more {
+  flex: 1 1 100%;
+  text-align: center;
+}
+
+.#{$grommet-namespace}tiles--selectable {
+  outline: none;
+
+  .#{$grommet-namespace}tile {
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s;
+  }
+
+  .#{$grommet-namespace}tile--selected {
+    background-color: $selected-background-color;
+    color: $selected-text-color;
+
+    #{$dark-background-context} {
+      background-color: $colored-active-background-color;
+      color: $active-colored-text-color;
+    }
+
+    #{$light-background-context} {
+      background-color: $selected-background-color;
+      color: $selected-text-color;
+    }
+  }
+
+  .#{$grommet-namespace}tile--active,
+  .#{$grommet-namespace}tile:hover:not([class*="background-hover-color-index-"]) {
+    background-color: $hover-background-color;
+    color: $hover-text-color;
+
+    #{$dark-background-context} {
+      background-color: $colored-hover-background-color;
+      color: $active-colored-text-color;
+    }
+
+    #{$light-background-context} {
+      background-color: $hover-background-color;
+      color: $hover-text-color;
+    }
+  }
+}
+
+.#{$grommet-namespace}tiles--small {
+  > .#{$grommet-namespace}tile:not(.#{$grommet-namespace}box--size) {
+    @include media-query(lap-and-up) {
+      flex-basis: $size-small;
+    }
+  }
+}
+
+.#{$grommet-namespace}tiles--large {
+  > .#{$grommet-namespace}tile:not(.#{$grommet-namespace}box--size) {
+    @include media-query(lap-and-up) {
+      flex-basis: $size-large;
+    }
+  }
+}
+
+.#{$grommet-namespace}tile {
+  overflow: hidden;
+  transition: all 0.2s;
+
+  .#{$grommet-namespace}status-icon {
+    margin-right: quarter($inuit-base-spacing-unit);
+
+    html.rtl & {
+      margin-right: 0;
+      margin-left: quarter($inuit-base-spacing-unit);
+    }
+  }
+}
+
+.#{$grommet-namespace}tile--selectable {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.#{$grommet-namespace}tile--eclipsed {
+  opacity: 0.2;
+}

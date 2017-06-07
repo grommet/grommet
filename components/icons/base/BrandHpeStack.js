@@ -1,0 +1,115 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
+var _CSSClassnames = require('../../../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
+var _Intl = require('../../../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
+var _Props = require('../../../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.CONTROL_ICON;
+var COLOR_INDEX = _CSSClassnames2.default.COLOR_INDEX;
+
+var Icon = function (_Component) {
+  _inherits(Icon, _Component);
+
+  function Icon() {
+    _classCallCheck(this, Icon);
+
+    return _possibleConstructorReturn(this, (Icon.__proto__ || Object.getPrototypeOf(Icon)).apply(this, arguments));
+  }
+
+  _createClass(Icon, [{
+    key: 'render',
+    value: function render() {
+      var _classnames;
+
+      var _props = this.props,
+          className = _props.className,
+          colorIndex = _props.colorIndex;
+      var _props2 = this.props,
+          a11yTitle = _props2.a11yTitle,
+          size = _props2.size,
+          responsive = _props2.responsive;
+      var intl = this.context.intl;
+
+
+      var classes = (0, _classnames3.default)(CLASS_ROOT, CLASS_ROOT + '-brand-hpe-stack', className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames, CLASS_ROOT + '--responsive', responsive), _defineProperty(_classnames, COLOR_INDEX + '-' + colorIndex, colorIndex), _classnames));
+
+      a11yTitle = a11yTitle || _Intl2.default.getMessage(intl, 'brand-hpe-stack');
+
+      var restProps = _Props2.default.omit(this.props, Object.keys(Icon.propTypes));
+      return _react2.default.createElement(
+        'svg',
+        _extends({}, restProps, { version: '1.1', viewBox: '0 0 126 48', width: '24px', height: '24px', role: 'img', className: classes, 'aria-label': a11yTitle }),
+        _react2.default.createElement(
+          'g',
+          { fill: 'none', fillRule: 'evenodd' },
+          _react2.default.createElement('path', { fill: '#333', d: 'M0,29 L0,17 L3,17 L3,22 L8,22 L8,17 L11,17 L11,29 L8,29 L8,24 L3,24 L3,29 L0,29 Z M16.5,29 C13.5,29 12,27 12,24.5 C12,21.5 14,20 16,20 C19,20 20,22.5 20,24 L20,25 L14.5,25 C14.5,26 15,27 16.5,27 C18,27 18.5,26 18.5,26 L19.5,27.5 C19.5,27.5 18.5,29 16.5,29 Z M17.5,23.5 C17.5,23 17.25,22 16,22 C14.75,22 14.5,23 14.5,23.5 L17.5,23.5 Z M25,28.5 L23,28.5 L20,20 L22.5,20 L24,25 L25.5,20 L27.5,20 L29,25 L30.5,20 L33,20 L30,28.5 L28,28.5 L26.5,24 L25,28.5 Z M34,25.5 L34,17 L37,17 C37,17 37,25 37,26 C37,27 38.5,27 39,26.5 L39,28.5 C39,28.5 38,29 37,29 C34.9791644,29 34,28 34,25.5 Z M45.5,23.5 C45.5,23 45.25,22 44,22 C42.75,22 42.5,23 42.5,23.5 L45.5,23.5 Z M44.5,29 C41.5,29 40,27 40,24.5 C40,21.5 42,20 44,20 C47,20 48,22.5 48,24 L48,25 L42.5,25 C42.5,26 43,27 44.5,27 C46,27 46.5,26 46.5,26 L47.5,27.5 C47.5,27.5 46.5,29 44.5,29 Z M61,20 L61,22 L59,22 L59,26 C59,27 60.5,27 61,26.5 L61,28.5 C61,28.5 60,29 59,29 C57,29 56,28 56,25.5 L56,22 L53,22 L53,26 C53,27 54.5,27 55,26.5 L55,28.5 C55,28.5 54,29 53,29 C51,29 50,28 50,25.5 L50,22 L49,22 L49,20 L50,20 L50,18 L53,18 L53,20 L56,20 L56,18 L59,18 L59,20 L61,20 Z M70,25 C70,25 68,25 68,25 L68.0000001,29 L65,29 L65,17 L70,17 C73.5,17 75,19 75,21 C75,23 73.5,25 70,25 Z M72,21 C72,20 71.5,19.5 69.5,19.5 L68,19.5 L68,22.5 L69.5,22.5 C71.5,22.5 72,22 72,21 Z M78.5,29 C76.4999999,29 75,28 75,26 C75,24 76.5,23 78.5,23 C79.5,23 80.5,23.5 80.5,23.5 C80.5,22.5 80,22 78.5,22 C77,22 76.5,22.5 76.5,22.5 L76,21 C76.5,20.5 77.5,20 78.5,20 C81,20 83,20.5 83,23.5 L82.9999999,29.0000001 L80.9999999,29.0000001 L80.5,28.5 C80.5,28.5 79.5,29 78.5,29 Z M80.5,25.5 C80.5,25.5 80,25 79,25 C78,25 77.5,25.5 77.5,26 C77.5,26.5 78,27 79,27 C80,27 80.5,26.5 80.5,25.5 Z M91,23 C91,23 90,22 89,22 C88,22 86.8571429,22.5 86.8571429,24.5 C86.8571429,26.5 88,27 89,27 C90,27 91,26 91,26 L92,27.5 C92,27.5 91,29 88.5714288,29 C85.5,29 84,27 84,24.5 C84,21.5 86,20 88.5714286,20 C91,20 92,21.5 92,21.5 L91,23 Z M96,25 L96,29 L93.5,29 L93.5,17 L96,17 L96,24 L99,20 L102,20 L98.5,24.5 L102,29 L99,29 L96,25 Z M107.5,25.5 C107.5,25.5 107,25 106,25 C105,25 104.5,25.5 104.5,26 C104.5,26.5 105,27 106,27 C107,27 107.5,26.5 107.5,25.5 Z M105.5,29 C103.5,29 102,28 102,26 C102,24 103.5,23 105.5,23 C106.5,23 107.5,23.5 107.5,23.5 C107.5,22.5 107,22 105.5,22 C104,22 103.5,22.5 103.5,22.5 L103,21 C103.5,20.5 104.5,20 105.5,20 C108,20 110,20.5 110,23.5 L110,29.0000001 L108,29.0000001 L107.5,28.5 C107.5,28.5 106.5,29 105.5,29 Z M114,21.5 C114.5,20.5 115,20 116,20 C116.5,20 117,20.5 117,20.5 L116.5,23 C116.5,23 116,22.5 115.5,22.5 C114.5,22.5 114,23.1685183 114,24 L114,29 L111.5,29 L111.5,20 L114,20 L114,21.5 Z M121,29 C119,29 117.5,27.5 117.5,24.5 C117.5,21.5 119,20 121,20 C122.5,20 123.5,21 123.5,21 L123.5,17.5 L126,17.5 L126,29 L123.5,29 L123.5,28 C123.5,28 122.5,29 121,29 Z M122.5,26.4999999 C123.5,25.9999999 123.5,24.9999999 123.5,24.4999999 C123.5,23.9999999 123.5,23 122.5,22.5 C121.5,22 120,22.5 120,24.5 C120,26.5 121.5,26.9999999 122.5,26.4999999 Z M7,33 L7,35 L2,35 L2,38 L6.5,38 L6.5,40 L2,40 L2,43 L7,43 L7,44.9999998 L0,45 L0,33 L7,33 Z M17,39.5 L17,45 L15,45 L15,39.5 C15,38 14.0298955,37.5 13,37.5 C12,37.5 11,38.5 11,40.5 L11,45 L9,45 L9,36 L11,36 L11,37 C11,37 12,36 13.5,36 C15.5,36 17,37 17,39.5 Z M21,36 L23,36 L23,38 L21,38 L21,42.5 C21,43.5 22.5,43.5 23,43 L23,44.5 C23,44.5 22.5,45 21.5,45 C21,45 19,45 19,42 L19,38 L18,38 L18,36 L19,36 L19,34 L21.0000001,34 L21,36 Z M24,40.5 C24,38 25,36 28,36 C30.5,36 32,38 32,40 L32,41 L26,41 C26,43 27.5,43.5 28.5,43.5 C30,43.5 30.5,42.5 30.5,42.5 L31.5,43.5 C31.5,43.5 30.5,45 28.5,45 C25.5,45 24,43 24,40.5 Z M30,39.5 C30,38 29,37.5 28,37.5 C26.5,37.5 26,38.5 26,39.5 L30,39.5 Z M38,36.0000001 C38.5,36.0000001 39,36.5 39,36.5 L39,38.4999999 C39,38.4999999 38.5,38 37.5,38 C36.5,38 36,38.5 36,40 L36,45.0000001 L34,45.0000001 L34,36.0000001 L36,36.0000001 L36,37.5000001 C36,37.5000001 36.5,36.0000001 38,36.0000001 Z M48.5,40.5 C48.5,43 47.5,45 45,45 C43,45 42,43.5 42,43.5 L42,48 L40,48 L40,36 L42,36 L42,37.5 C42,37.5 43,36 45,36 C47.5,36 48.5,38 48.5,40.5 Z M42,41 C42,42 42.5,43.5 44.5,43.5 C45.5,43.5 46.5,42.5 46.5,40.5 C46.5,38.5 45.5,37.5 44.5,37.5 C43,37.5 42,38.5 42,40 C42,40 42,41 42,41 Z M54,36.0000001 C54.5,36.0000001 55,36.5 55,36.5 L55,38.4999999 C55,38.4999999 54.5,38 53.5,38 C52.5,38 52,38.5 52,40 L52,45.0000001 L50,45.0000001 L50,36.0000001 L52,36.0000001 L52,37.5000001 C52,37.5000001 52.5,36.0000001 54,36.0000001 Z M57,36 L59,36 L59,45 L57,45 L57,36 Z M58,33 C59,33 59,33 59,34.0002128 C59,35.0004257 59,35 58,35 C57,35 57,35.0004257 57,34.0002128 C57,33 57,33 58,33 Z M67.5,37 C67.5,37 66,36 64.5,36 C62.5,36 61,37 61,38.5 C61,41.5 66,40.5 66,42.5 C66,43 65.5,43.5 64,43.5 C62.5,43.5 61.5,43 61.5,43 L61,44 C61,44 62.5,45 64.5,45 C66.5,45 68,44 68,42.5 C68,39.5 63,40 63,38.5 C63,38 63,37.5 65,37.5 C66,37.5 67,38 67,38 L67.5,37 Z M75,39.5 C75,38 74,37.5 73,37.5 C71.5,37.5 71,38.5 71,39.5 L75,39.5 Z M69,40.5 C69,38 70,36 73,36 C75.5,36 77,38 77,40 L77,41 L71,41 C71,43 72.5,43.5 73.5,43.5 C75,43.5 75.5,42.5 75.5,42.5 L76.5,43.5 C76.5,43.5 75.5,45 73.5,45 C70.5,45 69,43 69,40.5 Z', stroke: 'none' }),
+          _react2.default.createElement('path', { fill: '#01A982', d: 'M0,12 L40,12 L40,0 L0,0 L0,12 Z M3,3 L37,3 L37,9 L3,9 L3,3 Z', stroke: 'none' })
+        )
+      );
+    }
+  }]);
+
+  return Icon;
+}(_react.Component);
+
+Icon.displayName = 'Icon';
+exports.default = Icon;
+;
+
+Icon.contextTypes = {
+  intl: _propTypes2.default.object
+};
+
+Icon.defaultProps = {
+  responsive: true
+};
+
+Icon.displayName = 'BrandHpeStack';
+
+Icon.icon = true;
+
+Icon.propTypes = {
+  a11yTitle: _propTypes2.default.string,
+  colorIndex: _propTypes2.default.string,
+  size: _propTypes2.default.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'huge']),
+  responsive: _propTypes2.default.bool
+};
+module.exports = exports['default'];

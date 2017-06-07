@@ -1,0 +1,249 @@
+// (C) Copyright 2014-2017 Hewlett Packard Enterprise Development LP
+
+.#{$grommet-namespace}layer {
+  position: relative;
+  z-index: 10; // stay above app header
+  background-color: $layer-overlay-background-color;
+  height: 100vh;
+  overflow: auto;
+
+  @include media-query(lap-and-up) {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+
+  @include media-query(palm) {
+    &:not(.#{$grommet-namespace}layer--hidden) + .#{$grommet-namespace}app {
+      left: -100%;
+      right: 100%;
+      z-index: -1;
+      position: fixed;
+    }
+  }
+
+  .#{$grommet-namespace}layer__container {
+    display: flex;
+    flex-direction: column;
+    background-color: $layer-background-color;
+
+    @include media-query(palm) {
+      padding: 0 $inuit-base-spacing-unit;
+      min-height: 100%;
+      min-width: 100%;
+    }
+
+    @include media-query(lap-and-up) {
+      position: absolute;
+      max-height: 100%;
+      max-width: 100%;
+      overflow: auto;
+      padding: 0 double($inuit-base-spacing-unit);
+      border-radius: $border-radius;
+      box-shadow: $layer-box-shadow;
+
+      // avoid problems with ie11 with max-width: 100%;
+      // See: http://stackoverflow.com/questions/40855067/flexbox-div-with-column-direction-and-inner-max-width-breaks-in-ie11
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .#{$grommet-namespace}form {
+          max-width: 100vw;
+        }
+
+        .#{$grommet-namespace}sidebar .#{$grommet-namespace}form {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  .#{$grommet-namespace}layer__closer {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+
+    .grommet.rtl & {
+      right: auto;
+      left: 0px;
+    }
+  }
+}
+
+.#{$grommet-namespace}layer.#{$grommet-namespace}layer--flush {
+  .#{$grommet-namespace}layer__container {
+    padding: 0px;
+
+    // avoid problems with ie11 with max-width: 100%;
+    // See: http://stackoverflow.com/questions/40855067/flexbox-div-with-column-direction-and-inner-max-width-breaks-in-ie11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      .#{$grommet-namespace}form {
+        max-width: 100vw;
+      }
+
+      .#{$grommet-namespace}sidebar .#{$grommet-namespace}form {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}layer--align-center:not(.#{$grommet-namespace}layer--hidden) {
+
+  @include media-query(lap-and-up) {
+    .#{$grommet-namespace}layer__container {
+      bottom: 50%;
+      right: 50%;
+      max-height: calc(100vh - #{double($inuit-base-spacing-unit)});
+      max-width: calc(100vw - #{double($inuit-base-spacing-unit)});
+      transform: translate(50%, 50%);
+    }
+  }
+}
+
+.#{$grommet-namespace}layer--align-left:not(.#{$grommet-namespace}layer--hidden) {
+  .#{$grommet-namespace}layer__container {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+
+    @include media-query(lap-and-up) {
+      @include animation('slide-right 0.2s ease-in-out forwards');
+    }
+  }
+
+  .grommet.rtl & {
+    .#{$grommet-namespace}layer__container {
+      left: auto;
+      right: 0px;
+
+      @include media-query(lap-and-up) {
+        @include animation('slide-left 0.2s ease-in-out forwards');
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}layer--align-right:not(.#{$grommet-namespace}layer--hidden) {
+  .#{$grommet-namespace}layer__container {
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+
+    @include media-query(lap-and-up) {
+      @include animation('slide-left 0.2s ease-in-out forwards');
+    }
+  }
+
+  .grommet.rtl & {
+    .#{$grommet-namespace}layer__container {
+      right: auto;
+      left: 0px;
+
+      @include media-query(lap-and-up) {
+        @include animation('slide-right 0.2s ease-in-out forwards');
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}layer--align-top:not(.#{$grommet-namespace}layer--hidden) {
+  @include media-query(lap-and-up) {
+    .#{$grommet-namespace}layer__container {
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include media-query(lap-and-up) {
+        @include animation('slide-down 0.2s ease-in-out forwards');
+      }
+    }
+  }
+}
+
+.#{$grommet-namespace}layer--align-bottom:not(.#{$grommet-namespace}layer--hidden) {
+  .#{$grommet-namespace}layer__container {
+    bottom: 0px;
+  }
+}
+
+.#{$grommet-namespace}layer.#{$grommet-namespace}layer--hidden {
+
+  left: -100%;
+  right: 100%;
+  z-index: -1;
+  position: fixed;
+
+  &.#{$grommet-namespace}layer--align {
+
+    &-left {
+      right: auto;
+
+      .#{$grommet-namespace}layer__container {
+        left: -100vw;
+      }
+    }
+  }
+
+  @include media-query(lap-and-up) {
+    &.#{$grommet-namespace}layer--peek {
+
+      left: 0;
+      z-index: 10;
+
+      &.#{$grommet-namespace}layer--align {
+
+        &-left {
+          right: auto;
+
+          .#{$grommet-namespace}layer__container {
+            left: auto;
+            right: - halve($inuit-base-spacing-unit);
+            border-right: 10px solid $brand-color;
+            @include animation('peek-right 0.5s ease-in-out alternate 5');
+          }
+        }
+      }
+    }
+  }
+}
+
+@include keyframes(peek-right) {
+  0% {
+    right: - quarter($inuit-base-spacing-unit);
+  }
+
+  100% {
+    right: - halve($inuit-base-spacing-unit);
+  }
+}
+
+@include keyframes(slide-right) {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+@include keyframes(slide-left) {
+  0% {
+    right: -100%;
+  }
+
+  100% {
+    right: 0px;
+  }
+}
+
+@include keyframes(slide-down) {
+  0% {
+    top: -100vh;
+  }
+
+  100% {
+    top: 0px;
+  }
+}

@@ -1,0 +1,77 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+$animation-duration: 1s;
+
+@mixin slide-animation($opacity, $transform...) {
+  opacity: $opacity;
+  transform: $transform;
+}
+
+.#{$grommet-namespace}animate {
+  max-width: 100%;
+}
+
+.#{$grommet-namespace}animate .#{$grommet-namespace}animate__child {
+  transition: all $animation-duration;
+}
+
+&.#{$grommet-namespace}animate__child--inactive {
+  pointer-events: none;
+}
+
+.#{$grommet-namespace}animate__child--fade {
+  &.#{$grommet-namespace}animate__child--inactive,
+  &.#{$grommet-namespace}animate__child--leave {
+    opacity: 0;
+  }
+}
+
+.#{$grommet-namespace}animate__child--slide-up {
+  &.#{$grommet-namespace}animate__child--inactive,
+  &.#{$grommet-namespace}animate__child--leave {
+    @include slide-animation(0, translateY(50%));
+  }
+}
+
+.#{$grommet-namespace}animate__child--slide-down {
+  &.#{$grommet-namespace}animate__child--inactive,
+  &.#{$grommet-namespace}animate__child--leave {
+    @include slide-animation(0, translateY(-50%));
+  }
+}
+
+.#{$grommet-namespace}animate__child--slide-left {
+  &.#{$grommet-namespace}animate__child--inactive,
+  &.#{$grommet-namespace}animate__child--leave {
+    @include slide-animation(0, translateX(50%));
+  }
+}
+
+.#{$grommet-namespace}animate__child--slide-right {
+  &.#{$grommet-namespace}animate__child--inactive,
+  &.#{$grommet-namespace}animate__child--leave {
+    @include slide-animation(0, translateX(-50%));
+  }
+}
+
+@keyframes jiggle {
+  0%,
+  100% {
+    transform: translateX(0%);
+  }
+
+  25% {
+    transform: translateX(-0.2%);
+  }
+
+  75% {
+    transform: translateX(0.2%);
+  }
+}
+
+.#{$grommet-namespace}animate__child--jiggle {
+  &.#{$grommet-namespace}animate__child--enter,
+  &.#{$grommet-namespace}animate__child--leave {
+    animation: jiggle 0.2s infinite alternate ease-in-out;
+  }
+}
