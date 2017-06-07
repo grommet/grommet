@@ -109,6 +109,7 @@ exports[`Select inline + multiple 1`] = `
       <label
         aria-label="one"
         className="grommetux-check-box"
+        htmlFor="undefined-one"
       >
         <span>
           <input
@@ -136,12 +137,11 @@ exports[`Select inline + multiple 1`] = `
             </svg>
           </span>
         </span>
-        <label
+        <span
           className="grommetux-check-box__label"
-          htmlFor="undefined-one"
         >
           one
-        </label>
+        </span>
       </label>
     </li>
     <li
@@ -151,6 +151,7 @@ exports[`Select inline + multiple 1`] = `
       <label
         aria-label="two"
         className="grommetux-check-box"
+        htmlFor="undefined-two"
       >
         <span>
           <input
@@ -178,12 +179,11 @@ exports[`Select inline + multiple 1`] = `
             </svg>
           </span>
         </span>
-        <label
+        <span
           className="grommetux-check-box__label"
-          htmlFor="undefined-two"
         >
           two
-        </label>
+        </span>
       </label>
     </li>
   </ol>

@@ -4,6 +4,7 @@ exports[`CheckBox has correct checked=true rendering 1`] = `
 <label
   aria-label="Test CheckBox"
   className="grommetux-check-box"
+  htmlFor="test"
 >
   <span>
     <input
@@ -31,12 +32,11 @@ exports[`CheckBox has correct checked=true rendering 1`] = `
       </svg>
     </span>
   </span>
-  <label
+  <span
     className="grommetux-check-box__label"
-    htmlFor="test"
   >
     Test CheckBox
-  </label>
+  </span>
 </label>
 `;
 
@@ -44,6 +44,7 @@ exports[`CheckBox has correct className rendering 1`] = `
 <label
   aria-label="Test CheckBox"
   className="grommetux-check-box testing"
+  htmlFor="test"
 >
   <span>
     <input
@@ -71,12 +72,11 @@ exports[`CheckBox has correct className rendering 1`] = `
       </svg>
     </span>
   </span>
-  <label
+  <span
     className="grommetux-check-box__label"
-    htmlFor="test"
   >
     Test CheckBox
-  </label>
+  </span>
 </label>
 `;
 
@@ -84,6 +84,7 @@ exports[`CheckBox has correct default options 1`] = `
 <label
   aria-label="Test CheckBox"
   className="grommetux-check-box"
+  htmlFor="test"
 >
   <span>
     <input
@@ -111,12 +112,11 @@ exports[`CheckBox has correct default options 1`] = `
       </svg>
     </span>
   </span>
-  <label
+  <span
     className="grommetux-check-box__label"
-    htmlFor="test"
   >
     Test CheckBox
-  </label>
+  </span>
 </label>
 `;
 
@@ -124,6 +124,7 @@ exports[`CheckBox has correct disabled=true rendering 1`] = `
 <label
   aria-label="Test CheckBox"
   className="grommetux-check-box grommetux-check-box--disabled"
+  htmlFor="test"
 >
   <span>
     <input
@@ -151,12 +152,11 @@ exports[`CheckBox has correct disabled=true rendering 1`] = `
       </svg>
     </span>
   </span>
-  <label
+  <span
     className="grommetux-check-box__label"
-    htmlFor="test"
   >
     Test CheckBox
-  </label>
+  </span>
 </label>
 `;
 
@@ -164,13 +164,13 @@ exports[`CheckBox has correct reverse=true rendering 1`] = `
 <label
   aria-label="Test CheckBox"
   className="grommetux-check-box grommetux-check-box--reverse"
+  htmlFor="test"
 >
-  <label
+  <span
     className="grommetux-check-box__label"
-    htmlFor="test"
   >
     Test CheckBox
-  </label>
+  </span>
   <span>
     <input
       checked={undefined}
@@ -204,6 +204,7 @@ exports[`CheckBox has correct toggle=true rendering 1`] = `
 <label
   aria-label="Test CheckBox"
   className="grommetux-check-box grommetux-check-box--toggle"
+  htmlFor="test"
 >
   <span>
     <input
@@ -231,11 +232,10 @@ exports[`CheckBox has correct toggle=true rendering 1`] = `
       </svg>
     </span>
   </span>
-  <label
+  <span
     className="grommetux-check-box__label"
-    htmlFor="test"
   >
     Test CheckBox
-  </label>
+  </span>
 </label>
 `;
