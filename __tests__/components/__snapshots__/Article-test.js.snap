@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Article has correct default options 1`] = `
 <article
   className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-article"
@@ -8,9 +10,11 @@ exports[`Article has correct default options 1`] = `
   onTouchStart={[Function]}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   <h1
-    className="grommetux-heading">
+    className="grommetux-heading"
+  >
     Title
   </h1>
   <section
@@ -19,7 +23,8 @@ exports[`Article has correct default options 1`] = `
     onClick={undefined}
     role={undefined}
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <h2>
       Heading
     </h2>
@@ -29,7 +34,8 @@ exports[`Article has correct default options 1`] = `
   </section>
   <a
     aria-hidden="true"
-    tabIndex="-1" />
+    tabIndex="-1"
+  />
 </article>
 `;
 
@@ -43,9 +49,11 @@ exports[`Article renders a classname 1`] = `
   onTouchStart={[Function]}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   <h1
-    className="grommetux-heading">
+    className="grommetux-heading"
+  >
     Title
   </h1>
   <section
@@ -54,7 +62,8 @@ exports[`Article renders a classname 1`] = `
     onClick={undefined}
     role={undefined}
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <h2>
       Heading
     </h2>
@@ -64,7 +73,8 @@ exports[`Article renders a classname 1`] = `
   </section>
   <a
     aria-hidden="true"
-    tabIndex="-1" />
+    tabIndex="-1"
+  />
 </article>
 `;
 
@@ -81,9 +91,11 @@ exports[`Article renders microdata properties 1`] = `
   onTouchStart={[Function]}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   <h1
-    className="grommetux-heading">
+    className="grommetux-heading"
+  >
     Title
   </h1>
   <section
@@ -92,7 +104,8 @@ exports[`Article renders microdata properties 1`] = `
     onClick={undefined}
     role={undefined}
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <h2>
       Heading
     </h2>
@@ -102,6 +115,7 @@ exports[`Article renders microdata properties 1`] = `
   </section>
   <a
     aria-hidden="true"
-    tabIndex="-1" />
+    tabIndex="-1"
+  />
 </article>
 `;

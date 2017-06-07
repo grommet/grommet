@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Menu has correct default options 1`] = `
 <nav
   className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-menu grommetux-menu--column grommetux-menu--inline"
@@ -5,18 +7,22 @@ exports[`Menu has correct default options 1`] = `
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   <a
     className="active"
-    href="#">
+    href="#"
+  >
     First
   </a>
   <a
-    href="#">
+    href="#"
+  >
     Second
   </a>
   <a
-    href="#">
+    href="#"
+  >
     Third
   </a>
 </nav>

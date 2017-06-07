@@ -1,11 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Tabs has correct activeIndex=0 rendering 1`] = `
 <div
-  role="tablist">
+  role="tablist"
+>
   <ul
-    className="grommetux-tabs grommetux-tabs--justify-center grommetux-tabs--responsive">
+    className="grommetux-tabs grommetux-tabs--justify-center grommetux-tabs--responsive"
+  >
     <li
       className="grommetux-tab grommetux-tab--active"
-      id="tab-0">
+      id="tab-0"
+    >
       <button
         aria-expanded={true}
         aria-label={undefined}
@@ -19,17 +24,20 @@ exports[`Tabs has correct activeIndex=0 rendering 1`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         role="tab"
-        type="button">
+        type="button"
+      >
         <label
           className="grommetux-tab__label"
-          htmlFor="tab-0">
+          htmlFor="tab-0"
+        >
           Tab Title
         </label>
       </button>
     </li>
     <li
       className="grommetux-tab"
-      id="tab-1">
+      id="tab-1"
+    >
       <button
         aria-expanded={false}
         aria-label={undefined}
@@ -43,10 +51,12 @@ exports[`Tabs has correct activeIndex=0 rendering 1`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         role="tab"
-        type="button">
+        type="button"
+      >
         <label
           className="grommetux-tab__label"
-          htmlFor="tab-1">
+          htmlFor="tab-1"
+        >
           Tab Title 2
         </label>
       </button>
@@ -54,7 +64,8 @@ exports[`Tabs has correct activeIndex=0 rendering 1`] = `
   </ul>
   <div
     aria-label="Tab Contents"
-    role="tabpanel">
+    role="tabpanel"
+  >
     <h1>
       test
     </h1>
@@ -64,12 +75,15 @@ exports[`Tabs has correct activeIndex=0 rendering 1`] = `
 
 exports[`Tabs has correct activeIndex=0 rendering 2`] = `
 <div
-  role="tablist">
+  role="tablist"
+>
   <ul
-    className="grommetux-tabs grommetux-tabs--justify-center grommetux-tabs--responsive">
+    className="grommetux-tabs grommetux-tabs--justify-center grommetux-tabs--responsive"
+  >
     <li
       className="grommetux-tab"
-      id="tab-0">
+      id="tab-0"
+    >
       <button
         aria-expanded={false}
         aria-label={undefined}
@@ -83,17 +97,20 @@ exports[`Tabs has correct activeIndex=0 rendering 2`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         role="tab"
-        type="button">
+        type="button"
+      >
         <label
           className="grommetux-tab__label"
-          htmlFor="tab-0">
+          htmlFor="tab-0"
+        >
           Tab Title
         </label>
       </button>
     </li>
     <li
       className="grommetux-tab grommetux-tab--active"
-      id="tab-1">
+      id="tab-1"
+    >
       <button
         aria-expanded={true}
         aria-label={undefined}
@@ -107,10 +124,12 @@ exports[`Tabs has correct activeIndex=0 rendering 2`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         role="tab"
-        type="button">
+        type="button"
+      >
         <label
           className="grommetux-tab__label"
-          htmlFor="tab-1">
+          htmlFor="tab-1"
+        >
           Tab Title 2
         </label>
       </button>
@@ -118,7 +137,8 @@ exports[`Tabs has correct activeIndex=0 rendering 2`] = `
   </ul>
   <div
     aria-label="Tab Contents"
-    role="tabpanel">
+    role="tabpanel"
+  >
     <h1>
       test 2
     </h1>
@@ -128,12 +148,15 @@ exports[`Tabs has correct activeIndex=0 rendering 2`] = `
 
 exports[`Tabs has correct default options 1`] = `
 <div
-  role="tablist">
+  role="tablist"
+>
   <ul
-    className="grommetux-tabs grommetux-tabs--justify-center grommetux-tabs--responsive">
+    className="grommetux-tabs grommetux-tabs--justify-center grommetux-tabs--responsive"
+  >
     <li
       className="grommetux-tab grommetux-tab--active"
-      id="tab-0">
+      id="tab-0"
+    >
       <button
         aria-expanded={true}
         aria-label={undefined}
@@ -147,17 +170,20 @@ exports[`Tabs has correct default options 1`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         role="tab"
-        type="button">
+        type="button"
+      >
         <label
           className="grommetux-tab__label"
-          htmlFor="tab-0">
+          htmlFor="tab-0"
+        >
           Tab Title
         </label>
       </button>
     </li>
     <li
       className="grommetux-tab"
-      id="tab-1">
+      id="tab-1"
+    >
       <button
         aria-expanded={false}
         aria-label={undefined}
@@ -171,10 +197,12 @@ exports[`Tabs has correct default options 1`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         role="tab"
-        type="button">
+        type="button"
+      >
         <label
           className="grommetux-tab__label"
-          htmlFor="tab-1">
+          htmlFor="tab-1"
+        >
           Tab Title 2
         </label>
       </button>
@@ -182,7 +210,8 @@ exports[`Tabs has correct default options 1`] = `
   </ul>
   <div
     aria-label="Tab Contents"
-    role="tabpanel">
+    role="tabpanel"
+  >
     <h1>
       test
     </h1>
@@ -192,12 +221,15 @@ exports[`Tabs has correct default options 1`] = `
 
 exports[`Tabs has correct default options 2`] = `
 <div
-  role="tablist">
+  role="tablist"
+>
   <ul
-    className="grommetux-tabs grommetux-tabs--justify-center grommetux-tabs--responsive">
+    className="grommetux-tabs grommetux-tabs--justify-center grommetux-tabs--responsive"
+  >
     <li
       className="grommetux-tab"
-      id="tab-0">
+      id="tab-0"
+    >
       <button
         aria-expanded={false}
         aria-label={undefined}
@@ -211,17 +243,20 @@ exports[`Tabs has correct default options 2`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         role="tab"
-        type="button">
+        type="button"
+      >
         <label
           className="grommetux-tab__label"
-          htmlFor="tab-0">
+          htmlFor="tab-0"
+        >
           Tab Title
         </label>
       </button>
     </li>
     <li
       className="grommetux-tab grommetux-tab--active"
-      id="tab-1">
+      id="tab-1"
+    >
       <button
         aria-expanded={true}
         aria-label={undefined}
@@ -235,10 +270,12 @@ exports[`Tabs has correct default options 2`] = `
         onMouseDown={[Function]}
         onMouseUp={[Function]}
         role="tab"
-        type="button">
+        type="button"
+      >
         <label
           className="grommetux-tab__label"
-          htmlFor="tab-1">
+          htmlFor="tab-1"
+        >
           Tab Title 2
         </label>
       </button>
@@ -246,7 +283,8 @@ exports[`Tabs has correct default options 2`] = `
   </ul>
   <div
     aria-label="Tab Contents"
-    role="tabpanel">
+    role="tabpanel"
+  >
     <h1>
       test 2
     </h1>

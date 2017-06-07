@@ -507,16 +507,15 @@
   position: relative;
   max-width: 100%;
   width: 100vw;
+  height: 100vh;
+  max-height: 100%;
+  overflow: auto;
 
-  @include media-query(palm) {
-    min-height: 100vh;
-    height: 100%;
-  }
-
-  @include media-query(lap-and-up) {
-    height: 100vh;
-    max-height: 100%;
-    overflow: auto;
+  &.#{$grommet-namespace}box--full-responsive {
+    @include media-query(palm) {
+      min-height: 100vh;
+      height: 100%;
+    }
   }
 
   // // IE11 specific fix for aligning content vertically centered
@@ -532,15 +531,15 @@
 }
 
 .#{$grommet-namespace}box--full-vertical {
-  @include media-query(palm) {
-    min-height: 100vh;
-    height: 100%;
-  }
+  height: 100vh;
+  max-height: 100%;
+  overflow: auto;
 
-  @include media-query(lap-and-up) {
-    height: 100vh;
-    max-height: 100%;
-    overflow: auto;
+  &.#{$grommet-namespace}box--full-responsive {
+    @include media-query(palm) {
+      min-height: 100vh;
+      height: 100%;
+    }
   }
 
   // // IE11 specific fix for aligning content vertically centered

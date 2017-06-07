@@ -1,8 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Table has correct default options 1`] = `
 <div
-  className="grommetux-table">
+  className="grommetux-table"
+>
   <table
-    className="grommetux-table__table">
+    className="grommetux-table__table"
+  >
     <tbody>
       <tr>
         <td>
@@ -35,18 +39,22 @@ exports[`Table has correct default options 1`] = `
 
 exports[`Table has mismatched headers and body columns 1`] = `
 <div
-  className="grommetux-table">
+  className="grommetux-table"
+>
   <table
-    className="grommetux-table__table">
+    className="grommetux-table__table"
+  >
     <div
       className="grommetux-table"
       labels={
         Array [
           "one",
         ]
-      }>
+      }
+    >
       <table
-        className="grommetux-table__table" />
+        className="grommetux-table__table"
+      />
     </div>
     <tbody>
       <tr>

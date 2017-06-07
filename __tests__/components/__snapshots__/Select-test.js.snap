@@ -1,12 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Select accepts initial value 1`] = `
 <div
   className="grommetux-select"
-  onClick={[Function]}>
+  onClick={[Function]}
+>
   <input
     className="grommetux-input grommetux-select__input"
     placeholder={undefined}
     readOnly={true}
-    value="one" />
+    value="one"
+  />
   <button
     aria-label="Select Icon"
     className="grommetux-button grommetux-button--plain grommetux-select__control"
@@ -17,9 +21,11 @@ exports[`Select accepts initial value 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    type="button">
+    type="button"
+  >
     <span
-      className="grommetux-button__icon">
+      className="grommetux-button__icon"
+    >
       <svg
         aria-label="caret-down"
         className="grommetux-control-icon grommetux-control-icon-caret-down grommetux-control-icon--responsive"
@@ -27,12 +33,14 @@ exports[`Select accepts initial value 1`] = `
         role="img"
         version="1.1"
         viewBox="0 0 24 24"
-        width="24px">
+        width="24px"
+      >
         <polygon
           fill="none"
           points="22 8 12 20 2 8"
           stroke="#000"
-          strokeWidth="2" />
+          strokeWidth="2"
+        />
       </svg>
     </span>
   </button>
@@ -42,12 +50,14 @@ exports[`Select accepts initial value 1`] = `
 exports[`Select has correct default options 1`] = `
 <div
   className="grommetux-select"
-  onClick={[Function]}>
+  onClick={[Function]}
+>
   <input
     className="grommetux-input grommetux-select__input"
     placeholder={undefined}
     readOnly={true}
-    value="" />
+    value=""
+  />
   <button
     aria-label="Select Icon"
     className="grommetux-button grommetux-button--plain grommetux-select__control"
@@ -58,9 +68,11 @@ exports[`Select has correct default options 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    type="button">
+    type="button"
+  >
     <span
-      className="grommetux-button__icon">
+      className="grommetux-button__icon"
+    >
       <svg
         aria-label="caret-down"
         className="grommetux-control-icon grommetux-control-icon-caret-down grommetux-control-icon--responsive"
@@ -68,12 +80,14 @@ exports[`Select has correct default options 1`] = `
         role="img"
         version="1.1"
         viewBox="0 0 24 24"
-        width="24px">
+        width="24px"
+      >
         <polygon
           fill="none"
           points="22 8 12 20 2 8"
           stroke="#000"
-          strokeWidth="2" />
+          strokeWidth="2"
+        />
       </svg>
     </span>
   </button>
@@ -82,17 +96,21 @@ exports[`Select has correct default options 1`] = `
 
 exports[`Select inline + multiple 1`] = `
 <div
-  className="grommetux-select grommetux-select--inline">
+  className="grommetux-select grommetux-select--inline"
+>
   <ol
     className="grommetux-select__options"
-    onClick={undefined}>
+    onClick={undefined}
+  >
     <li
       className="grommetux-select__option grommetux-select__option--selected"
-      onClick={undefined}>
+      onClick={undefined}
+    >
       <label
         aria-label="one"
         className="grommetux-check-box"
-        htmlFor="undefined-one">
+        htmlFor="undefined-one"
+      >
         <span>
           <input
             checked={true}
@@ -102,32 +120,39 @@ exports[`Select inline + multiple 1`] = `
             name={undefined}
             onChange={[Function]}
             tabIndex="0"
-            type="checkbox" />
+            type="checkbox"
+          />
           <span
-            className="grommetux-check-box__control">
+            className="grommetux-check-box__control"
+          >
             <svg
               className="grommetux-check-box__control-check"
               preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 24 24">
+              viewBox="0 0 24 24"
+            >
               <path
                 d="M6,11.3 L10.3,16 L18,6.2"
-                fill="none" />
+                fill="none"
+              />
             </svg>
           </span>
         </span>
         <span
-          className="grommetux-check-box__label">
+          className="grommetux-check-box__label"
+        >
           one
         </span>
       </label>
     </li>
     <li
       className="grommetux-select__option"
-      onClick={undefined}>
+      onClick={undefined}
+    >
       <label
         aria-label="two"
         className="grommetux-check-box"
-        htmlFor="undefined-two">
+        htmlFor="undefined-two"
+      >
         <span>
           <input
             checked={false}
@@ -137,21 +162,26 @@ exports[`Select inline + multiple 1`] = `
             name={undefined}
             onChange={[Function]}
             tabIndex="0"
-            type="checkbox" />
+            type="checkbox"
+          />
           <span
-            className="grommetux-check-box__control">
+            className="grommetux-check-box__control"
+          >
             <svg
               className="grommetux-check-box__control-check"
               preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 24 24">
+              viewBox="0 0 24 24"
+            >
               <path
                 d="M6,11.3 L10.3,16 L18,6.2"
-                fill="none" />
+                fill="none"
+              />
             </svg>
           </span>
         </span>
         <span
-          className="grommetux-check-box__label">
+          className="grommetux-check-box__label"
+        >
           two
         </span>
       </label>
@@ -162,46 +192,58 @@ exports[`Select inline + multiple 1`] = `
 
 exports[`Select inline 1`] = `
 <div
-  className="grommetux-select grommetux-select--inline">
+  className="grommetux-select grommetux-select--inline"
+>
   <ol
     className="grommetux-select__options"
-    onClick={undefined}>
+    onClick={undefined}
+  >
     <li
       className="grommetux-select__option grommetux-select__option--selected"
-      onClick={undefined}>
+      onClick={undefined}
+    >
       <label
-        className="grommetux-radio-button">
+        className="grommetux-radio-button"
+      >
         <input
           checked={true}
           className="grommetux-radio-button__input"
           id="undefined-one"
           onChange={[Function]}
-          type="radio" />
+          type="radio"
+        />
         <span
-          className="grommetux-radio-button__control" />
+          className="grommetux-radio-button__control"
+        />
         <label
           className="grommetux-radio-button__label"
-          htmlFor="undefined-one">
+          htmlFor="undefined-one"
+        >
           one
         </label>
       </label>
     </li>
     <li
       className="grommetux-select__option"
-      onClick={undefined}>
+      onClick={undefined}
+    >
       <label
-        className="grommetux-radio-button">
+        className="grommetux-radio-button"
+      >
         <input
           checked={false}
           className="grommetux-radio-button__input"
           id="undefined-two"
           onChange={[Function]}
-          type="radio" />
+          type="radio"
+        />
         <span
-          className="grommetux-radio-button__control" />
+          className="grommetux-radio-button__control"
+        />
         <label
           className="grommetux-radio-button__label"
-          htmlFor="undefined-two">
+          htmlFor="undefined-two"
+        >
           two
         </label>
       </label>

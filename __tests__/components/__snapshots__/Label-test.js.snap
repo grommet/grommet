@@ -1,8 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Label has correct default options 1`] = `
 <label
   className="grommetux-label grommetux-label--margin-medium grommetux-label--medium"
   data-flavor="coconut"
-  htmlFor={undefined}>
+  htmlFor={undefined}
+>
   Testing
 </label>
 `;
@@ -10,7 +13,8 @@ exports[`Label has correct default options 1`] = `
 exports[`Label has correct size="small" and margin="large" rendering 1`] = `
 <label
   className="grommetux-label grommetux-label--margin-large grommetux-label--small"
-  htmlFor={undefined}>
+  htmlFor={undefined}
+>
   Testing
 </label>
 `;
@@ -18,7 +22,8 @@ exports[`Label has correct size="small" and margin="large" rendering 1`] = `
 exports[`Label has correct uppercase=true rendering 1`] = `
 <label
   className="grommetux-label grommetux-label--uppercase grommetux-label--margin-medium grommetux-label--medium"
-  htmlFor={undefined}>
+  htmlFor={undefined}
+>
   Testing
 </label>
 `;

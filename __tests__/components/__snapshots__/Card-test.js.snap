@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Card has correct default options 1`] = `
 <div
   className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--wrap grommetux-box--width-medium grommetux-box--size grommetux-card"
@@ -5,7 +7,8 @@ exports[`Card has correct default options 1`] = `
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   <div
     className="grommetux-box grommetux-box--direction-column grommetux-box--justify-center grommetux-box--align-center grommetux-box--responsive grommetux-box--basis-small grommetux-box--pad-none grommetux-box--flex-off grommetux-card__thumbnail"
     id={undefined}
@@ -17,21 +20,25 @@ exports[`Card has correct default options 1`] = `
         "backgroundSize": "cover",
       }
     }
-    tabIndex={undefined} />
+    tabIndex={undefined}
+  />
   <div
     className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-medium grommetux-card__content"
     id={undefined}
     onClick={undefined}
     role={undefined}
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <label
       className="grommetux-label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
-      htmlFor={undefined}>
+      htmlFor={undefined}
+    >
       Featured Post
     </label>
     <h2
-      className="grommetux-heading grommetux-heading--strong">
+      className="grommetux-heading grommetux-heading--strong"
+    >
       The Key Steps to Reducing Software Spend
     </h2>
   </div>
@@ -45,17 +52,20 @@ exports[`Card renders a header with the set size 1`] = `
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   <div
     className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-medium grommetux-card__content"
     id={undefined}
     onClick={undefined}
     role={undefined}
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <label
       className="grommetux-label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
-      htmlFor={undefined}>
+      htmlFor={undefined}
+    >
       Hello from Grommet
     </label>
   </div>
@@ -69,17 +79,20 @@ exports[`Card renders correctly when reverse 1`] = `
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   <div
     className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-medium grommetux-card__content"
     id={undefined}
     onClick={undefined}
     role={undefined}
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <label
       className="grommetux-label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
-      htmlFor={undefined}>
+      htmlFor={undefined}
+    >
       Hello from Grommet
     </label>
   </div>
@@ -93,17 +106,20 @@ exports[`Card renders correctly when the direction is set to row 1`] = `
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   <div
     className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--basis-2-3 grommetux-box--pad-medium grommetux-card__content"
     id={undefined}
     onClick={undefined}
     role={undefined}
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <label
       className="grommetux-label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
-      htmlFor={undefined}>
+      htmlFor={undefined}
+    >
       Hello from Grommet
     </label>
   </div>
@@ -117,17 +133,20 @@ exports[`Card renders correctly when the headingStrong is false 1`] = `
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   <div
     className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-medium grommetux-card__content"
     id={undefined}
     onClick={undefined}
     role={undefined}
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <label
       className="grommetux-label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
-      htmlFor={undefined}>
+      htmlFor={undefined}
+    >
       Hello from Grommet
     </label>
   </div>
@@ -141,13 +160,15 @@ exports[`Card renders correctly with a non-default colorIndex 1`] = `
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   <div
     className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-medium grommetux-card__content"
     id={undefined}
     onClick={undefined}
     role={undefined}
     style={Object {}}
-    tabIndex={undefined} />
+    tabIndex={undefined}
+  />
 </div>
 `;
