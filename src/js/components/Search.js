@@ -295,7 +295,7 @@ export default class Search extends Component {
           suggestion: suggestion
         }, true);
       }
-    } else {
+    } else if (onSelect) {
       onSelect({
         target: this._inputRef || this._controlRef
       }, false);

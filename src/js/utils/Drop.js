@@ -103,10 +103,10 @@ DropContents.childContextTypes = {
 };
 
 const _normalizeOptions = (options) => {
-  options = { ...options };
+  let opts = { ...options };
   // normalize for older interface that just had align content
   if (options.top || options.bottom || options.left || options.right) {
-    options = { align: options };
+    opts = { align: { ...options } };
   }
   // validate align
   if (options && options.align && options.align.top &&
@@ -135,15 +135,15 @@ const _normalizeOptions = (options) => {
       "' supplied to Drop," +
       "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
   }
-  options.align = options.align || {};
+  opts.align = { ...opts.align } || {};
   if (! options.align.top && ! options.align.bottom) {
-    options.align.top = "top";
+    opts.align.top = "top";
   }
   if (! options.align.left && ! options.align.right) {
-    options.align.left = "left";
+    opts.align.left = "left";
   }
-  options.responsive = options.responsive !== false ? true : options.responsive;
-  return options;
+  opts.responsive = options.responsive !== false ? true : options.responsive;
+  return opts;
 };
 
 // Drop options:
@@ -162,8 +162,8 @@ const _normalizeOptions = (options) => {
 
 export default class Drop {
 
-  constructor (control, content, options) {
-    options = _normalizeOptions(options);
+  constructor (control, content, opts) {
+    const options = _normalizeOptions(opts);
     const { context, focusControl } = options;
 
     // bind functions to instance
