@@ -11,7 +11,7 @@ exports[`Carousel has correct default options 1`] = `
   role="group"
 >
   <div
-    className="grommetux-carousel__static-track"
+    className="grommetux-carousel__track"
     style={
       Object {
         "marginLeft": -0,
@@ -194,7 +194,7 @@ exports[`Carousel renders class name properties 1`] = `
   role="group"
 >
   <div
-    className="grommetux-carousel__static-track"
+    className="grommetux-carousel__track"
     style={
       Object {
         "marginLeft": -0,
@@ -380,7 +380,7 @@ exports[`Carousel renders microdata properties 1`] = `
   role="group"
 >
   <div
-    className="grommetux-carousel__static-track"
+    className="grommetux-carousel__track"
     style={
       Object {
         "marginLeft": -0,

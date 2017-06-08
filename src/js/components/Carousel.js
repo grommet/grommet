@@ -34,10 +34,10 @@ export default class Carousel extends Component {
     this.state = {
       activeIndex: props.activeIndex || 0,
       hideControls: ! props.persistentNav,
-      priorIndex: 0,
       sequence: 1,
       width: 0,
       slide: false,
+      startIndex: props.activeIndex,
       renderAnimation: false
     };
   }
@@ -150,11 +150,6 @@ export default class Carousel extends Component {
   _setSlideInterval () {
     const { autoplaySpeed } = this.props;
     clearInterval(this._slideAnimation);
-    if( !this.state.renderAnimation) {
-      this.setState({
-        renderAnimation: true
-      });
-    }
     this._slideAnimation = setInterval(function () {
       const { children, infinite } = this.props;
       const { activeIndex } = this.state;
@@ -232,13 +227,6 @@ export default class Carousel extends Component {
     const numSlides = children.length;
     const index = (activeIndex + numSlides - 1) % numSlides;
 
-    //At first user interaction we change the flag to allow animations
-    if( !this.state.renderAnimation) {
-      this.setState({
-        renderAnimation: true
-      });
-    }
-
     if(! this.props.hasOwnProperty('activeIndex')) {
       this.setState({
         activeIndex: index
@@ -256,12 +244,6 @@ export default class Carousel extends Component {
     const numSlides = children.length;
     const index = (activeIndex + 1) % numSlides;
 
-    //At first user interaction we change the flag to allow animations
-    if( !this.state.renderAnimation) {
-      this.setState({
-        renderAnimation: true
-      });
-    }
 
     if(! this.props.hasOwnProperty('activeIndex')) {
       this.setState({
@@ -367,14 +349,19 @@ export default class Carousel extends Component {
     }, this);
 
     const carouselMessage = a11yTitle || Intl.getMessage(intl, 'Carousel');
+    this.state.renderAnimation = this.state.renderAnimation ||
+      this.props.activeIndex !== this.state.startIndex;
+    const trackClasses = classnames(`${CLASS_ROOT}__track`,{
+      [`${CLASS_ROOT}__track--animate`]:
+      this.state.renderAnimation
+    });
     return (
       <div ref={ref => this.carouselRef = ref} {...restProps}
         className={classes} role='group' aria-label={carouselMessage}
         onFocus={this._stopAutoplay} onBlur={this._startAutoplay}
         onMouseOver={this._stopAutoplay} onMouseOut={this._startAutoplay}>
         <div
-          className={this.state.renderAnimation ?
-            `${CLASS_ROOT}__track` : `${CLASS_ROOT}__static-track`}
+          className={trackClasses}
           style={{
             width: (trackWidth && trackWidth > 0) ? trackWidth : '',
             marginLeft: - trackOffset,
