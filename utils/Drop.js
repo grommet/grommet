@@ -154,10 +154,10 @@ DropContents.childContextTypes = {
 };
 
 var _normalizeOptions = function _normalizeOptions(options) {
-  options = _extends({}, options);
+  var opts = _extends({}, options);
   // normalize for older interface that just had align content
   if (options.top || options.bottom || options.left || options.right) {
-    options = { align: options };
+    opts = { align: _extends({}, options) };
   }
   // validate align
   if (options && options.align && options.align.top && VERTICAL_ALIGN_OPTIONS.indexOf(options.align.top) === -1) {
@@ -172,15 +172,15 @@ var _normalizeOptions = function _normalizeOptions(options) {
   if (options.align && options.align.right && HORIZONTAL_ALIGN_OPTIONS.indexOf(options.align.right) === -1) {
     console.warn("Warning: Invalid align.right value '" + options.align.right + "' supplied to Drop," + "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
   }
-  options.align = options.align || {};
+  opts.align = _extends({}, opts.align) || {};
   if (!options.align.top && !options.align.bottom) {
-    options.align.top = "top";
+    opts.align.top = "top";
   }
   if (!options.align.left && !options.align.right) {
-    options.align.left = "left";
+    opts.align.left = "left";
   }
-  options.responsive = options.responsive !== false ? true : options.responsive;
-  return options;
+  opts.responsive = options.responsive !== false ? true : options.responsive;
+  return opts;
 };
 
 // Drop options:
@@ -198,13 +198,12 @@ var _normalizeOptions = function _normalizeOptions(options) {
 //
 
 var Drop = function () {
-  function Drop(control, content, options) {
+  function Drop(control, content, opts) {
     _classCallCheck(this, Drop);
 
-    options = _normalizeOptions(options);
-    var _options = options,
-        context = _options.context,
-        focusControl = _options.focusControl;
+    var options = _normalizeOptions(opts);
+    var context = options.context,
+        focusControl = options.focusControl;
 
     // bind functions to instance
 
