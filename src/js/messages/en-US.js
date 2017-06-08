@@ -31,6 +31,7 @@ export default {
   Clear: 'Clear',
   Cleared: 'Cleared',
   Close: 'Close',
+  'Close  Layer': 'Close Layer',
   'Close Menu': 'Close Menu',
   Completed: 'Completed',
   'Connects With': 'Connects With',
