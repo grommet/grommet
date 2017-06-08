@@ -6,6 +6,7 @@ exports[`DateTime has correct default options 1`] = `
 >
   <input
     className="grommetux-input grommetux-date-time__input"
+    disabled={false}
     onChange={[Function]}
     placeholder="M/D/YYYY h:mm a"
     value="4/7/2015 10:00 am"
@@ -53,6 +54,7 @@ exports[`DateTime transfers arbitrary props 1`] = `
   <input
     className="grommetux-input grommetux-date-time__input"
     data-flavor="coconut"
+    disabled={false}
     onChange={[Function]}
     placeholder="M/D/YYYY h:mm a"
     value="4/7/2015 10:00 am"

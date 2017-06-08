@@ -273,7 +273,7 @@ export default class DateTime extends Component {
   }
 
   render () {
-    const { className, format, value, ...props } = this.props;
+    const { className, format, value, disabled, ...props } = this.props;
     delete props.onChange;
     delete props.step;
     const { dropActive, textValue } = this.state;
@@ -302,10 +302,11 @@ export default class DateTime extends Component {
       <div ref={(ref) => this._containerRef = ref} className={classes}>
         <input ref={(ref) => this._inputRef = ref} {...props}
           className={`${INPUT} ${CLASS_ROOT}__input`} placeholder={format}
-          value={inputValue || ''} onChange={this._onInputChange} />
+          value={inputValue || ''} onChange={this._onInputChange}
+          disabled={disabled} />
         <Button className={`${CLASS_ROOT}__control`} icon={<Icon />}
           a11yTitle={dateTimeIconMessage}
-          onClick={this._onControlClick} />
+          onClick={this._onControlClick} disabled={disabled} />
       </div>
     );
   }
@@ -319,7 +320,8 @@ DateTime.contextTypes = {
 
 DateTime.defaultProps = {
   format: 'M/D/YYYY h:mm a',
-  step: 1
+  step: 1,
+  disabled: false
 };
 
 DateTime.propTypes = {
@@ -328,5 +330,6 @@ DateTime.propTypes = {
   name: PropTypes.string,
   onChange: PropTypes.func,
   step: PropTypes.number,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  disabled: PropTypes.bool
 };
