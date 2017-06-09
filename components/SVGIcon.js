@@ -109,7 +109,7 @@ SVGIcon.defaultProps = {
 SVGIcon.propTypes = {
   a11yTitle: _propTypes2.default.string,
   colorIndex: _propTypes2.default.string,
-  size: _propTypes2.default.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
+  size: _propTypes2.default.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'huge']),
   type: _propTypes2.default.oneOf(['control', 'logo', 'status'])
 };
 module.exports = exports['default'];
