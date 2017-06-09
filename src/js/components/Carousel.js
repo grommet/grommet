@@ -243,7 +243,6 @@ export default class Carousel extends Component {
     const numSlides = children.length;
     const index = (activeIndex + 1) % numSlides;
 
-
     if(! this.props.hasOwnProperty('activeIndex')) {
       this.setState({
         activeIndex: index
