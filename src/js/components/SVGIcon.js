@@ -56,6 +56,7 @@ SVGIcon.defaultProps = {
 SVGIcon.propTypes = {
   a11yTitle: PropTypes.string,
   colorIndex: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
+  size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge',
+    'huge']),
   type: PropTypes.oneOf(['control', 'logo', 'status'])
 };
