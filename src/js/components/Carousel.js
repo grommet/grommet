@@ -33,12 +33,11 @@ export default class Carousel extends Component {
 
     this.state = {
       activeIndex: props.activeIndex || 0,
+      animate: typeof props.activeIndex == 'undefined',
       hideControls: ! props.persistentNav,
       sequence: 1,
       width: 0,
-      slide: false,
-      startIndex: props.activeIndex,
-      renderAnimation: false
+      slide: false
     };
   }
 
@@ -66,7 +65,7 @@ export default class Carousel extends Component {
     if ((nextProps.activeIndex || 0 === nextProps.activeIndex) &&
       this.state.activeIndex !== nextProps.activeIndex) {
       this.setState(
-        { activeIndex: nextProps.activeIndex },
+        { activeIndex: nextProps.activeIndex, animate: true },
         this._announce
       );
     }
@@ -349,11 +348,8 @@ export default class Carousel extends Component {
     }, this);
 
     const carouselMessage = a11yTitle || Intl.getMessage(intl, 'Carousel');
-    this.state.renderAnimation = this.state.renderAnimation ||
-      this.props.activeIndex !== this.state.startIndex;
     const trackClasses = classnames(`${CLASS_ROOT}__track`,{
-      [`${CLASS_ROOT}__track--animate`]:
-      this.state.renderAnimation
+      [`${CLASS_ROOT}__track--animate`]: this.state.animate
     });
     return (
       <div ref={ref => this.carouselRef = ref} {...restProps}
