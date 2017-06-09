@@ -16,9 +16,9 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _classnames3 = require('classnames');
+var _classnames4 = require('classnames');
 
-var _classnames4 = _interopRequireDefault(_classnames3);
+var _classnames5 = _interopRequireDefault(_classnames4);
 
 var _Box = require('./Box');
 
@@ -93,8 +93,8 @@ var Carousel = function (_Component) {
 
     _this.state = {
       activeIndex: props.activeIndex || 0,
+      animate: typeof props.activeIndex == 'undefined',
       hideControls: !props.persistentNav,
-      priorIndex: 0,
       sequence: 1,
       width: 0,
       slide: false
@@ -129,7 +129,7 @@ var Carousel = function (_Component) {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
       if ((nextProps.activeIndex || 0 === nextProps.activeIndex) && this.state.activeIndex !== nextProps.activeIndex) {
-        this.setState({ activeIndex: nextProps.activeIndex }, this._announce);
+        this.setState({ activeIndex: nextProps.activeIndex, animate: true }, this._announce);
       }
     }
   }, {
@@ -404,7 +404,7 @@ var Carousel = function (_Component) {
           width = _state.width;
       var intl = this.context.intl;
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT, _defineProperty({}, CLASS_ROOT + '--hide-controls', hideControls), className);
+      var classes = (0, _classnames5.default)(CLASS_ROOT, _defineProperty({}, CLASS_ROOT + '--hide-controls', hideControls), className);
 
       var trackWidth = width * children.length;
       var trackOffset = width * activeIndex;
@@ -420,7 +420,7 @@ var Carousel = function (_Component) {
 
       var controls = _react2.default.Children.map(children, function (child, index) {
         var active = index === activeIndex;
-        var controlClasses = (0, _classnames4.default)(CLASS_ROOT + '__control', _defineProperty({}, CLASS_ROOT + '__control--active', active));
+        var controlClasses = (0, _classnames5.default)(CLASS_ROOT + '__control', _defineProperty({}, CLASS_ROOT + '__control--active', active));
         var activateMessage = _Intl2.default.getMessage(intl, 'Activate');
         var slideNumberMessage = _Intl2.default.getMessage(intl, 'Slide Number', {
           slideNumber: index + 1
@@ -443,6 +443,7 @@ var Carousel = function (_Component) {
       }, this);
 
       var carouselMessage = a11yTitle || _Intl2.default.getMessage(intl, 'Carousel');
+      var trackClasses = (0, _classnames5.default)(CLASS_ROOT + '__track', _defineProperty({}, CLASS_ROOT + '__track--animate', this.state.animate));
       return _react2.default.createElement(
         'div',
         _extends({ ref: function ref(_ref) {
@@ -453,7 +454,8 @@ var Carousel = function (_Component) {
           onMouseOver: this._stopAutoplay, onMouseOut: this._startAutoplay }),
         _react2.default.createElement(
           'div',
-          { className: CLASS_ROOT + '__track',
+          {
+            className: trackClasses,
             style: {
               width: trackWidth && trackWidth > 0 ? trackWidth : '',
               marginLeft: -trackOffset,
