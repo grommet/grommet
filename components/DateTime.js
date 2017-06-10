@@ -174,39 +174,23 @@ var DateTime = function (_Component) {
   }, {
     key: '_onInputChange',
     value: function _onInputChange(event) {
-      var _props = this.props,
-          format = _props.format,
-          onChange = _props.onChange,
-          value = _props.value;
+      var onChange = this.props.onChange;
 
       var currentValue = event.target.value;
       // Always set textValue to what the user types.
       // If the user subsequently passes in a value property, we will
       // clear this textValue and use the new value.
       this.setState({ textValue: currentValue });
-      if (currentValue.length > 0) {
-        var date = (0, _moment2.default)(currentValue, format);
-        // Only notify if the value looks valid
-        if (date.isValid() && !date.parsingFlags().charsLeftOver) {
-          if (onChange) {
-            onChange(currentValue);
-          }
-        } else if (typeof value === 'string' && currentValue.length < value.length) {
-          // or if the user is removing characters
-          if (onChange) {
-            onChange(currentValue);
-          }
-        }
-      } else if (onChange) {
+      if (onChange) {
         onChange(currentValue);
       }
     }
   }, {
     key: '_notify',
     value: function _notify(date, checkClose) {
-      var _props2 = this.props,
-          format = _props2.format,
-          onChange = _props2.onChange;
+      var _props = this.props,
+          format = _props.format,
+          onChange = _props.onChange;
 
       if (onChange) {
         onChange(date);
@@ -353,9 +337,9 @@ var DateTime = function (_Component) {
   }, {
     key: '_renderDrop',
     value: function _renderDrop() {
-      var _props3 = this.props,
-          format = _props3.format,
-          step = _props3.step;
+      var _props2 = this.props,
+          format = _props2.format,
+          step = _props2.step;
       var current = this.state.current;
 
       return _react2.default.createElement(_DateTimeDrop2.default, { format: format, value: current,
@@ -366,11 +350,11 @@ var DateTime = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var _props4 = this.props,
-          className = _props4.className,
-          format = _props4.format,
-          value = _props4.value,
-          props = _objectWithoutProperties(_props4, ['className', 'format', 'value']);
+      var _props3 = this.props,
+          className = _props3.className,
+          format = _props3.format,
+          value = _props3.value,
+          props = _objectWithoutProperties(_props3, ['className', 'format', 'value']);
 
       delete props.onChange;
       delete props.step;
