@@ -311,7 +311,7 @@ export default class Select extends Component {
         return selectedMultiple;
       }
     } else if (option && typeof option === 'object') {
-      return option.value || option.label || '';
+      return option.label || option.value || '';
     } else {
       return (undefined === option || null === option) ? '' : option;
     }
