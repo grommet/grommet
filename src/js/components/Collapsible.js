@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import TransitionGroup from 'react-addons-transition-group';
+import TransitionGroup from 'react-transition-group/TransitionGroup';
 import classnames from 'classnames';
 import Box from './Box';
 
