@@ -18,7 +18,9 @@ export default class Image extends Component {
       {
         [`${CLASS_ROOT}--${size}`]: size,
         [`${CLASS_ROOT}--${fit}`]: fit,
-        [`${CLASS_ROOT}--full`]: (fit ? true : (typeof full === 'boolean' && full)),
+        [`${CLASS_ROOT}--full`]: (
+          fit ? true : (typeof full === 'boolean' && full)
+        ),
         [`${CLASS_ROOT}--full-${full}`]: typeof full === 'string',
         [`${CLASS_ROOT}--mask`]: mask,
         [`${CLASS_ROOT}--align-top`]: align && align.top,
