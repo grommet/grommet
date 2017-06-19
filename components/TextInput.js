@@ -388,7 +388,7 @@ var TextInput = function (_Component) {
         defaultValue: this._renderLabel(defaultValue),
         value: this._renderLabel(value),
         placeholder: placeHolder,
-        onChange: this._onInputChange, onFocus: this._onFocus,
+        onInput: this._onInputChange, onFocus: this._onFocus,
         onKeyDown: this._onInputKeyDown }));
     }
   }]);
