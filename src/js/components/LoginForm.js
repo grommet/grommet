@@ -103,7 +103,7 @@ export default class LoginForm extends Component {
           </div>
         );
       }
-      return null;
+      return undefined;
     });
 
     let titleNode;
