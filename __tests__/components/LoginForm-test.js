@@ -42,4 +42,24 @@ describe('LoginForm', () => {
     expect(onChangeFn.mock.calls.length).toBe(3);
     expect(onChangeFn.mock.calls[0][0].username).toBe('will@isthecoolest.com');
   });
+
+  it('renders errors properly with both string and JSX errors', () => {
+    const errors = [
+      'Some detailed error.',
+      (<span>
+        You need to use
+        <a href="#">some external resource</a>
+        to resolve this.
+      </span>)
+    ];
+    const component = renderer.create(
+      <LoginForm
+        onSubmit={() => {}}
+        errors={errors}
+      />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
 });
