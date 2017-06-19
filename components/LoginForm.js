@@ -166,15 +166,20 @@ var LoginForm = function (_Component) {
       var center = !align || 'stretch' === align || 'center' === align;
 
       var errorsNode = errors.map(function (error, index) {
-        var errorComponent = void 0;
         if (error) {
-          errorComponent = _react2.default.createElement(
+          var errorMessage = void 0;
+          if (_react2.default.isValidElement(error)) {
+            errorMessage = error;
+          } else {
+            errorMessage = _react2.default.createElement(_FormattedMessage2.default, { id: error, defaultMessage: error });
+          }
+          return _react2.default.createElement(
             'div',
             { key: index, className: 'error' },
-            _react2.default.createElement(_FormattedMessage2.default, { id: error, defaultMessage: error })
+            errorMessage
           );
         }
-        return errorComponent;
+        return undefined;
       });
 
       var titleNode = void 0;
@@ -266,7 +271,7 @@ LoginForm.propTypes = {
     username: _propTypes2.default.string,
     rememberMe: _propTypes2.default.bool
   }),
-  errors: _propTypes2.default.arrayOf(_propTypes2.default.string),
+  errors: _propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.node])),
   forgotPassword: _propTypes2.default.node,
   logo: _propTypes2.default.node,
   onSubmit: _propTypes2.default.func,
