@@ -18,6 +18,14 @@ describe('LoginForm', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('renders login button as disabled when onSubmit is undefined', () => {
+    const component = renderer.create(
+      <LoginForm />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it('onChange behaves properly', () => {
     const onChangeFn = jest.fn();
     const component = renderer.create(

@@ -165,7 +165,8 @@ export default class LoginForm extends Component {
           pad={{vertical: 'none', between: 'medium'}}>
           {rememberMeNode}
           <Button primary={true} fill={center}
-            type="submit" label={login}
+            type={onSubmit ? "submit" : "button"}
+            label={login}
             onClick={onSubmit ? this._onSubmit : undefined} />
           {forgotPassword}
         </Footer>
