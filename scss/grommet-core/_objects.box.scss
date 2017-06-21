@@ -580,6 +580,14 @@
   width: $size-large;
 }
 
+.#{$grommet-namespace}box--size-xlarge {
+  width: $size-xlarge;
+}
+
+.#{$grommet-namespace}box--size-xxlarge {
+  width: $size-xxlarge;
+}
+
 // not necessary since this is the default
 .#{$grommet-namespace}box--size-auto {
   width: auto;
