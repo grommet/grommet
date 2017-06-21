@@ -41,7 +41,7 @@
     "moment": "^2.13.0",
     "prop-types": "^15.5.8",
     "react": "^15.3.0",
-    "react-addons-transition-group": "^15.3.0",
+    "react-transition-group": "^1.1.1",
     "react-desc": "^1.0.0",
     "react-dom": "^15.3.0",
     "react-intl": "^2.2.3",
