@@ -20,9 +20,7 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactAddonsTransitionGroup = require('react-addons-transition-group');
-
-var _reactAddonsTransitionGroup2 = _interopRequireDefault(_reactAddonsTransitionGroup);
+var _reactTransitionGroup = require('react-transition-group');
 
 var _classnames = require('classnames');
 
@@ -120,7 +118,7 @@ var Collapsible = function (_Component2) {
   _createClass(Collapsible, [{
     key: 'render',
     value: function render() {
-      var Component = this.props.animate ? _reactAddonsTransitionGroup2.default : _Box2.default;
+      var Component = this.props.animate ? _reactTransitionGroup.TransitionGroup : _Box2.default;
       var collapseProps = _Props2.default.omit(this.props, Object.keys(Collapsible.propTypes));
 
       return _react2.default.createElement(

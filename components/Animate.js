@@ -20,9 +20,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactDom = require('react-dom');
 
-var _reactAddonsTransitionGroup = require('react-addons-transition-group');
-
-var _reactAddonsTransitionGroup2 = _interopRequireDefault(_reactAddonsTransitionGroup);
+var _reactTransitionGroup = require('react-transition-group');
 
 var _classnames = require('classnames');
 
@@ -301,7 +299,7 @@ var Animate = function (_Component2) {
       }
 
       return _react2.default.createElement(
-        _reactAddonsTransitionGroup2.default,
+        _reactTransitionGroup.TransitionGroup,
         _extends({}, props, { className: classes, component: component }),
         animateChildren
       );
