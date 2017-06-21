@@ -250,7 +250,8 @@ var LoginForm = function (_Component) {
             pad: { vertical: 'none', between: 'medium' } },
           rememberMeNode,
           _react2.default.createElement(_Button2.default, { primary: true, fill: center,
-            type: 'submit', label: login,
+            type: onSubmit ? "submit" : "button",
+            label: login,
             onClick: onSubmit ? this._onSubmit : undefined }),
           forgotPassword
         )
