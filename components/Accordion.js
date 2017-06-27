@@ -55,7 +55,8 @@ var Accordion = function (_Component) {
     _this._onPanelChange = _this._onPanelChange.bind(_this);
 
     var active = void 0;
-    if (Number.isInteger(_this.props.active)) {
+    // active in state should always be an array
+    if (typeof _this.props.active === 'number') {
       active = [_this.props.active];
     } else {
       active = _this.props.active || [];
