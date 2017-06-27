@@ -17,7 +17,7 @@ export default class Accordion extends Component {
     this._onPanelChange = this._onPanelChange.bind(this);
 
     let active;
-    if (Number.isInteger(this.props.active)) {
+    if (typeof this.props.active === 'number') {
       active = [this.props.active];
     } else {
       active = this.props.active || [];
