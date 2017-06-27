@@ -8,7 +8,8 @@
       // background-color comes from background-color-index
 
       .#{$grommet-namespace}notification__status {
-        .#{$grommet-namespace}status-icon__base {
+        .#{$grommet-namespace}status-icon__base,
+        .#{$grommet-namespace}status-icon__base .#{$grommet-namespace}status-icon__small {
           fill: $active-colored-text-color;
         }
 
