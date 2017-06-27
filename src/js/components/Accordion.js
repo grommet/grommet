@@ -17,6 +17,7 @@ export default class Accordion extends Component {
     this._onPanelChange = this._onPanelChange.bind(this);
 
     let active;
+    // active in state should always be an array
     if (typeof this.props.active === 'number') {
       active = [this.props.active];
     } else {
