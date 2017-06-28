@@ -14,10 +14,34 @@
 
 #{$dark-background} {
   color: $active-colored-text-color;
+
+  input::-webkit-input-placeholder {
+    color: $active-colored-text-color;
+  }
+
+  input::-moz-placeholder {
+    color: $active-colored-text-color;
+  }
+
+  input:-ms-input-placeholder {
+    color: $active-colored-text-color;
+  }
 }
 
 #{$light-background} {
   color: $text-color;
+
+  input::-webkit-input-placeholder {
+    color: $text-color;
+  }
+
+  input::-moz-placeholder {
+    color: $text-color;
+  }
+
+  input:-ms-input-placeholder {
+    color: $text-color;
+  }
 }
 
 .#{$grommet-namespace}background-color-index-brand {
