@@ -69,6 +69,16 @@ var ACTIVE_CLASS = CLASS_ROOT + '-row--active';
 // table to be presented in column-mode.
 var MIN_CELL_WIDTH = 120;
 
+function getTotalCellCount(cells) {
+  var cellCount = 0;
+  [].forEach.call(cells, function (cell) {
+    var colspan = cell.getAttribute('colspan');
+    cellCount += colspan ? parseInt(colspan) : 1;
+  });
+
+  return cellCount;
+}
+
 var Table = function (_Component) {
   _inherits(Table, _Component);
 
@@ -233,7 +243,7 @@ var Table = function (_Component) {
 
       if (this.containerRef && this.tableRef) {
         var availableSize = this.containerRef.offsetWidth;
-        var numberOfCells = this.tableRef.querySelectorAll('thead th').length;
+        var numberOfCells = getTotalCellCount(this.tableRef.querySelectorAll('thead th'));
 
         if (numberOfCells * MIN_CELL_WIDTH > availableSize) {
           if (columnMode === false) {
@@ -395,6 +405,7 @@ var Table = function (_Component) {
       // headers.
       if (this.tableRef) {
         var headerCells = this.tableRef.querySelectorAll('thead th');
+        var totalHeaderCells = getTotalCellCount(headerCells);
         if (headerCells.length > 0) {
           var increments = [];
           [].forEach.call(headerCells, function (cell) {
@@ -408,12 +419,19 @@ var Table = function (_Component) {
             var incrementCount = 0;
             var headerIndex = 0;
 
-            if (row.cells.length !== headerCells.length) {
+            if (getTotalCellCount(row.cells) !== totalHeaderCells) {
               console.error('Table row cells do not match length of header cells.');
             }
 
             [].forEach.call(row.cells, function (cell) {
-              cell.setAttribute('data-th', headerCells[headerIndex].innerText || headerCells[headerIndex].textContent);
+              var colspan = cell.getAttribute('colspan');
+              var cellCount = colspan ? parseInt(colspan) : 1;
+              if (cellCount < totalHeaderCells) {
+                // only set the header if the cell colspan is smaller
+                // than the total header cells
+                cell.setAttribute('data-th', headerCells[headerIndex].innerText || headerCells[headerIndex].textContent);
+              }
+
               incrementCount++;
               if (incrementCount === increments[headerIndex]) {
                 incrementCount = 0;
