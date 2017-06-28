@@ -337,20 +337,14 @@ export default class Drop {
       }
     }
 
-    //for Chrome, Safari, and Opera, use document.body
-    //for Firefox and IE, use document.documentElement
-    let scrollTop = (document.documentElement
-      && document.documentElement.scrollTop) || document.body.scrollTop;
-
     container.style.left = `${left}px`;
     // offset width by 0.1 to avoid a bug in ie11 that 
     // unnecessarily wraps the text if width is the same
     container.style.width = `${width + 0.1}px`;
-    // We use position:absolute and the body element's position
-    // to handle mobile browsers better. We used to use position:fixed
-    // but that didn't work on mobile browsers as well.
-    container.style.top = `${top + scrollTop}px`;
-    container.style.maxHeight = `${windowHeight - (top + scrollTop)}px`;
+    // the (position:absolute + scrollTop) 
+    // is presenting issues with desktop scroll flickering
+    container.style.top = `${top}px`;
+    container.style.maxHeight = `${windowHeight - (top)}px`;
 
     if (initialFocusNeeded) {
       // Now that we've placed it, focus on it
