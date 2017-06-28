@@ -86,7 +86,7 @@ var FORMATS = {
   m: 'minutes',
   s: 'seconds'
 };
-var TIME_REGEXP = new RegExp('[hmsa]');
+var TIME_REGEXP = new RegExp('[Hhmsa]');
 
 var DateTime = function (_Component) {
   _inherits(DateTime, _Component);
