@@ -28,7 +28,7 @@ const FORMATS = {
   m: 'minutes',
   s: 'seconds'
 };
-const TIME_REGEXP = new RegExp('[hmsa]');
+const TIME_REGEXP = new RegExp('[Hhmsa]');
 
 export default class DateTime extends Component {
 
