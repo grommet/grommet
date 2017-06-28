@@ -139,7 +139,7 @@ export default class Button extends Component {
         [`${CLASS_ROOT}--disabled`]:
           !onClick &&
           !adjustedHref &&
-          !['reset', 'submit'].includes(type),
+          ['reset', 'submit'].indexOf(type) === -1,
         [`${CLASS_ROOT}--fill`]: fill,
         [`${CLASS_ROOT}--plain`]: (
           plain || box || Children.count(children) > 0 || (icon && ! label)
@@ -177,7 +177,7 @@ export default class Button extends Component {
         disabled={
           !onClick &&
           !adjustedHref &&
-          !['reset', 'submit'].includes(type)
+          ['reset', 'submit'].indexOf(type) === -1
         }
         onMouseDown={this._onMouseDown} onMouseUp={this._onMouseUp}
         onFocus={this._onFocus} onBlur={this._onBlur}>
