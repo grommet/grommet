@@ -343,7 +343,9 @@ export default class Drop {
       && document.documentElement.scrollTop) || document.body.scrollTop;
 
     container.style.left = `${left}px`;
-    container.style.width = `${width}px`;
+    // offset width by 0.1 to avoid a bug in ie11 that 
+    // unnecessarily wraps the text if width is the same
+    container.style.width = `${width + 0.1}px`;
     // We use position:absolute and the body element's position
     // to handle mobile browsers better. We used to use position:fixed
     // but that didn't work on mobile browsers as well.
