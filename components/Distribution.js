@@ -329,28 +329,30 @@ var Distribution = function (_Component) {
   }, {
     key: '_onPreviousDistribution',
     value: function _onPreviousDistribution(event) {
-      event.preventDefault();
       if (this._distributionRef.contains(document.activeElement)) {
+        event.preventDefault();
         if (this.state.activeIndex - 1 >= 0) {
           this._onActivate(this.state.activeIndex - 1);
         }
+        //stop event propagation
+        return true;
       }
-      //stop event propagation
-      return true;
+      return false;
     }
   }, {
     key: '_onNextDistribution',
     value: function _onNextDistribution(event) {
-      event.preventDefault();
       if (this._distributionRef.contains(document.activeElement)) {
+        event.preventDefault();
         var totalDistributionCount = _reactDom2.default.findDOMNode(this.distributionItemsRef).childNodes.length;
 
         if (this.state.activeIndex + 1 < totalDistributionCount) {
           this._onActivate(this.state.activeIndex + 1);
         }
+        //stop event propagation
+        return true;
       }
-      //stop event propagation
-      return true;
+      return false;
     }
   }, {
     key: '_onEnter',
