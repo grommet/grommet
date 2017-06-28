@@ -19,6 +19,16 @@ const ACTIVE_CLASS = `${CLASS_ROOT}-row--active`;
 // table to be presented in column-mode.
 const MIN_CELL_WIDTH = 120;
 
+function getTotalCellCount(cells) {
+  let cellCount = 0;
+  [].forEach.call(cells, (cell) => {
+    const colspan = cell.getAttribute('colspan');
+    cellCount += colspan ? parseInt(colspan) : 1;
+  });
+
+  return cellCount;
+}
+
 export default class Table extends Component {
 
   constructor(props, context) {
@@ -165,7 +175,9 @@ export default class Table extends Component {
     const { columnMode } = this.state;
     if (this.containerRef && this.tableRef) {
       const availableSize = this.containerRef.offsetWidth;
-      const numberOfCells = this.tableRef.querySelectorAll('thead th').length;
+      const numberOfCells = (
+        getTotalCellCount(this.tableRef.querySelectorAll('thead th'))
+      );
 
       if ((numberOfCells * MIN_CELL_WIDTH) > availableSize) {
         if (columnMode === false) {
@@ -316,6 +328,7 @@ export default class Table extends Component {
     // headers.
     if (this.tableRef) {
       let headerCells = this.tableRef.querySelectorAll('thead th');
+      const totalHeaderCells = getTotalCellCount(headerCells);
       if (headerCells.length > 0) {
         const increments = [];
         [].forEach.call(headerCells, (cell) => {
@@ -329,16 +342,23 @@ export default class Table extends Component {
           let incrementCount = 0;
           let headerIndex = 0;
 
-          if (row.cells.length !== headerCells.length) {
+          if (getTotalCellCount(row.cells) !== totalHeaderCells) {
             console.error(
               'Table row cells do not match length of header cells.');
           }
 
           [].forEach.call(row.cells, (cell) => {
-            cell.setAttribute('data-th', (
-              headerCells[headerIndex].innerText ||
-              headerCells[headerIndex].textContent
-            ));
+            const colspan = cell.getAttribute('colspan');
+            const cellCount = colspan ? parseInt(colspan) : 1;
+            if (cellCount < totalHeaderCells) {
+              // only set the header if the cell colspan is smaller
+              // than the total header cells
+              cell.setAttribute('data-th', (
+                headerCells[headerIndex].innerText ||
+                headerCells[headerIndex].textContent
+              ));
+            }
+            
             incrementCount++;
             if (incrementCount === increments[headerIndex]) {
               incrementCount = 0;
