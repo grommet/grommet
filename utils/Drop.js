@@ -19,6 +19,10 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactDom = require('react-dom');
 
+var _classnames2 = require('classnames');
+
+var _classnames3 = _interopRequireDefault(_classnames2);
+
 var _DOM = require('./DOM');
 
 var _CSSClassnames = require('./CSSClassnames');
@@ -30,6 +34,8 @@ var _KeyboardAccelerators = require('./KeyboardAccelerators');
 var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -199,6 +205,8 @@ var _normalizeOptions = function _normalizeOptions(options) {
 
 var Drop = function () {
   function Drop(control, content, opts) {
+    var _classnames;
+
     _classCallCheck(this, Drop);
 
     var options = _normalizeOptions(opts);
@@ -215,10 +223,7 @@ var Drop = function () {
 
     // setup DOM
     var container = document.createElement('div');
-    container.className = 'grommet ' + CLASS_ROOT + ' ' + (options.className || '');
-    if (options.colorIndex) {
-      container.className += ' ' + BACKGROUND_COLOR_INDEX + '-' + options.colorIndex;
-    }
+    container.className = (0, _classnames3.default)('grommet', CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, options.className, options.className), _defineProperty(_classnames, BACKGROUND_COLOR_INDEX + '-' + options.colorIndex, options.colorIndex), _classnames));
 
     // prepend in body to avoid browser scroll issues
     document.body.insertBefore(container, document.body.firstChild);
@@ -445,6 +450,14 @@ var Drop = function () {
 
       (0, _reactDom.unmountComponentAtNode)(container);
       document.body.removeChild(container);
+      // weird bug in Chrome does not remove child if
+      // document.body.insertBefore is called in another new drop.
+      // the code below will go over remaining drop that was not removed
+      [].forEach.call(document.getElementsByClassName(CLASS_ROOT), function (element) {
+        if (element.getAttribute('style') === container.getAttribute('style')) {
+          document.body.removeChild(element);
+        }
+      });
 
       if (originalFocusedElement) {
         originalFocusedElement.focus();
