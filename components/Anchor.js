@@ -272,7 +272,7 @@ exports.default = Anchor;
       defaultProp: true
     }],
     disabled: [_reactDesc.PropTypes.bool, 'Whether to disable the anchor.'],
-    href: [_reactDesc.PropTypes.string, 'Hyperlink reference to place in the anchor.'],
+    href: [_reactDesc.PropTypes.string, 'Hyperlink reference to place in the anchor. If' + ' `path` prop is provided, `href` prop will be ignored.'],
     icon: [_reactDesc.PropTypes.element, 'Icon element to place in the anchor.'],
     id: [_reactDesc.PropTypes.string, 'Anchor identifier.'],
     label: [_reactDesc.PropTypes.node, 'Label text to place in the anchor.'],
