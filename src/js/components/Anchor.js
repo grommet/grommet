@@ -215,7 +215,8 @@ schema(Anchor, {
       defaultProp: true
     }],
     disabled: [PropTypes.bool, 'Whether to disable the anchor.'],
-    href: [PropTypes.string, 'Hyperlink reference to place in the anchor.'],
+    href: [PropTypes.string, 'Hyperlink reference to place in the anchor. If'
+      + ' `path` prop is provided, `href` prop will be ignored.'],
     icon: [PropTypes.element, 'Icon element to place in the anchor.'],
     id: [PropTypes.string, 'Anchor identifier.'],
     label: [PropTypes.node, 'Label text to place in the anchor.'],
