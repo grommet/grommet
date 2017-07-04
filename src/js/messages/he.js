@@ -28,8 +28,8 @@ export default {
   Circle: 'מעגל',
   Chart: 'תרשים',
   Children: 'ילדים',
-  Clear: 'אפס',
-  Cleared: 'אופס',
+  Clear: 'נקה טופס',
+  Cleared: 'טופס נוקה',
   Close: 'סגור',
   'Close Menu': 'סגור תפריט',
   Completed: 'הושלם',
@@ -102,9 +102,9 @@ export default {
   'Select Icon': 'פתח בחירה',
   Selected: 'Selected',
   'Selected Multiple': `{count, plural,
-      =0 {none}
-      one {# value}
-      other {# values}
+      =0 {ריק}
+      one {# ערך}
+      other {# ערכים}
   }`,
   'Skip to': 'קופץ ל',
   'Slide Number': 'שקופית {slideNumber}',
@@ -115,7 +115,7 @@ export default {
   Status: 'סטטוס',
   Subtract: 'לחסר',
   SunBurst: 'תרשים עוגה',
-  'Tab Contents': '{activeTitle} Tab Contents',
+  'Tab Contents': '{activeTitle} תוכן',
   Table: 'טבלה',
   Tasks: 'משימות',
   Tiles: 'אריחים',
