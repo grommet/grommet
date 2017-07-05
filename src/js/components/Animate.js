@@ -156,7 +156,14 @@ export default class Animate extends Component {
   }
 
   _listenForScroll () {
-    this._scrollParents = findScrollParents(this);
+    let scrollItem = this;
+
+    // if the component's parent is undefined, use the DOM element.
+    if (!scrollItem.parentNode) {
+      scrollItem = findDOMNode(scrollItem);
+    }
+
+    this._scrollParents = findScrollParents(scrollItem);
     this._scrollParents.forEach((scrollParent) => {
       scrollParent.addEventListener('scroll', this._checkScroll);
     });
