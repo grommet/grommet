@@ -160,7 +160,7 @@ export default class Animate extends Component {
 
     //If the component's parent is undefined, use the DOM element.
     if (!scrollItem.parentNode) {
-      scrollItem = _reactDom.findDOMNode(scrollItem);
+      scrollItem = findDOMNode(scrollItem);
     }
 
     this._scrollParents = findScrollParents(scrollItem);
