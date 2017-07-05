@@ -123,10 +123,14 @@ export default class TextInput extends Component {
   }
 
   _onInputChange (event) {
-    const { onDOMChange } = this.props;
-    this.setState({
-      activeSuggestionIndex: -1, announceChange: true, dropActive: true
-    });
+    const { onDOMChange, suggestions } = this.props;
+
+    if (suggestions && suggestions.length) {
+      this.setState({
+        activeSuggestionIndex: -1, announceChange: true, dropActive: true
+      });
+    }
+
     if (onDOMChange) {
       onDOMChange(event);
     }
