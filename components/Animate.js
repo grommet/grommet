@@ -238,7 +238,14 @@ var Animate = function (_Component2) {
     value: function _listenForScroll() {
       var _this3 = this;
 
-      this._scrollParents = (0, _DOM.findScrollParents)(this);
+      var scrollItem = this;
+
+      // if the component's parent is undefined, use the DOM element.
+      if (!scrollItem.parentNode) {
+        scrollItem = (0, _reactDom.findDOMNode)(scrollItem);
+      }
+
+      this._scrollParents = (0, _DOM.findScrollParents)(scrollItem);
       this._scrollParents.forEach(function (scrollParent) {
         scrollParent.addEventListener('scroll', _this3._checkScroll);
       });
