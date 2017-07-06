@@ -452,7 +452,12 @@ var Table = function (_Component) {
   }, {
     key: '_layout',
     value: function _layout() {
-      this._alignMirror();
+      var scrollable = this.props.scrollable;
+      var small = this.state.small;
+
+      if (scrollable && !small) {
+        this._alignMirror();
+      }
       this._onResponsive();
     }
   }, {
@@ -476,11 +481,11 @@ var Table = function (_Component) {
   }, {
     key: '_alignMirror',
     value: function _alignMirror() {
-      if (this.mirrorRef) {
+      var mirrorElement = this.mirrorRef;
+      var mirrorCells = mirrorElement.querySelectorAll('thead tr th');
+      if (this.mirrorRef && mirrorCells.length > 0) {
         var tableElement = this.tableRef;
         var cells = tableElement.querySelectorAll('thead tr th');
-        var mirrorElement = this.mirrorRef;
-        var mirrorCells = mirrorElement.querySelectorAll('thead tr th');
 
         var rect = tableElement.getBoundingClientRect();
         mirrorElement.style.width = '' + Math.floor(rect.right - rect.left) + 'px';
