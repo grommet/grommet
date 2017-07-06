@@ -30,8 +30,6 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
-var _DOM = require('../utils/DOM');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -236,29 +234,12 @@ var Animate = function (_Component2) {
   }, {
     key: '_listenForScroll',
     value: function _listenForScroll() {
-      var _this3 = this;
-
-      var scrollItem = this;
-
-      // if the component's parent is undefined, use the DOM element.
-      if (!scrollItem.parentNode) {
-        scrollItem = (0, _reactDom.findDOMNode)(scrollItem);
-      }
-
-      this._scrollParents = (0, _DOM.findScrollParents)(scrollItem);
-      this._scrollParents.forEach(function (scrollParent) {
-        scrollParent.addEventListener('scroll', _this3._checkScroll);
-      });
+      document.addEventListener('scroll', this._checkScroll);
     }
   }, {
     key: '_unlistenForScroll',
     value: function _unlistenForScroll() {
-      var _this4 = this;
-
-      this._scrollParents.forEach(function (scrollParent) {
-        scrollParent.removeEventListener('scroll', _this4._checkScroll);
-      });
-      this._scrollParents = undefined;
+      document.removeEventListener('scroll', this._checkScroll);
     }
   }, {
     key: '_checkScroll',
@@ -307,7 +288,10 @@ var Animate = function (_Component2) {
 
       return _react2.default.createElement(
         _reactTransitionGroup.TransitionGroup,
-        _extends({}, props, { className: classes, component: component }),
+        _extends({}, props, {
+          className: classes,
+          component: component
+        }),
         animateChildren
       );
     }
