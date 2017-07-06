@@ -377,7 +377,11 @@ export default class Table extends Component {
   }
 
   _layout () {
-    this._alignMirror();
+    const { scrollable } = this.props;
+    const { small } = this.state;
+    if (scrollable && !small) {
+      this._alignMirror();
+    }
     this._onResponsive();
   }
 
@@ -399,12 +403,12 @@ export default class Table extends Component {
   }
 
   _alignMirror () {
-    if (this.mirrorRef) {
+    const mirrorElement = this.mirrorRef;
+    const mirrorCells = mirrorElement.querySelectorAll('thead tr th');
+    if (this.mirrorRef && mirrorCells.length > 0) {
       const tableElement = this.tableRef;
       const cells = tableElement.querySelectorAll('thead tr th');
-      const mirrorElement = this.mirrorRef;
-      const mirrorCells = mirrorElement.querySelectorAll('thead tr th');
-
+      
       let rect = tableElement.getBoundingClientRect();
       mirrorElement.style.width =
         '' + Math.floor(rect.right - rect.left) + 'px';
