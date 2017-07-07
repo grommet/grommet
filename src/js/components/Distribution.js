@@ -156,89 +156,41 @@ export default class Distribution extends Component {
         continue;
       }
 
-      // Start a new group.
-      let groupValue = datum.value;
-      let targetGroupValue;
-
-      // Make the first item as square as possible.
-      const itemArea = areaPer * datum.value;
-      const edgeLength = Math.round(Math.sqrt(itemArea));
-      let itemHeight;
-      let itemWidth;
-
-      // Figure out how much value we can fit inside a rectangle
-      // that takes the full minor axis length
-      if (remainingRect.width > remainingRect.height) {
-        // landscape, lay out left to right
-        itemHeight = Math.min(remainingRect.height, edgeLength);
-        itemWidth = Math.round(itemArea / itemHeight);
-        targetGroupValue =
-          Math.round((itemWidth * remainingRect.height) / areaPer);
-      } else {
-        // portrait, lay out top to bottom
-        itemWidth = Math.min(remainingRect.width, edgeLength);
-        itemHeight = Math.round(itemArea / itemWidth);
-        targetGroupValue =
-          Math.round((itemHeight * remainingRect.width) / areaPer);
-      }
-
-      // Group items until we reach the target group value.
-      let group = [datum];
-      while (groupValue < targetGroupValue && series.length > 0) {
-        const datum2 = series.shift();
-        groupValue += datum2.value;
-        group.push(datum2);
-      }
-
       // Now that we know the actual value of the group, give it a
       // rectangle whose area corresponds to the actual group value.
-      let groupRect;
-      if (remainingRect.width > remainingRect.height) {
+      let itemRect;
+      const boxWidth = (
+        Math.round((areaPer * datum.value) / remainingRect.height)
+      );
+      const boxHeight = (
+        Math.round((areaPer * datum.value) / remainingRect.width)
+      );
+      if (
+        remainingRect.width - boxWidth >= SMALL_SIZE &&
+        remainingRect.width > remainingRect.height
+      ) {
         // landscape, lay out left to right
-        groupRect = { x: remainingRect.x, y: remainingRect.y,
-          width: Math.round((areaPer * groupValue) / remainingRect.height),
+        itemRect = { x: remainingRect.x, y: remainingRect.y,
+          width: boxWidth,
           height: remainingRect.height };
-        remainingRect.x += groupRect.width;
-        remainingRect.width -= groupRect.width;
+        remainingRect.x += itemRect.width;
+        remainingRect.width -= itemRect.width;
       } else {
         // portrait, lay out top to bottom
-        groupRect = { x: remainingRect.x, y: remainingRect.y,
+        itemRect = { x: remainingRect.x, y: remainingRect.y,
           width: remainingRect.width,
-          height: Math.round((areaPer * groupValue) / remainingRect.width) };
-        remainingRect.y += groupRect.height;
-        remainingRect.height -= groupRect.height;
+          height: boxHeight };
+        remainingRect.y += itemRect.height;
+        remainingRect.height -= itemRect.height;
       }
 
-      // Place items within the group rectangle.
-      // We take the full minor axis length and as much major axis length
-      // as needed to match the item's area.
-      group.forEach((datum) => {
-        let itemRect;
-        if (groupRect.width > groupRect.height) {
-          // landscape, use full height
-          itemRect = { x: groupRect.x, y: groupRect.y,
-            width: Math.round((areaPer * datum.value) / groupRect.height),
-            height: groupRect.height };
-          groupRect.x += itemRect.width;
-          groupRect.width -= itemRect.width;
-        } else {
-          // portrait, use full width
-          itemRect = { x: groupRect.x, y: groupRect.y,
-            width: groupRect.width,
-            height: Math.round((areaPer * datum.value) / groupRect.width) };
-          groupRect.y += itemRect.height;
-          groupRect.height -= itemRect.height;
-        }
+      let boxRect = this._boxRect(itemRect, width, height);
+      let labelRect = this._labelRect(boxRect);
 
-        let boxRect = this._boxRect(itemRect, width, height);
-        let labelRect = this._labelRect(boxRect);
-
-        // Save this so we can render the item's box and label
-        // in the correct location.
-
-        items.push({ datum: datum, rect: itemRect,
-          boxRect: boxRect, labelRect: labelRect });
-      });
+      // Save this so we can render the item's box and label
+      // in the correct location.
+      items.push({ datum: datum, rect: itemRect,
+        boxRect: boxRect, labelRect: labelRect });
     }
 
     this.setState({ items: items });
