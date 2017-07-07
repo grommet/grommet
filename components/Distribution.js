@@ -194,8 +194,6 @@ var Distribution = function (_Component) {
   }, {
     key: '_placeItems',
     value: function _placeItems() {
-      var _this2 = this;
-
       var width = this.state.width;
       var height = this.state.height;
       var areaPer = width * height / this.state.total;
@@ -203,99 +201,40 @@ var Distribution = function (_Component) {
       var items = [];
       var series = this.props.series ? this.props.series.slice(0) : [];
 
-      var _loop = function _loop() {
+      while (series.length > 0) {
         var datum = series.shift();
         if (datum.value <= 0) {
-          return 'continue';
-        }
-
-        // Start a new group.
-        var groupValue = datum.value;
-        var targetGroupValue = void 0;
-
-        // Make the first item as square as possible.
-        var itemArea = areaPer * datum.value;
-        var edgeLength = Math.round(Math.sqrt(itemArea));
-        var itemHeight = void 0;
-        var itemWidth = void 0;
-
-        // Figure out how much value we can fit inside a rectangle
-        // that takes the full minor axis length
-        if (remainingRect.width > remainingRect.height) {
-          // landscape, lay out left to right
-          itemHeight = Math.min(remainingRect.height, edgeLength);
-          itemWidth = Math.round(itemArea / itemHeight);
-          targetGroupValue = Math.round(itemWidth * remainingRect.height / areaPer);
-        } else {
-          // portrait, lay out top to bottom
-          itemWidth = Math.min(remainingRect.width, edgeLength);
-          itemHeight = Math.round(itemArea / itemWidth);
-          targetGroupValue = Math.round(itemHeight * remainingRect.width / areaPer);
-        }
-
-        // Group items until we reach the target group value.
-        var group = [datum];
-        while (groupValue < targetGroupValue && series.length > 0) {
-          var datum2 = series.shift();
-          groupValue += datum2.value;
-          group.push(datum2);
+          continue;
         }
 
         // Now that we know the actual value of the group, give it a
         // rectangle whose area corresponds to the actual group value.
-        var groupRect = void 0;
-        if (remainingRect.width > remainingRect.height) {
+        var itemRect = void 0;
+        var boxWidth = Math.round(areaPer * datum.value / remainingRect.height);
+        var boxHeight = Math.round(areaPer * datum.value / remainingRect.width);
+        if (remainingRect.width - boxWidth >= SMALL_SIZE && remainingRect.width > remainingRect.height) {
           // landscape, lay out left to right
-          groupRect = { x: remainingRect.x, y: remainingRect.y,
-            width: Math.round(areaPer * groupValue / remainingRect.height),
+          itemRect = { x: remainingRect.x, y: remainingRect.y,
+            width: boxWidth,
             height: remainingRect.height };
-          remainingRect.x += groupRect.width;
-          remainingRect.width -= groupRect.width;
+          remainingRect.x += itemRect.width;
+          remainingRect.width -= itemRect.width;
         } else {
           // portrait, lay out top to bottom
-          groupRect = { x: remainingRect.x, y: remainingRect.y,
+          itemRect = { x: remainingRect.x, y: remainingRect.y,
             width: remainingRect.width,
-            height: Math.round(areaPer * groupValue / remainingRect.width) };
-          remainingRect.y += groupRect.height;
-          remainingRect.height -= groupRect.height;
+            height: boxHeight };
+          remainingRect.y += itemRect.height;
+          remainingRect.height -= itemRect.height;
         }
 
-        // Place items within the group rectangle.
-        // We take the full minor axis length and as much major axis length
-        // as needed to match the item's area.
-        group.forEach(function (datum) {
-          var itemRect = void 0;
-          if (groupRect.width > groupRect.height) {
-            // landscape, use full height
-            itemRect = { x: groupRect.x, y: groupRect.y,
-              width: Math.round(areaPer * datum.value / groupRect.height),
-              height: groupRect.height };
-            groupRect.x += itemRect.width;
-            groupRect.width -= itemRect.width;
-          } else {
-            // portrait, use full width
-            itemRect = { x: groupRect.x, y: groupRect.y,
-              width: groupRect.width,
-              height: Math.round(areaPer * datum.value / groupRect.width) };
-            groupRect.y += itemRect.height;
-            groupRect.height -= itemRect.height;
-          }
+        var boxRect = this._boxRect(itemRect, width, height);
+        var labelRect = this._labelRect(boxRect);
 
-          var boxRect = _this2._boxRect(itemRect, width, height);
-          var labelRect = _this2._labelRect(boxRect);
-
-          // Save this so we can render the item's box and label
-          // in the correct location.
-
-          items.push({ datum: datum, rect: itemRect,
-            boxRect: boxRect, labelRect: labelRect });
-        });
-      };
-
-      while (series.length > 0) {
-        var _ret = _loop();
-
-        if (_ret === 'continue') continue;
+        // Save this so we can render the item's box and label
+        // in the correct location.
+        items.push({ datum: datum, rect: itemRect,
+          boxRect: boxRect, labelRect: labelRect });
       }
 
       this.setState({ items: items });
@@ -373,13 +312,13 @@ var Distribution = function (_Component) {
   }, {
     key: '_onActivate',
     value: function _onActivate(index) {
-      var _this3 = this;
+      var _this2 = this;
 
       var intl = this.context.intl;
 
       this.setState({ activeIndex: index }, function () {
-        var activeMessage = _this3.activeDistributionRef.getAttribute('aria-label');
-        var clickable = _this3.state.items[_this3.state.activeIndex].datum.onClick;
+        var activeMessage = _this2.activeDistributionRef.getAttribute('aria-label');
+        var clickable = _this2.state.items[_this2.state.activeIndex].datum.onClick;
         var enterSelectMessage = '(' + _Intl2.default.getMessage(intl, 'Enter Select') + ')';
         (0, _Announcer.announce)(activeMessage + ' ' + (clickable ? enterSelectMessage : ''));
       });
@@ -482,7 +421,7 @@ var Distribution = function (_Component) {
   }, {
     key: '_renderItem',
     value: function _renderItem(datum, rect, index) {
-      var _this4 = this;
+      var _this3 = this;
 
       var units = this.props.units;
 
@@ -492,7 +431,7 @@ var Distribution = function (_Component) {
       var activeDistributionRef = void 0;
       if (index === this.state.activeIndex) {
         activeDistributionRef = function activeDistributionRef(ref) {
-          return _this4.activeDistributionRef = ref;
+          return _this3.activeDistributionRef = ref;
         };
       }
 
@@ -514,7 +453,7 @@ var Distribution = function (_Component) {
           role: datum.onClick ? 'button' : 'row',
           ref: activeDistributionRef, 'aria-label': labelMessage,
           onFocus: function onFocus() {
-            return _this4.setState({ activeIndex: index });
+            return _this3.setState({ activeIndex: index });
           },
           'data-index': index, onClick: datum.onClick },
         contents
@@ -523,19 +462,19 @@ var Distribution = function (_Component) {
   }, {
     key: '_renderBoxes',
     value: function _renderBoxes() {
-      var _this5 = this;
+      var _this4 = this;
 
       return this.state.items.map(function (item, index) {
-        return _this5._renderItem(item.datum, item.boxRect, index);
+        return _this4._renderItem(item.datum, item.boxRect, index);
       });
     }
   }, {
     key: '_renderLabels',
     value: function _renderLabels() {
-      var _this6 = this;
+      var _this5 = this;
 
       return this.state.items.map(function (item, index) {
-        return _this6._renderItemLabel(item.datum, item.labelRect, index);
+        return _this5._renderItemLabel(item.datum, item.labelRect, index);
       });
     }
   }, {
@@ -560,7 +499,7 @@ var Distribution = function (_Component) {
     key: 'render',
     value: function render() {
       var _classnames4,
-          _this7 = this;
+          _this6 = this;
 
       var _props = this.props,
           a11yTitle = _props.a11yTitle,
@@ -611,30 +550,30 @@ var Distribution = function (_Component) {
       return _react2.default.createElement(
         'div',
         _extends({ ref: function ref(_ref3) {
-            return _this7._containerRef = _ref3;
+            return _this6._containerRef = _ref3;
           } }, props, { className: classes }),
         _react2.default.createElement(
           'svg',
           { ref: function ref(_ref) {
-              return _this7._distributionRef = _ref;
+              return _this6._distributionRef = _ref;
             },
             className: graphicClasses,
             viewBox: '0 0 ' + this.state.width + ' ' + this.state.height,
             preserveAspectRatio: 'none', tabIndex: '0', role: role,
             'aria-label': ariaLabel,
             onMouseDown: function onMouseDown() {
-              return _this7.setState({ mouseActive: true });
+              return _this6.setState({ mouseActive: true });
             },
             onMouseUp: function onMouseUp() {
-              return _this7.setState({ mouseActive: false });
+              return _this6.setState({ mouseActive: false });
             },
             onFocus: function onFocus() {
               if (mouseActive === false) {
-                _this7.setState({ focus: true });
+                _this6.setState({ focus: true });
               }
             },
             onBlur: function onBlur() {
-              return _this7.setState({
+              return _this6.setState({
                 focus: false
               });
             } },
@@ -644,7 +583,7 @@ var Distribution = function (_Component) {
         _react2.default.createElement(
           'div',
           { ref: function ref(_ref2) {
-              return _this7.distributionItemsRef = _ref2;
+              return _this6.distributionItemsRef = _ref2;
             },
             className: CLASS_ROOT + '__labels', role: 'presentation',
             'aria-hidden': true },
