@@ -220,10 +220,6 @@ export default class TextInput extends Component {
       focused: true,
       activeSuggestionIndex: -1
     });
-    // elements with autoFocus=true will be focused before the ref is available
-    if (this.componentRef) {
-      this.componentRef.select();
-    }
 
     if (onFocus) {
       onFocus(event);
