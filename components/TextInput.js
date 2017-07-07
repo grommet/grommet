@@ -192,9 +192,11 @@ var TextInput = function (_Component) {
       var suggestions = this.props.suggestions;
       var intl = this.context.intl;
 
-      var labelMessage = this._renderLabel(suggestions[index]);
-      var enterSelectMessage = _Intl2.default.getMessage(intl, 'Enter Select');
-      (0, _Announcer.announce)(labelMessage + ' ' + enterSelectMessage);
+      if (suggestions && suggestions.length > 0) {
+        var labelMessage = this._renderLabel(suggestions[index]);
+        var enterSelectMessage = _Intl2.default.getMessage(intl, 'Enter Select');
+        (0, _Announcer.announce)(labelMessage + ' ' + enterSelectMessage);
+      }
     }
   }, {
     key: '_onAddDrop',
