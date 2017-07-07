@@ -171,11 +171,17 @@ var TextInput = function (_Component) {
   }, {
     key: '_onInputChange',
     value: function _onInputChange(event) {
-      var onDOMChange = this.props.onDOMChange;
+      var _props = this.props,
+          onDOMChange = _props.onDOMChange,
+          suggestions = _props.suggestions;
 
-      this.setState({
-        activeSuggestionIndex: -1, announceChange: true, dropActive: true
-      });
+
+      if (suggestions && suggestions.length) {
+        this.setState({
+          activeSuggestionIndex: -1, announceChange: true, dropActive: true
+        });
+      }
+
       if (onDOMChange) {
         onDOMChange(event);
       }
@@ -193,9 +199,9 @@ var TextInput = function (_Component) {
   }, {
     key: '_onAddDrop',
     value: function _onAddDrop(event) {
-      var _props = this.props,
-          suggestions = _props.suggestions,
-          value = _props.value;
+      var _props2 = this.props,
+          suggestions = _props2.suggestions,
+          value = _props2.value;
       // Get values of suggestions, so we can highlight selected suggestion
 
       if (suggestions) {
@@ -241,9 +247,9 @@ var TextInput = function (_Component) {
     value: function _onEnter(event) {
       var _this2 = this;
 
-      var _props2 = this.props,
-          onSelect = _props2.onSelect,
-          suggestions = _props2.suggestions;
+      var _props3 = this.props,
+          onSelect = _props3.onSelect,
+          suggestions = _props3.suggestions;
       var activeSuggestionIndex = this.state.activeSuggestionIndex;
       var intl = this.context.intl;
 
@@ -296,9 +302,9 @@ var TextInput = function (_Component) {
   }, {
     key: '_onInputKeyDown',
     value: function _onInputKeyDown(event) {
-      var _props3 = this.props,
-          onKeyDown = _props3.onKeyDown,
-          suggestions = _props3.suggestions;
+      var _props4 = this.props,
+          onKeyDown = _props4.onKeyDown,
+          suggestions = _props4.suggestions;
       var dropActive = this.state.dropActive;
 
       if (suggestions) {
@@ -366,12 +372,12 @@ var TextInput = function (_Component) {
     value: function render() {
       var _this4 = this;
 
-      var _props4 = this.props,
-          className = _props4.className,
-          defaultValue = _props4.defaultValue,
-          value = _props4.value,
-          placeHolder = _props4.placeHolder,
-          props = _objectWithoutProperties(_props4, ['className', 'defaultValue', 'value', 'placeHolder']);
+      var _props5 = this.props,
+          className = _props5.className,
+          defaultValue = _props5.defaultValue,
+          value = _props5.value,
+          placeHolder = _props5.placeHolder,
+          props = _objectWithoutProperties(_props5, ['className', 'defaultValue', 'value', 'placeHolder']);
 
       delete props.suggestions;
       delete props.onDOMChange;
