@@ -139,9 +139,11 @@ export default class TextInput extends Component {
   _announceSuggestion (index) {
     const { suggestions } = this.props;
     const { intl } = this.context;
-    const labelMessage = this._renderLabel(suggestions[index]);
-    const enterSelectMessage = Intl.getMessage(intl, 'Enter Select');
-    announce(`${labelMessage} ${enterSelectMessage}`);
+    if (suggestions && suggestions.length > 0) {
+      const labelMessage = this._renderLabel(suggestions[index]);
+      const enterSelectMessage = Intl.getMessage(intl, 'Enter Select');
+      announce(`${labelMessage} ${enterSelectMessage}`);
+    }
   }
 
   _onAddDrop (event) {
