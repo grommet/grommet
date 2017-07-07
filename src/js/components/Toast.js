@@ -54,7 +54,7 @@ class ToastContents extends Component {
   }
 
   render () {
-    const { children, onClose, size, status } = this.props;
+    const { children, onClose, size, status, ...rest } = this.props;
     const { closing } = this.state;
 
     const classNames = classnames(
@@ -81,7 +81,7 @@ class ToastContents extends Component {
     }
 
     return (
-      <div className={classNames}>
+      <div className={classNames} {...rest}>
         {statusIcon}
         <div ref={(ref) => this._contentsRef = ref}
           className={`${CLASS_ROOT}__contents`}>
