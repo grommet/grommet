@@ -252,7 +252,9 @@ var Layer = function (_Component2) {
     value: function componentWillUnmount() {
       var _this5 = this;
 
-      if (this._originalFocusedElement) {
+      var hidden = this.props.hidden;
+
+      if (this._originalFocusedElement && !hidden) {
         if (this._originalFocusedElement.focus) {
           // wait for the fixed positioning to come back to normal
           // see layer styling for reference
