@@ -1,18 +1,26 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
-import Box from './Box';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import Box from './Box';
 import CSSClassnames from '../utils/CSSClassnames';
 import Drop from '../utils/Drop';
 
 const CLASS_ROOT = CSSClassnames.TIP;
 
+
 export default class Tip extends Component {
 
+  constructor (props) {
+    super();
+    this._getTarget = this._getTarget.bind(this);
+    this._onResize = this._onResize.bind(this);
+  }
+
   componentDidMount () {
-    const { targetId, onClose, colorIndex } = this.props;
-    const target = document.getElementById(targetId);
+    const { onClose, colorIndex } = this.props;
+    const target = this._getTarget();
     if (target) {
       const rect = target.getBoundingClientRect();
       let align = {
@@ -39,33 +47,50 @@ export default class Tip extends Component {
         }
       );
 
-      // we need a timeout here to avoid wrong bounding rect
-      // for the target element
-      setTimeout(() => {
-        this._drop = Drop.add(target, this._renderDrop(), {
-          align: align,
-          className: classNames,
-          colorIndex: colorIndex,
-          responsive: false
-        });
-      }, 1);
+      this._drop = new Drop(target, this._renderDropContent(), {
+        align: align,
+        className: classNames,
+        colorIndex: colorIndex,
+        responsive: false
+      });
 
       target.addEventListener('click', onClose);
       target.addEventListener('blur', onClose);
+      window.addEventListener('resize', this._onResize);
     }
   }
 
   componentWillUnmount () {
-    const { targetId, onClose } = this.props;
-    const target = document.getElementById(targetId);
-    if (target) {
+    const { onClose } = this.props;
+    const target = this._getTarget();
+
+    // if the drop was created successfully, remove it
+    if (this._drop) {
       this._drop.remove();
+    }
+    if (target) {
       target.removeEventListener('click', onClose);
       target.removeEventListener('blur', onClose);
+      window.removeEventListener('resize', this._onResize);
     }
   }
 
-  _renderDrop () {
+  _onResize () {
+    if (this._drop) {
+      this._drop.place();
+    }
+  }
+
+  _getTarget () {
+    const { target } = this.props;
+
+    return (
+      document.getElementById(target) ||
+      document.querySelector(`.${target}`)
+    );
+  }
+
+  _renderDropContent () {
     const { onClose } = this.props;
     return (
       <Box className={CLASS_ROOT}
@@ -77,7 +102,7 @@ export default class Tip extends Component {
   }
 
   render () {
-    return <span></span>;
+    return <span />;
   }
 
 }
@@ -85,7 +110,7 @@ export default class Tip extends Component {
 Tip.propTypes = {
   colorIndex: PropTypes.string,
   onClose: PropTypes.func.isRequired,
-  targetId: PropTypes.string.isRequired
+  target: PropTypes.string.isRequired
 };
 
 Tip.defaultProps = {

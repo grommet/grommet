@@ -1,39 +1,42 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
-import FormattedMessage from '../../FormattedMessage';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import CSSClassnames from '../../../utils/CSSClassnames';
 
-const STATUS_ICON = CSSClassnames.STATUS_ICON;
+const CLASS_ROOT = CSSClassnames.STATUS_ICON;
+
+let _lastId = 0;
 
 export default class Warning extends Component {
   render() {
-    var className = `${STATUS_ICON} ${STATUS_ICON}-warning`;
-    var a11yTitle = this.props.a11yTitle;
-    if (this.props.className) {
-      className += ' ' + this.props.className;
-    }
-    if (typeof this.props.a11yTitle === "undefined") {
-      // this.props.a11yTitle emplty string is an acceptable value.
-      // Only if undefined
-      // should use the default title value.
-      a11yTitle = 'Warning';
-    }
-    var warningTitleId = 'warning-title';
+    const { a11yTitle, className, ...props } = this.props;
+    const classes = classnames(
+      CLASS_ROOT,
+      `${CLASS_ROOT}-warning`,
+      className
+    );
+    // generate an id to avoid duplication in the DOM
+    const maskId = `mask-warning-${_lastId++}`;
     return (
-      <svg className={className} viewBox="0 0 24 24" role="img"
-        aria-labelledby={warningTitleId} version="1.1">
-        <title id={warningTitleId}>
-          <FormattedMessage id={a11yTitle} defaultMessage={a11yTitle} />
-        </title>
-        <g className={`${STATUS_ICON}__base`}>
+      <svg {...props} className={classes} viewBox="0 0 24 24" role="img"
+        aria-label={a11yTitle} version="1.1">
+        <defs>
+          <mask id={maskId}>
+            <g className={`${CLASS_ROOT}__detail`} >
+              <rect x='0' y='0' width='24' height='24' fill='#fff' />
+              <g strokeWidth="2" stroke='#000'
+                transform="translate(11.000000, 8.000000)">
+                <path role="presentation" d="M1,0 L1,6" fill="none" />
+                <path role="presentation" d="M1,8 L1,10" fill="none" />
+              </g>
+            </g>
+          </mask>
+        </defs>
+        <g className={`${CLASS_ROOT}__base`} mask={`url(#${maskId})`}>
           <path role="presentation" d="M12,0 L0,22 L24,22 L12,0 L12,0 Z"
-            stroke="none"></path>
-        </g>
-        <g className={`${STATUS_ICON}__detail`} strokeWidth="2"
-          transform="translate(11.000000, 8.000000)">
-          <path role="presentation" d="M1,0 L1,6" fill="none"></path>
-          <path role="presentation" d="M1,8 L1,10" fill="none"></path>
+            stroke="none" />
         </g>
       </svg>
     );
@@ -41,5 +44,10 @@ export default class Warning extends Component {
 }
 
 Warning.propTypes = {
-  a11yTitle: PropTypes.string
+  a11yTitle: PropTypes.string,
+  className: PropTypes.string
+};
+
+Warning.defaultProps = {
+  a11yTitle: 'Warning'
 };

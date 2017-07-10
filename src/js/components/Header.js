@@ -1,10 +1,12 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
+import classnames from 'classnames';
+import CSSClassnames from '../utils/CSSClassnames';
 import Props from '../utils/Props';
 import Box from './Box';
-import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.HEADER;
 
@@ -14,34 +16,38 @@ export default class Header extends Component {
     super(props, context);
 
     this._onResize = this._onResize.bind(this);
+    this._alignMirror = this._alignMirror.bind(this);
   }
 
   componentDidMount () {
     if (this.props.fixed) {
-      this._alignMirror();
       window.addEventListener('resize', this._onResize);
+      this._onResize();
     }
   }
 
   componentDidUpdate () {
     if (this.props.fixed) {
-      this._alignMirror();
+      this._onResize();
     }
   }
 
   componentWillUnmount () {
     if (this.props.fixed) {
+      clearTimeout(this._resizeTimer);
       window.removeEventListener('resize', this._onResize);
     }
   }
 
   _onResize () {
-    this._alignMirror();
+    // give just a little time for the DOM to stabilize
+    clearTimeout(this._resizeTimer);
+    this._resizeTimer = setTimeout(this._alignMirror, 10);
   }
 
   _alignMirror () {
-    var contentElement = ReactDOM.findDOMNode(this.refs.content);
-    var mirrorElement = this.refs.mirror;
+    var contentElement = ReactDOM.findDOMNode(this.contentRef);
+    var mirrorElement = this.mirrorRef;
 
     // constrain fixed content to the width of the mirror
     var mirrorRect = mirrorElement.getBoundingClientRect();
@@ -53,55 +59,68 @@ export default class Header extends Component {
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    var containerClasses = [`${CLASS_ROOT}__container`];
-    var wrapperClasses = [`${CLASS_ROOT}__wrapper`];
-    var other = Props.pick(this.props, Object.keys(Box.propTypes));
-    if (this.props.fixed) {
-      containerClasses.push(`${CLASS_ROOT}__container--fixed`);
-
-      // add default color index if none is provided
-      if (!this.props.colorIndex) {
-        containerClasses.push(`${CLASS_ROOT}__container--fill`);
+    const {
+      children, className, colorIndex, fixed, float, role, size, splash
+    } = this.props;
+    const classes = classnames(
+      CLASS_ROOT, {
+        [`${CLASS_ROOT}--${size}`]: (size && typeof size === 'string'),
+        [`${CLASS_ROOT}--float`]: float,
+        [`${CLASS_ROOT}--splash`]: splash
+      },
+      className
+    );
+    const containerClasses = classnames(
+      `${CLASS_ROOT}__container`, {
+        [`${CLASS_ROOT}__container--fixed`]: fixed,
+        // add default color index if none is provided
+        [`${CLASS_ROOT}__container--fill`]: (fixed && !colorIndex),
+        [`${CLASS_ROOT}__container--float`]: float
       }
-    }
-    if (this.props.float) {
-      classes.push(`${CLASS_ROOT}--float`);
-      containerClasses.push(`${CLASS_ROOT}__container--float`);
-    }
-    if (this.props.size) {
-      classes.push(`${CLASS_ROOT}--${this.props.size}`);
-      wrapperClasses.push(`${CLASS_ROOT}__wrapper--${this.props.size}`);
+    );
+    const wrapperClasses = classnames(
+      `${CLASS_ROOT}__wrapper`, {
+        [`${CLASS_ROOT}__wrapper--${size}`]: (size && typeof size === 'string')
+      }
+    );
+    var other = Props.pick(this.props, Object.keys(Box.propTypes));
+    let restProps = Props.omit(this.props, Object.keys(Header.propTypes));
+    if (size && typeof size === 'string') {
       // don't transfer size to Box since it means something different
       delete other.size;
     }
-    if (this.props.splash) {
-      classes.push(`${CLASS_ROOT}--splash`);
-    }
-    if (this.props.strong) {
-      classes.push(`${CLASS_ROOT}--strong`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
 
-    if (this.props.fixed) {
+    if (fixed) {
       return (
-        <div className={containerClasses.join(' ')}>
-          <div ref="mirror" className={`${CLASS_ROOT}__mirror`}></div>
-          <div className={wrapperClasses.join(' ')}>
-            <Box ref="content" tag={this.props.header} {...other}
-              className={classes.join(' ')}>
-              {this.props.children}
+        <div className={containerClasses}>
+          <div ref={ref => this.mirrorRef = ref}
+            className={`${CLASS_ROOT}__mirror`} />
+          <div className={wrapperClasses}>
+            {/* ie11 does not work with align center and min-height
+              adding a wrapper flex div with column direction fixes the issue
+              https://github.com/philipwalton/flexbugs
+            */}
+            <Box pad='none' flex={false}>
+              <Box ref={ref => this.contentRef = ref}
+                {...other} {...restProps} tag="header"
+                className={classes}>
+                {children}
+              </Box>
             </Box>
           </div>
         </div>
       );
     } else {
       return (
-        <Box tag={this.props.header} {...other} className={classes.join(' ')}
-          containerClassName={containerClasses.join(' ')}>
-          {this.props.children}
+        // ie11 does not work with align center and min-height
+        // adding a wrapper flex div with column direction fixes the issue
+        // https://github.com/philipwalton/flexbugs
+        <Box pad='none' flex={false}>
+          <Box {...other} {...restProps} tag="header" role={role}
+            className={classes}
+            containerClassName={containerClasses}>
+            {children}
+          </Box>
         </Box>
       );
     }
@@ -114,8 +133,6 @@ Header.propTypes = {
   float: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   splash: PropTypes.bool,
-  strong: PropTypes.bool,
-  tag: PropTypes.string,
   ...Box.propTypes
 };
 
@@ -123,6 +140,5 @@ Header.defaultProps = {
   pad: { horizontal: 'none', vertical: 'none', between: 'small'},
   direction: 'row',
   align: 'center',
-  responsive: false,
-  tag: 'header'
+  responsive: false
 };

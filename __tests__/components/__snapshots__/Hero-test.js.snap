@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero has correct default options 1`] = `
+<div
+  className="grommetux-hero grommetux-hero--medium"
+>
+  <div
+    className="grommetux-hero__foreground"
+  >
+    <h1>
+      This is a Hero
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`Hero transfers random props 1`] = `
+<div
+  className="grommetux-hero grommetux-hero--medium"
+  data-flavor="coconut"
+>
+  <div
+    className="grommetux-hero__foreground"
+  >
+    <h1>
+      This is a Hero
+    </h1>
+  </div>
+</div>
+`;

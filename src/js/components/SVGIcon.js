@@ -1,10 +1,10 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import Intl from '../utils/Intl';
-import Props from '../utils/Props';
 import CSSClassnames from '../utils/CSSClassnames';
+import Intl from '../utils/Intl';
 
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
@@ -17,29 +17,25 @@ const CLASS_ROOT = {
 export default class SVGIcon extends Component {
   render () {
     const {
-      a11yTitle, children, className, colorIndex, size, type
+      a11yTitle, children, className, colorIndex, size, type, ...props
     } = this.props;
 
     const classRoot = CLASS_ROOT[type];
     const classes = classnames(
       classRoot,
-      className,
       {
         [`${classRoot}--${size}`]: size,
         [`${COLOR_INDEX}-${colorIndex}`]: colorIndex
-      }
+      },
+      className
     );
 
     const iconMessage = Intl.getMessage(this.context.intl, 'icon');
     const typeMessage = Intl.getMessage(this.context.intl, type);
     let defaultTitle = `${typeMessage} ${iconMessage}`;
 
-    const svgProps = Props.omit(this.props, Object.keys(SVGIcon.propTypes));
-    delete svgProps.children;
-    delete svgProps.className;
-
     return (
-      <svg {...svgProps} className={classes} role='img'>
+      <svg {...props} className={classes} role='img'>
         <title>
           {a11yTitle || defaultTitle}
         </title>
@@ -47,7 +43,7 @@ export default class SVGIcon extends Component {
       </svg>
     );
   }
-};
+}
 
 SVGIcon.contextTypes = {
   intl: PropTypes.object
@@ -60,6 +56,7 @@ SVGIcon.defaultProps = {
 SVGIcon.propTypes = {
   a11yTitle: PropTypes.string,
   colorIndex: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
+  size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge',
+    'huge']),
   type: PropTypes.oneOf(['control', 'logo', 'status'])
 };

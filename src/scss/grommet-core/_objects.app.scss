@@ -3,7 +3,6 @@
 .grommet.#{$grommet-namespace}app {
 
   @include media-query(lap-and-up) {
-    position: absolute;
     top: 0px;
     bottom: 0px;
     left: 0px;
@@ -11,6 +10,11 @@
     height: 100%;
     width: 100%;
     overflow: visible;
+  }
+
+  // necessary to avoid scrolling the body when Layer is open
+  &--hidden {
+    position: fixed;
   }
 
   &--inline {

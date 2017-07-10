@@ -1,8 +1,9 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import TransitionGroup from 'react-addons-transition-group';
+import { TransitionGroup } from 'react-transition-group';
 import classnames from 'classnames';
 import Box from './Box';
 
@@ -14,15 +15,17 @@ const CLASS_ROOT = CSSClassnames.COLLAPSIBLE;
 class Collapse extends Component {
   componentWillEnter (callback) {
     const node = ReactDOM.findDOMNode(this);
-    const contentHeight = node.clientHeight;
-    node.classList.remove('animate');
-    node.style.height = 0;
-    setTimeout(() => {
-      node.classList.add('animate');
-      node.style.height = `${contentHeight}px`;
-      setTimeout(callback,
-        parseFloat(getComputedStyle(node).transitionDuration) * 1000);
-    });
+    if (node) {
+      const contentHeight = node.clientHeight;
+      node.classList.remove('animate');
+      node.style.height = 0;
+      setTimeout(() => {
+        node.classList.add('animate');
+        node.style.height = `${contentHeight}px`;
+        setTimeout(callback,
+          parseFloat(getComputedStyle(node).transitionDuration) * 1000);
+      });
+    }
   }
 
   componentDidEnter () {
@@ -33,14 +36,16 @@ class Collapse extends Component {
 
   componentWillLeave (callback) {
     const node = ReactDOM.findDOMNode(this);
-    const contentHeight = node.clientHeight;
-    node.style.height = `${contentHeight}px`;
-    setTimeout(() => {
-      node.classList.add('animate');
-      node.style.height = 0;
-      setTimeout(callback,
-        parseFloat(getComputedStyle(node).transitionDuration) * 1000);
-    });
+    if (node) {
+      const contentHeight = node.clientHeight;
+      node.style.height = `${contentHeight}px`;
+      setTimeout(() => {
+        node.classList.add('animate');
+        node.style.height = 0;
+        setTimeout(callback,
+          parseFloat(getComputedStyle(node).transitionDuration) * 1000);
+      });
+    }
   }
 
   render() {
@@ -48,9 +53,9 @@ class Collapse extends Component {
       CLASS_ROOT,
       this.props.className
     );
-    return <div {...this.props} className={classes} />;
+    return <Box {...this.props} className={classes} />;
   }
-};
+}
 
 class Collapsible extends Component {
   render () {
@@ -66,7 +71,7 @@ class Collapsible extends Component {
       </Component>
     );
   }
-};
+}
 
 Collapsible.propTypes = {
   active: PropTypes.bool,

@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Disabled has correct className rendering 1`] = `
+<svg
+  aria-label="Disabled"
+  className="grommetux-status-icon grommetux-status-icon-disabled testing"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <mask
+      id="mask-disabled-1"
+    >
+      <g
+        className="grommetux-status-icon__detail"
+      >
+        <rect
+          fill="#fff"
+          height="24"
+          width="24"
+          x="0"
+          y="0"
+        />
+        <path
+          d="M6,12 L18,12"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </g>
+    </mask>
+  </defs>
+  <g
+    className="grommetux-status-icon__base"
+    mask="url(#mask-disabled-1)"
+  >
+    <path
+      d="M21,24 L3,24 C1.3,24 0,22.7 0,21 L0,3 C0,1.3 1.3,0 3,0 L21,0 C22.7,0 24,1.3 24,3 L24,21 C24,22.7 22.7,24 21,24 L21,24 Z"
+      stroke="none"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Disabled has correct default options 1`] = `
+<svg
+  aria-label="Disabled"
+  className="grommetux-status-icon grommetux-status-icon-disabled"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <mask
+      id="mask-disabled-0"
+    >
+      <g
+        className="grommetux-status-icon__detail"
+      >
+        <rect
+          fill="#fff"
+          height="24"
+          width="24"
+          x="0"
+          y="0"
+        />
+        <path
+          d="M6,12 L18,12"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </g>
+    </mask>
+  </defs>
+  <g
+    className="grommetux-status-icon__base"
+    mask="url(#mask-disabled-0)"
+  >
+    <path
+      d="M21,24 L3,24 C1.3,24 0,22.7 0,21 L0,3 C0,1.3 1.3,0 3,0 L21,0 C22.7,0 24,1.3 24,3 L24,21 C24,22.7 22.7,24 21,24 L21,24 Z"
+      stroke="none"
+    />
+  </g>
+</svg>
+`;

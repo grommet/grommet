@@ -12,18 +12,32 @@ const CLASS_ROOT = CSSClassnames.VIDEO;
 
 export default class Overlay extends Component {
 
-  constructor () {
-    super();
+  constructor (props, context) {
+    super(props, context);
 
     this._onResponsive = this._onResponsive.bind(this);
-    this.state = { iconSize: 'large' };
+    this.state = {
+      iconSize: props.size &&
+        (props.size === 'small' || props.size === 'medium') ?
+          'large' : 'xlarge'
+    };
+  }
+
+  componentWillReceiveProps (newProps) {
+    if (newProps.size !== this.props.size) {
+      this.setState({
+        iconSize: newProps.size &&
+          (newProps.size === 'small' || newProps.size === 'medium') ?
+            'large' : 'xlarge'
+      });
+    }
   }
 
   _onResponsive (small) {
     if (small) {
-      this.setState({ iconSize: 'small' });
+      this.setState({ iconSize: 'medium' });
     } else {
-      let iconSize = (('small' === this.props.size) ? null : 'large');
+      let iconSize = (('small' === this.props.size) ? undefined : 'xlarge');
       this.setState({ iconSize: iconSize });
     }
   }
@@ -46,22 +60,19 @@ export default class Overlay extends Component {
   }
 
   render() {
-    // when iconSize is small (mobile screen sizes), remove the extra padding
-    // so that the play control is centered
-    let emptyBox = this.state.iconSize === 'small' ? null : <Box />;
+    const { ended, playing, togglePlay, videoHeader } = this.props;
 
     return (
       <Box pad="none" align="center" justify="center"
         className={`${CLASS_ROOT}__overlay`}>
+        {videoHeader}
         <Box pad="none" align="center" justify="center">
           <VideoPlayButton iconSize={this.state.iconSize}
-            className={`${CLASS_ROOT}__play`}
-            playing={this.props.playing}
-            ended={this.props.ended}
-            togglePlay={this.props.togglePlay} />
+            playing={playing}
+            ended={ended}
+            togglePlay={togglePlay} />
         </Box>
         {this._renderReplayMenu()}
-        {emptyBox}
       </Box>
     );
   }

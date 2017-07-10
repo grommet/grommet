@@ -1,9 +1,11 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
-import { padding, pointSize, debounceDelay } from './utils';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
 import Intl from '../../utils/Intl';
+import { padding, pointSize } from './utils';
 
 const CLASS_ROOT = CSSClassnames.CHART_GRAPH;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
@@ -12,37 +14,7 @@ export default class Graph extends Component {
 
   constructor(props, context) {
     super(props, context);
-    this._onResize = this._onResize.bind(this);
-    this._layout = this._layout.bind(this);
     this._renderA11YTitle = this._renderA11YTitle.bind(this);
-    this.state = { height: props.height || 1, width: props.width || 1 };
-  }
-
-  componentDidMount () {
-    window.addEventListener('resize', this._onResize);
-    this._onResize();
-  }
-
-  componentWillUnmount () {
-    clearTimeout(this._resizeTimer);
-    window.removeEventListener('resize', this._onResize);
-  }
-
-  _onResize () {
-    // debounce
-    clearTimeout(this._resizeTimer);
-    // delay should be greater than Chart's delay
-    this._resizeTimer = setTimeout(this._layout, debounceDelay + 10);
-  }
-
-  _layout () {
-    const { height, width } = this.props;
-    const graph = this.refs.graph;
-    const rect = graph.parentNode.getBoundingClientRect();
-    this.setState({
-      height: height || Math.floor(rect.height),
-      width: width || Math.floor(rect.width)
-    });
   }
 
   // Determines what the appropriate control coordinates are on
@@ -102,42 +74,51 @@ export default class Graph extends Component {
 
     let maxLabel = `, ${Intl.getMessage(intl, 'Max')}: ${max}`;
 
+    const definedValues = values.filter((value) => value);
     const valueLabel = Intl.getMessage(intl, 'GraphValues', {
       count: values.length,
-      highest: Math.max(...values).toString(),
-      smallest: Math.min(...values).toString()
+      highest: Math.max(...definedValues).toString(),
+      smallest: Math.min(...definedValues).toString()
     });
 
     return `${typeLabel} ${minLabel} ${maxLabel}. ${valueLabel}`;
   }
 
   render () {
-    const { activeIndex, colorIndex, max, min, reverse, smooth, type,
-      values, vertical } = this.props;
-    const { height, width } = this.state;
-    const pad = Math.min(width, height) < (padding * 8) ? 2 : padding;
+    const {
+      activeIndex, className, colorIndex, max, min, reverse, smooth, type,
+      values, vertical, width, height, ...props
+    } = this.props;
+    delete props.points;
+    const pad = Math.min(width, height) < (padding * 6) ? 2 : padding;
 
-    let classes = [CLASS_ROOT, `${CLASS_ROOT}--${type}`];
-    if (vertical) {
-      classes.push(`${CLASS_ROOT}--vertical`);
-    }
-    classes.push(`${COLOR_INDEX}-${colorIndex || 'graph-1'}`);
+    const classes = classnames(
+      CLASS_ROOT,
+      `${CLASS_ROOT}--${type}`, {
+        [`${CLASS_ROOT}--vertical`]: vertical
+      },
+      `${COLOR_INDEX}-${colorIndex || 'graph-1'}`,
+      className
+    );
 
-    let scale, step;
+    let scale = 1;
+    let step;
     if (vertical) {
       if (values.length <= 1) {
-        scale = 1;
         step = height - (2 * pad);
       } else {
-        scale = (width - (2 * pad)) / (max - min);
+        if (max - min > 0) {
+          scale = (width - (2 * pad)) / (max - min);
+        }
         step = (height - (2 * pad)) / (values.length - 1);
       }
     } else {
       if (values.length <= 1) {
-        scale = 1;
         step = width - (2 * pad);
       } else {
-        scale = (height - (2 * pad)) / (max - min);
+        if (max - min > 0) {
+          scale = (height - (2 * pad)) / (max - min);
+        }
         step = (width - (2 * pad)) / (values.length - 1);
       }
     }
@@ -147,37 +128,43 @@ export default class Graph extends Component {
     let points = [];
     const coordinates = values.map((value, index) => {
       let coordinate;
-      if (vertical) {
-        coordinate = [
-          ((value - min) * scale) + pad,
-          (reverse ? (index * step) :
-            (height - (2 * pad)) - (index * step)) + pad
-        ];
-      } else {
-        coordinate = [
-          (reverse ? (width - (2 * pad)) - (index * step) :
-            index * step) + pad,
-          ((height - (2 * pad)) - ((value - min) * scale)) + pad
-        ];
-      }
-
-      if ((this.props.points || index === activeIndex) &&
-        ! this.props.sparkline) {
-        const classes = [`${CLASS_ROOT}__point`,
-          `${COLOR_INDEX}-${colorIndex || 'graph-1'}`];
-        let radius = pointSize / 3;
-        if (index === activeIndex) {
-          classes.push(`${CLASS_ROOT}__point--active`);
-          radius = pointSize / 2;
+      if (undefined !== value) {
+        if (vertical) {
+          coordinate = [
+            ((value - min) * scale) + pad,
+            (reverse ? (index * step) :
+              (height - (2 * pad)) - (index * step)) + pad
+          ];
+        } else {
+          coordinate = [
+            (reverse ? (width - (2 * pad)) - (index * step) :
+              index * step) + pad,
+            ((height - (2 * pad)) - ((value - min) * scale)) + pad
+          ];
         }
-        points.push(
-          <circle key={index} className={classes.join(' ')}
-            cx={coordinate[0]} cy={coordinate[1]} r={radius} />
-        );
+
+        if ((this.props.points || index === activeIndex) &&
+          ! this.props.sparkline) {
+          const classes = classnames(
+            `${CLASS_ROOT}__point`,
+            `${COLOR_INDEX}-${colorIndex || 'graph-1'}`, {
+              [`${CLASS_ROOT}__point--active`]: (index === activeIndex)
+            }
+          );
+          let radius = pointSize / 3;
+          if (index === activeIndex) {
+            radius = pointSize / 2;
+          }
+          points.push(
+            <circle key={index} className={classes}
+              cx={coordinate[0]} cy={coordinate[1]} r={radius} />
+          );
+        }
       }
 
       return coordinate;
-    });
+    })
+    .filter(coordinate => coordinate);
 
     let path;
     if (coordinates.length > 1) {
@@ -249,9 +236,9 @@ export default class Graph extends Component {
     }
 
     return (
-      <svg ref="graph" className={classes.join(' ')}
-        viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none"
-        role="img" aria-label={this._renderA11YTitle()}>
+      <svg ref={ref => this.graphRef = ref} {...props} className={classes}
+        viewBox={`0 0 ${width} ${height}`} preserveAspectRatio='none'
+        role='row' aria-label={this._renderA11YTitle()}>
         <g>
           {path}
         </g>
@@ -260,7 +247,7 @@ export default class Graph extends Component {
     );
   }
 
-};
+}
 
 Graph.contextTypes = {
   intl: PropTypes.object

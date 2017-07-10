@@ -17,20 +17,32 @@
 
 .#{$grommet-namespace}search__input {
   margin-right: 0px;
-
-  .#{$grommet-namespace}header & {
-    font-size: inherit;
-    line-height: inherit;
-  }
+  @include input();
 
   // Disable IE's clear icon
   &::-ms-clear {
     display: none;
   }
+
+  #{$dark-background-context} {
+    border-color: $colored-border-color;
+
+    &:focus {
+      border-color: $focus-border-color;
+    }
+  }
+
+  #{$light-background-context} {
+    border-color: $border-color;
+
+    &:focus {
+      border-color: $focus-border-color;
+    }
+  }
 }
 
 .#{$grommet-namespace}search__drop {
-  @include inuit-font-size($inuit-heading-size-4, inherit);
+  @include inuit-font-size($h4-font-size, inherit);
 
   @include media-query(palm) {
     max-width: 100%;
@@ -55,11 +67,12 @@
   .#{$grommet-namespace}search__suggestion {
     padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
     cursor: pointer;
+    outline: none;
 
     // limit width of suggestions so that search icon + input do not wrap
     // for long suggestions
     @include media-query(palm) {
-      width: calc(100vw - #{round($inuit-base-spacing-unit * 3)});
+      width: 100vw;
     }
 
     &:hover,
@@ -135,7 +148,7 @@
 
 .#{$grommet-namespace}search--small {
   .#{$grommet-namespace}search__input {
-    @include inuit-font-size($control-font-size, inherit);
+    @include inuit-font-size($input-small-font-size, normal);
     padding: (($inuit-base-spacing-unit - $control-font-size) - $input-border-width)
       ($control-font-size - $input-border-width);
     padding-right: ($inuit-base-spacing-unit - $input-border-width);
@@ -146,16 +159,17 @@
       padding-right: ($inuit-base-spacing-unit - $input-focus-border-width);
     }
   }
+}
 
-  // .#{$grommet-namespace}control-icon-search {
-  //   height: halve($inuit-base-spacing-unit);
-  //   width: halve($inuit-base-spacing-unit);
-  // }
+.#{$grommet-namespace}search--medium {
+  .#{$grommet-namespace}search__input {
+    @include inuit-font-size($input-medium-font-size, normal);
+  }
 }
 
 .#{$grommet-namespace}search--large {
   .#{$grommet-namespace}search__input {
-    @include inuit-font-size($large-input-font-size, normal);
+    @include inuit-font-size($input-large-font-size, normal);
     padding: halve($inuit-base-spacing-unit) ($inuit-base-spacing-unit);
     padding-right: ($inuit-base-spacing-unit * 3);
 
@@ -241,8 +255,19 @@
 }
 
 .#{$grommet-namespace}search--fill {
-  width: 100%;
+  // width: 100%;
   max-width: none;
   //used to add full height for button inside a flex container
   flex-grow: 1;
+}
+
+.#{$grommet-namespace}search--pad-medium.#{$grommet-namespace}search--inline {
+  .#{$grommet-namespace}search__input {
+    padding-left: ($inuit-base-spacing-unit - $input-border-width);
+    padding-right: ($inuit-base-spacing-unit - $input-border-width);
+  }
+
+  .#{$grommet-namespace}control-icon-search {
+    right: $inuit-base-spacing-unit;
+  }
 }

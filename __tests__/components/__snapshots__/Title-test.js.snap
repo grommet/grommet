@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title has correct className rendering 1`] = `
+<div
+  className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-title grommetux-title--responsive grommetux-title--truncate testing"
+  id={undefined}
+  onClick={undefined}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}
+>
+  <span>
+    Testing
+  </span>
+</div>
+`;
+
+exports[`Title has correct default options 1`] = `
+<div
+  className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-title grommetux-title--responsive grommetux-title--truncate"
+  id={undefined}
+  onClick={undefined}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}
+>
+  <span>
+    Testing
+  </span>
+</div>
+`;
+
+exports[`Title has correct onClick rendering 1`] = `
+<div
+  aria-label="Title"
+  className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-box--clickable grommetux-title grommetux-title--responsive grommetux-title--truncate grommetux-title--interactive"
+  id={undefined}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
+  role="group"
+  style={Object {}}
+  tabIndex={0}
+>
+  <span>
+    Testing
+  </span>
+</div>
+`;
+
+exports[`Title has correct onClick rendering 2`] = `
+<div
+  aria-label="Title"
+  className="grommetux-box grommetux-box--direction-row grommetux-box--align-center grommetux-box--pad-none grommetux-box--clickable grommetux-title grommetux-title--responsive grommetux-title--truncate grommetux-title--interactive"
+  id={undefined}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
+  role="group"
+  style={Object {}}
+  tabIndex={0}
+>
+  <span>
+    Testing
+  </span>
+</div>
+`;

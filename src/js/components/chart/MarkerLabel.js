@@ -1,7 +1,10 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
+import Props from '../../utils/Props';
 import { announce } from '../../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.CHART_MARKER_LABEL;
@@ -42,9 +45,12 @@ export default class MarkerLabel extends Component {
   }
 
   _renderPlaceholder (basis) {
-    const classes = [`${CLASS_ROOT}__slot`, `${CLASS_ROOT}__slot--placeholder`];
+    const classes = classnames(
+      `${CLASS_ROOT}__slot`,
+      `${CLASS_ROOT}__slot--placeholder`
+    );
     return (
-      <div key="placeholder" className={classes.join(' ')} aria-hidden='true'
+      <div key="placeholder" className={classes} aria-hidden='true'
         style={{ flexBasis: `${basis}%` }} />
     );
   }
@@ -52,22 +58,22 @@ export default class MarkerLabel extends Component {
   _renderLabel (basis, flip) {
     const { colorIndex } = this.props;
     let { label } = this.props;
-    let classes = [`${CLASS_ROOT}__slot`];
-    if (flip) {
-      classes.push(`${CLASS_ROOT}__slot--flip`);
-    }
-    if (colorIndex) {
-      classes.push(`${COLOR_INDEX}-${colorIndex}`);
-    }
+    const classes = classnames(
+      `${CLASS_ROOT}__slot`, {
+        [`${CLASS_ROOT}__slot--flip`]: flip,
+        [`${COLOR_INDEX}-${colorIndex}`]: colorIndex
+      }
+    );
     if (typeof label === 'string' || typeof label === 'number') {
       label = <span>{label}</span>;
-    } else { // added for a11y to announce changes in the values
+    } else if (label.propTypes && label.propTypes.announce) {
+      // added for a11y to announce changes in the values
       label = React.cloneElement(label, {
         announce: true
       });
     }
     return (
-      <div key="label" className={classes.join(' ')}
+      <div key="label" className={classes}
         style={{ flexBasis: `${basis}%` }}>
         {label}
       </div>
@@ -75,22 +81,19 @@ export default class MarkerLabel extends Component {
   }
 
   render () {
-    const { align, reverse, vertical } = this.props;
+    const { align, className, reverse, vertical } = this.props;
     const { valueBasis } = this.state;
+    const restProps = Props.omit(this.props,
+      Object.keys(MarkerLabel.propTypes));
 
-    let classes = [CLASS_ROOT];
-    if (reverse) {
-      classes.push(`${CLASS_ROOT}--reverse`);
-    }
-    if (vertical) {
-      classes.push(`${CLASS_ROOT}--vertical`);
-    }
-    if (align) {
-      classes.push(`${CLASS_ROOT}--align-${align}`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const classes = classnames(
+      CLASS_ROOT, {
+        [`${CLASS_ROOT}--reverse`]: reverse,
+        [`${CLASS_ROOT}--vertical`]: vertical,
+        [`${CLASS_ROOT}--align-${align}`]: align
+      },
+      className
+    );
 
     let firstItem, secondItem;
     if (valueBasis < 50) {
@@ -104,15 +107,14 @@ export default class MarkerLabel extends Component {
     }
 
     return (
-      <div ref="markerLabel" id={this.props.id}
-        className={classes.join(' ')} style={this.props.style} >
+      <div {...restProps} className={classes} >
         {firstItem}
         {secondItem}
       </div>
     );
   }
 
-};
+}
 
 // Need either count and index or value, min, and max
 MarkerLabel.propTypes = {

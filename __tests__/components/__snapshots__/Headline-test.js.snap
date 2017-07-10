@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Headline has correct default options 1`] = `
+<div
+  className="grommetux-headline"
+  data-flavor="coconut"
+>
+  Testing
+</div>
+`;

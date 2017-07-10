@@ -1,129 +1,211 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
 import { FormattedDate } from 'react-intl';
 import Intl from '../utils/Intl';
 import Box from './Box';
-import Animate from './Animate';
+import Value from './Value';
+// import Animate from './Animate';
 import Meter from './Meter';
 import Button from './Button';
 import StatusIcon from './icons/Status';
 import CloseIcon from './icons/base/Close';
 import Props from '../utils/Props';
 import CSSClassnames from '../utils/CSSClassnames';
+import Announcer from '../utils/Announcer';
+import { checkDarkBackground } from '../utils/DOM';
 
 const CLASS_ROOT = CSSClassnames.NOTIFICATION;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 
 export default class Notification extends Component {
 
+  constructor () {
+    super();
+    this._announce = this._announce.bind(this);
+    this._setDarkBackground = this._setDarkBackground.bind(this);
+    this.state = {};
+  }
+
+  componentDidMount () {
+    this._announce();
+    // Measure the actual background color brightness to determine whether
+    // to set a dark or light context.
+    this._setDarkBackground();
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.status !== this.props.status) {
+      this.setState({ updateDarkBackground: true });
+    }
+  }
+
+  componentDidUpdate () {
+    this._announce();
+    if (this.state.updateDarkBackground) {
+      this.setState({ updateDarkBackground: false });
+      this._setDarkBackground();
+    }
+  }
+
+  componentWillUnmount () {
+    if (this._checkBackground) {
+      this._checkBackground.stop();
+    }
+  }
+
+  _setDarkBackground () {
+    const { status } = this.props;
+    const container = findDOMNode(this._containerRef);
+    if (this._checkBackground) {
+      this._checkBackground.stop();
+    }
+    this._checkBackground = checkDarkBackground(status, container,
+      (darkBackground) => this.setState({ darkBackground }));
+  }
+
+  _announce () {
+    const { announce, message } = this.props;
+    const { intl } = this.context;
+    if (announce) {
+      const notificationMessage = Intl.getMessage(intl, 'Notification');
+      Announcer.announce(`${notificationMessage}: ${message}`);
+    }
+  }
+
+  _backgroundContextClass (darkBackground) {
+    let result;
+    if (undefined === darkBackground) {
+      result = `${BACKGROUND_COLOR_INDEX}--pending`;
+    } else if (darkBackground) {
+      result = `${BACKGROUND_COLOR_INDEX}--dark`;
+    } else {
+      result = `${BACKGROUND_COLOR_INDEX}--light`;
+    }
+    return result;
+  }
+
   render () {
-    let classes = classnames(
+    const {
+      children, className, closer, context, percentComplete, message,
+      onClose, timestamp, size, state, status
+    } = this.props;
+    const { intl } = this.context;
+    const { darkBackground } = this.state;
+    const classes = classnames(
       CLASS_ROOT,
-      `${CLASS_ROOT}--status-${this.props.status.toLowerCase()}`,
-      `${BACKGROUND_COLOR_INDEX}-${this.props.status.toLowerCase()}`,
-      this.props.className,
+      `${CLASS_ROOT}--status-${status.toLowerCase()}`,
+      `${BACKGROUND_COLOR_INDEX}-${status.toLowerCase()}`,
+      this._backgroundContextClass(darkBackground),
       {
-        [`${CLASS_ROOT}--${this.props.size}`]: this.props.size,
-        [`${CLASS_ROOT}--disabled`]: !this.props.onClick
-      }
+        [`${CLASS_ROOT}--${size}`]: size
+      },
+      className
     );
 
-    let status;
-    if (this.props.status) {
-      status = (
+    let statusNode;
+    if (status) {
+      statusNode = (
         <StatusIcon className={`${CLASS_ROOT}__status`}
-          value={this.props.status} size={this.props.size} />
+          value={status} size={size} />
       );
     }
 
-    let state;
-    if (this.props.state) {
-      state = (
-        <div className={`${CLASS_ROOT}__state`}>{this.props.state}</div>
+    let stateNode;
+    if (state) {
+      stateNode = (
+        <div className={`${CLASS_ROOT}__state`}>{state}</div>
       );
     }
 
     let progress;
-    if (this.props.percentComplete || 0 === this.props.percentComplete) {
+    if (percentComplete || 0 === percentComplete) {
       progress = (
-        <Meter units="%"
-          series={[{
-            value: this.props.percentComplete,
-            label: '',
-            colorIndex: 'light-1'
-          }]} />
+        <Box direction='row' align='center' pad={{ between: 'medium' }}>
+          <Meter
+            series={[{
+              value: percentComplete,
+              colorIndex: 'light-1'
+            }]}/>
+          <Value value={percentComplete} units='%' size='small'/>
+        </Box>
       );
     }
 
-    let timestamp;
-    if (this.props.timestamp) {
-      let timestampFormatted = this.props.timestamp.toString();
-      if (this.context.intl) {
+    let timestampNode;
+    if (timestamp) {
+      let timestampFormatted = timestamp.toString();
+      if (intl) {
         timestampFormatted = (
-          <FormattedDate value={this.props.timestamp}
-            weekday="long"
-            day="numeric"
-            month="long"
-            year="numeric"
-            hour="numeric"
-            minute="numeric"
-            second="numeric" />
+          <FormattedDate value={timestamp} weekday='long' day='numeric'
+            month='long' year='numeric' hour='numeric' minute='numeric'
+            second='numeric' />
         );
       }
 
-      timestamp = (
+      timestampNode = (
         <div className={`${CLASS_ROOT}__timestamp`}>
           {timestampFormatted}
         </div>
       );
     }
 
-    let closer;
-    if (typeof this.props.closer === 'object') {
-      closer = this.props.closer;
-
-    } else if (this.props.onClose && this.props.closer) {
-      closer = (
-        <Box direction="row" align="start" responsive={false} flex={false}>
-          <Button className={`${CLASS_ROOT}__close-button`}
-            plain={true} onClick={this.props.onClose}
-            icon={<CloseIcon className={`${CLASS_ROOT}__close`} />}
-            a11yTitle={
-              Intl.getMessage(this.context.intl, 'Close Notification')
-            } />
-        </Box>
+    let closerNode;
+    if (typeof closer === 'object') {
+      closerNode = closer;
+    } else if (onClose && closer) {
+      closerNode = (
+        <Button plain={true} onClick={onClose}
+          icon={<CloseIcon
+            className={`${CLASS_ROOT}__close`} />}
+          a11yTitle={
+            Intl.getMessage(intl, 'Close Notification')
+          } />
       );
     }
 
-    let boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
-    let fullBox =
-      boxProps.hasOwnProperty('full') ? boxProps.full : 'horizontal';
+    const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    const restProps =
+      Props.omit(this.props, Object.keys(Notification.propTypes));
+    boxProps.announce = false;
+    const fullBox =
+      boxProps.hasOwnProperty('full') ? boxProps.full : undefined;
 
+    if (size && typeof size === 'string') {
+      // don't transfer size to Box since it means something different
+      delete boxProps.size;
+    }
+    /*
+    <Animate enter={{ animation: 'fade', duration: 1000 }}
+      leave={{ animation: 'fade', duration: 1000 }}>
+    </Animate>
+    */
     return (
-      <Animate
-        enter={{ animation: 'fade', duration: 1000 }}
-        leave={{ animation: 'fade', duration: 1000 }}>
-        <Box {...boxProps} className={classes}
-          direction="row" responsive={false}>
-          {status}
-          <Box full={fullBox}>
-            <span className={`${CLASS_ROOT}__message`}>
-              {this.props.message}
-            </span>
-            {this.props.context}
-            {timestamp}
-            {state}
-            {progress}
-            {this.props.children}
-          </Box>
-          {closer}
+      <Box ref={(ref) => this._containerRef = ref}
+        {...restProps} {...boxProps} className={classes}
+        pad='small' direction='row' align='start' responsive={false}
+        full={fullBox}>
+        <Box pad='small'>
+          {statusNode}
         </Box>
-      </Animate>
+        <Box flex={true} pad='small'>
+          <span className={`${CLASS_ROOT}__message`}>
+            {message}
+          </span>
+          {context}
+          {timestampNode}
+          {stateNode}
+          {progress}
+          {children}
+        </Box>
+        {closerNode}
+      </Box>
     );
   }
-};
+}
 
 Notification.propTypes = {
   closer: PropTypes.oneOfType([
@@ -147,7 +229,6 @@ Notification.contextTypes = {
 
 Notification.defaultProps = {
   closer: false,
-  flush: true,
   status: 'unknown',
   pad: 'medium'
 };

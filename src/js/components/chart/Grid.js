@@ -1,8 +1,10 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
-import { padding, debounceDelay } from './utils';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
+import { padding } from './utils';
 
 const CLASS_ROOT = CSSClassnames.CHART_GRID;
 
@@ -10,63 +12,39 @@ const CLASS_ROOT = CSSClassnames.CHART_GRID;
 
 export default class Grid extends Component {
 
-  constructor(props, context) {
-    super(props, context);
-    this._onResize = this._onResize.bind(this);
-    this._layout = this._layout.bind(this);
-    this.state = { height: 1, width: 1 };
-  }
-
-  componentDidMount () {
-    window.addEventListener('resize', this._onResize);
-    this._onResize();
-  }
-
-  componentWillUnmount () {
-    clearTimeout(this._resizeTimer);
-    window.removeEventListener('resize', this._onResize);
-  }
-
-  _onResize () {
-    // debounce
-    clearTimeout(this._resizeTimer);
-    // delay should be greater than Chart's delay
-    this._resizeTimer = setTimeout(this._layout, debounceDelay + 10);
-  }
-
-  _layout () {
-    const { height, width } = this.props;
-    const grid = this.refs.grid;
-    const rect = grid.getBoundingClientRect();
-    this.setState({ height: height || rect.height });
-    this.setState({ width: width || rect.width });
-  }
-
   render () {
-    const { columns, rows } = this.props;
-    const { height, width } = this.state;
+    const { className, columns, rows, width, height, ...props } = this.props;
+    const classes = classnames(
+      CLASS_ROOT,
+      className
+    );
+
     let commands = '';
 
-    if (columns) {
+    if (columns > 1) {
       const basis = ((width - (2 * padding)) / (columns - 1));
       for (let i=0; i<columns; i+=1) {
-        let x = i * basis;
+        const x = i * basis;
         commands +=
           `M${x + padding},${padding} L${x + padding},${height - padding} `;
       }
     }
 
-    if (rows) {
+    if (rows === 1) {
+      const y = (height - (2 * padding));
+      commands +=
+        `M${padding},${y + padding} L${width - padding},${y + padding} `;
+    } else if (rows > 1) {
       const basis = ((height - (2 * padding)) / (rows - 1));
       for (let i=0; i<rows; i+=1) {
-        let y = i * basis;
+        const y = i * basis;
         commands +=
           `M${padding},${y + padding} L${width - padding},${y + padding} `;
       }
     }
 
     return (
-      <svg ref="grid" className={CLASS_ROOT}
+      <svg ref={ref => this.gridRef = ref} {...props} className={classes}
         viewBox={`0 0 ${width} ${height}`}
         preserveAspectRatio="none">
         <path fill="none" d={commands} />
@@ -74,7 +52,7 @@ export default class Grid extends Component {
     );
   }
 
-};
+}
 
 Grid.propTypes = {
   columns: PropTypes.number,

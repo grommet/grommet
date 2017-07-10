@@ -1,6 +1,7 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes, Children } from 'react';
+import React, { Component, Children } from 'react';
+import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
 import Props from '../utils/Props';
@@ -10,6 +11,9 @@ import SpinningIcon from './icons/Spinning';
 import Scroll from '../utils/Scroll';
 import InfiniteScroll from '../utils/InfiniteScroll';
 import Selection from '../utils/Selection';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import Intl from '../utils/Intl';
+import { announce } from '../utils/Announcer';
 
 import LinkPreviousIcon from './icons/base/LinkPrevious';
 import LinkNextIcon from './icons/base/LinkNext';
@@ -18,6 +22,7 @@ import CSSClassnames from '../utils/CSSClassnames';
 const CLASS_ROOT = CSSClassnames.TILES;
 const TILE = CSSClassnames.TILE;
 const SELECTED_CLASS = `${TILE}--selected`;
+const ACTIVE_CLASS = `${TILE}--active`;
 
 export default class Tiles extends Component {
 
@@ -30,99 +35,218 @@ export default class Tiles extends Component {
     this._onResize = this._onResize.bind(this);
     this._layout = this._layout.bind(this);
     this._onClick = this._onClick.bind(this);
+    this._fireClick = this._fireClick.bind(this);
+    this._announceTile = this._announceTile.bind(this);
+    this._onPreviousTile = this._onPreviousTile.bind(this);
+    this._onNextTile = this._onNextTile.bind(this);
+    this._onEnter = this._onEnter.bind(this);
 
     this.state = {
+      activeTile: undefined,
+      mouseActive: false,
       overflow: false,
-      selected: Selection.normalizeIndexes(props.selected),
-      numColumns: this.props.numColumns,
-      columnBreakpoints: null
+      selected: Selection.normalizeIndexes(props.selected)
     };
   }
 
   componentDidMount () {
+    const { direction, onMore, selectable } = this.props;
     this._setSelection();
-    if (this.props.onMore) {
-      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more,
-        this.props.onMore);
+    if (onMore) {
+      this._scroll = InfiniteScroll.startListeningForScroll(this.moreRef,
+        onMore);
     }
-    if ('row' === this.props.direction) {
+    if ('row' === direction) {
       window.addEventListener('resize', this._onResize);
-      document.addEventListener('wheel', this._onWheel);
+      document.addEventListener('wheel', this._onWheel, { passive: true });
       this._trackHorizontalScroll();
       // give browser a chance to stabilize
       setTimeout(this._layout, 10);
-    } else if (this.props.masonry) {
-      // grab CSS styles from DOM after component mounted
-      // default to medium tile size ($tile-size = 192px)
-      let minColumnWidth = 192;
-      const tile =
-        document.querySelectorAll(`.${CLASS_ROOT}__masonry-column .${TILE}`);
-      if (tile && tile.length > 0) {
-        const columnTile = window.getComputedStyle(tile[0]);
-        if (columnTile && columnTile.width) {
-          minColumnWidth = parseFloat(columnTile.width);
-        }
-      }
-
-      // create array of breakpoints for 1 through this.props.numColumns
-      // number of columns of minColumnWidth width.
-      const columnBreakpoints = Array.apply(null, Array(this.props.numColumns))
-        .map((currentNumColumns, index) => (index + 1) * minColumnWidth);
-      this.setState({columnBreakpoints: columnBreakpoints});
-      window.addEventListener('resize', this._onResize);
-      setTimeout(this._layout, 10);
+    }
+    if (selectable) {
+      // only listen for navigation keys if the tile row can be selected
+      this._keyboardHandlers = {
+        left: this._onPreviousTile,
+        up: this._onPreviousTile,
+        right: this._onNextTile,
+        down: this._onNextTile,
+        enter: this._onEnter,
+        space: this._onEnter
+      };
+      KeyboardAccelerators.startListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
     }
   }
 
   componentWillReceiveProps (nextProps) {
-    if (nextProps.selected) {
+    if (nextProps.selected !== undefined) {
       this.setState({
         selected: Selection.normalizeIndexes(nextProps.selected)
       });
     }
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
-      this._scroll = null;
+      this._scroll = undefined;
     }
   }
 
   componentDidUpdate (prevProps, prevState) {
-    if (JSON.stringify(this.state.selected) !==
-      JSON.stringify(prevState.selected)) {
-      this._setSelection();
+    const { direction, onMore, selectable } = this.props;
+    if (onMore && !this._scroll) {
+      this._scroll = InfiniteScroll.startListeningForScroll(this.moreRef,
+        onMore);
     }
-    if (this.props.onMore && !this._scroll) {
-      this._scroll = InfiniteScroll.startListeningForScroll(this.refs.more,
-        this.props.onMore);
-    }
-    if ('row' === this.props.direction) {
+    if ('row' === direction) {
       this._trackHorizontalScroll();
+      // give browser a chance to stabilize
+      setTimeout(this._layout, 10);
+    }
+    if (selectable) {
+      this._setSelection();
+      // only listen for navigation keys if the list row can be selected
+      this._keyboardHandlers = {
+        left: this._onPreviousTile,
+        up: this._onPreviousTile,
+        right: this._onNextTile,
+        down: this._onNextTile,
+        enter: this._onEnter,
+        space: this._onEnter
+      };
+      KeyboardAccelerators.startListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
     }
   }
 
   componentWillUnmount () {
+    const { direction, selectable } = this.props;
     if (this._scroll) {
       InfiniteScroll.stopListeningForScroll(this._scroll);
     }
-    if ('row' === this.props.direction) {
+    if ('row' === direction) {
       window.removeEventListener('resize', this._onResize);
       document.removeEventListener('wheel', this._onWheel);
       if (this._tracking) {
-        const tiles = findDOMNode(this.refs.tiles);
+        const tiles = findDOMNode(this.tilesRef);
         tiles.removeEventListener('scroll', this._onScrollHorizontal);
       }
-    } else if (this.props.masonry) {
-      window.removeEventListener('resize', this._onResize);
+    }
+    if (selectable) {
+      KeyboardAccelerators.stopListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
+    }
+  }
+
+  _announceTile (label) {
+    const { intl } = this.context;
+    const enterSelectMessage = Intl.getMessage(intl, 'Enter Select');
+    // avoid a long text to be read by the screen reader
+    const labelMessage = label.length > 15 ?
+      `${label.substring(0, 15)}...` : label;
+    announce(`${labelMessage} ${enterSelectMessage}`);
+  }
+
+  _onPreviousTile (event) {
+    if (findDOMNode(this.tilesRef).contains(document.activeElement)) {
+      event.preventDefault();
+      const { activeTile } = this.state;
+      const rows = findDOMNode(this.tilesRef).querySelectorAll(`.${TILE}`);
+      if (rows && rows.length > 0) {
+        if (activeTile === undefined) {
+          rows[0].classList.add(ACTIVE_CLASS);
+          this.setState({ activeTile: 0 }, () => {
+            this._announceTile(
+              rows[this.state.activeTile].innerText
+            );
+          });
+        } else if (activeTile - 1 >= 0) {
+          rows[activeTile].classList.remove(ACTIVE_CLASS);
+          rows[activeTile - 1].classList.add(ACTIVE_CLASS);
+          this.setState({ activeTile: activeTile - 1 }, () => {
+            this._announceTile(
+              rows[this.state.activeTile].innerText
+            );
+          });
+        }
+      }
+
+      //stop event propagation
+      return true;
+    }
+  }
+
+  _onNextTile (event) {
+    if (findDOMNode(this.tilesRef).contains(document.activeElement)) {
+      event.preventDefault();
+      const { activeTile } = this.state;
+      const rows = findDOMNode(this.tilesRef).querySelectorAll(`.${TILE}`);
+      if (rows && rows.length > 0) {
+        if (activeTile === undefined) {
+          rows[0].classList.add(ACTIVE_CLASS);
+          this.setState({ activeTile: 0 }, () => {
+            this._announceTile(
+              rows[this.state.activeTile].innerText
+            );
+          });
+        } else if (activeTile + 1 <= rows.length - 1) {
+          rows[activeTile].classList.remove(ACTIVE_CLASS);
+          rows[activeTile + 1].classList.add(ACTIVE_CLASS);
+          this.setState({ activeTile: activeTile + 1 }, () => {
+            this._announceTile(
+              rows[this.state.activeTile].innerText
+            );
+          });
+        }
+      }
+
+      //stop event propagation
+      return true;
+    }
+  }
+
+  _fireClick (element, shiftKey) {
+    let event;
+    try {
+      event = new MouseEvent('click', {
+        'bubbles': true,
+        'cancelable': true,
+        'shiftKey': shiftKey
+      });
+    } catch (e) {
+      // IE11 workaround.
+      event = document.createEvent('Event');
+      event.initEvent('click', true, true);
+    }
+    // We use dispatchEvent to have the browser fill out the event fully.
+    element.dispatchEvent(event);
+  }
+
+  _onEnter (event) {
+    const { activeTile } = this.state;
+    const { intl } = this.context;
+    if (findDOMNode(this.tilesRef).contains(document.activeElement) &&
+      activeTile !== undefined) {
+      const rows = findDOMNode(this.tilesRef).querySelectorAll(`.${TILE}`);
+      this._fireClick(rows[activeTile], event.shiftKey);
+      rows[activeTile].classList.remove(ACTIVE_CLASS);
+      const label = rows[activeTile].innerText;
+      // avoid a long text to be read by the screen reader
+      const labelMessage = label.length > 15 ?
+        `${label.substring(0, 15)}...` : label;
+      const selectedMessage = Intl.getMessage(intl, 'Selected');
+      announce(`${labelMessage} ${selectedMessage}`);
     }
   }
 
   _onLeft () {
-    const tiles = findDOMNode(this.refs.tiles);
+    const tiles = findDOMNode(this.tilesRef);
     Scroll.scrollBy(tiles, 'scrollLeft', - tiles.offsetWidth);
   }
 
   _onRight () {
-    const tiles = findDOMNode(this.refs.tiles);
+    const tiles = findDOMNode(this.tilesRef);
     Scroll.scrollBy(tiles, 'scrollLeft', tiles.offsetWidth);
   }
 
@@ -142,38 +266,33 @@ export default class Tiles extends Component {
     }
   }
 
-  _getNumberColumns () {
-    const { columnBreakpoints } = this.state;
-    const tiles = findDOMNode(this.refs.tiles);
-    let maxColumnWidthIndex;
-
-    if (tiles) {
-      maxColumnWidthIndex = columnBreakpoints
-        .filter((currentMin) => {
-          return currentMin <= tiles.offsetWidth;
-        })
-        .reduce((maxIndex, currentMin, index, columnWidths) => {
-          return (currentMin > columnWidths[maxIndex]) ? index : maxIndex;
-        }, 0);
-
-      return maxColumnWidthIndex + 1; // return appropriate number of columns
-    }
-
-    return maxColumnWidthIndex;
-  }
-
   _layout () {
-    const { direction, masonry } = this.props;
+    const { direction } = this.props;
+
     if ('row' === direction) {
       // determine if we have more tiles than room to fit
-      const tiles = findDOMNode(this.refs.tiles);
+      const tiles = findDOMNode(this.tilesRef);
+
       // 20 is to allow some fuzziness as scrollbars come and go
-      this.setState({
+      const newState = {
         overflow: (tiles.scrollWidth > (tiles.offsetWidth + 20)),
         overflowStart: (tiles.scrollLeft <= 20),
         overflowEnd:
-          (tiles.scrollLeft >= (tiles.scrollWidth - tiles.offsetWidth))
-      });
+          (tiles.scrollLeft >= (tiles.scrollWidth - tiles.offsetWidth)),
+        scrollWidth: tiles.scrollWidth
+      };
+
+      const state = {
+        overflow: this.state.overflow,
+        overflowStart: this.state.overflowStart,
+        overflowEnd: this.state.overflowEnd,
+        scrollWidth: this.state.scrollWidth
+      };
+
+      // Shallow compare states.
+      if (JSON.stringify(newState) !== JSON.stringify(state)) {
+        this.setState({ ...newState });
+      }
 
       // mark any tiles that might be clipped
       const rect = tiles.getBoundingClientRect();
@@ -189,60 +308,7 @@ export default class Tiles extends Component {
           child.classList.remove(`${TILE}--eclipsed`);
         }
       });
-    } else if (masonry) {
-      // check for appropriate number of columns, if using masonry option
-      const { numColumns } = this.state;
-      const newNumColumns = this._getNumberColumns();
-      if (newNumColumns && (numColumns !== newNumColumns)) {
-        this.setState({ numColumns: newNumColumns });
-      }
     }
-  }
-
-  _renderChild (element) {
-    const { flush } = this.props;
-
-    if (element) {
-      const elementClone = React.cloneElement(element, {
-        hoverBorder: !flush
-      });
-
-      return elementClone;
-    }
-
-    return undefined;
-  }
-
-  _renderMasonryColumns () {
-    const { children } = this.props;
-    const { numColumns } = this.state;
-    let columnContents = {};
-
-    Children.map(children, (element, index) => {
-      let currentColumn = index % numColumns;
-
-      if (!columnContents[`column-${currentColumn}`]) {
-        columnContents[`column-${currentColumn}`] = [];
-      }
-
-      // place children into appropriate column
-      let child = this._renderChild(element);
-      if (child) {
-        columnContents[`column-${currentColumn}`].push(child);
-      }
-    }, this);
-
-    const columnsArray = Array.apply(null, Array(numColumns));
-    let columns = columnsArray.map((current, i) => {
-      return (
-        <Box className={`${CLASS_ROOT}__masonry-column`}
-          key={`column-${numColumns}-${i}`}>
-          {columnContents[`column-${i}`]}
-        </Box>
-      );
-    });
-
-    return columns;
   }
 
   _onResize () {
@@ -252,8 +318,9 @@ export default class Tiles extends Component {
   }
 
   _trackHorizontalScroll () {
-    if (this.state.overflow && ! this._tracking) {
-      const tiles = findDOMNode(this.refs.tiles);
+    const { overflow } = this.state;
+    if (overflow && ! this._tracking) {
+      const tiles = findDOMNode(this.tilesRef);
       tiles.addEventListener('scroll', this._onScrollHorizontal);
       this._tracking = true;
     }
@@ -261,7 +328,7 @@ export default class Tiles extends Component {
 
   _setSelection () {
     Selection.setClassFromIndexes({
-      containerElement: findDOMNode(this.refs.tiles),
+      containerElement: findDOMNode(this.tilesRef),
       childSelector: `.${TILE}`,
       selectedClass: SELECTED_CLASS,
       selectedIndexes: this.state.selected
@@ -269,79 +336,134 @@ export default class Tiles extends Component {
   }
 
   _onClick (event) {
-    let selected = Selection.onClick(event, {
-      containerElement: findDOMNode(this.refs.tiles),
+    const { onSelect, selectable, selected } = this.props;
+    const selection = Selection.onClick(event, {
+      containerElement: findDOMNode(this.tilesRef),
       childSelector: `.${TILE}`,
       selectedClass: SELECTED_CLASS,
-      multiSelect: ('multiple' === this.props.selectable),
+      multiSelect: ('multiple' === selectable),
       priorSelectedIndexes: this.state.selected
     });
     // only set the selected state and classes if the caller isn't managing it.
-    if (! this.props.selected) {
-      this.setState({ selected: selected }, this._setSelection);
+    if (selected === undefined) {
+      this.setState({ selected: selection }, this._setSelection);
     }
 
-    if (this.props.onSelect) {
-      // notify caller that the selection has changed
-      if (selected.length === 1) {
-        selected = selected[0];
-      }
-      this.props.onSelect(selected);
+    if (onSelect) {
+      onSelect(selection.length === 1 ? selection[0] : selection);
     }
+  }
+
+  _renderChild (element) {
+    const { flush } = this.props;
+
+    if (element) {
+      // only clone tile children
+      if (element.type && element.type.displayName === 'Tile') {
+        const elementClone = React.cloneElement(element, {
+          hoverBorder: !flush
+        });
+
+        return elementClone;
+      }
+      return element;
+    }
+
+    return undefined;
   }
 
   // children should be an array of Tile
   render () {
-    const { onMore, selectable, masonry, direction } = this.props;
-    const { overflow } = this.state;
+    const {
+      a11yTitle, className, children, direction, fill, flush, onBlur, onFocus,
+      onMore, onMouseDown, onMouseUp, selectable
+    } = this.props;
+    const {
+      activeTile, focus, mouseActive, overflow, overflowEnd, overflowStart
+    } = this.state;
+    const { intl } = this.context;
 
     const classes = classnames(
       CLASS_ROOT,
-      this.props.className,
       {
-        [`${CLASS_ROOT}--fill`]: this.props.fill,
-        [`${CLASS_ROOT}--flush`]: this.props.flush,
-        [`${CLASS_ROOT}--${this.props.size}`]: this.props.size,
-        [`${CLASS_ROOT}--selectable`]: this.props.selectable,
-        [`${CLASS_ROOT}--moreable`]: this.props.onMore,
-        [`${CLASS_ROOT}--overflowed`]: this.state.overflow,
-        [`${CLASS_ROOT}--masonry`]: this.props.masonry
-      }
+        [`${CLASS_ROOT}--fill`]: fill,
+        [`${CLASS_ROOT}--flush`]: flush,
+        [`${CLASS_ROOT}--focus`]: focus,
+        [`${CLASS_ROOT}--selectable`]: selectable,
+        [`${CLASS_ROOT}--moreable`]: onMore,
+        [`${CLASS_ROOT}--overflowed`]: overflow
+      },
+      className
     );
 
     const other = Props.pick(this.props, Object.keys(Box.propTypes));
 
-    let more = null;
+    let more;
     if (onMore) {
       more = (
-        <div ref="more" className={`${CLASS_ROOT}__more`}>
+        <div ref={ref => this.moreRef = ref} className={`${CLASS_ROOT}__more`}>
           <SpinningIcon />
         </div>
       );
     }
 
-    let onClickHandler;
-    if (selectable) {
-      onClickHandler = this._onClick;
-    }
+    const tileContents = Children.map(children, (element) => {
+      return this._renderChild(element);
+    });
 
-    let children = this.props.children;
-    if (masonry) {
-      children = this._renderMasonryColumns();
-    } else {
-      children = Children.map(this.props.children, (element) => {
-        return this._renderChild(element);
-      }, this);
+    let selectableProps;
+    if (selectable) {
+      const multiSelectMessage = selectable === 'multiple' ?
+        `(${Intl.getMessage(intl, 'Multi Select')})` : '';
+      const tilesMessage = a11yTitle || Intl.getMessage(intl, 'Tiles');
+      const navigationHelpMessage = Intl.getMessage(intl, 'Navigation Help');
+      selectableProps = {
+        'aria-label': (
+          `${tilesMessage} ${multiSelectMessage} ${navigationHelpMessage}`
+        ),
+        tabIndex: '0',
+        onClick: this._onClick,
+        onMouseDown: (event) => {
+          this.setState({ mouseActive: true });
+          if (onMouseDown) {
+            onMouseDown(event);
+          }
+        },
+        onMouseUp: (event) => {
+          this.setState({ mouseActive: false });
+          if (onMouseUp) {
+            onMouseUp(event);
+          }
+        },
+        onFocus: (event) => {
+          if (mouseActive === false) {
+            this.setState({ focus: true });
+          }
+          if (onFocus) {
+            onFocus(event);
+          }
+        },
+        onBlur: (event) => {
+          if (activeTile) {
+            const rows = (
+              findDOMNode(this.tilesRef).querySelectorAll(`.${TILE}`)
+            );
+            rows[activeTile].classList.remove(ACTIVE_CLASS);
+          }
+          this.setState({ focus: false, activeTile: undefined });
+          if (onBlur) {
+            onBlur(event);
+          }
+        }
+      };
     }
 
     let contents = (
-      <Box ref="tiles" {...other}
+      <Box ref={ref => this.tilesRef = ref} {...other}
         wrap={direction ? false : true}
         direction={direction ? direction : 'row'}
-        className={classes}
-        onClick={onClickHandler}
-        focusable={false}>
-        {children}
+        className={classes} focusable={false} {...selectableProps}>
+        {tileContents}
         {more}
       </Box>
     );
@@ -350,16 +472,20 @@ export default class Tiles extends Component {
       let left;
       let right;
 
-      if (! this.state.overflowStart) {
+      if (!overflowStart) {
+        const previousTilesMessage = Intl.getMessage(intl, 'Previous Tiles');
         left = (
-          <Button className={`${CLASS_ROOT}__left`} icon={<LinkPreviousIcon />}
-            onClick={this._onLeft} />
+          <Button className={`${CLASS_ROOT}__left`}
+            icon={<LinkPreviousIcon />}
+            a11yTitle={previousTilesMessage} onClick={this._onLeft} />
         );
       }
-      if (! this.state.overflowEnd) {
+      if (!overflowEnd) {
+        const nextTilesMessage = Intl.getMessage(intl, 'Next Tiles');
         right = (
-          <Button className={`${CLASS_ROOT}__right`} icon={<LinkNextIcon />}
-            onClick={this._onRight} />
+          <Button className={`${CLASS_ROOT}__right`}
+            icon={<LinkNextIcon />}
+            a11yTitle={nextTilesMessage} onClick={this._onRight} />
         );
       }
 
@@ -377,6 +503,10 @@ export default class Tiles extends Component {
 
 }
 
+Tiles.contextTypes = {
+  intl: PropTypes.object
+};
+
 Tiles.propTypes = {
   fill: PropTypes.bool,
   flush: PropTypes.bool,
@@ -390,15 +520,11 @@ Tiles.propTypes = {
     PropTypes.number,
     PropTypes.arrayOf(PropTypes.number)
   ]),
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  numColumns: PropTypes.number,
-  masonry: PropTypes.bool,
   ...Box.propTypes
 };
 
 Tiles.defaultProps = {
   flush: true,
   justify: 'start',
-  pad: 'small',
-  numColumns: 1
+  pad: 'small'
 };

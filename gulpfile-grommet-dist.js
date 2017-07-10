@@ -24,7 +24,7 @@ var bowerWebpackConfig = {
       path.resolve(__dirname, 'src/scss'),
       path.resolve(__dirname, 'node_modules')
     ],
-    extensions: ['', '.js', '.json', '.htm', '.html', '.scss']
+    extensions: ['', '.js', '.json', '.htm', '.html', '.scss', '.svg']
   },
   externals: {
     'react': 'React',
@@ -80,35 +80,31 @@ module.exports = function(gulp) {
 
   gulp.task('generate-index-icons', function (done) {
     var iconsFolder = path.join(__dirname, './src/img/icons');
-    var iconsMap = ['module.exports = {'];
+    var iconsMap = [];
     fs.readdir(iconsFolder, function(err, icons) {
       icons.forEach(function (icon, index) {
 
         if (/\.svg$/.test(icon)) {
-          var componentName = icon.replace('.svg', '.js');
-          componentName = componentName.replace(/^(.)|-([a-z])/g, function (g) {
+          const componentName = icon.replace(/^(.)|-([a-z])/g, function (g) {
             return g.length > 1 ? g[1].toUpperCase() : g.toUpperCase();
           });
 
-          var grommetIconPath = "./components/icons/base/";
           iconsMap.push(
-            "\"" + componentName.replace('.js', '') + "\":" +
-            " require('" + grommetIconPath + componentName + "')"
+            `export { default as ${componentName.replace('.svg', '').replace(/^3d/, 'ThreeD').replace('-', '')}Icon } from './${componentName.replace('.svg', '')}';`
           );
 
           if (index === icons.length - 1) {
-            iconsMap.push('};\n');
 
-            var destinationFile = path.join(__dirname, './src/js/index-icons.js');
-            fs.writeFile(destinationFile, iconsMap.join(''), function(err) {
+            const destinationFile = path.join(
+              __dirname, './src/js/components/icons/base/index.js'
+            );
+            fs.writeFile(destinationFile, iconsMap.join('\n'), function(err) {
               if (err) {
                 throw err;
               }
 
               done();
             });
-          } else {
-            iconsMap.push(',');
           }
         }
       });
@@ -140,7 +136,7 @@ module.exports = function(gulp) {
       .pipe(minifyCss())
       .pipe(gulp.dest('dist/'));
 
-    return gulp.src('src/scss/grommet-core/*.scss')
+    return gulp.src('src/scss/vanilla/*.scss')
       .pipe(sass({
         includePaths: [path.resolve(__dirname, './node_modules')]
       }))
@@ -176,8 +172,8 @@ module.exports = function(gulp) {
   gulp.task('dist-bower:preprocess', ['generate-index-icons'], (done) => {
     del.sync(['dist-bower']);
 
-    distCss('src/scss/grommet-core/*.scss', 'grommet.css');
-    distCss('src/scss/grommet-core/*.scss', 'grommet.min.css', true);
+    distCss('src/scss/vanilla/*.scss', 'grommet.css');
+    distCss('src/scss/vanilla/*.scss', 'grommet.min.css', true);
     distCss('src/scss/hpe/*.scss', 'grommet-hpe.css');
     distCss('src/scss/hpe/*.scss', 'grommet-hpe.min.css', true);
     distCss('src/scss/hpinc/*.scss', 'grommet-hpinc.css');

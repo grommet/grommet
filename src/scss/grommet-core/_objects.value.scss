@@ -8,8 +8,12 @@
 .#{$grommet-namespace}value--active {
   color: $hover-text-color;
 
-  #{$dark-background-context} & {
+  #{$dark-background-context} {
     color: $active-colored-text-color;
+  }
+
+  #{$light-background-context} {
+    color: $hover-text-color;
   }
 }
 
@@ -37,12 +41,12 @@
 }
 
 .#{$grommet-namespace}value__value {
-  font-weight: 600;
+  font-weight: $text-strong-font-weight;
 }
 
 .#{$grommet-namespace}value__units {
   margin-left: 0.5rem;
-  font-weight: 100;
+  font-weight: $text-font-weight;
 }
 
 .#{$grommet-namespace}value--align-start {
@@ -54,6 +58,28 @@
 .#{$grommet-namespace}value--align-end {
   .#{$grommet-namespace}value__annotated {
     justify-content: flex-end;
+  }
+}
+
+.#{$grommet-namespace}value--xsmall {
+  .#{$grommet-namespace}value__annotated {
+    @include inuit-font-size($value-xsmall-font-size);
+  }
+
+  .#{$grommet-namespace}value__label {
+    margin-top: quarter($inuit-base-spacing-unit);
+    @include inuit-font-size($content-small-font-size);
+  }
+}
+
+.#{$grommet-namespace}value--small {
+  .#{$grommet-namespace}value__annotated {
+    @include inuit-font-size($value-small-font-size);
+  }
+
+  .#{$grommet-namespace}value__label {
+    margin-top: quarter($inuit-base-spacing-unit);
+    @include inuit-font-size($content-small-font-size);
   }
 }
 
@@ -72,18 +98,7 @@
 
   .#{$grommet-namespace}value__label {
     margin-top: halve($inuit-base-spacing-unit);
-    @include inuit-font-size($control-large-font-size);
-  }
-}
-
-.#{$grommet-namespace}value--small {
-  .#{$grommet-namespace}value__annotated {
-    @include inuit-font-size($value-small-font-size);
-  }
-
-  .#{$grommet-namespace}value__label {
-    margin-top: quarter($inuit-base-spacing-unit);
-    @include inuit-font-size($label-font-size);
+    @include inuit-font-size($content-large-font-size);
   }
 }
 
@@ -96,6 +111,7 @@
 }
 
 @include media-query(palm) {
+
   // same as large
   .#{$grommet-namespace}value--xlarge {
     .#{$grommet-namespace}value__annotated {
@@ -112,7 +128,29 @@
 
     .#{$grommet-namespace}value__label {
       margin-top: halve($inuit-base-spacing-unit);
-      @include inuit-font-size($control-large-font-size);
+      @include inuit-font-size($content-large-font-size);
+    }
+  }
+
+  .#{$grommet-namespace}value--responsive {
+    &.#{$grommet-namespace}value--large,
+    &.#{$grommet-namespace}value--xlarge {
+      .#{$grommet-namespace}value__annotated {
+        @include inuit-font-size($value-font-size);
+
+        .#{$grommet-namespace}control-icon:first-child {
+          margin-right: quarter($inuit-base-spacing-unit);
+        }
+
+        .#{$grommet-namespace}control-icon:last-child {
+          margin-left: quarter($inuit-base-spacing-unit);
+        }
+      }
+
+      .#{$grommet-namespace}value__label {
+        margin-top: quarter($inuit-base-spacing-unit);
+        @include inuit-font-size($control-font-size);
+      }
     }
   }
 }

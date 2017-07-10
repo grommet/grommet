@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paragraph has correct default options 1`] = `
+<p
+  className="grommetux-paragraph"
+  data-flavor="coconut"
+>
+  Testing
+</p>
+`;
+
+exports[`Paragraph has correct size="large" options 1`] = `
+<p
+  className="grommetux-paragraph grommetux-paragraph--large"
+>
+  Testing
+</p>
+`;

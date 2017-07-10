@@ -1,6 +1,7 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { getCurrentLocale } from '../utils/Locale';
 import SkipLinks from './SkipLinks';
@@ -36,10 +37,8 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    var lang = getCurrentLocale();
-    if (this.props.lang) {
-      lang = this.props.lang;
-    }
+    var lang = this.props.lang || getCurrentLocale();
+
     if (!document.documentElement.getAttribute('lang')) {
       document.documentElement.setAttribute('lang', lang);
     }
@@ -47,20 +46,20 @@ export default class App extends Component {
   }
 
   render() {
-    const { centered, children, className, inline } = this.props;
+    const { centered, children, className, inline, ...props } = this.props;
     const { lang } = this.state;
 
     const classes = classnames(
       'grommet',
-      className,
       CLASS_ROOT, {
         [`${CLASS_ROOT}--centered`]: centered,
         [`${CLASS_ROOT}--inline`]: inline
-      }
+      },
+      className
     );
 
     return (
-      <div lang={lang} className={classes}>
+      <div lang={lang} className={classes} {...props}>
         {children}
         <SkipLinks />
         <div className={`${CLASS_ROOT}__announcer`} aria-live='polite' />
@@ -69,10 +68,11 @@ export default class App extends Component {
   }
 }
 
-App.defaultProps = {
-  centered: true
+App.propTypes = {
+  centered: PropTypes.bool,
+  inline: PropTypes.bool
 };
 
-App.propTypes = {
-  centered: PropTypes.bool
+App.defaultProps = {
+  centered: true
 };

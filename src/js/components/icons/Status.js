@@ -1,6 +1,8 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import OK from './status/OK';
 import CriticalStatus from './status/CriticalStatus';
 import Warning from './status/Warning';
@@ -15,46 +17,42 @@ const CLASS_ROOT = CSSClassnames.STATUS_ICON;
 export default class Status extends Component {
 
   render () {
-    let classes = [];
-    let { a11yTitle, size } = this.props;
+    let { className, size, value, ...props } = this.props;
+    const classes = classnames(
+      {
+        [`${CLASS_ROOT}--${size}`]: size
+      },
+      className
+    );
 
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-    if (size) {
-      classes.push(CLASS_ROOT + "--" + size);
-    }
-    let className = classes.join(' ');
     let icon = <span>{'?'}</span>;
-    switch (this.props.value.toLowerCase()) {
+    switch (value.toLowerCase()) {
       case 'ok':
       case 'normal':
-        icon = <OK className={className} a11yTitle={a11yTitle} />;
+        icon = <OK {...props} className={classes} />;
         break;
       case 'warning':
-        icon = <Warning className={className} a11yTitle={a11yTitle} />;
+        icon = <Warning {...props} className={classes} />;
         break;
       case 'critical':
-        icon = <CriticalStatus className={className} a11yTitle={a11yTitle} />;
+        icon = <CriticalStatus {...props} className={classes} />;
         break;
       case 'disabled':
-        icon = <Disabled className={className} a11yTitle={a11yTitle} />;
+        icon = <Disabled {...props} className={classes} />;
         break;
       case 'unknown':
-        icon = <Unknown className={className} a11yTitle={a11yTitle} />;
+        icon = <Unknown {...props} className={classes} />;
         break;
       case 'blank':
-        icon = <Blank className={className} a11yTitle={a11yTitle} />;
+        icon = <Blank {...props} className={classes} />;
         break;
       case 'label':
-        icon = <Label className={className} a11yTitle={a11yTitle} />;
+        icon = <Label {...props} className={classes} />;
         break;
     }
     return icon;
   }
 }
-
-Status.defaultProps = {value: 'unknown'};
 
 Status.propTypes = {
   a11yTitle: PropTypes.string,
@@ -62,4 +60,8 @@ Status.propTypes = {
   value: PropTypes.oneOf(['critical', 'warning', 'ok', 'unknown',
     'disabled', 'label',
     'Critical', 'Warning', 'OK', 'Unknown', 'Disabled', 'Label', 'blank'])
+};
+
+Status.defaultProps = {
+  value: 'unknown'
 };

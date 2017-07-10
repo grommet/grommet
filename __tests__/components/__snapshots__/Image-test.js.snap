@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image has correct default options 1`] = `
+<img
+  className="grommetux-image grommetux-image--medium"
+  data-flavor="coconut"
+  src="test.png"
+/>
+`;
+
+exports[`Image has correct full="horizontal" and caption rendering 1`] = `
+<span
+  className="grommetux-image__container"
+>
+  <img
+    className="grommetux-image grommetux-image--medium grommetux-image--full-horizontal"
+    src="test.png"
+  />
+  <label
+    className="grommetux-label grommetux-label--margin-medium grommetux-label--medium grommetux-image__caption grommetux-image__caption--medium"
+    htmlFor={undefined}
+  >
+    Testing
+  </label>
+</span>
+`;
+
+exports[`Image has correct size="thumb" rendering 1`] = `
+<img
+  className="grommetux-image grommetux-image--thumb"
+  src="test.png"
+/>
+`;

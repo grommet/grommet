@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button has className property rendering 1`] = `
+<button
+  aria-label={undefined}
+  className="grommetux-button grommetux-button--disabled grommetux-button--plain test"
+  disabled={true}
+  href={undefined}
+  onBlur={[Function]}
+  onClick={undefined}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
+  type="button"
+>
+  test
+</button>
+`;
+
+exports[`Button has correct default options 1`] = `
+<button
+  aria-label={undefined}
+  className="grommetux-button grommetux-button--disabled"
+  disabled={true}
+  href={undefined}
+  onBlur={[Function]}
+  onClick={undefined}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
+  type="button"
+>
+  <span
+    className="grommetux-button__label"
+  >
+    Test me
+  </span>
+</button>
+`;
+
+exports[`Button has correct icon as children rendering 1`] = `
+<button
+  aria-label={undefined}
+  className="grommetux-button grommetux-button--disabled grommetux-button--plain"
+  disabled={true}
+  href={undefined}
+  onBlur={[Function]}
+  onClick={undefined}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
+  type="button"
+>
+  <svg
+    height="24px"
+    role="img"
+    version="1.1"
+    viewBox="0 0 24 24.3616"
+    width="24px"
+  />
+</button>
+`;
+
+exports[`Button has correct icon rendering 1`] = `
+<button
+  aria-label={undefined}
+  className="grommetux-button grommetux-button--disabled grommetux-button--plain"
+  disabled={true}
+  href={undefined}
+  onBlur={[Function]}
+  onClick={undefined}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
+  type="button"
+>
+  <span
+    className="grommetux-button__icon"
+  >
+    <svg
+      height="24px"
+      role="img"
+      version="1.1"
+      viewBox="0 0 24 24.3616"
+      width="24px"
+    />
+  </span>
+</button>
+`;
+
+exports[`Button has correct plain={true} rendering 1`] = `
+<button
+  aria-label={undefined}
+  className="grommetux-button grommetux-button--disabled grommetux-button--plain"
+  disabled={true}
+  href={undefined}
+  onBlur={[Function]}
+  onClick={undefined}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
+  type="button"
+>
+  <span
+    className="grommetux-button__label"
+  >
+    Test me
+  </span>
+</button>
+`;
+
+exports[`Button has correct primary={true} rendering 1`] = `
+<button
+  aria-label={undefined}
+  className="grommetux-button grommetux-button--primary grommetux-button--disabled"
+  disabled={true}
+  href={undefined}
+  onBlur={[Function]}
+  onClick={undefined}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
+  type="button"
+>
+  <span
+    className="grommetux-button__label"
+  >
+    Test me
+  </span>
+</button>
+`;
+
+exports[`Button has microdata properties rendering 1`] = `
+<button
+  aria-label={undefined}
+  className="grommetux-button grommetux-button--disabled grommetux-button--plain"
+  disabled={true}
+  href={undefined}
+  itemProp="test"
+  itemScope={true}
+  itemType="http://schema.org/Article"
+  onBlur={[Function]}
+  onClick={undefined}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
+  type="button"
+>
+  test
+</button>
+`;
+
+exports[`Button has text as children rendering 1`] = `
+<button
+  aria-label={undefined}
+  className="grommetux-button grommetux-button--disabled grommetux-button--plain"
+  disabled={true}
+  href={undefined}
+  onBlur={[Function]}
+  onClick={undefined}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseUp={[Function]}
+  type="button"
+>
+  test
+</button>
+`;

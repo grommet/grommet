@@ -1,61 +1,79 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Anchor from './Anchor';
 import SocialTwitterIcon from './icons/base/SocialTwitter';
 import SocialFacebookIcon from './icons/base/SocialFacebook';
-import SocialGoogleIcon from './icons/base/SocialGoogle';
+import SocialGooglePlusIcon from './icons/base/SocialGooglePlus';
 import SocialLinkedinIcon from './icons/base/SocialLinkedin';
-import SocialEmailIcon from './icons/base/SocialEmail';
+import SocialMailIcon from './icons/base/SocialMail';
 
 export default class SocialShare extends Component {
   render () {
-    const { type, link, text, title } = this.props;
+    const {
+      className, colorIndex, type, link, text, title, a11yTitle, ...props
+    } = this.props;
 
     let socialIcon = undefined;
     let href = '';
     let target = '_blank';
+    const calculatedA11yTitle = a11yTitle ||
+      `Share on ${type.charAt(0).toUpperCase() + type.slice(1)}`;
 
     const encodedLink = encodeURIComponent(link);
     const encodedTitle = encodeURIComponent(title);
     const encodedText = encodeURIComponent(text);
 
     if (type === 'twitter') {
-      socialIcon = <SocialTwitterIcon a11yTitle='Share on Twitter' />;
+      socialIcon = (<SocialTwitterIcon
+        a11yTitle={calculatedA11yTitle}
+        className={className} colorIndex={colorIndex} />);
       href = `https://twitter.com/intent/tweet?url=` +
         `${encodedLink}&text=${encodedText}`;
     } else if (type === 'linkedin') {
-      socialIcon = <SocialLinkedinIcon a11yTitle='Share on LinkedIn' />;
+      socialIcon = (<SocialLinkedinIcon
+        a11yTitle={calculatedA11yTitle}
+        className={className} colorIndex={colorIndex} />);
       href = `https://www.linkedin.com/shareArticle?mini=true&url=` +
         `${encodedLink}&title=${encodedTitle}&summary=${encodedText}`;
     } else if (type === 'google') {
-      socialIcon = <SocialGoogleIcon a11yTitle='Share on Google' />;
+      socialIcon = (<SocialGooglePlusIcon
+        a11yTitle={calculatedA11yTitle}
+        className={className} colorIndex={colorIndex} />);
       href = `https://plus.google.com/share?url=${encodedLink}`;
     } else if (type === 'facebook') {
-      socialIcon = <SocialFacebookIcon a11yTitle='Share on Facebook' />;
+      socialIcon = (<SocialFacebookIcon
+        a11yTitle={calculatedA11yTitle}
+        className={className} colorIndex={colorIndex} />);
       href = `https://www.facebook.com/sharer/sharer.php?u=${encodedLink}`;
     } else if (type === 'email') {
-      socialIcon = <SocialEmailIcon a11yTitle='Share on Email' />;
+      socialIcon = (<SocialMailIcon
+        a11yTitle={calculatedA11yTitle}
+        className={className} colorIndex={colorIndex} />);
       href = `mailto:?subject=` +
         `${encodedTitle}&body=${encodedText}%0D%0A${encodedLink}`;
       target = '_self';
     }
 
     return (
-      <Anchor href={href} icon={socialIcon} target={target} />
+      <Anchor {...props} href={href} icon={socialIcon} target={target} />
     );
   }
-};
+}
 
 SocialShare.propTypes = {
-  type: PropTypes.oneOf(['email', 'facebook', 'twitter', 'linkedin',
-    'google']).isRequired,
+  a11yTitle: PropTypes.string,
+  className: PropTypes.string,
+  colorIndex: PropTypes.string,
   link: PropTypes.string.isRequired,
+  text: PropTypes.string,
   title: PropTypes.string,
-  text: PropTypes.string
+  type: PropTypes.oneOf(['email', 'facebook', 'twitter', 'linkedin',
+    'google']).isRequired
 };
 
 SocialShare.defaultProps = {
-  title: '',
-  text: ''
+  text: '',
+  title: ''
 };

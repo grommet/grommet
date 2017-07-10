@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumberInput has correct default options 1`] = `
+<span
+  className="grommetux-number-input"
+>
+  <input
+    className="grommetux-input grommetux-number-input__input"
+    disabled={undefined}
+    id="item2"
+    name="item2"
+    tabIndex="0"
+    type="number"
+    value={10}
+  />
+  <button
+    aria-label={undefined}
+    className="grommetux-button grommetux-button--plain grommetux-number-input__subtract"
+    disabled={false}
+    href={undefined}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    type="button"
+  >
+    <span
+      className="grommetux-button__icon"
+    >
+      <svg
+        aria-label="subtract"
+        className="grommetux-control-icon grommetux-control-icon-subtract grommetux-control-icon--responsive"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <path
+          d="M2,12 L22,12"
+          fill="none"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </span>
+  </button>
+  <button
+    aria-label={undefined}
+    className="grommetux-button grommetux-button--plain grommetux-number-input__add"
+    disabled={false}
+    href={undefined}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    type="button"
+  >
+    <span
+      className="grommetux-button__icon"
+    >
+      <svg
+        aria-label="add"
+        className="grommetux-control-icon grommetux-control-icon-add grommetux-control-icon--responsive"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <path
+          d="M12,22 L12,2 M2,12 L22,12"
+          fill="none"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </span>
+  </button>
+</span>
+`;

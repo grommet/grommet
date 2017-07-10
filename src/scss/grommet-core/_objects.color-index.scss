@@ -8,8 +8,40 @@
   @return tint($color, 5%);
 }
 
-#{$dark-background-context} {
+#{$pending-background} {
+  color: transparent;
+}
+
+#{$dark-background} {
   color: $active-colored-text-color;
+
+  input::-webkit-input-placeholder {
+    color: $active-colored-text-color;
+  }
+
+  input::-moz-placeholder {
+    color: $active-colored-text-color;
+  }
+
+  input:-ms-input-placeholder {
+    color: $active-colored-text-color;
+  }
+}
+
+#{$light-background} {
+  color: $text-color;
+
+  input::-webkit-input-placeholder {
+    color: $text-color;
+  }
+
+  input::-moz-placeholder {
+    color: $text-color;
+  }
+
+  input:-ms-input-placeholder {
+    color: $text-color;
+  }
 }
 
 .#{$grommet-namespace}background-color-index-brand {
@@ -17,6 +49,14 @@
 
   &-a {
     background-color: rgba($brand-color, 0.94);
+  }
+}
+
+.#{$grommet-namespace}border-color-index-brand {
+  border-color: $brand-color;
+
+  &-a {
+    border-color: rgba($brand-color, 0.94);
   }
 }
 
@@ -248,4 +288,8 @@
   .#{$grommet-namespace}border-large-hover-color-index-light-#{$i + length($brand-light-colors)}:hover {
     box-shadow: 0 0 0 $inuit-base-spacing-unit nth($brand-light-colors, $i);
   }
+}
+
+.#{$grommet-namespace}background-color-index-unset {
+  background-color: $unset-color;
 }

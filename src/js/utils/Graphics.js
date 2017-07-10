@@ -1,5 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+const POST_DECIMAL_DIGITS = 10;
+
 export var baseUnit = 24;
 
 export function polarToCartesian (centerX, centerY, radius, angleInDegrees) {
@@ -19,8 +21,12 @@ export function arcCommands (centerX, centerY, radius, startAngle, endAngle) {
   var end = polarToCartesian(centerX, centerY, radius, startAngle);
   var arcSweep = endAngle - startAngle <= 180 ? "0" : "1";
   var d = [
-    "M", start.x, start.y,
-    "A", radius, radius, 0, arcSweep, 0, end.x, end.y
+    "M",
+    start.x.toFixed(POST_DECIMAL_DIGITS), start.y.toFixed(POST_DECIMAL_DIGITS),
+    "A",
+    radius.toFixed(POST_DECIMAL_DIGITS), radius.toFixed(POST_DECIMAL_DIGITS),
+    0, arcSweep, 0,
+    end.x.toFixed(POST_DECIMAL_DIGITS), end.y.toFixed(POST_DECIMAL_DIGITS)
   ].join(" ");
   return d;
 };

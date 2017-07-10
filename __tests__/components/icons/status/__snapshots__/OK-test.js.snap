@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OK has correct className rendering 1`] = `
+<svg
+  aria-label="OK"
+  className="grommetux-status-icon grommetux-status-icon-ok testing"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <mask
+      id="mask-ok-1"
+    >
+      <g
+        className="grommetux-status-icon__detail"
+      >
+        <rect
+          fill="#fff"
+          height="24"
+          width="24"
+          x="0"
+          y="0"
+        />
+        <path
+          d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+          fill="#000"
+          stroke="none"
+        />
+      </g>
+    </mask>
+  </defs>
+  <g
+    className="grommetux-status-icon__base"
+    mask="url(#mask-ok-1)"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="12"
+      stroke="none"
+    />
+  </g>
+</svg>
+`;
+
+exports[`OK has correct default options 1`] = `
+<svg
+  aria-label="OK"
+  className="grommetux-status-icon grommetux-status-icon-ok"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <mask
+      id="mask-ok-0"
+    >
+      <g
+        className="grommetux-status-icon__detail"
+      >
+        <rect
+          fill="#fff"
+          height="24"
+          width="24"
+          x="0"
+          y="0"
+        />
+        <path
+          d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+          fill="#000"
+          stroke="none"
+        />
+      </g>
+    </mask>
+  </defs>
+  <g
+    className="grommetux-status-icon__base"
+    mask="url(#mask-ok-0)"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="12"
+      stroke="none"
+    />
+  </g>
+</svg>
+`;

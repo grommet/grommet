@@ -7,6 +7,15 @@
 
 const SMALL_WIDTH_EM = 44.9375; // align with _settings.responsive.scss
 
+export function smallSize () {
+  var fontSize = '16px';
+  // unit tests don't have getComputedStyle
+  if (window.getComputedStyle) {
+    fontSize = window.getComputedStyle(document.documentElement).fontSize;
+  }
+  return SMALL_WIDTH_EM * parseFloat(fontSize);
+}
+
 export default {
 
   // Track responsive sizing.
@@ -20,8 +29,8 @@ export default {
   start (func) {
     var responsive = {
       func: func,
-      timer: null,
-      small: null,
+      timer: undefined,
+      small: undefined,
       smallSize: this.smallSize()
     };
     responsive.onResize = this._onResize.bind(this, responsive);
@@ -57,12 +66,5 @@ export default {
     }
   },
 
-  smallSize () {
-    var fontSize = '16px';
-    // unit tests don't have getComputedStyle
-    if (window.getComputedStyle) {
-      fontSize = window.getComputedStyle(document.documentElement).fontSize;
-    }
-    return SMALL_WIDTH_EM * parseFloat(fontSize);
-  }
+  smallSize
 };

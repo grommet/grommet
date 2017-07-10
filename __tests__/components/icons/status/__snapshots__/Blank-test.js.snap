@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Blank has correct className rendering 1`] = `
+<svg
+  aria-label="Blank"
+  className="grommetux-status-icon grommetux-status-icon-blank testing"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+/>
+`;
+
+exports[`Blank has correct default options 1`] = `
+<svg
+  aria-label="Blank"
+  className="grommetux-status-icon grommetux-status-icon-blank"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+/>
+`;

@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card has correct default options 1`] = `
+<div
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--wrap grommetux-box--width-medium grommetux-box--size grommetux-card"
+  id={undefined}
+  onClick={undefined}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}
+>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--justify-center grommetux-box--align-center grommetux-box--responsive grommetux-box--basis-small grommetux-box--pad-none grommetux-box--flex-off grommetux-card__thumbnail"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={
+      Object {
+        "background": "url(http://grommet.github.io/img/carousel-1.png) no-repeat center center",
+        "backgroundSize": "cover",
+      }
+    }
+    tabIndex={undefined}
+  />
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-medium grommetux-card__content"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  >
+    <label
+      className="grommetux-label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
+      htmlFor={undefined}
+    >
+      Featured Post
+    </label>
+    <h2
+      className="grommetux-heading grommetux-heading--strong"
+    >
+      The Key Steps to Reducing Software Spend
+    </h2>
+  </div>
+</div>
+`;
+
+exports[`Card renders a header with the set size 1`] = `
+<div
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--wrap grommetux-box--width-medium grommetux-box--size grommetux-card"
+  id={undefined}
+  onClick={undefined}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}
+>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-medium grommetux-card__content"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  >
+    <label
+      className="grommetux-label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
+      htmlFor={undefined}
+    >
+      Hello from Grommet
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Card renders correctly when reverse 1`] = `
+<div
+  className="grommetux-box grommetux-box--direction-column grommetux-box--justify-between grommetux-box--reverse grommetux-box--responsive grommetux-box--pad-none grommetux-box--wrap grommetux-box--width-medium grommetux-box--size grommetux-card"
+  id={undefined}
+  onClick={undefined}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}
+>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-medium grommetux-card__content"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  >
+    <label
+      className="grommetux-label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
+      htmlFor={undefined}
+    >
+      Hello from Grommet
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Card renders correctly when the direction is set to row 1`] = `
+<div
+  className="grommetux-box grommetux-box--direction-row grommetux-box--responsive grommetux-box--pad-none grommetux-box--wrap grommetux-box--width-xlarge grommetux-box--size grommetux-card"
+  id={undefined}
+  onClick={undefined}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}
+>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--basis-2-3 grommetux-box--pad-medium grommetux-card__content"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  >
+    <label
+      className="grommetux-label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
+      htmlFor={undefined}
+    >
+      Hello from Grommet
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Card renders correctly when the headingStrong is false 1`] = `
+<div
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--wrap grommetux-box--width-medium grommetux-box--size grommetux-card"
+  id={undefined}
+  onClick={undefined}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}
+>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-medium grommetux-card__content"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  >
+    <label
+      className="grommetux-label grommetux-label--uppercase grommetux-label--margin-none grommetux-label--medium"
+      htmlFor={undefined}
+    >
+      Hello from Grommet
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Card renders correctly with a non-default colorIndex 1`] = `
+<div
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--wrap grommetux-box--width-medium grommetux-box--size grommetux-background-color-index-light-2 grommetux-background-color-index--light grommetux-card"
+  id={undefined}
+  onClick={undefined}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}
+>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-medium grommetux-card__content"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  />
+</div>
+`;

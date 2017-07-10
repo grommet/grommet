@@ -1,8 +1,11 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2017 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
-import { getCurrentLocale } from '../utils/Locale';
+import React, { Component } from 'react';
+import moment from 'moment';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
+import { getCurrentLocale } from '../utils/Locale';
 
 const CLASS_ROOT = CSSClassnames.TIMESTAMP;
 
@@ -22,6 +25,7 @@ export default class Timestamp extends Component {
 
   constructor(props, context) {
     super(props, context);
+    this._formatForLocale = this._formatForLocale.bind(this);
     this.state = {};
   }
 
@@ -33,56 +37,119 @@ export default class Timestamp extends Component {
     this._formatForLocale(nextProps);
   }
 
-  _formatForLocale (props) {
+  _formatForLocale ({value, fields}) {
     const locale = getCurrentLocale();
-    const value =
-      (typeof props.value === 'string') ? new Date(props.value) : props.value;
+    const dateObj = moment(value).locale(locale);
 
-    let date;
-    if (_showField('date', props.fields)) {
-      const dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
-      date = value.toLocaleDateString(locale, dateOptions);
+    let dateFormat;
+    let yearFormat;
+    let monthFormat;
+    let dayFormat;
+
+    let timeFormat;
+    let hourFormat;
+    let minuteFormat;
+    let secondFormat;
+
+    if (_showField('date', fields)) {
+      dateFormat = 'll';
     }
 
-    let time;
-    if (_showField('time', props.fields)) {
-      const timeOptions = { hour: '2-digit', minute: '2-digit' };
-      time = value.toLocaleTimeString(locale, timeOptions);
+    if (!dateFormat) {
+      if (_showField('year', fields)) {
+        yearFormat = 'YYYY';
+      }
+
+      if (_showField('month', fields)) {
+        monthFormat = 'MMM';
+      } else if (_showField('month-full', fields)) {
+        monthFormat = 'MMMM';
+      }
+
+      if (_showField('day', fields)) {
+        dayFormat = 'D';
+      }
+    } else if (_showField('month-full', fields)) {
+      dateFormat = 'LL';
     }
 
-    this.setState({ date: date, time: time });
+    if (_showField('time', fields)) {
+      timeFormat = 'LT';
+    } 
+
+    if (!timeFormat) {
+      if (_showField('hour', fields) || _showField('hours', fields)) {
+        hourFormat = 'hh';
+      }
+      if (_showField('minute', fields) || _showField('minutes', fields)) {
+        minuteFormat = (hourFormat ? ':' : '') + 'mm';
+      }
+      if (_showField('second', fields) || _showField('seconds', fields)) {
+        secondFormat = (minuteFormat ? ':' : '') + 'ss';
+      }
+    } else if (_showField('second', fields) || _showField('seconds', fields)) {
+      timeFormat = 'LTS';
+    }
+
+    if (!dateFormat) {
+      dateFormat = (
+        `${monthFormat || ''} ${dayFormat || ''} ${yearFormat || ''}`
+      );
+    }
+
+    if (!timeFormat) {
+      timeFormat = (
+        `${hourFormat || ''}${minuteFormat || ''}${secondFormat || ''}`
+      );
+    }
+
+    const date = dateFormat !== '  ' ? dateObj.format(dateFormat) : undefined;
+    const time = timeFormat !== '' ? dateObj.format(timeFormat) : undefined;
+
+    this.setState({ date, time });
   }
 
   render () {
-    var classes = [CLASS_ROOT];
-    classes.push(CLASS_ROOT + '--' + this.props.align);
-    if (this.props.className) {
-      classes.push(this.props.className);
+    const { align, className, ...props } = this.props;
+    const { date, time } = this.state;
+    delete props.fields;
+    delete props.value;
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--${align}`]: align
+      },
+      className
+    );
+
+    let dateElement;
+    if (date) {
+      dateElement = <span className={`${CLASS_ROOT}__date`}>{date}</span>;
     }
 
-    let date;
-    if (this.state.date) {
-      date = <span className={`${CLASS_ROOT}__date`}>{this.state.date}</span>;
-    }
-
-    let time;
-    if (this.state.time) {
-      time = <span className={`${CLASS_ROOT}__time`}>{this.state.time}</span>;
+    let timeElement;
+    if (time) {
+      timeElement = <span className={`${CLASS_ROOT}__time`}>{time}</span>;
     }
 
     return (
-      <span className={classes.join(' ')}>
-        {date} {time}
+      <span {...props} className={classes}>
+        {dateElement}
+        {timeElement}
       </span>
     );
   }
 
 }
 
-const FIELD_TYPES = PropTypes.oneOf(['date', 'time']);
+const FIELD_TYPES = PropTypes.oneOf([
+  'date', 'time', 'year', 'month', 'month-full', 'day',
+  'hour', 'minute', 'second',
+  'hours', 'minutes', 'seconds' // deprecated
+]);
 
 Timestamp.propTypes = {
-  align: PropTypes.oneOf(['left', 'right']),
+  align: PropTypes.oneOf(['start', 'center', 'end']),
   fields: PropTypes.oneOfType([
     PropTypes.arrayOf(FIELD_TYPES),
     FIELD_TYPES
@@ -94,5 +161,5 @@ Timestamp.propTypes = {
 };
 
 Timestamp.defaultProps = {
-  align: 'left'
+  fields: ["date", "time"]
 };

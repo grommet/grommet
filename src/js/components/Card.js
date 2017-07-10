@@ -1,59 +1,161 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 import Props from '../utils/Props';
 import Box from './Box';
-import Tile from './Tile';
+import Label from './Label';
 import Heading from './Heading';
-import Paragraph from './Paragraph';
+import Headline from './Headline';
+import Markdown from './Markdown';
 import Anchor from './Anchor';
 import Layer from './Layer';
 import Video from './Video';
-import WatchIcon from './icons/base/Watch';
+import CirclePlayIcon from './icons/base/CirclePlay';
+import Responsive from '../utils/Responsive';
 
 const CLASS_ROOT = CSSClassnames.CARD;
 
+const LABEL_SIZES = {
+  xlarge: 'medium',
+  large: 'medium',
+  medium: 'medium',
+  small: 'medium',
+  xsmall: 'small'
+};
+
+const HEADLINE_SIZES = {
+  xlarge: 'medium',
+  large: 'medium'
+};
+
+const HEADING_TAGS = {
+  medium: 'h1',
+  small: 'h2',
+  xsmall: 'h3'
+};
+
+const PARAGRAPH_SIZES = {
+  xlarge: 'xlarge',
+  large: 'xlarge',
+  medium: 'large',
+  small: 'large',
+  xsmall: 'medium'
+};
+
+const PARAGRAPH_MARGINS = {
+  xlarge: 'large',
+  large: 'large',
+  medium: 'medium',
+  small: 'medium',
+  xsmall: 'small'
+};
+
 export default class Card extends Component {
+
   constructor (props) {
     super(props);
     this._onClick = this._onClick.bind(this);
-    this.state = {
-      activeVideo: false
-    };
+    this._onResponsive = this._onResponsive.bind(this);
+    this.state = { activeVideo: false, small: false };
+  }
+
+  componentDidMount () {
+    this._responsive = Responsive.start(this._onResponsive);
+  }
+
+  componentWillUnmount () {
+    if (this._responsive) {
+      this._responsive.stop();
+    }
+  }
+
+  _onResponsive (small) {
+    this.setState({ small: !!small });
   }
 
   _onClick (event) {
     const { video } = this.props;
-
     if (video) {
       event.preventDefault();
       this.setState({ activeVideo : !this.state.activeVideo });
     }
   }
 
+  _renderLabel () {
+    const { label, textSize } = this.props;
+    let result = label;
+    if (typeof label === 'string') {
+      result = (
+        <Label size={LABEL_SIZES[textSize]} margin="none" uppercase={true}>
+          {label}
+        </Label>
+      );
+    }
+    return result;
+  }
+
+  _renderHeading () {
+    const { heading, headingStrong, textSize } = this.props;
+    let result = heading;
+    if (typeof heading === 'string') {
+      if (HEADLINE_SIZES[textSize]) {
+        result = (
+          <Headline size={HEADLINE_SIZES[textSize]} strong={headingStrong}>
+            {heading}
+          </Headline>
+        );
+      } else {
+        result = (
+          <Heading tag={HEADING_TAGS[textSize]} strong={headingStrong}>
+            {heading}
+          </Heading>
+        );
+      }
+    }
+    return result;
+  }
+
   _renderLink () {
     const { link } = this.props;
+    return link;
+  }
 
-    if (link) {
-      return (
-        <Box pad={{vertical: "small"}}>
-          {link}
+  _renderThumbnail () {
+    const { direction, thumbnail, video } = this.props;
+    const { small } = this.state;
+    let result = thumbnail;
+    if (typeof thumbnail === 'string') {
+      const size = small ? 'large' : 'xlarge';
+      const videoIcon = (video) ?
+        (
+          <Anchor icon={<CirclePlayIcon responsive={false} 
+            colorIndex='brand' size={size} />} />
+        ):
+        undefined;
+
+      const flex = 'row' === direction ? 'grow' : undefined;
+
+      result = (
+        <Box className={`${CLASS_ROOT}__thumbnail`} flex={flex}
+          backgroundImage={`url(${thumbnail})`} basis='small'
+          justify="center" align="center">
+          {videoIcon}
         </Box>
       );
     }
-
-    return null;
+    return result;
   }
 
-  _renderVideo () {
+  _renderVideoLayer () {
     const { video } = this.props;
     const { activeVideo } = this.state;
-    let layerContent;
-    let videoLayer;
+    let result;
 
     if (video && activeVideo) {
+      let layerContent;
       if (video.source) {
         layerContent = (
           <Video>
@@ -64,96 +166,118 @@ export default class Card extends Component {
         layerContent = video;
       }
 
-      videoLayer = (
+      result = (
         <Layer onClose={this._onClick} closer={true} flush={true}>
           {layerContent}
         </Layer>
       );
     }
 
-    return videoLayer;
+    return result;
+  }
+
+  _renderDescription () {
+    const { description, textSize } = this.props;
+    let result = description;
+    if (typeof description === 'string') {
+      const components = {
+        p: { props: {
+          margin: PARAGRAPH_MARGINS[textSize],
+          size: PARAGRAPH_SIZES[textSize]
+        } }
+      };
+      result = <Markdown components={components} content={description} />;
+    }
+    return result;
   }
 
   render () {
-    const { children, thumbnail, description, heading, label, onClick, video,
-      direction, reverse, pad, className} = this.props;
-    const tileProps = Props.pick(this.props, Object.keys(Tile.propTypes));
-    delete tileProps.onClick;
-    delete tileProps.pad;
+    const { a11yTitle, children, className, contentPad,
+      onClick, reverse, truncate } = this.props;
+    const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
+    const restProps = Props.omit(this.props, Object.keys(Card.propTypes));
 
     const classes = classnames(
       CLASS_ROOT,
       {
-        [`${CLASS_ROOT}--direction-${direction}`]: direction,
-        [`${CLASS_ROOT}--selectable`]: (onClick || video)
+        [`${CLASS_ROOT}--selectable`]: (onClick)
       },
       className
     );
 
-    let onCardClick = onClick;
-    if (!onCardClick && video) {
-      onCardClick = this._onClick;
-    }
+    let thumbnail = this._renderThumbnail();
+    let label = this._renderLabel();
+    let heading = this._renderHeading();
+    let description = this._renderDescription();
+    let link = this._renderLink();
+    let videoLayer = this._renderVideoLayer();
 
-    const contentContainer = (
-      <Box className={`${CLASS_ROOT}__content`} pad="medium">
-        <Heading tag="h5" uppercase={true} margin="none">{label}</Heading>
-        <Heading tag="h2" strong={true}>{heading}</Heading>
-        <Paragraph margin="none">{description}</Paragraph>
+    const contentClasses = classnames(
+      {
+        [`${CLASS_ROOT}__content`]: true,
+        [`${CLASS_ROOT}__content--truncate`]: truncate
+      }
+    );
+
+    const basis = 'row' === this.props.direction ? '2/3' : undefined;
+    const text = (
+      <Box className={contentClasses} pad={contentPad}
+        basis={basis}>
+        {label}
+        {heading}
+        {description}
         {children}
-        {this._renderLink()}
+        {link}
       </Box>
     );
 
-    let thumbnailContainer;
-    if (thumbnail) {
-      thumbnailContainer = (
-        <Box className={`${CLASS_ROOT}__thumbnail`}
-          backgroundImage={`url(${thumbnail})`}
-          justify="center" align="center">
-          {(video) ? <Anchor icon={<WatchIcon size="xlarge" />} /> : null}
-        </Box>
-      );
-    }
-
-    let first = thumbnailContainer;
-    let second = contentContainer;
     let cardJustify;
-
     if (reverse) {
-      first = contentContainer;
-      second = thumbnailContainer;
-      // align thumbnail to bottom of card for bottom cardPlacement
+      // align thumbnail to bottom/right of card for bottom cardPlacement
       cardJustify = 'between';
     }
 
-    let cardPad = 'small';
-    let cardFull;
-    if (direction === 'row') {
-      cardPad = {vertical: 'small'};
-      cardFull = 'horizontal';
+    if (! this.props.size) {
+      if (this.props.direction === 'row') {
+        boxProps.size = { width: 'xlarge' };
+      } else {
+        boxProps.size = { width: 'medium' };
+      }
     }
 
     return (
-      <Tile className={classes} onClick={onCardClick}
-        pad={pad || cardPad} {...tileProps}>
-        <Box className="flex" direction={direction} justify={cardJustify}
-          full={cardFull} colorIndex="light-1">
-          {first}
-          {second}
-          {this._renderVideo()}
-        </Box>
-      </Tile>
+      <Box {...boxProps} {...restProps} className={classes} wrap={true}
+        justify={cardJustify} onClick={onClick} a11yTitle={a11yTitle}>
+        {thumbnail}
+        {text}
+        {videoLayer}
+      </Box>
     );
   }
-};
+}
 
 Card.propTypes = {
-  thumbnail: PropTypes.string,
-  description: PropTypes.string,
-  heading: PropTypes.string,
-  label: PropTypes.string,
+  contentPad: Box.propTypes.pad,
+  description: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]),
+  heading: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]),
+  headingStrong: PropTypes.bool,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]),
   link: PropTypes.element,
+  textSize: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+  thumbnail: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]),
+  truncate: PropTypes.bool,
   video: PropTypes.oneOfType([
     PropTypes.shape({
       source: PropTypes.string.isRequired,
@@ -161,10 +285,12 @@ Card.propTypes = {
     }),
     PropTypes.element
   ]),
-  reverse: PropTypes.bool,
-  ...Tile.propTypes
+  ...Box.propTypes
 };
 
 Card.defaultProps = {
-  direction: 'column'
+  a11yTitle: 'Card',
+  contentPad: 'medium',
+  headingStrong: true,
+  textSize: 'small'
 };

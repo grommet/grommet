@@ -1,28 +1,53 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
+import Intl from '../../utils/Intl';
 
 const CLASS_ROOT = CSSClassnames.SPINNING;
 
 export default class Spinning extends Component {
   render () {
-    var classes = [CLASS_ROOT];
-    if (this.props.small) {
-      classes.push(CLASS_ROOT + "--small");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const {
+      a11yTitle, className, small, size, responsive, ...props
+    } = this.props;
+    const { intl } = this.context;
+
+    let sizeOverride = small ? 'small' : size;
+
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--${sizeOverride}`]: sizeOverride,
+        [`${CLASS_ROOT}--responsive`]: responsive
+      },
+      className
+    );
+
     return (
-      <svg className={classes.join(' ')} viewBox="0 0 48 48" version="1.1"
-        role='img'>
-        <title>Spinning</title>
-        <circle stroke="#ddd" strokeWidth="4" strokeDasharray="24px 8px"
-          fill="none" cx="24" cy="24" r="20"></circle>
-        <circle stroke="#333" strokeWidth="4" strokeDasharray="24px 104px"
-          fill="none" cx="24" cy="24" r="20"></circle>
+      <svg {...props} className={classes} viewBox='0 0 48 48' version='1.1'
+        role='img' aria-label={a11yTitle || Intl.getMessage(intl, 'Spinning')}>
+        <circle cx="24" cy="24" r="21"
+          stroke="#979797" strokeWidth="6" fill="none" />
       </svg>
     );
   }
 }
+
+Spinning.contextTypes = {
+  intl: PropTypes.object
+};
+
+Spinning.defaultProps = {
+  responsive: true
+};
+
+Spinning.propTypes = {
+  a11yTitle: PropTypes.string,
+  className: PropTypes.string,
+  small: PropTypes.bool,
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']),
+  responsive: PropTypes.bool
+};

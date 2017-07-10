@@ -1,13 +1,15 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import CloseIcon from './icons/base/Close';
-import KeyboardAccelerators from '../utils/KeyboardAccelerators';
-import DOMUtils from '../utils/DOM';
+import classnames from 'classnames';
 import Button from './Button';
-import Intl from '../utils/Intl';
+import CloseIcon from './icons/base/Close';
 import CSSClassnames from '../utils/CSSClassnames';
+import { filterByFocusable } from '../utils/DOM';
+import Intl from '../utils/Intl';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 
 const CLASS_ROOT = CSSClassnames.LAYER;
 const APP = CSSClassnames.APP;
@@ -17,39 +19,47 @@ class LayerContents extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this._onClick = this._onClick.bind(this);
     this._processTab = this._processTab.bind(this);
+
+    this.state = {
+      dropActive: false
+    };
   }
 
   getChildContext () {
     return {
       history: this.props.history,
       intl: this.props.intl,
+      onDropChange: (active) => {
+        this.setState({ dropActive: active });
+      },
       router: this.props.router,
       store: this.props.store
     };
   }
 
   componentDidMount () {
-    this.refs.anchorStep.focus();
+    const { hidden, onClose } = this.props;
+
+    if (!hidden) {
+      this.anchorStepRef.focus();
+      this.anchorStepRef.scrollIntoView();
+    }
 
     this._keyboardHandlers = {
       tab: this._processTab
     };
-
-    if (this.props.onClose) {
-      const layerParent = this.refs.container.parentNode;
-      this._keyboardHandlers.esc = this.props.onClose;
-      layerParent.addEventListener('click', this._onClick.bind(this));
+    if (onClose) {
+      this._keyboardHandlers.esc = onClose;
     }
-
     KeyboardAccelerators.startListeningToKeyboard(
       this, this._keyboardHandlers
     );
   }
 
   componentDidUpdate () {
-    if (this.props.hidden) {
+    const { hidden } = this.props;
+    if (hidden) {
       KeyboardAccelerators.stopListeningToKeyboard(
         this, this._keyboardHandlers
       );
@@ -57,28 +67,14 @@ class LayerContents extends Component {
   }
 
   componentWillUnmount () {
-    const layerParent = this.refs.container.parentNode;
-
     KeyboardAccelerators.stopListeningToKeyboard(
       this, this._keyboardHandlers
     );
-
-    if (this.props.onClose) {
-      layerParent.removeEventListener('click', this._onClick.bind(this));
-    }
-  }
-
-  _onClick (event) {
-    const layerContents = this.refs.container;
-
-    if (layerContents && !layerContents.contains(event.target)) {
-      this.props.onClose();
-    }
   }
 
   _processTab (event) {
-    var items = this.refs.container.getElementsByTagName('*');
-    items = DOMUtils.filterByFocusable(items);
+    let items = this.containerRef.getElementsByTagName('*');
+    items = filterByFocusable(items);
 
     if (!items || items.length === 0) {
       event.preventDefault();
@@ -96,32 +92,34 @@ class LayerContents extends Component {
   }
 
   render () {
-    var closer = null;
+    const { a11yTitle, children, closer, onClose } = this.props;
+    const { intl } = this.context;
 
-    if (typeof this.props.closer === 'object') {
-      closer = this.props.closer;
+    let closerNode;
+    if (typeof closer === 'object') {
+      closerNode = closer;
+    } else if (onClose && closer) {
+      const closeLabel = Intl.getMessage(intl, 'Close');
+      const layerLabel = Intl.getMessage(intl, 'Layer');
+      const closeIconTitle =
+        `${closeLabel} ${a11yTitle || ''} ${layerLabel}`;
 
-    } else if (this.props.onClose && this.props.closer) {
-      let closeLabel = Intl.getMessage(this.context.intl, 'Close');
-      let layerLabel = Intl.getMessage(this.context.intl, 'Layer');
-      let a11yTitle =
-        `${closeLabel} ${this.props.a11yTitle || ''} ${layerLabel}`;
-
-      closer = (
-        <div className={CLASS_ROOT + "__closer"}>
-          <Button plain={true} onClick={this.props.onClose}>
-            <CloseIcon a11yTitle={a11yTitle} />
-          </Button>
+      closerNode = (
+        <div className={`${CLASS_ROOT}__closer`}>
+          <Button plain={true} icon={<CloseIcon
+            a11yTitle={closeIconTitle} />}
+            onClick={onClose} />
         </div>
       );
     }
 
     return (
-      <div ref="container" className={CLASS_ROOT + "__container"}>
-        <a tabIndex="-1" aria-hidden='true'
-          ref='anchorStep' />
-        {closer}
-        {this.props.children}
+      <div ref={ref => this.containerRef = ref}
+        className={`${CLASS_ROOT}__container`}>
+        <a tabIndex="-1" aria-hidden='true' style={{ outline: 'none' }}
+          ref={ref => this.anchorStepRef = ref} />
+        {closerNode}
+        {children}
       </div>
     );
   }
@@ -148,6 +146,7 @@ LayerContents.propTypes = {
 LayerContents.childContextTypes = {
   history: PropTypes.object,
   intl: PropTypes.object,
+  onDropChange: PropTypes.func,
   router: PropTypes.any,
   store: PropTypes.object
 };
@@ -155,8 +154,11 @@ LayerContents.childContextTypes = {
 export default class Layer extends Component {
 
   componentDidMount () {
-    window.scrollTo(0, 0);
     this._originalFocusedElement = document.activeElement;
+    this._originalScrollPosition = {
+      top: window.pageYOffset,
+      left: window.pageXOffset
+    };
     this._addLayer();
     this._renderLayer();
   }
@@ -166,18 +168,24 @@ export default class Layer extends Component {
   }
 
   componentWillUnmount () {
-
-    if (this._originalFocusedElement) {
+    const { hidden } = this.props;
+    if (this._originalFocusedElement && !hidden) {
       if (this._originalFocusedElement.focus) {
-        // wait for the fixed positining to come back to normal
+        // wait for the fixed positioning to come back to normal
         // see layer styling for reference
         setTimeout(() => {
           this._originalFocusedElement.focus();
+          window.scrollTo(
+            this._originalScrollPosition.left, this._originalScrollPosition.top
+          );
         }, 0);
       } else if (this._originalFocusedElement.parentNode &&
         this._originalFocusedElement.parentNode.focus) {
         // required for IE11 and Edge
         this._originalFocusedElement.parentNode.focus();
+        window.scrollTo(
+          this._originalScrollPosition.left, this._originalScrollPosition.top
+        );
       }
     }
 
@@ -185,34 +193,34 @@ export default class Layer extends Component {
   }
 
   _classesFromProps () {
-    var classes = ['grommet', CLASS_ROOT];
-    if (this.props.align) {
-      classes.push(CLASS_ROOT + "--align-" + this.props.align);
-    }
-    if (this.props.flush) {
-      classes.push(CLASS_ROOT + "--flush");
-    }
-    if (this.props.hidden) {
-      classes.push(CLASS_ROOT + "--hidden");
-    }
-    if (this.props.peek) {
-      classes.push(CLASS_ROOT + "--peek");
-    }
-    if (this.props.closer) {
-      classes.push(CLASS_ROOT + "--closeable");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-    return classes;
+    const {
+      align, className, closer, flush, hidden, peek
+    } = this.props;
+
+    return classnames(
+      'grommet',
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--align-${this.props.align}`]: align,
+        [`${CLASS_ROOT}--closeable`]: closer,
+        [`${CLASS_ROOT}--flush`]: flush,
+        [`${CLASS_ROOT}--hidden`]: hidden,
+        [`${CLASS_ROOT}--peek`]: peek
+      },
+      className
+    );
   }
 
   _addLayer () {
-    var element = document.createElement('div');
-    if (this.props.id) {
-      element.id = this.props.id;
+    const {
+      id
+    } = this.props;
+
+    const element = document.createElement('div');
+    if (id) {
+      element.id = id;
     }
-    element.className = this._classesFromProps().join(' ');
+    element.className = this._classesFromProps();
     // insert before .app, if possible.
     var appElements = document.querySelectorAll(`.${APP}`);
     var beforeElement;
@@ -221,42 +229,69 @@ export default class Layer extends Component {
     } else {
       beforeElement = document.body.firstChild;
     }
-    this._element =
-      beforeElement.parentNode.insertBefore(element, beforeElement);
+    if (beforeElement) {
+      this._element =
+        beforeElement.parentNode.insertBefore(element, beforeElement);
+    }
   }
 
   _handleAriaHidden (hideOverlay) {
     const ariaHidden = hideOverlay || false;
-    this._element.setAttribute('aria-hidden', ariaHidden);
     const grommetApps = document.querySelectorAll(`.${APP}`);
+    const visibleLayers = document.querySelectorAll(
+      `.${CLASS_ROOT}:not(.${CLASS_ROOT}--hidden)`
+    );
 
     if (grommetApps) {
       Array.prototype.slice.call(grommetApps).forEach((grommetApp) => {
-        grommetApp.setAttribute('aria-hidden', !ariaHidden);
-      });
+        if (ariaHidden && visibleLayers.length === 0) {
+          // make sure to only show grommet apps if there is no other layer
+          grommetApp.setAttribute('aria-hidden', false);
+          grommetApp.classList.remove(`${APP}--hidden`);
+          // scroll body content to the original position
+          grommetApp.style.top = `-${this._originalScrollPosition.top}px`;
+          grommetApp.style.left = `-${this._originalScrollPosition.left}px`;
+        } else {
+          grommetApp.setAttribute('aria-hidden', true);
+          grommetApp.classList.add(`${APP}--hidden`);
+          // this must be null to work
+          grommetApp.style.top = null;
+          grommetApp.style.left = null;
+        }
+      }, this);
     }
   }
 
   _renderLayer () {
-    this._element.className = this._classesFromProps().join(' ');
-    var contents = (
-      <LayerContents {...this.props}
-        history={this.context.history}
-        intl={this.context.intl}
-        router={this.context.router}
-        store={this.context.store} />
-    );
-    ReactDOM.render(contents, this._element);
-    this._handleAriaHidden(this.props.hidden);
+    if (this._element) {
+      this._element.className = this._classesFromProps();
+      const contents = (
+        <LayerContents {...this.props}
+          history={this.context.history}
+          intl={this.context.intl}
+          router={this.context.router}
+          store={this.context.store} />
+      );
+      ReactDOM.render(contents, this._element, () => {
+        const { hidden } = this.props;
+        if (hidden) {
+          this._handleAriaHidden(true);
+        } else {
+          this._handleAriaHidden(false);
+        }
+      });
+    }
   }
 
   _removeLayer () {
     this._element.removeEventListener('animationend', this._onAnimationEnd);
-    this._handleAriaHidden(true);
 
     ReactDOM.unmountComponentAtNode(this._element);
     this._element.parentNode.removeChild(this._element);
-    this._element = null;
+    this._element = undefined;
+
+    // make sure to handle aria attributes after the layer is removed
+    this._handleAriaHidden(true);
   }
 
   render () {

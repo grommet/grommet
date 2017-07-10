@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Columns has correct default options 1`] = `
+<div
+  className="grommetux-columns grommetux-columns--justify-start grommetux-columns--responsive"
+>
+  <div
+    className="grommetux-columns__column"
+  >
+    <span>
+      test1
+    </span>
+    <span>
+      test2
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Columns renders correct className 1`] = `
+<div
+  className="grommetux-columns grommetux-columns--justify-start grommetux-columns--responsive test"
+>
+  <div
+    className="grommetux-columns__column"
+  >
+    <span>
+      test1
+    </span>
+    <span>
+      test2
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Columns renders masonry properties 1`] = `
+<div
+  className="grommetux-columns grommetux-columns--justify-start grommetux-columns--responsive"
+>
+  <div
+    className="grommetux-columns__column"
+  >
+    <span>
+      test1
+    </span>
+    <span>
+      test2
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Columns renders microdata properties 1`] = `
+<div
+  className="grommetux-columns grommetux-columns--justify-start grommetux-columns--responsive"
+  itemProp="test"
+  itemScope={true}
+  itemType="http://schema.org/Article"
+>
+  <div
+    className="grommetux-columns__column"
+  >
+    <span>
+      test1
+    </span>
+    <span>
+      test2
+    </span>
+  </div>
+</div>
+`;

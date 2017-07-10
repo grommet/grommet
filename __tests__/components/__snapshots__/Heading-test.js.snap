@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading has correct default options 1`] = `
+<h1
+  className="grommetux-heading"
+>
+  Testing
+</h1>
+`;
+
+exports[`Heading has correct margin="small" and className rendering 1`] = `
+<h1
+  className="grommetux-heading grommetux-heading--margin-small testing"
+>
+  Testing
+</h1>
+`;
+
+exports[`Heading has correct size="large" and uppercase=true rendering 1`] = `
+<h1
+  className="grommetux-heading grommetux-heading--large grommetux-heading--uppercase"
+>
+  Testing
+</h1>
+`;
+
+exports[`Heading has correct strong=true and align="center" rendering 1`] = `
+<h1
+  className="grommetux-heading grommetux-heading--strong grommetux-heading--align-center"
+>
+  Testing
+</h1>
+`;

@@ -1,10 +1,15 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Intl from '../../utils/Intl';
+import CSSClassnames from '../../utils/CSSClassnames';
 import Button from '../Button';
 import ExpandIcon from '../icons/base/Expand';
+
+const CLASS_ROOT = CSSClassnames.VIDEO;
+const BUTTON_CLASS = `${CLASS_ROOT}__button`;
 
 export default class FullscreenButton extends Component {
 
@@ -19,9 +24,11 @@ export default class FullscreenButton extends Component {
       Intl.getMessage(this.context.intl, 'Toggle Fullscreen');
 
     return (
-      <Button plain={true} primary={true}
-        onClick={this.props.onClick} icon={<ExpandIcon />}
-        a11yTitle={a11yExpandButtonTitle} />
+      <Button plain={true} className={BUTTON_CLASS} onClick={this.props.onClick}
+        a11yTitle={a11yExpandButtonTitle}>
+          <ExpandIcon className={`${BUTTON_CLASS}__icon`}
+            colorIndex='brand' />
+      </Button>
     );
   }
 }

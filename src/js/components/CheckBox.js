@@ -1,80 +1,57 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
-import Props from '../utils/Props';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.CHECK_BOX;
 
 export default class CheckBox extends Component {
-
-  set checked (value) {
-    if ('refs' in this) {
-      this.refs.input.checked = !!value;
-    }
-  }
-
-  get checked () {
-    return 'refs' in this ? this.refs.input.checked : null;
-  }
-
   render () {
-    let classes = [CLASS_ROOT];
-    let restProps = Props.omit(this.props, Object.keys(CheckBox.propTypes));
-    let label;
-    let labelId = `${CLASS_ROOT}-label`;
-    if (this.props.label) {
-      label = (
-        <span key="label" role="label" id={labelId}
-          className={`${CLASS_ROOT}__label`}>
-          {this.props.label}
-        </span>
+    const {
+      checked, className, disabled, label, name, onChange, reverse, toggle,
+      ...props
+    } = this.props;
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--toggle`]: toggle,
+        [`${CLASS_ROOT}--disabled`]: disabled,
+        [`${CLASS_ROOT}--reverse`]: reverse
+      },
+      className
+    );
+
+    let hidden;
+    if (disabled && checked) {
+      hidden = (
+        <input name={name} type='hidden' value='true'/>
       );
     }
 
-    if (this.props.toggle) {
-      classes.push(`${CLASS_ROOT}--toggle`);
-    }
-
-    let hidden;
-    if (this.props.disabled) {
-      classes.push(`${CLASS_ROOT}--disabled`);
-      if (this.props.checked) {
-        hidden = (
-          <input name={this.props.name} type="hidden" value="true"/>
-        );
-      }
-    }
-
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
-
-    let children = [
-      <span key="checkbox">
-        <input tabIndex="0" className={`${CLASS_ROOT}__input`}
-          id={this.props.id} name={this.props.name} type="checkbox"
-          disabled={this.props.disabled}
-          checked={this.props.checked}
-          defaultChecked={this.props.defaultChecked}
-          onChange={this.props.onChange}
-          ref="input" />
+    const children = [
+      <span key='checkbox'>
+        <input {...props} tabIndex='0' className={`${CLASS_ROOT}__input`}
+          name={name} type='checkbox'
+          disabled={disabled}
+          checked={checked}
+          onChange={onChange} />
         <span className={`${CLASS_ROOT}__control`}>
-          <svg className={`${CLASS_ROOT}__control-check`} viewBox="0 0 24 24"
-            preserveAspectRatio="xMidYMid meet">
-            <path fill="none" d="M6,11.3 L10.3,16 L18,6.2" />
+          <svg className={`${CLASS_ROOT}__control-check`} viewBox='0 0 24 24'
+            preserveAspectRatio='xMidYMid meet'>
+            <path fill='none' d='M6,11.3 L10.3,16 L18,6.2' />
           </svg>
         </span>
       </span>,
-      label
+      <span key='label' className={`${CLASS_ROOT}__label`}>
+        {label}
+      </span>
     ];
 
     return (
-      <label
-        {...restProps}
-        className={classes.join(' ')}
-        aria-labelledby={labelId}>
-        {this.props.reverse ? children.reverse() : children}
+      <label className={classes} htmlFor={props.id} aria-label={label}>
+        {reverse ? children.reverse() : children}
         {hidden}
       </label>
     );
@@ -84,7 +61,6 @@ export default class CheckBox extends Component {
 
 CheckBox.propTypes = {
   checked: PropTypes.bool,
-  defaultChecked: PropTypes.bool,
   disabled: PropTypes.bool,
   id: PropTypes.string,
   label: PropTypes.node,

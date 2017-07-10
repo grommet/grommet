@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grommet has correct className rendering 1`] = `
+<svg
+  aria-label="Grommet"
+  className="grommetux-logo-icon testing"
+  height="182"
+  role="img"
+  version="1.1"
+  viewBox="0 0 182 182"
+  width="182"
+>
+  <path
+    d="M 91,91 m 0,-82 a 82,82 0 1,1 0,164 a 82,82 0 1,1 0,-164"
+    fill="none"
+    role="presentation"
+    stroke="#865CD6"
+    strokeWidth="18"
+  />
+</svg>
+`;
+
+exports[`Grommet has correct default options 1`] = `
+<svg
+  aria-label="Grommet"
+  className="grommetux-logo-icon"
+  height="182"
+  role="img"
+  version="1.1"
+  viewBox="0 0 182 182"
+  width="182"
+>
+  <path
+    d="M 91,91 m 0,-82 a 82,82 0 1,1 0,164 a 82,82 0 1,1 0,-164"
+    fill="none"
+    role="presentation"
+    stroke="#865CD6"
+    strokeWidth="18"
+  />
+</svg>
+`;
+
+exports[`Grommet has correct size="large" rendering 1`] = `
+<svg
+  aria-label="Grommet"
+  className="grommetux-logo-icon grommetux-logo-icon--large"
+  height="182"
+  role="img"
+  version="1.1"
+  viewBox="0 0 182 182"
+  width="182"
+>
+  <path
+    d="M 91,91 m 0,-82 a 82,82 0 1,1 0,164 a 82,82 0 1,1 0,-164"
+    fill="none"
+    role="presentation"
+    stroke="#865CD6"
+    strokeWidth="18"
+  />
+</svg>
+`;
+
+exports[`Grommet has correct size="xlarge" rendering 1`] = `
+<svg
+  aria-label="Grommet"
+  className="grommetux-logo-icon grommetux-logo-icon--xlarge"
+  height="182"
+  role="img"
+  version="1.1"
+  viewBox="0 0 182 182"
+  width="182"
+>
+  <path
+    d="M 91,91 m 0,-82 a 82,82 0 1,1 0,164 a 82,82 0 1,1 0,-164"
+    fill="none"
+    role="presentation"
+    stroke="#865CD6"
+    strokeWidth="18"
+  />
+</svg>
+`;
+
+exports[`Grommet has correct small=true rendering 1`] = `
+<svg
+  aria-label="Grommet"
+  className="grommetux-logo-icon grommetux-logo-icon--small"
+  height="182"
+  role="img"
+  version="1.1"
+  viewBox="0 0 182 182"
+  width="182"
+>
+  <path
+    d="M 91,91 m 0,-82 a 82,82 0 1,1 0,164 a 82,82 0 1,1 0,-164"
+    fill="none"
+    role="presentation"
+    stroke="#865CD6"
+    strokeWidth="18"
+  />
+</svg>
+`;

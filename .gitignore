@@ -16,7 +16,6 @@ notes.txt
 **coverage**
 **lcov.info**
 src/js/baseIcons.js
-**/src/js/components/icons/base*/**
 **iconsMap**
 **index-icons**
 **.publish**
@@ -25,3 +24,5 @@ server/server-routes.js
 .nyc_output
 grommet*.tgz
 grommet*licenses.json
+.eslintcache
+.vscode

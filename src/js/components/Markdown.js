@@ -1,7 +1,8 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-import { PropTypes } from 'react';
-import markdownToJSX from 'markdown-to-jsx';
+import React from 'react';
+import PropTypes from 'prop-types';
+import Markdown from 'markdown-to-jsx';
 import deepAssign from 'deep-assign';
 import Paragraph from './Paragraph';
 import Table from './Table';
@@ -9,7 +10,7 @@ import Heading from './Heading';
 import Anchor from './Anchor';
 import Image from './Image';
 
-let Markdown = (props) => {
+let GrommetMarkdown = (props) => {
 
   const { content, components } = props;
 
@@ -44,23 +45,22 @@ let Markdown = (props) => {
   }, heading, components);
 
   return (
-    markdownToJSX(content, {
-      breaks: true,
-      gfm: true
-    }, options)
+    <Markdown options={{ overrides: options }}>
+      {content}
+    </Markdown>
   );
 };
 
-Markdown.propTypes = {
+GrommetMarkdown.propTypes = {
   content: PropTypes.string,
   components: PropTypes.shape({
     props: PropTypes.object
   })
 };
 
-Markdown.defaultProps = {
+GrommetMarkdown.defaultProps = {
   components: {},
   content: ''
 };
 
-export default Markdown;
+export default GrommetMarkdown;

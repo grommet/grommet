@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label has correct className rendering 1`] = `
+<svg
+  className="grommetux-status-icon grommetux-status-icon-label testing"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <g
+    className="grommetux-status-icon__base"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="12"
+      stroke="none"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Label has correct default options 1`] = `
+<svg
+  className="grommetux-status-icon grommetux-status-icon-label"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <g
+    className="grommetux-status-icon__base"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="12"
+      stroke="none"
+    />
+  </g>
+</svg>
+`;

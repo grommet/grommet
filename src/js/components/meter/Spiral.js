@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import React from 'react';
+import classnames from 'classnames';
 import { baseUnit, translateEndAngle, arcCommands } from '../../utils/Graphics';
 import CSSClassnames from '../../utils/CSSClassnames';
 import { baseDimension } from './utils';
@@ -8,9 +9,9 @@ import Graphic from './Graphic';
 
 const CLASS_ROOT = CSSClassnames.METER;
 
-var SPIRAL_WIDTH = baseDimension;
-var SPIRAL_RADIUS = (baseDimension / 2) - (baseUnit / 2);
-var RING_THICKNESS = baseUnit;
+const SPIRAL_WIDTH = baseDimension;
+const SPIRAL_RADIUS = (baseDimension / 2) - (baseUnit / 2);
+const RING_THICKNESS = baseUnit;
 // Allow for active value content next to a spiral meter
 
 export default class Spiral extends Graphic {
@@ -22,67 +23,79 @@ export default class Spiral extends Graphic {
   }
 
   _stateFromProps (props) {
-    var viewBoxHeight = Math.max(SPIRAL_WIDTH,
+    const viewBoxHeight = Math.max(SPIRAL_WIDTH,
       RING_THICKNESS * (props.series.length + 1) * 2);
-    var viewBoxWidth = viewBoxHeight;
+    const viewBoxWidth = viewBoxHeight;
 
-    var state = {
+    const state = {
       startAngle: 0,
-      anglePer: 270.0 / props.max.value,
+      anglePer: 270.0 / props.max,
       angleOffset: 180,
       // The last spiral ends out near but not quite at the edge of the
       // view box.
       startRadius: Math.max(SPIRAL_RADIUS,
         RING_THICKNESS * (props.series.length + 0.5)) -
           (Math.max(0, (props.series.length - 1)) * RING_THICKNESS),
-      viewBoxWidth: viewBoxWidth,
-      viewBoxHeight: viewBoxHeight
+      viewBoxHeight: viewBoxHeight,
+      viewBoxRadius: viewBoxWidth / 2,
+      viewBoxWidth: viewBoxWidth
     };
 
     return state;
   }
 
   _sliceCommands (trackIndex, item, startValue) {
-    var startAngle = translateEndAngle(this.state.startAngle,
+    const { viewBoxRadius } = this.state;
+    const startAngle = translateEndAngle(this.state.startAngle,
       this.state.anglePer, startValue);
-    var endAngle = translateEndAngle(startAngle, this.state.anglePer,
+    const endAngle = translateEndAngle(startAngle, this.state.anglePer,
       item.value);
-    var radius = Math.min(SPIRAL_RADIUS,
+    const radius = Math.min(viewBoxRadius,
       this.state.startRadius + (trackIndex * RING_THICKNESS));
-    return arcCommands(SPIRAL_WIDTH / 2, SPIRAL_WIDTH / 2, radius,
+    return arcCommands(viewBoxRadius, viewBoxRadius, radius,
       startAngle + this.state.angleOffset,
       endAngle + this.state.angleOffset);
   }
 
   _renderThresholds () {
-    return null;
+    return undefined;
   }
 
   _renderTopLayer () {
-    var x = SPIRAL_RADIUS + RING_THICKNESS;
-    var y = SPIRAL_RADIUS + (RING_THICKNESS * 2.2);
-    var labels = this.props.series.map(function (item, index) {
-      var classes = [CLASS_ROOT + "__label"];
-      if (index === this.props.activeIndex) {
-        classes.push(CLASS_ROOT + "__label--active");
-      }
+    const { activeIndex, onActivate } = this.props;
+    const { viewBoxRadius } = this.state;
+    const x = viewBoxRadius + (RING_THICKNESS * 0.5);
+    let y = viewBoxRadius + (RING_THICKNESS * 1.75);
+    const labels = this.props.series.map((item, index) => {
+      const classes = classnames(
+        `${CLASS_ROOT}__label`,
+        {
+          [`${CLASS_ROOT}__label--active`]: (index === activeIndex)
+        }
+      );
 
-      var textX = x;
-      var textY = y;
+      const textX = x;
+      const textY = y;
 
       y += RING_THICKNESS;
+
+      let hoverEvents;
+      if (onActivate) {
+        hoverEvents = {
+          onMouseOver: this.props.onActivate.bind(null, index),
+          onMouseOut: this.props.onActivate.bind(null, null)
+        };
+      }
 
       return (
         <text key={item.label || index} x={textX} y={textY}
           textAnchor="start" fontSize={16}
-          className={classes.join(' ')}
-          onMouseOver={this.props.onActivate.bind(null, index)}
-          onMouseOut={this.props.onActivate.bind(null, null)}
-          onClick={item.onClick} >
+          className={classes}
+          onClick={item.onClick} {...hoverEvents}>
           {item.label}
         </text>
       );
-    }, this);
+    });
 
     return (
       <g className={CLASS_ROOT + "__labels"}>

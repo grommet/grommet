@@ -5,23 +5,6 @@
   width: 100%;
   margin-bottom: 0px;
 
-  // Height is needed to coerce IE11 into aligning center even though
-  // this is ignored by min-height. (Also needed on header--large and
-  // header--small.) We need to subtract 1 unit in order to allow 
-  // min-height to keep the header height dynamic.
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    height: $header-height - 1;
-  }
-
-  a:not(.#{$grommet-namespace}button) {
-    color: inherit;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
   .#{$grommet-namespace}status-icon {
     flex-grow: 0;
     flex-shrink: 0;
@@ -30,54 +13,19 @@
 
 .#{$grommet-namespace}header--large {
   min-height: $large-header-height;
-
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    height: $large-header-height - 1;
-  }
-
-  .#{$grommet-namespace}header__content {
-    line-height: $large-header-height;
-  }
 }
 
 .#{$grommet-namespace}header--small {
   min-height: $small-header-height;
 
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    height: $small-header-height - 1;
-  }
-
-  .#{$grommet-namespace}header__content {
-    line-height: $small-header-height;
-  }
-}
-
-header.#{$grommet-namespace}header {
-  @include inuit-font-size($header-font-size, inherit);
-  // @include transform(translate(0, 0));
-  // transition: -webkit-transform 0.5s;
-  // transition: transform 0.5s;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    margin-bottom: 0;
-  }
-
-  // &.#{$grommet-namespace}box--direction-row {
-  //   > * {
-  //     margin-bottom: 0px;
-  //   }
-  // }
 }
 
 .#{$grommet-namespace}header--splash {
   @include transform(translate(0, 40vh));
 }
 
-*:not(.#{$grommet-namespace}header__container--float) > header.#{$grommet-namespace}header--float {
+*:not(.#{$grommet-namespace}header__container--float)
+> header.#{$grommet-namespace}header--float {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -119,7 +67,7 @@ header.#{$grommet-namespace}header--primary {
     top: 0px;
     left: 0px;
     right: 0px;
-    z-index: 3;
+    z-index: 50;
 
     .#{$grommet-namespace}header {
       @include media-query(lap-and-up) {
@@ -157,17 +105,17 @@ header.#{$grommet-namespace}header--primary {
     background-color: $header-background-color;
     z-index: 3;
   }
+}
 
-  &.#{$grommet-namespace}header--primary {
-    .#{$grommet-namespace}header__wrapper {
-      position: fixed;
-      background-color: $header-background-color;
-    }
+.#{$grommet-namespace}header--fixed.#{$grommet-namespace}header--primary {
+  .#{$grommet-namespace}header__wrapper {
+    position: fixed;
+    background-color: $header-background-color;
+  }
 
-    .#{$grommet-namespace}header__content {
-      position: static;
-      background-color: transparent;
-    }
+  .#{$grommet-namespace}header__content {
+    position: static;
+    background-color: transparent;
   }
 }
 

@@ -1,38 +1,34 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.HEADING;
 
 export default class Heading extends Component {
   render() {
-    let classes = [CLASS_ROOT];
-    if (this.props.size) {
-      classes.push(`${CLASS_ROOT}--${this.props.size}`);
-    }
-    if (this.props.strong) {
-      classes.push(`${CLASS_ROOT}--strong`);
-    }
-    if (this.props.align) {
-      classes.push(`${CLASS_ROOT}--align-${this.props.align}`);
-    }
-    if (this.props.margin) {
-      classes.push(`${CLASS_ROOT}--margin-${this.props.margin}`);
-    }
-    if (this.props.uppercase) {
-      classes.push(`${CLASS_ROOT}--uppercase`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const {
+      align, children, className, margin, size, strong, tag: Tag, truncate,
+      uppercase, ...props
+    } = this.props;
+    const classes = classnames(
+      CLASS_ROOT, {
+        [`${CLASS_ROOT}--${size}`]: size,
+        [`${CLASS_ROOT}--strong`]: strong,
+        [`${CLASS_ROOT}--align-${align}`]: align,
+        [`${CLASS_ROOT}--margin-${margin}`]: margin,
+        [`${CLASS_ROOT}--truncate`]: truncate,
+        [`${CLASS_ROOT}--uppercase`]: uppercase
+      },
+      className
+    );
 
-    // we handle dangerouslySetInnerHTML to allow using Heading with Markdown.
     return (
-      <this.props.tag id={this.props.id} className={classes.join(' ')}
-        dangerouslySetInnerHTML={this.props.dangerouslySetInnerHTML}>
-        {this.props.children}
-      </this.props.tag>
+      <Tag {...props} className={classes}>
+        {children}
+      </Tag>
     );
   }
 }
@@ -43,6 +39,7 @@ Heading.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   strong: PropTypes.bool,
   tag: PropTypes.string,
+  truncate: PropTypes.bool,
   uppercase: PropTypes.bool
 };
 

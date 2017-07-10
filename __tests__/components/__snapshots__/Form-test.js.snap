@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form has correct default options 1`] = `
+<form
+  className="grommetux-form grommetux-form--pad-none"
+  onSubmit={[Function]}
+>
+  <div
+    className="grommetux-form-fields"
+  >
+    <div
+      className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
+      onClick={[Function]}
+    >
+      <label
+        className="grommetux-form-field__label"
+        htmlFor="item1"
+      >
+        Item 1
+      </label>
+      <span
+        className="grommetux-form-field__contents"
+      >
+        <input
+          id="item1"
+          type="text"
+        />
+      </span>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Form renders a class name 1`] = `
+<form
+  className="grommetux-form grommetux-form--pad-none test"
+  onSubmit={[Function]}
+>
+  <div
+    className="grommetux-form-fields"
+  >
+    <div
+      className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
+      onClick={[Function]}
+    >
+      <label
+        className="grommetux-form-field__label"
+        htmlFor="item1"
+      >
+        Item 1
+      </label>
+      <span
+        className="grommetux-form-field__contents"
+      >
+        <input
+          id="item1"
+          type="text"
+        />
+      </span>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Form renders microdata properties 1`] = `
+<form
+  className="grommetux-form grommetux-form--pad-none"
+  itemProp="test"
+  itemScope={true}
+  itemType="http://schema.org/Article"
+  onSubmit={[Function]}
+>
+  <div
+    className="grommetux-form-fields"
+  >
+    <div
+      className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
+      onClick={[Function]}
+    >
+      <label
+        className="grommetux-form-field__label"
+        htmlFor="item1"
+      >
+        Item 1
+      </label>
+      <span
+        className="grommetux-form-field__contents"
+      >
+        <input
+          id="item1"
+          type="text"
+        />
+      </span>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Form renders with alternate props 1`] = `
+<form
+  className="grommetux-form grommetux-form--compact grommetux-form--fill grommetux-form--pad-horizontal-large grommetux-form--pad-vertical-large"
+  onSubmit={[Function]}
+>
+  <div
+    className="grommetux-form-fields"
+  >
+    <div
+      className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
+      onClick={[Function]}
+    >
+      <label
+        className="grommetux-form-field__label"
+        htmlFor="item1"
+      >
+        Item 1
+      </label>
+      <span
+        className="grommetux-form-field__contents"
+      >
+        <input
+          id="item1"
+          type="text"
+        />
+      </span>
+    </div>
+  </div>
+</form>
+`;

@@ -1,8 +1,7 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 .#{$grommet-namespace}form {
   position: relative;
-  width: $form-width;
   max-width: 100%;
 
   @include media-query(lap-and-up) {
@@ -20,6 +19,8 @@
   }
 
   fieldset {
+    // needed to avoid form fields overflow form element
+    min-width: 0;
     border: none;
     margin: 0px;
     margin-bottom: 2rem;
@@ -35,7 +36,7 @@
 
     > legend {
       @include inuit-font-size(24px);
-      font-weight: 600;
+      font-weight: $text-strong-font-weight;
       margin-bottom: halve($inuit-base-spacing-unit);
     }
 
@@ -60,12 +61,16 @@
       }
     }
   }
+}
 
-  &--fill {
-    min-width: 0px;
-  }
+.#{$grommet-namespace}form:not(.#{$grommet-namespace}form--plain) {
+  width: $form-width;
+}
 
-  &--compact {
-    max-width: $compact-form-width;
-  }
+.#{$grommet-namespace}form--fill {
+  min-width: 0px;
+}
+
+.#{$grommet-namespace}form--compact {
+  max-width: $compact-form-width;
 }

@@ -1,0 +1,355 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Status has correct className rendering 1`] = `
+<svg
+  aria-label="Unknown"
+  className="grommetux-status-icon grommetux-status-icon-unknown testing"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <mask
+      id="mask-uknown-1"
+    >
+      <g
+        className="grommetux-status-icon__detail"
+      >
+        <rect
+          fill="#fff"
+          height="24"
+          width="24"
+          x="0"
+          y="0"
+        />
+        <circle
+          cx="12"
+          cy="12"
+          fill="#000"
+          r="10"
+          stroke="none"
+        />
+        <path
+          d="M9,10.4 C9,8.8 10.4,7.6 12,7.6 C13.6,7.6 14.9,9 15,10.4 C15,11.7 14.1,12.7 12.9,13.1 C12.4,13.2 12,13.7 12,14.2 L12,15.5"
+          fill="none"
+          stroke="#fff"
+          strokeWidth="2"
+        />
+        <circle
+          cx="12"
+          cy="17.6"
+          fill="#fff"
+          r="1"
+          stroke="none"
+        />
+      </g>
+    </mask>
+  </defs>
+  <g
+    className="grommetux-status-icon__base"
+    mask="url(#mask-uknown-1)"
+  >
+    <circle
+      className="grommetux-status-icon__normal"
+      cx="12"
+      cy="12"
+      r="12"
+      stroke="none"
+    />
+    <circle
+      className="grommetux-status-icon__small"
+      cx="12"
+      cy="12"
+      fill="none"
+      r="11"
+      strokeWidth="3"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Status has correct default options 1`] = `
+<svg
+  aria-label="Unknown"
+  className="grommetux-status-icon grommetux-status-icon-unknown"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <mask
+      id="mask-uknown-0"
+    >
+      <g
+        className="grommetux-status-icon__detail"
+      >
+        <rect
+          fill="#fff"
+          height="24"
+          width="24"
+          x="0"
+          y="0"
+        />
+        <circle
+          cx="12"
+          cy="12"
+          fill="#000"
+          r="10"
+          stroke="none"
+        />
+        <path
+          d="M9,10.4 C9,8.8 10.4,7.6 12,7.6 C13.6,7.6 14.9,9 15,10.4 C15,11.7 14.1,12.7 12.9,13.1 C12.4,13.2 12,13.7 12,14.2 L12,15.5"
+          fill="none"
+          stroke="#fff"
+          strokeWidth="2"
+        />
+        <circle
+          cx="12"
+          cy="17.6"
+          fill="#fff"
+          r="1"
+          stroke="none"
+        />
+      </g>
+    </mask>
+  </defs>
+  <g
+    className="grommetux-status-icon__base"
+    mask="url(#mask-uknown-0)"
+  >
+    <circle
+      className="grommetux-status-icon__normal"
+      cx="12"
+      cy="12"
+      r="12"
+      stroke="none"
+    />
+    <circle
+      className="grommetux-status-icon__small"
+      cx="12"
+      cy="12"
+      fill="none"
+      r="11"
+      strokeWidth="3"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Status has correct value="blank" rendering 1`] = `
+<svg
+  aria-label="Blank"
+  className="grommetux-status-icon grommetux-status-icon-blank"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+/>
+`;
+
+exports[`Status has correct value="critical" rendering 1`] = `
+<svg
+  aria-label="Critical"
+  className="grommetux-status-icon grommetux-status-icon-critical"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <mask
+      id="mask-critical-0"
+    >
+      <g
+        className="grommetux-status-icon__detail"
+      >
+        <rect
+          fill="#fff"
+          height="24"
+          width="24"
+          x="0"
+          y="0"
+        />
+        <path
+          d="M8,8 L16,16"
+          fill="none"
+          stroke="#000"
+          strokeWidth="2"
+        />
+        <path
+          d="M8,16 L16,8"
+          fill="none"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </g>
+    </mask>
+  </defs>
+  <g
+    className="grommetux-status-icon__base"
+    mask="url(#mask-critical-0)"
+  >
+    <path
+      d="M12,0 L24,12 L12,24 L0,12 Z"
+      stroke="none"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Status has correct value="disabled" rendering 1`] = `
+<svg
+  aria-label="Disabled"
+  className="grommetux-status-icon grommetux-status-icon-disabled"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <mask
+      id="mask-disabled-0"
+    >
+      <g
+        className="grommetux-status-icon__detail"
+      >
+        <rect
+          fill="#fff"
+          height="24"
+          width="24"
+          x="0"
+          y="0"
+        />
+        <path
+          d="M6,12 L18,12"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </g>
+    </mask>
+  </defs>
+  <g
+    className="grommetux-status-icon__base"
+    mask="url(#mask-disabled-0)"
+  >
+    <path
+      d="M21,24 L3,24 C1.3,24 0,22.7 0,21 L0,3 C0,1.3 1.3,0 3,0 L21,0 C22.7,0 24,1.3 24,3 L24,21 C24,22.7 22.7,24 21,24 L21,24 Z"
+      stroke="none"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Status has correct value="label" rendering 1`] = `
+<svg
+  className="grommetux-status-icon grommetux-status-icon-label"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <g
+    className="grommetux-status-icon__base"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="12"
+      stroke="none"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Status has correct value="ok" rendering 1`] = `
+<svg
+  aria-label="OK"
+  className="grommetux-status-icon grommetux-status-icon-ok"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <mask
+      id="mask-ok-0"
+    >
+      <g
+        className="grommetux-status-icon__detail"
+      >
+        <rect
+          fill="#fff"
+          height="24"
+          width="24"
+          x="0"
+          y="0"
+        />
+        <path
+          d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
+          fill="#000"
+          stroke="none"
+        />
+      </g>
+    </mask>
+  </defs>
+  <g
+    className="grommetux-status-icon__base"
+    mask="url(#mask-ok-0)"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="12"
+      stroke="none"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Status has correct value="warning" rendering 1`] = `
+<svg
+  aria-label="Warning"
+  className="grommetux-status-icon grommetux-status-icon-warning"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <mask
+      id="mask-warning-0"
+    >
+      <g
+        className="grommetux-status-icon__detail"
+      >
+        <rect
+          fill="#fff"
+          height="24"
+          width="24"
+          x="0"
+          y="0"
+        />
+        <g
+          stroke="#000"
+          strokeWidth="2"
+          transform="translate(11.000000, 8.000000)"
+        >
+          <path
+            d="M1,0 L1,6"
+            fill="none"
+            role="presentation"
+          />
+          <path
+            d="M1,8 L1,10"
+            fill="none"
+            role="presentation"
+          />
+        </g>
+      </g>
+    </mask>
+  </defs>
+  <g
+    className="grommetux-status-icon__base"
+    mask="url(#mask-warning-0)"
+  >
+    <path
+      d="M12,0 L0,22 L24,22 L12,0 L12,0 Z"
+      role="presentation"
+      stroke="none"
+    />
+  </g>
+</svg>
+`;

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Distribution has correct default options 1`] = `
+<div
+  className="grommetux-distribution grommetux-distribution--medium grommetux-distribution--loading"
+>
+  <svg
+    aria-label="Loading"
+    className="grommetux-distribution__graphic"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    preserveAspectRatio="none"
+    role="img"
+    tabIndex="0"
+    viewBox="0 0 400 200"
+  >
+    <rect
+      className="grommetux-distribution__background"
+      height={200}
+      stroke="none"
+      width={400}
+      x={0}
+      y={0}
+    />
+    <g>
+      <path
+        className="grommetux-distribution__loading-indicator grommetux-color-index-loading"
+        d="M0,100 L400,100"
+        stroke="none"
+      />
+    </g>
+  </svg>
+  <div
+    aria-hidden={true}
+    className="grommetux-distribution__labels"
+    role="presentation"
+  />
+</div>
+`;

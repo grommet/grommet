@@ -1,4 +1,4 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2017 Hewlett Packard Enterprise Development LP
 
 // IE11 fix for tiles, since hover borders will overlap with tiles
 // unless margins are doubled
@@ -12,24 +12,11 @@
   width: 100%;
 
   @include pad();
+}
 
-  > .#{$grommet-namespace}tile {
-    flex-grow: 0;
-    flex-shrink: 0;
-
-    @include media-query(lap-and-up) {
-      flex-basis: $tile-size;
-    }
-  }
-
-  .#{$grommet-namespace}tiles__masonry-column {
-    > .#{$grommet-namespace}tile {
-      @include media-query(lap-and-up) {
-        width: $tile-size;
-        flex-basis: auto;
-      }
-    }
-  }
+.#{$grommet-namespace}tiles--focus {
+  border-color: $focus-border-color;
+  box-shadow: 0 0 1px 1px $focus-border-color;
 }
 
 .#{$grommet-namespace}tiles__container {
@@ -55,7 +42,6 @@
 }
 
 .#{$grommet-namespace}tiles:not(.#{$grommet-namespace}tiles--flush) {
-  .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}tile,
   > .#{$grommet-namespace}tile {
     margin: halve($inuit-base-spacing-unit);
     @include ie-tile-margin($inuit-base-spacing-unit);
@@ -85,7 +71,6 @@
   &.#{$grommet-namespace}box--wrap {
     justify-content: space-around;
 
-    .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}tile,
     > .#{$grommet-namespace}tile {
       flex-grow: 1;
     }
@@ -95,7 +80,6 @@
 .#{$grommet-namespace}tiles--flush {
   padding: 0px;
 
-  .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}tile,
   > .#{$grommet-namespace}tile {
     margin: 0px;
 
@@ -105,72 +89,66 @@
   }
 }
 
-.#{$grommet-namespace}tiles--moreable {
-  position: relative;
-  padding-bottom: double($inuit-base-spacing-unit);
-
-  .#{$grommet-namespace}tiles__more {
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
+.#{$grommet-namespace}tiles__more {
+  flex: 1 1 100%;
+  text-align: center;
 }
 
 .#{$grommet-namespace}tiles--selectable {
+  outline: none;
+
   .#{$grommet-namespace}tile {
     cursor: pointer;
+    outline: none;
     transition: all 0.2s;
   }
 
   .#{$grommet-namespace}tile--selected {
     background-color: $selected-background-color;
     color: $selected-text-color;
+
+    #{$dark-background-context} {
+      background-color: $colored-active-background-color;
+      color: $active-colored-text-color;
+    }
+
+    #{$light-background-context} {
+      background-color: $selected-background-color;
+      color: $selected-text-color;
+    }
   }
 
-  .#{$grommet-namespace}tile:hover:not(.#{$grommet-namespace}tile--selected):not([class*="background-hover-color-index-"]) {
+  .#{$grommet-namespace}tile--active,
+  .#{$grommet-namespace}tile:hover:not([class*="background-hover-color-index-"]) {
     background-color: $hover-background-color;
     color: $hover-text-color;
+
+    #{$dark-background-context} {
+      background-color: $colored-hover-background-color;
+      color: $active-colored-text-color;
+    }
+
+    #{$light-background-context} {
+      background-color: $hover-background-color;
+      color: $hover-text-color;
+    }
   }
 }
 
 .#{$grommet-namespace}tiles--small {
-  > .#{$grommet-namespace}tile {
+  > .#{$grommet-namespace}tile:not(.#{$grommet-namespace}box--size) {
     @include media-query(lap-and-up) {
-      flex-basis: $tile-small-size;
-    }
-  }
-
-  .#{$grommet-namespace}tiles__masonry-column {
-    > .#{$grommet-namespace}tile {
-      @include media-query(lap-and-up) {
-        width: $tile-small-size;
-        flex-basis: auto;
-      }
+      flex-basis: $size-small;
     }
   }
 }
 
 .#{$grommet-namespace}tiles--large {
-  > .#{$grommet-namespace}tile {
+  > .#{$grommet-namespace}tile:not(.#{$grommet-namespace}box--size) {
     @include media-query(lap-and-up) {
-      flex-basis: $tile-large-size;
+      flex-basis: $size-large;
     }
   }
-
-  .#{$grommet-namespace}tiles__masonry-column {
-    > .#{$grommet-namespace}tile {
-      @include media-query(lap-and-up) {
-        width: $tile-large-size;
-        flex-basis: auto;
-      }
-    }
-  }
-}
-
-.#{$grommet-namespace}tiles:focus {
-  outline: $focus-border-color solid 1px;
 }
 
 .#{$grommet-namespace}tile {
@@ -185,26 +163,11 @@
       margin-left: quarter($inuit-base-spacing-unit);
     }
   }
-
-  .#{$grommet-namespace}tiles__masonry-column > .#{$grommet-namespace}chart,
-  > .#{$grommet-namespace}chart {
-    width: 100%;
-  }
 }
 
 .#{$grommet-namespace}tile--selectable {
   cursor: pointer;
   transition: background-color 0.2s;
-}
-
-.#{$grommet-namespace}tile--selectable.#{$grommet-namespace}tile--selected {
-  background-color: $selected-background-color;
-  color: $selected-text-color;
-}
-
-.#{$grommet-namespace}tile--selectable:hover:not(.#{$grommet-namespace}tile--selected) {
-  background-color: $hover-background-color;
-  color: $hover-text-color;
 }
 
 .#{$grommet-namespace}tile--eclipsed {

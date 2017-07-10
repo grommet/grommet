@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CriticalStatus has correct className rendering 1`] = `
+<svg
+  aria-label="Critical"
+  className="grommetux-status-icon grommetux-status-icon-critical testing"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <mask
+      id="mask-critical-1"
+    >
+      <g
+        className="grommetux-status-icon__detail"
+      >
+        <rect
+          fill="#fff"
+          height="24"
+          width="24"
+          x="0"
+          y="0"
+        />
+        <path
+          d="M8,8 L16,16"
+          fill="none"
+          stroke="#000"
+          strokeWidth="2"
+        />
+        <path
+          d="M8,16 L16,8"
+          fill="none"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </g>
+    </mask>
+  </defs>
+  <g
+    className="grommetux-status-icon__base"
+    mask="url(#mask-critical-1)"
+  >
+    <path
+      d="M12,0 L24,12 L12,24 L0,12 Z"
+      stroke="none"
+    />
+  </g>
+</svg>
+`;
+
+exports[`CriticalStatus has correct default options 1`] = `
+<svg
+  aria-label="Critical"
+  className="grommetux-status-icon grommetux-status-icon-critical"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <mask
+      id="mask-critical-0"
+    >
+      <g
+        className="grommetux-status-icon__detail"
+      >
+        <rect
+          fill="#fff"
+          height="24"
+          width="24"
+          x="0"
+          y="0"
+        />
+        <path
+          d="M8,8 L16,16"
+          fill="none"
+          stroke="#000"
+          strokeWidth="2"
+        />
+        <path
+          d="M8,16 L16,8"
+          fill="none"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </g>
+    </mask>
+  </defs>
+  <g
+    className="grommetux-status-icon__base"
+    mask="url(#mask-critical-0)"
+  >
+    <path
+      d="M12,0 L24,12 L12,24 L0,12 Z"
+      stroke="none"
+    />
+  </g>
+</svg>
+`;

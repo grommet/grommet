@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Animate renders correctly with keep set to true 1`] = `
+<div
+  className="grommetux-animate"
+>
+  <div
+    className="grommetux-animate__child grommetux-animate__child--fade grommetux-animate__child--inactive "
+    style={
+      Object {
+        "transitionDuration": "1000ms",
+      }
+    }
+  >
+    <p
+      className="grommetux-paragraph"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Animate renders correctly with visibility set to true 1`] = `
+<div
+  className="grommetux-animate"
+  visibility={true}
+>
+  <div
+    className="grommetux-animate__child grommetux-animate__child--fade grommetux-animate__child--inactive "
+    style={
+      Object {
+        "transitionDuration": "1000ms",
+      }
+    }
+  >
+    <p
+      className="grommetux-paragraph"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Animate renders with a component set as a span 1`] = `
+<span
+  className="grommetux-animate"
+>
+  <div
+    className="grommetux-animate__child grommetux-animate__child--fade grommetux-animate__child--inactive "
+    style={
+      Object {
+        "transitionDuration": "1000ms",
+      }
+    }
+  >
+    <p
+      className="grommetux-paragraph"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    </p>
+  </div>
+</span>
+`;
+
+exports[`Animate renders with the correct default options 1`] = `
+<div
+  className="grommetux-animate"
+>
+  <div
+    className="grommetux-animate__child grommetux-animate__child--fade grommetux-animate__child--inactive "
+    style={
+      Object {
+        "transitionDuration": "1000ms",
+      }
+    }
+  >
+    <p
+      className="grommetux-paragraph"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    </p>
+  </div>
+</div>
+`;

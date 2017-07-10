@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Warning has correct className rendering 1`] = `
+<svg
+  aria-label="Warning"
+  className="grommetux-status-icon grommetux-status-icon-warning testing"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <mask
+      id="mask-warning-1"
+    >
+      <g
+        className="grommetux-status-icon__detail"
+      >
+        <rect
+          fill="#fff"
+          height="24"
+          width="24"
+          x="0"
+          y="0"
+        />
+        <g
+          stroke="#000"
+          strokeWidth="2"
+          transform="translate(11.000000, 8.000000)"
+        >
+          <path
+            d="M1,0 L1,6"
+            fill="none"
+            role="presentation"
+          />
+          <path
+            d="M1,8 L1,10"
+            fill="none"
+            role="presentation"
+          />
+        </g>
+      </g>
+    </mask>
+  </defs>
+  <g
+    className="grommetux-status-icon__base"
+    mask="url(#mask-warning-1)"
+  >
+    <path
+      d="M12,0 L0,22 L24,22 L12,0 L12,0 Z"
+      role="presentation"
+      stroke="none"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Warning has correct default options 1`] = `
+<svg
+  aria-label="Warning"
+  className="grommetux-status-icon grommetux-status-icon-warning"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <mask
+      id="mask-warning-0"
+    >
+      <g
+        className="grommetux-status-icon__detail"
+      >
+        <rect
+          fill="#fff"
+          height="24"
+          width="24"
+          x="0"
+          y="0"
+        />
+        <g
+          stroke="#000"
+          strokeWidth="2"
+          transform="translate(11.000000, 8.000000)"
+        >
+          <path
+            d="M1,0 L1,6"
+            fill="none"
+            role="presentation"
+          />
+          <path
+            d="M1,8 L1,10"
+            fill="none"
+            role="presentation"
+          />
+        </g>
+      </g>
+    </mask>
+  </defs>
+  <g
+    className="grommetux-status-icon__base"
+    mask="url(#mask-warning-0)"
+  >
+    <path
+      d="M12,0 L0,22 L24,22 L12,0 L12,0 Z"
+      role="presentation"
+      stroke="none"
+    />
+  </g>
+</svg>
+`;

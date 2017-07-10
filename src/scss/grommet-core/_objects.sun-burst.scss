@@ -17,7 +17,7 @@ $sun-burst-xlarge-slice-width: round($inuit-base-spacing-unit * 3);
 
 @include keyframes(draw-arc) {
   0% {
-    stroke-dashoffset: - $graphic-size;
+    stroke-dashoffset: - $size-medium;
   }
 
   100% {
@@ -26,13 +26,20 @@ $sun-burst-xlarge-slice-width: round($inuit-base-spacing-unit * 3);
 }
 
 .#{$grommet-namespace}sun-burst {
-  width: $graphic-size;
+  position: relative;
+  height: $size-medium;
+  width: $size-medium;
   max-width: 100%;
-  @include animation('fade-in 2.5s');
 }
 
-.#{$grommet-namespace}sun-burst__container {
-  position: relative;
+.#{$grommet-namespace}sun-burst__graphic {
+  @include animation('fade-in 2.5s');
+  outline: none;
+}
+
+.#{$grommet-namespace}sun-burst__graphic--focus {
+  border-color: $focus-border-color;
+  box-shadow: 0 0 1px 1px $focus-border-color;
 }
 
 .#{$grommet-namespace}sun-burst__label {
@@ -46,7 +53,7 @@ $sun-burst-xlarge-slice-width: round($inuit-base-spacing-unit * 3);
 
 .#{$grommet-namespace}sun-burst__slice {
   stroke-linecap: butt;
-  stroke-dasharray: quadruple($graphic-size) quadruple($graphic-size);
+  stroke-dasharray: quadruple($size-medium) quadruple($size-medium);
   stroke-dashoffset: 0;
   stroke: $meter-background-color;
   @include graph-stroke-color();
@@ -56,6 +63,7 @@ $sun-burst-xlarge-slice-width: round($inuit-base-spacing-unit * 3);
 
 .#{$grommet-namespace}sun-burst__slice--hot {
   cursor: pointer;
+  outline: none;
 }
 
 .#{$grommet-namespace}sun-burst--active {
@@ -69,15 +77,18 @@ $sun-burst-xlarge-slice-width: round($inuit-base-spacing-unit * 3);
 }
 
 .#{$grommet-namespace}sun-burst--small {
-  width: $graphic-small-size;
+  height: $size-small;
+  width: $size-small;
 }
 
 .#{$grommet-namespace}sun-burst--large {
-  width: $graphic-large-size;
+  height: $size-large;
+  width: $size-large;
 }
 
 .#{$grommet-namespace}sun-burst--xlarge {
-  width: $graphic-xlarge-size;
+  height: $size-xlarge;
+  width: $size-xlarge;
 }
 
 .#{$grommet-namespace}sun-burst--full {

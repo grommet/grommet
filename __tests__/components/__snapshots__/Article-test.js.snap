@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article has correct default options 1`] = `
+<article
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-article"
+  id={undefined}
+  onClick={undefined}
+  onScroll={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}
+>
+  <h1
+    className="grommetux-heading"
+  >
+    Title
+  </h1>
+  <section
+    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-vertical-medium grommetux-section"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  >
+    <h2>
+      Heading
+    </h2>
+    <p>
+      Lorem ipsum ...
+    </p>
+  </section>
+  <a
+    aria-hidden="true"
+    tabIndex="-1"
+  />
+</article>
+`;
+
+exports[`Article renders a classname 1`] = `
+<article
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-article test"
+  id={undefined}
+  onClick={undefined}
+  onScroll={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}
+>
+  <h1
+    className="grommetux-heading"
+  >
+    Title
+  </h1>
+  <section
+    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-vertical-medium grommetux-section"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  >
+    <h2>
+      Heading
+    </h2>
+    <p>
+      Lorem ipsum ...
+    </p>
+  </section>
+  <a
+    aria-hidden="true"
+    tabIndex="-1"
+  />
+</article>
+`;
+
+exports[`Article renders microdata properties 1`] = `
+<article
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-article"
+  id={undefined}
+  itemProp="test"
+  itemScope={true}
+  itemType="http://schema.org/Article"
+  onClick={undefined}
+  onScroll={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}
+>
+  <h1
+    className="grommetux-heading"
+  >
+    Title
+  </h1>
+  <section
+    className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-vertical-medium grommetux-section"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  >
+    <h2>
+      Heading
+    </h2>
+    <p>
+      Lorem ipsum ...
+    </p>
+  </section>
+  <a
+    aria-hidden="true"
+    tabIndex="-1"
+  />
+</article>
+`;

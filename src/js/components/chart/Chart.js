@@ -1,9 +1,11 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, Children, PropTypes } from 'react';
-import { padding, debounceDelay } from './utils';
+import React, { Component, Children } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
 import Intl from '../../utils/Intl';
+import { padding, debounceDelay } from './utils';
 
 import Meter from '../Meter';
 
@@ -25,7 +27,7 @@ const CHART_BASE = CSSClassnames.CHART_BASE;
 function traverseAndUpdateChildren (children) {
   return Children.map(children, child => {
     if (!child || !child.type) {
-      return;
+      return child;
     }
 
     // remove tabIndex from child elements to avoid
@@ -61,13 +63,14 @@ export default class Chart extends Component {
 
   componentDidMount () {
     window.addEventListener('resize', this._onResize);
-    this._layout();
+    // Give sometime for the ui to render. Why is this needed though?
+    setTimeout(this._layout, 150);
   }
 
   componentWillReceiveProps (nextProps) {
-    if (this.props.vertical !== nextProps.vertical) {
-      this.setState({ layoutNeeded: true });
-    }
+    // Always layout when new props come. This takes care of a contained
+    // Base having children that change.
+    this.setState({ layoutNeeded: true });
   }
 
   componentDidUpdate () {
@@ -90,87 +93,90 @@ export default class Chart extends Component {
   _layout () {
     const { horizontalAlignWith, verticalAlignWith, vertical,
       onMaxCount } = this.props;
-    const chart = this.refs.chart;
-    const chartRect = chart.getBoundingClientRect();
-    const base = this.refs.chart.querySelector(`.${CHART_BASE}`);
-    let alignWidth, alignLeft, alignRight, alignHeight, alignTop, alignBottom;
-    let padAlign = true;
+    const chart = this.chartRef;
+    if (chart) {
+      const chartRect = chart.getBoundingClientRect();
+      const base = this.chartRef.querySelector(`.${CHART_BASE}`);
+      let alignWidth, alignLeft, alignRight, alignHeight, alignTop, alignBottom;
+      let padAlign = true;
 
-    if (horizontalAlignWith) {
-      const elem = document.getElementById(horizontalAlignWith);
-      if (elem) {
-        const rect = elem.getBoundingClientRect();
+      if (horizontalAlignWith) {
+        const elem = document.getElementById(horizontalAlignWith);
+        if (elem) {
+          const rect = elem.getBoundingClientRect();
+          alignWidth = rect.width;
+          alignLeft = rect.left - chartRect.left;
+          alignRight = chartRect.right - rect.right;
+          padAlign = false;
+        }
+      } else if (base) {
+        const rect = base.getBoundingClientRect();
         alignWidth = rect.width;
         alignLeft = rect.left - chartRect.left;
         alignRight = chartRect.right - rect.right;
-        padAlign = false;
       }
-    } else if (base) {
-      const rect = base.getBoundingClientRect();
-      alignWidth = rect.width;
-      alignLeft = rect.left - chartRect.left;
-      alignRight = chartRect.right - rect.right;
-    }
 
-    if (verticalAlignWith) {
-      const elem = document.getElementById(verticalAlignWith);
-      if (elem) {
-        const rect = elem.getBoundingClientRect();
+      if (verticalAlignWith) {
+        const elem = document.getElementById(verticalAlignWith);
+        if (elem) {
+          const rect = elem.getBoundingClientRect();
+          alignHeight = rect.height;
+          alignTop = rect.top - chartRect.top;
+          alignBottom = chartRect.bottom - rect.bottom;
+          padAlign = false;
+        }
+      } else if (base) {
+        const rect = base.getBoundingClientRect();
         alignHeight = rect.height;
         alignTop = rect.top - chartRect.top;
         alignBottom = chartRect.bottom - rect.bottom;
-        padAlign = false;
       }
-    } else if (base) {
-      const rect = base.getBoundingClientRect();
-      alignHeight = rect.height;
-      alignTop = rect.top - chartRect.top;
-      alignBottom = chartRect.bottom - rect.bottom;
-    }
 
-    this.setState({
-      alignWidth: alignWidth,
-      alignLeft: alignLeft,
-      alignRight: alignRight,
-      alignHeight: alignHeight,
-      alignTop: alignTop,
-      alignBottom: alignBottom,
-      padAlign: padAlign
-    });
+      this.setState({
+        alignWidth: alignWidth,
+        alignLeft: alignLeft,
+        alignRight: alignRight,
+        alignHeight: alignHeight,
+        alignTop: alignTop,
+        alignBottom: alignBottom,
+        padAlign: padAlign
+      });
 
-    if (onMaxCount) {
-      let maxCount;
-      if (vertical) {
-        maxCount = Math.floor(alignWidth / (4 * padding));
-      } else {
-        maxCount = Math.floor(alignHeight / (4 * padding));
-      }
-      if (maxCount !== this.state.maxCount) {
-        this.setState({ maxCount: maxCount }, () => {
-          onMaxCount(maxCount);
-        });
+      if (onMaxCount) {
+        let maxCount;
+        if (vertical) {
+          maxCount = Math.floor(alignWidth / (4 * padding));
+        } else {
+          maxCount = Math.floor(alignHeight / (4 * padding));
+        }
+        if (maxCount !== this.state.maxCount) {
+          this.setState({ maxCount: maxCount }, () => {
+            onMaxCount(maxCount);
+          });
+        }
       }
     }
   }
 
   render () {
-    const { a11yTitle, full, loading, vertical } = this.props;
+    const {
+      a11yTitle, className, full, loading, vertical, ...props
+    } = this.props;
+    delete props.horizontalAlignWith;
+    delete props.onMaxCount;
+    delete props.verticalAlignWith;
     const { alignBottom, alignHeight, alignLeft, alignRight, alignTop,
       alignWidth, padAlign } = this.state;
     const { intl } = this.context;
-    let classes = [CLASS_ROOT];
-    if (vertical) {
-      classes.push(`${CLASS_ROOT}--vertical`);
-    }
-    if (full) {
-      classes.push(`${CLASS_ROOT}--full`);
-    }
-    if (loading) {
-      classes.push(`${CLASS_ROOT}--loading`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--full`]: full,
+        [`${CLASS_ROOT}--loading`]: loading,
+        [`${CLASS_ROOT}--vertical`]: vertical
+      },
+      className
+    );
 
     // Align Axis children towards the Base|Layers|Chart
     let axisAlign = 'end';
@@ -243,7 +249,7 @@ export default class Chart extends Component {
 
     if (loading) {
       children.push(
-        <svg key="loading" className={`${CLASS_ROOT}-loading`}
+        <svg key="loading" className={classes}
           viewBox={`0 0 ${alignWidth} ${alignHeight}`}>
           <path d={`M0,${alignHeight / 2} L${alignWidth},${alignHeight / 2}`} />
         </svg>
@@ -255,14 +261,14 @@ export default class Chart extends Component {
     );
 
     return (
-      <div ref="chart" className={classes.join(' ')} role="group"
-        aria-label={ariaLabel}>
+      <div ref={ref => this.chartRef = ref} {...props} className={classes}
+        aria-label={ariaLabel} role="group">
         {children}
       </div>
     );
   }
 
-};
+}
 
 Chart.contextTypes = {
   intl: PropTypes.object

@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unknown has correct className rendering 1`] = `
+<svg
+  aria-label="Unknown"
+  className="grommetux-status-icon grommetux-status-icon-unknown testing"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <mask
+      id="mask-uknown-1"
+    >
+      <g
+        className="grommetux-status-icon__detail"
+      >
+        <rect
+          fill="#fff"
+          height="24"
+          width="24"
+          x="0"
+          y="0"
+        />
+        <circle
+          cx="12"
+          cy="12"
+          fill="#000"
+          r="10"
+          stroke="none"
+        />
+        <path
+          d="M9,10.4 C9,8.8 10.4,7.6 12,7.6 C13.6,7.6 14.9,9 15,10.4 C15,11.7 14.1,12.7 12.9,13.1 C12.4,13.2 12,13.7 12,14.2 L12,15.5"
+          fill="none"
+          stroke="#fff"
+          strokeWidth="2"
+        />
+        <circle
+          cx="12"
+          cy="17.6"
+          fill="#fff"
+          r="1"
+          stroke="none"
+        />
+      </g>
+    </mask>
+  </defs>
+  <g
+    className="grommetux-status-icon__base"
+    mask="url(#mask-uknown-1)"
+  >
+    <circle
+      className="grommetux-status-icon__normal"
+      cx="12"
+      cy="12"
+      r="12"
+      stroke="none"
+    />
+    <circle
+      className="grommetux-status-icon__small"
+      cx="12"
+      cy="12"
+      fill="none"
+      r="11"
+      strokeWidth="3"
+    />
+  </g>
+</svg>
+`;
+
+exports[`Unknown has correct default options 1`] = `
+<svg
+  aria-label="Unknown"
+  className="grommetux-status-icon grommetux-status-icon-unknown"
+  role="img"
+  version="1.1"
+  viewBox="0 0 24 24"
+>
+  <defs>
+    <mask
+      id="mask-uknown-0"
+    >
+      <g
+        className="grommetux-status-icon__detail"
+      >
+        <rect
+          fill="#fff"
+          height="24"
+          width="24"
+          x="0"
+          y="0"
+        />
+        <circle
+          cx="12"
+          cy="12"
+          fill="#000"
+          r="10"
+          stroke="none"
+        />
+        <path
+          d="M9,10.4 C9,8.8 10.4,7.6 12,7.6 C13.6,7.6 14.9,9 15,10.4 C15,11.7 14.1,12.7 12.9,13.1 C12.4,13.2 12,13.7 12,14.2 L12,15.5"
+          fill="none"
+          stroke="#fff"
+          strokeWidth="2"
+        />
+        <circle
+          cx="12"
+          cy="17.6"
+          fill="#fff"
+          r="1"
+          stroke="none"
+        />
+      </g>
+    </mask>
+  </defs>
+  <g
+    className="grommetux-status-icon__base"
+    mask="url(#mask-uknown-0)"
+  >
+    <circle
+      className="grommetux-status-icon__normal"
+      cx="12"
+      cy="12"
+      r="12"
+      stroke="none"
+    />
+    <circle
+      className="grommetux-status-icon__small"
+      cx="12"
+      cy="12"
+      fill="none"
+      r="11"
+      strokeWidth="3"
+    />
+  </g>
+</svg>
+`;

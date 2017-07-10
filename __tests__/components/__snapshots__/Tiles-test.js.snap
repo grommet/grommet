@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tiles has correct default options 1`] = `
+<div
+  className="grommetux-box grommetux-box--direction-row grommetux-box--justify-start grommetux-box--responsive grommetux-box--pad-small grommetux-box--wrap grommetux-tiles grommetux-tiles--flush"
+  id={undefined}
+  onClick={undefined}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}
+>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-tile grommetux-none-hover-color-index-disabled grommetux-tile--hover-border-small"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  >
+    First
+  </div>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-tile grommetux-none-hover-color-index-disabled grommetux-tile--hover-border-small"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  >
+    Second
+  </div>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-tile grommetux-none-hover-color-index-disabled grommetux-tile--hover-border-small"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  >
+    Third
+  </div>
+</div>
+`;

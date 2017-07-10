@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinning has correct className rendering 1`] = `
+<svg
+  aria-label="Spinning"
+  className="grommetux-icon-spinning grommetux-icon-spinning--responsive testing"
+  role="img"
+  version="1.1"
+  viewBox="0 0 48 48"
+>
+  <circle
+    cx="24"
+    cy="24"
+    fill="none"
+    r="21"
+    stroke="#979797"
+    strokeWidth="6"
+  />
+</svg>
+`;
+
+exports[`Spinning has correct default options 1`] = `
+<svg
+  aria-label="Spinning"
+  className="grommetux-icon-spinning grommetux-icon-spinning--responsive"
+  role="img"
+  version="1.1"
+  viewBox="0 0 48 48"
+>
+  <circle
+    cx="24"
+    cy="24"
+    fill="none"
+    r="21"
+    stroke="#979797"
+    strokeWidth="6"
+  />
+</svg>
+`;
+
+exports[`Spinning has correct rendering when size=huge 1`] = `
+<svg
+  aria-label="Spinning"
+  className="grommetux-icon-spinning grommetux-icon-spinning--huge grommetux-icon-spinning--responsive"
+  role="img"
+  version="1.1"
+  viewBox="0 0 48 48"
+>
+  <circle
+    cx="24"
+    cy="24"
+    fill="none"
+    r="21"
+    stroke="#979797"
+    strokeWidth="6"
+  />
+</svg>
+`;
+
+exports[`Spinning has correct rendering when size=large 1`] = `
+<svg
+  aria-label="Spinning"
+  className="grommetux-icon-spinning grommetux-icon-spinning--large grommetux-icon-spinning--responsive"
+  role="img"
+  version="1.1"
+  viewBox="0 0 48 48"
+>
+  <circle
+    cx="24"
+    cy="24"
+    fill="none"
+    r="21"
+    stroke="#979797"
+    strokeWidth="6"
+  />
+</svg>
+`;
+
+exports[`Spinning has correct rendering when size=medium 1`] = `
+<svg
+  aria-label="Spinning"
+  className="grommetux-icon-spinning grommetux-icon-spinning--medium grommetux-icon-spinning--responsive"
+  role="img"
+  version="1.1"
+  viewBox="0 0 48 48"
+>
+  <circle
+    cx="24"
+    cy="24"
+    fill="none"
+    r="21"
+    stroke="#979797"
+    strokeWidth="6"
+  />
+</svg>
+`;
+
+exports[`Spinning has correct rendering when size=small 1`] = `
+<svg
+  aria-label="Spinning"
+  className="grommetux-icon-spinning grommetux-icon-spinning--small grommetux-icon-spinning--responsive"
+  role="img"
+  version="1.1"
+  viewBox="0 0 48 48"
+>
+  <circle
+    cx="24"
+    cy="24"
+    fill="none"
+    r="21"
+    stroke="#979797"
+    strokeWidth="6"
+  />
+</svg>
+`;
+
+exports[`Spinning has correct rendering when size=xlarge 1`] = `
+<svg
+  aria-label="Spinning"
+  className="grommetux-icon-spinning grommetux-icon-spinning--xlarge grommetux-icon-spinning--responsive"
+  role="img"
+  version="1.1"
+  viewBox="0 0 48 48"
+>
+  <circle
+    cx="24"
+    cy="24"
+    fill="none"
+    r="21"
+    stroke="#979797"
+    strokeWidth="6"
+  />
+</svg>
+`;
+
+exports[`Spinning has correct small=true rendering 1`] = `
+<svg
+  aria-label="Spinning"
+  className="grommetux-icon-spinning grommetux-icon-spinning--small grommetux-icon-spinning--responsive"
+  role="img"
+  version="1.1"
+  viewBox="0 0 48 48"
+>
+  <circle
+    cx="24"
+    cy="24"
+    fill="none"
+    r="21"
+    stroke="#979797"
+    strokeWidth="6"
+  />
+</svg>
+`;
+
+exports[`Spinning has microdata properties rendering 1`] = `
+<svg
+  aria-label="Spinning"
+  className="grommetux-icon-spinning grommetux-icon-spinning--responsive"
+  itemProp="test"
+  itemScope={true}
+  itemType="http://schema.org/Article"
+  role="img"
+  version="1.1"
+  viewBox="0 0 48 48"
+>
+  <circle
+    cx="24"
+    cy="24"
+    fill="none"
+    r="21"
+    stroke="#979797"
+    strokeWidth="6"
+  />
+</svg>
+`;

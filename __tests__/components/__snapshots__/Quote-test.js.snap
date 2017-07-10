@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quote has correct default options 1`] = `
+<div
+  className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-horizontal-large grommetux-box--pad-vertical-small grommetux-box--size-large grommetux-box--size grommetux-quote grommetux-quote--emphasize-credit"
+  id={undefined}
+  onClick={undefined}
+  role={undefined}
+  style={Object {}}
+  tabIndex={undefined}
+>
+  <div>
+    Testing
+  </div>
+</div>
+`;

@@ -1,6 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { baseUnit } from '../../utils/Graphics';
 import CSSClassnames from '../../utils/CSSClassnames';
 
@@ -11,26 +12,16 @@ export var baseDimension = baseUnit * 8;
 export var propTypes = {
   activeIndex: PropTypes.number,
   a11yTitle: PropTypes.string,
-  a11yTitleId: PropTypes.string,
-  max: PropTypes.shape({
-    value: PropTypes.number,
-    label: PropTypes.string
-  }).isRequired,
-  min: PropTypes.shape({
-    value: PropTypes.number,
-    label: PropTypes.string
-  }).isRequired,
-  onActivate: PropTypes.func.isRequired,
-  // size: PropTypes.oneOf(['small', 'medium', 'large']).isRequired,
+  max: PropTypes.number.isRequired,
+  min: PropTypes.number.isRequired,
+  onActivate: PropTypes.func,
   series: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     value: PropTypes.number.isRequired,
     colorIndex: PropTypes.string,
-    important: PropTypes.bool,
     onClick: PropTypes.func
   })).isRequired,
-  total: PropTypes.number,
-  units: PropTypes.string
+  total: PropTypes.number
 };
 
 export function buildPath (itemIndex, commands, classes, onActivate,
@@ -47,7 +38,7 @@ export function buildPath (itemIndex, commands, classes, onActivate,
 
     return (
       <g key={itemIndex} {...a11yRoles}>
-        <path className={classes.join(' ')} d={commands}
+        <path className={classes} d={commands}
           data-index={itemIndex} onFocus={onOver} onBlur={onOut} />
         <path className={`${CLASS_ROOT}__hot`} d={commands} fill="none"
           onMouseOver={onOver} onMouseOut={onOut}
@@ -56,7 +47,7 @@ export function buildPath (itemIndex, commands, classes, onActivate,
     );
   } else {
     return (
-      <path key={itemIndex} className={classes.join(' ')} d={commands} />
+      <path key={itemIndex} className={classes} d={commands} />
     );
   }
-};
+}

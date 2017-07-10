@@ -1,7 +1,7 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import { findDOMNode } from 'react-dom';
-import DOMUtils from './DOM';
+import { generateId } from './DOM';
 
 // Allow callers to use key labels instead of key code numbers.
 // This makes their code easier to read.
@@ -30,7 +30,7 @@ var _onKeyboardAcceleratorKeyPress = (e) => {
     if (_keyboardAccelerators[listener]) {
       var handlers = _keyboardAccelerators[listener].handlers;
       if (handlers.hasOwnProperty(key)) {
-        if (handlers[key](e)) {
+        if (handlers[key] && handlers[key](e)) {
           return true;
         }
       }
@@ -44,24 +44,24 @@ var _onKeyboardAcceleratorKeyPress = (e) => {
 // Remove listeners using stopListeningToKeyboard().
 export default {
   _initKeyboardAccelerators (element) {
-    const id = DOMUtils.generateId(element);
+    const id = generateId(element);
     _keyboardAccelerators[id] = {
       handlers: {}
     };
   },
 
   _getKeyboardAcceleratorHandlers (element) {
-    const id = DOMUtils.generateId(element);
+    const id = generateId(element);
     return _keyboardAccelerators[id].handlers;
   },
 
   _getDowns (element) {
-    const id = DOMUtils.generateId(element);
+    const id = generateId(element);
     return _keyboardAccelerators[id].downs;
   },
 
   _isComponentListening (element) {
-    const id = DOMUtils.generateId(element);
+    const id = generateId(element);
 
     return _listeners.some(function (listener) {
       return listener === id;
@@ -69,12 +69,12 @@ export default {
   },
 
   _subscribeComponent (element) {
-    const id = DOMUtils.generateId(element);
+    const id = generateId(element);
     _listeners.push(id);
   },
 
   _unsubscribeComponent (element) {
-    const id = DOMUtils.generateId(element);
+    const id = generateId(element);
 
     var removeListenerIndex = _listeners.indexOf(id);
     _listeners.splice(removeListenerIndex, 1);
@@ -87,26 +87,30 @@ export default {
   // be replaced, new handlers will be added.
   startListeningToKeyboard (component, handlers) {
     var element = findDOMNode(component);
-    this._initKeyboardAccelerators(element);
-    var keys = 0;
-    for (var key in handlers) {
-      if (handlers.hasOwnProperty(key)) {
-        var keyCode = key;
-        if (KEYS.hasOwnProperty(key)) {
-          keyCode = KEYS[key];
+    if (element) {
+      this._initKeyboardAccelerators(element);
+      var keys = 0;
+      for (var key in handlers) {
+        if (handlers.hasOwnProperty(key)) {
+          var keyCode = key;
+          if (KEYS.hasOwnProperty(key)) {
+            keyCode = KEYS[key];
+          }
+          keys += 1;
+          this._getKeyboardAcceleratorHandlers(element)[keyCode] = (
+            handlers[key]
+          );
         }
-        keys += 1;
-        this._getKeyboardAcceleratorHandlers(element)[keyCode] = handlers[key];
       }
-    }
 
-    if (keys > 0) {
-      if (!_isKeyboardAcceleratorListening) {
-        window.addEventListener("keydown", _onKeyboardAcceleratorKeyPress);
-        _isKeyboardAcceleratorListening = true;
-      }
-      if (!this._isComponentListening(element)) {
-        this._subscribeComponent(element);
+      if (keys > 0) {
+        if (!_isKeyboardAcceleratorListening) {
+          window.addEventListener("keydown", _onKeyboardAcceleratorKeyPress);
+          _isKeyboardAcceleratorListening = true;
+        }
+        if (!this._isComponentListening(element)) {
+          this._subscribeComponent(element);
+        }
       }
     }
   },

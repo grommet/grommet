@@ -2,20 +2,8 @@
   border-width: $inuit-base-spacing-unit;
   border-style: solid;
   max-width: 100%;
+}
 
-  &--small {
-    width: $size-xsmall;
-  }
-
-  &--medium {
-    width: $size-small;
-  }
-
-  &--large {
-    width: $size-medium;
-  }
-
-  &--emphasize-credit &__credit {
-    font-weight: 600;
-  }
+.#{$grommet-namespace}quote--small {
+  border-width: halve($inuit-base-spacing-unit);
 }

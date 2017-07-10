@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 section:not(.#{$grommet-namespace}section) {
   padding-top: $inuit-base-spacing-unit;
@@ -37,12 +37,9 @@ section:not(.#{$grommet-namespace}section) {
   }
 
   > ol,
-  > ul {
+  > ul:not([class^="#{$grommet-namespace}"]) {
     @include media-query(palm) {
-      //padding-left: $inuit-base-spacing-unit;
-      //padding-right: $inuit-base-spacing-unit;
-      margin-left: 0px;
-      margin-bottom: $inuit-base-spacing-unit;
+      margin-left: 2rem;
     }
   }
 
@@ -50,7 +47,6 @@ section:not(.#{$grommet-namespace}section) {
     > dt {
       margin-top: $inuit-base-spacing-unit;
       margin-bottom: quarter($inuit-base-spacing-unit);
-      text-transform: uppercase;
 
       code {
         text-transform: none;

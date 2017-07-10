@@ -1,6 +1,7 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 
@@ -8,32 +9,24 @@ const CLASS_ROOT = CSSClassnames.TABLE_ROW;
 
 export default class TableRow extends Component {
   render () {
-    const { children, className, onClick, selected } = this.props;
-
-    if (selected) {
-      console.warn('Selected option has been deprecated, please use ' +
-        'selected option at the Table level.');
-    }
+    const { children, className, onClick, ...props } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
-      className,
       {
-        [`${CLASS_ROOT}--selected`]: selected,
         [`${CLASS_ROOT}--selectable`]: onClick
-      }
+      },
+      className
     );
 
     return (
-      <tr className={classes} onClick={onClick}>
+      <tr {...props} className={classes} onClick={onClick}>
         {children}
       </tr>
     );
   }
-};
+}
 
 TableRow.propTypes = {
-  onClick: PropTypes.func,
-  //Deprecated in 0.6.2
-  selected: PropTypes.bool
+  onClick: PropTypes.func
 };

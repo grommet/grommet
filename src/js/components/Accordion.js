@@ -1,70 +1,99 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import List from './List';
 
 import CSSClassnames from '../utils/CSSClassnames';
+import Props from '../utils/Props';
 
 const CLASS_ROOT = CSSClassnames.ACCORDION;
 
 export default class Accordion extends Component {
+
   constructor(props, context) {
     super(props, context);
-    this._activatePanel = this._activatePanel.bind(this);
+    this._onPanelChange = this._onPanelChange.bind(this);
 
+    let active;
+    // active in state should always be an array
+    if (typeof this.props.active === 'number') {
+      active = [this.props.active];
+    } else {
+      active = this.props.active || [];
+    }
     this.state = {
-      activeIndex: props.initialIndex
+      active: active
     };
   }
 
-  _activatePanel (index) {
-    this.setState({activeIndex: index});
+  componentWillReceiveProps (newProps) {
+    if (newProps.active !== this.props.active) {
+      this.setState({ active: newProps.active || [] });
+    }
+  }
+
+  _onPanelChange (index) {
+    let active = [...this.state.active];
+    const { onActive, openMulti } = this.props;
+
+    const activeIndex = active.indexOf(index);
+    if (activeIndex > -1) {
+      active.splice(activeIndex, 1);
+    } else {
+      if (openMulti) {
+        active.push(index);
+      } else {
+        active = [index];
+      }
+    }
+    this.setState({active: active}, () => {
+      if (onActive) {
+        if (!openMulti) {
+          onActive(active[0]);
+        } else {
+          onActive(active);
+        }
+      }
+    });
   }
 
   render () {
-    const {
-      animate,
-      className,
-      children,
-      openMulti,
-      ...props
-    } = this.props;
+    const { animate, className, children } = this.props;
 
     const classes = classnames(
       CLASS_ROOT,
       className
     );
 
-    const accordionChildren = React.Children
-      .map(children, (child, index) => {
-        return React.cloneElement(child, {
-          id: 'accordion-panel-' + index,
-          active: !openMulti ? (this.state.activeIndex === index)
-            : child.props.active,
-          onActive: () => {
-            this._activatePanel(index);
-          },
-          animate
-        });
+    const accordionChildren = React.Children.map(children, (child, index) => {
+      return React.cloneElement(child, {
+        active: this.state.active.indexOf(index) > -1,
+        onChange: () => {
+          this._onPanelChange(index);
+        },
+        animate
       });
+    });
 
+    const restProps = Props.omit(this.props, Object.keys(Accordion.propTypes));
     return (
-      <List
-        role="tablist"
-        className={classes}
-        {...props}
-      >
+      <List role='tablist' className={classes} {...restProps}>
         {accordionChildren}
       </List>
     );
   }
-};
+}
 
 Accordion.propTypes = {
+  active: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.arrayOf(PropTypes.number)
+  ]),
   animate: PropTypes.bool,
-  openMulti: PropTypes.bool,
-  initialIndex: PropTypes.number
+  onActive: PropTypes.func,
+  openMulti: PropTypes.bool
 };
 
 Accordion.defaultProps = {

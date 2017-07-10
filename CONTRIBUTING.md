@@ -27,30 +27,36 @@ Contributing
 The best way to collaborate with the project contributors is through the Grommet
 organization on GitHub: <https://github.com/grommet>.
 
+You are invited to contribute new features, fixes, or updates, large or small; we
+are always thrilled to receive pull requests, and do our best to process them as
+fast as we can.
+
+Before you start to code, we recommend discussing your plans through a GitHub
+issue, especially for more ambitious contributions. This gives other contributors
+a chance to point you in the right direction, give you feedback on your design,
+and help you find out if someone else is working on the same thing.
+
 -   If you want to contribute design assets or style guide revisions,
     please open a [GitHub pull
     request](https://github.com/grommet/grommet-design/pulls) or open a
-    [GitHub issue](https://github.com/grommet/grommet-design/issues).
--   If you want to contribute code by either fixing a problem or
-    creating a new feature, please open a pull request for the appropriate
-    project.
+    [GitHub issue](https://github.com/grommet/grommet-design/issues) against the
+    grommet-design project.
 -   If you want to raise an issue such as a defect or an enhancement
     request please open a GitHub issue for the appropriate project.  Please
     keep the following in mind:
     -   Try to reduce your code to the bare minimum required to
         reproduce the issue.
     -   If we can't reproduce the issue, we can't fix it. Please list
-        the exact steps required to reproduce the issue. Include
-        versions of your OS, browser, Node.js, etc. Include relevant
-        logs or sample code.
+        the exact steps required to reproduce the issue.
 
 We review issues and pull requests on a weekly basis (sometimes more frequent).
 When we require more information from you, we'll ask.  In order to keep the
 issue and pull request clean, we ask that you respond within **one week** or we'll
 close the issue pending your response.
 
-After a pull request is made, contributors and/or maintainers will offer feedback. If
-the pull request passes review, a maintainer will accept it with a comment.
+After an issue is created or a pull request is submitted, contributors and/or
+maintainers will offer feedback. If the pull request passes review, a maintainer
+will accept it with a comment.
 
 When a pull request for code contributions fails testing, the author is
 expected to update the pull request to address the failure until it
@@ -166,10 +172,10 @@ don't lose your contributions because of that.
 References
 ----------
 
-This contribution guide was inspired by the contribution guides for the
-[Grunt](http://gruntjs.com/contributing) and
-[CloudSlang](http://www.cloudslang.io/#/docs#contributing-code)
-projects.
+This contribution guide was inspired by the contribution guides for
+[Grunt](http://gruntjs.com/contributing),
+[CloudSlang](http://www.cloudslang.io/#/docs#contributing-code), and
+[Docker Library](https://github.com/docker-library/docs/tree/master/node).
 
 Found an error in the documentation? [File an
 issue](https://github.com/grommet/grommet-docs/issues).

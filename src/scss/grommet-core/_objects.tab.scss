@@ -3,6 +3,10 @@
 .#{$grommet-namespace}tab {
   padding: 0 halve($inuit-base-spacing-unit);
 
+  @include media-query(palm) {
+    padding: quarter($inuit-base-spacing-unit);
+  }
+
   .#{$grommet-namespace}tabs--justify-start &:first-of-type,
   .#{$grommet-namespace}tabs--justify-end &:first-of-type {
     padding-left: 0;
@@ -20,44 +24,29 @@
       padding-right: halve($inuit-base-spacing-unit);
     }
   }
+}
 
-  a {
-    display: inline-block;
-    text-decoration: none;
+.#{$grommet-namespace}tab__label {
+  display: inline-block;
+  cursor: pointer;
+  padding-bottom: quarter($inuit-base-spacing-unit) + $active-border-width;
+  color: $secondary-text-color;
+  border-bottom: $active-border-width solid transparent;
 
-    &:hover,
-    &:visited,
-    &:link,
-    &:active {
-      text-decoration: none;
-    }
-
-    &:focus:not(tab--active .#{$grommet-namespace}tab__link) {
-      .#{$grommet-namespace}tab__label {
-        border-color: $border-color;
-      }
-    }
+  @include media-query(palm) {
+    padding-bottom: quarter($inuit-base-spacing-unit);
   }
+}
 
-  &__label {
-    display: inline-block;
-    cursor: pointer;
-    padding-bottom: quarter($inuit-base-spacing-unit) + $active-border-width;
-    color: $secondary-text-color;
-    border-bottom: $active-border-width solid transparent;
+.#{$grommet-namespace}tab--active {
+  .#{$grommet-namespace}tab__label {
+    color: $hover-text-color;
+    border-color: $hover-text-color;
   }
+}
 
-  &--active,
-  &--active .#{$grommet-namespace}tab__link:hover {
-    .#{$grommet-namespace}tab__label {
-      color: $hover-text-color;
-      border-color: $hover-text-color;
-    }
-  }
-
-  &:hover {
-    .#{$grommet-namespace}tab__label {
-      border-color: $border-color;
-    }
+.#{$grommet-namespace}tab:hover:not(.#{$grommet-namespace}tab--active) {
+  .#{$grommet-namespace}tab__label {
+    border-color: $border-color;
   }
 }

@@ -1,7 +1,8 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes, Children } from 'react';
-import Props from '../../utils/Props';
+import React, { Component, Children } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import CSSClassnames from '../../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.CHART_BASE;
@@ -11,52 +12,65 @@ const CLASS_ROOT = CSSClassnames.CHART_BASE;
 
 export default class Base extends Component {
 
+  componentWillReceiveProps (nextProps) {
+    const { height, width } = this.props;
+    if (nextProps.width !== width || nextProps.height !== height) {
+      this._notifySizeChange = true;
+    }
+  }
+
+  componentDidUpdate () {
+    if (this._notifySizeChange) {
+      this._notifySizeChange = false;
+      let event = document.createEvent('HTMLEvents');
+      event.initEvent('resize', true, false);
+      window.dispatchEvent(event);
+    }
+  }
+
   render () {
-    const { vertical } = this.props;
-    const restProps = Props.omit(this.props, Object.keys(Base.propTypes));
-    const childCount = Children.count(this.props.children);
-    const width =
-      (! childCount && ! this.props.width ? 'medium' : this.props.width);
-    const height =
-      (! childCount && ! this.props.height ? 'medium' : this.props.height);
+    const {
+      children, className, height, vertical, width, ...props
+    } = this.props;
+    const childCount = Children.count(children);
+    const finalHeight = (! childCount && ! height ? 'medium' : height);
+    const finalWidth = (! childCount && ! width && 'sparkline' !== height ?
+      'medium' : width);
 
-    let classes = [CLASS_ROOT];
-    if (vertical) {
-      classes.push(`${CLASS_ROOT}--vertical`);
-    }
-    if (height) {
-      classes.push(`${CLASS_ROOT}--height-${height}`);
-    }
-    if (width) {
-      classes.push(`${CLASS_ROOT}--width-${width}`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const classes = classnames(
+      CLASS_ROOT, {
+        [`${CLASS_ROOT}--vertical`]: vertical,
+        [`${CLASS_ROOT}--height-${finalHeight}`]: finalHeight,
+        [`${CLASS_ROOT}--width-${finalWidth}`]: finalWidth
+      },
+      className
+    );
 
-    let children = this.props.children;
+    let mappedChildren = children;
     // We can't distribute children when vertical because our height isn't
     // known.
     if (! vertical) {
       // Round to hundredths of a % so things line up reasonably accurately
       const basis = `${Math.floor(10000 / childCount) / 100.0}%`;
-      children = Children.map(this.props.children, child => (
+      mappedChildren = Children.map(children, child => (
         child ? React.cloneElement(child, { style: { flexBasis: basis }}) :
           child
       ));
     }
 
     return (
-      <div {...restProps} className={classes.join(' ')}>
-        {children}
+      <div {...props} className={classes}>
+        {mappedChildren}
       </div>
     );
   }
 
-};
+}
 
 Base.propTypes = {
-  height: PropTypes.oneOf(['small', 'medium', 'large', 'sparkline']),
+  height: PropTypes.oneOf([
+    'xxsmall', 'xsmall', 'small', 'medium', 'large', 'sparkline'
+  ]),
   vertical: PropTypes.bool,
-  width: PropTypes.oneOf(['small', 'medium', 'large', 'full'])
+  width: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full'])
 };

@@ -38,40 +38,41 @@ $base-size: double($inuit-base-spacing-unit);
   line-height: 0;
   transition: transform 0.25s ease-out;
   transform-origin: center;
+}
 
-  &:hover {
-    transform: scale(1.2);
-    cursor: pointer;
+.#{$grommet-namespace}pulse:hover {
+  // `rotate` is used to trick the browser into rendering the image better
+  transform: scale(1.2) rotate(0.0001deg);
+  cursor: pointer;
 
-    .#{$grommet-namespace}pulse__icon-anim {
-      -webkit-animation: none;
-      animation: none;
-    }
+  .#{$grommet-namespace}pulse__icon-anim {
+    -webkit-animation: none;
+    animation: none;
   }
+}
 
-  .#{$grommet-namespace}pulse__icon {
-    svg {
-      width: $base-size;
-      height: $base-size;
-      border-radius: $base-size;
-      padding: $inuit-base-spacing-unit / 2;
-      background-color: nth($brand-accent-colors, 1);
-      stroke: nth($brand-grey-colors, 1);
-    }
-
-    &-anim {
-      display: block;
-      width: $base-size;
-      height: $base-size;
-      position: absolute;
-      top: 0;
-      left: 0;
-      box-sizing: border-box;
-      transform-origin: center;
-      border: 1px solid;
-      border-color: nth($brand-accent-colors, 1);
-      border-radius: $base-size;
-      @include scale-up-fade-out(1.5s, 0.2s);
-    }
+.#{$grommet-namespace}pulse__icon {
+  svg {
+    width: $base-size;
+    height: $base-size;
+    border-radius: $base-size;
+    padding: $inuit-base-spacing-unit / 2;
+    background-color: nth($brand-accent-colors, 1);
+    stroke: nth($brand-grey-colors, 1);
   }
+}
+
+.#{$grommet-namespace}pulse__icon-anim {
+  display: block;
+  width: $base-size;
+  height: $base-size;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  transform-origin: center;
+  border: 1px solid;
+  border-color: nth($brand-accent-colors, 1);
+  border-radius: $base-size;
+  @include scale-up-fade-out(1.5s, 0.2s);
 }

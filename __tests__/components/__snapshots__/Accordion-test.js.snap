@@ -1,0 +1,558 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion has correct default options 1`] = `
+<ul
+  className="grommetux-list grommetux-accordion"
+  role="tablist"
+>
+  <div>
+    <li
+      aria-expanded={false}
+      aria-label="First Title"
+      aria-selected={false}
+      className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-box--separator-bottom grommetux-list-item grommetux-accordion-panel"
+      id={undefined}
+      onClick={undefined}
+      role="tab"
+      style={Object {}}
+      tabIndex={undefined}
+    >
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--fill grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        type="button"
+      >
+        <div
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
+          id={undefined}
+          onClick={undefined}
+          role={undefined}
+          style={Object {}}
+          tabIndex={undefined}
+        >
+          <header
+            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            id={undefined}
+            onClick={undefined}
+            role={undefined}
+            style={Object {}}
+            tabIndex={undefined}
+          >
+            First Title
+            <svg
+              aria-label="caret-next"
+              className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polygon
+                fill="none"
+                points="6 2 18 12 6 22"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </header>
+        </div>
+      </button>
+    </li>
+    <span
+      className="grommetux-collapsible__wrapper"
+    />
+  </div>
+</ul>
+`;
+
+exports[`Accordion has correct initialIndex=0 rendering 1`] = `
+<ul
+  className="grommetux-list grommetux-accordion"
+  role="tablist"
+>
+  <div>
+    <li
+      aria-expanded={true}
+      aria-label="First Title"
+      aria-selected={true}
+      className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-box--separator-bottom grommetux-list-item grommetux-accordion-panel grommetux-accordion-panel--active"
+      id={undefined}
+      onClick={undefined}
+      role="tab"
+      style={Object {}}
+      tabIndex={undefined}
+    >
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--fill grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        type="button"
+      >
+        <div
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
+          id={undefined}
+          onClick={undefined}
+          role={undefined}
+          style={Object {}}
+          tabIndex={undefined}
+        >
+          <header
+            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            id={undefined}
+            onClick={undefined}
+            role={undefined}
+            style={Object {}}
+            tabIndex={undefined}
+          >
+            First Title
+            <svg
+              aria-label="caret-next"
+              className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polygon
+                fill="none"
+                points="6 2 18 12 6 22"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </header>
+        </div>
+      </button>
+    </li>
+    <span
+      className="grommetux-collapsible__wrapper"
+    >
+      <div
+        aria-label="Tab Contents"
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-collapsible"
+        id={undefined}
+        onClick={undefined}
+        role="tabpanel"
+        style={Object {}}
+        tabIndex={undefined}
+      >
+        <p>
+          test 1
+        </p>
+      </div>
+    </span>
+  </div>
+  <div>
+    <li
+      aria-expanded={false}
+      aria-label="Second Title"
+      aria-selected={false}
+      className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-box--separator-bottom grommetux-list-item grommetux-accordion-panel"
+      id={undefined}
+      onClick={undefined}
+      role="tab"
+      style={Object {}}
+      tabIndex={undefined}
+    >
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--fill grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        type="button"
+      >
+        <div
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
+          id={undefined}
+          onClick={undefined}
+          role={undefined}
+          style={Object {}}
+          tabIndex={undefined}
+        >
+          <header
+            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            id={undefined}
+            onClick={undefined}
+            role={undefined}
+            style={Object {}}
+            tabIndex={undefined}
+          >
+            Second Title
+            <svg
+              aria-label="caret-next"
+              className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polygon
+                fill="none"
+                points="6 2 18 12 6 22"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </header>
+        </div>
+      </button>
+    </li>
+    <span
+      className="grommetux-collapsible__wrapper"
+    />
+  </div>
+</ul>
+`;
+
+exports[`Accordion has correct initialIndex=0 rendering 2`] = `
+<ul
+  className="grommetux-list grommetux-accordion"
+  role="tablist"
+>
+  <div>
+    <li
+      aria-expanded={false}
+      aria-label="First Title"
+      aria-selected={false}
+      className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-box--separator-bottom grommetux-list-item grommetux-accordion-panel"
+      id={undefined}
+      onClick={undefined}
+      role="tab"
+      style={Object {}}
+      tabIndex={undefined}
+    >
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--fill grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        type="button"
+      >
+        <div
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
+          id={undefined}
+          onClick={undefined}
+          role={undefined}
+          style={Object {}}
+          tabIndex={undefined}
+        >
+          <header
+            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            id={undefined}
+            onClick={undefined}
+            role={undefined}
+            style={Object {}}
+            tabIndex={undefined}
+          >
+            First Title
+            <svg
+              aria-label="caret-next"
+              className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polygon
+                fill="none"
+                points="6 2 18 12 6 22"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </header>
+        </div>
+      </button>
+    </li>
+    <span
+      className="grommetux-collapsible__wrapper"
+    >
+      <div
+        aria-label="Tab Contents"
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-collapsible"
+        id={undefined}
+        onClick={undefined}
+        role="tabpanel"
+        style={Object {}}
+        tabIndex={undefined}
+      >
+        <p>
+          test 1
+        </p>
+      </div>
+    </span>
+  </div>
+  <div>
+    <li
+      aria-expanded={true}
+      aria-label="Second Title"
+      aria-selected={true}
+      className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-box--separator-bottom grommetux-list-item grommetux-accordion-panel grommetux-accordion-panel--active"
+      id={undefined}
+      onClick={undefined}
+      role="tab"
+      style={Object {}}
+      tabIndex={undefined}
+    >
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--fill grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        type="button"
+      >
+        <div
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
+          id={undefined}
+          onClick={undefined}
+          role={undefined}
+          style={Object {}}
+          tabIndex={undefined}
+        >
+          <header
+            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            id={undefined}
+            onClick={undefined}
+            role={undefined}
+            style={Object {}}
+            tabIndex={undefined}
+          >
+            Second Title
+            <svg
+              aria-label="caret-next"
+              className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polygon
+                fill="none"
+                points="6 2 18 12 6 22"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </header>
+        </div>
+      </button>
+    </li>
+    <span
+      className="grommetux-collapsible__wrapper"
+    >
+      <div
+        aria-label="Tab Contents"
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-collapsible"
+        id={undefined}
+        onClick={undefined}
+        role="tabpanel"
+        style={Object {}}
+        tabIndex={undefined}
+      >
+        <p>
+          test 2
+        </p>
+      </div>
+    </span>
+  </div>
+</ul>
+`;
+
+exports[`Accordion has correct openMulti=true rendering 1`] = `
+<ul
+  className="grommetux-list grommetux-accordion"
+  role="tablist"
+>
+  <div>
+    <li
+      aria-expanded={true}
+      aria-label="First Title"
+      aria-selected={true}
+      className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-box--separator-bottom grommetux-list-item grommetux-accordion-panel grommetux-accordion-panel--active"
+      id={undefined}
+      onClick={undefined}
+      role="tab"
+      style={Object {}}
+      tabIndex={undefined}
+    >
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--fill grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        type="button"
+      >
+        <div
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
+          id={undefined}
+          onClick={undefined}
+          role={undefined}
+          style={Object {}}
+          tabIndex={undefined}
+        >
+          <header
+            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            id={undefined}
+            onClick={undefined}
+            role={undefined}
+            style={Object {}}
+            tabIndex={undefined}
+          >
+            First Title
+            <svg
+              aria-label="caret-next"
+              className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polygon
+                fill="none"
+                points="6 2 18 12 6 22"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </header>
+        </div>
+      </button>
+    </li>
+    <span
+      className="grommetux-collapsible__wrapper"
+    >
+      <div
+        aria-label="Tab Contents"
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-collapsible"
+        id={undefined}
+        onClick={undefined}
+        role="tabpanel"
+        style={Object {}}
+        tabIndex={undefined}
+      >
+        <p>
+          test 1
+        </p>
+      </div>
+    </span>
+  </div>
+  <div>
+    <li
+      aria-expanded={true}
+      aria-label="Second Title"
+      aria-selected={true}
+      className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-box--separator-bottom grommetux-list-item grommetux-accordion-panel grommetux-accordion-panel--active"
+      id={undefined}
+      onClick={undefined}
+      role="tab"
+      style={Object {}}
+      tabIndex={undefined}
+    >
+      <button
+        aria-label={undefined}
+        className="grommetux-button grommetux-button--fill grommetux-button--plain"
+        disabled={false}
+        href={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        type="button"
+      >
+        <div
+          className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-box--flex-off"
+          id={undefined}
+          onClick={undefined}
+          role={undefined}
+          style={Object {}}
+          tabIndex={undefined}
+        >
+          <header
+            className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--pad-horizontal-none grommetux-box--pad-vertical-none grommetux-box--pad-between-small grommetux-header grommetux-accordion-panel__header"
+            id={undefined}
+            onClick={undefined}
+            role={undefined}
+            style={Object {}}
+            tabIndex={undefined}
+          >
+            Second Title
+            <svg
+              aria-label="caret-next"
+              className="grommetux-control-icon grommetux-control-icon-caret-next grommetux-accordion-panel__control grommetux-control-icon--responsive"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polygon
+                fill="none"
+                points="6 2 18 12 6 22"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </header>
+        </div>
+      </button>
+    </li>
+    <span
+      className="grommetux-collapsible__wrapper"
+    >
+      <div
+        aria-label="Tab Contents"
+        className="grommetux-box grommetux-box--direction-column grommetux-box--responsive grommetux-box--pad-none grommetux-collapsible"
+        id={undefined}
+        onClick={undefined}
+        role="tabpanel"
+        style={Object {}}
+        tabIndex={undefined}
+      >
+        <p>
+          test 2
+        </p>
+      </div>
+    </span>
+  </div>
+</ul>
+`;

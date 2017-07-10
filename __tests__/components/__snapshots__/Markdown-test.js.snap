@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Markdown has correct default options 1`] = `
+<p
+  className="grommetux-paragraph grommetux-paragraph--large testing"
+>
+  test
+</p>
+`;

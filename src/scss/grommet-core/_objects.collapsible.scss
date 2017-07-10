@@ -2,12 +2,12 @@
 
 .#{$grommet-namespace}collapsible {
   overflow: hidden;
+}
 
-  &__wrapper {
-    width: 100%;
-  }
+.#{$grommet-namespace}collapsible__wrapper {
+  width: 100%;
+}
 
-  &.animate {
-    transition: height 0.5s ease-out;
-  }
+.#{$grommet-namespace}collapsible.animate {
+  transition: height 0.5s ease-out;
 }

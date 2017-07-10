@@ -1,6 +1,7 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 
@@ -8,10 +9,9 @@ const CLASS_ROOT = CSSClassnames.FORM;
 
 export default class Form extends Component {
   render () {
-    let { className, compact, fill, pad } = this.props;
-    let classes = classnames(
+    const { className, compact, fill, pad, plain, ...props } = this.props;
+    const classes = classnames(
       CLASS_ROOT,
-      className,
       {
         [`${CLASS_ROOT}--compact`]: compact,
         [`${CLASS_ROOT}--fill`]: fill,
@@ -19,17 +19,19 @@ export default class Form extends Component {
         [`${CLASS_ROOT}--pad-horizontal-${pad.horizontal}`]:
           typeof pad === 'object' && 'horizontal' in pad,
         [`${CLASS_ROOT}--pad-vertical-${pad.vertical}`]:
-          typeof pad === 'object' && 'vertical' in pad
-      }
+          typeof pad === 'object' && 'vertical' in pad,
+        [`${CLASS_ROOT}--plain`]: plain
+      },
+      className
     );
 
     return (
-      <form className={classes} onSubmit={this.props.onSubmit}>
+      <form {...props} className={classes} onSubmit={this.props.onSubmit}>
         {this.props.children}
       </form>
     );
   }
-};
+}
 
 Form.propTypes = {
   compact: PropTypes.bool,
@@ -41,7 +43,8 @@ Form.propTypes = {
       horizontal: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
       vertical: PropTypes.oneOf(['none', 'small', 'medium', 'large'])
     })
-  ])
+  ]),
+  plain: PropTypes.bool
 };
 
 Form.defaultProps = {

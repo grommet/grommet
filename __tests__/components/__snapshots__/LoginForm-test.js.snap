@@ -1,0 +1,294 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm has correct default options 1`] = `
+<form
+  className="grommetux-form grommetux-form--pad-medium grommetux-login-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  />
+  <fieldset>
+    <div
+      className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
+      onClick={[Function]}
+    >
+      <label
+        className="grommetux-form-field__label"
+        htmlFor="username"
+      >
+        <span>
+          Email
+        </span>
+      </label>
+      <span
+        className="grommetux-form-field__contents"
+      >
+        <input
+          onChange={[Function]}
+          type="email"
+          value=""
+        />
+      </span>
+    </div>
+    <div
+      className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
+      onClick={[Function]}
+    >
+      <label
+        className="grommetux-form-field__label"
+        htmlFor="password"
+      >
+        <span>
+          Password
+        </span>
+      </label>
+      <span
+        className="grommetux-form-field__contents"
+      >
+        <input
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+      </span>
+    </div>
+  </fieldset>
+  <footer
+    className="grommetux-box grommetux-box--direction-column grommetux-box--align-stretch grommetux-box--pad-vertical-none grommetux-box--pad-between-medium grommetux-footer grommetux-footer--small"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  >
+    <button
+      aria-label={undefined}
+      className="grommetux-button grommetux-button--primary grommetux-button--fill"
+      disabled={false}
+      href={undefined}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+      type="submit"
+    >
+      <span
+        className="grommetux-button__label"
+      >
+        <span>
+          Log In
+        </span>
+      </span>
+    </button>
+  </footer>
+</form>
+`;
+
+exports[`LoginForm renders errors properly with both string and JSX errors 1`] = `
+<form
+  className="grommetux-form grommetux-form--pad-medium grommetux-login-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  />
+  <fieldset>
+    <div
+      className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
+      onClick={[Function]}
+    >
+      <label
+        className="grommetux-form-field__label"
+        htmlFor="username"
+      >
+        <span>
+          Email
+        </span>
+      </label>
+      <span
+        className="grommetux-form-field__contents"
+      >
+        <input
+          onChange={[Function]}
+          type="email"
+          value=""
+        />
+      </span>
+    </div>
+    <div
+      className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
+      onClick={[Function]}
+    >
+      <label
+        className="grommetux-form-field__label"
+        htmlFor="password"
+      >
+        <span>
+          Password
+        </span>
+      </label>
+      <span
+        className="grommetux-form-field__contents"
+      >
+        <input
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+      </span>
+    </div>
+    <div
+      className="error"
+    >
+      <span>
+        Some detailed error.
+      </span>
+    </div>
+    <div
+      className="error"
+    >
+      <span>
+        You need to use
+        <a
+          href="#"
+        >
+          some external resource
+        </a>
+        to resolve this.
+      </span>
+    </div>
+  </fieldset>
+  <footer
+    className="grommetux-box grommetux-box--direction-column grommetux-box--align-stretch grommetux-box--pad-vertical-none grommetux-box--pad-between-medium grommetux-footer grommetux-footer--small"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  >
+    <button
+      aria-label={undefined}
+      className="grommetux-button grommetux-button--primary grommetux-button--fill"
+      disabled={false}
+      href={undefined}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+      type="submit"
+    >
+      <span
+        className="grommetux-button__label"
+      >
+        <span>
+          Log In
+        </span>
+      </span>
+    </button>
+  </footer>
+</form>
+`;
+
+exports[`LoginForm renders login button as disabled when onSubmit is undefined 1`] = `
+<form
+  className="grommetux-form grommetux-form--pad-medium grommetux-login-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="grommetux-box grommetux-box--direction-column grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  />
+  <fieldset>
+    <div
+      className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
+      onClick={[Function]}
+    >
+      <label
+        className="grommetux-form-field__label"
+        htmlFor="username"
+      >
+        <span>
+          Email
+        </span>
+      </label>
+      <span
+        className="grommetux-form-field__contents"
+      >
+        <input
+          onChange={[Function]}
+          type="email"
+          value=""
+        />
+      </span>
+    </div>
+    <div
+      className="grommetux-form-field grommetux-form-field--text grommetux-form-field--size-medium"
+      onClick={[Function]}
+    >
+      <label
+        className="grommetux-form-field__label"
+        htmlFor="password"
+      >
+        <span>
+          Password
+        </span>
+      </label>
+      <span
+        className="grommetux-form-field__contents"
+      >
+        <input
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+      </span>
+    </div>
+  </fieldset>
+  <footer
+    className="grommetux-box grommetux-box--direction-column grommetux-box--align-stretch grommetux-box--pad-vertical-none grommetux-box--pad-between-medium grommetux-footer grommetux-footer--small"
+    id={undefined}
+    onClick={undefined}
+    role={undefined}
+    style={Object {}}
+    tabIndex={undefined}
+  >
+    <button
+      aria-label={undefined}
+      className="grommetux-button grommetux-button--primary grommetux-button--disabled grommetux-button--fill"
+      disabled={true}
+      href={undefined}
+      onBlur={[Function]}
+      onClick={undefined}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+      type="button"
+    >
+      <span
+        className="grommetux-button__label"
+      >
+        <span>
+          Log In
+        </span>
+      </span>
+    </button>
+  </footer>
+</form>
+`;

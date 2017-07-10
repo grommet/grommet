@@ -1,6 +1,7 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Props from '../utils/Props';
 import Box from './Box';
@@ -12,19 +13,10 @@ const NAMESPACE = CSSClassnames.NAMESPACE;
 export default class Tile extends Component {
 
   render () {
-    const { children, className, onClick, wide, status, selected,
-      hoverStyle, hoverColorIndex, hoverBorder, hoverBorderSize } = this.props;
-    const restProps = Props.omit(this.props, Object.keys(Box.propTypes));
-    delete restProps.hoverStyle;
-    delete restProps.hoverColorIndex;
-    delete restProps.hoverBorder;
-    delete restProps.hoverBorderSize;
-    delete restProps.wide;
-
-    if (selected) {
-      console.warn('Selected option has been deprecated, please use ' +
-        'selected option at the Tiles level.');
-    }
+    const { children, className, onClick, wide, status,
+      hoverStyle, hoverColorIndex, hoverBorder, hoverBorderSize
+    } = this.props;
+    const restProps = Props.omit(this.props, Object.keys(Tile.propTypes));
 
     const statusClass = status ? status.toLowerCase() : undefined;
     // if Tiles flush is true, default borderSize to small (1px)
@@ -38,7 +30,6 @@ export default class Tile extends Component {
         [`${CLASS_ROOT}--status-${statusClass}`]: status,
         [`${CLASS_ROOT}--wide`]: wide,
         [`${CLASS_ROOT}--selectable`]: onClick,
-        [`${CLASS_ROOT}--selected`]: selected,
         [`${NAMESPACE}${hoverStyle}${(hoverStyle == 'border') ?
           ((borderSize) ? `-${borderSize}` : '-medium') : ''
         }-hover-color-index-${hoverColorIndex}`]: hoverStyle,
@@ -58,11 +49,11 @@ export default class Tile extends Component {
 }
 
 Tile.propTypes = {
-  selected: PropTypes.bool,
-  wide: PropTypes.bool,
   hoverStyle: PropTypes.oneOf(['border', 'background', 'none']),
   hoverColorIndex: PropTypes.string,
+  hoverBorder: PropTypes.bool,
   hoverBorderSize: PropTypes.oneOf(['small', 'medium', 'large']),
+  wide: PropTypes.bool, /// remove in 1.0? Box.basis='full'
   ...Box.propTypes
 };
 

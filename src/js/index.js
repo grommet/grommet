@@ -1,99 +1,91 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
-var Grommet = {
-  // Components
-  Accordion: require('./components/Accordion'),
-  AccordionPanel: require('./components/AccordionPanel'),
-  Anchor: require('./components/Anchor'),
-  App: require('./components/App'),
-  Article: require('./components/Article'),
-  Box: require('./components/Box'),
-  Brick: require('./components/Brick'),
-  Bricks: require('./components/Bricks'),
-  Button: require('./components/Button'),
-  Calendar: require('./components/Calendar'),
-  Carousel: require('./components/Carousel'),
-  chart: {
-    Area: require('./components/chart/Area'),
-    Axis: require('./components/chart/Axis'),
-    Bar: require('./components/chart/Bar'),
-    Base: require('./components/chart/Base'),
-    Chart: require('./components/chart/Chart'),
-    Grid: require('./components/chart/Grid'),
-    HotSpots: require('./components/chart/HotSpots'),
-    Layers: require('./components/chart/Layers'),
-    Line: require('./components/chart/Line'),
-    Marker: require('./components/chart/Marker'),
-    MarkerLabel: require('./components/chart/MarkerLabel'),
-    Range: require('./components/chart/Range')
-  },
-  Chart: require('./components/Chart'),
-  CheckBox: require('./components/CheckBox'),
-  Columns: require('./components/Columns'),
-  DateTime: require('./components/DateTime'),
-  Distribution: require('./components/Distribution'),
-  Footer: require('./components/Footer'),
-  Form: require('./components/Form'),
-  FormField: require('./components/FormField'),
-  FormFields: require('./components/FormFields'),
-  Header: require('./components/Header'),
-  Heading: require('./components/Heading'),
-  Headline: require('./components/Headline'),
-  Hero: require('./components/Hero'),
-  Image: require('./components/Image'),
-  ImageField: require('./components/ImageField'),
-  Grommet: require('./components/Grommet'),
-  Label: require('./components/Label'),
-  Layer: require('./components/Layer'),
-  Legend: require('./components/Legend'),
-  List: require('./components/List'),
-  ListItem: require('./components/ListItem'),
-  Login: require('./components/Login'),
-  LoginForm: require('./components/LoginForm'),
-  Map: require('./components/Map'),
-  Markdown: require('./components/Markdown'),
-  Menu: require('./components/Menu'),
-  Meter: require('./components/Meter'),
-  Notification: require('./components/Notification'),
-  NumberInput: require('./components/NumberInput'),
-  Paragraph: require('./components/Paragraph'),
-  RadioButton: require('./components/RadioButton'),
-  Search: require('./components/Search'),
-  SearchInput: require('./components/SearchInput'),
-  Section: require('./components/Section'),
-  Sidebar: require('./components/Sidebar'),
-  Split: require('./components/Split'),
-  SkipLinkAnchor: require('./components/SkipLinkAnchor'),
-  SkipLinks: require('./components/SkipLinks'),
-  SunBurst: require('./components/SunBurst'),
-  SVGIcon: require('./components/SVGIcon'),
-  Tab: require('./components/Tab'),
-  Table: require('./components/Table'),
-  TableRow: require('./components/TableRow'),
-  Tabs: require('./components/Tabs'),
-  Tiles: require('./components/Tiles'),
-  Tile: require('./components/Tile'),
-  Timestamp: require('./components/Timestamp'),
-  Title: require('./components/Title'),
-  Topology: require('./components/Topology'),
-  Value: require('./components/Value'),
-  Video: require('./components/Video'),
-  Object: require('./components/Object'),
-  TBD: require('./components/TBD'),
-  Icons: {
-    Grommet: require('./components/icons/Grommet'),
-    Pulse: require('./components/icons/Pulse'),
-    Spinning: require('./components/icons/Spinning'),
-    Status: require('./components/icons/Status'),
-    Base: require('./index-icons')
-  },
-  // Utils
-  Cookies: require('./utils/Cookies'),
-  DOM: require('./utils/DOM'),
-  KeyboardAccelerators: require('./utils/KeyboardAccelerators'),
-  Locale: require('./utils/Locale'),
-  Rest: require('./utils/Rest'),
-  RestWatch: require('./utils/RestWatch'),
-  Validator: require('./utils/Validator')
-};
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+import Grommet from './index-commonjs';
 
-module.exports = Grommet;
+const BaseIcons = {};
+
+Object.keys(Grommet.Icons.Base).forEach((icon) => {
+  BaseIcons[icon.replace('Icon', '')] = Grommet.Icons.Base[icon];
+});
+
+export const Icons = Object.assign({}, Grommet.Icons, { Base: BaseIcons });
+
+export { default as Accordion } from './components/Accordion';
+export { default as AccordionPanel } from './components/AccordionPanel';
+export { default as Anchor } from './components/Anchor';
+export { default as Animate } from './components/Animate';
+export { default as App } from './components/App';
+export { default as Article } from './components/Article';
+export { default as Box } from './components/Box';
+export { default as Button } from './components/Button';
+export { default as Card } from './components/Card';
+export { default as Carousel } from './components/Carousel';
+export * from './components/chart';
+export { default as CheckBox } from './components/CheckBox';
+export { default as Columns } from './components/Columns';
+export { default as DateTime } from './components/DateTime';
+export { default as Distribution } from './components/Distribution';
+export { default as Footer } from './components/Footer';
+export { default as Form } from './components/Form';
+export { default as FormattedMessage } from './components/FormattedMessage';
+export { default as FormField } from './components/FormField';
+export { default as FormFields } from './components/FormFields';
+export { default as Grommet } from './components/Grommet';
+export { default as Header } from './components/Header';
+export { default as Heading } from './components/Heading';
+export { default as Headline } from './components/Headline';
+export { default as Hero } from './components/Hero';
+export { default as Image } from './components/Image';
+export { default as Label } from './components/Label';
+export { default as Layer } from './components/Layer';
+export { default as Legend } from './components/Legend';
+export { default as List } from './components/List';
+export { default as ListItem } from './components/ListItem';
+export { default as LoginForm } from './components/LoginForm';
+export { default as Map } from './components/Map';
+export { default as Markdown } from './components/Markdown';
+export { default as Menu } from './components/Menu';
+export { default as Meter } from './components/Meter';
+export { default as Notification } from './components/Notification';
+export { default as NumberInput } from './components/NumberInput';
+export { default as Object } from './components/Object';
+export { default as Paragraph } from './components/Paragraph';
+export { default as Quote } from './components/Quote';
+export { default as RadioButton } from './components/RadioButton';
+export { default as Search } from './components/Search';
+export { default as SearchInput } from './components/SearchInput';
+export { default as Section } from './components/Section';
+export { default as Select } from './components/Select';
+export { default as Sidebar } from './components/Sidebar';
+export { default as SkipLinkAnchor } from './components/SkipLinkAnchor';
+export { default as SkipLinks } from './components/SkipLinks';
+export { default as SocialShare } from './components/SocialShare';
+export { default as Split } from './components/Split';
+export { default as SunBurst } from './components/SunBurst';
+export { default as SVGIcon } from './components/SVGIcon';
+export { default as Tab } from './components/Tab';
+export { default as Table } from './components/Table';
+export { default as TableHeader } from './components/TableHeader';
+export { default as TableRow } from './components/TableRow';
+export { default as Tabs } from './components/Tabs';
+export { default as TBD } from './components/TBD';
+export { default as TextInput } from './components/TextInput';
+export { default as Tile } from './components/Tile';
+export { default as Tiles } from './components/Tiles';
+export { default as Timestamp } from './components/Timestamp';
+export { default as Tip } from './components/Tip';
+export { default as Title } from './components/Title';
+export { default as Toast } from './components/Toast';
+export { default as Topology } from './components/Topology';
+export { default as Value } from './components/Value';
+export { default as Video } from './components/Video';
+export { default as WorldMap } from './components/WorldMap';
+export * from './components/icons';
+export { default as Cookies }from './utils/Cookies';
+export { default as DOM } from './utils/DOM';
+export { default as KeyboardAccelerators } from './utils/KeyboardAccelerators';
+export { default as Locale } from './utils/Locale';
+export { default as Responsive } from './utils/Responsive';
+export { default as Rest } from './utils/Rest';
+export { default as Validator } from './utils/Validator';
+
+export default { ...Grommet };

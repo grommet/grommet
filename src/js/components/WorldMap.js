@@ -1,14 +1,22 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
+import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 
 const CLASS_ROOT = CSSClassnames.WORLD_MAP;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
+// The graphic is drawn as a rectangular grid using coordinates spaced
+// by FACTOR pixels. The contents have both an area boundary for interaction
+// and dots described as rows where each row is described by three values:
+// a starting coordinate and a length. This approach is more efficient than
+// describing it via SVG elements, keeping the code/library size smaller.
 const CONTINENTS = [
   {
-    id: "Australia",
+    id: 'Australia',
     origin: [74, 32],
     area: [[4, 0], [7, 1], [15, 7], [13, 9], [0, 6], [0, 2]],
     dots: [
@@ -17,7 +25,7 @@ const CONTINENTS = [
       [13, 9, 1]
     ]
   }, {
-    id: "Asia",
+    id: 'Asia',
     origin: [52, 1],
     area: [
       [16, 0], [38, 5], [40, 7], [28, 17], [24, 25], [29, 29], [19, 29],
@@ -40,7 +48,7 @@ const CONTINENTS = [
     ]
   }, {
     // 21X, 40Y
-    id: "Africa",
+    id: 'Africa',
     origin: [40, 19],
     area: [
       [3, 0], [6, 0], [11, 2], [16, 7], [16, 15], [11, 18], [9, 18], [0, 6],
@@ -53,7 +61,7 @@ const CONTINENTS = [
       [8, 15, 5], [15, 15, 2], [8, 16, 5], [9, 17, 3], [9, 18, 3]
     ]
   }, {
-    id: "Europe",
+    id: 'Europe',
     origin: [39, 2],
     area: [
       [8, 0], [10, 0], [20, 2], [19, 11], [18, 13], [14, 16], [3, 16], [0, 7]
@@ -67,7 +75,7 @@ const CONTINENTS = [
       [10, 15, 5], [6, 15, 2], [3, 16, 2], [10, 16, 5]
     ]
   }, {
-    id: "SouthAmerica",
+    id: 'SouthAmerica',
     origin: [22, 26],
     area: [[2, 0], [5, 0], [11, 4], [11, 8], [3, 18], [2, 17], [0, 4], [0, 3]],
     dots: [
@@ -77,7 +85,7 @@ const CONTINENTS = [
       [3, 18, 1]
     ]
   }, {
-    id: "NorthAmerica",
+    id: 'NorthAmerica',
     origin: [0, 0],
     area: [[21, 0], [39, 0], [39, 6], [22, 26], [16, 23], [2, 12], [0, 7]],
     dots: [
@@ -98,25 +106,68 @@ const CONTINENTS = [
   }
 ];
 
+// FACTOR is the distance in pixels between coordinates
 const FACTOR = 10;
+
+// helper function to detect if any series elements have
+const clickableSeries = (props) =>
+  props.series && props.series.some((serie) => serie.onClick);
 
 export default class WorldMap extends Component {
 
   constructor(props, context) {
     super(props, context);
-    this._onActivate = this._onActivate.bind(this);
-    this._onDeactivate = this._onDeactivate.bind(this);
+    this._activateContinent = this._activateContinent.bind(this);
+    this._activatePlace = this._activatePlace.bind(this);
     this._renderContinent = this._renderContinent.bind(this);
+    this._renderPlace = this._renderPlace.bind(this);
+    this._onEnter = this._onEnter.bind(this);
+    this._onMouseOver = this._onMouseOver.bind(this);
+    this._onMouseMove = this._onMouseMove.bind(this);
+    this._onMouseLeave = this._onMouseLeave.bind(this);
 
     this.state = this._buildState();
+    this.state.clickable = clickableSeries(props);
+  }
+
+  componentDidMount () {
+    const { clickable } = this.state;
+    if (clickable) {
+      this._startKeyboardListening();
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { clickable } = this.state;
+    const nextClickable = clickableSeries(nextProps);
+    if (nextClickable !== clickable) {
+      if (nextClickable) {
+        this._startKeyboardListening();
+      } else {
+        this._stopKeyboardListening();
+      }
+      this.setState({ clickable: nextClickable });
+    }
+  }
+
+  componentWillUnmount () {
+    const { clickable } = this.state;
+    if (clickable) {
+      this._stopKeyboardListening();
+    }
   }
 
   _buildState () {
-    let state = {activeIndex: -1, dots: {}, area: {}};
+    let state = {
+      activeContinent: undefined, activePlace: undefined, dots: {}, area: {}
+    };
+
+    // Build the SVG paths describing the individual dots
     let width = 0;
     let height = 0;
     CONTINENTS.forEach(continent => {
       const origin = continent.origin;
+
       state.dots[continent.id] = continent.dots.map(segment => {
         const dots = Array.apply(null, Array(segment[2]))
           .map(() => {
@@ -128,81 +179,247 @@ export default class WorldMap extends Component {
         height = Math.max(height, y);
         return `M${x},${y} ${dots}`;
       }).join(' ');
+
       state.area[continent.id] = continent.area.map((point, index) => {
         const x = FACTOR * (point[0] + origin[0] + 1);
         const y = FACTOR * (point[1] + origin[1] + 1);
         return `${index === 0 ? 'M' : 'L'}${x},${y}`;
       }).join(' ');
+
       if (state.area[continent.id]) {
         state.area[continent.id] += ' Z';
       }
     });
+
     state.width = width + FACTOR;
     state.height = height + FACTOR;
+
     return state;
   }
 
-  _onActivate (index) {
-    this.setState({activeIndex: index});
+  _startKeyboardListening() {
+    this._keyboardHandlers = {
+      enter: this._onEnter,
+      space: this._onEnter
+    };
+    KeyboardAccelerators.startListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
   }
 
-  _onDeactivate () {
-    this.setState({activeIndex: -1});
+  _stopKeyboardListening() {
+    KeyboardAccelerators.stopListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
   }
 
-  _renderContinent (seriesData, index) {
-    const continent = seriesData.continent;
-    const colorIndex = seriesData.colorIndex || `graph-${index}`;
-    let classes = [`${CLASS_ROOT}__continent`, `${COLOR_INDEX}-${colorIndex}`];
-    if (index === this.state.activeIndex) {
-      classes.push(`${CLASS_ROOT}__continent--active`);
+  _activateContinent (activeContinent) {
+    this.setState({ activeContinent });
+  }
+
+  _activatePlace (activePlace) {
+    this.setState({ activePlace });
+  }
+
+  _onEnter () {
+    const { series } = this.props;
+    const { activeContinent, activePlace } = this.state;
+    if (this._worldMapRef.contains(document.activeElement)) {
+      series.some((serie) => {
+        if ((activeContinent && serie.continent === activeContinent) ||
+          (activePlace && serie.place.join(',') === activePlace.join(','))) {
+          if (serie.onClick) {
+            serie.onClick();
+          }
+          return true;
+        }
+        return false;
+      });
     }
-    let onMouseOver, onMouseLeave, onClick, area;
-    if (seriesData.onClick) {
-      onMouseOver = this._onActivate.bind(this, index);
-      onMouseLeave = this._onDeactivate;
-      onClick = seriesData.onClick;
+  }
+
+  _onMouseOver () {
+    // track when we're over the map to avoid dealing with mouse moves
+    this.setState({ over: true });
+  }
+
+  _onMouseMove (event) {
+    const { width } = this.state;
+    // determine the map coordinates for where the mouse is
+    const rect = this._worldMapRef.getBoundingClientRect();
+    const scale = rect.width / width; // since the SVG viewBox might be scaled
+    const place = [
+      Math.round(((event.clientX - rect.left) / scale) / FACTOR),
+      Math.round(((event.clientY - rect.top) / scale) / FACTOR)
+    ];
+    this.setState({ activePlace: place });
+  }
+
+  _onMouseLeave () {
+    this.setState({ over: false, activePlace: undefined });
+  }
+
+  _interactiveProps (serie, defaultLabel, activeFunc, activeValue) {
+    return {
+      role: 'button',
+      'aria-label': serie.label || defaultLabel,
+      tabIndex: '0',
+      onClick: serie.onClick,
+      onMouseOver: () => activeFunc(activeValue),
+      onMouseLeave: () => activeFunc(undefined),
+      onFocus: () => {
+        // This moves the map unnecessarily. Instead, we should check
+        // the position and scroll if it isn't already visible
+        // this._worldMapRef.scrollIntoView();
+        activeFunc(activeValue);
+      },
+      onBlur: () => activeFunc(undefined)
+    };
+  }
+
+  _renderContinent (continent, index, mapColorIndex, serie) {
+    const { activeContinent } = this.state;
+    // only graph color if they explicitly asked for this continent
+    const colorIndex =
+      (serie || {}).colorIndex || mapColorIndex ||
+      (serie ? `graph-${index}` : 'light-2');
+
+    const classes = classnames(
+      `${CLASS_ROOT}__continent`,
+      `${COLOR_INDEX}-${colorIndex}`, {
+        [`${CLASS_ROOT}__continent--active`]: continent.id === activeContinent
+      }
+    );
+    let area;
+    let interactiveProps = {};
+    if (serie && serie.onClick) {
       area = (
-        <path stroke="none" fill="#fff" fillOpacity="0.01"
-          d={this.state.area[continent]}></path>
+        <path stroke='none' fill='#fff' fillOpacity='0.01'
+          d={this.state.area[continent.id]} />
       );
+      interactiveProps = this._interactiveProps(
+        serie, continent.id, this._activateContinent, continent.id);
     }
     // We add the area so the mouse events work for the whole region,
     // not just the dots
     return (
-      <g key={continent} id={continent} className={classes.join(' ')}
-        onMouseOver={onMouseOver} onMouseLeave={onMouseLeave} onClick={onClick}>
+      <g key={continent.id} className={classes} {...interactiveProps}>
         {area}
-        <path d={this.state.dots[continent]}></path>
+        <path d={this.state.dots[continent.id]} />
       </g>
     );
   }
 
+  _renderPlace(serie, index) {
+    const { colorIndex: mapColorIndex } = this.props;
+    const { activePlace } = this.state;
+    const { place } = serie;
+    const colorIndex =
+      (serie || {}).colorIndex || mapColorIndex || `graph-${index}`;
+    const classes = classnames(
+      `${CLASS_ROOT}__place`,
+      `${COLOR_INDEX}-${colorIndex}`, {
+        [`${CLASS_ROOT}__place--active`]:
+          (activePlace && activePlace.join(',') === place.join(','))
+      }
+    );
+    const d = `M${FACTOR * place[0]},${FACTOR * place[1]} h0`;
+    let interactiveProps = {};
+    if (serie.onClick) {
+      interactiveProps =
+        this._interactiveProps(serie, 'place', this._activatePlace, place);
+    }
+    return (
+      <path key={place.join(',')} className={classes} {...interactiveProps}
+        d={d} />
+    );
+  }
+
   render () {
-    const { series } = this.props;
-    const { width, height } = this.state;
-    const continents = series.map(this._renderContinent);
+    const {
+      className, colorIndex, onSelectPlace, series, ...props
+    } = this.props;
+    const { activePlace, over, width, height } = this.state;
+    const classes = classnames(
+      CLASS_ROOT,
+      className
+    );
+
+    const haveSomeContinents =
+      (series || []).filter(s => s.continent).length > 0;
+    const continents = [];
+    CONTINENTS.forEach((continent, index) => {
+      const serie = (series || []).filter(s => s.continent === continent.id)[0];
+      if (!haveSomeContinents || serie) {
+        continents.push(
+          this._renderContinent(continent, index, colorIndex, serie));
+      }
+    });
+
+    const seriesPlaces = (series || []).filter(s => s.place);
+    let placesGroup;
+    if (seriesPlaces.length > 0) {
+      const places = seriesPlaces.map(this._renderPlace);
+      placesGroup = (
+        <g stroke='none' fill='none' fillRule='evenodd'>
+          {places}
+        </g>
+      );
+    }
+
+    // If the caller is interested in onSelectPlace changes, track where the
+    // user goes.
+    let interactiveProps = {};
+    let activeGroup;
+    if (onSelectPlace) {
+      interactiveProps = {
+        onMouseOver: this._onMouseOver,
+        onMouseMove: over ? this._onMouseMove : undefined,
+        onMouseLeave: this._onMouseLeave
+      };
+
+      if (activePlace) {
+        const classes = classnames(
+          `${CLASS_ROOT}__place`,
+          `${COLOR_INDEX}-${colorIndex || 'light-2'}`,
+          `${CLASS_ROOT}__place--active`
+        );
+        const d = `M${FACTOR * activePlace[0]},${FACTOR * activePlace[1]} h0`;
+        activeGroup = (
+          <g stroke='none' fill='none' fillRule='evenodd'
+            onClick={() => onSelectPlace(activePlace)}>
+            <path className={classes} d={d} />
+          </g>
+        );
+      }
+    }
 
     return (
-      <svg className={CLASS_ROOT} version="1.1"
-        preserveAspectRatio="xMidYMid meet"
+      <svg {...props} {...interactiveProps}
+        ref={(ref) => this._worldMapRef = ref}
+        className={classes} version='1.1'
+        preserveAspectRatio='xMidYMid meet'
         width={`${width}px`} viewBox={`0 0 ${width} ${height}`}>
-        <g stroke="none" fill="none" fillRule="evenodd">
+        <g stroke='none' fill='none' fillRule='evenodd'>
           {continents}
         </g>
+        {activeGroup}
+        {placesGroup}
       </svg>
     );
   }
 }
 
 WorldMap.propTypes = {
+  colorIndex: PropTypes.string,
+  // onSelectPlace is passed a place coordinate when the user clicks on it
+  onSelectPlace: PropTypes.func,
+  // either continent or place must be provided for a series item
   series: PropTypes.arrayOf(PropTypes.shape({
-    continent: PropTypes.oneOf(
-      ['NorthAmerica', 'SouthAmerica', 'Europe', 'Africa', 'Asia', 'Australia']
-    ),
-    // value: PropTypes.number,
+    continent: PropTypes.oneOf(CONTINENTS.map(c => c.id)),
     colorIndex: PropTypes.string,
-    // important: PropTypes.bool,
-    onClick: PropTypes.func
+    label: PropTypes.string, // for a11y aria-label
+    onClick: PropTypes.func,
+    place: PropTypes.arrayOf(PropTypes.number)
   }))
 };

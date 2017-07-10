@@ -1,6 +1,8 @@
 // (C) Copyright 2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 import { announce } from '../utils/Announcer';
 
@@ -11,61 +13,77 @@ export default class Value extends Component {
 
   componentDidUpdate () {
     if (this.props.announce) {
-      announce(this.refs.value.textContent);
+      announce(this.valueRef.textContent);
     }
   }
 
   render () {
-    const classes = [CLASS_ROOT];
-    if (this.props.size) {
-      classes.push(`${CLASS_ROOT}--${this.props.size}`);
-    }
-    if (this.props.align) {
-      classes.push(`${CLASS_ROOT}--align-${this.props.align}`);
-    }
-    if (this.props.onClick) {
-      classes.push(`${CLASS_ROOT}--interactive`);
-    }
-    if (this.props.colorIndex) {
-      classes.push(`${COLOR_INDEX}-${this.props.colorIndex}`);
-    }
-    if (this.props.active) {
-      classes.push(`${CLASS_ROOT}--active`);
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const {
+      active, align, className, colorIndex, icon, label, responsive,
+      size, trendIcon, units, value, reverse, ...props
+    } = this.props;
+    delete props.announce;
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--${size}`]: size,
+        [`${CLASS_ROOT}--align-${align}`]: align,
+        [`${COLOR_INDEX}-${colorIndex}`]: colorIndex,
+        [`${CLASS_ROOT}--responsive`]: responsive,
+        [`${CLASS_ROOT}--interactive`]: props.onClick,
+        [`${CLASS_ROOT}--active`]: active
+      },
+      className
+    );
 
-    let units;
-    if (this.props.units) {
-      units = (
+    let unitsSpan;
+    if (units) {
+      unitsSpan = (
         <span className={`${CLASS_ROOT}__units`}>
-          {this.props.units}
+          {units}
         </span>
       );
     }
 
-    let label;
-    if (this.props.label) {
-      label = (
+    let labelSpan;
+    if (label) {
+      labelSpan = (
         <span className={`${CLASS_ROOT}__label`}>
-          {this.props.label}
+          {label}
         </span>
+      );
+    }
+
+    let contentNode;
+    if (reverse) {
+      contentNode = (
+        <div>
+          <span className={`${CLASS_ROOT}__value`}>
+            {value}
+          </span>
+          {unitsSpan}
+          {icon}
+        </div>
+      );
+    } else {
+      contentNode = (
+        <div>
+          {icon}
+          <span className={`${CLASS_ROOT}__value`}>
+            {value}
+          </span>
+          {unitsSpan}
+        </div>
       );
     }
 
     return (
-      <div ref='value' className={classes.join(' ')}
-        onClick={this.props.onClick}>
+      <div ref={(ref) => this.valueRef = ref} {...props} className={classes}>
         <div className={`${CLASS_ROOT}__annotated`}>
-          {this.props.icon}
-          <span className={`${CLASS_ROOT}__value`}>
-            {this.props.value}
-          </span>
-          {units}
-          {this.props.trendIcon}
+          {contentNode}
+          {trendIcon}
         </div>
-        {label}
+        {labelSpan}
       </div>
     );
   }
@@ -80,8 +98,10 @@ Value.propTypes = {
   icon: PropTypes.node,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   onClick: PropTypes.func,
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
+  responsive: PropTypes.bool,
+  size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
   trendIcon: PropTypes.node,
+  reverse: PropTypes.bool,
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string,
     PropTypes.node]),
   units: PropTypes.oneOfType([PropTypes.string, PropTypes.node])

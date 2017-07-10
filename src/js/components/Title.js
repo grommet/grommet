@@ -1,6 +1,8 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import Box from './Box';
 import Intl from '../utils/Intl';
 import CSSClassnames from '../utils/CSSClassnames';
@@ -10,40 +12,41 @@ const CLASS_ROOT = CSSClassnames.TITLE;
 export default class Title extends Component {
 
   render () {
-    const classes = [CLASS_ROOT];
-    if (this.props.responsive) {
-      classes.push(CLASS_ROOT + "--responsive");
-    }
-    if (this.props.onClick) {
-      classes.push(CLASS_ROOT + "--interactive");
-    }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+    const {
+      a11yTitle, children, className, responsive, truncate, ...props
+    } = this.props;
+    const { intl } = this.context;
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--responsive`]: responsive,
+        [`${CLASS_ROOT}--truncate`]: truncate,
+        [`${CLASS_ROOT}--interactive`]: props.onClick
+      },
+      className
+    );
 
-    const a11yTitle = this.props.a11yTitle ||
-      Intl.getMessage(this.context.intl, 'Title');
+    const boxTitle = a11yTitle || Intl.getMessage(intl, 'Title');
 
     let content;
-    if( typeof this.props.children === 'string' ) {
+    if( typeof children === 'string' ) {
       content = (
-        <span>{this.props.children}</span>
+        <span>{children}</span>
       );
-    } else if (Array.isArray(this.props.children)) {
-      content = this.props.children.map((child, index) => {
+    } else if (Array.isArray(children)) {
+      content = children.map((child, index) => {
         if (child && typeof child === 'string') {
-          return <span key={`title_${index}`}>{child}</span>;
+          return <span key={index}>{child}</span>;
         }
         return child;
       });
     } else {
-      content = this.props.children;
+      content = children;
     }
 
     return (
-      <Box align="center" direction="row" responsive={false}
-        className={classes.join(' ')} a11yTitle={a11yTitle}
-        onClick={this.props.onClick}>
+      <Box {...props} align="center" direction="row" responsive={false}
+        className={classes} a11yTitle={boxTitle}>
         {content}
       </Box>
     );
@@ -54,7 +57,8 @@ export default class Title extends Component {
 Title.propTypes = {
   a11yTitle: PropTypes.string,
   onClick: PropTypes.func,
-  responsive: PropTypes.bool
+  responsive: PropTypes.bool,
+  truncate: PropTypes.bool
 };
 
 Title.contextTypes = {
@@ -62,5 +66,6 @@ Title.contextTypes = {
 };
 
 Title.defaultProps = {
-  responsive: true
+  responsive: true,
+  truncate: true
 };

@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Video has correct default options 1`] = `
+<div
+  className="grommetux-video grommetux-video--medium"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+>
+  <video
+    autoPlay={false}
+    loop={false}
+    muted={false}
+    onAbort={[Function]}
+    onCanPlay={[Function]}
+    onCanPlayThrough={[Function]}
+    onDurationChange={[Function]}
+    onEmptied={[Function]}
+    onEncrypted={[Function]}
+    onEnded={[Function]}
+    onError={[Function]}
+    onLoadStart={[Function]}
+    onLoadedData={[Function]}
+    onLoadedMetadata={[Function]}
+    onPause={[Function]}
+    onPlay={[Function]}
+    onPlaying={[Function]}
+    onProgress={[Function]}
+    onRateChange={[Function]}
+    onSeeked={[Function]}
+    onSeeking={[Function]}
+    onStalled={[Function]}
+    onSuspend={[Function]}
+    onTimeUpdate={[Function]}
+    onVolumeChange={[Function]}
+    onWaiting={[Function]}
+    poster={undefined}
+  >
+    <source
+      src="/video/test.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <div>
+    <div
+      className="grommetux-box grommetux-box--direction-column grommetux-box--justify-center grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-video__overlay"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}
+    >
+      <div
+        className="grommetux-box grommetux-box--direction-column grommetux-box--justify-center grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}
+      >
+        <button
+          aria-label="Play Video"
+          className="grommetux-button grommetux-button--plain grommetux-video__button"
+          disabled={false}
+          href={undefined}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          type="button"
+        >
+          <svg
+            aria-label="circle-play"
+            className="grommetux-control-icon grommetux-control-icon-circle-play grommetux-video__button__icon grommetux-control-icon--large grommetux-control-icon--responsive grommetux-color-index-brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <path
+              d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M9.5,15.5 L15.5,12 L9.5,8.5 L9.5,15.5 Z M10.5,13.5 L12.5,12 L10.5,10.5 L10.5,13.5 Z"
+              fill="none"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Video transfers arbitrary props 1`] = `
+<div
+  className="grommetux-video grommetux-video--medium"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onMouseDown={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  onMouseMove={[Function]}
+  onMouseUp={[Function]}
+>
+  <video
+    autoPlay={false}
+    data-flavor="coconut"
+    loop={false}
+    muted={false}
+    onAbort={[Function]}
+    onCanPlay={[Function]}
+    onCanPlayThrough={[Function]}
+    onDurationChange={[Function]}
+    onEmptied={[Function]}
+    onEncrypted={[Function]}
+    onEnded={[Function]}
+    onError={[Function]}
+    onLoadStart={[Function]}
+    onLoadedData={[Function]}
+    onLoadedMetadata={[Function]}
+    onPause={[Function]}
+    onPlay={[Function]}
+    onPlaying={[Function]}
+    onProgress={[Function]}
+    onRateChange={[Function]}
+    onSeeked={[Function]}
+    onSeeking={[Function]}
+    onStalled={[Function]}
+    onSuspend={[Function]}
+    onTimeUpdate={[Function]}
+    onVolumeChange={[Function]}
+    onWaiting={[Function]}
+    poster={undefined}
+  >
+    <source
+      src="/video/test.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <div>
+    <div
+      className="grommetux-box grommetux-box--direction-column grommetux-box--justify-center grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none grommetux-video__overlay"
+      id={undefined}
+      onClick={undefined}
+      role={undefined}
+      style={Object {}}
+      tabIndex={undefined}
+    >
+      <div
+        className="grommetux-box grommetux-box--direction-column grommetux-box--justify-center grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-none"
+        id={undefined}
+        onClick={undefined}
+        role={undefined}
+        style={Object {}}
+        tabIndex={undefined}
+      >
+        <button
+          aria-label="Play Video"
+          className="grommetux-button grommetux-button--plain grommetux-video__button"
+          disabled={false}
+          href={undefined}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          type="button"
+        >
+          <svg
+            aria-label="circle-play"
+            className="grommetux-control-icon grommetux-control-icon-circle-play grommetux-video__button__icon grommetux-control-icon--large grommetux-control-icon--responsive grommetux-color-index-brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <path
+              d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M9.5,15.5 L15.5,12 L9.5,8.5 L9.5,15.5 Z M10.5,13.5 L12.5,12 L10.5,10.5 L10.5,13.5 Z"
+              fill="none"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

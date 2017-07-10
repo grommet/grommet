@@ -1,91 +1,57 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 .grommet {
   @include inuit-font-size($content-font-size, $inuit-base-spacing-unit);
 
-  h1 {
-    font-size: $h1-font-size;
-    line-height: $h1-line-height;
+  h1:not(.#{$grommet-namespace}heading) {
+    @include h1();
   }
 
-  h2 {
-    font-size: $h2-font-size;
-    line-height: $h2-line-height;
+  h2:not(.#{$grommet-namespace}heading) {
+    @include h2();
   }
 
-  h3 {
-    font-size: $h3-font-size;
-    line-height: $h3-line-height;
+  h3:not(.#{$grommet-namespace}heading) {
+    @include h3();
   }
 
-  h4 {
-    font-size: $h4-font-size;
-    line-height: $h4-line-height;
+  h4:not(.#{$grommet-namespace}heading) {
+    @include h4();
   }
 
-  h5 {
-    font-size: $h5-font-size;
-    line-height: $h5-line-height;
+  h5:not(.#{$grommet-namespace}heading) {
+    @include h5();
   }
 
-  h6 {
-    font-size: $h6-font-size;
-    line-height: $h6-line-height;
+  h6:not(.#{$grommet-namespace}heading) {
+    @include h6();
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: 100;
-    max-width: 100%;
-
-    > strong {
-      font-weight: 600;
-    }
-
-    a,
-    a.#{$grommet-namespace}anchor {
-      color: inherit;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
+  h1:not(.#{$grommet-namespace}heading),
+  h2:not(.#{$grommet-namespace}heading),
+  h3:not(.#{$grommet-namespace}heading),
+  h4:not(.#{$grommet-namespace}heading),
+  h5:not(.#{$grommet-namespace}heading),
+  h6:not(.#{$grommet-namespace}heading) {
+    @include heading();
   }
 
-  p,
   dd,
-  li {
+  li:not([class^="#{$grommet-namespace}"]) {
     max-width: $readable-text-width;
     margin-left: 0px;
+    @include text();
   }
 
-  p,
   dd {
     font-size: $paragraph-font-size;
+    font-weight: $text-font-weight;
     line-height: $paragraph-line-height;
-    color: $paragraph-text-color;
-    font-weight: 100;
-  }
-
-  #{$dark-background-context} {
-    p,
-    dd {
-      color: $colored-text-color;
-    }
-  }
-
-  dd {
     margin-bottom: halve($inuit-base-spacing-unit);
   }
 
-  p {
-    margin-top: $inuit-base-spacing-unit;
-    margin-bottom: $inuit-base-spacing-unit;
+  p:not(.#{$grommet-namespace}paragraph) {
+    @include paragraph();
   }
 
   blockquote {
@@ -96,15 +62,11 @@
 
   b,
   strong {
-    font-weight: 600;
+    font-weight: $text-strong-font-weight;
   }
 
   code {
     font-family: $code-font-family;
-
-    &.hljs {
-      border: 1px solid $border-color;
-    }
   }
 
   .large-number-font {
@@ -119,7 +81,38 @@
     color: map-get($brand-status-colors, critical);
   }
 
-  svg {
-    max-width: 100%;
+  // Removed as this was causing issues with icons inside table cells.
+  // svg {
+  //   max-width: 100%;
+  // }
+
+  #{$dark-background} {
+    p:not(.#{$grommet-namespace}paragraph),
+    dd {
+      color: $colored-text-color;
+    }
+
+    .secondary {
+      color: $colored-text-color;
+    }
+
+    .error {
+      color: $brand-error-colored-color;
+    }
+  }
+
+  #{$light-background} {
+    p:not(.#{$grommet-namespace}paragraph),
+    dd {
+      color: $text-color;
+    }
+
+    .secondary {
+      color: $secondary-text-color;
+    }
+
+    .error {
+      color: map-get($brand-status-colors, critical);
+    }
   }
 }

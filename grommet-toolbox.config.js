@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import path from 'path';
 
@@ -25,28 +25,8 @@ export default {
       dist: 'dist/scss/'
     },
     {
-      asset: 'src/utils/**',
-      dist: 'dist/utils/'
-    },
-    {
       asset: 'src/img/**',
       dist: 'dist/img/'
-    },
-    {
-      asset: 'bin/**',
-      dist: 'dist/bin/'
-    },
-    {
-      asset: 'templates/**',
-      dist: 'dist/templates/'
-    },
-    {
-      asset: 'examples/**',
-      dist: 'dist/examples/',
-      ignores: [
-        'node_modules/',
-        'dist/'
-      ]
     },
     {
       filename: 'package.json',
@@ -54,15 +34,8 @@ export default {
     }
   ],
   scssAssets: ['src/scss/**/*.scss'],
-  jsAssets: [
-    'src/js/**/*.js',
-    '!src/js/components/icons/base/**',
-    '!src/js/index.js',
-    '!src/js/index-icons.js',
-    '!src/js/messages/**',
-    '!src/js/mixins/**'
-  ],
-  mainJs: 'src/js/index.js',
+  jsAssets: ['src/js/**/*.js'],
+  mainJs: 'src/js/index-commonjs.js',
   mainScss: 'src/scss/grommet-core/index.scss',
   icons: {
     source: 'src/img/icons',
@@ -93,8 +66,10 @@ export default {
     }
   },
   distPreprocess: ['generate-index-icons', 'dist-css'],
-  scsslint: true,
   testPaths: [
-    'test/**/*.js'
-  ]
+    '__tests__',
+    '!__tests__/utils/',
+    '!__tests__/mocks/'
+  ],
+  preCommitTasks: ['generate-index-icons', 'jslint', 'scsslint', 'test']
 };

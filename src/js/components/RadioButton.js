@@ -1,6 +1,7 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 
@@ -8,36 +9,32 @@ const CLASS_ROOT = CSSClassnames.RADIO_BUTTON;
 
 export default class RadioButton extends Component {
   render () {
-    let classes = classnames(
+    const { className, label, ...props } = this.props;
+    const classes = classnames(
       CLASS_ROOT,
-      this.props.className,
       {
-        [`${CLASS_ROOT}--disabled`]: this.props.disabled
-      }
+        [`${CLASS_ROOT}--disabled`]: props.disabled
+      },
+      className
     );
 
     return (
       <label className={classes}>
-        <input className={`${CLASS_ROOT}__input`}
-          id={this.props.id} name={this.props.name} type="radio"
-          disabled={this.props.disabled}
-          checked={this.props.checked}
-          defaultChecked={this.props.defaultChecked}
-          value={this.props.value}
-          onChange={this.props.onChange} />
-        <span className={`${CLASS_ROOT}__control`}></span>
-          <span className={`${CLASS_ROOT}__label`}>
-            {this.props.label}
-          </span>
+        <input {...props} className={`${CLASS_ROOT}__input`}
+          type="radio" />
+        <span className={`${CLASS_ROOT}__control`} />
+          <label htmlFor={props.id} className={`${CLASS_ROOT}__label`}>
+            {label}
+          </label>
       </label>
     );
   }
-};
+}
 
 RadioButton.propTypes = {
   checked: PropTypes.bool,
-  disabled: PropTypes.bool,
   defaultChecked: PropTypes.bool,
+  disabled: PropTypes.bool,
   id: PropTypes.string.isRequired,
   label: PropTypes.node.isRequired,
   name: PropTypes.string,

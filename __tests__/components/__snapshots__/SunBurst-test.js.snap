@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SunBurst has correct default options 1`] = `
+<div
+  className="grommetux-sun-burst grommetux-sun-burst--xlarge"
+>
+  <svg
+    aria-label="SunBurst (Navigation Help)"
+    className="grommetux-sun-burst__graphic"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    role="group"
+    tabIndex="0"
+    viewBox="0 0 100 100"
+  >
+    <g
+      aria-label={100}
+      role="rowgroup"
+    >
+      <path
+        aria-label="50 "
+        className="grommetux-sun-burst__slice grommetux-color-index-graph-1"
+        d="M 50.2908549812 61.1073036108 A 11.1111111111 11.1111111111 0 0 0 50.0000000000 38.8888888889"
+        fill="none"
+        onBlur={[Function]}
+        onClick={undefined}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="row"
+        strokeWidth={11.11111111111111}
+        tabIndex={undefined}
+      />
+      <g
+        aria-label={50}
+        role="group"
+      >
+        <path
+          aria-label="20 "
+          className="grommetux-sun-burst__slice grommetux-color-index-graph-1"
+          d="M 71.4517653110 42.4456409242 A 22.7430555556 22.7430555556 0 0 0 50.0000000000 27.2569444444"
+          fill="none"
+          onBlur={[Function]}
+          onClick={undefined}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="row"
+          strokeWidth={11.11111111111111}
+          tabIndex={undefined}
+        />
+        <g
+          aria-label={20}
+          role="group"
+        >
+          <path
+            aria-label="5 "
+            className="grommetux-sun-burst__slice grommetux-color-index-graph-1"
+            d="M 69.6182788892 21.7729959360 A 34.3750000000 34.3750000000 0 0 0 50.0000000000 15.6250000000"
+            fill="none"
+            onBlur={[Function]}
+            onClick={undefined}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="row"
+            strokeWidth={11.11111111111111}
+            tabIndex={undefined}
+          />
+          <path
+            aria-label="1 "
+            className="grommetux-sun-burst__slice grommetux-color-index-graph-2"
+            d="M 73.3381808911 24.7617366347 A 34.3750000000 34.3750000000 0 0 0 70.1079200777 22.1196812222"
+            fill="none"
+            onBlur={[Function]}
+            onClick={undefined}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+            role="row"
+            strokeWidth={11.11111111111111}
+            tabIndex={undefined}
+          />
+        </g>
+        <path
+          aria-label="20 "
+          className="grommetux-sun-burst__slice grommetux-color-index-graph-2"
+          d="M 63.9393791716 67.9705393440 A 22.7430555556 22.7430555556 0 0 0 71.5803398482 42.8211764167"
+          fill="none"
+          onBlur={[Function]}
+          onClick={undefined}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="row"
+          strokeWidth={11.11111111111111}
+          tabIndex={undefined}
+        />
+        <path
+          aria-label="10 "
+          className="grommetux-sun-burst__slice grommetux-color-index-graph-3"
+          d="M 50.5953437896 72.7352620784 A 22.7430555556 22.7430555556 0 0 0 63.6236269801 68.2110780546"
+          fill="none"
+          onBlur={[Function]}
+          onClick={undefined}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="row"
+          strokeWidth={11.11111111111111}
+          tabIndex={undefined}
+        />
+      </g>
+      <path
+        aria-label="30 "
+        className="grommetux-sun-burst__slice grommetux-color-index-graph-2"
+        d="M 39.3519713948 46.8256848066 A 11.1111111111 11.1111111111 0 0 0 50.0969615055 61.1106880340"
+        fill="none"
+        onBlur={[Function]}
+        onClick={undefined}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="row"
+        strokeWidth={11.11111111111111}
+        tabIndex={undefined}
+      />
+      <g
+        aria-label={30}
+        role="group"
+      >
+        <path
+          aria-label="15 "
+          className="grommetux-sun-burst__slice grommetux-color-index-graph-1"
+          d="M 32.0660154077 63.9863781104 A 22.7430555556 22.7430555556 0 0 0 50.1984680816 72.7421895697"
+          fill="none"
+          onBlur={[Function]}
+          onClick={undefined}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="row"
+          strokeWidth={11.11111111111111}
+          tabIndex={undefined}
+        />
+        <path
+          aria-label="10 "
+          className="grommetux-sun-burst__slice grommetux-color-index-graph-2"
+          d="M 27.2696685198 50.7606620815 A 22.7430555556 22.7430555556 0 0 0 31.8246508851 63.6712567291"
+          fill="none"
+          onBlur={[Function]}
+          onClick={undefined}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="row"
+          strokeWidth={11.11111111111111}
+          tabIndex={undefined}
+        />
+        <path
+          aria-label="5 "
+          className="grommetux-sun-burst__slice grommetux-color-index-graph-3"
+          d="M 28.2048164488 43.5025735885 A 22.7430555556 22.7430555556 0 0 0 27.2598550756 50.3638472456"
+          fill="none"
+          onBlur={[Function]}
+          onClick={undefined}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="row"
+          strokeWidth={11.11111111111111}
+          tabIndex={undefined}
+        />
+      </g>
+      <path
+        aria-label="20 "
+        className="grommetux-sun-burst__slice grommetux-color-index-graph-3"
+        d="M 49.8060843729 38.8905811649 A 11.1111111111 11.1111111111 0 0 0 39.4089925801 46.6403345472"
+        fill="none"
+        onBlur={[Function]}
+        onClick={undefined}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="row"
+        strokeWidth={11.11111111111111}
+        tabIndex={undefined}
+      />
+      <g
+        aria-label={20}
+        role="group"
+      >
+        <path
+          aria-label="10 "
+          className="grommetux-sun-burst__slice grommetux-color-index-graph-1"
+          d="M 36.0920065513 32.0051592329 A 22.7430555556 22.7430555556 0 0 0 28.3215316873 43.1231847763"
+          fill="none"
+          onBlur={[Function]}
+          onClick={undefined}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="row"
+          strokeWidth={11.11111111111111}
+          tabIndex={undefined}
+        />
+        <path
+          aria-label="7 "
+          className="grommetux-sun-burst__slice grommetux-color-index-graph-2"
+          d="M 45.1123857842 27.7883408256 A 22.7430555556 22.7430555556 0 0 0 36.4081780809 31.7651719799"
+          fill="none"
+          onBlur={[Function]}
+          onClick={undefined}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="row"
+          strokeWidth={11.11111111111111}
+          tabIndex={undefined}
+        />
+        <path
+          aria-label="3 "
+          className="grommetux-sun-burst__slice grommetux-color-index-graph-3"
+          d="M 49.6030789508 27.2604083220 A 22.7430555556 22.7430555556 0 0 0 45.5007770951 27.7064231390"
+          fill="none"
+          onBlur={[Function]}
+          onClick={undefined}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+          role="row"
+          strokeWidth={11.11111111111111}
+          tabIndex={undefined}
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;

@@ -1,52 +1,24 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+@mixin range-track {
+  width: 100%;
+  height: $control-border-width;
+  background-color: $control-background-color;
+}
+
+@mixin range-thumb {
+  position: relative;
+  height: $control-size;
+  width: $control-size;
+  overflow: visible;
+}
+
 .grommet {
-  input,
+  input:not(.#{$grommet-namespace}input):not(.#{$grommet-namespace}check-box__input),
   select,
   textarea {
     @include inuit-font-size($inuit-base-font-size);
-    // Align overall height with regular text line height, reduce
-    // top and bottom padding by an extra 2px.
-    padding: (halve($inuit-base-spacing-unit) - $input-border-width)
-      ($inuit-base-spacing-unit - $input-border-width);
-    border: $input-border-width solid $border-color;
-    border-radius: $border-radius;
-    outline: none;
-    // margin-right: halve($inuit-base-spacing-unit);
-    background-color: transparent; // inherit; doesn't work on IE
-
-    .grommet.rtl & {
-      margin-right: 0;
-      margin-left: halve($inuit-base-spacing-unit);
-    }
-
-    &:focus {
-      border-width: $input-focus-border-width;
-      border-color: $focus-border-color;
-      padding: (halve($inuit-base-spacing-unit) - ($input-border-width + 1))
-        ($inuit-base-spacing-unit - ($input-border-width + 1));
-    }
-
-    &::-moz-focus-inner {
-      border: none;
-      outline: none;
-    }
-
-    &::-webkit-input-placeholder {
-      color: $placeholder-text-color;
-    }
-
-    &::-moz-placeholder {
-      color: $placeholder-text-color;
-    }
-
-    &:-ms-input-placeholder {
-       color: $placeholder-text-color;
-    }
-
-    &.error {
-      border-color: map-get($brand-status-colors, critical);
-    }
+    @include input();
   }
 
   input[type="button"],
@@ -65,10 +37,6 @@
     background: $small-drop-caret no-repeat center right halve($inuit-base-spacing-unit);
     cursor: pointer;
 
-    //&:hover {
-    //  background-color: $button-hover-background-color;
-    //}
-
     &::-moz-focus-inner {
       border: none;
     }
@@ -76,23 +44,10 @@
     &.plain {
       border: none;
     }
-  }
 
-  @mixin range-track {
-    width: 100%;
-    height: $control-border-width;
-    background-color: $control-background-color;
-
-    #{$dark-background-context} & {
-      background-color: $colored-meter-background-color;
+    &:focus {
+      padding-right: double($inuit-base-spacing-unit);
     }
-  }
-
-  @mixin range-thumb {
-    position: relative;
-    height: $control-size;
-    width: $control-size;
-    overflow: visible;
   }
 
   input[type=range] {
@@ -174,19 +129,11 @@
     &::-ms-fill-lower {
       background: $brand-color;
       border-color: transparent;
-
-      #{$dark-background-context} & {
-        background: #fff;
-      }
     }
 
     &::-ms-fill-upper {
       background: $control-background-color;
       border-color: transparent;
-
-      #{$dark-background-context} & {
-        background: $colored-meter-background-color;
-      }
     }
 
     &::-ms-thumb {
@@ -196,33 +143,84 @@
       width: $control-size - ($control-border-width * 2);
       border-radius: $control-size;
       background-color: $background-color;
-
-      #{$dark-background-context} & {
-        border-color: $active-colored-icon-color;
-      }
     }
 
     &:hover::-ms-thumb {
       border-color: $active-icon-color;
+    }
+  }
 
-      #{$dark-background-context} & {
+  #{$dark-background} {
+
+    input[type=range] {
+
+      &::-webkit-slider-runnable-track {
+        background-color: $colored-meter-background-color;
+      }
+
+      &::-webkit-slider-thumb {
+        background-color: $active-colored-icon-color;
+        border: $control-border-width solid $active-colored-icon-color;
+      }
+
+      &::-moz-range-thumb {
+        background-color: $active-colored-icon-color;
+        border: $control-border-width solid $active-colored-icon-color;
+      }
+
+      &::-ms-fill-lower {
+        background: #fff;
+      }
+
+      &::-ms-fill-upper {
+        background: $colored-meter-background-color;
+      }
+
+      &::-ms-thumb {
+        border-color: $active-colored-icon-color;
+      }
+
+      &:hover::-ms-thumb {
         border-color: $active-colored-icon-color;
         background-color: $active-colored-icon-color;
       }
     }
   }
 
-  #{$dark-background-context} input[type=range] {
-    &::-webkit-slider-thumb {
-      background-color: $active-colored-icon-color;
-      border: $control-border-width solid $active-colored-icon-color;
-    }
-  }
+  #{$light-background} {
 
-  #{$dark-background-context} {
-    input[type=range]::-moz-range-thumb {
-      background-color: $active-colored-icon-color;
-      border: $control-border-width solid $active-colored-icon-color;
+    input[type=range] {
+
+      &::-webkit-slider-runnable-track {
+        background-color: $control-background-color;
+      }
+
+      &::-webkit-slider-thumb {
+        background-color: $active-icon-color;
+        border: $control-border-width solid $active-icon-color;
+      }
+
+      &::-moz-range-thumb {
+        background-color: $active-icon-color;
+        border: $control-border-width solid $active-icon-color;
+      }
+
+      &::-ms-fill-lower {
+        background: $brand-color;
+      }
+
+      &::-ms-fill-upper {
+        background: $control-background-color;
+      }
+
+      &::-ms-thumb {
+        border-color: $icon-color;
+      }
+
+      &:hover::-ms-thumb {
+        border-color: $active-icon-color;
+        background-color: $background-color;
+      }
     }
   }
 }

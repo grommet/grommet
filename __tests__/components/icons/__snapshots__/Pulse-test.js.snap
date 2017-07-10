@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pulse has correct className rendering 1`] = `
+<div
+  className="grommetux-pulse testing"
+>
+  <div
+    className="grommetux-pulse__icon"
+  >
+    <svg
+      aria-label="add"
+      className="grommetux-control-icon grommetux-control-icon-add grommetux-control-icon--responsive"
+      height="24px"
+      role="img"
+      version="1.1"
+      viewBox="0 0 24 24"
+      width="24px"
+    >
+      <path
+        d="M12,22 L12,2 M2,12 L22,12"
+        fill="none"
+        stroke="#000"
+        strokeWidth="2"
+      />
+    </svg>
+  </div>
+  <div
+    className="grommetux-pulse__icon-anim"
+  />
+</div>
+`;
+
+exports[`Pulse has correct default options 1`] = `
+<div
+  className="grommetux-pulse"
+>
+  <div
+    className="grommetux-pulse__icon"
+  >
+    <svg
+      aria-label="add"
+      className="grommetux-control-icon grommetux-control-icon-add grommetux-control-icon--responsive"
+      height="24px"
+      role="img"
+      version="1.1"
+      viewBox="0 0 24 24"
+      width="24px"
+    >
+      <path
+        d="M12,22 L12,2 M2,12 L22,12"
+        fill="none"
+        stroke="#000"
+        strokeWidth="2"
+      />
+    </svg>
+  </div>
+  <div
+    className="grommetux-pulse__icon-anim"
+  />
+</div>
+`;
+
+exports[`Pulse has microdata properties rendering 1`] = `
+<div
+  className="grommetux-pulse"
+  itemProp="test"
+  itemScope={true}
+  itemType="http://schema.org/gameTip"
+>
+  <div
+    className="grommetux-pulse__icon"
+  >
+    <svg
+      aria-label="add"
+      className="grommetux-control-icon grommetux-control-icon-add grommetux-control-icon--responsive"
+      height="24px"
+      role="img"
+      version="1.1"
+      viewBox="0 0 24 24"
+      width="24px"
+    >
+      <path
+        d="M12,22 L12,2 M2,12 L22,12"
+        fill="none"
+        stroke="#000"
+        strokeWidth="2"
+      />
+    </svg>
+  </div>
+  <div
+    className="grommetux-pulse__icon-anim"
+  />
+</div>
+`;

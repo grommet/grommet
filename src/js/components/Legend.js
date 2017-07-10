@@ -1,12 +1,29 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import FormattedMessage from './FormattedMessage';
+import List from './List';
+import ListItem from './ListItem';
 import CSSClassnames from '../utils/CSSClassnames';
-import { announce } from '../utils/Announcer';
+import Announcer from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.LEGEND;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
+
+function getMaxDecimalDigits(series) {
+  let maxDigits = 0;
+  series.forEach((item) => {
+    const currentDigitsGroup = /\.(\d*)$/.exec(item.value.toString());
+    if (currentDigitsGroup) {
+      const currentDigits = currentDigitsGroup[1].length;
+      maxDigits = Math.max(maxDigits, currentDigits);
+    }
+  });
+
+  return maxDigits;
+}
 
 export default class Legend extends Component {
 
@@ -14,6 +31,12 @@ export default class Legend extends Component {
     super(props, context);
 
     this._onActive = this._onActive.bind(this);
+    this._renderSeries = this._renderSeries.bind(this);
+    this._renderSwatch = this._renderSwatch.bind(this);
+    this._renderLabel = this._renderLabel.bind(this);
+    this._renderValue = this._renderValue.bind(this);
+    this._renderTotal = this._renderTotal.bind(this);
+    this._seriesTotal = this._seriesTotal.bind(this);
 
     this.state = {activeIndex: this.props.activeIndex};
   }
@@ -25,168 +48,208 @@ export default class Legend extends Component {
   }
 
   componentDidUpdate () {
-    if (this.props.announce) {
-      announce(this.refs.legend.textContent);
+    const { announce } = this.props;
+    if (announce) {
+      Announcer.announce(this.legendRef.textContent);
     }
   }
 
   _onActive (index) {
+    const { onActive } = this.props;
     this.setState({activeIndex: index});
-    if (this.props.onActive) {
-      this.props.onActive(index);
+    if (onActive) {
+      onActive(index);
     }
   }
 
   _itemColorIndex (item, index) {
-    return item.colorIndex || ('graph-' + (index + 1));
+    return item.colorIndex || `graph-${index + 1}`;
   }
 
-  render () {
-    var classes = [CLASS_ROOT];
-    if (this.props.series.length === 1) {
-      classes.push(CLASS_ROOT + "--single");
+  _renderSwatch (item, index) {
+    const colorIndex = this._itemColorIndex(item, index);
+    return (
+      <svg className={
+          `${CLASS_ROOT}__item-swatch ${COLOR_INDEX}-${colorIndex}`
+        } viewBox="0 0 12 12">
+        <path className={item.className} d="M 5 0 l 0 12" />
+      </svg>
+    );
+  }
+
+  _renderLabel (item, swatch) {
+    if (swatch) {
+      return (
+        <span className={`${CLASS_ROOT}__item-label`}>
+          {swatch}
+          <span>{item.label}</span>
+        </span>
+      );
+    } else {
+      return (
+        <span className={`${CLASS_ROOT}__item-label`}>{item.label}</span>
+      );
     }
-    if (this.props.className) {
-      classes.push(this.props.className);
-    }
+  }
 
-    var totalValue = 0;
-    var items = this.props.series.map(function (item, index) {
-      var legendClasses = [CLASS_ROOT + "__item"];
-      if (index === this.state.activeIndex) {
-        legendClasses.push(CLASS_ROOT + "__item--active");
-      }
-      if (item.onClick) {
-        legendClasses.push(CLASS_ROOT + "__item--clickable");
-      }
-      var colorIndex = this._itemColorIndex(item, index);
-      if (typeof item.value === 'number') {
-        totalValue += item.value;
-      }
-
-      var valueClasses = [CLASS_ROOT + "__item-value"];
-      if (1 === this.props.series.length) {
-        valueClasses.push("large-number-font");
-      }
-
-      var swatch;
-      if (item.hasOwnProperty('colorIndex')) {
-        swatch = (
-          <svg
-            className={`${CLASS_ROOT}__item-swatch ` +
-              `${COLOR_INDEX}-${colorIndex}`}
-            viewBox="0 0 12 12">
-            <path className={item.className} d="M 5 0 l 0 12" />
-          </svg>
-        );
-      }
-
-      var label;
-      if (item.hasOwnProperty('label')) {
-        if (swatch) {
-          label = (
-            <span className={CLASS_ROOT + "__item-label"}>
-              {swatch}
-              {item.label}
-            </span>
-          );
-        } else {
-          label = (
-            <span className={CLASS_ROOT + "__item-label"}>{item.label}</span>
-          );
-        }
-      }
-
-      var value;
-      if (item.hasOwnProperty('value')) {
-        var unitsValue = item.units || this.props.units;
-        var unitsPrefix;
-        var unitsSuffix;
-        if (unitsValue) {
-          if (unitsValue.prefix) {
-            unitsPrefix = (
-              <span className={CLASS_ROOT + "__item-units"}>
-                {unitsValue.prefix}
-              </span>
-            );
-          }
-          if (unitsValue.suffix ||
-            (typeof unitsValue === 'string' || unitsValue instanceof String)) {
-            unitsSuffix = (
-              <span className={CLASS_ROOT + "__item-units"}>
-                {unitsValue.suffix || unitsValue}
-              </span>
-            );
-          }
-        }
-        value = (
-          <span className={valueClasses.join(' ')}>
-            {unitsPrefix}
-            {item.value}
-            {unitsSuffix}
+  _renderValue (item) {
+    const { units } = this.props;
+    const unitsValue = item.units || units;
+    const valueClasses = `${CLASS_ROOT}__item-value`;
+    let unitsPrefix;
+    let unitsSuffix;
+    if (unitsValue) {
+      if (unitsValue.prefix) {
+        unitsPrefix = (
+          <span className={`${CLASS_ROOT}__item-units`}>
+            {unitsValue.prefix}
           </span>
         );
+      }
+      if (unitsValue.suffix ||
+        (typeof unitsValue === 'string' || unitsValue instanceof String)) {
+        unitsSuffix = (
+          <span className={`${CLASS_ROOT}__item-units`}>
+            {unitsValue.suffix || unitsValue}
+          </span>
+        );
+      }
+    }
+    return (
+      <span className={valueClasses}>
+        {unitsPrefix}
+        {item.value}
+        {unitsSuffix}
+      </span>
+    );
+  }
+
+  _seriesTotal () {
+    const { series } = this.props;
+    const maxDecimalDigits = getMaxDecimalDigits(series);
+    let total = 0;
+    series.forEach(item =>
+      total += (typeof item.value === 'number' ?
+       item.value : 0));
+    return parseFloat(total.toFixed(maxDecimalDigits));
+  }
+
+  _renderSeries () {
+    const { series, responsive } = this.props;
+    const { activeIndex } = this.state;
+
+    return series.map((item, index) => {
+      const legendClasses = classnames(
+        `${CLASS_ROOT}__item`, {
+          [`${CLASS_ROOT}__item--active`]: index === activeIndex,
+          [`${CLASS_ROOT}__item--clickable`]: item.onClick
+        }
+      );
+
+      let swatch;
+      if (item.hasOwnProperty('colorIndex')) {
+        swatch = this._renderSwatch(item, index);
+      }
+
+      let label;
+      if (item.hasOwnProperty('label')) {
+        label = this._renderLabel(item, swatch);
+      }
+
+      let value;
+      if (item.hasOwnProperty('value')) {
+        value = this._renderValue(item);
       }
 
       return (
-        <li onClick={item.onClick}
-          key={item.label || index} className={legendClasses.join(' ')}
+        <ListItem onClick={item.onClick} justify='between'
+          separator='none' pad={{ horizontal: 'small' }}
+          key={item.label || index} className={legendClasses}
           onMouseOver={this._onActive.bind(this, index)}
-          onMouseOut={this._onActive.bind(this, undefined)} >
+          onMouseOut={this._onActive.bind(this, undefined)}
+          responsive={responsive} >
           {label}
           {value}
-        </li>
+        </ListItem>
       );
     }, this);
+  }
 
-    // build legend from bottom to top, to align with Meter bar stacking
-    items.reverse();
-
-    var total;
-    if (this.props.total && this.props.series.length > 1) {
-      if (true !== this.props.total) {
-        totalValue = this.props.total;
-      }
-      var unitsPrefix;
-      var unitsSuffix;
-
-      if (this.props.units && this.props.units.prefix) {
-        unitsPrefix = (
-          <span className={CLASS_ROOT + "__total-units"}>
-            {this.props.units.prefix}
-          </span>
-        );
-      }
-      if (this.props.units &&
-        (this.props.units.suffix ||
-          (typeof this.props.units === 'string' ||
-          this.props.units instanceof String))) {
-        unitsSuffix = (
-          <span className={CLASS_ROOT + "__total-units"}>
-            {this.props.units.suffix || this.props.units}
-          </span>
-        );
-      }
-
-      total = (
-        <li className={CLASS_ROOT + "__total"}>
-          <span className={CLASS_ROOT + "__total-label"}>
-            <FormattedMessage id="Total" defaultMessage="Total" />
-          </span>
-          <span className={CLASS_ROOT + "__total-value"}>
-            {unitsPrefix}
-            {totalValue}
-            {unitsSuffix}
-          </span>
-        </li>
+  _renderTotal () {
+    const { total, units, responsive } = this.props;
+    let totalValue;
+    if (total !== true) {
+      totalValue = total;
+    } else {
+      totalValue = this._seriesTotal();
+    }
+    let unitsPrefix;
+    let unitsSuffix;
+    if (units && units.prefix) {
+      unitsPrefix = (
+        <span className={`${CLASS_ROOT}__total-units`}>
+          {units.prefix}
+        </span>
+      );
+    }
+    if (units &&
+      (units.suffix ||
+        (typeof units === 'string' ||
+        units instanceof String))) {
+      unitsSuffix = (
+        <span className={`${CLASS_ROOT}__total-units`}>
+          {units.suffix || units}
+        </span>
       );
     }
 
     return (
-      <ol ref='legend' className={classes.join(' ')} role="presentation">
+      <ListItem className={`${CLASS_ROOT}__total`}
+        justify='between' separator='none' pad={{ horizontal: 'small' }}
+        responsive={responsive} >
+        <span className={`${CLASS_ROOT}__total-label`}>
+          <FormattedMessage id="Total" defaultMessage="Total" />
+        </span>
+        <span className={`${CLASS_ROOT}__total-value`}>
+          {unitsPrefix}
+          {totalValue}
+          {unitsSuffix}
+        </span>
+      </ListItem>
+    );
+  }
+
+  render () {
+    const { className, series, size, total, ...props } = this.props;
+    delete props.activeIndex;
+    delete props.announce;
+    delete props.onActive;
+    delete props.units;
+    delete props.responsive;
+
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--${size}`]: size
+      },
+      className
+    );
+
+    let items = this._renderSeries();
+
+    // build legend from bottom to top, to align with Meter bar stacking
+    items.reverse();
+
+    let totalNode;
+    if (total && series.length > 1) {
+      totalNode = this._renderTotal();
+    }
+
+    return (
+      <List ref={ref => this.legendRef = ref} {...props} className={classes}>
         {items.reverse()}
-        {total}
-      </ol>
+        {totalNode}
+      </List>
     );
   }
 
@@ -219,6 +282,7 @@ Legend.propTypes = {
     ]),
     onClick: PropTypes.func
   })).isRequired,
+  size: PropTypes.oneOf(['medium', 'large']),
   total: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.node
@@ -230,5 +294,5 @@ Legend.propTypes = {
       suffix: PropTypes.string
     })
   ]),
-  value: PropTypes.number
+  responsive: PropTypes.bool
 };

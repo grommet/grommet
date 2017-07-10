@@ -1,9 +1,12 @@
 // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
 
-import { PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { render, unmountComponentAtNode } from 'react-dom';
-import DOM from './DOM';
+import classnames from 'classnames';
+import { filterByFocusable, findScrollParents } from './DOM';
 import CSSClassnames from './CSSClassnames';
+import KeyboardAccelerators from './KeyboardAccelerators';
 
 const CLASS_ROOT = CSSClassnames.DROP;
 const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
@@ -16,163 +19,227 @@ const BACKGROUND_COLOR_INDEX = CSSClassnames.BACKGROUND_COLOR_INDEX;
 const VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
 const HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
-export default {
+class DropContents extends Component {
 
-  // How callers can validate a property for drop alignment which will be
-  // passed to add().
-  alignPropType: PropTypes.shape({
-    top: PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
-    bottom: PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
-    left: PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS),
-    right: PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS)
-  }),
+  constructor (props, context) {
+    super(props, context);
+    this._processTab = this._processTab.bind(this);
+  }
 
-  // Add a drop component.
-  //
-  // control - DOM element to anchor the overlay on
-  // content - React node to render
-  // options - {
-  //   align: {
-  //     top: top|bottom
-  //     bottom: top|bottom
-  //     left: left|right
-  //     right: left|right
-  //   },
-  //   className: <string>
-  //   colorIndex: <string>
-  // }
+  getChildContext () {
+    const { context } = this.props;
+    return { ...context };
+  }
 
-  add (control, content, options) {
-    // normalize for older interface that just had align content
-    if (options.top || options.bottom || options.left || options.right) {
-      options = { align: options };
+  componentDidMount () {
+    const { focusControl } = this.props;
+    if (focusControl) {
+      this._keyboardHandlers = {
+        tab: this._processTab
+      };
+      KeyboardAccelerators.startListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
     }
-    // validate align
-    if (options && options.align && options.align.top &&
-      VERTICAL_ALIGN_OPTIONS.indexOf(options.align.top) === -1) {
-      console.warn("Warning: Invalid align.top value '" + options.align.top +
-        "' supplied to Drop," +
-        "expected one of [" + VERTICAL_ALIGN_OPTIONS.join(',') + "]");
-    }
-    if (options.align && options.align.bottom &&
-      VERTICAL_ALIGN_OPTIONS.indexOf(options.align.bottom) === -1) {
-      console.warn("Warning: Invalid align.bottom value '" +
-        options.align.bottom +
-        "' supplied to Drop," +
-        "expected one of [" + VERTICAL_ALIGN_OPTIONS.join(',') + "]");
-    }
-    if (options.align && options.align.left &&
-      HORIZONTAL_ALIGN_OPTIONS.indexOf(options.align.left) === -1) {
-      console.warn("Warning: Invalid align.left value '" + options.align.left +
-        "' supplied to Drop," +
-        "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
-    }
-    if (options.align && options.align.right &&
-      HORIZONTAL_ALIGN_OPTIONS.indexOf(options.align.right) === -1) {
-      console.warn("Warning: Invalid align.right value '" +
-        options.align.right +
-        "' supplied to Drop," +
-        "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
-    }
-    const align = options.align || {};
+  }
 
-    // initialize data
-    var drop = {
-      control: control,
-      options: {
-        ...options,
-        align: {
-          top: align.top,
-          bottom: align.bottom,
-          left: align.left,
-          right: align.right
-        },
-        responsive: options.responsive !== false ? true : options.responsive
+  componentWillUnmount () {
+    const { focusControl } = this.props;
+    if (focusControl) {
+      KeyboardAccelerators.stopListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
+    }
+  }
+
+  _processTab (event) {
+    let items = this._containerRef.getElementsByTagName('*');
+    items = filterByFocusable(items);
+    if (!items || items.length === 0) {
+      event.preventDefault();
+    } else {
+      if (event.shiftKey) {
+        if (event.target === items[0]) {
+          items[items.length - 1].focus();
+          event.preventDefault();
+        }
+      } else if (event.target === items[items.length - 1]) {
+        items[0].focus();
+        event.preventDefault();
       }
-    };
-    if (! drop.options.align.top && ! drop.options.align.bottom) {
-      drop.options.align.top = "top";
     }
-    if (! drop.options.align.left && ! drop.options.align.right) {
-      drop.options.align.left = "left";
+  }
+
+  render () {
+    const { content, focusControl } = this.props;
+
+    let anchorStep;
+    if (focusControl) {
+      anchorStep = (
+        <a tabIndex="-1" aria-hidden='true'
+          className={`${CLASS_ROOT}__anchor`} />
+      );
     }
+    return (
+      <div ref={(ref) => this._containerRef = ref}>
+        {anchorStep}
+        {content}
+      </div>
+    );
+  }
+}
+
+DropContents.propTypes = {
+  content: PropTypes.node.isRequired,
+  context: PropTypes.any,
+  focusControl: PropTypes.bool
+};
+
+DropContents.childContextTypes = {
+  history: PropTypes.object,
+  intl: PropTypes.object,
+  onDropChange: PropTypes.func,
+  router: PropTypes.any,
+  store: PropTypes.object
+};
+
+const _normalizeOptions = (options) => {
+  let opts = { ...options };
+  // normalize for older interface that just had align content
+  if (options.top || options.bottom || options.left || options.right) {
+    opts = { align: { ...options } };
+  }
+  // validate align
+  if (options && options.align && options.align.top &&
+    VERTICAL_ALIGN_OPTIONS.indexOf(options.align.top) === -1) {
+    console.warn("Warning: Invalid align.top value '" + options.align.top +
+      "' supplied to Drop," +
+      "expected one of [" + VERTICAL_ALIGN_OPTIONS.join(',') + "]");
+  }
+  if (options.align && options.align.bottom &&
+    VERTICAL_ALIGN_OPTIONS.indexOf(options.align.bottom) === -1) {
+    console.warn("Warning: Invalid align.bottom value '" +
+      options.align.bottom +
+      "' supplied to Drop," +
+      "expected one of [" + VERTICAL_ALIGN_OPTIONS.join(',') + "]");
+  }
+  if (options.align && options.align.left &&
+    HORIZONTAL_ALIGN_OPTIONS.indexOf(options.align.left) === -1) {
+    console.warn("Warning: Invalid align.left value '" + options.align.left +
+      "' supplied to Drop," +
+      "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
+  }
+  if (options.align && options.align.right &&
+    HORIZONTAL_ALIGN_OPTIONS.indexOf(options.align.right) === -1) {
+    console.warn("Warning: Invalid align.right value '" +
+      options.align.right +
+      "' supplied to Drop," +
+      "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
+  }
+  opts.align = { ...opts.align } || {};
+  if (! options.align.top && ! options.align.bottom) {
+    opts.align.top = "top";
+  }
+  if (! options.align.left && ! options.align.right) {
+    opts.align.left = "left";
+  }
+  opts.responsive = options.responsive !== false ? true : options.responsive;
+  return opts;
+};
+
+// Drop options:
+//
+// align: See dropAlignPropType
+// className: PropTypes.string
+// colorIndex: PropTypes.string
+//    Background color
+// context: PropTypes.object
+//    React context to pass through
+// focusControl: PropTypes.bool
+//    Whether to focus inside the dropped content when added
+// responsive: PropTypes.bool
+//    Whether to dynamically re-place when resized
+//
+
+export default class Drop {
+
+  constructor (control, content, opts) {
+    const options = _normalizeOptions(opts);
+    const { context, focusControl } = options;
+
+    // bind functions to instance
+    this.render = this.render.bind(this);
+    this.remove = this.remove.bind(this);
+    this.place = this.place.bind(this);
+    this._onResize = this._onResize.bind(this);
+    this._control = control;
 
     // setup DOM
-    drop.container = document.createElement('div');
-    drop.container.className =
-      `grommet ${CLASS_ROOT} ${drop.options.className || ''}`;
-    if (drop.options.colorIndex) {
-      drop.container.className +=
-        ` ${BACKGROUND_COLOR_INDEX}-${drop.options.colorIndex}`;
-    }
-
-    // prepend in body to avoid browser scroll issues
-    document.body.insertBefore(drop.container, document.body.firstChild);
-
-    render(content, drop.container);
-
-    drop.scrollParents = DOM.findScrollParents(drop.control);
-    drop.place = this._place.bind(this, drop);
-    drop.render = this._render.bind(this, drop);
-    drop.remove = this._remove.bind(this, drop);
-
-    drop.scrollParents.forEach(function (scrollParent) {
-      scrollParent.addEventListener('scroll', drop.place);
+    let container = document.createElement('div');
+    container.className = classnames('grommet', CLASS_ROOT, {
+      [options.className]: options.className,
+      [`${BACKGROUND_COLOR_INDEX}-${options.colorIndex}`]: options.colorIndex
     });
 
+    // prepend in body to avoid browser scroll issues
+    document.body.insertBefore(container, document.body.firstChild);
+
+    render(
+      <DropContents content={content} context={context}
+        focusControl={focusControl} />,
+      container
+    );
+
+    const scrollParents = findScrollParents(control);
+
+    // initialize state
+    this.state = {
+      container, control, initialFocusNeeded: focusControl, options,
+      scrollParents
+    };
+
+    this._listen();
+
+    // position content
+    this.place();
+  }
+
+  _listen () {
+    const { scrollParents } = this.state;
+    scrollParents.forEach(scrollParent => {
+      scrollParent.addEventListener('scroll', this.place);
+    });
     // we intentionally skipped debounce as we believe resizing
     // will not be a common action. Also the UI looks better if the Drop
     // doesn’t lag to align with the control component.
-    window.addEventListener('resize', () => {
-      // we need to update scroll parents as Responsive options may change
-      // the parent for the target element
-      drop.scrollParents.forEach(function (scrollParent) {
-        scrollParent.removeEventListener('scroll', drop.place);
-      });
+    window.addEventListener('resize', this._onResize);
+  }
 
-      drop.scrollParents = DOM.findScrollParents(drop.control);
-
-      drop.scrollParents.forEach(function (scrollParent) {
-        scrollParent.addEventListener('scroll', drop.place);
-      });
-
-      drop.place();
+  _onResize () {
+    const { scrollParents } = this.state;
+    // we need to update scroll parents as Responsive options may change
+    // the parent for the target element
+    scrollParents.forEach(scrollParent => {
+      scrollParent.removeEventListener('scroll', this.place);
     });
 
-    // position content
-    this._place(drop);
+    const nextScrollParents = findScrollParents(this._control);
 
-    var items = drop.container.firstChild.getElementsByTagName('*');
-    var firstFocusable = DOM.getBestFirstFocusable(items);
-    if (firstFocusable) {
-      firstFocusable.focus();
-    }
-
-    return drop;
-  },
-
-  _render (drop, content) {
-    render(content, drop.container);
-    // in case content changed, re-place
-    setTimeout(this._place.bind(this, drop), 1);
-  },
-
-  _remove (drop) {
-    drop.scrollParents.forEach(function (scrollParent) {
-      scrollParent.removeEventListener('scroll', drop.place);
+    nextScrollParents.forEach(scrollParent => {
+      scrollParent.addEventListener('scroll', this.place);
     });
-    window.removeEventListener('resize', drop.place);
 
-    unmountComponentAtNode(drop.container);
-    document.body.removeChild(drop.container);
-  },
+    this.state.scrollParents = nextScrollParents;
 
-  _place (drop) {
-    var control = drop.control;
-    var container = drop.container;
-    var align = drop.options.align;
-    var windowWidth = window.innerWidth;
-    var windowHeight = window.innerHeight;
+    this.place();
+  }
+
+  place () {
+    const {
+      control, container, initialFocusNeeded, options: { align, responsive }
+    } = this.state;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
 
     // clear prior styling
     container.style.left = '';
@@ -181,16 +248,17 @@ export default {
     container.style.maxHeight = '';
 
     // get bounds
-    var controlRect = control.getBoundingClientRect();
-    var containerRect = container.getBoundingClientRect();
-    var bodyRect = document.body.getBoundingClientRect();
+    const controlRect = control.getBoundingClientRect();
+    const containerRect = container.getBoundingClientRect();
 
-    // set width
-    var width = Math.min(
-      Math.max(controlRect.width, containerRect.width), windowWidth);
+    // determine width
+    const width = Math.min(
+      Math.max(controlRect.width, containerRect.width),
+      windowWidth
+    );
 
     // set left position
-    var left;
+    let left;
     if (align.left) {
       if ('left' === align.left) {
         left = controlRect.left;
@@ -212,16 +280,17 @@ export default {
     }
 
     // set top position
-    var top;
-    var maxHeight;
+    let top, maxHeight;
     if (align.top) {
       if ('top' === align.top) {
         top = controlRect.top;
         maxHeight = Math.min(windowHeight - controlRect.top, windowHeight);
       } else {
         top = controlRect.bottom;
-        maxHeight = Math.min(windowHeight - controlRect.bottom,
-          windowHeight - controlRect.height);
+        maxHeight = Math.min(
+          windowHeight - controlRect.bottom,
+          windowHeight - controlRect.height
+        );
       }
     } else if (align.bottom) {
       if ('bottom' === align.bottom) {
@@ -239,12 +308,12 @@ export default {
       if (align.top && top > (windowHeight / 2)) {
         // We put it below, but there's more room above, put it above
         if (align.top === 'bottom') {
-          if (drop.options.responsive) {
+          if (responsive) {
             top = Math.max(controlRect.top - containerRect.height, 0);
           }
           maxHeight = controlRect.top;
         } else {
-          if (drop.options.responsive) {
+          if (responsive) {
             top = Math.max(controlRect.bottom - containerRect.height, 0);
           }
           maxHeight = controlRect.bottom;
@@ -252,26 +321,101 @@ export default {
       } else if (align.bottom && maxHeight < (windowHeight / 2)) {
         // We put it above but there's more room below, put it below
         if (align.bottom === 'bottom') {
-          if (drop.options.responsive) {
+          if (responsive) {
             top = controlRect.top;
           }
           maxHeight = Math.min(windowHeight - top, windowHeight);
         } else {
-          if (drop.options.responsive) {
+          if (responsive) {
             top = controlRect.bottom;
           }
-          maxHeight = Math.min(windowHeight - top,
-            windowHeight - controlRect.height);
+          maxHeight = Math.min(
+            windowHeight - top,
+            windowHeight - controlRect.height
+          );
         }
       }
     }
 
     container.style.left = `${left}px`;
-    container.style.width = `${width}px`;
-    // We use position:absolute and the body element's position
-    // to handle mobile browsers better. We used to use position:fixed
-    // but that didn't work on mobile browsers as well.
-    container.style.top = `${top - bodyRect.top}px`;
-    container.style.maxHeight = `${maxHeight}px`;
+    // offset width by 0.1 to avoid a bug in ie11 that 
+    // unnecessarily wraps the text if width is the same
+    container.style.width = `${width + 0.1}px`;
+    // the (position:absolute + scrollTop) 
+    // is presenting issues with desktop scroll flickering
+    container.style.top = `${top}px`;
+    container.style.maxHeight = `${windowHeight - (top)}px`;
+
+    if (initialFocusNeeded) {
+      // Now that we've placed it, focus on it
+      this._focus();
+    }
   }
+
+  _focus () {
+    const { container } = this.state;
+    this.state.originalFocusedElement = document.activeElement;
+    if (! container.contains(document.activeElement)) {
+      const anchor = container.querySelector(`${CLASS_ROOT}__anchor`);
+      if (anchor) {
+        anchor.focus();
+        anchor.scrollIntoView();
+      }
+    }
+    delete this.state.initialFocusNeeded;
+  }
+
+  render (content) {
+    const { container, options: { context, focusControl } } = this.state;
+    const originalScrollPosition = container.scrollTop;
+    render(
+      <DropContents content={content} context={context}
+        focusControl={focusControl}/>,
+      container,
+      () => {
+        this.place();
+        // reset container to its original scroll position
+        container.scrollTop = originalScrollPosition;
+      }
+    );
+  }
+
+  remove () {
+    const { container, originalFocusedElement, scrollParents } = this.state;
+    scrollParents.forEach(scrollParent => {
+      scrollParent.removeEventListener('scroll', this.place);
+    });
+    window.removeEventListener('resize', this._onResize);
+    
+    unmountComponentAtNode(container);
+    document.body.removeChild(container);
+    // weird bug in Chrome does not remove child if
+    // document.body.insertBefore is called in another new drop.
+    // the code below will go over remaining drop that was not removed
+    [].forEach.call(document.getElementsByClassName(CLASS_ROOT), (element) => {
+      if(element.getAttribute('style') === container.getAttribute('style')) {
+        document.body.removeChild(element);
+      }
+    });
+
+    if (originalFocusedElement) {
+      originalFocusedElement.focus();
+    }
+
+    this.state = undefined;
+  }
+}
+
+// How callers can validate a property for drop alignment which will be
+// passed to add().
+export var dropAlignPropType = PropTypes.shape({
+  top: PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
+  bottom: PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
+  left: PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS),
+  right: PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS)
+});
+
+Drop.add = (control, content, options) => {
+  console.warn("Warning: Drop.add() is deprecated, use new Drop().");
+  return new Drop(control, content, options);
 };

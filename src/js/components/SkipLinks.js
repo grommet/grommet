@@ -1,6 +1,7 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import FormattedMessage from './FormattedMessage';
 import Box from './Box';
 import Layer from './Layer';
@@ -16,6 +17,7 @@ export default class SkipLinks extends Component {
     super(props, context);
     this._processTab = this._processTab.bind(this);
     this._onFocus = this._onFocus.bind(this);
+    this._onClick = this._onClick.bind(this);
     this._updateAnchors = this._updateAnchors.bind(this);
     this._checkForSkipLink = this._checkForSkipLink.bind(this);
     this.state = {anchors: [], showLayer: false};
@@ -97,12 +99,13 @@ export default class SkipLinks extends Component {
     }
   }
 
-  _onClick (destId) {
-    return function (event) {
-      let dest = document.getElementById(destId);
+  _onClick (destId, event) {
+    event.preventDefault();
+    const dest = document.getElementById(destId);
+    this.setState({showLayer: false}, () => {
       dest.focus();
-      this.setState({showLayer: false});
-    }.bind(this);
+      dest.scrollIntoView();
+    });
   }
 
   render () {
@@ -113,7 +116,7 @@ export default class SkipLinks extends Component {
       return (
         <a href={'#' + anchor.id}
            onFocus={this._onFocus}
-           onClick={this._onClick(anchor.id)}
+           onClick={this._onClick.bind(this, anchor.id)}
            id={`skipLayer_${anchor.id}`}
            key={`skipLayerItem_${index}`}
            aria-label={a11yLabel}>
@@ -125,7 +128,7 @@ export default class SkipLinks extends Component {
     let menuComponent;
     if (anchorElements.length > 0) {
       menuComponent = (
-        <Menu direction="row" responsive={false}>
+        <Menu direction="row" responsive={false} wrap={true}>
           {anchorElements}
         </Menu>
       );
@@ -133,8 +136,7 @@ export default class SkipLinks extends Component {
 
     return (
       <Layer id="skip-link-layer" hidden={!this.state.showLayer} align="top">
-        <Box ref="skipLinksLayer"
-          pad={{horizontal: 'small', vertical: 'medium'}}>
+        <Box pad={{horizontal: 'small', vertical: 'medium'}}>
           <h2>
             <FormattedMessage id="Skip to" defaultMessage="Skip to" />
           </h2>

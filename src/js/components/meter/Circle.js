@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 import { baseDimension } from './utils';
 import Graphic from './Graphic';
@@ -26,7 +26,7 @@ export default class Circle extends Graphic {
 
     const state = {
       startAngle: 0,
-      anglePer: (! props.max) ? 0 : 360 / (props.max.value - props.min.value),
+      anglePer: (! props.max) ? 0 : 360 / (props.max - props.min),
       angleOffset: 180,
       viewBoxWidth: CIRCLE_WIDTH,
       viewBoxHeight: CIRCLE_WIDTH
@@ -35,7 +35,7 @@ export default class Circle extends Graphic {
     return state;
   }
 
-  _sliceCommands (trackIndex, item, startValue, maxValue) {
+  _sliceCommands (trackIndex, item, startValue, max) {
     const startAngle = translateEndAngle(
       this.state.startAngle, this.state.anglePer, startValue
     );
@@ -43,11 +43,11 @@ export default class Circle extends Graphic {
     var endAngle;
     if (! item.value) {
       endAngle = startAngle;
-    } else if (startValue + item.value >= maxValue) {
+    } else if (startValue + item.value >= max) {
       endAngle = 360;
     } else {
-      endAngle = Math.min(360 - (RING_THICKNESS / 2),
-        Math.max(startAngle + (RING_THICKNESS / 2),
+      endAngle = Math.min(360,
+        Math.max(startAngle,
           translateEndAngle(startAngle, this.state.anglePer, item.value)
         ));
     }
