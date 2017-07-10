@@ -405,7 +405,9 @@ var Menu = function (_Component2) {
   }, {
     key: '_onOpen',
     value: function _onOpen() {
-      this.setState({ state: 'expanded' });
+      if ((0, _reactDom.findDOMNode)(this._controlRef).contains(document.activeElement)) {
+        this.setState({ state: 'expanded' });
+      }
     }
   }, {
     key: '_onClose',
