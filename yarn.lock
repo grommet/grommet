@@ -4550,9 +4550,9 @@ markdown-escapes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/markdown-escapes/-/markdown-escapes-1.0.0.tgz#c8ca19f1d94d682459e0a93c86db27a7ef716b23"
 
-markdown-to-jsx@^5.0.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-5.2.0.tgz#a8eaad21f5a6f747c17982f5dda8715464271c8c"
+markdown-to-jsx@^5.3.3:
+  version "5.3.3"
+  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-5.3.3.tgz#3e48548e15da0426f019eb95fa96f3397b95e012"
   dependencies:
     lodash.get "^4.4.2"
     prop-types "^15.5.8"

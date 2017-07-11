@@ -21,7 +21,7 @@ const CSSClassnames = {
 };
 const CLASS_ROOT = CSSClassnames.DROPZONE;
 
-class FileDropzone extends Component {
+class FileUpload extends Component {
   
   constructor() {
     super();
@@ -193,6 +193,7 @@ class FileDropzone extends Component {
     const boxProps = Props.pick(this.props, Object.keys(Box.propTypes));
     const {
       className,
+      dropzone,
       label,
       multiple,
       preview
@@ -207,7 +208,7 @@ class FileDropzone extends Component {
     );
     return (
       <Box align="center" justify="center" pad="medium">
-        {dragDropSupported ?
+        {dragDropSupported && dropzone ?
           <Box {...boxProps}
             onDrop={this._onDrop} onDragEnter={this._onDragEnter}
             onDragOver={this._onDragOver} onDragLeave={this._onDragLeave}
@@ -227,7 +228,8 @@ class FileDropzone extends Component {
   }
 }
 
-FileDropzone.propTypes = {
+FileUpload.propTypes = {
+  dropzone: PropTypes.bool,
   label: PropTypes.node,
   preview: PropTypes.bool,
   multiple: PropTypes.bool.isRequired,
@@ -236,11 +238,12 @@ FileDropzone.propTypes = {
   ...Box.propTypes
 };
 
-FileDropzone.defaultProps = {
+FileUpload.defaultProps = {
+  dropzone: false,
   multiple: false,
-  label: 'Click or drop a file to upload',
+  label: 'Upload a file',
   preview: true,
   fullDropTarget: false
 };
 
-export default FileDropzone;
+export default FileUpload;
