@@ -17,9 +17,9 @@ import FileUploader, {
 
 const namespace = 'grommetux-';
 const CSSClassnames = {
-  DROPZONE: `${namespace}dropzone`
+  FILEUPLOAD: `${namespace}fileupload`
 };
-const CLASS_ROOT = CSSClassnames.DROPZONE;
+const CLASS_ROOT = CSSClassnames.FILEUPLOAD;
 
 class FileUpload extends Component {
   

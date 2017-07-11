@@ -3,17 +3,17 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import FileDropzone from '../../src/js/components/FileDropzone';
+import FileUpload from '../../src/js/components/FileUpload';
 
 // needed because this:
 // https://github.com/facebook/jest/issues/1353
 jest.mock('react-dom');
 
-describe('FileDropzone', () => {
+describe('FileUpload', () => {
 
   it('has correct default options', () => {
     const component = renderer.create(
-      <FileDropzone />
+      <FileUpload />
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -21,7 +21,7 @@ describe('FileDropzone', () => {
 
   it('should create a snapshot with label props', () => {
     const component = renderer.create(
-      <FileDropzone label="Testing" />
+      <FileUpload label="Testing" />
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -29,7 +29,7 @@ describe('FileDropzone', () => {
 
   it('should create a snapshot with preview prop set to false', () => {
     const component = renderer.create(
-      <FileDropzone preview={false} />
+      <FileUpload preview={false} />
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -37,23 +37,25 @@ describe('FileDropzone', () => {
 
   it('should create a snapshot with multiple prop set to true', () => {
     const component = renderer.create(
-      <FileDropzone multiple={true} />
+      <FileUpload multiple={true} />
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('should create a snapshot with full screen drop target set to true', () => {
-    const component = renderer.create(
-      <FileDropzone fullDropTarget={true} />
+  it(
+    'should create a snapshot with full screen drop target set to true',
+    () =>  {
+      const component = renderer.create(
+      <FileUpload fullDropTarget={true} />
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
+      const tree = component.toJSON();
+      expect(tree).toMatchSnapshot();
+    });
 
   it('accepts a function as onDOMChange prop', () => {
     const component = renderer.create(
-      <FileDropzone onDOMChange={jest.fn()} />
+      <FileUpload onDOMChange={jest.fn()} />
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
