@@ -31,7 +31,7 @@ export default class Button extends Component {
     super();
     this._onClick = this._onClick.bind(this);
     this._onMouseDown = this._onMouseDown.bind(this);
-    this._onMouseUp = this._onMouseDown.bind(this);
+    this._onMouseUp = this._onMouseUp.bind(this);
     this._onFocus = this._onFocus.bind(this);
     this._onBlur = this._onBlur.bind(this);
     this.state = {
