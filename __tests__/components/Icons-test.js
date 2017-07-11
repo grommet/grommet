@@ -3,7 +3,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import * as IconIndex from '../../src/js/components/icons/base';
+import * as IconIndex from '../../src/js/components/icons/base/index.js';
 
 describe('Icon:', () => {
   it('ThreeDIcon has correct default options', () => {
