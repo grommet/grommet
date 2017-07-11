@@ -79,6 +79,25 @@ function getTotalCellCount(cells) {
   return cellCount;
 }
 
+// function that filters the items that are not
+// an immediate child of its parent
+function immediateTableChildOnly(result, tableParent) {
+  var immediateChild = [];
+  [].forEach.call(result, function (item) {
+    var currentParent = item.parentNode;
+    while (currentParent) {
+      if (currentParent.tagName.toLowerCase() === 'table') {
+        if (currentParent === tableParent) {
+          immediateChild.push(item);
+        }
+        break;
+      }
+      currentParent = currentParent.parentNode;
+    }
+  });
+  return immediateChild;
+}
+
 var Table = function (_Component) {
   _inherits(Table, _Component);
 
@@ -243,7 +262,7 @@ var Table = function (_Component) {
 
       if (this.containerRef && this.tableRef) {
         var availableSize = this.containerRef.offsetWidth;
-        var numberOfCells = getTotalCellCount(this.tableRef.querySelectorAll('thead th'));
+        var numberOfCells = getTotalCellCount(immediateTableChildOnly(this.tableRef.querySelectorAll('thead th'), this.tableRef));
 
         if (numberOfCells * MIN_CELL_WIDTH > availableSize) {
           if (columnMode === false) {
@@ -289,7 +308,7 @@ var Table = function (_Component) {
         event.preventDefault();
         var activeRow = this.state.activeRow;
 
-        var rows = this.tableRef.querySelectorAll('tbody tr');
+        var rows = immediateTableChildOnly(this.tableRef.querySelectorAll('tbody tr'), this.tableRef);
         if (rows && rows.length > 0) {
           if (activeRow === undefined) {
             rows[0].classList.add(ACTIVE_CLASS);
@@ -318,7 +337,7 @@ var Table = function (_Component) {
         event.preventDefault();
         var activeRow = this.state.activeRow;
 
-        var rows = this.tableRef.querySelectorAll('tbody tr');
+        var rows = immediateTableChildOnly(this.tableRef.querySelectorAll('tbody tr'), this.tableRef);
         if (rows && rows.length > 0) {
           if (activeRow === undefined) {
             rows[0].classList.add(ACTIVE_CLASS);
@@ -363,7 +382,7 @@ var Table = function (_Component) {
       var intl = this.context.intl;
 
       if (this.tableRef.contains(document.activeElement) && activeRow !== undefined) {
-        var rows = this.tableRef.querySelectorAll('tbody tr');
+        var rows = immediateTableChildOnly(this.tableRef.querySelectorAll('tbody tr'), this.tableRef);
         this._fireClick(rows[activeRow], event.shiftKey);
         rows[activeRow].classList.remove(ACTIVE_CLASS);
         var label = rows[activeRow].innerText;
@@ -404,18 +423,18 @@ var Table = function (_Component) {
       // IMPORTANT: non-text header cells, such as icon, are rendered as empty
       // headers.
       if (this.tableRef) {
-        var headerCells = this.tableRef.querySelectorAll('thead th');
+        var headerCells = immediateTableChildOnly(this.tableRef.querySelectorAll('thead th'), this.tableRef);
         var totalHeaderCells = getTotalCellCount(headerCells);
         if (headerCells.length > 0) {
           var increments = [];
-          [].forEach.call(headerCells, function (cell) {
+          headerCells.forEach(function (cell) {
             var colspan = cell.getAttribute('colspan');
             increments.push(colspan ? parseInt(colspan) : 1);
           });
 
-          var rows = this.tableRef.querySelectorAll('tbody tr');
+          var rows = immediateTableChildOnly(this.tableRef.querySelectorAll('tbody tr'), this.tableRef);
 
-          [].forEach.call(rows, function (row) {
+          rows.forEach(function (row) {
             var incrementCount = 0;
             var headerIndex = 0;
 
@@ -465,10 +484,10 @@ var Table = function (_Component) {
     value: function _buildMirror() {
       var tableElement = this.tableRef;
       if (tableElement) {
-        var cells = tableElement.querySelectorAll('thead tr th');
+        var cells = immediateTableChildOnly(tableElement.querySelectorAll('thead tr th'), tableElement);
         var mirrorElement = this.mirrorRef;
         if (mirrorElement) {
-          var mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
+          var mirrorRow = immediateTableChildOnly(mirrorElement.querySelectorAll('thead tr'), mirrorElement)[0];
           while (mirrorRow.hasChildNodes()) {
             mirrorRow.removeChild(mirrorRow.lastChild);
           }
@@ -482,10 +501,10 @@ var Table = function (_Component) {
     key: '_alignMirror',
     value: function _alignMirror() {
       var mirrorElement = this.mirrorRef;
-      var mirrorCells = mirrorElement.querySelectorAll('thead tr th');
+      var mirrorCells = immediateTableChildOnly(mirrorElement.querySelectorAll('thead tr th'), mirrorElement);
       if (this.mirrorRef && mirrorCells.length > 0) {
         var tableElement = this.tableRef;
-        var cells = tableElement.querySelectorAll('thead tr th');
+        var cells = immediateTableChildOnly(tableElement.querySelectorAll('thead tr th'), tableElement);
 
         var rect = tableElement.getBoundingClientRect();
         mirrorElement.style.width = '' + Math.floor(rect.right - rect.left) + 'px';
@@ -590,7 +609,7 @@ var Table = function (_Component) {
           },
           onBlur: function onBlur(event) {
             if (activeRow) {
-              var rows = _this4.tableRef.querySelectorAll('tbody tr');
+              var rows = immediateTableChildOnly(_this4.tableRef.querySelectorAll('tbody tr'), _this4.tableRef);
               rows[activeRow].classList.remove(ACTIVE_CLASS);
             }
             _this4.setState({ focus: false, activeRow: undefined });
