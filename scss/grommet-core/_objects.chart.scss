@@ -561,6 +561,7 @@ $range-control-colored-background-color: rgba(#000, 0.5);
   padding: quarter($inuit-base-spacing-unit) 0;
   height: round($inuit-base-spacing-unit * 1.5);
   cursor: col-resize;
+  outline: none;
 
   #{$dark-background-context} {
     background-color: $range-control-colored-background-color;
@@ -611,6 +612,12 @@ $range-control-colored-background-color: rgba(#000, 0.5);
   left: -($inuit-base-spacing-unit + 2px); // account for border
 }
 
+.#{$grommet-namespace}chart-range__start--focus,
+.#{$grommet-namespace}chart-range__end--focus {
+  border-color: $focus-border-color;
+  box-shadow: 0 0 1px 1px $focus-border-color;
+}
+
 .#{$grommet-namespace}chart-range--vertical {
   flex-direction: column;
 
@@ -634,6 +641,8 @@ $range-control-colored-background-color: rgba(#000, 0.5);
 
   .#{$grommet-namespace}chart-range__start,
   .#{$grommet-namespace}chart-range__end {
+    top: auto;
+    transform: none;
     padding: 0 quarter($inuit-base-spacing-unit);
     height: $inuit-base-spacing-unit + 2px;
     // width: round($inuit-base-spacing-unit * 1.5);

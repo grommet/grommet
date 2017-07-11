@@ -20,9 +20,17 @@ var _classnames2 = require('classnames');
 
 var _classnames3 = _interopRequireDefault(_classnames2);
 
+var _Intl = require('../../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
 var _CSSClassnames = require('../../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
+var _KeyboardAccelerators = require('../../utils/KeyboardAccelerators');
+
+var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
 
 var _Drag = require('../icons/base/Drag');
 
@@ -57,44 +65,46 @@ var Range = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (Range.__proto__ || Object.getPrototypeOf(Range)).call(this, props, context));
 
-    _this._onMouseMove = _this._onMouseMove.bind(_this);
-    _this._onMouseUp = _this._onMouseUp.bind(_this);
-    _this.state = {};
+    _this._onRangeMove = _this._onRangeMove.bind(_this);
+    _this._onDragFinish = _this._onDragFinish.bind(_this);
+    _this._onFocus = _this._onFocus.bind(_this);
+    _this._onBlur = _this._onBlur.bind(_this);
+
+    _this.state = {
+      mouseActive: false,
+      focus: false
+    };
     return _this;
   }
 
   _createClass(Range, [{
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      var mouseDownSource = this.state.mouseDownSource;
-
-      if (mouseDownSource) {
-        window.removeEventListener('mouseup', this._onMouseUp);
-      }
-    }
-  }, {
-    key: '_mouseIndex',
-    value: function _mouseIndex(event, source) {
+    key: '_getRangePosition',
+    value: function _getRangePosition(event, source) {
       var _props = this.props,
           active = _props.active,
           count = _props.count,
           vertical = _props.vertical;
-      var mouseDownIndex = this.state.mouseDownIndex;
+      var dragStartIndex = this.state.dragStartIndex;
 
       var rect = this._rangeRef.getBoundingClientRect();
-      var value = vertical ? event.clientY - rect.top : event.clientX - rect.left;
+      // handle touch events
+      var position = event;
+      if (event.changedTouches && event.changedTouches.length > 0) {
+        position = event.changedTouches[0];
+      }
+      var value = vertical ? position.clientY - rect.top : position.clientX - rect.left;
       // convert value to index
       var total = vertical ? rect.height : rect.width;
       var index = Math.round(value / total * (count - 1));
 
       // constrain index to keep it within range as needed
-      if ('active' === source && mouseDownIndex >= 0) {
-        if (index > mouseDownIndex) {
+      if ('active' === source && dragStartIndex >= 0) {
+        if (index > dragStartIndex) {
           // moving right/down
-          index = Math.min(mouseDownIndex + count - 1 - active.end, index);
-        } else if (index < mouseDownIndex) {
+          index = Math.min(dragStartIndex + count - 1 - active.end, index);
+        } else if (index < dragStartIndex) {
           // moving up/left
-          index = Math.max(mouseDownIndex - active.start, index);
+          index = Math.max(dragStartIndex - active.start, index);
         }
       } else if ('start' === source) {
         index = Math.min(active.end, index);
@@ -105,131 +115,214 @@ var Range = function (_Component) {
       return index;
     }
   }, {
-    key: '_mouseDown',
-    value: function _mouseDown(source) {
+    key: '_onDragStart',
+    value: function _onDragStart(source) {
       var _this2 = this;
 
       return function (event) {
         event.stopPropagation(); // so start and end don't trigger range
-        var index = _this2._mouseIndex(event, source);
+        var index = _this2._getRangePosition(event, source);
         _this2.setState({
-          mouseDownSource: source,
-          mouseDownIndex: index
+          dragSource: source,
+          dragStartIndex: index,
+          mouseActive: true
         });
-        window.addEventListener('mouseup', _this2._onMouseUp);
       };
     }
   }, {
-    key: '_onMouseUp',
-    value: function _onMouseUp(event) {
-      window.removeEventListener('mouseup', this._onMouseUp);
+    key: '_onDragFinish',
+    value: function _onDragFinish(event) {
       var _props2 = this.props,
           active = _props2.active,
           onActive = _props2.onActive,
           count = _props2.count;
       var _state = this.state,
-          mouseDownSource = _state.mouseDownSource,
-          mouseDownIndex = _state.mouseDownIndex,
+          dragSource = _state.dragSource,
+          dragStartIndex = _state.dragStartIndex,
           moved = _state.moved;
 
-      var mouseUpIndex = this._mouseIndex(event, mouseDownSource);
+      if (moved) {
+        var dragEndIndex = this._getRangePosition(event, dragSource);
 
-      if (mouseUpIndex < 0) {
-        mouseUpIndex = 0;
-      } else if (mouseUpIndex > count) {
-        mouseUpIndex = count;
+        if (dragEndIndex < 0) {
+          dragEndIndex = 0;
+        } else if (dragEndIndex > count) {
+          dragEndIndex = count;
+        }
+
+        this.setState({
+          dragSource: false,
+          dragStartIndex: undefined,
+          dragEndIndex: undefined,
+          mouseActive: false,
+          moved: false
+        });
+
+        if (onActive) {
+          var nextActive = void 0;
+
+          if ('range' === dragSource) {
+            nextActive = {
+              start: Math.min(dragStartIndex, dragEndIndex),
+              end: Math.max(dragStartIndex, dragEndIndex)
+            };
+          } else if ('active' === dragSource) {
+            var delta = dragEndIndex - dragStartIndex;
+            nextActive = {
+              start: active.start + delta,
+              end: active.end + delta
+            };
+          } else if ('start' === dragSource) {
+            nextActive = {
+              start: Math.min(dragEndIndex, active.end),
+              end: active.end
+            };
+          } else if ('end' === dragSource) {
+            nextActive = {
+              start: active.start,
+              end: Math.max(dragEndIndex, active.start)
+            };
+          }
+
+          onActive(nextActive);
+        }
       }
+    }
+  }, {
+    key: '_onRangeMove',
+    value: function _onRangeMove(event) {
+      var _state2 = this.state,
+          dragSource = _state2.dragSource,
+          dragEndIndex = _state2.dragEndIndex;
 
-      this.setState({
-        mouseDownSource: false,
-        mouseDownIndex: undefined,
-        mouseMoveIndex: undefined,
-        moved: false
-      });
+      var index = this._getRangePosition(event, dragSource);
+      if (index !== dragEndIndex) {
+        this.setState({ dragEndIndex: index, moved: true });
+      }
+    }
+  }, {
+    key: '_onRangeReduce',
+    value: function _onRangeReduce(source) {
+      var _props3 = this.props,
+          active = _props3.active,
+          onActive = _props3.onActive;
 
       if (onActive) {
         var nextActive = void 0;
-
-        if ('range' === mouseDownSource) {
-          if (moved) {
-            nextActive = {
-              start: Math.min(mouseDownIndex, mouseUpIndex),
-              end: Math.max(mouseDownIndex, mouseUpIndex)
-            };
-          }
-        } else if ('active' === mouseDownSource) {
-          var delta = mouseUpIndex - mouseDownIndex;
+        if ('start' === source) {
           nextActive = {
-            start: active.start + delta,
-            end: active.end + delta
-          };
-        } else if ('start' === mouseDownSource) {
-          nextActive = {
-            start: Math.min(mouseUpIndex, active.end),
+            start: Math.min(active.start - 1, active.end),
             end: active.end
           };
-        } else if ('end' === mouseDownSource) {
+        } else {
           nextActive = {
             start: active.start,
-            end: Math.max(mouseUpIndex, active.start)
+            end: Math.max(active.end - 1, active.start)
           };
         }
-
         onActive(nextActive);
       }
     }
   }, {
-    key: '_onMouseMove',
-    value: function _onMouseMove(event) {
-      var _state2 = this.state,
-          mouseDownSource = _state2.mouseDownSource,
-          mouseMoveIndex = _state2.mouseMoveIndex;
+    key: '_onRangeIncrease',
+    value: function _onRangeIncrease(source) {
+      var _props4 = this.props,
+          active = _props4.active,
+          onActive = _props4.onActive;
 
-      var index = this._mouseIndex(event, mouseDownSource);
-      if (index !== mouseMoveIndex) {
-        this.setState({ mouseMoveIndex: index, moved: true });
+      if (onActive) {
+        var nextActive = void 0;
+        if ('start' === source) {
+          nextActive = {
+            start: Math.min(active.start + 1, active.end),
+            end: active.end
+          };
+        } else {
+          nextActive = {
+            start: active.start,
+            end: Math.max(active.end + 1, active.start)
+          };
+        }
+        onActive(nextActive);
+      }
+    }
+  }, {
+    key: '_onFocus',
+    value: function _onFocus(source) {
+      var _this3 = this;
+
+      return function (event) {
+        var onFocus = _this3.props.onFocus;
+        var mouseActive = _this3.state.mouseActive;
+
+        if (mouseActive === false) {
+          _this3.setState({ focus: true });
+        }
+        _this3._keyboardHandlers = {
+          left: _this3._onRangeReduce.bind(_this3, source),
+          up: _this3._onRangeReduce.bind(_this3, source),
+          right: _this3._onRangeIncrease.bind(_this3, source),
+          down: _this3._onRangeIncrease.bind(_this3, source)
+        };
+        _KeyboardAccelerators2.default.startListeningToKeyboard(_this3, _this3._keyboardHandlers);
+        if (onFocus) {
+          onFocus(event);
+        }
+      };
+    }
+  }, {
+    key: '_onBlur',
+    value: function _onBlur(event) {
+      var onBlur = this.props.onBlur;
+
+      _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
+      this.setState({ focus: false });
+      if (onBlur) {
+        onBlur(event);
       }
     }
   }, {
     key: 'render',
     value: function render() {
       var _classnames,
-          _this3 = this;
+          _this4 = this;
 
-      var _props3 = this.props,
-          active = _props3.active,
-          className = _props3.className,
-          count = _props3.count,
-          onActive = _props3.onActive,
-          vertical = _props3.vertical,
-          props = _objectWithoutProperties(_props3, ['active', 'className', 'count', 'onActive', 'vertical']);
+      var _props5 = this.props,
+          active = _props5.active,
+          className = _props5.className,
+          count = _props5.count,
+          onActive = _props5.onActive,
+          vertical = _props5.vertical,
+          props = _objectWithoutProperties(_props5, ['active', 'className', 'count', 'onActive', 'vertical']);
 
       var _state3 = this.state,
-          mouseDownSource = _state3.mouseDownSource,
-          mouseDownIndex = _state3.mouseDownIndex,
-          mouseMoveIndex = _state3.mouseMoveIndex;
+          focus = _state3.focus,
+          dragSource = _state3.dragSource,
+          dragStartIndex = _state3.dragStartIndex,
+          dragEndIndex = _state3.dragEndIndex;
+      var intl = this.context.intl;
 
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--vertical', vertical), _defineProperty(_classnames, CLASS_ROOT + '--dragging', mouseDownSource), _classnames), className);
+      var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--vertical', vertical), _defineProperty(_classnames, CLASS_ROOT + '--dragging', dragSource), _classnames), className);
 
       var layers = void 0;
-      if (active || mouseDownSource) {
+      if (active || dragSource) {
 
         var start = void 0,
             end = void 0;
-        if ('range' === mouseDownSource) {
-          start = Math.min(mouseDownIndex, mouseMoveIndex);
-          end = Math.max(mouseDownIndex, mouseMoveIndex);
-        } else if ('active' === mouseDownSource && mouseMoveIndex >= 0) {
-          var delta = mouseMoveIndex - mouseDownIndex;
+        if ('range' === dragSource) {
+          start = Math.min(dragStartIndex, dragEndIndex);
+          end = Math.max(dragStartIndex, dragEndIndex);
+        } else if ('active' === dragSource && dragEndIndex >= 0) {
+          var delta = dragEndIndex - dragStartIndex;
           start = active.start + delta;
           end = active.end + delta;
-        } else if ('start' === mouseDownSource && mouseMoveIndex >= 0) {
-          start = Math.min(mouseMoveIndex, active.end);
+        } else if ('start' === dragSource && dragEndIndex >= 0) {
+          start = Math.min(dragEndIndex, active.end);
           end = active.end;
-        } else if ('end' === mouseDownSource && mouseMoveIndex >= 0) {
+        } else if ('end' === dragSource && dragEndIndex >= 0) {
           start = active.start;
-          end = Math.max(mouseMoveIndex, active.start);
+          end = Math.max(dragEndIndex, active.start);
         } else {
           start = active.start;
           end = active.end;
@@ -247,6 +340,9 @@ var Range = function (_Component) {
 
         // We need a class when on the edge so we can keep the control visible.
         var startClasses = [CLASS_ROOT + '__start'];
+        if (focus && this.rangeStartRef.contains(document.activeElement)) {
+          startClasses.push(CLASS_ROOT + '__start--focus');
+        }
         if (beforePercent < 5) {
           startClasses.push(CLASS_ROOT + '__start--edge');
         }
@@ -255,9 +351,16 @@ var Range = function (_Component) {
           beforeClasses.push(CLASS_ROOT + '__before--end');
         }
         var endClasses = [CLASS_ROOT + '__end'];
+        if (focus && this.rangeEndRef.contains(document.activeElement)) {
+          endClasses.push(CLASS_ROOT + '__end--focus');
+        }
         if (afterPercent < 5) {
           endClasses.push(CLASS_ROOT + '__end--edge');
         }
+
+        var navigationHelp = _Intl2.default.getMessage(intl, 'Navigation Help');
+        var rangeStartMessage = _Intl2.default.getMessage(intl, 'Range Start');
+        var rangeEndMessage = _Intl2.default.getMessage(intl, 'Range End');
 
         layers = [_react2.default.createElement(
           'div',
@@ -265,36 +368,75 @@ var Range = function (_Component) {
             style: { flexBasis: beforeBasis } },
           _react2.default.createElement(
             'div',
-            { className: startClasses.join(' '),
-              onMouseDown: onActive ? this._mouseDown('start') : undefined },
+            {
+              ref: function ref(_ref) {
+                return _this4.rangeStartRef = _ref;
+              },
+              className: startClasses.join(' '),
+              tabIndex: '0',
+              role: 'slider',
+              'aria-label': rangeStartMessage + ' (' + navigationHelp + ')',
+              'aria-valuemin': '0',
+              'aria-valuemax': count,
+              'aria-valuenow': start,
+              'aria-orientation': vertical ? 'vertical' : 'horizontal',
+              onMouseDown: this._onDragStart('start'),
+              onTouchStart: this._onDragStart('start'),
+              onMouseUp: this._onDragFinish,
+              onTouchEnd: this._onDragFinish,
+              onFocus: this._onFocus('start'),
+              onBlur: this._onBlur },
             _react2.default.createElement(_Drag2.default, null)
           )
         ), _react2.default.createElement('div', _extends({ key: 'active' }, props, { className: CLASS_ROOT + '__active',
-          onMouseDown: this._mouseDown('active') })), _react2.default.createElement(
+          onMouseDown: this._onDragStart('active'),
+          onTouchStart: this._onDragStart('active'),
+          onMouseUp: this._onDragFinish,
+          onTouchEnd: this._onDragFinish })), _react2.default.createElement(
           'div',
           { key: 'after', className: CLASS_ROOT + '__after',
             style: { flexBasis: afterBasis } },
           _react2.default.createElement(
             'div',
-            { className: endClasses.join(' '),
-              onMouseDown: onActive ? this._mouseDown('end') : undefined },
+            {
+              ref: function ref(_ref2) {
+                return _this4.rangeEndRef = _ref2;
+              },
+              className: endClasses.join(' '),
+              tabIndex: '0',
+              'aria-label': rangeEndMessage + ' (' + navigationHelp + ')',
+              'aria-valuemin': '0',
+              'aria-valuemax': count,
+              'aria-valuenow': end,
+              'aria-orientation': vertical ? 'vertical' : 'horizontal',
+              role: 'slider',
+              onMouseDown: this._onDragStart('end'),
+              onTouchStart: this._onDragStart('end'),
+              onMouseUp: this._onDragFinish,
+              onTouchEnd: this._onDragFinish,
+              onFocus: this._onFocus('end'),
+              onBlur: this._onBlur },
             _react2.default.createElement(_Drag2.default, null)
           )
         )];
       }
 
-      var onMouseMove = void 0;
-      if (onActive && mouseDownSource) {
-        onMouseMove = this._onMouseMove;
+      var onRangeMove = void 0;
+      if (onActive && dragSource) {
+        onRangeMove = this._onRangeMove;
       }
 
       return _react2.default.createElement(
         'div',
-        { ref: function ref(_ref) {
-            return _this3._rangeRef = _ref;
+        { ref: function ref(_ref3) {
+            return _this4._rangeRef = _ref3;
           }, className: classes,
-          onMouseMove: onMouseMove,
-          onMouseDown: onActive ? this._mouseDown('range') : undefined },
+          onMouseMove: onRangeMove,
+          onTouchMove: onRangeMove,
+          onMouseDown: this._onDragStart('range'),
+          onTouchStart: this._onDragStart('range'),
+          onMouseUp: this._onDragFinish,
+          onTouchEnd: this._onDragFinish },
         layers
       );
     }
@@ -315,5 +457,9 @@ Range.propTypes = {
   count: _propTypes2.default.number.isRequired,
   onActive: _propTypes2.default.func, // (start, end)
   vertical: _propTypes2.default.bool
+};
+
+Range.contextTypes = {
+  intl: _propTypes2.default.object
 };
 module.exports = exports['default'];

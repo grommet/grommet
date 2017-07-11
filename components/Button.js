@@ -70,7 +70,7 @@ var Button = function (_Component) {
 
     _this._onClick = _this._onClick.bind(_this);
     _this._onMouseDown = _this._onMouseDown.bind(_this);
-    _this._onMouseUp = _this._onMouseDown.bind(_this);
+    _this._onMouseUp = _this._onMouseUp.bind(_this);
     _this._onFocus = _this._onFocus.bind(_this);
     _this._onBlur = _this._onBlur.bind(_this);
     _this.state = {

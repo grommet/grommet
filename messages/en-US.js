@@ -96,6 +96,8 @@ exports.default = _extends({
   'Previous Slide': 'Previous Slide',
   'Previous Tiles': 'Previous Tiles',
   'Remember me': 'Remember me',
+  'Range Start': 'Range Start',
+  'Range End': 'Range End',
   Resource: 'Resource',
   Running: 'Running',
   Search: 'Search',
