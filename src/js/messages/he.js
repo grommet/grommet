@@ -100,7 +100,7 @@ export default {
   }`,
   second: 'שנייה',
   'Select Icon': 'פתח בחירה',
-  Selected: 'Selected',
+  Selected: 'נבחר',
   'Selected Multiple': `{count, plural,
       =0 {ריק}
       one {# ערך}
