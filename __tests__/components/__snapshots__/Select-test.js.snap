@@ -9,6 +9,7 @@ exports[`Select accepts initial value 1`] = `
     className="grommetux-input grommetux-select__input"
     placeholder={undefined}
     readOnly={true}
+    type="text"
     value="one"
   />
   <button
@@ -56,6 +57,7 @@ exports[`Select has correct default options 1`] = `
     className="grommetux-input grommetux-select__input"
     placeholder={undefined}
     readOnly={true}
+    type="text"
     value=""
   />
   <button
