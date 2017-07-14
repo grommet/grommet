@@ -497,7 +497,10 @@ var Select = function (_Component) {
             content = _react2.default.createElement(Type, { key: itemId, id: itemId, label: content, checked: selected,
               onChange: _this4._onClickOption.bind(_this4, option) });
           } else {
-            itemOnClick = _this4._onClickOption.bind(_this4, option);
+            itemOnClick = function itemOnClick(e) {
+              e.stopPropagation();
+              _this4._onClickOption.bind(_this4, option)();
+            };
           }
 
           return _react2.default.createElement(
@@ -544,18 +547,23 @@ var Select = function (_Component) {
       if (inline) {
         return this._renderOptions(classes, restProps);
       } else {
+        var renderedValue = this._renderValue(value);
+        var shouldRenderElement = _react2.default.isValidElement(renderedValue);
+
         return _react2.default.createElement(
           'div',
           { ref: function ref(_ref3) {
               return _this5.componentRef = _ref3;
             }, className: classes,
             onClick: this._onAddDrop },
+          shouldRenderElement && renderedValue,
           _react2.default.createElement('input', _extends({}, restProps, { ref: function ref(_ref2) {
               return _this5.inputRef = _ref2;
             },
+            type: shouldRenderElement ? 'hidden' : 'text',
             className: INPUT + ' ' + CLASS_ROOT + '__input',
             placeholder: placeHolder, readOnly: true,
-            value: this._renderValue(value) || '' })),
+            value: renderedValue || '' })),
           _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control',
             a11yTitle: _Intl2.default.getMessage(intl, 'Select Icon'),
             icon: _react2.default.createElement(_CaretDown2.default, null),
