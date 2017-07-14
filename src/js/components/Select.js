@@ -392,7 +392,10 @@ export default class Select extends Component {
               onChange={this._onClickOption.bind(this, option)} />
           );
         } else {
-          itemOnClick = this._onClickOption.bind(this, option);
+          itemOnClick = (e) => {
+            e.stopPropagation();
+            this._onClickOption.bind(this, option)();
+          };
         }
 
         return (
@@ -435,13 +438,19 @@ export default class Select extends Component {
     if (inline) {
       return this._renderOptions(classes, restProps);
     } else {
+
+      const renderedValue = this._renderValue(value);
+      const shouldRenderElement  = React.isValidElement(renderedValue);
+
       return (
         <div ref={ref => this.componentRef = ref} className={classes}
           onClick={this._onAddDrop}>
+          { shouldRenderElement && renderedValue }
           <input {...restProps} ref={ref => this.inputRef = ref}
+            type={shouldRenderElement ? 'hidden' : 'text'}
             className={`${INPUT} ${CLASS_ROOT}__input`}
             placeholder={placeHolder} readOnly={true}
-            value={this._renderValue(value) || ''} />
+            value={renderedValue || ''} />
           <Button className={`${CLASS_ROOT}__control`}
             a11yTitle={Intl.getMessage(intl, 'Select Icon')}
             icon={<CaretDownIcon />}
