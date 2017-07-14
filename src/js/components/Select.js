@@ -438,14 +438,13 @@ export default class Select extends Component {
     if (inline) {
       return this._renderOptions(classes, restProps);
     } else {
-
       const renderedValue = this._renderValue(value);
       const shouldRenderElement  = React.isValidElement(renderedValue);
 
       return (
         <div ref={ref => this.componentRef = ref} className={classes}
           onClick={this._onAddDrop}>
-          { shouldRenderElement && renderedValue }
+          {shouldRenderElement && renderedValue}
           <input {...restProps} ref={ref => this.inputRef = ref}
             type={shouldRenderElement ? 'hidden' : 'text'}
             className={`${INPUT} ${CLASS_ROOT}__input`}
