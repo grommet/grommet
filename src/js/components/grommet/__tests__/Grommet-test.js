@@ -4,7 +4,7 @@ import 'jest-styled-components';
 
 import { hpe as hpeTheme } from '../../../theme';
 
-import Grommet from '../';
+import { Grommet } from '../';
 
 test('Grommet renders', () => {
   const component = renderer.create(

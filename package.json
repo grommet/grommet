@@ -21,7 +21,7 @@
     "node": ">= 4.4.0"
   },
   "scripts": {
-    "test": "grommet check",
+    "test": "cross-env BABEL_ENV=default grommet check",
     "dist": "cross-env BABEL_ENV=default grommet pack && cross-env BABEL_ENV=es6 babel ./src/js/components --ignore '__tests__' --out-dir ./dist/components"
   },
   "dependencies": {

@@ -1,7 +1,0 @@
-languages:
-  JavaScript: true
-exclude_paths:
-  - "src/js/utils/AlphaNum.js"
-  - "src/js/utils/Cookies.js"
-  - "src/js/messages/*.js"
-  - "src/lib/*.js"
