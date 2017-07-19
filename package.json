@@ -22,7 +22,7 @@
   },
   "scripts": {
     "test": "cross-env BABEL_ENV=default grommet check",
-    "dist": "cross-env BABEL_ENV=default grommet pack && cross-env BABEL_ENV=es6 babel ./src/js/components --ignore '__tests__' --out-dir ./dist/components"
+    "dist": "cross-env BABEL_ENV=default grommet pack && cross-env BABEL_ENV=es6 babel ./src/js/ --ignore '__tests__' --out-dir ./dist"
   },
   "dependencies": {
     "deep-assign": "^2.0.0",
