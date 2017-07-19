@@ -93,10 +93,10 @@ export default {
   Resource: 'משאב',
   Running: 'הרצה',
   Search: 'חפש',
-  'Match Results': `There {count, plural,
-      =0 {is no match}
-      one {is # match}
-      other {are # matches}
+  'Match Results': `יש {count, plural,
+      =0 {ריק}
+      one {תוצאה אחת}
+      other {# תוצאות}
   }`,
   second: 'שנייה',
   'Select Icon': 'פתח בחירה',
