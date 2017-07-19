@@ -1,9 +1,11 @@
 {
-  "presets": [ "es2015", "react" ],
-  "plugins": [
-    "add-module-exports",
-    "transform-object-rest-spread",
-    "transform-react-es6-displayname",
-    "transform-object-assign"
-  ]
+  "plugins": ["styled-components"],
+  "env": {
+    "es6": {
+      "presets": [ ["es2015", { "modules": false }], "stage-1", "react" ]
+    },
+    "default": {
+      "presets": [ "es2015", "stage-1", "react" ]
+    }
+  }
 }

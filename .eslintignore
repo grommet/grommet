@@ -1,7 +1,3 @@
-src/js/utils/AlphaNum.js
-src/js/utils/Cookies.js
-src/js/components/icons/base/**
-src/js/index.js
-src/js/index-icons.js
-src/js/messages/**
-src/js/mixins/**
+node_modules/**
+dist/**
+coverage/**
