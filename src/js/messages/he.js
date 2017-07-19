@@ -50,8 +50,8 @@ export default {
   Grommet: 'Grommet',
   HotSpotsLabel: 'נקודות חמות: השתמש במקשי החצים לאינטרקציה',
   'GraphValues': (
-    'Graph has {count} items. Highest is {highest}' +
-    ' and smallest is {smallest}'
+    'הגרף מכיל {count} ערכים, הערך הגבוה הינו {highest}' +
+    ' והנמוך הינו {smallest}'
   ),
   hour: 'שעה',
   'Grommet Logo': 'Grommet Logo',
