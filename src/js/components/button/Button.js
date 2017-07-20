@@ -94,6 +94,8 @@ class Button extends Component {
   }
 }
 
-doc(Button);
+if (process.env.NODE_ENV !== 'production') {
+  doc(Button);
+}
 
 export default withFocus(Button);

@@ -43,6 +43,7 @@ const plugins = [
 ];
 
 export default {
+  devtool: 'hidden-source-map',
   entry: './src/js/index.js',
   output: {
     path: path.resolve('./dist'),
