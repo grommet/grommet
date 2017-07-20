@@ -1,11 +1,8 @@
 {
-  "plugins": ["styled-components"],
-  "env": {
-    "es6": {
-      "presets": [ ["es2015", { "modules": false }], "stage-1", "react" ]
-    },
-    "default": {
-      "presets": [ "es2015", "stage-1", "react" ]
-    }
-  }
+  "presets": [
+    "./tools/grommet-babel-preset-es2015",
+    "stage-1",
+    "react"
+  ],
+  "plugins": ["styled-components"]
 }

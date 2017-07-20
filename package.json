@@ -1,7 +1,9 @@
 {
   "name": "grommet",
   "version": "2.0.0",
-  "main": "src/js/index.js",
+  "main": "index.js",
+  "module": "es/index.js",
+  "jsnext:main": "es/index.js",
   "description": "focus on the essential experience",
   "authors": [
     "Alan Souza",
@@ -21,8 +23,8 @@
     "node": ">= 4.4.0"
   },
   "scripts": {
-    "test": "cross-env BABEL_ENV=default grommet check",
-    "dist": "cross-env BABEL_ENV=default grommet pack && cross-env BABEL_ENV=es6 babel ./src/js/ --ignore '__tests__' --out-dir ./dist"
+    "test": "grommet check",
+    "dist": "grommet pack && babel ./src/js/ --ignore '__tests__' --out-dir ./dist && cross-env BABEL_ENV=es babel ./src/js/ --ignore '__tests__' --out-dir ./dist/es"
   },
   "dependencies": {
     "deep-assign": "^2.0.0",
