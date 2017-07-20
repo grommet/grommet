@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { hpe as hpeTheme } from '../../../theme';
+import { hpe as hpeTheme } from '../../../themes';
 
 import { Grommet } from '../';
 
