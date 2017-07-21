@@ -4,7 +4,7 @@ import deepAssign from 'deep-assign';
 
 import StyledGrommet from './StyledGrommet';
 
-import baseTheme from '../../themes';
+import baseTheme from '../../themes/vanilla';
 
 import doc from './doc';
 
