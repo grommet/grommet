@@ -1,477 +1,595 @@
-// (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+'use strict';
 
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { findDOMNode } from 'react-dom';
-import classnames from 'classnames';
-import CSSClassnames from '../utils/CSSClassnames';
-import Props from '../utils/Props';
-import KeyboardAccelerators from '../utils/KeyboardAccelerators';
-import Drop from '../utils/Drop';
-import { findAncestor } from '../utils/DOM';
-import Button from './Button';
-import CheckBox from './CheckBox';
-import RadioButton from './RadioButton';
-import Search from './Search';
-import CaretDownIcon from './icons/base/CaretDown';
-import Intl from '../utils/Intl';
-import { announce } from '../utils/Announcer';
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-const CLASS_ROOT = CSSClassnames.SELECT;
-const INPUT = CSSClassnames.INPUT;
-const FORM_FIELD = CSSClassnames.FORM_FIELD;
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-export default class Select extends Component {
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-  constructor(props, context) {
-    super(props, context);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-    this._onAddDrop = this._onAddDrop.bind(this);
-    this._onRemoveDrop = this._onRemoveDrop.bind(this);
-    this._onForceClose = this._onForceClose.bind(this);
-    this._onSearchChange = this._onSearchChange.bind(this);
-    this._onNextOption = this._onNextOption.bind(this);
-    this._onPreviousOption = this._onPreviousOption.bind(this);
-    this._onEnter = this._onEnter.bind(this);
-    this._stopPropagation = this._stopPropagation.bind(this);
-    this._onInputKeyDown = this._onInputKeyDown.bind(this);
-    this._announceOptions = this._announceOptions.bind(this);
+var _react = require('react');
 
-    this.state = {
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactDom = require('react-dom');
+
+var _classnames3 = require('classnames');
+
+var _classnames4 = _interopRequireDefault(_classnames3);
+
+var _CSSClassnames = require('../utils/CSSClassnames');
+
+var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
+
+var _Props = require('../utils/Props');
+
+var _Props2 = _interopRequireDefault(_Props);
+
+var _KeyboardAccelerators = require('../utils/KeyboardAccelerators');
+
+var _KeyboardAccelerators2 = _interopRequireDefault(_KeyboardAccelerators);
+
+var _Drop = require('../utils/Drop');
+
+var _Drop2 = _interopRequireDefault(_Drop);
+
+var _DOM = require('../utils/DOM');
+
+var _Button = require('./Button');
+
+var _Button2 = _interopRequireDefault(_Button);
+
+var _CheckBox = require('./CheckBox');
+
+var _CheckBox2 = _interopRequireDefault(_CheckBox);
+
+var _RadioButton = require('./RadioButton');
+
+var _RadioButton2 = _interopRequireDefault(_RadioButton);
+
+var _Search = require('./Search');
+
+var _Search2 = _interopRequireDefault(_Search);
+
+var _CaretDown = require('./icons/base/CaretDown');
+
+var _CaretDown2 = _interopRequireDefault(_CaretDown);
+
+var _Intl = require('../utils/Intl');
+
+var _Intl2 = _interopRequireDefault(_Intl);
+
+var _Announcer = require('../utils/Announcer');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // (C) Copyright 2014 Hewlett Packard Enterprise Development LP
+
+var CLASS_ROOT = _CSSClassnames2.default.SELECT;
+var INPUT = _CSSClassnames2.default.INPUT;
+var FORM_FIELD = _CSSClassnames2.default.FORM_FIELD;
+
+var Select = function (_Component) {
+  _inherits(Select, _Component);
+
+  function Select(props, context) {
+    _classCallCheck(this, Select);
+
+    var _this = _possibleConstructorReturn(this, (Select.__proto__ || Object.getPrototypeOf(Select)).call(this, props, context));
+
+    _this._onAddDrop = _this._onAddDrop.bind(_this);
+    _this._onRemoveDrop = _this._onRemoveDrop.bind(_this);
+    _this._onForceClose = _this._onForceClose.bind(_this);
+    _this._onSearchChange = _this._onSearchChange.bind(_this);
+    _this._onNextOption = _this._onNextOption.bind(_this);
+    _this._onPreviousOption = _this._onPreviousOption.bind(_this);
+    _this._onEnter = _this._onEnter.bind(_this);
+    _this._stopPropagation = _this._stopPropagation.bind(_this);
+    _this._onInputKeyDown = _this._onInputKeyDown.bind(_this);
+    _this._announceOptions = _this._announceOptions.bind(_this);
+
+    _this.state = {
       announceChange: false,
       activeOptionIndex: -1,
       dropActive: false,
       searchText: '',
-      value: this._normalizeValue(props, {})
+      value: _this._normalizeValue(props, {})
     };
+    return _this;
   }
 
-  componentWillReceiveProps (nextProps) {
-    if (nextProps.hasOwnProperty('value')) {
-      this.setState({ value: this._normalizeValue(nextProps, this.state) });
-    }
-  }
-
-  componentDidUpdate (prevProps, prevState) {
-    const { inline, options } = this.props;
-    const { announceChange, dropActive } = this.state;
-    const { intl } = this.context;
-
-    // Set up keyboard listeners appropriate to the current state.
-    let activeKeyboardHandlers = {
-      up: this._onPreviousOption,
-      down: this._onNextOption,
-      enter: this._onEnter,
-      left: this._stopPropagation,
-      right: this._stopPropagation
-    };
-
-    if (! inline) {
-      activeKeyboardHandlers.esc = this._onForceClose;
-      activeKeyboardHandlers.tab = this._onForceClose;
-    }
-
-    // the order here is important, need to turn off keys before turning on
-    if (! dropActive && prevState.dropActive) {
-      document.removeEventListener('click', this._onRemoveDrop);
-      KeyboardAccelerators.stopListeningToKeyboard(this,
-        activeKeyboardHandlers);
-      if (this._drop) {
-        this._drop.remove();
-        this._drop = undefined;
+  _createClass(Select, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (nextProps.hasOwnProperty('value')) {
+        this.setState({ value: this._normalizeValue(nextProps, this.state) });
       }
     }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps, prevState) {
+      var _props = this.props,
+          inline = _props.inline,
+          options = _props.options;
+      var _state = this.state,
+          announceChange = _state.announceChange,
+          dropActive = _state.dropActive;
+      var intl = this.context.intl;
 
-    if ((inline && ! prevProps.inline) ||
-      (dropActive && ! prevState.dropActive)) {
+      // Set up keyboard listeners appropriate to the current state.
 
-      if (! inline) {
-        document.addEventListener('click', this._onRemoveDrop);
+      var activeKeyboardHandlers = {
+        up: this._onPreviousOption,
+        down: this._onNextOption,
+        enter: this._onEnter,
+        left: this._stopPropagation,
+        right: this._stopPropagation
+      };
+
+      if (!inline) {
+        activeKeyboardHandlers.esc = this._onForceClose;
+        activeKeyboardHandlers.tab = this._onForceClose;
       }
 
-      KeyboardAccelerators.startListeningToKeyboard(this,
-        activeKeyboardHandlers);
+      // the order here is important, need to turn off keys before turning on
+      if (!dropActive && prevState.dropActive) {
+        document.removeEventListener('click', this._onRemoveDrop);
+        _KeyboardAccelerators2.default.stopListeningToKeyboard(this, activeKeyboardHandlers);
+        if (this._drop) {
+          this._drop.remove();
+          this._drop = undefined;
+        }
+      }
 
-      if (! inline) {
-        // If this is inside a FormField, place the drop in reference to it.
-        const control =
-          findAncestor(this.componentRef, FORM_FIELD) || this.componentRef;
-        this._drop = new Drop(control,
-          this._renderOptions(`${CLASS_ROOT}__drop`), {
+      if (inline && !prevProps.inline || dropActive && !prevState.dropActive) {
+
+        if (!inline) {
+          document.addEventListener('click', this._onRemoveDrop);
+        }
+
+        _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
+
+        if (!inline) {
+          // If this is inside a FormField, place the drop in reference to it.
+          var control = (0, _DOM.findAncestor)(this.componentRef, FORM_FIELD) || this.componentRef;
+          this._drop = new _Drop2.default(control, this._renderOptions(CLASS_ROOT + '__drop'), {
             align: { top: 'bottom', left: 'left' },
             context: this.context,
             responsive: false // so suggestion changes don't re-align
           });
+        }
+
+        if (this._searchRef) {
+          this._searchRef.focus();
+          this._searchRef._inputRef.select();
+        }
+      } else if (dropActive && prevState.dropActive) {
+        this._drop.render(this._renderOptions(CLASS_ROOT + '__drop'));
       }
 
-      if (this._searchRef) {
-        this._searchRef.focus();
-        this._searchRef._inputRef.select();
-      }
-
-    } else if (dropActive && prevState.dropActive) {
-      this._drop.render(this._renderOptions(`${CLASS_ROOT}__drop`));
-    }
-
-    if (announceChange && options) {
-      const matchResultsMessage = Intl.getMessage(
-        intl, 'Match Results', {
+      if (announceChange && options) {
+        var matchResultsMessage = _Intl2.default.getMessage(intl, 'Match Results', {
           count: options.length
+        });
+        var navigationHelpMessage = '';
+        if (options.length) {
+          navigationHelpMessage = '(' + _Intl2.default.getMessage(intl, 'Navigation Help') + ')';
         }
-      );
-      let navigationHelpMessage = '';
-      if (options.length) {
-        navigationHelpMessage = `(${Intl.getMessage(intl, 'Navigation Help')})`;
-      }
-      announce(`${matchResultsMessage} ${navigationHelpMessage}`);
-      this.setState({ announceChange: false });
-    }
-  }
-
-  componentWillUnmount () {
-    document.removeEventListener('click', this._onRemoveDrop);
-    if (this._drop) {
-      this._drop.remove();
-    }
-  }
-
-  _normalizeValue (props, state) {
-    const { multiple, value } = props;
-    let normalizedValue = value;
-    if (multiple) {
-      if (value) {
-        if (! Array.isArray(value)) {
-          normalizedValue = [value];
-        }
-      } else {
-        normalizedValue = [];
+        (0, _Announcer.announce)(matchResultsMessage + ' ' + navigationHelpMessage);
+        this.setState({ announceChange: false });
       }
     }
-    return normalizedValue;
-  }
-
-  _announceOptions (index) {
-    const { intl } = this.context;
-    const labelMessage = this._renderValue(this.props.options[index]);
-    const enterSelectMessage = Intl.getMessage(intl, 'Enter Select');
-    announce(`${labelMessage} ${enterSelectMessage}`);
-  }
-
-  _onInputKeyDown (event) {
-    const up = 38;
-    const down = 40;
-    if (event.keyCode === up || event.keyCode === down) {
-      // stop the input to move the cursor when options are present
-      event.preventDefault();
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      document.removeEventListener('click', this._onRemoveDrop);
+      if (this._drop) {
+        this._drop.remove();
+      }
     }
-  }
+  }, {
+    key: '_normalizeValue',
+    value: function _normalizeValue(props, state) {
+      var multiple = props.multiple,
+          value = props.value;
 
-  _onSearchChange (event) {
-    const { inline } = this.props;
-    this.setState({
-      announceChange: true,
-      activeOptionIndex: -1,
-      dropActive: ! inline,
-      searchText: event.target.value
-    });
-    if (this.props.onSearch) {
-      this.props.onSearch(event);
-    }
-  }
-
-  _onAddDrop (event) {
-    const { options, value } = this.props;
-    event.preventDefault();
-    // Get values of options, so we can highlight selected option
-    if (options) {
-      const optionValues = options.map((option) => {
-        if (option && typeof option === 'object') {
-          return option.value;
+      var normalizedValue = value;
+      if (multiple) {
+        if (value) {
+          if (!Array.isArray(value)) {
+            normalizedValue = [value];
+          }
         } else {
-          return option;
+          normalizedValue = [];
         }
-      });
-      const activeOptionIndex = optionValues.indexOf(value);
+      }
+      return normalizedValue;
+    }
+  }, {
+    key: '_announceOptions',
+    value: function _announceOptions(index) {
+      var intl = this.context.intl;
+
+      var labelMessage = this._renderValue(this.props.options[index]);
+      var enterSelectMessage = _Intl2.default.getMessage(intl, 'Enter Select');
+      (0, _Announcer.announce)(labelMessage + ' ' + enterSelectMessage);
+    }
+  }, {
+    key: '_onInputKeyDown',
+    value: function _onInputKeyDown(event) {
+      var up = 38;
+      var down = 40;
+      if (event.keyCode === up || event.keyCode === down) {
+        // stop the input to move the cursor when options are present
+        event.preventDefault();
+      }
+    }
+  }, {
+    key: '_onSearchChange',
+    value: function _onSearchChange(event) {
+      var inline = this.props.inline;
+
       this.setState({
-        dropActive: true,
-        activeOptionIndex: activeOptionIndex
+        announceChange: true,
+        activeOptionIndex: -1,
+        dropActive: !inline,
+        searchText: event.target.value
       });
-    }
-  }
-
-  _onRemoveDrop (event) {
-    if (!this._searchRef ||
-      !findDOMNode(this._searchRef).contains(event.target)) {
-      this.setState({dropActive: false});
-    }
-  }
-
-  _onForceClose () {
-    this.setState({dropActive: false});
-  }
-
-  _onNextOption (event) {
-    event.preventDefault();
-    let index = this.state.activeOptionIndex;
-    index = Math.min(index + 1, this.props.options.length - 1);
-    this.setState({activeOptionIndex: index},
-      this._announceOptions.bind(this, index));
-  }
-
-  _onPreviousOption (event) {
-    event.preventDefault();
-    let index = this.state.activeOptionIndex;
-    index = Math.max(index - 1, 0);
-    this.setState({activeOptionIndex: index},
-      this._announceOptions.bind(this, index));
-  }
-
-  _valueForSelectedOption (option) {
-    const { multiple } = this.props;
-    const { value } = this.state;
-    let nextValue;
-    if (multiple) {
-      nextValue = value.slice(0);
-      let index;
-      for (index = 0; index < nextValue.length; index += 1) {
-        if (this._valueEqualsOption(nextValue[index], option)) {
-          break;
-        }
+      if (this.props.onSearch) {
+        this.props.onSearch(event);
       }
-      if (index < nextValue.length) {
-        // already existing, remove
-        nextValue.splice(index, 1);
-      } else {
-        // not there, add
-        nextValue.push(option);
-      }
-    } else {
-      nextValue = option;
     }
-    return nextValue;
-  }
+  }, {
+    key: '_onAddDrop',
+    value: function _onAddDrop(event) {
+      var _props2 = this.props,
+          options = _props2.options,
+          value = _props2.value;
 
-  _onEnter (event) {
-    const { onChange, options } = this.props;
-    const { activeOptionIndex } = this.state;
-    const { intl } = this.context;
-    if (activeOptionIndex >= 0) {
-      event.preventDefault(); // prevent submitting forms
-      const option = options[activeOptionIndex];
-      const value = this._valueForSelectedOption(option);
-      this.setState({ dropActive: false, value }, () => {
-        const optionMessage = this._renderLabel(option);
-        const selectedMessage = Intl.getMessage(intl, 'Selected');
-        announce(`${optionMessage} ${selectedMessage}`);
-      });
-      if (onChange) {
-        onChange({ target: this.inputRef, option, value });
+      event.preventDefault();
+      // Get values of options, so we can highlight selected option
+      if (options) {
+        var optionValues = options.map(function (option) {
+          if (option && (typeof option === 'undefined' ? 'undefined' : _typeof(option)) === 'object') {
+            return option.value;
+          } else {
+            return option;
+          }
+        });
+        var activeOptionIndex = optionValues.indexOf(value);
+        this.setState({
+          dropActive: true,
+          activeOptionIndex: activeOptionIndex
+        });
       }
-    } else {
+    }
+  }, {
+    key: '_onRemoveDrop',
+    value: function _onRemoveDrop(event) {
+      if (!this._searchRef || !(0, _reactDom.findDOMNode)(this._searchRef).contains(event.target)) {
+        this.setState({ dropActive: false });
+      }
+    }
+  }, {
+    key: '_onForceClose',
+    value: function _onForceClose() {
       this.setState({ dropActive: false });
     }
-  }
-
-  _stopPropagation () {
-    if (findDOMNode(this._searchRef).contains(document.activeElement)) {
-      return true;
+  }, {
+    key: '_onNextOption',
+    value: function _onNextOption(event) {
+      event.preventDefault();
+      var index = this.state.activeOptionIndex;
+      index = Math.min(index + 1, this.props.options.length - 1);
+      this.setState({ activeOptionIndex: index }, this._announceOptions.bind(this, index));
     }
-  }
-
-  _onClickOption (option) {
-    const { onChange } = this.props;
-    const value = this._valueForSelectedOption(option);
-    this.setState({ dropActive: false, value });
-    if (onChange) {
-      onChange({ target: this.inputRef, option, value });
+  }, {
+    key: '_onPreviousOption',
+    value: function _onPreviousOption(event) {
+      event.preventDefault();
+      var index = this.state.activeOptionIndex;
+      index = Math.max(index - 1, 0);
+      this.setState({ activeOptionIndex: index }, this._announceOptions.bind(this, index));
     }
-  }
+  }, {
+    key: '_valueForSelectedOption',
+    value: function _valueForSelectedOption(option) {
+      var multiple = this.props.multiple;
+      var value = this.state.value;
 
-  _renderLabel (option) {
-    if (option && typeof option === 'object') {
-      // revert for announce as label is often a complex object
-      return option.label || option.value || '';
-    } else {
-      return (undefined === option || null === option) ? '' : option;
-    }
-  }
-
-  _renderValue (option) {
-    const { intl } = this.context;
-    if (Array.isArray(option)) {
-      // Could be an Array when !inline+multiple
-      if (1 === option.length) {
-        return this._renderValue(option[0]);
-      } else if (option.length > 1) {
-        const selectedMultiple = Intl.getMessage(
-          intl, 'Selected Multiple', {
-            count: option.length
+      var nextValue = void 0;
+      if (multiple) {
+        nextValue = value.slice(0);
+        var index = void 0;
+        for (index = 0; index < nextValue.length; index += 1) {
+          if (this._valueEqualsOption(nextValue[index], option)) {
+            break;
           }
-        );
-        return selectedMultiple;
-      }
-    } else if (option && typeof option === 'object') {
-      return option.label || option.value || '';
-    } else {
-      return (undefined === option || null === option) ? '' : option;
-    }
-  }
-
-  _valueEqualsOption (value, option) {
-    let result = false;
-    if (value && typeof value === 'object') {
-      if (option && typeof option === 'object') {
-        result = (value.value === option.value);
-      } else {
-        result = (value.value === option);
-      }
-    } else {
-      if (option && typeof option === 'object') {
-        result = (value === option.value);
-      } else {
-        result = (value === option);
-      }
-    }
-    return result;
-  }
-
-  _optionSelected (option, value) {
-    let result = false;
-    if (value && Array.isArray(value)) {
-      result = value.some(val => this._valueEqualsOption(val, option));
-    } else {
-      result = this._valueEqualsOption(value, option);
-    }
-    return result;
-  }
-
-  _renderOptions (className, restProps={}) {
-    const {
-      id, inline, multiple, options, onSearch, value
-    } = this.props;
-    const { activeOptionIndex, searchText } = this.state;
-
-    let search;
-    if (onSearch) {
-      search = (
-        <Search className={`${CLASS_ROOT}__search`}
-          ref={(ref) => this._searchRef = ref}
-          inline={true} fill={true} responsive={false} pad="medium"
-          placeHolder='Search' value={searchText}
-          onDOMChange={this._onSearchChange}
-          onKeyDown={this._onInputKeyDown} />
-      );
-    }
-
-    let items;
-    if (options) {
-      items = options.map((option, index) => {
-        const selected = this._optionSelected(option, value);
-        let classes = classnames(
-          {
-            [`${CLASS_ROOT}__option`]: true,
-            [`${CLASS_ROOT}__option--selected`]: selected,
-            [`${CLASS_ROOT}__option--active`]:
-              index === activeOptionIndex
-          }
-        );
-
-        let content = this._renderLabel(option);
-        if (option && option.icon) {
-          content = (
-            <span>{option.icon} {content}</span>
-          );
         }
-
-        let itemOnClick;
-        if (inline) {
-          const itemId = `${id}-${option ? (option.value || option) : index}`;
-          const Type = (multiple ? CheckBox : RadioButton );
-          content = (
-            <Type key={itemId} id={itemId} label={content} checked={selected}
-              onChange={this._onClickOption.bind(this, option)} />
-          );
+        if (index < nextValue.length) {
+          // already existing, remove
+          nextValue.splice(index, 1);
         } else {
-          itemOnClick = this._onClickOption.bind(this, option);
+          // not there, add
+          nextValue.push(option);
         }
-
-        return (
-          <li key={index} className={classes} onClick={itemOnClick}>
-            {content}
-          </li>
-        );
-      });
+      } else {
+        nextValue = option;
+      }
+      return nextValue;
     }
+  }, {
+    key: '_onEnter',
+    value: function _onEnter(event) {
+      var _this2 = this;
 
-    let onClick;
-    if (! inline) {
-      onClick = this._onRemoveDrop;
+      var _props3 = this.props,
+          onChange = _props3.onChange,
+          options = _props3.options;
+      var activeOptionIndex = this.state.activeOptionIndex;
+      var intl = this.context.intl;
+
+      if (activeOptionIndex >= 0) {
+        event.preventDefault(); // prevent submitting forms
+        var option = options[activeOptionIndex];
+        var value = this._valueForSelectedOption(option);
+        this.setState({ dropActive: false, value: value }, function () {
+          var optionMessage = _this2._renderLabel(option);
+          var selectedMessage = _Intl2.default.getMessage(intl, 'Selected');
+          (0, _Announcer.announce)(optionMessage + ' ' + selectedMessage);
+        });
+        if (onChange) {
+          onChange({ target: this.inputRef, option: option, value: value });
+        }
+      } else {
+        this.setState({ dropActive: false });
+      }
     }
+  }, {
+    key: '_stopPropagation',
+    value: function _stopPropagation() {
+      if ((0, _reactDom.findDOMNode)(this._searchRef).contains(document.activeElement)) {
+        return true;
+      }
+    }
+  }, {
+    key: '_onClickOption',
+    value: function _onClickOption(option) {
+      var onChange = this.props.onChange;
 
-    return (
-      <div {...restProps} className={className}>
-        {search}
-        <ol className={`${CLASS_ROOT}__options`} onClick={onClick}>
-          {items}
-        </ol>
-      </div>
-    );
-  }
+      var value = this._valueForSelectedOption(option);
+      this.setState({ dropActive: false, value: value });
+      if (onChange) {
+        onChange({ target: this.inputRef, option: option, value: value });
+      }
+    }
+  }, {
+    key: '_renderLabel',
+    value: function _renderLabel(option) {
+      if (option && (typeof option === 'undefined' ? 'undefined' : _typeof(option)) === 'object') {
+        // revert for announce as label is often a complex object
+        return option.label || option.value || '';
+      } else {
+        return undefined === option || null === option ? '' : option;
+      }
+    }
+  }, {
+    key: '_renderValue',
+    value: function _renderValue(option) {
+      var intl = this.context.intl;
 
-  render () {
-    const { className, inline, placeHolder, value } = this.props;
-    const { active } = this.state;
-    const { intl } = this.context;
-    let classes = classnames(
-      CLASS_ROOT,
-      {
-        [`${CLASS_ROOT}--active`]: active,
-        [`${CLASS_ROOT}--inline`]: inline
-      },
-      className
-    );
-    const restProps = Props.omit(this.props, Object.keys(Select.propTypes));
+      if (Array.isArray(option)) {
+        // Could be an Array when !inline+multiple
+        if (1 === option.length) {
+          return this._renderValue(option[0]);
+        } else if (option.length > 1) {
+          var selectedMultiple = _Intl2.default.getMessage(intl, 'Selected Multiple', {
+            count: option.length
+          });
+          return selectedMultiple;
+        }
+      } else if (option && (typeof option === 'undefined' ? 'undefined' : _typeof(option)) === 'object') {
+        return option.label || option.value || '';
+      } else {
+        return undefined === option || null === option ? '' : option;
+      }
+    }
+  }, {
+    key: '_valueEqualsOption',
+    value: function _valueEqualsOption(value, option) {
+      var result = false;
+      if (value && (typeof value === 'undefined' ? 'undefined' : _typeof(value)) === 'object') {
+        if (option && (typeof option === 'undefined' ? 'undefined' : _typeof(option)) === 'object') {
+          result = value.value === option.value;
+        } else {
+          result = value.value === option;
+        }
+      } else {
+        if (option && (typeof option === 'undefined' ? 'undefined' : _typeof(option)) === 'object') {
+          result = value === option.value;
+        } else {
+          result = value === option;
+        }
+      }
+      return result;
+    }
+  }, {
+    key: '_optionSelected',
+    value: function _optionSelected(option, value) {
+      var _this3 = this;
 
-    if (inline) {
-      return this._renderOptions(classes, restProps);
-    } else {
-      return (
-        <div ref={ref => this.componentRef = ref} className={classes}
-          onClick={this._onAddDrop}>
-          <input {...restProps} ref={ref => this.inputRef = ref}
-            className={`${INPUT} ${CLASS_ROOT}__input`}
-            placeholder={placeHolder} readOnly={true}
-            value={this._renderValue(value) || ''} />
-          <Button className={`${CLASS_ROOT}__control`}
-            a11yTitle={Intl.getMessage(intl, 'Select Icon')}
-            icon={<CaretDownIcon />}
-            onClick={this._onAddDrop} />
-        </div>
+      var result = false;
+      if (value && Array.isArray(value)) {
+        result = value.some(function (val) {
+          return _this3._valueEqualsOption(val, option);
+        });
+      } else {
+        result = this._valueEqualsOption(value, option);
+      }
+      return result;
+    }
+  }, {
+    key: '_renderOptions',
+    value: function _renderOptions(className) {
+      var _this4 = this;
+      var intl = this.context.intl;
+      var restProps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      var _props4 = this.props,
+          id = _props4.id,
+          inline = _props4.inline,
+          multiple = _props4.multiple,
+          options = _props4.options,
+          onSearch = _props4.onSearch,
+          searchPlaceHolder = _props4.searchPlaceHolder || _Intl2.default.getMessage(intl, 'Search'),
+          value = _props4.value;
+      var _state2 = this.state,
+          activeOptionIndex = _state2.activeOptionIndex,
+          searchText = _state2.searchText;
+
+
+      var search = void 0;
+      if (onSearch) {
+        search = _react2.default.createElement(_Search2.default, { className: CLASS_ROOT + '__search',
+          ref: function ref(_ref) {
+            return _this4._searchRef = _ref;
+          },
+          inline: true, fill: true, responsive: false, pad: 'medium',
+          placeHolder: searchPlaceHolder, value: searchText,
+          onDOMChange: this._onSearchChange,
+          onKeyDown: this._onInputKeyDown });
+      }
+
+      var items = void 0;
+      if (options) {
+        items = options.map(function (option, index) {
+          var _classnames;
+
+          var selected = _this4._optionSelected(option, value);
+          var classes = (0, _classnames4.default)((_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '__option', true), _defineProperty(_classnames, CLASS_ROOT + '__option--selected', selected), _defineProperty(_classnames, CLASS_ROOT + '__option--active', index === activeOptionIndex), _classnames));
+
+          var content = _this4._renderLabel(option);
+          if (option && option.icon) {
+            content = _react2.default.createElement(
+              'span',
+              null,
+              option.icon,
+              ' ',
+              content
+            );
+          }
+
+          var itemOnClick = void 0;
+          if (inline) {
+            var itemId = id + '-' + (option ? option.value || option : index);
+            var Type = multiple ? _CheckBox2.default : _RadioButton2.default;
+            content = _react2.default.createElement(Type, { key: itemId, id: itemId, label: content, checked: selected,
+              onChange: _this4._onClickOption.bind(_this4, option) });
+          } else {
+            itemOnClick = _this4._onClickOption.bind(_this4, option);
+          }
+
+          return _react2.default.createElement(
+            'li',
+            { key: index, className: classes, onClick: itemOnClick },
+            content
+          );
+        });
+      }
+
+      var onClick = void 0;
+      if (!inline) {
+        onClick = this._onRemoveDrop;
+      }
+
+      return _react2.default.createElement(
+        'div',
+        _extends({}, restProps, { className: className }),
+        search,
+        _react2.default.createElement(
+          'ol',
+          { className: CLASS_ROOT + '__options', onClick: onClick },
+          items
+        )
       );
     }
-  }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _classnames2,
+          _this5 = this;
 
-}
+      var _props5 = this.props,
+          className = _props5.className,
+          inline = _props5.inline,
+          placeHolder = _props5.placeHolder,
+          value = _props5.value;
+      var active = this.state.active;
+      var intl = this.context.intl;
 
-const valueType = PropTypes.oneOfType([
-  PropTypes.shape({
-    label: PropTypes.node,
-    value: PropTypes.any
-  }),
-  PropTypes.string,
-  PropTypes.number
-]);
+      var classes = (0, _classnames4.default)(CLASS_ROOT, (_classnames2 = {}, _defineProperty(_classnames2, CLASS_ROOT + '--active', active), _defineProperty(_classnames2, CLASS_ROOT + '--inline', inline), _classnames2), className);
+      var restProps = _Props2.default.omit(this.props, Object.keys(Select.propTypes));
+
+      if (inline) {
+        return this._renderOptions(classes, restProps);
+      } else {
+        return _react2.default.createElement(
+          'div',
+          { ref: function ref(_ref3) {
+              return _this5.componentRef = _ref3;
+            }, className: classes,
+            onClick: this._onAddDrop },
+          _react2.default.createElement('input', _extends({}, restProps, { ref: function ref(_ref2) {
+              return _this5.inputRef = _ref2;
+            },
+            className: INPUT + ' ' + CLASS_ROOT + '__input',
+            placeholder: placeHolder, readOnly: true,
+            value: this._renderValue(value) || '' })),
+          _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control',
+            a11yTitle: _Intl2.default.getMessage(intl, 'Select Icon'),
+            icon: _react2.default.createElement(_CaretDown2.default, null),
+            onClick: this._onAddDrop })
+        );
+      }
+    }
+  }]);
+
+  return Select;
+}(_react.Component);
+
+Select.displayName = 'Select';
+exports.default = Select;
+
+
+var valueType = _propTypes2.default.oneOfType([_propTypes2.default.shape({
+  label: _propTypes2.default.node,
+  value: _propTypes2.default.any
+}), _propTypes2.default.string, _propTypes2.default.number]);
 
 Select.propTypes = {
-  inline: PropTypes.bool,
-  multiple: PropTypes.bool,
-  onSearch: PropTypes.func,
-  onChange: PropTypes.func, // (value(s))
-  placeHolder: PropTypes.string,
-  options: PropTypes.arrayOf(valueType).isRequired,
-  value: PropTypes.oneOfType([valueType, PropTypes.arrayOf(valueType)])
+  inline: _propTypes2.default.bool,
+  multiple: _propTypes2.default.bool,
+  onSearch: _propTypes2.default.func,
+  onChange: _propTypes2.default.func, // (value(s))
+  placeHolder: _propTypes2.default.string,
+  searchPlaceHolder: _propTypes2.default.string,
+  options: _propTypes2.default.arrayOf(valueType).isRequired,
+  value: _propTypes2.default.oneOfType([valueType, _propTypes2.default.arrayOf(valueType)])
 };
 
 Select.contextTypes = {
-  intl: PropTypes.object
+  intl: _propTypes2.default.object
 };
+module.exports = exports['default'];
