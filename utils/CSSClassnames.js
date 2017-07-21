@@ -70,6 +70,7 @@ exports.default = {
   NUMBER_INPUT: namespace + 'number-input',
   OBJECT: namespace + 'object',
   PARAGRAPH: namespace + 'paragraph',
+  PASSWORD_INPUT: namespace + 'password-input',
   PULSE: namespace + 'pulse',
   QUOTE: namespace + 'quote',
   RADIO_BUTTON: namespace + 'radio-button',
