@@ -447,13 +447,16 @@ var Select = function (_Component) {
       var _this4 = this;
 
       var restProps = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      var intl = this.context.intl;
       var _props4 = this.props,
           id = _props4.id,
           inline = _props4.inline,
           multiple = _props4.multiple,
           options = _props4.options,
           onSearch = _props4.onSearch,
-          value = _props4.value;
+          value = _props4.value,
+          _props4$searchPlaceHo = _props4.searchPlaceHolder,
+          searchPlaceHolder = _props4$searchPlaceHo === undefined ? _Intl2.default.getMessage(intl, 'Search') : _props4$searchPlaceHo;
       var _state2 = this.state,
           activeOptionIndex = _state2.activeOptionIndex,
           searchText = _state2.searchText;
@@ -466,7 +469,7 @@ var Select = function (_Component) {
             return _this4._searchRef = _ref;
           },
           inline: true, fill: true, responsive: false, pad: 'medium',
-          placeHolder: 'Search', value: searchText,
+          placeHolder: searchPlaceHolder, value: searchText,
           onDOMChange: this._onSearchChange,
           onKeyDown: this._onInputKeyDown });
       }
@@ -591,6 +594,7 @@ Select.propTypes = {
   onSearch: _propTypes2.default.func,
   onChange: _propTypes2.default.func, // (value(s))
   placeHolder: _propTypes2.default.string,
+  searchPlaceHolder: _propTypes2.default.string,
   options: _propTypes2.default.arrayOf(valueType).isRequired,
   value: _propTypes2.default.oneOfType([valueType, _propTypes2.default.arrayOf(valueType)])
 };
