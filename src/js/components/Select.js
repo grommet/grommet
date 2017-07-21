@@ -346,7 +346,6 @@ export default class Select extends Component {
   }
 
   _renderOptions (className, restProps={}) {
-    const enterSelectMessage = Intl.getMessage(intl, 'Enter Select');
     const { intl } = this.context;
     const {
       id, inline, multiple, options, onSearch, value, searchPlaceHolder = Intl.getMessage(intl, 'Search')
