@@ -67,7 +67,7 @@ header.#{$grommet-namespace}header--primary {
     top: 0px;
     left: 0px;
     right: 0px;
-    z-index: 3;
+    z-index: 50;
 
     .#{$grommet-namespace}header {
       @include media-query(lap-and-up) {

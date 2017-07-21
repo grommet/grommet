@@ -333,7 +333,9 @@ export default class Menu extends Component {
   }
 
   _onOpen () {
-    this.setState({state: 'expanded'});
+    if(findDOMNode(this._controlRef).contains(document.activeElement)) {
+      this.setState({state: 'expanded'});
+    }
   }
 
   _onClose () {

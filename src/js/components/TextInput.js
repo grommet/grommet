@@ -123,10 +123,14 @@ export default class TextInput extends Component {
   }
 
   _onInputChange (event) {
-    const { onDOMChange } = this.props;
-    this.setState({
-      activeSuggestionIndex: -1, announceChange: true, dropActive: true
-    });
+    const { onDOMChange, suggestions } = this.props;
+
+    if (suggestions && suggestions.length) {
+      this.setState({
+        activeSuggestionIndex: -1, announceChange: true, dropActive: true
+      });
+    }
+
     if (onDOMChange) {
       onDOMChange(event);
     }
@@ -135,9 +139,11 @@ export default class TextInput extends Component {
   _announceSuggestion (index) {
     const { suggestions } = this.props;
     const { intl } = this.context;
-    const labelMessage = this._renderLabel(suggestions[index]);
-    const enterSelectMessage = Intl.getMessage(intl, 'Enter Select');
-    announce(`${labelMessage} ${enterSelectMessage}`);
+    if (suggestions && suggestions.length > 0) {
+      const labelMessage = this._renderLabel(suggestions[index]);
+      const enterSelectMessage = Intl.getMessage(intl, 'Enter Select');
+      announce(`${labelMessage} ${enterSelectMessage}`);
+    }
   }
 
   _onAddDrop (event) {
@@ -216,10 +222,6 @@ export default class TextInput extends Component {
       focused: true,
       activeSuggestionIndex: -1
     });
-    // elements with autoFocus=true will be focused before the ref is available
-    if (this.componentRef) {
-      this.componentRef.select();
-    }
 
     if (onFocus) {
       onFocus(event);

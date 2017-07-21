@@ -39,6 +39,7 @@
 
 .#{$grommet-namespace}distribution__item-box {
   @include graph-fill-color();
+  transition: all 0.2s ease;
 }
 
 .#{$grommet-namespace}distribution__item-icons {
@@ -47,12 +48,14 @@
 
 .#{$grommet-namespace}distribution__label {
   position: absolute;
+  background-color: transparent;
   padding: quarter($inuit-base-spacing-unit) halve($inuit-base-spacing-unit);
   font-family: $brand-large-number-font-family;
   overflow: hidden;
   text-align: left;
   pointer-events: none;
   @include overlayed-text-color();
+  transition: all 0.2s ease;
 }
 
 .#{$grommet-namespace}distribution__label-value {

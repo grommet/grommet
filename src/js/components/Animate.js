@@ -6,7 +6,6 @@ import { findDOMNode } from 'react-dom';
 import { TransitionGroup } from 'react-transition-group';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
-import { findScrollParents } from '../utils/DOM';
 
 const CLASS_ROOT = CSSClassnames.ANIMATE;
 
@@ -156,17 +155,11 @@ export default class Animate extends Component {
   }
 
   _listenForScroll () {
-    this._scrollParents = findScrollParents(this);
-    this._scrollParents.forEach((scrollParent) => {
-      scrollParent.addEventListener('scroll', this._checkScroll);
-    });
+    document.addEventListener('scroll', this._checkScroll);
   }
 
   _unlistenForScroll () {
-    this._scrollParents.forEach((scrollParent) => {
-      scrollParent.removeEventListener('scroll', this._checkScroll);
-    });
-    this._scrollParents = undefined;
+    document.removeEventListener('scroll', this._checkScroll);
   }
 
   _checkScroll () {
@@ -203,7 +196,11 @@ export default class Animate extends Component {
     }
 
     return (
-      <TransitionGroup {...props} className={classes} component={component}>
+      <TransitionGroup
+        {...props}
+        className={classes}
+        component={component}
+      >
         {animateChildren}
       </TransitionGroup>
     );
