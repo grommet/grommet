@@ -348,9 +348,9 @@ export default class Select extends Component {
   _renderOptions (className, restProps={}) {
     const { intl } = this.context;
     const {
-      id, inline, multiple, options, onSearch, value
+      id, inline, multiple, options, onSearch, value, 
+      searchPlaceHolder = Intl.getMessage(intl, 'Search')
     } = this.props;
-    const searchPlaceHolder = this.props.searchPlaceHolder || Intl.getMessage(intl, 'Search');
     const { activeOptionIndex, searchText } = this.state;
 
     let search;
