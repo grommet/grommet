@@ -8,6 +8,9 @@ import { withFocus, withTheme } from '../hocs';
 import doc from './doc';
 
 class Button extends Component {
+  static defaultProps = {
+    type: 'button',
+  };
   render() {
     const {
       a11yTitle,
@@ -88,7 +91,9 @@ class Button extends Component {
   }
 }
 
-doc(Button);
+if (process.env.NODE_ENV !== 'production') {
+  doc(Button);
+}
 
 export default compose(
   withFocus,
