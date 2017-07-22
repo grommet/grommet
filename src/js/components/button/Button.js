@@ -1,17 +1,13 @@
 import React, { Children, Component } from 'react';
-import PropTypes from 'prop-types';
-import deepAssign from 'deep-assign';
+import { compose } from 'recompose';
 
 import StyledButton, { StyledLabel, StyledIcon } from './StyledButton';
 
-import { withFocus } from '../hocs';
+import { withFocus, withTheme } from '../hocs';
 
 import doc from './doc';
 
 class Button extends Component {
-  static contextTypes = {
-    theme: PropTypes.object.isRequired,
-  }
   render() {
     const {
       a11yTitle,
@@ -28,8 +24,6 @@ class Button extends Component {
       type,
       ...rest
     } = this.props;
-    const { theme: contextTheme } = this.context;
-    const localTheme = deepAssign(contextTheme, theme);
 
     let Tag = StyledButton;
     if (href) {
@@ -48,12 +42,12 @@ class Button extends Component {
 
     let buttonIcon;
     if (icon) {
-      buttonIcon = <StyledIcon theme={localTheme}>{icon}</StyledIcon>;
+      buttonIcon = <StyledIcon theme={theme}>{icon}</StyledIcon>;
     }
 
     let buttonLabel;
     if (label) {
-      buttonLabel = <StyledLabel theme={localTheme}>{label}</StyledLabel>;
+      buttonLabel = <StyledLabel theme={theme}>{label}</StyledLabel>;
     }
 
     const first = reverse ? buttonLabel : buttonIcon;
@@ -83,7 +77,7 @@ class Button extends Component {
         href={href}
         onClick={onClick}
         plain={plainProp}
-        theme={localTheme}
+        theme={theme}
         type={type}
       >
         {first}
@@ -94,8 +88,9 @@ class Button extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(Button);
-}
+doc(Button);
 
-export default withFocus(Button);
+export default compose(
+  withFocus,
+  withTheme,
+)(Button);

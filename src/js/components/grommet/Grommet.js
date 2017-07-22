@@ -40,8 +40,6 @@ class Grommet extends Component {
   }
 }
 
-if (process.env.NODE_ENV !== 'production') {
-  doc(Grommet);
-}
+doc(Grommet);
 
 export default Grommet;

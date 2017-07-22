@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import deepAssign from 'deep-assign';
 
 export const withFocus = (WrappedComponent) => {
   class FocusableComponent extends Component {
@@ -63,4 +65,22 @@ export const withFocus = (WrappedComponent) => {
   return FocusableComponent;
 };
 
-export default { withFocus };
+export const withTheme = (WrappedComponent) => {
+  class ThemedComponent extends Component {
+    static contextTypes = {
+      theme: PropTypes.object.isRequired,
+    }
+    render() {
+      const { theme, ...rest } = this.props;
+      const { theme: contextTheme } = this.context;
+      const localTheme = deepAssign(contextTheme, theme);
+      return (
+        <WrappedComponent theme={localTheme} {...rest} />
+      );
+    }
+  }
+
+  return ThemedComponent;
+};
+
+export default { withFocus, withTheme };

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components loads 1`] = `
+Object {
+  "Button": [Function],
+  "Grommet": [Function],
+  "__esModule": true,
+}
+`;
