@@ -59,6 +59,7 @@ var Grommet = {
   NumberInput: require('./components/NumberInput'),
   Object: require('./components/Object'),
   Paragraph: require('./components/Paragraph'),
+  PasswordInput: require('./components/PasswordInput'),
   Quote: require('./components/Quote'),
   RadioButton: require('./components/RadioButton'),
   Search: require('./components/Search'),
