@@ -32,10 +32,7 @@ class Button extends Component {
       ...rest
     } = this.props;
 
-    let Tag = StyledButton;
-    if (href) {
-      Tag = AnchorStyledButton;
-    }
+    let Tag = href ? AnchorStyledButton : StyledButton;
 
     let boxProps;
     if (box) {
