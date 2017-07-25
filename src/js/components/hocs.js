@@ -72,7 +72,8 @@ export const withTheme = (WrappedComponent) => {
     }
     render() {
       const { theme, ...rest } = this.props;
-      const { theme: contextTheme } = this.context;
+      let { theme: contextTheme } = this.context;
+      contextTheme = JSON.parse(JSON.stringify(contextTheme));
       const localTheme = deepAssign(contextTheme, theme);
       return (
         <WrappedComponent theme={localTheme} {...rest} />
