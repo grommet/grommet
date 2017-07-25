@@ -6,7 +6,7 @@ import { withFocus } from '../hocs';
 
 const Test = withFocus(({ focus, ...rest }) => (
   <div {...rest}>
-    { focus ? 'focus' : 'no focus'}
+    { focus ? 'focus' : 'no focus' }
   </div>
 ));
 
