@@ -346,8 +346,10 @@ export default class Select extends Component {
   }
 
   _renderOptions (className, restProps={}) {
+    const { intl } = this.context;
     const {
-      id, inline, multiple, options, onSearch, value
+      id, inline, multiple, options, onSearch, value, 
+      searchPlaceHolder = Intl.getMessage(intl, 'Search')
     } = this.props;
     const { activeOptionIndex, searchText } = this.state;
 
@@ -357,7 +359,7 @@ export default class Select extends Component {
         <Search className={`${CLASS_ROOT}__search`}
           ref={(ref) => this._searchRef = ref}
           inline={true} fill={true} responsive={false} pad="medium"
-          placeHolder='Search' value={searchText}
+          placeHolder={searchPlaceHolder} value={searchText}
           onDOMChange={this._onSearchChange}
           onKeyDown={this._onInputKeyDown} />
       );
@@ -476,6 +478,7 @@ Select.propTypes = {
   onSearch: PropTypes.func,
   onChange: PropTypes.func, // (value(s))
   placeHolder: PropTypes.string,
+  searchPlaceHolder: PropTypes.string,
   options: PropTypes.arrayOf(valueType).isRequired,
   value: PropTypes.oneOfType([valueType, PropTypes.arrayOf(valueType)])
 };
