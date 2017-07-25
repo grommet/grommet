@@ -2,7 +2,7 @@
 
 exports[`Grommet hpe theme renders 1`] = `
 .c0 {
-  font-family: 'Metric', Arial, sans-serif;
+  font-family: 'Metric',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
@@ -43,7 +43,7 @@ exports[`Grommet hpe theme renders 1`] = `
 
 exports[`Grommet inline renders 1`] = `
 .c0 {
-  font-family: 'Work Sans', Arial, sans-serif;
+  font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
@@ -85,7 +85,7 @@ exports[`Grommet inline renders 1`] = `
 
 exports[`Grommet renders 1`] = `
 .c0 {
-  font-family: 'Work Sans', Arial, sans-serif;
+  font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;

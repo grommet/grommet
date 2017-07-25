@@ -132,6 +132,87 @@ test('Button box href renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Button hoverIndicator renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Button plain={true} onClick={() => {}} hoverIndicator='background'>
+        hoverIndicator
+      </Button>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Button hoverIndicator as object renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Button plain={true} onClick={() => {}} hoverIndicator={{ background: true }}>
+        hoverIndicator
+      </Button>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Button hoverIndicator as object with color renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Button plain={true} onClick={() => {}} hoverIndicator={{ background: 'brand' }}>
+        hoverIndicator
+      </Button>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Button hoverIndicator as object with colorIndex renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Button plain={true} onClick={() => {}} hoverIndicator={{ background: 'accent-1' }}>
+        hoverIndicator
+      </Button>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Button hoverIndicator as object with invalid color renders', () => {
+  let component = renderer.create(
+    <Grommet>
+      <Button plain={true} onClick={() => {}} hoverIndicator={{ background: 'accent' }}>
+        hoverIndicator
+      </Button>
+    </Grommet>
+  );
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+  component = renderer.create(
+    <Grommet>
+      <Button plain={true} onClick={() => {}} hoverIndicator={{ background: 'invalid' }}>
+        hoverIndicator
+      </Button>
+    </Grommet>
+  );
+  tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Button hoverIndicator as object with invalid colorIndex renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Button plain={true} onClick={() => {}} hoverIndicator={{ background: 'accent-100' }}>
+        hoverIndicator
+      </Button>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Button is clickable', () => {
   const onClick = jest.fn();
   const component = renderer.create(

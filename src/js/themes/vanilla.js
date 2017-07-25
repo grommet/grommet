@@ -1,3 +1,5 @@
+import { rgba } from 'polished';
+
 const accentColors = ['#00CCEB', '#FF7D28'];
 const neutralColors = ['#0A64A0', '#DC2878', '#501EB4', '#49516F'];
 const statusColors = {
@@ -83,6 +85,10 @@ export default {
         }
       `,
       size: '16px',
+    },
+    hover: {
+      backgroundColor: rgba('#DDDDDD', 0.5),
+      textColor: '#000000',
     },
     lineHeight: '24px',
     spacing: `${baseSpacing}px`,

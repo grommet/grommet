@@ -2,7 +2,7 @@
 
 exports[`Button accent renders 1`] = `
 .c0 {
-  font-family: 'Work Sans', Arial, sans-serif;
+  font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
@@ -39,7 +39,6 @@ exports[`Button accent renders 1`] = `
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  -webkit-appearance: button;
   font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
@@ -104,7 +103,7 @@ exports[`Button accent renders 1`] = `
 
 exports[`Button box href renders 1`] = `
 .c0 {
-  font-family: 'Work Sans', Arial, sans-serif;
+  font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
@@ -137,7 +136,6 @@ exports[`Button box href renders 1`] = `
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  -webkit-appearance: button;
   font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
@@ -191,7 +189,7 @@ exports[`Button box href renders 1`] = `
 
 exports[`Button box renders 1`] = `
 .c0 {
-  font-family: 'Work Sans', Arial, sans-serif;
+  font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
@@ -228,7 +226,6 @@ exports[`Button box renders 1`] = `
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  -webkit-appearance: button;
   font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
@@ -288,7 +285,7 @@ exports[`Button box renders 1`] = `
 
 exports[`Button critical renders 1`] = `
 .c0 {
-  font-family: 'Work Sans', Arial, sans-serif;
+  font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
@@ -325,7 +322,6 @@ exports[`Button critical renders 1`] = `
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  -webkit-appearance: button;
   font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
@@ -390,7 +386,7 @@ exports[`Button critical renders 1`] = `
 
 exports[`Button disabled renders 1`] = `
 .c0 {
-  font-family: 'Work Sans', Arial, sans-serif;
+  font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
@@ -423,7 +419,6 @@ exports[`Button disabled renders 1`] = `
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  -webkit-appearance: button;
   font: inherit;
   font-weight: 600;
   opacity: 0.3;
@@ -472,7 +467,7 @@ exports[`Button disabled renders 1`] = `
 
 exports[`Button focus renders 1`] = `
 .c0 {
-  font-family: 'Work Sans', Arial, sans-serif;
+  font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
@@ -509,7 +504,6 @@ exports[`Button focus renders 1`] = `
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  -webkit-appearance: button;
   font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
@@ -562,9 +556,9 @@ exports[`Button focus renders 1`] = `
 </div>
 `;
 
-exports[`Button href renders 1`] = `
+exports[`Button hoverIndicator as object renders 1`] = `
 .c0 {
-  font-family: 'Work Sans', Arial, sans-serif;
+  font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
@@ -597,7 +591,657 @@ exports[`Button href renders 1`] = `
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  -webkit-appearance: button;
+  font: inherit;
+  font-weight: 600;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  max-width: none;
+  text-align: inherit;
+  font-weight: inherit;
+  padding: 6px;
+  border-color: transparent;
+}
+
+.c1:hover {
+  background-color: rgba(221,221,221,0.5);
+  color: #000000;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+@media only screen and (min-width:481px) {
+  .c1 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<div
+  className="c0"
+>
+  <button
+    aria-label={undefined}
+    className="c1"
+    disabled={false}
+    href={undefined}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    type="button"
+  >
+    hoverIndicator
+  </button>
+</div>
+`;
+
+exports[`Button hoverIndicator as object with color renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  min-width: 120px;
+  max-width: 384px;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  background-color: transparent;
+  font: inherit;
+  font-weight: 600;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  max-width: none;
+  text-align: inherit;
+  font-weight: inherit;
+  padding: 6px;
+  border-color: transparent;
+}
+
+.c1:hover {
+  background-color: rgba(134,92,214,0.3);
+  color: #000000;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+@media only screen and (min-width:481px) {
+  .c1 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<div
+  className="c0"
+>
+  <button
+    aria-label={undefined}
+    className="c1"
+    disabled={false}
+    href={undefined}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    type="button"
+  >
+    hoverIndicator
+  </button>
+</div>
+`;
+
+exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  min-width: 120px;
+  max-width: 384px;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  background-color: transparent;
+  font: inherit;
+  font-weight: 600;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  max-width: none;
+  text-align: inherit;
+  font-weight: inherit;
+  padding: 6px;
+  border-color: transparent;
+}
+
+.c1:hover {
+  background-color: rgba(0,204,235,0.3);
+  color: #000000;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+@media only screen and (min-width:481px) {
+  .c1 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<div
+  className="c0"
+>
+  <button
+    aria-label={undefined}
+    className="c1"
+    disabled={false}
+    href={undefined}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    type="button"
+  >
+    hoverIndicator
+  </button>
+</div>
+`;
+
+exports[`Button hoverIndicator as object with invalid color renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  min-width: 120px;
+  max-width: 384px;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  background-color: transparent;
+  font: inherit;
+  font-weight: 600;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  max-width: none;
+  text-align: inherit;
+  font-weight: inherit;
+  padding: 6px;
+  border-color: transparent;
+}
+
+.c1:hover {
+  background-color: rgba(221,221,221,0.5);
+  color: #000000;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+@media only screen and (min-width:481px) {
+  .c1 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<div
+  className="c0"
+>
+  <button
+    aria-label={undefined}
+    className="c1"
+    disabled={false}
+    href={undefined}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    type="button"
+  >
+    hoverIndicator
+  </button>
+</div>
+`;
+
+exports[`Button hoverIndicator as object with invalid color renders 2`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  min-width: 120px;
+  max-width: 384px;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  background-color: transparent;
+  font: inherit;
+  font-weight: 600;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  max-width: none;
+  text-align: inherit;
+  font-weight: inherit;
+  padding: 6px;
+  border-color: transparent;
+}
+
+.c1:hover {
+  background-color: rgba(221,221,221,0.5);
+  color: #000000;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+@media only screen and (min-width:481px) {
+  .c1 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<div
+  className="c0"
+>
+  <button
+    aria-label={undefined}
+    className="c1"
+    disabled={false}
+    href={undefined}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    type="button"
+  >
+    hoverIndicator
+  </button>
+</div>
+`;
+
+exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  min-width: 120px;
+  max-width: 384px;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  background-color: transparent;
+  font: inherit;
+  font-weight: 600;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  max-width: none;
+  text-align: inherit;
+  font-weight: inherit;
+  padding: 6px;
+  border-color: transparent;
+}
+
+.c1:hover {
+  background-color: rgba(221,221,221,0.5);
+  color: #000000;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+@media only screen and (min-width:481px) {
+  .c1 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<div
+  className="c0"
+>
+  <button
+    aria-label={undefined}
+    className="c1"
+    disabled={false}
+    href={undefined}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    type="button"
+  >
+    hoverIndicator
+  </button>
+</div>
+`;
+
+exports[`Button hoverIndicator renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  min-width: 120px;
+  max-width: 384px;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  background-color: transparent;
+  font: inherit;
+  font-weight: 600;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  max-width: none;
+  text-align: inherit;
+  font-weight: inherit;
+  padding: 6px;
+  border-color: transparent;
+}
+
+.c1:hover {
+  background-color: rgba(221,221,221,0.5);
+  color: #000000;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+@media only screen and (min-width:481px) {
+  .c1 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<div
+  className="c0"
+>
+  <button
+    aria-label={undefined}
+    className="c1"
+    disabled={false}
+    href={undefined}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    type="button"
+  >
+    hoverIndicator
+  </button>
+</div>
+`;
+
+exports[`Button href renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  min-width: 120px;
+  max-width: 384px;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  background-color: transparent;
   font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
@@ -655,7 +1299,7 @@ exports[`Button href renders 1`] = `
 
 exports[`Button icon label renders 1`] = `
 .c0 {
-  font-family: 'Work Sans', Arial, sans-serif;
+  font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
@@ -704,7 +1348,6 @@ exports[`Button icon label renders 1`] = `
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  -webkit-appearance: button;
   font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
@@ -773,7 +1416,7 @@ exports[`Button icon label renders 1`] = `
 
 exports[`Button primary renders 1`] = `
 .c0 {
-  font-family: 'Work Sans', Arial, sans-serif;
+  font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
@@ -810,7 +1453,6 @@ exports[`Button primary renders 1`] = `
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  -webkit-appearance: button;
   font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
@@ -876,7 +1518,7 @@ exports[`Button primary renders 1`] = `
 
 exports[`Button renders 1`] = `
 .c0 {
-  font-family: 'Work Sans', Arial, sans-serif;
+  font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
@@ -913,7 +1555,6 @@ exports[`Button renders 1`] = `
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  -webkit-appearance: button;
   font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
@@ -977,7 +1618,7 @@ exports[`Button renders 1`] = `
 
 exports[`Button reverse icon label renders 1`] = `
 .c0 {
-  font-family: 'Work Sans', Arial, sans-serif;
+  font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
@@ -1026,7 +1667,6 @@ exports[`Button reverse icon label renders 1`] = `
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  -webkit-appearance: button;
   font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
@@ -1095,7 +1735,7 @@ exports[`Button reverse icon label renders 1`] = `
 
 exports[`Button secondary renders 1`] = `
 .c0 {
-  font-family: 'Work Sans', Arial, sans-serif;
+  font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
@@ -1132,7 +1772,6 @@ exports[`Button secondary renders 1`] = `
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  -webkit-appearance: button;
   font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;

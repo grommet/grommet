@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { rgba } from 'polished';
 
 import { fontSize, lapAndUp } from '../mixins';
 import { focusStyle, parseMetricToInt } from '../utils';
@@ -43,8 +44,49 @@ function getHoverColor(props) {
   return props.theme.button.border.color || props.theme.colors.brand;
 }
 
+function getHoverIndicatorStyle(hoverIndicator, theme) {
+  let backgroundColor = theme.brand.hover.backgroundColor;
+  if (typeof hoverIndicator === 'object') {
+    if (
+      typeof hoverIndicator.background === 'string'
+    ) {
+      const colorGroup = hoverIndicator.background.split('-');
+      const colorType = colorGroup[0];
+      if (!theme.colors[colorType]) {
+        console.warn(
+          `Invalid color ${hoverIndicator.background}, using ${backgroundColor} instead`
+        );
+      } else if (colorGroup.length > 1) {
+        // subtract one to use the array
+        const colorIndex = colorGroup[1] - 1;
+        if (theme.colors[colorType].length < colorGroup[1]) {
+          console.warn(
+            `Invalid color ${hoverIndicator.background}, using ${backgroundColor} instead`
+          );
+        } else {
+          backgroundColor = `${rgba(theme.colors[colorType][colorIndex], 0.3)};`;
+        }
+      } else if (typeof theme.colors[colorType] !== 'string') {
+        console.warn(
+          `Invalid color ${hoverIndicator.background}, using ${backgroundColor} instead`
+        );
+      } else {
+        backgroundColor = `${rgba(theme.colors[colorType], 0.3)};`;
+      }
+    }
+  }
+  return css`
+    background-color: ${backgroundColor};
+    color: ${theme.brand.hover.textColor};
+  `;
+}
+
 const hoverStyle = css`
   &:hover {
+    ${props => props.hoverIndicator && getHoverIndicatorStyle(
+      props.hoverIndicator, props.theme
+    )}
+
     ${props => !props.plain && (
       `box-shadow: 0px 0px 0px 2px ${getHoverColor(props)};`
     )}
@@ -88,7 +130,6 @@ const StyledButton = styled.button`
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  -webkit-appearance: button;
   font: inherit;
   font-weight: ${props => props.theme.brand.control.font.weight};
 
