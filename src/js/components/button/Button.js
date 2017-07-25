@@ -7,6 +7,10 @@ import { withFocus, withTheme } from '../hocs';
 
 import doc from './doc';
 
+const AnchorStyledButton = StyledButton.withComponent('a');
+// TODO: replace this with Box once we have it
+const BoxStyledButton = StyledButton.withComponent('div');
+
 class Button extends Component {
   static defaultProps = {
     type: 'button',
@@ -30,7 +34,7 @@ class Button extends Component {
 
     let Tag = StyledButton;
     if (href) {
-      Tag = Tag.withComponent('a');
+      Tag = AnchorStyledButton;
     }
 
     let boxProps;
@@ -39,8 +43,7 @@ class Button extends Component {
       boxProps = {
         tag: href ? 'a' : 'button',
       };
-      // TODO: replace it with Box
-      Tag = Tag.withComponent('div');
+      Tag = BoxStyledButton;
     }
 
     let buttonIcon;
