@@ -27,19 +27,21 @@ exports[`Button accent renders 1`] = `
 }
 
 .c1 {
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  text-decoration: none;
   border: 2px solid #865CD6;
   border-radius: 5px;
   color: #333333;
-  cursor: pointer;
   text-align: center;
-  outline: none;
+  display: inline-block;
   min-width: 120px;
   max-width: 384px;
   margin: 0;
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
@@ -124,30 +126,12 @@ exports[`Button box href renders 1`] = `
 }
 
 .c1 {
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   cursor: pointer;
-  text-align: center;
   outline: none;
-  min-width: 120px;
-  max-width: 384px;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-  background-color: transparent;
   font: inherit;
-  font-weight: 600;
+  text-decoration: none;
   font-size: 1.1875rem;
   line-height: 24px;
-  width: auto;
-  height: auto;
-  min-width: 0;
-  max-width: none;
-  text-align: inherit;
-  font-weight: inherit;
-  padding: 6px;
-  border-color: transparent;
 }
 
 @media only screen and (min-width:481px) {
@@ -182,7 +166,7 @@ exports[`Button box href renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    type="button"
+    type={undefined}
   />
 </div>
 `;
@@ -214,30 +198,12 @@ exports[`Button box renders 1`] = `
 }
 
 .c1 {
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   cursor: pointer;
-  text-align: center;
   outline: none;
-  min-width: 120px;
-  max-width: 384px;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-  background-color: transparent;
   font: inherit;
-  font-weight: 600;
+  text-decoration: none;
   font-size: 1.1875rem;
   line-height: 24px;
-  width: auto;
-  height: auto;
-  min-width: 0;
-  max-width: none;
-  text-align: inherit;
-  font-weight: inherit;
-  padding: 6px;
-  border-color: transparent;
 }
 
 @media only screen and (min-width:481px) {
@@ -310,19 +276,21 @@ exports[`Button critical renders 1`] = `
 }
 
 .c1 {
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  text-decoration: none;
   border: 2px solid #865CD6;
   border-radius: 5px;
   color: #333333;
-  cursor: pointer;
   text-align: center;
-  outline: none;
+  display: inline-block;
   min-width: 120px;
   max-width: 384px;
   margin: 0;
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
@@ -407,19 +375,21 @@ exports[`Button disabled renders 1`] = `
 }
 
 .c1 {
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  text-decoration: none;
   border: 2px solid #865CD6;
   border-radius: 5px;
   color: #333333;
-  cursor: pointer;
   text-align: center;
-  outline: none;
+  display: inline-block;
   min-width: 120px;
   max-width: 384px;
   margin: 0;
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  font: inherit;
   font-weight: 600;
   opacity: 0.3;
   cursor: default;
@@ -492,19 +462,21 @@ exports[`Button focus renders 1`] = `
 }
 
 .c1 {
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  text-decoration: none;
   border: 2px solid #865CD6;
   border-radius: 5px;
   color: #333333;
-  cursor: pointer;
   text-align: center;
-  outline: none;
+  display: inline-block;
   min-width: 120px;
   max-width: 384px;
   margin: 0;
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
@@ -579,30 +551,12 @@ exports[`Button hoverIndicator as object renders 1`] = `
 }
 
 .c1 {
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   cursor: pointer;
-  text-align: center;
   outline: none;
-  min-width: 120px;
-  max-width: 384px;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-  background-color: transparent;
   font: inherit;
-  font-weight: 600;
+  text-decoration: none;
   font-size: 1.1875rem;
   line-height: 24px;
-  width: auto;
-  height: auto;
-  min-width: 0;
-  max-width: none;
-  text-align: inherit;
-  font-weight: inherit;
-  padding: 6px;
-  border-color: transparent;
 }
 
 .c1:hover {
@@ -672,30 +626,12 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
 }
 
 .c1 {
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   cursor: pointer;
-  text-align: center;
   outline: none;
-  min-width: 120px;
-  max-width: 384px;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-  background-color: transparent;
   font: inherit;
-  font-weight: 600;
+  text-decoration: none;
   font-size: 1.1875rem;
   line-height: 24px;
-  width: auto;
-  height: auto;
-  min-width: 0;
-  max-width: none;
-  text-align: inherit;
-  font-weight: inherit;
-  padding: 6px;
-  border-color: transparent;
 }
 
 .c1:hover {
@@ -765,30 +701,12 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
 }
 
 .c1 {
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   cursor: pointer;
-  text-align: center;
   outline: none;
-  min-width: 120px;
-  max-width: 384px;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-  background-color: transparent;
   font: inherit;
-  font-weight: 600;
+  text-decoration: none;
   font-size: 1.1875rem;
   line-height: 24px;
-  width: auto;
-  height: auto;
-  min-width: 0;
-  max-width: none;
-  text-align: inherit;
-  font-weight: inherit;
-  padding: 6px;
-  border-color: transparent;
 }
 
 .c1:hover {
@@ -858,30 +776,12 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
 }
 
 .c1 {
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   cursor: pointer;
-  text-align: center;
   outline: none;
-  min-width: 120px;
-  max-width: 384px;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-  background-color: transparent;
   font: inherit;
-  font-weight: 600;
+  text-decoration: none;
   font-size: 1.1875rem;
   line-height: 24px;
-  width: auto;
-  height: auto;
-  min-width: 0;
-  max-width: none;
-  text-align: inherit;
-  font-weight: inherit;
-  padding: 6px;
-  border-color: transparent;
 }
 
 .c1:hover {
@@ -951,30 +851,12 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
 }
 
 .c1 {
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   cursor: pointer;
-  text-align: center;
   outline: none;
-  min-width: 120px;
-  max-width: 384px;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-  background-color: transparent;
   font: inherit;
-  font-weight: 600;
+  text-decoration: none;
   font-size: 1.1875rem;
   line-height: 24px;
-  width: auto;
-  height: auto;
-  min-width: 0;
-  max-width: none;
-  text-align: inherit;
-  font-weight: inherit;
-  padding: 6px;
-  border-color: transparent;
 }
 
 .c1:hover {
@@ -1044,30 +926,12 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
 }
 
 .c1 {
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   cursor: pointer;
-  text-align: center;
   outline: none;
-  min-width: 120px;
-  max-width: 384px;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-  background-color: transparent;
   font: inherit;
-  font-weight: 600;
+  text-decoration: none;
   font-size: 1.1875rem;
   line-height: 24px;
-  width: auto;
-  height: auto;
-  min-width: 0;
-  max-width: none;
-  text-align: inherit;
-  font-weight: inherit;
-  padding: 6px;
-  border-color: transparent;
 }
 
 .c1:hover {
@@ -1137,30 +1001,12 @@ exports[`Button hoverIndicator renders 1`] = `
 }
 
 .c1 {
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   cursor: pointer;
-  text-align: center;
   outline: none;
-  min-width: 120px;
-  max-width: 384px;
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-  background-color: transparent;
   font: inherit;
-  font-weight: 600;
+  text-decoration: none;
   font-size: 1.1875rem;
   line-height: 24px;
-  width: auto;
-  height: auto;
-  min-width: 0;
-  max-width: none;
-  text-align: inherit;
-  font-weight: inherit;
-  padding: 6px;
-  border-color: transparent;
 }
 
 .c1:hover {
@@ -1230,19 +1076,21 @@ exports[`Button href renders 1`] = `
 }
 
 .c1 {
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  text-decoration: none;
   border: 2px solid #865CD6;
   border-radius: 5px;
   color: #333333;
-  cursor: pointer;
   text-align: center;
-  outline: none;
+  display: inline-block;
   min-width: 120px;
   max-width: 384px;
   margin: 0;
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
@@ -1292,7 +1140,7 @@ exports[`Button href renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    type="button"
+    type={undefined}
   />
 </div>
 `;
@@ -1336,19 +1184,21 @@ exports[`Button icon label renders 1`] = `
 }
 
 .c1 {
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  text-decoration: none;
   border: 2px solid #865CD6;
   border-radius: 5px;
   color: #333333;
-  cursor: pointer;
   text-align: center;
-  outline: none;
+  display: inline-block;
   min-width: 120px;
   max-width: 384px;
   margin: 0;
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
@@ -1441,19 +1291,21 @@ exports[`Button primary renders 1`] = `
 }
 
 .c1 {
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  text-decoration: none;
   border: 2px solid #865CD6;
   border-radius: 5px;
   color: #333333;
-  cursor: pointer;
   text-align: center;
-  outline: none;
+  display: inline-block;
   min-width: 120px;
   max-width: 384px;
   margin: 0;
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
@@ -1543,19 +1395,21 @@ exports[`Button renders 1`] = `
 }
 
 .c1 {
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  text-decoration: none;
   border: 2px solid #865CD6;
   border-radius: 5px;
   color: #333333;
-  cursor: pointer;
   text-align: center;
-  outline: none;
+  display: inline-block;
   min-width: 120px;
   max-width: 384px;
   margin: 0;
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
@@ -1655,19 +1509,21 @@ exports[`Button reverse icon label renders 1`] = `
 }
 
 .c1 {
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  text-decoration: none;
   border: 2px solid #865CD6;
   border-radius: 5px;
   color: #333333;
-  cursor: pointer;
   text-align: center;
-  outline: none;
+  display: inline-block;
   min-width: 120px;
   max-width: 384px;
   margin: 0;
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
@@ -1760,19 +1616,21 @@ exports[`Button secondary renders 1`] = `
 }
 
 .c1 {
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  text-decoration: none;
   border: 2px solid #865CD6;
   border-radius: 5px;
   color: #333333;
-  cursor: pointer;
   text-align: center;
-  outline: none;
+  display: inline-block;
   min-width: 120px;
   max-width: 384px;
   margin: 0;
   overflow: visible;
   text-transform: none;
   background-color: transparent;
-  font: inherit;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;

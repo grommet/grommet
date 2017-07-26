@@ -81,7 +81,7 @@ class Button extends Component {
         onClick={onClick}
         plain={plainProp}
         theme={theme}
-        type={type}
+        type={!href ? type : undefined}
       >
         {first}
         {second}

@@ -10,10 +10,6 @@ const centeredStyle = css`
   margin-right: auto;
 `;
 
-const inlineStyle = css`
-  position: relative;
-`;
-
 const StyledGrommet = styled.div`
   font-family: ${props => props.theme.brand.font.family};
   font-size: ${props => `${(parseMetricToInt(props.theme.brand.font.size) / 16) * 1}em`};
@@ -44,9 +40,9 @@ const StyledGrommet = styled.div`
   `)}
 
   ${props => props.centered && centeredStyle}
-  ${props => props.inline && inlineStyle}
   ${props => props.theme.brand.font.face}
-  ${props => props.theme.grommet.extend}
 `;
 
-export default StyledGrommet;
+export default StyledGrommet.extend`
+  ${props => props.theme.grommet.extend}
+`;

@@ -105,34 +105,27 @@ const hoverStyle = css`
   }
 `;
 
-const plainStyle = css`
-  width: auto;
-  height: auto;
-  min-width: 0;
-  max-width: none;
-  text-align: inherit;
-  font-weight: inherit;
-  padding: ${props => parseMetricToInt(props.theme.brand.spacing) / 4}px;
-  
-  ${props => !props.focus && 'border-color: transparent;'}
-`;
-
 const StyledButton = styled.button`
-  border: ${props => props.theme.button.border.width} solid ${props => props.theme.button.border.color || props.theme.colors.brand};
-  border-radius: ${props => props.theme.button.border.radius};
-  color: ${props => props.theme.button.color || props.theme.colors.text};
   cursor: pointer;
-  text-align: center;
   outline: none;
-  min-width: ${props => props.theme.button.minWidth};
-  max-width: ${props => props.theme.button.maxWidth};
-  margin: 0;
-  overflow: visible;
-  text-transform: none;
-  background-color: transparent;
   font: inherit;
-  font-weight: ${props => props.theme.brand.control.font.weight};
+  text-decoration: none;
 
+  ${props => !props.plain && css`
+    border: ${props.theme.button.border.width} solid ${props.theme.button.border.color || props.theme.colors.brand};
+    border-radius: ${props.theme.button.border.radius};
+    color: ${props.theme.button.color || props.theme.colors.text};
+    text-align: center;
+    display: inline-block;
+    min-width: ${props.theme.button.minWidth};
+    max-width: ${props.theme.button.maxWidth};
+    margin: 0;
+    overflow: visible;
+    text-transform: none;
+    background-color: transparent;
+    font-weight: ${props.theme.brand.control.font.weight};
+  `}
+  
   ${props => (
     !props.disabled && !props.focus && hoverStyle
   )}
@@ -157,7 +150,6 @@ const StyledButton = styled.button`
     }
     return '';
   }}
-  ${props => props.plain && plainStyle}
   ${props => props.focus && focusStyle}
   ${lapAndUp(`
     transition: 0.1s ease-in-out;

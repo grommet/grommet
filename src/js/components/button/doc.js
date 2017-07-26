@@ -1,5 +1,27 @@
 import { schema, PropTypes } from 'react-desc';
 
+export function routedButton(RoutedButton) {
+  return schema(RoutedButton, {
+    description: 'A button with support for React Router.',
+    usage: `import { RoutedButton } from 'grommet';
+    <RoutedButton primary={true} href="/documentation" />`,
+    props: {
+      path: [
+        PropTypes.string,
+        'Indicates the path to be used for react-router link.', {
+          required: true,
+        },
+      ],
+      method: [
+        PropTypes.oneOf(['push', 'replace']),
+        'Indicates whether the browser history should be appended to or replaced.', {
+          defaultProp: 'push',
+        },
+      ],
+    },
+  });
+}
+
 export default Button => schema(Button, {
   description: `A button. We have a separate component 
   from the browser base so we can style it.`,
