@@ -204,8 +204,9 @@ exports[`Select inline 1`] = `
       className="grommetux-select__option grommetux-select__option--selected"
       onClick={undefined}
     >
-      <span
+      <label
         className="grommetux-radio-button"
+        htmlFor="undefined-one"
       >
         <input
           checked={true}
@@ -217,20 +218,20 @@ exports[`Select inline 1`] = `
         <span
           className="grommetux-radio-button__control"
         />
-        <label
+        <span
           className="grommetux-radio-button__label"
-          htmlFor="undefined-one"
         >
           one
-        </label>
-      </span>
+        </span>
+      </label>
     </li>
     <li
       className="grommetux-select__option"
       onClick={undefined}
     >
-      <span
+      <label
         className="grommetux-radio-button"
+        htmlFor="undefined-two"
       >
         <input
           checked={false}
@@ -242,13 +243,12 @@ exports[`Select inline 1`] = `
         <span
           className="grommetux-radio-button__control"
         />
-        <label
+        <span
           className="grommetux-radio-button__label"
-          htmlFor="undefined-two"
         >
           two
-        </label>
-      </span>
+        </span>
+      </label>
     </li>
   </ol>
 </div>
