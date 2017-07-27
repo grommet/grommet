@@ -244,30 +244,45 @@ var Animate = function (_Component2) {
   }, {
     key: '_checkScroll',
     value: function _checkScroll() {
+      var _props = this.props,
+          onAppear = _props.onAppear,
+          onLeave = _props.onLeave;
+
       var group = (0, _reactDom.findDOMNode)(this);
       var rect = group.getBoundingClientRect();
+
       if (rect.top < window.innerHeight) {
         if (!this.state.visible) {
-          this.setState({ visible: true });
+          this.setState({ visible: true }, function () {
+            if (onAppear) {
+              onAppear();
+            }
+          });
         }
       } else {
         if (this.state.visible) {
-          this.setState({ visible: false });
+          this.setState({ visible: false }, function () {
+            if (onLeave) {
+              onLeave();
+            }
+          });
         }
       }
     }
   }, {
     key: 'render',
     value: function render() {
-      var _props = this.props,
-          enter = _props.enter,
-          leave = _props.leave,
-          className = _props.className,
-          children = _props.children,
-          component = _props.component,
-          keep = _props.keep,
-          props = _objectWithoutProperties(_props, ['enter', 'leave', 'className', 'children', 'component', 'keep']);
+      var _props2 = this.props,
+          enter = _props2.enter,
+          leave = _props2.leave,
+          className = _props2.className,
+          children = _props2.children,
+          component = _props2.component,
+          keep = _props2.keep,
+          props = _objectWithoutProperties(_props2, ['enter', 'leave', 'className', 'children', 'component', 'keep']);
 
+      delete props.onAppear;
+      delete props.onLeave;
       delete props.visible;
       var visible = this.state.visible;
 
@@ -319,6 +334,8 @@ Animate.propTypes = {
     duration: _propTypes2.default.number,
     delay: _propTypes2.default.number
   }),
+  onAppear: _propTypes2.default.func,
+  onLeave: _propTypes2.default.func,
   visible: _propTypes2.default.oneOfType([_propTypes2.default.oneOf(['scroll']), _propTypes2.default.bool])
 };
 
