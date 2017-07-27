@@ -5,7 +5,7 @@ exports[`SocialShare has correct className rendering 1`] = `
   aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fgrommet.io&title=&summary="
-  onClick={undefined}
+  onClick={[Function]}
   target="_blank"
 >
   <span
@@ -36,7 +36,7 @@ exports[`SocialShare has correct email rendering 1`] = `
   aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href="mailto:?subject=&body=%0D%0Ahttp%3A%2F%2Fgrommet.io"
-  onClick={undefined}
+  onClick={[Function]}
   target="_self"
 >
   <span
@@ -65,7 +65,7 @@ exports[`SocialShare has correct facebook rendering 1`] = `
   aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fgrommet.io"
-  onClick={undefined}
+  onClick={[Function]}
   target="_blank"
 >
   <span
@@ -96,7 +96,7 @@ exports[`SocialShare has correct google rendering 1`] = `
   aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fgrommet.io&title=&summary="
-  onClick={undefined}
+  onClick={[Function]}
   target="_blank"
 >
   <span
@@ -127,7 +127,7 @@ exports[`SocialShare has correct linkedin rendering 1`] = `
   aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fgrommet.io&title=&summary="
-  onClick={undefined}
+  onClick={[Function]}
   target="_blank"
 >
   <span
@@ -158,7 +158,7 @@ exports[`SocialShare has correct text rendering 1`] = `
   aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fgrommet.io&title=&summary=testing"
-  onClick={undefined}
+  onClick={[Function]}
   target="_blank"
 >
   <span
@@ -189,7 +189,7 @@ exports[`SocialShare has correct title rendering 1`] = `
   aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fgrommet.io&title=testing&summary="
-  onClick={undefined}
+  onClick={[Function]}
   target="_blank"
 >
   <span
@@ -220,7 +220,7 @@ exports[`SocialShare has correct twitter rendering 1`] = `
   aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fgrommet.io&text="
-  onClick={undefined}
+  onClick={[Function]}
   target="_blank"
 >
   <span
