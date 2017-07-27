@@ -235,7 +235,6 @@ var Anchor = function (_Component) {
       var classes = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--animate-icon', hasIcon && animateIcon !== false), _defineProperty(_classnames, CLASS_ROOT + '--disabled', disabled), _defineProperty(_classnames, CLASS_ROOT + '--icon', anchorIcon || hasIcon), _defineProperty(_classnames, CLASS_ROOT + '--icon-label', hasIcon && label), _defineProperty(_classnames, CLASS_ROOT + '--align-' + align, align), _defineProperty(_classnames, CLASS_ROOT + '--primary', primary), _defineProperty(_classnames, CLASS_ROOT + '--reverse', reverse), _defineProperty(_classnames, CLASS_ROOT + '--active', active), _classnames), className);
 
       var adjustedOnClick = path && router ? this._onClick : onClick;
-
       if (!anchorChildren) {
         anchorChildren = label;
       }
@@ -248,7 +247,17 @@ var Anchor = function (_Component) {
       return _react2.default.createElement(
         Component,
         _extends({}, props, { href: adjustedHref, className: classes,
-          'aria-label': a11yTitle, onClick: adjustedOnClick }),
+          'aria-label': a11yTitle, onClick: function onClick(event) {
+            for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+              args[_key - 1] = arguments[_key];
+            }
+
+            if (disabled) {
+              event.preventDefault();
+            } else {
+              adjustedOnClick.apply(undefined, [event].concat(args));
+            }
+          } }),
         first,
         second
       );
