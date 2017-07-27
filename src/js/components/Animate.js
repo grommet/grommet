@@ -163,15 +163,25 @@ export default class Animate extends Component {
   }
 
   _checkScroll () {
+    const { onAppear, onLeave } = this.props;
     const group = findDOMNode(this);
     const rect = group.getBoundingClientRect();
+
     if (rect.top < window.innerHeight) {
       if (! this.state.visible) {
-        this.setState({ visible: true });
+        this.setState({ visible: true }, () => {
+          if (onAppear) {
+            onAppear();
+          }
+        });
       }
     } else {
       if (this.state.visible) {
-        this.setState({ visible: false });
+        this.setState({ visible: false }, () => {
+          if (onLeave) {
+            onLeave();
+          }
+        });
       }
     }
   }
@@ -180,6 +190,8 @@ export default class Animate extends Component {
     const {
       enter, leave, className, children, component, keep, ...props
     } = this.props;
+    delete props.onAppear;
+    delete props.onLeave;
     delete props.visible;
     const { visible } = this.state;
 
@@ -226,6 +238,8 @@ Animate.propTypes = {
     duration: PropTypes.number,
     delay: PropTypes.number
   }),
+  onAppear: PropTypes.func,
+  onLeave: PropTypes.func,
   visible: PropTypes.oneOfType([
     PropTypes.oneOf(['scroll']),
     PropTypes.bool
