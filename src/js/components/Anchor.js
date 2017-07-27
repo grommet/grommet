@@ -182,7 +182,6 @@ export default class Anchor extends Component {
     );
 
     let adjustedOnClick = (path && router ? this._onClick : onClick);
-
     if (!anchorChildren) {
       anchorChildren = label;
     }
@@ -194,7 +193,13 @@ export default class Anchor extends Component {
 
     return (
       <Component {...props} href={adjustedHref} className={classes}
-        aria-label={a11yTitle} onClick={adjustedOnClick}>
+        aria-label={a11yTitle} onClick={(event, ...args) => {
+          if (disabled) {
+            event.preventDefault();
+          } else {
+            adjustedOnClick(event, ...args);
+          }
+        }}>
         {first}
         {second}
       </Component>
