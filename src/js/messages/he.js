@@ -54,7 +54,7 @@ export default {
     ' והנמוך הינו {smallest}'
   ),
   hour: 'שעה',
-  'Grommet Logo': 'Grommet Logo',
+  'Grommet Logo': 'Grommet לוגו',
   'Layer': 'שכבה',
   List: 'רשימה',
   line: 'קו',
