@@ -495,10 +495,15 @@ var Select = function (_Component) {
 
           var itemOnClick = void 0;
           if (inline) {
-            var itemId = id + '-' + (option ? option.value || option : index);
+            var itemId = '' + (option ? option.value || option : index);
             var Type = multiple ? _CheckBox2.default : _RadioButton2.default;
-            content = _react2.default.createElement(Type, { key: itemId, id: itemId, label: content, checked: selected,
-              onChange: _this4._onClickOption.bind(_this4, option) });
+            content = _react2.default.createElement(Type, {
+              key: itemId,
+              id: '' + (id ? id + '-' + itemId : itemId),
+              label: content,
+              checked: selected,
+              onChange: _this4._onClickOption.bind(_this4, option)
+            });
           } else {
             itemOnClick = function itemOnClick(e) {
               e.stopPropagation();

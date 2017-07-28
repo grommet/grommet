@@ -96,7 +96,7 @@ var CheckBox = function (_Component) {
 
       return _react2.default.createElement(
         'label',
-        { className: classes, htmlFor: props.id, 'aria-label': label },
+        { className: classes, htmlFor: props.id },
         reverse ? children.reverse() : children,
         hidden
       );
