@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+- '6.9.1'
+sudo: false
+cache:
+  directories:
+  - node_modules
+script:
+- npm test
