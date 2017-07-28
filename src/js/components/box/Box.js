@@ -12,7 +12,6 @@ const styledComponents = {
 }; // tag -> styled component
 
 class Box extends Component {
-
   static defaultProps = {
     direction: 'column',
     tag: 'div',

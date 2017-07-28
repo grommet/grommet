@@ -16,9 +16,15 @@
     "fetch": true,
     "WebSocket": true,
     "alert": true,
-    "URLSearchParams": true
+    "URLSearchParams": true,
+    "defaultProps": true,
+    "childContextTypes": true,
+    "contextTypes": true,
+    "state": true,
   },
   "rules": {
+    "indent": "off",
+    "indent-legacy": ["error", 2],
     "comma-dangle": ["error", "always-multiline"],
     "jsx-quotes": ["error", "prefer-single"],
     "no-console": 0,
