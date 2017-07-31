@@ -5,19 +5,19 @@ import { parseMetricToInt } from '../utils';
 
 const centeredStyle = css`
   width: 100%;
-  max-width: ${props => props.theme.brand.centerColumnWidth};
+  max-width: ${props => props.theme.global.centerColumnWidth};
   margin-left: auto;
   margin-right: auto;
 `;
 
 const StyledGrommet = styled.div`
-  font-family: ${props => props.theme.brand.font.family};
-  font-size: ${props => `${(parseMetricToInt(props.theme.brand.font.size) / 16) * 1}em`};
+  font-family: ${props => props.theme.global.font.family};
+  font-size: ${props => `${(parseMetricToInt(props.theme.global.font.size) / 16) * 1}em`};
   line-height: ${props => (
-    parseMetricToInt(props.theme.brand.lineHeight) / parseMetricToInt(props.theme.brand.font.size)
+    parseMetricToInt(props.theme.global.lineHeight) / parseMetricToInt(props.theme.global.font.size)
   )};
-  color: ${props => props.theme.colors.text};
-  background-color: ${props => props.theme.colors.background};
+  color: ${props => props.theme.global.colors.text};
+  background-color: ${props => props.theme.global.colors.background};
 
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -40,7 +40,7 @@ const StyledGrommet = styled.div`
   `)}
 
   ${props => props.centered && centeredStyle}
-  ${props => props.theme.brand.font.face}
+  ${props => props.theme.global.font.face}
 `;
 
 export default StyledGrommet.extend`

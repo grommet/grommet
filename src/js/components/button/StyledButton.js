@@ -5,13 +5,13 @@ import { fontSize, lapAndUp } from '../mixins';
 import { focusStyle, parseMetricToInt } from '../utils';
 
 const primaryStyle = css`
-  background-color: ${props => props.theme.colors.brand};
-  color: ${props => props.theme.colors.activeTextColor};
+  background-color: ${props => props.theme.global.colors.brand};
+  color: ${props => props.theme.global.colors.activeTextColor};
 
   // TODO: revisit this
   svg {
-    fill: ${props => props.theme.colors.activeTextColor};
-    stroke: ${props => props.theme.colors.activeTextColor};
+    fill: ${props => props.theme.global.colors.activeTextColor};
+    stroke: ${props => props.theme.global.colors.activeTextColor};
     transition: none;
   }
 `;
@@ -41,43 +41,43 @@ function getHoverColor(props) {
   } else if (props.secondary) {
     return props.theme.button.colors.secondary;
   }
-  return props.theme.button.border.color || props.theme.colors.brand;
+  return props.theme.button.border.color || props.theme.global.colors.brand;
 }
 
 function getHoverIndicatorStyle(hoverIndicator, theme) {
-  let backgroundColor = theme.brand.hover.backgroundColor;
+  let backgroundColor = theme.global.hover.backgroundColor;
   if (typeof hoverIndicator === 'object') {
     if (
       typeof hoverIndicator.background === 'string'
     ) {
       const colorGroup = hoverIndicator.background.split('-');
       const colorType = colorGroup[0];
-      if (!theme.colors[colorType]) {
+      if (!theme.global.colors[colorType]) {
         console.warn(
           `Invalid color ${hoverIndicator.background}, using ${backgroundColor} instead`
         );
       } else if (colorGroup.length > 1) {
         // subtract one to use the array
         const colorIndex = colorGroup[1] - 1;
-        if (theme.colors[colorType].length < colorGroup[1]) {
+        if (theme.global.colors[colorType].length < colorGroup[1]) {
           console.warn(
             `Invalid color ${hoverIndicator.background}, using ${backgroundColor} instead`
           );
         } else {
-          backgroundColor = `${rgba(theme.colors[colorType][colorIndex], 0.3)};`;
+          backgroundColor = `${rgba(theme.global.colors[colorType][colorIndex], 0.3)};`;
         }
-      } else if (typeof theme.colors[colorType] !== 'string') {
+      } else if (typeof theme.global.colors[colorType] !== 'string') {
         console.warn(
           `Invalid color ${hoverIndicator.background}, using ${backgroundColor} instead`
         );
       } else {
-        backgroundColor = `${rgba(theme.colors[colorType], 0.3)};`;
+        backgroundColor = `${rgba(theme.global.colors[colorType], 0.3)};`;
       }
     }
   }
   return css`
     background-color: ${backgroundColor};
-    color: ${theme.brand.hover.textColor};
+    color: ${theme.global.hover.textColor};
   `;
 }
 
@@ -95,8 +95,8 @@ const hoverStyle = css`
       `
         // TODO: revisit this
         svg {
-          fill: ${props.theme.colors.hoverTextColor};
-          stroke: ${props.theme.colors.hoverTextColor};
+          fill: ${props.theme.global.colors.hoverTextColor};
+          stroke: ${props.theme.global.colors.hoverTextColor};
           transition: none;
         }
       `
@@ -112,9 +112,9 @@ const StyledButton = styled.button`
   text-decoration: none;
 
   ${props => !props.plain && css`
-    border: ${props.theme.button.border.width} solid ${props.theme.button.border.color || props.theme.colors.brand};
+    border: ${props.theme.button.border.width} solid ${props.theme.button.border.color || props.theme.global.colors.brand};
     border-radius: ${props.theme.button.border.radius};
-    color: ${props.theme.button.color || props.theme.colors.text};
+    color: ${props.theme.button.color || props.theme.global.colors.text};
     text-align: center;
     display: inline-block;
     min-width: ${props.theme.button.minWidth};
@@ -123,7 +123,7 @@ const StyledButton = styled.button`
     overflow: visible;
     text-transform: none;
     background-color: transparent;
-    font-weight: ${props.theme.brand.control.font.weight};
+    font-weight: ${props.theme.global.control.font.weight};
   `}
   
   ${props => (
@@ -132,7 +132,7 @@ const StyledButton = styled.button`
 
   ${props => props.disabled && disabledStyle}
 
-  ${props => fontSize(props.theme.brand.control.font.size, props.theme.brand.spacing)}
+  ${props => fontSize(props.theme.global.control.font.size, props.theme.global.spacing)}
   ${props => (
     !props.plain && !props.box && (
       `padding: ${props.theme.button.padding.vertical} ${props.theme.button.padding.horizontal};`
@@ -158,7 +158,7 @@ const StyledButton = styled.button`
 
 export const StyledLabel = styled.span`
   &:first-child:not(:last-child) {
-    margin-right: ${props => parseMetricToInt(props.theme.brand.spacing) / 2}px;
+    margin-right: ${props => parseMetricToInt(props.theme.global.spacing) / 2}px;
   }
 `;
 
@@ -166,7 +166,7 @@ export const StyledIcon = styled.span`
   display: inline-block;
 
   &:first-child:not(:last-child) {
-    margin-right: ${props => parseMetricToInt(props.theme.brand.spacing) / 2}px;
+    margin-right: ${props => parseMetricToInt(props.theme.global.spacing) / 2}px;
   }
 
   > * {

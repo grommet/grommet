@@ -46,7 +46,7 @@ const BASIS_MAP = {
 };
 
 const basisStyle = css`
-  flex-basis: ${props => BASIS_MAP[props.basis] || props.theme.brand.size[props.basis]};
+  flex-basis: ${props => BASIS_MAP[props.basis] || props.theme.global.size[props.basis]};
 `;
 
 const directionStyle = css`
@@ -94,31 +94,31 @@ const wrapStyle = 'flex-wrap: true;';
 
 const edgeStyle = (kind, data, theme) => {
   if (typeof data === 'string') {
-    return `${kind}: ${theme.brand.edgeSize[data]};`;
+    return `${kind}: ${theme.global.edgeSize[data]};`;
   }
   if (data.horizontal) {
     return `
-      ${kind}-left: ${theme.brand.edgeSize[data.horizontal]};
-      ${kind}-right: ${theme.brand.edgeSize[data.horizontal]};
+      ${kind}-left: ${theme.global.edgeSize[data.horizontal]};
+      ${kind}-right: ${theme.global.edgeSize[data.horizontal]};
     `;
   }
   if (data.vertical) {
     return `
-      ${kind}-top: ${theme.brand.edgeSize[data.vertical]};
-      ${kind}-bottom: ${theme.brand.edgeSize[data.vertical]};
+      ${kind}-top: ${theme.global.edgeSize[data.vertical]};
+      ${kind}-bottom: ${theme.global.edgeSize[data.vertical]};
     `;
   }
   if (data.top) {
-    return `${kind}-top: ${theme.brand.edgeSize[data.top]};`;
+    return `${kind}-top: ${theme.global.edgeSize[data.top]};`;
   }
   if (data.bottom) {
-    return `${kind}-bottom: ${theme.brand.edgeSize[data.bottom]};`;
+    return `${kind}-bottom: ${theme.global.edgeSize[data.bottom]};`;
   }
   if (data.left) {
-    return `${kind}-left: ${theme.brand.edgeSize[data.left]};`;
+    return `${kind}-left: ${theme.global.edgeSize[data.left]};`;
   }
   if (data.right) {
-    return `${kind}-right: ${theme.brand.edgeSize[data.right]};`;
+    return `${kind}-right: ${theme.global.edgeSize[data.right]};`;
   }
   return '';
 };
