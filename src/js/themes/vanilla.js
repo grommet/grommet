@@ -1,5 +1,6 @@
 import { rgba } from 'polished';
 
+const brandColor = '#865CD6';
 const accentColors = ['#00CCEB', '#FF7D28'];
 const neutralColors = ['#0A64A0', '#DC2878', '#501EB4', '#49516F'];
 const statusColors = {
@@ -10,8 +11,9 @@ const statusColors = {
   unknown: '#a8a8a8',
   disabled: '#a8a8a8',
 };
+const darkColors = ['#333333', '#444444', '#555555', '#666666', '#777777', '#999999'];
+const lightColors = ['#F6F6F6', '#EEEEEE', '#DDDDDD', '#CCCCCC', '#BBBBBB', '#AAAAAA'];
 const backgroundColor = '#FFFFFF';
-const brandColor = '#865CD6';
 const textColor = '#333333';
 const fontPath = 'https://fonts.gstatic.com/s/worksans/v2';
 
@@ -26,11 +28,16 @@ export default {
       accent: accentColors,
       activeTextColor: '#FFFFFF',
       background: backgroundColor,
+      black: '#000000',
       brand: brandColor,
+      dark: darkColors,
+      darkBackgroundTextColor: 'rgba(255, 255, 255, 0.85)',
       hoverTextColor: '#000000',
+      light: lightColors,
       neutral: neutralColors,
       status: statusColors,
       text: textColor,
+      white: '#FFFFFF',
     },
     control: {
       font: {

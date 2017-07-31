@@ -31,6 +31,11 @@ export default Box => schema(Box, {
       'Include a border.',
     ],
     // colorIndex - TODO
+    colorIndex: [
+      PropTypes.string,
+      `The color identifier to use for the background color. For example:
+      'neutral-1'.`,
+    ],
     direction: [
       PropTypes.oneOf(['row', 'column']),
       'The orientation to layout the child components in. Defaults to column.',

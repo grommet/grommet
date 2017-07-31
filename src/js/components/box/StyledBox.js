@@ -49,6 +49,36 @@ const basisStyle = css`
   flex-basis: ${props => BASIS_MAP[props.basis] || props.theme.global.size[props.basis]};
 `;
 
+const colorIsDark = (color) => {
+  // https://stackoverflow.com/a/42429333
+  const [red, green, blue] = color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16));
+  // http://www.had2know.com/technology/
+  //  color-contrast-calculator-web-design.html
+  const brightness = (
+    (299 * red) + (587 * green) + (114 * blue)
+  ) / 1000;
+  return (brightness < 125);
+};
+
+const colorIndexStyle = (colorIndex, theme) => {
+  const [kind, index] = colorIndex.split('-');
+  const colorSet = theme.global.colors[kind];
+  let backgroundColor;
+  if (Array.isArray(colorSet)) {
+    backgroundColor = theme.global.colors[kind][index];
+  } else if (typeof colorSet === 'string') {
+    backgroundColor = colorSet;
+  }
+  if (backgroundColor) {
+    return css`
+      background-color: ${backgroundColor};
+      color: ${colorIsDark(backgroundColor) ?
+        theme.global.colors.darkBackgroundTextColor : theme.global.colors.text};
+    `;
+  }
+  return undefined;
+};
+
 const directionStyle = css`
   flex-direction: ${(props) => {
     if (props.direction) {
@@ -130,6 +160,7 @@ const StyledBox = styled.div`
   ${props => props.alignContent && alignContentStyle}
   ${props => props.alignSelf && alignSelfStyle}
   ${props => props.basis && basisStyle}
+  ${props => props.colorIndex && colorIndexStyle(props.colorIndex, props.theme)}
   ${props => (props.direction || props.reverse) && directionStyle}
   ${props => props.flex !== undefined && flexStyle}
   ${props => props.justify && justifyStyle}

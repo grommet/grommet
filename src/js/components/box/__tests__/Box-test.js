@@ -126,6 +126,19 @@ test('Box textAlign renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Box colorIndex renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Box colorIndex='accent-1' />
+      <Box colorIndex='neutral-1' />
+      <Box colorIndex='light-1' />
+      <Box colorIndex='dark-1' />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Box basis renders', () => {
   const component = renderer.create(
     <Grommet>
