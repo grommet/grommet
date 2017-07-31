@@ -30,6 +30,8 @@ var _CSSClassnames = require('../utils/CSSClassnames');
 
 var _CSSClassnames2 = _interopRequireDefault(_CSSClassnames);
 
+var _DOM = require('../utils/DOM');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -234,12 +236,26 @@ var Animate = function (_Component2) {
   }, {
     key: '_listenForScroll',
     value: function _listenForScroll() {
-      document.addEventListener('scroll', this._checkScroll);
+      var _this3 = this;
+
+      // add a time so that the finScrollParents function
+      // get the right container sizes
+      setTimeout(function () {
+        var scrollParents = (0, _DOM.findScrollParents)((0, _reactDom.findDOMNode)(_this3.animateRef));
+        scrollParents.forEach(function (scrollParent) {
+          scrollParent.addEventListener('scroll', _this3._checkScroll);
+        }, _this3);
+      }, 0);
     }
   }, {
     key: '_unlistenForScroll',
     value: function _unlistenForScroll() {
-      document.removeEventListener('scroll', this._checkScroll);
+      var _this4 = this;
+
+      var scrollParents = (0, _DOM.findScrollParents)((0, _reactDom.findDOMNode)(this.animateRef));
+      scrollParents.forEach(function (scrollParent) {
+        scrollParent.removeEventListener('scroll', _this4._checkScroll);
+      }, this);
     }
   }, {
     key: '_checkScroll',
@@ -252,26 +268,24 @@ var Animate = function (_Component2) {
       var rect = group.getBoundingClientRect();
 
       if (rect.top < window.innerHeight) {
-        if (!this.state.visible) {
-          this.setState({ visible: true }, function () {
-            if (onAppear) {
-              onAppear();
-            }
-          });
-        }
+        this.setState({ visible: true }, function () {
+          if (onAppear) {
+            onAppear();
+          }
+        });
       } else {
-        if (this.state.visible) {
-          this.setState({ visible: false }, function () {
-            if (onLeave) {
-              onLeave();
-            }
-          });
-        }
+        this.setState({ visible: false }, function () {
+          if (onLeave) {
+            onLeave();
+          }
+        });
       }
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this5 = this;
+
       var _props2 = this.props,
           enter = _props2.enter,
           leave = _props2.leave,
@@ -305,7 +319,10 @@ var Animate = function (_Component2) {
         _reactTransitionGroup.TransitionGroup,
         _extends({}, props, {
           className: classes,
-          component: component
+          component: component,
+          ref: function ref(_ref3) {
+            return _this5.animateRef = _ref3;
+          }
         }),
         animateChildren
       );
