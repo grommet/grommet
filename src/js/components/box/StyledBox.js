@@ -60,19 +60,43 @@ const colorIsDark = (color) => {
   return (brightness < 125);
 };
 
-const colorIndexStyle = (colorIndex, theme) => {
-  const [kind, index] = colorIndex.split('-');
-  const colorSet = theme.global.colors[kind];
-  let backgroundColor;
-  if (Array.isArray(colorSet)) {
-    backgroundColor = theme.global.colors[kind][index];
-  } else if (typeof colorSet === 'string') {
-    backgroundColor = colorSet;
+const backgroundStyle = (background, theme) => {
+  if (typeof background === 'object') {
+    if (background.image) {
+      let color;
+      if (background.dark === false) {
+        color = theme.global.colors.text;
+      } else if (background.dark) {
+        color = theme.global.colors.darkBackgroundTextColor;
+      } else {
+        color = 'inherit';
+      }
+      return css`
+        background: ${background.image} no-repeat center center;
+        background-size: cover;
+        color: ${color};
+      `;
+    }
+    return undefined;
   }
-  if (backgroundColor) {
+  if (background.lastIndexOf('url', 0) === 0) {
     return css`
-      background-color: ${backgroundColor};
-      color: ${colorIsDark(backgroundColor) ?
+      background: ${background} no-repeat center center;
+      background-size: cover;
+    `;
+  }
+  const [kind, index] = background.split('-');
+  const colorSet = theme.global.colors[kind];
+  let color;
+  if (Array.isArray(colorSet)) {
+    color = theme.global.colors[kind][index];
+  } else if (typeof colorSet === 'string') {
+    color = colorSet;
+  }
+  if (color) {
+    return css`
+      background-color: ${color};
+      color: ${colorIsDark(color) ?
         theme.global.colors.darkBackgroundTextColor : theme.global.colors.text};
     `;
   }
@@ -160,7 +184,7 @@ const StyledBox = styled.div`
   ${props => props.alignContent && alignContentStyle}
   ${props => props.alignSelf && alignSelfStyle}
   ${props => props.basis && basisStyle}
-  ${props => props.colorIndex && colorIndexStyle(props.colorIndex, props.theme)}
+  ${props => props.background && backgroundStyle(props.background, props.theme)}
   ${props => (props.direction || props.reverse) && directionStyle}
   ${props => props.flex !== undefined && flexStyle}
   ${props => props.justify && justifyStyle}

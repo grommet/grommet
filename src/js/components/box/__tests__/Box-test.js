@@ -126,13 +126,20 @@ test('Box textAlign renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Box colorIndex renders', () => {
+test('Box background renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Box colorIndex='accent-1' />
-      <Box colorIndex='neutral-1' />
-      <Box colorIndex='light-1' />
-      <Box colorIndex='dark-1' />
+      <Box background='accent-1' />
+      <Box background='neutral-1' />
+      <Box background='light-1' />
+      <Box background='dark-1' />
+      <Box background='url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)' />
+      <Box
+        background={{
+          image: 'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
+          dark: false,
+        }}
+      />
     </Grommet>
   );
   const tree = component.toJSON();
