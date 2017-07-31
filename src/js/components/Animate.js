@@ -6,6 +6,7 @@ import { findDOMNode } from 'react-dom';
 import { TransitionGroup } from 'react-transition-group';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
+import { findScrollParents } from '../utils/DOM';
 
 const CLASS_ROOT = CSSClassnames.ANIMATE;
 
@@ -155,11 +156,21 @@ export default class Animate extends Component {
   }
 
   _listenForScroll () {
-    document.addEventListener('scroll', this._checkScroll);
+    // add a time so that the finScrollParents function
+    // get the right container sizes
+    setTimeout(() => {
+      const scrollParents = findScrollParents(findDOMNode(this.animateRef));
+      scrollParents.forEach((scrollParent) => {
+        scrollParent.addEventListener('scroll', this._checkScroll);
+      }, this);
+    }, 0);
   }
 
   _unlistenForScroll () {
-    document.removeEventListener('scroll', this._checkScroll);
+    const scrollParents = findScrollParents(findDOMNode(this.animateRef));
+    scrollParents.forEach((scrollParent) => {
+      scrollParent.removeEventListener('scroll', this._checkScroll);
+    }, this);
   }
 
   _checkScroll () {
@@ -168,21 +179,17 @@ export default class Animate extends Component {
     const rect = group.getBoundingClientRect();
 
     if (rect.top < window.innerHeight) {
-      if (! this.state.visible) {
-        this.setState({ visible: true }, () => {
-          if (onAppear) {
-            onAppear();
-          }
-        });
-      }
+      this.setState({ visible: true }, () => {
+        if (onAppear) {
+          onAppear();
+        }
+      });
     } else {
-      if (this.state.visible) {
-        this.setState({ visible: false }, () => {
-          if (onLeave) {
-            onLeave();
-          }
-        });
-      }
+      this.setState({ visible: false }, () => {
+        if (onLeave) {
+          onLeave();
+        }
+      });
     }
   }
 
@@ -212,6 +219,7 @@ export default class Animate extends Component {
         {...props}
         className={classes}
         component={component}
+        ref={ref => this.animateRef = ref}
       >
         {animateChildren}
       </TransitionGroup>
