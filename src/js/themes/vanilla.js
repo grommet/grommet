@@ -28,6 +28,11 @@ export default {
         size: '19px',
       },
     },
+    edgeSize: {
+      small: `${baseSpacing / 2}px`,
+      medium: `${baseSpacing}px`,
+      large: `${baseSpacing * 2}px`,
+    },
     focus: {
       border: {},
     },

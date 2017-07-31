@@ -37,6 +37,28 @@ test('Box reverse renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+// test('Box responsive renders', () => {
+//   const component = renderer.create(
+//     <Grommet>
+//       <Box responsive={true} />
+//       <Box responsive={false} />
+//     </Grommet>
+//   );
+//   const tree = component.toJSON();
+//   expect(tree).toMatchSnapshot();
+// });
+
+test('Box wrap renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Box wrap={true} />
+      <Box wrap={false} />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Box justify renders', () => {
   const component = renderer.create(
     <Grommet>
@@ -92,6 +114,18 @@ test('Box alignSelf renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Box textAlign renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Box textAlign='start' />
+      <Box textAlign='center' />
+      <Box textAlign='end' />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Box basis renders', () => {
   const component = renderer.create(
     <Grommet>
@@ -118,6 +152,57 @@ test('Box basis renders', () => {
         <Box basis='1/4' />
         <Box basis='3/4' />
       </Box>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Box flex renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Box>
+        <Box flex={true} />
+        <Box flex={false} />
+        <Box flex='grow' />
+        <Box flex='shrink' />
+      </Box>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Box margin renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Box margin='small' />
+      <Box margin='medium' />
+      <Box margin='large' />
+      <Box margin={{ horizontal: 'small' }} />
+      <Box margin={{ vertical: 'small' }} />
+      <Box margin={{ bottom: 'small' }} />
+      <Box margin={{ left: 'small' }} />
+      <Box margin={{ right: 'small' }} />
+      <Box margin={{ top: 'small' }} />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Box pad renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Box pad='small' />
+      <Box pad='medium' />
+      <Box pad='large' />
+      <Box pad={{ horizontal: 'small' }} />
+      <Box pad={{ vertical: 'small' }} />
+      <Box pad={{ bottom: 'small' }} />
+      <Box pad={{ left: 'small' }} />
+      <Box pad={{ right: 'small' }} />
+      <Box pad={{ top: 'small' }} />
     </Grommet>
   );
   const tree = component.toJSON();
