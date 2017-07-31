@@ -1,5 +1,18 @@
 export default {
-  brand: {
+  global: {
+    colors: {
+      accent: ['#2AD2C9', '#614767', '#ff8d6d'],
+      brand: '#01a982',
+      neutral: ['#425563', '#5F7A76', '#80746E', '#767676'],
+      status: {
+        critical: '#F04953',
+        error: '#F04953',
+        warning: '#FFD144',
+        ok: '#01a982',
+        unknown: '#CCCCCC',
+        disabled: '#CCCCCC',
+      },
+    },
     font: {
       family: "'Metric', Arial, sans-serif",
       face: `
@@ -37,18 +50,5 @@ export default {
       secondary: 'rgba(51,51,51,0.6)',
     },
     extend: 'letter-spacing: 0.04167em;',
-  },
-  colors: {
-    accent: ['#2AD2C9', '#614767', '#ff8d6d'],
-    brand: '#01a982',
-    neutral: ['#425563', '#5F7A76', '#80746E', '#767676'],
-    status: {
-      critical: '#F04953',
-      error: '#F04953',
-      warning: '#FFD144',
-      ok: '#01a982',
-      unknown: '#CCCCCC',
-      disabled: '#CCCCCC',
-    },
   },
 };

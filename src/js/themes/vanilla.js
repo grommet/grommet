@@ -20,8 +20,18 @@ const baseSpacing = 24;
 const borderWidth = 2;
 
 export default {
-  brand: {
+  global: {
     centerColumnWidth: `${baseSpacing * 48}px`,
+    colors: {
+      accent: accentColors,
+      activeTextColor: '#FFFFFF',
+      background: backgroundColor,
+      brand: brandColor,
+      hoverTextColor: '#000000',
+      neutral: neutralColors,
+      status: statusColors,
+      text: textColor,
+    },
     control: {
       font: {
         weight: 600,
@@ -106,16 +116,6 @@ export default {
       xlarge: `${baseSpacing * 30}px`,
       xxlarge: `${baseSpacing * 40}px`,
     },
-  },
-  colors: {
-    accent: accentColors,
-    activeTextColor: '#FFFFFF',
-    background: backgroundColor,
-    brand: brandColor,
-    hoverTextColor: '#000000',
-    neutral: neutralColors,
-    status: statusColors,
-    text: textColor,
   },
   button: {
     border: {

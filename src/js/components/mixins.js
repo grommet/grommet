@@ -7,12 +7,12 @@ const lapStart = '481px';
 export function fontSize(size, lineHeight) {
   return css`
     font-size: ${
-      props => `${(parseMetricToInt(size) / parseMetricToInt(props.theme.brand.font.size)) * 1}rem`
+      props => `${(parseMetricToInt(size) / parseMetricToInt(props.theme.global.font.size)) * 1}rem`
     };
     line-height: ${props => (
       lineHeight || (
-        `${Math.ceil(parseMetricToInt(size) / parseMetricToInt(props.theme.brand.lineHeight)) *
-        (parseMetricToInt(props.theme.brand.lineHeight) / parseMetricToInt(size))}px`
+        `${Math.ceil(parseMetricToInt(size) / parseMetricToInt(props.theme.global.lineHeight)) *
+        (parseMetricToInt(props.theme.global.lineHeight) / parseMetricToInt(size))}px`
       )
     )};
   `;

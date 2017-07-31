@@ -3,14 +3,14 @@ import { css } from 'styled-components';
 export const focusStyle = css`
   border-color: ${
     props => (
-      props.theme.brand.focus.border.color ||
-      props.theme.colors.accent[0]
+      props.theme.global.focus.border.color ||
+      props.theme.global.colors.accent[0]
     )
   };
   box-shadow: 0 0 1px 1px ${
     props => (
-      props.theme.brand.focus.border.color ||
-      props.theme.colors.accent[0]
+      props.theme.global.focus.border.color ||
+      props.theme.global.colors.accent[0]
     )
   };
 `;
