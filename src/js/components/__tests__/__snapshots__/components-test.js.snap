@@ -6,9 +6,9 @@ Object {
   "Button": [Function],
   "Grid": [Function],
   "Grommet": [Function],
-  "Heading": [Function],
   "Paragraph": [Function],
   "RoutedButton": [Function],
+  "TextInput": [Function],
   "__esModule": true,
 }
 `;

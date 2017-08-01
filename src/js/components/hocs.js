@@ -80,7 +80,6 @@ export const withTheme = (WrappedComponent) => {
       );
     }
   }
-
   return ThemedComponent;
 };
 
