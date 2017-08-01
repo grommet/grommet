@@ -25,21 +25,25 @@ exports[`Heading level renders 1`] = `
 .c1 {
   font-size: 48px;
   line-height: 1.125;
+  font-weight: 300;
 }
 
 .c2 {
   font-size: 36px;
   line-height: 1.23;
+  font-weight: 300;
 }
 
 .c3 {
   font-size: 24px;
   line-height: 1.333;
+  font-weight: 300;
 }
 
 .c4 {
   font-size: 18px;
   line-height: 1.333;
+  font-weight: 300;
 }
 
 @media only screen and (min-width:481px) {
@@ -97,6 +101,7 @@ exports[`Heading margin renders 1`] = `
 .c1 {
   font-size: 48px;
   line-height: 1.125;
+  font-weight: 300;
   margin-top: 12px;
   margin-bottom: 12px;
 }
@@ -104,6 +109,7 @@ exports[`Heading margin renders 1`] = `
 .c2 {
   font-size: 48px;
   line-height: 1.125;
+  font-weight: 300;
   margin-top: 24px;
   margin-bottom: 24px;
 }
@@ -111,6 +117,7 @@ exports[`Heading margin renders 1`] = `
 .c3 {
   font-size: 48px;
   line-height: 1.125;
+  font-weight: 300;
   margin-top: 48px;
   margin-bottom: 48px;
 }
@@ -118,6 +125,7 @@ exports[`Heading margin renders 1`] = `
 .c4 {
   font-size: 48px;
   line-height: 1.125;
+  font-weight: 300;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -125,12 +133,14 @@ exports[`Heading margin renders 1`] = `
 .c5 {
   font-size: 48px;
   line-height: 1.125;
+  font-weight: 300;
   margin-bottom: 12px;
 }
 
 .c6 {
   font-size: 48px;
   line-height: 1.125;
+  font-weight: 300;
   margin-top: 12px;
 }
 
@@ -195,6 +205,7 @@ exports[`Heading renders 1`] = `
 .c1 {
   font-size: 48px;
   line-height: 1.125;
+  font-weight: 300;
 }
 
 @media only screen and (min-width:481px) {
@@ -243,61 +254,73 @@ exports[`Heading size renders 1`] = `
 .c2 {
   font-size: 48px;
   line-height: 1.125;
+  font-weight: 300;
 }
 
 .c1 {
   font-size: 24px;
   line-height: 1.333;
+  font-weight: 300;
 }
 
 .c3 {
   font-size: 96px;
   line-height: 1.125;
+  font-weight: 300;
 }
 
 .c5 {
   font-size: 36px;
   line-height: 1.23;
+  font-weight: 300;
 }
 
 .c4 {
   font-size: 18px;
   line-height: 1.333;
+  font-weight: 300;
 }
 
 .c6 {
   font-size: 48px;
   line-height: 1.125;
+  font-weight: 300;
 }
 
 .c8 {
   font-size: 24px;
   line-height: 1.333;
+  font-weight: 300;
 }
 
 .c7 {
   font-size: 18px;
   line-height: 1.333;
+  font-weight: 300;
 }
 
 .c9 {
   font-size: 36px;
   line-height: 1.23;
+  font-weight: 300;
 }
 
 .c11 {
   font-size: 18px;
   line-height: 1.333;
+  font-weight: 300;
 }
 
 .c10 {
   font-size: 16px;
   line-height: 1.333;
+  font-weight: 300;
 }
 
 .c12 {
   font-size: 24px;
   line-height: 1.333;
+  font-weight: 300;
 }
 
 @media only screen and (min-width:481px) {
@@ -391,18 +414,21 @@ exports[`Heading textAlign renders 1`] = `
 .c1 {
   font-size: 48px;
   line-height: 1.125;
+  font-weight: 300;
   text-align: left;
 }
 
 .c2 {
   font-size: 48px;
   line-height: 1.125;
+  font-weight: 300;
   text-align: center;
 }
 
 .c3 {
   font-size: 48px;
   line-height: 1.125;
+  font-weight: 300;
   text-align: right;
 }
 
@@ -458,11 +484,13 @@ exports[`Heading truncate renders 1`] = `
 .c1 {
   font-size: 48px;
   line-height: 1.125;
+  font-weight: 300;
 }
 
 .c2 {
   font-size: 48px;
   line-height: 1.125;
+  font-weight: 300;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -30,6 +30,7 @@ const sizeStyle = (props) => {
   return css`
     font-size: ${data.size};
     line-height: ${data.height};
+    font-weight: ${props.theme.heading.weight};
   `;
 };
 
