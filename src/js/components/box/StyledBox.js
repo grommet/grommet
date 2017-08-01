@@ -123,6 +123,10 @@ const flexStyle = css`
   flex: ${props => FLEX_MAP[props.flex]};
 `;
 
+const gridAreaStyle = css`
+  grid-area: ${props => props.gridArea};
+`;
+
 const JUSTIFY_MAP = {
   between: 'space-between',
   center: 'center',
@@ -187,6 +191,7 @@ const StyledBox = styled.div`
   ${props => props.background && backgroundStyle(props.background, props.theme)}
   ${props => (props.direction || props.reverse) && directionStyle}
   ${props => props.flex !== undefined && flexStyle}
+  ${props => props.gridArea && gridAreaStyle}
   ${props => props.justify && justifyStyle}
   ${props => props.margin && edgeStyle('margin', props.margin, props.theme)}
   ${props => props.pad && edgeStyle('padding', props.pad, props.theme)}

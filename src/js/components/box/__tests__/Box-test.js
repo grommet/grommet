@@ -114,6 +114,19 @@ test('Box alignSelf renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Box justifySelf renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Box justifySelf='start' />
+      <Box justifySelf='center' />
+      <Box justifySelf='stretch' />
+      <Box justifySelf='end' />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Box textAlign renders', () => {
   const component = renderer.create(
     <Grommet>
@@ -223,6 +236,16 @@ test('Box pad renders', () => {
       <Box pad={{ left: 'small' }} />
       <Box pad={{ right: 'small' }} />
       <Box pad={{ top: 'small' }} />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Box gridArea renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Box gridArea='header' />
     </Grommet>
   );
   const tree = component.toJSON();
