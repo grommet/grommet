@@ -5,6 +5,7 @@ Object {
   "Box": [Function],
   "Button": [Function],
   "Grommet": [Function],
+  "Paragraph": [Function],
   "RoutedButton": [Function],
   "__esModule": true,
 }
