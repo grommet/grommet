@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { lapAndUp } from '../mixins';
-import { parseMetricToInt } from '../utils';
+import { lapAndUp, parseMetricToInt } from '../utils';
 
 const centeredStyle = css`
   width: 100%;
