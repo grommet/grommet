@@ -165,6 +165,7 @@ export default {
         large: { size: '24px', height: 1.333 },
       },
     },
+    weight: 300,
   },
   paragraph: {
     medium: { size: '16px', height: 1.375, maxWidth: `${baseSpacing * 24}px` },
