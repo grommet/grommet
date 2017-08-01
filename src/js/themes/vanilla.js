@@ -142,4 +142,28 @@ export default {
     },
   },
   grommet: {},
+  heading: {
+    level: {
+      1: {
+        medium: { size: '48px', height: 1.125 },
+        small: { size: '24px', height: 1.333 },
+        large: { size: '96px', height: 1.125 },
+      },
+      2: {
+        medium: { size: '36px', height: 1.23 },
+        small: { size: '18px', height: 1.333 },
+        large: { size: '48px', height: 1.125 },
+      },
+      3: {
+        medium: { size: '24px', height: 1.333 },
+        small: { size: '18px', height: 1.333 },
+        large: { size: '36px', height: 1.23 },
+      },
+      4: {
+        medium: { size: '18px', height: 1.333 },
+        small: { size: '16px', height: 1.333 },
+        large: { size: '24px', height: 1.333 },
+      },
+    },
+  },
 };

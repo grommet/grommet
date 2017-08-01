@@ -5,6 +5,7 @@ Object {
   "Box": [Function],
   "Button": [Function],
   "Grommet": [Function],
+  "Heading": [Function],
   "RoutedButton": [Function],
   "__esModule": true,
 }

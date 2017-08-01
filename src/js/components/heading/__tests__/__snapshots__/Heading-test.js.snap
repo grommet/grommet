@@ -1,0 +1,497 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading level renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  font-size: 48px;
+  line-height: 1.125;
+}
+
+.c2 {
+  font-size: 36px;
+  line-height: 1.23;
+}
+
+.c3 {
+  font-size: 24px;
+  line-height: 1.333;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 1.333;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <h1
+    className="c1"
+  />
+  <h2
+    className="c2"
+  />
+  <h3
+    className="c3"
+  />
+  <h4
+    className="c4"
+  />
+</div>
+`;
+
+exports[`Heading margin renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  font-size: 48px;
+  line-height: 1.125;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.c2 {
+  font-size: 48px;
+  line-height: 1.125;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.c3 {
+  font-size: 48px;
+  line-height: 1.125;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.c4 {
+  font-size: 48px;
+  line-height: 1.125;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c5 {
+  font-size: 48px;
+  line-height: 1.125;
+  margin-bottom: 12px;
+}
+
+.c6 {
+  font-size: 48px;
+  line-height: 1.125;
+  margin-top: 12px;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <h1
+    className="c1"
+  />
+  <h1
+    className="c2"
+  />
+  <h1
+    className="c3"
+  />
+  <h1
+    className="c4"
+  />
+  <h1
+    className="c5"
+  />
+  <h1
+    className="c6"
+  />
+</div>
+`;
+
+exports[`Heading renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  font-size: 48px;
+  line-height: 1.125;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <h1
+    className="c1"
+  />
+</div>
+`;
+
+exports[`Heading size renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c2 {
+  font-size: 48px;
+  line-height: 1.125;
+}
+
+.c1 {
+  font-size: 24px;
+  line-height: 1.333;
+}
+
+.c3 {
+  font-size: 96px;
+  line-height: 1.125;
+}
+
+.c5 {
+  font-size: 36px;
+  line-height: 1.23;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 1.333;
+}
+
+.c6 {
+  font-size: 48px;
+  line-height: 1.125;
+}
+
+.c8 {
+  font-size: 24px;
+  line-height: 1.333;
+}
+
+.c7 {
+  font-size: 18px;
+  line-height: 1.333;
+}
+
+.c9 {
+  font-size: 36px;
+  line-height: 1.23;
+}
+
+.c11 {
+  font-size: 18px;
+  line-height: 1.333;
+}
+
+.c10 {
+  font-size: 16px;
+  line-height: 1.333;
+}
+
+.c12 {
+  font-size: 24px;
+  line-height: 1.333;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <h1
+    className="c1"
+    size="small"
+  />
+  <h1
+    className="c2"
+    size="medium"
+  />
+  <h1
+    className="c3"
+    size="large"
+  />
+  <h2
+    className="c4"
+    size="small"
+  />
+  <h2
+    className="c5"
+    size="medium"
+  />
+  <h2
+    className="c6"
+    size="large"
+  />
+  <h3
+    className="c7"
+    size="small"
+  />
+  <h3
+    className="c8"
+    size="medium"
+  />
+  <h3
+    className="c9"
+    size="large"
+  />
+  <h4
+    className="c10"
+    size="small"
+  />
+  <h4
+    className="c11"
+    size="medium"
+  />
+  <h4
+    className="c12"
+    size="large"
+  />
+</div>
+`;
+
+exports[`Heading textAlign renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  font-size: 48px;
+  line-height: 1.125;
+  text-align: left;
+}
+
+.c2 {
+  font-size: 48px;
+  line-height: 1.125;
+  text-align: center;
+}
+
+.c3 {
+  font-size: 48px;
+  line-height: 1.125;
+  text-align: right;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <h1
+    className="c1"
+  />
+  <h1
+    className="c2"
+  />
+  <h1
+    className="c3"
+  />
+</div>
+`;
+
+exports[`Heading truncate renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  font-size: 48px;
+  line-height: 1.125;
+}
+
+.c2 {
+  font-size: 48px;
+  line-height: 1.125;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <h1
+    className="c1"
+  >
+    a b c d e f g h i j k l m n o p q r s t u v w x y z
+  </h1>
+  <h1
+    className="c2"
+  >
+    a b c d e f g h i j k l m n o p q r s t u v w x y z
+  </h1>
+</div>
+`;
