@@ -2,14 +2,14 @@ import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
 
 import StyledButton, { StyledLabel, StyledIcon } from './StyledButton';
+import { Box } from '../box';
 
 import { withFocus, withTheme } from '../hocs';
 
 import doc from './doc';
 
 const AnchorStyledButton = StyledButton.withComponent('a');
-// TODO: replace this with Box once we have it
-const BoxStyledButton = StyledButton.withComponent('div');
+const BoxStyledButton = StyledButton.withComponent(Box);
 
 class Button extends Component {
   static defaultProps = {

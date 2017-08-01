@@ -110,6 +110,12 @@ const StyledButton = styled.button`
   outline: none;
   font: inherit;
   text-decoration: none;
+  font: inherit;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  border: ${props => props.theme.button.border.width} solid transparent;
 
   ${props => !props.plain && css`
     border: ${props.theme.button.border.width} solid ${props.theme.button.border.color || props.theme.global.colors.brand};
@@ -119,10 +125,6 @@ const StyledButton = styled.button`
     display: inline-block;
     min-width: ${props.theme.button.minWidth};
     max-width: ${props.theme.button.maxWidth};
-    margin: 0;
-    overflow: visible;
-    text-transform: none;
-    background-color: transparent;
     font-weight: ${props.theme.global.control.font.weight};
   `}
   
