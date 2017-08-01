@@ -17,7 +17,8 @@ export default Box => schema(Box, {
     ],
     alignSelf: [
       PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
-      'How to align within its container along the cross axis.',
+      `How to align along the cross axis when contained in a Box or along
+      the column axis when contained in a Grid.`,
     ],
     // appCentered - removed
     background: [
@@ -51,10 +52,18 @@ export default Box => schema(Box, {
       PropTypes.oneOf(['grow', 'shrink', true, false]),
       'Whether flex-grow and/or flex-shrink is true.',
     ],
+    gridArea: [
+      PropTypes.string,
+      'The name of the area to place this Box in inside a parent Grid.',
+    ],
     // full - removed
     justify: [
       PropTypes.oneOf(['start', 'center', 'between', 'end']),
       'How to align the contents along the main axis.',
+    ],
+    justifySelf: [
+      PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
+      'How to align along the row axis when contained in a Grid.',
     ],
     // onClick - removed
     margin: [
