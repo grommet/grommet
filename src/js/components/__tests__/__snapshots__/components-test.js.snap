@@ -6,6 +6,7 @@ Object {
   "Button": [Function],
   "Grid": [Function],
   "Grommet": [Function],
+  "Paragraph": [Function],
   "RoutedButton": [Function],
   "__esModule": true,
 }

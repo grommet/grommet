@@ -1,0 +1,304 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paragraph margin renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  font-size: 16px;
+  line-height: 1.375;
+  max-width: 576px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.c2 {
+  font-size: 16px;
+  line-height: 1.375;
+  max-width: 576px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
+  max-width: 576px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.c4 {
+  font-size: 16px;
+  line-height: 1.375;
+  max-width: 576px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c5 {
+  font-size: 16px;
+  line-height: 1.375;
+  max-width: 576px;
+  margin-bottom: 12px;
+}
+
+.c6 {
+  font-size: 16px;
+  line-height: 1.375;
+  max-width: 576px;
+  margin-top: 12px;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <p
+    className="c1"
+  />
+  <p
+    className="c2"
+  />
+  <p
+    className="c3"
+  />
+  <p
+    className="c4"
+  />
+  <p
+    className="c5"
+  />
+  <p
+    className="c6"
+  />
+</div>
+`;
+
+exports[`Paragraph renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  font-size: 16px;
+  line-height: 1.375;
+  max-width: 576px;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <p
+    className="c1"
+  />
+</div>
+`;
+
+exports[`Paragraph size renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c2 {
+  font-size: 16px;
+  line-height: 1.375;
+  max-width: 576px;
+}
+
+.c1 {
+  font-size: 14px;
+  line-height: 1.43;
+  max-width: 432px;
+}
+
+.c3 {
+  font-size: 24px;
+  line-height: 1.167;
+  max-width: 864px;
+}
+
+.c4 {
+  font-size: 32px;
+  line-height: 1.1875;
+  max-width: 1152px;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <p
+    className="c1"
+    size="small"
+  />
+  <p
+    className="c2"
+    size="medium"
+  />
+  <p
+    className="c3"
+    size="large"
+  />
+  <p
+    className="c4"
+    size="xlarge"
+  />
+</div>
+`;
+
+exports[`Paragraph textAlign renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 1152px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  font-size: 16px;
+  line-height: 1.375;
+  max-width: 576px;
+  text-align: left;
+}
+
+.c2 {
+  font-size: 16px;
+  line-height: 1.375;
+  max-width: 576px;
+  text-align: center;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
+  max-width: 576px;
+  text-align: right;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <p
+    className="c1"
+  />
+  <p
+    className="c2"
+  />
+  <p
+    className="c3"
+  />
+</div>
+`;

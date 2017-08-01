@@ -142,4 +142,10 @@ export default {
     },
   },
   grommet: {},
+  paragraph: {
+    medium: { size: '16px', height: 1.375, maxWidth: `${baseSpacing * 24}px` },
+    small: { size: '14px', height: 1.43, maxWidth: `${baseSpacing * 18}px` },
+    large: { size: '24px', height: 1.167, maxWidth: `${baseSpacing * 36}px` },
+    xlarge: { size: '32px', height: 1.1875, maxWidth: `${baseSpacing * 48}px` },
+  },
 };
