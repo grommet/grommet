@@ -20,6 +20,17 @@ export default Box => schema(Box, {
       'How to align within its container along the cross axis.',
     ],
     // appCentered - removed
+    background: [
+      PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.shape({
+          dark: PropTypes.bool,
+          image: PropTypes.string,
+        }),
+      ]),
+      `Either a color identifier to use for the background color. For example:
+      'neutral-1'. Or, a 'url()' for an image.`,
+    ],
     basis: [
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge',
         'xxlarge', 'full', '1/2', '1/3', '2/3', '1/4', '3/4']),
@@ -30,7 +41,7 @@ export default Box => schema(Box, {
         'horizontal', 'vertical', 'all']),
       'Include a border.',
     ],
-    // colorIndex - TODO
+    // colorIndex - moved to background
     direction: [
       PropTypes.oneOf(['row', 'column']),
       'The orientation to layout the child components in. Defaults to column.',
@@ -97,7 +108,7 @@ export default Box => schema(Box, {
       PropTypes.oneOf(['start', 'center', 'end']),
       'How to align the text inside the box.',
     ],
-    // texture - TODO
+    // texture - moved to background
     wrap: [
       PropTypes.bool,
       'Whether children can wrap if they can\'t all fit. Defaults to false.',
