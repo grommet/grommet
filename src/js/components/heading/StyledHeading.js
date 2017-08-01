@@ -57,5 +57,5 @@ const StyledHeading = styled.h1`
 `;
 
 export default StyledHeading.extend`
-  ${props => props.theme.box && props.theme.box.extend}
+  ${props => props.theme.heading && props.theme.heading.extend}
 `;
