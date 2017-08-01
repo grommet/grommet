@@ -1,8 +1,24 @@
 import { css } from 'styled-components';
 
-import { parseMetricToInt } from './utils';
+import { focusStyle, parseMetricToInt } from './utils';
 
 const lapStart = '481px';
+
+export const inputStyle = css`
+  padding: ${props => (
+    (parseMetricToInt(props.theme.global.spacing) / 2) -
+    parseMetricToInt(props.theme.global.input.border.width)
+  )}px;
+  border: ${props => props.theme.global.input.border.width} solid ${props => props.theme.global.input.border.color};
+  border-radius: ${props => props.theme.global.input.border.radius};
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+
+  ${props => props.focus && focusStyle}
+`;
 
 export function fontSize(size, lineHeight) {
   return css`
@@ -24,4 +40,4 @@ export function lapAndUp(content) {
   `;
 }
 
-export default { lapAndUp };
+export default { inputStyle, fontSize, lapAndUp };

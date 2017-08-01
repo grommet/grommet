@@ -112,7 +112,17 @@ export default {
       backgroundColor: rgba('#DDDDDD', 0.5),
       textColor: '#000000',
     },
+    input: {
+      border: {
+        width: '1px',
+        radius: '4px',
+        color: 'rgba(0, 0, 0, 0.15)',
+      },
+    },
     lineHeight: '24px',
+    placeholder: {
+      color: '#AAAAAA',
+    },
     spacing: `${baseSpacing}px`,
     size: {
       xxsmall: `${baseSpacing * 2}px`,
