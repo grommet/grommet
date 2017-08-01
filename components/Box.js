@@ -420,7 +420,7 @@ Box.propTypes = {
   })]),
   // remove in 1.0?
   onClick: _propTypes2.default.func,
-  justify: _propTypes2.default.oneOf(['start', 'center', 'between', 'end']),
+  justify: _propTypes2.default.oneOf(['start', 'center', 'between', 'end', 'around']),
   margin: _propTypes2.default.oneOfType([_propTypes2.default.oneOf(MARGIN_SIZES), _propTypes2.default.shape({
     bottom: _propTypes2.default.oneOf(MARGIN_SIZES),
     horizontal: _propTypes2.default.oneOf(MARGIN_SIZES),
