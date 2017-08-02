@@ -109,6 +109,7 @@ const areasStyle = (props) => {
 
 const StyledGrid = styled.div`
   display: grid;
+  height: 100%;
 
   ${props => props.align && alignStyle}
   ${props => props.alignContent && alignContentStyle}

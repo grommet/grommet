@@ -123,6 +123,39 @@ const flexStyle = css`
   flex: ${props => FLEX_MAP[props.flex]};
 `;
 
+const fullStyle = (full) => {
+  if (full === 'horizontal') {
+    return `
+      max-width: 100%;
+      width: 100vw;
+    `;
+  }
+  if (full === 'vertical') {
+    return `
+      height: 100vh;
+      max-height: 100%;
+      overflow: auto;
+    `;
+  }
+  if (full === 'grow') {
+    return `
+      max-width: 100%;
+      width: 100vw;
+      min-height: 100vh;
+    `;
+  }
+  if (full) {
+    return `
+      max-width: 100%;
+      width: 100vw;
+      height: 100vh;
+      max-height: 100%;
+      overflow: auto;
+    `;
+  }
+  return undefined;
+};
+
 const gridAreaStyle = css`
   grid-area: ${props => props.gridArea};
 `;
@@ -191,6 +224,7 @@ const StyledBox = styled.div`
   ${props => props.background && backgroundStyle(props.background, props.theme)}
   ${props => (props.direction || props.reverse) && directionStyle}
   ${props => props.flex !== undefined && flexStyle}
+  ${props => props.full && fullStyle(props.full)}
   ${props => props.gridArea && gridAreaStyle}
   ${props => props.justify && justifyStyle}
   ${props => props.margin && edgeStyle('margin', props.margin, props.theme)}

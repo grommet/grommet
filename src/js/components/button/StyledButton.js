@@ -114,7 +114,6 @@ const StyledButton = styled.button`
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  border: ${props => props.theme.button.border.width} solid transparent;
 
   ${props => !props.plain && css`
     border: ${props.theme.button.border.width} solid ${props.theme.button.border.color || props.theme.global.colors.brand};
@@ -159,7 +158,7 @@ const StyledButton = styled.button`
   ${lapAndUp(`
     transition: 0.1s ease-in-out;
   `)}
-  ${props => (props.plain && 'color: inherit;')}
+  ${props => (props.plain && 'color: inherit; border: none;')}
 `;
 
 export const StyledLabel = styled.span`

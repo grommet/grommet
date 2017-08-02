@@ -4466,9 +4466,9 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-desc@^1.2.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/react-desc/-/react-desc-1.3.0.tgz#3a2b63993abe4eeda83f1e9381e040f66b62141a"
+react-desc@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/react-desc/-/react-desc-1.3.4.tgz#10d9d7ae4648c8bec4f288def53b95841baa8ba7"
   dependencies:
     prop-types "^15.5.8"
     react "^15.5.4"

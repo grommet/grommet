@@ -33,7 +33,7 @@
     "polished": "^1.3.0",
     "prop-types": "^15.5.10",
     "react": "^15.4.0",
-    "react-desc": "^1.2.0",
+    "react-desc": "^1.3.4",
     "react-dom": "^15.4.0",
     "recompose": "^0.24.0",
     "styled-components": "^2.1.1"
