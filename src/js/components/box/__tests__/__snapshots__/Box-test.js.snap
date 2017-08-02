@@ -12,10 +12,6 @@ exports[`Box align renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -142,10 +138,6 @@ exports[`Box alignContent renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -284,10 +276,6 @@ exports[`Box alignSelf renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -392,10 +380,6 @@ exports[`Box background renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -529,10 +513,6 @@ exports[`Box basis renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -822,10 +802,6 @@ exports[`Box direction renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -890,10 +866,6 @@ exports[`Box flex renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1013,10 +985,6 @@ exports[`Box gridArea renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1068,10 +1036,6 @@ exports[`Box justify renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1180,10 +1144,6 @@ exports[`Box justifySelf renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1246,10 +1206,6 @@ exports[`Box margin renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1423,10 +1379,6 @@ exports[`Box pad renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1600,10 +1552,6 @@ exports[`Box renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1654,10 +1602,6 @@ exports[`Box reverse renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1722,10 +1666,6 @@ exports[`Box tag renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1776,10 +1716,6 @@ exports[`Box textAlign renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1861,10 +1797,6 @@ exports[`Box wrap renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {

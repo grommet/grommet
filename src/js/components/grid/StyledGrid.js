@@ -98,8 +98,8 @@ const areasStyle = (props) => {
   // translate areas objects into grid-template-areas syntax
   const cells = props.rows.map(() => props.columns.map(() => '.'));
   props.areas.forEach((area) => {
-    for (let row = area.start[0]; row <= area.end[0]; row += 1) {
-      for (let column = area.start[1]; column <= area.end[1]; column += 1) {
+    for (let row = area.start[1]; row <= area.end[1]; row += 1) {
+      for (let column = area.start[0]; column <= area.end[0]; column += 1) {
         cells[row][column] = area.name;
       }
     }

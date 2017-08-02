@@ -1,13 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import { lapAndUp, parseMetricToInt } from '../utils';
-
-const centeredStyle = css`
-  width: 100%;
-  max-width: ${props => props.theme.global.centerColumnWidth};
-  margin-left: auto;
-  margin-right: auto;
-`;
 
 const StyledGrommet = styled.div`
   font-family: ${props => props.theme.global.font.family};
@@ -38,7 +31,6 @@ const StyledGrommet = styled.div`
     overflow: visible;
   `)}
 
-  ${props => props.centered && centeredStyle}
   ${props => props.theme.global.font.face}
 `;
 

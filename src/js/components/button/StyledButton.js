@@ -100,7 +100,7 @@ const hoverStyle = css`
         }
       `
     )}
-    
+
   }
 `;
 
@@ -126,14 +126,18 @@ const StyledButton = styled.button`
     max-width: ${props.theme.button.maxWidth};
     font-weight: ${props.theme.global.control.font.weight};
   `}
-  
+
   ${props => (
     !props.disabled && !props.focus && hoverStyle
   )}
 
   ${props => props.disabled && disabledStyle}
 
-  ${props => fontSize(props.theme.global.control.font.size, props.theme.global.spacing)}
+  ${props => (
+    !props.plain && (
+      fontSize(props.theme.global.control.font.size, props.theme.global.spacing)
+    )
+  )}
   ${props => (
     !props.plain && !props.box && (
       `padding: ${props.theme.button.padding.vertical} ${props.theme.button.padding.horizontal};`
@@ -155,6 +159,7 @@ const StyledButton = styled.button`
   ${lapAndUp(`
     transition: 0.1s ease-in-out;
   `)}
+  ${props => (props.plain && 'color: inherit;')}
 `;
 
 export const StyledLabel = styled.span`

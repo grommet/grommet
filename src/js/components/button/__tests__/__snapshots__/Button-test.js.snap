@@ -12,10 +12,6 @@ exports[`Button accent renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -117,10 +113,6 @@ exports[`Button box href renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -138,8 +130,7 @@ exports[`Button box href renders 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid transparent;
-  font-size: 1.1875rem;
-  line-height: 24px;
+  color: inherit;
 }
 
 .c2 {
@@ -202,10 +193,6 @@ exports[`Button box renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -227,8 +214,7 @@ exports[`Button box renders 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid transparent;
-  font-size: 1.1875rem;
-  line-height: 24px;
+  color: inherit;
 }
 
 .c2 {
@@ -297,10 +283,6 @@ exports[`Button critical renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -402,10 +384,6 @@ exports[`Button disabled renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -487,10 +465,6 @@ exports[`Button focus renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -582,10 +556,6 @@ exports[`Button hoverIndicator as object renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -603,8 +573,7 @@ exports[`Button hoverIndicator as object renders 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid transparent;
-  font-size: 1.1875rem;
-  line-height: 24px;
+  color: inherit;
 }
 
 .c1:hover {
@@ -663,10 +632,6 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -684,8 +649,7 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid transparent;
-  font-size: 1.1875rem;
-  line-height: 24px;
+  color: inherit;
 }
 
 .c1:hover {
@@ -744,10 +708,6 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -765,8 +725,7 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid transparent;
-  font-size: 1.1875rem;
-  line-height: 24px;
+  color: inherit;
 }
 
 .c1:hover {
@@ -825,10 +784,6 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -846,8 +801,7 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid transparent;
-  font-size: 1.1875rem;
-  line-height: 24px;
+  color: inherit;
 }
 
 .c1:hover {
@@ -906,10 +860,6 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -927,8 +877,7 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid transparent;
-  font-size: 1.1875rem;
-  line-height: 24px;
+  color: inherit;
 }
 
 .c1:hover {
@@ -987,10 +936,6 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1008,8 +953,7 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid transparent;
-  font-size: 1.1875rem;
-  line-height: 24px;
+  color: inherit;
 }
 
 .c1:hover {
@@ -1068,10 +1012,6 @@ exports[`Button hoverIndicator renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1089,8 +1029,7 @@ exports[`Button hoverIndicator renders 1`] = `
   overflow: visible;
   text-transform: none;
   border: 2px solid transparent;
-  font-size: 1.1875rem;
-  line-height: 24px;
+  color: inherit;
 }
 
 .c1:hover {
@@ -1149,10 +1088,6 @@ exports[`Button href renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1243,10 +1178,6 @@ exports[`Button icon label renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1364,10 +1295,6 @@ exports[`Button primary renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1470,10 +1397,6 @@ exports[`Button renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1574,10 +1497,6 @@ exports[`Button reverse icon label renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -1695,10 +1614,6 @@ exports[`Button secondary renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
