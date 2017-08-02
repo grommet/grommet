@@ -1,39 +1,11 @@
 import { css } from 'styled-components';
 
-export function parseMetricToInt(fontAsString) {
-  return parseInt(fontAsString.replace(/[^0-9]/g, ''), 10);
-}
+import { parseMetricToInt } from './styles';
 
-export const focusStyle = css`
-  border-color: ${
-    props => (
-      props.theme.global.focus.border.color ||
-      props.theme.global.colors.accent[0]
-    )
-  };
-  box-shadow: 0 0 1px 1px ${
-    props => (
-      props.theme.global.focus.border.color ||
-      props.theme.global.colors.accent[0]
-    )
-  };
-`;
-
-export const inputStyle = css`
-  padding: ${props => (
-    (parseMetricToInt(props.theme.global.spacing) / 2) -
-    parseMetricToInt(props.theme.global.input.border.width)
-  )}px;
-  border: ${props => props.theme.global.input.border.width} solid ${props => props.theme.global.input.border.color};
-  border-radius: ${props => props.theme.global.input.border.radius};
-  outline: none;
-  background-color: transparent;
-  color: inherit;
-  font: inherit;
-  margin: 0;
-
-  ${props => props.focus && focusStyle}
-`;
+export * from './styles';
+export * from './DOM';
+export { default as Drop } from './Drop';
+export { default as KeyboardAccelerators } from './KeyboardAccelerators';
 
 export function findAllByType(component, type) {
   let matches = [];
@@ -71,12 +43,3 @@ export function lapAndUp(content) {
     @media only screen and (min-width:${lapStart}) { ${content}; }
   `;
 }
-
-export default {
-  inputStyle,
-  findAllByType,
-  focusStyle,
-  fontSize,
-  lapAndUp,
-  parseMetricToInt,
-};
