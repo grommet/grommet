@@ -1,7 +1,7 @@
 import { schema, PropTypes } from 'react-desc';
 
 export default Heading => schema(Heading, {
-  description: 'A box.',
+  description: 'Heading text structed in levels.',
   usage: `import { Heading } from 'grommet';
   <Heading/>`,
   props: {

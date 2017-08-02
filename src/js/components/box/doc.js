@@ -1,7 +1,8 @@
 import { schema, PropTypes } from 'react-desc';
 
 export default Box => schema(Box, {
-  description: 'A box.',
+  description: `A flexible box that lays out its contents along a single
+    direction.`,
   usage: `import { Box } from 'grommet';
   <Box/>`,
   props: {
@@ -51,6 +52,10 @@ export default Box => schema(Box, {
     flex: [
       PropTypes.oneOf(['grow', 'shrink', true, false]),
       'Whether flex-grow and/or flex-shrink is true.',
+    ],
+    full: [
+      PropTypes.oneOf(['horizontal', 'vertical', true, false, 'grow']),
+      'Whether the width and/or height should take the full viewport size.',
     ],
     gridArea: [
       PropTypes.string,

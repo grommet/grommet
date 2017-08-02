@@ -206,6 +206,22 @@ test('Box flex renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Box full renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Box>
+        <Box full={true} />
+        <Box full={false} />
+        <Box full='horizontal' />
+        <Box full='vertical' />
+        <Box full='grow' />
+      </Box>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Box margin renders', () => {
   const component = renderer.create(
     <Grommet>
