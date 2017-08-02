@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import iconMessages from './icons/fr-US';
+import iconMessages from './icons/fr-FR';
 
 export default {
   IndexFilters: {
