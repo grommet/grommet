@@ -1,16 +1,14 @@
 import { schema, PropTypes } from 'react-desc';
 
 export default Grommet => schema(Grommet, {
-  description: 'This is the primary Grommet container outer.',
+  description: 'This is the top level Grommet container.',
   usage: `import { Grommet } from 'grommet';
-  <Grommet centered={true}>...</Grommet>`,
+  <Grommet>...</Grommet>`,
   props: {
-    centered: [
-      PropTypes.bool,
-      'Whether to centralize or not the content inside the container.',
-      {
-        defaultProp: true,
-      },
+    dir: [
+      PropTypes.oneOf(['rtl', 'ltr']),
+      `Whether text should be rendered right to left or not. Defaults to
+      inherit from the document context.`,
     ],
     theme: [
       PropTypes.object,

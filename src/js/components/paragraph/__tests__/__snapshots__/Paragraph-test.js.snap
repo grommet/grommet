@@ -12,10 +12,6 @@ exports[`Paragraph margin renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -116,10 +112,6 @@ exports[`Paragraph renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -165,10 +157,6 @@ exports[`Paragraph size renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -245,10 +233,6 @@ exports[`Paragraph textAlign renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {

@@ -12,10 +12,6 @@ exports[`Grid align renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -96,10 +92,6 @@ exports[`Grid alignContent renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -196,10 +188,6 @@ exports[`Grid areas renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -208,7 +196,7 @@ exports[`Grid areas renders 1`] = `
 
 .c1 {
   display: grid;
-  grid-template-areas: "header header" "main sidebar" "footer footer";
+  grid-template-areas: "header main footer" "header sidebar footer" ". .";
   grid-template-columns: 75% 25%;
   grid-template-rows: 48px 384px 96px;
 }
@@ -253,10 +241,6 @@ exports[`Grid columns renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -301,10 +285,6 @@ exports[`Grid gap renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -422,10 +402,6 @@ exports[`Grid justify renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -506,10 +482,6 @@ exports[`Grid justifyContent renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -612,10 +584,6 @@ exports[`Grid renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -659,10 +627,6 @@ exports[`Grid rows renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
@@ -714,10 +678,6 @@ exports[`Grid tag renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {

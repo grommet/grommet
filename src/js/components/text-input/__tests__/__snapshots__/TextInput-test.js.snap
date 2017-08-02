@@ -12,10 +12,6 @@ exports[`TextInput renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
-  max-width: 1152px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .c0 * {
