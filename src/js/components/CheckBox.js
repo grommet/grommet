@@ -50,7 +50,7 @@ export default class CheckBox extends Component {
     ];
 
     return (
-      <label className={classes} htmlFor={props.id} aria-label={label}>
+      <label className={classes} htmlFor={props.id}>
         {reverse ? children.reverse() : children}
         {hidden}
       </label>

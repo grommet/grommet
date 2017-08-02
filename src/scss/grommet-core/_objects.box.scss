@@ -667,6 +667,10 @@
   justify-content: space-between;
 }
 
+.#{$grommet-namespace}box--justify-around {
+  justify-content: space-around;
+}
+
 .#{$grommet-namespace}box--justify-end {
   justify-content: flex-end;
 }

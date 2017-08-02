@@ -387,11 +387,16 @@ export default class Select extends Component {
 
         let itemOnClick;
         if (inline) {
-          const itemId = `${id}-${option ? (option.value || option) : index}`;
+          const itemId = `${option ? (option.value || option) : index}`;
           const Type = (multiple ? CheckBox : RadioButton );
           content = (
-            <Type key={itemId} id={itemId} label={content} checked={selected}
-              onChange={this._onClickOption.bind(this, option)} />
+            <Type
+              key={itemId}
+              id={`${ id ? id + '-' + itemId : itemId}`}
+              label={content}
+              checked={selected}
+              onChange={this._onClickOption.bind(this, option)}
+            />
           );
         } else {
           itemOnClick = (e) => {

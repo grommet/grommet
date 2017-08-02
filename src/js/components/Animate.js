@@ -6,6 +6,7 @@ import { findDOMNode } from 'react-dom';
 import { TransitionGroup } from 'react-transition-group';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
+import { findScrollParents } from '../utils/DOM';
 
 const CLASS_ROOT = CSSClassnames.ANIMATE;
 
@@ -155,24 +156,40 @@ export default class Animate extends Component {
   }
 
   _listenForScroll () {
-    document.addEventListener('scroll', this._checkScroll);
+    // add a time so that the finScrollParents function
+    // get the right container sizes
+    setTimeout(() => {
+      const scrollParents = findScrollParents(findDOMNode(this.animateRef));
+      scrollParents.forEach((scrollParent) => {
+        scrollParent.addEventListener('scroll', this._checkScroll);
+      }, this);
+    }, 0);
   }
 
   _unlistenForScroll () {
-    document.removeEventListener('scroll', this._checkScroll);
+    const scrollParents = findScrollParents(findDOMNode(this.animateRef));
+    scrollParents.forEach((scrollParent) => {
+      scrollParent.removeEventListener('scroll', this._checkScroll);
+    }, this);
   }
 
   _checkScroll () {
+    const { onAppear, onLeave } = this.props;
     const group = findDOMNode(this);
     const rect = group.getBoundingClientRect();
+
     if (rect.top < window.innerHeight) {
-      if (! this.state.visible) {
-        this.setState({ visible: true });
-      }
+      this.setState({ visible: true }, () => {
+        if (onAppear) {
+          onAppear();
+        }
+      });
     } else {
-      if (this.state.visible) {
-        this.setState({ visible: false });
-      }
+      this.setState({ visible: false }, () => {
+        if (onLeave) {
+          onLeave();
+        }
+      });
     }
   }
 
@@ -180,6 +197,8 @@ export default class Animate extends Component {
     const {
       enter, leave, className, children, component, keep, ...props
     } = this.props;
+    delete props.onAppear;
+    delete props.onLeave;
     delete props.visible;
     const { visible } = this.state;
 
@@ -200,6 +219,7 @@ export default class Animate extends Component {
         {...props}
         className={classes}
         component={component}
+        ref={ref => this.animateRef = ref}
       >
         {animateChildren}
       </TransitionGroup>
@@ -226,6 +246,8 @@ Animate.propTypes = {
     duration: PropTypes.number,
     delay: PropTypes.number
   }),
+  onAppear: PropTypes.func,
+  onLeave: PropTypes.func,
   visible: PropTypes.oneOfType([
     PropTypes.oneOf(['scroll']),
     PropTypes.bool

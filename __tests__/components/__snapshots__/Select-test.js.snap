@@ -109,16 +109,15 @@ exports[`Select inline + multiple 1`] = `
       onClick={undefined}
     >
       <label
-        aria-label="one"
         className="grommetux-check-box"
-        htmlFor="undefined-one"
+        htmlFor="one"
       >
         <span>
           <input
             checked={true}
             className="grommetux-check-box__input"
             disabled={undefined}
-            id="undefined-one"
+            id="one"
             name={undefined}
             onChange={[Function]}
             tabIndex="0"
@@ -151,16 +150,15 @@ exports[`Select inline + multiple 1`] = `
       onClick={undefined}
     >
       <label
-        aria-label="two"
         className="grommetux-check-box"
-        htmlFor="undefined-two"
+        htmlFor="two"
       >
         <span>
           <input
             checked={false}
             className="grommetux-check-box__input"
             disabled={undefined}
-            id="undefined-two"
+            id="two"
             name={undefined}
             onChange={[Function]}
             tabIndex="0"
@@ -206,12 +204,12 @@ exports[`Select inline 1`] = `
     >
       <label
         className="grommetux-radio-button"
-        htmlFor="undefined-one"
+        htmlFor="one"
       >
         <input
           checked={true}
           className="grommetux-radio-button__input"
-          id="undefined-one"
+          id="one"
           onChange={[Function]}
           type="radio"
         />
@@ -231,12 +229,12 @@ exports[`Select inline 1`] = `
     >
       <label
         className="grommetux-radio-button"
-        htmlFor="undefined-two"
+        htmlFor="two"
       >
         <input
           checked={false}
           className="grommetux-radio-button__input"
-          id="undefined-two"
+          id="two"
           onChange={[Function]}
           type="radio"
         />

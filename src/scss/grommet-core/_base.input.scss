@@ -14,7 +14,8 @@
 }
 
 .grommet {
-  input:not(.#{$grommet-namespace}input:not(.#{$grommet-namespace}check-box__input)),
+  input:not(.#{$grommet-namespace}input),
+  input:not(.#{$grommet-namespace}check-box__input),
   select,
   textarea {
     @include inuit-font-size($inuit-base-font-size);
