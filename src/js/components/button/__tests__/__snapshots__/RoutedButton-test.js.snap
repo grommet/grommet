@@ -32,6 +32,7 @@ exports[`RoutedButton renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
+  border: 2px solid transparent;
   border: 2px solid #865CD6;
   border-radius: 5px;
   color: #333333;
