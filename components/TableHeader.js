@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -78,8 +80,20 @@ var TableHeader = function (_Component) {
           props = _objectWithoutProperties(_props2, ['labels', 'onSort', 'sortAscending', 'sortIndex']);
 
       var cells = labels.map(function (label, index) {
+        var content = void 0;
+        var options = {};
 
-        var content = label;
+        if (Array.isArray(label)) {
+          var _label = _slicedToArray(label, 2);
+
+          content = _label[0];
+          var _label$ = _label[1];
+          options = _label$ === undefined ? {} : _label$;
+        } else {
+          content = label;
+          options.sortable = !!onSort;
+        }
+
         if (sortIndex >= 0) {
           var sortIndicator = void 0;
           if (index === sortIndex) {
@@ -97,7 +111,7 @@ var TableHeader = function (_Component) {
             sortIndicator
           );
 
-          if (onSort) {
+          if (options.sortable) {
             content = _react2.default.createElement(
               _Button2.default,
               { plain: true, fill: true,
@@ -134,7 +148,7 @@ exports.default = TableHeader;
 
 
 TableHeader.propTypes = {
-  labels: _propTypes2.default.arrayOf(_propTypes2.default.node).isRequired,
+  labels: _propTypes2.default.arrayOf(_propTypes2.default.oneOfType([_propTypes2.default.node, _propTypes2.default.array])).isRequired,
   onSort: _propTypes2.default.func, // (index, ascending?)
   sortAscending: _propTypes2.default.bool,
   sortIndex: _propTypes2.default.number
