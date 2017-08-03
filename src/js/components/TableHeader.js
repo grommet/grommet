@@ -24,8 +24,16 @@ export default class TableHeader extends Component {
     const { labels, onSort, sortAscending, sortIndex, ...props } = this.props;
 
     const cells = labels.map((label, index) => {
+      let content;
+      let options = {};
 
-      let content = label;
+      if (Array.isArray(label)) {
+        [content, options = {}] = label;
+      } else {
+        content = label;
+        options.sortable = !!onSort;
+      }
+
       if (sortIndex >= 0) {
         let sortIndicator;
         if (index === sortIndex) {
@@ -42,7 +50,7 @@ export default class TableHeader extends Component {
           </Box>
         );
 
-        if (onSort) {
+        if (options.sortable) {
           content = (
             <Button plain={true} fill={true}
               onClick={this._onSort.bind(this, index)}>
@@ -66,7 +74,10 @@ export default class TableHeader extends Component {
 }
 
 TableHeader.propTypes = {
-  labels: PropTypes.arrayOf(PropTypes.node).isRequired,
+  labels: PropTypes.arrayOf(PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.array
+  ])).isRequired,
   onSort: PropTypes.func, // (index, ascending?)
   sortAscending: PropTypes.bool,
   sortIndex: PropTypes.number

@@ -18,4 +18,13 @@ describe('TableHeader', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('accepts options for sorting', () => {
+    const component = renderer.create(
+      <TableHeader labels={['first', ['second', { sortable: false }]]}
+        sortIndex={0} sortAscending={true} onSort={() => {}} />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
