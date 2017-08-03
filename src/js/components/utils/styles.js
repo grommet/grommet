@@ -1,8 +1,6 @@
 import { css } from 'styled-components';
 
-export function parseMetricToInt(fontAsString) {
-  return parseInt(fontAsString.replace(/[^0-9]/g, ''), 10);
-}
+import { parseMetricToInt } from './mixins';
 
 export const baseStyle = css`
   font-family: ${props => props.theme.global.font.family};

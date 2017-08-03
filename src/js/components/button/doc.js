@@ -36,7 +36,7 @@ export default Button => schema(Button, {
       PropTypes.bool, 'Whether this is a accent button.',
     ],
     align: [
-      PropTypes.oneOf(['start', 'center', 'end']),
+      PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
       'How to align the contents along the cross axis.',
     ],
     box: [

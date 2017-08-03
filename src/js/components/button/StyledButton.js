@@ -5,12 +5,12 @@ import { focusStyle, fontSize, lapAndUp, parseMetricToInt } from '../utils';
 
 const primaryStyle = css`
   background-color: ${props => props.theme.global.colors.brand};
-  color: ${props => props.theme.global.colors.activeTextColor};
+  color: ${props => props.theme.global.colors.white};
 
   // TODO: revisit this
   svg {
-    fill: ${props => props.theme.global.colors.activeTextColor};
-    stroke: ${props => props.theme.global.colors.activeTextColor};
+    fill: ${props => props.theme.global.colors.white};
+    stroke: ${props => props.theme.global.colors.white};
     transition: none;
   }
 `;
@@ -94,14 +94,47 @@ const hoverStyle = css`
       `
         // TODO: revisit this
         svg {
-          fill: ${props.theme.global.colors.hoverTextColor};
-          stroke: ${props.theme.global.colors.hoverTextColor};
+          fill: ${props.theme.global.hover.textColor};
+          stroke: ${props.theme.global.hover.textColor};
           transition: none;
         }
       `
     )}
 
   }
+`;
+
+const fillStyle = `
+  width: 100%;
+  max-width: none;
+  flex-grow: 1;
+`;
+
+const plainFocusStyle = css`
+  box-shadow: 0 0 3px 3px ${
+    props => (
+      props.theme.global.focus.border.color ||
+      props.theme.global.colors.accent[0]
+    )
+  };
+`;
+
+const plainStyle = css`
+  color: inherit;
+  border: none;
+  padding: 0;
+
+  ${props => props.focus && plainFocusStyle}
+`;
+
+const TEXT_ALIGN_MAP = {
+  center: 'center',
+  end: 'right',
+  start: 'left',
+};
+
+export const textAlignStyle = css`
+  text-align: ${props => TEXT_ALIGN_MAP[props.align]};
 `;
 
 const StyledButton = styled.button`
@@ -114,7 +147,6 @@ const StyledButton = styled.button`
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  border: ${props => props.theme.button.border.width} solid transparent;
 
   ${props => !props.plain && css`
     border: ${props.theme.button.border.width} solid ${props.theme.button.border.color || props.theme.global.colors.brand};
@@ -159,7 +191,9 @@ const StyledButton = styled.button`
   ${lapAndUp(`
     transition: 0.1s ease-in-out;
   `)}
-  ${props => (props.plain && 'color: inherit;')}
+  ${props => props.plain && plainStyle}
+  ${props => props.fill && fillStyle}
+  ${props => props.align && textAlignStyle}
 `;
 
 export const StyledLabel = styled.span`

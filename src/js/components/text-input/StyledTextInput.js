@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { lighten } from 'polished';
 
 import { focusStyle, inputStyle, parseMetricToInt } from '../utils';
 
@@ -30,22 +31,25 @@ const StyledTextInput = styled.input`
   }
 `;
 
-// TODO: remove cursor pointer and hover when using button
-const suggestionBackgroundStyle = css`
+const activeStyle = css`
   background-color: ${props => props.theme.global.hover.backgroundColor};
+  color: ${props => props.theme.global.hover.textColor};
+`;
+const selectedStyle = css`
+  background-color: ${
+    props => props.theme.global.selected.backgroundColor ||
+    lighten(0.23, props.theme.global.colors.brand)
+  };
+  color: ${props => props.theme.global.selected.textColor};
 `;
 
-export const StyledSuggestion = styled.li`
+export const StyledSuggestion = styled.div`
   padding: ${props => (
     `${parseMetricToInt(props.theme.global.spacing) / 4}px ${props.theme.global.spacing}`
   )};
-  cursor: pointer;
 
-  &:hover {
-    ${suggestionBackgroundStyle}
-  }
-
-  ${props => props.active && suggestionBackgroundStyle}
+  ${props => props.selected && selectedStyle}
+  ${props => props.active && activeStyle}
 `;
 
 export const StyledSuggestions = styled.ol`
