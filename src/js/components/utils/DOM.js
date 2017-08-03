@@ -1,19 +1,3 @@
-function getHash(input) {
-  let hash = 0;
-  let i;
-  let chr;
-  let len;
-  if (input.length === 0) return hash;
-  for (i = 0, len = input.length; i < len; i += 1) {
-    chr = input.charCodeAt(i);
-    /* eslint-disable no-bitwise */
-    hash = ((hash << 5) - hash) + chr;
-    hash &= hash; // Convert to 32bit integer
-    /* eslint-enable no-bitwise */
-  }
-  return hash;
-}
-
 export function findScrollParents(element, horizontal) {
   const result = [];
   let parent = element.parentNode;
@@ -37,26 +21,6 @@ export function findScrollParents(element, horizontal) {
   return result;
 }
 
-export function generateId(element) {
-  if (element) {
-    let id;
-    const elementId = element.getAttribute('id');
-    if (!elementId) {
-      // IE11 fix: check for parentNode instead of parentElement
-      const parentElement = element.parentElement || element.parentNode;
-      if (parentElement) {
-        id = getHash(parentElement.innerHTML);
-        element.setAttribute('id', id);
-      }
-    } else {
-      id = elementId;
-    }
-    return id;
-  }
-  return undefined;
-}
-
 export default {
   findScrollParents,
-  generateId,
 };

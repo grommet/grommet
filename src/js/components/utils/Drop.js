@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { findDOMNode, render, unmountComponentAtNode } from 'react-dom';
 import { findScrollParents } from './DOM';
 
-import { baseStyle } from './styles';
+import { Grommet } from '../grommet';
 
 /*
  * Drop is a utility for rendering components like drop down menus layered above
@@ -17,8 +17,6 @@ const VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
 const HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
 const DropContainer = styled.div`
-  ${baseStyle}
-
   position: fixed;
   z-index: 20;
   border-radius: ${props => props.theme.global.drop.border.radius};
@@ -80,8 +78,6 @@ const normalizeOptions = (options) => {
 // className: PropTypes.string
 // background: PropTypes.string
 //    Background color
-// context: PropTypes.object
-//    React context to pass through
 // focusControl: PropTypes.bool
 //    Whether to focus inside the dropped content when added
 // responsive: PropTypes.bool
@@ -106,15 +102,17 @@ export default class Drop {
     document.body.insertBefore(container, document.body.firstChild);
 
     render(
-      <DropContainer
-        ref={(ref) => {
-          this.dropContainerRef = ref;
-        }}
-        theme={options.theme}
-        background={options.background}
-      >
-        {content}
-      </DropContainer>,
+      <Grommet theme={options.theme}>
+        <DropContainer
+          ref={(ref) => {
+            this.dropContainerRef = ref;
+          }}
+          theme={options.theme}
+          background={options.background}
+        >
+          {content}
+        </DropContainer>
+      </Grommet>,
       container
     );
 
@@ -297,15 +295,17 @@ export default class Drop {
     // const originalScrollPosition = container.scrollTop;
     // TODO: handle focus control better
     render(
-      <DropContainer
-        ref={(ref) => {
-          this.dropContainerRef = ref;
-        }}
-        theme={theme}
-        background={background}
-      >
-        {content}
-      </DropContainer>,
+      <Grommet theme={theme}>
+        <DropContainer
+          ref={(ref) => {
+            this.dropContainerRef = ref;
+          }}
+          theme={theme}
+          background={background}
+        >
+          {content}
+        </DropContainer>
+      </Grommet>,
       container,
       () => {
         // this.place();
