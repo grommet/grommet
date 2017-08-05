@@ -51,6 +51,16 @@ exports[`TextInput renders 1`] = `
   box-shadow: 0 0 1px 1px #00CCEB;
 }
 
+.c1:focus >:not(svg) circle,
+.c1:focus >:not(svg) ellipse,
+.c1:focus >:not(svg) line,
+.c1:focus >:not(svg) path,
+.c1:focus >:not(svg) polygon,
+.c1:focus >:not(svg) polyline,
+.c1:focus >:not(svg) rect {
+  outline: #00CCEB solid 2px;
+}
+
 @media only screen and (min-width:481px) {
   .c0 {
     top: 0px;
@@ -66,19 +76,21 @@ exports[`TextInput renders 1`] = `
 <div
   className="c0"
 >
-  <input
-    autoComplete="off"
-    className="c1"
-    defaultValue={undefined}
-    id="item"
-    name="item"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onInput={[Function]}
-    onKeyDown={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
-    value={undefined}
-  />
+  <div>
+    <input
+      autoComplete="off"
+      className="c1"
+      defaultValue={undefined}
+      id="item"
+      name="item"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onInput={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+      value={undefined}
+    />
+  </div>
 </div>
 `;

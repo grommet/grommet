@@ -5,9 +5,9 @@ import { compose } from 'recompose';
 import StyledTextInput, { StyledSuggestion, StyledSuggestions } from './StyledTextInput';
 import { Button } from '../button';
 import { Keyboard } from '../keyboard';
+import { Drop } from '../drop';
 
 import { withFocus, withTheme } from '../hocs';
-import { Drop } from '../utils';
 
 import doc from './doc';
 
@@ -22,64 +22,7 @@ class TextInput extends Component {
   state = {
     activeSuggestionIndex: -1,
     announceChange: false,
-    dropActive: false,
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    const { theme } = this.props;
-    const { dropActive } = this.state;
-
-    if (!dropActive && prevState.dropActive) {
-      document.removeEventListener('click', this.removeDrop);
-      if (this.drop) {
-        this.drop.remove();
-        this.drop = undefined;
-      }
-    } else if (dropActive && !prevState.dropActive) {
-      this.removeDrop = (event) => {
-        if (!findDOMNode(this.componentRef).contains(event.target)) {
-          // only close the drop if clicked outside it
-          this.setState({ dropActive: false });
-        }
-      };
-      document.addEventListener('click', this.removeDrop);
-
-      // If this is inside a FormField, place the drop in reference to it.
-      // TODO: fix form field
-      // findAncestor(this.componentRef, FORM_FIELD)
-      const control = this.componentRef;
-      this.drop = new Drop(
-        findDOMNode(control),
-        this.renderDropContent(), {
-          align: { top: 'bottom', left: 'left' },
-          responsive: false, // so suggestion changes don't re-align
-          theme,
-        }
-      );
-    } else if (dropActive && prevState.dropActive) {
-      this.drop.render(this.renderDropContent());
-    }
-
-    // TODO: handle announce changes after we have Layer component
-    // if (announceChange && suggestions) {
-    //   const matchResultsMessage = Intl.getMessage(
-    //     intl, 'Match Results', {
-    //       count: suggestions.length
-    //     }
-    //   );
-    //   let navigationHelpMessage = '';
-    //   if (suggestions.length) {
-    //     navigationHelpMessage = `(${Intl.getMessage(intl, 'Navigation Help')})`;
-    //   }
-    //   announce(`${matchResultsMessage} ${navigationHelpMessage}`);
-    //   this.setState({ announceChange: false });
-    // }
-  }
-
-  componentWillUnmount() {
-    if (this.drop) {
-      this.drop.remove();
-    }
+    showDrop: false,
   }
 
   onInputChange() {
@@ -89,7 +32,7 @@ class TextInput extends Component {
       this.setState({
         activeSuggestionIndex: -1,
         announceChange: true,
-        dropActive: true,
+        showDrop: true,
         selectedSuggestionIndex: -1,
       });
     }
@@ -115,14 +58,14 @@ class TextInput extends Component {
     return suggestionValues.indexOf(value);
   }
 
-  onAddDrop() {
+  onShowSuggestions() {
     const { suggestions } = this.props;
     // Get values of suggestions, so we can highlight selected suggestion
     if (suggestions && suggestions.length > 0) {
       const selectedSuggestionIndex = this.getSelectedSuggestionIndex();
 
       this.setState({
-        dropActive: true,
+        showDrop: true,
         activeSuggestionIndex: -1,
         selectedSuggestionIndex,
       });
@@ -148,7 +91,7 @@ class TextInput extends Component {
 
   onClickSuggestion(suggestion) {
     const { onSelect } = this.props;
-    this.setState({ value: suggestion, dropActive: false });
+    this.setState({ value: suggestion, showDrop: false });
     if (onSelect) {
       onSelect({
         target: this.componentRef, suggestion,
@@ -156,7 +99,7 @@ class TextInput extends Component {
     }
   }
 
-  renderDropContent() {
+  renderSuggestions() {
     const { suggestions, theme } = this.props;
     const { activeSuggestionIndex, selectedSuggestionIndex } = this.state;
     let items;
@@ -191,76 +134,93 @@ class TextInput extends Component {
 
   render() {
     const { defaultValue, value, onKeyDown, ...rest } = this.props;
+    const { showDrop } = this.state;
     // needed so that styled components does not invoke
     // onSelect when text input is clicked
     delete rest.onSelect;
     const previousSuggestionHandler = (event) => {
       const { suggestions } = this.props;
-      const { dropActive } = this.state;
-      if (suggestions && suggestions.length > 0 && dropActive) {
+      if (suggestions && suggestions.length > 0 && showDrop) {
         event.preventDefault();
         this.onPreviousSuggestion();
       }
     };
     const nextSuggestionHandler = (event) => {
       const { suggestions } = this.props;
-      const { dropActive } = this.state;
       if (suggestions && suggestions.length > 0) {
-        if (!dropActive) {
-          this.onAddDrop();
+        if (!showDrop) {
+          this.onShowSuggestions();
         } else {
           event.preventDefault();
           this.onNextSuggestion();
         }
       }
     };
+    const onEnterSuggestionHandler = (event) => {
+      const { onSelect, suggestions } = this.props;
+      const { activeSuggestionIndex } = this.state;
+      this.setState({ showDrop: false });
+      if (activeSuggestionIndex >= 0) {
+        event.preventDefault(); // prevent submitting forms
+        const suggestion = suggestions[activeSuggestionIndex];
+        this.setState({ value: suggestion });
+        // this.setState({ value: suggestion }, () => {
+        //   const suggestionMessage = this._renderLabel(suggestion);
+        //   const selectedMessage = Intl.getMessage(intl, 'Selected');
+        //   announce(`${suggestionMessage} ${selectedMessage}`);
+        // });
+        if (onSelect) {
+          onSelect({
+            target: this.componentRef, suggestion,
+          });
+        }
+      }
+    };
+    let drop;
+    if (showDrop) {
+      drop = (
+        <Drop
+          align={{ top: 'bottom', left: 'left' }}
+          responsive={false}
+          theme={this.props.theme}
+          control={findDOMNode(this.componentRef)}
+          onClose={() => this.setState({ showDrop: false })}
+        >
+          {this.renderSuggestions()}
+        </Drop>
+      );
+    }
     return (
-      <Keyboard
-        onEnter={(event) => {
-          const { onSelect, suggestions } = this.props;
-          const { activeSuggestionIndex } = this.state;
-          this.setState({ dropActive: false });
-          if (activeSuggestionIndex >= 0) {
-            event.preventDefault(); // prevent submitting forms
-            const suggestion = suggestions[activeSuggestionIndex];
-            this.setState({ value: suggestion });
-            // this.setState({ value: suggestion }, () => {
-            //   const suggestionMessage = this._renderLabel(suggestion);
-            //   const selectedMessage = Intl.getMessage(intl, 'Selected');
-            //   announce(`${suggestionMessage} ${selectedMessage}`);
-            // });
-            if (onSelect) {
-              onSelect({
-                target: this.componentRef, suggestion,
-              });
-            }
-          }
-        }}
-        onEsc={() => this.setState({ dropActive: false })}
-        onTab={() => this.setState({ dropActive: false })}
-        onUp={previousSuggestionHandler}
-        onDown={nextSuggestionHandler}
-        onKeyDown={onKeyDown}
-      >
-        <StyledTextInput
-          ref={(ref) => {
-            this.componentRef = ref;
-          }}
-          autoComplete='off'
-          {...rest}
-          defaultValue={renderLabel(defaultValue)}
-          value={renderLabel(value)}
-          onInput={(event) => {
-            const { onDOMChange } = this.props;
+      <div>
+        <Keyboard
+          onEnter={onEnterSuggestionHandler}
+          onEsc={() => this.setState({ showDrop: false })}
+          onTab={() => this.setState({ showDrop: false })}
+          onUp={previousSuggestionHandler}
+          onDown={nextSuggestionHandler}
+          onKeyDown={onKeyDown}
+        >
+          <StyledTextInput
+            ref={(ref) => {
+              this.componentRef = ref;
+            }}
+            autoComplete='off'
+            {...rest}
+            defaultValue={renderLabel(defaultValue)}
+            value={renderLabel(value)}
+            onInput={(event) => {
+              const { onDOMChange } = this.props;
 
-            this.onInputChange();
+              this.onInputChange();
 
-            if (onDOMChange) {
-              onDOMChange(event);
-            }
-          }}
-        />
-      </Keyboard>
+              if (onDOMChange) {
+                onDOMChange(event);
+              }
+            }}
+          />
+        </Keyboard>
+        {drop}
+      </div>
     );
   }
 }

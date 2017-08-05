@@ -82,6 +82,7 @@ class Button extends Component {
         plain={plainProp}
         theme={theme}
         type={!href ? type : undefined}
+        tabIndex='0'
       >
         {first}
         {second}
