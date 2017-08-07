@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
 import StyledTextInput, { StyledSuggestion, StyledSuggestions } from './StyledTextInput';
@@ -183,7 +182,7 @@ class TextInput extends Component {
           align={{ top: 'bottom', left: 'left' }}
           responsive={false}
           theme={this.props.theme}
-          control={findDOMNode(this.componentRef)}
+          control={this.componentRef}
           onClose={() => this.setState({ showDrop: false })}
         >
           {this.renderSuggestions()}

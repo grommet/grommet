@@ -31,21 +31,15 @@ class Drop extends Component {
   }
 
   componentWillUnmount() {
-    // need because of this
-    // https://github.com/facebook/react/issues/6232
-    setTimeout(() => {
-      unmountComponentAtNode(this.dropContainer);
-      document.body.removeChild(this.dropContainer);
-    }, 0);
+    unmountComponentAtNode(this.dropContainer);
+    document.body.removeChild(this.dropContainer);
   }
 
   renderDrop() {
-    if (this.dropContainer) {
-      render(
-        <DropContainer {...this.props} />,
-        this.dropContainer
-      );
-    }
+    render(
+      <DropContainer {...this.props} />,
+      this.dropContainer
+    );
   }
 
   render() {

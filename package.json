@@ -26,7 +26,8 @@
     "dist": "cross-env NODE_ENV=production grommet pack && babel ./src/js/ --ignore '__tests__' --out-dir ./dist && cross-env BABEL_ENV=es6 babel ./src/js/ --ignore '__tests__' --out-dir ./dist/es6",
     "release-stable": "babel-node ./tools/release-stable",
     "test": "grommet check",
-    "test-update": "grommet check -t -- --updateSnapshot"
+    "test-update": "grommet check -t -- --updateSnapshot",
+    "test-watch": "grommet check -t -- --watchAll"
   },
   "dependencies": {
     "deep-assign": "^2.0.0",
@@ -53,6 +54,8 @@
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^5.0.1",
     "del": "^3.0.0",
+    "enzyme": "^2.9.1",
+    "enzyme-to-json": "^1.5.1",
     "eslint": "^4.3.0",
     "eslint-config-airbnb": "^15.0.2",
     "eslint-plugin-babel": "^4.1.1",

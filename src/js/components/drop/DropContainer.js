@@ -56,11 +56,9 @@ class DropContainer extends Component {
   }
 
   removeScrollListener() {
-    if (this.scrollParents) {
-      this.scrollParents.forEach(
-        scrollParent => scrollParent.removeEventListener('scroll', this.place)
-      );
-    }
+    this.scrollParents.forEach(
+      scrollParent => scrollParent.removeEventListener('scroll', this.place)
+    );
   }
 
   onRemoveDrop(event) {
@@ -79,10 +77,11 @@ class DropContainer extends Component {
   }
 
   place() {
-    const { align, control, responsive } = this.props;
+    const { align, responsive } = this.props;
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
+    const control = findDOMNode(this.props.control);
     const container = findDOMNode(this.componentRef);
     if (container && control) {
       // clear prior styling
@@ -92,7 +91,7 @@ class DropContainer extends Component {
       container.style.maxHeight = '';
 
       // get bounds
-      const controlRect = control.getBoundingClientRect();
+      const controlRect = findDOMNode(control).getBoundingClientRect();
       const containerRect = container.getBoundingClientRect();
 
       // determine width
