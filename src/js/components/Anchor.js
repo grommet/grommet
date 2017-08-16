@@ -98,7 +98,7 @@ export default class Anchor extends Component {
   }
 
   _onClick (event) {
-    const { method, onClick, path, disabled } = this.props;
+    const { method, onClick, path, state, disabled } = this.props;
     const { router } = this.context;
     const modifierKey = event.ctrlKey || event.metaKey;
 
@@ -111,9 +111,9 @@ export default class Anchor extends Component {
     if (!disabled) {
       if (path) {
         if ('push' === method) {
-          (router.history || router).push(path.path || path);
+          (router.history || router).push(path.path || path, state);
         } else if ('replace' === method) {
-          (router.history || router).replace(path.path || path);
+          (router.history || router).replace(path.path || path, state);
         }
       }
 
@@ -129,6 +129,7 @@ export default class Anchor extends Component {
       label, onClick, path, primary, reverse, tag, ...props
     } = this.props;
     delete props.method;
+    delete props.state;
     const { active } = this.state;
     const { router } = this.context;
 
@@ -244,6 +245,7 @@ schema(Anchor, {
       'Whether an icon and label should be reversed so that the icon is at ' +
       'the end of the anchor.'
     ],
+    state: [PropTypes.object, 'Location state if path is set'],
     tag: [PropTypes.string,
       'The DOM tag to use for the element. The default is <a>. This should be' +
       ' used in conjunction with components like Link from React Router. In' +
