@@ -41,7 +41,7 @@ export default class Button extends Component {
   }
 
   _onClick (event) {
-    const { method, onClick, path} = this.props;
+    const { method, onClick, path, state} = this.props;
     const { router } = this.context;
     const modifierKey = event.ctrlKey || event.metaKey;
 
@@ -52,9 +52,9 @@ export default class Button extends Component {
     event.preventDefault();
 
     if ('push' === method) {
-      (router.history || router).push(path);
+      (router.history || router).push(path, state);
     } else if ('replace' === method) {
-      (router.history || router).replace(path);
+      (router.history || router).replace(path, state);
     }
 
     if (onClick) {
@@ -104,6 +104,7 @@ export default class Button extends Component {
       secondary, type, ...props
     } = this.props;
     delete props.method;
+    delete props.state;
     const { router } = this.context;
 
     let buttonIcon;
@@ -215,6 +216,7 @@ Button.propTypes = {
   primary: PropTypes.bool,
   reverse: PropTypes.bool,
   secondary: PropTypes.bool,
+  state: PropTypes.object,
   type: PropTypes.oneOf(['button', 'reset', 'submit'])
 };
 
