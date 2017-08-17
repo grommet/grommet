@@ -134,7 +134,7 @@ var Tiles = function (_Component) {
         document.addEventListener('wheel', this._onWheel, { passive: true });
         this._trackHorizontalScroll();
         // give browser a chance to stabilize
-        setTimeout(this._layout, 10);
+        this._layoutTimer = setTimeout(this._layout, 10);
       }
       if (selectable) {
         // only listen for navigation keys if the tile row can be selected
@@ -176,7 +176,7 @@ var Tiles = function (_Component) {
       if ('row' === direction) {
         this._trackHorizontalScroll();
         // give browser a chance to stabilize
-        setTimeout(this._layout, 10);
+        this._layoutTimer = setTimeout(this._layout, 10);
       }
       if (selectable) {
         this._setSelection();
@@ -212,6 +212,9 @@ var Tiles = function (_Component) {
       }
       if (selectable) {
         _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
+      }
+      if (this._layoutTimer) {
+        clearTimeout(this._layoutTimer);
       }
     }
   }, {
@@ -333,8 +336,8 @@ var Tiles = function (_Component) {
     key: '_onScrollHorizontal',
     value: function _onScrollHorizontal() {
       // debounce
-      clearTimeout(this._scrollTimer);
-      this._scrollTimer = setTimeout(this._layout, 50);
+      clearTimeout(this._layoutTimer);
+      this._layoutTimer = setTimeout(this._layout, 50);
     }
   }, {
     key: '_onWheel',
@@ -396,8 +399,8 @@ var Tiles = function (_Component) {
     key: '_onResize',
     value: function _onResize() {
       // debounce
-      clearTimeout(this._resizeTimer);
-      this._resizeTimer = setTimeout(this._layout, 50);
+      clearTimeout(this._layoutTimer);
+      this._layoutTimer = setTimeout(this._layout, 50);
     }
   }, {
     key: '_trackHorizontalScroll',
