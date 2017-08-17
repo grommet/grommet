@@ -1,6 +1,51 @@
 import { css } from 'styled-components';
 
-import { parseMetricToInt } from './mixins';
+import { colorIsDark, parseMetricToInt } from './mixins';
+
+export const backgroundStyle = (background, theme) => {
+  if (typeof background === 'object') {
+    if (background.image) {
+      let color;
+      if (background.dark === false) {
+        color = theme.global.colors.text;
+      } else if (background.dark) {
+        color = theme.global.colors.darkBackgroundTextColor;
+      } else {
+        color = 'inherit';
+      }
+      return css`
+        background: ${background.image} no-repeat center center;
+        background-size: cover;
+        color: ${color};
+      `;
+    }
+    return undefined;
+  }
+  if (background.lastIndexOf('url', 0) === 0) {
+    return css`
+      background: ${background} no-repeat center center;
+      background-size: cover;
+    `;
+  }
+  const [kind, index] = background.split('-');
+  const colorSet = theme.global.colors[kind];
+  let color;
+  if (Array.isArray(colorSet)) {
+    color = theme.global.colors[kind][index];
+  } else if (typeof colorSet === 'string') {
+    color = colorSet;
+  } else {
+    color = background;
+  }
+  if (color) {
+    return css`
+      background-color: ${color};
+      color: ${colorIsDark(color) ?
+        theme.global.colors.darkBackgroundTextColor : theme.global.colors.text};
+    `;
+  }
+  return undefined;
+};
 
 export const baseStyle = css`
   font-family: ${props => props.theme.global.font.family};
@@ -22,7 +67,24 @@ export const baseStyle = css`
   }
 `;
 
+// focus also supports clickable elements inside svg
 export const focusStyle = css`
+  > :not(svg) {
+    circle,
+    ellipse,
+    line,
+    path,
+    polygon,
+    polyline,
+    rect {
+      outline: ${
+        props => (
+          props.theme.global.focus.border.color ||
+          props.theme.global.colors.accent[0]
+        )
+      } solid 2px;
+    }
+  }
   border-color: ${
     props => (
       props.theme.global.focus.border.color ||
@@ -54,5 +116,5 @@ export const inputStyle = css`
 `;
 
 export default {
-  baseStyle, inputStyle, focusStyle,
+  backgroundStyle, baseStyle, inputStyle, focusStyle,
 };

@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { lighten } from 'polished';
 
 import { focusStyle, inputStyle, parseMetricToInt } from '../utils';
 
@@ -37,8 +36,7 @@ const activeStyle = css`
 `;
 const selectedStyle = css`
   background-color: ${
-    props => props.theme.global.selected.backgroundColor ||
-    lighten(0.23, props.theme.global.colors.brand)
+    props => props.theme.global.selected.backgroundColor
   };
   color: ${props => props.theme.global.selected.textColor};
 `;
