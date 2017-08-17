@@ -122,6 +122,12 @@ var ToastContents = function (_Component) {
 
       var closing = this.state.closing;
 
+      // removing context props to avoid invalid html attributes on prop transfer
+
+      delete rest.history;
+      delete rest.intl;
+      delete rest.router;
+      delete rest.store;
 
       var classNames = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames, CLASS_ROOT + '--closing', closing), _classnames));
 
