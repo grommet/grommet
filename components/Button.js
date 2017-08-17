@@ -91,7 +91,7 @@ var Button = function (_Component) {
 
       var modifierKey = event.ctrlKey || event.metaKey;
 
-      if (modifierKey && !disabled && !onClick) {
+      if (modifierKey && !onClick) {
         return true;
       }
 
