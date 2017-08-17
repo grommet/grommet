@@ -57,6 +57,12 @@ class ToastContents extends Component {
     const { children, onClose, size, status, ...rest } = this.props;
     const { closing } = this.state;
 
+    // removing context props to avoid invalid html attributes on prop transfer
+    delete rest.history;
+    delete rest.intl;
+    delete rest.router;
+    delete rest.store;
+
     const classNames = classnames(
       CLASS_ROOT, {
         [`${CLASS_ROOT}--${size}`]: size,
