@@ -289,7 +289,7 @@ exports.default = Anchor;
       defaultProp: 'push'
     }],
     onClick: [_reactDesc.PropTypes.func, 'Click handler.'],
-    path: [_reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.object, _reactDesc.PropTypes.string]), 'React-router path to navigate to when clicked.' + ' Use path={{ path: ' / ', index: true }} if you want the Anchor to be' + ' active only when the index route is current.'],
+    path: [_reactDesc.PropTypes.oneOfType([_reactDesc.PropTypes.object, _reactDesc.PropTypes.string]), 'React-router path to navigate to when clicked.' + ' Use path={{ path: \'/\', index: true }} if you want the Anchor to be' + ' active only when the index route is current.'],
     primary: [_reactDesc.PropTypes.bool, 'Whether this is a primary anchor.'],
     reverse: [_reactDesc.PropTypes.bool, 'Whether an icon and label should be reversed so that the icon is at ' + 'the end of the anchor.'],
     tag: [_reactDesc.PropTypes.string, 'The DOM tag to use for the element. The default is <a>. This should be' + ' used in conjunction with components like Link from React Router. In' + ' this case, Link controls the navigation while Anchor controls the' + ' styling.', {
