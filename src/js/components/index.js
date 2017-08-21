@@ -4,5 +4,6 @@ export * from './grid';
 export * from './grommet';
 export * from './heading';
 export * from './keyboard';
+export * from './meter';
 export * from './paragraph';
 export * from './text-input';

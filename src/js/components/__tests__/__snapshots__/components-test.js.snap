@@ -8,6 +8,7 @@ Object {
   "Grommet": [Function],
   "Heading": [Function],
   "Keyboard": [Function],
+  "Meter": [Function],
   "Paragraph": [Function],
   "RoutedButton": [Function],
   "TextInput": [Function],
