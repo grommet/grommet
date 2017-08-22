@@ -10,6 +10,7 @@ Object {
   "Keyboard": [Function],
   "Paragraph": [Function],
   "RoutedButton": [Function],
+  "Stack": [Function],
   "TextInput": [Function],
   "__esModule": true,
 }
