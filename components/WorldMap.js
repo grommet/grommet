@@ -307,17 +307,21 @@ var WorldMap = function (_Component) {
     value: function _renderPlace(serie, index) {
       var mapColorIndex = this.props.colorIndex;
       var activePlace = this.state.activePlace;
-      var place = serie.place;
 
-      var colorIndex = (serie || {}).colorIndex || mapColorIndex || 'graph-' + index;
+      var serieColorIndex = serie.colorIndex,
+          onClick = serie.onClick,
+          place = serie.place,
+          rest = _objectWithoutProperties(serie, ['colorIndex', 'onClick', 'place']);
+
+      var colorIndex = serieColorIndex || mapColorIndex || 'graph-' + index;
       var classes = (0, _classnames4.default)(CLASS_ROOT + '__place', COLOR_INDEX + '-' + colorIndex, _defineProperty({}, CLASS_ROOT + '__place--active', activePlace && activePlace.join(',') === place.join(',')));
       var d = 'M' + FACTOR * place[0] + ',' + FACTOR * place[1] + ' h0';
       var interactiveProps = {};
-      if (serie.onClick) {
+      if (onClick) {
         interactiveProps = this._interactiveProps(serie, 'place', this._activatePlace, place);
       }
-      return _react2.default.createElement('path', _extends({ key: place.join(','), className: classes }, interactiveProps, {
-        d: d }));
+      return _react2.default.createElement('path', _extends({ key: place.join(',') }, rest, { className: classes
+      }, interactiveProps, { d: d }));
     }
   }, {
     key: 'render',
