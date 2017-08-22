@@ -1,7 +1,7 @@
 import { schema, PropTypes } from 'react-desc';
 
 export default Paragraph => schema(Paragraph, {
-  description: 'A box.',
+  description: 'A paragraph of text.',
   usage: `import { Paragraph } from 'grommet';
   <Paragraph/>`,
   props: {
