@@ -313,25 +313,25 @@ export default class WorldMap extends Component {
   _renderPlace(serie, index) {
     const { colorIndex: mapColorIndex } = this.props;
     const { activePlace } = this.state;
-    const { place } = serie;
+    const { colorIndex: serieColorIndex, onClick, place, ...rest } = serie;
     const colorIndex =
-      (serie || {}).colorIndex || mapColorIndex || `graph-${index}`;
+      serieColorIndex || mapColorIndex || `graph-${index}`;
     const classes = classnames(
       `${CLASS_ROOT}__place`,
       `${COLOR_INDEX}-${colorIndex}`, {
         [`${CLASS_ROOT}__place--active`]:
-          (activePlace && activePlace.join(',') === place.join(','))
+        (activePlace && activePlace.join(',') === place.join(','))
       }
     );
     const d = `M${FACTOR * place[0]},${FACTOR * place[1]} h0`;
     let interactiveProps = {};
-    if (serie.onClick) {
+    if (onClick) {
       interactiveProps =
         this._interactiveProps(serie, 'place', this._activatePlace, place);
     }
     return (
-      <path key={place.join(',')} className={classes} {...interactiveProps}
-        d={d} />
+      <path key={place.join(',')} {...rest} className={classes}
+        {...interactiveProps} d={d}  />
     );
   }
 
