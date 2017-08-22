@@ -1,6 +1,7 @@
 import { css } from 'styled-components';
 
-import { colorIsDark, parseMetricToInt } from './mixins';
+import { parseMetricToInt } from './mixins';
+import { colorIsDark } from './colors';
 
 export const backgroundStyle = (background, theme) => {
   if (typeof background === 'object') {

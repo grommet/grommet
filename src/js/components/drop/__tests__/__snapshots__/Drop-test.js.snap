@@ -124,6 +124,8 @@ exports[`Drop aligns left right top bottom 1`] = `
               "large": "48px",
               "medium": "24px",
               "small": "12px",
+              "xlarge": "96px",
+              "xsmall": "6px",
             },
             "focus": Object {
               "border": Object {},
@@ -203,6 +205,7 @@ exports[`Drop aligns left right top bottom 1`] = `
               "textColor": "#333333",
             },
             "size": Object {
+              "full": "100%",
               "large": "576px",
               "medium": "384px",
               "small": "192px",
@@ -451,6 +454,8 @@ exports[`Drop aligns right left top top 1`] = `
               "large": "48px",
               "medium": "24px",
               "small": "12px",
+              "xlarge": "96px",
+              "xsmall": "6px",
             },
             "focus": Object {
               "border": Object {},
@@ -530,6 +535,7 @@ exports[`Drop aligns right left top top 1`] = `
               "textColor": "#333333",
             },
             "size": Object {
+              "full": "100%",
               "large": "576px",
               "medium": "384px",
               "small": "192px",
@@ -778,6 +784,8 @@ exports[`Drop aligns right right bottom top 1`] = `
               "large": "48px",
               "medium": "24px",
               "small": "12px",
+              "xlarge": "96px",
+              "xsmall": "6px",
             },
             "focus": Object {
               "border": Object {},
@@ -857,6 +865,7 @@ exports[`Drop aligns right right bottom top 1`] = `
               "textColor": "#333333",
             },
             "size": Object {
+              "full": "100%",
               "large": "576px",
               "medium": "384px",
               "small": "192px",
@@ -1105,6 +1114,8 @@ exports[`Drop aligns skips left random 1`] = `
               "large": "48px",
               "medium": "24px",
               "small": "12px",
+              "xlarge": "96px",
+              "xsmall": "6px",
             },
             "focus": Object {
               "border": Object {},
@@ -1184,6 +1195,7 @@ exports[`Drop aligns skips left random 1`] = `
               "textColor": "#333333",
             },
             "size": Object {
+              "full": "100%",
               "large": "576px",
               "medium": "384px",
               "small": "192px",
@@ -1431,6 +1443,8 @@ exports[`Drop aligns skips right random 1`] = `
               "large": "48px",
               "medium": "24px",
               "small": "12px",
+              "xlarge": "96px",
+              "xsmall": "6px",
             },
             "focus": Object {
               "border": Object {},
@@ -1510,6 +1524,7 @@ exports[`Drop aligns skips right random 1`] = `
               "textColor": "#333333",
             },
             "size": Object {
+              "full": "100%",
               "large": "576px",
               "medium": "384px",
               "small": "192px",
@@ -1752,6 +1767,8 @@ exports[`Drop mounts 1`] = `
               "large": "48px",
               "medium": "24px",
               "small": "12px",
+              "xlarge": "96px",
+              "xsmall": "6px",
             },
             "focus": Object {
               "border": Object {},
@@ -1831,6 +1848,7 @@ exports[`Drop mounts 1`] = `
               "textColor": "#333333",
             },
             "size": Object {
+              "full": "100%",
               "large": "576px",
               "medium": "384px",
               "small": "192px",
@@ -2117,6 +2135,8 @@ exports[`Drop resizes 1`] = `
               "large": "48px",
               "medium": "24px",
               "small": "12px",
+              "xlarge": "96px",
+              "xsmall": "6px",
             },
             "focus": Object {
               "border": Object {},
@@ -2196,6 +2216,7 @@ exports[`Drop resizes 1`] = `
               "textColor": "#333333",
             },
             "size": Object {
+              "full": "100%",
               "large": "576px",
               "medium": "384px",
               "small": "192px",
@@ -2444,6 +2465,8 @@ exports[`Drop skips invalid align 1`] = `
               "large": "48px",
               "medium": "24px",
               "small": "12px",
+              "xlarge": "96px",
+              "xsmall": "6px",
             },
             "focus": Object {
               "border": Object {},
@@ -2523,6 +2546,7 @@ exports[`Drop skips invalid align 1`] = `
               "textColor": "#333333",
             },
             "size": Object {
+              "full": "100%",
               "large": "576px",
               "medium": "384px",
               "small": "192px",
@@ -2763,6 +2787,8 @@ exports[`Drop updates 1`] = `
               "large": "48px",
               "medium": "24px",
               "small": "12px",
+              "xlarge": "96px",
+              "xsmall": "6px",
             },
             "focus": Object {
               "border": Object {},
@@ -2842,6 +2868,7 @@ exports[`Drop updates 1`] = `
               "textColor": "#333333",
             },
             "size": Object {
+              "full": "100%",
               "large": "576px",
               "medium": "384px",
               "small": "192px",
