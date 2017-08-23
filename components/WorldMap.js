@@ -34,6 +34,8 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -91,6 +93,31 @@ var clickableSeries = function clickableSeries(props) {
   });
 };
 
+var maxCoordinate = function maxCoordinate(a, b) {
+  return [Math.max(a[0], b[0]), Math.max(a[1], b[1])];
+};
+var minCoordinate = function minCoordinate(a, b) {
+  return [Math.min(a[0], b[0]), Math.min(a[1], b[1])];
+};
+
+// Based on https://stackoverflow.com/a/43861247
+var MAP_LAT_BOTTOM = -50.0; // empirically determined
+var latLonCoord = function latLonCoord(latitude, longitude, origin, extent) {
+  var mapLatBottomRad = MAP_LAT_BOTTOM * Math.PI / 180;
+  var latitudeRad = latitude * Math.PI / 180;
+  var mapLngLeft = -171.0; // empirically determined
+  var mapLngRight = 184.0; // empirically determined
+  var mapLngDelta = mapLngRight - mapLngLeft;
+
+  var worldMapWidth = extent[0] / mapLngDelta * 360 / (2 * Math.PI);
+  var mapOffsetY = Math.round(worldMapWidth / 2 * Math.log((1 + Math.sin(mapLatBottomRad)) / (1 - Math.sin(mapLatBottomRad))));
+
+  var x = Math.round((longitude - mapLngLeft) * (extent[0] / mapLngDelta));
+  var y = extent[1] - Math.round(worldMapWidth / 2 * Math.log((1 + Math.sin(latitudeRad)) / (1 - Math.sin(latitudeRad))) - mapOffsetY);
+
+  return [x, y]; // the coordinate value of this point on the map image
+};
+
 var WorldMap = function (_Component) {
   _inherits(WorldMap, _Component);
 
@@ -99,17 +126,18 @@ var WorldMap = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (WorldMap.__proto__ || Object.getPrototypeOf(WorldMap)).call(this, props, context));
 
+    _this._renderPlace = _this._renderPlace.bind(_this);
     _this._activateContinent = _this._activateContinent.bind(_this);
     _this._activatePlace = _this._activatePlace.bind(_this);
-    _this._renderContinent = _this._renderContinent.bind(_this);
-    _this._renderPlace = _this._renderPlace.bind(_this);
     _this._onEnter = _this._onEnter.bind(_this);
     _this._onMouseOver = _this._onMouseOver.bind(_this);
     _this._onMouseMove = _this._onMouseMove.bind(_this);
     _this._onMouseLeave = _this._onMouseLeave.bind(_this);
 
     _this.state = _this._buildState();
+    _this.state = _extends({}, _this.state, _this._updateState(props));
     _this.state.clickable = clickableSeries(props);
+    _this._flagRefs = {};
     return _this;
   }
 
@@ -125,6 +153,8 @@ var WorldMap = function (_Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
+      this.setState(_extends({}, this._updateState(nextProps)));
+
       var clickable = this.state.clickable;
 
       var nextClickable = clickableSeries(nextProps);
@@ -135,6 +165,46 @@ var WorldMap = function (_Component) {
           this._stopKeyboardListening();
         }
         this.setState({ clickable: nextClickable });
+      }
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {
+      var _this2 = this;
+
+      // place flags
+      var series = this.props.series;
+      var _state = this.state,
+          continents = _state.continents,
+          places = _state.places,
+          zoomedOrigin = _state.zoomedOrigin,
+          width = _state.width;
+
+      var flagged = (series || []).filter(function (s) {
+        return s.flag;
+      });
+      if (flagged.length > 0) {
+        var rect = this._worldMapRef.getBoundingClientRect();
+        var scale = rect.width / width;
+        flagged.forEach(function (serie, index) {
+          var placeState = places[index];
+          var x = void 0;
+          var y = void 0;
+          if (serie.continent) {
+            var continentState = continents[serie.continent];
+            x = (continentState.mid[0] - zoomedOrigin[0]) * FACTOR * scale;
+            y = (continentState.mid[1] - zoomedOrigin[1]) * FACTOR * scale;
+          } else if (serie.place) {
+            x = placeState.place[0] * FACTOR * scale;
+            y = placeState.place[1] * FACTOR * scale;
+          }
+          var flag = _this2._flagRefs[index];
+          var flagRect = flag.getBoundingClientRect();
+          var xOffset = x > rect.width / 2 ? FACTOR / 2 : -(flagRect.width + FACTOR / 2);
+          var yOffset = y > rect.height / 2 ? FACTOR / 2 : -(flagRect.height + FACTOR / 2);
+          flag.style.top = y + yOffset + 'px';
+          flag.style.left = x + xOffset + 'px';
+        });
       }
     }
   }, {
@@ -150,41 +220,94 @@ var WorldMap = function (_Component) {
     key: '_buildState',
     value: function _buildState() {
       var state = {
-        activeContinent: undefined, activePlace: undefined, dots: {}, area: {}
+        activeContinent: undefined, activePlace: undefined, continents: {}
       };
 
       // Build the SVG paths describing the individual dots
-      var width = 0;
-      var height = 0;
+      var totalExtent = [0, 0];
       CONTINENTS.forEach(function (continent) {
         var origin = continent.origin;
 
-        state.dots[continent.id] = continent.dots.map(function (segment) {
+        var extent = [].concat(_toConsumableArray(origin));
+        var dots = continent.dots.map(function (segment) {
           var dots = Array.apply(null, Array(segment[2])).map(function () {
             return 'h0';
           }).join(' m10,0 ');
           var x = FACTOR * (origin[0] + segment[0] + 1);
           var y = FACTOR * (origin[1] + segment[1] + 1);
-          width = Math.max(width, FACTOR * (origin[0] + segment[0] + segment[2]));
-          height = Math.max(height, y);
+          extent = maxCoordinate(extent, [origin[0] + segment[0] + segment[2], origin[1] + segment[1]]);
           return 'M' + x + ',' + y + ' ' + dots;
         }).join(' ');
 
-        state.area[continent.id] = continent.area.map(function (point, index) {
+        var area = continent.area.map(function (point, index) {
           var x = FACTOR * (point[0] + origin[0] + 1);
           var y = FACTOR * (point[1] + origin[1] + 1);
           return '' + (index === 0 ? 'M' : 'L') + x + ',' + y;
-        }).join(' ');
+        }).join(' ') + ' Z';
 
-        if (state.area[continent.id]) {
-          state.area[continent.id] += ' Z';
-        }
+        var mid = [origin[0] + (extent[0] - origin[0]) / 2, origin[1] + (extent[1] - origin[1]) / 2];
+        state.continents[continent.id] = { area: area, dots: dots, origin: origin, extent: extent, mid: mid };
+        totalExtent = maxCoordinate(totalExtent, extent);
       });
 
-      state.width = width + FACTOR;
-      state.height = height + FACTOR;
+      state.origin = [0, 0];
+      state.extent = totalExtent;
 
       return state;
+    }
+  }, {
+    key: '_updateState',
+    value: function _updateState(props) {
+      var _this3 = this;
+
+      var series = props.series,
+          zoom = props.zoom;
+
+      var continents = _extends({}, this.state.continents);
+
+      // convert places using lat,lon
+      var places = (series || []).filter(function (s) {
+        return s.place;
+      }).map(function (serie) {
+        var place = serie.place;
+        if (place[0] % 1) {
+          place = latLonCoord(place[0], place[1], _this3.state.origin, _this3.state.extent);
+        }
+        return { place: place, id: place.join(',') };
+      });
+
+      // update how much of the map to show
+      var haveSomeContinents = (series || []).filter(function (s) {
+        return s.continent;
+      }).length > 0;
+      var origin = [].concat(_toConsumableArray(this.state.extent));
+      var extent = [].concat(_toConsumableArray(this.state.origin));
+      CONTINENTS.forEach(function (continent) {
+        var continentState = continents[continent.id];
+        var serie = (series || []).filter(function (s) {
+          return s.continent === continent.id;
+        })[0];
+        // see if any places are within the continent
+        var includedPlaces = places.filter(function (s) {
+          return s.place[0] >= continentState.origin[0] && s.place[0] <= continentState.extent[0] && s.place[1] >= continentState.origin[1] && s.place[1] <= continentState.extent[1];
+        });
+        var visible = !haveSomeContinents && !zoom || serie || includedPlaces.length > 0;
+        if (visible || !zoom) {
+          origin = minCoordinate(origin, continentState.origin);
+          extent = maxCoordinate(extent, continentState.extent);
+        }
+        continents[continent.id].visible = visible;
+        continents[continent.id].serie = serie;
+      });
+
+      return {
+        continents: continents,
+        places: places,
+        zoomedOrigin: origin,
+        x: origin[0] * FACTOR, y: origin[1] * FACTOR,
+        width: (extent[0] - origin[0] + 1) * FACTOR,
+        height: (extent[1] - origin[1] + 2) * FACTOR
+      };
     }
   }, {
     key: '_startKeyboardListening',
@@ -214,9 +337,9 @@ var WorldMap = function (_Component) {
     key: '_onEnter',
     value: function _onEnter() {
       var series = this.props.series;
-      var _state = this.state,
-          activeContinent = _state.activeContinent,
-          activePlace = _state.activePlace;
+      var _state2 = this.state,
+          activeContinent = _state2.activeContinent,
+          activePlace = _state2.activePlace;
 
       if (this._worldMapRef.contains(document.activeElement)) {
         series.some(function (serie) {
@@ -254,44 +377,61 @@ var WorldMap = function (_Component) {
     }
   }, {
     key: '_interactiveProps',
-    value: function _interactiveProps(serie, defaultLabel, activeFunc, activeValue) {
+    value: function _interactiveProps(serie, defaultLabel, activeFunc, activeValue, active) {
       return {
         role: 'button',
         'aria-label': serie.label || defaultLabel,
         tabIndex: '0',
         onClick: serie.onClick,
         onMouseOver: function onMouseOver() {
-          return activeFunc(activeValue);
+          if (!active) {
+            activeFunc(activeValue);
+            if (serie.onHover) {
+              serie.onHover(true);
+            }
+          }
         },
         onMouseLeave: function onMouseLeave() {
-          return activeFunc(undefined);
+          if (active) {
+            activeFunc(undefined);
+            if (serie.onHover) {
+              serie.onHover(false);
+            }
+          }
         },
         onFocus: function onFocus() {
           // This moves the map unnecessarily. Instead, we should check
           // the position and scroll if it isn't already visible
           // this._worldMapRef.scrollIntoView();
-          activeFunc(activeValue);
+          if (!active) {
+            activeFunc(activeValue);
+          }
         },
         onBlur: function onBlur() {
-          return activeFunc(undefined);
+          if (active) {
+            activeFunc(undefined);
+          }
         }
       };
     }
   }, {
     key: '_renderContinent',
     value: function _renderContinent(continent, index, mapColorIndex, serie) {
-      var activeContinent = this.state.activeContinent;
-      // only graph color if they explicitly asked for this continent
+      var _state3 = this.state,
+          activeContinent = _state3.activeContinent,
+          continents = _state3.continents;
 
+      var active = continent.id === activeContinent;
+      // only graph color if they explicitly asked for this continent
       var colorIndex = (serie || {}).colorIndex || mapColorIndex || (serie ? 'graph-' + index : 'light-2');
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT + '__continent', COLOR_INDEX + '-' + colorIndex, _defineProperty({}, CLASS_ROOT + '__continent--active', continent.id === activeContinent));
+      var classes = (0, _classnames4.default)(CLASS_ROOT + '__continent', COLOR_INDEX + '-' + colorIndex, _defineProperty({}, CLASS_ROOT + '__continent--active', active));
       var area = void 0;
       var interactiveProps = {};
-      if (serie && serie.onClick) {
+      if (serie && (serie.onClick || serie.onHover)) {
         area = _react2.default.createElement('path', { stroke: 'none', fill: '#fff', fillOpacity: '0.01',
-          d: this.state.area[continent.id] });
-        interactiveProps = this._interactiveProps(serie, continent.id, this._activateContinent, continent.id);
+          d: continents[continent.id].area });
+        interactiveProps = this._interactiveProps(serie, continent.id, this._activateContinent, continent.id, active);
       }
       // We add the area so the mouse events work for the whole region,
       // not just the dots
@@ -299,26 +439,32 @@ var WorldMap = function (_Component) {
         'g',
         _extends({ key: continent.id, className: classes }, interactiveProps),
         area,
-        _react2.default.createElement('path', { d: this.state.dots[continent.id] })
+        _react2.default.createElement('path', { d: continents[continent.id].dots })
       );
     }
   }, {
     key: '_renderPlace',
     value: function _renderPlace(serie, index) {
       var mapColorIndex = this.props.colorIndex;
-      var activePlace = this.state.activePlace;
+      var _state4 = this.state,
+          activePlace = _state4.activePlace,
+          places = _state4.places;
 
       var serieColorIndex = serie.colorIndex,
           onClick = serie.onClick,
+          onHover = serie.onHover,
           place = serie.place,
-          rest = _objectWithoutProperties(serie, ['colorIndex', 'onClick', 'place']);
+          rest = _objectWithoutProperties(serie, ['colorIndex', 'onClick', 'onHover', 'place']);
 
+      delete rest.flag;
+      var placeState = places[index];
+      var active = activePlace && activePlace.join(',') === placeState.id;
       var colorIndex = serieColorIndex || mapColorIndex || 'graph-' + index;
-      var classes = (0, _classnames4.default)(CLASS_ROOT + '__place', COLOR_INDEX + '-' + colorIndex, _defineProperty({}, CLASS_ROOT + '__place--active', activePlace && activePlace.join(',') === place.join(',')));
-      var d = 'M' + FACTOR * place[0] + ',' + FACTOR * place[1] + ' h0';
+      var classes = (0, _classnames4.default)(CLASS_ROOT + '__place', COLOR_INDEX + '-' + colorIndex, _defineProperty({}, CLASS_ROOT + '__place--active', active));
+      var d = 'M' + FACTOR * placeState.place[0] + ',' + FACTOR * placeState.place[1] + ' h0';
       var interactiveProps = {};
-      if (onClick) {
-        interactiveProps = this._interactiveProps(serie, 'place', this._activatePlace, place);
+      if (onClick || onHover) {
+        interactiveProps = this._interactiveProps(serie, 'place', this._activatePlace, place, active);
       }
       return _react2.default.createElement('path', _extends({ key: place.join(',') }, rest, { className: classes
       }, interactiveProps, { d: d }));
@@ -326,7 +472,7 @@ var WorldMap = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this4 = this;
 
       var _props = this.props,
           className = _props.className,
@@ -335,24 +481,23 @@ var WorldMap = function (_Component) {
           series = _props.series,
           props = _objectWithoutProperties(_props, ['className', 'colorIndex', 'onSelectPlace', 'series']);
 
-      var _state2 = this.state,
-          activePlace = _state2.activePlace,
-          over = _state2.over,
-          width = _state2.width,
-          height = _state2.height;
+      delete props.zoom;
+      var _state5 = this.state,
+          activePlace = _state5.activePlace,
+          over = _state5.over,
+          x = _state5.x,
+          y = _state5.y,
+          width = _state5.width,
+          height = _state5.height;
 
       var classes = (0, _classnames4.default)(CLASS_ROOT, className);
 
-      var haveSomeContinents = (series || []).filter(function (s) {
-        return s.continent;
-      }).length > 0;
       var continents = [];
       CONTINENTS.forEach(function (continent, index) {
-        var serie = (series || []).filter(function (s) {
-          return s.continent === continent.id;
-        })[0];
-        if (!haveSomeContinents || serie) {
-          continents.push(_this2._renderContinent(continent, index, colorIndex, serie));
+        var continentState = _this4.state.continents[continent.id];
+        if (continentState.visible) {
+          var serie = continentState.serie;
+          continents.push(_this4._renderContinent(continent, index, colorIndex, serie));
         }
       });
 
@@ -394,15 +539,16 @@ var WorldMap = function (_Component) {
         }
       }
 
-      return _react2.default.createElement(
+      var contents = _react2.default.createElement(
         'svg',
         _extends({}, props, interactiveProps, {
           ref: function ref(_ref) {
-            return _this2._worldMapRef = _ref;
+            return _this4._worldMapRef = _ref;
           },
           className: classes, version: '1.1',
           preserveAspectRatio: 'xMidYMid meet',
-          width: width + 'px', viewBox: '0 0 ' + width + ' ' + height }),
+          width: width + 'px',
+          viewBox: x + ' ' + y + ' ' + width + ' ' + height }),
         _react2.default.createElement(
           'g',
           { stroke: 'none', fill: 'none', fillRule: 'evenodd' },
@@ -411,6 +557,29 @@ var WorldMap = function (_Component) {
         activeGroup,
         placesGroup
       );
+
+      var flagged = (series || []).filter(function (s) {
+        return s.flag;
+      });
+      if (flagged.length > 0) {
+        contents = _react2.default.createElement(
+          'div',
+          { className: CLASS_ROOT + '__container' },
+          contents,
+          flagged.map(function (serie, index) {
+            return _react2.default.createElement(
+              'div',
+              { key: index, className: CLASS_ROOT + '__flag',
+                ref: function ref(_ref2) {
+                  return _this4._flagRefs[index] = _ref2;
+                } },
+              serie.flag
+            );
+          })
+        );
+      }
+
+      return contents;
     }
   }]);
 
@@ -431,9 +600,12 @@ WorldMap.propTypes = {
       return c.id;
     })),
     colorIndex: _propTypes2.default.string,
+    flag: _propTypes2.default.node,
     label: _propTypes2.default.string, // for a11y aria-label
     onClick: _propTypes2.default.func,
+    onHover: _propTypes2.default.func,
     place: _propTypes2.default.arrayOf(_propTypes2.default.number)
-  }))
+  })),
+  zoom: _propTypes2.default.bool
 };
 module.exports = exports['default'];
