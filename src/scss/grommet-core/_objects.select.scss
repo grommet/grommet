@@ -42,11 +42,6 @@
   top: 50%;
   transform: translateY(-50%);
   right: quarter($inuit-base-spacing-unit);
-
-  // Hide text behind select__control
-  svg {
-    background-color: $background-color;
-  }
 }
 
 .#{$grommet-namespace}select__search {
