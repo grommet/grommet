@@ -17,4 +17,41 @@ describe('WorldMap', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('renders place', () => {
+    const component = renderer.create(
+      <WorldMap series={[
+        {
+          place: [34.052234,-118.243685], // lat,lon
+          label: 'Los Angeles',
+          colorIndex: 'accent-2',
+          id: 'los-angeles',
+          flag: <span>Los Angeles</span>,
+          onClick: () => {},
+          onHover: () => {}
+        }
+      ]} />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('renders place zoomed', () => {
+    const component = renderer.create(
+      <WorldMap series={[
+        {
+          place: [34.052234,-118.243685], // lat,lon
+          label: 'Los Angeles',
+          colorIndex: 'accent-2',
+          id: 'los-angeles',
+          flag: <span>Los Angeles</span>,
+          onClick: () => {},
+          onHover: () => {}
+        }
+      ]}
+      zoom={true} />
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

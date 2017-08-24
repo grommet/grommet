@@ -316,7 +316,7 @@ export default class TextInput extends Component {
         defaultValue={this._renderLabel(defaultValue)}
         value={this._renderLabel(value)}
         placeholder={placeHolder}
-        onInput={this._onInputChange} onFocus={this._onFocus}
+        onChange={this._onInputChange} onFocus={this._onFocus}
         onKeyDown={this._onInputKeyDown} />
     );
   }

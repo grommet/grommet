@@ -61,7 +61,7 @@ export default class Tiles extends Component {
       document.addEventListener('wheel', this._onWheel, { passive: true });
       this._trackHorizontalScroll();
       // give browser a chance to stabilize
-      setTimeout(this._layout, 10);
+      this._layoutTimer = setTimeout(this._layout, 10);
     }
     if (selectable) {
       // only listen for navigation keys if the tile row can be selected
@@ -100,7 +100,7 @@ export default class Tiles extends Component {
     if ('row' === direction) {
       this._trackHorizontalScroll();
       // give browser a chance to stabilize
-      setTimeout(this._layout, 10);
+      this._layoutTimer = setTimeout(this._layout, 10);
     }
     if (selectable) {
       this._setSelection();
@@ -136,6 +136,9 @@ export default class Tiles extends Component {
       KeyboardAccelerators.stopListeningToKeyboard(
         this, this._keyboardHandlers
       );
+    }
+    if (this._layoutTimer) {
+      clearTimeout(this._layoutTimer);
     }
   }
 
@@ -252,8 +255,8 @@ export default class Tiles extends Component {
 
   _onScrollHorizontal () {
     // debounce
-    clearTimeout(this._scrollTimer);
-    this._scrollTimer = setTimeout(this._layout, 50);
+    clearTimeout(this._layoutTimer);
+    this._layoutTimer = setTimeout(this._layout, 50);
   }
 
   _onWheel (event) {
@@ -313,8 +316,8 @@ export default class Tiles extends Component {
 
   _onResize () {
     // debounce
-    clearTimeout(this._resizeTimer);
-    this._resizeTimer = setTimeout(this._layout, 50);
+    clearTimeout(this._layoutTimer);
+    this._layoutTimer = setTimeout(this._layout, 50);
   }
 
   _trackHorizontalScroll () {
