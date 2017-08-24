@@ -236,7 +236,7 @@ var MenuDrop = function (_Component) {
       var menuDropChildren = _react2.default.Children.map(children, function (child) {
         var result = child;
         if (child && isFunction(child.type) && child.type.prototype._renderMenuDrop) {
-          result = _react2.default.cloneElement(child, { inline: 'explode', direction: 'column' });
+          result = _react2.default.cloneElement(child, { inline: 'expanded', direction: 'column' });
         }
         return result;
       });
@@ -374,15 +374,19 @@ var Menu = function (_Component2) {
             _KeyboardAccelerators2.default.startListeningToKeyboard(this, focusedKeyboardHandlers);
             break;
           case 'expanded':
-            _KeyboardAccelerators2.default.stopListeningToKeyboard(this, focusedKeyboardHandlers);
-            _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
-            document.addEventListener('click', this._checkOnClose);
-            document.addEventListener('touchstart', this._checkOnClose);
-            this._drop = new _Drop2.default((0, _reactDom.findDOMNode)(this._controlRef), this._renderMenuDrop(), {
-              align: this.props.dropAlign,
-              colorIndex: this.props.dropColorIndex,
-              focusControl: true
-            });
+            // only add the drop again if the instance is not defined
+            // see https://github.com/grommet/grommet/issues/1431
+            if (!this._drop) {
+              _KeyboardAccelerators2.default.stopListeningToKeyboard(this, focusedKeyboardHandlers);
+              _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
+              document.addEventListener('click', this._checkOnClose);
+              document.addEventListener('touchstart', this._checkOnClose);
+              this._drop = new _Drop2.default((0, _reactDom.findDOMNode)(this._controlRef), this._renderMenuDrop(), {
+                align: this.props.dropAlign,
+                colorIndex: this.props.dropColorIndex,
+                focusControl: true
+              });
+            }
             break;
         }
       } else if (this.state.state === 'expanded') {
@@ -418,7 +422,8 @@ var Menu = function (_Component2) {
     key: '_checkOnClose',
     value: function _checkOnClose(event) {
       var drop = (0, _reactDom.findDOMNode)(this._menuDrop);
-      if (drop && !drop.contains(event.target)) {
+      var control = (0, _reactDom.findDOMNode)(this._controlRef);
+      if (drop && !drop.contains(event.target) && !control.contains(event.target)) {
         this._onClose();
       }
     }
@@ -451,7 +456,9 @@ var Menu = function (_Component2) {
   }, {
     key: '_onFocusControl',
     value: function _onFocusControl() {
-      this.setState({ state: 'focused' });
+      if (this.state.state !== 'focused') {
+        this.setState({ state: 'focused' });
+      }
     }
   }, {
     key: '_onBlurControl',
@@ -536,7 +543,7 @@ var Menu = function (_Component2) {
 
       if (inline) {
         var menuLabel = void 0;
-        if ('explode' === inline) {
+        if ('expanded' === inline) {
           menuLabel = _react2.default.createElement(
             'div',
             { className: CLASS_ROOT + '__label' },
@@ -563,7 +570,9 @@ var Menu = function (_Component2) {
             } }, props, { className: classes }),
           _react2.default.createElement(_Button2.default, _extends({ plain: true, reverse: true,
             a11yTitle: menuTitle }, this._renderButtonProps(), {
-            onClick: this._onOpen,
+            onClick: function onClick() {
+              return _this5.setState({ state: 'expanded' });
+            },
             onFocus: this._onFocusControl, onBlur: this._onBlurControl }))
         );
       }
