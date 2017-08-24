@@ -48,14 +48,24 @@ class ToastContents extends Component {
     clearTimeout(this._timer);
     this._timer = undefined;
     this.setState({ closing: true });
-    if (onClose) {
-      setTimeout(onClose, ANIMATION_DURATION);
-    }
+    setTimeout(() => {
+      if (onClose) {
+        onClose();
+      }
+      this.props.removeLayer();
+    }, ANIMATION_DURATION);
   }
 
   render () {
     const { children, onClose, size, status, ...rest } = this.props;
     const { closing } = this.state;
+
+    // removing context props to avoid invalid html attributes on prop transfer
+    delete rest.history;
+    delete rest.intl;
+    delete rest.router;
+    delete rest.store;
+    delete rest.removeLayer;
 
     const classNames = classnames(
       CLASS_ROOT, {
@@ -117,6 +127,7 @@ ToastContents.childContextTypes = {
 export default class Toast extends Component {
 
   componentDidMount () {
+    this._removeLayer = this._removeLayer.bind(this);
     this._addLayer();
     this._renderLayer();
   }
@@ -156,10 +167,11 @@ export default class Toast extends Component {
       this._element.className = `${CLASS_ROOT}__container`;
       const contents = (
         <ToastContents {...this.props}
-          history={this.context.history}
-          intl={this.context.intl}
-          router={this.context.router}
-          store={this.context.store} />
+                       history={this.context.history}
+                       intl={this.context.intl}
+                       router={this.context.router}
+                       store={this.context.store}
+                       removeLayer={this._removeLayer}/>
       );
       ReactDOM.render(contents, this._element);
     }
