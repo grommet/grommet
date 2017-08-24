@@ -102,20 +102,37 @@ var minCoordinate = function minCoordinate(a, b) {
 
 // Based on https://stackoverflow.com/a/43861247
 var MAP_LAT_BOTTOM = -50.0; // empirically determined
-var latLonCoord = function latLonCoord(latitude, longitude, origin, extent) {
-  var mapLatBottomRad = MAP_LAT_BOTTOM * Math.PI / 180;
-  var latitudeRad = latitude * Math.PI / 180;
-  var mapLngLeft = -171.0; // empirically determined
-  var mapLngRight = 184.0; // empirically determined
-  var mapLngDelta = mapLngRight - mapLngLeft;
+var MAP_LAT_BOTTOM_RAD = MAP_LAT_BOTTOM * Math.PI / 180;
+var MAP_LON_LEFT = -171.0; // empirically determined
+var MAP_LON_RIGHT = 184.0; // empirically determined
+var MAP_LON_DELTA = MAP_LON_RIGHT - MAP_LON_LEFT;
 
-  var worldMapWidth = extent[0] / mapLngDelta * 360 / (2 * Math.PI);
-  var mapOffsetY = Math.round(worldMapWidth / 2 * Math.log((1 + Math.sin(mapLatBottomRad)) / (1 - Math.sin(mapLatBottomRad))));
+var mapValues = function mapValues(extent) {
+  var mapRadius = extent[0] / MAP_LON_DELTA * 360 / (2 * Math.PI);
+  var mapOffsetY = Math.round(mapRadius / 2 * Math.log((1 + Math.sin(MAP_LAT_BOTTOM_RAD)) / (1 - Math.sin(MAP_LAT_BOTTOM_RAD))));
+  return { mapRadius: mapRadius, mapOffsetY: mapOffsetY };
+};
 
-  var x = Math.round((longitude - mapLngLeft) * (extent[0] / mapLngDelta));
-  var y = extent[1] - Math.round(worldMapWidth / 2 * Math.log((1 + Math.sin(latitudeRad)) / (1 - Math.sin(latitudeRad))) - mapOffsetY);
+var latLonToCoord = function latLonToCoord(latLon, origin, extent) {
+  var _mapValues = mapValues(extent),
+      mapRadius = _mapValues.mapRadius,
+      mapOffsetY = _mapValues.mapOffsetY;
 
+  var x = Math.round((latLon[1] - MAP_LON_LEFT) * extent[0] / MAP_LON_DELTA);
+  var latitudeRad = latLon[0] * Math.PI / 180;
+  var y = extent[1] + mapOffsetY - Math.round(mapRadius / 2 * Math.log((1 + Math.sin(latitudeRad)) / (1 - Math.sin(latitudeRad))));
   return [x, y]; // the coordinate value of this point on the map image
+};
+
+var coordToLatLon = function coordToLatLon(coord, origin, extent) {
+  var _mapValues2 = mapValues(extent),
+      mapRadius = _mapValues2.mapRadius,
+      mapOffsetY = _mapValues2.mapOffsetY;
+
+  var a = (extent[1] + mapOffsetY - coord[1]) / mapRadius;
+  var lat = 180 / Math.PI * (2 * Math.atan(Math.exp(a)) - Math.PI / 2);
+  var lon = coord[0] * MAP_LON_DELTA / extent[0] + MAP_LON_LEFT;
+  return [lat, lon];
 };
 
 var WorldMap = function (_Component) {
@@ -271,7 +288,7 @@ var WorldMap = function (_Component) {
       }).map(function (serie) {
         var place = serie.place;
         if (place[0] % 1) {
-          place = latLonCoord(place[0], place[1], _this3.state.origin, _this3.state.extent);
+          place = latLonToCoord(place, _this3.state.origin, _this3.state.extent);
         }
         return { place: place, id: place.join(',') };
       });
@@ -488,7 +505,9 @@ var WorldMap = function (_Component) {
           x = _state5.x,
           y = _state5.y,
           width = _state5.width,
-          height = _state5.height;
+          height = _state5.height,
+          origin = _state5.origin,
+          extent = _state5.extent;
 
       var classes = (0, _classnames4.default)(CLASS_ROOT, className);
 
@@ -532,7 +551,7 @@ var WorldMap = function (_Component) {
             'g',
             { stroke: 'none', fill: 'none', fillRule: 'evenodd',
               onClick: function onClick() {
-                return onSelectPlace(activePlace);
+                return onSelectPlace(activePlace, coordToLatLon(activePlace, origin, extent));
               } },
             _react2.default.createElement('path', { className: _classes, d: d })
           );
