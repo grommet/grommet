@@ -120,25 +120,37 @@ const minCoordinate = (a, b) =>
 
 // Based on https://stackoverflow.com/a/43861247
 const MAP_LAT_BOTTOM = -50.0; // empirically determined
-const latLonCoord = (latitude, longitude, origin, extent) => {
-  const mapLatBottomRad = MAP_LAT_BOTTOM * Math.PI / 180;
-  const latitudeRad = latitude * Math.PI / 180;
-  const mapLngLeft = -171.0; // empirically determined
-  const mapLngRight = 184.0; // empirically determined
-  const mapLngDelta = (mapLngRight - mapLngLeft);
+const MAP_LAT_BOTTOM_RAD = MAP_LAT_BOTTOM * Math.PI / 180;
+const MAP_LON_LEFT = -171.0; // empirically determined
+const MAP_LON_RIGHT = 184.0; // empirically determined
+const MAP_LON_DELTA = (MAP_LON_RIGHT - MAP_LON_LEFT);
 
-  const worldMapWidth = ((extent[0] / mapLngDelta) * 360) / (2 * Math.PI);
-  const mapOffsetY = Math.round(worldMapWidth / 2 *
-    Math.log((1 + Math.sin(mapLatBottomRad)) /
-      (1 - Math.sin(mapLatBottomRad))));
+const mapValues = (extent) => {
+  const mapRadius = ((extent[0] / MAP_LON_DELTA) * 360) / (2 * Math.PI);
+  const mapOffsetY = Math.round(mapRadius / 2 *
+    Math.log((1 + Math.sin(MAP_LAT_BOTTOM_RAD)) /
+      (1 - Math.sin(MAP_LAT_BOTTOM_RAD))));
+  return { mapRadius, mapOffsetY };
+};
 
-  const x = Math.round((longitude - mapLngLeft) * (extent[0] / mapLngDelta));
-  const y = extent[1] -
-    Math.round((worldMapWidth / 2 *
+const latLonToCoord = (latLon, origin, extent) => {
+  const { mapRadius, mapOffsetY } = mapValues(extent);
+  const x =
+    Math.round(((latLon[1] - MAP_LON_LEFT) * extent[0]) / MAP_LON_DELTA);
+  const latitudeRad = latLon[0] * Math.PI / 180;
+  const y = extent[1] + mapOffsetY -
+    Math.round(((mapRadius / 2) *
       Math.log((1 + Math.sin(latitudeRad)) /
-        (1 - Math.sin(latitudeRad)))) - mapOffsetY);
-
+        (1 - Math.sin(latitudeRad)))));
   return [x, y]; // the coordinate value of this point on the map image
+};
+
+const coordToLatLon = (coord, origin, extent) => {
+  const { mapRadius, mapOffsetY } = mapValues(extent);
+  const a = ((extent[1] + mapOffsetY) - coord[1]) / mapRadius;
+  const lat = 180 / Math.PI * (2 * Math.atan(Math.exp(a)) - Math.PI/2);
+  const lon = ((coord[0] * MAP_LON_DELTA) / extent[0]) + MAP_LON_LEFT;
+  return [lat, lon];
 };
 
 export default class WorldMap extends Component {
@@ -272,8 +284,7 @@ export default class WorldMap extends Component {
     const places = (series || []).filter(s => s.place).map((serie) => {
       let place = serie.place;
       if (place[0] % 1) {
-        place = latLonCoord(place[0], place[1],
-          this.state.origin, this.state.extent);
+        place = latLonToCoord(place, this.state.origin, this.state.extent);
       }
       return { place, id: place.join(',') };
     });
@@ -483,7 +494,9 @@ export default class WorldMap extends Component {
       className, colorIndex, onSelectPlace, series, ...props
     } = this.props;
     delete props.zoom;
-    const { activePlace, over, x, y, width, height } = this.state;
+    const {
+      activePlace, over, x, y, width, height, origin, extent
+    } = this.state;
     const classes = classnames(
       CLASS_ROOT,
       className
@@ -530,7 +543,8 @@ export default class WorldMap extends Component {
         const d = `M${FACTOR * activePlace[0]},${FACTOR * activePlace[1]} h0`;
         activeGroup = (
           <g stroke='none' fill='none' fillRule='evenodd'
-            onClick={() => onSelectPlace(activePlace)}>
+            onClick={() => onSelectPlace(activePlace,
+              coordToLatLon(activePlace, origin, extent))}>
             <path className={classes} d={d} />
           </g>
         );
