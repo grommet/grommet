@@ -14,12 +14,14 @@
 }
 
 .grommet {
-  input:not(.#{$grommet-namespace}input),
-  input:not(.#{$grommet-namespace}check-box__input),
-  select,
-  textarea {
-    @include inuit-font-size($inuit-base-font-size);
-    @include input();
+  not(.#{$grommet-namespace}form-field__contents) {
+    input:not(.#{$grommet-namespace}input),
+    input:not(.#{$grommet-namespace}check-box__input),
+    select,
+    textarea {
+      @include inuit-font-size($inuit-base-font-size);
+      @include input();
+    }
   }
 
   input[type="button"],
