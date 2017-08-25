@@ -14,22 +14,22 @@ class GrommetMarkdown extends Component {
   render() {
     const { content, components } = this.props;
 
-    const heading = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
-      .reduce((obj, tag) => {
+    const heading = [1, 2, 3, 4]
+      .reduce((obj, level) => {
         const result = { ...obj };
-        result[tag] = {
+        result[`h${level}`] = {
           component: Heading,
-          props: { tag },
+          props: { level },
         };
         return result;
       }, {});
 
-    const options = deepAssign({
+    const overrides = deepAssign({
       p: { component: Paragraph },
     }, heading, components);
 
     return (
-      <Markdown options={{ overrides: options }}>
+      <Markdown options={{ overrides }}>
         {content}
       </Markdown>
     );

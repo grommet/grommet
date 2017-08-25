@@ -5,22 +5,22 @@ import 'jest-styled-components';
 import { Grommet } from '../../grommet';
 import { Markdown } from '../';
 
+const CONTENT = `
+# H1
+
+Paragraph
+
+## H2
+
+### H3
+
+#### H4
+`;
+
 test('Markdown renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Markdown
-        content={`
-          # H1
-
-          Paragraph
-
-          ## H2
-
-          ### H3
-
-          #### H4
-        `}
-      />
+      <Markdown content={CONTENT} />
     </Grommet>
   );
   const tree = component.toJSON();

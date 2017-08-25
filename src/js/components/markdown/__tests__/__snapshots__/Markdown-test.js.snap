@@ -18,6 +18,36 @@ exports[`Markdown renders 1`] = `
   box-sizing: inherit;
 }
 
+.c2 {
+  font-size: 16px;
+  line-height: 1.375;
+  max-width: 576px;
+}
+
+.c1 {
+  font-size: 48px;
+  line-height: 1.125;
+  font-weight: 300;
+}
+
+.c3 {
+  font-size: 36px;
+  line-height: 1.23;
+  font-weight: 300;
+}
+
+.c4 {
+  font-size: 24px;
+  line-height: 1.333;
+  font-weight: 300;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 1.333;
+  font-weight: 300;
+}
+
 @media only screen and (min-width:481px) {
   .c0 {
     top: 0px;
@@ -33,21 +63,32 @@ exports[`Markdown renders 1`] = `
 <div
   className="c0"
 >
-  <pre>
-    <code
-      className="lang-null"
+  <div>
+    <h1
+      className="c1"
     >
-            # H1
-      
-            Paragraph
-      
-            ## H2
-      
-            ### H3
-      
-            #### H4
-          
-    </code>
-  </pre>
+      H1
+    </h1>
+    <p
+      className="c2"
+    >
+      Paragraph
+    </p>
+    <h2
+      className="c3"
+    >
+      H2
+    </h2>
+    <h3
+      className="c4"
+    >
+      H3
+    </h3>
+    <h4
+      className="c5"
+    >
+      H4
+    </h4>
+  </div>
 </div>
 `;

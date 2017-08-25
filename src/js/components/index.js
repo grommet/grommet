@@ -4,6 +4,7 @@ export * from './grid';
 export * from './grommet';
 export * from './heading';
 export * from './keyboard';
+export * from './markdown';
 export * from './meter';
 export * from './paragraph';
 export * from './stack';
