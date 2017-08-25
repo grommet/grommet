@@ -12,6 +12,7 @@ Object {
   "Paragraph": [Function],
   "RoutedButton": [Function],
   "Stack": [Function],
+  "Text": [Function],
   "TextInput": [Function],
   "__esModule": true,
 }

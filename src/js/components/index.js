@@ -7,4 +7,5 @@ export * from './keyboard';
 export * from './meter';
 export * from './paragraph';
 export * from './stack';
+export * from './text';
 export * from './text-input';

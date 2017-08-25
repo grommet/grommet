@@ -196,4 +196,12 @@ export default {
     large: { size: '24px', height: 1.167, maxWidth: `${baseSpacing * 36}px` },
     xlarge: { size: '32px', height: 1.1875, maxWidth: `${baseSpacing * 48}px` },
   },
+  text: {
+    medium: { size: '16px', height: 1.375 },
+    xsmall: { size: '12px', height: 1.5 },
+    small: { size: '14px', height: 1.43 },
+    large: { size: '24px', height: 1.167 },
+    xlarge: { size: '32px', height: 1.1875 },
+    xxlarge: { size: '48px', height: 1.125 },
+  },
 };

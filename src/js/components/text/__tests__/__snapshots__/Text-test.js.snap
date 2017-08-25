@@ -1,0 +1,396 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text margin renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.c2 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 48px;
+  margin-bottom: 48px;
+  margin-left: 48px;
+  margin-right: 48px;
+}
+
+.c4 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin: 0;
+}
+
+.c5 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.c6 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.c7 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-bottom: 12px;
+}
+
+.c8 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 12px;
+}
+
+.c9 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-left: 12px;
+}
+
+.c10 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-right: 12px;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <span
+    className="c1"
+  />
+  <span
+    className="c2"
+  />
+  <span
+    className="c3"
+  />
+  <span
+    className="c4"
+  />
+  <span
+    className="c5"
+  />
+  <span
+    className="c6"
+  />
+  <span
+    className="c7"
+  />
+  <span
+    className="c8"
+  />
+  <span
+    className="c9"
+  />
+  <span
+    className="c10"
+  />
+</div>
+`;
+
+exports[`Text renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <span
+    className="c1"
+  >
+    text
+  </span>
+</div>
+`;
+
+exports[`Text size renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
+.c1 {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.c2 {
+  font-size: 14px;
+  line-height: 1.43;
+}
+
+.c4 {
+  font-size: 24px;
+  line-height: 1.167;
+}
+
+.c5 {
+  font-size: 32px;
+  line-height: 1.1875;
+}
+
+.c6 {
+  font-size: 48px;
+  line-height: 1.125;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <span
+    className="c1"
+    size="xsmall"
+  />
+  <span
+    className="c2"
+    size="small"
+  />
+  <span
+    className="c3"
+    size="medium"
+  />
+  <span
+    className="c4"
+    size="large"
+  />
+  <span
+    className="c5"
+    size="xlarge"
+  />
+  <span
+    className="c6"
+    size="xxlarge"
+  />
+</div>
+`;
+
+exports[`Text textAlign renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  font-size: 16px;
+  line-height: 1.375;
+  text-align: left;
+}
+
+.c2 {
+  font-size: 16px;
+  line-height: 1.375;
+  text-align: center;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
+  text-align: right;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <span
+    className="c1"
+  />
+  <span
+    className="c2"
+  />
+  <span
+    className="c3"
+  />
+</div>
+`;
+
+exports[`Text truncate renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
+.c2 {
+  font-size: 16px;
+  line-height: 1.375;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <span
+    className="c1"
+  >
+    a b c d e f g h i j k l m n o p q r s t u v w x y z
+  </span>
+  <span
+    className="c2"
+  >
+    a b c d e f g h i j k l m n o p q r s t u v w x y z
+  </span>
+</div>
+`;
