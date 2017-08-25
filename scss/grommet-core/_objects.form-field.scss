@@ -95,6 +95,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     }
   }
 
+  > input:not([type]),
   > input[type=text],
   > input[type=range],
   > input[type=email],
@@ -123,6 +124,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     padding-left: $inuit-base-spacing-unit;
   }
 
+  > input:not([type]),
   > input[type=text],
   > input[type=email],
   > input[type=password],
@@ -138,6 +140,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     }
   }
 
+  > input:not([type]),
   > input[type=text],
   > input[type=range],
   > input[type=email],
@@ -443,6 +446,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
 .#{$grommet-namespace}form-field--size-large {
   font-size: $paragraph-large-font-size;
 
+  input:not([type]),
   input[type="text"] {
     font-size: $paragraph-large-font-size;
     height: auto;
@@ -450,6 +454,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
 }
 
 .#{$grommet-namespace}form-field--strong {
+  input:not([type]),
   input[type="text"] {
     font-weight: $text-strong-font-weight;
   }
