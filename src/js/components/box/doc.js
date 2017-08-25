@@ -112,6 +112,10 @@ export default Box => schema(Box, {
       PropTypes.bool,
       'Whether to reverse the order of the child components.',
     ],
+    round: [
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full']),
+      'How much to round the corners.',
+    ],
     // separator - moved to border
     // size - removed, use basis
     tag: [

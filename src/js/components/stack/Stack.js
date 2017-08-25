@@ -19,10 +19,9 @@ class Stack extends Component {
       return React.cloneElement(child, {
         style: {
           position: 'absolute',
-          top: '0px',
-          left: '0px',
-          right: '0px',
-          bottom: '0px',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
           overflow: 'hidden',
         },
       });

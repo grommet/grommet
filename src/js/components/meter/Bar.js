@@ -14,15 +14,25 @@ export default class Bar extends Component {
     const height = parseMetricToInt(theme.global.edgeSize[thickness]);
     const mid = height / 2;
     const max = 100;
+    const someHighlight = (values || []).some(v => v.highlight);
 
     let start = 0;
     const paths = (values || []).map((valueArg, index) => {
-      const { value, label, color, ...rest } = valueArg;
+      const { color, highlight, label, onHover, value, ...rest } = valueArg;
+
       const key = `p-${index}`;
       const delta = (value * width) / max;
       const d = `M ${start},${mid} L ${start + delta},${mid}`;
       const colorName = color || `neutral-${index + 1}`;
+      let hoverProps;
+      if (onHover) {
+        hoverProps = {
+          onMouseOver: () => onHover(true),
+          onMouseLeave: () => onHover(false),
+        };
+      }
       start += delta;
+
       return (
         <path
           key={key}
@@ -31,6 +41,8 @@ export default class Bar extends Component {
           stroke={colorForName(colorName, theme)}
           strokeWidth={height}
           strokeLinecap={cap}
+          strokeOpacity={(someHighlight && !highlight) ? 0.5 : 1}
+          {...hoverProps}
           {...rest}
         />
       );
