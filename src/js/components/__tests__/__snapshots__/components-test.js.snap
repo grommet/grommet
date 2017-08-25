@@ -8,8 +8,12 @@ Object {
   "Grommet": [Function],
   "Heading": [Function],
   "Keyboard": [Function],
+  "Markdown": [Function],
+  "Meter": [Function],
   "Paragraph": [Function],
   "RoutedButton": [Function],
+  "Stack": [Function],
+  "Text": [Function],
   "TextInput": [Function],
   "__esModule": true,
 }

@@ -1,4 +1,4 @@
-import { rgba } from 'polished';
+import { lighten, rgba } from 'polished';
 
 const brandColor = '#865CD6';
 const accentColors = ['#00CCEB', '#FF7D28'];
@@ -52,9 +52,11 @@ export default {
       },
     },
     edgeSize: {
+      xsmall: `${baseSpacing / 4}px`,
       small: `${baseSpacing / 2}px`,
       medium: `${baseSpacing}px`,
       large: `${baseSpacing * 2}px`,
+      xlarge: `${baseSpacing * 4}px`,
     },
     focus: {
       border: {},
@@ -130,7 +132,7 @@ export default {
       color: '#AAAAAA',
     },
     selected: {
-      backgroundColor: undefined,
+      backgroundColor: lighten(0.23, brandColor),
       textColor,
     },
     spacing: `${baseSpacing}px`,
@@ -142,6 +144,7 @@ export default {
       large: `${baseSpacing * 24}px`,
       xlarge: `${baseSpacing * 30}px`,
       xxlarge: `${baseSpacing * 40}px`,
+      full: '100%',
     },
   },
   button: {
@@ -192,5 +195,13 @@ export default {
     small: { size: '14px', height: 1.43, maxWidth: `${baseSpacing * 18}px` },
     large: { size: '24px', height: 1.167, maxWidth: `${baseSpacing * 36}px` },
     xlarge: { size: '32px', height: 1.1875, maxWidth: `${baseSpacing * 48}px` },
+  },
+  text: {
+    medium: { size: '16px', height: 1.375 },
+    xsmall: { size: '12px', height: 1.5 },
+    small: { size: '14px', height: 1.43 },
+    large: { size: '24px', height: 1.167 },
+    xlarge: { size: '32px', height: 1.1875 },
+    xxlarge: { size: '48px', height: 1.125 },
   },
 };

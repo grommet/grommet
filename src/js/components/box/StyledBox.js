@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { backgroundStyle } from '../utils';
+
 const ALIGN_MAP = {
   baseline: 'baseline',
   center: 'center',
@@ -48,60 +50,6 @@ const BASIS_MAP = {
 const basisStyle = css`
   flex-basis: ${props => BASIS_MAP[props.basis] || props.theme.global.size[props.basis]};
 `;
-
-const colorIsDark = (color) => {
-  // https://stackoverflow.com/a/42429333
-  const [red, green, blue] = color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16));
-  // http://www.had2know.com/technology/
-  //  color-contrast-calculator-web-design.html
-  const brightness = (
-    (299 * red) + (587 * green) + (114 * blue)
-  ) / 1000;
-  return (brightness < 125);
-};
-
-const backgroundStyle = (background, theme) => {
-  if (typeof background === 'object') {
-    if (background.image) {
-      let color;
-      if (background.dark === false) {
-        color = theme.global.colors.text;
-      } else if (background.dark) {
-        color = theme.global.colors.darkBackgroundTextColor;
-      } else {
-        color = 'inherit';
-      }
-      return css`
-        background: ${background.image} no-repeat center center;
-        background-size: cover;
-        color: ${color};
-      `;
-    }
-    return undefined;
-  }
-  if (background.lastIndexOf('url', 0) === 0) {
-    return css`
-      background: ${background} no-repeat center center;
-      background-size: cover;
-    `;
-  }
-  const [kind, index] = background.split('-');
-  const colorSet = theme.global.colors[kind];
-  let color;
-  if (Array.isArray(colorSet)) {
-    color = theme.global.colors[kind][index];
-  } else if (typeof colorSet === 'string') {
-    color = colorSet;
-  }
-  if (color) {
-    return css`
-      background-color: ${color};
-      color: ${colorIsDark(color) ?
-        theme.global.colors.darkBackgroundTextColor : theme.global.colors.text};
-    `;
-  }
-  return undefined;
-};
 
 const directionStyle = css`
   flex-direction: ${(props) => {
@@ -214,6 +162,14 @@ const edgeStyle = (kind, data, theme) => {
   return '';
 };
 
+const ROUND_MAP = {
+  'full': '100%',
+};
+
+const roundStyle = css`
+  border-radius: ${props => ROUND_MAP[props.round] || props.theme.global.edgeSize[props.round]};
+`;
+
 const StyledBox = styled.div`
   display: flex;
 
@@ -229,6 +185,7 @@ const StyledBox = styled.div`
   ${props => props.justify && justifyStyle}
   ${props => props.margin && edgeStyle('margin', props.margin, props.theme)}
   ${props => props.pad && edgeStyle('padding', props.pad, props.theme)}
+  ${props => props.round && roundStyle}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.wrap && wrapStyle}
 `;

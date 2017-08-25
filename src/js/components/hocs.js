@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import deepAssign from 'deep-assign';
 
+
 export const withFocus = (WrappedComponent) => {
   class FocusableComponent extends Component {
     state = {
@@ -68,12 +69,12 @@ export const withFocus = (WrappedComponent) => {
 export const withTheme = (WrappedComponent) => {
   class ThemedComponent extends Component {
     static contextTypes = {
-      theme: PropTypes.object.isRequired,
+      theme: PropTypes.object,
     }
     render() {
       const { theme, ...rest } = this.props;
       let { theme: contextTheme } = this.context;
-      contextTheme = JSON.parse(JSON.stringify(contextTheme));
+      contextTheme = contextTheme ? JSON.parse(JSON.stringify(contextTheme)) : {};
       const localTheme = deepAssign(contextTheme, theme);
       return (
         <WrappedComponent theme={localTheme} {...rest} />

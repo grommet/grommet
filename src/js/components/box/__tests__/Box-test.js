@@ -268,6 +268,20 @@ test('Box gridArea renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Box round renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Box round='xsmall' />
+      <Box round='small' />
+      <Box round='medium' />
+      <Box round='large' />
+      <Box round='full' />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Box tag renders', () => {
   const component = renderer.create(
     <Grommet>

@@ -21,6 +21,7 @@
     "childContextTypes": true,
     "contextTypes": true,
     "state": true,
+    "Event": true
   },
   "rules": {
     "indent": "off",
