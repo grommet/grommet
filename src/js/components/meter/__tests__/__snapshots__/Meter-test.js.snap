@@ -51,6 +51,7 @@ exports[`Meter background renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap={undefined}
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -72,6 +73,7 @@ exports[`Meter background renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap={undefined}
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -94,6 +96,7 @@ exports[`Meter background renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="square"
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -116,6 +119,7 @@ exports[`Meter background renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="square"
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -173,6 +177,7 @@ exports[`Meter cap renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="square"
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -194,6 +199,7 @@ exports[`Meter cap renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="round"
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -216,6 +222,7 @@ exports[`Meter cap renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="square"
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -238,6 +245,7 @@ exports[`Meter cap renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="round"
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -309,6 +317,7 @@ exports[`Meter renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap={undefined}
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -366,6 +375,7 @@ exports[`Meter size renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap={undefined}
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -387,6 +397,7 @@ exports[`Meter size renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap={undefined}
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -408,6 +419,7 @@ exports[`Meter size renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap={undefined}
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -429,6 +441,7 @@ exports[`Meter size renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap={undefined}
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -450,6 +463,7 @@ exports[`Meter size renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap={undefined}
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -472,6 +486,7 @@ exports[`Meter size renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="square"
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -494,6 +509,7 @@ exports[`Meter size renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="square"
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -516,6 +532,7 @@ exports[`Meter size renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="square"
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -538,6 +555,7 @@ exports[`Meter size renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="square"
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -560,6 +578,7 @@ exports[`Meter size renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="square"
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -617,6 +636,7 @@ exports[`Meter thickness renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap={undefined}
+      strokeOpacity={1}
       strokeWidth={6}
     />
   </svg>
@@ -638,6 +658,7 @@ exports[`Meter thickness renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap={undefined}
+      strokeOpacity={1}
       strokeWidth={12}
     />
   </svg>
@@ -659,6 +680,7 @@ exports[`Meter thickness renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap={undefined}
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -680,6 +702,7 @@ exports[`Meter thickness renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap={undefined}
+      strokeOpacity={1}
       strokeWidth={48}
     />
   </svg>
@@ -701,6 +724,7 @@ exports[`Meter thickness renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap={undefined}
+      strokeOpacity={1}
       strokeWidth={96}
     />
   </svg>
@@ -723,6 +747,7 @@ exports[`Meter thickness renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="square"
+      strokeOpacity={1}
       strokeWidth={6}
     />
   </svg>
@@ -745,6 +770,7 @@ exports[`Meter thickness renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="square"
+      strokeOpacity={1}
       strokeWidth={12}
     />
   </svg>
@@ -767,6 +793,7 @@ exports[`Meter thickness renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="square"
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -789,6 +816,7 @@ exports[`Meter thickness renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="square"
+      strokeOpacity={1}
       strokeWidth={48}
     />
   </svg>
@@ -811,6 +839,7 @@ exports[`Meter thickness renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="square"
+      strokeOpacity={1}
       strokeWidth={96}
     />
   </svg>
@@ -868,6 +897,7 @@ exports[`Meter type renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap={undefined}
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>
@@ -890,6 +920,7 @@ exports[`Meter type renders 1`] = `
       fill="none"
       stroke="#DC2878"
       strokeLinecap="square"
+      strokeOpacity={1}
       strokeWidth={24}
     />
   </svg>

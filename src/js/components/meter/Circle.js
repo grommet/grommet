@@ -18,11 +18,12 @@ export default class Circle extends Component {
     const radius = (width / 2) - (height / 2);
     const max = 100;
     const anglePer = (360 / max);
+    const someHighlight = (values || []).some(v => v.highlight);
 
     let startValue = 0;
     let startAngle = 0;
     const paths = (values || []).map((valueArg, index) => {
-      const { value, label, color, ...rest } = valueArg;
+      const { color, highlight, label, onHover, value, ...rest } = valueArg;
       const key = `p-${index}`;
       const colorName = color || `neutral-${index + 1}`;
 
@@ -33,8 +34,14 @@ export default class Circle extends Component {
         endAngle = Math.min(360,
           translateEndAngle(startAngle, anglePer, value));
       }
-
       const d = arcCommands(width / 2, width / 2, radius, startAngle, endAngle);
+      let hoverProps;
+      if (onHover) {
+        hoverProps = {
+          onMouseOver: () => onHover(true),
+          onMouseLeave: () => onHover(false),
+        };
+      }
       startValue += value;
       startAngle = endAngle;
 
@@ -46,6 +53,8 @@ export default class Circle extends Component {
           stroke={colorForName(colorName, theme)}
           strokeWidth={height}
           strokeLinecap={cap}
+          strokeOpacity={(someHighlight && !highlight) ? 0.5 : 1}
+          {...hoverProps}
           {...rest}
         />
       );

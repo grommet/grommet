@@ -162,6 +162,14 @@ const edgeStyle = (kind, data, theme) => {
   return '';
 };
 
+const ROUND_MAP = {
+  'full': '100%',
+};
+
+const roundStyle = css`
+  border-radius: ${props => ROUND_MAP[props.round] || props.theme.global.edgeSize[props.round]};
+`;
+
 const StyledBox = styled.div`
   display: flex;
 
@@ -177,6 +185,7 @@ const StyledBox = styled.div`
   ${props => props.justify && justifyStyle}
   ${props => props.margin && edgeStyle('margin', props.margin, props.theme)}
   ${props => props.pad && edgeStyle('padding', props.pad, props.theme)}
+  ${props => props.round && roundStyle}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.wrap && wrapStyle}
 `;
