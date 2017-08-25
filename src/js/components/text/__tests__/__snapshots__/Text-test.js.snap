@@ -226,6 +226,11 @@ exports[`Text size renders 1`] = `
   line-height: 1.1875;
 }
 
+.c6 {
+  font-size: 48px;
+  line-height: 1.125;
+}
+
 @media only screen and (min-width:481px) {
   .c0 {
     top: 0px;
@@ -260,6 +265,10 @@ exports[`Text size renders 1`] = `
   <span
     className="c5"
     size="xlarge"
+  />
+  <span
+    className="c6"
+    size="xxlarge"
   />
 </div>
 `;

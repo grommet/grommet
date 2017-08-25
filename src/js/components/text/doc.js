@@ -17,7 +17,7 @@ export default Text => schema(Text, {
       specified to distinguish top margin and bottom margin.`,
     ],
     size: [
-      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']),
       `The font size is primarily driven by the chosen tag. But, it can
       be adjusted via this size property. The tag should be set for semantic
       correctness and accessibility. This size property allows for stylistic

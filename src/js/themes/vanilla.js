@@ -202,5 +202,6 @@ export default {
     small: { size: '14px', height: 1.43 },
     large: { size: '24px', height: 1.167 },
     xlarge: { size: '32px', height: 1.1875 },
+    xxlarge: { size: '48px', height: 1.125 },
   },
 };

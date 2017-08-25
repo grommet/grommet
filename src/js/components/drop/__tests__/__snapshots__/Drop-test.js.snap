@@ -321,6 +321,10 @@ exports[`Drop aligns left right top bottom 1`] = `
               "height": 1.5,
               "size": "12px",
             },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
+            },
           },
         }
       }
@@ -672,6 +676,10 @@ exports[`Drop aligns right left top top 1`] = `
             "xsmall": Object {
               "height": 1.5,
               "size": "12px",
+            },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
             },
           },
         }
@@ -1025,6 +1033,10 @@ exports[`Drop aligns right right bottom top 1`] = `
               "height": 1.5,
               "size": "12px",
             },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
+            },
           },
         }
       }
@@ -1377,6 +1389,10 @@ exports[`Drop aligns skips left random 1`] = `
               "height": 1.5,
               "size": "12px",
             },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
+            },
           },
         }
       }
@@ -1728,6 +1744,10 @@ exports[`Drop aligns skips right random 1`] = `
               "height": 1.5,
               "size": "12px",
             },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
+            },
           },
         }
       }
@@ -2073,6 +2093,10 @@ exports[`Drop mounts 1`] = `
             "xsmall": Object {
               "height": 1.5,
               "size": "12px",
+            },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
             },
           },
         }
@@ -2464,6 +2488,10 @@ exports[`Drop resizes 1`] = `
               "height": 1.5,
               "size": "12px",
             },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
+            },
           },
         }
       }
@@ -2816,6 +2844,10 @@ exports[`Drop skips invalid align 1`] = `
               "height": 1.5,
               "size": "12px",
             },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
+            },
           },
         }
       }
@@ -3159,6 +3191,10 @@ exports[`Drop updates 1`] = `
             "xsmall": Object {
               "height": 1.5,
               "size": "12px",
+            },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
             },
           },
         }

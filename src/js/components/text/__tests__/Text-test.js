@@ -23,6 +23,7 @@ test('Text size renders', () => {
       <Text size='medium' />
       <Text size='large' />
       <Text size='xlarge' />
+      <Text size='xxlarge' />
     </Grommet>
   );
   const tree = component.toJSON();
