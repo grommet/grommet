@@ -129,18 +129,37 @@ class Anchor extends Component {
     }
   }
 
+  get adjustedHref() {
+    const { router } = this.context;
+    const { path } = this.props;
+    if (router && router.createPath) {
+      return (path && router)
+        ? router.createPath(target)
+        : href;
+    }
+    return (path && router && router.history)
+      ? router.history.createHref(
+          typeof target === 'string'
+            ? { pathname: target }
+            : target
+        )
+      : href;
+  }
+
   render() {
     const {
       tag,
       ...rest
     } = this.props;
+    const { active } = this.state;
+    const href = adjustedHref();
 
     const StyledComponent = styledComponents[tag]
       ? styledComponents[tag]
       : StyledAnchor.withComponent(tag);
 
     return (
-      <StyledComponent {...rest} />
+      <StyledComponent href={this.adjustedHref} {...rest} />
     );
   }
 }
