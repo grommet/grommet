@@ -14,15 +14,15 @@ const styledComponents = {
 class Text extends Component {
   static defaultProps = {
     level: 1,
+    tag: 'span',
   };
 
   render() {
     const {
-      level,
+      tag,
       ...rest
     } = this.props;
 
-    const tag = 'span';
     let StyledComponent = styledComponents[tag];
     if (!StyledComponent) {
       StyledComponent = StyledText.withComponent(tag);
@@ -30,7 +30,7 @@ class Text extends Component {
     }
 
     return (
-      <StyledComponent level={level} {...rest} />
+      <StyledComponent {...rest} />
     );
   }
 }
