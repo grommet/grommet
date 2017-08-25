@@ -300,6 +300,28 @@ exports[`Drop aligns left right top bottom 1`] = `
               "size": "32px",
             },
           },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
+            },
+          },
         }
       }
     >
@@ -628,6 +650,28 @@ exports[`Drop aligns right left top top 1`] = `
               "height": 1.1875,
               "maxWidth": "1152px",
               "size": "32px",
+            },
+          },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
             },
           },
         }
@@ -960,6 +1004,28 @@ exports[`Drop aligns right right bottom top 1`] = `
               "size": "32px",
             },
           },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
+            },
+          },
         }
       }
     >
@@ -1288,6 +1354,28 @@ exports[`Drop aligns skips left random 1`] = `
               "height": 1.1875,
               "maxWidth": "1152px",
               "size": "32px",
+            },
+          },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
             },
           },
         }
@@ -1619,6 +1707,28 @@ exports[`Drop aligns skips right random 1`] = `
               "size": "32px",
             },
           },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
+            },
+          },
         }
       }
     >
@@ -1941,6 +2051,28 @@ exports[`Drop mounts 1`] = `
               "height": 1.1875,
               "maxWidth": "1152px",
               "size": "32px",
+            },
+          },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
             },
           },
         }
@@ -2311,6 +2443,28 @@ exports[`Drop resizes 1`] = `
               "size": "32px",
             },
           },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
+            },
+          },
         }
       }
     >
@@ -2641,6 +2795,28 @@ exports[`Drop skips invalid align 1`] = `
               "size": "32px",
             },
           },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
+            },
+          },
         }
       }
     >
@@ -2961,6 +3137,28 @@ exports[`Drop updates 1`] = `
               "height": 1.1875,
               "maxWidth": "1152px",
               "size": "32px",
+            },
+          },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
             },
           },
         }
