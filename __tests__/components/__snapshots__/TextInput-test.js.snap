@@ -9,6 +9,7 @@ exports[`TextInput can set autocomplete 1`] = `
   onFocus={[Function]}
   onKeyDown={[Function]}
   placeholder={undefined}
+  type="text"
   value={undefined}
 />
 `;
@@ -24,6 +25,7 @@ exports[`TextInput has correct default options 1`] = `
   onFocus={[Function]}
   onKeyDown={[Function]}
   placeholder={undefined}
+  type="text"
   value="one"
 />
 `;
