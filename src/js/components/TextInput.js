@@ -310,6 +310,7 @@ export default class TextInput extends Component {
     return (
       <input
         ref={ref => this.componentRef = ref}
+        type='text'
         autoComplete="off"
         {...props}
         className={classes}
