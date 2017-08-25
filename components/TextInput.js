@@ -386,6 +386,7 @@ var TextInput = function (_Component) {
         ref: function ref(_ref) {
           return _this4.componentRef = _ref;
         },
+        type: 'text',
         autoComplete: 'off'
       }, props, {
         className: classes,
