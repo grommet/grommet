@@ -67,13 +67,11 @@ test('Meter thickness renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Meter cap renders', () => {
+test('Meter round renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Meter cap='square' values={VALUES} />
-      <Meter cap='round' values={VALUES} />
-      <Meter type='circle' cap='square' values={VALUES} />
-      <Meter type='circle' cap='round' values={VALUES} />
+      <Meter round={true} values={VALUES} />
+      <Meter type='circle' round={true} values={VALUES} />
     </Grommet>
   );
   const tree = component.toJSON();

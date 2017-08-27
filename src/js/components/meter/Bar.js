@@ -9,7 +9,7 @@ export default class Bar extends Component {
   };
 
   render() {
-    const { background, cap, size, theme, thickness, values } = this.props;
+    const { background, round, size, theme, thickness, values } = this.props;
     const width = (size === 'full' ? 288 : parseMetricToInt(theme.global.size[size]));
     const height = parseMetricToInt(theme.global.edgeSize[thickness]);
     const mid = height / 2;
@@ -23,7 +23,8 @@ export default class Bar extends Component {
       const key = `p-${index}`;
       const delta = (value * width) / max;
       const d = `M ${start},${mid} L ${start + delta},${mid}`;
-      const colorName = color || `neutral-${index + 1}`;
+      const colorName = color ||
+        ((index === values.length - 1) ? 'accent-1' : `neutral-${index + 1}`);
       let hoverProps;
       if (onHover) {
         hoverProps = {
@@ -40,7 +41,7 @@ export default class Bar extends Component {
           fill='none'
           stroke={colorForName(colorName, theme)}
           strokeWidth={height}
-          strokeLinecap={cap}
+          strokeLinecap={round ? 'round' : 'square'}
           strokeOpacity={(someHighlight && !highlight) ? 0.5 : 1}
           {...hoverProps}
           {...rest}
@@ -60,7 +61,7 @@ export default class Bar extends Component {
           fill='none'
           stroke={colorForName(background, theme)}
           strokeWidth={height}
-          strokeLinecap={cap}
+          strokeLinecap={round ? 'round' : 'square'}
         />
         {paths}
       </svg>
