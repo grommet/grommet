@@ -32,7 +32,7 @@ export const backgroundStyle = (background, theme) => {
   const colorSet = theme.global.colors[kind];
   let color;
   if (Array.isArray(colorSet)) {
-    color = theme.global.colors[kind][index];
+    color = theme.global.colors[kind][index - 1];
   } else if (typeof colorSet === 'string') {
     color = colorSet;
   } else {

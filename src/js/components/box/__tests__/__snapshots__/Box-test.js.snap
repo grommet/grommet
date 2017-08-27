@@ -391,7 +391,7 @@ exports[`Box background renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background-color: #FF7D28;
+  background-color: #00CCEB;
   color: #333333;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -403,7 +403,7 @@ exports[`Box background renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background-color: #DC2878;
+  background-color: #0A64A0;
   color: rgba(255,255,255,0.85);
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -415,7 +415,7 @@ exports[`Box background renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background-color: #EEEEEE;
+  background-color: #F6F6F6;
   color: #333333;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -427,7 +427,7 @@ exports[`Box background renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background-color: #444444;
+  background-color: #333333;
   color: rgba(255,255,255,0.85);
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
