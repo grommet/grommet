@@ -1,5 +1,6 @@
 export * from './box';
 export * from './button';
+export * from './chart';
 export * from './grid';
 export * from './grommet';
 export * from './heading';

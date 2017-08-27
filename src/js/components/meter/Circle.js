@@ -5,13 +5,8 @@ import { colorForName } from '../utils/colors';
 import { translateEndAngle, arcCommands } from '../utils/graphics';
 
 export default class Circle extends Component {
-  static defaultProps = {
-    background: 'light-1',
-    cap: 'square',
-  };
-
   render() {
-    const { background, cap, size, theme, thickness, values } = this.props;
+    const { background, round, size, theme, thickness, values } = this.props;
     const width = (size === 'full' ? 288 : parseMetricToInt(theme.global.size[size]));
     const height = parseMetricToInt(theme.global.edgeSize[thickness]);
     const mid = width / 2;
@@ -25,7 +20,8 @@ export default class Circle extends Component {
     const paths = (values || []).map((valueArg, index) => {
       const { color, highlight, label, onHover, value, ...rest } = valueArg;
       const key = `p-${index}`;
-      const colorName = color || `neutral-${index + 1}`;
+      const colorName = color ||
+        ((index === values.length - 1) ? 'accent-1' : `neutral-${index + 1}`);
 
       let endAngle;
       if (startValue + value >= max) {
@@ -52,7 +48,7 @@ export default class Circle extends Component {
           fill='none'
           stroke={colorForName(colorName, theme)}
           strokeWidth={height}
-          strokeLinecap={cap}
+          strokeLinecap={round ? 'round' : 'square'}
           strokeOpacity={(someHighlight && !highlight) ? 0.5 : 1}
           {...hoverProps}
           {...rest}
@@ -72,7 +68,7 @@ export default class Circle extends Component {
           r={radius}
           stroke={colorForName(background, theme)}
           strokeWidth={height}
-          strokeLinecap={cap}
+          strokeLinecap={round ? 'round' : 'square'}
           fill='none'
         />
         {paths}

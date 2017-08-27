@@ -4,6 +4,7 @@ exports[`Components loads 1`] = `
 Object {
   "Box": [Function],
   "Button": [Function],
+  "Chart": [Function],
   "Grid": [Function],
   "Grommet": [Function],
   "Heading": [Function],
