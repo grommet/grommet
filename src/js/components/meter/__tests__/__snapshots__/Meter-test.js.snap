@@ -49,6 +49,8 @@ exports[`Meter background renders 1`] = `
     <path
       d="M 0,12 L 76.8,12"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -71,6 +73,8 @@ exports[`Meter background renders 1`] = `
     <path
       d="M 0,12 L 76.8,12"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -94,6 +98,8 @@ exports[`Meter background renders 1`] = `
     <path
       d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -117,6 +123,8 @@ exports[`Meter background renders 1`] = `
     <path
       d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -189,6 +197,8 @@ exports[`Meter renders 1`] = `
     <path
       d="M 0,12 L 76.8,12"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -247,6 +257,8 @@ exports[`Meter round renders 1`] = `
     <path
       d="M 0,12 L 76.8,12"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="round"
       strokeOpacity={1}
@@ -270,6 +282,8 @@ exports[`Meter round renders 1`] = `
     <path
       d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="round"
       strokeOpacity={1}
@@ -328,6 +342,8 @@ exports[`Meter size renders 1`] = `
     <path
       d="M 0,12 L 19.2,12"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -350,6 +366,8 @@ exports[`Meter size renders 1`] = `
     <path
       d="M 0,12 L 38.4,12"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -372,6 +390,8 @@ exports[`Meter size renders 1`] = `
     <path
       d="M 0,12 L 76.8,12"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -394,6 +414,8 @@ exports[`Meter size renders 1`] = `
     <path
       d="M 0,12 L 115.2,12"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -416,6 +438,8 @@ exports[`Meter size renders 1`] = `
     <path
       d="M 0,12 L 144,12"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -439,6 +463,8 @@ exports[`Meter size renders 1`] = `
     <path
       d="M 82.2380345866 36.8753882025 A 36.0000000000 36.0000000000 0 0 0 48.0000000000 12.0000000000"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -462,6 +488,8 @@ exports[`Meter size renders 1`] = `
     <path
       d="M 175.8887473688 70.0425724725 A 84.0000000000 84.0000000000 0 0 0 96.0000000000 12.0000000000"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -485,6 +513,8 @@ exports[`Meter size renders 1`] = `
     <path
       d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -508,6 +538,8 @@ exports[`Meter size renders 1`] = `
     <path
       d="M 550.4915984975 202.7113095525 A 276.0000000000 276.0000000000 0 0 0 288.0000000000 12.0000000000"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -531,6 +563,8 @@ exports[`Meter size renders 1`] = `
     <path
       d="M 690.9676676707 252.4620859575 A 348.0000000000 348.0000000000 0 0 0 360.0000000000 12.0000000000"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -589,6 +623,8 @@ exports[`Meter thickness renders 1`] = `
     <path
       d="M 0,3 L 76.8,3"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -611,6 +647,8 @@ exports[`Meter thickness renders 1`] = `
     <path
       d="M 0,6 L 76.8,6"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -633,6 +671,8 @@ exports[`Meter thickness renders 1`] = `
     <path
       d="M 0,12 L 76.8,12"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -655,6 +695,8 @@ exports[`Meter thickness renders 1`] = `
     <path
       d="M 0,24 L 76.8,24"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -677,6 +719,8 @@ exports[`Meter thickness renders 1`] = `
     <path
       d="M 0,48 L 76.8,48"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -700,6 +744,8 @@ exports[`Meter thickness renders 1`] = `
     <path
       d="M 371.7496815798 133.5957880631 A 189.0000000000 189.0000000000 0 0 0 192.0000000000 3.0000000000"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -723,6 +769,8 @@ exports[`Meter thickness renders 1`] = `
     <path
       d="M 368.8965120309 134.5228390463 A 186.0000000000 186.0000000000 0 0 0 192.0000000000 6.0000000000"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -746,6 +794,8 @@ exports[`Meter thickness renders 1`] = `
     <path
       d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -769,6 +819,8 @@ exports[`Meter thickness renders 1`] = `
     <path
       d="M 351.7774947376 140.0851449450 A 168.0000000000 168.0000000000 0 0 0 192.0000000000 24.0000000000"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -792,6 +844,8 @@ exports[`Meter thickness renders 1`] = `
     <path
       d="M 328.9521383465 147.5015528100 A 144.0000000000 144.0000000000 0 0 0 192.0000000000 48.0000000000"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -850,6 +904,8 @@ exports[`Meter type renders 1`] = `
     <path
       d="M 0,12 L 76.8,12"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
@@ -873,6 +929,8 @@ exports[`Meter type renders 1`] = `
     <path
       d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
       fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
       stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}

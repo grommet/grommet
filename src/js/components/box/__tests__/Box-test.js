@@ -282,6 +282,23 @@ test('Box round renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Box border renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Box border='all' />
+      <Box border='horizontal' />
+      <Box border='vertical' />
+      <Box border='top' />
+      <Box border='left' />
+      <Box border='bottom' />
+      <Box border='right' />
+      <Box border={{ color: 'accent-1', side: 'all', size: 'medium' }} />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Box tag renders', () => {
   const component = renderer.create(
     <Grommet>
