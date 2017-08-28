@@ -39,8 +39,16 @@ export default Box => schema(Box, {
       'A fixed or relative size along its container\'s main axis.',
     ],
     border: [
-      PropTypes.oneOf(['top', 'left', 'bottom', 'right',
-        'horizontal', 'vertical', 'all']),
+      PropTypes.oneOfType([
+        PropTypes.oneOf(['top', 'left', 'bottom', 'right',
+          'horizontal', 'vertical', 'all']),
+        PropTypes.shape({
+          color: PropTypes.string,
+          side: PropTypes.oneOf(['top', 'left', 'bottom', 'right',
+            'horizontal', 'vertical', 'all']),
+          size: PropTypes.oneOf(['small', 'medium', 'large']),
+        }),
+      ]),
       'Include a border.',
     ],
     // colorIndex - moved to background

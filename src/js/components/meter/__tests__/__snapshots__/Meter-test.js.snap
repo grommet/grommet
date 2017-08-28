@@ -42,140 +42,16 @@ exports[`Meter background renders 1`] = `
     <path
       d="M 0,12 L 384,12"
       fill="none"
-      stroke="#CCCCCC"
-      strokeLinecap={undefined}
-      strokeWidth={24}
-    />
-    <path
-      d="M 0,12 L 76.8,12"
-      fill="none"
-      stroke="#DC2878"
-      strokeLinecap={undefined}
-      strokeOpacity={1}
-      strokeWidth={24}
-    />
-  </svg>
-  <svg
-    height={24}
-    preserveAspectRatio="none"
-    viewBox="0 0 384 24"
-    width={384}
-  >
-    <path
-      d="M 0,12 L 384,12"
-      fill="none"
-      stroke="#CCCCCC"
-      strokeLinecap={undefined}
-      strokeWidth={24}
-    />
-    <path
-      d="M 0,12 L 76.8,12"
-      fill="none"
-      stroke="#DC2878"
-      strokeLinecap={undefined}
-      strokeOpacity={1}
-      strokeWidth={24}
-    />
-  </svg>
-  <svg
-    height={384}
-    viewBox="0 0 384 384"
-    width={384}
-  >
-    <circle
-      cx={192}
-      cy={192}
-      fill="none"
-      r={180}
-      stroke="#CCCCCC"
-      strokeLinecap="square"
-      strokeWidth={24}
-    />
-    <path
-      d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
-      fill="none"
-      stroke="#DC2878"
-      strokeLinecap="square"
-      strokeOpacity={1}
-      strokeWidth={24}
-    />
-  </svg>
-  <svg
-    height={384}
-    viewBox="0 0 384 384"
-    width={384}
-  >
-    <circle
-      cx={192}
-      cy={192}
-      fill="none"
-      r={180}
-      stroke="#CCCCCC"
-      strokeLinecap="square"
-      strokeWidth={24}
-    />
-    <path
-      d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
-      fill="none"
-      stroke="#DC2878"
-      strokeLinecap="square"
-      strokeOpacity={1}
-      strokeWidth={24}
-    />
-  </svg>
-</div>
-`;
-
-exports[`Meter cap renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  background-color: #FFFFFF;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-<div
-  className="c0"
->
-  <svg
-    height={24}
-    preserveAspectRatio="none"
-    viewBox="0 0 384 24"
-    width={384}
-  >
-    <path
-      d="M 0,12 L 384,12"
-      fill="none"
-      stroke="#EEEEEE"
+      stroke="#DDDDDD"
       strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 0,12 L 76.8,12"
       fill="none"
-      stroke="#DC2878"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}
@@ -190,37 +66,16 @@ exports[`Meter cap renders 1`] = `
     <path
       d="M 0,12 L 384,12"
       fill="none"
-      stroke="#EEEEEE"
-      strokeLinecap="round"
+      stroke="#DDDDDD"
+      strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 0,12 L 76.8,12"
       fill="none"
-      stroke="#DC2878"
-      strokeLinecap="round"
-      strokeOpacity={1}
-      strokeWidth={24}
-    />
-  </svg>
-  <svg
-    height={384}
-    viewBox="0 0 384 384"
-    width={384}
-  >
-    <circle
-      cx={192}
-      cy={192}
-      fill="none"
-      r={180}
-      stroke="#EEEEEE"
-      strokeLinecap="square"
-      strokeWidth={24}
-    />
-    <path
-      d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
-      fill="none"
-      stroke="#DC2878"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}
@@ -236,15 +91,42 @@ exports[`Meter cap renders 1`] = `
       cy={192}
       fill="none"
       r={180}
-      stroke="#EEEEEE"
-      strokeLinecap="round"
+      stroke="#DDDDDD"
+      strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
       fill="none"
-      stroke="#DC2878"
-      strokeLinecap="round"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="square"
+      strokeOpacity={1}
+      strokeWidth={24}
+    />
+  </svg>
+  <svg
+    height={384}
+    viewBox="0 0 384 384"
+    width={384}
+  >
+    <circle
+      cx={192}
+      cy={192}
+      fill="none"
+      r={180}
+      stroke="#DDDDDD"
+      strokeLinecap="square"
+      strokeWidth={24}
+    />
+    <path
+      d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
+      fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}
     />
@@ -294,8 +176,8 @@ exports[`Meter renders 1`] = `
     <path
       d="M 0,12 L 384,12"
       fill="none"
-      stroke="#EEEEEE"
-      strokeLinecap={undefined}
+      stroke="#F6F6F6"
+      strokeLinecap="square"
       strokeWidth={24}
     />
   </svg>
@@ -308,15 +190,102 @@ exports[`Meter renders 1`] = `
     <path
       d="M 0,12 L 384,12"
       fill="none"
-      stroke="#EEEEEE"
-      strokeLinecap={undefined}
+      stroke="#F6F6F6"
+      strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 0,12 L 76.8,12"
       fill="none"
-      stroke="#DC2878"
-      strokeLinecap={undefined}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="square"
+      strokeOpacity={1}
+      strokeWidth={24}
+    />
+  </svg>
+</div>
+`;
+
+exports[`Meter round renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <svg
+    height={24}
+    preserveAspectRatio="none"
+    viewBox="0 0 384 24"
+    width={384}
+  >
+    <path
+      d="M 0,12 L 384,12"
+      fill="none"
+      stroke="#F6F6F6"
+      strokeLinecap="round"
+      strokeWidth={24}
+    />
+    <path
+      d="M 0,12 L 76.8,12"
+      fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="round"
+      strokeOpacity={1}
+      strokeWidth={24}
+    />
+  </svg>
+  <svg
+    height={384}
+    viewBox="0 0 384 384"
+    width={384}
+  >
+    <circle
+      cx={192}
+      cy={192}
+      fill="none"
+      r={180}
+      stroke="#F6F6F6"
+      strokeLinecap="round"
+      strokeWidth={24}
+    />
+    <path
+      d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
+      fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="round"
       strokeOpacity={1}
       strokeWidth={24}
     />
@@ -366,15 +335,17 @@ exports[`Meter size renders 1`] = `
     <path
       d="M 0,12 L 96,12"
       fill="none"
-      stroke="#EEEEEE"
-      strokeLinecap={undefined}
+      stroke="#F6F6F6"
+      strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 0,12 L 19.2,12"
       fill="none"
-      stroke="#DC2878"
-      strokeLinecap={undefined}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}
     />
@@ -388,15 +359,17 @@ exports[`Meter size renders 1`] = `
     <path
       d="M 0,12 L 192,12"
       fill="none"
-      stroke="#EEEEEE"
-      strokeLinecap={undefined}
+      stroke="#F6F6F6"
+      strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 0,12 L 38.4,12"
       fill="none"
-      stroke="#DC2878"
-      strokeLinecap={undefined}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}
     />
@@ -410,15 +383,17 @@ exports[`Meter size renders 1`] = `
     <path
       d="M 0,12 L 384,12"
       fill="none"
-      stroke="#EEEEEE"
-      strokeLinecap={undefined}
+      stroke="#F6F6F6"
+      strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 0,12 L 76.8,12"
       fill="none"
-      stroke="#DC2878"
-      strokeLinecap={undefined}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}
     />
@@ -432,15 +407,17 @@ exports[`Meter size renders 1`] = `
     <path
       d="M 0,12 L 576,12"
       fill="none"
-      stroke="#EEEEEE"
-      strokeLinecap={undefined}
+      stroke="#F6F6F6"
+      strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 0,12 L 115.2,12"
       fill="none"
-      stroke="#DC2878"
-      strokeLinecap={undefined}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}
     />
@@ -454,15 +431,17 @@ exports[`Meter size renders 1`] = `
     <path
       d="M 0,12 L 720,12"
       fill="none"
-      stroke="#EEEEEE"
-      strokeLinecap={undefined}
+      stroke="#F6F6F6"
+      strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 0,12 L 144,12"
       fill="none"
-      stroke="#DC2878"
-      strokeLinecap={undefined}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}
     />
@@ -477,14 +456,16 @@ exports[`Meter size renders 1`] = `
       cy={48}
       fill="none"
       r={36}
-      stroke="#EEEEEE"
+      stroke="#F6F6F6"
       strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 82.2380345866 36.8753882025 A 36.0000000000 36.0000000000 0 0 0 48.0000000000 12.0000000000"
       fill="none"
-      stroke="#DC2878"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}
@@ -500,14 +481,16 @@ exports[`Meter size renders 1`] = `
       cy={96}
       fill="none"
       r={84}
-      stroke="#EEEEEE"
+      stroke="#F6F6F6"
       strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 175.8887473688 70.0425724725 A 84.0000000000 84.0000000000 0 0 0 96.0000000000 12.0000000000"
       fill="none"
-      stroke="#DC2878"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}
@@ -523,14 +506,16 @@ exports[`Meter size renders 1`] = `
       cy={192}
       fill="none"
       r={180}
-      stroke="#EEEEEE"
+      stroke="#F6F6F6"
       strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
       fill="none"
-      stroke="#DC2878"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}
@@ -546,14 +531,16 @@ exports[`Meter size renders 1`] = `
       cy={288}
       fill="none"
       r={276}
-      stroke="#EEEEEE"
+      stroke="#F6F6F6"
       strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 550.4915984975 202.7113095525 A 276.0000000000 276.0000000000 0 0 0 288.0000000000 12.0000000000"
       fill="none"
-      stroke="#DC2878"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}
@@ -569,14 +556,16 @@ exports[`Meter size renders 1`] = `
       cy={360}
       fill="none"
       r={348}
-      stroke="#EEEEEE"
+      stroke="#F6F6F6"
       strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 690.9676676707 252.4620859575 A 348.0000000000 348.0000000000 0 0 0 360.0000000000 12.0000000000"
       fill="none"
-      stroke="#DC2878"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}
@@ -627,15 +616,17 @@ exports[`Meter thickness renders 1`] = `
     <path
       d="M 0,3 L 384,3"
       fill="none"
-      stroke="#EEEEEE"
-      strokeLinecap={undefined}
+      stroke="#F6F6F6"
+      strokeLinecap="square"
       strokeWidth={6}
     />
     <path
       d="M 0,3 L 76.8,3"
       fill="none"
-      stroke="#DC2878"
-      strokeLinecap={undefined}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={6}
     />
@@ -649,15 +640,17 @@ exports[`Meter thickness renders 1`] = `
     <path
       d="M 0,6 L 384,6"
       fill="none"
-      stroke="#EEEEEE"
-      strokeLinecap={undefined}
+      stroke="#F6F6F6"
+      strokeLinecap="square"
       strokeWidth={12}
     />
     <path
       d="M 0,6 L 76.8,6"
       fill="none"
-      stroke="#DC2878"
-      strokeLinecap={undefined}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={12}
     />
@@ -671,15 +664,17 @@ exports[`Meter thickness renders 1`] = `
     <path
       d="M 0,12 L 384,12"
       fill="none"
-      stroke="#EEEEEE"
-      strokeLinecap={undefined}
+      stroke="#F6F6F6"
+      strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 0,12 L 76.8,12"
       fill="none"
-      stroke="#DC2878"
-      strokeLinecap={undefined}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}
     />
@@ -693,15 +688,17 @@ exports[`Meter thickness renders 1`] = `
     <path
       d="M 0,24 L 384,24"
       fill="none"
-      stroke="#EEEEEE"
-      strokeLinecap={undefined}
+      stroke="#F6F6F6"
+      strokeLinecap="square"
       strokeWidth={48}
     />
     <path
       d="M 0,24 L 76.8,24"
       fill="none"
-      stroke="#DC2878"
-      strokeLinecap={undefined}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={48}
     />
@@ -715,15 +712,17 @@ exports[`Meter thickness renders 1`] = `
     <path
       d="M 0,48 L 384,48"
       fill="none"
-      stroke="#EEEEEE"
-      strokeLinecap={undefined}
+      stroke="#F6F6F6"
+      strokeLinecap="square"
       strokeWidth={96}
     />
     <path
       d="M 0,48 L 76.8,48"
       fill="none"
-      stroke="#DC2878"
-      strokeLinecap={undefined}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={96}
     />
@@ -738,14 +737,16 @@ exports[`Meter thickness renders 1`] = `
       cy={192}
       fill="none"
       r={189}
-      stroke="#EEEEEE"
+      stroke="#F6F6F6"
       strokeLinecap="square"
       strokeWidth={6}
     />
     <path
       d="M 371.7496815798 133.5957880631 A 189.0000000000 189.0000000000 0 0 0 192.0000000000 3.0000000000"
       fill="none"
-      stroke="#DC2878"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={6}
@@ -761,14 +762,16 @@ exports[`Meter thickness renders 1`] = `
       cy={192}
       fill="none"
       r={186}
-      stroke="#EEEEEE"
+      stroke="#F6F6F6"
       strokeLinecap="square"
       strokeWidth={12}
     />
     <path
       d="M 368.8965120309 134.5228390463 A 186.0000000000 186.0000000000 0 0 0 192.0000000000 6.0000000000"
       fill="none"
-      stroke="#DC2878"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={12}
@@ -784,14 +787,16 @@ exports[`Meter thickness renders 1`] = `
       cy={192}
       fill="none"
       r={180}
-      stroke="#EEEEEE"
+      stroke="#F6F6F6"
       strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
       fill="none"
-      stroke="#DC2878"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}
@@ -807,14 +812,16 @@ exports[`Meter thickness renders 1`] = `
       cy={192}
       fill="none"
       r={168}
-      stroke="#EEEEEE"
+      stroke="#F6F6F6"
       strokeLinecap="square"
       strokeWidth={48}
     />
     <path
       d="M 351.7774947376 140.0851449450 A 168.0000000000 168.0000000000 0 0 0 192.0000000000 24.0000000000"
       fill="none"
-      stroke="#DC2878"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={48}
@@ -830,14 +837,16 @@ exports[`Meter thickness renders 1`] = `
       cy={192}
       fill="none"
       r={144}
-      stroke="#EEEEEE"
+      stroke="#F6F6F6"
       strokeLinecap="square"
       strokeWidth={96}
     />
     <path
       d="M 328.9521383465 147.5015528100 A 144.0000000000 144.0000000000 0 0 0 192.0000000000 48.0000000000"
       fill="none"
-      stroke="#DC2878"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={96}
@@ -888,15 +897,17 @@ exports[`Meter type renders 1`] = `
     <path
       d="M 0,12 L 384,12"
       fill="none"
-      stroke="#EEEEEE"
-      strokeLinecap={undefined}
+      stroke="#F6F6F6"
+      strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 0,12 L 76.8,12"
       fill="none"
-      stroke="#DC2878"
-      strokeLinecap={undefined}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}
     />
@@ -911,14 +922,16 @@ exports[`Meter type renders 1`] = `
       cy={192}
       fill="none"
       r={180}
-      stroke="#EEEEEE"
+      stroke="#F6F6F6"
       strokeLinecap="square"
       strokeWidth={24}
     />
     <path
       d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
       fill="none"
-      stroke="#DC2878"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
       strokeLinecap="square"
       strokeOpacity={1}
       strokeWidth={24}

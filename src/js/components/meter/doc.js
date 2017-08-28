@@ -10,9 +10,9 @@ export default Meter => schema(Meter, {
       `A color identifier to use for the background color. For example:
       'light-1'.`,
     ],
-    cap: [
-      PropTypes.oneOf(['round', 'square']),
-      'The end of line cap. Defaults to square.',
+    round: [
+      PropTypes.bool,
+      'Whether to round the line ends',
     ],
     size: [
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),
@@ -30,7 +30,7 @@ export default Meter => schema(Meter, {
       PropTypes.arrayOf(PropTypes.shape({
         color: PropTypes.string,
         highlight: PropTypes.bool,
-        label: PropTypes.string.isRequired, // for a11y
+        label: PropTypes.string.isRequired, // for accessibility
         onClick: PropTypes.func,
         onHover: PropTypes.func,
         value: PropTypes.number.isRequired,
