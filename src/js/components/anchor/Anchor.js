@@ -14,6 +14,37 @@ const styledComponents = {
   a: StyledAnchor,
 };
 
+// TODO: refactor into module  
+class AnchorUtils {
+  constructor(props) {
+    this.props = props;
+  }
+  
+  iconNodes() {
+    const { primary, icon } = this.props; 
+    if (primary && !icon) {
+      icon = (<LinkNextIcon a11yTitle='link next' />);
+    }
+    return icon || null;
+  }
+  
+  childNodes() {
+    return Children
+      .map(
+        this.props.children,
+        child => child && child.type && child.type.icon && <AnchorIcon>{child}</AnchorIcon>
+      )
+  }
+  
+  getChildNodes() {
+    const nodeVals = [
+      iconNodes(this.props),
+      childNodes(this.props),
+    ];
+    return this.props.reverse ? nodeVals.reverse() : nodeVals;
+  }
+}
+
 class Anchor extends Component {
   static defaultProps = {
     tag: 'a',
@@ -149,8 +180,6 @@ class Anchor extends Component {
   render() {
     const {
       tag,
-      reverse,
-      icon,
       ...rest
     } = this.props;
     const { active } = this.state;
@@ -158,36 +187,12 @@ class Anchor extends Component {
     const StyledComponent = styledComponents[tag]
       ? styledComponents[tag]
       : StyledAnchor.withComponent(tag);
-
-    let anchorIcon;
-    if (icon) {
-      anchorIcon = icon;
-    } else if (primary) {
-      anchorIcon = (
-        <LinkNextIcon a11yTitle='link next' />
-      );
-    }
-
-    if (anchorIcon && !primary && !label) {
-      anchorIcon = <span className={`${CLASS_ROOT}__icon`}>{anchorIcon}</span>;
-    }
-
-    let hasIcon = anchorIcon !== undefined;
-    let anchorChildren = Children.map(children, child => {
-      if (child && child.type && child.type.icon) {
-        hasIcon = true;
-        child = <span className={`${CLASS_ROOT}__icon`}>{child}</span>;
-      }
-      return child;
-    });
-
-    const first = reverse ? anchorChildren : anchorIcon;
-    const second = reverse ? anchorIcon : anchorChildren;
+    
+    const childNodes = new AnchorUtils(rest).getChildNodes();
     
     return (
       <StyledComponent href={this.adjustedHref} {...rest}>
-        {first}
-        {second}
+        {...childNodes}
       </StyledComponent>
     );
   }
