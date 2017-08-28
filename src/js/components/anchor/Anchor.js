@@ -152,7 +152,6 @@ class Anchor extends Component {
       ...rest
     } = this.props;
     const { active } = this.state;
-    const href = adjustedHref();
 
     const StyledComponent = styledComponents[tag]
       ? styledComponents[tag]
