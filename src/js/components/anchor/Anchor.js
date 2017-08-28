@@ -149,6 +149,8 @@ class Anchor extends Component {
   render() {
     const {
       tag,
+      reverse,
+      icon,
       ...rest
     } = this.props;
     const { active } = this.state;
@@ -157,8 +159,36 @@ class Anchor extends Component {
       ? styledComponents[tag]
       : StyledAnchor.withComponent(tag);
 
+    let anchorIcon;
+    if (icon) {
+      anchorIcon = icon;
+    } else if (primary) {
+      anchorIcon = (
+        <LinkNextIcon a11yTitle='link next' />
+      );
+    }
+
+    if (anchorIcon && !primary && !label) {
+      anchorIcon = <span className={`${CLASS_ROOT}__icon`}>{anchorIcon}</span>;
+    }
+
+    let hasIcon = anchorIcon !== undefined;
+    let anchorChildren = Children.map(children, child => {
+      if (child && child.type && child.type.icon) {
+        hasIcon = true;
+        child = <span className={`${CLASS_ROOT}__icon`}>{child}</span>;
+      }
+      return child;
+    });
+
+    const first = reverse ? anchorChildren : anchorIcon;
+    const second = reverse ? anchorIcon : anchorChildren;
+    
     return (
-      <StyledComponent href={this.adjustedHref} {...rest} />
+      <StyledComponent href={this.adjustedHref} {...rest}>
+        {first}
+        {second}
+      </StyledComponent>
     );
   }
 }
