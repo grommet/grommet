@@ -5,7 +5,7 @@ import 'jest-styled-components';
 import { Grommet } from '../../grommet';
 import { Meter } from '../';
 
-const VALUES = [{ value: 20, label: 'twenty' }];
+const VALUES = [{ value: 20, label: 'twenty', onHover: () => {} }];
 
 test('Meter renders', () => {
   const component = renderer.create(
