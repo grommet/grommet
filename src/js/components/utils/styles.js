@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 
 import { parseMetricToInt } from './mixins';
-import { colorIsDark } from './colors';
+import { colorForName, colorIsDark } from './colors';
 
 export const backgroundStyle = (background, theme) => {
   if (typeof background === 'object') {
@@ -28,16 +28,7 @@ export const backgroundStyle = (background, theme) => {
       background-size: cover;
     `;
   }
-  const [kind, index] = background.split('-');
-  const colorSet = theme.global.colors[kind];
-  let color;
-  if (Array.isArray(colorSet)) {
-    color = theme.global.colors[kind][index - 1];
-  } else if (typeof colorSet === 'string') {
-    color = colorSet;
-  } else {
-    color = background;
-  }
+  const color = colorForName(background, theme);
   if (color) {
     return css`
       background-color: ${color};

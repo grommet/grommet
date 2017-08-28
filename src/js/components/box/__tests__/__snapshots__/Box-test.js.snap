@@ -391,6 +391,18 @@ exports[`Box background renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  background-color: #865CD6;
+  color: rgba(255,255,255,0.85);
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   background-color: #00CCEB;
   color: #333333;
   -webkit-flex-direction: column;
@@ -398,7 +410,7 @@ exports[`Box background renders 1`] = `
   flex-direction: column;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -410,7 +422,7 @@ exports[`Box background renders 1`] = `
   flex-direction: column;
 }
 
-.c3 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -422,7 +434,7 @@ exports[`Box background renders 1`] = `
   flex-direction: column;
 }
 
-.c4 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -434,7 +446,19 @@ exports[`Box background renders 1`] = `
   flex-direction: column;
 }
 
-.c5 {
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #FF324D;
+  color: rgba(255,255,255,0.85);
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -446,7 +470,7 @@ exports[`Box background renders 1`] = `
   flex-direction: column;
 }
 
-.c6 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -454,6 +478,19 @@ exports[`Box background renders 1`] = `
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==) no-repeat center center;
   background-size: cover;
   color: #333333;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==) no-repeat center center;
+  background-size: cover;
+  color: rgba(255,255,255,0.85);
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -496,6 +533,18 @@ exports[`Box background renders 1`] = `
   />
   <div
     className="c6"
+    direction="column"
+  />
+  <div
+    className="c7"
+    direction="column"
+  />
+  <div
+    className="c8"
+    direction="column"
+  />
+  <div
+    className="c9"
     direction="column"
   />
 </div>
