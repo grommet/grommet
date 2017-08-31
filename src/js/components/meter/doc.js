@@ -10,9 +10,9 @@ export default Meter => schema(Meter, {
       `A color identifier to use for the background color. For example:
       'light-1'.`,
     ],
-    cap: [
-      PropTypes.oneOf(['round', 'square']),
-      'The end of line cap. Defaults to square.',
+    round: [
+      PropTypes.bool,
+      'Whether to round the line ends',
     ],
     size: [
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),
@@ -29,11 +29,21 @@ export default Meter => schema(Meter, {
     values: [
       PropTypes.arrayOf(PropTypes.shape({
         color: PropTypes.string,
-        label: PropTypes.string.isRequired, // for a11y
+        highlight: PropTypes.bool,
+        label: PropTypes.string.isRequired, // for accessibility
         onClick: PropTypes.func,
+        onHover: PropTypes.func,
         value: PropTypes.number.isRequired,
       })),
-      'Values to visualize',
+      `Array of value objects describing the data.
+      'value' is the actual numeric value.
+      'label' is a text string describing it.
+      'color' indicates the color name to use. If not specified a default one
+      will be chosen.
+      'onClick' will be called when the user clicks on it.
+      Set 'highlight' to call attention to it.
+      'onHover' will be called with a boolean argument indicating when the
+      user hovers onto or away from it.`,
     ],
   },
 });

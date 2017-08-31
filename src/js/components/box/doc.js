@@ -39,8 +39,16 @@ export default Box => schema(Box, {
       'A fixed or relative size along its container\'s main axis.',
     ],
     border: [
-      PropTypes.oneOf(['top', 'left', 'bottom', 'right',
-        'horizontal', 'vertical', 'all']),
+      PropTypes.oneOfType([
+        PropTypes.oneOf(['top', 'left', 'bottom', 'right',
+          'horizontal', 'vertical', 'all']),
+        PropTypes.shape({
+          color: PropTypes.string,
+          side: PropTypes.oneOf(['top', 'left', 'bottom', 'right',
+            'horizontal', 'vertical', 'all']),
+          size: PropTypes.oneOf(['small', 'medium', 'large']),
+        }),
+      ]),
       'Include a border.',
     ],
     // colorIndex - moved to background
@@ -111,6 +119,10 @@ export default Box => schema(Box, {
     reverse: [
       PropTypes.bool,
       'Whether to reverse the order of the child components.',
+    ],
+    round: [
+      PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full']),
+      'How much to round the corners.',
     ],
     // separator - moved to border
     // size - removed, use basis

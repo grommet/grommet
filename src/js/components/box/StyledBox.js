@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { backgroundStyle } from '../utils';
+import { backgroundStyle, colorForName } from '../utils';
 
 const ALIGN_MAP = {
   baseline: 'baseline',
@@ -129,7 +129,28 @@ const textAlignStyle = css`
   text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
 `;
 
-const wrapStyle = 'flex-wrap: true;';
+const wrapStyle = 'flex-wrap: wrap;';
+
+const borderStyle = (data, theme) => {
+  const color = colorForName(data.color || 'light-2', theme);
+  const size = data.size || 'small';
+  const side = (typeof data === 'string') ? data : data.side || 'all';
+  const value = `solid ${theme.global.borderSize[size]} ${color}`;
+  if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
+    return `border-${data}: ${value};`;
+  } else if (side === 'horizontal') {
+    return `
+      border-left: ${value};
+      border-right: ${value};
+    `;
+  } else if (side === 'vertical') {
+    return `
+      border-top: ${value};
+      border-bottom: ${value};
+    `;
+  }
+  return `border: ${value};`;
+};
 
 const edgeStyle = (kind, data, theme) => {
   if (typeof data === 'string') {
@@ -147,20 +168,29 @@ const edgeStyle = (kind, data, theme) => {
       ${kind}-bottom: ${theme.global.edgeSize[data.vertical]};
     `;
   }
+  let result = '';
   if (data.top) {
-    return `${kind}-top: ${theme.global.edgeSize[data.top]};`;
+    result += `${kind}-top: ${theme.global.edgeSize[data.top]};`;
   }
   if (data.bottom) {
-    return `${kind}-bottom: ${theme.global.edgeSize[data.bottom]};`;
+    result += `${kind}-bottom: ${theme.global.edgeSize[data.bottom]};`;
   }
   if (data.left) {
-    return `${kind}-left: ${theme.global.edgeSize[data.left]};`;
+    result += `${kind}-left: ${theme.global.edgeSize[data.left]};`;
   }
   if (data.right) {
-    return `${kind}-right: ${theme.global.edgeSize[data.right]};`;
+    result += `${kind}-right: ${theme.global.edgeSize[data.right]};`;
   }
-  return '';
+  return result;
 };
+
+const ROUND_MAP = {
+  'full': '100%',
+};
+
+const roundStyle = css`
+  border-radius: ${props => ROUND_MAP[props.round] || props.theme.global.edgeSize[props.round]};
+`;
 
 const StyledBox = styled.div`
   display: flex;
@@ -170,6 +200,7 @@ const StyledBox = styled.div`
   ${props => props.alignSelf && alignSelfStyle}
   ${props => props.basis && basisStyle}
   ${props => props.background && backgroundStyle(props.background, props.theme)}
+  ${props => props.border && borderStyle(props.border, props.theme)}
   ${props => (props.direction || props.reverse) && directionStyle}
   ${props => props.flex !== undefined && flexStyle}
   ${props => props.full && fullStyle(props.full)}
@@ -177,6 +208,7 @@ const StyledBox = styled.div`
   ${props => props.justify && justifyStyle}
   ${props => props.margin && edgeStyle('margin', props.margin, props.theme)}
   ${props => props.pad && edgeStyle('padding', props.pad, props.theme)}
+  ${props => props.round && roundStyle}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.wrap && wrapStyle}
 `;

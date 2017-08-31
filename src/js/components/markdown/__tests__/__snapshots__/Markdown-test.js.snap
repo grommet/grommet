@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Markdown renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c2 {
+  font-size: 16px;
+  line-height: 1.375;
+  max-width: 576px;
+}
+
+.c1 {
+  font-size: 48px;
+  line-height: 1.125;
+  font-weight: 300;
+}
+
+.c3 {
+  font-size: 36px;
+  line-height: 1.23;
+  font-weight: 300;
+}
+
+.c4 {
+  font-size: 24px;
+  line-height: 1.333;
+  font-weight: 300;
+}
+
+.c5 {
+  font-size: 18px;
+  line-height: 1.333;
+  font-weight: 300;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div>
+    <h1
+      className="c1"
+    >
+      H1
+    </h1>
+    <p
+      className="c2"
+    >
+      Paragraph
+    </p>
+    <h2
+      className="c3"
+    >
+      H2
+    </h2>
+    <h3
+      className="c4"
+    >
+      H3
+    </h3>
+    <h4
+      className="c5"
+    >
+      H4
+    </h4>
+  </div>
+</div>
+`;

@@ -1,5 +1,221 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Stack anchor renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  position: relative;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div>
+      first
+    </div>
+    <div
+      style={
+        Object {
+          "left": "50%",
+          "overflow": "hidden",
+          "position": "absolute",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
+        }
+      }
+    >
+      second
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div>
+      first
+    </div>
+    <div
+      style={
+        Object {
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": "50%",
+          "top": "0",
+          "transform": "translateX(-50%)",
+        }
+      }
+    >
+      second
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div>
+      first
+    </div>
+    <div
+      style={
+        Object {
+          "left": "0",
+          "overflow": "hidden",
+          "position": "absolute",
+          "top": "50%",
+          "transform": "translateY(-50%)",
+        }
+      }
+    >
+      second
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div>
+      first
+    </div>
+    <div
+      style={
+        Object {
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": "50%",
+          "top": "0",
+          "transform": "translateX(-50%)",
+        }
+      }
+    >
+      second
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div>
+      first
+    </div>
+    <div
+      style={
+        Object {
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": "0",
+          "top": "50%",
+          "transform": "translateY(-50%)",
+        }
+      }
+    >
+      second
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div>
+      first
+    </div>
+    <div
+      style={
+        Object {
+          "left": "0",
+          "overflow": "hidden",
+          "position": "absolute",
+          "top": "0",
+        }
+      }
+    >
+      second
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div>
+      first
+    </div>
+    <div
+      style={
+        Object {
+          "bottom": "0",
+          "left": "0",
+          "overflow": "hidden",
+          "position": "absolute",
+        }
+      }
+    >
+      second
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div>
+      first
+    </div>
+    <div
+      style={
+        Object {
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": "0",
+          "top": "0",
+        }
+      }
+    >
+      second
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div>
+      first
+    </div>
+    <div
+      style={
+        Object {
+          "bottom": "0",
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": "0",
+        }
+      }
+    >
+      second
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Stack renders 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
@@ -46,12 +262,11 @@ exports[`Stack renders 1`] = `
     <div
       style={
         Object {
-          "bottom": "0px",
-          "left": "0px",
+          "left": "50%",
           "overflow": "hidden",
           "position": "absolute",
-          "right": "0px",
-          "top": "0px",
+          "top": "50%",
+          "transform": "translate(-50%, -50%)",
         }
       }
     >

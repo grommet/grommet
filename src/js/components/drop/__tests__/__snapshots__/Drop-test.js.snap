@@ -63,6 +63,12 @@ exports[`Drop aligns left right top bottom 1`] = `
             },
           },
           "global": Object {
+            "borderSize": Object {
+              "large": "6px",
+              "medium": "3px",
+              "small": "1px",
+              "xlarge": "24px",
+            },
             "centerColumnWidth": "1152px",
             "colors": Object {
               "accent": Array [
@@ -305,6 +311,32 @@ exports[`Drop aligns left right top bottom 1`] = `
               "height": 1.1875,
               "maxWidth": "1152px",
               "size": "32px",
+            },
+          },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
+            },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
             },
           },
         }
@@ -400,6 +432,12 @@ exports[`Drop aligns right left top top 1`] = `
             },
           },
           "global": Object {
+            "borderSize": Object {
+              "large": "6px",
+              "medium": "3px",
+              "small": "1px",
+              "xlarge": "24px",
+            },
             "centerColumnWidth": "1152px",
             "colors": Object {
               "accent": Array [
@@ -642,6 +680,32 @@ exports[`Drop aligns right left top top 1`] = `
               "height": 1.1875,
               "maxWidth": "1152px",
               "size": "32px",
+            },
+          },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
+            },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
             },
           },
         }
@@ -737,6 +801,12 @@ exports[`Drop aligns right right bottom top 1`] = `
             },
           },
           "global": Object {
+            "borderSize": Object {
+              "large": "6px",
+              "medium": "3px",
+              "small": "1px",
+              "xlarge": "24px",
+            },
             "centerColumnWidth": "1152px",
             "colors": Object {
               "accent": Array [
@@ -979,6 +1049,32 @@ exports[`Drop aligns right right bottom top 1`] = `
               "height": 1.1875,
               "maxWidth": "1152px",
               "size": "32px",
+            },
+          },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
+            },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
             },
           },
         }
@@ -1074,6 +1170,12 @@ exports[`Drop aligns skips left random 1`] = `
             },
           },
           "global": Object {
+            "borderSize": Object {
+              "large": "6px",
+              "medium": "3px",
+              "small": "1px",
+              "xlarge": "24px",
+            },
             "centerColumnWidth": "1152px",
             "colors": Object {
               "accent": Array [
@@ -1316,6 +1418,32 @@ exports[`Drop aligns skips left random 1`] = `
               "height": 1.1875,
               "maxWidth": "1152px",
               "size": "32px",
+            },
+          },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
+            },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
             },
           },
         }
@@ -1410,6 +1538,12 @@ exports[`Drop aligns skips right random 1`] = `
             },
           },
           "global": Object {
+            "borderSize": Object {
+              "large": "6px",
+              "medium": "3px",
+              "small": "1px",
+              "xlarge": "24px",
+            },
             "centerColumnWidth": "1152px",
             "colors": Object {
               "accent": Array [
@@ -1652,6 +1786,32 @@ exports[`Drop aligns skips right random 1`] = `
               "height": 1.1875,
               "maxWidth": "1152px",
               "size": "32px",
+            },
+          },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
+            },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
             },
           },
         }
@@ -1741,6 +1901,12 @@ exports[`Drop mounts 1`] = `
             },
           },
           "global": Object {
+            "borderSize": Object {
+              "large": "6px",
+              "medium": "3px",
+              "small": "1px",
+              "xlarge": "24px",
+            },
             "centerColumnWidth": "1152px",
             "colors": Object {
               "accent": Array [
@@ -1983,6 +2149,32 @@ exports[`Drop mounts 1`] = `
               "height": 1.1875,
               "maxWidth": "1152px",
               "size": "32px",
+            },
+          },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
+            },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
             },
           },
         }
@@ -2116,6 +2308,12 @@ exports[`Drop resizes 1`] = `
             },
           },
           "global": Object {
+            "borderSize": Object {
+              "large": "6px",
+              "medium": "3px",
+              "small": "1px",
+              "xlarge": "24px",
+            },
             "centerColumnWidth": "1152px",
             "colors": Object {
               "accent": Array [
@@ -2358,6 +2556,32 @@ exports[`Drop resizes 1`] = `
               "height": 1.1875,
               "maxWidth": "1152px",
               "size": "32px",
+            },
+          },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
+            },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
             },
           },
         }
@@ -2453,6 +2677,12 @@ exports[`Drop skips invalid align 1`] = `
             },
           },
           "global": Object {
+            "borderSize": Object {
+              "large": "6px",
+              "medium": "3px",
+              "small": "1px",
+              "xlarge": "24px",
+            },
             "centerColumnWidth": "1152px",
             "colors": Object {
               "accent": Array [
@@ -2695,6 +2925,32 @@ exports[`Drop skips invalid align 1`] = `
               "height": 1.1875,
               "maxWidth": "1152px",
               "size": "32px",
+            },
+          },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
+            },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
             },
           },
         }
@@ -2782,6 +3038,12 @@ exports[`Drop updates 1`] = `
             },
           },
           "global": Object {
+            "borderSize": Object {
+              "large": "6px",
+              "medium": "3px",
+              "small": "1px",
+              "xlarge": "24px",
+            },
             "centerColumnWidth": "1152px",
             "colors": Object {
               "accent": Array [
@@ -3024,6 +3286,32 @@ exports[`Drop updates 1`] = `
               "height": 1.1875,
               "maxWidth": "1152px",
               "size": "32px",
+            },
+          },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
+            },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
             },
           },
         }

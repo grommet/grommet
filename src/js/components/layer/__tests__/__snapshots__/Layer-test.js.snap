@@ -115,6 +115,12 @@ exports[`Layer adds custom close node 1`] = `
           },
         },
         "global": Object {
+          "borderSize": Object {
+            "large": "6px",
+            "medium": "3px",
+            "small": "1px",
+            "xlarge": "24px",
+          },
           "centerColumnWidth": "1152px",
           "colors": Object {
             "accent": Array [
@@ -359,6 +365,32 @@ exports[`Layer adds custom close node 1`] = `
             "size": "32px",
           },
         },
+        "text": Object {
+          "large": Object {
+            "height": 1.167,
+            "size": "24px",
+          },
+          "medium": Object {
+            "height": 1.375,
+            "size": "16px",
+          },
+          "small": Object {
+            "height": 1.43,
+            "size": "14px",
+          },
+          "xlarge": Object {
+            "height": 1.1875,
+            "size": "32px",
+          },
+          "xsmall": Object {
+            "height": 1.5,
+            "size": "12px",
+          },
+          "xxlarge": Object {
+            "height": 1.125,
+            "size": "48px",
+          },
+        },
       }
     }
   >
@@ -398,6 +430,12 @@ exports[`Layer adds custom close node 1`] = `
                   },
                 },
                 "global": Object {
+                  "borderSize": Object {
+                    "large": "6px",
+                    "medium": "3px",
+                    "small": "1px",
+                    "xlarge": "24px",
+                  },
                   "centerColumnWidth": "1152px",
                   "colors": Object {
                     "accent": Array [
@@ -642,6 +680,32 @@ exports[`Layer adds custom close node 1`] = `
                     "size": "32px",
                   },
                 },
+                "text": Object {
+                  "large": Object {
+                    "height": 1.167,
+                    "size": "24px",
+                  },
+                  "medium": Object {
+                    "height": 1.375,
+                    "size": "16px",
+                  },
+                  "small": Object {
+                    "height": 1.43,
+                    "size": "14px",
+                  },
+                  "xlarge": Object {
+                    "height": 1.1875,
+                    "size": "32px",
+                  },
+                  "xsmall": Object {
+                    "height": 1.5,
+                    "size": "12px",
+                  },
+                  "xxlarge": Object {
+                    "height": 1.125,
+                    "size": "48px",
+                  },
+                },
               }
             }
           >
@@ -670,6 +734,12 @@ exports[`Layer adds custom close node 1`] = `
                       },
                     },
                     "global": Object {
+                      "borderSize": Object {
+                        "large": "6px",
+                        "medium": "3px",
+                        "small": "1px",
+                        "xlarge": "24px",
+                      },
                       "centerColumnWidth": "1152px",
                       "colors": Object {
                         "accent": Array [
@@ -914,6 +984,32 @@ exports[`Layer adds custom close node 1`] = `
                         "size": "32px",
                       },
                     },
+                    "text": Object {
+                      "large": Object {
+                        "height": 1.167,
+                        "size": "24px",
+                      },
+                      "medium": Object {
+                        "height": 1.375,
+                        "size": "16px",
+                      },
+                      "small": Object {
+                        "height": 1.43,
+                        "size": "14px",
+                      },
+                      "xlarge": Object {
+                        "height": 1.1875,
+                        "size": "32px",
+                      },
+                      "xsmall": Object {
+                        "height": 1.5,
+                        "size": "12px",
+                      },
+                      "xxlarge": Object {
+                        "height": 1.125,
+                        "size": "48px",
+                      },
+                    },
                   }
                 }
               >
@@ -1000,6 +1096,12 @@ exports[`Layer mounts 1`] = `
             },
           },
           "global": Object {
+            "borderSize": Object {
+              "large": "6px",
+              "medium": "3px",
+              "small": "1px",
+              "xlarge": "24px",
+            },
             "centerColumnWidth": "1152px",
             "colors": Object {
               "accent": Array [
@@ -1242,6 +1344,32 @@ exports[`Layer mounts 1`] = `
               "height": 1.1875,
               "maxWidth": "1152px",
               "size": "32px",
+            },
+          },
+          "text": Object {
+            "large": Object {
+              "height": 1.167,
+              "size": "24px",
+            },
+            "medium": Object {
+              "height": 1.375,
+              "size": "16px",
+            },
+            "small": Object {
+              "height": 1.43,
+              "size": "14px",
+            },
+            "xlarge": Object {
+              "height": 1.1875,
+              "size": "32px",
+            },
+            "xsmall": Object {
+              "height": 1.5,
+              "size": "12px",
+            },
+            "xxlarge": Object {
+              "height": 1.125,
+              "size": "48px",
             },
           },
         }
