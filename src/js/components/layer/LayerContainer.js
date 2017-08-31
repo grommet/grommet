@@ -11,7 +11,7 @@ import { Keyboard } from '../keyboard';
 
 import baseTheme from '../../themes/vanilla';
 
-import { filterByFocusable, getBodyNodes } from '../utils/DOM';
+import { filterByFocusable, getBodyChildElements } from '../utils/DOM';
 
 // TODO: replace with grommet-icons
 const CloseIcon = () => (
@@ -51,7 +51,7 @@ class LayerContainer extends Component {
   componentDidMount() {
     const layerNode = findDOMNode(this.layerRef);
     // go over all the body children to remove focus when layer is opened
-    getBodyNodes().forEach((node) => {
+    getBodyChildElements().forEach((node) => {
       if (!node.contains(layerNode)) {
         node.setAttribute('aria-hidden', true);
         // prevent children to receive focus
@@ -75,7 +75,7 @@ class LayerContainer extends Component {
 
   componentWillUnmount() {
     // go over all the body children to reset focus when layer is closed
-    getBodyNodes().forEach((node) => {
+    getBodyChildElements().forEach((node) => {
       if (!node.contains(findDOMNode(this.layerRef))) {
         node.setAttribute('aria-hidden', false);
 
@@ -85,6 +85,7 @@ class LayerContainer extends Component {
             const originalTabIndex = element.getAttribute('data-tabindex');
             if (originalTabIndex) {
               element.setAttribute('tabindex', originalTabIndex);
+              element.removeAttribute('data-tabindex');
             } else {
               element.removeAttribute('tabindex', -1);
             }
@@ -125,9 +126,7 @@ class LayerContainer extends Component {
     }
 
     return (
-      <Keyboard
-        onEsc={onClose}
-      >
+      <Keyboard onEsc={onClose}>
         <StyledLayer
           ref={(ref) => {
             this.layerRef = ref;

@@ -38,7 +38,7 @@ export function findScrollParents(element, horizontal) {
   return result;
 }
 
-export function getBodyNodes() {
+export function getBodyChildElements() {
   const excludeMatch = /^(script|link)$/i;
   const children = [];
   [].forEach.call(document.body.children, (node) => {
@@ -60,6 +60,6 @@ export function getNewContainer() {
 export default {
   filterByFocusable,
   findScrollParents,
-  getBodyNodes,
+  getBodyChildElements,
   getNewContainer,
 };

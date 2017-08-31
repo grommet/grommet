@@ -17,8 +17,12 @@ export default Layer => schema(Layer, {
       If provided, it is the caller's responsibility to listen to events from the node`,
     ],
     messages: [
-      PropTypes.object,
-      'Messages to be replaced for Layer.',
+      PropTypes.shape({
+        closeLayer: PropTypes.string,
+      }),
+      `Optional. Used to replace default messages used inside Layer 
+      (e.g. provide the same message in another language).
+      `,
     ],
     onClose: [
       PropTypes.func,

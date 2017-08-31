@@ -2,15 +2,9 @@ import React, { Component } from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import { mount } from 'enzyme';
-import toJSON from 'enzyme-to-json';
 
 import { Grommet } from '../../grommet';
 import { Drop } from '../';
-
-// TODO: need because of weird bug in jest styled components
-import StyledGrommet from '../../grommet/StyledGrommet';
-
-StyledGrommet.displayName = 'StyledGrommet';
 
 class FakeInput extends Component {
   state = {
@@ -27,7 +21,11 @@ class FakeInput extends Component {
     let drop;
     if (showDrop) {
       drop = (
-        <Drop control={this.componentRef} {...rest} />
+        <Drop control={this.componentRef} {...rest}>
+          <div id='drop-node'>
+            this is a test
+          </div>
+        </Drop>
       );
     }
     return (
@@ -56,43 +54,48 @@ test('Drop renders', () => {
 
 test('Drop mounts', () => {
   const component = mount(<FakeInput />);
-  expect(toJSON(component)).toMatchSnapshot();
+  expect(component.getDOMNode()).toMatchSnapshot();
 });
 
 test('Drop aligns left right top bottom', () => {
   const component = mount(<FakeInput align={{ left: 'right', top: 'bottom' }} />);
-  expect(toJSON(component)).toMatchSnapshot();
+  expect(component.getDOMNode()).toMatchSnapshot();
 });
 
 test('Drop aligns skips left random', () => {
   const component = mount(<FakeInput align={{ left: 'random', bottom: 'bottom' }} />);
-  expect(toJSON(component)).toMatchSnapshot();
+  expect(component.getDOMNode()).toMatchSnapshot();
 });
 
 test('Drop aligns right left top top', () => {
   const component = mount(<FakeInput align={{ right: 'left', top: 'top' }} />);
-  expect(toJSON(component)).toMatchSnapshot();
+  expect(component.getDOMNode()).toMatchSnapshot();
 });
 
 test('Drop aligns right right bottom top', () => {
   const component = mount(<FakeInput align={{ right: 'right', bottom: 'top' }} />);
-  expect(toJSON(component)).toMatchSnapshot();
+  expect(component.getDOMNode()).toMatchSnapshot();
 });
 
 test('Drop aligns skips right random', () => {
   const component = mount(<FakeInput align={{ right: 'random' }} />);
-  expect(toJSON(component)).toMatchSnapshot();
+  expect(component.getDOMNode()).toMatchSnapshot();
 });
 
 test('Drop skips invalid align', () => {
   const component = mount(<FakeInput align={{ whatever: 'right' }} />);
-  expect(toJSON(component)).toMatchSnapshot();
+  expect(component.getDOMNode()).toMatchSnapshot();
 });
 
 test('Drop closes drop', () => {
-  const component = mount(<FakeInput />);
+  // make sure to remove all body children
+  document.body.innerHTML = '';
+  document.body.appendChild(document.createElement('div'));
+  const component = mount(<FakeInput />, {
+    attachTo: document.body.firstChild,
+  });
   component.unmount();
-  expect(toJSON(component)).toMatchSnapshot();
+  expect(document.getElementById('drop-node')).toBeNull();
 });
 
 test('Drop invokes onClose', () => {
@@ -106,7 +109,7 @@ test('Drop updates', () => {
   const onClose = jest.fn();
   const component = mount(<FakeInput onClose={onClose} />);
   component.setProps({ onClose: undefined });
-  expect(toJSON(component)).toMatchSnapshot();
+  expect(component.getDOMNode()).toMatchSnapshot();
 });
 
 test('Drop resizes', () => {
@@ -114,5 +117,5 @@ test('Drop resizes', () => {
   global.window.innerWidth = 1000;
   global.window.innerHeight = 1000;
   global.window.dispatchEvent(new Event('resize'));
-  expect(toJSON(component)).toMatchSnapshot();
+  expect(component.getDOMNode()).toMatchSnapshot();
 });
