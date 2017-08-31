@@ -50,5 +50,5 @@ const StyledParagraph = styled.p`
 `;
 
 export default StyledParagraph.extend`
-  ${props => props.theme.box && props.theme.box.extend}
+  ${props => props.theme.paragraph && props.theme.paragraph.extend}
 `;

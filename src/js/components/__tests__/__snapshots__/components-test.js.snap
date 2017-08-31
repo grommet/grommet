@@ -9,6 +9,8 @@ Object {
   "Grommet": [Function],
   "Heading": [Function],
   "Keyboard": [Function],
+  "Layer": [Function],
+  "LayerContainer": [Function],
   "Markdown": [Function],
   "Meter": [Function],
   "Paragraph": [Function],
