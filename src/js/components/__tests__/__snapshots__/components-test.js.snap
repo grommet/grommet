@@ -2,6 +2,7 @@
 
 exports[`Components loads 1`] = `
 Object {
+  "Anchor": [Function],
   "Box": [Function],
   "Button": [Function],
   "Chart": [Function],

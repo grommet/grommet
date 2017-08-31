@@ -153,6 +153,14 @@ export default {
       full: '100%',
     },
   },
+  anchor: {
+    textDecoration: 'none',
+    fontWeight: 600,
+    colors: {
+      default: brandColor,
+      brand: brandColor,
+    },
+  },
   button: {
     border: {
       width: `${borderWidth}px`,

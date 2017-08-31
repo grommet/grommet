@@ -45,6 +45,14 @@ exports[`Drop aligns left right top bottom 1`] = `
       centered={true}
       theme={
         Object {
+          "anchor": Object {
+            "colors": Object {
+              "brand": "#865CD6",
+              "default": "#865CD6",
+            },
+            "fontWeight": 600,
+            "textDecoration": "none",
+          },
           "button": Object {
             "border": Object {
               "radius": "5px",
@@ -407,6 +415,14 @@ exports[`Drop aligns right left top top 1`] = `
       centered={true}
       theme={
         Object {
+          "anchor": Object {
+            "colors": Object {
+              "brand": "#865CD6",
+              "default": "#865CD6",
+            },
+            "fontWeight": 600,
+            "textDecoration": "none",
+          },
           "button": Object {
             "border": Object {
               "radius": "5px",
@@ -769,6 +785,14 @@ exports[`Drop aligns right right bottom top 1`] = `
       centered={true}
       theme={
         Object {
+          "anchor": Object {
+            "colors": Object {
+              "brand": "#865CD6",
+              "default": "#865CD6",
+            },
+            "fontWeight": 600,
+            "textDecoration": "none",
+          },
           "button": Object {
             "border": Object {
               "radius": "5px",
@@ -1131,6 +1155,14 @@ exports[`Drop aligns skips left random 1`] = `
       centered={true}
       theme={
         Object {
+          "anchor": Object {
+            "colors": Object {
+              "brand": "#865CD6",
+              "default": "#865CD6",
+            },
+            "fontWeight": 600,
+            "textDecoration": "none",
+          },
           "button": Object {
             "border": Object {
               "radius": "5px",
@@ -1492,6 +1524,14 @@ exports[`Drop aligns skips right random 1`] = `
       centered={true}
       theme={
         Object {
+          "anchor": Object {
+            "colors": Object {
+              "brand": "#865CD6",
+              "default": "#865CD6",
+            },
+            "fontWeight": 600,
+            "textDecoration": "none",
+          },
           "button": Object {
             "border": Object {
               "radius": "5px",
@@ -1848,6 +1888,14 @@ exports[`Drop mounts 1`] = `
       centered={true}
       theme={
         Object {
+          "anchor": Object {
+            "colors": Object {
+              "brand": "#865CD6",
+              "default": "#865CD6",
+            },
+            "fontWeight": 600,
+            "textDecoration": "none",
+          },
           "button": Object {
             "border": Object {
               "radius": "5px",
@@ -2248,6 +2296,14 @@ exports[`Drop resizes 1`] = `
       centered={true}
       theme={
         Object {
+          "anchor": Object {
+            "colors": Object {
+              "brand": "#865CD6",
+              "default": "#865CD6",
+            },
+            "fontWeight": 600,
+            "textDecoration": "none",
+          },
           "button": Object {
             "border": Object {
               "radius": "5px",
@@ -2610,6 +2666,14 @@ exports[`Drop skips invalid align 1`] = `
       centered={true}
       theme={
         Object {
+          "anchor": Object {
+            "colors": Object {
+              "brand": "#865CD6",
+              "default": "#865CD6",
+            },
+            "fontWeight": 600,
+            "textDecoration": "none",
+          },
           "button": Object {
             "border": Object {
               "radius": "5px",
@@ -2964,6 +3028,14 @@ exports[`Drop updates 1`] = `
       centered={true}
       theme={
         Object {
+          "anchor": Object {
+            "colors": Object {
+              "brand": "#865CD6",
+              "default": "#865CD6",
+            },
+            "fontWeight": 600,
+            "textDecoration": "none",
+          },
           "button": Object {
             "border": Object {
               "radius": "5px",

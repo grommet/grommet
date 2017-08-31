@@ -1,10 +1,10 @@
 /* TODO: re-enable eslint before code review */
 /* eslint-disable */
-import React, { Component } from 'react';
+import React, { Component, Children } from 'react';
 import { compose } from 'recompose';
 import { matchPath } from 'react-router';
 
-import StyledAnchor from './StyledAnchor';
+import StyledAnchor, { StyledIcon } from './StyledAnchor';
 
 import { withTheme } from '../hocs';
 
@@ -18,28 +18,33 @@ const styledComponents = {
 class AnchorUtils {
   constructor(props) {
     this.props = props;
+    this.iconNodes = this.iconNodes.bind(this);
+    this.childNodes = this.childNodes.bind(this);
   }
   
   iconNodes() {
-    const { primary, icon } = this.props; 
+    const { primary, icon, theme } = this.props;
+    let nextIcon; 
     if (primary && !icon) {
-      icon = (<LinkNextIcon a11yTitle='link next' />);
+      nextIcon = (<StyledIcon theme={theme} a11yTitle='link next' />);
     }
-    return icon || null;
+    return nextIcon || icon || null;
   }
   
   childNodes() {
-    return Children
+    const { label, theme } = this.props;
+    const anchorChildren = Children
       .map(
         this.props.children,
-        child => child && child.type && child.type.icon && <AnchorIcon>{child}</AnchorIcon>
-      )
+        child => child && child.type && child.type.icon && <StyledIcon theme={theme}>{child}</StyledIcon>
+      );
+    return anchorChildren || label;
   }
   
   getChildNodes() {
     const nodeVals = [
-      iconNodes(this.props),
-      childNodes(this.props),
+      this.iconNodes(this.props),
+      this.childNodes(this.props),
     ];
     return this.props.reverse ? nodeVals.reverse() : nodeVals;
   }
@@ -162,7 +167,7 @@ class Anchor extends Component {
 
   get adjustedHref() {
     const { router } = this.context;
-    const { path } = this.props;
+    const { path, href } = this.props;
     if (router && router.createPath) {
       return (path && router)
         ? router.createPath(target)
@@ -192,7 +197,7 @@ class Anchor extends Component {
     
     return (
       <StyledComponent href={this.adjustedHref} {...rest}>
-        {...childNodes}
+        {childNodes}
       </StyledComponent>
     );
   }
