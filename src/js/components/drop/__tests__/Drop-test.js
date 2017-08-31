@@ -7,6 +7,11 @@ import toJSON from 'enzyme-to-json';
 import { Grommet } from '../../grommet';
 import { Drop } from '../';
 
+// TODO: need because of weird bug in jest styled components
+import StyledGrommet from '../../grommet/StyledGrommet';
+
+StyledGrommet.displayName = 'StyledGrommet';
+
 class FakeInput extends Component {
   state = {
     showDrop: false,

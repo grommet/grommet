@@ -93,7 +93,7 @@ exports[`Layer adds custom close node 1`] = `
 <Grommet
   centered={true}
 >
-  <StyledGrommet__StyledGrommet
+  <StyledGrommet
     centered={true}
     theme={
       Object {
@@ -1036,7 +1036,7 @@ exports[`Layer adds custom close node 1`] = `
         </Keyboard>
       </LayerContainer>
     </div>
-  </StyledGrommet__StyledGrommet>
+  </StyledGrommet>
 </Grommet>
 `;
 
@@ -1074,7 +1074,7 @@ exports[`Layer mounts 1`] = `
   <Grommet
     centered={true}
   >
-    <StyledGrommet__StyledGrommet
+    <StyledGrommet
       centered={true}
       theme={
         Object {
@@ -1391,7 +1391,7 @@ exports[`Layer mounts 1`] = `
           />
         </Layer>
       </div>
-    </StyledGrommet__StyledGrommet>
+    </StyledGrommet>
   </Grommet>
 </FakeLayer>
 `;

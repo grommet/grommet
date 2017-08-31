@@ -41,7 +41,7 @@ exports[`Drop aligns left right top bottom 1`] = `
   <Grommet
     centered={true}
   >
-    <StyledGrommet__StyledGrommet
+    <StyledGrommet
       centered={true}
       theme={
         Object {
@@ -364,7 +364,7 @@ exports[`Drop aligns left right top bottom 1`] = `
           />
         </Drop>
       </div>
-    </StyledGrommet__StyledGrommet>
+    </StyledGrommet>
   </Grommet>
 </FakeInput>
 `;
@@ -410,7 +410,7 @@ exports[`Drop aligns right left top top 1`] = `
   <Grommet
     centered={true}
   >
-    <StyledGrommet__StyledGrommet
+    <StyledGrommet
       centered={true}
       theme={
         Object {
@@ -733,7 +733,7 @@ exports[`Drop aligns right left top top 1`] = `
           />
         </Drop>
       </div>
-    </StyledGrommet__StyledGrommet>
+    </StyledGrommet>
   </Grommet>
 </FakeInput>
 `;
@@ -779,7 +779,7 @@ exports[`Drop aligns right right bottom top 1`] = `
   <Grommet
     centered={true}
   >
-    <StyledGrommet__StyledGrommet
+    <StyledGrommet
       centered={true}
       theme={
         Object {
@@ -1102,7 +1102,7 @@ exports[`Drop aligns right right bottom top 1`] = `
           />
         </Drop>
       </div>
-    </StyledGrommet__StyledGrommet>
+    </StyledGrommet>
   </Grommet>
 </FakeInput>
 `;
@@ -1148,7 +1148,7 @@ exports[`Drop aligns skips left random 1`] = `
   <Grommet
     centered={true}
   >
-    <StyledGrommet__StyledGrommet
+    <StyledGrommet
       centered={true}
       theme={
         Object {
@@ -1471,7 +1471,7 @@ exports[`Drop aligns skips left random 1`] = `
           />
         </Drop>
       </div>
-    </StyledGrommet__StyledGrommet>
+    </StyledGrommet>
   </Grommet>
 </FakeInput>
 `;
@@ -1516,7 +1516,7 @@ exports[`Drop aligns skips right random 1`] = `
   <Grommet
     centered={true}
   >
-    <StyledGrommet__StyledGrommet
+    <StyledGrommet
       centered={true}
       theme={
         Object {
@@ -1838,7 +1838,7 @@ exports[`Drop aligns skips right random 1`] = `
           />
         </Drop>
       </div>
-    </StyledGrommet__StyledGrommet>
+    </StyledGrommet>
   </Grommet>
 </FakeInput>
 `;
@@ -1879,7 +1879,7 @@ exports[`Drop mounts 1`] = `
   <Grommet
     centered={true}
   >
-    <StyledGrommet__StyledGrommet
+    <StyledGrommet
       centered={true}
       theme={
         Object {
@@ -2202,7 +2202,7 @@ exports[`Drop mounts 1`] = `
           />
         </Drop>
       </div>
-    </StyledGrommet__StyledGrommet>
+    </StyledGrommet>
   </Grommet>
 </FakeInput>
 `;
@@ -2286,7 +2286,7 @@ exports[`Drop resizes 1`] = `
   <Grommet
     centered={true}
   >
-    <StyledGrommet__StyledGrommet
+    <StyledGrommet
       centered={true}
       theme={
         Object {
@@ -2610,7 +2610,7 @@ exports[`Drop resizes 1`] = `
           />
         </Drop>
       </div>
-    </StyledGrommet__StyledGrommet>
+    </StyledGrommet>
   </Grommet>
 </FakeInput>
 `;
@@ -2655,7 +2655,7 @@ exports[`Drop skips invalid align 1`] = `
   <Grommet
     centered={true}
   >
-    <StyledGrommet__StyledGrommet
+    <StyledGrommet
       centered={true}
       theme={
         Object {
@@ -2977,7 +2977,7 @@ exports[`Drop skips invalid align 1`] = `
           />
         </Drop>
       </div>
-    </StyledGrommet__StyledGrommet>
+    </StyledGrommet>
   </Grommet>
 </FakeInput>
 `;
@@ -3016,7 +3016,7 @@ exports[`Drop updates 1`] = `
   <Grommet
     centered={true}
   >
-    <StyledGrommet__StyledGrommet
+    <StyledGrommet
       centered={true}
       theme={
         Object {
@@ -3339,7 +3339,7 @@ exports[`Drop updates 1`] = `
           />
         </Drop>
       </div>
-    </StyledGrommet__StyledGrommet>
+    </StyledGrommet>
   </Grommet>
 </FakeInput>
 `;

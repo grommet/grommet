@@ -7,6 +7,11 @@ import toJSON from 'enzyme-to-json';
 import { Grommet } from '../../grommet';
 import { Layer, LayerContainer } from '../';
 
+// TODO: need because of weird bug in jest styled components
+import StyledGrommet from '../../grommet/StyledGrommet';
+
+StyledGrommet.displayName = 'StyledGrommet';
+
 class FakeLayer extends Component {
   state = {
     showLayer: false,
