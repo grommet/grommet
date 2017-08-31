@@ -3,7 +3,7 @@
 exports[`Layer adds custom close node 1`] = `
 <div
   data-reactroot=""
-  class="StyledGrommet__StyledGrommet-hSgblC bDRgJE"
+  class="StyledGrommet-gKbdxL iriday"
 >
   <div
     class="StyledLayer-EylWz dIqOwU"
@@ -66,7 +66,7 @@ exports[`Layer is accessible 3`] = `
 exports[`Layer mounts 1`] = `
 <div
   data-reactroot=""
-  class="StyledGrommet__StyledGrommet-hSgblC bDRgJE"
+  class="StyledGrommet-gKbdxL iriday"
 >
   <span
     style="display: none;"
@@ -141,7 +141,7 @@ exports[`Layer renders 1`] = `
 exports[`Layer renders with custom message 1`] = `
 <div
   data-reactroot=""
-  class="StyledGrommet__StyledGrommet-hSgblC bDRgJE"
+  class="StyledGrommet-gKbdxL iriday"
 >
   <div
     class="StyledLayer-EylWz dIqOwU"
@@ -158,7 +158,7 @@ exports[`Layer renders with custom message 1`] = `
         class="StyledLayer__StyledCloser-bLTudO dwaTZV"
       >
         <button
-          class="StyledButton__StyledButton-cmJswE bErBpU"
+          class="StyledButton-qbvYY cRoJX"
           tabindex="0"
           aria-label="Fechar Modal"
           type="button"
