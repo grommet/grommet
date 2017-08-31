@@ -156,19 +156,19 @@ const edgeStyle = (kind, data, theme) => {
   if (typeof data === 'string') {
     return `${kind}: ${theme.global.edgeSize[data]};`;
   }
+  let result = '';
   if (data.horizontal) {
-    return `
+    result += `
       ${kind}-left: ${theme.global.edgeSize[data.horizontal]};
       ${kind}-right: ${theme.global.edgeSize[data.horizontal]};
     `;
   }
   if (data.vertical) {
-    return `
+    result += `
       ${kind}-top: ${theme.global.edgeSize[data.vertical]};
       ${kind}-bottom: ${theme.global.edgeSize[data.vertical]};
     `;
   }
-  let result = '';
   if (data.top) {
     result += `${kind}-top: ${theme.global.edgeSize[data.top]};`;
   }
