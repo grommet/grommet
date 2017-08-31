@@ -190,6 +190,13 @@ export default {
     },
     weight: 300,
   },
+  layer: {
+    backgroundColor: '#FFFFFF',
+    border: {
+      radius: '4px',
+    },
+    overlayBackgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
   paragraph: {
     medium: { size: '16px', height: 1.375, maxWidth: `${baseSpacing * 24}px` },
     small: { size: '14px', height: 1.43, maxWidth: `${baseSpacing * 18}px` },

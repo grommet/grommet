@@ -71,6 +71,7 @@ class Button extends Component {
 
     return (
       <Tag
+        tabIndex='0'
         {...rest}
         {...boxProps}
         aria-label={a11yTitle}
@@ -82,7 +83,6 @@ class Button extends Component {
         plain={plainProp}
         theme={theme}
         type={!href ? type : undefined}
-        tabIndex='0'
       >
         {first}
         {second}

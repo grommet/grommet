@@ -97,7 +97,6 @@ test('Drop invokes onClose', () => {
   expect(onClose).toBeCalled();
 });
 
-
 test('Drop updates', () => {
   const onClose = jest.fn();
   const component = mount(<FakeInput onClose={onClose} />);

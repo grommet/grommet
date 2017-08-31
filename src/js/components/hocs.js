@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import deepAssign from 'deep-assign';
 
-
 export const withFocus = (WrappedComponent) => {
   class FocusableComponent extends Component {
     state = {

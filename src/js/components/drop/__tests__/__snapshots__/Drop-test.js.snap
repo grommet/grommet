@@ -41,7 +41,7 @@ exports[`Drop aligns left right top bottom 1`] = `
   <Grommet
     centered={true}
   >
-    <styled.div
+    <StyledGrommet__StyledGrommet
       centered={true}
       theme={
         Object {
@@ -277,6 +277,13 @@ exports[`Drop aligns left right top bottom 1`] = `
               },
             },
             "weight": 300,
+          },
+          "layer": Object {
+            "backgroundColor": "#FFFFFF",
+            "border": Object {
+              "radius": "4px",
+            },
+            "overlayBackgroundColor": "rgba(0, 0, 0, 0.5)",
           },
           "paragraph": Object {
             "large": Object {
@@ -325,7 +332,7 @@ exports[`Drop aligns left right top bottom 1`] = `
           />
         </Drop>
       </div>
-    </styled.div>
+    </StyledGrommet__StyledGrommet>
   </Grommet>
 </FakeInput>
 `;
@@ -371,7 +378,7 @@ exports[`Drop aligns right left top top 1`] = `
   <Grommet
     centered={true}
   >
-    <styled.div
+    <StyledGrommet__StyledGrommet
       centered={true}
       theme={
         Object {
@@ -607,6 +614,13 @@ exports[`Drop aligns right left top top 1`] = `
               },
             },
             "weight": 300,
+          },
+          "layer": Object {
+            "backgroundColor": "#FFFFFF",
+            "border": Object {
+              "radius": "4px",
+            },
+            "overlayBackgroundColor": "rgba(0, 0, 0, 0.5)",
           },
           "paragraph": Object {
             "large": Object {
@@ -655,7 +669,7 @@ exports[`Drop aligns right left top top 1`] = `
           />
         </Drop>
       </div>
-    </styled.div>
+    </StyledGrommet__StyledGrommet>
   </Grommet>
 </FakeInput>
 `;
@@ -701,7 +715,7 @@ exports[`Drop aligns right right bottom top 1`] = `
   <Grommet
     centered={true}
   >
-    <styled.div
+    <StyledGrommet__StyledGrommet
       centered={true}
       theme={
         Object {
@@ -937,6 +951,13 @@ exports[`Drop aligns right right bottom top 1`] = `
               },
             },
             "weight": 300,
+          },
+          "layer": Object {
+            "backgroundColor": "#FFFFFF",
+            "border": Object {
+              "radius": "4px",
+            },
+            "overlayBackgroundColor": "rgba(0, 0, 0, 0.5)",
           },
           "paragraph": Object {
             "large": Object {
@@ -985,7 +1006,7 @@ exports[`Drop aligns right right bottom top 1`] = `
           />
         </Drop>
       </div>
-    </styled.div>
+    </StyledGrommet__StyledGrommet>
   </Grommet>
 </FakeInput>
 `;
@@ -1031,7 +1052,7 @@ exports[`Drop aligns skips left random 1`] = `
   <Grommet
     centered={true}
   >
-    <styled.div
+    <StyledGrommet__StyledGrommet
       centered={true}
       theme={
         Object {
@@ -1267,6 +1288,13 @@ exports[`Drop aligns skips left random 1`] = `
               },
             },
             "weight": 300,
+          },
+          "layer": Object {
+            "backgroundColor": "#FFFFFF",
+            "border": Object {
+              "radius": "4px",
+            },
+            "overlayBackgroundColor": "rgba(0, 0, 0, 0.5)",
           },
           "paragraph": Object {
             "large": Object {
@@ -1315,7 +1343,7 @@ exports[`Drop aligns skips left random 1`] = `
           />
         </Drop>
       </div>
-    </styled.div>
+    </StyledGrommet__StyledGrommet>
   </Grommet>
 </FakeInput>
 `;
@@ -1360,7 +1388,7 @@ exports[`Drop aligns skips right random 1`] = `
   <Grommet
     centered={true}
   >
-    <styled.div
+    <StyledGrommet__StyledGrommet
       centered={true}
       theme={
         Object {
@@ -1596,6 +1624,13 @@ exports[`Drop aligns skips right random 1`] = `
               },
             },
             "weight": 300,
+          },
+          "layer": Object {
+            "backgroundColor": "#FFFFFF",
+            "border": Object {
+              "radius": "4px",
+            },
+            "overlayBackgroundColor": "rgba(0, 0, 0, 0.5)",
           },
           "paragraph": Object {
             "large": Object {
@@ -1643,7 +1678,7 @@ exports[`Drop aligns skips right random 1`] = `
           />
         </Drop>
       </div>
-    </styled.div>
+    </StyledGrommet__StyledGrommet>
   </Grommet>
 </FakeInput>
 `;
@@ -1684,7 +1719,7 @@ exports[`Drop mounts 1`] = `
   <Grommet
     centered={true}
   >
-    <styled.div
+    <StyledGrommet__StyledGrommet
       centered={true}
       theme={
         Object {
@@ -1920,6 +1955,13 @@ exports[`Drop mounts 1`] = `
               },
             },
             "weight": 300,
+          },
+          "layer": Object {
+            "backgroundColor": "#FFFFFF",
+            "border": Object {
+              "radius": "4px",
+            },
+            "overlayBackgroundColor": "rgba(0, 0, 0, 0.5)",
           },
           "paragraph": Object {
             "large": Object {
@@ -1968,7 +2010,7 @@ exports[`Drop mounts 1`] = `
           />
         </Drop>
       </div>
-    </styled.div>
+    </StyledGrommet__StyledGrommet>
   </Grommet>
 </FakeInput>
 `;
@@ -2052,7 +2094,7 @@ exports[`Drop resizes 1`] = `
   <Grommet
     centered={true}
   >
-    <styled.div
+    <StyledGrommet__StyledGrommet
       centered={true}
       theme={
         Object {
@@ -2288,6 +2330,13 @@ exports[`Drop resizes 1`] = `
               },
             },
             "weight": 300,
+          },
+          "layer": Object {
+            "backgroundColor": "#FFFFFF",
+            "border": Object {
+              "radius": "4px",
+            },
+            "overlayBackgroundColor": "rgba(0, 0, 0, 0.5)",
           },
           "paragraph": Object {
             "large": Object {
@@ -2337,7 +2386,7 @@ exports[`Drop resizes 1`] = `
           />
         </Drop>
       </div>
-    </styled.div>
+    </StyledGrommet__StyledGrommet>
   </Grommet>
 </FakeInput>
 `;
@@ -2382,7 +2431,7 @@ exports[`Drop skips invalid align 1`] = `
   <Grommet
     centered={true}
   >
-    <styled.div
+    <StyledGrommet__StyledGrommet
       centered={true}
       theme={
         Object {
@@ -2618,6 +2667,13 @@ exports[`Drop skips invalid align 1`] = `
               },
             },
             "weight": 300,
+          },
+          "layer": Object {
+            "backgroundColor": "#FFFFFF",
+            "border": Object {
+              "radius": "4px",
+            },
+            "overlayBackgroundColor": "rgba(0, 0, 0, 0.5)",
           },
           "paragraph": Object {
             "large": Object {
@@ -2665,7 +2721,7 @@ exports[`Drop skips invalid align 1`] = `
           />
         </Drop>
       </div>
-    </styled.div>
+    </StyledGrommet__StyledGrommet>
   </Grommet>
 </FakeInput>
 `;
@@ -2704,7 +2760,7 @@ exports[`Drop updates 1`] = `
   <Grommet
     centered={true}
   >
-    <styled.div
+    <StyledGrommet__StyledGrommet
       centered={true}
       theme={
         Object {
@@ -2940,6 +2996,13 @@ exports[`Drop updates 1`] = `
               },
             },
             "weight": 300,
+          },
+          "layer": Object {
+            "backgroundColor": "#FFFFFF",
+            "border": Object {
+              "radius": "4px",
+            },
+            "overlayBackgroundColor": "rgba(0, 0, 0, 0.5)",
           },
           "paragraph": Object {
             "large": Object {
@@ -2988,7 +3051,7 @@ exports[`Drop updates 1`] = `
           />
         </Drop>
       </div>
-    </styled.div>
+    </StyledGrommet__StyledGrommet>
   </Grommet>
 </FakeInput>
 `;

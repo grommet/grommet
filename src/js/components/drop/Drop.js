@@ -5,13 +5,7 @@ import DropContainer from './DropContainer';
 
 import doc from './doc';
 
-function getDropContainer() {
-  // setup DOM
-  const container = document.createElement('div');
-  // prepend in body to avoid browser scroll issues
-  document.body.insertBefore(container, document.body.firstChild);
-  return container;
-}
+import { getNewContainer } from '../utils';
 
 class Drop extends Component {
   static defaultProps = {
@@ -22,7 +16,7 @@ class Drop extends Component {
   }
 
   componentDidMount() {
-    this.dropContainer = getDropContainer();
+    this.dropContainer = getNewContainer();
     this.renderDrop();
   }
 
