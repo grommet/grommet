@@ -72,18 +72,6 @@ $meter-active-offset: round($inuit-base-spacing-unit * 1.5);
   }
 }
 
-.#{$grommet-namespace}meter--small,
-.#{$grommet-namespace}meter--xsmall {
-
-  .#{$grommet-namespace}meter__slice {
-    stroke-width: double($meter-slice-width);
-  }
-
-  .#{$grommet-namespace}meter__values .#{$grommet-namespace}meter__slice.#{$grommet-namespace}meter__slice--active {
-    stroke-width: double($meter-slice-active-width);
-  }
-}
-
 .#{$grommet-namespace}meter--active {
   .#{$grommet-namespace}meter__values .#{$grommet-namespace}meter__slice {
     stroke-width: $meter-slice-active-width;
