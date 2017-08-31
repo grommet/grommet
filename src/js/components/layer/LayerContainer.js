@@ -70,7 +70,7 @@ class LayerContainer extends Component {
     if (layerNode.scrollIntoView) {
       layerNode.scrollIntoView();
     }
-    this.anchorStepRef.focus();
+    layerNode.focus();
   }
 
   componentWillUnmount() {
@@ -128,20 +128,18 @@ class LayerContainer extends Component {
     return (
       <Keyboard onEsc={onClose}>
         <StyledLayer
+          tabIndex='-1'
           ref={(ref) => {
             this.layerRef = ref;
           }}
           theme={localTheme}
         >
-          <StyledContainer {...rest} theme={localTheme}>
-            <a
-              tabIndex='-1'
-              aria-hidden='true'
-              style={{ outline: 'none' }}
-              ref={(ref) => {
-                this.anchorStepRef = ref;
-              }}
-            />
+          <StyledContainer
+            {...rest}
+            theme={localTheme}
+            tabIndex='-1'
+            aria-hidden='true'
+          >
             {closerNode}
             {children}
           </StyledContainer>

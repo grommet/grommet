@@ -42,7 +42,6 @@
     "react/sort-comp": 0,
     "import/no-extraneous-dependencies": 0,
     "no-alert": 0,
-    "jsx-a11y/href-no-hash": 0,
-    "jsx-a11y/anchor-has-content": 0
+    "jsx-a11y/href-no-hash": 0
   }
 }

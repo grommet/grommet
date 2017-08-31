@@ -7,19 +7,17 @@ exports[`Layer adds custom close node 1`] = `
 >
   <div
     class="StyledLayer-EylWz dIqOwU"
+    tabindex="-1"
   >
     <div
       class="StyledLayer__StyledContainer-iKmEpv dDNYRn"
+      tabindex="-1"
+      aria-hidden="true"
     >
-      <a
-        tabindex="-1"
-        aria-hidden="true"
-        style="outline: none;"
-      />
       <div>
         custom closer
       </div>
-      <!-- react-text: 6 -->
+      <!-- react-text: 5 -->
       This is a Layer
       <!-- /react-text -->
     </div>
@@ -45,7 +43,7 @@ exports[`Layer is accessible 2`] = `
 <div
   id="layer-node"
 >
-  <!-- react-text: 10 -->
+  <!-- react-text: 9 -->
   This is a layer
   <!-- /react-text -->
   <input />
@@ -145,15 +143,13 @@ exports[`Layer renders with custom message 1`] = `
 >
   <div
     class="StyledLayer-EylWz dIqOwU"
+    tabindex="-1"
   >
     <div
       class="StyledLayer__StyledContainer-iKmEpv fNuFNM"
+      tabindex="-1"
+      aria-hidden="true"
     >
-      <a
-        tabindex="-1"
-        aria-hidden="true"
-        style="outline: none;"
-      />
       <div
         class="StyledLayer__StyledCloser-bLTudO dwaTZV"
       >
@@ -183,7 +179,7 @@ exports[`Layer renders with custom message 1`] = `
           </span>
         </button>
       </div>
-      <!-- react-text: 10 -->
+      <!-- react-text: 9 -->
       This is a layer
       <!-- /react-text -->
     </div>
