@@ -105,15 +105,4 @@ test('Layer invokes onClose on esc', () => {
   expect(onClose).toBeCalled();
 });
 
-// test('Layer handles accessibility', () => {
-//   const onClose = jest.fn();
-//   const wrapper = mount(
-//     <Grommet>
-//       <FakeLayer>
-//         This is a layer
-//       </FakeLayer>
-//     </Grommet>
-//   );
-//   wrapper.find('button').simulate('keyDown', { key: 'Esc', keyCode: 27, which: 27 });
-//   expect(onClose).toBeCalled();
-// });
+// TODO: test Layer accessibility
