@@ -91,6 +91,6 @@
     ]
   },
   "pre-commit": [
-    "test"
+    "check"
   ]
 }
