@@ -194,6 +194,7 @@ const roundStyle = css`
 
 const StyledBox = styled.div`
   display: flex;
+  max-width: 100%;
 
   ${props => props.align && alignStyle}
   ${props => props.alignContent && alignContentStyle}

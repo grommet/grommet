@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import StyledMeter from './StyledMeter';
+
 import { parseMetricToInt } from '../utils/mixins';
 import { colorForName } from '../utils/colors';
 
@@ -50,7 +52,7 @@ export default class Bar extends Component {
     }).reverse(); // reverse so the caps looks right
 
     return (
-      <svg
+      <StyledMeter
         viewBox={`0 0 ${width} ${height}`}
         preserveAspectRatio='none'
         width={size === 'full' ? '100%' : width}
@@ -64,7 +66,7 @@ export default class Bar extends Component {
           strokeLinecap={round ? 'round' : 'square'}
         />
         {paths}
-      </svg>
+      </StyledMeter>
     );
   }
 }

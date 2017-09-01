@@ -176,7 +176,6 @@ test('Box basis renders', () => {
         <Box basis='medium' />
         <Box basis='large' />
         <Box basis='xlarge' />
-        <Box basis='xxlarge' />
       </Box>
       <Box direction='row'>
         <Box basis='full' />

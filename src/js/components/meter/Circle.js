@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import StyledMeter from './StyledMeter';
+
 import { parseMetricToInt } from '../utils/mixins';
 import { colorForName } from '../utils/colors';
 import { translateEndAngle, arcCommands } from '../utils/graphics';
@@ -57,7 +59,7 @@ export default class Circle extends Component {
     }).reverse(); // reverse so the caps looks right
 
     return (
-      <svg
+      <StyledMeter
         viewBox={`0 0 ${width} ${width}`}
         width={size === 'full' ? '100%' : width}
         height={size === 'full' ? '100%' : width}
@@ -72,7 +74,7 @@ export default class Circle extends Component {
           fill='none'
         />
         {paths}
-      </svg>
+      </StyledMeter>
     );
   }
 }

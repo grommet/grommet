@@ -669,7 +669,7 @@ exports[`Grid rows renders 1`] = `
 .c1 {
   display: grid;
   height: 100%;
-  grid-template-rows: 192px 576px 384px;
+  grid-template-rows: 192px 768px 384px;
 }
 
 @media only screen and (min-width:481px) {

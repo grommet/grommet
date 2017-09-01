@@ -143,13 +143,12 @@ export default {
     },
     spacing: `${baseSpacing}px`,
     size: {
-      xxsmall: `${baseSpacing * 2}px`,
-      xsmall: `${baseSpacing * 4}px`,
-      small: `${baseSpacing * 8}px`,
-      medium: `${baseSpacing * 16}px`,
-      large: `${baseSpacing * 24}px`,
-      xlarge: `${baseSpacing * 30}px`,
-      xxlarge: `${baseSpacing * 40}px`,
+      xxsmall: `${baseSpacing * 2}px`, // 48
+      xsmall: `${baseSpacing * 4}px`, // 96
+      small: `${baseSpacing * 8}px`, // 192
+      medium: `${baseSpacing * 16}px`, // 384
+      large: `${baseSpacing * 32}px`, // 768
+      xlarge: `${baseSpacing * 48}px`, // 1152
       full: '100%',
     },
   },
