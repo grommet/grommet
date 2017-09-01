@@ -1,30 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Layer adds custom close node 1`] = `
-<div
-  data-reactroot=""
-  class="StyledGrommet-gKbdxL iriday"
->
-  <div
-    class="StyledLayer-EylWz dIqOwU"
-    tabindex="-1"
-  >
-    <div
-      class="StyledLayer__StyledContainer-iKmEpv dDNYRn"
-      tabindex="-1"
-      aria-hidden="true"
-    >
-      <div>
-        custom closer
-      </div>
-      <!-- react-text: 5 -->
-      This is a Layer
-      <!-- /react-text -->
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Layer is accessible 1`] = `
 <div
   id="body-node"
@@ -43,7 +18,7 @@ exports[`Layer is accessible 2`] = `
 <div
   id="layer-node"
 >
-  <!-- react-text: 9 -->
+  <!-- react-text: 4 -->
   This is a layer
   <!-- /react-text -->
   <input />
@@ -133,56 +108,5 @@ exports[`Layer renders 1`] = `
       }
     }
   />
-</div>
-`;
-
-exports[`Layer renders with custom message 1`] = `
-<div
-  data-reactroot=""
-  class="StyledGrommet-gKbdxL iriday"
->
-  <div
-    class="StyledLayer-EylWz dIqOwU"
-    tabindex="-1"
-  >
-    <div
-      class="StyledLayer__StyledContainer-iKmEpv fNuFNM"
-      tabindex="-1"
-      aria-hidden="true"
-    >
-      <div
-        class="StyledLayer__StyledCloser-bLTudO dwaTZV"
-      >
-        <button
-          class="StyledButton-qbvYY cRoJX"
-          tabindex="0"
-          aria-label="Fechar Modal"
-          type="button"
-        >
-          <span
-            class="StyledButton__StyledIcon-hqHdWF bnFLWK"
-          >
-            <svg
-              version="1.1"
-              viewBox="0 0 24 24"
-              width="24px"
-              height="24px"
-              role="img"
-            >
-              <path
-                fill="none"
-                stroke="#333"
-                stroke-width="2"
-                d="M3,3 L21,21 M3,21 L21,3"
-              />
-            </svg>
-          </span>
-        </button>
-      </div>
-      <!-- react-text: 9 -->
-      This is a layer
-      <!-- /react-text -->
-    </div>
-  </div>
 </div>
 `;

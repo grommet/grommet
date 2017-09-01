@@ -21,7 +21,7 @@ class FakeLayer extends Component {
     let layer;
     if (!hide && showLayer) {
       layer = (
-        <Layer onClose={() => this.setState({ showLayer: false })}>
+        <Layer onEsc={() => this.setState({ showLayer: false })}>
           <div id='layer-node'>
             This is a layer
             <input />
@@ -59,66 +59,23 @@ test('Layer renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Layer renders with custom message', () => {
-  const component = mount(
-    <Grommet>
-      <LayerContainer
-        align='left'
-        messages={{ closeLayer: 'Fechar Modal' }}
-        onClose={() => {}}
-      >
-        This is a layer
-      </LayerContainer>
-    </Grommet>
-  );
-  expect(component.getDOMNode()).toMatchSnapshot();
-  component.unmount();
-});
-
-test('Layer adds custom close node', () => {
-  const onClose = jest.fn();
-  const component = mount(
-    <Grommet>
-      <LayerContainer closer={<div>custom closer</div>} onClose={onClose}>
-        This is a Layer
-      </LayerContainer>
-    </Grommet>
-  );
-  expect(component.getDOMNode()).toMatchSnapshot();
-  component.unmount();
-});
-
 test('Layer mounts', () => {
   const component = mount(<FakeLayer />);
   expect(component.getDOMNode()).toMatchSnapshot();
   component.unmount();
 });
 
-test('Layer invokes onClose on click close', () => {
-  const onClose = jest.fn();
+test('Layer invokes onEsc', () => {
+  const onEsc = jest.fn();
   const component = mount(
     <Grommet>
-      <LayerContainer onClose={onClose}>
-        This is a Layer
+      <LayerContainer onEsc={onEsc}>
+        <input />
       </LayerContainer>
     </Grommet>
   );
-  component.find('button').simulate('click');
-  expect(onClose).toBeCalled();
-  component.unmount();
-});
-
-test('Layer invokes onClose on esc', () => {
-  const onClose = jest.fn();
-  const component = mount(
-    <Grommet>
-      <LayerContainer onClose={onClose}>
-        This is a Layer
-      </LayerContainer>
-    </Grommet>
-  );
-  component.find('button').simulate('keyDown', { key: 'Esc', keyCode: 27, which: 27 });
-  expect(onClose).toBeCalled();
+  component.find('input').simulate('keyDown', { key: 'Esc', keyCode: 27, which: 27 });
+  expect(onEsc).toBeCalled();
   component.unmount();
 });
 

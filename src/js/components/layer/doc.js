@@ -1,7 +1,8 @@
 import { schema, PropTypes } from 'react-desc';
 
 export default Layer => schema(Layer, {
-  description: 'A modal overlay.',
+  description: `A modal overlay. It is the caller's responsibility to provide a control for
+  the user to close the layer.`,
   usage: `import { Layer } from 'grommet';
   <Layer/>`,
   props: {
@@ -11,24 +12,24 @@ export default Layer => schema(Layer, {
         defaultProp: 'center',
       },
     ],
-    closer: [
-      PropTypes.node,
-      `The node to be used as the close control.
-      If provided, it is the caller's responsibility to listen to events from the node`,
-    ],
-    messages: [
-      PropTypes.shape({
-        closeLayer: PropTypes.string,
-      }),
-      `Optional. Used to replace default messages used inside Layer 
-      (e.g. provide the same message in another language).
-      `,
-    ],
-    onClose: [
+    onEsc: [
       PropTypes.func,
-      `Function that will be called when the user requests the Layer to close.
-      This function will only be invoked if closer prop is undefined,
-      or if the user pressed escape key.`,
+      'Function that will be called when the user presses the escape key inside the Layer',
+    ],
+    size: [
+      PropTypes.oneOf(
+        [
+          'xxsmall',
+          'xsmall',
+          'small',
+          'medium',
+          'large',
+          'xlarge',
+          'xxlarge',
+          'full',
+        ]
+      ),
+      'Optional size for the Layer.',
     ],
   },
 });
