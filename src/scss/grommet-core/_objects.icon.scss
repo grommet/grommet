@@ -31,11 +31,13 @@ $icon-huge-size: round($inuit-base-spacing-unit * 12) !default;
       }
     }
 
-    *[stroke*="#"] {
+    *[stroke*="#"],
+    *[STROKE*="#"] {
       stroke: inherit;
     }
 
-    *[fill*="#"] {
+    *[fill*="#"],
+    *[FILL*="#"] {
       fill: inherit;
     }
 
