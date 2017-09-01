@@ -5,6 +5,6 @@
     "react"
   ],
   "plugins": [
-    ["styled-components", { "useFileName": false }]
+    ["styled-components", { "useDisplayName": false }]
   ]
 }

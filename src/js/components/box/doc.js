@@ -35,7 +35,7 @@ export default Box => schema(Box, {
     ],
     basis: [
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge',
-        'xxlarge', 'full', '1/2', '1/3', '2/3', '1/4', '3/4']),
+        'full', '1/2', '1/3', '2/3', '1/4', '3/4']),
       'A fixed or relative size along its container\'s main axis.',
     ],
     border: [
