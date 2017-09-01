@@ -4,32 +4,13 @@ import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import deepAssign from 'deep-assign';
 
-import StyledLayer, { StyledContainer, StyledCloser } from './StyledLayer';
+import StyledLayer, { StyledContainer } from './StyledLayer';
 
-import { Button } from '../button';
 import { Keyboard } from '../keyboard';
 
 import baseTheme from '../../themes/vanilla';
 
 import { filterByFocusable, getBodyChildElements } from '../utils/DOM';
-
-// TODO: replace with grommet-icons
-const CloseIcon = () => (
-  <svg
-    version='1.1'
-    viewBox='0 0 24 24'
-    width='24px'
-    height='24px'
-    role='img'
-  >
-    <path
-      fill='none'
-      stroke='#333'
-      strokeWidth='2'
-      d='M3,3 L21,21 M3,21 L21,3'
-    />
-  </svg>
-);
 
 class LayerContainer extends Component {
   static childContextTypes = {
@@ -99,9 +80,7 @@ class LayerContainer extends Component {
   render() {
     const {
       children,
-      closer,
-      messages = {},
-      onClose,
+      onEsc,
       theme,
       ...rest
     } = this.props;
@@ -109,24 +88,8 @@ class LayerContainer extends Component {
     const globalTheme = JSON.parse(JSON.stringify(baseTheme));
     const localTheme = deepAssign(globalTheme, theme);
 
-    let closerNode;
-    if (typeof closer === 'object') {
-      closerNode = closer;
-    } else if (onClose) {
-      closerNode = (
-        <StyledCloser theme={localTheme}>
-          <Button
-            a11yTitle={messages.closeLayer || 'Close Layer'}
-            icon={<CloseIcon />}
-            onClick={onClose}
-            plain={true}
-          />
-        </StyledCloser>
-      );
-    }
-
     return (
-      <Keyboard onEsc={onClose}>
+      <Keyboard onEsc={onEsc}>
         <StyledLayer
           tabIndex='-1'
           ref={(ref) => {
@@ -138,9 +101,7 @@ class LayerContainer extends Component {
             {...rest}
             theme={localTheme}
             tabIndex='-1'
-            aria-hidden='true'
           >
-            {closerNode}
             {children}
           </StyledContainer>
         </StyledLayer>

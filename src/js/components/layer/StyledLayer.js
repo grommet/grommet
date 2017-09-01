@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { baseStyle, lapAndUp, palm } from '../utils';
 
@@ -19,14 +19,6 @@ const StyledLayer = styled.div`
     right: 0px;
     bottom: 0px;
   `)}
-`;
-
-export const StyledCloser = styled.div`
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  z-index: 1;
-  padding: ${props => props.theme.global.edgeSize.small}
 `;
 
 const leftAlignStyle = `
@@ -117,9 +109,16 @@ function getAlignStyle(props) {
   return ALIGN_MAP[props.align] || '';
 }
 
+const sizeStyle = css`
+  min-width: ${props => props.theme.global.size[props.size]};
+`;
+
 export const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
+  min-height: ${props => props.theme.global.size.xxsmall};
+
+  ${props => props.size && sizeStyle}
 
   background-color: ${props => props.theme.layer.backgroundColor};
 
@@ -133,6 +132,7 @@ export const StyledContainer = styled.div`
     max-height: 100%;
     max-width: 100%;
     overflow: auto;
+    outline: none;
     border-radius: ${props.theme.layer.border.radius};
 
     ${getAlignStyle(props)}
