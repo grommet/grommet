@@ -77,8 +77,10 @@ class Button extends Component {
         aria-label={a11yTitle}
         box={box}
         disabled={disabled}
+        icon={icon}
         focus={focus}
         href={href}
+        label={label}
         onClick={onClick}
         plain={plainProp}
         theme={theme}

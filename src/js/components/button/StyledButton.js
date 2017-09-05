@@ -148,6 +148,11 @@ const StyledButton = styled.button`
   overflow: visible;
   text-transform: none;
 
+  ${props => props.icon && !props.label && `
+    min-height: 48px;
+    min-width: 48px;
+  `}
+
   ${props => !props.plain && css`
     border: ${props.theme.button.border.width} solid ${props.theme.button.border.color || props.theme.global.colors.brand};
     border-radius: ${props.theme.button.border.radius};
