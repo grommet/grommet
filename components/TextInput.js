@@ -176,7 +176,7 @@ var TextInput = function (_Component) {
           suggestions = _props.suggestions;
 
 
-      if (suggestions && suggestions.length) {
+      if (suggestions && Array.isArray(suggestions)) {
         this.setState({
           activeSuggestionIndex: -1, announceChange: true, dropActive: true
         });
