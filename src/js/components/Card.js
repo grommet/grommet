@@ -180,6 +180,8 @@ export default class Card extends Component {
     const { description, textSize } = this.props;
     let result = description;
     if (typeof description === 'string') {
+      console.warn(`Grommet Deprecation Notice: Card description's Markdown \
+support will be removed in Grommet's next major release.`);
       const components = {
         p: { props: {
           margin: PARAGRAPH_MARGINS[textSize],
