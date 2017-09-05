@@ -72,7 +72,13 @@ export default class Carousel extends Component {
   }
 
   componentDidUpdate () {
+    const { autoplay } = this.props;
     this._updateHammer();
+    if (autoplay) {
+      this._startAutoplay();
+    } else if (!autoplay) {
+      this._stopAutoplay();
+    }
   }
 
   componentWillUnmount () {
@@ -185,8 +191,8 @@ export default class Carousel extends Component {
   }
 
   _stopAutoplay () {
-    const { autoplay, persistentNav } = this.props;
-    if (autoplay) {
+    const { persistentNav } = this.props;
+    if (this._slideAnimation) {
       clearInterval(this._slideAnimation);
     }
 
