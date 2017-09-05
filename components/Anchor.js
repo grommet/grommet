@@ -254,7 +254,7 @@ var Anchor = function (_Component) {
 
             if (disabled) {
               event.preventDefault();
-            } else {
+            } else if (adjustedOnClick) {
               adjustedOnClick.apply(undefined, [event].concat(args));
             }
           } }),
