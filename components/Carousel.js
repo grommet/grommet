@@ -135,7 +135,14 @@ var Carousel = function (_Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate() {
+      var autoplay = this.props.autoplay;
+
       this._updateHammer();
+      if (autoplay) {
+        this._startAutoplay();
+      } else if (!autoplay) {
+        this._stopAutoplay();
+      }
     }
   }, {
     key: 'componentWillUnmount',
@@ -264,11 +271,9 @@ var Carousel = function (_Component) {
   }, {
     key: '_stopAutoplay',
     value: function _stopAutoplay() {
-      var _props2 = this.props,
-          autoplay = _props2.autoplay,
-          persistentNav = _props2.persistentNav;
+      var persistentNav = this.props.persistentNav;
 
-      if (autoplay) {
+      if (this._slideAnimation) {
         clearInterval(this._slideAnimation);
       }
 
@@ -282,11 +287,11 @@ var Carousel = function (_Component) {
     key: '_startAutoplay',
     value: function _startAutoplay() {
       var activeIndex = this.state.activeIndex;
-      var _props3 = this.props,
-          autoplay = _props3.autoplay,
-          children = _props3.children,
-          infinite = _props3.infinite,
-          persistentNav = _props3.persistentNav;
+      var _props2 = this.props,
+          autoplay = _props2.autoplay,
+          children = _props2.children,
+          infinite = _props2.infinite,
+          persistentNav = _props2.persistentNav;
 
       if (autoplay && (infinite || activeIndex !== children.length - 1) &&
       // making sure to only start autoplay if the focus is not inside
@@ -367,9 +372,9 @@ var Carousel = function (_Component) {
   }, {
     key: '_renderNextButton',
     value: function _renderNextButton() {
-      var _props4 = this.props,
-          children = _props4.children,
-          infinite = _props4.infinite;
+      var _props3 = this.props,
+          children = _props3.children,
+          infinite = _props3.infinite;
       var activeIndex = this.state.activeIndex;
       var intl = this.context.intl;
 
@@ -389,11 +394,11 @@ var Carousel = function (_Component) {
     value: function render() {
       var _this5 = this;
 
-      var _props5 = this.props,
-          a11yTitle = _props5.a11yTitle,
-          children = _props5.children,
-          className = _props5.className,
-          props = _objectWithoutProperties(_props5, ['a11yTitle', 'children', 'className']);
+      var _props4 = this.props,
+          a11yTitle = _props4.a11yTitle,
+          children = _props4.children,
+          className = _props4.className,
+          props = _objectWithoutProperties(_props4, ['a11yTitle', 'children', 'className']);
 
       delete props.activeIndex;
       delete props.onActive;
