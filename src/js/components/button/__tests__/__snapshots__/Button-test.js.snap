@@ -518,13 +518,13 @@ exports[`Button focus renders 1`] = `
   box-shadow: 0 0 1px 1px #00CCEB;
 }
 
-.c1 >:not(svg) circle,
-.c1 >:not(svg) ellipse,
-.c1 >:not(svg) line,
-.c1 >:not(svg) path,
-.c1 >:not(svg) polygon,
-.c1 >:not(svg) polyline,
-.c1 >:not(svg) rect {
+.c1 > circle,
+.c1 > ellipse,
+.c1 > line,
+.c1 > path,
+.c1 > polygon,
+.c1 > polyline,
+.c1 > rect {
   outline: #00CCEB solid 2px;
 }
 
