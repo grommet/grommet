@@ -48,12 +48,9 @@ class ToastContents extends Component {
     clearTimeout(this._timer);
     this._timer = undefined;
     this.setState({ closing: true });
-    setTimeout(() => {
-      if (onClose) {
-        onClose();
-      }
-      this.props.removeLayer();
-    }, ANIMATION_DURATION);
+    if (onClose) {
+      setTimeout(onClose, ANIMATION_DURATION);
+    }
   }
 
   render () {
@@ -65,7 +62,6 @@ class ToastContents extends Component {
     delete rest.intl;
     delete rest.router;
     delete rest.store;
-    delete rest.removeLayer;
 
     const classNames = classnames(
       CLASS_ROOT, {
@@ -78,7 +74,7 @@ class ToastContents extends Component {
     if (status) {
       statusIcon = (
         <Status className={`${CLASS_ROOT}__status`} value={status}
-          size={size === 'large' ? 'medium' : size} />
+                size={size === 'large' ? 'medium' : size} />
       );
     }
 
@@ -86,7 +82,7 @@ class ToastContents extends Component {
     if (onClose) {
       closeControl = (
         <Button className={`${CLASS_ROOT}__closer`}
-          icon={<CloseIcon />} onClick={this._onClose} />
+                icon={<CloseIcon />} onClick={this._onClose} />
       );
     }
 
@@ -94,7 +90,7 @@ class ToastContents extends Component {
       <div className={classNames} {...rest}>
         {statusIcon}
         <div ref={(ref) => this._contentsRef = ref}
-          className={`${CLASS_ROOT}__contents`}>
+             className={`${CLASS_ROOT}__contents`}>
           {children}
         </div>
         {closeControl}
@@ -127,7 +123,6 @@ ToastContents.childContextTypes = {
 export default class Toast extends Component {
 
   componentDidMount () {
-    this._removeLayer = this._removeLayer.bind(this);
     this._addLayer();
     this._renderLayer();
   }
@@ -171,7 +166,7 @@ export default class Toast extends Component {
                        intl={this.context.intl}
                        router={this.context.router}
                        store={this.context.store}
-                       removeLayer={this._removeLayer}/>
+                       onClose={() => this._removeLayer()}/>
       );
       ReactDOM.render(contents, this._element);
     }
