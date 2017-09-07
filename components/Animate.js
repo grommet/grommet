@@ -238,10 +238,13 @@ var Animate = function (_Component2) {
     value: function _listenForScroll() {
       var _this3 = this;
 
-      // add a time so that the finScrollParents function
+      // add a timeout so that the findScrollParents function
       // get the right container sizes
       setTimeout(function () {
         var scrollParents = (0, _DOM.findScrollParents)((0, _reactDom.findDOMNode)(_this3.animateRef));
+        if (scrollParents.indexOf(document) === -1) {
+          document.addEventListener('scroll', _this3._checkScroll);
+        }
         scrollParents.forEach(function (scrollParent) {
           scrollParent.addEventListener('scroll', _this3._checkScroll);
         }, _this3);
@@ -253,6 +256,9 @@ var Animate = function (_Component2) {
       var _this4 = this;
 
       var scrollParents = (0, _DOM.findScrollParents)((0, _reactDom.findDOMNode)(this.animateRef));
+      if (scrollParents.indexOf(document) === -1) {
+        document.removeEventListener('scroll', this._checkScroll);
+      }
       scrollParents.forEach(function (scrollParent) {
         scrollParent.removeEventListener('scroll', _this4._checkScroll);
       }, this);
@@ -264,7 +270,7 @@ var Animate = function (_Component2) {
           onAppear = _props.onAppear,
           onLeave = _props.onLeave;
 
-      var group = (0, _reactDom.findDOMNode)(this);
+      var group = (0, _reactDom.findDOMNode)(this.animateRef);
       var rect = group.getBoundingClientRect();
 
       if (rect.top < window.innerHeight) {
