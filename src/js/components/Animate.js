@@ -156,10 +156,13 @@ export default class Animate extends Component {
   }
 
   _listenForScroll () {
-    // add a time so that the finScrollParents function
+    // add a timeout so that the findScrollParents function
     // get the right container sizes
     setTimeout(() => {
       const scrollParents = findScrollParents(findDOMNode(this.animateRef));
+      if (scrollParents.indexOf(document) === -1) {
+        document.addEventListener('scroll', this._checkScroll);
+      }
       scrollParents.forEach((scrollParent) => {
         scrollParent.addEventListener('scroll', this._checkScroll);
       }, this);
@@ -168,6 +171,9 @@ export default class Animate extends Component {
 
   _unlistenForScroll () {
     const scrollParents = findScrollParents(findDOMNode(this.animateRef));
+    if (scrollParents.indexOf(document) === -1) {
+      document.removeEventListener('scroll', this._checkScroll);
+    }
     scrollParents.forEach((scrollParent) => {
       scrollParent.removeEventListener('scroll', this._checkScroll);
     }, this);
@@ -175,7 +181,7 @@ export default class Animate extends Component {
 
   _checkScroll () {
     const { onAppear, onLeave } = this.props;
-    const group = findDOMNode(this);
+    const group = findDOMNode(this.animateRef);
     const rect = group.getBoundingClientRect();
 
     if (rect.top < window.innerHeight) {
