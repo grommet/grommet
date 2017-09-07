@@ -4,6 +4,17 @@
   width: 100%;
 }
 
+.#{$grommet-namespace}world-map__container {
+  position: relative;
+  width: 100%;
+}
+
+.#{$grommet-namespace}world-map__flag {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
 .#{$grommet-namespace}world-map__continent,
 .#{$grommet-namespace}world-map__place {
   @include graph-stroke-color();
