@@ -4,5 +4,7 @@
     "stage-1",
     "react"
   ],
-  "plugins": ["styled-components"]
+  "plugins": [
+    ["styled-components", { "useDisplayName": false }]
+  ]
 }

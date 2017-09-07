@@ -61,21 +61,19 @@ export const baseStyle = css`
 
 // focus also supports clickable elements inside svg
 export const focusStyle = css`
-  > :not(svg) {
-    circle,
-    ellipse,
-    line,
-    path,
-    polygon,
-    polyline,
-    rect {
-      outline: ${
-        props => (
-          props.theme.global.focus.border.color ||
-          props.theme.global.colors.accent[0]
-        )
-      } solid 2px;
-    }
+  > circle,
+  > ellipse,
+  > line,
+  > path,
+  > polygon,
+  > polyline,
+  > rect {
+    outline: ${
+      props => (
+        props.theme.global.focus.border.color ||
+        props.theme.global.colors.accent[0]
+      )
+    } solid 2px;
   }
   border-color: ${
     props => (

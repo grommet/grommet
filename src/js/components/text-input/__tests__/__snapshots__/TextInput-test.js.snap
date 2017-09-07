@@ -51,13 +51,13 @@ exports[`TextInput calls onDOMChange when onInput is called 1`] = `
   box-shadow: 0 0 1px 1px #00CCEB;
 }
 
-.c1:focus >:not(svg) circle,
-.c1:focus >:not(svg) ellipse,
-.c1:focus >:not(svg) line,
-.c1:focus >:not(svg) path,
-.c1:focus >:not(svg) polygon,
-.c1:focus >:not(svg) polyline,
-.c1:focus >:not(svg) rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: #00CCEB solid 2px;
 }
 
@@ -146,13 +146,13 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
   box-shadow: 0 0 1px 1px #00CCEB;
 }
 
-.c1:focus >:not(svg) circle,
-.c1:focus >:not(svg) ellipse,
-.c1:focus >:not(svg) line,
-.c1:focus >:not(svg) path,
-.c1:focus >:not(svg) polygon,
-.c1:focus >:not(svg) polyline,
-.c1:focus >:not(svg) rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: #00CCEB solid 2px;
 }
 
@@ -241,13 +241,13 @@ exports[`TextInput renders 1`] = `
   box-shadow: 0 0 1px 1px #00CCEB;
 }
 
-.c1:focus >:not(svg) circle,
-.c1:focus >:not(svg) ellipse,
-.c1:focus >:not(svg) line,
-.c1:focus >:not(svg) path,
-.c1:focus >:not(svg) polygon,
-.c1:focus >:not(svg) polyline,
-.c1:focus >:not(svg) rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: #00CCEB solid 2px;
 }
 
@@ -336,13 +336,13 @@ exports[`TextInput renders with complex suggestions 1`] = `
   box-shadow: 0 0 1px 1px #00CCEB;
 }
 
-.c1:focus >:not(svg) circle,
-.c1:focus >:not(svg) ellipse,
-.c1:focus >:not(svg) line,
-.c1:focus >:not(svg) path,
-.c1:focus >:not(svg) polygon,
-.c1:focus >:not(svg) polyline,
-.c1:focus >:not(svg) rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: #00CCEB solid 2px;
 }
 
@@ -431,13 +431,13 @@ exports[`TextInput renders with suggestions 1`] = `
   box-shadow: 0 0 1px 1px #00CCEB;
 }
 
-.c1:focus >:not(svg) circle,
-.c1:focus >:not(svg) ellipse,
-.c1:focus >:not(svg) line,
-.c1:focus >:not(svg) path,
-.c1:focus >:not(svg) polygon,
-.c1:focus >:not(svg) polyline,
-.c1:focus >:not(svg) rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: #00CCEB solid 2px;
 }
 
@@ -526,13 +526,13 @@ exports[`TextInput show suggestions on input change 1`] = `
   box-shadow: 0 0 1px 1px #00CCEB;
 }
 
-.c1:focus >:not(svg) circle,
-.c1:focus >:not(svg) ellipse,
-.c1:focus >:not(svg) line,
-.c1:focus >:not(svg) path,
-.c1:focus >:not(svg) polygon,
-.c1:focus >:not(svg) polyline,
-.c1:focus >:not(svg) rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: #00CCEB solid 2px;
 }
 
@@ -621,13 +621,13 @@ exports[`TextInput show suggestions on input change 2`] = `
   box-shadow: 0 0 1px 1px #00CCEB;
 }
 
-.c1:focus >:not(svg) circle,
-.c1:focus >:not(svg) ellipse,
-.c1:focus >:not(svg) line,
-.c1:focus >:not(svg) path,
-.c1:focus >:not(svg) polygon,
-.c1:focus >:not(svg) polyline,
-.c1:focus >:not(svg) rect {
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
   outline: #00CCEB solid 2px;
 }
 

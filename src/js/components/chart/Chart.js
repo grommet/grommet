@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
+import StyledChart from './StyledChart';
+
 import { parseMetricToInt } from '../utils/mixins';
 import { colorForName } from '../utils/colors';
 
@@ -102,7 +104,7 @@ class Chart extends Component {
     }
 
     return (
-      <svg
+      <StyledChart
         viewBox={`-${strokeWidth / 2} -${strokeWidth / 2}
           ${width + strokeWidth} ${height + strokeWidth}`}
         preserveAspectRatio='none'
@@ -119,7 +121,7 @@ class Chart extends Component {
         >
           {contents}
         </g>
-      </svg>
+      </StyledChart>
     );
   }
 }

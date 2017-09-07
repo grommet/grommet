@@ -18,6 +18,10 @@ exports[`Meter background renders 1`] = `
   box-sizing: inherit;
 }
 
+.c1 {
+  max-width: 100%;
+}
+
 @media only screen and (min-width:481px) {
   .c0 {
     top: 0px;
@@ -34,6 +38,7 @@ exports[`Meter background renders 1`] = `
   className="c0"
 >
   <svg
+    className="c1"
     height={24}
     preserveAspectRatio="none"
     viewBox="0 0 384 24"
@@ -58,6 +63,7 @@ exports[`Meter background renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={24}
     preserveAspectRatio="none"
     viewBox="0 0 384 24"
@@ -82,6 +88,7 @@ exports[`Meter background renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={384}
     viewBox="0 0 384 384"
     width={384}
@@ -107,6 +114,7 @@ exports[`Meter background renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={384}
     viewBox="0 0 384 384"
     width={384}
@@ -152,6 +160,10 @@ exports[`Meter renders 1`] = `
   box-sizing: inherit;
 }
 
+.c1 {
+  max-width: 100%;
+}
+
 @media only screen and (min-width:481px) {
   .c0 {
     top: 0px;
@@ -168,6 +180,7 @@ exports[`Meter renders 1`] = `
   className="c0"
 >
   <svg
+    className="c1"
     height={24}
     preserveAspectRatio="none"
     viewBox="0 0 384 24"
@@ -182,6 +195,7 @@ exports[`Meter renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={24}
     preserveAspectRatio="none"
     viewBox="0 0 384 24"
@@ -226,6 +240,10 @@ exports[`Meter round renders 1`] = `
   box-sizing: inherit;
 }
 
+.c1 {
+  max-width: 100%;
+}
+
 @media only screen and (min-width:481px) {
   .c0 {
     top: 0px;
@@ -242,6 +260,7 @@ exports[`Meter round renders 1`] = `
   className="c0"
 >
   <svg
+    className="c1"
     height={24}
     preserveAspectRatio="none"
     viewBox="0 0 384 24"
@@ -266,6 +285,7 @@ exports[`Meter round renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={384}
     viewBox="0 0 384 384"
     width={384}
@@ -311,6 +331,10 @@ exports[`Meter size renders 1`] = `
   box-sizing: inherit;
 }
 
+.c1 {
+  max-width: 100%;
+}
+
 @media only screen and (min-width:481px) {
   .c0 {
     top: 0px;
@@ -327,6 +351,7 @@ exports[`Meter size renders 1`] = `
   className="c0"
 >
   <svg
+    className="c1"
     height={24}
     preserveAspectRatio="none"
     viewBox="0 0 96 24"
@@ -351,6 +376,7 @@ exports[`Meter size renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={24}
     preserveAspectRatio="none"
     viewBox="0 0 192 24"
@@ -375,6 +401,7 @@ exports[`Meter size renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={24}
     preserveAspectRatio="none"
     viewBox="0 0 384 24"
@@ -399,20 +426,21 @@ exports[`Meter size renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={24}
     preserveAspectRatio="none"
-    viewBox="0 0 576 24"
-    width={576}
+    viewBox="0 0 768 24"
+    width={768}
   >
     <path
-      d="M 0,12 L 576,12"
+      d="M 0,12 L 768,12"
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
       strokeWidth={24}
     />
     <path
-      d="M 0,12 L 115.2,12"
+      d="M 0,12 L 153.6,12"
       fill="none"
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
@@ -423,20 +451,21 @@ exports[`Meter size renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={24}
     preserveAspectRatio="none"
-    viewBox="0 0 720 24"
-    width={720}
+    viewBox="0 0 1152 24"
+    width={1152}
   >
     <path
-      d="M 0,12 L 720,12"
+      d="M 0,12 L 1152,12"
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
       strokeWidth={24}
     />
     <path
-      d="M 0,12 L 144,12"
+      d="M 0,12 L 230.4,12"
       fill="none"
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
@@ -447,6 +476,7 @@ exports[`Meter size renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={96}
     viewBox="0 0 96 96"
     width={96}
@@ -472,6 +502,7 @@ exports[`Meter size renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={192}
     viewBox="0 0 192 192"
     width={192}
@@ -497,6 +528,7 @@ exports[`Meter size renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={384}
     viewBox="0 0 384 384"
     width={384}
@@ -522,21 +554,22 @@ exports[`Meter size renders 1`] = `
     />
   </svg>
   <svg
-    height={576}
-    viewBox="0 0 576 576"
-    width={576}
+    className="c1"
+    height={768}
+    viewBox="0 0 768 768"
+    width={768}
   >
     <circle
-      cx={288}
-      cy={288}
+      cx={384}
+      cy={384}
       fill="none"
-      r={276}
+      r={372}
       stroke="#F6F6F6"
       strokeLinecap="square"
       strokeWidth={24}
     />
     <path
-      d="M 550.4915984975 202.7113095525 A 276.0000000000 276.0000000000 0 0 0 288.0000000000 12.0000000000"
+      d="M 737.7930240618 269.0456780925 A 372.0000000000 372.0000000000 0 0 0 384.0000000000 12.0000000000"
       fill="none"
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
@@ -547,21 +580,22 @@ exports[`Meter size renders 1`] = `
     />
   </svg>
   <svg
-    height={720}
-    viewBox="0 0 720 720"
-    width={720}
+    className="c1"
+    height={1152}
+    viewBox="0 0 1152 1152"
+    width={1152}
   >
     <circle
-      cx={360}
-      cy={360}
+      cx={576}
+      cy={576}
       fill="none"
-      r={348}
+      r={564}
       stroke="#F6F6F6"
       strokeLinecap="square"
       strokeWidth={24}
     />
     <path
-      d="M 690.9676676707 252.4620859575 A 348.0000000000 348.0000000000 0 0 0 360.0000000000 12.0000000000"
+      d="M 1112.3958751905 401.7144151725 A 564.0000000000 564.0000000000 0 0 0 576.0000000000 12.0000000000"
       fill="none"
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
@@ -592,6 +626,10 @@ exports[`Meter thickness renders 1`] = `
   box-sizing: inherit;
 }
 
+.c1 {
+  max-width: 100%;
+}
+
 @media only screen and (min-width:481px) {
   .c0 {
     top: 0px;
@@ -608,6 +646,7 @@ exports[`Meter thickness renders 1`] = `
   className="c0"
 >
   <svg
+    className="c1"
     height={6}
     preserveAspectRatio="none"
     viewBox="0 0 384 6"
@@ -632,6 +671,7 @@ exports[`Meter thickness renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={12}
     preserveAspectRatio="none"
     viewBox="0 0 384 12"
@@ -656,6 +696,7 @@ exports[`Meter thickness renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={24}
     preserveAspectRatio="none"
     viewBox="0 0 384 24"
@@ -680,6 +721,7 @@ exports[`Meter thickness renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={48}
     preserveAspectRatio="none"
     viewBox="0 0 384 48"
@@ -704,6 +746,7 @@ exports[`Meter thickness renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={96}
     preserveAspectRatio="none"
     viewBox="0 0 384 96"
@@ -728,6 +771,7 @@ exports[`Meter thickness renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={384}
     viewBox="0 0 384 384"
     width={384}
@@ -753,6 +797,7 @@ exports[`Meter thickness renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={384}
     viewBox="0 0 384 384"
     width={384}
@@ -778,6 +823,7 @@ exports[`Meter thickness renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={384}
     viewBox="0 0 384 384"
     width={384}
@@ -803,6 +849,7 @@ exports[`Meter thickness renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={384}
     viewBox="0 0 384 384"
     width={384}
@@ -828,6 +875,7 @@ exports[`Meter thickness renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={384}
     viewBox="0 0 384 384"
     width={384}
@@ -873,6 +921,10 @@ exports[`Meter type renders 1`] = `
   box-sizing: inherit;
 }
 
+.c1 {
+  max-width: 100%;
+}
+
 @media only screen and (min-width:481px) {
   .c0 {
     top: 0px;
@@ -889,6 +941,7 @@ exports[`Meter type renders 1`] = `
   className="c0"
 >
   <svg
+    className="c1"
     height={24}
     preserveAspectRatio="none"
     viewBox="0 0 384 24"
@@ -913,6 +966,7 @@ exports[`Meter type renders 1`] = `
     />
   </svg>
   <svg
+    className="c1"
     height={384}
     viewBox="0 0 384 384"
     width={384}

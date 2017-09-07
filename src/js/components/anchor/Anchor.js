@@ -2,7 +2,6 @@
 /* eslint-disable */
 import React, { Component, Children } from 'react';
 import { compose } from 'recompose';
-import { matchPath } from 'react-router';
 
 import StyledAnchor, { StyledIcon } from './StyledAnchor';
 

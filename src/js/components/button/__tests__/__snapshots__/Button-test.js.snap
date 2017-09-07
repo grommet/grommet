@@ -51,6 +51,7 @@ exports[`Button accent renders 1`] = `
 }
 
 .c1:hover svg {
+  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
@@ -84,6 +85,8 @@ exports[`Button accent renders 1`] = `
     className="c1"
     disabled={false}
     href={undefined}
+    icon={undefined}
+    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -139,6 +142,7 @@ exports[`Button box href renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  max-width: 100%;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -172,6 +176,8 @@ exports[`Button box href renders 1`] = `
     direction="column"
     disabled={false}
     href="test"
+    icon={undefined}
+    label={undefined}
     onBlur={[Function]}
     onClick={undefined}
     onFocus={[Function]}
@@ -225,6 +231,7 @@ exports[`Button box renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  max-width: 100%;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -258,6 +265,8 @@ exports[`Button box renders 1`] = `
     direction="column"
     disabled={false}
     href={undefined}
+    icon={undefined}
+    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -326,6 +335,7 @@ exports[`Button critical renders 1`] = `
 }
 
 .c1:hover svg {
+  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
@@ -359,6 +369,8 @@ exports[`Button critical renders 1`] = `
     className="c1"
     disabled={false}
     href={undefined}
+    icon={undefined}
+    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -446,6 +458,8 @@ exports[`Button disabled renders 1`] = `
     className="c1"
     disabled={true}
     href={undefined}
+    icon={undefined}
+    label={undefined}
     onBlur={[Function]}
     onClick={undefined}
     onFocus={[Function]}
@@ -504,13 +518,13 @@ exports[`Button focus renders 1`] = `
   box-shadow: 0 0 1px 1px #00CCEB;
 }
 
-.c1 >:not(svg) circle,
-.c1 >:not(svg) ellipse,
-.c1 >:not(svg) line,
-.c1 >:not(svg) path,
-.c1 >:not(svg) polygon,
-.c1 >:not(svg) polyline,
-.c1 >:not(svg) rect {
+.c1 > circle,
+.c1 > ellipse,
+.c1 > line,
+.c1 > path,
+.c1 > polygon,
+.c1 > polyline,
+.c1 > rect {
   outline: #00CCEB solid 2px;
 }
 
@@ -541,6 +555,8 @@ exports[`Button focus renders 1`] = `
     className="c1"
     disabled={false}
     href={undefined}
+    icon={undefined}
+    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -623,6 +639,8 @@ exports[`Button hoverIndicator as object renders 1`] = `
     className="c1"
     disabled={false}
     href={undefined}
+    icon={undefined}
+    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -701,6 +719,8 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
     className="c1"
     disabled={false}
     href={undefined}
+    icon={undefined}
+    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -779,6 +799,8 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
     className="c1"
     disabled={false}
     href={undefined}
+    icon={undefined}
+    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -857,6 +879,8 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
     className="c1"
     disabled={false}
     href={undefined}
+    icon={undefined}
+    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -935,6 +959,8 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
     className="c1"
     disabled={false}
     href={undefined}
+    icon={undefined}
+    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -1013,6 +1039,8 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
     className="c1"
     disabled={false}
     href={undefined}
+    icon={undefined}
+    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -1091,6 +1119,8 @@ exports[`Button hoverIndicator renders 1`] = `
     className="c1"
     disabled={false}
     href={undefined}
+    icon={undefined}
+    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -1150,6 +1180,7 @@ exports[`Button href renders 1`] = `
 }
 
 .c1:hover svg {
+  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
@@ -1183,6 +1214,8 @@ exports[`Button href renders 1`] = `
     className="c1"
     disabled={false}
     href="test"
+    icon={undefined}
+    label={undefined}
     onBlur={[Function]}
     onClick={undefined}
     onFocus={[Function]}
@@ -1256,6 +1289,7 @@ exports[`Button icon label renders 1`] = `
 }
 
 .c1:hover svg {
+  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
@@ -1289,6 +1323,8 @@ exports[`Button icon label renders 1`] = `
     className="c1"
     disabled={false}
     href={undefined}
+    icon={<svg />}
+    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -1363,6 +1399,7 @@ exports[`Button primary renders 1`] = `
 }
 
 .c1 svg {
+  -webkit-fill: #FFFFFF;
   fill: #FFFFFF;
   stroke: #FFFFFF;
   -webkit-transition: none;
@@ -1396,6 +1433,8 @@ exports[`Button primary renders 1`] = `
     className="c1"
     disabled={false}
     href={undefined}
+    icon={undefined}
+    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -1463,6 +1502,7 @@ exports[`Button renders 1`] = `
 }
 
 .c1:hover svg {
+  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
@@ -1496,6 +1536,8 @@ exports[`Button renders 1`] = `
     className="c1"
     disabled={false}
     href={undefined}
+    icon={undefined}
+    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -1575,6 +1617,7 @@ exports[`Button reverse icon label renders 1`] = `
 }
 
 .c1:hover svg {
+  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
@@ -1608,6 +1651,8 @@ exports[`Button reverse icon label renders 1`] = `
     className="c1"
     disabled={false}
     href={undefined}
+    icon={<svg />}
+    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -1681,6 +1726,7 @@ exports[`Button secondary renders 1`] = `
 }
 
 .c1:hover svg {
+  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
@@ -1714,6 +1760,8 @@ exports[`Button secondary renders 1`] = `
     className="c1"
     disabled={false}
     href={undefined}
+    icon={undefined}
+    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}

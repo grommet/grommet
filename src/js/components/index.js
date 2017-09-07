@@ -6,6 +6,7 @@ export * from './grid';
 export * from './grommet';
 export * from './heading';
 export * from './keyboard';
+export * from './layer';
 export * from './markdown';
 export * from './meter';
 export * from './paragraph';

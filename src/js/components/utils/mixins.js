@@ -25,6 +25,13 @@ export function lapAndUp(content) {
   `;
 }
 
+const palmEnd = '480px';
+export function palm(content) {
+  return `
+    @media only screen and (max-width:${palmEnd}) { ${content}; }
+  `;
+}
+
 export function findAllByType(component, type) {
   let matches = [];
 
@@ -42,5 +49,5 @@ export function findAllByType(component, type) {
 }
 
 export default {
-  fontSize, findAllByType, lapAndUp,
+  fontSize, findAllByType, lapAndUp, palm,
 };

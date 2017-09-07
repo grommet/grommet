@@ -1,7 +1,7 @@
 import { schema, PropTypes } from 'react-desc';
 
 const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge',
-  'xxlarge', 'full', '1/2', '1/3', '2/3', '1/4', '3/4', 'flex'];
+  'full', '1/2', '1/3', '2/3', '1/4', '3/4', 'flex'];
 const edgeSizes = ['small', 'medium', 'large', 'none'];
 
 export default Grid => schema(Grid, {

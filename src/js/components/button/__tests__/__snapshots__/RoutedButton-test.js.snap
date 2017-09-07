@@ -50,6 +50,7 @@ exports[`RoutedButton renders 1`] = `
 }
 
 .c1:hover svg {
+  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
@@ -83,6 +84,8 @@ exports[`RoutedButton renders 1`] = `
     className="c1"
     disabled={false}
     href="/"
+    icon={undefined}
+    label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
