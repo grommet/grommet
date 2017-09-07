@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { compose } from 'recompose';
 
 import StyledTextInput, { StyledSuggestion, StyledSuggestions } from './StyledTextInput';
-import { Button } from '../button';
-import { Keyboard } from '../keyboard';
-import { Drop } from '../drop';
+import { Button } from '../Button';
+import { Keyboard } from '../Keyboard';
+import { Drop } from '../Drop';
 
 import { withFocus, withTheme } from '../hocs';
 

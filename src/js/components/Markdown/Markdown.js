@@ -3,8 +3,8 @@ import { compose } from 'recompose';
 import Markdown from 'markdown-to-jsx';
 import deepAssign from 'deep-assign';
 
-import Heading from '../heading/Heading';
-import Paragraph from '../paragraph/Paragraph';
+import { Heading } from '../Heading';
+import { Paragraph } from '../Paragraph';
 
 import { withTheme } from '../hocs';
 

@@ -6,7 +6,7 @@ import deepAssign from 'deep-assign';
 
 import StyledLayer, { StyledContainer } from './StyledLayer';
 
-import { Keyboard } from '../keyboard';
+import { Keyboard } from '../Keyboard';
 
 import baseTheme from '../../themes/vanilla';
 

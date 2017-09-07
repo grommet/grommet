@@ -2,7 +2,7 @@ import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
 
 import StyledButton, { StyledLabel, StyledIcon } from './StyledButton';
-import { Box } from '../box';
+import { Box } from '../Box';
 
 import { withFocus, withTheme } from '../hocs';
 
