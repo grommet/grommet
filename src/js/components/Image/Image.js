@@ -9,10 +9,8 @@ import doc from './doc';
 
 class Image extends Component {
   render() {
-    const { ...rest } = this.props;
-
     return (
-      <StyledImage {...rest} />
+      <StyledImage {...this.props} />
     );
   }
 }
