@@ -48,10 +48,9 @@ export default class Circle extends Component {
           key={key}
           d={d}
           fill='none'
-          stroke={colorForName(colorName, theme)}
+          stroke={colorForName((someHighlight && !highlight) ? background : colorName, theme)}
           strokeWidth={height}
           strokeLinecap={round ? 'round' : 'square'}
-          strokeOpacity={(someHighlight && !highlight) ? 0.5 : 1}
           {...hoverProps}
           {...rest}
         />
