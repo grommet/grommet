@@ -620,12 +620,12 @@ exports[`Box basis renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  -webkit-flex-basis: 96px;
-  -ms-flex-basis: 96px;
-  flex-basis: 96px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 96px;
+  -ms-flex-basis: 96px;
+  flex-basis: 96px;
 }
 
 .c3 {
@@ -634,12 +634,12 @@ exports[`Box basis renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  -webkit-flex-basis: 192px;
-  -ms-flex-basis: 192px;
-  flex-basis: 192px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 192px;
+  -ms-flex-basis: 192px;
+  flex-basis: 192px;
 }
 
 .c4 {
@@ -648,12 +648,12 @@ exports[`Box basis renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  -webkit-flex-basis: 384px;
-  -ms-flex-basis: 384px;
-  flex-basis: 384px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 384px;
+  -ms-flex-basis: 384px;
+  flex-basis: 384px;
 }
 
 .c5 {
@@ -662,12 +662,12 @@ exports[`Box basis renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  -webkit-flex-basis: 768px;
-  -ms-flex-basis: 768px;
-  flex-basis: 768px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 768px;
+  -ms-flex-basis: 768px;
+  flex-basis: 768px;
 }
 
 .c6 {
@@ -676,12 +676,12 @@ exports[`Box basis renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  -webkit-flex-basis: 1152px;
-  -ms-flex-basis: 1152px;
-  flex-basis: 1152px;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 1152px;
+  -ms-flex-basis: 1152px;
+  flex-basis: 1152px;
 }
 
 .c8 {
@@ -690,12 +690,12 @@ exports[`Box basis renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  -webkit-flex-basis: 100%;
-  -ms-flex-basis: 100%;
-  flex-basis: 100%;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 100%;
+  -ms-flex-basis: 100%;
+  flex-basis: 100%;
 }
 
 .c9 {
@@ -704,12 +704,12 @@ exports[`Box basis renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  -webkit-flex-basis: 50%;
-  -ms-flex-basis: 50%;
-  flex-basis: 50%;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 50%;
+  -ms-flex-basis: 50%;
+  flex-basis: 50%;
 }
 
 .c10 {
@@ -718,12 +718,12 @@ exports[`Box basis renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  -webkit-flex-basis: 33.33%;
-  -ms-flex-basis: 33.33%;
-  flex-basis: 33.33%;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 33.33%;
+  -ms-flex-basis: 33.33%;
+  flex-basis: 33.33%;
 }
 
 .c11 {
@@ -732,12 +732,12 @@ exports[`Box basis renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  -webkit-flex-basis: 66.66%;
-  -ms-flex-basis: 66.66%;
-  flex-basis: 66.66%;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 66.66%;
+  -ms-flex-basis: 66.66%;
+  flex-basis: 66.66%;
 }
 
 .c12 {
@@ -746,12 +746,12 @@ exports[`Box basis renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  -webkit-flex-basis: 25%;
-  -ms-flex-basis: 25%;
-  flex-basis: 25%;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 25%;
+  -ms-flex-basis: 25%;
+  flex-basis: 25%;
 }
 
 .c13 {
@@ -760,12 +760,12 @@ exports[`Box basis renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  -webkit-flex-basis: 75%;
-  -ms-flex-basis: 75%;
-  flex-basis: 75%;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-flex-basis: 75%;
+  -ms-flex-basis: 75%;
+  flex-basis: 75%;
 }
 
 @media only screen and (min-width:481px) {
@@ -1143,9 +1143,9 @@ exports[`Box flex renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
+  -webkit-flex: 0 0;
+  -ms-flex: 0 0;
+  flex: 0 0;
 }
 
 .c4 {
