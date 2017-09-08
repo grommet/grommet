@@ -73,11 +73,11 @@ test('TextInput show suggestions on input change', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('TextInput calls onDOMChange when onInput is called', () => {
-  const onDOMChange = jest.fn();
+test('TextInput calls onInput when input changes', () => {
+  const onInput = jest.fn();
   const component = renderer.create(
     <Grommet>
-      <TextInput id='item' name='item' onDOMChange={onDOMChange} />
+      <TextInput id='item' name='item' onInput={onInput} />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -85,7 +85,7 @@ test('TextInput calls onDOMChange when onInput is called', () => {
   const input = findAllByType(tree, 'input')[0];
   const fakeEvent = {};
   input.props.onInput(fakeEvent);
-  expect(onDOMChange).toBeCalledWith(fakeEvent);
+  expect(onInput).toBeCalledWith(fakeEvent);
 });
 
 test('TextInput closes suggestion drop', () => {

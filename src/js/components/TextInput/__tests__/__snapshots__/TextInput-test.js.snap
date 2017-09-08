@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextInput calls onDOMChange when onInput is called 1`] = `
+exports[`TextInput calls onInput when input changes 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;

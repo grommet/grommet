@@ -14,14 +14,13 @@ export default TextInput => schema(TextInput, {
     name: [
       PropTypes.string, 'The name attribute of the input.',
     ],
-    // TODO: investigate to rename to onChange
-    onDOMChange: [
+    onInput: [
       PropTypes.func,
       'Function that will be called when the user types in the input.',
     ],
     onSelect: [
       PropTypes.func,
-      `Function that will be called when the user selects a suggestion. 
+      `Function that will be called when the user selects a suggestion.
       The suggestion contains the object chosen from the supplied suggestions.`,
     ],
     placeholder: [
@@ -37,7 +36,7 @@ export default TextInput => schema(TextInput, {
           PropTypes.string,
         ])
       ),
-      `Suggestions to show. It is recommended to avoid showing too many 
+      `Suggestions to show. It is recommended to avoid showing too many
       suggestions and instead rely on the user to type more.`,
     ],
     value: [
