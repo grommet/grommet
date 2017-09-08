@@ -107,12 +107,12 @@ export default class Button extends Component {
     const { router } = this.context;
 
     let buttonIcon;
-    if (icon) {
+    if (icon && !plain) {
       buttonIcon = <span className={`${CLASS_ROOT}__icon`}>{icon}</span>;
     }
 
     let buttonLabel;
-    if (label) {
+    if (label && !plain) {
       buttonLabel = <span className={`${CLASS_ROOT}__label`}>{label}</span>;
     }
 

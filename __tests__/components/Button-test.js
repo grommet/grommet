@@ -24,7 +24,9 @@ describe('Button', () => {
   });
   it('has correct plain={true} rendering', () => {
     const component = renderer.create(
-      <Button label='Test me' plain={true} />
+      <Button label='Test me' icon={<FakeIcon />} plain={true}>
+        Test Child
+      </Button>
     );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
