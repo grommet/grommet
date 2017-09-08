@@ -4,6 +4,7 @@ export * from './Chart';
 export * from './Grid';
 export * from './Grommet';
 export * from './Heading';
+export * from './Image';
 export * from './Keyboard';
 export * from './Layer';
 export * from './Markdown';

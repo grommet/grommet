@@ -6,12 +6,12 @@ const FIT_MAP = {
 };
 
 const fitStyle = css`
+  flex: 1 1;
+  overflow: hidden;
   object-fit: ${props => FIT_MAP[props.fit]};
 `;
 
 const StyledImage = styled.img`
-  width: 100%;
-
   ${props => props.fit && fitStyle}
 `;
 
