@@ -15,6 +15,7 @@ Object {
   "Markdown": [Function],
   "Meter": [Function],
   "Paragraph": [Function],
+  "RoutedAnchor": [Function],
   "RoutedButton": [Function],
   "Stack": [Function],
   "Text": [Function],

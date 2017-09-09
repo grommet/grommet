@@ -41,6 +41,9 @@ export default {
       `,
     },
   },
+  anchor: {
+    color: 'inherit',
+  },
   button: {
     border: {
       radius: '0px',

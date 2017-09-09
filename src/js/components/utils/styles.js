@@ -81,7 +81,7 @@ export const focusStyle = css`
       props.theme.global.colors.accent[0]
     )
   };
-  box-shadow: 0 0 1px 1px ${
+  box-shadow: 0 0 2px 2px ${
     props => (
       props.theme.global.focus.border.color ||
       props.theme.global.colors.accent[0]

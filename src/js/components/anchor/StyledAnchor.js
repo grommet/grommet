@@ -1,50 +1,57 @@
-/* TODO: re-enable eslint before code review */
-/* eslint-disable */
-
 import styled, { css } from 'styled-components';
 
-import { focusStyle, fontSize, lapAndUp, parseMetricToInt } from '../utils';
+import { focusStyle, fontSize, parseMetricToInt } from '../utils';
 
-const anchorStyles = css`
-  color: ${props => props.theme.anchor.colors.default};
-  text-decoration: ${props => props.theme.anchor.textDecoration};
-  cursor: pointer;
+const primaryIconLabelStyle = css`
+  ${props => fontSize(props.theme.global.control.font.size, props.theme.global.spacing)}
+  font-weight: ${props => props.theme.global.control.font.weight};
 `;
 
-const primaryStyles = css`
-  color: ${props => props.theme.anchor.colors.brand};
-  font-weight: ${props => props.theme.anchor.fontWeight};
+const disabledStyle = `
+  opacity: 0.3;
+  cursor: default;
   text-decoration: none;
 `;
 
-const disabledStyles = css`
-  opacity: 0.3;
-  cursor: default;
-`;
+const StyledAnchor = styled.a`
+  color: ${props => props.theme.anchor.color};
+  text-decoration: ${props => props.theme.anchor.textDecoration};
+  cursor: pointer;
+  outline: none;
+  
+  ${props => !props.disabled && `
+    &:hover {
+      text-decoration: underline;
+    }
+  `}
 
-const iconStyles = css`
-  flex: 0 0 auto;
-`;
+  ${props => (props.primary || (props.icon && props.label)) && primaryIconLabelStyle}
+  ${props => !props.primary && props.icon && props.label && `
+    color: ${props.theme.global.colors.text};
+  `}
+  ${props => props.icon && !props.label && `
+    padding: 12px;
+  `}
 
-const styles = css`
-  ${anchorStyles}
-  ${props => props.disabled && disabledStyles}
-  ${props => props.primary && primaryStyles}
-  ${props => props.icon && iconStyles}
+  ${props => props.disabled && disabledStyle}
+  ${props => props.focus && focusStyle}
 `;
 
 export const StyledIcon = styled.span`
   display: inline-block;
-
-  &:first-child:not(:last-child) {
-    margin-right: ${props => parseMetricToInt(props.theme.global.spacing) / 2}px;
-  }
+  ${props => props.label && `
+    ${props.reverse ? `
+      margin-left: ${parseMetricToInt(props.theme.global.spacing) / 2}px;
+    ` : `
+      margin-right: ${parseMetricToInt(props.theme.global.spacing) / 2}px;
+    `}
+  `}
 
   > * {
     vertical-align: bottom;
   }
 `;
 
-export default styled.a`
-  ${styles}
+export default StyledAnchor.extend`
+  ${props => props.theme.anchor.extend}
 `;
