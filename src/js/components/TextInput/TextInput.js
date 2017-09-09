@@ -24,7 +24,7 @@ class TextInput extends Component {
     showDrop: false,
   }
 
-  onInputChange() {
+  resetSuggestions() {
     const { suggestions } = this.props;
 
     if (suggestions && suggestions.length) {
@@ -129,7 +129,8 @@ class TextInput extends Component {
   }
 
   render() {
-    const { defaultValue, value, onKeyDown, ...rest } = this.props;
+    const { defaultValue, value, onInput, onKeyDown, ...rest } = this.props;
+    delete rest.onInput; // se we can manage in onInputChange()
     const { showDrop } = this.state;
     // needed so that styled components does not invoke
     // onSelect when text input is clicked
@@ -205,12 +206,9 @@ class TextInput extends Component {
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
             onInput={(event) => {
-              const { onDOMChange } = this.props;
-
-              this.onInputChange();
-
-              if (onDOMChange) {
-                onDOMChange(event);
+              this.resetSuggestions();
+              if (onInput) {
+                onInput(event);
               }
             }}
           />

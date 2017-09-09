@@ -62,7 +62,7 @@ const directionStyle = css`
 
 const FLEX_MAP = {
   [true]: '1 1',
-  [false]: '0 0 auto',
+  [false]: '0 0',
   grow: '1 0',
   shrink: '0 1',
 };
@@ -192,6 +192,7 @@ const roundStyle = css`
   border-radius: ${props => ROUND_MAP[props.round] || props.theme.global.edgeSize[props.round]};
 `;
 
+// NOTE: basis must be after flex! Otherwise, flex overrides basis
 const StyledBox = styled.div`
   display: flex;
   max-width: 100%;
@@ -199,11 +200,11 @@ const StyledBox = styled.div`
   ${props => props.align && alignStyle}
   ${props => props.alignContent && alignContentStyle}
   ${props => props.alignSelf && alignSelfStyle}
-  ${props => props.basis && basisStyle}
   ${props => props.background && backgroundStyle(props.background, props.theme)}
   ${props => props.border && borderStyle(props.border, props.theme)}
   ${props => (props.direction || props.reverse) && directionStyle}
   ${props => props.flex !== undefined && flexStyle}
+  ${props => props.basis && basisStyle}
   ${props => props.full && fullStyle(props.full)}
   ${props => props.gridArea && gridAreaStyle}
   ${props => props.justify && justifyStyle}

@@ -9,6 +9,7 @@ Object {
   "Grid": [Function],
   "Grommet": [Function],
   "Heading": [Function],
+  "Image": [Function],
   "Keyboard": [Function],
   "Layer": [Function],
   "LayerContainer": [Function],
