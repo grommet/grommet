@@ -5,6 +5,7 @@ import LayerContainer from './LayerContainer';
 
 import doc from './doc';
 
+import { createContextProvider } from '../hocs';
 import { getNewContainer } from '../utils';
 
 class Layer extends Component {
@@ -37,8 +38,11 @@ class Layer extends Component {
   }
 
   renderLayer() {
+    const ContextProvider = createContextProvider(this.props.context);
     render(
-      <LayerContainer {...this.props} />,
+      <ContextProvider>
+        <LayerContainer {...this.props} />
+      </ContextProvider>,
       this.layerContainer
     );
   }

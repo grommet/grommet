@@ -48,7 +48,7 @@ exports[`TextInput calls onInput when input changes 1`] = `
 
 .c1:focus {
   border-color: #00CCEB;
-  box-shadow: 0 0 1px 1px #00CCEB;
+  box-shadow: 0 0 2px 2px #00CCEB;
 }
 
 .c1:focus > circle,
@@ -143,7 +143,7 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 
 .c1:focus {
   border-color: #00CCEB;
-  box-shadow: 0 0 1px 1px #00CCEB;
+  box-shadow: 0 0 2px 2px #00CCEB;
 }
 
 .c1:focus > circle,
@@ -238,7 +238,7 @@ exports[`TextInput renders 1`] = `
 
 .c1:focus {
   border-color: #00CCEB;
-  box-shadow: 0 0 1px 1px #00CCEB;
+  box-shadow: 0 0 2px 2px #00CCEB;
 }
 
 .c1:focus > circle,
@@ -333,7 +333,7 @@ exports[`TextInput renders with complex suggestions 1`] = `
 
 .c1:focus {
   border-color: #00CCEB;
-  box-shadow: 0 0 1px 1px #00CCEB;
+  box-shadow: 0 0 2px 2px #00CCEB;
 }
 
 .c1:focus > circle,
@@ -428,7 +428,7 @@ exports[`TextInput renders with suggestions 1`] = `
 
 .c1:focus {
   border-color: #00CCEB;
-  box-shadow: 0 0 1px 1px #00CCEB;
+  box-shadow: 0 0 2px 2px #00CCEB;
 }
 
 .c1:focus > circle,
@@ -523,7 +523,7 @@ exports[`TextInput show suggestions on input change 1`] = `
 
 .c1:focus {
   border-color: #00CCEB;
-  box-shadow: 0 0 1px 1px #00CCEB;
+  box-shadow: 0 0 2px 2px #00CCEB;
 }
 
 .c1:focus > circle,
@@ -618,7 +618,7 @@ exports[`TextInput show suggestions on input change 2`] = `
 
 .c1:focus {
   border-color: #00CCEB;
-  box-shadow: 0 0 1px 1px #00CCEB;
+  box-shadow: 0 0 2px 2px #00CCEB;
 }
 
 .c1:focus > circle,

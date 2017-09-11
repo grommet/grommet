@@ -1,24 +1,13 @@
 import { schema, PropTypes } from 'react-desc';
 
+import { ROUTER_PROPS } from '../utils';
+
 export function routedButton(RoutedButton) {
   return schema(RoutedButton, {
     description: 'A button with support for React Router.',
     usage: `import { RoutedButton } from 'grommet';
-    <RoutedButton primary={true} href="/documentation" />`,
-    props: {
-      path: [
-        PropTypes.string,
-        'Indicates the path to be used for react-router link.', {
-          required: true,
-        },
-      ],
-      method: [
-        PropTypes.oneOf(['push', 'replace']),
-        'Indicates whether the browser history should be appended to or replaced.', {
-          defaultProp: 'push',
-        },
-      ],
-    },
+    <RoutedButton primary={true} path="/documentation" />`,
+    props: { ...ROUTER_PROPS },
   });
 }
 
@@ -30,14 +19,10 @@ export default Button => schema(Button, {
   props: {
     a11yTitle: [
       PropTypes.string,
-      'Custom title used by screen readers.',
+      'Custom title to be used by screen readers.',
     ],
     accent: [
       PropTypes.bool, 'Whether this is a accent button.',
-    ],
-    align: [
-      PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
-      'How to align the contents along the cross axis.',
     ],
     box: [
       PropTypes.bool,

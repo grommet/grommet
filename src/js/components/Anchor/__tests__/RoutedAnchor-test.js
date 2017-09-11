@@ -4,54 +4,54 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { RoutedButton } from '../';
+import { RoutedAnchor } from '../';
 
 import { findAllByType } from '../../utils';
 
-test('RoutedButton renders', () => {
+test('RoutedAnchor renders', () => {
   const component = renderer.create(
     <Grommet>
-      <RoutedButton label='Test' path='/' />
+      <RoutedAnchor label='Test' path='/' />
     </Grommet>
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-test('RoutedButton is clickable', () => {
+test('RoutedAnchor is clickable', () => {
   const onClick = jest.fn();
   const component = renderer.create(
     <Grommet>
-      <RoutedButton label='Test' onClick={onClick} />
+      <RoutedAnchor label='Test' onClick={onClick} />
     </Grommet>
   );
   const tree = component.toJSON();
 
-  const button = findAllByType(tree, 'button');
-  button[0].props.onClick();
+  const anchor = findAllByType(tree, 'a');
+  anchor[0].props.onClick();
   expect(onClick).toBeCalled();
 });
 
-test('RoutedButton skips onClick if right clicked', () => {
+test('RoutedAnchor skips onClick if right clicked', () => {
   const onClick = jest.fn();
   const component = renderer.create(
     <Grommet>
-      <RoutedButton label='Test' onClick={onClick} />
+      <RoutedAnchor label='Test' onClick={onClick} />
     </Grommet>
   );
   const tree = component.toJSON();
 
-  const button = findAllByType(tree, 'button');
-  button[0].props.onClick({
+  const anchor = findAllByType(tree, 'a');
+  anchor[0].props.onClick({
     ctrlKey: true,
   });
-  button[0].props.onClick({
+  anchor[0].props.onClick({
     metaKey: true,
   });
   expect(onClick).not.toBeCalled();
 });
 
-test('RoutedButton calls router context push', () => {
+test('RoutedAnchor calls router context push', () => {
   const preventDefault = jest.fn();
   const push = jest.fn();
   class FakeRouter extends Component {
@@ -74,21 +74,21 @@ test('RoutedButton calls router context push', () => {
   const component = renderer.create(
     <Grommet>
       <FakeRouter>
-        <RoutedButton label='Test' path='/' />
+        <RoutedAnchor label='Test' path='/' />
       </FakeRouter>
     </Grommet>
   );
   const tree = component.toJSON();
 
-  const button = findAllByType(tree, 'a');
-  button[0].props.onClick({
+  const anchor = findAllByType(tree, 'a');
+  anchor[0].props.onClick({
     preventDefault,
   });
   expect(preventDefault).toBeCalled();
   expect(push).toBeCalledWith('/');
 });
 
-test('RoutedButton calls router context replace', () => {
+test('RoutedAnchor calls router context replace', () => {
   const preventDefault = jest.fn();
   const replace = jest.fn();
   class FakeRouter extends Component {
@@ -109,14 +109,14 @@ test('RoutedButton calls router context replace', () => {
   const component = renderer.create(
     <Grommet>
       <FakeRouter>
-        <RoutedButton label='Test' path='/' method='replace' />
+        <RoutedAnchor label='Test' path='/' method='replace' />
       </FakeRouter>
     </Grommet>
   );
   const tree = component.toJSON();
 
-  const button = findAllByType(tree, 'a');
-  button[0].props.onClick({
+  const anchor = findAllByType(tree, 'a');
+  anchor[0].props.onClick({
     preventDefault,
   });
   expect(preventDefault).toBeCalled();

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import deepAssign from 'deep-assign';
+import cloneDeep from 'clone-deep';
 
 import StyledGrommet from './StyledGrommet';
 
@@ -19,7 +20,8 @@ class Grommet extends Component {
   getChildContext() {
     const { theme } = this.props;
 
-    const globalTheme = JSON.parse(JSON.stringify(baseTheme));
+    const globalTheme = cloneDeep(baseTheme);
+
     return {
       theme: deepAssign(globalTheme, theme),
     };
@@ -31,7 +33,7 @@ class Grommet extends Component {
       ...rest
     } = this.props;
 
-    const globalTheme = JSON.parse(JSON.stringify(baseTheme));
+    const globalTheme = cloneDeep(baseTheme);
     return (
       <StyledGrommet {...rest} theme={deepAssign(globalTheme, theme)}>
         {children}

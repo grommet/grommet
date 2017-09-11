@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
-import { focusStyle, fontSize, lapAndUp, parseMetricToInt } from '../utils';
+import { focusStyle, fontSize, lapAndUp } from '../utils';
 
 const primaryStyle = css`
   background-color: ${props => props.theme.global.colors.brand};
@@ -111,7 +111,7 @@ const fillStyle = `
 `;
 
 const plainFocusStyle = css`
-  box-shadow: 0 0 3px 3px ${
+  box-shadow: 0 0 ${props => props.theme.global.focus.border.width} ${props => props.theme.global.focus.border.width} ${
     props => (
       props.theme.global.focus.border.color ||
       props.theme.global.colors.accent[0]
@@ -127,16 +127,6 @@ const plainStyle = css`
   ${props => props.focus && plainFocusStyle}
 `;
 
-const TEXT_ALIGN_MAP = {
-  center: 'center',
-  end: 'right',
-  start: 'left',
-};
-
-export const textAlignStyle = css`
-  text-align: ${props => TEXT_ALIGN_MAP[props.align]};
-`;
-
 const StyledButton = styled.button`
   cursor: pointer;
   outline: none;
@@ -147,11 +137,6 @@ const StyledButton = styled.button`
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-
-  ${props => props.icon && !props.label && `
-    min-height: 48px;
-    min-width: 48px;
-  `}
 
   ${props => !props.plain && css`
     border: ${props.theme.button.border.width} solid ${props.theme.button.border.color || props.theme.global.colors.brand};
@@ -198,12 +183,14 @@ const StyledButton = styled.button`
   `)}
   ${props => props.plain && plainStyle}
   ${props => props.fill && fillStyle}
-  ${props => props.align && textAlignStyle}
+  ${props => props.icon && !props.label && `
+    padding: ${props.theme.global.edgeSize.small};
+  `}
 `;
 
 export const StyledLabel = styled.span`
   &:first-child:not(:last-child) {
-    margin-right: ${props => parseMetricToInt(props.theme.global.spacing) / 2}px;
+    margin-right: ${props => props.theme.global.edgeSize.small};
   }
 `;
 
@@ -211,7 +198,7 @@ export const StyledIcon = styled.span`
   display: inline-block;
 
   &:first-child:not(:last-child) {
-    margin-right: ${props => parseMetricToInt(props.theme.global.spacing) / 2}px;
+    margin-right: ${props => props.theme.global.edgeSize.small};
   }
 
   > * {

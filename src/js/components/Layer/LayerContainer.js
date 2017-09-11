@@ -3,6 +3,7 @@ import { findDOMNode } from 'react-dom';
 
 import PropTypes from 'prop-types';
 import deepAssign from 'deep-assign';
+import cloneDeep from 'clone-deep';
 
 import StyledLayer, { StyledContainer } from './StyledLayer';
 
@@ -16,16 +17,20 @@ class LayerContainer extends Component {
   static childContextTypes = {
     theme: PropTypes.object,
   }
+  static contextTypes = {
+    theme: PropTypes.object,
+  }
   static defaultProps = {
     theme: undefined,
   }
 
   getChildContext() {
     const { theme } = this.props;
+    const { theme: contextTheme } = this.context;
 
-    const globalTheme = JSON.parse(JSON.stringify(baseTheme));
     return {
-      theme: deepAssign(globalTheme, theme),
+      ...this.context,
+      theme: contextTheme || deepAssign(cloneDeep(baseTheme), theme),
     };
   }
 

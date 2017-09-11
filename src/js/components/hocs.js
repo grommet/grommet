@@ -2,6 +2,27 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import deepAssign from 'deep-assign';
 
+export function createContextProvider(context) {
+  const childContextTypes = {};
+  Object.keys(context || {}).forEach(
+    (key) => {
+      childContextTypes[key] = PropTypes.any.isRequired;
+    }
+  );
+  class ContextProvider extends React.Component {
+    static childContextTypes = childContextTypes;
+    getChildContext() {
+      return context;
+    }
+
+    render() {
+      return this.props.children;
+    }
+  }
+
+  return ContextProvider;
+}
+
 export const withFocus = (WrappedComponent) => {
   class FocusableComponent extends Component {
     state = {
@@ -83,4 +104,4 @@ export const withTheme = (WrappedComponent) => {
   return ThemedComponent;
 };
 
-export default { withFocus, withTheme };
+export default { createContextProvider, withFocus, withTheme };

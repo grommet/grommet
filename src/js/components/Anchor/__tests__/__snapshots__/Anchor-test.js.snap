@@ -1,0 +1,1964 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Anchor disabled renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  color: #865CD6;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  opacity: 0.3;
+  cursor: default;
+  text-decoration: none;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <a
+    aria-label={undefined}
+    className="c1"
+    disabled={true}
+    href={undefined}
+    icon={undefined}
+    label={undefined}
+    onBlur={[Function]}
+    onClick={undefined}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  />
+</div>
+`;
+
+exports[`Anchor focus renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  color: #865CD6;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  border-color: #00CCEB;
+  box-shadow: 0 0 2px 2px #00CCEB;
+}
+
+.c1:hover {
+  text-decoration: underline;
+}
+
+.c1 > circle,
+.c1 > ellipse,
+.c1 > line,
+.c1 > path,
+.c1 > polygon,
+.c1 > polyline,
+.c1 > rect {
+  outline: #00CCEB solid 2px;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <a
+    aria-label={undefined}
+    className="c1"
+    disabled={undefined}
+    href="#"
+    icon={undefined}
+    label="Test"
+    onBlur={[Function]}
+    onClick={undefined}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    Test
+  </a>
+</div>
+`;
+
+exports[`Anchor icon label renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c2 {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.c2 > * {
+  vertical-align: bottom;
+}
+
+.c1 {
+  color: #865CD6;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.c1:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <a
+    aria-label={undefined}
+    className="c1"
+    disabled={undefined}
+    href={undefined}
+    icon={
+      <StyledAnchor__StyledIcon
+        label="Test"
+        reverse={undefined}
+        theme={
+          Object {
+            "anchor": Object {
+              "color": "#865CD6",
+              "fontWeight": 600,
+              "textDecoration": "none",
+            },
+            "button": Object {
+              "border": Object {
+                "radius": "5px",
+                "width": "2px",
+              },
+              "colors": Object {
+                "accent": "#00CCEB",
+                "critical": "#FF324D",
+                "secondary": "#DC2878",
+              },
+              "maxWidth": "384px",
+              "minWidth": "120px",
+              "padding": Object {
+                "horizontal": "22px",
+                "vertical": "6px",
+              },
+            },
+            "global": Object {
+              "borderSize": Object {
+                "large": "6px",
+                "medium": "3px",
+                "small": "1px",
+                "xlarge": "24px",
+              },
+              "centerColumnWidth": "1152px",
+              "colors": Object {
+                "accent": Array [
+                  "#00CCEB",
+                  "#FF7D28",
+                ],
+                "background": "#FFFFFF",
+                "black": "#000000",
+                "brand": "#865CD6",
+                "dark": Array [
+                  "#333333",
+                  "#444444",
+                  "#555555",
+                  "#666666",
+                  "#777777",
+                  "#999999",
+                ],
+                "darkBackgroundTextColor": "rgba(255, 255, 255, 0.85)",
+                "light": Array [
+                  "#F6F6F6",
+                  "#EEEEEE",
+                  "#DDDDDD",
+                  "#CCCCCC",
+                  "#BBBBBB",
+                  "#AAAAAA",
+                ],
+                "neutral": Array [
+                  "#0A64A0",
+                  "#DC2878",
+                  "#501EB4",
+                  "#49516F",
+                ],
+                "status": Object {
+                  "critical": "#FF324D",
+                  "disabled": "#a8a8a8",
+                  "error": "#FF324D",
+                  "ok": "#8CC800",
+                  "unknown": "#a8a8a8",
+                  "warning": "#FFD602",
+                },
+                "text": "#333333",
+                "white": "#FFFFFF",
+              },
+              "control": Object {
+                "font": Object {
+                  "size": "19px",
+                  "weight": 600,
+                },
+              },
+              "drop": Object {
+                "backgroundColor": "#f8f8f8",
+                "border": Object {
+                  "radius": "0px",
+                  "width": "0px",
+                },
+                "boxShadow": "none",
+              },
+              "edgeSize": Object {
+                "large": "48px",
+                "medium": "24px",
+                "small": "12px",
+                "xlarge": "96px",
+                "xsmall": "6px",
+              },
+              "focus": Object {
+                "border": Object {
+                  "width": "2px",
+                },
+              },
+              "font": Object {
+                "face": "
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 300;
+                    src:
+                      local('Work Sans Light'),
+                      local('WorkSans-Light'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/FD_Udbezj8EHXbdsqLUplxampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
+                  }
+          
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    src:
+                      local('Work Sans'),
+                      local('WorkSans-Regular'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/ElUAY9q6T0Ayx4zWzW63VJBw1xU1rKptJj_0jans920.woff2\\") format('woff2');
+                  }
+          
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 500;
+                    src:
+                      local('Work Sans Medium'),
+                      local('WorkSans-Medium'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/Nbre-U_bp6Xktt8cpgwaJBampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
+                  }
+          
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 600;
+                    src:
+                      local('Work Sans SemiBold'),
+                      local('WorkSans-SemiBold'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/z9rX03Xuz9ZNHTMg1_ghGRampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
+                  }
+          
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 700;
+                    src:
+                      local('Work Sans Bold'),
+                      local('WorkSans-Bold'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/4udXuXg54JlPEP5iKO5AmRampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
+                  }
+                ",
+                "family": "'Work Sans', Arial, sans-serif",
+                "size": "16px",
+              },
+              "hover": Object {
+                "backgroundColor": "rgba(221,221,221,0.5)",
+                "textColor": "#000000",
+              },
+              "input": Object {
+                "border": Object {
+                  "color": "rgba(0, 0, 0, 0.15)",
+                  "radius": "4px",
+                  "width": "1px",
+                },
+              },
+              "lineHeight": "24px",
+              "placeholder": Object {
+                "color": "#AAAAAA",
+              },
+              "selected": Object {
+                "backgroundColor": "#ccbaee",
+                "textColor": "#333333",
+              },
+              "size": Object {
+                "full": "100%",
+                "large": "768px",
+                "medium": "384px",
+                "small": "192px",
+                "xlarge": "1152px",
+                "xsmall": "96px",
+                "xxsmall": "48px",
+              },
+              "spacing": "24px",
+            },
+            "grommet": Object {},
+            "heading": Object {
+              "level": Object {
+                "1": Object {
+                  "large": Object {
+                    "height": 1.125,
+                    "size": "96px",
+                  },
+                  "medium": Object {
+                    "height": 1.125,
+                    "size": "48px",
+                  },
+                  "small": Object {
+                    "height": 1.333,
+                    "size": "24px",
+                  },
+                },
+                "2": Object {
+                  "large": Object {
+                    "height": 1.125,
+                    "size": "48px",
+                  },
+                  "medium": Object {
+                    "height": 1.23,
+                    "size": "36px",
+                  },
+                  "small": Object {
+                    "height": 1.333,
+                    "size": "18px",
+                  },
+                },
+                "3": Object {
+                  "large": Object {
+                    "height": 1.23,
+                    "size": "36px",
+                  },
+                  "medium": Object {
+                    "height": 1.333,
+                    "size": "24px",
+                  },
+                  "small": Object {
+                    "height": 1.333,
+                    "size": "18px",
+                  },
+                },
+                "4": Object {
+                  "large": Object {
+                    "height": 1.333,
+                    "size": "24px",
+                  },
+                  "medium": Object {
+                    "height": 1.333,
+                    "size": "18px",
+                  },
+                  "small": Object {
+                    "height": 1.333,
+                    "size": "16px",
+                  },
+                },
+              },
+              "weight": 300,
+            },
+            "icon": Object {
+              "extend": Array [
+                [Function],
+              ],
+            },
+            "layer": Object {
+              "backgroundColor": "#FFFFFF",
+              "border": Object {
+                "radius": "4px",
+              },
+              "overlayBackgroundColor": "rgba(0, 0, 0, 0.5)",
+            },
+            "paragraph": Object {
+              "large": Object {
+                "height": 1.167,
+                "maxWidth": "864px",
+                "size": "24px",
+              },
+              "medium": Object {
+                "height": 1.375,
+                "maxWidth": "576px",
+                "size": "16px",
+              },
+              "small": Object {
+                "height": 1.43,
+                "maxWidth": "432px",
+                "size": "14px",
+              },
+              "xlarge": Object {
+                "height": 1.1875,
+                "maxWidth": "1152px",
+                "size": "32px",
+              },
+            },
+            "text": Object {
+              "large": Object {
+                "height": 1.167,
+                "size": "24px",
+              },
+              "medium": Object {
+                "height": 1.375,
+                "size": "16px",
+              },
+              "small": Object {
+                "height": 1.43,
+                "size": "14px",
+              },
+              "xlarge": Object {
+                "height": 1.1875,
+                "size": "32px",
+              },
+              "xsmall": Object {
+                "height": 1.5,
+                "size": "12px",
+              },
+              "xxlarge": Object {
+                "height": 1.125,
+                "size": "48px",
+              },
+            },
+          }
+        }
+      >
+        <svg />
+      </StyledAnchor__StyledIcon>
+    }
+    label="Test"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    <span
+      className="c2"
+      label="Test"
+    >
+      <svg />
+    </span>
+    Test
+  </a>
+</div>
+`;
+
+exports[`Anchor primary renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c3 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-fill: #666666;
+  fill: #666666;
+  stroke: #666666;
+  -webkit-fill: #865CD6;
+  fill: #865CD6;
+  stroke: #865CD6;
+}
+
+.c3 g {
+  -webkit-fill: inherit;
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
+  stroke: inherit;
+  -webkit-fill: none;
+  fill: none;
+}
+
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
+  -webkit-fill: inherit;
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.c2 > * {
+  vertical-align: bottom;
+}
+
+.c1 {
+  color: #865CD6;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.c1:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <a
+    aria-label={undefined}
+    className="c1"
+    disabled={undefined}
+    href="#"
+    icon={
+      <StyledAnchor__StyledIcon
+        label="Test"
+        reverse={undefined}
+        theme={
+          Object {
+            "anchor": Object {
+              "color": "#865CD6",
+              "fontWeight": 600,
+              "textDecoration": "none",
+            },
+            "button": Object {
+              "border": Object {
+                "radius": "5px",
+                "width": "2px",
+              },
+              "colors": Object {
+                "accent": "#00CCEB",
+                "critical": "#FF324D",
+                "secondary": "#DC2878",
+              },
+              "maxWidth": "384px",
+              "minWidth": "120px",
+              "padding": Object {
+                "horizontal": "22px",
+                "vertical": "6px",
+              },
+            },
+            "global": Object {
+              "borderSize": Object {
+                "large": "6px",
+                "medium": "3px",
+                "small": "1px",
+                "xlarge": "24px",
+              },
+              "centerColumnWidth": "1152px",
+              "colors": Object {
+                "accent": Array [
+                  "#00CCEB",
+                  "#FF7D28",
+                ],
+                "background": "#FFFFFF",
+                "black": "#000000",
+                "brand": "#865CD6",
+                "dark": Array [
+                  "#333333",
+                  "#444444",
+                  "#555555",
+                  "#666666",
+                  "#777777",
+                  "#999999",
+                ],
+                "darkBackgroundTextColor": "rgba(255, 255, 255, 0.85)",
+                "light": Array [
+                  "#F6F6F6",
+                  "#EEEEEE",
+                  "#DDDDDD",
+                  "#CCCCCC",
+                  "#BBBBBB",
+                  "#AAAAAA",
+                ],
+                "neutral": Array [
+                  "#0A64A0",
+                  "#DC2878",
+                  "#501EB4",
+                  "#49516F",
+                ],
+                "status": Object {
+                  "critical": "#FF324D",
+                  "disabled": "#a8a8a8",
+                  "error": "#FF324D",
+                  "ok": "#8CC800",
+                  "unknown": "#a8a8a8",
+                  "warning": "#FFD602",
+                },
+                "text": "#333333",
+                "white": "#FFFFFF",
+              },
+              "control": Object {
+                "font": Object {
+                  "size": "19px",
+                  "weight": 600,
+                },
+              },
+              "drop": Object {
+                "backgroundColor": "#f8f8f8",
+                "border": Object {
+                  "radius": "0px",
+                  "width": "0px",
+                },
+                "boxShadow": "none",
+              },
+              "edgeSize": Object {
+                "large": "48px",
+                "medium": "24px",
+                "small": "12px",
+                "xlarge": "96px",
+                "xsmall": "6px",
+              },
+              "focus": Object {
+                "border": Object {
+                  "width": "2px",
+                },
+              },
+              "font": Object {
+                "face": "
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 300;
+                    src:
+                      local('Work Sans Light'),
+                      local('WorkSans-Light'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/FD_Udbezj8EHXbdsqLUplxampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
+                  }
+          
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    src:
+                      local('Work Sans'),
+                      local('WorkSans-Regular'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/ElUAY9q6T0Ayx4zWzW63VJBw1xU1rKptJj_0jans920.woff2\\") format('woff2');
+                  }
+          
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 500;
+                    src:
+                      local('Work Sans Medium'),
+                      local('WorkSans-Medium'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/Nbre-U_bp6Xktt8cpgwaJBampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
+                  }
+          
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 600;
+                    src:
+                      local('Work Sans SemiBold'),
+                      local('WorkSans-SemiBold'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/z9rX03Xuz9ZNHTMg1_ghGRampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
+                  }
+          
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 700;
+                    src:
+                      local('Work Sans Bold'),
+                      local('WorkSans-Bold'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/4udXuXg54JlPEP5iKO5AmRampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
+                  }
+                ",
+                "family": "'Work Sans', Arial, sans-serif",
+                "size": "16px",
+              },
+              "hover": Object {
+                "backgroundColor": "rgba(221,221,221,0.5)",
+                "textColor": "#000000",
+              },
+              "input": Object {
+                "border": Object {
+                  "color": "rgba(0, 0, 0, 0.15)",
+                  "radius": "4px",
+                  "width": "1px",
+                },
+              },
+              "lineHeight": "24px",
+              "placeholder": Object {
+                "color": "#AAAAAA",
+              },
+              "selected": Object {
+                "backgroundColor": "#ccbaee",
+                "textColor": "#333333",
+              },
+              "size": Object {
+                "full": "100%",
+                "large": "768px",
+                "medium": "384px",
+                "small": "192px",
+                "xlarge": "1152px",
+                "xsmall": "96px",
+                "xxsmall": "48px",
+              },
+              "spacing": "24px",
+            },
+            "grommet": Object {},
+            "heading": Object {
+              "level": Object {
+                "1": Object {
+                  "large": Object {
+                    "height": 1.125,
+                    "size": "96px",
+                  },
+                  "medium": Object {
+                    "height": 1.125,
+                    "size": "48px",
+                  },
+                  "small": Object {
+                    "height": 1.333,
+                    "size": "24px",
+                  },
+                },
+                "2": Object {
+                  "large": Object {
+                    "height": 1.125,
+                    "size": "48px",
+                  },
+                  "medium": Object {
+                    "height": 1.23,
+                    "size": "36px",
+                  },
+                  "small": Object {
+                    "height": 1.333,
+                    "size": "18px",
+                  },
+                },
+                "3": Object {
+                  "large": Object {
+                    "height": 1.23,
+                    "size": "36px",
+                  },
+                  "medium": Object {
+                    "height": 1.333,
+                    "size": "24px",
+                  },
+                  "small": Object {
+                    "height": 1.333,
+                    "size": "18px",
+                  },
+                },
+                "4": Object {
+                  "large": Object {
+                    "height": 1.333,
+                    "size": "24px",
+                  },
+                  "medium": Object {
+                    "height": 1.333,
+                    "size": "18px",
+                  },
+                  "small": Object {
+                    "height": 1.333,
+                    "size": "16px",
+                  },
+                },
+              },
+              "weight": 300,
+            },
+            "icon": Object {
+              "extend": Array [
+                [Function],
+              ],
+            },
+            "layer": Object {
+              "backgroundColor": "#FFFFFF",
+              "border": Object {
+                "radius": "4px",
+              },
+              "overlayBackgroundColor": "rgba(0, 0, 0, 0.5)",
+            },
+            "paragraph": Object {
+              "large": Object {
+                "height": 1.167,
+                "maxWidth": "864px",
+                "size": "24px",
+              },
+              "medium": Object {
+                "height": 1.375,
+                "maxWidth": "576px",
+                "size": "16px",
+              },
+              "small": Object {
+                "height": 1.43,
+                "maxWidth": "432px",
+                "size": "14px",
+              },
+              "xlarge": Object {
+                "height": 1.1875,
+                "maxWidth": "1152px",
+                "size": "32px",
+              },
+            },
+            "text": Object {
+              "large": Object {
+                "height": 1.167,
+                "size": "24px",
+              },
+              "medium": Object {
+                "height": 1.375,
+                "size": "16px",
+              },
+              "small": Object {
+                "height": 1.43,
+                "size": "14px",
+              },
+              "xlarge": Object {
+                "height": 1.1875,
+                "size": "32px",
+              },
+              "xsmall": Object {
+                "height": 1.5,
+                "size": "12px",
+              },
+              "xxlarge": Object {
+                "height": 1.125,
+                "size": "48px",
+              },
+            },
+          }
+        }
+      >
+        <CoreNextLink
+          color="brand"
+        />
+      </StyledAnchor__StyledIcon>
+    }
+    label="Test"
+    onBlur={[Function]}
+    onClick={undefined}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    <span
+      className="c2"
+      label="Test"
+    >
+      <svg
+        aria-label="CoreNextLink"
+        className="c3"
+        color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <g
+          fill="none"
+          fillRule="evenodd"
+          stroke="none"
+          strokeWidth="1"
+        >
+          <g
+            stroke="#000000"
+            strokeWidth="2"
+          >
+            <path
+              d="M2,12 L22,12 M13,3 L22,12 L13,21"
+            />
+          </g>
+        </g>
+      </svg>
+    </span>
+    Test
+  </a>
+</div>
+`;
+
+exports[`Anchor renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  color: #865CD6;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.c1:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <a
+    aria-label={undefined}
+    className="c1"
+    disabled={undefined}
+    href={undefined}
+    icon={undefined}
+    label={undefined}
+    onBlur={[Function]}
+    onClick={undefined}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  />
+</div>
+`;
+
+exports[`Anchor renders with children 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  color: #865CD6;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.c1:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <a
+    aria-label={undefined}
+    className="c1"
+    disabled={undefined}
+    href="#"
+    icon={undefined}
+    label={undefined}
+    onBlur={[Function]}
+    onClick={undefined}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    children
+  </a>
+</div>
+`;
+
+exports[`Anchor reverse icon label renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c2 {
+  display: inline-block;
+  margin-left: 12px;
+}
+
+.c2 > * {
+  vertical-align: bottom;
+}
+
+.c1 {
+  color: #865CD6;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.c1:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <a
+    aria-label={undefined}
+    className="c1"
+    disabled={undefined}
+    href={undefined}
+    icon={
+      <StyledAnchor__StyledIcon
+        label="Test"
+        reverse={true}
+        theme={
+          Object {
+            "anchor": Object {
+              "color": "#865CD6",
+              "fontWeight": 600,
+              "textDecoration": "none",
+            },
+            "button": Object {
+              "border": Object {
+                "radius": "5px",
+                "width": "2px",
+              },
+              "colors": Object {
+                "accent": "#00CCEB",
+                "critical": "#FF324D",
+                "secondary": "#DC2878",
+              },
+              "maxWidth": "384px",
+              "minWidth": "120px",
+              "padding": Object {
+                "horizontal": "22px",
+                "vertical": "6px",
+              },
+            },
+            "global": Object {
+              "borderSize": Object {
+                "large": "6px",
+                "medium": "3px",
+                "small": "1px",
+                "xlarge": "24px",
+              },
+              "centerColumnWidth": "1152px",
+              "colors": Object {
+                "accent": Array [
+                  "#00CCEB",
+                  "#FF7D28",
+                ],
+                "background": "#FFFFFF",
+                "black": "#000000",
+                "brand": "#865CD6",
+                "dark": Array [
+                  "#333333",
+                  "#444444",
+                  "#555555",
+                  "#666666",
+                  "#777777",
+                  "#999999",
+                ],
+                "darkBackgroundTextColor": "rgba(255, 255, 255, 0.85)",
+                "light": Array [
+                  "#F6F6F6",
+                  "#EEEEEE",
+                  "#DDDDDD",
+                  "#CCCCCC",
+                  "#BBBBBB",
+                  "#AAAAAA",
+                ],
+                "neutral": Array [
+                  "#0A64A0",
+                  "#DC2878",
+                  "#501EB4",
+                  "#49516F",
+                ],
+                "status": Object {
+                  "critical": "#FF324D",
+                  "disabled": "#a8a8a8",
+                  "error": "#FF324D",
+                  "ok": "#8CC800",
+                  "unknown": "#a8a8a8",
+                  "warning": "#FFD602",
+                },
+                "text": "#333333",
+                "white": "#FFFFFF",
+              },
+              "control": Object {
+                "font": Object {
+                  "size": "19px",
+                  "weight": 600,
+                },
+              },
+              "drop": Object {
+                "backgroundColor": "#f8f8f8",
+                "border": Object {
+                  "radius": "0px",
+                  "width": "0px",
+                },
+                "boxShadow": "none",
+              },
+              "edgeSize": Object {
+                "large": "48px",
+                "medium": "24px",
+                "small": "12px",
+                "xlarge": "96px",
+                "xsmall": "6px",
+              },
+              "focus": Object {
+                "border": Object {
+                  "width": "2px",
+                },
+              },
+              "font": Object {
+                "face": "
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 300;
+                    src:
+                      local('Work Sans Light'),
+                      local('WorkSans-Light'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/FD_Udbezj8EHXbdsqLUplxampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
+                  }
+          
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    src:
+                      local('Work Sans'),
+                      local('WorkSans-Regular'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/ElUAY9q6T0Ayx4zWzW63VJBw1xU1rKptJj_0jans920.woff2\\") format('woff2');
+                  }
+          
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 500;
+                    src:
+                      local('Work Sans Medium'),
+                      local('WorkSans-Medium'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/Nbre-U_bp6Xktt8cpgwaJBampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
+                  }
+          
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 600;
+                    src:
+                      local('Work Sans SemiBold'),
+                      local('WorkSans-SemiBold'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/z9rX03Xuz9ZNHTMg1_ghGRampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
+                  }
+          
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 700;
+                    src:
+                      local('Work Sans Bold'),
+                      local('WorkSans-Bold'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/4udXuXg54JlPEP5iKO5AmRampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
+                  }
+                ",
+                "family": "'Work Sans', Arial, sans-serif",
+                "size": "16px",
+              },
+              "hover": Object {
+                "backgroundColor": "rgba(221,221,221,0.5)",
+                "textColor": "#000000",
+              },
+              "input": Object {
+                "border": Object {
+                  "color": "rgba(0, 0, 0, 0.15)",
+                  "radius": "4px",
+                  "width": "1px",
+                },
+              },
+              "lineHeight": "24px",
+              "placeholder": Object {
+                "color": "#AAAAAA",
+              },
+              "selected": Object {
+                "backgroundColor": "#ccbaee",
+                "textColor": "#333333",
+              },
+              "size": Object {
+                "full": "100%",
+                "large": "768px",
+                "medium": "384px",
+                "small": "192px",
+                "xlarge": "1152px",
+                "xsmall": "96px",
+                "xxsmall": "48px",
+              },
+              "spacing": "24px",
+            },
+            "grommet": Object {},
+            "heading": Object {
+              "level": Object {
+                "1": Object {
+                  "large": Object {
+                    "height": 1.125,
+                    "size": "96px",
+                  },
+                  "medium": Object {
+                    "height": 1.125,
+                    "size": "48px",
+                  },
+                  "small": Object {
+                    "height": 1.333,
+                    "size": "24px",
+                  },
+                },
+                "2": Object {
+                  "large": Object {
+                    "height": 1.125,
+                    "size": "48px",
+                  },
+                  "medium": Object {
+                    "height": 1.23,
+                    "size": "36px",
+                  },
+                  "small": Object {
+                    "height": 1.333,
+                    "size": "18px",
+                  },
+                },
+                "3": Object {
+                  "large": Object {
+                    "height": 1.23,
+                    "size": "36px",
+                  },
+                  "medium": Object {
+                    "height": 1.333,
+                    "size": "24px",
+                  },
+                  "small": Object {
+                    "height": 1.333,
+                    "size": "18px",
+                  },
+                },
+                "4": Object {
+                  "large": Object {
+                    "height": 1.333,
+                    "size": "24px",
+                  },
+                  "medium": Object {
+                    "height": 1.333,
+                    "size": "18px",
+                  },
+                  "small": Object {
+                    "height": 1.333,
+                    "size": "16px",
+                  },
+                },
+              },
+              "weight": 300,
+            },
+            "icon": Object {
+              "extend": Array [
+                [Function],
+              ],
+            },
+            "layer": Object {
+              "backgroundColor": "#FFFFFF",
+              "border": Object {
+                "radius": "4px",
+              },
+              "overlayBackgroundColor": "rgba(0, 0, 0, 0.5)",
+            },
+            "paragraph": Object {
+              "large": Object {
+                "height": 1.167,
+                "maxWidth": "864px",
+                "size": "24px",
+              },
+              "medium": Object {
+                "height": 1.375,
+                "maxWidth": "576px",
+                "size": "16px",
+              },
+              "small": Object {
+                "height": 1.43,
+                "maxWidth": "432px",
+                "size": "14px",
+              },
+              "xlarge": Object {
+                "height": 1.1875,
+                "maxWidth": "1152px",
+                "size": "32px",
+              },
+            },
+            "text": Object {
+              "large": Object {
+                "height": 1.167,
+                "size": "24px",
+              },
+              "medium": Object {
+                "height": 1.375,
+                "size": "16px",
+              },
+              "small": Object {
+                "height": 1.43,
+                "size": "14px",
+              },
+              "xlarge": Object {
+                "height": 1.1875,
+                "size": "32px",
+              },
+              "xsmall": Object {
+                "height": 1.5,
+                "size": "12px",
+              },
+              "xxlarge": Object {
+                "height": 1.125,
+                "size": "48px",
+              },
+            },
+          }
+        }
+      >
+        <svg />
+      </StyledAnchor__StyledIcon>
+    }
+    label="Test"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    Test
+    <span
+      className="c2"
+      label="Test"
+    >
+      <svg />
+    </span>
+  </a>
+</div>
+`;
+
+exports[`Anchor warns about invalid icon render 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c2 {
+  display: inline-block;
+}
+
+.c2 > * {
+  vertical-align: bottom;
+}
+
+.c1 {
+  color: #865CD6;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  padding: 12px;
+}
+
+.c1:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <a
+    aria-label={undefined}
+    className="c1"
+    disabled={undefined}
+    href="#"
+    icon={
+      <StyledAnchor__StyledIcon
+        label={undefined}
+        reverse={undefined}
+        theme={
+          Object {
+            "anchor": Object {
+              "color": "#865CD6",
+              "fontWeight": 600,
+              "textDecoration": "none",
+            },
+            "button": Object {
+              "border": Object {
+                "radius": "5px",
+                "width": "2px",
+              },
+              "colors": Object {
+                "accent": "#00CCEB",
+                "critical": "#FF324D",
+                "secondary": "#DC2878",
+              },
+              "maxWidth": "384px",
+              "minWidth": "120px",
+              "padding": Object {
+                "horizontal": "22px",
+                "vertical": "6px",
+              },
+            },
+            "global": Object {
+              "borderSize": Object {
+                "large": "6px",
+                "medium": "3px",
+                "small": "1px",
+                "xlarge": "24px",
+              },
+              "centerColumnWidth": "1152px",
+              "colors": Object {
+                "accent": Array [
+                  "#00CCEB",
+                  "#FF7D28",
+                ],
+                "background": "#FFFFFF",
+                "black": "#000000",
+                "brand": "#865CD6",
+                "dark": Array [
+                  "#333333",
+                  "#444444",
+                  "#555555",
+                  "#666666",
+                  "#777777",
+                  "#999999",
+                ],
+                "darkBackgroundTextColor": "rgba(255, 255, 255, 0.85)",
+                "light": Array [
+                  "#F6F6F6",
+                  "#EEEEEE",
+                  "#DDDDDD",
+                  "#CCCCCC",
+                  "#BBBBBB",
+                  "#AAAAAA",
+                ],
+                "neutral": Array [
+                  "#0A64A0",
+                  "#DC2878",
+                  "#501EB4",
+                  "#49516F",
+                ],
+                "status": Object {
+                  "critical": "#FF324D",
+                  "disabled": "#a8a8a8",
+                  "error": "#FF324D",
+                  "ok": "#8CC800",
+                  "unknown": "#a8a8a8",
+                  "warning": "#FFD602",
+                },
+                "text": "#333333",
+                "white": "#FFFFFF",
+              },
+              "control": Object {
+                "font": Object {
+                  "size": "19px",
+                  "weight": 600,
+                },
+              },
+              "drop": Object {
+                "backgroundColor": "#f8f8f8",
+                "border": Object {
+                  "radius": "0px",
+                  "width": "0px",
+                },
+                "boxShadow": "none",
+              },
+              "edgeSize": Object {
+                "large": "48px",
+                "medium": "24px",
+                "small": "12px",
+                "xlarge": "96px",
+                "xsmall": "6px",
+              },
+              "focus": Object {
+                "border": Object {
+                  "width": "2px",
+                },
+              },
+              "font": Object {
+                "face": "
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 300;
+                    src:
+                      local('Work Sans Light'),
+                      local('WorkSans-Light'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/FD_Udbezj8EHXbdsqLUplxampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
+                  }
+          
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    src:
+                      local('Work Sans'),
+                      local('WorkSans-Regular'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/ElUAY9q6T0Ayx4zWzW63VJBw1xU1rKptJj_0jans920.woff2\\") format('woff2');
+                  }
+          
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 500;
+                    src:
+                      local('Work Sans Medium'),
+                      local('WorkSans-Medium'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/Nbre-U_bp6Xktt8cpgwaJBampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
+                  }
+          
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 600;
+                    src:
+                      local('Work Sans SemiBold'),
+                      local('WorkSans-SemiBold'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/z9rX03Xuz9ZNHTMg1_ghGRampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
+                  }
+          
+                  @font-face {
+                    font-family: 'Work Sans';
+                    font-style: normal;
+                    font-weight: 700;
+                    src:
+                      local('Work Sans Bold'),
+                      local('WorkSans-Bold'),
+                      url(\\"https://fonts.gstatic.com/s/worksans/v2/4udXuXg54JlPEP5iKO5AmRampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
+                  }
+                ",
+                "family": "'Work Sans', Arial, sans-serif",
+                "size": "16px",
+              },
+              "hover": Object {
+                "backgroundColor": "rgba(221,221,221,0.5)",
+                "textColor": "#000000",
+              },
+              "input": Object {
+                "border": Object {
+                  "color": "rgba(0, 0, 0, 0.15)",
+                  "radius": "4px",
+                  "width": "1px",
+                },
+              },
+              "lineHeight": "24px",
+              "placeholder": Object {
+                "color": "#AAAAAA",
+              },
+              "selected": Object {
+                "backgroundColor": "#ccbaee",
+                "textColor": "#333333",
+              },
+              "size": Object {
+                "full": "100%",
+                "large": "768px",
+                "medium": "384px",
+                "small": "192px",
+                "xlarge": "1152px",
+                "xsmall": "96px",
+                "xxsmall": "48px",
+              },
+              "spacing": "24px",
+            },
+            "grommet": Object {},
+            "heading": Object {
+              "level": Object {
+                "1": Object {
+                  "large": Object {
+                    "height": 1.125,
+                    "size": "96px",
+                  },
+                  "medium": Object {
+                    "height": 1.125,
+                    "size": "48px",
+                  },
+                  "small": Object {
+                    "height": 1.333,
+                    "size": "24px",
+                  },
+                },
+                "2": Object {
+                  "large": Object {
+                    "height": 1.125,
+                    "size": "48px",
+                  },
+                  "medium": Object {
+                    "height": 1.23,
+                    "size": "36px",
+                  },
+                  "small": Object {
+                    "height": 1.333,
+                    "size": "18px",
+                  },
+                },
+                "3": Object {
+                  "large": Object {
+                    "height": 1.23,
+                    "size": "36px",
+                  },
+                  "medium": Object {
+                    "height": 1.333,
+                    "size": "24px",
+                  },
+                  "small": Object {
+                    "height": 1.333,
+                    "size": "18px",
+                  },
+                },
+                "4": Object {
+                  "large": Object {
+                    "height": 1.333,
+                    "size": "24px",
+                  },
+                  "medium": Object {
+                    "height": 1.333,
+                    "size": "18px",
+                  },
+                  "small": Object {
+                    "height": 1.333,
+                    "size": "16px",
+                  },
+                },
+              },
+              "weight": 300,
+            },
+            "icon": Object {
+              "extend": Array [
+                [Function],
+              ],
+            },
+            "layer": Object {
+              "backgroundColor": "#FFFFFF",
+              "border": Object {
+                "radius": "4px",
+              },
+              "overlayBackgroundColor": "rgba(0, 0, 0, 0.5)",
+            },
+            "paragraph": Object {
+              "large": Object {
+                "height": 1.167,
+                "maxWidth": "864px",
+                "size": "24px",
+              },
+              "medium": Object {
+                "height": 1.375,
+                "maxWidth": "576px",
+                "size": "16px",
+              },
+              "small": Object {
+                "height": 1.43,
+                "maxWidth": "432px",
+                "size": "14px",
+              },
+              "xlarge": Object {
+                "height": 1.1875,
+                "maxWidth": "1152px",
+                "size": "32px",
+              },
+            },
+            "text": Object {
+              "large": Object {
+                "height": 1.167,
+                "size": "24px",
+              },
+              "medium": Object {
+                "height": 1.375,
+                "size": "16px",
+              },
+              "small": Object {
+                "height": 1.43,
+                "size": "14px",
+              },
+              "xlarge": Object {
+                "height": 1.1875,
+                "size": "32px",
+              },
+              "xsmall": Object {
+                "height": 1.5,
+                "size": "12px",
+              },
+              "xxlarge": Object {
+                "height": 1.125,
+                "size": "48px",
+              },
+            },
+          }
+        }
+      >
+        <svg />
+      </StyledAnchor__StyledIcon>
+    }
+    label={undefined}
+    onBlur={[Function]}
+    onClick={undefined}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    <span
+      className="c2"
+      label={undefined}
+    >
+      <svg />
+    </span>
+  </a>
+</div>
+`;
+
+exports[`Anchor warns about invalid label render 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  color: #865CD6;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.c1:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <a
+    aria-label={undefined}
+    className="c1"
+    disabled={undefined}
+    href="#"
+    icon={undefined}
+    label="Test"
+    onBlur={[Function]}
+    onClick={undefined}
+    onFocus={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    Test
+  </a>
+</div>
+`;

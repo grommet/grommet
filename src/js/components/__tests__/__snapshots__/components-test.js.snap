@@ -2,6 +2,7 @@
 
 exports[`Components loads 1`] = `
 Object {
+  "Anchor": [Function],
   "Box": [Function],
   "Button": [Function],
   "Chart": [Function],
@@ -15,6 +16,7 @@ Object {
   "Markdown": [Function],
   "Meter": [Function],
   "Paragraph": [Function],
+  "RoutedAnchor": [Function],
   "RoutedButton": [Function],
   "Stack": [Function],
   "Text": [Function],

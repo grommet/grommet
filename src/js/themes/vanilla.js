@@ -1,4 +1,7 @@
 import { lighten, rgba } from 'polished';
+import { css } from 'styled-components';
+
+import { colorForName } from '../components/utils';
 
 const brandColor = '#865CD6';
 const accentColors = ['#00CCEB', '#FF7D28'];
@@ -65,7 +68,9 @@ export default {
       xlarge: `${baseSpacing * 4}px`,
     },
     focus: {
-      border: {},
+      border: {
+        width: '2px',
+      },
     },
     font: {
       family: "'Work Sans', Arial, sans-serif",
@@ -152,6 +157,11 @@ export default {
       full: '100%',
     },
   },
+  anchor: {
+    textDecoration: 'none',
+    fontWeight: 600,
+    color: brandColor,
+  },
   button: {
     border: {
       width: `${borderWidth}px`,
@@ -194,6 +204,14 @@ export default {
       },
     },
     weight: 300,
+  },
+  icon: {
+    extend: css`
+      ${props => props.color && props.color !== 'plain' && `
+        fill: ${colorForName(props.color, props.theme)};
+        stroke: ${colorForName(props.color, props.theme)};
+      `}
+    `,
   },
   layer: {
     backgroundColor: '#FFFFFF',

@@ -3,6 +3,7 @@ import { findDOMNode } from 'react-dom';
 
 import PropTypes from 'prop-types';
 import deepAssign from 'deep-assign';
+import cloneDeep from 'clone-deep';
 
 import StyledDrop from './StyledDrop';
 
@@ -29,7 +30,7 @@ class DropContainer extends Component {
   getChildContext() {
     const { theme } = this.props;
 
-    const globalTheme = JSON.parse(JSON.stringify(baseTheme));
+    const globalTheme = cloneDeep(baseTheme);
     return {
       theme: deepAssign(globalTheme, theme),
     };
@@ -199,7 +200,7 @@ class DropContainer extends Component {
       ...rest
     } = this.props;
 
-    const globalTheme = JSON.parse(JSON.stringify(baseTheme));
+    const globalTheme = cloneDeep(baseTheme);
     return (
       <StyledDrop
         ref={(ref) => {

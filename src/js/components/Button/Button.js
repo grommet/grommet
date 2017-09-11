@@ -15,6 +15,16 @@ class Button extends Component {
   static defaultProps = {
     type: 'button',
   };
+
+  constructor(props, context) {
+    super(props, context);
+
+    const { children, icon, label } = props;
+    if ((icon || label) && children) {
+      console.warn('Button should not have children if icon or label is provided');
+    }
+  }
+
   render() {
     const {
       a11yTitle,
@@ -45,12 +55,12 @@ class Button extends Component {
 
     let buttonIcon;
     if (icon) {
-      buttonIcon = <StyledIcon theme={theme}>{icon}</StyledIcon>;
+      buttonIcon = <StyledIcon key='styled-icon' theme={theme}>{icon}</StyledIcon>;
     }
 
     let buttonLabel;
     if (label) {
-      buttonLabel = <StyledLabel theme={theme}>{label}</StyledLabel>;
+      buttonLabel = <StyledLabel key='styled-label' theme={theme}>{label}</StyledLabel>;
     }
 
     const first = reverse ? buttonLabel : buttonIcon;
@@ -86,9 +96,7 @@ class Button extends Component {
         theme={theme}
         type={!href ? type : undefined}
       >
-        {first}
-        {second}
-        {children}
+        {(first || second) ? [first, second] : children}
       </Tag>
     );
   }
