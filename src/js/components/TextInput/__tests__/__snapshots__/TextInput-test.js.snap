@@ -76,7 +76,9 @@ exports[`TextInput calls onInput when input changes 1`] = `
 <div
   className="c0"
 >
-  <div>
+  <div
+    className=""
+  >
     <input
       autoComplete="off"
       className="c1"
@@ -171,7 +173,9 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 <div
   className="c0"
 >
-  <div>
+  <div
+    className=""
+  >
     <input
       autoComplete="off"
       className="c1"
@@ -266,7 +270,9 @@ exports[`TextInput renders 1`] = `
 <div
   className="c0"
 >
-  <div>
+  <div
+    className=""
+  >
     <input
       autoComplete="off"
       className="c1"
@@ -361,7 +367,9 @@ exports[`TextInput renders with complex suggestions 1`] = `
 <div
   className="c0"
 >
-  <div>
+  <div
+    className=""
+  >
     <input
       autoComplete="off"
       className="c1"
@@ -456,7 +464,9 @@ exports[`TextInput renders with suggestions 1`] = `
 <div
   className="c0"
 >
-  <div>
+  <div
+    className=""
+  >
     <input
       autoComplete="off"
       className="c1"
@@ -551,7 +561,9 @@ exports[`TextInput show suggestions on input change 1`] = `
 <div
   className="c0"
 >
-  <div>
+  <div
+    className=""
+  >
     <input
       autoComplete="off"
       className="c1"
@@ -646,7 +658,9 @@ exports[`TextInput show suggestions on input change 2`] = `
 <div
   className="c0"
 >
-  <div>
+  <div
+    className=""
+  >
     <input
       autoComplete="off"
       className="c1"

@@ -5,8 +5,25 @@ import { focusStyle, inputStyle, parseMetricToInt } from '../utils';
 const placeholderColor = css`
   color: ${props => props.theme.global.placeholder.color};
 `;
+
+const sizeStyle = (props) => {
+  const data = props.theme.text[props.size];
+  return css`
+    font-size: ${data.size};
+    line-height: ${data.height};
+  `;
+};
+
+const plainStyle = css`
+  border: none;
+  width: 100%;
+`;
+
 const StyledTextInput = styled.input`
   ${inputStyle}
+
+  ${props => props.size && sizeStyle(props)}
+  ${props => props.plain && plainStyle}
 
   &::-webkit-input-placeholder {
     ${placeholderColor}
@@ -28,6 +45,10 @@ const StyledTextInput = styled.input`
   &:focus {
     ${focusStyle}
   }
+`;
+
+export const StyledTextInputContainer = styled.div`
+  ${props => props.plain && css`width: 100%`}
 `;
 
 const activeStyle = css`
