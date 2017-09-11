@@ -33,7 +33,7 @@
   "dependencies": {
     "clone-deep": "^1.0.0",
     "deep-assign": "^2.0.0",
-    "grommet-icons": "^0.3.0",
+    "grommet-icons": "^0.4.0",
     "markdown-to-jsx": "^5.4.2",
     "polished": "^1.3.0",
     "prop-types": "^15.5.10",

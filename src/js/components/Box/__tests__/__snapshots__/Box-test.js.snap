@@ -1453,9 +1453,9 @@ exports[`Box justify renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: space-between;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 

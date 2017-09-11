@@ -535,9 +535,9 @@ exports[`Grid justifyContent renders 1`] = `
 .c3 {
   display: grid;
   height: 100%;
-  -webkit-box-pack: space-between;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: space-between;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 

@@ -942,7 +942,7 @@ exports[`Anchor primary renders 1`] = `
           }
         }
       >
-        <CoreNextLink
+        <LinkNext
           color="brand"
         />
       </StyledAnchor__StyledIcon>
@@ -959,7 +959,7 @@ exports[`Anchor primary renders 1`] = `
       label="Test"
     >
       <svg
-        aria-label="CoreNextLink"
+        aria-label="LinkNext"
         className="c3"
         color="brand"
         height="24px"
@@ -968,21 +968,12 @@ exports[`Anchor primary renders 1`] = `
         viewBox="0 0 24 24"
         width="24px"
       >
-        <g
+        <path
+          d="M2,12 L22,12 M13,3 L22,12 L13,21"
           fill="none"
-          fillRule="evenodd"
-          stroke="none"
-          strokeWidth="1"
-        >
-          <g
-            stroke="#000000"
-            strokeWidth="2"
-          >
-            <path
-              d="M2,12 L22,12 M13,3 L22,12 L13,21"
-            />
-          </g>
-        </g>
+          stroke="#000"
+          strokeWidth="2"
+        />
       </svg>
     </span>
     Test
