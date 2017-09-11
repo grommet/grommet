@@ -101,11 +101,7 @@ exports[`Button has correct plain={true} rendering 1`] = `
   onMouseUp={[Function]}
   type="button"
 >
-  <span
-    className="grommetux-button__label"
-  >
-    Test me
-  </span>
+  Test Child
 </button>
 `;
 
