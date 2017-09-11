@@ -28,7 +28,11 @@ export default Anchor => schema(Anchor, {
     ],
     icon: [PropTypes.element, 'Icon element to place in the anchor.'],
     label: [PropTypes.node, 'Label text to place in the anchor.'],
-    onClick: [PropTypes.func, 'Click handler.'],
+    onClick: [
+      PropTypes.func,
+      `Click handler. It can be used, for example, 
+      to add analytics and track who clicked in the anchor.`,
+    ],
     primary: [PropTypes.bool, 'Whether this is a primary anchor.'],
     reverse: [
       PropTypes.bool,

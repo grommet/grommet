@@ -17,6 +17,36 @@ test('Button renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Button warns about invalid label render', () => {
+  const warnSpy = jest.spyOn(console, 'warn');
+  const component = renderer.create(
+    <Grommet>
+      <Button label='Test' onClick={() => {}}>invalid</Button>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+  expect(warnSpy).toHaveBeenCalledWith('Button should not have children if icon or label is provided');
+
+  warnSpy.mockReset();
+  warnSpy.mockRestore();
+});
+
+test('Button warns about invalid icon render', () => {
+  const warnSpy = jest.spyOn(console, 'warn');
+  const component = renderer.create(
+    <Grommet>
+      <Button icon={<svg />} onClick={() => {}}>invalid</Button>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+  expect(warnSpy).toHaveBeenCalledWith('Button should not have children if icon or label is provided');
+
+  warnSpy.mockReset();
+  warnSpy.mockRestore();
+});
+
 test('Button primary renders', () => {
   const component = renderer.create(
     <Grommet>

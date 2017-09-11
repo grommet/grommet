@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
-import { focusStyle, fontSize, lapAndUp, parseMetricToInt } from '../utils';
+import { focusStyle, fontSize, lapAndUp } from '../utils';
 
 const primaryStyle = css`
   background-color: ${props => props.theme.global.colors.brand};
@@ -111,7 +111,7 @@ const fillStyle = `
 `;
 
 const plainFocusStyle = css`
-  box-shadow: 0 0 2px 2px ${
+  box-shadow: 0 0 ${props => props.theme.global.focus.border.width} ${props => props.theme.global.focus.border.width} ${
     props => (
       props.theme.global.focus.border.color ||
       props.theme.global.colors.accent[0]
@@ -184,13 +184,13 @@ const StyledButton = styled.button`
   ${props => props.plain && plainStyle}
   ${props => props.fill && fillStyle}
   ${props => props.icon && !props.label && `
-    padding: 12px;
+    padding: ${props.theme.global.edgeSize.small};
   `}
 `;
 
 export const StyledLabel = styled.span`
   &:first-child:not(:last-child) {
-    margin-right: ${props => parseMetricToInt(props.theme.global.spacing) / 2}px;
+    margin-right: ${props => props.theme.global.edgeSize.small};
   }
 `;
 
@@ -198,7 +198,7 @@ export const StyledIcon = styled.span`
   display: inline-block;
 
   &:first-child:not(:last-child) {
-    margin-right: ${props => parseMetricToInt(props.theme.global.spacing) / 2}px;
+    margin-right: ${props => props.theme.global.edgeSize.small};
   }
 
   > * {

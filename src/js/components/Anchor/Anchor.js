@@ -10,6 +10,15 @@ import { withFocus, withTheme } from '../hocs';
 import doc from './doc';
 
 class Anchor extends Component {
+  constructor(props, context) {
+    super(props, context);
+
+    const { children, icon, label } = props;
+    if ((icon || label) && children) {
+      console.warn('Anchor should not have children if icon or label is provided');
+    }
+  }
+
   render() {
     const {
       a11yTitle,
@@ -37,7 +46,9 @@ class Anchor extends Component {
 
     if (anchorIcon) {
       anchorIcon = (
-        <StyledIcon reverse={reverse} label={label} theme={theme}>{anchorIcon}</StyledIcon>
+        <StyledIcon key='styled-icon' reverse={reverse} label={label} theme={theme}>
+          {anchorIcon}
+        </StyledIcon>
       );
     }
 
@@ -58,9 +69,7 @@ class Anchor extends Component {
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
       >
-        {first}
-        {second}
-        {children}
+        {(first || second) ? [first, second] : children}
       </StyledAnchor>
     );
   }

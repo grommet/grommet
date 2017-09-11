@@ -29,7 +29,6 @@ test('RoutedButton is clickable', () => {
 
   const button = findAllByType(tree, 'button');
   button[0].props.onClick();
-  button[0].props.onClick({});
   expect(onClick).toBeCalled();
 });
 

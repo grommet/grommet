@@ -29,7 +29,6 @@ test('RoutedAnchor is clickable', () => {
 
   const anchor = findAllByType(tree, 'a');
   anchor[0].props.onClick();
-  anchor[0].props.onClick({});
   expect(onClick).toBeCalled();
 });
 

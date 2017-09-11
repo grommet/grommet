@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, fontSize, parseMetricToInt } from '../utils';
+import { focusStyle, fontSize } from '../utils';
 
 const primaryIconLabelStyle = css`
   ${props => fontSize(props.theme.global.control.font.size, props.theme.global.spacing)}
@@ -30,7 +30,7 @@ const StyledAnchor = styled.a`
     color: ${props.theme.global.colors.text};
   `}
   ${props => props.icon && !props.label && `
-    padding: 12px;
+    padding: ${props.theme.global.edgeSize.small};
   `}
 
   ${props => props.disabled && disabledStyle}
@@ -41,9 +41,9 @@ export const StyledIcon = styled.span`
   display: inline-block;
   ${props => props.label && `
     ${props.reverse ? `
-      margin-left: ${parseMetricToInt(props.theme.global.spacing) / 2}px;
+      margin-left: ${props.theme.global.edgeSize.small};
     ` : `
-      margin-right: ${parseMetricToInt(props.theme.global.spacing) / 2}px;
+      margin-right: ${props.theme.global.edgeSize.small};
     `}
   `}
 

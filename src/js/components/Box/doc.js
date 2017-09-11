@@ -97,14 +97,14 @@ export default Box => schema(Box, {
     ],
     pad: [
       PropTypes.oneOfType([
-        PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large']),
+        PropTypes.oneOf(['none', 'small', 'medium', 'large']),
         PropTypes.shape({
-          bottom: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
-          horizontal: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
-          left: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
-          right: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
-          top: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
-          vertical: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
+          bottom: PropTypes.oneOf(['small', 'medium', 'large']),
+          horizontal: PropTypes.oneOf(['small', 'medium', 'large']),
+          left: PropTypes.oneOf(['small', 'medium', 'large']),
+          right: PropTypes.oneOf(['small', 'medium', 'large']),
+          top: PropTypes.oneOf(['small', 'medium', 'large']),
+          vertical: PropTypes.oneOf(['small', 'medium', 'large']),
         }),
       ]),
       `The amount of padding around the box contents. An object can be specified to

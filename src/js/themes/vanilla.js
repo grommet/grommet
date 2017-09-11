@@ -68,7 +68,9 @@ export default {
       xlarge: `${baseSpacing * 4}px`,
     },
     focus: {
-      border: {},
+      border: {
+        width: '2px',
+      },
     },
     font: {
       family: "'Work Sans', Arial, sans-serif",
