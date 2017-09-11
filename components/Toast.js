@@ -133,14 +133,20 @@ var ToastContents = function (_Component) {
 
       var statusIcon = void 0;
       if (status) {
-        statusIcon = _react2.default.createElement(_Status2.default, { className: CLASS_ROOT + '__status', value: status,
-          size: size === 'large' ? 'medium' : size });
+        statusIcon = _react2.default.createElement(_Status2.default, {
+          className: CLASS_ROOT + '__status',
+          value: status,
+          size: size === 'large' ? 'medium' : size
+        });
       }
 
       var closeControl = void 0;
       if (onClose) {
-        closeControl = _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__closer',
-          icon: _react2.default.createElement(_Close2.default, null), onClick: this._onClose });
+        closeControl = _react2.default.createElement(_Button2.default, {
+          className: CLASS_ROOT + '__closer',
+          icon: _react2.default.createElement(_Close2.default, null),
+          onClick: this._onClose
+        });
       }
 
       return _react2.default.createElement(
@@ -149,10 +155,12 @@ var ToastContents = function (_Component) {
         statusIcon,
         _react2.default.createElement(
           'div',
-          { ref: function ref(_ref) {
+          {
+            ref: function ref(_ref) {
               return _this2._contentsRef = _ref;
             },
-            className: CLASS_ROOT + '__contents' },
+            className: CLASS_ROOT + '__contents'
+          },
           children
         ),
         closeControl
@@ -238,13 +246,19 @@ var Toast = function (_Component2) {
   }, {
     key: '_renderLayer',
     value: function _renderLayer() {
+      var _this4 = this;
+
       if (this._element) {
         this._element.className = CLASS_ROOT + '__container';
         var contents = _react2.default.createElement(ToastContents, _extends({}, this.props, {
           history: this.context.history,
           intl: this.context.intl,
           router: this.context.router,
-          store: this.context.store }));
+          store: this.context.store,
+          onClose: function onClose() {
+            return _this4._removeLayer();
+          }
+        }));
         _reactDom2.default.render(contents, this._element);
       }
     }
