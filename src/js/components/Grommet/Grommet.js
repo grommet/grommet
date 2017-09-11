@@ -11,21 +11,26 @@ import doc from './doc';
 
 class Grommet extends Component {
   static childContextTypes = {
+    grommet: PropTypes.object,
     theme: PropTypes.object,
   }
+
   static defaultProps = {
     centered: true,
     theme: undefined,
   }
+
   getChildContext() {
     const { theme } = this.props;
 
     const globalTheme = cloneDeep(baseTheme);
 
     return {
+      grommet: {},
       theme: deepAssign(globalTheme, theme),
     };
   }
+
   render() {
     const {
       children,

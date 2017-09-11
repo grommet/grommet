@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { CoreNextLink } from 'grommet-icons';
@@ -10,6 +11,10 @@ import { withFocus, withTheme } from '../hocs';
 import doc from './doc';
 
 class Anchor extends Component {
+  static contextTypes = {
+    grommet: PropTypes.object.isRequired,
+  }
+
   constructor(props, context) {
     super(props, context);
 
@@ -34,6 +39,7 @@ class Anchor extends Component {
       theme,
       ...rest
     } = this.props;
+    const { grommet } = this.context;
 
     let anchorIcon;
     if (icon) {
@@ -66,6 +72,7 @@ class Anchor extends Component {
         primary={primary}
         reverse={reverse}
         theme={theme}
+        grommet={grommet}
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
       >

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
+import { colorForName, colorIsDark } from '../utils';
 import StyledBox from './StyledBox';
 
 import { withTheme } from '../hocs';
@@ -12,10 +14,37 @@ const styledComponents = {
 }; // tag -> styled component
 
 class Box extends Component {
+  static contextTypes = {
+    grommet: PropTypes.object.isRequired,
+  }
+  static childContextTypes = {
+    grommet: PropTypes.object,
+  }
+
   static defaultProps = {
     direction: 'column',
     tag: 'div',
   };
+
+  getChildContext() {
+    const { grommet } = this.context;
+    const { background, theme } = this.props;
+    let dark = false;
+    if (background) {
+      if (typeof background === 'object') {
+        dark = background.dark;
+      } else {
+        const color = colorForName(background, theme);
+        if (color) {
+          dark = colorIsDark(color);
+        }
+      }
+      return {
+        grommet: { ...grommet, dark },
+      };
+    }
+    return undefined;
+  }
 
   render() {
     const {

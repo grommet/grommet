@@ -14,11 +14,13 @@ const disabledStyle = `
 `;
 
 const StyledAnchor = styled.a`
-  color: ${props => props.theme.anchor.color};
+  color: ${props =>
+    (props.grommet.dark ? props.theme.global.colors.darkBackgroundTextColor
+      : props.theme.anchor.color)};
   text-decoration: ${props => props.theme.anchor.textDecoration};
   cursor: pointer;
   outline: none;
-  
+
   ${props => !props.disabled && `
     &:hover {
       text-decoration: underline;
