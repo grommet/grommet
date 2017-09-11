@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import StyledTextInput, { StyledSuggestion, StyledSuggestions } from './StyledTextInput';
+import StyledTextInput,
+  { StyledTextInputContainer, StyledSuggestion, StyledSuggestions } from './StyledTextInput';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Drop } from '../Drop';
@@ -188,7 +189,7 @@ class TextInput extends Component {
       );
     }
     return (
-      <div>
+      <StyledTextInputContainer plain={rest.plain}>
         <Keyboard
           onEnter={onEnterSuggestionHandler}
           onEsc={() => this.setState({ showDrop: false })}
@@ -214,7 +215,7 @@ class TextInput extends Component {
           />
         </Keyboard>
         {drop}
-      </div>
+      </StyledTextInputContainer>
     );
   }
 }
