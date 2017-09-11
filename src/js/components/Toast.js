@@ -73,24 +73,32 @@ class ToastContents extends Component {
     let statusIcon;
     if (status) {
       statusIcon = (
-        <Status className={`${CLASS_ROOT}__status`} value={status}
-          size={size === 'large' ? 'medium' : size} />
+        <Status
+          className={`${CLASS_ROOT}__status`}
+          value={status}
+          size={size === 'large' ? 'medium' : size}
+        />
       );
     }
 
     let closeControl;
     if (onClose) {
       closeControl = (
-        <Button className={`${CLASS_ROOT}__closer`}
-          icon={<CloseIcon />} onClick={this._onClose} />
+        <Button
+          className={`${CLASS_ROOT}__closer`}
+          icon={<CloseIcon />}
+          onClick={this._onClose}
+        />
       );
     }
 
     return (
       <div className={classNames} {...rest}>
         {statusIcon}
-        <div ref={(ref) => this._contentsRef = ref}
-          className={`${CLASS_ROOT}__contents`}>
+        <div
+          ref={(ref) => this._contentsRef = ref}
+          className={`${CLASS_ROOT}__contents`}
+        >
           {children}
         </div>
         {closeControl}
@@ -161,11 +169,14 @@ export default class Toast extends Component {
     if (this._element) {
       this._element.className = `${CLASS_ROOT}__container`;
       const contents = (
-        <ToastContents {...this.props}
+        <ToastContents
+          {...this.props}
           history={this.context.history}
           intl={this.context.intl}
           router={this.context.router}
-          store={this.context.store} />
+          store={this.context.store}
+          onClose={() => this._removeLayer()}
+        />
       );
       ReactDOM.render(contents, this._element);
     }
