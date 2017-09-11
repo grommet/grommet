@@ -165,7 +165,7 @@ export default class Search extends Component {
 
   _onInputKeyDown (event) {
     const {
-      inline, onSelect, suggestions, activeSuggestionIndex, onKeyDown
+      inline, onSelect, suggestions, onKeyDown
     } = this.props;
     const enter = 13;
     const { dropActive } = this.state;
@@ -182,11 +182,8 @@ export default class Search extends Component {
       }
     }
     if (!dropActive && onSelect && event.keyCode === enter) {
-      const suggestion = suggestions[activeSuggestionIndex];
-
       onSelect({
-        target: this._inputRef || this._controlRef,
-        suggestion: suggestion
+        target: this._inputRef || this._controlRef
       }, false);
     }
     if (onKeyDown) {
