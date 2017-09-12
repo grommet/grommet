@@ -285,8 +285,13 @@ export default class Menu extends Component {
           document.removeEventListener('click', this._checkOnClose);
           document.removeEventListener('touchstart', this._checkOnClose);
           if (this._drop) {
-            this._drop.remove();
-            this._drop = undefined;
+            // When Menu is used with Anchor/paths the Drop removes too quickly
+            // and react looks for a DOM element which is gone. Adding a
+            // slight delay resolves this issue.
+            setTimeout(() => {
+              this._drop.remove();
+              this._drop = undefined;
+            }, 5);
           }
           break;
         case 'focused':
