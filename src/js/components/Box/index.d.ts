@@ -1,5 +1,5 @@
 import Box from './Box';
 
-export { default as Box, BoxProps } from './Box';
+export { BoxProps } from './Box';
 
 export default Box;
