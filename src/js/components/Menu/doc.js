@@ -4,12 +4,12 @@ const VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
 const HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
 export default Menu => schema(Menu, {
-  description: `Presents a list of choices within a drop down behind a control that
+  description: `Presents a list of choices within a drop down via a control that
   opens it.`,
   usage: `import { Menu } from 'grommet';
   <Menu/>`,
   props: {
-    color: [
+    background: [
       PropTypes.string,
       'Background color when drop is active',
     ],
@@ -28,23 +28,18 @@ export default Menu => schema(Menu, {
     ],
     icon: [
       PropTypes.node,
-      `Indicates that the menu should be collapsed and the icon shown as a 
-      control top open it.`,
+      'Indicates the icon shown as a control to open it.',
     ],
     items: [
-      PropTypes.arrayOf(PropTypes.shape({
-        label: PropTypes.string,
-        onClick: PropTypes.func,
-        icon: PropTypes.node,
-      })),
-      'Menu items to be placed inside the drop down. All button properties should be supported.', {
+      PropTypes.arrayOf(PropTypes.object),
+      `Menu items to be placed inside the drop down. 
+      The object values can be any Button prop, for example: label and onClick.`, {
         required: true,
       },
     ],
     label: [
       PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-      `Indicates that the menu should be collapsed and the label shown as a
-      control top open it.`,
+      'Indicates the label shown as a control to open it.',
     ],
     messages: [
       PropTypes.shape({

@@ -89,9 +89,10 @@ class LayerContainer extends Component {
       theme,
       ...rest
     } = this.props;
+    const { theme: contextTheme } = this.context;
 
-    const globalTheme = JSON.parse(JSON.stringify(baseTheme));
-    const localTheme = deepAssign(globalTheme, theme);
+    const globalTheme = cloneDeep(baseTheme);
+    const localTheme = deepAssign(globalTheme, contextTheme, theme);
 
     return (
       <Keyboard onEsc={onEsc}>

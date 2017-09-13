@@ -69,7 +69,7 @@ class Menu extends Component {
 
   render() {
     const {
-      color,
+      background,
       dropAlign,
       icon,
       items,
@@ -88,7 +88,7 @@ class Menu extends Component {
       drop = (
         <Drop
           align={dropAlign}
-          background={color}
+          background={background}
           ref={(ref) => {
             this.dropRef = ref;
           }}
