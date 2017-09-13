@@ -15,7 +15,7 @@ const styledComponents = {
 
 class Box extends Component {
   static contextTypes = {
-    grommet: PropTypes.object.isRequired,
+    grommet: PropTypes.object,
   }
   static childContextTypes = {
     grommet: PropTypes.object,
@@ -27,7 +27,7 @@ class Box extends Component {
   };
 
   getChildContext() {
-    const { grommet } = this.context;
+    const { grommet = {} } = this.context;
     const { background, theme } = this.props;
     let dark = false;
     if (background) {

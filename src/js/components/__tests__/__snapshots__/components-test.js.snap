@@ -14,6 +14,7 @@ Object {
   "Layer": [Function],
   "LayerContainer": [Function],
   "Markdown": [Function],
+  "Menu": [Function],
   "Meter": [Function],
   "Paragraph": [Function],
   "RoutedAnchor": [Function],

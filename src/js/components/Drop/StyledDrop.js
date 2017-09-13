@@ -10,7 +10,6 @@ const StyledDrop = styled.div`
   z-index: 20;
   border-radius: ${props => props.theme.global.drop.border.radius};
   overflow: auto;
-  transition: all .5s ease-in-out;
 
   ${props => backgroundStyle(
     props.background || props.theme.global.drop.backgroundColor, props.theme
