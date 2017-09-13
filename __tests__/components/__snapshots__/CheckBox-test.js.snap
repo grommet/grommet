@@ -1,7 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`CheckBox has correct checked=true rendering 1`] = `
 <label
-  aria-label="Test CheckBox"
-  className="grommetux-check-box">
+  className="grommetux-check-box"
+  htmlFor="test"
+>
   <span>
     <input
       checked={true}
@@ -11,31 +14,36 @@ exports[`CheckBox has correct checked=true rendering 1`] = `
       name={undefined}
       onChange={undefined}
       tabIndex="0"
-      type="checkbox" />
+      type="checkbox"
+    />
     <span
-      className="grommetux-check-box__control">
+      className="grommetux-check-box__control"
+    >
       <svg
         className="grommetux-check-box__control-check"
         preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 24 24">
+        viewBox="0 0 24 24"
+      >
         <path
           d="M6,11.3 L10.3,16 L18,6.2"
-          fill="none" />
+          fill="none"
+        />
       </svg>
     </span>
   </span>
-  <label
+  <span
     className="grommetux-check-box__label"
-    htmlFor="test">
+  >
     Test CheckBox
-  </label>
+  </span>
 </label>
 `;
 
 exports[`CheckBox has correct className rendering 1`] = `
 <label
-  aria-label="Test CheckBox"
-  className="grommetux-check-box testing">
+  className="grommetux-check-box testing"
+  htmlFor="test"
+>
   <span>
     <input
       checked={undefined}
@@ -45,31 +53,36 @@ exports[`CheckBox has correct className rendering 1`] = `
       name={undefined}
       onChange={undefined}
       tabIndex="0"
-      type="checkbox" />
+      type="checkbox"
+    />
     <span
-      className="grommetux-check-box__control">
+      className="grommetux-check-box__control"
+    >
       <svg
         className="grommetux-check-box__control-check"
         preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 24 24">
+        viewBox="0 0 24 24"
+      >
         <path
           d="M6,11.3 L10.3,16 L18,6.2"
-          fill="none" />
+          fill="none"
+        />
       </svg>
     </span>
   </span>
-  <label
+  <span
     className="grommetux-check-box__label"
-    htmlFor="test">
+  >
     Test CheckBox
-  </label>
+  </span>
 </label>
 `;
 
 exports[`CheckBox has correct default options 1`] = `
 <label
-  aria-label="Test CheckBox"
-  className="grommetux-check-box">
+  className="grommetux-check-box"
+  htmlFor="test"
+>
   <span>
     <input
       checked={undefined}
@@ -79,31 +92,36 @@ exports[`CheckBox has correct default options 1`] = `
       name={undefined}
       onChange={undefined}
       tabIndex="0"
-      type="checkbox" />
+      type="checkbox"
+    />
     <span
-      className="grommetux-check-box__control">
+      className="grommetux-check-box__control"
+    >
       <svg
         className="grommetux-check-box__control-check"
         preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 24 24">
+        viewBox="0 0 24 24"
+      >
         <path
           d="M6,11.3 L10.3,16 L18,6.2"
-          fill="none" />
+          fill="none"
+        />
       </svg>
     </span>
   </span>
-  <label
+  <span
     className="grommetux-check-box__label"
-    htmlFor="test">
+  >
     Test CheckBox
-  </label>
+  </span>
 </label>
 `;
 
 exports[`CheckBox has correct disabled=true rendering 1`] = `
 <label
-  aria-label="Test CheckBox"
-  className="grommetux-check-box grommetux-check-box--disabled">
+  className="grommetux-check-box grommetux-check-box--disabled"
+  htmlFor="test"
+>
   <span>
     <input
       checked={undefined}
@@ -113,36 +131,41 @@ exports[`CheckBox has correct disabled=true rendering 1`] = `
       name={undefined}
       onChange={undefined}
       tabIndex="0"
-      type="checkbox" />
+      type="checkbox"
+    />
     <span
-      className="grommetux-check-box__control">
+      className="grommetux-check-box__control"
+    >
       <svg
         className="grommetux-check-box__control-check"
         preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 24 24">
+        viewBox="0 0 24 24"
+      >
         <path
           d="M6,11.3 L10.3,16 L18,6.2"
-          fill="none" />
+          fill="none"
+        />
       </svg>
     </span>
   </span>
-  <label
+  <span
     className="grommetux-check-box__label"
-    htmlFor="test">
+  >
     Test CheckBox
-  </label>
+  </span>
 </label>
 `;
 
 exports[`CheckBox has correct reverse=true rendering 1`] = `
 <label
-  aria-label="Test CheckBox"
-  className="grommetux-check-box grommetux-check-box--reverse">
-  <label
+  className="grommetux-check-box grommetux-check-box--reverse"
+  htmlFor="test"
+>
+  <span
     className="grommetux-check-box__label"
-    htmlFor="test">
+  >
     Test CheckBox
-  </label>
+  </span>
   <span>
     <input
       checked={undefined}
@@ -152,16 +175,20 @@ exports[`CheckBox has correct reverse=true rendering 1`] = `
       name={undefined}
       onChange={undefined}
       tabIndex="0"
-      type="checkbox" />
+      type="checkbox"
+    />
     <span
-      className="grommetux-check-box__control">
+      className="grommetux-check-box__control"
+    >
       <svg
         className="grommetux-check-box__control-check"
         preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 24 24">
+        viewBox="0 0 24 24"
+      >
         <path
           d="M6,11.3 L10.3,16 L18,6.2"
-          fill="none" />
+          fill="none"
+        />
       </svg>
     </span>
   </span>
@@ -170,8 +197,9 @@ exports[`CheckBox has correct reverse=true rendering 1`] = `
 
 exports[`CheckBox has correct toggle=true rendering 1`] = `
 <label
-  aria-label="Test CheckBox"
-  className="grommetux-check-box grommetux-check-box--toggle">
+  className="grommetux-check-box grommetux-check-box--toggle"
+  htmlFor="test"
+>
   <span>
     <input
       checked={undefined}
@@ -181,23 +209,27 @@ exports[`CheckBox has correct toggle=true rendering 1`] = `
       name={undefined}
       onChange={undefined}
       tabIndex="0"
-      type="checkbox" />
+      type="checkbox"
+    />
     <span
-      className="grommetux-check-box__control">
+      className="grommetux-check-box__control"
+    >
       <svg
         className="grommetux-check-box__control-check"
         preserveAspectRatio="xMidYMid meet"
-        viewBox="0 0 24 24">
+        viewBox="0 0 24 24"
+      >
         <path
           d="M6,11.3 L10.3,16 L18,6.2"
-          fill="none" />
+          fill="none"
+        />
       </svg>
     </span>
   </span>
-  <label
+  <span
     className="grommetux-check-box__label"
-    htmlFor="test">
+  >
     Test CheckBox
-  </label>
+  </span>
 </label>
 `;

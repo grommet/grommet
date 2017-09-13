@@ -33,8 +33,8 @@ export default class Carousel extends Component {
 
     this.state = {
       activeIndex: props.activeIndex || 0,
+      animate: typeof props.activeIndex == 'undefined',
       hideControls: ! props.persistentNav,
-      priorIndex: 0,
       sequence: 1,
       width: 0,
       slide: false
@@ -65,14 +65,20 @@ export default class Carousel extends Component {
     if ((nextProps.activeIndex || 0 === nextProps.activeIndex) &&
       this.state.activeIndex !== nextProps.activeIndex) {
       this.setState(
-        { activeIndex: nextProps.activeIndex },
+        { activeIndex: nextProps.activeIndex, animate: true },
         this._announce
       );
     }
   }
 
   componentDidUpdate () {
+    const { autoplay } = this.props;
     this._updateHammer();
+    if (autoplay) {
+      this._startAutoplay();
+    } else if (!autoplay) {
+      this._stopAutoplay();
+    }
   }
 
   componentWillUnmount () {
@@ -185,8 +191,8 @@ export default class Carousel extends Component {
   }
 
   _stopAutoplay () {
-    const { autoplay, persistentNav } = this.props;
-    if (autoplay) {
+    const { persistentNav } = this.props;
+    if (this._slideAnimation) {
       clearInterval(this._slideAnimation);
     }
 
@@ -224,7 +230,8 @@ export default class Carousel extends Component {
     const { children } = this.props;
     const { activeIndex } = this.state;
     const numSlides = children.length;
-    const index = (activeIndex + numSlides - 1) % numSlides;
+    const index = !this.props.infinite && activeIndex === 0 ? 
+      activeIndex : (activeIndex + numSlides - 1) % numSlides;
 
     if(! this.props.hasOwnProperty('activeIndex')) {
       this.setState({
@@ -241,7 +248,8 @@ export default class Carousel extends Component {
     const { children } = this.props;
     const { activeIndex } = this.state;
     const numSlides = children.length;
-    const index = (activeIndex + 1) % numSlides;
+    const index = !this.props.infinite && activeIndex === children.length - 1 ?
+      activeIndex : (activeIndex + 1) % numSlides;
 
     if(! this.props.hasOwnProperty('activeIndex')) {
       this.setState({
@@ -347,12 +355,16 @@ export default class Carousel extends Component {
     }, this);
 
     const carouselMessage = a11yTitle || Intl.getMessage(intl, 'Carousel');
+    const trackClasses = classnames(`${CLASS_ROOT}__track`,{
+      [`${CLASS_ROOT}__track--animate`]: this.state.animate
+    });
     return (
       <div ref={ref => this.carouselRef = ref} {...restProps}
         className={classes} role='group' aria-label={carouselMessage}
         onFocus={this._stopAutoplay} onBlur={this._startAutoplay}
         onMouseOver={this._stopAutoplay} onMouseOut={this._startAutoplay}>
-        <div className={`${CLASS_ROOT}__track`}
+        <div
+          className={trackClasses}
           style={{
             width: (trackWidth && trackWidth > 0) ? trackWidth : '',
             marginLeft: - trackOffset,

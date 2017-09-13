@@ -1,6 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`SunBurst has correct default options 1`] = `
 <div
-  className="grommetux-sun-burst grommetux-sun-burst--xlarge">
+  className="grommetux-sun-burst grommetux-sun-burst--xlarge"
+>
   <svg
     aria-label="SunBurst (Navigation Help)"
     className="grommetux-sun-burst__graphic"
@@ -10,10 +13,12 @@ exports[`SunBurst has correct default options 1`] = `
     onMouseUp={[Function]}
     role="group"
     tabIndex="0"
-    viewBox="0 0 100 100">
+    viewBox="0 0 100 100"
+  >
     <g
       aria-label={100}
-      role="rowgroup">
+      role="rowgroup"
+    >
       <path
         aria-label="50 "
         className="grommetux-sun-burst__slice grommetux-color-index-graph-1"
@@ -26,10 +31,12 @@ exports[`SunBurst has correct default options 1`] = `
         onMouseOver={[Function]}
         role="row"
         strokeWidth={11.11111111111111}
-        tabIndex={undefined} />
+        tabIndex={undefined}
+      />
       <g
         aria-label={50}
-        role="group">
+        role="group"
+      >
         <path
           aria-label="20 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-1"
@@ -42,10 +49,12 @@ exports[`SunBurst has correct default options 1`] = `
           onMouseOver={[Function]}
           role="row"
           strokeWidth={11.11111111111111}
-          tabIndex={undefined} />
+          tabIndex={undefined}
+        />
         <g
           aria-label={20}
-          role="group">
+          role="group"
+        >
           <path
             aria-label="5 "
             className="grommetux-sun-burst__slice grommetux-color-index-graph-1"
@@ -58,7 +67,8 @@ exports[`SunBurst has correct default options 1`] = `
             onMouseOver={[Function]}
             role="row"
             strokeWidth={11.11111111111111}
-            tabIndex={undefined} />
+            tabIndex={undefined}
+          />
           <path
             aria-label="1 "
             className="grommetux-sun-burst__slice grommetux-color-index-graph-2"
@@ -71,7 +81,8 @@ exports[`SunBurst has correct default options 1`] = `
             onMouseOver={[Function]}
             role="row"
             strokeWidth={11.11111111111111}
-            tabIndex={undefined} />
+            tabIndex={undefined}
+          />
         </g>
         <path
           aria-label="20 "
@@ -85,7 +96,8 @@ exports[`SunBurst has correct default options 1`] = `
           onMouseOver={[Function]}
           role="row"
           strokeWidth={11.11111111111111}
-          tabIndex={undefined} />
+          tabIndex={undefined}
+        />
         <path
           aria-label="10 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-3"
@@ -98,7 +110,8 @@ exports[`SunBurst has correct default options 1`] = `
           onMouseOver={[Function]}
           role="row"
           strokeWidth={11.11111111111111}
-          tabIndex={undefined} />
+          tabIndex={undefined}
+        />
       </g>
       <path
         aria-label="30 "
@@ -112,10 +125,12 @@ exports[`SunBurst has correct default options 1`] = `
         onMouseOver={[Function]}
         role="row"
         strokeWidth={11.11111111111111}
-        tabIndex={undefined} />
+        tabIndex={undefined}
+      />
       <g
         aria-label={30}
-        role="group">
+        role="group"
+      >
         <path
           aria-label="15 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-1"
@@ -128,7 +143,8 @@ exports[`SunBurst has correct default options 1`] = `
           onMouseOver={[Function]}
           role="row"
           strokeWidth={11.11111111111111}
-          tabIndex={undefined} />
+          tabIndex={undefined}
+        />
         <path
           aria-label="10 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-2"
@@ -141,7 +157,8 @@ exports[`SunBurst has correct default options 1`] = `
           onMouseOver={[Function]}
           role="row"
           strokeWidth={11.11111111111111}
-          tabIndex={undefined} />
+          tabIndex={undefined}
+        />
         <path
           aria-label="5 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-3"
@@ -154,7 +171,8 @@ exports[`SunBurst has correct default options 1`] = `
           onMouseOver={[Function]}
           role="row"
           strokeWidth={11.11111111111111}
-          tabIndex={undefined} />
+          tabIndex={undefined}
+        />
       </g>
       <path
         aria-label="20 "
@@ -168,10 +186,12 @@ exports[`SunBurst has correct default options 1`] = `
         onMouseOver={[Function]}
         role="row"
         strokeWidth={11.11111111111111}
-        tabIndex={undefined} />
+        tabIndex={undefined}
+      />
       <g
         aria-label={20}
-        role="group">
+        role="group"
+      >
         <path
           aria-label="10 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-1"
@@ -184,7 +204,8 @@ exports[`SunBurst has correct default options 1`] = `
           onMouseOver={[Function]}
           role="row"
           strokeWidth={11.11111111111111}
-          tabIndex={undefined} />
+          tabIndex={undefined}
+        />
         <path
           aria-label="7 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-2"
@@ -197,7 +218,8 @@ exports[`SunBurst has correct default options 1`] = `
           onMouseOver={[Function]}
           role="row"
           strokeWidth={11.11111111111111}
-          tabIndex={undefined} />
+          tabIndex={undefined}
+        />
         <path
           aria-label="3 "
           className="grommetux-sun-burst__slice grommetux-color-index-graph-3"
@@ -210,7 +232,8 @@ exports[`SunBurst has correct default options 1`] = `
           onMouseOver={[Function]}
           role="row"
           strokeWidth={11.11111111111111}
-          tabIndex={undefined} />
+          tabIndex={undefined}
+        />
       </g>
     </g>
   </svg>

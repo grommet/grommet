@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`FileUpload accepts a function as onDOMChange prop 1`] = `
 <div
   className="grommetux-box grommetux-box--direction-column grommetux-box--justify-center grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-medium"
@@ -5,7 +7,8 @@ exports[`FileUpload accepts a function as onDOMChange prop 1`] = `
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   <button
     aria-label={undefined}
     className="grommetux-button"
@@ -16,9 +19,11 @@ exports[`FileUpload accepts a function as onDOMChange prop 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    type="button">
+    type="button"
+  >
     <span
-      className="grommetux-button__label">
+      className="grommetux-button__label"
+    >
       Upload a file
     </span>
   </button>
@@ -26,7 +31,8 @@ exports[`FileUpload accepts a function as onDOMChange prop 1`] = `
     className="grommetux-fileupload__input"
     multiple={false}
     onChange={[Function]}
-    type="file" />
+    type="file"
+  />
 </div>
 `;
 
@@ -37,7 +43,8 @@ exports[`FileUpload has correct default options 1`] = `
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   <button
     aria-label={undefined}
     className="grommetux-button"
@@ -48,9 +55,11 @@ exports[`FileUpload has correct default options 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    type="button">
+    type="button"
+  >
     <span
-      className="grommetux-button__label">
+      className="grommetux-button__label"
+    >
       Upload a file
     </span>
   </button>
@@ -58,7 +67,8 @@ exports[`FileUpload has correct default options 1`] = `
     className="grommetux-fileupload__input"
     multiple={false}
     onChange={[Function]}
-    type="file" />
+    type="file"
+  />
 </div>
 `;
 
@@ -69,7 +79,8 @@ exports[`FileUpload should create a snapshot with full screen drop target set to
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   <button
     aria-label={undefined}
     className="grommetux-button"
@@ -80,9 +91,11 @@ exports[`FileUpload should create a snapshot with full screen drop target set to
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    type="button">
+    type="button"
+  >
     <span
-      className="grommetux-button__label">
+      className="grommetux-button__label"
+    >
       Upload a file
     </span>
   </button>
@@ -90,7 +103,8 @@ exports[`FileUpload should create a snapshot with full screen drop target set to
     className="grommetux-fileupload__input"
     multiple={false}
     onChange={[Function]}
-    type="file" />
+    type="file"
+  />
 </div>
 `;
 
@@ -101,7 +115,8 @@ exports[`FileUpload should create a snapshot with label props 1`] = `
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   <button
     aria-label={undefined}
     className="grommetux-button"
@@ -112,9 +127,11 @@ exports[`FileUpload should create a snapshot with label props 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    type="button">
+    type="button"
+  >
     <span
-      className="grommetux-button__label">
+      className="grommetux-button__label"
+    >
       Testing
     </span>
   </button>
@@ -122,7 +139,8 @@ exports[`FileUpload should create a snapshot with label props 1`] = `
     className="grommetux-fileupload__input"
     multiple={false}
     onChange={[Function]}
-    type="file" />
+    type="file"
+  />
 </div>
 `;
 
@@ -133,7 +151,8 @@ exports[`FileUpload should create a snapshot with multiple prop set to true 1`] 
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   <button
     aria-label={undefined}
     className="grommetux-button"
@@ -144,9 +163,11 @@ exports[`FileUpload should create a snapshot with multiple prop set to true 1`] 
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    type="button">
+    type="button"
+  >
     <span
-      className="grommetux-button__label">
+      className="grommetux-button__label"
+    >
       Upload a file
     </span>
   </button>
@@ -154,7 +175,8 @@ exports[`FileUpload should create a snapshot with multiple prop set to true 1`] 
     className="grommetux-fileupload__input"
     multiple={true}
     onChange={[Function]}
-    type="file" />
+    type="file"
+  />
 </div>
 `;
 
@@ -165,7 +187,8 @@ exports[`FileUpload should create a snapshot with preview prop set to false 1`] 
   onClick={undefined}
   role={undefined}
   style={Object {}}
-  tabIndex={undefined}>
+  tabIndex={undefined}
+>
   <button
     aria-label={undefined}
     className="grommetux-button"
@@ -176,9 +199,11 @@ exports[`FileUpload should create a snapshot with preview prop set to false 1`] 
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    type="button">
+    type="button"
+  >
     <span
-      className="grommetux-button__label">
+      className="grommetux-button__label"
+    >
       Upload a file
     </span>
   </button>
@@ -186,6 +211,7 @@ exports[`FileUpload should create a snapshot with preview prop set to false 1`] 
     className="grommetux-fileupload__input"
     multiple={false}
     onChange={[Function]}
-    type="file" />
+    type="file"
+  />
 </div>
 `;

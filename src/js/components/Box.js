@@ -115,14 +115,19 @@ export default class Box extends Component {
   render () {
     const {
       a11yTitle, appCentered, backgroundImage, children, className,
-      colorIndex, containerClassName, focusable, id, onClick, onBlur, onFocus,
-      onMouseDown, onMouseUp, pad, primary, role, size, tabIndex, tag, texture
+      colorIndex, containerClassName, focusable, full, id, onClick, onBlur,
+      onFocus, onMouseDown, onMouseUp, pad, primary, role, size, tabIndex,
+      tag, texture
     } = this.props;
     const { darkBackground, mouseActive } = this.state;
     let classes = [CLASS_ROOT];
     let containerClasses = [`${CLASS_ROOT}__container`];
     let restProps = Props.omit(this.props, Object.keys(Box.propTypes));
     this._addPropertyClass(classes, 'full');
+    if (full && full.responsive === undefined) {
+      // default is true for backwards compatibility sake
+      classes.push(`${CLASS_ROOT}--full-responsive`);
+    }
     this._addPropertyClass(classes, 'direction');
     this._addPropertyClass(classes, 'justify');
     this._addPropertyClass(classes, 'align');
@@ -312,10 +317,20 @@ Box.propTypes = {
   direction: PropTypes.oneOf(['row', 'column']),
   focusable: PropTypes.bool,
   flex: PropTypes.oneOf(['grow', 'shrink', true, false]),
-  full: PropTypes.oneOf([true, 'horizontal', 'vertical', false]),
+  full: PropTypes.oneOfType(
+    [
+      PropTypes.bool,
+      PropTypes.string,
+      PropTypes.shape({
+        vertical: PropTypes.bool,
+        horizontal: PropTypes.bool,
+        responsive: PropTypes.bool
+      })
+    ]
+  ),
     // remove in 1.0?
   onClick: PropTypes.func,
-  justify: PropTypes.oneOf(['start', 'center', 'between', 'end']),
+  justify: PropTypes.oneOf(['start', 'center', 'between', 'end', 'around']),
   margin: PropTypes.oneOfType([
     PropTypes.oneOf(MARGIN_SIZES),
     PropTypes.shape({

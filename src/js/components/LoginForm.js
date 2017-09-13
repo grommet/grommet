@@ -74,7 +74,6 @@ export default class LoginForm extends Component {
     let { password, rememberMe, username } = this.state;
 
     username = username.trim();
-    password = password.trim();
 
     if (onSubmit) {
       onSubmit({username, password, rememberMe});
@@ -91,15 +90,20 @@ export default class LoginForm extends Component {
     const center = ! align || 'stretch' === align || 'center' === align;
 
     const errorsNode = errors.map((error, index) => {
-      let errorComponent;
       if (error) {
-        errorComponent = (
+        let errorMessage;
+        if (React.isValidElement(error)) {
+          errorMessage = error;
+        } else {
+          errorMessage = <FormattedMessage id={error} defaultMessage={error} />;
+        }
+        return (
           <div key={index} className='error'>
-            <FormattedMessage id={error} defaultMessage={error} />
+            {errorMessage}
           </div>
         );
       }
-      return errorComponent;
+      return undefined;
     });
 
     let titleNode;
@@ -161,7 +165,8 @@ export default class LoginForm extends Component {
           pad={{vertical: 'none', between: 'medium'}}>
           {rememberMeNode}
           <Button primary={true} fill={center}
-            type="submit" label={login}
+            type={onSubmit ? "submit" : "button"}
+            label={login}
             onClick={onSubmit ? this._onSubmit : undefined} />
           {forgotPassword}
         </Footer>
@@ -177,7 +182,10 @@ LoginForm.propTypes = {
     username: PropTypes.string,
     rememberMe: PropTypes.bool
   }),
-  errors: PropTypes.arrayOf(PropTypes.string),
+  errors: PropTypes.arrayOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node
+  ])),
   forgotPassword: PropTypes.node,
   logo: PropTypes.node,
   onSubmit: PropTypes.func,

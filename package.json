@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "1.4.0",
+  "version": "1.7.0",
   "main": "src/js/index.js",
   "description": "The most advanced UX framework for enterprise applications.",
   "authors": [
@@ -41,7 +41,7 @@
     "moment": "^2.13.0",
     "prop-types": "^15.5.8",
     "react": "^15.3.0",
-    "react-addons-transition-group": "^15.3.0",
+    "react-transition-group": "^1.1.1",
     "react-desc": "^1.0.0",
     "react-dom": "^15.3.0",
     "react-intl": "^2.2.3",
@@ -52,6 +52,7 @@
     "babel-core": "^6.21.0",
     "babel-eslint": "^7.0.0",
     "babel-plugin-add-module-exports": "^0.2.0",
+    "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.3.13",
     "babel-plugin-transform-react-es6-displayname": "^1.0.0-beta1.4",
     "babel-plugin-transform-runtime": "^6.9.0",
@@ -59,7 +60,7 @@
     "babel-preset-react": "^6.3.13",
     "del": "^2.2.0",
     "eslint": "^3.13.1",
-    "grommet-toolbox": "^1.1.1",
+    "grommet-toolbox": "^2.0.0",
     "gulp": "^3.9.1",
     "gulp-bump": "^2.1.0",
     "gulp-coveralls": "^0.1.4",

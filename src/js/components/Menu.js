@@ -160,7 +160,7 @@ class MenuDrop extends Component {
       if (child && isFunction(child.type) &&
         child.type.prototype._renderMenuDrop) {
         result = React.cloneElement(child,
-          { inline: 'explode', direction: 'column' });
+          { inline: 'expanded', direction: 'column' });
       }
       return result;
     });
@@ -298,21 +298,25 @@ export default class Menu extends Component {
           );
           break;
         case 'expanded':
-          KeyboardAccelerators.stopListeningToKeyboard(
-            this, focusedKeyboardHandlers
-          );
-          KeyboardAccelerators.startListeningToKeyboard(
-            this, activeKeyboardHandlers
-          );
-          document.addEventListener('click', this._checkOnClose);
-          document.addEventListener('touchstart', this._checkOnClose);
-          this._drop = new Drop(findDOMNode(this._controlRef),
-            this._renderMenuDrop(),
-            {
-              align: this.props.dropAlign,
-              colorIndex: this.props.dropColorIndex,
-              focusControl: true
-            });
+          // only add the drop again if the instance is not defined
+          // see https://github.com/grommet/grommet/issues/1431
+          if (!this._drop) {
+            KeyboardAccelerators.stopListeningToKeyboard(
+              this, focusedKeyboardHandlers
+            );
+            KeyboardAccelerators.startListeningToKeyboard(
+              this, activeKeyboardHandlers
+            );
+            document.addEventListener('click', this._checkOnClose);
+            document.addEventListener('touchstart', this._checkOnClose);
+            this._drop = new Drop(findDOMNode(this._controlRef),
+              this._renderMenuDrop(),
+              {
+                align: this.props.dropAlign,
+                colorIndex: this.props.dropColorIndex,
+                focusControl: true
+              });
+          }
           break;
       }
     } else if (this.state.state === 'expanded') {
@@ -333,7 +337,9 @@ export default class Menu extends Component {
   }
 
   _onOpen () {
-    this.setState({state: 'expanded'});
+    if(findDOMNode(this._controlRef).contains(document.activeElement)) {
+      this.setState({state: 'expanded'});
+    }
   }
 
   _onClose () {
@@ -342,7 +348,9 @@ export default class Menu extends Component {
 
   _checkOnClose (event) {
     const drop = findDOMNode(this._menuDrop);
-    if (drop && !drop.contains(event.target)) {
+    const control = findDOMNode(this._controlRef);
+    if (drop && !drop.contains(event.target) &&
+      !control.contains(event.target)) {
       this._onClose();
     }
   }
@@ -372,7 +380,9 @@ export default class Menu extends Component {
   }
 
   _onFocusControl () {
-    this.setState({state: 'focused'});
+    if (this.state.state !== 'focused') {
+      this.setState({state: 'focused'});
+    }
   }
 
   _onBlurControl () {
@@ -452,7 +462,7 @@ export default class Menu extends Component {
 
     if (inline) {
       let menuLabel;
-      if ('explode' === inline) {
+      if ('expanded' === inline) {
         menuLabel = (
           <div className={`${CLASS_ROOT}__label`}>
             {label}
@@ -480,7 +490,7 @@ export default class Menu extends Component {
         <Box ref={ref => this._controlRef = ref} {...props} className={classes}>
           <Button plain={true} reverse={true}
             a11yTitle={menuTitle} {...this._renderButtonProps()}
-            onClick={this._onOpen}
+            onClick={() => this.setState({state: 'expanded'})}
             onFocus={this._onFocusControl} onBlur={this._onBlurControl} />
         </Box>
       );

@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { render, unmountComponentAtNode } from 'react-dom';
+import classnames from 'classnames';
 import { filterByFocusable, findScrollParents } from './DOM';
 import CSSClassnames from './CSSClassnames';
 import KeyboardAccelerators from './KeyboardAccelerators';
@@ -103,10 +104,10 @@ DropContents.childContextTypes = {
 };
 
 const _normalizeOptions = (options) => {
-  options = { ...options };
+  let opts = { ...options };
   // normalize for older interface that just had align content
   if (options.top || options.bottom || options.left || options.right) {
-    options = { align: options };
+    opts = { align: { ...options } };
   }
   // validate align
   if (options && options.align && options.align.top &&
@@ -135,15 +136,15 @@ const _normalizeOptions = (options) => {
       "' supplied to Drop," +
       "expected one of [" + HORIZONTAL_ALIGN_OPTIONS.join(',') + "]");
   }
-  options.align = options.align || {};
+  opts.align = { ...opts.align } || {};
   if (! options.align.top && ! options.align.bottom) {
-    options.align.top = "top";
+    opts.align.top = "top";
   }
   if (! options.align.left && ! options.align.right) {
-    options.align.left = "left";
+    opts.align.left = "left";
   }
-  options.responsive = options.responsive !== false ? true : options.responsive;
-  return options;
+  opts.responsive = options.responsive !== false ? true : options.responsive;
+  return opts;
 };
 
 // Drop options:
@@ -162,8 +163,8 @@ const _normalizeOptions = (options) => {
 
 export default class Drop {
 
-  constructor (control, content, options) {
-    options = _normalizeOptions(options);
+  constructor (control, content, opts) {
+    const options = _normalizeOptions(opts);
     const { context, focusControl } = options;
 
     // bind functions to instance
@@ -175,11 +176,10 @@ export default class Drop {
 
     // setup DOM
     let container = document.createElement('div');
-    container.className =
-      `grommet ${CLASS_ROOT} ${options.className || ''}`;
-    if (options.colorIndex) {
-      container.className += ` ${BACKGROUND_COLOR_INDEX}-${options.colorIndex}`;
-    }
+    container.className = classnames('grommet', CLASS_ROOT, {
+      [options.className]: options.className,
+      [`${BACKGROUND_COLOR_INDEX}-${options.colorIndex}`]: options.colorIndex
+    });
 
     // prepend in body to avoid browser scroll issues
     document.body.insertBefore(container, document.body.firstChild);
@@ -337,18 +337,14 @@ export default class Drop {
       }
     }
 
-    //for Chrome, Safari, and Opera, use document.body
-    //for Firefox and IE, use document.documentElement
-    let scrollTop = (document.documentElement
-      && document.documentElement.scrollTop) || document.body.scrollTop;
-
     container.style.left = `${left}px`;
-    container.style.width = `${width}px`;
-    // We use position:absolute and the body element's position
-    // to handle mobile browsers better. We used to use position:fixed
-    // but that didn't work on mobile browsers as well.
-    container.style.top = `${top + scrollTop}px`;
-    container.style.maxHeight = `${windowHeight - (top + scrollTop)}px`;
+    // offset width by 0.1 to avoid a bug in ie11 that 
+    // unnecessarily wraps the text if width is the same
+    container.style.width = `${width + 0.1}px`;
+    // the (position:absolute + scrollTop) 
+    // is presenting issues with desktop scroll flickering
+    container.style.top = `${top}px`;
+    container.style.maxHeight = `${windowHeight - (top)}px`;
 
     if (initialFocusNeeded) {
       // Now that we've placed it, focus on it
@@ -390,9 +386,17 @@ export default class Drop {
       scrollParent.removeEventListener('scroll', this.place);
     });
     window.removeEventListener('resize', this._onResize);
-
+    
     unmountComponentAtNode(container);
     document.body.removeChild(container);
+    // weird bug in Chrome does not remove child if
+    // document.body.insertBefore is called in another new drop.
+    // the code below will go over remaining drop that was not removed
+    [].forEach.call(document.getElementsByClassName(CLASS_ROOT), (element) => {
+      if(element.getAttribute('style') === container.getAttribute('style')) {
+        document.body.removeChild(element);
+      }
+    });
 
     if (originalFocusedElement) {
       originalFocusedElement.focus();

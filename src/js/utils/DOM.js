@@ -32,7 +32,11 @@ export function findScrollParents (element, horizontal) {
     }
     parent = parent.parentNode;
   }
-  result.push(document);
+  // last scrollable element will be the document 
+  // if nothing else is scrollable in the page
+  if (result.length === 0) {
+    result.push(document);
+  }
   return result;
 }
 

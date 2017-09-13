@@ -156,8 +156,8 @@ export default class Layer extends Component {
   componentDidMount () {
     this._originalFocusedElement = document.activeElement;
     this._originalScrollPosition = {
-      top: window.scrollY,
-      left: window.scrollX
+      top: window.pageYOffset,
+      left: window.pageXOffset
     };
     this._addLayer();
     this._renderLayer();
@@ -168,7 +168,8 @@ export default class Layer extends Component {
   }
 
   componentWillUnmount () {
-    if (this._originalFocusedElement) {
+    const { hidden } = this.props;
+    if (this._originalFocusedElement && !hidden) {
       if (this._originalFocusedElement.focus) {
         // wait for the fixed positioning to come back to normal
         // see layer styling for reference

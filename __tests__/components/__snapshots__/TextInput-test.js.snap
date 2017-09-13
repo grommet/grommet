@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`TextInput can set autocomplete 1`] = `
 <input
   autoComplete="on"
@@ -7,7 +9,9 @@ exports[`TextInput can set autocomplete 1`] = `
   onFocus={[Function]}
   onKeyDown={[Function]}
   placeholder={undefined}
-  value={undefined} />
+  type="text"
+  value={undefined}
+/>
 `;
 
 exports[`TextInput has correct default options 1`] = `
@@ -21,5 +25,7 @@ exports[`TextInput has correct default options 1`] = `
   onFocus={[Function]}
   onKeyDown={[Function]}
   placeholder={undefined}
-  value="one" />
+  type="text"
+  value="one"
+/>
 `;

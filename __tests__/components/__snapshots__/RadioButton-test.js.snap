@@ -1,18 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`RadioButton has correct default options 1`] = `
 <label
-  className="grommetux-radio-button">
+  className="grommetux-radio-button"
+  htmlFor="choice"
+>
   <input
     checked={true}
     className="grommetux-radio-button__input"
     id="choice"
     name="choice"
-    type="radio" />
+    type="radio"
+  />
   <span
-    className="grommetux-radio-button__control" />
-  <label
+    className="grommetux-radio-button__control"
+  />
+  <span
     className="grommetux-radio-button__label"
-    htmlFor="choice">
+  >
     Choice
-  </label>
+  </span>
 </label>
 `;

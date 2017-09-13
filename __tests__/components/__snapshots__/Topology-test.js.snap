@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Topology has correct default options 1`] = `
 <div
   aria-label="Topology"
@@ -7,23 +9,27 @@ exports[`Topology has correct default options 1`] = `
   onMouseDown={[Function]}
   onMouseUp={[Function]}
   role="group"
-  tabIndex="0">
+  tabIndex="0"
+>
   <svg
     className="grommetux-topology__links"
     height={100}
     preserveAspectRatio="xMidYMid meet"
     role="presentation"
     viewBox="0 0 100 100"
-    width={100} />
+    width={100}
+  />
   <div
     className="grommetux-topology__contents"
     onMouseLeave={[Function]}
-    onMouseMove={[Function]}>
+    onMouseMove={[Function]}
+  >
     <div
       aria-label="Parts"
       className="grommetux-topology__parts grommetux-topology__parts--direction-row"
       role="rowgroup"
-      tabIndex="-1">
+      tabIndex="-1"
+    >
       <div
         aria-label="Part"
         className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate rack"
@@ -31,7 +37,8 @@ exports[`Topology has correct default options 1`] = `
         onMouseEnter={undefined}
         onMouseLeave={undefined}
         role="group"
-        tabIndex="-1">
+        tabIndex="-1"
+      >
         <div
           aria-label="Part"
           className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate switch"
@@ -39,12 +46,14 @@ exports[`Topology has correct default options 1`] = `
           onMouseEnter={undefined}
           onMouseLeave={undefined}
           role="group"
-          tabIndex="-1">
+          tabIndex="-1"
+        >
           <div
             aria-label="Parts"
             className="grommetux-topology__parts grommetux-topology__parts--direction-row"
             role="rowgroup"
-            tabIndex="-1">
+            tabIndex="-1"
+          >
             <div
               aria-label="ok 1"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
@@ -53,46 +62,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-0">
+                    id="mask-ok-0"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-0)">
+                  mask="url(#mask-ok-0)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 1
               </span>
             </div>
@@ -104,46 +122,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-1">
+                    id="mask-ok-1"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-1)">
+                  mask="url(#mask-ok-1)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 2
               </span>
             </div>
@@ -155,46 +182,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-2">
+                    id="mask-ok-2"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-2)">
+                  mask="url(#mask-ok-2)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 3
               </span>
             </div>
@@ -206,46 +242,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-3">
+                    id="mask-ok-3"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-3)">
+                  mask="url(#mask-ok-3)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 4
               </span>
             </div>
@@ -257,46 +302,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-4">
+                    id="mask-ok-4"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-4)">
+                  mask="url(#mask-ok-4)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 5
               </span>
             </div>
@@ -308,46 +362,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-5">
+                    id="mask-ok-5"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-5)">
+                  mask="url(#mask-ok-5)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 6
               </span>
             </div>
@@ -359,46 +422,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-6">
+                    id="mask-ok-6"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-6)">
+                  mask="url(#mask-ok-6)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 7
               </span>
             </div>
@@ -410,52 +482,62 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-7">
+                    id="mask-ok-7"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-7)">
+                  mask="url(#mask-ok-7)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 8
               </span>
             </div>
           </div>
           <span
-            className="grommetux-topology__label">
+            className="grommetux-topology__label"
+          >
             HP 3100 SI
           </span>
         </div>
@@ -466,7 +548,8 @@ exports[`Topology has correct default options 1`] = `
           onMouseEnter={undefined}
           onMouseLeave={undefined}
           role="group"
-          tabIndex="-1">
+          tabIndex="-1"
+        >
           <div
             aria-label=" HP Virtual Connect FlexFabric-20/40 F8 Module"
             className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
@@ -474,9 +557,11 @@ exports[`Topology has correct default options 1`] = `
             onMouseEnter={undefined}
             onMouseLeave={undefined}
             role="row"
-            tabIndex="-1">
+            tabIndex="-1"
+          >
             <span
-              className="grommetux-topology__label">
+              className="grommetux-topology__label"
+            >
               HP Virtual Connect FlexFabric-20/40 F8 Module
             </span>
           </div>
@@ -487,9 +572,11 @@ exports[`Topology has correct default options 1`] = `
             onMouseEnter={undefined}
             onMouseLeave={undefined}
             role="row"
-            tabIndex="-1">
+            tabIndex="-1"
+          >
             <span
-              className="grommetux-topology__label">
+              className="grommetux-topology__label"
+            >
               HP Virtual Connect FlexFabric-20/40 F8 Module
             </span>
           </div>
@@ -497,7 +584,8 @@ exports[`Topology has correct default options 1`] = `
             aria-label="Parts"
             className="grommetux-topology__parts grommetux-topology__parts--direction-row"
             role="rowgroup"
-            tabIndex="-1">
+            tabIndex="-1"
+          >
             <div
               aria-label="Part"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
@@ -505,12 +593,14 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="group"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <div
                 aria-label="Parts"
                 className="grommetux-topology__parts grommetux-topology__parts--direction-column"
                 role="rowgroup"
-                tabIndex="-1">
+                tabIndex="-1"
+              >
                 <div
                   aria-label="ok 1"
                   className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
@@ -519,46 +609,55 @@ exports[`Topology has correct default options 1`] = `
                   onMouseEnter={undefined}
                   onMouseLeave={undefined}
                   role="row"
-                  tabIndex="-1">
+                  tabIndex="-1"
+                >
                   <svg
                     aria-hidden="true"
                     aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
                     version="1.1"
-                    viewBox="0 0 24 24">
+                    viewBox="0 0 24 24"
+                  >
                     <defs>
                       <mask
-                        id="mask-ok-8">
+                        id="mask-ok-8"
+                      >
                         <g
-                          className="grommetux-status-icon__detail">
+                          className="grommetux-status-icon__detail"
+                        >
                           <rect
                             fill="#fff"
                             height="24"
                             width="24"
                             x="0"
-                            y="0" />
+                            y="0"
+                          />
                           <path
                             d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                             fill="#000"
-                            stroke="none" />
+                            stroke="none"
+                          />
                         </g>
                       </mask>
                     </defs>
                     <g
                       className="grommetux-status-icon__base"
-                      mask="url(#mask-ok-8)">
+                      mask="url(#mask-ok-8)"
+                    >
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </svg>
                   <span
                     aria-hidden={true}
                     className="grommetux-topology__label"
-                    role="presentation">
+                    role="presentation"
+                  >
                     1
                   </span>
                 </div>
@@ -570,46 +669,55 @@ exports[`Topology has correct default options 1`] = `
                   onMouseEnter={undefined}
                   onMouseLeave={undefined}
                   role="row"
-                  tabIndex="-1">
+                  tabIndex="-1"
+                >
                   <svg
                     aria-hidden="true"
                     aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
                     version="1.1"
-                    viewBox="0 0 24 24">
+                    viewBox="0 0 24 24"
+                  >
                     <defs>
                       <mask
-                        id="mask-ok-9">
+                        id="mask-ok-9"
+                      >
                         <g
-                          className="grommetux-status-icon__detail">
+                          className="grommetux-status-icon__detail"
+                        >
                           <rect
                             fill="#fff"
                             height="24"
                             width="24"
                             x="0"
-                            y="0" />
+                            y="0"
+                          />
                           <path
                             d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                             fill="#000"
-                            stroke="none" />
+                            stroke="none"
+                          />
                         </g>
                       </mask>
                     </defs>
                     <g
                       className="grommetux-status-icon__base"
-                      mask="url(#mask-ok-9)">
+                      mask="url(#mask-ok-9)"
+                    >
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </svg>
                   <span
                     aria-hidden={true}
                     className="grommetux-topology__label"
-                    role="presentation">
+                    role="presentation"
+                  >
                     2
                   </span>
                 </div>
@@ -622,46 +730,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-10">
+                    id="mask-ok-10"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-10)">
+                  mask="url(#mask-ok-10)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 1
               </span>
             </div>
@@ -672,7 +789,8 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="group"
-              tabIndex="-1" />
+              tabIndex="-1"
+            />
             <div
               aria-label="ok 3"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center grommetux-topology__part--demarcate fan"
@@ -680,46 +798,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-11">
+                    id="mask-ok-11"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-11)">
+                  mask="url(#mask-ok-11)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 3
               </span>
             </div>
@@ -731,9 +858,11 @@ exports[`Topology has correct default options 1`] = `
             onMouseEnter={undefined}
             onMouseLeave={undefined}
             role="row"
-            tabIndex="-1">
+            tabIndex="-1"
+          >
             <span
-              className="grommetux-topology__label">
+              className="grommetux-topology__label"
+            >
               HP Virtual Connect FlexFabric-20/40 F8 Module
             </span>
           </div>
@@ -741,7 +870,8 @@ exports[`Topology has correct default options 1`] = `
             aria-label="Parts"
             className="grommetux-topology__parts grommetux-topology__parts--direction-row"
             role="rowgroup"
-            tabIndex="-1">
+            tabIndex="-1"
+          >
             <div
               aria-label="Part"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
@@ -749,12 +879,14 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="group"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <div
                 aria-label="Parts"
                 className="grommetux-topology__parts grommetux-topology__parts--direction-column"
                 role="rowgroup"
-                tabIndex="-1">
+                tabIndex="-1"
+              >
                 <div
                   aria-label="ok 1"
                   className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
@@ -763,46 +895,55 @@ exports[`Topology has correct default options 1`] = `
                   onMouseEnter={undefined}
                   onMouseLeave={undefined}
                   role="row"
-                  tabIndex="-1">
+                  tabIndex="-1"
+                >
                   <svg
                     aria-hidden="true"
                     aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
                     version="1.1"
-                    viewBox="0 0 24 24">
+                    viewBox="0 0 24 24"
+                  >
                     <defs>
                       <mask
-                        id="mask-ok-12">
+                        id="mask-ok-12"
+                      >
                         <g
-                          className="grommetux-status-icon__detail">
+                          className="grommetux-status-icon__detail"
+                        >
                           <rect
                             fill="#fff"
                             height="24"
                             width="24"
                             x="0"
-                            y="0" />
+                            y="0"
+                          />
                           <path
                             d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                             fill="#000"
-                            stroke="none" />
+                            stroke="none"
+                          />
                         </g>
                       </mask>
                     </defs>
                     <g
                       className="grommetux-status-icon__base"
-                      mask="url(#mask-ok-12)">
+                      mask="url(#mask-ok-12)"
+                    >
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </svg>
                   <span
                     aria-hidden={true}
                     className="grommetux-topology__label"
-                    role="presentation">
+                    role="presentation"
+                  >
                     1
                   </span>
                 </div>
@@ -814,46 +955,55 @@ exports[`Topology has correct default options 1`] = `
                   onMouseEnter={undefined}
                   onMouseLeave={undefined}
                   role="row"
-                  tabIndex="-1">
+                  tabIndex="-1"
+                >
                   <svg
                     aria-hidden="true"
                     aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
                     version="1.1"
-                    viewBox="0 0 24 24">
+                    viewBox="0 0 24 24"
+                  >
                     <defs>
                       <mask
-                        id="mask-ok-13">
+                        id="mask-ok-13"
+                      >
                         <g
-                          className="grommetux-status-icon__detail">
+                          className="grommetux-status-icon__detail"
+                        >
                           <rect
                             fill="#fff"
                             height="24"
                             width="24"
                             x="0"
-                            y="0" />
+                            y="0"
+                          />
                           <path
                             d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                             fill="#000"
-                            stroke="none" />
+                            stroke="none"
+                          />
                         </g>
                       </mask>
                     </defs>
                     <g
                       className="grommetux-status-icon__base"
-                      mask="url(#mask-ok-13)">
+                      mask="url(#mask-ok-13)"
+                    >
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </svg>
                   <span
                     aria-hidden={true}
                     className="grommetux-topology__label"
-                    role="presentation">
+                    role="presentation"
+                  >
                     2
                   </span>
                 </div>
@@ -866,46 +1016,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-14">
+                    id="mask-ok-14"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-14)">
+                  mask="url(#mask-ok-14)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 4
               </span>
             </div>
@@ -916,46 +1075,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-15">
+                    id="mask-ok-15"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-15)">
+                  mask="url(#mask-ok-15)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 5
               </span>
             </div>
@@ -966,46 +1134,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-16">
+                    id="mask-ok-16"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-16)">
+                  mask="url(#mask-ok-16)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 6
               </span>
             </div>
@@ -1019,7 +1196,8 @@ exports[`Topology has correct default options 1`] = `
         onMouseEnter={undefined}
         onMouseLeave={undefined}
         role="group"
-        tabIndex="-1">
+        tabIndex="-1"
+      >
         <div
           aria-label="Part"
           className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate switch"
@@ -1027,12 +1205,14 @@ exports[`Topology has correct default options 1`] = `
           onMouseEnter={undefined}
           onMouseLeave={undefined}
           role="group"
-          tabIndex="-1">
+          tabIndex="-1"
+        >
           <div
             aria-label="Parts"
             className="grommetux-topology__parts grommetux-topology__parts--direction-row"
             role="rowgroup"
-            tabIndex="-1">
+            tabIndex="-1"
+          >
             <div
               aria-label="ok 1"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch"
@@ -1041,46 +1221,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-17">
+                    id="mask-ok-17"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-17)">
+                  mask="url(#mask-ok-17)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 1
               </span>
             </div>
@@ -1092,46 +1281,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-18">
+                    id="mask-ok-18"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-18)">
+                  mask="url(#mask-ok-18)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 2
               </span>
             </div>
@@ -1143,46 +1341,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-19">
+                    id="mask-ok-19"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-19)">
+                  mask="url(#mask-ok-19)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 3
               </span>
             </div>
@@ -1194,46 +1401,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-20">
+                    id="mask-ok-20"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-20)">
+                  mask="url(#mask-ok-20)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 4
               </span>
             </div>
@@ -1245,46 +1461,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-21">
+                    id="mask-ok-21"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-21)">
+                  mask="url(#mask-ok-21)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 5
               </span>
             </div>
@@ -1296,46 +1521,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-22">
+                    id="mask-ok-22"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-22)">
+                  mask="url(#mask-ok-22)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 6
               </span>
             </div>
@@ -1347,46 +1581,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-23">
+                    id="mask-ok-23"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-23)">
+                  mask="url(#mask-ok-23)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 7
               </span>
             </div>
@@ -1398,46 +1641,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-24">
+                    id="mask-ok-24"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-24)">
+                  mask="url(#mask-ok-24)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 8
               </span>
             </div>
@@ -1449,46 +1701,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-25">
+                    id="mask-ok-25"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-25)">
+                  mask="url(#mask-ok-25)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 9
               </span>
             </div>
@@ -1500,59 +1761,70 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-26">
+                    id="mask-ok-26"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-26)">
+                  mask="url(#mask-ok-26)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 10
               </span>
             </div>
           </div>
           <span
-            className="grommetux-topology__label">
+            className="grommetux-topology__label"
+          >
             HP 5920AF-24XG
           </span>
           <div
             aria-label="Parts"
             className="grommetux-topology__parts grommetux-topology__parts--direction-row"
             role="rowgroup"
-            tabIndex="-1">
+            tabIndex="-1"
+          >
             <div
               aria-label="ok 11"
               className="grommetux-topology__part grommetux-topology__part--direction-column grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--reverse"
@@ -1561,46 +1833,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-27">
+                    id="mask-ok-27"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-27)">
+                  mask="url(#mask-ok-27)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 11
               </span>
             </div>
@@ -1612,46 +1893,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-28">
+                    id="mask-ok-28"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-28)">
+                  mask="url(#mask-ok-28)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 12
               </span>
             </div>
@@ -1663,46 +1953,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-29">
+                    id="mask-ok-29"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-29)">
+                  mask="url(#mask-ok-29)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 13
               </span>
             </div>
@@ -1714,46 +2013,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-30">
+                    id="mask-ok-30"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-30)">
+                  mask="url(#mask-ok-30)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 14
               </span>
             </div>
@@ -1765,46 +2073,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-31">
+                    id="mask-ok-31"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-31)">
+                  mask="url(#mask-ok-31)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 15
               </span>
             </div>
@@ -1816,46 +2133,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-32">
+                    id="mask-ok-32"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-32)">
+                  mask="url(#mask-ok-32)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 16
               </span>
             </div>
@@ -1867,46 +2193,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-33">
+                    id="mask-ok-33"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-33)">
+                  mask="url(#mask-ok-33)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 17
               </span>
             </div>
@@ -1918,46 +2253,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-34">
+                    id="mask-ok-34"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-34)">
+                  mask="url(#mask-ok-34)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 18
               </span>
             </div>
@@ -1969,46 +2313,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-35">
+                    id="mask-ok-35"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-35)">
+                  mask="url(#mask-ok-35)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 19
               </span>
             </div>
@@ -2020,46 +2373,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-36">
+                    id="mask-ok-36"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-36)">
+                  mask="url(#mask-ok-36)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 20
               </span>
             </div>
@@ -2072,12 +2434,14 @@ exports[`Topology has correct default options 1`] = `
           onMouseEnter={undefined}
           onMouseLeave={undefined}
           role="group"
-          tabIndex="-1">
+          tabIndex="-1"
+        >
           <div
             aria-label="Parts"
             className="grommetux-topology__parts grommetux-topology__parts--direction-row"
             role="rowgroup"
-            tabIndex="-1">
+            tabIndex="-1"
+          >
             <div
               aria-label="Part"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
@@ -2085,12 +2449,14 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="group"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <div
                 aria-label="Parts"
                 className="grommetux-topology__parts grommetux-topology__parts--direction-column"
                 role="rowgroup"
-                tabIndex="-1">
+                tabIndex="-1"
+              >
                 <div
                   aria-label="ok 1"
                   className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
@@ -2099,46 +2465,55 @@ exports[`Topology has correct default options 1`] = `
                   onMouseEnter={undefined}
                   onMouseLeave={undefined}
                   role="row"
-                  tabIndex="-1">
+                  tabIndex="-1"
+                >
                   <svg
                     aria-hidden="true"
                     aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
                     version="1.1"
-                    viewBox="0 0 24 24">
+                    viewBox="0 0 24 24"
+                  >
                     <defs>
                       <mask
-                        id="mask-ok-37">
+                        id="mask-ok-37"
+                      >
                         <g
-                          className="grommetux-status-icon__detail">
+                          className="grommetux-status-icon__detail"
+                        >
                           <rect
                             fill="#fff"
                             height="24"
                             width="24"
                             x="0"
-                            y="0" />
+                            y="0"
+                          />
                           <path
                             d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                             fill="#000"
-                            stroke="none" />
+                            stroke="none"
+                          />
                         </g>
                       </mask>
                     </defs>
                     <g
                       className="grommetux-status-icon__base"
-                      mask="url(#mask-ok-37)">
+                      mask="url(#mask-ok-37)"
+                    >
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </svg>
                   <span
                     aria-hidden={true}
                     className="grommetux-topology__label"
-                    role="presentation">
+                    role="presentation"
+                  >
                     1
                   </span>
                 </div>
@@ -2150,46 +2525,55 @@ exports[`Topology has correct default options 1`] = `
                   onMouseEnter={undefined}
                   onMouseLeave={undefined}
                   role="row"
-                  tabIndex="-1">
+                  tabIndex="-1"
+                >
                   <svg
                     aria-hidden="true"
                     aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
                     version="1.1"
-                    viewBox="0 0 24 24">
+                    viewBox="0 0 24 24"
+                  >
                     <defs>
                       <mask
-                        id="mask-ok-38">
+                        id="mask-ok-38"
+                      >
                         <g
-                          className="grommetux-status-icon__detail">
+                          className="grommetux-status-icon__detail"
+                        >
                           <rect
                             fill="#fff"
                             height="24"
                             width="24"
                             x="0"
-                            y="0" />
+                            y="0"
+                          />
                           <path
                             d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                             fill="#000"
-                            stroke="none" />
+                            stroke="none"
+                          />
                         </g>
                       </mask>
                     </defs>
                     <g
                       className="grommetux-status-icon__base"
-                      mask="url(#mask-ok-38)">
+                      mask="url(#mask-ok-38)"
+                    >
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </svg>
                   <span
                     aria-hidden={true}
                     className="grommetux-topology__label"
-                    role="presentation">
+                    role="presentation"
+                  >
                     2
                   </span>
                 </div>
@@ -2202,46 +2586,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-39">
+                    id="mask-ok-39"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-39)">
+                  mask="url(#mask-ok-39)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 1
               </span>
             </div>
@@ -2252,46 +2645,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-40">
+                    id="mask-ok-40"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-40)">
+                  mask="url(#mask-ok-40)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 2
               </span>
             </div>
@@ -2302,46 +2704,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-41">
+                    id="mask-ok-41"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-41)">
+                  mask="url(#mask-ok-41)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 3
               </span>
             </div>
@@ -2353,9 +2764,11 @@ exports[`Topology has correct default options 1`] = `
             onMouseEnter={undefined}
             onMouseLeave={undefined}
             role="row"
-            tabIndex="-1">
+            tabIndex="-1"
+          >
             <span
-              className="grommetux-topology__label">
+              className="grommetux-topology__label"
+            >
               HP Virtual Connect FlexFabric-20/40 F8 Module
             </span>
           </div>
@@ -2363,7 +2776,8 @@ exports[`Topology has correct default options 1`] = `
             aria-label="Parts"
             className="grommetux-topology__parts grommetux-topology__parts--direction-row"
             role="rowgroup"
-            tabIndex="-1">
+            tabIndex="-1"
+          >
             <div
               aria-label="Part"
               className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-stretch grommetux-topology__part--demarcate em"
@@ -2371,12 +2785,14 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="group"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <div
                 aria-label="Parts"
                 className="grommetux-topology__parts grommetux-topology__parts--direction-column"
                 role="rowgroup"
-                tabIndex="-1">
+                tabIndex="-1"
+              >
                 <div
                   aria-label="ok 1"
                   className="grommetux-topology__part grommetux-topology__part--direction-row grommetux-topology__part--justify-center grommetux-topology__part--align-center"
@@ -2385,46 +2801,55 @@ exports[`Topology has correct default options 1`] = `
                   onMouseEnter={undefined}
                   onMouseLeave={undefined}
                   role="row"
-                  tabIndex="-1">
+                  tabIndex="-1"
+                >
                   <svg
                     aria-hidden="true"
                     aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
                     version="1.1"
-                    viewBox="0 0 24 24">
+                    viewBox="0 0 24 24"
+                  >
                     <defs>
                       <mask
-                        id="mask-ok-42">
+                        id="mask-ok-42"
+                      >
                         <g
-                          className="grommetux-status-icon__detail">
+                          className="grommetux-status-icon__detail"
+                        >
                           <rect
                             fill="#fff"
                             height="24"
                             width="24"
                             x="0"
-                            y="0" />
+                            y="0"
+                          />
                           <path
                             d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                             fill="#000"
-                            stroke="none" />
+                            stroke="none"
+                          />
                         </g>
                       </mask>
                     </defs>
                     <g
                       className="grommetux-status-icon__base"
-                      mask="url(#mask-ok-42)">
+                      mask="url(#mask-ok-42)"
+                    >
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </svg>
                   <span
                     aria-hidden={true}
                     className="grommetux-topology__label"
-                    role="presentation">
+                    role="presentation"
+                  >
                     1
                   </span>
                 </div>
@@ -2436,46 +2861,55 @@ exports[`Topology has correct default options 1`] = `
                   onMouseEnter={undefined}
                   onMouseLeave={undefined}
                   role="row"
-                  tabIndex="-1">
+                  tabIndex="-1"
+                >
                   <svg
                     aria-hidden="true"
                     aria-label="OK"
                     className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                     role="img"
                     version="1.1"
-                    viewBox="0 0 24 24">
+                    viewBox="0 0 24 24"
+                  >
                     <defs>
                       <mask
-                        id="mask-ok-43">
+                        id="mask-ok-43"
+                      >
                         <g
-                          className="grommetux-status-icon__detail">
+                          className="grommetux-status-icon__detail"
+                        >
                           <rect
                             fill="#fff"
                             height="24"
                             width="24"
                             x="0"
-                            y="0" />
+                            y="0"
+                          />
                           <path
                             d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                             fill="#000"
-                            stroke="none" />
+                            stroke="none"
+                          />
                         </g>
                       </mask>
                     </defs>
                     <g
                       className="grommetux-status-icon__base"
-                      mask="url(#mask-ok-43)">
+                      mask="url(#mask-ok-43)"
+                    >
                       <circle
                         cx="12"
                         cy="12"
                         r="12"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </svg>
                   <span
                     aria-hidden={true}
                     className="grommetux-topology__label"
-                    role="presentation">
+                    role="presentation"
+                  >
                     2
                   </span>
                 </div>
@@ -2488,46 +2922,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-44">
+                    id="mask-ok-44"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-44)">
+                  mask="url(#mask-ok-44)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 4
               </span>
             </div>
@@ -2538,46 +2981,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-45">
+                    id="mask-ok-45"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-45)">
+                  mask="url(#mask-ok-45)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 5
               </span>
             </div>
@@ -2588,46 +3040,55 @@ exports[`Topology has correct default options 1`] = `
               onMouseEnter={undefined}
               onMouseLeave={undefined}
               role="row"
-              tabIndex="-1">
+              tabIndex="-1"
+            >
               <svg
                 aria-hidden="true"
                 aria-label="OK"
                 className="grommetux-status-icon grommetux-status-icon-ok grommetux-status-icon--small"
                 role="img"
                 version="1.1"
-                viewBox="0 0 24 24">
+                viewBox="0 0 24 24"
+              >
                 <defs>
                   <mask
-                    id="mask-ok-46">
+                    id="mask-ok-46"
+                  >
                     <g
-                      className="grommetux-status-icon__detail">
+                      className="grommetux-status-icon__detail"
+                    >
                       <rect
                         fill="#fff"
                         height="24"
                         width="24"
                         x="0"
-                        y="0" />
+                        y="0"
+                      />
                       <path
                         d="M10,17.4 L5.3,12.7 L6.7,11.3 L10,14.6 L17.3,7.3 L18.7,8.7 L10,17.4 Z"
                         fill="#000"
-                        stroke="none" />
+                        stroke="none"
+                      />
                     </g>
                   </mask>
                 </defs>
                 <g
                   className="grommetux-status-icon__base"
-                  mask="url(#mask-ok-46)">
+                  mask="url(#mask-ok-46)"
+                >
                   <circle
                     cx="12"
                     cy="12"
                     r="12"
-                    stroke="none" />
+                    stroke="none"
+                  />
                 </g>
               </svg>
               <span
                 aria-hidden={true}
                 className="grommetux-topology__label"
-                role="presentation">
+                role="presentation"
+              >
                 6
               </span>
             </div>
@@ -2638,11 +3099,14 @@ exports[`Topology has correct default options 1`] = `
   </div>
   <div
     className="grommetux-topology__color-key"
-    role="presentation">
+    role="presentation"
+  >
     <div
-      className="grommetux-background-color-index-graph-1" />
+      className="grommetux-background-color-index-graph-1"
+    />
     <div
-      className="grommetux-background-color-index-graph-2" />
+      className="grommetux-background-color-index-graph-2"
+    />
   </div>
 </div>
 `;

@@ -9,6 +9,11 @@ import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 const CLASS_ROOT = CSSClassnames.WORLD_MAP;
 const COLOR_INDEX = CSSClassnames.COLOR_INDEX;
 
+// The graphic is drawn as a rectangular grid using coordinates spaced
+// by FACTOR pixels. The contents have both an area boundary for interaction
+// and dots described as rows where each row is described by three values:
+// a starting coordinate and a length. This approach is more efficient than
+// describing it via SVG elements, keeping the code/library size smaller.
 const CONTINENTS = [
   {
     id: 'Australia',
@@ -101,168 +106,496 @@ const CONTINENTS = [
   }
 ];
 
+// FACTOR is the distance in pixels between coordinates
 const FACTOR = 10;
+
+// helper function to detect if any series elements have
+const clickableSeries = (props) =>
+  props.series && props.series.some((serie) => serie.onClick);
+
+const maxCoordinate = (a, b) =>
+  [Math.max(a[0], b[0]), Math.max(a[1], b[1])];
+const minCoordinate = (a, b) =>
+  [Math.min(a[0], b[0]), Math.min(a[1], b[1])];
+
+// Based on https://stackoverflow.com/a/43861247
+const MAP_LAT_BOTTOM = -50.0; // empirically determined
+const MAP_LAT_BOTTOM_RAD = MAP_LAT_BOTTOM * Math.PI / 180;
+const MAP_LON_LEFT = -171.0; // empirically determined
+const MAP_LON_RIGHT = 184.0; // empirically determined
+const MAP_LON_DELTA = (MAP_LON_RIGHT - MAP_LON_LEFT);
+
+const mapValues = (extent) => {
+  const mapRadius = ((extent[0] / MAP_LON_DELTA) * 360) / (2 * Math.PI);
+  const mapOffsetY = Math.round(mapRadius / 2 *
+    Math.log((1 + Math.sin(MAP_LAT_BOTTOM_RAD)) /
+      (1 - Math.sin(MAP_LAT_BOTTOM_RAD))));
+  return { mapRadius, mapOffsetY };
+};
+
+const latLonToCoord = (latLon, origin, extent) => {
+  const { mapRadius, mapOffsetY } = mapValues(extent);
+  const x =
+    Math.round(((latLon[1] - MAP_LON_LEFT) * extent[0]) / MAP_LON_DELTA);
+  const latitudeRad = latLon[0] * Math.PI / 180;
+  const y = extent[1] + mapOffsetY -
+    Math.round(((mapRadius / 2) *
+      Math.log((1 + Math.sin(latitudeRad)) /
+        (1 - Math.sin(latitudeRad)))));
+  return [x, y]; // the coordinate value of this point on the map image
+};
+
+const coordToLatLon = (coord, origin, extent) => {
+  const { mapRadius, mapOffsetY } = mapValues(extent);
+  const a = ((extent[1] + mapOffsetY) - coord[1]) / mapRadius;
+  const lat = 180 / Math.PI * (2 * Math.atan(Math.exp(a)) - Math.PI/2);
+  const lon = ((coord[0] * MAP_LON_DELTA) / extent[0]) + MAP_LON_LEFT;
+  return [lat, lon];
+};
 
 export default class WorldMap extends Component {
 
   constructor(props, context) {
     super(props, context);
-    this._onActivate = this._onActivate.bind(this);
-    this._onDeactivate = this._onDeactivate.bind(this);
-    this._renderContinent = this._renderContinent.bind(this);
+    this._renderPlace = this._renderPlace.bind(this);
+    this._activateContinent = this._activateContinent.bind(this);
+    this._activatePlace = this._activatePlace.bind(this);
     this._onEnter = this._onEnter.bind(this);
+    this._onMouseOver = this._onMouseOver.bind(this);
+    this._onMouseMove = this._onMouseMove.bind(this);
+    this._onMouseLeave = this._onMouseLeave.bind(this);
 
     this.state = this._buildState();
-
-    this.state.clickable = props.series.some((serie) => serie.onClick);
+    this.state = { ...this.state, ...this._updateState(props) };
+    this.state.clickable = clickableSeries(props);
+    this._flagRefs = {};
   }
 
   componentDidMount () {
     const { clickable } = this.state;
     if (clickable) {
-      this._keyboardHandlers = {
-        enter: this._onEnter,
-        space: this._onEnter
-      };
-      KeyboardAccelerators.startListeningToKeyboard(
-        this, this._keyboardHandlers
-      );
+      this._startKeyboardListening();
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ ...this._updateState(nextProps) });
+
+    const { clickable } = this.state;
+    const nextClickable = clickableSeries(nextProps);
+    if (nextClickable !== clickable) {
+      if (nextClickable) {
+        this._startKeyboardListening();
+      } else {
+        this._stopKeyboardListening();
+      }
+      this.setState({ clickable: nextClickable });
+    }
+  }
+
+  componentDidUpdate() {
+    // place flags
+    const { series } = this.props;
+    const { continents, places, zoomedOrigin, width } = this.state;
+    const flagged = (series || []).filter(s => s.flag);
+    if (flagged.length > 0) {
+      const rect = this._worldMapRef.getBoundingClientRect();
+      const scale = rect.width / width;
+      flagged.forEach((serie, index) => {
+        const placeState = places[index];
+        let x;
+        let y;
+        if (serie.continent) {
+          const continentState = continents[serie.continent];
+          x = ((continentState.mid[0] - zoomedOrigin[0]) * FACTOR * scale);
+          y = ((continentState.mid[1] - zoomedOrigin[1]) * FACTOR * scale);
+        } else if (serie.place) {
+          x = placeState.place[0] * FACTOR * scale;
+          y = placeState.place[1] * FACTOR * scale;
+        }
+        const flag = this._flagRefs[index];
+        const flagRect = flag.getBoundingClientRect();
+        const xOffset = (x > (rect.width / 2)) ? (FACTOR / 2) :
+          -(flagRect.width + (FACTOR / 2));
+        const yOffset = (y > (rect.height / 2)) ? (FACTOR / 2) :
+          -(flagRect.height + (FACTOR / 2));
+        flag.style.top = `${y + yOffset}px`;
+        flag.style.left = `${x + xOffset}px`;
+      });
     }
   }
 
   componentWillUnmount () {
     const { clickable } = this.state;
     if (clickable) {
-      KeyboardAccelerators.stopListeningToKeyboard(
-        this, this._keyboardHandlers
-      );
-    }
-  }
-
-  _onEnter () {
-    const { series } = this.props;
-    const { activeIndex } = this.state;
-    if (this._worldMapRef.contains(document.activeElement) && activeIndex) {
-      const continent = series[activeIndex];
-      if (continent.onClick) {
-        continent.onClick();
-      }
+      this._stopKeyboardListening();
     }
   }
 
   _buildState () {
-    let state = {activeIndex: -1, dots: {}, area: {}};
-    let width = 0;
-    let height = 0;
+    let state = {
+      activeContinent: undefined, activePlace: undefined, continents: {}
+    };
+
+    // Build the SVG paths describing the individual dots
+    let totalExtent = [0, 0];
     CONTINENTS.forEach(continent => {
       const origin = continent.origin;
-      state.dots[continent.id] = continent.dots.map(segment => {
+
+      let extent = [...origin];
+      const dots = continent.dots.map(segment => {
         const dots = Array.apply(null, Array(segment[2]))
           .map(() => {
             return 'h0';
           }).join(' m10,0 ');
         const x = FACTOR * (origin[0] + segment[0] + 1);
         const y = FACTOR * (origin[1] + segment[1] + 1);
-        width = Math.max(width, FACTOR * (origin[0] + segment[0] + segment[2]));
-        height = Math.max(height, y);
+        extent = maxCoordinate(extent,
+          [(origin[0] + segment[0] + segment[2]),
+            (origin[1] + segment[1])]);
         return `M${x},${y} ${dots}`;
       }).join(' ');
-      state.area[continent.id] = continent.area.map((point, index) => {
+
+      const area = continent.area.map((point, index) => {
         const x = FACTOR * (point[0] + origin[0] + 1);
         const y = FACTOR * (point[1] + origin[1] + 1);
         return `${index === 0 ? 'M' : 'L'}${x},${y}`;
-      }).join(' ');
-      if (state.area[continent.id]) {
-        state.area[continent.id] += ' Z';
-      }
+      }).join(' ') + ' Z';
+
+      const mid = [
+        origin[0] + ((extent[0] - origin[0]) / 2),
+        origin[1] + ((extent[1] - origin[1]) / 2)
+      ];
+      state.continents[continent.id] = { area, dots, origin, extent, mid };
+      totalExtent = maxCoordinate(totalExtent, extent);
     });
-    state.width = width + FACTOR;
-    state.height = height + FACTOR;
+
+    state.origin = [0, 0];
+    state.extent = totalExtent;
+
     return state;
   }
 
-  _onActivate (index) {
-    this.setState({activeIndex: index});
+  _updateState(props) {
+    const { series, zoom } = props;
+    const continents = { ...this.state.continents };
+
+    // convert places using lat,lon
+    const places = (series || []).filter(s => s.place).map((serie) => {
+      let place = serie.place;
+      if (place[0] % 1) {
+        place = latLonToCoord(place, this.state.origin, this.state.extent);
+      }
+      return { place, id: place.join(',') };
+    });
+
+    // update how much of the map to show
+    const haveSomeContinents =
+      (series || []).filter(s => s.continent).length > 0;
+    let origin = [...this.state.extent];
+    let extent = [...this.state.origin];
+    CONTINENTS.forEach(continent => {
+      const continentState = continents[continent.id];
+      const serie = (series || []).filter(s => s.continent === continent.id)[0];
+      // see if any places are within the continent
+      const includedPlaces = places.filter(s => (
+        s.place[0] >= continentState.origin[0] &&
+        s.place[0] <= continentState.extent[0] &&
+        s.place[1] >= continentState.origin[1] &&
+        s.place[1] <= continentState.extent[1]
+      ));
+      let visible = ((!haveSomeContinents && !zoom) ||
+        serie || includedPlaces.length > 0);
+      if (visible || !zoom) {
+        origin = minCoordinate(origin, continentState.origin);
+        extent = maxCoordinate(extent, continentState.extent);
+      }
+      continents[continent.id].visible = visible;
+      continents[continent.id].serie = serie;
+    });
+
+    return {
+      continents,
+      places,
+      zoomedOrigin: origin,
+      x: (origin[0] * FACTOR), y: (origin[1] * FACTOR),
+      width: ((extent[0] - origin[0] + 1) * FACTOR),
+      height: ((extent[1] - origin[1] + 2) * FACTOR)
+    };
   }
 
-  _onDeactivate () {
-    this.setState({activeIndex: -1});
+  _startKeyboardListening() {
+    this._keyboardHandlers = {
+      enter: this._onEnter,
+      space: this._onEnter
+    };
+    KeyboardAccelerators.startListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
   }
 
-  _renderContinent (seriesData, index) {
-    const { activeIndex } = this.state;
-    const continent = seriesData.continent;
-    const colorIndex = seriesData.colorIndex || `graph-${index}`;
+  _stopKeyboardListening() {
+    KeyboardAccelerators.stopListeningToKeyboard(
+      this, this._keyboardHandlers
+    );
+  }
+
+  _activateContinent (activeContinent) {
+    this.setState({ activeContinent });
+  }
+
+  _activatePlace (activePlace) {
+    this.setState({ activePlace });
+  }
+
+  _onEnter () {
+    const { series } = this.props;
+    const { activeContinent, activePlace } = this.state;
+    if (this._worldMapRef.contains(document.activeElement)) {
+      series.some((serie) => {
+        if ((activeContinent && serie.continent === activeContinent) ||
+          (activePlace && serie.place.join(',') === activePlace.join(','))) {
+          if (serie.onClick) {
+            serie.onClick();
+          }
+          return true;
+        }
+        return false;
+      });
+    }
+  }
+
+  _onMouseOver () {
+    // track when we're over the map to avoid dealing with mouse moves
+    this.setState({ over: true });
+  }
+
+  _onMouseMove (event) {
+    const { width } = this.state;
+    // determine the map coordinates for where the mouse is
+    const rect = this._worldMapRef.getBoundingClientRect();
+    const scale = rect.width / width; // since the SVG viewBox might be scaled
+    const place = [
+      Math.round(((event.clientX - rect.left) / scale) / FACTOR),
+      Math.round(((event.clientY - rect.top) / scale) / FACTOR)
+    ];
+    this.setState({ activePlace: place });
+  }
+
+  _onMouseLeave () {
+    this.setState({ over: false, activePlace: undefined });
+  }
+
+  _interactiveProps (serie, defaultLabel, activeFunc, activeValue, active) {
+    return {
+      role: 'button',
+      'aria-label': serie.label || defaultLabel,
+      tabIndex: '0',
+      onClick: serie.onClick,
+      onMouseOver: () => {
+        if (!active) {
+          activeFunc(activeValue);
+          if (serie.onHover) {
+            serie.onHover(true);
+          }
+        }
+      },
+      onMouseLeave: () => {
+        if (active) {
+          activeFunc(undefined);
+          if (serie.onHover) {
+            serie.onHover(false);
+          }
+        }
+      },
+      onFocus: () => {
+        // This moves the map unnecessarily. Instead, we should check
+        // the position and scroll if it isn't already visible
+        // this._worldMapRef.scrollIntoView();
+        if (!active) {
+          activeFunc(activeValue);
+        }
+      },
+      onBlur: () => {
+        if (active) {
+          activeFunc(undefined);
+        }
+      }
+    };
+  }
+
+  _renderContinent (continent, index, mapColorIndex, serie) {
+    const { activeContinent, continents } = this.state;
+    const active = continent.id === activeContinent;
+    // only graph color if they explicitly asked for this continent
+    const colorIndex =
+      (serie || {}).colorIndex || mapColorIndex ||
+      (serie ? `graph-${index}` : 'light-2');
 
     const classes = classnames(
       `${CLASS_ROOT}__continent`,
       `${COLOR_INDEX}-${colorIndex}`, {
-        [`${CLASS_ROOT}__continent--active`]: index === activeIndex
+        [`${CLASS_ROOT}__continent--active`]: active
       }
     );
     let area;
-    let clickableProps = {};
-    if (seriesData.onClick) {
+    let interactiveProps = {};
+    if (serie && (serie.onClick || serie.onHover)) {
       area = (
         <path stroke='none' fill='#fff' fillOpacity='0.01'
-          d={this.state.area[continent]} />
+          d={continents[continent.id].area} />
       );
-      clickableProps = {
-        role: 'button',
-        'aria-label': continent,
-        tabIndex: '0',
-        onClick: seriesData.onClick,
-        onMouseOver: this._onActivate.bind(this, index),
-        onMouseLeave: this._onDeactivate,
-        onFocus: () => {
-          this._worldMapRef.scrollIntoView();
-          this._onActivate(index);
-        },
-        onBlur: () => {
-          this._onDeactivate();
-        }
-      };
+      interactiveProps = this._interactiveProps(
+        serie, continent.id, this._activateContinent, continent.id, active);
     }
     // We add the area so the mouse events work for the whole region,
     // not just the dots
     return (
-      <g key={continent} className={classes} {...clickableProps}>
+      <g key={continent.id} className={classes} {...interactiveProps}>
         {area}
-        <path d={this.state.dots[continent]} />
+        <path d={continents[continent.id].dots} />
       </g>
     );
   }
 
+  _renderPlace(serie, index) {
+    const { colorIndex: mapColorIndex } = this.props;
+    const { activePlace, places } = this.state;
+    const {
+      colorIndex: serieColorIndex, onClick, onHover, place, ...rest
+    } = serie;
+    delete rest.flag;
+    const placeState = places[index];
+    const active = (activePlace && activePlace.join(',') === placeState.id);
+    const colorIndex =
+      serieColorIndex || mapColorIndex || `graph-${index}`;
+    const classes = classnames(
+      `${CLASS_ROOT}__place`,
+      `${COLOR_INDEX}-${colorIndex}`, {
+        [`${CLASS_ROOT}__place--active`]: active
+      }
+    );
+    const d =
+      `M${FACTOR * placeState.place[0]},${FACTOR * placeState.place[1]} h0`;
+    let interactiveProps = {};
+    if (onClick || onHover) {
+      interactiveProps =
+        this._interactiveProps(serie, 'place', this._activatePlace, place,
+          active);
+    }
+    return (
+      <path key={place.join(',')} {...rest} className={classes}
+        {...interactiveProps} d={d}  />
+    );
+  }
+
   render () {
-    const { className, series, ...props } = this.props;
-    const { width, height } = this.state;
+    const {
+      className, colorIndex, onSelectPlace, series, ...props
+    } = this.props;
+    delete props.zoom;
+    const {
+      activePlace, over, x, y, width, height, origin, extent
+    } = this.state;
     const classes = classnames(
       CLASS_ROOT,
       className
     );
-    const continents = series.map(this._renderContinent);
 
-    return (
-      <svg {...props} ref={(ref) => this._worldMapRef = ref}
+    const continents = [];
+    CONTINENTS.forEach((continent, index) => {
+      const continentState = this.state.continents[continent.id];
+      if (continentState.visible) {
+        const serie = continentState.serie;
+        continents.push(
+          this._renderContinent(continent, index, colorIndex, serie));
+      }
+    });
+
+    const seriesPlaces = (series || []).filter(s => s.place);
+    let placesGroup;
+    if (seriesPlaces.length > 0) {
+      const places = seriesPlaces.map(this._renderPlace);
+      placesGroup = (
+        <g stroke='none' fill='none' fillRule='evenodd'>
+          {places}
+        </g>
+      );
+    }
+
+    // If the caller is interested in onSelectPlace changes, track where the
+    // user goes.
+    let interactiveProps = {};
+    let activeGroup;
+    if (onSelectPlace) {
+      interactiveProps = {
+        onMouseOver: this._onMouseOver,
+        onMouseMove: over ? this._onMouseMove : undefined,
+        onMouseLeave: this._onMouseLeave
+      };
+
+      if (activePlace) {
+        const classes = classnames(
+          `${CLASS_ROOT}__place`,
+          `${COLOR_INDEX}-${colorIndex || 'light-2'}`,
+          `${CLASS_ROOT}__place--active`
+        );
+        const d = `M${FACTOR * activePlace[0]},${FACTOR * activePlace[1]} h0`;
+        activeGroup = (
+          <g stroke='none' fill='none' fillRule='evenodd'
+            onClick={() => onSelectPlace(activePlace,
+              coordToLatLon(activePlace, origin, extent))}>
+            <path className={classes} d={d} />
+          </g>
+        );
+      }
+    }
+
+    let contents = (
+      <svg {...props} {...interactiveProps}
+        ref={(ref) => this._worldMapRef = ref}
         className={classes} version='1.1'
         preserveAspectRatio='xMidYMid meet'
-        width={`${width}px`} viewBox={`0 0 ${width} ${height}`}>
+        width={`${width}px`}
+        viewBox={`${x} ${y} ${width} ${height}`}>
         <g stroke='none' fill='none' fillRule='evenodd'>
           {continents}
         </g>
+        {activeGroup}
+        {placesGroup}
       </svg>
     );
+
+    const flagged = (series || []).filter(s => s.flag);
+    if (flagged.length > 0) {
+      contents = (
+        <div className={`${CLASS_ROOT}__container`}>
+          {contents}
+          {flagged.map((serie, index) => (
+            <div key={index} className={`${CLASS_ROOT}__flag`}
+              ref={ref => (this._flagRefs[index] = ref)}>{serie.flag}</div>
+          ))}
+        </div>
+      );
+    }
+
+    return contents;
   }
 }
 
 WorldMap.propTypes = {
+  colorIndex: PropTypes.string,
+  // onSelectPlace is passed a place coordinate when the user clicks on it
+  onSelectPlace: PropTypes.func,
+  // either continent or place must be provided for a series item
   series: PropTypes.arrayOf(PropTypes.shape({
-    continent: PropTypes.oneOf(
-      ['NorthAmerica', 'SouthAmerica', 'Europe', 'Africa', 'Asia', 'Australia']
-    ),
-    // value: PropTypes.number,
+    continent: PropTypes.oneOf(CONTINENTS.map(c => c.id)),
     colorIndex: PropTypes.string,
-    // important: PropTypes.bool,
-    onClick: PropTypes.func
-  }))
+    flag: PropTypes.node,
+    label: PropTypes.string, // for a11y aria-label
+    onClick: PropTypes.func,
+    onHover: PropTypes.func,
+    place: PropTypes.arrayOf(PropTypes.number)
+  })),
+  zoom: PropTypes.bool
 };

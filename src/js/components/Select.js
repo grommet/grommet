@@ -311,7 +311,7 @@ export default class Select extends Component {
         return selectedMultiple;
       }
     } else if (option && typeof option === 'object') {
-      return option.value || option.label || '';
+      return option.label || option.value || '';
     } else {
       return (undefined === option || null === option) ? '' : option;
     }
@@ -346,8 +346,10 @@ export default class Select extends Component {
   }
 
   _renderOptions (className, restProps={}) {
+    const { intl } = this.context;
     const {
-      id, inline, multiple, options, onSearch, value
+      id, inline, multiple, options, onSearch, value, 
+      searchPlaceHolder = Intl.getMessage(intl, 'Search')
     } = this.props;
     const { activeOptionIndex, searchText } = this.state;
 
@@ -357,7 +359,7 @@ export default class Select extends Component {
         <Search className={`${CLASS_ROOT}__search`}
           ref={(ref) => this._searchRef = ref}
           inline={true} fill={true} responsive={false} pad="medium"
-          placeHolder='Search' value={searchText}
+          placeHolder={searchPlaceHolder} value={searchText}
           onDOMChange={this._onSearchChange}
           onKeyDown={this._onInputKeyDown} />
       );
@@ -385,14 +387,22 @@ export default class Select extends Component {
 
         let itemOnClick;
         if (inline) {
-          const itemId = `${id}-${option ? (option.value || option) : index}`;
+          const itemId = `${option ? (option.value || option) : index}`;
           const Type = (multiple ? CheckBox : RadioButton );
           content = (
-            <Type key={itemId} id={itemId} label={content} checked={selected}
-              onChange={this._onClickOption.bind(this, option)} />
+            <Type
+              key={itemId}
+              id={`${ id ? id + '-' + itemId : itemId}`}
+              label={content}
+              checked={selected}
+              onChange={this._onClickOption.bind(this, option)}
+            />
           );
         } else {
-          itemOnClick = this._onClickOption.bind(this, option);
+          itemOnClick = (e) => {
+            e.stopPropagation();
+            this._onClickOption.bind(this, option)();
+          };
         }
 
         return (
@@ -435,13 +445,18 @@ export default class Select extends Component {
     if (inline) {
       return this._renderOptions(classes, restProps);
     } else {
+      const renderedValue = this._renderValue(value);
+      const shouldRenderElement  = React.isValidElement(renderedValue);
+
       return (
         <div ref={ref => this.componentRef = ref} className={classes}
           onClick={this._onAddDrop}>
+          {shouldRenderElement && renderedValue}
           <input {...restProps} ref={ref => this.inputRef = ref}
+            type={shouldRenderElement ? 'hidden' : 'text'}
             className={`${INPUT} ${CLASS_ROOT}__input`}
             placeholder={placeHolder} readOnly={true}
-            value={this._renderValue(value) || ''} />
+            value={renderedValue || ''} />
           <Button className={`${CLASS_ROOT}__control`}
             a11yTitle={Intl.getMessage(intl, 'Select Icon')}
             icon={<CaretDownIcon />}
@@ -468,6 +483,7 @@ Select.propTypes = {
   onSearch: PropTypes.func,
   onChange: PropTypes.func, // (value(s))
   placeHolder: PropTypes.string,
+  searchPlaceHolder: PropTypes.string,
   options: PropTypes.arrayOf(valueType).isRequired,
   value: PropTypes.oneOfType([valueType, PropTypes.arrayOf(valueType)])
 };

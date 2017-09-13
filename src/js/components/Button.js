@@ -20,7 +20,7 @@ function getHoverModifier(hoverIndicator) {
         return `${CLASS_ROOT}--hover-background`;
       }
     } else if (typeof hoverIndicator === 'string') {
-      return (`${CLASS_ROOT}--hover-${hoverIndicator}`); 
+      return (`${CLASS_ROOT}--hover-${hoverIndicator}`);
     }
   }
 }
@@ -31,7 +31,7 @@ export default class Button extends Component {
     super();
     this._onClick = this._onClick.bind(this);
     this._onMouseDown = this._onMouseDown.bind(this);
-    this._onMouseUp = this._onMouseDown.bind(this);
+    this._onMouseUp = this._onMouseUp.bind(this);
     this._onFocus = this._onFocus.bind(this);
     this._onBlur = this._onBlur.bind(this);
     this.state = {
@@ -43,6 +43,11 @@ export default class Button extends Component {
   _onClick (event) {
     const { method, onClick, path} = this.props;
     const { router } = this.context;
+    const modifierKey = event.ctrlKey || event.metaKey;
+
+    if (modifierKey && !onClick) {
+      return true;
+    }
 
     event.preventDefault();
 
@@ -134,7 +139,7 @@ export default class Button extends Component {
         [`${CLASS_ROOT}--disabled`]:
           !onClick &&
           !adjustedHref &&
-          !['reset', 'submit'].includes(type),
+          ['reset', 'submit'].indexOf(type) === -1,
         [`${CLASS_ROOT}--fill`]: fill,
         [`${CLASS_ROOT}--plain`]: (
           plain || box || Children.count(children) > 0 || (icon && ! label)
@@ -172,7 +177,7 @@ export default class Button extends Component {
         disabled={
           !onClick &&
           !adjustedHref &&
-          !['reset', 'submit'].includes(type)
+          ['reset', 'submit'].indexOf(type) === -1
         }
         onMouseDown={this._onMouseDown} onMouseUp={this._onMouseUp}
         onFocus={this._onFocus} onBlur={this._onBlur}>

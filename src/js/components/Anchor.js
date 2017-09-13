@@ -59,14 +59,14 @@ export default class Anchor extends Component {
     }
     let active;
     if (router && router.isActive) {
-      active = router && router.isActive && 
+      active = router && router.isActive &&
         path && router.isActive({
           pathname: path.path || path,
           query: { indexLink: path.index }
         });
     } else if(router && matchPath) {
       active = !!matchPath(
-        router.history.location.pathname, 
+        router.history.location.pathname,
         { path: path.path || path, exact: !!path.index }
       );
     }
@@ -87,7 +87,7 @@ export default class Anchor extends Component {
       const { router } = this.context;
       const active = matchPath ? (
         !!matchPath(
-          location.pathname, 
+          location.pathname,
           { path: path.path || path, exact: !!path.index }
         )
       ) : (
@@ -100,6 +100,11 @@ export default class Anchor extends Component {
   _onClick (event) {
     const { method, onClick, path, disabled } = this.props;
     const { router } = this.context;
+    const modifierKey = event.ctrlKey || event.metaKey;
+
+    if (modifierKey && !disabled && !onClick) {
+      return true;
+    }
 
     event.preventDefault();
 
@@ -159,7 +164,7 @@ export default class Anchor extends Component {
         router.history.createHref(
           typeof target === 'string' ? { pathname: target } : target
         ) : href;
-    } 
+    }
 
     let classes = classnames(
       CLASS_ROOT,
@@ -177,7 +182,6 @@ export default class Anchor extends Component {
     );
 
     let adjustedOnClick = (path && router ? this._onClick : onClick);
-
     if (!anchorChildren) {
       anchorChildren = label;
     }
@@ -186,10 +190,16 @@ export default class Anchor extends Component {
     const second = reverse ? anchorIcon : anchorChildren;
 
     const Component = tag;
-    
+
     return (
       <Component {...props} href={adjustedHref} className={classes}
-        aria-label={a11yTitle} onClick={adjustedOnClick}>
+        aria-label={a11yTitle} onClick={(event, ...args) => {
+          if (disabled) {
+            event.preventDefault();
+          } else if (adjustedOnClick) {
+            adjustedOnClick(event, ...args);
+          }
+        }}>
         {first}
         {second}
       </Component>
@@ -210,7 +220,8 @@ schema(Anchor, {
       defaultProp: true
     }],
     disabled: [PropTypes.bool, 'Whether to disable the anchor.'],
-    href: [PropTypes.string, 'Hyperlink reference to place in the anchor.'],
+    href: [PropTypes.string, 'Hyperlink reference to place in the anchor. If'
+      + ' `path` prop is provided, `href` prop will be ignored.'],
     icon: [PropTypes.element, 'Icon element to place in the anchor.'],
     id: [PropTypes.string, 'Anchor identifier.'],
     label: [PropTypes.node, 'Label text to place in the anchor.'],
@@ -224,7 +235,7 @@ schema(Anchor, {
     path: [
       PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
       'React-router path to navigate to when clicked.' +
-      ' Use path={{ path: '/', index: true }} if you want the Anchor to be' +
+      ' Use path={{ path: \'/\', index: true }} if you want the Anchor to be' +
       ' active only when the index route is current.'
     ],
     primary: [PropTypes.bool, 'Whether this is a primary anchor.'],

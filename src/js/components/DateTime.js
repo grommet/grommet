@@ -28,7 +28,7 @@ const FORMATS = {
   m: 'minutes',
   s: 'seconds'
 };
-const TIME_REGEXP = new RegExp('[hmsa]');
+const TIME_REGEXP = new RegExp('[Hhmsa]');
 
 export default class DateTime extends Component {
 
@@ -100,27 +100,13 @@ export default class DateTime extends Component {
   }
 
   _onInputChange (event) {
-    const { format, onChange, value } = this.props;
+    const { onChange } = this.props;
     const currentValue = event.target.value;
     // Always set textValue to what the user types.
     // If the user subsequently passes in a value property, we will
     // clear this textValue and use the new value.
     this.setState({ textValue: currentValue });
-    if (currentValue.length > 0) {
-      const date = moment(currentValue, format);
-      // Only notify if the value looks valid
-      if (date.isValid() && ! date.parsingFlags().charsLeftOver) {
-        if (onChange) {
-          onChange(currentValue);
-        }
-      } else if (typeof value === 'string' &&
-        currentValue.length < value.length) {
-        // or if the user is removing characters
-        if (onChange) {
-          onChange(currentValue);
-        }
-      }
-    } else if (onChange) {
+    if (onChange) {
       onChange(currentValue);
     }
   }

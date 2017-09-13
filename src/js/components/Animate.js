@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
-import TransitionGroup from 'react-addons-transition-group';
+import { TransitionGroup } from 'react-transition-group';
 import classnames from 'classnames';
 import CSSClassnames from '../utils/CSSClassnames';
 import { findScrollParents } from '../utils/DOM';
@@ -156,30 +156,46 @@ export default class Animate extends Component {
   }
 
   _listenForScroll () {
-    this._scrollParents = findScrollParents(this);
-    this._scrollParents.forEach((scrollParent) => {
-      scrollParent.addEventListener('scroll', this._checkScroll);
-    });
+    // add a timeout so that the findScrollParents function
+    // get the right container sizes
+    setTimeout(() => {
+      const scrollParents = findScrollParents(findDOMNode(this.animateRef));
+      if (scrollParents.indexOf(document) === -1) {
+        document.addEventListener('scroll', this._checkScroll);
+      }
+      scrollParents.forEach((scrollParent) => {
+        scrollParent.addEventListener('scroll', this._checkScroll);
+      }, this);
+    }, 0);
   }
 
   _unlistenForScroll () {
-    this._scrollParents.forEach((scrollParent) => {
+    const scrollParents = findScrollParents(findDOMNode(this.animateRef));
+    if (scrollParents.indexOf(document) === -1) {
+      document.removeEventListener('scroll', this._checkScroll);
+    }
+    scrollParents.forEach((scrollParent) => {
       scrollParent.removeEventListener('scroll', this._checkScroll);
-    });
-    this._scrollParents = undefined;
+    }, this);
   }
 
   _checkScroll () {
-    const group = findDOMNode(this);
+    const { onAppear, onLeave } = this.props;
+    const group = findDOMNode(this.animateRef);
     const rect = group.getBoundingClientRect();
+
     if (rect.top < window.innerHeight) {
-      if (! this.state.visible) {
-        this.setState({ visible: true });
-      }
+      this.setState({ visible: true }, () => {
+        if (onAppear) {
+          onAppear();
+        }
+      });
     } else {
-      if (this.state.visible) {
-        this.setState({ visible: false });
-      }
+      this.setState({ visible: false }, () => {
+        if (onLeave) {
+          onLeave();
+        }
+      });
     }
   }
 
@@ -187,6 +203,8 @@ export default class Animate extends Component {
     const {
       enter, leave, className, children, component, keep, ...props
     } = this.props;
+    delete props.onAppear;
+    delete props.onLeave;
     delete props.visible;
     const { visible } = this.state;
 
@@ -203,7 +221,12 @@ export default class Animate extends Component {
     }
 
     return (
-      <TransitionGroup {...props} className={classes} component={component}>
+      <TransitionGroup
+        {...props}
+        className={classes}
+        component={component}
+        ref={ref => this.animateRef = ref}
+      >
         {animateChildren}
       </TransitionGroup>
     );
@@ -229,6 +252,8 @@ Animate.propTypes = {
     duration: PropTypes.number,
     delay: PropTypes.number
   }),
+  onAppear: PropTypes.func,
+  onLeave: PropTypes.func,
   visible: PropTypes.oneOfType([
     PropTypes.oneOf(['scroll']),
     PropTypes.bool

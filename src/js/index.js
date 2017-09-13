@@ -50,6 +50,7 @@ export { default as Notification } from './components/Notification';
 export { default as NumberInput } from './components/NumberInput';
 export { default as Object } from './components/Object';
 export { default as Paragraph } from './components/Paragraph';
+export { default as PasswordInput } from './components/PasswordInput';
 export { default as Quote } from './components/Quote';
 export { default as RadioButton } from './components/RadioButton';
 export { default as Search } from './components/Search';

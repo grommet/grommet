@@ -1,7 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Legend has correct default options 1`] = `
 <ul
   className="grommetux-list grommetux-legend"
-  role="list">
+  role="list"
+>
   <li
     className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-horizontal-small grommetux-box--separator-none grommetux-list-item grommetux-legend__item"
     id={undefined}
@@ -10,25 +13,31 @@ exports[`Legend has correct default options 1`] = `
     onMouseOver={[Function]}
     role="listitem"
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <span
-      className="grommetux-legend__item-label">
+      className="grommetux-legend__item-label"
+    >
       <svg
         className="grommetux-legend__item-swatch grommetux-color-index-graph-1"
-        viewBox="0 0 12 12">
+        viewBox="0 0 12 12"
+      >
         <path
           className={undefined}
-          d="M 5 0 l 0 12" />
+          d="M 5 0 l 0 12"
+        />
       </svg>
       <span>
         North America
       </span>
     </span>
     <span
-      className="grommetux-legend__item-value">
+      className="grommetux-legend__item-value"
+    >
       40
       <span
-        className="grommetux-legend__item-units">
+        className="grommetux-legend__item-units"
+      >
         B
       </span>
     </span>
@@ -41,25 +50,31 @@ exports[`Legend has correct default options 1`] = `
     onMouseOver={[Function]}
     role="listitem"
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <span
-      className="grommetux-legend__item-label">
+      className="grommetux-legend__item-label"
+    >
       <svg
         className="grommetux-legend__item-swatch grommetux-color-index-accent-2"
-        viewBox="0 0 12 12">
+        viewBox="0 0 12 12"
+      >
         <path
           className={undefined}
-          d="M 5 0 l 0 12" />
+          d="M 5 0 l 0 12"
+        />
       </svg>
       <span>
         South America
       </span>
     </span>
     <span
-      className="grommetux-legend__item-value">
+      className="grommetux-legend__item-value"
+    >
       30
       <span
-        className="grommetux-legend__item-units">
+        className="grommetux-legend__item-units"
+      >
         B
       </span>
     </span>
@@ -72,25 +87,31 @@ exports[`Legend has correct default options 1`] = `
     onMouseOver={[Function]}
     role="listitem"
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <span
-      className="grommetux-legend__item-label">
+      className="grommetux-legend__item-label"
+    >
       <svg
         className="grommetux-legend__item-swatch grommetux-color-index-unset"
-        viewBox="0 0 12 12">
+        viewBox="0 0 12 12"
+      >
         <path
           className={undefined}
-          d="M 5 0 l 0 12" />
+          d="M 5 0 l 0 12"
+        />
       </svg>
       <span>
         Europe
       </span>
     </span>
     <span
-      className="grommetux-legend__item-value">
+      className="grommetux-legend__item-value"
+    >
       20
       <span
-        className="grommetux-legend__item-units">
+        className="grommetux-legend__item-units"
+      >
         B
       </span>
     </span>
@@ -103,25 +124,31 @@ exports[`Legend has correct default options 1`] = `
     onMouseOver={[Function]}
     role="listitem"
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <span
-      className="grommetux-legend__item-label">
+      className="grommetux-legend__item-label"
+    >
       <svg
         className="grommetux-legend__item-swatch grommetux-color-index-graph-2"
-        viewBox="0 0 12 12">
+        viewBox="0 0 12 12"
+      >
         <path
           className={undefined}
-          d="M 5 0 l 0 12" />
+          d="M 5 0 l 0 12"
+        />
       </svg>
       <span>
         Africa
       </span>
     </span>
     <span
-      className="grommetux-legend__item-value">
+      className="grommetux-legend__item-value"
+    >
       10
       <span
-        className="grommetux-legend__item-units">
+        className="grommetux-legend__item-units"
+      >
         B
       </span>
     </span>
@@ -134,25 +161,31 @@ exports[`Legend has correct default options 1`] = `
     onMouseOver={[Function]}
     role="listitem"
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <span
-      className="grommetux-legend__item-label">
+      className="grommetux-legend__item-label"
+    >
       <svg
         className="grommetux-legend__item-swatch grommetux-color-index-graph-3"
-        viewBox="0 0 12 12">
+        viewBox="0 0 12 12"
+      >
         <path
           className={undefined}
-          d="M 5 0 l 0 12" />
+          d="M 5 0 l 0 12"
+        />
       </svg>
       <span>
         Asia
       </span>
     </span>
     <span
-      className="grommetux-legend__item-value">
+      className="grommetux-legend__item-value"
+    >
       15
       <span
-        className="grommetux-legend__item-units">
+        className="grommetux-legend__item-units"
+      >
         B
       </span>
     </span>
@@ -165,25 +198,31 @@ exports[`Legend has correct default options 1`] = `
     onMouseOver={[Function]}
     role="listitem"
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <span
-      className="grommetux-legend__item-label">
+      className="grommetux-legend__item-label"
+    >
       <svg
         className="grommetux-legend__item-swatch grommetux-color-index-graph-4"
-        viewBox="0 0 12 12">
+        viewBox="0 0 12 12"
+      >
         <path
           className={undefined}
-          d="M 5 0 l 0 12" />
+          d="M 5 0 l 0 12"
+        />
       </svg>
       <span>
         Australia
       </span>
     </span>
     <span
-      className="grommetux-legend__item-value">
+      className="grommetux-legend__item-value"
+    >
       10
       <span
-        className="grommetux-legend__item-units">
+        className="grommetux-legend__item-units"
+      >
         B
       </span>
     </span>
@@ -195,7 +234,8 @@ exports[`Legend has no floating point errors in the total 1`] = `
 <ul
   className="grommetux-list grommetux-legend"
   max="10"
-  role="list">
+  role="list"
+>
   <li
     className="grommetux-box grommetux-box--direction-row grommetux-box--justify-between grommetux-box--align-center grommetux-box--responsive grommetux-box--pad-horizontal-small grommetux-box--separator-none grommetux-list-item grommetux-legend__item"
     id={undefined}
@@ -204,12 +244,15 @@ exports[`Legend has no floating point errors in the total 1`] = `
     onMouseOver={[Function]}
     role="listitem"
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <span
-      className="grommetux-legend__item-value">
+      className="grommetux-legend__item-value"
+    >
       2.53
       <span
-        className="grommetux-legend__item-units">
+        className="grommetux-legend__item-units"
+      >
         apples
       </span>
     </span>
@@ -222,12 +265,15 @@ exports[`Legend has no floating point errors in the total 1`] = `
     onMouseOver={[Function]}
     role="listitem"
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <span
-      className="grommetux-legend__item-value">
+      className="grommetux-legend__item-value"
+    >
       2.01
       <span
-        className="grommetux-legend__item-units">
+        className="grommetux-legend__item-units"
+      >
         apples
       </span>
     </span>
@@ -238,18 +284,22 @@ exports[`Legend has no floating point errors in the total 1`] = `
     onClick={undefined}
     role="listitem"
     style={Object {}}
-    tabIndex={undefined}>
+    tabIndex={undefined}
+  >
     <span
-      className="grommetux-legend__total-label">
+      className="grommetux-legend__total-label"
+    >
       <span>
         Total
       </span>
     </span>
     <span
-      className="grommetux-legend__total-value">
+      className="grommetux-legend__total-value"
+    >
       4.54
       <span
-        className="grommetux-legend__total-units">
+        className="grommetux-legend__total-units"
+      >
         apples
       </span>
     </span>
