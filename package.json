@@ -28,9 +28,12 @@
     "check": "cross-env NODE_ENV=test grommet check",
     "test": "grommet check -t",
     "test-update": "grommet check -t -- --updateSnapshot",
-    "test-watch": "grommet check -t -- --watchAll"
+    "test-watch": "grommet check -t -- --watchAll",
+    "ts": "tsc",
+    "lint": "tslint \"src/js/components/**/*.ts{,x}\" && tslint \"src/**/*.ts{,x}\""
   },
   "dependencies": {
+    "@types/react": "^16.0.5",
     "clone-deep": "^1.0.0",
     "deep-assign": "^2.0.0",
     "grommet-icons": "^0.4.0",
@@ -41,7 +44,10 @@
     "react-desc": "^1.3.4",
     "react-dom": "^15.4.0",
     "recompose": "^0.24.0",
-    "styled-components": "^2.1.1"
+    "styled-components": "^2.1.1",
+    "tslint": "^5.7.0",
+    "tslint-react": "^3.2.0",
+    "typescript": "^2.5.2"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
