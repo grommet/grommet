@@ -133,15 +133,18 @@ class Menu extends Component {
       );
     }
 
+    const clickHandler = (event) => {
+      if (activeItemIndex >= 0) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.onSelectMenuItem();
+      }
+    };
+
     return (
       <Keyboard
-        onEnter={(event) => {
-          if (activeItemIndex >= 0) {
-            event.preventDefault();
-            event.stopPropagation();
-            this.onSelectMenuItem();
-          }
-        }}
+        onEnter={clickHandler}
+        onSpace={clickHandler}
         onDown={(event) => {
           event.preventDefault();
           this.onNextMenuItem();
