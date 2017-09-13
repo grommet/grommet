@@ -38,6 +38,7 @@ export default {
   DATE_TIME_DROP: `${namespace}date-time-drop`,
   DISTRIBUTION: `${namespace}distribution`,
   DROP: `${namespace}drop`,
+  FILEUPLOAD: `${namespace}fileupload`,
   FOOTER: `${namespace}footer`,
   FORM: `${namespace}form`,
   FORM_FIELD: `${namespace}form-field`,

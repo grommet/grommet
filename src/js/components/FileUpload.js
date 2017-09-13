@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 import classnames from 'classnames';
 import Box from './Box';
@@ -10,15 +11,12 @@ import Button from './Button';
 import CloseIcon from './icons/base/Close';
 import DocumentIcon from './icons/base/Document';
 import Props from '../utils/Props';
+import CSSClassnames from '../utils/CSSClassnames';
 import FileUploader, {
   isImage,
   supportsDragDrop
 } from '../utils/FileUpload';
 
-const namespace = 'grommetux-';
-const CSSClassnames = {
-  FILEUPLOAD: `${namespace}fileupload`
-};
 const CLASS_ROOT = CSSClassnames.FILEUPLOAD;
 
 class FileUpload extends Component {
@@ -167,7 +165,7 @@ class FileUpload extends Component {
     return (
       <Tiles pad="none" flush={false}>
         {files.map((item, i) =>
-          <Tile key={i} pad="none" margin={{ horizontal: 'small' }}
+          (<Tile key={i} pad="none" margin={{ horizontal: 'small' }}
             className={`${CLASS_ROOT}__preview-tile`}>
             <Button plain a11yTitle="Clear image preview"
               onClick={this._onClearFilePreview.bind(this, i)}
@@ -176,14 +174,14 @@ class FileUpload extends Component {
             {isImage(item.name)
               ? <Image size="thumb" src={item.preview} />
               : (
-                  <Box
-                    className={`${CLASS_ROOT}__file-preview`}
-                    align="center" justify="center" colorIndex="unknown">
-                    <DocumentIcon size="small" />
-                  </Box>
-                )
+                <Box
+                  className={`${CLASS_ROOT}__file-preview`}
+                  align="center" justify="center" colorIndex="unknown">
+                  <DocumentIcon size="small" />
+                </Box>
+              )
             }
-          </Tile>  
+          </Tile>)  
         )}
       </Tiles>
     );
@@ -217,7 +215,7 @@ class FileUpload extends Component {
               {label || ''}
             </Label>
           </Box>
-        :
+          :
           <Button label={label} onClick={this._onClick} />
         }
         <input ref="fileInput" multiple={multiple} onChange={this._onDrop}
