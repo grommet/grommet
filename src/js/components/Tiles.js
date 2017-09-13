@@ -51,7 +51,6 @@ export default class Tiles extends Component {
 
   componentDidMount () {
     const { direction, onMore, selectable } = this.props;
-    this._setSelection();
     if (onMore) {
       this._scroll = InfiniteScroll.startListeningForScroll(this.moreRef,
         onMore);
@@ -103,7 +102,6 @@ export default class Tiles extends Component {
       this._layoutTimer = setTimeout(this._layout, 10);
     }
     if (selectable) {
-      this._setSelection();
       // only listen for navigation keys if the list row can be selected
       this._keyboardHandlers = {
         left: this._onPreviousTile,
@@ -329,15 +327,6 @@ export default class Tiles extends Component {
     }
   }
 
-  _setSelection () {
-    Selection.setClassFromIndexes({
-      containerElement: findDOMNode(this.tilesRef),
-      childSelector: `.${TILE}`,
-      selectedClass: SELECTED_CLASS,
-      selectedIndexes: this.state.selected
-    });
-  }
-
   _onClick (event) {
     const { onSelect, selectable, selected } = this.props;
     const selection = Selection.onClick(event, {
@@ -349,7 +338,7 @@ export default class Tiles extends Component {
     });
     // only set the selected state and classes if the caller isn't managing it.
     if (selected === undefined) {
-      this.setState({ selected: selection }, this._setSelection);
+      this.setState({ selected: selection });
     }
 
     if (onSelect) {
@@ -357,14 +346,21 @@ export default class Tiles extends Component {
     }
   }
 
-  _renderChild (element) {
+  _renderChild (element, elementIndex) {
     const { flush } = this.props;
+    const { selected: selectedArray } = this.state;
+    let selected = element.props.selected;
+
+    if (selectedArray && selectedArray.indexOf(elementIndex) > -1) {
+      selected = true;
+    }
 
     if (element) {
       // only clone tile children
       if (element.type && element.type.displayName === 'Tile') {
         const elementClone = React.cloneElement(element, {
-          hoverBorder: !flush
+          hoverBorder: !flush,
+          selected
         });
 
         return elementClone;
@@ -410,8 +406,8 @@ export default class Tiles extends Component {
       );
     }
 
-    const tileContents = Children.map(children, (element) => {
-      return this._renderChild(element);
+    const tileContents = Children.map(children, (element, index) => {
+      return this._renderChild(element, index);
     });
 
     let selectableProps;

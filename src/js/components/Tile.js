@@ -14,7 +14,7 @@ export default class Tile extends Component {
 
   render () {
     const { children, className, onClick, wide, status,
-      hoverStyle, hoverColorIndex, hoverBorder, hoverBorderSize
+      hoverStyle, hoverColorIndex, hoverBorder, hoverBorderSize, selected
     } = this.props;
     const restProps = Props.omit(this.props, Object.keys(Tile.propTypes));
 
@@ -28,6 +28,7 @@ export default class Tile extends Component {
       className,
       {
         [`${CLASS_ROOT}--status-${statusClass}`]: status,
+        [`${CLASS_ROOT}--selected`]: selected,
         [`${CLASS_ROOT}--wide`]: wide,
         [`${CLASS_ROOT}--selectable`]: onClick,
         [`${NAMESPACE}${hoverStyle}${(hoverStyle == 'border') ?
@@ -53,6 +54,7 @@ Tile.propTypes = {
   hoverColorIndex: PropTypes.string,
   hoverBorder: PropTypes.bool,
   hoverBorderSize: PropTypes.oneOf(['small', 'medium', 'large']),
+  selected: PropTypes.bool,
   wide: PropTypes.bool, /// remove in 1.0? Box.basis='full'
   ...Box.propTypes
 };
