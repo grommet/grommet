@@ -348,6 +348,8 @@ var Menu = function (_Component2) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
+      var _this4 = this;
+
       if (this.state.state !== prevState.state) {
         var activeKeyboardHandlers = {
           esc: this._onClose
@@ -365,8 +367,13 @@ var Menu = function (_Component2) {
             document.removeEventListener('click', this._checkOnClose);
             document.removeEventListener('touchstart', this._checkOnClose);
             if (this._drop) {
-              this._drop.remove();
-              this._drop = undefined;
+              // When Menu is used with Anchor/paths the Drop removes too quickly
+              // and react looks for a DOM element which is gone. Adding a
+              // slight delay resolves this issue.
+              setTimeout(function () {
+                _this4._drop.remove();
+                _this4._drop = undefined;
+              }, 5);
             }
             break;
           case 'focused':
@@ -489,7 +496,7 @@ var Menu = function (_Component2) {
   }, {
     key: '_renderMenuDrop',
     value: function _renderMenuDrop() {
-      var _this4 = this;
+      var _this5 = this;
 
       var closeLabel = _Intl2.default.getMessage(this.context.intl, 'Close');
       var menuLabel = _Intl2.default.getMessage(this.context.intl, 'Menu');
@@ -509,7 +516,7 @@ var Menu = function (_Component2) {
           size: this.props.size,
           onClick: onClick,
           control: control, ref: function ref(_ref3) {
-            return _this4._menuDrop = _ref3;
+            return _this5._menuDrop = _ref3;
           } }),
         this.props.children
       );
@@ -518,7 +525,7 @@ var Menu = function (_Component2) {
     key: 'render',
     value: function render() {
       var _classnames2,
-          _this5 = this;
+          _this6 = this;
 
       var _props3 = this.props,
           a11yTitle = _props3.a11yTitle,
@@ -566,12 +573,12 @@ var Menu = function (_Component2) {
         return _react2.default.createElement(
           _Box2.default,
           _extends({ ref: function ref(_ref4) {
-              return _this5._controlRef = _ref4;
+              return _this6._controlRef = _ref4;
             } }, props, { className: classes }),
           _react2.default.createElement(_Button2.default, _extends({ plain: true, reverse: true,
             a11yTitle: menuTitle }, this._renderButtonProps(), {
             onClick: function onClick() {
-              return _this5.setState({ state: 'expanded' });
+              return _this6.setState({ state: 'expanded' });
             },
             onFocus: this._onFocusControl, onBlur: this._onBlurControl }))
         );
