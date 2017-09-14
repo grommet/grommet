@@ -27,11 +27,14 @@ export default Box => schema(Box, {
           color: PropTypes.string,
           dark: PropTypes.bool,
           image: PropTypes.string,
-          opacity: PropTypes.string,
+          opacity: PropTypes.oneOfType([
+            PropTypes.oneOf(['weak', 'medium', 'strong']),
+            PropTypes.bool,
+          ]),
         }),
       ]),
       `Either a color identifier to use for the background color. For example:
-      'neutral-1'. Or, a 'url()' for an image.`,
+      'neutral-1'. Or, a 'url()' for an image. Dark is not needed if color is provided.`,
     ],
     basis: [
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge',

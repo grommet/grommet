@@ -39,7 +39,7 @@ export const colorIsDark = (color) => {
   return (brightness < 125);
 };
 
-export function getRGBColor(color, opacity) {
+export function getRGBA(color, opacity) {
   if (color) {
     const [red, green, blue] = getRGBArray(color);
     return `rgba(${red}, ${green}, ${blue}, ${opacity || 1})`;
@@ -47,4 +47,4 @@ export function getRGBColor(color, opacity) {
   return undefined;
 }
 
-export default { colorForName, colorIsDark, getRGBColor };
+export default { colorForName, colorIsDark, getRGBA };

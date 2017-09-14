@@ -14,7 +14,7 @@ const statusColors = {
   unknown: '#a8a8a8',
   disabled: '#a8a8a8',
 };
-const darkColors = ['rgb(51,51,51)', '#444444', '#555555', '#666666', '#777777', '#999999'];
+const darkColors = ['#333333', '#444444', '#555555', '#666666', '#777777', '#999999'];
 const lightColors = ['#F6F6F6', '#EEEEEE', '#DDDDDD', '#CCCCCC', '#BBBBBB', '#AAAAAA'];
 const backgroundColor = '#FFFFFF';
 const textColor = '#333333';
@@ -139,6 +139,11 @@ export default {
       },
     },
     lineHeight: '24px',
+    opacity: {
+      weak: '0.8',
+      medium: '0.4',
+      strong: '0.1',
+    },
     placeholder: {
       color: '#AAAAAA',
     },

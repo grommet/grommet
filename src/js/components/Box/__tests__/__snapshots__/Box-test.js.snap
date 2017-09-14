@@ -459,7 +459,7 @@ exports[`Box background renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  background-color: rgb(51,51,51);
+  background-color: #333333;
   color: rgba(255,255,255,0.85);
   -webkit-flex-direction: column;
   -ms-flex-direction: column;

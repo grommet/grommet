@@ -240,7 +240,7 @@ exports[`Anchor icon label renders 1`] = `
                 "black": "#000000",
                 "brand": "#865CD6",
                 "dark": Array [
-                  "rgb(51,51,51)",
+                  "#333333",
                   "#444444",
                   "#555555",
                   "#666666",
@@ -366,6 +366,11 @@ exports[`Anchor icon label renders 1`] = `
                 },
               },
               "lineHeight": "24px",
+              "opacity": Object {
+                "medium": "0.4",
+                "strong": "0.1",
+                "weak": "0.8",
+              },
               "placeholder": Object {
                 "color": "#AAAAAA",
               },
@@ -675,7 +680,7 @@ exports[`Anchor primary renders 1`] = `
                 "black": "#000000",
                 "brand": "#865CD6",
                 "dark": Array [
-                  "rgb(51,51,51)",
+                  "#333333",
                   "#444444",
                   "#555555",
                   "#666666",
@@ -801,6 +806,11 @@ exports[`Anchor primary renders 1`] = `
                 },
               },
               "lineHeight": "24px",
+              "opacity": Object {
+                "medium": "0.4",
+                "strong": "0.1",
+                "weak": "0.8",
+              },
               "placeholder": Object {
                 "color": "#AAAAAA",
               },
@@ -1214,7 +1224,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "black": "#000000",
                 "brand": "#865CD6",
                 "dark": Array [
-                  "rgb(51,51,51)",
+                  "#333333",
                   "#444444",
                   "#555555",
                   "#666666",
@@ -1340,6 +1350,11 @@ exports[`Anchor reverse icon label renders 1`] = `
                 },
               },
               "lineHeight": "24px",
+              "opacity": Object {
+                "medium": "0.4",
+                "strong": "0.1",
+                "weak": "0.8",
+              },
               "placeholder": Object {
                 "color": "#AAAAAA",
               },
@@ -1609,7 +1624,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "black": "#000000",
                 "brand": "#865CD6",
                 "dark": Array [
-                  "rgb(51,51,51)",
+                  "#333333",
                   "#444444",
                   "#555555",
                   "#666666",
@@ -1735,6 +1750,11 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 },
               },
               "lineHeight": "24px",
+              "opacity": Object {
+                "medium": "0.4",
+                "strong": "0.1",
+                "weak": "0.8",
+              },
               "placeholder": Object {
                 "color": "#AAAAAA",
               },
