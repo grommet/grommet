@@ -28,4 +28,21 @@ describe('Tiles', () => {
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('renders selected tiles', () => {
+    const component = renderer.create(
+      <Tiles selected={[0, 1]}>
+        <Tile>
+          First
+        </Tile>
+        <Tile>
+          Second
+        </Tile>
+        <Tile>
+          Third
+        </Tile>
+      </Tiles>
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
