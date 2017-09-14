@@ -29,7 +29,7 @@ export default Text => schema(Text, {
     ],
     textAlign: [
       PropTypes.oneOf(['start', 'center', 'end']),
-      'How to align the text inside the heading.',
+      'How to align the text inside the component.',
     ],
     truncate: [
       PropTypes.bool,

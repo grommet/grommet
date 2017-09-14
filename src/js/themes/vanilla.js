@@ -139,6 +139,11 @@ export default {
       },
     },
     lineHeight: '24px',
+    opacity: {
+      weak: '0.8',
+      medium: '0.4',
+      strong: '0.1',
+    },
     placeholder: {
       color: '#AAAAAA',
     },
@@ -210,6 +215,11 @@ export default {
       ${props => props.color && props.color !== 'plain' && `
         fill: ${colorForName(props.color, props.theme)};
         stroke: ${colorForName(props.color, props.theme)};
+      `}
+
+      ${props => props.dark && `
+        fill: ${props.theme.global.colors.darkBackgroundTextColor};
+        stroke: ${props.theme.global.colors.darkBackgroundTextColor};
       `}
     `,
   },

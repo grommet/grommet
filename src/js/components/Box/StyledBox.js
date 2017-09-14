@@ -132,24 +132,32 @@ const textAlignStyle = css`
 const wrapStyle = 'flex-wrap: wrap;';
 
 const borderStyle = (data, theme) => {
-  const color = colorForName(data.color || 'light-2', theme);
-  const size = data.size || 'small';
-  const side = (typeof data === 'string') ? data : data.side || 'all';
-  const value = `solid ${theme.global.borderSize[size]} ${color}`;
-  if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
-    return `border-${data}: ${value};`;
-  } else if (side === 'horizontal') {
-    return `
-      border-left: ${value};
-      border-right: ${value};
-    `;
-  } else if (side === 'vertical') {
-    return `
-      border-top: ${value};
-      border-bottom: ${value};
-    `;
+  let style = '';
+  if (data.color) {
+    const color = colorForName(data.color || 'light-2', theme);
+    const size = data.size || 'small';
+    const side = (typeof data === 'string') ? data : data.side || 'all';
+    const value = `solid ${theme.global.borderSize[size]} ${color}`;
+    if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
+      style = `border-${data}: ${value};`;
+    } else if (side === 'horizontal') {
+      style = `
+        border-left: ${value};
+        border-right: ${value};
+      `;
+    } else if (side === 'vertical') {
+      style = `
+        border-top: ${value};
+        border-bottom: ${value};
+      `;
+    }
+    style = `border: ${value};`;
   }
-  return `border: ${value};`;
+  return `
+    ${style}
+
+    ${data.radius ? `border-radius: ${theme.global.borderSize[data.radius]};` : ''}
+  `;
 };
 
 const edgeStyle = (kind, data, theme) => {

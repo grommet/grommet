@@ -15,6 +15,9 @@ class DropContainer extends Component {
   static childContextTypes = {
     theme: PropTypes.object,
   }
+  static contextTypes = {
+    theme: PropTypes.object,
+  }
   static defaultProps = {
     centered: true,
     theme: undefined,
@@ -29,10 +32,11 @@ class DropContainer extends Component {
 
   getChildContext() {
     const { theme } = this.props;
+    const { theme: contextTheme } = this.context;
 
-    const globalTheme = cloneDeep(baseTheme);
     return {
-      theme: deepAssign(globalTheme, theme),
+      ...this.context,
+      theme: contextTheme || deepAssign(cloneDeep(baseTheme), theme),
     };
   }
 
@@ -199,6 +203,7 @@ class DropContainer extends Component {
       theme,
       ...rest
     } = this.props;
+    const { theme: contextTheme } = this.context;
 
     const globalTheme = cloneDeep(baseTheme);
     return (
@@ -207,7 +212,7 @@ class DropContainer extends Component {
           this.componentRef = ref;
         }}
         {...rest}
-        theme={deepAssign(globalTheme, theme)}
+        theme={deepAssign(globalTheme, contextTheme, theme)}
       >
         {children}
       </StyledDrop>

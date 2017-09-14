@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import StyledTextInput,
@@ -19,6 +20,11 @@ function renderLabel(suggestion) {
 }
 
 class TextInput extends Component {
+  static contextTypes = {
+    grommet: PropTypes.object,
+    theme: PropTypes.object,
+  }
+
   state = {
     activeSuggestionIndex: -1,
     announceChange: false,
@@ -104,14 +110,15 @@ class TextInput extends Component {
       items = suggestions.map((suggestion, index) => (
         <li key={renderLabel(suggestion)}>
           <Button
-            plain={true}
+            pad='small'
+            box={true}
+            active={activeSuggestionIndex === index}
             fill={true}
             align='start'
-            onClick={() => this.onClickSuggestion(suggestion)}
             hoverIndicator='background'
+            onClick={() => this.onClickSuggestion(suggestion)}
           >
             <StyledSuggestion
-              active={activeSuggestionIndex === index}
               selected={selectedSuggestionIndex === index}
               theme={theme}
             >
@@ -180,7 +187,7 @@ class TextInput extends Component {
         <Drop
           align={{ top: 'bottom', left: 'left' }}
           responsive={false}
-          theme={this.props.theme}
+          context={{ ...this.context }}
           control={this.componentRef}
           onClose={() => this.setState({ showDrop: false })}
         >
