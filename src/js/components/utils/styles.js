@@ -3,6 +3,11 @@ import { css } from 'styled-components';
 import { parseMetricToInt } from './mixins';
 import { colorForName, colorIsDark } from './colors';
 
+export const activeStyle = css`
+  background-color: ${props => props.theme.global.hover.backgroundColor};
+  color: ${props => props.theme.global.hover.textColor};
+`;
+
 export const backgroundStyle = (background, theme) => {
   if (typeof background === 'object') {
     if (background.image) {
@@ -106,5 +111,5 @@ export const inputStyle = css`
 `;
 
 export default {
-  backgroundStyle, baseStyle, inputStyle, focusStyle,
+  activeStyle, backgroundStyle, baseStyle, inputStyle, focusStyle,
 };

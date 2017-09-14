@@ -5,6 +5,7 @@ import DropContainer from './DropContainer';
 
 import doc from './doc';
 
+import { createContextProvider } from '../hocs';
 import { getNewContainer } from '../utils';
 
 class Drop extends Component {
@@ -30,8 +31,11 @@ class Drop extends Component {
   }
 
   renderDrop() {
+    const ContextProvider = createContextProvider(this.props.context);
     render(
-      <DropContainer {...this.props} />,
+      <ContextProvider>
+        <DropContainer {...this.props} />
+      </ContextProvider>,
       this.dropContainer
     );
   }

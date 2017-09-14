@@ -9,6 +9,7 @@ export * from './Image';
 export * from './Keyboard';
 export * from './Layer';
 export * from './Markdown';
+export * from './Menu';
 export * from './Meter';
 export * from './Paragraph';
 export * from './Stack';
