@@ -240,7 +240,7 @@ exports[`Anchor icon label renders 1`] = `
                 "black": "#000000",
                 "brand": "#865CD6",
                 "dark": Array [
-                  "#333333",
+                  "rgb(51,51,51)",
                   "#444444",
                   "#555555",
                   "#666666",
@@ -448,6 +448,8 @@ exports[`Anchor icon label renders 1`] = `
             },
             "icon": Object {
               "extend": Array [
+                [Function],
+                " ",
                 [Function],
               ],
             },
@@ -673,7 +675,7 @@ exports[`Anchor primary renders 1`] = `
                 "black": "#000000",
                 "brand": "#865CD6",
                 "dark": Array [
-                  "#333333",
+                  "rgb(51,51,51)",
                   "#444444",
                   "#555555",
                   "#666666",
@@ -881,6 +883,8 @@ exports[`Anchor primary renders 1`] = `
             },
             "icon": Object {
               "extend": Array [
+                [Function],
+                " ",
                 [Function],
               ],
             },
@@ -1210,7 +1214,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "black": "#000000",
                 "brand": "#865CD6",
                 "dark": Array [
-                  "#333333",
+                  "rgb(51,51,51)",
                   "#444444",
                   "#555555",
                   "#666666",
@@ -1419,6 +1423,8 @@ exports[`Anchor reverse icon label renders 1`] = `
             "icon": Object {
               "extend": Array [
                 [Function],
+                " ",
+                [Function],
               ],
             },
             "layer": Object {
@@ -1603,7 +1609,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "black": "#000000",
                 "brand": "#865CD6",
                 "dark": Array [
-                  "#333333",
+                  "rgb(51,51,51)",
                   "#444444",
                   "#555555",
                   "#666666",
@@ -1811,6 +1817,8 @@ exports[`Anchor warns about invalid icon render 1`] = `
             },
             "icon": Object {
               "extend": Array [
+                [Function],
+                " ",
                 [Function],
               ],
             },

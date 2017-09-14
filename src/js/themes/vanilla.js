@@ -14,7 +14,7 @@ const statusColors = {
   unknown: '#a8a8a8',
   disabled: '#a8a8a8',
 };
-const darkColors = ['#333333', '#444444', '#555555', '#666666', '#777777', '#999999'];
+const darkColors = ['rgb(51,51,51)', '#444444', '#555555', '#666666', '#777777', '#999999'];
 const lightColors = ['#F6F6F6', '#EEEEEE', '#DDDDDD', '#CCCCCC', '#BBBBBB', '#AAAAAA'];
 const backgroundColor = '#FFFFFF';
 const textColor = '#333333';
@@ -210,6 +210,11 @@ export default {
       ${props => props.color && props.color !== 'plain' && `
         fill: ${colorForName(props.color, props.theme)};
         stroke: ${colorForName(props.color, props.theme)};
+      `}
+
+      ${props => props.dark && `
+        fill: ${props.theme.global.colors.darkBackgroundTextColor};
+        stroke: ${props.theme.global.colors.darkBackgroundTextColor};
       `}
     `,
   },

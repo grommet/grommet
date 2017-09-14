@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 
 import { parseMetricToInt } from './mixins';
-import { colorForName, colorIsDark } from './colors';
+import { colorForName, colorIsDark, getRGBColor } from './colors';
 
 export const backgroundStyle = (background, theme) => {
   if (typeof background === 'object') {
@@ -19,6 +19,16 @@ export const backgroundStyle = (background, theme) => {
         background-size: cover;
         color: ${color};
       `;
+    } else if (background.color) {
+      const color = colorForName(background.color, theme);
+      const rgbColor = getRGBColor(color, background.opacity);
+      if (rgbColor) {
+        return css`
+          background-color: ${rgbColor};
+          color: ${colorIsDark(rgbColor) ?
+            theme.global.colors.darkBackgroundTextColor : theme.global.colors.text};
+        `;
+      }
     }
     return undefined;
   }
