@@ -395,56 +395,68 @@ exports[`Anchor icon label renders 1`] = `
                 "1": Object {
                   "large": Object {
                     "height": 1.125,
+                    "maxWidth": "864px",
                     "size": "96px",
                   },
                   "medium": Object {
                     "height": 1.125,
+                    "maxWidth": "576px",
                     "size": "48px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "24px",
                   },
                 },
                 "2": Object {
                   "large": Object {
                     "height": 1.125,
+                    "maxWidth": "864px",
                     "size": "48px",
                   },
                   "medium": Object {
                     "height": 1.23,
+                    "maxWidth": "576px",
                     "size": "36px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                 },
                 "3": Object {
                   "large": Object {
                     "height": 1.23,
+                    "maxWidth": "864px",
                     "size": "36px",
                   },
                   "medium": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "24px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                 },
                 "4": Object {
                   "large": Object {
                     "height": 1.333,
+                    "maxWidth": "864px",
                     "size": "24px",
                   },
                   "medium": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "18px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "16px",
                   },
                 },
@@ -835,56 +847,68 @@ exports[`Anchor primary renders 1`] = `
                 "1": Object {
                   "large": Object {
                     "height": 1.125,
+                    "maxWidth": "864px",
                     "size": "96px",
                   },
                   "medium": Object {
                     "height": 1.125,
+                    "maxWidth": "576px",
                     "size": "48px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "24px",
                   },
                 },
                 "2": Object {
                   "large": Object {
                     "height": 1.125,
+                    "maxWidth": "864px",
                     "size": "48px",
                   },
                   "medium": Object {
                     "height": 1.23,
+                    "maxWidth": "576px",
                     "size": "36px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                 },
                 "3": Object {
                   "large": Object {
                     "height": 1.23,
+                    "maxWidth": "864px",
                     "size": "36px",
                   },
                   "medium": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "24px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                 },
                 "4": Object {
                   "large": Object {
                     "height": 1.333,
+                    "maxWidth": "864px",
                     "size": "24px",
                   },
                   "medium": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "18px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "16px",
                   },
                 },
@@ -1379,56 +1403,68 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "1": Object {
                   "large": Object {
                     "height": 1.125,
+                    "maxWidth": "864px",
                     "size": "96px",
                   },
                   "medium": Object {
                     "height": 1.125,
+                    "maxWidth": "576px",
                     "size": "48px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "24px",
                   },
                 },
                 "2": Object {
                   "large": Object {
                     "height": 1.125,
+                    "maxWidth": "864px",
                     "size": "48px",
                   },
                   "medium": Object {
                     "height": 1.23,
+                    "maxWidth": "576px",
                     "size": "36px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                 },
                 "3": Object {
                   "large": Object {
                     "height": 1.23,
+                    "maxWidth": "864px",
                     "size": "36px",
                   },
                   "medium": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "24px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                 },
                 "4": Object {
                   "large": Object {
                     "height": 1.333,
+                    "maxWidth": "864px",
                     "size": "24px",
                   },
                   "medium": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "18px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "16px",
                   },
                 },
@@ -1771,56 +1807,68 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "1": Object {
                   "large": Object {
                     "height": 1.125,
+                    "maxWidth": "864px",
                     "size": "96px",
                   },
                   "medium": Object {
                     "height": 1.125,
+                    "maxWidth": "576px",
                     "size": "48px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "24px",
                   },
                 },
                 "2": Object {
                   "large": Object {
                     "height": 1.125,
+                    "maxWidth": "864px",
                     "size": "48px",
                   },
                   "medium": Object {
                     "height": 1.23,
+                    "maxWidth": "576px",
                     "size": "36px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                 },
                 "3": Object {
                   "large": Object {
                     "height": 1.23,
+                    "maxWidth": "864px",
                     "size": "36px",
                   },
                   "medium": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "24px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                 },
                 "4": Object {
                   "large": Object {
                     "height": 1.333,
+                    "maxWidth": "864px",
                     "size": "24px",
                   },
                   "medium": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "18px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "16px",
                   },
                 },
