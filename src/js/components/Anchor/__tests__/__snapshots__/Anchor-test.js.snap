@@ -366,6 +366,11 @@ exports[`Anchor icon label renders 1`] = `
                 },
               },
               "lineHeight": "24px",
+              "opacity": Object {
+                "medium": "0.4",
+                "strong": "0.1",
+                "weak": "0.8",
+              },
               "placeholder": Object {
                 "color": "#AAAAAA",
               },
@@ -448,6 +453,8 @@ exports[`Anchor icon label renders 1`] = `
             },
             "icon": Object {
               "extend": Array [
+                [Function],
+                " ",
                 [Function],
               ],
             },
@@ -799,6 +806,11 @@ exports[`Anchor primary renders 1`] = `
                 },
               },
               "lineHeight": "24px",
+              "opacity": Object {
+                "medium": "0.4",
+                "strong": "0.1",
+                "weak": "0.8",
+              },
               "placeholder": Object {
                 "color": "#AAAAAA",
               },
@@ -881,6 +893,8 @@ exports[`Anchor primary renders 1`] = `
             },
             "icon": Object {
               "extend": Array [
+                [Function],
+                " ",
                 [Function],
               ],
             },
@@ -1336,6 +1350,11 @@ exports[`Anchor reverse icon label renders 1`] = `
                 },
               },
               "lineHeight": "24px",
+              "opacity": Object {
+                "medium": "0.4",
+                "strong": "0.1",
+                "weak": "0.8",
+              },
               "placeholder": Object {
                 "color": "#AAAAAA",
               },
@@ -1418,6 +1437,8 @@ exports[`Anchor reverse icon label renders 1`] = `
             },
             "icon": Object {
               "extend": Array [
+                [Function],
+                " ",
                 [Function],
               ],
             },
@@ -1721,6 +1742,11 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 },
               },
               "lineHeight": "24px",
+              "opacity": Object {
+                "medium": "0.4",
+                "strong": "0.1",
+                "weak": "0.8",
+              },
               "placeholder": Object {
                 "color": "#AAAAAA",
               },
@@ -1803,6 +1829,8 @@ exports[`Anchor warns about invalid icon render 1`] = `
             },
             "icon": Object {
               "extend": Array [
+                [Function],
+                " ",
                 [Function],
               ],
             },

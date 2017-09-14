@@ -15,9 +15,22 @@ export const colorForName = (name, theme) => {
   return color;
 };
 
-export const colorIsDark = (color) => {
+function parseHexToRGB(color) {
   // https://stackoverflow.com/a/42429333
-  const [red, green, blue] = color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16));
+  return color.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16));
+}
+
+function getRGBArray(color) {
+  if (color.startsWith('#')) {
+    return parseHexToRGB(color);
+  } else if (color.startsWith('rgb')) {
+    return color.match(/rgba?\((\s?[0-9]*\s?),(\s?[0-9]*\s?),(\s?[0-9]*\s?).*?\)/).splice(1);
+  }
+  return color;
+}
+
+export const colorIsDark = (color) => {
+  const [red, green, blue] = getRGBArray(color);
   // http://www.had2know.com/technology/
   //  color-contrast-calculator-web-design.html
   const brightness = (
@@ -26,4 +39,12 @@ export const colorIsDark = (color) => {
   return (brightness < 125);
 };
 
-export default { colorForName, colorIsDark };
+export function getRGBA(color, opacity) {
+  if (color) {
+    const [red, green, blue] = getRGBArray(color);
+    return `rgba(${red}, ${green}, ${blue}, ${opacity || 1})`;
+  }
+  return undefined;
+}
+
+export default { colorForName, colorIsDark, getRGBA };
