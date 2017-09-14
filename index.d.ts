@@ -1,4 +1,6 @@
 export { default as Box, BoxProps } from './src/js/components/Box';
+export { default as Grid, GridProps } from './src/js/components/Grid';
+export { default as Heading, HeadingProps } from './src/js/components/Heading';
 export { default as Image, ImageProps } from './src/js/components/Image';
 export { default as Keyboard, KeyboardProps } from './src/js/components/Keyboard';
 export { default as Layer, LayerProps } from './src/js/components/Layer';
