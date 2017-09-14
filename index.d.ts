@@ -1,5 +1,7 @@
 export { default as Box, BoxProps } from './src/js/components/Box';
+export { default as Drop, DropProps } from './src/js/components/Drop';
 export { default as Grid, GridProps } from './src/js/components/Grid';
+export { default as Grommet, GrommetProps } from './src/js/components/Grommet';
 export { default as Heading, HeadingProps } from './src/js/components/Heading';
 export { default as Image, ImageProps } from './src/js/components/Image';
 export { default as Keyboard, KeyboardProps } from './src/js/components/Keyboard';
