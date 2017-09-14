@@ -68,7 +68,8 @@ var Tile = function (_Component) {
           hoverStyle = _props.hoverStyle,
           hoverColorIndex = _props.hoverColorIndex,
           hoverBorder = _props.hoverBorder,
-          hoverBorderSize = _props.hoverBorderSize;
+          hoverBorderSize = _props.hoverBorderSize,
+          selected = _props.selected;
 
       var restProps = _Props2.default.omit(this.props, Object.keys(Tile.propTypes));
 
@@ -76,7 +77,7 @@ var Tile = function (_Component) {
       // if Tiles flush is true, default borderSize to small (1px)
       var borderSize = hoverBorder ? hoverBorderSize ? hoverBorderSize : 'large' : 'small';
 
-      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--status-' + statusClass, status), _defineProperty(_classnames, CLASS_ROOT + '--wide', wide), _defineProperty(_classnames, CLASS_ROOT + '--selectable', onClick), _defineProperty(_classnames, '' + NAMESPACE + hoverStyle + (hoverStyle == 'border' ? borderSize ? '-' + borderSize : '-medium' : '') + '-hover-color-index-' + hoverColorIndex, hoverStyle), _defineProperty(_classnames, CLASS_ROOT + '--hover-border-' + borderSize, borderSize), _classnames));
+      var classes = (0, _classnames3.default)(CLASS_ROOT, className, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--status-' + statusClass, status), _defineProperty(_classnames, CLASS_ROOT + '--selected', selected), _defineProperty(_classnames, CLASS_ROOT + '--wide', wide), _defineProperty(_classnames, CLASS_ROOT + '--selectable', onClick), _defineProperty(_classnames, '' + NAMESPACE + hoverStyle + (hoverStyle == 'border' ? borderSize ? '-' + borderSize : '-medium' : '') + '-hover-color-index-' + hoverColorIndex, hoverStyle), _defineProperty(_classnames, CLASS_ROOT + '--hover-border-' + borderSize, borderSize), _classnames));
 
       var boxProps = _Props2.default.pick(this.props, Object.keys(_Box2.default.propTypes));
 
@@ -100,6 +101,7 @@ Tile.propTypes = _extends({
   hoverColorIndex: _propTypes2.default.string,
   hoverBorder: _propTypes2.default.bool,
   hoverBorderSize: _propTypes2.default.oneOf(['small', 'medium', 'large']),
+  selected: _propTypes2.default.bool,
   wide: _propTypes2.default.bool }, _Box2.default.propTypes);
 
 Tile.defaultProps = {
