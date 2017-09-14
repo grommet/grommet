@@ -25,7 +25,7 @@ exports[`Menu opens and closes on click 1`] = `
       class="StyledButton__StyledIcon-hqHdWF bnFLWK"
     >
       <svg
-        class="StyledIcon-hcpUvT bjFnKs"
+        class="StyledIcon-hcpUvT frwTfF"
         width="24px"
         height="24px"
         viewBox="0 0 24 24"
@@ -99,7 +99,7 @@ exports[`Menu opens and closes on click 2`] = `
       class="StyledButton__StyledIcon-hqHdWF bnFLWK"
     >
       <svg
-        class="StyledIcon-hcpUvT bjFnKs"
+        class="StyledIcon-hcpUvT frwTfF"
         width="24px"
         height="24px"
         viewBox="0 0 24 24"
@@ -505,7 +505,7 @@ exports[`Menu with dropAlign renders 1`] = `
       class="StyledButton__StyledIcon-hqHdWF bnFLWK"
     >
       <svg
-        class="StyledIcon-hcpUvT bjFnKs"
+        class="StyledIcon-hcpUvT frwTfF"
         width="24px"
         height="24px"
         viewBox="0 0 24 24"
