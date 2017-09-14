@@ -30,7 +30,7 @@
     "test-update": "grommet check -t -- --updateSnapshot",
     "test-watch": "grommet check -t -- --watchAll",
     "ts": "tsc",
-    "lint": "tslint \"src/js/components/**/*.ts{,x}\" && tslint \"src/**/*.ts{,x}\""
+    "lint:ts": "tslint \"src/js/components/**/*.ts{,x}\" && tslint \"src/**/*.ts{,x}\""
   },
   "dependencies": {
     "@types/react": "^16.0.5",
@@ -46,6 +46,7 @@
     "recompose": "^0.24.0",
     "styled-components": "^2.1.1",
     "tslint": "^5.7.0",
+    "tslint-eslint-rules": "^4.1.1",
     "tslint-react": "^3.2.0",
     "typescript": "^2.5.2"
   },

@@ -1,7 +1,8 @@
 {
   "extends": [
     "tslint:latest",
-    "tslint-react"
+    "tslint-react",
+    "tslint-eslint-rules"
   ],
   "rules": {
     "ter-indent": [true, 2],
@@ -11,7 +12,7 @@
       "jsx-double"
     ],
     "no-var-requires": false,
-    "ordered-imports": [false],
+    "ordered-imports": false,
     "member-ordering": [
       false
     ],
@@ -26,7 +27,10 @@
       true,
       120
     ],
-    "semicolon": true,
+    "semicolon": [
+      true,
+      "never"
+    ],
     "no-arg": true,
     "no-consecutive-blank-lines": [
       true
