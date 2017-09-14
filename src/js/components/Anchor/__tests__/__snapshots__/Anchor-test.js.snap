@@ -1518,14 +1518,6 @@ exports[`Anchor warns about invalid icon render 1`] = `
   box-sizing: inherit;
 }
 
-.c2 {
-  display: inline-block;
-}
-
-.c2 > * {
-  vertical-align: bottom;
-}
-
 .c1 {
   color: #865CD6;
   text-decoration: none;
@@ -1882,12 +1874,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
     onMouseDown={[Function]}
     onMouseUp={[Function]}
   >
-    <span
-      className="c2"
-      label={undefined}
-    >
-      <svg />
-    </span>
+    invalid
   </a>
 </div>
 `;
@@ -1949,7 +1936,7 @@ exports[`Anchor warns about invalid label render 1`] = `
     onMouseDown={[Function]}
     onMouseUp={[Function]}
   >
-    Test
+    invalid
   </a>
 </div>
 `;

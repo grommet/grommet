@@ -2595,11 +2595,11 @@ fs-extra@^3.0.1:
     universalify "^0.1.0"
 
 fs-extra@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.1.tgz#7fc0c6c8957f983f57f306a24e5b9ddd8d0dd880"
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.2.tgz#f91704c53d1b461f893452b0c307d9997647ab6b"
   dependencies:
     graceful-fs "^4.1.2"
-    jsonfile "^3.0.0"
+    jsonfile "^4.0.0"
     universalify "^0.1.0"
 
 fs-readdir-recursive@^1.0.0:
@@ -2800,9 +2800,9 @@ grommet-cli@5.1.0:
     webpack-dev-server "^2.6.1"
     yargs "^8.0.2"
 
-grommet-icons@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-0.4.0.tgz#221f8c9c2067719cb280c5e037bbee2ba1119033"
+grommet-icons@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-0.5.0.tgz#1ff84b6b0f733720493ac99bbc26ff1763cd22ac"
   dependencies:
     deep-assign "^2.0.0"
     react "^15.4.0"
@@ -3750,6 +3750,12 @@ jsonfile@^3.0.0:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
+jsonfile@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-4.0.0.tgz#8771aae0799b64076b76640fca058f9c10e33ecb"
+  optionalDependencies:
+    graceful-fs "^4.1.6"
+
 jsonify@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
@@ -4499,8 +4505,8 @@ p-locate@^2.0.0:
     p-limit "^1.1.0"
 
 p-map@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/p-map/-/p-map-1.1.1.tgz#05f5e4ae97a068371bc2a5cc86bfbdbc19c4ae7a"
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/p-map/-/p-map-1.2.0.tgz#e4e94f311eabbc8633a1e79908165fca26241b6b"
 
 pako@~0.2.0:
   version "0.2.9"
