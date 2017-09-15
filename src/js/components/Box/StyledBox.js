@@ -207,10 +207,6 @@ const responsiveStyle = css`
 
     ${props.justify === 'center' && 'align-items: stretch;'}
     ${props.reverse && 'flex-direction: column-reverse'}
-
-    > * {
-      flex-basis: auto;
-    }
   `)}
   }
 `;
