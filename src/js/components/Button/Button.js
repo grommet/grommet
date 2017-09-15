@@ -55,7 +55,7 @@ class Button extends Component {
 
     let buttonIcon;
     if (icon) {
-      buttonIcon = <StyledIcon key='styled-icon' theme={theme}>{icon}</StyledIcon>;
+      buttonIcon = <StyledIcon aria-hidden={true} key='styled-icon' theme={theme}>{icon}</StyledIcon>;
     }
 
     let buttonLabel;
