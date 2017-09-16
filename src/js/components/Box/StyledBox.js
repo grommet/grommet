@@ -204,6 +204,7 @@ const roundStyle = css`
 const responsiveStyle = css`
   ${props => palm(`
     flex-direction: column;
+    flex-basis: auto;
 
     ${props.justify === 'center' && 'align-items: stretch;'}
     ${props.reverse && 'flex-direction: column-reverse'}
