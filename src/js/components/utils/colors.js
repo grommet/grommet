@@ -21,9 +21,9 @@ function parseHexToRGB(color) {
 }
 
 function getRGBArray(color) {
-  if (color.startsWith('#')) {
+  if (/^#/.test(color)) {
     return parseHexToRGB(color);
-  } else if (color.startsWith('rgb')) {
+  } else if (/^rgb/.test(color)) {
     return color.match(/rgba?\((\s?[0-9]*\s?),(\s?[0-9]*\s?),(\s?[0-9]*\s?).*?\)/).splice(1);
   }
   return color;
