@@ -43,12 +43,12 @@ const StyledTextInput = styled.input`
   }
 
   &:focus {
-    ${focusStyle}
+    ${props => !props.plain && focusStyle}
   }
 `;
 
 export const StyledTextInputContainer = styled.div`
-  ${props => props.plain && css`width: 100%`}
+  ${props => props.plain && 'width: 100%'}
 `;
 
 const selectedStyle = css`

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { backgroundStyle, colorForName } from '../utils';
+import { backgroundStyle, colorForName, palm } from '../utils';
 
 const ALIGN_MAP = {
   baseline: 'baseline',
@@ -139,7 +139,7 @@ const borderStyle = (data, theme) => {
     const side = (typeof data === 'string') ? data : data.side || 'all';
     const value = `solid ${theme.global.borderSize[size]} ${color}`;
     if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
-      style = `border-${data}: ${value};`;
+      style = `border-${side}: ${value};`;
     } else if (side === 'horizontal') {
       style = `
         border-left: ${value};
@@ -150,8 +150,9 @@ const borderStyle = (data, theme) => {
         border-top: ${value};
         border-bottom: ${value};
       `;
+    } else {
+      style = `border: ${value};`;
     }
-    style = `border: ${value};`;
   }
   return `
     ${style}
@@ -200,6 +201,16 @@ const roundStyle = css`
   border-radius: ${props => ROUND_MAP[props.round] || props.theme.global.edgeSize[props.round]};
 `;
 
+const responsiveStyle = css`
+  ${props => palm(`
+    flex-direction: column;
+
+    ${props.justify === 'center' && 'align-items: stretch;'}
+    ${props.reverse && 'flex-direction: column-reverse'}
+  `)}
+  }
+`;
+
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
 const StyledBox = styled.div`
   display: flex;
@@ -221,6 +232,7 @@ const StyledBox = styled.div`
   ${props => props.round && roundStyle}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.wrap && wrapStyle}
+  ${props => props.responsive && responsiveStyle}
 `;
 
 export default StyledBox.extend`
