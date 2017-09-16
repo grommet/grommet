@@ -166,13 +166,23 @@ class MenuDrop extends Component {
     });
 
     let contents = [
-      React.cloneElement(control, {key: 'control', fill: true}),
       <Box {...restProps} key="nav" ref={ref => this.navContainerRef = ref}
         tag="nav" className={`${CLASS_ROOT}__contents`}
         primary={false}>
         {menuDropChildren}
       </Box>
     ];
+
+    // do not show the control if menu doesn't overlap with it when expanded
+    const showControl =
+        ('top' === dropAlign.top || 'bottom' === dropAlign.bottom) && 
+        ('left' === dropAlign.left || 'right' === dropAlign.right);
+    
+    if(showControl) {
+      contents.unshift(
+                  React.cloneElement(control, {key: 'control', fill: true}));
+    }
+
 
     if (dropAlign.bottom) {
       contents.reverse();
