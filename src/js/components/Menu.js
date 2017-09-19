@@ -179,7 +179,7 @@ class MenuDrop extends Component {
     }
 
     let classes = classnames(
-      this.props.className,
+      `${this.props.className}__drop`,
       `${CLASS_ROOT}__drop`,
       {
         [`${CLASS_ROOT}__drop--align-right`]: dropAlign.right,
