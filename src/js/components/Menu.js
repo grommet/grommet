@@ -505,7 +505,9 @@ export default class Menu extends Component {
         <Box ref={ref => this._controlRef = ref} {...props} className={classes}>
           <Button plain={true} reverse={true}
             a11yTitle={menuTitle} {...this._renderButtonProps()}
-            onClick={() => this.setState({state: 'expanded'})}
+            onClick={() => this.setState({
+              state: this.state.state !== 'expanded' ? 'expanded' : 'collapsed'
+            })}
             onFocus={this._onFocusControl} onBlur={this._onBlurControl} />
         </Box>
       );
