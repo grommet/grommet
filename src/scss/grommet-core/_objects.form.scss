@@ -87,7 +87,7 @@
     align-items: center;
 
     .#{$grommet-namespace}radio-button__control {
-      min-width: 24px;
+      min-width: $inuit-base-spacing-unit;
     }
   }
 }
