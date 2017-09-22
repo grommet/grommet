@@ -1,7 +1,12 @@
 import { css } from 'styled-components';
 
 import { parseMetricToInt } from './mixins';
-import { colorForName, colorIsDark } from './colors';
+import { colorForName, colorIsDark, getRGBA } from './colors';
+
+export const activeStyle = css`
+  background-color: ${props => props.theme.global.hover.backgroundColor};
+  color: ${props => props.theme.global.hover.textColor};
+`;
 
 export const backgroundStyle = (background, theme) => {
   if (typeof background === 'object') {
@@ -19,6 +24,23 @@ export const backgroundStyle = (background, theme) => {
         background-size: cover;
         color: ${color};
       `;
+    } else if (background.color) {
+      const color = colorForName(background.color, theme);
+      const rgba = getRGBA(
+        color,
+        background.opacity === true ? (
+          theme.global.opacity.medium
+        ) : (
+          theme.global.opacity[background.opacity]
+        )
+      );
+      if (rgba) {
+        return css`
+          background-color: ${rgba};
+          color: ${colorIsDark(rgba) ?
+            theme.global.colors.darkBackgroundTextColor : theme.global.colors.text};
+        `;
+      }
     }
     return undefined;
   }
@@ -106,5 +128,5 @@ export const inputStyle = css`
 `;
 
 export default {
-  backgroundStyle, baseStyle, inputStyle, focusStyle,
+  activeStyle, backgroundStyle, baseStyle, inputStyle, focusStyle,
 };

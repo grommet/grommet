@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
-import { focusStyle, fontSize, lapAndUp } from '../utils';
+import { activeStyle, focusStyle, fontSize, lapAndUp } from '../utils';
 
 const primaryStyle = css`
   background-color: ${props => props.theme.global.colors.brand};
@@ -153,6 +153,7 @@ const StyledButton = styled.button`
     !props.disabled && !props.focus && hoverStyle
   )}
 
+  ${props => !props.disabled && props.active && activeStyle}
   ${props => props.disabled && disabledStyle}
 
   ${props => (

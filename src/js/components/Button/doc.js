@@ -24,6 +24,9 @@ export default Button => schema(Button, {
     accent: [
       PropTypes.bool, 'Whether this is a accent button.',
     ],
+    active: [
+      PropTypes.bool, 'Whether the button is active.',
+    ],
     box: [
       PropTypes.bool,
       `Whether the button should support Box props. 

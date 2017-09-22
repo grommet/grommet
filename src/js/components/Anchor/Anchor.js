@@ -52,14 +52,23 @@ class Anchor extends Component {
 
     if (anchorIcon) {
       anchorIcon = (
-        <StyledIcon key='styled-icon' reverse={reverse} label={label} theme={theme}>
+        <StyledIcon reverse={reverse} label={label} theme={theme}>
           {anchorIcon}
         </StyledIcon>
       );
     }
 
-    const first = reverse ? label : anchorIcon;
-    const second = reverse ? anchorIcon : label;
+    let first;
+    let second;
+    if (children) {
+      first = children;
+    } else if (reverse) {
+      first = label || null;
+      second = anchorIcon || null;
+    } else {
+      first = anchorIcon || null;
+      second = label || null;
+    }
 
     return (
       <StyledAnchor
@@ -76,7 +85,8 @@ class Anchor extends Component {
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
       >
-        {(first || second) ? [first, second] : children}
+        {first}
+        {second}
       </StyledAnchor>
     );
   }
