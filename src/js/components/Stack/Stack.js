@@ -10,10 +10,6 @@ import doc from './doc';
 import styleMap from './styleMap';
 
 class Stack extends Component {
-  static defaultProps = {
-    anchor: 'center',
-  };
-
   render() {
     const { anchor, children, ...rest } = this.props;
 
@@ -22,12 +18,17 @@ class Stack extends Component {
       if (index === 0) {
         return child;
       }
-      const style = {
-        position: 'absolute',
-        overflow: 'hidden',
-        ...styleMap[anchor],
-      };
-      return React.cloneElement(child, { style });
+
+      if (child) {
+        const style = {
+          position: 'absolute',
+          overflow: 'hidden',
+          ...styleMap[anchor || 'fill'],
+        };
+        return React.cloneElement(child, { style });
+      }
+
+      return child;
     });
 
     return (

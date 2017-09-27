@@ -19,7 +19,7 @@ export default class Circle extends Component {
 
     let startValue = 0;
     let startAngle = 0;
-    const paths = (values || []).map((valueArg, index) => {
+    const paths = (values || []).filter(v => v.value > 0).map((valueArg, index) => {
       const { color, highlight, label, onHover, value, ...rest } = valueArg;
       const key = `p-${index}`;
       const colorName = color ||

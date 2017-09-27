@@ -3,7 +3,7 @@
 exports[`Menu opens and closes on click 1`] = `
 <div
   data-reactroot=""
-  class="StyledDrop-czaYBK bqltOZ"
+  class="StyledDrop-czaYBK fmcQnR"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <button
@@ -44,10 +44,11 @@ exports[`Menu opens and closes on click 1`] = `
     </span>
   </button>
   <button
-    class="StyledButton-gNoZSk loNBpv StyledBox-hownzw fMNBag"
+    class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
     tabindex="0"
     fill="true"
     id="item-1"
+    disabled=""
     label="Item 1"
     type="button"
     direction="column"
@@ -59,9 +60,10 @@ exports[`Menu opens and closes on click 1`] = `
     </span>
   </button>
   <button
-    class="StyledButton-gNoZSk loNBpv StyledBox-hownzw fMNBag"
+    class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
     tabindex="0"
     fill="true"
+    disabled=""
     label="Item 2"
     type="button"
     direction="column"
@@ -78,7 +80,7 @@ exports[`Menu opens and closes on click 1`] = `
 exports[`Menu opens and closes on click 2`] = `
 <div
   data-reactroot=""
-  class="StyledDrop-czaYBK bqltOZ"
+  class="StyledDrop-czaYBK fmcQnR"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <button
@@ -119,10 +121,11 @@ exports[`Menu opens and closes on click 2`] = `
     </span>
   </button>
   <button
-    class="StyledButton-gNoZSk loNBpv StyledBox-hownzw fMNBag"
+    class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
     tabindex="0"
     fill="true"
     id="item-1"
+    disabled=""
     label="Item 1"
     type="button"
     direction="column"
@@ -134,9 +137,10 @@ exports[`Menu opens and closes on click 2`] = `
     </span>
   </button>
   <button
-    class="StyledButton-gNoZSk loNBpv StyledBox-hownzw fMNBag"
+    class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
     tabindex="0"
     fill="true"
+    disabled=""
     label="Item 2"
     type="button"
     direction="column"
@@ -487,7 +491,7 @@ exports[`Menu with custom message renders 1`] = `
 exports[`Menu with dropAlign renders 1`] = `
 <div
   data-reactroot=""
-  class="StyledDrop-czaYBK bqltOZ"
+  class="StyledDrop-czaYBK fmcQnR"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <button
@@ -528,10 +532,11 @@ exports[`Menu with dropAlign renders 1`] = `
     </span>
   </button>
   <button
-    class="StyledButton-gNoZSk loNBpv StyledBox-hownzw fMNBag"
+    class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
     tabindex="0"
     fill="true"
     id="item-1"
+    disabled=""
     label="Item 1"
     type="button"
     direction="column"
@@ -543,9 +548,10 @@ exports[`Menu with dropAlign renders 1`] = `
     </span>
   </button>
   <button
-    class="StyledButton-gNoZSk loNBpv StyledBox-hownzw fMNBag"
+    class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
     tabindex="0"
     fill="true"
+    disabled=""
     label="Item 2"
     type="button"
     direction="column"
