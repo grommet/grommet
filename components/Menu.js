@@ -255,7 +255,7 @@ var MenuDrop = function (_Component) {
         contents.reverse();
       }
 
-      var classes = (0, _classnames4.default)(CLASS_ROOT + '__drop', (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '__drop--align-right', dropAlign.right), _defineProperty(_classnames, CLASS_ROOT + '__drop--' + size, size), _classnames));
+      var classes = (0, _classnames4.default)(CLASS_ROOT + '__drop', (_classnames = {}, _defineProperty(_classnames, this.props.className + '__drop', this.props.className), _defineProperty(_classnames, CLASS_ROOT + '__drop--align-right', dropAlign.right), _defineProperty(_classnames, CLASS_ROOT + '__drop--' + size, size), _classnames));
 
       return _react2.default.createElement(
         _Box2.default,
@@ -512,6 +512,7 @@ var Menu = function (_Component2) {
       return _react2.default.createElement(
         MenuDrop,
         _extends({}, boxProps, this.context, {
+          className: this.props.className,
           dropAlign: this.props.dropAlign,
           size: this.props.size,
           onClick: onClick,
