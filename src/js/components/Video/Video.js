@@ -6,7 +6,7 @@ import { compose } from 'recompose';
 import { Actions, ClosedCaption, Expand, Play, Pause, Volume, VolumeLow } from 'grommet-icons';
 import { Box } from '../Box';
 import { Button } from '../Button';
-import { Drop } from '../Drop';
+import { Menu } from '../Menu';
 import { Meter } from '../Meter';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
@@ -252,92 +252,46 @@ class Video extends Component {
   interactionStop() {
     const { focus } = this.state;
     if (!focus && !this.unmounted) {
-      this.setState({ interacting: false, actionsActive: false });
+      this.setState({ interacting: false });
     }
-  }
-
-  renderDrop(background, iconColor) {
-    const { volume } = this.state;
-
-    let captionControls;
-    const textTracks = findDOMNode(this.videoRef).textTracks;
-    if (textTracks.length > 0) {
-      if (textTracks.length === 1) {
-        const active = textTracks[0].mode === 'showing';
-        captionControls = (
-          <Button
-            icon={<ClosedCaption color={iconColor} />}
-            active={active}
-            onClick={() => this.showCaptions(active ? -1 : 0)}
-          />
-        );
-      } else {
-        captionControls = [];
-        for (let i = 0; i < textTracks.length; i += 1) {
-          const track = textTracks[i];
-          const active = track.mode === 'showing';
-          captionControls.push(
-            <Button
-              key={track.label}
-              plain={true}
-              hoverIndicator='background'
-              active={active}
-              onClick={() => this.showCaptions(active ? -1 : i)}
-            >
-              <Box pad='small'>{track.label}</Box>
-            </Button>
-          );
-        }
-      }
-    }
-
-    return (
-      <Drop
-        align={{ bottom: 'top', right: 'right' }}
-        background='transparent'
-        context={this.context}
-        control={findDOMNode(this.actionsControlRef)}
-        responsive={false}
-        onClose={() => this.setState({ actionsActive: false })}
-      >
-        <Box background={background || { color: 'light-2', opacity: 'weak' }}>
-          <Button
-            icon={<Volume color={iconColor} />}
-            hoverIndicator='background'
-            onClick={(volume <= (1 - VOLUME_STEP) ? this.louder : undefined)}
-          />
-          <Button
-            icon={<VolumeLow color={iconColor} />}
-            hoverIndicator='background'
-            onClick={(volume >= VOLUME_STEP ? this.quieter : undefined)}
-          />
-          {captionControls}
-          <Button
-            icon={<Expand color={iconColor} />}
-            hoverIndicator='background'
-            onClick={this.fullscreen}
-          />
-        </Box>
-      </Drop>
-    );
   }
 
   renderControls() {
     const { controls } = this.props;
     const {
-      actionsActive, currentTime, duration, interacting,
-      percentagePlayed, playing, scrubTime,
+      currentTime, duration, interacting,
+      percentagePlayed, playing, scrubTime, volume,
     } = this.state;
     const over = controls === 'over';
     const background = over ? { color: 'dark-2', opacity: 'weak' } : undefined;
     const iconColor = over ? 'light-1' : undefined;
 
-    let drop;
-    if (actionsActive) {
-      drop = this.renderDrop(background, iconColor);
-    }
-
     const formattedTime = formatTime(scrubTime || currentTime || duration);
+
+    const captionControls = [];
+    if (this.videoRef) {
+      const textTracks = findDOMNode(this.videoRef).textTracks;
+      if (textTracks.length > 0) {
+        if (textTracks.length === 1) {
+          const active = textTracks[0].mode === 'showing';
+          captionControls.push({
+            icon: <ClosedCaption color={iconColor} />,
+            active,
+            onClick: () => this.showCaptions(active ? -1 : 0),
+          });
+        } else {
+          for (let i = 0; i < textTracks.length; i += 1) {
+            const track = textTracks[i];
+            const active = track.mode === 'showing';
+            captionControls.push({
+              label: track.label,
+              active,
+              onClick: () => this.showCaptions(active ? -1 : i),
+            });
+          }
+        }
+      }
+    }
 
     return (
       <StyledVideoControls
@@ -360,7 +314,6 @@ class Video extends Component {
               <Stack>
                 <Meter
                   background={over ? 'dark-3' : undefined}
-                  round={true}
                   size='full'
                   thickness='small'
                   values={[{ value: percentagePlayed || 0 }]}
@@ -381,14 +334,29 @@ class Video extends Component {
               <Text margin='none'>{formattedTime}</Text>
             </Box>
           </Box>
-          <Button
-            ref={(ref) => { this.actionsControlRef = ref; }}
+          <Menu
             icon={<Actions color={iconColor} />}
-            hoverIndicator='background'
-            onClick={() => this.setState({ actionsActive: !actionsActive })}
+            dropAlign={{ bottom: 'top', right: 'right' }}
+            background={background || { color: 'light-2', opacity: 'weak' }}
+            items={[
+              {
+                icon: <Volume color={iconColor} />,
+                onClick: (volume <= (1 - VOLUME_STEP) ? this.louder : undefined),
+                close: false,
+              },
+              {
+                icon: <VolumeLow color={iconColor} />,
+                onClick: (volume >= VOLUME_STEP ? this.quieter : undefined),
+                close: false,
+              },
+              ...captionControls,
+              {
+                icon: <Expand color={iconColor} />,
+                onClick: this.fullscreen,
+              },
+            ]}
           />
         </Box>
-        {drop}
       </StyledVideoControls>
     );
   }

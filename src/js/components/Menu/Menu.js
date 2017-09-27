@@ -60,11 +60,20 @@ class Menu extends Component {
   }
 
   onPreviousMenuItem() {
-    const { activeItemIndex } = this.state;
-    const index = Math.max(activeItemIndex - 1, 0);
-    this.setState({ activeItemIndex: index });
-    // this.setState({ activeSuggestionIndex: index },
-    //   this._announceSuggestion.bind(this, index));
+    const { showDrop, activeItemIndex } = this.state;
+    if (!showDrop) {
+      this.setState({
+        showDrop: true,
+        activeItemIndex: -1,
+      });
+    } else {
+      const { items } = this.props;
+      const index = (activeItemIndex === -1 ? (items.length - 1) :
+        Math.max(activeItemIndex - 1, 0));
+      this.setState({ activeItemIndex: index });
+      // this.setState({ activeSuggestionIndex: index },
+      //   this._announceSuggestion.bind(this, index));
+    }
   }
 
   render() {
@@ -83,6 +92,21 @@ class Menu extends Component {
 
     const menuIcon = icon || <FormDown />;
 
+    const controlMirror = (
+      <Button
+        justify={dropAlign.right ? 'end' : 'start'}
+        fill={true}
+        a11yTitle={messages.closeMenu || 'Close Menu'}
+        box={true}
+        reverse={true}
+        icon={menuIcon}
+        label={label}
+        direction='row'
+        pad='small'
+        onClick={() => this.onDropClose()}
+      />
+    );
+
     let drop;
     if (showDrop) {
       drop = (
@@ -96,18 +120,7 @@ class Menu extends Component {
           control={this.componentRef}
           onClose={() => this.onDropClose()}
         >
-          <Button
-            justify={dropAlign.right ? 'end' : 'start'}
-            fill={true}
-            a11yTitle={messages.closeMenu || 'Close Menu'}
-            box={true}
-            reverse={true}
-            icon={menuIcon}
-            label={label}
-            direction='row'
-            pad='small'
-            onClick={() => this.onDropClose()}
-          />
+          {dropAlign.top === 'top' ? controlMirror : undefined}
           {items.map(
             (item, index) => (
               <Button
@@ -122,13 +135,16 @@ class Menu extends Component {
                 align='start'
                 hoverIndicator='background'
                 {...item}
-                onClick={(...args) => {
+                onClick={item.onClick ? (...args) => {
                   item.onClick(...args);
-                  this.onDropClose();
-                }}
+                  if (item.close !== false) {
+                    this.onDropClose();
+                  }
+                } : undefined}
               />
             )
           )}
+          {dropAlign.bottom === 'bottom' ? controlMirror : undefined }
         </Drop>
       );
     }
