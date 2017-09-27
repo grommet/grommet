@@ -181,6 +181,7 @@ class MenuDrop extends Component {
     let classes = classnames(
       `${CLASS_ROOT}__drop`,
       {
+        [`${this.props.className}__drop`]: this.props.className,
         [`${CLASS_ROOT}__drop--align-right`]: dropAlign.right,
         [`${CLASS_ROOT}__drop--${size}`]: size
       }
@@ -430,6 +431,7 @@ export default class Menu extends Component {
 
     return (
       <MenuDrop {...boxProps} {...this.context}
+        className={this.props.className}
         dropAlign={this.props.dropAlign}
         size={this.props.size}
         onClick={onClick}
