@@ -21,20 +21,20 @@ export default Video => schema(Video, {
       PropTypes.bool,
       'Enables continuous video looping. Defaults to false.',
     ],
-    poster: [
-      PropTypes.node,
-      'Poster image to show before the video first plays.',
-    ],
-    timeline: [
-      PropTypes.arrayOf(PropTypes.shape({
-        label: PropTypes.string,
-        seconds: PropTypes.number,
-      })),
-      'Chapter locations.',
-    ],
-    title: [
-      PropTypes.node,
-      'Descriptive title.',
-    ],
+    // poster: [
+    //   PropTypes.node,
+    //   'Poster image to show before the video first plays.',
+    // ],
+    // timeline: [
+    //   PropTypes.arrayOf(PropTypes.shape({
+    //     label: PropTypes.string,
+    //     seconds: PropTypes.number,
+    //   })),
+    //   'Chapter locations.',
+    // ],
+    // title: [
+    //   PropTypes.node,
+    //   'Descriptive title.',
+    // ],
   },
 });

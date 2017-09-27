@@ -30,3 +30,35 @@ test('Video autoplay renders', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('Video loop renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Video loop={true}>{CONTENTS}</Video>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Video controls renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Video controls='over'>{CONTENTS}</Video>
+      <Video controls='below'>{CONTENTS}</Video>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Video fit renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Video fit='cover'>{CONTENTS}</Video>
+      <Video fit='contain'>{CONTENTS}</Video>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
