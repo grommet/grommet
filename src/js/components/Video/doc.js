@@ -21,20 +21,10 @@ export default Video => schema(Video, {
       PropTypes.bool,
       'Enables continuous video looping. Defaults to false.',
     ],
-    // poster: [
-    //   PropTypes.node,
-    //   'Poster image to show before the video first plays.',
-    // ],
-    // timeline: [
-    //   PropTypes.arrayOf(PropTypes.shape({
-    //     label: PropTypes.string,
-    //     seconds: PropTypes.number,
-    //   })),
-    //   'Chapter locations.',
-    // ],
-    // title: [
-    //   PropTypes.node,
-    //   'Descriptive title.',
-    // ],
+    mute: [
+      PropTypes.bool,
+      `Enables video muting. This option is best used with the autoPlay flag.
+      Defaults to false.`,
+    ],
   },
 });

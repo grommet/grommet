@@ -883,12 +883,87 @@ exports[`Box border renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
+  border: solid 1px #EEEEEE;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  border-left: solid 1px #EEEEEE;
+  border-right: solid 1px #EEEEEE;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  border-top: solid 1px #EEEEEE;
+  border-bottom: solid 1px #EEEEEE;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  border-top: solid 1px #EEEEEE;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  border-left: solid 1px #EEEEEE;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  border-bottom: solid 1px #EEEEEE;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  border-right: solid 1px #EEEEEE;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -920,31 +995,31 @@ exports[`Box border renders 1`] = `
     direction="column"
   />
   <div
-    className="c1"
-    direction="column"
-  />
-  <div
-    className="c1"
-    direction="column"
-  />
-  <div
-    className="c1"
-    direction="column"
-  />
-  <div
-    className="c1"
-    direction="column"
-  />
-  <div
-    className="c1"
-    direction="column"
-  />
-  <div
-    className="c1"
-    direction="column"
-  />
-  <div
     className="c2"
+    direction="column"
+  />
+  <div
+    className="c3"
+    direction="column"
+  />
+  <div
+    className="c4"
+    direction="column"
+  />
+  <div
+    className="c5"
+    direction="column"
+  />
+  <div
+    className="c6"
+    direction="column"
+  />
+  <div
+    className="c7"
+    direction="column"
+  />
+  <div
+    className="c8"
     direction="column"
   />
 </div>

@@ -21,10 +21,10 @@ test('Video renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Video autoplay renders', () => {
+test('Video autoPlay renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Video autoplay={true}>{CONTENTS}</Video>
+      <Video autoPlay={true}>{CONTENTS}</Video>
     </Grommet>
   );
   const tree = component.toJSON();
@@ -35,6 +35,16 @@ test('Video loop renders', () => {
   const component = renderer.create(
     <Grommet>
       <Video loop={true}>{CONTENTS}</Video>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Video mute renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Video mute={true}>{CONTENTS}</Video>
     </Grommet>
   );
   const tree = component.toJSON();

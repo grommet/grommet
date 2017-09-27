@@ -133,26 +133,24 @@ const wrapStyle = 'flex-wrap: wrap;';
 
 const borderStyle = (data, theme) => {
   let style = '';
-  if (data.color) {
-    const color = colorForName(data.color || 'light-2', theme);
-    const size = data.size || 'small';
-    const side = (typeof data === 'string') ? data : data.side || 'all';
-    const value = `solid ${theme.global.borderSize[size]} ${color}`;
-    if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
-      style = `border-${side}: ${value};`;
-    } else if (side === 'horizontal') {
-      style = `
-        border-left: ${value};
-        border-right: ${value};
-      `;
-    } else if (side === 'vertical') {
-      style = `
-        border-top: ${value};
-        border-bottom: ${value};
-      `;
-    } else {
-      style = `border: ${value};`;
-    }
+  const color = colorForName(data.color || 'light-2', theme);
+  const size = data.size || 'small';
+  const side = (typeof data === 'string') ? data : data.side || 'all';
+  const value = `solid ${theme.global.borderSize[size]} ${color}`;
+  if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
+    style = `border-${side}: ${value};`;
+  } else if (side === 'horizontal') {
+    style = `
+      border-left: ${value};
+      border-right: ${value};
+    `;
+  } else if (side === 'vertical') {
+    style = `
+      border-top: ${value};
+      border-bottom: ${value};
+    `;
+  } else {
+    style = `border: ${value};`;
   }
   return `
     ${style}

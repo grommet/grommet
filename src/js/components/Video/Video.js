@@ -40,6 +40,10 @@ class Video extends Component {
     router: PropTypes.any,
   }
 
+  static defaultProps = {
+    controls: 'over',
+  }
+
   constructor() {
     super();
     this.play = this.play.bind(this);
@@ -66,14 +70,25 @@ class Video extends Component {
   }
 
   componentDidMount() {
+    const { mute } = this.props;
+    const video = findDOMNode(this.videoRef);
+
+    if (mute) {
+      this.mute();
+    }
+
     // hide all captioning to start with
-    const textTracks = findDOMNode(this.videoRef).textTracks;
+    const textTracks = video.textTracks;
     for (let i = 0; i < textTracks.length; i += 1) {
       textTracks[i].mode = 'hidden';
     }
   }
 
-  componentWillReceiveProps() {
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.autoPlay && !this.props.autoPlay) {
+      // Caller wants the video to play now.
+      this.play();
+    }
     // Dynamically modifying a source element and its attribute when
     // the element is already inserted in a video or audio element will
     // have no effect.
@@ -82,6 +97,10 @@ class Video extends Component {
     //   #the-source-element
     // Using forceUpdate to force redraw of video when receiving new <source>
     this.forceUpdate();
+  }
+
+  componentWillUnmount() {
+    this.unmounted = true;
   }
 
   injectUpdateVideoEvents() {
@@ -232,7 +251,7 @@ class Video extends Component {
 
   interactionStop() {
     const { focus } = this.state;
-    if (!focus) {
+    if (!focus && !this.unmounted) {
       this.setState({ interacting: false, actionsActive: false });
     }
   }
@@ -323,7 +342,7 @@ class Video extends Component {
     return (
       <StyledVideoControls
         over={over}
-        active={controls === 'below' || (over && interacting)}
+        active={!this.hasPlayed || controls === 'below' || (over && interacting)}
       >
         <Box
           direction='row'
@@ -393,8 +412,8 @@ class Video extends Component {
           ref={(ref) => { this.videoRef = ref; }}
           {...rest}
           {...this.mediaEventProps}
-          autoPlay={autoPlay ? 'autoplay' : false}
-          loop={loop ? 'loop' : false}
+          autoPlay={autoPlay || false}
+          loop={loop || false}
         >
           {children}
         </StyledVideo>

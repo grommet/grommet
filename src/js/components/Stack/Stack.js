@@ -18,12 +18,17 @@ class Stack extends Component {
       if (index === 0) {
         return child;
       }
-      const style = {
-        position: 'absolute',
-        overflow: 'hidden',
-        ...styleMap[anchor || 'fill'],
-      };
-      return React.cloneElement(child, { style });
+
+      if (child) {
+        const style = {
+          position: 'absolute',
+          overflow: 'hidden',
+          ...styleMap[anchor || 'fill'],
+        };
+        return React.cloneElement(child, { style });
+      }
+
+      return child;
     });
 
     return (
