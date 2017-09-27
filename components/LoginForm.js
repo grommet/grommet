@@ -83,6 +83,7 @@ var LoginForm = function (_Component) {
     _this._onChange = _this._onChange.bind(_this);
 
     _this.state = {
+      timestamp: new Date().getTime(),
       password: '',
       rememberMe: props.defaultValues.rememberMe,
       username: props.defaultValues.username
@@ -160,6 +161,7 @@ var LoginForm = function (_Component) {
           secondaryText = _props.secondaryText,
           title = _props.title,
           usernameType = _props.usernameType;
+      var timestamp = this.state.timestamp;
 
 
       var classes = (0, _classnames2.default)(CLASS_ROOT, this.props.className);
@@ -213,6 +215,9 @@ var LoginForm = function (_Component) {
       var password = _react2.default.createElement(_FormattedMessage2.default, { id: 'Password', defaultMessage: 'Password' });
       var login = _react2.default.createElement(_FormattedMessage2.default, { id: 'Log In', defaultMessage: 'Log In' });
 
+      var usernameId = 'grommetux-username_' + timestamp;
+      var passwordId = 'grommetux-password_' + timestamp;
+
       return _react2.default.createElement(
         _Form2.default,
         { className: classes, pad: 'medium', onSubmit: this._onSubmit },
@@ -228,18 +233,26 @@ var LoginForm = function (_Component) {
           null,
           _react2.default.createElement(
             _FormField2.default,
-            { htmlFor: 'username', label: username },
-            _react2.default.createElement('input', { type: usernameType, ref: function ref(_ref) {
+            { htmlFor: usernameId, label: username },
+            _react2.default.createElement('input', {
+              id: usernameId,
+              type: usernameType,
+              ref: function ref(_ref) {
                 return _this2.usernameRef = _ref;
               },
               value: this.state.username,
-              onChange: this._onUsernameChange })
+              onChange: this._onUsernameChange
+            })
           ),
           _react2.default.createElement(
             _FormField2.default,
-            { htmlFor: 'password', label: password },
-            _react2.default.createElement('input', { type: 'password', value: this.state.password,
-              onChange: this._onPasswordChange })
+            { htmlFor: passwordId, label: password },
+            _react2.default.createElement('input', {
+              id: passwordId,
+              type: 'password',
+              value: this.state.password,
+              onChange: this._onPasswordChange
+            })
           ),
           errorsNode
         ),
