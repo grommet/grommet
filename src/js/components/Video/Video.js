@@ -19,6 +19,7 @@ import StyledVideo,
 
 import doc from './doc';
 
+// Split the volume control into 6 segments. Empirically determined.
 const VOLUME_STEP = 0.166667;
 
 const formatTime = (time) => {
@@ -44,28 +45,14 @@ class Video extends Component {
     controls: 'over',
   }
 
-  constructor() {
-    super();
-    this.play = this.play.bind(this);
-    this.hasPlayed = false;
-    this.pause = this.pause.bind(this);
-    this.scrub = this.scrub.bind(this);
-    this.seek = this.seek.bind(this);
-    this.mute = this.mute.bind(this);
-    this.unmute = this.unmute.bind(this);
-    this.louder = this.louder.bind(this);
-    this.quieter = this.quieter.bind(this);
-    this.showCaptions = this.showCaptions.bind(this);
-    this.fullscreen = this.fullscreen.bind(this);
-    this.interactionStart = this.interactionStart.bind(this);
-    this.interactionStop = this.interactionStop.bind(this);
-    // this.renderControls = this.renderControls.bind(this);
-
-    this.state = { mouseActive: false };
+  state = {
+    mouseActive: false,
   }
 
+  hasPlayed = false;
+
   componentWillMount() {
-    this.update = throttle(this.update.bind(this), 100, this);
+    this.update = throttle(this.update, 100, this);
     this.mediaEventProps = this.injectUpdateVideoEvents();
   }
 
@@ -103,7 +90,7 @@ class Video extends Component {
     this.unmounted = true;
   }
 
-  injectUpdateVideoEvents() {
+  injectUpdateVideoEvents = () => {
     const videoEvents = [
       'onAbort',
       'onCanPlay',
@@ -144,10 +131,10 @@ class Video extends Component {
     }, {});
   }
 
-  update() {
+  update = () => {
     const video = findDOMNode(this.videoRef);
     // Set flag for Video first play
-    if (!this.hasPlayed && !video.paused && !video.loading) {
+    if ((!this.hasPlayed && !video.paused && !video.loading) || video.currentTime) {
       this.hasPlayed = true;
     }
 
@@ -177,15 +164,15 @@ class Video extends Component {
     });
   }
 
-  play() {
+  play = () => {
     findDOMNode(this.videoRef).play();
   }
 
-  pause() {
+  pause = () => {
     findDOMNode(this.videoRef).pause();
   }
 
-  scrub(event) {
+  scrub = (event) => {
     const { duration } = this.state;
     if (this.scrubberRef) {
       const scrubberRect = findDOMNode(this.scrubberRef).getBoundingClientRect();
@@ -194,7 +181,7 @@ class Video extends Component {
     }
   }
 
-  seek(event) {
+  seek = (event) => {
     const { duration } = this.state;
     if (this.scrubberRef) {
       const scrubberRect = findDOMNode(this.scrubberRef).getBoundingClientRect();
@@ -203,19 +190,19 @@ class Video extends Component {
     }
   }
 
-  unmute() {
+  unmute = () => {
     findDOMNode(this.videoRef).muted = false;
   }
 
-  mute() {
+  mute = () => {
     findDOMNode(this.videoRef).muted = true;
   }
 
-  louder() {
+  louder = () => {
     findDOMNode(this.videoRef).volume += VOLUME_STEP;
   }
 
-  quieter() {
+  quieter = () => {
     findDOMNode(this.videoRef).volume -= VOLUME_STEP;
   }
 
@@ -228,7 +215,7 @@ class Video extends Component {
     this.forceUpdate();
   }
 
-  fullscreen() {
+  fullscreen = () => {
     const video = findDOMNode(this.videoRef);
     if (video.requestFullscreen) {
       video.requestFullscreen();
@@ -243,13 +230,13 @@ class Video extends Component {
     }
   }
 
-  interactionStart() {
+  interactionStart = () => {
     this.setState({ interacting: true });
     clearTimeout(this.interactionTimer);
     this.interactionTimer = setTimeout(this.interactionStop, 3000);
   }
 
-  interactionStop() {
+  interactionStop = () => {
     const { focus } = this.state;
     if (!focus && !this.unmounted) {
       this.setState({ interacting: false });
@@ -371,6 +358,7 @@ class Video extends Component {
       mouseEventListeners = {
         onMouseEnter: this.interactionStart,
         onMouseMove: this.interactionStart,
+        onTouchStart: this.interactionStart,
       };
     }
 

@@ -279,6 +279,7 @@ exports[`Video autoPlay renders 1`] = `
     className="c1"
     onMouseEnter={[Function]}
     onMouseMove={[Function]}
+    onTouchStart={[Function]}
   >
     <video
       autoPlay={true}
@@ -813,6 +814,7 @@ exports[`Video controls renders 1`] = `
     className="c1"
     onMouseEnter={[Function]}
     onMouseMove={[Function]}
+    onTouchStart={[Function]}
   >
     <video
       autoPlay={false}
@@ -1492,6 +1494,7 @@ exports[`Video fit renders 1`] = `
     className="c1"
     onMouseEnter={[Function]}
     onMouseMove={[Function]}
+    onTouchStart={[Function]}
   >
     <video
       autoPlay={false}
@@ -1685,6 +1688,7 @@ exports[`Video fit renders 1`] = `
     className="c1"
     onMouseEnter={[Function]}
     onMouseMove={[Function]}
+    onTouchStart={[Function]}
   >
     <video
       autoPlay={false}
@@ -2156,6 +2160,7 @@ exports[`Video loop renders 1`] = `
     className="c1"
     onMouseEnter={[Function]}
     onMouseMove={[Function]}
+    onTouchStart={[Function]}
   >
     <video
       autoPlay={false}
@@ -2627,6 +2632,7 @@ exports[`Video mute renders 1`] = `
     className="c1"
     onMouseEnter={[Function]}
     onMouseMove={[Function]}
+    onTouchStart={[Function]}
   >
     <video
       autoPlay={false}
@@ -3098,6 +3104,7 @@ exports[`Video renders 1`] = `
     className="c1"
     onMouseEnter={[Function]}
     onMouseMove={[Function]}
+    onTouchStart={[Function]}
   >
     <video
       autoPlay={false}

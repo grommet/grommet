@@ -17,7 +17,7 @@ const StyledVideo = styled.video`
   max-width: 100%;
   ${props => props.fit && fitStyle}
   ::cue {
-    background: rgba(0, 0, 0, 0.7);
+    background: ${props => props.theme.video.captions.background};
   }
 `;
 
