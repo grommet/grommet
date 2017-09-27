@@ -30,6 +30,7 @@ export default class LoginForm extends Component {
     this._onChange = this._onChange.bind(this);
 
     this.state = {
+      timestamp: new Date().getTime(),
       password: '',
       rememberMe: props.defaultValues.rememberMe,
       username: props.defaultValues.username
@@ -85,6 +86,7 @@ export default class LoginForm extends Component {
       align, errors, forgotPassword,
       logo, onSubmit, rememberMe, secondaryText, title, usernameType
     } = this.props;
+    const { timestamp } = this.state;
 
     const classes = classnames(CLASS_ROOT, this.props.className);
     const center = ! align || 'stretch' === align || 'center' === align;
@@ -141,6 +143,9 @@ export default class LoginForm extends Component {
     );
     const login = <FormattedMessage id="Log In" defaultMessage="Log In" />;
 
+    const usernameId = `grommetux-username_${timestamp}`;
+    const passwordId = `grommetux-password_${timestamp}`;
+
     return (
       <Form className={classes} pad="medium" onSubmit={this._onSubmit}>
         <Box align={align}>
@@ -149,14 +154,22 @@ export default class LoginForm extends Component {
           {secondaryTextNode}
         </Box>
         <fieldset>
-          <FormField htmlFor="username" label={username}>
-            <input type={usernameType} ref={ref => this.usernameRef = ref}
+          <FormField htmlFor={usernameId} label={username}>
+            <input
+              id={usernameId}
+              type={usernameType}
+              ref={ref => this.usernameRef = ref}
               value={this.state.username}
-              onChange={this._onUsernameChange} />
+              onChange={this._onUsernameChange}
+            />
           </FormField>
-          <FormField htmlFor="password" label={password}>
-            <input type="password" value={this.state.password}
-              onChange={this._onPasswordChange} />
+          <FormField htmlFor={passwordId} label={password}>
+            <input
+              id={passwordId}
+              type="password"
+              value={this.state.password}
+              onChange={this._onPasswordChange}
+            />
           </FormField>
           {errorsNode}
         </fieldset>
