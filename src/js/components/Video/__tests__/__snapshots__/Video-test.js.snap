@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Video autoplay renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <video
+      autoPlay={false}
+      className="c2"
+      loop={false}
+      onAbort={[Function]}
+      onCanPlay={[Function]}
+      onCanPlayThrough={[Function]}
+      onDurationChange={[Function]}
+      onEmptied={[Function]}
+      onEncrypted={[Function]}
+      onEnded={[Function]}
+      onError={[Function]}
+      onLoadStart={[Function]}
+      onLoadedData={[Function]}
+      onLoadedMetadata={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      onPlaying={[Function]}
+      onProgress={[Function]}
+      onRateChange={[Function]}
+      onSeeked={[Function]}
+      onSeeking={[Function]}
+      onStalled={[Function]}
+      onSuspend={[Function]}
+      onTimeUpdate={[Function]}
+      onVolumeChange={[Function]}
+      onWaiting={[Function]}
+    >
+      <source />
+      <track />
+    </video>
+  </div>
+</div>
+`;
+
+exports[`Video renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <video
+      autoPlay={false}
+      className="c2"
+      loop={false}
+      onAbort={[Function]}
+      onCanPlay={[Function]}
+      onCanPlayThrough={[Function]}
+      onDurationChange={[Function]}
+      onEmptied={[Function]}
+      onEncrypted={[Function]}
+      onEnded={[Function]}
+      onError={[Function]}
+      onLoadStart={[Function]}
+      onLoadedData={[Function]}
+      onLoadedMetadata={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      onPlaying={[Function]}
+      onProgress={[Function]}
+      onRateChange={[Function]}
+      onSeeked={[Function]}
+      onSeeking={[Function]}
+      onStalled={[Function]}
+      onSuspend={[Function]}
+      onTimeUpdate={[Function]}
+      onVolumeChange={[Function]}
+      onWaiting={[Function]}
+    >
+      <source />
+      <track />
+    </video>
+  </div>
+</div>
+`;

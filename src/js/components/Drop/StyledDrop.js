@@ -5,7 +5,6 @@ import { backgroundStyle, baseStyle } from '../utils';
 const StyledDrop = styled.div`
   ${baseStyle}
 
-  max-height: 0px;
   position: fixed;
   z-index: 20;
   border-radius: ${props => props.theme.global.drop.border.radius};

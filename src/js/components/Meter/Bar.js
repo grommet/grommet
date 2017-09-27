@@ -19,7 +19,7 @@ export default class Bar extends Component {
     const someHighlight = (values || []).some(v => v.highlight);
 
     let start = 0;
-    const paths = (values || []).map((valueArg, index) => {
+    const paths = (values || []).filter(v => v.value > 0).map((valueArg, index) => {
       const { color, highlight, label, onHover, value, ...rest } = valueArg;
 
       const key = `p-${index}`;
