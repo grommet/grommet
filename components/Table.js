@@ -50,6 +50,10 @@ var _Intl2 = _interopRequireDefault(_Intl);
 
 var _Announcer = require('../utils/Announcer');
 
+var _TableHeader = require('./TableHeader');
+
+var _TableHeader2 = _interopRequireDefault(_TableHeader);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -98,6 +102,30 @@ function immediateTableChildOnly(result, tableParent) {
   return immediateChild;
 }
 
+function findHead(children) {
+  if (!children) {
+    return undefined;
+  }
+
+  var childElements = _react.Children.toArray(children);
+
+  var head = void 0;
+  childElements.some(function (child) {
+    if (child.type && (child.type === 'thead' || child.type === _TableHeader2.default || child.type.displayName === _TableHeader2.default.displayName)) {
+      head = child;
+      return true;
+    } else if (child.props && child.props.children) {
+      head = findHead(child.props.children);
+      if (head) {
+        return true;
+      }
+    }
+    return false;
+  });
+
+  return head;
+}
+
 var Table = function (_Component) {
   _inherits(Table, _Component);
 
@@ -122,7 +150,6 @@ var Table = function (_Component) {
       mouseActive: false,
       selected: _Selection2.default.normalizeIndexes(props.selected),
       columnMode: false,
-      rebuildMirror: props.scrollable,
       small: false
     };
     return _this;
@@ -141,7 +168,6 @@ var Table = function (_Component) {
 
       this._setSelection();
       if (scrollable && !columnMode && !small) {
-        this._buildMirror();
         this._alignMirror();
       }
       if (this.props.onMore) {
@@ -178,10 +204,6 @@ var Table = function (_Component) {
           selected: _Selection2.default.normalizeIndexes(nextProps.selected)
         });
       }
-
-      this.setState({
-        rebuildMirror: nextProps.scrollable
-      });
     }
   }, {
     key: 'componentDidUpdate',
@@ -192,16 +214,11 @@ var Table = function (_Component) {
           scrollable = _props2.scrollable;
       var _state2 = this.state,
           columnMode = _state2.columnMode,
-          rebuildMirror = _state2.rebuildMirror,
           selected = _state2.selected,
           small = _state2.small;
 
       if (JSON.stringify(selected) !== JSON.stringify(prevState.selected)) {
         this._setSelection();
-      }
-      if (rebuildMirror && !columnMode) {
-        this._buildMirror();
-        this.setState({ rebuildMirror: false });
       }
       if (scrollable && !columnMode && !small) {
         this._alignMirror();
@@ -245,7 +262,7 @@ var Table = function (_Component) {
   }, {
     key: '_onViewPortChange',
     value: function _onViewPortChange(small) {
-      this.setState({ small: small, rebuildMirror: true });
+      this.setState({ small: small });
     }
   }, {
     key: '_announceRow',
@@ -480,43 +497,27 @@ var Table = function (_Component) {
       this._onResponsive();
     }
   }, {
-    key: '_buildMirror',
-    value: function _buildMirror() {
-      var tableElement = this.tableRef;
-      if (tableElement) {
-        var cells = immediateTableChildOnly(tableElement.querySelectorAll('thead tr th'), tableElement);
-        var mirrorElement = this.mirrorRef;
-        if (mirrorElement) {
-          var mirrorRow = immediateTableChildOnly(mirrorElement.querySelectorAll('thead tr'), mirrorElement)[0];
-          while (mirrorRow.hasChildNodes()) {
-            mirrorRow.removeChild(mirrorRow.lastChild);
-          }
-          for (var i = 0; i < cells.length; i++) {
-            mirrorRow.appendChild(cells[i].cloneNode(true));
-          }
-        }
-      }
-    }
-  }, {
     key: '_alignMirror',
     value: function _alignMirror() {
       var mirrorElement = this.mirrorRef;
-      var mirrorCells = immediateTableChildOnly(mirrorElement.querySelectorAll('thead tr th'), mirrorElement);
-      if (this.mirrorRef && mirrorCells.length > 0) {
-        var tableElement = this.tableRef;
-        var cells = immediateTableChildOnly(tableElement.querySelectorAll('thead tr th'), tableElement);
+      if (mirrorElement) {
+        var mirrorCells = immediateTableChildOnly(mirrorElement.querySelectorAll('thead tr th'), mirrorElement);
+        if (this.mirrorRef && mirrorCells.length > 0) {
+          var tableElement = this.tableRef;
+          var cells = immediateTableChildOnly(tableElement.querySelectorAll('thead tr th'), tableElement);
 
-        var rect = tableElement.getBoundingClientRect();
-        mirrorElement.style.width = '' + Math.floor(rect.right - rect.left) + 'px';
+          var rect = tableElement.getBoundingClientRect();
+          mirrorElement.style.width = '' + Math.floor(rect.right - rect.left) + 'px';
 
-        var height = 0;
-        for (var i = 0; i < cells.length; i++) {
-          rect = cells[i].getBoundingClientRect();
-          mirrorCells[i].style.width = '' + Math.floor(rect.right - rect.left) + 'px';
-          mirrorCells[i].style.height = '' + Math.floor(rect.bottom - rect.top) + 'px';
-          height = Math.max(height, Math.floor(rect.bottom - rect.top));
+          var height = 0;
+          for (var i = 0; i < cells.length; i++) {
+            rect = cells[i].getBoundingClientRect();
+            mirrorCells[i].style.width = '' + Math.floor(rect.right - rect.left) + 'px';
+            mirrorCells[i].style.height = '' + Math.floor(rect.bottom - rect.top) + 'px';
+            height = Math.max(height, Math.floor(rect.bottom - rect.top));
+          }
+          mirrorElement.style.height = '' + height + 'px';
         }
-        mirrorElement.style.height = '' + height + 'px';
       }
     }
   }, {
@@ -553,17 +554,14 @@ var Table = function (_Component) {
 
       var mirror = void 0;
       if (scrollable && !small) {
+        var head = findHead(children);
         mirror = _react2.default.createElement(
           'table',
           { ref: function ref(_ref) {
               return _this4.mirrorRef = _ref;
             },
             className: CLASS_ROOT + '__mirror' },
-          _react2.default.createElement(
-            'thead',
-            null,
-            _react2.default.createElement('tr', null)
-          )
+          head
         );
       }
 
