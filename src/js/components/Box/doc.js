@@ -111,6 +111,11 @@ export default Box => schema(Box, {
       distinguish horizontal padding, vertical padding, and padding on a
       particular side of the box`,
     ],
+    responsive: [
+      PropTypes.bool,
+      `Whether children laid out in a row direction should be switched to a 
+      column layout when the display area narrows.`,
+    ],
     reverse: [
       PropTypes.bool,
       'Whether to reverse the order of the child components.',

@@ -137,7 +137,7 @@ class TextInput extends Component {
   }
 
   render() {
-    const { defaultValue, value, onInput, onKeyDown, ...rest } = this.props;
+    const { defaultValue, focus, plain, value, onInput, onKeyDown, ...rest } = this.props;
     delete rest.onInput; // se we can manage in onInputChange()
     const { showDrop } = this.state;
     // needed so that styled components does not invoke
@@ -196,7 +196,7 @@ class TextInput extends Component {
       );
     }
     return (
-      <StyledTextInputContainer plain={rest.plain}>
+      <StyledTextInputContainer plain={plain}>
         <Keyboard
           onEnter={onEnterSuggestionHandler}
           onEsc={() => this.setState({ showDrop: false })}
@@ -210,7 +210,9 @@ class TextInput extends Component {
               this.componentRef = ref;
             }}
             autoComplete='off'
+            plain={plain}
             {...rest}
+            focus={!plain && focus}
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
             onInput={(event) => {

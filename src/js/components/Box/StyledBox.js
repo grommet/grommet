@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { backgroundStyle, colorForName } from '../utils';
+import { backgroundStyle, colorForName, palm } from '../utils';
 
 const ALIGN_MAP = {
   baseline: 'baseline',
@@ -133,24 +133,23 @@ const wrapStyle = 'flex-wrap: wrap;';
 
 const borderStyle = (data, theme) => {
   let style = '';
-  if (data.color) {
-    const color = colorForName(data.color || 'light-2', theme);
-    const size = data.size || 'small';
-    const side = (typeof data === 'string') ? data : data.side || 'all';
-    const value = `solid ${theme.global.borderSize[size]} ${color}`;
-    if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
-      style = `border-${data}: ${value};`;
-    } else if (side === 'horizontal') {
-      style = `
-        border-left: ${value};
-        border-right: ${value};
-      `;
-    } else if (side === 'vertical') {
-      style = `
-        border-top: ${value};
-        border-bottom: ${value};
-      `;
-    }
+  const color = colorForName(data.color || 'light-2', theme);
+  const size = data.size || 'small';
+  const side = (typeof data === 'string') ? data : data.side || 'all';
+  const value = `solid ${theme.global.borderSize[size]} ${color}`;
+  if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
+    style = `border-${side}: ${value};`;
+  } else if (side === 'horizontal') {
+    style = `
+      border-left: ${value};
+      border-right: ${value};
+    `;
+  } else if (side === 'vertical') {
+    style = `
+      border-top: ${value};
+      border-bottom: ${value};
+    `;
+  } else {
     style = `border: ${value};`;
   }
   return `
@@ -200,6 +199,17 @@ const roundStyle = css`
   border-radius: ${props => ROUND_MAP[props.round] || props.theme.global.edgeSize[props.round]};
 `;
 
+const responsiveStyle = css`
+  ${props => palm(`
+    flex-direction: column;
+    flex-basis: auto;
+
+    ${props.justify === 'center' && 'align-items: stretch;'}
+    ${props.reverse && 'flex-direction: column-reverse'}
+  `)}
+  }
+`;
+
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
 const StyledBox = styled.div`
   display: flex;
@@ -221,6 +231,7 @@ const StyledBox = styled.div`
   ${props => props.round && roundStyle}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.wrap && wrapStyle}
+  ${props => props.responsive && responsiveStyle}
 `;
 
 export default StyledBox.extend`

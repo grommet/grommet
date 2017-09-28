@@ -7,11 +7,9 @@ import { withTheme } from '../hocs';
 
 import doc from './doc';
 
-class Stack extends Component {
-  static defaultProps = {
-    anchor: 'center',
-  };
+import styleMap from './styleMap';
 
+class Stack extends Component {
   render() {
     const { anchor, children, ...rest } = this.props;
 
@@ -20,44 +18,17 @@ class Stack extends Component {
       if (index === 0) {
         return child;
       }
-      const style = {
-        position: 'absolute',
-        overflow: 'hidden',
-      };
-      if (anchor === 'center') {
-        style.top = '50%';
-        style.left = '50%';
-        style.transform = 'translate(-50%, -50%)';
-      } else if (anchor === 'left') {
-        style.top = '50%';
-        style.left = '0';
-        style.transform = 'translateY(-50%)';
-      } else if (anchor === 'right') {
-        style.top = '50%';
-        style.right = '0';
-        style.transform = 'translateY(-50%)';
-      } else if (anchor === 'top') {
-        style.top = '0';
-        style.right = '50%';
-        style.transform = 'translateX(-50%)';
-      } else if (anchor === 'bottom') {
-        style.top = '0';
-        style.right = '50%';
-        style.transform = 'translateX(-50%)';
-      } else if (anchor === 'top-left') {
-        style.top = '0';
-        style.left = '0';
-      } else if (anchor === 'bottom-left') {
-        style.bottom = '0';
-        style.left = '0';
-      } else if (anchor === 'top-right') {
-        style.top = '0';
-        style.right = '0';
-      } else if (anchor === 'bottom-right') {
-        style.bottom = '0';
-        style.right = '0';
+
+      if (child) {
+        const style = {
+          position: 'absolute',
+          overflow: 'hidden',
+          ...styleMap[anchor || 'fill'],
+        };
+        return React.cloneElement(child, { style });
       }
-      return React.cloneElement(child, { style });
+
+      return child;
     });
 
     return (

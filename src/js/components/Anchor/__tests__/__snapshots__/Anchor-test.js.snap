@@ -525,6 +525,11 @@ exports[`Anchor icon label renders 1`] = `
                 "size": "48px",
               },
             },
+            "video": Object {
+              "captions": Object {
+                "background": "rgba(0,0,0,0.7)",
+              },
+            },
           }
         }
       >
@@ -975,6 +980,11 @@ exports[`Anchor primary renders 1`] = `
               "xxlarge": Object {
                 "height": 1.125,
                 "size": "48px",
+              },
+            },
+            "video": Object {
+              "captions": Object {
+                "background": "rgba(0,0,0,0.7)",
               },
             },
           }
@@ -1533,6 +1543,11 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "size": "48px",
               },
             },
+            "video": Object {
+              "captions": Object {
+                "background": "rgba(0,0,0,0.7)",
+              },
+            },
           }
         }
       >
@@ -1935,6 +1950,11 @@ exports[`Anchor warns about invalid icon render 1`] = `
               "xxlarge": Object {
                 "height": 1.125,
                 "size": "48px",
+              },
+            },
+            "video": Object {
+              "captions": Object {
+                "background": "rgba(0,0,0,0.7)",
               },
             },
           }

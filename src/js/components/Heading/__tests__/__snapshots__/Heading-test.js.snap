@@ -146,6 +146,20 @@ exports[`Heading margin renders 1`] = `
   margin-top: 12px;
 }
 
+.c7 {
+  font-size: 48px;
+  line-height: 1.125;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.c8 {
+  font-size: 48px;
+  line-height: 1.125;
+  font-weight: 300;
+  margin-top: 0;
+}
+
 @media only screen and (min-width:481px) {
   .c0 {
     top: 0px;
@@ -178,6 +192,12 @@ exports[`Heading margin renders 1`] = `
   />
   <h1
     className="c6"
+  />
+  <h1
+    className="c7"
+  />
+  <h1
+    className="c8"
   />
 </div>
 `;
