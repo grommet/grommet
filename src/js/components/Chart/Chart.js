@@ -28,7 +28,7 @@ const renderBars = (values, bounds, scale, height) =>
         </g>
       );
     }
-    return null;
+    return undefined;
   });
 
 const renderLine = (values, bounds, scale, height) => {
