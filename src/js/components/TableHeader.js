@@ -72,8 +72,6 @@ export default class TableHeader extends Component {
   }
 }
 
-TableHeader.displayName = 'TableHeader';
-
 TableHeader.propTypes = {
   labels: PropTypes.arrayOf(PropTypes.oneOfType([
     PropTypes.node,

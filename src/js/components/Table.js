@@ -12,6 +12,8 @@ import Responsive from '../utils/Responsive';
 import Intl from '../utils/Intl';
 import { announce } from '../utils/Announcer';
 
+import TableHeader from './TableHeader';
+
 const CLASS_ROOT = CSSClassnames.TABLE;
 const SELECTED_CLASS = `${CLASS_ROOT}-row--selected`;
 const ACTIVE_CLASS = `${CLASS_ROOT}-row--active`;
@@ -57,9 +59,11 @@ function findHead(children) {
 
   let head;
   childElements.some((child) => {
-    if (child.type && 
-      (child.type === 'thead' || child.type.displayName === 'TableHeader')
-    ) {
+    if (child.type && (
+      child.type === 'thead' ||
+      child.type === TableHeader ||
+      child.type.displayName === TableHeader.displayName
+    )) {
       head = child;
       return true;
     } else if (child.props && child.props.children) {
