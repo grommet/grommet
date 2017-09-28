@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component } from 'react';
+import React, { Children, Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import SpinningIcon from './icons/Spinning';
@@ -48,6 +48,30 @@ function immediateTableChildOnly(result, tableParent) {
   return immediateChild;
 }
 
+function findHead(children) {
+  if (!children) {
+    return undefined;
+  }
+
+  const childElements = Children.toArray(children);
+
+  let head;
+  childElements.some((child) => {
+    if (child.type === 'thead' || child.type.displayName === 'TableHeader') {
+      head = child;
+      return true;
+    } else if (child.props && child.props.children) {
+      head = findHead(child.props.children);
+      if (head) {
+        return true;
+      }
+    }
+    return false;
+  });
+
+  return head;
+}
+
 export default class Table extends Component {
 
   constructor(props, context) {
@@ -69,7 +93,6 @@ export default class Table extends Component {
       mouseActive: false,
       selected: Selection.normalizeIndexes(props.selected),
       columnMode: false,
-      rebuildMirror: props.scrollable,
       small: false
     };
   }
@@ -79,7 +102,6 @@ export default class Table extends Component {
     const { columnMode, small } = this.state;
     this._setSelection();
     if (scrollable && !columnMode && !small) {
-      this._buildMirror();
       this._alignMirror();
     }
     if (this.props.onMore) {
@@ -119,22 +141,14 @@ export default class Table extends Component {
         selected: Selection.normalizeIndexes(nextProps.selected)
       });
     }
-
-    this.setState({
-      rebuildMirror: nextProps.scrollable
-    });
   }
 
   componentDidUpdate (prevProps, prevState) {
     const { onMore, selectable, scrollable } = this.props;
-    const { columnMode, rebuildMirror, selected, small } = this.state;
+    const { columnMode, selected, small } = this.state;
     if (JSON.stringify(selected) !==
       JSON.stringify(prevState.selected)) {
       this._setSelection();
-    }
-    if (rebuildMirror && !columnMode) {
-      this._buildMirror();
-      this.setState({rebuildMirror: false});
     }
     if (scrollable && !columnMode && !small) {
       this._alignMirror();
@@ -181,7 +195,7 @@ export default class Table extends Component {
   }
 
   _onViewPortChange(small) {
-    this.setState({ small, rebuildMirror: true });
+    this.setState({ small });
   }
 
   _announceRow (label) {
@@ -418,52 +432,33 @@ export default class Table extends Component {
     this._onResponsive();
   }
 
-  _buildMirror () {
-    const tableElement = this.tableRef;
-    if (tableElement) {
-      let cells = immediateTableChildOnly(
-        tableElement.querySelectorAll('thead tr th'), tableElement
-      );
-      let mirrorElement = this.mirrorRef;
-      if (mirrorElement) {
-        let mirrorRow = immediateTableChildOnly(
-          mirrorElement.querySelectorAll('thead tr'), mirrorElement
-        )[0];
-        while (mirrorRow.hasChildNodes()) {
-          mirrorRow.removeChild(mirrorRow.lastChild);
-        }
-        for (let i = 0; i < cells.length; i++) {
-          mirrorRow.appendChild(cells[i].cloneNode(true));
-        }
-      }
-    }
-  }
-
   _alignMirror () {
     const mirrorElement = this.mirrorRef;
-    const mirrorCells = immediateTableChildOnly(
-      mirrorElement.querySelectorAll('thead tr th'), mirrorElement
-    );
-    if (this.mirrorRef && mirrorCells.length > 0) {
-      const tableElement = this.tableRef;
-      const cells = immediateTableChildOnly(
-        tableElement.querySelectorAll('thead tr th'), tableElement
+    if (mirrorElement) {
+      const mirrorCells = immediateTableChildOnly(
+        mirrorElement.querySelectorAll('thead tr th'), mirrorElement
       );
-      
-      let rect = tableElement.getBoundingClientRect();
-      mirrorElement.style.width =
-        '' + Math.floor(rect.right - rect.left) + 'px';
-
-      let height = 0;
-      for (let i = 0; i < cells.length; i++) {
-        rect = cells[i].getBoundingClientRect();
-        mirrorCells[i].style.width =
+      if (this.mirrorRef && mirrorCells.length > 0) {
+        const tableElement = this.tableRef;
+        const cells = immediateTableChildOnly(
+          tableElement.querySelectorAll('thead tr th'), tableElement
+        );
+        
+        let rect = tableElement.getBoundingClientRect();
+        mirrorElement.style.width =
           '' + Math.floor(rect.right - rect.left) + 'px';
-        mirrorCells[i].style.height =
-          '' + Math.floor(rect.bottom - rect.top) + 'px';
-        height = Math.max(height, Math.floor(rect.bottom - rect.top));
+  
+        let height = 0;
+        for (let i = 0; i < cells.length; i++) {
+          rect = cells[i].getBoundingClientRect();
+          mirrorCells[i].style.width =
+            '' + Math.floor(rect.right - rect.left) + 'px';
+          mirrorCells[i].style.height =
+            '' + Math.floor(rect.bottom - rect.top) + 'px';
+          height = Math.max(height, Math.floor(rect.bottom - rect.top));
+        }
+        mirrorElement.style.height = '' + height + 'px';
       }
-      mirrorElement.style.height = '' + height + 'px';
     }
   }
 
@@ -488,12 +483,11 @@ export default class Table extends Component {
 
     let mirror;
     if (scrollable && !small) {
+      const head = findHead(children);
       mirror = (
         <table ref={ref => this.mirrorRef = ref}
           className={`${CLASS_ROOT}__mirror`}>
-          <thead>
-            <tr />
-          </thead>
+          {head}
         </table>
       );
     }

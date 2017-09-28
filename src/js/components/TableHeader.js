@@ -8,7 +8,6 @@ import AscIcon from './icons/base/LinkDown';
 import DescIcon from './icons/base/LinkUp';
 
 export default class TableHeader extends Component {
-
   _onSort (index) {
     const { onSort, sortAscending, sortIndex } = this.props;
     let nextAscending;
@@ -72,6 +71,8 @@ export default class TableHeader extends Component {
     );
   }
 }
+
+TableHeader.displayName = 'TableHeader';
 
 TableHeader.propTypes = {
   labels: PropTypes.arrayOf(PropTypes.oneOfType([
