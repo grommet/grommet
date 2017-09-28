@@ -35,7 +35,7 @@ export default Chart => schema(Chart, {
     ],
     thickness: [
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-      'The size of the lines or bars. Defaults to medium.',
+      'The width of the stroke. Defaults to medium.',
     ],
     title: [
       PropTypes.string, // .isRequired isn't working?
@@ -51,7 +51,8 @@ export default Chart => schema(Chart, {
         value: PropTypes.arrayOf(PropTypes.number).isRequired,
       })),
       `Array of value objects describing the data.
-      'value' is a tuple indicating the coordinate of the value.
+      'value' is a tuple indicating the coordinate of the value or a triple
+      indicating the x coordinate and a range of two y coordinates.
       'label' is a text string describing it.`,
     ],
   },
