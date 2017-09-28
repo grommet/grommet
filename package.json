@@ -23,6 +23,10 @@
   "scripts": {
     "test": "gulp test:coverage --runInBand"
   },
+  "peerDependencies": {
+    "react": ">= 15.3.0 < 16 || 16.x",
+    "react-dom": ">= 15.3.0 < 16 || 16.x"
+  },
   "dependencies": {
     "classnames": "^2.2.3",
     "deep-assign": "^2.0.0",
@@ -40,7 +44,6 @@
     "markdown-to-jsx": "^5.3.3",
     "moment": "^2.13.0",
     "prop-types": "^15.5.8",
-    "react": "^16.0.0",
     "react-desc": "^1.0.0",
     "react-dom": "^16.0.0",
     "react-intl": "^2.2.3",
@@ -74,6 +77,8 @@
     "guppy-pre-commit": "^0.4.0",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.1.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-test-renderer": "^16.0.0",
     "run-sequence": "^2.2.0",
     "webpack": "^1.12.14",
