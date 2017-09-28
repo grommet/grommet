@@ -70,6 +70,8 @@ test('Heading margin renders', () => {
       <Heading margin='none' />
       <Heading margin={{ bottom: 'small' }} />
       <Heading margin={{ top: 'small' }} />
+      <Heading margin={{ bottom: 'none' }} />
+      <Heading margin={{ top: 'none' }} />
     </Grommet>
   );
   const tree = component.toJSON();
