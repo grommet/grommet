@@ -15,22 +15,26 @@ const renderBars = (values, bounds, scale, height) =>
     const { label, value, ...rest } = valueArg;
 
     const key = `p-${index}`;
-    const d = `M ${value[0] * scale[0]},${height - (bounds[1][0] * scale[1])}
-      L ${value[0] * scale[0]},${height - (value[1] * scale[1])}`;
+    const bottom = (value.length === 2 ? bounds[1][0] : value[1]);
+    const top = (value.length === 2 ? value[1] : value[2]);
+    if (top !== 0) {
+      const d = `M ${value[0] * scale[0]},${height - (bottom * scale[1])}` +
+      ` L ${value[0] * scale[0]},${height - (top * scale[1])}`;
 
-    return (
-      <g key={key} fill='none'>
-        <title>{label}</title>
-        <path d={d} {...rest} />
-      </g>
-    );
+      return (
+        <g key={key} fill='none'>
+          <title>{label}</title>
+          <path d={d} {...rest} />
+        </g>
+      );
+    }
+    return null;
   });
 
 const renderLine = (values, bounds, scale, height) => {
   let d = '';
   (values || []).forEach(({ value }, index) => {
-    d += `${index ? ' L' : 'M'}
-      ${value[0] * scale[0]},${height - (value[1] * scale[1])}`;
+    d += `${index ? ' L' : 'M'} ${value[0] * scale[0]},${height - (value[1] * scale[1])}`;
   });
   return (
     <g fill='none'>
@@ -41,19 +45,35 @@ const renderLine = (values, bounds, scale, height) => {
 
 const renderArea = (values, bounds, scale, height, props) => {
   const { color, theme } = props;
-  let d = `M 0,${height}`;
+  let d = '';
   (values || []).forEach(({ value }, index) => {
-    if (!index) {
-      d += `M ${value[0] * scale[0]},${height}`;
-    }
-    d += ` L ${value[0] * scale[0]},${height - (value[1] * scale[1])}`;
+    const top = (value.length === 2 ? value[1] : value[2]);
+    d += `${!index ? 'M' : ' L'} ${value[0] * scale[0]},${height - (top * scale[1])}`;
   });
-  d += `L ${values[values.length - 1].value[0] * scale[0]},${height} Z`;
+  (values || []).reverse().forEach(({ value }) => {
+    const bottom = (value.length === 2 ? bounds[1][0] : value[1]);
+    d += ` L ${value[0] * scale[0]},${height - (bottom * scale[1])}`;
+  });
+  d += ' Z';
   return (
     <g fill={colorForName(color, theme)}>
       <path d={d} />
     </g>
   );
+};
+
+const normalizeBounds = (props) => {
+  let bounds = props.bounds;
+  if (!bounds) {
+    bounds = [[0, 1], [0, 1]];
+    (props.values || []).forEach((value) => {
+      bounds[0][0] = Math.min(bounds[0][0], value.value[0]);
+      bounds[0][1] = Math.max(bounds[0][1], value.value[0]);
+      bounds[1][0] = Math.min(bounds[1][0], value.value[1]);
+      bounds[1][1] = Math.max(bounds[1][1], value.value[1]);
+    });
+  }
+  return bounds;
 };
 
 class Chart extends Component {
@@ -64,23 +84,20 @@ class Chart extends Component {
     type: 'bar',
   };
 
+  constructor(props) {
+    super(props);
+    this.state = { bounds: normalizeBounds(props) };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ bounds: normalizeBounds(nextProps) });
+  }
+
   render() {
     const {
-      bounds: initialBounds, color, round, size, theme, thickness, title, type,
-      values, ...rest
+      color, round, size, theme, thickness, title, type, values, ...rest
     } = this.props;
-
-    let bounds = initialBounds;
-    if (!bounds) {
-      // derive from values, TODO: move outside of render()
-      bounds = [[], []];
-      (values || []).forEach((value) => {
-        bounds[0][0] = Math.min(bounds[0][0], value[0]);
-        bounds[0][1] = Math.max(bounds[0][1], value[0]);
-        bounds[1][0] = Math.min(bounds[1][0], value[1]);
-        bounds[1][1] = Math.max(bounds[1][1], value[1]);
-      });
-    }
+    const { bounds } = this.state;
 
     const sizeWidth = (typeof size === 'string') ? size : size.width;
     const sizeHeight = (typeof size === 'string') ? size : size.height;
@@ -116,7 +133,7 @@ class Chart extends Component {
         <g
           stroke={colorForName(color, theme)}
           strokeWidth={strokeWidth}
-          strokeLinecap={round ? 'round' : 'square'}
+          strokeLinecap={round ? 'round' : 'butt'}
           strokeLinejoin={round ? 'round' : 'miter'}
         >
           {contents}
