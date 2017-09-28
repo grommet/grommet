@@ -49,6 +49,7 @@ class ToastContents extends Component {
     this._timer = undefined;
     this.setState({ closing: true });
     if (onClose) {
+      // wait for the laeve animation to finish 
       setTimeout(onClose, ANIMATION_DURATION);
     }
   }
@@ -183,9 +184,16 @@ export default class Toast extends Component {
   }
 
   _removeLayer () {
-    ReactDOM.unmountComponentAtNode(this._element);
-    this._element.parentNode.removeChild(this._element);
-    this._element = undefined;
+    const { onClose } = this.props;
+    if (this._element) {
+      ReactDOM.unmountComponentAtNode(this._element);
+      this._element.parentNode.removeChild(this._element);
+      this._element = undefined;
+
+      if (onClose) {
+        onClose();
+      }
+    }
   }
 
   render () {

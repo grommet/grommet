@@ -187,7 +187,7 @@ export default class Drop {
     render(
       <DropContents content={content} context={context}
         focusControl={focusControl} />,
-      container
+      container, () => this.place()
     );
 
     const scrollParents = findScrollParents(control);
@@ -199,9 +199,6 @@ export default class Drop {
     };
 
     this._listen();
-
-    // position content
-    this.place();
   }
 
   _listen () {
