@@ -104,6 +104,7 @@ var ToastContents = function (_Component) {
       this._timer = undefined;
       this.setState({ closing: true });
       if (onClose) {
+        // wait for the laeve animation to finish 
         setTimeout(onClose, ANIMATION_DURATION);
       }
     }
@@ -265,9 +266,17 @@ var Toast = function (_Component2) {
   }, {
     key: '_removeLayer',
     value: function _removeLayer() {
-      _reactDom2.default.unmountComponentAtNode(this._element);
-      this._element.parentNode.removeChild(this._element);
-      this._element = undefined;
+      var onClose = this.props.onClose;
+
+      if (this._element) {
+        _reactDom2.default.unmountComponentAtNode(this._element);
+        this._element.parentNode.removeChild(this._element);
+        this._element = undefined;
+
+        if (onClose) {
+          onClose();
+        }
+      }
     }
   }, {
     key: 'render',

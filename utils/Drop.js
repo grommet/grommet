@@ -205,7 +205,8 @@ var _normalizeOptions = function _normalizeOptions(options) {
 
 var Drop = function () {
   function Drop(control, content, opts) {
-    var _classnames;
+    var _classnames,
+        _this3 = this;
 
     _classCallCheck(this, Drop);
 
@@ -229,7 +230,9 @@ var Drop = function () {
     document.body.insertBefore(container, document.body.firstChild);
 
     (0, _reactDom.render)(_react2.default.createElement(DropContents, { content: content, context: context,
-      focusControl: focusControl }), container);
+      focusControl: focusControl }), container, function () {
+      return _this3.place();
+    });
 
     var scrollParents = (0, _DOM.findScrollParents)(control);
 
@@ -240,20 +243,17 @@ var Drop = function () {
     };
 
     this._listen();
-
-    // position content
-    this.place();
   }
 
   _createClass(Drop, [{
     key: '_listen',
     value: function _listen() {
-      var _this3 = this;
+      var _this4 = this;
 
       var scrollParents = this.state.scrollParents;
 
       scrollParents.forEach(function (scrollParent) {
-        scrollParent.addEventListener('scroll', _this3.place);
+        scrollParent.addEventListener('scroll', _this4.place);
       });
       // we intentionally skipped debounce as we believe resizing
       // will not be a common action. Also the UI looks better if the Drop
@@ -263,20 +263,20 @@ var Drop = function () {
   }, {
     key: '_onResize',
     value: function _onResize() {
-      var _this4 = this;
+      var _this5 = this;
 
       var scrollParents = this.state.scrollParents;
       // we need to update scroll parents as Responsive options may change
       // the parent for the target element
 
       scrollParents.forEach(function (scrollParent) {
-        scrollParent.removeEventListener('scroll', _this4.place);
+        scrollParent.removeEventListener('scroll', _this5.place);
       });
 
       var nextScrollParents = (0, _DOM.findScrollParents)(this._control);
 
       nextScrollParents.forEach(function (scrollParent) {
-        scrollParent.addEventListener('scroll', _this4.place);
+        scrollParent.addEventListener('scroll', _this5.place);
       });
 
       this.state.scrollParents = nextScrollParents;
@@ -417,7 +417,7 @@ var Drop = function () {
   }, {
     key: 'render',
     value: function render(content) {
-      var _this5 = this;
+      var _this6 = this;
 
       var _state2 = this.state,
           container = _state2.container,
@@ -428,7 +428,7 @@ var Drop = function () {
       var originalScrollPosition = container.scrollTop;
       (0, _reactDom.render)(_react2.default.createElement(DropContents, { content: content, context: context,
         focusControl: focusControl }), container, function () {
-        _this5.place();
+        _this6.place();
         // reset container to its original scroll position
         container.scrollTop = originalScrollPosition;
       });
@@ -436,7 +436,7 @@ var Drop = function () {
   }, {
     key: 'remove',
     value: function remove() {
-      var _this6 = this;
+      var _this7 = this;
 
       var _state3 = this.state,
           container = _state3.container,
@@ -444,7 +444,7 @@ var Drop = function () {
           scrollParents = _state3.scrollParents;
 
       scrollParents.forEach(function (scrollParent) {
-        scrollParent.removeEventListener('scroll', _this6.place);
+        scrollParent.removeEventListener('scroll', _this7.place);
       });
       window.removeEventListener('resize', this._onResize);
 
