@@ -57,7 +57,9 @@ function findHead(children) {
 
   let head;
   childElements.some((child) => {
-    if (child.type === 'thead' || child.type.displayName === 'TableHeader') {
+    if (child.type && 
+      (child.type === 'thead' || child.type.displayName === 'TableHeader')
+    ) {
       head = child;
       return true;
     } else if (child.props && child.props.children) {
