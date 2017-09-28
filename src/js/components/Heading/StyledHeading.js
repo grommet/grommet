@@ -14,13 +14,22 @@ const marginStyle = (props) => {
       margin-bottom: ${margin};
     `;
   }
+  let result = '';
   if (props.margin.top) {
-    return `margin-top: ${props.theme.global.edgeSize[props.margin.top]};`;
+    if (props.margin.top === 'none') {
+      result += 'margin-top: 0;';
+    } else {
+      result += `margin-top: ${props.theme.global.edgeSize[props.margin.top]};`;
+    }
   }
   if (props.margin.bottom) {
-    return `margin-bottom: ${props.theme.global.edgeSize[props.margin.bottom]};`;
+    if (props.margin.bottom === 'none') {
+      result += 'margin-bottom: 0;';
+    } else {
+      result += `margin-bottom: ${props.theme.global.edgeSize[props.margin.bottom]};`;
+    }
   }
-  return '';
+  return result;
 };
 
 const sizeStyle = (props) => {

@@ -15,8 +15,8 @@ export default Heading => schema(Heading, {
       PropTypes.oneOfType([
         PropTypes.oneOf(['none', 'small', 'medium', 'large']),
         PropTypes.shape({
-          bottom: PropTypes.oneOf(['small', 'medium', 'large']),
-          top: PropTypes.oneOf(['small', 'medium', 'large']),
+          bottom: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+          top: PropTypes.oneOf(['none', 'small', 'medium', 'large']),
         }),
       ]),
       `The amount of margin above and/or below the heading. An object can be
