@@ -12,7 +12,7 @@ export function routedButton(RoutedButton) {
 }
 
 export default Button => schema(Button, {
-  description: `A button. We have a separate component 
+  description: `A button. We have a separate component
   from the browser base so we can style it.`,
   usage: `import { Button } from 'grommet';
   <Button primary={true} label="Label" />`,
@@ -26,16 +26,6 @@ export default Button => schema(Button, {
     ],
     active: [
       PropTypes.bool, 'Whether the button is active.',
-    ],
-    box: [
-      PropTypes.bool,
-      `Whether the button should support Box props. 
-      This is useful if you want your children to be a 
-      flexbox container.`,
-    ],
-    centered: [
-      PropTypes.bool,
-      'Whether this is an accent button.',
     ],
     critical: [
       PropTypes.bool,
@@ -57,7 +47,7 @@ export default Button => schema(Button, {
       ]),
       `Optional. The hover indicator to apply when the user is mousing over the
       button. An object can be also be specified for color index support:
-      {background: 'neutral-2'}. This prop is meant to be used only 
+      {background: 'neutral-2'}. This prop is meant to be used only
       with plain Buttons.`,
     ],
     href: [
@@ -71,18 +61,18 @@ export default Button => schema(Button, {
     ],
     onClick: [
       PropTypes.func,
-      `Click handler. Not setting this property and not specifying a href 
+      `Click handler. Not setting this property and not specifying a href
       causes the Button to be disabled.`,
     ],
     plain: [
       PropTypes.bool,
-      `Whether this is a plain button with no border or padding. 
+      `Whether this is a plain button with no border or padding.
       Use this when wrapping children that provide the complete visualization
       of the control. Do not use plain with label or icon properties.`,
     ],
     primary: [
       PropTypes.bool,
-      `Whether this is a primary button. There should be at most one 
+      `Whether this is a primary button. There should be at most one
       per page or screen.`,
     ],
     reverse: [
@@ -95,7 +85,7 @@ export default Button => schema(Button, {
     ],
     type: [
       PropTypes.oneOf(['button', 'reset', 'submit']),
-      `The type of button. Set the type to submit for the default button 
+      `The type of button. Set the type to submit for the default button
       on forms.`,
       {
         defaultProp: 'button',

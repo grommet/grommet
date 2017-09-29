@@ -50,7 +50,6 @@ export default Box => schema(Box, {
           side: PropTypes.oneOf(['top', 'left', 'bottom', 'right',
             'horizontal', 'vertical', 'all']),
           size: PropTypes.oneOf(['small', 'medium', 'large']),
-          radius: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
         }),
       ]),
       'Include a border.',
@@ -113,7 +112,7 @@ export default Box => schema(Box, {
     ],
     responsive: [
       PropTypes.bool,
-      `Whether children laid out in a row direction should be switched to a 
+      `Whether children laid out in a row direction should be switched to a
       column layout when the display area narrows.`,
     ],
     reverse: [

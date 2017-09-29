@@ -230,22 +230,6 @@ exports[`Video autoPlay renders 1`] = `
   background: rgba(0,0,0,0.7);
 }
 
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 12px;
-}
-
 @media only screen and (min-width:481px) {
   .c0 {
     top: 0px;
@@ -424,7 +408,7 @@ exports[`Video autoPlay renders 1`] = `
         >
           <button
             aria-label="Open Menu"
-            className="c15 c16"
+            className="c15"
             direction="row"
             disabled={false}
             href={undefined}
@@ -527,7 +511,7 @@ exports[`Video controls renders 1`] = `
   stroke: none;
 }
 
-.c19 {
+.c18 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -537,25 +521,25 @@ exports[`Video controls renders 1`] = `
   stroke: #666666;
 }
 
-.c19 g {
+.c18 g {
   -webkit-fill: inherit;
   fill: inherit;
   stroke: inherit;
 }
 
-.c19 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c19 *[stroke*="#"],
-.c19 *[STROKE*="#"] {
+.c18 *[stroke*="#"],
+.c18 *[STROKE*="#"] {
   stroke: inherit;
   -webkit-fill: none;
   fill: none;
 }
 
-.c19 *[fill*="#"],
-.c19 *[FILL*="#"] {
+.c18 *[fill*="#"],
+.c18 *[FILL*="#"] {
   -webkit-fill: inherit;
   fill: inherit;
   stroke: none;
@@ -627,7 +611,7 @@ exports[`Video controls renders 1`] = `
   padding-right: 12px;
 }
 
-.c18 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -743,7 +727,7 @@ exports[`Video controls renders 1`] = `
   opacity: 1;
 }
 
-.c17 {
+.c16 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
   flex: 0 0;
@@ -763,22 +747,6 @@ exports[`Video controls renders 1`] = `
 
 .c2::cue {
   background: rgba(0,0,0,0.7);
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 12px;
 }
 
 @media only screen and (min-width:481px) {
@@ -959,7 +927,7 @@ exports[`Video controls renders 1`] = `
         >
           <button
             aria-label="Open Menu"
-            className="c15 c16"
+            className="c15"
             direction="row"
             disabled={false}
             href={undefined}
@@ -1039,10 +1007,10 @@ exports[`Video controls renders 1`] = `
       <track />
     </video>
     <div
-      className="c17"
+      className="c16"
     >
       <div
-        className="c18"
+        className="c17"
         direction="row"
       >
         <button
@@ -1070,7 +1038,7 @@ exports[`Video controls renders 1`] = `
           >
             <svg
               aria-label="Play"
-              className="c19"
+              className="c18"
               color={undefined}
               height="24px"
               role="img"
@@ -1150,7 +1118,7 @@ exports[`Video controls renders 1`] = `
         >
           <button
             aria-label="Open Menu"
-            className="c15 c16"
+            className="c15"
             direction="row"
             disabled={false}
             href={undefined}
@@ -1174,7 +1142,7 @@ exports[`Video controls renders 1`] = `
             >
               <svg
                 aria-label="Actions"
-                className="c19"
+                className="c18"
                 color={undefined}
                 height="24px"
                 role="img"
@@ -1432,7 +1400,7 @@ exports[`Video fit renders 1`] = `
   background: rgba(0,0,0,0.7);
 }
 
-.c17 {
+.c16 {
   max-width: 100%;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
@@ -1441,24 +1409,8 @@ exports[`Video fit renders 1`] = `
   object-position: 50% 100%;
 }
 
-.c17::cue {
+.c16::cue {
   background: rgba(0,0,0,0.7);
-}
-
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 12px;
 }
 
 @media only screen and (min-width:481px) {
@@ -1639,7 +1591,7 @@ exports[`Video fit renders 1`] = `
         >
           <button
             aria-label="Open Menu"
-            className="c15 c16"
+            className="c15"
             direction="row"
             disabled={false}
             href={undefined}
@@ -1692,7 +1644,7 @@ exports[`Video fit renders 1`] = `
   >
     <video
       autoPlay={false}
-      className="c17"
+      className="c16"
       loop={false}
       onAbort={[Function]}
       onCanPlay={[Function]}
@@ -1833,7 +1785,7 @@ exports[`Video fit renders 1`] = `
         >
           <button
             aria-label="Open Menu"
-            className="c15 c16"
+            className="c15"
             direction="row"
             disabled={false}
             href={undefined}
@@ -2111,22 +2063,6 @@ exports[`Video loop renders 1`] = `
   background: rgba(0,0,0,0.7);
 }
 
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 12px;
-}
-
 @media only screen and (min-width:481px) {
   .c0 {
     top: 0px;
@@ -2305,7 +2241,7 @@ exports[`Video loop renders 1`] = `
         >
           <button
             aria-label="Open Menu"
-            className="c15 c16"
+            className="c15"
             direction="row"
             disabled={false}
             href={undefined}
@@ -2583,22 +2519,6 @@ exports[`Video mute renders 1`] = `
   background: rgba(0,0,0,0.7);
 }
 
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 12px;
-}
-
 @media only screen and (min-width:481px) {
   .c0 {
     top: 0px;
@@ -2777,7 +2697,7 @@ exports[`Video mute renders 1`] = `
         >
           <button
             aria-label="Open Menu"
-            className="c15 c16"
+            className="c15"
             direction="row"
             disabled={false}
             href={undefined}
@@ -3055,22 +2975,6 @@ exports[`Video renders 1`] = `
   background: rgba(0,0,0,0.7);
 }
 
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 12px;
-}
-
 @media only screen and (min-width:481px) {
   .c0 {
     top: 0px;
@@ -3249,7 +3153,7 @@ exports[`Video renders 1`] = `
         >
           <button
             aria-label="Open Menu"
-            className="c15 c16"
+            className="c15"
             direction="row"
             disabled={false}
             href={undefined}
