@@ -184,6 +184,25 @@ export default {
       horizontal: `${baseSpacing - borderWidth}px`,
     },
   },
+  checkBox: {
+    check: {
+      color: brandColor,
+      width: '4px',
+    },
+    border: {
+      color: {
+        dark: 'rgba(255, 255, 255, 0.5)',
+        light: 'rgba(0, 0, 0, 0.15)',
+      },
+      radius: '4px',
+      width: '2px',
+    },
+    size: `${baseSpacing}px`,
+    toggle: {
+      color: '#d9d9d9',
+      size: `${baseSpacing * 2}px`,
+    },
+  },
   grommet: {},
   heading: {
     // maxWidth chosen to be ~50 characters wide
