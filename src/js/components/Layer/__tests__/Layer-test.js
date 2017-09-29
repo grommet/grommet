@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { mount } from 'enzyme';
+import Enzyme, { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
 import { Grommet } from '../../Grommet';
 import { Layer, LayerContainer } from '../';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 class FakeLayer extends Component {
   state = {

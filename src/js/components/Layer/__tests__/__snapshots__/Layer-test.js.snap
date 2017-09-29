@@ -18,9 +18,7 @@ exports[`Layer is accessible 2`] = `
 <div
   id="layer-node"
 >
-  <!-- react-text: 4 -->
   This is a layer
-  <!-- /react-text -->
   <input />
 </div>
 `;
@@ -38,7 +36,6 @@ exports[`Layer is accessible 3`] = `
 
 exports[`Layer mounts 1`] = `
 <div
-  data-reactroot=""
   class="StyledGrommet-gKbdxL iriday"
 >
   <span

@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { mount } from 'enzyme';
+import Enzyme, { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
 import { Grommet } from '../../Grommet';
 import { Drop } from '../';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 class FakeInput extends Component {
   state = {

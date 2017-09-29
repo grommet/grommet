@@ -51,7 +51,6 @@ exports[`Button accent renders 1`] = `
 }
 
 .c1:hover svg {
-  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
@@ -150,7 +149,6 @@ exports[`Button box href renders 1`] = `
 }
 
 .c1:hover svg {
-  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
@@ -247,7 +245,6 @@ exports[`Button box renders 1`] = `
 }
 
 .c1:hover svg {
-  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
@@ -351,7 +348,6 @@ exports[`Button critical renders 1`] = `
 }
 
 .c1:hover svg {
-  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
@@ -1196,7 +1192,6 @@ exports[`Button href renders 1`] = `
 }
 
 .c1:hover svg {
-  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
@@ -1305,7 +1300,6 @@ exports[`Button icon label renders 1`] = `
 }
 
 .c1:hover svg {
-  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
@@ -1416,7 +1410,6 @@ exports[`Button primary renders 1`] = `
 }
 
 .c1 svg {
-  -webkit-fill: #FFFFFF;
   fill: #FFFFFF;
   stroke: #FFFFFF;
   -webkit-transition: none;
@@ -1519,7 +1512,6 @@ exports[`Button renders 1`] = `
 }
 
 .c1:hover svg {
-  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
@@ -1634,7 +1626,6 @@ exports[`Button reverse icon label renders 1`] = `
 }
 
 .c1:hover svg {
-  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
@@ -1744,7 +1735,6 @@ exports[`Button secondary renders 1`] = `
 }
 
 .c1:hover svg {
-  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;

@@ -596,16 +596,13 @@ exports[`Anchor primary renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-fill: #666666;
   fill: #666666;
   stroke: #666666;
-  -webkit-fill: #865CD6;
   fill: #865CD6;
   stroke: #865CD6;
 }
 
 .c3 g {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: inherit;
 }
@@ -617,13 +614,13 @@ exports[`Anchor primary renders 1`] = `
 .c3 *[stroke*="#"],
 .c3 *[STROKE*="#"] {
   stroke: inherit;
-  -webkit-fill: none;
   fill: none;
 }
 
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
 .c3 *[fill*="#"],
 .c3 *[FILL*="#"] {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: none;
 }

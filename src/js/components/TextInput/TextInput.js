@@ -31,7 +31,7 @@ class TextInput extends Component {
     showDrop: false,
   }
 
-  resetSuggestions() {
+  resetSuggestions = () => {
     const { suggestions } = this.props;
 
     if (suggestions && suggestions.length) {
@@ -53,7 +53,7 @@ class TextInput extends Component {
   //   }
   // }
 
-  getSelectedSuggestionIndex() {
+  getSelectedSuggestionIndex = () => {
     const { suggestions, value } = this.props;
     const suggestionValues = suggestions.map((suggestion) => {
       if (typeof suggestion === 'object') {
@@ -64,7 +64,7 @@ class TextInput extends Component {
     return suggestionValues.indexOf(value);
   }
 
-  onShowSuggestions() {
+  onShowSuggestions = () => {
     // Get values of suggestions, so we can highlight selected suggestion
     const selectedSuggestionIndex = this.getSelectedSuggestionIndex();
 
@@ -75,24 +75,35 @@ class TextInput extends Component {
     });
   }
 
-  onNextSuggestion() {
+  onNextSuggestion = (event) => {
     const { suggestions } = this.props;
-    const { activeSuggestionIndex } = this.state;
-    const index = Math.min(activeSuggestionIndex + 1, suggestions.length - 1);
-    this.setState({ activeSuggestionIndex: index });
-    // this.setState({ activeSuggestionIndex: index },
-    //   this._announceSuggestion.bind(this, index));
+    const { activeSuggestionIndex, showDrop } = this.state;
+    if (suggestions && suggestions.length > 0) {
+      if (!showDrop) {
+        this.onShowSuggestions();
+      } else {
+        event.preventDefault();
+        const index = Math.min(activeSuggestionIndex + 1, suggestions.length - 1);
+        this.setState({ activeSuggestionIndex: index });
+        // this.setState({ activeSuggestionIndex: index },
+        //   this._announceSuggestion.bind(this, index));
+      }
+    }
   }
 
-  onPreviousSuggestion() {
-    const { activeSuggestionIndex } = this.state;
-    const index = Math.max(activeSuggestionIndex - 1, 0);
-    this.setState({ activeSuggestionIndex: index });
-    // this.setState({ activeSuggestionIndex: index },
-    //   this._announceSuggestion.bind(this, index));
+  onPreviousSuggestion = (event) => {
+    const { suggestions } = this.props;
+    const { activeSuggestionIndex, showDrop } = this.state;
+    if (suggestions && suggestions.length > 0 && showDrop) {
+      event.preventDefault();
+      const index = Math.max(activeSuggestionIndex - 1, 0);
+      this.setState({ activeSuggestionIndex: index });
+      // this.setState({ activeSuggestionIndex: index },
+      //   this._announceSuggestion.bind(this, index));
+    }
   }
 
-  onClickSuggestion(suggestion) {
+  onClickSuggestion = (suggestion) => {
     const { onSelect } = this.props;
     this.setState({ value: suggestion, showDrop: false });
     if (onSelect) {
@@ -102,7 +113,32 @@ class TextInput extends Component {
     }
   }
 
-  renderSuggestions() {
+  onSuggestionSelect = (event) => {
+    const { onSelect, suggestions } = this.props;
+    const { activeSuggestionIndex } = this.state;
+    this.setState({ showDrop: false });
+    if (activeSuggestionIndex >= 0) {
+      event.preventDefault(); // prevent submitting forms
+      const suggestion = suggestions[activeSuggestionIndex];
+      this.setState({ value: suggestion });
+      // this.setState({ value: suggestion }, () => {
+      //   const suggestionMessage = this._renderLabel(suggestion);
+      //   const selectedMessage = Intl.getMessage(intl, 'Selected');
+      //   announce(`${suggestionMessage} ${selectedMessage}`);
+      // });
+      if (onSelect) {
+        onSelect({
+          target: this.componentRef, suggestion,
+        });
+      }
+    }
+  }
+
+  onDropClose = () => {
+    this.setState({ showDrop: false });
+  }
+
+  renderSuggestions = () => {
     const { suggestions, theme } = this.props;
     const { activeSuggestionIndex, selectedSuggestionIndex } = this.state;
     let items;
@@ -143,44 +179,6 @@ class TextInput extends Component {
     // needed so that styled components does not invoke
     // onSelect when text input is clicked
     delete rest.onSelect;
-    const previousSuggestionHandler = (event) => {
-      const { suggestions } = this.props;
-      if (suggestions && suggestions.length > 0 && showDrop) {
-        event.preventDefault();
-        this.onPreviousSuggestion();
-      }
-    };
-    const nextSuggestionHandler = (event) => {
-      const { suggestions } = this.props;
-      if (suggestions && suggestions.length > 0) {
-        if (!showDrop) {
-          this.onShowSuggestions();
-        } else {
-          event.preventDefault();
-          this.onNextSuggestion();
-        }
-      }
-    };
-    const onEnterSuggestionHandler = (event) => {
-      const { onSelect, suggestions } = this.props;
-      const { activeSuggestionIndex } = this.state;
-      this.setState({ showDrop: false });
-      if (activeSuggestionIndex >= 0) {
-        event.preventDefault(); // prevent submitting forms
-        const suggestion = suggestions[activeSuggestionIndex];
-        this.setState({ value: suggestion });
-        // this.setState({ value: suggestion }, () => {
-        //   const suggestionMessage = this._renderLabel(suggestion);
-        //   const selectedMessage = Intl.getMessage(intl, 'Selected');
-        //   announce(`${suggestionMessage} ${selectedMessage}`);
-        // });
-        if (onSelect) {
-          onSelect({
-            target: this.componentRef, suggestion,
-          });
-        }
-      }
-    };
     let drop;
     if (showDrop) {
       drop = (
@@ -198,11 +196,11 @@ class TextInput extends Component {
     return (
       <StyledTextInputContainer plain={plain}>
         <Keyboard
-          onEnter={onEnterSuggestionHandler}
-          onEsc={() => this.setState({ showDrop: false })}
-          onTab={() => this.setState({ showDrop: false })}
-          onUp={previousSuggestionHandler}
-          onDown={nextSuggestionHandler}
+          onEnter={this.onSuggestionSelect}
+          onEsc={this.onDropClose}
+          onTab={this.onDropClose}
+          onUp={this.onPreviousSuggestion}
+          onDown={this.onNextSuggestion}
           onKeyDown={onKeyDown}
         >
           <StyledTextInput

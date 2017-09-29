@@ -2,7 +2,6 @@
 
 exports[`Drop aligns left right top bottom 1`] = `
 <div
-  data-reactroot=""
   class="StyledGrommet-gKbdxL iriday"
 >
   <input />
@@ -14,7 +13,6 @@ exports[`Drop aligns left right top bottom 1`] = `
 
 exports[`Drop aligns right left top top 1`] = `
 <div
-  data-reactroot=""
   class="StyledGrommet-gKbdxL iriday"
 >
   <input />
@@ -26,7 +24,6 @@ exports[`Drop aligns right left top top 1`] = `
 
 exports[`Drop aligns right right bottom top 1`] = `
 <div
-  data-reactroot=""
   class="StyledGrommet-gKbdxL iriday"
 >
   <input />
@@ -38,7 +35,6 @@ exports[`Drop aligns right right bottom top 1`] = `
 
 exports[`Drop aligns skips left random 1`] = `
 <div
-  data-reactroot=""
   class="StyledGrommet-gKbdxL iriday"
 >
   <input />
@@ -50,7 +46,6 @@ exports[`Drop aligns skips left random 1`] = `
 
 exports[`Drop aligns skips right random 1`] = `
 <div
-  data-reactroot=""
   class="StyledGrommet-gKbdxL iriday"
 >
   <input />
@@ -62,7 +57,6 @@ exports[`Drop aligns skips right random 1`] = `
 
 exports[`Drop mounts 1`] = `
 <div
-  data-reactroot=""
   class="StyledGrommet-gKbdxL iriday"
 >
   <input />
@@ -117,7 +111,6 @@ exports[`Drop renders 1`] = `
 
 exports[`Drop resizes 1`] = `
 <div
-  data-reactroot=""
   class="StyledGrommet-gKbdxL iriday"
 >
   <input />
@@ -129,7 +122,6 @@ exports[`Drop resizes 1`] = `
 
 exports[`Drop skips invalid align 1`] = `
 <div
-  data-reactroot=""
   class="StyledGrommet-gKbdxL iriday"
 >
   <input />
@@ -141,7 +133,6 @@ exports[`Drop skips invalid align 1`] = `
 
 exports[`Drop updates 1`] = `
 <div
-  data-reactroot=""
   class="StyledGrommet-gKbdxL iriday"
 >
   <input />
