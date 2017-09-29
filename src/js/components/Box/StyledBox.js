@@ -134,9 +134,9 @@ const wrapStyle = 'flex-wrap: wrap;';
 const borderStyle = (data, theme) => {
   let style = '';
   const color = colorForName(data.color || 'light-2', theme);
-  const size = data.size || 'small';
+  const borderSize = data.size || 'xsmall';
   const side = (typeof data === 'string') ? data : data.side || 'all';
-  const value = `solid ${theme.global.borderSize[size]} ${color}`;
+  const value = `solid ${theme.global.borderSize[borderSize]} ${color}`;
   if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
     style = `border-${side}: ${value};`;
   } else if (side === 'horizontal') {
