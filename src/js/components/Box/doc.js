@@ -1,5 +1,7 @@
 import { schema, PropTypes } from 'react-desc';
 
+const PAD_SIZES = ['xsmall', 'small', 'medium', 'large'];
+
 export default Box => schema(Box, {
   description: `A flexible box that lays out its contents along a single
     direction.`,
@@ -80,14 +82,14 @@ export default Box => schema(Box, {
     ],
     margin: [
       PropTypes.oneOfType([
-        PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+        PropTypes.oneOf(['none', ...PAD_SIZES]),
         PropTypes.shape({
-          bottom: PropTypes.oneOf(['small', 'medium', 'large']),
-          horizontal: PropTypes.oneOf(['small', 'medium', 'large']),
-          left: PropTypes.oneOf(['small', 'medium', 'large']),
-          right: PropTypes.oneOf(['small', 'medium', 'large']),
-          top: PropTypes.oneOf(['small', 'medium', 'large']),
-          vertical: PropTypes.oneOf(['small', 'medium', 'large']),
+          bottom: PropTypes.oneOf(PAD_SIZES),
+          horizontal: PropTypes.oneOf(PAD_SIZES),
+          left: PropTypes.oneOf(PAD_SIZES),
+          right: PropTypes.oneOf(PAD_SIZES),
+          top: PropTypes.oneOf(PAD_SIZES),
+          vertical: PropTypes.oneOf(PAD_SIZES),
         }),
       ]),
       `The amount of margin around the box. An object can be specified to
@@ -96,14 +98,14 @@ export default Box => schema(Box, {
     ],
     pad: [
       PropTypes.oneOfType([
-        PropTypes.oneOf(['none', 'small', 'medium', 'large']),
+        PropTypes.oneOf(['none', ...PAD_SIZES]),
         PropTypes.shape({
-          bottom: PropTypes.oneOf(['small', 'medium', 'large']),
-          horizontal: PropTypes.oneOf(['small', 'medium', 'large']),
-          left: PropTypes.oneOf(['small', 'medium', 'large']),
-          right: PropTypes.oneOf(['small', 'medium', 'large']),
-          top: PropTypes.oneOf(['small', 'medium', 'large']),
-          vertical: PropTypes.oneOf(['small', 'medium', 'large']),
+          bottom: PropTypes.oneOf(PAD_SIZES),
+          horizontal: PropTypes.oneOf(PAD_SIZES),
+          left: PropTypes.oneOf(PAD_SIZES),
+          right: PropTypes.oneOf(PAD_SIZES),
+          top: PropTypes.oneOf(PAD_SIZES),
+          vertical: PropTypes.oneOf(PAD_SIZES),
         }),
       ]),
       `The amount of padding around the box contents. An object can be specified to
