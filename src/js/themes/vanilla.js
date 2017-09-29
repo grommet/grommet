@@ -186,16 +186,18 @@ export default {
   },
   grommet: {},
   heading: {
+    // maxWidth chosen to be ~50 characters wide
+    // see: https://ux.stackexchange.com/a/34125
     level: {
       1: {
-        medium: { size: '48px', height: 1.125, maxWidth: `${baseSpacing * 24}px` },
-        small: { size: '24px', height: 1.333, maxWidth: `${baseSpacing * 18}px` },
-        large: { size: '96px', height: 1.125, maxWidth: `${baseSpacing * 36}px` },
+        medium: { size: '48px', height: 1.125, maxWidth: `${baseSpacing * 48}px` },
+        small: { size: '24px', height: 1.333, maxWidth: `${baseSpacing * 24}px` },
+        large: { size: '96px', height: 1.125, maxWidth: `${baseSpacing * 96}px` },
       },
       2: {
-        medium: { size: '36px', height: 1.23, maxWidth: `${baseSpacing * 24}px` },
+        medium: { size: '36px', height: 1.23, maxWidth: `${baseSpacing * 36}px` },
         small: { size: '18px', height: 1.333, maxWidth: `${baseSpacing * 18}px` },
-        large: { size: '48px', height: 1.125, maxWidth: `${baseSpacing * 36}px` },
+        large: { size: '48px', height: 1.125, maxWidth: `${baseSpacing * 48}px` },
       },
       3: {
         medium: { size: '24px', height: 1.333, maxWidth: `${baseSpacing * 24}px` },
@@ -203,9 +205,9 @@ export default {
         large: { size: '36px', height: 1.23, maxWidth: `${baseSpacing * 36}px` },
       },
       4: {
-        medium: { size: '18px', height: 1.333, maxWidth: `${baseSpacing * 24}px` },
-        small: { size: '16px', height: 1.333, maxWidth: `${baseSpacing * 18}px` },
-        large: { size: '24px', height: 1.333, maxWidth: `${baseSpacing * 36}px` },
+        medium: { size: '18px', height: 1.333, maxWidth: `${baseSpacing * 18}px` },
+        small: { size: '16px', height: 1.375, maxWidth: `${baseSpacing * 16}px` },
+        large: { size: '24px', height: 1.333, maxWidth: `${baseSpacing * 24}px` },
       },
     },
     weight: 300,
@@ -231,10 +233,12 @@ export default {
     overlayBackgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   paragraph: {
-    medium: { size: '16px', height: 1.375, maxWidth: `${baseSpacing * 24}px` },
-    small: { size: '14px', height: 1.43, maxWidth: `${baseSpacing * 18}px` },
-    large: { size: '24px', height: 1.167, maxWidth: `${baseSpacing * 36}px` },
-    xlarge: { size: '32px', height: 1.1875, maxWidth: `${baseSpacing * 48}px` },
+    // maxWidth chosen to be ~50 characters wide
+    // see: https://ux.stackexchange.com/a/34125
+    medium: { size: '16px', height: 1.375, maxWidth: `${baseSpacing * 16}px` },
+    small: { size: '14px', height: 1.43, maxWidth: `${baseSpacing * 14}px` },
+    large: { size: '24px', height: 1.333, maxWidth: `${baseSpacing * 24}px` },
+    xlarge: { size: '32px', height: 1.1875, maxWidth: `${baseSpacing * 32}px` },
   },
   text: {
     medium: { size: '16px', height: 1.375 },

@@ -19,30 +19,30 @@ exports[`Heading level renders 1`] = `
 }
 
 .c1 {
-  max-width: font-size:48px;
+  font-size: 48px;
   line-height: 1.125;
-  max-width: 576px;
+  max-width: 1152px;
   font-weight: 300;
 }
 
 .c2 {
-  max-width: font-size:36px;
+  font-size: 36px;
   line-height: 1.23;
-  max-width: 576px;
+  max-width: 864px;
   font-weight: 300;
 }
 
 .c3 {
-  max-width: font-size:24px;
+  font-size: 24px;
   line-height: 1.333;
   max-width: 576px;
   font-weight: 300;
 }
 
 .c4 {
-  max-width: font-size:18px;
+  font-size: 18px;
   line-height: 1.333;
-  max-width: 576px;
+  max-width: 432px;
   font-weight: 300;
 }
 
@@ -95,53 +95,53 @@ exports[`Heading margin renders 1`] = `
 }
 
 .c1 {
-  max-width: font-size:48px;
+  font-size: 48px;
   line-height: 1.125;
-  max-width: 576px;
+  max-width: 1152px;
   font-weight: 300;
   margin-top: 12px;
   margin-bottom: 12px;
 }
 
 .c2 {
-  max-width: font-size:48px;
+  font-size: 48px;
   line-height: 1.125;
-  max-width: 576px;
+  max-width: 1152px;
   font-weight: 300;
   margin-top: 24px;
   margin-bottom: 24px;
 }
 
 .c3 {
-  max-width: font-size:48px;
+  font-size: 48px;
   line-height: 1.125;
-  max-width: 576px;
+  max-width: 1152px;
   font-weight: 300;
   margin-top: 48px;
   margin-bottom: 48px;
 }
 
 .c4 {
-  max-width: font-size:48px;
+  font-size: 48px;
   line-height: 1.125;
-  max-width: 576px;
+  max-width: 1152px;
   font-weight: 300;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .c5 {
-  max-width: font-size:48px;
+  font-size: 48px;
   line-height: 1.125;
-  max-width: 576px;
+  max-width: 1152px;
   font-weight: 300;
   margin-bottom: 12px;
 }
 
 .c6 {
-  max-width: font-size:48px;
+  font-size: 48px;
   line-height: 1.125;
-  max-width: 576px;
+  max-width: 1152px;
   font-weight: 300;
   margin-top: 12px;
 }
@@ -149,6 +149,7 @@ exports[`Heading margin renders 1`] = `
 .c7 {
   font-size: 48px;
   line-height: 1.125;
+  max-width: 1152px;
   font-weight: 300;
   margin-bottom: 0;
 }
@@ -156,6 +157,7 @@ exports[`Heading margin renders 1`] = `
 .c8 {
   font-size: 48px;
   line-height: 1.125;
+  max-width: 1152px;
   font-weight: 300;
   margin-top: 0;
 }
@@ -221,9 +223,9 @@ exports[`Heading renders 1`] = `
 }
 
 .c1 {
-  max-width: font-size:48px;
+  font-size: 48px;
   line-height: 1.125;
-  max-width: 576px;
+  max-width: 1152px;
   font-weight: 300;
 }
 
@@ -267,86 +269,86 @@ exports[`Heading size renders 1`] = `
 }
 
 .c2 {
-  max-width: font-size:48px;
+  font-size: 48px;
   line-height: 1.125;
-  max-width: 576px;
+  max-width: 1152px;
   font-weight: 300;
 }
 
 .c1 {
-  max-width: font-size:24px;
+  font-size: 24px;
   line-height: 1.333;
-  max-width: 432px;
-  font-weight: 300;
-}
-
-.c3 {
-  max-width: font-size:96px;
-  line-height: 1.125;
-  max-width: 864px;
-  font-weight: 300;
-}
-
-.c5 {
-  max-width: font-size:36px;
-  line-height: 1.23;
   max-width: 576px;
   font-weight: 300;
 }
 
+.c3 {
+  font-size: 96px;
+  line-height: 1.125;
+  max-width: 2304px;
+  font-weight: 300;
+}
+
+.c5 {
+  font-size: 36px;
+  line-height: 1.23;
+  max-width: 864px;
+  font-weight: 300;
+}
+
 .c4 {
-  max-width: font-size:18px;
+  font-size: 18px;
   line-height: 1.333;
   max-width: 432px;
   font-weight: 300;
 }
 
 .c6 {
-  max-width: font-size:48px;
+  font-size: 48px;
   line-height: 1.125;
-  max-width: 864px;
+  max-width: 1152px;
   font-weight: 300;
 }
 
 .c8 {
-  max-width: font-size:24px;
+  font-size: 24px;
   line-height: 1.333;
   max-width: 576px;
   font-weight: 300;
 }
 
 .c7 {
-  max-width: font-size:18px;
+  font-size: 18px;
   line-height: 1.333;
   max-width: 432px;
   font-weight: 300;
 }
 
 .c9 {
-  max-width: font-size:36px;
+  font-size: 36px;
   line-height: 1.23;
   max-width: 864px;
   font-weight: 300;
 }
 
 .c11 {
-  max-width: font-size:18px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 300;
-}
-
-.c10 {
-  max-width: font-size:16px;
+  font-size: 18px;
   line-height: 1.333;
   max-width: 432px;
   font-weight: 300;
 }
 
+.c10 {
+  font-size: 16px;
+  line-height: 1.375;
+  max-width: 384px;
+  font-weight: 300;
+}
+
 .c12 {
-  max-width: font-size:24px;
+  font-size: 24px;
   line-height: 1.333;
-  max-width: 864px;
+  max-width: 576px;
   font-weight: 300;
 }
 
@@ -435,25 +437,25 @@ exports[`Heading textAlign renders 1`] = `
 }
 
 .c1 {
-  max-width: font-size:48px;
+  font-size: 48px;
   line-height: 1.125;
-  max-width: 576px;
+  max-width: 1152px;
   font-weight: 300;
   text-align: left;
 }
 
 .c2 {
-  max-width: font-size:48px;
+  font-size: 48px;
   line-height: 1.125;
-  max-width: 576px;
+  max-width: 1152px;
   font-weight: 300;
   text-align: center;
 }
 
 .c3 {
-  max-width: font-size:48px;
+  font-size: 48px;
   line-height: 1.125;
-  max-width: 576px;
+  max-width: 1152px;
   font-weight: 300;
   text-align: right;
 }
@@ -504,16 +506,16 @@ exports[`Heading truncate renders 1`] = `
 }
 
 .c1 {
-  max-width: font-size:48px;
+  font-size: 48px;
   line-height: 1.125;
-  max-width: 576px;
+  max-width: 1152px;
   font-weight: 300;
 }
 
 .c2 {
-  max-width: font-size:48px;
+  font-size: 48px;
   line-height: 1.125;
-  max-width: 576px;
+  max-width: 1152px;
   font-weight: 300;
   white-space: nowrap;
   overflow: hidden;

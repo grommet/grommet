@@ -21,34 +21,34 @@ exports[`Markdown renders 1`] = `
 .c2 {
   font-size: 16px;
   line-height: 1.375;
-  max-width: 576px;
+  max-width: 384px;
 }
 
 .c1 {
-  max-width: font-size:48px;
+  font-size: 48px;
   line-height: 1.125;
-  max-width: 576px;
+  max-width: 1152px;
   font-weight: 300;
 }
 
 .c3 {
-  max-width: font-size:36px;
+  font-size: 36px;
   line-height: 1.23;
-  max-width: 576px;
+  max-width: 864px;
   font-weight: 300;
 }
 
 .c4 {
-  max-width: font-size:24px;
+  font-size: 24px;
   line-height: 1.333;
   max-width: 576px;
   font-weight: 300;
 }
 
 .c5 {
-  max-width: font-size:18px;
+  font-size: 18px;
   line-height: 1.333;
-  max-width: 576px;
+  max-width: 432px;
   font-weight: 300;
 }
 

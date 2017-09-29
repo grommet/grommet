@@ -61,7 +61,6 @@ const truncateStyle = `
 `;
 
 const StyledHeading = styled.h1`
-  max-width: ${props => props.theme.global.max}
   ${props => sizeStyle(props)}
   ${props => props.margin && marginStyle(props)}
   ${props => props.textAlign && textAlignStyle}
