@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { colorForName } from '../utils';
+
 const marginStyle = (props) => {
   if (typeof props.margin === 'string') {
     if (props.margin === 'none') {
@@ -66,11 +68,16 @@ const truncateStyle = `
   text-overflow: ellipsis;
 `;
 
+const colorStyle = css`
+  color: ${props => colorForName(props.color, props.theme)}
+`;
+
 const StyledText = styled.span`
   ${props => sizeStyle(props)}
   ${props => props.margin && marginStyle(props)}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.truncate && truncateStyle}
+  ${props => props.color && colorStyle}
 `;
 
 export default StyledText.extend`
