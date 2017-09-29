@@ -27,7 +27,8 @@ const borderWidth = 2;
 export default {
   global: {
     borderSize: {
-      small: '1px',
+      xsmall: '1px',
+      small: '2px',
       medium: `${baseSpacing / 8}px`,
       large: `${baseSpacing / 4}px`,
       xlarge: `${baseSpacing}px`,

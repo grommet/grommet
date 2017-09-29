@@ -2250,8 +2250,8 @@ eslint@^3.19.0:
     user-home "^2.0.0"
 
 eslint@^4.3.0:
-  version "4.7.2"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.7.2.tgz#ff6f5f5193848a27ee9b627be3e73fb9cb5e662e"
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.8.0.tgz#229ef0e354e0e61d837c7a80fdfba825e199815e"
   dependencies:
     ajv "^5.2.0"
     babel-code-frame "^6.22.0"
@@ -2877,8 +2877,8 @@ grommet-cli@5.1.0:
     yargs "^8.0.2"
 
 grommet-icons@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-0.10.0.tgz#1db0c5c9a14ff9c5a870a30bac6e725ee99b4ee5"
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-0.10.1.tgz#495ac86b8b1d96792d21189b572c4168ddbd049a"
   dependencies:
     deep-assign "^2.0.0"
 

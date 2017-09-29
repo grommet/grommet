@@ -246,8 +246,9 @@ exports[`Anchor icon label renders 1`] = `
               "borderSize": Object {
                 "large": "6px",
                 "medium": "3px",
-                "small": "1px",
+                "small": "2px",
                 "xlarge": "24px",
+                "xsmall": "1px",
               },
               "centerColumnWidth": "1152px",
               "colors": Object {
@@ -719,8 +720,9 @@ exports[`Anchor primary renders 1`] = `
               "borderSize": Object {
                 "large": "6px",
                 "medium": "3px",
-                "small": "1px",
+                "small": "2px",
                 "xlarge": "24px",
+                "xsmall": "1px",
               },
               "centerColumnWidth": "1152px",
               "colors": Object {
@@ -1299,8 +1301,9 @@ exports[`Anchor reverse icon label renders 1`] = `
               "borderSize": Object {
                 "large": "6px",
                 "medium": "3px",
-                "small": "1px",
+                "small": "2px",
                 "xlarge": "24px",
+                "xsmall": "1px",
               },
               "centerColumnWidth": "1152px",
               "colors": Object {
@@ -1727,8 +1730,9 @@ exports[`Anchor warns about invalid icon render 1`] = `
               "borderSize": Object {
                 "large": "6px",
                 "medium": "3px",
-                "small": "1px",
+                "small": "2px",
                 "xlarge": "24px",
+                "xsmall": "1px",
               },
               "centerColumnWidth": "1152px",
               "colors": Object {
