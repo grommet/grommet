@@ -5,6 +5,7 @@ import { compose } from 'recompose';
 
 import { FormDown } from 'grommet-icons';
 
+import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Drop } from '../Drop';
@@ -87,6 +88,7 @@ class Menu extends Component {
       background,
       dropAlign,
       icon,
+      id,
       items,
       label,
       messages = {},
@@ -98,25 +100,35 @@ class Menu extends Component {
 
     const menuIcon = icon || <FormDown />;
 
+    let labelNode;
+    if (label) {
+      labelNode = (
+        <Box margin={{ right: 'small' }}>
+          {label}
+        </Box>
+      );
+    }
     const controlMirror = (
       <Button
-        justify={dropAlign.right ? 'end' : 'start'}
         fill={true}
         a11yTitle={messages.closeMenu || 'Close Menu'}
-        box={true}
-        reverse={true}
-        icon={menuIcon}
-        label={label}
-        direction='row'
-        pad='small'
         onClick={this.onDropClose}
-      />
+      >
+        <Box
+          pad='small'
+          direction='row'
+          justify={dropAlign.right ? 'end' : 'start'}
+        >
+          {labelNode}{menuIcon}
+        </Box>
+      </Button>
     );
 
     let drop;
     if (showDrop) {
       drop = (
         <Drop
+          id={id ? `menu-drop__${id}` : undefined}
           align={dropAlign}
           background={background}
           ref={(ref) => {
@@ -127,29 +139,30 @@ class Menu extends Component {
           onClose={this.onDropClose}
         >
           {dropAlign.top === 'top' ? controlMirror : undefined}
-          {items.map(
-            (item, index) => (
-              <Button
-                ref={(ref) => {
-                  this.buttonRefs[index] = ref;
-                }}
-                active={activeItemIndex === index}
-                box={true}
-                pad='small'
-                key={`menuItem_${index}`}
-                fill={true}
-                align='start'
-                hoverIndicator='background'
-                {...item}
-                onClick={item.onClick ? (...args) => {
-                  item.onClick(...args);
-                  if (item.close !== false) {
-                    this.onDropClose();
-                  }
-                } : undefined}
-              />
-            )
-          )}
+          <Box>
+            {items.map(
+              (item, index) => (
+                <Button
+                  ref={(ref) => {
+                    this.buttonRefs[index] = ref;
+                  }}
+                  active={activeItemIndex === index}
+                  key={`menuItem_${index}`}
+                  hoverIndicator='background'
+                  onClick={item.onClick ? (...args) => {
+                    item.onClick(...args);
+                    if (item.close !== false) {
+                      this.onDropClose();
+                    }
+                  } : undefined}
+                >
+                  <Box align='start' pad='small' direction='row'>
+                    {item.icon}{item.label}
+                  </Box>
+                </Button>
+              )
+            )}
+          </Box>
           {dropAlign.bottom === 'bottom' ? controlMirror : undefined }
         </Drop>
       );
@@ -167,20 +180,19 @@ class Menu extends Component {
       >
         <div>
           <Button
+            id={id}
             ref={(ref) => {
               this.componentRef = ref;
             }}
             a11yTitle={messages.openMenu || 'Open Menu'}
-            align='start'
-            box={true}
-            reverse={true}
-            icon={menuIcon}
-            label={label}
             onClick={() => this.setState({ activeItemIndex: -1, showDrop: !this.state.showDrop })}
-            direction='row'
-            pad='small'
             {...rest}
-          />
+          >
+            <Box align='start' direction='row' pad='small'>
+              {labelNode}
+              {menuIcon}
+            </Box>
+          </Button>
           {drop}
         </div>
       </Keyboard>

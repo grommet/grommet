@@ -2250,8 +2250,8 @@ eslint@^3.19.0:
     user-home "^2.0.0"
 
 eslint@^4.3.0:
-  version "4.7.2"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.7.2.tgz#ff6f5f5193848a27ee9b627be3e73fb9cb5e662e"
+  version "4.8.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.8.0.tgz#229ef0e354e0e61d837c7a80fdfba825e199815e"
   dependencies:
     ajv "^5.2.0"
     babel-code-frame "^6.22.0"
@@ -2394,8 +2394,8 @@ expand-range@^1.8.1:
     fill-range "^2.1.0"
 
 express@^4.13.3:
-  version "4.16.0"
-  resolved "https://registry.yarnpkg.com/express/-/express-4.16.0.tgz#b519638e4eb58e7178c81b498ef22f798cb2e255"
+  version "4.16.1"
+  resolved "https://registry.yarnpkg.com/express/-/express-4.16.1.tgz#6b33b560183c9b253b7b62144df33a4654ac9ed0"
   dependencies:
     accepts "~1.3.4"
     array-flatten "1.1.1"
@@ -2420,8 +2420,8 @@ express@^4.13.3:
     qs "6.5.1"
     range-parser "~1.2.0"
     safe-buffer "5.1.1"
-    send "0.16.0"
-    serve-static "1.13.0"
+    send "0.16.1"
+    serve-static "1.13.1"
     setprototypeof "1.1.0"
     statuses "~1.3.1"
     type-is "~1.6.15"
@@ -2877,8 +2877,8 @@ grommet-cli@5.1.0:
     yargs "^8.0.2"
 
 grommet-icons@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-0.10.0.tgz#1db0c5c9a14ff9c5a870a30bac6e725ee99b4ee5"
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-0.10.1.tgz#495ac86b8b1d96792d21189b572c4168ddbd049a"
   dependencies:
     deep-assign "^2.0.0"
 
@@ -5360,9 +5360,9 @@ selfsigned@^1.9.1:
   version "5.4.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.4.1.tgz#e059c09d8571f0540823733433505d3a2f00b18e"
 
-send@0.16.0:
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/send/-/send-0.16.0.tgz#16338dbb9a2ede4ad57b48420ec3b82d8e80a57b"
+send@0.16.1:
+  version "0.16.1"
+  resolved "https://registry.yarnpkg.com/send/-/send-0.16.1.tgz#a70e1ca21d1382c11d0d9f6231deb281080d7ab3"
   dependencies:
     debug "2.6.9"
     depd "~1.1.1"
@@ -5390,14 +5390,14 @@ serve-index@^1.7.2:
     mime-types "~2.1.17"
     parseurl "~1.3.2"
 
-serve-static@1.13.0:
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/serve-static/-/serve-static-1.13.0.tgz#810c91db800e94ba287eae6b4e06caab9fdc16f1"
+serve-static@1.13.1:
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/serve-static/-/serve-static-1.13.1.tgz#4c57d53404a761d8f2e7c1e8a18a47dbf278a719"
   dependencies:
     encodeurl "~1.0.1"
     escape-html "~1.0.3"
     parseurl "~1.3.2"
-    send "0.16.0"
+    send "0.16.1"
 
 set-blocking@^2.0.0, set-blocking@~2.0.0:
   version "2.0.0"

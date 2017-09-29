@@ -43,7 +43,7 @@ class Box extends Component {
         grommet: { ...grommet, dark },
       };
     }
-    return undefined;
+    return {};
   }
 
   render() {
