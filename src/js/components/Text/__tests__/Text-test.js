@@ -74,6 +74,16 @@ test('Text truncate renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Text color renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Text color='status-critical' />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Text tag renders', () => {
   const component = renderer.create(
     <Grommet>

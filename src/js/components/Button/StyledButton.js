@@ -162,7 +162,7 @@ const StyledButton = styled.button`
     )
   )}
   ${props => (
-    !props.plain && !props.box && (
+    !props.plain && (
       `padding: ${props.theme.button.padding.vertical} ${props.theme.button.padding.horizontal};`
     )
   )}

@@ -37,12 +37,12 @@ exports[`Button accent renders 1`] = `
   color: #333333;
   text-align: center;
   display: inline-block;
-  min-width: 120px;
+  min-width: 96px;
   max-width: 384px;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
-  padding: 6px 22px;
+  padding: 10px 10px;
   border-color: #00CCEB;
 }
 
@@ -131,20 +131,28 @@ exports[`Button box href renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
+  text-align: center;
+  display: inline-block;
+  min-width: 96px;
+  max-width: 384px;
+  font-weight: 600;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  padding: 10px 10px;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #865CD6;
+}
+
+.c1:hover svg {
+  fill: #000000;
+  stroke: #000000;
+  -webkit-transition: none;
+  transition: none;
 }
 
 @media only screen and (min-width:481px) {
@@ -171,8 +179,7 @@ exports[`Button box href renders 1`] = `
 >
   <a
     aria-label={undefined}
-    className="c1 c2"
-    direction="column"
+    className="c1"
     disabled={false}
     href="test"
     icon={undefined}
@@ -206,7 +213,7 @@ exports[`Button box renders 1`] = `
   box-sizing: inherit;
 }
 
-.c3:first-child:not(:last-child) {
+.c2:first-child:not(:last-child) {
   margin-right: 12px;
 }
 
@@ -220,20 +227,28 @@ exports[`Button box renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
+  text-align: center;
+  display: inline-block;
+  min-width: 96px;
+  max-width: 384px;
+  font-weight: 600;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  padding: 10px 10px;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #865CD6;
+}
+
+.c1:hover svg {
+  fill: #000000;
+  stroke: #000000;
+  -webkit-transition: none;
+  transition: none;
 }
 
 @media only screen and (min-width:481px) {
@@ -260,8 +275,7 @@ exports[`Button box renders 1`] = `
 >
   <button
     aria-label={undefined}
-    className="c1 c2"
-    direction="column"
+    className="c1"
     disabled={false}
     href={undefined}
     icon={undefined}
@@ -275,7 +289,7 @@ exports[`Button box renders 1`] = `
     type="button"
   >
     <span
-      className="c3"
+      className="c2"
     >
       Test
     </span>
@@ -320,12 +334,12 @@ exports[`Button critical renders 1`] = `
   color: #333333;
   text-align: center;
   display: inline-block;
-  min-width: 120px;
+  min-width: 96px;
   max-width: 384px;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
-  padding: 6px 22px;
+  padding: 10px 10px;
   border-color: #FF324D;
 }
 
@@ -419,14 +433,14 @@ exports[`Button disabled renders 1`] = `
   color: #333333;
   text-align: center;
   display: inline-block;
-  min-width: 120px;
+  min-width: 96px;
   max-width: 384px;
   font-weight: 600;
   opacity: 0.3;
   cursor: default;
   font-size: 1.1875rem;
   line-height: 24px;
-  padding: 6px 22px;
+  padding: 10px 10px;
 }
 
 @media only screen and (min-width:481px) {
@@ -506,12 +520,12 @@ exports[`Button focus renders 1`] = `
   color: #333333;
   text-align: center;
   display: inline-block;
-  min-width: 120px;
+  min-width: 96px;
   max-width: 384px;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
-  padding: 6px 22px;
+  padding: 10px 10px;
   border-color: #00CCEB;
   box-shadow: 0 0 2px 2px #00CCEB;
 }
@@ -1165,12 +1179,12 @@ exports[`Button href renders 1`] = `
   color: #333333;
   text-align: center;
   display: inline-block;
-  min-width: 120px;
+  min-width: 96px;
   max-width: 384px;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
-  padding: 6px 22px;
+  padding: 10px 10px;
 }
 
 .c1:hover {
@@ -1273,12 +1287,12 @@ exports[`Button icon label renders 1`] = `
   color: #333333;
   text-align: center;
   display: inline-block;
-  min-width: 120px;
+  min-width: 96px;
   max-width: 384px;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
-  padding: 6px 22px;
+  padding: 10px 10px;
 }
 
 .c1:hover {
@@ -1381,12 +1395,12 @@ exports[`Button primary renders 1`] = `
   color: #333333;
   text-align: center;
   display: inline-block;
-  min-width: 120px;
+  min-width: 96px;
   max-width: 384px;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
-  padding: 6px 22px;
+  padding: 10px 10px;
   background-color: #865CD6;
   color: #FFFFFF;
 }
@@ -1485,12 +1499,12 @@ exports[`Button renders 1`] = `
   color: #333333;
   text-align: center;
   display: inline-block;
-  min-width: 120px;
+  min-width: 96px;
   max-width: 384px;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
-  padding: 6px 22px;
+  padding: 10px 10px;
 }
 
 .c1:hover {
@@ -1599,12 +1613,12 @@ exports[`Button reverse icon label renders 1`] = `
   color: #333333;
   text-align: center;
   display: inline-block;
-  min-width: 120px;
+  min-width: 96px;
   max-width: 384px;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
-  padding: 6px 22px;
+  padding: 10px 10px;
 }
 
 .c1:hover {
@@ -1707,12 +1721,12 @@ exports[`Button secondary renders 1`] = `
   color: #333333;
   text-align: center;
   display: inline-block;
-  min-width: 120px;
+  min-width: 96px;
   max-width: 384px;
   font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
-  padding: 6px 22px;
+  padding: 10px 10px;
   border-color: #DC2878;
 }
 

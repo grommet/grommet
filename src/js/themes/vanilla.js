@@ -177,11 +177,11 @@ export default {
       critical: statusColors.critical,
       secondary: neutralColors[1],
     },
-    minWidth: `${baseSpacing * 5}px`,
+    minWidth: `${baseSpacing * 4}px`,
     maxWidth: `${baseSpacing * 16}px`,
     padding: {
-      vertical: `${(baseSpacing / 3) - borderWidth}px`,
-      horizontal: `${baseSpacing - borderWidth}px`,
+      vertical: `${(baseSpacing / 2) - borderWidth}px`,
+      horizontal: `${(baseSpacing / 2) - borderWidth}px`,
     },
   },
   checkBox: {

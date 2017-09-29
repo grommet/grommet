@@ -6,7 +6,7 @@ exports[`Menu opens and closes on click 1`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <button
-    class="StyledButton-gNoZSk ezbGuW StyledBox-hownzw jCRdTF"
+    class="StyledButton-qbvYY kNWTXf"
     tabindex="0"
     direction="row"
     aria-label="Close Menu"
@@ -42,13 +42,12 @@ exports[`Menu opens and closes on click 1`] = `
     </span>
   </button>
   <button
-    class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
+    class="StyledButton-qbvYY hMkNdj"
     tabindex="0"
     id="item-1"
     disabled=""
     label="Item 1"
     type="button"
-    direction="column"
   >
     <span
       class="StyledButton__StyledLabel-cdfjly iYzZdi"
@@ -57,12 +56,11 @@ exports[`Menu opens and closes on click 1`] = `
     </span>
   </button>
   <button
-    class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
+    class="StyledButton-qbvYY hMkNdj"
     tabindex="0"
     disabled=""
     label="Item 2"
     type="button"
-    direction="column"
   >
     <span
       class="StyledButton__StyledLabel-cdfjly iYzZdi"
@@ -79,7 +77,7 @@ exports[`Menu opens and closes on click 2`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <button
-    class="StyledButton-gNoZSk ezbGuW StyledBox-hownzw jCRdTF"
+    class="StyledButton-qbvYY kNWTXf"
     tabindex="0"
     direction="row"
     aria-label="Close Menu"
@@ -115,13 +113,12 @@ exports[`Menu opens and closes on click 2`] = `
     </span>
   </button>
   <button
-    class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
+    class="StyledButton-qbvYY hMkNdj"
     tabindex="0"
     id="item-1"
     disabled=""
     label="Item 1"
     type="button"
-    direction="column"
   >
     <span
       class="StyledButton__StyledLabel-cdfjly iYzZdi"
@@ -130,12 +127,11 @@ exports[`Menu opens and closes on click 2`] = `
     </span>
   </button>
   <button
-    class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
+    class="StyledButton-qbvYY hMkNdj"
     tabindex="0"
     disabled=""
     label="Item 2"
     type="button"
-    direction="column"
   >
     <span
       class="StyledButton__StyledLabel-cdfjly iYzZdi"
@@ -147,6 +143,151 @@ exports[`Menu opens and closes on click 2`] = `
 `;
 
 exports[`Menu renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c3 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c3 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c3 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c3 *[stroke*="#"],
+.c3 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
+.c3 *[fill*="#"],
+.c3 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: inline-block;
+}
+
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c2 > * {
+  vertical-align: bottom;
+}
+
+.c1 {
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  padding: 12px;
+}
+
+@media only screen and (min-width:481px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+@media only screen and (min-width:481px) {
+  .c1 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    onKeyDown={[Function]}
+  >
+    <button
+      aria-label="Open Menu"
+      className="c1"
+      direction="row"
+      disabled={false}
+      href={undefined}
+      icon={<FormDown />}
+      label={undefined}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+      tabIndex="0"
+      type="button"
+    >
+      <span
+        aria-hidden={true}
+        className="c2"
+      >
+        <svg
+          aria-label="FormDown"
+          className="c3"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            strokeWidth="2"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Menu with custom message renders 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -196,6 +337,10 @@ exports[`Menu renders 1`] = `
   stroke: none;
 }
 
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
 .c3 {
   display: inline-block;
 }
@@ -218,190 +363,28 @@ exports[`Menu renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  padding: 12px;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 12px;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-<div
-  className="c0"
->
-  <div
-    onKeyDown={[Function]}
-  >
-    <button
-      aria-label="Open Menu"
-      className="c1 c2"
-      direction="row"
-      disabled={false}
-      href={undefined}
-      icon={<FormDown />}
-      label={undefined}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      tabIndex="0"
-      type="button"
-    >
-      <span
-        aria-hidden={true}
-        className="c3"
-      >
-        <svg
-          aria-label="FormDown"
-          className="c4"
-          height="24px"
-          role="img"
-          version="1.1"
-          viewBox="0 0 24 24"
-          width="24px"
-        >
-          <polyline
-            fill="none"
-            points="18 9 12 15 6 9"
-            stroke="#000"
-            strokeWidth="2"
-          />
-        </svg>
-      </span>
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Menu with custom message renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
+  border: 2px solid #865CD6;
+  border-radius: 5px;
   color: #333333;
-  background-color: #FFFFFF;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c5 {
+  text-align: center;
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  fill: #666666;
-  stroke: #666666;
+  min-width: 96px;
+  max-width: 384px;
+  font-weight: 600;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  padding: 10px 10px;
 }
 
-.c5 g {
-  fill: inherit;
-  stroke: inherit;
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #865CD6;
 }
 
-.c5 *:not([stroke])[fill="none"] {
-  stroke-width: 0;
-}
-
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
-  stroke: inherit;
-  fill: none;
-}
-
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
-  fill: inherit;
-  stroke: none;
-}
-
-.c3:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c4 {
-  display: inline-block;
-}
-
-.c4:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c4 > * {
-  vertical-align: bottom;
-}
-
-.c1 {
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  background-color: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 12px;
+.c1:hover svg {
+  fill: #000000;
+  stroke: #000000;
+  -webkit-transition: none;
+  transition: none;
 }
 
 @media only screen and (min-width:481px) {
@@ -431,7 +414,7 @@ exports[`Menu with custom message renders 1`] = `
   >
     <button
       aria-label="Abrir Menu"
-      className="c1 c2"
+      className="c1"
       direction="row"
       disabled={false}
       href={undefined}
@@ -446,17 +429,17 @@ exports[`Menu with custom message renders 1`] = `
       type="button"
     >
       <span
-        className="c3"
+        className="c2"
       >
         Test Icon
       </span>
       <span
         aria-hidden={true}
-        className="c4"
+        className="c3"
       >
         <svg
           aria-label="FormDown"
-          className="c5"
+          className="c4"
           height="24px"
           role="img"
           version="1.1"
@@ -482,7 +465,7 @@ exports[`Menu with dropAlign renders 1`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <button
-    class="StyledButton-gNoZSk ezbGuW StyledBox-hownzw Ejmqd"
+    class="StyledButton-qbvYY kNWTXf"
     tabindex="0"
     direction="row"
     aria-label="Close Menu"
@@ -518,13 +501,12 @@ exports[`Menu with dropAlign renders 1`] = `
     </span>
   </button>
   <button
-    class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
+    class="StyledButton-qbvYY hMkNdj"
     tabindex="0"
     id="item-1"
     disabled=""
     label="Item 1"
     type="button"
-    direction="column"
   >
     <span
       class="StyledButton__StyledLabel-cdfjly iYzZdi"
@@ -533,12 +515,11 @@ exports[`Menu with dropAlign renders 1`] = `
     </span>
   </button>
   <button
-    class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
+    class="StyledButton-qbvYY hMkNdj"
     tabindex="0"
     disabled=""
     label="Item 2"
     type="button"
-    direction="column"
   >
     <span
       class="StyledButton__StyledLabel-cdfjly iYzZdi"
@@ -567,19 +548,19 @@ exports[`Menu with icon renders 1`] = `
   box-sizing: inherit;
 }
 
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c3 {
+  display: inline-block;
+}
+
 .c3:first-child:not(:last-child) {
   margin-right: 12px;
 }
 
-.c4 {
-  display: inline-block;
-}
-
-.c4:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c4 > * {
+.c3 > * {
   vertical-align: bottom;
 }
 
@@ -593,25 +574,28 @@ exports[`Menu with icon renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
+  text-align: center;
+  display: inline-block;
+  min-width: 96px;
+  max-width: 384px;
+  font-weight: 600;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  padding: 10px 10px;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 12px;
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #865CD6;
+}
+
+.c1:hover svg {
+  fill: #000000;
+  stroke: #000000;
+  -webkit-transition: none;
+  transition: none;
 }
 
 @media only screen and (min-width:481px) {
@@ -641,7 +625,7 @@ exports[`Menu with icon renders 1`] = `
   >
     <button
       aria-label="Open Menu"
-      className="c1 c2"
+      className="c1"
       direction="row"
       disabled={false}
       href={undefined}
@@ -656,13 +640,13 @@ exports[`Menu with icon renders 1`] = `
       type="button"
     >
       <span
-        className="c3"
+        className="c2"
       >
         Test Icon
       </span>
       <span
         aria-hidden={true}
-        className="c4"
+        className="c3"
       >
         <svg />
       </span>
@@ -689,7 +673,7 @@ exports[`Menu with label renders 1`] = `
   box-sizing: inherit;
 }
 
-.c5 {
+.c4 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -698,42 +682,42 @@ exports[`Menu with label renders 1`] = `
   stroke: #666666;
 }
 
-.c5 g {
+.c4 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c5 *:not([stroke])[fill="none"] {
+.c4 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c5 *[stroke*="#"],
-.c5 *[STROKE*="#"] {
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c5 *[fill-rule],
-.c5 *[FILL-RULE],
-.c5 *[fill*="#"],
-.c5 *[FILL*="#"] {
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c3 {
+  display: inline-block;
 }
 
 .c3:first-child:not(:last-child) {
   margin-right: 12px;
 }
 
-.c4 {
-  display: inline-block;
-}
-
-.c4:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c4 > * {
+.c3 > * {
   vertical-align: bottom;
 }
 
@@ -747,25 +731,28 @@ exports[`Menu with label renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
+  text-align: center;
+  display: inline-block;
+  min-width: 96px;
+  max-width: 384px;
+  font-weight: 600;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  padding: 10px 10px;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  padding: 12px;
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #865CD6;
+}
+
+.c1:hover svg {
+  fill: #000000;
+  stroke: #000000;
+  -webkit-transition: none;
+  transition: none;
 }
 
 @media only screen and (min-width:481px) {
@@ -795,7 +782,7 @@ exports[`Menu with label renders 1`] = `
   >
     <button
       aria-label="Open Menu"
-      className="c1 c2"
+      className="c1"
       direction="row"
       disabled={false}
       href={undefined}
@@ -810,17 +797,17 @@ exports[`Menu with label renders 1`] = `
       type="button"
     >
       <span
-        className="c3"
+        className="c2"
       >
         Test
       </span>
       <span
         aria-hidden={true}
-        className="c4"
+        className="c3"
       >
         <svg
           aria-label="FormDown"
-          className="c5"
+          className="c4"
           height="24px"
           role="img"
           version="1.1"
