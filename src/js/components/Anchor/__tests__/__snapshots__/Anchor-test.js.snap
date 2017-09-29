@@ -223,6 +223,25 @@ exports[`Anchor icon label renders 1`] = `
                 "vertical": "6px",
               },
             },
+            "checkBox": Object {
+              "border": Object {
+                "color": Object {
+                  "dark": "rgba(255, 255, 255, 0.5)",
+                  "light": "rgba(0, 0, 0, 0.15)",
+                },
+                "radius": "4px",
+                "width": "2px",
+              },
+              "check": Object {
+                "color": "#865CD6",
+                "width": "4px",
+              },
+              "size": "24px",
+              "toggle": Object {
+                "color": "#d9d9d9",
+                "size": "48px",
+              },
+            },
             "global": Object {
               "borderSize": Object {
                 "large": "6px",
@@ -678,6 +697,25 @@ exports[`Anchor primary renders 1`] = `
               "padding": Object {
                 "horizontal": "22px",
                 "vertical": "6px",
+              },
+            },
+            "checkBox": Object {
+              "border": Object {
+                "color": Object {
+                  "dark": "rgba(255, 255, 255, 0.5)",
+                  "light": "rgba(0, 0, 0, 0.15)",
+                },
+                "radius": "4px",
+                "width": "2px",
+              },
+              "check": Object {
+                "color": "#865CD6",
+                "width": "4px",
+              },
+              "size": "24px",
+              "toggle": Object {
+                "color": "#d9d9d9",
+                "size": "48px",
               },
             },
             "global": Object {
@@ -1241,6 +1279,25 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "vertical": "6px",
               },
             },
+            "checkBox": Object {
+              "border": Object {
+                "color": Object {
+                  "dark": "rgba(255, 255, 255, 0.5)",
+                  "light": "rgba(0, 0, 0, 0.15)",
+                },
+                "radius": "4px",
+                "width": "2px",
+              },
+              "check": Object {
+                "color": "#865CD6",
+                "width": "4px",
+              },
+              "size": "24px",
+              "toggle": Object {
+                "color": "#d9d9d9",
+                "size": "48px",
+              },
+            },
             "global": Object {
               "borderSize": Object {
                 "large": "6px",
@@ -1648,6 +1705,25 @@ exports[`Anchor warns about invalid icon render 1`] = `
               "padding": Object {
                 "horizontal": "22px",
                 "vertical": "6px",
+              },
+            },
+            "checkBox": Object {
+              "border": Object {
+                "color": Object {
+                  "dark": "rgba(255, 255, 255, 0.5)",
+                  "light": "rgba(0, 0, 0, 0.15)",
+                },
+                "radius": "4px",
+                "width": "2px",
+              },
+              "check": Object {
+                "color": "#865CD6",
+                "width": "4px",
+              },
+              "size": "24px",
+              "toggle": Object {
+                "color": "#d9d9d9",
+                "size": "48px",
               },
             },
             "global": Object {
