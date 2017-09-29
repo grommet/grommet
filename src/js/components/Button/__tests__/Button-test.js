@@ -142,26 +142,6 @@ test('Button href renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Button box renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Button box={true} label='Test' onClick={() => {}} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Button box href renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Button box={true} href='test' />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
 test('Button hoverIndicator renders', () => {
   const component = renderer.create(
     <Grommet>

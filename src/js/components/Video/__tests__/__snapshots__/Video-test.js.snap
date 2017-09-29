@@ -118,6 +118,22 @@ exports[`Video autoPlay renders 1`] = `
   padding-right: 12px;
 }
 
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 12px;
+}
+
 .c6 {
   display: inline-block;
 }
@@ -164,7 +180,6 @@ exports[`Video autoPlay renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
-  padding: 12px;
 }
 
 .c11 {
@@ -406,14 +421,10 @@ exports[`Video autoPlay renders 1`] = `
           <button
             aria-label="Open Menu"
             className="c15"
-            direction="row"
             disabled={false}
             href={undefined}
-            icon={
-              <Actions
-                color="light-1"
-              />
-            }
+            icon={undefined}
+            id={undefined}
             label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
@@ -423,9 +434,9 @@ exports[`Video autoPlay renders 1`] = `
             tabIndex="0"
             type="button"
           >
-            <span
-              aria-hidden={true}
-              className="c6"
+            <div
+              className="c16"
+              direction="row"
             >
               <svg
                 aria-label="Actions"
@@ -444,7 +455,7 @@ exports[`Video autoPlay renders 1`] = `
                   strokeWidth="2"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </div>
@@ -505,7 +516,7 @@ exports[`Video controls renders 1`] = `
   stroke: none;
 }
 
-.c18 {
+.c19 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -514,25 +525,25 @@ exports[`Video controls renders 1`] = `
   stroke: #666666;
 }
 
-.c18 g {
+.c19 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c18 *:not([stroke])[fill="none"] {
+.c19 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c18 *[stroke*="#"],
-.c18 *[STROKE*="#"] {
+.c19 *[stroke*="#"],
+.c19 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c18 *[fill-rule],
-.c18 *[FILL-RULE],
-.c18 *[fill*="#"],
-.c18 *[FILL*="#"] {
+.c19 *[fill-rule],
+.c19 *[FILL-RULE],
+.c19 *[fill*="#"],
+.c19 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
 }
@@ -603,7 +614,23 @@ exports[`Video controls renders 1`] = `
   padding-right: 12px;
 }
 
-.c17 {
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 12px;
+}
+
+.c18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -668,7 +695,6 @@ exports[`Video controls renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
-  padding: 12px;
 }
 
 .c11 {
@@ -719,7 +745,7 @@ exports[`Video controls renders 1`] = `
   opacity: 1;
 }
 
-.c16 {
+.c17 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
   flex: 0 0;
@@ -920,14 +946,10 @@ exports[`Video controls renders 1`] = `
           <button
             aria-label="Open Menu"
             className="c15"
-            direction="row"
             disabled={false}
             href={undefined}
-            icon={
-              <Actions
-                color="light-1"
-              />
-            }
+            icon={undefined}
+            id={undefined}
             label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
@@ -937,9 +959,9 @@ exports[`Video controls renders 1`] = `
             tabIndex="0"
             type="button"
           >
-            <span
-              aria-hidden={true}
-              className="c6"
+            <div
+              className="c16"
+              direction="row"
             >
               <svg
                 aria-label="Actions"
@@ -958,7 +980,7 @@ exports[`Video controls renders 1`] = `
                   strokeWidth="2"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </div>
@@ -999,10 +1021,10 @@ exports[`Video controls renders 1`] = `
       <track />
     </video>
     <div
-      className="c16"
+      className="c17"
     >
       <div
-        className="c17"
+        className="c18"
         direction="row"
       >
         <button
@@ -1030,7 +1052,7 @@ exports[`Video controls renders 1`] = `
           >
             <svg
               aria-label="Play"
-              className="c18"
+              className="c19"
               color={undefined}
               height="24px"
               role="img"
@@ -1111,14 +1133,10 @@ exports[`Video controls renders 1`] = `
           <button
             aria-label="Open Menu"
             className="c15"
-            direction="row"
             disabled={false}
             href={undefined}
-            icon={
-              <Actions
-                color={undefined}
-              />
-            }
+            icon={undefined}
+            id={undefined}
             label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
@@ -1128,13 +1146,13 @@ exports[`Video controls renders 1`] = `
             tabIndex="0"
             type="button"
           >
-            <span
-              aria-hidden={true}
-              className="c6"
+            <div
+              className="c16"
+              direction="row"
             >
               <svg
                 aria-label="Actions"
-                className="c18"
+                className="c19"
                 color={undefined}
                 height="24px"
                 role="img"
@@ -1149,7 +1167,7 @@ exports[`Video controls renders 1`] = `
                   strokeWidth="2"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </div>
@@ -1276,6 +1294,22 @@ exports[`Video fit renders 1`] = `
   padding-right: 12px;
 }
 
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 12px;
+}
+
 .c6 {
   display: inline-block;
 }
@@ -1322,7 +1356,6 @@ exports[`Video fit renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
-  padding: 12px;
 }
 
 .c11 {
@@ -1389,7 +1422,7 @@ exports[`Video fit renders 1`] = `
   background: rgba(0,0,0,0.7);
 }
 
-.c16 {
+.c17 {
   max-width: 100%;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
@@ -1398,7 +1431,7 @@ exports[`Video fit renders 1`] = `
   object-position: 50% 100%;
 }
 
-.c16::cue {
+.c17::cue {
   background: rgba(0,0,0,0.7);
 }
 
@@ -1581,14 +1614,10 @@ exports[`Video fit renders 1`] = `
           <button
             aria-label="Open Menu"
             className="c15"
-            direction="row"
             disabled={false}
             href={undefined}
-            icon={
-              <Actions
-                color="light-1"
-              />
-            }
+            icon={undefined}
+            id={undefined}
             label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
@@ -1598,9 +1627,9 @@ exports[`Video fit renders 1`] = `
             tabIndex="0"
             type="button"
           >
-            <span
-              aria-hidden={true}
-              className="c6"
+            <div
+              className="c16"
+              direction="row"
             >
               <svg
                 aria-label="Actions"
@@ -1619,7 +1648,7 @@ exports[`Video fit renders 1`] = `
                   strokeWidth="2"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </div>
@@ -1633,7 +1662,7 @@ exports[`Video fit renders 1`] = `
   >
     <video
       autoPlay={false}
-      className="c16"
+      className="c17"
       loop={false}
       onAbort={[Function]}
       onCanPlay={[Function]}
@@ -1775,14 +1804,10 @@ exports[`Video fit renders 1`] = `
           <button
             aria-label="Open Menu"
             className="c15"
-            direction="row"
             disabled={false}
             href={undefined}
-            icon={
-              <Actions
-                color="light-1"
-              />
-            }
+            icon={undefined}
+            id={undefined}
             label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
@@ -1792,9 +1817,9 @@ exports[`Video fit renders 1`] = `
             tabIndex="0"
             type="button"
           >
-            <span
-              aria-hidden={true}
-              className="c6"
+            <div
+              className="c16"
+              direction="row"
             >
               <svg
                 aria-label="Actions"
@@ -1813,7 +1838,7 @@ exports[`Video fit renders 1`] = `
                   strokeWidth="2"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </div>
@@ -1940,6 +1965,22 @@ exports[`Video loop renders 1`] = `
   padding-right: 12px;
 }
 
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 12px;
+}
+
 .c6 {
   display: inline-block;
 }
@@ -1986,7 +2027,6 @@ exports[`Video loop renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
-  padding: 12px;
 }
 
 .c11 {
@@ -2228,14 +2268,10 @@ exports[`Video loop renders 1`] = `
           <button
             aria-label="Open Menu"
             className="c15"
-            direction="row"
             disabled={false}
             href={undefined}
-            icon={
-              <Actions
-                color="light-1"
-              />
-            }
+            icon={undefined}
+            id={undefined}
             label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
@@ -2245,9 +2281,9 @@ exports[`Video loop renders 1`] = `
             tabIndex="0"
             type="button"
           >
-            <span
-              aria-hidden={true}
-              className="c6"
+            <div
+              className="c16"
+              direction="row"
             >
               <svg
                 aria-label="Actions"
@@ -2266,7 +2302,7 @@ exports[`Video loop renders 1`] = `
                   strokeWidth="2"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </div>
@@ -2393,6 +2429,22 @@ exports[`Video mute renders 1`] = `
   padding-right: 12px;
 }
 
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 12px;
+}
+
 .c6 {
   display: inline-block;
 }
@@ -2439,7 +2491,6 @@ exports[`Video mute renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
-  padding: 12px;
 }
 
 .c11 {
@@ -2681,14 +2732,10 @@ exports[`Video mute renders 1`] = `
           <button
             aria-label="Open Menu"
             className="c15"
-            direction="row"
             disabled={false}
             href={undefined}
-            icon={
-              <Actions
-                color="light-1"
-              />
-            }
+            icon={undefined}
+            id={undefined}
             label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
@@ -2698,9 +2745,9 @@ exports[`Video mute renders 1`] = `
             tabIndex="0"
             type="button"
           >
-            <span
-              aria-hidden={true}
-              className="c6"
+            <div
+              className="c16"
+              direction="row"
             >
               <svg
                 aria-label="Actions"
@@ -2719,7 +2766,7 @@ exports[`Video mute renders 1`] = `
                   strokeWidth="2"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </div>
@@ -2846,6 +2893,22 @@ exports[`Video renders 1`] = `
   padding-right: 12px;
 }
 
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 12px;
+}
+
 .c6 {
   display: inline-block;
 }
@@ -2892,7 +2955,6 @@ exports[`Video renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
-  padding: 12px;
 }
 
 .c11 {
@@ -3134,14 +3196,10 @@ exports[`Video renders 1`] = `
           <button
             aria-label="Open Menu"
             className="c15"
-            direction="row"
             disabled={false}
             href={undefined}
-            icon={
-              <Actions
-                color="light-1"
-              />
-            }
+            icon={undefined}
+            id={undefined}
             label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
@@ -3151,9 +3209,9 @@ exports[`Video renders 1`] = `
             tabIndex="0"
             type="button"
           >
-            <span
-              aria-hidden={true}
-              className="c6"
+            <div
+              className="c16"
+              direction="row"
             >
               <svg
                 aria-label="Actions"
@@ -3172,7 +3230,7 @@ exports[`Video renders 1`] = `
                   strokeWidth="2"
                 />
               </svg>
-            </span>
+            </div>
           </button>
         </div>
       </div>

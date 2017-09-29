@@ -52,17 +52,6 @@ export const StyledTextInputContainer = styled.div`
   ${props => props.plain && 'width: 100%'}
 `;
 
-const selectedStyle = css`
-  background-color: ${
-    props => props.theme.global.selected.backgroundColor
-  };
-  color: ${props => props.theme.global.selected.textColor};
-`;
-
-export const StyledSuggestion = styled.div`
-  ${props => props.selected && selectedStyle}
-`;
-
 export const StyledSuggestions = styled.ol`
   border-top-left-radius: 0;
   border-top-right-radius: 0;

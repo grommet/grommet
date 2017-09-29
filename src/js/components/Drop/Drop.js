@@ -26,8 +26,10 @@ class Drop extends Component {
   }
 
   componentWillUnmount() {
-    unmountComponentAtNode(this.dropContainer);
-    document.body.removeChild(this.dropContainer);
+    if (this.dropContainer) {
+      unmountComponentAtNode(this.dropContainer);
+      document.body.removeChild(this.dropContainer);
+    }
   }
 
   renderDrop() {

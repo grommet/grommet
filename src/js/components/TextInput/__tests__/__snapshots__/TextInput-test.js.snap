@@ -85,12 +85,8 @@ exports[`TextInput calls onInput when input changes 1`] = `
       defaultValue={undefined}
       id="item"
       name="item"
-      onBlur={[Function]}
-      onFocus={[Function]}
       onInput={[Function]}
       onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
       value={undefined}
     />
   </div>
@@ -182,12 +178,8 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
       defaultValue={undefined}
       id="item"
       name="item"
-      onBlur={[Function]}
-      onFocus={[Function]}
       onInput={[Function]}
       onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
       value={undefined}
     />
   </div>
@@ -279,12 +271,8 @@ exports[`TextInput renders 1`] = `
       defaultValue={undefined}
       id="item"
       name="item"
-      onBlur={[Function]}
-      onFocus={[Function]}
       onInput={[Function]}
       onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
       value={undefined}
     />
   </div>
@@ -376,12 +364,8 @@ exports[`TextInput renders with complex suggestions 1`] = `
       defaultValue={undefined}
       id="item"
       name="item"
-      onBlur={[Function]}
-      onFocus={[Function]}
       onInput={[Function]}
       onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
       value={undefined}
     />
   </div>
@@ -473,12 +457,8 @@ exports[`TextInput renders with suggestions 1`] = `
       defaultValue={undefined}
       id="item"
       name="item"
-      onBlur={[Function]}
-      onFocus={[Function]}
       onInput={[Function]}
       onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
       value={undefined}
     />
   </div>
@@ -570,12 +550,8 @@ exports[`TextInput show suggestions on input change 1`] = `
       defaultValue={undefined}
       id="item"
       name="item"
-      onBlur={[Function]}
-      onFocus={[Function]}
       onInput={[Function]}
       onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
       value={undefined}
     />
   </div>
@@ -667,12 +643,8 @@ exports[`TextInput show suggestions on input change 2`] = `
       defaultValue={undefined}
       id="item"
       name="item"
-      onBlur={[Function]}
-      onFocus={[Function]}
       onInput={[Function]}
       onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
       value={undefined}
     />
     <span

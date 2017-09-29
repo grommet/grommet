@@ -84,8 +84,8 @@ class Chart extends Component {
     type: 'bar',
   };
 
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
     this.state = { bounds: normalizeBounds(props) };
   }
 

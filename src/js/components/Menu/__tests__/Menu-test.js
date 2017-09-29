@@ -56,9 +56,10 @@ test('Menu opens and closes on click', () => {
   const component = mount(
     <Grommet>
       <Menu
+        id='test'
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1' },
+          { label: 'Item 1' },
           { label: 'Item 2' },
         ]}
       />
@@ -67,15 +68,15 @@ test('Menu opens and closes on click', () => {
     }
   );
 
-  expect(document.getElementById('item-1')).toBeNull();
+  expect(document.getElementById('menu-drop__test')).toBeNull();
 
   component.find('button').simulate('click');
 
-  expect(document.getElementById('item-1').parentNode).toMatchSnapshot();
+  expect(document.getElementById('menu-drop__test')).toMatchSnapshot();
 
   component.find('button').simulate('click');
 
-  expect(document.getElementById('item-1')).toBeNull();
+  expect(document.getElementById('menu-drop__test')).toBeNull();
 });
 
 test('Menu opens and closes on click', () => {
@@ -85,9 +86,10 @@ test('Menu opens and closes on click', () => {
   const component = mount(
     <Grommet>
       <Menu
+        id='test'
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1' },
+          { label: 'Item 1' },
           { label: 'Item 2' },
         ]}
       />
@@ -96,15 +98,15 @@ test('Menu opens and closes on click', () => {
     }
   );
 
-  expect(document.getElementById('item-1')).toBeNull();
+  expect(document.getElementById('menu-drop__test')).toBeNull();
 
   component.find('button').simulate('click');
 
-  expect(document.getElementById('item-1').parentNode).toMatchSnapshot();
+  expect(document.getElementById('menu-drop__test')).toMatchSnapshot();
 
   component.find('button').simulate('click');
 
-  expect(document.getElementById('item-1')).toBeNull();
+  expect(document.getElementById('menu-drop__test')).toBeNull();
 });
 
 test('Menu closes by clicking outside', () => {
@@ -116,7 +118,7 @@ test('Menu closes by clicking outside', () => {
       <Menu
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1' },
+          { label: 'Item 1' },
           { label: 'Item 2' },
         ]}
       />
@@ -129,7 +131,7 @@ test('Menu closes by clicking outside', () => {
 
   global.document.dispatchEvent(new Event('click'));
 
-  expect(document.getElementById('item-1')).toBeNull();
+  expect(document.getElementById('menu-drop__test')).toBeNull();
 });
 
 test('Menu closes by clicking in the button', () => {
@@ -139,9 +141,10 @@ test('Menu closes by clicking in the button', () => {
   const component = mount(
     <Grommet>
       <Menu
+        id='test'
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1' },
+          { label: 'Item 1' },
           { label: 'Item 2' },
         ]}
       />
@@ -152,9 +155,9 @@ test('Menu closes by clicking in the button', () => {
 
   component.find('button').simulate('click');
 
-  document.getElementById('item-1').parentNode.querySelector('button').click();
+  document.getElementById('menu-drop__test').querySelector('button').click();
 
-  expect(document.getElementById('item-1')).toBeNull();
+  expect(document.getElementById('menu-drop__test')).toBeNull();
 });
 
 test('Menu selects an item', () => {
@@ -165,9 +168,10 @@ test('Menu selects an item', () => {
   const component = mount(
     <Grommet>
       <Menu
+        id='test'
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1', onClick },
+          { label: 'Item 1', onClick },
           { label: 'Item 2' },
         ]}
       />
@@ -176,12 +180,14 @@ test('Menu selects an item', () => {
     }
   );
 
+  // click to open the drop
   component.find('button').simulate('click');
 
-  document.getElementById('item-1').click();
+  // click in the first menu item
+  document.getElementById('menu-drop__test').querySelectorAll('button')[1].click();
 
   expect(onClick).toBeCalled();
-  expect(document.getElementById('item-1')).toBeNull();
+  expect(document.getElementById('menu-drop__test')).toBeNull();
 });
 
 test('Menu navigates through next and previous suggestions and selects first', () => {
@@ -192,9 +198,10 @@ test('Menu navigates through next and previous suggestions and selects first', (
   const component = mount(
     <Grommet>
       <Menu
+        id='test'
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1', onClick },
+          { label: 'Item 1', onClick },
           { label: 'Item 2' },
         ]}
       />
@@ -216,7 +223,7 @@ test('Menu navigates through next and previous suggestions and selects first', (
   component.find('button').simulate('keyDown', { key: 'Enter', keyCode: 13, which: 13 });
 
   expect(onClick).toBeCalled();
-  expect(document.getElementById('item-1')).toBeNull();
+  expect(document.getElementById('menu-drop__test')).toBeNull();
 });
 
 test('Menu closes on enter', () => {
@@ -226,9 +233,10 @@ test('Menu closes on enter', () => {
   const component = mount(
     <Grommet>
       <Menu
+        id='test'
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1' },
+          { label: 'Item 1' },
           { label: 'Item 2' },
         ]}
       />
@@ -239,7 +247,7 @@ test('Menu closes on enter', () => {
 
   component.find('button').simulate('keyDown', { key: 'Enter', keyCode: 13, which: 13 });
 
-  expect(document.getElementById('item-1')).toBeNull();
+  expect(document.getElementById('menu-drop__test')).toBeNull();
 });
 
 test('Menu closes on esc', () => {
@@ -249,9 +257,10 @@ test('Menu closes on esc', () => {
   const component = mount(
     <Grommet>
       <Menu
+        id='test'
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1' },
+          { label: 'Item 1' },
           { label: 'Item 2' },
         ]}
       />
@@ -263,7 +272,7 @@ test('Menu closes on esc', () => {
   component.find('button').simulate('keyDown', { key: 'Down', keyCode: 40, which: 40 });
   component.find('button').simulate('keyDown', { key: 'Esc', keyCode: 27, which: 27 });
 
-  expect(document.getElementById('item-1')).toBeNull();
+  expect(document.getElementById('menu-drop__test')).toBeNull();
 });
 
 test('Menu closes on tab', () => {
@@ -273,9 +282,10 @@ test('Menu closes on tab', () => {
   const component = mount(
     <Grommet>
       <Menu
+        id='test'
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1' },
+          { label: 'Item 1' },
           { label: 'Item 2' },
         ]}
       />
@@ -287,7 +297,7 @@ test('Menu closes on tab', () => {
   component.find('button').simulate('keyDown', { key: 'Down', keyCode: 40, which: 40 });
   component.find('button').simulate('keyDown', { key: 'Tab', keyCode: 9, which: 9 });
 
-  expect(document.getElementById('item-1')).toBeNull();
+  expect(document.getElementById('menu-drop__test')).toBeNull();
 });
 
 test('Menu with dropAlign renders', () => {
@@ -297,10 +307,11 @@ test('Menu with dropAlign renders', () => {
   const component = mount(
     <Grommet>
       <Menu
+        id='menu'
         dropAlign={{ top: 'top', right: 'right' }}
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1' },
+          { label: 'Item 1' },
           { label: 'Item 2' },
         ]}
       />
@@ -311,5 +322,5 @@ test('Menu with dropAlign renders', () => {
 
   component.find('button').simulate('keyDown', { key: 'Down', keyCode: 40, which: 40 });
 
-  expect(document.getElementById('item-1').parentNode).toMatchSnapshot();
+  expect(document.getElementById('menu')).toMatchSnapshot();
 });
