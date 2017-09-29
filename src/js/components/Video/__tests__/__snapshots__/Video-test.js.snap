@@ -23,16 +23,13 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-fill: #666666;
   fill: #666666;
   stroke: #666666;
-  -webkit-fill: #F6F6F6;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
 
 .c7 g {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: inherit;
 }
@@ -44,13 +41,13 @@ exports[`Video autoPlay renders 1`] = `
 .c7 *[stroke*="#"],
 .c7 *[STROKE*="#"] {
   stroke: inherit;
-  -webkit-fill: none;
   fill: none;
 }
 
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
 .c7 *[fill*="#"],
 .c7 *[FILL*="#"] {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: none;
 }
@@ -495,16 +492,13 @@ exports[`Video controls renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-fill: #666666;
   fill: #666666;
   stroke: #666666;
-  -webkit-fill: #F6F6F6;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
 
 .c7 g {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: inherit;
 }
@@ -516,13 +510,13 @@ exports[`Video controls renders 1`] = `
 .c7 *[stroke*="#"],
 .c7 *[STROKE*="#"] {
   stroke: inherit;
-  -webkit-fill: none;
   fill: none;
 }
 
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
 .c7 *[fill*="#"],
 .c7 *[FILL*="#"] {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: none;
 }
@@ -532,13 +526,11 @@ exports[`Video controls renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-fill: #666666;
   fill: #666666;
   stroke: #666666;
 }
 
 .c19 g {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: inherit;
 }
@@ -550,13 +542,13 @@ exports[`Video controls renders 1`] = `
 .c19 *[stroke*="#"],
 .c19 *[STROKE*="#"] {
   stroke: inherit;
-  -webkit-fill: none;
   fill: none;
 }
 
+.c19 *[fill-rule],
+.c19 *[FILL-RULE],
 .c19 *[fill*="#"],
 .c19 *[FILL*="#"] {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: none;
 }
@@ -1221,16 +1213,13 @@ exports[`Video fit renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-fill: #666666;
   fill: #666666;
   stroke: #666666;
-  -webkit-fill: #F6F6F6;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
 
 .c7 g {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: inherit;
 }
@@ -1242,13 +1231,13 @@ exports[`Video fit renders 1`] = `
 .c7 *[stroke*="#"],
 .c7 *[STROKE*="#"] {
   stroke: inherit;
-  -webkit-fill: none;
   fill: none;
 }
 
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
 .c7 *[fill*="#"],
 .c7 *[FILL*="#"] {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: none;
 }
@@ -1904,16 +1893,13 @@ exports[`Video loop renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-fill: #666666;
   fill: #666666;
   stroke: #666666;
-  -webkit-fill: #F6F6F6;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
 
 .c7 g {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: inherit;
 }
@@ -1925,13 +1911,13 @@ exports[`Video loop renders 1`] = `
 .c7 *[stroke*="#"],
 .c7 *[STROKE*="#"] {
   stroke: inherit;
-  -webkit-fill: none;
   fill: none;
 }
 
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
 .c7 *[fill*="#"],
 .c7 *[FILL*="#"] {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: none;
 }
@@ -2376,16 +2362,13 @@ exports[`Video mute renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-fill: #666666;
   fill: #666666;
   stroke: #666666;
-  -webkit-fill: #F6F6F6;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
 
 .c7 g {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: inherit;
 }
@@ -2397,13 +2380,13 @@ exports[`Video mute renders 1`] = `
 .c7 *[stroke*="#"],
 .c7 *[STROKE*="#"] {
   stroke: inherit;
-  -webkit-fill: none;
   fill: none;
 }
 
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
 .c7 *[fill*="#"],
 .c7 *[FILL*="#"] {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: none;
 }
@@ -2848,16 +2831,13 @@ exports[`Video renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-fill: #666666;
   fill: #666666;
   stroke: #666666;
-  -webkit-fill: #F6F6F6;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
 
 .c7 g {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: inherit;
 }
@@ -2869,13 +2849,13 @@ exports[`Video renders 1`] = `
 .c7 *[stroke*="#"],
 .c7 *[STROKE*="#"] {
   stroke: inherit;
-  -webkit-fill: none;
   fill: none;
 }
 
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
 .c7 *[fill*="#"],
 .c7 *[FILL*="#"] {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: none;
 }

@@ -300,7 +300,7 @@ exports[`Box alignSelf renders 1`] = `
   display: flex;
   max-width: 100%;
   -webkit-align-self: flex-start;
-  -ms-flex-item-align: flex-start;
+  -ms-flex-item-align: start;
   align-self: flex-start;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -342,7 +342,7 @@ exports[`Box alignSelf renders 1`] = `
   display: flex;
   max-width: 100%;
   -webkit-align-self: flex-end;
-  -ms-flex-item-align: flex-end;
+  -ms-flex-item-align: end;
   align-self: flex-end;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;

@@ -2,14 +2,12 @@
 
 exports[`Menu opens and closes on click 1`] = `
 <div
-  data-reactroot=""
   class="StyledDrop-czaYBK fmcQnR"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <button
     class="StyledButton-gNoZSk ezbGuW StyledBox-hownzw jCRdTF"
     tabindex="0"
-    fill="true"
     direction="row"
     aria-label="Close Menu"
     icon="[object Object]"
@@ -26,7 +24,7 @@ exports[`Menu opens and closes on click 1`] = `
       aria-hidden="true"
     >
       <svg
-        class="StyledIcon-hcpUvT frwTfF"
+        class="StyledIcon-hcpUvT hodvOW"
         width="24px"
         height="24px"
         viewBox="0 0 24 24"
@@ -46,7 +44,6 @@ exports[`Menu opens and closes on click 1`] = `
   <button
     class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
     tabindex="0"
-    fill="true"
     id="item-1"
     disabled=""
     label="Item 1"
@@ -62,7 +59,6 @@ exports[`Menu opens and closes on click 1`] = `
   <button
     class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
     tabindex="0"
-    fill="true"
     disabled=""
     label="Item 2"
     type="button"
@@ -79,14 +75,12 @@ exports[`Menu opens and closes on click 1`] = `
 
 exports[`Menu opens and closes on click 2`] = `
 <div
-  data-reactroot=""
   class="StyledDrop-czaYBK fmcQnR"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <button
     class="StyledButton-gNoZSk ezbGuW StyledBox-hownzw jCRdTF"
     tabindex="0"
-    fill="true"
     direction="row"
     aria-label="Close Menu"
     icon="[object Object]"
@@ -103,7 +97,7 @@ exports[`Menu opens and closes on click 2`] = `
       aria-hidden="true"
     >
       <svg
-        class="StyledIcon-hcpUvT frwTfF"
+        class="StyledIcon-hcpUvT hodvOW"
         width="24px"
         height="24px"
         viewBox="0 0 24 24"
@@ -123,7 +117,6 @@ exports[`Menu opens and closes on click 2`] = `
   <button
     class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
     tabindex="0"
-    fill="true"
     id="item-1"
     disabled=""
     label="Item 1"
@@ -139,7 +132,6 @@ exports[`Menu opens and closes on click 2`] = `
   <button
     class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
     tabindex="0"
-    fill="true"
     disabled=""
     label="Item 2"
     type="button"
@@ -177,13 +169,11 @@ exports[`Menu renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-fill: #666666;
   fill: #666666;
   stroke: #666666;
 }
 
 .c4 g {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: inherit;
 }
@@ -195,13 +185,13 @@ exports[`Menu renders 1`] = `
 .c4 *[stroke*="#"],
 .c4 *[STROKE*="#"] {
   stroke: inherit;
-  -webkit-fill: none;
   fill: none;
 }
 
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
 .c4 *[fill*="#"],
 .c4 *[FILL*="#"] {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: none;
 }
@@ -340,13 +330,11 @@ exports[`Menu with custom message renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-fill: #666666;
   fill: #666666;
   stroke: #666666;
 }
 
 .c5 g {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: inherit;
 }
@@ -358,13 +346,13 @@ exports[`Menu with custom message renders 1`] = `
 .c5 *[stroke*="#"],
 .c5 *[STROKE*="#"] {
   stroke: inherit;
-  -webkit-fill: none;
   fill: none;
 }
 
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
 .c5 *[fill*="#"],
 .c5 *[FILL*="#"] {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: none;
 }
@@ -490,14 +478,12 @@ exports[`Menu with custom message renders 1`] = `
 
 exports[`Menu with dropAlign renders 1`] = `
 <div
-  data-reactroot=""
   class="StyledDrop-czaYBK fmcQnR"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <button
     class="StyledButton-gNoZSk ezbGuW StyledBox-hownzw Ejmqd"
     tabindex="0"
-    fill="true"
     direction="row"
     aria-label="Close Menu"
     icon="[object Object]"
@@ -514,7 +500,7 @@ exports[`Menu with dropAlign renders 1`] = `
       aria-hidden="true"
     >
       <svg
-        class="StyledIcon-hcpUvT frwTfF"
+        class="StyledIcon-hcpUvT hodvOW"
         width="24px"
         height="24px"
         viewBox="0 0 24 24"
@@ -534,7 +520,6 @@ exports[`Menu with dropAlign renders 1`] = `
   <button
     class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
     tabindex="0"
-    fill="true"
     id="item-1"
     disabled=""
     label="Item 1"
@@ -550,7 +535,6 @@ exports[`Menu with dropAlign renders 1`] = `
   <button
     class="StyledButton-gNoZSk hFRORV StyledBox-hownzw fMNBag"
     tabindex="0"
-    fill="true"
     disabled=""
     label="Item 2"
     type="button"
@@ -710,13 +694,11 @@ exports[`Menu with label renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-fill: #666666;
   fill: #666666;
   stroke: #666666;
 }
 
 .c5 g {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: inherit;
 }
@@ -728,13 +710,13 @@ exports[`Menu with label renders 1`] = `
 .c5 *[stroke*="#"],
 .c5 *[STROKE*="#"] {
   stroke: inherit;
-  -webkit-fill: none;
   fill: none;
 }
 
+.c5 *[fill-rule],
+.c5 *[FILL-RULE],
 .c5 *[fill*="#"],
 .c5 *[FILL*="#"] {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: none;
 }

@@ -31,19 +31,24 @@ class Menu extends Component {
 
   buttonRefs = {}
 
-  onDropClose() {
+  onDropClose = () => {
     this.setState({
       activeItemIndex: -1,
       showDrop: false,
     });
   }
 
-  onSelectMenuItem() {
+  onSelectMenuItem = (event) => {
     const { activeItemIndex } = this.state;
-    findDOMNode(this.buttonRefs[activeItemIndex]).click();
+    if (activeItemIndex >= 0) {
+      event.preventDefault();
+      event.stopPropagation();
+      findDOMNode(this.buttonRefs[activeItemIndex]).click();
+    }
   }
 
-  onNextMenuItem() {
+  onNextMenuItem = (event) => {
+    event.preventDefault();
     const { showDrop, activeItemIndex } = this.state;
     if (!showDrop) {
       this.setState({
@@ -59,7 +64,8 @@ class Menu extends Component {
     }
   }
 
-  onPreviousMenuItem() {
+  onPreviousMenuItem = (event) => {
+    event.preventDefault();
     const { showDrop, activeItemIndex } = this.state;
     if (!showDrop) {
       this.setState({
@@ -103,7 +109,7 @@ class Menu extends Component {
         label={label}
         direction='row'
         pad='small'
-        onClick={() => this.onDropClose()}
+        onClick={this.onDropClose}
       />
     );
 
@@ -118,7 +124,7 @@ class Menu extends Component {
           }}
           context={{ ...this.context }}
           control={this.componentRef}
-          onClose={() => this.onDropClose()}
+          onClose={this.onDropClose}
         >
           {dropAlign.top === 'top' ? controlMirror : undefined}
           {items.map(
@@ -149,28 +155,14 @@ class Menu extends Component {
       );
     }
 
-    const clickHandler = (event) => {
-      if (activeItemIndex >= 0) {
-        event.preventDefault();
-        event.stopPropagation();
-        this.onSelectMenuItem();
-      }
-    };
-
     return (
       <Keyboard
-        onEnter={clickHandler}
-        onSpace={clickHandler}
-        onDown={(event) => {
-          event.preventDefault();
-          this.onNextMenuItem();
-        }}
-        onUp={(event) => {
-          event.preventDefault();
-          this.onPreviousMenuItem();
-        }}
-        onEsc={() => this.onDropClose()}
-        onTab={() => this.onDropClose()}
+        onEnter={this.onSelectMenuItem}
+        onSpace={this.onSelectMenuItem}
+        onDown={this.onNextMenuItem}
+        onUp={this.onPreviousMenuItem}
+        onEsc={this.onDropClose}
+        onTab={this.onDropClose}
         onKeyDown={onKeyDown}
       >
         <div>

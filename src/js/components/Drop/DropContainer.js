@@ -23,13 +23,6 @@ class DropContainer extends Component {
     theme: undefined,
   }
 
-  constructor() {
-    super();
-    this.place = this.place.bind(this);
-    this.onResize = this.onResize.bind(this);
-    this.onRemoveDrop = this.onRemoveDrop.bind(this);
-  }
-
   getChildContext() {
     const { theme } = this.props;
     const { theme: contextTheme } = this.context;
@@ -54,19 +47,19 @@ class DropContainer extends Component {
     document.removeEventListener('click', this.onRemoveDrop);
   }
 
-  addScrollListener() {
+  addScrollListener = () => {
     const { control } = this.props;
     this.scrollParents = findScrollParents(control);
     this.scrollParents.forEach(scrollParent => scrollParent.addEventListener('scroll', this.place));
   }
 
-  removeScrollListener() {
+  removeScrollListener = () => {
     this.scrollParents.forEach(
       scrollParent => scrollParent.removeEventListener('scroll', this.place)
     );
   }
 
-  onRemoveDrop(event) {
+  onRemoveDrop = (event) => {
     const { onClose } = this.props;
     if (!findDOMNode(this.componentRef).contains(event.target)) {
       if (onClose) {
@@ -75,13 +68,13 @@ class DropContainer extends Component {
     }
   }
 
-  onResize() {
+  onResize = () => {
     this.removeScrollListener();
     this.addScrollListener();
     this.place();
   }
 
-  place() {
+  place = () => {
     const { align, responsive } = this.props;
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
