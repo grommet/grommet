@@ -5,6 +5,11 @@ export default Text => schema(Text, {
   usage: `import { Text } from 'grommet';
   <Text/>`,
   props: {
+    color: [
+      PropTypes.string,
+      `A color identifier to use for the text color. For example:
+      'status-critical'.`,
+    ],
     margin: [
       PropTypes.oneOfType([
         PropTypes.oneOf(['none', 'small', 'medium', 'large']),
