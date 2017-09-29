@@ -217,10 +217,10 @@ exports[`Anchor icon label renders 1`] = `
                 "secondary": "#DC2878",
               },
               "maxWidth": "384px",
-              "minWidth": "120px",
+              "minWidth": "96px",
               "padding": Object {
-                "horizontal": "22px",
-                "vertical": "6px",
+                "horizontal": "10px",
+                "vertical": "10px",
               },
             },
             "checkBox": Object {
@@ -693,10 +693,10 @@ exports[`Anchor primary renders 1`] = `
                 "secondary": "#DC2878",
               },
               "maxWidth": "384px",
-              "minWidth": "120px",
+              "minWidth": "96px",
               "padding": Object {
-                "horizontal": "22px",
-                "vertical": "6px",
+                "horizontal": "10px",
+                "vertical": "10px",
               },
             },
             "checkBox": Object {
@@ -1273,10 +1273,10 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "secondary": "#DC2878",
               },
               "maxWidth": "384px",
-              "minWidth": "120px",
+              "minWidth": "96px",
               "padding": Object {
-                "horizontal": "22px",
-                "vertical": "6px",
+                "horizontal": "10px",
+                "vertical": "10px",
               },
             },
             "checkBox": Object {
@@ -1701,10 +1701,10 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "secondary": "#DC2878",
               },
               "maxWidth": "384px",
-              "minWidth": "120px",
+              "minWidth": "96px",
               "padding": Object {
-                "horizontal": "22px",
-                "vertical": "6px",
+                "horizontal": "10px",
+                "vertical": "10px",
               },
             },
             "checkBox": Object {

@@ -152,11 +152,7 @@ const borderStyle = (data, theme) => {
   } else {
     style = `border: ${value};`;
   }
-  return `
-    ${style}
-
-    ${data.radius ? `border-radius: ${theme.global.borderSize[data.radius]};` : ''}
-  `;
+  return style;
 };
 
 const edgeStyle = (kind, data, theme) => {
