@@ -24,7 +24,7 @@ exports[`Text color renders 1`] = `
   color: #FF324D;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -135,7 +135,7 @@ exports[`Text margin renders 1`] = `
   margin-right: 12px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -206,7 +206,7 @@ exports[`Text renders 1`] = `
   line-height: 1.375;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -277,7 +277,7 @@ exports[`Text size renders 1`] = `
   line-height: 1.125;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -342,7 +342,7 @@ exports[`Text tag renders 1`] = `
   line-height: 1.375;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -399,7 +399,7 @@ exports[`Text textAlign renders 1`] = `
   text-align: right;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -457,7 +457,7 @@ exports[`Text truncate renders 1`] = `
   text-overflow: ellipsis;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;

@@ -18,17 +18,15 @@ export function fontSize(size, lineHeight) {
   `;
 }
 
-const lapStart = '481px';
 export function lapAndUp(content) {
-  return `
-    @media only screen and (min-width:${lapStart}) { ${content}; }
+  return css`
+    @media only screen and (min-width:${props => `${props.theme.global.breakpoints.narrow + 1}px`}) { ${content}; }
   `;
 }
 
-const palmEnd = '480px';
 export function palm(content) {
-  return `
-    @media only screen and (max-width:${palmEnd}) { ${content}; }
+  return css`
+    @media only screen and (max-width:${props => `${props.theme.global.breakpoints.narrow}px`}) { ${content}; }
   `;
 }
 

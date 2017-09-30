@@ -36,7 +36,7 @@ exports[`Layer is accessible 3`] = `
 
 exports[`Layer mounts 1`] = `
 <div
-  class="StyledGrommet-gKbdxL iriday"
+  class="StyledGrommet-gKbdxL gNdtBf"
 >
   <span
     style="display: none;"
@@ -62,7 +62,7 @@ exports[`Layer renders 1`] = `
   box-sizing: inherit;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;

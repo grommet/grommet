@@ -93,7 +93,7 @@ exports[`Box align renders 1`] = `
   flex-direction: column;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -233,7 +233,7 @@ exports[`Box alignContent renders 1`] = `
   flex-direction: column;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -349,7 +349,7 @@ exports[`Box alignSelf renders 1`] = `
   flex-direction: column;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -520,7 +520,7 @@ exports[`Box background renders 1`] = `
   flex-direction: column;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -768,7 +768,7 @@ exports[`Box basis renders 1`] = `
   flex-basis: 75%;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -975,7 +975,7 @@ exports[`Box border renders 1`] = `
   flex-direction: column;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1065,7 +1065,7 @@ exports[`Box direction renders 1`] = `
   flex-direction: row;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1176,7 +1176,7 @@ exports[`Box flex renders 1`] = `
   flex: 0 1;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1301,7 +1301,7 @@ exports[`Box full renders 1`] = `
   min-height: 100vh;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1374,7 +1374,7 @@ exports[`Box gridArea renders 1`] = `
   grid-area: header;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1474,7 +1474,7 @@ exports[`Box justify renders 1`] = `
   justify-content: flex-end;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1537,7 +1537,7 @@ exports[`Box justifySelf renders 1`] = `
   flex-direction: column;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1699,7 +1699,7 @@ exports[`Box margin renders 1`] = `
   margin-top: 12px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1881,7 +1881,7 @@ exports[`Box pad renders 1`] = `
   padding-top: 12px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1964,7 +1964,7 @@ exports[`Box renders 1`] = `
   flex-direction: column;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -2026,7 +2026,7 @@ exports[`Box reverse renders 1`] = `
   flex-direction: column-reverse;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -2130,7 +2130,7 @@ exports[`Box round renders 1`] = `
   border-radius: 100%;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -2197,7 +2197,7 @@ exports[`Box tag renders 1`] = `
   flex-direction: column;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -2273,7 +2273,7 @@ exports[`Box textAlign renders 1`] = `
   text-align: right;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -2346,7 +2346,7 @@ exports[`Box wrap renders 1`] = `
   flex-wrap: wrap;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;

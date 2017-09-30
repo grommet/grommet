@@ -22,7 +22,7 @@ exports[`Chart cap renders 1`] = `
   max-width: 100%;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -137,7 +137,7 @@ exports[`Chart renders 1`] = `
   max-width: 100%;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -220,7 +220,7 @@ exports[`Chart size renders 1`] = `
   max-width: 100%;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -395,7 +395,7 @@ exports[`Chart thickness renders 1`] = `
   max-width: 100%;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -570,7 +570,7 @@ exports[`Chart type renders 1`] = `
   max-width: 100%;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;

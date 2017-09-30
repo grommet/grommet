@@ -33,6 +33,9 @@ export default {
       large: `${baseSpacing / 4}px`,
       xlarge: `${baseSpacing}px`,
     },
+    breakpoints: {
+      narrow: 699,
+    },
     centerColumnWidth: `${baseSpacing * 48}px`,
     colors: {
       accent: accentColors,

@@ -27,7 +27,7 @@ exports[`Meter background renders 1`] = `
   transition: all 0.3s;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -170,7 +170,7 @@ exports[`Meter renders 1`] = `
   transition: all 0.3s;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -254,7 +254,7 @@ exports[`Meter round renders 1`] = `
   transition: all 0.3s;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -348,7 +348,7 @@ exports[`Meter size renders 1`] = `
   transition: all 0.3s;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -638,7 +638,7 @@ exports[`Meter thickness renders 1`] = `
   transition: all 0.3s;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -928,7 +928,7 @@ exports[`Meter type renders 1`] = `
   transition: all 0.3s;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;

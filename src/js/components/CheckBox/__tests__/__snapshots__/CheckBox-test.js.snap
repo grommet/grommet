@@ -113,7 +113,7 @@ exports[`CheckBox checked renders 1`] = `
   stroke: #865CD6;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -276,7 +276,7 @@ exports[`CheckBox disabled renders 1`] = `
   stroke: #865CD6;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -476,7 +476,7 @@ exports[`CheckBox label renders 1`] = `
   stroke: #865CD6;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -677,7 +677,7 @@ exports[`CheckBox renders 1`] = `
   stroke: #865CD6;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -872,7 +872,7 @@ exports[`CheckBox reverse renders 1`] = `
   stroke: #865CD6;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1037,7 +1037,7 @@ exports[`CheckBox toggle renders 1`] = `
   border-radius: 24px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;

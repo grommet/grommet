@@ -61,7 +61,7 @@ exports[`TextInput calls onInput when input changes 1`] = `
   outline: #00CCEB solid 2px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -154,7 +154,7 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
   outline: #00CCEB solid 2px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -247,7 +247,7 @@ exports[`TextInput renders 1`] = `
   outline: #00CCEB solid 2px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -340,7 +340,7 @@ exports[`TextInput renders with complex suggestions 1`] = `
   outline: #00CCEB solid 2px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -433,7 +433,7 @@ exports[`TextInput renders with suggestions 1`] = `
   outline: #00CCEB solid 2px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -526,7 +526,7 @@ exports[`TextInput show suggestions on input change 1`] = `
   outline: #00CCEB solid 2px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -619,7 +619,7 @@ exports[`TextInput show suggestions on input change 2`] = `
   outline: #00CCEB solid 2px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
