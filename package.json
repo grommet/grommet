@@ -36,8 +36,6 @@
     "styled-components": ">= 2.1.1"
   },
   "dependencies": {
-    "clone-deep": "^1.0.0",
-    "deep-assign": "^2.0.0",
     "grommet-icons": "^0.10.0",
     "markdown-to-jsx": "^5.4.2",
     "polished": "^1.3.0",
