@@ -3,6 +3,8 @@ import { css } from 'styled-components';
 
 import { colorForName } from '../components/utils';
 
+import { deepFreeze } from '../utils';
+
 const brandColor = '#865CD6';
 const accentColors = ['#00CCEB', '#FF7D28'];
 const neutralColors = ['#0A64A0', '#DC2878', '#501EB4', '#49516F'];
@@ -24,7 +26,7 @@ const baseSpacing = 24;
 
 const borderWidth = 2;
 
-export default {
+export default deepFreeze({
   global: {
     animation: {
       duration: '1s',
@@ -279,4 +281,4 @@ export default {
       background: rgba(0, 0, 0, 0.7),
     },
   },
-};
+});

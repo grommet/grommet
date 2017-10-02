@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { render, unmountComponentAtNode } from 'react-dom';
 
 import LayerContainer from './LayerContainer';
@@ -8,7 +9,13 @@ import doc from './doc';
 import { createContextProvider } from '../hocs';
 import { getNewContainer } from '../utils';
 
+import { deepMerge } from '../../utils';
+
 class Layer extends Component {
+  static contextTypes = {
+    grommet: PropTypes.object,
+    theme: PropTypes.object,
+  }
   static defaultProps = {
     align: 'center',
   }
@@ -38,7 +45,7 @@ class Layer extends Component {
   }
 
   renderLayer() {
-    const ContextProvider = createContextProvider(this.props.context);
+    const ContextProvider = createContextProvider(deepMerge(this.context, this.props.context));
     render(
       <ContextProvider>
         <LayerContainer {...this.props} />

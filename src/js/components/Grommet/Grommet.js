@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import deepAssign from 'deep-assign';
-import cloneDeep from 'clone-deep';
 
 import StyledGrommet from './StyledGrommet';
 
-import baseTheme from '../../themes/vanilla';
-
 import doc from './doc';
+
+import baseTheme from '../../themes/vanilla';
+import { deepMerge } from '../../utils';
 
 class Grommet extends Component {
   static childContextTypes = {
@@ -23,11 +22,9 @@ class Grommet extends Component {
   getChildContext() {
     const { theme } = this.props;
 
-    const globalTheme = cloneDeep(baseTheme);
-
     return {
       grommet: {},
-      theme: deepAssign(globalTheme, theme),
+      theme: deepMerge(baseTheme, theme),
     };
   }
 
@@ -38,9 +35,8 @@ class Grommet extends Component {
       ...rest
     } = this.props;
 
-    const globalTheme = cloneDeep(baseTheme);
     return (
-      <StyledGrommet {...rest} theme={deepAssign(globalTheme, theme)}>
+      <StyledGrommet {...rest} theme={deepMerge(baseTheme, theme)}>
         {children}
       </StyledGrommet>
     );

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import deepAssign from 'deep-assign';
+
+import { deepMerge } from '../utils';
 
 export function createContextProvider(context) {
   const childContextTypes = {};
@@ -94,7 +95,7 @@ export const withTheme = (WrappedComponent) => {
     render() {
       const { theme, ...rest } = this.props;
       const { theme: contextTheme } = this.context;
-      const localTheme = deepAssign({}, contextTheme, theme);
+      const localTheme = deepMerge(contextTheme, theme);
       return (
         <WrappedComponent theme={localTheme} {...rest} />
       );
