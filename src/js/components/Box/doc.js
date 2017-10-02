@@ -2,7 +2,9 @@ import { schema, PropTypes } from 'react-desc';
 
 const PAD_SIZES = ['xsmall', 'small', 'medium', 'large'];
 
-const ANIMATION_TYPE = PropTypes.oneOf(['fadeIn', 'fadeOut', 'slideUp', 'slideDown']);
+const ANIMATION_TYPE = PropTypes.oneOf([
+  'fadeIn', 'fadeOut', 'slideUp', 'slideDown', 'slideLeft', 'slideRight',
+  'zoomIn', 'zoomOut']);
 const ANIMATION_SHAPE = PropTypes.shape({
   type: ANIMATION_TYPE,
   delay: PropTypes.number,
