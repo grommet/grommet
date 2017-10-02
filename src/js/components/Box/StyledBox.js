@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import { backgroundStyle, colorForName, palm } from '../utils';
 
@@ -206,6 +206,97 @@ const responsiveStyle = css`
   }
 `;
 
+const INITIAL_ANIMATION_STATE = {
+  fadeIn: 'opacity: 0;',
+  fadeOut: 'opacity: 1;',
+  slideDown: 'transform: translateY(-20%);',
+  slideLeft: 'transform: translateX(20%);',
+  slideRight: 'transform: translateX(-20%);',
+  slideUp: 'transform: translateY(20%);',
+  zoomIn: 'transform: scale(0.9);',
+  zoomOut: 'transform: scale(1.1);',
+};
+
+const KEYFRAMES = {
+  fadeIn: keyframes`
+    from { ${INITIAL_ANIMATION_STATE.fadeIn} }
+    to   { opacity: 1; }
+  `,
+  fadeOut: keyframes`
+    from { ${INITIAL_ANIMATION_STATE.fadeOut} }
+    to   { opacity: 0; }
+  `,
+  slideDown: keyframes`
+    from { ${INITIAL_ANIMATION_STATE.slideDown} }
+    to   { transform: none; }
+  `,
+  slideLeft: keyframes`
+    from { ${INITIAL_ANIMATION_STATE.slideLeft} }
+    to   { transform: none; }
+  `,
+  slideRight: keyframes`
+    from { ${INITIAL_ANIMATION_STATE.slideRight} }
+    to   { transform: none; }
+  `,
+  slideUp: keyframes`
+    from { ${INITIAL_ANIMATION_STATE.slideUp} }
+    to   { transform: none; }
+  `,
+  zoomIn: keyframes`
+    from { ${INITIAL_ANIMATION_STATE.zoomIn} }
+    to   { transform: none; }
+  `,
+  zoomOut: keyframes`
+    from { ${INITIAL_ANIMATION_STATE.zoomOut} }
+    to   { transform: none; }
+  `,
+};
+
+const normalizeTiming = (time, defaultTiming) => (time ? `${time / 1000.0}s` : defaultTiming);
+
+const animationObjectStyle = (animation, theme) => {
+  if (KEYFRAMES[animation.type]) {
+    return `${KEYFRAMES[animation.type]} ${normalizeTiming(animation.duration, theme.global.animation.duration)} ${normalizeTiming(animation.delay, '0s')} forwards`;
+  }
+  return '';
+};
+
+const animationItemStyle = (item, theme) => {
+  if (typeof item === 'string') {
+    return animationObjectStyle({ type: item }, theme);
+  } else if (Array.isArray(item)) {
+    return item.map(a => animationItemStyle(a, theme)).join(', ');
+  } else if (typeof item === 'object') {
+    return animationObjectStyle(item, theme);
+  }
+  return '';
+};
+
+const animationObjectInitialStyle = (animation) => {
+  if (KEYFRAMES[animation.type]) {
+    return INITIAL_ANIMATION_STATE[animation.type];
+  }
+  return '';
+};
+
+const animationInitialStyle = (item) => {
+  if (typeof item === 'string') {
+    return animationObjectInitialStyle({ type: item });
+  } else if (Array.isArray(item)) {
+    return item.map(a => animationObjectInitialStyle(a)).join('');
+  } else if (typeof item === 'object') {
+    return animationObjectInitialStyle(item);
+  }
+  return '';
+};
+
+const animationStyle = css`
+  ${props => `
+    ${animationInitialStyle(props.animation)}
+    animation: ${animationItemStyle(props.animation, props.theme)};
+  `}
+`;
+
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
 const StyledBox = styled.div`
   display: flex;
@@ -228,6 +319,7 @@ const StyledBox = styled.div`
   ${props => props.textAlign && textAlignStyle}
   ${props => props.wrap && wrapStyle}
   ${props => props.responsive && responsiveStyle}
+  ${props => props.animation && animationStyle}
 `;
 
 export default StyledBox.extend`

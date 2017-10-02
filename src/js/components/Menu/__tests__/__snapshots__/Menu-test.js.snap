@@ -13,11 +13,11 @@ exports[`Menu opens and closes on click 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-YaZNy idHLzO"
+      class="StyledBox-YaZNy cYzsnA"
       direction="row"
     >
       <div
-        class="StyledBox-YaZNy jqVXKk"
+        class="StyledBox-YaZNy dhpjgy"
         direction="column"
       >
         Test
@@ -41,7 +41,7 @@ exports[`Menu opens and closes on click 1`] = `
     </div>
   </button>
   <div
-    class="StyledBox-YaZNy oiLrA"
+    class="StyledBox-YaZNy dwmgRK"
     direction="column"
   >
     <button
@@ -51,7 +51,7 @@ exports[`Menu opens and closes on click 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy kjIoVu"
+        class="StyledBox-YaZNy fyiSse"
         direction="row"
       >
         Item 1
@@ -64,7 +64,7 @@ exports[`Menu opens and closes on click 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy kjIoVu"
+        class="StyledBox-YaZNy fyiSse"
         direction="row"
       >
         Item 2
@@ -87,11 +87,11 @@ exports[`Menu opens and closes on click 2`] = `
     type="button"
   >
     <div
-      class="StyledBox-YaZNy idHLzO"
+      class="StyledBox-YaZNy cYzsnA"
       direction="row"
     >
       <div
-        class="StyledBox-YaZNy jqVXKk"
+        class="StyledBox-YaZNy dhpjgy"
         direction="column"
       >
         Test
@@ -115,7 +115,7 @@ exports[`Menu opens and closes on click 2`] = `
     </div>
   </button>
   <div
-    class="StyledBox-YaZNy oiLrA"
+    class="StyledBox-YaZNy dwmgRK"
     direction="column"
   >
     <button
@@ -125,7 +125,7 @@ exports[`Menu opens and closes on click 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy kjIoVu"
+        class="StyledBox-YaZNy fyiSse"
         direction="row"
       >
         Item 1
@@ -138,7 +138,7 @@ exports[`Menu opens and closes on click 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy kjIoVu"
+        class="StyledBox-YaZNy fyiSse"
         direction="row"
       >
         Item 2
@@ -471,11 +471,11 @@ exports[`Menu with dropAlign renders 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kjIoVu"
+    class="StyledBox-YaZNy fyiSse"
     direction="row"
   >
     <div
-      class="StyledBox-YaZNy jqVXKk"
+      class="StyledBox-YaZNy dhpjgy"
       direction="column"
     >
       Test

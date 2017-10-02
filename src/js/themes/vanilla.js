@@ -26,6 +26,9 @@ const borderWidth = 2;
 
 export default {
   global: {
+    animation: {
+      duration: '1s',
+    },
     borderSize: {
       xsmall: '1px',
       small: '2px',

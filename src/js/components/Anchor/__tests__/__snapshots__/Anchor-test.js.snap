@@ -243,6 +243,9 @@ exports[`Anchor icon label renders 1`] = `
               },
             },
             "global": Object {
+              "animation": Object {
+                "duration": "1s",
+              },
               "borderSize": Object {
                 "large": "6px",
                 "medium": "3px",
@@ -717,6 +720,9 @@ exports[`Anchor primary renders 1`] = `
               },
             },
             "global": Object {
+              "animation": Object {
+                "duration": "1s",
+              },
               "borderSize": Object {
                 "large": "6px",
                 "medium": "3px",
@@ -1298,6 +1304,9 @@ exports[`Anchor reverse icon label renders 1`] = `
               },
             },
             "global": Object {
+              "animation": Object {
+                "duration": "1s",
+              },
               "borderSize": Object {
                 "large": "6px",
                 "medium": "3px",
@@ -1727,6 +1736,9 @@ exports[`Anchor warns about invalid icon render 1`] = `
               },
             },
             "global": Object {
+              "animation": Object {
+                "duration": "1s",
+              },
               "borderSize": Object {
                 "large": "6px",
                 "medium": "3px",
