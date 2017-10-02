@@ -229,11 +229,6 @@ var Drop = function () {
     // prepend in body to avoid browser scroll issues
     document.body.insertBefore(container, document.body.firstChild);
 
-    (0, _reactDom.render)(_react2.default.createElement(DropContents, { content: content, context: context,
-      focusControl: focusControl }), container, function () {
-      return _this3.place();
-    });
-
     var scrollParents = (0, _DOM.findScrollParents)(control);
 
     // initialize state
@@ -241,6 +236,11 @@ var Drop = function () {
       container: container, control: control, initialFocusNeeded: focusControl, options: options,
       scrollParents: scrollParents
     };
+
+    (0, _reactDom.render)(_react2.default.createElement(DropContents, { content: content, context: context,
+      focusControl: focusControl }), container, function () {
+      return _this3.place();
+    });
 
     this._listen();
   }
