@@ -6,10 +6,10 @@ import { Grommet } from '../../Grommet';
 import { Responsive } from '../';
 
 test('Responsive renders', () => {
-  const onNarrow = jest.fn();
+  const onChange = jest.fn();
   const component = renderer.create(
     <Grommet>
-      <Responsive onNarrow={onNarrow}>
+      <Responsive onChange={onChange}>
         <span>hi</span>
       </Responsive>
     </Grommet>
