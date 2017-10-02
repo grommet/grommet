@@ -46,7 +46,7 @@ exports[`Heading level renders 1`] = `
   font-weight: 300;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -162,7 +162,7 @@ exports[`Heading margin renders 1`] = `
   margin-top: 0;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -229,7 +229,7 @@ exports[`Heading renders 1`] = `
   font-weight: 300;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -352,7 +352,7 @@ exports[`Heading size renders 1`] = `
   font-weight: 300;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -460,7 +460,7 @@ exports[`Heading textAlign renders 1`] = `
   text-align: right;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -522,7 +522,7 @@ exports[`Heading truncate renders 1`] = `
   text-overflow: ellipsis;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;

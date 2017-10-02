@@ -56,7 +56,7 @@ exports[`RoutedButton renders 1`] = `
   transition: none;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -68,7 +68,7 @@ exports[`RoutedButton renders 1`] = `
   }
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;

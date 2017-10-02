@@ -7,7 +7,7 @@ exports[`Menu opens and closes on click 1`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <button
-    class="StyledButton-qbvYY dQajlN"
+    class="StyledButton-qbvYY brNyWU"
     tabindex="0"
     aria-label="Close Menu"
     type="button"
@@ -45,7 +45,7 @@ exports[`Menu opens and closes on click 1`] = `
     direction="column"
   >
     <button
-      class="StyledButton-qbvYY kQYJBK"
+      class="StyledButton-qbvYY hBnIRQ"
       tabindex="0"
       disabled=""
       type="button"
@@ -58,7 +58,7 @@ exports[`Menu opens and closes on click 1`] = `
       </div>
     </button>
     <button
-      class="StyledButton-qbvYY kQYJBK"
+      class="StyledButton-qbvYY hBnIRQ"
       tabindex="0"
       disabled=""
       type="button"
@@ -81,7 +81,7 @@ exports[`Menu opens and closes on click 2`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <button
-    class="StyledButton-qbvYY dQajlN"
+    class="StyledButton-qbvYY brNyWU"
     tabindex="0"
     aria-label="Close Menu"
     type="button"
@@ -119,7 +119,7 @@ exports[`Menu opens and closes on click 2`] = `
     direction="column"
   >
     <button
-      class="StyledButton-qbvYY kQYJBK"
+      class="StyledButton-qbvYY hBnIRQ"
       tabindex="0"
       disabled=""
       type="button"
@@ -132,7 +132,7 @@ exports[`Menu opens and closes on click 2`] = `
       </div>
     </button>
     <button
-      class="StyledButton-qbvYY kQYJBK"
+      class="StyledButton-qbvYY hBnIRQ"
       tabindex="0"
       disabled=""
       type="button"
@@ -229,7 +229,7 @@ exports[`Menu renders 1`] = `
   padding: 0;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -241,7 +241,7 @@ exports[`Menu renders 1`] = `
   }
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -389,7 +389,7 @@ exports[`Menu with custom message renders 1`] = `
   padding: 0;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -401,7 +401,7 @@ exports[`Menu with custom message renders 1`] = `
   }
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -464,7 +464,7 @@ exports[`Menu with custom message renders 1`] = `
 
 exports[`Menu with dropAlign renders 1`] = `
 <button
-  class="StyledButton-qbvYY kBzmoW"
+  class="StyledButton-qbvYY fFFoxu"
   tabindex="0"
   id="menu"
   aria-label="Open Menu"
@@ -561,7 +561,7 @@ exports[`Menu with icon renders 1`] = `
   padding: 0;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -573,7 +573,7 @@ exports[`Menu with icon renders 1`] = `
   }
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -712,7 +712,7 @@ exports[`Menu with label renders 1`] = `
   padding: 0;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -724,7 +724,7 @@ exports[`Menu with label renders 1`] = `
   }
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;

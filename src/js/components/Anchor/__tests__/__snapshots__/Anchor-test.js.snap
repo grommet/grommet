@@ -28,7 +28,7 @@ exports[`Anchor disabled renders 1`] = `
   text-decoration: none;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -100,7 +100,7 @@ exports[`Anchor focus renders 1`] = `
   outline: #00CCEB solid 2px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -175,7 +175,7 @@ exports[`Anchor icon label renders 1`] = `
   text-decoration: underline;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -249,6 +249,9 @@ exports[`Anchor icon label renders 1`] = `
                 "small": "2px",
                 "xlarge": "24px",
                 "xsmall": "1px",
+              },
+              "breakpoints": Object {
+                "narrow": 699,
               },
               "centerColumnWidth": "1152px",
               "colors": Object {
@@ -649,7 +652,7 @@ exports[`Anchor primary renders 1`] = `
   text-decoration: underline;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -723,6 +726,9 @@ exports[`Anchor primary renders 1`] = `
                 "small": "2px",
                 "xlarge": "24px",
                 "xsmall": "1px",
+              },
+              "breakpoints": Object {
+                "narrow": 699,
               },
               "centerColumnWidth": "1152px",
               "colors": Object {
@@ -1095,7 +1101,7 @@ exports[`Anchor renders 1`] = `
   text-decoration: underline;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1155,7 +1161,7 @@ exports[`Anchor renders with children 1`] = `
   text-decoration: underline;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1230,7 +1236,7 @@ exports[`Anchor reverse icon label renders 1`] = `
   text-decoration: underline;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1304,6 +1310,9 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "small": "2px",
                 "xlarge": "24px",
                 "xsmall": "1px",
+              },
+              "breakpoints": Object {
+                "narrow": 699,
               },
               "centerColumnWidth": "1152px",
               "colors": Object {
@@ -1659,7 +1668,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
   text-decoration: underline;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1733,6 +1742,9 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "small": "2px",
                 "xlarge": "24px",
                 "xsmall": "1px",
+              },
+              "breakpoints": Object {
+                "narrow": 699,
               },
               "centerColumnWidth": "1152px",
               "colors": Object {
@@ -2081,7 +2093,7 @@ exports[`Anchor warns about invalid label render 1`] = `
   text-decoration: underline;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RoutedAnchor renders 1`] = `
+exports[`Responsive renders 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -18,17 +18,6 @@ exports[`RoutedAnchor renders 1`] = `
   box-sizing: inherit;
 }
 
-.c1 {
-  color: #865CD6;
-  text-decoration: none;
-  cursor: pointer;
-  outline: none;
-}
-
-.c1:hover {
-  text-decoration: underline;
-}
-
 @media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
@@ -44,20 +33,8 @@ exports[`RoutedAnchor renders 1`] = `
 <div
   className="c0"
 >
-  <a
-    aria-label={undefined}
-    className="c1"
-    disabled={undefined}
-    href="/"
-    icon={undefined}
-    label="Test"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
-  >
-    Test
-  </a>
+  <span>
+    hi
+  </span>
 </div>
 `;

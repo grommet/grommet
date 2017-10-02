@@ -54,7 +54,7 @@ exports[`Grid align renders 1`] = `
   align-items: stretch;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -150,7 +150,7 @@ exports[`Grid alignContent renders 1`] = `
   align-content: stretch;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -212,7 +212,7 @@ exports[`Grid areas renders 1`] = `
   grid-template-rows: 48px 384px 96px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -264,7 +264,7 @@ exports[`Grid columns renders 1`] = `
   grid-template-columns: 50% 25% 25%;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -364,7 +364,7 @@ exports[`Grid gap renders 1`] = `
   grid-column-gap: 24px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -466,7 +466,7 @@ exports[`Grid justify renders 1`] = `
   justify-content: stretch;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -568,7 +568,7 @@ exports[`Grid justifyContent renders 1`] = `
   justify-content: stretch;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -627,7 +627,7 @@ exports[`Grid renders 1`] = `
   height: 100%;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -672,7 +672,7 @@ exports[`Grid rows renders 1`] = `
   grid-template-rows: 192px 768px 384px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -723,7 +723,7 @@ exports[`Grid tag renders 1`] = `
   height: 100%;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
