@@ -59,7 +59,7 @@ class Box extends Component {
     }
 
     return (
-      <StyledComponent {...rest} />
+      <StyledComponent ref={(ref) => { this.componentRef = ref; }} {...rest} />
     );
   }
 }

@@ -2,6 +2,15 @@ import { schema, PropTypes } from 'react-desc';
 
 const PAD_SIZES = ['xsmall', 'small', 'medium', 'large'];
 
+const ANIMATION_TYPE = PropTypes.oneOf([
+  'fadeIn', 'fadeOut', 'slideUp', 'slideDown', 'slideLeft', 'slideRight',
+  'zoomIn', 'zoomOut']);
+const ANIMATION_SHAPE = PropTypes.shape({
+  type: ANIMATION_TYPE,
+  delay: PropTypes.number,
+  duration: PropTypes.number,
+});
+
 export default Box => schema(Box, {
   description: `A flexible box that lays out its contents along a single
     direction.`,
@@ -21,6 +30,16 @@ export default Box => schema(Box, {
       PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
       `How to align along the cross axis when contained in a Box or along
       the column axis when contained in a Grid.`,
+    ],
+    animation: [
+      PropTypes.oneOfType([
+        ANIMATION_TYPE,
+        ANIMATION_SHAPE,
+        PropTypes.arrayOf(
+          PropTypes.oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE]),
+        ),
+      ]),
+      'Animation effect(s) to use. \'duration\' and \'delay\' should be in milliseconds.',
     ],
     background: [
       PropTypes.oneOfType([
