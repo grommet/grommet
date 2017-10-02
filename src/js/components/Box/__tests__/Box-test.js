@@ -315,3 +315,21 @@ test('Box tag renders', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('Box animation renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Box animation='fadeIn' />
+      <Box animation={['fadeIn', 'slideUp']} />
+      <Box animation={{ type: 'fadeIn', duration: 1000, delay: 500 }} />
+      <Box
+        animation={[
+          { type: 'fadeIn', duration: 1000, delay: 500 },
+          { type: 'slideUp', duration: 1000, delay: 500 },
+        ]}
+      />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
