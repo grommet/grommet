@@ -459,7 +459,7 @@ exports[`Box animation renders 1`] = `
   animation: RcDQa 1s 0.5s forwards,iiXio 1s 0.5s forwards;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
