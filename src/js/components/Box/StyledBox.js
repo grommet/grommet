@@ -49,6 +49,7 @@ const BASIS_MAP = {
 
 const basisStyle = css`
   flex-basis: ${props => BASIS_MAP[props.basis] || props.theme.global.size[props.basis]};
+  overflow: scroll;
 `;
 
 const directionStyle = css`

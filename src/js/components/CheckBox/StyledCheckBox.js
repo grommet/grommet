@@ -34,7 +34,10 @@ export const StyledCheckBoxInput = styled.input`
   }
 
   :checked + div {
-    border-color: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color)};
+    border-color: ${props => (
+      props.grommet.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color ||
+      props.theme.global.colors.brand
+    )};
   }
 
   :checked + div > svg {
@@ -43,7 +46,10 @@ export const StyledCheckBoxInput = styled.input`
 
   :checked + span > span {
     left: ${props => props.theme.checkBox.size};
-    background-color: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color)};
+    background-color: ${props => (
+      props.grommet.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color ||
+      props.theme.global.colors.brand
+    )};
   }
 `;
 
@@ -67,7 +73,13 @@ export const StyledCheckBoxBox = styled.div`
     width: ${props => props.theme.checkBox.size};
     height: ${props => props.theme.checkBox.size};
     stroke-width: ${props => props.theme.checkBox.check.width};
-    stroke: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color)};
+    stroke: ${props => (
+      props.grommet.dark ? (
+        props.theme.global.colors.white
+      ) : (
+        props.theme.checkBox.check.color || props.theme.global.colors.brand
+      )
+    )};
   }
 `;
 
