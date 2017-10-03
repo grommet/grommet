@@ -209,6 +209,7 @@ export default deepFreeze({
     size: `${baseSpacing}px`,
     toggle: {
       color: '#d9d9d9',
+      radius: `${baseSpacing}px`,
       size: `${baseSpacing * 2}px`,
     },
   },
@@ -267,6 +268,20 @@ export default deepFreeze({
     small: { size: '14px', height: 1.43, maxWidth: `${baseSpacing * 14}px` },
     large: { size: '24px', height: 1.333, maxWidth: `${baseSpacing * 24}px` },
     xlarge: { size: '32px', height: 1.1875, maxWidth: `${baseSpacing * 32}px` },
+  },
+  radioButton: {
+    check: {
+      color: brandColor,
+    },
+    border: {
+      color: {
+        dark: 'rgba(255, 255, 255, 0.5)',
+        light: 'rgba(0, 0, 0, 0.15)',
+      },
+      radius: '100%',
+      width: '2px',
+    },
+    size: `${baseSpacing}px`,
   },
   text: {
     medium: { size: '16px', height: 1.375 },

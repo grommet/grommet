@@ -239,6 +239,7 @@ exports[`Anchor icon label renders 1`] = `
               "size": "24px",
               "toggle": Object {
                 "color": "#d9d9d9",
+                "radius": "24px",
                 "size": "48px",
               },
             },
@@ -524,6 +525,20 @@ exports[`Anchor icon label renders 1`] = `
                 "maxWidth": "768px",
                 "size": "32px",
               },
+            },
+            "radioButton": Object {
+              "border": Object {
+                "color": Object {
+                  "dark": "rgba(255, 255, 255, 0.5)",
+                  "light": "rgba(0, 0, 0, 0.15)",
+                },
+                "radius": "100%",
+                "width": "2px",
+              },
+              "check": Object {
+                "color": "#865CD6",
+              },
+              "size": "24px",
             },
             "text": Object {
               "large": Object {
@@ -719,6 +734,7 @@ exports[`Anchor primary renders 1`] = `
               "size": "24px",
               "toggle": Object {
                 "color": "#d9d9d9",
+                "radius": "24px",
                 "size": "48px",
               },
             },
@@ -1004,6 +1020,20 @@ exports[`Anchor primary renders 1`] = `
                 "maxWidth": "768px",
                 "size": "32px",
               },
+            },
+            "radioButton": Object {
+              "border": Object {
+                "color": Object {
+                  "dark": "rgba(255, 255, 255, 0.5)",
+                  "light": "rgba(0, 0, 0, 0.15)",
+                },
+                "radius": "100%",
+                "width": "2px",
+              },
+              "check": Object {
+                "color": "#865CD6",
+              },
+              "size": "24px",
             },
             "text": Object {
               "large": Object {
@@ -1306,6 +1336,7 @@ exports[`Anchor reverse icon label renders 1`] = `
               "size": "24px",
               "toggle": Object {
                 "color": "#d9d9d9",
+                "radius": "24px",
                 "size": "48px",
               },
             },
@@ -1591,6 +1622,20 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "maxWidth": "768px",
                 "size": "32px",
               },
+            },
+            "radioButton": Object {
+              "border": Object {
+                "color": Object {
+                  "dark": "rgba(255, 255, 255, 0.5)",
+                  "light": "rgba(0, 0, 0, 0.15)",
+                },
+                "radius": "100%",
+                "width": "2px",
+              },
+              "check": Object {
+                "color": "#865CD6",
+              },
+              "size": "24px",
             },
             "text": Object {
               "large": Object {
@@ -1741,6 +1786,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
               "size": "24px",
               "toggle": Object {
                 "color": "#d9d9d9",
+                "radius": "24px",
                 "size": "48px",
               },
             },
@@ -2026,6 +2072,20 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "maxWidth": "768px",
                 "size": "32px",
               },
+            },
+            "radioButton": Object {
+              "border": Object {
+                "color": Object {
+                  "dark": "rgba(255, 255, 255, 0.5)",
+                  "light": "rgba(0, 0, 0, 0.15)",
+                },
+                "radius": "100%",
+                "width": "2px",
+              },
+              "check": Object {
+                "color": "#865CD6",
+              },
+              "size": "24px",
             },
             "text": Object {
               "large": Object {

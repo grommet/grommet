@@ -13,6 +13,7 @@ export * from './Markdown';
 export * from './Menu';
 export * from './Meter';
 export * from './Paragraph';
+export * from './RadioButton';
 export * from './Responsive';
 export * from './Stack';
 export * from './Text';
