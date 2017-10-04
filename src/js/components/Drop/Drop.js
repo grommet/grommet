@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
+import { createPortal } from 'react-dom';
 
 import DropContainer from './DropContainer';
 
 import doc from './doc';
 
-import { createContextProvider } from '../hocs';
 import { getNewContainer } from '../utils';
 
 class Drop extends Component {
@@ -16,34 +15,17 @@ class Drop extends Component {
     },
   }
 
-  componentDidMount() {
-    this.dropContainer = getNewContainer();
-    this.renderDrop();
-  }
-
-  componentDidUpdate() {
-    this.renderDrop();
-  }
+  dropContainer = getNewContainer();
 
   componentWillUnmount() {
-    if (this.dropContainer) {
-      unmountComponentAtNode(this.dropContainer);
-      document.body.removeChild(this.dropContainer);
-    }
-  }
-
-  renderDrop() {
-    const ContextProvider = createContextProvider(this.props.context);
-    render(
-      <ContextProvider>
-        <DropContainer {...this.props} />
-      </ContextProvider>,
-      this.dropContainer
-    );
+    document.body.removeChild(this.dropContainer);
   }
 
   render() {
-    return (<span style={{ display: 'none' }} />);
+    return createPortal(
+      <DropContainer {...this.props} />,
+      this.dropContainer
+    );
   }
 }
 

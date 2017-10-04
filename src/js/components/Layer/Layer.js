@@ -1,30 +1,19 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { render, unmountComponentAtNode } from 'react-dom';
+import { createPortal } from 'react-dom';
 
 import LayerContainer from './LayerContainer';
 
 import doc from './doc';
 
-import { createContextProvider } from '../hocs';
 import { getNewContainer } from '../utils';
 
-import { deepMerge } from '../../utils';
-
 class Layer extends Component {
-  static contextTypes = {
-    grommet: PropTypes.object,
-    theme: PropTypes.object,
-  }
   static defaultProps = {
     align: 'center',
   }
 
-  componentDidMount() {
-    this.originalFocusedElement = document.activeElement;
-    this.layerContainer = getNewContainer();
-    this.renderLayer();
-  }
+  originalFocusedElement = document.activeElement;
+  layerContainer = getNewContainer();
 
   componentWillUnmount() {
     if (this.originalFocusedElement) {
@@ -40,22 +29,14 @@ class Layer extends Component {
         this.originalFocusedElement.parentNode.focus();
       }
     }
-    unmountComponentAtNode(this.layerContainer);
     document.body.removeChild(this.layerContainer);
   }
 
-  renderLayer() {
-    const ContextProvider = createContextProvider(deepMerge(this.context, this.props.context));
-    render(
-      <ContextProvider>
-        <LayerContainer {...this.props} />
-      </ContextProvider>,
+  render() {
+    return createPortal(
+      <LayerContainer {...this.props} />,
       this.layerContainer
     );
-  }
-
-  render() {
-    return (<span style={{ display: 'none' }} />);
   }
 }
 
