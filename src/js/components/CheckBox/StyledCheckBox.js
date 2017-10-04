@@ -16,8 +16,8 @@ export const StyledCheckBoxContainer = styled.label`
     )}
   }
 
-  :hover input + div,
-  :hover input + span {
+  :hover input:not([disabled]) + div,
+  :hover input:not([disabled]) + span {
     border-color: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.global.colors.black)};
   }
 `;
@@ -79,7 +79,7 @@ export const StyledCheckBoxToggle = styled.span`
   height: ${props => props.theme.checkBox.size};
   border: ${props => props.theme.checkBox.border.width} solid;
   border-color: ${props => props.theme.checkBox.border.color[props.grommet.dark ? 'dark' : 'light']};
-  border-radius: ${props => props.theme.checkBox.size};
+  border-radius: ${props => props.theme.checkBox.toggle.radius};
 `;
 
 export const StyledCheckBoxKnob = styled.span`
@@ -90,7 +90,7 @@ export const StyledCheckBoxKnob = styled.span`
   width: ${props => props.theme.checkBox.size};
   height: ${props => props.theme.checkBox.size};
   background-color: ${props => props.theme.checkBox.toggle.color};
-  border-radius: ${props => props.theme.checkBox.size};
+  border-radius: ${props => props.theme.checkBox.toggle.radius};
 `;
 
 const StyledCheckBox = styled.div`

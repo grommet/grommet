@@ -18,6 +18,7 @@ Object {
   "Menu": [Function],
   "Meter": [Function],
   "Paragraph": [Function],
+  "RadioButton": [Function],
   "Responsive": [Function],
   "RoutedAnchor": [Function],
   "RoutedButton": [Function],
