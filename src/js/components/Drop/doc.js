@@ -41,6 +41,7 @@ export default Drop => schema(Drop, {
       `Whether text should be rendered right to left or not. Defaults to
       inherit from the document context.`,
     ],
+    restrictFocus: [PropTypes.bool, 'Whether the drop should control focus.'],
     onClose: [
       PropTypes.func,
       'Function that will be invoked when the user clicks outside the drop area.',

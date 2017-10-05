@@ -117,6 +117,7 @@ export const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: ${props => props.theme.global.size.xxsmall};
+  outline: none;
 
   ${props => props.size && sizeStyle}
 
@@ -132,7 +133,6 @@ export const StyledContainer = styled.div`
     max-height: 100%;
     max-width: 100%;
     overflow: auto;
-    outline: none;
     border-radius: ${props.theme.layer.border.radius};
 
     ${getAlignStyle(props)}

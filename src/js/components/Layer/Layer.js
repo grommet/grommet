@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
 
+import { withTheme } from '../hocs';
+
 import LayerContainer from './LayerContainer';
 
 import doc from './doc';
@@ -34,7 +36,9 @@ class Layer extends Component {
 
   render() {
     return createPortal(
-      <LayerContainer {...this.props} />,
+      <LayerContainer
+        {...this.props}
+      />,
       this.layerContainer
     );
   }
@@ -44,4 +48,4 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Layer);
 }
 
-export default Layer;
+export default withTheme(Layer);

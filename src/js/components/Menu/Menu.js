@@ -134,7 +134,6 @@ class Menu extends Component {
           ref={(ref) => {
             this.dropRef = ref;
           }}
-          context={{ ...this.context }}
           control={this.componentRef}
           onClose={this.onDropClose}
         >
