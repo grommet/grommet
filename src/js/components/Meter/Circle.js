@@ -8,7 +8,7 @@ import { translateEndAngle, arcCommands } from '../utils/graphics';
 
 export default class Circle extends Component {
   render() {
-    const { background, round, size, theme, thickness, values } = this.props;
+    const { background, round, size, theme, thickness, title, values } = this.props;
     const width = (size === 'full' ? 288 : parseMetricToInt(theme.global.size[size]));
     const height = parseMetricToInt(theme.global.edgeSize[thickness]);
     const mid = width / 2;
@@ -63,6 +63,7 @@ export default class Circle extends Component {
         width={size === 'full' ? '100%' : width}
         height={size === 'full' ? '100%' : width}
       >
+        <title>{title}</title>
         <circle
           cx={mid}
           cy={mid}

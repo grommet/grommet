@@ -38,7 +38,7 @@ export default Chart => schema(Chart, {
       'The width of the stroke. Defaults to medium.',
     ],
     title: [
-      PropTypes.string, // .isRequired isn't working?
+      PropTypes.string.isRequired,
       'Accessible title of the chart.',
     ],
     type: [

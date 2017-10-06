@@ -11,7 +11,7 @@ export default class Bar extends Component {
   };
 
   render() {
-    const { background, round, size, theme, thickness, values } = this.props;
+    const { background, round, size, theme, thickness, title, values } = this.props;
     const width = (size === 'full' ? 288 : parseMetricToInt(theme.global.size[size]));
     const height = parseMetricToInt(theme.global.edgeSize[thickness]);
     const mid = height / 2;
@@ -57,6 +57,7 @@ export default class Bar extends Component {
         width={size === 'full' ? '100%' : width}
         height={height}
       >
+        <title>{title}</title>
         <path
           d={`M 0,${mid} L ${width},${mid}`}
           fill='none'

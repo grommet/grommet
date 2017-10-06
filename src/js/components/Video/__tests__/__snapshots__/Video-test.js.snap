@@ -375,6 +375,9 @@ exports[`Video autoPlay renders 1`] = `
                 viewBox="0 0 288 12"
                 width="100%"
               >
+                <title>
+                  Video progress
+                </title>
                 <path
                   d="M 0,6 L 288,6"
                   fill="none"
@@ -900,6 +903,9 @@ exports[`Video controls renders 1`] = `
                 viewBox="0 0 288 12"
                 width="100%"
               >
+                <title>
+                  Video progress
+                </title>
                 <path
                   d="M 0,6 L 288,6"
                   fill="none"
@@ -1087,6 +1093,9 @@ exports[`Video controls renders 1`] = `
                 viewBox="0 0 288 12"
                 width="100%"
               >
+                <title>
+                  Video progress
+                </title>
                 <path
                   d="M 0,6 L 288,6"
                   fill="none"
@@ -1568,6 +1577,9 @@ exports[`Video fit renders 1`] = `
                 viewBox="0 0 288 12"
                 width="100%"
               >
+                <title>
+                  Video progress
+                </title>
                 <path
                   d="M 0,6 L 288,6"
                   fill="none"
@@ -1758,6 +1770,9 @@ exports[`Video fit renders 1`] = `
                 viewBox="0 0 288 12"
                 width="100%"
               >
+                <title>
+                  Video progress
+                </title>
                 <path
                   d="M 0,6 L 288,6"
                   fill="none"
@@ -2222,6 +2237,9 @@ exports[`Video loop renders 1`] = `
                 viewBox="0 0 288 12"
                 width="100%"
               >
+                <title>
+                  Video progress
+                </title>
                 <path
                   d="M 0,6 L 288,6"
                   fill="none"
@@ -2686,6 +2704,9 @@ exports[`Video mute renders 1`] = `
                 viewBox="0 0 288 12"
                 width="100%"
               >
+                <title>
+                  Video progress
+                </title>
                 <path
                   d="M 0,6 L 288,6"
                   fill="none"
@@ -3150,6 +3171,9 @@ exports[`Video renders 1`] = `
                 viewBox="0 0 288 12"
                 width="100%"
               >
+                <title>
+                  Video progress
+                </title>
                 <path
                   d="M 0,6 L 288,6"
                   fill="none"

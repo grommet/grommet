@@ -303,6 +303,7 @@ class Video extends Component {
                   background={over ? 'dark-3' : undefined}
                   size='full'
                   thickness='small'
+                  title='Video progress'
                   values={[{ value: percentagePlayed || 0 }]}
                 />
                 <StyledVideoScrubber

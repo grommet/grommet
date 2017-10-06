@@ -49,6 +49,7 @@ exports[`Meter background renders 1`] = `
     viewBox="0 0 384 24"
     width={384}
   >
+    <title />
     <path
       d="M 0,12 L 384,12"
       fill="none"
@@ -73,6 +74,7 @@ exports[`Meter background renders 1`] = `
     viewBox="0 0 384 24"
     width={384}
   >
+    <title />
     <path
       d="M 0,12 L 384,12"
       fill="none"
@@ -96,6 +98,7 @@ exports[`Meter background renders 1`] = `
     viewBox="0 0 384 384"
     width={384}
   >
+    <title />
     <circle
       cx={192}
       cy={192}
@@ -121,6 +124,7 @@ exports[`Meter background renders 1`] = `
     viewBox="0 0 384 384"
     width={384}
   >
+    <title />
     <circle
       cx={192}
       cy={192}
@@ -192,6 +196,7 @@ exports[`Meter renders 1`] = `
     viewBox="0 0 384 24"
     width={384}
   >
+    <title />
     <path
       d="M 0,12 L 384,12"
       fill="none"
@@ -207,6 +212,7 @@ exports[`Meter renders 1`] = `
     viewBox="0 0 384 24"
     width={384}
   >
+    <title />
     <path
       d="M 0,12 L 384,12"
       fill="none"
@@ -276,6 +282,7 @@ exports[`Meter round renders 1`] = `
     viewBox="0 0 384 24"
     width={384}
   >
+    <title />
     <path
       d="M 0,12 L 384,12"
       fill="none"
@@ -299,6 +306,7 @@ exports[`Meter round renders 1`] = `
     viewBox="0 0 384 384"
     width={384}
   >
+    <title />
     <circle
       cx={192}
       cy={192}
@@ -370,6 +378,7 @@ exports[`Meter size renders 1`] = `
     viewBox="0 0 96 24"
     width={96}
   >
+    <title />
     <path
       d="M 0,12 L 96,12"
       fill="none"
@@ -394,6 +403,7 @@ exports[`Meter size renders 1`] = `
     viewBox="0 0 192 24"
     width={192}
   >
+    <title />
     <path
       d="M 0,12 L 192,12"
       fill="none"
@@ -418,6 +428,7 @@ exports[`Meter size renders 1`] = `
     viewBox="0 0 384 24"
     width={384}
   >
+    <title />
     <path
       d="M 0,12 L 384,12"
       fill="none"
@@ -442,6 +453,7 @@ exports[`Meter size renders 1`] = `
     viewBox="0 0 768 24"
     width={768}
   >
+    <title />
     <path
       d="M 0,12 L 768,12"
       fill="none"
@@ -466,6 +478,7 @@ exports[`Meter size renders 1`] = `
     viewBox="0 0 1152 24"
     width={1152}
   >
+    <title />
     <path
       d="M 0,12 L 1152,12"
       fill="none"
@@ -489,6 +502,7 @@ exports[`Meter size renders 1`] = `
     viewBox="0 0 96 96"
     width={96}
   >
+    <title />
     <circle
       cx={48}
       cy={48}
@@ -514,6 +528,7 @@ exports[`Meter size renders 1`] = `
     viewBox="0 0 192 192"
     width={192}
   >
+    <title />
     <circle
       cx={96}
       cy={96}
@@ -539,6 +554,7 @@ exports[`Meter size renders 1`] = `
     viewBox="0 0 384 384"
     width={384}
   >
+    <title />
     <circle
       cx={192}
       cy={192}
@@ -564,6 +580,7 @@ exports[`Meter size renders 1`] = `
     viewBox="0 0 768 768"
     width={768}
   >
+    <title />
     <circle
       cx={384}
       cy={384}
@@ -589,6 +606,7 @@ exports[`Meter size renders 1`] = `
     viewBox="0 0 1152 1152"
     width={1152}
   >
+    <title />
     <circle
       cx={576}
       cy={576}
@@ -660,6 +678,7 @@ exports[`Meter thickness renders 1`] = `
     viewBox="0 0 384 6"
     width={384}
   >
+    <title />
     <path
       d="M 0,3 L 384,3"
       fill="none"
@@ -684,6 +703,7 @@ exports[`Meter thickness renders 1`] = `
     viewBox="0 0 384 12"
     width={384}
   >
+    <title />
     <path
       d="M 0,6 L 384,6"
       fill="none"
@@ -708,6 +728,7 @@ exports[`Meter thickness renders 1`] = `
     viewBox="0 0 384 24"
     width={384}
   >
+    <title />
     <path
       d="M 0,12 L 384,12"
       fill="none"
@@ -732,6 +753,7 @@ exports[`Meter thickness renders 1`] = `
     viewBox="0 0 384 48"
     width={384}
   >
+    <title />
     <path
       d="M 0,24 L 384,24"
       fill="none"
@@ -756,6 +778,7 @@ exports[`Meter thickness renders 1`] = `
     viewBox="0 0 384 96"
     width={384}
   >
+    <title />
     <path
       d="M 0,48 L 384,48"
       fill="none"
@@ -779,6 +802,7 @@ exports[`Meter thickness renders 1`] = `
     viewBox="0 0 384 384"
     width={384}
   >
+    <title />
     <circle
       cx={192}
       cy={192}
@@ -804,6 +828,7 @@ exports[`Meter thickness renders 1`] = `
     viewBox="0 0 384 384"
     width={384}
   >
+    <title />
     <circle
       cx={192}
       cy={192}
@@ -829,6 +854,7 @@ exports[`Meter thickness renders 1`] = `
     viewBox="0 0 384 384"
     width={384}
   >
+    <title />
     <circle
       cx={192}
       cy={192}
@@ -854,6 +880,7 @@ exports[`Meter thickness renders 1`] = `
     viewBox="0 0 384 384"
     width={384}
   >
+    <title />
     <circle
       cx={192}
       cy={192}
@@ -879,6 +906,7 @@ exports[`Meter thickness renders 1`] = `
     viewBox="0 0 384 384"
     width={384}
   >
+    <title />
     <circle
       cx={192}
       cy={192}
@@ -950,6 +978,7 @@ exports[`Meter type renders 1`] = `
     viewBox="0 0 384 24"
     width={384}
   >
+    <title />
     <path
       d="M 0,12 L 384,12"
       fill="none"
@@ -973,6 +1002,7 @@ exports[`Meter type renders 1`] = `
     viewBox="0 0 384 384"
     width={384}
   >
+    <title />
     <circle
       cx={192}
       cy={192}

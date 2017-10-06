@@ -424,8 +424,8 @@ exports[`Box animation renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-animation: RcDQa 1s 0s forwards,iiXio 1s 0s forwards;
-  animation: RcDQa 1s 0s forwards,iiXio 1s 0s forwards;
+  -webkit-animation: RcDQa 1s 0s forwards,bnfHgs 1s 0s forwards;
+  animation: RcDQa 1s 0s forwards,bnfHgs 1s 0s forwards;
 }
 
 .c3 {
@@ -452,11 +452,11 @@ exports[`Box animation renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   opacity: 0;
-  -webkit-transform: translateY(20%);
-  -ms-transform: translateY(20%);
-  transform: translateY(20%);
-  -webkit-animation: RcDQa 1s 0.5s forwards,iiXio 1s 0.5s forwards;
-  animation: RcDQa 1s 0.5s forwards,iiXio 1s 0.5s forwards;
+  -webkit-transform: translateY(10%);
+  -ms-transform: translateY(10%);
+  transform: translateY(10%);
+  -webkit-animation: RcDQa 1s 0.5s forwards,bnfHgs 1s 0.5s forwards;
+  animation: RcDQa 1s 0.5s forwards,bnfHgs 1s 0.5s forwards;
 }
 
 @media only screen and (min-width:700px) {
