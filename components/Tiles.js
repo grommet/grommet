@@ -509,7 +509,9 @@ var Tiles = function (_Component) {
         );
       }
 
-      var tileContents = _react.Children.map(children, function (element, index) {
+      var tileContents = _react.Children.toArray(children).filter(function (child) {
+        return child;
+      }).map(function (element, index) {
         return _this4._renderChild(element, index);
       });
 
