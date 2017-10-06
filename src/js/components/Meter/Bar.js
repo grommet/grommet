@@ -11,7 +11,7 @@ export default class Bar extends Component {
   };
 
   render() {
-    const { background, round, size, theme, thickness, title, values } = this.props;
+    const { background, round, size, theme, thickness, values, ...rest } = this.props;
     const width = (size === 'full' ? 288 : parseMetricToInt(theme.global.size[size]));
     const height = parseMetricToInt(theme.global.edgeSize[thickness]);
     const mid = height / 2;
@@ -20,7 +20,7 @@ export default class Bar extends Component {
 
     let start = 0;
     const paths = (values || []).filter(v => v.value > 0).map((valueArg, index) => {
-      const { color, highlight, label, onHover, value, ...rest } = valueArg;
+      const { color, highlight, label, onHover, value, ...pathRest } = valueArg;
 
       const key = `p-${index}`;
       const delta = (value * width) / max;
@@ -45,7 +45,7 @@ export default class Bar extends Component {
           strokeWidth={height}
           strokeLinecap={round ? 'round' : 'square'}
           {...hoverProps}
-          {...rest}
+          {...pathRest}
         />
       );
     }).reverse(); // reverse so the caps looks right
@@ -56,8 +56,8 @@ export default class Bar extends Component {
         preserveAspectRatio='none'
         width={size === 'full' ? '100%' : width}
         height={height}
+        {...rest}
       >
-        <title>{title}</title>
         <path
           d={`M 0,${mid} L ${width},${mid}`}
           fill='none'

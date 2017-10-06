@@ -11,7 +11,6 @@ import doc from './doc';
 class Meter extends Component {
   static defaultProps = {
     background: 'light-1',
-    color: 'accent-1',
     size: 'medium',
     thickness: 'medium',
     type: 'bar',

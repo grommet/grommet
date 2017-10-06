@@ -300,10 +300,10 @@ class Video extends Component {
             <Box flex={true}>
               <Stack>
                 <Meter
+                  aria-label='Video progress'
                   background={over ? 'dark-3' : undefined}
                   size='full'
                   thickness='small'
-                  title='Video progress'
                   values={[{ value: percentagePlayed || 0 }]}
                 />
                 <StyledVideoScrubber

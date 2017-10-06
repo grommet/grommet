@@ -369,15 +369,13 @@ exports[`Video autoPlay renders 1`] = `
               className="c10"
             >
               <svg
+                aria-label="Video progress"
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
                 viewBox="0 0 288 12"
                 width="100%"
               >
-                <title>
-                  Video progress
-                </title>
                 <path
                   d="M 0,6 L 288,6"
                   fill="none"
@@ -897,15 +895,13 @@ exports[`Video controls renders 1`] = `
               className="c10"
             >
               <svg
+                aria-label="Video progress"
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
                 viewBox="0 0 288 12"
                 width="100%"
               >
-                <title>
-                  Video progress
-                </title>
                 <path
                   d="M 0,6 L 288,6"
                   fill="none"
@@ -1087,15 +1083,13 @@ exports[`Video controls renders 1`] = `
               className="c10"
             >
               <svg
+                aria-label="Video progress"
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
                 viewBox="0 0 288 12"
                 width="100%"
               >
-                <title>
-                  Video progress
-                </title>
                 <path
                   d="M 0,6 L 288,6"
                   fill="none"
@@ -1571,15 +1565,13 @@ exports[`Video fit renders 1`] = `
               className="c10"
             >
               <svg
+                aria-label="Video progress"
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
                 viewBox="0 0 288 12"
                 width="100%"
               >
-                <title>
-                  Video progress
-                </title>
                 <path
                   d="M 0,6 L 288,6"
                   fill="none"
@@ -1764,15 +1756,13 @@ exports[`Video fit renders 1`] = `
               className="c10"
             >
               <svg
+                aria-label="Video progress"
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
                 viewBox="0 0 288 12"
                 width="100%"
               >
-                <title>
-                  Video progress
-                </title>
                 <path
                   d="M 0,6 L 288,6"
                   fill="none"
@@ -2231,15 +2221,13 @@ exports[`Video loop renders 1`] = `
               className="c10"
             >
               <svg
+                aria-label="Video progress"
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
                 viewBox="0 0 288 12"
                 width="100%"
               >
-                <title>
-                  Video progress
-                </title>
                 <path
                   d="M 0,6 L 288,6"
                   fill="none"
@@ -2698,15 +2686,13 @@ exports[`Video mute renders 1`] = `
               className="c10"
             >
               <svg
+                aria-label="Video progress"
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
                 viewBox="0 0 288 12"
                 width="100%"
               >
-                <title>
-                  Video progress
-                </title>
                 <path
                   d="M 0,6 L 288,6"
                   fill="none"
@@ -3165,15 +3151,13 @@ exports[`Video renders 1`] = `
               className="c10"
             >
               <svg
+                aria-label="Video progress"
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
                 viewBox="0 0 288 12"
                 width="100%"
               >
-                <title>
-                  Video progress
-                </title>
                 <path
                   d="M 0,6 L 288,6"
                   fill="none"

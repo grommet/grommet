@@ -22,10 +22,6 @@ export default Meter => schema(Meter, {
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
       'The size of the Meter. Defaults to medium.',
     ],
-    title: [
-      PropTypes.string.isRequired,
-      'Accessible title of the meter.',
-    ],
     type: [
       PropTypes.oneOf(['bar', 'circle']),
       'The visual type of meter.',
