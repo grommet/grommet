@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
+import { createPortal } from 'react-dom';
+
+import { withTheme } from '../hocs';
 
 import DropContainer from './DropContainer';
 
 import doc from './doc';
 
-import { createContextProvider } from '../hocs';
 import { getNewContainer } from '../utils';
 
 class Drop extends Component {
@@ -16,34 +17,32 @@ class Drop extends Component {
     },
   }
 
-  componentDidMount() {
-    this.dropContainer = getNewContainer();
-    this.renderDrop();
-  }
-
-  componentDidUpdate() {
-    this.renderDrop();
-  }
+  originalFocusedElement = document.activeElement;
+  dropContainer = getNewContainer();
 
   componentWillUnmount() {
-    if (this.dropContainer) {
-      unmountComponentAtNode(this.dropContainer);
-      document.body.removeChild(this.dropContainer);
+    const { restrictFocus } = this.props;
+    if (restrictFocus && this.originalFocusedElement) {
+      if (this.originalFocusedElement.focus) {
+        // wait for the fixed positioning to come back to normal
+        // see layer styling for reference
+        setTimeout(() => {
+          this.originalFocusedElement.focus();
+        }, 0);
+      } else if (this.originalFocusedElement.parentNode &&
+        this.originalFocusedElement.parentNode.focus) {
+        // required for IE11 and Edge
+        this.originalFocusedElement.parentNode.focus();
+      }
     }
-  }
-
-  renderDrop() {
-    const ContextProvider = createContextProvider(this.props.context);
-    render(
-      <ContextProvider>
-        <DropContainer {...this.props} />
-      </ContextProvider>,
-      this.dropContainer
-    );
+    document.body.removeChild(this.dropContainer);
   }
 
   render() {
-    return (<span style={{ display: 'none' }} />);
+    return createPortal(
+      <DropContainer {...this.props} />,
+      this.dropContainer
+    );
   }
 }
 
@@ -51,4 +50,4 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Drop);
 }
 
-export default Drop;
+export default withTheme(Drop);

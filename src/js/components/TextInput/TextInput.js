@@ -188,7 +188,6 @@ class TextInput extends Component {
         <Drop
           align={{ top: 'bottom', left: 'left' }}
           responsive={false}
-          context={{ ...this.context }}
           control={this.componentRef}
           onClose={() => this.setState({ showDrop: false })}
         >

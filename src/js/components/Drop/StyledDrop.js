@@ -9,6 +9,7 @@ const StyledDrop = styled.div`
   z-index: 20;
   border-radius: ${props => props.theme.global.drop.border.radius};
   overflow: auto;
+  outline: none;
 
   ${props => backgroundStyle(
     props.background || props.theme.global.drop.backgroundColor, props.theme
