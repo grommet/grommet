@@ -209,12 +209,12 @@ const responsiveStyle = css`
 const INITIAL_ANIMATION_STATE = {
   fadeIn: 'opacity: 0;',
   fadeOut: 'opacity: 1;',
-  slideDown: 'transform: translateY(-20%);',
-  slideLeft: 'transform: translateX(20%);',
-  slideRight: 'transform: translateX(-20%);',
-  slideUp: 'transform: translateY(20%);',
-  zoomIn: 'transform: scale(0.9);',
-  zoomOut: 'transform: scale(1.1);',
+  slideDown: 'transform: translateY(-10%);',
+  slideLeft: 'transform: translateX(10%);',
+  slideRight: 'transform: translateX(-10%);',
+  slideUp: 'transform: translateY(10%);',
+  zoomIn: 'transform: scale(0.95);',
+  zoomOut: 'transform: scale(1.05);',
 };
 
 const KEYFRAMES = {

@@ -369,6 +369,7 @@ exports[`Video autoPlay renders 1`] = `
               className="c10"
             >
               <svg
+                aria-label="Video progress"
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
@@ -894,6 +895,7 @@ exports[`Video controls renders 1`] = `
               className="c10"
             >
               <svg
+                aria-label="Video progress"
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
@@ -1081,6 +1083,7 @@ exports[`Video controls renders 1`] = `
               className="c10"
             >
               <svg
+                aria-label="Video progress"
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
@@ -1562,6 +1565,7 @@ exports[`Video fit renders 1`] = `
               className="c10"
             >
               <svg
+                aria-label="Video progress"
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
@@ -1752,6 +1756,7 @@ exports[`Video fit renders 1`] = `
               className="c10"
             >
               <svg
+                aria-label="Video progress"
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
@@ -2216,6 +2221,7 @@ exports[`Video loop renders 1`] = `
               className="c10"
             >
               <svg
+                aria-label="Video progress"
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
@@ -2680,6 +2686,7 @@ exports[`Video mute renders 1`] = `
               className="c10"
             >
               <svg
+                aria-label="Video progress"
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
@@ -3144,6 +3151,7 @@ exports[`Video renders 1`] = `
               className="c10"
             >
               <svg
+                aria-label="Video progress"
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"

@@ -37,10 +37,6 @@ export default Chart => schema(Chart, {
       PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
       'The width of the stroke. Defaults to medium.',
     ],
-    title: [
-      PropTypes.string, // .isRequired isn't working?
-      'Accessible title of the chart.',
-    ],
     type: [
       PropTypes.oneOf(['bar', 'line', 'area']),
       'The visual type of meter. The default is bar',

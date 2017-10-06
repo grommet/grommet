@@ -95,7 +95,7 @@ class Chart extends Component {
 
   render() {
     const {
-      color, round, size, theme, thickness, title, type, values, ...rest
+      color, round, size, theme, thickness, type, values, ...rest
     } = this.props;
     const { bounds } = this.state;
 
@@ -129,7 +129,6 @@ class Chart extends Component {
         height={height}
         {...rest}
       >
-        <title>{title}</title>
         <g
           stroke={colorForName(color, theme)}
           strokeWidth={strokeWidth}
