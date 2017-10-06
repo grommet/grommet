@@ -1,86 +1,21 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
+import { compose } from 'recompose';
 
-import PropTypes from 'prop-types';
-
-import StyledLayer, { StyledContainer } from './StyledLayer';
+import { restrictFocusTo, withRestrictScroll } from '../hocs';
 
 import { Keyboard } from '../Keyboard';
 
-import baseTheme from '../../themes/vanilla';
-import { deepMerge } from '../../utils';
-
-import { filterByFocusable, getBodyChildElements } from '../utils/DOM';
+import StyledLayer, { StyledContainer } from './StyledLayer';
 
 class LayerContainer extends Component {
-  static childContextTypes = {
-    theme: PropTypes.object,
-  }
-  static contextTypes = {
-    theme: PropTypes.object,
-  }
-  static defaultProps = {
-    theme: undefined,
-  }
-
-  getChildContext() {
-    const { theme } = this.props;
-    const { theme: contextTheme } = this.context;
-
-    return {
-      ...this.context,
-      theme: contextTheme || deepMerge(baseTheme, theme),
-    };
-  }
-
   componentDidMount() {
-    const layerNode = findDOMNode(this.layerRef);
-    // go over all the body children to remove focus when layer is opened
-    getBodyChildElements().forEach((node) => {
-      if (!node.contains(layerNode)) {
-        node.setAttribute('aria-hidden', true);
-        // prevent children to receive focus
-        filterByFocusable(node.getElementsByTagName('*')).forEach(
-          (element) => {
-            const originalTabIndex = element.getAttribute('tabindex');
-            if (originalTabIndex) {
-              element.setAttribute('data-tabindex', originalTabIndex);
-            }
-            element.setAttribute('tabindex', -1);
-          }
-        );
-      }
-    });
-    document.body.style.overflow = 'hidden';
+    const layerNode = findDOMNode(this.layerNodeRef);
+    layerNode.focus();
     if (layerNode.scrollIntoView) {
       layerNode.scrollIntoView();
     }
-    layerNode.focus();
   }
-
-  componentWillUnmount() {
-    // go over all the body children to reset focus when layer is closed
-    getBodyChildElements().forEach((node) => {
-      if (!node.contains(findDOMNode(this.layerRef))) {
-        node.setAttribute('aria-hidden', false);
-
-        // reset node focus
-        filterByFocusable(node.getElementsByTagName('*')).forEach(
-          (element) => {
-            const originalTabIndex = element.getAttribute('data-tabindex');
-            if (originalTabIndex) {
-              element.setAttribute('tabindex', originalTabIndex);
-              element.removeAttribute('data-tabindex');
-            } else {
-              element.removeAttribute('tabindex', -1);
-            }
-          }
-        );
-      }
-    });
-    document.body.style.overflow = 'scroll';
-  }
-
   render() {
     const {
       children,
@@ -88,24 +23,11 @@ class LayerContainer extends Component {
       theme,
       ...rest
     } = this.props;
-    const { theme: contextTheme } = this.context;
-
-    const localTheme = deepMerge(baseTheme, contextTheme, theme);
 
     return (
       <Keyboard onEsc={onEsc}>
-        <StyledLayer
-          tabIndex='-1'
-          ref={(ref) => {
-            this.layerRef = ref;
-          }}
-          theme={localTheme}
-        >
-          <StyledContainer
-            {...rest}
-            theme={localTheme}
-            tabIndex='-1'
-          >
+        <StyledLayer theme={theme} tabIndex='-1' ref={(ref) => { this.layerNodeRef = ref; }}>
+          <StyledContainer {...rest} theme={theme}>
             {children}
           </StyledContainer>
         </StyledLayer>
@@ -114,4 +36,7 @@ class LayerContainer extends Component {
   }
 }
 
-export default LayerContainer;
+export default compose(
+  withRestrictScroll,
+  restrictFocusTo,
+)(LayerContainer);

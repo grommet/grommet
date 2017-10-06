@@ -3,6 +3,8 @@ export * from './Box';
 export * from './Button';
 export * from './Chart';
 export * from './CheckBox';
+export * from './Drop';
+export * from './DropButton';
 export * from './Grid';
 export * from './Grommet';
 export * from './Heading';

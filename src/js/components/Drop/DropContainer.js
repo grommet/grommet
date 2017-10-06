@@ -1,43 +1,27 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 
-import PropTypes from 'prop-types';
+import { restrictFocusTo } from '../hocs';
+import { findScrollParents } from '../utils';
 
 import StyledDrop from './StyledDrop';
 
-import { findScrollParents } from '../utils';
-
-import baseTheme from '../../themes/vanilla';
-import { deepMerge } from '../../utils';
-
 class DropContainer extends Component {
-  static childContextTypes = {
-    theme: PropTypes.object,
-  }
-  static contextTypes = {
-    theme: PropTypes.object,
-  }
   static defaultProps = {
     centered: true,
-    theme: undefined,
-  }
-
-  getChildContext() {
-    const { theme } = this.props;
-    const { theme: contextTheme } = this.context;
-
-    return {
-      ...this.context,
-      theme: contextTheme || deepMerge(baseTheme, theme),
-    };
   }
 
   componentDidMount() {
+    const { restrictFocus } = this.props;
     this.addScrollListener();
     window.addEventListener('resize', this.onResize);
     document.addEventListener('click', this.onRemoveDrop);
 
     this.place();
+
+    if (restrictFocus) {
+      findDOMNode(this.dropRef).focus();
+    }
   }
 
   componentWillUnmount() {
@@ -60,7 +44,7 @@ class DropContainer extends Component {
 
   onRemoveDrop = (event) => {
     const { onClose } = this.props;
-    if (!findDOMNode(this.componentRef).contains(event.target)) {
+    if (!findDOMNode(this.dropRef).contains(event.target)) {
       if (onClose) {
         onClose();
       }
@@ -79,7 +63,7 @@ class DropContainer extends Component {
     const windowHeight = window.innerHeight;
 
     const control = findDOMNode(this.props.control);
-    const container = findDOMNode(this.componentRef);
+    const container = findDOMNode(this.dropRef);
     if (container && control) {
       // clear prior styling
       container.style.left = '';
@@ -195,15 +179,15 @@ class DropContainer extends Component {
       theme,
       ...rest
     } = this.props;
-    const { theme: contextTheme } = this.context;
 
     return (
       <StyledDrop
+        tabIndex='-1'
         ref={(ref) => {
-          this.componentRef = ref;
+          this.dropRef = ref;
         }}
+        theme={theme}
         {...rest}
-        theme={deepMerge(baseTheme, contextTheme, theme)}
       >
         {children}
       </StyledDrop>
@@ -211,4 +195,4 @@ class DropContainer extends Component {
   }
 }
 
-export default DropContainer;
+export default restrictFocusTo(DropContainer);

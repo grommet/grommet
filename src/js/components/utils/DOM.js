@@ -52,14 +52,51 @@ export function getBodyChildElements() {
 export function getNewContainer() {
   // setup DOM
   const container = document.createElement('div');
-  // prepend in body to avoid browser scroll issues
-  document.body.insertBefore(container, document.body.firstChild);
+  document.body.appendChild(container, document.body.firstChild);
   return container;
 }
 
+export const setTabIndex = tabIndex => (element) => {
+  element.setAttribute('tabindex', tabIndex);
+};
+
+export const copyAttribute = source => target => element => (
+  element.setAttribute(target, element.getAttribute(source))
+);
+
+const unsetTabIndex = setTabIndex(-1);
+const saveTabIndex = copyAttribute('tabindex')('data-g-tabindex');
+const restoreTabIndex = copyAttribute('data-g-tabindex')('tabindex');
+
+export const makeNodeFocusable = (node) => {
+  node.setAttribute('aria-hidden', false);
+  // allow children to receive focus again
+  filterByFocusable(
+    node.getElementsByTagName('*')
+  ).forEach(
+    restoreTabIndex
+  );
+};
+
+export const makeNodeUnfocusable = (node) => {
+  node.setAttribute('aria-hidden', true);
+  // prevent children to receive focus
+  filterByFocusable(
+    node.getElementsByTagName('*')
+  ).forEach((child) => {
+    saveTabIndex(child);
+    unsetTabIndex(child);
+  });
+};
+
 export default {
+  copyAttribute,
   filterByFocusable,
   findScrollParents,
+  makeNodeFocusable,
+  makeNodeUnfocusable,
   getBodyChildElements,
   getNewContainer,
+  setTabIndex,
+  unsetTabIndex,
 };

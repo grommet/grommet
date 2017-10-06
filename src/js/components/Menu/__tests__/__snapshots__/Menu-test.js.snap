@@ -2,7 +2,8 @@
 
 exports[`Menu opens and closes on click 1`] = `
 <div
-  class="StyledDrop-czaYBK fmcQnR"
+  class="StyledDrop-czaYBK fwRyqm"
+  tabindex="-1"
   id="menu-drop__test"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
@@ -76,7 +77,8 @@ exports[`Menu opens and closes on click 1`] = `
 
 exports[`Menu opens and closes on click 2`] = `
 <div
-  class="StyledDrop-czaYBK fmcQnR"
+  class="StyledDrop-czaYBK fwRyqm"
+  tabindex="-1"
   id="menu-drop__test"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
@@ -465,10 +467,11 @@ exports[`Menu with custom message renders 1`] = `
 exports[`Menu with dropAlign renders 1`] = `
 <button
   class="StyledButton-qbvYY fFFoxu"
-  tabindex="0"
+  tabindex="-1"
   id="menu"
   aria-label="Open Menu"
   type="button"
+  data-g-tabindex="0"
 >
   <div
     class="StyledBox-YaZNy fyiSse"

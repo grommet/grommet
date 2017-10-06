@@ -30,10 +30,6 @@ export default Drop => schema(Drop, {
       `Either a color identifier to use for the background color. For example:
       'neutral-1'. Or, a 'url()' for an image.`,
     ],
-    context: [
-      PropTypes.object,
-      'Object with the context variables to be passed to the Drop.',
-    ],
     control: [
       PropTypes.object,
       'Target container where the drop will be aligned.', {
@@ -45,6 +41,7 @@ export default Drop => schema(Drop, {
       `Whether text should be rendered right to left or not. Defaults to
       inherit from the document context.`,
     ],
+    restrictFocus: [PropTypes.bool, 'Whether the drop should control focus.'],
     onClose: [
       PropTypes.func,
       'Function that will be invoked when the user clicks outside the drop area.',
