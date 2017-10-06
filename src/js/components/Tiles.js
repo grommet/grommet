@@ -406,9 +406,11 @@ export default class Tiles extends Component {
       );
     }
 
-    const tileContents = Children.map(children, (element, index) => {
-      return this._renderChild(element, index);
-    });
+    const tileContents = Children.toArray(children)
+      .filter(child => child)
+      .map((element, index) => {
+        return this._renderChild(element, index);
+      });
 
     let selectableProps;
     if (selectable) {
