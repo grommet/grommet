@@ -35,7 +35,7 @@ class ToastContents extends Component {
 
   componentDidMount () {
     announce(this._contentsRef.innerText);
-    this._timer = setTimeout(this._onClose, DURATION);
+    this._timer = setTimeout(this._onClose, this.props.duration);
   }
 
   componentWillUnmount () {
@@ -49,7 +49,7 @@ class ToastContents extends Component {
     this._timer = undefined;
     this.setState({ closing: true });
     if (onClose) {
-      // wait for the laeve animation to finish 
+      // wait for the laeve animation to finish
       setTimeout(onClose, ANIMATION_DURATION);
     }
   }
@@ -203,10 +203,12 @@ export default class Toast extends Component {
 
 Toast.propTypes = {
   onClose: PropTypes.func,
+  duration: PropTypes.number,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   status: PropTypes.string
 };
 
 Toast.defaultProps = {
+  duration: DURATION,
   size: 'medium'
 };
