@@ -87,7 +87,7 @@ var ToastContents = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       (0, _Announcer.announce)(this._contentsRef.innerText);
-      this._timer = setTimeout(this._onClose, DURATION);
+      this._timer = setTimeout(this._onClose, this.props.duration);
     }
   }, {
     key: 'componentWillUnmount',
@@ -104,7 +104,7 @@ var ToastContents = function (_Component) {
       this._timer = undefined;
       this.setState({ closing: true });
       if (onClose) {
-        // wait for the laeve animation to finish 
+        // wait for the laeve animation to finish
         setTimeout(onClose, ANIMATION_DURATION);
       }
     }
@@ -294,11 +294,13 @@ exports.default = Toast;
 
 Toast.propTypes = {
   onClose: _propTypes2.default.func,
+  duration: _propTypes2.default.number,
   size: _propTypes2.default.oneOf(['small', 'medium', 'large']),
   status: _propTypes2.default.string
 };
 
 Toast.defaultProps = {
+  duration: DURATION,
   size: 'medium'
 };
 module.exports = exports['default'];
