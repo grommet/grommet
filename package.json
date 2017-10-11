@@ -40,7 +40,7 @@
     "markdown-to-jsx": "^5.4.2",
     "polished": "^1.3.0",
     "prop-types": "^15.5.10",
-    "react-desc": "^1.3.4",
+    "react-desc": "^2.1.0",
     "recompose": "^0.25.1"
   },
   "devDependencies": {
