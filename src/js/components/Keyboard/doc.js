@@ -1,53 +1,48 @@
-import { schema, PropTypes } from 'react-desc';
+import { describe, PropTypes } from 'react-desc';
 
-export default Keyboard => schema(Keyboard, {
-  description: 'A react component that handles keyboard key presses.',
-  usage: `import { Keyboard } from 'grommet';
-  <Keyboard onUp={() => {}} />`,
-  props: {
-    onBackspace: [
-      PropTypes.func,
-      'Function that will be called when the user presses the backspace key.',
-    ],
-    onComma: [
-      PropTypes.func,
+export default (Keyboard) => {
+  const DocumentedKeyboard = describe(Keyboard).description(
+    'A react component that handles keyboard key presses.'
+  ).usage(
+    `import { Keyboard } from 'grommet';
+    <Keyboard onUp={() => {}} />`
+  );
+
+  DocumentedKeyboard.propTypes = {
+    onBackspace: PropTypes.func.description(
+      'Function that will be called when the user presses the backspace key.'
+    ),
+    onComma: PropTypes.func.description(
       'Function that will be called when the user presses the comma key.',
-    ],
-    onDown: [
-      PropTypes.func,
+    ),
+    onDown: PropTypes.func.description(
       'Function that will be called when the user presses the down key.',
-    ],
-    onEnter: [
-      PropTypes.func,
+    ),
+    onEnter: PropTypes.func.description(
       'Function that will be called when the user presses the enter key.',
-    ],
-    onEsc: [
-      PropTypes.func,
+    ),
+    onEsc: PropTypes.func.description(
       'Function that will be called when the user presses the esc key.',
-    ],
-    onLeft: [
-      PropTypes.func,
+    ),
+    onLeft: PropTypes.func.description(
       'Function that will be called when the user presses the left key.',
-    ],
-    onRight: [
-      PropTypes.func,
+    ),
+    onRight: PropTypes.func.description(
       'Function that will be called when the user presses the right key.',
-    ],
-    onShift: [
-      PropTypes.func,
+    ),
+    onShift: PropTypes.func.description(
       'Function that will be called when the user presses the shift key.',
-    ],
-    onSpace: [
-      PropTypes.func,
+    ),
+    onSpace: PropTypes.func.description(
       'Function that will be called when the user presses the space key.',
-    ],
-    onTab: [
-      PropTypes.func,
+    ),
+    onTab: PropTypes.func.description(
       'Function that will be called when the user presses the tab key.',
-    ],
-    onUp: [
-      PropTypes.func,
+    ),
+    onUp: PropTypes.func.description(
       'Function that will be called when the user presses the up key.',
-    ],
-  },
-});
+    ),
+  };
+
+  return DocumentedKeyboard;
+};
