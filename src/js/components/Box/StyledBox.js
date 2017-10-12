@@ -300,7 +300,7 @@ const animationStyle = css`
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
 const StyledBox = styled.div`
   display: flex;
-  max-width: 100%;
+  ${props => !props.basis && 'max-width: 100%;'};
 
   ${props => props.align && alignStyle}
   ${props => props.alignContent && alignContentStyle}
@@ -319,6 +319,7 @@ const StyledBox = styled.div`
   ${props => props.textAlign && textAlignStyle}
   ${props => props.wrap && wrapStyle}
   ${props => props.responsive && responsiveStyle}
+  ${props => props.overflow && `overflow: ${props.overflow};`}
   ${props => props.animation && animationStyle}
 `;
 

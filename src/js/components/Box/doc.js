@@ -107,6 +107,7 @@ export default (Box) => {
       distinguish horizontal margin, vertical margin, and margin on a
       particular side of the box`
     ),
+    overflow: PropTypes.oneOf(['auto', 'hidden', 'scroll']).description('box overflow.'),
     pad: PropTypes.oneOfType([
       PropTypes.oneOf(['none', ...PAD_SIZES]),
       PropTypes.shape({

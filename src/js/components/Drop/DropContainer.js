@@ -3,6 +3,7 @@ import { findDOMNode } from 'react-dom';
 
 import { restrictFocusTo } from '../hocs';
 import { findScrollParents } from '../utils';
+import { Keyboard } from '../Keyboard';
 
 import StyledDrop from './StyledDrop';
 
@@ -176,21 +177,24 @@ class DropContainer extends Component {
   render() {
     const {
       children,
+      onClose,
       theme,
       ...rest
     } = this.props;
 
     return (
-      <StyledDrop
-        tabIndex='-1'
-        ref={(ref) => {
-          this.dropRef = ref;
-        }}
-        theme={theme}
-        {...rest}
-      >
-        {children}
-      </StyledDrop>
+      <Keyboard onEsc={onClose}>
+        <StyledDrop
+          tabIndex='-1'
+          ref={(ref) => {
+            this.dropRef = ref;
+          }}
+          theme={theme}
+          {...rest}
+        >
+          {children}
+        </StyledDrop>
+      </Keyboard>
     );
   }
 }
