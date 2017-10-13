@@ -312,7 +312,7 @@ exports[`Anchor icon label renders 1`] = `
                   "radius": "0px",
                   "width": "0px",
                 },
-                "boxShadow": "none",
+                "shadow": "0px 3px 8px rgba(100, 100, 100, 0.50)",
               },
               "edgeSize": Object {
                 "large": "48px",
@@ -807,7 +807,7 @@ exports[`Anchor primary renders 1`] = `
                   "radius": "0px",
                   "width": "0px",
                 },
-                "boxShadow": "none",
+                "shadow": "0px 3px 8px rgba(100, 100, 100, 0.50)",
               },
               "edgeSize": Object {
                 "large": "48px",
@@ -1409,7 +1409,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "radius": "0px",
                   "width": "0px",
                 },
-                "boxShadow": "none",
+                "shadow": "0px 3px 8px rgba(100, 100, 100, 0.50)",
               },
               "edgeSize": Object {
                 "large": "48px",
@@ -1859,7 +1859,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "radius": "0px",
                   "width": "0px",
                 },
-                "boxShadow": "none",
+                "shadow": "0px 3px 8px rgba(100, 100, 100, 0.50)",
               },
               "edgeSize": Object {
                 "large": "48px",
