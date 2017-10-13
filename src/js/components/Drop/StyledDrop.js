@@ -2,18 +2,48 @@ import styled from 'styled-components';
 
 import { backgroundStyle, baseStyle } from '../utils';
 
+function getTransformOriginStyle(align) {
+  let vertical = 'top';
+  if (align.bottom) {
+    vertical = 'bottom';
+  }
+  let horizontal = 'left';
+  if (align.right) {
+    horizontal = 'right';
+  }
+  return `${vertical} ${horizontal}`;
+}
 const StyledDrop = styled.div`
   ${baseStyle}
 
+  border-radius: ${props => props.theme.global.drop.border.radius};
+  box-shadow: ${props => props.theme.global.drop.shadow};
   position: fixed;
   z-index: 20;
-  border-radius: ${props => props.theme.global.drop.border.radius};
+  
   overflow: auto;
   outline: none;
 
   ${props => backgroundStyle(
     props.background || props.theme.global.drop.backgroundColor, props.theme
   )}
+
+  opacity: 0;
+  transform-origin: ${props => getTransformOriginStyle(props.align)};
+  animation: grow-box 0.1s forwards;
+  animation-delay: 0.01s;
+
+  @keyframes grow-box {
+    0% {
+      opacity: 0.5;
+      transform: scale(0.8);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 `;
 
 export default StyledDrop.extend`
