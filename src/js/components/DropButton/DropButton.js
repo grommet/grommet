@@ -22,19 +22,25 @@ class DropButton extends Component {
       this.setState({ showDrop: open });
     }
   }
+
   onDropClose = () => {
+    const { onClose } = this.props;
     this.setState({
       showDrop: false,
+    }, () => {
+      if (onClose) {
+        onClose();
+      }
     });
   }
 
   render() {
     const {
+      a11yTitle,
       background,
       children,
       control,
       id,
-      messages = {},
       theme,
       ...rest
     } = this.props;
@@ -62,12 +68,13 @@ class DropButton extends Component {
 
     return [
       <Button
+        fill={true}
         key='drop-button__button'
         id={id}
         ref={(ref) => {
           this.componentRef = ref;
         }}
-        a11yTitle={messages.openMenu || 'Open Drop'}
+        a11yTitle={a11yTitle || 'Open Drop'}
         onClick={() => this.setState({ showDrop: !this.state.showDrop })}
         {...rest}
       >
