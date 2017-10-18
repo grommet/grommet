@@ -152,7 +152,7 @@ class SelectContainer extends Component {
                   onClick={() => this.selectOption(option)}
                   hoverIndicator='background'
                 >
-                  {children ? children(option, index) : (
+                  {children ? children(option, index, options) : (
                     <Box align='start' pad='small'>
                       <Text margin='none'>{option.toString()}</Text>
                     </Box>
