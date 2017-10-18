@@ -60,22 +60,33 @@ export const setTabIndex = tabIndex => (element) => {
   element.setAttribute('tabindex', tabIndex);
 };
 
-export const copyAttribute = source => target => element => (
-  element.setAttribute(target, element.getAttribute(source))
+export const copyAttribute = source => target => (element) => {
+  element.setAttribute(target, element.getAttribute(source));
+};
+
+const deleteAttribute = attribute => element => (
+  element.removeAttribute(attribute)
 );
 
 const unsetTabIndex = setTabIndex(-1);
 const saveTabIndex = copyAttribute('tabindex')('data-g-tabindex');
 const restoreTabIndex = copyAttribute('data-g-tabindex')('tabindex');
+const deleteTabIndex = deleteAttribute('tabindex');
+const deleteTabIndexCopy = deleteAttribute('data-g-tabindex');
 
 export const makeNodeFocusable = (node) => {
   node.setAttribute('aria-hidden', false);
   // allow children to receive focus again
   filterByFocusable(
     node.getElementsByTagName('*')
-  ).forEach(
-    restoreTabIndex
-  );
+  ).forEach((child) => {
+    if (child.hasAttribute('data-g-tabindex')) {
+      restoreTabIndex(child);
+    } else {
+      deleteTabIndex(child);
+    }
+    deleteTabIndexCopy(child);
+  });
 };
 
 export const makeNodeUnfocusable = (node) => {
@@ -84,7 +95,9 @@ export const makeNodeUnfocusable = (node) => {
   filterByFocusable(
     node.getElementsByTagName('*')
   ).forEach((child) => {
-    saveTabIndex(child);
+    if (child.hasAttribute('tabindex')) {
+      saveTabIndex(child);
+    }
     unsetTabIndex(child);
   });
 };

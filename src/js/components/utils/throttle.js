@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-export default function (fn, threshhold = 250, scope = this) {
+export const throttle = (fn, threshhold = 250, scope = this) => {
   let last;
   let deferTimer;
 
@@ -17,4 +17,6 @@ export default function (fn, threshhold = 250, scope = this) {
       fn.apply(scope, args);
     }
   };
-}
+};
+
+export default throttle;

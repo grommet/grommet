@@ -25,7 +25,7 @@ const StyledDrop = styled.div`
   outline: none;
 
   ${props => backgroundStyle(
-    props.background || props.theme.global.drop.backgroundColor, props.theme
+    props.theme.global.drop.backgroundColor, props.theme
   )}
 
   opacity: 0;

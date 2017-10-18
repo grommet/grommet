@@ -92,15 +92,28 @@ const bottomAlignStyle = `
   }
 `;
 
+const centerAlignStyle = css`
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  max-height: calc(100vh - ${props => props.theme.global.edgeSize.large});
+  max-width: calc(100vw - ${props => props.theme.global.edgeSize.large});
+  animation: grow-box 0.1s forwards;
+
+  @keyframes grow-box {
+    0% {
+      transform: scale(0);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+`;
+
 function getAlignStyle(props) {
   const ALIGN_MAP = {
-    'center': `
-      bottom: 50%;
-      right: 50%;
-      transform: translate(50%, 50%);
-      max-height: calc(100vh - ${props.theme.global.edgeSize.large});
-      max-width: calc(100vw - ${props.theme.global.edgeSize.large});
-    `,
+    'center': centerAlignStyle,
     'left': leftAlignStyle,
     'right': rightAlignStyle,
     'top': topAlignStyle,

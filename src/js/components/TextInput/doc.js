@@ -11,6 +11,7 @@ export default (TextInput) => {
   DocumentedTextInput.propTypes = {
     defaultValue: PropTypes.string.description('What text to start with in the input.'),
     id: PropTypes.string.description('The id attribute of the input.'),
+    focus: PropTypes.bool.description('Whether the plain text input should receive focus.'),
     name: PropTypes.string.description('The name attribute of the input.'),
     onInput: PropTypes.func.description(
       'Function that will be called when the user types in the input.'

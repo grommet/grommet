@@ -263,8 +263,10 @@ exports[`Anchor icon label renders 1`] = `
                   "#00CCEB",
                   "#FF7D28",
                 ],
+                "active": "rgba(221,221,221,0.5)",
                 "background": "#FFFFFF",
                 "black": "#000000",
+                "border": "rgba(0, 0, 0, 0.15)",
                 "brand": "#865CD6",
                 "dark": Array [
                   "#333333",
@@ -758,8 +760,10 @@ exports[`Anchor primary renders 1`] = `
                   "#00CCEB",
                   "#FF7D28",
                 ],
+                "active": "rgba(221,221,221,0.5)",
                 "background": "#FFFFFF",
                 "black": "#000000",
+                "border": "rgba(0, 0, 0, 0.15)",
                 "brand": "#865CD6",
                 "dark": Array [
                   "#333333",
@@ -1360,8 +1364,10 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "#00CCEB",
                   "#FF7D28",
                 ],
+                "active": "rgba(221,221,221,0.5)",
                 "background": "#FFFFFF",
                 "black": "#000000",
+                "border": "rgba(0, 0, 0, 0.15)",
                 "brand": "#865CD6",
                 "dark": Array [
                   "#333333",
@@ -1810,8 +1816,10 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "#00CCEB",
                   "#FF7D28",
                 ],
+                "active": "rgba(221,221,221,0.5)",
                 "background": "#FFFFFF",
                 "black": "#000000",
+                "border": "rgba(0, 0, 0, 0.15)",
                 "brand": "#865CD6",
                 "dark": Array [
                   "#333333",

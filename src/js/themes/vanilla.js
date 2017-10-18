@@ -20,6 +20,8 @@ const darkColors = ['#333333', '#444444', '#555555', '#666666', '#777777', '#999
 const lightColors = ['#F6F6F6', '#EEEEEE', '#DDDDDD', '#CCCCCC', '#BBBBBB', '#AAAAAA'];
 const backgroundColor = '#FFFFFF';
 const textColor = '#333333';
+const borderColor = 'rgba(0, 0, 0, 0.15)';
+const activeColor = rgba('#DDDDDD', 0.5);
 const fontPath = 'https://fonts.gstatic.com/s/worksans/v2';
 
 const baseSpacing = 24;
@@ -43,9 +45,11 @@ export default deepFreeze({
     },
     centerColumnWidth: `${baseSpacing * 48}px`,
     colors: {
+      active: activeColor,
       accent: accentColors,
       background: backgroundColor,
       black: '#000000',
+      border: borderColor,
       brand: brandColor,
       dark: darkColors,
       darkBackgroundTextColor: 'rgba(255, 255, 255, 0.85)',
@@ -137,14 +141,14 @@ export default deepFreeze({
       size: '16px',
     },
     hover: {
-      backgroundColor: rgba('#DDDDDD', 0.5),
+      backgroundColor: activeColor,
       textColor: '#000000',
     },
     input: {
       border: {
         width: '1px',
         radius: '4px',
-        color: 'rgba(0, 0, 0, 0.15)',
+        color: borderColor,
       },
     },
     lineHeight: '24px',
