@@ -41,7 +41,7 @@ export default (Button) => {
         ]),
       }),
     ]).description(
-      `Optional. The hover indicator to apply when the user is mousing over the
+      `The hover indicator to apply when the user is mousing over the
       button. An object can be also be specified for color index support:
       {background: 'neutral-2'}. This prop is meant to be used only
       with plain Buttons.`,

@@ -28,7 +28,7 @@ export default (Layer) => {
         'full',
       ]
     ).description(
-      'Optional size for the Layer.'
+      'Size for the Layer.'
     ),
   };
 

@@ -28,14 +28,14 @@ export default (Text) => {
       adjustments.`
     ),
     tag: PropTypes.string.description(
-      'The DOM tag to use for the element. Defaults to span.'
-    ),
+      'The DOM tag to use for the element.'
+    ).defaultProp('span'),
     textAlign: PropTypes.oneOf(['start', 'center', 'end']).description(
       'How to align the text inside the component.'
     ),
     truncate: PropTypes.bool.description(
       `Restrict the text to a single line and truncate with ellipsis if it
-      is too long to all fit. Defaults to false.`
+      is too long to all fit.`
     ),
   };
 

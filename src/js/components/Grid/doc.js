@@ -18,8 +18,8 @@ export default (Grid) => {
   DocumentedGrid.propTypes = {
     align: PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description(
       `How to align the individual items inside the grid when there is extra
-      space in the column axis. Defaults to stretch`
-    ),
+      space in the column axis.`
+    ).defaultProp('stretch'),
     alignContent: PropTypes.oneOf(
       ['start', 'center', 'end', 'between', 'around', 'stretch']
     ).description('How to align the contents along the column axis.'),
@@ -42,15 +42,15 @@ export default (Grid) => {
     ),
     justify: PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description(
       `How to align the individual items inside the grid when there is extra
-      space in the row axis. Defaults to stretch`
-    ),
+      space in the row axis.`
+    ).defaultProp('stretch'),
     justifyContent: PropTypes.oneOf(
       ['start', 'center', 'end', 'between', 'around', 'stretch']
     ).description('How to align the contents along the row axis.'),
     rows: PropTypes.arrayOf(PropTypes.oneOf(sizes)).description('Row sizes.'),
     tag: PropTypes.string.description(
-      'The DOM tag to use for the element. Defaults to div.'
-    ),
+      'The DOM tag to use for the element.'
+    ).defaultProp('div'),
   };
 
   return DocumentedGrid;

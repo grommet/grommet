@@ -24,10 +24,10 @@ export default (CheckBox) => {
     ),
     onChange: PropTypes.func.description('Same as React <input onChange={} />'),
     reverse: PropTypes.bool.description(
-      'Whether to show the label in front of the checkbox. Defaults to false.'
+      'Whether to show the label in front of the checkbox.'
     ),
     toggle: PropTypes.bool.description(
-      'Whether to visualize it as a toggle switch. Defaults to false.'
+      'Whether to visualize it as a toggle switch.'
     ),
   };
 
