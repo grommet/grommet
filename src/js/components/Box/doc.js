@@ -31,9 +31,8 @@ export default (Box) => {
     ),
     alignContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around', 'stretch'])
       .description(
-        `How to align the contents when there is extra space in the cross axis.
-        Defaults to stretch`
-      ),
+        'How to align the contents when there is extra space in the cross axis.'
+      ).defaultProp('stretch'),
     alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description(
       `How to align along the cross axis when contained in a Box or along
       the column axis when contained in a Grid.`
@@ -78,8 +77,8 @@ export default (Box) => {
       }),
     ]).description('Include a border.'),
     direction: PropTypes.oneOf(['row', 'column']).description(
-      'The orientation to layout the child components in. Defaults to column.'
-    ),
+      'The orientation to layout the child components in.'
+    ).defaultProp('column'),
     flex: PropTypes.oneOf(['grow', 'shrink', true, false]).description(
       'Whether flex-grow and/or flex-shrink is true.'
     ),
@@ -134,12 +133,12 @@ export default (Box) => {
     round: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full']).description(
       'How much to round the corners.'
     ),
-    tag: PropTypes.string.description('The DOM tag to use for the element. Defaults to div.'),
+    tag: PropTypes.string.description('The DOM tag to use for the element.').defaultProp('div'),
     textAlign: PropTypes.oneOf(['start', 'center', 'end']).description(
       'How to align the text inside the box.'
     ),
     wrap: PropTypes.bool.description(
-      'Whether children can wrap if they can\'t all fit. Defaults to false.'
+      'Whether children can wrap if they can\'t all fit.'
     ),
   };
   return DocumentedBox;

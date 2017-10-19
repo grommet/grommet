@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
+import getDisplayName from 'recompose/getDisplayName';
 
 import { deepMerge } from '../utils';
 import { getBodyChildElements, makeNodeFocusable, makeNodeUnfocusable } from './utils';
@@ -65,6 +66,7 @@ export const withFocus = (WrappedComponent) => {
     }
   }
 
+  FocusableComponent.displayName = getDisplayName(WrappedComponent);
   return FocusableComponent;
 };
 
@@ -83,6 +85,7 @@ export const withTheme = (WrappedComponent) => {
     }
   }
 
+  ThemedComponent.displayName = getDisplayName(WrappedComponent);
   return ThemedComponent;
 };
 
@@ -96,6 +99,7 @@ export const withRestrictScroll = (WrappedComponent) => {
       );
     }
   }
+  RestrictScrollContainer.displayName = getDisplayName(WrappedComponent);
   return RestrictScrollContainer;
 };
 
@@ -131,6 +135,7 @@ export const restrictFocusTo = (WrappedComponent) => {
     }
   }
 
+  FocusedContainer.displayName = getDisplayName(WrappedComponent);
   return FocusedContainer;
 };
 

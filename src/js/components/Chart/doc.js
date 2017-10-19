@@ -15,7 +15,7 @@ export default (Chart) => {
     color: PropTypes.string.description(
       'A color identifier to use for the graphic color.'
     ).defaultProp('accent-1'),
-    round: PropTypes.bool.description('Whether to round the line ends'),
+    round: PropTypes.bool.description('Whether to round the line ends.'),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(
         ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),
@@ -26,14 +26,14 @@ export default (Chart) => {
           ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full']),
       }),
     ]).description(
-      'The size of the Chart. Defaults to { width: "medium", height: "small" }.'
-    ),
+      'The size of the Chart.'
+    ).defaultProp({ width: 'medium', height: 'small' }),
     thickness: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']).description(
       'The width of the stroke.'
     ).defaultProp('medium'),
     type: PropTypes.oneOf(['bar', 'line', 'area']).description(
-      'The visual type of meter. The default is bar'
-    ),
+      'The visual type of meter.'
+    ).defaultProp('bar'),
     values: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string, // for accessibility of bars
       value: PropTypes.arrayOf(PropTypes.number).isRequired,
@@ -42,7 +42,7 @@ export default (Chart) => {
       'value' is a tuple indicating the coordinate of the value or a triple
       indicating the x coordinate and a range of two y coordinates.
       'label' is a text string describing it.`
-    ),
+    ).isRequired,
   };
 
   return DocumentedChart;
