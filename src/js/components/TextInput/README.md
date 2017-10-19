@@ -26,6 +26,14 @@ The id attribute of the input.
 string
 ```
 
+**focusIndicator**
+
+Whether the plain text input should receive a focus outline.
+
+```
+boolean
+```
+
 **name**
 
 The name attribute of the input.
@@ -53,7 +61,7 @@ function
 
 **placeholder**
 
-Placeholder text to use when the input is empty.
+Placeholder text to use when no value is provided.
 
 ```
 string

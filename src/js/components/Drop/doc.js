@@ -16,7 +16,7 @@ export default (Drop) => {
       left: PropTypes.oneOf(['left', 'right']),
     }).description(
       'How to align the drop with respect to the target element.'
-    ).defaultProp({
+    ).defaultValue({
       defaultProp: {
         top: 'top',
         left: 'left',
@@ -35,7 +35,7 @@ export default (Drop) => {
     ),
     responsive: PropTypes.bool
       .description('Whether to dynamically re-place when resized.')
-      .defaultProp({
+      .defaultValue({
         defaultProp: true,
       }),
     theme: PropTypes.object.description('Custom styles for Drop component.'),

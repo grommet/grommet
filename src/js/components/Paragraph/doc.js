@@ -19,7 +19,7 @@ export default (Paragraph) => {
     ),
     size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']).description(
       'The size of the Paragraph text.'
-    ).defaultProp('medium'),
+    ).defaultValue('medium'),
     textAlign: PropTypes.oneOf(['start', 'center', 'end']).description(
       'How to align the text inside the paragraph.'
     ),
