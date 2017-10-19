@@ -363,8 +363,25 @@ class Video extends Component {
       };
     }
 
+    let style;
+    if (rest.fit === 'contain' && controls === 'over' && this.videoRef) {
+      // constrain the size to fit the aspect ratio so the controls overlap correctly
+      const video = findDOMNode(this.videoRef);
+      if (video.videoHeight) {
+        const rect = video.getBoundingClientRect();
+        const ratio = rect.width / rect.height;
+        const videoRatio = video.videoWidth / video.videoHeight;
+        style = {};
+        if (videoRatio > ratio) {
+          style.height = rect.width / videoRatio;
+        } else {
+          style.width = rect.height * videoRatio;
+        }
+      }
+    }
+
     return (
-      <StyledVideoContainer {...mouseEventListeners} >
+      <StyledVideoContainer {...mouseEventListeners} style={style}>
         <StyledVideo
           ref={(ref) => { this.videoRef = ref; }}
           {...rest}

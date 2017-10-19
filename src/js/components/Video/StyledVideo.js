@@ -9,8 +9,8 @@ const FIT_MAP = {
 
 const fitStyle = css`
   flex: 1 1;
+  min-height: 0;
   object-fit: ${props => FIT_MAP[props.fit]};
-  ${props => (props.fit === 'contain' && 'object-position: 50% 100%;')}
 `;
 
 const StyledVideo = styled.video`
