@@ -13,15 +13,15 @@ export default (Select) => {
 
   DocumentedSelect.propTypes = {
     a11yTitle: a11yTitlePropType,
-    background: backgroundPropType,
-    basis: PropTypes.string.description(
-      'Size of the options container inside the Select drop.'
+    activeOptionIndex: PropTypes.number.description(
+      'Highlight a given option at the provided index.'
     ),
+    background: backgroundPropType,
     children: PropTypes.func.description(
       'Function that will be called when each option is rendered.'
     ),
-    name: PropTypes.string.description(
-      'Name of the select to be used inside a form context.'
+    dropSize: PropTypes.string.description(
+      'Size of the options container inside the Select drop.'
     ),
     onChange: PropTypes.func.description(
       'Function that will be called when the user selects an option.'
@@ -43,7 +43,7 @@ export default (Select) => {
       in order to render anything based on the current item.`
     ).isRequired,
     placeholder: PropTypes.string.description(
-      'Placeholder text to use when the input is empty.'
+      'Placeholder text to use when no value is provided.'
     ),
     plain: PropTypes.bool.description(
       'Whether this is a plain Select input with no border or padding.'

@@ -13,7 +13,7 @@ import { debounce } from '../utils';
 
 class SelectContainer extends Component {
   state = {
-    activeOptionIndex: -1,
+    selectedOptionIndex: -1,
     search: '',
   }
   static defaultProps = {
@@ -35,16 +35,17 @@ class SelectContainer extends Component {
   }
 
   componentDidUpdate() {
-    const { activeOptionIndex } = this.state;
-    const buttonNode = findDOMNode(this.optionsRef[activeOptionIndex]);
-    if (activeOptionIndex >= 0 && buttonNode) {
+    const { selectedOptionIndex } = this.state;
+    const buttonNode = findDOMNode(this.optionsRef[selectedOptionIndex]);
+    if (selectedOptionIndex >= 0 && buttonNode) {
       buttonNode.scrollIntoView();
     }
   }
 
   onInput = (event) => {
     this.setState(
-      { search: event.target.value, activeOptionIndex: -1 }, () => this.onSearch(this.state.search)
+      { search: event.target.value, selectedOptionIndex: -1 },
+      () => this.onSearch(this.state.search)
     );
   }
 
@@ -60,25 +61,25 @@ class SelectContainer extends Component {
 
   onNextOption = (event) => {
     const { options } = this.props;
-    const { activeOptionIndex } = this.state;
+    const { selectedOptionIndex } = this.state;
     event.preventDefault();
-    const index = Math.min(activeOptionIndex + 1, options.length - 1);
-    this.setState({ activeOptionIndex: index });
+    const index = Math.min(selectedOptionIndex + 1, options.length - 1);
+    this.setState({ selectedOptionIndex: index });
   }
 
   onPreviousOption = (event) => {
-    const { activeOptionIndex } = this.state;
+    const { selectedOptionIndex } = this.state;
     event.preventDefault();
-    const index = Math.max(activeOptionIndex - 1, 0);
-    this.setState({ activeOptionIndex: index });
+    const index = Math.max(selectedOptionIndex - 1, 0);
+    this.setState({ selectedOptionIndex: index });
   }
 
   onSelectOption = (event) => {
     const { options } = this.props;
-    const { activeOptionIndex } = this.state;
-    if (activeOptionIndex >= 0) {
+    const { selectedOptionIndex } = this.state;
+    if (selectedOptionIndex >= 0) {
       event.preventDefault(); // prevent submitting forms
-      this.selectOption(options[activeOptionIndex]);
+      this.selectOption(options[selectedOptionIndex]);
     }
   }
 
@@ -108,9 +109,10 @@ class SelectContainer extends Component {
 
   render() {
     const {
+      activeOptionIndex,
       background,
-      basis,
       children,
+      dropSize,
       name,
       onKeyDown,
       onSearch,
@@ -118,7 +120,7 @@ class SelectContainer extends Component {
       searchPlaceholder,
       value,
     } = this.props;
-    const { activeOptionIndex, search } = this.state;
+    const { selectedOptionIndex, search } = this.state;
     return (
       <Keyboard
         onEnter={this.onSelectOption}
@@ -130,7 +132,7 @@ class SelectContainer extends Component {
           {onSearch ? (
             <Box pad='xsmall'>
               <TextInput
-                focus={true}
+                focusIndicator={true}
                 plain={true}
                 size='small'
                 ref={(ref) => { this.searchRef = ref; }}
@@ -141,13 +143,17 @@ class SelectContainer extends Component {
               />
             </Box>
           ) : undefined}
-          <Box basis={basis} overflow='auto'>
+          <Box basis={dropSize} overflow='auto'>
             <Box flex={false} role='menubar' tabIndex='-1' ref={(ref) => { this.selectRef = ref; }}>
               {options.map((option, index) => (
                 <Button
                   role='menuitem'
                   ref={(ref) => { this.optionsRef[index] = ref; }}
-                  active={activeOptionIndex === index || option === value}
+                  active={
+                    activeOptionIndex === index ||
+                    selectedOptionIndex === index ||
+                    option === value
+                  }
                   key={`option_${name || ''}_${index}`}
                   onClick={() => this.selectOption(option)}
                   hoverIndicator='background'
