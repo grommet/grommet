@@ -14,7 +14,7 @@ export default (Chart) => {
     ),
     color: PropTypes.string.description(
       'A color identifier to use for the graphic color.'
-    ).defaultProp('accent-1'),
+    ).defaultValue('accent-1'),
     round: PropTypes.bool.description('Whether to round the line ends.'),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(
@@ -27,13 +27,13 @@ export default (Chart) => {
       }),
     ]).description(
       'The size of the Chart.'
-    ).defaultProp({ width: 'medium', height: 'small' }),
+    ).defaultValue({ width: 'medium', height: 'small' }),
     thickness: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']).description(
       'The width of the stroke.'
-    ).defaultProp('medium'),
+    ).defaultValue('medium'),
     type: PropTypes.oneOf(['bar', 'line', 'area']).description(
       'The visual type of meter.'
-    ).defaultProp('bar'),
+    ).defaultValue('bar'),
     values: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string, // for accessibility of bars
       value: PropTypes.arrayOf(PropTypes.number).isRequired,

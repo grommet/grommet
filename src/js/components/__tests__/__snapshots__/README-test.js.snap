@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`README is update to date 1`] = `
-"## Anchor
+exports[`README is updated 1`] = `
+Object {
+  "Anchor": "## Anchor
 A text link. We have a separate component from the browser
       base so we can style it. You can either set the icon and/or label properties
       or just use children.
@@ -71,11 +72,8 @@ Whether an icon and label should be reversed so that the icon is at the end of t
 \`\`\`
 boolean
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 2`] = `
-"## Box
+  ",
+  "Box": "## Box
 A flexible box that lays out its contents along a single
       direction.
 
@@ -87,6 +85,14 @@ import { Box } from 'grommet';
 \`\`\`
 
 ## Properties
+
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
 
 **align**
 
@@ -460,11 +466,8 @@ Whether children can wrap if they can't all fit.
 \`\`\`
 boolean
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 3`] = `
-"## Button
+  ",
+  "Button": "## Button
 A button. We have a separate component
       from the browser base so we can style it.
 
@@ -612,11 +615,8 @@ button
 reset
 submit
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 4`] = `
-"## Chart
+  ",
+  "Chart": "## Chart
 A graphical chart.
 
 ## Usage
@@ -724,11 +724,8 @@ Required. Array of value objects describing the data.
   value: [number]
 }]
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 5`] = `
-"## CheckBox
+  ",
+  "CheckBox": "## CheckBox
 A checkbox toggle control.
 
 ## Usage
@@ -812,11 +809,8 @@ Whether to visualize it as a toggle switch.
 \`\`\`
 boolean
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 6`] = `
-"## Drop
+  ",
+  "Drop": "## Drop
 A drop container that opens next to a target.
 
 ## Usage
@@ -851,19 +845,6 @@ How to align the drop with respect to the target element. Defaults to \`{
   left: 
     left
     right
-}
-\`\`\`
-
-**background**
-
-Either a color identifier to use for the background color. For example:
-      'neutral-1'. Or, a 'url()' for an image.
-
-\`\`\`
-string
-{
-  dark: boolean,
-  image: string
 }
 \`\`\`
 
@@ -918,11 +899,8 @@ Custom styles for Drop component.
 \`\`\`
 object
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 7`] = `
-"## DropButton
+  ",
+  "DropButton": "## DropButton
 A control that when clicked will render its children in a drop layer.
     When opened, the drop will control the focus so that the contents behind it are not focusable.
     
@@ -942,22 +920,6 @@ Custom title to be used by screen readers.
 
 \`\`\`
 string
-\`\`\`
-
-**background**
-
-Background color when drop is active
-
-\`\`\`
-string
-{
-  color: string,
-  opacity: 
-    weak
-    medium
-    strong
-    boolean
-}
 \`\`\`
 
 **control**
@@ -983,11 +945,8 @@ Whether the drop should be open or not.
 \`\`\`
 boolean
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 8`] = `
-"## Grid
+  ",
+  "Grid": "## Grid
 A grid system for laying out content. To use, define the
     rows and columns, create area names for adjacent cells, and then
     place Box components inside those areas using the Box.gridArea property.
@@ -1132,11 +1091,8 @@ The DOM tag to use for the element. Defaults to \`div\`.
 \`\`\`
 string
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 9`] = `
-"## Grommet
+  ",
+  "Grommet": "## Grommet
 This is the top level Grommet container.
 
 ## Usage
@@ -1165,11 +1121,8 @@ Custom styles for Grommet app component.
 \`\`\`
 object
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 10`] = `
-"## Heading
+  ",
+  "Heading": "## Heading
 Heading text structed in levels.
 
 ## Usage
@@ -1249,11 +1202,8 @@ Restrict the text to a single line and truncate with ellipsis if it
 \`\`\`
 boolean
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 11`] = `
-"## Image
+  ",
+  "Image": "## Image
 An image.
 
 ## Usage
@@ -1273,11 +1223,8 @@ How the image fills its container.
 cover
 contain
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 12`] = `
-"## Keyboard
+  ",
+  "Keyboard": "## Keyboard
 A react component that handles keyboard key presses.
 
 ## Usage
@@ -1376,11 +1323,8 @@ Function that will be called when the user presses the up key.
 \`\`\`
 function
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 13`] = `
-"## Layer
+  ",
+  "Layer": "## Layer
 A modal overlay. It is the caller's responsibility to provide a control for
     the user to close the layer.
 
@@ -1427,11 +1371,8 @@ xlarge
 xxlarge
 full
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 14`] = `
-"## GrommetMarkdown
+  ",
+  "Markdown": "## GrommetMarkdown
 Markdown formatting using Grommet components.
 
 ## Usage
@@ -1450,11 +1391,8 @@ The markdown text to render.
 \`\`\`
 string
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 15`] = `
-"## Menu
+  ",
+  "Menu": "## Menu
 Presents a list of choices within a drop down via a control that
     opens it.
 
@@ -1489,7 +1427,10 @@ Where to place the drop down. The keys correspond to a side of the drop down.
       The values correspond to a side of the control. For instance,
       {left: 'left', top: 'bottom'} would align the left edges and the top of
       the drop down to the bottom of the control. At most one of left or right and
-      one of top or bottom should be specified.
+      one of top or bottom should be specified. Defaults to \`{
+  \\"top\\": \\"top\\",
+  \\"left\\": \\"left\\"
+}\`.
 
 \`\`\`
 {
@@ -1544,11 +1485,8 @@ Custom messages for Menu. Used for accessibility by screen readers.
   openMenu: string
 }
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 16`] = `
-"## Meter
+  ",
+  "Meter": "## Meter
 A graphical meter.
 
 ## Usage
@@ -1633,11 +1571,8 @@ Array of value objects describing the data.
   value: number
 }]
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 17`] = `
-"## Paragraph
+  ",
+  "Paragraph": "## Paragraph
 A paragraph of text.
 
 ## Usage
@@ -1691,11 +1626,8 @@ start
 center
 end
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 18`] = `
-"## RadioButton
+  ",
+  "RadioButton": "## RadioButton
 A radio button control.
 
 ## Usage
@@ -1763,11 +1695,8 @@ Same as React <input onChange={} />
 \`\`\`
 function
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 19`] = `
-"## Responsive
+  ",
+  "Responsive": "## Responsive
 A react component that handles responsive breakpoints.
 
 ## Usage
@@ -1788,11 +1717,148 @@ Function that will be called when the browser window crosses a responsive
 \`\`\`
 function
 \`\`\`
-  "
-`;
+  ",
+  "Select": "## Select
+An select-like field with optional search capability.
 
-exports[`README is update to date 20`] = `
-"## Stack
+## Usage
+
+\`\`\`javascript
+import { Select } from 'grommet';
+      <Select/>
+\`\`\`
+
+## Properties
+
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+\`\`\`
+string
+\`\`\`
+
+**activeOptionIndex**
+
+Highlight a given option at the provided index.
+
+\`\`\`
+number
+\`\`\`
+
+**background**
+
+Background color when drop is active
+
+\`\`\`
+string
+{
+  color: string,
+  opacity: 
+    weak
+    medium
+    strong
+    boolean
+}
+\`\`\`
+
+**children**
+
+Function that will be called when each option is rendered.
+
+\`\`\`
+function
+\`\`\`
+
+**dropSize**
+
+Size of the options container inside the Select drop.
+
+\`\`\`
+string
+\`\`\`
+
+**onChange**
+
+Function that will be called when the user selects an option.
+
+\`\`\`
+function
+\`\`\`
+
+**onClose**
+
+Function that will be called when the Select drop closes.
+
+\`\`\`
+function
+\`\`\`
+
+**onSearch**
+
+Function that will be called when the user types in the search input.
+      If this property is not provided, no search field will be rendered.
+
+\`\`\`
+function
+\`\`\`
+
+**open**
+
+Whether the Select drop should be open or not.
+
+\`\`\`
+boolean
+\`\`\`
+
+**options**
+
+Required. Options can be either a string or an object. If an object is used, use children callback
+      in order to render anything based on the current item.
+
+\`\`\`
+[
+  string
+  element
+  object
+]
+\`\`\`
+
+**placeholder**
+
+Placeholder text to use when no value is provided.
+
+\`\`\`
+string
+\`\`\`
+
+**plain**
+
+Whether this is a plain Select input with no border or padding.
+
+\`\`\`
+boolean
+\`\`\`
+
+**searchPlaceholder**
+
+Placeholder text to use in the search box when the search input is empty.
+
+\`\`\`
+string
+\`\`\`
+
+**value**
+
+Currently selected value.
+
+\`\`\`
+string
+element
+object
+\`\`\`
+  ",
+  "Stack": "## Stack
 Stacks components on top of the first child component.
 
 ## Usage
@@ -1820,11 +1886,8 @@ bottom-left
 top-right
 bottom-right
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 21`] = `
-"## Text
+  ",
+  "Text": "## Text
 Arbitrary text.
 
 ## Usage
@@ -1909,11 +1972,8 @@ Restrict the text to a single line and truncate with ellipsis if it
 \`\`\`
 boolean
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 22`] = `
-"## TextInput
+  ",
+  "TextInput": "## TextInput
 A text input field with optional suggestions.
 
 ## Usage
@@ -1939,6 +1999,14 @@ The id attribute of the input.
 
 \`\`\`
 string
+\`\`\`
+
+**focusIndicator**
+
+Whether the plain text input should receive a focus outline.
+
+\`\`\`
+boolean
 \`\`\`
 
 **name**
@@ -1968,7 +2036,7 @@ function
 
 **placeholder**
 
-Placeholder text to use when the input is empty.
+Placeholder text to use when no value is provided.
 
 \`\`\`
 string
@@ -2016,11 +2084,8 @@ What text to put in the input.
 \`\`\`
 string
 \`\`\`
-  "
-`;
-
-exports[`README is update to date 23`] = `
-"## Video
+  ",
+  "Video": "## Video
 A video player.
 
 ## Usage
@@ -2074,5 +2139,6 @@ Enables video muting. This option is best used with the autoPlay flag
 \`\`\`
 boolean
 \`\`\`
-  "
+  ",
+}
 `;

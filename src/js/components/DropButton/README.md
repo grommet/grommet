@@ -20,22 +20,6 @@ Custom title to be used by screen readers.
 string
 ```
 
-**background**
-
-Background color when drop is active
-
-```
-string
-{
-  color: string,
-  opacity: 
-    weak
-    medium
-    strong
-    boolean
-}
-```
-
 **control**
 
 Required. React node to open/close the drop content.

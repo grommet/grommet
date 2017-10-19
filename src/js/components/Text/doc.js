@@ -29,7 +29,7 @@ export default (Text) => {
     ),
     tag: PropTypes.string.description(
       'The DOM tag to use for the element.'
-    ).defaultProp('span'),
+    ).defaultValue('span'),
     textAlign: PropTypes.oneOf(['start', 'center', 'end']).description(
       'How to align the text inside the component.'
     ),

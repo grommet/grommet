@@ -36,19 +36,6 @@ How to align the drop with respect to the target element. Defaults to `{
 }
 ```
 
-**background**
-
-Either a color identifier to use for the background color. For example:
-      'neutral-1'. Or, a 'url()' for an image.
-
-```
-string
-{
-  dark: boolean,
-  image: string
-}
-```
-
 **control**
 
 Required. Target container where the drop will be aligned.

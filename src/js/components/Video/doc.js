@@ -12,7 +12,7 @@ export default (Video) => {
     ),
     controls: PropTypes.oneOf([false, 'over', 'below']).description(
       'Whether to show playback controls and where to place them.'
-    ).defaultProp('over'),
+    ).defaultValue('over'),
     fit: PropTypes.oneOf(['cover', 'contain']).description(
       'How the image fills its container.'
     ),

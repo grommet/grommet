@@ -14,12 +14,12 @@ export default (Meter) => {
     round: PropTypes.bool.description('Whether to round the line ends'),
     size: PropTypes.oneOf(
       ['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']
-    ).description('The size of the Meter.').defaultProp('medium'),
+    ).description('The size of the Meter.').defaultValue('medium'),
     thickness: PropTypes.oneOf(
       ['xsmall', 'small', 'medium', 'large', 'xlarge']
     ).description(
       'The size of the Meter.'
-    ).defaultProp('medium'),
+    ).defaultValue('medium'),
     type: PropTypes.oneOf(['bar', 'circle']).description('The visual type of meter.'),
     values: PropTypes.arrayOf(PropTypes.shape({
       color: PropTypes.string,

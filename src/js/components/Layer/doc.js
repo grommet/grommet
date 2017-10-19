@@ -12,7 +12,7 @@ export default (Layer) => {
   DocumentedLayer.propTypes = {
     align: PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']).description(
       'Which direction the layer contents should emanate from.'
-    ).defaultProp('center'),
+    ).defaultValue('center'),
     onEsc: PropTypes.func.description(
       'Function that will be called when the user presses the escape key inside the Layer.'
     ),

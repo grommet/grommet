@@ -11,6 +11,14 @@ import { Box } from 'grommet';
 
 ## Properties
 
+**a11yTitle**
+
+Custom title to be used by screen readers.
+
+```
+string
+```
+
 **align**
 
 How to align the contents along the cross axis.

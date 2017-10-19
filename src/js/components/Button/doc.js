@@ -72,7 +72,7 @@ export default (Button) => {
     type: PropTypes.oneOf(['button', 'reset', 'submit']).description(
       `The type of button. Set the type to submit for the default button
       on forms.`
-    ).defaultProp('button'),
+    ).defaultValue('button'),
   };
 
   return DocumentedButton;
