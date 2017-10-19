@@ -176,7 +176,7 @@ class TextInput extends Component {
   }
 
   render() {
-    const { defaultValue, focus, plain, value, onInput, onKeyDown, ...rest } = this.props;
+    const { defaultValue, plain, value, onInput, onKeyDown, ...rest } = this.props;
     delete rest.onInput; // se we can manage in onInputChange()
     const { showDrop } = this.state;
     // needed so that styled components does not invoke
@@ -212,7 +212,6 @@ class TextInput extends Component {
             autoComplete='off'
             plain={plain}
             {...rest}
-            focus={!plain && focus}
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
             onInput={(event) => {

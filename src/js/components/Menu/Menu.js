@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
-import { compose } from 'recompose';
 
 import { FormDown } from 'grommet-icons';
 
@@ -10,17 +8,9 @@ import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Drop } from '../Drop';
 
-import { withTheme } from '../hocs';
-
 import doc from './doc';
 
 class Menu extends Component {
-  static contextTypes = {
-    grommet: PropTypes.object,
-    theme: PropTypes.object,
-    router: PropTypes.any,
-  }
-
   static defaultProps = {
     dropAlign: { top: 'top', left: 'left' },
   };
@@ -93,7 +83,6 @@ class Menu extends Component {
       label,
       messages = {},
       onKeyDown,
-      theme,
       ...rest
     } = this.props;
     const { activeItemIndex, showDrop } = this.state;
@@ -130,39 +119,40 @@ class Menu extends Component {
         <Drop
           id={id ? `menu-drop__${id}` : undefined}
           align={dropAlign}
-          background={background}
           ref={(ref) => {
             this.dropRef = ref;
           }}
           control={this.componentRef}
           onClose={this.onDropClose}
         >
-          {dropAlign.top === 'top' ? controlMirror : undefined}
-          <Box>
-            {items.map(
-              (item, index) => (
-                <Button
-                  ref={(ref) => {
-                    this.buttonRefs[index] = ref;
-                  }}
-                  active={activeItemIndex === index}
-                  key={`menuItem_${index}`}
-                  hoverIndicator='background'
-                  onClick={item.onClick ? (...args) => {
-                    item.onClick(...args);
-                    if (item.close !== false) {
-                      this.onDropClose();
-                    }
-                  } : undefined}
-                >
-                  <Box align='start' pad='small' direction='row'>
-                    {item.icon}{item.label}
-                  </Box>
-                </Button>
-              )
-            )}
+          <Box background={background}>
+            {dropAlign.top === 'top' ? controlMirror : undefined}
+            <Box>
+              {items.map(
+                (item, index) => (
+                  <Button
+                    ref={(ref) => {
+                      this.buttonRefs[index] = ref;
+                    }}
+                    active={activeItemIndex === index}
+                    key={`menuItem_${index}`}
+                    hoverIndicator='background'
+                    onClick={item.onClick ? (...args) => {
+                      item.onClick(...args);
+                      if (item.close !== false) {
+                        this.onDropClose();
+                      }
+                    } : undefined}
+                  >
+                    <Box align='start' pad='small' direction='row'>
+                      {item.icon}{item.label}
+                    </Box>
+                  </Button>
+                )
+              )}
+            </Box>
+            {dropAlign.bottom === 'bottom' ? controlMirror : undefined }
           </Box>
-          {dropAlign.bottom === 'bottom' ? controlMirror : undefined }
         </Drop>
       );
     }
@@ -203,6 +193,4 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Menu);
 }
 
-export default compose(
-  withTheme,
-)(Menu);
+export default Menu;

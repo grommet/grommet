@@ -17,6 +17,7 @@ export * from './Meter';
 export * from './Paragraph';
 export * from './RadioButton';
 export * from './Responsive';
+export * from './Select';
 export * from './Stack';
 export * from './Text';
 export * from './TextInput';

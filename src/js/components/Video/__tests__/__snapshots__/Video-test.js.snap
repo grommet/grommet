@@ -64,6 +64,7 @@ exports[`Video autoPlay renders 1`] = `
   align-items: center;
   background-color: rgba(68,68,68,0.8);
   color: rgba(255,255,255,0.85);
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -83,6 +84,7 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -97,6 +99,7 @@ exports[`Video autoPlay renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -111,6 +114,7 @@ exports[`Video autoPlay renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -128,6 +132,7 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -313,6 +318,7 @@ exports[`Video autoPlay renders 1`] = `
       className="c3"
     >
       <div
+        aria-label={undefined}
         className="c4"
         direction="row"
       >
@@ -359,10 +365,12 @@ exports[`Video autoPlay renders 1`] = `
           </span>
         </button>
         <div
+          aria-label={undefined}
           className="c8"
           direction="row"
         >
           <div
+            aria-label={undefined}
             className="c9"
             direction="column"
           >
@@ -407,6 +415,7 @@ exports[`Video autoPlay renders 1`] = `
             </div>
           </div>
           <div
+            aria-label={undefined}
             className="c13"
             direction="column"
           >
@@ -437,6 +446,7 @@ exports[`Video autoPlay renders 1`] = `
             type="button"
           >
             <div
+              aria-label={undefined}
               className="c16"
               direction="row"
             >
@@ -562,6 +572,7 @@ exports[`Video controls renders 1`] = `
   align-items: center;
   background-color: rgba(68,68,68,0.8);
   color: rgba(255,255,255,0.85);
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -581,6 +592,7 @@ exports[`Video controls renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -595,6 +607,7 @@ exports[`Video controls renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -609,6 +622,7 @@ exports[`Video controls renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -626,6 +640,7 @@ exports[`Video controls renders 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -642,6 +657,7 @@ exports[`Video controls renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -840,6 +856,7 @@ exports[`Video controls renders 1`] = `
       className="c3"
     >
       <div
+        aria-label={undefined}
         className="c4"
         direction="row"
       >
@@ -886,10 +903,12 @@ exports[`Video controls renders 1`] = `
           </span>
         </button>
         <div
+          aria-label={undefined}
           className="c8"
           direction="row"
         >
           <div
+            aria-label={undefined}
             className="c9"
             direction="column"
           >
@@ -934,6 +953,7 @@ exports[`Video controls renders 1`] = `
             </div>
           </div>
           <div
+            aria-label={undefined}
             className="c13"
             direction="column"
           >
@@ -964,6 +984,7 @@ exports[`Video controls renders 1`] = `
             type="button"
           >
             <div
+              aria-label={undefined}
               className="c16"
               direction="row"
             >
@@ -1029,6 +1050,7 @@ exports[`Video controls renders 1`] = `
       className="c17"
     >
       <div
+        aria-label={undefined}
         className="c18"
         direction="row"
       >
@@ -1075,10 +1097,12 @@ exports[`Video controls renders 1`] = `
           </span>
         </button>
         <div
+          aria-label={undefined}
           className="c8"
           direction="row"
         >
           <div
+            aria-label={undefined}
             className="c9"
             direction="column"
           >
@@ -1123,6 +1147,7 @@ exports[`Video controls renders 1`] = `
             </div>
           </div>
           <div
+            aria-label={undefined}
             className="c13"
             direction="column"
           >
@@ -1153,6 +1178,7 @@ exports[`Video controls renders 1`] = `
             type="button"
           >
             <div
+              aria-label={undefined}
               className="c16"
               direction="row"
             >
@@ -1246,6 +1272,7 @@ exports[`Video fit renders 1`] = `
   align-items: center;
   background-color: rgba(68,68,68,0.8);
   color: rgba(255,255,255,0.85);
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -1265,6 +1292,7 @@ exports[`Video fit renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -1279,6 +1307,7 @@ exports[`Video fit renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1293,6 +1322,7 @@ exports[`Video fit renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1310,6 +1340,7 @@ exports[`Video fit renders 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -1513,6 +1544,7 @@ exports[`Video fit renders 1`] = `
       className="c3"
     >
       <div
+        aria-label={undefined}
         className="c4"
         direction="row"
       >
@@ -1559,10 +1591,12 @@ exports[`Video fit renders 1`] = `
           </span>
         </button>
         <div
+          aria-label={undefined}
           className="c8"
           direction="row"
         >
           <div
+            aria-label={undefined}
             className="c9"
             direction="column"
           >
@@ -1607,6 +1641,7 @@ exports[`Video fit renders 1`] = `
             </div>
           </div>
           <div
+            aria-label={undefined}
             className="c13"
             direction="column"
           >
@@ -1637,6 +1672,7 @@ exports[`Video fit renders 1`] = `
             type="button"
           >
             <div
+              aria-label={undefined}
               className="c16"
               direction="row"
             >
@@ -1705,6 +1741,7 @@ exports[`Video fit renders 1`] = `
       className="c3"
     >
       <div
+        aria-label={undefined}
         className="c4"
         direction="row"
       >
@@ -1751,10 +1788,12 @@ exports[`Video fit renders 1`] = `
           </span>
         </button>
         <div
+          aria-label={undefined}
           className="c8"
           direction="row"
         >
           <div
+            aria-label={undefined}
             className="c9"
             direction="column"
           >
@@ -1799,6 +1838,7 @@ exports[`Video fit renders 1`] = `
             </div>
           </div>
           <div
+            aria-label={undefined}
             className="c13"
             direction="column"
           >
@@ -1829,6 +1869,7 @@ exports[`Video fit renders 1`] = `
             type="button"
           >
             <div
+              aria-label={undefined}
               className="c16"
               direction="row"
             >
@@ -1922,6 +1963,7 @@ exports[`Video loop renders 1`] = `
   align-items: center;
   background-color: rgba(68,68,68,0.8);
   color: rgba(255,255,255,0.85);
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -1941,6 +1983,7 @@ exports[`Video loop renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -1955,6 +1998,7 @@ exports[`Video loop renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1969,6 +2013,7 @@ exports[`Video loop renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1986,6 +2031,7 @@ exports[`Video loop renders 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -2171,6 +2217,7 @@ exports[`Video loop renders 1`] = `
       className="c3"
     >
       <div
+        aria-label={undefined}
         className="c4"
         direction="row"
       >
@@ -2217,10 +2264,12 @@ exports[`Video loop renders 1`] = `
           </span>
         </button>
         <div
+          aria-label={undefined}
           className="c8"
           direction="row"
         >
           <div
+            aria-label={undefined}
             className="c9"
             direction="column"
           >
@@ -2265,6 +2314,7 @@ exports[`Video loop renders 1`] = `
             </div>
           </div>
           <div
+            aria-label={undefined}
             className="c13"
             direction="column"
           >
@@ -2295,6 +2345,7 @@ exports[`Video loop renders 1`] = `
             type="button"
           >
             <div
+              aria-label={undefined}
               className="c16"
               direction="row"
             >
@@ -2388,6 +2439,7 @@ exports[`Video mute renders 1`] = `
   align-items: center;
   background-color: rgba(68,68,68,0.8);
   color: rgba(255,255,255,0.85);
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -2407,6 +2459,7 @@ exports[`Video mute renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -2421,6 +2474,7 @@ exports[`Video mute renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2435,6 +2489,7 @@ exports[`Video mute renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2452,6 +2507,7 @@ exports[`Video mute renders 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -2637,6 +2693,7 @@ exports[`Video mute renders 1`] = `
       className="c3"
     >
       <div
+        aria-label={undefined}
         className="c4"
         direction="row"
       >
@@ -2683,10 +2740,12 @@ exports[`Video mute renders 1`] = `
           </span>
         </button>
         <div
+          aria-label={undefined}
           className="c8"
           direction="row"
         >
           <div
+            aria-label={undefined}
             className="c9"
             direction="column"
           >
@@ -2731,6 +2790,7 @@ exports[`Video mute renders 1`] = `
             </div>
           </div>
           <div
+            aria-label={undefined}
             className="c13"
             direction="column"
           >
@@ -2761,6 +2821,7 @@ exports[`Video mute renders 1`] = `
             type="button"
           >
             <div
+              aria-label={undefined}
               className="c16"
               direction="row"
             >
@@ -2854,6 +2915,7 @@ exports[`Video renders 1`] = `
   align-items: center;
   background-color: rgba(68,68,68,0.8);
   color: rgba(255,255,255,0.85);
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -2873,6 +2935,7 @@ exports[`Video renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -2887,6 +2950,7 @@ exports[`Video renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2901,6 +2965,7 @@ exports[`Video renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2918,6 +2983,7 @@ exports[`Video renders 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
+  min-width: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -3103,6 +3169,7 @@ exports[`Video renders 1`] = `
       className="c3"
     >
       <div
+        aria-label={undefined}
         className="c4"
         direction="row"
       >
@@ -3149,10 +3216,12 @@ exports[`Video renders 1`] = `
           </span>
         </button>
         <div
+          aria-label={undefined}
           className="c8"
           direction="row"
         >
           <div
+            aria-label={undefined}
             className="c9"
             direction="column"
           >
@@ -3197,6 +3266,7 @@ exports[`Video renders 1`] = `
             </div>
           </div>
           <div
+            aria-label={undefined}
             className="c13"
             direction="column"
           >
@@ -3227,6 +3297,7 @@ exports[`Video renders 1`] = `
             type="button"
           >
             <div
+              aria-label={undefined}
               className="c16"
               direction="row"
             >

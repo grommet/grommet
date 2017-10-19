@@ -123,8 +123,6 @@ export const inputStyle = css`
   color: inherit;
   font: inherit;
   margin: 0;
-
-  ${props => props.focus && focusStyle}
 `;
 
 export default {

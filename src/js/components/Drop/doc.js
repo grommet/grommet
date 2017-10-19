@@ -22,16 +22,6 @@ export default (Drop) => {
         left: 'left',
       },
     }),
-    background: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.shape({
-        dark: PropTypes.bool,
-        image: PropTypes.string,
-      }),
-    ]).description(
-      `Either a color identifier to use for the background color. For example:
-      'neutral-1'. Or, a 'url()' for an image.`
-    ),
     control: PropTypes.object.description(
       'Target container where the drop will be aligned.'
     ).isRequired,

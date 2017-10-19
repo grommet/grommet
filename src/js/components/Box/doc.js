@@ -1,5 +1,7 @@
 import { describe, PropTypes } from 'react-desc';
 
+import { a11yTitlePropType } from '../utils';
+
 const PAD_SIZES = ['xsmall', 'small', 'medium', 'large'];
 
 const ANIMATION_TYPE = PropTypes.oneOf([
@@ -23,6 +25,7 @@ export default (Box) => {
       <Box/>`
     );
   DocumentedBox.propTypes = {
+    a11yTitle: a11yTitlePropType,
     align: PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']).description(
       'How to align the contents along the cross axis.'
     ),

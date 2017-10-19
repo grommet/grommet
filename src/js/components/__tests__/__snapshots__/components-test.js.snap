@@ -25,6 +25,7 @@ Object {
   "Responsive": [Function],
   "RoutedAnchor": [Function],
   "RoutedButton": [Function],
+  "Select": [Function],
   "Stack": [Function],
   "Text": [Function],
   "TextInput": [Function],

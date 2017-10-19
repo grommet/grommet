@@ -48,6 +48,7 @@ class Box extends Component {
 
   render() {
     const {
+      a11yTitle,
       tag,
       ...rest
     } = this.props;
@@ -59,7 +60,11 @@ class Box extends Component {
     }
 
     return (
-      <StyledComponent ref={(ref) => { this.componentRef = ref; }} {...rest} />
+      <StyledComponent
+        aria-label={a11yTitle}
+        ref={(ref) => { this.componentRef = ref; }}
+        {...rest}
+      />
     );
   }
 }

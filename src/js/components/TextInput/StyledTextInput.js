@@ -44,7 +44,7 @@ const StyledTextInput = styled.input`
   }
 
   &:focus {
-    ${props => !props.plain && focusStyle}
+    ${props => (!props.plain || props.focusIndicator) && focusStyle}
   }
 `;
 
