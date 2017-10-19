@@ -10,7 +10,7 @@ const components = folder => fs
 
 const FOLDER = path.resolve(__dirname, '../');
 
-test('README is update to date', (done) => {
+test('README is updated', (done) => {
   const componentFolders = components(FOLDER);
   componentFolders.sort().forEach((component, index) => {
     fs.readFile(path.join(FOLDER, component, 'README.md'), 'utf8', (err, data) => {
