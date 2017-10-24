@@ -44,9 +44,9 @@ var _Headline = require('./Headline');
 
 var _Headline2 = _interopRequireDefault(_Headline);
 
-var _Markdown = require('./Markdown');
+var _Paragraph = require('./Paragraph');
 
-var _Markdown2 = _interopRequireDefault(_Markdown);
+var _Paragraph2 = _interopRequireDefault(_Paragraph);
 
 var _Anchor = require('./Anchor');
 
@@ -271,14 +271,14 @@ var Card = function (_Component) {
 
       var result = description;
       if (typeof description === 'string') {
-        console.warn('Grommet Deprecation Notice: Card description\'s Markdown support will be removed in Grommet\'s next major release.');
-        var components = {
-          p: { props: {
-              margin: PARAGRAPH_MARGINS[textSize],
-              size: PARAGRAPH_SIZES[textSize]
-            } }
-        };
-        result = _react2.default.createElement(_Markdown2.default, { components: components, content: description });
+        result = _react2.default.createElement(
+          _Paragraph2.default,
+          {
+            margin: PARAGRAPH_MARGINS[textSize],
+            size: PARAGRAPH_SIZES[textSize]
+          },
+          description
+        );
       }
       return result;
     }
