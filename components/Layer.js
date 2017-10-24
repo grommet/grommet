@@ -315,28 +315,30 @@ var Layer = function (_Component2) {
     value: function _handleAriaHidden(hideOverlay) {
       var _this6 = this;
 
-      var ariaHidden = hideOverlay || false;
-      var grommetApps = document.querySelectorAll('.' + APP);
-      var visibleLayers = document.querySelectorAll('.' + CLASS_ROOT + ':not(.' + CLASS_ROOT + '--hidden)');
+      setTimeout(function () {
+        var ariaHidden = hideOverlay || false;
+        var grommetApps = document.querySelectorAll('.' + APP);
+        var visibleLayers = document.querySelectorAll('.' + CLASS_ROOT + ':not(.' + CLASS_ROOT + '--hidden)');
 
-      if (grommetApps) {
-        Array.prototype.slice.call(grommetApps).forEach(function (grommetApp) {
-          if (ariaHidden && visibleLayers.length === 0) {
-            // make sure to only show grommet apps if there is no other layer
-            grommetApp.setAttribute('aria-hidden', false);
-            grommetApp.classList.remove(APP + '--hidden');
-            // scroll body content to the original position
-            grommetApp.style.top = '-' + _this6._originalScrollPosition.top + 'px';
-            grommetApp.style.left = '-' + _this6._originalScrollPosition.left + 'px';
-          } else {
-            grommetApp.setAttribute('aria-hidden', true);
-            grommetApp.classList.add(APP + '--hidden');
-            // this must be null to work
-            grommetApp.style.top = null;
-            grommetApp.style.left = null;
-          }
-        }, this);
-      }
+        if (grommetApps) {
+          Array.prototype.slice.call(grommetApps).forEach(function (grommetApp) {
+            if (ariaHidden && visibleLayers.length === 0) {
+              // make sure to only show grommet apps if there is no other layer
+              grommetApp.setAttribute('aria-hidden', false);
+              grommetApp.classList.remove(APP + '--hidden');
+              // scroll body content to the original position
+              grommetApp.style.top = '-' + _this6._originalScrollPosition.top + 'px';
+              grommetApp.style.left = '-' + _this6._originalScrollPosition.left + 'px';
+            } else {
+              grommetApp.setAttribute('aria-hidden', true);
+              grommetApp.classList.add(APP + '--hidden');
+              // this must be null to work
+              grommetApp.style.top = null;
+              grommetApp.style.left = null;
+            }
+          }, _this6);
+        }
+      }, 0);
     }
   }, {
     key: '_renderLayer',
