@@ -1,11 +1,12 @@
 ## Meter
 A graphical meter.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=meter&amp;module=%2Fscreens%2FMeter.js)
 ## Usage
 
 ```javascript
 import { Meter } from 'grommet';
-    <Meter/>
+<Meter />
 ```
 
 ## Properties

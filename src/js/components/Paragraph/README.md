@@ -1,11 +1,12 @@
 ## Paragraph
 A paragraph of text.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=paragraph&amp;module=%2Fscreens%2FParagraph.js)
 ## Usage
 
 ```javascript
 import { Paragraph } from 'grommet';
-    <Paragraph/>
+<Paragraph />
 ```
 
 ## Properties
@@ -13,7 +14,7 @@ import { Paragraph } from 'grommet';
 **margin**
 
 The amount of margin above and/or below the paragraph. An object can be
-      specified to distinguish top margin and bottom margin.
+specified to distinguish top margin and bottom margin.
 
 ```
 none

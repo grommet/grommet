@@ -1,11 +1,12 @@
 ## Select
 An select-like field with optional search capability.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=select&amp;module=%2Fscreens%2FSelect.js)
 ## Usage
 
 ```javascript
 import { Select } from 'grommet';
-      <Select/>
+<Select />
 ```
 
 ## Properties
@@ -77,7 +78,7 @@ function
 **onSearch**
 
 Function that will be called when the user types in the search input.
-      If this property is not provided, no search field will be rendered.
+If this property is not provided, no search field will be rendered.
 
 ```
 function
@@ -94,7 +95,7 @@ boolean
 **options**
 
 Required. Options can be either a string or an object. If an object is used, use children callback
-      in order to render anything based on the current item.
+in order to render anything based on the current item.
 
 ```
 [

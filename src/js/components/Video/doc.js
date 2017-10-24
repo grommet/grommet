@@ -1,10 +1,15 @@
 import { describe, PropTypes } from 'react-desc';
 
+import { getAvailableAtBadge } from '../utils';
+
 export default (Video) => {
-  const DocumentedVideo = describe(Video).description('A video player.').usage(
-    `import { Video } from 'grommet';
-    <Video/>`
-  );
+  const DocumentedVideo = describe(Video)
+    .availableAt(getAvailableAtBadge('Video'))
+    .description('A video player.')
+    .usage(
+      `import { Video } from 'grommet';
+<Video />`
+    );
 
   DocumentedVideo.propTypes = {
     autoPlay: PropTypes.bool.description(

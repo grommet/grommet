@@ -1,10 +1,15 @@
 import { describe, PropTypes } from 'react-desc';
 
+import { getAvailableAtBadge } from '../utils';
+
 export default (Paragraph) => {
-  const DocumentedParagraph = describe(Paragraph).description('A paragraph of text.').usage(
-    `import { Paragraph } from 'grommet';
-    <Paragraph/>`
-  );
+  const DocumentedParagraph = describe(Paragraph)
+    .availableAt(getAvailableAtBadge('Paragraph'))
+    .description('A paragraph of text.')
+    .usage(
+      `import { Paragraph } from 'grommet';
+<Paragraph />`
+    );
 
   DocumentedParagraph.propTypes = {
     margin: PropTypes.oneOfType([
@@ -15,7 +20,7 @@ export default (Paragraph) => {
       }),
     ]).description(
       `The amount of margin above and/or below the paragraph. An object can be
-      specified to distinguish top margin and bottom margin.`
+specified to distinguish top margin and bottom margin.`
     ),
     size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']).description(
       'The size of the Paragraph text.'

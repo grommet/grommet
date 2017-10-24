@@ -5,7 +5,7 @@ A react component that handles keyboard key presses.
 
 ```javascript
 import { Keyboard } from 'grommet';
-    <Keyboard onUp={() => {}} />
+<Keyboard onUp={() => {}} />
 ```
 
 ## Properties

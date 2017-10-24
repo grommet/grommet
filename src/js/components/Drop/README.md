@@ -1,11 +1,12 @@
 ## Drop
 A drop container that opens next to a target.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=drop&amp;module=%2Fscreens%2FDrop.js)
 ## Usage
 
 ```javascript
 import { Drop } from 'grommet';
-    <Drop target={element}>...</Drop>
+<Drop target={element}>...</Drop>
 ```
 
 ## Properties

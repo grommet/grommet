@@ -1,11 +1,12 @@
 ## Video
 A video player.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=video&amp;module=%2Fscreens%2FVideo.js)
 ## Usage
 
 ```javascript
 import { Video } from 'grommet';
-    <Video/>
+<Video />
 ```
 
 ## Properties

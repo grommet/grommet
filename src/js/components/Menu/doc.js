@@ -1,16 +1,20 @@
 import { describe, PropTypes } from 'react-desc';
 
+import { getAvailableAtBadge } from '../utils';
+
 const VERTICAL_ALIGN_OPTIONS = ['top', 'bottom'];
 const HORIZONTAL_ALIGN_OPTIONS = ['right', 'left'];
 
 export default (Menu) => {
-  const DocumentedMenu = describe(Menu).description(
-    `Presents a list of choices within a drop down via a control that
-    opens it.`
-  ).usage(
-    `import { Menu } from 'grommet';
-    <Menu/>`
-  );
+  const DocumentedMenu = describe(Menu)
+    .availableAt(getAvailableAtBadge('Menu'))
+    .description(
+      `Presents a list of choices within a drop down via a control that
+      opens it.`
+    ).usage(
+      `import { Menu } from 'grommet';
+<Menu />`
+    );
 
   DocumentedMenu.propTypes = {
     background: PropTypes.oneOfType([
@@ -30,15 +34,15 @@ export default (Menu) => {
       right: PropTypes.oneOf(HORIZONTAL_ALIGN_OPTIONS),
     }).description(
       `Where to place the drop down. The keys correspond to a side of the drop down.
-      The values correspond to a side of the control. For instance,
-      {left: 'left', top: 'bottom'} would align the left edges and the top of
-      the drop down to the bottom of the control. At most one of left or right and
-      one of top or bottom should be specified.`
+The values correspond to a side of the control. For instance,
+{left: 'left', top: 'bottom'} would align the left edges and the top of
+the drop down to the bottom of the control. At most one of left or right and
+one of top or bottom should be specified.`
     ),
     icon: PropTypes.node.description('Indicates the icon shown as a control to open it.'),
     items: PropTypes.arrayOf(PropTypes.object).description(
       `Menu items to be placed inside the drop down.
-      The object values can be any Button prop, for example: label and onClick.`
+The object values can be any Button prop, for example: label and onClick.`
     ).isRequired,
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).description(
       'Indicates the label shown as a control to open it.'

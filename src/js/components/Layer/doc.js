@@ -1,13 +1,17 @@
 import { describe, PropTypes } from 'react-desc';
 
+import { getAvailableAtBadge } from '../utils';
+
 export default (Layer) => {
-  const DocumentedLayer = describe(Layer).description(
-    `A modal overlay. It is the caller's responsibility to provide a control for
-    the user to close the layer.`
-  ).usage(
-    `import { Layer } from 'grommet';
-    <Layer/>`
-  );
+  const DocumentedLayer = describe(Layer)
+    .availableAt(getAvailableAtBadge('Layer'))
+    .description(
+      `A modal overlay. It is the caller's responsibility to provide a control for
+      the user to close the layer.`
+    ).usage(
+      `import { Layer } from 'grommet';
+<Layer />`
+    );
 
   DocumentedLayer.propTypes = {
     align: PropTypes.oneOf(['center', 'top', 'bottom', 'left', 'right']).description(

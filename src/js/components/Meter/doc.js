@@ -1,10 +1,15 @@
 import { describe, PropTypes } from 'react-desc';
 
+import { getAvailableAtBadge } from '../utils';
+
 export default (Meter) => {
-  const DocumentedMeter = describe(Meter).description('A graphical meter.').usage(
-    `import { Meter } from 'grommet';
-    <Meter/>`
-  );
+  const DocumentedMeter = describe(Meter)
+    .availableAt(getAvailableAtBadge('Meter'))
+    .description('A graphical meter.')
+    .usage(
+      `import { Meter } from 'grommet';
+<Meter />`
+    );
 
   DocumentedMeter.propTypes = {
     background: PropTypes.string.description(

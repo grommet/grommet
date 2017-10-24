@@ -1,11 +1,12 @@
 ## TextInput
 A text input field with optional suggestions.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=textinput&amp;module=%2Fscreens%2FTextInput.js)
 ## Usage
 
 ```javascript
 import { TextInput } from 'grommet';
-    <TextInput id='item' name='item' />
+<TextInput id='item' name='item' />
 ```
 
 ## Properties
@@ -53,7 +54,7 @@ function
 **onSelect**
 
 Function that will be called when the user selects a suggestion.
-      The suggestion contains the object chosen from the supplied suggestions.
+The suggestion contains the object chosen from the supplied suggestions.
 
 ```
 function
@@ -70,7 +71,7 @@ string
 **plain**
 
 Whether this is a plain input with no border or padding.
-      Only use this when the containing context provides sufficient affordance
+Only use this when the containing context provides sufficient affordance
 
 ```
 boolean
@@ -90,7 +91,7 @@ xlarge
 **suggestions**
 
 Suggestions to show. It is recommended to avoid showing too many
-      suggestions and instead rely on the user to type more.
+suggestions and instead rely on the user to type more.
 
 ```
 [
