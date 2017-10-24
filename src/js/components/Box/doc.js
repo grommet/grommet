@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { a11yTitlePropType } from '../utils';
+import { a11yTitlePropType, getAvailableAtBadge } from '../utils';
 
 const PAD_SIZES = ['xsmall', 'small', 'medium', 'large'];
 
@@ -16,13 +16,12 @@ const ANIMATION_SHAPE = PropTypes.shape({
 
 export default (Box) => {
   const DocumentedBox = describe(Box)
+    .availableAt(getAvailableAtBadge('Box'))
     .description(
-      `A flexible box that lays out its contents along a single
-      direction.`
+      'A flexible box that lays out its contents along a single direction.'
     )
     .usage(
-      `import { Box } from 'grommet';
-      <Box/>`
+      "import { Box } from 'grommet';\n<Box />"
     );
   DocumentedBox.propTypes = {
     a11yTitle: a11yTitlePropType,
@@ -35,7 +34,7 @@ export default (Box) => {
       ).defaultValue('stretch'),
     alignSelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch']).description(
       `How to align along the cross axis when contained in a Box or along
-      the column axis when contained in a Grid.`
+the column axis when contained in a Grid.`
     ),
     animation: PropTypes.oneOfType([
       ANIMATION_TYPE,
@@ -59,7 +58,7 @@ export default (Box) => {
       }),
     ]).description(
       `Either a color identifier to use for the background color. For example:
-      'neutral-1'. Or, a 'url()' for an image. Dark is not needed if color is provided.`
+'neutral-1'. Or, a 'url()' for an image. Dark is not needed if color is provided.`
     ),
     basis: PropTypes.oneOf(
       ['xsmall', 'small', 'medium', 'large', 'xlarge', 'full', '1/2', '1/3', '2/3', '1/4', '3/4']
@@ -106,8 +105,8 @@ export default (Box) => {
       }),
     ]).description(
       `The amount of margin around the box. An object can be specified to
-      distinguish horizontal margin, vertical margin, and margin on a
-      particular side of the box`
+distinguish horizontal margin, vertical margin, and margin on a
+particular side of the box`
     ),
     overflow: PropTypes.oneOf(['auto', 'hidden', 'scroll']).description('box overflow.'),
     pad: PropTypes.oneOfType([
@@ -122,12 +121,12 @@ export default (Box) => {
       }),
     ]).description(
       `The amount of padding around the box contents. An object can be specified to
-      distinguish horizontal padding, vertical padding, and padding on a
-      particular side of the box`
+distinguish horizontal padding, vertical padding, and padding on a
+particular side of the box`
     ),
     responsive: PropTypes.bool.description(
       `Whether children laid out in a row direction should be switched to a
-      column layout when the display area narrows.`
+column layout when the display area narrows.`
     ),
     reverse: PropTypes.bool.description('Whether to reverse the order of the child components.'),
     round: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full']).description(

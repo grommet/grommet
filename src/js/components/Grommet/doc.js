@@ -1,11 +1,14 @@
 import { describe, PropTypes } from 'react-desc';
 
+import { getAvailableAtBadge } from '../utils';
+
 export default (Grommet) => {
   const DocumentedGrommet = describe(Grommet)
+    .availableAt(getAvailableAtBadge('Grommet'))
     .description('This is the top level Grommet container.')
     .usage(
       `import { Grommet } from 'grommet';
-      <Grommet>...</Grommet>`
+<Grommet>...</Grommet>`
     );
 
   DocumentedGrommet.propTypes = {

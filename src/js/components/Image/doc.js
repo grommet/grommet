@@ -1,10 +1,15 @@
 import { describe, PropTypes } from 'react-desc';
 
+import { getAvailableAtBadge } from '../utils';
+
 export default (Image) => {
-  const DocumentedImage = describe(Image).description('An image.').usage(
-    `import { Image } from 'grommet';
-    <Image/>`
-  );
+  const DocumentedImage = describe(Image)
+    .availableAt(getAvailableAtBadge('Image'))
+    .description('An image.')
+    .usage(
+      `import { Image } from 'grommet';
+<Image/>`
+    );
 
   DocumentedImage.propTypes = {
     fit: PropTypes.oneOf(['cover', 'contain']).description(

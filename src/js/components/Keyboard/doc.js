@@ -1,12 +1,13 @@
 import { describe, PropTypes } from 'react-desc';
 
 export default (Keyboard) => {
-  const DocumentedKeyboard = describe(Keyboard).description(
-    'A react component that handles keyboard key presses.'
-  ).usage(
-    `import { Keyboard } from 'grommet';
-    <Keyboard onUp={() => {}} />`
-  );
+  const DocumentedKeyboard = describe(Keyboard)
+    .description(
+      'A react component that handles keyboard key presses.'
+    ).usage(
+      `import { Keyboard } from 'grommet';
+<Keyboard onUp={() => {}} />`
+    );
 
   DocumentedKeyboard.propTypes = {
     onBackspace: PropTypes.func.description(

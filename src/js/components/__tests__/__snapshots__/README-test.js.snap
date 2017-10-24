@@ -4,14 +4,15 @@ exports[`README is updated 1`] = `
 Object {
   "Anchor": "## Anchor
 A text link. We have a separate component from the browser
-      base so we can style it. You can either set the icon and/or label properties
-      or just use children.
+base so we can style it. You can either set the icon and/or label properties
+or just use children.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=anchor&amp;module=%2Fscreens%2FAnchor.js)
 ## Usage
 
 \`\`\`javascript
 import { Anchor } from 'grommet';
-      <Anchor href={location} label=\\"Label\\" />
+<Anchor href={location} label='Label' />
 \`\`\`
 
 ## Properties
@@ -74,14 +75,14 @@ boolean
 \`\`\`
   ",
   "Box": "## Box
-A flexible box that lays out its contents along a single
-      direction.
+A flexible box that lays out its contents along a single direction.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=box&amp;module=%2Fscreens%2FBox.js)
 ## Usage
 
 \`\`\`javascript
 import { Box } from 'grommet';
-      <Box/>
+<Box />
 \`\`\`
 
 ## Properties
@@ -122,7 +123,7 @@ stretch
 **alignSelf**
 
 How to align along the cross axis when contained in a Box or along
-      the column axis when contained in a Grid.
+the column axis when contained in a Grid.
 
 \`\`\`
 start
@@ -185,7 +186,7 @@ zoomOut
 **background**
 
 Either a color identifier to use for the background color. For example:
-      'neutral-1'. Or, a 'url()' for an image. Dark is not needed if color is provided.
+'neutral-1'. Or, a 'url()' for an image. Dark is not needed if color is provided.
 
 \`\`\`
 string
@@ -313,8 +314,8 @@ stretch
 **margin**
 
 The amount of margin around the box. An object can be specified to
-      distinguish horizontal margin, vertical margin, and margin on a
-      particular side of the box
+distinguish horizontal margin, vertical margin, and margin on a
+particular side of the box
 
 \`\`\`
 none
@@ -369,8 +370,8 @@ scroll
 **pad**
 
 The amount of padding around the box contents. An object can be specified to
-      distinguish horizontal padding, vertical padding, and padding on a
-      particular side of the box
+distinguish horizontal padding, vertical padding, and padding on a
+particular side of the box
 
 \`\`\`
 none
@@ -415,7 +416,7 @@ large
 **responsive**
 
 Whether children laid out in a row direction should be switched to a
-      column layout when the display area narrows.
+column layout when the display area narrows.
 
 \`\`\`
 boolean
@@ -468,14 +469,14 @@ boolean
 \`\`\`
   ",
   "Button": "## Button
-A button. We have a separate component
-      from the browser base so we can style it.
+A button. We have a separate component from the browser base so we can style it.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=button&amp;module=%2Fscreens%2FButton.js)
 ## Usage
 
 \`\`\`javascript
 import { Button } from 'grommet';
-      <Button primary={true} label=\\"Label\\" />
+<Button primary={true} label='Label' />
 \`\`\`
 
 ## Properties
@@ -523,9 +524,9 @@ boolean
 **hoverIndicator**
 
 The hover indicator to apply when the user is mousing over the
-      button. An object can be also be specified for color index support:
-      {background: 'neutral-2'}. This prop is meant to be used only
-      with plain Buttons.
+button. An object can be also be specified for color index support:
+{background: 'neutral-2'}. This prop is meant to be used only
+with plain Buttons.
 
 \`\`\`
 background
@@ -563,7 +564,7 @@ node
 **onClick**
 
 Click handler. Not setting this property and not specifying a href
-      causes the Button to be disabled.
+causes the Button to be disabled.
 
 \`\`\`
 function
@@ -572,8 +573,8 @@ function
 **plain**
 
 Whether this is a plain button with no border or padding.
-      Use this when wrapping children that provide the complete visualization
-      of the control. Do not use plain with label or icon properties.
+Use this when wrapping children that provide the complete visualization
+of the control. Do not use plain with label or icon properties.
 
 \`\`\`
 boolean
@@ -581,8 +582,7 @@ boolean
 
 **primary**
 
-Whether this is a primary button. There should be at most one
-      per page or screen.
+Whether this is a primary button. There should be at most one per page or screen.
 
 \`\`\`
 boolean
@@ -591,7 +591,7 @@ boolean
 **reverse**
 
 Whether an icon and label should be reversed so that the icon is at the
-      end of the anchor.
+end of the anchor.
 
 \`\`\`
 boolean
@@ -607,8 +607,7 @@ boolean
 
 **type**
 
-The type of button. Set the type to submit for the default button
-      on forms. Defaults to \`button\`.
+The type of button. Set the type to submit for the default button on forms. Defaults to \`button\`.
 
 \`\`\`
 button
@@ -619,11 +618,12 @@ submit
   "Chart": "## Chart
 A graphical chart.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=chart&amp;module=%2Fscreens%2FChart.js)
 ## Usage
 
 \`\`\`javascript
 import { Chart } from 'grommet';
-    <Chart/>
+<Chart />
 \`\`\`
 
 ## Properties
@@ -728,11 +728,12 @@ Required. Array of value objects describing the data.
   "CheckBox": "## CheckBox
 A checkbox toggle control.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=checkbox&amp;module=%2Fscreens%2FCheckBox.js)
 ## Usage
 
 \`\`\`javascript
 import { CheckBox } from 'grommet';
-    <CheckBox/>
+<CheckBox />
 \`\`\`
 
 ## Properties
@@ -813,11 +814,12 @@ boolean
   "Drop": "## Drop
 A drop container that opens next to a target.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=drop&amp;module=%2Fscreens%2FDrop.js)
 ## Usage
 
 \`\`\`javascript
 import { Drop } from 'grommet';
-    <Drop target={element}>...</Drop>
+<Drop target={element}>...</Drop>
 \`\`\`
 
 ## Properties
@@ -902,14 +904,15 @@ object
   ",
   "DropButton": "## DropButton
 A control that when clicked will render its children in a drop layer.
-    When opened, the drop will control the focus so that the contents behind it are not focusable.
-    
+When opened, the drop will control the focus so that the contents behind it are not focusable.
+      
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=dropbutton&amp;module=%2Fscreens%2FDropButton.js)
 ## Usage
 
 \`\`\`javascript
 import { DropButton } from 'grommet';
-    <DropButton control={element}>{dropContents...}</DropButton>
+<DropButton control={element}>{dropContents...}</DropButton>
 \`\`\`
 
 ## Properties
@@ -948,15 +951,16 @@ boolean
   ",
   "Grid": "## Grid
 A grid system for laying out content. To use, define the
-    rows and columns, create area names for adjacent cells, and then
-    place Box components inside those areas using the Box.gridArea property.
-    See https://css-tricks.com/snippets/css/complete-guide-grid/.
+rows and columns, create area names for adjacent cells, and then
+place Box components inside those areas using the Box.gridArea property.
+See https://css-tricks.com/snippets/css/complete-guide-grid/.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=grid&amp;module=%2Fscreens%2FGrid.js)
 ## Usage
 
 \`\`\`javascript
 import { Grid } from 'grommet';
-    <Grid/>
+<Grid />
 \`\`\`
 
 ## Properties
@@ -964,7 +968,7 @@ import { Grid } from 'grommet';
 **align**
 
 How to align the individual items inside the grid when there is extra
-      space in the column axis. Defaults to \`stretch\`.
+space in the column axis. Defaults to \`stretch\`.
 
 \`\`\`
 start
@@ -1043,7 +1047,7 @@ none
 **justify**
 
 How to align the individual items inside the grid when there is extra
-      space in the row axis. Defaults to \`stretch\`.
+space in the row axis. Defaults to \`stretch\`.
 
 \`\`\`
 start
@@ -1095,11 +1099,12 @@ string
   "Grommet": "## Grommet
 This is the top level Grommet container.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=grommet&amp;module=%2Fscreens%2FGrommet.js)
 ## Usage
 
 \`\`\`javascript
 import { Grommet } from 'grommet';
-      <Grommet>...</Grommet>
+<Grommet>...</Grommet>
 \`\`\`
 
 ## Properties
@@ -1125,11 +1130,12 @@ object
   "Heading": "## Heading
 Heading text structed in levels.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=heading&amp;module=%2Fscreens%2FHeading.js)
 ## Usage
 
 \`\`\`javascript
 import { Heading } from 'grommet';
-      <Heading/>
+<Heading />
 \`\`\`
 
 ## Properties
@@ -1137,8 +1143,8 @@ import { Heading } from 'grommet';
 **level**
 
 The heading level. It corresponds to the number after the 'H' for
-      the DOM tag. Set the level for semantic accuracy and accessibility.
-      The sizing can be further adjusted using the size property.
+the DOM tag. Set the level for semantic accuracy and accessibility.
+The sizing can be further adjusted using the size property.
 
 \`\`\`
 1
@@ -1150,7 +1156,7 @@ The heading level. It corresponds to the number after the 'H' for
 **margin**
 
 The amount of margin above and/or below the heading. An object can be
-      specified to distinguish top margin and bottom margin.
+specified to distinguish top margin and bottom margin.
 
 \`\`\`
 none
@@ -1174,9 +1180,9 @@ large
 **size**
 
 The font size is primarily driven by the chosen tag. But, it can
-      be adjusted via this size property. The tag should be set for semantic
-      correctness and accessibility. This size property allows for stylistic
-      adjustments.
+be adjusted via this size property. The tag should be set for semantic
+correctness and accessibility. This size property allows for stylistic
+adjustments.
 
 \`\`\`
 small
@@ -1197,7 +1203,7 @@ end
 **truncate**
 
 Restrict the text to a single line and truncate with ellipsis if it
-      is too long to all fit.
+is too long to all fit.
 
 \`\`\`
 boolean
@@ -1206,11 +1212,12 @@ boolean
   "Image": "## Image
 An image.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=image&amp;module=%2Fscreens%2FImage.js)
 ## Usage
 
 \`\`\`javascript
 import { Image } from 'grommet';
-    <Image/>
+<Image/>
 \`\`\`
 
 ## Properties
@@ -1231,7 +1238,7 @@ A react component that handles keyboard key presses.
 
 \`\`\`javascript
 import { Keyboard } from 'grommet';
-    <Keyboard onUp={() => {}} />
+<Keyboard onUp={() => {}} />
 \`\`\`
 
 ## Properties
@@ -1326,13 +1333,14 @@ function
   ",
   "Layer": "## Layer
 A modal overlay. It is the caller's responsibility to provide a control for
-    the user to close the layer.
+      the user to close the layer.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=layer&amp;module=%2Fscreens%2FLayer.js)
 ## Usage
 
 \`\`\`javascript
 import { Layer } from 'grommet';
-    <Layer/>
+<Layer />
 \`\`\`
 
 ## Properties
@@ -1375,11 +1383,12 @@ full
   "Markdown": "## GrommetMarkdown
 Markdown formatting using Grommet components.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=markdown&amp;module=%2Fscreens%2FMarkdown.js)
 ## Usage
 
 \`\`\`javascript
 import { Markdown } from 'grommet';
-    <Markdown/>
+      <Markdown />
 \`\`\`
 
 ## Properties
@@ -1394,13 +1403,14 @@ string
   ",
   "Menu": "## Menu
 Presents a list of choices within a drop down via a control that
-    opens it.
+      opens it.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=menu&amp;module=%2Fscreens%2FMenu.js)
 ## Usage
 
 \`\`\`javascript
 import { Menu } from 'grommet';
-    <Menu/>
+<Menu />
 \`\`\`
 
 ## Properties
@@ -1424,10 +1434,10 @@ string
 **dropAlign**
 
 Where to place the drop down. The keys correspond to a side of the drop down.
-      The values correspond to a side of the control. For instance,
-      {left: 'left', top: 'bottom'} would align the left edges and the top of
-      the drop down to the bottom of the control. At most one of left or right and
-      one of top or bottom should be specified. Defaults to \`{
+The values correspond to a side of the control. For instance,
+{left: 'left', top: 'bottom'} would align the left edges and the top of
+the drop down to the bottom of the control. At most one of left or right and
+one of top or bottom should be specified. Defaults to \`{
   \\"top\\": \\"top\\",
   \\"left\\": \\"left\\"
 }\`.
@@ -1460,7 +1470,7 @@ node
 **items**
 
 Required. Menu items to be placed inside the drop down.
-      The object values can be any Button prop, for example: label and onClick.
+The object values can be any Button prop, for example: label and onClick.
 
 \`\`\`
 [object]
@@ -1489,11 +1499,12 @@ Custom messages for Menu. Used for accessibility by screen readers.
   "Meter": "## Meter
 A graphical meter.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=meter&amp;module=%2Fscreens%2FMeter.js)
 ## Usage
 
 \`\`\`javascript
 import { Meter } from 'grommet';
-    <Meter/>
+<Meter />
 \`\`\`
 
 ## Properties
@@ -1575,11 +1586,12 @@ Array of value objects describing the data.
   "Paragraph": "## Paragraph
 A paragraph of text.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=paragraph&amp;module=%2Fscreens%2FParagraph.js)
 ## Usage
 
 \`\`\`javascript
 import { Paragraph } from 'grommet';
-    <Paragraph/>
+<Paragraph />
 \`\`\`
 
 ## Properties
@@ -1587,7 +1599,7 @@ import { Paragraph } from 'grommet';
 **margin**
 
 The amount of margin above and/or below the paragraph. An object can be
-      specified to distinguish top margin and bottom margin.
+specified to distinguish top margin and bottom margin.
 
 \`\`\`
 none
@@ -1630,11 +1642,12 @@ end
   "RadioButton": "## RadioButton
 A radio button control.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=radiobutton&amp;module=%2Fscreens%2FRadioButton.js)
 ## Usage
 
 \`\`\`javascript
 import { RadioButton } from 'grommet';
-    <RadioButton />
+<RadioButton />
 \`\`\`
 
 ## Properties
@@ -1658,7 +1671,7 @@ boolean
 **disabled**
 
 Same as React <input disabled={} />. Also adds a hidden input element
-      with the same name so form submissions work.
+with the same name so form submissions work.
 
 \`\`\`
 boolean
@@ -1703,7 +1716,7 @@ A react component that handles responsive breakpoints.
 
 \`\`\`javascript
 import { Responsive } from 'grommet';
-    <Responsive onChange={() => {}} />
+<Responsive onChange={() => {}} />
 \`\`\`
 
 ## Properties
@@ -1711,8 +1724,8 @@ import { Responsive } from 'grommet';
 **onChange**
 
 Function that will be called when the browser window crosses a responsive
-      breakpoint. It will be passed the current media size name, either
-      'narrow' or 'wide'
+breakpoint. It will be passed the current media size name, either
+'narrow' or 'wide'
 
 \`\`\`
 function
@@ -1721,11 +1734,12 @@ function
   "Select": "## Select
 An select-like field with optional search capability.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=select&amp;module=%2Fscreens%2FSelect.js)
 ## Usage
 
 \`\`\`javascript
 import { Select } from 'grommet';
-      <Select/>
+<Select />
 \`\`\`
 
 ## Properties
@@ -1797,7 +1811,7 @@ function
 **onSearch**
 
 Function that will be called when the user types in the search input.
-      If this property is not provided, no search field will be rendered.
+If this property is not provided, no search field will be rendered.
 
 \`\`\`
 function
@@ -1814,7 +1828,7 @@ boolean
 **options**
 
 Required. Options can be either a string or an object. If an object is used, use children callback
-      in order to render anything based on the current item.
+in order to render anything based on the current item.
 
 \`\`\`
 [
@@ -1861,11 +1875,12 @@ object
   "Stack": "## Stack
 Stacks components on top of the first child component.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=stack&amp;module=%2Fscreens%2FStack.js)
 ## Usage
 
 \`\`\`javascript
 import { Stack } from 'grommet';
-    <Stack/>
+<Stack />
 \`\`\`
 
 ## Properties
@@ -1873,7 +1888,7 @@ import { Stack } from 'grommet';
 **anchor**
 
 Where to anchor children from. If not specified, children fill the
-      first child's area.
+first child's area.
 
 \`\`\`
 center
@@ -1890,11 +1905,12 @@ bottom-right
   "Text": "## Text
 Arbitrary text.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=text&amp;module=%2Fscreens%2FText.js)
 ## Usage
 
 \`\`\`javascript
 import { Text } from 'grommet';
-    <Text/>
+<Text />
 \`\`\`
 
 ## Properties
@@ -1902,7 +1918,7 @@ import { Text } from 'grommet';
 **color**
 
 A color identifier to use for the text color. For example:
-      'status-critical'.
+'status-critical'.
 
 \`\`\`
 string
@@ -1911,7 +1927,7 @@ string
 **margin**
 
 The amount of margin above and/or below the heading. An object can be
-      specified to distinguish top margin and bottom margin.
+specified to distinguish top margin and bottom margin.
 
 \`\`\`
 none
@@ -1933,9 +1949,9 @@ large
 **size**
 
 The font size is primarily driven by the chosen tag. But, it can
-      be adjusted via this size property. The tag should be set for semantic
-      correctness and accessibility. This size property allows for stylistic
-      adjustments.
+be adjusted via this size property. The tag should be set for semantic
+correctness and accessibility. This size property allows for stylistic
+adjustments.
 
 \`\`\`
 xsmall
@@ -1967,7 +1983,7 @@ end
 **truncate**
 
 Restrict the text to a single line and truncate with ellipsis if it
-      is too long to all fit.
+is too long to all fit.
 
 \`\`\`
 boolean
@@ -1976,11 +1992,12 @@ boolean
   "TextInput": "## TextInput
 A text input field with optional suggestions.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=textinput&amp;module=%2Fscreens%2FTextInput.js)
 ## Usage
 
 \`\`\`javascript
 import { TextInput } from 'grommet';
-    <TextInput id='item' name='item' />
+<TextInput id='item' name='item' />
 \`\`\`
 
 ## Properties
@@ -2028,7 +2045,7 @@ function
 **onSelect**
 
 Function that will be called when the user selects a suggestion.
-      The suggestion contains the object chosen from the supplied suggestions.
+The suggestion contains the object chosen from the supplied suggestions.
 
 \`\`\`
 function
@@ -2045,7 +2062,7 @@ string
 **plain**
 
 Whether this is a plain input with no border or padding.
-      Only use this when the containing context provides sufficient affordance
+Only use this when the containing context provides sufficient affordance
 
 \`\`\`
 boolean
@@ -2065,7 +2082,7 @@ xlarge
 **suggestions**
 
 Suggestions to show. It is recommended to avoid showing too many
-      suggestions and instead rely on the user to type more.
+suggestions and instead rely on the user to type more.
 
 \`\`\`
 [
@@ -2088,11 +2105,12 @@ string
   "Video": "## Video
 A video player.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=video&amp;module=%2Fscreens%2FVideo.js)
 ## Usage
 
 \`\`\`javascript
 import { Video } from 'grommet';
-    <Video/>
+<Video />
 \`\`\`
 
 ## Properties

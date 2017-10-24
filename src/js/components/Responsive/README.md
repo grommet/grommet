@@ -5,7 +5,7 @@ A react component that handles responsive breakpoints.
 
 ```javascript
 import { Responsive } from 'grommet';
-    <Responsive onChange={() => {}} />
+<Responsive onChange={() => {}} />
 ```
 
 ## Properties
@@ -13,8 +13,8 @@ import { Responsive } from 'grommet';
 **onChange**
 
 Function that will be called when the browser window crosses a responsive
-      breakpoint. It will be passed the current media size name, either
-      'narrow' or 'wide'
+breakpoint. It will be passed the current media size name, either
+'narrow' or 'wide'
 
 ```
 function

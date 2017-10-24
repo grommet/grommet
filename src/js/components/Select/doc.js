@@ -1,14 +1,15 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { a11yTitlePropType, backgroundPropType } from '../utils';
+import { a11yTitlePropType, backgroundPropType, getAvailableAtBadge } from '../utils';
 
 export default (Select) => {
   const DocumentedSelect = describe(Select)
+    .availableAt(getAvailableAtBadge('Select'))
     .description(
       'An select-like field with optional search capability.'
     ).usage(
       `import { Select } from 'grommet';
-      <Select/>`
+<Select />`
     );
 
   DocumentedSelect.propTypes = {
@@ -31,7 +32,7 @@ export default (Select) => {
     ),
     onSearch: PropTypes.func.description(
       `Function that will be called when the user types in the search input.
-      If this property is not provided, no search field will be rendered.`
+If this property is not provided, no search field will be rendered.`
     ),
     open: PropTypes.bool.description(
       'Whether the Select drop should be open or not.'
@@ -40,7 +41,7 @@ export default (Select) => {
       PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.object])
     ).description(
       `Options can be either a string or an object. If an object is used, use children callback
-      in order to render anything based on the current item.`
+in order to render anything based on the current item.`
     ).isRequired,
     placeholder: PropTypes.string.description(
       'Placeholder text to use when no value is provided.'

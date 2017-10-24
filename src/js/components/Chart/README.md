@@ -1,11 +1,12 @@
 ## Chart
 A graphical chart.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=chart&amp;module=%2Fscreens%2FChart.js)
 ## Usage
 
 ```javascript
 import { Chart } from 'grommet';
-    <Chart/>
+<Chart />
 ```
 
 ## Properties

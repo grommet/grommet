@@ -1,11 +1,12 @@
 ## Grommet
 This is the top level Grommet container.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=grommet&amp;module=%2Fscreens%2FGrommet.js)
 ## Usage
 
 ```javascript
 import { Grommet } from 'grommet';
-      <Grommet>...</Grommet>
+<Grommet>...</Grommet>
 ```
 
 ## Properties

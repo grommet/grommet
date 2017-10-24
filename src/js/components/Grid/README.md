@@ -1,14 +1,15 @@
 ## Grid
 A grid system for laying out content. To use, define the
-    rows and columns, create area names for adjacent cells, and then
-    place Box components inside those areas using the Box.gridArea property.
-    See https://css-tricks.com/snippets/css/complete-guide-grid/.
+rows and columns, create area names for adjacent cells, and then
+place Box components inside those areas using the Box.gridArea property.
+See https://css-tricks.com/snippets/css/complete-guide-grid/.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=grid&amp;module=%2Fscreens%2FGrid.js)
 ## Usage
 
 ```javascript
 import { Grid } from 'grommet';
-    <Grid/>
+<Grid />
 ```
 
 ## Properties
@@ -16,7 +17,7 @@ import { Grid } from 'grommet';
 **align**
 
 How to align the individual items inside the grid when there is extra
-      space in the column axis. Defaults to `stretch`.
+space in the column axis. Defaults to `stretch`.
 
 ```
 start
@@ -95,7 +96,7 @@ none
 **justify**
 
 How to align the individual items inside the grid when there is extra
-      space in the row axis. Defaults to `stretch`.
+space in the row axis. Defaults to `stretch`.
 
 ```
 start

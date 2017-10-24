@@ -1,16 +1,15 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { ROUTER_PROPS } from '../utils';
+import { ROUTER_PROPS, getAvailableAtBadge } from '../utils';
 
 export function routedAnchor(RoutedAnchor) {
   const DocumentedRoutedAnchor = describe(RoutedAnchor)
+    .availableAt(getAvailableAtBadge('RoutedAnchor'))
     .description(
       'An Anchor with support for React Router.'
     )
     .usage(
-      `import { RoutedAnchor } from 'grommet';
-      <RoutedAnchor primary={true} path="/documentation" />
-      `
+      "import { RoutedAnchor } from 'grommet';\n<RoutedAnchor primary={true} path='/documentation' />"
     );
   DocumentedRoutedAnchor.propTypes = { ...ROUTER_PROPS };
   return DocumentedRoutedAnchor;
@@ -18,14 +17,14 @@ export function routedAnchor(RoutedAnchor) {
 
 export default (Anchor) => {
   const DocumentedAnchor = describe(Anchor)
+    .availableAt(getAvailableAtBadge('Anchor'))
     .description(
       `A text link. We have a separate component from the browser
-      base so we can style it. You can either set the icon and/or label properties
-      or just use children.`
+base so we can style it. You can either set the icon and/or label properties
+or just use children.`
     )
     .usage(
-      `import { Anchor } from 'grommet';
-      <Anchor href={location} label="Label" />`
+      "import { Anchor } from 'grommet';\n<Anchor href={location} label='Label' />"
     );
 
   DocumentedAnchor.propTypes = {

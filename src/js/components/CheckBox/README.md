@@ -1,11 +1,12 @@
 ## CheckBox
 A checkbox toggle control.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=checkbox&amp;module=%2Fscreens%2FCheckBox.js)
 ## Usage
 
 ```javascript
 import { CheckBox } from 'grommet';
-    <CheckBox/>
+<CheckBox />
 ```
 
 ## Properties

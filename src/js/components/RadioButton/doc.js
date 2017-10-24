@@ -1,17 +1,22 @@
 import { describe, PropTypes } from 'react-desc';
 
+import { getAvailableAtBadge } from '../utils';
+
 export default (RadioButton) => {
-  const DocumentedRadioButton = describe(RadioButton).description('A radio button control.').usage(
-    `import { RadioButton } from 'grommet';
-    <RadioButton />`
-  );
+  const DocumentedRadioButton = describe(RadioButton)
+    .availableAt(getAvailableAtBadge('RadioButton'))
+    .description('A radio button control.')
+    .usage(
+      `import { RadioButton } from 'grommet';
+<RadioButton />`
+    );
 
   DocumentedRadioButton.propTypes = {
     checked: PropTypes.bool.description('Same as React <input checked={} />'),
     defaultChecked: PropTypes.bool.description('Same as React <input defaultChecked={} />'),
     disabled: PropTypes.bool.description(
       `Same as React <input disabled={} />. Also adds a hidden input element
-      with the same name so form submissions work.`
+with the same name so form submissions work.`
     ),
     id: PropTypes.string.description(
       'The DOM id attribute value to use for the underlying <input/> element.'

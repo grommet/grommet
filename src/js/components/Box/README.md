@@ -1,12 +1,12 @@
 ## Box
-A flexible box that lays out its contents along a single
-      direction.
+A flexible box that lays out its contents along a single direction.
 
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=box&amp;module=%2Fscreens%2FBox.js)
 ## Usage
 
 ```javascript
 import { Box } from 'grommet';
-      <Box/>
+<Box />
 ```
 
 ## Properties
@@ -47,7 +47,7 @@ stretch
 **alignSelf**
 
 How to align along the cross axis when contained in a Box or along
-      the column axis when contained in a Grid.
+the column axis when contained in a Grid.
 
 ```
 start
@@ -110,7 +110,7 @@ zoomOut
 **background**
 
 Either a color identifier to use for the background color. For example:
-      'neutral-1'. Or, a 'url()' for an image. Dark is not needed if color is provided.
+'neutral-1'. Or, a 'url()' for an image. Dark is not needed if color is provided.
 
 ```
 string
@@ -238,8 +238,8 @@ stretch
 **margin**
 
 The amount of margin around the box. An object can be specified to
-      distinguish horizontal margin, vertical margin, and margin on a
-      particular side of the box
+distinguish horizontal margin, vertical margin, and margin on a
+particular side of the box
 
 ```
 none
@@ -294,8 +294,8 @@ scroll
 **pad**
 
 The amount of padding around the box contents. An object can be specified to
-      distinguish horizontal padding, vertical padding, and padding on a
-      particular side of the box
+distinguish horizontal padding, vertical padding, and padding on a
+particular side of the box
 
 ```
 none
@@ -340,7 +340,7 @@ large
 **responsive**
 
 Whether children laid out in a row direction should be switched to a
-      column layout when the display area narrows.
+column layout when the display area narrows.
 
 ```
 boolean

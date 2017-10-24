@@ -1,10 +1,12 @@
 import { describe, PropTypes } from 'react-desc';
 
+import { getAvailableAtBadge } from '../utils';
+
 export default (Chart) => {
-  const DocumentedChart = describe(Chart).description('A graphical chart.').usage(
-    `import { Chart } from 'grommet';
-    <Chart/>`
-  );
+  const DocumentedChart = describe(Chart)
+    .availableAt(getAvailableAtBadge('Chart'))
+    .description('A graphical chart.')
+    .usage("import { Chart } from 'grommet';\n<Chart />");
 
   DocumentedChart.propTypes = {
     bounds: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).description(
