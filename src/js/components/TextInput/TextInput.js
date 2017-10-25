@@ -148,20 +148,15 @@ class TextInput extends Component {
       items = suggestions.map((suggestion, index) => (
         <li key={renderLabel(suggestion)}>
           <Button
-            active={activeSuggestionIndex === index}
+            active={
+              activeSuggestionIndex === index ||
+              selectedSuggestionIndex === index
+            }
             fill={true}
             hoverIndicator='background'
             onClick={() => this.onClickSuggestion(suggestion)}
           >
-            <Box
-              align='start'
-              pad='small'
-              background={
-                selectedSuggestionIndex === index ? (
-                  theme.global.selected.backgroundColor
-                ) : undefined
-              }
-            >
+            <Box align='start' pad='small'>
               {renderLabel(suggestion)}
             </Box>
           </Button>

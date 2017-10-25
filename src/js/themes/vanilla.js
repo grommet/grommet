@@ -1,4 +1,4 @@
-import { lighten, rgba } from 'polished';
+import { rgba } from 'polished';
 import { css } from 'styled-components';
 
 import { colorForName, deepFreeze } from '../utils';
@@ -159,7 +159,6 @@ export default deepFreeze({
       color: '#AAAAAA',
     },
     selected: {
-      backgroundColor: lighten(0.23, brandColor),
       textColor,
     },
     spacing: `${baseSpacing}px`,
@@ -176,7 +175,7 @@ export default deepFreeze({
   anchor: {
     textDecoration: 'none',
     fontWeight: 600,
-    color: brandColor,
+    color: css`${props => colorForName('brand', props.theme)}`,
   },
   button: {
     border: {
@@ -197,7 +196,7 @@ export default deepFreeze({
   },
   checkBox: {
     check: {
-      color: brandColor,
+      color: css`${props => colorForName('brand', props.theme)}`,
       width: '4px',
     },
     border: {
@@ -273,7 +272,7 @@ export default deepFreeze({
   },
   radioButton: {
     check: {
-      color: brandColor,
+      color: css`${props => colorForName('brand', props.theme)}`,
     },
     border: {
       color: {
