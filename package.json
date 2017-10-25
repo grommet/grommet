@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.0.0",
+  "version": "2.0.0-alpha.1",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -23,6 +23,7 @@
     "node": ">= 4.4.0"
   },
   "scripts": {
+    "postinstall": "babel-node ./tools/warn-alpha",
     "generate-readme": "babel-node ./tools/generate-readme",
     "dist": "cross-env NODE_ENV=production grommet pack && babel ./src/js/ --ignore '__tests__' --out-dir ./dist && cross-env BABEL_ENV=es6 babel ./src/js/ --ignore '__tests__' --out-dir ./dist/es6",
     "release-stable": "babel-node ./tools/release-stable",
@@ -41,7 +42,7 @@
     "markdown-to-jsx": "^5.4.2",
     "polished": "^1.3.0",
     "prop-types": "^15.5.10",
-    "react-desc": "^3.1.0",
+    "react-desc": "^3.2.0",
     "recompose": "^0.25.1"
   },
   "devDependencies": {
@@ -69,6 +70,7 @@
     "fs-extra": "^4.0.0",
     "grommet-cli": "5.1.0",
     "jest-styled-components": "^4.0.3",
+    "node-emoji": "^1.8.1",
     "pre-commit": "^1.2.2",
     "react": "^16.0.0",
     "react-dev-utils": "^0.4.2",

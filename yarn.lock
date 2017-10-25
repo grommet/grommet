@@ -4887,9 +4887,9 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-desc@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/react-desc/-/react-desc-3.1.0.tgz#0deacbbd68324c3360bd9e1e035f3328759d812a"
+react-desc@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-desc/-/react-desc-3.2.0.tgz#88a947fdf029ed271a04abc98520d4776b13735c"
 
 react-dev-utils@^0.4.2:
   version "0.4.2"
