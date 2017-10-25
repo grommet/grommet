@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import StyledParagraph from './StyledParagraph';
-
 import { withTheme } from '../hocs';
 
+import StyledParagraph from './StyledParagraph';
 import doc from './doc';
 
 class Paragraph extends Component {

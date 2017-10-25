@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import StyledStack from './StyledStack';
-
 import { withTheme } from '../hocs';
 
+import StyledStack from './StyledStack';
 import doc from './doc';
-
 import styleMap from './styleMap';
 
 class Stack extends Component {

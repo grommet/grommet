@@ -6,8 +6,8 @@ import { Box } from '../Box';
 import { DropButton } from '../DropButton';
 import { TextInput } from '../TextInput';
 
-import doc from './doc';
 import SelectContainer from './SelectContainer';
+import doc from './doc';
 
 class Select extends Component {
   selectControl = () => {

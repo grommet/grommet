@@ -1,10 +1,9 @@
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
 
-import StyledButton, { StyledLabel, StyledIcon } from './StyledButton';
-
 import { withFocus, withTheme } from '../hocs';
 
+import StyledButton, { StyledLabel, StyledIcon } from './StyledButton';
 import doc from './doc';
 
 const AnchorStyledButton = StyledButton.withComponent('a');

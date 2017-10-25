@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { a11yTitlePropType, backgroundPropType, getAvailableAtBadge } from '../utils';
+import { a11yTitlePropType, backgroundPropType, getAvailableAtBadge } from '../../utils';
 
 export default (Select) => {
   const DocumentedSelect = describe(Select)

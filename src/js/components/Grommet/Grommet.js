@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import StyledGrommet from './StyledGrommet';
-
-import doc from './doc';
-
 import baseTheme from '../../themes/vanilla';
 import { deepMerge } from '../../utils';
+
+import StyledGrommet from './StyledGrommet';
+import doc from './doc';
 
 class Grommet extends Component {
   static childContextTypes = {

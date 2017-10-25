@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { baseStyle, lapAndUp } from '../utils';
+import { baseStyle, lapAndUp } from '../../utils';
 
 const StyledGrommet = styled.div`
   ${baseStyle}

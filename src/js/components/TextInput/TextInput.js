@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
-import StyledTextInput,
-  { StyledTextInputContainer, StyledSuggestions } from './StyledTextInput';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Drop } from '../Drop';
-
 import { withTheme } from '../hocs';
 
+import StyledTextInput, {
+  StyledTextInputContainer,
+  StyledSuggestions,
+} from './StyledTextInput';
 import doc from './doc';
 
 function renderLabel(suggestion) {

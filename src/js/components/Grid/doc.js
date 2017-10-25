@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../utils';
+import { getAvailableAtBadge } from '../../utils';
 
 const sizes = ['xsmall', 'small', 'medium', 'large', 'xlarge',
   'full', '1/2', '1/3', '2/3', '1/4', '3/4', 'flex'];

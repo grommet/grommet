@@ -2,10 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
+import { findAllByType } from '../../../utils';
+
 import { Grommet } from '../../Grommet';
 import { TextInput } from '../';
-
-import { findAllByType } from '../../utils';
 
 jest.mock('react-dom');
 

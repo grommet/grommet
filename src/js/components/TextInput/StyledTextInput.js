@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, inputStyle } from '../utils';
+import { focusStyle, inputStyle } from '../../utils';
 
 const placeholderColor = css`
   color: ${props => props.theme.global.placeholder.color};

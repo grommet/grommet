@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { backgroundStyle, colorForName, palm } from '../utils';
+import { backgroundStyle, colorForName, palm } from '../../utils';
 
 const ALIGN_MAP = {
   baseline: 'baseline',

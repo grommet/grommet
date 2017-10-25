@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { backgroundStyle, baseStyle } from '../utils';
+import { backgroundStyle, baseStyle } from '../../utils';
 
 function getTransformOriginStyle(align) {
   let vertical = 'top';

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { baseStyle, lapAndUp, palm } from '../utils';
+import { baseStyle, lapAndUp, palm } from '../../utils';
 
 const StyledLayer = styled.div`
   ${baseStyle}

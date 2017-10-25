@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { a11yTitlePropType, getAvailableAtBadge } from '../utils';
+import { a11yTitlePropType, getAvailableAtBadge } from '../../utils';
 
 const PAD_SIZES = ['xsmall', 'small', 'medium', 'large'];
 

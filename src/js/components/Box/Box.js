@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
-import { colorForName, colorIsDark } from '../utils';
-import StyledBox from './StyledBox';
+import { colorForName, colorIsDark } from '../../utils';
 
 import { withTheme } from '../hocs';
+
+import StyledBox from './StyledBox';
 
 import doc from './doc';
 
