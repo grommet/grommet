@@ -297,6 +297,7 @@ export { default as PlatformDebianIcon } from './PlatformDebian';
 export { default as PlatformDockerIcon } from './PlatformDocker';
 export { default as PlatformDosIcon } from './PlatformDos';
 export { default as PlatformDropboxIcon } from './PlatformDropbox';
+export { default as PlatformDxcIcon } from './PlatformDxc';
 export { default as PlatformEdgeIcon } from './PlatformEdge';
 export { default as PlatformFedoraIcon } from './PlatformFedora';
 export { default as PlatformFirefoxIcon } from './PlatformFirefox';

@@ -13,7 +13,7 @@ const RealDate = Date;
 class FakeDate extends RealDate {
   constructor () {
     super();
-    return new RealDate('2017-06-13T04:41:20');
+    return new RealDate('2017-06-13T00:00:00');
   }
 };
 
