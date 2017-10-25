@@ -233,7 +233,7 @@ exports[`Anchor icon label renders 1`] = `
                 "width": "2px",
               },
               "check": Object {
-                "color": "#865CD6",
+                "color": undefined,
                 "width": "4px",
               },
               "size": "24px",
@@ -538,7 +538,7 @@ exports[`Anchor icon label renders 1`] = `
                 "width": "2px",
               },
               "check": Object {
-                "color": "#865CD6",
+                "color": undefined,
               },
               "size": "24px",
             },
@@ -730,7 +730,7 @@ exports[`Anchor primary renders 1`] = `
                 "width": "2px",
               },
               "check": Object {
-                "color": "#865CD6",
+                "color": undefined,
                 "width": "4px",
               },
               "size": "24px",
@@ -1035,7 +1035,7 @@ exports[`Anchor primary renders 1`] = `
                 "width": "2px",
               },
               "check": Object {
-                "color": "#865CD6",
+                "color": undefined,
               },
               "size": "24px",
             },
@@ -1334,7 +1334,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "width": "2px",
               },
               "check": Object {
-                "color": "#865CD6",
+                "color": undefined,
                 "width": "4px",
               },
               "size": "24px",
@@ -1639,7 +1639,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "width": "2px",
               },
               "check": Object {
-                "color": "#865CD6",
+                "color": undefined,
               },
               "size": "24px",
             },
@@ -1786,7 +1786,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "width": "2px",
               },
               "check": Object {
-                "color": "#865CD6",
+                "color": undefined,
                 "width": "4px",
               },
               "size": "24px",
@@ -2091,7 +2091,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "width": "2px",
               },
               "check": Object {
-                "color": "#865CD6",
+                "color": undefined,
               },
               "size": "24px",
             },

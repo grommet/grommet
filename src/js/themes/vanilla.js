@@ -197,7 +197,7 @@ export default deepFreeze({
   },
   checkBox: {
     check: {
-      color: brandColor,
+      color: undefined,
       width: '4px',
     },
     border: {
@@ -273,7 +273,7 @@ export default deepFreeze({
   },
   radioButton: {
     check: {
-      color: brandColor,
+      color: undefined,
     },
     border: {
       color: {

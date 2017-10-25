@@ -14,13 +14,13 @@ export function deepMerge(target, ...sources) {
     return target;
   }
   // making sure to not change target (immutable)
-  const output = Object.assign({}, target);
+  const output = { ...target };
   const source = sources.shift();
   if (isObject(output) && isObject(source)) {
     Object.keys(source).forEach((key) => {
       if (isObject(source[key])) {
         if (!output[key]) {
-          output[key] = Object.assign({}, source[key]);
+          output[key] = { ...source[key] };
         } else {
           output[key] = deepMerge({}, output[key], source[key]);
         }
