@@ -30,7 +30,7 @@ export const StyledRadioButtonInput = styled.input`
   }
 
   :checked + div {
-    border-color: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color)};
+    border-color: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color || props.theme.global.colors.brand)};
   }
 
   :checked + div > svg {
@@ -39,7 +39,7 @@ export const StyledRadioButtonInput = styled.input`
 
   :checked + span > span {
     left: ${props => props.theme.radioButton.size};
-    background-color: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color)};
+    background-color: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color || props.theme.global.colors.brand)};
   }
 `;
 
@@ -62,7 +62,7 @@ export const StyledRadioButtonButton = styled.div`
     display: none;
     width: ${props => props.theme.radioButton.size};
     height: ${props => props.theme.radioButton.size};
-    fill: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color)};
+    fill: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color || props.theme.global.colors.brand)};
   }
 `;
 
