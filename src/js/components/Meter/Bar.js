@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
-import StyledMeter from './StyledMeter';
+import { colorForName, parseMetricToInt } from '../../utils';
 
-import { parseMetricToInt } from '../utils/mixins';
-import { colorForName } from '../utils/colors';
+import StyledMeter from './StyledMeter';
 
 export default class Bar extends Component {
   static defaultProps = {

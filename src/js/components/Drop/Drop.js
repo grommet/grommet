@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
 
+import { getNewContainer } from '../../utils';
+
 import { withTheme } from '../hocs';
 
 import DropContainer from './DropContainer';
-
 import doc from './doc';
-
-import { getNewContainer } from '../utils';
 
 class Drop extends Component {
   static defaultProps = {

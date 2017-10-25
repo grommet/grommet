@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { ROUTER_PROPS, getAvailableAtBadge } from '../utils';
+import { ROUTER_PROPS, getAvailableAtBadge } from '../../utils';
 
 export function routedAnchor(RoutedAnchor) {
   const DocumentedRoutedAnchor = describe(RoutedAnchor)

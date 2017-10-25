@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, fontSize } from '../utils';
+import { focusStyle, fontSize } from '../../utils';
 
 const primaryIconLabelStyle = css`
   ${props => fontSize(props.theme.global.control.font.size, props.theme.global.spacing)}

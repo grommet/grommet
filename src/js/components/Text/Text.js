@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import StyledText from './StyledText';
-
 import { withTheme } from '../hocs';
 
+import StyledText from './StyledText';
 import doc from './doc';
 
 const styledComponents = {

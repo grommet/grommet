@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 
 import { restrictFocusTo } from '../hocs';
-import { findScrollParents } from '../utils';
+import { findScrollParents } from '../../utils';
 import { Keyboard } from '../Keyboard';
 
 import StyledDrop from './StyledDrop';

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import StyledImage from './StyledImage';
-
 import { withTheme } from '../hocs';
 
+import StyledImage from './StyledImage';
 import doc from './doc';
 
 class Image extends Component {

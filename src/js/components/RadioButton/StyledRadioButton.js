@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { focusStyle } from '../utils';
+import { focusStyle } from '../../utils';
 
 export const StyledRadioButtonContainer = styled.label`
   display: flex;

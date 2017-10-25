@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
-import { activeStyle, focusStyle, fontSize, lapAndUp } from '../utils';
+import { activeStyle, focusStyle, fontSize, lapAndUp } from '../../utils';
 
 const primaryStyle = css`
   background-color: ${props => props.theme.global.colors.brand};

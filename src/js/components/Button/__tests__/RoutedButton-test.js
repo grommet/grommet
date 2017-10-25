@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
+import { findAllByType } from '../../../utils';
+
 import { Grommet } from '../../Grommet';
 import { RoutedButton } from '../';
-
-import { findAllByType } from '../../utils';
 
 test('RoutedButton renders', () => {
   const component = renderer.create(

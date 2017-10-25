@@ -3,8 +3,7 @@ import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import getDisplayName from 'recompose/getDisplayName';
 
-import { deepMerge } from '../utils';
-import { getBodyChildElements, makeNodeFocusable, makeNodeUnfocusable } from './utils';
+import { deepMerge, getBodyChildElements, makeNodeFocusable, makeNodeUnfocusable } from '../utils';
 
 export const withFocus = (WrappedComponent) => {
   class FocusableComponent extends Component {

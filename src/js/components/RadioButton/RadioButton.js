@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
-import StyledRadioButton,
-  { StyledRadioButtonContainer, StyledRadioButtonInput,
-    StyledRadioButtonButton } from './StyledRadioButton';
-
 import { withTheme } from '../hocs';
 
+import StyledRadioButton, {
+  StyledRadioButtonContainer,
+  StyledRadioButtonInput,
+  StyledRadioButtonButton,
+} from './StyledRadioButton';
 import doc from './doc';
 
 class RadioButton extends Component {

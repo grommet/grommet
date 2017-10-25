@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
 
+import { getNewContainer } from '../../utils';
+
 import { withTheme } from '../hocs';
 
 import LayerContainer from './LayerContainer';
-
 import doc from './doc';
-
-import { getNewContainer } from '../utils';
 
 class Layer extends Component {
   static defaultProps = {

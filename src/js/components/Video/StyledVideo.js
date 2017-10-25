@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { colorForName } from '../utils';
+import { colorForName } from '../../utils';
 
 const FIT_MAP = {
   cover: 'cover',
