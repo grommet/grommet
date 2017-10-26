@@ -392,7 +392,7 @@ export default class Select extends Component {
           content = (
             <Type
               key={itemId}
-              id={`${ id ? id + '-' + itemId : itemId}`}
+              id={id ? `${id}-${itemId}` : undefined}
               label={content}
               checked={selected}
               onChange={this._onClickOption.bind(this, option)}
