@@ -46,8 +46,8 @@ exports[`Button accent renders 1`] = `
   border-color: #00CCEB;
 }
 
-.c1:hover box-shadow:0px 0px 0px 2px function (props) {
-  return: (0,_utils.colorForName)('accent-1',props.theme);
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #00CCEB;
 }
 
 .c1:hover svg {
@@ -149,8 +149,8 @@ exports[`Button critical renders 1`] = `
   border-color: #FF324D;
 }
 
-.c1:hover box-shadow:0px 0px 0px 2px function (props) {
-  return: (0,_utils.colorForName)('status-critical',props.theme);
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #FF324D;
 }
 
 .c1:hover svg {
@@ -993,8 +993,8 @@ exports[`Button href renders 1`] = `
   padding: 10px 10px;
 }
 
-.c1:hover box-shadow:0px 0px 0px 2px function (props) {
-  return: props.theme.global.colors.brand;
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #865CD6;
 }
 
 .c1:hover svg {
@@ -1101,8 +1101,8 @@ exports[`Button icon label renders 1`] = `
   padding: 10px 10px;
 }
 
-.c1:hover box-shadow:0px 0px 0px 2px function (props) {
-  return: props.theme.global.colors.brand;
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #865CD6;
 }
 
 .c1:hover svg {
@@ -1211,8 +1211,8 @@ exports[`Button primary renders 1`] = `
   color: #FFFFFF;
 }
 
-.c1:hover box-shadow:0px 0px 0px 2px function (props) {
-  return: props.theme.global.colors.brand;
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #865CD6;
 }
 
 .c1 svg {
@@ -1313,8 +1313,8 @@ exports[`Button renders 1`] = `
   padding: 10px 10px;
 }
 
-.c1:hover box-shadow:0px 0px 0px 2px function (props) {
-  return: props.theme.global.colors.brand;
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #865CD6;
 }
 
 .c1:hover svg {
@@ -1427,8 +1427,8 @@ exports[`Button reverse icon label renders 1`] = `
   padding: 10px 10px;
 }
 
-.c1:hover box-shadow:0px 0px 0px 2px function (props) {
-  return: props.theme.global.colors.brand;
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #865CD6;
 }
 
 .c1:hover svg {
@@ -1536,8 +1536,8 @@ exports[`Button secondary renders 1`] = `
   border-color: #DC2878;
 }
 
-.c1:hover box-shadow:0px 0px 0px 2px function (props) {
-  return: (0,_utils.colorForName)('neutral-2',props.theme);
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #DC2878;
 }
 
 .c1:hover svg {

@@ -87,11 +87,11 @@ const hoverStyle = css`
     )}
 
     ${props => !props.plain && (
-      `box-shadow: 0px 0px 0px 2px ${getHoverColor(props)};`
+      css`box-shadow: 0px 0px 0px 2px ${getHoverColor(props)};`
     )}
 
     ${props => !props.plain && !props.primary && (
-      `
+      css`
         // TODO: revisit this
         svg {
           fill: ${props.theme.global.hover.textColor};

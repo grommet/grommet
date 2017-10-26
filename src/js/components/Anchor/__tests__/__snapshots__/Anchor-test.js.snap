@@ -19,7 +19,7 @@ exports[`Anchor disabled renders 1`] = `
 }
 
 .c1 {
-  color: rgba(0,0,0,0.15);
+  color: #865CD6;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -78,7 +78,7 @@ exports[`Anchor focus renders 1`] = `
 }
 
 .c1 {
-  color: rgba(0,0,0,0.15);
+  color: #865CD6;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -161,7 +161,7 @@ exports[`Anchor icon label renders 1`] = `
 }
 
 .c1 {
-  color: rgba(0,0,0,0.15);
+  color: #865CD6;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -680,7 +680,7 @@ exports[`Anchor primary renders 1`] = `
 }
 
 .c1 {
-  color: rgba(0,0,0,0.15);
+  color: #865CD6;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -1173,7 +1173,7 @@ exports[`Anchor renders 1`] = `
 }
 
 .c1 {
-  color: rgba(0,0,0,0.15);
+  color: #865CD6;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -1233,7 +1233,7 @@ exports[`Anchor renders with children 1`] = `
 }
 
 .c1 {
-  color: rgba(0,0,0,0.15);
+  color: #865CD6;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -1304,7 +1304,7 @@ exports[`Anchor reverse icon label renders 1`] = `
 }
 
 .c1 {
-  color: rgba(0,0,0,0.15);
+  color: #865CD6;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -1780,7 +1780,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
 }
 
 .c1 {
-  color: rgba(0,0,0,0.15);
+  color: #865CD6;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -2247,7 +2247,7 @@ exports[`Anchor warns about invalid label render 1`] = `
 }
 
 .c1 {
-  color: rgba(0,0,0,0.15);
+  color: #865CD6;
   text-decoration: none;
   cursor: pointer;
   outline: none;
