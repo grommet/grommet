@@ -19,7 +19,7 @@ exports[`RoutedAnchor renders 1`] = `
 }
 
 .c1 {
-  color: #865CD6;
+  color: rgba(0,0,0,0.15);
   text-decoration: none;
   cursor: pointer;
   outline: none;

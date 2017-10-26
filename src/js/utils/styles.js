@@ -15,7 +15,7 @@ export const backgroundStyle = (background, theme) => {
       if (background.dark === false) {
         color = theme.global.colors.text;
       } else if (background.dark) {
-        color = theme.global.colors.darkBackgroundTextColor;
+        color = theme.global.colors.darkBackground.text;
       } else {
         color = 'inherit';
       }
@@ -37,8 +37,9 @@ export const backgroundStyle = (background, theme) => {
       if (rgba) {
         return css`
           background-color: ${rgba};
-          color: ${colorIsDark(rgba) ?
-            theme.global.colors.darkBackgroundTextColor : theme.global.colors.text};
+          color: ${
+            colorIsDark(rgba) ? theme.global.colors.darkBackground.text : theme.global.colors.text
+          };
         `;
       }
     }
@@ -55,7 +56,7 @@ export const backgroundStyle = (background, theme) => {
     return css`
       background-color: ${color};
       color: ${colorIsDark(color) ?
-        theme.global.colors.darkBackgroundTextColor : theme.global.colors.text};
+        theme.global.colors.darkBackground.text : theme.global.colors.text};
     `;
   }
   return undefined;
@@ -91,23 +92,14 @@ export const focusStyle = css`
   > polyline,
   > rect {
     outline: ${
-      props => (
-        props.theme.global.focus.border.color ||
-        props.theme.global.colors.accent[0]
-      )
+      props => props.theme.global.focus.border.color
     } solid 2px;
   }
   border-color: ${
-    props => (
-      props.theme.global.focus.border.color ||
-      props.theme.global.colors.accent[0]
-    )
+    props => props.theme.global.focus.border.color
   };
   box-shadow: 0 0 2px 2px ${
-    props => (
-      props.theme.global.focus.border.color ||
-      props.theme.global.colors.accent[0]
-    )
+    props => props.theme.global.focus.border.color
   };
 `;
 

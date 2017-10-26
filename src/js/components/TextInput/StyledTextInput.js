@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { focusStyle, inputStyle } from '../../utils';
 
 const placeholderColor = css`
-  color: ${props => props.theme.global.placeholder.color};
+  color: ${props => props.theme.global.colors.placeholder};
 `;
 
 const sizeStyle = (props) => {

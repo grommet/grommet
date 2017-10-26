@@ -40,7 +40,7 @@ function getHoverColor(props) {
   } else if (props.secondary) {
     return props.theme.button.colors.secondary;
   }
-  return props.theme.button.border.color || props.theme.global.colors.brand;
+  return props.theme.button.border.color;
 }
 
 function getHoverIndicatorStyle(hoverIndicator, theme) {
@@ -112,10 +112,7 @@ const fillStyle = `
 
 const plainFocusStyle = css`
   box-shadow: 0 0 ${props => props.theme.global.focus.border.width} ${props => props.theme.global.focus.border.width} ${
-    props => (
-      props.theme.global.focus.border.color ||
-      props.theme.global.colors.accent[0]
-    )
+    props => props.theme.global.focus.border.color
   };
 `;
 
@@ -139,9 +136,9 @@ const StyledButton = styled.button`
   text-transform: none;
 
   ${props => !props.plain && css`
-    border: ${props.theme.button.border.width} solid ${props.theme.button.border.color || props.theme.global.colors.brand};
+    border: ${props.theme.button.border.width} solid ${props.theme.button.border.color};
     border-radius: ${props.theme.button.border.radius};
-    color: ${props.theme.button.color || props.theme.global.colors.text};
+    color: ${props.theme.button.colors.text};
     text-align: center;
     display: inline-block;
     min-width: ${props.theme.button.minWidth};
