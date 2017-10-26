@@ -257,6 +257,7 @@ exports.default = {
   'platform-docker': 'platform docker',
   'platform-dos': 'platform dos',
   'platform-dropbox': 'platform dropbox',
+  'platform-dxc': 'platform dxc',
   'platform-edge': 'platform edge',
   'platform-fedora': 'platform fedora',
   'platform-firefox': 'platform firefox',

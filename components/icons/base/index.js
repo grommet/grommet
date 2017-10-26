@@ -2695,6 +2695,15 @@ Object.defineProperty(exports, 'PlatformDropboxIcon', {
   }
 });
 
+var _PlatformDxc = require('./PlatformDxc');
+
+Object.defineProperty(exports, 'PlatformDxcIcon', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_PlatformDxc).default;
+  }
+});
+
 var _PlatformEdge = require('./PlatformEdge');
 
 Object.defineProperty(exports, 'PlatformEdgeIcon', {
