@@ -50,9 +50,12 @@ export default deepFreeze({
       border: borderColor,
       brand: brandColor,
       dark: darkColors,
-      darkBackgroundTextColor: 'rgba(255, 255, 255, 0.85)',
+      darkBackground: {
+        text: 'rgba(255, 255, 255, 0.85)',
+      },
       light: lightColors,
       neutral: neutralColors,
+      placeholder: '#AAAAAA',
       status: statusColors,
       text: textColor,
       white: '#FFFFFF',
@@ -80,6 +83,7 @@ export default deepFreeze({
     },
     focus: {
       border: {
+        color: css`${props => colorForName('accent-1', props.theme)}`,
         width: '2px',
       },
     },
@@ -139,14 +143,14 @@ export default deepFreeze({
       size: '16px',
     },
     hover: {
-      backgroundColor: activeColor,
+      backgroundColor: css`${props => props.theme.global.colors.active}`,
       textColor: '#000000',
     },
     input: {
       border: {
         width: '1px',
         radius: '4px',
-        color: borderColor,
+        color: css`${props => props.theme.global.colors.border}`,
       },
     },
     lineHeight: '24px',
@@ -154,12 +158,6 @@ export default deepFreeze({
       weak: '0.8',
       medium: '0.4',
       strong: '0.1',
-    },
-    placeholder: {
-      color: '#AAAAAA',
-    },
-    selected: {
-      textColor,
     },
     spacing: `${baseSpacing}px`,
     size: {
@@ -175,17 +173,19 @@ export default deepFreeze({
   anchor: {
     textDecoration: 'none',
     fontWeight: 600,
-    color: css`${props => colorForName('brand', props.theme)}`,
+    color: css`${props => props.theme.global.colors.brand}`,
   },
   button: {
     border: {
+      color: css`${props => props.theme.global.colors.brand}`,
       width: `${borderWidth}px`,
       radius: '5px',
     },
     colors: {
-      accent: accentColors[0],
-      critical: statusColors.critical,
-      secondary: neutralColors[1],
+      accent: css`${props => colorForName('accent-1', props.theme)}`,
+      critical: css`${props => props.theme.global.colors.status.critical}`,
+      secondary: css`${props => colorForName('neutral-2', props.theme)}`,
+      text: css`${props => props.theme.global.colors.text}`,
     },
     minWidth: `${baseSpacing * 4}px`,
     maxWidth: `${baseSpacing * 16}px`,
@@ -196,7 +196,7 @@ export default deepFreeze({
   },
   checkBox: {
     check: {
-      color: css`${props => colorForName('brand', props.theme)}`,
+      color: css`${props => props.theme.global.colors.brand}`,
       width: '4px',
     },
     border: {
@@ -250,8 +250,8 @@ export default deepFreeze({
       `}
 
       ${props => props.dark && `
-        fill: ${props.theme.global.colors.darkBackgroundTextColor};
-        stroke: ${props.theme.global.colors.darkBackgroundTextColor};
+        fill: ${props.theme.global.colors.darkBackground.text};
+        stroke: ${props.theme.global.colors.darkBackground.text};
       `}
     `,
   },
@@ -272,7 +272,7 @@ export default deepFreeze({
   },
   radioButton: {
     check: {
-      color: css`${props => colorForName('brand', props.theme)}`,
+      color: css`${props => props.theme.global.colors.brand}`,
     },
     border: {
       color: {

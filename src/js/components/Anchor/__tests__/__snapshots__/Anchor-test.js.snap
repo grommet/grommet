@@ -210,13 +210,25 @@ exports[`Anchor icon label renders 1`] = `
             },
             "button": Object {
               "border": Object {
+                "color": Array [
+                  [Function],
+                ],
                 "radius": "5px",
                 "width": "2px",
               },
               "colors": Object {
-                "accent": "#00CCEB",
-                "critical": "#FF324D",
-                "secondary": "#DC2878",
+                "accent": Array [
+                  [Function],
+                ],
+                "critical": Array [
+                  [Function],
+                ],
+                "secondary": Array [
+                  [Function],
+                ],
+                "text": Array [
+                  [Function],
+                ],
               },
               "maxWidth": "384px",
               "minWidth": "96px",
@@ -280,7 +292,9 @@ exports[`Anchor icon label renders 1`] = `
                   "#777777",
                   "#999999",
                 ],
-                "darkBackgroundTextColor": "rgba(255, 255, 255, 0.85)",
+                "darkBackground": Object {
+                  "text": "rgba(255, 255, 255, 0.85)",
+                },
                 "light": Array [
                   "#F6F6F6",
                   "#EEEEEE",
@@ -295,6 +309,7 @@ exports[`Anchor icon label renders 1`] = `
                   "#501EB4",
                   "#49516F",
                 ],
+                "placeholder": "#AAAAAA",
                 "status": Object {
                   "critical": "#FF324D",
                   "disabled": "#a8a8a8",
@@ -329,6 +344,9 @@ exports[`Anchor icon label renders 1`] = `
               },
               "focus": Object {
                 "border": Object {
+                  "color": Array [
+                    [Function],
+                  ],
                   "width": "2px",
                 },
               },
@@ -388,12 +406,16 @@ exports[`Anchor icon label renders 1`] = `
                 "size": "16px",
               },
               "hover": Object {
-                "backgroundColor": "rgba(221,221,221,0.5)",
+                "backgroundColor": Array [
+                  [Function],
+                ],
                 "textColor": "#000000",
               },
               "input": Object {
                 "border": Object {
-                  "color": "rgba(0, 0, 0, 0.15)",
+                  "color": Array [
+                    [Function],
+                  ],
                   "radius": "4px",
                   "width": "1px",
                 },
@@ -403,12 +425,6 @@ exports[`Anchor icon label renders 1`] = `
                 "medium": "0.4",
                 "strong": "0.1",
                 "weak": "0.8",
-              },
-              "placeholder": Object {
-                "color": "#AAAAAA",
-              },
-              "selected": Object {
-                "textColor": "#333333",
               },
               "size": Object {
                 "full": "100%",
@@ -712,13 +728,25 @@ exports[`Anchor primary renders 1`] = `
             },
             "button": Object {
               "border": Object {
+                "color": Array [
+                  [Function],
+                ],
                 "radius": "5px",
                 "width": "2px",
               },
               "colors": Object {
-                "accent": "#00CCEB",
-                "critical": "#FF324D",
-                "secondary": "#DC2878",
+                "accent": Array [
+                  [Function],
+                ],
+                "critical": Array [
+                  [Function],
+                ],
+                "secondary": Array [
+                  [Function],
+                ],
+                "text": Array [
+                  [Function],
+                ],
               },
               "maxWidth": "384px",
               "minWidth": "96px",
@@ -782,7 +810,9 @@ exports[`Anchor primary renders 1`] = `
                   "#777777",
                   "#999999",
                 ],
-                "darkBackgroundTextColor": "rgba(255, 255, 255, 0.85)",
+                "darkBackground": Object {
+                  "text": "rgba(255, 255, 255, 0.85)",
+                },
                 "light": Array [
                   "#F6F6F6",
                   "#EEEEEE",
@@ -797,6 +827,7 @@ exports[`Anchor primary renders 1`] = `
                   "#501EB4",
                   "#49516F",
                 ],
+                "placeholder": "#AAAAAA",
                 "status": Object {
                   "critical": "#FF324D",
                   "disabled": "#a8a8a8",
@@ -831,6 +862,9 @@ exports[`Anchor primary renders 1`] = `
               },
               "focus": Object {
                 "border": Object {
+                  "color": Array [
+                    [Function],
+                  ],
                   "width": "2px",
                 },
               },
@@ -890,12 +924,16 @@ exports[`Anchor primary renders 1`] = `
                 "size": "16px",
               },
               "hover": Object {
-                "backgroundColor": "rgba(221,221,221,0.5)",
+                "backgroundColor": Array [
+                  [Function],
+                ],
                 "textColor": "#000000",
               },
               "input": Object {
                 "border": Object {
-                  "color": "rgba(0, 0, 0, 0.15)",
+                  "color": Array [
+                    [Function],
+                  ],
                   "radius": "4px",
                   "width": "1px",
                 },
@@ -905,12 +943,6 @@ exports[`Anchor primary renders 1`] = `
                 "medium": "0.4",
                 "strong": "0.1",
                 "weak": "0.8",
-              },
-              "placeholder": Object {
-                "color": "#AAAAAA",
-              },
-              "selected": Object {
-                "textColor": "#333333",
               },
               "size": Object {
                 "full": "100%",
@@ -1321,13 +1353,25 @@ exports[`Anchor reverse icon label renders 1`] = `
             },
             "button": Object {
               "border": Object {
+                "color": Array [
+                  [Function],
+                ],
                 "radius": "5px",
                 "width": "2px",
               },
               "colors": Object {
-                "accent": "#00CCEB",
-                "critical": "#FF324D",
-                "secondary": "#DC2878",
+                "accent": Array [
+                  [Function],
+                ],
+                "critical": Array [
+                  [Function],
+                ],
+                "secondary": Array [
+                  [Function],
+                ],
+                "text": Array [
+                  [Function],
+                ],
               },
               "maxWidth": "384px",
               "minWidth": "96px",
@@ -1391,7 +1435,9 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "#777777",
                   "#999999",
                 ],
-                "darkBackgroundTextColor": "rgba(255, 255, 255, 0.85)",
+                "darkBackground": Object {
+                  "text": "rgba(255, 255, 255, 0.85)",
+                },
                 "light": Array [
                   "#F6F6F6",
                   "#EEEEEE",
@@ -1406,6 +1452,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "#501EB4",
                   "#49516F",
                 ],
+                "placeholder": "#AAAAAA",
                 "status": Object {
                   "critical": "#FF324D",
                   "disabled": "#a8a8a8",
@@ -1440,6 +1487,9 @@ exports[`Anchor reverse icon label renders 1`] = `
               },
               "focus": Object {
                 "border": Object {
+                  "color": Array [
+                    [Function],
+                  ],
                   "width": "2px",
                 },
               },
@@ -1499,12 +1549,16 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "size": "16px",
               },
               "hover": Object {
-                "backgroundColor": "rgba(221,221,221,0.5)",
+                "backgroundColor": Array [
+                  [Function],
+                ],
                 "textColor": "#000000",
               },
               "input": Object {
                 "border": Object {
-                  "color": "rgba(0, 0, 0, 0.15)",
+                  "color": Array [
+                    [Function],
+                  ],
                   "radius": "4px",
                   "width": "1px",
                 },
@@ -1514,12 +1568,6 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "medium": "0.4",
                 "strong": "0.1",
                 "weak": "0.8",
-              },
-              "placeholder": Object {
-                "color": "#AAAAAA",
-              },
-              "selected": Object {
-                "textColor": "#333333",
               },
               "size": Object {
                 "full": "100%",
@@ -1778,13 +1826,25 @@ exports[`Anchor warns about invalid icon render 1`] = `
             },
             "button": Object {
               "border": Object {
+                "color": Array [
+                  [Function],
+                ],
                 "radius": "5px",
                 "width": "2px",
               },
               "colors": Object {
-                "accent": "#00CCEB",
-                "critical": "#FF324D",
-                "secondary": "#DC2878",
+                "accent": Array [
+                  [Function],
+                ],
+                "critical": Array [
+                  [Function],
+                ],
+                "secondary": Array [
+                  [Function],
+                ],
+                "text": Array [
+                  [Function],
+                ],
               },
               "maxWidth": "384px",
               "minWidth": "96px",
@@ -1848,7 +1908,9 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "#777777",
                   "#999999",
                 ],
-                "darkBackgroundTextColor": "rgba(255, 255, 255, 0.85)",
+                "darkBackground": Object {
+                  "text": "rgba(255, 255, 255, 0.85)",
+                },
                 "light": Array [
                   "#F6F6F6",
                   "#EEEEEE",
@@ -1863,6 +1925,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "#501EB4",
                   "#49516F",
                 ],
+                "placeholder": "#AAAAAA",
                 "status": Object {
                   "critical": "#FF324D",
                   "disabled": "#a8a8a8",
@@ -1897,6 +1960,9 @@ exports[`Anchor warns about invalid icon render 1`] = `
               },
               "focus": Object {
                 "border": Object {
+                  "color": Array [
+                    [Function],
+                  ],
                   "width": "2px",
                 },
               },
@@ -1956,12 +2022,16 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "size": "16px",
               },
               "hover": Object {
-                "backgroundColor": "rgba(221,221,221,0.5)",
+                "backgroundColor": Array [
+                  [Function],
+                ],
                 "textColor": "#000000",
               },
               "input": Object {
                 "border": Object {
-                  "color": "rgba(0, 0, 0, 0.15)",
+                  "color": Array [
+                    [Function],
+                  ],
                   "radius": "4px",
                   "width": "1px",
                 },
@@ -1971,12 +2041,6 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "medium": "0.4",
                 "strong": "0.1",
                 "weak": "0.8",
-              },
-              "placeholder": Object {
-                "color": "#AAAAAA",
-              },
-              "selected": Object {
-                "textColor": "#333333",
               },
               "size": Object {
                 "full": "100%",
