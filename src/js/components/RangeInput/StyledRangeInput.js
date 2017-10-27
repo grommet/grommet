@@ -10,7 +10,7 @@ const rangeTrackStyle = css`
       props.grommet.dark ? (
         props.theme.global.colors.white
       ) : (
-        props.theme.global.control.backgroundColor
+        props.theme.rangeInput.trackColor
       )
     )
   };
@@ -103,12 +103,12 @@ const StyledRangeInput = styled.input`
   }
 
   &::-ms-fill-lower {
-    background: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.global.control.backgroundColor)};
+    background: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.rangeInput.trackColor)};
     border-color: transparent;
   }
 
   &::-ms-fill-upper {
-    background: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.global.control.backgroundColor)};
+    background: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.rangeInput.trackColor)};
     border-color: transparent;
   }
 

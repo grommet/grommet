@@ -322,9 +322,6 @@ exports[`Anchor icon label renders 1`] = `
                 "white": "#FFFFFF",
               },
               "control": Object {
-                "backgroundColor": Array [
-                  [Function],
-                ],
                 "border": Object {
                   "width": "2px",
                 },
@@ -568,6 +565,11 @@ exports[`Anchor icon label renders 1`] = `
                 ],
               },
               "size": "24px",
+            },
+            "rangeInput": Object {
+              "trackColor": Array [
+                [Function],
+              ],
             },
             "text": Object {
               "large": Object {
@@ -846,9 +848,6 @@ exports[`Anchor primary renders 1`] = `
                 "white": "#FFFFFF",
               },
               "control": Object {
-                "backgroundColor": Array [
-                  [Function],
-                ],
                 "border": Object {
                   "width": "2px",
                 },
@@ -1092,6 +1091,11 @@ exports[`Anchor primary renders 1`] = `
                 ],
               },
               "size": "24px",
+            },
+            "rangeInput": Object {
+              "trackColor": Array [
+                [Function],
+              ],
             },
             "text": Object {
               "large": Object {
@@ -1477,9 +1481,6 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "white": "#FFFFFF",
               },
               "control": Object {
-                "backgroundColor": Array [
-                  [Function],
-                ],
                 "border": Object {
                   "width": "2px",
                 },
@@ -1723,6 +1724,11 @@ exports[`Anchor reverse icon label renders 1`] = `
                 ],
               },
               "size": "24px",
+            },
+            "rangeInput": Object {
+              "trackColor": Array [
+                [Function],
+              ],
             },
             "text": Object {
               "large": Object {
@@ -1956,9 +1962,6 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "white": "#FFFFFF",
               },
               "control": Object {
-                "backgroundColor": Array [
-                  [Function],
-                ],
                 "border": Object {
                   "width": "2px",
                 },
@@ -2202,6 +2205,11 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 ],
               },
               "size": "24px",
+            },
+            "rangeInput": Object {
+              "trackColor": Array [
+                [Function],
+              ],
             },
             "text": Object {
               "large": Object {
