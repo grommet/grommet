@@ -499,7 +499,7 @@ var Select = function (_Component) {
             var Type = multiple ? _CheckBox2.default : _RadioButton2.default;
             content = _react2.default.createElement(Type, {
               key: itemId,
-              id: '' + (id ? id + '-' + itemId : itemId),
+              id: id ? id + '-' + itemId : undefined,
               label: content,
               checked: selected,
               onChange: _this4._onClickOption.bind(_this4, option)
