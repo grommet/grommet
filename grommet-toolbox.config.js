@@ -61,6 +61,7 @@ export default {
     },
     externals: {
       'react': 'React',
+      'react-intl': 'ReactDOM',
       'react-dom': 'ReactDOM',
       'react-addons-transition-group': 'React.addons.TransitionGroup'
     }
