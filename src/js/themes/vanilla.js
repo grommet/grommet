@@ -288,7 +288,9 @@ export default deepFreeze({
     size: `${baseSpacing}px`,
   },
   rangeInput: {
-    trackColor: css`${props => rgba(props.theme.global.colors.text, 0.2)}`,
+    track: {
+      color: css`${props => rgba(props.theme.global.colors.text, 0.2)}`,
+    },
   },
   text: {
     medium: { size: '16px', height: 1.375 },

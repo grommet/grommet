@@ -567,9 +567,11 @@ exports[`Anchor icon label renders 1`] = `
               "size": "24px",
             },
             "rangeInput": Object {
-              "trackColor": Array [
-                [Function],
-              ],
+              "track": Object {
+                "color": Array [
+                  [Function],
+                ],
+              },
             },
             "text": Object {
               "large": Object {
@@ -1093,9 +1095,11 @@ exports[`Anchor primary renders 1`] = `
               "size": "24px",
             },
             "rangeInput": Object {
-              "trackColor": Array [
-                [Function],
-              ],
+              "track": Object {
+                "color": Array [
+                  [Function],
+                ],
+              },
             },
             "text": Object {
               "large": Object {
@@ -1726,9 +1730,11 @@ exports[`Anchor reverse icon label renders 1`] = `
               "size": "24px",
             },
             "rangeInput": Object {
-              "trackColor": Array [
-                [Function],
-              ],
+              "track": Object {
+                "color": Array [
+                  [Function],
+                ],
+              },
             },
             "text": Object {
               "large": Object {
@@ -2207,9 +2213,11 @@ exports[`Anchor warns about invalid icon render 1`] = `
               "size": "24px",
             },
             "rangeInput": Object {
-              "trackColor": Array [
-                [Function],
-              ],
+              "track": Object {
+                "color": Array [
+                  [Function],
+                ],
+              },
             },
             "text": Object {
               "large": Object {
