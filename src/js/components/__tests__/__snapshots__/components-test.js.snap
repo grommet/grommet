@@ -22,6 +22,7 @@ Object {
   "Meter": [Function],
   "Paragraph": [Function],
   "RadioButton": [Function],
+  "RangeInput": [Function],
   "Responsive": [Function],
   "RoutedAnchor": [Function],
   "RoutedButton": [Function],

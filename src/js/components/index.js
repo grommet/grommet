@@ -16,6 +16,7 @@ export * from './Menu';
 export * from './Meter';
 export * from './Paragraph';
 export * from './RadioButton';
+export * from './RangeInput';
 export * from './Responsive';
 export * from './Select';
 export * from './Stack';

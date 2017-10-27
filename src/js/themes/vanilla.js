@@ -61,6 +61,10 @@ export default deepFreeze({
       white: '#FFFFFF',
     },
     control: {
+      backgroundColor: css`${props => rgba(props.theme.global.colors.text, 0.2)}`,
+      border: {
+        width: '2px',
+      },
       font: {
         weight: 600,
         size: '19px',
