@@ -357,7 +357,7 @@ export default class Tiles extends Component {
 
     if (element) {
       // only clone tile children
-      if (element.type && element.type.displayName === 'Tile') {
+      if (element.type && element.type._tile) {
         const elementClone = React.cloneElement(element, {
           hoverBorder: !flush,
           selected
