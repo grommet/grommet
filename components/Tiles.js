@@ -449,7 +449,7 @@ var Tiles = function (_Component) {
 
       if (element) {
         // only clone tile children
-        if (element.type && element.type.displayName === 'Tile') {
+        if (element.type && element.type._tile) {
           var elementClone = _react2.default.cloneElement(element, {
             hoverBorder: !flush,
             selected: selected

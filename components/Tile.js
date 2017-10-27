@@ -92,9 +92,12 @@ var Tile = function (_Component) {
   return Tile;
 }(_react.Component);
 
+// add a strong and more reliable link between Tiles and Tile
+
+
 Tile.displayName = 'Tile';
 exports.default = Tile;
-
+Tile._tile = true;
 
 Tile.propTypes = _extends({
   hoverStyle: _propTypes2.default.oneOf(['border', 'background', 'none']),
