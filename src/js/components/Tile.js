@@ -49,6 +49,9 @@ export default class Tile extends Component {
 
 }
 
+// add a strong and more reliable link between Tiles and Tile
+Tile._tile = true;
+
 Tile.propTypes = {
   hoverStyle: PropTypes.oneOf(['border', 'background', 'none']),
   hoverColorIndex: PropTypes.string,
