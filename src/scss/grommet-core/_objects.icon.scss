@@ -124,7 +124,7 @@ $icon-huge-size: round($inuit-base-spacing-unit * 12) !default;
     fill: map-get($brand-status-colors, unknown);
 
     #{$dark-background-context} {
-      @include icon-color($colored-status-color);
+      fill: icon-color($colored-status-color);
     }
   }
 
