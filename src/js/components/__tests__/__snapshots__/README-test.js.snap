@@ -1367,7 +1367,7 @@ function
 
 **plain**
 
-Whether this is a plain Layer with not background color.
+Whether this is a plain Layer with no background color or border.
 
 \`\`\`
 boolean
