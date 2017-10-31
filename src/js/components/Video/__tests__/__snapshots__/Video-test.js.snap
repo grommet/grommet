@@ -198,6 +198,10 @@ exports[`Video autoPlay renders 1`] = `
 
 .c10 {
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c14 {
@@ -726,6 +730,10 @@ exports[`Video controls renders 1`] = `
 
 .c10 {
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c14 {
@@ -1406,6 +1414,10 @@ exports[`Video fit renders 1`] = `
 
 .c10 {
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c14 {
@@ -2097,6 +2109,10 @@ exports[`Video loop renders 1`] = `
 
 .c10 {
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c14 {
@@ -2573,6 +2589,10 @@ exports[`Video mute renders 1`] = `
 
 .c10 {
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c14 {
@@ -3049,6 +3069,10 @@ exports[`Video renders 1`] = `
 
 .c10 {
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .c14 {

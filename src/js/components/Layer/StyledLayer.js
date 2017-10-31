@@ -10,7 +10,7 @@ const StyledLayer = styled.div`
   height: 100vh;
   overflow: auto;
 
-  background-color: ${props => props.theme.layer.overlayBackgroundColor};
+  background-color: ${props => (props.plain ? 'transparent' : props.theme.layer.overlayBackgroundColor)};
 
   ${lapAndUp(`
     position: fixed;
@@ -95,18 +95,15 @@ const bottomAlignStyle = `
 const centerAlignStyle = css`
   bottom: 50%;
   right: 50%;
-  transform: translate(50%, 50%);
-  max-height: calc(100vh - ${props => props.theme.global.edgeSize.large});
-  max-width: calc(100vw - ${props => props.theme.global.edgeSize.large});
   animation: grow-box 0.1s forwards;
 
   @keyframes grow-box {
     0% {
-      transform: scale(0);
+      transform: translate(50%, 50%) scale(0.8);
     }
 
     100% {
-      transform: scale(1);
+      transform: translate(50%, 50%) scale(1);
     }
   }
 `;
@@ -122,19 +119,13 @@ function getAlignStyle(props) {
   return ALIGN_MAP[props.align] || '';
 }
 
-const sizeStyle = css`
-  min-width: ${props => props.theme.global.size[props.size]};
-`;
-
 export const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: ${props => props.theme.global.size.xxsmall};
   outline: none;
 
-  ${props => props.size && sizeStyle}
-
-  background-color: ${props => props.theme.layer.backgroundColor};
+  background-color: ${props => (props.plain ? 'transparent' : props.theme.layer.backgroundColor)};
 
   ${palm(`
     min-height: 100%;
@@ -146,7 +137,7 @@ export const StyledContainer = styled.div`
     max-height: 100%;
     max-width: 100%;
     overflow: auto;
-    border-radius: ${props.theme.layer.border.radius};
+    border-radius: ${props.plain ? 'none' : props.theme.layer.border.radius};
 
     ${getAlignStyle(props)}
   `)}

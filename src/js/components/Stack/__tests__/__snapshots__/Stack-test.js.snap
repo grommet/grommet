@@ -20,6 +20,10 @@ exports[`Stack anchor renders 1`] = `
 
 .c1 {
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media only screen and (min-width:700px) {
@@ -236,6 +240,10 @@ exports[`Stack renders 1`] = `
 
 .c1 {
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media only screen and (min-width:700px) {

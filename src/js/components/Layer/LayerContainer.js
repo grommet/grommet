@@ -19,14 +19,20 @@ class LayerContainer extends Component {
     const {
       children,
       onEsc,
+      plain,
       theme,
       ...rest
     } = this.props;
 
     return (
       <Keyboard onEsc={onEsc}>
-        <StyledLayer theme={theme} tabIndex='-1' ref={(ref) => { this.layerNodeRef = ref; }}>
-          <StyledContainer {...rest} theme={theme}>
+        <StyledLayer
+          plain={plain}
+          theme={theme}
+          tabIndex='-1'
+          ref={(ref) => { this.layerNodeRef = ref; }}
+        >
+          <StyledContainer {...rest} theme={theme} plain={plain}>
             {children}
           </StyledContainer>
         </StyledLayer>
