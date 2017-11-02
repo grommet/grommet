@@ -130,6 +130,11 @@ var LayerContents = function (_Component) {
   }, {
     key: '_processTab',
     value: function _processTab(event) {
+      var hidden = this.props.hidden;
+
+      if (hidden) {
+        return;
+      }
       var items = this.containerRef.getElementsByTagName('*');
       items = (0, _DOM.filterByFocusable)(items);
 
