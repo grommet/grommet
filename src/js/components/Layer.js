@@ -74,7 +74,9 @@ class LayerContents extends Component {
 
   _processTab (event) {
     const {hidden} = this.props;
-    if (hidden) return false;
+    if (hidden) {
+      return;
+    }
     let items = this.containerRef.getElementsByTagName('*');
     items = filterByFocusable(items);
 
