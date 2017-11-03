@@ -53,3 +53,9 @@ h6.#{$grommet-namespace}heading {
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
+
+.#{$grommet-namespace}heading--margin-large,
+.#{$grommet-namespace}heading--margin-medium,
+.#{$grommet-namespace}heading--margin-small {
+  margin-top: 0px;
+}
