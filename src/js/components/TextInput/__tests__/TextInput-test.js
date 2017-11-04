@@ -9,17 +9,17 @@ import { TextInput } from '../';
 
 jest.mock('react-dom');
 
-describe.skip('TextInput: React 16 is not supported by Enzyme yet', () => {
-  test('TextInput renders', () => {
-    const component = renderer.create(
-      <Grommet>
-        <TextInput id='item' name='item' />
-      </Grommet>
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
+test('TextInput renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <TextInput id='item' name='item' />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
 
+describe.skip('TextInput: React 16 is not supported by Enzyme yet', () => {
   test('TextInput renders with suggestions', () => {
     const component = renderer.create(
       <Grommet>

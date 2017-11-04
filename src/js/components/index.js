@@ -21,5 +21,6 @@ export * from './Responsive';
 export * from './Select';
 export * from './Stack';
 export * from './Text';
+export * from './TextArea';
 export * from './TextInput';
 export * from './Video';

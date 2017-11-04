@@ -29,6 +29,7 @@ Object {
   "Select": [Function],
   "Stack": [Function],
   "Text": [Function],
+  "TextArea": [Function],
   "TextInput": [Function],
   "Video": [Function],
   "__esModule": true,
