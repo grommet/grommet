@@ -8,11 +8,6 @@ import StyledTextArea from './StyledTextArea';
 import doc from './doc';
 
 class TextArea extends Component {
-  static contextTypes = {
-    grommet: PropTypes.object,
-    theme: PropTypes.object,
-  }
-
   render() {
     return (
       <StyledTextArea {...this.props} />
