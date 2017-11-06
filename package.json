@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "grommet-icons": "^0.10.0",
+    "node-emoji": "^1.8.1",
     "markdown-to-jsx": "^5.4.2",
     "polished": "^1.3.0",
     "prop-types": "^15.5.10",
@@ -70,7 +71,6 @@
     "fs-extra": "^4.0.0",
     "grommet-cli": "5.1.0",
     "jest-styled-components": "^4.0.3",
-    "node-emoji": "^1.8.1",
     "pre-commit": "^1.2.2",
     "react": "^16.0.0",
     "react-dev-utils": "^0.4.2",
