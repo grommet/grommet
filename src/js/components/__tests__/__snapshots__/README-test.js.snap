@@ -1243,6 +1243,15 @@ import { Keyboard } from 'grommet';
 
 ## Properties
 
+**target**
+
+Where to listen for the keyboard presses. Defaults to \`component\`.
+
+\`\`\`
+component
+document
+\`\`\`
+
 **onBackspace**
 
 Function that will be called when the user presses the backspace key.
@@ -1345,16 +1354,17 @@ import { Layer } from 'grommet';
 
 ## Properties
 
-**align**
+**position**
 
-Which direction the layer contents should emanate from. Defaults to \`center\`.
+Position of the layer content. Defaults to \`center\`.
 
 \`\`\`
-center
-top
 bottom
+center
+hidden
 left
 right
+top
 \`\`\`
 
 **onEsc**
@@ -1916,6 +1926,39 @@ Currently selected value.
 string
 element
 object
+\`\`\`
+  ",
+  "SkipLinks": "## SkipLinks
+Describe a list of elements to skip to.
+
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=skiplinks&amp;module=%2Fscreens%2FSkipLinks.js)
+## Usage
+
+\`\`\`javascript
+import { SkipLinks } from 'grommet';
+<SkipLinks elements={['main', 'footer']} />
+\`\`\`
+
+## Properties
+
+**children**
+
+Required. SkipLink array
+
+\`\`\`
+[new SkipLink(...)]
+\`\`\`
+
+**messages**
+
+Custom messages for SkipLinks. Used for accessibility by screen readers. Defaults to \`{
+  \\"skipTo\\": \\"Skip To\\"
+}\`.
+
+\`\`\`
+{
+  skipTo: string
+}
 \`\`\`
   ",
   "Stack": "## Stack

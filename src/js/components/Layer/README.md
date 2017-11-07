@@ -12,16 +12,17 @@ import { Layer } from 'grommet';
 
 ## Properties
 
-**align**
+**position**
 
-Which direction the layer contents should emanate from. Defaults to `center`.
+Position of the layer content. Defaults to `center`.
 
 ```
-center
-top
 bottom
+center
+hidden
 left
 right
+top
 ```
 
 **onEsc**

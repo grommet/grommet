@@ -105,25 +105,29 @@ export const withRestrictScroll = (WrappedComponent) => {
 export const restrictFocusTo = (WrappedComponent) => {
   class FocusedContainer extends Component {
     componentDidMount() {
-      const { restrictScroll } = this.props;
-      const child = findDOMNode(this.ref);
-      getBodyChildElements()
-        .filter(isNotAncestorOf(child))
-        .forEach(makeNodeUnfocusable);
+      const { restrictScroll, position } = this.props;
+      if (position !== 'hidden') {
+        const child = findDOMNode(this.ref);
+        getBodyChildElements()
+          .filter(isNotAncestorOf(child))
+          .forEach(makeNodeUnfocusable);
 
-      if (restrictScroll) {
-        document.body.style.overflow = 'hidden';
+        if (restrictScroll) {
+          document.body.style.overflow = 'hidden';
+        }
       }
     }
 
     componentWillUnmount() {
-      const { restrictScroll } = this.props;
-      const child = findDOMNode(this.ref);
-      getBodyChildElements()
-        .filter(isNotAncestorOf(child))
-        .forEach(makeNodeFocusable);
-      if (restrictScroll) {
-        document.body.style.overflow = 'scroll';
+      const { restrictScroll, position } = this.props;
+      if (position !== 'hidden') {
+        const child = findDOMNode(this.ref);
+        getBodyChildElements()
+          .filter(isNotAncestorOf(child))
+          .forEach(makeNodeFocusable);
+        if (restrictScroll) {
+          document.body.style.overflow = 'scroll';
+        }
       }
     }
 

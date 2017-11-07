@@ -10,6 +10,15 @@ import { Keyboard } from 'grommet';
 
 ## Properties
 
+**target**
+
+Where to listen for the keyboard presses. Defaults to `component`.
+
+```
+component
+document
+```
+
 **onBackspace**
 
 Function that will be called when the user presses the backspace key.

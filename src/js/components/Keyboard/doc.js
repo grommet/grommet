@@ -10,6 +10,9 @@ export default (Keyboard) => {
     );
 
   DocumentedKeyboard.propTypes = {
+    target: PropTypes.oneOf(['component', 'document']).description(
+      'Where to listen for the keyboard presses.'
+    ).defaultValue('component'),
     onBackspace: PropTypes.func.description(
       'Function that will be called when the user presses the backspace key.'
     ),
