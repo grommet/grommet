@@ -130,7 +130,7 @@ var ToastContents = function (_Component) {
       delete rest.router;
       delete rest.store;
 
-      var classNames = (0, _classnames3.default)(CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames, CLASS_ROOT + '--closing', closing), _classnames));
+      var classNames = (0, _classnames3.default)('grommet', CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--' + size, size), _defineProperty(_classnames, CLASS_ROOT + '--closing', closing), _classnames));
 
       var statusIcon = void 0;
       if (status) {
