@@ -65,6 +65,7 @@ class ToastContents extends Component {
     delete rest.store;
 
     const classNames = classnames(
+      'grommet',
       CLASS_ROOT, {
         [`${CLASS_ROOT}--${size}`]: size,
         [`${CLASS_ROOT}--closing`]: closing
