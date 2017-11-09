@@ -191,7 +191,9 @@ var Search = function (_Component) {
           responsive: false // so suggestion changes don't re-align
         });
 
-        this._inputRef.focus();
+        if (this._inputRef) {
+          this._inputRef.focus();
+        }
       } else if (this._drop) {
         this._drop.render(this._renderDropContent());
       }
