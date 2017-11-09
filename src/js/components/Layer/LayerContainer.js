@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
-import { compose } from 'recompose';
 
-import { restrictFocusTo, withRestrictScroll } from '../hocs';
+import FocusedContainer from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 
 import StyledLayer, { StyledContainer } from './StyledLayer';
@@ -31,7 +30,7 @@ class LayerContainer extends Component {
       ...rest
     } = this.props;
 
-    return (
+    let layerNode = (
       <Keyboard onEsc={onEsc}>
         <StyledLayer
           plain={plain}
@@ -46,10 +45,16 @@ class LayerContainer extends Component {
         </StyledLayer>
       </Keyboard>
     );
+
+    if (position !== 'hidden') {
+      layerNode = (
+        <FocusedContainer restrictScroll={true}>
+          {layerNode}
+        </FocusedContainer>
+      );
+    }
+    return layerNode;
   }
 }
 
-export default compose(
-  withRestrictScroll,
-  restrictFocusTo,
-)(LayerContainer);
+export default LayerContainer;

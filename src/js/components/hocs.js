@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import getDisplayName from 'recompose/getDisplayName';
 
-import { deepMerge, getBodyChildElements, makeNodeFocusable, makeNodeUnfocusable } from '../utils';
+import { deepMerge } from '../utils';
 
 export const withFocus = (WrappedComponent) => {
   class FocusableComponent extends Component {
@@ -88,58 +87,4 @@ export const withTheme = (WrappedComponent) => {
   return ThemedComponent;
 };
 
-const isNotAncestorOf = child => parent => !parent.contains(child);
-
-export const withRestrictScroll = (WrappedComponent) => {
-  class RestrictScrollContainer extends Component {
-    render() {
-      return (
-        <WrappedComponent {...this.props} restrictScroll={true} />
-      );
-    }
-  }
-  RestrictScrollContainer.displayName = getDisplayName(WrappedComponent);
-  return RestrictScrollContainer;
-};
-
-export const restrictFocusTo = (WrappedComponent) => {
-  class FocusedContainer extends Component {
-    componentDidMount() {
-      const { restrictScroll, position } = this.props;
-      if (position !== 'hidden') {
-        const child = findDOMNode(this.ref);
-        getBodyChildElements()
-          .filter(isNotAncestorOf(child))
-          .forEach(makeNodeUnfocusable);
-
-        if (restrictScroll) {
-          document.body.style.overflow = 'hidden';
-        }
-      }
-    }
-
-    componentWillUnmount() {
-      const { restrictScroll, position } = this.props;
-      if (position !== 'hidden') {
-        const child = findDOMNode(this.ref);
-        getBodyChildElements()
-          .filter(isNotAncestorOf(child))
-          .forEach(makeNodeFocusable);
-        if (restrictScroll) {
-          document.body.style.overflow = 'scroll';
-        }
-      }
-    }
-
-    render() {
-      return (
-        <WrappedComponent ref={(ref) => { this.ref = ref; }} {...this.props} />
-      );
-    }
-  }
-
-  FocusedContainer.displayName = getDisplayName(WrappedComponent);
-  return FocusedContainer;
-};
-
-export default { withFocus, withRestrictScroll, withTheme, restrictFocusTo };
+export default { withFocus, withTheme };

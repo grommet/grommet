@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 
-import { restrictFocusTo } from '../hocs';
+import FocusedContainer from '../FocusedContainer';
 import { findScrollParents } from '../../utils';
 import { Keyboard } from '../Keyboard';
 
@@ -183,20 +183,22 @@ class DropContainer extends Component {
     } = this.props;
 
     return (
-      <Keyboard onEsc={onClose}>
-        <StyledDrop
-          tabIndex='-1'
-          ref={(ref) => {
-            this.dropRef = ref;
-          }}
-          theme={theme}
-          {...rest}
-        >
-          {children}
-        </StyledDrop>
-      </Keyboard>
+      <FocusedContainer>
+        <Keyboard onEsc={onClose}>
+          <StyledDrop
+            tabIndex='-1'
+            ref={(ref) => {
+              this.dropRef = ref;
+            }}
+            theme={theme}
+            {...rest}
+          >
+            {children}
+          </StyledDrop>
+        </Keyboard>
+      </FocusedContainer>
     );
   }
 }
 
-export default restrictFocusTo(DropContainer);
+export default DropContainer;
