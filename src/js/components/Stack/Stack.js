@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { cloneElement, Component } from 'react';
 import { compose } from 'recompose';
 
 import { withTheme } from '../hocs';
@@ -23,7 +23,7 @@ class Stack extends Component {
           overflow: 'hidden',
           ...styleMap[anchor || 'fill'],
         };
-        return React.cloneElement(child, { style });
+        return cloneElement(child, { style });
       }
 
       return child;

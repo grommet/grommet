@@ -10,7 +10,7 @@ import doc from './doc';
 
 class Layer extends Component {
   static defaultProps = {
-    align: 'center',
+    position: 'center',
   }
 
   originalFocusedElement = document.activeElement;

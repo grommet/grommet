@@ -17,22 +17,36 @@ const KEYS = {
 };
 
 class Keyboard extends Component {
+  componentDidMount() {
+    const { target } = this.props;
+    if (target === 'document') {
+      document.addEventListener('keydown', this.onKeyDown);
+    }
+  }
+  componentWillUnmount() {
+    const { target } = this.props;
+    if (target === 'document') {
+      document.removeEventListener('keydown', this.onKeyDown);
+    }
+  }
+  onKeyDown = (event, ...rest) => {
+    const { onKeyDown } = this.props;
+    const key = (event.keyCode ? event.keyCode : event.which);
+    const callbackName = KEYS[key];
+    if (callbackName && this.props[callbackName]) {
+      this.props[callbackName](event, ...rest);
+    }
+    if (onKeyDown) {
+      onKeyDown(event, ...rest);
+    }
+  }
   render() {
-    const { children, onKeyDown } = this.props;
+    const { children, target } = this.props;
 
-    return (
+    return target === 'document' ? children : (
       cloneElement(
         Children.only(children), {
-          onKeyDown: (event, ...rest) => {
-            const key = (event.keyCode ? event.keyCode : event.which);
-            const callbackName = KEYS[key];
-            if (callbackName && this.props[callbackName]) {
-              this.props[callbackName](event, ...rest);
-            }
-            if (onKeyDown) {
-              onKeyDown(event, ...rest);
-            }
-          },
+          onKeyDown: this.onKeyDown,
         }
       )
     );
