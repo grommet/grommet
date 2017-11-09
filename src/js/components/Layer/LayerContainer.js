@@ -10,12 +10,16 @@ class LayerContainer extends Component {
   componentDidMount() {
     const { position } = this.props;
     if (position !== 'hidden') {
-      this.onLayerFocus();
+      this.makeLayerVisible();
     }
   }
-  onLayerFocus = () => {
+  componentWillReceiveProps({ position }) {
+    if (this.props.position !== position && position !== 'hidden') {
+      this.makeLayerVisible();
+    }
+  }
+  makeLayerVisible = () => {
     const layerNode = findDOMNode(this.layerNodeRef);
-    layerNode.focus();
     if (layerNode.scrollIntoView) {
       layerNode.scrollIntoView();
     }
@@ -30,30 +34,23 @@ class LayerContainer extends Component {
       ...rest
     } = this.props;
 
-    let layerNode = (
-      <Keyboard onEsc={onEsc}>
-        <StyledLayer
-          plain={plain}
-          position={position}
-          theme={theme}
-          tabIndex='-1'
-          ref={(ref) => { this.layerNodeRef = ref; }}
-        >
-          <StyledContainer {...rest} theme={theme} position={position} plain={plain}>
-            {children}
-          </StyledContainer>
-        </StyledLayer>
-      </Keyboard>
+    return (
+      <FocusedContainer hidden={position === 'hidden'} restrictScroll={true}>
+        <Keyboard onEsc={onEsc}>
+          <StyledLayer
+            plain={plain}
+            position={position}
+            theme={theme}
+            tabIndex='-1'
+            ref={(ref) => { this.layerNodeRef = ref; }}
+          >
+            <StyledContainer {...rest} theme={theme} position={position} plain={plain}>
+              {children}
+            </StyledContainer>
+          </StyledLayer>
+        </Keyboard>
+      </FocusedContainer>
     );
-
-    if (position !== 'hidden') {
-      layerNode = (
-        <FocusedContainer restrictScroll={true}>
-          {layerNode}
-        </FocusedContainer>
-      );
-    }
-    return layerNode;
   }
 }
 
