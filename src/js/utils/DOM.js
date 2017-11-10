@@ -78,7 +78,7 @@ const deleteTabIndexCopy = deleteAttribute('data-g-tabindex');
 
 export const makeNodeFocusable = (node) => {
   // do not touch aria live containers so that announcements work
-  if (!node.hasAttribute('aria-live') && !node.querySelector('[aria-live]')) {
+  if (!node.hasAttribute('aria-live')) {
     node.setAttribute('aria-hidden', false);
     // allow children to receive focus again
     filterByFocusable(
@@ -96,7 +96,7 @@ export const makeNodeFocusable = (node) => {
 
 export const makeNodeUnfocusable = (node) => {
   // do not touch aria live containers so that announcements work
-  if (!node.hasAttribute('aria-live') && !node.querySelector('[aria-live]')) {
+  if (!node.hasAttribute('aria-live')) {
     node.setAttribute('aria-hidden', true);
     // prevent children to receive focus
     filterByFocusable(
