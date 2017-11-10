@@ -45,6 +45,7 @@ exports[`RangeInput renders 1`] = `
 .c1::-webkit-slider-runnable-track {
   width: 100%;
   height: 2px;
+  background-color: rgba(51,51,51,0.2);
 }
 
 .c1::-webkit-slider-thumb {
@@ -67,6 +68,7 @@ exports[`RangeInput renders 1`] = `
 .c1::-moz-range-track {
   width: 100%;
   height: 2px;
+  background-color: rgba(51,51,51,0.2);
 }
 
 .c1::-moz-range-thumb {
@@ -110,15 +112,18 @@ exports[`RangeInput renders 1`] = `
 .c1::-ms-track {
   width: 100%;
   height: 2px;
+  background-color: rgba(51,51,51,0.2);
   border-color: transparent;
   color: transparent;
 }
 
 .c1::-ms-fill-lower {
+  background: rgba(51,51,51,0.2);
   border-color: transparent;
 }
 
 .c1::-ms-fill-upper {
+  background: rgba(51,51,51,0.2);
   border-color: transparent;
 }
 
