@@ -259,6 +259,59 @@ exports[`Anchor icon label renders 1`] = `
                 "size": "48px",
               },
             },
+            "clock": Object {
+              "circle": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "2px",
+              },
+              "hour": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "3px",
+              },
+              "minute": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "2px",
+              },
+              "second": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "1px",
+              },
+              "size": Object {
+                "huge": "288px",
+                "large": "144px",
+                "medium": "96px",
+                "small": "72px",
+                "xlarge": "216px",
+              },
+            },
             "global": Object {
               "animation": Object {
                 "duration": "1s",
@@ -278,6 +331,7 @@ exports[`Anchor icon label renders 1`] = `
                 "accent": Array [
                   "#00CCEB",
                   "#FF7D28",
+                  "#915591",
                 ],
                 "active": "rgba(221,221,221,0.5)",
                 "background": "#FFFFFF",
@@ -787,6 +841,59 @@ exports[`Anchor primary renders 1`] = `
                 "size": "48px",
               },
             },
+            "clock": Object {
+              "circle": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "2px",
+              },
+              "hour": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "3px",
+              },
+              "minute": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "2px",
+              },
+              "second": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "1px",
+              },
+              "size": Object {
+                "huge": "288px",
+                "large": "144px",
+                "medium": "96px",
+                "small": "72px",
+                "xlarge": "216px",
+              },
+            },
             "global": Object {
               "animation": Object {
                 "duration": "1s",
@@ -806,6 +913,7 @@ exports[`Anchor primary renders 1`] = `
                 "accent": Array [
                   "#00CCEB",
                   "#FF7D28",
+                  "#915591",
                 ],
                 "active": "rgba(221,221,221,0.5)",
                 "background": "#FFFFFF",
@@ -1422,6 +1530,59 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "size": "48px",
               },
             },
+            "clock": Object {
+              "circle": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "2px",
+              },
+              "hour": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "3px",
+              },
+              "minute": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "2px",
+              },
+              "second": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "1px",
+              },
+              "size": Object {
+                "huge": "288px",
+                "large": "144px",
+                "medium": "96px",
+                "small": "72px",
+                "xlarge": "216px",
+              },
+            },
             "global": Object {
               "animation": Object {
                 "duration": "1s",
@@ -1441,6 +1602,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "accent": Array [
                   "#00CCEB",
                   "#FF7D28",
+                  "#915591",
                 ],
                 "active": "rgba(221,221,221,0.5)",
                 "background": "#FFFFFF",
@@ -1905,6 +2067,59 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "size": "48px",
               },
             },
+            "clock": Object {
+              "circle": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "2px",
+              },
+              "hour": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "3px",
+              },
+              "minute": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "2px",
+              },
+              "second": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "1px",
+              },
+              "size": Object {
+                "huge": "288px",
+                "large": "144px",
+                "medium": "96px",
+                "small": "72px",
+                "xlarge": "216px",
+              },
+            },
             "global": Object {
               "animation": Object {
                 "duration": "1s",
@@ -1924,6 +2139,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "accent": Array [
                   "#00CCEB",
                   "#FF7D28",
+                  "#915591",
                 ],
                 "active": "rgba(221,221,221,0.5)",
                 "background": "#FFFFFF",

@@ -3,6 +3,7 @@ export * from './Box';
 export * from './Button';
 export * from './Chart';
 export * from './CheckBox';
+export * from './Clock';
 export * from './Drop';
 export * from './DropButton';
 export * from './Grid';
