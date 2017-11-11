@@ -27,10 +27,51 @@ class TextInput extends Component {
     theme: PropTypes.object,
   }
 
+  static defaultProps = {
+    messages: {
+      enterSelect: '(Press Enter to Select)',
+      suggestionsCount: 'suggestions available',
+      suggestionsExist: 'This input has suggestions use arrow keys to navigate',
+      suggestionIsOpen: 'Suggestions drop is open, continue to use arrow keys to navigate',
+    },
+  }
+
   state = {
     activeSuggestionIndex: -1,
     announceChange: false,
     showDrop: false,
+  }
+
+  announce = (message, mode) => {
+    const { suggestions } = this.props;
+    const { grommet } = this.context;
+    const announce = grommet && grommet.announce;
+    if (announce && suggestions && suggestions.length > 0) {
+      announce(message, mode);
+    }
+  }
+
+  announceSuggestionsCount = () => {
+    const { suggestions, messages: { suggestionsCount } } = this.props;
+    this.announce(`${suggestions.length} ${suggestionsCount}`);
+  }
+
+  announceSuggestionsExist = () => {
+    const { messages: { suggestionsExist } } = this.props;
+    this.announce(suggestionsExist);
+  }
+
+  announceSuggestionsIsOpen = () => {
+    const { messages: { suggestionIsOpen } } = this.props;
+    this.announce(suggestionIsOpen);
+  }
+
+  announceSuggestion(index) {
+    const { suggestions, messages: { enterSelect } } = this.props;
+    if (suggestions && suggestions.length > 0) {
+      const labelMessage = renderLabel(suggestions[index]);
+      this.announce(`${labelMessage} ${enterSelect}`);
+    }
   }
 
   resetSuggestions = () => {
@@ -42,18 +83,9 @@ class TextInput extends Component {
         announceChange: true,
         showDrop: true,
         selectedSuggestionIndex: -1,
-      });
+      }, this.announceSuggestionsCount);
     }
   }
-
-  // announceSuggestion(index) {
-  //   const { suggestions } = this.props;
-  //   if (suggestions && suggestions.length > 0) {
-  //     const labelMessage = this._renderLabel(suggestions[index]);
-  //     const enterSelectMessage = Intl.getMessage(intl, 'Enter Select');
-  //     announce(`${labelMessage} ${enterSelectMessage}`);
-  //   }
-  // }
 
   getSelectedSuggestionIndex = () => {
     const { suggestions, value } = this.props;
@@ -74,7 +106,7 @@ class TextInput extends Component {
       showDrop: true,
       activeSuggestionIndex: -1,
       selectedSuggestionIndex,
-    });
+    }, this.announceSuggestionsIsOpen);
   }
 
   onNextSuggestion = (event) => {
@@ -86,9 +118,7 @@ class TextInput extends Component {
       } else {
         event.preventDefault();
         const index = Math.min(activeSuggestionIndex + 1, suggestions.length - 1);
-        this.setState({ activeSuggestionIndex: index });
-        // this.setState({ activeSuggestionIndex: index },
-        //   this._announceSuggestion.bind(this, index));
+        this.setState({ activeSuggestionIndex: index }, () => this.announceSuggestion(index));
       }
     }
   }
@@ -99,9 +129,7 @@ class TextInput extends Component {
     if (suggestions && suggestions.length > 0 && showDrop) {
       event.preventDefault();
       const index = Math.max(activeSuggestionIndex - 1, 0);
-      this.setState({ activeSuggestionIndex: index });
-      // this.setState({ activeSuggestionIndex: index },
-      //   this._announceSuggestion.bind(this, index));
+      this.setState({ activeSuggestionIndex: index }, () => this.announceSuggestion(index));
     }
   }
 
@@ -123,11 +151,6 @@ class TextInput extends Component {
       event.preventDefault(); // prevent submitting forms
       const suggestion = suggestions[activeSuggestionIndex];
       this.setState({ value: suggestion });
-      // this.setState({ value: suggestion }, () => {
-      //   const suggestionMessage = this._renderLabel(suggestion);
-      //   const selectedMessage = Intl.getMessage(intl, 'Selected');
-      //   announce(`${suggestionMessage} ${selectedMessage}`);
-      // });
       if (onSelect) {
         onSelect({
           target: this.componentRef, suggestion,
@@ -172,7 +195,7 @@ class TextInput extends Component {
   }
 
   render() {
-    const { defaultValue, plain, value, onInput, onKeyDown, ...rest } = this.props;
+    const { defaultValue, plain, value, onFocus, onInput, onKeyDown, ...rest } = this.props;
     delete rest.onInput; // se we can manage in onInputChange()
     const { showDrop } = this.state;
     // needed so that styled components does not invoke
@@ -210,6 +233,12 @@ class TextInput extends Component {
             {...rest}
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
+            onFocus={(event) => {
+              this.announceSuggestionsExist();
+              if (onFocus) {
+                onFocus(event);
+              }
+            }}
             onInput={(event) => {
               this.resetSuggestions();
               if (onInput) {
