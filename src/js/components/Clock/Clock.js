@@ -3,28 +3,30 @@ import 'date-time-format-timezone';
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
+import { parseMetricToInt } from '../../utils';
+
 import { withTheme } from '../hocs';
 
 import StyledClock, { StyledCircle, StyledHour, StyledMinute, StyledSecond } from './StyledClock';
 import doc from './doc';
 
-const CLOCK_SIZE = 72;
-const HALF_SIZE = CLOCK_SIZE / 2;
 // this will serve both minutes and hours (360 / 6)
 const ANGLE_UNIT = 6;
 // 360 / 12
 const HOUR_ANGLE_UNIT = 30;
-// TODO: this is not flexible since we would need to change svg radius
-const STROKE_WIDTH = 2;
-
-// sizes for the hands
-const SECOND_HAND_SIZE = CLOCK_SIZE / 8; // 9px
-const MINUTE_HAND_SIZE = CLOCK_SIZE / 6; // 12px
-const HOUR_HAND_SIZE = CLOCK_SIZE / 3; // 24px
-
 // night variables
 const NIGHT_START = 18;
 const NIGHT_FINISH = 6;
+
+const getClockDimensions = theme => (
+  {
+    size: parseMetricToInt(theme.clock.size.medium),
+    secondSize: parseMetricToInt(theme.clock.second.size),
+    minuteSize: parseMetricToInt(theme.clock.minute.size),
+    hourSize: parseMetricToInt(theme.clock.hour.size),
+    stroke: parseMetricToInt(theme.clock.circle.width),
+  }
+);
 
 const getTimezoneTime = (date, timezone) => (
   {
@@ -85,7 +87,7 @@ class Clock extends Component {
   }
 
   componentDidMount() {
-    this.placeClock();
+    this.placeClockHands();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -97,29 +99,31 @@ class Clock extends Component {
   componentDidUpdate() {
     const { resetClock } = this.state;
     if (resetClock) {
-      if (this.remainingSecondsTimeout) {
-        clearTimeout(this.remainingSecondsTimeout);
+      if (this.syncClockTimeout) {
+        clearTimeout(this.syncClockTimeout);
       }
-      if (this.secondGapInterval) {
-        clearInterval(this.secondGapInterval);
+      if (this.secondsAnimation) {
+        clearInterval(this.secondsAnimation);
       }
-      this.placeClock();
+      this.placeClockHands();
     }
   }
 
   componentWillUnmount() {
-    if (this.remainingSecondsTimeout) {
-      clearTimeout(this.remainingSecondsTimeout);
+    if (this.syncClockTimeout) {
+      clearTimeout(this.syncClockTimeout);
     }
-    if (this.secondGapInterval) {
-      clearInterval(this.secondGapInterval);
+    if (this.secondsAnimation) {
+      clearInterval(this.secondsAnimation);
     }
   }
 
-  placeClock = () => {
-    const { timezone } = this.props;
+  placeClockHands = () => {
+    const { seconds, timezone } = this.props;
     const { date, night, inSync } = this.state;
 
+    // if clock is not in sync we need to animate using JavaScript first and then
+    // use CSS animation
     if (!inSync) {
       const timezoneTime = getTimezoneTime(date, timezone);
       const second = timezoneTime.second;
@@ -130,11 +134,14 @@ class Clock extends Component {
       // for example: 04:40:30 pm will start the CSS animation at 04:41:00 pm
       const remainingSeconds = 60 - second;
       const remainingMinutes = 60 - minute;
-      this.remainingSecondsTimeout = setTimeout(() => {
-        clearInterval(this.secondGapInterval);
+
+      // timeout will be executed when clock is in sync
+      this.syncClockTimeout = setTimeout(() => {
+        clearInterval(this.secondsAnimation);
         const hour12 = hour > 12 ? hour - 12 : hour;
 
         let nextHourAngle = this.state.hourAngle;
+        // sync hour
         if (remainingMinutes === 1) {
           hour += 1;
           nextHourAngle = (hour12 * HOUR_ANGLE_UNIT) + HOUR_ANGLE_UNIT;
@@ -142,6 +149,8 @@ class Clock extends Component {
         if (nextHourAngle === 360) {
           nextHourAngle = 0;
         }
+
+        // sync minute
         let nextMinuteAngle = this.state.minuteAngle;
         if (remainingSeconds > 0) {
           nextMinuteAngle = this.state.minuteAngle + ANGLE_UNIT;
@@ -159,16 +168,22 @@ class Clock extends Component {
         });
       }, (remainingSeconds * 1000));
 
-      // animate in react while the clock is not in sync
-      this.secondGapInterval = setInterval(() => {
-        this.setState({ resetClock: false, secondAngle: this.state.secondAngle + ANGLE_UNIT });
-      }, 1000);
+      // only animate if we have seconds hand
+      if (seconds) {
+        // animate seconds in react while the clock is not in sync
+        this.secondsAnimation = setInterval(() => {
+          this.setState({ resetClock: false, secondAngle: this.state.secondAngle + ANGLE_UNIT });
+        }, 1000);
+      }
     }
   }
 
   render() {
     const { seconds, theme } = this.props;
     const { inSync, hourAngle, minuteAngle, night, secondAngle } = this.state;
+
+    const { size, secondSize, minuteSize, hourSize, stroke } = getClockDimensions(theme);
+    const halfSize = size / 2;
 
     let secondLine;
     if (seconds) {
@@ -177,15 +192,15 @@ class Clock extends Component {
           animate={inSync}
           night={night}
           theme={theme}
-          x1={HALF_SIZE}
-          y1={HALF_SIZE}
-          x2={HALF_SIZE}
-          y2={SECOND_HAND_SIZE}
+          x1={halfSize}
+          y1={halfSize}
+          x2={halfSize}
+          y2={secondSize}
           stroke='#000000'
           strokeLinecap='round'
           style={{
             transform: `rotate(${secondAngle}deg)`,
-            transformOrigin: `${HALF_SIZE}px ${HALF_SIZE}px`,
+            transformOrigin: `${halfSize}px ${halfSize}px`,
           }}
         />
       );
@@ -195,10 +210,10 @@ class Clock extends Component {
       <StyledClock
         night={night}
         version='1.1'
-        width={CLOCK_SIZE}
-        height={CLOCK_SIZE}
+        width={size}
+        height={size}
         preserveAspectRatio='xMidYMid meet'
-        viewBox={`0 0 ${CLOCK_SIZE} ${CLOCK_SIZE}`}
+        viewBox={`0 0 ${size} ${size}`}
         {...this.props}
       >
         <StyledCircle
@@ -206,39 +221,39 @@ class Clock extends Component {
           theme={theme}
           fill='none'
           stroke='#000000'
-          cx={HALF_SIZE}
-          cy={HALF_SIZE}
-          r={HALF_SIZE - STROKE_WIDTH}
+          cx={halfSize}
+          cy={halfSize}
+          r={halfSize - stroke}
         />
         {secondLine}
         <StyledMinute
           animate={inSync}
           night={night}
           theme={theme}
-          x1={HALF_SIZE}
-          y1={HALF_SIZE}
-          x2={HALF_SIZE}
-          y2={MINUTE_HAND_SIZE}
+          x1={halfSize}
+          y1={halfSize}
+          x2={halfSize}
+          y2={minuteSize}
           stroke='#000000'
           strokeLinecap='round'
           style={{
             transform: `rotate(${minuteAngle}deg)`,
-            transformOrigin: `${HALF_SIZE}px ${HALF_SIZE}px`,
+            transformOrigin: `${halfSize}px ${halfSize}px`,
           }}
         />
         <StyledHour
           animate={inSync}
           night={night}
           theme={theme}
-          x1={HALF_SIZE}
-          y1={HALF_SIZE}
-          x2={HALF_SIZE}
-          y2={HOUR_HAND_SIZE}
+          x1={halfSize}
+          y1={halfSize}
+          x2={halfSize}
+          y2={hourSize}
           stroke='#000000'
           strokeLinecap='round'
           style={{
             transform: `rotate(${hourAngle}deg)`,
-            transformOrigin: `${HALF_SIZE}px ${HALF_SIZE}px`,
+            transformOrigin: `${halfSize}px ${halfSize}px`,
           }}
         />
       </StyledClock>

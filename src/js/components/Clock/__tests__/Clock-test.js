@@ -69,4 +69,22 @@ describe('Clock', () => {
       done();
     }, 1100);
   });
+
+  test('animates second hand', (done) => {
+    global.Date = NightTimeDate;
+
+    const component = mount(
+      <Clock seconds={true} />
+    );
+    expect(component.getDOMNode()).toMatchSnapshot();
+
+    // give sometime for the clock to move and use the callback
+    setTimeout(() => {
+      expect(component.getDOMNode()).toMatchSnapshot();
+
+      component.unmount();
+
+      done();
+    }, 1100);
+  });
 });

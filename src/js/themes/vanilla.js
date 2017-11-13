@@ -231,6 +231,7 @@ export default deepFreeze({
         night: css`${props => colorForName('white', props.theme)}`,
       },
       width: '3px',
+      size: `${baseSpacing}px`,
     },
     minute: {
       color: {
@@ -238,6 +239,7 @@ export default deepFreeze({
         night: css`${props => colorForName('light-6', props.theme)}`,
       },
       width: '2px',
+      size: `${Math.round(baseSpacing / 2)}px`,
     },
     second: {
       color: {
@@ -245,6 +247,7 @@ export default deepFreeze({
         night: css`${props => colorForName('accent-2', props.theme)}`,
       },
       width: '1px',
+      size: `${Math.round(baseSpacing / 2.666)}px`,
     },
     size: {
       small: `${baseSpacing * 3}px`,

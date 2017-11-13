@@ -280,6 +280,7 @@ exports[`Anchor icon label renders 1`] = `
                     [Function],
                   ],
                 },
+                "size": "24px",
                 "width": "3px",
               },
               "minute": Object {
@@ -291,6 +292,7 @@ exports[`Anchor icon label renders 1`] = `
                     [Function],
                   ],
                 },
+                "size": "12px",
                 "width": "2px",
               },
               "second": Object {
@@ -302,6 +304,7 @@ exports[`Anchor icon label renders 1`] = `
                     [Function],
                   ],
                 },
+                "size": "9px",
                 "width": "1px",
               },
               "size": Object {
@@ -862,6 +865,7 @@ exports[`Anchor primary renders 1`] = `
                     [Function],
                   ],
                 },
+                "size": "24px",
                 "width": "3px",
               },
               "minute": Object {
@@ -873,6 +877,7 @@ exports[`Anchor primary renders 1`] = `
                     [Function],
                   ],
                 },
+                "size": "12px",
                 "width": "2px",
               },
               "second": Object {
@@ -884,6 +889,7 @@ exports[`Anchor primary renders 1`] = `
                     [Function],
                   ],
                 },
+                "size": "9px",
                 "width": "1px",
               },
               "size": Object {
@@ -1551,6 +1557,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                     [Function],
                   ],
                 },
+                "size": "24px",
                 "width": "3px",
               },
               "minute": Object {
@@ -1562,6 +1569,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                     [Function],
                   ],
                 },
+                "size": "12px",
                 "width": "2px",
               },
               "second": Object {
@@ -1573,6 +1581,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                     [Function],
                   ],
                 },
+                "size": "9px",
                 "width": "1px",
               },
               "size": Object {
@@ -2088,6 +2097,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                     [Function],
                   ],
                 },
+                "size": "24px",
                 "width": "3px",
               },
               "minute": Object {
@@ -2099,6 +2109,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                     [Function],
                   ],
                 },
+                "size": "12px",
                 "width": "2px",
               },
               "second": Object {
@@ -2110,6 +2121,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                     [Function],
                   ],
                 },
+                "size": "9px",
                 "width": "1px",
               },
               "size": Object {
