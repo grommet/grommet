@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Clock night renders 1`] = `
+<svg
+  class="StyledClock-egFVkc cMDGwi"
+  version="1.1"
+  width="72"
+  height="72"
+  preserveAspectRatio="xMidYMid meet"
+  viewBox="0 0 72 72"
+>
+  <circle
+    class="StyledClock__StyledCircle-hrpIpF grDodx"
+    fill="none"
+    stroke="#000000"
+    cx="36"
+    cy="36"
+    r="34"
+  />
+  <line
+    class="StyledClock__StyledMinute-efBHQO kArSyA"
+    x1="36"
+    y1="36"
+    x2="36"
+    y2="12"
+    stroke="#000000"
+    stroke-linecap="round"
+  />
+  <line
+    class="StyledClock__StyledHour-lkWeQW ervlRf"
+    x1="36"
+    y1="36"
+    x2="36"
+    y2="24"
+    stroke="#000000"
+    stroke-linecap="round"
+  />
+</svg>
+`;
+
+exports[`Clock night renders 2`] = `
+<svg
+  class="StyledClock-egFVkc cMDGwi"
+  version="1.1"
+  width="72"
+  height="72"
+  preserveAspectRatio="xMidYMid meet"
+  viewBox="0 0 72 72"
+>
+  <circle
+    class="StyledClock__StyledCircle-hrpIpF grDodx"
+    fill="none"
+    stroke="#000000"
+    cx="36"
+    cy="36"
+    r="34"
+  />
+  <line
+    class="StyledClock__StyledMinute-efBHQO kArSyA"
+    x1="36"
+    y1="36"
+    x2="36"
+    y2="12"
+    stroke="#000000"
+    stroke-linecap="round"
+  />
+  <line
+    class="StyledClock__StyledHour-lkWeQW ervlRf"
+    x1="36"
+    y1="36"
+    x2="36"
+    y2="24"
+    stroke="#000000"
+    stroke-linecap="round"
+  />
+</svg>
+`;
+
+exports[`Clock renders 1`] = `
+<div
+  class="StyledGrommet-gKbdxL gNdtBf"
+>
+  <svg
+    class="StyledClock-egFVkc cMDGwi"
+    version="1.1"
+    width="72"
+    height="72"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 72 72"
+  >
+    <circle
+      class="StyledClock__StyledCircle-hrpIpF grDodx"
+      fill="none"
+      stroke="#000000"
+      cx="36"
+      cy="36"
+      r="34"
+    />
+    <line
+      class="StyledClock__StyledSecond-bAhDUL CJLmH"
+      x1="36"
+      y1="36"
+      x2="36"
+      y2="9"
+      stroke="#000000"
+      stroke-linecap="round"
+    />
+    <line
+      class="StyledClock__StyledMinute-efBHQO kArSyA"
+      x1="36"
+      y1="36"
+      x2="36"
+      y2="12"
+      stroke="#000000"
+      stroke-linecap="round"
+    />
+    <line
+      class="StyledClock__StyledHour-lkWeQW ervlRf"
+      x1="36"
+      y1="36"
+      x2="36"
+      y2="24"
+      stroke="#000000"
+      stroke-linecap="round"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Clock renders 2`] = `
+<div
+  class="StyledGrommet-gKbdxL gNdtBf"
+>
+  <svg
+    class="StyledClock-egFVkc cMDGwi"
+    version="1.1"
+    width="72"
+    height="72"
+    preserveAspectRatio="xMidYMid meet"
+    viewBox="0 0 72 72"
+  >
+    <circle
+      class="StyledClock__StyledCircle-hrpIpF grDodx"
+      fill="none"
+      stroke="#000000"
+      cx="36"
+      cy="36"
+      r="34"
+    />
+    <line
+      class="StyledClock__StyledSecond-bAhDUL TwNiW"
+      x1="36"
+      y1="36"
+      x2="36"
+      y2="9"
+      stroke="#000000"
+      stroke-linecap="round"
+    />
+    <line
+      class="StyledClock__StyledMinute-efBHQO dZbggh"
+      x1="36"
+      y1="36"
+      x2="36"
+      y2="12"
+      stroke="#000000"
+      stroke-linecap="round"
+    />
+    <line
+      class="StyledClock__StyledHour-lkWeQW gQoCKI"
+      x1="36"
+      y1="36"
+      x2="36"
+      y2="24"
+      stroke="#000000"
+      stroke-linecap="round"
+    />
+  </svg>
+</div>
+`;

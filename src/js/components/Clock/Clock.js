@@ -57,7 +57,7 @@ const getClockState = (props) => {
 
   return {
     inSync: false,
-    resetClock: false,
+    resetClock: true,
     date,
     // offset hour angle by half of the minute angle so that it gets closer to the next hour
     hourAngle: (hour12 * HOUR_ANGLE_UNIT) + (minute / 2),

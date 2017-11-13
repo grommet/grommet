@@ -23,6 +23,8 @@
     "state": true,
     "Event": true,
     "fail": true,
+    "afterEach": true,
+    "beforeEach": true,
   },
   "rules": {
     "indent": "off",
