@@ -835,7 +835,7 @@ string
 
 **night**
 
-Whether to force night mode for the Clock.
+Whether to force night or day mode for the Clock.
 
 \`\`\`
 boolean

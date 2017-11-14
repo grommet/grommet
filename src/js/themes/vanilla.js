@@ -232,6 +232,7 @@ export default deepFreeze({
       },
       width: '3px',
       size: `${baseSpacing}px`,
+      shape: 'round',
     },
     minute: {
       color: {
@@ -240,6 +241,7 @@ export default deepFreeze({
       },
       width: '2px',
       size: `${Math.round(baseSpacing / 2)}px`,
+      shape: 'round',
     },
     second: {
       color: {
@@ -248,6 +250,7 @@ export default deepFreeze({
       },
       width: '1px',
       size: `${Math.round(baseSpacing / 2.666)}px`,
+      shape: 'round',
     },
     size: {
       small: `${baseSpacing * 3}px`,

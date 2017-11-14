@@ -16,7 +16,7 @@ export default (Clock) => {
       'Date to be used in the Clock.'
     ),
     night: PropTypes.bool.description(
-      'Whether to force night mode for the Clock.'
+      'Whether to force night or day mode for the Clock.'
     ),
     seconds: PropTypes.bool.description(
       'Whether to show seconds hand in the Clock.'

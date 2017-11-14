@@ -78,6 +78,8 @@ export const withTheme = (WrappedComponent) => {
       const { theme, ...rest } = this.props;
       const { theme: contextTheme } = this.context;
       let localTheme = deepMerge(contextTheme, theme);
+      // fallback to vanilla theme if no theme is provided
+      // this is the case when you use a component with Grommet as a parent
       if (!localTheme || !Object.keys(localTheme).length) {
         localTheme = { ...baseTheme };
       }

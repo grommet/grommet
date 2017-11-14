@@ -197,7 +197,7 @@ class Clock extends Component {
           x2={halfSize}
           y2={secondSize}
           stroke='#000000'
-          strokeLinecap='round'
+          strokeLinecap={theme.clock.second.shape}
           style={{
             transform: `rotate(${secondAngle}deg)`,
             transformOrigin: `${halfSize}px ${halfSize}px`,
@@ -235,7 +235,7 @@ class Clock extends Component {
           x2={halfSize}
           y2={minuteSize}
           stroke='#000000'
-          strokeLinecap='round'
+          strokeLinecap={theme.clock.minute.shape}
           style={{
             transform: `rotate(${minuteAngle}deg)`,
             transformOrigin: `${halfSize}px ${halfSize}px`,
@@ -250,7 +250,7 @@ class Clock extends Component {
           x2={halfSize}
           y2={hourSize}
           stroke='#000000'
-          strokeLinecap='round'
+          strokeLinecap={theme.clock.hour.shape}
           style={{
             transform: `rotate(${hourAngle}deg)`,
             transformOrigin: `${halfSize}px ${halfSize}px`,
