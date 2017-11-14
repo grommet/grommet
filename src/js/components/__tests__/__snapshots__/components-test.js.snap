@@ -31,6 +31,8 @@ Object {
   "SkipLinkTarget": [Function],
   "SkipLinks": [Function],
   "Stack": [Function],
+  "Tab": [Function],
+  "Tabs": [Function],
   "Text": [Function],
   "TextArea": [Function],
   "TextInput": [Function],

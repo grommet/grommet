@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import getDisplayName from 'recompose/getDisplayName';
 
+import baseTheme from '../themes/vanilla';
 import { deepMerge } from '../utils';
 
 export const withFocus = (WrappedComponent) => {
@@ -76,7 +77,10 @@ export const withTheme = (WrappedComponent) => {
     render() {
       const { theme, ...rest } = this.props;
       const { theme: contextTheme } = this.context;
-      const localTheme = deepMerge(contextTheme, theme);
+      let localTheme = deepMerge(contextTheme, theme);
+      if (!localTheme || !Object.keys(localTheme).length) {
+        localTheme = { ...baseTheme };
+      }
       return (
         <WrappedComponent theme={localTheme} {...rest} />
       );
