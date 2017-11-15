@@ -30,7 +30,9 @@
     "check": "npm run generate-readme && cross-env NODE_ENV=test grommet check",
     "test": "grommet check -t",
     "test-update": "grommet check -t -- --updateSnapshot",
-    "test-watch": "grommet check -t -- --watchAll"
+    "test-watch": "grommet check -t -- --watchAll",
+    "ts": "tsc",
+    "lint:ts": "tslint \"src/js/components/**/*.ts{,x}\" && tslint \"src/**/*.ts{,x}\""
   },
   "peerDependencies": {
     "react": ">= 15.3.0 < 16 || 16.x",
