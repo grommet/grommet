@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
+import { createPortal } from 'react-dom';
+
+import { getNewContainer } from '../../utils';
+
+import { withTheme } from '../hocs';
 
 import LayerContainer from './LayerContainer';
-
 import doc from './doc';
-
-import { createContextProvider } from '../hocs';
-import { getNewContainer } from '../utils';
 
 class Layer extends Component {
   static defaultProps = {
-    align: 'center',
+    position: 'center',
   }
 
-  componentDidMount() {
-    this.originalFocusedElement = document.activeElement;
-    this.layerContainer = getNewContainer();
-    this.renderLayer();
-  }
+  originalFocusedElement = document.activeElement;
+  layerContainer = getNewContainer();
 
   componentWillUnmount() {
     if (this.originalFocusedElement) {
@@ -33,22 +30,16 @@ class Layer extends Component {
         this.originalFocusedElement.parentNode.focus();
       }
     }
-    unmountComponentAtNode(this.layerContainer);
     document.body.removeChild(this.layerContainer);
   }
 
-  renderLayer() {
-    const ContextProvider = createContextProvider(this.props.context);
-    render(
-      <ContextProvider>
-        <LayerContainer {...this.props} />
-      </ContextProvider>,
+  render() {
+    return createPortal(
+      <LayerContainer
+        {...this.props}
+      />,
       this.layerContainer
     );
-  }
-
-  render() {
-    return (<span style={{ display: 'none' }} />);
   }
 }
 
@@ -56,4 +47,4 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Layer);
 }
 
-export default Layer;
+export default withTheme(Layer);

@@ -1,55 +1,70 @@
-import { schema, PropTypes } from 'react-desc';
+import { describe, PropTypes } from 'react-desc';
 
-export default TextInput => schema(TextInput, {
-  description: 'A text input field with optional suggestions.',
-  usage: `import { TextInput } from 'grommet';
-  <TextInput id='item' name='item' />`,
-  props: {
-    defaultValue: [
-      PropTypes.string, 'What text to start with in the input.',
-    ],
-    id: [
-      PropTypes.string, 'The id attribute of the input.',
-    ],
-    name: [
-      PropTypes.string, 'The name attribute of the input.',
-    ],
-    onInput: [
-      PropTypes.func,
-      'Function that will be called when the user types in the input.',
-    ],
-    onSelect: [
-      PropTypes.func,
+import { getAvailableAtBadge } from '../../utils';
+
+export default (TextInput) => {
+  const DocumentedTextInput = describe(TextInput)
+    .availableAt(getAvailableAtBadge('TextInput'))
+    .description(
+      'A text input field with optional suggestions.'
+    ).usage(
+      `import { TextInput } from 'grommet';
+<TextInput id='item' name='item' />`
+    );
+
+  DocumentedTextInput.propTypes = {
+    defaultValue: PropTypes.string.description('What text to start with in the input.'),
+    id: PropTypes.string.description('The id attribute of the input.'),
+    focusIndicator: PropTypes.bool.description(
+      'Whether the plain text input should receive a focus outline.'
+    ),
+    messages: PropTypes.shape({
+      enterSelect: PropTypes.string,
+      suggestionsCount: PropTypes.string,
+      suggestionsExist: PropTypes.string,
+      suggestionIsOpen: PropTypes.string,
+    }).description(
+      'Custom messages for TextInput. Used for accessibility by screen readers.'
+    ).defaultValue({
+      messages: {
+        enterSelect: '(Press Enter to Select)',
+        suggestionsCount: 'suggestions available',
+        suggestionsExist: 'This input has suggestions use arrow keys to navigate',
+        suggestionIsOpen: 'Suggestions drop is open, continue to use arrow keys to navigate',
+      },
+    }),
+    name: PropTypes.string.description('The name attribute of the input.'),
+    onInput: PropTypes.func.description(
+      'Function that will be called when the user types in the input.'
+    ),
+    onSelect: PropTypes.func.description(
       `Function that will be called when the user selects a suggestion.
-      The suggestion contains the object chosen from the supplied suggestions.`,
-    ],
-    placeholder: [
-      PropTypes.string, 'Placeholder text to use when the input is empty.',
-    ],
-    plain: [
-      PropTypes.bool,
+The suggestion contains the object chosen from the supplied suggestions.`
+    ),
+    placeholder: PropTypes.string.description(
+      'Placeholder text to use when no value is provided.'
+    ),
+    plain: PropTypes.bool.description(
       `Whether this is a plain input with no border or padding.
-      Only use this when the containing context provides sufficient affordance`,
-    ],
-    size: [
-      PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
-      'The size of the TextInput.',
-    ],
-    suggestions: [
-      PropTypes.arrayOf(
-        PropTypes.oneOfType([
-          PropTypes.shape({
-            label: PropTypes.node,
-            value: PropTypes.any,
-          }),
-          PropTypes.string,
-        ])
-      ),
+Only use this when the containing context provides sufficient affordance`
+    ),
+    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']).description(
+      'The size of the TextInput.'
+    ),
+    suggestions: PropTypes.arrayOf(
+      PropTypes.oneOfType([
+        PropTypes.shape({
+          label: PropTypes.node,
+          value: PropTypes.any,
+        }),
+        PropTypes.string,
+      ])
+    ).description(
       `Suggestions to show. It is recommended to avoid showing too many
-      suggestions and instead rely on the user to type more.`,
-    ],
-    value: [
-      PropTypes.string, 'What text to put in the input.',
-    ],
-  },
-});
+suggestions and instead rely on the user to type more.`
+    ),
+    value: PropTypes.string.description('What text to put in the input.'),
+  };
+
+  return DocumentedTextInput;
+};

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
-import { focusStyle, fontSize, lapAndUp } from '../utils';
+import { activeStyle, focusStyle, fontSize, lapAndUp } from '../../utils';
 
 const primaryStyle = css`
   background-color: ${props => props.theme.global.colors.brand};
@@ -40,7 +40,7 @@ function getHoverColor(props) {
   } else if (props.secondary) {
     return props.theme.button.colors.secondary;
   }
-  return props.theme.button.border.color || props.theme.global.colors.brand;
+  return props.theme.button.border.color;
 }
 
 function getHoverIndicatorStyle(hoverIndicator, theme) {
@@ -87,11 +87,11 @@ const hoverStyle = css`
     )}
 
     ${props => !props.plain && (
-      `box-shadow: 0px 0px 0px 2px ${getHoverColor(props)};`
+      css`box-shadow: 0px 0px 0px 2px ${getHoverColor(props)};`
     )}
 
     ${props => !props.plain && !props.primary && (
-      `
+      css`
         // TODO: revisit this
         svg {
           fill: ${props.theme.global.hover.textColor};
@@ -112,10 +112,7 @@ const fillStyle = `
 
 const plainFocusStyle = css`
   box-shadow: 0 0 ${props => props.theme.global.focus.border.width} ${props => props.theme.global.focus.border.width} ${
-    props => (
-      props.theme.global.focus.border.color ||
-      props.theme.global.colors.accent[0]
-    )
+    props => props.theme.global.focus.border.color
   };
 `;
 
@@ -139,9 +136,9 @@ const StyledButton = styled.button`
   text-transform: none;
 
   ${props => !props.plain && css`
-    border: ${props.theme.button.border.width} solid ${props.theme.button.border.color || props.theme.global.colors.brand};
+    border: ${props.theme.button.border.width} solid ${props.theme.button.border.color};
     border-radius: ${props.theme.button.border.radius};
-    color: ${props.theme.button.color || props.theme.global.colors.text};
+    color: ${props.theme.button.colors.text};
     text-align: center;
     display: inline-block;
     min-width: ${props.theme.button.minWidth};
@@ -153,6 +150,7 @@ const StyledButton = styled.button`
     !props.disabled && !props.focus && hoverStyle
   )}
 
+  ${props => !props.disabled && props.active && activeStyle}
   ${props => props.disabled && disabledStyle}
 
   ${props => (
@@ -161,7 +159,7 @@ const StyledButton = styled.button`
     )
   )}
   ${props => (
-    !props.plain && !props.box && (
+    !props.plain && (
       `padding: ${props.theme.button.padding.vertical} ${props.theme.button.padding.horizontal};`
     )
   )}

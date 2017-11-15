@@ -1,7 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { findAllByType } from '../utils';
+import { findAllByType } from '../../utils';
+
 import { withFocus } from '../hocs';
 
 const Test = withFocus(({ focus, ...rest }) => (

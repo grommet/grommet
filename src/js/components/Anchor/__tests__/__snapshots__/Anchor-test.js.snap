@@ -28,7 +28,7 @@ exports[`Anchor disabled renders 1`] = `
   text-decoration: none;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -100,7 +100,7 @@ exports[`Anchor focus renders 1`] = `
   outline: #00CCEB solid 2px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -175,7 +175,7 @@ exports[`Anchor icon label renders 1`] = `
   text-decoration: underline;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -202,42 +202,147 @@ exports[`Anchor icon label renders 1`] = `
         theme={
           Object {
             "anchor": Object {
-              "color": "#865CD6",
+              "color": Array [
+                [Function],
+              ],
               "fontWeight": 600,
               "textDecoration": "none",
             },
             "button": Object {
               "border": Object {
+                "color": Array [
+                  [Function],
+                ],
                 "radius": "5px",
                 "width": "2px",
               },
               "colors": Object {
-                "accent": "#00CCEB",
-                "critical": "#FF324D",
-                "secondary": "#DC2878",
+                "accent": Array [
+                  [Function],
+                ],
+                "critical": Array [
+                  [Function],
+                ],
+                "secondary": Array [
+                  [Function],
+                ],
+                "text": Array [
+                  [Function],
+                ],
               },
               "maxWidth": "384px",
-              "minWidth": "120px",
+              "minWidth": "96px",
               "padding": Object {
-                "horizontal": "22px",
-                "vertical": "6px",
+                "horizontal": "10px",
+                "vertical": "10px",
+              },
+            },
+            "checkBox": Object {
+              "border": Object {
+                "color": Object {
+                  "dark": "rgba(255, 255, 255, 0.5)",
+                  "light": "rgba(0, 0, 0, 0.15)",
+                },
+                "radius": "4px",
+                "width": "2px",
+              },
+              "check": Object {
+                "color": Array [
+                  [Function],
+                ],
+                "width": "4px",
+              },
+              "size": "24px",
+              "toggle": Object {
+                "color": "#d9d9d9",
+                "radius": "24px",
+                "size": "48px",
+              },
+            },
+            "clock": Object {
+              "circle": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "2px",
+              },
+              "hour": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "shape": "round",
+                "size": "24px",
+                "width": "3px",
+              },
+              "minute": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "shape": "round",
+                "size": "12px",
+                "width": "2px",
+              },
+              "second": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "shape": "round",
+                "size": "9px",
+                "width": "1px",
+              },
+              "size": Object {
+                "huge": "288px",
+                "large": "144px",
+                "medium": "96px",
+                "small": "72px",
+                "xlarge": "216px",
               },
             },
             "global": Object {
+              "animation": Object {
+                "duration": "1s",
+              },
               "borderSize": Object {
                 "large": "6px",
                 "medium": "3px",
-                "small": "1px",
+                "small": "2px",
                 "xlarge": "24px",
+                "xsmall": "1px",
+              },
+              "breakpoints": Object {
+                "narrow": 699,
               },
               "centerColumnWidth": "1152px",
               "colors": Object {
                 "accent": Array [
                   "#00CCEB",
                   "#FF7D28",
+                  "#915591",
                 ],
+                "active": "rgba(221,221,221,0.5)",
                 "background": "#FFFFFF",
                 "black": "#000000",
+                "border": "rgba(0, 0, 0, 0.15)",
                 "brand": "#865CD6",
                 "dark": Array [
                   "#333333",
@@ -247,7 +352,9 @@ exports[`Anchor icon label renders 1`] = `
                   "#777777",
                   "#999999",
                 ],
-                "darkBackgroundTextColor": "rgba(255, 255, 255, 0.85)",
+                "darkBackground": Object {
+                  "text": "rgba(255, 255, 255, 0.85)",
+                },
                 "light": Array [
                   "#F6F6F6",
                   "#EEEEEE",
@@ -262,6 +369,7 @@ exports[`Anchor icon label renders 1`] = `
                   "#501EB4",
                   "#49516F",
                 ],
+                "placeholder": "#AAAAAA",
                 "status": Object {
                   "critical": "#FF324D",
                   "disabled": "#a8a8a8",
@@ -274,6 +382,9 @@ exports[`Anchor icon label renders 1`] = `
                 "white": "#FFFFFF",
               },
               "control": Object {
+                "border": Object {
+                  "width": "2px",
+                },
                 "font": Object {
                   "size": "19px",
                   "weight": 600,
@@ -285,7 +396,7 @@ exports[`Anchor icon label renders 1`] = `
                   "radius": "0px",
                   "width": "0px",
                 },
-                "boxShadow": "none",
+                "shadow": "0px 3px 8px rgba(100, 100, 100, 0.50)",
               },
               "edgeSize": Object {
                 "large": "48px",
@@ -296,6 +407,9 @@ exports[`Anchor icon label renders 1`] = `
               },
               "focus": Object {
                 "border": Object {
+                  "color": Array [
+                    [Function],
+                  ],
                   "width": "2px",
                 },
               },
@@ -355,23 +469,25 @@ exports[`Anchor icon label renders 1`] = `
                 "size": "16px",
               },
               "hover": Object {
-                "backgroundColor": "rgba(221,221,221,0.5)",
+                "backgroundColor": Array [
+                  [Function],
+                ],
                 "textColor": "#000000",
               },
               "input": Object {
                 "border": Object {
-                  "color": "rgba(0, 0, 0, 0.15)",
+                  "color": Array [
+                    [Function],
+                  ],
                   "radius": "4px",
                   "width": "1px",
                 },
               },
               "lineHeight": "24px",
-              "placeholder": Object {
-                "color": "#AAAAAA",
-              },
-              "selected": Object {
-                "backgroundColor": "#ccbaee",
-                "textColor": "#333333",
+              "opacity": Object {
+                "medium": "0.4",
+                "strong": "0.1",
+                "weak": "0.8",
               },
               "size": Object {
                 "full": "100%",
@@ -390,56 +506,68 @@ exports[`Anchor icon label renders 1`] = `
                 "1": Object {
                   "large": Object {
                     "height": 1.125,
+                    "maxWidth": "2304px",
                     "size": "96px",
                   },
                   "medium": Object {
                     "height": 1.125,
+                    "maxWidth": "1152px",
                     "size": "48px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "24px",
                   },
                 },
                 "2": Object {
                   "large": Object {
                     "height": 1.125,
+                    "maxWidth": "1152px",
                     "size": "48px",
                   },
                   "medium": Object {
                     "height": 1.23,
+                    "maxWidth": "864px",
                     "size": "36px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                 },
                 "3": Object {
                   "large": Object {
                     "height": 1.23,
+                    "maxWidth": "864px",
                     "size": "36px",
                   },
                   "medium": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "24px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                 },
                 "4": Object {
                   "large": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "24px",
                   },
                   "medium": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                   "small": Object {
-                    "height": 1.333,
+                    "height": 1.375,
+                    "maxWidth": "384px",
                     "size": "16px",
                   },
                 },
@@ -448,6 +576,8 @@ exports[`Anchor icon label renders 1`] = `
             },
             "icon": Object {
               "extend": Array [
+                [Function],
+                " ",
                 [Function],
               ],
             },
@@ -460,24 +590,47 @@ exports[`Anchor icon label renders 1`] = `
             },
             "paragraph": Object {
               "large": Object {
-                "height": 1.167,
-                "maxWidth": "864px",
+                "height": 1.333,
+                "maxWidth": "576px",
                 "size": "24px",
               },
               "medium": Object {
                 "height": 1.375,
-                "maxWidth": "576px",
+                "maxWidth": "384px",
                 "size": "16px",
               },
               "small": Object {
                 "height": 1.43,
-                "maxWidth": "432px",
+                "maxWidth": "336px",
                 "size": "14px",
               },
               "xlarge": Object {
                 "height": 1.1875,
-                "maxWidth": "1152px",
+                "maxWidth": "768px",
                 "size": "32px",
+              },
+            },
+            "radioButton": Object {
+              "border": Object {
+                "color": Object {
+                  "dark": "rgba(255, 255, 255, 0.5)",
+                  "light": "rgba(0, 0, 0, 0.15)",
+                },
+                "radius": "100%",
+                "width": "2px",
+              },
+              "check": Object {
+                "color": Array [
+                  [Function],
+                ],
+              },
+              "size": "24px",
+            },
+            "rangeInput": Object {
+              "track": Object {
+                "color": Array [
+                  [Function],
+                ],
               },
             },
             "text": Object {
@@ -504,6 +657,11 @@ exports[`Anchor icon label renders 1`] = `
               "xxlarge": Object {
                 "height": 1.125,
                 "size": "48px",
+              },
+            },
+            "video": Object {
+              "captions": Object {
+                "background": "rgba(0,0,0,0.7)",
               },
             },
           }
@@ -553,16 +711,13 @@ exports[`Anchor primary renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-fill: #666666;
   fill: #666666;
   stroke: #666666;
-  -webkit-fill: #865CD6;
   fill: #865CD6;
   stroke: #865CD6;
 }
 
 .c3 g {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: inherit;
 }
@@ -574,13 +729,13 @@ exports[`Anchor primary renders 1`] = `
 .c3 *[stroke*="#"],
 .c3 *[STROKE*="#"] {
   stroke: inherit;
-  -webkit-fill: none;
   fill: none;
 }
 
+.c3 *[fill-rule],
+.c3 *[FILL-RULE],
 .c3 *[fill*="#"],
 .c3 *[FILL*="#"] {
-  -webkit-fill: inherit;
   fill: inherit;
   stroke: none;
 }
@@ -608,7 +763,7 @@ exports[`Anchor primary renders 1`] = `
   text-decoration: underline;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -635,42 +790,147 @@ exports[`Anchor primary renders 1`] = `
         theme={
           Object {
             "anchor": Object {
-              "color": "#865CD6",
+              "color": Array [
+                [Function],
+              ],
               "fontWeight": 600,
               "textDecoration": "none",
             },
             "button": Object {
               "border": Object {
+                "color": Array [
+                  [Function],
+                ],
                 "radius": "5px",
                 "width": "2px",
               },
               "colors": Object {
-                "accent": "#00CCEB",
-                "critical": "#FF324D",
-                "secondary": "#DC2878",
+                "accent": Array [
+                  [Function],
+                ],
+                "critical": Array [
+                  [Function],
+                ],
+                "secondary": Array [
+                  [Function],
+                ],
+                "text": Array [
+                  [Function],
+                ],
               },
               "maxWidth": "384px",
-              "minWidth": "120px",
+              "minWidth": "96px",
               "padding": Object {
-                "horizontal": "22px",
-                "vertical": "6px",
+                "horizontal": "10px",
+                "vertical": "10px",
+              },
+            },
+            "checkBox": Object {
+              "border": Object {
+                "color": Object {
+                  "dark": "rgba(255, 255, 255, 0.5)",
+                  "light": "rgba(0, 0, 0, 0.15)",
+                },
+                "radius": "4px",
+                "width": "2px",
+              },
+              "check": Object {
+                "color": Array [
+                  [Function],
+                ],
+                "width": "4px",
+              },
+              "size": "24px",
+              "toggle": Object {
+                "color": "#d9d9d9",
+                "radius": "24px",
+                "size": "48px",
+              },
+            },
+            "clock": Object {
+              "circle": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "2px",
+              },
+              "hour": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "shape": "round",
+                "size": "24px",
+                "width": "3px",
+              },
+              "minute": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "shape": "round",
+                "size": "12px",
+                "width": "2px",
+              },
+              "second": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "shape": "round",
+                "size": "9px",
+                "width": "1px",
+              },
+              "size": Object {
+                "huge": "288px",
+                "large": "144px",
+                "medium": "96px",
+                "small": "72px",
+                "xlarge": "216px",
               },
             },
             "global": Object {
+              "animation": Object {
+                "duration": "1s",
+              },
               "borderSize": Object {
                 "large": "6px",
                 "medium": "3px",
-                "small": "1px",
+                "small": "2px",
                 "xlarge": "24px",
+                "xsmall": "1px",
+              },
+              "breakpoints": Object {
+                "narrow": 699,
               },
               "centerColumnWidth": "1152px",
               "colors": Object {
                 "accent": Array [
                   "#00CCEB",
                   "#FF7D28",
+                  "#915591",
                 ],
+                "active": "rgba(221,221,221,0.5)",
                 "background": "#FFFFFF",
                 "black": "#000000",
+                "border": "rgba(0, 0, 0, 0.15)",
                 "brand": "#865CD6",
                 "dark": Array [
                   "#333333",
@@ -680,7 +940,9 @@ exports[`Anchor primary renders 1`] = `
                   "#777777",
                   "#999999",
                 ],
-                "darkBackgroundTextColor": "rgba(255, 255, 255, 0.85)",
+                "darkBackground": Object {
+                  "text": "rgba(255, 255, 255, 0.85)",
+                },
                 "light": Array [
                   "#F6F6F6",
                   "#EEEEEE",
@@ -695,6 +957,7 @@ exports[`Anchor primary renders 1`] = `
                   "#501EB4",
                   "#49516F",
                 ],
+                "placeholder": "#AAAAAA",
                 "status": Object {
                   "critical": "#FF324D",
                   "disabled": "#a8a8a8",
@@ -707,6 +970,9 @@ exports[`Anchor primary renders 1`] = `
                 "white": "#FFFFFF",
               },
               "control": Object {
+                "border": Object {
+                  "width": "2px",
+                },
                 "font": Object {
                   "size": "19px",
                   "weight": 600,
@@ -718,7 +984,7 @@ exports[`Anchor primary renders 1`] = `
                   "radius": "0px",
                   "width": "0px",
                 },
-                "boxShadow": "none",
+                "shadow": "0px 3px 8px rgba(100, 100, 100, 0.50)",
               },
               "edgeSize": Object {
                 "large": "48px",
@@ -729,6 +995,9 @@ exports[`Anchor primary renders 1`] = `
               },
               "focus": Object {
                 "border": Object {
+                  "color": Array [
+                    [Function],
+                  ],
                   "width": "2px",
                 },
               },
@@ -788,23 +1057,25 @@ exports[`Anchor primary renders 1`] = `
                 "size": "16px",
               },
               "hover": Object {
-                "backgroundColor": "rgba(221,221,221,0.5)",
+                "backgroundColor": Array [
+                  [Function],
+                ],
                 "textColor": "#000000",
               },
               "input": Object {
                 "border": Object {
-                  "color": "rgba(0, 0, 0, 0.15)",
+                  "color": Array [
+                    [Function],
+                  ],
                   "radius": "4px",
                   "width": "1px",
                 },
               },
               "lineHeight": "24px",
-              "placeholder": Object {
-                "color": "#AAAAAA",
-              },
-              "selected": Object {
-                "backgroundColor": "#ccbaee",
-                "textColor": "#333333",
+              "opacity": Object {
+                "medium": "0.4",
+                "strong": "0.1",
+                "weak": "0.8",
               },
               "size": Object {
                 "full": "100%",
@@ -823,56 +1094,68 @@ exports[`Anchor primary renders 1`] = `
                 "1": Object {
                   "large": Object {
                     "height": 1.125,
+                    "maxWidth": "2304px",
                     "size": "96px",
                   },
                   "medium": Object {
                     "height": 1.125,
+                    "maxWidth": "1152px",
                     "size": "48px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "24px",
                   },
                 },
                 "2": Object {
                   "large": Object {
                     "height": 1.125,
+                    "maxWidth": "1152px",
                     "size": "48px",
                   },
                   "medium": Object {
                     "height": 1.23,
+                    "maxWidth": "864px",
                     "size": "36px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                 },
                 "3": Object {
                   "large": Object {
                     "height": 1.23,
+                    "maxWidth": "864px",
                     "size": "36px",
                   },
                   "medium": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "24px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                 },
                 "4": Object {
                   "large": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "24px",
                   },
                   "medium": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                   "small": Object {
-                    "height": 1.333,
+                    "height": 1.375,
+                    "maxWidth": "384px",
                     "size": "16px",
                   },
                 },
@@ -881,6 +1164,8 @@ exports[`Anchor primary renders 1`] = `
             },
             "icon": Object {
               "extend": Array [
+                [Function],
+                " ",
                 [Function],
               ],
             },
@@ -893,24 +1178,47 @@ exports[`Anchor primary renders 1`] = `
             },
             "paragraph": Object {
               "large": Object {
-                "height": 1.167,
-                "maxWidth": "864px",
+                "height": 1.333,
+                "maxWidth": "576px",
                 "size": "24px",
               },
               "medium": Object {
                 "height": 1.375,
-                "maxWidth": "576px",
+                "maxWidth": "384px",
                 "size": "16px",
               },
               "small": Object {
                 "height": 1.43,
-                "maxWidth": "432px",
+                "maxWidth": "336px",
                 "size": "14px",
               },
               "xlarge": Object {
                 "height": 1.1875,
-                "maxWidth": "1152px",
+                "maxWidth": "768px",
                 "size": "32px",
+              },
+            },
+            "radioButton": Object {
+              "border": Object {
+                "color": Object {
+                  "dark": "rgba(255, 255, 255, 0.5)",
+                  "light": "rgba(0, 0, 0, 0.15)",
+                },
+                "radius": "100%",
+                "width": "2px",
+              },
+              "check": Object {
+                "color": Array [
+                  [Function],
+                ],
+              },
+              "size": "24px",
+            },
+            "rangeInput": Object {
+              "track": Object {
+                "color": Array [
+                  [Function],
+                ],
               },
             },
             "text": Object {
@@ -937,6 +1245,11 @@ exports[`Anchor primary renders 1`] = `
               "xxlarge": Object {
                 "height": 1.125,
                 "size": "48px",
+              },
+            },
+            "video": Object {
+              "captions": Object {
+                "background": "rgba(0,0,0,0.7)",
               },
             },
           }
@@ -1010,7 +1323,7 @@ exports[`Anchor renders 1`] = `
   text-decoration: underline;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1070,7 +1383,7 @@ exports[`Anchor renders with children 1`] = `
   text-decoration: underline;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1145,7 +1458,7 @@ exports[`Anchor reverse icon label renders 1`] = `
   text-decoration: underline;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1172,42 +1485,147 @@ exports[`Anchor reverse icon label renders 1`] = `
         theme={
           Object {
             "anchor": Object {
-              "color": "#865CD6",
+              "color": Array [
+                [Function],
+              ],
               "fontWeight": 600,
               "textDecoration": "none",
             },
             "button": Object {
               "border": Object {
+                "color": Array [
+                  [Function],
+                ],
                 "radius": "5px",
                 "width": "2px",
               },
               "colors": Object {
-                "accent": "#00CCEB",
-                "critical": "#FF324D",
-                "secondary": "#DC2878",
+                "accent": Array [
+                  [Function],
+                ],
+                "critical": Array [
+                  [Function],
+                ],
+                "secondary": Array [
+                  [Function],
+                ],
+                "text": Array [
+                  [Function],
+                ],
               },
               "maxWidth": "384px",
-              "minWidth": "120px",
+              "minWidth": "96px",
               "padding": Object {
-                "horizontal": "22px",
-                "vertical": "6px",
+                "horizontal": "10px",
+                "vertical": "10px",
+              },
+            },
+            "checkBox": Object {
+              "border": Object {
+                "color": Object {
+                  "dark": "rgba(255, 255, 255, 0.5)",
+                  "light": "rgba(0, 0, 0, 0.15)",
+                },
+                "radius": "4px",
+                "width": "2px",
+              },
+              "check": Object {
+                "color": Array [
+                  [Function],
+                ],
+                "width": "4px",
+              },
+              "size": "24px",
+              "toggle": Object {
+                "color": "#d9d9d9",
+                "radius": "24px",
+                "size": "48px",
+              },
+            },
+            "clock": Object {
+              "circle": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "2px",
+              },
+              "hour": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "shape": "round",
+                "size": "24px",
+                "width": "3px",
+              },
+              "minute": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "shape": "round",
+                "size": "12px",
+                "width": "2px",
+              },
+              "second": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "shape": "round",
+                "size": "9px",
+                "width": "1px",
+              },
+              "size": Object {
+                "huge": "288px",
+                "large": "144px",
+                "medium": "96px",
+                "small": "72px",
+                "xlarge": "216px",
               },
             },
             "global": Object {
+              "animation": Object {
+                "duration": "1s",
+              },
               "borderSize": Object {
                 "large": "6px",
                 "medium": "3px",
-                "small": "1px",
+                "small": "2px",
                 "xlarge": "24px",
+                "xsmall": "1px",
+              },
+              "breakpoints": Object {
+                "narrow": 699,
               },
               "centerColumnWidth": "1152px",
               "colors": Object {
                 "accent": Array [
                   "#00CCEB",
                   "#FF7D28",
+                  "#915591",
                 ],
+                "active": "rgba(221,221,221,0.5)",
                 "background": "#FFFFFF",
                 "black": "#000000",
+                "border": "rgba(0, 0, 0, 0.15)",
                 "brand": "#865CD6",
                 "dark": Array [
                   "#333333",
@@ -1217,7 +1635,9 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "#777777",
                   "#999999",
                 ],
-                "darkBackgroundTextColor": "rgba(255, 255, 255, 0.85)",
+                "darkBackground": Object {
+                  "text": "rgba(255, 255, 255, 0.85)",
+                },
                 "light": Array [
                   "#F6F6F6",
                   "#EEEEEE",
@@ -1232,6 +1652,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "#501EB4",
                   "#49516F",
                 ],
+                "placeholder": "#AAAAAA",
                 "status": Object {
                   "critical": "#FF324D",
                   "disabled": "#a8a8a8",
@@ -1244,6 +1665,9 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "white": "#FFFFFF",
               },
               "control": Object {
+                "border": Object {
+                  "width": "2px",
+                },
                 "font": Object {
                   "size": "19px",
                   "weight": 600,
@@ -1255,7 +1679,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "radius": "0px",
                   "width": "0px",
                 },
-                "boxShadow": "none",
+                "shadow": "0px 3px 8px rgba(100, 100, 100, 0.50)",
               },
               "edgeSize": Object {
                 "large": "48px",
@@ -1266,6 +1690,9 @@ exports[`Anchor reverse icon label renders 1`] = `
               },
               "focus": Object {
                 "border": Object {
+                  "color": Array [
+                    [Function],
+                  ],
                   "width": "2px",
                 },
               },
@@ -1325,23 +1752,25 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "size": "16px",
               },
               "hover": Object {
-                "backgroundColor": "rgba(221,221,221,0.5)",
+                "backgroundColor": Array [
+                  [Function],
+                ],
                 "textColor": "#000000",
               },
               "input": Object {
                 "border": Object {
-                  "color": "rgba(0, 0, 0, 0.15)",
+                  "color": Array [
+                    [Function],
+                  ],
                   "radius": "4px",
                   "width": "1px",
                 },
               },
               "lineHeight": "24px",
-              "placeholder": Object {
-                "color": "#AAAAAA",
-              },
-              "selected": Object {
-                "backgroundColor": "#ccbaee",
-                "textColor": "#333333",
+              "opacity": Object {
+                "medium": "0.4",
+                "strong": "0.1",
+                "weak": "0.8",
               },
               "size": Object {
                 "full": "100%",
@@ -1360,56 +1789,68 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "1": Object {
                   "large": Object {
                     "height": 1.125,
+                    "maxWidth": "2304px",
                     "size": "96px",
                   },
                   "medium": Object {
                     "height": 1.125,
+                    "maxWidth": "1152px",
                     "size": "48px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "24px",
                   },
                 },
                 "2": Object {
                   "large": Object {
                     "height": 1.125,
+                    "maxWidth": "1152px",
                     "size": "48px",
                   },
                   "medium": Object {
                     "height": 1.23,
+                    "maxWidth": "864px",
                     "size": "36px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                 },
                 "3": Object {
                   "large": Object {
                     "height": 1.23,
+                    "maxWidth": "864px",
                     "size": "36px",
                   },
                   "medium": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "24px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                 },
                 "4": Object {
                   "large": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "24px",
                   },
                   "medium": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                   "small": Object {
-                    "height": 1.333,
+                    "height": 1.375,
+                    "maxWidth": "384px",
                     "size": "16px",
                   },
                 },
@@ -1418,6 +1859,8 @@ exports[`Anchor reverse icon label renders 1`] = `
             },
             "icon": Object {
               "extend": Array [
+                [Function],
+                " ",
                 [Function],
               ],
             },
@@ -1430,24 +1873,47 @@ exports[`Anchor reverse icon label renders 1`] = `
             },
             "paragraph": Object {
               "large": Object {
-                "height": 1.167,
-                "maxWidth": "864px",
+                "height": 1.333,
+                "maxWidth": "576px",
                 "size": "24px",
               },
               "medium": Object {
                 "height": 1.375,
-                "maxWidth": "576px",
+                "maxWidth": "384px",
                 "size": "16px",
               },
               "small": Object {
                 "height": 1.43,
-                "maxWidth": "432px",
+                "maxWidth": "336px",
                 "size": "14px",
               },
               "xlarge": Object {
                 "height": 1.1875,
-                "maxWidth": "1152px",
+                "maxWidth": "768px",
                 "size": "32px",
+              },
+            },
+            "radioButton": Object {
+              "border": Object {
+                "color": Object {
+                  "dark": "rgba(255, 255, 255, 0.5)",
+                  "light": "rgba(0, 0, 0, 0.15)",
+                },
+                "radius": "100%",
+                "width": "2px",
+              },
+              "check": Object {
+                "color": Array [
+                  [Function],
+                ],
+              },
+              "size": "24px",
+            },
+            "rangeInput": Object {
+              "track": Object {
+                "color": Array [
+                  [Function],
+                ],
               },
             },
             "text": Object {
@@ -1474,6 +1940,11 @@ exports[`Anchor reverse icon label renders 1`] = `
               "xxlarge": Object {
                 "height": 1.125,
                 "size": "48px",
+              },
+            },
+            "video": Object {
+              "captions": Object {
+                "background": "rgba(0,0,0,0.7)",
               },
             },
           }
@@ -1518,14 +1989,6 @@ exports[`Anchor warns about invalid icon render 1`] = `
   box-sizing: inherit;
 }
 
-.c2 {
-  display: inline-block;
-}
-
-.c2 > * {
-  vertical-align: bottom;
-}
-
 .c1 {
   color: #865CD6;
   text-decoration: none;
@@ -1538,7 +2001,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
   text-decoration: underline;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1565,42 +2028,147 @@ exports[`Anchor warns about invalid icon render 1`] = `
         theme={
           Object {
             "anchor": Object {
-              "color": "#865CD6",
+              "color": Array [
+                [Function],
+              ],
               "fontWeight": 600,
               "textDecoration": "none",
             },
             "button": Object {
               "border": Object {
+                "color": Array [
+                  [Function],
+                ],
                 "radius": "5px",
                 "width": "2px",
               },
               "colors": Object {
-                "accent": "#00CCEB",
-                "critical": "#FF324D",
-                "secondary": "#DC2878",
+                "accent": Array [
+                  [Function],
+                ],
+                "critical": Array [
+                  [Function],
+                ],
+                "secondary": Array [
+                  [Function],
+                ],
+                "text": Array [
+                  [Function],
+                ],
               },
               "maxWidth": "384px",
-              "minWidth": "120px",
+              "minWidth": "96px",
               "padding": Object {
-                "horizontal": "22px",
-                "vertical": "6px",
+                "horizontal": "10px",
+                "vertical": "10px",
+              },
+            },
+            "checkBox": Object {
+              "border": Object {
+                "color": Object {
+                  "dark": "rgba(255, 255, 255, 0.5)",
+                  "light": "rgba(0, 0, 0, 0.15)",
+                },
+                "radius": "4px",
+                "width": "2px",
+              },
+              "check": Object {
+                "color": Array [
+                  [Function],
+                ],
+                "width": "4px",
+              },
+              "size": "24px",
+              "toggle": Object {
+                "color": "#d9d9d9",
+                "radius": "24px",
+                "size": "48px",
+              },
+            },
+            "clock": Object {
+              "circle": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "width": "2px",
+              },
+              "hour": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "shape": "round",
+                "size": "24px",
+                "width": "3px",
+              },
+              "minute": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "shape": "round",
+                "size": "12px",
+                "width": "2px",
+              },
+              "second": Object {
+                "color": Object {
+                  "day": Array [
+                    [Function],
+                  ],
+                  "night": Array [
+                    [Function],
+                  ],
+                },
+                "shape": "round",
+                "size": "9px",
+                "width": "1px",
+              },
+              "size": Object {
+                "huge": "288px",
+                "large": "144px",
+                "medium": "96px",
+                "small": "72px",
+                "xlarge": "216px",
               },
             },
             "global": Object {
+              "animation": Object {
+                "duration": "1s",
+              },
               "borderSize": Object {
                 "large": "6px",
                 "medium": "3px",
-                "small": "1px",
+                "small": "2px",
                 "xlarge": "24px",
+                "xsmall": "1px",
+              },
+              "breakpoints": Object {
+                "narrow": 699,
               },
               "centerColumnWidth": "1152px",
               "colors": Object {
                 "accent": Array [
                   "#00CCEB",
                   "#FF7D28",
+                  "#915591",
                 ],
+                "active": "rgba(221,221,221,0.5)",
                 "background": "#FFFFFF",
                 "black": "#000000",
+                "border": "rgba(0, 0, 0, 0.15)",
                 "brand": "#865CD6",
                 "dark": Array [
                   "#333333",
@@ -1610,7 +2178,9 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "#777777",
                   "#999999",
                 ],
-                "darkBackgroundTextColor": "rgba(255, 255, 255, 0.85)",
+                "darkBackground": Object {
+                  "text": "rgba(255, 255, 255, 0.85)",
+                },
                 "light": Array [
                   "#F6F6F6",
                   "#EEEEEE",
@@ -1625,6 +2195,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "#501EB4",
                   "#49516F",
                 ],
+                "placeholder": "#AAAAAA",
                 "status": Object {
                   "critical": "#FF324D",
                   "disabled": "#a8a8a8",
@@ -1637,6 +2208,9 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "white": "#FFFFFF",
               },
               "control": Object {
+                "border": Object {
+                  "width": "2px",
+                },
                 "font": Object {
                   "size": "19px",
                   "weight": 600,
@@ -1648,7 +2222,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "radius": "0px",
                   "width": "0px",
                 },
-                "boxShadow": "none",
+                "shadow": "0px 3px 8px rgba(100, 100, 100, 0.50)",
               },
               "edgeSize": Object {
                 "large": "48px",
@@ -1659,6 +2233,9 @@ exports[`Anchor warns about invalid icon render 1`] = `
               },
               "focus": Object {
                 "border": Object {
+                  "color": Array [
+                    [Function],
+                  ],
                   "width": "2px",
                 },
               },
@@ -1718,23 +2295,25 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "size": "16px",
               },
               "hover": Object {
-                "backgroundColor": "rgba(221,221,221,0.5)",
+                "backgroundColor": Array [
+                  [Function],
+                ],
                 "textColor": "#000000",
               },
               "input": Object {
                 "border": Object {
-                  "color": "rgba(0, 0, 0, 0.15)",
+                  "color": Array [
+                    [Function],
+                  ],
                   "radius": "4px",
                   "width": "1px",
                 },
               },
               "lineHeight": "24px",
-              "placeholder": Object {
-                "color": "#AAAAAA",
-              },
-              "selected": Object {
-                "backgroundColor": "#ccbaee",
-                "textColor": "#333333",
+              "opacity": Object {
+                "medium": "0.4",
+                "strong": "0.1",
+                "weak": "0.8",
               },
               "size": Object {
                 "full": "100%",
@@ -1753,56 +2332,68 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "1": Object {
                   "large": Object {
                     "height": 1.125,
+                    "maxWidth": "2304px",
                     "size": "96px",
                   },
                   "medium": Object {
                     "height": 1.125,
+                    "maxWidth": "1152px",
                     "size": "48px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "24px",
                   },
                 },
                 "2": Object {
                   "large": Object {
                     "height": 1.125,
+                    "maxWidth": "1152px",
                     "size": "48px",
                   },
                   "medium": Object {
                     "height": 1.23,
+                    "maxWidth": "864px",
                     "size": "36px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                 },
                 "3": Object {
                   "large": Object {
                     "height": 1.23,
+                    "maxWidth": "864px",
                     "size": "36px",
                   },
                   "medium": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "24px",
                   },
                   "small": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                 },
                 "4": Object {
                   "large": Object {
                     "height": 1.333,
+                    "maxWidth": "576px",
                     "size": "24px",
                   },
                   "medium": Object {
                     "height": 1.333,
+                    "maxWidth": "432px",
                     "size": "18px",
                   },
                   "small": Object {
-                    "height": 1.333,
+                    "height": 1.375,
+                    "maxWidth": "384px",
                     "size": "16px",
                   },
                 },
@@ -1811,6 +2402,8 @@ exports[`Anchor warns about invalid icon render 1`] = `
             },
             "icon": Object {
               "extend": Array [
+                [Function],
+                " ",
                 [Function],
               ],
             },
@@ -1823,24 +2416,47 @@ exports[`Anchor warns about invalid icon render 1`] = `
             },
             "paragraph": Object {
               "large": Object {
-                "height": 1.167,
-                "maxWidth": "864px",
+                "height": 1.333,
+                "maxWidth": "576px",
                 "size": "24px",
               },
               "medium": Object {
                 "height": 1.375,
-                "maxWidth": "576px",
+                "maxWidth": "384px",
                 "size": "16px",
               },
               "small": Object {
                 "height": 1.43,
-                "maxWidth": "432px",
+                "maxWidth": "336px",
                 "size": "14px",
               },
               "xlarge": Object {
                 "height": 1.1875,
-                "maxWidth": "1152px",
+                "maxWidth": "768px",
                 "size": "32px",
+              },
+            },
+            "radioButton": Object {
+              "border": Object {
+                "color": Object {
+                  "dark": "rgba(255, 255, 255, 0.5)",
+                  "light": "rgba(0, 0, 0, 0.15)",
+                },
+                "radius": "100%",
+                "width": "2px",
+              },
+              "check": Object {
+                "color": Array [
+                  [Function],
+                ],
+              },
+              "size": "24px",
+            },
+            "rangeInput": Object {
+              "track": Object {
+                "color": Array [
+                  [Function],
+                ],
               },
             },
             "text": Object {
@@ -1869,6 +2485,11 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "size": "48px",
               },
             },
+            "video": Object {
+              "captions": Object {
+                "background": "rgba(0,0,0,0.7)",
+              },
+            },
           }
         }
       >
@@ -1882,12 +2503,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
     onMouseDown={[Function]}
     onMouseUp={[Function]}
   >
-    <span
-      className="c2"
-      label={undefined}
-    >
-      <svg />
-    </span>
+    invalid
   </a>
 </div>
 `;
@@ -1921,7 +2537,7 @@ exports[`Anchor warns about invalid label render 1`] = `
   text-decoration: underline;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -1949,7 +2565,7 @@ exports[`Anchor warns about invalid label render 1`] = `
     onMouseDown={[Function]}
     onMouseUp={[Function]}
   >
-    Test
+    invalid
   </a>
 </div>
 `;

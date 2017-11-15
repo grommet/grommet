@@ -2,7 +2,7 @@ const ENV = process.env.BABEL_ENV;
 
 module.exports = {
   presets: [
-    ['es2015', {
+    ['env', {
       loose: true,
       modules: ENV === 'es6' ? false : 'commonjs',
     }],

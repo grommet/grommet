@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
-import StyledMeter from './StyledMeter';
+import { colorForName, parseMetricToInt } from '../../utils';
 
-import { parseMetricToInt } from '../utils/mixins';
-import { colorForName } from '../utils/colors';
+import StyledMeter from './StyledMeter';
 
 export default class Bar extends Component {
   static defaultProps = {
@@ -11,7 +10,7 @@ export default class Bar extends Component {
   };
 
   render() {
-    const { background, round, size, theme, thickness, values } = this.props;
+    const { background, round, size, theme, thickness, values, ...rest } = this.props;
     const width = (size === 'full' ? 288 : parseMetricToInt(theme.global.size[size]));
     const height = parseMetricToInt(theme.global.edgeSize[thickness]);
     const mid = height / 2;
@@ -19,8 +18,8 @@ export default class Bar extends Component {
     const someHighlight = (values || []).some(v => v.highlight);
 
     let start = 0;
-    const paths = (values || []).map((valueArg, index) => {
-      const { color, highlight, label, onHover, value, ...rest } = valueArg;
+    const paths = (values || []).filter(v => v.value > 0).map((valueArg, index) => {
+      const { color, highlight, label, onHover, value, ...pathRest } = valueArg;
 
       const key = `p-${index}`;
       const delta = (value * width) / max;
@@ -45,7 +44,7 @@ export default class Bar extends Component {
           strokeWidth={height}
           strokeLinecap={round ? 'round' : 'square'}
           {...hoverProps}
-          {...rest}
+          {...pathRest}
         />
       );
     }).reverse(); // reverse so the caps looks right
@@ -56,6 +55,7 @@ export default class Bar extends Component {
         preserveAspectRatio='none'
         width={size === 'full' ? '100%' : width}
         height={height}
+        {...rest}
       >
         <path
           d={`M 0,${mid} L ${width},${mid}`}

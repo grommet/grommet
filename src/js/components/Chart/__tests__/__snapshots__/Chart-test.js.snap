@@ -22,7 +22,7 @@ exports[`Chart cap renders 1`] = `
   max-width: 100%;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -45,7 +45,6 @@ exports[`Chart cap renders 1`] = `
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
       strokeLinecap="round"
@@ -59,19 +58,7 @@ exports[`Chart cap renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,192 L 384,0"
         />
       </g>
     </g>
@@ -84,7 +71,6 @@ exports[`Chart cap renders 1`] = `
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
       strokeLinecap="round"
@@ -95,9 +81,7 @@ exports[`Chart cap renders 1`] = `
         fill="none"
       >
         <path
-          d="M
-              NaN,NaN L
-              NaN,NaN"
+          d="M 0,192 L 384,0"
         />
       </g>
     </g>
@@ -110,7 +94,6 @@ exports[`Chart cap renders 1`] = `
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
       strokeLinecap="round"
@@ -121,7 +104,7 @@ exports[`Chart cap renders 1`] = `
         fill="#00CCEB"
       >
         <path
-          d="M 0,192M NaN,192 L NaN,NaN L NaN,NaNL NaN,192 Z"
+          d="M 0,192 L 384,0 L 384,192 L 0,192 Z"
         />
       </g>
     </g>
@@ -151,7 +134,7 @@ exports[`Chart renders 1`] = `
   max-width: 100%;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -174,10 +157,9 @@ exports[`Chart renders 1`] = `
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     />
@@ -190,10 +172,9 @@ exports[`Chart renders 1`] = `
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -204,19 +185,7 @@ exports[`Chart renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,192 L 384,0"
         />
       </g>
     </g>
@@ -246,7 +215,7 @@ exports[`Chart size renders 1`] = `
   max-width: 100%;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -269,10 +238,9 @@ exports[`Chart size renders 1`] = `
             120 120"
     width={96}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -283,19 +251,7 @@ exports[`Chart size renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 96,96 L 96,0"
         />
       </g>
     </g>
@@ -308,10 +264,9 @@ exports[`Chart size renders 1`] = `
             216 216"
     width={192}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -322,19 +277,7 @@ exports[`Chart size renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 192,192 L 192,0"
         />
       </g>
     </g>
@@ -347,10 +290,9 @@ exports[`Chart size renders 1`] = `
             408 408"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -361,19 +303,7 @@ exports[`Chart size renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,384 L 384,0"
         />
       </g>
     </g>
@@ -386,10 +316,9 @@ exports[`Chart size renders 1`] = `
             792 792"
     width={768}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -400,19 +329,7 @@ exports[`Chart size renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 768,768 L 768,0"
         />
       </g>
     </g>
@@ -425,10 +342,9 @@ exports[`Chart size renders 1`] = `
             1176 1176"
     width={1152}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -439,19 +355,7 @@ exports[`Chart size renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 1152,1152 L 1152,0"
         />
       </g>
     </g>
@@ -481,7 +385,7 @@ exports[`Chart thickness renders 1`] = `
   max-width: 100%;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -504,10 +408,9 @@ exports[`Chart thickness renders 1`] = `
             390 198"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={6}
     >
@@ -518,19 +421,7 @@ exports[`Chart thickness renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,192 L 384,0"
         />
       </g>
     </g>
@@ -543,10 +434,9 @@ exports[`Chart thickness renders 1`] = `
             396 204"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={12}
     >
@@ -557,19 +447,7 @@ exports[`Chart thickness renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,192 L 384,0"
         />
       </g>
     </g>
@@ -582,10 +460,9 @@ exports[`Chart thickness renders 1`] = `
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -596,19 +473,7 @@ exports[`Chart thickness renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,192 L 384,0"
         />
       </g>
     </g>
@@ -621,10 +486,9 @@ exports[`Chart thickness renders 1`] = `
             432 240"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={48}
     >
@@ -635,19 +499,7 @@ exports[`Chart thickness renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,192 L 384,0"
         />
       </g>
     </g>
@@ -660,10 +512,9 @@ exports[`Chart thickness renders 1`] = `
             480 288"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={96}
     >
@@ -674,19 +525,7 @@ exports[`Chart thickness renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,192 L 384,0"
         />
       </g>
     </g>
@@ -716,7 +555,7 @@ exports[`Chart type renders 1`] = `
   max-width: 100%;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -739,10 +578,9 @@ exports[`Chart type renders 1`] = `
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -753,19 +591,7 @@ exports[`Chart type renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,192 L 384,0"
         />
       </g>
     </g>
@@ -778,10 +604,9 @@ exports[`Chart type renders 1`] = `
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -789,9 +614,7 @@ exports[`Chart type renders 1`] = `
         fill="none"
       >
         <path
-          d="M
-              NaN,NaN L
-              NaN,NaN"
+          d="M 384,0 L 0,192"
         />
       </g>
     </g>
@@ -804,10 +627,9 @@ exports[`Chart type renders 1`] = `
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -815,7 +637,7 @@ exports[`Chart type renders 1`] = `
         fill="#00CCEB"
       >
         <path
-          d="M 0,192M NaN,192 L NaN,NaN L NaN,NaNL NaN,192 Z"
+          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
         />
       </g>
     </g>

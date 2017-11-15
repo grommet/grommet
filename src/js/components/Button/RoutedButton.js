@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import Button from './Button';
-
 import { routedButton } from './doc';
 
 class RoutedButton extends Component {

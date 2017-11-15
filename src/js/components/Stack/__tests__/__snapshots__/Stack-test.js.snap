@@ -22,7 +22,7 @@ exports[`Stack anchor renders 1`] = `
   position: relative;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -238,7 +238,7 @@ exports[`Stack renders 1`] = `
   position: relative;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c0 {
     top: 0px;
     bottom: 0px;
@@ -262,11 +262,12 @@ exports[`Stack renders 1`] = `
     <div
       style={
         Object {
-          "left": "50%",
+          "bottom": 0,
+          "left": 0,
           "overflow": "hidden",
           "position": "absolute",
-          "top": "50%",
-          "transform": "translate(-50%, -50%)",
+          "right": 0,
+          "top": 0,
         }
       }
     >

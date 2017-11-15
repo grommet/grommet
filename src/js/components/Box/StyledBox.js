@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
-import { backgroundStyle, colorForName } from '../utils';
+import { backgroundStyle, colorForName, palm } from '../../utils';
 
 const ALIGN_MAP = {
   baseline: 'baseline',
@@ -51,7 +51,11 @@ const basisStyle = css`
   flex-basis: ${props => BASIS_MAP[props.basis] || props.theme.global.size[props.basis]};
 `;
 
+// min-width and min-height needed because of this
+// https://stackoverflow.com/questions/36247140/why-doesnt-flex-item-shrink-past-content-size
 const directionStyle = css`
+  ${props => props.direction === 'row' && 'min-width: 0;'}
+  ${props => props.direction === 'column' && 'min-height: 0;'}
   flex-direction: ${(props) => {
     if (props.direction) {
       return (props.reverse ? `${props.direction}-reverse` : props.direction);
@@ -132,24 +136,27 @@ const textAlignStyle = css`
 const wrapStyle = 'flex-wrap: wrap;';
 
 const borderStyle = (data, theme) => {
-  const color = colorForName(data.color || 'light-2', theme);
-  const size = data.size || 'small';
+  let style = '';
+  const color = colorForName(data.color || 'border', theme);
+  const borderSize = data.size || 'xsmall';
   const side = (typeof data === 'string') ? data : data.side || 'all';
-  const value = `solid ${theme.global.borderSize[size]} ${color}`;
+  const value = `solid ${theme.global.borderSize[borderSize]} ${color}`;
   if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
-    return `border-${data}: ${value};`;
+    style = `border-${side}: ${value};`;
   } else if (side === 'horizontal') {
-    return `
+    style = `
       border-left: ${value};
       border-right: ${value};
     `;
   } else if (side === 'vertical') {
-    return `
+    style = `
       border-top: ${value};
       border-bottom: ${value};
     `;
+  } else {
+    style = `border: ${value};`;
   }
-  return `border: ${value};`;
+  return style;
 };
 
 const edgeStyle = (kind, data, theme) => {
@@ -192,10 +199,112 @@ const roundStyle = css`
   border-radius: ${props => ROUND_MAP[props.round] || props.theme.global.edgeSize[props.round]};
 `;
 
+const responsiveStyle = css`
+  ${props => palm(`
+    flex-direction: column;
+    flex-basis: auto;
+
+    ${props.justify === 'center' && 'align-items: stretch;'}
+    ${props.reverse && 'flex-direction: column-reverse'}
+  `)}
+  }
+`;
+
+const INITIAL_ANIMATION_STATE = {
+  fadeIn: 'opacity: 0;',
+  fadeOut: 'opacity: 1;',
+  slideDown: 'transform: translateY(-10%);',
+  slideLeft: 'transform: translateX(10%);',
+  slideRight: 'transform: translateX(-10%);',
+  slideUp: 'transform: translateY(10%);',
+  zoomIn: 'transform: scale(0.95);',
+  zoomOut: 'transform: scale(1.05);',
+};
+
+const KEYFRAMES = {
+  fadeIn: keyframes`
+    from { ${INITIAL_ANIMATION_STATE.fadeIn} }
+    to   { opacity: 1; }
+  `,
+  fadeOut: keyframes`
+    from { ${INITIAL_ANIMATION_STATE.fadeOut} }
+    to   { opacity: 0; }
+  `,
+  slideDown: keyframes`
+    from { ${INITIAL_ANIMATION_STATE.slideDown} }
+    to   { transform: none; }
+  `,
+  slideLeft: keyframes`
+    from { ${INITIAL_ANIMATION_STATE.slideLeft} }
+    to   { transform: none; }
+  `,
+  slideRight: keyframes`
+    from { ${INITIAL_ANIMATION_STATE.slideRight} }
+    to   { transform: none; }
+  `,
+  slideUp: keyframes`
+    from { ${INITIAL_ANIMATION_STATE.slideUp} }
+    to   { transform: none; }
+  `,
+  zoomIn: keyframes`
+    from { ${INITIAL_ANIMATION_STATE.zoomIn} }
+    to   { transform: none; }
+  `,
+  zoomOut: keyframes`
+    from { ${INITIAL_ANIMATION_STATE.zoomOut} }
+    to   { transform: none; }
+  `,
+};
+
+const normalizeTiming = (time, defaultTiming) => (time ? `${time / 1000.0}s` : defaultTiming);
+
+const animationObjectStyle = (animation, theme) => {
+  if (KEYFRAMES[animation.type]) {
+    return `${KEYFRAMES[animation.type]} ${normalizeTiming(animation.duration, theme.global.animation.duration)} ${normalizeTiming(animation.delay, '0s')} forwards`;
+  }
+  return '';
+};
+
+const animationItemStyle = (item, theme) => {
+  if (typeof item === 'string') {
+    return animationObjectStyle({ type: item }, theme);
+  } else if (Array.isArray(item)) {
+    return item.map(a => animationItemStyle(a, theme)).join(', ');
+  } else if (typeof item === 'object') {
+    return animationObjectStyle(item, theme);
+  }
+  return '';
+};
+
+const animationObjectInitialStyle = (animation) => {
+  if (KEYFRAMES[animation.type]) {
+    return INITIAL_ANIMATION_STATE[animation.type];
+  }
+  return '';
+};
+
+const animationInitialStyle = (item) => {
+  if (typeof item === 'string') {
+    return animationObjectInitialStyle({ type: item });
+  } else if (Array.isArray(item)) {
+    return item.map(a => animationObjectInitialStyle(a)).join('');
+  } else if (typeof item === 'object') {
+    return animationObjectInitialStyle(item);
+  }
+  return '';
+};
+
+const animationStyle = css`
+  ${props => `
+    ${animationInitialStyle(props.animation)}
+    animation: ${animationItemStyle(props.animation, props.theme)};
+  `}
+`;
+
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
 const StyledBox = styled.div`
   display: flex;
-  max-width: 100%;
+  ${props => !props.basis && 'max-width: 100%;'};
 
   ${props => props.align && alignStyle}
   ${props => props.alignContent && alignContentStyle}
@@ -213,6 +322,9 @@ const StyledBox = styled.div`
   ${props => props.round && roundStyle}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.wrap && wrapStyle}
+  ${props => props.responsive && responsiveStyle}
+  ${props => props.overflow && `overflow: ${props.overflow};`}
+  ${props => props.animation && animationStyle}
 `;
 
 export default StyledBox.extend`

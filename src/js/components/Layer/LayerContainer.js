@@ -1,116 +1,55 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 
-import PropTypes from 'prop-types';
-import deepAssign from 'deep-assign';
-import cloneDeep from 'clone-deep';
+import FocusedContainer from '../FocusedContainer';
+import { Keyboard } from '../Keyboard';
 
 import StyledLayer, { StyledContainer } from './StyledLayer';
 
-import { Keyboard } from '../Keyboard';
-
-import baseTheme from '../../themes/vanilla';
-
-import { filterByFocusable, getBodyChildElements } from '../utils/DOM';
-
 class LayerContainer extends Component {
-  static childContextTypes = {
-    theme: PropTypes.object,
-  }
-  static contextTypes = {
-    theme: PropTypes.object,
-  }
-  static defaultProps = {
-    theme: undefined,
-  }
-
-  getChildContext() {
-    const { theme } = this.props;
-    const { theme: contextTheme } = this.context;
-
-    return {
-      ...this.context,
-      theme: contextTheme || deepAssign(cloneDeep(baseTheme), theme),
-    };
-  }
-
   componentDidMount() {
-    const layerNode = findDOMNode(this.layerRef);
-    // go over all the body children to remove focus when layer is opened
-    getBodyChildElements().forEach((node) => {
-      if (!node.contains(layerNode)) {
-        node.setAttribute('aria-hidden', true);
-        // prevent children to receive focus
-        filterByFocusable(node.getElementsByTagName('*')).forEach(
-          (element) => {
-            const originalTabIndex = element.getAttribute('tabindex');
-            if (originalTabIndex) {
-              element.setAttribute('data-tabindex', originalTabIndex);
-            }
-            element.setAttribute('tabindex', -1);
-          }
-        );
-      }
-    });
-    document.body.style.overflow = 'hidden';
+    const { position } = this.props;
+    if (position !== 'hidden') {
+      this.makeLayerVisible();
+    }
+  }
+  componentWillReceiveProps({ position }) {
+    if (this.props.position !== position && position !== 'hidden') {
+      this.makeLayerVisible();
+    }
+  }
+  makeLayerVisible = () => {
+    const layerNode = findDOMNode(this.layerNodeRef);
     if (layerNode.scrollIntoView) {
       layerNode.scrollIntoView();
     }
-    layerNode.focus();
   }
-
-  componentWillUnmount() {
-    // go over all the body children to reset focus when layer is closed
-    getBodyChildElements().forEach((node) => {
-      if (!node.contains(findDOMNode(this.layerRef))) {
-        node.setAttribute('aria-hidden', false);
-
-        // reset node focus
-        filterByFocusable(node.getElementsByTagName('*')).forEach(
-          (element) => {
-            const originalTabIndex = element.getAttribute('data-tabindex');
-            if (originalTabIndex) {
-              element.setAttribute('tabindex', originalTabIndex);
-              element.removeAttribute('data-tabindex');
-            } else {
-              element.removeAttribute('tabindex', -1);
-            }
-          }
-        );
-      }
-    });
-    document.body.style.overflow = 'scroll';
-  }
-
   render() {
     const {
       children,
       onEsc,
+      plain,
+      position,
       theme,
       ...rest
     } = this.props;
 
-    const globalTheme = JSON.parse(JSON.stringify(baseTheme));
-    const localTheme = deepAssign(globalTheme, theme);
-
     return (
-      <Keyboard onEsc={onEsc}>
-        <StyledLayer
-          tabIndex='-1'
-          ref={(ref) => {
-            this.layerRef = ref;
-          }}
-          theme={localTheme}
-        >
-          <StyledContainer
-            {...rest}
-            theme={localTheme}
+      <FocusedContainer hidden={position === 'hidden'} restrictScroll={true}>
+        <Keyboard onEsc={onEsc}>
+          <StyledLayer
+            plain={plain}
+            position={position}
+            theme={theme}
             tabIndex='-1'
+            ref={(ref) => { this.layerNodeRef = ref; }}
           >
-            {children}
-          </StyledContainer>
-        </StyledLayer>
-      </Keyboard>
+            <StyledContainer {...rest} theme={theme} position={position} plain={plain}>
+              {children}
+            </StyledContainer>
+          </StyledLayer>
+        </Keyboard>
+      </FocusedContainer>
     );
   }
 }

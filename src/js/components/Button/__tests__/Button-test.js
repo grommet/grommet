@@ -2,10 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
+import { findAllByType } from '../../../utils';
+
 import { Grommet } from '../../Grommet';
 import { Button } from '../';
-
-import { findAllByType } from '../../utils';
 
 test('Button renders', () => {
   const component = renderer.create(
@@ -136,26 +136,6 @@ test('Button href renders', () => {
   const component = renderer.create(
     <Grommet>
       <Button href='test' />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Button box renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Button box={true} label='Test' onClick={() => {}} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Button box href renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Button box={true} href='test' />
     </Grommet>
   );
   const tree = component.toJSON();

@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
+import { findAllByType } from '../../../utils';
+
 import { Grommet } from '../../Grommet';
 import { RoutedAnchor } from '../';
 
-import { findAllByType } from '../../utils';
 
 test('RoutedAnchor renders', () => {
   const component = renderer.create(

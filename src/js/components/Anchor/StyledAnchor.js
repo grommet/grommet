@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, fontSize } from '../utils';
+import { focusStyle, fontSize } from '../../utils';
 
 const primaryIconLabelStyle = css`
   ${props => fontSize(props.theme.global.control.font.size, props.theme.global.spacing)}
@@ -15,7 +15,7 @@ const disabledStyle = `
 
 const StyledAnchor = styled.a`
   color: ${props =>
-    (props.grommet.dark ? props.theme.global.colors.darkBackgroundTextColor
+    (props.grommet.dark ? props.theme.global.colors.darkBackground.text
       : props.theme.anchor.color)};
   text-decoration: ${props => props.theme.anchor.textDecoration};
   cursor: pointer;

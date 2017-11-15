@@ -1,0 +1,754 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButton checked renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1 > div:first-child {
+  margin-right: 12px;
+}
+
+.c1:hover input:not([disabled]) + div {
+  border-color: #000000;
+}
+
+.c2 {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.c2:focus + div,
+.c2:focus + span {
+  border-color: #00CCEB;
+  box-shadow: 0 0 2px 2px #00CCEB;
+}
+
+.c2:focus + div > circle,
+.c2:focus + span > circle,
+.c2:focus + div > ellipse,
+.c2:focus + span > ellipse,
+.c2:focus + div > line,
+.c2:focus + span > line,
+.c2:focus + div > path,
+.c2:focus + span > path,
+.c2:focus + div > polygon,
+.c2:focus + span > polygon,
+.c2:focus + div > polyline,
+.c2:focus + span > polyline,
+.c2:focus + div > rect,
+.c2:focus + span > rect {
+  outline: #00CCEB solid 2px;
+}
+
+.c2:checked + div {
+  border-color: #865CD6;
+}
+
+.c2:checked + div > svg {
+  display: block;
+}
+
+.c2:checked + span > span {
+  left: 24px;
+  background-color: #865CD6;
+}
+
+.c3 {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  background-color: inherit;
+  border: 2px solid;
+  border-color: rgba(0,0,0,0.15);
+  border-radius: 100%;
+}
+
+.c3 > svg {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  display: none;
+  width: 24px;
+  height: 24px;
+  fill: #865CD6;
+}
+
+@media only screen and (min-width:700px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <label
+    className="c1"
+    htmlFor={undefined}
+  >
+    <div
+      className=""
+    >
+      <input
+        checked={true}
+        className="c2"
+        disabled={undefined}
+        id={undefined}
+        name={undefined}
+        onChange={undefined}
+        tabIndex="0"
+        type="checkbox"
+      />
+      <div
+        className="c3"
+      >
+        <svg
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            cx={12}
+            cy={12}
+            r={6}
+          />
+        </svg>
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioButton disabled renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1 > div:first-child {
+  margin-right: 12px;
+}
+
+.c1:hover input:not([disabled]) + div {
+  border-color: #000000;
+}
+
+.c2 {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.c2:focus + div,
+.c2:focus + span {
+  border-color: #00CCEB;
+  box-shadow: 0 0 2px 2px #00CCEB;
+}
+
+.c2:focus + div > circle,
+.c2:focus + span > circle,
+.c2:focus + div > ellipse,
+.c2:focus + span > ellipse,
+.c2:focus + div > line,
+.c2:focus + span > line,
+.c2:focus + div > path,
+.c2:focus + span > path,
+.c2:focus + div > polygon,
+.c2:focus + span > polygon,
+.c2:focus + div > polyline,
+.c2:focus + span > polyline,
+.c2:focus + div > rect,
+.c2:focus + span > rect {
+  outline: #00CCEB solid 2px;
+}
+
+.c2:checked + div {
+  border-color: #865CD6;
+}
+
+.c2:checked + div > svg {
+  display: block;
+}
+
+.c2:checked + span > span {
+  left: 24px;
+  background-color: #865CD6;
+}
+
+.c3 {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  background-color: inherit;
+  border: 2px solid;
+  border-color: rgba(0,0,0,0.15);
+  border-radius: 100%;
+}
+
+.c3 > svg {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  display: none;
+  width: 24px;
+  height: 24px;
+  fill: #865CD6;
+}
+
+@media only screen and (min-width:700px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <label
+    className="c1"
+    htmlFor={undefined}
+  >
+    <div
+      className=""
+    >
+      <input
+        checked={undefined}
+        className="c2"
+        disabled={true}
+        id={undefined}
+        name={undefined}
+        onChange={undefined}
+        tabIndex="0"
+        type="checkbox"
+      />
+      <div
+        className="c3"
+      >
+        <svg
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            cx={12}
+            cy={12}
+            r={6}
+          />
+        </svg>
+      </div>
+    </div>
+  </label>
+  <label
+    className="c1"
+    htmlFor={undefined}
+  >
+    <div
+      className=""
+    >
+      <input
+        checked={true}
+        className="c2"
+        disabled={true}
+        id={undefined}
+        name={undefined}
+        onChange={undefined}
+        tabIndex="0"
+        type="checkbox"
+      />
+      <div
+        className="c3"
+      >
+        <svg
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            cx={12}
+            cy={12}
+            r={6}
+          />
+        </svg>
+      </div>
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioButton label renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1 > div:first-child {
+  margin-right: 12px;
+}
+
+.c1:hover input:not([disabled]) + div {
+  border-color: #000000;
+}
+
+.c2 {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.c2:focus + div,
+.c2:focus + span {
+  border-color: #00CCEB;
+  box-shadow: 0 0 2px 2px #00CCEB;
+}
+
+.c2:focus + div > circle,
+.c2:focus + span > circle,
+.c2:focus + div > ellipse,
+.c2:focus + span > ellipse,
+.c2:focus + div > line,
+.c2:focus + span > line,
+.c2:focus + div > path,
+.c2:focus + span > path,
+.c2:focus + div > polygon,
+.c2:focus + span > polygon,
+.c2:focus + div > polyline,
+.c2:focus + span > polyline,
+.c2:focus + div > rect,
+.c2:focus + span > rect {
+  outline: #00CCEB solid 2px;
+}
+
+.c2:checked + div {
+  border-color: #865CD6;
+}
+
+.c2:checked + div > svg {
+  display: block;
+}
+
+.c2:checked + span > span {
+  left: 24px;
+  background-color: #865CD6;
+}
+
+.c3 {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  background-color: inherit;
+  border: 2px solid;
+  border-color: rgba(0,0,0,0.15);
+  border-radius: 100%;
+}
+
+.c3 > svg {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  display: none;
+  width: 24px;
+  height: 24px;
+  fill: #865CD6;
+}
+
+@media only screen and (min-width:700px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <label
+    className="c1"
+    htmlFor={undefined}
+  >
+    <div
+      className=""
+    >
+      <input
+        checked={undefined}
+        className="c2"
+        disabled={undefined}
+        id={undefined}
+        name={undefined}
+        onChange={undefined}
+        tabIndex="0"
+        type="checkbox"
+      />
+      <div
+        className="c3"
+      >
+        <svg
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            cx={12}
+            cy={12}
+            r={6}
+          />
+        </svg>
+      </div>
+    </div>
+    <div>
+      test label
+    </div>
+  </label>
+  <label
+    className="c1"
+    htmlFor={undefined}
+  >
+    <div
+      className=""
+    >
+      <input
+        checked={undefined}
+        className="c2"
+        disabled={undefined}
+        id={undefined}
+        name={undefined}
+        onChange={undefined}
+        tabIndex="0"
+        type="checkbox"
+      />
+      <div
+        className="c3"
+      >
+        <svg
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            cx={12}
+            cy={12}
+            r={6}
+          />
+        </svg>
+      </div>
+    </div>
+    <div>
+      test label
+    </div>
+  </label>
+</div>
+`;
+
+exports[`RadioButton renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c1 > div:first-child {
+  margin-right: 12px;
+}
+
+.c1:hover input:not([disabled]) + div {
+  border-color: #000000;
+}
+
+.c2 {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.c2:focus + div,
+.c2:focus + span {
+  border-color: #00CCEB;
+  box-shadow: 0 0 2px 2px #00CCEB;
+}
+
+.c2:focus + div > circle,
+.c2:focus + span > circle,
+.c2:focus + div > ellipse,
+.c2:focus + span > ellipse,
+.c2:focus + div > line,
+.c2:focus + span > line,
+.c2:focus + div > path,
+.c2:focus + span > path,
+.c2:focus + div > polygon,
+.c2:focus + span > polygon,
+.c2:focus + div > polyline,
+.c2:focus + span > polyline,
+.c2:focus + div > rect,
+.c2:focus + span > rect {
+  outline: #00CCEB solid 2px;
+}
+
+.c2:checked + div {
+  border-color: #865CD6;
+}
+
+.c2:checked + div > svg {
+  display: block;
+}
+
+.c2:checked + span > span {
+  left: 24px;
+  background-color: #865CD6;
+}
+
+.c3 {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  background-color: inherit;
+  border: 2px solid;
+  border-color: rgba(0,0,0,0.15);
+  border-radius: 100%;
+}
+
+.c3 > svg {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  display: none;
+  width: 24px;
+  height: 24px;
+  fill: #865CD6;
+}
+
+@media only screen and (min-width:700px) {
+  .c0 {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+}
+
+<div
+  className="c0"
+>
+  <label
+    className="c1"
+    htmlFor={undefined}
+  >
+    <div
+      className=""
+    >
+      <input
+        checked={undefined}
+        className="c2"
+        disabled={undefined}
+        id={undefined}
+        name={undefined}
+        onChange={undefined}
+        tabIndex="0"
+        type="checkbox"
+      />
+      <div
+        className="c3"
+      >
+        <svg
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            cx={12}
+            cy={12}
+            r={6}
+          />
+        </svg>
+      </div>
+    </div>
+  </label>
+  <label
+    className="c1"
+    htmlFor="test id"
+  >
+    <div
+      className=""
+    >
+      <input
+        checked={undefined}
+        className="c2"
+        disabled={undefined}
+        id="test id"
+        name="test name"
+        onChange={undefined}
+        tabIndex="0"
+        type="checkbox"
+      />
+      <div
+        className="c3"
+      >
+        <svg
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            cx={12}
+            cy={12}
+            r={6}
+          />
+        </svg>
+      </div>
+    </div>
+  </label>
+</div>
+`;

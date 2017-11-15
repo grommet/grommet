@@ -38,6 +38,7 @@ const plugins = [
     [
       { from: './README.md' },
       { from: './package.json' },
+      { from: './tools', to: 'tools' },
     ]
   ),
 ];

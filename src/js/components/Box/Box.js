@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
-import { colorForName, colorIsDark } from '../utils';
-import StyledBox from './StyledBox';
+import { colorForName, colorIsDark } from '../../utils';
 
 import { withTheme } from '../hocs';
+
+import StyledBox from './StyledBox';
 
 import doc from './doc';
 
@@ -43,11 +44,12 @@ class Box extends Component {
         grommet: { ...grommet, dark },
       };
     }
-    return undefined;
+    return {};
   }
 
   render() {
     const {
+      a11yTitle,
       tag,
       ...rest
     } = this.props;
@@ -59,7 +61,11 @@ class Box extends Component {
     }
 
     return (
-      <StyledComponent {...rest} />
+      <StyledComponent
+        aria-label={a11yTitle}
+        ref={(ref) => { this.componentRef = ref; }}
+        {...rest}
+      />
     );
   }
 }

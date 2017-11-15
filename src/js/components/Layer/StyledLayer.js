@@ -1,6 +1,13 @@
 import styled, { css } from 'styled-components';
 
-import { baseStyle, lapAndUp, palm } from '../utils';
+import { baseStyle, lapAndUp, palm } from '../../utils';
+
+const hiddenPositionStyle = css`
+  left: -100%;
+  right: 100%;
+  z-index: -1;
+  position: fixed;
+`;
 
 const StyledLayer = styled.div`
   ${baseStyle}
@@ -10,18 +17,18 @@ const StyledLayer = styled.div`
   height: 100vh;
   overflow: auto;
 
-  background-color: ${props => props.theme.layer.overlayBackgroundColor};
+  background-color: ${props => (props.plain ? 'transparent' : props.theme.layer.overlayBackgroundColor)};
 
-  ${lapAndUp(`
+  ${props => (props.position === 'hidden' ? hiddenPositionStyle : lapAndUp(`
     position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
     bottom: 0px;
-  `)}
+  `))}
 `;
 
-const leftAlignStyle = `
+const leftPositionStyle = `
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -39,7 +46,7 @@ const leftAlignStyle = `
   }
 `;
 
-const rightAlignStyle = `
+const rightPositionStyle = `
   top: 0px;
   bottom: 0px;
   right: 0px;
@@ -57,7 +64,7 @@ const rightAlignStyle = `
   }
 `;
 
-const topAlignStyle = `
+const topPositionStyle = `
   left: 50%;
   transform: translateX(-50%);
 
@@ -74,7 +81,7 @@ const topAlignStyle = `
   }
 `;
 
-const bottomAlignStyle = `
+const bottomPositionStyle = `
   bottom: 0px;
   right: 50%;
   transform: translateX(50%);
@@ -92,35 +99,40 @@ const bottomAlignStyle = `
   }
 `;
 
-function getAlignStyle(props) {
-  const ALIGN_MAP = {
-    'center': `
-      bottom: 50%;
-      right: 50%;
-      transform: translate(50%, 50%);
-      max-height: calc(100vh - ${props.theme.global.edgeSize.large});
-      max-width: calc(100vw - ${props.theme.global.edgeSize.large});
-    `,
-    'left': leftAlignStyle,
-    'right': rightAlignStyle,
-    'top': topAlignStyle,
-    'bottom': bottomAlignStyle,
-  };
-  return ALIGN_MAP[props.align] || '';
-}
+const centerPositionStyle = css`
+  bottom: 50%;
+  right: 50%;
+  animation: grow-box 0.1s forwards;
 
-const sizeStyle = css`
-  min-width: ${props => props.theme.global.size[props.size]};
+  @keyframes grow-box {
+    0% {
+      transform: translate(50%, 50%) scale(0.8);
+    }
+
+    100% {
+      transform: translate(50%, 50%) scale(1);
+    }
+  }
 `;
+
+function getPositionStyle(props) {
+  const POSITION_MAP = {
+    'bottom': bottomPositionStyle,
+    'center': centerPositionStyle,
+    'left': leftPositionStyle,
+    'right': rightPositionStyle,
+    'top': topPositionStyle,
+  };
+  return POSITION_MAP[props.position] || '';
+}
 
 export const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: ${props => props.theme.global.size.xxsmall};
+  outline: none;
 
-  ${props => props.size && sizeStyle}
-
-  background-color: ${props => props.theme.layer.backgroundColor};
+  background-color: ${props => (props.plain ? 'transparent' : props.theme.layer.backgroundColor)};
 
   ${palm(`
     min-height: 100%;
@@ -132,10 +144,9 @@ export const StyledContainer = styled.div`
     max-height: 100%;
     max-width: 100%;
     overflow: auto;
-    outline: none;
-    border-radius: ${props.theme.layer.border.radius};
+    border-radius: ${props.plain ? 'none' : props.theme.layer.border.radius};
 
-    ${getAlignStyle(props)}
+    ${getPositionStyle(props)}
   `)}
 `;
 
