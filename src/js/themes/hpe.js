@@ -56,4 +56,12 @@ export default deepFreeze({
     },
     extend: 'letter-spacing: 0.04167em;',
   },
+  clock: {
+    second: {
+      color: {
+        day: '#01a982',
+        night: '#01a982',
+      },
+    },
+  },
 });
