@@ -143,12 +143,12 @@ const borderStyle = (data, theme) => {
   const value = `solid ${theme.global.borderSize[borderSize]} ${color}`;
   if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
     style = `border-${side}: ${value};`;
-  } else if (side === 'horizontal') {
+  } else if (side === 'vertical') {
     style = `
       border-left: ${value};
       border-right: ${value};
     `;
-  } else if (side === 'vertical') {
+  } else if (side === 'horizontal') {
     style = `
       border-top: ${value};
       border-bottom: ${value};
