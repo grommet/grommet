@@ -1081,8 +1081,8 @@ exports[`Box border renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  border-left: solid 1px rgba(0,0,0,0.15);
-  border-right: solid 1px rgba(0,0,0,0.15);
+  border-top: solid 1px rgba(0,0,0,0.15);
+  border-bottom: solid 1px rgba(0,0,0,0.15);
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -1095,8 +1095,8 @@ exports[`Box border renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.15);
-  border-bottom: solid 1px rgba(0,0,0,0.15);
+  border-left: solid 1px rgba(0,0,0,0.15);
+  border-right: solid 1px rgba(0,0,0,0.15);
   min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
