@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropButton closes 1`] = `
+<button
+  class="StyledButton-qbvYY brNyWU"
+  tabindex="0"
+  aria-label="Open Drop"
+  type="button"
+>
+  <input />
+</button>
+`;
+
+exports[`DropButton closes 2`] = `
+<div
+  id="drop-contents"
+>
+  drop contents
+</div>
+`;
+
+exports[`DropButton mounts 1`] = `
+<button
+  class="StyledButton-qbvYY brNyWU"
+  tabindex="0"
+  aria-label="Open Drop"
+  type="button"
+>
+  <input />
+</button>
+`;
+
+exports[`DropButton mounts 2`] = `
+<div
+  id="drop-contents"
+>
+  drop contents
+</div>
+`;
+
+exports[`DropButton mounts 3`] = `
+<button
+  class="StyledButton-qbvYY brNyWU"
+  tabindex="-1"
+  aria-label="Open Drop"
+  type="button"
+  data-g-tabindex="0"
+  id="test"
+  open=""
+>
+  <input
+    tabindex="-1"
+  />
+</button>
+`;
+
+exports[`DropButton mounts 4`] = `
+<div
+  id="drop-contents"
+>
+  drop contents
+</div>
+`;
