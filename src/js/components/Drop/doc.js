@@ -20,10 +20,8 @@ export default (Drop) => {
     }).description(
       'How to align the drop with respect to the target element.'
     ).defaultValue({
-      defaultProp: {
-        top: 'top',
-        left: 'left',
-      },
+      top: 'top',
+      left: 'left',
     }),
     control: PropTypes.object.description(
       'Target container where the drop will be aligned.'

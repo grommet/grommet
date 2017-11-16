@@ -791,8 +791,7 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-basis: 96px;
-  -ms-flex-basis: 96px;
+  -ms-flex-preferred-size: 96px;
   flex-basis: 96px;
 }
 
@@ -805,8 +804,7 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-basis: 192px;
-  -ms-flex-basis: 192px;
+  -ms-flex-preferred-size: 192px;
   flex-basis: 192px;
 }
 
@@ -819,8 +817,7 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-basis: 384px;
-  -ms-flex-basis: 384px;
+  -ms-flex-preferred-size: 384px;
   flex-basis: 384px;
 }
 
@@ -833,8 +830,7 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-basis: 768px;
-  -ms-flex-basis: 768px;
+  -ms-flex-preferred-size: 768px;
   flex-basis: 768px;
 }
 
@@ -847,8 +843,7 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-basis: 1152px;
-  -ms-flex-basis: 1152px;
+  -ms-flex-preferred-size: 1152px;
   flex-basis: 1152px;
 }
 
@@ -861,8 +856,7 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-basis: 100%;
-  -ms-flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
 }
 
@@ -875,8 +869,7 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-basis: 50%;
-  -ms-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
 }
 
@@ -889,8 +882,7 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-basis: 33.33%;
-  -ms-flex-basis: 33.33%;
+  -ms-flex-preferred-size: 33.33%;
   flex-basis: 33.33%;
 }
 
@@ -903,8 +895,7 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-basis: 66.66%;
-  -ms-flex-basis: 66.66%;
+  -ms-flex-preferred-size: 66.66%;
   flex-basis: 66.66%;
 }
 
@@ -917,8 +908,7 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-basis: 25%;
-  -ms-flex-basis: 25%;
+  -ms-flex-preferred-size: 25%;
   flex-basis: 25%;
 }
 
@@ -931,8 +921,7 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-flex-basis: 75%;
-  -ms-flex-basis: 75%;
+  -ms-flex-preferred-size: 75%;
   flex-basis: 75%;
 }
 
