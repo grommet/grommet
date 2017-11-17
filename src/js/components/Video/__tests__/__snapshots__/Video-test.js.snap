@@ -248,18 +248,6 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .c5 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -783,18 +771,6 @@ exports[`Video controls renders 1`] = `
 
 .c2::cue {
   background: rgba(0,0,0,0.7);
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 @media only screen and (min-width:700px) {
@@ -1474,18 +1450,6 @@ exports[`Video fit renders 1`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .c5 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -2147,18 +2111,6 @@ exports[`Video loop renders 1`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .c5 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -2623,18 +2575,6 @@ exports[`Video mute renders 1`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .c5 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -3096,18 +3036,6 @@ exports[`Video renders 1`] = `
 
 .c2::cue {
   background: rgba(0,0,0,0.7);
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 @media only screen and (min-width:700px) {

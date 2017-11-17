@@ -58,18 +58,6 @@ exports[`Button accent renders 1`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -161,18 +149,6 @@ exports[`Button critical renders 1`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -247,18 +223,6 @@ exports[`Button disabled renders 1`] = `
   font-size: 1.1875rem;
   line-height: 24px;
   padding: 10px 10px;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 @media only screen and (min-width:700px) {
@@ -347,18 +311,6 @@ exports[`Button focus renders 1`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -431,18 +383,6 @@ exports[`Button hoverIndicator as object renders 1`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -508,18 +448,6 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
 .c1:hover {
   background-color: rgba(134,92,214,0.3);
   color: #000000;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 @media only screen and (min-width:700px) {
@@ -591,18 +519,6 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -668,18 +584,6 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
 .c1:hover {
   background-color: rgba(221,221,221,0.5);
   color: #000000;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 @media only screen and (min-width:700px) {
@@ -751,18 +655,6 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -831,18 +723,6 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -908,18 +788,6 @@ exports[`Button hoverIndicator renders 1`] = `
 .c1:hover {
   background-color: rgba(221,221,221,0.5);
   color: #000000;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 @media only screen and (min-width:700px) {
@@ -1002,18 +870,6 @@ exports[`Button href renders 1`] = `
   stroke: #000000;
   -webkit-transition: none;
   transition: none;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 @media only screen and (min-width:700px) {
@@ -1110,18 +966,6 @@ exports[`Button icon label renders 1`] = `
   stroke: #000000;
   -webkit-transition: none;
   transition: none;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 @media only screen and (min-width:700px) {
@@ -1223,18 +1067,6 @@ exports[`Button primary renders 1`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -1322,18 +1154,6 @@ exports[`Button renders 1`] = `
   stroke: #000000;
   -webkit-transition: none;
   transition: none;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 @media only screen and (min-width:700px) {
@@ -1439,18 +1259,6 @@ exports[`Button reverse icon label renders 1`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -1548,18 +1356,6 @@ exports[`Button secondary renders 1`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -1640,18 +1436,6 @@ exports[`Button warns about invalid icon render 1`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -1721,18 +1505,6 @@ exports[`Button warns about invalid label render 1`] = `
   color: inherit;
   border: none;
   padding: 0;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 @media only screen and (min-width:700px) {
