@@ -111,18 +111,6 @@ exports[`RadioButton checked renders 1`] = `
   fill: #865CD6;
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
 <div
   className="c0"
 >
@@ -271,18 +259,6 @@ exports[`RadioButton disabled renders 1`] = `
   width: 24px;
   height: 24px;
   fill: #865CD6;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -466,18 +442,6 @@ exports[`RadioButton label renders 1`] = `
   width: 24px;
   height: 24px;
   fill: #865CD6;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -667,18 +631,6 @@ exports[`RadioButton renders 1`] = `
   width: 24px;
   height: 24px;
   fill: #865CD6;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div

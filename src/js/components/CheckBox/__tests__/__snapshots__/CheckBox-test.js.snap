@@ -113,18 +113,6 @@ exports[`CheckBox checked renders 1`] = `
   stroke: #865CD6;
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
 <div
   className="c0"
 >
@@ -274,18 +262,6 @@ exports[`CheckBox disabled renders 1`] = `
   height: 24px;
   stroke-width: 4px;
   stroke: #865CD6;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -474,18 +450,6 @@ exports[`CheckBox label renders 1`] = `
   height: 24px;
   stroke-width: 4px;
   stroke: #865CD6;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -677,18 +641,6 @@ exports[`CheckBox renders 1`] = `
   stroke: #865CD6;
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
 <div
   className="c0"
 >
@@ -872,18 +824,6 @@ exports[`CheckBox reverse renders 1`] = `
   stroke: #865CD6;
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
 <div
   className="c0"
 >
@@ -1035,18 +975,6 @@ exports[`CheckBox toggle renders 1`] = `
   height: 24px;
   background-color: #d9d9d9;
   border-radius: 24px;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div

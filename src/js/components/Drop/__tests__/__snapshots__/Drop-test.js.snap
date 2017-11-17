@@ -12,19 +12,7 @@ exports[`Drop aligns left right top bottom 1`] = `
 `;
 
 exports[`Drop aligns left right top bottom 2`] = `
-"@media only screen and (min-width:700px) {
-  .gNdtBf {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-
+"
 
 .jMwfOf {
   font-family: 'Work Sans',Arial,sans-serif;
@@ -72,19 +60,7 @@ exports[`Drop aligns right left top top 1`] = `
 `;
 
 exports[`Drop aligns right left top top 2`] = `
-"@media only screen and (min-width:700px) {
-  .gNdtBf {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-
+"
 
 .loJbGv {
   font-family: 'Work Sans',Arial,sans-serif;
@@ -132,19 +108,7 @@ exports[`Drop aligns right right bottom top 1`] = `
 `;
 
 exports[`Drop aligns right right bottom top 2`] = `
-"@media only screen and (min-width:700px) {
-  .gNdtBf {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-
+"
 
 .cmxywS {
   font-family: 'Work Sans',Arial,sans-serif;
@@ -192,19 +156,7 @@ exports[`Drop aligns right right bottom top 3`] = `
 `;
 
 exports[`Drop aligns right right bottom top 4`] = `
-"@media only screen and (min-width:700px) {
-  .gNdtBf {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-
+"
 
 .cmxywS {
   font-family: 'Work Sans',Arial,sans-serif;
@@ -252,19 +204,7 @@ exports[`Drop aligns skips left random 1`] = `
 `;
 
 exports[`Drop aligns skips left random 2`] = `
-"@media only screen and (min-width:700px) {
-  .gNdtBf {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-
+"
 
 .fgHsdl {
   font-family: 'Work Sans',Arial,sans-serif;
@@ -312,19 +252,7 @@ exports[`Drop aligns skips right random 1`] = `
 `;
 
 exports[`Drop aligns skips right random 2`] = `
-"@media only screen and (min-width:700px) {
-  .gNdtBf {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-
+"
 
 .loJbGv {
   font-family: 'Work Sans',Arial,sans-serif;
@@ -372,19 +300,7 @@ exports[`Drop mounts 1`] = `
 `;
 
 exports[`Drop mounts 2`] = `
-"@media only screen and (min-width:700px) {
-  .gNdtBf {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-
+"
 
 .jMwfOf {
   font-family: 'Work Sans',Arial,sans-serif;
@@ -432,19 +348,7 @@ exports[`Drop resizes 1`] = `
 `;
 
 exports[`Drop resizes 2`] = `
-"@media only screen and (min-width:700px) {
-  .gNdtBf {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-
+"
 
 .jMwfOf {
   font-family: 'Work Sans',Arial,sans-serif;
@@ -503,19 +407,7 @@ exports[`Drop restrict focus 2`] = `
 `;
 
 exports[`Drop restrict focus 3`] = `
-"@media only screen and (min-width:700px) {
-  .gNdtBf {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-
+"
 
 .jMwfOf {
   font-family: 'Work Sans',Arial,sans-serif;
@@ -571,19 +463,7 @@ exports[`Drop skips invalid align 1`] = `
 `;
 
 exports[`Drop skips invalid align 2`] = `
-"@media only screen and (min-width:700px) {
-  .gNdtBf {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-
+"
 
 .jMwfOf {
   font-family: 'Work Sans',Arial,sans-serif;
@@ -621,7 +501,7 @@ exports[`Drop skips invalid align 2`] = `
 
 exports[`Drop updates 1`] = `
 <div
-  class="StyledGrommet-gKbdxL gNdtBf"
+  class="StyledGrommet-gKbdxL kDQxAS"
 >
   <input />
 </div>
