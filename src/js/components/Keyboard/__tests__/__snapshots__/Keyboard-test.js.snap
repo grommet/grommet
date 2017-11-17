@@ -18,18 +18,6 @@ exports[`Keyboard calls onKeyDown 1`] = `
   box-sizing: inherit;
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
 <div
   className="c0"
 >
@@ -57,18 +45,6 @@ exports[`Keyboard renders 1`] = `
 
 .c0 * {
   box-sizing: inherit;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div

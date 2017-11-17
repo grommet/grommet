@@ -44,18 +44,6 @@ exports[`TextInput closes suggestion drop 1`] = `
 
 exports[`TextInput closes suggestion drop 2`] = `
 "@media only screen and (min-width:700px) {
-  .gNdtBf {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .ggTDKd {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -100,7 +88,7 @@ exports[`TextInput closes suggestion drop 2`] = `
 
 exports[`TextInput closes suggestion drop 3`] = `
 <div
-  class="StyledGrommet-gKbdxL gNdtBf"
+  class="StyledGrommet-gKbdxL kDQxAS"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-gOoAsL gBrQQI"
@@ -117,7 +105,7 @@ exports[`TextInput closes suggestion drop 3`] = `
 
 exports[`TextInput handles next and previous without suggestion 1`] = `
 <div
-  class="StyledGrommet-gKbdxL gNdtBf"
+  class="StyledGrommet-gKbdxL kDQxAS"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-gOoAsL gBrQQI"
@@ -188,18 +176,6 @@ exports[`TextInput mounts with complex suggestions 1`] = `
 
 exports[`TextInput mounts with complex suggestions 2`] = `
 "@media only screen and (min-width:700px) {
-  .gNdtBf {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .ggTDKd {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -372,18 +348,6 @@ exports[`TextInput selects suggestion 1`] = `
 
 exports[`TextInput selects suggestion 2`] = `
 "@media only screen and (min-width:700px) {
-  .gNdtBf {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:700px) {
   .ggTDKd {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -428,7 +392,7 @@ exports[`TextInput selects suggestion 2`] = `
 
 exports[`TextInput selects suggestion 3`] = `
 <div
-  class="StyledGrommet-gKbdxL gNdtBf"
+  class="StyledGrommet-gKbdxL kDQxAS"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-gOoAsL gCsbgz"

@@ -172,7 +172,7 @@ exports[`Clock night renders 2`] = `
 
 exports[`Clock renders 1`] = `
 <div
-  class="StyledGrommet-gKbdxL gNdtBf"
+  class="StyledGrommet-gKbdxL kDQxAS"
 >
   <svg
     class="StyledClock-egFVkc cMDGwi"
@@ -223,7 +223,7 @@ exports[`Clock renders 1`] = `
 
 exports[`Clock renders 2`] = `
 <div
-  class="StyledGrommet-gKbdxL gNdtBf"
+  class="StyledGrommet-gKbdxL kDQxAS"
 >
   <svg
     class="StyledClock-egFVkc cMDGwi"

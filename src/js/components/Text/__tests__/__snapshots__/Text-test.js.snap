@@ -24,18 +24,6 @@ exports[`Text color renders 1`] = `
   color: #FF324D;
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
 <div
   className="c0"
 >
@@ -135,18 +123,6 @@ exports[`Text margin renders 1`] = `
   margin-right: 12px;
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
 <div
   className="c0"
 >
@@ -204,18 +180,6 @@ exports[`Text renders 1`] = `
 .c1 {
   font-size: 16px;
   line-height: 1.375;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -277,18 +241,6 @@ exports[`Text size renders 1`] = `
   line-height: 1.125;
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
 <div
   className="c0"
 >
@@ -342,18 +294,6 @@ exports[`Text tag renders 1`] = `
   line-height: 1.375;
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
 <div
   className="c0"
 >
@@ -397,18 +337,6 @@ exports[`Text textAlign renders 1`] = `
   font-size: 16px;
   line-height: 1.375;
   text-align: right;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -455,18 +383,6 @@ exports[`Text truncate renders 1`] = `
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
