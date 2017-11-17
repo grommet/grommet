@@ -3,6 +3,7 @@ import { findDOMNode } from 'react-dom';
 
 import FocusedContainer from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
+import { withTheme } from '../hocs';
 
 import StyledLayer, { StyledContainer } from './StyledLayer';
 
@@ -54,4 +55,4 @@ class LayerContainer extends Component {
   }
 }
 
-export default LayerContainer;
+export default withTheme(LayerContainer);

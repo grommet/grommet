@@ -1,0 +1,691 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layer aligns bottom 1`] = `
+<div
+  class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+  id="bottom-test"
+>
+  This is a layer
+</div>
+`;
+
+exports[`Layer aligns bottom 2`] = `
+"
+
+.cuhhFF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  outline: none;
+  background-color: #FFFFFF;
+}
+
+@media only screen and (max-width:699px) {
+  .cuhhFF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cuhhFF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    -webkit-animation: slide-left 0.2s ease-in-out forwards;
+    animation: slide-left 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+}
+
+@media only screen and (min-width:700px) {
+  .cQEoYc {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}"
+`;
+
+exports[`Layer aligns left 1`] = `
+<div
+  class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+  id="left-test"
+>
+  This is a layer
+</div>
+`;
+
+exports[`Layer aligns left 2`] = `
+"
+
+.cuhhFF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  outline: none;
+  background-color: #FFFFFF;
+}
+
+@media only screen and (max-width:699px) {
+  .cuhhFF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cuhhFF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    -webkit-animation: slide-left 0.2s ease-in-out forwards;
+    animation: slide-left 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+}
+
+@media only screen and (min-width:700px) {
+  .cQEoYc {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}"
+`;
+
+exports[`Layer aligns right 1`] = `
+<div
+  class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+  id="right-test"
+>
+  This is a layer
+</div>
+`;
+
+exports[`Layer aligns right 2`] = `
+"
+
+.cuhhFF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  outline: none;
+  background-color: #FFFFFF;
+}
+
+@media only screen and (max-width:699px) {
+  .cuhhFF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cuhhFF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    -webkit-animation: slide-left 0.2s ease-in-out forwards;
+    animation: slide-left 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+}
+
+@media only screen and (min-width:700px) {
+  .cQEoYc {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}"
+`;
+
+exports[`Layer aligns top 1`] = `
+<div
+  class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+  id="top-test"
+>
+  This is a layer
+</div>
+`;
+
+exports[`Layer aligns top 2`] = `
+"
+
+.cuhhFF {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  outline: none;
+  background-color: #FFFFFF;
+}
+
+@media only screen and (max-width:699px) {
+  .cuhhFF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cuhhFF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    -webkit-animation: slide-left 0.2s ease-in-out forwards;
+    animation: slide-left 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+}
+
+@media only screen and (min-width:700px) {
+  .cQEoYc {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}"
+`;
+
+exports[`Layer hides 1`] = `
+<div
+  class="StyledLayer__StyledContainer-iKmEpv duLPUq"
+  id="hidden-test"
+>
+  This is a layer
+</div>
+`;
+
+exports[`Layer hides 2`] = `
+"
+
+@media only screen and (max-width:699px) {
+  .cuhhFF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cuhhFF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    -webkit-animation: slide-left 0.2s ease-in-out forwards;
+    animation: slide-left 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+}
+
+.duLPUq {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  outline: none;
+  background-color: #FFFFFF;
+}
+
+@media only screen and (max-width:699px) {
+  .duLPUq {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .duLPUq {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cQEoYc {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}"
+`;
+
+exports[`Layer hides 3`] = `
+<div
+  class="StyledLayer__StyledContainer-iKmEpv duLPUq"
+  id="hidden-test"
+>
+  This is a layer
+</div>
+`;
+
+exports[`Layer hides 4`] = `
+"
+
+@media only screen and (max-width:699px) {
+  .cuhhFF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cuhhFF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    -webkit-animation: slide-left 0.2s ease-in-out forwards;
+    animation: slide-left 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+}
+
+.duLPUq {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  outline: none;
+  background-color: #FFFFFF;
+}
+
+@media only screen and (max-width:699px) {
+  .duLPUq {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .duLPUq {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cQEoYc {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}"
+`;
+
+exports[`Layer is accessible 1`] = `
+<div
+  id="body-node"
+>
+  <input
+    tabindex="-1"
+  />
+  <input
+    tabindex="-1"
+    data-g-tabindex="10"
+  />
+</div>
+`;
+
+exports[`Layer is accessible 2`] = `
+<div
+  id="layer-node"
+>
+  This is a layer
+  <input />
+</div>
+`;
+
+exports[`Layer is accessible 3`] = `
+<div
+  id="body-node"
+>
+  <input />
+  <input
+    tabindex="10"
+  />
+</div>
+`;
+
+exports[`Layer plain renders 1`] = `
+<div
+  class="StyledLayer__StyledContainer-iKmEpv eNADdO"
+  id="plain-test"
+>
+  This is a plain layer
+</div>
+`;
+
+exports[`Layer plain renders 2`] = `
+"
+
+@media only screen and (max-width:699px) {
+  .cuhhFF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cuhhFF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    -webkit-animation: slide-left 0.2s ease-in-out forwards;
+    animation: slide-left 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .duLPUq {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .duLPUq {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+  }
+}
+
+.eNADdO {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 48px;
+  outline: none;
+  background-color: transparent;
+}
+
+@media only screen and (max-width:699px) {
+  .eNADdO {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .eNADdO {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: none;
+    bottom: 50%;
+    right: 50%;
+    -webkit-animation: grow-box 0.1s forwards;
+    animation: grow-box 0.1s forwards;
+  }
+
+@-webkit-keyframes grow-box {
+    0% {
+      -webkit-transform: translate(50%,50%) scale(0.8);
+      -ms-transform: translate(50%,50%) scale(0.8);
+      transform: translate(50%,50%) scale(0.8);
+    }
+
+    100% {
+      -webkit-transform: translate(50%,50%) scale(1);
+      -ms-transform: translate(50%,50%) scale(1);
+      transform: translate(50%,50%) scale(1);
+    }
+}
+
+@keyframes grow-box {
+    0% {
+      -webkit-transform: translate(50%,50%) scale(0.8);
+      -ms-transform: translate(50%,50%) scale(0.8);
+      transform: translate(50%,50%) scale(0.8);
+    }
+
+    100% {
+      -webkit-transform: translate(50%,50%) scale(1);
+      -ms-transform: translate(50%,50%) scale(1);
+      transform: translate(50%,50%) scale(1);
+    }
+}
+}
+
+@media only screen and (min-width:700px) {
+  .cQEoYc {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .kTyGqG {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}"
+`;

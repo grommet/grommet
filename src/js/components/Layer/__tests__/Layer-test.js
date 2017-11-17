@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import Enzyme, { mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+
+import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../../Grommet';
 import { Layer, LayerContainer } from '../';
@@ -41,35 +42,71 @@ class FakeLayer extends Component {
   }
 }
 
-describe.skip('Layer: React 16 is not supported by Enzyme yet', () => {
-  test('Layer renders', () => {
-    const component = renderer.create(
-      <Grommet>
-        <Layer align='left'>
-          This is a layer
-        </Layer>
-        <Layer align='right'>
-          This is a layer
-        </Layer>
-        <Layer align='top'>
-          This is a layer
-        </Layer>
-        <Layer align='bottom'>
-          This is a layer
-        </Layer>
-      </Grommet>
+describe('Layer', () => {
+  beforeEach(createPortal);
+
+  test('aligns left', () => {
+    mount(
+      <Layer id='left-test' position='left'>
+        This is a layer
+      </Layer>
     );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+    expectPortal('left-test').toMatchSnapshot();
   });
 
-  test('Layer mounts', () => {
-    const component = mount(<FakeLayer />);
-    expect(component.getDOMNode()).toMatchSnapshot();
-    component.unmount();
+  test('aligns right', () => {
+    mount(
+      <Layer id='right-test' position='left'>
+        This is a layer
+      </Layer>
+    );
+    expectPortal('right-test').toMatchSnapshot();
   });
 
-  test('Layer invokes onEsc', () => {
+  test('aligns top', () => {
+    mount(
+      <Layer id='top-test' position='left'>
+        This is a layer
+      </Layer>
+    );
+    expectPortal('top-test').toMatchSnapshot();
+  });
+
+  test('aligns bottom', () => {
+    mount(
+      <Layer id='bottom-test' position='left'>
+        This is a layer
+      </Layer>
+    );
+    expectPortal('bottom-test').toMatchSnapshot();
+  });
+
+  test('hides', () => {
+    const component = mount(
+      <Layer id='hidden-test' position='hidden'>
+        This is a layer
+      </Layer>
+    );
+
+    expectPortal('hidden-test').toMatchSnapshot();
+
+    component.setProps({ hidden: false });
+
+    expectPortal('hidden-test').toMatchSnapshot();
+  });
+
+  test('plain renders', () => {
+    mount(
+      <Layer id='plain-test' plain={true}>
+        This is a plain layer
+      </Layer>
+    );
+
+    expectPortal('plain-test').toMatchSnapshot();
+  });
+
+  test('invokes onEsc', () => {
     const onEsc = jest.fn();
     const component = mount(
       <Grommet>
@@ -83,7 +120,7 @@ describe.skip('Layer: React 16 is not supported by Enzyme yet', () => {
     component.unmount();
   });
 
-  test('Layer is accessible', () => {
+  test('is accessible', () => {
     // make sure to remove all body children
     document.body.innerHTML = '';
     document.body.appendChild(document.createElement('div'));
