@@ -38,12 +38,10 @@ boolean
 **messages**
 
 Custom messages for TextInput. Used for accessibility by screen readers. Defaults to `{
-  "messages": {
-    "enterSelect": "(Press Enter to Select)",
-    "suggestionsCount": "suggestions available",
-    "suggestionsExist": "This input has suggestions use arrow keys to navigate",
-    "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate"
-  }
+  "enterSelect": "(Press Enter to Select)",
+  "suggestionsCount": "suggestions available",
+  "suggestionsExist": "This input has suggestions use arrow keys to navigate",
+  "suggestionIsOpen": "Suggestions drop is open, continue to use arrow keys to navigate"
 }`.
 
 ```
