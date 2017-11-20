@@ -20,7 +20,7 @@ import { getCurrentLocale } from '../utils/Locale';
 
 const CLASS_ROOT = CSSClassnames.DATE_TIME_DROP;
 const locale = getCurrentLocale();
-moment.locale(locale)
+moment.locale(locale);
 const WEEK_DAYS = moment.weekdaysShort(true) || [
   "Sun",
   "Mon",
