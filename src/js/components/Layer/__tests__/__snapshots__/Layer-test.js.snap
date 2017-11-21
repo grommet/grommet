@@ -1,0 +1,1440 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layer aligns bottom 1`] = `
+<div
+  class="StyledLayer-EylWz cQEoYc"
+  id="bottom-test"
+  tabindex="-1"
+>
+  <div
+    class="StyledLayer__StyledContainer-iKmEpv ilWCsF"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer aligns bottom 2`] = `
+"@media only screen and (max-width:699px) {
+  .cuhhFF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cuhhFF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    -webkit-animation: slide-left 0.2s ease-in-out forwards;
+    animation: slide-left 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .jvBdNm {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .jvBdNm {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    -webkit-animation: slide-right 0.2s ease-in-out forwards;
+    animation: slide-right 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+
+@keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .hUdiMG {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .hUdiMG {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-animation: slide-down 0.2s ease-in-out forwards;
+    animation: slide-down 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .ilWCsF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .ilWCsF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    bottom: 0px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+    -webkit-animation: slide-up 0.2s ease-in-out forwards;
+    animation: slide-up 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-up {
+    0% {
+      margin-bottom: -200px;
+    }
+
+    100% {
+      margin-bottom: 0px;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+      margin-bottom: -200px;
+    }
+
+    100% {
+      margin-bottom: 0px;
+    }
+}
+}
+
+
+
+.cQEoYc {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.cQEoYc * {
+  box-sizing: inherit;
+}
+
+@media only screen and (min-width:700px) {
+  .cQEoYc {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}"
+`;
+
+exports[`Layer aligns left 1`] = `
+<div
+  class="StyledLayer-EylWz cQEoYc"
+  id="left-test"
+  tabindex="-1"
+>
+  <div
+    class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer aligns left 2`] = `
+"@media only screen and (max-width:699px) {
+  .cuhhFF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cuhhFF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    -webkit-animation: slide-left 0.2s ease-in-out forwards;
+    animation: slide-left 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+}
+
+
+
+.cQEoYc {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.cQEoYc * {
+  box-sizing: inherit;
+}
+
+@media only screen and (min-width:700px) {
+  .cQEoYc {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}"
+`;
+
+exports[`Layer aligns right 1`] = `
+<div
+  class="StyledLayer-EylWz cQEoYc"
+  id="right-test"
+  tabindex="-1"
+>
+  <div
+    class="StyledLayer__StyledContainer-iKmEpv jvBdNm"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer aligns right 2`] = `
+"@media only screen and (max-width:699px) {
+  .cuhhFF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cuhhFF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    -webkit-animation: slide-left 0.2s ease-in-out forwards;
+    animation: slide-left 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .jvBdNm {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .jvBdNm {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    -webkit-animation: slide-right 0.2s ease-in-out forwards;
+    animation: slide-right 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+
+@keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+}
+
+
+
+.cQEoYc {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.cQEoYc * {
+  box-sizing: inherit;
+}
+
+@media only screen and (min-width:700px) {
+  .cQEoYc {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}"
+`;
+
+exports[`Layer aligns top 1`] = `
+<div
+  class="StyledLayer-EylWz cQEoYc"
+  id="top-test"
+  tabindex="-1"
+>
+  <div
+    class="StyledLayer__StyledContainer-iKmEpv hUdiMG"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer aligns top 2`] = `
+"@media only screen and (max-width:699px) {
+  .cuhhFF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cuhhFF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    -webkit-animation: slide-left 0.2s ease-in-out forwards;
+    animation: slide-left 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .jvBdNm {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .jvBdNm {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    -webkit-animation: slide-right 0.2s ease-in-out forwards;
+    animation: slide-right 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+
+@keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .hUdiMG {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .hUdiMG {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-animation: slide-down 0.2s ease-in-out forwards;
+    animation: slide-down 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+}
+
+
+
+.cQEoYc {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.cQEoYc * {
+  box-sizing: inherit;
+}
+
+@media only screen and (min-width:700px) {
+  .cQEoYc {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}"
+`;
+
+exports[`Layer hides 1`] = `
+<div
+  class="StyledLayer-EylWz dTHcZQ"
+  id="hidden-test"
+  tabindex="-1"
+>
+  <div
+    class="StyledLayer__StyledContainer-iKmEpv duLPUq"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer hides 2`] = `
+"@media only screen and (max-width:699px) {
+  .cuhhFF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cuhhFF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    -webkit-animation: slide-left 0.2s ease-in-out forwards;
+    animation: slide-left 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .jvBdNm {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .jvBdNm {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    -webkit-animation: slide-right 0.2s ease-in-out forwards;
+    animation: slide-right 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+
+@keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .hUdiMG {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .hUdiMG {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-animation: slide-down 0.2s ease-in-out forwards;
+    animation: slide-down 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .ilWCsF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .ilWCsF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    bottom: 0px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+    -webkit-animation: slide-up 0.2s ease-in-out forwards;
+    animation: slide-up 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-up {
+    0% {
+      margin-bottom: -200px;
+    }
+
+    100% {
+      margin-bottom: 0px;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+      margin-bottom: -200px;
+    }
+
+    100% {
+      margin-bottom: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .duLPUq {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .duLPUq {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+  }
+}
+
+
+
+@media only screen and (min-width:700px) {
+  .cQEoYc {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+.dTHcZQ {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  left: -100%;
+  right: 100%;
+  z-index: -1;
+  position: fixed;
+}
+
+.dTHcZQ * {
+  box-sizing: inherit;
+}"
+`;
+
+exports[`Layer hides 3`] = `
+<div
+  class="StyledLayer-EylWz dTHcZQ"
+  id="hidden-test"
+  tabindex="-1"
+>
+  <div
+    class="StyledLayer__StyledContainer-iKmEpv duLPUq"
+  >
+    This is a layer
+  </div>
+</div>
+`;
+
+exports[`Layer hides 4`] = `
+"@media only screen and (max-width:699px) {
+  .cuhhFF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cuhhFF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    -webkit-animation: slide-left 0.2s ease-in-out forwards;
+    animation: slide-left 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .jvBdNm {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .jvBdNm {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    -webkit-animation: slide-right 0.2s ease-in-out forwards;
+    animation: slide-right 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+
+@keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .hUdiMG {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .hUdiMG {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-animation: slide-down 0.2s ease-in-out forwards;
+    animation: slide-down 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .ilWCsF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .ilWCsF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    bottom: 0px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+    -webkit-animation: slide-up 0.2s ease-in-out forwards;
+    animation: slide-up 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-up {
+    0% {
+      margin-bottom: -200px;
+    }
+
+    100% {
+      margin-bottom: 0px;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+      margin-bottom: -200px;
+    }
+
+    100% {
+      margin-bottom: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .duLPUq {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .duLPUq {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+  }
+}
+
+
+
+@media only screen and (min-width:700px) {
+  .cQEoYc {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+.dTHcZQ {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  left: -100%;
+  right: 100%;
+  z-index: -1;
+  position: fixed;
+}
+
+.dTHcZQ * {
+  box-sizing: inherit;
+}"
+`;
+
+exports[`Layer is accessible 1`] = `
+<div
+  id="body-node"
+>
+  <input
+    tabindex="-1"
+  />
+  <input
+    tabindex="-1"
+    data-g-tabindex="10"
+  />
+</div>
+`;
+
+exports[`Layer is accessible 2`] = `
+<div
+  id="layer-node"
+>
+  This is a layer
+  <input />
+</div>
+`;
+
+exports[`Layer is accessible 3`] = `
+<div
+  id="body-node"
+>
+  <input />
+  <input
+    tabindex="10"
+  />
+</div>
+`;
+
+exports[`Layer plain renders 1`] = `
+<div
+  class="StyledLayer-EylWz kTyGqG"
+  id="plain-test"
+  tabindex="-1"
+>
+  <div
+    class="StyledLayer__StyledContainer-iKmEpv eNADdO"
+  >
+    This is a plain layer
+  </div>
+</div>
+`;
+
+exports[`Layer plain renders 2`] = `
+"@media only screen and (max-width:699px) {
+  .cuhhFF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cuhhFF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    -webkit-animation: slide-left 0.2s ease-in-out forwards;
+    animation: slide-left 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+
+@keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .jvBdNm {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .jvBdNm {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    -webkit-animation: slide-right 0.2s ease-in-out forwards;
+    animation: slide-right 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+
+@keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .hUdiMG {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .hUdiMG {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-animation: slide-down 0.2s ease-in-out forwards;
+    animation: slide-down 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .ilWCsF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .ilWCsF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    bottom: 0px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+    -webkit-animation: slide-up 0.2s ease-in-out forwards;
+    animation: slide-up 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-up {
+    0% {
+      margin-bottom: -200px;
+    }
+
+    100% {
+      margin-bottom: 0px;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+      margin-bottom: -200px;
+    }
+
+    100% {
+      margin-bottom: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .duLPUq {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .duLPUq {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eNADdO {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .eNADdO {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: none;
+    bottom: 50%;
+    right: 50%;
+    -webkit-animation: grow-box 0.1s forwards;
+    animation: grow-box 0.1s forwards;
+  }
+
+@-webkit-keyframes grow-box {
+    0% {
+      -webkit-transform: translate(50%,50%) scale(0.8);
+      -ms-transform: translate(50%,50%) scale(0.8);
+      transform: translate(50%,50%) scale(0.8);
+    }
+
+    100% {
+      -webkit-transform: translate(50%,50%) scale(1);
+      -ms-transform: translate(50%,50%) scale(1);
+      transform: translate(50%,50%) scale(1);
+    }
+}
+
+@keyframes grow-box {
+    0% {
+      -webkit-transform: translate(50%,50%) scale(0.8);
+      -ms-transform: translate(50%,50%) scale(0.8);
+      transform: translate(50%,50%) scale(0.8);
+    }
+
+    100% {
+      -webkit-transform: translate(50%,50%) scale(1);
+      -ms-transform: translate(50%,50%) scale(1);
+      transform: translate(50%,50%) scale(1);
+    }
+}
+}
+
+
+
+@media only screen and (min-width:700px) {
+  .cQEoYc {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+.kTyGqG {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: transparent;
+}
+
+.kTyGqG * {
+  box-sizing: inherit;
+}
+
+@media only screen and (min-width:700px) {
+  .kTyGqG {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}"
+`;

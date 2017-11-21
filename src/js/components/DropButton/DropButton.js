@@ -8,25 +8,17 @@ import { withTheme } from '../hocs';
 import doc from './doc';
 
 class DropButton extends Component {
-  state = {
-    showDrop: false,
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      showDrop: props.open,
+    };
   }
 
   componentWillReceiveProps({ open }) {
     const { showDrop } = this.state;
     if (open !== showDrop) {
       this.setState({ showDrop: open });
-    }
-  }
-
-  componentDidMount() {
-    const { open } = this.props;
-    // if the drop is open during first mount we need to call render again to retreive
-    // the right ref
-    if (open) {
-      /* eslint-disable react/no-did-mount-set-state */
-      this.setState({ showDrop: true });
-      /* eslint-enable react/no-did-mount-set-state */
     }
   }
 

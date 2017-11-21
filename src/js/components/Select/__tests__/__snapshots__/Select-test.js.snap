@@ -1,0 +1,788 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select closes drop on esc 1`] = `
+<div
+  class="StyledBox-YaZNy iwozFa"
+  id="select-drop__select"
+  direction="column"
+>
+  <div
+    class="StyledBox-YaZNy gOlKzK"
+    overflow="auto"
+    direction="column"
+  >
+    <div
+      class="StyledBox-YaZNy fyicDn"
+      role="menubar"
+      tabindex="-1"
+      direction="column"
+    >
+      <button
+        class="StyledButton-qbvYY eIJSCA"
+        tabindex="0"
+        role="menuitem"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy eBrdsI"
+          direction="column"
+        >
+          <span
+            class="StyledText-dmaDlZ gTMzGY"
+          >
+            one
+          </span>
+        </div>
+      </button>
+      <button
+        class="StyledButton-qbvYY eIJSCA"
+        tabindex="0"
+        role="menuitem"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy eBrdsI"
+          direction="column"
+        >
+          <span
+            class="StyledText-dmaDlZ gTMzGY"
+          >
+            two
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select closes drop on esc 2`] = `
+"
+
+.iwozFa {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media only screen and (min-width:700px) {
+  .brNyWU {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .eIJSCA {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}"
+`;
+
+exports[`Select closes drop on esc 3`] = `
+<button
+  class="StyledButton-qbvYY brNyWU"
+  aria-label="undefined"
+  type="button"
+>
+  <div
+    class="StyledBox-YaZNy kohHuX"
+    aria-hidden="true"
+    direction="row"
+  >
+    <div
+      class="StyledTextInput__StyledTextInputContainer-gOoAsL gCsbgz"
+    >
+      <input
+        type="text"
+        class="StyledTextInput-bqUxsy jwHYRf"
+        id="select"
+        autocomplete="off"
+        tabindex="-1"
+        readonly=""
+      />
+    </div>
+    <div
+      class="StyledBox-YaZNy btLmFB"
+      direction="column"
+    >
+      <svg
+        class="StyledIcon-hcpUvT fAeuhQ"
+        width="24px"
+        height="24px"
+        viewBox="0 0 24 24"
+        version="1.1"
+        role="img"
+        aria-label="FormDown"
+      >
+        <polyline
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+          points="18 9 12 15 6 9"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select closes drop on esc 4`] = `
+<button
+  class="StyledButton-qbvYY brNyWU"
+  aria-label="undefined"
+  type="button"
+>
+  <div
+    class="StyledBox-YaZNy kohHuX"
+    aria-hidden="true"
+    direction="row"
+  >
+    <div
+      class="StyledTextInput__StyledTextInputContainer-gOoAsL gCsbgz"
+    >
+      <input
+        type="text"
+        class="StyledTextInput-bqUxsy jwHYRf"
+        id="select"
+        autocomplete="off"
+        tabindex="-1"
+        readonly=""
+      />
+    </div>
+    <div
+      class="StyledBox-YaZNy btLmFB"
+      direction="column"
+    >
+      <svg
+        class="StyledIcon-hcpUvT fAeuhQ"
+        width="24px"
+        height="24px"
+        viewBox="0 0 24 24"
+        version="1.1"
+        role="img"
+        aria-label="FormDown"
+      >
+        <polyline
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+          points="18 9 12 15 6 9"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select mounts 1`] = `
+<button
+  class="StyledButton-qbvYY brNyWU"
+  aria-label="undefined"
+  type="button"
+>
+  <div
+    class="StyledBox-YaZNy kohHuX"
+    aria-hidden="true"
+    direction="row"
+  >
+    <div
+      class="StyledTextInput__StyledTextInputContainer-gOoAsL gCsbgz"
+    >
+      <input
+        type="text"
+        class="StyledTextInput-bqUxsy jwHYRf"
+        id="select"
+        autocomplete="off"
+        tabindex="-1"
+        readonly=""
+      />
+    </div>
+    <div
+      class="StyledBox-YaZNy btLmFB"
+      direction="column"
+    >
+      <svg
+        class="StyledIcon-hcpUvT fAeuhQ"
+        width="24px"
+        height="24px"
+        viewBox="0 0 24 24"
+        version="1.1"
+        role="img"
+        aria-label="FormDown"
+      >
+        <polyline
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+          points="18 9 12 15 6 9"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select mounts 2`] = `
+<button
+  class="StyledButton-qbvYY brNyWU"
+  aria-label="undefined"
+  type="button"
+>
+  <div
+    class="StyledBox-YaZNy kohHuX"
+    aria-hidden="true"
+    direction="row"
+  >
+    <div
+      class="StyledTextInput__StyledTextInputContainer-gOoAsL gCsbgz"
+    >
+      <input
+        type="text"
+        class="StyledTextInput-bqUxsy jwHYRf"
+        id="select"
+        autocomplete="off"
+        tabindex="-1"
+        readonly=""
+      />
+    </div>
+    <div
+      class="StyledBox-YaZNy btLmFB"
+      direction="column"
+    >
+      <svg
+        class="StyledIcon-hcpUvT fAeuhQ"
+        width="24px"
+        height="24px"
+        viewBox="0 0 24 24"
+        version="1.1"
+        role="img"
+        aria-label="FormDown"
+      >
+        <polyline
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+          points="18 9 12 15 6 9"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select mounts 3`] = `
+<div
+  class="StyledBox-YaZNy iwozFa"
+  id="select-drop__select"
+  direction="column"
+>
+  <div
+    class="StyledBox-YaZNy gOlKzK"
+    overflow="auto"
+    direction="column"
+  >
+    <div
+      class="StyledBox-YaZNy fyicDn"
+      role="menubar"
+      tabindex="-1"
+      direction="column"
+    >
+      <button
+        class="StyledButton-qbvYY eIJSCA"
+        tabindex="0"
+        role="menuitem"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy eBrdsI"
+          direction="column"
+        >
+          <span
+            class="StyledText-dmaDlZ gTMzGY"
+          >
+            one
+          </span>
+        </div>
+      </button>
+      <button
+        class="StyledButton-qbvYY eIJSCA"
+        tabindex="0"
+        role="menuitem"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy eBrdsI"
+          direction="column"
+        >
+          <span
+            class="StyledText-dmaDlZ gTMzGY"
+          >
+            two
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select mounts 4`] = `
+"
+
+.iwozFa {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media only screen and (min-width:700px) {
+  .brNyWU {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .eIJSCA {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}"
+`;
+
+exports[`Select mounts 5`] = `
+<div
+  class="StyledBox-YaZNy fyicDn"
+  role="menubar"
+  tabindex="-1"
+  direction="column"
+>
+  <button
+    class="StyledButton-qbvYY eIJSCA"
+    tabindex="0"
+    role="menuitem"
+    type="button"
+  >
+    <div
+      class="StyledBox-YaZNy eBrdsI"
+      direction="column"
+    >
+      <span
+        class="StyledText-dmaDlZ gTMzGY"
+      >
+        one
+      </span>
+    </div>
+  </button>
+  <button
+    class="StyledButton-qbvYY eIJSCA"
+    tabindex="0"
+    role="menuitem"
+    type="button"
+  >
+    <div
+      class="StyledBox-YaZNy eBrdsI"
+      direction="column"
+    >
+      <span
+        class="StyledText-dmaDlZ gTMzGY"
+      >
+        two
+      </span>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Select mounts with complex options and children 1`] = `
+<button
+  class="StyledButton-qbvYY brNyWU"
+  aria-label="undefined"
+  type="button"
+>
+  <div
+    class="StyledBox-YaZNy kohHuX"
+    aria-hidden="true"
+    direction="row"
+  >
+    <div
+      class="StyledTextInput__StyledTextInputContainer-gOoAsL gCsbgz"
+    >
+      <input
+        type="text"
+        class="StyledTextInput-bqUxsy jwHYRf"
+        id="select"
+        autocomplete="off"
+        tabindex="-1"
+        readonly=""
+      />
+    </div>
+    <div
+      class="StyledBox-YaZNy btLmFB"
+      direction="column"
+    >
+      <svg
+        class="StyledIcon-hcpUvT fAeuhQ"
+        width="24px"
+        height="24px"
+        viewBox="0 0 24 24"
+        version="1.1"
+        role="img"
+        aria-label="FormDown"
+      >
+        <polyline
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+          points="18 9 12 15 6 9"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select mounts with complex options and children 2`] = `
+<button
+  class="StyledButton-qbvYY brNyWU"
+  aria-label="undefined"
+  type="button"
+>
+  <div
+    class="StyledBox-YaZNy kohHuX"
+    aria-hidden="true"
+    direction="row"
+  >
+    <div
+      class="StyledTextInput__StyledTextInputContainer-gOoAsL gCsbgz"
+    >
+      <input
+        type="text"
+        class="StyledTextInput-bqUxsy jwHYRf"
+        id="select"
+        autocomplete="off"
+        tabindex="-1"
+        readonly=""
+      />
+    </div>
+    <div
+      class="StyledBox-YaZNy btLmFB"
+      direction="column"
+    >
+      <svg
+        class="StyledIcon-hcpUvT fAeuhQ"
+        width="24px"
+        height="24px"
+        viewBox="0 0 24 24"
+        version="1.1"
+        role="img"
+        aria-label="FormDown"
+      >
+        <polyline
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+          points="18 9 12 15 6 9"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select mounts with complex options and children 3`] = `
+<div
+  class="StyledBox-YaZNy iwozFa"
+  id="select-drop__select"
+  direction="column"
+>
+  <div
+    class="StyledBox-YaZNy gOlKzK"
+    overflow="auto"
+    direction="column"
+  >
+    <div
+      class="StyledBox-YaZNy fyicDn"
+      role="menubar"
+      tabindex="-1"
+      direction="column"
+    >
+      <button
+        class="StyledButton-qbvYY eIJSCA"
+        tabindex="0"
+        role="menuitem"
+        type="button"
+      >
+        <span>
+          one
+        </span>
+      </button>
+      <button
+        class="StyledButton-qbvYY eIJSCA"
+        tabindex="0"
+        role="menuitem"
+        type="button"
+      >
+        <span>
+          two
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select mounts with complex options and children 4`] = `
+"
+
+.iwozFa {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media only screen and (min-width:700px) {
+  .brNyWU {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .eIJSCA {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}"
+`;
+
+exports[`Select mounts with search 1`] = `
+<div
+  class="StyledBox-YaZNy iwozFa"
+  id="select-drop__select"
+  direction="column"
+>
+  <div
+    class="StyledBox-YaZNy jCFdoz"
+    direction="column"
+  >
+    <div
+      class="StyledTextInput__StyledTextInputContainer-gOoAsL gCsbgz"
+    >
+      <input
+        type="search"
+        class="StyledTextInput-bqUxsy ftwfKu"
+        autocomplete="off"
+        value=""
+      />
+    </div>
+  </div>
+  <div
+    class="StyledBox-YaZNy gOlKzK"
+    overflow="auto"
+    direction="column"
+  >
+    <div
+      class="StyledBox-YaZNy fyicDn"
+      role="menubar"
+      tabindex="-1"
+      direction="column"
+    >
+      <button
+        class="StyledButton-qbvYY eIJSCA"
+        tabindex="0"
+        role="menuitem"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy eBrdsI"
+          direction="column"
+        >
+          <span
+            class="StyledText-dmaDlZ gTMzGY"
+          >
+            one
+          </span>
+        </div>
+      </button>
+      <button
+        class="StyledButton-qbvYY eIJSCA"
+        tabindex="0"
+        role="menuitem"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy eBrdsI"
+          direction="column"
+        >
+          <span
+            class="StyledText-dmaDlZ gTMzGY"
+          >
+            two
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select mounts with search 2`] = `
+"
+
+.iwozFa {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media only screen and (min-width:700px) {
+  .brNyWU {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .eIJSCA {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}"
+`;
+
+exports[`Select mounts with search 3`] = `
+<input
+  type="search"
+  class="StyledTextInput-bqUxsy ftwfKu"
+  autocomplete="off"
+  value=""
+/>
+`;
+
+exports[`Select mounts with search 4`] = `
+<div
+  class="StyledBox-YaZNy iwozFa"
+  id="select-drop__select"
+  direction="column"
+>
+  <div
+    class="StyledBox-YaZNy jCFdoz"
+    direction="column"
+  >
+    <div
+      class="StyledTextInput__StyledTextInputContainer-gOoAsL gCsbgz"
+    >
+      <input
+        type="search"
+        class="StyledTextInput-bqUxsy ftwfKu"
+        autocomplete="off"
+        value="a"
+      />
+    </div>
+  </div>
+  <div
+    class="StyledBox-YaZNy gOlKzK"
+    overflow="auto"
+    direction="column"
+  >
+    <div
+      class="StyledBox-YaZNy fyicDn"
+      role="menubar"
+      tabindex="-1"
+      direction="column"
+    >
+      <button
+        class="StyledButton-qbvYY eIJSCA"
+        tabindex="0"
+        role="menuitem"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy eBrdsI"
+          direction="column"
+        >
+          <span
+            class="StyledText-dmaDlZ gTMzGY"
+          >
+            one
+          </span>
+        </div>
+      </button>
+      <button
+        class="StyledButton-qbvYY eIJSCA"
+        tabindex="0"
+        role="menuitem"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy eBrdsI"
+          direction="column"
+        >
+          <span
+            class="StyledText-dmaDlZ gTMzGY"
+          >
+            two
+          </span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Select mounts with search 5`] = `
+"
+
+.iwozFa {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media only screen and (min-width:700px) {
+  .brNyWU {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .eIJSCA {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}"
+`;

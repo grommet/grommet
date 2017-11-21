@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 
-import { Down } from 'grommet-icons';
-
 import { debounce } from '../../utils';
 
 import { Box } from '../Box';
@@ -37,7 +35,7 @@ class SelectContainer extends Component {
   componentDidUpdate() {
     const { selectedOptionIndex } = this.state;
     const buttonNode = findDOMNode(this.optionsRef[selectedOptionIndex]);
-    if (selectedOptionIndex >= 0 && buttonNode) {
+    if (selectedOptionIndex >= 0 && buttonNode && buttonNode.scrollIntoView) {
       buttonNode.scrollIntoView();
     }
   }
@@ -83,36 +81,13 @@ class SelectContainer extends Component {
     }
   }
 
-  selectControl = () => {
-    const { placeholder, value, ...rest } = this.props;
-    delete rest.children;
-    const content = React.isValidElement(value) ? value : (
-      <TextInput
-        ref={(ref) => { this.inputRef = ref; }}
-        {...rest}
-        type='text'
-        placeholder={placeholder}
-        plain={true}
-        readOnly={true}
-        value={value}
-      />
-    );
-    return (
-      <Box align='center' direction='row' border='all'>
-        {content}
-        <Box margin={{ horizontal: 'small' }}>
-          <Down />
-        </Box>
-      </Box>
-    );
-  }
-
   render() {
     const {
       activeOptionIndex,
       background,
       children,
       dropSize,
+      id,
       name,
       onKeyDown,
       onSearch,
@@ -128,7 +103,7 @@ class SelectContainer extends Component {
         onDown={this.onNextOption}
         onKeyDown={onKeyDown}
       >
-        <Box background={background}>
+        <Box id={id ? `select-drop__${id}` : undefined} background={background}>
           {onSearch ? (
             <Box pad='xsmall'>
               <TextInput

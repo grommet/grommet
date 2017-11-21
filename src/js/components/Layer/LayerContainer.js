@@ -3,6 +3,7 @@ import { findDOMNode } from 'react-dom';
 
 import FocusedContainer from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
+import { withTheme } from '../hocs';
 
 import StyledLayer, { StyledContainer } from './StyledLayer';
 
@@ -27,6 +28,7 @@ class LayerContainer extends Component {
   render() {
     const {
       children,
+      id,
       onEsc,
       plain,
       position,
@@ -38,6 +40,7 @@ class LayerContainer extends Component {
       <FocusedContainer hidden={position === 'hidden'} restrictScroll={true}>
         <Keyboard onEsc={onEsc}>
           <StyledLayer
+            id={id}
             plain={plain}
             position={position}
             theme={theme}
@@ -54,4 +57,4 @@ class LayerContainer extends Component {
   }
 }
 
-export default LayerContainer;
+export default withTheme(LayerContainer);
