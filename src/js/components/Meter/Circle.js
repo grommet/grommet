@@ -60,6 +60,7 @@ export default class Circle extends Component {
         viewBox={`0 0 ${width} ${width}`}
         width={size === 'full' ? '100%' : width}
         height={size === 'full' ? '100%' : width}
+        theme={theme}
         {...rest}
       >
         <circle
