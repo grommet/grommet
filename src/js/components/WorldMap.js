@@ -484,7 +484,7 @@ export default class WorldMap extends Component {
           active);
     }
     return (
-      <path key={place.join(',') + serie.index} {...rest} className={classes}
+      <path key={`${place.join(',')}__${index}`} {...rest} className={classes}
         {...interactiveProps} d={d}  />
     );
   }
