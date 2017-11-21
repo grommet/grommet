@@ -483,7 +483,7 @@ var WorldMap = function (_Component) {
       if (onClick || onHover) {
         interactiveProps = this._interactiveProps(serie, 'place', this._activatePlace, place, active);
       }
-      return _react2.default.createElement('path', _extends({ key: place.join(',') }, rest, { className: classes
+      return _react2.default.createElement('path', _extends({ key: place.join(',') + '__' + index }, rest, { className: classes
       }, interactiveProps, { d: d }));
     }
   }, {
