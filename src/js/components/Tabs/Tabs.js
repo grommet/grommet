@@ -80,11 +80,11 @@ class Tabs extends Component {
     return (
       <div role='tablist'>
         <Box
-          {...rest}
           border='bottom'
           direction='row'
           justify={justify}
           margin={{ vertical: 'small' }}
+          {...rest}
         >
           {tabs}
         </Box>

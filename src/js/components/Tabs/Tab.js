@@ -40,13 +40,12 @@ class Tab extends Component {
     ) : title;
 
     return (
-      <Box
-        {...rest}
-        pad={{ bottom: 'xsmall' }}
-        margin={{ horizontal: 'small' }}
-        border={(active || hover) ? (
-          { side: 'bottom', size: 'medium', color: hover || 'black' }
-        ) : undefined}
+      <Button
+        plain={true}
+        role='tab'
+        aria-selected={active}
+        aria-expanded={active}
+        onClick={this.onClickTab}
         onMouseOver={(...args) => {
           if (!active) {
             this.setState({ hover: 'border' });
@@ -63,17 +62,18 @@ class Tab extends Component {
             onMouseOut(args);
           }
         }}
+        {...rest}
       >
-        <Button
-          plain={true}
-          role='tab'
-          aria-selected={active}
-          onClick={this.onClickTab}
-          aria-expanded={active}
+        <Box
+          pad={{ bottom: 'xsmall' }}
+          margin={{ horizontal: 'small' }}
+          border={(active || hover) ? (
+            { side: 'bottom', size: 'medium', color: hover || 'black' }
+          ) : { side: 'bottom', size: 'medium', color: 'transparent' }}
         >
           {active ? activeTitle : inactiveTitle}
-        </Button>
-      </Box>
+        </Box>
+      </Button>
     );
   }
 }
