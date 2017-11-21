@@ -35,7 +35,7 @@ class SelectContainer extends Component {
   componentDidUpdate() {
     const { selectedOptionIndex } = this.state;
     const buttonNode = findDOMNode(this.optionsRef[selectedOptionIndex]);
-    if (selectedOptionIndex >= 0 && buttonNode) {
+    if (selectedOptionIndex >= 0 && buttonNode && buttonNode.scrollIntoView) {
       buttonNode.scrollIntoView();
     }
   }

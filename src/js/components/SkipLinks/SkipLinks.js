@@ -32,10 +32,11 @@ class SkipLinks extends Component {
     this.setState({ showLayer: false });
   }
   render() {
-    const { children, messages } = this.props;
+    const { children, id, messages } = this.props;
     const { showLayer } = this.state;
     return (
       <Layer
+        id={id}
         position={showLayer ? 'top' : 'hidden'}
         ref={(ref) => { this.layerRef = ref; }}
         onFocus={this.onFocus}

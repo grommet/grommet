@@ -2,30 +2,20 @@
 
 exports[`Layer aligns bottom 1`] = `
 <div
-  class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+  class="StyledLayer-EylWz cQEoYc"
   id="bottom-test"
+  tabindex="-1"
 >
-  This is a layer
+  <div
+    class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+  >
+    This is a layer
+  </div>
 </div>
 `;
 
 exports[`Layer aligns bottom 2`] = `
-"
-
-.cuhhFF {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 48px;
-  outline: none;
-  background-color: #FFFFFF;
-}
-
-@media only screen and (max-width:699px) {
+"@media only screen and (max-width:699px) {
   .cuhhFF {
     min-height: 100%;
     min-width: 100%;
@@ -65,6 +55,30 @@ exports[`Layer aligns bottom 2`] = `
       left: 0px;
     }
 }
+}
+
+
+
+.cQEoYc {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.cQEoYc * {
+  box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
@@ -80,30 +94,20 @@ exports[`Layer aligns bottom 2`] = `
 
 exports[`Layer aligns left 1`] = `
 <div
-  class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+  class="StyledLayer-EylWz cQEoYc"
   id="left-test"
+  tabindex="-1"
 >
-  This is a layer
+  <div
+    class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+  >
+    This is a layer
+  </div>
 </div>
 `;
 
 exports[`Layer aligns left 2`] = `
-"
-
-.cuhhFF {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 48px;
-  outline: none;
-  background-color: #FFFFFF;
-}
-
-@media only screen and (max-width:699px) {
+"@media only screen and (max-width:699px) {
   .cuhhFF {
     min-height: 100%;
     min-width: 100%;
@@ -143,6 +147,30 @@ exports[`Layer aligns left 2`] = `
       left: 0px;
     }
 }
+}
+
+
+
+.cQEoYc {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.cQEoYc * {
+  box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
@@ -158,30 +186,20 @@ exports[`Layer aligns left 2`] = `
 
 exports[`Layer aligns right 1`] = `
 <div
-  class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+  class="StyledLayer-EylWz cQEoYc"
   id="right-test"
+  tabindex="-1"
 >
-  This is a layer
+  <div
+    class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+  >
+    This is a layer
+  </div>
 </div>
 `;
 
 exports[`Layer aligns right 2`] = `
-"
-
-.cuhhFF {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 48px;
-  outline: none;
-  background-color: #FFFFFF;
-}
-
-@media only screen and (max-width:699px) {
+"@media only screen and (max-width:699px) {
   .cuhhFF {
     min-height: 100%;
     min-width: 100%;
@@ -221,6 +239,30 @@ exports[`Layer aligns right 2`] = `
       left: 0px;
     }
 }
+}
+
+
+
+.cQEoYc {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.cQEoYc * {
+  box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
@@ -236,30 +278,20 @@ exports[`Layer aligns right 2`] = `
 
 exports[`Layer aligns top 1`] = `
 <div
-  class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+  class="StyledLayer-EylWz cQEoYc"
   id="top-test"
+  tabindex="-1"
 >
-  This is a layer
+  <div
+    class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+  >
+    This is a layer
+  </div>
 </div>
 `;
 
 exports[`Layer aligns top 2`] = `
-"
-
-.cuhhFF {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 48px;
-  outline: none;
-  background-color: #FFFFFF;
-}
-
-@media only screen and (max-width:699px) {
+"@media only screen and (max-width:699px) {
   .cuhhFF {
     min-height: 100%;
     min-width: 100%;
@@ -299,6 +331,30 @@ exports[`Layer aligns top 2`] = `
       left: 0px;
     }
 }
+}
+
+
+
+.cQEoYc {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.cQEoYc * {
+  box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
@@ -314,17 +370,20 @@ exports[`Layer aligns top 2`] = `
 
 exports[`Layer hides 1`] = `
 <div
-  class="StyledLayer__StyledContainer-iKmEpv duLPUq"
+  class="StyledLayer-EylWz dTHcZQ"
   id="hidden-test"
+  tabindex="-1"
 >
-  This is a layer
+  <div
+    class="StyledLayer__StyledContainer-iKmEpv duLPUq"
+  >
+    This is a layer
+  </div>
 </div>
 `;
 
 exports[`Layer hides 2`] = `
-"
-
-@media only screen and (max-width:699px) {
+"@media only screen and (max-width:699px) {
   .cuhhFF {
     min-height: 100%;
     min-width: 100%;
@@ -366,19 +425,6 @@ exports[`Layer hides 2`] = `
 }
 }
 
-.duLPUq {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 48px;
-  outline: none;
-  background-color: #FFFFFF;
-}
-
 @media only screen and (max-width:699px) {
   .duLPUq {
     min-height: 100%;
@@ -396,6 +442,8 @@ exports[`Layer hides 2`] = `
   }
 }
 
+
+
 @media only screen and (min-width:700px) {
   .cQEoYc {
     position: fixed;
@@ -404,22 +452,51 @@ exports[`Layer hides 2`] = `
     right: 0px;
     bottom: 0px;
   }
+}
+
+.dTHcZQ {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  left: -100%;
+  right: 100%;
+  z-index: -1;
+  position: fixed;
+}
+
+.dTHcZQ * {
+  box-sizing: inherit;
 }"
 `;
 
 exports[`Layer hides 3`] = `
 <div
-  class="StyledLayer__StyledContainer-iKmEpv duLPUq"
+  class="StyledLayer-EylWz dTHcZQ"
   id="hidden-test"
+  tabindex="-1"
 >
-  This is a layer
+  <div
+    class="StyledLayer__StyledContainer-iKmEpv duLPUq"
+  >
+    This is a layer
+  </div>
 </div>
 `;
 
 exports[`Layer hides 4`] = `
-"
-
-@media only screen and (max-width:699px) {
+"@media only screen and (max-width:699px) {
   .cuhhFF {
     min-height: 100%;
     min-width: 100%;
@@ -461,19 +538,6 @@ exports[`Layer hides 4`] = `
 }
 }
 
-.duLPUq {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 48px;
-  outline: none;
-  background-color: #FFFFFF;
-}
-
 @media only screen and (max-width:699px) {
   .duLPUq {
     min-height: 100%;
@@ -491,6 +555,8 @@ exports[`Layer hides 4`] = `
   }
 }
 
+
+
 @media only screen and (min-width:700px) {
   .cQEoYc {
     position: fixed;
@@ -499,6 +565,32 @@ exports[`Layer hides 4`] = `
     right: 0px;
     bottom: 0px;
   }
+}
+
+.dTHcZQ {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  left: -100%;
+  right: 100%;
+  z-index: -1;
+  position: fixed;
+}
+
+.dTHcZQ * {
+  box-sizing: inherit;
 }"
 `;
 
@@ -538,17 +630,20 @@ exports[`Layer is accessible 3`] = `
 
 exports[`Layer plain renders 1`] = `
 <div
-  class="StyledLayer__StyledContainer-iKmEpv eNADdO"
+  class="StyledLayer-EylWz kTyGqG"
   id="plain-test"
+  tabindex="-1"
 >
-  This is a plain layer
+  <div
+    class="StyledLayer__StyledContainer-iKmEpv eNADdO"
+  >
+    This is a plain layer
+  </div>
 </div>
 `;
 
 exports[`Layer plain renders 2`] = `
-"
-
-@media only screen and (max-width:699px) {
+"@media only screen and (max-width:699px) {
   .cuhhFF {
     min-height: 100%;
     min-width: 100%;
@@ -605,19 +700,6 @@ exports[`Layer plain renders 2`] = `
     overflow: auto;
     border-radius: 4px;
   }
-}
-
-.eNADdO {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 48px;
-  outline: none;
-  background-color: transparent;
 }
 
 @media only screen and (max-width:699px) {
@@ -669,6 +751,8 @@ exports[`Layer plain renders 2`] = `
 }
 }
 
+
+
 @media only screen and (min-width:700px) {
   .cQEoYc {
     position: fixed;
@@ -677,6 +761,28 @@ exports[`Layer plain renders 2`] = `
     right: 0px;
     bottom: 0px;
   }
+}
+
+.kTyGqG {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: transparent;
+}
+
+.kTyGqG * {
+  box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {

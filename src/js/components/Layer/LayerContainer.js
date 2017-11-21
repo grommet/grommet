@@ -28,6 +28,7 @@ class LayerContainer extends Component {
   render() {
     const {
       children,
+      id,
       onEsc,
       plain,
       position,
@@ -39,6 +40,7 @@ class LayerContainer extends Component {
       <FocusedContainer hidden={position === 'hidden'} restrictScroll={true}>
         <Keyboard onEsc={onEsc}>
           <StyledLayer
+            id={id}
             plain={plain}
             position={position}
             theme={theme}
