@@ -14,10 +14,8 @@ import { Drop } from 'grommet';
 **align**
 
 How to align the drop with respect to the target element. Defaults to `{
-  "defaultProp": {
-    "top": "top",
-    "left": "left"
-  }
+  "top": "top",
+  "left": "left"
 }`.
 
 ```

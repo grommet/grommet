@@ -1,5 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Grommet announces 1`] = `
+<div
+  class="StyledGrommet-gKbdxL kDQxAS"
+>
+  <div>
+    hi
+  </div>
+</div>
+`;
+
+exports[`Grommet announces 2`] = `
+<div
+  style="left: -100%; right: 100%; position: fixed; z-index: -1;"
+  aria-live="assertive"
+>
+  hello
+</div>
+`;
+
+exports[`Grommet announces 3`] = `
+<div
+  style="left: -100%; right: 100%; position: fixed; z-index: -1;"
+  aria-live="assertive"
+/>
+`;
+
 exports[`Grommet hpe theme renders 1`] = `
 .c0 {
   font-family: 'Metric',Arial,sans-serif;
@@ -16,18 +42,6 @@ exports[`Grommet hpe theme renders 1`] = `
 
 .c0 * {
   box-sizing: inherit;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -53,18 +67,6 @@ exports[`Grommet renders 1`] = `
 
 .c0 * {
   box-sizing: inherit;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div

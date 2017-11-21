@@ -27,18 +27,6 @@ exports[`Meter background renders 1`] = `
   transition: all 0.3s;
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
 <div
   className="c0"
 >
@@ -170,18 +158,6 @@ exports[`Meter renders 1`] = `
   transition: all 0.3s;
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
 <div
   className="c0"
 >
@@ -245,25 +221,23 @@ exports[`Meter round renders 1`] = `
   box-sizing: inherit;
 }
 
+.c2 {
+  max-width: 100%;
+}
+
+.c2 path {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
 .c1 {
   max-width: 100%;
+  border-radius: 24px;
 }
 
 .c1 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -294,7 +268,7 @@ exports[`Meter round renders 1`] = `
     />
   </svg>
   <svg
-    className="c1"
+    className="c2"
     height={384}
     viewBox="0 0 384 384"
     width={384}
@@ -346,18 +320,6 @@ exports[`Meter size renders 1`] = `
 .c1 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -638,18 +600,6 @@ exports[`Meter thickness renders 1`] = `
   transition: all 0.3s;
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
 <div
   className="c0"
 >
@@ -926,18 +876,6 @@ exports[`Meter type renders 1`] = `
 .c1 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div

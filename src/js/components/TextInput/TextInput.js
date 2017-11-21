@@ -195,7 +195,7 @@ class TextInput extends Component {
   }
 
   render() {
-    const { defaultValue, plain, value, onFocus, onInput, onKeyDown, ...rest } = this.props;
+    const { defaultValue, id, plain, value, onFocus, onInput, onKeyDown, ...rest } = this.props;
     delete rest.onInput; // se we can manage in onInputChange()
     const { showDrop } = this.state;
     // needed so that styled components does not invoke
@@ -205,6 +205,7 @@ class TextInput extends Component {
     if (showDrop) {
       drop = (
         <Drop
+          id={id ? `text-input-drop__${id}` : undefined}
           align={{ top: 'bottom', left: 'left' }}
           responsive={false}
           control={this.componentRef}
@@ -225,6 +226,7 @@ class TextInput extends Component {
           onKeyDown={onKeyDown}
         >
           <StyledTextInput
+            id={id}
             ref={(ref) => {
               this.componentRef = ref;
             }}

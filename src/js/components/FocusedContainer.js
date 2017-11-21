@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 
 import { getBodyChildElements, makeNodeFocusable, makeNodeUnfocusable } from '../utils';
@@ -6,6 +7,16 @@ import { getBodyChildElements, makeNodeFocusable, makeNodeUnfocusable } from '..
 const isNotAncestorOf = child => parent => !parent.contains(child);
 
 export default class FocusedContainer extends Component {
+  static defaultProps = {
+    hidden: false,
+    restrictScroll: false,
+  }
+
+  static propTypes = {
+    hidden: PropTypes.bool,
+    restrictScroll: PropTypes.bool,
+  }
+
   componentDidMount() {
     const { hidden } = this.props;
     if (!hidden) {
@@ -50,20 +61,11 @@ export default class FocusedContainer extends Component {
     }
   }
 
-  onBlur = () => {
-    // timeout needed so it gives enough time for activeElement to be updated
-    setTimeout(() => {
-      const containerNode = findDOMNode(this.ref);
-      if (!containerNode.contains(document.activeElement)) {
-        this.removeTrap();
-      }
-    }, 0);
-  }
-
   render() {
+    const { children, ...rest } = this.props;
     return (
-      <div ref={(ref) => { this.ref = ref; }} onBlur={this.removeTrap}>
-        {this.props.children}
+      <div ref={(ref) => { this.ref = ref; }} onBlur={this.removeTrap} {...rest}>
+        {children}
       </div>
     );
   }

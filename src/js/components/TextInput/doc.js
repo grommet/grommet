@@ -26,12 +26,10 @@ export default (TextInput) => {
     }).description(
       'Custom messages for TextInput. Used for accessibility by screen readers.'
     ).defaultValue({
-      messages: {
-        enterSelect: '(Press Enter to Select)',
-        suggestionsCount: 'suggestions available',
-        suggestionsExist: 'This input has suggestions use arrow keys to navigate',
-        suggestionIsOpen: 'Suggestions drop is open, continue to use arrow keys to navigate',
-      },
+      enterSelect: '(Press Enter to Select)',
+      suggestionsCount: 'suggestions available',
+      suggestionsExist: 'This input has suggestions use arrow keys to navigate',
+      suggestionIsOpen: 'Suggestions drop is open, continue to use arrow keys to navigate',
     }),
     name: PropTypes.string.description('The name attribute of the input.'),
     onInput: PropTypes.func.description(

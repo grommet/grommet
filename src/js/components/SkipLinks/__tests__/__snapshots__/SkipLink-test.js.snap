@@ -1,0 +1,316 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkipLink mounts 1`] = `
+<div
+  class="StyledLayer-EylWz dTHcZQ"
+  id="skip-links"
+  tabindex="-1"
+>
+  <div
+    class="StyledLayer__StyledContainer-iKmEpv duLPUq"
+  >
+    <div
+      class="StyledBox-YaZNy dYbdnY"
+      direction="column"
+    >
+      <h2
+        class="StyledHeading-klHxZj jTSZLd"
+      >
+        Skip To
+        :
+      </h2>
+      <div
+        class="StyledBox-YaZNy kiHqav"
+        direction="row"
+      >
+        <div
+          class="StyledBox-YaZNy bkPIUE"
+          direction="column"
+        >
+          <a
+            class="StyledAnchor-bymPHU gfczPY"
+            label="Main Content"
+            href="#main"
+          >
+            Main Content
+          </a>
+        </div>
+        <div
+          class="StyledBox-YaZNy bkPIUE"
+          direction="column"
+        >
+          <a
+            class="StyledAnchor-bymPHU gfczPY"
+            label="Footer"
+            href="#footer"
+          >
+            Footer
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SkipLink mounts 2`] = `
+"@media only screen and (max-width:699px) {
+  .duLPUq {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .duLPUq {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+  }
+}
+
+
+
+.dTHcZQ {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  left: -100%;
+  right: 100%;
+  z-index: -1;
+  position: fixed;
+}
+
+.dTHcZQ * {
+  box-sizing: inherit;
+}"
+`;
+
+exports[`SkipLink mounts 3`] = `
+<div
+  class="StyledLayer-EylWz cQEoYc"
+  id="skip-links"
+  tabindex="-1"
+>
+  <div
+    class="StyledLayer__StyledContainer-iKmEpv hUdiMG"
+  >
+    <div
+      class="StyledBox-YaZNy dYbdnY"
+      direction="column"
+    >
+      <h2
+        class="StyledHeading-klHxZj jTSZLd"
+      >
+        Skip To
+        :
+      </h2>
+      <div
+        class="StyledBox-YaZNy kiHqav"
+        direction="row"
+      >
+        <div
+          class="StyledBox-YaZNy bkPIUE"
+          direction="column"
+        >
+          <a
+            class="StyledAnchor-bymPHU gTLdXg"
+            label="Main Content"
+            href="#main"
+          >
+            Main Content
+          </a>
+        </div>
+        <div
+          class="StyledBox-YaZNy bkPIUE"
+          direction="column"
+        >
+          <a
+            class="StyledAnchor-bymPHU gfczPY"
+            label="Footer"
+            href="#footer"
+          >
+            Footer
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SkipLink mounts 4`] = `
+"@media only screen and (max-width:699px) {
+  .duLPUq {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .duLPUq {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .hUdiMG {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .hUdiMG {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-animation: slide-down 0.2s ease-in-out forwards;
+    animation: slide-down 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+}
+
+
+
+.cQEoYc {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.cQEoYc * {
+  box-sizing: inherit;
+}
+
+@media only screen and (min-width:700px) {
+  .cQEoYc {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}"
+`;
+
+exports[`SkipLink mounts 5`] = `
+<body
+  style="overflow: scroll;"
+>
+  <div>
+    <div
+      hidden=""
+    >
+      <div
+        class="StyledLayer-EylWz dTHcZQ"
+        id="skip-links"
+        tabindex="-1"
+      >
+        <div
+          class="StyledLayer__StyledContainer-iKmEpv duLPUq"
+        >
+          <div
+            class="StyledBox-YaZNy dYbdnY"
+            direction="column"
+          >
+            <h2
+              class="StyledHeading-klHxZj jTSZLd"
+            >
+              Skip To
+              :
+            </h2>
+            <div
+              class="StyledBox-YaZNy kiHqav"
+              direction="row"
+            >
+              <div
+                class="StyledBox-YaZNy bkPIUE"
+                direction="column"
+              >
+                <a
+                  class="StyledAnchor-bymPHU gfczPY"
+                  label="Main Content"
+                  href="#main"
+                >
+                  Main Content
+                </a>
+              </div>
+              <div
+                class="StyledBox-YaZNy bkPIUE"
+                direction="column"
+              >
+                <a
+                  class="StyledAnchor-bymPHU gfczPY"
+                  label="Footer"
+                  href="#footer"
+                >
+                  Footer
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    aria-hidden="false"
+  />
+</body>
+`;

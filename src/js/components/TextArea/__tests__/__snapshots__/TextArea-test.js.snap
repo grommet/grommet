@@ -61,18 +61,6 @@ exports[`TextArea focusIndicator renders 1`] = `
   outline: #00CCEB solid 2px;
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
 <div
   className="c0"
 >
@@ -145,18 +133,6 @@ exports[`TextArea placeholder renders 1`] = `
   outline: #00CCEB solid 2px;
 }
 
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
 <div
   className="c0"
 >
@@ -216,18 +192,6 @@ exports[`TextArea plain renders 1`] = `
 .c1::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -300,18 +264,6 @@ exports[`TextArea renders 1`] = `
 .c1:focus > polyline,
 .c1:focus > rect {
   outline: #00CCEB solid 2px;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div

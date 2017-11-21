@@ -1,7 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextInput renders 1`] = `
-.c0 {
+exports[`TextInput closes suggestion drop 1`] = `
+<div
+  class="StyledDrop-czaYBK jMwfOf"
+  tabindex="-1"
+  id="text-input-drop__item"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+>
+  <ol
+    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+  >
+    <li>
+      <button
+        class="StyledButton-qbvYY ggTDKd"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy eBrdsI"
+          direction="column"
+        >
+          test
+        </div>
+      </button>
+    </li>
+    <li>
+      <button
+        class="StyledButton-qbvYY ggTDKd"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy eBrdsI"
+          direction="column"
+        >
+          test1
+        </div>
+      </button>
+    </li>
+  </ol>
+</div>
+`;
+
+exports[`TextInput closes suggestion drop 2`] = `
+"@media only screen and (min-width:700px) {
+  .ggTDKd {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+
+
+.jMwfOf {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -12,83 +63,345 @@ exports[`TextInput renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: grow-box 0.1s forwards;
+  animation: grow-box 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
 }
 
-.c0 * {
+.jMwfOf * {
   box-sizing: inherit;
-}
+}"
+`;
 
-.c1 {
-  padding: 11px;
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 4px;
-  outline: none;
-  background-color: transparent;
-  color: inherit;
-  font: inherit;
-  margin: 0;
-}
+exports[`TextInput closes suggestion drop 3`] = `
+<div
+  class="StyledGrommet-gKbdxL kDQxAS"
+>
+  <div
+    class="StyledTextInput__StyledTextInputContainer-gOoAsL gBrQQI"
+  >
+    <input
+      class="StyledTextInput-bqUxsy bQkoNv"
+      id="item"
+      autocomplete="off"
+      name="item"
+    />
+  </div>
+</div>
+`;
 
-.c1::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
+exports[`TextInput handles next and previous without suggestion 1`] = `
+<div
+  class="StyledGrommet-gKbdxL kDQxAS"
+>
+  <div
+    class="StyledTextInput__StyledTextInputContainer-gOoAsL gBrQQI"
+  >
+    <input
+      class="StyledTextInput-bqUxsy bQkoNv"
+      id="item"
+      autocomplete="off"
+      name="item"
+    />
+  </div>
+</div>
+`;
 
-.c1::-moz-placeholder {
-  color: #AAAAAA;
-}
+exports[`TextInput mounts 1`] = `
+<div
+  class="StyledTextInput__StyledTextInputContainer-gOoAsL gBrQQI"
+>
+  <input
+    class="StyledTextInput-bqUxsy bQkoNv"
+    autocomplete="off"
+    name="item"
+  />
+</div>
+`;
 
-.c1:-ms-input-placeholder {
-  color: #AAAAAA;
-}
+exports[`TextInput mounts with complex suggestions 1`] = `
+<div
+  class="StyledDrop-czaYBK jMwfOf"
+  tabindex="-1"
+  id="text-input-drop__item"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+>
+  <ol
+    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+  >
+    <li>
+      <button
+        class="StyledButton-qbvYY ggTDKd"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy eBrdsI"
+          direction="column"
+        >
+          test
+        </div>
+      </button>
+    </li>
+    <li>
+      <button
+        class="StyledButton-qbvYY ggTDKd"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy eBrdsI"
+          direction="column"
+        >
+          test1
+        </div>
+      </button>
+    </li>
+  </ol>
+</div>
+`;
 
-.c1::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c1:focus {
-  border-color: #00CCEB;
-  box-shadow: 0 0 2px 2px #00CCEB;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: #00CCEB solid 2px;
-}
-
-@media only screen and (min-width:700px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
+exports[`TextInput mounts with complex suggestions 2`] = `
+"@media only screen and (min-width:700px) {
+  .ggTDKd {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
   }
 }
 
+
+
+.jMwfOf {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: grow-box 0.1s forwards;
+  animation: grow-box 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.jMwfOf * {
+  box-sizing: inherit;
+}"
+`;
+
+exports[`TextInput mounts with suggestions 1`] = `
 <div
-  className="c0"
+  class="StyledDrop-czaYBK jMwfOf"
+  tabindex="-1"
+  id="text-input-drop__item"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+>
+  <ol
+    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+  >
+    <li>
+      <button
+        class="StyledButton-qbvYY ggTDKd"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy eBrdsI"
+          direction="column"
+        >
+          test
+        </div>
+      </button>
+    </li>
+    <li>
+      <button
+        class="StyledButton-qbvYY ggTDKd"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy eBrdsI"
+          direction="column"
+        >
+          test1
+        </div>
+      </button>
+    </li>
+  </ol>
+</div>
+`;
+
+exports[`TextInput mounts with suggestions 2`] = `
+"@media only screen and (min-width:700px) {
+  .ggTDKd {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+
+
+.jMwfOf {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: grow-box 0.1s forwards;
+  animation: grow-box 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.jMwfOf * {
+  box-sizing: inherit;
+}"
+`;
+
+exports[`TextInput selects suggestion 1`] = `
+<div
+  class="StyledDrop-czaYBK jMwfOf"
+  tabindex="-1"
+  id="text-input-drop__item"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+>
+  <ol
+    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+  >
+    <li>
+      <button
+        class="StyledButton-qbvYY ggTDKd"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy eBrdsI"
+          direction="column"
+        >
+          test
+        </div>
+      </button>
+    </li>
+    <li>
+      <button
+        class="StyledButton-qbvYY ggTDKd"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy eBrdsI"
+          direction="column"
+        >
+          test1
+        </div>
+      </button>
+    </li>
+  </ol>
+</div>
+`;
+
+exports[`TextInput selects suggestion 2`] = `
+"@media only screen and (min-width:700px) {
+  .ggTDKd {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+
+
+.jMwfOf {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: grow-box 0.1s forwards;
+  animation: grow-box 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}
+
+.jMwfOf * {
+  box-sizing: inherit;
+}"
+`;
+
+exports[`TextInput selects suggestion 3`] = `
+<div
+  class="StyledGrommet-gKbdxL kDQxAS"
 >
   <div
-    className=""
+    class="StyledTextInput__StyledTextInputContainer-gOoAsL gCsbgz"
   >
     <input
-      autoComplete="off"
-      className="c1"
-      defaultValue={undefined}
+      class="StyledTextInput-bqUxsy lndVan"
       id="item"
+      autocomplete="off"
       name="item"
-      onFocus={[Function]}
-      onInput={[Function]}
-      onKeyDown={[Function]}
-      value={undefined}
     />
   </div>
 </div>

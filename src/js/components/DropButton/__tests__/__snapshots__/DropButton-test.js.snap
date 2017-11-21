@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropButton closes 1`] = `
+<button
+  class="StyledButton-qbvYY brNyWU"
+  tabindex="0"
+  aria-label="Open Drop"
+  type="button"
+>
+  <input />
+</button>
+`;
+
+exports[`DropButton closes 2`] = `
+<div
+  id="drop-contents"
+>
+  drop contents
+</div>
+`;
+
+exports[`DropButton closes 3`] = `
+"@media only screen and (min-width:700px) {
+  .brNyWU {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}"
+`;
+
+exports[`DropButton mounts 1`] = `
+<button
+  class="StyledButton-qbvYY brNyWU"
+  tabindex="0"
+  aria-label="Open Drop"
+  type="button"
+>
+  <input />
+</button>
+`;
+
+exports[`DropButton mounts 2`] = `
+<div
+  id="drop-contents"
+>
+  drop contents
+</div>
+`;
+
+exports[`DropButton mounts 3`] = `
+"@media only screen and (min-width:700px) {
+  .brNyWU {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}"
+`;
+
+exports[`DropButton mounts 4`] = `
+<button
+  class="StyledButton-qbvYY brNyWU"
+  tabindex="-1"
+  aria-label="Open Drop"
+  type="button"
+  data-g-tabindex="0"
+  id="test"
+  open=""
+>
+  <input
+    tabindex="-1"
+  />
+</button>
+`;
+
+exports[`DropButton mounts 5`] = `
+<div
+  id="drop-contents"
+>
+  drop contents
+</div>
+`;
+
+exports[`DropButton mounts 6`] = `
+"@media only screen and (min-width:700px) {
+  .brNyWU {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}"
+`;
