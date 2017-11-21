@@ -55,6 +55,9 @@ export default class Bar extends Component {
         preserveAspectRatio='none'
         width={size === 'full' ? '100%' : width}
         height={height}
+        round={round}
+        roundSize={size}
+        theme={theme}
         {...rest}
       >
         <path

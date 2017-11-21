@@ -221,8 +221,18 @@ exports[`Meter round renders 1`] = `
   box-sizing: inherit;
 }
 
+.c2 {
+  max-width: 100%;
+}
+
+.c2 path {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
 .c1 {
   max-width: 100%;
+  border-radius: 24px;
 }
 
 .c1 path {
@@ -258,7 +268,7 @@ exports[`Meter round renders 1`] = `
     />
   </svg>
   <svg
-    className="c1"
+    className="c2"
     height={384}
     viewBox="0 0 384 384"
     width={384}
