@@ -7,7 +7,7 @@ exports[`Layer aligns bottom 1`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+    class="StyledLayer__StyledContainer-iKmEpv ilWCsF"
   >
     This is a layer
   </div>
@@ -53,6 +53,135 @@ exports[`Layer aligns bottom 2`] = `
 
     100% {
       left: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .jvBdNm {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .jvBdNm {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    -webkit-animation: slide-right 0.2s ease-in-out forwards;
+    animation: slide-right 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+
+@keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .hUdiMG {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .hUdiMG {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-animation: slide-down 0.2s ease-in-out forwards;
+    animation: slide-down 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .ilWCsF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .ilWCsF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    bottom: 0px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+    -webkit-animation: slide-up 0.2s ease-in-out forwards;
+    animation: slide-up 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-up {
+    0% {
+      margin-bottom: -200px;
+    }
+
+    100% {
+      margin-bottom: 0px;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+      margin-bottom: -200px;
+    }
+
+    100% {
+      margin-bottom: 0px;
     }
 }
 }
@@ -191,7 +320,7 @@ exports[`Layer aligns right 1`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+    class="StyledLayer__StyledContainer-iKmEpv jvBdNm"
   >
     This is a layer
   </div>
@@ -241,6 +370,48 @@ exports[`Layer aligns right 2`] = `
 }
 }
 
+@media only screen and (max-width:699px) {
+  .jvBdNm {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .jvBdNm {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    -webkit-animation: slide-right 0.2s ease-in-out forwards;
+    animation: slide-right 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+
+@keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+}
+
 
 
 .cQEoYc {
@@ -283,7 +454,7 @@ exports[`Layer aligns top 1`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+    class="StyledLayer__StyledContainer-iKmEpv hUdiMG"
   >
     This is a layer
   </div>
@@ -329,6 +500,91 @@ exports[`Layer aligns top 2`] = `
 
     100% {
       left: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .jvBdNm {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .jvBdNm {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    -webkit-animation: slide-right 0.2s ease-in-out forwards;
+    animation: slide-right 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+
+@keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .hUdiMG {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .hUdiMG {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-animation: slide-down 0.2s ease-in-out forwards;
+    animation: slide-down 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
     }
 }
 }
@@ -421,6 +677,135 @@ exports[`Layer hides 2`] = `
 
     100% {
       left: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .jvBdNm {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .jvBdNm {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    -webkit-animation: slide-right 0.2s ease-in-out forwards;
+    animation: slide-right 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+
+@keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .hUdiMG {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .hUdiMG {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-animation: slide-down 0.2s ease-in-out forwards;
+    animation: slide-down 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .ilWCsF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .ilWCsF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    bottom: 0px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+    -webkit-animation: slide-up 0.2s ease-in-out forwards;
+    animation: slide-up 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-up {
+    0% {
+      margin-bottom: -200px;
+    }
+
+    100% {
+      margin-bottom: 0px;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+      margin-bottom: -200px;
+    }
+
+    100% {
+      margin-bottom: 0px;
     }
 }
 }
@@ -534,6 +919,135 @@ exports[`Layer hides 4`] = `
 
     100% {
       left: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .jvBdNm {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .jvBdNm {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    -webkit-animation: slide-right 0.2s ease-in-out forwards;
+    animation: slide-right 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+
+@keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .hUdiMG {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .hUdiMG {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-animation: slide-down 0.2s ease-in-out forwards;
+    animation: slide-down 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .ilWCsF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .ilWCsF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    bottom: 0px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+    -webkit-animation: slide-up 0.2s ease-in-out forwards;
+    animation: slide-up 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-up {
+    0% {
+      margin-bottom: -200px;
+    }
+
+    100% {
+      margin-bottom: 0px;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+      margin-bottom: -200px;
+    }
+
+    100% {
+      margin-bottom: 0px;
     }
 }
 }
@@ -681,6 +1195,135 @@ exports[`Layer plain renders 2`] = `
 
     100% {
       left: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .jvBdNm {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .jvBdNm {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    -webkit-animation: slide-right 0.2s ease-in-out forwards;
+    animation: slide-right 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+
+@keyframes slide-right {
+    0% {
+      right: -200px;
+    }
+
+    100% {
+      right: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .hUdiMG {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .hUdiMG {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-animation: slide-down 0.2s ease-in-out forwards;
+    animation: slide-down 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+
+@keyframes slide-down {
+    0% {
+      top: -100vh;
+    }
+
+    100% {
+      top: 0px;
+    }
+}
+}
+
+@media only screen and (max-width:699px) {
+  .ilWCsF {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .ilWCsF {
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    bottom: 0px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+    -webkit-animation: slide-up 0.2s ease-in-out forwards;
+    animation: slide-up 0.2s ease-in-out forwards;
+  }
+
+@-webkit-keyframes slide-up {
+    0% {
+      margin-bottom: -200px;
+    }
+
+    100% {
+      margin-bottom: 0px;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+      margin-bottom: -200px;
+    }
+
+    100% {
+      margin-bottom: 0px;
     }
 }
 }

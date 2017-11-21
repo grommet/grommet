@@ -45,11 +45,12 @@ test('Grommet announces', (done) => {
   );
   expect(component.getDOMNode()).toMatchSnapshot();
 
+  // no style, no need for expectPortal
   expect(document.body.querySelector('[aria-live]')).toMatchSnapshot();
 
   setTimeout(() => {
     // should clear the aria-live container
     expect(document.body.querySelector('[aria-live]')).toMatchSnapshot();
     done();
-  }, 600);
+  }, 600); // wait the aria-live container to clear
 });

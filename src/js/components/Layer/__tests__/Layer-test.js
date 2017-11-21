@@ -57,7 +57,7 @@ describe('Layer', () => {
 
   test('aligns right', () => {
     mount(
-      <Layer id='right-test' position='left'>
+      <Layer id='right-test' position='right'>
         This is a layer
       </Layer>
     );
@@ -66,7 +66,7 @@ describe('Layer', () => {
 
   test('aligns top', () => {
     mount(
-      <Layer id='top-test' position='left'>
+      <Layer id='top-test' position='top'>
         This is a layer
       </Layer>
     );
@@ -75,7 +75,7 @@ describe('Layer', () => {
 
   test('aligns bottom', () => {
     mount(
-      <Layer id='bottom-test' position='left'>
+      <Layer id='bottom-test' position='bottom'>
         This is a layer
       </Layer>
     );
