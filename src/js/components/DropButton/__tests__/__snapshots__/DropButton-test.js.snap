@@ -19,6 +19,15 @@ exports[`DropButton closes 2`] = `
 </div>
 `;
 
+exports[`DropButton closes 3`] = `
+"@media only screen and (min-width:700px) {
+  .brNyWU {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}"
+`;
+
 exports[`DropButton mounts 1`] = `
 <button
   class="StyledButton-qbvYY brNyWU"
@@ -39,6 +48,15 @@ exports[`DropButton mounts 2`] = `
 `;
 
 exports[`DropButton mounts 3`] = `
+"@media only screen and (min-width:700px) {
+  .brNyWU {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}"
+`;
+
+exports[`DropButton mounts 4`] = `
 <button
   class="StyledButton-qbvYY brNyWU"
   tabindex="-1"
@@ -54,10 +72,19 @@ exports[`DropButton mounts 3`] = `
 </button>
 `;
 
-exports[`DropButton mounts 4`] = `
+exports[`DropButton mounts 5`] = `
 <div
   id="drop-contents"
 >
   drop contents
 </div>
+`;
+
+exports[`DropButton mounts 6`] = `
+"@media only screen and (min-width:700px) {
+  .brNyWU {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}"
 `;

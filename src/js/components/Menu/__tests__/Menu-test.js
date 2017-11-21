@@ -229,6 +229,6 @@ describe('Menu', () => {
 
     component.find('button').first().simulate('keyDown', { key: 'Down', keyCode: 40, which: 40 });
 
-    expect(document.getElementById('menu')).toMatchSnapshot();
+    expectPortal('menu').toMatchSnapshot();
   });
 });

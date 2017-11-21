@@ -3,7 +3,7 @@ import 'jest-styled-components';
 import Enzyme, { mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import { createPortal } from '../../../utils/portal';
+import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { DropButton } from '../';
 
@@ -24,12 +24,12 @@ describe('DropButton', () => {
 
     component.simulate('click');
 
-    expect(document.getElementById('drop-contents')).toMatchSnapshot();
+    expectPortal('drop-contents').toMatchSnapshot();
 
     component.setProps({ id: 'test', open: true });
 
     expect(component.getDOMNode()).toMatchSnapshot();
-    expect(document.getElementById('drop-contents')).toMatchSnapshot();
+    expectPortal('drop-contents').toMatchSnapshot();
 
     component.setProps({ open: false });
 
@@ -51,7 +51,7 @@ describe('DropButton', () => {
 
     component.simulate('click');
 
-    expect(document.getElementById('drop-contents')).toMatchSnapshot();
+    expectPortal('drop-contents').toMatchSnapshot();
 
     global.document.dispatchEvent(new Event('click'));
 
