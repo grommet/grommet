@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const roundStyle = css`
-  border-radius: ${props => props.theme.global.edgeSize[props.roundSize]};
+  border-radius: ${props => props.theme.global.edgeSize[props.round.size]};
 `;
 
 const StyledMeter = styled.svg`
