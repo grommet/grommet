@@ -15,7 +15,7 @@ class Select extends Component {
     delete rest.children;
     const content = React.isValidElement(value) ? value : (
       <TextInput
-        theme={{ textInput: { extend: 'cursor: pointer' } }}
+        style={{ cursor: 'pointer' }}
         ref={(ref) => { this.inputRef = ref; }}
         {...rest}
         tabIndex='-1'

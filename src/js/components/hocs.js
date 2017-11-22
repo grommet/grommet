@@ -66,6 +66,10 @@ export const withFocus = (WrappedComponent) => {
   }
 
   FocusableComponent.displayName = getDisplayName(WrappedComponent);
+
+  // transfer styled components function
+  FocusableComponent.extend = WrappedComponent.extend;
+
   return FocusableComponent;
 };
 
@@ -85,6 +89,10 @@ export const withTheme = (WrappedComponent) => {
   }
 
   ThemedComponent.displayName = getDisplayName(WrappedComponent);
+
+  // transfer styled components function
+  ThemedComponent.extend = WrappedComponent.extend;
+
   return ThemedComponent;
 };
 
