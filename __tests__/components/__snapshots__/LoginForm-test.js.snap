@@ -20,7 +20,7 @@ exports[`LoginForm has correct default options 1`] = `
     >
       <label
         className="grommetux-form-field__label"
-        htmlFor="username"
+        htmlFor="grommetux-username_1497312000000"
       >
         <span>
           Email
@@ -30,6 +30,7 @@ exports[`LoginForm has correct default options 1`] = `
         className="grommetux-form-field__contents"
       >
         <input
+          id="grommetux-username_1497312000000"
           onChange={[Function]}
           type="email"
           value=""
@@ -42,7 +43,7 @@ exports[`LoginForm has correct default options 1`] = `
     >
       <label
         className="grommetux-form-field__label"
-        htmlFor="password"
+        htmlFor="grommetux-password_1497312000000"
       >
         <span>
           Password
@@ -52,6 +53,7 @@ exports[`LoginForm has correct default options 1`] = `
         className="grommetux-form-field__contents"
       >
         <input
+          id="grommetux-password_1497312000000"
           onChange={[Function]}
           type="password"
           value=""
@@ -111,7 +113,7 @@ exports[`LoginForm renders errors properly with both string and JSX errors 1`] =
     >
       <label
         className="grommetux-form-field__label"
-        htmlFor="username"
+        htmlFor="grommetux-username_1497312000000"
       >
         <span>
           Email
@@ -121,6 +123,7 @@ exports[`LoginForm renders errors properly with both string and JSX errors 1`] =
         className="grommetux-form-field__contents"
       >
         <input
+          id="grommetux-username_1497312000000"
           onChange={[Function]}
           type="email"
           value=""
@@ -133,7 +136,7 @@ exports[`LoginForm renders errors properly with both string and JSX errors 1`] =
     >
       <label
         className="grommetux-form-field__label"
-        htmlFor="password"
+        htmlFor="grommetux-password_1497312000000"
       >
         <span>
           Password
@@ -143,6 +146,7 @@ exports[`LoginForm renders errors properly with both string and JSX errors 1`] =
         className="grommetux-form-field__contents"
       >
         <input
+          id="grommetux-password_1497312000000"
           onChange={[Function]}
           type="password"
           value=""
@@ -222,7 +226,7 @@ exports[`LoginForm renders login button as disabled when onSubmit is undefined 1
     >
       <label
         className="grommetux-form-field__label"
-        htmlFor="username"
+        htmlFor="grommetux-username_1497312000000"
       >
         <span>
           Email
@@ -232,6 +236,7 @@ exports[`LoginForm renders login button as disabled when onSubmit is undefined 1
         className="grommetux-form-field__contents"
       >
         <input
+          id="grommetux-username_1497312000000"
           onChange={[Function]}
           type="email"
           value=""
@@ -244,7 +249,7 @@ exports[`LoginForm renders login button as disabled when onSubmit is undefined 1
     >
       <label
         className="grommetux-form-field__label"
-        htmlFor="password"
+        htmlFor="grommetux-password_1497312000000"
       >
         <span>
           Password
@@ -254,6 +259,7 @@ exports[`LoginForm renders login button as disabled when onSubmit is undefined 1
         className="grommetux-form-field__contents"
       >
         <input
+          id="grommetux-password_1497312000000"
           onChange={[Function]}
           type="password"
           value=""

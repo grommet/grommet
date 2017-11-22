@@ -1,6 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
-import React, { Component } from 'react';
+import React, { Children, Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import SpinningIcon from './icons/Spinning';
@@ -11,6 +11,8 @@ import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Responsive from '../utils/Responsive';
 import Intl from '../utils/Intl';
 import { announce } from '../utils/Announcer';
+
+import TableHeader from './TableHeader';
 
 const CLASS_ROOT = CSSClassnames.TABLE;
 const SELECTED_CLASS = `${CLASS_ROOT}-row--selected`;
@@ -27,6 +29,53 @@ function getTotalCellCount(cells) {
   });
 
   return cellCount;
+}
+
+// function that filters the items that are not
+// an immediate child of its parent
+function immediateTableChildOnly(result, tableParent) {
+  const immediateChild = [];
+  [].forEach.call(result, (item) => {
+    let currentParent = item.parentNode;
+    while (currentParent) {
+      if (currentParent.tagName.toLowerCase() === 'table') {
+        if (currentParent === tableParent) {
+          immediateChild.push(item);
+        }
+        break;
+      }
+      currentParent = currentParent.parentNode;
+    }
+  });
+  return immediateChild;
+}
+
+function findHead(children) {
+  if (!children) {
+    return undefined;
+  }
+
+  const childElements = Children.toArray(children);
+
+  let head;
+  childElements.some((child) => {
+    if (child.type && (
+      child.type === 'thead' ||
+      child.type === TableHeader ||
+      child.type.displayName === TableHeader.displayName
+    )) {
+      head = child;
+      return true;
+    } else if (child.props && child.props.children) {
+      head = findHead(child.props.children);
+      if (head) {
+        return true;
+      }
+    }
+    return false;
+  });
+
+  return head;
 }
 
 export default class Table extends Component {
@@ -50,7 +99,6 @@ export default class Table extends Component {
       mouseActive: false,
       selected: Selection.normalizeIndexes(props.selected),
       columnMode: false,
-      rebuildMirror: props.scrollable,
       small: false
     };
   }
@@ -60,7 +108,6 @@ export default class Table extends Component {
     const { columnMode, small } = this.state;
     this._setSelection();
     if (scrollable && !columnMode && !small) {
-      this._buildMirror();
       this._alignMirror();
     }
     if (this.props.onMore) {
@@ -100,22 +147,14 @@ export default class Table extends Component {
         selected: Selection.normalizeIndexes(nextProps.selected)
       });
     }
-
-    this.setState({
-      rebuildMirror: nextProps.scrollable
-    });
   }
 
   componentDidUpdate (prevProps, prevState) {
     const { onMore, selectable, scrollable } = this.props;
-    const { columnMode, rebuildMirror, selected, small } = this.state;
+    const { columnMode, selected, small } = this.state;
     if (JSON.stringify(selected) !==
       JSON.stringify(prevState.selected)) {
       this._setSelection();
-    }
-    if (rebuildMirror && !columnMode) {
-      this._buildMirror();
-      this.setState({rebuildMirror: false});
     }
     if (scrollable && !columnMode && !small) {
       this._alignMirror();
@@ -162,7 +201,7 @@ export default class Table extends Component {
   }
 
   _onViewPortChange(small) {
-    this.setState({ small, rebuildMirror: true });
+    this.setState({ small });
   }
 
   _announceRow (label) {
@@ -176,7 +215,11 @@ export default class Table extends Component {
     if (this.containerRef && this.tableRef) {
       const availableSize = this.containerRef.offsetWidth;
       const numberOfCells = (
-        getTotalCellCount(this.tableRef.querySelectorAll('thead th'))
+        getTotalCellCount(
+          immediateTableChildOnly(
+            this.tableRef.querySelectorAll('thead th'), this.tableRef
+          )
+        )
       );
 
       if ((numberOfCells * MIN_CELL_WIDTH) > availableSize) {
@@ -216,7 +259,9 @@ export default class Table extends Component {
     if (this.tableRef.contains(document.activeElement)) {
       event.preventDefault();
       const { activeRow } = this.state;
-      const rows = this.tableRef.querySelectorAll('tbody tr');
+      const rows = immediateTableChildOnly(
+        this.tableRef.querySelectorAll('tbody tr'), this.tableRef
+      );
       if (rows && rows.length > 0) {
         if (activeRow === undefined) {
           rows[0].classList.add(ACTIVE_CLASS);
@@ -245,7 +290,9 @@ export default class Table extends Component {
     if (this.tableRef.contains(document.activeElement)) {
       event.preventDefault();
       const { activeRow } = this.state;
-      const rows = this.tableRef.querySelectorAll('tbody tr');
+      const rows = immediateTableChildOnly(
+        this.tableRef.querySelectorAll('tbody tr'), this.tableRef
+      );
       if (rows && rows.length > 0) {
         if (activeRow === undefined) {
           rows[0].classList.add(ACTIVE_CLASS);
@@ -292,7 +339,9 @@ export default class Table extends Component {
     const { intl } = this.context;
     if (this.tableRef.contains(document.activeElement) &&
       activeRow !== undefined) {
-      const rows = this.tableRef.querySelectorAll('tbody tr');
+      const rows = immediateTableChildOnly(
+        this.tableRef.querySelectorAll('tbody tr'), this.tableRef
+      );
       this._fireClick(rows[activeRow], event.shiftKey);
       rows[activeRow].classList.remove(ACTIVE_CLASS);
       const label = rows[activeRow].innerText;
@@ -327,18 +376,22 @@ export default class Table extends Component {
     // IMPORTANT: non-text header cells, such as icon, are rendered as empty
     // headers.
     if (this.tableRef) {
-      let headerCells = this.tableRef.querySelectorAll('thead th');
+      let headerCells = immediateTableChildOnly(
+        this.tableRef.querySelectorAll('thead th'), this.tableRef
+      );
       const totalHeaderCells = getTotalCellCount(headerCells);
       if (headerCells.length > 0) {
         const increments = [];
-        [].forEach.call(headerCells, (cell) => {
+        headerCells.forEach((cell) => {
           const colspan = cell.getAttribute('colspan');
           increments.push(colspan ? parseInt(colspan) : 1);
         });
 
-        let rows = this.tableRef.querySelectorAll('tbody tr');
+        let rows = immediateTableChildOnly(
+          this.tableRef.querySelectorAll('tbody tr'), this.tableRef
+        );
 
-        [].forEach.call(rows, (row) => {
+        rows.forEach((row) => {
           let incrementCount = 0;
           let headerIndex = 0;
 
@@ -385,44 +438,33 @@ export default class Table extends Component {
     this._onResponsive();
   }
 
-  _buildMirror () {
-    const tableElement = this.tableRef;
-    if (tableElement) {
-      let cells = tableElement.querySelectorAll('thead tr th');
-      let mirrorElement = this.mirrorRef;
-      if (mirrorElement) {
-        let mirrorRow = mirrorElement.querySelectorAll('thead tr')[0];
-        while (mirrorRow.hasChildNodes()) {
-          mirrorRow.removeChild(mirrorRow.lastChild);
-        }
-        for (let i = 0; i < cells.length; i++) {
-          mirrorRow.appendChild(cells[i].cloneNode(true));
-        }
-      }
-    }
-  }
-
   _alignMirror () {
     const mirrorElement = this.mirrorRef;
-    const mirrorCells = mirrorElement.querySelectorAll('thead tr th');
-    if (this.mirrorRef && mirrorCells.length > 0) {
-      const tableElement = this.tableRef;
-      const cells = tableElement.querySelectorAll('thead tr th');
-      
-      let rect = tableElement.getBoundingClientRect();
-      mirrorElement.style.width =
-        '' + Math.floor(rect.right - rect.left) + 'px';
-
-      let height = 0;
-      for (let i = 0; i < cells.length; i++) {
-        rect = cells[i].getBoundingClientRect();
-        mirrorCells[i].style.width =
+    if (mirrorElement) {
+      const mirrorCells = immediateTableChildOnly(
+        mirrorElement.querySelectorAll('thead tr th'), mirrorElement
+      );
+      if (this.mirrorRef && mirrorCells.length > 0) {
+        const tableElement = this.tableRef;
+        const cells = immediateTableChildOnly(
+          tableElement.querySelectorAll('thead tr th'), tableElement
+        );
+        
+        let rect = tableElement.getBoundingClientRect();
+        mirrorElement.style.width =
           '' + Math.floor(rect.right - rect.left) + 'px';
-        mirrorCells[i].style.height =
-          '' + Math.floor(rect.bottom - rect.top) + 'px';
-        height = Math.max(height, Math.floor(rect.bottom - rect.top));
+  
+        let height = 0;
+        for (let i = 0; i < cells.length; i++) {
+          rect = cells[i].getBoundingClientRect();
+          mirrorCells[i].style.width =
+            '' + Math.floor(rect.right - rect.left) + 'px';
+          mirrorCells[i].style.height =
+            '' + Math.floor(rect.bottom - rect.top) + 'px';
+          height = Math.max(height, Math.floor(rect.bottom - rect.top));
+        }
+        mirrorElement.style.height = '' + height + 'px';
       }
-      mirrorElement.style.height = '' + height + 'px';
     }
   }
 
@@ -447,12 +489,11 @@ export default class Table extends Component {
 
     let mirror;
     if (scrollable && !small) {
+      const head = findHead(children);
       mirror = (
         <table ref={ref => this.mirrorRef = ref}
           className={`${CLASS_ROOT}__mirror`}>
-          <thead>
-            <tr />
-          </thead>
+          {head}
         </table>
       );
     }
@@ -500,7 +541,9 @@ export default class Table extends Component {
         },
         onBlur: (event) => {
           if (activeRow) {
-            const rows = this.tableRef.querySelectorAll('tbody tr');
+            const rows = immediateTableChildOnly(
+              this.tableRef.querySelectorAll('tbody tr'), this.tableRef
+            );
             rows[activeRow].classList.remove(ACTIVE_CLASS);
           }
           this.setState({ focus: false, activeRow: undefined });

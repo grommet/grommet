@@ -23,7 +23,7 @@ exports[`Anchor has correct default options 1`] = `
   aria-label={undefined}
   className="grommetux-anchor"
   href="test"
-  onClick={undefined}
+  onClick={[Function]}
 />
 `;
 
@@ -32,7 +32,7 @@ exports[`Anchor has correct disabled=true rendering 1`] = `
   aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--disabled"
   href="test"
-  onClick={undefined}
+  onClick={[Function]}
 />
 `;
 
@@ -41,7 +41,7 @@ exports[`Anchor has correct icon and label rendering 1`] = `
   aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon grommetux-anchor--icon-label"
   href={undefined}
-  onClick={undefined}
+  onClick={[Function]}
 >
   <svg
     height="24px"
@@ -59,7 +59,7 @@ exports[`Anchor has correct icon as a child rendering 1`] = `
   aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href={undefined}
-  onClick={undefined}
+  onClick={[Function]}
 >
   <span
     className="grommetux-anchor__icon"
@@ -80,7 +80,7 @@ exports[`Anchor has correct icon rendering 1`] = `
   aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon"
   href={undefined}
-  onClick={undefined}
+  onClick={[Function]}
 >
   <span
     className="grommetux-anchor__icon"
@@ -101,7 +101,7 @@ exports[`Anchor has correct primary=true rendering 1`] = `
   aria-label={undefined}
   className="grommetux-anchor grommetux-anchor--animate-icon grommetux-anchor--icon grommetux-anchor--primary"
   href="test"
-  onClick={undefined}
+  onClick={[Function]}
 >
   <svg
     aria-label="link next"
@@ -127,7 +127,7 @@ exports[`Anchor has correct text as a child rendering 1`] = `
   aria-label={undefined}
   className="grommetux-anchor"
   href={undefined}
-  onClick={undefined}
+  onClick={[Function]}
 >
   test
 </a>
@@ -139,6 +139,6 @@ exports[`Anchor preserves id after rendering 1`] = `
   className="grommetux-anchor"
   href="test"
   id="test"
-  onClick={undefined}
+  onClick={[Function]}
 />
 `;

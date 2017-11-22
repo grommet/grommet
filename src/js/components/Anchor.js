@@ -182,7 +182,6 @@ export default class Anchor extends Component {
     );
 
     let adjustedOnClick = (path && router ? this._onClick : onClick);
-
     if (!anchorChildren) {
       anchorChildren = label;
     }
@@ -194,7 +193,13 @@ export default class Anchor extends Component {
 
     return (
       <Component {...props} href={adjustedHref} className={classes}
-        aria-label={a11yTitle} onClick={adjustedOnClick}>
+        aria-label={a11yTitle} onClick={(event, ...args) => {
+          if (disabled) {
+            event.preventDefault();
+          } else if (adjustedOnClick) {
+            adjustedOnClick(event, ...args);
+          }
+        }}>
         {first}
         {second}
       </Component>
@@ -230,7 +235,7 @@ schema(Anchor, {
     path: [
       PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
       'React-router path to navigate to when clicked.' +
-      ' Use path={{ path: '/', index: true }} if you want the Anchor to be' +
+      ' Use path={{ path: \'/\', index: true }} if you want the Anchor to be' +
       ' active only when the index route is current.'
     ],
     primary: [PropTypes.bool, 'Whether this is a primary anchor.'],

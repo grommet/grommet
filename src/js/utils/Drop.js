@@ -184,24 +184,21 @@ export default class Drop {
     // prepend in body to avoid browser scroll issues
     document.body.insertBefore(container, document.body.firstChild);
 
-    render(
-      <DropContents content={content} context={context}
-        focusControl={focusControl} />,
-      container
-    );
-
     const scrollParents = findScrollParents(control);
-
+    
     // initialize state
     this.state = {
       container, control, initialFocusNeeded: focusControl, options,
       scrollParents
     };
 
-    this._listen();
+    render(
+      <DropContents content={content} context={context}
+        focusControl={focusControl} />,
+      container, () => this.place()
+    );
 
-    // position content
-    this.place();
+    this._listen();
   }
 
   _listen () {

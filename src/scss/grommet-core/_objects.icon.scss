@@ -31,11 +31,13 @@ $icon-huge-size: round($inuit-base-spacing-unit * 12) !default;
       }
     }
 
-    *[stroke*="#"] {
+    *[stroke*="#"],
+    *[STROKE*="#"] {
       stroke: inherit;
     }
 
-    *[fill*="#"] {
+    *[fill*="#"],
+    *[FILL*="#"] {
       fill: inherit;
     }
 
@@ -122,7 +124,7 @@ $icon-huge-size: round($inuit-base-spacing-unit * 12) !default;
     fill: map-get($brand-status-colors, unknown);
 
     #{$dark-background-context} {
-      @include icon-color($colored-status-color);
+      fill: icon-color($colored-status-color);
     }
   }
 
@@ -220,6 +222,22 @@ $spinning-dash: round($inuit-base-spacing-unit * 2 * 3.1416);
   }
 }
 
+@include keyframes(fadeOut) {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+
 .#{$grommet-namespace}icon-spinning {
   width: $inuit-base-spacing-unit;
   height: $inuit-base-spacing-unit;
@@ -227,6 +245,11 @@ $spinning-dash: round($inuit-base-spacing-unit * 2 * 3.1416);
   stroke-dashoffset: 0;
   transform: rotate(90deg);
   @include animation('drawAndReverse 4s alternate infinite ease-in-out');
+  @media all and (-ms-high-contrast: none) {
+    transform: rotate(0deg);
+    stroke-dashoffset: 50;
+    @include animation('fadeOut 3s infinite linear');
+  }
 }
 
 .#{$grommet-namespace}icon-spinning--xsmall {

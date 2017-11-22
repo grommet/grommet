@@ -9,7 +9,23 @@ import LoginForm from '../../src/js/components/LoginForm';
 // https://github.com/facebook/jest/issues/1353
 jest.mock('react-dom');
 
+const RealDate = Date;
+class FakeDate extends RealDate {
+  constructor () {
+    super();
+    return new RealDate('2017-06-13T00:00:00.000Z');
+  }
+};
+
 describe('LoginForm', () => {
+  beforeEach(() => {
+    global.Date = FakeDate;
+  });
+
+  afterEach(() => {
+    global.Date = RealDate;
+  });
+
   it('has correct default options', () => {
     const component = renderer.create(
       <LoginForm onSubmit={() => {}} />
