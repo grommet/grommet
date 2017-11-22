@@ -18,7 +18,9 @@ export default (Tabs) => {
 
   DocumentedTabs.propTypes = {
     activeIndex: PropTypes.number.description(
-      'Active tab index. If specified, you must call onActive and update activeIndex yourself.'
+      `Active tab index. If specified, Tabs will be a controlled component. This means that future
+tab changes will not work unless you subscribe to onActive function and update activeIndex
+accordingly.`
     ).defaultValue(0),
     children: PropTypes.arrayOf(PropTypes.instanceOf(Tab)).description(
       'Array of Tab.'

@@ -19,17 +19,17 @@ class Tab extends Component {
   }
 
   onClickTab = (event) => {
-    const { onRequestForActive } = this.props;
+    const { onActivate } = this.props;
     if (event) {
       event.preventDefault();
     }
-    onRequestForActive();
+    onActivate();
   }
 
   render() {
     const { active, title, onMouseOver, onMouseOut, ...rest } = this.props;
     const { hover } = this.state;
-    delete rest.onRequestForActive;
+    delete rest.onActivate;
 
     const activeTitle = typeof title === 'string' ? (
       <Text><strong>{title}</strong></Text>

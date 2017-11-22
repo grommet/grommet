@@ -69,7 +69,7 @@ class Tabs extends Component {
 
       return cloneElement(tab, {
         active: isTabActive,
-        onRequestForActive: () => {
+        onActivate: () => {
           this.activateTab(index);
         },
       });
