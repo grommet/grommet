@@ -53,7 +53,7 @@ class Tabs extends Component {
     delete rest.onActive;
     const { activeIndex } = this.state;
 
-    let activeContainer;
+    let activeContent;
     let activeTitle;
     const tabs = Children.map(children, (tab, index) => {
       if (!tab) return undefined;
@@ -63,7 +63,7 @@ class Tabs extends Component {
       const isTabActive = index === activeIndex;
 
       if (isTabActive) {
-        activeContainer = tabProps.children;
+        activeContent = tabProps.children;
         activeTitle = tabProps.title;
       }
 
@@ -89,7 +89,7 @@ class Tabs extends Component {
           {tabs}
         </Box>
         <div aria-label={tabContentTitle} role='tabpanel'>
-          {activeContainer}
+          {activeContent}
         </div>
       </div>
     );
