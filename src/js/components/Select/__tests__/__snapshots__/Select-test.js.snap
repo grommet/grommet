@@ -105,6 +105,7 @@ exports[`Select closes drop on esc 3`] = `
         class="StyledTextInput-bqUxsy jwHYRf"
         id="select"
         autocomplete="off"
+        style="cursor: pointer;"
         tabindex="-1"
         readonly=""
       />
@@ -153,6 +154,7 @@ exports[`Select closes drop on esc 4`] = `
         class="StyledTextInput-bqUxsy jwHYRf"
         id="select"
         autocomplete="off"
+        style="cursor: pointer;"
         tabindex="-1"
         readonly=""
       />
@@ -201,6 +203,7 @@ exports[`Select mounts 1`] = `
         class="StyledTextInput-bqUxsy jwHYRf"
         id="select"
         autocomplete="off"
+        style="cursor: pointer;"
         tabindex="-1"
         readonly=""
       />
@@ -249,6 +252,7 @@ exports[`Select mounts 2`] = `
         class="StyledTextInput-bqUxsy jwHYRf"
         id="select"
         autocomplete="off"
+        style="cursor: pointer;"
         tabindex="-1"
         readonly=""
       />
@@ -427,6 +431,7 @@ exports[`Select mounts with complex options and children 1`] = `
         class="StyledTextInput-bqUxsy jwHYRf"
         id="select"
         autocomplete="off"
+        style="cursor: pointer;"
         tabindex="-1"
         readonly=""
       />
@@ -475,6 +480,7 @@ exports[`Select mounts with complex options and children 2`] = `
         class="StyledTextInput-bqUxsy jwHYRf"
         id="select"
         autocomplete="off"
+        style="cursor: pointer;"
         tabindex="-1"
         readonly=""
       />

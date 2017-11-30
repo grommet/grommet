@@ -66,6 +66,7 @@ export const withFocus = (WrappedComponent) => {
   }
 
   FocusableComponent.displayName = getDisplayName(WrappedComponent);
+
   return FocusableComponent;
 };
 
@@ -77,12 +78,7 @@ export const withTheme = (WrappedComponent) => {
     render() {
       const { theme, ...rest } = this.props;
       const { theme: contextTheme } = this.context;
-      let localTheme = deepMerge(contextTheme, theme);
-      // fallback to vanilla theme if no theme is provided
-      // this is the case when you use a component with Grommet as a parent
-      if (!localTheme || !Object.keys(localTheme).length) {
-        localTheme = { ...baseTheme };
-      }
+      const localTheme = deepMerge(baseTheme, contextTheme, theme);
       return (
         <WrappedComponent theme={localTheme} {...rest} />
       );
@@ -90,6 +86,7 @@ export const withTheme = (WrappedComponent) => {
   }
 
   ThemedComponent.displayName = getDisplayName(WrappedComponent);
+
   return ThemedComponent;
 };
 
