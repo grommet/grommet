@@ -22,6 +22,7 @@ export * from './Responsive';
 export * from './Select';
 export * from './SkipLinks';
 export * from './Stack';
+export * from './Tabs';
 export * from './Text';
 export * from './TextArea';
 export * from './TextInput';
