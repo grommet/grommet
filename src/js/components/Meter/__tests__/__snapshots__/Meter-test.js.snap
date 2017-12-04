@@ -50,7 +50,7 @@ exports[`Meter background renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -74,7 +74,7 @@ exports[`Meter background renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -99,7 +99,7 @@ exports[`Meter background renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -124,7 +124,7 @@ exports[`Meter background renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -196,7 +196,7 @@ exports[`Meter renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -251,14 +251,14 @@ exports[`Meter round renders 1`] = `
     width={384}
   >
     <path
-      d="M 0,12 L 384,12"
+      d="M 12,12 L 372,12"
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="round"
       strokeWidth={24}
     />
     <path
-      d="M 0,12 L 76.8,12"
+      d="M 12,12 L 84,12"
       fill="none"
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
@@ -284,6 +284,15 @@ exports[`Meter round renders 1`] = `
     />
     <path
       d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 192.0000000000 12.0000000000"
+      fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke="#00CCEB"
+      strokeLinecap="round"
+      strokeWidth={24}
+    />
+    <path
+      d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 363.1901729331 136.3769410125"
       fill="none"
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
@@ -345,7 +354,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -369,7 +378,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -393,7 +402,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -417,7 +426,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -441,7 +450,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -466,7 +475,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -491,7 +500,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -516,7 +525,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -541,7 +550,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -566,7 +575,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -623,7 +632,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={6}
     />
   </svg>
@@ -647,7 +656,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={12}
     />
   </svg>
@@ -671,7 +680,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -695,7 +704,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={48}
     />
   </svg>
@@ -719,7 +728,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={96}
     />
   </svg>
@@ -744,7 +753,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={6}
     />
   </svg>
@@ -769,7 +778,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={12}
     />
   </svg>
@@ -794,7 +803,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -819,7 +828,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={48}
     />
   </svg>
@@ -844,7 +853,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={96}
     />
   </svg>
@@ -901,7 +910,7 @@ exports[`Meter type renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -926,7 +935,7 @@ exports[`Meter type renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
