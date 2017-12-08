@@ -14,10 +14,6 @@ exports[`RangeInput renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   position: relative;
   -webkit-appearance: none;

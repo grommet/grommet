@@ -14,10 +14,6 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -476,10 +472,6 @@ exports[`Video controls renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c7 {
@@ -1198,10 +1190,6 @@ exports[`Video fit renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -1877,10 +1865,6 @@ exports[`Video loop renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -2341,10 +2325,6 @@ exports[`Video mute renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -2803,10 +2783,6 @@ exports[`Video renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c7 {

@@ -14,10 +14,6 @@ exports[`Box align renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -141,10 +137,6 @@ exports[`Box alignContent renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -287,10 +279,6 @@ exports[`Box alignSelf renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -389,10 +377,6 @@ exports[`Box animation renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -495,10 +479,6 @@ exports[`Box background renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -692,10 +672,6 @@ exports[`Box basis renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -986,10 +962,6 @@ exports[`Box border renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1156,10 +1128,6 @@ exports[`Box direction renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1212,10 +1180,6 @@ exports[`Box flex renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -1334,10 +1298,6 @@ exports[`Box full renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -1464,10 +1424,6 @@ exports[`Box gridArea renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1504,10 +1460,6 @@ exports[`Box justify renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -1614,10 +1566,6 @@ exports[`Box justifySelf renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1668,10 +1616,6 @@ exports[`Box margin renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -1858,10 +1802,6 @@ exports[`Box pad renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2046,10 +1986,6 @@ exports[`Box renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2085,10 +2021,6 @@ exports[`Box reverse renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c2 {
@@ -2143,10 +2075,6 @@ exports[`Box round renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -2259,10 +2187,6 @@ exports[`Box tag renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2298,10 +2222,6 @@ exports[`Box textAlign renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -2376,10 +2296,6 @@ exports[`Box wrap renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c2 {
