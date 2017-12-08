@@ -13,7 +13,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 class TestAnnouncer extends Component {
   static contextTypes = {
-    grommet: PropTypes.object.isRequired,
+    grommet: PropTypes.object,
   }
   componentDidMount() {
     this.context.grommet.announce('hello', 'assertive');

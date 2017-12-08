@@ -10,7 +10,7 @@ import { withTheme } from '../hocs';
 
 class Tab extends Component {
   static contextTypes = {
-    grommet: PropTypes.object.isRequired,
+    grommet: PropTypes.object,
   }
 
   state = {

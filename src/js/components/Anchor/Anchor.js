@@ -11,7 +11,7 @@ import doc from './doc';
 
 class Anchor extends Component {
   static contextTypes = {
-    grommet: PropTypes.object.isRequired,
+    grommet: PropTypes.object,
   }
 
   constructor(props, context) {

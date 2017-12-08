@@ -13,7 +13,7 @@ import doc from './doc';
 
 class RadioButton extends Component {
   static contextTypes = {
-    grommet: PropTypes.object.isRequired,
+    grommet: PropTypes.object,
   }
 
   render() {
