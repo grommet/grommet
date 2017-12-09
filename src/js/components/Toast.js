@@ -78,7 +78,7 @@ class ToastContents extends Component {
         <Status
           className={`${CLASS_ROOT}__status`}
           value={status}
-          size={size === 'large' ? 'medium' : size}
+          size={size}
         />
       );
     }
