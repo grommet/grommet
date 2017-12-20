@@ -28,7 +28,7 @@ exports[`Box align renders 1`] = `
   -webkit-box-align: flex-start;
   -ms-flex-align: flex-start;
   align-items: flex-start;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -44,7 +44,7 @@ exports[`Box align renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -60,7 +60,7 @@ exports[`Box align renders 1`] = `
   -webkit-box-align: baseline;
   -ms-flex-align: baseline;
   align-items: baseline;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -76,7 +76,7 @@ exports[`Box align renders 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -92,7 +92,7 @@ exports[`Box align renders 1`] = `
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
   align-items: flex-end;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -156,7 +156,7 @@ exports[`Box alignContent renders 1`] = `
   -webkit-align-content: flex-start;
   -ms-flex-line-pack: flex-start;
   align-content: flex-start;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -171,7 +171,7 @@ exports[`Box alignContent renders 1`] = `
   -webkit-align-content: center;
   -ms-flex-line-pack: center;
   align-content: center;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -186,7 +186,7 @@ exports[`Box alignContent renders 1`] = `
   -webkit-align-content: between;
   -ms-flex-line-pack: between;
   align-content: between;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -201,7 +201,7 @@ exports[`Box alignContent renders 1`] = `
   -webkit-align-content: around;
   -ms-flex-line-pack: around;
   align-content: around;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -216,7 +216,7 @@ exports[`Box alignContent renders 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -231,7 +231,7 @@ exports[`Box alignContent renders 1`] = `
   -webkit-align-content: flex-end;
   -ms-flex-line-pack: flex-end;
   align-content: flex-end;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -300,7 +300,7 @@ exports[`Box alignSelf renders 1`] = `
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -315,7 +315,7 @@ exports[`Box alignSelf renders 1`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -330,7 +330,7 @@ exports[`Box alignSelf renders 1`] = `
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -345,7 +345,7 @@ exports[`Box alignSelf renders 1`] = `
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -401,7 +401,7 @@ exports[`Box animation renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -416,7 +416,7 @@ exports[`Box animation renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -430,7 +430,7 @@ exports[`Box animation renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -445,7 +445,7 @@ exports[`Box animation renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -509,7 +509,7 @@ exports[`Box background renders 1`] = `
   max-width: 100%;
   background-color: #865CD6;
   color: rgba(255,255,255,0.85);
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -523,7 +523,7 @@ exports[`Box background renders 1`] = `
   max-width: 100%;
   background-color: #00CCEB;
   color: #333333;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -537,7 +537,7 @@ exports[`Box background renders 1`] = `
   max-width: 100%;
   background-color: #0A64A0;
   color: rgba(255,255,255,0.85);
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -551,7 +551,7 @@ exports[`Box background renders 1`] = `
   max-width: 100%;
   background-color: #F6F6F6;
   color: #333333;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -565,7 +565,7 @@ exports[`Box background renders 1`] = `
   max-width: 100%;
   background-color: #333333;
   color: rgba(255,255,255,0.85);
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -579,7 +579,7 @@ exports[`Box background renders 1`] = `
   max-width: 100%;
   background-color: #FF324D;
   color: rgba(255,255,255,0.85);
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -593,7 +593,7 @@ exports[`Box background renders 1`] = `
   max-width: 100%;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==) no-repeat center center;
   background-size: cover;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -608,7 +608,7 @@ exports[`Box background renders 1`] = `
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==) no-repeat center center;
   background-size: cover;
   color: #333333;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -623,7 +623,7 @@ exports[`Box background renders 1`] = `
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==) no-repeat center center;
   background-size: cover;
   color: rgba(255,255,255,0.85);
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -704,7 +704,7 @@ exports[`Box basis renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -716,7 +716,7 @@ exports[`Box basis renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -727,7 +727,7 @@ exports[`Box basis renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -741,7 +741,7 @@ exports[`Box basis renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -755,7 +755,7 @@ exports[`Box basis renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -769,7 +769,7 @@ exports[`Box basis renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -783,7 +783,7 @@ exports[`Box basis renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -797,7 +797,7 @@ exports[`Box basis renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -811,7 +811,7 @@ exports[`Box basis renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -825,7 +825,7 @@ exports[`Box basis renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -839,7 +839,7 @@ exports[`Box basis renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -853,7 +853,7 @@ exports[`Box basis renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -867,7 +867,7 @@ exports[`Box basis renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -997,7 +997,7 @@ exports[`Box border renders 1`] = `
   display: flex;
   max-width: 100%;
   border: solid 1px rgba(0,0,0,0.15);
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1011,7 +1011,7 @@ exports[`Box border renders 1`] = `
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.15);
   border-bottom: solid 1px rgba(0,0,0,0.15);
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1025,7 +1025,7 @@ exports[`Box border renders 1`] = `
   max-width: 100%;
   border-left: solid 1px rgba(0,0,0,0.15);
   border-right: solid 1px rgba(0,0,0,0.15);
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1038,7 +1038,7 @@ exports[`Box border renders 1`] = `
   display: flex;
   max-width: 100%;
   border-top: solid 1px rgba(0,0,0,0.15);
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1051,7 +1051,7 @@ exports[`Box border renders 1`] = `
   display: flex;
   max-width: 100%;
   border-left: solid 1px rgba(0,0,0,0.15);
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1064,7 +1064,7 @@ exports[`Box border renders 1`] = `
   display: flex;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.15);
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1077,7 +1077,7 @@ exports[`Box border renders 1`] = `
   display: flex;
   max-width: 100%;
   border-right: solid 1px rgba(0,0,0,0.15);
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1090,7 +1090,7 @@ exports[`Box border renders 1`] = `
   display: flex;
   max-width: 100%;
   border: solid 3px #00CCEB;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1166,7 +1166,7 @@ exports[`Box direction renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1178,7 +1178,7 @@ exports[`Box direction renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -1224,7 +1224,7 @@ exports[`Box flex renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1236,7 +1236,7 @@ exports[`Box flex renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1251,7 +1251,7 @@ exports[`Box flex renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1266,7 +1266,7 @@ exports[`Box flex renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1281,7 +1281,7 @@ exports[`Box flex renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1346,7 +1346,7 @@ exports[`Box full renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1358,7 +1358,7 @@ exports[`Box full renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1375,7 +1375,7 @@ exports[`Box full renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1389,7 +1389,7 @@ exports[`Box full renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1404,7 +1404,7 @@ exports[`Box full renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1474,7 +1474,7 @@ exports[`Box gridArea renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1516,7 +1516,7 @@ exports[`Box justify renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1532,7 +1532,7 @@ exports[`Box justify renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1548,7 +1548,7 @@ exports[`Box justify renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1564,7 +1564,7 @@ exports[`Box justify renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1624,7 +1624,7 @@ exports[`Box justifySelf renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1680,7 +1680,7 @@ exports[`Box margin renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1693,7 +1693,7 @@ exports[`Box margin renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1706,7 +1706,7 @@ exports[`Box margin renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1719,7 +1719,7 @@ exports[`Box margin renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1733,7 +1733,7 @@ exports[`Box margin renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1747,7 +1747,7 @@ exports[`Box margin renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1760,7 +1760,7 @@ exports[`Box margin renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1773,7 +1773,7 @@ exports[`Box margin renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1786,7 +1786,7 @@ exports[`Box margin renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1868,7 +1868,7 @@ exports[`Box pad renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1881,7 +1881,7 @@ exports[`Box pad renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1894,7 +1894,7 @@ exports[`Box pad renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1907,7 +1907,7 @@ exports[`Box pad renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1921,7 +1921,7 @@ exports[`Box pad renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1935,7 +1935,7 @@ exports[`Box pad renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1948,7 +1948,7 @@ exports[`Box pad renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1961,7 +1961,7 @@ exports[`Box pad renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1974,7 +1974,7 @@ exports[`Box pad renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2056,7 +2056,7 @@ exports[`Box renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2097,7 +2097,7 @@ exports[`Box reverse renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2109,7 +2109,7 @@ exports[`Box reverse renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column-reverse;
   -ms-flex-direction: column-reverse;
   flex-direction: column-reverse;
@@ -2155,7 +2155,7 @@ exports[`Box round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2168,7 +2168,7 @@ exports[`Box round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2181,7 +2181,7 @@ exports[`Box round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2194,7 +2194,7 @@ exports[`Box round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2207,7 +2207,7 @@ exports[`Box round renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2269,7 +2269,7 @@ exports[`Box tag renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2310,7 +2310,7 @@ exports[`Box textAlign renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2323,7 +2323,7 @@ exports[`Box textAlign renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2336,7 +2336,7 @@ exports[`Box textAlign renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2388,7 +2388,7 @@ exports[`Box wrap renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2400,7 +2400,7 @@ exports[`Box wrap renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;

@@ -53,9 +53,11 @@ const basisStyle = css`
 
 // min-width and min-height needed because of this
 // https://stackoverflow.com/questions/36247140/why-doesnt-flex-item-shrink-past-content-size
+// we assume we are in the context of a Box going the other direction
+// TODO: revisit this
 const directionStyle = css`
-  ${props => props.direction === 'row' && 'min-width: 0;'}
-  ${props => props.direction === 'column' && 'min-height: 0;'}
+  ${props => props.direction === 'row' && 'min-height: 0;'}
+  ${props => props.direction === 'column' && 'min-width: 0;'}
   flex-direction: ${(props) => {
     if (props.direction) {
       return (props.reverse ? `${props.direction}-reverse` : props.direction);

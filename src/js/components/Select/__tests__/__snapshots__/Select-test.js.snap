@@ -2,17 +2,17 @@
 
 exports[`Select closes drop on esc 1`] = `
 <div
-  class="StyledBox-YaZNy iwozFa"
+  class="StyledBox-YaZNy eLnczz"
   id="select-drop__select"
   direction="column"
 >
   <div
-    class="StyledBox-YaZNy gOlKzK"
+    class="StyledBox-YaZNy cwgCmQ"
     overflow="auto"
     direction="column"
   >
     <div
-      class="StyledBox-YaZNy fyicDn"
+      class="StyledBox-YaZNy iKIEeP"
       role="menubar"
       tabindex="-1"
       direction="column"
@@ -24,7 +24,7 @@ exports[`Select closes drop on esc 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy eBrdsI"
+          class="StyledBox-YaZNy cHUeZK"
           direction="column"
         >
           <span
@@ -41,7 +41,7 @@ exports[`Select closes drop on esc 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy eBrdsI"
+          class="StyledBox-YaZNy cHUeZK"
           direction="column"
         >
           <span
@@ -59,13 +59,13 @@ exports[`Select closes drop on esc 1`] = `
 exports[`Select closes drop on esc 2`] = `
 "
 
-.iwozFa {
+.eLnczz {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -93,7 +93,7 @@ exports[`Select closes drop on esc 3`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kohHuX"
+    class="StyledBox-YaZNy kgWrYO"
     aria-hidden="true"
     direction="row"
   >
@@ -111,7 +111,7 @@ exports[`Select closes drop on esc 3`] = `
       />
     </div>
     <div
-      class="StyledBox-YaZNy btLmFB"
+      class="StyledBox-YaZNy fnEUqy"
       direction="column"
     >
       <svg
@@ -142,7 +142,7 @@ exports[`Select closes drop on esc 4`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kohHuX"
+    class="StyledBox-YaZNy kgWrYO"
     aria-hidden="true"
     direction="row"
   >
@@ -160,7 +160,7 @@ exports[`Select closes drop on esc 4`] = `
       />
     </div>
     <div
-      class="StyledBox-YaZNy btLmFB"
+      class="StyledBox-YaZNy fnEUqy"
       direction="column"
     >
       <svg
@@ -191,7 +191,7 @@ exports[`Select mounts 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kohHuX"
+    class="StyledBox-YaZNy kgWrYO"
     aria-hidden="true"
     direction="row"
   >
@@ -209,7 +209,7 @@ exports[`Select mounts 1`] = `
       />
     </div>
     <div
-      class="StyledBox-YaZNy btLmFB"
+      class="StyledBox-YaZNy fnEUqy"
       direction="column"
     >
       <svg
@@ -240,7 +240,7 @@ exports[`Select mounts 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kohHuX"
+    class="StyledBox-YaZNy kgWrYO"
     aria-hidden="true"
     direction="row"
   >
@@ -258,7 +258,7 @@ exports[`Select mounts 2`] = `
       />
     </div>
     <div
-      class="StyledBox-YaZNy btLmFB"
+      class="StyledBox-YaZNy fnEUqy"
       direction="column"
     >
       <svg
@@ -284,17 +284,17 @@ exports[`Select mounts 2`] = `
 
 exports[`Select mounts 3`] = `
 <div
-  class="StyledBox-YaZNy iwozFa"
+  class="StyledBox-YaZNy eLnczz"
   id="select-drop__select"
   direction="column"
 >
   <div
-    class="StyledBox-YaZNy gOlKzK"
+    class="StyledBox-YaZNy cwgCmQ"
     overflow="auto"
     direction="column"
   >
     <div
-      class="StyledBox-YaZNy fyicDn"
+      class="StyledBox-YaZNy iKIEeP"
       role="menubar"
       tabindex="-1"
       direction="column"
@@ -306,7 +306,7 @@ exports[`Select mounts 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy eBrdsI"
+          class="StyledBox-YaZNy cHUeZK"
           direction="column"
         >
           <span
@@ -323,7 +323,7 @@ exports[`Select mounts 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy eBrdsI"
+          class="StyledBox-YaZNy cHUeZK"
           direction="column"
         >
           <span
@@ -341,13 +341,13 @@ exports[`Select mounts 3`] = `
 exports[`Select mounts 4`] = `
 "
 
-.iwozFa {
+.eLnczz {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -370,7 +370,7 @@ exports[`Select mounts 4`] = `
 
 exports[`Select mounts 5`] = `
 <div
-  class="StyledBox-YaZNy fyicDn"
+  class="StyledBox-YaZNy iKIEeP"
   role="menubar"
   tabindex="-1"
   direction="column"
@@ -382,7 +382,7 @@ exports[`Select mounts 5`] = `
     type="button"
   >
     <div
-      class="StyledBox-YaZNy eBrdsI"
+      class="StyledBox-YaZNy cHUeZK"
       direction="column"
     >
       <span
@@ -399,7 +399,7 @@ exports[`Select mounts 5`] = `
     type="button"
   >
     <div
-      class="StyledBox-YaZNy eBrdsI"
+      class="StyledBox-YaZNy cHUeZK"
       direction="column"
     >
       <span
@@ -419,7 +419,7 @@ exports[`Select mounts with complex options and children 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kohHuX"
+    class="StyledBox-YaZNy kgWrYO"
     aria-hidden="true"
     direction="row"
   >
@@ -437,7 +437,7 @@ exports[`Select mounts with complex options and children 1`] = `
       />
     </div>
     <div
-      class="StyledBox-YaZNy btLmFB"
+      class="StyledBox-YaZNy fnEUqy"
       direction="column"
     >
       <svg
@@ -468,7 +468,7 @@ exports[`Select mounts with complex options and children 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy kohHuX"
+    class="StyledBox-YaZNy kgWrYO"
     aria-hidden="true"
     direction="row"
   >
@@ -486,7 +486,7 @@ exports[`Select mounts with complex options and children 2`] = `
       />
     </div>
     <div
-      class="StyledBox-YaZNy btLmFB"
+      class="StyledBox-YaZNy fnEUqy"
       direction="column"
     >
       <svg
@@ -512,17 +512,17 @@ exports[`Select mounts with complex options and children 2`] = `
 
 exports[`Select mounts with complex options and children 3`] = `
 <div
-  class="StyledBox-YaZNy iwozFa"
+  class="StyledBox-YaZNy eLnczz"
   id="select-drop__select"
   direction="column"
 >
   <div
-    class="StyledBox-YaZNy gOlKzK"
+    class="StyledBox-YaZNy cwgCmQ"
     overflow="auto"
     direction="column"
   >
     <div
-      class="StyledBox-YaZNy fyicDn"
+      class="StyledBox-YaZNy iKIEeP"
       role="menubar"
       tabindex="-1"
       direction="column"
@@ -555,13 +555,13 @@ exports[`Select mounts with complex options and children 3`] = `
 exports[`Select mounts with complex options and children 4`] = `
 "
 
-.iwozFa {
+.eLnczz {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -584,12 +584,12 @@ exports[`Select mounts with complex options and children 4`] = `
 
 exports[`Select mounts with search 1`] = `
 <div
-  class="StyledBox-YaZNy iwozFa"
+  class="StyledBox-YaZNy eLnczz"
   id="select-drop__select"
   direction="column"
 >
   <div
-    class="StyledBox-YaZNy jCFdoz"
+    class="StyledBox-YaZNy dPqMSL"
     direction="column"
   >
     <div
@@ -604,12 +604,12 @@ exports[`Select mounts with search 1`] = `
     </div>
   </div>
   <div
-    class="StyledBox-YaZNy gOlKzK"
+    class="StyledBox-YaZNy cwgCmQ"
     overflow="auto"
     direction="column"
   >
     <div
-      class="StyledBox-YaZNy fyicDn"
+      class="StyledBox-YaZNy iKIEeP"
       role="menubar"
       tabindex="-1"
       direction="column"
@@ -621,7 +621,7 @@ exports[`Select mounts with search 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy eBrdsI"
+          class="StyledBox-YaZNy cHUeZK"
           direction="column"
         >
           <span
@@ -638,7 +638,7 @@ exports[`Select mounts with search 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy eBrdsI"
+          class="StyledBox-YaZNy cHUeZK"
           direction="column"
         >
           <span
@@ -656,13 +656,13 @@ exports[`Select mounts with search 1`] = `
 exports[`Select mounts with search 2`] = `
 "
 
-.iwozFa {
+.eLnczz {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -694,12 +694,12 @@ exports[`Select mounts with search 3`] = `
 
 exports[`Select mounts with search 4`] = `
 <div
-  class="StyledBox-YaZNy iwozFa"
+  class="StyledBox-YaZNy eLnczz"
   id="select-drop__select"
   direction="column"
 >
   <div
-    class="StyledBox-YaZNy jCFdoz"
+    class="StyledBox-YaZNy dPqMSL"
     direction="column"
   >
     <div
@@ -714,12 +714,12 @@ exports[`Select mounts with search 4`] = `
     </div>
   </div>
   <div
-    class="StyledBox-YaZNy gOlKzK"
+    class="StyledBox-YaZNy cwgCmQ"
     overflow="auto"
     direction="column"
   >
     <div
-      class="StyledBox-YaZNy fyicDn"
+      class="StyledBox-YaZNy iKIEeP"
       role="menubar"
       tabindex="-1"
       direction="column"
@@ -731,7 +731,7 @@ exports[`Select mounts with search 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy eBrdsI"
+          class="StyledBox-YaZNy cHUeZK"
           direction="column"
         >
           <span
@@ -748,7 +748,7 @@ exports[`Select mounts with search 4`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy eBrdsI"
+          class="StyledBox-YaZNy cHUeZK"
           direction="column"
         >
           <span
@@ -766,13 +766,13 @@ exports[`Select mounts with search 4`] = `
 exports[`Select mounts with search 5`] = `
 "
 
-.iwozFa {
+.eLnczz {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  min-height: 0;
+  min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
