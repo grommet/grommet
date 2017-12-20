@@ -21,7 +21,7 @@ class Responsive extends Component {
     const { onChange, theme } = this.props;
     const { narrow } = this.state;
     if (window.innerWidth > theme.global.breakpoints.narrow) {
-      if (narrow) {
+      if (narrow !== false) {
         this.setState({ narrow: false }, () => onChange('wide'));
       }
     } else if (narrow !== true) {

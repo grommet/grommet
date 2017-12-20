@@ -2,43 +2,18 @@
 
 exports[`TextInput closes suggestion drop 1`] = `
 <div
-  class="StyledDrop-czaYBK jMwfOf"
-  tabindex="-1"
-  id="text-input-drop__item"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  class="StyledGrommet-gKbdxL kDQxAS"
 >
-  <ol
-    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+  <div
+    class="StyledTextInput__StyledTextInputContainer-gOoAsL gBrQQI"
   >
-    <li>
-      <button
-        class="StyledButton-qbvYY ggTDKd"
-        tabindex="0"
-        type="button"
-      >
-        <div
-          class="StyledBox-YaZNy eBrdsI"
-          direction="column"
-        >
-          test
-        </div>
-      </button>
-    </li>
-    <li>
-      <button
-        class="StyledButton-qbvYY ggTDKd"
-        tabindex="0"
-        type="button"
-      >
-        <div
-          class="StyledBox-YaZNy eBrdsI"
-          direction="column"
-        >
-          test1
-        </div>
-      </button>
-    </li>
-  </ol>
+    <input
+      class="StyledTextInput-bqUxsy bQkoNv"
+      id="item"
+      autocomplete="off"
+      name="item"
+    />
+  </div>
 </div>
 `;
 
