@@ -2,18 +2,43 @@
 
 exports[`TextInput closes suggestion drop 1`] = `
 <div
-  class="StyledGrommet-gKbdxL kDQxAS"
+  class="StyledDrop-czaYBK jMwfOf"
+  tabindex="-1"
+  id="text-input-drop__item"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
-  <div
-    class="StyledTextInput__StyledTextInputContainer-gOoAsL gBrQQI"
+  <ol
+    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
   >
-    <input
-      class="StyledTextInput-bqUxsy bQkoNv"
-      id="item"
-      autocomplete="off"
-      name="item"
-    />
-  </div>
+    <li>
+      <button
+        class="StyledButton-qbvYY ggTDKd"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy cHUeZK"
+          direction="column"
+        >
+          test
+        </div>
+      </button>
+    </li>
+    <li>
+      <button
+        class="StyledButton-qbvYY ggTDKd"
+        tabindex="0"
+        type="button"
+      >
+        <div
+          class="StyledBox-YaZNy cHUeZK"
+          direction="column"
+        >
+          test1
+        </div>
+      </button>
+    </li>
+  </ol>
 </div>
 `;
 
@@ -124,7 +149,7 @@ exports[`TextInput mounts with complex suggestions 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy eBrdsI"
+          class="StyledBox-YaZNy cHUeZK"
           direction="column"
         >
           test
@@ -138,7 +163,7 @@ exports[`TextInput mounts with complex suggestions 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy eBrdsI"
+          class="StyledBox-YaZNy cHUeZK"
           direction="column"
         >
           test1
@@ -210,7 +235,7 @@ exports[`TextInput mounts with suggestions 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy eBrdsI"
+          class="StyledBox-YaZNy cHUeZK"
           direction="column"
         >
           test
@@ -224,7 +249,7 @@ exports[`TextInput mounts with suggestions 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy eBrdsI"
+          class="StyledBox-YaZNy cHUeZK"
           direction="column"
         >
           test1
@@ -296,7 +321,7 @@ exports[`TextInput selects suggestion 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy eBrdsI"
+          class="StyledBox-YaZNy cHUeZK"
           direction="column"
         >
           test
@@ -310,7 +335,7 @@ exports[`TextInput selects suggestion 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy eBrdsI"
+          class="StyledBox-YaZNy cHUeZK"
           direction="column"
         >
           test1

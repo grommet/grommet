@@ -241,7 +241,7 @@ class TextInput extends Component {
                 onFocus(event);
               }
             }}
-            onChange={(event) => {
+            onInput={(event) => {
               this.resetSuggestions();
               if (onInput) {
                 onInput(event);
