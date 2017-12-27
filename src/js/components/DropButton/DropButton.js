@@ -17,7 +17,7 @@ class DropButton extends Component {
 
   componentWillReceiveProps({ open }) {
     const { showDrop } = this.state;
-    if (open !== showDrop) {
+    if (open !== undefined && open !== showDrop) {
       this.setState({ showDrop: open });
     }
   }
