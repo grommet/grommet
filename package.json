@@ -30,7 +30,8 @@
     "check": "npm run generate-readme && cross-env NODE_ENV=test grommet check",
     "test": "grommet check -t",
     "test-update": "grommet check -t -- --updateSnapshot",
-    "test-watch": "grommet check -t -- --watchAll"
+    "test-watch": "grommet check -t -- --watchAll",
+    "pack": "babel-node ./tools/pack"
   },
   "peerDependencies": {
     "react": ">= 15.3.0 < 16 || 16.x",
@@ -81,6 +82,7 @@
     "require-reload": "^0.2.2",
     "simple-git": "^1.74.1",
     "styled-components": "^2.1.1",
+    "tarball-extract": "^0.0.6",
     "webpack": "^3.4.1"
   },
   "jest": {
@@ -101,5 +103,15 @@
   },
   "pre-commit": [
     "check"
+  ],
+  "bundledDependencies": [
+    "date-time-format-timezone",
+    "grommet-icons",
+    "markdown-to-jsx",
+    "node-emoji",
+    "polished",
+    "prop-types",
+    "react-desc",
+    "recompose"
   ]
 }

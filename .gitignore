@@ -8,3 +8,5 @@ npm-debug.log
 yarn-error.log
 .DS_Store
 .tmp/
+grommet-*-licenses.json
+grommet-*-src-with-dependecies.tgz
