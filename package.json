@@ -103,15 +103,5 @@
   },
   "pre-commit": [
     "check"
-  ],
-  "bundledDependencies": [
-    "date-time-format-timezone",
-    "grommet-icons",
-    "markdown-to-jsx",
-    "node-emoji",
-    "polished",
-    "prop-types",
-    "react-desc",
-    "recompose"
   ]
 }
