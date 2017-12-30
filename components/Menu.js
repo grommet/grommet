@@ -241,7 +241,7 @@ var MenuDrop = function (_Component) {
         return result;
       });
 
-      var contents = [_react2.default.cloneElement(control, { key: 'control', fill: true }), _react2.default.createElement(
+      var contents = [_react2.default.createElement(
         _Box2.default,
         _extends({}, restProps, { key: 'nav', ref: function ref(_ref) {
             return _this2.navContainerRef = _ref;
@@ -250,6 +250,13 @@ var MenuDrop = function (_Component) {
           primary: false }),
         menuDropChildren
       )];
+
+      // do not show the control if menu doesn't overlap with it when expanded
+      var showControl = ('top' === dropAlign.top || 'bottom' === dropAlign.bottom) && ('left' === dropAlign.left || 'right' === dropAlign.right);
+
+      if (showControl) {
+        contents.unshift(_react2.default.cloneElement(control, { key: 'control', fill: true }));
+      }
 
       if (dropAlign.bottom) {
         contents.reverse();
@@ -579,7 +586,9 @@ var Menu = function (_Component2) {
           _react2.default.createElement(_Button2.default, _extends({ plain: true, reverse: true,
             a11yTitle: menuTitle }, this._renderButtonProps(), {
             onClick: function onClick() {
-              return _this6.setState({ state: 'expanded' });
+              return _this6.setState({
+                state: _this6.state.state !== 'expanded' ? 'expanded' : 'collapsed'
+              });
             },
             onFocus: this._onFocusControl, onBlur: this._onBlurControl }))
         );
