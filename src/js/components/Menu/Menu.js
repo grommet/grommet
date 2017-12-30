@@ -143,6 +143,7 @@ class Menu extends Component {
                         this.onDropClose();
                       }
                     } : undefined}
+                    href={item.href}
                   >
                     <Box align='start' pad='small' direction='row'>
                       {item.icon}{item.label}

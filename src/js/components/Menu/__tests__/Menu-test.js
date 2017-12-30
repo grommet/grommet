@@ -38,7 +38,8 @@ describe('Menu', () => {
         label='Test'
         items={[
           { label: 'Item 1' },
-          { label: 'Item 2' },
+          { label: 'Item 2', onClick: () => {} },
+          { label: 'Item 3', href: '/test' },
         ]}
       />, {
         attachTo: document.body.firstChild,
