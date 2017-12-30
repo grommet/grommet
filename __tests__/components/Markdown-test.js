@@ -12,7 +12,7 @@ jest.mock('react-dom');
 describe('Markdown', () => {
   it('has correct default options', () => {
     const component = renderer.create(
-      <Markdown content='test'
+      <Markdown content={`test\n\n`}
         components={{
           p: { props: { className: 'testing', size: 'large' } }
         }} />
