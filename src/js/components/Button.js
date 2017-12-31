@@ -45,7 +45,7 @@ export default class Button extends Component {
     const { router } = this.context;
     const modifierKey = event.ctrlKey || event.metaKey;
 
-    if (modifierKey && !disabled && !onClick) {
+    if (modifierKey && !onClick) {
       return true;
     }
 

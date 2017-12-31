@@ -51,7 +51,6 @@ export default class Tiles extends Component {
 
   componentDidMount () {
     const { direction, onMore, selectable } = this.props;
-    this._setSelection();
     if (onMore) {
       this._scroll = InfiniteScroll.startListeningForScroll(this.moreRef,
         onMore);
@@ -61,7 +60,7 @@ export default class Tiles extends Component {
       document.addEventListener('wheel', this._onWheel, { passive: true });
       this._trackHorizontalScroll();
       // give browser a chance to stabilize
-      setTimeout(this._layout, 10);
+      this._layoutTimer = setTimeout(this._layout, 10);
     }
     if (selectable) {
       // only listen for navigation keys if the tile row can be selected
@@ -100,10 +99,9 @@ export default class Tiles extends Component {
     if ('row' === direction) {
       this._trackHorizontalScroll();
       // give browser a chance to stabilize
-      setTimeout(this._layout, 10);
+      this._layoutTimer = setTimeout(this._layout, 10);
     }
     if (selectable) {
-      this._setSelection();
       // only listen for navigation keys if the list row can be selected
       this._keyboardHandlers = {
         left: this._onPreviousTile,
@@ -136,6 +134,9 @@ export default class Tiles extends Component {
       KeyboardAccelerators.stopListeningToKeyboard(
         this, this._keyboardHandlers
       );
+    }
+    if (this._layoutTimer) {
+      clearTimeout(this._layoutTimer);
     }
   }
 
@@ -252,8 +253,8 @@ export default class Tiles extends Component {
 
   _onScrollHorizontal () {
     // debounce
-    clearTimeout(this._scrollTimer);
-    this._scrollTimer = setTimeout(this._layout, 50);
+    clearTimeout(this._layoutTimer);
+    this._layoutTimer = setTimeout(this._layout, 50);
   }
 
   _onWheel (event) {
@@ -313,8 +314,8 @@ export default class Tiles extends Component {
 
   _onResize () {
     // debounce
-    clearTimeout(this._resizeTimer);
-    this._resizeTimer = setTimeout(this._layout, 50);
+    clearTimeout(this._layoutTimer);
+    this._layoutTimer = setTimeout(this._layout, 50);
   }
 
   _trackHorizontalScroll () {
@@ -324,15 +325,6 @@ export default class Tiles extends Component {
       tiles.addEventListener('scroll', this._onScrollHorizontal);
       this._tracking = true;
     }
-  }
-
-  _setSelection () {
-    Selection.setClassFromIndexes({
-      containerElement: findDOMNode(this.tilesRef),
-      childSelector: `.${TILE}`,
-      selectedClass: SELECTED_CLASS,
-      selectedIndexes: this.state.selected
-    });
   }
 
   _onClick (event) {
@@ -346,7 +338,7 @@ export default class Tiles extends Component {
     });
     // only set the selected state and classes if the caller isn't managing it.
     if (selected === undefined) {
-      this.setState({ selected: selection }, this._setSelection);
+      this.setState({ selected: selection });
     }
 
     if (onSelect) {
@@ -354,14 +346,21 @@ export default class Tiles extends Component {
     }
   }
 
-  _renderChild (element) {
+  _renderChild (element, elementIndex) {
     const { flush } = this.props;
+    const { selected: selectedArray } = this.state;
+    let selected = element.props.selected;
+
+    if (selectedArray && selectedArray.indexOf(elementIndex) > -1) {
+      selected = true;
+    }
 
     if (element) {
       // only clone tile children
-      if (element.type && element.type.displayName === 'Tile') {
+      if (element.type && element.type._tile) {
         const elementClone = React.cloneElement(element, {
-          hoverBorder: !flush
+          hoverBorder: !flush,
+          selected
         });
 
         return elementClone;
@@ -407,9 +406,11 @@ export default class Tiles extends Component {
       );
     }
 
-    const tileContents = Children.map(children, (element) => {
-      return this._renderChild(element);
-    });
+    const tileContents = Children.toArray(children)
+      .filter(child => child)
+      .map((element, index) => {
+        return this._renderChild(element, index);
+      });
 
     let selectableProps;
     if (selectable) {

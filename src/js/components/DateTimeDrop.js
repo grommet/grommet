@@ -16,9 +16,20 @@ import CSSClassnames from '../utils/CSSClassnames';
 import { announce } from '../utils/Announcer';
 import Intl from '../utils/Intl';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
+import { getCurrentLocale } from '../utils/Locale';
 
 const CLASS_ROOT = CSSClassnames.DATE_TIME_DROP;
-const WEEK_DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const locale = getCurrentLocale();
+moment.locale(locale);
+const WEEK_DAYS = moment.weekdaysShort(true) || [
+  'Sun',
+  'Mon',
+  'Tue',
+  'Wed',
+  'Thu',
+  'Fri',
+  'Sat'
+];
 // const DATE_REGEXP = new RegExp('[DMY]');
 const DAY_REGEXP = new RegExp('[D]');
 const MONTHYEAR_REGEXP = new RegExp('[MY]');

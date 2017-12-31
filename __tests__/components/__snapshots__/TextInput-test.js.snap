@@ -5,10 +5,11 @@ exports[`TextInput can set autocomplete 1`] = `
   autoComplete="on"
   className="grommetux-text-input grommetux-input"
   defaultValue={undefined}
+  onChange={[Function]}
   onFocus={[Function]}
-  onInput={[Function]}
   onKeyDown={[Function]}
   placeholder={undefined}
+  type="text"
   value={undefined}
 />
 `;
@@ -20,10 +21,11 @@ exports[`TextInput has correct default options 1`] = `
   defaultValue={undefined}
   id="item1"
   name="item-1"
+  onChange={[Function]}
   onFocus={[Function]}
-  onInput={[Function]}
   onKeyDown={[Function]}
   placeholder={undefined}
+  type="text"
   value="one"
 />
 `;

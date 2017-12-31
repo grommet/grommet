@@ -110,14 +110,14 @@ exports[`Select inline + multiple 1`] = `
     >
       <label
         className="grommetux-check-box"
-        htmlFor="one"
+        htmlFor={undefined}
       >
         <span>
           <input
             checked={true}
             className="grommetux-check-box__input"
             disabled={undefined}
-            id="one"
+            id={undefined}
             name={undefined}
             onChange={[Function]}
             tabIndex="0"
@@ -151,14 +151,14 @@ exports[`Select inline + multiple 1`] = `
     >
       <label
         className="grommetux-check-box"
-        htmlFor="two"
+        htmlFor={undefined}
       >
         <span>
           <input
             checked={false}
             className="grommetux-check-box__input"
             disabled={undefined}
-            id="two"
+            id={undefined}
             name={undefined}
             onChange={[Function]}
             tabIndex="0"
@@ -204,12 +204,12 @@ exports[`Select inline 1`] = `
     >
       <label
         className="grommetux-radio-button"
-        htmlFor="one"
+        htmlFor={undefined}
       >
         <input
           checked={true}
           className="grommetux-radio-button__input"
-          id="one"
+          id={undefined}
           onChange={[Function]}
           type="radio"
         />
@@ -229,12 +229,12 @@ exports[`Select inline 1`] = `
     >
       <label
         className="grommetux-radio-button"
-        htmlFor="two"
+        htmlFor={undefined}
       >
         <input
           checked={false}
           className="grommetux-radio-button__input"
-          id="two"
+          id={undefined}
           onChange={[Function]}
           type="radio"
         />

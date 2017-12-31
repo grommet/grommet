@@ -73,6 +73,10 @@ class LayerContents extends Component {
   }
 
   _processTab (event) {
+    const {hidden} = this.props;
+    if (hidden) {
+      return;
+    }
     let items = this.containerRef.getElementsByTagName('*');
     items = filterByFocusable(items);
 
@@ -236,30 +240,32 @@ export default class Layer extends Component {
   }
 
   _handleAriaHidden (hideOverlay) {
-    const ariaHidden = hideOverlay || false;
-    const grommetApps = document.querySelectorAll(`.${APP}`);
-    const visibleLayers = document.querySelectorAll(
-      `.${CLASS_ROOT}:not(.${CLASS_ROOT}--hidden)`
-    );
-
-    if (grommetApps) {
-      Array.prototype.slice.call(grommetApps).forEach((grommetApp) => {
-        if (ariaHidden && visibleLayers.length === 0) {
-          // make sure to only show grommet apps if there is no other layer
-          grommetApp.setAttribute('aria-hidden', false);
-          grommetApp.classList.remove(`${APP}--hidden`);
-          // scroll body content to the original position
-          grommetApp.style.top = `-${this._originalScrollPosition.top}px`;
-          grommetApp.style.left = `-${this._originalScrollPosition.left}px`;
-        } else {
-          grommetApp.setAttribute('aria-hidden', true);
-          grommetApp.classList.add(`${APP}--hidden`);
-          // this must be null to work
-          grommetApp.style.top = null;
-          grommetApp.style.left = null;
-        }
-      }, this);
-    }
+    setTimeout(() => {
+      const ariaHidden = hideOverlay || false;
+      const grommetApps = document.querySelectorAll(`.${APP}`);
+      const visibleLayers = document.querySelectorAll(
+        `.${CLASS_ROOT}:not(.${CLASS_ROOT}--hidden)`
+      );
+  
+      if (grommetApps) {
+        Array.prototype.slice.call(grommetApps).forEach((grommetApp) => {
+          if (ariaHidden && visibleLayers.length === 0) {
+            // make sure to only show grommet apps if there is no other layer
+            grommetApp.setAttribute('aria-hidden', false);
+            grommetApp.classList.remove(`${APP}--hidden`);
+            // scroll body content to the original position
+            grommetApp.style.top = `-${this._originalScrollPosition.top}px`;
+            grommetApp.style.left = `-${this._originalScrollPosition.left}px`;
+          } else {
+            grommetApp.setAttribute('aria-hidden', true);
+            grommetApp.classList.add(`${APP}--hidden`);
+            // this must be null to work
+            grommetApp.style.top = null;
+            grommetApp.style.left = null;
+          }
+        }, this);
+      }
+    }, 0);
   }
 
   _renderLayer () {

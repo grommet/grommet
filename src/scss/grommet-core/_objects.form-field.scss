@@ -95,9 +95,12 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     }
   }
 
+  > input:not([type]),
   > input[type=text],
   > input[type=range],
   > input[type=email],
+  > input[type=tel],
+  > input[type=url],
   > input[type=password],
   > input[type=number],
   > input[type=file],
@@ -107,7 +110,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > .#{$grommet-namespace}calendar input,
   > .#{$grommet-namespace}date-time input,
   > .#{$grommet-namespace}text-input,
-  > .#{$grommet-namespace}select input,
+  > .#{$grommet-namespace}select:not(.#{$grommet-namespace}select--inline) input,
   > .#{$grommet-namespace}password-input input,
   > textarea {
     @include form-field-content();
@@ -123,8 +126,11 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     padding-left: $inuit-base-spacing-unit;
   }
 
+  > input:not([type]),
   > input[type=text],
   > input[type=email],
+  > input[type=tel],
+  > input[type=url],
   > input[type=password],
   > input[type=number],
   > input[type=file],
@@ -138,9 +144,12 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     }
   }
 
+  > input:not([type]),
   > input[type=text],
   > input[type=range],
   > input[type=email],
+  > input[type=tel],
+  > input[type=url],
   > input[type=password],
   > input[type=number],
   > input[type=file],
@@ -150,7 +159,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > .#{$grommet-namespace}calendar input,
   > .#{$grommet-namespace}date-time input,
   > .#{$grommet-namespace}text-input,
-  > .#{$grommet-namespace}select input,
+  > .#{$grommet-namespace}select:not(.#{$grommet-namespace}select--inline) input,
   > .#{$grommet-namespace}password-input input {
     height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
     // for IE 11.
@@ -443,6 +452,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
 .#{$grommet-namespace}form-field--size-large {
   font-size: $paragraph-large-font-size;
 
+  input:not([type]),
   input[type="text"] {
     font-size: $paragraph-large-font-size;
     height: auto;
@@ -450,6 +460,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
 }
 
 .#{$grommet-namespace}form-field--strong {
+  input:not([type]),
   input[type="text"] {
     font-weight: $text-strong-font-weight;
   }

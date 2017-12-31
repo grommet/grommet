@@ -9,7 +9,7 @@ import Box from './Box';
 import Label from './Label';
 import Heading from './Heading';
 import Headline from './Headline';
-import Markdown from './Markdown';
+import Paragraph from './Paragraph';
 import Anchor from './Anchor';
 import Layer from './Layer';
 import Video from './Video';
@@ -180,13 +180,14 @@ export default class Card extends Component {
     const { description, textSize } = this.props;
     let result = description;
     if (typeof description === 'string') {
-      const components = {
-        p: { props: {
-          margin: PARAGRAPH_MARGINS[textSize],
-          size: PARAGRAPH_SIZES[textSize]
-        } }
-      };
-      result = <Markdown components={components} content={description} />;
+      result = (
+        <Paragraph
+          margin={PARAGRAPH_MARGINS[textSize]}
+          size={PARAGRAPH_SIZES[textSize]} 
+        >
+          {description}
+        </Paragraph>
+      );
     }
     return result;
   }

@@ -196,7 +196,7 @@ export default class Anchor extends Component {
         aria-label={a11yTitle} onClick={(event, ...args) => {
           if (disabled) {
             event.preventDefault();
-          } else {
+          } else if (adjustedOnClick) {
             adjustedOnClick(event, ...args);
           }
         }}>
@@ -235,7 +235,7 @@ schema(Anchor, {
     path: [
       PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
       'React-router path to navigate to when clicked.' +
-      ' Use path={{ path: '/', index: true }} if you want the Anchor to be' +
+      ' Use path={{ path: \'/\', index: true }} if you want the Anchor to be' +
       ' active only when the index route is current.'
     ],
     primary: [PropTypes.bool, 'Whether this is a primary anchor.'],
