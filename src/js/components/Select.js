@@ -451,7 +451,9 @@ export default class Select extends Component {
       return (
         <div ref={ref => this.componentRef = ref} className={classes}
           onClick={this._onAddDrop}>
-          {shouldRenderElement && renderedValue}
+          {shouldRenderElement &&
+            <div className={`${CLASS_ROOT}__input`}> renderedValue </div>
+          }
           <input {...restProps} ref={ref => this.inputRef = ref}
             type={shouldRenderElement ? 'hidden' : 'text'}
             className={`${INPUT} ${CLASS_ROOT}__input`}
