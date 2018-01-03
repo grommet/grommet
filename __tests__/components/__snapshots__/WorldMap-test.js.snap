@@ -3,7 +3,7 @@
 exports[`WorldMap has correct default options 1`] = `
 <svg
   className="grommetux-world-map"
-  preserveAspectRatio="xMidYMid meet"
+  preserveAspectRatio="xMidYMin slice"
   version="1.1"
   viewBox="0 0 940 460"
   width="940px"
@@ -30,7 +30,7 @@ exports[`WorldMap renders place 1`] = `
 >
   <svg
     className="grommetux-world-map"
-    preserveAspectRatio="xMidYMid meet"
+    preserveAspectRatio="xMidYMin slice"
     version="1.1"
     viewBox="0 0 940 460"
     width="940px"
@@ -120,7 +120,7 @@ exports[`WorldMap renders place zoomed 1`] = `
 >
   <svg
     className="grommetux-world-map"
-    preserveAspectRatio="xMidYMid meet"
+    preserveAspectRatio="xMidYMin slice"
     version="1.1"
     viewBox="0 0 410 280"
     width="410px"
