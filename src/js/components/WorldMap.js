@@ -555,7 +555,7 @@ export default class WorldMap extends Component {
       <svg {...props} {...interactiveProps}
         ref={(ref) => this._worldMapRef = ref}
         className={classes} version='1.1'
-        preserveAspectRatio='xMidYMid meet'
+        preserveAspectRatio='xMidYMin slice'
         width={`${width}px`}
         viewBox={`${x} ${y} ${width} ${height}`}>
         <g stroke='none' fill='none' fillRule='evenodd'>
