@@ -63,9 +63,8 @@ exports[`Menu opens and closes on click 1`] = `
         </div>
       </button>
       <button
-        class="StyledButton-qbvYY hBnIRQ"
+        class="StyledButton-qbvYY eIJSCA"
         tabindex="0"
-        disabled=""
         type="button"
       >
         <div
@@ -75,6 +74,18 @@ exports[`Menu opens and closes on click 1`] = `
           Item 2
         </div>
       </button>
+      <a
+        class="StyledButton-kDOCUE iBrSOs"
+        tabindex="0"
+        href="/test"
+      >
+        <div
+          class="StyledBox-YaZNy bpXZSO"
+          direction="row"
+        >
+          Item 3
+        </div>
+      </a>
     </div>
   </div>
 </div>
@@ -97,6 +108,20 @@ exports[`Menu opens and closes on click 2`] = `
 
 @media only screen and (min-width:700px) {
   .hBnIRQ {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .eIJSCA {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .iBrSOs {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -283,6 +308,13 @@ exports[`Menu with dropAlign renders 2`] = `
 
 @media only screen and (min-width:700px) {
   .gyRZCS {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .iBrSOs {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
