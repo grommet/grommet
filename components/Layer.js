@@ -69,6 +69,7 @@ var LayerContents = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (LayerContents.__proto__ || Object.getPrototypeOf(LayerContents)).call(this, props, context));
 
+    _this._onClickOverlay = _this._onClickOverlay.bind(_this);
     _this._processTab = _this._processTab.bind(_this);
 
     _this.state = {
@@ -97,7 +98,8 @@ var LayerContents = function (_Component) {
     value: function componentDidMount() {
       var _props = this.props,
           hidden = _props.hidden,
-          onClose = _props.onClose;
+          onClose = _props.onClose,
+          overlayClose = _props.overlayClose;
 
 
       if (!hidden) {
@@ -112,6 +114,11 @@ var LayerContents = function (_Component) {
         this._keyboardHandlers.esc = onClose;
       }
       _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
+
+      if (onClose && overlayClose) {
+        var layerParent = this.containerRef.parentNode;
+        layerParent.addEventListener('click', this._onClickOverlay);
+      }
     }
   }, {
     key: 'componentDidUpdate',
@@ -125,7 +132,16 @@ var LayerContents = function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
+      var _props2 = this.props,
+          onClose = _props2.onClose,
+          overlayClose = _props2.overlayClose;
+
       _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
+
+      if (onClose && overlayClose) {
+        var layerParent = this.containerRef.parentNode;
+        layerParent.removeEventListener('click', this._onClickOverlay);
+      }
     }
   }, {
     key: '_processTab',
@@ -153,15 +169,30 @@ var LayerContents = function (_Component) {
       }
     }
   }, {
+    key: '_onClickOverlay',
+    value: function _onClickOverlay(event) {
+      var dropActive = this.state.dropActive;
+
+      if (!dropActive) {
+        var onClose = this.props.onClose;
+
+        var layerContents = this.containerRef;
+
+        if (layerContents && !layerContents.contains(event.target)) {
+          onClose();
+        }
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this3 = this;
 
-      var _props2 = this.props,
-          a11yTitle = _props2.a11yTitle,
-          children = _props2.children,
-          closer = _props2.closer,
-          onClose = _props2.onClose;
+      var _props3 = this.props,
+          a11yTitle = _props3.a11yTitle,
+          children = _props3.children,
+          closer = _props3.closer,
+          onClose = _props3.onClose;
       var intl = this.context.intl;
 
 
@@ -210,6 +241,7 @@ LayerContents.propTypes = {
   history: _propTypes2.default.object,
   intl: _propTypes2.default.object,
   onClose: _propTypes2.default.func,
+  overlayClose: _propTypes2.default.bool,
   router: _propTypes2.default.any,
   store: _propTypes2.default.any
 };
@@ -281,13 +313,13 @@ var Layer = function (_Component2) {
     value: function _classesFromProps() {
       var _classnames;
 
-      var _props3 = this.props,
-          align = _props3.align,
-          className = _props3.className,
-          closer = _props3.closer,
-          flush = _props3.flush,
-          hidden = _props3.hidden,
-          peek = _props3.peek;
+      var _props4 = this.props,
+          align = _props4.align,
+          className = _props4.className,
+          closer = _props4.closer,
+          flush = _props4.flush,
+          hidden = _props4.hidden,
+          peek = _props4.peek;
 
 
       return (0, _classnames3.default)('grommet', CLASS_ROOT, (_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '--align-' + this.props.align, align), _defineProperty(_classnames, CLASS_ROOT + '--closeable', closer), _defineProperty(_classnames, CLASS_ROOT + '--flush', flush), _defineProperty(_classnames, CLASS_ROOT + '--hidden', hidden), _defineProperty(_classnames, CLASS_ROOT + '--peek', peek), _classnames), className);
@@ -399,6 +431,7 @@ Layer.propTypes = {
   closer: _propTypes2.default.oneOfType([_propTypes2.default.node, _propTypes2.default.bool]),
   flush: _propTypes2.default.bool,
   hidden: _propTypes2.default.bool,
+  overlayClose: _propTypes2.default.bool,
   peek: _propTypes2.default.bool,
   onClose: _propTypes2.default.func
 };
