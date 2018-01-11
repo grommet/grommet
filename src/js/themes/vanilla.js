@@ -34,8 +34,8 @@ export default deepFreeze({
     borderSize: {
       xsmall: '1px',
       small: '2px',
-      medium: `${baseSpacing / 8}px`,
-      large: `${baseSpacing / 4}px`,
+      medium: `${baseSpacing / 6}px`,
+      large: `${baseSpacing / 2}px`,
       xlarge: `${baseSpacing}px`,
     },
     breakpoints: {

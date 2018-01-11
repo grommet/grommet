@@ -370,6 +370,11 @@ exports[`Video autoPlay renders 1`] = `
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
+                style={
+                  Object {
+                    "position": "relative",
+                  }
+                }
                 viewBox="0 0 288 12"
                 width="100%"
               >
@@ -896,6 +901,11 @@ exports[`Video controls renders 1`] = `
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
+                style={
+                  Object {
+                    "position": "relative",
+                  }
+                }
                 viewBox="0 0 288 12"
                 width="100%"
               >
@@ -1090,6 +1100,11 @@ exports[`Video controls renders 1`] = `
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
+                style={
+                  Object {
+                    "position": "relative",
+                  }
+                }
                 viewBox="0 0 288 12"
                 width="100%"
               >
@@ -1572,6 +1587,11 @@ exports[`Video fit renders 1`] = `
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
+                style={
+                  Object {
+                    "position": "relative",
+                  }
+                }
                 viewBox="0 0 288 12"
                 width="100%"
               >
@@ -1769,6 +1789,11 @@ exports[`Video fit renders 1`] = `
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
+                style={
+                  Object {
+                    "position": "relative",
+                  }
+                }
                 viewBox="0 0 288 12"
                 width="100%"
               >
@@ -2233,6 +2258,11 @@ exports[`Video loop renders 1`] = `
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
+                style={
+                  Object {
+                    "position": "relative",
+                  }
+                }
                 viewBox="0 0 288 12"
                 width="100%"
               >
@@ -2697,6 +2727,11 @@ exports[`Video mute renders 1`] = `
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
+                style={
+                  Object {
+                    "position": "relative",
+                  }
+                }
                 viewBox="0 0 288 12"
                 width="100%"
               >
@@ -3161,6 +3196,11 @@ exports[`Video renders 1`] = `
                 className="c11"
                 height={12}
                 preserveAspectRatio="none"
+                style={
+                  Object {
+                    "position": "relative",
+                  }
+                }
                 viewBox="0 0 288 12"
                 width="100%"
               >

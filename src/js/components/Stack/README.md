@@ -14,7 +14,7 @@ import { Stack } from 'grommet';
 **anchor**
 
 Where to anchor children from. If not specified, children fill the
-first child's area.
+guiding child's area.
 
 ```
 center
@@ -26,5 +26,16 @@ top-left
 bottom-left
 top-right
 bottom-right
+```
+
+**guidingChild**
+
+Which child to guide layout from. All other children will be positioned
+      within that area. Defaults to `first`.
+
+```
+number
+first
+last
 ```
   

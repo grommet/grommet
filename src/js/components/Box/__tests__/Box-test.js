@@ -299,7 +299,13 @@ test('Box border renders', () => {
       <Box border='left' />
       <Box border='bottom' />
       <Box border='right' />
-      <Box border={{ color: 'accent-1', side: 'all', size: 'medium' }} />
+      <Box border={{ color: 'accent-1' }} />,
+      <Box border={{ side: 'all' }} />
+      <Box border={{ size: 'xsmall' }} />
+      <Box border={{ size: 'small' }} />
+      <Box border={{ size: 'medium' }} />
+      <Box border={{ size: 'large' }} />
+      <Box border={{ size: 'xlarge' }} />
     </Grommet>
   );
   const tree = component.toJSON();

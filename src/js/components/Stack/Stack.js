@@ -9,16 +9,28 @@ import styleMap from './styleMap';
 
 class Stack extends Component {
   render() {
-    const { anchor, children, ...rest } = this.props;
+    const { anchor, children, guidingChild, ...rest } = this.props;
 
     // make all children but the first absolutely positioned
+    const lastIndex = React.Children.count(children) - 1;
+    let guidingIndex = guidingChild;
+    if (guidingIndex === 'first' || !guidingIndex) {
+      guidingIndex = 0;
+    } else if (guidingIndex === 'last') {
+      guidingIndex = lastIndex;
+    }
     const styledChildren = React.Children.map(children, (child, index) => {
-      if (index === 0) {
-        return child;
-      }
-
       if (child) {
+        if (index === guidingIndex) {
+          const style = {
+            ...(child.props || {}).style,
+            position: 'relative',
+          };
+          return cloneElement(child, { style });
+        }
+
         const style = {
+          ...(child.props || {}).style,
           position: 'absolute',
           overflow: 'hidden',
           ...styleMap[anchor || 'fill'],
