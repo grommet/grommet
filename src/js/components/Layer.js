@@ -19,6 +19,7 @@ class LayerContents extends Component {
   constructor(props, context) {
     super(props, context);
 
+    this._onClickOverlay = this._onClickOverlay.bind(this);
     this._processTab = this._processTab.bind(this);
 
     this.state = {
@@ -39,7 +40,7 @@ class LayerContents extends Component {
   }
 
   componentDidMount () {
-    const { hidden, onClose } = this.props;
+    const { hidden, onClose, overlayClose } = this.props;
 
     if (!hidden) {
       this.anchorStepRef.focus();
@@ -55,6 +56,11 @@ class LayerContents extends Component {
     KeyboardAccelerators.startListeningToKeyboard(
       this, this._keyboardHandlers
     );
+
+    if (onClose && overlayClose) {
+      const layerParent = this.containerRef.parentNode;
+      layerParent.addEventListener('click', this._onClickOverlay);
+    }
   }
 
   componentDidUpdate () {
@@ -67,9 +73,15 @@ class LayerContents extends Component {
   }
 
   componentWillUnmount () {
+    const { onClose, overlayClose } = this.props;
     KeyboardAccelerators.stopListeningToKeyboard(
       this, this._keyboardHandlers
     );
+
+    if (onClose && overlayClose) {
+      const layerParent = this.containerRef.parentNode;
+      layerParent.removeEventListener('click', this._onClickOverlay);
+    }
   }
 
   _processTab (event) {
@@ -91,6 +103,18 @@ class LayerContents extends Component {
       } else if (event.target === items[items.length - 1]) {
         items[0].focus();
         event.preventDefault();
+      }
+    }
+  }
+
+  _onClickOverlay (event) {
+    const { dropActive } = this.state;
+    if (!dropActive) {
+      const { onClose } = this.props;
+      const layerContents = this.containerRef;
+
+      if (layerContents && !layerContents.contains(event.target)) {
+        onClose();
       }
     }
   }
@@ -138,6 +162,7 @@ LayerContents.propTypes = {
   history: PropTypes.object,
   intl: PropTypes.object,
   onClose: PropTypes.func,
+  overlayClose: PropTypes.bool,
   router: PropTypes.any,
   store: PropTypes.any
 };
@@ -246,7 +271,7 @@ export default class Layer extends Component {
       const visibleLayers = document.querySelectorAll(
         `.${CLASS_ROOT}:not(.${CLASS_ROOT}--hidden)`
       );
-  
+
       if (grommetApps) {
         Array.prototype.slice.call(grommetApps).forEach((grommetApp) => {
           if (ariaHidden && visibleLayers.length === 0) {
@@ -314,6 +339,7 @@ Layer.propTypes = {
   ]),
   flush: PropTypes.bool,
   hidden: PropTypes.bool,
+  overlayClose: PropTypes.bool,
   peek: PropTypes.bool,
   onClose: PropTypes.func
 };
