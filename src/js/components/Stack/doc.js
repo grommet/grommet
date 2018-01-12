@@ -20,8 +20,15 @@ export default (Stack) => {
       ]
     ).description(
       `Where to anchor children from. If not specified, children fill the
-first child's area.`
+guiding child's area.`
     ),
+    guidingChild: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.oneOf(['first', 'last']),
+    ]).description(
+      `Which child to guide layout from. All other children will be positioned
+      within that area.`
+    ).defaultValue('first'),
   };
 
   return DocumentedStack;

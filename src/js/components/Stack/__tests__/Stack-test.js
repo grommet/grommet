@@ -5,12 +5,27 @@ import 'jest-styled-components';
 import { Grommet } from '../../Grommet';
 import { Stack } from '../';
 
-const CONTENTS = [<div key={1}>first</div>, <div key={2}>second</div>];
+const CONTENTS = [
+  <div key={1}>first</div>,
+  <div key={2}>second</div>,
+];
 
 test('Stack renders', () => {
   const component = renderer.create(
     <Grommet>
       <Stack>{CONTENTS}</Stack>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Stack guidingChild renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Stack guidingChild='first'>{CONTENTS}</Stack>
+      <Stack guidingChild='last'>{CONTENTS}</Stack>
+      <Stack guidingChild={0}>{CONTENTS}</Stack>
     </Grommet>
   );
   const tree = component.toJSON();

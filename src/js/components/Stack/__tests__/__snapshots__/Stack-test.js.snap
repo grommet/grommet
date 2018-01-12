@@ -28,7 +28,13 @@ exports[`Stack anchor renders 1`] = `
   <div
     className="c1"
   >
-    <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
       first
     </div>
     <div
@@ -48,7 +54,13 @@ exports[`Stack anchor renders 1`] = `
   <div
     className="c1"
   >
-    <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
       first
     </div>
     <div
@@ -68,7 +80,13 @@ exports[`Stack anchor renders 1`] = `
   <div
     className="c1"
   >
-    <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
       first
     </div>
     <div
@@ -88,7 +106,13 @@ exports[`Stack anchor renders 1`] = `
   <div
     className="c1"
   >
-    <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
       first
     </div>
     <div
@@ -108,7 +132,13 @@ exports[`Stack anchor renders 1`] = `
   <div
     className="c1"
   >
-    <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
       first
     </div>
     <div
@@ -128,7 +158,13 @@ exports[`Stack anchor renders 1`] = `
   <div
     className="c1"
   >
-    <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
       first
     </div>
     <div
@@ -147,7 +183,13 @@ exports[`Stack anchor renders 1`] = `
   <div
     className="c1"
   >
-    <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
       first
     </div>
     <div
@@ -166,7 +208,13 @@ exports[`Stack anchor renders 1`] = `
   <div
     className="c1"
   >
-    <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
       first
     </div>
     <div
@@ -185,7 +233,13 @@ exports[`Stack anchor renders 1`] = `
   <div
     className="c1"
   >
-    <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
       first
     </div>
     <div
@@ -195,6 +249,115 @@ exports[`Stack anchor renders 1`] = `
           "overflow": "hidden",
           "position": "absolute",
           "right": "0",
+        }
+      }
+    >
+      second
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Stack guidingChild renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  position: relative;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
+      first
+    </div>
+    <div
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      second
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      first
+    </div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
+      second
+    </div>
+  </div>
+  <div
+    className="c1"
+  >
+    <div
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
+      first
+    </div>
+    <div
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
         }
       }
     >
@@ -232,7 +395,13 @@ exports[`Stack renders 1`] = `
   <div
     className="c1"
   >
-    <div>
+    <div
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
       first
     </div>
     <div

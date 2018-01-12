@@ -17,7 +17,7 @@ exports[`Tabs changes active index 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy hVgGWk"
+        class="StyledBox-YaZNy cVzNWb"
         direction="column"
       >
         <span
@@ -38,7 +38,7 @@ exports[`Tabs changes active index 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy eeXmpG"
+        class="StyledBox-YaZNy kLBzNE"
         direction="column"
       >
         <span
@@ -93,7 +93,7 @@ exports[`Tabs changes to second tab 1`] = `
       >
         <div
           aria-label={undefined}
-          className="StyledBox-YaZNy eeXmpG"
+          className="StyledBox-YaZNy kLBzNE"
           direction="column"
         >
           <span
@@ -126,7 +126,7 @@ exports[`Tabs changes to second tab 1`] = `
       >
         <div
           aria-label={undefined}
-          className="StyledBox-YaZNy hVgGWk"
+          className="StyledBox-YaZNy cVzNWb"
           direction="column"
         >
           <span
@@ -183,7 +183,7 @@ exports[`Tabs renders complex Tab title 1`] = `
       >
         <div
           aria-label={undefined}
-          className="StyledBox-YaZNy hVgGWk"
+          className="StyledBox-YaZNy cVzNWb"
           direction="column"
         >
           <div>
@@ -213,7 +213,7 @@ exports[`Tabs renders complex Tab title 1`] = `
       >
         <div
           aria-label={undefined}
-          className="StyledBox-YaZNy eeXmpG"
+          className="StyledBox-YaZNy kLBzNE"
           direction="column"
         >
           <div>
@@ -266,7 +266,7 @@ exports[`Tabs renders with Tab 1`] = `
       >
         <div
           aria-label={undefined}
-          className="StyledBox-YaZNy hVgGWk"
+          className="StyledBox-YaZNy cVzNWb"
           direction="column"
         >
           <span
@@ -300,7 +300,7 @@ exports[`Tabs renders with Tab 1`] = `
       >
         <div
           aria-label={undefined}
-          className="StyledBox-YaZNy eeXmpG"
+          className="StyledBox-YaZNy kLBzNE"
           direction="column"
         >
           <span
@@ -359,7 +359,7 @@ exports[`Tabs sets on hover 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy hVgGWk"
+        class="StyledBox-YaZNy cVzNWb"
         direction="column"
       >
         <span
@@ -380,7 +380,7 @@ exports[`Tabs sets on hover 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy eeXmpG"
+        class="StyledBox-YaZNy kLBzNE"
         direction="column"
       >
         <span
@@ -418,7 +418,7 @@ exports[`Tabs sets on hover 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy hVgGWk"
+        class="StyledBox-YaZNy cVzNWb"
         direction="column"
       >
         <span
@@ -439,7 +439,7 @@ exports[`Tabs sets on hover 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy fkyuKu"
+        class="StyledBox-YaZNy cVdybV"
         direction="column"
       >
         <span
@@ -477,7 +477,7 @@ exports[`Tabs sets on hover 3`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy hVgGWk"
+        class="StyledBox-YaZNy cVzNWb"
         direction="column"
       >
         <span
@@ -498,7 +498,7 @@ exports[`Tabs sets on hover 3`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy fkyuKu"
+        class="StyledBox-YaZNy cVdybV"
         direction="column"
       >
         <span
@@ -536,7 +536,7 @@ exports[`Tabs sets on hover 4`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy hVgGWk"
+        class="StyledBox-YaZNy cVzNWb"
         direction="column"
       >
         <span
@@ -557,7 +557,7 @@ exports[`Tabs sets on hover 4`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy eeXmpG"
+        class="StyledBox-YaZNy kLBzNE"
         direction="column"
       >
         <span
