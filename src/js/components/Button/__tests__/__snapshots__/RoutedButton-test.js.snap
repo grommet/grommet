@@ -32,14 +32,14 @@ exports[`RoutedButton renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   text-align: center;
   display: inline-block;
   min-width: 96px;
   max-width: 384px;
   font-weight: 600;
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
   font-size: 1.1875rem;
   line-height: 24px;
   padding: 10px 10px;

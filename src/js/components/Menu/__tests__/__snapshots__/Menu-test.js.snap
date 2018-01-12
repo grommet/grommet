@@ -12,7 +12,7 @@ exports[`Menu opens and closes on click 1`] = `
     direction="column"
   >
     <button
-      class="StyledButton-qbvYY brNyWU"
+      class="StyledButton-qbvYY gWPVwe"
       tabindex="0"
       aria-label="Close Menu"
       type="button"
@@ -50,7 +50,7 @@ exports[`Menu opens and closes on click 1`] = `
       direction="column"
     >
       <button
-        class="StyledButton-qbvYY hBnIRQ"
+        class="StyledButton-qbvYY dsuDPZ"
         tabindex="0"
         disabled=""
         type="button"
@@ -63,7 +63,7 @@ exports[`Menu opens and closes on click 1`] = `
         </div>
       </button>
       <button
-        class="StyledButton-qbvYY eIJSCA"
+        class="StyledButton-qbvYY bMFmk"
         tabindex="0"
         type="button"
       >
@@ -75,7 +75,7 @@ exports[`Menu opens and closes on click 1`] = `
         </div>
       </button>
       <a
-        class="StyledButton-kDOCUE iBrSOs"
+        class="StyledButton-kDOCUE KPUOz"
         tabindex="0"
         href="/test"
       >
@@ -93,35 +93,35 @@ exports[`Menu opens and closes on click 1`] = `
 
 exports[`Menu opens and closes on click 2`] = `
 "@media only screen and (min-width:700px) {
-  .fFFoxu {
+  .gHaBSp {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .brNyWU {
+  .gWPVwe {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hBnIRQ {
+  .dsuDPZ {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .eIJSCA {
+  .bMFmk {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iBrSOs {
+  .KPUOz {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -166,7 +166,7 @@ exports[`Menu opens and closes on click 2`] = `
 exports[`Menu renders 1`] = `
 <div>
   <button
-    class="StyledButton-qbvYY fFFoxu"
+    class="StyledButton-qbvYY gHaBSp"
     tabindex="0"
     id="item"
     aria-label="Open Menu"
@@ -185,7 +185,7 @@ exports[`Menu renders 1`] = `
 exports[`Menu with custom message renders 1`] = `
 <div>
   <button
-    class="StyledButton-qbvYY fFFoxu"
+    class="StyledButton-qbvYY gHaBSp"
     tabindex="0"
     aria-label="Abrir Menu"
     type="button"
@@ -223,7 +223,7 @@ exports[`Menu with custom message renders 1`] = `
 
 exports[`Menu with dropAlign renders 1`] = `
 <button
-  class="StyledButton-qbvYY fFFoxu"
+  class="StyledButton-qbvYY gHaBSp"
   tabindex="-1"
   id="menu"
   aria-label="Open Menu"
@@ -263,7 +263,7 @@ exports[`Menu with dropAlign renders 1`] = `
 exports[`Menu with dropAlign renders 2`] = `
 "
 
-.fFFoxu {
+.gHaBSp {
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -279,42 +279,42 @@ exports[`Menu with dropAlign renders 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .fFFoxu {
+  .gHaBSp {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .brNyWU {
+  .gWPVwe {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hBnIRQ {
+  .dsuDPZ {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .eIJSCA {
+  .bMFmk {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .gyRZCS {
+  .dmYRTg {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iBrSOs {
+  .KPUOz {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

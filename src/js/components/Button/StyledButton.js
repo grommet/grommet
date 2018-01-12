@@ -1,30 +1,24 @@
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
-import { activeStyle, focusStyle, fontSize, lapAndUp } from '../../utils';
+import { activeStyle, backgroundStyle, colorForName, focusStyle, fontSize, lapAndUp } from '../../utils';
 
-const primaryStyle = css`
-  background-color: ${props => props.theme.global.colors.brand};
-  color: ${props => props.theme.global.colors.white};
+const basicStyle = props => css`
+  border: ${props.theme.button.border.width} solid ${props.color ? colorForName(props.color, props.theme) : props.theme.button.border.color};
+  border-radius: ${props.theme.button.border.radius};
+  color: ${props.theme.button.colors.text};
+`;
+
+const primaryStyle = props => css`
+  ${backgroundStyle(props.color || 'brand', props.theme)}
+  border: none;
 
   // TODO: revisit this
   svg {
-    fill: ${props => props.theme.global.colors.white};
-    stroke: ${props => props.theme.global.colors.white};
+    fill: ${props.theme.global.colors.white};
+    stroke: ${props.theme.global.colors.white};
     transition: none;
   }
-`;
-
-const accentStyle = css`
-  border-color: ${props => props.theme.button.colors.accent};
-`;
-
-const criticalStyle = css`
-  border-color: ${props => props.theme.button.colors.critical};
-`;
-
-const secondaryStyle = css`
-  border-color: ${props => props.theme.button.colors.secondary};
 `;
 
 const disabledStyle = `
@@ -33,12 +27,8 @@ const disabledStyle = `
 `;
 
 function getHoverColor(props) {
-  if (props.accent) {
-    return props.theme.button.colors.accent;
-  } else if (props.critical) {
-    return props.theme.button.colors.critical;
-  } else if (props.secondary) {
-    return props.theme.button.colors.secondary;
+  if (props.color) {
+    return colorForName(props.color, props.theme);
   }
   return props.theme.button.border.color;
 }
@@ -136,15 +126,14 @@ const StyledButton = styled.button`
   text-transform: none;
 
   ${props => !props.plain && css`
-    border: ${props.theme.button.border.width} solid ${props.theme.button.border.color};
-    border-radius: ${props.theme.button.border.radius};
-    color: ${props.theme.button.colors.text};
     text-align: center;
     display: inline-block;
     min-width: ${props.theme.button.minWidth};
     max-width: ${props.theme.button.maxWidth};
     font-weight: ${props.theme.global.control.font.weight};
   `}
+  ${props => !props.plain && !props.primary && basicStyle(props)}
+  ${props => !props.plain && props.primary && primaryStyle(props)}
 
   ${props => (
     !props.disabled && !props.focus && hoverStyle
@@ -163,18 +152,6 @@ const StyledButton = styled.button`
       `padding: ${props.theme.button.padding.vertical} ${props.theme.button.padding.horizontal};`
     )
   )}
-  ${(props) => {
-    if (props.primary) {
-      return primaryStyle;
-    } else if (props.accent) {
-      return accentStyle;
-    } else if (props.critical) {
-      return criticalStyle;
-    } else if (props.secondary) {
-      return secondaryStyle;
-    }
-    return '';
-  }}
   ${props => props.focus && focusStyle}
   ${lapAndUp(`
     transition: 0.1s ease-in-out;
