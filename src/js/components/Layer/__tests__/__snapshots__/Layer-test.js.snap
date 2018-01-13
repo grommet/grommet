@@ -2,7 +2,7 @@
 
 exports[`Layer aligns bottom 1`] = `
 <div
-  class="StyledLayer-EylWz cQEoYc"
+  class="StyledLayer-EylWz jhJjNf"
   id="bottom-test"
   tabindex="-1"
 >
@@ -188,7 +188,7 @@ exports[`Layer aligns bottom 2`] = `
 
 
 
-.cQEoYc {
+.jhJjNf {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -206,12 +206,8 @@ exports[`Layer aligns bottom 2`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.cQEoYc * {
-  box-sizing: inherit;
-}
-
 @media only screen and (min-width:700px) {
-  .cQEoYc {
+  .jhJjNf {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -223,7 +219,7 @@ exports[`Layer aligns bottom 2`] = `
 
 exports[`Layer aligns left 1`] = `
 <div
-  class="StyledLayer-EylWz cQEoYc"
+  class="StyledLayer-EylWz jhJjNf"
   id="left-test"
   tabindex="-1"
 >
@@ -280,7 +276,7 @@ exports[`Layer aligns left 2`] = `
 
 
 
-.cQEoYc {
+.jhJjNf {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -298,12 +294,8 @@ exports[`Layer aligns left 2`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.cQEoYc * {
-  box-sizing: inherit;
-}
-
 @media only screen and (min-width:700px) {
-  .cQEoYc {
+  .jhJjNf {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -315,7 +307,7 @@ exports[`Layer aligns left 2`] = `
 
 exports[`Layer aligns right 1`] = `
 <div
-  class="StyledLayer-EylWz cQEoYc"
+  class="StyledLayer-EylWz jhJjNf"
   id="right-test"
   tabindex="-1"
 >
@@ -414,7 +406,7 @@ exports[`Layer aligns right 2`] = `
 
 
 
-.cQEoYc {
+.jhJjNf {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -432,12 +424,8 @@ exports[`Layer aligns right 2`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.cQEoYc * {
-  box-sizing: inherit;
-}
-
 @media only screen and (min-width:700px) {
-  .cQEoYc {
+  .jhJjNf {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -449,7 +437,7 @@ exports[`Layer aligns right 2`] = `
 
 exports[`Layer aligns top 1`] = `
 <div
-  class="StyledLayer-EylWz cQEoYc"
+  class="StyledLayer-EylWz jhJjNf"
   id="top-test"
   tabindex="-1"
 >
@@ -591,7 +579,7 @@ exports[`Layer aligns top 2`] = `
 
 
 
-.cQEoYc {
+.jhJjNf {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -609,12 +597,8 @@ exports[`Layer aligns top 2`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.cQEoYc * {
-  box-sizing: inherit;
-}
-
 @media only screen and (min-width:700px) {
-  .cQEoYc {
+  .jhJjNf {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -626,7 +610,7 @@ exports[`Layer aligns top 2`] = `
 
 exports[`Layer hides 1`] = `
 <div
-  class="StyledLayer-EylWz dTHcZQ"
+  class="StyledLayer-EylWz hAhzzE"
   id="hidden-test"
   tabindex="-1"
 >
@@ -830,7 +814,7 @@ exports[`Layer hides 2`] = `
 
 
 @media only screen and (min-width:700px) {
-  .cQEoYc {
+  .jhJjNf {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -839,7 +823,7 @@ exports[`Layer hides 2`] = `
   }
 }
 
-.dTHcZQ {
+.hAhzzE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -859,16 +843,12 @@ exports[`Layer hides 2`] = `
   right: 100%;
   z-index: -1;
   position: fixed;
-}
-
-.dTHcZQ * {
-  box-sizing: inherit;
 }"
 `;
 
 exports[`Layer hides 3`] = `
 <div
-  class="StyledLayer-EylWz dTHcZQ"
+  class="StyledLayer-EylWz hAhzzE"
   id="hidden-test"
   tabindex="-1"
 >
@@ -1072,7 +1052,7 @@ exports[`Layer hides 4`] = `
 
 
 @media only screen and (min-width:700px) {
-  .cQEoYc {
+  .jhJjNf {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -1081,7 +1061,7 @@ exports[`Layer hides 4`] = `
   }
 }
 
-.dTHcZQ {
+.hAhzzE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1101,10 +1081,6 @@ exports[`Layer hides 4`] = `
   right: 100%;
   z-index: -1;
   position: fixed;
-}
-
-.dTHcZQ * {
-  box-sizing: inherit;
 }"
 `;
 
@@ -1144,7 +1120,7 @@ exports[`Layer is accessible 3`] = `
 
 exports[`Layer plain renders 1`] = `
 <div
-  class="StyledLayer-EylWz kTyGqG"
+  class="StyledLayer-EylWz juFlxl"
   id="plain-test"
   tabindex="-1"
 >
@@ -1397,7 +1373,7 @@ exports[`Layer plain renders 2`] = `
 
 
 @media only screen and (min-width:700px) {
-  .cQEoYc {
+  .jhJjNf {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -1406,7 +1382,7 @@ exports[`Layer plain renders 2`] = `
   }
 }
 
-.kTyGqG {
+.juFlxl {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1424,12 +1400,8 @@ exports[`Layer plain renders 2`] = `
   background-color: transparent;
 }
 
-.kTyGqG * {
-  box-sizing: inherit;
-}
-
 @media only screen and (min-width:700px) {
-  .kTyGqG {
+  .juFlxl {
     position: fixed;
     top: 0px;
     left: 0px;

@@ -14,10 +14,6 @@ exports[`Button accent renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c2:first-child:not(:last-child) {
   margin-right: 12px;
 }
@@ -103,10 +99,6 @@ exports[`Button critical renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c2:first-child:not(:last-child) {
@@ -196,10 +188,6 @@ exports[`Button disabled renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   cursor: pointer;
   outline: none;
@@ -265,10 +253,6 @@ exports[`Button focus renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c2:first-child:not(:last-child) {
@@ -358,10 +342,6 @@ exports[`Button hoverIndicator as object renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   cursor: pointer;
   outline: none;
@@ -424,10 +404,6 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -494,10 +470,6 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   cursor: pointer;
   outline: none;
@@ -560,10 +532,6 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -630,10 +598,6 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   cursor: pointer;
   outline: none;
@@ -696,10 +660,6 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -766,10 +726,6 @@ exports[`Button hoverIndicator renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   cursor: pointer;
   outline: none;
@@ -832,10 +788,6 @@ exports[`Button href renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -912,10 +864,6 @@ exports[`Button icon label renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c3:first-child:not(:last-child) {
@@ -1022,10 +970,6 @@ exports[`Button primary renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c2:first-child:not(:last-child) {
   margin-right: 12px;
 }
@@ -1114,10 +1058,6 @@ exports[`Button renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c2:first-child:not(:last-child) {
   margin-right: 12px;
 }
@@ -1202,10 +1142,6 @@ exports[`Button reverse icon label renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c2:first-child:not(:last-child) {
@@ -1312,10 +1248,6 @@ exports[`Button secondary renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c2:first-child:not(:last-child) {
   margin-right: 12px;
 }
@@ -1403,10 +1335,6 @@ exports[`Button warns about invalid icon render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c2 {
   display: inline-block;
 }
@@ -1482,10 +1410,6 @@ exports[`Button warns about invalid label render 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c2:first-child:not(:last-child) {

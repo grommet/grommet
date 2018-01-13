@@ -14,10 +14,6 @@ exports[`Markdown renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c2 {
   font-size: 16px;
   line-height: 1.375;

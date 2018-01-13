@@ -61,7 +61,7 @@ exports[`Tabs changes active index 1`] = `
 
 exports[`Tabs changes to second tab 1`] = `
 <div
-  className="StyledGrommet-gKbdxL kDQxAS"
+  className="StyledGrommet-gKbdxL fqqdJc"
 >
   <div
     role="tablist"
@@ -151,7 +151,7 @@ exports[`Tabs changes to second tab 1`] = `
 
 exports[`Tabs renders complex Tab title 1`] = `
 <div
-  className="StyledGrommet-gKbdxL kDQxAS"
+  className="StyledGrommet-gKbdxL fqqdJc"
 >
   <div
     role="tablist"
@@ -234,7 +234,7 @@ exports[`Tabs renders complex Tab title 1`] = `
 
 exports[`Tabs renders with Tab 1`] = `
 <div
-  className="StyledGrommet-gKbdxL kDQxAS"
+  className="StyledGrommet-gKbdxL fqqdJc"
 >
   <div
     role="tablist"
@@ -324,7 +324,7 @@ exports[`Tabs renders with Tab 1`] = `
 
 exports[`Tabs renders without Tab 1`] = `
 <div
-  className="StyledGrommet-gKbdxL kDQxAS"
+  className="StyledGrommet-gKbdxL fqqdJc"
 >
   <div
     role="tablist"

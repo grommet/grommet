@@ -14,10 +14,6 @@ exports[`Paragraph margin renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   font-size: 16px;
   line-height: 1.375;
@@ -102,10 +98,6 @@ exports[`Paragraph renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   font-size: 16px;
   line-height: 1.375;
@@ -133,10 +125,6 @@ exports[`Paragraph size renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c2 {
@@ -197,10 +185,6 @@ exports[`Paragraph textAlign renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {

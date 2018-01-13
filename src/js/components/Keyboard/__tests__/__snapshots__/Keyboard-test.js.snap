@@ -14,10 +14,6 @@ exports[`Keyboard calls onKeyDown 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 <div
   className="c0"
 >
@@ -41,10 +37,6 @@ exports[`Keyboard renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 <div
