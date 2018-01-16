@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button accent renders 1`] = `
+exports[`Button color renders 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -32,18 +32,17 @@ exports[`Button accent renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   text-align: center;
   display: inline-block;
   min-width: 96px;
   max-width: 384px;
   font-weight: 600;
+  border: 2px solid #00CCEB;
+  border-radius: 5px;
+  color: #333333;
   font-size: 1.1875rem;
   line-height: 24px;
   padding: 10px 10px;
-  border-color: #00CCEB;
 }
 
 .c1:hover {
@@ -57,8 +56,49 @@ exports[`Button accent renders 1`] = `
   transition: none;
 }
 
+.c3 {
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  text-align: center;
+  display: inline-block;
+  min-width: 96px;
+  max-width: 384px;
+  font-weight: 600;
+  background-color: #00CCEB;
+  color: #333333;
+  border: none;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  padding: 10px 10px;
+}
+
+.c3 svg {
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.c3:hover {
+  box-shadow: 0px 0px 0px 2px #00CCEB;
+}
+
 @media only screen and (min-width:700px) {
   .c1 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c3 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -70,6 +110,7 @@ exports[`Button accent renders 1`] = `
   <button
     aria-label={undefined}
     className="c1"
+    color="accent-1"
     disabled={false}
     href={undefined}
     icon={undefined}
@@ -88,79 +129,10 @@ exports[`Button accent renders 1`] = `
       Test
     </span>
   </button>
-</div>
-`;
-
-exports[`Button critical renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  background-color: #FFFFFF;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c1 {
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  background-color: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
-  text-align: center;
-  display: inline-block;
-  min-width: 96px;
-  max-width: 384px;
-  font-weight: 600;
-  font-size: 1.1875rem;
-  line-height: 24px;
-  padding: 10px 10px;
-  border-color: #FF324D;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #FF324D;
-}
-
-.c1:hover svg {
-  fill: #000000;
-  stroke: #000000;
-  -webkit-transition: none;
-  transition: none;
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-<div
-  className="c0"
->
   <button
     aria-label={undefined}
-    className="c1"
+    className="c3"
+    color="accent-1"
     disabled={false}
     href={undefined}
     icon={undefined}
@@ -210,14 +182,14 @@ exports[`Button disabled renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   text-align: center;
   display: inline-block;
   min-width: 96px;
   max-width: 384px;
   font-weight: 600;
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
   opacity: 0.3;
   cursor: default;
   font-size: 1.1875rem;
@@ -285,14 +257,14 @@ exports[`Button focus renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   text-align: center;
   display: inline-block;
   min-width: 96px;
   max-width: 384px;
   font-weight: 600;
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
   font-size: 1.1875rem;
   line-height: 24px;
   padding: 10px 10px;
@@ -848,14 +820,14 @@ exports[`Button href renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   text-align: center;
   display: inline-block;
   min-width: 96px;
   max-width: 384px;
   font-weight: 600;
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
   font-size: 1.1875rem;
   line-height: 24px;
   padding: 10px 10px;
@@ -944,14 +916,14 @@ exports[`Button icon label renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   text-align: center;
   display: inline-block;
   min-width: 96px;
   max-width: 384px;
   font-weight: 600;
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
   font-size: 1.1875rem;
   line-height: 24px;
   padding: 10px 10px;
@@ -1040,23 +1012,17 @@ exports[`Button primary renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   text-align: center;
   display: inline-block;
   min-width: 96px;
   max-width: 384px;
   font-weight: 600;
+  background-color: #865CD6;
+  color: rgba(255,255,255,0.85);
+  border: none;
   font-size: 1.1875rem;
   line-height: 24px;
   padding: 10px 10px;
-  background-color: #865CD6;
-  color: #FFFFFF;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #865CD6;
 }
 
 .c1 svg {
@@ -1064,6 +1030,10 @@ exports[`Button primary renders 1`] = `
   stroke: #FFFFFF;
   -webkit-transition: none;
   transition: none;
+}
+
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #865CD6;
 }
 
 @media only screen and (min-width:700px) {
@@ -1132,14 +1102,14 @@ exports[`Button renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   text-align: center;
   display: inline-block;
   min-width: 96px;
   max-width: 384px;
   font-weight: 600;
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
   font-size: 1.1875rem;
   line-height: 24px;
   padding: 10px 10px;
@@ -1234,14 +1204,14 @@ exports[`Button reverse icon label renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   text-align: center;
   display: inline-block;
   min-width: 96px;
   max-width: 384px;
   font-weight: 600;
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
   font-size: 1.1875rem;
   line-height: 24px;
   padding: 10px 10px;
@@ -1293,97 +1263,6 @@ exports[`Button reverse icon label renders 1`] = `
       className="c3"
     >
       <svg />
-    </span>
-  </button>
-</div>
-`;
-
-exports[`Button secondary renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  background-color: #FFFFFF;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c1 {
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  background-color: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
-  text-align: center;
-  display: inline-block;
-  min-width: 96px;
-  max-width: 384px;
-  font-weight: 600;
-  font-size: 1.1875rem;
-  line-height: 24px;
-  padding: 10px 10px;
-  border-color: #DC2878;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #DC2878;
-}
-
-.c1:hover svg {
-  fill: #000000;
-  stroke: #000000;
-  -webkit-transition: none;
-  transition: none;
-}
-
-@media only screen and (min-width:700px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-<div
-  className="c0"
->
-  <button
-    aria-label={undefined}
-    className="c1"
-    disabled={false}
-    href={undefined}
-    icon={undefined}
-    label="Test"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
-    tabIndex="0"
-    type="button"
-  >
-    <span
-      className="c2"
-    >
-      Test
     </span>
   </button>
 </div>

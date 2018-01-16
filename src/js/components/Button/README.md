@@ -19,14 +19,6 @@ Custom title to be used by screen readers.
 string
 ```
 
-**accent**
-
-Whether this is a accent button.
-
-```
-boolean
-```
-
 **active**
 
 Whether the button is active.
@@ -35,12 +27,12 @@ Whether the button is active.
 boolean
 ```
 
-**critical**
+**color**
 
-Whether this is an critical button.
+Fill color for primary, border color otherwise.
 
 ```
-boolean
+string
 ```
 
 **fill**
@@ -122,14 +114,6 @@ boolean
 
 Whether an icon and label should be reversed so that the icon is at the
 end of the anchor.
-
-```
-boolean
-```
-
-**secondary**
-
-Whether this is a secondary button.
 
 ```
 boolean

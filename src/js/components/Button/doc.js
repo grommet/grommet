@@ -27,9 +27,8 @@ export default (Button) => {
 
   DocumentedButton.propTypes = {
     a11yTitle: PropTypes.string.description('Custom title to be used by screen readers.'),
-    accent: PropTypes.bool.description('Whether this is a accent button.'),
     active: PropTypes.bool.description('Whether the button is active.'),
-    critical: PropTypes.bool.description('Whether this is an critical button.'),
+    color: PropTypes.string.description('Fill color for primary, border color otherwise.'),
     fill: PropTypes.bool.description(
       'Whether the button expands to fill all of the available width and height.'
     ),
@@ -68,7 +67,6 @@ of the control. Do not use plain with label or icon properties.`
       `Whether an icon and label should be reversed so that the icon is at the
 end of the anchor.`
     ),
-    secondary: PropTypes.bool.description('Whether this is a secondary button.'),
     type: PropTypes.oneOf(['button', 'reset', 'submit']).description(
       'The type of button. Set the type to submit for the default button on forms.'
     ).defaultValue('button'),

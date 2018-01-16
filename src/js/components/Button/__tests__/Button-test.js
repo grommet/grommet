@@ -57,30 +57,11 @@ test('Button primary renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Button accent renders', () => {
+test('Button color renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button accent={true} label='Test' onClick={() => {}} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Button secondary renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Button secondary={true} label='Test' onClick={() => {}} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Button critical renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Button critical={true} label='Test' onClick={() => {}} />
+      <Button color='accent-1' label='Test' onClick={() => {}} />
+      <Button color='accent-1' primary={true} label='Test' onClick={() => {}} />
     </Grommet>
   );
   const tree = component.toJSON();
