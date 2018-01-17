@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "main": "index.js",
   "description": "The most advanced UX framework for enterprise applications.",
   "authors": [
@@ -37,15 +37,16 @@
     "inuit-responsive-settings": "~0.1.2",
     "inuit-responsive-tools": "~0.1.1",
     "inuit-shared": "~0.1.5",
+    "js-cookie": "^2.2.0",
     "lodash.zip": "^4.2.0",
     "markdown-to-jsx": "^6.1.3",
-    "moment": "^2.13.0",
+    "moment": "^2.20.1",
     "prop-types": "^15.5.8",
     "react-desc": "^1.0.0",
     "react-intl": "^2.2.3",
     "react-router": "2 - 4",
     "react-transition-group": "^1.1.1",
-    "superagent": "^3.6.0"
+    "superagent": "^3.8.2"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
@@ -61,13 +62,13 @@
     "eslint": "^4.7.2",
     "grommet-toolbox": "^2.0.0",
     "gulp": "^3.9.1",
-    "gulp-bump": "^2.1.0",
+    "gulp-bump": "^3.0.0",
     "gulp-coveralls": "^0.1.4",
     "gulp-cssnano": "^2.1.1",
-    "gulp-file": "^0.3.0",
+    "gulp-file": "^0.4.0",
     "gulp-git": "^2.1.0",
     "gulp-if": "^2.0.0",
-    "gulp-prompt": "^0.2.0",
+    "gulp-prompt": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.0.0",
     "guppy-pre-commit": "^0.4.0",
