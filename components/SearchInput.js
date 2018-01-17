@@ -28,8 +28,6 @@ var _Drop = require('../utils/Drop');
 
 var _Drop2 = _interopRequireDefault(_Drop);
 
-var _DOM = require('../utils/DOM');
-
 var _Intl = require('../utils/Intl');
 
 var _Intl2 = _interopRequireDefault(_Intl);
@@ -60,7 +58,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var CLASS_ROOT = _CSSClassnames2.default.SEARCH_INPUT;
 var INPUT = _CSSClassnames2.default.INPUT;
-var FORM_FIELD = _CSSClassnames2.default.FORM_FIELD;
 
 var SearchInput = function (_Component) {
   _inherits(SearchInput, _Component);
@@ -127,7 +124,7 @@ var SearchInput = function (_Component) {
         _KeyboardAccelerators2.default.startListeningToKeyboard(this, activeKeyboardHandlers);
 
         // If this is inside a FormField, place the drop in reference to it.
-        var control = (0, _DOM.findAncestor)(this.componentRef, FORM_FIELD) || this.componentRef;
+        var control = this.componentRef;
         this._drop = new _Drop2.default(control, this._renderDropContent(), {
           align: { top: 'bottom', left: 'left' },
           responsive: false // so suggestion changes don't re-align

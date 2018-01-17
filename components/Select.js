@@ -40,8 +40,6 @@ var _Drop = require('../utils/Drop');
 
 var _Drop2 = _interopRequireDefault(_Drop);
 
-var _DOM = require('../utils/DOM');
-
 var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
@@ -80,7 +78,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var CLASS_ROOT = _CSSClassnames2.default.SELECT;
 var INPUT = _CSSClassnames2.default.INPUT;
-var FORM_FIELD = _CSSClassnames2.default.FORM_FIELD;
 
 var Select = function (_Component) {
   _inherits(Select, _Component);
@@ -164,7 +161,7 @@ var Select = function (_Component) {
 
         if (!inline) {
           // If this is inside a FormField, place the drop in reference to it.
-          var control = (0, _DOM.findAncestor)(this.componentRef, FORM_FIELD) || this.componentRef;
+          var control = this.inputRef;
           this._drop = new _Drop2.default(control, this._renderOptions(CLASS_ROOT + '__drop'), {
             align: { top: 'bottom', left: 'left' },
             context: this.context,
@@ -560,10 +557,7 @@ var Select = function (_Component) {
 
         return _react2.default.createElement(
           'div',
-          { ref: function ref(_ref3) {
-              return _this5.componentRef = _ref3;
-            }, className: classes,
-            onClick: this._onAddDrop },
+          { className: classes, onClick: this._onAddDrop },
           shouldRenderElement && renderedValue,
           _react2.default.createElement('input', _extends({}, restProps, { ref: function ref(_ref2) {
               return _this5.inputRef = _ref2;
