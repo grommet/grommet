@@ -138,6 +138,8 @@
 
     &::-ms-thumb {
       @include range-thumb();
+      position: relative;
+      top: quarter($inuit-base-spacing-unit);
       border: $control-border-width solid $icon-color;
       height: $control-size - ($control-border-width * 2);
       width: $control-size - ($control-border-width * 2);

@@ -1,7 +1,7 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 $form-horizontal-padding: $inuit-base-spacing-unit; //round($inuit-base-spacing-unit * 0.75);
-$form-vertical-padding: quarter($inuit-base-spacing-unit);
+$form-vertical-padding: quarter($inuit-base-spacing-unit) - $input-border-width;
 
 $select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAcBJREFUSA3tUz9IAmEU9+7gNv8MLo7NrXpwYFtLhrQWbQWpoEuRs2MZNYnoUHNES0RNLS0hhxANzkFBLg5Jk4ee/X7iF+d5lyIIBX5wfO99v9/vve/ee5/Pt1iLCvz5CkipVOqu3+8n5nFTSZLuZVVVtxC8MYcEjWAwuCkxcDabXTJN04AZRtazarV6MEtCVOMU1diHtoWLa6VS6VVhIMMwPjVNqwHchhuPxWLv9Xr9mdi0K51O70B/BL6pKMp6uVx+oXaQgAYCviHwB0gb+NaQ8JFnxCatTCazYlnWFXiKLMt7lUrlRmh+EvCAt45GowGYcSRJ6rp+zb8TZLed5e12uw/A/MPyHtt5st2hHYlEDtl9mGH05Tafz/udHOETI4dcaqgVmNjHEhQKBYvdB4GTtdxuty9x5saTiZFDLjXUwh5ZY0KixWLxC1OQhNlCqRLNZvNkRAWHZ8TIIZcaJ4f+SA/shN8my2ti7HphD96BcNx2BsOEnAPj+K2S0+v12FQVE7OLibngmdeamIBC+wMaBpr6Qbr2wHkb+2QB85wYp47+VH9AYi6XC3Q6nSfaoVBI92oq8ZkXHxW/mQP8S+E3ZIDJn85FDg8AAAAASUVORK5CYII=);
 $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAASVJREFUSA3tlDGOwjAQRWNKCmoqLpByz0DPFVbcgQ4JiW77LREVNUicg0vsESi2JLwfDcramQQLCWmFsPRDZub/b8ceUxTv8d6Bf78DoaqqFav8eNJKTwOMv8DPEyaQp7yLgq8Ygx04gnmdfOAhrXnIaxxZkCjB3gjTqJgRoJuaVh6lK8kiOUoZgrzFQez+TN+8d3t1yOnYkjiBEVgy4TAl3GKrLY0rjbTRaE0QQrjAuHXWhPcFRi2e5RbUxak7xrSEzWgJVYL4y88anIHuyCdIh3KqibM2Tcrpj1mle3jk73dMv3VTTc26Jm0U8VuIQz/CVJdvBrQdGmqAA9uyqaOeh3sGDv9vZ8nc7RhHl5/iK4bg29DZuvmODhNzXar4P8bhvVbqCvor5P4CpWjxAAAAAElFTkSuQmCC);
@@ -12,8 +12,12 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   border: none;
   border-radius: 0px;
   @include inuit-font-size($content-font-size);
-  padding-left:
-    ($inuit-base-spacing-unit - ($input-border-width + 1));
+  padding: quarter($inuit-base-spacing-unit) $form-horizontal-padding (quarter($inuit-base-spacing-unit) + $form-vertical-padding);
+  margin-bottom: -$form-vertical-padding;
+
+  &:focus {
+    padding: quarter($inuit-base-spacing-unit) $form-horizontal-padding (quarter($inuit-base-spacing-unit) + $form-vertical-padding);
+  }
 
   #{$dark-background-context} {
     color: $active-colored-text-color;
@@ -35,6 +39,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
 
   @include media-query(lap-and-up) {
     width: 100%;
+    // overflow: hidden; // for Firefox and IE
     overflow: auto;
     transition: all 0.4s, padding-top 0.3s 0.1s, padding-bottom 0.3s 0.1s;
   }
@@ -106,41 +111,26 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > input[type=file],
   > input[type=color],
   > select,
+  > textarea {
+    .grommet & {
+      @include form-field-content();
+    }
+  }
+
   > .#{$grommet-namespace}search-input input,
   > .#{$grommet-namespace}calendar input,
   > .#{$grommet-namespace}date-time input,
-  > .#{$grommet-namespace}text-input,
   > .#{$grommet-namespace}select:not(.#{$grommet-namespace}select--inline) input,
-  > .#{$grommet-namespace}password-input input,
-  > textarea {
-    @include form-field-content();
-  }
-
-
-  > .#{$grommet-namespace}search-input input,
-  > .#{$grommet-namespace}calendar input,
-  > .#{$grommet-namespace}date-time input,
-  > .#{$grommet-namespace}select input,
   > .#{$grommet-namespace}password-input input {
-    // align left padding with other form inputs
-    padding-left: $inuit-base-spacing-unit;
-  }
+    .grommet & {
+      @include form-field-content();
+      // align left padding with other form inputs
+      padding-left: $inuit-base-spacing-unit;
+      padding-bottom: quarter($inuit-base-spacing-unit) + $form-vertical-padding;
 
-  > input:not([type]),
-  > input[type=text],
-  > input[type=email],
-  > input[type=tel],
-  > input[type=url],
-  > input[type=password],
-  > input[type=number],
-  > input[type=file],
-  > input[type=color],
-  > select,
-  > textarea {
-    padding: 0 $form-horizontal-padding;
-
-    &:focus {
-      padding: 0 $form-horizontal-padding;
+      &:focus {
+        padding-bottom: quarter($inuit-base-spacing-unit) + $form-vertical-padding;
+      }
     }
   }
 
@@ -161,7 +151,7 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
   > .#{$grommet-namespace}text-input,
   > .#{$grommet-namespace}select:not(.#{$grommet-namespace}select--inline) input,
   > .#{$grommet-namespace}password-input input {
-    height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit);
+    height: $inuit-base-spacing-unit + halve($inuit-base-spacing-unit) + $form-vertical-padding;
     // for IE 11.
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       line-height: normal;
@@ -288,11 +278,15 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
       top: auto;
       right: quarter($inuit-base-spacing-unit);
       transform: none;
-      bottom: - $form-vertical-padding;
+      bottom: 0; // - $input-border-width;
 
       html.rtl & {
         right: auto;
         left: quarter($inuit-base-spacing-unit);
+      }
+
+      > .#{$grommet-namespace}button__icon {
+        padding: halve($inuit-base-spacing-unit) - $button-border-width - $input-border-width;
       }
     }
   }

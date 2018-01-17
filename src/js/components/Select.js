@@ -8,7 +8,6 @@ import CSSClassnames from '../utils/CSSClassnames';
 import Props from '../utils/Props';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
-import { findAncestor } from '../utils/DOM';
 import Button from './Button';
 import CheckBox from './CheckBox';
 import RadioButton from './RadioButton';
@@ -19,7 +18,6 @@ import { announce } from '../utils/Announcer';
 
 const CLASS_ROOT = CSSClassnames.SELECT;
 const INPUT = CSSClassnames.INPUT;
-const FORM_FIELD = CSSClassnames.FORM_FIELD;
 
 export default class Select extends Component {
 
@@ -94,8 +92,7 @@ export default class Select extends Component {
 
       if (! inline) {
         // If this is inside a FormField, place the drop in reference to it.
-        const control =
-          findAncestor(this.componentRef, FORM_FIELD) || this.componentRef;
+        const control = this.inputRef;
         this._drop = new Drop(control,
           this._renderOptions(`${CLASS_ROOT}__drop`), {
             align: { top: 'bottom', left: 'left' },
@@ -348,7 +345,7 @@ export default class Select extends Component {
   _renderOptions (className, restProps={}) {
     const { intl } = this.context;
     const {
-      id, inline, multiple, options, onSearch, value, 
+      id, inline, multiple, options, onSearch, value,
       searchPlaceHolder = Intl.getMessage(intl, 'Search')
     } = this.props;
     const { activeOptionIndex, searchText } = this.state;
@@ -449,8 +446,7 @@ export default class Select extends Component {
       const shouldRenderElement  = React.isValidElement(renderedValue);
 
       return (
-        <div ref={ref => this.componentRef = ref} className={classes}
-          onClick={this._onAddDrop}>
+        <div className={classes} onClick={this._onAddDrop}>
           {shouldRenderElement && renderedValue}
           <input {...restProps} ref={ref => this.inputRef = ref}
             type={shouldRenderElement ? 'hidden' : 'text'}
