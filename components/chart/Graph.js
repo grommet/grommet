@@ -164,21 +164,21 @@ var Graph = function (_Component) {
       var scale = 1;
       var step = void 0;
       if (vertical) {
+        if (max - min > 0) {
+          scale = (width - 2 * pad) / (max - min);
+        }
         if (values.length <= 1) {
           step = height - 2 * pad;
         } else {
-          if (max - min > 0) {
-            scale = (width - 2 * pad) / (max - min);
-          }
           step = (height - 2 * pad) / (values.length - 1);
         }
       } else {
+        if (max - min > 0) {
+          scale = (height - 2 * pad) / (max - min);
+        }
         if (values.length <= 1) {
           step = width - 2 * pad;
         } else {
-          if (max - min > 0) {
-            scale = (height - 2 * pad) / (max - min);
-          }
           step = (width - 2 * pad) / (values.length - 1);
         }
       }
@@ -212,7 +212,7 @@ var Graph = function (_Component) {
       });
 
       var path = void 0;
-      if (coordinates.length > 1) {
+      if (coordinates.length > 0) {
         var pathProps = {};
         var commands = void 0;
 

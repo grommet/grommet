@@ -565,7 +565,7 @@ var WorldMap = function (_Component) {
             return _this4._worldMapRef = _ref;
           },
           className: classes, version: '1.1',
-          preserveAspectRatio: 'xMidYMid meet',
+          preserveAspectRatio: 'xMidYMin slice',
           width: width + 'px',
           viewBox: x + ' ' + y + ' ' + width + ' ' + height }),
         _react2.default.createElement(
