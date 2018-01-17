@@ -9,7 +9,7 @@ $button-horizontal-padding:
   &:not(.#{$grommet-namespace}button--box) {
     padding: $button-vertical-padding $button-horizontal-padding;
   }
-  
+
   background-color: transparent;
   border: $button-border-width solid $button-border-color;
   border-radius: $border-radius;
@@ -146,7 +146,7 @@ $button-horizontal-padding:
   }
 
   .#{$grommet-namespace}button__icon {
-    padding: halve($inuit-base-spacing-unit);
+    padding: halve($inuit-base-spacing-unit) - $button-border-width;
 
     + .#{$grommet-namespace}button__label {
       margin-left: 0;

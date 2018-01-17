@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import KeyboardAccelerators from '../utils/KeyboardAccelerators';
 import Drop from '../utils/Drop';
-import { findAncestor } from '../utils/DOM';
 import Intl from '../utils/Intl';
 import { announce } from '../utils/Announcer';
 
@@ -13,7 +12,6 @@ import CSSClassnames from '../utils/CSSClassnames';
 
 const CLASS_ROOT = CSSClassnames.TEXT_INPUT;
 const INPUT = CSSClassnames.INPUT;
-const FORM_FIELD = CSSClassnames.FORM_FIELD;
 
 export default class TextInput extends Component {
 
@@ -83,8 +81,7 @@ export default class TextInput extends Component {
         activeKeyboardHandlers);
 
       // If this is inside a FormField, place the drop in reference to it.
-      const control =
-        findAncestor(this.componentRef, FORM_FIELD) || this.componentRef;
+      const control = this.componentRef;
       this._drop = new Drop(control,
         this._renderDropContent(), {
           align: {top: 'bottom', left: 'left'},
