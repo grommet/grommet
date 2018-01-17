@@ -104,21 +104,21 @@ export default class Graph extends Component {
     let scale = 1;
     let step;
     if (vertical) {
+      if (max - min > 0) {
+        scale = (width - (2 * pad)) / (max - min);
+      }
       if (values.length <= 1) {
         step = height - (2 * pad);
       } else {
-        if (max - min > 0) {
-          scale = (width - (2 * pad)) / (max - min);
-        }
         step = (height - (2 * pad)) / (values.length - 1);
       }
     } else {
+      if (max - min > 0) {
+        scale = (height - (2 * pad)) / (max - min);
+      }
       if (values.length <= 1) {
         step = width - (2 * pad);
       } else {
-        if (max - min > 0) {
-          scale = (height - (2 * pad)) / (max - min);
-        }
         step = (width - (2 * pad)) / (values.length - 1);
       }
     }
@@ -164,10 +164,10 @@ export default class Graph extends Component {
 
       return coordinate;
     })
-    .filter(coordinate => coordinate);
+      .filter(coordinate => coordinate);
 
     let path;
-    if (coordinates.length > 1) {
+    if (coordinates.length > 0) {
       let pathProps = {};
       let commands;
 
