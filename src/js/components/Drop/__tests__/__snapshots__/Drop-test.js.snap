@@ -245,7 +245,7 @@ exports[`Drop aligns skips right random 1`] = `
   class="StyledDrop-czaYBK loJbGv"
   tabindex="-1"
   id="drop-node"
-  style="width: 0.1px; max-height: NaNpx;"
+  style="width: 0.1px; max-height: 768px;"
 >
   this is a test
 </div>
@@ -456,7 +456,7 @@ exports[`Drop skips invalid align 1`] = `
   class="StyledDrop-czaYBK jMwfOf"
   tabindex="-1"
   id="drop-node"
-  style="width: 0.1px; max-height: NaNpx;"
+  style="width: 0.1px; max-height: 768px;"
 >
   this is a test
 </div>

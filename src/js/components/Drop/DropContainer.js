@@ -170,7 +170,7 @@ class DropContainer extends Component {
       // the (position:absolute + scrollTop)
       // is presenting issues with desktop scroll flickering
       container.style.top = `${top}px`;
-      container.style.maxHeight = `${windowHeight - (top)}px`;
+      container.style.maxHeight = `${windowHeight - (top || 0)}px`;
     }
   }
 
