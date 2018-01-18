@@ -6,7 +6,7 @@ A drop container that opens next to a target.
 
 ```javascript
 import { Drop } from 'grommet';
-<Drop target={element}>...</Drop>
+<Drop control={element}>...</Drop>
 ```
 
 ## Properties
