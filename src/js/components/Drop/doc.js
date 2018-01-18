@@ -8,7 +8,7 @@ export default (Drop) => {
     .description(
       'A drop container that opens next to a target.'
     ).usage(
-      'import { Drop } from \'grommet\';\n<Drop target={element}>...</Drop>'
+      'import { Drop } from \'grommet\';\n<Drop control={element}>...</Drop>'
     );
 
   DocumentedDrop.propTypes = {
