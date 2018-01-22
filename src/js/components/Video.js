@@ -80,10 +80,10 @@ export default class Video extends Component {
     ];
 
     return videoEvents.reduce((previousValue, currentValue) => {
-      previousValue[currentValue] = () => {
+      previousValue[currentValue] = (e) => {
         if (currentValue in this.props
           && typeof this.props[currentValue] === 'function') {
-          this.props[currentValue]();
+          this.props[currentValue](e);
         }
         this._update();
       };
