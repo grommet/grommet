@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
 import { colorForName, parseMetricToInt } from '../../utils';
@@ -90,24 +91,41 @@ class Chart extends Component {
 
   constructor(props, context) {
     super(props, context);
-    this.state = { bounds: normalizeBounds(props) };
+    this.state = { bounds: normalizeBounds(props), containerWidth: 0, containerHeight: 0 };
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({ bounds: normalizeBounds(nextProps) });
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+  }
+
+  onResize = () => {
+    const parent = findDOMNode(this.containerRef).parentNode;
+    if (parent) {
+      const rect = parent.getBoundingClientRect();
+      this.setState({ containerWidth: rect.width, containerHeight: rect.height });
+    }
+  }
+
   render() {
     const {
       color, round, size, theme, thickness, type, values, ...rest
     } = this.props;
-    const { bounds } = this.state;
+    const { bounds, containerWidth, containerHeight } = this.state;
 
-    const sizeWidth = (typeof size === 'string') ? size : size.width;
-    const sizeHeight = (typeof size === 'string') ? size : size.height;
-    const width = (sizeWidth === 'full' ? (bounds[0][1] - bounds[0][0]) :
+    const sizeWidth = (typeof size === 'string') ? size : size.width || 'medium';
+    const sizeHeight = (typeof size === 'string') ? size : size.height || 'medium';
+    const width = (sizeWidth === 'full' ? containerWidth :
       parseMetricToInt(theme.global.size[sizeWidth]));
-    const height = (sizeHeight === 'full' ? (bounds[1][1] - bounds[1][0]) :
+    const height = (sizeHeight === 'full' ? containerHeight :
       parseMetricToInt(theme.global.size[sizeHeight]));
     const strokeWidth = parseMetricToInt(theme.global.edgeSize[thickness]);
     const scale = [
@@ -126,11 +144,12 @@ class Chart extends Component {
 
     return (
       <StyledChart
+        ref={(ref) => { this.containerRef = ref; }}
         viewBox={`-${strokeWidth / 2} -${strokeWidth / 2}
           ${width + strokeWidth} ${height + strokeWidth}`}
-        preserveAspectRatio='none'
+        preserveAspectRatio='xMinYMin meet'
         width={size === 'full' ? '100%' : width}
-        height={height}
+        height={size === 'full' ? '100%' : height}
         {...rest}
       >
         <g
