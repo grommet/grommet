@@ -118,10 +118,10 @@ class Video extends Component {
 
     return videoEvents.reduce((previousValue, currentValue) => {
       const nextValue = { ...previousValue };
-      nextValue[currentValue] = () => {
+      nextValue[currentValue] = (e) => {
         if (currentValue in this.props
           && typeof this.props[currentValue] === 'function') {
-          this.props[currentValue]();
+          this.props[currentValue](e);
         }
         this.update();
       };
