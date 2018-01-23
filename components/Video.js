@@ -108,9 +108,9 @@ var Video = function (_Component) {
       var videoEvents = ['onAbort', 'onCanPlay', 'onCanPlayThrough', 'onDurationChange', 'onEmptied', 'onEncrypted', 'onEnded', 'onError', 'onLoadedData', 'onLoadedMetadata', 'onLoadStart', 'onPause', 'onPlay', 'onPlaying', 'onProgress', 'onRateChange', 'onSeeked', 'onSeeking', 'onStalled', 'onSuspend', 'onTimeUpdate', 'onVolumeChange', 'onWaiting'];
 
       return videoEvents.reduce(function (previousValue, currentValue) {
-        previousValue[currentValue] = function () {
+        previousValue[currentValue] = function (e) {
           if (currentValue in _this2.props && typeof _this2.props[currentValue] === 'function') {
-            _this2.props[currentValue]();
+            _this2.props[currentValue](e);
           }
           _this2._update();
         };
