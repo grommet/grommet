@@ -32,7 +32,7 @@ export function findScrollParents (element, horizontal) {
     }
     parent = parent.parentNode;
   }
-  // last scrollable element will be the document 
+  // last scrollable element will be the document
   // if nothing else is scrollable in the page
   if (result.length === 0) {
     result.push(document);
@@ -103,7 +103,7 @@ export function isFormElement (element) {
 }
 
 export function generateId (element) {
-  if (element) {
+  if (element && typeof element.getAttribute === 'function') {
     let id;
     const elementId = element.getAttribute('id');
     if (!elementId) {
