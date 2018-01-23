@@ -17,8 +17,10 @@ const renderBars = (values, bounds, scale, height) =>
     const bottom = (value.length === 2 ? bounds[1][0] : value[1]);
     const top = (value.length === 2 ? value[1] : value[2]);
     if (top !== 0) {
-      const d = `M ${value[0] * scale[0]},${height - (bottom * scale[1])}` +
-      ` L ${value[0] * scale[0]},${height - (top * scale[1])}`;
+      const d = `M ${(value[0] - bounds[0][0]) * scale[0]},` +
+      `${height - ((bottom - bounds[1][0]) * scale[1])}` +
+      ` L ${(value[0] - bounds[0][0]) * scale[0]},` +
+      `${height - ((top - bounds[1][0]) * scale[1])}`;
 
       return (
         <g key={key} fill='none'>
@@ -33,7 +35,8 @@ const renderBars = (values, bounds, scale, height) =>
 const renderLine = (values, bounds, scale, height) => {
   let d = '';
   (values || []).forEach(({ value }, index) => {
-    d += `${index ? ' L' : 'M'} ${value[0] * scale[0]},${height - (value[1] * scale[1])}`;
+    d += `${index ? ' L' : 'M'} ${(value[0] - bounds[0][0]) * scale[0]},` +
+    `${height - ((value[1] - bounds[1][0]) * scale[1])}`;
   });
   return (
     <g fill='none'>
@@ -47,11 +50,13 @@ const renderArea = (values, bounds, scale, height, props) => {
   let d = '';
   (values || []).forEach(({ value }, index) => {
     const top = (value.length === 2 ? value[1] : value[2]);
-    d += `${!index ? 'M' : ' L'} ${value[0] * scale[0]},${height - (top * scale[1])}`;
+    d += `${!index ? 'M' : ' L'} ${(value[0] - bounds[0][0]) * scale[0]},` +
+    `${height - ((top - bounds[1][0]) * scale[1])}`;
   });
   (values || []).reverse().forEach(({ value }) => {
     const bottom = (value.length === 2 ? bounds[1][0] : value[1]);
-    d += ` L ${value[0] * scale[0]},${height - (bottom * scale[1])}`;
+    d += ` L ${value[0] * scale[0]},` +
+    `${height - ((bottom - bounds[1][0]) * scale[1])}`;
   });
   d += ' Z';
   return (
