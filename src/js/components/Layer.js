@@ -315,14 +315,16 @@ export default class Layer extends Component {
   }
 
   _removeLayer () {
-    this._element.removeEventListener('animationend', this._onAnimationEnd);
+    if (this._element) {
+      this._element.removeEventListener('animationend', this._onAnimationEnd);
 
-    ReactDOM.unmountComponentAtNode(this._element);
-    this._element.parentNode.removeChild(this._element);
-    this._element = undefined;
+      ReactDOM.unmountComponentAtNode(this._element);
+      this._element.parentNode.removeChild(this._element);
+      this._element = undefined;
 
-    // make sure to handle aria attributes after the layer is removed
-    this._handleAriaHidden(true);
+      // make sure to handle aria attributes after the layer is removed
+      this._handleAriaHidden(true);
+    }
   }
 
   render () {
