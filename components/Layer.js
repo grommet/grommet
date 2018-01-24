@@ -403,14 +403,16 @@ var Layer = function (_Component2) {
   }, {
     key: '_removeLayer',
     value: function _removeLayer() {
-      this._element.removeEventListener('animationend', this._onAnimationEnd);
+      if (this._element) {
+        this._element.removeEventListener('animationend', this._onAnimationEnd);
 
-      _reactDom2.default.unmountComponentAtNode(this._element);
-      this._element.parentNode.removeChild(this._element);
-      this._element = undefined;
+        _reactDom2.default.unmountComponentAtNode(this._element);
+        this._element.parentNode.removeChild(this._element);
+        this._element = undefined;
 
-      // make sure to handle aria attributes after the layer is removed
-      this._handleAriaHidden(true);
+        // make sure to handle aria attributes after the layer is removed
+        this._handleAriaHidden(true);
+      }
     }
   }, {
     key: 'render',
