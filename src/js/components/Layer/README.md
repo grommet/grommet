@@ -12,17 +12,12 @@ import { Layer } from 'grommet';
 
 ## Properties
 
-**position**
+**onClickOverlay**
 
-Position of the layer content. Defaults to `center`.
+Function that will be called if the overlay background is clicked.
 
 ```
-bottom
-center
-hidden
-left
-right
-top
+boolean
 ```
 
 **onEsc**
@@ -39,5 +34,18 @@ Whether this is a plain Layer with no background color or border.
 
 ```
 boolean
+```
+
+**position**
+
+Position of the layer content. Defaults to `center`.
+
+```
+bottom
+center
+hidden
+left
+right
+top
 ```
   
