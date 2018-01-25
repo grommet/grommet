@@ -8,6 +8,7 @@ Object {
   "Chart": [Function],
   "CheckBox": [Function],
   "Clock": [Function],
+  "Diagram": [Function],
   "Drop": [Function],
   "DropButton": [Function],
   "DropContainer": [Function],
