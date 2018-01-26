@@ -304,7 +304,7 @@ var Drop = function () {
       container.style.maxHeight = '';
 
       // get bounds
-      var controlRect = control.getBoundingClientRect();
+      var controlRect = (0, _DOM.findVisibleParent)(control).getBoundingClientRect();
       var containerRect = container.getBoundingClientRect();
 
       // determine width
@@ -386,10 +386,10 @@ var Drop = function () {
       }
 
       container.style.left = left + 'px';
-      // offset width by 0.1 to avoid a bug in ie11 that 
+      // offset width by 0.1 to avoid a bug in ie11 that
       // unnecessarily wraps the text if width is the same
       container.style.width = width + 0.1 + 'px';
-      // the (position:absolute + scrollTop) 
+      // the (position:absolute + scrollTop)
       // is presenting issues with desktop scroll flickering
       container.style.top = top + 'px';
       container.style.maxHeight = windowHeight - top + 'px';

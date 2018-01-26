@@ -15,6 +15,7 @@ exports.isFormElement = isFormElement;
 exports.generateId = generateId;
 exports.generateUUID = generateUUID;
 exports.checkDarkBackground = checkDarkBackground;
+exports.findVisibleParent = findVisibleParent;
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 var COLOR_RGB_REGEXP = /rgb\((\d+), (\d+), (\d+)\)/;
@@ -207,4 +208,12 @@ function checkDarkBackground(colorIndex, element, handler) {
   return { stop: function stop() {
       return clearTimeout(timer);
     } };
+}
+
+function findVisibleParent(element) {
+  if (element) {
+    return element.offsetParent ? element : findVisibleParent(element.parentElement);
+  } else {
+    return null;
+  }
 }
