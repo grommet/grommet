@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { render, unmountComponentAtNode } from 'react-dom';
 import classnames from 'classnames';
-import { filterByFocusable, findScrollParents } from './DOM';
+import { filterByFocusable, findScrollParents, findVisibleParent } from './DOM';
 import CSSClassnames from './CSSClassnames';
 import KeyboardAccelerators from './KeyboardAccelerators';
 
@@ -185,7 +185,7 @@ export default class Drop {
     document.body.insertBefore(container, document.body.firstChild);
 
     const scrollParents = findScrollParents(control);
-    
+
     // initialize state
     this.state = {
       container, control, initialFocusNeeded: focusControl, options,
@@ -245,7 +245,7 @@ export default class Drop {
     container.style.maxHeight = '';
 
     // get bounds
-    const controlRect = control.getBoundingClientRect();
+    const controlRect = findVisibleParent(control).getBoundingClientRect();
     const containerRect = container.getBoundingClientRect();
 
     // determine width
@@ -335,10 +335,10 @@ export default class Drop {
     }
 
     container.style.left = `${left}px`;
-    // offset width by 0.1 to avoid a bug in ie11 that 
+    // offset width by 0.1 to avoid a bug in ie11 that
     // unnecessarily wraps the text if width is the same
     container.style.width = `${width + 0.1}px`;
-    // the (position:absolute + scrollTop) 
+    // the (position:absolute + scrollTop)
     // is presenting issues with desktop scroll flickering
     container.style.top = `${top}px`;
     container.style.maxHeight = `${windowHeight - (top)}px`;
@@ -383,7 +383,7 @@ export default class Drop {
       scrollParent.removeEventListener('scroll', this.place);
     });
     window.removeEventListener('resize', this._onResize);
-    
+
     unmountComponentAtNode(container);
     document.body.removeChild(container);
     // weird bug in Chrome does not remove child if

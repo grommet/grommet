@@ -186,3 +186,12 @@ export function checkDarkBackground (colorIndex, element, handler) {
   }
   return { stop: () => clearTimeout(timer) };
 }
+
+export function findVisibleParent (element) {
+  if (element) {
+    return element.offsetParent ?
+      element : findVisibleParent(element.parentElement);
+  } else {
+    return null;
+  }
+}
