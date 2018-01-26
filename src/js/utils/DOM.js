@@ -114,10 +114,9 @@ export const findVisibleParent = (element) => {
   if (element) {
     return element.offsetParent ?
       element : findVisibleParent(element.parentElement);
-  } else {
-    return null;
   }
-}
+  return null;
+};
 
 export default {
   copyAttribute,
