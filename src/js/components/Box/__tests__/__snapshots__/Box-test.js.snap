@@ -406,8 +406,8 @@ exports[`Box animation renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   opacity: 0;
-  -webkit-animation: RcDQa 1s 0s forwards;
-  animation: RcDQa 1s 0s forwards;
+  -webkit-animation: dHUfhi 1s 0s forwards;
+  animation: dHUfhi 1s 0s forwards;
 }
 
 .c2 {
@@ -420,8 +420,9 @@ exports[`Box animation renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-animation: RcDQa 1s 0s forwards,bnfHgs 1s 0s forwards;
-  animation: RcDQa 1s 0s forwards,bnfHgs 1s 0s forwards;
+  opacity: 1;
+  -webkit-animation: gmgyXe 1s 0s forwards;
+  animation: gmgyXe 1s 0s forwards;
 }
 
 .c3 {
@@ -434,12 +435,133 @@ exports[`Box animation renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  opacity: 0;
-  -webkit-animation: RcDQa 1s 0.5s forwards;
-  animation: RcDQa 1s 0.5s forwards;
+  -webkit-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  -webkit-animation: cbiWfb 0.1s 0s alternate infinite;
+  animation: cbiWfb 0.1s 0s alternate infinite;
 }
 
 .c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-animation: ipKHns 1s 0s alternate infinite;
+  animation: ipKHns 1s 0s alternate infinite;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateY(10%);
+  -ms-transform: translateY(10%);
+  transform: translateY(10%);
+  -webkit-animation: fBAycS 1s 0s forwards;
+  animation: fBAycS 1s 0s forwards;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateY(-10%);
+  -ms-transform: translateY(-10%);
+  transform: translateY(-10%);
+  -webkit-animation: iGTGXr 1s 0s forwards;
+  animation: iGTGXr 1s 0s forwards;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateX(10%);
+  -ms-transform: translateX(10%);
+  transform: translateX(10%);
+  -webkit-animation: zHfFU 1s 0s forwards;
+  animation: zHfFU 1s 0s forwards;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: translateX(-10%);
+  -ms-transform: translateX(-10%);
+  transform: translateX(-10%);
+  -webkit-animation: jbclMb 1s 0s forwards;
+  animation: jbclMb 1s 0s forwards;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+  -webkit-animation: gEDhLs 1s 0s forwards;
+  animation: gEDhLs 1s 0s forwards;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-animation: cWVKP 1s 0s forwards;
+  animation: cWVKP 1s 0s forwards;
+}
+
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -453,8 +575,41 @@ exports[`Box animation renders 1`] = `
   -webkit-transform: translateY(10%);
   -ms-transform: translateY(10%);
   transform: translateY(10%);
-  -webkit-animation: RcDQa 1s 0.5s forwards,bnfHgs 1s 0.5s forwards;
-  animation: RcDQa 1s 0.5s forwards,bnfHgs 1s 0.5s forwards;
+  -webkit-animation: dHUfhi 1s 0s forwards,fBAycS 1s 0s forwards;
+  animation: dHUfhi 1s 0s forwards,fBAycS 1s 0s forwards;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  opacity: 0;
+  -webkit-animation: dHUfhi 1s 0.5s forwards;
+  animation: dHUfhi 1s 0.5s forwards;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  opacity: 0;
+  -webkit-transform: translateY(10%);
+  -ms-transform: translateY(10%);
+  transform: translateY(10%);
+  -webkit-animation: dHUfhi 1s 0.5s forwards,fBAycS 1s 0.5s forwards;
+  animation: dHUfhi 1s 0.5s forwards,fBAycS 1s 0.5s forwards;
 }
 
 <div
@@ -478,6 +633,51 @@ exports[`Box animation renders 1`] = `
   <div
     aria-label={undefined}
     className="c4"
+    direction="column"
+  />
+  <div
+    aria-label={undefined}
+    className="c5"
+    direction="column"
+  />
+  <div
+    aria-label={undefined}
+    className="c6"
+    direction="column"
+  />
+  <div
+    aria-label={undefined}
+    className="c7"
+    direction="column"
+  />
+  <div
+    aria-label={undefined}
+    className="c8"
+    direction="column"
+  />
+  <div
+    aria-label={undefined}
+    className="c9"
+    direction="column"
+  />
+  <div
+    aria-label={undefined}
+    className="c10"
+    direction="column"
+  />
+  <div
+    aria-label={undefined}
+    className="c11"
+    direction="column"
+  />
+  <div
+    aria-label={undefined}
+    className="c12"
+    direction="column"
+  />
+  <div
+    aria-label={undefined}
+    className="c13"
     direction="column"
   />
 </div>

@@ -30,6 +30,9 @@ export default deepFreeze({
   global: {
     animation: {
       duration: '1s',
+      jiggle: {
+        duration: '0.1s',
+      },
     },
     borderSize: {
       xsmall: '1px',
