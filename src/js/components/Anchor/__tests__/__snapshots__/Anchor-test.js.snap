@@ -628,6 +628,16 @@ exports[`Anchor icon label renders 1`] = `
                 "background": "rgba(0,0,0,0.7)",
               },
             },
+            "worldMap": Object {
+              "continent": Object {
+                "active": "8px",
+                "base": "6px",
+              },
+              "place": Object {
+                "active": "20px",
+                "base": "8px",
+              },
+            },
           }
         }
       >
@@ -1202,6 +1212,16 @@ exports[`Anchor primary renders 1`] = `
             "video": Object {
               "captions": Object {
                 "background": "rgba(0,0,0,0.7)",
+              },
+            },
+            "worldMap": Object {
+              "continent": Object {
+                "active": "8px",
+                "base": "6px",
+              },
+              "place": Object {
+                "active": "20px",
+                "base": "8px",
               },
             },
           }
@@ -1863,6 +1883,16 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "background": "rgba(0,0,0,0.7)",
               },
             },
+            "worldMap": Object {
+              "continent": Object {
+                "active": "8px",
+                "base": "6px",
+              },
+              "place": Object {
+                "active": "20px",
+                "base": "8px",
+              },
+            },
           }
         }
       >
@@ -2392,6 +2422,16 @@ exports[`Anchor warns about invalid icon render 1`] = `
             "video": Object {
               "captions": Object {
                 "background": "rgba(0,0,0,0.7)",
+              },
+            },
+            "worldMap": Object {
+              "continent": Object {
+                "active": "8px",
+                "base": "6px",
+              },
+              "place": Object {
+                "active": "20px",
+                "base": "8px",
               },
             },
           }

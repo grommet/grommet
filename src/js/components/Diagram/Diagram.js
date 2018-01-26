@@ -81,6 +81,7 @@ class Diagram extends Component {
   render() {
     const { connections, theme, ...rest } = this.props;
     const { height, width } = this.state;
+    console.log('!!! render', this.containerRef !== undefined);
 
     let paths;
     if (this.containerRef) {
@@ -108,7 +109,7 @@ class Diagram extends Component {
             (toRect.y - containerRect.y) + (toRect.height / 2),
           ];
           const offsetWidth = offset ? parseMetricToInt(theme.global.edgeSize[offset]) : 0;
-          const d = COMMANDS[type](fromPoint, toPoint, offsetWidth);
+          const d = COMMANDS[type || 'curved'](fromPoint, toPoint, offsetWidth);
           const strokeWidth = thickness ? parseMetricToInt(theme.global.edgeSize[thickness]) : 1;
           path = (
             <path
