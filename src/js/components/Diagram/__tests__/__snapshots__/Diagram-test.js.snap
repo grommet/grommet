@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Diagram renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c0 * {
+  box-sizing: inherit;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.c4 {
+  max-width: 100%;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="row"
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        aria-label={undefined}
+        className="c3"
+        direction="column"
+        id="1"
+      />
+      <div
+        aria-label={undefined}
+        className="c3"
+        direction="column"
+        id="2"
+      />
+    </div>
+    <svg
+      className="c4"
+      height={0}
+      preserveAspectRatio="xMinYMin meet"
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+      viewBox="0 0 0 0"
+      width={0}
+    >
+      <g />
+    </svg>
+  </div>
+</div>
+`;
