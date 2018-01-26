@@ -81,6 +81,7 @@ class Diagram extends Component {
   render() {
     const { connections, theme, ...rest } = this.props;
     const { height, width } = this.state;
+    console.log('!!! render', this.containerRef !== undefined);
 
     let paths;
     if (this.containerRef) {
