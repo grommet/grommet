@@ -1,101 +1,183 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Diagram renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  background-color: #FFFFFF;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c1 {
-  position: relative;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding: 24px;
-}
-
-.c4 {
-  max-width: 100%;
-}
-
+exports[`Diagram color renders 1`] = `
 <div
-  className="c0"
+  class="StyledGrommet-gKbdxL kDQxAS"
 >
   <div
-    className="c1"
+    class="StyledStack-jtPAMP bgKQVO"
   >
     <div
-      aria-label={undefined}
-      className="c2"
+      class="StyledBox-YaZNy iXGgPy"
       direction="row"
-      style={
-        Object {
-          "position": "relative",
-        }
-      }
+      style="position: relative;"
     >
       <div
-        aria-label={undefined}
-        className="c3"
-        direction="column"
+        class="StyledBox-YaZNy dyMegD"
         id="1"
+        direction="column"
       />
       <div
-        aria-label={undefined}
-        className="c3"
-        direction="column"
+        class="StyledBox-YaZNy dyMegD"
         id="2"
+        direction="column"
       />
     </div>
     <svg
-      className="c4"
-      height={0}
-      preserveAspectRatio="xMinYMin meet"
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "overflow": "hidden",
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        }
-      }
+      class="StyledDiagram-hhOVAv lfrlnw"
       viewBox="0 0 0 0"
-      width={0}
+      preserveAspectRatio="xMinYMin meet"
+      width="0"
+      height="0"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+    >
+      <g />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Diagram offset renders 1`] = `
+<div
+  class="StyledGrommet-gKbdxL kDQxAS"
+>
+  <div
+    class="StyledStack-jtPAMP bgKQVO"
+  >
+    <div
+      class="StyledBox-YaZNy iXGgPy"
+      direction="row"
+      style="position: relative;"
+    >
+      <div
+        class="StyledBox-YaZNy dyMegD"
+        id="1"
+        direction="column"
+      />
+      <div
+        class="StyledBox-YaZNy dyMegD"
+        id="2"
+        direction="column"
+      />
+    </div>
+    <svg
+      class="StyledDiagram-hhOVAv lfrlnw"
+      viewBox="0 0 0 0"
+      preserveAspectRatio="xMinYMin meet"
+      width="0"
+      height="0"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+    >
+      <g />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Diagram renders 1`] = `
+<div
+  class="StyledGrommet-gKbdxL kDQxAS"
+>
+  <div
+    class="StyledStack-jtPAMP bgKQVO"
+  >
+    <div
+      class="StyledBox-YaZNy iXGgPy"
+      direction="row"
+      style="position: relative;"
+    >
+      <div
+        class="StyledBox-YaZNy dyMegD"
+        id="1"
+        direction="column"
+      />
+      <div
+        class="StyledBox-YaZNy dyMegD"
+        id="2"
+        direction="column"
+      />
+    </div>
+    <svg
+      class="StyledDiagram-hhOVAv lfrlnw"
+      viewBox="0 0 0 0"
+      preserveAspectRatio="xMinYMin meet"
+      width="0"
+      height="0"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+    >
+      <g />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Diagram thickness renders 1`] = `
+<div
+  class="StyledGrommet-gKbdxL kDQxAS"
+>
+  <div
+    class="StyledStack-jtPAMP bgKQVO"
+  >
+    <div
+      class="StyledBox-YaZNy iXGgPy"
+      direction="row"
+      style="position: relative;"
+    >
+      <div
+        class="StyledBox-YaZNy dyMegD"
+        id="1"
+        direction="column"
+      />
+      <div
+        class="StyledBox-YaZNy dyMegD"
+        id="2"
+        direction="column"
+      />
+    </div>
+    <svg
+      class="StyledDiagram-hhOVAv lfrlnw"
+      viewBox="0 0 0 0"
+      preserveAspectRatio="xMinYMin meet"
+      width="0"
+      height="0"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+    >
+      <g />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`Diagram type renders 1`] = `
+<div
+  class="StyledGrommet-gKbdxL kDQxAS"
+>
+  <div
+    class="StyledStack-jtPAMP bgKQVO"
+  >
+    <div
+      class="StyledBox-YaZNy iXGgPy"
+      direction="row"
+      style="position: relative;"
+    >
+      <div
+        class="StyledBox-YaZNy dyMegD"
+        id="1"
+        direction="column"
+      />
+      <div
+        class="StyledBox-YaZNy dyMegD"
+        id="2"
+        direction="column"
+      />
+    </div>
+    <svg
+      class="StyledDiagram-hhOVAv lfrlnw"
+      viewBox="0 0 0 0"
+      preserveAspectRatio="xMinYMin meet"
+      width="0"
+      height="0"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
     >
       <g />
     </svg>

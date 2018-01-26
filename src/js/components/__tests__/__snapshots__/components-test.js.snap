@@ -39,6 +39,7 @@ Object {
   "TextArea": [Function],
   "TextInput": [Function],
   "Video": [Function],
+  "WorldMap": [Function],
   "__esModule": true,
 }
 `;
