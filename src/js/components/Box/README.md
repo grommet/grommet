@@ -58,11 +58,15 @@ stretch
 
 **animation**
 
-Animation effect(s) to use. 'duration' and 'delay' should be in milliseconds.
+Animation effect(s) to use.
+      'duration' and 'delay' should be in milliseconds.
+      'jiggle' and 'pulse' types are intended for small elements, like icons.
 
 ```
 fadeIn
 fadeOut
+jiggle
+pulse
 slideUp
 slideDown
 slideLeft
@@ -73,6 +77,8 @@ zoomOut
   type: 
     fadeIn
     fadeOut
+    jiggle
+    pulse
     slideUp
     slideDown
     slideLeft
@@ -80,11 +86,19 @@ zoomOut
     zoomIn
     zoomOut,
   delay: number,
-  duration: number
+  duration: number,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
 }
 [
   fadeIn
   fadeOut
+  jiggle
+  pulse
   slideUp
   slideDown
   slideLeft
@@ -95,6 +109,8 @@ zoomOut
     type: 
       fadeIn
       fadeOut
+      jiggle
+      pulse
       slideUp
       slideDown
       slideLeft
@@ -102,7 +118,13 @@ zoomOut
       zoomIn
       zoomOut,
     delay: number,
-    duration: number
+    duration: number,
+    size: 
+      xsmall
+      small
+      medium
+      large
+      xlarge
   }
 ]
 ```

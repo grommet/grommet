@@ -325,7 +325,9 @@ test('Box tag renders', () => {
 test('Box animation renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Box animation='fadeIn' />
+      {['fadeIn', 'fadeOut', 'jiggle', 'pulse',
+        'slideUp', 'slideDown', 'slideLeft', 'slideRight',
+        'zoomIn', 'zoomOut'].map(type => <Box animation={type} />)}
       <Box animation={['fadeIn', 'slideUp']} />
       <Box animation={{ type: 'fadeIn', duration: 1000, delay: 500 }} />
       <Box
