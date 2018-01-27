@@ -15,7 +15,7 @@ $animation-duration: 1s;
   transition: all $animation-duration;
 }
 
-&.#{$grommet-namespace}animate__child--inactive {
+.#{$grommet-namespace}animate__child--inactive {
   pointer-events: none;
 }
 
