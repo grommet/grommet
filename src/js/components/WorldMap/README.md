@@ -1,7 +1,7 @@
 ## WorldMap
 A map of the world, or a continent.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=worldmap&amp;module=%2Fscreens%2FWorldMap.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=worldmap&amp;module=%2Fsrc%2FWorldMap.js)
 ## Usage
 
 ```javascript

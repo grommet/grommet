@@ -1,7 +1,7 @@
 ## Paragraph
 A paragraph of text.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=paragraph&amp;module=%2Fscreens%2FParagraph.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=paragraph&amp;module=%2Fsrc%2FParagraph.js)
 ## Usage
 
 ```javascript

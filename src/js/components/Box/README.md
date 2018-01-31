@@ -1,7 +1,7 @@
 ## Box
 A flexible box that lays out its contents along a single direction.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=box&amp;module=%2Fscreens%2FBox.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=box&amp;module=%2Fsrc%2FBox.js)
 ## Usage
 
 ```javascript

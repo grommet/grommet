@@ -1,7 +1,7 @@
 ## Select
 An select-like field with optional search capability.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=select&amp;module=%2Fscreens%2FSelect.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=select&amp;module=%2Fsrc%2FSelect.js)
 ## Usage
 
 ```javascript

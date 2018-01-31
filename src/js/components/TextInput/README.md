@@ -1,7 +1,7 @@
 ## TextInput
 A text input field with optional suggestions.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=textinput&amp;module=%2Fscreens%2FTextInput.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textinput&amp;module=%2Fsrc%2FTextInput.js)
 ## Usage
 
 ```javascript

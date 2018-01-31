@@ -1,7 +1,7 @@
 ## RangeInput
 A range input with custom styles.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=rangeinput&amp;module=%2Fscreens%2FRangeInput.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=rangeinput&amp;module=%2Fsrc%2FRangeInput.js)
 ## Usage
 
 ```javascript

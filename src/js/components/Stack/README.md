@@ -1,7 +1,7 @@
 ## Stack
 Stacks components on top of the first child component.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=stack&amp;module=%2Fscreens%2FStack.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=stack&amp;module=%2Fsrc%2FStack.js)
 ## Usage
 
 ```javascript

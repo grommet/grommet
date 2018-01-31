@@ -4,7 +4,7 @@ rows and columns, create area names for adjacent cells, and then
 place Box components inside those areas using the Box.gridArea property.
 See https://css-tricks.com/snippets/css/complete-guide-grid/.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=grid&amp;module=%2Fscreens%2FGrid.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grid&amp;module=%2Fsrc%2FGrid.js)
 ## Usage
 
 ```javascript
