@@ -320,7 +320,7 @@ exports[`Calendar date renders 1`] = `
           direction="row"
         >
           <button
-            aria-label={undefined}
+            aria-label="December 2017"
             className="c6"
             disabled={true}
             href={undefined}
@@ -363,7 +363,7 @@ exports[`Calendar date renders 1`] = `
             </span>
           </button>
           <button
-            aria-label={undefined}
+            aria-label="February 2018"
             className="c6"
             disabled={true}
             href={undefined}
@@ -422,7 +422,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="December 31, 2017"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -449,7 +449,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 1, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -476,7 +476,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 2, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -503,7 +503,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 3, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -530,7 +530,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 4, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -557,7 +557,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 5, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -584,7 +584,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 6, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -615,7 +615,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 7, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -642,7 +642,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 8, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -669,7 +669,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 9, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -696,7 +696,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 10, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -723,7 +723,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 11, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -750,7 +750,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 12, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -777,7 +777,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 13, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -808,7 +808,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 14, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -835,7 +835,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 15, 2018"
                 className="c16"
                 disabled={false}
                 href={undefined}
@@ -864,7 +864,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 16, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -891,7 +891,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 17, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -918,7 +918,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 18, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -945,7 +945,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 19, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -972,7 +972,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 20, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1003,7 +1003,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 21, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1030,7 +1030,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 22, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1057,7 +1057,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 23, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1084,7 +1084,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 24, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1111,7 +1111,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 25, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1138,7 +1138,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 26, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1165,7 +1165,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 27, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1196,7 +1196,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 28, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1223,7 +1223,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 29, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1250,7 +1250,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 30, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1277,7 +1277,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 31, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1304,7 +1304,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 1, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1331,7 +1331,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 2, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1358,7 +1358,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 3, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1389,7 +1389,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 4, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1416,7 +1416,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 5, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1443,7 +1443,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 6, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1470,7 +1470,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 7, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1497,7 +1497,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 8, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1524,7 +1524,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 9, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1551,7 +1551,7 @@ exports[`Calendar date renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 10, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -1920,7 +1920,7 @@ exports[`Calendar dates renders 1`] = `
           direction="row"
         >
           <button
-            aria-label={undefined}
+            aria-label="December 2017"
             className="c6"
             disabled={true}
             href={undefined}
@@ -1963,7 +1963,7 @@ exports[`Calendar dates renders 1`] = `
             </span>
           </button>
           <button
-            aria-label={undefined}
+            aria-label="February 2018"
             className="c6"
             disabled={true}
             href={undefined}
@@ -2022,7 +2022,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="December 31, 2017"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2049,7 +2049,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 1, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2076,7 +2076,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 2, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2103,7 +2103,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 3, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2130,7 +2130,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 4, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2157,7 +2157,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 5, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2184,7 +2184,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 6, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2215,7 +2215,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 7, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2242,7 +2242,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 8, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2271,7 +2271,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 9, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2298,7 +2298,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 10, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2327,7 +2327,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 11, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2354,7 +2354,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 12, 2018"
                 className="c18"
                 disabled={false}
                 href={undefined}
@@ -2383,7 +2383,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 13, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2414,7 +2414,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 14, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2441,7 +2441,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 15, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2468,7 +2468,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 16, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2495,7 +2495,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 17, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2522,7 +2522,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 18, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2549,7 +2549,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 19, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2576,7 +2576,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 20, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2607,7 +2607,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 21, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2634,7 +2634,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 22, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2661,7 +2661,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 23, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2688,7 +2688,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 24, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2715,7 +2715,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 25, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2742,7 +2742,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 26, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2769,7 +2769,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 27, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2800,7 +2800,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 28, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2827,7 +2827,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 29, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2854,7 +2854,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 30, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2881,7 +2881,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 31, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2908,7 +2908,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 1, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2935,7 +2935,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 2, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2962,7 +2962,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 3, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -2993,7 +2993,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 4, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3020,7 +3020,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 5, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3047,7 +3047,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 6, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3074,7 +3074,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 7, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3101,7 +3101,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 8, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3128,7 +3128,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 9, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3155,7 +3155,7 @@ exports[`Calendar dates renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 10, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3524,7 +3524,7 @@ exports[`Calendar disabled renders 1`] = `
           direction="row"
         >
           <button
-            aria-label={undefined}
+            aria-label="December 2017"
             className="c6"
             disabled={true}
             href={undefined}
@@ -3567,7 +3567,7 @@ exports[`Calendar disabled renders 1`] = `
             </span>
           </button>
           <button
-            aria-label={undefined}
+            aria-label="February 2018"
             className="c6"
             disabled={true}
             href={undefined}
@@ -3626,7 +3626,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="December 31, 2017"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3653,7 +3653,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 1, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3680,7 +3680,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 2, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3707,7 +3707,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 3, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3734,7 +3734,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 4, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3761,7 +3761,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 5, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3788,7 +3788,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 6, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3819,7 +3819,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 7, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3846,7 +3846,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 8, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3875,7 +3875,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 9, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3902,7 +3902,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 10, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3931,7 +3931,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 11, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -3958,7 +3958,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 12, 2018"
                 className="c18"
                 disabled={false}
                 href={undefined}
@@ -3987,7 +3987,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 13, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4018,7 +4018,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 14, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4045,7 +4045,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 15, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4072,7 +4072,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 16, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4099,7 +4099,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 17, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4126,7 +4126,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 18, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4153,7 +4153,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 19, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4180,7 +4180,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 20, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4211,7 +4211,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 21, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4238,7 +4238,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 22, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4265,7 +4265,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 23, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4292,7 +4292,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 24, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4319,7 +4319,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 25, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4346,7 +4346,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 26, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4373,7 +4373,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 27, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4404,7 +4404,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 28, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4431,7 +4431,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 29, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4458,7 +4458,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 30, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4485,7 +4485,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 31, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4512,7 +4512,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 1, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4539,7 +4539,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 2, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4566,7 +4566,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 3, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4597,7 +4597,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 4, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4624,7 +4624,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 5, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4651,7 +4651,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 6, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4678,7 +4678,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 7, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4705,7 +4705,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 8, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4732,7 +4732,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 9, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -4759,7 +4759,7 @@ exports[`Calendar disabled renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 10, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5109,7 +5109,7 @@ exports[`Calendar renders 1`] = `
           direction="row"
         >
           <button
-            aria-label={undefined}
+            aria-label="December 2017"
             className="c6"
             disabled={true}
             href={undefined}
@@ -5152,7 +5152,7 @@ exports[`Calendar renders 1`] = `
             </span>
           </button>
           <button
-            aria-label={undefined}
+            aria-label="February 2018"
             className="c6"
             disabled={true}
             href={undefined}
@@ -5211,7 +5211,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="December 31, 2017"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5238,7 +5238,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 1, 2018"
                 className="c15"
                 disabled={false}
                 href={undefined}
@@ -5267,7 +5267,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 2, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5294,7 +5294,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 3, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5321,7 +5321,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 4, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5348,7 +5348,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 5, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5375,7 +5375,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 6, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5406,7 +5406,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 7, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5433,7 +5433,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 8, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5460,7 +5460,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 9, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5487,7 +5487,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 10, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5514,7 +5514,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 11, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5541,7 +5541,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 12, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5568,7 +5568,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 13, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5599,7 +5599,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 14, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5626,7 +5626,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 15, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5653,7 +5653,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 16, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5680,7 +5680,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 17, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5707,7 +5707,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 18, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5734,7 +5734,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 19, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5761,7 +5761,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 20, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5792,7 +5792,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 21, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5819,7 +5819,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 22, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5846,7 +5846,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 23, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5873,7 +5873,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 24, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5900,7 +5900,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 25, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5927,7 +5927,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 26, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5954,7 +5954,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 27, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -5985,7 +5985,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 28, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6012,7 +6012,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 29, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6039,7 +6039,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 30, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6066,7 +6066,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 31, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6093,7 +6093,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 1, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6120,7 +6120,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 2, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6147,7 +6147,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 3, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6178,7 +6178,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 4, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6205,7 +6205,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 5, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6232,7 +6232,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 6, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6259,7 +6259,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 7, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6286,7 +6286,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 8, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6313,7 +6313,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 9, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6340,7 +6340,7 @@ exports[`Calendar renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 10, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6815,7 +6815,7 @@ exports[`Calendar size renders 1`] = `
           direction="row"
         >
           <button
-            aria-label={undefined}
+            aria-label="December 2017"
             className="c6"
             disabled={true}
             href={undefined}
@@ -6853,7 +6853,7 @@ exports[`Calendar size renders 1`] = `
             </span>
           </button>
           <button
-            aria-label={undefined}
+            aria-label="February 2018"
             className="c6"
             disabled={true}
             href={undefined}
@@ -6907,7 +6907,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="December 31, 2017"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6934,7 +6934,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 1, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6961,7 +6961,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 2, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -6988,7 +6988,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 3, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7015,7 +7015,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 4, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7042,7 +7042,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 5, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7069,7 +7069,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 6, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7100,7 +7100,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 7, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7127,7 +7127,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 8, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7154,7 +7154,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 9, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7181,7 +7181,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 10, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7208,7 +7208,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 11, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7235,7 +7235,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 12, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7262,7 +7262,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 13, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7293,7 +7293,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 14, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7320,7 +7320,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 15, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7347,7 +7347,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 16, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7374,7 +7374,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 17, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7401,7 +7401,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 18, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7428,7 +7428,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 19, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7455,7 +7455,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 20, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7486,7 +7486,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 21, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7513,7 +7513,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 22, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7540,7 +7540,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 23, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7567,7 +7567,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 24, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7594,7 +7594,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 25, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7621,7 +7621,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 26, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7648,7 +7648,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 27, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7679,7 +7679,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 28, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7706,7 +7706,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 29, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7733,7 +7733,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 30, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7760,7 +7760,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 31, 2018"
                 className="c16"
                 disabled={false}
                 href={undefined}
@@ -7787,7 +7787,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 1, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7814,7 +7814,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 2, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7841,7 +7841,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 3, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7872,7 +7872,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 4, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7899,7 +7899,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 5, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7926,7 +7926,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 6, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7953,7 +7953,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 7, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -7980,7 +7980,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 8, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8007,7 +8007,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 9, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8034,7 +8034,7 @@ exports[`Calendar size renders 1`] = `
               size="small"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 10, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8090,7 +8090,7 @@ exports[`Calendar size renders 1`] = `
           direction="row"
         >
           <button
-            aria-label={undefined}
+            aria-label="December 2017"
             className="c6"
             disabled={true}
             href={undefined}
@@ -8133,7 +8133,7 @@ exports[`Calendar size renders 1`] = `
             </span>
           </button>
           <button
-            aria-label={undefined}
+            aria-label="February 2018"
             className="c6"
             disabled={true}
             href={undefined}
@@ -8192,7 +8192,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="December 31, 2017"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8219,7 +8219,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 1, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8246,7 +8246,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 2, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8273,7 +8273,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 3, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8300,7 +8300,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 4, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8327,7 +8327,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 5, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8354,7 +8354,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 6, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8385,7 +8385,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 7, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8412,7 +8412,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 8, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8439,7 +8439,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 9, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8466,7 +8466,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 10, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8493,7 +8493,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 11, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8520,7 +8520,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 12, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8547,7 +8547,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 13, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8578,7 +8578,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 14, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8605,7 +8605,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 15, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8632,7 +8632,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 16, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8659,7 +8659,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 17, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8686,7 +8686,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 18, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8713,7 +8713,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 19, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8740,7 +8740,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 20, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8771,7 +8771,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 21, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8798,7 +8798,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 22, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8825,7 +8825,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 23, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8852,7 +8852,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 24, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8879,7 +8879,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 25, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8906,7 +8906,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 26, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8933,7 +8933,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 27, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8964,7 +8964,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 28, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -8991,7 +8991,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 29, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9018,7 +9018,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 30, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9045,7 +9045,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 31, 2018"
                 className="c16"
                 disabled={false}
                 href={undefined}
@@ -9072,7 +9072,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 1, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9099,7 +9099,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 2, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9126,7 +9126,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 3, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9157,7 +9157,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 4, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9184,7 +9184,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 5, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9211,7 +9211,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 6, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9238,7 +9238,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 7, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9265,7 +9265,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 8, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9292,7 +9292,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 9, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9319,7 +9319,7 @@ exports[`Calendar size renders 1`] = `
               size="medium"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 10, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9375,7 +9375,7 @@ exports[`Calendar size renders 1`] = `
           direction="row"
         >
           <button
-            aria-label={undefined}
+            aria-label="December 2017"
             className="c6"
             disabled={true}
             href={undefined}
@@ -9418,7 +9418,7 @@ exports[`Calendar size renders 1`] = `
             </span>
           </button>
           <button
-            aria-label={undefined}
+            aria-label="February 2018"
             className="c6"
             disabled={true}
             href={undefined}
@@ -9477,7 +9477,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="December 31, 2017"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9504,7 +9504,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 1, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9531,7 +9531,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 2, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9558,7 +9558,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 3, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9585,7 +9585,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 4, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9612,7 +9612,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 5, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9639,7 +9639,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 6, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9670,7 +9670,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 7, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9697,7 +9697,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 8, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9724,7 +9724,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 9, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9751,7 +9751,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 10, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9778,7 +9778,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 11, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9805,7 +9805,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 12, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9832,7 +9832,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 13, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9863,7 +9863,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 14, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9890,7 +9890,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 15, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9917,7 +9917,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 16, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9944,7 +9944,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 17, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9971,7 +9971,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 18, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -9998,7 +9998,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 19, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10025,7 +10025,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 20, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10056,7 +10056,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 21, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10083,7 +10083,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 22, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10110,7 +10110,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 23, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10137,7 +10137,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 24, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10164,7 +10164,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 25, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10191,7 +10191,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 26, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10218,7 +10218,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 27, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10249,7 +10249,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 28, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10276,7 +10276,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 29, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10303,7 +10303,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 30, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10330,7 +10330,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="January 31, 2018"
                 className="c16"
                 disabled={false}
                 href={undefined}
@@ -10357,7 +10357,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 1, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10384,7 +10384,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 2, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10411,7 +10411,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 3, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10442,7 +10442,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 4, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10469,7 +10469,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 5, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10496,7 +10496,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 6, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10523,7 +10523,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 7, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10550,7 +10550,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 8, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10577,7 +10577,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 9, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
@@ -10604,7 +10604,7 @@ exports[`Calendar size renders 1`] = `
               size="large"
             >
               <button
-                aria-label={undefined}
+                aria-label="February 10, 2018"
                 className="c13"
                 disabled={false}
                 href={undefined}
