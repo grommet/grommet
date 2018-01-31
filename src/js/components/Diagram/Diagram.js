@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
-import { colorForName, parseMetricToInt } from '../../utils';
+import { colorForName, parseMetricToNum } from '../../utils';
 
 import { withTheme } from '../hocs';
 
@@ -108,9 +108,9 @@ class Diagram extends Component {
             (toRect.x - containerRect.x) + (toRect.width / 2),
             (toRect.y - containerRect.y) + (toRect.height / 2),
           ];
-          const offsetWidth = offset ? parseMetricToInt(theme.global.edgeSize[offset]) : 0;
+          const offsetWidth = offset ? parseMetricToNum(theme.global.edgeSize[offset]) : 0;
           const d = COMMANDS[type || 'curved'](fromPoint, toPoint, offsetWidth);
-          const strokeWidth = thickness ? parseMetricToInt(theme.global.edgeSize[thickness]) : 1;
+          const strokeWidth = thickness ? parseMetricToNum(theme.global.edgeSize[thickness]) : 1;
           path = (
             <path
               key={`${fromId}-${toId}-${index}`}
