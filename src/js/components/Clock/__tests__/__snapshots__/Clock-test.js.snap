@@ -2,7 +2,7 @@
 
 exports[`Clock animates second hand 1`] = `
 <svg
-  class="StyledClock-bEPleQ xuTSy"
+  class="StyledClock-egFVkc cMDGwi"
   version="1.1"
   width="96"
   height="96"
@@ -10,7 +10,7 @@ exports[`Clock animates second hand 1`] = `
   viewBox="0 0 96 96"
 >
   <circle
-    class="StyledClock__StyledCircle-diJlsZ fptDiF"
+    class="StyledClock__StyledCircle-hrpIpF dtvAqv"
     fill="none"
     stroke="#000000"
     cx="48"
@@ -18,7 +18,7 @@ exports[`Clock animates second hand 1`] = `
     r="46"
   />
   <line
-    class="StyledClock__StyledSecond-oRaEs bSNOuM"
+    class="StyledClock__StyledSecond-bAhDUL CJLmH"
     x1="48"
     y1="48"
     x2="48"
@@ -27,7 +27,7 @@ exports[`Clock animates second hand 1`] = `
     stroke-linecap="round"
   />
   <line
-    class="StyledClock__StyledMinute-bDjMrZ hfaspW"
+    class="StyledClock__StyledMinute-efBHQO fkJwbu"
     x1="48"
     y1="48"
     x2="48"
@@ -36,7 +36,7 @@ exports[`Clock animates second hand 1`] = `
     stroke-linecap="round"
   />
   <line
-    class="StyledClock__StyledHour-fpyVuK zXhiY"
+    class="StyledClock__StyledHour-lkWeQW cLePsR"
     x1="48"
     y1="48"
     x2="48"
@@ -49,7 +49,7 @@ exports[`Clock animates second hand 1`] = `
 
 exports[`Clock animates second hand 2`] = `
 <svg
-  class="StyledClock-bEPleQ xuTSy"
+  class="StyledClock-egFVkc cMDGwi"
   version="1.1"
   width="96"
   height="96"
@@ -57,7 +57,7 @@ exports[`Clock animates second hand 2`] = `
   viewBox="0 0 96 96"
 >
   <circle
-    class="StyledClock__StyledCircle-diJlsZ fptDiF"
+    class="StyledClock__StyledCircle-hrpIpF dtvAqv"
     fill="none"
     stroke="#000000"
     cx="48"
@@ -65,7 +65,7 @@ exports[`Clock animates second hand 2`] = `
     r="46"
   />
   <line
-    class="StyledClock__StyledSecond-oRaEs bSNOuM"
+    class="StyledClock__StyledSecond-bAhDUL CJLmH"
     x1="48"
     y1="48"
     x2="48"
@@ -74,7 +74,7 @@ exports[`Clock animates second hand 2`] = `
     stroke-linecap="round"
   />
   <line
-    class="StyledClock__StyledMinute-bDjMrZ hfaspW"
+    class="StyledClock__StyledMinute-efBHQO fkJwbu"
     x1="48"
     y1="48"
     x2="48"
@@ -83,7 +83,7 @@ exports[`Clock animates second hand 2`] = `
     stroke-linecap="round"
   />
   <line
-    class="StyledClock__StyledHour-fpyVuK zXhiY"
+    class="StyledClock__StyledHour-lkWeQW cLePsR"
     x1="48"
     y1="48"
     x2="48"
@@ -96,7 +96,7 @@ exports[`Clock animates second hand 2`] = `
 
 exports[`Clock night renders 1`] = `
 <svg
-  class="StyledClock-bEPleQ xuTSy"
+  class="StyledClock-egFVkc cMDGwi"
   version="1.1"
   width="96"
   height="96"
@@ -104,7 +104,7 @@ exports[`Clock night renders 1`] = `
   viewBox="0 0 96 96"
 >
   <circle
-    class="StyledClock__StyledCircle-diJlsZ ftTiLk"
+    class="StyledClock__StyledCircle-hrpIpF grDodx"
     fill="none"
     stroke="#000000"
     cx="48"
@@ -112,7 +112,7 @@ exports[`Clock night renders 1`] = `
     r="46"
   />
   <line
-    class="StyledClock__StyledMinute-bDjMrZ bbiIfv"
+    class="StyledClock__StyledMinute-efBHQO kArSyA"
     x1="48"
     y1="48"
     x2="48"
@@ -121,7 +121,7 @@ exports[`Clock night renders 1`] = `
     stroke-linecap="round"
   />
   <line
-    class="StyledClock__StyledHour-fpyVuK doQwzc"
+    class="StyledClock__StyledHour-lkWeQW ervlRf"
     x1="48"
     y1="48"
     x2="48"
@@ -134,7 +134,7 @@ exports[`Clock night renders 1`] = `
 
 exports[`Clock night renders 2`] = `
 <svg
-  class="StyledClock-bEPleQ xuTSy"
+  class="StyledClock-egFVkc cMDGwi"
   version="1.1"
   width="96"
   height="96"
@@ -142,7 +142,7 @@ exports[`Clock night renders 2`] = `
   viewBox="0 0 96 96"
 >
   <circle
-    class="StyledClock__StyledCircle-diJlsZ ftTiLk"
+    class="StyledClock__StyledCircle-hrpIpF grDodx"
     fill="none"
     stroke="#000000"
     cx="48"
@@ -150,7 +150,7 @@ exports[`Clock night renders 2`] = `
     r="46"
   />
   <line
-    class="StyledClock__StyledMinute-bDjMrZ bbiIfv"
+    class="StyledClock__StyledMinute-efBHQO kArSyA"
     x1="48"
     y1="48"
     x2="48"
@@ -159,7 +159,7 @@ exports[`Clock night renders 2`] = `
     stroke-linecap="round"
   />
   <line
-    class="StyledClock__StyledHour-fpyVuK doQwzc"
+    class="StyledClock__StyledHour-lkWeQW ervlRf"
     x1="48"
     y1="48"
     x2="48"
@@ -172,10 +172,10 @@ exports[`Clock night renders 2`] = `
 
 exports[`Clock renders 1`] = `
 <div
-  class="StyledGrommet-gGRXwz jUezAj"
+  class="StyledGrommet-gKbdxL kDQxAS"
 >
   <svg
-    class="StyledClock-bEPleQ xuTSy"
+    class="StyledClock-egFVkc cMDGwi"
     version="1.1"
     width="96"
     height="96"
@@ -183,7 +183,7 @@ exports[`Clock renders 1`] = `
     viewBox="0 0 96 96"
   >
     <circle
-      class="StyledClock__StyledCircle-diJlsZ ftTiLk"
+      class="StyledClock__StyledCircle-hrpIpF grDodx"
       fill="none"
       stroke="#000000"
       cx="48"
@@ -191,7 +191,7 @@ exports[`Clock renders 1`] = `
       r="46"
     />
     <line
-      class="StyledClock__StyledSecond-oRaEs bSNOuM"
+      class="StyledClock__StyledSecond-bAhDUL CJLmH"
       x1="48"
       y1="48"
       x2="48"
@@ -200,7 +200,7 @@ exports[`Clock renders 1`] = `
       stroke-linecap="round"
     />
     <line
-      class="StyledClock__StyledMinute-bDjMrZ bbiIfv"
+      class="StyledClock__StyledMinute-efBHQO kArSyA"
       x1="48"
       y1="48"
       x2="48"
@@ -209,7 +209,7 @@ exports[`Clock renders 1`] = `
       stroke-linecap="round"
     />
     <line
-      class="StyledClock__StyledHour-fpyVuK doQwzc"
+      class="StyledClock__StyledHour-lkWeQW ervlRf"
       x1="48"
       y1="48"
       x2="48"
@@ -223,10 +223,10 @@ exports[`Clock renders 1`] = `
 
 exports[`Clock renders 2`] = `
 <div
-  class="StyledGrommet-gGRXwz jUezAj"
+  class="StyledGrommet-gKbdxL kDQxAS"
 >
   <svg
-    class="StyledClock-bEPleQ xuTSy"
+    class="StyledClock-egFVkc cMDGwi"
     version="1.1"
     width="96"
     height="96"
@@ -234,7 +234,7 @@ exports[`Clock renders 2`] = `
     viewBox="0 0 96 96"
   >
     <circle
-      class="StyledClock__StyledCircle-diJlsZ ftTiLk"
+      class="StyledClock__StyledCircle-hrpIpF grDodx"
       fill="none"
       stroke="#000000"
       cx="48"
@@ -242,7 +242,7 @@ exports[`Clock renders 2`] = `
       r="46"
     />
     <line
-      class="StyledClock__StyledSecond-oRaEs glIWSO"
+      class="StyledClock__StyledSecond-bAhDUL TwNiW"
       x1="48"
       y1="48"
       x2="48"
@@ -251,7 +251,7 @@ exports[`Clock renders 2`] = `
       stroke-linecap="round"
     />
     <line
-      class="StyledClock__StyledMinute-bDjMrZ Wfczg"
+      class="StyledClock__StyledMinute-efBHQO dZbggh"
       x1="48"
       y1="48"
       x2="48"
@@ -260,7 +260,7 @@ exports[`Clock renders 2`] = `
       stroke-linecap="round"
     />
     <line
-      class="StyledClock__StyledHour-fpyVuK bIeIta"
+      class="StyledClock__StyledHour-lkWeQW gQoCKI"
       x1="48"
       y1="48"
       x2="48"

@@ -18,6 +18,10 @@ exports[`RoutedButton renders 1`] = `
   box-sizing: inherit;
 }
 
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
 .c1 {
   cursor: pointer;
   outline: none;
@@ -50,10 +54,6 @@ exports[`RoutedButton renders 1`] = `
   stroke: #000000;
   -webkit-transition: none;
   transition: none;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
 }
 
 @media only screen and (min-width:700px) {

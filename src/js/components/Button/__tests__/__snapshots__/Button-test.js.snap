@@ -18,6 +18,10 @@ exports[`Button color renders 1`] = `
   box-sizing: inherit;
 }
 
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
 .c1 {
   cursor: pointer;
   outline: none;
@@ -84,10 +88,6 @@ exports[`Button color renders 1`] = `
 
 .c3:hover {
   box-shadow: 0px 0px 0px 2px #00CCEB;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
 }
 
 @media only screen and (min-width:700px) {
@@ -243,6 +243,10 @@ exports[`Button focus renders 1`] = `
   box-sizing: inherit;
 }
 
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
 .c1 {
   cursor: pointer;
   outline: none;
@@ -276,10 +280,6 @@ exports[`Button focus renders 1`] = `
 .c1 > polyline,
 .c1 > rect {
   outline: #00CCEB solid 2px;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
 }
 
 @media only screen and (min-width:700px) {
@@ -890,6 +890,22 @@ exports[`Button icon label renders 1`] = `
   box-sizing: inherit;
 }
 
+.c3:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c2 {
+  display: inline-block;
+}
+
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c2 > * {
+  vertical-align: bottom;
+}
+
 .c1 {
   cursor: pointer;
   outline: none;
@@ -922,22 +938,6 @@ exports[`Button icon label renders 1`] = `
   stroke: #000000;
   -webkit-transition: none;
   transition: none;
-}
-
-.c3:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c2 {
-  display: inline-block;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c2 > * {
-  vertical-align: bottom;
 }
 
 @media only screen and (min-width:700px) {
@@ -998,6 +998,10 @@ exports[`Button primary renders 1`] = `
   box-sizing: inherit;
 }
 
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
 .c1 {
   cursor: pointer;
   outline: none;
@@ -1030,10 +1034,6 @@ exports[`Button primary renders 1`] = `
 
 .c1:hover {
   box-shadow: 0px 0px 0px 2px #865CD6;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
 }
 
 @media only screen and (min-width:700px) {
@@ -1088,6 +1088,10 @@ exports[`Button renders 1`] = `
   box-sizing: inherit;
 }
 
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
 .c1 {
   cursor: pointer;
   outline: none;
@@ -1120,10 +1124,6 @@ exports[`Button renders 1`] = `
   stroke: #000000;
   -webkit-transition: none;
   transition: none;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
 }
 
 @media only screen and (min-width:700px) {
@@ -1178,6 +1178,22 @@ exports[`Button reverse icon label renders 1`] = `
   box-sizing: inherit;
 }
 
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c3 {
+  display: inline-block;
+}
+
+.c3:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c3 > * {
+  vertical-align: bottom;
+}
+
 .c1 {
   cursor: pointer;
   outline: none;
@@ -1210,22 +1226,6 @@ exports[`Button reverse icon label renders 1`] = `
   stroke: #000000;
   -webkit-transition: none;
   transition: none;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c3 {
-  display: inline-block;
-}
-
-.c3:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c3 > * {
-  vertical-align: bottom;
 }
 
 @media only screen and (min-width:700px) {
@@ -1286,6 +1286,18 @@ exports[`Button warns about invalid icon render 1`] = `
   box-sizing: inherit;
 }
 
+.c2 {
+  display: inline-block;
+}
+
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c2 > * {
+  vertical-align: bottom;
+}
+
 .c1 {
   cursor: pointer;
   outline: none;
@@ -1300,18 +1312,6 @@ exports[`Button warns about invalid icon render 1`] = `
   border: none;
   padding: 0;
   padding: 12px;
-}
-
-.c2 {
-  display: inline-block;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c2 > * {
-  vertical-align: bottom;
 }
 
 @media only screen and (min-width:700px) {
@@ -1367,6 +1367,10 @@ exports[`Button warns about invalid label render 1`] = `
   box-sizing: inherit;
 }
 
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
 .c1 {
   cursor: pointer;
   outline: none;
@@ -1380,10 +1384,6 @@ exports[`Button warns about invalid label render 1`] = `
   color: inherit;
   border: none;
   padding: 0;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
 }
 
 @media only screen and (min-width:700px) {

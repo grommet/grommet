@@ -94,7 +94,7 @@ exports[`Grid alignContent renders 1`] = `
   display: grid;
   height: 100%;
   -webkit-align-content: flex-start;
-  -ms-flex-line-pack: start;
+  -ms-flex-line-pack: flex-start;
   align-content: flex-start;
 }
 
@@ -126,7 +126,7 @@ exports[`Grid alignContent renders 1`] = `
   display: grid;
   height: 100%;
   -webkit-align-content: flex-end;
-  -ms-flex-line-pack: end;
+  -ms-flex-line-pack: flex-end;
   align-content: flex-end;
 }
 

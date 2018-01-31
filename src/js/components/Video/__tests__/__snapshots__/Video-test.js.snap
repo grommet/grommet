@@ -139,6 +139,18 @@ exports[`Video autoPlay renders 1`] = `
   padding: 12px;
 }
 
+.c6 {
+  display: inline-block;
+}
+
+.c6:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c6 > * {
+  vertical-align: bottom;
+}
+
 .c5 {
   cursor: pointer;
   outline: none;
@@ -175,18 +187,6 @@ exports[`Video autoPlay renders 1`] = `
   padding: 0;
 }
 
-.c6 {
-  display: inline-block;
-}
-
-.c6:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c6 > * {
-  vertical-align: bottom;
-}
-
 .c11 {
   max-width: 100%;
 }
@@ -204,14 +204,6 @@ exports[`Video autoPlay renders 1`] = `
   font-size: 16px;
   line-height: 1.375;
   margin: 0;
-}
-
-.c2 {
-  max-width: 100%;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
 }
 
 .c1 {
@@ -245,6 +237,14 @@ exports[`Video autoPlay renders 1`] = `
 
 .c12 {
   cursor: pointer;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (min-width:700px) {
@@ -660,6 +660,18 @@ exports[`Video controls renders 1`] = `
   justify-content: space-between;
 }
 
+.c6 {
+  display: inline-block;
+}
+
+.c6:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c6 > * {
+  vertical-align: bottom;
+}
+
 .c5 {
   cursor: pointer;
   outline: none;
@@ -696,18 +708,6 @@ exports[`Video controls renders 1`] = `
   padding: 0;
 }
 
-.c6 {
-  display: inline-block;
-}
-
-.c6:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c6 > * {
-  vertical-align: bottom;
-}
-
 .c11 {
   max-width: 100%;
 }
@@ -725,14 +725,6 @@ exports[`Video controls renders 1`] = `
   font-size: 16px;
   line-height: 1.375;
   margin: 0;
-}
-
-.c2 {
-  max-width: 100%;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
 }
 
 .c1 {
@@ -776,6 +768,14 @@ exports[`Video controls renders 1`] = `
 
 .c12 {
   cursor: pointer;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (min-width:700px) {
@@ -1338,6 +1338,18 @@ exports[`Video fit renders 1`] = `
   padding: 12px;
 }
 
+.c6 {
+  display: inline-block;
+}
+
+.c6:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c6 > * {
+  vertical-align: bottom;
+}
+
 .c5 {
   cursor: pointer;
   outline: none;
@@ -1374,18 +1386,6 @@ exports[`Video fit renders 1`] = `
   padding: 0;
 }
 
-.c6 {
-  display: inline-block;
-}
-
-.c6:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c6 > * {
-  vertical-align: bottom;
-}
-
 .c11 {
   max-width: 100%;
 }
@@ -1403,32 +1403,6 @@ exports[`Video fit renders 1`] = `
   font-size: 16px;
   line-height: 1.375;
   margin: 0;
-}
-
-.c2 {
-  max-width: 100%;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  min-height: 0;
-  object-fit: cover;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
-}
-
-.c17 {
-  max-width: 100%;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  min-height: 0;
-  object-fit: contain;
-}
-
-.c17::cue {
-  background: rgba(0,0,0,0.7);
 }
 
 .c1 {
@@ -1462,6 +1436,32 @@ exports[`Video fit renders 1`] = `
 
 .c12 {
   cursor: pointer;
+}
+
+.c2 {
+  max-width: 100%;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  min-height: 0;
+  object-fit: cover;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
+}
+
+.c17 {
+  max-width: 100%;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  min-height: 0;
+  object-fit: contain;
+}
+
+.c17::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (min-width:700px) {
@@ -2027,6 +2027,18 @@ exports[`Video loop renders 1`] = `
   padding: 12px;
 }
 
+.c6 {
+  display: inline-block;
+}
+
+.c6:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c6 > * {
+  vertical-align: bottom;
+}
+
 .c5 {
   cursor: pointer;
   outline: none;
@@ -2063,18 +2075,6 @@ exports[`Video loop renders 1`] = `
   padding: 0;
 }
 
-.c6 {
-  display: inline-block;
-}
-
-.c6:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c6 > * {
-  vertical-align: bottom;
-}
-
 .c11 {
   max-width: 100%;
 }
@@ -2092,14 +2092,6 @@ exports[`Video loop renders 1`] = `
   font-size: 16px;
   line-height: 1.375;
   margin: 0;
-}
-
-.c2 {
-  max-width: 100%;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
 }
 
 .c1 {
@@ -2133,6 +2125,14 @@ exports[`Video loop renders 1`] = `
 
 .c12 {
   cursor: pointer;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (min-width:700px) {
@@ -2496,6 +2496,18 @@ exports[`Video mute renders 1`] = `
   padding: 12px;
 }
 
+.c6 {
+  display: inline-block;
+}
+
+.c6:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c6 > * {
+  vertical-align: bottom;
+}
+
 .c5 {
   cursor: pointer;
   outline: none;
@@ -2532,18 +2544,6 @@ exports[`Video mute renders 1`] = `
   padding: 0;
 }
 
-.c6 {
-  display: inline-block;
-}
-
-.c6:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c6 > * {
-  vertical-align: bottom;
-}
-
 .c11 {
   max-width: 100%;
 }
@@ -2561,14 +2561,6 @@ exports[`Video mute renders 1`] = `
   font-size: 16px;
   line-height: 1.375;
   margin: 0;
-}
-
-.c2 {
-  max-width: 100%;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
 }
 
 .c1 {
@@ -2602,6 +2594,14 @@ exports[`Video mute renders 1`] = `
 
 .c12 {
   cursor: pointer;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (min-width:700px) {
@@ -2965,6 +2965,18 @@ exports[`Video renders 1`] = `
   padding: 12px;
 }
 
+.c6 {
+  display: inline-block;
+}
+
+.c6:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c6 > * {
+  vertical-align: bottom;
+}
+
 .c5 {
   cursor: pointer;
   outline: none;
@@ -3001,18 +3013,6 @@ exports[`Video renders 1`] = `
   padding: 0;
 }
 
-.c6 {
-  display: inline-block;
-}
-
-.c6:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c6 > * {
-  vertical-align: bottom;
-}
-
 .c11 {
   max-width: 100%;
 }
@@ -3030,14 +3030,6 @@ exports[`Video renders 1`] = `
   font-size: 16px;
   line-height: 1.375;
   margin: 0;
-}
-
-.c2 {
-  max-width: 100%;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
 }
 
 .c1 {
@@ -3071,6 +3063,14 @@ exports[`Video renders 1`] = `
 
 .c12 {
   cursor: pointer;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (min-width:700px) {

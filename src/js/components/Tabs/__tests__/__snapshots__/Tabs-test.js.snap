@@ -5,11 +5,11 @@ exports[`Tabs changes active index 1`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS edKAPy"
+    class="StyledBox-YaZNy fOOdOJ"
     direction="row"
   >
     <button
-      class="StyledButton-gXzblK jYQWcg"
+      class="StyledButton-qbvYY gHaBSp"
       tabindex="0"
       role="tab"
       aria-selected="true"
@@ -17,11 +17,11 @@ exports[`Tabs changes active index 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS jttQdi"
+        class="StyledBox-YaZNy cVzNWb"
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI ehbxjF"
+          class="StyledText-dmaDlZ dBmCXc"
         >
           <strong>
             Tab 1
@@ -30,7 +30,7 @@ exports[`Tabs changes active index 1`] = `
       </div>
     </button>
     <button
-      class="StyledButton-gXzblK jYQWcg"
+      class="StyledButton-qbvYY gHaBSp"
       tabindex="0"
       role="tab"
       aria-selected="false"
@@ -38,11 +38,11 @@ exports[`Tabs changes active index 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS daYSDH"
+        class="StyledBox-YaZNy kLBzNE"
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI beGKeC"
+          class="StyledText-dmaDlZ caxVjs"
           color="dark-4"
         >
           Tab 2
@@ -61,21 +61,21 @@ exports[`Tabs changes active index 1`] = `
 
 exports[`Tabs changes to second tab 1`] = `
 <div
-  className="StyledGrommet-gGRXwz jUezAj"
+  className="StyledGrommet-gKbdxL kDQxAS"
 >
   <div
     role="tablist"
   >
     <div
       aria-label={undefined}
-      className="StyledBox-bStriS edKAPy"
+      className="StyledBox-YaZNy fOOdOJ"
       direction="row"
     >
       <button
         aria-expanded={false}
         aria-label={undefined}
         aria-selected={false}
-        className="StyledButton-gXzblK jYQWcg"
+        className="StyledButton-qbvYY gHaBSp"
         disabled={false}
         href={undefined}
         icon={undefined}
@@ -93,11 +93,11 @@ exports[`Tabs changes to second tab 1`] = `
       >
         <div
           aria-label={undefined}
-          className="StyledBox-bStriS daYSDH"
+          className="StyledBox-YaZNy kLBzNE"
           direction="column"
         >
           <span
-            className="StyledText-eJMSZI beGKeC"
+            className="StyledText-dmaDlZ caxVjs"
             color="dark-4"
           >
             Tab 1
@@ -108,7 +108,7 @@ exports[`Tabs changes to second tab 1`] = `
         aria-expanded={true}
         aria-label={undefined}
         aria-selected={true}
-        className="StyledButton-gXzblK jYQWcg"
+        className="StyledButton-qbvYY gHaBSp"
         disabled={false}
         href={undefined}
         icon={undefined}
@@ -126,11 +126,11 @@ exports[`Tabs changes to second tab 1`] = `
       >
         <div
           aria-label={undefined}
-          className="StyledBox-bStriS jttQdi"
+          className="StyledBox-YaZNy cVzNWb"
           direction="column"
         >
           <span
-            className="StyledText-eJMSZI ehbxjF"
+            className="StyledText-dmaDlZ dBmCXc"
           >
             <strong>
               Tab 2
@@ -151,21 +151,21 @@ exports[`Tabs changes to second tab 1`] = `
 
 exports[`Tabs renders complex Tab title 1`] = `
 <div
-  className="StyledGrommet-gGRXwz jUezAj"
+  className="StyledGrommet-gKbdxL kDQxAS"
 >
   <div
     role="tablist"
   >
     <div
       aria-label={undefined}
-      className="StyledBox-bStriS edKAPy"
+      className="StyledBox-YaZNy fOOdOJ"
       direction="row"
     >
       <button
         aria-expanded={true}
         aria-label={undefined}
         aria-selected={true}
-        className="StyledButton-gXzblK jYQWcg"
+        className="StyledButton-qbvYY gHaBSp"
         disabled={false}
         href={undefined}
         icon={undefined}
@@ -183,7 +183,7 @@ exports[`Tabs renders complex Tab title 1`] = `
       >
         <div
           aria-label={undefined}
-          className="StyledBox-bStriS jttQdi"
+          className="StyledBox-YaZNy cVzNWb"
           direction="column"
         >
           <div>
@@ -195,7 +195,7 @@ exports[`Tabs renders complex Tab title 1`] = `
         aria-expanded={false}
         aria-label={undefined}
         aria-selected={false}
-        className="StyledButton-gXzblK jYQWcg"
+        className="StyledButton-qbvYY gHaBSp"
         disabled={false}
         href={undefined}
         icon={undefined}
@@ -213,7 +213,7 @@ exports[`Tabs renders complex Tab title 1`] = `
       >
         <div
           aria-label={undefined}
-          className="StyledBox-bStriS daYSDH"
+          className="StyledBox-YaZNy kLBzNE"
           direction="column"
         >
           <div>
@@ -234,21 +234,21 @@ exports[`Tabs renders complex Tab title 1`] = `
 
 exports[`Tabs renders with Tab 1`] = `
 <div
-  className="StyledGrommet-gGRXwz jUezAj"
+  className="StyledGrommet-gKbdxL kDQxAS"
 >
   <div
     role="tablist"
   >
     <div
       aria-label={undefined}
-      className="StyledBox-bStriS edKAPy"
+      className="StyledBox-YaZNy fOOdOJ"
       direction="row"
     >
       <button
         aria-expanded={true}
         aria-label={undefined}
         aria-selected={true}
-        className="StyledButton-gXzblK jYQWcg"
+        className="StyledButton-qbvYY gHaBSp"
         disabled={false}
         href={undefined}
         icon={undefined}
@@ -266,11 +266,11 @@ exports[`Tabs renders with Tab 1`] = `
       >
         <div
           aria-label={undefined}
-          className="StyledBox-bStriS jttQdi"
+          className="StyledBox-YaZNy cVzNWb"
           direction="column"
         >
           <span
-            className="StyledText-eJMSZI ehbxjF"
+            className="StyledText-dmaDlZ dBmCXc"
           >
             <strong>
               Tab 1
@@ -282,7 +282,7 @@ exports[`Tabs renders with Tab 1`] = `
         aria-expanded={false}
         aria-label={undefined}
         aria-selected={false}
-        className="StyledButton-gXzblK jYQWcg"
+        className="StyledButton-qbvYY gHaBSp"
         disabled={false}
         href={undefined}
         icon={undefined}
@@ -300,11 +300,11 @@ exports[`Tabs renders with Tab 1`] = `
       >
         <div
           aria-label={undefined}
-          className="StyledBox-bStriS daYSDH"
+          className="StyledBox-YaZNy kLBzNE"
           direction="column"
         >
           <span
-            className="StyledText-eJMSZI beGKeC"
+            className="StyledText-dmaDlZ caxVjs"
             color="dark-4"
           >
             Tab 2
@@ -324,14 +324,14 @@ exports[`Tabs renders with Tab 1`] = `
 
 exports[`Tabs renders without Tab 1`] = `
 <div
-  className="StyledGrommet-gGRXwz jUezAj"
+  className="StyledGrommet-gKbdxL kDQxAS"
 >
   <div
     role="tablist"
   >
     <div
       aria-label={undefined}
-      className="StyledBox-bStriS edKAPy"
+      className="StyledBox-YaZNy fOOdOJ"
       direction="row"
     />
     <div
@@ -347,11 +347,11 @@ exports[`Tabs sets on hover 1`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS edKAPy"
+    class="StyledBox-YaZNy fOOdOJ"
     direction="row"
   >
     <button
-      class="StyledButton-gXzblK jYQWcg"
+      class="StyledButton-qbvYY gHaBSp"
       tabindex="0"
       role="tab"
       aria-selected="true"
@@ -359,11 +359,11 @@ exports[`Tabs sets on hover 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS jttQdi"
+        class="StyledBox-YaZNy cVzNWb"
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI ehbxjF"
+          class="StyledText-dmaDlZ dBmCXc"
         >
           <strong>
             Tab 1
@@ -372,7 +372,7 @@ exports[`Tabs sets on hover 1`] = `
       </div>
     </button>
     <button
-      class="StyledButton-gXzblK jYQWcg"
+      class="StyledButton-qbvYY gHaBSp"
       tabindex="0"
       role="tab"
       aria-selected="false"
@@ -380,11 +380,11 @@ exports[`Tabs sets on hover 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS daYSDH"
+        class="StyledBox-YaZNy kLBzNE"
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI beGKeC"
+          class="StyledText-dmaDlZ caxVjs"
           color="dark-4"
         >
           Tab 2
@@ -406,11 +406,11 @@ exports[`Tabs sets on hover 2`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS edKAPy"
+    class="StyledBox-YaZNy fOOdOJ"
     direction="row"
   >
     <button
-      class="StyledButton-gXzblK jYQWcg"
+      class="StyledButton-qbvYY gHaBSp"
       tabindex="0"
       role="tab"
       aria-selected="true"
@@ -418,11 +418,11 @@ exports[`Tabs sets on hover 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS jttQdi"
+        class="StyledBox-YaZNy cVzNWb"
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI ehbxjF"
+          class="StyledText-dmaDlZ dBmCXc"
         >
           <strong>
             Tab 1
@@ -431,7 +431,7 @@ exports[`Tabs sets on hover 2`] = `
       </div>
     </button>
     <button
-      class="StyledButton-gXzblK jYQWcg"
+      class="StyledButton-qbvYY gHaBSp"
       tabindex="0"
       role="tab"
       aria-selected="false"
@@ -439,11 +439,11 @@ exports[`Tabs sets on hover 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS iuoQfu"
+        class="StyledBox-YaZNy cVdybV"
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI beGKeC"
+          class="StyledText-dmaDlZ caxVjs"
           color="dark-4"
         >
           Tab 2
@@ -465,11 +465,11 @@ exports[`Tabs sets on hover 3`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS edKAPy"
+    class="StyledBox-YaZNy fOOdOJ"
     direction="row"
   >
     <button
-      class="StyledButton-gXzblK jYQWcg"
+      class="StyledButton-qbvYY gHaBSp"
       tabindex="0"
       role="tab"
       aria-selected="true"
@@ -477,11 +477,11 @@ exports[`Tabs sets on hover 3`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS jttQdi"
+        class="StyledBox-YaZNy cVzNWb"
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI ehbxjF"
+          class="StyledText-dmaDlZ dBmCXc"
         >
           <strong>
             Tab 1
@@ -490,7 +490,7 @@ exports[`Tabs sets on hover 3`] = `
       </div>
     </button>
     <button
-      class="StyledButton-gXzblK jYQWcg"
+      class="StyledButton-qbvYY gHaBSp"
       tabindex="0"
       role="tab"
       aria-selected="false"
@@ -498,11 +498,11 @@ exports[`Tabs sets on hover 3`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS iuoQfu"
+        class="StyledBox-YaZNy cVdybV"
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI beGKeC"
+          class="StyledText-dmaDlZ caxVjs"
           color="dark-4"
         >
           Tab 2
@@ -524,11 +524,11 @@ exports[`Tabs sets on hover 4`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS edKAPy"
+    class="StyledBox-YaZNy fOOdOJ"
     direction="row"
   >
     <button
-      class="StyledButton-gXzblK jYQWcg"
+      class="StyledButton-qbvYY gHaBSp"
       tabindex="0"
       role="tab"
       aria-selected="true"
@@ -536,11 +536,11 @@ exports[`Tabs sets on hover 4`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS jttQdi"
+        class="StyledBox-YaZNy cVzNWb"
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI ehbxjF"
+          class="StyledText-dmaDlZ dBmCXc"
         >
           <strong>
             Tab 1
@@ -549,7 +549,7 @@ exports[`Tabs sets on hover 4`] = `
       </div>
     </button>
     <button
-      class="StyledButton-gXzblK jYQWcg"
+      class="StyledButton-qbvYY gHaBSp"
       tabindex="0"
       role="tab"
       aria-selected="false"
@@ -557,11 +557,11 @@ exports[`Tabs sets on hover 4`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS daYSDH"
+        class="StyledBox-YaZNy kLBzNE"
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI beGKeC"
+          class="StyledText-dmaDlZ caxVjs"
           color="dark-4"
         >
           Tab 2
