@@ -5,6 +5,7 @@ Object {
   "Anchor": [Function],
   "Box": [Function],
   "Button": [Function],
+  "Calendar": [Function],
   "Chart": [Function],
   "CheckBox": [Function],
   "Clock": [Function],
