@@ -2,22 +2,22 @@
 
 exports[`TextInput closes suggestion drop 1`] = `
 <div
-  class="StyledDrop-czaYBK jMwfOf"
+  class="StyledDrop-bCWxPe cBGaUc"
   tabindex="-1"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <ol
-    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+    class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
   >
     <li>
       <button
-        class="StyledButton-qbvYY dkRwMo"
+        class="StyledButton-gXzblK evsvQl"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-YaZNy cHUeZK"
+          class="StyledBox-bStriS hPDWZy"
           direction="column"
         >
           test
@@ -26,12 +26,12 @@ exports[`TextInput closes suggestion drop 1`] = `
     </li>
     <li>
       <button
-        class="StyledButton-qbvYY dkRwMo"
+        class="StyledButton-gXzblK evsvQl"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-YaZNy cHUeZK"
+          class="StyledBox-bStriS hPDWZy"
           direction="column"
         >
           test1
@@ -44,7 +44,7 @@ exports[`TextInput closes suggestion drop 1`] = `
 
 exports[`TextInput closes suggestion drop 2`] = `
 "@media only screen and (min-width:700px) {
-  .dkRwMo {
+  .evsvQl {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -52,7 +52,7 @@ exports[`TextInput closes suggestion drop 2`] = `
 
 
 
-.jMwfOf {
+.cBGaUc {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -81,20 +81,20 @@ exports[`TextInput closes suggestion drop 2`] = `
   animation-delay: 0.01s;
 }
 
-.jMwfOf * {
+.cBGaUc * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`TextInput closes suggestion drop 3`] = `
 <div
-  class="StyledGrommet-gKbdxL kDQxAS"
+  class="StyledGrommet-gGRXwz jUezAj"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-gOoAsL gBrQQI"
+    class="StyledTextInput__StyledTextInputContainer-bPTWQl evFgGO"
   >
     <input
-      class="StyledTextInput-bqUxsy bQkoNv"
+      class="StyledTextInput-bzOzsW gHwBkz"
       id="item"
       autocomplete="off"
       name="item"
@@ -105,13 +105,13 @@ exports[`TextInput closes suggestion drop 3`] = `
 
 exports[`TextInput handles next and previous without suggestion 1`] = `
 <div
-  class="StyledGrommet-gKbdxL kDQxAS"
+  class="StyledGrommet-gGRXwz jUezAj"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-gOoAsL gBrQQI"
+    class="StyledTextInput__StyledTextInputContainer-bPTWQl evFgGO"
   >
     <input
-      class="StyledTextInput-bqUxsy bQkoNv"
+      class="StyledTextInput-bzOzsW gHwBkz"
       id="item"
       autocomplete="off"
       name="item"
@@ -122,10 +122,10 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 
 exports[`TextInput mounts 1`] = `
 <div
-  class="StyledTextInput__StyledTextInputContainer-gOoAsL gBrQQI"
+  class="StyledTextInput__StyledTextInputContainer-bPTWQl evFgGO"
 >
   <input
-    class="StyledTextInput-bqUxsy bQkoNv"
+    class="StyledTextInput-bzOzsW gHwBkz"
     autocomplete="off"
     name="item"
   />
@@ -134,22 +134,22 @@ exports[`TextInput mounts 1`] = `
 
 exports[`TextInput mounts with complex suggestions 1`] = `
 <div
-  class="StyledDrop-czaYBK jMwfOf"
+  class="StyledDrop-bCWxPe cBGaUc"
   tabindex="-1"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <ol
-    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+    class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
   >
     <li>
       <button
-        class="StyledButton-qbvYY dkRwMo"
+        class="StyledButton-gXzblK evsvQl"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-YaZNy cHUeZK"
+          class="StyledBox-bStriS hPDWZy"
           direction="column"
         >
           test
@@ -158,12 +158,12 @@ exports[`TextInput mounts with complex suggestions 1`] = `
     </li>
     <li>
       <button
-        class="StyledButton-qbvYY dkRwMo"
+        class="StyledButton-gXzblK evsvQl"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-YaZNy cHUeZK"
+          class="StyledBox-bStriS hPDWZy"
           direction="column"
         >
           test1
@@ -176,7 +176,7 @@ exports[`TextInput mounts with complex suggestions 1`] = `
 
 exports[`TextInput mounts with complex suggestions 2`] = `
 "@media only screen and (min-width:700px) {
-  .dkRwMo {
+  .evsvQl {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -184,7 +184,7 @@ exports[`TextInput mounts with complex suggestions 2`] = `
 
 
 
-.jMwfOf {
+.cBGaUc {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -213,29 +213,29 @@ exports[`TextInput mounts with complex suggestions 2`] = `
   animation-delay: 0.01s;
 }
 
-.jMwfOf * {
+.cBGaUc * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`TextInput mounts with suggestions 1`] = `
 <div
-  class="StyledDrop-czaYBK jMwfOf"
+  class="StyledDrop-bCWxPe cBGaUc"
   tabindex="-1"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <ol
-    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+    class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
   >
     <li>
       <button
-        class="StyledButton-qbvYY dkRwMo"
+        class="StyledButton-gXzblK evsvQl"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-YaZNy cHUeZK"
+          class="StyledBox-bStriS hPDWZy"
           direction="column"
         >
           test
@@ -244,12 +244,12 @@ exports[`TextInput mounts with suggestions 1`] = `
     </li>
     <li>
       <button
-        class="StyledButton-qbvYY dkRwMo"
+        class="StyledButton-gXzblK evsvQl"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-YaZNy cHUeZK"
+          class="StyledBox-bStriS hPDWZy"
           direction="column"
         >
           test1
@@ -262,7 +262,7 @@ exports[`TextInput mounts with suggestions 1`] = `
 
 exports[`TextInput mounts with suggestions 2`] = `
 "@media only screen and (min-width:700px) {
-  .dkRwMo {
+  .evsvQl {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -270,7 +270,7 @@ exports[`TextInput mounts with suggestions 2`] = `
 
 
 
-.jMwfOf {
+.cBGaUc {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -299,29 +299,29 @@ exports[`TextInput mounts with suggestions 2`] = `
   animation-delay: 0.01s;
 }
 
-.jMwfOf * {
+.cBGaUc * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`TextInput selects suggestion 1`] = `
 <div
-  class="StyledDrop-czaYBK jMwfOf"
+  class="StyledDrop-bCWxPe cBGaUc"
   tabindex="-1"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <ol
-    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+    class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
   >
     <li>
       <button
-        class="StyledButton-qbvYY dkRwMo"
+        class="StyledButton-gXzblK evsvQl"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-YaZNy cHUeZK"
+          class="StyledBox-bStriS hPDWZy"
           direction="column"
         >
           test
@@ -330,12 +330,12 @@ exports[`TextInput selects suggestion 1`] = `
     </li>
     <li>
       <button
-        class="StyledButton-qbvYY dkRwMo"
+        class="StyledButton-gXzblK evsvQl"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-YaZNy cHUeZK"
+          class="StyledBox-bStriS hPDWZy"
           direction="column"
         >
           test1
@@ -348,7 +348,7 @@ exports[`TextInput selects suggestion 1`] = `
 
 exports[`TextInput selects suggestion 2`] = `
 "@media only screen and (min-width:700px) {
-  .dkRwMo {
+  .evsvQl {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -356,7 +356,7 @@ exports[`TextInput selects suggestion 2`] = `
 
 
 
-.jMwfOf {
+.cBGaUc {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -385,20 +385,20 @@ exports[`TextInput selects suggestion 2`] = `
   animation-delay: 0.01s;
 }
 
-.jMwfOf * {
+.cBGaUc * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`TextInput selects suggestion 3`] = `
 <div
-  class="StyledGrommet-gKbdxL kDQxAS"
+  class="StyledGrommet-gGRXwz jUezAj"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-gOoAsL gCsbgz"
+    class="StyledTextInput__StyledTextInputContainer-bPTWQl jYXZDG"
   >
     <input
-      class="StyledTextInput-bqUxsy lndVan"
+      class="StyledTextInput-bzOzsW hxNRVC"
       id="item"
       autocomplete="off"
       name="item"

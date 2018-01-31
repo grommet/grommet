@@ -239,24 +239,17 @@ exports[`Heading size renders 1`] = `
   font-weight: 300;
 }
 
-.c1 {
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 300;
-}
-
-.c3 {
-  font-size: 96px;
-  line-height: 1.125;
-  max-width: 2304px;
-  font-weight: 300;
-}
-
 .c5 {
   font-size: 36px;
   line-height: 1.23;
   max-width: 864px;
+  font-weight: 300;
+}
+
+.c1 {
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
   font-weight: 300;
 }
 
@@ -267,52 +260,17 @@ exports[`Heading size renders 1`] = `
   font-weight: 300;
 }
 
-.c6 {
-  font-size: 48px;
+.c3 {
+  font-size: 96px;
   line-height: 1.125;
-  max-width: 1152px;
+  max-width: 2304px;
   font-weight: 300;
 }
 
-.c8 {
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 300;
-}
-
-.c7 {
-  font-size: 18px;
-  line-height: 1.333;
-  max-width: 432px;
-  font-weight: 300;
-}
-
-.c9 {
-  font-size: 36px;
-  line-height: 1.23;
-  max-width: 864px;
-  font-weight: 300;
-}
-
-.c11 {
-  font-size: 18px;
-  line-height: 1.333;
-  max-width: 432px;
-  font-weight: 300;
-}
-
-.c10 {
+.c6 {
   font-size: 16px;
   line-height: 1.375;
   max-width: 384px;
-  font-weight: 300;
-}
-
-.c12 {
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
   font-weight: 300;
 }
 
@@ -340,31 +298,31 @@ exports[`Heading size renders 1`] = `
     size="medium"
   />
   <h2
+    className="c2"
+    size="large"
+  />
+  <h3
+    className="c4"
+    size="small"
+  />
+  <h3
+    className="c1"
+    size="medium"
+  />
+  <h3
+    className="c5"
+    size="large"
+  />
+  <h4
     className="c6"
-    size="large"
-  />
-  <h3
-    className="c7"
-    size="small"
-  />
-  <h3
-    className="c8"
-    size="medium"
-  />
-  <h3
-    className="c9"
-    size="large"
-  />
-  <h4
-    className="c10"
     size="small"
   />
   <h4
-    className="c11"
+    className="c4"
     size="medium"
   />
   <h4
-    className="c12"
+    className="c1"
     size="large"
   />
 </div>

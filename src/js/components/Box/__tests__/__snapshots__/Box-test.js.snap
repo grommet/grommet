@@ -154,7 +154,7 @@ exports[`Box alignContent renders 1`] = `
   display: flex;
   max-width: 100%;
   -webkit-align-content: flex-start;
-  -ms-flex-line-pack: flex-start;
+  -ms-flex-line-pack: start;
   align-content: flex-start;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -229,7 +229,7 @@ exports[`Box alignContent renders 1`] = `
   display: flex;
   max-width: 100%;
   -webkit-align-content: flex-end;
-  -ms-flex-line-pack: flex-end;
+  -ms-flex-line-pack: end;
   align-content: flex-end;
   min-width: 0;
   -webkit-flex-direction: column;

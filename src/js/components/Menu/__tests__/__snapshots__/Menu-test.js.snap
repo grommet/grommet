@@ -2,33 +2,33 @@
 
 exports[`Menu opens and closes on click 1`] = `
 <div
-  class="StyledDrop-czaYBK jMwfOf"
+  class="StyledDrop-bCWxPe cBGaUc"
   tabindex="-1"
   id="menu-drop__test"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
-    class="StyledBox-YaZNy eLnczz"
+    class="StyledBox-bStriS iSfEjW"
     direction="column"
   >
     <button
-      class="StyledButton-qbvYY gWPVwe"
+      class="StyledButton-gXzblK eMXCzV"
       tabindex="0"
       aria-label="Close Menu"
       type="button"
     >
       <div
-        class="StyledBox-YaZNy hwhKTJ"
+        class="StyledBox-bStriS kZGdzl"
         direction="row"
       >
         <div
-          class="StyledBox-YaZNy lmVurg"
+          class="StyledBox-bStriS kyUkeU"
           direction="column"
         >
           Test
         </div>
         <svg
-          class="StyledIcon-hcpUvT fAeuhQ"
+          class="StyledIcon-gTfjEw htxeRg"
           width="24px"
           height="24px"
           viewBox="0 0 24 24"
@@ -46,41 +46,41 @@ exports[`Menu opens and closes on click 1`] = `
       </div>
     </button>
     <div
-      class="StyledBox-YaZNy eLnczz"
+      class="StyledBox-bStriS iSfEjW"
       direction="column"
     >
       <button
-        class="StyledButton-qbvYY dsuDPZ"
+        class="StyledButton-gXzblK fmBjBd"
         tabindex="0"
         disabled=""
         type="button"
       >
         <div
-          class="StyledBox-YaZNy bpXZSO"
+          class="StyledBox-bStriS jtjnXL"
           direction="row"
         >
           Item 1
         </div>
       </button>
       <button
-        class="StyledButton-qbvYY bMFmk"
+        class="StyledButton-gXzblK fXMbaK"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-YaZNy bpXZSO"
+          class="StyledBox-bStriS jtjnXL"
           direction="row"
         >
           Item 2
         </div>
       </button>
       <a
-        class="StyledButton-kDOCUE KPUOz"
+        class="StyledButton-gXzblK fXMbaK"
         tabindex="0"
         href="/test"
       >
         <div
-          class="StyledBox-YaZNy bpXZSO"
+          class="StyledBox-bStriS jtjnXL"
           direction="row"
         >
           Item 3
@@ -93,35 +93,28 @@ exports[`Menu opens and closes on click 1`] = `
 
 exports[`Menu opens and closes on click 2`] = `
 "@media only screen and (min-width:700px) {
-  .gHaBSp {
+  .jYQWcg {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .gWPVwe {
+  .eMXCzV {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .dsuDPZ {
+  .fmBjBd {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bMFmk {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .KPUOz {
+  .fXMbaK {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -129,7 +122,7 @@ exports[`Menu opens and closes on click 2`] = `
 
 
 
-.jMwfOf {
+.cBGaUc {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -158,7 +151,7 @@ exports[`Menu opens and closes on click 2`] = `
   animation-delay: 0.01s;
 }
 
-.jMwfOf * {
+.cBGaUc * {
   box-sizing: inherit;
 }"
 `;
@@ -166,14 +159,14 @@ exports[`Menu opens and closes on click 2`] = `
 exports[`Menu renders 1`] = `
 <div>
   <button
-    class="StyledButton-qbvYY gHaBSp"
+    class="StyledButton-gXzblK jYQWcg"
     tabindex="0"
     id="item"
     aria-label="Open Menu"
     type="button"
   >
     <div
-      class="StyledBox-YaZNy bpXZSO"
+      class="StyledBox-bStriS jtjnXL"
       direction="row"
     >
       <svg />
@@ -185,23 +178,23 @@ exports[`Menu renders 1`] = `
 exports[`Menu with custom message renders 1`] = `
 <div>
   <button
-    class="StyledButton-qbvYY gHaBSp"
+    class="StyledButton-gXzblK jYQWcg"
     tabindex="0"
     aria-label="Abrir Menu"
     type="button"
   >
     <div
-      class="StyledBox-YaZNy bpXZSO"
+      class="StyledBox-bStriS jtjnXL"
       direction="row"
     >
       <div
-        class="StyledBox-YaZNy lmVurg"
+        class="StyledBox-bStriS kyUkeU"
         direction="column"
       >
         Test Icon
       </div>
       <svg
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-gTfjEw htxeRg"
         width="24px"
         height="24px"
         viewBox="0 0 24 24"
@@ -223,7 +216,7 @@ exports[`Menu with custom message renders 1`] = `
 
 exports[`Menu with dropAlign renders 1`] = `
 <button
-  class="StyledButton-qbvYY gHaBSp"
+  class="StyledButton-gXzblK jYQWcg"
   tabindex="-1"
   id="menu"
   aria-label="Open Menu"
@@ -231,17 +224,17 @@ exports[`Menu with dropAlign renders 1`] = `
   data-g-tabindex="0"
 >
   <div
-    class="StyledBox-YaZNy bpXZSO"
+    class="StyledBox-bStriS jtjnXL"
     direction="row"
   >
     <div
-      class="StyledBox-YaZNy lmVurg"
+      class="StyledBox-bStriS kyUkeU"
       direction="column"
     >
       Test
     </div>
     <svg
-      class="StyledIcon-hcpUvT fAeuhQ"
+      class="StyledIcon-gTfjEw htxeRg"
       width="24px"
       height="24px"
       viewBox="0 0 24 24"
@@ -263,7 +256,7 @@ exports[`Menu with dropAlign renders 1`] = `
 exports[`Menu with dropAlign renders 2`] = `
 "
 
-.gHaBSp {
+.jYQWcg {
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -279,42 +272,35 @@ exports[`Menu with dropAlign renders 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .gHaBSp {
+  .jYQWcg {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .gWPVwe {
+  .eMXCzV {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .dsuDPZ {
+  .fmBjBd {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bMFmk {
+  .fXMbaK {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .dmYRTg {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .KPUOz {
+  .fYAaIT {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

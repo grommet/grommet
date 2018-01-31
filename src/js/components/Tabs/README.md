@@ -1,7 +1,7 @@
 ## Tabs
 A tabular view component.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=tabs&amp;module=%2Fscreens%2FTabs.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=tabs&amp;module=%2Fsrc%2FTabs.js)
 ## Usage
 
 ```javascript

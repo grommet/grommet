@@ -2,29 +2,29 @@
 
 exports[`Diagram color renders 1`] = `
 <div
-  class="StyledGrommet-gKbdxL kDQxAS"
+  class="StyledGrommet-gGRXwz jUezAj"
 >
   <div
-    class="StyledStack-jtPAMP bgKQVO"
+    class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-YaZNy iXGgPy"
+      class="StyledBox-bStriS cpqHWx"
       direction="row"
       style="position: relative;"
     >
       <div
-        class="StyledBox-YaZNy dyMegD"
+        class="StyledBox-bStriS kyrQwD"
         id="1"
         direction="column"
       />
       <div
-        class="StyledBox-YaZNy dyMegD"
+        class="StyledBox-bStriS kyrQwD"
         id="2"
         direction="column"
       />
     </div>
     <svg
-      class="StyledDiagram-hhOVAv lfrlnw"
+      class="StyledDiagram-fAdbMP bwxUiT"
       viewBox="0 0 0 0"
       preserveAspectRatio="xMinYMin meet"
       width="0"
@@ -39,29 +39,29 @@ exports[`Diagram color renders 1`] = `
 
 exports[`Diagram offset renders 1`] = `
 <div
-  class="StyledGrommet-gKbdxL kDQxAS"
+  class="StyledGrommet-gGRXwz jUezAj"
 >
   <div
-    class="StyledStack-jtPAMP bgKQVO"
+    class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-YaZNy iXGgPy"
+      class="StyledBox-bStriS cpqHWx"
       direction="row"
       style="position: relative;"
     >
       <div
-        class="StyledBox-YaZNy dyMegD"
+        class="StyledBox-bStriS kyrQwD"
         id="1"
         direction="column"
       />
       <div
-        class="StyledBox-YaZNy dyMegD"
+        class="StyledBox-bStriS kyrQwD"
         id="2"
         direction="column"
       />
     </div>
     <svg
-      class="StyledDiagram-hhOVAv lfrlnw"
+      class="StyledDiagram-fAdbMP bwxUiT"
       viewBox="0 0 0 0"
       preserveAspectRatio="xMinYMin meet"
       width="0"
@@ -76,29 +76,29 @@ exports[`Diagram offset renders 1`] = `
 
 exports[`Diagram renders 1`] = `
 <div
-  class="StyledGrommet-gKbdxL kDQxAS"
+  class="StyledGrommet-gGRXwz jUezAj"
 >
   <div
-    class="StyledStack-jtPAMP bgKQVO"
+    class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-YaZNy iXGgPy"
+      class="StyledBox-bStriS cpqHWx"
       direction="row"
       style="position: relative;"
     >
       <div
-        class="StyledBox-YaZNy dyMegD"
+        class="StyledBox-bStriS kyrQwD"
         id="1"
         direction="column"
       />
       <div
-        class="StyledBox-YaZNy dyMegD"
+        class="StyledBox-bStriS kyrQwD"
         id="2"
         direction="column"
       />
     </div>
     <svg
-      class="StyledDiagram-hhOVAv lfrlnw"
+      class="StyledDiagram-fAdbMP bwxUiT"
       viewBox="0 0 0 0"
       preserveAspectRatio="xMinYMin meet"
       width="0"
@@ -113,29 +113,29 @@ exports[`Diagram renders 1`] = `
 
 exports[`Diagram thickness renders 1`] = `
 <div
-  class="StyledGrommet-gKbdxL kDQxAS"
+  class="StyledGrommet-gGRXwz jUezAj"
 >
   <div
-    class="StyledStack-jtPAMP bgKQVO"
+    class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-YaZNy iXGgPy"
+      class="StyledBox-bStriS cpqHWx"
       direction="row"
       style="position: relative;"
     >
       <div
-        class="StyledBox-YaZNy dyMegD"
+        class="StyledBox-bStriS kyrQwD"
         id="1"
         direction="column"
       />
       <div
-        class="StyledBox-YaZNy dyMegD"
+        class="StyledBox-bStriS kyrQwD"
         id="2"
         direction="column"
       />
     </div>
     <svg
-      class="StyledDiagram-hhOVAv lfrlnw"
+      class="StyledDiagram-fAdbMP bwxUiT"
       viewBox="0 0 0 0"
       preserveAspectRatio="xMinYMin meet"
       width="0"
@@ -150,29 +150,29 @@ exports[`Diagram thickness renders 1`] = `
 
 exports[`Diagram type renders 1`] = `
 <div
-  class="StyledGrommet-gKbdxL kDQxAS"
+  class="StyledGrommet-gGRXwz jUezAj"
 >
   <div
-    class="StyledStack-jtPAMP bgKQVO"
+    class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-YaZNy iXGgPy"
+      class="StyledBox-bStriS cpqHWx"
       direction="row"
       style="position: relative;"
     >
       <div
-        class="StyledBox-YaZNy dyMegD"
+        class="StyledBox-bStriS kyrQwD"
         id="1"
         direction="column"
       />
       <div
-        class="StyledBox-YaZNy dyMegD"
+        class="StyledBox-bStriS kyrQwD"
         id="2"
         direction="column"
       />
     </div>
     <svg
-      class="StyledDiagram-hhOVAv lfrlnw"
+      class="StyledDiagram-fAdbMP bwxUiT"
       viewBox="0 0 0 0"
       preserveAspectRatio="xMinYMin meet"
       width="0"

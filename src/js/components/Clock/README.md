@@ -1,7 +1,7 @@
 ## Clock
 A clock with timezone awareness.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=clock&amp;module=%2Fscreens%2FClock.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=clock&amp;module=%2Fsrc%2FClock.js)
 ## Usage
 
 ```javascript
