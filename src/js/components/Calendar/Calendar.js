@@ -216,6 +216,7 @@ class Calendar extends Component {
         <StyledDayContainer key={day.day()} size={size} theme={theme}>
           <Button
             ref={(ref) => { this.dayRefs[dateString] = ref; }}
+            a11yTitle={day.format('LL')}
             plain={true}
             active={active && day.isSame(active, 'day')}
             hoverIndicator={!dayDisabled}
@@ -262,12 +263,14 @@ class Calendar extends Component {
               </Heading>
               <Box direction='row' align='center'>
                 <Button
+                  a11yTitle={previousMonth.format('MMMM YYYY')}
                   icon={size === 'small' ?
                     <FormPrevious /> : <Previous size={size} />}
                   onClick={(onSelect && between(previousMonth, bounds)) ?
                     () => this.setReference(previousMonth) : undefined}
                 />
                 <Button
+                  a11yTitle={nextMonth.format('MMMM YYYY')}
                   icon={size === 'small' ? <FormNext /> : <Next size={size} />}
                   onClick={(onSelect && between(nextMonth, bounds)) ?
                     () => this.setReference(nextMonth) : undefined}
