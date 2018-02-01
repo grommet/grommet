@@ -1,7 +1,7 @@
 ## GrommetMarkdown
 Markdown formatting using Grommet components.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=markdown&amp;module=%2Fsrc%2FMarkdown.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=markdown&module=%2Fsrc%2FMarkdown.js)
 ## Usage
 
 ```javascript

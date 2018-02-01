@@ -48,7 +48,7 @@ export function findAllByType(component, type) {
 
 export function getAvailableAtBadge(availableAt) {
   return {
-    url: `https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=${availableAt.toLowerCase()}&amp;module=%2Fsrc%2F${availableAt}.js`,
+    url: `https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=${availableAt.toLowerCase()}&module=%2Fsrc%2F${availableAt}.js`,
     badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
   };
 }

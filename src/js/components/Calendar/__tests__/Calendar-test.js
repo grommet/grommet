@@ -9,7 +9,7 @@ test('Calendar renders', () => {
   // need to set the date to avoid snapshot drift over time
   const component = renderer.create(
     <Grommet>
-      <Calendar date='2018:01:15' />
+      <Calendar date='2018-01-15' />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -49,9 +49,9 @@ test('Calendar disabled renders', () => {
 test('Calendar size renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Calendar size='small' />
-      <Calendar size='medium' />
-      <Calendar size='large' />
+      <Calendar size='small' date='2018-01-15' />
+      <Calendar size='medium' date='2018-01-15' />
+      <Calendar size='large' date='2018-01-15' />
     </Grommet>
   );
   const tree = component.toJSON();

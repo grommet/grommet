@@ -1,7 +1,7 @@
 ## Grommet
 This is the top level Grommet container.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grommet&amp;module=%2Fsrc%2FGrommet.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grommet&module=%2Fsrc%2FGrommet.js)
 ## Usage
 
 ```javascript

@@ -1,7 +1,7 @@
 ## Drop
 A drop container that opens next to a target.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=drop&amp;module=%2Fsrc%2FDrop.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=drop&module=%2Fsrc%2FDrop.js)
 ## Usage
 
 ```javascript

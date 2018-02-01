@@ -1,7 +1,7 @@
 ## Heading
 Heading text structed in levels.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=heading&amp;module=%2Fsrc%2FHeading.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=heading&module=%2Fsrc%2FHeading.js)
 ## Usage
 
 ```javascript

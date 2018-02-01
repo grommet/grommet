@@ -2,7 +2,7 @@
 Graphical lines between DOM elements.
       Diagram is meant to be used with Stack.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=diagram&amp;module=%2Fsrc%2FDiagram.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=diagram&module=%2Fsrc%2FDiagram.js)
 ## Usage
 
 ```javascript

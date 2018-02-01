@@ -3,7 +3,7 @@ A control that when clicked will render its children in a drop layer.
 When opened, the drop will control the focus so that the contents behind it are not focusable.
       
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dropbutton&amp;module=%2Fsrc%2FDropButton.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dropbutton&module=%2Fsrc%2FDropButton.js)
 ## Usage
 
 ```javascript
