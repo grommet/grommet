@@ -2,7 +2,7 @@
 Presents a list of choices within a drop down via a control that
       opens it.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=menu&amp;module=%2Fscreens%2FMenu.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=menu&module=%2Fsrc%2FMenu.js)
 ## Usage
 
 ```javascript

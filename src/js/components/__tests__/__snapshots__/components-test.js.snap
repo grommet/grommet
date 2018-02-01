@@ -5,9 +5,11 @@ Object {
   "Anchor": [Function],
   "Box": [Function],
   "Button": [Function],
+  "Calendar": [Function],
   "Chart": [Function],
   "CheckBox": [Function],
   "Clock": [Function],
+  "Diagram": [Function],
   "Drop": [Function],
   "DropButton": [Function],
   "DropContainer": [Function],
@@ -38,6 +40,7 @@ Object {
   "TextArea": [Function],
   "TextInput": [Function],
   "Video": [Function],
+  "WorldMap": [Function],
   "__esModule": true,
 }
 `;

@@ -5,13 +5,14 @@ import { a11yTitlePropType, getAvailableAtBadge } from '../../utils';
 const PAD_SIZES = ['xsmall', 'small', 'medium', 'large'];
 
 const ANIMATION_TYPE = PropTypes.oneOf([
-  'fadeIn', 'fadeOut',
+  'fadeIn', 'fadeOut', 'jiggle', 'pulse',
   'slideUp', 'slideDown', 'slideLeft', 'slideRight',
   'zoomIn', 'zoomOut']);
 const ANIMATION_SHAPE = PropTypes.shape({
   type: ANIMATION_TYPE,
   delay: PropTypes.number,
   duration: PropTypes.number,
+  size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
 });
 
 export default (Box) => {
@@ -43,7 +44,9 @@ the column axis when contained in a Grid.`
         PropTypes.oneOfType([ANIMATION_TYPE, ANIMATION_SHAPE]),
       ),
     ]).description(
-      'Animation effect(s) to use. \'duration\' and \'delay\' should be in milliseconds.'
+      `Animation effect(s) to use.
+      'duration' and 'delay' should be in milliseconds.
+      'jiggle' and 'pulse' types are intended for small elements, like icons.`
     ),
     background: PropTypes.oneOfType([
       PropTypes.string,

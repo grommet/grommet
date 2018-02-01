@@ -201,6 +201,26 @@ exports[`Anchor icon label renders 1`] = `
                 "vertical": "10px",
               },
             },
+            "calendar": Object {
+              "large": Object {
+                "daySize": "109.71428571428571px",
+                "fontSize": "36px",
+                "lineHeight": 1.11,
+                "slideDuration": "0.8s",
+              },
+              "medium": Object {
+                "daySize": "54.857142857142854px",
+                "fontSize": "22px",
+                "lineHeight": 1.45,
+                "slideDuration": "0.5s",
+              },
+              "small": Object {
+                "daySize": "27.428571428571427px",
+                "fontSize": "16px",
+                "lineHeight": 1.375,
+                "slideDuration": "0.2s",
+              },
+            },
             "checkBox": Object {
               "border": Object {
                 "color": Object {
@@ -285,6 +305,9 @@ exports[`Anchor icon label renders 1`] = `
             "global": Object {
               "animation": Object {
                 "duration": "1s",
+                "jiggle": Object {
+                  "duration": "0.1s",
+                },
               },
               "borderSize": Object {
                 "large": "12px",
@@ -626,6 +649,16 @@ exports[`Anchor icon label renders 1`] = `
             "video": Object {
               "captions": Object {
                 "background": "rgba(0,0,0,0.7)",
+              },
+            },
+            "worldMap": Object {
+              "continent": Object {
+                "active": "8px",
+                "base": "6px",
+              },
+              "place": Object {
+                "active": "20px",
+                "base": "8px",
               },
             },
           }
@@ -777,6 +810,26 @@ exports[`Anchor primary renders 1`] = `
                 "vertical": "10px",
               },
             },
+            "calendar": Object {
+              "large": Object {
+                "daySize": "109.71428571428571px",
+                "fontSize": "36px",
+                "lineHeight": 1.11,
+                "slideDuration": "0.8s",
+              },
+              "medium": Object {
+                "daySize": "54.857142857142854px",
+                "fontSize": "22px",
+                "lineHeight": 1.45,
+                "slideDuration": "0.5s",
+              },
+              "small": Object {
+                "daySize": "27.428571428571427px",
+                "fontSize": "16px",
+                "lineHeight": 1.375,
+                "slideDuration": "0.2s",
+              },
+            },
             "checkBox": Object {
               "border": Object {
                 "color": Object {
@@ -861,6 +914,9 @@ exports[`Anchor primary renders 1`] = `
             "global": Object {
               "animation": Object {
                 "duration": "1s",
+                "jiggle": Object {
+                  "duration": "0.1s",
+                },
               },
               "borderSize": Object {
                 "large": "12px",
@@ -1202,6 +1258,16 @@ exports[`Anchor primary renders 1`] = `
             "video": Object {
               "captions": Object {
                 "background": "rgba(0,0,0,0.7)",
+              },
+            },
+            "worldMap": Object {
+              "continent": Object {
+                "active": "8px",
+                "base": "6px",
+              },
+              "place": Object {
+                "active": "20px",
+                "base": "8px",
               },
             },
           }
@@ -1436,6 +1502,26 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "vertical": "10px",
               },
             },
+            "calendar": Object {
+              "large": Object {
+                "daySize": "109.71428571428571px",
+                "fontSize": "36px",
+                "lineHeight": 1.11,
+                "slideDuration": "0.8s",
+              },
+              "medium": Object {
+                "daySize": "54.857142857142854px",
+                "fontSize": "22px",
+                "lineHeight": 1.45,
+                "slideDuration": "0.5s",
+              },
+              "small": Object {
+                "daySize": "27.428571428571427px",
+                "fontSize": "16px",
+                "lineHeight": 1.375,
+                "slideDuration": "0.2s",
+              },
+            },
             "checkBox": Object {
               "border": Object {
                 "color": Object {
@@ -1520,6 +1606,9 @@ exports[`Anchor reverse icon label renders 1`] = `
             "global": Object {
               "animation": Object {
                 "duration": "1s",
+                "jiggle": Object {
+                  "duration": "0.1s",
+                },
               },
               "borderSize": Object {
                 "large": "12px",
@@ -1861,6 +1950,16 @@ exports[`Anchor reverse icon label renders 1`] = `
             "video": Object {
               "captions": Object {
                 "background": "rgba(0,0,0,0.7)",
+              },
+            },
+            "worldMap": Object {
+              "continent": Object {
+                "active": "8px",
+                "base": "6px",
+              },
+              "place": Object {
+                "active": "20px",
+                "base": "8px",
               },
             },
           }
@@ -1967,6 +2066,26 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "vertical": "10px",
               },
             },
+            "calendar": Object {
+              "large": Object {
+                "daySize": "109.71428571428571px",
+                "fontSize": "36px",
+                "lineHeight": 1.11,
+                "slideDuration": "0.8s",
+              },
+              "medium": Object {
+                "daySize": "54.857142857142854px",
+                "fontSize": "22px",
+                "lineHeight": 1.45,
+                "slideDuration": "0.5s",
+              },
+              "small": Object {
+                "daySize": "27.428571428571427px",
+                "fontSize": "16px",
+                "lineHeight": 1.375,
+                "slideDuration": "0.2s",
+              },
+            },
             "checkBox": Object {
               "border": Object {
                 "color": Object {
@@ -2051,6 +2170,9 @@ exports[`Anchor warns about invalid icon render 1`] = `
             "global": Object {
               "animation": Object {
                 "duration": "1s",
+                "jiggle": Object {
+                  "duration": "0.1s",
+                },
               },
               "borderSize": Object {
                 "large": "12px",
@@ -2392,6 +2514,16 @@ exports[`Anchor warns about invalid icon render 1`] = `
             "video": Object {
               "captions": Object {
                 "background": "rgba(0,0,0,0.7)",
+              },
+            },
+            "worldMap": Object {
+              "continent": Object {
+                "active": "8px",
+                "base": "6px",
+              },
+              "place": Object {
+                "active": "20px",
+                "base": "8px",
               },
             },
           }

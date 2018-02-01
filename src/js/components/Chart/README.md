@@ -1,7 +1,7 @@
 ## Chart
 A graphical chart.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=chart&amp;module=%2Fscreens%2FChart.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=chart&module=%2Fsrc%2FChart.js)
 ## Usage
 
 ```javascript

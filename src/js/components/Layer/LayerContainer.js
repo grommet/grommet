@@ -14,21 +14,25 @@ class LayerContainer extends Component {
       this.makeLayerVisible();
     }
   }
+
   componentWillReceiveProps({ position }) {
     if (this.props.position !== position && position !== 'hidden') {
       this.makeLayerVisible();
     }
   }
+
   makeLayerVisible = () => {
     const layerNode = findDOMNode(this.layerNodeRef);
     if (layerNode.scrollIntoView) {
       layerNode.scrollIntoView();
     }
   }
+
   render() {
     const {
       children,
       id,
+      onClickOverlay,
       onEsc,
       plain,
       position,
@@ -41,6 +45,7 @@ class LayerContainer extends Component {
         <Keyboard onEsc={onEsc}>
           <StyledLayer
             id={id}
+            onClick={onClickOverlay}
             plain={plain}
             position={position}
             theme={theme}

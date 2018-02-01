@@ -28,7 +28,7 @@ exports[`Chart cap renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
@@ -54,7 +54,7 @@ exports[`Chart cap renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
@@ -77,7 +77,7 @@ exports[`Chart cap renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
@@ -128,7 +128,7 @@ exports[`Chart renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
@@ -143,7 +143,7 @@ exports[`Chart renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
@@ -197,7 +197,7 @@ exports[`Chart size renders 1`] = `
   <svg
     className="c1"
     height={96}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             120 120"
     width={96}
@@ -223,7 +223,7 @@ exports[`Chart size renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             216 216"
     width={192}
@@ -249,7 +249,7 @@ exports[`Chart size renders 1`] = `
   <svg
     className="c1"
     height={384}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 408"
     width={384}
@@ -275,7 +275,7 @@ exports[`Chart size renders 1`] = `
   <svg
     className="c1"
     height={768}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             792 792"
     width={768}
@@ -301,7 +301,7 @@ exports[`Chart size renders 1`] = `
   <svg
     className="c1"
     height={1152}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             1176 1176"
     width={1152}
@@ -355,7 +355,7 @@ exports[`Chart thickness renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-3 -3
             390 198"
     width={384}
@@ -381,7 +381,7 @@ exports[`Chart thickness renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-6 -6
             396 204"
     width={384}
@@ -407,7 +407,7 @@ exports[`Chart thickness renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
@@ -433,7 +433,7 @@ exports[`Chart thickness renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-24 -24
             432 240"
     width={384}
@@ -459,7 +459,7 @@ exports[`Chart thickness renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-48 -48
             480 288"
     width={384}
@@ -513,7 +513,7 @@ exports[`Chart type renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
@@ -539,7 +539,7 @@ exports[`Chart type renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
@@ -562,7 +562,7 @@ exports[`Chart type renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}

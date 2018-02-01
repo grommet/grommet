@@ -7,7 +7,7 @@ A text link. We have a separate component from the browser
 base so we can style it. You can either set the icon and/or label properties
 or just use children.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=anchor&amp;module=%2Fscreens%2FAnchor.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=anchor&module=%2Fsrc%2FAnchor.js)
 ## Usage
 
 \`\`\`javascript
@@ -77,7 +77,7 @@ boolean
   "Box": "## Box
 A flexible box that lays out its contents along a single direction.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=box&amp;module=%2Fscreens%2FBox.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=box&module=%2Fsrc%2FBox.js)
 ## Usage
 
 \`\`\`javascript
@@ -134,11 +134,15 @@ stretch
 
 **animation**
 
-Animation effect(s) to use. 'duration' and 'delay' should be in milliseconds.
+Animation effect(s) to use.
+      'duration' and 'delay' should be in milliseconds.
+      'jiggle' and 'pulse' types are intended for small elements, like icons.
 
 \`\`\`
 fadeIn
 fadeOut
+jiggle
+pulse
 slideUp
 slideDown
 slideLeft
@@ -149,6 +153,8 @@ zoomOut
   type: 
     fadeIn
     fadeOut
+    jiggle
+    pulse
     slideUp
     slideDown
     slideLeft
@@ -156,11 +162,19 @@ zoomOut
     zoomIn
     zoomOut,
   delay: number,
-  duration: number
+  duration: number,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
 }
 [
   fadeIn
   fadeOut
+  jiggle
+  pulse
   slideUp
   slideDown
   slideLeft
@@ -171,6 +185,8 @@ zoomOut
     type: 
       fadeIn
       fadeOut
+      jiggle
+      pulse
       slideUp
       slideDown
       slideLeft
@@ -178,7 +194,13 @@ zoomOut
       zoomIn
       zoomOut,
     delay: number,
-    duration: number
+    duration: number,
+    size: 
+      xsmall
+      small
+      medium
+      large
+      xlarge
   }
 ]
 \`\`\`
@@ -471,7 +493,7 @@ boolean
   "Button": "## Button
 A button. We have a separate component from the browser base so we can style it.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=button&amp;module=%2Fscreens%2FButton.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=button&module=%2Fsrc%2FButton.js)
 ## Usage
 
 \`\`\`javascript
@@ -599,10 +621,97 @@ reset
 submit
 \`\`\`
   ",
+  "Calendar": "## Calendar
+Calendar of days in months.
+      It can be used to select a single date, a range of dates, or multiple
+      individual dates.
+
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=calendar&module=%2Fsrc%2FCalendar.js)
+## Usage
+
+\`\`\`javascript
+import { Calendar } from 'grommet';
+<Calendar />
+\`\`\`
+
+## Properties
+
+**bounds**
+
+An array of two numbers indicating the limits on
+        navigation in ISO8601 format
+
+\`\`\`
+[string]
+\`\`\`
+
+**date**
+
+The selected date in ISO8601 format
+
+\`\`\`
+string
+\`\`\`
+
+**dates**
+
+Multiple selected dates in ISO8601 format.
+      Items that are an array indicate a range of dates.
+
+\`\`\`
+[
+  string
+  [string]
+]
+\`\`\`
+
+**disabled**
+
+Multiple dates in ISO8601 format that should not be
+        selectable. Items that are an array indicate a range of dates.
+
+\`\`\`
+[
+  string
+  [string]
+]
+\`\`\`
+
+**locale**
+
+The locale to use. It must already
+      have been loaded. See: https://momentjs.com/docs/#/i18n/
+
+\`\`\`
+string
+\`\`\`
+
+**onSelect**
+
+Called with an ISO8601 date when
+      the user selects a day.
+      For single select, make this the subsequent \`date\` property value.
+      For multiple select or ranges, toggle values in \`dates\`.
+      Not specifying this property makes the component read only.
+
+\`\`\`
+function
+\`\`\`
+
+**size**
+
+What size to make it.
+
+\`\`\`
+small
+medium
+large
+\`\`\`
+  ",
   "Chart": "## Chart
 A graphical chart.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=chart&amp;module=%2Fscreens%2FChart.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=chart&module=%2Fsrc%2FChart.js)
 ## Usage
 
 \`\`\`javascript
@@ -712,7 +821,7 @@ Required. Array of value objects describing the data.
   "CheckBox": "## CheckBox
 A checkbox toggle control.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=checkbox&amp;module=%2Fscreens%2FCheckBox.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=checkbox&module=%2Fsrc%2FCheckBox.js)
 ## Usage
 
 \`\`\`javascript
@@ -798,7 +907,7 @@ boolean
   "Clock": "## Clock
 A clock with timezone awareness.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=clock&amp;module=%2Fscreens%2FClock.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=clock&module=%2Fsrc%2FClock.js)
 ## Usage
 
 \`\`\`javascript
@@ -853,10 +962,54 @@ IANA timezone to use in the Clock (e.g. America/Sao_Paulo). Defaults to \`Americ
 string
 \`\`\`
   ",
+  "Diagram": "## Diagram
+Graphical lines between DOM elements.
+      Diagram is meant to be used with Stack.
+
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=diagram&module=%2Fsrc%2FDiagram.js)
+## Usage
+
+\`\`\`javascript
+import { Diagram } from 'grommet';
+<Diagram />
+\`\`\`
+
+## Properties
+
+**connections**
+
+Required. Array of objects describing the connections.
+      The 'fromId' and 'toId' must be DOM element ids.
+      'offset' can be used to shift a bit to reduce the amount of overlap
+      with other connection lines
+
+\`\`\`
+[{
+  color: string,
+  fromId: string,
+  label: string,
+  offset: 
+    xsmall
+    small
+    medium
+    large,
+  thickness: 
+    xsmall
+    small
+    medium
+    large,
+  toId: string,
+  type: 
+    direct
+    curved
+    rectilinear
+}]
+\`\`\`
+  ",
   "Drop": "## Drop
 A drop container that opens next to a target.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=drop&amp;module=%2Fscreens%2FDrop.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=drop&module=%2Fsrc%2FDrop.js)
 ## Usage
 
 \`\`\`javascript
@@ -947,7 +1100,7 @@ A control that when clicked will render its children in a drop layer.
 When opened, the drop will control the focus so that the contents behind it are not focusable.
       
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=dropbutton&amp;module=%2Fscreens%2FDropButton.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dropbutton&module=%2Fsrc%2FDropButton.js)
 ## Usage
 
 \`\`\`javascript
@@ -995,7 +1148,7 @@ rows and columns, create area names for adjacent cells, and then
 place Box components inside those areas using the Box.gridArea property.
 See https://css-tricks.com/snippets/css/complete-guide-grid/.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=grid&amp;module=%2Fscreens%2FGrid.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grid&module=%2Fsrc%2FGrid.js)
 ## Usage
 
 \`\`\`javascript
@@ -1139,7 +1292,7 @@ string
   "Grommet": "## Grommet
 This is the top level Grommet container.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=grommet&amp;module=%2Fscreens%2FGrommet.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grommet&module=%2Fsrc%2FGrommet.js)
 ## Usage
 
 \`\`\`javascript
@@ -1170,7 +1323,7 @@ object
   "Heading": "## Heading
 Heading text structed in levels.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=heading&amp;module=%2Fscreens%2FHeading.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=heading&module=%2Fsrc%2FHeading.js)
 ## Usage
 
 \`\`\`javascript
@@ -1252,7 +1405,7 @@ boolean
   "Image": "## Image
 An image.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=image&amp;module=%2Fscreens%2FImage.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=image&module=%2Fsrc%2FImage.js)
 ## Usage
 
 \`\`\`javascript
@@ -1384,7 +1537,7 @@ function
 A modal overlay. It is the caller's responsibility to provide a control for
       the user to close the layer.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=layer&amp;module=%2Fscreens%2FLayer.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=layer&module=%2Fsrc%2FLayer.js)
 ## Usage
 
 \`\`\`javascript
@@ -1394,17 +1547,12 @@ import { Layer } from 'grommet';
 
 ## Properties
 
-**position**
+**onClickOverlay**
 
-Position of the layer content. Defaults to \`center\`.
+Function that will be called if the overlay background is clicked.
 
 \`\`\`
-bottom
-center
-hidden
-left
-right
-top
+boolean
 \`\`\`
 
 **onEsc**
@@ -1422,11 +1570,24 @@ Whether this is a plain Layer with no background color or border.
 \`\`\`
 boolean
 \`\`\`
+
+**position**
+
+Position of the layer content. Defaults to \`center\`.
+
+\`\`\`
+bottom
+center
+hidden
+left
+right
+top
+\`\`\`
   ",
   "Markdown": "## GrommetMarkdown
 Markdown formatting using Grommet components.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=markdown&amp;module=%2Fscreens%2FMarkdown.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=markdown&module=%2Fsrc%2FMarkdown.js)
 ## Usage
 
 \`\`\`javascript
@@ -1448,7 +1609,7 @@ string
 Presents a list of choices within a drop down via a control that
       opens it.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=menu&amp;module=%2Fscreens%2FMenu.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=menu&module=%2Fsrc%2FMenu.js)
 ## Usage
 
 \`\`\`javascript
@@ -1542,7 +1703,7 @@ Custom messages for Menu. Used for accessibility by screen readers.
   "Meter": "## Meter
 A graphical meter.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=meter&amp;module=%2Fscreens%2FMeter.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=meter&module=%2Fsrc%2FMeter.js)
 ## Usage
 
 \`\`\`javascript
@@ -1629,7 +1790,7 @@ Array of value objects describing the data.
   "Paragraph": "## Paragraph
 A paragraph of text.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=paragraph&amp;module=%2Fscreens%2FParagraph.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=paragraph&module=%2Fsrc%2FParagraph.js)
 ## Usage
 
 \`\`\`javascript
@@ -1685,7 +1846,7 @@ end
   "RadioButton": "## RadioButton
 A radio button control.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=radiobutton&amp;module=%2Fscreens%2FRadioButton.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=radiobutton&module=%2Fsrc%2FRadioButton.js)
 ## Usage
 
 \`\`\`javascript
@@ -1755,7 +1916,7 @@ function
   "RangeInput": "## RangeInput
 A range input with custom styles.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=rangeinput&amp;module=%2Fscreens%2FRangeInput.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=rangeinput&module=%2Fsrc%2FRangeInput.js)
 ## Usage
 
 \`\`\`javascript
@@ -1830,7 +1991,7 @@ function
   "Select": "## Select
 An select-like field with optional search capability.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=select&amp;module=%2Fscreens%2FSelect.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=select&module=%2Fsrc%2FSelect.js)
 ## Usage
 
 \`\`\`javascript
@@ -1971,7 +2132,7 @@ object
   "SkipLinks": "## SkipLinks
 Describe a list of elements to skip to.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=skiplinks&amp;module=%2Fscreens%2FSkipLinks.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=skiplinks&module=%2Fsrc%2FSkipLinks.js)
 ## Usage
 
 \`\`\`javascript
@@ -2004,7 +2165,7 @@ Custom messages for SkipLinks. Used for accessibility by screen readers. Default
   "Stack": "## Stack
 Stacks components on top of the first child component.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=stack&amp;module=%2Fscreens%2FStack.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=stack&module=%2Fsrc%2FStack.js)
 ## Usage
 
 \`\`\`javascript
@@ -2045,7 +2206,7 @@ last
   "Tabs": "## Tabs
 A tabular view component.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=tabs&amp;module=%2Fscreens%2FTabs.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=tabs&module=%2Fsrc%2FTabs.js)
 ## Usage
 
 \`\`\`javascript
@@ -2110,7 +2271,7 @@ function
   "Text": "## Text
 Arbitrary text.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=text&amp;module=%2Fscreens%2FText.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=text&module=%2Fsrc%2FText.js)
 ## Usage
 
 \`\`\`javascript
@@ -2197,7 +2358,7 @@ boolean
   "TextArea": "## TextArea
 A textarea.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=textarea&amp;module=%2Fscreens%2FTextArea.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textarea&module=%2Fsrc%2FTextArea.js)
 ## Usage
 
 \`\`\`javascript
@@ -2267,7 +2428,7 @@ string
   "TextInput": "## TextInput
 A text input field with optional suggestions.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=textinput&amp;module=%2Fscreens%2FTextInput.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=textinput&module=%2Fsrc%2FTextInput.js)
 ## Usage
 
 \`\`\`javascript
@@ -2398,7 +2559,7 @@ string
   "Video": "## Video
 A video player.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-site?initialpath=video&amp;module=%2Fscreens%2FVideo.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=video&module=%2Fsrc%2FVideo.js)
 ## Usage
 
 \`\`\`javascript
@@ -2449,6 +2610,77 @@ Enables video muting. This option is best used with the autoPlay flag
 
 \`\`\`
 boolean
+\`\`\`
+  ",
+  "WorldMap": "## WorldMap
+A map of the world, or a continent.
+
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=worldmap&module=%2Fsrc%2FWorldMap.js)
+## Usage
+
+\`\`\`javascript
+import { WorldMap } from 'grommet';
+<WorldMap />
+\`\`\`
+
+## Properties
+
+**color**
+
+Default color
+
+\`\`\`
+string
+\`\`\`
+
+**continents**
+
+Continent details.
+
+\`\`\`
+[{
+  color: string,
+  name: 
+    Africa
+    Asia
+    Australia
+    Europe
+    North America
+    South America,
+  onClick: function,
+  onHover: function
+}]
+\`\`\`
+
+**onSelectPlace**
+
+Called when the user clicks on a place.
+        It is passed the location.
+
+\`\`\`
+function
+\`\`\`
+
+**places**
+
+Place details.
+
+\`\`\`
+[{
+  color: string,
+  name: string,
+  location: [number],
+  onClick: function,
+  onHover: function
+}]
+\`\`\`
+
+**selectColor**
+
+Color when selecting.
+
+\`\`\`
+string
 \`\`\`
   ",
 }

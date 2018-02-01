@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, parseMetricToInt } from '../../utils';
+import { focusStyle, parseMetricToNum } from '../../utils';
 
 const rangeTrackStyle = css`
   width: 100%;
@@ -31,8 +31,8 @@ const rangeThumbStyle = css`
 const firefoxMicrosoftThumbStyle = css`
   ${rangeThumbStyle}
   margin-top: 0px;
-  height: ${props => parseMetricToInt(props.theme.global.spacing) - (parseMetricToInt(props.theme.global.control.border.width) * 2)}px;
-  width: ${props => parseMetricToInt(props.theme.global.spacing) - (parseMetricToInt(props.theme.global.control.border.width) * 2)}px;
+  height: ${props => parseMetricToNum(props.theme.global.spacing) - (parseMetricToNum(props.theme.global.control.border.width) * 2)}px;
+  width: ${props => parseMetricToNum(props.theme.global.spacing) - (parseMetricToNum(props.theme.global.control.border.width) * 2)}px;
 `;
 
 const StyledRangeInput = styled.input`
@@ -65,7 +65,7 @@ const StyledRangeInput = styled.input`
   &::-webkit-slider-thumb {
     ${rangeThumbStyle}
     
-    margin-top: -${props => Math.round(parseMetricToInt(props.theme.global.spacing) * 0.45)}px;
+    margin-top: -${props => Math.round(parseMetricToNum(props.theme.global.spacing) * 0.45)}px;
     
     ${props => !props.disabled && css`
       &:hover {

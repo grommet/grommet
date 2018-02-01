@@ -30,6 +30,9 @@ export default deepFreeze({
   global: {
     animation: {
       duration: '1s',
+      jiggle: {
+        duration: '0.1s',
+      },
     },
     borderSize: {
       xsmall: '1px',
@@ -197,6 +200,26 @@ export default deepFreeze({
       horizontal: `${(baseSpacing / 2) - borderWidth}px`,
     },
   },
+  calendar: {
+    small: {
+      fontSize: '16px',
+      lineHeight: 1.375,
+      daySize: `${(baseSpacing * 8) / 7}px`,
+      slideDuration: '0.2s',
+    },
+    medium: {
+      fontSize: '22px',
+      lineHeight: 1.45,
+      daySize: `${(baseSpacing * 16) / 7}px`,
+      slideDuration: '0.5s',
+    },
+    large: {
+      fontSize: '36px',
+      lineHeight: 1.11,
+      daySize: `${(baseSpacing * 32) / 7}px`,
+      slideDuration: '0.8s',
+    },
+  },
   checkBox: {
     check: {
       color: css`${props => props.theme.global.colors.brand}`,
@@ -346,6 +369,16 @@ export default deepFreeze({
   video: {
     captions: {
       background: rgba(0, 0, 0, 0.7),
+    },
+  },
+  worldMap: {
+    continent: {
+      active: '8px',
+      base: '6px',
+    },
+    place: {
+      active: '20px',
+      base: '8px',
     },
   },
 });

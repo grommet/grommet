@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-import { arcCommands, colorForName, parseMetricToInt, translateEndAngle } from '../../utils';
+import { arcCommands, colorForName, parseMetricToNum, translateEndAngle } from '../../utils';
 
 import StyledMeter from './StyledMeter';
 
 export default class Circle extends Component {
   render() {
     const { background, round, size, theme, thickness, values, ...rest } = this.props;
-    const width = (size === 'full' ? 288 : parseMetricToInt(theme.global.size[size]));
-    const height = parseMetricToInt(theme.global.edgeSize[thickness]);
+    const width = (size === 'full' ? 288 : parseMetricToNum(theme.global.size[size]));
+    const height = parseMetricToNum(theme.global.edgeSize[thickness]);
     const mid = width / 2;
     const radius = (width / 2) - (height / 2);
     const max = 100;

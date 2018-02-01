@@ -1,18 +1,18 @@
 import { css } from 'styled-components';
 
-export function parseMetricToInt(fontAsString) {
-  return parseInt(fontAsString.replace(/[^0-9]/g, ''), 10);
+export function parseMetricToNum(fontAsString) {
+  return parseFloat(fontAsString.replace(/[^0-9/.]/g, ''), 10);
 }
 
 export function fontSize(size, lineHeight) {
   return css`
     font-size: ${
-      props => `${(parseMetricToInt(size) / parseMetricToInt(props.theme.global.font.size)) * 1}rem`
+      props => `${(parseMetricToNum(size) / parseMetricToNum(props.theme.global.font.size)) * 1}rem`
     };
     line-height: ${props => (
       lineHeight || (
-        `${Math.ceil(parseMetricToInt(size) / parseMetricToInt(props.theme.global.lineHeight)) *
-        (parseMetricToInt(props.theme.global.lineHeight) / parseMetricToInt(size))}px`
+        `${Math.ceil(parseMetricToNum(size) / parseMetricToNum(props.theme.global.lineHeight)) *
+        (parseMetricToNum(props.theme.global.lineHeight) / parseMetricToNum(size))}px`
       )
     )};
   `;
@@ -48,7 +48,7 @@ export function findAllByType(component, type) {
 
 export function getAvailableAtBadge(availableAt) {
   return {
-    url: `https://codesandbox.io/s/github/grommet/grommet-site?initialpath=${availableAt.toLowerCase()}&amp;module=%2Fscreens%2F${availableAt}.js`,
+    url: `https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=${availableAt.toLowerCase()}&module=%2Fsrc%2F${availableAt}.js`,
     badge: 'https://codesandbox.io/static/img/play-codesandbox.svg',
   };
 }
