@@ -1,7 +1,7 @@
 ## SkipLinks
 Describe a list of elements to skip to.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=skiplinks&amp;module=%2Fsrc%2FSkipLinks.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=skiplinks&module=%2Fsrc%2FSkipLinks.js)
 ## Usage
 
 ```javascript

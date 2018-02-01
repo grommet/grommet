@@ -3,7 +3,7 @@ Calendar of days in months.
       It can be used to select a single date, a range of dates, or multiple
       individual dates.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=calendar&amp;module=%2Fsrc%2FCalendar.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=calendar&module=%2Fsrc%2FCalendar.js)
 ## Usage
 
 ```javascript

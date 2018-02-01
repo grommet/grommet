@@ -1,7 +1,7 @@
 ## CheckBox
 A checkbox toggle control.
 
-[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=checkbox&amp;module=%2Fsrc%2FCheckBox.js)
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=checkbox&module=%2Fsrc%2FCheckBox.js)
 ## Usage
 
 ```javascript
