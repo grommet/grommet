@@ -117,6 +117,7 @@ export const findVisibleParent = (element) => {
   }
   return null;
 };
+
 export default {
   copyAttribute,
   filterByFocusable,
