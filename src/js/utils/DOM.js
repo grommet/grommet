@@ -115,7 +115,7 @@ export const findVisibleParent = (element) => {
     return element.offsetParent ?
       element : findVisibleParent(element.parentElement) || element;
   }
-  return null;
+  return undefined;
 };
 
 export default {
