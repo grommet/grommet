@@ -2,7 +2,7 @@
 
 exports[`Grommet announces 1`] = `
 <div
-  class="StyledGrommet-gKbdxL kDQxAS"
+  class="StyledGrommet-gKbdxL dNFHPo"
 >
   <div>
     hi
@@ -32,7 +32,6 @@ exports[`Grommet hpe theme renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -57,7 +56,6 @@ exports[`Grommet renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

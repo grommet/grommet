@@ -6,7 +6,6 @@ exports[`Video autoPlay renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -475,7 +474,6 @@ exports[`Video controls renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1205,7 +1203,6 @@ exports[`Video fit renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1894,7 +1891,6 @@ exports[`Video loop renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2363,7 +2359,6 @@ exports[`Video mute renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2832,7 +2827,6 @@ exports[`Video renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

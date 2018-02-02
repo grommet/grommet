@@ -6,7 +6,6 @@ exports[`WorldMap color renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -139,7 +138,6 @@ exports[`WorldMap continents renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -281,7 +279,6 @@ exports[`WorldMap onSelectPlace renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -417,7 +414,6 @@ exports[`WorldMap places renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -564,7 +560,6 @@ exports[`WorldMap renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

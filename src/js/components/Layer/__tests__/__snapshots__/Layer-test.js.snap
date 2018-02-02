@@ -2,7 +2,7 @@
 
 exports[`Layer aligns bottom 1`] = `
 <div
-  class="StyledLayer-EylWz cQEoYc"
+  class="StyledLayer-EylWz kvEpSi"
   id="bottom-test"
   tabindex="-1"
 >
@@ -188,12 +188,11 @@ exports[`Layer aligns bottom 2`] = `
 
 
 
-.cQEoYc {
+.kvEpSi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -206,12 +205,12 @@ exports[`Layer aligns bottom 2`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.cQEoYc * {
+.kvEpSi * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .cQEoYc {
+  .kvEpSi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -223,7 +222,7 @@ exports[`Layer aligns bottom 2`] = `
 
 exports[`Layer aligns left 1`] = `
 <div
-  class="StyledLayer-EylWz cQEoYc"
+  class="StyledLayer-EylWz kvEpSi"
   id="left-test"
   tabindex="-1"
 >
@@ -280,12 +279,11 @@ exports[`Layer aligns left 2`] = `
 
 
 
-.cQEoYc {
+.kvEpSi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -298,12 +296,12 @@ exports[`Layer aligns left 2`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.cQEoYc * {
+.kvEpSi * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .cQEoYc {
+  .kvEpSi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -315,7 +313,7 @@ exports[`Layer aligns left 2`] = `
 
 exports[`Layer aligns right 1`] = `
 <div
-  class="StyledLayer-EylWz cQEoYc"
+  class="StyledLayer-EylWz kvEpSi"
   id="right-test"
   tabindex="-1"
 >
@@ -414,12 +412,11 @@ exports[`Layer aligns right 2`] = `
 
 
 
-.cQEoYc {
+.kvEpSi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -432,12 +429,12 @@ exports[`Layer aligns right 2`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.cQEoYc * {
+.kvEpSi * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .cQEoYc {
+  .kvEpSi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -449,7 +446,7 @@ exports[`Layer aligns right 2`] = `
 
 exports[`Layer aligns top 1`] = `
 <div
-  class="StyledLayer-EylWz cQEoYc"
+  class="StyledLayer-EylWz kvEpSi"
   id="top-test"
   tabindex="-1"
 >
@@ -591,12 +588,11 @@ exports[`Layer aligns top 2`] = `
 
 
 
-.cQEoYc {
+.kvEpSi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -609,12 +605,12 @@ exports[`Layer aligns top 2`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.cQEoYc * {
+.kvEpSi * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .cQEoYc {
+  .kvEpSi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -626,7 +622,7 @@ exports[`Layer aligns top 2`] = `
 
 exports[`Layer hides 1`] = `
 <div
-  class="StyledLayer-EylWz dTHcZQ"
+  class="StyledLayer-EylWz jSjwWR"
   id="hidden-test"
   tabindex="-1"
 >
@@ -830,7 +826,7 @@ exports[`Layer hides 2`] = `
 
 
 @media only screen and (min-width:700px) {
-  .cQEoYc {
+  .kvEpSi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -839,12 +835,11 @@ exports[`Layer hides 2`] = `
   }
 }
 
-.dTHcZQ {
+.jSjwWR {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -861,14 +856,14 @@ exports[`Layer hides 2`] = `
   position: fixed;
 }
 
-.dTHcZQ * {
+.jSjwWR * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Layer hides 3`] = `
 <div
-  class="StyledLayer-EylWz dTHcZQ"
+  class="StyledLayer-EylWz jSjwWR"
   id="hidden-test"
   tabindex="-1"
 >
@@ -1072,7 +1067,7 @@ exports[`Layer hides 4`] = `
 
 
 @media only screen and (min-width:700px) {
-  .cQEoYc {
+  .kvEpSi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -1081,12 +1076,11 @@ exports[`Layer hides 4`] = `
   }
 }
 
-.dTHcZQ {
+.jSjwWR {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1103,7 +1097,7 @@ exports[`Layer hides 4`] = `
   position: fixed;
 }
 
-.dTHcZQ * {
+.jSjwWR * {
   box-sizing: inherit;
 }"
 `;
@@ -1144,7 +1138,7 @@ exports[`Layer is accessible 3`] = `
 
 exports[`Layer plain renders 1`] = `
 <div
-  class="StyledLayer-EylWz kTyGqG"
+  class="StyledLayer-EylWz fgLtjB"
   id="plain-test"
   tabindex="-1"
 >
@@ -1397,7 +1391,7 @@ exports[`Layer plain renders 2`] = `
 
 
 @media only screen and (min-width:700px) {
-  .cQEoYc {
+  .kvEpSi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -1406,12 +1400,11 @@ exports[`Layer plain renders 2`] = `
   }
 }
 
-.kTyGqG {
+.fgLtjB {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1424,12 +1417,12 @@ exports[`Layer plain renders 2`] = `
   background-color: transparent;
 }
 
-.kTyGqG * {
+.fgLtjB * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .kTyGqG {
+  .fgLtjB {
     position: fixed;
     top: 0px;
     left: 0px;

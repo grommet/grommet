@@ -53,19 +53,21 @@ export const backgroundStyle = (background, theme) => {
     }
     return undefined;
   }
-  if (background.lastIndexOf('url', 0) === 0) {
-    return css`
-      background: ${background} no-repeat center center;
-      background-size: cover;
-    `;
-  }
-  const color = colorForName(background, theme);
-  if (color) {
-    return css`
-      background-color: ${color};
-      color: ${colorIsDark(color) ?
-        theme.global.colors.darkBackground.text : theme.global.colors.text};
-    `;
+  if (background) {
+    if (background.lastIndexOf('url', 0) === 0) {
+      return css`
+        background: ${background} no-repeat center center;
+        background-size: cover;
+      `;
+    }
+    const color = colorForName(background, theme);
+    if (color) {
+      return css`
+        background-color: ${color};
+        color: ${colorIsDark(color) ?
+          theme.global.colors.darkBackground.text : theme.global.colors.text};
+      `;
+    }
   }
   return undefined;
 };
@@ -77,7 +79,8 @@ export const baseStyle = css`
     parseMetricToNum(props.theme.global.lineHeight) / parseMetricToNum(props.theme.global.font.size)
   )};
   color: ${props => props.theme.global.colors.text};
-  background-color: ${props => props.theme.global.colors.background};
+  ${props => props.theme.global.colors.background &&
+    `background-color: ${props.theme.global.colors.background};`}
 
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;

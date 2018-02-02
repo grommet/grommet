@@ -6,7 +6,6 @@ exports[`Button color renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -74,6 +73,7 @@ exports[`Button color renders 1`] = `
   background-color: #00CCEB;
   color: #333333;
   border: none;
+  border-radius: 5px;
   font-size: 1.1875rem;
   line-height: 24px;
   padding: 10px 10px;
@@ -160,7 +160,6 @@ exports[`Button disabled renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -231,7 +230,6 @@ exports[`Button focus renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -322,7 +320,6 @@ exports[`Button hoverIndicator as object renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -390,7 +387,6 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -458,7 +454,6 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -526,7 +521,6 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -594,7 +588,6 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -662,7 +655,6 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -730,7 +722,6 @@ exports[`Button hoverIndicator renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -798,7 +789,6 @@ exports[`Button href renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -878,7 +868,6 @@ exports[`Button icon label renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -986,7 +975,6 @@ exports[`Button primary renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1020,6 +1008,7 @@ exports[`Button primary renders 1`] = `
   background-color: #865CD6;
   color: rgba(255,255,255,0.85);
   border: none;
+  border-radius: 5px;
   font-size: 1.1875rem;
   line-height: 24px;
   padding: 10px 10px;
@@ -1076,7 +1065,6 @@ exports[`Button renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1166,7 +1154,6 @@ exports[`Button reverse icon label renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1274,7 +1261,6 @@ exports[`Button warns about invalid icon render 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1355,7 +1341,6 @@ exports[`Button warns about invalid label render 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

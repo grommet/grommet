@@ -23,7 +23,7 @@ const rangeThumbStyle = css`
   height: ${props => props.theme.global.spacing};
   width: ${props => props.theme.global.spacing};
   overflow: visible;
-  background-color: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.global.colors.background)};
+  background-color: ${props => (props.grommet.dark ? props.theme.global.colors.dark[1] : props.theme.global.colors.white)};
   -webkit-appearance: none;
   cursor: pointer;
 `;
@@ -64,9 +64,9 @@ const StyledRangeInput = styled.input`
 
   &::-webkit-slider-thumb {
     ${rangeThumbStyle}
-    
+
     margin-top: -${props => Math.round(parseMetricToNum(props.theme.global.spacing) * 0.45)}px;
-    
+
     ${props => !props.disabled && css`
       &:hover {
         border-color: ${props.grommet.dark ? props.theme.global.colors.white : props.theme.global.hover.textColor};

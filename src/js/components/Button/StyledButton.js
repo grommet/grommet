@@ -12,6 +12,7 @@ const basicStyle = props => css`
 const primaryStyle = props => css`
   ${backgroundStyle(props.color || 'brand', props.theme)}
   border: none;
+  border-radius: ${props.theme.button.border.radius};
 
   // TODO: revisit this
   svg {

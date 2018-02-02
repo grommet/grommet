@@ -2,7 +2,7 @@
 
 exports[`SkipLink mounts 1`] = `
 <div
-  class="StyledLayer-EylWz dTHcZQ"
+  class="StyledLayer-EylWz jSjwWR"
   id="skip-links"
   tabindex="-1"
 >
@@ -73,12 +73,11 @@ exports[`SkipLink mounts 2`] = `
 
 
 
-.dTHcZQ {
+.jSjwWR {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -95,14 +94,14 @@ exports[`SkipLink mounts 2`] = `
   position: fixed;
 }
 
-.dTHcZQ * {
+.jSjwWR * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`SkipLink mounts 3`] = `
 <div
-  class="StyledLayer-EylWz cQEoYc"
+  class="StyledLayer-EylWz kvEpSi"
   id="skip-links"
   tabindex="-1"
 >
@@ -216,12 +215,11 @@ exports[`SkipLink mounts 4`] = `
 
 
 
-.cQEoYc {
+.kvEpSi {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -234,12 +232,12 @@ exports[`SkipLink mounts 4`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.cQEoYc * {
+.kvEpSi * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .cQEoYc {
+  .kvEpSi {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -258,7 +256,7 @@ exports[`SkipLink mounts 5`] = `
       hidden=""
     >
       <div
-        class="StyledLayer-EylWz dTHcZQ"
+        class="StyledLayer-EylWz jSjwWR"
         id="skip-links"
         tabindex="-1"
       >

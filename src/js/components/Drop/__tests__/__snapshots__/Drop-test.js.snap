@@ -2,7 +2,7 @@
 
 exports[`Drop aligns left right top bottom 1`] = `
 <div
-  class="StyledDrop-czaYBK jMwfOf"
+  class="StyledDrop-czaYBK bGWOnw"
   tabindex="-1"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -14,12 +14,11 @@ exports[`Drop aligns left right top bottom 1`] = `
 exports[`Drop aligns left right top bottom 2`] = `
 "
 
-.jMwfOf {
+.bGWOnw {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -43,14 +42,14 @@ exports[`Drop aligns left right top bottom 2`] = `
   animation-delay: 0.01s;
 }
 
-.jMwfOf * {
+.bGWOnw * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop aligns right left top top 1`] = `
 <div
-  class="StyledDrop-czaYBK loJbGv"
+  class="StyledDrop-czaYBK jSLQCY"
   tabindex="-1"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -62,12 +61,11 @@ exports[`Drop aligns right left top top 1`] = `
 exports[`Drop aligns right left top top 2`] = `
 "
 
-.loJbGv {
+.jSLQCY {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -91,14 +89,14 @@ exports[`Drop aligns right left top top 2`] = `
   animation-delay: 0.01s;
 }
 
-.loJbGv * {
+.jSLQCY * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop aligns right right bottom top 1`] = `
 <div
-  class="StyledDrop-czaYBK cmxywS"
+  class="StyledDrop-czaYBK kuvvDG"
   tabindex="-1"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -110,12 +108,11 @@ exports[`Drop aligns right right bottom top 1`] = `
 exports[`Drop aligns right right bottom top 2`] = `
 "
 
-.cmxywS {
+.kuvvDG {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -139,14 +136,14 @@ exports[`Drop aligns right right bottom top 2`] = `
   animation-delay: 0.01s;
 }
 
-.cmxywS * {
+.kuvvDG * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop aligns right right bottom top 3`] = `
 <div
-  class="StyledDrop-czaYBK cmxywS"
+  class="StyledDrop-czaYBK kuvvDG"
   tabindex="-1"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -158,12 +155,11 @@ exports[`Drop aligns right right bottom top 3`] = `
 exports[`Drop aligns right right bottom top 4`] = `
 "
 
-.cmxywS {
+.kuvvDG {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -187,14 +183,14 @@ exports[`Drop aligns right right bottom top 4`] = `
   animation-delay: 0.01s;
 }
 
-.cmxywS * {
+.kuvvDG * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop aligns skips left random 1`] = `
 <div
-  class="StyledDrop-czaYBK fgHsdl"
+  class="StyledDrop-czaYBK AyeHd"
   tabindex="-1"
   id="drop-node"
   style="width: 0.1px; top: 0px; max-height: 768px;"
@@ -206,12 +202,11 @@ exports[`Drop aligns skips left random 1`] = `
 exports[`Drop aligns skips left random 2`] = `
 "
 
-.fgHsdl {
+.AyeHd {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -235,14 +230,14 @@ exports[`Drop aligns skips left random 2`] = `
   animation-delay: 0.01s;
 }
 
-.fgHsdl * {
+.AyeHd * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop aligns skips right random 1`] = `
 <div
-  class="StyledDrop-czaYBK loJbGv"
+  class="StyledDrop-czaYBK jSLQCY"
   tabindex="-1"
   id="drop-node"
   style="width: 0.1px; max-height: 768px;"
@@ -254,12 +249,11 @@ exports[`Drop aligns skips right random 1`] = `
 exports[`Drop aligns skips right random 2`] = `
 "
 
-.loJbGv {
+.jSLQCY {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -283,14 +277,14 @@ exports[`Drop aligns skips right random 2`] = `
   animation-delay: 0.01s;
 }
 
-.loJbGv * {
+.jSLQCY * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop mounts 1`] = `
 <div
-  class="StyledDrop-czaYBK jMwfOf"
+  class="StyledDrop-czaYBK bGWOnw"
   tabindex="-1"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -302,12 +296,11 @@ exports[`Drop mounts 1`] = `
 exports[`Drop mounts 2`] = `
 "
 
-.jMwfOf {
+.bGWOnw {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -331,14 +324,14 @@ exports[`Drop mounts 2`] = `
   animation-delay: 0.01s;
 }
 
-.jMwfOf * {
+.bGWOnw * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop resizes 1`] = `
 <div
-  class="StyledDrop-czaYBK jMwfOf"
+  class="StyledDrop-czaYBK bGWOnw"
   tabindex="-1"
   id="test"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
@@ -350,12 +343,11 @@ exports[`Drop resizes 1`] = `
 exports[`Drop resizes 2`] = `
 "
 
-.jMwfOf {
+.bGWOnw {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -379,14 +371,14 @@ exports[`Drop resizes 2`] = `
   animation-delay: 0.01s;
 }
 
-.jMwfOf * {
+.bGWOnw * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop restrict focus 1`] = `
 <div
-  class="StyledDrop-czaYBK jMwfOf"
+  class="StyledDrop-czaYBK bGWOnw"
   tabindex="-1"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
@@ -397,7 +389,7 @@ exports[`Drop restrict focus 1`] = `
 
 exports[`Drop restrict focus 2`] = `
 <div
-  class="StyledDrop-czaYBK jMwfOf"
+  class="StyledDrop-czaYBK bGWOnw"
   tabindex="-1"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
@@ -409,12 +401,11 @@ exports[`Drop restrict focus 2`] = `
 exports[`Drop restrict focus 3`] = `
 "
 
-.jMwfOf {
+.bGWOnw {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -438,7 +429,7 @@ exports[`Drop restrict focus 3`] = `
   animation-delay: 0.01s;
 }
 
-.jMwfOf * {
+.bGWOnw * {
   box-sizing: inherit;
 }"
 `;
@@ -453,7 +444,7 @@ exports[`Drop restrict focus 4`] = `
 
 exports[`Drop skips invalid align 1`] = `
 <div
-  class="StyledDrop-czaYBK jMwfOf"
+  class="StyledDrop-czaYBK bGWOnw"
   tabindex="-1"
   id="drop-node"
   style="width: 0.1px; max-height: 768px;"
@@ -465,12 +456,11 @@ exports[`Drop skips invalid align 1`] = `
 exports[`Drop skips invalid align 2`] = `
 "
 
-.jMwfOf {
+.bGWOnw {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -494,14 +484,14 @@ exports[`Drop skips invalid align 2`] = `
   animation-delay: 0.01s;
 }
 
-.jMwfOf * {
+.bGWOnw * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop updates 1`] = `
 <div
-  class="StyledGrommet-gKbdxL kDQxAS"
+  class="StyledGrommet-gKbdxL dNFHPo"
 >
   <input />
 </div>
