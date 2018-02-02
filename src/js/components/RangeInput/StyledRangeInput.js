@@ -23,7 +23,7 @@ const rangeThumbStyle = css`
   height: ${props => props.theme.global.spacing};
   width: ${props => props.theme.global.spacing};
   overflow: visible;
-  background-color: ${props => (props.grommet.dark ? props.theme.global.colors.dark[1] : props.theme.global.colors.white)};
+  background-color: ${props => (props.grommet.dark ? props.theme.global.colors.black : props.theme.global.colors.white)};
   -webkit-appearance: none;
   cursor: pointer;
 `;

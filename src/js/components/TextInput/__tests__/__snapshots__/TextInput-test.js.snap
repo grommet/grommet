@@ -2,7 +2,7 @@
 
 exports[`TextInput closes suggestion drop 1`] = `
 <div
-  class="StyledDrop-czaYBK bGWOnw"
+  class="StyledDrop-czaYBK eZHhhX"
   tabindex="-1"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -52,7 +52,7 @@ exports[`TextInput closes suggestion drop 2`] = `
 
 
 
-.bGWOnw {
+.eZHhhX {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -80,14 +80,14 @@ exports[`TextInput closes suggestion drop 2`] = `
   animation-delay: 0.01s;
 }
 
-.bGWOnw * {
+.eZHhhX * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`TextInput closes suggestion drop 3`] = `
 <div
-  class="StyledGrommet-gKbdxL dNFHPo"
+  class="StyledGrommet-gKbdxL kURDTi"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-gOoAsL gBrQQI"
@@ -104,7 +104,7 @@ exports[`TextInput closes suggestion drop 3`] = `
 
 exports[`TextInput handles next and previous without suggestion 1`] = `
 <div
-  class="StyledGrommet-gKbdxL dNFHPo"
+  class="StyledGrommet-gKbdxL kURDTi"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-gOoAsL gBrQQI"
@@ -133,7 +133,7 @@ exports[`TextInput mounts 1`] = `
 
 exports[`TextInput mounts with complex suggestions 1`] = `
 <div
-  class="StyledDrop-czaYBK bGWOnw"
+  class="StyledDrop-czaYBK eZHhhX"
   tabindex="-1"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -183,7 +183,7 @@ exports[`TextInput mounts with complex suggestions 2`] = `
 
 
 
-.bGWOnw {
+.eZHhhX {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -211,14 +211,14 @@ exports[`TextInput mounts with complex suggestions 2`] = `
   animation-delay: 0.01s;
 }
 
-.bGWOnw * {
+.eZHhhX * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`TextInput mounts with suggestions 1`] = `
 <div
-  class="StyledDrop-czaYBK bGWOnw"
+  class="StyledDrop-czaYBK eZHhhX"
   tabindex="-1"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -268,7 +268,7 @@ exports[`TextInput mounts with suggestions 2`] = `
 
 
 
-.bGWOnw {
+.eZHhhX {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -296,14 +296,14 @@ exports[`TextInput mounts with suggestions 2`] = `
   animation-delay: 0.01s;
 }
 
-.bGWOnw * {
+.eZHhhX * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`TextInput selects suggestion 1`] = `
 <div
-  class="StyledDrop-czaYBK bGWOnw"
+  class="StyledDrop-czaYBK eZHhhX"
   tabindex="-1"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -353,7 +353,7 @@ exports[`TextInput selects suggestion 2`] = `
 
 
 
-.bGWOnw {
+.eZHhhX {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -381,14 +381,14 @@ exports[`TextInput selects suggestion 2`] = `
   animation-delay: 0.01s;
 }
 
-.bGWOnw * {
+.eZHhhX * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`TextInput selects suggestion 3`] = `
 <div
-  class="StyledGrommet-gKbdxL dNFHPo"
+  class="StyledGrommet-gKbdxL kURDTi"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-gOoAsL gCsbgz"

@@ -2,7 +2,7 @@
 
 exports[`SkipLink mounts 1`] = `
 <div
-  class="StyledLayer-EylWz jSjwWR"
+  class="StyledLayer-EylWz gwbVnu"
   id="skip-links"
   tabindex="-1"
 >
@@ -73,7 +73,7 @@ exports[`SkipLink mounts 2`] = `
 
 
 
-.jSjwWR {
+.gwbVnu {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -94,14 +94,14 @@ exports[`SkipLink mounts 2`] = `
   position: fixed;
 }
 
-.jSjwWR * {
+.gwbVnu * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`SkipLink mounts 3`] = `
 <div
-  class="StyledLayer-EylWz kvEpSi"
+  class="StyledLayer-EylWz AjbAS"
   id="skip-links"
   tabindex="-1"
 >
@@ -215,7 +215,7 @@ exports[`SkipLink mounts 4`] = `
 
 
 
-.kvEpSi {
+.AjbAS {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -232,12 +232,12 @@ exports[`SkipLink mounts 4`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.kvEpSi * {
+.AjbAS * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .kvEpSi {
+  .AjbAS {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -256,7 +256,7 @@ exports[`SkipLink mounts 5`] = `
       hidden=""
     >
       <div
-        class="StyledLayer-EylWz jSjwWR"
+        class="StyledLayer-EylWz gwbVnu"
         id="skip-links"
         tabindex="-1"
       >

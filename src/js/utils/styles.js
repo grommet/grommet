@@ -78,7 +78,8 @@ export const baseStyle = css`
   line-height: ${props => (
     parseMetricToNum(props.theme.global.lineHeight) / parseMetricToNum(props.theme.global.font.size)
   )};
-  color: ${props => props.theme.global.colors.text};
+  ${props => props.theme.global.colors.text &&
+    `color: ${props.theme.global.colors.text};`}
   ${props => props.theme.global.colors.background &&
     `background-color: ${props.theme.global.colors.background};`}
 

@@ -2,7 +2,7 @@
 
 exports[`Menu opens and closes on click 1`] = `
 <div
-  class="StyledDrop-czaYBK bGWOnw"
+  class="StyledDrop-czaYBK eZHhhX"
   tabindex="-1"
   id="menu-drop__test"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -129,7 +129,7 @@ exports[`Menu opens and closes on click 2`] = `
 
 
 
-.bGWOnw {
+.eZHhhX {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -157,7 +157,7 @@ exports[`Menu opens and closes on click 2`] = `
   animation-delay: 0.01s;
 }
 
-.bGWOnw * {
+.eZHhhX * {
   box-sizing: inherit;
 }"
 `;
