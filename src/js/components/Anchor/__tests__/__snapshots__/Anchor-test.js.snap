@@ -6,7 +6,6 @@ exports[`Anchor disabled renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -53,7 +52,6 @@ exports[`Anchor focus renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -115,7 +113,6 @@ exports[`Anchor icon label renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -327,7 +324,6 @@ exports[`Anchor icon label renders 1`] = `
                   "#915591",
                 ],
                 "active": "rgba(221,221,221,0.5)",
-                "background": "#FFFFFF",
                 "black": "#000000",
                 "border": "rgba(0, 0, 0, 0.15)",
                 "brand": "#865CD6",
@@ -691,7 +687,6 @@ exports[`Anchor primary renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -936,7 +931,6 @@ exports[`Anchor primary renders 1`] = `
                   "#915591",
                 ],
                 "active": "rgba(221,221,221,0.5)",
-                "background": "#FFFFFF",
                 "black": "#000000",
                 "border": "rgba(0, 0, 0, 0.15)",
                 "brand": "#865CD6",
@@ -1318,7 +1312,6 @@ exports[`Anchor renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1366,7 +1359,6 @@ exports[`Anchor renders with children 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1416,7 +1408,6 @@ exports[`Anchor reverse icon label renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1628,7 +1619,6 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "#915591",
                 ],
                 "active": "rgba(221,221,221,0.5)",
-                "background": "#FFFFFF",
                 "black": "#000000",
                 "border": "rgba(0, 0, 0, 0.15)",
                 "brand": "#865CD6",
@@ -1992,7 +1982,6 @@ exports[`Anchor warns about invalid icon render 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2192,7 +2181,6 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "#915591",
                 ],
                 "active": "rgba(221,221,221,0.5)",
-                "background": "#FFFFFF",
                 "black": "#000000",
                 "border": "rgba(0, 0, 0, 0.15)",
                 "brand": "#865CD6",
@@ -2550,7 +2538,6 @@ exports[`Anchor warns about invalid label render 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
