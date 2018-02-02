@@ -111,7 +111,7 @@ const plainStyle = css`
   border: none;
   padding: 0;
 
-  ${props => props.focus && plainFocusStyle}
+  ${props => props.focus && props.focusIndicator && plainFocusStyle}
 `;
 
 const StyledButton = styled.button`
@@ -152,7 +152,7 @@ const StyledButton = styled.button`
       `padding: ${props.theme.button.padding.vertical} ${props.theme.button.padding.horizontal};`
     )
   )}
-  ${props => props.focus && focusStyle}
+  ${props => props.focus && (!props.plain || props.focusIndicator) && focusStyle}
   ${lapAndUp(`
     transition: 0.1s ease-in-out;
   `)}

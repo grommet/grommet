@@ -24,6 +24,9 @@ export default (Select) => {
     dropSize: PropTypes.string.description(
       'Size of the options container inside the Select drop.'
     ),
+    focusIndicator: PropTypes.bool.description(
+      'Whether when \'plain\' it should receive a focus outline.'
+    ),
     onChange: PropTypes.func.description(
       'Function that will be called when the user selects an option.'
     ),

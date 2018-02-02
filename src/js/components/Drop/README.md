@@ -71,9 +71,7 @@ function
 
 **responsive**
 
-Whether to dynamically re-place when resized. Defaults to `{
-  "defaultProp": true
-}`.
+Whether to dynamically re-place when resized. Defaults to `true`.
 
 ```
 boolean

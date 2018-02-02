@@ -59,6 +59,14 @@ Size of the options container inside the Select drop.
 string
 ```
 
+**focusIndicator**
+
+Whether when 'plain' it should receive a focus outline.
+
+```
+boolean
+```
+
 **onChange**
 
 Function that will be called when the user selects an option.

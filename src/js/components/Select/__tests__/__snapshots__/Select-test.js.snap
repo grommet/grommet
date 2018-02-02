@@ -112,6 +112,7 @@ exports[`Select closes drop on esc 3`] = `
     </div>
     <div
       class="StyledBox-YaZNy fnEUqy"
+      style="min-width: auto;"
       direction="column"
     >
       <svg
@@ -161,6 +162,7 @@ exports[`Select closes drop on esc 4`] = `
     </div>
     <div
       class="StyledBox-YaZNy fnEUqy"
+      style="min-width: auto;"
       direction="column"
     >
       <svg
@@ -210,6 +212,7 @@ exports[`Select mounts 1`] = `
     </div>
     <div
       class="StyledBox-YaZNy fnEUqy"
+      style="min-width: auto;"
       direction="column"
     >
       <svg
@@ -259,6 +262,7 @@ exports[`Select mounts 2`] = `
     </div>
     <div
       class="StyledBox-YaZNy fnEUqy"
+      style="min-width: auto;"
       direction="column"
     >
       <svg
@@ -438,6 +442,7 @@ exports[`Select mounts with complex options and children 1`] = `
     </div>
     <div
       class="StyledBox-YaZNy fnEUqy"
+      style="min-width: auto;"
       direction="column"
     >
       <svg
@@ -487,6 +492,7 @@ exports[`Select mounts with complex options and children 2`] = `
     </div>
     <div
       class="StyledBox-YaZNy fnEUqy"
+      style="min-width: auto;"
       direction="column"
     >
       <svg
