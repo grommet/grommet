@@ -10,6 +10,20 @@ import SelectContainer from './SelectContainer';
 import doc from './doc';
 
 class Select extends Component {
+  state = {}
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.value !== nextProps.value) {
+      this.closeDrop = true;
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.closeDrop) {
+      this.closeDrop = false;
+    }
+  }
+
   selectControl = () => {
     const { placeholder, plain, value, ...rest } = this.props;
     delete rest.children;
@@ -35,7 +49,11 @@ class Select extends Component {
         justify='between'
       >
         {content}
-        <Box margin={{ horizontal: 'small' }} flex={false}>
+        <Box
+          margin={{ horizontal: 'small' }}
+          flex={false}
+          style={{ minWidth: 'auto' }}
+        >
           <FormDown />
         </Box>
       </Box>
@@ -43,15 +61,22 @@ class Select extends Component {
   }
 
   render() {
-    const { a11yTitle, background, onClose, open, tabIndex, value } = this.props;
+    const {
+      a11yTitle, background, focusIndicator, onBlur, onClose, onFocus, open,
+      plain, tabIndex, value,
+    } = this.props;
     return (
       <DropButton
-        open={open}
+        open={open || this.closeDrop ? false : undefined}
         tabIndex={tabIndex}
         a11yTitle={`${a11yTitle}${typeof value === 'string' ? `, ${value}` : ''}`}
         background={background}
+        plain={plain}
+        focusIndicator={focusIndicator}
         control={this.selectControl()}
         onClose={onClose}
+        onFocus={onFocus}
+        onBlur={onBlur}
       >
         <SelectContainer {...this.props} />
       </DropButton>

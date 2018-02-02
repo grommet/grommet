@@ -30,15 +30,15 @@ export default (Drop) => {
       `Whether text should be rendered right to left or not. Defaults to
       inherit from the document context.`
     ),
-    restrictFocus: PropTypes.bool.description('Whether the drop should control focus.'),
+    restrictFocus: PropTypes.bool.description(
+      'Whether the drop should control focus.'
+    ),
     onClose: PropTypes.func.description(
       'Function that will be invoked when the user clicks outside the drop area.'
     ),
     responsive: PropTypes.bool
       .description('Whether to dynamically re-place when resized.')
-      .defaultValue({
-        defaultProp: true,
-      }),
+      .defaultValue(true),
     theme: PropTypes.object.description('Custom styles for Drop component.'),
   };
 

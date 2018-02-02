@@ -32,6 +32,9 @@ export default (Button) => {
     fill: PropTypes.bool.description(
       'Whether the button expands to fill all of the available width and height.'
     ),
+    focusIndicator: PropTypes.bool.description(
+      'Whether when \'plain\' it should receive a focus outline.'
+    ),
     hoverIndicator: PropTypes.oneOfType([
       PropTypes.oneOf(['background']),
       PropTypes.shape({

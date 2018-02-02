@@ -43,6 +43,14 @@ Whether the button expands to fill all of the available width and height.
 boolean
 ```
 
+**focusIndicator**
+
+Whether when 'plain' it should receive a focus outline.
+
+```
+boolean
+```
+
 **hoverIndicator**
 
 The hover indicator to apply when the user is mousing over the
