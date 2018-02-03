@@ -97,18 +97,6 @@ exports[`Calendar date renders 1`] = `
   flex-direction: row;
 }
 
-.c7 {
-  display: inline-block;
-}
-
-.c7:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c7 > * {
-  vertical-align: bottom;
-}
-
 .c6 {
   cursor: pointer;
   outline: none;
@@ -167,6 +155,33 @@ exports[`Calendar date renders 1`] = `
 .c16:hover {
   background-color: rgba(221,221,221,0.5);
   color: #000000;
+}
+
+.c7 {
+  display: inline-block;
+}
+
+.c7:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c7 > * {
+  vertical-align: bottom;
+}
+
+.c4 {
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c1 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
 }
 
 .c9 {
@@ -249,21 +264,6 @@ exports[`Calendar date renders 1`] = `
   height: 54.857142857142854px;
   background-color: #865CD6;
   color: rgba(255,255,255,0.85);
-}
-
-.c1 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
-}
-
-.c4 {
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 300;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 @media only screen and (min-width:700px) {
@@ -1677,18 +1677,6 @@ exports[`Calendar dates renders 1`] = `
   flex-direction: row;
 }
 
-.c7 {
-  display: inline-block;
-}
-
-.c7:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c7 > * {
-  vertical-align: bottom;
-}
-
 .c6 {
   cursor: pointer;
   outline: none;
@@ -1747,6 +1735,33 @@ exports[`Calendar dates renders 1`] = `
 .c18:hover {
   background-color: rgba(221,221,221,0.5);
   color: #000000;
+}
+
+.c7 {
+  display: inline-block;
+}
+
+.c7:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c7 > * {
+  vertical-align: bottom;
+}
+
+.c4 {
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c1 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
 }
 
 .c9 {
@@ -1848,21 +1863,6 @@ exports[`Calendar dates renders 1`] = `
   height: 54.857142857142854px;
   background-color: rgba(134,92,214,0.8);
   color: rgba(255,255,255,0.85);
-}
-
-.c1 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
-}
-
-.c4 {
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 300;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 @media only screen and (min-width:700px) {
@@ -3280,18 +3280,6 @@ exports[`Calendar disabled renders 1`] = `
   flex-direction: row;
 }
 
-.c7 {
-  display: inline-block;
-}
-
-.c7:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c7 > * {
-  vertical-align: bottom;
-}
-
 .c6 {
   cursor: pointer;
   outline: none;
@@ -3350,6 +3338,33 @@ exports[`Calendar disabled renders 1`] = `
 .c18:hover {
   background-color: rgba(221,221,221,0.5);
   color: #000000;
+}
+
+.c7 {
+  display: inline-block;
+}
+
+.c7:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c7 > * {
+  vertical-align: bottom;
+}
+
+.c4 {
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c1 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
 }
 
 .c9 {
@@ -3451,21 +3466,6 @@ exports[`Calendar disabled renders 1`] = `
   height: 54.857142857142854px;
   background-color: rgba(134,92,214,0.8);
   color: rgba(255,255,255,0.85);
-}
-
-.c1 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
-}
-
-.c4 {
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 300;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 @media only screen and (min-width:700px) {
@@ -4883,18 +4883,6 @@ exports[`Calendar renders 1`] = `
   flex-direction: row;
 }
 
-.c7 {
-  display: inline-block;
-}
-
-.c7:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c7 > * {
-  vertical-align: bottom;
-}
-
 .c6 {
   cursor: pointer;
   outline: none;
@@ -4953,6 +4941,33 @@ exports[`Calendar renders 1`] = `
 .c16:hover {
   background-color: rgba(221,221,221,0.5);
   color: #000000;
+}
+
+.c7 {
+  display: inline-block;
+}
+
+.c7:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c7 > * {
+  vertical-align: bottom;
+}
+
+.c4 {
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c1 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
 }
 
 .c9 {
@@ -5035,21 +5050,6 @@ exports[`Calendar renders 1`] = `
   height: 54.857142857142854px;
   background-color: #865CD6;
   color: rgba(255,255,255,0.85);
-}
-
-.c1 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
-}
-
-.c4 {
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 300;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 @media only screen and (min-width:700px) {
@@ -6497,18 +6497,6 @@ exports[`Calendar size renders 1`] = `
   flex-direction: row;
 }
 
-.c7 {
-  display: inline-block;
-}
-
-.c7:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c7 > * {
-  vertical-align: bottom;
-}
-
 .c6 {
   cursor: pointer;
   outline: none;
@@ -6567,6 +6555,63 @@ exports[`Calendar size renders 1`] = `
 .c16:hover {
   background-color: rgba(221,221,221,0.5);
   color: #000000;
+}
+
+.c7 {
+  display: inline-block;
+}
+
+.c7:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c7 > * {
+  vertical-align: bottom;
+}
+
+.c19 {
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c4 {
+  font-size: 18px;
+  line-height: 1.333;
+  max-width: 432px;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c25 {
+  font-size: 36px;
+  line-height: 1.23;
+  max-width: 864px;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c18 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c1 {
+  font-size: 16px;
+  line-height: 1.375;
+  width: 192px;
+}
+
+.c24 {
+  font-size: 36px;
+  line-height: 1.11;
+  width: 768px;
 }
 
 .c20 {
@@ -6767,51 +6812,6 @@ exports[`Calendar size renders 1`] = `
   height: 109.71428571428571px;
   background-color: #865CD6;
   color: rgba(255,255,255,0.85);
-}
-
-.c18 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
-}
-
-.c1 {
-  font-size: 16px;
-  line-height: 1.375;
-  width: 192px;
-}
-
-.c24 {
-  font-size: 36px;
-  line-height: 1.11;
-  width: 768px;
-}
-
-.c19 {
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 300;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c4 {
-  font-size: 18px;
-  line-height: 1.333;
-  max-width: 432px;
-  font-weight: 300;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c25 {
-  font-size: 36px;
-  line-height: 1.23;
-  max-width: 864px;
-  font-weight: 300;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 @media only screen and (min-width:700px) {

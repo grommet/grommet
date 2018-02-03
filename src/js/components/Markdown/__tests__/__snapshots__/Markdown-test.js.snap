@@ -17,12 +17,6 @@ exports[`Markdown renders 1`] = `
   box-sizing: inherit;
 }
 
-.c2 {
-  font-size: 16px;
-  line-height: 1.375;
-  max-width: 384px;
-}
-
 .c1 {
   font-size: 48px;
   line-height: 1.125;
@@ -49,6 +43,12 @@ exports[`Markdown renders 1`] = `
   line-height: 1.333;
   max-width: 432px;
   font-weight: 300;
+}
+
+.c2 {
+  font-size: 16px;
+  line-height: 1.375;
+  max-width: 384px;
 }
 
 <div

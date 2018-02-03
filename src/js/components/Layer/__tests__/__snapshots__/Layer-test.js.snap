@@ -2,12 +2,12 @@
 
 exports[`Layer aligns bottom 1`] = `
 <div
-  class="StyledLayer-EylWz AjbAS"
+  class="StyledLayer-ceZzeh eJxHlH"
   id="bottom-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-iKmEpv ilWCsF"
+    class="StyledLayer__StyledContainer-gBGbkw idryWu"
   >
     This is a layer
   </div>
@@ -15,15 +15,48 @@ exports[`Layer aligns bottom 1`] = `
 `;
 
 exports[`Layer aligns bottom 2`] = `
-"@media only screen and (max-width:699px) {
-  .cuhhFF {
+"
+
+.eJxHlH {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.eJxHlH * {
+  box-sizing: inherit;
+}
+
+@media only screen and (min-width:700px) {
+  .eJxHlH {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .bmPnUS {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cuhhFF {
+  .bmPnUS {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -58,14 +91,14 @@ exports[`Layer aligns bottom 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jvBdNm {
+  .iRwnXx {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jvBdNm {
+  .iRwnXx {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -100,14 +133,14 @@ exports[`Layer aligns bottom 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hUdiMG {
+  .fkperw {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hUdiMG {
+  .fkperw {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -143,14 +176,14 @@ exports[`Layer aligns bottom 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ilWCsF {
+  .idryWu {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ilWCsF {
+  .idryWu {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -184,50 +217,17 @@ exports[`Layer aligns bottom 2`] = `
       margin-bottom: 0px;
     }
 }
-}
-
-
-
-.AjbAS {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-  z-index: 10;
-  height: 100vh;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.AjbAS * {
-  box-sizing: inherit;
-}
-
-@media only screen and (min-width:700px) {
-  .AjbAS {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-  }
 }"
 `;
 
 exports[`Layer aligns left 1`] = `
 <div
-  class="StyledLayer-EylWz AjbAS"
+  class="StyledLayer-ceZzeh eJxHlH"
   id="left-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-iKmEpv cuhhFF"
+    class="StyledLayer__StyledContainer-gBGbkw bmPnUS"
   >
     This is a layer
   </div>
@@ -235,15 +235,48 @@ exports[`Layer aligns left 1`] = `
 `;
 
 exports[`Layer aligns left 2`] = `
-"@media only screen and (max-width:699px) {
-  .cuhhFF {
+"
+
+.eJxHlH {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.eJxHlH * {
+  box-sizing: inherit;
+}
+
+@media only screen and (min-width:700px) {
+  .eJxHlH {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .bmPnUS {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cuhhFF {
+  .bmPnUS {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -275,50 +308,17 @@ exports[`Layer aligns left 2`] = `
       left: 0px;
     }
 }
-}
-
-
-
-.AjbAS {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-  z-index: 10;
-  height: 100vh;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.AjbAS * {
-  box-sizing: inherit;
-}
-
-@media only screen and (min-width:700px) {
-  .AjbAS {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-  }
 }"
 `;
 
 exports[`Layer aligns right 1`] = `
 <div
-  class="StyledLayer-EylWz AjbAS"
+  class="StyledLayer-ceZzeh eJxHlH"
   id="right-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-iKmEpv jvBdNm"
+    class="StyledLayer__StyledContainer-gBGbkw iRwnXx"
   >
     This is a layer
   </div>
@@ -326,15 +326,48 @@ exports[`Layer aligns right 1`] = `
 `;
 
 exports[`Layer aligns right 2`] = `
-"@media only screen and (max-width:699px) {
-  .cuhhFF {
+"
+
+.eJxHlH {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.eJxHlH * {
+  box-sizing: inherit;
+}
+
+@media only screen and (min-width:700px) {
+  .eJxHlH {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .bmPnUS {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cuhhFF {
+  .bmPnUS {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -369,14 +402,14 @@ exports[`Layer aligns right 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jvBdNm {
+  .iRwnXx {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jvBdNm {
+  .iRwnXx {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -408,50 +441,17 @@ exports[`Layer aligns right 2`] = `
       right: 0px;
     }
 }
-}
-
-
-
-.AjbAS {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-  z-index: 10;
-  height: 100vh;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.AjbAS * {
-  box-sizing: inherit;
-}
-
-@media only screen and (min-width:700px) {
-  .AjbAS {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-  }
 }"
 `;
 
 exports[`Layer aligns top 1`] = `
 <div
-  class="StyledLayer-EylWz AjbAS"
+  class="StyledLayer-ceZzeh eJxHlH"
   id="top-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-iKmEpv hUdiMG"
+    class="StyledLayer__StyledContainer-gBGbkw fkperw"
   >
     This is a layer
   </div>
@@ -459,15 +459,48 @@ exports[`Layer aligns top 1`] = `
 `;
 
 exports[`Layer aligns top 2`] = `
-"@media only screen and (max-width:699px) {
-  .cuhhFF {
+"
+
+.eJxHlH {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.eJxHlH * {
+  box-sizing: inherit;
+}
+
+@media only screen and (min-width:700px) {
+  .eJxHlH {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .bmPnUS {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cuhhFF {
+  .bmPnUS {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -502,14 +535,14 @@ exports[`Layer aligns top 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jvBdNm {
+  .iRwnXx {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jvBdNm {
+  .iRwnXx {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -544,14 +577,14 @@ exports[`Layer aligns top 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hUdiMG {
+  .fkperw {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hUdiMG {
+  .fkperw {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -584,50 +617,17 @@ exports[`Layer aligns top 2`] = `
       top: 0px;
     }
 }
-}
-
-
-
-.AjbAS {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-  z-index: 10;
-  height: 100vh;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.AjbAS * {
-  box-sizing: inherit;
-}
-
-@media only screen and (min-width:700px) {
-  .AjbAS {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-  }
 }"
 `;
 
 exports[`Layer hides 1`] = `
 <div
-  class="StyledLayer-EylWz gwbVnu"
+  class="StyledLayer-ceZzeh befYaj"
   id="hidden-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-iKmEpv duLPUq"
+    class="StyledLayer__StyledContainer-gBGbkw emuypU"
   >
     This is a layer
   </div>
@@ -635,15 +635,52 @@ exports[`Layer hides 1`] = `
 `;
 
 exports[`Layer hides 2`] = `
-"@media only screen and (max-width:699px) {
-  .cuhhFF {
+"
+
+@media only screen and (min-width:700px) {
+  .eJxHlH {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+.befYaj {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  left: -100%;
+  right: 100%;
+  z-index: -1;
+  position: fixed;
+}
+
+.befYaj * {
+  box-sizing: inherit;
+}
+
+@media only screen and (max-width:699px) {
+  .bmPnUS {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cuhhFF {
+  .bmPnUS {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -678,14 +715,14 @@ exports[`Layer hides 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jvBdNm {
+  .iRwnXx {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jvBdNm {
+  .iRwnXx {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -720,14 +757,14 @@ exports[`Layer hides 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hUdiMG {
+  .fkperw {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hUdiMG {
+  .fkperw {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -763,14 +800,14 @@ exports[`Layer hides 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ilWCsF {
+  .idryWu {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ilWCsF {
+  .idryWu {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -807,68 +844,31 @@ exports[`Layer hides 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .duLPUq {
+  .emuypU {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .duLPUq {
+  .emuypU {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
     overflow: auto;
     border-radius: 4px;
   }
-}
-
-
-
-@media only screen and (min-width:700px) {
-  .AjbAS {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-  }
-}
-
-.gwbVnu {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-  z-index: 10;
-  height: 100vh;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-  left: -100%;
-  right: 100%;
-  z-index: -1;
-  position: fixed;
-}
-
-.gwbVnu * {
-  box-sizing: inherit;
 }"
 `;
 
 exports[`Layer hides 3`] = `
 <div
-  class="StyledLayer-EylWz gwbVnu"
+  class="StyledLayer-ceZzeh befYaj"
   id="hidden-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-iKmEpv duLPUq"
+    class="StyledLayer__StyledContainer-gBGbkw emuypU"
   >
     This is a layer
   </div>
@@ -876,15 +876,52 @@ exports[`Layer hides 3`] = `
 `;
 
 exports[`Layer hides 4`] = `
-"@media only screen and (max-width:699px) {
-  .cuhhFF {
+"
+
+@media only screen and (min-width:700px) {
+  .eJxHlH {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+.befYaj {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  left: -100%;
+  right: 100%;
+  z-index: -1;
+  position: fixed;
+}
+
+.befYaj * {
+  box-sizing: inherit;
+}
+
+@media only screen and (max-width:699px) {
+  .bmPnUS {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cuhhFF {
+  .bmPnUS {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -919,14 +956,14 @@ exports[`Layer hides 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jvBdNm {
+  .iRwnXx {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jvBdNm {
+  .iRwnXx {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -961,14 +998,14 @@ exports[`Layer hides 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hUdiMG {
+  .fkperw {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hUdiMG {
+  .fkperw {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1004,14 +1041,14 @@ exports[`Layer hides 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ilWCsF {
+  .idryWu {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ilWCsF {
+  .idryWu {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1048,57 +1085,20 @@ exports[`Layer hides 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .duLPUq {
+  .emuypU {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .duLPUq {
+  .emuypU {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
     overflow: auto;
     border-radius: 4px;
   }
-}
-
-
-
-@media only screen and (min-width:700px) {
-  .AjbAS {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-  }
-}
-
-.gwbVnu {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-  z-index: 10;
-  height: 100vh;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-  left: -100%;
-  right: 100%;
-  z-index: -1;
-  position: fixed;
-}
-
-.gwbVnu * {
-  box-sizing: inherit;
 }"
 `;
 
@@ -1138,12 +1138,12 @@ exports[`Layer is accessible 3`] = `
 
 exports[`Layer plain renders 1`] = `
 <div
-  class="StyledLayer-EylWz jOZKic"
+  class="StyledLayer-ceZzeh jxhLXK"
   id="plain-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-iKmEpv eNADdO"
+    class="StyledLayer__StyledContainer-gBGbkw jDkaaP"
   >
     This is a plain layer
   </div>
@@ -1151,15 +1151,58 @@ exports[`Layer plain renders 1`] = `
 `;
 
 exports[`Layer plain renders 2`] = `
-"@media only screen and (max-width:699px) {
-  .cuhhFF {
+"
+
+@media only screen and (min-width:700px) {
+  .eJxHlH {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+.jxhLXK {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  overflow: auto;
+  background-color: transparent;
+}
+
+.jxhLXK * {
+  box-sizing: inherit;
+}
+
+@media only screen and (min-width:700px) {
+  .jxhLXK {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .bmPnUS {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .cuhhFF {
+  .bmPnUS {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1194,14 +1237,14 @@ exports[`Layer plain renders 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jvBdNm {
+  .iRwnXx {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jvBdNm {
+  .iRwnXx {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1236,14 +1279,14 @@ exports[`Layer plain renders 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hUdiMG {
+  .fkperw {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hUdiMG {
+  .fkperw {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1279,14 +1322,14 @@ exports[`Layer plain renders 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ilWCsF {
+  .idryWu {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ilWCsF {
+  .idryWu {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1323,14 +1366,14 @@ exports[`Layer plain renders 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .duLPUq {
+  .emuypU {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .duLPUq {
+  .emuypU {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1340,14 +1383,14 @@ exports[`Layer plain renders 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .eNADdO {
+  .jDkaaP {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .eNADdO {
+  .jDkaaP {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1386,48 +1429,5 @@ exports[`Layer plain renders 2`] = `
       transform: translate(50%,50%) scale(1);
     }
 }
-}
-
-
-
-@media only screen and (min-width:700px) {
-  .AjbAS {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-  }
-}
-
-.jOZKic {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-  z-index: 10;
-  height: 100vh;
-  overflow: auto;
-  background-color: transparent;
-}
-
-.jOZKic * {
-  box-sizing: inherit;
-}
-
-@media only screen and (min-width:700px) {
-  .jOZKic {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-  }
 }"
 `;

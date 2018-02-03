@@ -124,15 +124,6 @@ exports[`Anchor icon label renders 1`] = `
   box-sizing: inherit;
 }
 
-.c2 {
-  display: inline-block;
-  margin-right: 12px;
-}
-
-.c2 > * {
-  vertical-align: bottom;
-}
-
 .c1 {
   color: #865CD6;
   text-decoration: none;
@@ -146,6 +137,15 @@ exports[`Anchor icon label renders 1`] = `
 
 .c1:hover {
   text-decoration: underline;
+}
+
+.c2 {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.c2 > * {
+  vertical-align: bottom;
 }
 
 <div
@@ -732,15 +732,6 @@ exports[`Anchor primary renders 1`] = `
   stroke: none;
 }
 
-.c2 {
-  display: inline-block;
-  margin-right: 12px;
-}
-
-.c2 > * {
-  vertical-align: bottom;
-}
-
 .c1 {
   color: #865CD6;
   text-decoration: none;
@@ -753,6 +744,15 @@ exports[`Anchor primary renders 1`] = `
 
 .c1:hover {
   text-decoration: underline;
+}
+
+.c2 {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.c2 > * {
+  vertical-align: bottom;
 }
 
 <div
@@ -1419,15 +1419,6 @@ exports[`Anchor reverse icon label renders 1`] = `
   box-sizing: inherit;
 }
 
-.c2 {
-  display: inline-block;
-  margin-left: 12px;
-}
-
-.c2 > * {
-  vertical-align: bottom;
-}
-
 .c1 {
   color: #865CD6;
   text-decoration: none;
@@ -1441,6 +1432,15 @@ exports[`Anchor reverse icon label renders 1`] = `
 
 .c1:hover {
   text-decoration: underline;
+}
+
+.c2 {
+  display: inline-block;
+  margin-left: 12px;
+}
+
+.c2 > * {
+  vertical-align: bottom;
 }
 
 <div
