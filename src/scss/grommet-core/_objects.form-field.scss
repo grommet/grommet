@@ -134,6 +134,10 @@ $colored-select-drop-caret: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB
     }
   }
 
+  > .#{$grommet-namespace}select:not(.#{$grommet-namespace}select--inline) .#{$grommet-namespace}select__value {
+    border: none;
+  }
+
   > input:not([type]),
   > input[type=text],
   > input[type=range],

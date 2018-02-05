@@ -366,16 +366,17 @@ export default class Select extends Component {
     if (options) {
       items = options.map((option, index) => {
         const selected = this._optionSelected(option, value);
+        let content = this._renderLabel(option);
         let classes = classnames(
           {
             [`${CLASS_ROOT}__option`]: true,
+            [`${CLASS_ROOT}__option--element`]: React.isValidElement(content),
             [`${CLASS_ROOT}__option--selected`]: selected,
             [`${CLASS_ROOT}__option--active`]:
               index === activeOptionIndex
           }
         );
 
-        let content = this._renderLabel(option);
         if (option && option.icon) {
           content = (
             <span>{option.icon} {content}</span>
@@ -447,8 +448,12 @@ export default class Select extends Component {
 
       return (
         <div className={classes} onClick={this._onAddDrop}>
-          {shouldRenderElement ?
-            <div ref={ref => this.valueRef = ref}>{renderedValue}</div> : null}
+          {shouldRenderElement ? (
+            <div ref={ref => this.valueRef = ref}
+              className={`${CLASS_ROOT}__value`}>
+              {renderedValue}
+            </div>
+          ) : null}
           <input {...restProps} ref={ref => this.inputRef = ref}
             type={shouldRenderElement ? 'hidden' : 'text'}
             className={`${INPUT} ${CLASS_ROOT}__input`}

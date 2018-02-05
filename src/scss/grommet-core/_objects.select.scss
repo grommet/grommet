@@ -37,6 +37,13 @@
   display: none;
 }
 
+.#{$grommet-namespace}select__value {
+  // leave room for control
+  padding: quarter($inuit-base-spacing-unit) double($inuit-base-spacing-unit) quarter($inuit-base-spacing-unit) 0;
+  border: $input-border-width solid $border-color;
+  border-radius: $border-radius;
+}
+
 .#{$grommet-namespace}select__control {
   position: absolute;
   top: 50%;
@@ -73,6 +80,11 @@
     @include text();
     color: $text-color;
     padding: quarter($inuit-base-spacing-unit) $inuit-base-spacing-unit;
+
+    &.#{$grommet-namespace}select__option--element {
+      padding: quarter($inuit-base-spacing-unit) 0;
+    }
+
 
     &:hover,
     &--active {
