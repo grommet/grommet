@@ -125,6 +125,7 @@ var ToastContents = function (_Component) {
 
       // removing context props to avoid invalid html attributes on prop transfer
 
+      delete rest.duration;
       delete rest.history;
       delete rest.intl;
       delete rest.router;
