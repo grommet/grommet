@@ -11,6 +11,7 @@ jest.mock('react-dom');
 
 describe('Toast', () => {
   it('has correct default options', () => {
+    document.body.innerHTML = '<div></div>';
     const component = renderer.create(
       <Toast>
         <span>
