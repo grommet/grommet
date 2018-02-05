@@ -92,7 +92,7 @@ export default class Select extends Component {
 
       if (! inline) {
         // If this is inside a FormField, place the drop in reference to it.
-        const control = this.inputRef;
+        const control = this.valueRef || this.inputRef;
         this._drop = new Drop(control,
           this._renderOptions(`${CLASS_ROOT}__drop`), {
             align: { top: 'bottom', left: 'left' },
@@ -447,12 +447,13 @@ export default class Select extends Component {
 
       return (
         <div className={classes} onClick={this._onAddDrop}>
-          {shouldRenderElement && renderedValue}
+          {shouldRenderElement ?
+            <div ref={ref => this.valueRef = ref}>{renderedValue}</div> : null}
           <input {...restProps} ref={ref => this.inputRef = ref}
             type={shouldRenderElement ? 'hidden' : 'text'}
             className={`${INPUT} ${CLASS_ROOT}__input`}
             placeholder={placeHolder} readOnly={true}
-            value={renderedValue || ''} />
+            value={(!shouldRenderElement && renderedValue) || ''} />
           <Button className={`${CLASS_ROOT}__control`}
             a11yTitle={Intl.getMessage(intl, 'Select Icon')}
             icon={<CaretDownIcon />}
