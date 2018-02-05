@@ -161,7 +161,7 @@ var Select = function (_Component) {
 
         if (!inline) {
           // If this is inside a FormField, place the drop in reference to it.
-          var control = this.inputRef;
+          var control = this.valueRef || this.inputRef;
           this._drop = new _Drop2.default(control, this._renderOptions(CLASS_ROOT + '__drop'), {
             align: { top: 'bottom', left: 'left' },
             context: this.context,
@@ -477,9 +477,9 @@ var Select = function (_Component) {
           var _classnames;
 
           var selected = _this4._optionSelected(option, value);
-          var classes = (0, _classnames4.default)((_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '__option', true), _defineProperty(_classnames, CLASS_ROOT + '__option--selected', selected), _defineProperty(_classnames, CLASS_ROOT + '__option--active', index === activeOptionIndex), _classnames));
-
           var content = _this4._renderLabel(option);
+          var classes = (0, _classnames4.default)((_classnames = {}, _defineProperty(_classnames, CLASS_ROOT + '__option', true), _defineProperty(_classnames, CLASS_ROOT + '__option--element', _react2.default.isValidElement(content)), _defineProperty(_classnames, CLASS_ROOT + '__option--selected', selected), _defineProperty(_classnames, CLASS_ROOT + '__option--active', index === activeOptionIndex), _classnames));
+
           if (option && option.icon) {
             content = _react2.default.createElement(
               'span',
@@ -558,14 +558,21 @@ var Select = function (_Component) {
         return _react2.default.createElement(
           'div',
           { className: classes, onClick: this._onAddDrop },
-          shouldRenderElement && renderedValue,
-          _react2.default.createElement('input', _extends({}, restProps, { ref: function ref(_ref2) {
-              return _this5.inputRef = _ref2;
+          shouldRenderElement ? _react2.default.createElement(
+            'div',
+            { ref: function ref(_ref2) {
+                return _this5.valueRef = _ref2;
+              },
+              className: CLASS_ROOT + '__value' },
+            renderedValue
+          ) : null,
+          _react2.default.createElement('input', _extends({}, restProps, { ref: function ref(_ref3) {
+              return _this5.inputRef = _ref3;
             },
             type: shouldRenderElement ? 'hidden' : 'text',
             className: INPUT + ' ' + CLASS_ROOT + '__input',
             placeholder: placeHolder, readOnly: true,
-            value: renderedValue || '' })),
+            value: !shouldRenderElement && renderedValue || '' })),
           _react2.default.createElement(_Button2.default, { className: CLASS_ROOT + '__control',
             a11yTitle: _Intl2.default.getMessage(intl, 'Select Icon'),
             icon: _react2.default.createElement(_CaretDown2.default, null),
