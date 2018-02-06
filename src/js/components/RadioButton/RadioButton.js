@@ -34,7 +34,7 @@ class RadioButton extends Component {
             tabIndex='0'
             id={id}
             name={name}
-            type='checkbox'
+            type='radio'
             disabled={disabled}
             checked={checked}
             onChange={onChange}

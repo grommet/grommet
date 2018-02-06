@@ -128,7 +128,7 @@ exports[`RadioButton checked renders 1`] = `
         name={undefined}
         onChange={undefined}
         tabIndex="0"
-        type="checkbox"
+        type="radio"
       />
       <div
         className="c3"
@@ -277,7 +277,7 @@ exports[`RadioButton disabled renders 1`] = `
         name={undefined}
         onChange={undefined}
         tabIndex="0"
-        type="checkbox"
+        type="radio"
       />
       <div
         className="c3"
@@ -310,7 +310,7 @@ exports[`RadioButton disabled renders 1`] = `
         name={undefined}
         onChange={undefined}
         tabIndex="0"
-        type="checkbox"
+        type="radio"
       />
       <div
         className="c3"
@@ -459,7 +459,7 @@ exports[`RadioButton label renders 1`] = `
         name={undefined}
         onChange={undefined}
         tabIndex="0"
-        type="checkbox"
+        type="radio"
       />
       <div
         className="c3"
@@ -495,7 +495,7 @@ exports[`RadioButton label renders 1`] = `
         name={undefined}
         onChange={undefined}
         tabIndex="0"
-        type="checkbox"
+        type="radio"
       />
       <div
         className="c3"
@@ -647,7 +647,7 @@ exports[`RadioButton renders 1`] = `
         name={undefined}
         onChange={undefined}
         tabIndex="0"
-        type="checkbox"
+        type="radio"
       />
       <div
         className="c3"
@@ -680,7 +680,7 @@ exports[`RadioButton renders 1`] = `
         name="test name"
         onChange={undefined}
         tabIndex="0"
-        type="checkbox"
+        type="radio"
       />
       <div
         className="c3"
