@@ -175,9 +175,9 @@ class MenuDrop extends Component {
 
     // do not show the control if menu doesn't overlap with it when expanded
     const showControl =
-        ('top' === dropAlign.top || 'bottom' === dropAlign.bottom) && 
+        ('top' === dropAlign.top || 'bottom' === dropAlign.bottom) &&
         ('left' === dropAlign.left || 'right' === dropAlign.right);
-    
+
     if(showControl) {
       contents.unshift(
                   React.cloneElement(control, {key: 'control', fill: true}));
@@ -330,6 +330,7 @@ export default class Menu extends Component {
               {
                 align: this.props.dropAlign,
                 colorIndex: this.props.dropColorIndex,
+                className: this.props.className,
                 focusControl: true
               });
           }
