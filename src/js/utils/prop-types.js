@@ -11,6 +11,6 @@ export const backgroundPropType = PropTypes.oneOfType([
       PropTypes.bool,
     ]),
   }),
-]).description('Background color when drop is active');
+]).description('Background color');
 
 export default { a11yTitlePropType, backgroundPropType };

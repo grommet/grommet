@@ -9,7 +9,7 @@ import doc from './doc';
 
 class Meter extends Component {
   static defaultProps = {
-    background: 'light-1',
+    background: { color: 'light-1', opacity: 'medium' },
     size: 'medium',
     thickness: 'medium',
     type: 'bar',

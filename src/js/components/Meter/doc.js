@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { getAvailableAtBadge } from '../../utils';
+import { backgroundPropType, getAvailableAtBadge } from '../../utils';
 
 export default (Meter) => {
   const DocumentedMeter = describe(Meter)
@@ -12,10 +12,7 @@ export default (Meter) => {
     );
 
   DocumentedMeter.propTypes = {
-    background: PropTypes.string.description(
-      `A color identifier to use for the background color. For example:
-      'light-1'.`
-    ),
+    background: backgroundPropType,
     round: PropTypes.bool.description('Whether to round the line ends'),
     size: PropTypes.oneOf(
       ['xsmall', 'small', 'medium', 'large', 'xlarge', 'full']
