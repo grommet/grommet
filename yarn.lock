@@ -2966,9 +2966,9 @@ grommet-cli@5.1.0:
     webpack-dev-server "^2.6.1"
     yargs "^8.0.2"
 
-grommet-icons@^0.10.0:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-0.10.1.tgz#495ac86b8b1d96792d21189b572c4168ddbd049a"
+grommet-icons@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-0.15.0.tgz#bbcb7500437a419ad725d23a2c9609208914943d"
   dependencies:
     deep-assign "^2.0.0"
 
@@ -3840,9 +3840,9 @@ jest-snapshot@^20.0.3:
     natural-compare "^1.4.0"
     pretty-format "^20.0.3"
 
-jest-styled-components@^4.0.3:
-  version "4.9.0"
-  resolved "https://registry.yarnpkg.com/jest-styled-components/-/jest-styled-components-4.9.0.tgz#459ccb37d0f5720007c8dba358bfff93c8cf4aed"
+jest-styled-components@^4.10.0:
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/jest-styled-components/-/jest-styled-components-4.10.0.tgz#6fcd83208fefc4ceb87b79b55d44697a05d226a8"
   dependencies:
     css "^2.2.1"
 

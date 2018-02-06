@@ -140,6 +140,7 @@ string
   color: string,
   dark: boolean,
   image: string,
+  position: string,
   opacity: 
     weak
     medium

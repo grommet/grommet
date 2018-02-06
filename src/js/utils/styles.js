@@ -21,6 +21,7 @@ export const backgroundStyle = (background, theme) => {
       }
       return css`
         background: ${background.image} no-repeat center center;
+        background-position: ${background.position || 'center center'};
         background-size: cover;
         color: ${color};
       `;
