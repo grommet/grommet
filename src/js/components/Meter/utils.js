@@ -1,6 +1,5 @@
 import { colorForName } from '../../utils';
 
-/* eslint-disable import/prefer-default-export */
 export const backgroundProps = (background, theme) => {
   const result = {};
   if (background) {
@@ -16,3 +15,5 @@ export const backgroundProps = (background, theme) => {
   }
   return result;
 };
+
+export default { backgroundProps };
