@@ -1111,6 +1111,7 @@ exports[`Video controls renders 1`] = `
                   fill="none"
                   stroke="#F6F6F6"
                   strokeLinecap="square"
+                  strokeOpacity="0.4"
                   strokeWidth={12}
                 />
               </svg>

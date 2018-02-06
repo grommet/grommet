@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { arcCommands, colorForName, parseMetricToNum, translateEndAngle } from '../../utils';
 
 import StyledMeter from './StyledMeter';
+import { backgroundProps } from './utils';
 
 export default class Circle extends Component {
   render() {
@@ -110,7 +111,7 @@ export default class Circle extends Component {
           cx={mid}
           cy={mid}
           r={radius}
-          stroke={colorForName(background, theme)}
+          {...backgroundProps(background, theme)}
           strokeWidth={height}
           strokeLinecap={round ? 'round' : 'square'}
           fill='none'

@@ -1,4 +1,4 @@
-import React, { cloneElement, Component } from 'react';
+import React, { Children, cloneElement, Component } from 'react';
 import { compose } from 'recompose';
 
 import { withTheme } from '../hocs';
@@ -19,7 +19,7 @@ class Stack extends Component {
     } else if (guidingIndex === 'last') {
       guidingIndex = lastIndex;
     }
-    const styledChildren = React.Children.map(children, (child, index) => {
+    const styledChildren = Children.map(children, (child, index) => {
       if (child) {
         if (index === guidingIndex) {
           const style = {

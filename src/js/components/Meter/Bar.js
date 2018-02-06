@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { colorForName, parseMetricToNum } from '../../utils';
 
 import StyledMeter from './StyledMeter';
+import { backgroundProps } from './utils';
 
 export default class Bar extends Component {
   static defaultProps = {
@@ -64,7 +65,7 @@ export default class Bar extends Component {
         <path
           d={`M ${capOffset},${mid} L ${width - capOffset},${mid}`}
           fill='none'
-          stroke={colorForName(background, theme)}
+          {...backgroundProps(background, theme)}
           strokeWidth={height}
           strokeLinecap={round ? 'round' : 'square'}
         />
