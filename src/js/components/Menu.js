@@ -330,8 +330,8 @@ export default class Menu extends Component {
               {
                 align: this.props.dropAlign,
                 colorIndex: this.props.dropColorIndex,
-                className: this.props.className ?
-                  `${this.props.className}__drop--container` : null,
+                className: this.props.className &&
+                `${this.props.className}__drop--container`,
                 focusControl: true
               });
           }
