@@ -703,7 +703,7 @@ exports[`Box background renders 1`] = `
   display: flex;
   max-width: 100%;
   background-color: #865CD6;
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -731,7 +731,7 @@ exports[`Box background renders 1`] = `
   display: flex;
   max-width: 100%;
   background-color: #0A64A0;
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -759,7 +759,7 @@ exports[`Box background renders 1`] = `
   display: flex;
   max-width: 100%;
   background-color: #333333;
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -773,7 +773,7 @@ exports[`Box background renders 1`] = `
   display: flex;
   max-width: 100%;
   background-color: #FF324D;
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -819,7 +819,7 @@ exports[`Box background renders 1`] = `
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==) no-repeat center center;
   background-position: center center;
   background-size: cover;
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;

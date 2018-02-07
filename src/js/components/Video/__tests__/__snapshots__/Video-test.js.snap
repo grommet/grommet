@@ -62,7 +62,7 @@ exports[`Video autoPlay renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: rgba(68,68,68,0.8);
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -562,7 +562,7 @@ exports[`Video controls renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: rgba(68,68,68,0.8);
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -1260,7 +1260,7 @@ exports[`Video fit renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: rgba(68,68,68,0.8);
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -1948,7 +1948,7 @@ exports[`Video loop renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: rgba(68,68,68,0.8);
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2416,7 +2416,7 @@ exports[`Video mute renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: rgba(68,68,68,0.8);
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2884,7 +2884,7 @@ exports[`Video renders 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: rgba(68,68,68,0.8);
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;

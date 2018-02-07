@@ -1002,7 +1002,7 @@ exports[`Button primary renders 1`] = `
   max-width: 384px;
   font-weight: 600;
   background-color: #865CD6;
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
   border: none;
   border-radius: 5px;
   font-size: 1.1875rem;

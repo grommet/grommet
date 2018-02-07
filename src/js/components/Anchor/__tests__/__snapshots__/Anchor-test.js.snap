@@ -336,7 +336,7 @@ exports[`Anchor icon label renders 1`] = `
                   "#999999",
                 ],
                 "darkBackground": Object {
-                  "text": "rgba(255, 255, 255, 0.85)",
+                  "text": "#FFFFFF",
                 },
                 "light": Array [
                   "#F6F6F6",
@@ -943,7 +943,7 @@ exports[`Anchor primary renders 1`] = `
                   "#999999",
                 ],
                 "darkBackground": Object {
-                  "text": "rgba(255, 255, 255, 0.85)",
+                  "text": "#FFFFFF",
                 },
                 "light": Array [
                   "#F6F6F6",
@@ -1631,7 +1631,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "#999999",
                 ],
                 "darkBackground": Object {
-                  "text": "rgba(255, 255, 255, 0.85)",
+                  "text": "#FFFFFF",
                 },
                 "light": Array [
                   "#F6F6F6",
@@ -2193,7 +2193,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "#999999",
                 ],
                 "darkBackground": Object {
-                  "text": "rgba(255, 255, 255, 0.85)",
+                  "text": "#FFFFFF",
                 },
                 "light": Array [
                   "#F6F6F6",
