@@ -54,6 +54,7 @@ the column axis when contained in a Grid.`
         color: PropTypes.string,
         dark: PropTypes.bool,
         image: PropTypes.string,
+        position: PropTypes.string,
         opacity: PropTypes.oneOfType([
           PropTypes.oneOf(['weak', 'medium', 'strong']),
           PropTypes.bool,
