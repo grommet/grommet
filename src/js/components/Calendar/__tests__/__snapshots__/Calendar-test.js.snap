@@ -263,7 +263,7 @@ exports[`Calendar date renders 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #865CD6;
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
 }
 
 @media only screen and (min-width:700px) {
@@ -1843,7 +1843,7 @@ exports[`Calendar dates renders 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #865CD6;
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
 }
 
 .c17 {
@@ -1862,7 +1862,7 @@ exports[`Calendar dates renders 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(134,92,214,0.8);
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
 }
 
 @media only screen and (min-width:700px) {
@@ -3446,7 +3446,7 @@ exports[`Calendar disabled renders 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #865CD6;
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
 }
 
 .c17 {
@@ -3465,7 +3465,7 @@ exports[`Calendar disabled renders 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: rgba(134,92,214,0.8);
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
 }
 
 @media only screen and (min-width:700px) {
@@ -5049,7 +5049,7 @@ exports[`Calendar renders 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #865CD6;
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
 }
 
 @media only screen and (min-width:700px) {
@@ -6703,7 +6703,7 @@ exports[`Calendar size renders 1`] = `
   width: 54.857142857142854px;
   height: 54.857142857142854px;
   background-color: #865CD6;
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
 }
 
 .c14 {
@@ -6757,7 +6757,7 @@ exports[`Calendar size renders 1`] = `
   width: 27.428571428571427px;
   height: 27.428571428571427px;
   background-color: #865CD6;
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
 }
 
 .c28 {
@@ -6811,7 +6811,7 @@ exports[`Calendar size renders 1`] = `
   width: 109.71428571428571px;
   height: 109.71428571428571px;
   background-color: #865CD6;
-  color: rgba(255,255,255,0.85);
+  color: #FFFFFF;
 }
 
 @media only screen and (min-width:700px) {
