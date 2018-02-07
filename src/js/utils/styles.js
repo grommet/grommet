@@ -20,7 +20,7 @@ export const backgroundStyle = (background, theme) => {
         color = 'inherit';
       }
       return css`
-        background: ${background.image} no-repeat center center;
+        background: ${background.image} no-repeat;
         background-position: ${background.position || 'center center'};
         background-size: cover;
         color: ${color};
