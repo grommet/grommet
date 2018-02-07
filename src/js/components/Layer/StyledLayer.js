@@ -1,6 +1,52 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import { baseStyle, lapAndUp, palm } from '../../utils';
+
+const growBoxKeyframe = keyframes`
+  0% {
+    transform: translate(50%, 50%) scale(0.8);
+  }
+  100% {
+    transform: translate(50%, 50%) scale(1);
+  }
+`;
+
+const slideUpKeyframe = keyframes`
+  0% {
+    margin-bottom: -200px;
+  }
+  100% {
+    margin-bottom: 0px;
+  }
+`;
+
+const slideLeftKeyframe = keyframes`
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0px;
+  }
+`;
+
+const slideRightKeyframe = keyframes`
+  0% {
+    right: -200px;
+  }
+  100% {
+    right: 0px;
+  }
+`;
+
+const slideDownKeyframe = keyframes`
+  0% {
+    top: -100vh;
+  }
+  100% {
+    top: 0px;
+  }
+
+`;
 
 const hiddenPositionStyle = css`
   left: -100%;
@@ -11,7 +57,7 @@ const hiddenPositionStyle = css`
 
 const StyledLayer = styled.div`
   ${baseStyle}
-  
+
   position: relative;
   z-index: 10;
   height: 100vh;
@@ -33,17 +79,7 @@ const leftPositionStyle = `
   bottom: 0px;
   left: 0px;
 
-  animation: slide-left 0.2s ease-in-out forwards;
-  
-  @keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-
-    100% {
-      left: 0px;
-    }
-  }
+  animation: ${slideLeftKeyframe} 0.2s ease-in-out forwards;
 `;
 
 const rightPositionStyle = `
@@ -51,68 +87,26 @@ const rightPositionStyle = `
   bottom: 0px;
   right: 0px;
 
-  animation: slide-right 0.2s ease-in-out forwards;
-  
-  @keyframes slide-right {
-    0% {
-      right: -200px;
-    }
-
-    100% {
-      right: 0px;
-    }
-  }
+  animation: ${slideRightKeyframe} 0.2s ease-in-out forwards;
 `;
 
 const topPositionStyle = `
   left: 50%;
   transform: translateX(-50%);
-
-  animation: slide-down 0.2s ease-in-out forwards;
-  
-  @keyframes slide-down {
-    0% {
-      top: -100vh;
-    }
-  
-    100% {
-      top: 0px;
-    }
-  }
+  animation: ${slideDownKeyframe} 0.2s ease-in-out forwards;
 `;
 
 const bottomPositionStyle = `
   bottom: 0px;
   right: 50%;
   transform: translateX(50%);
-
-  animation: slide-up 0.2s ease-in-out forwards;
-  
-  @keyframes slide-up {
-    0% {
-      margin-bottom: -200px;
-    }
-  
-    100% {
-      margin-bottom: 0px;
-    }
-  }
+  animation: ${slideUpKeyframe} 0.2s ease-in-out forwards;
 `;
 
 const centerPositionStyle = css`
   bottom: 50%;
   right: 50%;
-  animation: grow-box 0.1s forwards;
-
-  @keyframes grow-box {
-    0% {
-      transform: translate(50%, 50%) scale(0.8);
-    }
-
-    100% {
-      transform: translate(50%, 50%) scale(1);
-    }
-  }
+  animation: ${growBoxKeyframe} 0.1s forwards;
 `;
 
 function getPositionStyle(props) {

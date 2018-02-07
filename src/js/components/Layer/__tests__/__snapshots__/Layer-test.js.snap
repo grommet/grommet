@@ -2,12 +2,12 @@
 
 exports[`Layer aligns bottom 1`] = `
 <div
-  class="StyledLayer-ceZzeh eJxHlH"
+  class="StyledLayer-ceZzeh jGmnWs"
   id="bottom-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw idryWu"
+    class="StyledLayer__StyledContainer-gBGbkw eAaVJF"
   >
     This is a layer
   </div>
@@ -17,7 +17,7 @@ exports[`Layer aligns bottom 1`] = `
 exports[`Layer aligns bottom 2`] = `
 "
 
-.eJxHlH {
+.jGmnWs {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -34,12 +34,12 @@ exports[`Layer aligns bottom 2`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.eJxHlH * {
+.jGmnWs * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .eJxHlH {
+  .jGmnWs {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -49,14 +49,14 @@ exports[`Layer aligns bottom 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bmPnUS {
+  .jJppDO {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bmPnUS {
+  .jJppDO {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -65,40 +65,20 @@ exports[`Layer aligns bottom 2`] = `
     top: 0px;
     bottom: 0px;
     left: 0px;
-    -webkit-animation: slide-left 0.2s ease-in-out forwards;
-    animation: slide-left 0.2s ease-in-out forwards;
+    -webkit-animation: hlTcuJ 0.2s ease-in-out forwards;
+    animation: hlTcuJ 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-
-    100% {
-      left: 0px;
-    }
-}
-
-@keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-
-    100% {
-      left: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
-  .iRwnXx {
+  .cfGsAU {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iRwnXx {
+  .cfGsAU {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -107,40 +87,20 @@ exports[`Layer aligns bottom 2`] = `
     top: 0px;
     bottom: 0px;
     right: 0px;
-    -webkit-animation: slide-right 0.2s ease-in-out forwards;
-    animation: slide-right 0.2s ease-in-out forwards;
+    -webkit-animation: vdrVB 0.2s ease-in-out forwards;
+    animation: vdrVB 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-right {
-    0% {
-      right: -200px;
-    }
-
-    100% {
-      right: 0px;
-    }
-}
-
-@keyframes slide-right {
-    0% {
-      right: -200px;
-    }
-
-    100% {
-      right: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
-  .fkperw {
+  .jpmyrr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fkperw {
+  .jpmyrr {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -150,40 +110,20 @@ exports[`Layer aligns bottom 2`] = `
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    -webkit-animation: slide-down 0.2s ease-in-out forwards;
-    animation: slide-down 0.2s ease-in-out forwards;
+    -webkit-animation: fVNlMJ 0.2s ease-in-out forwards;
+    animation: fVNlMJ 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-down {
-    0% {
-      top: -100vh;
-    }
-
-    100% {
-      top: 0px;
-    }
-}
-
-@keyframes slide-down {
-    0% {
-      top: -100vh;
-    }
-
-    100% {
-      top: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
-  .idryWu {
+  .eAaVJF {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .idryWu {
+  .eAaVJF {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -194,40 +134,20 @@ exports[`Layer aligns bottom 2`] = `
     -webkit-transform: translateX(50%);
     -ms-transform: translateX(50%);
     transform: translateX(50%);
-    -webkit-animation: slide-up 0.2s ease-in-out forwards;
-    animation: slide-up 0.2s ease-in-out forwards;
+    -webkit-animation: ifqUGO 0.2s ease-in-out forwards;
+    animation: ifqUGO 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-up {
-    0% {
-      margin-bottom: -200px;
-    }
-
-    100% {
-      margin-bottom: 0px;
-    }
-}
-
-@keyframes slide-up {
-    0% {
-      margin-bottom: -200px;
-    }
-
-    100% {
-      margin-bottom: 0px;
-    }
-}
 }"
 `;
 
 exports[`Layer aligns left 1`] = `
 <div
-  class="StyledLayer-ceZzeh eJxHlH"
+  class="StyledLayer-ceZzeh jGmnWs"
   id="left-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw bmPnUS"
+    class="StyledLayer__StyledContainer-gBGbkw jJppDO"
   >
     This is a layer
   </div>
@@ -237,7 +157,7 @@ exports[`Layer aligns left 1`] = `
 exports[`Layer aligns left 2`] = `
 "
 
-.eJxHlH {
+.jGmnWs {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -254,12 +174,12 @@ exports[`Layer aligns left 2`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.eJxHlH * {
+.jGmnWs * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .eJxHlH {
+  .jGmnWs {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -269,14 +189,14 @@ exports[`Layer aligns left 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bmPnUS {
+  .jJppDO {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bmPnUS {
+  .jJppDO {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -285,40 +205,20 @@ exports[`Layer aligns left 2`] = `
     top: 0px;
     bottom: 0px;
     left: 0px;
-    -webkit-animation: slide-left 0.2s ease-in-out forwards;
-    animation: slide-left 0.2s ease-in-out forwards;
+    -webkit-animation: hlTcuJ 0.2s ease-in-out forwards;
+    animation: hlTcuJ 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-
-    100% {
-      left: 0px;
-    }
-}
-
-@keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-
-    100% {
-      left: 0px;
-    }
-}
 }"
 `;
 
 exports[`Layer aligns right 1`] = `
 <div
-  class="StyledLayer-ceZzeh eJxHlH"
+  class="StyledLayer-ceZzeh jGmnWs"
   id="right-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw iRwnXx"
+    class="StyledLayer__StyledContainer-gBGbkw cfGsAU"
   >
     This is a layer
   </div>
@@ -328,7 +228,7 @@ exports[`Layer aligns right 1`] = `
 exports[`Layer aligns right 2`] = `
 "
 
-.eJxHlH {
+.jGmnWs {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -345,12 +245,12 @@ exports[`Layer aligns right 2`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.eJxHlH * {
+.jGmnWs * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .eJxHlH {
+  .jGmnWs {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -360,14 +260,14 @@ exports[`Layer aligns right 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bmPnUS {
+  .jJppDO {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bmPnUS {
+  .jJppDO {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -376,40 +276,20 @@ exports[`Layer aligns right 2`] = `
     top: 0px;
     bottom: 0px;
     left: 0px;
-    -webkit-animation: slide-left 0.2s ease-in-out forwards;
-    animation: slide-left 0.2s ease-in-out forwards;
+    -webkit-animation: hlTcuJ 0.2s ease-in-out forwards;
+    animation: hlTcuJ 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-
-    100% {
-      left: 0px;
-    }
-}
-
-@keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-
-    100% {
-      left: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
-  .iRwnXx {
+  .cfGsAU {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iRwnXx {
+  .cfGsAU {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -418,40 +298,20 @@ exports[`Layer aligns right 2`] = `
     top: 0px;
     bottom: 0px;
     right: 0px;
-    -webkit-animation: slide-right 0.2s ease-in-out forwards;
-    animation: slide-right 0.2s ease-in-out forwards;
+    -webkit-animation: vdrVB 0.2s ease-in-out forwards;
+    animation: vdrVB 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-right {
-    0% {
-      right: -200px;
-    }
-
-    100% {
-      right: 0px;
-    }
-}
-
-@keyframes slide-right {
-    0% {
-      right: -200px;
-    }
-
-    100% {
-      right: 0px;
-    }
-}
 }"
 `;
 
 exports[`Layer aligns top 1`] = `
 <div
-  class="StyledLayer-ceZzeh eJxHlH"
+  class="StyledLayer-ceZzeh jGmnWs"
   id="top-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw fkperw"
+    class="StyledLayer__StyledContainer-gBGbkw jpmyrr"
   >
     This is a layer
   </div>
@@ -461,7 +321,7 @@ exports[`Layer aligns top 1`] = `
 exports[`Layer aligns top 2`] = `
 "
 
-.eJxHlH {
+.jGmnWs {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -478,12 +338,12 @@ exports[`Layer aligns top 2`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.eJxHlH * {
+.jGmnWs * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .eJxHlH {
+  .jGmnWs {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -493,14 +353,14 @@ exports[`Layer aligns top 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bmPnUS {
+  .jJppDO {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bmPnUS {
+  .jJppDO {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -509,40 +369,20 @@ exports[`Layer aligns top 2`] = `
     top: 0px;
     bottom: 0px;
     left: 0px;
-    -webkit-animation: slide-left 0.2s ease-in-out forwards;
-    animation: slide-left 0.2s ease-in-out forwards;
+    -webkit-animation: hlTcuJ 0.2s ease-in-out forwards;
+    animation: hlTcuJ 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-
-    100% {
-      left: 0px;
-    }
-}
-
-@keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-
-    100% {
-      left: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
-  .iRwnXx {
+  .cfGsAU {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iRwnXx {
+  .cfGsAU {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -551,40 +391,20 @@ exports[`Layer aligns top 2`] = `
     top: 0px;
     bottom: 0px;
     right: 0px;
-    -webkit-animation: slide-right 0.2s ease-in-out forwards;
-    animation: slide-right 0.2s ease-in-out forwards;
+    -webkit-animation: vdrVB 0.2s ease-in-out forwards;
+    animation: vdrVB 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-right {
-    0% {
-      right: -200px;
-    }
-
-    100% {
-      right: 0px;
-    }
-}
-
-@keyframes slide-right {
-    0% {
-      right: -200px;
-    }
-
-    100% {
-      right: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
-  .fkperw {
+  .jpmyrr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fkperw {
+  .jpmyrr {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -594,29 +414,9 @@ exports[`Layer aligns top 2`] = `
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    -webkit-animation: slide-down 0.2s ease-in-out forwards;
-    animation: slide-down 0.2s ease-in-out forwards;
+    -webkit-animation: fVNlMJ 0.2s ease-in-out forwards;
+    animation: fVNlMJ 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-down {
-    0% {
-      top: -100vh;
-    }
-
-    100% {
-      top: 0px;
-    }
-}
-
-@keyframes slide-down {
-    0% {
-      top: -100vh;
-    }
-
-    100% {
-      top: 0px;
-    }
-}
 }"
 `;
 
@@ -638,7 +438,7 @@ exports[`Layer hides 2`] = `
 "
 
 @media only screen and (min-width:700px) {
-  .eJxHlH {
+  .jGmnWs {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -673,14 +473,14 @@ exports[`Layer hides 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bmPnUS {
+  .jJppDO {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bmPnUS {
+  .jJppDO {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -689,40 +489,20 @@ exports[`Layer hides 2`] = `
     top: 0px;
     bottom: 0px;
     left: 0px;
-    -webkit-animation: slide-left 0.2s ease-in-out forwards;
-    animation: slide-left 0.2s ease-in-out forwards;
+    -webkit-animation: hlTcuJ 0.2s ease-in-out forwards;
+    animation: hlTcuJ 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-
-    100% {
-      left: 0px;
-    }
-}
-
-@keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-
-    100% {
-      left: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
-  .iRwnXx {
+  .cfGsAU {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iRwnXx {
+  .cfGsAU {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -731,40 +511,20 @@ exports[`Layer hides 2`] = `
     top: 0px;
     bottom: 0px;
     right: 0px;
-    -webkit-animation: slide-right 0.2s ease-in-out forwards;
-    animation: slide-right 0.2s ease-in-out forwards;
+    -webkit-animation: vdrVB 0.2s ease-in-out forwards;
+    animation: vdrVB 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-right {
-    0% {
-      right: -200px;
-    }
-
-    100% {
-      right: 0px;
-    }
-}
-
-@keyframes slide-right {
-    0% {
-      right: -200px;
-    }
-
-    100% {
-      right: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
-  .fkperw {
+  .jpmyrr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fkperw {
+  .jpmyrr {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -774,40 +534,20 @@ exports[`Layer hides 2`] = `
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    -webkit-animation: slide-down 0.2s ease-in-out forwards;
-    animation: slide-down 0.2s ease-in-out forwards;
+    -webkit-animation: fVNlMJ 0.2s ease-in-out forwards;
+    animation: fVNlMJ 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-down {
-    0% {
-      top: -100vh;
-    }
-
-    100% {
-      top: 0px;
-    }
-}
-
-@keyframes slide-down {
-    0% {
-      top: -100vh;
-    }
-
-    100% {
-      top: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
-  .idryWu {
+  .eAaVJF {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .idryWu {
+  .eAaVJF {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -818,29 +558,9 @@ exports[`Layer hides 2`] = `
     -webkit-transform: translateX(50%);
     -ms-transform: translateX(50%);
     transform: translateX(50%);
-    -webkit-animation: slide-up 0.2s ease-in-out forwards;
-    animation: slide-up 0.2s ease-in-out forwards;
+    -webkit-animation: ifqUGO 0.2s ease-in-out forwards;
+    animation: ifqUGO 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-up {
-    0% {
-      margin-bottom: -200px;
-    }
-
-    100% {
-      margin-bottom: 0px;
-    }
-}
-
-@keyframes slide-up {
-    0% {
-      margin-bottom: -200px;
-    }
-
-    100% {
-      margin-bottom: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
@@ -879,7 +599,7 @@ exports[`Layer hides 4`] = `
 "
 
 @media only screen and (min-width:700px) {
-  .eJxHlH {
+  .jGmnWs {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -914,14 +634,14 @@ exports[`Layer hides 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bmPnUS {
+  .jJppDO {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bmPnUS {
+  .jJppDO {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -930,40 +650,20 @@ exports[`Layer hides 4`] = `
     top: 0px;
     bottom: 0px;
     left: 0px;
-    -webkit-animation: slide-left 0.2s ease-in-out forwards;
-    animation: slide-left 0.2s ease-in-out forwards;
+    -webkit-animation: hlTcuJ 0.2s ease-in-out forwards;
+    animation: hlTcuJ 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-
-    100% {
-      left: 0px;
-    }
-}
-
-@keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-
-    100% {
-      left: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
-  .iRwnXx {
+  .cfGsAU {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iRwnXx {
+  .cfGsAU {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -972,40 +672,20 @@ exports[`Layer hides 4`] = `
     top: 0px;
     bottom: 0px;
     right: 0px;
-    -webkit-animation: slide-right 0.2s ease-in-out forwards;
-    animation: slide-right 0.2s ease-in-out forwards;
+    -webkit-animation: vdrVB 0.2s ease-in-out forwards;
+    animation: vdrVB 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-right {
-    0% {
-      right: -200px;
-    }
-
-    100% {
-      right: 0px;
-    }
-}
-
-@keyframes slide-right {
-    0% {
-      right: -200px;
-    }
-
-    100% {
-      right: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
-  .fkperw {
+  .jpmyrr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fkperw {
+  .jpmyrr {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1015,40 +695,20 @@ exports[`Layer hides 4`] = `
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    -webkit-animation: slide-down 0.2s ease-in-out forwards;
-    animation: slide-down 0.2s ease-in-out forwards;
+    -webkit-animation: fVNlMJ 0.2s ease-in-out forwards;
+    animation: fVNlMJ 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-down {
-    0% {
-      top: -100vh;
-    }
-
-    100% {
-      top: 0px;
-    }
-}
-
-@keyframes slide-down {
-    0% {
-      top: -100vh;
-    }
-
-    100% {
-      top: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
-  .idryWu {
+  .eAaVJF {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .idryWu {
+  .eAaVJF {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1059,29 +719,9 @@ exports[`Layer hides 4`] = `
     -webkit-transform: translateX(50%);
     -ms-transform: translateX(50%);
     transform: translateX(50%);
-    -webkit-animation: slide-up 0.2s ease-in-out forwards;
-    animation: slide-up 0.2s ease-in-out forwards;
+    -webkit-animation: ifqUGO 0.2s ease-in-out forwards;
+    animation: ifqUGO 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-up {
-    0% {
-      margin-bottom: -200px;
-    }
-
-    100% {
-      margin-bottom: 0px;
-    }
-}
-
-@keyframes slide-up {
-    0% {
-      margin-bottom: -200px;
-    }
-
-    100% {
-      margin-bottom: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
@@ -1138,12 +778,12 @@ exports[`Layer is accessible 3`] = `
 
 exports[`Layer plain renders 1`] = `
 <div
-  class="StyledLayer-ceZzeh jxhLXK"
+  class="StyledLayer-ceZzeh elvjQE"
   id="plain-test"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw jDkaaP"
+    class="StyledLayer__StyledContainer-gBGbkw eQitpi"
   >
     This is a plain layer
   </div>
@@ -1154,7 +794,7 @@ exports[`Layer plain renders 2`] = `
 "
 
 @media only screen and (min-width:700px) {
-  .eJxHlH {
+  .jGmnWs {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -1163,7 +803,7 @@ exports[`Layer plain renders 2`] = `
   }
 }
 
-.jxhLXK {
+.elvjQE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1180,12 +820,12 @@ exports[`Layer plain renders 2`] = `
   background-color: transparent;
 }
 
-.jxhLXK * {
+.elvjQE * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .jxhLXK {
+  .elvjQE {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -1195,14 +835,14 @@ exports[`Layer plain renders 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bmPnUS {
+  .jJppDO {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bmPnUS {
+  .jJppDO {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1211,40 +851,20 @@ exports[`Layer plain renders 2`] = `
     top: 0px;
     bottom: 0px;
     left: 0px;
-    -webkit-animation: slide-left 0.2s ease-in-out forwards;
-    animation: slide-left 0.2s ease-in-out forwards;
+    -webkit-animation: hlTcuJ 0.2s ease-in-out forwards;
+    animation: hlTcuJ 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-
-    100% {
-      left: 0px;
-    }
-}
-
-@keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-
-    100% {
-      left: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
-  .iRwnXx {
+  .cfGsAU {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iRwnXx {
+  .cfGsAU {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1253,40 +873,20 @@ exports[`Layer plain renders 2`] = `
     top: 0px;
     bottom: 0px;
     right: 0px;
-    -webkit-animation: slide-right 0.2s ease-in-out forwards;
-    animation: slide-right 0.2s ease-in-out forwards;
+    -webkit-animation: vdrVB 0.2s ease-in-out forwards;
+    animation: vdrVB 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-right {
-    0% {
-      right: -200px;
-    }
-
-    100% {
-      right: 0px;
-    }
-}
-
-@keyframes slide-right {
-    0% {
-      right: -200px;
-    }
-
-    100% {
-      right: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
-  .fkperw {
+  .jpmyrr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fkperw {
+  .jpmyrr {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1296,40 +896,20 @@ exports[`Layer plain renders 2`] = `
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    -webkit-animation: slide-down 0.2s ease-in-out forwards;
-    animation: slide-down 0.2s ease-in-out forwards;
+    -webkit-animation: fVNlMJ 0.2s ease-in-out forwards;
+    animation: fVNlMJ 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-down {
-    0% {
-      top: -100vh;
-    }
-
-    100% {
-      top: 0px;
-    }
-}
-
-@keyframes slide-down {
-    0% {
-      top: -100vh;
-    }
-
-    100% {
-      top: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
-  .idryWu {
+  .eAaVJF {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .idryWu {
+  .eAaVJF {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1340,29 +920,9 @@ exports[`Layer plain renders 2`] = `
     -webkit-transform: translateX(50%);
     -ms-transform: translateX(50%);
     transform: translateX(50%);
-    -webkit-animation: slide-up 0.2s ease-in-out forwards;
-    animation: slide-up 0.2s ease-in-out forwards;
+    -webkit-animation: ifqUGO 0.2s ease-in-out forwards;
+    animation: ifqUGO 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-up {
-    0% {
-      margin-bottom: -200px;
-    }
-
-    100% {
-      margin-bottom: 0px;
-    }
-}
-
-@keyframes slide-up {
-    0% {
-      margin-bottom: -200px;
-    }
-
-    100% {
-      margin-bottom: 0px;
-    }
-}
 }
 
 @media only screen and (max-width:699px) {
@@ -1383,14 +943,14 @@ exports[`Layer plain renders 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jDkaaP {
+  .eQitpi {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jDkaaP {
+  .eQitpi {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1398,36 +958,8 @@ exports[`Layer plain renders 2`] = `
     border-radius: none;
     bottom: 50%;
     right: 50%;
-    -webkit-animation: grow-box 0.1s forwards;
-    animation: grow-box 0.1s forwards;
+    -webkit-animation: ,ghNyyk,0.1s forwards;
+    animation: ,ghNyyk,0.1s forwards;
   }
-
-@-webkit-keyframes grow-box {
-    0% {
-      -webkit-transform: translate(50%,50%) scale(0.8);
-      -ms-transform: translate(50%,50%) scale(0.8);
-      transform: translate(50%,50%) scale(0.8);
-    }
-
-    100% {
-      -webkit-transform: translate(50%,50%) scale(1);
-      -ms-transform: translate(50%,50%) scale(1);
-      transform: translate(50%,50%) scale(1);
-    }
-}
-
-@keyframes grow-box {
-    0% {
-      -webkit-transform: translate(50%,50%) scale(0.8);
-      -ms-transform: translate(50%,50%) scale(0.8);
-      transform: translate(50%,50%) scale(0.8);
-    }
-
-    100% {
-      -webkit-transform: translate(50%,50%) scale(1);
-      -ms-transform: translate(50%,50%) scale(1);
-      transform: translate(50%,50%) scale(1);
-    }
-}
 }"
 `;

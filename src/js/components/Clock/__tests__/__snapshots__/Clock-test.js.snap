@@ -2,7 +2,7 @@
 
 exports[`Clock animates second hand 1`] = `
 <svg
-  class="StyledClock-bEPleQ xuTSy"
+  class="StyledClock-bEPleQ humySj"
   version="1.1"
   width="96"
   height="96"
@@ -49,7 +49,7 @@ exports[`Clock animates second hand 1`] = `
 
 exports[`Clock animates second hand 2`] = `
 <svg
-  class="StyledClock-bEPleQ xuTSy"
+  class="StyledClock-bEPleQ humySj"
   version="1.1"
   width="96"
   height="96"
@@ -96,7 +96,7 @@ exports[`Clock animates second hand 2`] = `
 
 exports[`Clock night renders 1`] = `
 <svg
-  class="StyledClock-bEPleQ xuTSy"
+  class="StyledClock-bEPleQ humySj"
   version="1.1"
   width="96"
   height="96"
@@ -134,7 +134,7 @@ exports[`Clock night renders 1`] = `
 
 exports[`Clock night renders 2`] = `
 <svg
-  class="StyledClock-bEPleQ xuTSy"
+  class="StyledClock-bEPleQ humySj"
   version="1.1"
   width="96"
   height="96"
@@ -175,7 +175,7 @@ exports[`Clock renders 1`] = `
   class="StyledGrommet-gGRXwz fbqGIt"
 >
   <svg
-    class="StyledClock-bEPleQ xuTSy"
+    class="StyledClock-bEPleQ humySj"
     version="1.1"
     width="96"
     height="96"
@@ -226,7 +226,7 @@ exports[`Clock renders 2`] = `
   class="StyledGrommet-gGRXwz fbqGIt"
 >
   <svg
-    class="StyledClock-bEPleQ xuTSy"
+    class="StyledClock-bEPleQ humySj"
     version="1.1"
     width="96"
     height="96"
@@ -242,7 +242,7 @@ exports[`Clock renders 2`] = `
       r="46"
     />
     <line
-      class="StyledClock__StyledSecond-oRaEs glIWSO"
+      class="StyledClock__StyledSecond-oRaEs dmRrQr"
       x1="48"
       y1="48"
       x2="48"
@@ -251,7 +251,7 @@ exports[`Clock renders 2`] = `
       stroke-linecap="round"
     />
     <line
-      class="StyledClock__StyledMinute-bDjMrZ Wfczg"
+      class="StyledClock__StyledMinute-bDjMrZ kLeTDM"
       x1="48"
       y1="48"
       x2="48"
@@ -260,7 +260,7 @@ exports[`Clock renders 2`] = `
       stroke-linecap="round"
     />
     <line
-      class="StyledClock__StyledHour-fpyVuK bIeIta"
+      class="StyledClock__StyledHour-fpyVuK bzoHew"
       x1="48"
       y1="48"
       x2="48"

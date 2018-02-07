@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import { backgroundStyle, baseStyle } from '../../utils';
 
@@ -13,6 +13,18 @@ function getTransformOriginStyle(align) {
   }
   return `${vertical} ${horizontal}`;
 }
+
+const dropKeyFrames = keyframes`
+  0% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
+
 const StyledDrop = styled.div`
   ${baseStyle}
 
@@ -20,7 +32,7 @@ const StyledDrop = styled.div`
   box-shadow: ${props => props.theme.global.drop.shadow};
   position: fixed;
   z-index: 20;
-  
+
   overflow: auto;
   outline: none;
 
@@ -30,20 +42,8 @@ const StyledDrop = styled.div`
 
   opacity: 0;
   transform-origin: ${props => getTransformOriginStyle(props.align)};
-  animation: grow-box 0.1s forwards;
+  animation:  ${dropKeyFrames} 0.1s forwards;
   animation-delay: 0.01s;
-
-  @keyframes grow-box {
-    0% {
-      opacity: 0.5;
-      transform: scale(0.8);
-    }
-
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
 `;
 
 export default StyledDrop.extend`

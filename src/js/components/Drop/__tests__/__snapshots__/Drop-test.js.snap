@@ -2,7 +2,7 @@
 
 exports[`Drop aligns left right top bottom 1`] = `
 <div
-  class="StyledDrop-bCWxPe eRQUdY"
+  class="StyledDrop-bCWxPe hEiKPj"
   tabindex="-1"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -14,7 +14,7 @@ exports[`Drop aligns left right top bottom 1`] = `
 exports[`Drop aligns left right top bottom 2`] = `
 "
 
-.eRQUdY {
+.hEiKPj {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -36,20 +36,20 @@ exports[`Drop aligns left right top bottom 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: grow-box 0.1s forwards;
-  animation: grow-box 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.eRQUdY * {
+.hEiKPj * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop aligns right left top top 1`] = `
 <div
-  class="StyledDrop-bCWxPe flheEl"
+  class="StyledDrop-bCWxPe gSWhZw"
   tabindex="-1"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -61,7 +61,7 @@ exports[`Drop aligns right left top top 1`] = `
 exports[`Drop aligns right left top top 2`] = `
 "
 
-.flheEl {
+.gSWhZw {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -83,20 +83,20 @@ exports[`Drop aligns right left top top 2`] = `
   -webkit-transform-origin: top right;
   -ms-transform-origin: top right;
   transform-origin: top right;
-  -webkit-animation: grow-box 0.1s forwards;
-  animation: grow-box 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.flheEl * {
+.gSWhZw * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop aligns right right bottom top 1`] = `
 <div
-  class="StyledDrop-bCWxPe dnTOyg"
+  class="StyledDrop-bCWxPe jYGEAD"
   tabindex="-1"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -108,7 +108,7 @@ exports[`Drop aligns right right bottom top 1`] = `
 exports[`Drop aligns right right bottom top 2`] = `
 "
 
-.dnTOyg {
+.jYGEAD {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -130,20 +130,20 @@ exports[`Drop aligns right right bottom top 2`] = `
   -webkit-transform-origin: bottom right;
   -ms-transform-origin: bottom right;
   transform-origin: bottom right;
-  -webkit-animation: grow-box 0.1s forwards;
-  animation: grow-box 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.dnTOyg * {
+.jYGEAD * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop aligns right right bottom top 3`] = `
 <div
-  class="StyledDrop-bCWxPe dnTOyg"
+  class="StyledDrop-bCWxPe jYGEAD"
   tabindex="-1"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -155,7 +155,7 @@ exports[`Drop aligns right right bottom top 3`] = `
 exports[`Drop aligns right right bottom top 4`] = `
 "
 
-.dnTOyg {
+.jYGEAD {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -177,20 +177,20 @@ exports[`Drop aligns right right bottom top 4`] = `
   -webkit-transform-origin: bottom right;
   -ms-transform-origin: bottom right;
   transform-origin: bottom right;
-  -webkit-animation: grow-box 0.1s forwards;
-  animation: grow-box 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.dnTOyg * {
+.jYGEAD * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop aligns skips left random 1`] = `
 <div
-  class="StyledDrop-bCWxPe fTrLnY"
+  class="StyledDrop-bCWxPe tMsBQ"
   tabindex="-1"
   id="drop-node"
   style="width: 0.1px; top: 0px; max-height: 768px;"
@@ -202,7 +202,7 @@ exports[`Drop aligns skips left random 1`] = `
 exports[`Drop aligns skips left random 2`] = `
 "
 
-.fTrLnY {
+.tMsBQ {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -224,20 +224,20 @@ exports[`Drop aligns skips left random 2`] = `
   -webkit-transform-origin: bottom left;
   -ms-transform-origin: bottom left;
   transform-origin: bottom left;
-  -webkit-animation: grow-box 0.1s forwards;
-  animation: grow-box 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.fTrLnY * {
+.tMsBQ * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop aligns skips right random 1`] = `
 <div
-  class="StyledDrop-bCWxPe flheEl"
+  class="StyledDrop-bCWxPe gSWhZw"
   tabindex="-1"
   id="drop-node"
   style="width: 0.1px; max-height: 768px;"
@@ -249,7 +249,7 @@ exports[`Drop aligns skips right random 1`] = `
 exports[`Drop aligns skips right random 2`] = `
 "
 
-.flheEl {
+.gSWhZw {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -271,20 +271,20 @@ exports[`Drop aligns skips right random 2`] = `
   -webkit-transform-origin: top right;
   -ms-transform-origin: top right;
   transform-origin: top right;
-  -webkit-animation: grow-box 0.1s forwards;
-  animation: grow-box 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.flheEl * {
+.gSWhZw * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop mounts 1`] = `
 <div
-  class="StyledDrop-bCWxPe eRQUdY"
+  class="StyledDrop-bCWxPe hEiKPj"
   tabindex="-1"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -296,7 +296,7 @@ exports[`Drop mounts 1`] = `
 exports[`Drop mounts 2`] = `
 "
 
-.eRQUdY {
+.hEiKPj {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -318,20 +318,20 @@ exports[`Drop mounts 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: grow-box 0.1s forwards;
-  animation: grow-box 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.eRQUdY * {
+.hEiKPj * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop resizes 1`] = `
 <div
-  class="StyledDrop-bCWxPe eRQUdY"
+  class="StyledDrop-bCWxPe hEiKPj"
   tabindex="-1"
   id="test"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
@@ -343,7 +343,7 @@ exports[`Drop resizes 1`] = `
 exports[`Drop resizes 2`] = `
 "
 
-.eRQUdY {
+.hEiKPj {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -365,20 +365,20 @@ exports[`Drop resizes 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: grow-box 0.1s forwards;
-  animation: grow-box 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.eRQUdY * {
+.hEiKPj * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`Drop restrict focus 1`] = `
 <div
-  class="StyledDrop-bCWxPe eRQUdY"
+  class="StyledDrop-bCWxPe hEiKPj"
   tabindex="-1"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
@@ -389,7 +389,7 @@ exports[`Drop restrict focus 1`] = `
 
 exports[`Drop restrict focus 2`] = `
 <div
-  class="StyledDrop-bCWxPe eRQUdY"
+  class="StyledDrop-bCWxPe hEiKPj"
   tabindex="-1"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
@@ -401,7 +401,7 @@ exports[`Drop restrict focus 2`] = `
 exports[`Drop restrict focus 3`] = `
 "
 
-.eRQUdY {
+.hEiKPj {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -423,13 +423,13 @@ exports[`Drop restrict focus 3`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: grow-box 0.1s forwards;
-  animation: grow-box 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.eRQUdY * {
+.hEiKPj * {
   box-sizing: inherit;
 }"
 `;
@@ -444,7 +444,7 @@ exports[`Drop restrict focus 4`] = `
 
 exports[`Drop skips invalid align 1`] = `
 <div
-  class="StyledDrop-bCWxPe eRQUdY"
+  class="StyledDrop-bCWxPe hEiKPj"
   tabindex="-1"
   id="drop-node"
   style="width: 0.1px; max-height: 768px;"
@@ -456,7 +456,7 @@ exports[`Drop skips invalid align 1`] = `
 exports[`Drop skips invalid align 2`] = `
 "
 
-.eRQUdY {
+.hEiKPj {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -478,13 +478,13 @@ exports[`Drop skips invalid align 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: grow-box 0.1s forwards;
-  animation: grow-box 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.eRQUdY * {
+.hEiKPj * {
   box-sizing: inherit;
 }"
 `;
