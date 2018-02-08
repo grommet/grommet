@@ -106,7 +106,7 @@ exports[`SkipLink mounts 3`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw fkperw"
+    class="StyledLayer__StyledContainer-gBGbkw jpmyrr"
   >
     <div
       class="StyledBox-bStriS bZDKOr"
@@ -204,14 +204,14 @@ exports[`SkipLink mounts 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .fkperw {
+  .jpmyrr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fkperw {
+  .jpmyrr {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -221,29 +221,9 @@ exports[`SkipLink mounts 4`] = `
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    -webkit-animation: slide-down 0.2s ease-in-out forwards;
-    animation: slide-down 0.2s ease-in-out forwards;
+    -webkit-animation: fVNlMJ 0.2s ease-in-out forwards;
+    animation: fVNlMJ 0.2s ease-in-out forwards;
   }
-
-@-webkit-keyframes slide-down {
-    0% {
-      top: -100vh;
-    }
-
-    100% {
-      top: 0px;
-    }
-}
-
-@keyframes slide-down {
-    0% {
-      top: -100vh;
-    }
-
-    100% {
-      top: 0px;
-    }
-}
 }"
 `;
 

@@ -1,4 +1,11 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+
+const rotateKeyframe = keyframes`
+    100% {
+      transform: rotateZ(360deg);
+    }
+`;
 
 export const StyledCircle = styled.circle`
   stroke-width: ${props => props.theme.clock.circle.width};
@@ -18,7 +25,7 @@ export const StyledHour = styled.line`
   transition: stroke 1s ease-out;
 
   ${props => props.animate && `
-    animation: rotate 43200s infinite linear;
+    animation: ${rotateKeyframe} 43200s infinite linear;
   `}
 `;
 
@@ -28,7 +35,7 @@ export const StyledMinute = styled.line`
   transition: stroke 1s ease-out;
 
   ${props => props.animate && `
-    animation: rotate 3600s infinite steps(60);
+    animation: ${rotateKeyframe} 3600s infinite steps(60);
     animation-delay: 1s;
   `}
 `;
@@ -39,19 +46,13 @@ export const StyledSecond = styled.line`
   transition: stroke 1s ease-out;
 
   ${props => props.animate && `
-    animation: rotate 60s infinite steps(60);
+    animation: ${rotateKeyframe} 60s infinite steps(60);
   `}
 `;
 
 const StyledClock = styled.svg`
   width: ${props => props.theme.clock.size[props.size]};
   height: ${props => props.theme.clock.size[props.size]};
-
-  @keyframes rotate {
-    100% {
-      transform: rotateZ(360deg);
-    }
-  }
 `;
 
 export default StyledClock.extend`

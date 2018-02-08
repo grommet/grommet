@@ -2,7 +2,7 @@
 
 exports[`TextInput closes suggestion drop 1`] = `
 <div
-  class="StyledDrop-bCWxPe eRQUdY"
+  class="StyledDrop-bCWxPe hEiKPj"
   tabindex="-1"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -52,7 +52,7 @@ exports[`TextInput closes suggestion drop 2`] = `
 
 
 
-.eRQUdY {
+.hEiKPj {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -74,13 +74,13 @@ exports[`TextInput closes suggestion drop 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: grow-box 0.1s forwards;
-  animation: grow-box 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.eRQUdY * {
+.hEiKPj * {
   box-sizing: inherit;
 }"
 `;
@@ -133,7 +133,7 @@ exports[`TextInput mounts 1`] = `
 
 exports[`TextInput mounts with complex suggestions 1`] = `
 <div
-  class="StyledDrop-bCWxPe eRQUdY"
+  class="StyledDrop-bCWxPe hEiKPj"
   tabindex="-1"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -183,7 +183,7 @@ exports[`TextInput mounts with complex suggestions 2`] = `
 
 
 
-.eRQUdY {
+.hEiKPj {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -205,20 +205,20 @@ exports[`TextInput mounts with complex suggestions 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: grow-box 0.1s forwards;
-  animation: grow-box 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.eRQUdY * {
+.hEiKPj * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`TextInput mounts with suggestions 1`] = `
 <div
-  class="StyledDrop-bCWxPe eRQUdY"
+  class="StyledDrop-bCWxPe hEiKPj"
   tabindex="-1"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -268,7 +268,7 @@ exports[`TextInput mounts with suggestions 2`] = `
 
 
 
-.eRQUdY {
+.hEiKPj {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -290,20 +290,20 @@ exports[`TextInput mounts with suggestions 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: grow-box 0.1s forwards;
-  animation: grow-box 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.eRQUdY * {
+.hEiKPj * {
   box-sizing: inherit;
 }"
 `;
 
 exports[`TextInput selects suggestion 1`] = `
 <div
-  class="StyledDrop-bCWxPe eRQUdY"
+  class="StyledDrop-bCWxPe hEiKPj"
   tabindex="-1"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
@@ -353,7 +353,7 @@ exports[`TextInput selects suggestion 2`] = `
 
 
 
-.eRQUdY {
+.hEiKPj {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -375,13 +375,13 @@ exports[`TextInput selects suggestion 2`] = `
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
   transform-origin: top left;
-  -webkit-animation: grow-box 0.1s forwards;
-  animation: grow-box 0.1s forwards;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
 }
 
-.eRQUdY * {
+.hEiKPj * {
   box-sizing: inherit;
 }"
 `;
