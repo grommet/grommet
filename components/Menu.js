@@ -398,6 +398,7 @@ var Menu = function (_Component2) {
               this._drop = new _Drop2.default((0, _reactDom.findDOMNode)(this._controlRef), this._renderMenuDrop(), {
                 align: this.props.dropAlign,
                 colorIndex: this.props.dropColorIndex,
+                className: this.props.className && this.props.className + '__drop--container',
                 focusControl: true
               });
             }
