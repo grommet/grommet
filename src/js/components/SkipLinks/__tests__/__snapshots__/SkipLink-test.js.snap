@@ -101,7 +101,7 @@ exports[`SkipLink mounts 2`] = `
 
 exports[`SkipLink mounts 3`] = `
 <div
-  class="StyledLayer-ceZzeh jGmnWs"
+  class="StyledLayer-ceZzeh eJxHlH"
   id="skip-links"
   tabindex="-1"
 >
@@ -155,7 +155,7 @@ exports[`SkipLink mounts 3`] = `
 exports[`SkipLink mounts 4`] = `
 "
 
-.jGmnWs {
+.eJxHlH {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -172,12 +172,12 @@ exports[`SkipLink mounts 4`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.jGmnWs * {
+.eJxHlH * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .jGmnWs {
+  .eJxHlH {
     position: fixed;
     top: 0px;
     left: 0px;

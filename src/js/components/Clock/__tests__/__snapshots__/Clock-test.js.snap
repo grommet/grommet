@@ -242,7 +242,7 @@ exports[`Clock renders 2`] = `
       r="46"
     />
     <line
-      class="StyledClock__StyledSecond-oRaEs dmRrQr"
+      class="StyledClock__StyledSecond-oRaEs kgjbvG"
       x1="48"
       y1="48"
       x2="48"
@@ -251,7 +251,7 @@ exports[`Clock renders 2`] = `
       stroke-linecap="round"
     />
     <line
-      class="StyledClock__StyledMinute-bDjMrZ kLeTDM"
+      class="StyledClock__StyledMinute-bDjMrZ iPvwyA"
       x1="48"
       y1="48"
       x2="48"
@@ -260,7 +260,7 @@ exports[`Clock renders 2`] = `
       stroke-linecap="round"
     />
     <line
-      class="StyledClock__StyledHour-fpyVuK bzoHew"
+      class="StyledClock__StyledHour-fpyVuK eQMuaB"
       x1="48"
       y1="48"
       x2="48"

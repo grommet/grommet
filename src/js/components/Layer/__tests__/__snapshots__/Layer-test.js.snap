@@ -2,7 +2,7 @@
 
 exports[`Layer aligns bottom 1`] = `
 <div
-  class="StyledLayer-ceZzeh jGmnWs"
+  class="StyledLayer-ceZzeh eJxHlH"
   id="bottom-test"
   tabindex="-1"
 >
@@ -17,7 +17,7 @@ exports[`Layer aligns bottom 1`] = `
 exports[`Layer aligns bottom 2`] = `
 "
 
-.jGmnWs {
+.eJxHlH {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -34,12 +34,12 @@ exports[`Layer aligns bottom 2`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.jGmnWs * {
+.eJxHlH * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .jGmnWs {
+  .eJxHlH {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -142,7 +142,7 @@ exports[`Layer aligns bottom 2`] = `
 
 exports[`Layer aligns left 1`] = `
 <div
-  class="StyledLayer-ceZzeh jGmnWs"
+  class="StyledLayer-ceZzeh eJxHlH"
   id="left-test"
   tabindex="-1"
 >
@@ -157,7 +157,7 @@ exports[`Layer aligns left 1`] = `
 exports[`Layer aligns left 2`] = `
 "
 
-.jGmnWs {
+.eJxHlH {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -174,12 +174,12 @@ exports[`Layer aligns left 2`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.jGmnWs * {
+.eJxHlH * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .jGmnWs {
+  .eJxHlH {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -213,7 +213,7 @@ exports[`Layer aligns left 2`] = `
 
 exports[`Layer aligns right 1`] = `
 <div
-  class="StyledLayer-ceZzeh jGmnWs"
+  class="StyledLayer-ceZzeh eJxHlH"
   id="right-test"
   tabindex="-1"
 >
@@ -228,7 +228,7 @@ exports[`Layer aligns right 1`] = `
 exports[`Layer aligns right 2`] = `
 "
 
-.jGmnWs {
+.eJxHlH {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -245,12 +245,12 @@ exports[`Layer aligns right 2`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.jGmnWs * {
+.eJxHlH * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .jGmnWs {
+  .eJxHlH {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -306,7 +306,7 @@ exports[`Layer aligns right 2`] = `
 
 exports[`Layer aligns top 1`] = `
 <div
-  class="StyledLayer-ceZzeh jGmnWs"
+  class="StyledLayer-ceZzeh eJxHlH"
   id="top-test"
   tabindex="-1"
 >
@@ -321,7 +321,7 @@ exports[`Layer aligns top 1`] = `
 exports[`Layer aligns top 2`] = `
 "
 
-.jGmnWs {
+.eJxHlH {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -338,12 +338,12 @@ exports[`Layer aligns top 2`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.jGmnWs * {
+.eJxHlH * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .jGmnWs {
+  .eJxHlH {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -438,7 +438,7 @@ exports[`Layer hides 2`] = `
 "
 
 @media only screen and (min-width:700px) {
-  .jGmnWs {
+  .eJxHlH {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -599,7 +599,7 @@ exports[`Layer hides 4`] = `
 "
 
 @media only screen and (min-width:700px) {
-  .jGmnWs {
+  .eJxHlH {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -778,7 +778,7 @@ exports[`Layer is accessible 3`] = `
 
 exports[`Layer plain renders 1`] = `
 <div
-  class="StyledLayer-ceZzeh elvjQE"
+  class="StyledLayer-ceZzeh jxhLXK"
   id="plain-test"
   tabindex="-1"
 >
@@ -794,7 +794,7 @@ exports[`Layer plain renders 2`] = `
 "
 
 @media only screen and (min-width:700px) {
-  .jGmnWs {
+  .eJxHlH {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -803,7 +803,7 @@ exports[`Layer plain renders 2`] = `
   }
 }
 
-.elvjQE {
+.jxhLXK {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -820,12 +820,12 @@ exports[`Layer plain renders 2`] = `
   background-color: transparent;
 }
 
-.elvjQE * {
+.jxhLXK * {
   box-sizing: inherit;
 }
 
 @media only screen and (min-width:700px) {
-  .elvjQE {
+  .jxhLXK {
     position: fixed;
     top: 0px;
     left: 0px;
