@@ -48,6 +48,7 @@ export const StyledCheckBoxInput = styled.input`
 `;
 
 export const StyledCheckBoxBox = styled.div`
+  box-sizing: border-box;
   position: relative;
   top: -1px;
   display: inline-block;
@@ -60,6 +61,7 @@ export const StyledCheckBoxBox = styled.div`
   border-radius: ${props => props.theme.checkBox.border.radius};
 
   > svg {
+    box-sizing: border-box;
     position: absolute;
     top: -2px;
     left: -2px;
@@ -72,6 +74,7 @@ export const StyledCheckBoxBox = styled.div`
 `;
 
 export const StyledCheckBoxToggle = styled.span`
+  box-sizing: border-box;
   position: relative;
   vertical-align: middle;
   display: inline-block;
@@ -83,6 +86,7 @@ export const StyledCheckBoxToggle = styled.span`
 `;
 
 export const StyledCheckBoxKnob = styled.span`
+  box-sizing: border-box;
   position: absolute;
   top: -${props => props.theme.checkBox.border.width};
   left: -${props => props.theme.checkBox.border.width};

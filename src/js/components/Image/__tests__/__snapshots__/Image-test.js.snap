@@ -13,10 +13,6 @@ exports[`Image fit renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
@@ -58,10 +54,6 @@ exports[`Image renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 <div

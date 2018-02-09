@@ -13,10 +13,6 @@ exports[`WorldMap color renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   width: 100%;
 }
@@ -143,10 +139,6 @@ exports[`WorldMap continents renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -286,10 +278,6 @@ exports[`WorldMap onSelectPlace renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   width: 100%;
 }
@@ -419,10 +407,6 @@ exports[`WorldMap places renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -565,10 +549,6 @@ exports[`WorldMap renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {

@@ -13,11 +13,8 @@ exports[`Anchor disabled renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   color: #865CD6;
   text-decoration: none;
   cursor: pointer;
@@ -59,11 +56,8 @@ exports[`Anchor focus renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   color: #865CD6;
   text-decoration: none;
   cursor: pointer;
@@ -120,11 +114,8 @@ exports[`Anchor icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   color: #865CD6;
   text-decoration: none;
   cursor: pointer;
@@ -694,10 +685,6 @@ exports[`Anchor primary renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c3 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -733,6 +720,7 @@ exports[`Anchor primary renders 1`] = `
 }
 
 .c1 {
+  box-sizing: border-box;
   color: #865CD6;
   text-decoration: none;
   cursor: pointer;
@@ -1319,11 +1307,8 @@ exports[`Anchor renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   color: #865CD6;
   text-decoration: none;
   cursor: pointer;
@@ -1366,11 +1351,8 @@ exports[`Anchor renders with children 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   color: #865CD6;
   text-decoration: none;
   cursor: pointer;
@@ -1415,11 +1397,8 @@ exports[`Anchor reverse icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   color: #865CD6;
   text-decoration: none;
   cursor: pointer;
@@ -1989,11 +1968,8 @@ exports[`Anchor warns about invalid icon render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   color: #865CD6;
   text-decoration: none;
   cursor: pointer;
@@ -2545,11 +2521,8 @@ exports[`Anchor warns about invalid label render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   color: #865CD6;
   text-decoration: none;
   cursor: pointer;

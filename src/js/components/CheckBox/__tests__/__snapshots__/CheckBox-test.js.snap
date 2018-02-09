@@ -13,10 +13,6 @@ exports[`CheckBox checked renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -89,6 +85,7 @@ exports[`CheckBox checked renders 1`] = `
 }
 
 .c3 {
+  box-sizing: border-box;
   position: relative;
   top: -1px;
   display: inline-block;
@@ -102,6 +99,7 @@ exports[`CheckBox checked renders 1`] = `
 }
 
 .c3 > svg {
+  box-sizing: border-box;
   position: absolute;
   top: -2px;
   left: -2px;
@@ -163,10 +161,6 @@ exports[`CheckBox disabled renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -239,6 +233,7 @@ exports[`CheckBox disabled renders 1`] = `
 }
 
 .c3 {
+  box-sizing: border-box;
   position: relative;
   top: -1px;
   display: inline-block;
@@ -252,6 +247,7 @@ exports[`CheckBox disabled renders 1`] = `
 }
 
 .c3 > svg {
+  box-sizing: border-box;
   position: absolute;
   top: -2px;
   left: -2px;
@@ -350,10 +346,6 @@ exports[`CheckBox label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -426,6 +418,7 @@ exports[`CheckBox label renders 1`] = `
 }
 
 .c3 {
+  box-sizing: border-box;
   position: relative;
   top: -1px;
   display: inline-block;
@@ -439,6 +432,7 @@ exports[`CheckBox label renders 1`] = `
 }
 
 .c3 > svg {
+  box-sizing: border-box;
   position: absolute;
   top: -2px;
   left: -2px;
@@ -538,10 +532,6 @@ exports[`CheckBox renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -614,6 +604,7 @@ exports[`CheckBox renders 1`] = `
 }
 
 .c3 {
+  box-sizing: border-box;
   position: relative;
   top: -1px;
   display: inline-block;
@@ -627,6 +618,7 @@ exports[`CheckBox renders 1`] = `
 }
 
 .c3 > svg {
+  box-sizing: border-box;
   position: absolute;
   top: -2px;
   left: -2px;
@@ -720,10 +712,6 @@ exports[`CheckBox reverse renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -796,6 +784,7 @@ exports[`CheckBox reverse renders 1`] = `
 }
 
 .c3 {
+  box-sizing: border-box;
   position: relative;
   top: -1px;
   display: inline-block;
@@ -809,6 +798,7 @@ exports[`CheckBox reverse renders 1`] = `
 }
 
 .c3 > svg {
+  box-sizing: border-box;
   position: absolute;
   top: -2px;
   left: -2px;
@@ -871,10 +861,6 @@ exports[`CheckBox toggle renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -949,6 +935,7 @@ exports[`CheckBox toggle renders 1`] = `
 }
 
 .c3 {
+  box-sizing: border-box;
   position: relative;
   vertical-align: middle;
   display: inline-block;
@@ -960,6 +947,7 @@ exports[`CheckBox toggle renders 1`] = `
 }
 
 .c4 {
+  box-sizing: border-box;
   position: absolute;
   top: -2px;
   left: -2px;

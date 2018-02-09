@@ -361,6 +361,7 @@ const animationStyle = css`
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
 const StyledBox = styled.div`
   display: flex;
+  box-sizing: border-box;
   ${props => !props.basis && 'max-width: 100%;'};
 
   ${props => props.align && alignStyle}

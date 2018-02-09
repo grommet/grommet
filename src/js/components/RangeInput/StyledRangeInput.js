@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { focusStyle, parseMetricToNum } from '../../utils';
 
 const rangeTrackStyle = css`
+  box-sizing: border-box;
   width: 100%;
   height: ${props => props.theme.global.focus.border.width};
   background-color: ${
@@ -17,6 +18,7 @@ const rangeTrackStyle = css`
 `;
 
 const rangeThumbStyle = css`
+  box-sizing: border-box;
   position: relative;
   border: ${props => props.theme.global.control.border.width} solid ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.global.colors.brand)};
   border-radius: ${props => props.theme.global.spacing};
@@ -36,6 +38,7 @@ const firefoxMicrosoftThumbStyle = css`
 `;
 
 const StyledRangeInput = styled.input`
+  box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;
   border-color: transparent;

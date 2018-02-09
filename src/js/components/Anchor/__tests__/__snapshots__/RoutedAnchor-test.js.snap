@@ -13,11 +13,8 @@ exports[`RoutedAnchor renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   color: #865CD6;
   text-decoration: none;
   cursor: pointer;

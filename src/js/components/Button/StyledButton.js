@@ -116,6 +116,7 @@ const plainStyle = css`
 `;
 
 const StyledButton = styled.button`
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;

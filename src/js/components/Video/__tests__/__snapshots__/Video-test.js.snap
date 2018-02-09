@@ -13,10 +13,6 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -56,6 +52,7 @@ exports[`Video autoPlay renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -78,6 +75,7 @@ exports[`Video autoPlay renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -97,6 +95,7 @@ exports[`Video autoPlay renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -112,6 +111,7 @@ exports[`Video autoPlay renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -126,6 +126,7 @@ exports[`Video autoPlay renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -139,6 +140,7 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c5 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -160,6 +162,7 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c15 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -481,10 +484,6 @@ exports[`Video controls renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -556,6 +555,7 @@ exports[`Video controls renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -578,6 +578,7 @@ exports[`Video controls renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -597,6 +598,7 @@ exports[`Video controls renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -612,6 +614,7 @@ exports[`Video controls renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -626,6 +629,7 @@ exports[`Video controls renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -643,6 +647,7 @@ exports[`Video controls renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -659,6 +664,7 @@ exports[`Video controls renders 1`] = `
 }
 
 .c5 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -680,6 +686,7 @@ exports[`Video controls renders 1`] = `
 }
 
 .c15 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -1211,10 +1218,6 @@ exports[`Video fit renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -1254,6 +1257,7 @@ exports[`Video fit renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1276,6 +1280,7 @@ exports[`Video fit renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1295,6 +1300,7 @@ exports[`Video fit renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -1310,6 +1316,7 @@ exports[`Video fit renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -1324,6 +1331,7 @@ exports[`Video fit renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -1337,6 +1345,7 @@ exports[`Video fit renders 1`] = `
 }
 
 .c5 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -1358,6 +1367,7 @@ exports[`Video fit renders 1`] = `
 }
 
 .c15 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -1899,10 +1909,6 @@ exports[`Video loop renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -1942,6 +1948,7 @@ exports[`Video loop renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1964,6 +1971,7 @@ exports[`Video loop renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1983,6 +1991,7 @@ exports[`Video loop renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -1998,6 +2007,7 @@ exports[`Video loop renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -2012,6 +2022,7 @@ exports[`Video loop renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -2025,6 +2036,7 @@ exports[`Video loop renders 1`] = `
 }
 
 .c5 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -2046,6 +2058,7 @@ exports[`Video loop renders 1`] = `
 }
 
 .c15 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -2367,10 +2380,6 @@ exports[`Video mute renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -2410,6 +2419,7 @@ exports[`Video mute renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2432,6 +2442,7 @@ exports[`Video mute renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2451,6 +2462,7 @@ exports[`Video mute renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -2466,6 +2478,7 @@ exports[`Video mute renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -2480,6 +2493,7 @@ exports[`Video mute renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -2493,6 +2507,7 @@ exports[`Video mute renders 1`] = `
 }
 
 .c5 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -2514,6 +2529,7 @@ exports[`Video mute renders 1`] = `
 }
 
 .c15 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -2835,10 +2851,6 @@ exports[`Video renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -2878,6 +2890,7 @@ exports[`Video renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2900,6 +2913,7 @@ exports[`Video renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2919,6 +2933,7 @@ exports[`Video renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -2934,6 +2949,7 @@ exports[`Video renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -2948,6 +2964,7 @@ exports[`Video renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -2961,6 +2978,7 @@ exports[`Video renders 1`] = `
 }
 
 .c5 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -2982,6 +3000,7 @@ exports[`Video renders 1`] = `
 }
 
 .c15 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
