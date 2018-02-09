@@ -13,11 +13,18 @@ import { Meter } from 'grommet';
 
 **background**
 
-A color identifier to use for the background color. For example:
-      'light-1'.
+Background color
 
 ```
 string
+{
+  color: string,
+  opacity: 
+    weak
+    medium
+    strong
+    boolean
+}
 ```
 
 **round**

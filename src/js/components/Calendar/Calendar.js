@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
-import moment from 'moment';
 
 import { FormPrevious, FormNext, Previous, Next } from 'grommet-icons';
 
@@ -16,82 +15,50 @@ import StyledCalendar, {
   StyledDay, StyledDayContainer, StyledWeek, StyledWeeks, StyledWeeksContainer,
 } from './StyledCalendar';
 import doc from './doc';
+import {
+  addDays, addMonths, betweenDates, daysApart, sameDay,
+  subtractDays, subtractMonths, withinDates,
+} from './utils';
 
-const between = (date, dates) => {
-  let result;
-  if (dates) {
-    const [from, to] = dates;
-    if (date.isSame(from, 'day') || date.isSame(to, 'day')) {
-      result = 2;
-    } else if (date.isSameOrAfter(from, 'day') &&
-      date.isSameOrBefore(to, 'day')) {
-      result = 1;
-    }
-  } else {
-    result = 1;
-  }
-  return result;
-};
-
-const within = (date, dates) => {
-  let result = 0;
-  if (dates) {
-    if (Array.isArray(dates)) {
-      dates.some((d) => {
-        if (typeof d === 'string') {
-          if (date.isSame(d, 'day')) {
-            result = 2;
-          }
-        } else {
-          result = between(date, d);
-        }
-        return result;
-      });
-    } else if (date.isSame(dates, 'day')) {
-      result = 2;
-    }
-  }
-  return result;
-};
-
-const buildStartEnd = (reference) => {
-  const start = moment(reference).startOf('month').startOf('week');
-  const end = moment(start).add(5, 'weeks').endOf('week');
+const buildStartEnd = (reference, firstDayOfWeek) => {
+  let start = new Date(reference);
+  start.setDate(1); // first of month
+  start = subtractDays(start, start.getDay() - firstDayOfWeek); // beginning of week
+  const end = addDays(start, (7 * 5) + 6); // 5 weeks to end of week
   return { start, end };
 };
 
 const buildState = (props) => {
-  const { date, dates } = props;
+  const { date, dates, firstDayOfWeek } = props;
   let reference;
   if (date) {
-    reference = moment(date);
+    reference = new Date(date);
   } else if (dates && dates.length > 0) {
     if (typeof dates[0] === 'string') {
-      reference = moment(dates[0]);
+      reference = new Date(dates[0]);
     } else if (Array.isArray(dates[0])) {
-      reference = moment(dates[0][0]);
+      reference = new Date(dates[0][0]);
     } else {
-      reference = moment();
+      reference = new Date();
     }
   } else {
-    reference = moment();
+    reference = new Date();
   }
-  if (props.locale) {
-    reference.locale(props.locale);
-  }
+  // if (props.locale) {
+  //   reference.locale(props.locale);
+  // }
   return {
-    ...buildStartEnd(reference),
+    ...buildStartEnd(reference, firstDayOfWeek),
     reference,
-    active: moment(reference),
+    active: new Date(reference),
   };
 };
 
 class Calendar extends Component {
   static defaultProps = {
+    firstDayOfWeek: 0,
     size: 'medium',
   };
-
-  dayRefs = {}
 
   constructor(props) {
     super(props);
@@ -103,12 +70,10 @@ class Calendar extends Component {
   }
 
   componentDidUpdate() {
-    const { active } = this.state;
     if (this.setFocus) {
       this.setFocus = false;
-      const ref = this.dayRefs[active.toISOString()];
-      if (ref) {
-        findDOMNode(ref).focus();
+      if (this.activeRef) {
+        findDOMNode(this.activeRef).focus();
       }
     }
   }
@@ -118,28 +83,28 @@ class Calendar extends Component {
   }
 
   setReference = (reference) => {
-    const { bounds } = this.props;
+    const { bounds, firstDayOfWeek } = this.props;
     const { start, end } = this.state;
-    if (between(reference, bounds)) {
-      const nextStartEnd = buildStartEnd(reference);
+    if (betweenDates(reference, bounds)) {
+      const nextStartEnd = buildStartEnd(reference, firstDayOfWeek);
       const nextState = {
         reference,
         active: undefined,
       };
-      if (nextStartEnd.start.isBefore(start)) {
+      if (nextStartEnd.start.getTime() < start.getTime()) {
         nextState.start = nextStartEnd.start;
         nextState.slide = {
           direction: 'down',
-          weeks: start.diff(nextStartEnd.start, 'weeks'),
+          weeks: daysApart(start, nextStartEnd.start) / 7,
         };
         clearTimeout(this.timer);
         this.timer = setTimeout(() =>
           this.setState({ end: nextStartEnd.end, slide: undefined }), 1000);
-      } else if (nextStartEnd.end.isAfter(end)) {
+      } else if (nextStartEnd.end.getTime() > end.getTime()) {
         nextState.end = nextStartEnd.end;
         nextState.slide = {
           direction: 'up',
-          weeks: nextStartEnd.end.diff(end, 'weeks'),
+          weeks: daysApart(nextStartEnd.end, end) / 7,
         };
         clearTimeout(this.timer);
         this.timer = setTimeout(() =>
@@ -152,59 +117,67 @@ class Calendar extends Component {
   setActive = (active) => {
     const { bounds } = this.props;
     const { start, reference, end } = this.state;
-    if (between(active, bounds)) {
+    if (betweenDates(active, bounds)) {
       const nextState = { active };
-      if (active.isBefore(start)) {
-        nextState.start = moment(start).subtract(1, 'week');
-        nextState.end = moment(end).subtract(1, 'week');
-      } else if (active.isAfter(end)) {
-        nextState.start = moment(start).add(1, 'week');
-        nextState.end = moment(end).add(1, 'week');
+      if (active.getTime() < start.getTime()) {
+        nextState.start = subtractDays(start, 7);
+        nextState.end = subtractDays(end, 7);
+      } else if (active.getTime() > end.getTime()) {
+        nextState.start = addDays(start, 7);
+        nextState.end = addDays(end, 7);
       }
-      if (!active.isSame(reference, 'month')) {
-        nextState.reference = moment(active);
+      if (active.getMonth() !== reference.getMonth()) {
+        nextState.reference = new Date(active);
       }
       this.setFocus = true;
       this.setState(nextState);
     }
   }
 
+  onClickDay = dateString => () => {
+    const { onSelect } = this.props;
+    this.setState({ active: new Date(dateString) });
+    onSelect(dateString);
+  };
+
   render() {
     const {
-      bounds, date, dates, disabled, onSelect, size, theme, ...rest
+      bounds, date, dates, disabled, firstDayOfWeek, locale, onSelect, size,
+      theme, ...rest
     } = this.props;
     const { active, start, reference, end, slide } = this.state;
 
-    const previousMonth = moment(reference).subtract(1, 'month');
-    const nextMonth = moment(reference).add(1, 'month');
+    const previousMonth = subtractMonths(reference, 1);
+    const nextMonth = addMonths(reference, 1);
 
     const weeks = [];
-    const day = moment(start);
+    let day = new Date(start);
     let days;
 
-    while (day.isBefore(end)) {
-      if (!day.weekday()) {
+    while (day.getTime() < end.getTime()) {
+      if (day.getDay() === firstDayOfWeek) {
         if (days) {
           weeks.push((
-            <StyledWeek key={day.week()} theme={theme}>{days}</StyledWeek>
+            <StyledWeek key={day.getTime()} theme={theme}>{days}</StyledWeek>
           ));
         }
         days = [];
       }
 
       const dateString = day.toISOString();
-      let content = day.format('D');
+      let content = day.getDate();
+      const isActive = active && sameDay(day, active);
       let selected = false;
       let inRange = false;
       let background;
 
-      const selectedState = within(day, date || dates);
+      const selectedState = withinDates(day, date || dates);
       if (selectedState === 2) {
         selected = true;
       } else if (selectedState === 1) {
         inRange = true;
       }
-      const dayDisabled = within(day, disabled);
+      const dayDisabled = withinDates(day, disabled);
       if (selected) {
         background = 'brand';
         content = <strong>{content}</strong>;
@@ -213,21 +186,20 @@ class Calendar extends Component {
       }
 
       days.push(
-        <StyledDayContainer key={day.day()} size={size} theme={theme}>
+        <StyledDayContainer key={day.getTime()} size={size} theme={theme}>
           <Button
-            ref={(ref) => { this.dayRefs[dateString] = ref; }}
-            a11yTitle={day.format('LL')}
-            plain={true}
-            active={active && day.isSame(active, 'day')}
-            hoverIndicator={!dayDisabled}
-            onClick={dayDisabled ? undefined : () => {
-              this.setState({ active: moment(dateString) });
-              onSelect(dateString);
+            ref={(ref) => {
+              if (isActive) this.activeRef = ref;
             }}
+            a11yTitle={day.toDateString()}
+            plain={true}
+            active={isActive}
+            hoverIndicator={!dayDisabled}
+            onClick={dayDisabled ? undefined : this.onClickDay(dateString)}
           >
             <StyledDay
               background={background}
-              otherMonth={!day.isSame(reference, 'month')}
+              otherMonth={day.getMonth() !== reference.getMonth()}
               size={size}
               theme={theme}
             >
@@ -236,10 +208,10 @@ class Calendar extends Component {
           </Button>
         </StyledDayContainer>
       );
-      day.add(1, 'day');
+      day = addDays(day, 1);
     }
     weeks.push((
-      <StyledWeek key={day.week()} theme={theme}>{days}</StyledWeek>
+      <StyledWeek key={day.getTime()} theme={theme}>{days}</StyledWeek>
     ));
 
     return (
@@ -247,32 +219,32 @@ class Calendar extends Component {
         <Keyboard
           onUp={(event) => {
             event.preventDefault();
-            this.setActive(moment(active).subtract(1, 'week'));
+            this.setActive(addDays(active, -7));
           }}
           onDown={(event) => {
             event.preventDefault();
-            this.setActive(moment(active).add(1, 'week'));
+            this.setActive(addDays(active, 7));
           }}
-          onLeft={() => this.setActive(moment(active).subtract(1, 'day'))}
-          onRight={() => this.setActive(moment(active).add(1, 'day'))}
+          onLeft={() => this.setActive(addDays(active, -1))}
+          onRight={() => this.setActive(addDays(active, 1))}
         >
           <Box>
             <Box direction='row' justify='between' align='center'>
               <Heading level={3} size={size} margin='none'>
-                <strong>{reference.format('MMMM YYYY')}</strong>
+                <strong>{reference.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}</strong>
               </Heading>
               <Box direction='row' align='center'>
                 <Button
-                  a11yTitle={previousMonth.format('MMMM YYYY')}
+                  a11yTitle={previousMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
                   icon={size === 'small' ?
                     <FormPrevious /> : <Previous size={size} />}
-                  onClick={(onSelect && between(previousMonth, bounds)) ?
+                  onClick={(onSelect && betweenDates(previousMonth, bounds)) ?
                     () => this.setReference(previousMonth) : undefined}
                 />
                 <Button
-                  a11yTitle={nextMonth.format('MMMM YYYY')}
+                  a11yTitle={nextMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
                   icon={size === 'small' ? <FormNext /> : <Next size={size} />}
-                  onClick={(onSelect && between(nextMonth, bounds)) ?
+                  onClick={(onSelect && betweenDates(nextMonth, bounds)) ?
                     () => this.setReference(nextMonth) : undefined}
                 />
               </Box>

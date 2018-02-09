@@ -686,10 +686,18 @@ Multiple dates in ISO8601 format that should not be
 ]
 \`\`\`
 
+**firstDayOfWeek**
+
+The first day of the week. 0 for Sunday. 1 for Monday.
+
+\`\`\`
+0
+1
+\`\`\`
+
 **locale**
 
-The locale to use. It must already
-      have been loaded. See: https://momentjs.com/docs/#/i18n/
+The locale to use.
 
 \`\`\`
 string
@@ -1725,11 +1733,18 @@ import { Meter } from 'grommet';
 
 **background**
 
-A color identifier to use for the background color. For example:
-      'light-1'.
+Background color
 
 \`\`\`
 string
+{
+  color: string,
+  opacity: 
+    weak
+    medium
+    strong
+    boolean
+}
 \`\`\`
 
 **round**
@@ -2029,7 +2044,7 @@ number
 
 **background**
 
-Background color when drop is active
+Background color
 
 \`\`\`
 string
