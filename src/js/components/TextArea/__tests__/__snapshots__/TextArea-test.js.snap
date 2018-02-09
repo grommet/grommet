@@ -26,6 +26,7 @@ exports[`TextArea focusIndicator renders 1`] = `
   color: inherit;
   font: inherit;
   margin: 0;
+  width: 100%;
 }
 
 .c1::-webkit-input-placeholder {
@@ -97,6 +98,7 @@ exports[`TextArea placeholder renders 1`] = `
   color: inherit;
   font: inherit;
   margin: 0;
+  width: 100%;
 }
 
 .c1::-webkit-input-placeholder {
@@ -169,6 +171,7 @@ exports[`TextArea plain renders 1`] = `
   color: inherit;
   font: inherit;
   margin: 0;
+  width: 100%;
   border: none;
   width: 100%;
   -webkit-appearance: none;
@@ -228,6 +231,7 @@ exports[`TextArea renders 1`] = `
   color: inherit;
   font: inherit;
   margin: 0;
+  width: 100%;
 }
 
 .c1::-webkit-input-placeholder {

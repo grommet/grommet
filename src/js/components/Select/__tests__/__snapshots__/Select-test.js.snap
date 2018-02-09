@@ -98,11 +98,11 @@ exports[`Select closes drop on esc 3`] = `
     direction="row"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl jYXZDG"
+      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
         type="text"
-        class="StyledTextInput-bzOzsW flduXy"
+        class="StyledTextInput-bzOzsW kYTHvL"
         id="select"
         autocomplete="off"
         style="cursor: pointer;"
@@ -148,11 +148,11 @@ exports[`Select closes drop on esc 4`] = `
     direction="row"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl jYXZDG"
+      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
         type="text"
-        class="StyledTextInput-bzOzsW flduXy"
+        class="StyledTextInput-bzOzsW kYTHvL"
         id="select"
         autocomplete="off"
         style="cursor: pointer;"
@@ -198,11 +198,11 @@ exports[`Select mounts 1`] = `
     direction="row"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl jYXZDG"
+      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
         type="text"
-        class="StyledTextInput-bzOzsW flduXy"
+        class="StyledTextInput-bzOzsW kYTHvL"
         id="select"
         autocomplete="off"
         style="cursor: pointer;"
@@ -248,11 +248,11 @@ exports[`Select mounts 2`] = `
     direction="row"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl jYXZDG"
+      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
         type="text"
-        class="StyledTextInput-bzOzsW flduXy"
+        class="StyledTextInput-bzOzsW kYTHvL"
         id="select"
         autocomplete="off"
         style="cursor: pointer;"
@@ -428,11 +428,11 @@ exports[`Select mounts with complex options and children 1`] = `
     direction="row"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl jYXZDG"
+      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
         type="text"
-        class="StyledTextInput-bzOzsW flduXy"
+        class="StyledTextInput-bzOzsW kYTHvL"
         id="select"
         autocomplete="off"
         style="cursor: pointer;"
@@ -478,11 +478,11 @@ exports[`Select mounts with complex options and children 2`] = `
     direction="row"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl jYXZDG"
+      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
         type="text"
-        class="StyledTextInput-bzOzsW flduXy"
+        class="StyledTextInput-bzOzsW kYTHvL"
         id="select"
         autocomplete="off"
         style="cursor: pointer;"
@@ -599,11 +599,11 @@ exports[`Select mounts with search 1`] = `
     direction="column"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl jYXZDG"
+      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
         type="search"
-        class="StyledTextInput-bzOzsW heLttg"
+        class="StyledTextInput-bzOzsW gkpwmV"
         autocomplete="off"
         value=""
       />
@@ -692,7 +692,7 @@ exports[`Select mounts with search 2`] = `
 exports[`Select mounts with search 3`] = `
 <input
   type="search"
-  class="StyledTextInput-bzOzsW heLttg"
+  class="StyledTextInput-bzOzsW gkpwmV"
   autocomplete="off"
   value=""
 />
@@ -709,11 +709,11 @@ exports[`Select mounts with search 4`] = `
     direction="column"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl jYXZDG"
+      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
         type="search"
-        class="StyledTextInput-bzOzsW heLttg"
+        class="StyledTextInput-bzOzsW gkpwmV"
         autocomplete="off"
         value="a"
       />
