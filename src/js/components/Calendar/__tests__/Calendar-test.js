@@ -57,3 +57,13 @@ test('Calendar size renders', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('Calendar firstDayOfWeek renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Calendar firstDayOfWeek={1} date='2018-01-15' />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});

@@ -30,8 +30,9 @@ export default (Calendar) => {
     ]))
       .description(`Multiple dates in ISO8601 format that should not be
         selectable. Items that are an array indicate a range of dates.`),
-    locale: PropTypes.string.description(`The locale to use. It must already
-      have been loaded. See: https://momentjs.com/docs/#/i18n/`),
+    firstDayOfWeek: PropTypes.oneOf([0, 1])
+      .description('The first day of the week. 0 for Sunday. 1 for Monday.'),
+    locale: PropTypes.string.description('The locale to use.'),
     onSelect: PropTypes.func.description(`Called with an ISO8601 date when
       the user selects a day.
       For single select, make this the subsequent \`date\` property value.

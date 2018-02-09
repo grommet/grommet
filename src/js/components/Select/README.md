@@ -29,7 +29,7 @@ number
 
 **background**
 
-Background color when drop is active
+Background color
 
 ```
 string

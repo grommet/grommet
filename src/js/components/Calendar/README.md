@@ -54,10 +54,18 @@ Multiple dates in ISO8601 format that should not be
 ]
 ```
 
+**firstDayOfWeek**
+
+The first day of the week. 0 for Sunday. 1 for Monday.
+
+```
+0
+1
+```
+
 **locale**
 
-The locale to use. It must already
-      have been loaded. See: https://momentjs.com/docs/#/i18n/
+The locale to use.
 
 ```
 string
