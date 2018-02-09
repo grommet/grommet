@@ -13,14 +13,9 @@ const FOLDER = path.resolve(__dirname, '../');
 test('README is updated', (done) => {
   const componentFolders = components(FOLDER);
   const readmeContent = {};
-  componentFolders.sort().forEach((component, index) => {
-    fs.readFile(path.join(FOLDER, component, 'README.md'), 'utf8', (err, data) => {
-      readmeContent[component] = data;
-
-      if (componentFolders.length === index + 1) {
-        expect(readmeContent).toMatchSnapshot();
-        done();
-      }
-    });
+  componentFolders.sort().forEach((component) => {
+    readmeContent[component] = fs.readFileSync(path.join(FOLDER, component, 'README.md'), 'utf8');
   });
+  expect(readmeContent).toMatchSnapshot();
+  done();
 });
