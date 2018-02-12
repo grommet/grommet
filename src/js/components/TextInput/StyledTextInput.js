@@ -22,6 +22,7 @@ const plainStyle = css`
 
 const StyledTextInput = styled.input`
   ${inputStyle}
+  width: 100%;
 
   ${props => props.size && sizeStyle(props)}
   ${props => props.plain && plainStyle}
@@ -49,7 +50,7 @@ const StyledTextInput = styled.input`
 `;
 
 export const StyledTextInputContainer = styled.div`
-  ${props => props.plain && 'width: 100%'}
+  width: 100%;
 `;
 
 export const StyledSuggestions = styled.ol`

@@ -14,6 +14,7 @@ const plainStyle = css`
 
 const StyledTextArea = styled.textarea`
   ${inputStyle}
+  width: 100%;
 
   ${props => props.plain && plainStyle}
 
