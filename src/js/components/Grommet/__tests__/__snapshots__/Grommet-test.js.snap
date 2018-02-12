@@ -2,7 +2,7 @@
 
 exports[`Grommet announces 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fbqGIt"
+  class="StyledGrommet-gGRXwz DZGmZ"
 >
   <div>
     hi
@@ -39,10 +39,6 @@ exports[`Grommet hpe theme renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 <div
   className="c0"
 >
@@ -61,10 +57,6 @@ exports[`Grommet renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 <div

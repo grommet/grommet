@@ -13,11 +13,8 @@ exports[`RoutedButton renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;

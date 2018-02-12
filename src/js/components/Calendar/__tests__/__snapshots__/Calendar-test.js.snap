@@ -13,10 +13,6 @@ exports[`Calendar date renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -54,6 +50,7 @@ exports[`Calendar date renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -66,6 +63,7 @@ exports[`Calendar date renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -86,6 +84,7 @@ exports[`Calendar date renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -98,6 +97,7 @@ exports[`Calendar date renders 1`] = `
 }
 
 .c6 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -116,6 +116,7 @@ exports[`Calendar date renders 1`] = `
 }
 
 .c13 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -136,6 +137,7 @@ exports[`Calendar date renders 1`] = `
 }
 
 .c16 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -1566,10 +1568,6 @@ exports[`Calendar dates renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -1607,6 +1605,7 @@ exports[`Calendar dates renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -1619,6 +1618,7 @@ exports[`Calendar dates renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1639,6 +1639,7 @@ exports[`Calendar dates renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1651,6 +1652,7 @@ exports[`Calendar dates renders 1`] = `
 }
 
 .c6 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -1669,6 +1671,7 @@ exports[`Calendar dates renders 1`] = `
 }
 
 .c13 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -1689,6 +1692,7 @@ exports[`Calendar dates renders 1`] = `
 }
 
 .c17 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -3121,10 +3125,6 @@ exports[`Calendar disabled renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -3162,6 +3162,7 @@ exports[`Calendar disabled renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -3174,6 +3175,7 @@ exports[`Calendar disabled renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3194,6 +3196,7 @@ exports[`Calendar disabled renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3206,6 +3209,7 @@ exports[`Calendar disabled renders 1`] = `
 }
 
 .c6 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -3224,6 +3228,7 @@ exports[`Calendar disabled renders 1`] = `
 }
 
 .c13 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -3244,6 +3249,7 @@ exports[`Calendar disabled renders 1`] = `
 }
 
 .c17 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -4676,10 +4682,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -4717,6 +4719,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -4729,6 +4732,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -4749,6 +4753,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -4761,6 +4766,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
 }
 
 .c6 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -4779,6 +4785,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
 }
 
 .c13 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -4799,6 +4806,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
 }
 
 .c16 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -7489,10 +7497,6 @@ exports[`Calendar renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -7530,6 +7534,7 @@ exports[`Calendar renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -7542,6 +7547,7 @@ exports[`Calendar renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -7562,6 +7568,7 @@ exports[`Calendar renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -7574,6 +7581,7 @@ exports[`Calendar renders 1`] = `
 }
 
 .c6 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -7592,6 +7600,7 @@ exports[`Calendar renders 1`] = `
 }
 
 .c13 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -7612,6 +7621,7 @@ exports[`Calendar renders 1`] = `
 }
 
 .c16 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -9042,10 +9052,6 @@ exports[`Calendar size renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -9117,6 +9123,7 @@ exports[`Calendar size renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -9129,6 +9136,7 @@ exports[`Calendar size renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -9149,6 +9157,7 @@ exports[`Calendar size renders 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  box-sizing: border-box;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -9161,6 +9170,7 @@ exports[`Calendar size renders 1`] = `
 }
 
 .c6 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -9179,6 +9189,7 @@ exports[`Calendar size renders 1`] = `
 }
 
 .c13 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -9199,6 +9210,7 @@ exports[`Calendar size renders 1`] = `
 }
 
 .c16 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;

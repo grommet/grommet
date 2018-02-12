@@ -13,11 +13,8 @@ exports[`Button color renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -52,6 +49,7 @@ exports[`Button color renders 1`] = `
 }
 
 .c3 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -167,11 +165,8 @@ exports[`Button disabled renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -237,11 +232,8 @@ exports[`Button focus renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -327,11 +319,8 @@ exports[`Button hoverIndicator as object renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -394,11 +383,8 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -461,11 +447,8 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -528,11 +511,8 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -595,11 +575,8 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -662,11 +639,8 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -729,11 +703,8 @@ exports[`Button hoverIndicator renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -796,11 +767,8 @@ exports[`Button href renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -875,11 +843,8 @@ exports[`Button icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -982,11 +947,8 @@ exports[`Button primary renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -1072,11 +1034,8 @@ exports[`Button renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -1161,11 +1120,8 @@ exports[`Button reverse icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -1268,11 +1224,8 @@ exports[`Button warns about invalid icon render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
@@ -1348,11 +1301,8 @@ exports[`Button warns about invalid label render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;

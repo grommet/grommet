@@ -13,11 +13,8 @@ exports[`TextArea focusIndicator renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.15);
   border-radius: 4px;
@@ -85,11 +82,8 @@ exports[`TextArea placeholder renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.15);
   border-radius: 4px;
@@ -158,11 +152,8 @@ exports[`TextArea plain renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.15);
   border-radius: 4px;
@@ -218,11 +209,8 @@ exports[`TextArea renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.15);
   border-radius: 4px;

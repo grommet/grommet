@@ -89,10 +89,6 @@ export const baseStyle = css`
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-
-  * {
-    box-sizing: inherit;
-  }
 `;
 
 // focus also supports clickable elements inside svg
@@ -117,6 +113,7 @@ export const focusStyle = css`
 `;
 
 export const inputStyle = css`
+  box-sizing: border-box;
   padding: ${props => (
     (parseMetricToNum(props.theme.global.spacing) / 2) -
     parseMetricToNum(props.theme.global.input.border.width)

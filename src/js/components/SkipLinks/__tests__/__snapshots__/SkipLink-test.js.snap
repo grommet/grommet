@@ -2,7 +2,7 @@
 
 exports[`SkipLink mounts 1`] = `
 <div
-  class="StyledLayer-ceZzeh befYaj"
+  class="StyledLayer-ceZzeh gVCohQ"
   id="skip-links"
   tabindex="-1"
 >
@@ -10,7 +10,7 @@ exports[`SkipLink mounts 1`] = `
     class="StyledLayer__StyledContainer-gBGbkw emuypU"
   >
     <div
-      class="StyledBox-bStriS bZDKOr"
+      class="StyledBox-bStriS lfaLpu"
       direction="column"
     >
       <h2
@@ -20,15 +20,15 @@ exports[`SkipLink mounts 1`] = `
         :
       </h2>
       <div
-        class="StyledBox-bStriS etiTqg"
+        class="StyledBox-bStriS clkleN"
         direction="row"
       >
         <div
-          class="StyledBox-bStriS gqXbJX"
+          class="StyledBox-bStriS dVyTyq"
           direction="column"
         >
           <a
-            class="StyledAnchor-hcnTIZ cnvuhs"
+            class="StyledAnchor-hcnTIZ kwSIan"
             label="Main Content"
             href="#main"
           >
@@ -36,11 +36,11 @@ exports[`SkipLink mounts 1`] = `
           </a>
         </div>
         <div
-          class="StyledBox-bStriS gqXbJX"
+          class="StyledBox-bStriS dVyTyq"
           direction="column"
         >
           <a
-            class="StyledAnchor-hcnTIZ cnvuhs"
+            class="StyledAnchor-hcnTIZ kwSIan"
             label="Footer"
             href="#footer"
           >
@@ -56,7 +56,7 @@ exports[`SkipLink mounts 1`] = `
 exports[`SkipLink mounts 2`] = `
 "
 
-.befYaj {
+.gVCohQ {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -75,10 +75,6 @@ exports[`SkipLink mounts 2`] = `
   right: 100%;
   z-index: -1;
   position: fixed;
-}
-
-.befYaj * {
-  box-sizing: inherit;
 }
 
 @media only screen and (max-width:699px) {
@@ -101,7 +97,7 @@ exports[`SkipLink mounts 2`] = `
 
 exports[`SkipLink mounts 3`] = `
 <div
-  class="StyledLayer-ceZzeh eJxHlH"
+  class="StyledLayer-ceZzeh bGwGvr"
   id="skip-links"
   tabindex="-1"
 >
@@ -109,7 +105,7 @@ exports[`SkipLink mounts 3`] = `
     class="StyledLayer__StyledContainer-gBGbkw jpmyrr"
   >
     <div
-      class="StyledBox-bStriS bZDKOr"
+      class="StyledBox-bStriS lfaLpu"
       direction="column"
     >
       <h2
@@ -119,15 +115,15 @@ exports[`SkipLink mounts 3`] = `
         :
       </h2>
       <div
-        class="StyledBox-bStriS etiTqg"
+        class="StyledBox-bStriS clkleN"
         direction="row"
       >
         <div
-          class="StyledBox-bStriS gqXbJX"
+          class="StyledBox-bStriS dVyTyq"
           direction="column"
         >
           <a
-            class="StyledAnchor-hcnTIZ kAqUau"
+            class="StyledAnchor-hcnTIZ gUtwfp"
             label="Main Content"
             href="#main"
           >
@@ -135,11 +131,11 @@ exports[`SkipLink mounts 3`] = `
           </a>
         </div>
         <div
-          class="StyledBox-bStriS gqXbJX"
+          class="StyledBox-bStriS dVyTyq"
           direction="column"
         >
           <a
-            class="StyledAnchor-hcnTIZ cnvuhs"
+            class="StyledAnchor-hcnTIZ kwSIan"
             label="Footer"
             href="#footer"
           >
@@ -155,7 +151,7 @@ exports[`SkipLink mounts 3`] = `
 exports[`SkipLink mounts 4`] = `
 "
 
-.eJxHlH {
+.bGwGvr {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -172,12 +168,8 @@ exports[`SkipLink mounts 4`] = `
   background-color: rgba(0,0,0,0.5);
 }
 
-.eJxHlH * {
-  box-sizing: inherit;
-}
-
 @media only screen and (min-width:700px) {
-  .eJxHlH {
+  .bGwGvr {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -236,7 +228,7 @@ exports[`SkipLink mounts 5`] = `
       hidden=""
     >
       <div
-        class="StyledLayer-ceZzeh befYaj"
+        class="StyledLayer-ceZzeh gVCohQ"
         id="skip-links"
         tabindex="-1"
       >
@@ -244,7 +236,7 @@ exports[`SkipLink mounts 5`] = `
           class="StyledLayer__StyledContainer-gBGbkw emuypU"
         >
           <div
-            class="StyledBox-bStriS bZDKOr"
+            class="StyledBox-bStriS lfaLpu"
             direction="column"
           >
             <h2
@@ -254,15 +246,15 @@ exports[`SkipLink mounts 5`] = `
               :
             </h2>
             <div
-              class="StyledBox-bStriS etiTqg"
+              class="StyledBox-bStriS clkleN"
               direction="row"
             >
               <div
-                class="StyledBox-bStriS gqXbJX"
+                class="StyledBox-bStriS dVyTyq"
                 direction="column"
               >
                 <a
-                  class="StyledAnchor-hcnTIZ cnvuhs"
+                  class="StyledAnchor-hcnTIZ kwSIan"
                   label="Main Content"
                   href="#main"
                 >
@@ -270,11 +262,11 @@ exports[`SkipLink mounts 5`] = `
                 </a>
               </div>
               <div
-                class="StyledBox-bStriS gqXbJX"
+                class="StyledBox-bStriS dVyTyq"
                 direction="column"
               >
                 <a
-                  class="StyledAnchor-hcnTIZ cnvuhs"
+                  class="StyledAnchor-hcnTIZ kwSIan"
                   label="Footer"
                   href="#footer"
                 >

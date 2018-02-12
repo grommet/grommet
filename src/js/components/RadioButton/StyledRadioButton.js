@@ -44,6 +44,7 @@ export const StyledRadioButtonInput = styled.input`
 `;
 
 export const StyledRadioButtonButton = styled.div`
+  box-sizing: border-box;
   position: relative;
   top: -1px;
   display: inline-block;
@@ -56,6 +57,7 @@ export const StyledRadioButtonButton = styled.div`
   border-radius: ${props => props.theme.radioButton.border.radius};
 
   > svg {
+    box-sizing: border-box;
     position: absolute;
     top: -2px;
     left: -2px;

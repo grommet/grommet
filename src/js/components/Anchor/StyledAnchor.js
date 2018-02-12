@@ -14,6 +14,7 @@ const disabledStyle = `
 `;
 
 const StyledAnchor = styled.a`
+  box-sizing: border-box;
   color: ${props =>
     (props.grommet && props.grommet.dark ? props.theme.global.colors.darkBackground.text
       : props.theme.anchor.color)};

@@ -13,10 +13,6 @@ exports[`RadioButton checked renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -88,6 +84,7 @@ exports[`RadioButton checked renders 1`] = `
 }
 
 .c3 {
+  box-sizing: border-box;
   position: relative;
   top: -1px;
   display: inline-block;
@@ -101,6 +98,7 @@ exports[`RadioButton checked renders 1`] = `
 }
 
 .c3 > svg {
+  box-sizing: border-box;
   position: absolute;
   top: -2px;
   left: -2px;
@@ -162,10 +160,6 @@ exports[`RadioButton disabled renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -237,6 +231,7 @@ exports[`RadioButton disabled renders 1`] = `
 }
 
 .c3 {
+  box-sizing: border-box;
   position: relative;
   top: -1px;
   display: inline-block;
@@ -250,6 +245,7 @@ exports[`RadioButton disabled renders 1`] = `
 }
 
 .c3 > svg {
+  box-sizing: border-box;
   position: absolute;
   top: -2px;
   left: -2px;
@@ -344,10 +340,6 @@ exports[`RadioButton label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -419,6 +411,7 @@ exports[`RadioButton label renders 1`] = `
 }
 
 .c3 {
+  box-sizing: border-box;
   position: relative;
   top: -1px;
   display: inline-block;
@@ -432,6 +425,7 @@ exports[`RadioButton label renders 1`] = `
 }
 
 .c3 > svg {
+  box-sizing: border-box;
   position: absolute;
   top: -2px;
   left: -2px;
@@ -532,10 +526,6 @@ exports[`RadioButton renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -607,6 +597,7 @@ exports[`RadioButton renders 1`] = `
 }
 
 .c3 {
+  box-sizing: border-box;
   position: relative;
   top: -1px;
   display: inline-block;
@@ -620,6 +611,7 @@ exports[`RadioButton renders 1`] = `
 }
 
 .c3 > svg {
+  box-sizing: border-box;
   position: absolute;
   top: -2px;
   left: -2px;
