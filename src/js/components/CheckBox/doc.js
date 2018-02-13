@@ -27,7 +27,11 @@ export default (CheckBox) => {
     name: PropTypes.string.description(
       'The DOM name attribute value to use for the underlying <input/> element.'
     ),
-    onChange: PropTypes.func.description('Same as React <input onChange={} />'),
+    onChange: PropTypes.func.description(
+      `Function that will be called when the user clicks the check box. It
+      will be passed a React event object. The current state can be accessed
+      via event.target.checked. Same as React <input onChange={} />.`
+    ),
     reverse: PropTypes.bool.description(
       'Whether to show the label in front of the checkbox.'
     ),

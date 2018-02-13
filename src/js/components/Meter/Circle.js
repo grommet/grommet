@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import { arcCommands, colorForName, parseMetricToNum, translateEndAngle } from '../../utils';
+import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
 
 import StyledMeter from './StyledMeter';
-import { backgroundProps } from './utils';
+import { strokeProps } from './utils';
 
 export default class Circle extends Component {
   render() {
@@ -40,8 +40,7 @@ export default class Circle extends Component {
           onMouseLeave: () => onHover(false),
         };
       }
-      const stroke =
-        colorForName((someHighlight && !highlight) ? background : colorName, theme);
+      const stroke = strokeProps((someHighlight && !highlight) ? background : colorName, theme);
 
       if (round) {
         const d1 = arcCommands(width / 2, width / 2, radius, startAngle, endAngle);
@@ -50,7 +49,7 @@ export default class Circle extends Component {
             key={key}
             d={d1}
             fill='none'
-            stroke={stroke}
+            {...stroke}
             strokeWidth={height}
             strokeLinecap='round'
             {...hoverProps}
@@ -87,7 +86,7 @@ export default class Circle extends Component {
             key={key}
             d={d}
             fill='none'
-            stroke={stroke}
+            {...stroke}
             strokeWidth={height}
             strokeLinecap='butt'
             {...hoverProps}
@@ -111,7 +110,7 @@ export default class Circle extends Component {
           cx={mid}
           cy={mid}
           r={radius}
-          {...backgroundProps(background, theme)}
+          {...strokeProps(background, theme)}
           strokeWidth={height}
           strokeLinecap={round ? 'round' : 'square'}
           fill='none'

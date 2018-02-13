@@ -12,12 +12,12 @@ exports[`TextInput closes suggestion drop 1`] = `
   >
     <li>
       <button
-        class="StyledButton-gXzblK jEvpLS"
+        class="StyledButton-gXzblK llVZxs"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-bStriS hYyHvw"
+          class="StyledBox-bStriS gedxom"
           direction="column"
         >
           test
@@ -26,12 +26,12 @@ exports[`TextInput closes suggestion drop 1`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK jEvpLS"
+        class="StyledButton-gXzblK llVZxs"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-bStriS hYyHvw"
+          class="StyledBox-bStriS gedxom"
           direction="column"
         >
           test1
@@ -44,7 +44,7 @@ exports[`TextInput closes suggestion drop 1`] = `
 
 exports[`TextInput closes suggestion drop 2`] = `
 "@media only screen and (min-width:700px) {
-  .jEvpLS {
+  .llVZxs {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -139,12 +139,12 @@ exports[`TextInput mounts with complex suggestions 1`] = `
   >
     <li>
       <button
-        class="StyledButton-gXzblK jEvpLS"
+        class="StyledButton-gXzblK llVZxs"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-bStriS hYyHvw"
+          class="StyledBox-bStriS gedxom"
           direction="column"
         >
           test
@@ -153,12 +153,12 @@ exports[`TextInput mounts with complex suggestions 1`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK jEvpLS"
+        class="StyledButton-gXzblK llVZxs"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-bStriS hYyHvw"
+          class="StyledBox-bStriS gedxom"
           direction="column"
         >
           test1
@@ -171,7 +171,7 @@ exports[`TextInput mounts with complex suggestions 1`] = `
 
 exports[`TextInput mounts with complex suggestions 2`] = `
 "@media only screen and (min-width:700px) {
-  .jEvpLS {
+  .llVZxs {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -220,12 +220,12 @@ exports[`TextInput mounts with suggestions 1`] = `
   >
     <li>
       <button
-        class="StyledButton-gXzblK jEvpLS"
+        class="StyledButton-gXzblK llVZxs"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-bStriS hYyHvw"
+          class="StyledBox-bStriS gedxom"
           direction="column"
         >
           test
@@ -234,12 +234,12 @@ exports[`TextInput mounts with suggestions 1`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK jEvpLS"
+        class="StyledButton-gXzblK llVZxs"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-bStriS hYyHvw"
+          class="StyledBox-bStriS gedxom"
           direction="column"
         >
           test1
@@ -252,7 +252,7 @@ exports[`TextInput mounts with suggestions 1`] = `
 
 exports[`TextInput mounts with suggestions 2`] = `
 "@media only screen and (min-width:700px) {
-  .jEvpLS {
+  .llVZxs {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -301,12 +301,12 @@ exports[`TextInput selects suggestion 1`] = `
   >
     <li>
       <button
-        class="StyledButton-gXzblK jEvpLS"
+        class="StyledButton-gXzblK llVZxs"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-bStriS hYyHvw"
+          class="StyledBox-bStriS gedxom"
           direction="column"
         >
           test
@@ -315,12 +315,12 @@ exports[`TextInput selects suggestion 1`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK jEvpLS"
+        class="StyledButton-gXzblK llVZxs"
         tabindex="0"
         type="button"
       >
         <div
-          class="StyledBox-bStriS hYyHvw"
+          class="StyledBox-bStriS gedxom"
           direction="column"
         >
           test1
@@ -333,7 +333,7 @@ exports[`TextInput selects suggestion 1`] = `
 
 exports[`TextInput selects suggestion 2`] = `
 "@media only screen and (min-width:700px) {
-  .jEvpLS {
+  .llVZxs {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

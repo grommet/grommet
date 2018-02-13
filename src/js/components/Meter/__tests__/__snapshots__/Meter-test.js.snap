@@ -287,7 +287,11 @@ exports[`Meter round renders 1`] = `
       fill="none"
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
-      stroke="#00CCEB"
+      stroke={
+        Object {
+          "stroke": "#00CCEB",
+        }
+      }
       strokeLinecap="round"
       strokeWidth={24}
     />

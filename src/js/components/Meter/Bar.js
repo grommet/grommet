@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import { colorForName, parseMetricToNum } from '../../utils';
+import { parseMetricToNum } from '../../utils';
 
 import StyledMeter from './StyledMeter';
-import { backgroundProps } from './utils';
+import { strokeProps } from './utils';
 
 export default class Bar extends Component {
   static defaultProps = {
@@ -43,7 +43,7 @@ export default class Bar extends Component {
           key={key}
           d={d}
           fill='none'
-          stroke={colorForName((someHighlight && !highlight) ? background : colorName, theme)}
+          {...strokeProps((someHighlight && !highlight) ? background : colorName, theme)}
           strokeWidth={height}
           strokeLinecap={round ? 'round' : 'butt'}
           {...hoverProps}
@@ -65,7 +65,7 @@ export default class Bar extends Component {
         <path
           d={`M ${capOffset},${mid} L ${width - capOffset},${mid}`}
           fill='none'
-          {...backgroundProps(background, theme)}
+          {...strokeProps(background, theme)}
           strokeWidth={height}
           strokeLinecap={round ? 'round' : 'square'}
         />

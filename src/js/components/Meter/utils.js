@@ -1,19 +1,19 @@
 import { colorForName } from '../../utils';
 
-export const backgroundProps = (background, theme) => {
+export const strokeProps = (color, theme) => {
   const result = {};
-  if (background) {
-    if (typeof background === 'object') {
-      result.stroke = colorForName(background.color, theme);
-      if (background.opacity) {
-        result.strokeOpacity = (background.opacity === true ?
-          theme.global.opacity.medium : theme.global.opacity[background.opacity]);
+  if (color) {
+    if (typeof color === 'object') {
+      result.stroke = colorForName(color.color, theme);
+      if (color.opacity) {
+        result.strokeOpacity = (color.opacity === true ?
+          theme.global.opacity.medium : theme.global.opacity[color.opacity]);
       }
     } else {
-      result.stroke = colorForName(background, theme);
+      result.stroke = colorForName(color, theme);
     }
   }
   return result;
 };
 
-export default { backgroundProps };
+export default { strokeProps };

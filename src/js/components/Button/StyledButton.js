@@ -111,6 +111,7 @@ const plainStyle = css`
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 
   ${props => props.focus && props.focusIndicator && plainFocusStyle}
 `;

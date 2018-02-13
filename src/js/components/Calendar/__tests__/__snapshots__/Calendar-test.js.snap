@@ -56,6 +56,8 @@ exports[`Calendar date renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c3 {
@@ -77,6 +79,8 @@ exports[`Calendar date renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .c5 {
@@ -94,6 +98,8 @@ exports[`Calendar date renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  margin: 0;
+  padding: 0;
 }
 
 .c6 {
@@ -112,6 +118,7 @@ exports[`Calendar date renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
   padding: 12px;
 }
 
@@ -129,6 +136,7 @@ exports[`Calendar date renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c13:hover {
@@ -152,6 +160,7 @@ exports[`Calendar date renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c16:hover {
@@ -1611,6 +1620,8 @@ exports[`Calendar dates renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c3 {
@@ -1632,6 +1643,8 @@ exports[`Calendar dates renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .c5 {
@@ -1649,6 +1662,8 @@ exports[`Calendar dates renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  margin: 0;
+  padding: 0;
 }
 
 .c6 {
@@ -1667,6 +1682,7 @@ exports[`Calendar dates renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
   padding: 12px;
 }
 
@@ -1684,6 +1700,7 @@ exports[`Calendar dates renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c13:hover {
@@ -1707,6 +1724,7 @@ exports[`Calendar dates renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c17:hover {
@@ -3168,6 +3186,8 @@ exports[`Calendar disabled renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c3 {
@@ -3189,6 +3209,8 @@ exports[`Calendar disabled renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .c5 {
@@ -3206,6 +3228,8 @@ exports[`Calendar disabled renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  margin: 0;
+  padding: 0;
 }
 
 .c6 {
@@ -3224,6 +3248,7 @@ exports[`Calendar disabled renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
   padding: 12px;
 }
 
@@ -3241,6 +3266,7 @@ exports[`Calendar disabled renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c13:hover {
@@ -3264,6 +3290,7 @@ exports[`Calendar disabled renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c17:hover {
@@ -4725,6 +4752,8 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c3 {
@@ -4746,6 +4775,8 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .c5 {
@@ -4763,6 +4794,8 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  margin: 0;
+  padding: 0;
 }
 
 .c6 {
@@ -4781,6 +4814,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
   padding: 12px;
 }
 
@@ -4798,6 +4832,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c13:hover {
@@ -4821,6 +4856,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c16:hover {
@@ -7540,6 +7576,8 @@ exports[`Calendar renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c3 {
@@ -7561,6 +7599,8 @@ exports[`Calendar renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .c5 {
@@ -7578,6 +7618,8 @@ exports[`Calendar renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  margin: 0;
+  padding: 0;
 }
 
 .c6 {
@@ -7596,6 +7638,7 @@ exports[`Calendar renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
   padding: 12px;
 }
 
@@ -7613,6 +7656,7 @@ exports[`Calendar renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c13:hover {
@@ -7636,6 +7680,7 @@ exports[`Calendar renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c16:hover {
@@ -9129,6 +9174,8 @@ exports[`Calendar size renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c3 {
@@ -9150,6 +9197,8 @@ exports[`Calendar size renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .c5 {
@@ -9167,6 +9216,8 @@ exports[`Calendar size renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  margin: 0;
+  padding: 0;
 }
 
 .c6 {
@@ -9185,6 +9236,7 @@ exports[`Calendar size renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
   padding: 12px;
 }
 
@@ -9202,6 +9254,7 @@ exports[`Calendar size renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c13:hover {
@@ -9225,6 +9278,7 @@ exports[`Calendar size renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c16:hover {

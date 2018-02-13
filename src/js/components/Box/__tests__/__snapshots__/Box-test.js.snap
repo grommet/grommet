@@ -28,6 +28,8 @@ exports[`Box align renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c2 {
@@ -45,6 +47,8 @@ exports[`Box align renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c3 {
@@ -62,6 +66,8 @@ exports[`Box align renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c4 {
@@ -79,6 +85,8 @@ exports[`Box align renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c5 {
@@ -96,6 +104,8 @@ exports[`Box align renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 <div
@@ -156,6 +166,8 @@ exports[`Box alignContent renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c2 {
@@ -172,6 +184,8 @@ exports[`Box alignContent renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c3 {
@@ -188,6 +202,8 @@ exports[`Box alignContent renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c4 {
@@ -204,6 +220,8 @@ exports[`Box alignContent renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c5 {
@@ -220,6 +238,8 @@ exports[`Box alignContent renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c6 {
@@ -236,6 +256,8 @@ exports[`Box alignContent renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 <div
@@ -301,6 +323,8 @@ exports[`Box alignSelf renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c2 {
@@ -317,6 +341,8 @@ exports[`Box alignSelf renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c3 {
@@ -333,6 +359,8 @@ exports[`Box alignSelf renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c4 {
@@ -349,6 +377,8 @@ exports[`Box alignSelf renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 <div
@@ -401,6 +431,8 @@ exports[`Box animation renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   opacity: 0;
   -webkit-animation: dHUfhi 1s 0s forwards;
   animation: dHUfhi 1s 0s forwards;
@@ -417,6 +449,8 @@ exports[`Box animation renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   opacity: 1;
   -webkit-animation: gmgyXe 1s 0s forwards;
   animation: gmgyXe 1s 0s forwards;
@@ -433,6 +467,8 @@ exports[`Box animation renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   -webkit-transform: rotate(-5deg);
   -ms-transform: rotate(-5deg);
   transform: rotate(-5deg);
@@ -451,6 +487,8 @@ exports[`Box animation renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
@@ -469,6 +507,8 @@ exports[`Box animation renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   -webkit-transform: translateY(10%);
   -ms-transform: translateY(10%);
   transform: translateY(10%);
@@ -487,6 +527,8 @@ exports[`Box animation renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   -webkit-transform: translateY(-10%);
   -ms-transform: translateY(-10%);
   transform: translateY(-10%);
@@ -505,6 +547,8 @@ exports[`Box animation renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   -webkit-transform: translateX(10%);
   -ms-transform: translateX(10%);
   transform: translateX(10%);
@@ -523,6 +567,8 @@ exports[`Box animation renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   -webkit-transform: translateX(-10%);
   -ms-transform: translateX(-10%);
   transform: translateX(-10%);
@@ -541,6 +587,8 @@ exports[`Box animation renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
@@ -559,6 +607,8 @@ exports[`Box animation renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
@@ -577,6 +627,8 @@ exports[`Box animation renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   opacity: 0;
   -webkit-transform: translateY(10%);
   -ms-transform: translateY(10%);
@@ -596,6 +648,8 @@ exports[`Box animation renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   opacity: 0;
   -webkit-animation: dHUfhi 1s 0.5s forwards;
   animation: dHUfhi 1s 0.5s forwards;
@@ -612,6 +666,8 @@ exports[`Box animation renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   opacity: 0;
   -webkit-transform: translateY(10%);
   -ms-transform: translateY(10%);
@@ -717,6 +773,8 @@ exports[`Box background renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c2 {
@@ -732,6 +790,8 @@ exports[`Box background renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c3 {
@@ -747,6 +807,8 @@ exports[`Box background renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c4 {
@@ -762,6 +824,8 @@ exports[`Box background renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c5 {
@@ -777,6 +841,8 @@ exports[`Box background renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c6 {
@@ -792,6 +858,8 @@ exports[`Box background renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c7 {
@@ -807,6 +875,8 @@ exports[`Box background renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c8 {
@@ -824,6 +894,8 @@ exports[`Box background renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c9 {
@@ -841,6 +913,8 @@ exports[`Box background renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c10 {
@@ -858,6 +932,8 @@ exports[`Box background renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 <div
@@ -940,6 +1016,8 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c7 {
@@ -953,6 +1031,8 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  margin: 0;
+  padding: 0;
 }
 
 .c2 {
@@ -968,6 +1048,8 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-basis: 96px;
   -ms-flex-preferred-size: 96px;
   flex-basis: 96px;
+  margin: 0;
+  padding: 0;
 }
 
 .c3 {
@@ -983,6 +1065,8 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-basis: 192px;
   -ms-flex-preferred-size: 192px;
   flex-basis: 192px;
+  margin: 0;
+  padding: 0;
 }
 
 .c4 {
@@ -998,6 +1082,8 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-basis: 384px;
   -ms-flex-preferred-size: 384px;
   flex-basis: 384px;
+  margin: 0;
+  padding: 0;
 }
 
 .c5 {
@@ -1013,6 +1099,8 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-basis: 768px;
   -ms-flex-preferred-size: 768px;
   flex-basis: 768px;
+  margin: 0;
+  padding: 0;
 }
 
 .c6 {
@@ -1028,6 +1116,8 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-basis: 1152px;
   -ms-flex-preferred-size: 1152px;
   flex-basis: 1152px;
+  margin: 0;
+  padding: 0;
 }
 
 .c8 {
@@ -1043,6 +1133,8 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-basis: 100%;
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .c9 {
@@ -1058,6 +1150,8 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-basis: 50%;
   -ms-flex-preferred-size: 50%;
   flex-basis: 50%;
+  margin: 0;
+  padding: 0;
 }
 
 .c10 {
@@ -1073,6 +1167,8 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-basis: 33.33%;
   -ms-flex-preferred-size: 33.33%;
   flex-basis: 33.33%;
+  margin: 0;
+  padding: 0;
 }
 
 .c11 {
@@ -1088,6 +1184,8 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-basis: 66.66%;
   -ms-flex-preferred-size: 66.66%;
   flex-basis: 66.66%;
+  margin: 0;
+  padding: 0;
 }
 
 .c12 {
@@ -1103,6 +1201,8 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-basis: 25%;
   -ms-flex-preferred-size: 25%;
   flex-basis: 25%;
+  margin: 0;
+  padding: 0;
 }
 
 .c13 {
@@ -1118,6 +1218,8 @@ exports[`Box basis renders 1`] = `
   -webkit-flex-basis: 75%;
   -ms-flex-preferred-size: 75%;
   flex-basis: 75%;
+  margin: 0;
+  padding: 0;
 }
 
 <div
@@ -1241,6 +1343,8 @@ exports[`Box border renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c2 {
@@ -1256,6 +1360,8 @@ exports[`Box border renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c3 {
@@ -1271,6 +1377,8 @@ exports[`Box border renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c4 {
@@ -1285,6 +1393,8 @@ exports[`Box border renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c5 {
@@ -1299,6 +1409,8 @@ exports[`Box border renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c6 {
@@ -1313,6 +1425,8 @@ exports[`Box border renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c7 {
@@ -1327,6 +1441,8 @@ exports[`Box border renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c8 {
@@ -1341,6 +1457,8 @@ exports[`Box border renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c9 {
@@ -1355,6 +1473,8 @@ exports[`Box border renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c10 {
@@ -1369,6 +1489,8 @@ exports[`Box border renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c11 {
@@ -1383,6 +1505,8 @@ exports[`Box border renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c12 {
@@ -1397,6 +1521,8 @@ exports[`Box border renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 <div
@@ -1500,6 +1626,8 @@ exports[`Box direction renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c1 {
@@ -1513,6 +1641,8 @@ exports[`Box direction renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  margin: 0;
+  padding: 0;
 }
 
 <div
@@ -1555,6 +1685,8 @@ exports[`Box flex renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c2 {
@@ -1571,6 +1703,8 @@ exports[`Box flex renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  margin: 0;
+  padding: 0;
 }
 
 .c3 {
@@ -1587,6 +1721,8 @@ exports[`Box flex renders 1`] = `
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
   flex: 0 0;
+  margin: 0;
+  padding: 0;
 }
 
 .c4 {
@@ -1603,6 +1739,8 @@ exports[`Box flex renders 1`] = `
   -webkit-flex: 1 0;
   -ms-flex: 1 0;
   flex: 1 0;
+  margin: 0;
+  padding: 0;
 }
 
 .c5 {
@@ -1619,6 +1757,8 @@ exports[`Box flex renders 1`] = `
   -webkit-flex: 0 1;
   -ms-flex: 0 1;
   flex: 0 1;
+  margin: 0;
+  padding: 0;
 }
 
 <div
@@ -1677,6 +1817,8 @@ exports[`Box full renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c2 {
@@ -1695,6 +1837,8 @@ exports[`Box full renders 1`] = `
   height: 100vh;
   max-height: 100%;
   overflow: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .c3 {
@@ -1710,6 +1854,8 @@ exports[`Box full renders 1`] = `
   flex-direction: column;
   max-width: 100%;
   width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 
 .c4 {
@@ -1726,6 +1872,8 @@ exports[`Box full renders 1`] = `
   height: 100vh;
   max-height: 100%;
   overflow: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .c5 {
@@ -1742,6 +1890,8 @@ exports[`Box full renders 1`] = `
   max-width: 100%;
   width: 100vw;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 <div
@@ -1806,6 +1956,8 @@ exports[`Box gridArea renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   grid-area: header;
+  margin: 0;
+  padding: 0;
 }
 
 <div
@@ -1847,6 +1999,8 @@ exports[`Box justify renders 1`] = `
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
   justify-content: flex-start;
+  margin: 0;
+  padding: 0;
 }
 
 .c2 {
@@ -1864,6 +2018,8 @@ exports[`Box justify renders 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .c3 {
@@ -1881,6 +2037,8 @@ exports[`Box justify renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .c4 {
@@ -1898,6 +2056,8 @@ exports[`Box justify renders 1`] = `
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  margin: 0;
+  padding: 0;
 }
 
 <div
@@ -1950,6 +2110,8 @@ exports[`Box justifySelf renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 <div
@@ -2003,6 +2165,7 @@ exports[`Box margin renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   margin: 12px;
+  padding: 0;
 }
 
 .c2 {
@@ -2017,6 +2180,7 @@ exports[`Box margin renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   margin: 24px;
+  padding: 0;
 }
 
 .c3 {
@@ -2031,6 +2195,7 @@ exports[`Box margin renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   margin: 48px;
+  padding: 0;
 }
 
 .c4 {
@@ -2046,6 +2211,7 @@ exports[`Box margin renders 1`] = `
   flex-direction: column;
   margin-left: 12px;
   margin-right: 12px;
+  padding: 0;
 }
 
 .c5 {
@@ -2061,6 +2227,7 @@ exports[`Box margin renders 1`] = `
   flex-direction: column;
   margin-top: 12px;
   margin-bottom: 12px;
+  padding: 0;
 }
 
 .c6 {
@@ -2075,6 +2242,7 @@ exports[`Box margin renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 12px;
+  padding: 0;
 }
 
 .c7 {
@@ -2089,6 +2257,7 @@ exports[`Box margin renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   margin-left: 12px;
+  padding: 0;
 }
 
 .c8 {
@@ -2103,6 +2272,7 @@ exports[`Box margin renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   margin-right: 12px;
+  padding: 0;
 }
 
 .c9 {
@@ -2117,6 +2287,7 @@ exports[`Box margin renders 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   margin-top: 12px;
+  padding: 0;
 }
 
 <div
@@ -2194,6 +2365,7 @@ exports[`Box pad renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
   padding: 12px;
 }
 
@@ -2208,6 +2380,7 @@ exports[`Box pad renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
   padding: 24px;
 }
 
@@ -2222,6 +2395,7 @@ exports[`Box pad renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
   padding: 48px;
 }
 
@@ -2236,6 +2410,7 @@ exports[`Box pad renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -2251,6 +2426,7 @@ exports[`Box pad renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
   padding-top: 12px;
   padding-bottom: 12px;
 }
@@ -2266,6 +2442,7 @@ exports[`Box pad renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
   padding-bottom: 12px;
 }
 
@@ -2280,6 +2457,7 @@ exports[`Box pad renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
   padding-left: 12px;
 }
 
@@ -2294,6 +2472,7 @@ exports[`Box pad renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
   padding-right: 12px;
 }
 
@@ -2308,6 +2487,7 @@ exports[`Box pad renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
   padding-top: 12px;
 }
 
@@ -2386,6 +2566,8 @@ exports[`Box renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 <div
@@ -2423,6 +2605,8 @@ exports[`Box reverse renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c1 {
@@ -2436,6 +2620,8 @@ exports[`Box reverse renders 1`] = `
   -webkit-flex-direction: column-reverse;
   -ms-flex-direction: column-reverse;
   flex-direction: column-reverse;
+  margin: 0;
+  padding: 0;
 }
 
 <div
@@ -2478,6 +2664,8 @@ exports[`Box round renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   border-radius: 6px;
 }
 
@@ -2492,6 +2680,8 @@ exports[`Box round renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   border-radius: 12px;
 }
 
@@ -2506,6 +2696,8 @@ exports[`Box round renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   border-radius: 24px;
 }
 
@@ -2520,6 +2712,8 @@ exports[`Box round renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   border-radius: 48px;
 }
 
@@ -2534,6 +2728,8 @@ exports[`Box round renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   border-radius: 100%;
 }
 
@@ -2592,6 +2788,8 @@ exports[`Box tag renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 <div
@@ -2629,6 +2827,8 @@ exports[`Box textAlign renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   text-align: left;
 }
 
@@ -2643,6 +2843,8 @@ exports[`Box textAlign renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
@@ -2657,6 +2859,8 @@ exports[`Box textAlign renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   text-align: right;
 }
 
@@ -2705,6 +2909,8 @@ exports[`Box wrap renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .c1 {
@@ -2718,6 +2924,8 @@ exports[`Box wrap renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;

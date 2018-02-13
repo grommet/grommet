@@ -68,6 +68,8 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .c8 {
@@ -88,6 +90,8 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-flex: 1 0;
   -ms-flex: 1 0;
   flex: 1 0;
+  margin: 0;
+  padding: 0;
 }
 
 .c9 {
@@ -104,6 +108,8 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  margin: 0;
+  padding: 0;
 }
 
 .c13 {
@@ -117,6 +123,7 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -136,6 +143,7 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  margin: 0;
   padding: 12px;
 }
 
@@ -153,6 +161,7 @@ exports[`Video autoPlay renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
   padding: 12px;
 }
 
@@ -175,6 +184,7 @@ exports[`Video autoPlay renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c6 {
@@ -571,6 +581,8 @@ exports[`Video controls renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .c8 {
@@ -591,6 +603,8 @@ exports[`Video controls renders 1`] = `
   -webkit-flex: 1 0;
   -ms-flex: 1 0;
   flex: 1 0;
+  margin: 0;
+  padding: 0;
 }
 
 .c9 {
@@ -607,6 +621,8 @@ exports[`Video controls renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  margin: 0;
+  padding: 0;
 }
 
 .c13 {
@@ -620,6 +636,7 @@ exports[`Video controls renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -639,6 +656,7 @@ exports[`Video controls renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  margin: 0;
   padding: 12px;
 }
 
@@ -661,6 +679,8 @@ exports[`Video controls renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .c5 {
@@ -677,6 +697,7 @@ exports[`Video controls renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
   padding: 12px;
 }
 
@@ -699,6 +720,7 @@ exports[`Video controls renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c6 {
@@ -1273,6 +1295,8 @@ exports[`Video fit renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .c8 {
@@ -1293,6 +1317,8 @@ exports[`Video fit renders 1`] = `
   -webkit-flex: 1 0;
   -ms-flex: 1 0;
   flex: 1 0;
+  margin: 0;
+  padding: 0;
 }
 
 .c9 {
@@ -1309,6 +1335,8 @@ exports[`Video fit renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  margin: 0;
+  padding: 0;
 }
 
 .c13 {
@@ -1322,6 +1350,7 @@ exports[`Video fit renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -1341,6 +1370,7 @@ exports[`Video fit renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  margin: 0;
   padding: 12px;
 }
 
@@ -1358,6 +1388,7 @@ exports[`Video fit renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
   padding: 12px;
 }
 
@@ -1380,6 +1411,7 @@ exports[`Video fit renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c6 {
@@ -1964,6 +1996,8 @@ exports[`Video loop renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .c8 {
@@ -1984,6 +2018,8 @@ exports[`Video loop renders 1`] = `
   -webkit-flex: 1 0;
   -ms-flex: 1 0;
   flex: 1 0;
+  margin: 0;
+  padding: 0;
 }
 
 .c9 {
@@ -2000,6 +2036,8 @@ exports[`Video loop renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  margin: 0;
+  padding: 0;
 }
 
 .c13 {
@@ -2013,6 +2051,7 @@ exports[`Video loop renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -2032,6 +2071,7 @@ exports[`Video loop renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  margin: 0;
   padding: 12px;
 }
 
@@ -2049,6 +2089,7 @@ exports[`Video loop renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
   padding: 12px;
 }
 
@@ -2071,6 +2112,7 @@ exports[`Video loop renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c6 {
@@ -2435,6 +2477,8 @@ exports[`Video mute renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .c8 {
@@ -2455,6 +2499,8 @@ exports[`Video mute renders 1`] = `
   -webkit-flex: 1 0;
   -ms-flex: 1 0;
   flex: 1 0;
+  margin: 0;
+  padding: 0;
 }
 
 .c9 {
@@ -2471,6 +2517,8 @@ exports[`Video mute renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  margin: 0;
+  padding: 0;
 }
 
 .c13 {
@@ -2484,6 +2532,7 @@ exports[`Video mute renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -2503,6 +2552,7 @@ exports[`Video mute renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  margin: 0;
   padding: 12px;
 }
 
@@ -2520,6 +2570,7 @@ exports[`Video mute renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
   padding: 12px;
 }
 
@@ -2542,6 +2593,7 @@ exports[`Video mute renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c6 {
@@ -2906,6 +2958,8 @@ exports[`Video renders 1`] = `
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .c8 {
@@ -2926,6 +2980,8 @@ exports[`Video renders 1`] = `
   -webkit-flex: 1 0;
   -ms-flex: 1 0;
   flex: 1 0;
+  margin: 0;
+  padding: 0;
 }
 
 .c9 {
@@ -2942,6 +2998,8 @@ exports[`Video renders 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  margin: 0;
+  padding: 0;
 }
 
 .c13 {
@@ -2955,6 +3013,7 @@ exports[`Video renders 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin: 0;
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -2974,6 +3033,7 @@ exports[`Video renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  margin: 0;
   padding: 12px;
 }
 
@@ -2991,6 +3051,7 @@ exports[`Video renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
   padding: 12px;
 }
 
@@ -3013,6 +3074,7 @@ exports[`Video renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c6 {
