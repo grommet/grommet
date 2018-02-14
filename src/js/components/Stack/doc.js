@@ -27,7 +27,7 @@ guiding child's area.`
       PropTypes.oneOf(['first', 'last']),
     ]).description(
       `Which child to guide layout from. All other children will be positioned
-      within that area.`
+      within that area. Defaults to 'first'.`
     ).defaultValue('first'),
   };
 

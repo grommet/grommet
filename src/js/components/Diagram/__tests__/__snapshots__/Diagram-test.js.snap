@@ -8,17 +8,17 @@ exports[`Diagram color renders 1`] = `
     class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-bStriS bDpPRE"
+      class="StyledBox-bStriS kkBTIr"
       direction="row"
       style="position: relative;"
     >
       <div
-        class="StyledBox-bStriS licPXK"
+        class="StyledBox-bStriS jGLyaD"
         id="1"
         direction="column"
       />
       <div
-        class="StyledBox-bStriS licPXK"
+        class="StyledBox-bStriS jGLyaD"
         id="2"
         direction="column"
       />
@@ -45,17 +45,17 @@ exports[`Diagram offset renders 1`] = `
     class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-bStriS bDpPRE"
+      class="StyledBox-bStriS kkBTIr"
       direction="row"
       style="position: relative;"
     >
       <div
-        class="StyledBox-bStriS licPXK"
+        class="StyledBox-bStriS jGLyaD"
         id="1"
         direction="column"
       />
       <div
-        class="StyledBox-bStriS licPXK"
+        class="StyledBox-bStriS jGLyaD"
         id="2"
         direction="column"
       />
@@ -82,17 +82,17 @@ exports[`Diagram renders 1`] = `
     class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-bStriS bDpPRE"
+      class="StyledBox-bStriS kkBTIr"
       direction="row"
       style="position: relative;"
     >
       <div
-        class="StyledBox-bStriS licPXK"
+        class="StyledBox-bStriS jGLyaD"
         id="1"
         direction="column"
       />
       <div
-        class="StyledBox-bStriS licPXK"
+        class="StyledBox-bStriS jGLyaD"
         id="2"
         direction="column"
       />
@@ -119,17 +119,17 @@ exports[`Diagram thickness renders 1`] = `
     class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-bStriS bDpPRE"
+      class="StyledBox-bStriS kkBTIr"
       direction="row"
       style="position: relative;"
     >
       <div
-        class="StyledBox-bStriS licPXK"
+        class="StyledBox-bStriS jGLyaD"
         id="1"
         direction="column"
       />
       <div
-        class="StyledBox-bStriS licPXK"
+        class="StyledBox-bStriS jGLyaD"
         id="2"
         direction="column"
       />
@@ -156,17 +156,17 @@ exports[`Diagram type renders 1`] = `
     class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-bStriS bDpPRE"
+      class="StyledBox-bStriS kkBTIr"
       direction="row"
       style="position: relative;"
     >
       <div
-        class="StyledBox-bStriS licPXK"
+        class="StyledBox-bStriS jGLyaD"
         id="1"
         direction="column"
       />
       <div
-        class="StyledBox-bStriS licPXK"
+        class="StyledBox-bStriS jGLyaD"
         id="2"
         direction="column"
       />

@@ -5,6 +5,7 @@
     "react"
   ],
   "plugins": [
+    ["grommet"],
     ["styled-components", { "useDisplayName": false }]
   ]
 }

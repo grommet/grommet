@@ -80,6 +80,7 @@ export default deepFreeze({
       shadow: '0px 3px 8px rgba(100, 100, 100, 0.50)',
     },
     edgeSize: {
+      none: '0',
       xsmall: `${baseSpacing / 4}px`,
       small: `${baseSpacing / 2}px`,
       medium: `${baseSpacing}px`,

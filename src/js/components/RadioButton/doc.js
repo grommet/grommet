@@ -25,7 +25,11 @@ with the same name so form submissions work.`
     name: PropTypes.string.description(
       'The DOM name attribute value to use for the underlying <input/> element.'
     ),
-    onChange: PropTypes.func.description('Same as React <input onChange={} />'),
+    onChange: PropTypes.func.description(
+      `Function that will be called when the user clicks the radio button. It
+      will be passed a React event object. The current state can be accessed
+      via event.target.checked. Same as React <input onChange={} />.`
+    ),
   };
 
   return DocumentedRadioButton;

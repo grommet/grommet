@@ -39,6 +39,7 @@ const alignSelfStyle = css`
 `;
 
 const BASIS_MAP = {
+  'auto': 'auto',
   'full': '100%',
   '1/2': '50%',
   '1/4': '25%',
@@ -375,8 +376,8 @@ const StyledBox = styled.div`
   ${props => props.full && fullStyle(props.full)}
   ${props => props.gridArea && gridAreaStyle}
   ${props => props.justify && justifyStyle}
-  ${props => props.margin && edgeStyle('margin', props.margin, props.theme)}
-  ${props => props.pad && edgeStyle('padding', props.pad, props.theme)}
+  ${props => (props.margin && edgeStyle('margin', props.margin, props.theme))}
+  ${props => (props.pad && edgeStyle('padding', props.pad, props.theme))}
   ${props => props.round && roundStyle}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.wrap && wrapStyle}

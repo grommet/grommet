@@ -39,6 +39,7 @@
     "styled-components": ">= 2.1.1"
   },
   "dependencies": {
+    "babel-plugin-grommet": "^0.5.1",
     "date-time-format-timezone": "^1.0.21-alpha.2",
     "grommet-icons": "^0.15.0",
     "markdown-to-jsx": "^5.4.2",

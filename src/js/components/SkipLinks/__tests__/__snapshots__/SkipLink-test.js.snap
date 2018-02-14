@@ -10,7 +10,7 @@ exports[`SkipLink mounts 1`] = `
     class="StyledLayer__StyledContainer-gBGbkw emuypU"
   >
     <div
-      class="StyledBox-bStriS lfaLpu"
+      class="StyledBox-bStriS kLwTeJ"
       direction="column"
     >
       <h2
@@ -20,11 +20,11 @@ exports[`SkipLink mounts 1`] = `
         :
       </h2>
       <div
-        class="StyledBox-bStriS clkleN"
+        class="StyledBox-bStriS bqSFqK"
         direction="row"
       >
         <div
-          class="StyledBox-bStriS dVyTyq"
+          class="StyledBox-bStriS cvUrkJ"
           direction="column"
         >
           <a
@@ -36,7 +36,7 @@ exports[`SkipLink mounts 1`] = `
           </a>
         </div>
         <div
-          class="StyledBox-bStriS dVyTyq"
+          class="StyledBox-bStriS cvUrkJ"
           direction="column"
         >
           <a
@@ -105,7 +105,7 @@ exports[`SkipLink mounts 3`] = `
     class="StyledLayer__StyledContainer-gBGbkw jpmyrr"
   >
     <div
-      class="StyledBox-bStriS lfaLpu"
+      class="StyledBox-bStriS kLwTeJ"
       direction="column"
     >
       <h2
@@ -115,11 +115,11 @@ exports[`SkipLink mounts 3`] = `
         :
       </h2>
       <div
-        class="StyledBox-bStriS clkleN"
+        class="StyledBox-bStriS bqSFqK"
         direction="row"
       >
         <div
-          class="StyledBox-bStriS dVyTyq"
+          class="StyledBox-bStriS cvUrkJ"
           direction="column"
         >
           <a
@@ -131,7 +131,7 @@ exports[`SkipLink mounts 3`] = `
           </a>
         </div>
         <div
-          class="StyledBox-bStriS dVyTyq"
+          class="StyledBox-bStriS cvUrkJ"
           direction="column"
         >
           <a
@@ -236,7 +236,7 @@ exports[`SkipLink mounts 5`] = `
           class="StyledLayer__StyledContainer-gBGbkw emuypU"
         >
           <div
-            class="StyledBox-bStriS lfaLpu"
+            class="StyledBox-bStriS kLwTeJ"
             direction="column"
           >
             <h2
@@ -246,11 +246,11 @@ exports[`SkipLink mounts 5`] = `
               :
             </h2>
             <div
-              class="StyledBox-bStriS clkleN"
+              class="StyledBox-bStriS bqSFqK"
               direction="row"
             >
               <div
-                class="StyledBox-bStriS dVyTyq"
+                class="StyledBox-bStriS cvUrkJ"
                 direction="column"
               >
                 <a
@@ -262,7 +262,7 @@ exports[`SkipLink mounts 5`] = `
                 </a>
               </div>
               <div
-                class="StyledBox-bStriS dVyTyq"
+                class="StyledBox-bStriS cvUrkJ"
                 direction="column"
               >
                 <a

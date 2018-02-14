@@ -375,6 +375,7 @@ exports[`Anchor icon label renders 1`] = `
               "edgeSize": Object {
                 "large": "48px",
                 "medium": "24px",
+                "none": "0",
                 "small": "12px",
                 "xlarge": "96px",
                 "xsmall": "6px",
@@ -979,6 +980,7 @@ exports[`Anchor primary renders 1`] = `
               "edgeSize": Object {
                 "large": "48px",
                 "medium": "24px",
+                "none": "0",
                 "small": "12px",
                 "xlarge": "96px",
                 "xsmall": "6px",
@@ -1658,6 +1660,7 @@ exports[`Anchor reverse icon label renders 1`] = `
               "edgeSize": Object {
                 "large": "48px",
                 "medium": "24px",
+                "none": "0",
                 "small": "12px",
                 "xlarge": "96px",
                 "xsmall": "6px",
@@ -2217,6 +2220,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
               "edgeSize": Object {
                 "large": "48px",
                 "medium": "24px",
+                "none": "0",
                 "small": "12px",
                 "xlarge": "96px",
                 "xsmall": "6px",

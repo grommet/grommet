@@ -333,6 +333,7 @@ exports[`Button hoverIndicator as object renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c1:hover {
@@ -397,6 +398,7 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c1:hover {
@@ -461,6 +463,7 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c1:hover {
@@ -525,6 +528,7 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c1:hover {
@@ -589,6 +593,7 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c1:hover {
@@ -653,6 +658,7 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c1:hover {
@@ -717,6 +723,7 @@ exports[`Button hoverIndicator renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c1:hover {
@@ -1238,6 +1245,7 @@ exports[`Button warns about invalid icon render 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
   padding: 12px;
 }
 
@@ -1315,6 +1323,7 @@ exports[`Button warns about invalid label render 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c2:first-child:not(:last-child) {

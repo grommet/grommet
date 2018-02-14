@@ -24,6 +24,8 @@ class Box extends Component {
 
   static defaultProps = {
     direction: 'column',
+    margin: 'none',
+    pad: 'none',
     tag: 'div',
   };
 
@@ -61,11 +63,7 @@ class Box extends Component {
     }
 
     return (
-      <StyledComponent
-        aria-label={a11yTitle}
-        ref={(ref) => { this.componentRef = ref; }}
-        {...rest}
-      />
+      <StyledComponent aria-label={a11yTitle} {...rest} />
     );
   }
 }
