@@ -24,6 +24,8 @@ class Box extends Component {
 
   static defaultProps = {
     direction: 'column',
+    margin: 'none',
+    pad: 'none',
     tag: 'div',
   };
 

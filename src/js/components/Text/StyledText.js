@@ -4,9 +4,6 @@ import { colorForName } from '../../utils';
 
 const marginStyle = (props) => {
   if (typeof props.margin === 'string') {
-    if (props.margin === 'none') {
-      return 'margin: 0;';
-    }
     const margin = props.theme.global.edgeSize[props.margin];
     return `
       margin-top: ${margin};

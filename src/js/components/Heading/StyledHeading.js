@@ -2,12 +2,6 @@ import styled, { css } from 'styled-components';
 
 const marginStyle = (props) => {
   if (typeof props.margin === 'string') {
-    if (props.margin === 'none') {
-      return `
-        margin-top: 0;
-        margin-bottom: 0;
-      `;
-    }
     const margin = props.theme.global.edgeSize[props.margin];
     return `
       margin-top: ${margin};

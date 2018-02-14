@@ -215,7 +215,10 @@ exports[`Video autoPlay renders 1`] = `
 .c14 {
   font-size: 16px;
   line-height: 1.375;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c2 {
@@ -751,7 +754,10 @@ exports[`Video controls renders 1`] = `
 .c14 {
   font-size: 16px;
   line-height: 1.375;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c2 {
@@ -1442,7 +1448,10 @@ exports[`Video fit renders 1`] = `
 .c14 {
   font-size: 16px;
   line-height: 1.375;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c2 {
@@ -2143,7 +2152,10 @@ exports[`Video loop renders 1`] = `
 .c14 {
   font-size: 16px;
   line-height: 1.375;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c2 {
@@ -2624,7 +2636,10 @@ exports[`Video mute renders 1`] = `
 .c14 {
   font-size: 16px;
   line-height: 1.375;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c2 {
@@ -3105,7 +3120,10 @@ exports[`Video renders 1`] = `
 .c14 {
   font-size: 16px;
   line-height: 1.375;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .c2 {
