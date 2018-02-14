@@ -41,50 +41,54 @@ exports[`CheckBox checked renders 1`] = `
   border-color: #000000;
 }
 
-.c2 {
+.c3 {
+  position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   margin: 0;
+  z-index: 1;
 }
 
-.c2:focus + div,
-.c2:focus + span {
+.c3:focus + div,
+.c3:focus + span {
   border-color: #00CCEB;
   box-shadow: 0 0 2px 2px #00CCEB;
 }
 
-.c2:focus + div > circle,
-.c2:focus + span > circle,
-.c2:focus + div > ellipse,
-.c2:focus + span > ellipse,
-.c2:focus + div > line,
-.c2:focus + span > line,
-.c2:focus + div > path,
-.c2:focus + span > path,
-.c2:focus + div > polygon,
-.c2:focus + span > polygon,
-.c2:focus + div > polyline,
-.c2:focus + span > polyline,
-.c2:focus + div > rect,
-.c2:focus + span > rect {
+.c3:focus + div > circle,
+.c3:focus + span > circle,
+.c3:focus + div > ellipse,
+.c3:focus + span > ellipse,
+.c3:focus + div > line,
+.c3:focus + span > line,
+.c3:focus + div > path,
+.c3:focus + span > path,
+.c3:focus + div > polygon,
+.c3:focus + span > polygon,
+.c3:focus + div > polyline,
+.c3:focus + span > polyline,
+.c3:focus + div > rect,
+.c3:focus + span > rect {
   outline: #00CCEB solid 2px;
 }
 
-.c2:checked + div {
+.c3:checked + div {
   border-color: #865CD6;
 }
 
-.c2:checked + div > svg {
+.c3:checked + div > svg {
   display: block;
 }
 
-.c2:checked + span > span {
+.c3:checked + span > span {
   left: 24px;
   background-color: #865CD6;
 }
 
-.c3 {
+.c4 {
   box-sizing: border-box;
   position: relative;
   top: -1px;
@@ -98,7 +102,7 @@ exports[`CheckBox checked renders 1`] = `
   border-radius: 4px;
 }
 
-.c3 > svg {
+.c4 > svg {
   box-sizing: border-box;
   position: absolute;
   top: -2px;
@@ -110,6 +114,10 @@ exports[`CheckBox checked renders 1`] = `
   stroke: #865CD6;
 }
 
+.c2 {
+  position: relative;
+}
+
 <div
   className="c0"
 >
@@ -118,11 +126,11 @@ exports[`CheckBox checked renders 1`] = `
     htmlFor={undefined}
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={true}
-        className="c2"
+        className="c3"
         disabled={undefined}
         id={undefined}
         name={undefined}
@@ -131,7 +139,7 @@ exports[`CheckBox checked renders 1`] = `
         type="checkbox"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           preserveAspectRatio="xMidYMid meet"
@@ -189,50 +197,54 @@ exports[`CheckBox disabled renders 1`] = `
   border-color: #000000;
 }
 
-.c2 {
+.c3 {
+  position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   margin: 0;
+  z-index: 1;
 }
 
-.c2:focus + div,
-.c2:focus + span {
+.c3:focus + div,
+.c3:focus + span {
   border-color: #00CCEB;
   box-shadow: 0 0 2px 2px #00CCEB;
 }
 
-.c2:focus + div > circle,
-.c2:focus + span > circle,
-.c2:focus + div > ellipse,
-.c2:focus + span > ellipse,
-.c2:focus + div > line,
-.c2:focus + span > line,
-.c2:focus + div > path,
-.c2:focus + span > path,
-.c2:focus + div > polygon,
-.c2:focus + span > polygon,
-.c2:focus + div > polyline,
-.c2:focus + span > polyline,
-.c2:focus + div > rect,
-.c2:focus + span > rect {
+.c3:focus + div > circle,
+.c3:focus + span > circle,
+.c3:focus + div > ellipse,
+.c3:focus + span > ellipse,
+.c3:focus + div > line,
+.c3:focus + span > line,
+.c3:focus + div > path,
+.c3:focus + span > path,
+.c3:focus + div > polygon,
+.c3:focus + span > polygon,
+.c3:focus + div > polyline,
+.c3:focus + span > polyline,
+.c3:focus + div > rect,
+.c3:focus + span > rect {
   outline: #00CCEB solid 2px;
 }
 
-.c2:checked + div {
+.c3:checked + div {
   border-color: #865CD6;
 }
 
-.c2:checked + div > svg {
+.c3:checked + div > svg {
   display: block;
 }
 
-.c2:checked + span > span {
+.c3:checked + span > span {
   left: 24px;
   background-color: #865CD6;
 }
 
-.c3 {
+.c4 {
   box-sizing: border-box;
   position: relative;
   top: -1px;
@@ -246,7 +258,7 @@ exports[`CheckBox disabled renders 1`] = `
   border-radius: 4px;
 }
 
-.c3 > svg {
+.c4 > svg {
   box-sizing: border-box;
   position: absolute;
   top: -2px;
@@ -258,6 +270,10 @@ exports[`CheckBox disabled renders 1`] = `
   stroke: #865CD6;
 }
 
+.c2 {
+  position: relative;
+}
+
 <div
   className="c0"
 >
@@ -266,11 +282,11 @@ exports[`CheckBox disabled renders 1`] = `
     htmlFor={undefined}
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={undefined}
-        className="c2"
+        className="c3"
         disabled={true}
         id={undefined}
         name={undefined}
@@ -279,7 +295,7 @@ exports[`CheckBox disabled renders 1`] = `
         type="checkbox"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           preserveAspectRatio="xMidYMid meet"
@@ -298,11 +314,11 @@ exports[`CheckBox disabled renders 1`] = `
     htmlFor={undefined}
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={true}
-        className="c2"
+        className="c3"
         disabled={true}
         id={undefined}
         name={undefined}
@@ -311,7 +327,7 @@ exports[`CheckBox disabled renders 1`] = `
         type="checkbox"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           preserveAspectRatio="xMidYMid meet"
@@ -374,50 +390,54 @@ exports[`CheckBox label renders 1`] = `
   border-color: #000000;
 }
 
-.c2 {
+.c3 {
+  position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   margin: 0;
+  z-index: 1;
 }
 
-.c2:focus + div,
-.c2:focus + span {
+.c3:focus + div,
+.c3:focus + span {
   border-color: #00CCEB;
   box-shadow: 0 0 2px 2px #00CCEB;
 }
 
-.c2:focus + div > circle,
-.c2:focus + span > circle,
-.c2:focus + div > ellipse,
-.c2:focus + span > ellipse,
-.c2:focus + div > line,
-.c2:focus + span > line,
-.c2:focus + div > path,
-.c2:focus + span > path,
-.c2:focus + div > polygon,
-.c2:focus + span > polygon,
-.c2:focus + div > polyline,
-.c2:focus + span > polyline,
-.c2:focus + div > rect,
-.c2:focus + span > rect {
+.c3:focus + div > circle,
+.c3:focus + span > circle,
+.c3:focus + div > ellipse,
+.c3:focus + span > ellipse,
+.c3:focus + div > line,
+.c3:focus + span > line,
+.c3:focus + div > path,
+.c3:focus + span > path,
+.c3:focus + div > polygon,
+.c3:focus + span > polygon,
+.c3:focus + div > polyline,
+.c3:focus + span > polyline,
+.c3:focus + div > rect,
+.c3:focus + span > rect {
   outline: #00CCEB solid 2px;
 }
 
-.c2:checked + div {
+.c3:checked + div {
   border-color: #865CD6;
 }
 
-.c2:checked + div > svg {
+.c3:checked + div > svg {
   display: block;
 }
 
-.c2:checked + span > span {
+.c3:checked + span > span {
   left: 24px;
   background-color: #865CD6;
 }
 
-.c3 {
+.c4 {
   box-sizing: border-box;
   position: relative;
   top: -1px;
@@ -431,7 +451,7 @@ exports[`CheckBox label renders 1`] = `
   border-radius: 4px;
 }
 
-.c3 > svg {
+.c4 > svg {
   box-sizing: border-box;
   position: absolute;
   top: -2px;
@@ -443,6 +463,10 @@ exports[`CheckBox label renders 1`] = `
   stroke: #865CD6;
 }
 
+.c2 {
+  position: relative;
+}
+
 <div
   className="c0"
 >
@@ -451,11 +475,11 @@ exports[`CheckBox label renders 1`] = `
     htmlFor={undefined}
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={undefined}
-        className="c2"
+        className="c3"
         disabled={undefined}
         id={undefined}
         name={undefined}
@@ -464,7 +488,7 @@ exports[`CheckBox label renders 1`] = `
         type="checkbox"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           preserveAspectRatio="xMidYMid meet"
@@ -486,11 +510,11 @@ exports[`CheckBox label renders 1`] = `
     htmlFor={undefined}
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={undefined}
-        className="c2"
+        className="c3"
         disabled={undefined}
         id={undefined}
         name={undefined}
@@ -499,7 +523,7 @@ exports[`CheckBox label renders 1`] = `
         type="checkbox"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           preserveAspectRatio="xMidYMid meet"
@@ -560,50 +584,54 @@ exports[`CheckBox renders 1`] = `
   border-color: #000000;
 }
 
-.c2 {
+.c3 {
+  position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   margin: 0;
+  z-index: 1;
 }
 
-.c2:focus + div,
-.c2:focus + span {
+.c3:focus + div,
+.c3:focus + span {
   border-color: #00CCEB;
   box-shadow: 0 0 2px 2px #00CCEB;
 }
 
-.c2:focus + div > circle,
-.c2:focus + span > circle,
-.c2:focus + div > ellipse,
-.c2:focus + span > ellipse,
-.c2:focus + div > line,
-.c2:focus + span > line,
-.c2:focus + div > path,
-.c2:focus + span > path,
-.c2:focus + div > polygon,
-.c2:focus + span > polygon,
-.c2:focus + div > polyline,
-.c2:focus + span > polyline,
-.c2:focus + div > rect,
-.c2:focus + span > rect {
+.c3:focus + div > circle,
+.c3:focus + span > circle,
+.c3:focus + div > ellipse,
+.c3:focus + span > ellipse,
+.c3:focus + div > line,
+.c3:focus + span > line,
+.c3:focus + div > path,
+.c3:focus + span > path,
+.c3:focus + div > polygon,
+.c3:focus + span > polygon,
+.c3:focus + div > polyline,
+.c3:focus + span > polyline,
+.c3:focus + div > rect,
+.c3:focus + span > rect {
   outline: #00CCEB solid 2px;
 }
 
-.c2:checked + div {
+.c3:checked + div {
   border-color: #865CD6;
 }
 
-.c2:checked + div > svg {
+.c3:checked + div > svg {
   display: block;
 }
 
-.c2:checked + span > span {
+.c3:checked + span > span {
   left: 24px;
   background-color: #865CD6;
 }
 
-.c3 {
+.c4 {
   box-sizing: border-box;
   position: relative;
   top: -1px;
@@ -617,7 +645,7 @@ exports[`CheckBox renders 1`] = `
   border-radius: 4px;
 }
 
-.c3 > svg {
+.c4 > svg {
   box-sizing: border-box;
   position: absolute;
   top: -2px;
@@ -629,6 +657,10 @@ exports[`CheckBox renders 1`] = `
   stroke: #865CD6;
 }
 
+.c2 {
+  position: relative;
+}
+
 <div
   className="c0"
 >
@@ -637,11 +669,11 @@ exports[`CheckBox renders 1`] = `
     htmlFor={undefined}
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={undefined}
-        className="c2"
+        className="c3"
         disabled={undefined}
         id={undefined}
         name={undefined}
@@ -650,7 +682,7 @@ exports[`CheckBox renders 1`] = `
         type="checkbox"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           preserveAspectRatio="xMidYMid meet"
@@ -669,11 +701,11 @@ exports[`CheckBox renders 1`] = `
     htmlFor="test id"
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={undefined}
-        className="c2"
+        className="c3"
         disabled={undefined}
         id="test id"
         name="test name"
@@ -682,7 +714,7 @@ exports[`CheckBox renders 1`] = `
         type="checkbox"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           preserveAspectRatio="xMidYMid meet"
@@ -740,50 +772,54 @@ exports[`CheckBox reverse renders 1`] = `
   border-color: #000000;
 }
 
-.c2 {
+.c3 {
+  position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   margin: 0;
+  z-index: 1;
 }
 
-.c2:focus + div,
-.c2:focus + span {
+.c3:focus + div,
+.c3:focus + span {
   border-color: #00CCEB;
   box-shadow: 0 0 2px 2px #00CCEB;
 }
 
-.c2:focus + div > circle,
-.c2:focus + span > circle,
-.c2:focus + div > ellipse,
-.c2:focus + span > ellipse,
-.c2:focus + div > line,
-.c2:focus + span > line,
-.c2:focus + div > path,
-.c2:focus + span > path,
-.c2:focus + div > polygon,
-.c2:focus + span > polygon,
-.c2:focus + div > polyline,
-.c2:focus + span > polyline,
-.c2:focus + div > rect,
-.c2:focus + span > rect {
+.c3:focus + div > circle,
+.c3:focus + span > circle,
+.c3:focus + div > ellipse,
+.c3:focus + span > ellipse,
+.c3:focus + div > line,
+.c3:focus + span > line,
+.c3:focus + div > path,
+.c3:focus + span > path,
+.c3:focus + div > polygon,
+.c3:focus + span > polygon,
+.c3:focus + div > polyline,
+.c3:focus + span > polyline,
+.c3:focus + div > rect,
+.c3:focus + span > rect {
   outline: #00CCEB solid 2px;
 }
 
-.c2:checked + div {
+.c3:checked + div {
   border-color: #865CD6;
 }
 
-.c2:checked + div > svg {
+.c3:checked + div > svg {
   display: block;
 }
 
-.c2:checked + span > span {
+.c3:checked + span > span {
   left: 24px;
   background-color: #865CD6;
 }
 
-.c3 {
+.c4 {
   box-sizing: border-box;
   position: relative;
   top: -1px;
@@ -797,7 +833,7 @@ exports[`CheckBox reverse renders 1`] = `
   border-radius: 4px;
 }
 
-.c3 > svg {
+.c4 > svg {
   box-sizing: border-box;
   position: absolute;
   top: -2px;
@@ -809,6 +845,10 @@ exports[`CheckBox reverse renders 1`] = `
   stroke: #865CD6;
 }
 
+.c2 {
+  position: relative;
+}
+
 <div
   className="c0"
 >
@@ -817,11 +857,11 @@ exports[`CheckBox reverse renders 1`] = `
     htmlFor={undefined}
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={undefined}
-        className="c2"
+        className="c3"
         disabled={undefined}
         id={undefined}
         name={undefined}
@@ -830,7 +870,7 @@ exports[`CheckBox reverse renders 1`] = `
         type="checkbox"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           preserveAspectRatio="xMidYMid meet"
@@ -891,50 +931,54 @@ exports[`CheckBox toggle renders 1`] = `
   border-color: #000000;
 }
 
-.c2 {
+.c3 {
+  position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   margin: 0;
+  z-index: 1;
 }
 
-.c2:focus + div,
-.c2:focus + span {
+.c3:focus + div,
+.c3:focus + span {
   border-color: #00CCEB;
   box-shadow: 0 0 2px 2px #00CCEB;
 }
 
-.c2:focus + div > circle,
-.c2:focus + span > circle,
-.c2:focus + div > ellipse,
-.c2:focus + span > ellipse,
-.c2:focus + div > line,
-.c2:focus + span > line,
-.c2:focus + div > path,
-.c2:focus + span > path,
-.c2:focus + div > polygon,
-.c2:focus + span > polygon,
-.c2:focus + div > polyline,
-.c2:focus + span > polyline,
-.c2:focus + div > rect,
-.c2:focus + span > rect {
+.c3:focus + div > circle,
+.c3:focus + span > circle,
+.c3:focus + div > ellipse,
+.c3:focus + span > ellipse,
+.c3:focus + div > line,
+.c3:focus + span > line,
+.c3:focus + div > path,
+.c3:focus + span > path,
+.c3:focus + div > polygon,
+.c3:focus + span > polygon,
+.c3:focus + div > polyline,
+.c3:focus + span > polyline,
+.c3:focus + div > rect,
+.c3:focus + span > rect {
   outline: #00CCEB solid 2px;
 }
 
-.c2:checked + div {
+.c3:checked + div {
   border-color: #865CD6;
 }
 
-.c2:checked + div > svg {
+.c3:checked + div > svg {
   display: block;
 }
 
-.c2:checked + span > span {
+.c3:checked + span > span {
   left: 24px;
   background-color: #865CD6;
 }
 
-.c3 {
+.c4 {
   box-sizing: border-box;
   position: relative;
   vertical-align: middle;
@@ -946,7 +990,7 @@ exports[`CheckBox toggle renders 1`] = `
   border-radius: 24px;
 }
 
-.c4 {
+.c5 {
   box-sizing: border-box;
   position: absolute;
   top: -2px;
@@ -959,6 +1003,10 @@ exports[`CheckBox toggle renders 1`] = `
   border-radius: 24px;
 }
 
+.c2 {
+  position: relative;
+}
+
 <div
   className="c0"
 >
@@ -967,11 +1015,11 @@ exports[`CheckBox toggle renders 1`] = `
     htmlFor={undefined}
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={undefined}
-        className="c2"
+        className="c3"
         disabled={undefined}
         id={undefined}
         name={undefined}
@@ -980,10 +1028,10 @@ exports[`CheckBox toggle renders 1`] = `
         type="checkbox"
       />
       <span
-        className="c3"
+        className="c4"
       >
         <span
-          className="c4"
+          className="c5"
         />
       </span>
     </div>
@@ -993,11 +1041,11 @@ exports[`CheckBox toggle renders 1`] = `
     htmlFor={undefined}
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={true}
-        className="c2"
+        className="c3"
         disabled={undefined}
         id={undefined}
         name={undefined}
@@ -1006,10 +1054,10 @@ exports[`CheckBox toggle renders 1`] = `
         type="checkbox"
       />
       <span
-        className="c3"
+        className="c4"
       >
         <span
-          className="c4"
+          className="c5"
         />
       </span>
     </div>
@@ -1019,11 +1067,11 @@ exports[`CheckBox toggle renders 1`] = `
     htmlFor={undefined}
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={undefined}
-        className="c2"
+        className="c3"
         disabled={undefined}
         id={undefined}
         name={undefined}
@@ -1032,10 +1080,10 @@ exports[`CheckBox toggle renders 1`] = `
         type="checkbox"
       />
       <span
-        className="c3"
+        className="c4"
       >
         <span
-          className="c4"
+          className="c5"
         />
       </span>
     </div>

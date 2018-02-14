@@ -23,10 +23,14 @@ export const StyledCheckBoxContainer = styled.label`
 `;
 
 export const StyledCheckBoxInput = styled.input`
+  position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   margin: 0;
+  z-index: 1;
 
   :focus + div,
   :focus + span {
@@ -98,6 +102,7 @@ export const StyledCheckBoxKnob = styled.span`
 `;
 
 const StyledCheckBox = styled.div`
+  position: relative;
 `;
 
 export default StyledCheckBox.extend`

@@ -40,50 +40,54 @@ exports[`RadioButton checked renders 1`] = `
   border-color: #000000;
 }
 
-.c2 {
+.c3 {
+  position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   margin: 0;
+  z-index: 1;
 }
 
-.c2:focus + div,
-.c2:focus + span {
+.c3:focus + div,
+.c3:focus + span {
   border-color: #00CCEB;
   box-shadow: 0 0 2px 2px #00CCEB;
 }
 
-.c2:focus + div > circle,
-.c2:focus + span > circle,
-.c2:focus + div > ellipse,
-.c2:focus + span > ellipse,
-.c2:focus + div > line,
-.c2:focus + span > line,
-.c2:focus + div > path,
-.c2:focus + span > path,
-.c2:focus + div > polygon,
-.c2:focus + span > polygon,
-.c2:focus + div > polyline,
-.c2:focus + span > polyline,
-.c2:focus + div > rect,
-.c2:focus + span > rect {
+.c3:focus + div > circle,
+.c3:focus + span > circle,
+.c3:focus + div > ellipse,
+.c3:focus + span > ellipse,
+.c3:focus + div > line,
+.c3:focus + span > line,
+.c3:focus + div > path,
+.c3:focus + span > path,
+.c3:focus + div > polygon,
+.c3:focus + span > polygon,
+.c3:focus + div > polyline,
+.c3:focus + span > polyline,
+.c3:focus + div > rect,
+.c3:focus + span > rect {
   outline: #00CCEB solid 2px;
 }
 
-.c2:checked + div {
+.c3:checked + div {
   border-color: #865CD6;
 }
 
-.c2:checked + div > svg {
+.c3:checked + div > svg {
   display: block;
 }
 
-.c2:checked + span > span {
+.c3:checked + span > span {
   left: 24px;
   background-color: #865CD6;
 }
 
-.c3 {
+.c4 {
   box-sizing: border-box;
   position: relative;
   top: -1px;
@@ -97,7 +101,7 @@ exports[`RadioButton checked renders 1`] = `
   border-radius: 100%;
 }
 
-.c3 > svg {
+.c4 > svg {
   box-sizing: border-box;
   position: absolute;
   top: -2px;
@@ -108,6 +112,10 @@ exports[`RadioButton checked renders 1`] = `
   fill: #865CD6;
 }
 
+.c2 {
+  position: relative;
+}
+
 <div
   className="c0"
 >
@@ -116,11 +124,11 @@ exports[`RadioButton checked renders 1`] = `
     htmlFor={undefined}
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={true}
-        className="c2"
+        className="c3"
         disabled={undefined}
         id={undefined}
         name={undefined}
@@ -129,7 +137,7 @@ exports[`RadioButton checked renders 1`] = `
         type="radio"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           preserveAspectRatio="xMidYMid meet"
@@ -187,50 +195,54 @@ exports[`RadioButton disabled renders 1`] = `
   border-color: #000000;
 }
 
-.c2 {
+.c3 {
+  position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   margin: 0;
+  z-index: 1;
 }
 
-.c2:focus + div,
-.c2:focus + span {
+.c3:focus + div,
+.c3:focus + span {
   border-color: #00CCEB;
   box-shadow: 0 0 2px 2px #00CCEB;
 }
 
-.c2:focus + div > circle,
-.c2:focus + span > circle,
-.c2:focus + div > ellipse,
-.c2:focus + span > ellipse,
-.c2:focus + div > line,
-.c2:focus + span > line,
-.c2:focus + div > path,
-.c2:focus + span > path,
-.c2:focus + div > polygon,
-.c2:focus + span > polygon,
-.c2:focus + div > polyline,
-.c2:focus + span > polyline,
-.c2:focus + div > rect,
-.c2:focus + span > rect {
+.c3:focus + div > circle,
+.c3:focus + span > circle,
+.c3:focus + div > ellipse,
+.c3:focus + span > ellipse,
+.c3:focus + div > line,
+.c3:focus + span > line,
+.c3:focus + div > path,
+.c3:focus + span > path,
+.c3:focus + div > polygon,
+.c3:focus + span > polygon,
+.c3:focus + div > polyline,
+.c3:focus + span > polyline,
+.c3:focus + div > rect,
+.c3:focus + span > rect {
   outline: #00CCEB solid 2px;
 }
 
-.c2:checked + div {
+.c3:checked + div {
   border-color: #865CD6;
 }
 
-.c2:checked + div > svg {
+.c3:checked + div > svg {
   display: block;
 }
 
-.c2:checked + span > span {
+.c3:checked + span > span {
   left: 24px;
   background-color: #865CD6;
 }
 
-.c3 {
+.c4 {
   box-sizing: border-box;
   position: relative;
   top: -1px;
@@ -244,7 +256,7 @@ exports[`RadioButton disabled renders 1`] = `
   border-radius: 100%;
 }
 
-.c3 > svg {
+.c4 > svg {
   box-sizing: border-box;
   position: absolute;
   top: -2px;
@@ -255,6 +267,10 @@ exports[`RadioButton disabled renders 1`] = `
   fill: #865CD6;
 }
 
+.c2 {
+  position: relative;
+}
+
 <div
   className="c0"
 >
@@ -263,11 +279,11 @@ exports[`RadioButton disabled renders 1`] = `
     htmlFor={undefined}
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={undefined}
-        className="c2"
+        className="c3"
         disabled={true}
         id={undefined}
         name={undefined}
@@ -276,7 +292,7 @@ exports[`RadioButton disabled renders 1`] = `
         type="radio"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           preserveAspectRatio="xMidYMid meet"
@@ -296,11 +312,11 @@ exports[`RadioButton disabled renders 1`] = `
     htmlFor={undefined}
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={true}
-        className="c2"
+        className="c3"
         disabled={true}
         id={undefined}
         name={undefined}
@@ -309,7 +325,7 @@ exports[`RadioButton disabled renders 1`] = `
         type="radio"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           preserveAspectRatio="xMidYMid meet"
@@ -367,50 +383,54 @@ exports[`RadioButton label renders 1`] = `
   border-color: #000000;
 }
 
-.c2 {
+.c3 {
+  position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   margin: 0;
+  z-index: 1;
 }
 
-.c2:focus + div,
-.c2:focus + span {
+.c3:focus + div,
+.c3:focus + span {
   border-color: #00CCEB;
   box-shadow: 0 0 2px 2px #00CCEB;
 }
 
-.c2:focus + div > circle,
-.c2:focus + span > circle,
-.c2:focus + div > ellipse,
-.c2:focus + span > ellipse,
-.c2:focus + div > line,
-.c2:focus + span > line,
-.c2:focus + div > path,
-.c2:focus + span > path,
-.c2:focus + div > polygon,
-.c2:focus + span > polygon,
-.c2:focus + div > polyline,
-.c2:focus + span > polyline,
-.c2:focus + div > rect,
-.c2:focus + span > rect {
+.c3:focus + div > circle,
+.c3:focus + span > circle,
+.c3:focus + div > ellipse,
+.c3:focus + span > ellipse,
+.c3:focus + div > line,
+.c3:focus + span > line,
+.c3:focus + div > path,
+.c3:focus + span > path,
+.c3:focus + div > polygon,
+.c3:focus + span > polygon,
+.c3:focus + div > polyline,
+.c3:focus + span > polyline,
+.c3:focus + div > rect,
+.c3:focus + span > rect {
   outline: #00CCEB solid 2px;
 }
 
-.c2:checked + div {
+.c3:checked + div {
   border-color: #865CD6;
 }
 
-.c2:checked + div > svg {
+.c3:checked + div > svg {
   display: block;
 }
 
-.c2:checked + span > span {
+.c3:checked + span > span {
   left: 24px;
   background-color: #865CD6;
 }
 
-.c3 {
+.c4 {
   box-sizing: border-box;
   position: relative;
   top: -1px;
@@ -424,7 +444,7 @@ exports[`RadioButton label renders 1`] = `
   border-radius: 100%;
 }
 
-.c3 > svg {
+.c4 > svg {
   box-sizing: border-box;
   position: absolute;
   top: -2px;
@@ -435,6 +455,10 @@ exports[`RadioButton label renders 1`] = `
   fill: #865CD6;
 }
 
+.c2 {
+  position: relative;
+}
+
 <div
   className="c0"
 >
@@ -443,11 +467,11 @@ exports[`RadioButton label renders 1`] = `
     htmlFor={undefined}
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={undefined}
-        className="c2"
+        className="c3"
         disabled={undefined}
         id={undefined}
         name={undefined}
@@ -456,7 +480,7 @@ exports[`RadioButton label renders 1`] = `
         type="radio"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           preserveAspectRatio="xMidYMid meet"
@@ -479,11 +503,11 @@ exports[`RadioButton label renders 1`] = `
     htmlFor={undefined}
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={undefined}
-        className="c2"
+        className="c3"
         disabled={undefined}
         id={undefined}
         name={undefined}
@@ -492,7 +516,7 @@ exports[`RadioButton label renders 1`] = `
         type="radio"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           preserveAspectRatio="xMidYMid meet"
@@ -553,50 +577,54 @@ exports[`RadioButton renders 1`] = `
   border-color: #000000;
 }
 
-.c2 {
+.c3 {
+  position: absolute;
   opacity: 0;
-  width: 0;
-  height: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   margin: 0;
+  z-index: 1;
 }
 
-.c2:focus + div,
-.c2:focus + span {
+.c3:focus + div,
+.c3:focus + span {
   border-color: #00CCEB;
   box-shadow: 0 0 2px 2px #00CCEB;
 }
 
-.c2:focus + div > circle,
-.c2:focus + span > circle,
-.c2:focus + div > ellipse,
-.c2:focus + span > ellipse,
-.c2:focus + div > line,
-.c2:focus + span > line,
-.c2:focus + div > path,
-.c2:focus + span > path,
-.c2:focus + div > polygon,
-.c2:focus + span > polygon,
-.c2:focus + div > polyline,
-.c2:focus + span > polyline,
-.c2:focus + div > rect,
-.c2:focus + span > rect {
+.c3:focus + div > circle,
+.c3:focus + span > circle,
+.c3:focus + div > ellipse,
+.c3:focus + span > ellipse,
+.c3:focus + div > line,
+.c3:focus + span > line,
+.c3:focus + div > path,
+.c3:focus + span > path,
+.c3:focus + div > polygon,
+.c3:focus + span > polygon,
+.c3:focus + div > polyline,
+.c3:focus + span > polyline,
+.c3:focus + div > rect,
+.c3:focus + span > rect {
   outline: #00CCEB solid 2px;
 }
 
-.c2:checked + div {
+.c3:checked + div {
   border-color: #865CD6;
 }
 
-.c2:checked + div > svg {
+.c3:checked + div > svg {
   display: block;
 }
 
-.c2:checked + span > span {
+.c3:checked + span > span {
   left: 24px;
   background-color: #865CD6;
 }
 
-.c3 {
+.c4 {
   box-sizing: border-box;
   position: relative;
   top: -1px;
@@ -610,7 +638,7 @@ exports[`RadioButton renders 1`] = `
   border-radius: 100%;
 }
 
-.c3 > svg {
+.c4 > svg {
   box-sizing: border-box;
   position: absolute;
   top: -2px;
@@ -621,6 +649,10 @@ exports[`RadioButton renders 1`] = `
   fill: #865CD6;
 }
 
+.c2 {
+  position: relative;
+}
+
 <div
   className="c0"
 >
@@ -629,11 +661,11 @@ exports[`RadioButton renders 1`] = `
     htmlFor={undefined}
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={undefined}
-        className="c2"
+        className="c3"
         disabled={undefined}
         id={undefined}
         name={undefined}
@@ -642,7 +674,7 @@ exports[`RadioButton renders 1`] = `
         type="radio"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           preserveAspectRatio="xMidYMid meet"
@@ -662,11 +694,11 @@ exports[`RadioButton renders 1`] = `
     htmlFor="test id"
   >
     <div
-      className=""
+      className="c2"
     >
       <input
         checked={undefined}
-        className="c2"
+        className="c3"
         disabled={undefined}
         id="test id"
         name="test name"
@@ -675,7 +707,7 @@ exports[`RadioButton renders 1`] = `
         type="radio"
       />
       <div
-        className="c3"
+        className="c4"
       >
         <svg
           preserveAspectRatio="xMidYMid meet"
