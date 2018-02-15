@@ -6,16 +6,15 @@ import { Grommet } from '../../Grommet';
 import { Text } from '../../Text';
 import { Table, TableCell } from '../';
 
-test('Grid columns renders', () => {
+test('Table columns renders', () => {
   const component = renderer.create(
     <Grommet>
       <Table
         columns={[
-          { label: 'Name', property: 'name' },
+          { label: 'Name', property: 'name', basis: 'small' },
           {
             header: <TableCell border='bottom'><Text>Flavor</Text></TableCell>,
-            renderData: datum =>
-              <TableCell ><Text>{datum.flavor}</Text></TableCell>,
+            footer: <TableCell border='top'><Text>Flavor</Text></TableCell>,
           },
         ]}
       />
@@ -25,14 +24,27 @@ test('Grid columns renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Grid data renders', () => {
+test('Table caption renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Table
+        caption='Caption'
+        columns={[{ label: 'Name', property: 'name' }]}
+      />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Table data renders', () => {
   const component = renderer.create(
     <Grommet>
       <Table
         columns={[
-          { label: 'Name', property: 'name' },
+          { label: 'Name', property: 'name', dataHeader: true },
           {
-            header: <TableCell border='bottom'><Text>Flavor</Text></TableCell>,
+            label: 'Flavor',
             renderData: datum =>
               <TableCell ><Text>{datum.flavor}</Text></TableCell>,
           },
