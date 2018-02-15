@@ -31,7 +31,7 @@ bottom-right
 **guidingChild**
 
 Which child to guide layout from. All other children will be positioned
-      within that area. Defaults to `first`.
+      within that area. Defaults to 'first'. Defaults to `first`.
 
 ```
 number
