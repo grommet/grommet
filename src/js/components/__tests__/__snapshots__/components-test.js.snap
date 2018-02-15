@@ -35,6 +35,8 @@ Object {
   "SkipLinks": [Function],
   "Stack": [Function],
   "Tab": [Function],
+  "Table": [Function],
+  "TableCell": [Function],
   "Tabs": [Function],
   "Text": [Function],
   "TextArea": [Function],
