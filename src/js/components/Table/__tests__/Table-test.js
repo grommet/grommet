@@ -3,21 +3,12 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { Text } from '../../Text';
-import { Table, TableCell } from '../';
+import { Table, TableHeader, TableFooter, TableBody, TableRow, TableCell } from '../';
 
-test('Table columns renders', () => {
+test('Table renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Table
-        columns={[
-          { label: 'Name', property: 'name', basis: 'small' },
-          {
-            header: <TableCell border='bottom'><Text>Flavor</Text></TableCell>,
-            footer: <TableCell border='top'><Text>Flavor</Text></TableCell>,
-          },
-        ]}
-      />
+      <Table />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -27,33 +18,158 @@ test('Table columns renders', () => {
 test('Table caption renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Table
-        caption='Caption'
-        columns={[{ label: 'Name', property: 'name' }]}
-      />
+      <Table caption='Caption' />
     </Grommet>
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-test('Table data renders', () => {
+test('TableHeader renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Table
-        columns={[
-          { label: 'Name', property: 'name', dataHeader: true },
-          {
-            label: 'Flavor',
-            renderData: datum =>
-              <TableCell ><Text>{datum.flavor}</Text></TableCell>,
-          },
-        ]}
-        data={[
-          { name: 'Eric', flavor: 'Coconut' },
-          { name: 'Chris', flavor: 'Watermelon' },
-        ]}
-      />
+      <Table>
+        <TableHeader />
+      </Table>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('TableFooter renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Table>
+        <TableFooter />
+      </Table>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('TableBody renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Table>
+        <TableBody />
+      </Table>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('TableRow renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Table>
+        <TableBody>
+          <TableRow />
+        </TableBody>
+      </Table>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('TableCell renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableCell />
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell />
+          </TableRow>
+        </TableBody>
+        <TableFooter>
+          <TableRow>
+            <TableCell />
+          </TableRow>
+        </TableFooter>
+      </Table>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('TableCell scope renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableCell scope='col' />
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell scope='row' />
+          </TableRow>
+        </TableBody>
+      </Table>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('TableCell size renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Table>
+        <TableBody>
+          <TableRow>
+            <TableCell size='xsmall' />
+            <TableCell size='small' />
+            <TableCell size='medium' />
+            <TableCell size='large' />
+          </TableRow>
+        </TableBody>
+      </Table>
+
+      <Table>
+        <TableBody>
+          <TableRow>
+            <TableCell size='1/2' />
+            <TableCell size='1/4' />
+            <TableCell size='1/4' />
+          </TableRow>
+        </TableBody>
+      </Table>
+
+      <Table>
+        <TableBody>
+          <TableRow>
+            <TableCell size='1/3' />
+            <TableCell size='2/3' />
+          </TableRow>
+        </TableBody>
+      </Table>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('TableCell plain renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableCell plain={true} />
+          </TableRow>
+        </TableHeader>
+      </Table>
     </Grommet>
   );
   const tree = component.toJSON();

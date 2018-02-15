@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const BASIS_MAP = {
-  'auto': 'auto',
-  'full': '100%',
+const SIZE_MAP = {
   '1/2': '50%',
   '1/4': '25%',
   '3/4': '75%',
@@ -10,39 +8,37 @@ const BASIS_MAP = {
   '2/3': '66.66%',
 };
 
-const basisStyle = css`
-  width: ${props => BASIS_MAP[props.basis] || props.theme.global.size[props.basis]};
-  max-width: ${props => BASIS_MAP[props.basis] || props.theme.global.size[props.basis]};
+const sizeStyle = css`
+  width: ${props => SIZE_MAP[props.size] || props.theme.global.size[props.size]};
+  max-width: ${props => SIZE_MAP[props.size] || props.theme.global.size[props.size]};
   overflow: hidden;
 `;
 
-export const StyledTableHeaderCell = styled.th`
+export const StyledTableCell = styled.td`
   margin: 0;
   padding: 0;
   font-weight: inherit;
-  vertical-align: bottom;
+  text-align: inherit;
 
-  ${props => props.basis && basisStyle}
-`;
-
-export const StyledTableFooterCell = styled.th`
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  vertical-align: top;
-
-  ${props => props.basis && basisStyle}
-`;
-
-export const StyledTableDataCell = styled.td`
-  margin: 0;
-  padding: 0;
-
-  ${props => props.basis && basisStyle}
+  ${props => props.size && sizeStyle}
+  ${props => props.tableContext === 'header' && 'vertical-align: bottom;'}
+  ${props => props.tableContext === 'footer' && 'vertical-align: top;'}
 `;
 
 export const StyledTableDataCaption = styled.caption`
   display: none;
+`;
+
+export const StyledTableRow = styled.tr`
+`;
+
+export const StyledTableBody = styled.tbody`
+`;
+
+export const StyledTableHeader = styled.thead`
+`;
+
+export const StyledTableFooter = styled.tfoot`
 `;
 
 const StyledTable = styled.table`

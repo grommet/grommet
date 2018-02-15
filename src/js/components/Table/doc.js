@@ -2,38 +2,43 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
+export const docTableCell = (TableCell) => {
+  const DocumentedTableCell = describe(TableCell)
+    .availableAt(getAvailableAtBadge('Table'))
+    .description('A cell of data in a table.'
+    ).usage(
+      `import { TableCell } from 'grommet';
+<TableCell />`
+    );
+
+  DocumentedTableCell.propTypes = {
+    plain: PropTypes.bool
+      .description('Whether default styling context should be removed.'),
+    scope: PropTypes.oneOf(['col', 'row'])
+      .description(`For header cells, what scope the header is for.
+        Typically, the cells in a TableHeader have 'col' scope and
+        the primary cell in each row in the TableBody has 'row' scope.`),
+    size: PropTypes.oneOf(
+      ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge',
+        '1/2', '1/3', '2/3', '1/4', '3/4']
+    ).description(`What size the cell should be. Typically, this is not needed
+      unless you are trying to align multiple tables.`),
+  };
+
+  return DocumentedTableCell;
+};
+
 export default (Table) => {
   const DocumentedTable = describe(Table)
     .availableAt(getAvailableAtBadge('Table'))
     .description('A table of data organized in cells.'
     ).usage(
-      `import { Table, TableCell } from 'grommet';
+      `import { Table, TableHeader, TableFooter, TableBody, TableRow } from 'grommet';
 <Table />`
     );
 
   DocumentedTable.propTypes = {
-    caption: PropTypes.string.description('One line summary'),
-    columns: PropTypes.arrayOf(PropTypes.shape({
-      basis: PropTypes.oneOf(
-        ['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge',
-          '1/2', '1/3', '2/3', '1/4', '3/4']
-      ),
-      dataHeader: PropTypes.bool,
-      footer: PropTypes.node,
-      header: PropTypes.node,
-      label: PropTypes.string,
-      property: PropTypes.string,
-      renderData: PropTypes.func,
-    }))
-      .description(`Description of the table columns. Either property or
-        renderData must be specified. If property is specified, a TableCell
-        containing the datum property value will be rendered in Text. It is
-        recommended to use TableCell for header, footer, and in renderData.`)
-      .isRequired,
-    data: PropTypes.arrayOf(PropTypes.object)
-      .description(`Data objects to populate the table with. Each object in
-        the array will be placed in a separate row. Properties of each object
-        are rendered according to how columns are defined.`),
+    caption: PropTypes.string.description('One line description.'),
   };
 
   return DocumentedTable;
