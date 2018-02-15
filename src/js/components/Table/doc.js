@@ -4,7 +4,6 @@ import { getAvailableAtBadge } from '../../utils';
 
 export const docTableCell = (TableCell) => {
   const DocumentedTableCell = describe(TableCell)
-    .availableAt(getAvailableAtBadge('Table'))
     .description('A cell of data in a table.'
     ).usage(
       `import { TableCell } from 'grommet';
