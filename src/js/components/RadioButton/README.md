@@ -62,7 +62,9 @@ string
 
 **onChange**
 
-Same as React <input onChange={} />
+Function that will be called when the user clicks the radio button. It
+      will be passed a React event object. The current state can be accessed
+      via event.target.checked. Same as React <input onChange={} />.
 
 ```
 function

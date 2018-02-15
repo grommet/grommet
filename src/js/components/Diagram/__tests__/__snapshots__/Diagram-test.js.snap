@@ -14,13 +14,13 @@ exports[`Diagram color renders 1`] = `
     >
       <div
         class="StyledBox-bStriS jGLyaD"
-        id="1"
         direction="column"
+        id="1"
       />
       <div
         class="StyledBox-bStriS jGLyaD"
-        id="2"
         direction="column"
+        id="2"
       />
     </div>
     <svg
@@ -51,13 +51,13 @@ exports[`Diagram offset renders 1`] = `
     >
       <div
         class="StyledBox-bStriS jGLyaD"
-        id="1"
         direction="column"
+        id="1"
       />
       <div
         class="StyledBox-bStriS jGLyaD"
-        id="2"
         direction="column"
+        id="2"
       />
     </div>
     <svg
@@ -88,13 +88,13 @@ exports[`Diagram renders 1`] = `
     >
       <div
         class="StyledBox-bStriS jGLyaD"
-        id="1"
         direction="column"
+        id="1"
       />
       <div
         class="StyledBox-bStriS jGLyaD"
-        id="2"
         direction="column"
+        id="2"
       />
     </div>
     <svg
@@ -125,13 +125,13 @@ exports[`Diagram thickness renders 1`] = `
     >
       <div
         class="StyledBox-bStriS jGLyaD"
-        id="1"
         direction="column"
+        id="1"
       />
       <div
         class="StyledBox-bStriS jGLyaD"
-        id="2"
         direction="column"
+        id="2"
       />
     </div>
     <svg
@@ -162,13 +162,13 @@ exports[`Diagram type renders 1`] = `
     >
       <div
         class="StyledBox-bStriS jGLyaD"
-        id="1"
         direction="column"
+        id="1"
       />
       <div
         class="StyledBox-bStriS jGLyaD"
-        id="2"
         direction="column"
+        id="2"
       />
     </div>
     <svg

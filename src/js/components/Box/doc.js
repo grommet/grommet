@@ -88,6 +88,11 @@ the column axis when contained in a Grid.`
     full: PropTypes.oneOf(['horizontal', 'vertical', true, false, 'grow']).description(
       'Whether the width and/or height should take the full viewport size.'
     ),
+    gap: PropTypes.oneOf(
+      ['xsmall', 'small', 'medium', 'large', 'xlarge']
+    ).description(
+      'The amount of spacing between child elements.'
+    ),
     gridArea: PropTypes.string.description(
       'The name of the area to place this Box in inside a parent Grid.'
     ),

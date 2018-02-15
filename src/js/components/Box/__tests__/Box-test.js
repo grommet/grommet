@@ -235,6 +235,20 @@ test('Box full renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Box gap renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      {['xsmall', 'small', 'medium', 'large'].map(gap => (
+        <Box key={gap} gap={gap} direction='row'>
+          <Box />
+        </Box>
+      ))}
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Box margin renders', () => {
   const component = renderer.create(
     <Grommet>

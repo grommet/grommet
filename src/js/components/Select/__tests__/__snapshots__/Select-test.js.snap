@@ -3,19 +3,19 @@
 exports[`Select closes drop on esc 1`] = `
 <div
   class="StyledBox-bStriS iQipYn"
-  id="select-drop__select"
   direction="column"
+  id="select-drop__select"
 >
   <div
     class="StyledBox-bStriS hqPVCc"
-    overflow="auto"
     direction="column"
+    overflow="auto"
   >
     <div
       class="StyledBox-bStriS jDxevM"
+      direction="column"
       role="menubar"
       tabindex="-1"
-      direction="column"
     >
       <button
         class="StyledButton-gXzblK khQPBH"
@@ -97,8 +97,8 @@ exports[`Select closes drop on esc 3`] = `
 >
   <div
     class="StyledBox-bStriS janhJy"
-    aria-hidden="true"
     direction="row"
+    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -115,8 +115,8 @@ exports[`Select closes drop on esc 3`] = `
     </div>
     <div
       class="StyledBox-bStriS jagiFv"
-      style="min-width: auto;"
       direction="column"
+      style="min-width: auto;"
     >
       <svg
         class="StyledIcon-gTfjEw htxeRg"
@@ -147,8 +147,8 @@ exports[`Select closes drop on esc 4`] = `
 >
   <div
     class="StyledBox-bStriS janhJy"
-    aria-hidden="true"
     direction="row"
+    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -165,8 +165,8 @@ exports[`Select closes drop on esc 4`] = `
     </div>
     <div
       class="StyledBox-bStriS jagiFv"
-      style="min-width: auto;"
       direction="column"
+      style="min-width: auto;"
     >
       <svg
         class="StyledIcon-gTfjEw htxeRg"
@@ -197,8 +197,8 @@ exports[`Select mounts 1`] = `
 >
   <div
     class="StyledBox-bStriS janhJy"
-    aria-hidden="true"
     direction="row"
+    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -215,8 +215,8 @@ exports[`Select mounts 1`] = `
     </div>
     <div
       class="StyledBox-bStriS jagiFv"
-      style="min-width: auto;"
       direction="column"
+      style="min-width: auto;"
     >
       <svg
         class="StyledIcon-gTfjEw htxeRg"
@@ -247,8 +247,8 @@ exports[`Select mounts 2`] = `
 >
   <div
     class="StyledBox-bStriS janhJy"
-    aria-hidden="true"
     direction="row"
+    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -265,8 +265,8 @@ exports[`Select mounts 2`] = `
     </div>
     <div
       class="StyledBox-bStriS jagiFv"
-      style="min-width: auto;"
       direction="column"
+      style="min-width: auto;"
     >
       <svg
         class="StyledIcon-gTfjEw htxeRg"
@@ -292,19 +292,19 @@ exports[`Select mounts 2`] = `
 exports[`Select mounts 3`] = `
 <div
   class="StyledBox-bStriS iQipYn"
-  id="select-drop__select"
   direction="column"
+  id="select-drop__select"
 >
   <div
     class="StyledBox-bStriS hqPVCc"
-    overflow="auto"
     direction="column"
+    overflow="auto"
   >
     <div
       class="StyledBox-bStriS jDxevM"
+      direction="column"
       role="menubar"
       tabindex="-1"
-      direction="column"
     >
       <button
         class="StyledButton-gXzblK khQPBH"
@@ -381,9 +381,9 @@ exports[`Select mounts 4`] = `
 exports[`Select mounts 5`] = `
 <div
   class="StyledBox-bStriS jDxevM"
+  direction="column"
   role="menubar"
   tabindex="-1"
-  direction="column"
 >
   <button
     class="StyledButton-gXzblK khQPBH"
@@ -430,8 +430,8 @@ exports[`Select mounts with complex options and children 1`] = `
 >
   <div
     class="StyledBox-bStriS janhJy"
-    aria-hidden="true"
     direction="row"
+    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -448,8 +448,8 @@ exports[`Select mounts with complex options and children 1`] = `
     </div>
     <div
       class="StyledBox-bStriS jagiFv"
-      style="min-width: auto;"
       direction="column"
+      style="min-width: auto;"
     >
       <svg
         class="StyledIcon-gTfjEw htxeRg"
@@ -480,8 +480,8 @@ exports[`Select mounts with complex options and children 2`] = `
 >
   <div
     class="StyledBox-bStriS janhJy"
-    aria-hidden="true"
     direction="row"
+    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -498,8 +498,8 @@ exports[`Select mounts with complex options and children 2`] = `
     </div>
     <div
       class="StyledBox-bStriS jagiFv"
-      style="min-width: auto;"
       direction="column"
+      style="min-width: auto;"
     >
       <svg
         class="StyledIcon-gTfjEw htxeRg"
@@ -525,19 +525,19 @@ exports[`Select mounts with complex options and children 2`] = `
 exports[`Select mounts with complex options and children 3`] = `
 <div
   class="StyledBox-bStriS iQipYn"
-  id="select-drop__select"
   direction="column"
+  id="select-drop__select"
 >
   <div
     class="StyledBox-bStriS hqPVCc"
-    overflow="auto"
     direction="column"
+    overflow="auto"
   >
     <div
       class="StyledBox-bStriS jDxevM"
+      direction="column"
       role="menubar"
       tabindex="-1"
-      direction="column"
     >
       <button
         class="StyledButton-gXzblK khQPBH"
@@ -600,8 +600,8 @@ exports[`Select mounts with complex options and children 4`] = `
 exports[`Select mounts with search 1`] = `
 <div
   class="StyledBox-bStriS iQipYn"
-  id="select-drop__select"
   direction="column"
+  id="select-drop__select"
 >
   <div
     class="StyledBox-bStriS fGEMtx"
@@ -620,14 +620,14 @@ exports[`Select mounts with search 1`] = `
   </div>
   <div
     class="StyledBox-bStriS hqPVCc"
-    overflow="auto"
     direction="column"
+    overflow="auto"
   >
     <div
       class="StyledBox-bStriS jDxevM"
+      direction="column"
       role="menubar"
       tabindex="-1"
-      direction="column"
     >
       <button
         class="StyledButton-gXzblK khQPBH"
@@ -713,8 +713,8 @@ exports[`Select mounts with search 3`] = `
 exports[`Select mounts with search 4`] = `
 <div
   class="StyledBox-bStriS iQipYn"
-  id="select-drop__select"
   direction="column"
+  id="select-drop__select"
 >
   <div
     class="StyledBox-bStriS fGEMtx"
@@ -733,14 +733,14 @@ exports[`Select mounts with search 4`] = `
   </div>
   <div
     class="StyledBox-bStriS hqPVCc"
-    overflow="auto"
     direction="column"
+    overflow="auto"
   >
     <div
       class="StyledBox-bStriS jDxevM"
+      direction="column"
       role="menubar"
       tabindex="-1"
-      direction="column"
     >
       <button
         class="StyledButton-gXzblK khQPBH"
