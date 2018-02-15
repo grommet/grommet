@@ -1,0 +1,748 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table caption renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: none;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+    data={Array []}
+  >
+    <caption
+      className="c2"
+    >
+      Caption
+    </caption>
+  </table>
+</div>
+`;
+
+exports[`Table renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+    data={Array []}
+  />
+</div>
+`;
+
+exports[`TableBody renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+    data={Array []}
+  >
+    <tbody
+      className=""
+    />
+  </table>
+</div>
+`;
+
+exports[`TableCell plain renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  vertical-align: bottom;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+    data={Array []}
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <td
+          className="c2"
+          scope={undefined}
+          size={undefined}
+        />
+      </tr>
+    </thead>
+  </table>
+</div>
+`;
+
+exports[`TableCell renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c2 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  vertical-align: bottom;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+}
+
+.c5 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  vertical-align: top;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+    data={Array []}
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <td
+          className="c2"
+          scope={undefined}
+          size={undefined}
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </td>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <td
+          className="c4"
+          scope={undefined}
+          size={undefined}
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </td>
+      </tr>
+    </tbody>
+    <tfoot
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <td
+          className="c5"
+          scope={undefined}
+          size={undefined}
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+`;
+
+exports[`TableCell scope renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c2 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  vertical-align: bottom;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+    data={Array []}
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <th
+          className="c2"
+          scope="col"
+          size={undefined}
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <th
+          className="c4"
+          scope="row"
+          size={undefined}
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`TableCell size renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c2 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 96px;
+  max-width: 96px;
+  overflow: hidden;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 192px;
+  max-width: 192px;
+  overflow: hidden;
+}
+
+.c5 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 384px;
+  max-width: 384px;
+  overflow: hidden;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 768px;
+  max-width: 768px;
+  overflow: hidden;
+}
+
+.c7 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 50%;
+  max-width: 50%;
+  overflow: hidden;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 25%;
+  max-width: 25%;
+  overflow: hidden;
+}
+
+.c9 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 33.33%;
+  max-width: 33.33%;
+  overflow: hidden;
+}
+
+.c10 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 66.66%;
+  max-width: 66.66%;
+  overflow: hidden;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+    data={Array []}
+  >
+    <tbody
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <td
+          className="c2"
+          scope={undefined}
+          size="xsmall"
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </td>
+        <td
+          className="c4"
+          scope={undefined}
+          size="small"
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </td>
+        <td
+          className="c5"
+          scope={undefined}
+          size="medium"
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </td>
+        <td
+          className="c6"
+          scope={undefined}
+          size="large"
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table
+    className="c1"
+    data={Array []}
+  >
+    <tbody
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <td
+          className="c7"
+          scope={undefined}
+          size="1/2"
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </td>
+        <td
+          className="c8"
+          scope={undefined}
+          size="1/4"
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </td>
+        <td
+          className="c8"
+          scope={undefined}
+          size="1/4"
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table
+    className="c1"
+    data={Array []}
+  >
+    <tbody
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <td
+          className="c9"
+          scope={undefined}
+          size="1/3"
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </td>
+        <td
+          className="c10"
+          scope={undefined}
+          size="2/3"
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`TableFooter renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+    data={Array []}
+  >
+    <tfoot
+      className=""
+    />
+  </table>
+</div>
+`;
+
+exports[`TableHeader renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+    data={Array []}
+  >
+    <thead
+      className=""
+    />
+  </table>
+</div>
+`;
+
+exports[`TableRow renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+    data={Array []}
+  >
+    <tbody
+      className=""
+    >
+      <tr
+        className=""
+      />
+    </tbody>
+  </table>
+</div>
+`;

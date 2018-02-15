@@ -24,6 +24,7 @@ export * from './Responsive';
 export * from './Select';
 export * from './SkipLinks';
 export * from './Stack';
+export * from './Table';
 export * from './Tabs';
 export * from './Text';
 export * from './TextArea';
