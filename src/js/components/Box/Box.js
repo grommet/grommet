@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Children, Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
@@ -6,7 +6,7 @@ import { colorForName, colorIsDark } from '../../utils';
 
 import { withTheme } from '../hocs';
 
-import StyledBox from './StyledBox';
+import StyledBox, { StyledBoxGap } from './StyledBox';
 
 import doc from './doc';
 
@@ -52,7 +52,11 @@ class Box extends Component {
   render() {
     const {
       a11yTitle,
+      children,
+      direction,
+      gap,
       tag,
+      theme,
       ...rest
     } = this.props;
 
@@ -62,8 +66,38 @@ class Box extends Component {
       styledComponents[tag] = StyledComponent;
     }
 
+    let contents = children;
+    if (gap) {
+      contents = [];
+      let firstIndex;
+      Children.forEach(children, (child, index) => {
+        if (child) {
+          if (firstIndex === undefined) {
+            firstIndex = index;
+          } else {
+            contents.push((
+              <StyledBoxGap
+                key={index}
+                gap={gap}
+                direction={direction}
+                theme={theme}
+              />
+            ));
+          }
+        }
+        contents.push(child);
+      });
+    }
+
     return (
-      <StyledComponent aria-label={a11yTitle} {...rest} />
+      <StyledComponent
+        aria-label={a11yTitle}
+        direction={direction}
+        theme={theme}
+        {...rest}
+      >
+        {contents}
+      </StyledComponent>
     );
   }
 }

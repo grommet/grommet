@@ -228,6 +228,18 @@ false
 grow
 ```
 
+**gap**
+
+The amount of spacing between child elements.
+
+```
+xsmall
+small
+medium
+large
+xlarge
+```
+
 **gridArea**
 
 The name of the area to place this Box in inside a parent Grid.

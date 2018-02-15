@@ -389,3 +389,14 @@ const StyledBox = styled.div`
 export default StyledBox.extend`
   ${props => props.theme.box && props.theme.box.extend}
 `;
+
+const gapStyle = (gap, direction, theme) => {
+  if (direction === 'column') {
+    return `height: ${theme.global.edgeSize[gap]};`;
+  }
+  return `width: ${theme.global.edgeSize[gap]};`;
+};
+
+export const StyledBoxGap = styled.div`
+  ${props => props.gap && gapStyle(props.gap, props.direction, props.theme)};
+`;
