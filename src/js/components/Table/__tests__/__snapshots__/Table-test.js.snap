@@ -115,6 +115,7 @@ exports[`TableCell plain renders 1`] = `
   margin: 0;
   padding: 0;
   font-weight: inherit;
+  -webkit-text-align: inherit;
   text-align: inherit;
   vertical-align: bottom;
 }
@@ -187,6 +188,7 @@ exports[`TableCell renders 1`] = `
   margin: 0;
   padding: 0;
   font-weight: inherit;
+  -webkit-text-align: inherit;
   text-align: inherit;
   vertical-align: bottom;
 }
@@ -195,6 +197,7 @@ exports[`TableCell renders 1`] = `
   margin: 0;
   padding: 0;
   font-weight: inherit;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -202,6 +205,7 @@ exports[`TableCell renders 1`] = `
   margin: 0;
   padding: 0;
   font-weight: inherit;
+  -webkit-text-align: inherit;
   text-align: inherit;
   vertical-align: top;
 }
@@ -318,6 +322,7 @@ exports[`TableCell scope renders 1`] = `
   margin: 0;
   padding: 0;
   font-weight: inherit;
+  -webkit-text-align: inherit;
   text-align: inherit;
   vertical-align: bottom;
 }
@@ -326,6 +331,7 @@ exports[`TableCell scope renders 1`] = `
   margin: 0;
   padding: 0;
   font-weight: inherit;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -422,6 +428,7 @@ exports[`TableCell size renders 1`] = `
   margin: 0;
   padding: 0;
   font-weight: inherit;
+  -webkit-text-align: inherit;
   text-align: inherit;
   width: 96px;
   max-width: 96px;
@@ -432,6 +439,7 @@ exports[`TableCell size renders 1`] = `
   margin: 0;
   padding: 0;
   font-weight: inherit;
+  -webkit-text-align: inherit;
   text-align: inherit;
   width: 192px;
   max-width: 192px;
@@ -442,6 +450,7 @@ exports[`TableCell size renders 1`] = `
   margin: 0;
   padding: 0;
   font-weight: inherit;
+  -webkit-text-align: inherit;
   text-align: inherit;
   width: 384px;
   max-width: 384px;
@@ -452,6 +461,7 @@ exports[`TableCell size renders 1`] = `
   margin: 0;
   padding: 0;
   font-weight: inherit;
+  -webkit-text-align: inherit;
   text-align: inherit;
   width: 768px;
   max-width: 768px;
@@ -462,6 +472,7 @@ exports[`TableCell size renders 1`] = `
   margin: 0;
   padding: 0;
   font-weight: inherit;
+  -webkit-text-align: inherit;
   text-align: inherit;
   width: 50%;
   max-width: 50%;
@@ -472,6 +483,7 @@ exports[`TableCell size renders 1`] = `
   margin: 0;
   padding: 0;
   font-weight: inherit;
+  -webkit-text-align: inherit;
   text-align: inherit;
   width: 25%;
   max-width: 25%;
@@ -482,6 +494,7 @@ exports[`TableCell size renders 1`] = `
   margin: 0;
   padding: 0;
   font-weight: inherit;
+  -webkit-text-align: inherit;
   text-align: inherit;
   width: 33.33%;
   max-width: 33.33%;
@@ -492,6 +505,7 @@ exports[`TableCell size renders 1`] = `
   margin: 0;
   padding: 0;
   font-weight: inherit;
+  -webkit-text-align: inherit;
   text-align: inherit;
   width: 66.66%;
   max-width: 66.66%;

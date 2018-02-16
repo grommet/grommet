@@ -152,15 +152,18 @@ exports[`Video autoPlay renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
   padding: 12px;
 }
@@ -175,15 +178,18 @@ exports[`Video autoPlay renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -691,15 +697,18 @@ exports[`Video controls renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
   padding: 12px;
 }
@@ -714,15 +723,18 @@ exports[`Video controls renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -1385,15 +1397,18 @@ exports[`Video fit renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
   padding: 12px;
 }
@@ -1408,15 +1423,18 @@ exports[`Video fit renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -2089,15 +2107,18 @@ exports[`Video loop renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
   padding: 12px;
 }
@@ -2112,15 +2133,18 @@ exports[`Video loop renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -2573,15 +2597,18 @@ exports[`Video mute renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
   padding: 12px;
 }
@@ -2596,15 +2623,18 @@ exports[`Video mute renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -3057,15 +3087,18 @@ exports[`Video renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
   padding: 12px;
 }
@@ -3080,15 +3113,18 @@ exports[`Video renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
