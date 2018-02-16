@@ -85,8 +85,8 @@ the column axis when contained in a Grid.`
     flex: PropTypes.oneOf(['grow', 'shrink', true, false]).description(
       'Whether flex-grow and/or flex-shrink is true.'
     ),
-    full: PropTypes.oneOf(['horizontal', 'vertical', true, false, 'grow']).description(
-      'Whether the width and/or height should take the full viewport size.'
+    fill: PropTypes.oneOf(['horizontal', 'vertical', true, false]).description(
+      'Whether the width and/or height should fill the container.'
     ),
     gap: PropTypes.oneOf(
       ['xsmall', 'small', 'medium', 'large', 'xlarge']

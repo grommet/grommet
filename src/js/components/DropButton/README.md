@@ -17,16 +17,40 @@ import { DropButton } from 'grommet';
 **a11yTitle**
 
 Custom title to be used by
-screen readers.
+      screen readers.
 
 ```
 string
 ```
 
+**align**
+
+How to align the drop with respect to the control. Defaults to `{
+  "top": "top",
+  "left": "left"
+}`.
+
+```
+{
+  top: 
+    top
+    bottom,
+  bottom: 
+    top
+    bottom,
+  right: 
+    left
+    right,
+  left: 
+    left
+    right
+}
+```
+
 **control**
 
 Required. React node to open/close the
-drop content.
+      drop content.
 
 ```
 element

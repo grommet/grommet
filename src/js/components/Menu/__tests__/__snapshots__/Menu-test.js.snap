@@ -12,7 +12,7 @@ exports[`Menu opens and closes on click 1`] = `
     direction="column"
   >
     <button
-      class="StyledButton-gXzblK itbUBs"
+      class="StyledButton-gXzblK ioFkN"
       tabindex="0"
       aria-label="Close Menu"
       type="button"
@@ -100,7 +100,7 @@ exports[`Menu opens and closes on click 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .itbUBs {
+  .ioFkN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -276,7 +276,7 @@ exports[`Menu with dropAlign renders 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .itbUBs {
+  .ioFkN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

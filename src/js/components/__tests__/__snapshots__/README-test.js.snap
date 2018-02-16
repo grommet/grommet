@@ -292,16 +292,15 @@ true
 false
 \`\`\`
 
-**full**
+**fill**
 
-Whether the width and/or height should take the full viewport size.
+Whether the width and/or height should fill the container.
 
 \`\`\`
 horizontal
 vertical
 true
 false
-grow
 \`\`\`
 
 **gap**
@@ -1192,16 +1191,40 @@ import { DropButton } from 'grommet';
 **a11yTitle**
 
 Custom title to be used by
-screen readers.
+      screen readers.
 
 \`\`\`
 string
 \`\`\`
 
+**align**
+
+How to align the drop with respect to the control. Defaults to \`{
+  \\"top\\": \\"top\\",
+  \\"left\\": \\"left\\"
+}\`.
+
+\`\`\`
+{
+  top: 
+    top
+    bottom,
+  bottom: 
+    top
+    bottom,
+  right: 
+    left
+    right,
+  left: 
+    left
+    right
+}
+\`\`\`
+
 **control**
 
 Required. React node to open/close the
-drop content.
+      drop content.
 
 \`\`\`
 element
@@ -1391,6 +1414,14 @@ Whether text should be rendered right to left or not. Defaults to
 \`\`\`
 rtl
 ltr
+\`\`\`
+
+**full**
+
+Whether to take the whole viewport.
+
+\`\`\`
+boolean
 \`\`\`
 
 **theme**

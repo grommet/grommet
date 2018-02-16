@@ -1661,6 +1661,119 @@ exports[`Box direction renders 1`] = `
 </div>
 `;
 
+exports[`Box fill renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      fill={true}
+    />
+    <div
+      aria-label={undefined}
+      className="c1"
+      direction="column"
+      fill={false}
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      fill="horizontal"
+    />
+    <div
+      aria-label={undefined}
+      className="c4"
+      direction="column"
+      fill="vertical"
+    />
+  </div>
+</div>
+`;
+
 exports[`Box flex renders 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
@@ -1772,144 +1885,6 @@ exports[`Box flex renders 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
-    />
-    <div
-      aria-label={undefined}
-      className="c3"
-      direction="column"
-    />
-    <div
-      aria-label={undefined}
-      className="c4"
-      direction="column"
-    />
-    <div
-      aria-label={undefined}
-      className="c5"
-      direction="column"
-    />
-  </div>
-</div>
-`;
-
-exports[`Box full renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-width: 100%;
-  width: 100vw;
-  height: 100vh;
-  max-height: 100%;
-  overflow: auto;
-  margin: 0;
-  padding: 0;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-width: 100%;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: 100vh;
-  max-height: 100%;
-  overflow: auto;
-  margin: 0;
-  padding: 0;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  max-width: 100%;
-  width: 100vw;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-<div
-  className="c0"
->
-  <div
-    aria-label={undefined}
-    className="c1"
-    direction="column"
-  >
-    <div
-      aria-label={undefined}
-      className="c2"
-      direction="column"
-    />
-    <div
-      aria-label={undefined}
-      className="c1"
       direction="column"
     />
     <div
