@@ -207,7 +207,7 @@ column
 
 **elevation**
 
-Elevated height above the underlying context, indicated via a drop shadow. Defaults to `column`.
+Elevated height above the underlying context, indicated via a drop shadow. Defaults to `none`.
 
 ```
 none

@@ -85,7 +85,7 @@ the column axis when contained in a Grid.`
     elevation: PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge'])
     .description(
       'Elevated height above the underlying context, indicated via a drop shadow.'
-    ).defaultValue('column'),
+    ).defaultValue('none'),
     flex: PropTypes.oneOf(['grow', 'shrink', true, false]).description(
       'Whether flex-grow and/or flex-shrink is true.'
     ),
