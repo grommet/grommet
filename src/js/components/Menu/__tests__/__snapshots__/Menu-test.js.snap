@@ -256,15 +256,18 @@ exports[`Menu with dropAlign renders 2`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 

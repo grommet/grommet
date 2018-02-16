@@ -2897,6 +2897,7 @@ exports[`Box textAlign renders 1`] = `
   flex-direction: column;
   margin: 0;
   padding: 0;
+  -webkit-text-align: left;
   text-align: left;
 }
 
@@ -2913,6 +2914,7 @@ exports[`Box textAlign renders 1`] = `
   flex-direction: column;
   margin: 0;
   padding: 0;
+  -webkit-text-align: center;
   text-align: center;
 }
 
@@ -2929,6 +2931,7 @@ exports[`Box textAlign renders 1`] = `
   flex-direction: column;
   margin: 0;
   padding: 0;
+  -webkit-text-align: right;
   text-align: right;
 }
 
