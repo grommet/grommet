@@ -17,9 +17,20 @@ are not focusable.
 
   DocumentedDropButton.propTypes = {
     a11yTitle: PropTypes.string.description(`Custom title to be used by
-screen readers.`),
+      screen readers.`),
+    align: PropTypes.shape({
+      top: PropTypes.oneOf(['top', 'bottom']),
+      bottom: PropTypes.oneOf(['top', 'bottom']),
+      right: PropTypes.oneOf(['left', 'right']),
+      left: PropTypes.oneOf(['left', 'right']),
+    }).description(
+      'How to align the drop with respect to the control.'
+    ).defaultValue({
+      top: 'top',
+      left: 'left',
+    }),
     control: PropTypes.element.description(`React node to open/close the
-drop content.`).isRequired,
+      drop content.`).isRequired,
     onClose: PropTypes.func.description('Callback for when the drop is closed'),
     open: PropTypes.bool.description('Whether the drop should be open or not.'),
   };

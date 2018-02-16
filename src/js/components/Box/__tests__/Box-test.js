@@ -219,15 +219,14 @@ test('Box flex renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Box full renders', () => {
+test('Box fill renders', () => {
   const component = renderer.create(
     <Grommet>
       <Box>
-        <Box full={true} />
-        <Box full={false} />
-        <Box full='horizontal' />
-        <Box full='vertical' />
-        <Box full='grow' />
+        <Box fill={true} />
+        <Box fill={false} />
+        <Box fill='horizontal' />
+        <Box fill='vertical' />
       </Box>
     </Grommet>
   );

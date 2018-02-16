@@ -36,6 +36,7 @@ class DropButton extends Component {
   render() {
     const {
       a11yTitle,
+      align,
       children,
       control,
       id,
@@ -48,13 +49,13 @@ class DropButton extends Component {
     if (showDrop) {
       drop = (
         <Drop
-          key='drop-button__drop'
-          restrictFocus={true}
-          id={id ? `drop-button__${id}` : undefined}
-          align={{ top: 'bottom', left: 'left' }}
+          key='drop'
           ref={(ref) => {
             this.dropRef = ref;
           }}
+          id={id ? `drop-button__${id}` : undefined}
+          restrictFocus={true}
+          align={align}
           control={this.componentRef}
           onClose={this.onDropClose}
         >
@@ -65,8 +66,7 @@ class DropButton extends Component {
 
     return [
       <Button
-        fill={true}
-        key='drop-button__button'
+        key='button'
         id={id}
         ref={(ref) => {
           this.componentRef = ref;

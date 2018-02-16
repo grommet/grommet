@@ -97,6 +97,7 @@ const hoverStyle = css`
 
 const fillStyle = `
   width: 100%;
+  height: 100%;
   max-width: none;
   flex-grow: 1;
 `;
