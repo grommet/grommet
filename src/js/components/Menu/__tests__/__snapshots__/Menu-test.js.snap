@@ -8,7 +8,7 @@ exports[`Menu opens and closes on click 1`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
-    class="StyledBox-bStriS iQipYn"
+    class="StyledBox-bStriS czzEAe"
     direction="column"
   >
     <button
@@ -18,11 +18,11 @@ exports[`Menu opens and closes on click 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS iYfqNg"
+        class="StyledBox-bStriS eqtWXk"
         direction="row"
       >
         <div
-          class="StyledBox-bStriS uHalm"
+          class="StyledBox-bStriS hoLpJu"
           direction="column"
         >
           Test
@@ -46,7 +46,7 @@ exports[`Menu opens and closes on click 1`] = `
       </div>
     </button>
     <div
-      class="StyledBox-bStriS iQipYn"
+      class="StyledBox-bStriS czzEAe"
       direction="column"
     >
       <button
@@ -56,7 +56,7 @@ exports[`Menu opens and closes on click 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS djNGoG"
+          class="StyledBox-bStriS ZQbVs"
           direction="row"
         >
           Item 1
@@ -68,7 +68,7 @@ exports[`Menu opens and closes on click 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS djNGoG"
+          class="StyledBox-bStriS ZQbVs"
           direction="row"
         >
           Item 2
@@ -80,7 +80,7 @@ exports[`Menu opens and closes on click 1`] = `
         href="/test"
       >
         <div
-          class="StyledBox-bStriS djNGoG"
+          class="StyledBox-bStriS ZQbVs"
           direction="row"
         >
           Item 3
@@ -161,7 +161,7 @@ exports[`Menu renders 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-bStriS djNGoG"
+      class="StyledBox-bStriS ZQbVs"
       direction="row"
     >
       <svg />
@@ -179,11 +179,11 @@ exports[`Menu with custom message renders 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-bStriS djNGoG"
+      class="StyledBox-bStriS ZQbVs"
       direction="row"
     >
       <div
-        class="StyledBox-bStriS uHalm"
+        class="StyledBox-bStriS hoLpJu"
         direction="column"
       >
         Test Icon
@@ -219,11 +219,11 @@ exports[`Menu with dropAlign renders 1`] = `
   data-g-tabindex="0"
 >
   <div
-    class="StyledBox-bStriS djNGoG"
+    class="StyledBox-bStriS ZQbVs"
     direction="row"
   >
     <div
-      class="StyledBox-bStriS uHalm"
+      class="StyledBox-bStriS hoLpJu"
       direction="column"
     >
       Test
