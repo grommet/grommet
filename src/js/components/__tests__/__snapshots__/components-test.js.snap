@@ -10,6 +10,7 @@ Object {
   "CheckBox": [Function],
   "Clock": [Function],
   "Diagram": [Function],
+  "Distribution": [Function],
   "Drop": [Function],
   "DropButton": [Function],
   "DropContainer": [Function],

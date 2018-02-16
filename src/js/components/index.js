@@ -6,6 +6,7 @@ export * from './Chart';
 export * from './CheckBox';
 export * from './Clock';
 export * from './Diagram';
+export * from './Distribution';
 export * from './Drop';
 export * from './DropButton';
 export * from './Grid';
