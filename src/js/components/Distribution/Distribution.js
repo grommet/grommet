@@ -20,7 +20,7 @@ class Distribution extends Component {
   }
 
   render() {
-    const { basis, children, direction, values, ...rest } = this.props;
+    const { basis, children, direction, gap, values, ...rest } = this.props;
     if (values.length === 1) {
       const value = values[0];
       return <Value value={value} basis={basis}>{children(value)}</Value>;
@@ -61,12 +61,14 @@ class Distribution extends Component {
           basis={basis}
           flex={basis ? 'shrink' : true}
           overflow='hidden'
+          gap={gap}
           {...rest}
         >
           <Distribution
             values={values.slice(0, subIndex)}
             basis={childBasis[0]}
             direction={direction === 'row' ? 'column' : 'row'}
+            gap={gap}
           >
             {children}
           </Distribution>
@@ -74,6 +76,7 @@ class Distribution extends Component {
             values={values.slice(subIndex)}
             basis={childBasis[1]}
             direction={direction === 'row' ? 'column' : 'row'}
+            gap={gap}
           >
             {children}
           </Distribution>
