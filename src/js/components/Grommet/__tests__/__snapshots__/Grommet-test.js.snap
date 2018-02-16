@@ -2,7 +2,7 @@
 
 exports[`Grommet announces 1`] = `
 <div
-  class="StyledGrommet-gGRXwz DZGmZ"
+  class="StyledGrommet-gGRXwz deqpVW"
 >
   <div>
     hi
@@ -24,6 +24,28 @@ exports[`Grommet announces 3`] = `
   style="left: -100%; right: 100%; position: fixed; z-index: -1;"
   aria-live="assertive"
 />
+`;
+
+exports[`Grommet full renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100vw;
+  height: 100vh;
+}
+
+<div
+  className="c0"
+>
+  Grommet App
+</div>
 `;
 
 exports[`Grommet hpe theme renders 1`] = `

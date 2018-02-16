@@ -21,6 +21,14 @@ rtl
 ltr
 ```
 
+**full**
+
+Whether to take the whole viewport.
+
+```
+boolean
+```
+
 **theme**
 
 Custom styles for Grommet app component.

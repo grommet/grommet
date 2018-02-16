@@ -1,9 +1,15 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { baseStyle } from '../../utils';
 
+const fullStyle = css`
+  width: 100vw;
+  height: 100vh;
+`;
+
 const StyledGrommet = styled.div`
   ${baseStyle}
+  ${props => props.full && fullStyle}
   ${props => props.theme.global.font.face}
 `;
 

@@ -75,7 +75,7 @@ exports[`Select closes drop on esc 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .itbUBs {
+  .cfJbKA {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -91,7 +91,7 @@ exports[`Select closes drop on esc 2`] = `
 
 exports[`Select closes drop on esc 3`] = `
 <button
-  class="StyledButton-gXzblK itbUBs"
+  class="StyledButton-gXzblK cfJbKA"
   aria-label="undefined"
   type="button"
 >
@@ -141,7 +141,7 @@ exports[`Select closes drop on esc 3`] = `
 
 exports[`Select closes drop on esc 4`] = `
 <button
-  class="StyledButton-gXzblK itbUBs"
+  class="StyledButton-gXzblK cfJbKA"
   aria-label="undefined"
   type="button"
 >
@@ -191,7 +191,7 @@ exports[`Select closes drop on esc 4`] = `
 
 exports[`Select mounts 1`] = `
 <button
-  class="StyledButton-gXzblK itbUBs"
+  class="StyledButton-gXzblK cfJbKA"
   aria-label="undefined"
   type="button"
 >
@@ -241,7 +241,7 @@ exports[`Select mounts 1`] = `
 
 exports[`Select mounts 2`] = `
 <button
-  class="StyledButton-gXzblK itbUBs"
+  class="StyledButton-gXzblK cfJbKA"
   aria-label="undefined"
   type="button"
 >
@@ -364,7 +364,7 @@ exports[`Select mounts 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .itbUBs {
+  .cfJbKA {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -424,7 +424,7 @@ exports[`Select mounts 5`] = `
 
 exports[`Select mounts with complex options and children 1`] = `
 <button
-  class="StyledButton-gXzblK itbUBs"
+  class="StyledButton-gXzblK cfJbKA"
   aria-label="undefined"
   type="button"
 >
@@ -474,7 +474,7 @@ exports[`Select mounts with complex options and children 1`] = `
 
 exports[`Select mounts with complex options and children 2`] = `
 <button
-  class="StyledButton-gXzblK itbUBs"
+  class="StyledButton-gXzblK cfJbKA"
   aria-label="undefined"
   type="button"
 >
@@ -583,7 +583,7 @@ exports[`Select mounts with complex options and children 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .itbUBs {
+  .cfJbKA {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -687,7 +687,7 @@ exports[`Select mounts with search 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .itbUBs {
+  .cfJbKA {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -800,7 +800,7 @@ exports[`Select mounts with search 5`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .itbUBs {
+  .cfJbKA {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

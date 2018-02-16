@@ -39,6 +39,14 @@ test('Grommet hpe theme renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Grommet full renders', () => {
+  const component = renderer.create(
+    <Grommet full={true}>Grommet App</Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Grommet announces', (done) => {
   const component = mount(
     <Grommet><TestAnnouncer /></Grommet>

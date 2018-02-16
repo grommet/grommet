@@ -216,16 +216,15 @@ true
 false
 ```
 
-**full**
+**fill**
 
-Whether the width and/or height should take the full viewport size.
+Whether the width and/or height should fill the container.
 
 ```
 horizontal
 vertical
 true
 false
-grow
 ```
 
 **gap**
