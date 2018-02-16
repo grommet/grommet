@@ -82,6 +82,10 @@ the column axis when contained in a Grid.`
     direction: PropTypes.oneOf(['row', 'column']).description(
       'The orientation to layout the child components in.'
     ).defaultValue('column'),
+    elevation: PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge'])
+    .description(
+      'Elevated height above the underlying context, indicated via a drop shadow.'
+    ).defaultValue('column'),
     flex: PropTypes.oneOf(['grow', 'shrink', true, false]).description(
       'Whether flex-grow and/or flex-shrink is true.'
     ),

@@ -1661,6 +1661,157 @@ exports[`Box direction renders 1`] = `
 </div>
 `;
 
+exports[`Box elevation renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 1px 2px rgba(100,100,100,0.50);
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 2px 4px rgba(100,100,100,0.50);
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 6px 12px rgba(100,100,100,0.50);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 8px 16px rgba(100,100,100,0.50);
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    elevation="none"
+  />
+  <div
+    aria-label={undefined}
+    className="c2"
+    direction="column"
+    elevation="xsmall"
+  />
+  <div
+    aria-label={undefined}
+    className="c3"
+    direction="column"
+    elevation="small"
+  />
+  <div
+    aria-label={undefined}
+    className="c4"
+    direction="column"
+    elevation="medium"
+  />
+  <div
+    aria-label={undefined}
+    className="c5"
+    direction="column"
+    elevation="large"
+  />
+  <div
+    aria-label={undefined}
+    className="c6"
+    direction="column"
+    elevation="xlarge"
+  />
+</div>
+`;
+
 exports[`Box fill renders 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
@@ -2897,6 +3048,7 @@ exports[`Box textAlign renders 1`] = `
   flex-direction: column;
   margin: 0;
   padding: 0;
+  -webkit-text-align: left;
   text-align: left;
 }
 
@@ -2913,6 +3065,7 @@ exports[`Box textAlign renders 1`] = `
   flex-direction: column;
   margin: 0;
   padding: 0;
+  -webkit-text-align: center;
   text-align: center;
 }
 
@@ -2929,6 +3082,7 @@ exports[`Box textAlign renders 1`] = `
   flex-direction: column;
   margin: 0;
   padding: 0;
+  -webkit-text-align: right;
   text-align: right;
 }
 

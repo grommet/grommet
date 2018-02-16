@@ -187,6 +187,7 @@ exports[`Paragraph textAlign renders 1`] = `
   font-size: 16px;
   line-height: 1.375;
   max-width: 384px;
+  -webkit-text-align: left;
   text-align: left;
 }
 
@@ -194,6 +195,7 @@ exports[`Paragraph textAlign renders 1`] = `
   font-size: 16px;
   line-height: 1.375;
   max-width: 384px;
+  -webkit-text-align: center;
   text-align: center;
 }
 
@@ -201,6 +203,7 @@ exports[`Paragraph textAlign renders 1`] = `
   font-size: 16px;
   line-height: 1.375;
   max-width: 384px;
+  -webkit-text-align: right;
   text-align: right;
 }
 

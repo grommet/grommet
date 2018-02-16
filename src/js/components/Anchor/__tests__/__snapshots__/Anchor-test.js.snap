@@ -16,11 +16,13 @@ exports[`Anchor disabled renders 1`] = `
 .c1 {
   box-sizing: border-box;
   color: #865CD6;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   outline: none;
   opacity: 0.3;
   cursor: default;
+  -webkit-text-decoration: none;
   text-decoration: none;
 }
 
@@ -59,6 +61,7 @@ exports[`Anchor focus renders 1`] = `
 .c1 {
   box-sizing: border-box;
   color: #865CD6;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -67,6 +70,7 @@ exports[`Anchor focus renders 1`] = `
 }
 
 .c1:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -117,6 +121,7 @@ exports[`Anchor icon label renders 1`] = `
 .c1 {
   box-sizing: border-box;
   color: #865CD6;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -127,6 +132,7 @@ exports[`Anchor icon label renders 1`] = `
 }
 
 .c1:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -379,6 +385,14 @@ exports[`Anchor icon label renders 1`] = `
                 "small": "12px",
                 "xlarge": "96px",
                 "xsmall": "6px",
+              },
+              "elevation": Object {
+                "large": "0px 6px 12px rgba(100, 100, 100, 0.50)",
+                "medium": "0px 3px 8px rgba(100, 100, 100, 0.50)",
+                "none": "none",
+                "small": "0px 2px 4px rgba(100, 100, 100, 0.50)",
+                "xlarge": "0px 8px 16px rgba(100, 100, 100, 0.50)",
+                "xsmall": "0px 1px 2px rgba(100, 100, 100, 0.50)",
               },
               "focus": Object {
                 "border": Object {
@@ -723,6 +737,7 @@ exports[`Anchor primary renders 1`] = `
 .c1 {
   box-sizing: border-box;
   color: #865CD6;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -732,6 +747,7 @@ exports[`Anchor primary renders 1`] = `
 }
 
 .c1:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -984,6 +1000,14 @@ exports[`Anchor primary renders 1`] = `
                 "small": "12px",
                 "xlarge": "96px",
                 "xsmall": "6px",
+              },
+              "elevation": Object {
+                "large": "0px 6px 12px rgba(100, 100, 100, 0.50)",
+                "medium": "0px 3px 8px rgba(100, 100, 100, 0.50)",
+                "none": "none",
+                "small": "0px 2px 4px rgba(100, 100, 100, 0.50)",
+                "xlarge": "0px 8px 16px rgba(100, 100, 100, 0.50)",
+                "xsmall": "0px 1px 2px rgba(100, 100, 100, 0.50)",
               },
               "focus": Object {
                 "border": Object {
@@ -1312,12 +1336,14 @@ exports[`Anchor renders 1`] = `
 .c1 {
   box-sizing: border-box;
   color: #865CD6;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   outline: none;
 }
 
 .c1:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1356,12 +1382,14 @@ exports[`Anchor renders with children 1`] = `
 .c1 {
   box-sizing: border-box;
   color: #865CD6;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   outline: none;
 }
 
 .c1:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1402,6 +1430,7 @@ exports[`Anchor reverse icon label renders 1`] = `
 .c1 {
   box-sizing: border-box;
   color: #865CD6;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -1412,6 +1441,7 @@ exports[`Anchor reverse icon label renders 1`] = `
 }
 
 .c1:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -1664,6 +1694,14 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "small": "12px",
                 "xlarge": "96px",
                 "xsmall": "6px",
+              },
+              "elevation": Object {
+                "large": "0px 6px 12px rgba(100, 100, 100, 0.50)",
+                "medium": "0px 3px 8px rgba(100, 100, 100, 0.50)",
+                "none": "none",
+                "small": "0px 2px 4px rgba(100, 100, 100, 0.50)",
+                "xlarge": "0px 8px 16px rgba(100, 100, 100, 0.50)",
+                "xsmall": "0px 1px 2px rgba(100, 100, 100, 0.50)",
               },
               "focus": Object {
                 "border": Object {
@@ -1974,6 +2012,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
 .c1 {
   box-sizing: border-box;
   color: #865CD6;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   outline: none;
@@ -1981,6 +2020,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
 }
 
 .c1:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
@@ -2224,6 +2264,14 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "small": "12px",
                 "xlarge": "96px",
                 "xsmall": "6px",
+              },
+              "elevation": Object {
+                "large": "0px 6px 12px rgba(100, 100, 100, 0.50)",
+                "medium": "0px 3px 8px rgba(100, 100, 100, 0.50)",
+                "none": "none",
+                "small": "0px 2px 4px rgba(100, 100, 100, 0.50)",
+                "xlarge": "0px 8px 16px rgba(100, 100, 100, 0.50)",
+                "xsmall": "0px 1px 2px rgba(100, 100, 100, 0.50)",
               },
               "focus": Object {
                 "border": Object {
@@ -2528,12 +2576,14 @@ exports[`Anchor warns about invalid label render 1`] = `
 .c1 {
   box-sizing: border-box;
   color: #865CD6;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   outline: none;
 }
 
 .c1:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 

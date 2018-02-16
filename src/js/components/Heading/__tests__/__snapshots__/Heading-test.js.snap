@@ -326,6 +326,7 @@ exports[`Heading textAlign renders 1`] = `
   line-height: 1.125;
   max-width: 1152px;
   font-weight: 300;
+  -webkit-text-align: left;
   text-align: left;
 }
 
@@ -334,6 +335,7 @@ exports[`Heading textAlign renders 1`] = `
   line-height: 1.125;
   max-width: 1152px;
   font-weight: 300;
+  -webkit-text-align: center;
   text-align: center;
 }
 
@@ -342,6 +344,7 @@ exports[`Heading textAlign renders 1`] = `
   line-height: 1.125;
   max-width: 1152px;
   font-weight: 300;
+  -webkit-text-align: right;
   text-align: right;
 }
 
@@ -387,6 +390,7 @@ exports[`Heading truncate renders 1`] = `
   font-weight: 300;
   white-space: nowrap;
   overflow: hidden;
+  -webkit-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
 

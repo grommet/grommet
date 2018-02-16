@@ -16,12 +16,14 @@ exports[`RoutedAnchor renders 1`] = `
 .c1 {
   box-sizing: border-box;
   color: #865CD6;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   outline: none;
 }
 
 .c1:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 

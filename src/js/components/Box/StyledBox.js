@@ -67,6 +67,10 @@ const directionStyle = css`
   }};
 `;
 
+const elevationStyle = css`
+  box-shadow: ${props => props.theme.global.elevation[props.elevation]};
+`;
+
 const FLEX_MAP = {
   [true]: '1 1',
   [false]: '0 0',
@@ -366,6 +370,7 @@ const StyledBox = styled.div`
   ${props => props.wrap && wrapStyle}
   ${props => props.responsive && responsiveStyle}
   ${props => props.overflow && `overflow: ${props.overflow};`}
+  ${props => props.elevation && elevationStyle}
   ${props => props.animation && animationStyle}
 `;
 

@@ -281,6 +281,19 @@ row
 column
 \`\`\`
 
+**elevation**
+
+Elevated height above the underlying context, indicated via a drop shadow. Defaults to \`column\`.
+
+\`\`\`
+none
+xsmall
+small
+medium
+large
+xlarge
+\`\`\`
+
 **flex**
 
 Whether flex-grow and/or flex-shrink is true.

@@ -331,6 +331,21 @@ test('Box border renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Box elevation renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Box elevation='none' />
+      <Box elevation='xsmall' />
+      <Box elevation='small' />
+      <Box elevation='medium' />
+      <Box elevation='large' />
+      <Box elevation='xlarge' />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('Box tag renders', () => {
   const component = renderer.create(
     <Grommet>

@@ -18,12 +18,15 @@ exports[`Button color renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
+  -webkit-text-align: center;
   text-align: center;
   display: inline-block;
   min-width: 96px;
@@ -53,12 +56,15 @@ exports[`Button color renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
+  -webkit-text-align: center;
   text-align: center;
   display: inline-block;
   min-width: 96px;
@@ -170,12 +176,15 @@ exports[`Button disabled renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
+  -webkit-text-align: center;
   text-align: center;
   display: inline-block;
   min-width: 96px;
@@ -237,12 +246,15 @@ exports[`Button focus renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
+  -webkit-text-align: center;
   text-align: center;
   display: inline-block;
   min-width: 96px;
@@ -324,15 +336,18 @@ exports[`Button hoverIndicator as object renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -389,15 +404,18 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -454,15 +472,18 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -519,15 +540,18 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -584,15 +608,18 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -649,15 +676,18 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -714,15 +744,18 @@ exports[`Button hoverIndicator renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -779,12 +812,15 @@ exports[`Button href renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
+  -webkit-text-align: center;
   text-align: center;
   display: inline-block;
   min-width: 96px;
@@ -855,12 +891,15 @@ exports[`Button icon label renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
+  -webkit-text-align: center;
   text-align: center;
   display: inline-block;
   min-width: 96px;
@@ -959,12 +998,15 @@ exports[`Button primary renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
+  -webkit-text-align: center;
   text-align: center;
   display: inline-block;
   min-width: 96px;
@@ -1046,12 +1088,15 @@ exports[`Button renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
+  -webkit-text-align: center;
   text-align: center;
   display: inline-block;
   min-width: 96px;
@@ -1132,12 +1177,15 @@ exports[`Button reverse icon label renders 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
+  -webkit-text-align: center;
   text-align: center;
   display: inline-block;
   min-width: 96px;
@@ -1236,15 +1284,18 @@ exports[`Button warns about invalid icon render 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
   padding: 12px;
 }
@@ -1314,15 +1365,18 @@ exports[`Button warns about invalid label render 1`] = `
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
+  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
+  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
