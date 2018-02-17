@@ -10,7 +10,6 @@ exports[`Tabs changes active index 1`] = `
   >
     <button
       class="StyledButton-gXzblK cfJbKA"
-      tabindex="0"
       role="tab"
       aria-selected="true"
       aria-expanded="true"
@@ -31,7 +30,6 @@ exports[`Tabs changes active index 1`] = `
     </button>
     <button
       class="StyledButton-gXzblK cfJbKA"
-      tabindex="0"
       role="tab"
       aria-selected="false"
       aria-expanded="false"
@@ -88,7 +86,6 @@ exports[`Tabs changes to second tab 1`] = `
         onMouseOver={[Function]}
         onMouseUp={[Function]}
         role="tab"
-        tabIndex="0"
         type="button"
       >
         <div
@@ -121,7 +118,6 @@ exports[`Tabs changes to second tab 1`] = `
         onMouseOver={[Function]}
         onMouseUp={[Function]}
         role="tab"
-        tabIndex="0"
         type="button"
       >
         <div
@@ -178,7 +174,6 @@ exports[`Tabs renders complex Tab title 1`] = `
         onMouseOver={[Function]}
         onMouseUp={[Function]}
         role="tab"
-        tabIndex="0"
         type="button"
       >
         <div
@@ -208,7 +203,6 @@ exports[`Tabs renders complex Tab title 1`] = `
         onMouseOver={[Function]}
         onMouseUp={[Function]}
         role="tab"
-        tabIndex="0"
         type="button"
       >
         <div
@@ -261,7 +255,6 @@ exports[`Tabs renders with Tab 1`] = `
         onMouseOver={[Function]}
         onMouseUp={[Function]}
         role="tab"
-        tabIndex="0"
         type="button"
       >
         <div
@@ -295,7 +288,6 @@ exports[`Tabs renders with Tab 1`] = `
         onMouseOver={[Function]}
         onMouseUp={[Function]}
         role="tab"
-        tabIndex="0"
         type="button"
       >
         <div
@@ -352,7 +344,6 @@ exports[`Tabs sets on hover 1`] = `
   >
     <button
       class="StyledButton-gXzblK cfJbKA"
-      tabindex="0"
       role="tab"
       aria-selected="true"
       aria-expanded="true"
@@ -373,7 +364,6 @@ exports[`Tabs sets on hover 1`] = `
     </button>
     <button
       class="StyledButton-gXzblK cfJbKA"
-      tabindex="0"
       role="tab"
       aria-selected="false"
       aria-expanded="false"
@@ -411,7 +401,6 @@ exports[`Tabs sets on hover 2`] = `
   >
     <button
       class="StyledButton-gXzblK cfJbKA"
-      tabindex="0"
       role="tab"
       aria-selected="true"
       aria-expanded="true"
@@ -432,7 +421,6 @@ exports[`Tabs sets on hover 2`] = `
     </button>
     <button
       class="StyledButton-gXzblK cfJbKA"
-      tabindex="0"
       role="tab"
       aria-selected="false"
       aria-expanded="false"
@@ -470,7 +458,6 @@ exports[`Tabs sets on hover 3`] = `
   >
     <button
       class="StyledButton-gXzblK cfJbKA"
-      tabindex="0"
       role="tab"
       aria-selected="true"
       aria-expanded="true"
@@ -491,7 +478,6 @@ exports[`Tabs sets on hover 3`] = `
     </button>
     <button
       class="StyledButton-gXzblK cfJbKA"
-      tabindex="0"
       role="tab"
       aria-selected="false"
       aria-expanded="false"
@@ -529,7 +515,6 @@ exports[`Tabs sets on hover 4`] = `
   >
     <button
       class="StyledButton-gXzblK cfJbKA"
-      tabindex="0"
       role="tab"
       aria-selected="true"
       aria-expanded="true"
@@ -550,7 +535,6 @@ exports[`Tabs sets on hover 4`] = `
     </button>
     <button
       class="StyledButton-gXzblK cfJbKA"
-      tabindex="0"
       role="tab"
       aria-selected="false"
       aria-expanded="false"

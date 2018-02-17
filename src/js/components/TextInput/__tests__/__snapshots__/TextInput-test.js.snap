@@ -13,7 +13,6 @@ exports[`TextInput closes suggestion drop 1`] = `
     <li>
       <button
         class="StyledButton-gXzblK dYRvzO"
-        tabindex="0"
         type="button"
       >
         <div
@@ -27,7 +26,6 @@ exports[`TextInput closes suggestion drop 1`] = `
     <li>
       <button
         class="StyledButton-gXzblK dYRvzO"
-        tabindex="0"
         type="button"
       >
         <div
@@ -140,7 +138,6 @@ exports[`TextInput mounts with complex suggestions 1`] = `
     <li>
       <button
         class="StyledButton-gXzblK dYRvzO"
-        tabindex="0"
         type="button"
       >
         <div
@@ -154,7 +151,6 @@ exports[`TextInput mounts with complex suggestions 1`] = `
     <li>
       <button
         class="StyledButton-gXzblK dYRvzO"
-        tabindex="0"
         type="button"
       >
         <div
@@ -221,7 +217,6 @@ exports[`TextInput mounts with suggestions 1`] = `
     <li>
       <button
         class="StyledButton-gXzblK dYRvzO"
-        tabindex="0"
         type="button"
       >
         <div
@@ -235,7 +230,6 @@ exports[`TextInput mounts with suggestions 1`] = `
     <li>
       <button
         class="StyledButton-gXzblK dYRvzO"
-        tabindex="0"
         type="button"
       >
         <div
@@ -302,7 +296,6 @@ exports[`TextInput selects suggestion 1`] = `
     <li>
       <button
         class="StyledButton-gXzblK dYRvzO"
-        tabindex="0"
         type="button"
       >
         <div
@@ -316,7 +309,6 @@ exports[`TextInput selects suggestion 1`] = `
     <li>
       <button
         class="StyledButton-gXzblK dYRvzO"
-        tabindex="0"
         type="button"
       >
         <div

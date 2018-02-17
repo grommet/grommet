@@ -3,7 +3,6 @@
 exports[`DropButton closes 1`] = `
 <button
   class="StyledButton-gXzblK cfJbKA"
-  tabindex="0"
   aria-label="Open Drop"
   type="button"
 >
@@ -31,7 +30,6 @@ exports[`DropButton closes 3`] = `
 exports[`DropButton mounts 1`] = `
 <button
   class="StyledButton-gXzblK cfJbKA"
-  tabindex="0"
   aria-label="Open Drop"
   type="button"
 >
@@ -59,10 +57,9 @@ exports[`DropButton mounts 3`] = `
 exports[`DropButton mounts 4`] = `
 <button
   class="StyledButton-gXzblK cfJbKA"
-  tabindex="-1"
   aria-label="Open Drop"
   type="button"
-  data-g-tabindex="0"
+  tabindex="-1"
   id="test"
   open=""
 >

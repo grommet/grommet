@@ -354,7 +354,6 @@ exports[`Calendar date renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -397,7 +396,6 @@ exports[`Calendar date renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -452,7 +450,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -479,7 +476,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -506,7 +502,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -533,7 +528,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -560,7 +554,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -587,7 +580,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -614,7 +606,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -645,7 +636,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -672,7 +662,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -699,7 +688,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -726,7 +714,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -753,7 +740,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -780,7 +766,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -807,7 +792,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -838,7 +822,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -865,7 +848,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -894,7 +876,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -921,7 +902,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -948,7 +928,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -975,7 +954,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1002,7 +980,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1033,7 +1010,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1060,7 +1036,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1087,7 +1062,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1114,7 +1088,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1141,7 +1114,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1168,7 +1140,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1195,7 +1166,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1226,7 +1196,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1253,7 +1222,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1280,7 +1248,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1307,7 +1274,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1334,7 +1300,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1361,7 +1326,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1388,7 +1352,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1419,7 +1382,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1446,7 +1408,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1473,7 +1434,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1500,7 +1460,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1527,7 +1486,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1554,7 +1512,6 @@ exports[`Calendar date renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -1927,7 +1884,6 @@ exports[`Calendar dates renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -1970,7 +1926,6 @@ exports[`Calendar dates renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -2025,7 +1980,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2052,7 +2006,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2079,7 +2032,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2106,7 +2058,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2133,7 +2084,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2160,7 +2110,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2187,7 +2136,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2218,7 +2166,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2245,7 +2192,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2272,7 +2218,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2299,7 +2244,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2328,7 +2272,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2355,7 +2298,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2384,7 +2326,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2415,7 +2356,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2442,7 +2382,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2469,7 +2408,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2496,7 +2434,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2523,7 +2460,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2550,7 +2486,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2577,7 +2512,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2608,7 +2542,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2635,7 +2568,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2662,7 +2594,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2689,7 +2620,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2716,7 +2646,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2743,7 +2672,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2770,7 +2698,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2801,7 +2728,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2828,7 +2754,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2855,7 +2780,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2882,7 +2806,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2909,7 +2832,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2936,7 +2858,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2963,7 +2884,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -2994,7 +2914,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3021,7 +2940,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3048,7 +2966,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3075,7 +2992,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3102,7 +3018,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3129,7 +3044,6 @@ exports[`Calendar dates renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3502,7 +3416,6 @@ exports[`Calendar disabled renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -3545,7 +3458,6 @@ exports[`Calendar disabled renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -3600,7 +3512,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3627,7 +3538,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3654,7 +3564,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3681,7 +3590,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3708,7 +3616,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3735,7 +3642,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3762,7 +3668,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3793,7 +3698,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3820,7 +3724,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3847,7 +3750,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3874,7 +3776,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3903,7 +3804,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3930,7 +3830,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3959,7 +3858,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -3990,7 +3888,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4017,7 +3914,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4044,7 +3940,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4071,7 +3966,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4098,7 +3992,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4125,7 +4018,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4152,7 +4044,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4183,7 +4074,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4210,7 +4100,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4237,7 +4126,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4264,7 +4152,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4291,7 +4178,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4318,7 +4204,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4345,7 +4230,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4376,7 +4260,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4403,7 +4286,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4430,7 +4312,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4457,7 +4338,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4484,7 +4364,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4511,7 +4390,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4538,7 +4416,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4569,7 +4446,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4596,7 +4472,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4623,7 +4498,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4650,7 +4524,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4677,7 +4550,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -4704,7 +4576,6 @@ exports[`Calendar disabled renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5077,7 +4948,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -5120,7 +4990,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -5175,7 +5044,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5202,7 +5070,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5229,7 +5096,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5256,7 +5122,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5283,7 +5148,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5310,7 +5174,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5337,7 +5200,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5368,7 +5230,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5395,7 +5256,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5422,7 +5282,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5449,7 +5308,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5476,7 +5334,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5503,7 +5360,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5530,7 +5386,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5561,7 +5416,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5588,7 +5442,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5617,7 +5470,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5644,7 +5496,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5671,7 +5522,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5698,7 +5548,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5725,7 +5574,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5756,7 +5604,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5783,7 +5630,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5810,7 +5656,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5837,7 +5682,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5864,7 +5708,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5891,7 +5734,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5918,7 +5760,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5949,7 +5790,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -5976,7 +5816,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6003,7 +5842,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6030,7 +5868,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6057,7 +5894,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6084,7 +5920,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6111,7 +5946,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6142,7 +5976,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6169,7 +6002,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6196,7 +6028,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6223,7 +6054,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6250,7 +6080,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6277,7 +6106,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6337,7 +6165,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -6380,7 +6207,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -6435,7 +6261,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6462,7 +6287,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6489,7 +6313,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6516,7 +6339,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6543,7 +6365,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6570,7 +6391,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6597,7 +6417,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6628,7 +6447,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6655,7 +6473,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6682,7 +6499,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6709,7 +6525,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6736,7 +6551,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6763,7 +6577,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6790,7 +6603,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6821,7 +6633,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6850,7 +6661,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6877,7 +6687,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6904,7 +6713,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6931,7 +6739,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6958,7 +6765,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -6985,7 +6791,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7016,7 +6821,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7043,7 +6847,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7070,7 +6873,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7097,7 +6899,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7124,7 +6925,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7151,7 +6951,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7178,7 +6977,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7209,7 +7007,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7236,7 +7033,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7263,7 +7059,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7290,7 +7085,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7317,7 +7111,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7344,7 +7137,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7371,7 +7163,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7402,7 +7193,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7429,7 +7219,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7456,7 +7245,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7483,7 +7271,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7510,7 +7297,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7537,7 +7323,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -7910,7 +7695,6 @@ exports[`Calendar renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -7953,7 +7737,6 @@ exports[`Calendar renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -8008,7 +7791,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8035,7 +7817,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8062,7 +7843,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8089,7 +7869,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8116,7 +7895,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8143,7 +7921,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8170,7 +7947,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8201,7 +7977,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8228,7 +8003,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8255,7 +8029,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8282,7 +8055,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8309,7 +8081,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8336,7 +8107,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8363,7 +8133,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8394,7 +8163,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8421,7 +8189,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8450,7 +8217,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8477,7 +8243,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8504,7 +8269,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8531,7 +8295,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8558,7 +8321,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8589,7 +8351,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8616,7 +8377,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8643,7 +8403,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8670,7 +8429,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8697,7 +8455,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8724,7 +8481,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8751,7 +8507,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8782,7 +8537,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8809,7 +8563,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8836,7 +8589,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8863,7 +8615,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8890,7 +8641,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8917,7 +8667,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8944,7 +8693,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -8975,7 +8723,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -9002,7 +8749,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -9029,7 +8775,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -9056,7 +8801,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -9083,7 +8827,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -9110,7 +8853,6 @@ exports[`Calendar renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -9661,7 +9403,6 @@ exports[`Calendar size renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -9699,7 +9440,6 @@ exports[`Calendar size renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -9753,7 +9493,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -9780,7 +9519,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -9807,7 +9545,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -9834,7 +9571,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -9861,7 +9597,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -9888,7 +9623,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -9915,7 +9649,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -9946,7 +9679,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -9973,7 +9705,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10000,7 +9731,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10027,7 +9757,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10054,7 +9783,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10081,7 +9809,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10108,7 +9835,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10139,7 +9865,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10166,7 +9891,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10195,7 +9919,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10222,7 +9945,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10249,7 +9971,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10276,7 +9997,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10303,7 +10023,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10334,7 +10053,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10361,7 +10079,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10388,7 +10105,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10415,7 +10131,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10442,7 +10157,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10469,7 +10183,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10496,7 +10209,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10527,7 +10239,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10554,7 +10265,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10581,7 +10291,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10608,7 +10317,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10635,7 +10343,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10662,7 +10369,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10689,7 +10395,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10720,7 +10425,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10747,7 +10451,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10774,7 +10477,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10801,7 +10503,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10828,7 +10529,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10855,7 +10555,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -10915,7 +10614,6 @@ exports[`Calendar size renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -10958,7 +10656,6 @@ exports[`Calendar size renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -11013,7 +10710,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11040,7 +10736,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11067,7 +10762,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11094,7 +10788,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11121,7 +10814,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11148,7 +10840,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11175,7 +10866,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11206,7 +10896,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11233,7 +10922,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11260,7 +10948,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11287,7 +10974,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11314,7 +11000,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11341,7 +11026,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11368,7 +11052,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11399,7 +11082,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11426,7 +11108,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11455,7 +11136,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11482,7 +11162,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11509,7 +11188,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11536,7 +11214,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11563,7 +11240,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11594,7 +11270,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11621,7 +11296,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11648,7 +11322,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11675,7 +11348,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11702,7 +11374,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11729,7 +11400,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11756,7 +11426,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11787,7 +11456,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11814,7 +11482,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11841,7 +11508,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11868,7 +11534,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11895,7 +11560,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11922,7 +11586,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11949,7 +11612,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -11980,7 +11642,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12007,7 +11668,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12034,7 +11694,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12061,7 +11720,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12088,7 +11746,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12115,7 +11772,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12175,7 +11831,6 @@ exports[`Calendar size renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -12218,7 +11873,6 @@ exports[`Calendar size renders 1`] = `
             onFocus={[Function]}
             onMouseDown={[Function]}
             onMouseUp={[Function]}
-            tabIndex="0"
             type="button"
           >
             <span
@@ -12273,7 +11927,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12300,7 +11953,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12327,7 +11979,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12354,7 +12005,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12381,7 +12031,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12408,7 +12057,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12435,7 +12083,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12466,7 +12113,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12493,7 +12139,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12520,7 +12165,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12547,7 +12191,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12574,7 +12217,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12601,7 +12243,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12628,7 +12269,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12659,7 +12299,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12686,7 +12325,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12715,7 +12353,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12742,7 +12379,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12769,7 +12405,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12796,7 +12431,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12823,7 +12457,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12854,7 +12487,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12881,7 +12513,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12908,7 +12539,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12935,7 +12565,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12962,7 +12591,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -12989,7 +12617,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -13016,7 +12643,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -13047,7 +12673,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -13074,7 +12699,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -13101,7 +12725,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -13128,7 +12751,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -13155,7 +12777,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -13182,7 +12803,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -13209,7 +12829,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -13240,7 +12859,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -13267,7 +12885,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -13294,7 +12911,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -13321,7 +12937,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -13348,7 +12963,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div
@@ -13375,7 +12989,6 @@ exports[`Calendar size renders 1`] = `
                 onFocus={[Function]}
                 onMouseDown={[Function]}
                 onMouseUp={[Function]}
-                tabIndex="0"
                 type="button"
               >
                 <div

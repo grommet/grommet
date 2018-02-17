@@ -69,7 +69,6 @@ class Button extends Component {
 
     return (
       <Tag
-        tabIndex='0'
         {...rest}
         aria-label={a11yTitle}
         disabled={disabled}

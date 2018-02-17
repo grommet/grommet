@@ -13,7 +13,6 @@ exports[`Menu opens and closes on click 1`] = `
   >
     <button
       class="StyledButton-gXzblK ioFkN"
-      tabindex="0"
       aria-label="Close Menu"
       type="button"
     >
@@ -51,7 +50,6 @@ exports[`Menu opens and closes on click 1`] = `
     >
       <button
         class="StyledButton-gXzblK eQPBtm"
-        tabindex="0"
         disabled=""
         type="button"
       >
@@ -64,7 +62,6 @@ exports[`Menu opens and closes on click 1`] = `
       </button>
       <button
         class="StyledButton-gXzblK khQPBH"
-        tabindex="0"
         type="button"
       >
         <div
@@ -76,7 +73,6 @@ exports[`Menu opens and closes on click 1`] = `
       </button>
       <a
         class="StyledButton-gXzblK khQPBH"
-        tabindex="0"
         href="/test"
       >
         <div
@@ -155,7 +151,6 @@ exports[`Menu renders 1`] = `
 <div>
   <button
     class="StyledButton-gXzblK cfJbKA"
-    tabindex="0"
     id="item"
     aria-label="Open Menu"
     type="button"
@@ -174,7 +169,6 @@ exports[`Menu with custom message renders 1`] = `
 <div>
   <button
     class="StyledButton-gXzblK cfJbKA"
-    tabindex="0"
     aria-label="Abrir Menu"
     type="button"
   >
@@ -212,11 +206,10 @@ exports[`Menu with custom message renders 1`] = `
 exports[`Menu with dropAlign renders 1`] = `
 <button
   class="StyledButton-gXzblK cfJbKA"
-  tabindex="-1"
   id="menu"
   aria-label="Open Menu"
   type="button"
-  data-g-tabindex="0"
+  tabindex="-1"
 >
   <div
     class="StyledBox-bStriS ZQbVs"

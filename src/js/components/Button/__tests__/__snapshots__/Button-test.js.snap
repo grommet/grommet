@@ -124,7 +124,6 @@ exports[`Button color renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
@@ -146,7 +145,6 @@ exports[`Button color renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
@@ -222,7 +220,6 @@ exports[`Button disabled renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   />
 </div>
@@ -306,7 +303,6 @@ exports[`Button focus renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
@@ -378,7 +374,6 @@ exports[`Button hoverIndicator as object renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     hoverIndicator
@@ -446,7 +441,6 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     hoverIndicator
@@ -514,7 +508,6 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     hoverIndicator
@@ -582,7 +575,6 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     hoverIndicator
@@ -650,7 +642,6 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     hoverIndicator
@@ -718,7 +709,6 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     hoverIndicator
@@ -786,7 +776,6 @@ exports[`Button hoverIndicator renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     hoverIndicator
@@ -867,7 +856,6 @@ exports[`Button href renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type={undefined}
   />
 </div>
@@ -962,7 +950,6 @@ exports[`Button icon label renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
@@ -1058,7 +1045,6 @@ exports[`Button primary renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
@@ -1147,7 +1133,6 @@ exports[`Button renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
@@ -1248,7 +1233,6 @@ exports[`Button reverse icon label renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
@@ -1334,7 +1318,6 @@ exports[`Button warns about invalid icon render 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
@@ -1406,7 +1389,6 @@ exports[`Button warns about invalid label render 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
