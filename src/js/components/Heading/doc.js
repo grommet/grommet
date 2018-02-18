@@ -12,7 +12,7 @@ export default (Heading) => {
     );
 
   DocumentedHeading.propTypes = {
-    level: PropTypes.oneOf([1, 2, 3, 4]).description(
+    level: PropTypes.oneOf([1, 2, 3, 4, '1', '2', '3', '4']).description(
       `The heading level. It corresponds to the number after the 'H' for
 the DOM tag. Set the level for semantic accuracy and accessibility.
 The sizing can be further adjusted using the size property.`
