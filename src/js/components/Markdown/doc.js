@@ -1,4 +1,4 @@
-import { describe, PropTypes } from 'react-desc';
+import { describe } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
@@ -9,12 +9,12 @@ export default (Markdown) => {
       'Markdown formatting using Grommet components.'
     ).usage(
       `import { Markdown } from 'grommet';
-      <Markdown />`
+      <Markdown>{content}</Markdown>`
     );
 
-  DocumentedMarkdown.propTypes = {
-    content: PropTypes.string.description('The markdown text to render.'),
-  };
+  // DocumentedMarkdown.propTypes = {
+  //   content: PropTypes.string.description('The markdown text to render.'),
+  // };
 
   return DocumentedMarkdown;
 };

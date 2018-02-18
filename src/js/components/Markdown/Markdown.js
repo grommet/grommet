@@ -12,7 +12,7 @@ import doc from './doc';
 
 class GrommetMarkdown extends Component {
   render() {
-    const { content, components } = this.props;
+    const { components, ...rest } = this.props;
 
     const heading = [1, 2, 3, 4]
       .reduce((obj, level) => {
@@ -29,9 +29,7 @@ class GrommetMarkdown extends Component {
     }, heading, components);
 
     return (
-      <Markdown options={{ overrides }}>
-        {content}
-      </Markdown>
+      <Markdown options={{ overrides }} {...rest} />
     );
   }
 }
