@@ -21,18 +21,18 @@ string
 
 **min**
 
-The min attribute of the range input.
+The minimum value permitted.
 
 ```
-string
+number
 ```
 
 **max**
 
-The max attribute of the range input.
+The maximum value permitted.
 
 ```
-string
+number
 ```
 
 **name**
@@ -43,11 +43,29 @@ The name attribute of the range input.
 string
 ```
 
-**value**
+**onChange**
 
-The value attribute of the range input.
+Function that will be called when the user changes the value. It will
+      be passed an event object. The new input value will be available
+      via 'event.target.value'.
 
 ```
-string
+function
+```
+
+**step**
+
+The step interval between values.
+
+```
+number
+```
+
+**value**
+
+The current value.
+
+```
+number
 ```
   
