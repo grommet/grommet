@@ -1392,8 +1392,13 @@ camelcase@^4.1.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
 caniuse-lite@^1.0.30000792:
+<<<<<<< HEAD
   version "1.0.30000810"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000810.tgz#47585fffce0e9f3593a6feea4673b945424351d9"
+=======
+  version "1.0.30000809"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000809.tgz#1e12c1344b8f74d56737ee2614bcedb648943479"
+>>>>>>> Added comment button. Default focusIndicator to true. Updated to latest styled component
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -1603,7 +1608,11 @@ component-emitter@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
 
+<<<<<<< HEAD
 compressible@~2.0.13:
+=======
+compressible@~2.0.11:
+>>>>>>> Added comment button. Default focusIndicator to true. Updated to latest styled component
   version "2.0.13"
   resolved "https://registry.yarnpkg.com/compressible/-/compressible-2.0.13.tgz#0d1020ab924b2fdb4d6279875c7d6daba6baa7a9"
   dependencies:
