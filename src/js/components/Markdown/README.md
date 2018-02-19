@@ -6,16 +6,9 @@ Markdown formatting using Grommet components.
 
 ```javascript
 import { Markdown } from 'grommet';
-      <Markdown />
+      <Markdown>{content}</Markdown>
 ```
 
 ## Properties
 
-**content**
-
-The markdown text to render.
-
-```
-string
-```
   

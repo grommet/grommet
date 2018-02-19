@@ -20,7 +20,7 @@ Paragraph
 test('Markdown renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Markdown content={CONTENT} />
+      <Markdown>{CONTENT}</Markdown>
     </Grommet>
   );
   const tree = component.toJSON();
