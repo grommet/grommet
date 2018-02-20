@@ -1419,16 +1419,6 @@ import { Grommet } from 'grommet';
 
 ## Properties
 
-**dir**
-
-Whether text should be rendered right to left or not. Defaults to
-      inherit from the document context.
-
-\`\`\`
-rtl
-ltr
-\`\`\`
-
 **full**
 
 Whether to take the whole viewport.
