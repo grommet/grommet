@@ -76,7 +76,7 @@ const CONTINENTS = [
       [10, 15, 5], [6, 15, 2], [3, 16, 2], [10, 16, 5],
     ],
   }, {
-    name: 'SouthAmerica',
+    name: 'South America',
     origin: [22, 26],
     area: [[2, 0], [5, 0], [11, 4], [11, 8], [3, 18], [2, 17], [0, 4], [0, 3]],
     dots: [
@@ -86,7 +86,7 @@ const CONTINENTS = [
       [3, 18, 1],
     ],
   }, {
-    name: 'NorthAmerica',
+    name: 'North America',
     origin: [0, 0],
     area: [[21, 0], [39, 0], [39, 6], [22, 26], [16, 23], [2, 12], [0, 7]],
     dots: [
