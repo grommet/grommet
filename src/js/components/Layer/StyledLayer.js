@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { baseStyle, lapAndUp, palm } from '../../utils';
+import { baseStyle, edgeStyle, lapAndUp, palm, parseMetricToNum } from '../../utils';
 
 const growBoxKeyframe = keyframes`
   0% {
@@ -45,7 +45,6 @@ const slideDownKeyframe = keyframes`
   100% {
     top: 0px;
   }
-
 `;
 
 const hiddenPositionStyle = css`
@@ -103,7 +102,7 @@ const bottomPositionStyle = `
   animation: ${slideUpKeyframe} 0.2s ease-in-out forwards;
 `;
 
-const centerPositionStyle = css`
+const centerPositionStyle = `
   bottom: 50%;
   right: 50%;
   animation: ${growBoxKeyframe} 0.1s forwards;
@@ -119,6 +118,48 @@ function getPositionStyle(props) {
   };
   return POSITION_MAP[props.position] || '';
 }
+
+const getMarginValues = (margin, theme) => {
+  if (typeof margin === 'string') {
+    return {
+      vertical: `${parseMetricToNum(theme.global.edgeSize[margin]) * 2}px`,
+      horizontal: `${parseMetricToNum(theme.global.edgeSize[margin]) * 2}px`,
+    };
+  }
+  const result = {
+    vertical: '0px',
+    horizontal: '0px',
+  };
+  if (margin) {
+    if (margin.horizontal) {
+      result.horizontal = `${parseMetricToNum(theme.global.edgeSize[margin.horizontal]) * 2}px`;
+    }
+    if (margin.vertical) {
+      result.vertical = `${parseMetricToNum(theme.global.edgeSize[margin.vertical]) * 2}px`;
+    }
+    if (margin.top) {
+      result.vertical = `${parseMetricToNum(theme.global.edgeSize[margin.top])}px`;
+    }
+    if (margin.bottom) {
+      result.vertical = `${parseMetricToNum(theme.global.edgeSize[margin.bottom])}px`;
+    }
+    if (margin.left) {
+      result.horizontal = `${parseMetricToNum(theme.global.edgeSize[margin.left])}px`;
+    }
+    if (margin.right) {
+      result.horizontal = `${parseMetricToNum(theme.global.edgeSize[margin.right])}px`;
+    }
+  }
+  return result;
+};
+
+const fullStyle = (full, margin, theme) => {
+  const marginValues = getMarginValues(margin, theme);
+  return `
+    ${full === true || full === 'vertical' ? `height: calc(100vh - ${marginValues.vertical});` : ''}
+    ${full === true || full === 'horizontal' ? `width: calc(100vw - ${marginValues.horizontal});` : ''}
+  `;
+};
 
 export const StyledContainer = styled.div`
   display: flex;
@@ -140,8 +181,10 @@ export const StyledContainer = styled.div`
     overflow: auto;
     border-radius: ${props.plain ? 'none' : props.theme.layer.border.radius};
 
-    ${getPositionStyle(props)}
+    ${!props.full ? getPositionStyle(props) : ''}
   `)}
+  ${props => props.full && fullStyle(props.full, props.margin, props.theme)}
+  ${props => props.margin && edgeStyle('margin', props.margin, props.theme)}
 `;
 
 export default StyledLayer.extend`

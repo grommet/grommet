@@ -91,6 +91,38 @@ export const baseStyle = css`
   -webkit-font-smoothing: antialiased;
 `;
 
+export const edgeStyle = (kind, data, theme) => {
+  if (typeof data === 'string') {
+    return `${kind}: ${theme.global.edgeSize[data]};`;
+  }
+  let result = '';
+  if (data.horizontal) {
+    result += `
+      ${kind}-left: ${theme.global.edgeSize[data.horizontal]};
+      ${kind}-right: ${theme.global.edgeSize[data.horizontal]};
+    `;
+  }
+  if (data.vertical) {
+    result += `
+      ${kind}-top: ${theme.global.edgeSize[data.vertical]};
+      ${kind}-bottom: ${theme.global.edgeSize[data.vertical]};
+    `;
+  }
+  if (data.top) {
+    result += `${kind}-top: ${theme.global.edgeSize[data.top]};`;
+  }
+  if (data.bottom) {
+    result += `${kind}-bottom: ${theme.global.edgeSize[data.bottom]};`;
+  }
+  if (data.left) {
+    result += `${kind}-left: ${theme.global.edgeSize[data.left]};`;
+  }
+  if (data.right) {
+    result += `${kind}-right: ${theme.global.edgeSize[data.right]};`;
+  }
+  return result;
+};
+
 // focus also supports clickable elements inside svg
 export const focusStyle = css`
   > circle,
@@ -128,5 +160,5 @@ export const inputStyle = css`
 `;
 
 export default {
-  activeStyle, backgroundStyle, baseStyle, inputStyle, focusStyle,
+  activeStyle, backgroundStyle, baseStyle, edgeStyle, inputStyle, focusStyle,
 };

@@ -1677,6 +1677,62 @@ import { Layer } from 'grommet';
 
 ## Properties
 
+**full**
+
+Whether the width and/or height should fill the current viewport size.
+
+\`\`\`
+boolean
+vertical
+horizontal
+\`\`\`
+
+**margin**
+
+The amount of margin around the Layer. An object can be specified to
+distinguish horizontal margin, vertical margin, and margin on a
+particular side of the layer
+
+\`\`\`
+none
+xsmall
+small
+medium
+large
+{
+  bottom: 
+    xsmall
+    small
+    medium
+    large,
+  horizontal: 
+    xsmall
+    small
+    medium
+    large,
+  left: 
+    xsmall
+    small
+    medium
+    large,
+  right: 
+    xsmall
+    small
+    medium
+    large,
+  top: 
+    xsmall
+    small
+    medium
+    large,
+  vertical: 
+    xsmall
+    small
+    medium
+    large
+}
+\`\`\`
+
 **onClickOutside**
 
 Function that will be invoked when the user clicks outside the layer.

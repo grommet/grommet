@@ -7,7 +7,7 @@ exports[`SkipLink mounts 1`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw emuypU"
+    class="StyledLayer__StyledContainer-gBGbkw jgPQjz"
   >
     <div
       class="StyledBox-bStriS kLwTeJ"
@@ -78,14 +78,14 @@ exports[`SkipLink mounts 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .emuypU {
+  .jgPQjz {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .emuypU {
+  .jgPQjz {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -102,7 +102,7 @@ exports[`SkipLink mounts 3`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw jpmyrr"
+    class="StyledLayer__StyledContainer-gBGbkw iQfNKu"
   >
     <div
       class="StyledBox-bStriS kLwTeJ"
@@ -179,14 +179,14 @@ exports[`SkipLink mounts 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .emuypU {
+  .jgPQjz {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .emuypU {
+  .jgPQjz {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -196,14 +196,14 @@ exports[`SkipLink mounts 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jpmyrr {
+  .iQfNKu {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jpmyrr {
+  .iQfNKu {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -233,7 +233,7 @@ exports[`SkipLink mounts 5`] = `
         tabindex="-1"
       >
         <div
-          class="StyledLayer__StyledContainer-gBGbkw emuypU"
+          class="StyledLayer__StyledContainer-gBGbkw jgPQjz"
         >
           <div
             class="StyledBox-bStriS kLwTeJ"

@@ -106,6 +106,16 @@ describe('Layer', () => {
     expectPortal('plain-test').toMatchSnapshot();
   });
 
+  test('full margin renders', () => {
+    mount(
+      <Layer id='full-margin-test' margin='large' full={true}>
+        This is a full layer with margin
+      </Layer>
+    );
+
+    expectPortal('full-margin-test').toMatchSnapshot();
+  });
+
   test('invokes onEsc', () => {
     const onEsc = jest.fn();
     const component = mount(
