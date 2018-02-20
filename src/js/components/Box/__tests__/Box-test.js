@@ -26,17 +26,6 @@ test('Box direction renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Box reverse renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Box reverse={true} />
-      <Box reverse={false} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
 // test('Box responsive renders', () => {
 //   const component = renderer.create(
 //     <Grommet>
@@ -121,18 +110,6 @@ test('Box justifySelf renders', () => {
       <Box justifySelf='center' />
       <Box justifySelf='stretch' />
       <Box justifySelf='end' />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Box textAlign renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Box textAlign='start' />
-      <Box textAlign='center' />
-      <Box textAlign='end' />
     </Grommet>
   );
   const tree = component.toJSON();

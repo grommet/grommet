@@ -59,12 +59,7 @@ const basisStyle = css`
 const directionStyle = css`
   ${props => props.direction === 'row' && 'min-height: 0;'}
   ${props => props.direction === 'column' && 'min-width: 0;'}
-  flex-direction: ${(props) => {
-    if (props.direction) {
-      return (props.reverse ? `${props.direction}-reverse` : props.direction);
-    }
-    return 'column-reverse';
-  }};
+  flex-direction: ${props => props.direction};
 `;
 
 const elevationStyle = css`
@@ -111,16 +106,6 @@ const JUSTIFY_MAP = {
 
 const justifyStyle = css`
   justify-content: ${props => JUSTIFY_MAP[props.justify]};
-`;
-
-const TEXT_ALIGN_MAP = {
-  center: 'center',
-  end: 'right',
-  start: 'left',
-};
-
-const textAlignStyle = css`
-  text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
 `;
 
 const wrapStyle = 'flex-wrap: wrap;';
@@ -195,7 +180,6 @@ const responsiveStyle = css`
     flex-basis: auto;
 
     ${props.justify === 'center' && 'align-items: stretch;'}
-    ${props.reverse && 'flex-direction: column-reverse'}
   `)}
   }
 `;
@@ -357,7 +341,7 @@ const StyledBox = styled.div`
   ${props => props.alignSelf && alignSelfStyle}
   ${props => props.background && backgroundStyle(props.background, props.theme)}
   ${props => props.border && borderStyle(props.border, props.theme)}
-  ${props => (props.direction || props.reverse) && directionStyle}
+  ${props => props.direction && directionStyle}
   ${props => props.flex !== undefined && flexStyle}
   ${props => props.basis && basisStyle}
   ${props => props.fill && fillStyle(props.fill)}
@@ -366,7 +350,6 @@ const StyledBox = styled.div`
   ${props => (props.margin && edgeStyle('margin', props.margin, props.theme))}
   ${props => (props.pad && edgeStyle('padding', props.pad, props.theme))}
   ${props => props.round && roundStyle}
-  ${props => props.textAlign && textAlignStyle}
   ${props => props.wrap && wrapStyle}
   ${props => props.responsive && responsiveStyle}
   ${props => props.overflow && `overflow: ${props.overflow};`}

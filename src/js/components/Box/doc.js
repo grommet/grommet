@@ -141,14 +141,10 @@ particular side of the box`
       `Whether children laid out in a row direction should be switched to a
 column layout when the display area narrows.`
     ),
-    reverse: PropTypes.bool.description('Whether to reverse the order of the child components.'),
     round: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full']).description(
       'How much to round the corners.'
     ),
     tag: PropTypes.string.description('The DOM tag to use for the element.').defaultValue('div'),
-    textAlign: PropTypes.oneOf(['start', 'center', 'end']).description(
-      'How to align the text inside the box.'
-    ),
     wrap: PropTypes.bool.description(
       'Whether children can wrap if they can\'t all fit.'
     ),
