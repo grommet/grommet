@@ -7,7 +7,7 @@ exports[`Layer aligns bottom 1`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw kqwWDX"
+    class="StyledLayer__StyledContainer-gBGbkw fWeHdr"
   >
     This is a layer
   </div>
@@ -45,14 +45,14 @@ exports[`Layer aligns bottom 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bClIQd {
+  .bjlfkC {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bClIQd {
+  .bjlfkC {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -63,18 +63,21 @@ exports[`Layer aligns bottom 2`] = `
     left: 0px;
     -webkit-animation: hlTcuJ 0.2s ease-in-out forwards;
     animation: hlTcuJ 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bmCmlg {
+  .ZwLNV {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bmCmlg {
+  .ZwLNV {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -85,18 +88,21 @@ exports[`Layer aligns bottom 2`] = `
     right: 0px;
     -webkit-animation: vdrVB 0.2s ease-in-out forwards;
     animation: vdrVB 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iQfNKu {
+  .bdAanV {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iQfNKu {
+  .bdAanV {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -108,18 +114,21 @@ exports[`Layer aligns bottom 2`] = `
     transform: translateX(-50%);
     -webkit-animation: fVNlMJ 0.2s ease-in-out forwards;
     animation: fVNlMJ 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kqwWDX {
+  .fWeHdr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kqwWDX {
+  .fWeHdr {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -132,6 +141,9 @@ exports[`Layer aligns bottom 2`] = `
     transform: translateX(50%);
     -webkit-animation: ifqUGO 0.2s ease-in-out forwards;
     animation: ifqUGO 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }"
 `;
@@ -143,7 +155,7 @@ exports[`Layer aligns left 1`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw bClIQd"
+    class="StyledLayer__StyledContainer-gBGbkw bjlfkC"
   >
     This is a layer
   </div>
@@ -181,14 +193,14 @@ exports[`Layer aligns left 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bClIQd {
+  .bjlfkC {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bClIQd {
+  .bjlfkC {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -199,6 +211,9 @@ exports[`Layer aligns left 2`] = `
     left: 0px;
     -webkit-animation: hlTcuJ 0.2s ease-in-out forwards;
     animation: hlTcuJ 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }"
 `;
@@ -210,7 +225,7 @@ exports[`Layer aligns right 1`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw bmCmlg"
+    class="StyledLayer__StyledContainer-gBGbkw ZwLNV"
   >
     This is a layer
   </div>
@@ -248,14 +263,14 @@ exports[`Layer aligns right 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bClIQd {
+  .bjlfkC {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bClIQd {
+  .bjlfkC {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -266,18 +281,21 @@ exports[`Layer aligns right 2`] = `
     left: 0px;
     -webkit-animation: hlTcuJ 0.2s ease-in-out forwards;
     animation: hlTcuJ 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bmCmlg {
+  .ZwLNV {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bmCmlg {
+  .ZwLNV {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -288,6 +306,9 @@ exports[`Layer aligns right 2`] = `
     right: 0px;
     -webkit-animation: vdrVB 0.2s ease-in-out forwards;
     animation: vdrVB 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }"
 `;
@@ -299,7 +320,7 @@ exports[`Layer aligns top 1`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw iQfNKu"
+    class="StyledLayer__StyledContainer-gBGbkw bdAanV"
   >
     This is a layer
   </div>
@@ -337,14 +358,14 @@ exports[`Layer aligns top 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bClIQd {
+  .bjlfkC {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bClIQd {
+  .bjlfkC {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -355,18 +376,21 @@ exports[`Layer aligns top 2`] = `
     left: 0px;
     -webkit-animation: hlTcuJ 0.2s ease-in-out forwards;
     animation: hlTcuJ 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bmCmlg {
+  .ZwLNV {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bmCmlg {
+  .ZwLNV {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -377,18 +401,21 @@ exports[`Layer aligns top 2`] = `
     right: 0px;
     -webkit-animation: vdrVB 0.2s ease-in-out forwards;
     animation: vdrVB 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iQfNKu {
+  .bdAanV {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iQfNKu {
+  .bdAanV {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -400,6 +427,9 @@ exports[`Layer aligns top 2`] = `
     transform: translateX(-50%);
     -webkit-animation: fVNlMJ 0.2s ease-in-out forwards;
     animation: fVNlMJ 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }"
 `;
@@ -411,7 +441,7 @@ exports[`Layer full margin renders 1`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw ejvNhS"
+    class="StyledLayer__StyledContainer-gBGbkw ctOrcq"
   >
     This is a full layer with margin
   </div>
@@ -459,14 +489,14 @@ exports[`Layer full margin renders 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bClIQd {
+  .bjlfkC {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bClIQd {
+  .bjlfkC {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -477,18 +507,21 @@ exports[`Layer full margin renders 2`] = `
     left: 0px;
     -webkit-animation: hlTcuJ 0.2s ease-in-out forwards;
     animation: hlTcuJ 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bmCmlg {
+  .ZwLNV {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bmCmlg {
+  .ZwLNV {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -499,18 +532,21 @@ exports[`Layer full margin renders 2`] = `
     right: 0px;
     -webkit-animation: vdrVB 0.2s ease-in-out forwards;
     animation: vdrVB 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iQfNKu {
+  .bdAanV {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iQfNKu {
+  .bdAanV {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -522,18 +558,21 @@ exports[`Layer full margin renders 2`] = `
     transform: translateX(-50%);
     -webkit-animation: fVNlMJ 0.2s ease-in-out forwards;
     animation: fVNlMJ 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kqwWDX {
+  .fWeHdr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kqwWDX {
+  .fWeHdr {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -546,35 +585,41 @@ exports[`Layer full margin renders 2`] = `
     transform: translateX(50%);
     -webkit-animation: ifqUGO 0.2s ease-in-out forwards;
     animation: ifqUGO 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jgPQjz {
+  .eBaMuM {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jgPQjz {
+  .eBaMuM {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
     overflow: auto;
     border-radius: 4px;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .lavLMH {
+  .eOmLop {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .lavLMH {
+  .eOmLop {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -584,23 +629,29 @@ exports[`Layer full margin renders 2`] = `
     right: 50%;
     -webkit-animation: ghNyyk 0.1s forwards;
     animation: ghNyyk 0.1s forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ejvNhS {
+  .ctOrcq {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ejvNhS {
+  .ctOrcq {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
     overflow: auto;
     border-radius: 4px;
+    height: calc(100vh - 96px);
+    width: calc(100vw - 96px);
+    margin: 48px;
   }
 }"
 `;
@@ -612,7 +663,7 @@ exports[`Layer hides 1`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw jgPQjz"
+    class="StyledLayer__StyledContainer-gBGbkw eBaMuM"
   >
     This is a layer
   </div>
@@ -654,14 +705,14 @@ exports[`Layer hides 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bClIQd {
+  .bjlfkC {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bClIQd {
+  .bjlfkC {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -672,18 +723,21 @@ exports[`Layer hides 2`] = `
     left: 0px;
     -webkit-animation: hlTcuJ 0.2s ease-in-out forwards;
     animation: hlTcuJ 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bmCmlg {
+  .ZwLNV {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bmCmlg {
+  .ZwLNV {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -694,18 +748,21 @@ exports[`Layer hides 2`] = `
     right: 0px;
     -webkit-animation: vdrVB 0.2s ease-in-out forwards;
     animation: vdrVB 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iQfNKu {
+  .bdAanV {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iQfNKu {
+  .bdAanV {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -717,18 +774,21 @@ exports[`Layer hides 2`] = `
     transform: translateX(-50%);
     -webkit-animation: fVNlMJ 0.2s ease-in-out forwards;
     animation: fVNlMJ 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kqwWDX {
+  .fWeHdr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kqwWDX {
+  .fWeHdr {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -741,23 +801,29 @@ exports[`Layer hides 2`] = `
     transform: translateX(50%);
     -webkit-animation: ifqUGO 0.2s ease-in-out forwards;
     animation: ifqUGO 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jgPQjz {
+  .eBaMuM {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jgPQjz {
+  .eBaMuM {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
     overflow: auto;
     border-radius: 4px;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }"
 `;
@@ -769,7 +835,7 @@ exports[`Layer hides 3`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw jgPQjz"
+    class="StyledLayer__StyledContainer-gBGbkw eBaMuM"
   >
     This is a layer
   </div>
@@ -811,14 +877,14 @@ exports[`Layer hides 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bClIQd {
+  .bjlfkC {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bClIQd {
+  .bjlfkC {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -829,18 +895,21 @@ exports[`Layer hides 4`] = `
     left: 0px;
     -webkit-animation: hlTcuJ 0.2s ease-in-out forwards;
     animation: hlTcuJ 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bmCmlg {
+  .ZwLNV {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bmCmlg {
+  .ZwLNV {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -851,18 +920,21 @@ exports[`Layer hides 4`] = `
     right: 0px;
     -webkit-animation: vdrVB 0.2s ease-in-out forwards;
     animation: vdrVB 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iQfNKu {
+  .bdAanV {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iQfNKu {
+  .bdAanV {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -874,18 +946,21 @@ exports[`Layer hides 4`] = `
     transform: translateX(-50%);
     -webkit-animation: fVNlMJ 0.2s ease-in-out forwards;
     animation: fVNlMJ 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kqwWDX {
+  .fWeHdr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kqwWDX {
+  .fWeHdr {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -898,23 +973,29 @@ exports[`Layer hides 4`] = `
     transform: translateX(50%);
     -webkit-animation: ifqUGO 0.2s ease-in-out forwards;
     animation: ifqUGO 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jgPQjz {
+  .eBaMuM {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jgPQjz {
+  .eBaMuM {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
     overflow: auto;
     border-radius: 4px;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }"
 `;
@@ -960,7 +1041,7 @@ exports[`Layer plain renders 1`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw lavLMH"
+    class="StyledLayer__StyledContainer-gBGbkw eOmLop"
   >
     This is a plain layer
   </div>
@@ -1008,14 +1089,14 @@ exports[`Layer plain renders 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bClIQd {
+  .bjlfkC {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bClIQd {
+  .bjlfkC {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1026,18 +1107,21 @@ exports[`Layer plain renders 2`] = `
     left: 0px;
     -webkit-animation: hlTcuJ 0.2s ease-in-out forwards;
     animation: hlTcuJ 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bmCmlg {
+  .ZwLNV {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bmCmlg {
+  .ZwLNV {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1048,18 +1132,21 @@ exports[`Layer plain renders 2`] = `
     right: 0px;
     -webkit-animation: vdrVB 0.2s ease-in-out forwards;
     animation: vdrVB 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iQfNKu {
+  .bdAanV {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .iQfNKu {
+  .bdAanV {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1071,18 +1158,21 @@ exports[`Layer plain renders 2`] = `
     transform: translateX(-50%);
     -webkit-animation: fVNlMJ 0.2s ease-in-out forwards;
     animation: fVNlMJ 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kqwWDX {
+  .fWeHdr {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kqwWDX {
+  .fWeHdr {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1095,35 +1185,41 @@ exports[`Layer plain renders 2`] = `
     transform: translateX(50%);
     -webkit-animation: ifqUGO 0.2s ease-in-out forwards;
     animation: ifqUGO 0.2s ease-in-out forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jgPQjz {
+  .eBaMuM {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jgPQjz {
+  .eBaMuM {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
     overflow: auto;
     border-radius: 4px;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .lavLMH {
+  .eOmLop {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .lavLMH {
+  .eOmLop {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
@@ -1133,6 +1229,9 @@ exports[`Layer plain renders 2`] = `
     right: 50%;
     -webkit-animation: ghNyyk 0.1s forwards;
     animation: ghNyyk 0.1s forwards;
+    -webkit-undefined: undefined;
+    -ms-flex-undefined: undefined;
+    undefined: undefined;
   }
 }"
 `;

@@ -182,9 +182,9 @@ export const StyledContainer = styled.div`
     border-radius: ${props.plain ? 'none' : props.theme.layer.border.radius};
 
     ${!props.full ? getPositionStyle(props) : ''}
+    ${props.full && fullStyle(props.full, props.margin, props.theme)}
+    ${props.margin && edgeStyle('margin', props.margin, props.theme)}
   `)}
-  ${props => props.full && fullStyle(props.full, props.margin, props.theme)}
-  ${props => props.margin && edgeStyle('margin', props.margin, props.theme)}
 `;
 
 export default StyledLayer.extend`
