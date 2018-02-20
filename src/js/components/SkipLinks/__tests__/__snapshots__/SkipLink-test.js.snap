@@ -14,7 +14,7 @@ exports[`SkipLink mounts 1`] = `
       direction="column"
     >
       <h2
-        class="StyledHeading-NQveS gRpxyr"
+        class="StyledHeading-NQveS kJELbK"
       >
         Skip To
         :
@@ -109,7 +109,7 @@ exports[`SkipLink mounts 3`] = `
       direction="column"
     >
       <h2
-        class="StyledHeading-NQveS gRpxyr"
+        class="StyledHeading-NQveS kJELbK"
       >
         Skip To
         :
@@ -240,7 +240,7 @@ exports[`SkipLink mounts 5`] = `
             direction="column"
           >
             <h2
-              class="StyledHeading-NQveS gRpxyr"
+              class="StyledHeading-NQveS kJELbK"
             >
               Skip To
               :

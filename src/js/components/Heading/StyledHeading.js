@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { colorForName } from '../../utils';
+
 const marginStyle = (props) => {
   if (typeof props.margin === 'string') {
     const margin = props.theme.global.edgeSize[props.margin];
@@ -54,11 +56,16 @@ const truncateStyle = `
   text-overflow: ellipsis;
 `;
 
+const colorStyle = css`
+  color: ${props => colorForName(props.color, props.theme)}
+`;
+
 const StyledHeading = styled.h1`
   ${props => sizeStyle(props)}
   ${props => props.margin && marginStyle(props)}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.truncate && truncateStyle}
+  ${props => props.color && colorStyle}
 `;
 
 export default StyledHeading.extend`
