@@ -16,7 +16,7 @@ exports[`TextInput closes suggestion drop 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS enCpTs"
+          class="StyledBox-bStriS gedxom"
           direction="column"
         >
           test
@@ -29,7 +29,7 @@ exports[`TextInput closes suggestion drop 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS enCpTs"
+          class="StyledBox-bStriS gedxom"
           direction="column"
         >
           test1
@@ -141,7 +141,7 @@ exports[`TextInput mounts with complex suggestions 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS enCpTs"
+          class="StyledBox-bStriS gedxom"
           direction="column"
         >
           test
@@ -154,7 +154,7 @@ exports[`TextInput mounts with complex suggestions 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS enCpTs"
+          class="StyledBox-bStriS gedxom"
           direction="column"
         >
           test1
@@ -220,7 +220,7 @@ exports[`TextInput mounts with suggestions 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS enCpTs"
+          class="StyledBox-bStriS gedxom"
           direction="column"
         >
           test
@@ -233,7 +233,7 @@ exports[`TextInput mounts with suggestions 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS enCpTs"
+          class="StyledBox-bStriS gedxom"
           direction="column"
         >
           test1
@@ -299,7 +299,7 @@ exports[`TextInput selects suggestion 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS enCpTs"
+          class="StyledBox-bStriS gedxom"
           direction="column"
         >
           test
@@ -312,7 +312,7 @@ exports[`TextInput selects suggestion 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS enCpTs"
+          class="StyledBox-bStriS gedxom"
           direction="column"
         >
           test1
