@@ -28,8 +28,9 @@ class Heading extends Component {
       styledComponents[tag] = StyledComponent;
     }
 
+    // enforce level to be a number
     return (
-      <StyledComponent level={level} {...rest} />
+      <StyledComponent level={+level} {...rest} />
     );
   }
 }

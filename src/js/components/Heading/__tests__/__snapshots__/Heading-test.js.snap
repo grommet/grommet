@@ -56,6 +56,18 @@ exports[`Heading level renders 1`] = `
   <h4
     className="c4"
   />
+  <h1
+    className="c1"
+  />
+  <h2
+    className="c2"
+  />
+  <h3
+    className="c3"
+  />
+  <h4
+    className="c4"
+  />
 </div>
 `;
 
