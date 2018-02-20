@@ -135,17 +135,17 @@ describe('Drop', () => {
     expect(document.getElementById('drop-node')).toBeNull();
   });
 
-  test('invokes onClose', () => {
-    const onClose = jest.fn();
-    mount(<FakeInput onClose={onClose} />);
+  test('invokes onClickOutside', () => {
+    const onClickOutside = jest.fn();
+    mount(<FakeInput onClickOutside={onClickOutside} />);
     global.document.dispatchEvent(new Event('click'));
-    expect(onClose).toBeCalled();
+    expect(onClickOutside).toBeCalled();
   });
 
   test('updates', () => {
-    const onClose = jest.fn();
-    const component = mount(<FakeInput onClose={onClose} />);
-    component.setProps({ onClose: undefined });
+    const onClickOutside = jest.fn();
+    const component = mount(<FakeInput onClickOutside={onClickOutside} />);
+    component.setProps({ onClickOutside: undefined });
     expect(component.getDOMNode()).toMatchSnapshot();
   });
 

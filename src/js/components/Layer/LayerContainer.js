@@ -32,7 +32,7 @@ class LayerContainer extends Component {
     const {
       children,
       id,
-      onClickOverlay,
+      onClickOutside,
       onEsc,
       plain,
       position,
@@ -45,7 +45,7 @@ class LayerContainer extends Component {
         <Keyboard onEsc={onEsc}>
           <StyledLayer
             id={id}
-            onClick={onClickOverlay}
+            onClick={onClickOutside}
             plain={plain}
             position={position}
             theme={theme}

@@ -209,7 +209,8 @@ class TextInput extends Component {
           align={{ top: 'bottom', left: 'left' }}
           responsive={false}
           control={this.componentRef}
-          onClose={() => this.setState({ showDrop: false })}
+          onClickOutside={() => this.setState({ showDrop: false })}
+          onEsc={() => this.setState({ showDrop: false })}
         >
           {this.renderSuggestions()}
         </Drop>
