@@ -9,7 +9,7 @@ test('Calendar renders', () => {
   // need to set the date to avoid snapshot drift over time
   const component = renderer.create(
     <Grommet>
-      <Calendar date='2018-01-15T00:00:00' />
+      <Calendar date='2018-01-15T00:00:00 GMT-08:00' />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -19,7 +19,7 @@ test('Calendar renders', () => {
 test('Calendar date renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Calendar date='2018-01-15T00:00:00' />
+      <Calendar date='2018-01-15T00:00:00 GMT-08:00' />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -31,8 +31,8 @@ test('Calendar dates renders', () => {
     <Grommet>
       <Calendar
         dates={[
-          '2018-01-12T00:00:00',
-          ['2018-01-8T00:00:00', '2018-01-10T00:00:00'],
+          '2018-01-12T00:00:00 GMT-08:00',
+          ['2018-01-8T00:00:00 GMT-08:00', '2018-01-10T00:00:00 GMT-08:00'],
         ]}
       />
     </Grommet>
@@ -46,8 +46,8 @@ test('Calendar disabled renders', () => {
     <Grommet>
       <Calendar
         dates={[
-          '2018-01-12T00:00:00',
-          ['2018-01-8T00:00:00', '2018-01-10T00:00:00'],
+          '2018-01-12T00:00:00 GMT-08:00',
+          ['2018-01-8T00:00:00 GMT-08:00', '2018-01-10T00:00:00 GMT-08:00'],
         ]}
       />
     </Grommet>
@@ -59,9 +59,9 @@ test('Calendar disabled renders', () => {
 test('Calendar size renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Calendar size='small' date='2018-01-15T00:00:00' />
-      <Calendar size='medium' date='2018-01-15T00:00:00' />
-      <Calendar size='large' date='2018-01-15T00:00:00' />
+      <Calendar size='small' date='2018-01-15T00:00:00 GMT-08:00' />
+      <Calendar size='medium' date='2018-01-15T00:00:00 GMT-08:00' />
+      <Calendar size='large' date='2018-01-15T00:00:00 GMT-08:00' />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -71,8 +71,8 @@ test('Calendar size renders', () => {
 test('Calendar firstDayOfWeek renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Calendar firstDayOfWeek={0} date='2018-01-15T00:00:00' />
-      <Calendar firstDayOfWeek={1} date='2018-01-15T00:00:00' />
+      <Calendar firstDayOfWeek={0} date='2018-01-15T00:00:00 GMT-08:00' />
+      <Calendar firstDayOfWeek={1} date='2018-01-15T00:00:00 GMT-08:00' />
     </Grommet>
   );
   const tree = component.toJSON();
