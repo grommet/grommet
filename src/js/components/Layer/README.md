@@ -12,9 +12,9 @@ import { Layer } from 'grommet';
 
 ## Properties
 
-**onClickOverlay**
+**onClickOutside**
 
-Function that will be called if the overlay background is clicked.
+Function that will be invoked when the user clicks outside the layer.
 
 ```
 boolean
@@ -22,7 +22,7 @@ boolean
 
 **onEsc**
 
-Function that will be called when the user presses the escape key inside the Layer.
+Function that will be called when the user presses the escape key inside the layer.
 
 ```
 function
