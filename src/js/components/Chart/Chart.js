@@ -12,7 +12,7 @@ import doc from './doc';
 
 const renderBars = (values, bounds, scale, height) =>
   (values || []).map((valueArg, index) => {
-    const { label, value, ...rest } = valueArg;
+    const { label, onHover, value, ...rest } = valueArg;
 
     const key = `p-${index}`;
     const bottom = (value.length === 2 ? bounds[1][0] : value[1]);
@@ -23,31 +23,51 @@ const renderBars = (values, bounds, scale, height) =>
       ` L ${(value[0] - bounds[0][0]) * scale[0]},` +
       `${height - ((top - bounds[1][0]) * scale[1])}`;
 
+      let hoverProps;
+      if (onHover) {
+        hoverProps = {
+          onMouseOver: () => onHover(true),
+          onMouseLeave: () => onHover(false),
+        };
+      }
+
       return (
         <g key={key} fill='none'>
           <title>{label}</title>
-          <path d={d} {...rest} />
+          <path d={d} {...hoverProps} {...rest} />
         </g>
       );
     }
     return undefined;
   });
 
-const renderLine = (values, bounds, scale, height) => {
+const renderLine = (values, bounds, scale, height, { onClick, onHover }) => {
   let d = '';
   (values || []).forEach(({ value }, index) => {
     d += `${index ? ' L' : 'M'} ${(value[0] - bounds[0][0]) * scale[0]},` +
     `${height - ((value[1] - bounds[1][0]) * scale[1])}`;
   });
+
+  let hoverProps;
+  if (onHover) {
+    hoverProps = {
+      onMouseOver: () => onHover(true),
+      onMouseLeave: () => onHover(false),
+    };
+  }
+  let clickProps;
+  if (onClick) {
+    clickProps = { onClick };
+  }
+
   return (
     <g fill='none'>
-      <path d={d} />
+      <path d={d} {...hoverProps} {...clickProps} />
     </g>
   );
 };
 
-const renderArea = (values, bounds, scale, height, props) => {
-  const { color, theme } = props;
+const renderArea = (values, bounds, scale, height, { color, onClick, onHover, theme }) => {
   let d = '';
   (values || []).forEach(({ value }, index) => {
     const top = (value.length === 2 ? value[1] : value[2]);
@@ -60,9 +80,22 @@ const renderArea = (values, bounds, scale, height, props) => {
     `${height - ((bottom - bounds[1][0]) * scale[1])}`;
   });
   d += ' Z';
+
+  let hoverProps;
+  if (onHover) {
+    hoverProps = {
+      onMouseOver: () => onHover(true),
+      onMouseLeave: () => onHover(false),
+    };
+  }
+  let clickProps;
+  if (onClick) {
+    clickProps = { onClick };
+  }
+
   return (
     <g fill={colorForName(color, theme)}>
-      <path d={d} />
+      <path d={d} {...hoverProps} {...clickProps} />
     </g>
   );
 };
@@ -117,7 +150,7 @@ class Chart extends Component {
 
   render() {
     const {
-      color, round, size, theme, thickness, type, values, ...rest
+      color, onClick, onHover, round, size, theme, thickness, type, values, ...rest
     } = this.props;
     const { bounds, containerWidth, containerHeight } = this.state;
 
@@ -137,7 +170,7 @@ class Chart extends Component {
     if (type === 'bar') {
       contents = renderBars(values, bounds, scale, height);
     } else if (type === 'line') {
-      contents = renderLine(values, bounds, scale, height);
+      contents = renderLine(values, bounds, scale, height, this.props);
     } else if (type === 'area') {
       contents = renderArea(values, bounds, scale, height, this.props);
     }
