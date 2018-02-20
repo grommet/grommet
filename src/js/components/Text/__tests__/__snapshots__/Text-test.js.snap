@@ -297,21 +297,18 @@ exports[`Text textAlign renders 1`] = `
 .c1 {
   font-size: 16px;
   line-height: 1.375;
-  -webkit-text-align: left;
   text-align: left;
 }
 
 .c2 {
   font-size: 16px;
   line-height: 1.375;
-  -webkit-text-align: center;
   text-align: center;
 }
 
 .c3 {
   font-size: 16px;
   line-height: 1.375;
-  -webkit-text-align: right;
   text-align: right;
 }
 
@@ -353,7 +350,6 @@ exports[`Text truncate renders 1`] = `
   line-height: 1.375;
   white-space: nowrap;
   overflow: hidden;
-  -webkit-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
 

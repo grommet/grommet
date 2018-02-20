@@ -24,9 +24,7 @@ exports[`RoutedButton renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
-  -webkit-text-align: center;
   text-align: center;
   display: inline-block;
   min-width: 96px;
