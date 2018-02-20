@@ -43,16 +43,6 @@ Required. Target container where the drop will be aligned.
 object
 ```
 
-**dir**
-
-Whether text should be rendered right to left or not. Defaults to
-      inherit from the document context.
-
-```
-rtl
-ltr
-```
-
 **restrictFocus**
 
 Whether the drop should control focus.
@@ -61,9 +51,17 @@ Whether the drop should control focus.
 boolean
 ```
 
-**onClose**
+**onClickOutside**
 
-Function that will be invoked when the user clicks outside the drop area.
+Function that will be invoked when the user clicks outside the drop.
+
+```
+function
+```
+
+**onEsc**
+
+Function that will be called when the user presses the escape key inside the drop.
 
 ```
 function

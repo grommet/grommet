@@ -16,7 +16,7 @@ class DropContainer extends Component {
     const { restrictFocus } = this.props;
     this.addScrollListener();
     window.addEventListener('resize', this.onResize);
-    document.addEventListener('click', this.onRemoveDrop);
+    document.addEventListener('click', this.onClickDocument);
 
     this.place();
 
@@ -28,7 +28,7 @@ class DropContainer extends Component {
   componentWillUnmount() {
     this.removeScrollListener();
     window.removeEventListener('resize', this.onResize);
-    document.removeEventListener('click', this.onRemoveDrop);
+    document.removeEventListener('click', this.onClickDocument);
   }
 
   addScrollListener = () => {
@@ -43,11 +43,11 @@ class DropContainer extends Component {
     );
   }
 
-  onRemoveDrop = (event) => {
-    const { onClose } = this.props;
+  onClickDocument = (event) => {
+    const { onClickOutside } = this.props;
     if (!findDOMNode(this.dropRef).contains(event.target)) {
-      if (onClose) {
-        onClose();
+      if (onClickOutside) {
+        onClickOutside();
       }
     }
   }
@@ -177,14 +177,15 @@ class DropContainer extends Component {
   render() {
     const {
       children,
-      onClose,
+      onClickOutside,
+      onEsc,
       theme,
       ...rest
     } = this.props;
 
     return (
       <FocusedContainer>
-        <Keyboard onEsc={onClose}>
+        <Keyboard onEsc={onEsc}>
           <StyledDrop
             tabIndex='-1'
             ref={(ref) => {
