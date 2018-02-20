@@ -31,7 +31,6 @@ class Button extends Component {
       href,
       label,
       onClick,
-      plain,
       reverse,
       theme,
       type,
@@ -61,12 +60,6 @@ class Button extends Component {
       ['reset', 'submit'].indexOf(type) === -1
     );
 
-    const plainProp = (
-      plain ||
-      Children.count(children) > 0 ||
-      (icon && !label)
-    );
-
     return (
       <Tag
         tabIndex='0'
@@ -78,7 +71,7 @@ class Button extends Component {
         href={href}
         label={label}
         onClick={onClick}
-        plain={plainProp}
+        plain={Children.count(children) > 0 || (icon && !label)}
         theme={theme}
         type={!href ? type : undefined}
       >
