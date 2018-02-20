@@ -29,6 +29,25 @@ A color identifier to use for the graphic color. Defaults to `accent-1`.
 string
 ```
 
+**onClick**
+
+Called when the user clicks on it.
+      This is only available when the type is line or area.
+
+```
+function
+```
+
+**onHover**
+
+Called with a boolean argument
+      indicating when the user hovers onto or away from it.
+      This is only available when the type is line or area.
+
+```
+function
+```
+
 **round**
 
 Whether to round the line ends.
@@ -100,10 +119,13 @@ Required. Array of value objects describing the data.
       'value' is a tuple indicating the coordinate of the value or a triple
       indicating the x coordinate and a range of two y coordinates.
       'label' is a text string describing it.
+      'onHover' and 'onClick' only work when type='bar'.
 
 ```
 [{
   label: string,
+  onClick: function,
+  onHover: function,
   value: [number]
 }]
 ```
