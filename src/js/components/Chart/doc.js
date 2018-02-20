@@ -17,6 +17,11 @@ export default (Chart) => {
     color: PropTypes.string.description(
       'A color identifier to use for the graphic color.'
     ).defaultValue('accent-1'),
+    onClick: PropTypes.func.description(`Called when the user clicks on it.
+      This is only available when the type is line or area.`),
+    onHover: PropTypes.func.description(`Called with a boolean argument
+      indicating when the user hovers onto or away from it.
+      This is only available when the type is line or area.`),
     round: PropTypes.bool.description('Whether to round the line ends.'),
     size: PropTypes.oneOfType([
       PropTypes.oneOf(
@@ -38,12 +43,15 @@ export default (Chart) => {
     ).defaultValue('bar'),
     values: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string, // for accessibility of bars
+      onClick: PropTypes.func,
+      onHover: PropTypes.func,
       value: PropTypes.arrayOf(PropTypes.number).isRequired,
     })).description(
       `Array of value objects describing the data.
       'value' is a tuple indicating the coordinate of the value or a triple
       indicating the x coordinate and a range of two y coordinates.
-      'label' is a text string describing it.`
+      'label' is a text string describing it.
+      'onHover' and 'onClick' only work when type='bar'.`
     ).isRequired,
   };
 
