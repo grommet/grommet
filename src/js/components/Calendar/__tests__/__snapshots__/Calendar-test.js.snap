@@ -113,14 +113,12 @@ exports[`Calendar date renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   opacity: 0.3;
   cursor: default;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
   padding: 12px;
 }
@@ -136,12 +134,10 @@ exports[`Calendar date renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -161,14 +157,12 @@ exports[`Calendar date renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   background-color: rgba(221,221,221,0.5);
   color: #000000;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -1686,14 +1680,12 @@ exports[`Calendar dates renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   opacity: 0.3;
   cursor: default;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
   padding: 12px;
 }
@@ -1709,12 +1701,10 @@ exports[`Calendar dates renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -1734,14 +1724,12 @@ exports[`Calendar dates renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   background-color: rgba(221,221,221,0.5);
   color: #000000;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -3261,14 +3249,12 @@ exports[`Calendar disabled renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   opacity: 0.3;
   cursor: default;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
   padding: 12px;
 }
@@ -3284,12 +3270,10 @@ exports[`Calendar disabled renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -3309,14 +3293,12 @@ exports[`Calendar disabled renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   background-color: rgba(221,221,221,0.5);
   color: #000000;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -4836,14 +4818,12 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   opacity: 0.3;
   cursor: default;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
   padding: 12px;
 }
@@ -4859,12 +4839,10 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -4884,14 +4862,12 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   background-color: rgba(221,221,221,0.5);
   color: #000000;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -7669,14 +7645,12 @@ exports[`Calendar renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   opacity: 0.3;
   cursor: default;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
   padding: 12px;
 }
@@ -7692,12 +7666,10 @@ exports[`Calendar renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -7717,14 +7689,12 @@ exports[`Calendar renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   background-color: rgba(221,221,221,0.5);
   color: #000000;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -9276,14 +9246,12 @@ exports[`Calendar size renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   opacity: 0.3;
   cursor: default;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
   padding: 12px;
 }
@@ -9299,12 +9267,10 @@ exports[`Calendar size renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
@@ -9324,14 +9290,12 @@ exports[`Calendar size renders 1`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   background-color: rgba(221,221,221,0.5);
   color: #000000;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
