@@ -82,6 +82,16 @@ test('Heading margin renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('Heading color renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Heading color='brand' />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 const LONG = 'a b c d e f g h i j k l m n o p q r s t u v w x y z';
 
 test('Heading truncate renders', () => {

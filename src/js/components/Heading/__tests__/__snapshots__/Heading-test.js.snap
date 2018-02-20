@@ -1,5 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Heading color renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  font-size: 48px;
+  line-height: 1.125;
+  max-width: 1152px;
+  font-weight: 300;
+  color: #865CD6;
+}
+
+<div
+  className="c0"
+>
+  <h1
+    className="c1"
+    color="brand"
+  />
+</div>
+`;
+
 exports[`Heading level renders 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;

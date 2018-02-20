@@ -12,6 +12,10 @@ export default (Heading) => {
     );
 
   DocumentedHeading.propTypes = {
+    color: PropTypes.string.description(
+      `A color identifier to use for the text color. For example:
+      'brand'.`
+    ),
     level: PropTypes.oneOf([1, 2, 3, 4, '1', '2', '3', '4']).description(
       `The heading level. It corresponds to the number after the 'H' for
 the DOM tag. Set the level for semantic accuracy and accessibility.

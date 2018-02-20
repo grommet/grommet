@@ -1458,6 +1458,15 @@ import { Heading } from 'grommet';
 
 ## Properties
 
+**color**
+
+A color identifier to use for the text color. For example:
+      'brand'.
+
+\`\`\`
+string
+\`\`\`
+
 **level**
 
 The heading level. It corresponds to the number after the 'H' for
