@@ -2,12 +2,12 @@
 
 exports[`SkipLink mounts 1`] = `
 <div
-  class="StyledLayer-ceZzeh gVCohQ"
+  class="StyledLayer-ceZzeh bcWTAx"
   id="skip-links"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw eBaMuM"
+    class="StyledLayer__StyledContainer-gBGbkw buXZQX"
   >
     <div
       class="StyledBox-bStriS kLwTeJ"
@@ -56,7 +56,7 @@ exports[`SkipLink mounts 1`] = `
 exports[`SkipLink mounts 2`] = `
 "
 
-.gVCohQ {
+.bcWTAx {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -68,6 +68,7 @@ exports[`SkipLink mounts 2`] = `
   -webkit-font-smoothing: antialiased;
   position: relative;
   z-index: 10;
+  width: 100vw;
   height: 100vh;
   overflow: auto;
   background-color: rgba(0,0,0,0.5);
@@ -78,34 +79,31 @@ exports[`SkipLink mounts 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .eBaMuM {
+  .buXZQX {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .eBaMuM {
+  .buXZQX {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
     overflow: auto;
     border-radius: 4px;
-    -webkit-undefined: undefined;
-    -ms-flex-undefined: undefined;
-    undefined: undefined;
   }
 }"
 `;
 
 exports[`SkipLink mounts 3`] = `
 <div
-  class="StyledLayer-ceZzeh bGwGvr"
+  class="StyledLayer-ceZzeh diSzRA"
   id="skip-links"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledContainer-gBGbkw bdAanV"
+    class="StyledLayer__StyledContainer-gBGbkw dLSDjx"
   >
     <div
       class="StyledBox-bStriS kLwTeJ"
@@ -154,7 +152,7 @@ exports[`SkipLink mounts 3`] = `
 exports[`SkipLink mounts 4`] = `
 "
 
-.bGwGvr {
+.diSzRA {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -166,13 +164,14 @@ exports[`SkipLink mounts 4`] = `
   -webkit-font-smoothing: antialiased;
   position: relative;
   z-index: 10;
+  width: 100vw;
   height: 100vh;
   overflow: auto;
   background-color: rgba(0,0,0,0.5);
 }
 
 @media only screen and (min-width:700px) {
-  .bGwGvr {
+  .diSzRA {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -182,48 +181,43 @@ exports[`SkipLink mounts 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .eBaMuM {
+  .buXZQX {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .eBaMuM {
+  .buXZQX {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
     overflow: auto;
     border-radius: 4px;
-    -webkit-undefined: undefined;
-    -ms-flex-undefined: undefined;
-    undefined: undefined;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bdAanV {
+  .dLSDjx {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bdAanV {
+  .dLSDjx {
     position: absolute;
     max-height: 100%;
     max-width: 100%;
     overflow: auto;
     border-radius: 4px;
+    top: 0;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    -webkit-animation: fVNlMJ 0.2s ease-in-out forwards;
-    animation: fVNlMJ 0.2s ease-in-out forwards;
-    -webkit-undefined: undefined;
-    -ms-flex-undefined: undefined;
-    undefined: undefined;
+    -webkit-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    -webkit-animation: bAkQbM 0.2s ease-in-out forwards;
+    animation: bAkQbM 0.2s ease-in-out forwards;
   }
 }"
 `;
@@ -237,12 +231,12 @@ exports[`SkipLink mounts 5`] = `
       hidden=""
     >
       <div
-        class="StyledLayer-ceZzeh gVCohQ"
+        class="StyledLayer-ceZzeh bcWTAx"
         id="skip-links"
         tabindex="-1"
       >
         <div
-          class="StyledLayer__StyledContainer-gBGbkw eBaMuM"
+          class="StyledLayer__StyledContainer-gBGbkw buXZQX"
         >
           <div
             class="StyledBox-bStriS kLwTeJ"

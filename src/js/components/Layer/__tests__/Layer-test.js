@@ -45,42 +45,21 @@ class FakeLayer extends Component {
 describe('Layer', () => {
   beforeEach(createPortal);
 
-  test('aligns left', () => {
-    mount(
-      <Layer id='left-test' position='left'>
-        This is a layer
-      </Layer>
-    );
+  ['top', 'bottom', 'left', 'right', 'center'].forEach(position => (
+    [true, false, 'horizontal', 'vertical'].forEach(full => (
+      ['none', 'xsmall', 'small', 'medium', 'large'].forEach(margin => (
+        test(`position ${position} full ${full} margin ${margin}`, () => {
+          mount(
+            <Layer id='position-test' position={position} full={full} margin={margin}>
+              This is a layer
+            </Layer>
+          );
 
-    expectPortal('left-test').toMatchSnapshot();
-  });
-
-  test('aligns right', () => {
-    mount(
-      <Layer id='right-test' position='right'>
-        This is a layer
-      </Layer>
-    );
-    expectPortal('right-test').toMatchSnapshot();
-  });
-
-  test('aligns top', () => {
-    mount(
-      <Layer id='top-test' position='top'>
-        This is a layer
-      </Layer>
-    );
-    expectPortal('top-test').toMatchSnapshot();
-  });
-
-  test('aligns bottom', () => {
-    mount(
-      <Layer id='bottom-test' position='bottom'>
-        This is a layer
-      </Layer>
-    );
-    expectPortal('bottom-test').toMatchSnapshot();
-  });
+          expectPortal('position-test').toMatchSnapshot();
+        })
+      ))
+    ))
+  ));
 
   test('hides', () => {
     const component = mount(
@@ -104,16 +83,6 @@ describe('Layer', () => {
     );
 
     expectPortal('plain-test').toMatchSnapshot();
-  });
-
-  test('full margin renders', () => {
-    mount(
-      <Layer id='full-margin-test' margin='large' full={true}>
-        This is a full layer with margin
-      </Layer>
-    );
-
-    expectPortal('full-margin-test').toMatchSnapshot();
   });
 
   test('invokes onEsc', () => {

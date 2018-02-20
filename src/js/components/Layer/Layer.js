@@ -10,6 +10,8 @@ import doc from './doc';
 
 class Layer extends Component {
   static defaultProps = {
+    full: false,
+    margin: 'none',
     position: 'center',
   }
 

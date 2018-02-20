@@ -262,12 +262,10 @@ exports[`Menu with dropAlign renders 2`] = `
   margin: 0;
   background-color: transparent;
   overflow: visible;
-  -webkit-text-transform: none;
   text-transform: none;
   color: inherit;
   border: none;
   padding: 0;
-  -webkit-text-align: inherit;
   text-align: inherit;
 }
 
