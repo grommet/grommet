@@ -393,14 +393,6 @@ column layout when the display area narrows.
 boolean
 ```
 
-**reverse**
-
-Whether to reverse the order of the child components.
-
-```
-boolean
-```
-
 **round**
 
 How much to round the corners.
@@ -419,16 +411,6 @@ The DOM tag to use for the element. Defaults to `div`.
 
 ```
 string
-```
-
-**textAlign**
-
-How to align the text inside the box.
-
-```
-start
-center
-end
 ```
 
 **wrap**
