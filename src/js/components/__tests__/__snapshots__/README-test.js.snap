@@ -544,7 +544,7 @@ boolean
 
 **focusIndicator**
 
-Whether when 'plain' it should receive a focus outline.
+Whether when 'plain' it should receive a focus outline. Defaults to \`true\`.
 
 \`\`\`
 boolean
@@ -1721,6 +1721,14 @@ large
     medium
     large
 }
+\`\`\`
+
+**modal**
+
+Whether there should be an overlay preventing interaction underneath the layer. Defaults to \`true\`.
+
+\`\`\`
+boolean
 \`\`\`
 
 **onClickOutside**

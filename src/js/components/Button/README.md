@@ -45,7 +45,7 @@ boolean
 
 **focusIndicator**
 
-Whether when 'plain' it should receive a focus outline.
+Whether when 'plain' it should receive a focus outline. Defaults to `true`.
 
 ```
 boolean

@@ -68,6 +68,14 @@ large
 }
 ```
 
+**modal**
+
+Whether there should be an overlay preventing interaction underneath the layer. Defaults to `true`.
+
+```
+boolean
+```
+
 **onClickOutside**
 
 Function that will be invoked when the user clicks outside the layer.

@@ -85,6 +85,16 @@ describe('Layer', () => {
     expectPortal('plain-test').toMatchSnapshot();
   });
 
+  test('non-modal renders', () => {
+    mount(
+      <Layer id='non-modal-test' modal={false}>
+        This is a non-modal layer
+      </Layer>
+    );
+
+    expectPortal('non-modal-test').toMatchSnapshot();
+  });
+
   test('invokes onEsc', () => {
     const onEsc = jest.fn();
     const component = mount(

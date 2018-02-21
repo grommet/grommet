@@ -17,8 +17,7 @@ const StyledLayer = styled.div`
   width: 100vw;
   height: 100vh;
   overflow: auto;
-
-  background-color: ${props => (props.plain ? 'transparent' : props.theme.layer.overlayBackgroundColor)};
+  pointer-events: none;
 
   ${props => (props.position === 'hidden' ? hiddenPositionStyle : lapAndUp(`
     position: fixed;
@@ -27,6 +26,17 @@ const StyledLayer = styled.div`
     right: 0px;
     bottom: 0px;
   `))}
+`;
+
+export const StyledOverlay = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: ${props =>
+    props.theme.layer.overlayBackgroundColor};
+  pointer-events: all;
 `;
 
 const MARGINS = {
@@ -297,12 +307,14 @@ const POSITIONS = {
 };
 
 export const StyledContainer = styled.div`
+  ${props => (!props.modal ? baseStyle : '')}
   display: flex;
   flex-direction: column;
   min-height: ${props => props.theme.global.size.xxsmall};
-  outline: none;
-
   background-color: ${props => (props.plain ? 'transparent' : props.theme.layer.backgroundColor)};
+  outline: none;
+  pointer-events: all;
+  z-index: 15;
 
   ${palm(`
     min-height: 100%;
@@ -310,7 +322,7 @@ export const StyledContainer = styled.div`
   `)}
 
   ${props => lapAndUp(`
-    position: absolute;
+    position: ${(props.modal ? 'absolute' : 'fixed')};
     max-height: 100%;
     max-width: 100%;
     overflow: auto;

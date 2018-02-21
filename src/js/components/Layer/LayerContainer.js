@@ -5,12 +5,13 @@ import FocusedContainer from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 import { withTheme } from '../hocs';
 
-import StyledLayer, { StyledContainer } from './StyledLayer';
+import StyledLayer, { StyledContainer, StyledOverlay } from './StyledLayer';
 
 class LayerContainer extends Component {
   static defaultProps = {
     full: false,
     margin: 'none',
+    modal: true,
     position: 'center',
   }
 
@@ -28,9 +29,9 @@ class LayerContainer extends Component {
   }
 
   makeLayerVisible = () => {
-    const layerNode = findDOMNode(this.layerNodeRef);
-    if (layerNode.scrollIntoView) {
-      layerNode.scrollIntoView();
+    const node = findDOMNode(this.layerRef || this.containerRef);
+    if (node && node.scrollIntoView) {
+      node.scrollIntoView();
     }
   }
 
@@ -38,6 +39,7 @@ class LayerContainer extends Component {
     const {
       children,
       id,
+      modal,
       onClickOutside,
       onEsc,
       plain,
@@ -46,25 +48,53 @@ class LayerContainer extends Component {
       ...rest
     } = this.props;
 
-    return (
-      <FocusedContainer hidden={position === 'hidden'} restrictScroll={true}>
-        <Keyboard onEsc={onEsc}>
-          <StyledLayer
-            id={id}
-            onClick={onClickOutside}
-            plain={plain}
-            position={position}
-            theme={theme}
-            tabIndex='-1'
-            ref={(ref) => { this.layerNodeRef = ref; }}
-          >
-            <StyledContainer {...rest} theme={theme} position={position} plain={plain}>
-              {children}
-            </StyledContainer>
-          </StyledLayer>
-        </Keyboard>
-      </FocusedContainer>
+    let content = (
+      <StyledContainer
+        id={id}
+        {...rest}
+        theme={theme}
+        position={position}
+        plain={plain}
+        ref={(ref) => { this.containerRef = ref; }}
+      >
+        {children}
+      </StyledContainer>
     );
+
+    if (modal) {
+      content = (
+        <StyledLayer
+          id={id}
+          onClick={onClickOutside}
+          plain={plain}
+          position={position}
+          theme={theme}
+          tabIndex='-1'
+          ref={(ref) => { this.layerRef = ref; }}
+        >
+          <StyledOverlay theme={theme} />
+          {content}
+        </StyledLayer>
+      );
+    }
+
+    if (onEsc) {
+      content = (
+        <Keyboard onEsc={onEsc}>
+          {content}
+        </Keyboard>
+      );
+    }
+
+    if (modal) {
+      content = (
+        <FocusedContainer hidden={position === 'hidden'} restrictScroll={true}>
+          {content}
+        </FocusedContainer>
+      );
+    }
+
+    return content;
   }
 }
 
