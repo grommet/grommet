@@ -8,6 +8,12 @@ import { withTheme } from '../hocs';
 import StyledLayer, { StyledContainer } from './StyledLayer';
 
 class LayerContainer extends Component {
+  static defaultProps = {
+    full: false,
+    margin: 'none',
+    position: 'center',
+  }
+
   componentDidMount() {
     const { position } = this.props;
     if (position !== 'hidden') {
