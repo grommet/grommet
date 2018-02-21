@@ -5,10 +5,10 @@ import 'jest-styled-components';
 import { Grommet } from '../../Grommet';
 import { Calendar } from '../';
 
-const DATE = '2018-01-15T00:00:00Z';
+const DATE = '2018-01-15T00:00:00 GMT-08:00';
 const DATES = [
-  '2018-01-12T00:00:00Z',
-  ['2018-01-8T00:00:00Z', '2018-01-10T00:00:00Z'],
+  '2018-01-12T00:00:00 GMT-08:00',
+  ['2018-01-8T00:00:00 GMT-08:00', '2018-01-10T00:00:00 GMT-08:00'],
 ];
 
 test('Calendar renders', () => {
