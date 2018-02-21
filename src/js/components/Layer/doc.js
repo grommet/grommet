@@ -36,6 +36,9 @@ export default (Layer) => {
 distinguish horizontal margin, vertical margin, and margin on a
 particular side of the layer`
     ),
+    modal: PropTypes.bool.description(
+      'Whether there should be an overlay preventing interaction underneath the layer.'
+    ).defaultValue(true),
     onClickOutside: PropTypes.bool.description(
       'Function that will be invoked when the user clicks outside the layer.'
     ),

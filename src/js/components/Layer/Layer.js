@@ -12,6 +12,7 @@ class Layer extends Component {
   static defaultProps = {
     full: false,
     margin: 'none',
+    modal: true,
     position: 'center',
   }
 
