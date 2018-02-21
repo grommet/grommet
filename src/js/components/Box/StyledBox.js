@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { backgroundStyle, colorForName, palm } from '../../utils';
+import { backgroundStyle, colorForName, edgeStyle, palm } from '../../utils';
 
 const ALIGN_MAP = {
   baseline: 'baseline',
@@ -132,38 +132,6 @@ const borderStyle = (data, theme) => {
     style = `border: ${value};`;
   }
   return style;
-};
-
-const edgeStyle = (kind, data, theme) => {
-  if (typeof data === 'string') {
-    return `${kind}: ${theme.global.edgeSize[data]};`;
-  }
-  let result = '';
-  if (data.horizontal) {
-    result += `
-      ${kind}-left: ${theme.global.edgeSize[data.horizontal]};
-      ${kind}-right: ${theme.global.edgeSize[data.horizontal]};
-    `;
-  }
-  if (data.vertical) {
-    result += `
-      ${kind}-top: ${theme.global.edgeSize[data.vertical]};
-      ${kind}-bottom: ${theme.global.edgeSize[data.vertical]};
-    `;
-  }
-  if (data.top) {
-    result += `${kind}-top: ${theme.global.edgeSize[data.top]};`;
-  }
-  if (data.bottom) {
-    result += `${kind}-bottom: ${theme.global.edgeSize[data.bottom]};`;
-  }
-  if (data.left) {
-    result += `${kind}-left: ${theme.global.edgeSize[data.left]};`;
-  }
-  if (data.right) {
-    result += `${kind}-right: ${theme.global.edgeSize[data.right]};`;
-  }
-  return result;
 };
 
 const ROUND_MAP = {

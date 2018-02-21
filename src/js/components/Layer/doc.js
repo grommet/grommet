@@ -2,6 +2,8 @@ import { describe, PropTypes } from 'react-desc';
 
 import { getAvailableAtBadge } from '../../utils';
 
+const PAD_SIZES = ['xsmall', 'small', 'medium', 'large'];
+
 export default (Layer) => {
   const DocumentedLayer = describe(Layer)
     .availableAt(getAvailableAtBadge('Layer'))
@@ -14,6 +16,26 @@ export default (Layer) => {
     );
 
   DocumentedLayer.propTypes = {
+    full: PropTypes.oneOfType([
+      PropTypes.bool, PropTypes.oneOf(['vertical', 'horizontal']),
+    ]).description(
+      'Whether the width and/or height should fill the current viewport size.'
+    ),
+    margin: PropTypes.oneOfType([
+      PropTypes.oneOf(['none', ...PAD_SIZES]),
+      PropTypes.shape({
+        bottom: PropTypes.oneOf(PAD_SIZES),
+        horizontal: PropTypes.oneOf(PAD_SIZES),
+        left: PropTypes.oneOf(PAD_SIZES),
+        right: PropTypes.oneOf(PAD_SIZES),
+        top: PropTypes.oneOf(PAD_SIZES),
+        vertical: PropTypes.oneOf(PAD_SIZES),
+      }),
+    ]).description(
+      `The amount of margin around the Layer. An object can be specified to
+distinguish horizontal margin, vertical margin, and margin on a
+particular side of the layer`
+    ),
     onClickOutside: PropTypes.bool.description(
       'Function that will be invoked when the user clicks outside the layer.'
     ),

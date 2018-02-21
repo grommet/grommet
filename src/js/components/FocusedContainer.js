@@ -63,6 +63,7 @@ export default class FocusedContainer extends Component {
 
   render() {
     const { children, ...rest } = this.props;
+    delete rest.restrictScroll;
     return (
       <div ref={(ref) => { this.ref = ref; }} onBlur={this.removeTrap} {...rest}>
         {children}
