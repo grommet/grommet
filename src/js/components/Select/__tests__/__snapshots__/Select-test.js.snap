@@ -19,7 +19,6 @@ exports[`Select closes drop on esc 1`] = `
     >
       <button
         class="StyledButton-gXzblK khQPBH"
-        tabindex="0"
         role="menuitem"
         type="button"
       >
@@ -36,7 +35,6 @@ exports[`Select closes drop on esc 1`] = `
       </button>
       <button
         class="StyledButton-gXzblK khQPBH"
-        tabindex="0"
         role="menuitem"
         type="button"
       >
@@ -308,7 +306,6 @@ exports[`Select mounts 3`] = `
     >
       <button
         class="StyledButton-gXzblK khQPBH"
-        tabindex="0"
         role="menuitem"
         type="button"
       >
@@ -325,7 +322,6 @@ exports[`Select mounts 3`] = `
       </button>
       <button
         class="StyledButton-gXzblK khQPBH"
-        tabindex="0"
         role="menuitem"
         type="button"
       >
@@ -387,7 +383,6 @@ exports[`Select mounts 5`] = `
 >
   <button
     class="StyledButton-gXzblK khQPBH"
-    tabindex="0"
     role="menuitem"
     type="button"
   >
@@ -404,7 +399,6 @@ exports[`Select mounts 5`] = `
   </button>
   <button
     class="StyledButton-gXzblK khQPBH"
-    tabindex="0"
     role="menuitem"
     type="button"
   >
@@ -541,7 +535,6 @@ exports[`Select mounts with complex options and children 3`] = `
     >
       <button
         class="StyledButton-gXzblK khQPBH"
-        tabindex="0"
         role="menuitem"
         type="button"
       >
@@ -551,7 +544,6 @@ exports[`Select mounts with complex options and children 3`] = `
       </button>
       <button
         class="StyledButton-gXzblK khQPBH"
-        tabindex="0"
         role="menuitem"
         type="button"
       >
@@ -631,7 +623,6 @@ exports[`Select mounts with search 1`] = `
     >
       <button
         class="StyledButton-gXzblK khQPBH"
-        tabindex="0"
         role="menuitem"
         type="button"
       >
@@ -648,7 +639,6 @@ exports[`Select mounts with search 1`] = `
       </button>
       <button
         class="StyledButton-gXzblK khQPBH"
-        tabindex="0"
         role="menuitem"
         type="button"
       >
@@ -744,7 +734,6 @@ exports[`Select mounts with search 4`] = `
     >
       <button
         class="StyledButton-gXzblK khQPBH"
-        tabindex="0"
         role="menuitem"
         type="button"
       >
@@ -761,7 +750,6 @@ exports[`Select mounts with search 4`] = `
       </button>
       <button
         class="StyledButton-gXzblK khQPBH"
-        tabindex="0"
         role="menuitem"
         type="button"
       >

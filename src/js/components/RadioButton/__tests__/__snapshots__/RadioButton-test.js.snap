@@ -133,7 +133,6 @@ exports[`RadioButton checked renders 1`] = `
         id={undefined}
         name={undefined}
         onChange={undefined}
-        tabIndex="0"
         type="radio"
       />
       <div
@@ -288,7 +287,6 @@ exports[`RadioButton disabled renders 1`] = `
         id={undefined}
         name={undefined}
         onChange={undefined}
-        tabIndex="0"
         type="radio"
       />
       <div
@@ -321,7 +319,6 @@ exports[`RadioButton disabled renders 1`] = `
         id={undefined}
         name={undefined}
         onChange={undefined}
-        tabIndex="0"
         type="radio"
       />
       <div
@@ -476,7 +473,6 @@ exports[`RadioButton label renders 1`] = `
         id={undefined}
         name={undefined}
         onChange={undefined}
-        tabIndex="0"
         type="radio"
       />
       <div
@@ -512,7 +508,6 @@ exports[`RadioButton label renders 1`] = `
         id={undefined}
         name={undefined}
         onChange={undefined}
-        tabIndex="0"
         type="radio"
       />
       <div
@@ -670,7 +665,6 @@ exports[`RadioButton renders 1`] = `
         id={undefined}
         name={undefined}
         onChange={undefined}
-        tabIndex="0"
         type="radio"
       />
       <div
@@ -703,7 +697,6 @@ exports[`RadioButton renders 1`] = `
         id="test id"
         name="test name"
         onChange={undefined}
-        tabIndex="0"
         type="radio"
       />
       <div
