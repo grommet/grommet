@@ -61,11 +61,8 @@ class Button extends Component {
       ['reset', 'submit'].indexOf(type) === -1
     );
 
-    // tabIndex is needed because you may use button inside an svg
-    // without tabIndex it does not work in that scenario
     return (
       <Tag
-        tabIndex='0'
         {...rest}
         aria-label={a11yTitle}
         disabled={disabled}
