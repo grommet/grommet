@@ -135,7 +135,6 @@ exports[`CheckBox checked renders 1`] = `
         id={undefined}
         name={undefined}
         onChange={undefined}
-        tabIndex="0"
         type="checkbox"
       />
       <div
@@ -291,7 +290,6 @@ exports[`CheckBox disabled renders 1`] = `
         id={undefined}
         name={undefined}
         onChange={undefined}
-        tabIndex="0"
         type="checkbox"
       />
       <div
@@ -323,7 +321,6 @@ exports[`CheckBox disabled renders 1`] = `
         id={undefined}
         name={undefined}
         onChange={undefined}
-        tabIndex="0"
         type="checkbox"
       />
       <div
@@ -484,7 +481,6 @@ exports[`CheckBox label renders 1`] = `
         id={undefined}
         name={undefined}
         onChange={undefined}
-        tabIndex="0"
         type="checkbox"
       />
       <div
@@ -519,7 +515,6 @@ exports[`CheckBox label renders 1`] = `
         id={undefined}
         name={undefined}
         onChange={undefined}
-        tabIndex="0"
         type="checkbox"
       />
       <div
@@ -678,7 +673,6 @@ exports[`CheckBox renders 1`] = `
         id={undefined}
         name={undefined}
         onChange={undefined}
-        tabIndex="0"
         type="checkbox"
       />
       <div
@@ -710,7 +704,6 @@ exports[`CheckBox renders 1`] = `
         id="test id"
         name="test name"
         onChange={undefined}
-        tabIndex="0"
         type="checkbox"
       />
       <div
@@ -866,7 +859,6 @@ exports[`CheckBox reverse renders 1`] = `
         id={undefined}
         name={undefined}
         onChange={undefined}
-        tabIndex="0"
         type="checkbox"
       />
       <div
@@ -1024,7 +1016,6 @@ exports[`CheckBox toggle renders 1`] = `
         id={undefined}
         name={undefined}
         onChange={undefined}
-        tabIndex="0"
         type="checkbox"
       />
       <span
@@ -1050,7 +1041,6 @@ exports[`CheckBox toggle renders 1`] = `
         id={undefined}
         name={undefined}
         onChange={undefined}
-        tabIndex="0"
         type="checkbox"
       />
       <span
@@ -1076,7 +1066,6 @@ exports[`CheckBox toggle renders 1`] = `
         id={undefined}
         name={undefined}
         onChange={undefined}
-        tabIndex="0"
         type="checkbox"
       />
       <span

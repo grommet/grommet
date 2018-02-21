@@ -31,7 +31,6 @@ class RadioButton extends Component {
         <StyledRadioButton theme={theme}>
           <StyledRadioButtonInput
             {...rest}
-            tabIndex='0'
             id={id}
             name={name}
             type='radio'

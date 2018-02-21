@@ -54,7 +54,6 @@ class CheckBox extends Component {
         <StyledCheckBox theme={theme}>
           <StyledCheckBoxInput
             {...rest}
-            tabIndex='0'
             id={id}
             name={name}
             type='checkbox'
