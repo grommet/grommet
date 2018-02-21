@@ -25,11 +25,6 @@ class Grommet extends Component {
     theme: PropTypes.object,
   }
 
-  static defaultProps = {
-    centered: true,
-    theme: undefined,
-  }
-
   getChildContext() {
     const { theme } = this.props;
 
