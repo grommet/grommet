@@ -34,7 +34,7 @@ export default (Button) => {
     ),
     focusIndicator: PropTypes.bool.description(
       'Whether when \'plain\' it should receive a focus outline.'
-    ),
+    ).defaultValue(true),
     hoverIndicator: PropTypes.oneOfType([
       PropTypes.oneOf(['background']),
       PropTypes.shape({
