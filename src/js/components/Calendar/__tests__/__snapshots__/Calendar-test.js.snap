@@ -822,33 +822,6 @@ exports[`Calendar date renders 1`] = `
             >
               <button
                 aria-label="Sun Jan 14 2018"
-                className="c13"
-                disabled={false}
-                href={undefined}
-                icon={undefined}
-                label={undefined}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="0"
-                type="button"
-              >
-                <div
-                  className="c15"
-                  size="medium"
-                >
-                  14
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-              size="medium"
-            >
-              <button
-                aria-label="Mon Jan 15 2018"
                 className="c16"
                 disabled={false}
                 href={undefined}
@@ -867,8 +840,35 @@ exports[`Calendar date renders 1`] = `
                   size="medium"
                 >
                   <strong>
-                    15
+                    14
                   </strong>
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+              size="medium"
+            >
+              <button
+                aria-label="Mon Jan 15 2018"
+                className="c13"
+                disabled={false}
+                href={undefined}
+                icon={undefined}
+                label={undefined}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <div
+                  className="c15"
+                  size="medium"
+                >
+                  15
                 </div>
               </button>
             </div>
@@ -2264,10 +2264,12 @@ exports[`Calendar dates renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c15"
+                  className="c16"
                   size="medium"
                 >
-                  9
+                  <strong>
+                    9
+                  </strong>
                 </div>
               </button>
             </div>
@@ -2291,12 +2293,10 @@ exports[`Calendar dates renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c16"
+                  className="c15"
                   size="medium"
                 >
-                  <strong>
-                    10
-                  </strong>
+                  10
                 </div>
               </button>
             </div>
@@ -2306,33 +2306,6 @@ exports[`Calendar dates renders 1`] = `
             >
               <button
                 aria-label="Thu Jan 11 2018"
-                className="c13"
-                disabled={false}
-                href={undefined}
-                icon={undefined}
-                label={undefined}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="0"
-                type="button"
-              >
-                <div
-                  className="c15"
-                  size="medium"
-                >
-                  11
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-              size="medium"
-            >
-              <button
-                aria-label="Fri Jan 12 2018"
                 className="c17"
                 disabled={false}
                 href={undefined}
@@ -2351,8 +2324,35 @@ exports[`Calendar dates renders 1`] = `
                   size="medium"
                 >
                   <strong>
-                    12
+                    11
                   </strong>
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+              size="medium"
+            >
+              <button
+                aria-label="Fri Jan 12 2018"
+                className="c13"
+                disabled={false}
+                href={undefined}
+                icon={undefined}
+                label={undefined}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <div
+                  className="c15"
+                  size="medium"
+                >
+                  12
                 </div>
               </button>
             </div>
@@ -3833,10 +3833,12 @@ exports[`Calendar disabled renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c15"
+                  className="c16"
                   size="medium"
                 >
-                  9
+                  <strong>
+                    9
+                  </strong>
                 </div>
               </button>
             </div>
@@ -3860,12 +3862,10 @@ exports[`Calendar disabled renders 1`] = `
                 type="button"
               >
                 <div
-                  className="c16"
+                  className="c15"
                   size="medium"
                 >
-                  <strong>
-                    10
-                  </strong>
+                  10
                 </div>
               </button>
             </div>
@@ -3875,33 +3875,6 @@ exports[`Calendar disabled renders 1`] = `
             >
               <button
                 aria-label="Thu Jan 11 2018"
-                className="c13"
-                disabled={false}
-                href={undefined}
-                icon={undefined}
-                label={undefined}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="0"
-                type="button"
-              >
-                <div
-                  className="c15"
-                  size="medium"
-                >
-                  11
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-              size="medium"
-            >
-              <button
-                aria-label="Fri Jan 12 2018"
                 className="c17"
                 disabled={false}
                 href={undefined}
@@ -3920,8 +3893,35 @@ exports[`Calendar disabled renders 1`] = `
                   size="medium"
                 >
                   <strong>
-                    12
+                    11
                   </strong>
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+              size="medium"
+            >
+              <button
+                aria-label="Fri Jan 12 2018"
+                className="c13"
+                disabled={false}
+                href={undefined}
+                icon={undefined}
+                label={undefined}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <div
+                  className="c15"
+                  size="medium"
+                >
+                  12
                 </div>
               </button>
             </div>
@@ -5527,33 +5527,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
             >
               <button
                 aria-label="Sun Jan 14 2018"
-                className="c13"
-                disabled={false}
-                href={undefined}
-                icon={undefined}
-                label={undefined}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="0"
-                type="button"
-              >
-                <div
-                  className="c15"
-                  size="medium"
-                >
-                  14
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-              size="medium"
-            >
-              <button
-                aria-label="Mon Jan 15 2018"
                 className="c16"
                 disabled={false}
                 href={undefined}
@@ -5572,8 +5545,35 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                   size="medium"
                 >
                   <strong>
-                    15
+                    14
                   </strong>
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+              size="medium"
+            >
+              <button
+                aria-label="Mon Jan 15 2018"
+                className="c13"
+                disabled={false}
+                href={undefined}
+                icon={undefined}
+                label={undefined}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <div
+                  className="c15"
+                  size="medium"
+                >
+                  15
                 </div>
               </button>
             </div>
@@ -6756,37 +6756,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
             >
               <button
                 aria-label="Sun Jan 14 2018"
-                className="c13"
-                disabled={false}
-                href={undefined}
-                icon={undefined}
-                label={undefined}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="0"
-                type="button"
-              >
-                <div
-                  className="c15"
-                  size="medium"
-                >
-                  14
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            className="c11"
-          >
-            <div
-              className="c12"
-              size="medium"
-            >
-              <button
-                aria-label="Mon Jan 15 2018"
                 className="c16"
                 disabled={false}
                 href={undefined}
@@ -6805,8 +6774,39 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
                   size="medium"
                 >
                   <strong>
-                    15
+                    14
                   </strong>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            className="c11"
+          >
+            <div
+              className="c12"
+              size="medium"
+            >
+              <button
+                aria-label="Mon Jan 15 2018"
+                className="c13"
+                disabled={false}
+                href={undefined}
+                icon={undefined}
+                label={undefined}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <div
+                  className="c15"
+                  size="medium"
+                >
+                  15
                 </div>
               </button>
             </div>
@@ -8354,33 +8354,6 @@ exports[`Calendar renders 1`] = `
             >
               <button
                 aria-label="Sun Jan 14 2018"
-                className="c13"
-                disabled={false}
-                href={undefined}
-                icon={undefined}
-                label={undefined}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="0"
-                type="button"
-              >
-                <div
-                  className="c15"
-                  size="medium"
-                >
-                  14
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-              size="medium"
-            >
-              <button
-                aria-label="Mon Jan 15 2018"
                 className="c16"
                 disabled={false}
                 href={undefined}
@@ -8399,8 +8372,35 @@ exports[`Calendar renders 1`] = `
                   size="medium"
                 >
                   <strong>
-                    15
+                    14
                   </strong>
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+              size="medium"
+            >
+              <button
+                aria-label="Mon Jan 15 2018"
+                className="c13"
+                disabled={false}
+                href={undefined}
+                icon={undefined}
+                label={undefined}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <div
+                  className="c15"
+                  size="medium"
+                >
+                  15
                 </div>
               </button>
             </div>
@@ -10093,33 +10093,6 @@ exports[`Calendar size renders 1`] = `
             >
               <button
                 aria-label="Sun Jan 14 2018"
-                className="c13"
-                disabled={false}
-                href={undefined}
-                icon={undefined}
-                label={undefined}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="0"
-                type="button"
-              >
-                <div
-                  className="c15"
-                  size="small"
-                >
-                  14
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-              size="small"
-            >
-              <button
-                aria-label="Mon Jan 15 2018"
                 className="c16"
                 disabled={false}
                 href={undefined}
@@ -10138,8 +10111,35 @@ exports[`Calendar size renders 1`] = `
                   size="small"
                 >
                   <strong>
-                    15
+                    14
                   </strong>
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+              size="small"
+            >
+              <button
+                aria-label="Mon Jan 15 2018"
+                className="c13"
+                disabled={false}
+                href={undefined}
+                icon={undefined}
+                label={undefined}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <div
+                  className="c15"
+                  size="small"
+                >
+                  15
                 </div>
               </button>
             </div>
@@ -11353,33 +11353,6 @@ exports[`Calendar size renders 1`] = `
             >
               <button
                 aria-label="Sun Jan 14 2018"
-                className="c13"
-                disabled={false}
-                href={undefined}
-                icon={undefined}
-                label={undefined}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="0"
-                type="button"
-              >
-                <div
-                  className="c22"
-                  size="medium"
-                >
-                  14
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-              size="medium"
-            >
-              <button
-                aria-label="Mon Jan 15 2018"
                 className="c16"
                 disabled={false}
                 href={undefined}
@@ -11398,8 +11371,35 @@ exports[`Calendar size renders 1`] = `
                   size="medium"
                 >
                   <strong>
-                    15
+                    14
                   </strong>
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+              size="medium"
+            >
+              <button
+                aria-label="Mon Jan 15 2018"
+                className="c13"
+                disabled={false}
+                href={undefined}
+                icon={undefined}
+                label={undefined}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <div
+                  className="c22"
+                  size="medium"
+                >
+                  15
                 </div>
               </button>
             </div>
@@ -12613,33 +12613,6 @@ exports[`Calendar size renders 1`] = `
             >
               <button
                 aria-label="Sun Jan 14 2018"
-                className="c13"
-                disabled={false}
-                href={undefined}
-                icon={undefined}
-                label={undefined}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseDown={[Function]}
-                onMouseUp={[Function]}
-                tabIndex="0"
-                type="button"
-              >
-                <div
-                  className="c29"
-                  size="large"
-                >
-                  14
-                </div>
-              </button>
-            </div>
-            <div
-              className="c12"
-              size="large"
-            >
-              <button
-                aria-label="Mon Jan 15 2018"
                 className="c16"
                 disabled={false}
                 href={undefined}
@@ -12658,8 +12631,35 @@ exports[`Calendar size renders 1`] = `
                   size="large"
                 >
                   <strong>
-                    15
+                    14
                   </strong>
+                </div>
+              </button>
+            </div>
+            <div
+              className="c12"
+              size="large"
+            >
+              <button
+                aria-label="Mon Jan 15 2018"
+                className="c13"
+                disabled={false}
+                href={undefined}
+                icon={undefined}
+                label={undefined}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <div
+                  className="c29"
+                  size="large"
+                >
+                  15
                 </div>
               </button>
             </div>
