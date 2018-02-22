@@ -1,4 +1,5 @@
 import React from 'react';
+import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import Enzyme, { mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -16,13 +17,6 @@ class DayTimeDate extends RealDate {
   }
 }
 
-class NightTimeDate extends RealDate {
-  constructor() {
-    super();
-    return new RealDate('2017-06-13T18:40:30.000Z');
-  }
-}
-
 describe('Clock', () => {
   beforeEach(() => {
     global.Date = DayTimeDate;
@@ -32,59 +26,38 @@ describe('Clock', () => {
     global.Date = RealDate;
   });
 
-  test('renders', (done) => {
+  test('Clock run renders', (done) => {
     const component = mount(
       <Grommet>
-        <Clock seconds={true} />
+        <Clock type='analog' run='forward' />
+        <Clock type='analog' run='backward' />
+        <Clock type='digital' run='forward' />
+        <Clock type='digital' run='backward' />
       </Grommet>
     );
     expect(component.getDOMNode()).toMatchSnapshot();
 
-    // give sometime for the clock to move and use the callback
+    // give some time for the clock to move and use the callback
     setTimeout(() => {
       expect(component.getDOMNode()).toMatchSnapshot();
-
       component.unmount();
-
       done();
     }, 1100);
   });
 
-  test('night renders', (done) => {
-    global.Date = NightTimeDate;
-
-    const component = mount(
-      <Clock night={true} />
-    );
-    expect(component.getDOMNode()).toMatchSnapshot();
-
-    // give sometime for the clock to move and use the callback
-    setTimeout(() => {
-      component.setProps({ timezone: 'America/Sao_Paulo' });
-
-      expect(component.getDOMNode()).toMatchSnapshot();
-
-      component.unmount();
-
-      done();
-    }, 1100);
-  });
-
-  test('animates second hand', (done) => {
-    global.Date = NightTimeDate;
-
-    const component = mount(
-      <Clock seconds={true} />
-    );
-    expect(component.getDOMNode()).toMatchSnapshot();
-
-    // give sometime for the clock to move and use the callback
-    setTimeout(() => {
-      expect(component.getDOMNode()).toMatchSnapshot();
-
-      component.unmount();
-
-      done();
-    }, 1100);
-  });
+  ['analog', 'digital'].forEach(type => (
+    ['hours', 'minutes', 'seconds'].forEach(precision => (
+      ['xsmall', 'small', 'medium', 'large', 'xlarge'].forEach(size => (
+        test(`type ${type} precision ${precision} size ${size}`, () => {
+          const component = renderer.create(
+            <Grommet>
+              <Clock run={false} type={type} precision={precision} size={size} />
+            </Grommet>
+          );
+          const tree = component.toJSON();
+          expect(tree).toMatchSnapshot();
+        })
+      ))
+    ))
+  ));
 });

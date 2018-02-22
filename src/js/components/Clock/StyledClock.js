@@ -1,60 +1,85 @@
 import styled, { css, keyframes } from 'styled-components';
 
-
-const rotateKeyframe = keyframes`
-    100% {
-      transform: rotateZ(360deg);
-    }
-`;
-
-export const StyledCircle = styled.circle`
-  stroke-width: ${props => props.theme.clock.circle.width};
-  stroke: ${props => props.theme.clock.circle.color.day};
-  transition: stroke 1s ease-out;
-
-  ${props => props.night && css`
-    stroke: ${props.theme.clock.circle.color.night};
-    fill: ${props.theme.clock.circle.color.night};
-    transition: fill 1s ease;
-  `}
-`;
-
 export const StyledHour = styled.line`
-  stroke-width: ${props => props.theme.clock.hour.width};
-  stroke: ${props => (props.night ? props.theme.clock.hour.color.night : props.theme.clock.hour.color.day)};
+  stroke-width: ${props => props.theme.clock.analog.hour.width};
+  stroke: ${props =>
+    props.theme.clock.analog.hour.color[props.grommet.dark ? 'dark' : 'light']};
   transition: stroke 1s ease-out;
-
-  ${props => props.animate && `
-    animation: ${rotateKeyframe} 43200s infinite linear;
-  `}
 `;
 
 export const StyledMinute = styled.line`
-  stroke-width: ${props => props.theme.clock.minute.width};
-  stroke: ${props => (props.night ? props.theme.clock.minute.color.night : props.theme.clock.minute.color.day)};
+  stroke-width: ${props => props.theme.clock.analog.minute.width};
+  stroke: ${props =>
+    props.theme.clock.analog.minute.color[props.grommet.dark ? 'dark' : 'light']};
   transition: stroke 1s ease-out;
-
-  ${props => props.animate && `
-    animation: ${rotateKeyframe} 3600s infinite steps(60);
-    animation-delay: 1s;
-  `}
 `;
 
 export const StyledSecond = styled.line`
-  stroke-width: ${props => props.theme.clock.second.width};
-  stroke: ${props => (props.night ? props.theme.clock.second.color.night : props.theme.clock.second.color.day)};
+  stroke-width: ${props => props.theme.clock.analog.second.width};
+  stroke: ${props =>
+    props.theme.clock.analog.second.color[props.grommet.dark ? 'dark' : 'light']};
   transition: stroke 1s ease-out;
-
-  ${props => props.animate && `
-    animation: ${rotateKeyframe} 60s infinite steps(60);
-  `}
 `;
 
-const StyledClock = styled.svg`
-  width: ${props => props.theme.clock.size[props.size]};
-  height: ${props => props.theme.clock.size[props.size]};
+export const StyledAnalog = styled.svg`
+  width: ${props => props.theme.clock.analog.size[props.size]};
+  height: ${props => props.theme.clock.analog.size[props.size]};
+`.extend`
+  ${props => props.theme.clock.analog && props.theme.clock.analog.extend}
 `;
 
-export default StyledClock.extend`
-  ${props => props.theme.clock && props.theme.clock.extend}
+const sizeStyle = (props) => {
+  // size is a combination of the level and size properties
+  const size = props.size || 'medium';
+  const data = props.theme.clock.digital.text[size];
+  return css`
+    font-size: ${data.size};
+    line-height: ${data.height};
+  `;
+};
+
+export const StyledDigitalDigit = styled.div`
+  position: relative;
+  width: 0.8em;
+  text-align: center;
+  overflow: hidden;
+  ${props => sizeStyle(props)}
+`;
+
+const previousUp = keyframes`
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+`;
+
+const previousDown = keyframes`
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+`;
+
+export const StyledDigitalPrevious = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.8em;
+  text-align: center;
+  animation: ${props => (props.direction === 'down' ? previousDown : previousUp)} 0.5s forwards;
+`;
+
+const nextUp = keyframes`
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(0); }
+`;
+
+const nextDown = keyframes`
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0); }
+`;
+
+export const StyledDigitalNext = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.8em;
+  text-align: center;
+  animation: ${props => (props.direction === 'down' ? nextDown : nextUp)} 0.5s forwards;
 `;

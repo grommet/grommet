@@ -1863,10 +1863,6 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
 
-date-time-format-timezone@^1.0.21-alpha.2:
-  version "1.0.21-alpha.2"
-  resolved "https://registry.yarnpkg.com/date-time-format-timezone/-/date-time-format-timezone-1.0.21-alpha.2.tgz#2db3288cc24cf7c6c6ae94c60d4c162a22a1fb69"
-
 debug@2.6.9, debug@^2.1.0, debug@^2.1.1, debug@^2.2.0, debug@^2.3.3, debug@^2.6.6, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -6146,8 +6142,8 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
 simple-git@^1.74.1:
-  version "1.89.0"
-  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.89.0.tgz#ef52fe734d5060566ce187b2bbace36c2323e34c"
+  version "1.91.0"
+  resolved "https://registry.yarnpkg.com/simple-git/-/simple-git-1.91.0.tgz#842db6c2ba08328e93c17391a895b850518cd13a"
   dependencies:
     debug "^3.1.0"
 

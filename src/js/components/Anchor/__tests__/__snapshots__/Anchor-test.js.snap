@@ -238,62 +238,81 @@ exports[`Anchor icon label renders 1`] = `
               },
             },
             "clock": Object {
-              "circle": Object {
-                "color": Object {
-                  "day": Array [
-                    [Function],
-                  ],
-                  "night": Array [
-                    [Function],
-                  ],
+              "analog": Object {
+                "hour": Object {
+                  "color": Object {
+                    "dark": Array [
+                      [Function],
+                    ],
+                    "light": Array [
+                      [Function],
+                    ],
+                  },
+                  "shape": "round",
+                  "size": "24px",
+                  "width": "8px",
                 },
-                "width": "2px",
-              },
-              "hour": Object {
-                "color": Object {
-                  "day": Array [
-                    [Function],
-                  ],
-                  "night": Array [
-                    [Function],
-                  ],
+                "minute": Object {
+                  "color": Object {
+                    "dark": Array [
+                      [Function],
+                    ],
+                    "light": Array [
+                      [Function],
+                    ],
+                  },
+                  "shape": "round",
+                  "size": "12px",
+                  "width": "4px",
                 },
-                "shape": "round",
-                "size": "24px",
-                "width": "3px",
-              },
-              "minute": Object {
-                "color": Object {
-                  "day": Array [
-                    [Function],
-                  ],
-                  "night": Array [
-                    [Function],
-                  ],
+                "second": Object {
+                  "color": Object {
+                    "dark": Array [
+                      [Function],
+                    ],
+                    "light": Array [
+                      [Function],
+                    ],
+                  },
+                  "shape": "round",
+                  "size": "9px",
+                  "width": "3px",
                 },
-                "shape": "round",
-                "size": "12px",
-                "width": "2px",
-              },
-              "second": Object {
-                "color": Object {
-                  "day": Array [
-                    [Function],
-                  ],
-                  "night": Array [
-                    [Function],
-                  ],
+                "size": Object {
+                  "huge": "288px",
+                  "large": "144px",
+                  "medium": "96px",
+                  "small": "72px",
+                  "xlarge": "216px",
                 },
-                "shape": "round",
-                "size": "9px",
-                "width": "1px",
               },
-              "size": Object {
-                "huge": "288px",
-                "large": "144px",
-                "medium": "96px",
-                "small": "72px",
-                "xlarge": "216px",
+              "digital": Object {
+                "text": Object {
+                  "large": Object {
+                    "height": 1.167,
+                    "size": "24px",
+                  },
+                  "medium": Object {
+                    "height": 1.375,
+                    "size": "16px",
+                  },
+                  "small": Object {
+                    "height": 1.43,
+                    "size": "14px",
+                  },
+                  "xlarge": Object {
+                    "height": 1.1875,
+                    "size": "32px",
+                  },
+                  "xsmall": Object {
+                    "height": 1.5,
+                    "size": "12px",
+                  },
+                  "xxlarge": Object {
+                    "height": 1.125,
+                    "size": "48px",
+                  },
+                },
               },
             },
             "global": Object {
@@ -853,62 +872,81 @@ exports[`Anchor primary renders 1`] = `
               },
             },
             "clock": Object {
-              "circle": Object {
-                "color": Object {
-                  "day": Array [
-                    [Function],
-                  ],
-                  "night": Array [
-                    [Function],
-                  ],
+              "analog": Object {
+                "hour": Object {
+                  "color": Object {
+                    "dark": Array [
+                      [Function],
+                    ],
+                    "light": Array [
+                      [Function],
+                    ],
+                  },
+                  "shape": "round",
+                  "size": "24px",
+                  "width": "8px",
                 },
-                "width": "2px",
-              },
-              "hour": Object {
-                "color": Object {
-                  "day": Array [
-                    [Function],
-                  ],
-                  "night": Array [
-                    [Function],
-                  ],
+                "minute": Object {
+                  "color": Object {
+                    "dark": Array [
+                      [Function],
+                    ],
+                    "light": Array [
+                      [Function],
+                    ],
+                  },
+                  "shape": "round",
+                  "size": "12px",
+                  "width": "4px",
                 },
-                "shape": "round",
-                "size": "24px",
-                "width": "3px",
-              },
-              "minute": Object {
-                "color": Object {
-                  "day": Array [
-                    [Function],
-                  ],
-                  "night": Array [
-                    [Function],
-                  ],
+                "second": Object {
+                  "color": Object {
+                    "dark": Array [
+                      [Function],
+                    ],
+                    "light": Array [
+                      [Function],
+                    ],
+                  },
+                  "shape": "round",
+                  "size": "9px",
+                  "width": "3px",
                 },
-                "shape": "round",
-                "size": "12px",
-                "width": "2px",
-              },
-              "second": Object {
-                "color": Object {
-                  "day": Array [
-                    [Function],
-                  ],
-                  "night": Array [
-                    [Function],
-                  ],
+                "size": Object {
+                  "huge": "288px",
+                  "large": "144px",
+                  "medium": "96px",
+                  "small": "72px",
+                  "xlarge": "216px",
                 },
-                "shape": "round",
-                "size": "9px",
-                "width": "1px",
               },
-              "size": Object {
-                "huge": "288px",
-                "large": "144px",
-                "medium": "96px",
-                "small": "72px",
-                "xlarge": "216px",
+              "digital": Object {
+                "text": Object {
+                  "large": Object {
+                    "height": 1.167,
+                    "size": "24px",
+                  },
+                  "medium": Object {
+                    "height": 1.375,
+                    "size": "16px",
+                  },
+                  "small": Object {
+                    "height": 1.43,
+                    "size": "14px",
+                  },
+                  "xlarge": Object {
+                    "height": 1.1875,
+                    "size": "32px",
+                  },
+                  "xsmall": Object {
+                    "height": 1.5,
+                    "size": "12px",
+                  },
+                  "xxlarge": Object {
+                    "height": 1.125,
+                    "size": "48px",
+                  },
+                },
               },
             },
             "global": Object {
@@ -1547,62 +1585,81 @@ exports[`Anchor reverse icon label renders 1`] = `
               },
             },
             "clock": Object {
-              "circle": Object {
-                "color": Object {
-                  "day": Array [
-                    [Function],
-                  ],
-                  "night": Array [
-                    [Function],
-                  ],
+              "analog": Object {
+                "hour": Object {
+                  "color": Object {
+                    "dark": Array [
+                      [Function],
+                    ],
+                    "light": Array [
+                      [Function],
+                    ],
+                  },
+                  "shape": "round",
+                  "size": "24px",
+                  "width": "8px",
                 },
-                "width": "2px",
-              },
-              "hour": Object {
-                "color": Object {
-                  "day": Array [
-                    [Function],
-                  ],
-                  "night": Array [
-                    [Function],
-                  ],
+                "minute": Object {
+                  "color": Object {
+                    "dark": Array [
+                      [Function],
+                    ],
+                    "light": Array [
+                      [Function],
+                    ],
+                  },
+                  "shape": "round",
+                  "size": "12px",
+                  "width": "4px",
                 },
-                "shape": "round",
-                "size": "24px",
-                "width": "3px",
-              },
-              "minute": Object {
-                "color": Object {
-                  "day": Array [
-                    [Function],
-                  ],
-                  "night": Array [
-                    [Function],
-                  ],
+                "second": Object {
+                  "color": Object {
+                    "dark": Array [
+                      [Function],
+                    ],
+                    "light": Array [
+                      [Function],
+                    ],
+                  },
+                  "shape": "round",
+                  "size": "9px",
+                  "width": "3px",
                 },
-                "shape": "round",
-                "size": "12px",
-                "width": "2px",
-              },
-              "second": Object {
-                "color": Object {
-                  "day": Array [
-                    [Function],
-                  ],
-                  "night": Array [
-                    [Function],
-                  ],
+                "size": Object {
+                  "huge": "288px",
+                  "large": "144px",
+                  "medium": "96px",
+                  "small": "72px",
+                  "xlarge": "216px",
                 },
-                "shape": "round",
-                "size": "9px",
-                "width": "1px",
               },
-              "size": Object {
-                "huge": "288px",
-                "large": "144px",
-                "medium": "96px",
-                "small": "72px",
-                "xlarge": "216px",
+              "digital": Object {
+                "text": Object {
+                  "large": Object {
+                    "height": 1.167,
+                    "size": "24px",
+                  },
+                  "medium": Object {
+                    "height": 1.375,
+                    "size": "16px",
+                  },
+                  "small": Object {
+                    "height": 1.43,
+                    "size": "14px",
+                  },
+                  "xlarge": Object {
+                    "height": 1.1875,
+                    "size": "32px",
+                  },
+                  "xsmall": Object {
+                    "height": 1.5,
+                    "size": "12px",
+                  },
+                  "xxlarge": Object {
+                    "height": 1.125,
+                    "size": "48px",
+                  },
+                },
               },
             },
             "global": Object {
@@ -2117,62 +2174,81 @@ exports[`Anchor warns about invalid icon render 1`] = `
               },
             },
             "clock": Object {
-              "circle": Object {
-                "color": Object {
-                  "day": Array [
-                    [Function],
-                  ],
-                  "night": Array [
-                    [Function],
-                  ],
+              "analog": Object {
+                "hour": Object {
+                  "color": Object {
+                    "dark": Array [
+                      [Function],
+                    ],
+                    "light": Array [
+                      [Function],
+                    ],
+                  },
+                  "shape": "round",
+                  "size": "24px",
+                  "width": "8px",
                 },
-                "width": "2px",
-              },
-              "hour": Object {
-                "color": Object {
-                  "day": Array [
-                    [Function],
-                  ],
-                  "night": Array [
-                    [Function],
-                  ],
+                "minute": Object {
+                  "color": Object {
+                    "dark": Array [
+                      [Function],
+                    ],
+                    "light": Array [
+                      [Function],
+                    ],
+                  },
+                  "shape": "round",
+                  "size": "12px",
+                  "width": "4px",
                 },
-                "shape": "round",
-                "size": "24px",
-                "width": "3px",
-              },
-              "minute": Object {
-                "color": Object {
-                  "day": Array [
-                    [Function],
-                  ],
-                  "night": Array [
-                    [Function],
-                  ],
+                "second": Object {
+                  "color": Object {
+                    "dark": Array [
+                      [Function],
+                    ],
+                    "light": Array [
+                      [Function],
+                    ],
+                  },
+                  "shape": "round",
+                  "size": "9px",
+                  "width": "3px",
                 },
-                "shape": "round",
-                "size": "12px",
-                "width": "2px",
-              },
-              "second": Object {
-                "color": Object {
-                  "day": Array [
-                    [Function],
-                  ],
-                  "night": Array [
-                    [Function],
-                  ],
+                "size": Object {
+                  "huge": "288px",
+                  "large": "144px",
+                  "medium": "96px",
+                  "small": "72px",
+                  "xlarge": "216px",
                 },
-                "shape": "round",
-                "size": "9px",
-                "width": "1px",
               },
-              "size": Object {
-                "huge": "288px",
-                "large": "144px",
-                "medium": "96px",
-                "small": "72px",
-                "xlarge": "216px",
+              "digital": Object {
+                "text": Object {
+                  "large": Object {
+                    "height": 1.167,
+                    "size": "24px",
+                  },
+                  "medium": Object {
+                    "height": 1.375,
+                    "size": "16px",
+                  },
+                  "small": Object {
+                    "height": 1.43,
+                    "size": "14px",
+                  },
+                  "xlarge": Object {
+                    "height": 1.1875,
+                    "size": "32px",
+                  },
+                  "xsmall": Object {
+                    "height": 1.5,
+                    "size": "12px",
+                  },
+                  "xxlarge": Object {
+                    "height": 1.125,
+                    "size": "48px",
+                  },
+                },
               },
             },
             "global": Object {

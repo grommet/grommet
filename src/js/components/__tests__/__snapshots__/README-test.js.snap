@@ -954,29 +954,34 @@ import { Clock } from 'grommet';
 
 ## Properties
 
-**date**
+**onChange**
 
-Date to be used in the Clock.
+If the clock is running, this function will be called with the
+      current time value each time it changes.
 
 \`\`\`
-object
-string
+function
 \`\`\`
 
-**night**
+**precision**
 
-Whether to force night or day mode for the Clock.
+How precise a time to represent.
+
+\`\`\`
+hours
+minutes
+seconds
+\`\`\`
+
+**run**
+
+Whether the clock should actively adjust time or be fixed to the
+      time specified. 'backward' could be used as a countdown timer. Defaults to \`forward\`.
 
 \`\`\`
 boolean
-\`\`\`
-
-**seconds**
-
-Whether to show seconds hand in the Clock.
-
-\`\`\`
-boolean
+backward
+forward
 \`\`\`
 
 **size**
@@ -991,12 +996,22 @@ xlarge
 huge
 \`\`\`
 
-**timezone**
+**time**
 
-IANA timezone to use in the Clock (e.g. America/Sao_Paulo). Defaults to \`America/Los_Angeles\`.
+ISO8601 time or duration to represent. Any included date
+      portion will be ignored for an analog clock.
 
 \`\`\`
 string
+\`\`\`
+
+**type**
+
+What type of visualization to show. Defaults to \`analog\`.
+
+\`\`\`
+analog
+digital
 \`\`\`
   ",
   "Diagram": "## Diagram
