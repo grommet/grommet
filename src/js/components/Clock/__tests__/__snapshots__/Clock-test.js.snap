@@ -704,6 +704,60 @@ exports[`Clock time renders 1`] = `
       className="c2"
       size="medium"
     >
+      0
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      0
+    </div>
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+  >
+    <div
+      className="c2"
+      size="medium"
+    >
+      1
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      8
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      :
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      2
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      3
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      :
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
       3
     </div>
     <div

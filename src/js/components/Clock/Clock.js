@@ -7,7 +7,7 @@ import Analog from './Analog';
 import Digital from './Digital';
 import doc from './doc';
 
-const TIME_REGEXP = /^T([0-9]{2}):([0-9]{2}):([0-9.,]*)$/;
+const TIME_REGEXP = /T([0-9]{2}):([0-9]{2})(?::([0-9.,]{2,}))?/;
 const DURATION_REGEXP =
   /^(-|\+)?P.*T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?$/;
 
@@ -20,20 +20,17 @@ const parseTime = (time, hourLimit) => {
     if (hourLimit === 12) {
       result.hours = (result.hours > 12 ? (result.hours - 12) : result.hours);
     }
-    result.minutes = parseFloat(match[3]);
-    result.seconds = parseFloat(match[4]);
+    result.minutes = parseFloat(match[3]) || 0;
+    result.seconds = parseFloat(match[4]) || 0;
     result.duration = true;
   } else {
     match = TIME_REGEXP.exec(normalizedTime);
     if (match) {
       result.hours = parseFloat(match[1]);
-      result.minutes = parseFloat(match[2]);
-      result.seconds = parseFloat(match[3]);
+      result.minutes = parseFloat(match[2]) || 0;
+      result.seconds = parseFloat(match[3]) || 0;
     } else {
-      const date = new Date(normalizedTime);
-      result.hours = date.getHours();
-      result.minutes = date.getMinutes();
-      result.seconds = date.getSeconds();
+      console.error(`Grommet Clock cannot parse '${time}'`);
     }
   }
   return result;

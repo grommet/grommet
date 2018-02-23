@@ -11,7 +11,8 @@ Enzyme.configure({ adapter: new Adapter() });
 
 const DURATION = 'PT18H23M34S';
 const TIME = 'T18:23:34';
-const DATE = '2018-02-22T18:23:34-08:00';
+const TIME2 = 'T18:23';
+const DATE = '2018-02-22T18:23:34-10:00';
 
 describe('Clock', () => {
   test('time renders', () => {
@@ -19,6 +20,7 @@ describe('Clock', () => {
       <Grommet>
         <Clock run={false} type='digital' time={DURATION} />
         <Clock run={false} type='digital' time={TIME} />
+        <Clock run={false} type='digital' time={TIME2} />
         <Clock run={false} type='digital' time={DATE} />
       </Grommet>
     );
