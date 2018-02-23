@@ -11,6 +11,17 @@ import { Clock } from 'grommet';
 
 ## Properties
 
+**hourLimit**
+
+Whether to roll over the hours after 12 or after 24. Defaults to `24`.
+
+```
+12
+24
+12
+24
+```
+
 **onChange**
 
 If the clock is running, this function will be called with the
@@ -22,7 +33,7 @@ function
 
 **precision**
 
-How precise a time to represent.
+How precise a time to represent. Defaults to `seconds`.
 
 ```
 hours
@@ -56,7 +67,8 @@ xlarge
 
 ISO8601 time or duration. For example: 'PT8H12M23S',
       'T08:12:23', or '2015-02-22T08:12:23'. Any included date
-      portion will be ignored for an analog clock.
+      portion will be ignored for an analog clock. If not provided, the
+      current browser time will be used.
 
 ```
 string

@@ -9,12 +9,12 @@ import { Clock } from '../';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-const DURATION = 'PT08H10M23S';
-const TIME = 'T08:10:23';
-const DATE = '2018-02-22T08:10:23-08:00';
+const DURATION = 'PT18H23M34S';
+const TIME = 'T18:23:34';
+const DATE = '2018-02-22T18:23:34-08:00';
 
 describe('Clock', () => {
-  test('Clock time renders', () => {
+  test('time renders', () => {
     const component = renderer.create(
       <Grommet>
         <Clock run={false} type='digital' time={DURATION} />
@@ -26,7 +26,18 @@ describe('Clock', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('Clock run renders', (done) => {
+  test('hourLimit renders', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Clock run={false} type='digital' time={DURATION} hourLimit={12} />
+        <Clock run={false} type='digital' time={DURATION} hourLimit={24} />
+      </Grommet>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('run renders', (done) => {
     const component = mount(
       <Grommet>
         <Clock type='analog' run='forward' time={DURATION} />

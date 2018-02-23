@@ -11,12 +11,15 @@ const TIME_REGEXP = /^T([0-9]{2}):([0-9]{2}):([0-9.,]*)$/;
 const DURATION_REGEXP =
   /^(-|\+)?P.*T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?$/;
 
-const parseTime = (time) => {
+const parseTime = (time, hourLimit) => {
   const normalizedTime = time || (new Date()).toISOString();
   const result = {};
   let match = DURATION_REGEXP.exec(normalizedTime);
   if (match) {
     result.hours = parseFloat(match[2]);
+    if (hourLimit === 12) {
+      result.hours = (result.hours > 12 ? (result.hours - 12) : result.hours);
+    }
     result.minutes = parseFloat(match[3]);
     result.seconds = parseFloat(match[4]);
     result.duration = true;
@@ -38,6 +41,7 @@ const parseTime = (time) => {
 
 class Clock extends Component {
   static defaultProps = {
+    hourLimit: 24,
     precision: 'seconds',
     run: 'forward',
     size: 'medium',
@@ -46,7 +50,7 @@ class Clock extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { elements: parseTime(props.time) };
+    this.state = { elements: parseTime(props.time, props.hourLimit) };
   }
 
   componentDidMount() {
@@ -66,7 +70,7 @@ class Clock extends Component {
   }
 
   run() {
-    const { onChange, precision, run } = this.props;
+    const { hourLimit, onChange, precision, run } = this.props;
 
     // set the interval time based on the precision
     let interval = 1000;
@@ -121,7 +125,7 @@ class Clock extends Component {
         nextElements.hours += Math.floor(nextElements.minutes / 60);
         nextElements.minutes = 59;
       }
-      if (nextElements.hours >= 24 || nextElements.hours < 0) {
+      if (nextElements.hours >= hourLimit || nextElements.hours < 0) {
         nextElements.hours = 0;
       }
 
