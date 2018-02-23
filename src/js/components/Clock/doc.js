@@ -30,7 +30,7 @@ export default (Clock) => {
       'Clock size'
     ).defaultValue('medium'),
     time: PropTypes.string.description(
-      `ISO8601 time or duration. For example: 'P8H12M23S',
+      `ISO8601 time or duration. For example: 'PT8H12M23S',
       'T08:12:23', or '2015-02-22T08:12:23'. Any included date
       portion will be ignored for an analog clock.`
     ),

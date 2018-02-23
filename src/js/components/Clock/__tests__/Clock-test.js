@@ -9,30 +9,30 @@ import { Clock } from '../';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-const RealDate = Date;
-class DayTimeDate extends RealDate {
-  constructor() {
-    super();
-    return new RealDate('2017-06-13T04:40:59.000Z');
-  }
-}
+const DURATION = 'PT08H10M23S';
+const TIME = 'T08:10:23';
+const DATE = '2018-02-22T08:10:23-08:00';
 
 describe('Clock', () => {
-  beforeEach(() => {
-    global.Date = DayTimeDate;
-  });
-
-  afterEach(() => {
-    global.Date = RealDate;
+  test('Clock time renders', () => {
+    const component = renderer.create(
+      <Grommet>
+        <Clock run={false} type='digital' time={DURATION} />
+        <Clock run={false} type='digital' time={TIME} />
+        <Clock run={false} type='digital' time={DATE} />
+      </Grommet>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
   });
 
   test('Clock run renders', (done) => {
     const component = mount(
       <Grommet>
-        <Clock type='analog' run='forward' />
-        <Clock type='analog' run='backward' />
-        <Clock type='digital' run='forward' />
-        <Clock type='digital' run='backward' />
+        <Clock type='analog' run='forward' time={DURATION} />
+        <Clock type='analog' run='backward' time={DURATION} />
+        <Clock type='digital' run='forward' time={DURATION} />
+        <Clock type='digital' run='backward' time={DURATION} />
       </Grommet>
     );
     expect(component.getDOMNode()).toMatchSnapshot();
@@ -51,7 +51,13 @@ describe('Clock', () => {
         test(`type ${type} precision ${precision} size ${size}`, () => {
           const component = renderer.create(
             <Grommet>
-              <Clock run={false} type={type} precision={precision} size={size} />
+              <Clock
+                run={false}
+                type={type}
+                precision={precision}
+                size={size}
+                time={DURATION}
+              />
             </Grommet>
           );
           const tree = component.toJSON();

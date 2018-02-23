@@ -83,12 +83,12 @@ exports[`Clock Clock run renders 1`] = `
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
-      2
+      0
     </div>
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
-      1
+      8
     </div>
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
@@ -98,7 +98,7 @@ exports[`Clock Clock run renders 1`] = `
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
-      4
+      1
     </div>
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
@@ -113,12 +113,12 @@ exports[`Clock Clock run renders 1`] = `
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
-      5
+      2
     </div>
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
-      9
+      3
     </div>
   </div>
   <div
@@ -128,12 +128,12 @@ exports[`Clock Clock run renders 1`] = `
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
-      2
+      0
     </div>
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
-      1
+      8
     </div>
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
@@ -143,7 +143,7 @@ exports[`Clock Clock run renders 1`] = `
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
-      4
+      1
     </div>
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
@@ -158,12 +158,12 @@ exports[`Clock Clock run renders 1`] = `
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
-      5
+      2
     </div>
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
-      9
+      3
     </div>
   </div>
 </div>
@@ -252,100 +252,22 @@ exports[`Clock Clock run renders 2`] = `
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
-      2
+      0
+    </div>
+    <div
+      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
+    >
+      8
+    </div>
+    <div
+      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
+    >
+      :
     </div>
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
       1
-    </div>
-    <div
-      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
-    >
-      :
-    </div>
-    <div
-      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
-    >
-      4
-    </div>
-    <div
-      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
-    >
-      <div
-        class="StyledClock__StyledDigitalPrevious-eWaIAI iwxupl"
-        direction="up"
-      >
-        0
-      </div>
-      <div
-        class="StyledClock__StyledDigitalNext-kbpwaE dumeYI"
-        direction="up"
-      >
-        1
-      </div>
-    </div>
-    <div
-      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
-    >
-      :
-    </div>
-    <div
-      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
-    >
-      <div
-        class="StyledClock__StyledDigitalPrevious-eWaIAI iwxupl"
-        direction="up"
-      >
-        5
-      </div>
-      <div
-        class="StyledClock__StyledDigitalNext-kbpwaE dumeYI"
-        direction="up"
-      >
-        0
-      </div>
-    </div>
-    <div
-      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
-    >
-      <div
-        class="StyledClock__StyledDigitalPrevious-eWaIAI iwxupl"
-        direction="up"
-      >
-        9
-      </div>
-      <div
-        class="StyledClock__StyledDigitalNext-kbpwaE dumeYI"
-        direction="up"
-      >
-        0
-      </div>
-    </div>
-  </div>
-  <div
-    class="StyledBox-bStriS kkBTIr"
-    direction="row"
-  >
-    <div
-      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
-    >
-      2
-    </div>
-    <div
-      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
-    >
-      1
-    </div>
-    <div
-      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
-    >
-      :
-    </div>
-    <div
-      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
-    >
-      4
     </div>
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
@@ -360,7 +282,63 @@ exports[`Clock Clock run renders 2`] = `
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
-      5
+      2
+    </div>
+    <div
+      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
+    >
+      <div
+        class="StyledClock__StyledDigitalPrevious-eWaIAI iwxupl"
+        direction="up"
+      >
+        3
+      </div>
+      <div
+        class="StyledClock__StyledDigitalNext-kbpwaE dumeYI"
+        direction="up"
+      >
+        4
+      </div>
+    </div>
+  </div>
+  <div
+    class="StyledBox-bStriS kkBTIr"
+    direction="row"
+  >
+    <div
+      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
+    >
+      0
+    </div>
+    <div
+      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
+    >
+      8
+    </div>
+    <div
+      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
+    >
+      :
+    </div>
+    <div
+      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
+    >
+      1
+    </div>
+    <div
+      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
+    >
+      0
+    </div>
+    <div
+      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
+    >
+      :
+    </div>
+    <div
+      class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
+    >
+      2
     </div>
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
@@ -369,14 +347,219 @@ exports[`Clock Clock run renders 2`] = `
         class="StyledClock__StyledDigitalPrevious-eWaIAI bqriXc"
         direction="down"
       >
-        9
+        3
       </div>
       <div
         class="StyledClock__StyledDigitalNext-kbpwaE dSUGUb"
         direction="down"
       >
-        8
+        2
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Clock Clock time renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  position: relative;
+  width: 0.8em;
+  text-align: center;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 1.375;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+  >
+    <div
+      className="c2"
+      size="medium"
+    >
+      0
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      8
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      :
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      1
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      0
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      :
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      2
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      3
+    </div>
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+  >
+    <div
+      className="c2"
+      size="medium"
+    >
+      0
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      8
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      :
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      1
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      0
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      :
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      2
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      3
+    </div>
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+  >
+    <div
+      className="c2"
+      size="medium"
+    >
+      0
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      8
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      :
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      1
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      0
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      :
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      2
+    </div>
+    <div
+      className="c2"
+      size="medium"
+    >
+      3
     </div>
   </div>
 </div>
@@ -425,7 +608,7 @@ exports[`Clock type analog precision hours size large 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(290deg)",
+          "transform": "rotate(245deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -481,7 +664,7 @@ exports[`Clock type analog precision hours size medium 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(290deg)",
+          "transform": "rotate(245deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -537,7 +720,7 @@ exports[`Clock type analog precision hours size small 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(290deg)",
+          "transform": "rotate(245deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -593,7 +776,7 @@ exports[`Clock type analog precision hours size xlarge 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(290deg)",
+          "transform": "rotate(245deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -644,7 +827,7 @@ exports[`Clock type analog precision hours size xsmall 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(290deg)",
+          "transform": "rotate(245deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -707,7 +890,7 @@ exports[`Clock type analog precision minutes size large 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(240deg)",
+          "transform": "rotate(60deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -722,7 +905,7 @@ exports[`Clock type analog precision minutes size large 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(290deg)",
+          "transform": "rotate(245deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -785,7 +968,7 @@ exports[`Clock type analog precision minutes size medium 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(240deg)",
+          "transform": "rotate(60deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -800,7 +983,7 @@ exports[`Clock type analog precision minutes size medium 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(290deg)",
+          "transform": "rotate(245deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -863,7 +1046,7 @@ exports[`Clock type analog precision minutes size small 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(240deg)",
+          "transform": "rotate(60deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -878,7 +1061,7 @@ exports[`Clock type analog precision minutes size small 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(290deg)",
+          "transform": "rotate(245deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -941,7 +1124,7 @@ exports[`Clock type analog precision minutes size xlarge 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(240deg)",
+          "transform": "rotate(60deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -956,7 +1139,7 @@ exports[`Clock type analog precision minutes size xlarge 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(290deg)",
+          "transform": "rotate(245deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1014,7 +1197,7 @@ exports[`Clock type analog precision minutes size xsmall 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(240deg)",
+          "transform": "rotate(60deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1029,7 +1212,7 @@ exports[`Clock type analog precision minutes size xsmall 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(290deg)",
+          "transform": "rotate(245deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1099,7 +1282,7 @@ exports[`Clock type analog precision seconds size large 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(354deg)",
+          "transform": "rotate(138deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1114,7 +1297,7 @@ exports[`Clock type analog precision seconds size large 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(240deg)",
+          "transform": "rotate(60deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1129,7 +1312,7 @@ exports[`Clock type analog precision seconds size large 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(290deg)",
+          "transform": "rotate(245deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1199,7 +1382,7 @@ exports[`Clock type analog precision seconds size medium 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(354deg)",
+          "transform": "rotate(138deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1214,7 +1397,7 @@ exports[`Clock type analog precision seconds size medium 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(240deg)",
+          "transform": "rotate(60deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1229,7 +1412,7 @@ exports[`Clock type analog precision seconds size medium 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(290deg)",
+          "transform": "rotate(245deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1299,7 +1482,7 @@ exports[`Clock type analog precision seconds size small 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(354deg)",
+          "transform": "rotate(138deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1314,7 +1497,7 @@ exports[`Clock type analog precision seconds size small 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(240deg)",
+          "transform": "rotate(60deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1329,7 +1512,7 @@ exports[`Clock type analog precision seconds size small 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(290deg)",
+          "transform": "rotate(245deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1399,7 +1582,7 @@ exports[`Clock type analog precision seconds size xlarge 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(354deg)",
+          "transform": "rotate(138deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1414,7 +1597,7 @@ exports[`Clock type analog precision seconds size xlarge 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(240deg)",
+          "transform": "rotate(60deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1429,7 +1612,7 @@ exports[`Clock type analog precision seconds size xlarge 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(290deg)",
+          "transform": "rotate(245deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1494,7 +1677,7 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(354deg)",
+          "transform": "rotate(138deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1509,7 +1692,7 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(240deg)",
+          "transform": "rotate(60deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1524,7 +1707,7 @@ exports[`Clock type analog precision seconds size xsmall 1`] = `
       strokeLinecap="round"
       style={
         Object {
-          "transform": "rotate(290deg)",
+          "transform": "rotate(245deg)",
           "transformOrigin": "48px 48px",
         }
       }
@@ -1586,13 +1769,13 @@ exports[`Clock type digital precision hours size large 1`] = `
       className="c2"
       size="large"
     >
-      2
+      0
     </div>
     <div
       className="c2"
       size="large"
     >
-      1
+      8
     </div>
   </div>
 </div>
@@ -1647,13 +1830,13 @@ exports[`Clock type digital precision hours size medium 1`] = `
       className="c2"
       size="medium"
     >
-      2
+      0
     </div>
     <div
       className="c2"
       size="medium"
     >
-      1
+      8
     </div>
   </div>
 </div>
@@ -1708,13 +1891,13 @@ exports[`Clock type digital precision hours size small 1`] = `
       className="c2"
       size="small"
     >
-      2
+      0
     </div>
     <div
       className="c2"
       size="small"
     >
-      1
+      8
     </div>
   </div>
 </div>
@@ -1769,13 +1952,13 @@ exports[`Clock type digital precision hours size xlarge 1`] = `
       className="c2"
       size="xlarge"
     >
-      2
+      0
     </div>
     <div
       className="c2"
       size="xlarge"
     >
-      1
+      8
     </div>
   </div>
 </div>
@@ -1830,13 +2013,13 @@ exports[`Clock type digital precision hours size xsmall 1`] = `
       className="c2"
       size="xsmall"
     >
-      2
+      0
     </div>
     <div
       className="c2"
       size="xsmall"
     >
-      1
+      8
     </div>
   </div>
 </div>
@@ -1891,13 +2074,13 @@ exports[`Clock type digital precision minutes size large 1`] = `
       className="c2"
       size="large"
     >
-      2
+      0
     </div>
     <div
       className="c2"
       size="large"
     >
-      1
+      8
     </div>
     <div
       className="c2"
@@ -1909,7 +2092,7 @@ exports[`Clock type digital precision minutes size large 1`] = `
       className="c2"
       size="large"
     >
-      4
+      1
     </div>
     <div
       className="c2"
@@ -1970,13 +2153,13 @@ exports[`Clock type digital precision minutes size medium 1`] = `
       className="c2"
       size="medium"
     >
-      2
+      0
     </div>
     <div
       className="c2"
       size="medium"
     >
-      1
+      8
     </div>
     <div
       className="c2"
@@ -1988,7 +2171,7 @@ exports[`Clock type digital precision minutes size medium 1`] = `
       className="c2"
       size="medium"
     >
-      4
+      1
     </div>
     <div
       className="c2"
@@ -2049,13 +2232,13 @@ exports[`Clock type digital precision minutes size small 1`] = `
       className="c2"
       size="small"
     >
-      2
+      0
     </div>
     <div
       className="c2"
       size="small"
     >
-      1
+      8
     </div>
     <div
       className="c2"
@@ -2067,7 +2250,7 @@ exports[`Clock type digital precision minutes size small 1`] = `
       className="c2"
       size="small"
     >
-      4
+      1
     </div>
     <div
       className="c2"
@@ -2128,13 +2311,13 @@ exports[`Clock type digital precision minutes size xlarge 1`] = `
       className="c2"
       size="xlarge"
     >
-      2
+      0
     </div>
     <div
       className="c2"
       size="xlarge"
     >
-      1
+      8
     </div>
     <div
       className="c2"
@@ -2146,7 +2329,7 @@ exports[`Clock type digital precision minutes size xlarge 1`] = `
       className="c2"
       size="xlarge"
     >
-      4
+      1
     </div>
     <div
       className="c2"
@@ -2207,13 +2390,13 @@ exports[`Clock type digital precision minutes size xsmall 1`] = `
       className="c2"
       size="xsmall"
     >
-      2
+      0
     </div>
     <div
       className="c2"
       size="xsmall"
     >
-      1
+      8
     </div>
     <div
       className="c2"
@@ -2225,7 +2408,7 @@ exports[`Clock type digital precision minutes size xsmall 1`] = `
       className="c2"
       size="xsmall"
     >
-      4
+      1
     </div>
     <div
       className="c2"
@@ -2286,13 +2469,13 @@ exports[`Clock type digital precision seconds size large 1`] = `
       className="c2"
       size="large"
     >
-      2
+      0
     </div>
     <div
       className="c2"
       size="large"
     >
-      1
+      8
     </div>
     <div
       className="c2"
@@ -2304,7 +2487,7 @@ exports[`Clock type digital precision seconds size large 1`] = `
       className="c2"
       size="large"
     >
-      4
+      1
     </div>
     <div
       className="c2"
@@ -2322,13 +2505,13 @@ exports[`Clock type digital precision seconds size large 1`] = `
       className="c2"
       size="large"
     >
-      5
+      2
     </div>
     <div
       className="c2"
       size="large"
     >
-      9
+      3
     </div>
   </div>
 </div>
@@ -2383,13 +2566,13 @@ exports[`Clock type digital precision seconds size medium 1`] = `
       className="c2"
       size="medium"
     >
-      2
+      0
     </div>
     <div
       className="c2"
       size="medium"
     >
-      1
+      8
     </div>
     <div
       className="c2"
@@ -2401,7 +2584,7 @@ exports[`Clock type digital precision seconds size medium 1`] = `
       className="c2"
       size="medium"
     >
-      4
+      1
     </div>
     <div
       className="c2"
@@ -2419,13 +2602,13 @@ exports[`Clock type digital precision seconds size medium 1`] = `
       className="c2"
       size="medium"
     >
-      5
+      2
     </div>
     <div
       className="c2"
       size="medium"
     >
-      9
+      3
     </div>
   </div>
 </div>
@@ -2480,13 +2663,13 @@ exports[`Clock type digital precision seconds size small 1`] = `
       className="c2"
       size="small"
     >
-      2
+      0
     </div>
     <div
       className="c2"
       size="small"
     >
-      1
+      8
     </div>
     <div
       className="c2"
@@ -2498,7 +2681,7 @@ exports[`Clock type digital precision seconds size small 1`] = `
       className="c2"
       size="small"
     >
-      4
+      1
     </div>
     <div
       className="c2"
@@ -2516,13 +2699,13 @@ exports[`Clock type digital precision seconds size small 1`] = `
       className="c2"
       size="small"
     >
-      5
+      2
     </div>
     <div
       className="c2"
       size="small"
     >
-      9
+      3
     </div>
   </div>
 </div>
@@ -2577,13 +2760,13 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
       className="c2"
       size="xlarge"
     >
-      2
+      0
     </div>
     <div
       className="c2"
       size="xlarge"
     >
-      1
+      8
     </div>
     <div
       className="c2"
@@ -2595,7 +2778,7 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
       className="c2"
       size="xlarge"
     >
-      4
+      1
     </div>
     <div
       className="c2"
@@ -2613,13 +2796,13 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
       className="c2"
       size="xlarge"
     >
-      5
+      2
     </div>
     <div
       className="c2"
       size="xlarge"
     >
-      9
+      3
     </div>
   </div>
 </div>
@@ -2674,13 +2857,13 @@ exports[`Clock type digital precision seconds size xsmall 1`] = `
       className="c2"
       size="xsmall"
     >
-      2
+      0
     </div>
     <div
       className="c2"
       size="xsmall"
     >
-      1
+      8
     </div>
     <div
       className="c2"
@@ -2692,7 +2875,7 @@ exports[`Clock type digital precision seconds size xsmall 1`] = `
       className="c2"
       size="xsmall"
     >
-      4
+      1
     </div>
     <div
       className="c2"
@@ -2710,13 +2893,13 @@ exports[`Clock type digital precision seconds size xsmall 1`] = `
       className="c2"
       size="xsmall"
     >
-      5
+      2
     </div>
     <div
       className="c2"
       size="xsmall"
     >
-      9
+      3
     </div>
   </div>
 </div>
