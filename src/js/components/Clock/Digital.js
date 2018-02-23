@@ -29,17 +29,17 @@ class Digit extends Component {
       return (
         <StyledDigitalDigit size={size} theme={theme}>
           <StyledDigitalPrevious direction={direction}>
-            {previous}
+            {Math.floor(previous)}
           </StyledDigitalPrevious>
           <StyledDigitalNext direction={direction}>
-            {number}
+            {Math.floor(number)}
           </StyledDigitalNext>
         </StyledDigitalDigit>
       );
     }
     return (
       <StyledDigitalDigit size={size} theme={theme}>
-        {number}
+        {Math.floor(number)}
       </StyledDigitalDigit>
     );
   }
