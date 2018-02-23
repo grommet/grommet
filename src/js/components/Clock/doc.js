@@ -26,11 +26,12 @@ export default (Clock) => {
       `Whether the clock should actively adjust time or be fixed to the
       time specified. 'backward' could be used as a countdown timer.`
     ).defaultValue('forward'),
-    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']).description(
+    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']).description(
       'Clock size'
     ).defaultValue('medium'),
     time: PropTypes.string.description(
-      `ISO8601 time or duration to represent. Any included date
+      `ISO8601 time or duration. For example: 'P8H12M23S',
+      'T08:12:23', or '2015-02-22T08:12:23'. Any included date
       portion will be ignored for an analog clock.`
     ),
     type: PropTypes.oneOf(['analog', 'digital']).description(

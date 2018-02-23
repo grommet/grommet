@@ -42,7 +42,7 @@ describe('Clock', () => {
       expect(component.getDOMNode()).toMatchSnapshot();
       component.unmount();
       done();
-    }, 1100);
+    }, 1300);
   });
 
   ['analog', 'digital'].forEach(type => (
