@@ -249,46 +249,51 @@ export default deepFreeze({
     },
   },
   clock: {
-    circle: {
-      color: {
-        day: css`${props => colorForName('light-3', props.theme)}`,
-        night: css`${props => colorForName('dark-2', props.theme)}`,
+    analog: {
+      hour: {
+        color: {
+          dark: css`${props => colorForName('light-3', props.theme)}`,
+          light: css`${props => colorForName('dark-3', props.theme)}`,
+        },
+        width: `${baseSpacing / 3}px`,
+        size: `${baseSpacing}px`,
+        shape: 'round',
       },
-      width: '2px',
-    },
-    hour: {
-      color: {
-        day: css`${props => colorForName('dark-1', props.theme)}`,
-        night: css`${props => colorForName('white', props.theme)}`,
+      minute: {
+        color: {
+          dark: css`${props => colorForName('light-5', props.theme)}`,
+          light: css`${props => colorForName('dark-5', props.theme)}`,
+        },
+        width: `${baseSpacing / 6}px`,
+        size: `${Math.round(baseSpacing / 2)}px`,
+        shape: 'round',
       },
-      width: '3px',
-      size: `${baseSpacing}px`,
-      shape: 'round',
-    },
-    minute: {
-      color: {
-        day: css`${props => colorForName('dark-4', props.theme)}`,
-        night: css`${props => colorForName('light-6', props.theme)}`,
+      second: {
+        color: {
+          dark: css`${props => colorForName('accent-2', props.theme)}`,
+          light: css`${props => colorForName('accent-2', props.theme)}`,
+        },
+        width: `${baseSpacing / 8}px`,
+        size: `${Math.round(baseSpacing / 2.666)}px`,
+        shape: 'round',
       },
-      width: '2px',
-      size: `${Math.round(baseSpacing / 2)}px`,
-      shape: 'round',
-    },
-    second: {
-      color: {
-        day: css`${props => colorForName('accent-2', props.theme)}`,
-        night: css`${props => colorForName('accent-2', props.theme)}`,
+      size: {
+        small: `${baseSpacing * 3}px`,
+        medium: `${baseSpacing * 4}px`,
+        large: `${baseSpacing * 6}px`,
+        xlarge: `${baseSpacing * 9}px`,
+        huge: `${baseSpacing * 12}px`,
       },
-      width: '1px',
-      size: `${Math.round(baseSpacing / 2.666)}px`,
-      shape: 'round',
     },
-    size: {
-      small: `${baseSpacing * 3}px`,
-      medium: `${baseSpacing * 4}px`,
-      large: `${baseSpacing * 6}px`,
-      xlarge: `${baseSpacing * 9}px`,
-      huge: `${baseSpacing * 12}px`,
+    digital: {
+      text: {
+        medium: { size: '16px', height: 1.375 },
+        xsmall: { size: '12px', height: 1.5 },
+        small: { size: '14px', height: 1.43 },
+        large: { size: '24px', height: 1.167 },
+        xlarge: { size: '32px', height: 1.1875 },
+        xxlarge: { size: '48px', height: 1.125 },
+      },
     },
   },
   grommet: {},

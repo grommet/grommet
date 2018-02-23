@@ -12,21 +12,35 @@ export default (Clock) => {
     );
 
   DocumentedClock.propTypes = {
-    date: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).description(
-      'Date to be used in the Clock.'
+    hourLimit: PropTypes.oneOf([12, 24, '12', '24']).description(
+      'Whether to roll over the hours after 12 or after 24.'
+    ).defaultValue(24),
+    onChange: PropTypes.func.description(
+      `If the clock is running, this function will be called with the
+      current time value each time it changes.`
     ),
-    night: PropTypes.bool.description(
-      'Whether to force night or day mode for the Clock.'
-    ),
-    seconds: PropTypes.bool.description(
-      'Whether to show seconds hand in the Clock.'
-    ),
-    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge', 'huge']).description(
+    precision: PropTypes.oneOf(['hours', 'minutes', 'seconds']).description(
+      'How precise a time to represent.'
+    ).defaultValue('seconds'),
+    run: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.oneOf(['backward', 'forward']),
+    ]).description(
+      `Whether the clock should actively adjust time or be fixed to the
+      time specified. 'backward' could be used as a countdown timer.`
+    ).defaultValue('forward'),
+    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']).description(
       'Clock size'
     ).defaultValue('medium'),
-    timezone: PropTypes.string.description(
-      'IANA timezone to use in the Clock (e.g. America/Sao_Paulo).'
-    ).defaultValue('America/Los_Angeles'),
+    time: PropTypes.string.description(
+      `ISO8601 time or duration. For example: 'PT8H12M23S',
+      'T08:12:23', or '2015-02-22T08:12:23'. Any included date
+      portion will be ignored for an analog clock. If not provided, the
+      current browser time will be used.`
+    ),
+    type: PropTypes.oneOf(['analog', 'digital']).description(
+      'What type of visualization to show.'
+    ).defaultValue('analog'),
   };
 
   return DocumentedClock;

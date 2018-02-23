@@ -1,263 +1,154 @@
-import 'date-time-format-timezone';
-
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import { parseMetricToNum } from '../../utils';
-
 import { withTheme } from '../hocs';
 
-import StyledClock, { StyledCircle, StyledHour, StyledMinute, StyledSecond } from './StyledClock';
+import Analog from './Analog';
+import Digital from './Digital';
 import doc from './doc';
 
-// this will serve both minutes and hours (360 / 6)
-const ANGLE_UNIT = 6;
-// 360 / 12
-const HOUR_ANGLE_UNIT = 30;
-// night variables
-const NIGHT_START = 18;
-const NIGHT_FINISH = 6;
+const TIME_REGEXP = /T([0-9]{2}):([0-9]{2})(?::([0-9.,]{2,}))?/;
+const DURATION_REGEXP =
+  /^(-|\+)?P.*T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?$/;
 
-const getClockDimensions = theme => (
-  {
-    size: parseMetricToNum(theme.clock.size.medium),
-    secondSize: parseMetricToNum(theme.clock.second.size),
-    minuteSize: parseMetricToNum(theme.clock.minute.size),
-    hourSize: parseMetricToNum(theme.clock.hour.size),
-    stroke: parseMetricToNum(theme.clock.circle.width),
+const parseTime = (time, hourLimit) => {
+  const normalizedTime = time || (new Date()).toISOString();
+  const result = {};
+  let match = DURATION_REGEXP.exec(normalizedTime);
+  if (match) {
+    result.hours = parseFloat(match[2]);
+    if (hourLimit === 12) {
+      result.hours = (result.hours > 12 ? (result.hours - 12) : result.hours);
+    }
+    result.minutes = parseFloat(match[3]) || 0;
+    result.seconds = parseFloat(match[4]) || 0;
+    result.duration = true;
+  } else {
+    match = TIME_REGEXP.exec(normalizedTime);
+    if (match) {
+      result.hours = parseFloat(match[1]);
+      result.minutes = parseFloat(match[2]) || 0;
+      result.seconds = parseFloat(match[3]) || 0;
+    } else {
+      console.error(`Grommet Clock cannot parse '${time}'`);
+    }
   }
-);
-
-const getTimezoneTime = (date, timezone) => (
-  {
-    hour: parseInt(
-      new Intl.DateTimeFormat('en', {
-        timeZone: timezone, hour: 'numeric', hour12: false,
-      }).format(date), 10
-    ),
-    minute: parseInt(
-      new Intl.DateTimeFormat('en', {
-        timeZone: timezone, minute: 'numeric',
-      }).format(date), 10
-    ),
-    second: parseInt(
-      new Intl.DateTimeFormat('en', {
-        timeZone: timezone, second: 'numeric',
-      }).format(date), 10
-    ),
-  }
-);
-
-const getClockState = (props) => {
-  const date = props.date || new Date();
-
-  const { hour, minute, second } = getTimezoneTime(date, props.timezone);
-
-  const hour12 = hour > 12 ? hour - 12 : hour;
-
-  const minuteAngle = minute * ANGLE_UNIT;
-
-  return {
-    inSync: false,
-    resetClock: true,
-    date,
-    // offset hour angle by half of the minute angle so that it gets closer to the next hour
-    hourAngle: (hour12 * HOUR_ANGLE_UNIT) + (minute / 2),
-    minuteAngle,
-    secondAngle: second * ANGLE_UNIT,
-    night: (
-      props.night !== undefined ? (
-        props.night
-       ) : (
-        hour >= NIGHT_START || hour < NIGHT_FINISH
-       )
-    ),
-  };
+  return result;
 };
 
 class Clock extends Component {
   static defaultProps = {
+    hourLimit: 24,
+    precision: 'seconds',
+    run: 'forward',
     size: 'medium',
-    timezone: 'America/Los_Angeles',
+    type: 'analog',
   }
 
-  constructor(props, context) {
-    super(props, context);
-    this.state = getClockState(props);
+  constructor(props) {
+    super(props);
+    this.state = { elements: parseTime(props.time, props.hourLimit) };
   }
 
   componentDidMount() {
-    this.placeClockHands();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (this.props.date !== nextProps.date || this.props.timezone !== nextProps.timezone) {
-      this.setState(getClockState(nextProps));
+    if (this.props.run) {
+      this.run();
     }
   }
 
-  componentDidUpdate() {
-    const { resetClock } = this.state;
-    if (resetClock) {
-      if (this.syncClockTimeout) {
-        clearTimeout(this.syncClockTimeout);
-      }
-      if (this.secondsAnimation) {
-        clearInterval(this.secondsAnimation);
-      }
-      this.placeClockHands();
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.run) {
+      this.run();
     }
   }
 
   componentWillUnmount() {
-    if (this.syncClockTimeout) {
-      clearTimeout(this.syncClockTimeout);
-    }
-    if (this.secondsAnimation) {
-      clearInterval(this.secondsAnimation);
-    }
+    clearInterval(this.timer);
   }
 
-  placeClockHands = () => {
-    const { seconds, timezone } = this.props;
-    const { date, night, inSync } = this.state;
+  run() {
+    const { hourLimit, onChange, precision, run } = this.props;
 
-    // if clock is not in sync we need to animate using JavaScript first and then
-    // use CSS animation
-    if (!inSync) {
-      const timezoneTime = getTimezoneTime(date, timezone);
-      const second = timezoneTime.second;
-      const minute = timezoneTime.second;
-      let hour = timezoneTime.hour;
-      // get the remaining seconds an notify the component to start animation only
-      // after the clock finished the loop
-      // for example: 04:40:30 pm will start the CSS animation at 04:41:00 pm
-      const remainingSeconds = 60 - second;
-      const remainingMinutes = 60 - minute;
-
-      // timeout will be executed when clock is in sync
-      this.syncClockTimeout = setTimeout(() => {
-        clearInterval(this.secondsAnimation);
-        const hour12 = hour > 12 ? hour - 12 : hour;
-
-        let nextHourAngle = this.state.hourAngle;
-        // sync hour
-        if (remainingMinutes === 1) {
-          hour += 1;
-          nextHourAngle = (hour12 * HOUR_ANGLE_UNIT) + HOUR_ANGLE_UNIT;
-        }
-        if (nextHourAngle === 360) {
-          nextHourAngle = 0;
-        }
-
-        // sync minute
-        let nextMinuteAngle = this.state.minuteAngle;
-        if (remainingSeconds > 0) {
-          nextMinuteAngle = this.state.minuteAngle + ANGLE_UNIT;
-        }
-        if (nextMinuteAngle === 360) {
-          nextMinuteAngle = 0;
-        }
-
-        this.setState({
-          inSync: true,
-          hourAngle: nextHourAngle,
-          minuteAngle: nextMinuteAngle,
-          secondAngle: 0,
-          night: night !== undefined ? night : hour >= NIGHT_START || hour < NIGHT_FINISH,
-        });
-      }, (remainingSeconds * 1000));
-
-      // only animate if we have seconds hand
-      if (seconds) {
-        // animate seconds in react while the clock is not in sync
-        this.secondsAnimation = setInterval(() => {
-          this.setState({ resetClock: false, secondAngle: this.state.secondAngle + ANGLE_UNIT });
-        }, 1000);
+    // set the interval time based on the precision
+    let interval = 1000;
+    let increment = 'seconds';
+    if (precision !== 'seconds' && this.state.elements.seconds === 0) {
+      interval *= 60;
+      increment = 'minutes';
+      if (precision !== 'minutes' && this.state.elements.minutes === 0) {
+        interval *= 60;
+        increment = 'hours';
       }
     }
+
+    clearInterval(this.timer);
+    this.timer = setInterval(() => {
+      const { elements } = this.state;
+      const nextElements = { ...elements };
+
+      // adjust time based on precision
+      if (increment === 'seconds') {
+        if (run === 'backward') {
+          nextElements.seconds -= 1;
+        } else {
+          nextElements.seconds += 1;
+        }
+      } else if (increment === 'minutes') {
+        if (run === 'backward') {
+          nextElements.minutes -= 1;
+        } else {
+          nextElements.minutes += 1;
+        }
+      } else if (increment === 'hours') {
+        if (run === 'backward') {
+          nextElements.hours -= 1;
+        } else {
+          nextElements.hours += 1;
+        }
+      }
+
+      // deal with overflows
+      if (nextElements.seconds >= 60) {
+        nextElements.minutes += Math.floor(nextElements.seconds / 60);
+        nextElements.seconds = 0;
+      } else if (nextElements.seconds < 0) {
+        nextElements.minutes += Math.floor(nextElements.seconds / 60);
+        nextElements.seconds = 59;
+      }
+      if (nextElements.minutes >= 60) {
+        nextElements.hours += Math.floor(nextElements.minutes / 60);
+        nextElements.minutes = 0;
+      } else if (nextElements.minutes < 0) {
+        nextElements.hours += Math.floor(nextElements.minutes / 60);
+        nextElements.minutes = 59;
+      }
+      if (nextElements.hours >= hourLimit || nextElements.hours < 0) {
+        nextElements.hours = 0;
+      }
+
+      this.setState({ elements: nextElements }, () => {
+        if (onChange) {
+          if (elements.duration) {
+            onChange(`P${elements.hours}H${elements.minutes}M${elements.seconds}S`);
+          } else {
+            onChange(`T${elements.hours}:${elements.minutes}:${elements.seconds}`);
+          }
+        }
+      });
+    }, interval);
   }
 
   render() {
-    const { seconds, theme } = this.props;
-    const { inSync, hourAngle, minuteAngle, night, secondAngle } = this.state;
-
-    const { size, secondSize, minuteSize, hourSize, stroke } = getClockDimensions(theme);
-    const halfSize = size / 2;
-
-    let secondLine;
-    if (seconds) {
-      secondLine = (
-        <StyledSecond
-          animate={inSync}
-          night={night}
-          theme={theme}
-          x1={halfSize}
-          y1={halfSize}
-          x2={halfSize}
-          y2={secondSize}
-          stroke='#000000'
-          strokeLinecap={theme.clock.second.shape}
-          style={{
-            transform: `rotate(${secondAngle}deg)`,
-            transformOrigin: `${halfSize}px ${halfSize}px`,
-          }}
-        />
-      );
+    const { type, ...rest } = this.props;
+    const { elements } = this.state;
+    let content;
+    if (type === 'analog') {
+      content = <Analog elements={elements} {...rest} />;
+    } else if (type === 'digital') {
+      content = <Digital elements={elements} {...rest} />;
     }
 
-    return (
-      <StyledClock
-        night={night}
-        version='1.1'
-        width={size}
-        height={size}
-        preserveAspectRatio='xMidYMid meet'
-        viewBox={`0 0 ${size} ${size}`}
-        {...this.props}
-      >
-        <StyledCircle
-          night={night}
-          theme={theme}
-          fill='none'
-          stroke='#000000'
-          cx={halfSize}
-          cy={halfSize}
-          r={halfSize - stroke}
-        />
-        {secondLine}
-        <StyledMinute
-          animate={inSync}
-          night={night}
-          theme={theme}
-          x1={halfSize}
-          y1={halfSize}
-          x2={halfSize}
-          y2={minuteSize}
-          stroke='#000000'
-          strokeLinecap={theme.clock.minute.shape}
-          style={{
-            transform: `rotate(${minuteAngle}deg)`,
-            transformOrigin: `${halfSize}px ${halfSize}px`,
-          }}
-        />
-        <StyledHour
-          animate={inSync}
-          night={night}
-          theme={theme}
-          x1={halfSize}
-          y1={halfSize}
-          x2={halfSize}
-          y2={hourSize}
-          stroke='#000000'
-          strokeLinecap={theme.clock.hour.shape}
-          style={{
-            transform: `rotate(${hourAngle}deg)`,
-            transformOrigin: `${halfSize}px ${halfSize}px`,
-          }}
-        />
-      </StyledClock>
-    );
+    return content;
   }
 }
 

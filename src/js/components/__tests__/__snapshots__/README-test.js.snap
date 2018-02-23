@@ -954,29 +954,45 @@ import { Clock } from 'grommet';
 
 ## Properties
 
-**date**
+**hourLimit**
 
-Date to be used in the Clock.
+Whether to roll over the hours after 12 or after 24. Defaults to \`24\`.
 
 \`\`\`
-object
-string
+12
+24
+12
+24
 \`\`\`
 
-**night**
+**onChange**
 
-Whether to force night or day mode for the Clock.
+If the clock is running, this function will be called with the
+      current time value each time it changes.
+
+\`\`\`
+function
+\`\`\`
+
+**precision**
+
+How precise a time to represent. Defaults to \`seconds\`.
+
+\`\`\`
+hours
+minutes
+seconds
+\`\`\`
+
+**run**
+
+Whether the clock should actively adjust time or be fixed to the
+      time specified. 'backward' could be used as a countdown timer. Defaults to \`forward\`.
 
 \`\`\`
 boolean
-\`\`\`
-
-**seconds**
-
-Whether to show seconds hand in the Clock.
-
-\`\`\`
-boolean
+backward
+forward
 \`\`\`
 
 **size**
@@ -988,15 +1004,26 @@ small
 medium
 large
 xlarge
-huge
 \`\`\`
 
-**timezone**
+**time**
 
-IANA timezone to use in the Clock (e.g. America/Sao_Paulo). Defaults to \`America/Los_Angeles\`.
+ISO8601 time or duration. For example: 'PT8H12M23S',
+      'T08:12:23', or '2015-02-22T08:12:23'. Any included date
+      portion will be ignored for an analog clock. If not provided, the
+      current browser time will be used.
 
 \`\`\`
 string
+\`\`\`
+
+**type**
+
+What type of visualization to show. Defaults to \`analog\`.
+
+\`\`\`
+analog
+digital
 \`\`\`
   ",
   "Diagram": "## Diagram
