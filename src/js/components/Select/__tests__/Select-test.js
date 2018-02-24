@@ -15,15 +15,15 @@ describe('Select', () => {
 
   test('mounts', (done) => {
     const component = mount(
-      <Select id='select' options={['one', 'two']} />
+      <Select id='test-select' options={['one', 'two']} />
     );
     expect(component.getDOMNode()).toMatchSnapshot();
-    expect(document.getElementById('select-drop__select')).toBeNull();
+    expect(document.getElementById('test-select__drop')).toBeNull();
 
     component.simulate('click');
 
     expect(component.getDOMNode()).toMatchSnapshot();
-    expectPortal('select-drop__select').toMatchSnapshot();
+    expectPortal('test-select__drop').toMatchSnapshot();
 
     setTimeout(() => {
       expect(document.activeElement).toMatchSnapshot();
@@ -33,27 +33,27 @@ describe('Select', () => {
 
   test('mounts with complex options and children', () => {
     const component = mount(
-      <Select id='select' options={[{ test: 'one' }, { test: 'two' }]}>
+      <Select id='test-select' options={[{ test: 'one' }, { test: 'two' }]}>
         {option => <span>{option.test}</span>}
       </Select>
     );
     expect(component.getDOMNode()).toMatchSnapshot();
-    expect(document.getElementById('select-drop__select')).toBeNull();
+    expect(document.getElementById('test-select__drop')).toBeNull();
 
     component.simulate('click');
 
     expect(component.getDOMNode()).toMatchSnapshot();
-    expectPortal('select-drop__select').toMatchSnapshot();
+    expectPortal('test-select__drop').toMatchSnapshot();
   });
 
   test('mounts with search', (done) => {
     const onSearch = jest.fn();
     const component = mount(
-      <Select id='select' options={['one', 'two']} onSearch={onSearch} />
+      <Select id='test-select' options={['one', 'two']} onSearch={onSearch} />
     );
     component.simulate('click');
 
-    expectPortal('select-drop__select').toMatchSnapshot();
+    expectPortal('test-select__drop').toMatchSnapshot();
 
     setTimeout(() => {
       expect(document.activeElement).toMatchSnapshot();
@@ -65,41 +65,47 @@ describe('Select', () => {
       // wait for debounce to kick in
       setTimeout(() => {
         expect(onSearch).toBeCalledWith('a');
-        expectPortal('select-drop__select').toMatchSnapshot();
+        expectPortal('test-select__drop').toMatchSnapshot();
         done();
       }, 200);
     }, 100);
   });
 
   test('closes drop on esc', () => {
+    const onClose = jest.fn();
     const component = mount(
-      <Select id='select' options={['one', 'two']} />
+      <Select id='test-select' options={['one', 'two']} onClose={onClose} />
     );
 
-    component.simulate('click');
+    Simulate.keyDown(
+      component.getDOMNode(),
+      { key: 'Down', keyCode: 40, which: 40 }
+    );
 
-    expectPortal('select-drop__select').toMatchSnapshot();
+    expectPortal('test-select__drop').toMatchSnapshot();
     expect(component.getDOMNode()).toMatchSnapshot();
 
     Simulate.keyDown(
-      document.getElementById('select-drop__select'), { key: 'Esc', keyCode: 27, which: 27 }
+      document.getElementById('test-select__drop'),
+      { key: 'Esc', keyCode: 27, which: 27 }
     );
 
-    expect(document.getElementById('select-drop__select')).toBeNull();
+    expect(onClose).toBeCalled();
+    expect(document.getElementById('test-select__drop')).toBeNull();
     expect(component.getDOMNode()).toMatchSnapshot();
   });
 
   test('selects an option', () => {
     const onChange = jest.fn();
     const component = mount(
-      <Select id='select' options={['one', 'two']} onChange={onChange} />
+      <Select id='test-select' options={['one', 'two']} onChange={onChange} />
     );
 
     component.simulate('click');
 
     // pressing enter here nothing will happen
     Simulate.click(
-      document.getElementById('select-drop__select').querySelector('button')
+      document.getElementById('test-select__drop').querySelector('button')
     );
     expect(onChange).toBeCalled();
   });
@@ -108,7 +114,7 @@ describe('Select', () => {
     const onChange = jest.fn();
     const component = mount(
       <Select
-        id='select'
+        id='test-select'
         plain={true}
         value={<span>one</span>}
         options={[{ test: 'one' }, { test: 'two' }]}
@@ -122,46 +128,34 @@ describe('Select', () => {
 
     // pressing enter here nothing will happen
     Simulate.click(
-      document.getElementById('select-drop__select').querySelector('button')
+      document.getElementById('test-select__drop').querySelector('button')
     );
     expect(onChange).toBeCalled();
   });
 
   test('selects an option with enter', () => {
     const onChange = jest.fn();
-    const onClose = jest.fn();
     const component = mount(
-      <Select id='select' options={['one', 'two']} onChange={onChange} onClose={onClose} />
+      <Select
+        id='test-select'
+        options={['one', 'two']}
+        onChange={onChange}
+      />
     );
 
     component.simulate('click');
 
     const preventDefault = jest.fn();
-    // pressing enter here nothing will happen
     Simulate.keyDown(
-      document.getElementById('select-drop__select'),
-      { key: 'Enter', keyCode: 13, which: 13, preventDefault },
-    );
-    Simulate.keyDown(
-      document.getElementById('select-drop__select'),
+      document.getElementById('test-select__select-drop'),
       { key: 'Down', keyCode: 40, which: 40, preventDefault },
     );
+    expect(preventDefault).toBeCalled();
     Simulate.keyDown(
-      document.getElementById('select-drop__select'),
-      { key: 'Down', keyCode: 40, which: 40, preventDefault },
-    );
-    Simulate.keyDown(
-      document.getElementById('select-drop__select'),
-      { key: 'Down', keyCode: 38, which: 38, preventDefault },
-    );
-    Simulate.keyDown(
-      document.getElementById('select-drop__select'),
+      document.getElementById('test-select__select-drop'),
       { key: 'Enter', keyCode: 13, which: 13, preventDefault },
     );
-    global.document.dispatchEvent(new Event('click'));
     expect(preventDefault).toBeCalled();
     expect(onChange).toBeCalled();
-    expect(onClose).toBeCalled();
-    expect(document.getElementById('select-drop__select')).toBeNull();
   });
 });

@@ -12,22 +12,6 @@ import { Menu } from 'grommet';
 
 ## Properties
 
-**background**
-
-Background color when drop is active
-
-```
-string
-{
-  color: string,
-  opacity: 
-    weak
-    medium
-    strong
-    boolean
-}
-```
-
 **dropAlign**
 
 Where to place the drop down. The keys correspond to a side of the drop down.
@@ -53,6 +37,22 @@ one of top or bottom should be specified. Defaults to `{
   right: 
     right
     left
+}
+```
+
+**dropBackground**
+
+Background color when drop is active
+
+```
+string
+{
+  color: string,
+  opacity: 
+    weak
+    medium
+    strong
+    boolean
 }
 ```
 
@@ -84,7 +84,10 @@ node
 
 **messages**
 
-Custom messages for Menu. Used for accessibility by screen readers.
+Custom messages. Used for accessibility by screen readers. Defaults to `{
+  "openMenu": "Open Menu",
+  "closeMenu": "Close Menu"
+}`.
 
 ```
 {

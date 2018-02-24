@@ -1,7 +1,7 @@
 ## DropButton
-A control that when clicked will render its children in a drop layer.
-When opened, the drop will control the focus so that the contents behind it
-are not focusable.
+A Button that when clicked will a Drop with the specified 'dropContent'.
+      When opened, the drop will control the focus so that the contents behind
+      it are not focusable. All properties of Button can be passed through.
       
 
 [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dropbutton&module=%2Fsrc%2FDropButton.js)
@@ -16,16 +16,15 @@ import { DropButton } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by
-      screen readers.
+Custom title to be used by screen readers.
 
 ```
 string
 ```
 
-**align**
+**dropAlign**
 
-How to align the drop with respect to the control. Defaults to `{
+How to align the drop with respect to the button. Defaults to `{
   "top": "top",
   "left": "left"
 }`.
@@ -47,10 +46,9 @@ How to align the drop with respect to the control. Defaults to `{
 }
 ```
 
-**control**
+**dropContent**
 
-Required. React node to open/close the
-      drop content.
+Required. Content to put inside the Drop.
 
 ```
 element
@@ -66,7 +64,8 @@ function
 
 **open**
 
-Whether the drop should be open or not.
+Whether the drop should be open or not. Setting it to 'false' will
+      disable the button.
 
 ```
 boolean

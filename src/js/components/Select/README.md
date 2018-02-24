@@ -27,7 +27,39 @@ Highlight a given option at the provided index.
 number
 ```
 
-**background**
+**children**
+
+Function that will be called when each option is rendered.
+
+```
+function
+```
+
+**dropAlign**
+
+How to align the drop. Defaults to `{
+  "top": "top",
+  "left": "left"
+}`.
+
+```
+{
+  top: 
+    top
+    bottom,
+  bottom: 
+    top
+    bottom,
+  right: 
+    left
+    right,
+  left: 
+    left
+    right
+}
+```
+
+**dropBackground**
 
 Background color
 
@@ -41,14 +73,6 @@ string
     strong
     boolean
 }
-```
-
-**children**
-
-Function that will be called when each option is rendered.
-
-```
-function
 ```
 
 **dropSize**

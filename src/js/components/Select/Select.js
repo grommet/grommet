@@ -4,82 +4,82 @@ import { FormDown } from 'grommet-icons';
 
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
+import { Keyboard } from '../Keyboard';
 import { TextInput } from '../TextInput';
 
 import SelectContainer from './SelectContainer';
 import doc from './doc';
 
 class Select extends Component {
-  state = {}
+  state = { open: undefined }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.value !== nextProps.value) {
-      this.closeDrop = true;
+    const { onClose, value } = nextProps;
+    const { open } = this.state;
+    if (value !== this.props.value) {
+      this.setState({ open: undefined });
+      if (onClose && open) {
+        onClose();
+      }
     }
   }
 
-  componentDidUpdate() {
-    if (this.closeDrop) {
-      this.closeDrop = false;
-    }
-  }
-
-  selectControl = () => {
-    const { placeholder, plain, value, ...rest } = this.props;
-    delete rest.children;
-    const content = React.isValidElement(value) ? value : (
-      <TextInput
-        style={{ cursor: 'pointer' }}
-        ref={(ref) => { this.inputRef = ref; }}
-        {...rest}
-        tabIndex='-1'
-        type='text'
-        placeholder={placeholder}
-        plain={true}
-        readOnly={true}
-        value={value}
-      />
-    );
-    return (
-      <Box
-        aria-hidden={true}
-        align='center'
-        border={!plain ? 'all' : undefined}
-        direction='row'
-        justify='between'
-      >
-        {content}
-        <Box
-          margin={{ horizontal: 'small' }}
-          flex={false}
-          style={{ minWidth: 'auto' }}
-        >
-          <FormDown />
-        </Box>
-      </Box>
-    );
+  onOpen = () => {
+    this.setState({ open: true });
   }
 
   render() {
     const {
-      a11yTitle, background, focusIndicator, onBlur, onClose, onFocus, open,
-      plain, tabIndex, value,
+      a11yTitle, children, onClose, open: propsOpen, placeholder, plain,
+      value, ...rest
     } = this.props;
+    const { open: stateOpen } = this.state;
+
     return (
-      <DropButton
-        open={open || this.closeDrop ? false : undefined}
-        tabIndex={tabIndex}
-        a11yTitle={`${a11yTitle}${typeof value === 'string' ? `, ${value}` : ''}`}
-        background={background}
-        plain={plain}
-        focusIndicator={focusIndicator}
-        control={this.selectControl()}
-        onClose={onClose}
-        onFocus={onFocus}
-        onBlur={onBlur}
-      >
-        <SelectContainer {...this.props} />
-      </DropButton>
+      <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
+        <DropButton
+          dropAlign={{ top: 'bottom', left: 'left' }}
+          {...rest}
+          open={stateOpen || propsOpen}
+          onClose={() => {
+            this.setState({ open: undefined });
+            if (onClose) {
+              onClose();
+            }
+          }}
+          a11yTitle={`${a11yTitle}${typeof value === 'string' ? `, ${value}` : ''}`}
+          dropContent={<SelectContainer {...this.props} />}
+        >
+          <Box
+            aria-hidden={true}
+            align='center'
+            border={!plain ? 'all' : undefined}
+            direction='row'
+            justify='between'
+          >
+            {React.isValidElement(value) ? value : (
+              <TextInput
+                style={{ cursor: 'pointer' }}
+                ref={(ref) => { this.inputRef = ref; }}
+                {...rest}
+                tabIndex='-1'
+                type='text'
+                placeholder={placeholder}
+                plain={true}
+                readOnly={true}
+                value={value}
+              />
+            )}
+            <Box
+              margin={{ horizontal: 'small' }}
+              flex={false}
+              style={{ minWidth: 'auto' }}
+            >
+              <FormDown />
+            </Box>
+          </Box>
+        </DropButton>
+      </Keyboard>
     );
   }
 }

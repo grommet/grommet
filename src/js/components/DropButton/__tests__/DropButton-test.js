@@ -14,7 +14,10 @@ describe('DropButton', () => {
 
   test('mounts', () => {
     const component = mount(
-      <DropButton control={<input />}><div id='drop-contents'>drop contents</div></DropButton>, {
+      <DropButton
+        labl='Dropper'
+        dropContent={<div id='drop-contents'>drop contents</div>}
+      />, {
         attachTo: document.body.firstChild,
       }
     );
@@ -39,9 +42,11 @@ describe('DropButton', () => {
   test('closes', () => {
     const onClose = jest.fn();
     const component = mount(
-      <DropButton control={<input />} onClose={onClose}>
-        <div id='drop-contents'>drop contents</div>
-      </DropButton>, {
+      <DropButton
+        label='Dropper'
+        onClose={onClose}
+        dropContent={<div id='drop-contents'>drop contents</div>}
+      />, {
         attachTo: document.body.firstChild,
       }
     );
