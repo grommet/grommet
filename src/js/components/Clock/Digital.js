@@ -77,7 +77,7 @@ export default class Digital extends Component {
     }
     return (
       <Box direction='row' {...rest}>
-        <Element number={elements.hours} run={run} size={size} theme={theme} />
+        <Element number={elements.hours12 || elements.hours} run={run} size={size} theme={theme} />
         {minutes}
         {seconds}
       </Box>

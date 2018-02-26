@@ -61,9 +61,9 @@ exports[`Stack anchor renders 1`] = `
     <div
       style={
         Object {
+          "left": "50%",
           "overflow": "hidden",
           "position": "absolute",
-          "right": "50%",
           "top": "0",
           "transform": "translateX(-50%)",
         }
@@ -113,10 +113,10 @@ exports[`Stack anchor renders 1`] = `
     <div
       style={
         Object {
+          "bottom": "0",
+          "left": "50%",
           "overflow": "hidden",
           "position": "absolute",
-          "right": "50%",
-          "top": "0",
           "transform": "translateX(-50%)",
         }
       }
