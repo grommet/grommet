@@ -15,7 +15,7 @@ describe('DropButton', () => {
   test('mounts', () => {
     const component = mount(
       <DropButton
-        labl='Dropper'
+        label='Dropper'
         dropContent={<div id='drop-contents'>drop contents</div>}
       />, {
         attachTo: document.body.firstChild,

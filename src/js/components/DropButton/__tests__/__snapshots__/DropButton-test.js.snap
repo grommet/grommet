@@ -43,8 +43,15 @@ exports[`DropButton mounts 1`] = `
 <button
   class="StyledButton-gXzblK fhiEMm"
   aria-label="Open Drop"
+  label="Dropper"
   type="button"
-/>
+>
+  <span
+    class="StyledButton__StyledLabel-XZHBZ kthNMI"
+  >
+    Dropper
+  </span>
+</button>
 `;
 
 exports[`DropButton mounts 2`] = `
@@ -68,10 +75,17 @@ exports[`DropButton mounts 4`] = `
 <button
   class="StyledButton-gXzblK fhiEMm"
   aria-label="Open Drop"
+  label="Dropper"
   type="button"
   tabindex="-1"
   id="test"
-/>
+>
+  <span
+    class="StyledButton__StyledLabel-XZHBZ kthNMI"
+  >
+    Dropper
+  </span>
+</button>
 `;
 
 exports[`DropButton mounts 5`] = `

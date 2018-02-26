@@ -103,7 +103,10 @@ class SelectContainer extends Component {
         onDown={this.onNextOption}
         onKeyDown={onKeyDown}
       >
-        <Box id={`${id}__select-drop`} background={dropBackground}>
+        <Box
+          id={id ? `${id}__select-drop` : undefined}
+          background={dropBackground}
+        >
           {onSearch ? (
             <Box pad='xsmall'>
               <TextInput
