@@ -6,26 +6,24 @@ import { FormDown } from 'grommet-icons';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
-import { Drop } from '../Drop';
+import { DropButton } from '../DropButton';
 
 import doc from './doc';
 
 class Menu extends Component {
   static defaultProps = {
     dropAlign: { top: 'top', left: 'left' },
+    messages: { openMenu: 'Open Menu', closeMenu: 'Close Menu' },
   };
 
-  state = {
-    activeItemIndex: -1,
-    showDrop: false,
-  }
+  state = { activeItemIndex: -1 }
 
   buttonRefs = {}
 
   onDropClose = () => {
     this.setState({
       activeItemIndex: -1,
-      showDrop: false,
+      open: undefined,
     });
   }
 
@@ -40,10 +38,10 @@ class Menu extends Component {
 
   onNextMenuItem = (event) => {
     event.preventDefault();
-    const { showDrop, activeItemIndex } = this.state;
-    if (!showDrop) {
+    const { activeItemIndex, open } = this.state;
+    if (!open) {
       this.setState({
-        showDrop: true,
+        open: true,
         activeItemIndex: -1,
       });
     } else {
@@ -57,10 +55,10 @@ class Menu extends Component {
 
   onPreviousMenuItem = (event) => {
     event.preventDefault();
-    const { showDrop, activeItemIndex } = this.state;
-    if (!showDrop) {
+    const { activeItemIndex, open } = this.state;
+    if (!open) {
       this.setState({
-        showDrop: true,
+        open: true,
         activeItemIndex: -1,
       });
     } else {
@@ -75,88 +73,40 @@ class Menu extends Component {
 
   render() {
     const {
-      background,
       dropAlign,
       icon,
-      id,
       items,
       label,
-      messages = {},
+      messages,
       onKeyDown,
       ...rest
     } = this.props;
-    const { activeItemIndex, showDrop } = this.state;
+    const { activeItemIndex, open } = this.state;
 
     const menuIcon = icon || <FormDown />;
 
-    let labelNode;
-    if (label) {
-      labelNode = (
-        <Box margin={{ right: 'small' }}>
-          {label}
-        </Box>
-      );
-    }
+    const content = (
+      <Box
+        direction='row'
+        justify='start'
+        align='center'
+        pad='small'
+        gap='small'
+      >
+        {label}
+        {menuIcon}
+      </Box>
+    );
+
     const controlMirror = (
       <Button
         fill={true}
         a11yTitle={messages.closeMenu || 'Close Menu'}
         onClick={this.onDropClose}
       >
-        <Box
-          pad='small'
-          direction='row'
-          justify={dropAlign.right ? 'end' : 'start'}
-        >
-          {labelNode}{menuIcon}
-        </Box>
+        {content}
       </Button>
     );
-
-    let drop;
-    if (showDrop) {
-      drop = (
-        <Drop
-          id={id ? `menu-drop__${id}` : undefined}
-          align={dropAlign}
-          ref={(ref) => {
-            this.dropRef = ref;
-          }}
-          control={this.componentRef}
-          onClose={this.onDropClose}
-        >
-          <Box background={background}>
-            {dropAlign.top === 'top' ? controlMirror : undefined}
-            <Box>
-              {items.map(
-                (item, index) => (
-                  <Button
-                    ref={(ref) => {
-                      this.buttonRefs[index] = ref;
-                    }}
-                    active={activeItemIndex === index}
-                    key={`menuItem_${index}`}
-                    hoverIndicator='background'
-                    onClick={item.onClick ? (...args) => {
-                      item.onClick(...args);
-                      if (item.close !== false) {
-                        this.onDropClose();
-                      }
-                    } : undefined}
-                    href={item.href}
-                  >
-                    <Box align='start' pad='small' direction='row'>
-                      {item.icon}{item.label}
-                    </Box>
-                  </Button>
-                )
-              )}
-            </Box>
-            {dropAlign.bottom === 'bottom' ? controlMirror : undefined }
-          </Box>
-        </Drop>
-      );
-    }
 
     return (
       <Keyboard
@@ -169,21 +119,46 @@ class Menu extends Component {
         onKeyDown={onKeyDown}
       >
         <div>
-          <Button
-            id={id}
-            ref={(ref) => {
-              this.componentRef = ref;
-            }}
-            a11yTitle={messages.openMenu || 'Open Menu'}
-            onClick={() => this.setState({ activeItemIndex: -1, showDrop: !this.state.showDrop })}
+          <DropButton
             {...rest}
+            a11yTitle={messages.openMenu || 'Open Menu'}
+            dropAlign={dropAlign}
+            open={open}
+            onClose={() => this.setState({ open: undefined })}
+            dropContent={
+              <Box>
+                {dropAlign.top === 'top' ? controlMirror : undefined}
+                <Box>
+                  {items.map(
+                    (item, index) => (
+                      <Button
+                        ref={(ref) => {
+                          this.buttonRefs[index] = ref;
+                        }}
+                        active={activeItemIndex === index}
+                        key={`menuItem_${index}`}
+                        hoverIndicator='background'
+                        onClick={item.onClick ? (...args) => {
+                          item.onClick(...args);
+                          if (item.close !== false) {
+                            this.onDropClose();
+                          }
+                        } : undefined}
+                        href={item.href}
+                      >
+                        <Box align='start' pad='small' direction='row'>
+                          {item.icon}{item.label}
+                        </Box>
+                      </Button>
+                    )
+                  )}
+                </Box>
+                {dropAlign.bottom === 'bottom' ? controlMirror : undefined }
+              </Box>
+            }
           >
-            <Box align='start' direction='row' pad='small'>
-              {labelNode}
-              {menuIcon}
-            </Box>
-          </Button>
-          {drop}
+            {content}
+          </DropButton>
         </div>
       </Keyboard>
     );

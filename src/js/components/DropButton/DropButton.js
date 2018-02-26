@@ -8,25 +8,36 @@ import { withTheme } from '../hocs';
 import doc from './doc';
 
 class DropButton extends Component {
+  static defaultProps = {
+    a11yTitle: 'Open Drop',
+    dropAlign: { top: 'top', left: 'left' },
+  }
+
   constructor(props, context) {
     super(props, context);
-    this.state = {
-      showDrop: props.open,
-    };
+    this.state = { show: props.open };
+    this.checkRef = props.open;
+  }
+
+  componentDidMount() {
+    // In case the caller starts with the drop open, before we have the
+    // buttonRef, see if we have it now and re-render.
+    if (this.checkRef && this.buttonRef) {
+      this.checkRef = false;
+      this.forceUpdate();
+    }
   }
 
   componentWillReceiveProps({ open }) {
-    const { showDrop } = this.state;
-    if (open !== undefined && open !== showDrop) {
-      this.setState({ showDrop: open });
+    const { show } = this.state;
+    if (open !== show) {
+      this.setState({ show: open });
     }
   }
 
   onDropClose = () => {
-    const { onClose } = this.props;
-    this.setState({
-      showDrop: false,
-    }, () => {
+    const { onClose, open } = this.props;
+    this.setState({ show: (open || false) }, () => {
       if (onClose) {
         onClose();
       }
@@ -34,33 +45,23 @@ class DropButton extends Component {
   }
 
   render() {
-    const {
-      a11yTitle,
-      align,
-      children,
-      control,
-      id,
-      theme,
-      ...rest
-    } = this.props;
-    const { showDrop } = this.state;
+    const { dropAlign, dropContent, id, open, theme, ...rest } = this.props;
+    const { show } = this.state;
 
     let drop;
-    if (showDrop) {
+    if (show && this.buttonRef) {
       drop = (
         <Drop
           key='drop'
-          ref={(ref) => {
-            this.dropRef = ref;
-          }}
-          id={id ? `drop-button__${id}` : undefined}
+          ref={(ref) => { this.dropRef = ref; }}
+          id={id ? `${id}__drop` : undefined}
           restrictFocus={true}
-          align={align}
-          control={this.componentRef}
+          align={dropAlign}
+          control={this.buttonRef}
           onClickOutside={this.onDropClose}
           onEsc={this.onDropClose}
         >
-          {children}
+          {dropContent}
         </Drop>
       );
     }
@@ -69,15 +70,10 @@ class DropButton extends Component {
       <Button
         key='button'
         id={id}
-        ref={(ref) => {
-          this.componentRef = ref;
-        }}
-        a11yTitle={a11yTitle || 'Open Drop'}
-        onClick={() => this.setState({ showDrop: !this.state.showDrop })}
+        ref={(ref) => { this.buttonRef = ref; }}
+        onClick={open !== false ? (() => this.setState({ show: !show })) : undefined}
         {...rest}
-      >
-        {control}
-      </Button>,
+      />,
       drop,
     ];
   }

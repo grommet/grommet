@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "babel-plugin-grommet": "^0.5.1",
-    "grommet-icons": "^0.15.0",
+    "grommet-icons": "^0.16.0",
     "markdown-to-jsx": "^5.4.2",
     "node-emoji": "^1.8.1",
     "polished": "^1.3.0",

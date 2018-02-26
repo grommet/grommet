@@ -179,13 +179,14 @@ class DropContainer extends Component {
       children,
       onClickOutside,
       onEsc,
+      onKeyDown,
       theme,
       ...rest
     } = this.props;
 
     return (
       <FocusedContainer>
-        <Keyboard onEsc={onEsc}>
+        <Keyboard onEsc={onEsc} onKeyDown={onKeyDown}>
           <StyledDrop
             tabIndex='-1'
             ref={(ref) => {

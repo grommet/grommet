@@ -2,11 +2,16 @@
 
 exports[`DropButton closes 1`] = `
 <button
-  class="StyledButton-gXzblK cfJbKA"
+  class="StyledButton-gXzblK fhiEMm"
   aria-label="Open Drop"
+  label="Dropper"
   type="button"
 >
-  <input />
+  <span
+    class="StyledButton__StyledLabel-XZHBZ kthNMI"
+  >
+    Dropper
+  </span>
 </button>
 `;
 
@@ -20,7 +25,14 @@ exports[`DropButton closes 2`] = `
 
 exports[`DropButton closes 3`] = `
 "@media only screen and (min-width:700px) {
-  .cfJbKA {
+  .fhiEMm {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .jArdLz {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -29,11 +41,16 @@ exports[`DropButton closes 3`] = `
 
 exports[`DropButton mounts 1`] = `
 <button
-  class="StyledButton-gXzblK cfJbKA"
+  class="StyledButton-gXzblK fhiEMm"
   aria-label="Open Drop"
+  label="Dropper"
   type="button"
 >
-  <input />
+  <span
+    class="StyledButton__StyledLabel-XZHBZ kthNMI"
+  >
+    Dropper
+  </span>
 </button>
 `;
 
@@ -47,7 +64,7 @@ exports[`DropButton mounts 2`] = `
 
 exports[`DropButton mounts 3`] = `
 "@media only screen and (min-width:700px) {
-  .cfJbKA {
+  .fhiEMm {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -56,16 +73,18 @@ exports[`DropButton mounts 3`] = `
 
 exports[`DropButton mounts 4`] = `
 <button
-  class="StyledButton-gXzblK cfJbKA"
+  class="StyledButton-gXzblK fhiEMm"
   aria-label="Open Drop"
+  label="Dropper"
   type="button"
   tabindex="-1"
   id="test"
-  open=""
 >
-  <input
-    tabindex="-1"
-  />
+  <span
+    class="StyledButton__StyledLabel-XZHBZ kthNMI"
+  >
+    Dropper
+  </span>
 </button>
 `;
 
@@ -79,7 +98,7 @@ exports[`DropButton mounts 5`] = `
 
 exports[`DropButton mounts 6`] = `
 "@media only screen and (min-width:700px) {
-  .cfJbKA {
+  .fhiEMm {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

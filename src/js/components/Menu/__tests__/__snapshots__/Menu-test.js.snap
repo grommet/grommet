@@ -4,7 +4,7 @@ exports[`Menu opens and closes on click 1`] = `
 <div
   class="StyledDrop-bCWxPe gcEofR"
   tabindex="-1"
-  id="menu-drop__test"
+  id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
@@ -17,15 +17,14 @@ exports[`Menu opens and closes on click 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS iYfqNg"
+        class="StyledBox-bStriS glqlEM"
         direction="row"
       >
+        Test
         <div
-          class="StyledBox-bStriS uHalm"
-          direction="column"
-        >
-          Test
-        </div>
+          class="StyledBox__StyledBoxGap-ixLlSs laXbkr"
+          direction="row"
+        />
         <svg
           class="StyledIcon-gTfjEw htxeRg"
           width="24px"
@@ -151,12 +150,12 @@ exports[`Menu renders 1`] = `
 <div>
   <button
     class="StyledButton-gXzblK cfJbKA"
-    id="item"
+    id="test-menu"
     aria-label="Open Menu"
     type="button"
   >
     <div
-      class="StyledBox-bStriS djNGoG"
+      class="StyledBox-bStriS glqlEM"
       direction="row"
     >
       <svg />
@@ -173,15 +172,14 @@ exports[`Menu with custom message renders 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-bStriS djNGoG"
+      class="StyledBox-bStriS glqlEM"
       direction="row"
     >
+      Test Menu
       <div
-        class="StyledBox-bStriS uHalm"
-        direction="column"
-      >
-        Test Icon
-      </div>
+        class="StyledBox__StyledBoxGap-ixLlSs laXbkr"
+        direction="row"
+      />
       <svg
         class="StyledIcon-gTfjEw htxeRg"
         width="24px"
@@ -204,65 +202,83 @@ exports[`Menu with custom message renders 1`] = `
 `;
 
 exports[`Menu with dropAlign renders 1`] = `
-<button
-  class="StyledButton-gXzblK cfJbKA"
-  id="menu"
-  aria-label="Open Menu"
-  type="button"
+<div
+  class="StyledDrop-bCWxPe fAkYxw"
   tabindex="-1"
+  id="test-menu__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
-    class="StyledBox-bStriS djNGoG"
-    direction="row"
+    class="StyledBox-bStriS iQipYn"
+    direction="column"
   >
+    <button
+      class="StyledButton-gXzblK ioFkN"
+      aria-label="Close Menu"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS glqlEM"
+        direction="row"
+      >
+        Test
+        <div
+          class="StyledBox__StyledBoxGap-ixLlSs laXbkr"
+          direction="row"
+        />
+        <svg
+          class="StyledIcon-gTfjEw htxeRg"
+          width="24px"
+          height="24px"
+          viewBox="0 0 24 24"
+          version="1.1"
+          role="img"
+          aria-label="FormDown"
+        >
+          <polyline
+            fill="none"
+            stroke="#000"
+            stroke-width="2"
+            points="18 9 12 15 6 9"
+          />
+        </svg>
+      </div>
+    </button>
     <div
-      class="StyledBox-bStriS uHalm"
+      class="StyledBox-bStriS iQipYn"
       direction="column"
     >
-      Test
+      <button
+        class="StyledButton-gXzblK eQPBtm"
+        disabled=""
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS djNGoG"
+          direction="row"
+        >
+          Item 1
+        </div>
+      </button>
+      <button
+        class="StyledButton-gXzblK eQPBtm"
+        disabled=""
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS djNGoG"
+          direction="row"
+        >
+          Item 2
+        </div>
+      </button>
     </div>
-    <svg
-      class="StyledIcon-gTfjEw htxeRg"
-      width="24px"
-      height="24px"
-      viewBox="0 0 24 24"
-      version="1.1"
-      role="img"
-      aria-label="FormDown"
-    >
-      <polyline
-        fill="none"
-        stroke="#000"
-        stroke-width="2"
-        points="18 9 12 15 6 9"
-      />
-    </svg>
   </div>
-</button>
+</div>
 `;
 
 exports[`Menu with dropAlign renders 2`] = `
-"
-
-.cfJbKA {
-  box-sizing: border-box;
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  background-color: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  text-align: inherit;
-}
-
-@media only screen and (min-width:700px) {
+"@media only screen and (min-width:700px) {
   .cfJbKA {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -295,5 +311,35 @@ exports[`Menu with dropAlign renders 2`] = `
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
+}
+
+
+
+.fAkYxw {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: top right;
+  -ms-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
 }"
 `;

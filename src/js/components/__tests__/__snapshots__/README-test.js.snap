@@ -1205,9 +1205,9 @@ object
 \`\`\`
   ",
   "DropButton": "## DropButton
-A control that when clicked will render its children in a drop layer.
-When opened, the drop will control the focus so that the contents behind it
-are not focusable.
+A Button that when clicked will a Drop with the specified 'dropContent'.
+      When opened, the drop will control the focus so that the contents behind
+      it are not focusable. All properties of Button can be passed through.
       
 
 [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=dropbutton&module=%2Fsrc%2FDropButton.js)
@@ -1222,16 +1222,15 @@ import { DropButton } from 'grommet';
 
 **a11yTitle**
 
-Custom title to be used by
-      screen readers.
+Custom title to be used by screen readers.
 
 \`\`\`
 string
 \`\`\`
 
-**align**
+**dropAlign**
 
-How to align the drop with respect to the control. Defaults to \`{
+How to align the drop with respect to the button. Defaults to \`{
   \\"top\\": \\"top\\",
   \\"left\\": \\"left\\"
 }\`.
@@ -1253,10 +1252,9 @@ How to align the drop with respect to the control. Defaults to \`{
 }
 \`\`\`
 
-**control**
+**dropContent**
 
-Required. React node to open/close the
-      drop content.
+Required. Content to put inside the Drop.
 
 \`\`\`
 element
@@ -1272,7 +1270,8 @@ function
 
 **open**
 
-Whether the drop should be open or not.
+Whether the drop should be open or not. Setting it to 'false' will
+      disable the button.
 
 \`\`\`
 boolean
@@ -1823,22 +1822,6 @@ import { Menu } from 'grommet';
 
 ## Properties
 
-**background**
-
-Background color when drop is active
-
-\`\`\`
-string
-{
-  color: string,
-  opacity: 
-    weak
-    medium
-    strong
-    boolean
-}
-\`\`\`
-
 **dropAlign**
 
 Where to place the drop down. The keys correspond to a side of the drop down.
@@ -1864,6 +1847,22 @@ one of top or bottom should be specified. Defaults to \`{
   right: 
     right
     left
+}
+\`\`\`
+
+**dropBackground**
+
+Background color when drop is active
+
+\`\`\`
+string
+{
+  color: string,
+  opacity: 
+    weak
+    medium
+    strong
+    boolean
 }
 \`\`\`
 
@@ -1895,7 +1894,10 @@ node
 
 **messages**
 
-Custom messages for Menu. Used for accessibility by screen readers.
+Custom messages. Used for accessibility by screen readers. Defaults to \`{
+  \\"openMenu\\": \\"Open Menu\\",
+  \\"closeMenu\\": \\"Close Menu\\"
+}\`.
 
 \`\`\`
 {
@@ -2248,7 +2250,39 @@ Highlight a given option at the provided index.
 number
 \`\`\`
 
-**background**
+**children**
+
+Function that will be called when each option is rendered.
+
+\`\`\`
+function
+\`\`\`
+
+**dropAlign**
+
+How to align the drop. Defaults to \`{
+  \\"top\\": \\"top\\",
+  \\"left\\": \\"left\\"
+}\`.
+
+\`\`\`
+{
+  top: 
+    top
+    bottom,
+  bottom: 
+    top
+    bottom,
+  right: 
+    left
+    right,
+  left: 
+    left
+    right
+}
+\`\`\`
+
+**dropBackground**
 
 Background color
 
@@ -2262,14 +2296,6 @@ string
     strong
     boolean
 }
-\`\`\`
-
-**children**
-
-Function that will be called when each option is rendered.
-
-\`\`\`
-function
 \`\`\`
 
 **dropSize**
