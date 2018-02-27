@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import { parseMetricToNum } from './mixins';
+import { palm, parseMetricToNum } from './mixins';
 import { colorForName, colorIsDark, getRGBA } from './colors';
 
 export const activeStyle = css`
@@ -91,34 +91,67 @@ export const baseStyle = css`
   -webkit-font-smoothing: antialiased;
 `;
 
-export const edgeStyle = (kind, data, theme) => {
+export const edgeStyle = (kind, data, responsive, theme) => {
   if (typeof data === 'string') {
-    return `${kind}: ${theme.global.edgeSize[data]};`;
+    return `
+      ${kind}: ${theme.global.edgeSize[data]};
+      ${responsive ? palm(`
+        ${kind}: ${theme.global.edgeSize.narrow[data]};
+      `) : ''}
+    `;
   }
   let result = '';
   if (data.horizontal) {
     result += `
       ${kind}-left: ${theme.global.edgeSize[data.horizontal]};
       ${kind}-right: ${theme.global.edgeSize[data.horizontal]};
+      ${responsive ? palm(`
+        ${kind}-left: ${theme.global.edgeSize.narrow[data.horizontal]};
+        ${kind}-right: ${theme.global.edgeSize.narrow[data.horizontal]};
+      `) : ''}
     `;
   }
   if (data.vertical) {
     result += `
       ${kind}-top: ${theme.global.edgeSize[data.vertical]};
       ${kind}-bottom: ${theme.global.edgeSize[data.vertical]};
+      ${responsive ? palm(`
+        ${kind}-top: ${theme.global.edgeSize.narrow[data.vertical]};
+        ${kind}-bottom: ${theme.global.edgeSize.narrow[data.vertical]};
+      `) : ''}
     `;
   }
   if (data.top) {
-    result += `${kind}-top: ${theme.global.edgeSize[data.top]};`;
+    result += `
+      ${kind}-top: ${theme.global.edgeSize[data.top]};
+      ${responsive ? palm(`
+        ${kind}-top: ${theme.global.edgeSize.narrow[data.top]};
+      `) : ''}
+    `;
   }
   if (data.bottom) {
-    result += `${kind}-bottom: ${theme.global.edgeSize[data.bottom]};`;
+    result += `
+      ${kind}-bottom: ${theme.global.edgeSize[data.bottom]};
+      ${responsive ? palm(`
+        ${kind}-bottom: ${theme.global.edgeSize.narrow[data.bottom]};
+      `) : ''}
+    `;
   }
   if (data.left) {
-    result += `${kind}-left: ${theme.global.edgeSize[data.left]};`;
+    result += `
+      ${kind}-left: ${theme.global.edgeSize[data.left]};
+      ${responsive ? palm(`
+        ${kind}-left: ${theme.global.edgeSize.narrow[data.left]};
+      `) : ''}
+    `;
   }
   if (data.right) {
-    result += `${kind}-right: ${theme.global.edgeSize[data.right]};`;
+    result += `
+      ${kind}-right: ${theme.global.edgeSize[data.right]};
+      ${responsive ? palm(`
+        ${kind}-right: ${theme.global.edgeSize.narrow[data.left]};
+      `) : ''}
+    `;
   }
   return result;
 };

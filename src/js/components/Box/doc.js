@@ -79,7 +79,7 @@ the column axis when contained in a Grid.`
         size: PropTypes.oneOf(['small', 'medium', 'large']),
       }),
     ]).description('Include a border.'),
-    direction: PropTypes.oneOf(['row', 'column']).description(
+    direction: PropTypes.oneOf(['row', 'column', 'row-responsive']).description(
       'The orientation to layout the child components in.'
     ).defaultValue('column'),
     elevation: PropTypes.oneOf(['none', 'xsmall', 'small', 'medium', 'large', 'xlarge'])
@@ -138,8 +138,8 @@ distinguish horizontal padding, vertical padding, and padding on a
 particular side of the box`
     ),
     responsive: PropTypes.bool.description(
-      `Whether children laid out in a row direction should be switched to a
-column layout when the display area narrows.`
+      `Whether margin, pad, and border sizes should be scaled for
+      mobile environments.`
     ),
     round: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full']).description(
       'How much to round the corners.'

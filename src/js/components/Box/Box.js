@@ -55,6 +55,7 @@ class Box extends Component {
       children,
       direction,
       gap,
+      responsive,
       tag,
       theme,
       ...rest
@@ -80,6 +81,7 @@ class Box extends Component {
                 key={index}
                 gap={gap}
                 direction={direction}
+                responsive={responsive}
                 theme={theme}
               />
             ));
@@ -93,6 +95,7 @@ class Box extends Component {
       <StyledComponent
         aria-label={a11yTitle}
         direction={direction}
+        responsive={responsive}
         theme={theme}
         {...rest}
       >
