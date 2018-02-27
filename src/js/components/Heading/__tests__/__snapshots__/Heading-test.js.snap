@@ -1,12 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Heading level renders 1`] = `
+exports[`Heading color renders 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -14,49 +13,80 @@ exports[`Heading level renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
+.c1 {
+  font-size: 48px;
+  line-height: 1.125;
+  max-width: 1152px;
+  font-weight: 300;
+  color: #865CD6;
+}
+
+<div
+  className="c0"
+>
+  <h1
+    className="c1"
+    color="brand"
+  />
+</div>
+`;
+
+exports[`Heading level renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c1 {
   font-size: 48px;
   line-height: 1.125;
+  max-width: 1152px;
   font-weight: 300;
 }
 
 .c2 {
   font-size: 36px;
   line-height: 1.23;
+  max-width: 864px;
   font-weight: 300;
 }
 
 .c3 {
   font-size: 24px;
   line-height: 1.333;
+  max-width: 576px;
   font-weight: 300;
 }
 
 .c4 {
   font-size: 18px;
   line-height: 1.333;
+  max-width: 432px;
   font-weight: 300;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
   className="c0"
 >
+  <h1
+    className="c1"
+  />
+  <h2
+    className="c2"
+  />
+  <h3
+    className="c3"
+  />
+  <h4
+    className="c4"
+  />
   <h1
     className="c1"
   />
@@ -78,7 +108,6 @@ exports[`Heading margin renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -86,13 +115,10 @@ exports[`Heading margin renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   font-size: 48px;
   line-height: 1.125;
+  max-width: 1152px;
   font-weight: 300;
   margin-top: 12px;
   margin-bottom: 12px;
@@ -101,6 +127,7 @@ exports[`Heading margin renders 1`] = `
 .c2 {
   font-size: 48px;
   line-height: 1.125;
+  max-width: 1152px;
   font-weight: 300;
   margin-top: 24px;
   margin-bottom: 24px;
@@ -109,6 +136,7 @@ exports[`Heading margin renders 1`] = `
 .c3 {
   font-size: 48px;
   line-height: 1.125;
+  max-width: 1152px;
   font-weight: 300;
   margin-top: 48px;
   margin-bottom: 48px;
@@ -117,6 +145,7 @@ exports[`Heading margin renders 1`] = `
 .c4 {
   font-size: 48px;
   line-height: 1.125;
+  max-width: 1152px;
   font-weight: 300;
   margin-top: 0;
   margin-bottom: 0;
@@ -125,6 +154,7 @@ exports[`Heading margin renders 1`] = `
 .c5 {
   font-size: 48px;
   line-height: 1.125;
+  max-width: 1152px;
   font-weight: 300;
   margin-bottom: 12px;
 }
@@ -132,20 +162,25 @@ exports[`Heading margin renders 1`] = `
 .c6 {
   font-size: 48px;
   line-height: 1.125;
+  max-width: 1152px;
   font-weight: 300;
   margin-top: 12px;
 }
 
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
+.c7 {
+  font-size: 48px;
+  line-height: 1.125;
+  max-width: 1152px;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.c8 {
+  font-size: 48px;
+  line-height: 1.125;
+  max-width: 1152px;
+  font-weight: 300;
+  margin-top: 0;
 }
 
 <div
@@ -169,6 +204,12 @@ exports[`Heading margin renders 1`] = `
   <h1
     className="c6"
   />
+  <h1
+    className="c7"
+  />
+  <h1
+    className="c8"
+  />
 </div>
 `;
 
@@ -178,7 +219,6 @@ exports[`Heading renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -186,26 +226,11 @@ exports[`Heading renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   font-size: 48px;
   line-height: 1.125;
+  max-width: 1152px;
   font-weight: 300;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -223,7 +248,6 @@ exports[`Heading size renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -231,92 +255,46 @@ exports[`Heading size renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c2 {
   font-size: 48px;
   line-height: 1.125;
-  font-weight: 300;
-}
-
-.c1 {
-  font-size: 24px;
-  line-height: 1.333;
-  font-weight: 300;
-}
-
-.c3 {
-  font-size: 96px;
-  line-height: 1.125;
+  max-width: 1152px;
   font-weight: 300;
 }
 
 .c5 {
   font-size: 36px;
   line-height: 1.23;
+  max-width: 864px;
+  font-weight: 300;
+}
+
+.c1 {
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
   font-weight: 300;
 }
 
 .c4 {
   font-size: 18px;
   line-height: 1.333;
+  max-width: 432px;
+  font-weight: 300;
+}
+
+.c3 {
+  font-size: 96px;
+  line-height: 1.125;
+  max-width: 2304px;
   font-weight: 300;
 }
 
 .c6 {
-  font-size: 48px;
-  line-height: 1.125;
-  font-weight: 300;
-}
-
-.c8 {
-  font-size: 24px;
-  line-height: 1.333;
-  font-weight: 300;
-}
-
-.c7 {
-  font-size: 18px;
-  line-height: 1.333;
-  font-weight: 300;
-}
-
-.c9 {
-  font-size: 36px;
-  line-height: 1.23;
-  font-weight: 300;
-}
-
-.c11 {
-  font-size: 18px;
-  line-height: 1.333;
-  font-weight: 300;
-}
-
-.c10 {
   font-size: 16px;
-  line-height: 1.333;
+  line-height: 1.375;
+  max-width: 384px;
   font-weight: 300;
-}
-
-.c12 {
-  font-size: 24px;
-  line-height: 1.333;
-  font-weight: 300;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -343,31 +321,31 @@ exports[`Heading size renders 1`] = `
     size="medium"
   />
   <h2
+    className="c2"
+    size="large"
+  />
+  <h3
+    className="c4"
+    size="small"
+  />
+  <h3
+    className="c1"
+    size="medium"
+  />
+  <h3
+    className="c5"
+    size="large"
+  />
+  <h4
     className="c6"
-    size="large"
-  />
-  <h3
-    className="c7"
-    size="small"
-  />
-  <h3
-    className="c8"
-    size="medium"
-  />
-  <h3
-    className="c9"
-    size="large"
-  />
-  <h4
-    className="c10"
     size="small"
   />
   <h4
-    className="c11"
+    className="c4"
     size="medium"
   />
   <h4
-    className="c12"
+    className="c1"
     size="large"
   />
 </div>
@@ -379,7 +357,6 @@ exports[`Heading textAlign renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -387,13 +364,10 @@ exports[`Heading textAlign renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   font-size: 48px;
   line-height: 1.125;
+  max-width: 1152px;
   font-weight: 300;
   text-align: left;
 }
@@ -401,6 +375,7 @@ exports[`Heading textAlign renders 1`] = `
 .c2 {
   font-size: 48px;
   line-height: 1.125;
+  max-width: 1152px;
   font-weight: 300;
   text-align: center;
 }
@@ -408,20 +383,9 @@ exports[`Heading textAlign renders 1`] = `
 .c3 {
   font-size: 48px;
   line-height: 1.125;
+  max-width: 1152px;
   font-weight: 300;
   text-align: right;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -445,7 +409,6 @@ exports[`Heading truncate renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -453,35 +416,21 @@ exports[`Heading truncate renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   font-size: 48px;
   line-height: 1.125;
+  max-width: 1152px;
   font-weight: 300;
 }
 
 .c2 {
   font-size: 48px;
   line-height: 1.125;
+  max-width: 1152px;
   font-weight: 300;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div

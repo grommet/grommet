@@ -2,10 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
+import { findAllByType } from '../../../utils';
+
 import { Grommet } from '../../Grommet';
 import { Anchor } from '../';
-
-import { findAllByType } from '../../utils';
 
 test('Anchor renders', () => {
   const component = renderer.create(

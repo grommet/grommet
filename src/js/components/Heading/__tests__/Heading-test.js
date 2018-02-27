@@ -22,6 +22,10 @@ test('Heading level renders', () => {
       <Heading level={2} />
       <Heading level={3} />
       <Heading level={4} />
+      <Heading level='1' />
+      <Heading level='2' />
+      <Heading level='3' />
+      <Heading level='4' />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -70,6 +74,18 @@ test('Heading margin renders', () => {
       <Heading margin='none' />
       <Heading margin={{ bottom: 'small' }} />
       <Heading margin={{ top: 'small' }} />
+      <Heading margin={{ bottom: 'none' }} />
+      <Heading margin={{ top: 'none' }} />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Heading color renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Heading color='brand' />
     </Grommet>
   );
   const tree = component.toJSON();

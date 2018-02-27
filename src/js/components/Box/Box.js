@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, { Children, Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
-import { colorForName, colorIsDark } from '../utils';
-import StyledBox from './StyledBox';
+import { colorForName, colorIsDark } from '../../utils';
 
 import { withTheme } from '../hocs';
+
+import StyledBox, { StyledBoxGap } from './StyledBox';
 
 import doc from './doc';
 
@@ -15,7 +16,7 @@ const styledComponents = {
 
 class Box extends Component {
   static contextTypes = {
-    grommet: PropTypes.object.isRequired,
+    grommet: PropTypes.object,
   }
   static childContextTypes = {
     grommet: PropTypes.object,
@@ -23,6 +24,8 @@ class Box extends Component {
 
   static defaultProps = {
     direction: 'column',
+    margin: 'none',
+    pad: 'none',
     tag: 'div',
   };
 
@@ -43,12 +46,17 @@ class Box extends Component {
         grommet: { ...grommet, dark },
       };
     }
-    return undefined;
+    return {};
   }
 
   render() {
     const {
+      a11yTitle,
+      children,
+      direction,
+      gap,
       tag,
+      theme,
       ...rest
     } = this.props;
 
@@ -58,8 +66,38 @@ class Box extends Component {
       styledComponents[tag] = StyledComponent;
     }
 
+    let contents = children;
+    if (gap) {
+      contents = [];
+      let firstIndex;
+      Children.forEach(children, (child, index) => {
+        if (child) {
+          if (firstIndex === undefined) {
+            firstIndex = index;
+          } else {
+            contents.push((
+              <StyledBoxGap
+                key={index}
+                gap={gap}
+                direction={direction}
+                theme={theme}
+              />
+            ));
+          }
+        }
+        contents.push(child);
+      });
+    }
+
     return (
-      <StyledComponent {...rest} />
+      <StyledComponent
+        aria-label={a11yTitle}
+        direction={direction}
+        theme={theme}
+        {...rest}
+      >
+        {contents}
+      </StyledComponent>
     );
   }
 }

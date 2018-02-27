@@ -6,7 +6,6 @@ exports[`RoutedAnchor renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -14,31 +13,18 @@ exports[`RoutedAnchor renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   color: #865CD6;
+  -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
   outline: none;
 }
 
 .c1:hover {
+  -webkit-text-decoration: underline;
   text-decoration: underline;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div

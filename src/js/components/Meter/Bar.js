@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import StyledMeter from './StyledMeter';
+import { parseMetricToNum } from '../../utils';
 
-import { parseMetricToInt } from '../utils/mixins';
-import { colorForName } from '../utils/colors';
+import StyledMeter from './StyledMeter';
+import { strokeProps } from './utils';
 
 export default class Bar extends Component {
   static defaultProps = {
@@ -11,19 +11,21 @@ export default class Bar extends Component {
   };
 
   render() {
-    const { background, round, size, theme, thickness, values } = this.props;
-    const width = (size === 'full' ? 288 : parseMetricToInt(theme.global.size[size]));
-    const height = parseMetricToInt(theme.global.edgeSize[thickness]);
+    const { background, round, size, theme, thickness, values, ...rest } = this.props;
+    const width = (size === 'full' ? 288 : parseMetricToNum(theme.global.size[size]));
+    const height = parseMetricToNum(theme.global.edgeSize[thickness]);
+    // account for the round cap, if any
+    const capOffset = (round ? (height / 2) : 0);
     const mid = height / 2;
     const max = 100;
     const someHighlight = (values || []).some(v => v.highlight);
 
-    let start = 0;
-    const paths = (values || []).map((valueArg, index) => {
-      const { color, highlight, label, onHover, value, ...rest } = valueArg;
+    let start = capOffset;
+    const paths = (values || []).filter(v => v.value > 0).map((valueArg, index) => {
+      const { color, highlight, label, onHover, value, ...pathRest } = valueArg;
 
       const key = `p-${index}`;
-      const delta = (value * width) / max;
+      const delta = (value * (width - (2 * capOffset))) / max;
       const d = `M ${start},${mid} L ${start + delta},${mid}`;
       const colorName = color ||
         ((index === values.length - 1) ? 'accent-1' : `neutral-${index + 1}`);
@@ -41,11 +43,11 @@ export default class Bar extends Component {
           key={key}
           d={d}
           fill='none'
-          stroke={colorForName((someHighlight && !highlight) ? background : colorName, theme)}
+          {...strokeProps((someHighlight && !highlight) ? background : colorName, theme)}
           strokeWidth={height}
-          strokeLinecap={round ? 'round' : 'square'}
+          strokeLinecap={round ? 'round' : 'butt'}
           {...hoverProps}
-          {...rest}
+          {...pathRest}
         />
       );
     }).reverse(); // reverse so the caps looks right
@@ -56,11 +58,14 @@ export default class Bar extends Component {
         preserveAspectRatio='none'
         width={size === 'full' ? '100%' : width}
         height={height}
+        round={round ? { size: thickness } : undefined}
+        theme={theme}
+        {...rest}
       >
         <path
-          d={`M 0,${mid} L ${width},${mid}`}
+          d={`M ${capOffset},${mid} L ${width - capOffset},${mid}`}
           fill='none'
-          stroke={colorForName(background, theme)}
+          {...strokeProps(background, theme)}
           strokeWidth={height}
           strokeLinecap={round ? 'round' : 'square'}
         />

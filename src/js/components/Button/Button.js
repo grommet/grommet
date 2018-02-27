@@ -1,19 +1,17 @@
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
 
-import StyledButton, { StyledLabel, StyledIcon } from './StyledButton';
-import { Box } from '../Box';
-
 import { withFocus, withTheme } from '../hocs';
 
+import StyledButton, { StyledLabel, StyledIcon } from './StyledButton';
 import doc from './doc';
 
 const AnchorStyledButton = StyledButton.withComponent('a');
-const BoxStyledButton = StyledButton.withComponent(Box);
 
 class Button extends Component {
   static defaultProps = {
     type: 'button',
+    focusIndicator: true,
   };
 
   constructor(props, context) {
@@ -28,34 +26,25 @@ class Button extends Component {
   render() {
     const {
       a11yTitle,
-      box,
       children,
       icon,
       focus,
       href,
       label,
       onClick,
-      plain,
       reverse,
       theme,
       type,
       ...rest
     } = this.props;
 
-    let Tag = href ? AnchorStyledButton : StyledButton;
-
-    let boxProps;
-    if (box) {
-      // Let the root element of the Button be a Box element with tag prop
-      boxProps = {
-        tag: href ? 'a' : 'button',
-      };
-      Tag = BoxStyledButton;
-    }
+    const Tag = href ? AnchorStyledButton : StyledButton;
 
     let buttonIcon;
     if (icon) {
-      buttonIcon = <StyledIcon key='styled-icon' theme={theme}>{icon}</StyledIcon>;
+      buttonIcon = (
+        <StyledIcon aria-hidden={true} key='styled-icon' theme={theme}>{icon}</StyledIcon>
+      );
     }
 
     let buttonLabel;
@@ -72,27 +61,17 @@ class Button extends Component {
       ['reset', 'submit'].indexOf(type) === -1
     );
 
-    const plainProp = (
-      plain ||
-      box ||
-      Children.count(children) > 0 ||
-      (icon && !label)
-    );
-
     return (
       <Tag
-        tabIndex='0'
         {...rest}
-        {...boxProps}
         aria-label={a11yTitle}
-        box={box}
         disabled={disabled}
         icon={icon}
         focus={focus}
         href={href}
         label={label}
         onClick={onClick}
-        plain={plainProp}
+        plain={Children.count(children) > 0 || (icon && !label)}
         theme={theme}
         type={!href ? type : undefined}
       >

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import StyledHeading from './StyledHeading';
-
 import { withTheme } from '../hocs';
 
+import StyledHeading from './StyledHeading';
 import doc from './doc';
 
 const styledComponents = {
@@ -29,8 +28,9 @@ class Heading extends Component {
       styledComponents[tag] = StyledComponent;
     }
 
+    // enforce level to be a number
     return (
-      <StyledComponent level={level} {...rest} />
+      <StyledComponent level={+level} {...rest} />
     );
   }
 }

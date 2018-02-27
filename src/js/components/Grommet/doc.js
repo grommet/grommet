@@ -1,18 +1,20 @@
-import { schema, PropTypes } from 'react-desc';
+import { describe, PropTypes } from 'react-desc';
 
-export default Grommet => schema(Grommet, {
-  description: 'This is the top level Grommet container.',
-  usage: `import { Grommet } from 'grommet';
-  <Grommet>...</Grommet>`,
-  props: {
-    dir: [
-      PropTypes.oneOf(['rtl', 'ltr']),
-      `Whether text should be rendered right to left or not. Defaults to
-      inherit from the document context.`,
-    ],
-    theme: [
-      PropTypes.object,
-      'Custom styles for Grommet app component.',
-    ],
-  },
-});
+import { getAvailableAtBadge } from '../../utils';
+
+export default (Grommet) => {
+  const DocumentedGrommet = describe(Grommet)
+    .availableAt(getAvailableAtBadge('Grommet'))
+    .description('This is the top level Grommet container.')
+    .usage(
+      `import { Grommet } from 'grommet';
+<Grommet>...</Grommet>`
+    );
+
+  DocumentedGrommet.propTypes = {
+    full: PropTypes.bool.description('Whether to take the whole viewport.'),
+    theme: PropTypes.object.description('Custom styles for Grommet app component.'),
+  };
+
+  return DocumentedGrommet;
+};

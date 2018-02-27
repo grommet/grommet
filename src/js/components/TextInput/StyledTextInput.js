@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, inputStyle } from '../utils';
+import { focusStyle, inputStyle } from '../../utils';
 
 const placeholderColor = css`
-  color: ${props => props.theme.global.placeholder.color};
+  color: ${props => props.theme.global.colors.placeholder};
 `;
 
 const sizeStyle = (props) => {
@@ -17,10 +17,12 @@ const sizeStyle = (props) => {
 const plainStyle = css`
   border: none;
   width: 100%;
+  -webkit-appearance: none;
 `;
 
 const StyledTextInput = styled.input`
   ${inputStyle}
+  width: 100%;
 
   ${props => props.size && sizeStyle(props)}
   ${props => props.plain && plainStyle}
@@ -43,23 +45,12 @@ const StyledTextInput = styled.input`
   }
 
   &:focus {
-    ${focusStyle}
+    ${props => (!props.plain || props.focusIndicator) && focusStyle}
   }
 `;
 
 export const StyledTextInputContainer = styled.div`
-  ${props => props.plain && css`width: 100%`}
-`;
-
-const selectedStyle = css`
-  background-color: ${
-    props => props.theme.global.selected.backgroundColor
-  };
-  color: ${props => props.theme.global.selected.textColor};
-`;
-
-export const StyledSuggestion = styled.div`
-  ${props => props.selected && selectedStyle}
+  width: 100%;
 `;
 
 export const StyledSuggestions = styled.ol`

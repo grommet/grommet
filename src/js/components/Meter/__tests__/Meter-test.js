@@ -82,9 +82,9 @@ test('Meter background renders', () => {
   const component = renderer.create(
     <Grommet>
       <Meter background='light-3' values={VALUES} />
-      <Meter background='light-3' values={VALUES} />
+      <Meter background={{ color: 'light-3', opacity: 'medium' }} values={VALUES} />
       <Meter type='circle' background='light-3' values={VALUES} />
-      <Meter type='circle' background='light-3' values={VALUES} />
+      <Meter type='circle' background={{ color: 'light-3', opacity: 'medium' }} values={VALUES} />
     </Grommet>
   );
   const tree = component.toJSON();

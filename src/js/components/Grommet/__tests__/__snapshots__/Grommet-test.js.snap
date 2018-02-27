@@ -1,33 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Grommet announces 1`] = `
+<div
+  class="StyledGrommet-gGRXwz deqpVW"
+>
+  <div>
+    hi
+  </div>
+</div>
+`;
+
+exports[`Grommet announces 2`] = `
+<div
+  style="left: -100%; right: 100%; position: fixed; z-index: -1;"
+  aria-live="assertive"
+>
+  hello
+</div>
+`;
+
+exports[`Grommet announces 3`] = `
+<div
+  style="left: -100%; right: 100%; position: fixed; z-index: -1;"
+  aria-live="assertive"
+/>
+`;
+
+exports[`Grommet full renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  width: 100vw;
+  height: 100vh;
+}
+
+<div
+  className="c0"
+>
+  Grommet App
+</div>
+`;
+
 exports[`Grommet hpe theme renders 1`] = `
 .c0 {
   font-family: 'Metric',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -43,28 +74,11 @@ exports[`Grommet renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div

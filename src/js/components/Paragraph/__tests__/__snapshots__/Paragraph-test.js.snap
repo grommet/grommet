@@ -6,7 +6,6 @@ exports[`Paragraph margin renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -14,14 +13,10 @@ exports[`Paragraph margin renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   font-size: 16px;
   line-height: 1.375;
-  max-width: 576px;
+  max-width: 384px;
   margin-top: 12px;
   margin-bottom: 12px;
 }
@@ -29,7 +24,7 @@ exports[`Paragraph margin renders 1`] = `
 .c2 {
   font-size: 16px;
   line-height: 1.375;
-  max-width: 576px;
+  max-width: 384px;
   margin-top: 24px;
   margin-bottom: 24px;
 }
@@ -37,7 +32,7 @@ exports[`Paragraph margin renders 1`] = `
 .c3 {
   font-size: 16px;
   line-height: 1.375;
-  max-width: 576px;
+  max-width: 384px;
   margin-top: 48px;
   margin-bottom: 48px;
 }
@@ -45,7 +40,7 @@ exports[`Paragraph margin renders 1`] = `
 .c4 {
   font-size: 16px;
   line-height: 1.375;
-  max-width: 576px;
+  max-width: 384px;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -53,27 +48,15 @@ exports[`Paragraph margin renders 1`] = `
 .c5 {
   font-size: 16px;
   line-height: 1.375;
-  max-width: 576px;
+  max-width: 384px;
   margin-bottom: 12px;
 }
 
 .c6 {
   font-size: 16px;
   line-height: 1.375;
-  max-width: 576px;
+  max-width: 384px;
   margin-top: 12px;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -106,7 +89,6 @@ exports[`Paragraph renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -114,26 +96,10 @@ exports[`Paragraph renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   font-size: 16px;
   line-height: 1.375;
-  max-width: 576px;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
+  max-width: 384px;
 }
 
 <div
@@ -151,7 +117,6 @@ exports[`Paragraph size renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -159,44 +124,28 @@ exports[`Paragraph size renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c2 {
   font-size: 16px;
   line-height: 1.375;
-  max-width: 576px;
+  max-width: 384px;
 }
 
 .c1 {
   font-size: 14px;
   line-height: 1.43;
-  max-width: 432px;
+  max-width: 336px;
 }
 
 .c3 {
   font-size: 24px;
-  line-height: 1.167;
-  max-width: 864px;
+  line-height: 1.333;
+  max-width: 576px;
 }
 
 .c4 {
   font-size: 32px;
   line-height: 1.1875;
-  max-width: 1152px;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
+  max-width: 768px;
 }
 
 <div
@@ -227,7 +176,6 @@ exports[`Paragraph textAlign renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -235,41 +183,25 @@ exports[`Paragraph textAlign renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   font-size: 16px;
   line-height: 1.375;
-  max-width: 576px;
+  max-width: 384px;
   text-align: left;
 }
 
 .c2 {
   font-size: 16px;
   line-height: 1.375;
-  max-width: 576px;
+  max-width: 384px;
   text-align: center;
 }
 
 .c3 {
   font-size: 16px;
   line-height: 1.375;
-  max-width: 576px;
+  max-width: 384px;
   text-align: right;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div

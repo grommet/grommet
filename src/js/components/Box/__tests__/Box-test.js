@@ -26,17 +26,6 @@ test('Box direction renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Box reverse renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Box reverse={true} />
-      <Box reverse={false} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
 // test('Box responsive renders', () => {
 //   const component = renderer.create(
 //     <Grommet>
@@ -127,18 +116,6 @@ test('Box justifySelf renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Box textAlign renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Box textAlign='start' />
-      <Box textAlign='center' />
-      <Box textAlign='end' />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
 test('Box background renders', () => {
   const component = renderer.create(
     <Grommet>
@@ -159,6 +136,12 @@ test('Box background renders', () => {
         background={{
           image: 'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
           dark: true,
+        }}
+      />
+      <Box
+        background={{
+          image: 'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==)',
+          position: 'top center',
         }}
       />
     </Grommet>
@@ -213,16 +196,29 @@ test('Box flex renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Box full renders', () => {
+test('Box fill renders', () => {
   const component = renderer.create(
     <Grommet>
       <Box>
-        <Box full={true} />
-        <Box full={false} />
-        <Box full='horizontal' />
-        <Box full='vertical' />
-        <Box full='grow' />
+        <Box fill={true} />
+        <Box fill={false} />
+        <Box fill='horizontal' />
+        <Box fill='vertical' />
       </Box>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Box gap renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      {['xsmall', 'small', 'medium', 'large'].map(gap => (
+        <Box key={gap} gap={gap} direction='row'>
+          <Box />
+        </Box>
+      ))}
     </Grommet>
   );
   const tree = component.toJSON();
@@ -299,7 +295,28 @@ test('Box border renders', () => {
       <Box border='left' />
       <Box border='bottom' />
       <Box border='right' />
-      <Box border={{ color: 'accent-1', side: 'all', size: 'medium' }} />
+      <Box border={{ color: 'accent-1' }} />,
+      <Box border={{ side: 'all' }} />
+      <Box border={{ size: 'xsmall' }} />
+      <Box border={{ size: 'small' }} />
+      <Box border={{ size: 'medium' }} />
+      <Box border={{ size: 'large' }} />
+      <Box border={{ size: 'xlarge' }} />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Box elevation renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Box elevation='none' />
+      <Box elevation='xsmall' />
+      <Box elevation='small' />
+      <Box elevation='medium' />
+      <Box elevation='large' />
+      <Box elevation='xlarge' />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -310,6 +327,26 @@ test('Box tag renders', () => {
   const component = renderer.create(
     <Grommet>
       <Box tag='header' />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Box animation renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      {['fadeIn', 'fadeOut', 'jiggle', 'pulse',
+        'slideUp', 'slideDown', 'slideLeft', 'slideRight',
+        'zoomIn', 'zoomOut'].map(type => <Box animation={type} />)}
+      <Box animation={['fadeIn', 'slideUp']} />
+      <Box animation={{ type: 'fadeIn', duration: 1000, delay: 500 }} />
+      <Box
+        animation={[
+          { type: 'fadeIn', duration: 1000, delay: 500 },
+          { type: 'slideUp', duration: 1000, delay: 500 },
+        ]}
+      />
     </Grommet>
   );
   const tree = component.toJSON();

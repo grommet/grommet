@@ -1,312 +1,262 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { mount } from 'enzyme';
+import Enzyme, { mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-import { Grommet } from '../../Grommet';
+import { createPortal, expectPortal } from '../../../utils/portal';
+
 import { Menu } from '../';
 
-test('Menu renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Menu items={[]} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
+Enzyme.configure({ adapter: new Adapter() });
 
-test('Menu with label renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Menu label='Test' items={[{ label: 'Item 1' }, { label: 'Item 2' }]} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
+describe('Menu', () => {
+  beforeEach(createPortal);
 
-test('Menu with icon renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Menu label='Test Icon' icon={<svg />} items={[{ label: 'Item 1' }, { label: 'Item 2' }]} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Menu with custom message renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Menu label='Test Icon' messages={{ openMenu: 'Abrir Menu' }} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Menu opens and closes on click', () => {
-  // make sure to remove all body children
-  document.body.innerHTML = '';
-  document.body.appendChild(document.createElement('div'));
-  const component = mount(
-    <Grommet>
+  test('renders', () => {
+    const component = mount(
       <Menu
-        label='Test'
+        icon={<svg />}
+        id='test-menu'
         items={[
-          { id: 'item-1', label: 'Item 1' },
+          { label: 'Item 1' },
           { label: 'Item 2' },
         ]}
-      />
-    </Grommet>, {
-      attachTo: document.body.firstChild,
-    }
-  );
+      />, {
+        attachTo: document.body.firstChild,
+      }
+    );
+    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
 
-  expect(document.getElementById('item-1')).toBeNull();
-
-  component.find('button').simulate('click');
-
-  expect(document.getElementById('item-1').parentNode).toMatchSnapshot();
-
-  component.find('button').simulate('click');
-
-  expect(document.getElementById('item-1')).toBeNull();
-});
-
-test('Menu opens and closes on click', () => {
-  // make sure to remove all body children
-  document.body.innerHTML = '';
-  document.body.appendChild(document.createElement('div'));
-  const component = mount(
-    <Grommet>
+  test('with custom message renders', () => {
+    const component = mount(
       <Menu
-        label='Test'
+        label='Test Menu'
+        messages={{ openMenu: 'Abrir Menu' }}
         items={[
-          { id: 'item-1', label: 'Item 1' },
+          { label: 'Item 1' },
           { label: 'Item 2' },
         ]}
-      />
-    </Grommet>, {
-      attachTo: document.body.firstChild,
-    }
-  );
+      />, {
+        attachTo: document.body.firstChild,
+      }
+    );
+    expect(component.getDOMNode()).toMatchSnapshot();
+  });
 
-  expect(document.getElementById('item-1')).toBeNull();
-
-  component.find('button').simulate('click');
-
-  expect(document.getElementById('item-1').parentNode).toMatchSnapshot();
-
-  component.find('button').simulate('click');
-
-  expect(document.getElementById('item-1')).toBeNull();
-});
-
-test('Menu closes by clicking outside', () => {
-  // make sure to remove all body children
-  document.body.innerHTML = '';
-  document.body.appendChild(document.createElement('div'));
-  const component = mount(
-    <Grommet>
+  test('opens and closes on click', () => {
+    const component = mount(
       <Menu
+        id='test-menu'
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1' },
-          { label: 'Item 2' },
+          { label: 'Item 1' },
+          { label: 'Item 2', onClick: () => {} },
+          { label: 'Item 3', href: '/test' },
         ]}
-      />
-    </Grommet>, {
-      attachTo: document.body.firstChild,
-    }
-  );
+      />, {
+        attachTo: document.body.firstChild,
+      }
+    );
 
-  component.find('button').simulate('click');
+    expect(document.getElementById('test-menu__drop')).toBeNull();
 
-  global.document.dispatchEvent(new Event('click'));
+    component.find('button').first().simulate('click');
 
-  expect(document.getElementById('item-1')).toBeNull();
-});
+    expectPortal('test-menu__drop').toMatchSnapshot();
 
-test('Menu closes by clicking in the button', () => {
-  // make sure to remove all body children
-  document.body.innerHTML = '';
-  document.body.appendChild(document.createElement('div'));
-  const component = mount(
-    <Grommet>
+    component.find('button').first().simulate('click');
+
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
+
+  test('closes by clicking outside', () => {
+    const component = mount(
       <Menu
+        id='test-menu'
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1' },
+          { label: 'Item 1' },
           { label: 'Item 2' },
         ]}
-      />
-    </Grommet>, {
-      attachTo: document.body.firstChild,
-    }
-  );
+      />, {
+        attachTo: document.body.firstChild,
+      }
+    );
 
-  component.find('button').simulate('click');
+    component.find('button').first().simulate('click');
 
-  document.getElementById('item-1').parentNode.querySelector('button').click();
+    global.document.dispatchEvent(new Event('click'));
 
-  expect(document.getElementById('item-1')).toBeNull();
-});
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
 
-test('Menu selects an item', () => {
-  const onClick = jest.fn();
-  // make sure to remove all body children
-  document.body.innerHTML = '';
-  document.body.appendChild(document.createElement('div'));
-  const component = mount(
-    <Grommet>
+  test('closes by clicking in the button', () => {
+    const component = mount(
       <Menu
+        id='test-menu'
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1', onClick },
+          { label: 'Item 1' },
           { label: 'Item 2' },
         ]}
-      />
-    </Grommet>, {
-      attachTo: document.body.firstChild,
-    }
-  );
+      />, {
+        attachTo: document.body.firstChild,
+      }
+    );
 
-  component.find('button').simulate('click');
+    component.find('button').first().simulate('click');
 
-  document.getElementById('item-1').click();
+    document.getElementById('test-menu__drop').querySelector('button').click();
 
-  expect(onClick).toBeCalled();
-  expect(document.getElementById('item-1')).toBeNull();
-});
+    expect(document.getElementById('menu-drop__test')).toBeNull();
+  });
 
-test('Menu navigates through next and previous suggestions and selects first', () => {
-  const onClick = jest.fn();
-  // make sure to remove all body children
-  document.body.innerHTML = '';
-  document.body.appendChild(document.createElement('div'));
-  const component = mount(
-    <Grommet>
+  test('selects an item', () => {
+    const onClick = jest.fn();
+    const component = mount(
       <Menu
+        id='test-menu'
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1', onClick },
+          { label: 'Item 1', onClick },
           { label: 'Item 2' },
         ]}
-      />
-    </Grommet>, {
-      attachTo: document.body.firstChild,
-    }
-  );
+      />, {
+        attachTo: document.body.firstChild,
+      }
+    );
 
-  // pressing down 3x: first opens the drop, 
-  // second moves to the first suggestion, thrid moves to the last suggestion
-  component.find('button').simulate('keyDown', { key: 'Down', keyCode: 40, which: 40 });
-  component.find('button').simulate('keyDown', { key: 'Down', keyCode: 40, which: 40 });
-  component.find('button').simulate('keyDown', { key: 'Down', keyCode: 40, which: 40 });
+    // click to open the drop
+    component.find('button').simulate('click');
 
-  // moves to the first suggestion
-  component.find('button').simulate('keyDown', { key: 'Up', keyCode: 38, which: 38 });
+    // click in the first menu item
+    document.getElementById('test-menu__drop')
+      .querySelectorAll('button')[1].click();
 
-  // select that by pressing enter
-  component.find('button').simulate('keyDown', { key: 'Enter', keyCode: 13, which: 13 });
+    expect(onClick).toBeCalled();
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
 
-  expect(onClick).toBeCalled();
-  expect(document.getElementById('item-1')).toBeNull();
-});
-
-test('Menu closes on enter', () => {
-  // make sure to remove all body children
-  document.body.innerHTML = '';
-  document.body.appendChild(document.createElement('div'));
-  const component = mount(
-    <Grommet>
+  test('Menu navigates through next and previous suggestions and selects first', () => {
+    const onClick = jest.fn();
+    const component = mount(
       <Menu
+        id='test-menu'
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1' },
+          { label: 'Item 1', onClick },
           { label: 'Item 2' },
         ]}
-      />
-    </Grommet>, {
-      attachTo: document.body.firstChild,
-    }
-  );
+      />, {
+        attachTo: document.body.firstChild,
+      }
+    );
 
-  component.find('button').simulate('keyDown', { key: 'Enter', keyCode: 13, which: 13 });
+    // pressing down 3x: first opens the drop,
+    // second moves to the first suggestion, thrid moves to the last suggestion
+    component.find('button').first()
+      .simulate('keyDown', { key: 'Down', keyCode: 40, which: 40 });
+    component.find('button').first()
+      .simulate('keyDown', { key: 'Down', keyCode: 40, which: 40 });
+    component.find('button').first()
+      .simulate('keyDown', { key: 'Down', keyCode: 40, which: 40 });
 
-  expect(document.getElementById('item-1')).toBeNull();
-});
+    // moves to the first suggestion
+    component.find('button').first()
+      .simulate('keyDown', { key: 'Up', keyCode: 38, which: 38 });
 
-test('Menu closes on esc', () => {
-  // make sure to remove all body children
-  document.body.innerHTML = '';
-  document.body.appendChild(document.createElement('div'));
-  const component = mount(
-    <Grommet>
+    // select that by pressing enter
+    component.find('button').first()
+      .simulate('keyDown', { key: 'Enter', keyCode: 13, which: 13 });
+
+    expect(onClick).toBeCalled();
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
+
+  test('closes on enter', () => {
+    const component = mount(
       <Menu
+        id='test-menu'
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1' },
+          { label: 'Item 1' },
           { label: 'Item 2' },
         ]}
-      />
-    </Grommet>, {
-      attachTo: document.body.firstChild,
-    }
-  );
+      />, {
+        attachTo: document.body.firstChild,
+      }
+    );
 
-  component.find('button').simulate('keyDown', { key: 'Down', keyCode: 40, which: 40 });
-  component.find('button').simulate('keyDown', { key: 'Esc', keyCode: 27, which: 27 });
+    component.find('button').first()
+      .simulate('keyDown', { key: 'Enter', keyCode: 13, which: 13 });
 
-  expect(document.getElementById('item-1')).toBeNull();
-});
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
 
-test('Menu closes on tab', () => {
-  // make sure to remove all body children
-  document.body.innerHTML = '';
-  document.body.appendChild(document.createElement('div'));
-  const component = mount(
-    <Grommet>
+  test('closes on esc', () => {
+    const component = mount(
       <Menu
+        id='test-menu'
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1' },
+          { label: 'Item 1' },
           { label: 'Item 2' },
         ]}
-      />
-    </Grommet>, {
-      attachTo: document.body.firstChild,
-    }
-  );
+      />, {
+        attachTo: document.body.firstChild,
+      }
+    );
 
-  component.find('button').simulate('keyDown', { key: 'Down', keyCode: 40, which: 40 });
-  component.find('button').simulate('keyDown', { key: 'Tab', keyCode: 9, which: 9 });
+    component.find('button').first()
+      .simulate('keyDown', { key: 'Down', keyCode: 40, which: 40 });
+    component.find('button').first()
+      .simulate('keyDown', { key: 'Esc', keyCode: 27, which: 27 });
 
-  expect(document.getElementById('item-1')).toBeNull();
-});
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
 
-test('Menu with dropAlign renders', () => {
-  // make sure to remove all body children
-  document.body.innerHTML = '';
-  document.body.appendChild(document.createElement('div'));
-  const component = mount(
-    <Grommet>
+  test('closes on tab', () => {
+    const component = mount(
       <Menu
+        id='test-menu'
+        label='Test'
+        items={[
+          { label: 'Item 1' },
+          { label: 'Item 2' },
+        ]}
+      />, {
+        attachTo: document.body.firstChild,
+      }
+    );
+
+    component.find('button').first()
+      .simulate('keyDown', { key: 'Down', keyCode: 40, which: 40 });
+    component.find('button').first()
+      .simulate('keyDown', { key: 'Tab', keyCode: 9, which: 9 });
+
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
+
+  test('with dropAlign renders', () => {
+    const component = mount(
+      <Menu
+        id='test-menu'
         dropAlign={{ top: 'top', right: 'right' }}
         label='Test'
         items={[
-          { id: 'item-1', label: 'Item 1' },
+          { label: 'Item 1' },
           { label: 'Item 2' },
         ]}
-      />
-    </Grommet>, {
-      attachTo: document.body.firstChild,
-    }
-  );
+      />, {
+        attachTo: document.body.firstChild,
+      }
+    );
 
-  component.find('button').simulate('keyDown', { key: 'Down', keyCode: 40, which: 40 });
+    component.find('button').first()
+      .simulate('keyDown', { key: 'Down', keyCode: 40, which: 40 });
 
-  expect(document.getElementById('item-1').parentNode).toMatchSnapshot();
+    expectPortal('test-menu__drop').toMatchSnapshot();
+  });
 });

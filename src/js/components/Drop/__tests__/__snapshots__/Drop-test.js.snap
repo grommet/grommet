@@ -2,151 +2,457 @@
 
 exports[`Drop aligns left right top bottom 1`] = `
 <div
-  data-reactroot=""
-  class="StyledGrommet-gKbdxL iriday"
+  class="StyledDrop-bCWxPe gcEofR"
+  tabindex="-1"
+  id="drop-node"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
-  <input />
-  <span
-    style="display: none;"
-  />
+  this is a test
 </div>
 `;
 
-exports[`Drop aligns right left top top 1`] = `
-<div
-  data-reactroot=""
-  class="StyledGrommet-gKbdxL iriday"
->
-  <input />
-  <span
-    style="display: none;"
-  />
-</div>
-`;
+exports[`Drop aligns left right top bottom 2`] = `
+"
 
-exports[`Drop aligns right right bottom top 1`] = `
-<div
-  data-reactroot=""
-  class="StyledGrommet-gKbdxL iriday"
->
-  <input />
-  <span
-    style="display: none;"
-  />
-</div>
-`;
-
-exports[`Drop aligns skips left random 1`] = `
-<div
-  data-reactroot=""
-  class="StyledGrommet-gKbdxL iriday"
->
-  <input />
-  <span
-    style="display: none;"
-  />
-</div>
-`;
-
-exports[`Drop aligns skips right random 1`] = `
-<div
-  data-reactroot=""
-  class="StyledGrommet-gKbdxL iriday"
->
-  <input />
-  <span
-    style="display: none;"
-  />
-</div>
-`;
-
-exports[`Drop mounts 1`] = `
-<div
-  data-reactroot=""
-  class="StyledGrommet-gKbdxL iriday"
->
-  <input />
-  <span
-    style="display: none;"
-  />
-</div>
-`;
-
-exports[`Drop renders 1`] = `
-.c0 {
+.gcEofR {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}"
+`;
 
-.c0 * {
-  box-sizing: inherit;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
+exports[`Drop aligns right left top top 1`] = `
 <div
-  className="c0"
+  class="StyledDrop-bCWxPe fAkYxw"
+  tabindex="-1"
+  id="drop-node"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
-  <span
-    style={
-      Object {
-        "display": "none",
-      }
-    }
-  />
+  this is a test
 </div>
+`;
+
+exports[`Drop aligns right left top top 2`] = `
+"
+
+.fAkYxw {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: top right;
+  -ms-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}"
+`;
+
+exports[`Drop aligns right right bottom top 1`] = `
+<div
+  class="StyledDrop-bCWxPe cscpcq"
+  tabindex="-1"
+  id="drop-node"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+>
+  this is a test
+</div>
+`;
+
+exports[`Drop aligns right right bottom top 2`] = `
+"
+
+.cscpcq {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}"
+`;
+
+exports[`Drop aligns right right bottom top 3`] = `
+<div
+  class="StyledDrop-bCWxPe cscpcq"
+  tabindex="-1"
+  id="drop-node"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+>
+  this is a test
+</div>
+`;
+
+exports[`Drop aligns right right bottom top 4`] = `
+"
+
+.cscpcq {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
+  transform-origin: bottom right;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}"
+`;
+
+exports[`Drop aligns skips left random 1`] = `
+<div
+  class="StyledDrop-bCWxPe hBYrcs"
+  tabindex="-1"
+  id="drop-node"
+  style="width: 0.1px; top: 0px; max-height: 768px;"
+>
+  this is a test
+</div>
+`;
+
+exports[`Drop aligns skips left random 2`] = `
+"
+
+.hBYrcs {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
+  transform-origin: bottom left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}"
+`;
+
+exports[`Drop aligns skips right random 1`] = `
+<div
+  class="StyledDrop-bCWxPe fAkYxw"
+  tabindex="-1"
+  id="drop-node"
+  style="width: 0.1px; max-height: 768px;"
+>
+  this is a test
+</div>
+`;
+
+exports[`Drop aligns skips right random 2`] = `
+"
+
+.fAkYxw {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: top right;
+  -ms-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}"
+`;
+
+exports[`Drop mounts 1`] = `
+<div
+  class="StyledDrop-bCWxPe gcEofR"
+  tabindex="-1"
+  id="drop-node"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+>
+  this is a test
+</div>
+`;
+
+exports[`Drop mounts 2`] = `
+"
+
+.gcEofR {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}"
 `;
 
 exports[`Drop resizes 1`] = `
 <div
-  data-reactroot=""
-  class="StyledGrommet-gKbdxL iriday"
+  class="StyledDrop-bCWxPe gcEofR"
+  tabindex="-1"
+  id="test"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
 >
-  <input />
-  <span
-    style="display: none;"
-  />
+  this is a test
 </div>
+`;
+
+exports[`Drop resizes 2`] = `
+"
+
+.gcEofR {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}"
+`;
+
+exports[`Drop restrict focus 1`] = `
+<div
+  class="StyledDrop-bCWxPe gcEofR"
+  tabindex="-1"
+  id="drop-node"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
+>
+  this is a test
+</div>
+`;
+
+exports[`Drop restrict focus 2`] = `
+<div
+  class="StyledDrop-bCWxPe gcEofR"
+  tabindex="-1"
+  id="drop-node"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
+>
+  this is a test
+</div>
+`;
+
+exports[`Drop restrict focus 3`] = `
+"
+
+.gcEofR {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}"
+`;
+
+exports[`Drop restrict focus 4`] = `
+<body>
+  <div
+    aria-hidden="false"
+  />
+</body>
 `;
 
 exports[`Drop skips invalid align 1`] = `
 <div
-  data-reactroot=""
-  class="StyledGrommet-gKbdxL iriday"
+  class="StyledDrop-bCWxPe gcEofR"
+  tabindex="-1"
+  id="drop-node"
+  style="width: 0.1px; max-height: 768px;"
 >
-  <input />
-  <span
-    style="display: none;"
-  />
+  this is a test
 </div>
+`;
+
+exports[`Drop skips invalid align 2`] = `
+"
+
+.gcEofR {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}"
 `;
 
 exports[`Drop updates 1`] = `
 <div
-  data-reactroot=""
-  class="StyledGrommet-gKbdxL iriday"
+  class="StyledGrommet-gGRXwz deqpVW"
 >
   <input />
-  <span
-    style="display: none;"
-  />
 </div>
 `;

@@ -1,53 +1,47 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
-import { compose } from 'recompose';
 
 import { FormDown } from 'grommet-icons';
 
+import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
-import { Drop } from '../Drop';
-
-import { withTheme } from '../hocs';
+import { DropButton } from '../DropButton';
 
 import doc from './doc';
 
 class Menu extends Component {
-  static contextTypes = {
-    grommet: PropTypes.object,
-    theme: PropTypes.object,
-    router: PropTypes.any,
-  }
-
   static defaultProps = {
     dropAlign: { top: 'top', left: 'left' },
+    messages: { openMenu: 'Open Menu', closeMenu: 'Close Menu' },
   };
 
-  state = {
-    activeItemIndex: -1,
-    showDrop: false,
-  }
+  state = { activeItemIndex: -1 }
 
   buttonRefs = {}
 
-  onDropClose() {
+  onDropClose = () => {
     this.setState({
       activeItemIndex: -1,
-      showDrop: false,
+      open: undefined,
     });
   }
 
-  onSelectMenuItem() {
+  onSelectMenuItem = (event) => {
     const { activeItemIndex } = this.state;
-    findDOMNode(this.buttonRefs[activeItemIndex]).click();
+    if (activeItemIndex >= 0) {
+      event.preventDefault();
+      event.stopPropagation();
+      findDOMNode(this.buttonRefs[activeItemIndex]).click();
+    }
   }
 
-  onNextMenuItem() {
-    const { showDrop, activeItemIndex } = this.state;
-    if (!showDrop) {
+  onNextMenuItem = (event) => {
+    event.preventDefault();
+    const { activeItemIndex, open } = this.state;
+    if (!open) {
       this.setState({
-        showDrop: true,
+        open: true,
         activeItemIndex: -1,
       });
     } else {
@@ -59,121 +53,112 @@ class Menu extends Component {
     }
   }
 
-  onPreviousMenuItem() {
-    const { activeItemIndex } = this.state;
-    const index = Math.max(activeItemIndex - 1, 0);
-    this.setState({ activeItemIndex: index });
-    // this.setState({ activeSuggestionIndex: index },
-    //   this._announceSuggestion.bind(this, index));
+  onPreviousMenuItem = (event) => {
+    event.preventDefault();
+    const { activeItemIndex, open } = this.state;
+    if (!open) {
+      this.setState({
+        open: true,
+        activeItemIndex: -1,
+      });
+    } else {
+      const { items } = this.props;
+      const index = (activeItemIndex === -1 ? (items.length - 1) :
+        Math.max(activeItemIndex - 1, 0));
+      this.setState({ activeItemIndex: index });
+      // this.setState({ activeSuggestionIndex: index },
+      //   this._announceSuggestion.bind(this, index));
+    }
   }
 
   render() {
     const {
-      background,
       dropAlign,
       icon,
       items,
       label,
-      messages = {},
+      messages,
       onKeyDown,
-      theme,
       ...rest
     } = this.props;
-    const { activeItemIndex, showDrop } = this.state;
+    const { activeItemIndex, open } = this.state;
 
     const menuIcon = icon || <FormDown />;
 
-    let drop;
-    if (showDrop) {
-      drop = (
-        <Drop
-          align={dropAlign}
-          background={background}
-          ref={(ref) => {
-            this.dropRef = ref;
-          }}
-          context={{ ...this.context }}
-          control={this.componentRef}
-          onClose={() => this.onDropClose()}
-        >
-          <Button
-            justify={dropAlign.right ? 'end' : 'start'}
-            fill={true}
-            a11yTitle={messages.closeMenu || 'Close Menu'}
-            box={true}
-            reverse={true}
-            icon={menuIcon}
-            label={label}
-            direction='row'
-            pad='small'
-            onClick={() => this.onDropClose()}
-          />
-          {items.map(
-            (item, index) => (
-              <Button
-                ref={(ref) => {
-                  this.buttonRefs[index] = ref;
-                }}
-                active={activeItemIndex === index}
-                box={true}
-                pad='small'
-                key={`menuItem_${index}`}
-                fill={true}
-                align='start'
-                hoverIndicator='background'
-                {...item}
-                onClick={(...args) => {
-                  item.onClick(...args);
-                  this.onDropClose();
-                }}
-              />
-            )
-          )}
-        </Drop>
-      );
-    }
+    const content = (
+      <Box
+        direction='row'
+        justify='start'
+        align='center'
+        pad='small'
+        gap='small'
+      >
+        {label}
+        {menuIcon}
+      </Box>
+    );
 
-    const clickHandler = (event) => {
-      if (activeItemIndex >= 0) {
-        event.preventDefault();
-        event.stopPropagation();
-        this.onSelectMenuItem();
-      }
-    };
+    const controlMirror = (
+      <Button
+        fill={true}
+        a11yTitle={messages.closeMenu || 'Close Menu'}
+        onClick={this.onDropClose}
+      >
+        {content}
+      </Button>
+    );
 
     return (
       <Keyboard
-        onEnter={clickHandler}
-        onSpace={clickHandler}
-        onDown={(event) => {
-          event.preventDefault();
-          this.onNextMenuItem();
-        }}
-        onUp={(event) => {
-          event.preventDefault();
-          this.onPreviousMenuItem();
-        }}
-        onEsc={() => this.onDropClose()}
-        onTab={() => this.onDropClose()}
+        onEnter={this.onSelectMenuItem}
+        onSpace={this.onSelectMenuItem}
+        onDown={this.onNextMenuItem}
+        onUp={this.onPreviousMenuItem}
+        onEsc={this.onDropClose}
+        onTab={this.onDropClose}
         onKeyDown={onKeyDown}
       >
         <div>
-          <Button
-            ref={(ref) => {
-              this.componentRef = ref;
-            }}
-            a11yTitle={messages.openMenu || 'Open Menu'}
-            align='start'
-            box={true}
-            reverse={true}
-            icon={menuIcon}
-            label={label}
-            onClick={() => this.setState({ activeItemIndex: -1, showDrop: !this.state.showDrop })}
-            direction='row'
-            pad='small'
+          <DropButton
             {...rest}
-          />
-          {drop}
+            a11yTitle={messages.openMenu || 'Open Menu'}
+            dropAlign={dropAlign}
+            open={open}
+            onClose={() => this.setState({ open: undefined })}
+            dropContent={
+              <Box>
+                {dropAlign.top === 'top' ? controlMirror : undefined}
+                <Box>
+                  {items.map(
+                    (item, index) => (
+                      <Button
+                        ref={(ref) => {
+                          this.buttonRefs[index] = ref;
+                        }}
+                        active={activeItemIndex === index}
+                        key={`menuItem_${index}`}
+                        hoverIndicator='background'
+                        onClick={item.onClick ? (...args) => {
+                          item.onClick(...args);
+                          if (item.close !== false) {
+                            this.onDropClose();
+                          }
+                        } : undefined}
+                        href={item.href}
+                      >
+                        <Box align='start' pad='small' direction='row'>
+                          {item.icon}{item.label}
+                        </Box>
+                      </Button>
+                    )
+                  )}
+                </Box>
+                {dropAlign.bottom === 'bottom' ? controlMirror : undefined }
+              </Box>
+            }
+          >
+            {content}
+          </DropButton>
         </div>
       </Keyboard>
     );
@@ -184,6 +169,4 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Menu);
 }
 
-export default compose(
-  withTheme,
-)(Menu);
+export default Menu;

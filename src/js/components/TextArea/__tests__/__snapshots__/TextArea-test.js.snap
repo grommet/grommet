@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextArea focusIndicator renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  padding: 11px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  width: 100%;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c1:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c1:focus {
+  border-color: #00CCEB;
+  box-shadow: 0 0 2px 2px #00CCEB;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: #00CCEB solid 2px;
+}
+
+<div
+  className="c0"
+>
+  <textarea
+    className="c1"
+    id="item"
+    name="item"
+  />
+</div>
+`;
+
+exports[`TextArea placeholder renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  padding: 11px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  width: 100%;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c1:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c1:focus {
+  border-color: #00CCEB;
+  box-shadow: 0 0 2px 2px #00CCEB;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: #00CCEB solid 2px;
+}
+
+<div
+  className="c0"
+>
+  <textarea
+    className="c1"
+    id="item"
+    name="item"
+    placeholder="placeholder"
+  />
+</div>
+`;
+
+exports[`TextArea plain renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  padding: 11px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  width: 100%;
+  border: none;
+  width: 100%;
+  -webkit-appearance: none;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c1:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+<div
+  className="c0"
+>
+  <textarea
+    className="c1"
+    id="item"
+    name="item"
+  />
+</div>
+`;
+
+exports[`TextArea renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  box-sizing: border-box;
+  padding: 11px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  width: 100%;
+}
+
+.c1::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c1:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c1::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c1:focus {
+  border-color: #00CCEB;
+  box-shadow: 0 0 2px 2px #00CCEB;
+}
+
+.c1:focus > circle,
+.c1:focus > ellipse,
+.c1:focus > line,
+.c1:focus > path,
+.c1:focus > polygon,
+.c1:focus > polyline,
+.c1:focus > rect {
+  outline: #00CCEB solid 2px;
+}
+
+<div
+  className="c0"
+>
+  <textarea
+    className="c1"
+    id="item"
+    name="item"
+  />
+</div>
+`;

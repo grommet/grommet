@@ -1,12 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button accent renders 1`] = `
+exports[`Button color renders 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -14,36 +13,29 @@ exports[`Button accent renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   text-align: center;
   display: inline-block;
-  min-width: 120px;
+  min-width: 96px;
   max-width: 384px;
   font-weight: 600;
+  border: 2px solid #00CCEB;
+  border-radius: 5px;
+  color: #333333;
   font-size: 1.1875rem;
   line-height: 24px;
-  padding: 6px 22px;
-  border-color: #00CCEB;
+  padding: 10px 10px;
 }
 
 .c1:hover {
@@ -51,27 +43,62 @@ exports[`Button accent renders 1`] = `
 }
 
 .c1:hover svg {
-  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
   transition: none;
 }
 
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
+.c3 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  text-align: center;
+  display: inline-block;
+  min-width: 96px;
+  max-width: 384px;
+  font-weight: 600;
+  background-color: #00CCEB;
+  color: #333333;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  padding: 10px 10px;
+}
+
+.c3 svg {
+  fill: #FFFFFF;
+  stroke: #FFFFFF;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.c3:hover {
+  box-shadow: 0px 0px 0px 2px #00CCEB;
+}
+
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+@media only screen and (min-width:700px) {
+  .c1 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
   }
 }
 
-@media only screen and (min-width:481px) {
-  .c1 {
+@media only screen and (min-width:700px) {
+  .c3 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -83,6 +110,7 @@ exports[`Button accent renders 1`] = `
   <button
     aria-label={undefined}
     className="c1"
+    color="accent-1"
     disabled={false}
     href={undefined}
     icon={undefined}
@@ -92,7 +120,6 @@ exports[`Button accent renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
@@ -101,168 +128,10 @@ exports[`Button accent renders 1`] = `
       Test
     </span>
   </button>
-</div>
-`;
-
-exports[`Button box href renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  background-color: #FFFFFF;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c1 {
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  background-color: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-<div
-  className="c0"
->
-  <a
-    aria-label={undefined}
-    className="c1 c2"
-    direction="column"
-    disabled={false}
-    href="test"
-    icon={undefined}
-    label={undefined}
-    onBlur={[Function]}
-    onClick={undefined}
-    onFocus={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
-    tabIndex="0"
-    type={undefined}
-  />
-</div>
-`;
-
-exports[`Button box renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  background-color: #FFFFFF;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c3:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c1 {
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  background-color: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-}
-
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-<div
-  className="c0"
->
   <button
     aria-label={undefined}
-    className="c1 c2"
-    direction="column"
+    className="c3"
+    color="accent-1"
     disabled={false}
     href={undefined}
     icon={undefined}
@@ -272,111 +141,6 @@ exports[`Button box renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
-    type="button"
-  >
-    <span
-      className="c3"
-    >
-      Test
-    </span>
-  </button>
-</div>
-`;
-
-exports[`Button critical renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  background-color: #FFFFFF;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c1 {
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  background-color: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
-  text-align: center;
-  display: inline-block;
-  min-width: 120px;
-  max-width: 384px;
-  font-weight: 600;
-  font-size: 1.1875rem;
-  line-height: 24px;
-  padding: 6px 22px;
-  border-color: #FF324D;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #FF324D;
-}
-
-.c1:hover svg {
-  -webkit-fill: #000000;
-  fill: #000000;
-  stroke: #000000;
-  -webkit-transition: none;
-  transition: none;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-<div
-  className="c0"
->
-  <button
-    aria-label={undefined}
-    className="c1"
-    disabled={false}
-    href={undefined}
-    icon={undefined}
-    label="Test"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
@@ -394,7 +158,6 @@ exports[`Button disabled renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -402,48 +165,34 @@ exports[`Button disabled renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
+  text-align: center;
+  display: inline-block;
+  min-width: 96px;
+  max-width: 384px;
+  font-weight: 600;
   border: 2px solid #865CD6;
   border-radius: 5px;
   color: #333333;
-  text-align: center;
-  display: inline-block;
-  min-width: 120px;
-  max-width: 384px;
-  font-weight: 600;
   opacity: 0.3;
   cursor: default;
   font-size: 1.1875rem;
   line-height: 24px;
-  padding: 6px 22px;
+  padding: 10px 10px;
 }
 
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -465,7 +214,6 @@ exports[`Button disabled renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   />
 </div>
@@ -477,7 +225,6 @@ exports[`Button focus renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -485,35 +232,29 @@ exports[`Button focus renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
+  text-align: center;
+  display: inline-block;
+  min-width: 96px;
+  max-width: 384px;
+  font-weight: 600;
   border: 2px solid #865CD6;
   border-radius: 5px;
   color: #333333;
-  text-align: center;
-  display: inline-block;
-  min-width: 120px;
-  max-width: 384px;
-  font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
-  padding: 6px 22px;
+  padding: 10px 10px;
   border-color: #00CCEB;
   box-shadow: 0 0 2px 2px #00CCEB;
 }
@@ -528,19 +269,11 @@ exports[`Button focus renders 1`] = `
   outline: #00CCEB solid 2px;
 }
 
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -562,7 +295,6 @@ exports[`Button focus renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
@@ -580,7 +312,6 @@ exports[`Button hoverIndicator as object renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -588,14 +319,12 @@ exports[`Button hoverIndicator as object renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
@@ -605,6 +334,7 @@ exports[`Button hoverIndicator as object renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c1:hover {
@@ -612,19 +342,7 @@ exports[`Button hoverIndicator as object renders 1`] = `
   color: #000000;
 }
 
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -646,7 +364,6 @@ exports[`Button hoverIndicator as object renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     hoverIndicator
@@ -660,7 +377,6 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -668,14 +384,12 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
@@ -685,6 +399,7 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c1:hover {
@@ -692,19 +407,7 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
   color: #000000;
 }
 
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -726,7 +429,6 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     hoverIndicator
@@ -740,7 +442,6 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -748,14 +449,12 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
@@ -765,6 +464,7 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c1:hover {
@@ -772,19 +472,7 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
   color: #000000;
 }
 
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -806,7 +494,6 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     hoverIndicator
@@ -820,7 +507,6 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -828,14 +514,12 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
@@ -845,6 +529,7 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c1:hover {
@@ -852,19 +537,7 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
   color: #000000;
 }
 
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -886,7 +559,6 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     hoverIndicator
@@ -900,7 +572,6 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -908,14 +579,12 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
@@ -925,6 +594,7 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c1:hover {
@@ -932,19 +602,7 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
   color: #000000;
 }
 
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -966,7 +624,6 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     hoverIndicator
@@ -980,7 +637,6 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -988,14 +644,12 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
@@ -1005,6 +659,7 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c1:hover {
@@ -1012,19 +667,7 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
   color: #000000;
 }
 
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -1046,7 +689,6 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     hoverIndicator
@@ -1060,7 +702,6 @@ exports[`Button hoverIndicator renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1068,14 +709,12 @@ exports[`Button hoverIndicator renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
@@ -1085,6 +724,7 @@ exports[`Button hoverIndicator renders 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
 .c1:hover {
@@ -1092,19 +732,7 @@ exports[`Button hoverIndicator renders 1`] = `
   color: #000000;
 }
 
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -1126,7 +754,6 @@ exports[`Button hoverIndicator renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     hoverIndicator
@@ -1140,7 +767,6 @@ exports[`Button href renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1148,31 +774,29 @@ exports[`Button href renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
+  text-align: center;
+  display: inline-block;
+  min-width: 96px;
+  max-width: 384px;
+  font-weight: 600;
   border: 2px solid #865CD6;
   border-radius: 5px;
   color: #333333;
-  text-align: center;
-  display: inline-block;
-  min-width: 120px;
-  max-width: 384px;
-  font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
-  padding: 6px 22px;
+  padding: 10px 10px;
 }
 
 .c1:hover {
@@ -1180,26 +804,13 @@ exports[`Button href renders 1`] = `
 }
 
 .c1:hover svg {
-  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
   transition: none;
 }
 
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -1221,7 +832,6 @@ exports[`Button href renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type={undefined}
   />
 </div>
@@ -1233,7 +843,6 @@ exports[`Button icon label renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1241,8 +850,40 @@ exports[`Button icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
+.c1 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  text-align: center;
+  display: inline-block;
+  min-width: 96px;
+  max-width: 384px;
+  font-weight: 600;
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  padding: 10px 10px;
+}
+
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #865CD6;
+}
+
+.c1:hover svg {
+  fill: #000000;
+  stroke: #000000;
+  -webkit-transition: none;
+  transition: none;
 }
 
 .c3:first-child:not(:last-child) {
@@ -1261,54 +902,7 @@ exports[`Button icon label renders 1`] = `
   vertical-align: bottom;
 }
 
-.c1 {
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  background-color: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
-  text-align: center;
-  display: inline-block;
-  min-width: 120px;
-  max-width: 384px;
-  font-weight: 600;
-  font-size: 1.1875rem;
-  line-height: 24px;
-  padding: 6px 22px;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #865CD6;
-}
-
-.c1:hover svg {
-  -webkit-fill: #000000;
-  fill: #000000;
-  stroke: #000000;
-  -webkit-transition: none;
-  transition: none;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -1330,10 +924,10 @@ exports[`Button icon label renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
+      aria-hidden={true}
       className="c2"
     >
       <svg />
@@ -1353,7 +947,6 @@ exports[`Button primary renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1361,64 +954,48 @@ exports[`Button primary renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
   text-align: center;
   display: inline-block;
-  min-width: 120px;
+  min-width: 96px;
   max-width: 384px;
   font-weight: 600;
-  font-size: 1.1875rem;
-  line-height: 24px;
-  padding: 6px 22px;
   background-color: #865CD6;
   color: #FFFFFF;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #865CD6;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  padding: 10px 10px;
 }
 
 .c1 svg {
-  -webkit-fill: #FFFFFF;
   fill: #FFFFFF;
   stroke: #FFFFFF;
   -webkit-transition: none;
   transition: none;
 }
 
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #865CD6;
 }
 
-@media only screen and (min-width:481px) {
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -1440,7 +1017,6 @@ exports[`Button primary renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
@@ -1458,7 +1034,6 @@ exports[`Button renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1466,35 +1041,29 @@ exports[`Button renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
+  text-align: center;
+  display: inline-block;
+  min-width: 96px;
+  max-width: 384px;
+  font-weight: 600;
   border: 2px solid #865CD6;
   border-radius: 5px;
   color: #333333;
-  text-align: center;
-  display: inline-block;
-  min-width: 120px;
-  max-width: 384px;
-  font-weight: 600;
   font-size: 1.1875rem;
   line-height: 24px;
-  padding: 6px 22px;
+  padding: 10px 10px;
 }
 
 .c1:hover {
@@ -1502,26 +1071,17 @@ exports[`Button renders 1`] = `
 }
 
 .c1:hover svg {
-  -webkit-fill: #000000;
   fill: #000000;
   stroke: #000000;
   -webkit-transition: none;
   transition: none;
 }
 
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -1543,7 +1103,6 @@ exports[`Button renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
@@ -1561,7 +1120,6 @@ exports[`Button reverse icon label renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1569,8 +1127,40 @@ exports[`Button reverse icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
+.c1 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  text-align: center;
+  display: inline-block;
+  min-width: 96px;
+  max-width: 384px;
+  font-weight: 600;
+  border: 2px solid #865CD6;
+  border-radius: 5px;
+  color: #333333;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  padding: 10px 10px;
+}
+
+.c1:hover {
+  box-shadow: 0px 0px 0px 2px #865CD6;
+}
+
+.c1:hover svg {
+  fill: #000000;
+  stroke: #000000;
+  -webkit-transition: none;
+  transition: none;
 }
 
 .c2:first-child:not(:last-child) {
@@ -1589,54 +1179,7 @@ exports[`Button reverse icon label renders 1`] = `
   vertical-align: bottom;
 }
 
-.c1 {
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  background-color: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
-  text-align: center;
-  display: inline-block;
-  min-width: 120px;
-  max-width: 384px;
-  font-weight: 600;
-  font-size: 1.1875rem;
-  line-height: 24px;
-  padding: 6px 22px;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #865CD6;
-}
-
-.c1:hover svg {
-  -webkit-fill: #000000;
-  fill: #000000;
-  stroke: #000000;
-  -webkit-transition: none;
-  transition: none;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -1658,7 +1201,6 @@ exports[`Button reverse icon label renders 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
@@ -1667,113 +1209,10 @@ exports[`Button reverse icon label renders 1`] = `
       Test
     </span>
     <span
+      aria-hidden={true}
       className="c3"
     >
       <svg />
-    </span>
-  </button>
-</div>
-`;
-
-exports[`Button secondary renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  background-color: #FFFFFF;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c1 {
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  background-color: transparent;
-  overflow: visible;
-  text-transform: none;
-  border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
-  text-align: center;
-  display: inline-block;
-  min-width: 120px;
-  max-width: 384px;
-  font-weight: 600;
-  font-size: 1.1875rem;
-  line-height: 24px;
-  padding: 6px 22px;
-  border-color: #DC2878;
-}
-
-.c1:hover {
-  box-shadow: 0px 0px 0px 2px #DC2878;
-}
-
-.c1:hover svg {
-  -webkit-fill: #000000;
-  fill: #000000;
-  stroke: #000000;
-  -webkit-transition: none;
-  transition: none;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
-  .c1 {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-<div
-  className="c0"
->
-  <button
-    aria-label={undefined}
-    className="c1"
-    disabled={false}
-    href={undefined}
-    icon={undefined}
-    label="Test"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
-    tabIndex="0"
-    type="button"
-  >
-    <span
-      className="c2"
-    >
-      Test
     </span>
   </button>
 </div>
@@ -1785,7 +1224,6 @@ exports[`Button warns about invalid icon render 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1793,8 +1231,23 @@ exports[`Button warns about invalid icon render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
+.c1 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  padding: 12px;
 }
 
 .c2 {
@@ -1809,35 +1262,7 @@ exports[`Button warns about invalid icon render 1`] = `
   vertical-align: bottom;
 }
 
-.c1 {
-  cursor: pointer;
-  outline: none;
-  font: inherit;
-  text-decoration: none;
-  font: inherit;
-  margin: 0;
-  background-color: transparent;
-  overflow: visible;
-  text-transform: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  padding: 12px;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -1859,10 +1284,10 @@ exports[`Button warns about invalid icon render 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span
+      aria-hidden={true}
       className="c2"
     >
       <svg />
@@ -1877,7 +1302,6 @@ exports[`Button warns about invalid label render 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1885,18 +1309,12 @@ exports[`Button warns about invalid label render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
 .c1 {
+  box-sizing: border-box;
   cursor: pointer;
   outline: none;
   font: inherit;
+  -webkit-text-decoration: none;
   text-decoration: none;
   font: inherit;
   margin: 0;
@@ -1906,21 +1324,14 @@ exports[`Button warns about invalid label render 1`] = `
   color: inherit;
   border: none;
   padding: 0;
+  text-align: inherit;
 }
 
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
+.c2:first-child:not(:last-child) {
+  margin-right: 12px;
 }
 
-@media only screen and (min-width:481px) {
+@media only screen and (min-width:700px) {
   .c1 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -1942,7 +1353,6 @@ exports[`Button warns about invalid label render 1`] = `
     onFocus={[Function]}
     onMouseDown={[Function]}
     onMouseUp={[Function]}
-    tabIndex="0"
     type="button"
   >
     <span

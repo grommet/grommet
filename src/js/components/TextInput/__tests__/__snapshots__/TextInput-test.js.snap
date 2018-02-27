@@ -1,686 +1,379 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextInput calls onInput when input changes 1`] = `
-.c0 {
+exports[`TextInput closes suggestion drop 1`] = `
+<div
+  class="StyledDrop-bCWxPe gcEofR"
+  tabindex="-1"
+  id="text-input-drop__item"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+>
+  <ol
+    class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
+  >
+    <li>
+      <button
+        class="StyledButton-gXzblK dYRvzO"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS gedxom"
+          direction="column"
+        >
+          test
+        </div>
+      </button>
+    </li>
+    <li>
+      <button
+        class="StyledButton-gXzblK dYRvzO"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS gedxom"
+          direction="column"
+        >
+          test1
+        </div>
+      </button>
+    </li>
+  </ol>
+</div>
+`;
+
+exports[`TextInput closes suggestion drop 2`] = `
+"@media only screen and (min-width:700px) {
+  .dYRvzO {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+
+
+.gcEofR {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c1 {
-  padding: 11px;
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 4px;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
   outline: none;
-  background-color: transparent;
-  color: inherit;
-  font: inherit;
-  margin: 0;
-}
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}"
+`;
 
-.c1::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c1:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c1:focus {
-  border-color: #00CCEB;
-  box-shadow: 0 0 2px 2px #00CCEB;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: #00CCEB solid 2px;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
+exports[`TextInput closes suggestion drop 3`] = `
 <div
-  className="c0"
+  class="StyledGrommet-gGRXwz deqpVW"
 >
   <div
-    className=""
+    class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
   >
     <input
-      autoComplete="off"
-      className="c1"
-      defaultValue={undefined}
+      class="StyledTextInput-bzOzsW zdvFG"
       id="item"
+      autocomplete="off"
       name="item"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onInput={[Function]}
-      onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      value={undefined}
     />
   </div>
 </div>
 `;
 
 exports[`TextInput handles next and previous without suggestion 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  background-color: #FFFFFF;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c1 {
-  padding: 11px;
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 4px;
-  outline: none;
-  background-color: transparent;
-  color: inherit;
-  font: inherit;
-  margin: 0;
-}
-
-.c1::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c1:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c1:focus {
-  border-color: #00CCEB;
-  box-shadow: 0 0 2px 2px #00CCEB;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: #00CCEB solid 2px;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
 <div
-  className="c0"
+  class="StyledGrommet-gGRXwz deqpVW"
 >
   <div
-    className=""
+    class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
   >
     <input
-      autoComplete="off"
-      className="c1"
-      defaultValue={undefined}
+      class="StyledTextInput-bzOzsW zdvFG"
       id="item"
+      autocomplete="off"
       name="item"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onInput={[Function]}
-      onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      value={undefined}
     />
   </div>
 </div>
 `;
 
-exports[`TextInput renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  background-color: #FFFFFF;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c1 {
-  padding: 11px;
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 4px;
-  outline: none;
-  background-color: transparent;
-  color: inherit;
-  font: inherit;
-  margin: 0;
-}
-
-.c1::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c1:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c1:focus {
-  border-color: #00CCEB;
-  box-shadow: 0 0 2px 2px #00CCEB;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: #00CCEB solid 2px;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
+exports[`TextInput mounts 1`] = `
 <div
-  className="c0"
+  class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
 >
-  <div
-    className=""
-  >
-    <input
-      autoComplete="off"
-      className="c1"
-      defaultValue={undefined}
-      id="item"
-      name="item"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onInput={[Function]}
-      onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      value={undefined}
-    />
-  </div>
+  <input
+    class="StyledTextInput-bzOzsW zdvFG"
+    autocomplete="off"
+    name="item"
+  />
 </div>
 `;
 
-exports[`TextInput renders with complex suggestions 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  background-color: #FFFFFF;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c1 {
-  padding: 11px;
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 4px;
-  outline: none;
-  background-color: transparent;
-  color: inherit;
-  font: inherit;
-  margin: 0;
-}
-
-.c1::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c1:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c1:focus {
-  border-color: #00CCEB;
-  box-shadow: 0 0 2px 2px #00CCEB;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: #00CCEB solid 2px;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
+exports[`TextInput mounts with complex suggestions 1`] = `
 <div
-  className="c0"
+  class="StyledDrop-bCWxPe gcEofR"
+  tabindex="-1"
+  id="text-input-drop__item"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
-  <div
-    className=""
+  <ol
+    class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
   >
-    <input
-      autoComplete="off"
-      className="c1"
-      defaultValue={undefined}
-      id="item"
-      name="item"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onInput={[Function]}
-      onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      value={undefined}
-    />
-  </div>
+    <li>
+      <button
+        class="StyledButton-gXzblK dYRvzO"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS gedxom"
+          direction="column"
+        >
+          test
+        </div>
+      </button>
+    </li>
+    <li>
+      <button
+        class="StyledButton-gXzblK dYRvzO"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS gedxom"
+          direction="column"
+        >
+          test1
+        </div>
+      </button>
+    </li>
+  </ol>
 </div>
 `;
 
-exports[`TextInput renders with suggestions 1`] = `
-.c0 {
+exports[`TextInput mounts with complex suggestions 2`] = `
+"@media only screen and (min-width:700px) {
+  .dYRvzO {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+
+
+.gcEofR {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c1 {
-  padding: 11px;
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 4px;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
   outline: none;
-  background-color: transparent;
-  color: inherit;
-  font: inherit;
-  margin: 0;
-}
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}"
+`;
 
-.c1::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c1:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c1:focus {
-  border-color: #00CCEB;
-  box-shadow: 0 0 2px 2px #00CCEB;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: #00CCEB solid 2px;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
+exports[`TextInput mounts with suggestions 1`] = `
 <div
-  className="c0"
+  class="StyledDrop-bCWxPe gcEofR"
+  tabindex="-1"
+  id="text-input-drop__item"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
-  <div
-    className=""
+  <ol
+    class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
   >
-    <input
-      autoComplete="off"
-      className="c1"
-      defaultValue={undefined}
-      id="item"
-      name="item"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onInput={[Function]}
-      onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      value={undefined}
-    />
-  </div>
+    <li>
+      <button
+        class="StyledButton-gXzblK dYRvzO"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS gedxom"
+          direction="column"
+        >
+          test
+        </div>
+      </button>
+    </li>
+    <li>
+      <button
+        class="StyledButton-gXzblK dYRvzO"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS gedxom"
+          direction="column"
+        >
+          test1
+        </div>
+      </button>
+    </li>
+  </ol>
 </div>
 `;
 
-exports[`TextInput show suggestions on input change 1`] = `
-.c0 {
+exports[`TextInput mounts with suggestions 2`] = `
+"@media only screen and (min-width:700px) {
+  .dYRvzO {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+
+
+.gcEofR {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c1 {
-  padding: 11px;
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 4px;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
   outline: none;
-  background-color: transparent;
-  color: inherit;
-  font: inherit;
-  margin: 0;
-}
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}"
+`;
 
-.c1::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c1:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c1:focus {
-  border-color: #00CCEB;
-  box-shadow: 0 0 2px 2px #00CCEB;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: #00CCEB solid 2px;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
+exports[`TextInput selects suggestion 1`] = `
 <div
-  className="c0"
+  class="StyledDrop-bCWxPe gcEofR"
+  tabindex="-1"
+  id="text-input-drop__item"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
-  <div
-    className=""
+  <ol
+    class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
   >
-    <input
-      autoComplete="off"
-      className="c1"
-      defaultValue={undefined}
-      id="item"
-      name="item"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onInput={[Function]}
-      onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      value={undefined}
-    />
-  </div>
+    <li>
+      <button
+        class="StyledButton-gXzblK dYRvzO"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS gedxom"
+          direction="column"
+        >
+          test
+        </div>
+      </button>
+    </li>
+    <li>
+      <button
+        class="StyledButton-gXzblK dYRvzO"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS gedxom"
+          direction="column"
+        >
+          test1
+        </div>
+      </button>
+    </li>
+  </ol>
 </div>
 `;
 
-exports[`TextInput show suggestions on input change 2`] = `
-.c0 {
+exports[`TextInput selects suggestion 2`] = `
+"@media only screen and (min-width:700px) {
+  .dYRvzO {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+
+
+.gcEofR {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
-}
-
-.c1 {
-  padding: 11px;
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 4px;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
   outline: none;
-  background-color: transparent;
-  color: inherit;
-  font: inherit;
-  margin: 0;
-}
+  background-color: #f8f8f8;
+  color: #333333;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}"
+`;
 
-.c1::-webkit-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-placeholder {
-  color: #AAAAAA;
-}
-
-.c1:-ms-input-placeholder {
-  color: #AAAAAA;
-}
-
-.c1::-moz-focus-inner {
-  border: none;
-  outline: none;
-}
-
-.c1:focus {
-  border-color: #00CCEB;
-  box-shadow: 0 0 2px 2px #00CCEB;
-}
-
-.c1:focus > circle,
-.c1:focus > ellipse,
-.c1:focus > line,
-.c1:focus > path,
-.c1:focus > polygon,
-.c1:focus > polyline,
-.c1:focus > rect {
-  outline: #00CCEB solid 2px;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
-}
-
+exports[`TextInput selects suggestion 3`] = `
 <div
-  className="c0"
+  class="StyledGrommet-gGRXwz deqpVW"
 >
   <div
-    className=""
+    class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
   >
     <input
-      autoComplete="off"
-      className="c1"
-      defaultValue={undefined}
+      class="StyledTextInput-bzOzsW gAbvjB"
       id="item"
+      autocomplete="off"
       name="item"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onInput={[Function]}
-      onKeyDown={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
-      value={undefined}
-    />
-    <span
-      style={
-        Object {
-          "display": "none",
-        }
-      }
     />
   </div>
 </div>

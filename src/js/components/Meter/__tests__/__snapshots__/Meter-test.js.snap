@@ -6,16 +6,11 @@ exports[`Meter background renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -25,18 +20,6 @@ exports[`Meter background renders 1`] = `
 .c1 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -62,7 +45,7 @@ exports[`Meter background renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -78,6 +61,7 @@ exports[`Meter background renders 1`] = `
       fill="none"
       stroke="#DDDDDD"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -86,7 +70,7 @@ exports[`Meter background renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -111,7 +95,7 @@ exports[`Meter background renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -128,6 +112,7 @@ exports[`Meter background renders 1`] = `
       r={180}
       stroke="#DDDDDD"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -136,7 +121,7 @@ exports[`Meter background renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -149,16 +134,11 @@ exports[`Meter renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -168,18 +148,6 @@ exports[`Meter renders 1`] = `
 .c1 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -197,6 +165,7 @@ exports[`Meter renders 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
   </svg>
@@ -212,6 +181,7 @@ exports[`Meter renders 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -220,7 +190,7 @@ exports[`Meter renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -233,7 +203,6 @@ exports[`Meter round renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -241,29 +210,23 @@ exports[`Meter round renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
+.c2 {
+  max-width: 100%;
+}
+
+.c2 path {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .c1 {
   max-width: 100%;
+  border-radius: 24px;
 }
 
 .c1 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -277,14 +240,15 @@ exports[`Meter round renders 1`] = `
     width={384}
   >
     <path
-      d="M 0,12 L 384,12"
+      d="M 12,12 L 372,12"
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="round"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
-      d="M 0,12 L 76.8,12"
+      d="M 12,12 L 84,12"
       fill="none"
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
@@ -294,7 +258,7 @@ exports[`Meter round renders 1`] = `
     />
   </svg>
   <svg
-    className="c1"
+    className="c2"
     height={384}
     viewBox="0 0 384 384"
     width={384}
@@ -306,6 +270,7 @@ exports[`Meter round renders 1`] = `
       r={180}
       stroke="#F6F6F6"
       strokeLinecap="round"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -314,6 +279,19 @@ exports[`Meter round renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
+      strokeLinecap="round"
+      strokeWidth={24}
+    />
+    <path
+      d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 363.1901729331 136.3769410125"
+      fill="none"
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      stroke={
+        Object {
+          "stroke": "#00CCEB",
+        }
+      }
       strokeLinecap="round"
       strokeWidth={24}
     />
@@ -327,16 +305,11 @@ exports[`Meter size renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -346,18 +319,6 @@ exports[`Meter size renders 1`] = `
 .c1 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -375,6 +336,7 @@ exports[`Meter size renders 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -383,7 +345,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -399,6 +361,7 @@ exports[`Meter size renders 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -407,7 +370,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -423,6 +386,7 @@ exports[`Meter size renders 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -431,7 +395,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -447,6 +411,7 @@ exports[`Meter size renders 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -455,7 +420,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -471,6 +436,7 @@ exports[`Meter size renders 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -479,7 +445,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -496,6 +462,7 @@ exports[`Meter size renders 1`] = `
       r={36}
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -504,7 +471,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -521,6 +488,7 @@ exports[`Meter size renders 1`] = `
       r={84}
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -529,7 +497,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -546,6 +514,7 @@ exports[`Meter size renders 1`] = `
       r={180}
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -554,7 +523,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -571,6 +540,7 @@ exports[`Meter size renders 1`] = `
       r={372}
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -579,7 +549,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -596,6 +566,7 @@ exports[`Meter size renders 1`] = `
       r={564}
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -604,7 +575,7 @@ exports[`Meter size renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -617,16 +588,11 @@ exports[`Meter thickness renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -636,18 +602,6 @@ exports[`Meter thickness renders 1`] = `
 .c1 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -665,6 +619,7 @@ exports[`Meter thickness renders 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={6}
     />
     <path
@@ -673,7 +628,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={6}
     />
   </svg>
@@ -689,6 +644,7 @@ exports[`Meter thickness renders 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={12}
     />
     <path
@@ -697,7 +653,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={12}
     />
   </svg>
@@ -713,6 +669,7 @@ exports[`Meter thickness renders 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -721,7 +678,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -737,6 +694,7 @@ exports[`Meter thickness renders 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={48}
     />
     <path
@@ -745,7 +703,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={48}
     />
   </svg>
@@ -761,6 +719,7 @@ exports[`Meter thickness renders 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={96}
     />
     <path
@@ -769,7 +728,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={96}
     />
   </svg>
@@ -786,6 +745,7 @@ exports[`Meter thickness renders 1`] = `
       r={189}
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={6}
     />
     <path
@@ -794,7 +754,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={6}
     />
   </svg>
@@ -811,6 +771,7 @@ exports[`Meter thickness renders 1`] = `
       r={186}
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={12}
     />
     <path
@@ -819,7 +780,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={12}
     />
   </svg>
@@ -836,6 +797,7 @@ exports[`Meter thickness renders 1`] = `
       r={180}
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -844,7 +806,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -861,6 +823,7 @@ exports[`Meter thickness renders 1`] = `
       r={168}
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={48}
     />
     <path
@@ -869,7 +832,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={48}
     />
   </svg>
@@ -886,6 +849,7 @@ exports[`Meter thickness renders 1`] = `
       r={144}
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={96}
     />
     <path
@@ -894,7 +858,7 @@ exports[`Meter thickness renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={96}
     />
   </svg>
@@ -907,16 +871,11 @@ exports[`Meter type renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c0 * {
-  box-sizing: inherit;
 }
 
 .c1 {
@@ -926,18 +885,6 @@ exports[`Meter type renders 1`] = `
 .c1 path {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -955,6 +902,7 @@ exports[`Meter type renders 1`] = `
       fill="none"
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -963,7 +911,7 @@ exports[`Meter type renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>
@@ -980,6 +928,7 @@ exports[`Meter type renders 1`] = `
       r={180}
       stroke="#F6F6F6"
       strokeLinecap="square"
+      strokeOpacity="0.4"
       strokeWidth={24}
     />
     <path
@@ -988,7 +937,7 @@ exports[`Meter type renders 1`] = `
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeWidth={24}
     />
   </svg>

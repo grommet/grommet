@@ -6,7 +6,6 @@ exports[`Grid align renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -14,12 +13,9 @@ exports[`Grid align renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -29,6 +25,7 @@ exports[`Grid align renders 1`] = `
 
 .c2 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -38,6 +35,7 @@ exports[`Grid align renders 1`] = `
 
 .c3 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
@@ -47,23 +45,12 @@ exports[`Grid align renders 1`] = `
 
 .c4 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -90,7 +77,6 @@ exports[`Grid alignContent renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -98,20 +84,18 @@ exports[`Grid alignContent renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-align-content: flex-start;
-  -ms-flex-line-pack: flex-start;
+  -ms-flex-line-pack: start;
   align-content: flex-start;
 }
 
 .c2 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-align-content: center;
   -ms-flex-line-pack: center;
@@ -120,6 +104,7 @@ exports[`Grid alignContent renders 1`] = `
 
 .c3 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-align-content: space-between;
   -ms-flex-line-pack: space-between;
@@ -128,6 +113,7 @@ exports[`Grid alignContent renders 1`] = `
 
 .c4 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-align-content: space-around;
   -ms-flex-line-pack: space-around;
@@ -136,30 +122,20 @@ exports[`Grid alignContent renders 1`] = `
 
 .c5 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-align-content: flex-end;
-  -ms-flex-line-pack: flex-end;
+  -ms-flex-line-pack: end;
   align-content: flex-end;
 }
 
 .c6 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -192,7 +168,6 @@ exports[`Grid areas renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -200,28 +175,13 @@ exports[`Grid areas renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   grid-template-areas: "header main footer" "header sidebar footer" ". .";
   grid-template-columns: 75% 25%;
   grid-template-rows: 48px 384px 96px;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -246,7 +206,6 @@ exports[`Grid columns renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -254,26 +213,11 @@ exports[`Grid columns renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   grid-template-columns: 50% 25% 25%;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -291,7 +235,6 @@ exports[`Grid gap renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -299,81 +242,75 @@ exports[`Grid gap renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   grid-gap: 12px 12px;
 }
 
 .c2 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   grid-gap: 24px 24px;
 }
 
 .c3 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   grid-gap: 48px 48px;
 }
 
 .c4 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   grid-row-gap: 12px;
 }
 
 .c5 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   grid-row-gap: 24px;
 }
 
 .c6 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   grid-row-gap: 48px;
 }
 
 .c7 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   grid-column-gap: 12px;
 }
 
 .c8 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   grid-column-gap: 24px;
 }
 
 .c9 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   grid-column-gap: 48px;
 }
 
 .c10 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   grid-row-gap: 12px;
   grid-column-gap: 24px;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -418,7 +355,6 @@ exports[`Grid justify renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -426,12 +362,9 @@ exports[`Grid justify renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
@@ -441,6 +374,7 @@ exports[`Grid justify renders 1`] = `
 
 .c2 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -450,6 +384,7 @@ exports[`Grid justify renders 1`] = `
 
 .c3 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
@@ -459,23 +394,12 @@ exports[`Grid justify renders 1`] = `
 
 .c4 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-box-pack: stretch;
   -webkit-justify-content: stretch;
   -ms-flex-pack: stretch;
   justify-content: stretch;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -502,7 +426,6 @@ exports[`Grid justifyContent renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -510,12 +433,9 @@ exports[`Grid justifyContent renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
@@ -525,6 +445,7 @@ exports[`Grid justifyContent renders 1`] = `
 
 .c2 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -534,6 +455,7 @@ exports[`Grid justifyContent renders 1`] = `
 
 .c3 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -543,6 +465,7 @@ exports[`Grid justifyContent renders 1`] = `
 
 .c4 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-box-pack: space-around;
   -webkit-justify-content: space-around;
@@ -552,6 +475,7 @@ exports[`Grid justifyContent renders 1`] = `
 
 .c5 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
@@ -561,23 +485,12 @@ exports[`Grid justifyContent renders 1`] = `
 
 .c6 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   -webkit-box-pack: stretch;
   -webkit-justify-content: stretch;
   -ms-flex-pack: stretch;
   justify-content: stretch;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -610,7 +523,6 @@ exports[`Grid renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -618,25 +530,10 @@ exports[`Grid renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -654,7 +551,6 @@ exports[`Grid rows renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -662,26 +558,11 @@ exports[`Grid rows renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
   grid-template-rows: 192px 768px 384px;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -706,7 +587,6 @@ exports[`Grid tag renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -714,25 +594,10 @@ exports[`Grid tag renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   display: grid;
+  box-sizing: border-box;
   height: 100%;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div

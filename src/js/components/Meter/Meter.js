@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import Bar from './Bar';
-import Circle from './Circle';
-
 import { withTheme } from '../hocs';
 
+import Bar from './Bar';
+import Circle from './Circle';
 import doc from './doc';
 
 class Meter extends Component {
   static defaultProps = {
-    background: 'light-1',
-    color: 'accent-1',
+    background: { color: 'light-1', opacity: 'medium' },
     size: 'medium',
     thickness: 'medium',
     type: 'bar',

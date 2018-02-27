@@ -1,119 +1,101 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 
-import PropTypes from 'prop-types';
-import deepAssign from 'deep-assign';
-import cloneDeep from 'clone-deep';
-
-import StyledLayer, { StyledContainer } from './StyledLayer';
-
+import FocusedContainer from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
+import { withTheme } from '../hocs';
 
-import baseTheme from '../../themes/vanilla';
-
-import { filterByFocusable, getBodyChildElements } from '../utils/DOM';
+import StyledLayer, { StyledContainer, StyledOverlay } from './StyledLayer';
 
 class LayerContainer extends Component {
-  static childContextTypes = {
-    theme: PropTypes.object,
-  }
-  static contextTypes = {
-    theme: PropTypes.object,
-  }
   static defaultProps = {
-    theme: undefined,
-  }
-
-  getChildContext() {
-    const { theme } = this.props;
-    const { theme: contextTheme } = this.context;
-
-    return {
-      ...this.context,
-      theme: contextTheme || deepAssign(cloneDeep(baseTheme), theme),
-    };
+    full: false,
+    margin: 'none',
+    modal: true,
+    position: 'center',
   }
 
   componentDidMount() {
-    const layerNode = findDOMNode(this.layerRef);
-    // go over all the body children to remove focus when layer is opened
-    getBodyChildElements().forEach((node) => {
-      if (!node.contains(layerNode)) {
-        node.setAttribute('aria-hidden', true);
-        // prevent children to receive focus
-        filterByFocusable(node.getElementsByTagName('*')).forEach(
-          (element) => {
-            const originalTabIndex = element.getAttribute('tabindex');
-            if (originalTabIndex) {
-              element.setAttribute('data-tabindex', originalTabIndex);
-            }
-            element.setAttribute('tabindex', -1);
-          }
-        );
-      }
-    });
-    document.body.style.overflow = 'hidden';
-    if (layerNode.scrollIntoView) {
-      layerNode.scrollIntoView();
+    const { position } = this.props;
+    if (position !== 'hidden') {
+      this.makeLayerVisible();
     }
-    layerNode.focus();
   }
 
-  componentWillUnmount() {
-    // go over all the body children to reset focus when layer is closed
-    getBodyChildElements().forEach((node) => {
-      if (!node.contains(findDOMNode(this.layerRef))) {
-        node.setAttribute('aria-hidden', false);
+  componentWillReceiveProps({ position }) {
+    if (this.props.position !== position && position !== 'hidden') {
+      this.makeLayerVisible();
+    }
+  }
 
-        // reset node focus
-        filterByFocusable(node.getElementsByTagName('*')).forEach(
-          (element) => {
-            const originalTabIndex = element.getAttribute('data-tabindex');
-            if (originalTabIndex) {
-              element.setAttribute('tabindex', originalTabIndex);
-              element.removeAttribute('data-tabindex');
-            } else {
-              element.removeAttribute('tabindex', -1);
-            }
-          }
-        );
-      }
-    });
-    document.body.style.overflow = 'scroll';
+  makeLayerVisible = () => {
+    const node = findDOMNode(this.layerRef || this.containerRef);
+    if (node && node.scrollIntoView) {
+      node.scrollIntoView();
+    }
   }
 
   render() {
     const {
       children,
+      id,
+      modal,
+      onClickOutside,
       onEsc,
+      plain,
+      position,
       theme,
       ...rest
     } = this.props;
-    const { theme: contextTheme } = this.context;
 
-    const globalTheme = cloneDeep(baseTheme);
-    const localTheme = deepAssign(globalTheme, contextTheme, theme);
-
-    return (
-      <Keyboard onEsc={onEsc}>
-        <StyledLayer
-          tabIndex='-1'
-          ref={(ref) => {
-            this.layerRef = ref;
-          }}
-          theme={localTheme}
-        >
-          <StyledContainer
-            {...rest}
-            theme={localTheme}
-            tabIndex='-1'
-          >
-            {children}
-          </StyledContainer>
-        </StyledLayer>
-      </Keyboard>
+    let content = (
+      <StyledContainer
+        id={id}
+        {...rest}
+        theme={theme}
+        position={position}
+        plain={plain}
+        ref={(ref) => { this.containerRef = ref; }}
+      >
+        {children}
+      </StyledContainer>
     );
+
+    if (modal) {
+      content = (
+        <StyledLayer
+          id={id}
+          onClick={onClickOutside}
+          plain={plain}
+          position={position}
+          theme={theme}
+          tabIndex='-1'
+          ref={(ref) => { this.layerRef = ref; }}
+        >
+          <StyledOverlay theme={theme} />
+          {content}
+        </StyledLayer>
+      );
+    }
+
+    if (onEsc) {
+      content = (
+        <Keyboard onEsc={onEsc}>
+          {content}
+        </Keyboard>
+      );
+    }
+
+    if (modal) {
+      content = (
+        <FocusedContainer hidden={position === 'hidden'} restrictScroll={true}>
+          {content}
+        </FocusedContainer>
+      );
+    }
+
+    return content;
   }
 }
 
-export default LayerContainer;
+export default withTheme(LayerContainer);

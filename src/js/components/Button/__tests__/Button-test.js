@@ -2,10 +2,10 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
+import { findAllByType } from '../../../utils';
+
 import { Grommet } from '../../Grommet';
 import { Button } from '../';
-
-import { findAllByType } from '../../utils';
 
 test('Button renders', () => {
   const component = renderer.create(
@@ -57,30 +57,11 @@ test('Button primary renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Button accent renders', () => {
+test('Button color renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button accent={true} label='Test' onClick={() => {}} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Button secondary renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Button secondary={true} label='Test' onClick={() => {}} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Button critical renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Button critical={true} label='Test' onClick={() => {}} />
+      <Button color='accent-1' label='Test' onClick={() => {}} />
+      <Button color='accent-1' primary={true} label='Test' onClick={() => {}} />
     </Grommet>
   );
   const tree = component.toJSON();
@@ -142,30 +123,10 @@ test('Button href renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Button box renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Button box={true} label='Test' onClick={() => {}} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('Button box href renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Button box={true} href='test' />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
 test('Button hoverIndicator renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button plain={true} onClick={() => {}} hoverIndicator='background'>
+      <Button onClick={() => {}} hoverIndicator='background'>
         hoverIndicator
       </Button>
     </Grommet>
@@ -177,7 +138,7 @@ test('Button hoverIndicator renders', () => {
 test('Button hoverIndicator as object renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button plain={true} onClick={() => {}} hoverIndicator={{ background: true }}>
+      <Button onClick={() => {}} hoverIndicator={{ background: true }}>
         hoverIndicator
       </Button>
     </Grommet>
@@ -189,7 +150,7 @@ test('Button hoverIndicator as object renders', () => {
 test('Button hoverIndicator as object with color renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button plain={true} onClick={() => {}} hoverIndicator={{ background: 'brand' }}>
+      <Button onClick={() => {}} hoverIndicator={{ background: 'brand' }}>
         hoverIndicator
       </Button>
     </Grommet>
@@ -201,7 +162,7 @@ test('Button hoverIndicator as object with color renders', () => {
 test('Button hoverIndicator as object with colorIndex renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button plain={true} onClick={() => {}} hoverIndicator={{ background: 'accent-1' }}>
+      <Button onClick={() => {}} hoverIndicator={{ background: 'accent-1' }}>
         hoverIndicator
       </Button>
     </Grommet>
@@ -213,7 +174,7 @@ test('Button hoverIndicator as object with colorIndex renders', () => {
 test('Button hoverIndicator as object with invalid color renders', () => {
   let component = renderer.create(
     <Grommet>
-      <Button plain={true} onClick={() => {}} hoverIndicator={{ background: 'accent' }}>
+      <Button onClick={() => {}} hoverIndicator={{ background: 'accent' }}>
         hoverIndicator
       </Button>
     </Grommet>
@@ -222,7 +183,7 @@ test('Button hoverIndicator as object with invalid color renders', () => {
   expect(tree).toMatchSnapshot();
   component = renderer.create(
     <Grommet>
-      <Button plain={true} onClick={() => {}} hoverIndicator={{ background: 'invalid' }}>
+      <Button onClick={() => {}} hoverIndicator={{ background: 'invalid' }}>
         hoverIndicator
       </Button>
     </Grommet>
@@ -234,7 +195,7 @@ test('Button hoverIndicator as object with invalid color renders', () => {
 test('Button hoverIndicator as object with invalid colorIndex renders', () => {
   const component = renderer.create(
     <Grommet>
-      <Button plain={true} onClick={() => {}} hoverIndicator={{ background: 'accent-100' }}>
+      <Button onClick={() => {}} hoverIndicator={{ background: 'accent-100' }}>
         hoverIndicator
       </Button>
     </Grommet>

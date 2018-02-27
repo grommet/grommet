@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import StyledGrid from './StyledGrid';
-
 import { withTheme } from '../hocs';
 
+import StyledGrid from './StyledGrid';
 import doc from './doc';
 
 const styledComponents = {

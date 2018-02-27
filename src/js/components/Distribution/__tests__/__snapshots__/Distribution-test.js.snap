@@ -1,0 +1,275 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Distribution gap renders 1`] = `
+<div
+  class="StyledGrommet-gGRXwz deqpVW"
+>
+  <div
+    class="StyledBox-bStriS eigWlF"
+    direction="row"
+    overflow="hidden"
+  >
+    <div
+      class="StyledBox-bStriS jDEqum"
+      direction="column"
+      overflow="hidden"
+    >
+      <span>
+        3
+      </span>
+    </div>
+    <div
+      class="StyledBox__StyledBoxGap-ixLlSs eprEGd"
+      direction="row"
+    />
+    <div
+      class="StyledBox-bStriS jDEqum"
+      direction="column"
+      overflow="hidden"
+    >
+      <div
+        class="StyledBox-bStriS hytwdE"
+        direction="column"
+        overflow="hidden"
+      >
+        <span>
+          2
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-ixLlSs gRyQAd"
+        direction="column"
+      />
+      <div
+        class="StyledBox-bStriS gjAUGF"
+        direction="column"
+        overflow="hidden"
+      >
+        <span>
+          1
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="StyledBox-bStriS eigWlF"
+    direction="row"
+    overflow="hidden"
+  >
+    <div
+      class="StyledBox-bStriS jDEqum"
+      direction="column"
+      overflow="hidden"
+    >
+      <span>
+        3
+      </span>
+    </div>
+    <div
+      class="StyledBox__StyledBoxGap-ixLlSs laXbkr"
+      direction="row"
+    />
+    <div
+      class="StyledBox-bStriS jDEqum"
+      direction="column"
+      overflow="hidden"
+    >
+      <div
+        class="StyledBox-bStriS hytwdE"
+        direction="column"
+        overflow="hidden"
+      >
+        <span>
+          2
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-ixLlSs fgCaKw"
+        direction="column"
+      />
+      <div
+        class="StyledBox-bStriS gjAUGF"
+        direction="column"
+        overflow="hidden"
+      >
+        <span>
+          1
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="StyledBox-bStriS eigWlF"
+    direction="row"
+    overflow="hidden"
+  >
+    <div
+      class="StyledBox-bStriS jDEqum"
+      direction="column"
+      overflow="hidden"
+    >
+      <span>
+        3
+      </span>
+    </div>
+    <div
+      class="StyledBox__StyledBoxGap-ixLlSs jLKFth"
+      direction="row"
+    />
+    <div
+      class="StyledBox-bStriS jDEqum"
+      direction="column"
+      overflow="hidden"
+    >
+      <div
+        class="StyledBox-bStriS hytwdE"
+        direction="column"
+        overflow="hidden"
+      >
+        <span>
+          2
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-ixLlSs jsNymH"
+        direction="column"
+      />
+      <div
+        class="StyledBox-bStriS gjAUGF"
+        direction="column"
+        overflow="hidden"
+      >
+        <span>
+          1
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="StyledBox-bStriS eigWlF"
+    direction="row"
+    overflow="hidden"
+  >
+    <div
+      class="StyledBox-bStriS jDEqum"
+      direction="column"
+      overflow="hidden"
+    >
+      <span>
+        3
+      </span>
+    </div>
+    <div
+      class="StyledBox__StyledBoxGap-ixLlSs epoBrO"
+      direction="row"
+    />
+    <div
+      class="StyledBox-bStriS jDEqum"
+      direction="column"
+      overflow="hidden"
+    >
+      <div
+        class="StyledBox-bStriS hytwdE"
+        direction="column"
+        overflow="hidden"
+      >
+        <span>
+          2
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-ixLlSs eqpTwa"
+        direction="column"
+      />
+      <div
+        class="StyledBox-bStriS gjAUGF"
+        direction="column"
+        overflow="hidden"
+      >
+        <span>
+          1
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Distribution renders 1`] = `
+<div
+  class="StyledGrommet-gGRXwz deqpVW"
+/>
+`;
+
+exports[`Distribution values renders 1`] = `
+<div
+  class="StyledGrommet-gGRXwz deqpVW"
+>
+  <div
+    class="StyledBox-bStriS eigWlF"
+    direction="row"
+    overflow="hidden"
+  >
+    <div
+      class="StyledBox-bStriS cRQqrZ"
+      direction="column"
+      overflow="hidden"
+    >
+      <span>
+        20
+      </span>
+    </div>
+    <div
+      class="StyledBox__StyledBoxGap-ixLlSs eprEGd"
+      direction="row"
+    />
+    <div
+      class="StyledBox-bStriS iqHxwu"
+      direction="column"
+      overflow="hidden"
+    >
+      <div
+        class="StyledBox-bStriS jDEqum"
+        direction="column"
+        overflow="hidden"
+      >
+        <span>
+          3
+        </span>
+      </div>
+      <div
+        class="StyledBox__StyledBoxGap-ixLlSs gRyQAd"
+        direction="column"
+      />
+      <div
+        class="StyledBox-bStriS OfFtF"
+        direction="row"
+        overflow="hidden"
+      >
+        <div
+          class="StyledBox-bStriS hytwdE"
+          direction="column"
+          overflow="hidden"
+        >
+          <span>
+            2
+          </span>
+        </div>
+        <div
+          class="StyledBox__StyledBoxGap-ixLlSs eprEGd"
+          direction="row"
+        />
+        <div
+          class="StyledBox-bStriS gjAUGF"
+          direction="column"
+          overflow="hidden"
+        >
+          <span>
+            1
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

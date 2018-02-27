@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 
-import StyledMeter from './StyledMeter';
+import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
 
-import { parseMetricToInt } from '../utils/mixins';
-import { colorForName } from '../utils/colors';
-import { translateEndAngle, arcCommands } from '../utils/graphics';
+import StyledMeter from './StyledMeter';
+import { strokeProps } from './utils';
 
 export default class Circle extends Component {
   render() {
-    const { background, round, size, theme, thickness, values } = this.props;
-    const width = (size === 'full' ? 288 : parseMetricToInt(theme.global.size[size]));
-    const height = parseMetricToInt(theme.global.edgeSize[thickness]);
+    const { background, round, size, theme, thickness, values, ...rest } = this.props;
+    const width = (size === 'full' ? 288 : parseMetricToNum(theme.global.size[size]));
+    const height = parseMetricToNum(theme.global.edgeSize[thickness]);
     const mid = width / 2;
     const radius = (width / 2) - (height / 2);
     const max = 100;
@@ -19,8 +18,10 @@ export default class Circle extends Component {
 
     let startValue = 0;
     let startAngle = 0;
-    const paths = (values || []).map((valueArg, index) => {
-      const { color, highlight, label, onHover, value, ...rest } = valueArg;
+    const paths = [];
+    let pathCaps = [];
+    (values || []).filter(v => v.value > 0).forEach((valueArg, index) => {
+      const { color, highlight, label, onHover, value, ...pathRest } = valueArg;
       const key = `p-${index}`;
       const colorName = color ||
         ((index === values.length - 1) ? 'accent-1' : `neutral-${index + 1}`);
@@ -32,7 +33,6 @@ export default class Circle extends Component {
         endAngle = Math.min(360,
           translateEndAngle(startAngle, anglePer, value));
       }
-      const d = arcCommands(width / 2, width / 2, radius, startAngle, endAngle);
       let hoverProps;
       if (onHover) {
         hoverProps = {
@@ -40,39 +40,83 @@ export default class Circle extends Component {
           onMouseLeave: () => onHover(false),
         };
       }
+      const stroke = strokeProps((someHighlight && !highlight) ? background : colorName, theme);
+
+      if (round) {
+        const d1 = arcCommands(width / 2, width / 2, radius, startAngle, endAngle);
+        paths.unshift(
+          <path
+            key={key}
+            d={d1}
+            fill='none'
+            {...stroke}
+            strokeWidth={height}
+            strokeLinecap='round'
+            {...hoverProps}
+            {...pathRest}
+          />
+        );
+
+        // To handle situations where the last values are small, redraw
+        // a dot at the end.
+        const d2 =
+          arcCommands(width / 2, width / 2, radius, endAngle, endAngle);
+        const pathCap = (
+          <path
+            key={`${key}-`}
+            d={d2}
+            fill='none'
+            stroke={stroke}
+            strokeWidth={height}
+            strokeLinecap='round'
+            {...hoverProps}
+            {...pathRest}
+          />
+        );
+        // If we are on a large enough path to not need re-drawing previous ones,
+        // clear the pathCaps we've collected already.
+        if ((endAngle - startAngle) > (2 * anglePer)) {
+          pathCaps = [];
+        }
+        pathCaps.unshift(pathCap);
+      } else {
+        const d = arcCommands(width / 2, width / 2, radius, startAngle, endAngle);
+        paths.push(
+          <path
+            key={key}
+            d={d}
+            fill='none'
+            {...stroke}
+            strokeWidth={height}
+            strokeLinecap='butt'
+            {...hoverProps}
+            {...pathRest}
+          />
+        );
+      }
       startValue += value;
       startAngle = endAngle;
-
-      return (
-        <path
-          key={key}
-          d={d}
-          fill='none'
-          stroke={colorForName((someHighlight && !highlight) ? background : colorName, theme)}
-          strokeWidth={height}
-          strokeLinecap={round ? 'round' : 'square'}
-          {...hoverProps}
-          {...rest}
-        />
-      );
-    }).reverse(); // reverse so the caps looks right
+    });
 
     return (
       <StyledMeter
         viewBox={`0 0 ${width} ${width}`}
         width={size === 'full' ? '100%' : width}
         height={size === 'full' ? '100%' : width}
+        theme={theme}
+        {...rest}
       >
         <circle
           cx={mid}
           cy={mid}
           r={radius}
-          stroke={colorForName(background, theme)}
+          {...strokeProps(background, theme)}
           strokeWidth={height}
           strokeLinecap={round ? 'round' : 'square'}
           fill='none'
         />
         {paths}
+        {pathCaps}
       </StyledMeter>
     );
   }

@@ -1,4 +1,6 @@
-export default {
+import { deepFreeze } from '../utils';
+
+export default deepFreeze({
   global: {
     colors: {
       accent: ['#2AD2C9', '#614767', '#ff8d6d'],
@@ -54,4 +56,12 @@ export default {
     },
     extend: 'letter-spacing: 0.04167em;',
   },
-};
+  clock: {
+    second: {
+      color: {
+        dark: '#01a982',
+        light: '#01a982',
+      },
+    },
+  },
+});

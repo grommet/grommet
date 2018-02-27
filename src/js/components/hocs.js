@@ -1,27 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import deepAssign from 'deep-assign';
+import getDisplayName from 'recompose/getDisplayName';
 
-export function createContextProvider(context) {
-  const childContextTypes = {};
-  Object.keys(context || {}).forEach(
-    (key) => {
-      childContextTypes[key] = PropTypes.any.isRequired;
-    }
-  );
-  class ContextProvider extends React.Component {
-    static childContextTypes = childContextTypes;
-    getChildContext() {
-      return context;
-    }
-
-    render() {
-      return this.props.children;
-    }
-  }
-
-  return ContextProvider;
-}
+import baseTheme from '../themes/vanilla';
+import { deepMerge } from '../utils';
 
 export const withFocus = (WrappedComponent) => {
   class FocusableComponent extends Component {
@@ -83,6 +65,8 @@ export const withFocus = (WrappedComponent) => {
     }
   }
 
+  FocusableComponent.displayName = getDisplayName(WrappedComponent);
+
   return FocusableComponent;
 };
 
@@ -94,14 +78,16 @@ export const withTheme = (WrappedComponent) => {
     render() {
       const { theme, ...rest } = this.props;
       const { theme: contextTheme } = this.context;
-      const localTheme = deepAssign({}, contextTheme, theme);
+      const localTheme = deepMerge(baseTheme, contextTheme, theme);
       return (
         <WrappedComponent theme={localTheme} {...rest} />
       );
     }
   }
 
+  ThemedComponent.displayName = getDisplayName(WrappedComponent);
+
   return ThemedComponent;
 };
 
-export default { createContextProvider, withFocus, withTheme };
+export default { withFocus, withTheme };

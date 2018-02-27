@@ -1,20 +1,15 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import { baseStyle, lapAndUp } from '../utils';
+import { baseStyle } from '../../utils';
+
+const fullStyle = css`
+  width: 100vw;
+  height: 100vh;
+`;
 
 const StyledGrommet = styled.div`
   ${baseStyle}
-
-  ${lapAndUp(`
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  `)}
-
+  ${props => props.full && fullStyle}
   ${props => props.theme.global.font.face}
 `;
 

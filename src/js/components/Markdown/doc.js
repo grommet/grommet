@@ -1,13 +1,20 @@
-import { schema, PropTypes } from 'react-desc';
+import { describe } from 'react-desc';
 
-export default Markdown => schema(Markdown, {
-  description: 'Markdown formatting using Grommet components.',
-  usage: `import { Markdown } from 'grommet';
-  <Markdown/>`,
-  props: {
-    content: [
-      PropTypes.string,
-      'The markdown text to render.',
-    ],
-  },
-});
+import { getAvailableAtBadge } from '../../utils';
+
+export default (Markdown) => {
+  const DocumentedMarkdown = describe(Markdown)
+    .availableAt(getAvailableAtBadge('Markdown'))
+    .description(
+      'Markdown formatting using Grommet components.'
+    ).usage(
+      `import { Markdown } from 'grommet';
+      <Markdown>{content}</Markdown>`
+    );
+
+  // DocumentedMarkdown.propTypes = {
+  //   content: PropTypes.string.description('The markdown text to render.'),
+  // };
+
+  return DocumentedMarkdown;
+};

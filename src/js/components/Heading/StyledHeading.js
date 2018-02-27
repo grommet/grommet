@@ -1,26 +1,31 @@
 import styled, { css } from 'styled-components';
 
+import { colorForName } from '../../utils';
+
 const marginStyle = (props) => {
   if (typeof props.margin === 'string') {
-    if (props.margin === 'none') {
-      return `
-        margin-top: 0;
-        margin-bottom: 0;
-      `;
-    }
     const margin = props.theme.global.edgeSize[props.margin];
     return `
       margin-top: ${margin};
       margin-bottom: ${margin};
     `;
   }
+  let result = '';
   if (props.margin.top) {
-    return `margin-top: ${props.theme.global.edgeSize[props.margin.top]};`;
+    if (props.margin.top === 'none') {
+      result += 'margin-top: 0;';
+    } else {
+      result += `margin-top: ${props.theme.global.edgeSize[props.margin.top]};`;
+    }
   }
   if (props.margin.bottom) {
-    return `margin-bottom: ${props.theme.global.edgeSize[props.margin.bottom]};`;
+    if (props.margin.bottom === 'none') {
+      result += 'margin-bottom: 0;';
+    } else {
+      result += `margin-bottom: ${props.theme.global.edgeSize[props.margin.bottom]};`;
+    }
   }
-  return '';
+  return result;
 };
 
 const sizeStyle = (props) => {
@@ -30,6 +35,7 @@ const sizeStyle = (props) => {
   return css`
     font-size: ${data.size};
     line-height: ${data.height};
+    max-width: ${data.maxWidth};
     font-weight: ${props.theme.heading.weight};
   `;
 };
@@ -50,11 +56,16 @@ const truncateStyle = `
   text-overflow: ellipsis;
 `;
 
+const colorStyle = css`
+  color: ${props => colorForName(props.color, props.theme)}
+`;
+
 const StyledHeading = styled.h1`
   ${props => sizeStyle(props)}
   ${props => props.margin && marginStyle(props)}
   ${props => props.textAlign && textAlignStyle}
   ${props => props.truncate && truncateStyle}
+  ${props => props.color && colorStyle}
 `;
 
 export default StyledHeading.extend`

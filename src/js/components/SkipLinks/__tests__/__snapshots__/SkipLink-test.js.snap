@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SkipLink mounts 1`] = `
+<div
+  class="StyledLayer-ceZzeh EwBAx"
+  id="skip-links"
+  tabindex="-1"
+>
+  <div
+    class="StyledLayer__StyledOverlay-hhVyjc dJVGoZ"
+  />
+  <div
+    class="StyledLayer__StyledContainer-gBGbkw lbLbpM"
+    id="skip-links"
+  >
+    <div
+      class="StyledBox-bStriS kLwTeJ"
+      direction="column"
+    >
+      <h2
+        class="StyledHeading-NQveS kJELbK"
+      >
+        Skip To
+        :
+      </h2>
+      <div
+        class="StyledBox-bStriS bqSFqK"
+        direction="row"
+      >
+        <div
+          class="StyledBox-bStriS cvUrkJ"
+          direction="column"
+        >
+          <a
+            class="StyledAnchor-hcnTIZ kwSIan"
+            label="Main Content"
+            href="#main"
+          >
+            Main Content
+          </a>
+        </div>
+        <div
+          class="StyledBox-bStriS cvUrkJ"
+          direction="column"
+        >
+          <a
+            class="StyledAnchor-hcnTIZ kwSIan"
+            label="Footer"
+            href="#footer"
+          >
+            Footer
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SkipLink mounts 2`] = `
+"
+
+.EwBAx {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  pointer-events: none;
+  left: -100%;
+  right: 100%;
+  z-index: -1;
+  position: fixed;
+}
+
+@media only screen and (max-width:699px) {
+  .lbLbpM {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .lbLbpM {
+    position: fixed;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+  }
+}"
+`;
+
+exports[`SkipLink mounts 3`] = `
+<div
+  class="StyledLayer-ceZzeh eaUxfn"
+  id="skip-links"
+  tabindex="-1"
+>
+  <div
+    class="StyledLayer__StyledOverlay-hhVyjc dJVGoZ"
+  />
+  <div
+    class="StyledLayer__StyledContainer-gBGbkw dlmbnt"
+    id="skip-links"
+  >
+    <div
+      class="StyledBox-bStriS kLwTeJ"
+      direction="column"
+    >
+      <h2
+        class="StyledHeading-NQveS kJELbK"
+      >
+        Skip To
+        :
+      </h2>
+      <div
+        class="StyledBox-bStriS bqSFqK"
+        direction="row"
+      >
+        <div
+          class="StyledBox-bStriS cvUrkJ"
+          direction="column"
+        >
+          <a
+            class="StyledAnchor-hcnTIZ gUtwfp"
+            label="Main Content"
+            href="#main"
+          >
+            Main Content
+          </a>
+        </div>
+        <div
+          class="StyledBox-bStriS cvUrkJ"
+          direction="column"
+        >
+          <a
+            class="StyledAnchor-hcnTIZ kwSIan"
+            label="Footer"
+            href="#footer"
+          >
+            Footer
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SkipLink mounts 4`] = `
+"
+
+.eaUxfn {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  pointer-events: none;
+}
+
+@media only screen and (min-width:700px) {
+  .eaUxfn {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .lbLbpM {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .lbLbpM {
+    position: fixed;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dlmbnt {
+    min-height: 100%;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .dlmbnt {
+    position: fixed;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    -webkit-animation: bAkQbM 0.2s ease-in-out forwards;
+    animation: bAkQbM 0.2s ease-in-out forwards;
+  }
+}"
+`;
+
+exports[`SkipLink mounts 5`] = `
+<body
+  style="overflow: scroll;"
+>
+  <div>
+    <div
+      hidden=""
+    >
+      <div
+        class="StyledLayer-ceZzeh EwBAx"
+        id="skip-links"
+        tabindex="-1"
+      >
+        <div
+          class="StyledLayer__StyledOverlay-hhVyjc dJVGoZ"
+        />
+        <div
+          class="StyledLayer__StyledContainer-gBGbkw lbLbpM"
+          id="skip-links"
+        >
+          <div
+            class="StyledBox-bStriS kLwTeJ"
+            direction="column"
+          >
+            <h2
+              class="StyledHeading-NQveS kJELbK"
+            >
+              Skip To
+              :
+            </h2>
+            <div
+              class="StyledBox-bStriS bqSFqK"
+              direction="row"
+            >
+              <div
+                class="StyledBox-bStriS cvUrkJ"
+                direction="column"
+              >
+                <a
+                  class="StyledAnchor-hcnTIZ kwSIan"
+                  label="Main Content"
+                  href="#main"
+                >
+                  Main Content
+                </a>
+              </div>
+              <div
+                class="StyledBox-bStriS cvUrkJ"
+                direction="column"
+              >
+                <a
+                  class="StyledAnchor-hcnTIZ kwSIan"
+                  label="Footer"
+                  href="#footer"
+                >
+                  Footer
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    aria-hidden="false"
+  />
+</body>
+`;

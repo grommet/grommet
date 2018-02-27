@@ -6,7 +6,6 @@ exports[`Chart cap renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -14,24 +13,8 @@ exports[`Chart cap renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   max-width: 100%;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -40,12 +23,11 @@ exports[`Chart cap renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
       strokeLinecap="round"
@@ -59,19 +41,7 @@ exports[`Chart cap renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,192 L 384,0"
         />
       </g>
     </g>
@@ -79,12 +49,11 @@ exports[`Chart cap renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
       strokeLinecap="round"
@@ -95,9 +64,7 @@ exports[`Chart cap renders 1`] = `
         fill="none"
       >
         <path
-          d="M
-              NaN,NaN L
-              NaN,NaN"
+          d="M 0,192 L 384,0"
         />
       </g>
     </g>
@@ -105,12 +72,11 @@ exports[`Chart cap renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
       strokeLinecap="round"
@@ -121,7 +87,7 @@ exports[`Chart cap renders 1`] = `
         fill="#00CCEB"
       >
         <path
-          d="M 0,192M NaN,192 L NaN,NaN L NaN,NaNL NaN,192 Z"
+          d="M 0,192 L 384,0 L 384,192 L 0,192 Z"
         />
       </g>
     </g>
@@ -135,7 +101,6 @@ exports[`Chart renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -143,24 +108,8 @@ exports[`Chart renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   max-width: 100%;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -169,15 +118,14 @@ exports[`Chart renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     />
@@ -185,15 +133,14 @@ exports[`Chart renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -204,19 +151,7 @@ exports[`Chart renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,192 L 384,0"
         />
       </g>
     </g>
@@ -230,7 +165,6 @@ exports[`Chart size renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -238,24 +172,8 @@ exports[`Chart size renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   max-width: 100%;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -264,15 +182,14 @@ exports[`Chart size renders 1`] = `
   <svg
     className="c1"
     height={96}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             120 120"
     width={96}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -283,19 +200,7 @@ exports[`Chart size renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 96,96 L 96,0"
         />
       </g>
     </g>
@@ -303,15 +208,14 @@ exports[`Chart size renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             216 216"
     width={192}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -322,19 +226,7 @@ exports[`Chart size renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 192,192 L 192,0"
         />
       </g>
     </g>
@@ -342,15 +234,14 @@ exports[`Chart size renders 1`] = `
   <svg
     className="c1"
     height={384}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 408"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -361,19 +252,7 @@ exports[`Chart size renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,384 L 384,0"
         />
       </g>
     </g>
@@ -381,15 +260,14 @@ exports[`Chart size renders 1`] = `
   <svg
     className="c1"
     height={768}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             792 792"
     width={768}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -400,19 +278,7 @@ exports[`Chart size renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 768,768 L 768,0"
         />
       </g>
     </g>
@@ -420,15 +286,14 @@ exports[`Chart size renders 1`] = `
   <svg
     className="c1"
     height={1152}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             1176 1176"
     width={1152}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -439,19 +304,7 @@ exports[`Chart size renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 1152,1152 L 1152,0"
         />
       </g>
     </g>
@@ -465,7 +318,6 @@ exports[`Chart thickness renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -473,24 +325,8 @@ exports[`Chart thickness renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   max-width: 100%;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -499,15 +335,14 @@ exports[`Chart thickness renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-3 -3
             390 198"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={6}
     >
@@ -518,19 +353,7 @@ exports[`Chart thickness renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,192 L 384,0"
         />
       </g>
     </g>
@@ -538,15 +361,14 @@ exports[`Chart thickness renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-6 -6
             396 204"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={12}
     >
@@ -557,19 +379,7 @@ exports[`Chart thickness renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,192 L 384,0"
         />
       </g>
     </g>
@@ -577,15 +387,14 @@ exports[`Chart thickness renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -596,19 +405,7 @@ exports[`Chart thickness renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,192 L 384,0"
         />
       </g>
     </g>
@@ -616,15 +413,14 @@ exports[`Chart thickness renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-24 -24
             432 240"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={48}
     >
@@ -635,19 +431,7 @@ exports[`Chart thickness renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,192 L 384,0"
         />
       </g>
     </g>
@@ -655,15 +439,14 @@ exports[`Chart thickness renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-48 -48
             480 288"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={96}
     >
@@ -674,19 +457,7 @@ exports[`Chart thickness renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,192 L 384,0"
         />
       </g>
     </g>
@@ -700,7 +471,6 @@ exports[`Chart type renders 1`] = `
   font-size: 1em;
   line-height: 1.5;
   color: #333333;
-  background-color: #FFFFFF;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -708,24 +478,8 @@ exports[`Chart type renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c0 * {
-  box-sizing: inherit;
-}
-
 .c1 {
   max-width: 100%;
-}
-
-@media only screen and (min-width:481px) {
-  .c0 {
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
-  }
 }
 
 <div
@@ -734,15 +488,14 @@ exports[`Chart type renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -753,19 +506,7 @@ exports[`Chart type renders 1`] = `
           sixty
         </title>
         <path
-          d="M NaN,NaN
-              L NaN,NaN"
-        />
-      </g>
-      <g
-        fill="none"
-      >
-        <title>
-          zero
-        </title>
-        <path
-          d="M NaN,NaN
-              L NaN,NaN"
+          d="M 384,192 L 384,0"
         />
       </g>
     </g>
@@ -773,15 +514,14 @@ exports[`Chart type renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -789,9 +529,7 @@ exports[`Chart type renders 1`] = `
         fill="none"
       >
         <path
-          d="M
-              NaN,NaN L
-              NaN,NaN"
+          d="M 384,0 L 0,192"
         />
       </g>
     </g>
@@ -799,15 +537,14 @@ exports[`Chart type renders 1`] = `
   <svg
     className="c1"
     height={192}
-    preserveAspectRatio="none"
+    preserveAspectRatio="xMinYMin meet"
     viewBox="-12 -12
             408 216"
     width={384}
   >
-    <title />
     <g
       stroke="#00CCEB"
-      strokeLinecap="square"
+      strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
@@ -815,7 +552,7 @@ exports[`Chart type renders 1`] = `
         fill="#00CCEB"
       >
         <path
-          d="M 0,192M NaN,192 L NaN,NaN L NaN,NaNL NaN,192 Z"
+          d="M 384,0 L 0,192 L 0,192 L 384,192 Z"
         />
       </g>
     </g>

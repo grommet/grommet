@@ -1,0 +1,563 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs changes active index 1`] = `
+<div
+  role="tablist"
+>
+  <div
+    class="StyledBox-bStriS iuCpgK"
+    direction="row"
+  >
+    <button
+      class="StyledButton-gXzblK cfJbKA"
+      role="tab"
+      aria-selected="true"
+      aria-expanded="true"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS hvvwbh"
+        direction="column"
+      >
+        <span
+          class="StyledText-eJMSZI ehbxjF"
+        >
+          <strong>
+            Tab 1
+          </strong>
+        </span>
+      </div>
+    </button>
+    <button
+      class="StyledButton-gXzblK cfJbKA"
+      role="tab"
+      aria-selected="false"
+      aria-expanded="false"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS eYeWaC"
+        direction="column"
+      >
+        <span
+          class="StyledText-eJMSZI beGKeC"
+          color="dark-4"
+        >
+          Tab 2
+        </span>
+      </div>
+    </button>
+  </div>
+  <div
+    aria-label="Tab 1 Tab Contents"
+    role="tabpanel"
+  >
+    Tab body 1
+  </div>
+</div>
+`;
+
+exports[`Tabs changes to second tab 1`] = `
+<div
+  className="StyledGrommet-gGRXwz deqpVW"
+>
+  <div
+    role="tablist"
+  >
+    <div
+      aria-label={undefined}
+      className="StyledBox-bStriS iuCpgK"
+      direction="row"
+    >
+      <button
+        aria-expanded={false}
+        aria-label={undefined}
+        aria-selected={false}
+        className="StyledButton-gXzblK cfJbKA"
+        disabled={false}
+        href={undefined}
+        icon={undefined}
+        label={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        onMouseUp={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          aria-label={undefined}
+          className="StyledBox-bStriS eYeWaC"
+          direction="column"
+        >
+          <span
+            className="StyledText-eJMSZI beGKeC"
+            color="dark-4"
+          >
+            Tab 1
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={true}
+        aria-label={undefined}
+        aria-selected={true}
+        className="StyledButton-gXzblK cfJbKA"
+        disabled={false}
+        href={undefined}
+        icon={undefined}
+        label={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        onMouseUp={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          aria-label={undefined}
+          className="StyledBox-bStriS hvvwbh"
+          direction="column"
+        >
+          <span
+            className="StyledText-eJMSZI ehbxjF"
+          >
+            <strong>
+              Tab 2
+            </strong>
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Tab 2 Tab Contents"
+      role="tabpanel"
+    >
+      Tab body 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders complex Tab title 1`] = `
+<div
+  className="StyledGrommet-gGRXwz deqpVW"
+>
+  <div
+    role="tablist"
+  >
+    <div
+      aria-label={undefined}
+      className="StyledBox-bStriS iuCpgK"
+      direction="row"
+    >
+      <button
+        aria-expanded={true}
+        aria-label={undefined}
+        aria-selected={true}
+        className="StyledButton-gXzblK cfJbKA"
+        disabled={false}
+        href={undefined}
+        icon={undefined}
+        label={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        onMouseUp={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          aria-label={undefined}
+          className="StyledBox-bStriS hvvwbh"
+          direction="column"
+        >
+          <div>
+            Tab 1
+          </div>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-label={undefined}
+        aria-selected={false}
+        className="StyledButton-gXzblK cfJbKA"
+        disabled={false}
+        href={undefined}
+        icon={undefined}
+        label={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        onMouseUp={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          aria-label={undefined}
+          className="StyledBox-bStriS eYeWaC"
+          direction="column"
+        >
+          <div>
+            Tab 2
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="[object Object] Tab Contents"
+      role="tabpanel"
+    >
+      Tab body 1
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders with Tab 1`] = `
+<div
+  className="StyledGrommet-gGRXwz deqpVW"
+>
+  <div
+    role="tablist"
+  >
+    <div
+      aria-label={undefined}
+      className="StyledBox-bStriS iuCpgK"
+      direction="row"
+    >
+      <button
+        aria-expanded={true}
+        aria-label={undefined}
+        aria-selected={true}
+        className="StyledButton-gXzblK cfJbKA"
+        disabled={false}
+        href={undefined}
+        icon={undefined}
+        label={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        onMouseUp={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          aria-label={undefined}
+          className="StyledBox-bStriS hvvwbh"
+          direction="column"
+        >
+          <span
+            className="StyledText-eJMSZI ehbxjF"
+          >
+            <strong>
+              Tab 1
+            </strong>
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-label={undefined}
+        aria-selected={false}
+        className="StyledButton-gXzblK cfJbKA"
+        disabled={false}
+        href={undefined}
+        icon={undefined}
+        label={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseDown={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        onMouseUp={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          aria-label={undefined}
+          className="StyledBox-bStriS eYeWaC"
+          direction="column"
+        >
+          <span
+            className="StyledText-eJMSZI beGKeC"
+            color="dark-4"
+          >
+            Tab 2
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Tab 1 Tab Contents"
+      role="tabpanel"
+    >
+      Tab body 1
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs renders without Tab 1`] = `
+<div
+  className="StyledGrommet-gGRXwz deqpVW"
+>
+  <div
+    role="tablist"
+  >
+    <div
+      aria-label={undefined}
+      className="StyledBox-bStriS iuCpgK"
+      direction="row"
+    />
+    <div
+      aria-label=" Tab Contents"
+      role="tabpanel"
+    />
+  </div>
+</div>
+`;
+
+exports[`Tabs sets on hover 1`] = `
+<div
+  role="tablist"
+>
+  <div
+    class="StyledBox-bStriS iuCpgK"
+    direction="row"
+  >
+    <button
+      class="StyledButton-gXzblK cfJbKA"
+      role="tab"
+      aria-selected="true"
+      aria-expanded="true"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS hvvwbh"
+        direction="column"
+      >
+        <span
+          class="StyledText-eJMSZI ehbxjF"
+        >
+          <strong>
+            Tab 1
+          </strong>
+        </span>
+      </div>
+    </button>
+    <button
+      class="StyledButton-gXzblK cfJbKA"
+      role="tab"
+      aria-selected="false"
+      aria-expanded="false"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS eYeWaC"
+        direction="column"
+      >
+        <span
+          class="StyledText-eJMSZI beGKeC"
+          color="dark-4"
+        >
+          Tab 2
+        </span>
+      </div>
+    </button>
+  </div>
+  <div
+    aria-label="Tab 1 Tab Contents"
+    role="tabpanel"
+  >
+    Tab body 1
+  </div>
+</div>
+`;
+
+exports[`Tabs sets on hover 2`] = `
+<div
+  role="tablist"
+>
+  <div
+    class="StyledBox-bStriS iuCpgK"
+    direction="row"
+  >
+    <button
+      class="StyledButton-gXzblK cfJbKA"
+      role="tab"
+      aria-selected="true"
+      aria-expanded="true"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS hvvwbh"
+        direction="column"
+      >
+        <span
+          class="StyledText-eJMSZI ehbxjF"
+        >
+          <strong>
+            Tab 1
+          </strong>
+        </span>
+      </div>
+    </button>
+    <button
+      class="StyledButton-gXzblK cfJbKA"
+      role="tab"
+      aria-selected="false"
+      aria-expanded="false"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS hUGKo"
+        direction="column"
+      >
+        <span
+          class="StyledText-eJMSZI beGKeC"
+          color="dark-4"
+        >
+          Tab 2
+        </span>
+      </div>
+    </button>
+  </div>
+  <div
+    aria-label="Tab 1 Tab Contents"
+    role="tabpanel"
+  >
+    Tab body 1
+  </div>
+</div>
+`;
+
+exports[`Tabs sets on hover 3`] = `
+<div
+  role="tablist"
+>
+  <div
+    class="StyledBox-bStriS iuCpgK"
+    direction="row"
+  >
+    <button
+      class="StyledButton-gXzblK cfJbKA"
+      role="tab"
+      aria-selected="true"
+      aria-expanded="true"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS hvvwbh"
+        direction="column"
+      >
+        <span
+          class="StyledText-eJMSZI ehbxjF"
+        >
+          <strong>
+            Tab 1
+          </strong>
+        </span>
+      </div>
+    </button>
+    <button
+      class="StyledButton-gXzblK cfJbKA"
+      role="tab"
+      aria-selected="false"
+      aria-expanded="false"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS hUGKo"
+        direction="column"
+      >
+        <span
+          class="StyledText-eJMSZI beGKeC"
+          color="dark-4"
+        >
+          Tab 2
+        </span>
+      </div>
+    </button>
+  </div>
+  <div
+    aria-label="Tab 1 Tab Contents"
+    role="tabpanel"
+  >
+    Tab body 1
+  </div>
+</div>
+`;
+
+exports[`Tabs sets on hover 4`] = `
+<div
+  role="tablist"
+>
+  <div
+    class="StyledBox-bStriS iuCpgK"
+    direction="row"
+  >
+    <button
+      class="StyledButton-gXzblK cfJbKA"
+      role="tab"
+      aria-selected="true"
+      aria-expanded="true"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS hvvwbh"
+        direction="column"
+      >
+        <span
+          class="StyledText-eJMSZI ehbxjF"
+        >
+          <strong>
+            Tab 1
+          </strong>
+        </span>
+      </div>
+    </button>
+    <button
+      class="StyledButton-gXzblK cfJbKA"
+      role="tab"
+      aria-selected="false"
+      aria-expanded="false"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS eYeWaC"
+        direction="column"
+      >
+        <span
+          class="StyledText-eJMSZI beGKeC"
+          color="dark-4"
+        >
+          Tab 2
+        </span>
+      </div>
+    </button>
+  </div>
+  <div
+    aria-label="Tab 1 Tab Contents"
+    role="tabpanel"
+  >
+    Tab body 1
+  </div>
+</div>
+`;
