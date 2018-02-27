@@ -41,7 +41,6 @@
     "styled-components": ">= 2.1.1"
   },
   "dependencies": {
-    "@types/react": "^16.0.38",
     "babel-plugin-grommet": "^0.5.1",
     "grommet-icons": "^0.16.0",
     "markdown-to-jsx": "^5.4.2",
@@ -49,13 +48,10 @@
     "polished": "^1.3.0",
     "prop-types": "^15.5.10",
     "react-desc": "^3.2.0",
-    "recompose": "^0.25.1",
-    "tslint": "^5.7.0",
-    "tslint-eslint-rules": "^4.1.1",
-    "tslint-react": "^3.2.0",
-    "typescript": "^2.5.2"
+    "recompose": "^0.25.1"
   },
   "devDependencies": {
+    "@types/react": "^16.0.5",
     "babel-cli": "^6.22.2",
     "babel-core": "^6.5.2",
     "babel-eslint": "^7.1.1",
@@ -90,6 +86,10 @@
     "simple-git": "^1.74.1",
     "styled-components": "^2.1.1",
     "tarball-extract": "^0.0.6",
+    "tslint": "^5.7.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "tslint-react": "^3.2.0",
+    "typescript": "^2.5.2",
     "webpack": "^3.4.1"
   },
   "jest": {
