@@ -145,7 +145,7 @@ class SelectContainer extends Component {
                 >
                   {children ? children(option, index, options) : (
                     <Box align='start' pad='small'>
-                      <Text margin='none'>{option ? option.toString() : null}</Text>
+                      <Text margin='none'>{option ? option.toString() : undefined}</Text>
                     </Box>
                   )}
                 </Button>
