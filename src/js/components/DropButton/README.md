@@ -62,10 +62,18 @@ Callback for when the drop is closed
 function
 ```
 
+**onOpen**
+
+Callback for when the drop is opened
+
+```
+function
+```
+
 **open**
 
-Whether the drop should be open or not. Setting it to 'false' will
-      disable the button.
+Whether the drop should be open or not. Setting this property does not
+      influence user interaction after it has been rendered.
 
 ```
 boolean

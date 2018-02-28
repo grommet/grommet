@@ -96,6 +96,7 @@ class SelectContainer extends Component {
       value,
     } = this.props;
     const { selectedOptionIndex, search } = this.state;
+
     return (
       <Keyboard
         onEnter={this.onSelectOption}
@@ -121,8 +122,14 @@ class SelectContainer extends Component {
               />
             </Box>
           ) : undefined}
+
           <Box basis={dropSize} overflow='auto'>
-            <Box flex={false} role='menubar' tabIndex='-1' ref={(ref) => { this.selectRef = ref; }}>
+            <Box
+              flex={false}
+              role='menubar'
+              tabIndex='-1'
+              ref={(ref) => { this.selectRef = ref; }}
+            >
               {options.map((option, index) => (
                 <Button
                   role='menuitem'
@@ -130,7 +137,7 @@ class SelectContainer extends Component {
                   active={
                     activeOptionIndex === index ||
                     selectedOptionIndex === index ||
-                    option === value
+                    (option && option === value)
                   }
                   key={`option_${name || ''}_${index}`}
                   onClick={() => this.selectOption(option)}
@@ -138,7 +145,7 @@ class SelectContainer extends Component {
                 >
                   {children ? children(option, index, options) : (
                     <Box align='start' pad='small'>
-                      <Text margin='none'>{option.toString()}</Text>
+                      <Text margin='none'>{option ? option.toString() : null}</Text>
                     </Box>
                   )}
                 </Button>
