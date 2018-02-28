@@ -30,7 +30,7 @@ class DropButton extends Component {
 
   componentWillReceiveProps({ open }) {
     const { show } = this.state;
-    if (open !== show) {
+    if (open !== undefined && open !== show) {
       this.setState({ show: open });
     }
   }
@@ -42,6 +42,14 @@ class DropButton extends Component {
         onClose();
       }
     });
+  }
+
+  onToggle = () => {
+    const { onClose, onOpen } = this.props;
+    const { show } = this.state;
+    this.setState({ show: !show },
+      show ? (onClose && onClose()) : (onOpen && onOpen())
+    );
   }
 
   render() {
@@ -71,7 +79,7 @@ class DropButton extends Component {
         key='button'
         id={id}
         ref={(ref) => { this.buttonRef = ref; }}
-        onClick={open !== false ? (() => this.setState({ show: !show })) : undefined}
+        onClick={this.onToggle}
         {...rest}
       />,
       drop,
