@@ -38,17 +38,16 @@ class Select extends Component {
 
   render() {
     const {
-      a11yTitle, children, onClose, open: propsOpen, placeholder, plain,
-      value, ...rest
+      a11yTitle, children, onClose, placeholder, plain, value, ...rest
     } = this.props;
-    const { open: stateOpen } = this.state;
+    const { open } = this.state;
 
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
         <DropButton
           dropAlign={{ top: 'bottom', left: 'left' }}
           {...rest}
-          open={stateOpen !== undefined ? stateOpen : propsOpen}
+          open={open}
           onOpen={this.onOpen}
           onClose={this.onClose}
           a11yTitle={`${a11yTitle}${typeof value === 'string' ? `, ${value}` : ''}`}

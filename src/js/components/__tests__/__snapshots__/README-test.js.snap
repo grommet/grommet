@@ -2347,14 +2347,6 @@ If this property is not provided, no search field will be rendered.
 function
 \`\`\`
 
-**open**
-
-Whether the Select drop should be open or not.
-
-\`\`\`
-boolean
-\`\`\`
-
 **options**
 
 Required. Options can be either a string or an object. If an object is used, use children callback
