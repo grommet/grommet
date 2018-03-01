@@ -46,9 +46,6 @@ export default (Select) => {
       `Function that will be called when the user types in the search input.
 If this property is not provided, no search field will be rendered.`
     ),
-    open: PropTypes.bool.description(
-      'Whether the Select drop should be open or not.'
-    ),
     options: PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.object])
     ).description(
