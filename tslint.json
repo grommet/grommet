@@ -1,0 +1,74 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-react",
+    "tslint-eslint-rules"
+  ],
+  "rules": {
+    "ter-indent": [true, 2],
+    "quotemark": [
+      true,
+      "single",
+      "jsx-double"
+    ],
+    "no-var-requires": false,
+    "ordered-imports": false,
+    "member-ordering": [
+      false
+    ],
+    "class-name": true,
+    "curly": true,
+    "eofline": true,
+    "forin": true,
+    "ban": true,
+    "label-position": true,
+    "no-any": true,
+    "max-line-length": [
+      true,
+      120
+    ],
+    "semicolon": [
+      true,
+      "never"
+    ],
+    "no-arg": true,
+    "no-consecutive-blank-lines": [
+      true
+    ],
+    "object-literal-sort-keys": false,
+    "no-shadowed-variable": false,
+    "no-console": [
+      false
+    ],
+    "no-construct": true,
+    "no-debugger": true,
+    "no-duplicate-variable": true,
+    "no-empty": true,
+    "no-eval": true,
+    "ban-types": true,
+    "no-string-literal": true,
+    "no-switch-case-fall-through": true,
+    "no-trailing-whitespace": true,
+    "no-unused-expression": true,
+    "no-use-before-declare": true,
+    "no-unused-variable":[true, "react"],
+    "radix": true,
+    "switch-default": true,
+    "interface-name": [true, "never-prefix"],
+    "jsx-alignment": [
+      true
+    ],
+    "jsx-no-lambda": [
+      false
+    ],
+    "jsx-wrap-multiline": [
+      false
+    ],
+    "jsx-no-multiline-js": [
+      false
+    ],
+    "jsx-boolean-value": [
+      false
+    ]
+  }
+}

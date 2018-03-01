@@ -31,7 +31,9 @@
     "test": "grommet check -t",
     "test-update": "grommet check -t -- --updateSnapshot",
     "test-watch": "grommet check -t -- --watchAll",
-    "pack": "babel-node ./tools/pack"
+    "pack": "babel-node ./tools/pack",
+    "ts": "tsc",
+    "lint:ts": "tslint \"src/js/components/**/*.ts{,x}\" && tslint \"src/**/*.ts{,x}\""
   },
   "peerDependencies": {
     "react": ">= 15.3.0 < 16 || 16.x",
@@ -49,6 +51,7 @@
     "recompose": "^0.25.1"
   },
   "devDependencies": {
+    "@types/react": "^16.0.5",
     "babel-cli": "^6.22.2",
     "babel-core": "^6.5.2",
     "babel-eslint": "^7.1.1",
@@ -83,6 +86,10 @@
     "simple-git": "^1.74.1",
     "styled-components": "^2.1.1",
     "tarball-extract": "^0.0.6",
+    "tslint": "^5.7.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "tslint-react": "^3.2.0",
+    "typescript": "^2.5.2",
     "webpack": "^3.4.1"
   },
   "jest": {
