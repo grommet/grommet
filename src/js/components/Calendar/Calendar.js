@@ -231,18 +231,18 @@ class Calendar extends Component {
           <Box>
             <Box direction='row' justify='between' align='center'>
               <Heading level={3} size={size} margin='none'>
-                <strong>{reference.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}</strong>
+                <strong>{reference.toLocaleDateString(locale || 'en-US', { month: 'long', year: 'numeric' })}</strong>
               </Heading>
               <Box direction='row' align='center'>
                 <Button
-                  a11yTitle={previousMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
+                  a11yTitle={previousMonth.toLocaleDateString(locale || 'en-US', { month: 'long', year: 'numeric' })}
                   icon={size === 'small' ?
                     <FormPrevious /> : <Previous size={size} />}
                   onClick={(onSelect && betweenDates(previousMonth, bounds)) ?
                     () => this.setReference(previousMonth) : undefined}
                 />
                 <Button
-                  a11yTitle={nextMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
+                  a11yTitle={nextMonth.toLocaleDateString(locale || 'en-US', { month: 'long', year: 'numeric' })}
                   icon={size === 'small' ? <FormNext /> : <Next size={size} />}
                   onClick={(onSelect && betweenDates(nextMonth, bounds)) ?
                     () => this.setReference(nextMonth) : undefined}

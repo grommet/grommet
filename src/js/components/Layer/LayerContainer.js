@@ -65,14 +65,13 @@ class LayerContainer extends Component {
       content = (
         <StyledLayer
           id={id}
-          onClick={onClickOutside}
           plain={plain}
           position={position}
           theme={theme}
           tabIndex='-1'
           ref={(ref) => { this.layerRef = ref; }}
         >
-          <StyledOverlay theme={theme} />
+          <StyledOverlay onClick={onClickOutside} theme={theme} />
           {content}
         </StyledLayer>
       );

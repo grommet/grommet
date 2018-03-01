@@ -7,7 +7,7 @@ exports[`SkipLink mounts 1`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-hhVyjc dJVGoZ"
+    class="StyledLayer__StyledOverlay-hhVyjc kmtIvl"
   />
   <div
     class="StyledLayer__StyledContainer-gBGbkw lbLbpM"
@@ -82,6 +82,12 @@ exports[`SkipLink mounts 2`] = `
   position: fixed;
 }
 
+@media only screen and (min-width:700px) {
+  .kmtIvl {
+    position: absolute;
+  }
+}
+
 @media only screen and (max-width:699px) {
   .lbLbpM {
     min-height: 100%;
@@ -107,7 +113,7 @@ exports[`SkipLink mounts 3`] = `
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-hhVyjc dJVGoZ"
+    class="StyledLayer__StyledOverlay-hhVyjc kmtIvl"
   />
   <div
     class="StyledLayer__StyledContainer-gBGbkw dlmbnt"
@@ -188,6 +194,12 @@ exports[`SkipLink mounts 4`] = `
   }
 }
 
+@media only screen and (min-width:700px) {
+  .kmtIvl {
+    position: absolute;
+  }
+}
+
 @media only screen and (max-width:699px) {
   .lbLbpM {
     min-height: 100%;
@@ -244,7 +256,7 @@ exports[`SkipLink mounts 5`] = `
         tabindex="-1"
       >
         <div
-          class="StyledLayer__StyledOverlay-hhVyjc dJVGoZ"
+          class="StyledLayer__StyledOverlay-hhVyjc kmtIvl"
         />
         <div
           class="StyledLayer__StyledContainer-gBGbkw lbLbpM"
