@@ -58,6 +58,7 @@ class Calendar extends Component {
   static defaultProps = {
     firstDayOfWeek: 0,
     size: 'medium',
+    locale: 'en-US',
   };
 
   constructor(props) {
