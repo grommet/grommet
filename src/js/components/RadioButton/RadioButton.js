@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withTheme } from '../hocs';
+import { removeUndefined } from '../../utils/object';
 
 import StyledRadioButton, {
   StyledRadioButtonContainer,
@@ -24,19 +25,15 @@ class RadioButton extends Component {
 
     return (
       <StyledRadioButtonContainer
-        htmlFor={id}
+        {...removeUndefined({ htmlFor: id, disabled })}
         theme={theme}
         grommet={grommet}
       >
         <StyledRadioButton theme={theme}>
           <StyledRadioButtonInput
             {...rest}
-            id={id}
-            name={name}
             type='radio'
-            disabled={disabled}
-            checked={checked}
-            onChange={onChange}
+            {...removeUndefined({ id, name, checked, disabled, onChange })}
             theme={theme}
             grommet={grommet}
           />
