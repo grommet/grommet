@@ -25,6 +25,7 @@ exports[`FocusedContainer blurs 3`] = `
 >
   <input
     id="test"
+    tabindex="-1"
   />
 </div>
 `;
