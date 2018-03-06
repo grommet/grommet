@@ -56,6 +56,16 @@ string
 }
 ```
 
+**dropTarget**
+
+Target where the drop will be aligned to. This should be
+      a React reference. Typically, this is not required as the drop will be
+      aligned to the Menu itself by default.
+
+```
+object
+```
+
 **icon**
 
 Indicates the icon shown as a control to open it.

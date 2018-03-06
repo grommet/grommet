@@ -5,6 +5,7 @@ exports[`Drop aligns left right top bottom 1`] = `
   class="StyledDrop-bCWxPe gcEofR"
   tabindex="-1"
   id="drop-node"
+  target="[object HTMLInputElement]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   this is a test
@@ -48,6 +49,7 @@ exports[`Drop aligns right left top top 1`] = `
   class="StyledDrop-bCWxPe fAkYxw"
   tabindex="-1"
   id="drop-node"
+  target="[object HTMLInputElement]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   this is a test
@@ -91,6 +93,7 @@ exports[`Drop aligns right right bottom top 1`] = `
   class="StyledDrop-bCWxPe cscpcq"
   tabindex="-1"
   id="drop-node"
+  target="[object HTMLInputElement]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   this is a test
@@ -134,6 +137,7 @@ exports[`Drop aligns right right bottom top 3`] = `
   class="StyledDrop-bCWxPe cscpcq"
   tabindex="-1"
   id="drop-node"
+  target="[object HTMLInputElement]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   this is a test
@@ -177,6 +181,7 @@ exports[`Drop aligns skips left random 1`] = `
   class="StyledDrop-bCWxPe hBYrcs"
   tabindex="-1"
   id="drop-node"
+  target="[object HTMLInputElement]"
   style="width: 0.1px; top: 0px; max-height: 768px;"
 >
   this is a test
@@ -220,6 +225,7 @@ exports[`Drop aligns skips right random 1`] = `
   class="StyledDrop-bCWxPe fAkYxw"
   tabindex="-1"
   id="drop-node"
+  target="[object HTMLInputElement]"
   style="width: 0.1px; max-height: 768px;"
 >
   this is a test
@@ -263,6 +269,7 @@ exports[`Drop mounts 1`] = `
   class="StyledDrop-bCWxPe gcEofR"
   tabindex="-1"
   id="drop-node"
+  target="[object HTMLInputElement]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   this is a test
@@ -306,6 +313,7 @@ exports[`Drop resizes 1`] = `
   class="StyledDrop-bCWxPe gcEofR"
   tabindex="-1"
   id="test"
+  target="[object HTMLInputElement]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
 >
   this is a test
@@ -349,6 +357,7 @@ exports[`Drop restrict focus 1`] = `
   class="StyledDrop-bCWxPe gcEofR"
   tabindex="-1"
   id="drop-node"
+  target="[object HTMLInputElement]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
 >
   this is a test
@@ -360,6 +369,7 @@ exports[`Drop restrict focus 2`] = `
   class="StyledDrop-bCWxPe gcEofR"
   tabindex="-1"
   id="drop-node"
+  target="[object HTMLInputElement]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
 >
   this is a test
@@ -411,6 +421,7 @@ exports[`Drop skips invalid align 1`] = `
   class="StyledDrop-bCWxPe gcEofR"
   tabindex="-1"
   id="drop-node"
+  target="[object HTMLInputElement]"
   style="width: 0.1px; max-height: 768px;"
 >
   this is a test

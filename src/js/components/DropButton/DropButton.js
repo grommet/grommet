@@ -53,7 +53,7 @@ class DropButton extends Component {
   }
 
   render() {
-    const { dropAlign, dropContent, id, open, theme, ...rest } = this.props;
+    const { dropAlign, dropContent, dropTarget, id, open, theme, ...rest } = this.props;
     const { show } = this.state;
 
     let drop;
@@ -65,7 +65,7 @@ class DropButton extends Component {
           id={id ? `${id}__drop` : undefined}
           restrictFocus={true}
           align={dropAlign}
-          control={this.buttonRef}
+          target={dropTarget || this.buttonRef}
           onClickOutside={this.onDropClose}
           onEsc={this.onDropClose}
         >

@@ -33,6 +33,10 @@ export default (Select) => {
     dropSize: PropTypes.string.description(
       'Size of the options container inside the Select drop.'
     ),
+    dropTarget: PropTypes.object.description(
+      `Target where the options drop will be aligned to. This should be
+      a React reference. Typically, this is not required as the drop will be
+      aligned to the Select itself by default.`),
     focusIndicator: PropTypes.bool.description(
       'Whether when \'plain\' it should receive a focus outline.'
     ),
