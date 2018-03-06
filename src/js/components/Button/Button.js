@@ -1,4 +1,5 @@
 import React, { Children, Component } from 'react';
+import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withFocus, withTheme } from '../hocs';
@@ -9,6 +10,10 @@ import doc from './doc';
 const AnchorStyledButton = StyledButton.withComponent('a');
 
 class Button extends Component {
+  static contextTypes = {
+    grommet: PropTypes.object,
+  }
+
   static defaultProps = {
     type: 'button',
     focusIndicator: true,
@@ -37,6 +42,7 @@ class Button extends Component {
       type,
       ...rest
     } = this.props;
+    const { grommet } = this.context;
 
     const Tag = href ? AnchorStyledButton : StyledButton;
 
@@ -73,6 +79,7 @@ class Button extends Component {
         onClick={onClick}
         plain={Children.count(children) > 0 || (icon && !label)}
         theme={theme}
+        grommet={grommet}
         type={!href ? type : undefined}
       >
         {(first || second) ? [first, second] : children}
