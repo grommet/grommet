@@ -38,7 +38,7 @@ function
 **dropAlign**
 
 How to align the drop. Defaults to `{
-  "top": "top",
+  "top": "bottom",
   "left": "left"
 }`.
 
@@ -81,6 +81,16 @@ Size of the options container inside the Select drop.
 
 ```
 string
+```
+
+**dropTarget**
+
+Target where the options drop will be aligned to. This should be
+      a React reference. Typically, this is not required as the drop will be
+      aligned to the Select itself by default.
+
+```
+object
 ```
 
 **focusIndicator**

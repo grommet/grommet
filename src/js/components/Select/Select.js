@@ -11,6 +11,10 @@ import SelectContainer from './SelectContainer';
 import doc from './doc';
 
 class Select extends Component {
+  static defaultProps = {
+    dropAlign: { top: 'bottom', left: 'left' },
+  }
+
   state = { open: false }
 
   componentWillReceiveProps(nextProps) {
@@ -38,14 +42,15 @@ class Select extends Component {
 
   render() {
     const {
-      a11yTitle, children, onClose, placeholder, plain, value, ...rest
+      a11yTitle, children, dropAlign, dropTarget, onClose, placeholder, plain, value, ...rest
     } = this.props;
     const { open } = this.state;
 
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
         <DropButton
-          dropAlign={{ top: 'bottom', left: 'left' }}
+          dropAlign={dropAlign}
+          dropTarget={dropTarget}
           {...rest}
           open={open}
           onOpen={this.onOpen}

@@ -6,7 +6,7 @@ A drop container that opens next to a target.
 
 ```javascript
 import { Drop } from 'grommet';
-<Drop control={element}>...</Drop>
+<Drop target={reference}>...</Drop>
 ```
 
 ## Properties
@@ -35,22 +35,6 @@ How to align the drop with respect to the target element. Defaults to `{
 }
 ```
 
-**control**
-
-Required. Target container where the drop will be aligned.
-
-```
-object
-```
-
-**restrictFocus**
-
-Whether the drop should control focus.
-
-```
-boolean
-```
-
 **onClickOutside**
 
 Function that will be invoked when the user clicks outside the drop.
@@ -73,6 +57,22 @@ Whether to dynamically re-place when resized. Defaults to `true`.
 
 ```
 boolean
+```
+
+**restrictFocus**
+
+Whether the drop should control focus.
+
+```
+boolean
+```
+
+**target**
+
+Required. Target where the drop will be aligned to. This should be a React reference.
+
+```
+object
 ```
 
 **theme**

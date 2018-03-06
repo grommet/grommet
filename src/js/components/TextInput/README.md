@@ -19,6 +19,40 @@ What text to start with in the input.
 string
 ```
 
+**dropAlign**
+
+How to align the drop. Defaults to `{
+  "top": "top",
+  "left": "left"
+}`.
+
+```
+{
+  top: 
+    top
+    bottom,
+  bottom: 
+    top
+    bottom,
+  right: 
+    left
+    right,
+  left: 
+    left
+    right
+}
+```
+
+**dropTarget**
+
+Target where any suggestions drop will be aligned to. This should be
+      a React reference. Typically, this is not required as the drop will be
+      aligned to the TextInput itself by default.
+
+```
+object
+```
+
 **id**
 
 The id attribute of the input.

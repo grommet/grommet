@@ -25,7 +25,7 @@ class FakeInput extends Component {
     let drop;
     if (showDrop) {
       drop = (
-        <Drop id='drop-node' control={this.inputRef} {...rest}>
+        <Drop id='drop-node' target={this.inputRef} {...rest}>
           this is a test
         </Drop>
       );

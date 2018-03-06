@@ -74,6 +74,7 @@ class Menu extends Component {
   render() {
     const {
       dropAlign,
+      dropTarget,
       icon,
       items,
       label,
@@ -123,6 +124,7 @@ class Menu extends Component {
             {...rest}
             a11yTitle={messages.openMenu || 'Open Menu'}
             dropAlign={dropAlign}
+            dropTarget={dropTarget}
             open={open}
             onOpen={() => this.setState({ open: true })}
             onClose={() => this.setState({ open: false })}

@@ -5,6 +5,7 @@ exports[`TextInput closes suggestion drop 1`] = `
   class="StyledDrop-bCWxPe gcEofR"
   tabindex="-1"
   id="text-input-drop__item"
+  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <ol
@@ -130,6 +131,7 @@ exports[`TextInput mounts with complex suggestions 1`] = `
   class="StyledDrop-bCWxPe gcEofR"
   tabindex="-1"
   id="text-input-drop__item"
+  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <ol
@@ -209,6 +211,7 @@ exports[`TextInput mounts with suggestions 1`] = `
   class="StyledDrop-bCWxPe gcEofR"
   tabindex="-1"
   id="text-input-drop__item"
+  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <ol
@@ -288,6 +291,7 @@ exports[`TextInput selects suggestion 1`] = `
   class="StyledDrop-bCWxPe gcEofR"
   tabindex="-1"
   id="text-input-drop__item"
+  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <ol
