@@ -123,7 +123,6 @@ exports[`CheckBox checked renders 1`] = `
 >
   <label
     className="c1"
-    htmlFor={undefined}
   >
     <div
       className="c2"
@@ -131,10 +130,6 @@ exports[`CheckBox checked renders 1`] = `
       <input
         checked={true}
         className="c3"
-        disabled={undefined}
-        id={undefined}
-        name={undefined}
-        onChange={undefined}
         type="checkbox"
       />
       <div
@@ -185,6 +180,8 @@ exports[`CheckBox disabled renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  opacity: 0.5;
+  cursor: default;
 }
 
 .c1 > div:first-child {
@@ -278,18 +275,14 @@ exports[`CheckBox disabled renders 1`] = `
 >
   <label
     className="c1"
-    htmlFor={undefined}
+    disabled={true}
   >
     <div
       className="c2"
     >
       <input
-        checked={undefined}
         className="c3"
         disabled={true}
-        id={undefined}
-        name={undefined}
-        onChange={undefined}
         type="checkbox"
       />
       <div
@@ -309,7 +302,7 @@ exports[`CheckBox disabled renders 1`] = `
   </label>
   <label
     className="c1"
-    htmlFor={undefined}
+    disabled={true}
   >
     <div
       className="c2"
@@ -318,9 +311,6 @@ exports[`CheckBox disabled renders 1`] = `
         checked={true}
         className="c3"
         disabled={true}
-        id={undefined}
-        name={undefined}
-        onChange={undefined}
         type="checkbox"
       />
       <div
@@ -469,18 +459,12 @@ exports[`CheckBox label renders 1`] = `
 >
   <label
     className="c1"
-    htmlFor={undefined}
   >
     <div
       className="c2"
     >
       <input
-        checked={undefined}
         className="c3"
-        disabled={undefined}
-        id={undefined}
-        name={undefined}
-        onChange={undefined}
         type="checkbox"
       />
       <div
@@ -503,18 +487,12 @@ exports[`CheckBox label renders 1`] = `
   </label>
   <label
     className="c1"
-    htmlFor={undefined}
   >
     <div
       className="c2"
     >
       <input
-        checked={undefined}
         className="c3"
-        disabled={undefined}
-        id={undefined}
-        name={undefined}
-        onChange={undefined}
         type="checkbox"
       />
       <div
@@ -661,18 +639,12 @@ exports[`CheckBox renders 1`] = `
 >
   <label
     className="c1"
-    htmlFor={undefined}
   >
     <div
       className="c2"
     >
       <input
-        checked={undefined}
         className="c3"
-        disabled={undefined}
-        id={undefined}
-        name={undefined}
-        onChange={undefined}
         type="checkbox"
       />
       <div
@@ -698,12 +670,9 @@ exports[`CheckBox renders 1`] = `
       className="c2"
     >
       <input
-        checked={undefined}
         className="c3"
-        disabled={undefined}
         id="test id"
         name="test name"
-        onChange={undefined}
         type="checkbox"
       />
       <div
@@ -847,18 +816,12 @@ exports[`CheckBox reverse renders 1`] = `
 >
   <label
     className="c1"
-    htmlFor={undefined}
   >
     <div
       className="c2"
     >
       <input
-        checked={undefined}
         className="c3"
-        disabled={undefined}
-        id={undefined}
-        name={undefined}
-        onChange={undefined}
         type="checkbox"
       />
       <div
@@ -1004,18 +967,12 @@ exports[`CheckBox toggle renders 1`] = `
 >
   <label
     className="c1"
-    htmlFor={undefined}
   >
     <div
       className="c2"
     >
       <input
-        checked={undefined}
         className="c3"
-        disabled={undefined}
-        id={undefined}
-        name={undefined}
-        onChange={undefined}
         type="checkbox"
       />
       <span
@@ -1029,7 +986,6 @@ exports[`CheckBox toggle renders 1`] = `
   </label>
   <label
     className="c1"
-    htmlFor={undefined}
   >
     <div
       className="c2"
@@ -1037,10 +993,6 @@ exports[`CheckBox toggle renders 1`] = `
       <input
         checked={true}
         className="c3"
-        disabled={undefined}
-        id={undefined}
-        name={undefined}
-        onChange={undefined}
         type="checkbox"
       />
       <span
@@ -1054,18 +1006,12 @@ exports[`CheckBox toggle renders 1`] = `
   </label>
   <label
     className="c1"
-    htmlFor={undefined}
   >
     <div
       className="c2"
     >
       <input
-        checked={undefined}
         className="c3"
-        disabled={undefined}
-        id={undefined}
-        name={undefined}
-        onChange={undefined}
         type="checkbox"
       />
       <span

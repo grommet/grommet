@@ -2,12 +2,18 @@ import styled from 'styled-components';
 
 import { focusStyle } from '../../utils';
 
+const disabledStyle = `
+  opacity: 0.5;
+  cursor: default;
+`;
+
 export const StyledCheckBoxContainer = styled.label`
   display: flex;
   flex-direction: ${props => (props.reverse ? 'row-reverse' : 'row')};
   align-items: center;
   cursor: pointer;
   user-select: none;
+  ${props => props.disabled && disabledStyle}
 
   > div:first-child {
     ${props => (props.reverse ?

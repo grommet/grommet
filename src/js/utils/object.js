@@ -32,4 +32,14 @@ export function deepMerge(target, ...sources) {
   return deepMerge(output, ...sources);
 }
 
-export default { deepFreeze, deepMerge, isObject };
+export function removeUndefined(obj) {
+  const result = {};
+  Object.keys(obj).forEach((key) => {
+    if (obj[key] !== undefined) {
+      result[key] = obj[key];
+    }
+  });
+  return result;
+}
+
+export default { deepFreeze, deepMerge, isObject, removeUndefined };
