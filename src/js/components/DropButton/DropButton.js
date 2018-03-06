@@ -30,7 +30,7 @@ class DropButton extends Component {
 
   componentWillReceiveProps({ open }) {
     const { show } = this.state;
-    if (open !== show) {
+    if (open !== undefined && open !== show) {
       this.setState({ show: open });
     }
   }
@@ -44,8 +44,16 @@ class DropButton extends Component {
     });
   }
 
+  onToggle = () => {
+    const { onClose, onOpen } = this.props;
+    const { show } = this.state;
+    this.setState({ show: !show },
+      show ? (onClose && onClose()) : (onOpen && onOpen())
+    );
+  }
+
   render() {
-    const { dropAlign, dropContent, id, open, theme, ...rest } = this.props;
+    const { dropAlign, dropContent, dropTarget, id, open, theme, ...rest } = this.props;
     const { show } = this.state;
 
     let drop;
@@ -57,7 +65,7 @@ class DropButton extends Component {
           id={id ? `${id}__drop` : undefined}
           restrictFocus={true}
           align={dropAlign}
-          control={this.buttonRef}
+          target={dropTarget || this.buttonRef}
           onClickOutside={this.onDropClose}
           onEsc={this.onDropClose}
         >
@@ -71,7 +79,7 @@ class DropButton extends Component {
         key='button'
         id={id}
         ref={(ref) => { this.buttonRef = ref; }}
-        onClick={open !== false ? (() => this.setState({ show: !show })) : undefined}
+        onClick={this.onToggle}
         {...rest}
       />,
       drop,

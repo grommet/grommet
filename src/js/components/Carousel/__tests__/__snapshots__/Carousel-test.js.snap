@@ -1,0 +1,965 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`play renders 1`] = `
+<div
+  class="StyledGrommet-gGRXwz deqpVW"
+>
+  <div
+    class="StyledStack-jqCQsC ewABiA"
+    tabindex="0"
+  >
+    <div
+      class="StyledBox-bStriS hkLmwk"
+      direction="column"
+      overflow="hidden"
+      style="position: relative;"
+    >
+      <div
+        class="StyledBox-bStriS iQipYn"
+        direction="column"
+      >
+        <img
+          class="StyledImage-iWJlTu ealRJb"
+          src="//v2.grommet.io/assets/IMG_4245.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS hkLmwk"
+      direction="column"
+      overflow="hidden"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+    >
+      <div
+        class="StyledBox-bStriS cKpPjS"
+        direction="column"
+      >
+        <img
+          class="StyledImage-iWJlTu ealRJb"
+          src="//v2.grommet.io/assets/IMG_4210.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS cXbrkz"
+      direction="row"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+    >
+      <div
+        class="StyledBox-bStriS cMkvKv"
+        direction="column"
+        fill="vertical"
+      >
+        <button
+          class="StyledButton-gXzblK fBqgCo"
+          fill="true"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="StyledBox-bStriS dmJZzK"
+            direction="column"
+          >
+            <svg
+              class="StyledIcon-gTfjEw iIdMpR"
+              width="24px"
+              height="24px"
+              viewBox="0 0 24 24"
+              version="1.1"
+              role="img"
+              aria-label="Previous"
+            >
+              <polyline
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+                points="7 2 17 12 7 22"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
+        class="StyledBox-bStriS fzGaWL"
+        direction="column"
+      >
+        <div
+          class="StyledBox-bStriS bdPbsG"
+          direction="row"
+        >
+          <button
+            class="StyledButton-gXzblK kjdIsU"
+            icon="[object Object]"
+            type="button"
+          >
+            <span
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+              aria-hidden="true"
+            >
+              <svg
+                class="StyledIcon-gTfjEw cbaxjc"
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                version="1.1"
+                role="img"
+                aria-label="Subtract"
+                color="brand"
+              >
+                <path
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                  d="M2,12 L22,12"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            class="StyledButton-gXzblK kjdIsU"
+            icon="[object Object]"
+            type="button"
+          >
+            <span
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+              aria-hidden="true"
+            >
+              <svg
+                class="StyledIcon-gTfjEw iIdMpR"
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                version="1.1"
+                role="img"
+                aria-label="Subtract"
+              >
+                <path
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                  d="M2,12 L22,12"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="StyledBox-bStriS cMkvKv"
+        direction="column"
+        fill="vertical"
+      >
+        <button
+          class="StyledButton-gXzblK dYRvzO"
+          fill="true"
+          type="button"
+        >
+          <div
+            class="StyledBox-bStriS dmJZzK"
+            direction="column"
+          >
+            <svg
+              class="StyledIcon-gTfjEw iIdMpR"
+              width="24px"
+              height="24px"
+              viewBox="0 0 24 24"
+              version="1.1"
+              role="img"
+              aria-label="Next"
+            >
+              <polyline
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+                points="7 2 17 12 7 22"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`play renders 2`] = `
+<div
+  class="StyledGrommet-gGRXwz deqpVW"
+>
+  <div
+    class="StyledStack-jqCQsC ewABiA"
+    tabindex="0"
+  >
+    <div
+      class="StyledBox-bStriS hkLmwk"
+      direction="column"
+      overflow="hidden"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+    >
+      <div
+        class="StyledBox-bStriS cKpPjS"
+        direction="column"
+      >
+        <img
+          class="StyledImage-iWJlTu ealRJb"
+          src="//v2.grommet.io/assets/IMG_4245.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS hkLmwk"
+      direction="column"
+      overflow="hidden"
+      style="position: relative;"
+    >
+      <div
+        class="StyledBox-bStriS bGwMby"
+        direction="column"
+      >
+        <img
+          class="StyledImage-iWJlTu ealRJb"
+          src="//v2.grommet.io/assets/IMG_4210.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS cXbrkz"
+      direction="row"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+    >
+      <div
+        class="StyledBox-bStriS cMkvKv"
+        direction="column"
+        fill="vertical"
+      >
+        <button
+          class="StyledButton-gXzblK dYRvzO"
+          fill="true"
+          type="button"
+        >
+          <div
+            class="StyledBox-bStriS dmJZzK"
+            direction="column"
+          >
+            <svg
+              class="StyledIcon-gTfjEw iIdMpR"
+              width="24px"
+              height="24px"
+              viewBox="0 0 24 24"
+              version="1.1"
+              role="img"
+              aria-label="Previous"
+            >
+              <polyline
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+                points="7 2 17 12 7 22"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
+        class="StyledBox-bStriS fzGaWL"
+        direction="column"
+      >
+        <div
+          class="StyledBox-bStriS bdPbsG"
+          direction="row"
+        >
+          <button
+            class="StyledButton-gXzblK kjdIsU"
+            icon="[object Object]"
+            type="button"
+          >
+            <span
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+              aria-hidden="true"
+            >
+              <svg
+                class="StyledIcon-gTfjEw iIdMpR"
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                version="1.1"
+                role="img"
+                aria-label="Subtract"
+              >
+                <path
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                  d="M2,12 L22,12"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            class="StyledButton-gXzblK kjdIsU"
+            icon="[object Object]"
+            type="button"
+          >
+            <span
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+              aria-hidden="true"
+            >
+              <svg
+                class="StyledIcon-gTfjEw cbaxjc"
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                version="1.1"
+                role="img"
+                aria-label="Subtract"
+                color="brand"
+              >
+                <path
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                  d="M2,12 L22,12"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="StyledBox-bStriS cMkvKv"
+        direction="column"
+        fill="vertical"
+      >
+        <button
+          class="StyledButton-gXzblK fBqgCo"
+          fill="true"
+          type="button"
+          disabled=""
+        >
+          <div
+            class="StyledBox-bStriS dmJZzK"
+            direction="column"
+          >
+            <svg
+              class="StyledIcon-gTfjEw iIdMpR"
+              width="24px"
+              height="24px"
+              viewBox="0 0 24 24"
+              version="1.1"
+              role="img"
+              aria-label="Next"
+            >
+              <polyline
+                fill="none"
+                stroke="#000"
+                stroke-width="2"
+                points="7 2 17 12 7 22"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c9 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c9 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c9 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c9 *[stroke*="#"],
+.c9 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c9 *[fill-rule],
+.c9 *[FILL-RULE],
+.c9 *[fill*="#"],
+.c9 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c14 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #666666;
+  stroke: #666666;
+  fill: #865CD6;
+  stroke: #865CD6;
+}
+
+.c14 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c14 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c14 *[stroke*="#"],
+.c14 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c14 *[fill-rule],
+.c14 *[FILL-RULE],
+.c14 *[fill*="#"],
+.c14 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  -webkit-animation: gmgyXe 1s 0s forwards;
+  animation: gmgyXe 1s 0s forwards;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.c7 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  opacity: 0.3;
+  cursor: default;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c12 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  padding: 12px;
+}
+
+.c15 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font: inherit;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.c15:hover {
+  background-color: rgba(221,221,221,0.5);
+  color: #000000;
+}
+
+.c13 {
+  display: inline-block;
+}
+
+.c13:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+.c13 > * {
+  vertical-align: bottom;
+}
+
+.c1 {
+  position: relative;
+}
+
+@media only screen and (min-width:700px) {
+  .c7 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c12 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c15 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    onKeyDown={[Function]}
+    tabIndex="0"
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      overflow="hidden"
+      style={
+        Object {
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        aria-label={undefined}
+        className="c3"
+        direction="column"
+      >
+        <img
+          className=""
+          src="//v2.grommet.io/assets/IMG_4245.jpg"
+        />
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      overflow="hidden"
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <div
+        aria-label={undefined}
+        className="c4"
+        direction="column"
+      >
+        <img
+          className=""
+          src="//v2.grommet.io/assets/IMG_4210.jpg"
+        />
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c5"
+      direction="row"
+      fill={true}
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <div
+        aria-label={undefined}
+        className="c6"
+        direction="column"
+        fill="vertical"
+      >
+        <button
+          aria-label={undefined}
+          className="c7"
+          disabled={true}
+          fill="true"
+          href={undefined}
+          icon={undefined}
+          label={undefined}
+          onBlur={[Function]}
+          onClick={undefined}
+          onFocus={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          type="button"
+        >
+          <div
+            aria-label={undefined}
+            className="c8"
+            direction="column"
+          >
+            <svg
+              aria-label="Previous"
+              className="c9"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                strokeWidth="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
+        aria-label={undefined}
+        className="c10"
+        direction="column"
+      >
+        <div
+          aria-label={undefined}
+          className="c11"
+          direction="row"
+        >
+          <button
+            aria-label={undefined}
+            className="c12"
+            disabled={false}
+            href={undefined}
+            icon={
+              <Subtract
+                color="brand"
+              />
+            }
+            label={undefined}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            type="button"
+          >
+            <span
+              aria-hidden={true}
+              className="c13"
+            >
+              <svg
+                aria-label="Subtract"
+                className="c14"
+                color="brand"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            aria-label={undefined}
+            className="c12"
+            disabled={false}
+            href={undefined}
+            icon={
+              <Subtract
+                color={undefined}
+              />
+            }
+            label={undefined}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            type="button"
+          >
+            <span
+              aria-hidden={true}
+              className="c13"
+            >
+              <svg
+                aria-label="Subtract"
+                className="c9"
+                color={undefined}
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  strokeWidth="2"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        aria-label={undefined}
+        className="c6"
+        direction="column"
+        fill="vertical"
+      >
+        <button
+          aria-label={undefined}
+          className="c15"
+          disabled={false}
+          fill="true"
+          href={undefined}
+          icon={undefined}
+          label={undefined}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseDown={[Function]}
+          onMouseUp={[Function]}
+          type="button"
+        >
+          <div
+            aria-label={undefined}
+            className="c8"
+            direction="column"
+          >
+            <svg
+              aria-label="Next"
+              className="c9"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

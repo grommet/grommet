@@ -29,13 +29,6 @@ exports[`DropButton closes 3`] = `
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
-}
-
-@media only screen and (min-width:700px) {
-  .jArdLz {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
 }"
 `;
 

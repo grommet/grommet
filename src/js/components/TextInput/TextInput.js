@@ -28,6 +28,7 @@ class TextInput extends Component {
   }
 
   static defaultProps = {
+    dropAlign: { top: 'bottom', left: 'left' },
     messages: {
       enterSelect: '(Press Enter to Select)',
       suggestionsCount: 'suggestions available',
@@ -195,7 +196,10 @@ class TextInput extends Component {
   }
 
   render() {
-    const { defaultValue, id, plain, value, onFocus, onInput, onKeyDown, ...rest } = this.props;
+    const {
+      defaultValue, dropAlign, dropTarget, id, plain, value, onFocus, onInput, onKeyDown,
+      ...rest
+    } = this.props;
     delete rest.onInput; // se we can manage in onInputChange()
     const { showDrop } = this.state;
     // needed so that styled components does not invoke
@@ -206,9 +210,9 @@ class TextInput extends Component {
       drop = (
         <Drop
           id={id ? `text-input-drop__${id}` : undefined}
-          align={{ top: 'bottom', left: 'left' }}
+          align={dropAlign}
           responsive={false}
-          control={this.componentRef}
+          target={dropTarget || this.componentRef}
           onClickOutside={() => this.setState({ showDrop: false })}
           onEsc={() => this.setState({ showDrop: false })}
         >

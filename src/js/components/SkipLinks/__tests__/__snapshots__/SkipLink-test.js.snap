@@ -2,12 +2,12 @@
 
 exports[`SkipLink mounts 1`] = `
 <div
-  class="StyledLayer-ceZzeh EwBAx"
+  class="StyledLayer-ceZzeh NIvte"
   id="skip-links"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-hhVyjc dJVGoZ"
+    class="StyledLayer__StyledOverlay-hhVyjc kmtIvl"
   />
   <div
     class="StyledLayer__StyledContainer-gBGbkw lbLbpM"
@@ -60,7 +60,7 @@ exports[`SkipLink mounts 1`] = `
 exports[`SkipLink mounts 2`] = `
 "
 
-.EwBAx {
+.NIvte {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -72,14 +72,26 @@ exports[`SkipLink mounts 2`] = `
   -webkit-font-smoothing: antialiased;
   position: relative;
   z-index: 10;
-  width: 100vw;
-  height: 100vh;
   overflow: auto;
   pointer-events: none;
   left: -100%;
   right: 100%;
   z-index: -1;
   position: fixed;
+}
+
+@media only screen and (max-width:699px) {
+  .NIvte {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .kmtIvl {
+    position: absolute;
+  }
 }
 
 @media only screen and (max-width:699px) {
@@ -102,12 +114,12 @@ exports[`SkipLink mounts 2`] = `
 
 exports[`SkipLink mounts 3`] = `
 <div
-  class="StyledLayer-ceZzeh eaUxfn"
+  class="StyledLayer-ceZzeh iOcFXM"
   id="skip-links"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-hhVyjc dJVGoZ"
+    class="StyledLayer__StyledOverlay-hhVyjc kmtIvl"
   />
   <div
     class="StyledLayer__StyledContainer-gBGbkw dlmbnt"
@@ -160,7 +172,15 @@ exports[`SkipLink mounts 3`] = `
 exports[`SkipLink mounts 4`] = `
 "
 
-.eaUxfn {
+@media only screen and (max-width:699px) {
+  .NIvte {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.iOcFXM {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -172,19 +192,33 @@ exports[`SkipLink mounts 4`] = `
   -webkit-font-smoothing: antialiased;
   position: relative;
   z-index: 10;
-  width: 100vw;
-  height: 100vh;
   overflow: auto;
   pointer-events: none;
 }
 
+@media only screen and (max-width:699px) {
+  .iOcFXM {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+
 @media only screen and (min-width:700px) {
-  .eaUxfn {
+  .iOcFXM {
     position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
     bottom: 0px;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .kmtIvl {
+    position: absolute;
   }
 }
 
@@ -239,12 +273,12 @@ exports[`SkipLink mounts 5`] = `
       hidden=""
     >
       <div
-        class="StyledLayer-ceZzeh EwBAx"
+        class="StyledLayer-ceZzeh NIvte"
         id="skip-links"
         tabindex="-1"
       >
         <div
-          class="StyledLayer__StyledOverlay-hhVyjc dJVGoZ"
+          class="StyledLayer__StyledOverlay-hhVyjc kmtIvl"
         />
         <div
           class="StyledLayer__StyledContainer-gBGbkw lbLbpM"

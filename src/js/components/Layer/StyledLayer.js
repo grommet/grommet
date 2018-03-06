@@ -14,10 +14,14 @@ const StyledLayer = styled.div`
 
   position: relative;
   z-index: 10;
-  width: 100vw;
-  height: 100vh;
   overflow: auto;
   pointer-events: none;
+
+  ${palm(`
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  `)}
 
   ${props => (props.position === 'hidden' ? hiddenPositionStyle : lapAndUp(`
     position: fixed;
@@ -25,11 +29,13 @@ const StyledLayer = styled.div`
     left: 0px;
     right: 0px;
     bottom: 0px;
+    width: 100vw;
+    height: 100vh;
   `))}
 `;
 
 export const StyledOverlay = styled.div`
-  position: absolute;
+  ${lapAndUp('position: absolute;')}
   top: 0px;
   left: 0px;
   right: 0px;

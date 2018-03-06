@@ -46,6 +46,13 @@ const COMMANDS = {
   },
 };
 
+const findTarget = (target) => {
+  if (typeof target === 'string') {
+    return document.getElementById(target);
+  }
+  return findDOMNode(target);
+};
+
 class Diagram extends Component {
   static defaultProps = { connections: [] };
 
@@ -84,17 +91,21 @@ class Diagram extends Component {
 
     let paths;
     if (this.containerRef) {
-      paths = connections.map(({ fromId, toId, color, offset, round, thickness, type }, index) => {
+      paths = connections.map(({
+        fromTarget, toTarget, color, offset, round, thickness, type,
+        ...connectionRest
+      }, index) => {
         const containerRect =
           findDOMNode(this.containerRef).getBoundingClientRect();
-        const fromElement = document.getElementById(fromId);
-        const toElement = document.getElementById(toId);
+        const fromElement = findTarget(fromTarget);
+        const toElement = findTarget(toTarget);
         if (!fromElement) {
-          console.warn(`Diagram cannot find ${fromId}`);
+          console.warn(`Diagram cannot find ${fromTarget}`);
         }
         if (!toElement) {
-          console.warn(`Diagram cannot find ${toId}`);
+          console.warn(`Diagram cannot find ${toTarget}`);
         }
+
         let path;
         if (fromElement && toElement) {
           const fromRect = fromElement.getBoundingClientRect();
@@ -107,12 +118,17 @@ class Diagram extends Component {
             (toRect.x - containerRect.x) + (toRect.width / 2),
             (toRect.y - containerRect.y) + (toRect.height / 2),
           ];
-          const offsetWidth = offset ? parseMetricToNum(theme.global.edgeSize[offset]) : 0;
+
+          const offsetWidth = offset ?
+            parseMetricToNum(theme.global.edgeSize[offset]) : 0;
           const d = COMMANDS[type || 'curved'](fromPoint, toPoint, offsetWidth);
-          const strokeWidth = thickness ? parseMetricToNum(theme.global.edgeSize[thickness]) : 1;
+          const strokeWidth = thickness ?
+            parseMetricToNum(theme.global.edgeSize[thickness]) : 1;
+
           path = (
             <path
-              key={`${fromId}-${toId}-${index}`}
+              key={index}
+              {...connectionRest}
               stroke={colorForName(color, theme)}
               strokeWidth={strokeWidth}
               strokeLinecap={round ? 'round' : 'butt'}
@@ -122,6 +138,7 @@ class Diagram extends Component {
             />
           );
         }
+
         return path;
       });
     }

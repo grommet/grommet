@@ -33,6 +33,10 @@ export default (Select) => {
     dropSize: PropTypes.string.description(
       'Size of the options container inside the Select drop.'
     ),
+    dropTarget: PropTypes.object.description(
+      `Target where the options drop will be aligned to. This should be
+      a React reference. Typically, this is not required as the drop will be
+      aligned to the Select itself by default.`),
     focusIndicator: PropTypes.bool.description(
       'Whether when \'plain\' it should receive a focus outline.'
     ),
@@ -45,9 +49,6 @@ export default (Select) => {
     onSearch: PropTypes.func.description(
       `Function that will be called when the user types in the search input.
 If this property is not provided, no search field will be rendered.`
-    ),
-    open: PropTypes.bool.description(
-      'Whether the Select drop should be open or not.'
     ),
     options: PropTypes.arrayOf(
       PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.object])

@@ -121,7 +121,6 @@ exports[`RadioButton checked renders 1`] = `
 >
   <label
     className="c1"
-    htmlFor={undefined}
   >
     <div
       className="c2"
@@ -129,10 +128,6 @@ exports[`RadioButton checked renders 1`] = `
       <input
         checked={true}
         className="c3"
-        disabled={undefined}
-        id={undefined}
-        name={undefined}
-        onChange={undefined}
         type="radio"
       />
       <div
@@ -184,6 +179,8 @@ exports[`RadioButton disabled renders 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  opacity: 0.5;
+  cursor: default;
 }
 
 .c1 > div:first-child {
@@ -275,18 +272,14 @@ exports[`RadioButton disabled renders 1`] = `
 >
   <label
     className="c1"
-    htmlFor={undefined}
+    disabled={true}
   >
     <div
       className="c2"
     >
       <input
-        checked={undefined}
         className="c3"
         disabled={true}
-        id={undefined}
-        name={undefined}
-        onChange={undefined}
         type="radio"
       />
       <div
@@ -307,7 +300,7 @@ exports[`RadioButton disabled renders 1`] = `
   </label>
   <label
     className="c1"
-    htmlFor={undefined}
+    disabled={true}
   >
     <div
       className="c2"
@@ -316,9 +309,6 @@ exports[`RadioButton disabled renders 1`] = `
         checked={true}
         className="c3"
         disabled={true}
-        id={undefined}
-        name={undefined}
-        onChange={undefined}
         type="radio"
       />
       <div
@@ -461,18 +451,12 @@ exports[`RadioButton label renders 1`] = `
 >
   <label
     className="c1"
-    htmlFor={undefined}
   >
     <div
       className="c2"
     >
       <input
-        checked={undefined}
         className="c3"
-        disabled={undefined}
-        id={undefined}
-        name={undefined}
-        onChange={undefined}
         type="radio"
       />
       <div
@@ -496,18 +480,12 @@ exports[`RadioButton label renders 1`] = `
   </label>
   <label
     className="c1"
-    htmlFor={undefined}
   >
     <div
       className="c2"
     >
       <input
-        checked={undefined}
         className="c3"
-        disabled={undefined}
-        id={undefined}
-        name={undefined}
-        onChange={undefined}
         type="radio"
       />
       <div
@@ -653,18 +631,12 @@ exports[`RadioButton renders 1`] = `
 >
   <label
     className="c1"
-    htmlFor={undefined}
   >
     <div
       className="c2"
     >
       <input
-        checked={undefined}
         className="c3"
-        disabled={undefined}
-        id={undefined}
-        name={undefined}
-        onChange={undefined}
         type="radio"
       />
       <div
@@ -691,12 +663,9 @@ exports[`RadioButton renders 1`] = `
       className="c2"
     >
       <input
-        checked={undefined}
         className="c3"
-        disabled={undefined}
         id="test id"
         name="test name"
-        onChange={undefined}
         type="radio"
       />
       <div

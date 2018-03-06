@@ -15,14 +15,17 @@ import { Diagram } from 'grommet';
 **connections**
 
 Required. Array of objects describing the connections.
-      The 'fromId' and 'toId' must be DOM element ids.
+      The 'fromTarget' and 'toTarget' may be either DOM element ids or
+      React references.
       'offset' can be used to shift a bit to reduce the amount of overlap
-      with other connection lines
+      with other connection lines to make the lines easier to distinguish.
 
 ```
 [{
   color: string,
-  fromId: string,
+  fromTarget: 
+    string
+    object,
   label: string,
   offset: 
     xsmall
@@ -34,7 +37,9 @@ Required. Array of objects describing the connections.
     small
     medium
     large,
-  toId: string,
+  toTarget: 
+    string
+    object,
   type: 
     direct
     curved

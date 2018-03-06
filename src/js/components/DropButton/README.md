@@ -9,7 +9,7 @@ A Button that when clicked will a Drop with the specified 'dropContent'.
 
 ```javascript
 import { DropButton } from 'grommet';
-<DropButton control={element}>{dropContents...}</DropButton>
+<DropButton dropContent={...} />
 ```
 
 ## Properties
@@ -54,6 +54,16 @@ Required. Content to put inside the Drop.
 element
 ```
 
+**dropTarget**
+
+Target where the drop will be aligned to. This should be
+      a React reference. Typically, this is not required as the drop will be
+      aligned to the DropButton itself by default.
+
+```
+object
+```
+
 **onClose**
 
 Callback for when the drop is closed
@@ -62,10 +72,18 @@ Callback for when the drop is closed
 function
 ```
 
+**onOpen**
+
+Callback for when the drop is opened
+
+```
+function
+```
+
 **open**
 
-Whether the drop should be open or not. Setting it to 'false' will
-      disable the button.
+Whether the drop should be open or not. Setting this property does not
+      influence user interaction after it has been rendered.
 
 ```
 boolean

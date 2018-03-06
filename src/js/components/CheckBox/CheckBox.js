@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withTheme } from '../hocs';
+import { removeUndefined } from '../../utils/object';
 
 import StyledCheckBox, {
   StyledCheckBoxContainer,
@@ -46,20 +47,15 @@ class CheckBox extends Component {
 
     return (
       <StyledCheckBoxContainer
-        htmlFor={id}
-        reverse={reverse}
+        {...removeUndefined({ htmlFor: id, disabled, reverse })}
         theme={theme}
         grommet={grommet}
       >
         <StyledCheckBox theme={theme}>
           <StyledCheckBoxInput
             {...rest}
-            id={id}
-            name={name}
             type='checkbox'
-            disabled={disabled}
-            checked={checked}
-            onChange={onChange}
+            {...removeUndefined({ id, name, checked, disabled, onChange })}
             theme={theme}
             grommet={grommet}
           />

@@ -16,14 +16,14 @@ class Menu extends Component {
     messages: { openMenu: 'Open Menu', closeMenu: 'Close Menu' },
   };
 
-  state = { activeItemIndex: -1 }
+  state = { activeItemIndex: -1, open: false }
 
   buttonRefs = {}
 
   onDropClose = () => {
     this.setState({
       activeItemIndex: -1,
-      open: undefined,
+      open: false,
     });
   }
 
@@ -74,6 +74,7 @@ class Menu extends Component {
   render() {
     const {
       dropAlign,
+      dropTarget,
       icon,
       items,
       label,
@@ -123,8 +124,10 @@ class Menu extends Component {
             {...rest}
             a11yTitle={messages.openMenu || 'Open Menu'}
             dropAlign={dropAlign}
+            dropTarget={dropTarget}
             open={open}
-            onClose={() => this.setState({ open: undefined })}
+            onOpen={() => this.setState({ open: true })}
+            onClose={() => this.setState({ open: false })}
             dropContent={
               <Box>
                 {dropAlign.top === 'top' ? controlMirror : undefined}

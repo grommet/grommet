@@ -35,7 +35,9 @@ export default (Chart) => {
     ]).description(
       'The size of the Chart.'
     ).defaultValue({ width: 'medium', height: 'small' }),
-    thickness: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']).description(
+    thickness: PropTypes.oneOf([
+      'xsmall', 'small', 'medium', 'large', 'xlarge', 'none',
+    ]).description(
       'The width of the stroke.'
     ).defaultValue('medium'),
     type: PropTypes.oneOf(['bar', 'line', 'area']).description(

@@ -32,8 +32,8 @@ class DropContainer extends Component {
   }
 
   addScrollListener = () => {
-    const { control } = this.props;
-    this.scrollParents = findScrollParents(control);
+    const { target } = this.props;
+    this.scrollParents = findScrollParents(target);
     this.scrollParents.forEach(scrollParent => scrollParent.addEventListener('scroll', this.place));
   }
 
@@ -63,9 +63,9 @@ class DropContainer extends Component {
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
-    const control = findDOMNode(this.props.control);
+    const target = findDOMNode(this.props.target);
     const container = findDOMNode(this.dropRef);
-    if (container && control) {
+    if (container && target) {
       // clear prior styling
       container.style.left = '';
       container.style.width = '';
@@ -73,12 +73,12 @@ class DropContainer extends Component {
       container.style.maxHeight = '';
 
       // get bounds
-      const controlRect = findVisibleParent(control).getBoundingClientRect();
+      const targetRect = findVisibleParent(target).getBoundingClientRect();
       const containerRect = container.getBoundingClientRect();
 
       // determine width
       const width = Math.min(
-        Math.max(controlRect.width, containerRect.width),
+        Math.max(targetRect.width, containerRect.width),
         windowWidth
       );
 
@@ -86,15 +86,15 @@ class DropContainer extends Component {
       let left;
       if (align.left) {
         if (align.left === 'left') {
-          left = controlRect.left;
+          left = targetRect.left;
         } else if (align.left === 'right') {
-          left = controlRect.left - width;
+          left = targetRect.left - width;
         }
       } else if (align.right) {
         if (align.right === 'left') {
-          left = controlRect.left - width;
+          left = targetRect.left - width;
         } else if (align.right === 'right') {
-          left = (controlRect.left + controlRect.width) - width;
+          left = (targetRect.left + targetRect.width) - width;
         }
       }
 
@@ -109,22 +109,22 @@ class DropContainer extends Component {
       let maxHeight;
       if (align.top) {
         if (align.top === 'top') {
-          top = controlRect.top;
-          maxHeight = Math.min(windowHeight - controlRect.top, windowHeight);
+          top = targetRect.top;
+          maxHeight = Math.min(windowHeight - targetRect.top, windowHeight);
         } else {
-          top = controlRect.bottom;
+          top = targetRect.bottom;
           maxHeight = Math.min(
-            windowHeight - controlRect.bottom,
-            windowHeight - controlRect.height
+            windowHeight - targetRect.bottom,
+            windowHeight - targetRect.height
           );
         }
       } else if (align.bottom) {
         if (align.bottom === 'bottom') {
-          top = controlRect.bottom - containerRect.height;
-          maxHeight = Math.max(controlRect.bottom, 0);
+          top = targetRect.bottom - containerRect.height;
+          maxHeight = Math.max(targetRect.bottom, 0);
         } else {
-          top = controlRect.top - containerRect.height;
-          maxHeight = Math.max(controlRect.top, 0);
+          top = targetRect.top - containerRect.height;
+          maxHeight = Math.max(targetRect.top, 0);
         }
       }
 
@@ -135,29 +135,29 @@ class DropContainer extends Component {
           // We put it below, but there's more room above, put it above
           if (align.top === 'bottom') {
             if (responsive) {
-              top = Math.max(controlRect.top - containerRect.height, 0);
+              top = Math.max(targetRect.top - containerRect.height, 0);
             }
-            maxHeight = controlRect.top;
+            maxHeight = targetRect.top;
           } else {
             if (responsive) {
-              top = Math.max(controlRect.bottom - containerRect.height, 0);
+              top = Math.max(targetRect.bottom - containerRect.height, 0);
             }
-            maxHeight = controlRect.bottom;
+            maxHeight = targetRect.bottom;
           }
         } else if (align.bottom && maxHeight < (windowHeight / 2)) {
           // We put it above but there's more room below, put it below
           if (align.bottom === 'bottom') {
             if (responsive) {
-              top = controlRect.top;
+              top = targetRect.top;
             }
             maxHeight = Math.min(windowHeight - top, windowHeight);
           } else {
             if (responsive) {
-              top = controlRect.bottom;
+              top = targetRect.bottom;
             }
             maxHeight = Math.min(
               windowHeight - top,
-              windowHeight - controlRect.height
+              windowHeight - targetRect.height
             );
           }
         }

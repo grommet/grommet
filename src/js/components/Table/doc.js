@@ -27,6 +27,50 @@ export const docTableCell = (TableCell) => {
   return DocumentedTableCell;
 };
 
+export const docTableRow = (TableRow) => {
+  const DocumentedTableRow = describe(TableRow)
+    .description('A row of cells in a table.'
+    ).usage(
+      `import { TableRow } from 'grommet';
+<TableRow />`
+    );
+
+  return DocumentedTableRow;
+};
+
+export const docTableHeader = (TableHeader) => {
+  const DocumentedTableHeader = describe(TableHeader)
+    .description('The header of a table.'
+    ).usage(
+      `import { TableHeader } from 'grommet';
+<TableHeader />`
+    );
+
+  return DocumentedTableHeader;
+};
+
+export const docTableBody = (TableBody) => {
+  const DocumentedTableBody = describe(TableBody)
+    .description('The body of a table.'
+    ).usage(
+      `import { TableBody } from 'grommet';
+<TableBody />`
+    );
+
+  return DocumentedTableBody;
+};
+
+export const docTableFooter = (TableFooter) => {
+  const DocumentedTableFooter = describe(TableFooter)
+    .description('The footer of a table.'
+    ).usage(
+      `import { TableFooter } from 'grommet';
+<TableFooter />`
+    );
+
+  return DocumentedTableFooter;
+};
+
 export default (Table) => {
   const DocumentedTable = describe(Table)
     .availableAt(getAvailableAtBadge('Table'))

@@ -5,6 +5,7 @@ exports[`Select closes drop on esc 1`] = `
   class="StyledDrop-bCWxPe gcEofR"
   tabindex="-1"
   id="test-select__drop"
+  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
@@ -316,6 +317,7 @@ exports[`Select mounts 3`] = `
   class="StyledDrop-bCWxPe gcEofR"
   tabindex="-1"
   id="test-select__drop"
+  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
@@ -567,6 +569,7 @@ exports[`Select mounts with complex options and children 3`] = `
   class="StyledDrop-bCWxPe gcEofR"
   tabindex="-1"
   id="test-select__drop"
+  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
@@ -660,6 +663,7 @@ exports[`Select mounts with search 1`] = `
   class="StyledDrop-bCWxPe gcEofR"
   tabindex="-1"
   id="test-select__drop"
+  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
@@ -791,6 +795,7 @@ exports[`Select mounts with search 4`] = `
   class="StyledDrop-bCWxPe gcEofR"
   tabindex="-1"
   id="test-select__drop"
+  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div

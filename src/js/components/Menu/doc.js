@@ -39,6 +39,10 @@ one of top or bottom should be specified.`
         ]),
       }),
     ]).description('Background color when drop is active'),
+    dropTarget: PropTypes.object.description(
+      `Target where the drop will be aligned to. This should be
+      a React reference. Typically, this is not required as the drop will be
+      aligned to the Menu itself by default.`),
     icon: PropTypes.node.description('Indicates the icon shown as a control to open it.'),
     items: PropTypes.arrayOf(PropTypes.object).description(
       `Menu items to be placed inside the drop down.

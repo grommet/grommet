@@ -6,6 +6,7 @@ Object {
   "Box": [Function],
   "Button": [Function],
   "Calendar": [Function],
+  "Carousel": [Function],
   "Chart": [Function],
   "CheckBox": [Function],
   "Clock": [Function],

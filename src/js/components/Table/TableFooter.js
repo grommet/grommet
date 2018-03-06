@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { StyledTableFooter } from './StyledTable';
+import { docTableFooter } from './doc';
 
-export default class TableFooter extends Component {
+class TableFooter extends Component {
   static childContextTypes = {
     grommet: PropTypes.object,
   }
@@ -17,3 +18,9 @@ export default class TableFooter extends Component {
     return <StyledTableFooter {...this.props} />;
   }
 }
+
+if (process.env.NODE_ENV !== 'production') {
+  docTableFooter(TableFooter);
+}
+
+export default TableFooter;

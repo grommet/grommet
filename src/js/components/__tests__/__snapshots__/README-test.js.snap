@@ -721,6 +721,31 @@ medium
 large
 \`\`\`
   ",
+  "Carousel": "## Carousel
+A carousel that cycles through children. Child components
+      would typically be Images. It is the caller's responsibility to ensure
+      that all children are the same size.
+
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=carousel&module=%2Fsrc%2FCarousel.js)
+## Usage
+
+\`\`\`javascript
+import { Carousel } from 'grommet';
+<Carousel />
+\`\`\`
+
+## Properties
+
+**play**
+
+If specified, the number of
+      milliseconds between automatically transitioning to the next child. It
+      will loop through all children indefinitely.
+
+\`\`\`
+number
+\`\`\`
+  ",
   "Chart": "## Chart
 A graphical chart.
 
@@ -1043,14 +1068,17 @@ import { Diagram } from 'grommet';
 **connections**
 
 Required. Array of objects describing the connections.
-      The 'fromId' and 'toId' must be DOM element ids.
+      The 'fromTarget' and 'toTarget' may be either DOM element ids or
+      React references.
       'offset' can be used to shift a bit to reduce the amount of overlap
-      with other connection lines
+      with other connection lines to make the lines easier to distinguish.
 
 \`\`\`
 [{
   color: string,
-  fromId: string,
+  fromTarget: 
+    string
+    object,
   label: string,
   offset: 
     xsmall
@@ -1062,7 +1090,9 @@ Required. Array of objects describing the connections.
     small
     medium
     large,
-  toId: string,
+  toTarget: 
+    string
+    object,
   type: 
     direct
     curved
@@ -1127,7 +1157,7 @@ A drop container that opens next to a target.
 
 \`\`\`javascript
 import { Drop } from 'grommet';
-<Drop control={element}>...</Drop>
+<Drop target={reference}>...</Drop>
 \`\`\`
 
 ## Properties
@@ -1156,22 +1186,6 @@ How to align the drop with respect to the target element. Defaults to \`{
 }
 \`\`\`
 
-**control**
-
-Required. Target container where the drop will be aligned.
-
-\`\`\`
-object
-\`\`\`
-
-**restrictFocus**
-
-Whether the drop should control focus.
-
-\`\`\`
-boolean
-\`\`\`
-
 **onClickOutside**
 
 Function that will be invoked when the user clicks outside the drop.
@@ -1196,6 +1210,22 @@ Whether to dynamically re-place when resized. Defaults to \`true\`.
 boolean
 \`\`\`
 
+**restrictFocus**
+
+Whether the drop should control focus.
+
+\`\`\`
+boolean
+\`\`\`
+
+**target**
+
+Required. Target where the drop will be aligned to. This should be a React reference.
+
+\`\`\`
+object
+\`\`\`
+
 **theme**
 
 Custom styles for Drop component.
@@ -1215,7 +1245,7 @@ A Button that when clicked will a Drop with the specified 'dropContent'.
 
 \`\`\`javascript
 import { DropButton } from 'grommet';
-<DropButton control={element}>{dropContents...}</DropButton>
+<DropButton dropContent={...} />
 \`\`\`
 
 ## Properties
@@ -1260,6 +1290,16 @@ Required. Content to put inside the Drop.
 element
 \`\`\`
 
+**dropTarget**
+
+Target where the drop will be aligned to. This should be
+      a React reference. Typically, this is not required as the drop will be
+      aligned to the DropButton itself by default.
+
+\`\`\`
+object
+\`\`\`
+
 **onClose**
 
 Callback for when the drop is closed
@@ -1268,10 +1308,18 @@ Callback for when the drop is closed
 function
 \`\`\`
 
+**onOpen**
+
+Callback for when the drop is opened
+
+\`\`\`
+function
+\`\`\`
+
 **open**
 
-Whether the drop should be open or not. Setting it to 'false' will
-      disable the button.
+Whether the drop should be open or not. Setting this property does not
+      influence user interaction after it has been rendered.
 
 \`\`\`
 boolean
@@ -1866,6 +1914,16 @@ string
 }
 \`\`\`
 
+**dropTarget**
+
+Target where the drop will be aligned to. This should be
+      a React reference. Typically, this is not required as the drop will be
+      aligned to the Menu itself by default.
+
+\`\`\`
+object
+\`\`\`
+
 **icon**
 
 Indicates the icon shown as a control to open it.
@@ -2261,7 +2319,7 @@ function
 **dropAlign**
 
 How to align the drop. Defaults to \`{
-  \\"top\\": \\"top\\",
+  \\"top\\": \\"bottom\\",
   \\"left\\": \\"left\\"
 }\`.
 
@@ -2306,6 +2364,16 @@ Size of the options container inside the Select drop.
 string
 \`\`\`
 
+**dropTarget**
+
+Target where the options drop will be aligned to. This should be
+      a React reference. Typically, this is not required as the drop will be
+      aligned to the Select itself by default.
+
+\`\`\`
+object
+\`\`\`
+
 **focusIndicator**
 
 Whether when 'plain' it should receive a focus outline.
@@ -2337,14 +2405,6 @@ If this property is not provided, no search field will be rendered.
 
 \`\`\`
 function
-\`\`\`
-
-**open**
-
-Whether the Select drop should be open or not.
-
-\`\`\`
-boolean
 \`\`\`
 
 **options**
@@ -2730,6 +2790,40 @@ What text to start with in the input.
 
 \`\`\`
 string
+\`\`\`
+
+**dropAlign**
+
+How to align the drop. Defaults to \`{
+  \\"top\\": \\"top\\",
+  \\"left\\": \\"left\\"
+}\`.
+
+\`\`\`
+{
+  top: 
+    top
+    bottom,
+  bottom: 
+    top
+    bottom,
+  right: 
+    left
+    right,
+  left: 
+    left
+    right
+}
+\`\`\`
+
+**dropTarget**
+
+Target where any suggestions drop will be aligned to. This should be
+      a React reference. Typically, this is not required as the drop will be
+      aligned to the TextInput itself by default.
+
+\`\`\`
+object
 \`\`\`
 
 **id**

@@ -2,12 +2,18 @@ import styled from 'styled-components';
 
 import { focusStyle } from '../../utils';
 
+const disabledStyle = `
+  opacity: 0.5;
+  cursor: default;
+`;
+
 export const StyledRadioButtonContainer = styled.label`
   display: flex;
   flex-direction: row;
   align-items: center;
   cursor: pointer;
   user-select: none;
+  ${props => props.disabled && disabledStyle}
 
   > div:first-child {
     ${props => `margin-right: ${props.theme.global.edgeSize.small};`}

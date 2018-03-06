@@ -11,13 +11,17 @@ import SelectContainer from './SelectContainer';
 import doc from './doc';
 
 class Select extends Component {
-  state = { open: undefined }
+  static defaultProps = {
+    dropAlign: { top: 'bottom', left: 'left' },
+  }
+
+  state = { open: false }
 
   componentWillReceiveProps(nextProps) {
     const { onClose, value } = nextProps;
     const { open } = this.state;
     if (value !== this.props.value) {
-      this.setState({ open: undefined });
+      this.setState({ open: false });
       if (onClose && open) {
         onClose();
       }
@@ -28,25 +32,29 @@ class Select extends Component {
     this.setState({ open: true });
   }
 
+  onClose = () => {
+    const { onClose } = this.props;
+    this.setState({ open: false });
+    if (onClose) {
+      onClose();
+    }
+  }
+
   render() {
     const {
-      a11yTitle, children, onClose, open: propsOpen, placeholder, plain,
-      value, ...rest
+      a11yTitle, children, dropAlign, dropTarget, onClose, placeholder, plain, value, ...rest
     } = this.props;
-    const { open: stateOpen } = this.state;
+    const { open } = this.state;
 
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
         <DropButton
-          dropAlign={{ top: 'bottom', left: 'left' }}
+          dropAlign={dropAlign}
+          dropTarget={dropTarget}
           {...rest}
-          open={stateOpen || propsOpen}
-          onClose={() => {
-            this.setState({ open: undefined });
-            if (onClose) {
-              onClose();
-            }
-          }}
+          open={open}
+          onOpen={this.onOpen}
+          onClose={this.onClose}
           a11yTitle={`${a11yTitle}${typeof value === 'string' ? `, ${value}` : ''}`}
           dropContent={<SelectContainer {...this.props} />}
         >

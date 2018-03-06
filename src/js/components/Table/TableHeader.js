@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { StyledTableHeader } from './StyledTable';
+import { docTableHeader } from './doc';
 
-export default class TableHeader extends Component {
+class TableHeader extends Component {
   static childContextTypes = {
     grommet: PropTypes.object,
   }
@@ -17,3 +18,9 @@ export default class TableHeader extends Component {
     return <StyledTableHeader {...this.props} />;
   }
 }
+
+if (process.env.NODE_ENV !== 'production') {
+  docTableHeader(TableHeader);
+}
+
+export default TableHeader;

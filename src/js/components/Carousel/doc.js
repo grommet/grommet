@@ -1,0 +1,23 @@
+import { describe, PropTypes } from 'react-desc';
+
+import { getAvailableAtBadge } from '../../utils';
+
+export default (Carousel) => {
+  const DocumentedCarousel = describe(Carousel)
+    .availableAt(getAvailableAtBadge('Carousel'))
+    .description(`A carousel that cycles through children. Child components
+      would typically be Images. It is the caller's responsibility to ensure
+      that all children are the same size.`)
+      .usage(
+        `import { Carousel } from 'grommet';
+<Carousel />`
+      );
+
+  DocumentedCarousel.propTypes = {
+    play: PropTypes.number.description(`If specified, the number of
+      milliseconds between automatically transitioning to the next child. It
+      will loop through all children indefinitely.`),
+  };
+
+  return DocumentedCarousel;
+};
