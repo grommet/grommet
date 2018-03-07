@@ -48,11 +48,9 @@ exports[`play renders 1`] = `
       <div
         class="StyledBox-bStriS cMkvKv"
         direction="column"
-        fill="vertical"
       >
         <button
           class="StyledButton-gXzblK fBqgCo"
-          fill="true"
           disabled=""
           type="button"
         >
@@ -148,11 +146,9 @@ exports[`play renders 1`] = `
       <div
         class="StyledBox-bStriS cMkvKv"
         direction="column"
-        fill="vertical"
       >
         <button
           class="StyledButton-gXzblK dYRvzO"
-          fill="true"
           type="button"
         >
           <div
@@ -231,11 +227,9 @@ exports[`play renders 2`] = `
       <div
         class="StyledBox-bStriS cMkvKv"
         direction="column"
-        fill="vertical"
       >
         <button
           class="StyledButton-gXzblK dYRvzO"
-          fill="true"
           type="button"
         >
           <div
@@ -330,11 +324,9 @@ exports[`play renders 2`] = `
       <div
         class="StyledBox-bStriS cMkvKv"
         direction="column"
-        fill="vertical"
       >
         <button
           class="StyledButton-gXzblK fBqgCo"
-          fill="true"
           type="button"
           disabled=""
         >
@@ -762,7 +754,6 @@ exports[`renders 1`] = `
       aria-label={undefined}
       className="c5"
       direction="row"
-      fill={true}
       style={
         Object {
           "bottom": 0,
@@ -778,13 +769,11 @@ exports[`renders 1`] = `
         aria-label={undefined}
         className="c6"
         direction="column"
-        fill="vertical"
       >
         <button
           aria-label={undefined}
           className="c7"
           disabled={true}
-          fill="true"
           href={undefined}
           icon={undefined}
           label={undefined}
@@ -918,13 +907,11 @@ exports[`renders 1`] = `
         aria-label={undefined}
         className="c6"
         direction="column"
-        fill="vertical"
       >
         <button
           aria-label={undefined}
           className="c15"
           disabled={false}
-          fill="true"
           href={undefined}
           icon={undefined}
           label={undefined}

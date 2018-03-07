@@ -54,9 +54,11 @@ class Box extends Component {
       a11yTitle,
       children,
       direction,
+      fill, // munged to avoid styled-components putting it in the DOM
       gap,
       tag,
       theme,
+      wrap, // munged to avoid styled-components putting it in the DOM
       ...rest
     } = this.props;
 
@@ -93,6 +95,8 @@ class Box extends Component {
       <StyledComponent
         aria-label={a11yTitle}
         direction={direction}
+        fillContainer={fill}
+        wrapContents={wrap}
         theme={theme}
         {...rest}
       >

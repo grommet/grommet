@@ -33,6 +33,7 @@ class Button extends Component {
       a11yTitle,
       children,
       icon,
+      fill, // munged to avoid styled-components putting it in the DOM
       focus,
       href,
       label,
@@ -73,6 +74,7 @@ class Button extends Component {
         aria-label={a11yTitle}
         disabled={disabled}
         icon={icon}
+        fillContainer={fill}
         focus={focus}
         href={href}
         label={label}
