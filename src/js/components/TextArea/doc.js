@@ -24,7 +24,7 @@ export default (TextArea) => {
     ),
     plain: PropTypes.bool.description(
       `Whether this is a plain textarea with no border or padding.
-Only use this when the containing context provides sufficient affordance`
+Only use this when the containing context provides sufficient affordance.`
     ),
     value: PropTypes.string.description('What text to put in the textarea.'),
   };

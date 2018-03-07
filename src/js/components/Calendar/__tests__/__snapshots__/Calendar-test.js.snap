@@ -280,6 +280,42 @@ exports[`Calendar date renders 1`] = `
   color: #FFFFFF;
 }
 
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
 @media only screen and (min-width:700px) {
   .c6 {
     -webkit-transition: 0.1s ease-in-out;
@@ -298,6 +334,22 @@ exports[`Calendar date renders 1`] = `
   .c16 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    font-size: 18px;
+    line-height: 1.333;
+    max-width: 432px;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -1804,6 +1856,42 @@ exports[`Calendar dates renders 1`] = `
   color: #FFFFFF;
 }
 
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
 @media only screen and (min-width:700px) {
   .c6 {
     -webkit-transition: 0.1s ease-in-out;
@@ -1822,6 +1910,22 @@ exports[`Calendar dates renders 1`] = `
   .c17 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    font-size: 18px;
+    line-height: 1.333;
+    max-width: 432px;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -3330,6 +3434,42 @@ exports[`Calendar disabled renders 1`] = `
   color: #FFFFFF;
 }
 
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
 @media only screen and (min-width:700px) {
   .c6 {
     -webkit-transition: 0.1s ease-in-out;
@@ -3348,6 +3488,22 @@ exports[`Calendar disabled renders 1`] = `
   .c17 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    font-size: 18px;
+    line-height: 1.333;
+    max-width: 432px;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -4856,6 +5012,42 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   color: #FFFFFF;
 }
 
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
 @media only screen and (min-width:700px) {
   .c6 {
     -webkit-transition: 0.1s ease-in-out;
@@ -4874,6 +5066,22 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   .c16 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    font-size: 18px;
+    line-height: 1.333;
+    max-width: 432px;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -7597,6 +7805,42 @@ exports[`Calendar renders 1`] = `
   color: #FFFFFF;
 }
 
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
 @media only screen and (min-width:700px) {
   .c6 {
     -webkit-transition: 0.1s ease-in-out;
@@ -7615,6 +7859,22 @@ exports[`Calendar renders 1`] = `
   .c16 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    font-size: 18px;
+    line-height: 1.333;
+    max-width: 432px;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -9303,6 +9563,42 @@ exports[`Calendar size renders 1`] = `
   color: #FFFFFF;
 }
 
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
 @media only screen and (min-width:700px) {
   .c6 {
     -webkit-transition: 0.1s ease-in-out;
@@ -9321,6 +9617,54 @@ exports[`Calendar size renders 1`] = `
   .c16 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c19 {
+    font-size: 18px;
+    line-height: 1.333;
+    max-width: 432px;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c19 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    font-size: 16px;
+    line-height: 1.375;
+    max-width: 384px;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c25 {
+    font-size: 24px;
+    line-height: 1.333;
+    max-width: 576px;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c25 {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 

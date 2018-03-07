@@ -31,6 +31,10 @@ The sizing can be further adjusted using the size property.`
       `The amount of margin above and/or below the heading. An object can be
 specified to distinguish top margin and bottom margin.`
     ),
+    responsive: PropTypes.bool.description(
+      `Whether the font size should be scaled for
+      mobile environments.`
+    ).defaultValue(true),
     size: PropTypes.oneOf(['small', 'medium', 'large']).description(
       `The font size is primarily driven by the chosen tag. But, it can
 be adjusted via this size property. The tag should be set for semantic

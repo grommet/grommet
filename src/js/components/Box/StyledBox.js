@@ -60,6 +60,13 @@ const directionStyle = css`
   ${props => props.direction === 'row' && 'min-height: 0;'}
   ${props => props.direction === 'column' && 'min-width: 0;'}
   flex-direction: ${props => props.direction};
+  ${props => (props.direction === 'row-responsive' ? palm(`
+    flex-direction: column;
+    flex-basis: auto;
+    justify-content: flex-start;
+    align-items: stretch;
+  `) : '')}
+  }
 `;
 
 const elevationStyle = css`
@@ -110,28 +117,47 @@ const justifyStyle = css`
 
 const wrapStyle = 'flex-wrap: wrap;';
 
-const borderStyle = (data, theme) => {
-  let style = '';
+const borderStyle = (data, responsive, theme) => {
+  const styles = [];
   const color = colorForName(data.color || 'border', theme);
   const borderSize = data.size || 'xsmall';
   const side = (typeof data === 'string') ? data : data.side || 'all';
   const value = `solid ${theme.global.borderSize[borderSize]} ${color}`;
+  const narrowValue = `solid ${theme.global.borderSize.narrow[borderSize]} ${color}`;
   if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
-    style = `border-${side}: ${value};`;
+    styles.push(css`border-${side}: ${value};`);
+    if (responsive) {
+      styles.push(palm(`border-${side}: ${narrowValue};`));
+    }
   } else if (side === 'vertical') {
-    style = `
+    styles.push(css`
       border-left: ${value};
       border-right: ${value};
-    `;
+    `);
+    if (responsive) {
+      styles.push(palm(`
+        border-left: ${narrowValue};
+        border-right: ${narrowValue};
+      `));
+    }
   } else if (side === 'horizontal') {
-    style = `
+    styles.push(css`
       border-top: ${value};
       border-bottom: ${value};
-    `;
+    `);
+    if (responsive) {
+      styles.push(palm(`
+        border-top: ${narrowValue};
+        border-bottom: ${narrowValue};
+      `));
+    }
   } else {
-    style = `border: ${value};`;
+    styles.push(css`border: ${value};`);
+    if (responsive) {
+      styles.push(palm(`border: ${narrowValue};`));
+    }
   }
-  return style;
+  return styles;
 };
 
 const ROUND_MAP = {
@@ -140,16 +166,9 @@ const ROUND_MAP = {
 
 const roundStyle = css`
   border-radius: ${props => ROUND_MAP[props.round] || props.theme.global.edgeSize[props.round]};
-`;
-
-const responsiveStyle = css`
-  ${props => palm(`
-    flex-direction: column;
-    flex-basis: auto;
-
-    ${props.justify === 'center' && 'align-items: stretch;'}
-  `)}
-  }
+  ${props => (props.responsive ? palm(`
+    border-radius: ${ROUND_MAP[props.round] || props.theme.global.edgeSize.narrow[props.round]};
+  `) : '')}
 `;
 
 const SLIDE_SIZES = {
@@ -308,18 +327,17 @@ const StyledBox = styled.div`
   ${props => props.alignContent && alignContentStyle}
   ${props => props.alignSelf && alignSelfStyle}
   ${props => props.background && backgroundStyle(props.background, props.theme)}
-  ${props => props.border && borderStyle(props.border, props.theme)}
+  ${props => props.border && borderStyle(props.border, props.responsive, props.theme)}
   ${props => props.direction && directionStyle}
   ${props => props.flex !== undefined && flexStyle}
   ${props => props.basis && basisStyle}
   ${props => props.fill && fillStyle(props.fill)}
   ${props => props.gridArea && gridAreaStyle}
   ${props => props.justify && justifyStyle}
-  ${props => (props.margin && edgeStyle('margin', props.margin, props.theme))}
-  ${props => (props.pad && edgeStyle('padding', props.pad, props.theme))}
+  ${props => (props.margin && edgeStyle('margin', props.margin, props.responsive, props.theme))}
+  ${props => (props.pad && edgeStyle('padding', props.pad, props.responsive, props.theme))}
   ${props => props.round && roundStyle}
   ${props => props.wrap && wrapStyle}
-  ${props => props.responsive && responsiveStyle}
   ${props => props.overflow && `overflow: ${props.overflow};`}
   ${props => props.elevation && elevationStyle}
   ${props => props.animation && animationStyle}
@@ -329,13 +347,23 @@ export default StyledBox.extend`
   ${props => props.theme.box && props.theme.box.extend}
 `;
 
-const gapStyle = (gap, direction, theme) => {
-  if (direction === 'column') {
-    return `height: ${theme.global.edgeSize[gap]};`;
+const gapStyle = css`
+  ${({ direction, gap, responsive, theme: { global: { edgeSize } } }) =>
+    (direction === 'column' ? `
+      height: ${edgeSize[gap]};
+      ${responsive ? palm(`
+        height: ${edgeSize.narrow[gap]};
+      `) : ''}
+    ` : `
+      width: ${edgeSize[gap]};
+      ${(responsive && direction === 'row-responsive') ? palm(`
+        width: auto;
+        height: ${edgeSize.narrow[gap]};
+      `) : ''}
+    `)
   }
-  return `width: ${theme.global.edgeSize[gap]};`;
-};
+`;
 
 export const StyledBoxGap = styled.div`
-  ${props => props.gap && gapStyle(props.gap, props.direction, props.theme)};
+  ${props => props.gap && gapStyle};
 `;

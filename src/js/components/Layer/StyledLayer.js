@@ -178,12 +178,12 @@ const POSITIONS = {
       right: ${MARGINS.right(margin, theme)};
       animation: ${KEYFRAMES.center.true} 0.2s ease-in-out forwards;
     `,
-    false: (margin, theme) => `
+    false: (margin, theme) => css`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       animation: ${KEYFRAMES.center.false} 0.2s ease-in-out forwards;
-      ${edgeStyle('margin', margin, theme)}
+      ${edgeStyle('margin', margin, false, theme)}
     `,
   },
 
@@ -327,13 +327,13 @@ export const StyledContainer = styled.div`
     min-width: 100%;
   `)}
 
-  ${props => lapAndUp(`
-    position: ${(props.modal ? 'absolute' : 'fixed')};
+  ${lapAndUp(css`
+    position: ${props => (props.modal ? 'absolute' : 'fixed')};
     max-height: 100%;
     max-width: 100%;
     overflow: auto;
-    border-radius: ${props.plain ? 'none' : props.theme.layer.border.radius};
-    ${(props.position !== 'hidden' &&
+    border-radius: ${props => (props.plain ? 'none' : props.theme.layer.border.radius)};
+    ${props => (props.position !== 'hidden' &&
       POSITIONS[props.position][props.full](props.margin, props.theme)) || ''}
   `)}
 `;

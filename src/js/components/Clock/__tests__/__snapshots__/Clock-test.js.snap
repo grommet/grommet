@@ -37,6 +37,18 @@ exports[`Clock hourLimit renders 1`] = `
   padding: 0;
 }
 
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
 <div
   className="c0"
 >
@@ -228,7 +240,7 @@ exports[`Clock run renders 1`] = `
     />
   </svg>
   <div
-    class="StyledBox-bStriS kkBTIr"
+    class="StyledBox-bStriS iSPFTU"
     direction="row"
   >
     <div
@@ -273,7 +285,7 @@ exports[`Clock run renders 1`] = `
     </div>
   </div>
   <div
-    class="StyledBox-bStriS kkBTIr"
+    class="StyledBox-bStriS iSPFTU"
     direction="row"
   >
     <div
@@ -397,7 +409,7 @@ exports[`Clock run renders 2`] = `
     />
   </svg>
   <div
-    class="StyledBox-bStriS kkBTIr"
+    class="StyledBox-bStriS iSPFTU"
     direction="row"
   >
     <div
@@ -453,7 +465,7 @@ exports[`Clock run renders 2`] = `
     </div>
   </div>
   <div
-    class="StyledBox-bStriS kkBTIr"
+    class="StyledBox-bStriS iSPFTU"
     direction="row"
   >
     <div
@@ -546,6 +558,18 @@ exports[`Clock time renders 1`] = `
   flex-direction: row;
   margin: 0;
   padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
 }
 
 <div
@@ -1962,6 +1986,18 @@ exports[`Clock type digital precision hours size large 1`] = `
   padding: 0;
 }
 
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
 <div
   className="c0"
 >
@@ -2021,6 +2057,18 @@ exports[`Clock type digital precision hours size medium 1`] = `
   flex-direction: row;
   margin: 0;
   padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
 }
 
 <div
@@ -2084,6 +2132,18 @@ exports[`Clock type digital precision hours size small 1`] = `
   padding: 0;
 }
 
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
 <div
   className="c0"
 >
@@ -2143,6 +2203,18 @@ exports[`Clock type digital precision hours size xlarge 1`] = `
   flex-direction: row;
   margin: 0;
   padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
 }
 
 <div
@@ -2206,6 +2278,18 @@ exports[`Clock type digital precision hours size xsmall 1`] = `
   padding: 0;
 }
 
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
 <div
   className="c0"
 >
@@ -2265,6 +2349,18 @@ exports[`Clock type digital precision minutes size large 1`] = `
   flex-direction: row;
   margin: 0;
   padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
 }
 
 <div
@@ -2346,6 +2442,18 @@ exports[`Clock type digital precision minutes size medium 1`] = `
   padding: 0;
 }
 
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
 <div
   className="c0"
 >
@@ -2423,6 +2531,18 @@ exports[`Clock type digital precision minutes size small 1`] = `
   flex-direction: row;
   margin: 0;
   padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
 }
 
 <div
@@ -2504,6 +2624,18 @@ exports[`Clock type digital precision minutes size xlarge 1`] = `
   padding: 0;
 }
 
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
 <div
   className="c0"
 >
@@ -2583,6 +2715,18 @@ exports[`Clock type digital precision minutes size xsmall 1`] = `
   padding: 0;
 }
 
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
 <div
   className="c0"
 >
@@ -2660,6 +2804,18 @@ exports[`Clock type digital precision seconds size large 1`] = `
   flex-direction: row;
   margin: 0;
   padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
 }
 
 <div
@@ -2759,6 +2915,18 @@ exports[`Clock type digital precision seconds size medium 1`] = `
   padding: 0;
 }
 
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
 <div
   className="c0"
 >
@@ -2854,6 +3022,18 @@ exports[`Clock type digital precision seconds size small 1`] = `
   flex-direction: row;
   margin: 0;
   padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
 }
 
 <div
@@ -2953,6 +3133,18 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
   padding: 0;
 }
 
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
 <div
   className="c0"
 >
@@ -3048,6 +3240,18 @@ exports[`Clock type digital precision seconds size xsmall 1`] = `
   flex-direction: row;
   margin: 0;
   padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
 }
 
 <div

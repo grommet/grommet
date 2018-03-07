@@ -2,33 +2,33 @@
 
 exports[`SkipLink mounts 1`] = `
 <div
-  class="StyledLayer-ceZzeh NIvte"
+  class="StyledLayer-ceZzeh byFxCb"
   id="skip-links"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-hhVyjc kmtIvl"
+    class="StyledLayer__StyledOverlay-hhVyjc hewshY"
   />
   <div
-    class="StyledLayer__StyledContainer-gBGbkw lbLbpM"
+    class="StyledLayer__StyledContainer-gBGbkw kWMmDe"
     id="skip-links"
   >
     <div
-      class="StyledBox-bStriS kLwTeJ"
+      class="StyledBox-bStriS jhZTPH"
       direction="column"
     >
       <h2
-        class="StyledHeading-NQveS kJELbK"
+        class="StyledHeading-NQveS eQyCKF"
       >
         Skip To
         :
       </h2>
       <div
-        class="StyledBox-bStriS bqSFqK"
+        class="StyledBox-bStriS jftBqn"
         direction="row"
       >
         <div
-          class="StyledBox-bStriS cvUrkJ"
+          class="StyledBox-bStriS gOZyOB"
           direction="column"
         >
           <a
@@ -40,7 +40,7 @@ exports[`SkipLink mounts 1`] = `
           </a>
         </div>
         <div
-          class="StyledBox-bStriS cvUrkJ"
+          class="StyledBox-bStriS gOZyOB"
           direction="column"
         >
           <a
@@ -58,9 +58,55 @@ exports[`SkipLink mounts 1`] = `
 `;
 
 exports[`SkipLink mounts 2`] = `
-"
+"@media only screen and (max-width:699px) {
+  .jhZTPH {
+    margin: 0;
+  }
+}
 
-.NIvte {
+@media only screen and (max-width:699px) {
+  .jhZTPH {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jftBqn {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jftBqn {
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gOZyOB {
+    margin: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gOZyOB {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eQyCKF {
+    font-size: 24px;
+    line-height: 1.333;
+    max-width: 576px;
+    font-weight: 300;
+  }
+}
+
+
+
+.byFxCb {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -81,7 +127,7 @@ exports[`SkipLink mounts 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .NIvte {
+  .byFxCb {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -89,20 +135,20 @@ exports[`SkipLink mounts 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .kmtIvl {
+  .hewshY {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .lbLbpM {
+  .kWMmDe {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .lbLbpM {
+  .kWMmDe {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -114,33 +160,33 @@ exports[`SkipLink mounts 2`] = `
 
 exports[`SkipLink mounts 3`] = `
 <div
-  class="StyledLayer-ceZzeh iOcFXM"
+  class="StyledLayer-ceZzeh jNyDRA"
   id="skip-links"
   tabindex="-1"
 >
   <div
-    class="StyledLayer__StyledOverlay-hhVyjc kmtIvl"
+    class="StyledLayer__StyledOverlay-hhVyjc hewshY"
   />
   <div
-    class="StyledLayer__StyledContainer-gBGbkw dlmbnt"
+    class="StyledLayer__StyledContainer-gBGbkw ftCLnn"
     id="skip-links"
   >
     <div
-      class="StyledBox-bStriS kLwTeJ"
+      class="StyledBox-bStriS jhZTPH"
       direction="column"
     >
       <h2
-        class="StyledHeading-NQveS kJELbK"
+        class="StyledHeading-NQveS eQyCKF"
       >
         Skip To
         :
       </h2>
       <div
-        class="StyledBox-bStriS bqSFqK"
+        class="StyledBox-bStriS jftBqn"
         direction="row"
       >
         <div
-          class="StyledBox-bStriS cvUrkJ"
+          class="StyledBox-bStriS gOZyOB"
           direction="column"
         >
           <a
@@ -152,7 +198,7 @@ exports[`SkipLink mounts 3`] = `
           </a>
         </div>
         <div
-          class="StyledBox-bStriS cvUrkJ"
+          class="StyledBox-bStriS gOZyOB"
           direction="column"
         >
           <a
@@ -170,17 +216,63 @@ exports[`SkipLink mounts 3`] = `
 `;
 
 exports[`SkipLink mounts 4`] = `
-"
+"@media only screen and (max-width:699px) {
+  .jhZTPH {
+    margin: 0;
+  }
+}
 
 @media only screen and (max-width:699px) {
-  .NIvte {
+  .jhZTPH {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jftBqn {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jftBqn {
+    padding-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gOZyOB {
+    margin: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gOZyOB {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eQyCKF {
+    font-size: 24px;
+    line-height: 1.333;
+    max-width: 576px;
+    font-weight: 300;
+  }
+}
+
+
+
+@media only screen and (max-width:699px) {
+  .byFxCb {
     position: absolute;
     height: 100%;
     width: 100%;
   }
 }
 
-.iOcFXM {
+.jNyDRA {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -197,7 +289,7 @@ exports[`SkipLink mounts 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .iOcFXM {
+  .jNyDRA {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -205,7 +297,7 @@ exports[`SkipLink mounts 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .iOcFXM {
+  .jNyDRA {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -217,20 +309,20 @@ exports[`SkipLink mounts 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .kmtIvl {
+  .hewshY {
     position: absolute;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .lbLbpM {
+  .kWMmDe {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .lbLbpM {
+  .kWMmDe {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -240,14 +332,14 @@ exports[`SkipLink mounts 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .dlmbnt {
+  .ftCLnn {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .dlmbnt {
+  .ftCLnn {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -273,33 +365,33 @@ exports[`SkipLink mounts 5`] = `
       hidden=""
     >
       <div
-        class="StyledLayer-ceZzeh NIvte"
+        class="StyledLayer-ceZzeh byFxCb"
         id="skip-links"
         tabindex="-1"
       >
         <div
-          class="StyledLayer__StyledOverlay-hhVyjc kmtIvl"
+          class="StyledLayer__StyledOverlay-hhVyjc hewshY"
         />
         <div
-          class="StyledLayer__StyledContainer-gBGbkw lbLbpM"
+          class="StyledLayer__StyledContainer-gBGbkw kWMmDe"
           id="skip-links"
         >
           <div
-            class="StyledBox-bStriS kLwTeJ"
+            class="StyledBox-bStriS jhZTPH"
             direction="column"
           >
             <h2
-              class="StyledHeading-NQveS kJELbK"
+              class="StyledHeading-NQveS eQyCKF"
             >
               Skip To
               :
             </h2>
             <div
-              class="StyledBox-bStriS bqSFqK"
+              class="StyledBox-bStriS jftBqn"
               direction="row"
             >
               <div
-                class="StyledBox-bStriS cvUrkJ"
+                class="StyledBox-bStriS gOZyOB"
                 direction="column"
               >
                 <a
@@ -311,7 +403,7 @@ exports[`SkipLink mounts 5`] = `
                 </a>
               </div>
               <div
-                class="StyledBox-bStriS cvUrkJ"
+                class="StyledBox-bStriS gOZyOB"
                 direction="column"
               >
                 <a
