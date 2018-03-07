@@ -13,7 +13,6 @@ export default (TextInput) => {
     );
 
   DocumentedTextInput.propTypes = {
-    defaultValue: PropTypes.string.description('What text to start with in the input.'),
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),
       bottom: PropTypes.oneOf(['top', 'bottom']),
