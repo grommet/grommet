@@ -11,14 +11,6 @@ import { TextArea } from 'grommet';
 
 ## Properties
 
-**defaultValue**
-
-What text to start with.
-
-```
-string
-```
-
 **id**
 
 The id attribute of the textarea.

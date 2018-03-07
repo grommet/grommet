@@ -13,7 +13,6 @@ export default (TextArea) => {
     );
 
   DocumentedTextArea.propTypes = {
-    defaultValue: PropTypes.string.description('What text to start with.'),
     id: PropTypes.string.description('The id attribute of the textarea.'),
     focusIndicator: PropTypes.bool.description(
       'Whether the plain textarea should receive a focus outline.'

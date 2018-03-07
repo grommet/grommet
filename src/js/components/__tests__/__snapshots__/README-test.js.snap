@@ -907,14 +907,6 @@ Same as React <input checked={} />
 boolean
 \`\`\`
 
-**defaultChecked**
-
-Same as React <input defaultChecked={} />
-
-\`\`\`
-boolean
-\`\`\`
-
 **disabled**
 
 Same as React <input disabled={} />. Also adds a hidden input element
@@ -2152,14 +2144,6 @@ Same as React <input checked={} />
 boolean
 \`\`\`
 
-**defaultChecked**
-
-Same as React <input defaultChecked={} />
-
-\`\`\`
-boolean
-\`\`\`
-
 **disabled**
 
 Same as React <input disabled={} />. Also adds a hidden input element
@@ -2731,14 +2715,6 @@ import { TextArea } from 'grommet';
 
 ## Properties
 
-**defaultValue**
-
-What text to start with.
-
-\`\`\`
-string
-\`\`\`
-
 **id**
 
 The id attribute of the textarea.
@@ -2800,14 +2776,6 @@ import { TextInput } from 'grommet';
 \`\`\`
 
 ## Properties
-
-**defaultValue**
-
-What text to start with in the input.
-
-\`\`\`
-string
-\`\`\`
 
 **dropAlign**
 

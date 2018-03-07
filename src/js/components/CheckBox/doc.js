@@ -13,7 +13,6 @@ export default (CheckBox) => {
 
   DocumentedCheckBox.propTypes = {
     checked: PropTypes.bool.description('Same as React <input checked={} />'),
-    defaultChecked: PropTypes.bool.description('Same as React <input defaultChecked={} />'),
     disabled: PropTypes.bool.description(
       `Same as React <input disabled={} />. Also adds a hidden input element
       with the same name so form submissions work.`,
