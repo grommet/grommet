@@ -43,9 +43,9 @@ export default deepFreeze({
       narrow: {
         xsmall: '1px',
         small: '2px',
-        medium: `${baseSpacing / 8}px`,
-        large: `${baseSpacing / 6}px`,
-        xlarge: `${baseSpacing / 4}px`,
+        medium: `${baseSpacing / 6}px`,
+        large: `${baseSpacing / 4}px`,
+        xlarge: `${baseSpacing / 2}px`,
       },
     },
     breakpoints: {

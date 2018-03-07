@@ -13,11 +13,11 @@ exports[`TextInput closes suggestion drop 1`] = `
   >
     <li>
       <button
-        class="StyledButton-gXzblK dYRvzO"
+        class="StyledButton-gXzblK djbfBD"
         type="button"
       >
         <div
-          class="StyledBox-bStriS gedxom"
+          class="StyledBox-bStriS eibuqJ"
           direction="column"
         >
           test
@@ -26,11 +26,11 @@ exports[`TextInput closes suggestion drop 1`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK dYRvzO"
+        class="StyledButton-gXzblK djbfBD"
         type="button"
       >
         <div
-          class="StyledBox-bStriS gedxom"
+          class="StyledBox-bStriS eibuqJ"
           direction="column"
         >
           test1
@@ -42,8 +42,20 @@ exports[`TextInput closes suggestion drop 1`] = `
 `;
 
 exports[`TextInput closes suggestion drop 2`] = `
-"@media only screen and (min-width:700px) {
-  .dYRvzO {
+"@media only screen and (max-width:699px) {
+  .eibuqJ {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eibuqJ {
+    padding: 4px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .djbfBD {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -139,11 +151,11 @@ exports[`TextInput mounts with complex suggestions 1`] = `
   >
     <li>
       <button
-        class="StyledButton-gXzblK dYRvzO"
+        class="StyledButton-gXzblK djbfBD"
         type="button"
       >
         <div
-          class="StyledBox-bStriS gedxom"
+          class="StyledBox-bStriS eibuqJ"
           direction="column"
         >
           test
@@ -152,11 +164,11 @@ exports[`TextInput mounts with complex suggestions 1`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK dYRvzO"
+        class="StyledButton-gXzblK djbfBD"
         type="button"
       >
         <div
-          class="StyledBox-bStriS gedxom"
+          class="StyledBox-bStriS eibuqJ"
           direction="column"
         >
           test1
@@ -168,8 +180,20 @@ exports[`TextInput mounts with complex suggestions 1`] = `
 `;
 
 exports[`TextInput mounts with complex suggestions 2`] = `
-"@media only screen and (min-width:700px) {
-  .dYRvzO {
+"@media only screen and (max-width:699px) {
+  .eibuqJ {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eibuqJ {
+    padding: 4px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .djbfBD {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -219,11 +243,11 @@ exports[`TextInput mounts with suggestions 1`] = `
   >
     <li>
       <button
-        class="StyledButton-gXzblK dYRvzO"
+        class="StyledButton-gXzblK djbfBD"
         type="button"
       >
         <div
-          class="StyledBox-bStriS gedxom"
+          class="StyledBox-bStriS eibuqJ"
           direction="column"
         >
           test
@@ -232,11 +256,11 @@ exports[`TextInput mounts with suggestions 1`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK dYRvzO"
+        class="StyledButton-gXzblK djbfBD"
         type="button"
       >
         <div
-          class="StyledBox-bStriS gedxom"
+          class="StyledBox-bStriS eibuqJ"
           direction="column"
         >
           test1
@@ -248,8 +272,20 @@ exports[`TextInput mounts with suggestions 1`] = `
 `;
 
 exports[`TextInput mounts with suggestions 2`] = `
-"@media only screen and (min-width:700px) {
-  .dYRvzO {
+"@media only screen and (max-width:699px) {
+  .eibuqJ {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eibuqJ {
+    padding: 4px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .djbfBD {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -299,11 +335,11 @@ exports[`TextInput selects suggestion 1`] = `
   >
     <li>
       <button
-        class="StyledButton-gXzblK dYRvzO"
+        class="StyledButton-gXzblK djbfBD"
         type="button"
       >
         <div
-          class="StyledBox-bStriS gedxom"
+          class="StyledBox-bStriS eibuqJ"
           direction="column"
         >
           test
@@ -312,11 +348,11 @@ exports[`TextInput selects suggestion 1`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK dYRvzO"
+        class="StyledButton-gXzblK djbfBD"
         type="button"
       >
         <div
-          class="StyledBox-bStriS gedxom"
+          class="StyledBox-bStriS eibuqJ"
           direction="column"
         >
           test1
@@ -328,8 +364,20 @@ exports[`TextInput selects suggestion 1`] = `
 `;
 
 exports[`TextInput selects suggestion 2`] = `
-"@media only screen and (min-width:700px) {
-  .dYRvzO {
+"@media only screen and (max-width:699px) {
+  .eibuqJ {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eibuqJ {
+    padding: 4px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .djbfBD {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

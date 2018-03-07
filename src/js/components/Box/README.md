@@ -203,6 +203,7 @@ The orientation to layout the child components in. Defaults to `column`.
 ```
 row
 column
+row-responsive
 ```
 
 **elevation**
@@ -386,8 +387,8 @@ large
 
 **responsive**
 
-Whether children laid out in a row direction should be switched to a
-column layout when the display area narrows.
+Whether margin, pad, and border sizes should be scaled for
+      mobile environments. Defaults to `true`.
 
 ```
 boolean

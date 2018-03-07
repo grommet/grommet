@@ -48,7 +48,7 @@ boolean
 
 **mute**
 
-Enables video muting. This option is best used with the autoPlay flag
+Enables video muting. This option is best used with the autoPlay flag.
 
 ```
 boolean

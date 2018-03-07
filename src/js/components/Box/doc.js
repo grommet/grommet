@@ -140,7 +140,7 @@ particular side of the box`
     responsive: PropTypes.bool.description(
       `Whether margin, pad, and border sizes should be scaled for
       mobile environments.`
-    ),
+    ).defaultValue(true),
     round: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'full']).description(
       'How much to round the corners.'
     ),

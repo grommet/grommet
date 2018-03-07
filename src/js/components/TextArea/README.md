@@ -54,7 +54,7 @@ string
 **plain**
 
 Whether this is a plain textarea with no border or padding.
-Only use this when the containing context provides sufficient affordance
+Only use this when the containing context provides sufficient affordance.
 
 ```
 boolean

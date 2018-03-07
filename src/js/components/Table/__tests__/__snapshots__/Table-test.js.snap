@@ -211,6 +211,26 @@ exports[`TableCell renders 1`] = `
   border-collapse: collapse;
 }
 
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
 <div
   className="c0"
 >
@@ -332,6 +352,26 @@ exports[`TableCell scope renders 1`] = `
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
 }
 
 <div
@@ -501,6 +541,26 @@ exports[`TableCell size renders 1`] = `
 .c1 {
   border-spacing: 0;
   border-collapse: collapse;
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
 }
 
 <div

@@ -101,6 +101,7 @@ small
 medium
 large
 xlarge
+none
 ```
 
 **type**

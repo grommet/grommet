@@ -118,46 +118,46 @@ const justifyStyle = css`
 const wrapStyle = 'flex-wrap: wrap;';
 
 const borderStyle = (data, responsive, theme) => {
-  let style = '';
+  const styles = [];
   const color = colorForName(data.color || 'border', theme);
   const borderSize = data.size || 'xsmall';
   const side = (typeof data === 'string') ? data : data.side || 'all';
   const value = `solid ${theme.global.borderSize[borderSize]} ${color}`;
   const narrowValue = `solid ${theme.global.borderSize.narrow[borderSize]} ${color}`;
   if (side === 'top' || side === 'bottom' || side === 'left' || side === 'right') {
-    style = `border-${side}: ${value};`;
+    styles.push(css`border-${side}: ${value};`);
     if (responsive) {
-      style += palm(`border-${side}: ${narrowValue};`);
+      styles.push(palm(`border-${side}: ${narrowValue};`));
     }
   } else if (side === 'vertical') {
-    style = `
+    styles.push(css`
       border-left: ${value};
       border-right: ${value};
-    `;
+    `);
     if (responsive) {
-      style += palm(`
+      styles.push(palm(`
         border-left: ${narrowValue};
         border-right: ${narrowValue};
-      `);
+      `));
     }
   } else if (side === 'horizontal') {
-    style = `
+    styles.push(css`
       border-top: ${value};
       border-bottom: ${value};
-    `;
+    `);
     if (responsive) {
-      style += palm(`
+      styles.push(palm(`
         border-top: ${narrowValue};
         border-bottom: ${narrowValue};
-      `);
+      `));
     }
   } else {
-    style = `border: ${value};`;
+    styles.push(css`border: ${value};`);
     if (responsive) {
-      style += palm(`border: ${narrowValue};`);
+      styles.push(palm(`border: ${narrowValue};`));
     }
   }
-  return style;
+  return styles;
 };
 
 const ROUND_MAP = {
@@ -167,7 +167,7 @@ const ROUND_MAP = {
 const roundStyle = css`
   border-radius: ${props => ROUND_MAP[props.round] || props.theme.global.edgeSize[props.round]};
   ${props => (props.responsive ? palm(`
-    border-radius: ${ROUND_MAP[props.round] || props.theme.global.narrow.edgeSize[props.round]};
+    border-radius: ${ROUND_MAP[props.round] || props.theme.global.edgeSize.narrow[props.round]};
   `) : '')}
 `;
 
@@ -336,7 +336,7 @@ const StyledBox = styled.div`
   ${props => props.justify && justifyStyle}
   ${props => (props.margin && edgeStyle('margin', props.margin, props.responsive, props.theme))}
   ${props => (props.pad && edgeStyle('padding', props.pad, props.responsive, props.theme))}
-  ${props => props.round && roundStyle(props.round, props.responsive, props.theme)}
+  ${props => props.round && roundStyle}
   ${props => props.wrap && wrapStyle}
   ${props => props.overflow && `overflow: ${props.overflow};`}
   ${props => props.elevation && elevationStyle}
@@ -347,30 +347,6 @@ export default StyledBox.extend`
   ${props => props.theme.box && props.theme.box.extend}
 `;
 
-const gapStyleX = (gap, direction, responsive, theme) => {
-  if (direction === 'column') {
-    return css`
-      height: ${theme.global.edgeSize[gap]};
-      ${responsive ? palm(`
-        height: ${theme.global.edgeSize.narrow[gap]};
-      `) : ''}
-    `;
-  }
-  console.log('!!!', css`
-    width: ${props => props.theme.global.edgeSize[gap]};
-    ${props => (props.responsive ? palm(`
-      width: auto;
-      height: ${props.theme.global.edgeSize.narrow[gap]};
-    `) : '')}
-  `);
-  return css`
-    width: ${theme.global.edgeSize[gap]};
-    ${direction === 'row-responsive' ? palm(`
-      width: auto;
-      height: ${theme.global.edgeSize.narrow[gap]};
-    `) : ''}
-  `;
-};
 const gapStyle = css`
   ${({ direction, gap, responsive, theme: { global: { edgeSize } } }) =>
     (direction === 'column' ? `
@@ -388,9 +364,6 @@ const gapStyle = css`
   }
 `;
 
-export const StyledBoxGapX = styled.div`
-  ${props => props.gap && gapStyleX(props.gap, props.direction, props.responsive, props.theme)};
-`;
 export const StyledBoxGap = styled.div`
   ${props => props.gap && gapStyle};
 `;

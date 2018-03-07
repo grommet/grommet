@@ -93,65 +93,65 @@ export const baseStyle = css`
 
 export const edgeStyle = (kind, data, responsive, theme) => {
   if (typeof data === 'string') {
-    return `
+    return css`
       ${kind}: ${theme.global.edgeSize[data]};
       ${responsive ? palm(`
         ${kind}: ${theme.global.edgeSize.narrow[data]};
       `) : ''}
     `;
   }
-  let result = '';
+  const result = [];
   if (data.horizontal) {
-    result += `
+    result.push(css`
       ${kind}-left: ${theme.global.edgeSize[data.horizontal]};
       ${kind}-right: ${theme.global.edgeSize[data.horizontal]};
       ${responsive ? palm(`
         ${kind}-left: ${theme.global.edgeSize.narrow[data.horizontal]};
         ${kind}-right: ${theme.global.edgeSize.narrow[data.horizontal]};
       `) : ''}
-    `;
+    `);
   }
   if (data.vertical) {
-    result += `
+    result.push(css`
       ${kind}-top: ${theme.global.edgeSize[data.vertical]};
       ${kind}-bottom: ${theme.global.edgeSize[data.vertical]};
       ${responsive ? palm(`
         ${kind}-top: ${theme.global.edgeSize.narrow[data.vertical]};
         ${kind}-bottom: ${theme.global.edgeSize.narrow[data.vertical]};
       `) : ''}
-    `;
+    `);
   }
   if (data.top) {
-    result += `
+    result.push(css`
       ${kind}-top: ${theme.global.edgeSize[data.top]};
       ${responsive ? palm(`
         ${kind}-top: ${theme.global.edgeSize.narrow[data.top]};
       `) : ''}
-    `;
+    `);
   }
   if (data.bottom) {
-    result += `
+    result.push(css`
       ${kind}-bottom: ${theme.global.edgeSize[data.bottom]};
       ${responsive ? palm(`
         ${kind}-bottom: ${theme.global.edgeSize.narrow[data.bottom]};
       `) : ''}
-    `;
+    `);
   }
   if (data.left) {
-    result += `
+    result.push(css`
       ${kind}-left: ${theme.global.edgeSize[data.left]};
       ${responsive ? palm(`
         ${kind}-left: ${theme.global.edgeSize.narrow[data.left]};
       `) : ''}
-    `;
+    `);
   }
   if (data.right) {
-    result += `
+    result.push(css`
       ${kind}-right: ${theme.global.edgeSize[data.right]};
       ${responsive ? palm(`
         ${kind}-right: ${theme.global.edgeSize.narrow[data.left]};
       `) : ''}
-    `;
+    `);
   }
   return result;
 };

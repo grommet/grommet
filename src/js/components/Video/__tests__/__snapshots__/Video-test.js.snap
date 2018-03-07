@@ -268,6 +268,67 @@ exports[`Video autoPlay renders 1`] = `
   cursor: pointer;
 }
 
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c16 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c16 {
+    padding: 4px;
+  }
+}
+
 @media only screen and (min-width:700px) {
   .c5 {
     -webkit-transition: 0.1s ease-in-out;
@@ -819,6 +880,79 @@ exports[`Video controls renders 1`] = `
 
 .c12 {
   cursor: pointer;
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c16 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c16 {
+    padding: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c18 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c18 {
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width:700px) {
@@ -1525,6 +1659,67 @@ exports[`Video fit renders 1`] = `
   cursor: pointer;
 }
 
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c16 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c16 {
+    padding: 4px;
+  }
+}
+
 @media only screen and (min-width:700px) {
   .c5 {
     -webkit-transition: 0.1s ease-in-out;
@@ -2213,6 +2408,67 @@ exports[`Video loop renders 1`] = `
   cursor: pointer;
 }
 
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c16 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c16 {
+    padding: 4px;
+  }
+}
+
 @media only screen and (min-width:700px) {
   .c5 {
     -webkit-transition: 0.1s ease-in-out;
@@ -2701,6 +2957,67 @@ exports[`Video mute renders 1`] = `
   cursor: pointer;
 }
 
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c16 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c16 {
+    padding: 4px;
+  }
+}
+
 @media only screen and (min-width:700px) {
   .c5 {
     -webkit-transition: 0.1s ease-in-out;
@@ -3187,6 +3504,67 @@ exports[`Video renders 1`] = `
 
 .c12 {
   cursor: pointer;
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c16 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c16 {
+    padding: 4px;
+  }
 }
 
 @media only screen and (min-width:700px) {

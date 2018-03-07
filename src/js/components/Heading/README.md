@@ -61,6 +61,15 @@ large
 }
 ```
 
+**responsive**
+
+Whether the font size should be scaled for
+      mobile environments. Defaults to `true`.
+
+```
+boolean
+```
+
 **size**
 
 The font size is primarily driven by the chosen tag. But, it can
