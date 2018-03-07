@@ -28,7 +28,8 @@ export default (WorldMap) => {
       onClick: PropTypes.func,
       onHover: PropTypes.func,
     })).description('Place details.'),
-    selectColor: PropTypes.string.description('Color when selecting.'),
+    hoverColor: PropTypes.string
+      .description('Color when hovering over places while selecting.'),
   };
 
   return DocumentedWorldMap;
