@@ -33,7 +33,8 @@ stretch
 
 **alignContent**
 
-How to align the contents when there is extra space in the cross axis. Defaults to `stretch`.
+How to align the contents when there is extra space in
+        the cross axis. Defaults to `stretch`.
 
 ```
 start
@@ -46,8 +47,8 @@ stretch
 
 **alignSelf**
 
-How to align along the cross axis when contained in a Box or along
-the column axis when contained in a Grid.
+How to align along the cross axis when contained in
+        a Box or along the column axis when contained in a Grid.
 
 ```
 start
@@ -58,9 +59,9 @@ stretch
 
 **animation**
 
-Animation effect(s) to use.
-      'duration' and 'delay' should be in milliseconds.
-      'jiggle' and 'pulse' types are intended for small elements, like icons.
+Animation effect(s) to use. 'duration' and 'delay' should
+        be in milliseconds. 'jiggle' and 'pulse' types are intended for
+        small elements, like icons.
 
 ```
 fadeIn
@@ -131,8 +132,9 @@ zoomOut
 
 **background**
 
-Either a color identifier to use for the background color. For example:
-'neutral-1'. Or, a 'url()' for an image. Dark is not needed if color is provided.
+Either a color identifier to use for the background
+        color. For example: 'neutral-1'. Or, a 'url()' for an image. Dark
+        is not needed if color is provided.
 
 ```
 string
@@ -165,6 +167,7 @@ full
 2/3
 1/4
 3/4
+auto
 ```
 
 **border**
@@ -208,7 +211,8 @@ row-responsive
 
 **elevation**
 
-Elevated height above the underlying context, indicated via a drop shadow. Defaults to `none`.
+Elevated height above the underlying context, indicated
+        via a drop shadow. Defaults to `none`.
 
 ```
 none
@@ -255,7 +259,8 @@ xlarge
 
 **gridArea**
 
-The name of the area to place this Box in inside a parent Grid.
+The name of the area to place
+      this Box in inside a parent Grid.
 
 ```
 string
@@ -285,9 +290,9 @@ stretch
 
 **margin**
 
-The amount of margin around the box. An object can be specified to
-distinguish horizontal margin, vertical margin, and margin on a
-particular side of the box
+The amount of margin around the box. An object can
+        be specified to distinguish horizontal margin, vertical margin, and
+        margin on a particular side of the box
 
 ```
 none
@@ -341,9 +346,9 @@ scroll
 
 **pad**
 
-The amount of padding around the box contents. An object can be specified to
-distinguish horizontal padding, vertical padding, and padding on a
-particular side of the box
+The amount of padding around the box contents. An
+        object can be specified to distinguish horizontal padding, vertical
+        padding, and padding on a particular side of the box
 
 ```
 none
@@ -387,8 +392,8 @@ large
 
 **responsive**
 
-Whether margin, pad, and border sizes should be scaled for
-      mobile environments. Defaults to `true`.
+Whether margin, pad, and border
+      sizes should be scaled for mobile environments. Defaults to `true`.
 
 ```
 boolean
@@ -416,7 +421,8 @@ string
 
 **wrap**
 
-Whether children can wrap if they can't all fit.
+Whether children can wrap if they
+      can't all fit.
 
 ```
 boolean
