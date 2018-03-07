@@ -269,6 +269,7 @@ class WorldMap extends Component {
   onMouseMove = (event) => {
     const { width } = this.state;
     // determine the map coordinates for where the mouse is
+    // containerRef uses the group so we can handle aspect ratio scaling
     const rect = findDOMNode(this.containerRef).getBoundingClientRect();
     const scale = rect.width / width; // since the SVG viewBox might be scaled
     const coords = [
@@ -283,7 +284,7 @@ class WorldMap extends Component {
   }
 
   render() {
-    const { color, onSelectPlace, selectColor, theme, ...rest } = this.props;
+    const { color, onSelectPlace, hoverColor, theme, ...rest } = this.props;
     delete rest.places;
     delete rest.continents;
     const {
@@ -356,7 +357,6 @@ class WorldMap extends Component {
     });
 
     // If the caller is interested in onSelectPlace changes, track where the
-    // user goes.
     let interactiveProps = {};
     if (onSelectPlace) {
       interactiveProps = {
@@ -380,7 +380,7 @@ class WorldMap extends Component {
           <path
             strokeLinecap='round'
             strokeWidth={parseMetricToNum(theme.worldMap.place.active)}
-            stroke={colorForName(selectColor || color || 'light-4', theme)}
+            stroke={colorForName(hoverColor || color || 'light-4', theme)}
             d={d}
           />
         </g>
@@ -389,7 +389,6 @@ class WorldMap extends Component {
 
     return (
       <StyledWorldMap
-        ref={(ref) => { this.containerRef = ref; }}
         viewBox={`${x} ${y} ${width} ${height}`}
         preserveAspectRatio='xMinYMin meet'
         width={width}
@@ -397,7 +396,12 @@ class WorldMap extends Component {
         {...interactiveProps}
         {...rest}
       >
-        <g stroke='none' fill='none' fillRule='evenodd'>
+        <g
+          ref={(ref) => { this.containerRef = ref; }}
+          stroke='none'
+          fill='none'
+          fillRule='evenodd'
+        >
           {continents}
         </g>
         {places}
