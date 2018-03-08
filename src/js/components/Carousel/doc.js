@@ -14,6 +14,8 @@ export default (Carousel) => {
       );
 
   DocumentedCarousel.propTypes = {
+    fill: PropTypes.bool.description(`Whether to expand to fill
+      all of the available width and height in the parent container.`),
     play: PropTypes.number.description(`If specified, the number of
       milliseconds between automatically transitioning to the next child. It
       will loop through all children indefinitely.`),

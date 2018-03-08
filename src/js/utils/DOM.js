@@ -1,5 +1,5 @@
-export function filterByFocusable(elements) {
-  return Array.prototype.filter.call(elements || [], (element) => {
+export const filterByFocusable = elements =>
+  Array.prototype.filter.call(elements || [], (element) => {
     const currentTag = element.tagName.toLowerCase();
     const validTags = /(svg|a|area|input|select|textarea|button|iframe|div)$/;
     const isValidTag = currentTag.match(validTags) && element.focus;
@@ -13,9 +13,8 @@ export function filterByFocusable(elements) {
     }
     return isValidTag;
   });
-}
 
-export function findScrollParents(element, horizontal) {
+export const findScrollParents = (element, horizontal) => {
   const result = [];
   if (element) {
     let parent = element.parentNode;
@@ -38,9 +37,21 @@ export function findScrollParents(element, horizontal) {
     }
   }
   return result;
-}
+};
 
-export function getBodyChildElements() {
+export const getFirstFocusableDescendant = (element) => {
+  const children = element.getElementsByTagName('*');
+  for (let i = 0; i < children.length; i += 1) {
+    const child = children[i];
+    const tagName = child.tagName.toLowerCase();
+    if (tagName === 'input' || tagName === 'select') {
+      return child;
+    }
+  }
+  return undefined;
+};
+
+export const getBodyChildElements = () => {
   const excludeMatch = /^(script|link)$/i;
   const children = [];
   [].forEach.call(document.body.children, (node) => {
@@ -49,14 +60,14 @@ export function getBodyChildElements() {
     }
   });
   return children;
-}
+};
 
-export function getNewContainer() {
+export const getNewContainer = () => {
   // setup DOM
   const container = document.createElement('div');
   document.body.insertBefore(container, document.body.firstChild);
   return container;
-}
+};
 
 export const setTabIndex = tabIndex => (element) => {
   element.setAttribute('tabindex', tabIndex);
@@ -123,10 +134,11 @@ export default {
   filterByFocusable,
   findScrollParents,
   findVisibleParent,
+  getBodyChildElements,
+  getFirstFocusableDescendant,
+  getNewContainer,
   makeNodeFocusable,
   makeNodeUnfocusable,
-  getBodyChildElements,
-  getNewContainer,
   setTabIndex,
   unsetTabIndex,
 };

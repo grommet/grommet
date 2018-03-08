@@ -1,0 +1,2165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  box-sizing: border-box;
+  padding: 11px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  width: 100%;
+  border: none;
+  width: 100%;
+  -webkit-appearance: none;
+}
+
+.c4::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c4:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c4::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c3 {
+  width: 100%;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    border-bottom: solid 1px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+    >
+      <div
+        className="c3"
+      >
+        <input
+          autoComplete="off"
+          className="c4"
+          defaultValue={undefined}
+          id={undefined}
+          onFocus={[Function]}
+          onInput={[Function]}
+          onKeyDown={[Function]}
+          value={undefined}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders border 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 1px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 4px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: solid 12px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 4px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 12px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 1px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 4px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 12px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 1px rgba(0,0,0,0.15);
+  border-right: solid 1px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 2px rgba(0,0,0,0.15);
+  border-right: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 4px rgba(0,0,0,0.15);
+  border-right: solid 4px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 12px rgba(0,0,0,0.15);
+  border-right: solid 12px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 4px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 12px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 1px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 4px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c26 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 12px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c27 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 1px rgba(0,0,0,0.15);
+  border-right: solid 1px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c28 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 2px rgba(0,0,0,0.15);
+  border-right: solid 2px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c29 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 4px rgba(0,0,0,0.15);
+  border-right: solid 4px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c30 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-left: solid 12px rgba(0,0,0,0.15);
+  border-right: solid 12px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    border-bottom: solid 1px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    border: solid 1px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    border: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    border: solid 4px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    border: solid 6px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    border-bottom: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    border-bottom: solid 4px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    border-bottom: solid 6px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    border-left: solid 1px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    border-left: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c12 {
+    border-left: solid 4px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c12 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c12 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    border-left: solid 6px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c14 {
+    border-left: solid 1px rgba(0,0,0,0.15);
+    border-right: solid 1px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c14 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c14 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c15 {
+    border-left: solid 2px rgba(0,0,0,0.15);
+    border-right: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c15 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c15 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c16 {
+    border-left: solid 4px rgba(0,0,0,0.15);
+    border-right: solid 4px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c16 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c16 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c17 {
+    border-left: solid 6px rgba(0,0,0,0.15);
+    border-right: solid 6px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c17 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c17 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c18 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c18 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c19 {
+    border-bottom: solid 1px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c19 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c19 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c20 {
+    border-bottom: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c20 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c20 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c21 {
+    border-bottom: solid 4px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c21 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c21 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c22 {
+    border-bottom: solid 6px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c22 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c22 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c23 {
+    border-left: solid 1px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c23 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c23 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c24 {
+    border-left: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c24 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c24 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c25 {
+    border-left: solid 4px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c25 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c25 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c26 {
+    border-left: solid 6px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c26 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c26 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c27 {
+    border-left: solid 1px rgba(0,0,0,0.15);
+    border-right: solid 1px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c27 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c27 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c28 {
+    border-left: solid 2px rgba(0,0,0,0.15);
+    border-right: solid 2px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c28 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c28 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c29 {
+    border-left: solid 4px rgba(0,0,0,0.15);
+    border-right: solid 4px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c29 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c29 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c30 {
+    border-left: solid 6px rgba(0,0,0,0.15);
+    border-right: solid 6px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c30 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c30 {
+    padding: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c4"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c5"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c7"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c8"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c9"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c10"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c11"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c12"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c13"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c14"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c15"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c16"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c17"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c2"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={
+      Object {
+        "marginBottom": "-1px",
+        "position": undefined,
+        "zIndex": undefined,
+      }
+    }
+  >
+    <div
+      aria-label={undefined}
+      className="c18"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c3"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={
+      Object {
+        "marginBottom": "-2px",
+        "position": undefined,
+        "zIndex": undefined,
+      }
+    }
+  >
+    <div
+      aria-label={undefined}
+      className="c18"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c4"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={
+      Object {
+        "marginBottom": "-4px",
+        "position": undefined,
+        "zIndex": undefined,
+      }
+    }
+  >
+    <div
+      aria-label={undefined}
+      className="c18"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c5"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={
+      Object {
+        "marginBottom": "-12px",
+        "position": undefined,
+        "zIndex": undefined,
+      }
+    }
+  >
+    <div
+      aria-label={undefined}
+      className="c18"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c19"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c18"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c20"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c18"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c21"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c18"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c22"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c18"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c23"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c18"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c24"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c18"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c25"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c18"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c26"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c18"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c27"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c18"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c28"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c18"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c29"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c18"
+      direction="column"
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c30"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c18"
+      direction="column"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders error 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px #FF324D;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: 0;
+}
+
+.c4 {
+  font-size: 16px;
+  line-height: 1.375;
+  color: #FF324D;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    border-bottom: solid 1px #FF324D;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+    >
+      <span
+        className="c4"
+        color="status-critical"
+      >
+        test error
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders help 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: 0;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
+  color: #777777;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+    >
+      <span
+        className="c3"
+        color="dark-5"
+      >
+        test help
+      </span>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c4"
+      direction="column"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders label 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.15);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: 0;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin-bottom: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    border-bottom: solid 1px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="column"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    style={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+    >
+      <span
+        className="c3"
+      >
+        <strong>
+          test label
+        </strong>
+      </span>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c4"
+      direction="column"
+    />
+  </div>
+</div>
+`;
