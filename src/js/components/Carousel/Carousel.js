@@ -1,8 +1,6 @@
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
 
-import { Previous, Next, Subtract } from 'grommet-icons';
-
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
@@ -67,19 +65,21 @@ class Carousel extends Component {
     };
 
   render() {
-    const { children, fill, ...rest } = this.props;
+    const { children, fill, theme, ...rest } = this.props;
     const { activeIndex, priorActiveIndex } = this.state;
 
     const lastIndex = Children.count(children) - 1;
     const onLeft = (activeIndex > 0 ? this.onLeft : undefined);
     const onRight = (activeIndex < lastIndex ? this.onRight : undefined);
 
+    const CurrentIcon = theme.carousel.icons.current;
+
     const selectors = [];
     const wrappedChildren = Children.map(children, (child, index) => {
       selectors.push((
         <Button
           key={index}
-          icon={<Subtract color={activeIndex === index ? 'brand' : undefined} />}
+          icon={<CurrentIcon color={activeIndex === index ? 'brand' : undefined} />}
           onClick={this.onSelect(index)}
         />
       ));
@@ -107,15 +107,18 @@ class Carousel extends Component {
       );
     });
 
+    const NextIcon = theme.carousel.icons.next;
+    const PreviousIcon = theme.carousel.icons.previous;
+
     return (
       <Keyboard onLeft={onLeft} onRight={onRight}>
-        <Stack guidingChild={activeIndex} tabIndex='0' fill={fill} {...rest}>
+        <Stack guidingChild={activeIndex} fill={fill} {...rest}>
           {wrappedChildren}
           <Box fill={true} direction='row' justify='between'>
             <Box fill='vertical'>
               <Button fill='true' onClick={onLeft} hoverIndicator={true}>
                 <Box justify='center'>
-                  <Previous />
+                  <PreviousIcon />
                 </Box>
               </Button>
             </Box>
@@ -127,7 +130,7 @@ class Carousel extends Component {
             <Box fill='vertical'>
               <Button fill='true' onClick={onRight} hoverIndicator={true}>
                 <Box justify='center'>
-                  <Next />
+                  <NextIcon />
                 </Box>
               </Button>
             </Box>

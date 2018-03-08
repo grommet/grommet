@@ -1,18 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Calendar date renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -43,6 +31,18 @@ exports[`Calendar date renders 1`] = `
 .c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c2 {
@@ -1577,18 +1577,6 @@ exports[`Calendar date renders 1`] = `
 `;
 
 exports[`Calendar dates renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -1619,6 +1607,18 @@ exports[`Calendar dates renders 1`] = `
 .c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c2 {
@@ -3155,18 +3155,6 @@ exports[`Calendar dates renders 1`] = `
 `;
 
 exports[`Calendar disabled renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -3197,6 +3185,18 @@ exports[`Calendar disabled renders 1`] = `
 .c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c2 {
@@ -4733,18 +4733,6 @@ exports[`Calendar disabled renders 1`] = `
 `;
 
 exports[`Calendar firstDayOfWeek renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -4775,6 +4763,18 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
 .c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c2 {
@@ -7526,18 +7526,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
 `;
 
 exports[`Calendar renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -7568,6 +7556,18 @@ exports[`Calendar renders 1`] = `
 .c8 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c2 {
@@ -9102,18 +9102,6 @@ exports[`Calendar renders 1`] = `
 `;
 
 exports[`Calendar size renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c8 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -9178,6 +9166,18 @@ exports[`Calendar size renders 1`] = `
 .c26 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c2 {
@@ -9704,7 +9704,11 @@ exports[`Calendar size renders 1`] = `
             className="c6"
             disabled={true}
             href={undefined}
-            icon={<FormPrevious />}
+            icon={
+              <FormPrevious
+                size={undefined}
+              />
+            }
             label={undefined}
             onBlur={[Function]}
             onClick={undefined}
@@ -9722,6 +9726,7 @@ exports[`Calendar size renders 1`] = `
                 className="c8"
                 height="24px"
                 role="img"
+                size={undefined}
                 version="1.1"
                 viewBox="0 0 24 24"
                 width="24px"
@@ -9741,7 +9746,11 @@ exports[`Calendar size renders 1`] = `
             className="c6"
             disabled={true}
             href={undefined}
-            icon={<FormNext />}
+            icon={
+              <FormNext
+                size={undefined}
+              />
+            }
             label={undefined}
             onBlur={[Function]}
             onClick={undefined}
@@ -9759,6 +9768,7 @@ exports[`Calendar size renders 1`] = `
                 className="c8"
                 height="24px"
                 role="img"
+                size={undefined}
                 version="1.1"
                 viewBox="0 0 24 24"
                 width="24px"

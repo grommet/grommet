@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
-import { FormPrevious, FormNext, Previous, Next } from 'grommet-icons';
-
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
@@ -217,6 +215,18 @@ class Calendar extends Component {
       <StyledWeek key={day.getTime()} theme={theme}>{days}</StyledWeek>
     ));
 
+    const PreviousIcon = size === 'small' ? (
+      theme.calendar.icons.small.previous
+    ) : (
+      theme.calendar.icons.previous
+    );
+
+    const NextIcon = size === 'small' ? (
+      theme.calendar.icons.small.next
+    ) : (
+      theme.calendar.icons.next
+    );
+
     return (
       <StyledCalendar size={size} theme={theme} {...rest}>
         <Keyboard
@@ -239,14 +249,13 @@ class Calendar extends Component {
               <Box direction='row' align='center'>
                 <Button
                   a11yTitle={previousMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
-                  icon={size === 'small' ?
-                    <FormPrevious /> : <Previous size={size} />}
+                  icon={<PreviousIcon size={size !== 'small' ? size : undefined} />}
                   onClick={(onSelect && betweenDates(previousMonth, bounds)) ?
                     () => this.setReference(previousMonth) : undefined}
                 />
                 <Button
                   a11yTitle={nextMonth.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
-                  icon={size === 'small' ? <FormNext /> : <Next size={size} />}
+                  icon={<NextIcon size={size !== 'small' ? size : undefined} />}
                   onClick={(onSelect && betweenDates(nextMonth, bounds)) ?
                     () => this.setReference(nextMonth) : undefined}
                 />

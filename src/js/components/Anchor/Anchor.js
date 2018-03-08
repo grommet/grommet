@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
-import { LinkNext } from 'grommet-icons';
-
 import { withFocus, withTheme } from '../hocs';
 
 import StyledAnchor, { StyledIcon } from './StyledAnchor';
@@ -44,8 +42,9 @@ class Anchor extends Component {
     if (icon) {
       anchorIcon = icon;
     } else if (primary) {
+      const Icon = theme.anchor.icons.primary;
       anchorIcon = (
-        <LinkNext color={primary ? 'brand' : undefined} />
+        <Icon color={primary ? 'brand' : undefined} />
       );
     }
 

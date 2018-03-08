@@ -1,18 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Video autoPlay renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -45,6 +33,18 @@ exports[`Video autoPlay renders 1`] = `
 .c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c4 {
@@ -128,29 +128,6 @@ exports[`Video autoPlay renders 1`] = `
   padding-right: 12px;
 }
 
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 12px;
-}
-
 .c5 {
   box-sizing: border-box;
   cursor: pointer;
@@ -191,6 +168,7 @@ exports[`Video autoPlay renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  padding: 12px;
 }
 
 .c6 {
@@ -314,18 +292,6 @@ exports[`Video autoPlay renders 1`] = `
   .c13 {
     padding-left: 4px;
     padding-right: 4px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c16 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c16 {
-    padding: 4px;
   }
 }
 
@@ -508,7 +474,11 @@ exports[`Video autoPlay renders 1`] = `
             className="c15"
             disabled={false}
             href={undefined}
-            icon={undefined}
+            icon={
+              <Actions
+                color="light-1"
+              />
+            }
             id={undefined}
             label={undefined}
             onBlur={[Function]}
@@ -518,10 +488,9 @@ exports[`Video autoPlay renders 1`] = `
             onMouseUp={[Function]}
             type="button"
           >
-            <div
-              aria-label={undefined}
-              className="c16"
-              direction="row"
+            <span
+              aria-hidden={true}
+              className="c6"
             >
               <svg
                 aria-label="Actions"
@@ -540,7 +509,7 @@ exports[`Video autoPlay renders 1`] = `
                   strokeWidth="2"
                 />
               </svg>
-            </div>
+            </span>
           </button>
         </div>
       </div>
@@ -550,18 +519,6 @@ exports[`Video autoPlay renders 1`] = `
 `;
 
 exports[`Video controls renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -596,7 +553,7 @@ exports[`Video controls renders 1`] = `
   stroke: none;
 }
 
-.c19 {
+.c18 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
@@ -605,27 +562,39 @@ exports[`Video controls renders 1`] = `
   stroke: #666666;
 }
 
-.c19 g {
+.c18 g {
   fill: inherit;
   stroke: inherit;
 }
 
-.c19 *:not([stroke])[fill="none"] {
+.c18 *:not([stroke])[fill="none"] {
   stroke-width: 0;
 }
 
-.c19 *[stroke*="#"],
-.c19 *[STROKE*="#"] {
+.c18 *[stroke*="#"],
+.c18 *[STROKE*="#"] {
   stroke: inherit;
   fill: none;
 }
 
-.c19 *[fill-rule],
-.c19 *[FILL-RULE],
-.c19 *[fill*="#"],
-.c19 *[FILL*="#"] {
+.c18 *[fill-rule],
+.c18 *[FILL-RULE],
+.c18 *[fill*="#"],
+.c18 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c4 {
@@ -709,30 +678,7 @@ exports[`Video controls renders 1`] = `
   padding-right: 12px;
 }
 
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 12px;
-}
-
-.c18 {
+.c17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -795,6 +741,7 @@ exports[`Video controls renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  padding: 12px;
 }
 
 .c6 {
@@ -868,7 +815,7 @@ exports[`Video controls renders 1`] = `
   opacity: 1;
 }
 
-.c17 {
+.c16 {
   -webkit-flex: 0 0;
   -ms-flex: 0 0;
   flex: 0 0;
@@ -932,25 +879,13 @@ exports[`Video controls renders 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c16 {
+  .c17 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c16 {
-    padding: 4px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c18 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c18 {
+  .c17 {
     padding: 0;
   }
 }
@@ -1134,7 +1069,11 @@ exports[`Video controls renders 1`] = `
             className="c15"
             disabled={false}
             href={undefined}
-            icon={undefined}
+            icon={
+              <Actions
+                color="light-1"
+              />
+            }
             id={undefined}
             label={undefined}
             onBlur={[Function]}
@@ -1144,10 +1083,9 @@ exports[`Video controls renders 1`] = `
             onMouseUp={[Function]}
             type="button"
           >
-            <div
-              aria-label={undefined}
-              className="c16"
-              direction="row"
+            <span
+              aria-hidden={true}
+              className="c6"
             >
               <svg
                 aria-label="Actions"
@@ -1166,7 +1104,7 @@ exports[`Video controls renders 1`] = `
                   strokeWidth="2"
                 />
               </svg>
-            </div>
+            </span>
           </button>
         </div>
       </div>
@@ -1208,11 +1146,11 @@ exports[`Video controls renders 1`] = `
       <track />
     </video>
     <div
-      className="c17"
+      className="c16"
     >
       <div
         aria-label={undefined}
-        className="c18"
+        className="c17"
         direction="row"
       >
         <button
@@ -1239,7 +1177,7 @@ exports[`Video controls renders 1`] = `
           >
             <svg
               aria-label="Play"
-              className="c19"
+              className="c18"
               color={undefined}
               height="24px"
               role="img"
@@ -1332,7 +1270,11 @@ exports[`Video controls renders 1`] = `
             className="c15"
             disabled={false}
             href={undefined}
-            icon={undefined}
+            icon={
+              <Actions
+                color={undefined}
+              />
+            }
             id={undefined}
             label={undefined}
             onBlur={[Function]}
@@ -1342,14 +1284,13 @@ exports[`Video controls renders 1`] = `
             onMouseUp={[Function]}
             type="button"
           >
-            <div
-              aria-label={undefined}
-              className="c16"
-              direction="row"
+            <span
+              aria-hidden={true}
+              className="c6"
             >
               <svg
                 aria-label="Actions"
-                className="c19"
+                className="c18"
                 color={undefined}
                 height="24px"
                 role="img"
@@ -1364,7 +1305,7 @@ exports[`Video controls renders 1`] = `
                   strokeWidth="2"
                 />
               </svg>
-            </div>
+            </span>
           </button>
         </div>
       </div>
@@ -1374,18 +1315,6 @@ exports[`Video controls renders 1`] = `
 `;
 
 exports[`Video fit renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -1418,6 +1347,18 @@ exports[`Video fit renders 1`] = `
 .c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c4 {
@@ -1501,29 +1442,6 @@ exports[`Video fit renders 1`] = `
   padding-right: 12px;
 }
 
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 12px;
-}
-
 .c5 {
   box-sizing: border-box;
   cursor: pointer;
@@ -1564,6 +1482,7 @@ exports[`Video fit renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  padding: 12px;
 }
 
 .c6 {
@@ -1613,7 +1532,7 @@ exports[`Video fit renders 1`] = `
   background: rgba(0,0,0,0.7);
 }
 
-.c17 {
+.c16 {
   max-width: 100%;
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
@@ -1622,7 +1541,7 @@ exports[`Video fit renders 1`] = `
   object-fit: contain;
 }
 
-.c17::cue {
+.c16::cue {
   background: rgba(0,0,0,0.7);
 }
 
@@ -1705,18 +1624,6 @@ exports[`Video fit renders 1`] = `
   .c13 {
     padding-left: 4px;
     padding-right: 4px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c16 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c16 {
-    padding: 4px;
   }
 }
 
@@ -1899,7 +1806,11 @@ exports[`Video fit renders 1`] = `
             className="c15"
             disabled={false}
             href={undefined}
-            icon={undefined}
+            icon={
+              <Actions
+                color="light-1"
+              />
+            }
             id={undefined}
             label={undefined}
             onBlur={[Function]}
@@ -1909,10 +1820,9 @@ exports[`Video fit renders 1`] = `
             onMouseUp={[Function]}
             type="button"
           >
-            <div
-              aria-label={undefined}
-              className="c16"
-              direction="row"
+            <span
+              aria-hidden={true}
+              className="c6"
             >
               <svg
                 aria-label="Actions"
@@ -1931,7 +1841,7 @@ exports[`Video fit renders 1`] = `
                   strokeWidth="2"
                 />
               </svg>
-            </div>
+            </span>
           </button>
         </div>
       </div>
@@ -1946,7 +1856,7 @@ exports[`Video fit renders 1`] = `
   >
     <video
       autoPlay={false}
-      className="c17"
+      className="c16"
       loop={false}
       onAbort={[Function]}
       onCanPlay={[Function]}
@@ -2099,7 +2009,11 @@ exports[`Video fit renders 1`] = `
             className="c15"
             disabled={false}
             href={undefined}
-            icon={undefined}
+            icon={
+              <Actions
+                color="light-1"
+              />
+            }
             id={undefined}
             label={undefined}
             onBlur={[Function]}
@@ -2109,10 +2023,9 @@ exports[`Video fit renders 1`] = `
             onMouseUp={[Function]}
             type="button"
           >
-            <div
-              aria-label={undefined}
-              className="c16"
-              direction="row"
+            <span
+              aria-hidden={true}
+              className="c6"
             >
               <svg
                 aria-label="Actions"
@@ -2131,7 +2044,7 @@ exports[`Video fit renders 1`] = `
                   strokeWidth="2"
                 />
               </svg>
-            </div>
+            </span>
           </button>
         </div>
       </div>
@@ -2141,18 +2054,6 @@ exports[`Video fit renders 1`] = `
 `;
 
 exports[`Video loop renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -2185,6 +2086,18 @@ exports[`Video loop renders 1`] = `
 .c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c4 {
@@ -2268,29 +2181,6 @@ exports[`Video loop renders 1`] = `
   padding-right: 12px;
 }
 
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 12px;
-}
-
 .c5 {
   box-sizing: border-box;
   cursor: pointer;
@@ -2331,6 +2221,7 @@ exports[`Video loop renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  padding: 12px;
 }
 
 .c6 {
@@ -2454,18 +2345,6 @@ exports[`Video loop renders 1`] = `
   .c13 {
     padding-left: 4px;
     padding-right: 4px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c16 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c16 {
-    padding: 4px;
   }
 }
 
@@ -2648,7 +2527,11 @@ exports[`Video loop renders 1`] = `
             className="c15"
             disabled={false}
             href={undefined}
-            icon={undefined}
+            icon={
+              <Actions
+                color="light-1"
+              />
+            }
             id={undefined}
             label={undefined}
             onBlur={[Function]}
@@ -2658,10 +2541,9 @@ exports[`Video loop renders 1`] = `
             onMouseUp={[Function]}
             type="button"
           >
-            <div
-              aria-label={undefined}
-              className="c16"
-              direction="row"
+            <span
+              aria-hidden={true}
+              className="c6"
             >
               <svg
                 aria-label="Actions"
@@ -2680,7 +2562,7 @@ exports[`Video loop renders 1`] = `
                   strokeWidth="2"
                 />
               </svg>
-            </div>
+            </span>
           </button>
         </div>
       </div>
@@ -2690,18 +2572,6 @@ exports[`Video loop renders 1`] = `
 `;
 
 exports[`Video mute renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -2734,6 +2604,18 @@ exports[`Video mute renders 1`] = `
 .c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c4 {
@@ -2817,29 +2699,6 @@ exports[`Video mute renders 1`] = `
   padding-right: 12px;
 }
 
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 12px;
-}
-
 .c5 {
   box-sizing: border-box;
   cursor: pointer;
@@ -2880,6 +2739,7 @@ exports[`Video mute renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  padding: 12px;
 }
 
 .c6 {
@@ -3003,18 +2863,6 @@ exports[`Video mute renders 1`] = `
   .c13 {
     padding-left: 4px;
     padding-right: 4px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c16 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c16 {
-    padding: 4px;
   }
 }
 
@@ -3197,7 +3045,11 @@ exports[`Video mute renders 1`] = `
             className="c15"
             disabled={false}
             href={undefined}
-            icon={undefined}
+            icon={
+              <Actions
+                color="light-1"
+              />
+            }
             id={undefined}
             label={undefined}
             onBlur={[Function]}
@@ -3207,10 +3059,9 @@ exports[`Video mute renders 1`] = `
             onMouseUp={[Function]}
             type="button"
           >
-            <div
-              aria-label={undefined}
-              className="c16"
-              direction="row"
+            <span
+              aria-hidden={true}
+              className="c6"
             >
               <svg
                 aria-label="Actions"
@@ -3229,7 +3080,7 @@ exports[`Video mute renders 1`] = `
                   strokeWidth="2"
                 />
               </svg>
-            </div>
+            </span>
           </button>
         </div>
       </div>
@@ -3239,18 +3090,6 @@ exports[`Video mute renders 1`] = `
 `;
 
 exports[`Video renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c7 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -3283,6 +3122,18 @@ exports[`Video renders 1`] = `
 .c7 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c4 {
@@ -3366,29 +3217,6 @@ exports[`Video renders 1`] = `
   padding-right: 12px;
 }
 
-.c16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-height: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 12px;
-}
-
 .c5 {
   box-sizing: border-box;
   cursor: pointer;
@@ -3429,6 +3257,7 @@ exports[`Video renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  padding: 12px;
 }
 
 .c6 {
@@ -3552,18 +3381,6 @@ exports[`Video renders 1`] = `
   .c13 {
     padding-left: 4px;
     padding-right: 4px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c16 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c16 {
-    padding: 4px;
   }
 }
 
@@ -3746,7 +3563,11 @@ exports[`Video renders 1`] = `
             className="c15"
             disabled={false}
             href={undefined}
-            icon={undefined}
+            icon={
+              <Actions
+                color="light-1"
+              />
+            }
             id={undefined}
             label={undefined}
             onBlur={[Function]}
@@ -3756,10 +3577,9 @@ exports[`Video renders 1`] = `
             onMouseUp={[Function]}
             type="button"
           >
-            <div
-              aria-label={undefined}
-              className="c16"
-              direction="row"
+            <span
+              aria-hidden={true}
+              className="c6"
             >
               <svg
                 aria-label="Actions"
@@ -3778,7 +3598,7 @@ exports[`Video renders 1`] = `
                   strokeWidth="2"
                 />
               </svg>
-            </div>
+            </span>
           </button>
         </div>
       </div>
