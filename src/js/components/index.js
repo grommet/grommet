@@ -10,6 +10,7 @@ export * from './Diagram';
 export * from './Distribution';
 export * from './Drop';
 export * from './DropButton';
+export * from './FormField';
 export * from './Grid';
 export * from './Grommet';
 export * from './Heading';

@@ -13,6 +13,15 @@ import { Carousel } from 'grommet';
 
 ## Properties
 
+**fill**
+
+Whether to expand to fill
+      all of the available width and height in the parent container.
+
+```
+boolean
+```
+
 **play**
 
 If specified, the number of

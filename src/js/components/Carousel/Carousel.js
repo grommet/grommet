@@ -67,7 +67,7 @@ class Carousel extends Component {
     };
 
   render() {
-    const { children } = this.props;
+    const { children, fill, ...rest } = this.props;
     const { activeIndex, priorActiveIndex } = this.state;
 
     const lastIndex = Children.count(children) - 1;
@@ -109,7 +109,7 @@ class Carousel extends Component {
 
     return (
       <Keyboard onLeft={onLeft} onRight={onRight}>
-        <Stack guidingChild={activeIndex} tabIndex='0'>
+        <Stack guidingChild={activeIndex} tabIndex='0' fill={fill} {...rest}>
           {wrappedChildren}
           <Box fill={true} direction='row' justify='between'>
             <Box fill='vertical'>
