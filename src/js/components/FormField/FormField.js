@@ -2,7 +2,7 @@ import React, { Children, cloneElement, Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
-import { parseMetricToNum } from '../../utils';
+import { parseMetricToNum, getFirstFocusableDescendant } from '../../utils';
 
 import { Box } from '../Box';
 import { Text } from '../Text';
@@ -10,18 +10,6 @@ import { Text } from '../Text';
 import { withTheme } from '../hocs';
 
 import doc from './doc';
-
-const getFirstFocusableDescendant = (element) => {
-  const children = element.getElementsByTagName('*');
-  for (let i = 0; i < children.length; i += 1) {
-    const child = children[i];
-    const tagName = child.tagName.toLowerCase();
-    if (tagName === 'input' || tagName === 'select') {
-      return child;
-    }
-  }
-  return undefined;
-};
 
 class FormField extends Component {
   static defaultProps = {
