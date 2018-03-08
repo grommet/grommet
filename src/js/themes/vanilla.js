@@ -8,7 +8,6 @@ import {
   FormDown,
   FormNext,
   FormPrevious,
-  LinkNext,
   Next,
   Pause,
   Play,
@@ -229,9 +228,6 @@ export default deepFreeze({
     textDecoration: 'none',
     fontWeight: 600,
     color: css`${props => props.theme.global.colors.brand}`,
-    icons: {
-      primary: LinkNext,
-    },
   },
   button: {
     border: {
