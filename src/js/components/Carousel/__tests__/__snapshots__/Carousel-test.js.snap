@@ -8,13 +8,13 @@ exports[`play renders 1`] = `
     class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-bStriS hLXGcf"
+      class="StyledBox-bStriS fTyZvg"
       direction="column"
       overflow="hidden"
       style="position: relative;"
     >
       <div
-        class="StyledBox-bStriS gwcVfH"
+        class="StyledBox-bStriS dFjuei"
         direction="column"
       >
         <img
@@ -24,13 +24,13 @@ exports[`play renders 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS hLXGcf"
+      class="StyledBox-bStriS fTyZvg"
       direction="column"
       overflow="hidden"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
     >
       <div
-        class="StyledBox-bStriS eyelgI"
+        class="StyledBox-bStriS fRWMzb"
         direction="column"
       >
         <img
@@ -40,12 +40,13 @@ exports[`play renders 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS goqSQA"
+      class="StyledBox-bStriS eBXrgH"
       direction="row"
+      tabindex="0"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
     >
       <div
-        class="StyledBox-bStriS TIDVw"
+        class="StyledBox-bStriS jsbzAg"
         direction="column"
       >
         <button
@@ -54,7 +55,7 @@ exports[`play renders 1`] = `
           type="button"
         >
           <div
-            class="StyledBox-bStriS mzwwH"
+            class="StyledBox-bStriS gWhpfl"
             direction="column"
           >
             <svg
@@ -78,11 +79,11 @@ exports[`play renders 1`] = `
         </button>
       </div>
       <div
-        class="StyledBox-bStriS jIVWvO"
+        class="StyledBox-bStriS jxymSV"
         direction="column"
       >
         <div
-          class="StyledBox-bStriS cHAEmV"
+          class="StyledBox-bStriS lcWWay"
           direction="row"
         >
           <button
@@ -143,7 +144,7 @@ exports[`play renders 1`] = `
         </div>
       </div>
       <div
-        class="StyledBox-bStriS TIDVw"
+        class="StyledBox-bStriS jsbzAg"
         direction="column"
       >
         <button
@@ -151,7 +152,7 @@ exports[`play renders 1`] = `
           type="button"
         >
           <div
-            class="StyledBox-bStriS mzwwH"
+            class="StyledBox-bStriS gWhpfl"
             direction="column"
           >
             <svg
@@ -186,13 +187,13 @@ exports[`play renders 2`] = `
     class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-bStriS hLXGcf"
+      class="StyledBox-bStriS fTyZvg"
       direction="column"
       overflow="hidden"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
     >
       <div
-        class="StyledBox-bStriS eyelgI"
+        class="StyledBox-bStriS fRWMzb"
         direction="column"
       >
         <img
@@ -202,13 +203,13 @@ exports[`play renders 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS hLXGcf"
+      class="StyledBox-bStriS fTyZvg"
       direction="column"
       overflow="hidden"
       style="position: relative;"
     >
       <div
-        class="StyledBox-bStriS itYIan"
+        class="StyledBox-bStriS jMrMHL"
         direction="column"
       >
         <img
@@ -218,12 +219,13 @@ exports[`play renders 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS goqSQA"
+      class="StyledBox-bStriS eBXrgH"
       direction="row"
+      tabindex="0"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
     >
       <div
-        class="StyledBox-bStriS TIDVw"
+        class="StyledBox-bStriS jsbzAg"
         direction="column"
       >
         <button
@@ -231,7 +233,7 @@ exports[`play renders 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-bStriS mzwwH"
+            class="StyledBox-bStriS gWhpfl"
             direction="column"
           >
             <svg
@@ -255,11 +257,11 @@ exports[`play renders 2`] = `
         </button>
       </div>
       <div
-        class="StyledBox-bStriS jIVWvO"
+        class="StyledBox-bStriS jxymSV"
         direction="column"
       >
         <div
-          class="StyledBox-bStriS cHAEmV"
+          class="StyledBox-bStriS lcWWay"
           direction="row"
         >
           <button
@@ -320,7 +322,7 @@ exports[`play renders 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-bStriS TIDVw"
+        class="StyledBox-bStriS jsbzAg"
         direction="column"
       >
         <button
@@ -329,7 +331,7 @@ exports[`play renders 2`] = `
           disabled=""
         >
           <div
-            class="StyledBox-bStriS mzwwH"
+            class="StyledBox-bStriS gWhpfl"
             direction="column"
           >
             <svg
@@ -441,6 +443,7 @@ exports[`renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -457,6 +460,7 @@ exports[`renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -472,6 +476,7 @@ exports[`renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -490,6 +495,7 @@ exports[`renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -511,6 +517,7 @@ exports[`renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -527,6 +534,7 @@ exports[`renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -546,6 +554,7 @@ exports[`renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -565,6 +574,7 @@ exports[`renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -792,7 +802,11 @@ exports[`renders 1`] = `
 >
   <div
     className="c1"
+    onBlur={[Function]}
+    onFocus={[Function]}
     onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
   >
     <div
       aria-label={undefined}
@@ -857,6 +871,7 @@ exports[`renders 1`] = `
           "top": 0,
         }
       }
+      tabIndex="0"
     >
       <div
         aria-label={undefined}

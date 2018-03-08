@@ -6,7 +6,7 @@ import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
 
-import { withTheme } from '../hocs';
+import { withFocus, withTheme } from '../hocs';
 
 import doc from './doc';
 
@@ -65,7 +65,7 @@ class Carousel extends Component {
     };
 
   render() {
-    const { children, fill, theme, ...rest } = this.props;
+    const { children, fill, focus, theme, ...rest } = this.props;
     const { activeIndex, priorActiveIndex } = this.state;
 
     const lastIndex = Children.count(children) - 1;
@@ -114,7 +114,7 @@ class Carousel extends Component {
       <Keyboard onLeft={onLeft} onRight={onRight}>
         <Stack guidingChild={activeIndex} fill={fill} {...rest}>
           {wrappedChildren}
-          <Box fill={true} direction='row' justify='between'>
+          <Box tabIndex='0' focus={focus} fill={true} direction='row' justify='between'>
             <Box fill='vertical'>
               <Button fill='true' onClick={onLeft} hoverIndicator={true}>
                 <Box justify='center'>
@@ -147,4 +147,5 @@ if (process.env.NODE_ENV !== 'production') {
 
 export default compose(
   withTheme,
+  withFocus,
 )(Carousel);

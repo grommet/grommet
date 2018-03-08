@@ -17,7 +17,7 @@ exports[`TextInput closes suggestion drop 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS eibuqJ"
+          class="StyledBox-bStriS elZJsV"
           direction="column"
         >
           test
@@ -30,7 +30,7 @@ exports[`TextInput closes suggestion drop 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS eibuqJ"
+          class="StyledBox-bStriS elZJsV"
           direction="column"
         >
           test1
@@ -43,13 +43,13 @@ exports[`TextInput closes suggestion drop 1`] = `
 
 exports[`TextInput closes suggestion drop 2`] = `
 "@media only screen and (max-width:699px) {
-  .eibuqJ {
+  .elZJsV {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eibuqJ {
+  .elZJsV {
     padding: 4px;
   }
 }
@@ -155,7 +155,7 @@ exports[`TextInput mounts with complex suggestions 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS eibuqJ"
+          class="StyledBox-bStriS elZJsV"
           direction="column"
         >
           test
@@ -168,7 +168,7 @@ exports[`TextInput mounts with complex suggestions 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS eibuqJ"
+          class="StyledBox-bStriS elZJsV"
           direction="column"
         >
           test1
@@ -181,13 +181,13 @@ exports[`TextInput mounts with complex suggestions 1`] = `
 
 exports[`TextInput mounts with complex suggestions 2`] = `
 "@media only screen and (max-width:699px) {
-  .eibuqJ {
+  .elZJsV {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eibuqJ {
+  .elZJsV {
     padding: 4px;
   }
 }
@@ -247,7 +247,7 @@ exports[`TextInput mounts with suggestions 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS eibuqJ"
+          class="StyledBox-bStriS elZJsV"
           direction="column"
         >
           test
@@ -260,7 +260,7 @@ exports[`TextInput mounts with suggestions 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS eibuqJ"
+          class="StyledBox-bStriS elZJsV"
           direction="column"
         >
           test1
@@ -273,13 +273,13 @@ exports[`TextInput mounts with suggestions 1`] = `
 
 exports[`TextInput mounts with suggestions 2`] = `
 "@media only screen and (max-width:699px) {
-  .eibuqJ {
+  .elZJsV {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eibuqJ {
+  .elZJsV {
     padding: 4px;
   }
 }
@@ -339,7 +339,7 @@ exports[`TextInput selects suggestion 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS eibuqJ"
+          class="StyledBox-bStriS elZJsV"
           direction="column"
         >
           test
@@ -352,7 +352,7 @@ exports[`TextInput selects suggestion 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS eibuqJ"
+          class="StyledBox-bStriS elZJsV"
           direction="column"
         >
           test1
@@ -365,13 +365,13 @@ exports[`TextInput selects suggestion 1`] = `
 
 exports[`TextInput selects suggestion 2`] = `
 "@media only screen and (max-width:699px) {
-  .eibuqJ {
+  .elZJsV {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eibuqJ {
+  .elZJsV {
     padding: 4px;
   }
 }

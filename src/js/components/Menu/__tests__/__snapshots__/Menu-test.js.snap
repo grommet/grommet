@@ -9,7 +9,7 @@ exports[`Menu opens and closes on click 1`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
-    class="StyledBox-bStriS gwcVfH"
+    class="StyledBox-bStriS dFjuei"
     direction="column"
   >
     <button
@@ -18,7 +18,7 @@ exports[`Menu opens and closes on click 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS fpUbgn"
+        class="StyledBox-bStriS bZmPYO"
         direction="row"
       >
         Test
@@ -45,7 +45,7 @@ exports[`Menu opens and closes on click 1`] = `
       </div>
     </button>
     <div
-      class="StyledBox-bStriS gwcVfH"
+      class="StyledBox-bStriS dFjuei"
       direction="column"
     >
       <button
@@ -54,7 +54,7 @@ exports[`Menu opens and closes on click 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS dUuKPc"
+          class="StyledBox-bStriS iuGoZc"
           direction="row"
         >
           Item 1
@@ -65,7 +65,7 @@ exports[`Menu opens and closes on click 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS dUuKPc"
+          class="StyledBox-bStriS iuGoZc"
           direction="row"
         >
           Item 2
@@ -76,7 +76,7 @@ exports[`Menu opens and closes on click 1`] = `
         href="/test"
       >
         <div
-          class="StyledBox-bStriS dUuKPc"
+          class="StyledBox-bStriS iuGoZc"
           direction="row"
         >
           Item 3
@@ -89,37 +89,37 @@ exports[`Menu opens and closes on click 1`] = `
 
 exports[`Menu opens and closes on click 2`] = `
 "@media only screen and (max-width:699px) {
-  .fpUbgn {
+  .bZmPYO {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .fpUbgn {
+  .bZmPYO {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .gwcVfH {
+  .dFjuei {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .gwcVfH {
+  .dFjuei {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dUuKPc {
+  .iuGoZc {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dUuKPc {
+  .iuGoZc {
     padding: 4px;
   }
 }
@@ -217,7 +217,7 @@ exports[`Menu with custom message renders 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-bStriS fpUbgn"
+      class="StyledBox-bStriS bZmPYO"
       direction="row"
     >
       Test Menu
@@ -255,7 +255,7 @@ exports[`Menu with dropAlign renders 1`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
-    class="StyledBox-bStriS gwcVfH"
+    class="StyledBox-bStriS dFjuei"
     direction="column"
   >
     <button
@@ -264,7 +264,7 @@ exports[`Menu with dropAlign renders 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS fpUbgn"
+        class="StyledBox-bStriS bZmPYO"
         direction="row"
       >
         Test
@@ -291,7 +291,7 @@ exports[`Menu with dropAlign renders 1`] = `
       </div>
     </button>
     <div
-      class="StyledBox-bStriS gwcVfH"
+      class="StyledBox-bStriS dFjuei"
       direction="column"
     >
       <button
@@ -300,7 +300,7 @@ exports[`Menu with dropAlign renders 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS dUuKPc"
+          class="StyledBox-bStriS iuGoZc"
           direction="row"
         >
           Item 1
@@ -312,7 +312,7 @@ exports[`Menu with dropAlign renders 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS dUuKPc"
+          class="StyledBox-bStriS iuGoZc"
           direction="row"
         >
           Item 2
@@ -325,37 +325,37 @@ exports[`Menu with dropAlign renders 1`] = `
 
 exports[`Menu with dropAlign renders 2`] = `
 "@media only screen and (max-width:699px) {
-  .fpUbgn {
+  .bZmPYO {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .fpUbgn {
+  .bZmPYO {
     padding: 4px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .gwcVfH {
+  .dFjuei {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .gwcVfH {
+  .dFjuei {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dUuKPc {
+  .iuGoZc {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dUuKPc {
+  .iuGoZc {
     padding: 4px;
   }
 }
