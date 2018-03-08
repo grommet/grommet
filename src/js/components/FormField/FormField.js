@@ -101,10 +101,10 @@ class FormField extends Component {
             margin={{ vertical: 'xsmall', horizontal: 'small' }}
             gap='xsmall'
           >
-            {label ? <Text><strong>{label}</strong></Text> : null}
-            {help ? <Text color='dark-5'>{help}</Text> : null}
+            {label ? <Text><strong>{label}</strong></Text> : undefined}
+            {help ? <Text color='dark-5'>{help}</Text> : undefined}
           </Box>
-        ) : null}
+        ) : undefined}
         {contents}
         {error ? (
           <Box
@@ -113,7 +113,7 @@ class FormField extends Component {
           >
             <Text color='status-critical'>{error}</Text>
           </Box>
-        ) : null}
+        ) : undefined}
       </Box>
     );
   }
