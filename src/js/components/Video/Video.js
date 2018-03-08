@@ -3,7 +3,6 @@ import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
-import { Actions, ClosedCaption, Expand, Play, Pause, Volume, VolumeLow } from 'grommet-icons';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Menu } from '../Menu';
@@ -243,7 +242,7 @@ class Video extends Component {
   }
 
   renderControls() {
-    const { controls } = this.props;
+    const { controls, theme } = this.props;
     const {
       currentTime, duration, interacting,
       percentagePlayed, playing, scrubTime, volume,
@@ -254,6 +253,16 @@ class Video extends Component {
 
     const formattedTime = formatTime(scrubTime || currentTime || duration);
 
+    const Icons = {
+      ClosedCaption: theme.video.icons.closedCaption,
+      Configure: theme.video.icons.configure,
+      FullScreen: theme.video.icons.fullScreen,
+      Pause: theme.video.icons.pause,
+      Play: theme.video.icons.play,
+      ReduceVolume: theme.video.icons.reduceVolume,
+      Volume: theme.video.icons.volume,
+    };
+
     const captionControls = [];
     if (this.videoRef) {
       const textTracks = findDOMNode(this.videoRef).textTracks;
@@ -261,7 +270,7 @@ class Video extends Component {
         if (textTracks.length === 1) {
           const active = textTracks[0].mode === 'showing';
           captionControls.push({
-            icon: <ClosedCaption color={iconColor} />,
+            icon: <Icons.ClosedCaption color={iconColor} />,
             active,
             onClick: () => this.showCaptions(active ? -1 : 0),
           });
@@ -291,7 +300,7 @@ class Video extends Component {
           background={background}
         >
           <Button
-            icon={playing ? <Pause color={iconColor} /> : <Play color={iconColor} />}
+            icon={playing ? <Icons.Pause color={iconColor} /> : <Icons.Play color={iconColor} />}
             hoverIndicator='background'
             onClick={playing ? this.pause : this.play}
           />
@@ -322,23 +331,23 @@ class Video extends Component {
             </Box>
           </Box>
           <Menu
-            icon={<Actions color={iconColor} />}
+            icon={<Icons.Configure color={iconColor} />}
             dropAlign={{ bottom: 'top', right: 'right' }}
-            background={background || { color: 'light-2', opacity: 'weak' }}
+            dropBackground={background}
             items={[
               {
-                icon: <Volume color={iconColor} />,
+                icon: <Icons.Volume color={iconColor} />,
                 onClick: (volume <= (1 - VOLUME_STEP) ? this.louder : undefined),
                 close: false,
               },
               {
-                icon: <VolumeLow color={iconColor} />,
+                icon: <Icons.ReduceVolume color={iconColor} />,
                 onClick: (volume >= VOLUME_STEP ? this.quieter : undefined),
                 close: false,
               },
               ...captionControls,
               {
-                icon: <Expand color={iconColor} />,
+                icon: <Icons.FullScreen color={iconColor} />,
                 onClick: this.fullscreen,
               },
             ]}

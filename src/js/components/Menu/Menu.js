@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
-
-import { FormDown } from 'grommet-icons';
+import { compose } from 'recompose';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { DropButton } from '../DropButton';
+
+import { withTheme } from '../hocs';
 
 import doc from './doc';
 
@@ -74,17 +75,18 @@ class Menu extends Component {
   render() {
     const {
       dropAlign,
+      dropBackground,
       dropTarget,
-      icon,
       items,
       label,
       messages,
       onKeyDown,
+      theme,
       ...rest
     } = this.props;
     const { activeItemIndex, open } = this.state;
 
-    const menuIcon = icon || <FormDown />;
+    const MenuIcon = theme.menu.icons.down;
 
     const content = (
       <Box
@@ -95,7 +97,7 @@ class Menu extends Component {
         gap='small'
       >
         {label}
-        {menuIcon}
+        <MenuIcon />
       </Box>
     );
 
@@ -122,6 +124,7 @@ class Menu extends Component {
         <div>
           <DropButton
             {...rest}
+            theme={theme}
             a11yTitle={messages.openMenu || 'Open Menu'}
             dropAlign={dropAlign}
             dropTarget={dropTarget}
@@ -129,7 +132,7 @@ class Menu extends Component {
             onOpen={() => this.setState({ open: true })}
             onClose={() => this.setState({ open: false })}
             dropContent={
-              <Box>
+              <Box background={dropBackground}>
                 {dropAlign.top === 'top' ? controlMirror : undefined}
                 <Box>
                   {items.map(
@@ -172,4 +175,6 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Menu);
 }
 
-export default Menu;
+export default compose(
+  withTheme,
+)(Menu);

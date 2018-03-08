@@ -1,6 +1,23 @@
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 
+import {
+  Actions,
+  ClosedCaption,
+  Expand,
+  FormDown,
+  FormNext,
+  FormPrevious,
+  LinkNext,
+  Next,
+  Pause,
+  Play,
+  Previous,
+  Subtract,
+  Volume,
+  VolumeLow,
+} from 'grommet-icons';
+
 import { colorForName, deepFreeze } from '../utils';
 
 const brandColor = '#865CD6';
@@ -212,6 +229,9 @@ export default deepFreeze({
     textDecoration: 'none',
     fontWeight: 600,
     color: css`${props => props.theme.global.colors.brand}`,
+    icons: {
+      primary: LinkNext,
+    },
   },
   button: {
     border: {
@@ -250,6 +270,21 @@ export default deepFreeze({
       lineHeight: 1.11,
       daySize: `${(baseSpacing * 32) / 7}px`,
       slideDuration: '0.8s',
+    },
+    icons: {
+      previous: Previous,
+      next: Next,
+      small: {
+        previous: FormPrevious,
+        next: FormNext,
+      },
+    },
+  },
+  carousel: {
+    icons: {
+      current: Subtract,
+      next: Next,
+      previous: Previous,
     },
   },
   checkBox: {
@@ -368,6 +403,11 @@ export default deepFreeze({
     },
     overlayBackgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
+  menu: {
+    icons: {
+      down: FormDown,
+    },
+  },
   paragraph: {
     // maxWidth chosen to be ~50 characters wide
     // see: https://ux.stackexchange.com/a/34125
@@ -395,6 +435,11 @@ export default deepFreeze({
       color: css`${props => rgba(props.theme.global.colors.text, 0.2)}`,
     },
   },
+  select: {
+    icons: {
+      down: FormDown,
+    },
+  },
   text: {
     medium: { size: '16px', height: 1.375 },
     xsmall: { size: '12px', height: 1.5 },
@@ -406,6 +451,15 @@ export default deepFreeze({
   video: {
     captions: {
       background: rgba(0, 0, 0, 0.7),
+    },
+    icons: {
+      closedCaption: ClosedCaption,
+      configure: Actions,
+      fullScreen: Expand,
+      pause: Pause,
+      play: Play,
+      reduceVolume: VolumeLow,
+      volume: Volume,
     },
   },
   worldMap: {
