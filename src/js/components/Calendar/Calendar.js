@@ -138,7 +138,9 @@ class Calendar extends Component {
   onClickDay = dateString => () => {
     const { onSelect } = this.props;
     this.setState({ active: new Date(dateString) });
-    onSelect(dateString);
+    if (onSelect) {
+      onSelect(dateString);
+    }
   };
 
   render() {

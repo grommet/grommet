@@ -2925,25 +2925,21 @@ exports[`Box fill renders 1`] = `
       aria-label={undefined}
       className="c2"
       direction="column"
-      fill={true}
     />
     <div
       aria-label={undefined}
       className="c1"
       direction="column"
-      fill={false}
     />
     <div
       aria-label={undefined}
       className="c3"
       direction="column"
-      fill="horizontal"
     />
     <div
       aria-label={undefined}
       className="c4"
       direction="column"
-      fill="vertical"
     />
   </div>
 </div>
@@ -4625,13 +4621,11 @@ exports[`Box wrap renders 1`] = `
     aria-label={undefined}
     className="c1"
     direction="column"
-    wrap={true}
   />
   <div
     aria-label={undefined}
     className="c2"
     direction="column"
-    wrap={false}
   />
 </div>
 `;

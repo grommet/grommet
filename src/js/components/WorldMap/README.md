@@ -61,9 +61,9 @@ Place details.
 }]
 ```
 
-**selectColor**
+**hoverColor**
 
-Color when selecting.
+Color when hovering over places while selecting.
 
 ```
 string

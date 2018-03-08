@@ -331,13 +331,13 @@ const StyledBox = styled.div`
   ${props => props.direction && directionStyle}
   ${props => props.flex !== undefined && flexStyle}
   ${props => props.basis && basisStyle}
-  ${props => props.fill && fillStyle(props.fill)}
+  ${props => props.fillContainer && fillStyle(props.fillContainer)}
   ${props => props.gridArea && gridAreaStyle}
   ${props => props.justify && justifyStyle}
   ${props => (props.margin && edgeStyle('margin', props.margin, props.responsive, props.theme))}
   ${props => (props.pad && edgeStyle('padding', props.pad, props.responsive, props.theme))}
   ${props => props.round && roundStyle}
-  ${props => props.wrap && wrapStyle}
+  ${props => props.wrapContents && wrapStyle}
   ${props => props.overflow && `overflow: ${props.overflow};`}
   ${props => props.elevation && elevationStyle}
   ${props => props.animation && animationStyle}
