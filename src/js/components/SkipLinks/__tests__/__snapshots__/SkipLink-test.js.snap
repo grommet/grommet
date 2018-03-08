@@ -14,7 +14,7 @@ exports[`SkipLink mounts 1`] = `
     id="skip-links"
   >
     <div
-      class="StyledBox-bStriS jhZTPH"
+      class="StyledBox-bStriS dGgkam"
       direction="column"
     >
       <h2
@@ -24,11 +24,11 @@ exports[`SkipLink mounts 1`] = `
         :
       </h2>
       <div
-        class="StyledBox-bStriS jftBqn"
+        class="StyledBox-bStriS hvTsjU"
         direction="row"
       >
         <div
-          class="StyledBox-bStriS gOZyOB"
+          class="StyledBox-bStriS gbqAOV"
           direction="column"
         >
           <a
@@ -40,7 +40,7 @@ exports[`SkipLink mounts 1`] = `
           </a>
         </div>
         <div
-          class="StyledBox-bStriS gOZyOB"
+          class="StyledBox-bStriS gbqAOV"
           direction="column"
         >
           <a
@@ -59,38 +59,38 @@ exports[`SkipLink mounts 1`] = `
 
 exports[`SkipLink mounts 2`] = `
 "@media only screen and (max-width:699px) {
-  .jhZTPH {
+  .dGgkam {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jhZTPH {
+  .dGgkam {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jftBqn {
+  .hvTsjU {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jftBqn {
+  .hvTsjU {
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .gOZyOB {
+  .gbqAOV {
     margin: 4px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .gOZyOB {
+  .gbqAOV {
     padding: 0;
   }
 }
@@ -172,7 +172,7 @@ exports[`SkipLink mounts 3`] = `
     id="skip-links"
   >
     <div
-      class="StyledBox-bStriS jhZTPH"
+      class="StyledBox-bStriS dGgkam"
       direction="column"
     >
       <h2
@@ -182,11 +182,11 @@ exports[`SkipLink mounts 3`] = `
         :
       </h2>
       <div
-        class="StyledBox-bStriS jftBqn"
+        class="StyledBox-bStriS hvTsjU"
         direction="row"
       >
         <div
-          class="StyledBox-bStriS gOZyOB"
+          class="StyledBox-bStriS gbqAOV"
           direction="column"
         >
           <a
@@ -198,7 +198,7 @@ exports[`SkipLink mounts 3`] = `
           </a>
         </div>
         <div
-          class="StyledBox-bStriS gOZyOB"
+          class="StyledBox-bStriS gbqAOV"
           direction="column"
         >
           <a
@@ -217,38 +217,38 @@ exports[`SkipLink mounts 3`] = `
 
 exports[`SkipLink mounts 4`] = `
 "@media only screen and (max-width:699px) {
-  .jhZTPH {
+  .dGgkam {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jhZTPH {
+  .dGgkam {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jftBqn {
+  .hvTsjU {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jftBqn {
+  .hvTsjU {
     padding-bottom: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .gOZyOB {
+  .gbqAOV {
     margin: 4px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .gOZyOB {
+  .gbqAOV {
     padding: 0;
   }
 }
@@ -377,7 +377,7 @@ exports[`SkipLink mounts 5`] = `
           id="skip-links"
         >
           <div
-            class="StyledBox-bStriS jhZTPH"
+            class="StyledBox-bStriS dGgkam"
             direction="column"
           >
             <h2
@@ -387,11 +387,11 @@ exports[`SkipLink mounts 5`] = `
               :
             </h2>
             <div
-              class="StyledBox-bStriS jftBqn"
+              class="StyledBox-bStriS hvTsjU"
               direction="row"
             >
               <div
-                class="StyledBox-bStriS gOZyOB"
+                class="StyledBox-bStriS gbqAOV"
                 direction="column"
               >
                 <a
@@ -403,7 +403,7 @@ exports[`SkipLink mounts 5`] = `
                 </a>
               </div>
               <div
-                class="StyledBox-bStriS gOZyOB"
+                class="StyledBox-bStriS gbqAOV"
                 direction="column"
               >
                 <a

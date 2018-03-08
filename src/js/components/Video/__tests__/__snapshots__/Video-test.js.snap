@@ -53,6 +53,7 @@ exports[`Video autoPlay renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -78,6 +79,7 @@ exports[`Video autoPlay renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -100,6 +102,7 @@ exports[`Video autoPlay renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -118,6 +121,7 @@ exports[`Video autoPlay renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -603,6 +607,7 @@ exports[`Video controls renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -628,6 +633,7 @@ exports[`Video controls renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -650,6 +656,7 @@ exports[`Video controls renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -668,6 +675,7 @@ exports[`Video controls renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -684,6 +692,7 @@ exports[`Video controls renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1367,6 +1376,7 @@ exports[`Video fit renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1392,6 +1402,7 @@ exports[`Video fit renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -1414,6 +1425,7 @@ exports[`Video fit renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -1432,6 +1444,7 @@ exports[`Video fit renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -2106,6 +2119,7 @@ exports[`Video loop renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2131,6 +2145,7 @@ exports[`Video loop renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2153,6 +2168,7 @@ exports[`Video loop renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -2171,6 +2187,7 @@ exports[`Video loop renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -2624,6 +2641,7 @@ exports[`Video mute renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2649,6 +2667,7 @@ exports[`Video mute renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2671,6 +2690,7 @@ exports[`Video mute renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -2689,6 +2709,7 @@ exports[`Video mute renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -3142,6 +3163,7 @@ exports[`Video renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3167,6 +3189,7 @@ exports[`Video renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -3189,6 +3212,7 @@ exports[`Video renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -3207,6 +3231,7 @@ exports[`Video renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   min-width: 0;
   -webkit-flex-direction: column;

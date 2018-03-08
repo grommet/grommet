@@ -167,6 +167,7 @@ exports[`TableCell renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -318,6 +319,7 @@ exports[`TableCell scope renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -442,6 +444,7 @@ exports[`TableCell size renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
