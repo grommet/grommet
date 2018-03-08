@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-
-import { FormDown } from 'grommet-icons';
+import { compose } from 'recompose';
 
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { TextInput } from '../TextInput';
+
+import { withTheme } from '../hocs';
 
 import SelectContainer from './SelectContainer';
 import doc from './doc';
@@ -39,6 +40,7 @@ class Select extends Component {
       onClose,
       placeholder,
       plain,
+      theme,
       value,
       ...rest
     } = this.props;
@@ -50,6 +52,8 @@ class Select extends Component {
         onChange(event, ...args);
       }
     };
+
+    const SelectIcon = theme.select.icons.down;
 
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
@@ -88,7 +92,7 @@ class Select extends Component {
               flex={false}
               style={{ minWidth: 'auto' }}
             >
-              <FormDown />
+              <SelectIcon />
             </Box>
           </Box>
         </DropButton>
@@ -101,4 +105,6 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Select);
 }
 
-export default Select;
+export default compose(
+  withTheme,
+)(Select);

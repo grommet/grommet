@@ -125,6 +125,13 @@ exports[`Menu opens and closes on click 2`] = `
 }
 
 @media only screen and (min-width:700px) {
+  .etLvGo {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
   .kGZImI {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
@@ -186,17 +193,18 @@ exports[`Menu opens and closes on click 2`] = `
 exports[`Menu renders 1`] = `
 <div>
   <button
-    class="StyledButton-gXzblK kGZImI"
+    class="StyledButton-gXzblK etLvGo"
     id="test-menu"
     aria-label="Open Menu"
+    icon="[object Object]"
     type="button"
   >
-    <div
-      class="StyledBox-bStriS fpUbgn"
-      direction="row"
+    <span
+      class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+      aria-hidden="true"
     >
       <svg />
-    </div>
+    </span>
   </button>
 </div>
 `;
@@ -349,6 +357,13 @@ exports[`Menu with dropAlign renders 2`] = `
 @media only screen and (max-width:699px) {
   .dUuKPc {
     padding: 4px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .etLvGo {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
   }
 }
 

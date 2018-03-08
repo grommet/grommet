@@ -6,7 +6,6 @@ exports[`play renders 1`] = `
 >
   <div
     class="StyledStack-jqCQsC ewABiA"
-    tabindex="0"
   >
     <div
       class="StyledBox-bStriS hLXGcf"
@@ -185,7 +184,6 @@ exports[`play renders 2`] = `
 >
   <div
     class="StyledStack-jqCQsC ewABiA"
-    tabindex="0"
   >
     <div
       class="StyledBox-bStriS hLXGcf"
@@ -359,18 +357,6 @@ exports[`play renders 2`] = `
 `;
 
 exports[`renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #333333;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
 .c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -435,6 +421,18 @@ exports[`renders 1`] = `
 .c14 *[FILL*="#"] {
   fill: inherit;
   stroke: none;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 .c2 {
@@ -795,7 +793,6 @@ exports[`renders 1`] = `
   <div
     className="c1"
     onKeyDown={[Function]}
-    tabIndex="0"
   >
     <div
       aria-label={undefined}
