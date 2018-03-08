@@ -19,14 +19,6 @@ Same as React <input checked={} />
 boolean
 ```
 
-**defaultChecked**
-
-Same as React <input defaultChecked={} />
-
-```
-boolean
-```
-
 **disabled**
 
 Same as React <input disabled={} />. Also adds a hidden input element

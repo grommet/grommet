@@ -13,7 +13,6 @@ export default (TextArea) => {
     );
 
   DocumentedTextArea.propTypes = {
-    defaultValue: PropTypes.string.description('What text to start with.'),
     id: PropTypes.string.description('The id attribute of the textarea.'),
     focusIndicator: PropTypes.bool.description(
       'Whether the plain textarea should receive a focus outline.'
@@ -24,7 +23,7 @@ export default (TextArea) => {
     ),
     plain: PropTypes.bool.description(
       `Whether this is a plain textarea with no border or padding.
-Only use this when the containing context provides sufficient affordance`
+Only use this when the containing context provides sufficient affordance.`
     ),
     value: PropTypes.string.description('What text to put in the textarea.'),
   };

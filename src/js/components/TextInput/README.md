@@ -11,14 +11,6 @@ import { TextInput } from 'grommet';
 
 ## Properties
 
-**defaultValue**
-
-What text to start with in the input.
-
-```
-string
-```
-
 **dropAlign**
 
 How to align the drop. Defaults to `{

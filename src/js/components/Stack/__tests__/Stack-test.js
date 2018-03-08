@@ -10,7 +10,7 @@ const CONTENTS = [
   <div key={2}>second</div>,
 ];
 
-test('Stack renders', () => {
+test('renders', () => {
   const component = renderer.create(
     <Grommet>
       <Stack>{CONTENTS}</Stack>
@@ -20,7 +20,7 @@ test('Stack renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Stack guidingChild renders', () => {
+test('guidingChild renders', () => {
   const component = renderer.create(
     <Grommet>
       <Stack guidingChild='first'>{CONTENTS}</Stack>
@@ -32,7 +32,7 @@ test('Stack guidingChild renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Stack anchor renders', () => {
+test('anchor renders', () => {
   const component = renderer.create(
     <Grommet>
       <Stack anchor='center'>{CONTENTS}</Stack>
@@ -44,6 +44,17 @@ test('Stack anchor renders', () => {
       <Stack anchor='bottom-left'>{CONTENTS}</Stack>
       <Stack anchor='top-right'>{CONTENTS}</Stack>
       <Stack anchor='bottom-right'>{CONTENTS}</Stack>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('fill renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Stack fill={true}>{CONTENTS}</Stack>
+      <Stack fill={false}>{CONTENTS}</Stack>
     </Grommet>
   );
   const tree = component.toJSON();

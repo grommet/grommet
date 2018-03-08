@@ -11,14 +11,6 @@ import { TextArea } from 'grommet';
 
 ## Properties
 
-**defaultValue**
-
-What text to start with.
-
-```
-string
-```
-
 **id**
 
 The id attribute of the textarea.
@@ -54,7 +46,7 @@ string
 **plain**
 
 Whether this is a plain textarea with no border or padding.
-Only use this when the containing context provides sufficient affordance
+Only use this when the containing context provides sufficient affordance.
 
 ```
 boolean

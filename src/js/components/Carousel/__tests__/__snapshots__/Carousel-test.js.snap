@@ -9,13 +9,13 @@ exports[`play renders 1`] = `
     tabindex="0"
   >
     <div
-      class="StyledBox-bStriS hkLmwk"
+      class="StyledBox-bStriS hLXGcf"
       direction="column"
       overflow="hidden"
       style="position: relative;"
     >
       <div
-        class="StyledBox-bStriS iQipYn"
+        class="StyledBox-bStriS gwcVfH"
         direction="column"
       >
         <img
@@ -25,13 +25,13 @@ exports[`play renders 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS hkLmwk"
+      class="StyledBox-bStriS hLXGcf"
       direction="column"
       overflow="hidden"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
     >
       <div
-        class="StyledBox-bStriS cKpPjS"
+        class="StyledBox-bStriS eyelgI"
         direction="column"
       >
         <img
@@ -41,21 +41,21 @@ exports[`play renders 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS cXbrkz"
+      class="StyledBox-bStriS goqSQA"
       direction="row"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
     >
       <div
-        class="StyledBox-bStriS cMkvKv"
+        class="StyledBox-bStriS TIDVw"
         direction="column"
       >
         <button
-          class="StyledButton-gXzblK fBqgCo"
+          class="StyledButton-gXzblK jZsiZy"
           disabled=""
           type="button"
         >
           <div
-            class="StyledBox-bStriS dmJZzK"
+            class="StyledBox-bStriS mzwwH"
             direction="column"
           >
             <svg
@@ -79,15 +79,15 @@ exports[`play renders 1`] = `
         </button>
       </div>
       <div
-        class="StyledBox-bStriS fzGaWL"
+        class="StyledBox-bStriS jIVWvO"
         direction="column"
       >
         <div
-          class="StyledBox-bStriS bdPbsG"
+          class="StyledBox-bStriS cHAEmV"
           direction="row"
         >
           <button
-            class="StyledButton-gXzblK kjdIsU"
+            class="StyledButton-gXzblK etLvGo"
             icon="[object Object]"
             type="button"
           >
@@ -115,7 +115,7 @@ exports[`play renders 1`] = `
             </span>
           </button>
           <button
-            class="StyledButton-gXzblK kjdIsU"
+            class="StyledButton-gXzblK etLvGo"
             icon="[object Object]"
             type="button"
           >
@@ -144,15 +144,15 @@ exports[`play renders 1`] = `
         </div>
       </div>
       <div
-        class="StyledBox-bStriS cMkvKv"
+        class="StyledBox-bStriS TIDVw"
         direction="column"
       >
         <button
-          class="StyledButton-gXzblK dYRvzO"
+          class="StyledButton-gXzblK djbfBD"
           type="button"
         >
           <div
-            class="StyledBox-bStriS dmJZzK"
+            class="StyledBox-bStriS mzwwH"
             direction="column"
           >
             <svg
@@ -188,13 +188,13 @@ exports[`play renders 2`] = `
     tabindex="0"
   >
     <div
-      class="StyledBox-bStriS hkLmwk"
+      class="StyledBox-bStriS hLXGcf"
       direction="column"
       overflow="hidden"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
     >
       <div
-        class="StyledBox-bStriS cKpPjS"
+        class="StyledBox-bStriS eyelgI"
         direction="column"
       >
         <img
@@ -204,13 +204,13 @@ exports[`play renders 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS hkLmwk"
+      class="StyledBox-bStriS hLXGcf"
       direction="column"
       overflow="hidden"
       style="position: relative;"
     >
       <div
-        class="StyledBox-bStriS bGwMby"
+        class="StyledBox-bStriS itYIan"
         direction="column"
       >
         <img
@@ -220,20 +220,20 @@ exports[`play renders 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS cXbrkz"
+      class="StyledBox-bStriS goqSQA"
       direction="row"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
     >
       <div
-        class="StyledBox-bStriS cMkvKv"
+        class="StyledBox-bStriS TIDVw"
         direction="column"
       >
         <button
-          class="StyledButton-gXzblK dYRvzO"
+          class="StyledButton-gXzblK djbfBD"
           type="button"
         >
           <div
-            class="StyledBox-bStriS dmJZzK"
+            class="StyledBox-bStriS mzwwH"
             direction="column"
           >
             <svg
@@ -257,15 +257,15 @@ exports[`play renders 2`] = `
         </button>
       </div>
       <div
-        class="StyledBox-bStriS fzGaWL"
+        class="StyledBox-bStriS jIVWvO"
         direction="column"
       >
         <div
-          class="StyledBox-bStriS bdPbsG"
+          class="StyledBox-bStriS cHAEmV"
           direction="row"
         >
           <button
-            class="StyledButton-gXzblK kjdIsU"
+            class="StyledButton-gXzblK etLvGo"
             icon="[object Object]"
             type="button"
           >
@@ -292,7 +292,7 @@ exports[`play renders 2`] = `
             </span>
           </button>
           <button
-            class="StyledButton-gXzblK kjdIsU"
+            class="StyledButton-gXzblK etLvGo"
             icon="[object Object]"
             type="button"
           >
@@ -322,16 +322,16 @@ exports[`play renders 2`] = `
         </div>
       </div>
       <div
-        class="StyledBox-bStriS cMkvKv"
+        class="StyledBox-bStriS TIDVw"
         direction="column"
       >
         <button
-          class="StyledButton-gXzblK fBqgCo"
+          class="StyledButton-gXzblK jZsiZy"
           type="button"
           disabled=""
         >
           <div
-            class="StyledBox-bStriS dmJZzK"
+            class="StyledBox-bStriS mzwwH"
             direction="column"
           >
             <svg
@@ -670,6 +670,102 @@ exports[`renders 1`] = `
 
 .c1 {
   position: relative;
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width:700px) {

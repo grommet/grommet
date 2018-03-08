@@ -104,3 +104,14 @@ test('Heading truncate renders', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('responsive renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Heading responsive={true} />
+      <Heading responsive={false} />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});

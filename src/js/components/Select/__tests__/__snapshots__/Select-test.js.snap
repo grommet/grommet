@@ -9,28 +9,28 @@ exports[`Select closes drop on esc 1`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
-    class="StyledBox-bStriS iQipYn"
+    class="StyledBox-bStriS gwcVfH"
     direction="column"
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS feBFzz"
+      class="StyledBox-bStriS eyAnEo"
       direction="column"
       overflow="auto"
     >
       <div
-        class="StyledBox-bStriS jDxevM"
+        class="StyledBox-bStriS dEzmWD"
         direction="column"
         role="menubar"
         tabindex="-1"
       >
         <button
-          class="StyledButton-gXzblK khQPBH"
+          class="StyledButton-gXzblK faBScD"
           role="menuitem"
           type="button"
         >
           <div
-            class="StyledBox-bStriS gedxom"
+            class="StyledBox-bStriS eibuqJ"
             direction="column"
           >
             <span
@@ -41,12 +41,12 @@ exports[`Select closes drop on esc 1`] = `
           </div>
         </button>
         <button
-          class="StyledButton-gXzblK khQPBH"
+          class="StyledButton-gXzblK faBScD"
           role="menuitem"
           type="button"
         >
           <div
-            class="StyledBox-bStriS gedxom"
+            class="StyledBox-bStriS eibuqJ"
             direction="column"
           >
             <span
@@ -63,15 +63,106 @@ exports[`Select closes drop on esc 1`] = `
 `;
 
 exports[`Select closes drop on esc 2`] = `
-"@media only screen and (min-width:700px) {
-  .cfJbKA {
+"@media only screen and (max-width:699px) {
+  .iSuXom {
+    border: solid 1px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .iSuXom {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .iSuXom {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .lafodx {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .lafodx {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gwcVfH {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gwcVfH {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eyAnEo {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eyAnEo {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dEzmWD {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dEzmWD {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eibuqJ {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eibuqJ {
+    padding: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jgAbJr {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jgAbJr {
+    padding: 3px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .kGZImI {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .khQPBH {
+  .faBScD {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -110,13 +201,13 @@ exports[`Select closes drop on esc 2`] = `
 
 exports[`Select closes drop on esc 3`] = `
 <button
-  class="StyledButton-gXzblK cfJbKA"
+  class="StyledButton-gXzblK kGZImI"
   id="test-select"
   aria-label="undefined"
   type="button"
 >
   <div
-    class="StyledBox-bStriS janhJy"
+    class="StyledBox-bStriS iSuXom"
     direction="row"
     aria-hidden="true"
   >
@@ -134,7 +225,7 @@ exports[`Select closes drop on esc 3`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS jagiFv"
+      class="StyledBox-bStriS lafodx"
       direction="column"
       style="min-width: auto;"
     >
@@ -161,13 +252,13 @@ exports[`Select closes drop on esc 3`] = `
 
 exports[`Select closes drop on esc 4`] = `
 <button
-  class="StyledButton-gXzblK cfJbKA"
+  class="StyledButton-gXzblK kGZImI"
   id="test-select"
   aria-label="undefined"
   type="button"
 >
   <div
-    class="StyledBox-bStriS janhJy"
+    class="StyledBox-bStriS iSuXom"
     direction="row"
     aria-hidden="true"
   >
@@ -185,7 +276,7 @@ exports[`Select closes drop on esc 4`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS jagiFv"
+      class="StyledBox-bStriS lafodx"
       direction="column"
       style="min-width: auto;"
     >
@@ -212,13 +303,13 @@ exports[`Select closes drop on esc 4`] = `
 
 exports[`Select mounts 1`] = `
 <button
-  class="StyledButton-gXzblK cfJbKA"
+  class="StyledButton-gXzblK kGZImI"
   id="test-select"
   aria-label="undefined"
   type="button"
 >
   <div
-    class="StyledBox-bStriS janhJy"
+    class="StyledBox-bStriS iSuXom"
     direction="row"
     aria-hidden="true"
   >
@@ -236,7 +327,7 @@ exports[`Select mounts 1`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS jagiFv"
+      class="StyledBox-bStriS lafodx"
       direction="column"
       style="min-width: auto;"
     >
@@ -263,13 +354,13 @@ exports[`Select mounts 1`] = `
 
 exports[`Select mounts 2`] = `
 <button
-  class="StyledButton-gXzblK cfJbKA"
+  class="StyledButton-gXzblK kGZImI"
   id="test-select"
   aria-label="undefined"
   type="button"
 >
   <div
-    class="StyledBox-bStriS janhJy"
+    class="StyledBox-bStriS iSuXom"
     direction="row"
     aria-hidden="true"
   >
@@ -287,7 +378,7 @@ exports[`Select mounts 2`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS jagiFv"
+      class="StyledBox-bStriS lafodx"
       direction="column"
       style="min-width: auto;"
     >
@@ -321,28 +412,28 @@ exports[`Select mounts 3`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
-    class="StyledBox-bStriS iQipYn"
+    class="StyledBox-bStriS gwcVfH"
     direction="column"
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS feBFzz"
+      class="StyledBox-bStriS eyAnEo"
       direction="column"
       overflow="auto"
     >
       <div
-        class="StyledBox-bStriS jDxevM"
+        class="StyledBox-bStriS dEzmWD"
         direction="column"
         role="menubar"
         tabindex="-1"
       >
         <button
-          class="StyledButton-gXzblK khQPBH"
+          class="StyledButton-gXzblK faBScD"
           role="menuitem"
           type="button"
         >
           <div
-            class="StyledBox-bStriS gedxom"
+            class="StyledBox-bStriS eibuqJ"
             direction="column"
           >
             <span
@@ -353,12 +444,12 @@ exports[`Select mounts 3`] = `
           </div>
         </button>
         <button
-          class="StyledButton-gXzblK khQPBH"
+          class="StyledButton-gXzblK faBScD"
           role="menuitem"
           type="button"
         >
           <div
-            class="StyledBox-bStriS gedxom"
+            class="StyledBox-bStriS eibuqJ"
             direction="column"
           >
             <span
@@ -375,15 +466,94 @@ exports[`Select mounts 3`] = `
 `;
 
 exports[`Select mounts 4`] = `
-"@media only screen and (min-width:700px) {
-  .cfJbKA {
+"@media only screen and (max-width:699px) {
+  .iSuXom {
+    border: solid 1px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .iSuXom {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .iSuXom {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .lafodx {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .lafodx {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gwcVfH {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gwcVfH {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eyAnEo {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eyAnEo {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dEzmWD {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dEzmWD {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eibuqJ {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eibuqJ {
+    padding: 4px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .kGZImI {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .khQPBH {
+  .faBScD {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -422,18 +592,18 @@ exports[`Select mounts 4`] = `
 
 exports[`Select mounts 5`] = `
 <div
-  class="StyledBox-bStriS jDxevM"
+  class="StyledBox-bStriS dEzmWD"
   direction="column"
   role="menubar"
   tabindex="-1"
 >
   <button
-    class="StyledButton-gXzblK khQPBH"
+    class="StyledButton-gXzblK faBScD"
     role="menuitem"
     type="button"
   >
     <div
-      class="StyledBox-bStriS gedxom"
+      class="StyledBox-bStriS eibuqJ"
       direction="column"
     >
       <span
@@ -444,12 +614,12 @@ exports[`Select mounts 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-gXzblK khQPBH"
+    class="StyledButton-gXzblK faBScD"
     role="menuitem"
     type="button"
   >
     <div
-      class="StyledBox-bStriS gedxom"
+      class="StyledBox-bStriS eibuqJ"
       direction="column"
     >
       <span
@@ -464,13 +634,13 @@ exports[`Select mounts 5`] = `
 
 exports[`Select mounts with complex options and children 1`] = `
 <button
-  class="StyledButton-gXzblK cfJbKA"
+  class="StyledButton-gXzblK kGZImI"
   id="test-select"
   aria-label="undefined"
   type="button"
 >
   <div
-    class="StyledBox-bStriS janhJy"
+    class="StyledBox-bStriS iSuXom"
     direction="row"
     aria-hidden="true"
   >
@@ -488,7 +658,7 @@ exports[`Select mounts with complex options and children 1`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS jagiFv"
+      class="StyledBox-bStriS lafodx"
       direction="column"
       style="min-width: auto;"
     >
@@ -515,13 +685,13 @@ exports[`Select mounts with complex options and children 1`] = `
 
 exports[`Select mounts with complex options and children 2`] = `
 <button
-  class="StyledButton-gXzblK cfJbKA"
+  class="StyledButton-gXzblK kGZImI"
   id="test-select"
   aria-label="undefined"
   type="button"
 >
   <div
-    class="StyledBox-bStriS janhJy"
+    class="StyledBox-bStriS iSuXom"
     direction="row"
     aria-hidden="true"
   >
@@ -539,7 +709,7 @@ exports[`Select mounts with complex options and children 2`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS jagiFv"
+      class="StyledBox-bStriS lafodx"
       direction="column"
       style="min-width: auto;"
     >
@@ -573,23 +743,23 @@ exports[`Select mounts with complex options and children 3`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
-    class="StyledBox-bStriS iQipYn"
+    class="StyledBox-bStriS gwcVfH"
     direction="column"
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS feBFzz"
+      class="StyledBox-bStriS eyAnEo"
       direction="column"
       overflow="auto"
     >
       <div
-        class="StyledBox-bStriS jDxevM"
+        class="StyledBox-bStriS dEzmWD"
         direction="column"
         role="menubar"
         tabindex="-1"
       >
         <button
-          class="StyledButton-gXzblK khQPBH"
+          class="StyledButton-gXzblK faBScD"
           role="menuitem"
           type="button"
         >
@@ -598,7 +768,7 @@ exports[`Select mounts with complex options and children 3`] = `
           </span>
         </button>
         <button
-          class="StyledButton-gXzblK khQPBH"
+          class="StyledButton-gXzblK faBScD"
           role="menuitem"
           type="button"
         >
@@ -613,15 +783,94 @@ exports[`Select mounts with complex options and children 3`] = `
 `;
 
 exports[`Select mounts with complex options and children 4`] = `
-"@media only screen and (min-width:700px) {
-  .cfJbKA {
+"@media only screen and (max-width:699px) {
+  .iSuXom {
+    border: solid 1px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .iSuXom {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .iSuXom {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .lafodx {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .lafodx {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gwcVfH {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gwcVfH {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eyAnEo {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eyAnEo {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dEzmWD {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dEzmWD {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eibuqJ {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eibuqJ {
+    padding: 4px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .kGZImI {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .khQPBH {
+  .faBScD {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -667,12 +916,12 @@ exports[`Select mounts with search 1`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
-    class="StyledBox-bStriS iQipYn"
+    class="StyledBox-bStriS gwcVfH"
     direction="column"
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS fGEMtx"
+      class="StyledBox-bStriS jgAbJr"
       direction="column"
     >
       <div
@@ -687,23 +936,23 @@ exports[`Select mounts with search 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS feBFzz"
+      class="StyledBox-bStriS eyAnEo"
       direction="column"
       overflow="auto"
     >
       <div
-        class="StyledBox-bStriS jDxevM"
+        class="StyledBox-bStriS dEzmWD"
         direction="column"
         role="menubar"
         tabindex="-1"
       >
         <button
-          class="StyledButton-gXzblK khQPBH"
+          class="StyledButton-gXzblK faBScD"
           role="menuitem"
           type="button"
         >
           <div
-            class="StyledBox-bStriS gedxom"
+            class="StyledBox-bStriS eibuqJ"
             direction="column"
           >
             <span
@@ -714,12 +963,12 @@ exports[`Select mounts with search 1`] = `
           </div>
         </button>
         <button
-          class="StyledButton-gXzblK khQPBH"
+          class="StyledButton-gXzblK faBScD"
           role="menuitem"
           type="button"
         >
           <div
-            class="StyledBox-bStriS gedxom"
+            class="StyledBox-bStriS eibuqJ"
             direction="column"
           >
             <span
@@ -736,15 +985,106 @@ exports[`Select mounts with search 1`] = `
 `;
 
 exports[`Select mounts with search 2`] = `
-"@media only screen and (min-width:700px) {
-  .cfJbKA {
+"@media only screen and (max-width:699px) {
+  .iSuXom {
+    border: solid 1px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .iSuXom {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .iSuXom {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .lafodx {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .lafodx {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gwcVfH {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gwcVfH {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eyAnEo {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eyAnEo {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dEzmWD {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dEzmWD {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eibuqJ {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eibuqJ {
+    padding: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jgAbJr {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jgAbJr {
+    padding: 3px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .kGZImI {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .khQPBH {
+  .faBScD {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -799,12 +1139,12 @@ exports[`Select mounts with search 4`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
-    class="StyledBox-bStriS iQipYn"
+    class="StyledBox-bStriS gwcVfH"
     direction="column"
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS fGEMtx"
+      class="StyledBox-bStriS jgAbJr"
       direction="column"
     >
       <div
@@ -819,23 +1159,23 @@ exports[`Select mounts with search 4`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS feBFzz"
+      class="StyledBox-bStriS eyAnEo"
       direction="column"
       overflow="auto"
     >
       <div
-        class="StyledBox-bStriS jDxevM"
+        class="StyledBox-bStriS dEzmWD"
         direction="column"
         role="menubar"
         tabindex="-1"
       >
         <button
-          class="StyledButton-gXzblK khQPBH"
+          class="StyledButton-gXzblK faBScD"
           role="menuitem"
           type="button"
         >
           <div
-            class="StyledBox-bStriS gedxom"
+            class="StyledBox-bStriS eibuqJ"
             direction="column"
           >
             <span
@@ -846,12 +1186,12 @@ exports[`Select mounts with search 4`] = `
           </div>
         </button>
         <button
-          class="StyledButton-gXzblK khQPBH"
+          class="StyledButton-gXzblK faBScD"
           role="menuitem"
           type="button"
         >
           <div
-            class="StyledBox-bStriS gedxom"
+            class="StyledBox-bStriS eibuqJ"
             direction="column"
           >
             <span
@@ -868,15 +1208,106 @@ exports[`Select mounts with search 4`] = `
 `;
 
 exports[`Select mounts with search 5`] = `
-"@media only screen and (min-width:700px) {
-  .cfJbKA {
+"@media only screen and (max-width:699px) {
+  .iSuXom {
+    border: solid 1px rgba(0,0,0,0.15);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .iSuXom {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .iSuXom {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .lafodx {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .lafodx {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gwcVfH {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gwcVfH {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eyAnEo {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eyAnEo {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dEzmWD {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dEzmWD {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eibuqJ {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .eibuqJ {
+    padding: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jgAbJr {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jgAbJr {
+    padding: 3px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .kGZImI {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .khQPBH {
+  .faBScD {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

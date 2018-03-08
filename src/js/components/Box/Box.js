@@ -18,6 +18,7 @@ class Box extends Component {
   static contextTypes = {
     grommet: PropTypes.object,
   }
+
   static childContextTypes = {
     grommet: PropTypes.object,
   }
@@ -26,14 +27,15 @@ class Box extends Component {
     direction: 'column',
     margin: 'none',
     pad: 'none',
+    responsive: true,
     tag: 'div',
   };
 
   getChildContext() {
     const { grommet } = this.context;
     const { background, theme } = this.props;
-    let dark = false;
     if (background) {
+      let dark = false;
       if (typeof background === 'object') {
         dark = background.dark;
       } else {
@@ -56,6 +58,7 @@ class Box extends Component {
       direction,
       fill, // munged to avoid styled-components putting it in the DOM
       gap,
+      responsive,
       tag,
       theme,
       wrap, // munged to avoid styled-components putting it in the DOM
@@ -82,6 +85,7 @@ class Box extends Component {
                 key={index}
                 gap={gap}
                 direction={direction}
+                responsive={responsive}
                 theme={theme}
               />
             ));
@@ -97,6 +101,7 @@ class Box extends Component {
         direction={direction}
         fillContainer={fill}
         wrapContents={wrap}
+        responsive={responsive}
         theme={theme}
         {...rest}
       >

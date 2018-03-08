@@ -25,7 +25,7 @@ export default (Video) => {
       'Enables continuous video looping.'
     ),
     mute: PropTypes.bool.description(
-      'Enables video muting. This option is best used with the autoPlay flag'
+      'Enables video muting. This option is best used with the autoPlay flag.'
     ),
   };
 

@@ -1,28 +1,39 @@
 import styled, { css } from 'styled-components';
 
-import { colorForName } from '../../utils';
+import { colorForName, palm } from '../../utils';
 
 const marginStyle = (props) => {
   if (typeof props.margin === 'string') {
     const margin = props.theme.global.edgeSize[props.margin];
-    return `
+    const narrowMargin = props.theme.global.edgeSize.narrow[props.margin];
+    return css`
       margin-top: ${margin};
       margin-bottom: ${margin};
+      ${(props.responsive ? palm(`
+        margin-top: ${narrowMargin};
+        margin-bottom: ${narrowMargin};
+      `) : '')}
     `;
   }
-  let result = '';
+  const result = [];
   if (props.margin.top) {
     if (props.margin.top === 'none') {
-      result += 'margin-top: 0;';
+      result.push(css`margin-top: 0;`);
     } else {
-      result += `margin-top: ${props.theme.global.edgeSize[props.margin.top]};`;
+      result.push(css`margin-top: ${props.theme.global.edgeSize[props.margin.top]};`);
+      if (props.responsive) {
+        result.push(palm(`margin-top: ${props.theme.global.edgeSize.narrow[props.margin.top]};`));
+      }
     }
   }
   if (props.margin.bottom) {
     if (props.margin.bottom === 'none') {
-      result += 'margin-bottom: 0;';
+      result.push(css`margin-bottom: 0;`);
     } else {
-      result += `margin-bottom: ${props.theme.global.edgeSize[props.margin.bottom]};`;
+      result.push(css`margin-bottom: ${props.theme.global.edgeSize[props.margin.bottom]};`);
+      if (props.responsive) {
+        result.push(palm(`margin-bottom: ${props.theme.global.edgeSize.narrow[props.margin.bottom]};`));
+      }
     }
   }
   return result;
@@ -32,11 +43,18 @@ const sizeStyle = (props) => {
   // size is a combination of the level and size properties
   const size = props.size || 'medium';
   const data = props.theme.heading.level[props.level][size];
+  const narrowData = props.theme.heading.level[Math.min(props.level + 1, 4)][size];
   return css`
     font-size: ${data.size};
     line-height: ${data.height};
     max-width: ${data.maxWidth};
     font-weight: ${props.theme.heading.weight};
+    ${(props.responsive ? palm(`
+      font-size: ${narrowData.size};
+      line-height: ${narrowData.height};
+      max-width: ${narrowData.maxWidth};
+      font-weight: ${props.theme.heading.weight};
+    `) : '')}
   `;
 };
 

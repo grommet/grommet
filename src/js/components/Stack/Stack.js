@@ -9,7 +9,7 @@ import styleMap from './styleMap';
 
 class Stack extends Component {
   render() {
-    const { anchor, children, guidingChild, ...rest } = this.props;
+    const { anchor, children, fill, guidingChild, ...rest } = this.props;
 
     // make all children but the first absolutely positioned
     const lastIndex = React.Children.count(children) - 1;
@@ -26,6 +26,9 @@ class Stack extends Component {
             ...(child.props || {}).style,
             position: 'relative',
           };
+          if (fill) {
+            style.flex = '1 1';
+          }
           return cloneElement(child, { style });
         }
 
@@ -42,7 +45,7 @@ class Stack extends Component {
     });
 
     return (
-      <StyledStack {...rest}>
+      <StyledStack fillContainer={fill} {...rest}>
         {styledChildren}
       </StyledStack>
     );

@@ -13,6 +13,7 @@ const styledComponents = {
 class Heading extends Component {
   static defaultProps = {
     level: 1,
+    responsive: true,
   };
 
   render() {

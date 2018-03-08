@@ -9,21 +9,21 @@ exports[`Menu opens and closes on click 1`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
-    class="StyledBox-bStriS iQipYn"
+    class="StyledBox-bStriS gwcVfH"
     direction="column"
   >
     <button
-      class="StyledButton-gXzblK ioFkN"
+      class="StyledButton-gXzblK eCeZBH"
       aria-label="Close Menu"
       type="button"
     >
       <div
-        class="StyledBox-bStriS glqlEM"
+        class="StyledBox-bStriS fpUbgn"
         direction="row"
       >
         Test
         <div
-          class="StyledBox__StyledBoxGap-ixLlSs laXbkr"
+          class="StyledBox__StyledBoxGap-ixLlSs ctEUP"
           direction="row"
         />
         <svg
@@ -45,38 +45,38 @@ exports[`Menu opens and closes on click 1`] = `
       </div>
     </button>
     <div
-      class="StyledBox-bStriS iQipYn"
+      class="StyledBox-bStriS gwcVfH"
       direction="column"
     >
       <button
-        class="StyledButton-gXzblK eQPBtm"
+        class="StyledButton-gXzblK dDrPei"
         disabled=""
         type="button"
       >
         <div
-          class="StyledBox-bStriS djNGoG"
+          class="StyledBox-bStriS dUuKPc"
           direction="row"
         >
           Item 1
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK khQPBH"
+        class="StyledButton-gXzblK faBScD"
         type="button"
       >
         <div
-          class="StyledBox-bStriS djNGoG"
+          class="StyledBox-bStriS dUuKPc"
           direction="row"
         >
           Item 2
         </div>
       </button>
       <a
-        class="StyledButton-gXzblK khQPBH"
+        class="StyledButton-gXzblK faBScD"
         href="/test"
       >
         <div
-          class="StyledBox-bStriS djNGoG"
+          class="StyledBox-bStriS dUuKPc"
           direction="row"
         >
           Item 3
@@ -88,29 +88,65 @@ exports[`Menu opens and closes on click 1`] = `
 `;
 
 exports[`Menu opens and closes on click 2`] = `
-"@media only screen and (min-width:700px) {
-  .cfJbKA {
+"@media only screen and (max-width:699px) {
+  .fpUbgn {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .fpUbgn {
+    padding: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gwcVfH {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gwcVfH {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dUuKPc {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dUuKPc {
+    padding: 4px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .kGZImI {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ioFkN {
+  .eCeZBH {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .eQPBtm {
+  .dDrPei {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .khQPBH {
+  .faBScD {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -150,13 +186,13 @@ exports[`Menu opens and closes on click 2`] = `
 exports[`Menu renders 1`] = `
 <div>
   <button
-    class="StyledButton-gXzblK cfJbKA"
+    class="StyledButton-gXzblK kGZImI"
     id="test-menu"
     aria-label="Open Menu"
     type="button"
   >
     <div
-      class="StyledBox-bStriS glqlEM"
+      class="StyledBox-bStriS fpUbgn"
       direction="row"
     >
       <svg />
@@ -168,17 +204,17 @@ exports[`Menu renders 1`] = `
 exports[`Menu with custom message renders 1`] = `
 <div>
   <button
-    class="StyledButton-gXzblK cfJbKA"
+    class="StyledButton-gXzblK kGZImI"
     aria-label="Abrir Menu"
     type="button"
   >
     <div
-      class="StyledBox-bStriS glqlEM"
+      class="StyledBox-bStriS fpUbgn"
       direction="row"
     >
       Test Menu
       <div
-        class="StyledBox__StyledBoxGap-ixLlSs laXbkr"
+        class="StyledBox__StyledBoxGap-ixLlSs ctEUP"
         direction="row"
       />
       <svg
@@ -211,21 +247,21 @@ exports[`Menu with dropAlign renders 1`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
 >
   <div
-    class="StyledBox-bStriS iQipYn"
+    class="StyledBox-bStriS gwcVfH"
     direction="column"
   >
     <button
-      class="StyledButton-gXzblK ioFkN"
+      class="StyledButton-gXzblK eCeZBH"
       aria-label="Close Menu"
       type="button"
     >
       <div
-        class="StyledBox-bStriS glqlEM"
+        class="StyledBox-bStriS fpUbgn"
         direction="row"
       >
         Test
         <div
-          class="StyledBox__StyledBoxGap-ixLlSs laXbkr"
+          class="StyledBox__StyledBoxGap-ixLlSs ctEUP"
           direction="row"
         />
         <svg
@@ -247,28 +283,28 @@ exports[`Menu with dropAlign renders 1`] = `
       </div>
     </button>
     <div
-      class="StyledBox-bStriS iQipYn"
+      class="StyledBox-bStriS gwcVfH"
       direction="column"
     >
       <button
-        class="StyledButton-gXzblK eQPBtm"
+        class="StyledButton-gXzblK dDrPei"
         disabled=""
         type="button"
       >
         <div
-          class="StyledBox-bStriS djNGoG"
+          class="StyledBox-bStriS dUuKPc"
           direction="row"
         >
           Item 1
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK eQPBtm"
+        class="StyledButton-gXzblK dDrPei"
         disabled=""
         type="button"
       >
         <div
-          class="StyledBox-bStriS djNGoG"
+          class="StyledBox-bStriS dUuKPc"
           direction="row"
         >
           Item 2
@@ -280,36 +316,72 @@ exports[`Menu with dropAlign renders 1`] = `
 `;
 
 exports[`Menu with dropAlign renders 2`] = `
-"@media only screen and (min-width:700px) {
-  .cfJbKA {
+"@media only screen and (max-width:699px) {
+  .fpUbgn {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .fpUbgn {
+    padding: 4px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gwcVfH {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .gwcVfH {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dUuKPc {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dUuKPc {
+    padding: 4px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .kGZImI {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ioFkN {
+  .eCeZBH {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .eQPBtm {
+  .dDrPei {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .khQPBH {
+  .faBScD {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kfZQNo {
+  .kZkhbU {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

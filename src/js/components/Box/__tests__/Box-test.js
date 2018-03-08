@@ -19,6 +19,7 @@ test('Box direction renders', () => {
   const component = renderer.create(
     <Grommet>
       <Box direction='row' />
+      <Box direction='row-responsive' />
       <Box direction='column' />
     </Grommet>
   );
@@ -26,16 +27,16 @@ test('Box direction renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-// test('Box responsive renders', () => {
-//   const component = renderer.create(
-//     <Grommet>
-//       <Box responsive={true} />
-//       <Box responsive={false} />
-//     </Grommet>
-//   );
-//   const tree = component.toJSON();
-//   expect(tree).toMatchSnapshot();
-// });
+test('Box responsive renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Box responsive={true} />
+      <Box responsive={false} />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
 
 test('Box wrap renders', () => {
   const component = renderer.create(
