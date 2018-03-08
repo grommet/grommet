@@ -17,17 +17,6 @@ class Select extends Component {
 
   state = { open: false }
 
-  componentWillReceiveProps(nextProps) {
-    const { onClose, value } = nextProps;
-    const { open } = this.state;
-    if (value !== this.props.value) {
-      this.setState({ open: false });
-      if (onClose && open) {
-        onClose();
-      }
-    }
-  }
-
   onOpen = () => {
     this.setState({ open: true });
   }
@@ -42,9 +31,25 @@ class Select extends Component {
 
   render() {
     const {
-      a11yTitle, children, dropAlign, dropTarget, onClose, placeholder, plain, value, ...rest
+      a11yTitle,
+      children,
+      dropAlign,
+      dropTarget,
+      onChange,
+      onClose,
+      placeholder,
+      plain,
+      value,
+      ...rest
     } = this.props;
     const { open } = this.state;
+
+    const onSelectChange = (event, ...args) => {
+      this.onClose();
+      if (onChange) {
+        onChange(event, ...args);
+      }
+    };
 
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
@@ -56,7 +61,7 @@ class Select extends Component {
           onOpen={this.onOpen}
           onClose={this.onClose}
           a11yTitle={`${a11yTitle}${typeof value === 'string' ? `, ${value}` : ''}`}
-          dropContent={<SelectContainer {...this.props} />}
+          dropContent={<SelectContainer {...this.props} onChange={onSelectChange} />}
         >
           <Box
             aria-hidden={true}
