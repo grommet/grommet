@@ -294,8 +294,8 @@ exports[`Video autoPlay renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c13 {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
@@ -882,8 +882,8 @@ exports[`Video controls renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c13 {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
@@ -1635,8 +1635,8 @@ exports[`Video fit renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c13 {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
@@ -2360,8 +2360,8 @@ exports[`Video loop renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c13 {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
@@ -2882,8 +2882,8 @@ exports[`Video mute renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c13 {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
@@ -3404,8 +3404,8 @@ exports[`Video renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c13 {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 

@@ -18,7 +18,7 @@ exports[`Menu opens and closes on click 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS bZmPYO"
+        class="StyledBox-bStriS kMKXvj"
         direction="row"
       >
         Test
@@ -54,7 +54,7 @@ exports[`Menu opens and closes on click 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS iuGoZc"
+          class="StyledBox-bStriS qtlmp"
           direction="row"
         >
           Item 1
@@ -65,7 +65,7 @@ exports[`Menu opens and closes on click 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS iuGoZc"
+          class="StyledBox-bStriS qtlmp"
           direction="row"
         >
           Item 2
@@ -76,7 +76,7 @@ exports[`Menu opens and closes on click 1`] = `
         href="/test"
       >
         <div
-          class="StyledBox-bStriS iuGoZc"
+          class="StyledBox-bStriS qtlmp"
           direction="row"
         >
           Item 3
@@ -89,14 +89,14 @@ exports[`Menu opens and closes on click 1`] = `
 
 exports[`Menu opens and closes on click 2`] = `
 "@media only screen and (max-width:699px) {
-  .bZmPYO {
+  .kMKXvj {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bZmPYO {
-    padding: 4px;
+  .kMKXvj {
+    padding: 6px;
   }
 }
 
@@ -113,14 +113,14 @@ exports[`Menu opens and closes on click 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .iuGoZc {
+  .qtlmp {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iuGoZc {
-    padding: 4px;
+  .qtlmp {
+    padding: 6px;
   }
 }
 
@@ -217,7 +217,7 @@ exports[`Menu with custom message renders 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-bStriS bZmPYO"
+      class="StyledBox-bStriS kMKXvj"
       direction="row"
     >
       Test Menu
@@ -264,7 +264,7 @@ exports[`Menu with dropAlign renders 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS bZmPYO"
+        class="StyledBox-bStriS kMKXvj"
         direction="row"
       >
         Test
@@ -300,7 +300,7 @@ exports[`Menu with dropAlign renders 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS iuGoZc"
+          class="StyledBox-bStriS qtlmp"
           direction="row"
         >
           Item 1
@@ -312,7 +312,7 @@ exports[`Menu with dropAlign renders 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS iuGoZc"
+          class="StyledBox-bStriS qtlmp"
           direction="row"
         >
           Item 2
@@ -325,14 +325,14 @@ exports[`Menu with dropAlign renders 1`] = `
 
 exports[`Menu with dropAlign renders 2`] = `
 "@media only screen and (max-width:699px) {
-  .bZmPYO {
+  .kMKXvj {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bZmPYO {
-    padding: 4px;
+  .kMKXvj {
+    padding: 6px;
   }
 }
 
@@ -349,14 +349,14 @@ exports[`Menu with dropAlign renders 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .iuGoZc {
+  .qtlmp {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iuGoZc {
-    padding: 4px;
+  .qtlmp {
+    padding: 6px;
   }
 }
 

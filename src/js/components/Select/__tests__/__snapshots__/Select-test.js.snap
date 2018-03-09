@@ -30,7 +30,7 @@ exports[`Select closes drop on esc 1`] = `
           type="button"
         >
           <div
-            class="StyledBox-bStriS elZJsV"
+            class="StyledBox-bStriS jXXAwE"
             direction="column"
           >
             <span
@@ -46,7 +46,7 @@ exports[`Select closes drop on esc 1`] = `
           type="button"
         >
           <div
-            class="StyledBox-bStriS elZJsV"
+            class="StyledBox-bStriS jXXAwE"
             direction="column"
           >
             <span
@@ -82,14 +82,14 @@ exports[`Select closes drop on esc 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bxllRF {
-    margin-left: 4px;
-    margin-right: 4px;
+  .kzhXNn {
+    margin-left: 6px;
+    margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bxllRF {
+  .kzhXNn {
     padding: 0;
   }
 }
@@ -131,14 +131,14 @@ exports[`Select closes drop on esc 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .elZJsV {
+  .jXXAwE {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .elZJsV {
-    padding: 4px;
+  .jXXAwE {
+    padding: 6px;
   }
 }
 
@@ -225,7 +225,7 @@ exports[`Select closes drop on esc 3`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS bxllRF"
+      class="StyledBox-bStriS kzhXNn"
       direction="column"
       style="min-width: auto;"
     >
@@ -276,7 +276,7 @@ exports[`Select closes drop on esc 4`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS bxllRF"
+      class="StyledBox-bStriS kzhXNn"
       direction="column"
       style="min-width: auto;"
     >
@@ -327,7 +327,7 @@ exports[`Select mounts 1`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS bxllRF"
+      class="StyledBox-bStriS kzhXNn"
       direction="column"
       style="min-width: auto;"
     >
@@ -378,7 +378,7 @@ exports[`Select mounts 2`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS bxllRF"
+      class="StyledBox-bStriS kzhXNn"
       direction="column"
       style="min-width: auto;"
     >
@@ -433,7 +433,7 @@ exports[`Select mounts 3`] = `
           type="button"
         >
           <div
-            class="StyledBox-bStriS elZJsV"
+            class="StyledBox-bStriS jXXAwE"
             direction="column"
           >
             <span
@@ -449,7 +449,7 @@ exports[`Select mounts 3`] = `
           type="button"
         >
           <div
-            class="StyledBox-bStriS elZJsV"
+            class="StyledBox-bStriS jXXAwE"
             direction="column"
           >
             <span
@@ -485,14 +485,14 @@ exports[`Select mounts 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bxllRF {
-    margin-left: 4px;
-    margin-right: 4px;
+  .kzhXNn {
+    margin-left: 6px;
+    margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bxllRF {
+  .kzhXNn {
     padding: 0;
   }
 }
@@ -534,14 +534,14 @@ exports[`Select mounts 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .elZJsV {
+  .jXXAwE {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .elZJsV {
-    padding: 4px;
+  .jXXAwE {
+    padding: 6px;
   }
 }
 
@@ -603,7 +603,7 @@ exports[`Select mounts 5`] = `
     type="button"
   >
     <div
-      class="StyledBox-bStriS elZJsV"
+      class="StyledBox-bStriS jXXAwE"
       direction="column"
     >
       <span
@@ -619,7 +619,7 @@ exports[`Select mounts 5`] = `
     type="button"
   >
     <div
-      class="StyledBox-bStriS elZJsV"
+      class="StyledBox-bStriS jXXAwE"
       direction="column"
     >
       <span
@@ -658,7 +658,7 @@ exports[`Select mounts with complex options and children 1`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS bxllRF"
+      class="StyledBox-bStriS kzhXNn"
       direction="column"
       style="min-width: auto;"
     >
@@ -709,7 +709,7 @@ exports[`Select mounts with complex options and children 2`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS bxllRF"
+      class="StyledBox-bStriS kzhXNn"
       direction="column"
       style="min-width: auto;"
     >
@@ -802,14 +802,14 @@ exports[`Select mounts with complex options and children 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bxllRF {
-    margin-left: 4px;
-    margin-right: 4px;
+  .kzhXNn {
+    margin-left: 6px;
+    margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bxllRF {
+  .kzhXNn {
     padding: 0;
   }
 }
@@ -851,14 +851,14 @@ exports[`Select mounts with complex options and children 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .elZJsV {
+  .jXXAwE {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .elZJsV {
-    padding: 4px;
+  .jXXAwE {
+    padding: 6px;
   }
 }
 
@@ -952,7 +952,7 @@ exports[`Select mounts with search 1`] = `
           type="button"
         >
           <div
-            class="StyledBox-bStriS elZJsV"
+            class="StyledBox-bStriS jXXAwE"
             direction="column"
           >
             <span
@@ -968,7 +968,7 @@ exports[`Select mounts with search 1`] = `
           type="button"
         >
           <div
-            class="StyledBox-bStriS elZJsV"
+            class="StyledBox-bStriS jXXAwE"
             direction="column"
           >
             <span
@@ -1004,14 +1004,14 @@ exports[`Select mounts with search 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bxllRF {
-    margin-left: 4px;
-    margin-right: 4px;
+  .kzhXNn {
+    margin-left: 6px;
+    margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bxllRF {
+  .kzhXNn {
     padding: 0;
   }
 }
@@ -1053,14 +1053,14 @@ exports[`Select mounts with search 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .elZJsV {
+  .jXXAwE {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .elZJsV {
-    padding: 4px;
+  .jXXAwE {
+    padding: 6px;
   }
 }
 
@@ -1175,7 +1175,7 @@ exports[`Select mounts with search 4`] = `
           type="button"
         >
           <div
-            class="StyledBox-bStriS elZJsV"
+            class="StyledBox-bStriS jXXAwE"
             direction="column"
           >
             <span
@@ -1191,7 +1191,7 @@ exports[`Select mounts with search 4`] = `
           type="button"
         >
           <div
-            class="StyledBox-bStriS elZJsV"
+            class="StyledBox-bStriS jXXAwE"
             direction="column"
           >
             <span
@@ -1227,14 +1227,14 @@ exports[`Select mounts with search 5`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .bxllRF {
-    margin-left: 4px;
-    margin-right: 4px;
+  .kzhXNn {
+    margin-left: 6px;
+    margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bxllRF {
+  .kzhXNn {
     padding: 0;
   }
 }
@@ -1276,14 +1276,14 @@ exports[`Select mounts with search 5`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .elZJsV {
+  .jXXAwE {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .elZJsV {
-    padding: 4px;
+  .jXXAwE {
+    padding: 6px;
   }
 }
 
