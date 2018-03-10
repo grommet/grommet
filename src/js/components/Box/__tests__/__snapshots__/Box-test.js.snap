@@ -3785,7 +3785,7 @@ exports[`Box margin renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    margin: 4px;
+    margin: 6px;
   }
 }
 
@@ -3797,7 +3797,7 @@ exports[`Box margin renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c2 {
-    margin: 6px;
+    margin: 12px;
   }
 }
 
@@ -3809,7 +3809,7 @@ exports[`Box margin renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    margin: 12px;
+    margin: 24px;
   }
 }
 
@@ -3821,8 +3821,8 @@ exports[`Box margin renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: 6px;
+    margin-right: 6px;
   }
 }
 
@@ -3834,8 +3834,8 @@ exports[`Box margin renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c5 {
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin-top: 6px;
+    margin-bottom: 6px;
   }
 }
 
@@ -3847,7 +3847,7 @@ exports[`Box margin renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
 }
 
@@ -3859,7 +3859,7 @@ exports[`Box margin renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c7 {
-    margin-left: 4px;
+    margin-left: 6px;
   }
 }
 
@@ -3883,7 +3883,7 @@ exports[`Box margin renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c9 {
-    margin-top: 4px;
+    margin-top: 6px;
   }
 }
 
@@ -4111,35 +4111,35 @@ exports[`Box pad renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    padding: 4px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c2 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c2 {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c3 {
+  .c2 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c3 {
+  .c2 {
     padding: 12px;
   }
 }
 
 @media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 24px;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .c4 {
     margin: 0;
   }
@@ -4147,8 +4147,8 @@ exports[`Box pad renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
@@ -4160,8 +4160,8 @@ exports[`Box pad renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c5 {
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
@@ -4173,7 +4173,7 @@ exports[`Box pad renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    padding-bottom: 4px;
+    padding-bottom: 6px;
   }
 }
 
@@ -4185,7 +4185,7 @@ exports[`Box pad renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c7 {
-    padding-left: 4px;
+    padding-left: 6px;
   }
 }
 
@@ -4209,7 +4209,7 @@ exports[`Box pad renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c9 {
-    padding-top: 4px;
+    padding-top: 6px;
   }
 }
 
@@ -4519,29 +4519,29 @@ exports[`Box round renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c2 {
-    border-radius: 4px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c3 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c3 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c3 {
     border-radius: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .c4 {
     margin: 0;
   }
@@ -4555,7 +4555,7 @@ exports[`Box round renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
-    border-radius: 12px;
+    border-radius: 24px;
   }
 }
 

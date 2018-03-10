@@ -113,10 +113,10 @@ export default deepFreeze({
       narrow: {
         none: '0',
         xsmall: `${baseSpacing / 8}px`,
-        small: `${baseSpacing / 6}px`,
-        medium: `${baseSpacing / 4}px`,
-        large: `${baseSpacing / 2}px`,
-        xlarge: `${baseSpacing}px`,
+        small: `${baseSpacing / 4}px`,
+        medium: `${baseSpacing / 2}px`,
+        large: `${baseSpacing}px`,
+        xlarge: `${baseSpacing * 2}px`,
       },
     },
     elevation: {
