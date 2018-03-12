@@ -167,6 +167,7 @@ exports[`TableCell renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -219,8 +220,8 @@ exports[`TableCell renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
@@ -318,6 +319,7 @@ exports[`TableCell scope renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -362,8 +364,8 @@ exports[`TableCell scope renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
@@ -442,6 +444,7 @@ exports[`TableCell size renders 1`] = `
   display: -ms-flexbox;
   display: flex;
   box-sizing: border-box;
+  outline: none;
   max-width: 100%;
   -webkit-align-items: flex-start;
   -webkit-box-align: flex-start;
@@ -551,8 +554,8 @@ exports[`TableCell size renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
