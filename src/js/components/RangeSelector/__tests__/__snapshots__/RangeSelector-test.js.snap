@@ -1,0 +1,6161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handles keyboard 1`] = `
+<div
+  class="StyledGrommet-gGRXwz deqpVW"
+>
+  <div
+    class="StyledBox-bStriS cDPnPm"
+    direction="row"
+  >
+    <div
+      class="StyledBox-bStriS jsbzAg"
+      direction="column"
+    />
+    <div
+      class="StyledBox-bStriS bAJywf"
+      direction="column"
+      overflow="visible"
+    >
+      <div
+        class="StyledBox-bStriS eTKZde"
+        aria-label="Lower Bounds"
+        direction="column"
+        style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
+        tabindex="0"
+      >
+        <div
+          class="StyledBox-bStriS iKNwZE"
+          direction="column"
+        >
+          <svg
+            viewBox="0 0 12 12"
+            width="12"
+            height="12"
+          >
+            <circle
+              cx="6"
+              cy="6"
+              r="6"
+              fill="#865CD6"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS IBmMJ"
+      direction="column"
+      style="cursor: ew-resize;"
+    />
+    <div
+      class="StyledBox-bStriS bAJywf"
+      direction="column"
+      overflow="visible"
+    >
+      <div
+        class="StyledBox-bStriS eTKZde"
+        aria-label="Upper Bounds"
+        direction="column"
+        style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
+        tabindex="0"
+      >
+        <div
+          class="StyledBox-bStriS iKNwZE"
+          direction="column"
+        >
+          <svg
+            viewBox="0 0 12 12"
+            width="12"
+            height="12"
+          >
+            <circle
+              cx="6"
+              cy="6"
+              r="6"
+              fill="#865CD6"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS jsbzAg"
+      direction="column"
+    />
+  </div>
+</div>
+`;
+
+exports[`handles mouse 1`] = `
+<div
+  class="StyledGrommet-gGRXwz deqpVW"
+>
+  <div
+    class="StyledBox-bStriS cDPnPm"
+    direction="row"
+  >
+    <div
+      class="StyledBox-bStriS jsbzAg"
+      direction="column"
+    />
+    <div
+      class="StyledBox-bStriS bAJywf"
+      direction="column"
+      overflow="visible"
+    >
+      <div
+        class="StyledBox-bStriS eTKZde"
+        aria-label="Lower Bounds"
+        direction="column"
+        style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
+        tabindex="0"
+      >
+        <div
+          class="StyledBox-bStriS iKNwZE"
+          direction="column"
+        >
+          <svg
+            viewBox="0 0 12 12"
+            width="12"
+            height="12"
+          >
+            <circle
+              cx="6"
+              cy="6"
+              r="6"
+              fill="#865CD6"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS IBmMJ"
+      direction="column"
+      style="cursor: ew-resize;"
+    />
+    <div
+      class="StyledBox-bStriS bAJywf"
+      direction="column"
+      overflow="visible"
+    >
+      <div
+        class="StyledBox-bStriS eTKZde"
+        aria-label="Upper Bounds"
+        direction="column"
+        style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
+        tabindex="0"
+      >
+        <div
+          class="StyledBox-bStriS iKNwZE"
+          direction="column"
+        >
+          <svg
+            viewBox="0 0 12 12"
+            width="12"
+            height="12"
+          >
+            <circle
+              cx="6"
+              cy="6"
+              r="6"
+              fill="#865CD6"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS jsbzAg"
+      direction="column"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 6px;
+  padding: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(134,92,214,0.4);
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`renders color 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 6px;
+  padding: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(0,204,235,0.4);
+  color: #333333;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#00CCEB"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#00CCEB"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`renders direction 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 6px;
+  padding: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(134,92,214,0.4);
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 6px;
+  padding: 0;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(134,92,214,0.4);
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    margin: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    padding: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c7"
+    direction="column"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c7"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c8"
+      direction="row"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c9"
+        direction="row"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "row-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c10"
+          direction="row"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c11"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ns-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c8"
+      direction="row"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c9"
+        direction="row"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "row-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c10"
+          direction="row"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c7"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`renders invert 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 6px;
+  padding: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(134,92,214,0.4);
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(204,204,204,0.4);
+  color: #333333;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c7"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`renders max 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 6px;
+  padding: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(134,92,214,0.4);
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.6078431372549 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.784313725490195 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.6078431372549 0 0",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`renders min 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 6px;
+  padding: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(134,92,214,0.4);
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "9.89010989010989 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.87912087912088 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.23076923076923 0 0",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`renders opacity 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 6px;
+  padding: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(134,92,214,0.4);
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(134,92,214,0.8);
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(134,92,214,0.1);
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c7"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c8"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`renders round 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 6px;
+  padding: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 6px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(134,92,214,0.4);
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 6px;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(134,92,214,0.4);
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 24px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(134,92,214,0.4);
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 24px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 48px;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(134,92,214,0.4);
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 48px;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 100%;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(134,92,214,0.4);
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 100%;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    border-radius: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    border-radius: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    border-radius: 12px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    border-radius: 24px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c12 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c12 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c12 {
+    border-radius: 24px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c13 {
+    border-radius: 100%;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c14 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c14 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c14 {
+    border-radius: 100%;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c7"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c8"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c7"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c9"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c10"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c9"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c11"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c12"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c11"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c13"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c14"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c13"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`renders size 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 6px;
+  padding: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(134,92,214,0.4);
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "19.801980198019802 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "10.89108910891089 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "69.3069306930693 0 0",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`renders step 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #333333;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 6px;
+  padding: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: rgba(134,92,214,0.4);
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+    direction="row"
+    onClick={undefined}
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "18.18181818181818 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Lower Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      direction="column"
+      onMouseDown={undefined}
+      style={
+        Object {
+          "cursor": "ew-resize",
+          "flex": "18.18181818181818 0 0",
+        }
+      }
+    />
+    <div
+      aria-label={undefined}
+      className="c3"
+      direction="column"
+      onKeyDown={[Function]}
+      overflow="visible"
+      style={
+        Object {
+          "flex": "0 0 1px",
+        }
+      }
+    >
+      <div
+        aria-label="Upper Bounds"
+        className="c4"
+        direction="column"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onMouseDown={undefined}
+        style={
+          Object {
+            "cursor": "col-resize",
+            "minHeight": 12,
+            "minWidth": 12,
+            "zIndex": 10,
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          aria-label={undefined}
+          className="c5"
+          direction="column"
+        >
+          <svg
+            height={12}
+            viewBox="0 0 12 12"
+            width={12}
+          >
+            <circle
+              cx={6}
+              cy={6}
+              fill="#865CD6"
+              r={6}
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c2"
+      direction="column"
+      style={
+        Object {
+          "flex": "63.63636363636363 0 0",
+        }
+      }
+    />
+  </div>
+</div>
+`;

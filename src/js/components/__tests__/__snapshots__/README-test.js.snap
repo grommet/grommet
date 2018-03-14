@@ -1963,10 +1963,7 @@ Where to place the drop down. The keys correspond to a side of the drop down.
 The values correspond to a side of the control. For instance,
 {left: 'left', top: 'bottom'} would align the left edges and the top of
 the drop down to the bottom of the control. At most one of left or right and
-one of top or bottom should be specified. Defaults to \`{
-  \\"top\\": \\"top\\",
-  \\"left\\": \\"left\\"
-}\`.
+one of top or bottom should be specified.
 
 \`\`\`
 {
@@ -2039,10 +2036,7 @@ node
 
 **messages**
 
-Custom messages. Used for accessibility by screen readers. Defaults to \`{
-  \\"openMenu\\": \\"Open Menu\\",
-  \\"closeMenu\\": \\"Close Menu\\"
-}\`.
+Custom messages. Used for accessibility by screen readers.
 
 \`\`\`
 {
@@ -2336,6 +2330,133 @@ The current value.
 number
 \`\`\`
   ",
+  "RangeSelector": "## RangeSelector
+A control to allow selecting a range of values.
+
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=rangeselector&module=%2Fsrc%2FRangeSelector.js)
+## Usage
+
+\`\`\`javascript
+import { RangeSelector } from 'grommet';
+<RangeSelector />
+\`\`\`
+
+## Properties
+
+**color**
+
+What color to use to indicate the selection.
+
+\`\`\`
+string
+\`\`\`
+
+**direction**
+
+ Defaults to \`horizontal\`.
+
+\`\`\`
+horizontal
+vertical
+\`\`\`
+
+**invert**
+
+Whether to indicate what has not been selected.
+
+\`\`\`
+boolean
+\`\`\`
+
+**max**
+
+The maximum value permitted. Defaults to \`100\`.
+
+\`\`\`
+number
+\`\`\`
+
+**messages**
+
+Custom messages. Used for accessibility by screen readers.
+
+\`\`\`
+{
+  lower: string,
+  upper: string
+}
+\`\`\`
+
+**min**
+
+The minimum value permitted.
+
+\`\`\`
+number
+\`\`\`
+
+**onChange**
+
+Function that will be called when the user changes one of the
+      values. It will be passed an array of two numbers indicating
+      the new values selected.
+
+\`\`\`
+function
+\`\`\`
+
+**opacity**
+
+ Defaults to \`medium\`.
+
+\`\`\`
+weak
+medium
+strong
+\`\`\`
+
+**round**
+
+How much to round the corners.
+
+\`\`\`
+xsmall
+small
+medium
+large
+full
+\`\`\`
+
+**size**
+
+How thick to make the selection indicator. Defaults to \`medium\`.
+
+\`\`\`
+xxsmall
+xsmall
+small
+medium
+large
+xlarge
+full
+\`\`\`
+
+**step**
+
+The step interval between values. Defaults to \`1\`.
+
+\`\`\`
+number
+\`\`\`
+
+**values**
+
+Required. The current values.
+
+\`\`\`
+[number]
+\`\`\`
+  ",
   "Responsive": "## Responsive
 A react component that handles responsive breakpoints.
 
@@ -2398,7 +2519,7 @@ function
 **dropAlign**
 
 How to align the drop. Defaults to \`{
-  \\"top\\": \\"bottom\\",
+  \\"top\\": \\"top\\",
   \\"left\\": \\"left\\"
 }\`.
 
