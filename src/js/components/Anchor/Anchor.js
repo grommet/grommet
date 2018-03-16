@@ -41,11 +41,6 @@ class Anchor extends Component {
     let anchorIcon;
     if (icon) {
       anchorIcon = icon;
-    } else if (primary) {
-      const Icon = theme.anchor.icons.primary;
-      anchorIcon = (
-        <Icon color={primary ? 'brand' : undefined} />
-      );
     }
 
     if (anchorIcon) {
