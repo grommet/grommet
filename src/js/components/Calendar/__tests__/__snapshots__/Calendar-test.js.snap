@@ -37,7 +37,7 @@ exports[`Calendar date renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -187,10 +187,11 @@ exports[`Calendar date renders 1`] = `
 }
 
 .c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 24px;
   line-height: 1.333;
   max-width: 576px;
-  font-weight: 300;
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -345,7 +346,7 @@ exports[`Calendar date renders 1`] = `
     font-size: 18px;
     line-height: 1.333;
     max-width: 432px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -1616,7 +1617,7 @@ exports[`Calendar dates renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1766,10 +1767,11 @@ exports[`Calendar dates renders 1`] = `
 }
 
 .c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 24px;
   line-height: 1.333;
   max-width: 576px;
-  font-weight: 300;
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -1924,7 +1926,7 @@ exports[`Calendar dates renders 1`] = `
     font-size: 18px;
     line-height: 1.333;
     max-width: 432px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -3197,7 +3199,7 @@ exports[`Calendar disabled renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3347,10 +3349,11 @@ exports[`Calendar disabled renders 1`] = `
 }
 
 .c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 24px;
   line-height: 1.333;
   max-width: 576px;
-  font-weight: 300;
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -3505,7 +3508,7 @@ exports[`Calendar disabled renders 1`] = `
     font-size: 18px;
     line-height: 1.333;
     max-width: 432px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -4778,7 +4781,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4928,10 +4931,11 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
 }
 
 .c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 24px;
   line-height: 1.333;
   max-width: 576px;
-  font-weight: 300;
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -5086,7 +5090,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
     font-size: 18px;
     line-height: 1.333;
     max-width: 432px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -7574,7 +7578,7 @@ exports[`Calendar renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -7724,10 +7728,11 @@ exports[`Calendar renders 1`] = `
 }
 
 .c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 24px;
   line-height: 1.333;
   max-width: 576px;
-  font-weight: 300;
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -7882,7 +7887,7 @@ exports[`Calendar renders 1`] = `
     font-size: 18px;
     line-height: 1.333;
     max-width: 432px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -9187,7 +9192,7 @@ exports[`Calendar size renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -9337,28 +9342,31 @@ exports[`Calendar size renders 1`] = `
 }
 
 .c19 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 24px;
   line-height: 1.333;
   max-width: 576px;
-  font-weight: 300;
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 18px;
   line-height: 1.333;
   max-width: 432px;
-  font-weight: 300;
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .c25 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 36px;
   line-height: 1.23;
   max-width: 864px;
-  font-weight: 300;
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -9643,7 +9651,7 @@ exports[`Calendar size renders 1`] = `
     font-size: 18px;
     line-height: 1.333;
     max-width: 432px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -9659,7 +9667,7 @@ exports[`Calendar size renders 1`] = `
     font-size: 16px;
     line-height: 1.375;
     max-width: 384px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -9675,7 +9683,7 @@ exports[`Calendar size renders 1`] = `
     font-size: 24px;
     line-height: 1.333;
     max-width: 576px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 

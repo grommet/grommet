@@ -2,7 +2,7 @@
 
 exports[`TextInput closes suggestion drop 1`] = `
 <div
-  class="StyledDrop-bCWxPe gcEofR"
+  class="StyledDrop-bCWxPe eTlFvx"
   tabindex="-1"
   id="text-input-drop__item"
   target="[object Object]"
@@ -63,11 +63,11 @@ exports[`TextInput closes suggestion drop 2`] = `
 
 
 
-.gcEofR {
+.eTlFvx {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -80,7 +80,7 @@ exports[`TextInput closes suggestion drop 2`] = `
   overflow: auto;
   outline: none;
   background-color: #f8f8f8;
-  color: #333333;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -94,13 +94,13 @@ exports[`TextInput closes suggestion drop 2`] = `
 
 exports[`TextInput closes suggestion drop 3`] = `
 <div
-  class="StyledGrommet-gGRXwz deqpVW"
+  class="StyledGrommet-gGRXwz hSKpsq"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
   >
     <input
-      class="StyledTextInput-bzOzsW zdvFG"
+      class="StyledTextInput-bzOzsW humfzt"
       id="item"
       autocomplete="off"
       name="item"
@@ -111,13 +111,13 @@ exports[`TextInput closes suggestion drop 3`] = `
 
 exports[`TextInput handles next and previous without suggestion 1`] = `
 <div
-  class="StyledGrommet-gGRXwz deqpVW"
+  class="StyledGrommet-gGRXwz hSKpsq"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
   >
     <input
-      class="StyledTextInput-bzOzsW zdvFG"
+      class="StyledTextInput-bzOzsW humfzt"
       id="item"
       autocomplete="off"
       name="item"
@@ -131,7 +131,7 @@ exports[`TextInput mounts 1`] = `
   class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
 >
   <input
-    class="StyledTextInput-bzOzsW zdvFG"
+    class="StyledTextInput-bzOzsW humfzt"
     autocomplete="off"
     name="item"
   />
@@ -140,7 +140,7 @@ exports[`TextInput mounts 1`] = `
 
 exports[`TextInput mounts with complex suggestions 1`] = `
 <div
-  class="StyledDrop-bCWxPe gcEofR"
+  class="StyledDrop-bCWxPe eTlFvx"
   tabindex="-1"
   id="text-input-drop__item"
   target="[object Object]"
@@ -201,11 +201,11 @@ exports[`TextInput mounts with complex suggestions 2`] = `
 
 
 
-.gcEofR {
+.eTlFvx {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -218,7 +218,7 @@ exports[`TextInput mounts with complex suggestions 2`] = `
   overflow: auto;
   outline: none;
   background-color: #f8f8f8;
-  color: #333333;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -232,7 +232,7 @@ exports[`TextInput mounts with complex suggestions 2`] = `
 
 exports[`TextInput mounts with suggestions 1`] = `
 <div
-  class="StyledDrop-bCWxPe gcEofR"
+  class="StyledDrop-bCWxPe eTlFvx"
   tabindex="-1"
   id="text-input-drop__item"
   target="[object Object]"
@@ -293,11 +293,11 @@ exports[`TextInput mounts with suggestions 2`] = `
 
 
 
-.gcEofR {
+.eTlFvx {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -310,7 +310,7 @@ exports[`TextInput mounts with suggestions 2`] = `
   overflow: auto;
   outline: none;
   background-color: #f8f8f8;
-  color: #333333;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -324,7 +324,7 @@ exports[`TextInput mounts with suggestions 2`] = `
 
 exports[`TextInput selects suggestion 1`] = `
 <div
-  class="StyledDrop-bCWxPe gcEofR"
+  class="StyledDrop-bCWxPe eTlFvx"
   tabindex="-1"
   id="text-input-drop__item"
   target="[object Object]"
@@ -385,11 +385,11 @@ exports[`TextInput selects suggestion 2`] = `
 
 
 
-.gcEofR {
+.eTlFvx {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -402,7 +402,7 @@ exports[`TextInput selects suggestion 2`] = `
   overflow: auto;
   outline: none;
   background-color: #f8f8f8;
-  color: #333333;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -416,13 +416,13 @@ exports[`TextInput selects suggestion 2`] = `
 
 exports[`TextInput selects suggestion 3`] = `
 <div
-  class="StyledGrommet-gGRXwz deqpVW"
+  class="StyledGrommet-gGRXwz hSKpsq"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
   >
     <input
-      class="StyledTextInput-bzOzsW gAbvjB"
+      class="StyledTextInput-bzOzsW hjHbnR"
       id="item"
       autocomplete="off"
       name="item"

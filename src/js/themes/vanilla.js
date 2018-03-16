@@ -20,23 +20,23 @@ import {
 import { colorForName, deepFreeze } from '../utils';
 
 const brandColor = '#865CD6';
-const accentColors = ['#00CCEB', '#FF7D28', '#915591'];
-const neutralColors = ['#0A64A0', '#DC2878', '#501EB4', '#49516F'];
+const accentColors = ['#FD6FFF', '#60EB9F', '#60EBE1', '#FFCA58'];
+const neutralColors = ['#EB6060', '#01C781', '#6095EB', '#FFB200'];
 const statusColors = {
-  critical: '#FF324D',
-  error: '#FF324D',
-  warning: '#FFD602',
-  ok: '#8CC800',
+  critical: '#E1746A',
+  error: '#E1746A',
+  warning: '#F7E464',
+  ok: '#7DD892',
   unknown: '#a8a8a8',
   disabled: '#a8a8a8',
 };
 const darkColors = ['#333333', '#444444', '#555555', '#666666', '#777777', '#999999'];
 const lightColors = ['#F6F6F6', '#EEEEEE', '#DDDDDD', '#CCCCCC', '#BBBBBB', '#AAAAAA'];
 const backgroundColor = '#FFFFFF';
-const textColor = '#333333';
-const borderColor = 'rgba(0, 0, 0, 0.15)';
+const textColor = '#444444';
+const borderColor = 'rgba(0, 0, 0, 0.33)';
 const activeColor = rgba('#DDDDDD', 0.5);
-const fontPath = 'https://fonts.gstatic.com/s/worksans/v2';
+const workSansPath = 'https://fonts.gstatic.com/s/worksans/v2';
 
 const baseSpacing = 24;
 
@@ -142,7 +142,7 @@ export default deepFreeze({
           src:
             local('Work Sans Light'),
             local('WorkSans-Light'),
-            url("${fontPath}/FD_Udbezj8EHXbdsqLUplxampu5_7CjHW5spxoeN3Vs.woff2") format('woff2');
+            url("${workSansPath}/FD_Udbezj8EHXbdsqLUplxampu5_7CjHW5spxoeN3Vs.woff2") format('woff2');
         }
 
         @font-face {
@@ -152,7 +152,7 @@ export default deepFreeze({
           src:
             local('Work Sans'),
             local('WorkSans-Regular'),
-            url("${fontPath}/ElUAY9q6T0Ayx4zWzW63VJBw1xU1rKptJj_0jans920.woff2") format('woff2');
+            url("${workSansPath}/ElUAY9q6T0Ayx4zWzW63VJBw1xU1rKptJj_0jans920.woff2") format('woff2');
         }
 
         @font-face {
@@ -162,7 +162,7 @@ export default deepFreeze({
           src:
             local('Work Sans Medium'),
             local('WorkSans-Medium'),
-            url("${fontPath}/Nbre-U_bp6Xktt8cpgwaJBampu5_7CjHW5spxoeN3Vs.woff2") format('woff2');
+            url("${workSansPath}/Nbre-U_bp6Xktt8cpgwaJBampu5_7CjHW5spxoeN3Vs.woff2") format('woff2');
         }
 
         @font-face {
@@ -172,7 +172,7 @@ export default deepFreeze({
           src:
             local('Work Sans SemiBold'),
             local('WorkSans-SemiBold'),
-            url("${fontPath}/z9rX03Xuz9ZNHTMg1_ghGRampu5_7CjHW5spxoeN3Vs.woff2") format('woff2');
+            url("${workSansPath}/z9rX03Xuz9ZNHTMg1_ghGRampu5_7CjHW5spxoeN3Vs.woff2") format('woff2');
         }
 
         @font-face {
@@ -182,7 +182,7 @@ export default deepFreeze({
           src:
             local('Work Sans Bold'),
             local('WorkSans-Bold'),
-            url("${fontPath}/4udXuXg54JlPEP5iKO5AmRampu5_7CjHW5spxoeN3Vs.woff2") format('woff2');
+            url("${workSansPath}/4udXuXg54JlPEP5iKO5AmRampu5_7CjHW5spxoeN3Vs.woff2") format('woff2');
         }
       `,
       size: '16px',
@@ -197,12 +197,13 @@ export default deepFreeze({
         radius: '4px',
         color: css`${props => props.theme.global.colors.border}`,
       },
+      weight: 700,
     },
     lineHeight: '24px',
     opacity: {
-      weak: '0.8',
+      strong: '0.8',
       medium: '0.4',
-      strong: '0.1',
+      weak: '0.1',
     },
     spacing: `${baseSpacing}px`,
     size: {
@@ -233,7 +234,7 @@ export default deepFreeze({
     border: {
       color: css`${props => props.theme.global.colors.brand}`,
       width: `${borderWidth}px`,
-      radius: '5px',
+      radius: `${baseSpacing}px`,
     },
     colors: {
       accent: css`${props => colorForName('accent-1', props.theme)}`,
@@ -245,7 +246,7 @@ export default deepFreeze({
     maxWidth: `${baseSpacing * 16}px`,
     padding: {
       vertical: `${(baseSpacing / 2) - borderWidth}px`,
-      horizontal: `${(baseSpacing / 2) - borderWidth}px`,
+      horizontal: `${(baseSpacing * 2) - borderWidth}px`,
     },
   },
   calendar: {
@@ -353,6 +354,30 @@ export default deepFreeze({
   },
   grommet: {},
   heading: {
+    font: {
+      family: "'Zilla Slab', 'Work Sans', Arial, sans-serif",
+      face: `
+        @font-face {
+          font-family: 'Zilla Slab';
+          font-style: normal;
+          font-weight: 400;
+          src:
+            local('Zilla Slab Regular'),
+            local('ZillaSlab-Regular'),
+            url("https://s3.amazonaws.com/grommetfonts/ZillaSlab-Regular.ttf") format('ttf');
+        }
+
+        @font-face {
+          font-family: 'Zilla Slab';
+          font-style: normal;
+          font-weight: 600;
+          src:
+            local('Zilla Slab SemiBold'),
+            local('ZillaSlab-SemiBold'),
+            url("https://s3.amazonaws.com/grommetfonts/ZillaSlab-SemiBold.ttf") format('ttf');
+        }
+      `,
+    },
     // maxWidth chosen to be ~50 characters wide
     // see: https://ux.stackexchange.com/a/34125
     level: {
@@ -377,7 +402,7 @@ export default deepFreeze({
         large: { size: '24px', height: 1.333, maxWidth: `${baseSpacing * 24}px` },
       },
     },
-    weight: 300,
+    weight: 600,
   },
   icon: {
     extend: css`

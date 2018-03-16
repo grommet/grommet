@@ -5,7 +5,7 @@ exports[`Anchor disabled renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -50,7 +50,7 @@ exports[`Anchor focus renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -65,8 +65,8 @@ exports[`Anchor focus renders 1`] = `
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  border-color: #00CCEB;
-  box-shadow: 0 0 2px 2px #00CCEB;
+  border-color: #FD6FFF;
+  box-shadow: 0 0 2px 2px #FD6FFF;
 }
 
 .c1:hover {
@@ -81,7 +81,7 @@ exports[`Anchor focus renders 1`] = `
 .c1 > polygon,
 .c1 > polyline,
 .c1 > rect {
-  outline: #00CCEB solid 2px;
+  outline: #FD6FFF solid 2px;
 }
 
 <div
@@ -110,7 +110,7 @@ exports[`Anchor icon label renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -128,7 +128,7 @@ exports[`Anchor icon label renders 1`] = `
   font-size: 1.1875rem;
   line-height: 24px;
   font-weight: 600;
-  color: #333333;
+  color: #444444;
 }
 
 .c1:hover {
@@ -171,7 +171,7 @@ exports[`Anchor icon label renders 1`] = `
                 "color": Array [
                   [Function],
                 ],
-                "radius": "5px",
+                "radius": "24px",
                 "width": "2px",
               },
               "colors": Object {
@@ -191,7 +191,7 @@ exports[`Anchor icon label renders 1`] = `
               "maxWidth": "384px",
               "minWidth": "96px",
               "padding": Object {
-                "horizontal": "10px",
+                "horizontal": "46px",
                 "vertical": "10px",
               },
             },
@@ -357,13 +357,14 @@ exports[`Anchor icon label renders 1`] = `
               "centerColumnWidth": "1152px",
               "colors": Object {
                 "accent": Array [
-                  "#00CCEB",
-                  "#FF7D28",
-                  "#915591",
+                  "#FD6FFF",
+                  "#60EB9F",
+                  "#60EBE1",
+                  "#FFCA58",
                 ],
                 "active": "rgba(221,221,221,0.5)",
                 "black": "#000000",
-                "border": "rgba(0, 0, 0, 0.15)",
+                "border": "rgba(0, 0, 0, 0.33)",
                 "brand": "#865CD6",
                 "dark": Array [
                   "#333333",
@@ -385,21 +386,21 @@ exports[`Anchor icon label renders 1`] = `
                   "#AAAAAA",
                 ],
                 "neutral": Array [
-                  "#0A64A0",
-                  "#DC2878",
-                  "#501EB4",
-                  "#49516F",
+                  "#EB6060",
+                  "#01C781",
+                  "#6095EB",
+                  "#FFB200",
                 ],
                 "placeholder": "#AAAAAA",
                 "status": Object {
-                  "critical": "#FF324D",
+                  "critical": "#E1746A",
                   "disabled": "#a8a8a8",
-                  "error": "#FF324D",
-                  "ok": "#8CC800",
+                  "error": "#E1746A",
+                  "ok": "#7DD892",
                   "unknown": "#a8a8a8",
-                  "warning": "#FFD602",
+                  "warning": "#F7E464",
                 },
-                "text": "#333333",
+                "text": "#444444",
                 "white": "#FFFFFF",
               },
               "control": Object {
@@ -520,12 +521,13 @@ exports[`Anchor icon label renders 1`] = `
                   "radius": "4px",
                   "width": "1px",
                 },
+                "weight": 700,
               },
               "lineHeight": "24px",
               "opacity": Object {
                 "medium": "0.4",
-                "strong": "0.1",
-                "weak": "0.8",
+                "strong": "0.8",
+                "weak": "0.1",
               },
               "size": Object {
                 "full": "100%",
@@ -549,6 +551,30 @@ exports[`Anchor icon label renders 1`] = `
             },
             "grommet": Object {},
             "heading": Object {
+              "font": Object {
+                "face": "
+                  @font-face {
+                    font-family: 'Zilla Slab';
+                    font-style: normal;
+                    font-weight: 400;
+                    src:
+                      local('Zilla Slab Regular'),
+                      local('ZillaSlab-Regular'),
+                      url(\\"https://s3.amazonaws.com/grommetfonts/ZillaSlab-Regular.ttf\\") format('ttf');
+                  }
+          
+                  @font-face {
+                    font-family: 'Zilla Slab';
+                    font-style: normal;
+                    font-weight: 600;
+                    src:
+                      local('Zilla Slab SemiBold'),
+                      local('ZillaSlab-SemiBold'),
+                      url(\\"https://s3.amazonaws.com/grommetfonts/ZillaSlab-SemiBold.ttf\\") format('ttf');
+                  }
+                ",
+                "family": "'Zilla Slab', 'Work Sans', Arial, sans-serif",
+              },
               "level": Object {
                 "1": Object {
                   "large": Object {
@@ -619,7 +645,7 @@ exports[`Anchor icon label renders 1`] = `
                   },
                 },
               },
-              "weight": 300,
+              "weight": 600,
             },
             "icon": Object {
               "extend": Array [
@@ -769,7 +795,7 @@ exports[`Anchor primary renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -820,7 +846,7 @@ exports[`Anchor renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -866,7 +892,7 @@ exports[`Anchor renders with children 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -914,7 +940,7 @@ exports[`Anchor reverse icon label renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -932,7 +958,7 @@ exports[`Anchor reverse icon label renders 1`] = `
   font-size: 1.1875rem;
   line-height: 24px;
   font-weight: 600;
-  color: #333333;
+  color: #444444;
 }
 
 .c1:hover {
@@ -975,7 +1001,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "color": Array [
                   [Function],
                 ],
-                "radius": "5px",
+                "radius": "24px",
                 "width": "2px",
               },
               "colors": Object {
@@ -995,7 +1021,7 @@ exports[`Anchor reverse icon label renders 1`] = `
               "maxWidth": "384px",
               "minWidth": "96px",
               "padding": Object {
-                "horizontal": "10px",
+                "horizontal": "46px",
                 "vertical": "10px",
               },
             },
@@ -1161,13 +1187,14 @@ exports[`Anchor reverse icon label renders 1`] = `
               "centerColumnWidth": "1152px",
               "colors": Object {
                 "accent": Array [
-                  "#00CCEB",
-                  "#FF7D28",
-                  "#915591",
+                  "#FD6FFF",
+                  "#60EB9F",
+                  "#60EBE1",
+                  "#FFCA58",
                 ],
                 "active": "rgba(221,221,221,0.5)",
                 "black": "#000000",
-                "border": "rgba(0, 0, 0, 0.15)",
+                "border": "rgba(0, 0, 0, 0.33)",
                 "brand": "#865CD6",
                 "dark": Array [
                   "#333333",
@@ -1189,21 +1216,21 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "#AAAAAA",
                 ],
                 "neutral": Array [
-                  "#0A64A0",
-                  "#DC2878",
-                  "#501EB4",
-                  "#49516F",
+                  "#EB6060",
+                  "#01C781",
+                  "#6095EB",
+                  "#FFB200",
                 ],
                 "placeholder": "#AAAAAA",
                 "status": Object {
-                  "critical": "#FF324D",
+                  "critical": "#E1746A",
                   "disabled": "#a8a8a8",
-                  "error": "#FF324D",
-                  "ok": "#8CC800",
+                  "error": "#E1746A",
+                  "ok": "#7DD892",
                   "unknown": "#a8a8a8",
-                  "warning": "#FFD602",
+                  "warning": "#F7E464",
                 },
-                "text": "#333333",
+                "text": "#444444",
                 "white": "#FFFFFF",
               },
               "control": Object {
@@ -1324,12 +1351,13 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "radius": "4px",
                   "width": "1px",
                 },
+                "weight": 700,
               },
               "lineHeight": "24px",
               "opacity": Object {
                 "medium": "0.4",
-                "strong": "0.1",
-                "weak": "0.8",
+                "strong": "0.8",
+                "weak": "0.1",
               },
               "size": Object {
                 "full": "100%",
@@ -1353,6 +1381,30 @@ exports[`Anchor reverse icon label renders 1`] = `
             },
             "grommet": Object {},
             "heading": Object {
+              "font": Object {
+                "face": "
+                  @font-face {
+                    font-family: 'Zilla Slab';
+                    font-style: normal;
+                    font-weight: 400;
+                    src:
+                      local('Zilla Slab Regular'),
+                      local('ZillaSlab-Regular'),
+                      url(\\"https://s3.amazonaws.com/grommetfonts/ZillaSlab-Regular.ttf\\") format('ttf');
+                  }
+          
+                  @font-face {
+                    font-family: 'Zilla Slab';
+                    font-style: normal;
+                    font-weight: 600;
+                    src:
+                      local('Zilla Slab SemiBold'),
+                      local('ZillaSlab-SemiBold'),
+                      url(\\"https://s3.amazonaws.com/grommetfonts/ZillaSlab-SemiBold.ttf\\") format('ttf');
+                  }
+                ",
+                "family": "'Zilla Slab', 'Work Sans', Arial, sans-serif",
+              },
               "level": Object {
                 "1": Object {
                   "large": Object {
@@ -1423,7 +1475,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                   },
                 },
               },
-              "weight": 300,
+              "weight": 600,
             },
             "icon": Object {
               "extend": Array [
@@ -1573,7 +1625,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1622,7 +1674,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "color": Array [
                   [Function],
                 ],
-                "radius": "5px",
+                "radius": "24px",
                 "width": "2px",
               },
               "colors": Object {
@@ -1642,7 +1694,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
               "maxWidth": "384px",
               "minWidth": "96px",
               "padding": Object {
-                "horizontal": "10px",
+                "horizontal": "46px",
                 "vertical": "10px",
               },
             },
@@ -1808,13 +1860,14 @@ exports[`Anchor warns about invalid icon render 1`] = `
               "centerColumnWidth": "1152px",
               "colors": Object {
                 "accent": Array [
-                  "#00CCEB",
-                  "#FF7D28",
-                  "#915591",
+                  "#FD6FFF",
+                  "#60EB9F",
+                  "#60EBE1",
+                  "#FFCA58",
                 ],
                 "active": "rgba(221,221,221,0.5)",
                 "black": "#000000",
-                "border": "rgba(0, 0, 0, 0.15)",
+                "border": "rgba(0, 0, 0, 0.33)",
                 "brand": "#865CD6",
                 "dark": Array [
                   "#333333",
@@ -1836,21 +1889,21 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "#AAAAAA",
                 ],
                 "neutral": Array [
-                  "#0A64A0",
-                  "#DC2878",
-                  "#501EB4",
-                  "#49516F",
+                  "#EB6060",
+                  "#01C781",
+                  "#6095EB",
+                  "#FFB200",
                 ],
                 "placeholder": "#AAAAAA",
                 "status": Object {
-                  "critical": "#FF324D",
+                  "critical": "#E1746A",
                   "disabled": "#a8a8a8",
-                  "error": "#FF324D",
-                  "ok": "#8CC800",
+                  "error": "#E1746A",
+                  "ok": "#7DD892",
                   "unknown": "#a8a8a8",
-                  "warning": "#FFD602",
+                  "warning": "#F7E464",
                 },
-                "text": "#333333",
+                "text": "#444444",
                 "white": "#FFFFFF",
               },
               "control": Object {
@@ -1971,12 +2024,13 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "radius": "4px",
                   "width": "1px",
                 },
+                "weight": 700,
               },
               "lineHeight": "24px",
               "opacity": Object {
                 "medium": "0.4",
-                "strong": "0.1",
-                "weak": "0.8",
+                "strong": "0.8",
+                "weak": "0.1",
               },
               "size": Object {
                 "full": "100%",
@@ -2000,6 +2054,30 @@ exports[`Anchor warns about invalid icon render 1`] = `
             },
             "grommet": Object {},
             "heading": Object {
+              "font": Object {
+                "face": "
+                  @font-face {
+                    font-family: 'Zilla Slab';
+                    font-style: normal;
+                    font-weight: 400;
+                    src:
+                      local('Zilla Slab Regular'),
+                      local('ZillaSlab-Regular'),
+                      url(\\"https://s3.amazonaws.com/grommetfonts/ZillaSlab-Regular.ttf\\") format('ttf');
+                  }
+          
+                  @font-face {
+                    font-family: 'Zilla Slab';
+                    font-style: normal;
+                    font-weight: 600;
+                    src:
+                      local('Zilla Slab SemiBold'),
+                      local('ZillaSlab-SemiBold'),
+                      url(\\"https://s3.amazonaws.com/grommetfonts/ZillaSlab-SemiBold.ttf\\") format('ttf');
+                  }
+                ",
+                "family": "'Zilla Slab', 'Work Sans', Arial, sans-serif",
+              },
               "level": Object {
                 "1": Object {
                   "large": Object {
@@ -2070,7 +2148,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   },
                 },
               },
-              "weight": 300,
+              "weight": 600,
             },
             "icon": Object {
               "extend": Array [
@@ -2214,7 +2292,7 @@ exports[`Anchor warns about invalid label render 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

@@ -5,7 +5,7 @@ exports[`Chart cap renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -29,7 +29,7 @@ exports[`Chart cap renders 1`] = `
     width={384}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={24}
@@ -55,7 +55,7 @@ exports[`Chart cap renders 1`] = `
     width={384}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={24}
@@ -78,13 +78,13 @@ exports[`Chart cap renders 1`] = `
     width={384}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={24}
     >
       <g
-        fill="#00CCEB"
+        fill="#FD6FFF"
       >
         <path
           d="M 0,192 L 384,0 L 384,192 L 0,192 Z"
@@ -100,7 +100,7 @@ exports[`Chart renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -124,7 +124,7 @@ exports[`Chart renders 1`] = `
     width={384}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -139,7 +139,7 @@ exports[`Chart renders 1`] = `
     width={384}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -164,7 +164,7 @@ exports[`Chart size renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -188,7 +188,7 @@ exports[`Chart size renders 1`] = `
     width={96}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -214,7 +214,7 @@ exports[`Chart size renders 1`] = `
     width={192}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -240,7 +240,7 @@ exports[`Chart size renders 1`] = `
     width={384}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -266,7 +266,7 @@ exports[`Chart size renders 1`] = `
     width={768}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -292,7 +292,7 @@ exports[`Chart size renders 1`] = `
     width={1152}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -317,7 +317,7 @@ exports[`Chart thickness renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -341,7 +341,7 @@ exports[`Chart thickness renders 1`] = `
     width={384}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={6}
@@ -367,7 +367,7 @@ exports[`Chart thickness renders 1`] = `
     width={384}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={12}
@@ -393,7 +393,7 @@ exports[`Chart thickness renders 1`] = `
     width={384}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -419,7 +419,7 @@ exports[`Chart thickness renders 1`] = `
     width={384}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={48}
@@ -445,7 +445,7 @@ exports[`Chart thickness renders 1`] = `
     width={384}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={96}
@@ -470,7 +470,7 @@ exports[`Chart type renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -494,7 +494,7 @@ exports[`Chart type renders 1`] = `
     width={384}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -520,7 +520,7 @@ exports[`Chart type renders 1`] = `
     width={384}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
@@ -543,13 +543,13 @@ exports[`Chart type renders 1`] = `
     width={384}
   >
     <g
-      stroke="#00CCEB"
+      stroke="#FD6FFF"
       strokeLinecap="butt"
       strokeLinejoin="miter"
       strokeWidth={24}
     >
       <g
-        fill="#00CCEB"
+        fill="#FD6FFF"
       >
         <path
           d="M 384,0 L 0,192 L 0,192 L 384,192 Z"

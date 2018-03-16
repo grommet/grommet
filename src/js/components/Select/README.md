@@ -38,7 +38,7 @@ function
 **dropAlign**
 
 How to align the drop. Defaults to `{
-  "top": "bottom",
+  "top": "top",
   "left": "left"
 }`.
 

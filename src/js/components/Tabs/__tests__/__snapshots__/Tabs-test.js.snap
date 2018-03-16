@@ -5,7 +5,7 @@ exports[`Tabs changes active index 1`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS fqOQuF"
+    class="StyledBox-bStriS kZxJuf"
     direction="row"
   >
     <button
@@ -59,14 +59,14 @@ exports[`Tabs changes active index 1`] = `
 
 exports[`Tabs changes to second tab 1`] = `
 <div
-  className="StyledGrommet-gGRXwz deqpVW"
+  className="StyledGrommet-gGRXwz hSKpsq"
 >
   <div
     role="tablist"
   >
     <div
       aria-label={undefined}
-      className="StyledBox-bStriS fqOQuF"
+      className="StyledBox-bStriS kZxJuf"
       direction="row"
     >
       <button
@@ -147,14 +147,14 @@ exports[`Tabs changes to second tab 1`] = `
 
 exports[`Tabs renders complex Tab title 1`] = `
 <div
-  className="StyledGrommet-gGRXwz deqpVW"
+  className="StyledGrommet-gGRXwz hSKpsq"
 >
   <div
     role="tablist"
   >
     <div
       aria-label={undefined}
-      className="StyledBox-bStriS fqOQuF"
+      className="StyledBox-bStriS kZxJuf"
       direction="row"
     >
       <button
@@ -228,14 +228,14 @@ exports[`Tabs renders complex Tab title 1`] = `
 
 exports[`Tabs renders with Tab 1`] = `
 <div
-  className="StyledGrommet-gGRXwz deqpVW"
+  className="StyledGrommet-gGRXwz hSKpsq"
 >
   <div
     role="tablist"
   >
     <div
       aria-label={undefined}
-      className="StyledBox-bStriS fqOQuF"
+      className="StyledBox-bStriS kZxJuf"
       direction="row"
     >
       <button
@@ -316,14 +316,14 @@ exports[`Tabs renders with Tab 1`] = `
 
 exports[`Tabs renders without Tab 1`] = `
 <div
-  className="StyledGrommet-gGRXwz deqpVW"
+  className="StyledGrommet-gGRXwz hSKpsq"
 >
   <div
     role="tablist"
   >
     <div
       aria-label={undefined}
-      className="StyledBox-bStriS fqOQuF"
+      className="StyledBox-bStriS kZxJuf"
       direction="row"
     />
     <div
@@ -339,7 +339,7 @@ exports[`Tabs sets on hover 1`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS fqOQuF"
+    class="StyledBox-bStriS kZxJuf"
     direction="row"
   >
     <button
@@ -396,7 +396,7 @@ exports[`Tabs sets on hover 2`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS fqOQuF"
+    class="StyledBox-bStriS kZxJuf"
     direction="row"
   >
     <button
@@ -427,7 +427,7 @@ exports[`Tabs sets on hover 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS mikgM"
+        class="StyledBox-bStriS cXdcRx"
         direction="column"
       >
         <span
@@ -453,7 +453,7 @@ exports[`Tabs sets on hover 3`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS fqOQuF"
+    class="StyledBox-bStriS kZxJuf"
     direction="row"
   >
     <button
@@ -484,7 +484,7 @@ exports[`Tabs sets on hover 3`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS mikgM"
+        class="StyledBox-bStriS cXdcRx"
         direction="column"
       >
         <span
@@ -510,7 +510,7 @@ exports[`Tabs sets on hover 4`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS fqOQuF"
+    class="StyledBox-bStriS kZxJuf"
     direction="row"
   >
     <button

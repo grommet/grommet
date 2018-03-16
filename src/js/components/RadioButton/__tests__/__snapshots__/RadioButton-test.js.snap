@@ -5,7 +5,7 @@ exports[`RadioButton checked renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -53,8 +53,8 @@ exports[`RadioButton checked renders 1`] = `
 
 .c3:focus + div,
 .c3:focus + span {
-  border-color: #00CCEB;
-  box-shadow: 0 0 2px 2px #00CCEB;
+  border-color: #FD6FFF;
+  box-shadow: 0 0 2px 2px #FD6FFF;
 }
 
 .c3:focus + div > circle,
@@ -71,7 +71,7 @@ exports[`RadioButton checked renders 1`] = `
 .c3:focus + span > polyline,
 .c3:focus + div > rect,
 .c3:focus + span > rect {
-  outline: #00CCEB solid 2px;
+  outline: #FD6FFF solid 2px;
 }
 
 .c3:checked + div {
@@ -154,7 +154,7 @@ exports[`RadioButton disabled renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -204,8 +204,8 @@ exports[`RadioButton disabled renders 1`] = `
 
 .c3:focus + div,
 .c3:focus + span {
-  border-color: #00CCEB;
-  box-shadow: 0 0 2px 2px #00CCEB;
+  border-color: #FD6FFF;
+  box-shadow: 0 0 2px 2px #FD6FFF;
 }
 
 .c3:focus + div > circle,
@@ -222,7 +222,7 @@ exports[`RadioButton disabled renders 1`] = `
 .c3:focus + span > polyline,
 .c3:focus + div > rect,
 .c3:focus + span > rect {
-  outline: #00CCEB solid 2px;
+  outline: #FD6FFF solid 2px;
 }
 
 .c3:checked + div {
@@ -335,7 +335,7 @@ exports[`RadioButton label renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -383,8 +383,8 @@ exports[`RadioButton label renders 1`] = `
 
 .c3:focus + div,
 .c3:focus + span {
-  border-color: #00CCEB;
-  box-shadow: 0 0 2px 2px #00CCEB;
+  border-color: #FD6FFF;
+  box-shadow: 0 0 2px 2px #FD6FFF;
 }
 
 .c3:focus + div > circle,
@@ -401,7 +401,7 @@ exports[`RadioButton label renders 1`] = `
 .c3:focus + span > polyline,
 .c3:focus + div > rect,
 .c3:focus + span > rect {
-  outline: #00CCEB solid 2px;
+  outline: #FD6FFF solid 2px;
 }
 
 .c3:checked + div {
@@ -515,7 +515,7 @@ exports[`RadioButton renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -563,8 +563,8 @@ exports[`RadioButton renders 1`] = `
 
 .c3:focus + div,
 .c3:focus + span {
-  border-color: #00CCEB;
-  box-shadow: 0 0 2px 2px #00CCEB;
+  border-color: #FD6FFF;
+  box-shadow: 0 0 2px 2px #FD6FFF;
 }
 
 .c3:focus + div > circle,
@@ -581,7 +581,7 @@ exports[`RadioButton renders 1`] = `
 .c3:focus + span > polyline,
 .c3:focus + div > rect,
 .c3:focus + span > rect {
-  outline: #00CCEB solid 2px;
+  outline: #FD6FFF solid 2px;
 }
 
 .c3:checked + div {

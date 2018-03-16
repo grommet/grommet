@@ -2,7 +2,7 @@
 
 exports[`SkipLink mounts 1`] = `
 <div
-  class="StyledLayer-ceZzeh byFxCb"
+  class="StyledLayer-ceZzeh wJdSV"
   id="skip-links"
   tabindex="-1"
 >
@@ -10,7 +10,7 @@ exports[`SkipLink mounts 1`] = `
     class="StyledLayer__StyledOverlay-hhVyjc hewshY"
   />
   <div
-    class="StyledLayer__StyledContainer-gBGbkw kWMmDe"
+    class="StyledLayer__StyledContainer-gBGbkw iDAhwe"
     id="skip-links"
   >
     <div
@@ -18,7 +18,7 @@ exports[`SkipLink mounts 1`] = `
       direction="column"
     >
       <h2
-        class="StyledHeading-NQveS eQyCKF"
+        class="StyledHeading-NQveS wwSdV"
       >
         Skip To
         :
@@ -96,21 +96,21 @@ exports[`SkipLink mounts 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .eQyCKF {
+  .wwSdV {
     font-size: 24px;
     line-height: 1.333;
     max-width: 576px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
 
 
-.byFxCb {
+.wJdSV {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -127,7 +127,7 @@ exports[`SkipLink mounts 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .byFxCb {
+  .wJdSV {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -141,14 +141,14 @@ exports[`SkipLink mounts 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kWMmDe {
+  .iDAhwe {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kWMmDe {
+  .iDAhwe {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -160,7 +160,7 @@ exports[`SkipLink mounts 2`] = `
 
 exports[`SkipLink mounts 3`] = `
 <div
-  class="StyledLayer-ceZzeh jNyDRA"
+  class="StyledLayer-ceZzeh cAYRbG"
   id="skip-links"
   tabindex="-1"
 >
@@ -168,7 +168,7 @@ exports[`SkipLink mounts 3`] = `
     class="StyledLayer__StyledOverlay-hhVyjc hewshY"
   />
   <div
-    class="StyledLayer__StyledContainer-gBGbkw ftCLnn"
+    class="StyledLayer__StyledContainer-gBGbkw gejwyv"
     id="skip-links"
   >
     <div
@@ -176,7 +176,7 @@ exports[`SkipLink mounts 3`] = `
       direction="column"
     >
       <h2
-        class="StyledHeading-NQveS eQyCKF"
+        class="StyledHeading-NQveS wwSdV"
       >
         Skip To
         :
@@ -190,7 +190,7 @@ exports[`SkipLink mounts 3`] = `
           direction="column"
         >
           <a
-            class="StyledAnchor-hcnTIZ gUtwfp"
+            class="StyledAnchor-hcnTIZ fMCzwf"
             label="Main Content"
             href="#main"
           >
@@ -254,29 +254,29 @@ exports[`SkipLink mounts 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .eQyCKF {
+  .wwSdV {
     font-size: 24px;
     line-height: 1.333;
     max-width: 576px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
 
 
 @media only screen and (max-width:699px) {
-  .byFxCb {
+  .wJdSV {
     position: absolute;
     height: 100%;
     width: 100%;
   }
 }
 
-.jNyDRA {
+.cAYRbG {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -289,7 +289,7 @@ exports[`SkipLink mounts 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jNyDRA {
+  .cAYRbG {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -297,7 +297,7 @@ exports[`SkipLink mounts 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .jNyDRA {
+  .cAYRbG {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -315,14 +315,14 @@ exports[`SkipLink mounts 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kWMmDe {
+  .iDAhwe {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kWMmDe {
+  .iDAhwe {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -332,14 +332,14 @@ exports[`SkipLink mounts 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .ftCLnn {
+  .gejwyv {
     min-height: 100%;
     min-width: 100%;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ftCLnn {
+  .gejwyv {
     position: fixed;
     max-height: 100%;
     max-width: 100%;
@@ -365,7 +365,7 @@ exports[`SkipLink mounts 5`] = `
       hidden=""
     >
       <div
-        class="StyledLayer-ceZzeh byFxCb"
+        class="StyledLayer-ceZzeh wJdSV"
         id="skip-links"
         tabindex="-1"
       >
@@ -373,7 +373,7 @@ exports[`SkipLink mounts 5`] = `
           class="StyledLayer__StyledOverlay-hhVyjc hewshY"
         />
         <div
-          class="StyledLayer__StyledContainer-gBGbkw kWMmDe"
+          class="StyledLayer__StyledContainer-gBGbkw iDAhwe"
           id="skip-links"
         >
           <div
@@ -381,7 +381,7 @@ exports[`SkipLink mounts 5`] = `
             direction="column"
           >
             <h2
-              class="StyledHeading-NQveS eQyCKF"
+              class="StyledHeading-NQveS wwSdV"
             >
               Skip To
               :

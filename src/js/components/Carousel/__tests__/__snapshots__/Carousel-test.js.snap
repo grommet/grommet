@@ -2,7 +2,7 @@
 
 exports[`play renders 1`] = `
 <div
-  class="StyledGrommet-gGRXwz deqpVW"
+  class="StyledGrommet-gGRXwz hSKpsq"
 >
   <div
     class="StyledStack-jqCQsC ewABiA"
@@ -181,7 +181,7 @@ exports[`play renders 1`] = `
 
 exports[`play renders 2`] = `
 <div
-  class="StyledGrommet-gGRXwz deqpVW"
+  class="StyledGrommet-gGRXwz hSKpsq"
 >
   <div
     class="StyledStack-jqCQsC ewABiA"
@@ -429,7 +429,7 @@ exports[`renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
