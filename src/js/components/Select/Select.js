@@ -92,7 +92,7 @@ class Select extends Component {
               flex={false}
               style={{ minWidth: 'auto' }}
             >
-              <SelectIcon />
+              <SelectIcon color='brand' />
             </Box>
           </Box>
         </DropButton>

@@ -2,7 +2,7 @@
 
 exports[`Menu opens and closes on click 1`] = `
 <div
-  class="StyledDrop-bCWxPe gcEofR"
+  class="StyledDrop-bCWxPe eTlFvx"
   tabindex="-1"
   id="test-menu__drop"
   target="[object Object]"
@@ -21,7 +21,11 @@ exports[`Menu opens and closes on click 1`] = `
         class="StyledBox-bStriS kMKXvj"
         direction="row"
       >
-        Test
+        <span
+          class="StyledText-eJMSZI ehbxjF"
+        >
+          Test
+        </span>
         <div
           class="StyledBox__StyledBoxGap-ixLlSs ctEUP"
           direction="row"
@@ -34,6 +38,7 @@ exports[`Menu opens and closes on click 1`] = `
           version="1.1"
           role="img"
           aria-label="FormDown"
+          color="brand"
         >
           <polyline
             fill="none"
@@ -161,11 +166,11 @@ exports[`Menu opens and closes on click 2`] = `
 
 
 
-.gcEofR {
+.eTlFvx {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -178,7 +183,7 @@ exports[`Menu opens and closes on click 2`] = `
   overflow: auto;
   outline: none;
   background-color: #f8f8f8;
-  color: #333333;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -220,7 +225,11 @@ exports[`Menu with custom message renders 1`] = `
       class="StyledBox-bStriS kMKXvj"
       direction="row"
     >
-      Test Menu
+      <span
+        class="StyledText-eJMSZI ehbxjF"
+      >
+        Test Menu
+      </span>
       <div
         class="StyledBox__StyledBoxGap-ixLlSs ctEUP"
         direction="row"
@@ -233,6 +242,7 @@ exports[`Menu with custom message renders 1`] = `
         version="1.1"
         role="img"
         aria-label="FormDown"
+        color="brand"
       >
         <polyline
           fill="none"
@@ -248,7 +258,7 @@ exports[`Menu with custom message renders 1`] = `
 
 exports[`Menu with dropAlign renders 1`] = `
 <div
-  class="StyledDrop-bCWxPe fAkYxw"
+  class="StyledDrop-bCWxPe dRgAcx"
   tabindex="-1"
   id="test-menu__drop"
   target="[object Object]"
@@ -267,7 +277,11 @@ exports[`Menu with dropAlign renders 1`] = `
         class="StyledBox-bStriS kMKXvj"
         direction="row"
       >
-        Test
+        <span
+          class="StyledText-eJMSZI ehbxjF"
+        >
+          Test
+        </span>
         <div
           class="StyledBox__StyledBoxGap-ixLlSs ctEUP"
           direction="row"
@@ -280,6 +294,7 @@ exports[`Menu with dropAlign renders 1`] = `
           version="1.1"
           role="img"
           aria-label="FormDown"
+          color="brand"
         >
           <polyline
             fill="none"
@@ -404,11 +419,11 @@ exports[`Menu with dropAlign renders 2`] = `
 
 
 
-.fAkYxw {
+.dRgAcx {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -421,7 +436,7 @@ exports[`Menu with dropAlign renders 2`] = `
   overflow: auto;
   outline: none;
   background-color: #f8f8f8;
-  color: #333333;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top right;
   -ms-transform-origin: top right;

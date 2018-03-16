@@ -189,6 +189,9 @@ export const inputStyle = css`
   background-color: transparent;
   color: inherit;
   font: inherit;
+  ${props => props.theme.global.input.weight && css`
+    font-weight: ${props.theme.global.input.weight};
+  `}
   margin: 0;
 `;
 

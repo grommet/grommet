@@ -59,7 +59,8 @@ const basisStyle = css`
 const directionStyle = css`
   ${props => props.direction === 'row' && 'min-height: 0;'}
   ${props => props.direction === 'column' && 'min-width: 0;'}
-  flex-direction: ${props => props.direction};
+  flex-direction: ${props =>
+    (props.direction === 'row-responsive' ? 'row' : props.direction)};
   ${props => (props.direction === 'row-responsive' ? palm(`
     flex-direction: column;
     flex-basis: auto;
@@ -358,7 +359,7 @@ const gapStyle = css`
       `) : ''}
     ` : `
       width: ${edgeSize[gap]};
-      ${(responsive && direction === 'row-responsive') ? palm(`
+      ${(direction === 'row-responsive') ? palm(`
         width: auto;
         height: ${edgeSize.narrow[gap]};
       `) : ''}

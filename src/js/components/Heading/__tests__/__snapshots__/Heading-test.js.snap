@@ -5,7 +5,7 @@ exports[`Heading color renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -14,10 +14,11 @@ exports[`Heading color renders 1`] = `
 }
 
 .c1 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
   color: #865CD6;
 }
 
@@ -26,7 +27,7 @@ exports[`Heading color renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -45,7 +46,7 @@ exports[`Heading level renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -54,31 +55,35 @@ exports[`Heading level renders 1`] = `
 }
 
 .c1 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .c2 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 36px;
   line-height: 1.23;
   max-width: 864px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .c3 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 24px;
   line-height: 1.333;
   max-width: 576px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 18px;
   line-height: 1.333;
   max-width: 432px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 @media only screen and (max-width:699px) {
@@ -86,7 +91,7 @@ exports[`Heading level renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -95,7 +100,7 @@ exports[`Heading level renders 1`] = `
     font-size: 24px;
     line-height: 1.333;
     max-width: 576px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -104,7 +109,7 @@ exports[`Heading level renders 1`] = `
     font-size: 18px;
     line-height: 1.333;
     max-width: 432px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -113,7 +118,7 @@ exports[`Heading level renders 1`] = `
     font-size: 18px;
     line-height: 1.333;
     max-width: 432px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -152,7 +157,7 @@ exports[`Heading margin renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -161,70 +166,78 @@ exports[`Heading margin renders 1`] = `
 }
 
 .c1 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
   margin-top: 12px;
   margin-bottom: 12px;
 }
 
 .c2 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
   margin-top: 24px;
   margin-bottom: 24px;
 }
 
 .c3 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
   margin-top: 48px;
   margin-bottom: 48px;
 }
 
 .c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .c5 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
   margin-bottom: 12px;
 }
 
 .c6 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
   margin-top: 12px;
 }
 
 .c7 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
   margin-bottom: 0;
 }
 
 .c8 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
   margin-top: 0;
 }
 
@@ -233,7 +246,7 @@ exports[`Heading margin renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -249,7 +262,7 @@ exports[`Heading margin renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -265,7 +278,7 @@ exports[`Heading margin renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -281,7 +294,7 @@ exports[`Heading margin renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -297,7 +310,7 @@ exports[`Heading margin renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -312,7 +325,7 @@ exports[`Heading margin renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -327,7 +340,7 @@ exports[`Heading margin renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -336,7 +349,7 @@ exports[`Heading margin renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -375,7 +388,7 @@ exports[`Heading renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -384,10 +397,11 @@ exports[`Heading renders 1`] = `
 }
 
 .c1 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 @media only screen and (max-width:699px) {
@@ -395,7 +409,7 @@ exports[`Heading renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -413,7 +427,7 @@ exports[`Heading size renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -422,59 +436,67 @@ exports[`Heading size renders 1`] = `
 }
 
 .c2 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .c5 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 36px;
   line-height: 1.23;
   max-width: 864px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .c1 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 24px;
   line-height: 1.333;
   max-width: 576px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 18px;
   line-height: 1.333;
   max-width: 432px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .c3 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 96px;
   line-height: 1.125;
   max-width: 2304px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .c6 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 18px;
   line-height: 1.333;
   max-width: 432px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .c7 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 16px;
   line-height: 1.375;
   max-width: 384px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .c8 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 24px;
   line-height: 1.333;
   max-width: 576px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 @media only screen and (max-width:699px) {
@@ -482,7 +504,7 @@ exports[`Heading size renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -491,7 +513,7 @@ exports[`Heading size renders 1`] = `
     font-size: 24px;
     line-height: 1.333;
     max-width: 576px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -500,7 +522,7 @@ exports[`Heading size renders 1`] = `
     font-size: 18px;
     line-height: 1.333;
     max-width: 432px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -509,7 +531,7 @@ exports[`Heading size renders 1`] = `
     font-size: 18px;
     line-height: 1.333;
     max-width: 432px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -518,7 +540,7 @@ exports[`Heading size renders 1`] = `
     font-size: 48px;
     line-height: 1.125;
     max-width: 1152px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -527,7 +549,7 @@ exports[`Heading size renders 1`] = `
     font-size: 16px;
     line-height: 1.375;
     max-width: 384px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -536,7 +558,7 @@ exports[`Heading size renders 1`] = `
     font-size: 16px;
     line-height: 1.375;
     max-width: 384px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -545,7 +567,7 @@ exports[`Heading size renders 1`] = `
     font-size: 24px;
     line-height: 1.333;
     max-width: 576px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -608,7 +630,7 @@ exports[`Heading textAlign renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -617,26 +639,29 @@ exports[`Heading textAlign renders 1`] = `
 }
 
 .c1 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
   text-align: left;
 }
 
 .c2 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
   text-align: center;
 }
 
 .c3 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
   text-align: right;
 }
 
@@ -645,7 +670,7 @@ exports[`Heading textAlign renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -654,7 +679,7 @@ exports[`Heading textAlign renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -663,7 +688,7 @@ exports[`Heading textAlign renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -687,7 +712,7 @@ exports[`Heading truncate renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -696,17 +721,19 @@ exports[`Heading truncate renders 1`] = `
 }
 
 .c1 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .c2 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -717,7 +744,7 @@ exports[`Heading truncate renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -726,7 +753,7 @@ exports[`Heading truncate renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 
@@ -751,7 +778,7 @@ exports[`responsive renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -760,17 +787,19 @@ exports[`responsive renders 1`] = `
 }
 
 .c1 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .c2 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
   line-height: 1.125;
   max-width: 1152px;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 @media only screen and (max-width:699px) {
@@ -778,7 +807,7 @@ exports[`responsive renders 1`] = `
     font-size: 36px;
     line-height: 1.23;
     max-width: 864px;
-    font-weight: 300;
+    font-weight: 600;
   }
 }
 

@@ -79,6 +79,9 @@ const colorStyle = css`
 `;
 
 const StyledHeading = styled.h1`
+  ${props => props.theme.heading.font && css`
+    font-family: ${props.theme.heading.font.family};
+  `}
   ${props => sizeStyle(props)}
   ${props => props.margin && marginStyle(props)}
   ${props => props.textAlign && textAlignStyle}

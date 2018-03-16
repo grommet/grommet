@@ -5,7 +5,7 @@ exports[`RoutedButton renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -31,11 +31,11 @@ exports[`RoutedButton renders 1`] = `
   max-width: 384px;
   font-weight: 600;
   border: 2px solid #865CD6;
-  border-radius: 5px;
-  color: #333333;
+  border-radius: 24px;
+  color: #444444;
   font-size: 1.1875rem;
   line-height: 24px;
-  padding: 10px 10px;
+  padding: 10px 46px;
 }
 
 .c1:hover {

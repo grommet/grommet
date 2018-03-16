@@ -2,7 +2,7 @@
 
 exports[`Distribution gap renders 1`] = `
 <div
-  class="StyledGrommet-gGRXwz deqpVW"
+  class="StyledGrommet-gGRXwz hSKpsq"
 >
   <div
     class="StyledBox-bStriS gQTNhE"
@@ -197,13 +197,13 @@ exports[`Distribution gap renders 1`] = `
 
 exports[`Distribution renders 1`] = `
 <div
-  class="StyledGrommet-gGRXwz deqpVW"
+  class="StyledGrommet-gGRXwz hSKpsq"
 />
 `;
 
 exports[`Distribution values renders 1`] = `
 <div
-  class="StyledGrommet-gGRXwz deqpVW"
+  class="StyledGrommet-gGRXwz hSKpsq"
 >
   <div
     class="StyledBox-bStriS gQTNhE"

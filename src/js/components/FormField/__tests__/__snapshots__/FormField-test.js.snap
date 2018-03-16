@@ -5,7 +5,7 @@ exports[`renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -37,7 +37,7 @@ exports[`renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.15);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -49,12 +49,13 @@ exports[`renders 1`] = `
 .c4 {
   box-sizing: border-box;
   padding: 11px;
-  border: 1px solid rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   background-color: transparent;
   color: inherit;
   font: inherit;
+  font-weight: 700;
   margin: 0;
   width: 100%;
   border: none;
@@ -97,7 +98,7 @@ exports[`renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c2 {
-    border-bottom: solid 1px rgba(0,0,0,0.15);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -169,7 +170,7 @@ exports[`renders border 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -201,7 +202,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.15);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -218,7 +219,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border: solid 1px rgba(0,0,0,0.15);
+  border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -235,7 +236,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -252,7 +253,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border: solid 4px rgba(0,0,0,0.15);
+  border: solid 4px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -269,7 +270,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border: solid 12px rgba(0,0,0,0.15);
+  border: solid 12px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -286,7 +287,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 2px rgba(0,0,0,0.15);
+  border-bottom: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -303,7 +304,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 4px rgba(0,0,0,0.15);
+  border-bottom: solid 4px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -320,7 +321,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 12px rgba(0,0,0,0.15);
+  border-bottom: solid 12px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -337,7 +338,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 1px rgba(0,0,0,0.15);
+  border-left: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -354,7 +355,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 2px rgba(0,0,0,0.15);
+  border-left: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -371,7 +372,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 4px rgba(0,0,0,0.15);
+  border-left: solid 4px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -388,7 +389,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 12px rgba(0,0,0,0.15);
+  border-left: solid 12px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -405,8 +406,8 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 1px rgba(0,0,0,0.15);
-  border-right: solid 1px rgba(0,0,0,0.15);
+  border-left: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -423,8 +424,8 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 2px rgba(0,0,0,0.15);
-  border-right: solid 2px rgba(0,0,0,0.15);
+  border-left: solid 2px rgba(0,0,0,0.33);
+  border-right: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -441,8 +442,8 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 4px rgba(0,0,0,0.15);
-  border-right: solid 4px rgba(0,0,0,0.15);
+  border-left: solid 4px rgba(0,0,0,0.33);
+  border-right: solid 4px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -459,8 +460,8 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 12px rgba(0,0,0,0.15);
-  border-right: solid 12px rgba(0,0,0,0.15);
+  border-left: solid 12px rgba(0,0,0,0.33);
+  border-right: solid 12px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -493,7 +494,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.15);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -510,7 +511,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 2px rgba(0,0,0,0.15);
+  border-bottom: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -527,7 +528,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 4px rgba(0,0,0,0.15);
+  border-bottom: solid 4px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -544,7 +545,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 12px rgba(0,0,0,0.15);
+  border-bottom: solid 12px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -561,7 +562,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 1px rgba(0,0,0,0.15);
+  border-left: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -578,7 +579,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 2px rgba(0,0,0,0.15);
+  border-left: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -595,7 +596,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 4px rgba(0,0,0,0.15);
+  border-left: solid 4px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -612,7 +613,7 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 12px rgba(0,0,0,0.15);
+  border-left: solid 12px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -629,8 +630,8 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 1px rgba(0,0,0,0.15);
-  border-right: solid 1px rgba(0,0,0,0.15);
+  border-left: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -647,8 +648,8 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 2px rgba(0,0,0,0.15);
-  border-right: solid 2px rgba(0,0,0,0.15);
+  border-left: solid 2px rgba(0,0,0,0.33);
+  border-right: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -665,8 +666,8 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 4px rgba(0,0,0,0.15);
-  border-right: solid 4px rgba(0,0,0,0.15);
+  border-left: solid 4px rgba(0,0,0,0.33);
+  border-right: solid 4px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -683,8 +684,8 @@ exports[`renders border 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 12px rgba(0,0,0,0.15);
-  border-right: solid 12px rgba(0,0,0,0.15);
+  border-left: solid 12px rgba(0,0,0,0.33);
+  border-right: solid 12px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -707,7 +708,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    border-bottom: solid 1px rgba(0,0,0,0.15);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -725,7 +726,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c2 {
-    border: solid 1px rgba(0,0,0,0.15);
+    border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -743,7 +744,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -761,7 +762,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
-    border: solid 4px rgba(0,0,0,0.15);
+    border: solid 4px rgba(0,0,0,0.33);
   }
 }
 
@@ -779,7 +780,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c5 {
-    border: solid 6px rgba(0,0,0,0.15);
+    border: solid 6px rgba(0,0,0,0.33);
   }
 }
 
@@ -797,7 +798,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c7 {
-    border-bottom: solid 2px rgba(0,0,0,0.15);
+    border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -815,7 +816,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c8 {
-    border-bottom: solid 4px rgba(0,0,0,0.15);
+    border-bottom: solid 4px rgba(0,0,0,0.33);
   }
 }
 
@@ -833,7 +834,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c9 {
-    border-bottom: solid 6px rgba(0,0,0,0.15);
+    border-bottom: solid 6px rgba(0,0,0,0.33);
   }
 }
 
@@ -851,7 +852,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c10 {
-    border-left: solid 1px rgba(0,0,0,0.15);
+    border-left: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -869,7 +870,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c11 {
-    border-left: solid 2px rgba(0,0,0,0.15);
+    border-left: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -887,7 +888,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c12 {
-    border-left: solid 4px rgba(0,0,0,0.15);
+    border-left: solid 4px rgba(0,0,0,0.33);
   }
 }
 
@@ -905,7 +906,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c13 {
-    border-left: solid 6px rgba(0,0,0,0.15);
+    border-left: solid 6px rgba(0,0,0,0.33);
   }
 }
 
@@ -923,8 +924,8 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c14 {
-    border-left: solid 1px rgba(0,0,0,0.15);
-    border-right: solid 1px rgba(0,0,0,0.15);
+    border-left: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -942,8 +943,8 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c15 {
-    border-left: solid 2px rgba(0,0,0,0.15);
-    border-right: solid 2px rgba(0,0,0,0.15);
+    border-left: solid 2px rgba(0,0,0,0.33);
+    border-right: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -961,8 +962,8 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c16 {
-    border-left: solid 4px rgba(0,0,0,0.15);
-    border-right: solid 4px rgba(0,0,0,0.15);
+    border-left: solid 4px rgba(0,0,0,0.33);
+    border-right: solid 4px rgba(0,0,0,0.33);
   }
 }
 
@@ -980,8 +981,8 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c17 {
-    border-left: solid 6px rgba(0,0,0,0.15);
-    border-right: solid 6px rgba(0,0,0,0.15);
+    border-left: solid 6px rgba(0,0,0,0.33);
+    border-right: solid 6px rgba(0,0,0,0.33);
   }
 }
 
@@ -1011,7 +1012,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c19 {
-    border-bottom: solid 1px rgba(0,0,0,0.15);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1029,7 +1030,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c20 {
-    border-bottom: solid 2px rgba(0,0,0,0.15);
+    border-bottom: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -1047,7 +1048,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c21 {
-    border-bottom: solid 4px rgba(0,0,0,0.15);
+    border-bottom: solid 4px rgba(0,0,0,0.33);
   }
 }
 
@@ -1065,7 +1066,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c22 {
-    border-bottom: solid 6px rgba(0,0,0,0.15);
+    border-bottom: solid 6px rgba(0,0,0,0.33);
   }
 }
 
@@ -1083,7 +1084,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c23 {
-    border-left: solid 1px rgba(0,0,0,0.15);
+    border-left: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1101,7 +1102,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c24 {
-    border-left: solid 2px rgba(0,0,0,0.15);
+    border-left: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -1119,7 +1120,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c25 {
-    border-left: solid 4px rgba(0,0,0,0.15);
+    border-left: solid 4px rgba(0,0,0,0.33);
   }
 }
 
@@ -1137,7 +1138,7 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c26 {
-    border-left: solid 6px rgba(0,0,0,0.15);
+    border-left: solid 6px rgba(0,0,0,0.33);
   }
 }
 
@@ -1155,8 +1156,8 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c27 {
-    border-left: solid 1px rgba(0,0,0,0.15);
-    border-right: solid 1px rgba(0,0,0,0.15);
+    border-left: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -1174,8 +1175,8 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c28 {
-    border-left: solid 2px rgba(0,0,0,0.15);
-    border-right: solid 2px rgba(0,0,0,0.15);
+    border-left: solid 2px rgba(0,0,0,0.33);
+    border-right: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -1193,8 +1194,8 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c29 {
-    border-left: solid 4px rgba(0,0,0,0.15);
-    border-right: solid 4px rgba(0,0,0,0.15);
+    border-left: solid 4px rgba(0,0,0,0.33);
+    border-right: solid 4px rgba(0,0,0,0.33);
   }
 }
 
@@ -1212,8 +1213,8 @@ exports[`renders border 1`] = `
 
 @media only screen and (max-width:699px) {
   .c30 {
-    border-left: solid 6px rgba(0,0,0,0.15);
-    border-right: solid 6px rgba(0,0,0,0.15);
+    border-left: solid 6px rgba(0,0,0,0.33);
+    border-right: solid 6px rgba(0,0,0,0.33);
   }
 }
 
@@ -1744,7 +1745,7 @@ exports[`renders error 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1776,7 +1777,7 @@ exports[`renders error 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px #FF324D;
+  border-bottom: solid 1px #E1746A;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -1811,7 +1812,7 @@ exports[`renders error 1`] = `
 .c4 {
   font-size: 16px;
   line-height: 1.375;
-  color: #FF324D;
+  color: #E1746A;
 }
 
 @media only screen and (max-width:699px) {
@@ -1828,7 +1829,7 @@ exports[`renders error 1`] = `
 
 @media only screen and (max-width:699px) {
   .c2 {
-    border-bottom: solid 1px #FF324D;
+    border-bottom: solid 1px #E1746A;
   }
 }
 
@@ -1902,7 +1903,7 @@ exports[`renders help 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1934,7 +1935,7 @@ exports[`renders help 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.15);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -1982,7 +1983,7 @@ exports[`renders help 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.15);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2056,7 +2057,7 @@ exports[`renders label 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2088,7 +2089,7 @@ exports[`renders label 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.15);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -2135,7 +2136,7 @@ exports[`renders label 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
-    border-bottom: solid 1px rgba(0,0,0,0.15);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2191,9 +2192,7 @@ exports[`renders label 1`] = `
       <span
         className="c3"
       >
-        <strong>
-          test label
-        </strong>
+        test label
       </span>
     </div>
     <div
