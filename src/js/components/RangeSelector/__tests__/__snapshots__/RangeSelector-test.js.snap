@@ -2,7 +2,7 @@
 
 exports[`handles keyboard 1`] = `
 <div
-  class="StyledGrommet-gGRXwz deqpVW"
+  class="StyledGrommet-gGRXwz hSKpsq"
 >
   <div
     class="StyledBox-bStriS cDPnPm"
@@ -89,7 +89,7 @@ exports[`handles keyboard 1`] = `
 
 exports[`handles mouse 1`] = `
 <div
-  class="StyledGrommet-gGRXwz deqpVW"
+  class="StyledGrommet-gGRXwz hSKpsq"
 >
   <div
     class="StyledBox-bStriS cDPnPm"
@@ -179,7 +179,7 @@ exports[`renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -529,7 +529,7 @@ exports[`renders color 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -642,8 +642,8 @@ exports[`renders color 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(0,204,235,0.4);
-  color: #333333;
+  background-color: rgba(253,111,255,0.4);
+  color: #444444;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -792,7 +792,7 @@ exports[`renders color 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#00CCEB"
+              fill="#FD6FFF"
               r={6}
             />
           </svg>
@@ -853,7 +853,7 @@ exports[`renders color 1`] = `
             <circle
               cx={6}
               cy={6}
-              fill="#00CCEB"
+              fill="#FD6FFF"
               r={6}
             />
           </svg>
@@ -879,7 +879,7 @@ exports[`renders direction 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1531,7 +1531,7 @@ exports[`renders invert 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1664,7 +1664,7 @@ exports[`renders invert 1`] = `
   outline: none;
   max-width: 100%;
   background-color: rgba(204,204,204,0.4);
-  color: #333333;
+  color: #444444;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -2049,7 +2049,7 @@ exports[`renders max 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2399,7 +2399,7 @@ exports[`renders min 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2749,7 +2749,7 @@ exports[`renders opacity 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2881,7 +2881,7 @@ exports[`renders opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.8);
+  background-color: rgba(134,92,214,0.1);
   color: #FFFFFF;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -2900,7 +2900,7 @@ exports[`renders opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: rgba(134,92,214,0.1);
+  background-color: rgba(134,92,214,0.8);
   color: #FFFFFF;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -3435,7 +3435,7 @@ exports[`renders round 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4643,7 +4643,7 @@ exports[`renders size 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -5815,7 +5815,7 @@ exports[`renders step 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
