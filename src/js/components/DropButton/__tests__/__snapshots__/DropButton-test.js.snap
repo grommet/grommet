@@ -2,7 +2,7 @@
 
 exports[`DropButton closes 1`] = `
 <button
-  class="StyledButton-gXzblK fLbxIF"
+  class="StyledButton-gXzblK dZIZPB"
   aria-label="Open Drop"
   label="Dropper"
   type="button"
@@ -25,7 +25,7 @@ exports[`DropButton closes 2`] = `
 
 exports[`DropButton closes 3`] = `
 "@media only screen and (min-width:700px) {
-  .fLbxIF {
+  .dZIZPB {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -34,7 +34,7 @@ exports[`DropButton closes 3`] = `
 
 exports[`DropButton mounts 1`] = `
 <button
-  class="StyledButton-gXzblK fLbxIF"
+  class="StyledButton-gXzblK dZIZPB"
   aria-label="Open Drop"
   label="Dropper"
   type="button"
@@ -57,7 +57,7 @@ exports[`DropButton mounts 2`] = `
 
 exports[`DropButton mounts 3`] = `
 "@media only screen and (min-width:700px) {
-  .fLbxIF {
+  .dZIZPB {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -66,7 +66,7 @@ exports[`DropButton mounts 3`] = `
 
 exports[`DropButton mounts 4`] = `
 <button
-  class="StyledButton-gXzblK fLbxIF"
+  class="StyledButton-gXzblK dZIZPB"
   aria-label="Open Drop"
   label="Dropper"
   type="button"
@@ -91,7 +91,7 @@ exports[`DropButton mounts 5`] = `
 
 exports[`DropButton mounts 6`] = `
 "@media only screen and (min-width:700px) {
-  .fLbxIF {
+  .dZIZPB {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

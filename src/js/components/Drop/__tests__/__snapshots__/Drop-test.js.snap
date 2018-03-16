@@ -2,7 +2,7 @@
 
 exports[`Drop aligns left right top bottom 1`] = `
 <div
-  class="StyledDrop-bCWxPe gcEofR"
+  class="StyledDrop-bCWxPe eTlFvx"
   tabindex="-1"
   id="drop-node"
   target="[object HTMLInputElement]"
@@ -15,11 +15,11 @@ exports[`Drop aligns left right top bottom 1`] = `
 exports[`Drop aligns left right top bottom 2`] = `
 "
 
-.gcEofR {
+.eTlFvx {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -32,7 +32,7 @@ exports[`Drop aligns left right top bottom 2`] = `
   overflow: auto;
   outline: none;
   background-color: #f8f8f8;
-  color: #333333;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -46,7 +46,7 @@ exports[`Drop aligns left right top bottom 2`] = `
 
 exports[`Drop aligns right left top top 1`] = `
 <div
-  class="StyledDrop-bCWxPe fAkYxw"
+  class="StyledDrop-bCWxPe dRgAcx"
   tabindex="-1"
   id="drop-node"
   target="[object HTMLInputElement]"
@@ -59,11 +59,11 @@ exports[`Drop aligns right left top top 1`] = `
 exports[`Drop aligns right left top top 2`] = `
 "
 
-.fAkYxw {
+.dRgAcx {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -76,7 +76,7 @@ exports[`Drop aligns right left top top 2`] = `
   overflow: auto;
   outline: none;
   background-color: #f8f8f8;
-  color: #333333;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top right;
   -ms-transform-origin: top right;
@@ -90,7 +90,7 @@ exports[`Drop aligns right left top top 2`] = `
 
 exports[`Drop aligns right right bottom top 1`] = `
 <div
-  class="StyledDrop-bCWxPe cscpcq"
+  class="StyledDrop-bCWxPe evXUUL"
   tabindex="-1"
   id="drop-node"
   target="[object HTMLInputElement]"
@@ -103,11 +103,11 @@ exports[`Drop aligns right right bottom top 1`] = `
 exports[`Drop aligns right right bottom top 2`] = `
 "
 
-.cscpcq {
+.evXUUL {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -120,7 +120,7 @@ exports[`Drop aligns right right bottom top 2`] = `
   overflow: auto;
   outline: none;
   background-color: #f8f8f8;
-  color: #333333;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: bottom right;
   -ms-transform-origin: bottom right;
@@ -134,7 +134,7 @@ exports[`Drop aligns right right bottom top 2`] = `
 
 exports[`Drop aligns right right bottom top 3`] = `
 <div
-  class="StyledDrop-bCWxPe cscpcq"
+  class="StyledDrop-bCWxPe evXUUL"
   tabindex="-1"
   id="drop-node"
   target="[object HTMLInputElement]"
@@ -147,11 +147,11 @@ exports[`Drop aligns right right bottom top 3`] = `
 exports[`Drop aligns right right bottom top 4`] = `
 "
 
-.cscpcq {
+.evXUUL {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -164,7 +164,7 @@ exports[`Drop aligns right right bottom top 4`] = `
   overflow: auto;
   outline: none;
   background-color: #f8f8f8;
-  color: #333333;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: bottom right;
   -ms-transform-origin: bottom right;
@@ -178,7 +178,7 @@ exports[`Drop aligns right right bottom top 4`] = `
 
 exports[`Drop aligns skips left random 1`] = `
 <div
-  class="StyledDrop-bCWxPe hBYrcs"
+  class="StyledDrop-bCWxPe eASVTC"
   tabindex="-1"
   id="drop-node"
   target="[object HTMLInputElement]"
@@ -191,11 +191,11 @@ exports[`Drop aligns skips left random 1`] = `
 exports[`Drop aligns skips left random 2`] = `
 "
 
-.hBYrcs {
+.eASVTC {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -208,7 +208,7 @@ exports[`Drop aligns skips left random 2`] = `
   overflow: auto;
   outline: none;
   background-color: #f8f8f8;
-  color: #333333;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: bottom left;
   -ms-transform-origin: bottom left;
@@ -222,7 +222,7 @@ exports[`Drop aligns skips left random 2`] = `
 
 exports[`Drop aligns skips right random 1`] = `
 <div
-  class="StyledDrop-bCWxPe fAkYxw"
+  class="StyledDrop-bCWxPe dRgAcx"
   tabindex="-1"
   id="drop-node"
   target="[object HTMLInputElement]"
@@ -235,11 +235,11 @@ exports[`Drop aligns skips right random 1`] = `
 exports[`Drop aligns skips right random 2`] = `
 "
 
-.fAkYxw {
+.dRgAcx {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -252,7 +252,7 @@ exports[`Drop aligns skips right random 2`] = `
   overflow: auto;
   outline: none;
   background-color: #f8f8f8;
-  color: #333333;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top right;
   -ms-transform-origin: top right;
@@ -266,7 +266,7 @@ exports[`Drop aligns skips right random 2`] = `
 
 exports[`Drop mounts 1`] = `
 <div
-  class="StyledDrop-bCWxPe gcEofR"
+  class="StyledDrop-bCWxPe eTlFvx"
   tabindex="-1"
   id="drop-node"
   target="[object HTMLInputElement]"
@@ -279,11 +279,11 @@ exports[`Drop mounts 1`] = `
 exports[`Drop mounts 2`] = `
 "
 
-.gcEofR {
+.eTlFvx {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -296,7 +296,7 @@ exports[`Drop mounts 2`] = `
   overflow: auto;
   outline: none;
   background-color: #f8f8f8;
-  color: #333333;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -310,7 +310,7 @@ exports[`Drop mounts 2`] = `
 
 exports[`Drop resizes 1`] = `
 <div
-  class="StyledDrop-bCWxPe gcEofR"
+  class="StyledDrop-bCWxPe eTlFvx"
   tabindex="-1"
   id="test"
   target="[object HTMLInputElement]"
@@ -323,11 +323,11 @@ exports[`Drop resizes 1`] = `
 exports[`Drop resizes 2`] = `
 "
 
-.gcEofR {
+.eTlFvx {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -340,7 +340,7 @@ exports[`Drop resizes 2`] = `
   overflow: auto;
   outline: none;
   background-color: #f8f8f8;
-  color: #333333;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -354,7 +354,7 @@ exports[`Drop resizes 2`] = `
 
 exports[`Drop restrict focus 1`] = `
 <div
-  class="StyledDrop-bCWxPe gcEofR"
+  class="StyledDrop-bCWxPe eTlFvx"
   tabindex="-1"
   id="drop-node"
   target="[object HTMLInputElement]"
@@ -366,7 +366,7 @@ exports[`Drop restrict focus 1`] = `
 
 exports[`Drop restrict focus 2`] = `
 <div
-  class="StyledDrop-bCWxPe gcEofR"
+  class="StyledDrop-bCWxPe eTlFvx"
   tabindex="-1"
   id="drop-node"
   target="[object HTMLInputElement]"
@@ -379,11 +379,11 @@ exports[`Drop restrict focus 2`] = `
 exports[`Drop restrict focus 3`] = `
 "
 
-.gcEofR {
+.eTlFvx {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -396,7 +396,7 @@ exports[`Drop restrict focus 3`] = `
   overflow: auto;
   outline: none;
   background-color: #f8f8f8;
-  color: #333333;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -418,7 +418,7 @@ exports[`Drop restrict focus 4`] = `
 
 exports[`Drop skips invalid align 1`] = `
 <div
-  class="StyledDrop-bCWxPe gcEofR"
+  class="StyledDrop-bCWxPe eTlFvx"
   tabindex="-1"
   id="drop-node"
   target="[object HTMLInputElement]"
@@ -431,11 +431,11 @@ exports[`Drop skips invalid align 1`] = `
 exports[`Drop skips invalid align 2`] = `
 "
 
-.gcEofR {
+.eTlFvx {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -448,7 +448,7 @@ exports[`Drop skips invalid align 2`] = `
   overflow: auto;
   outline: none;
   background-color: #f8f8f8;
-  color: #333333;
+  color: #444444;
   opacity: 0;
   -webkit-transform-origin: top left;
   -ms-transform-origin: top left;
@@ -462,7 +462,7 @@ exports[`Drop skips invalid align 2`] = `
 
 exports[`Drop updates 1`] = `
 <div
-  class="StyledGrommet-gGRXwz deqpVW"
+  class="StyledGrommet-gGRXwz hSKpsq"
 >
   <input />
 </div>

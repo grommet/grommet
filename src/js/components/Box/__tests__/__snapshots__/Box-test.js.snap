@@ -5,7 +5,7 @@ exports[`Box align renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -209,7 +209,7 @@ exports[`Box alignContent renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -444,7 +444,7 @@ exports[`Box alignSelf renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -607,7 +607,7 @@ exports[`Box animation renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1116,7 +1116,7 @@ exports[`Box background renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1150,8 +1150,8 @@ exports[`Box background renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #00CCEB;
-  color: #333333;
+  background-color: #FD6FFF;
+  color: #444444;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -1168,8 +1168,8 @@ exports[`Box background renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #0A64A0;
-  color: #FFFFFF;
+  background-color: #EB6060;
+  color: #444444;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -1187,7 +1187,7 @@ exports[`Box background renders 1`] = `
   outline: none;
   max-width: 100%;
   background-color: #F6F6F6;
-  color: #333333;
+  color: #444444;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -1222,8 +1222,8 @@ exports[`Box background renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #FF324D;
-  color: #FFFFFF;
+  background-color: #E1746A;
+  color: #444444;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -1261,7 +1261,7 @@ exports[`Box background renders 1`] = `
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAABGdBTUEAALGPC/xhBQAAAA9JREFUCB1jYMAC/mOIAQASFQEAlwuUYwAAAABJRU5ErkJggg==) no-repeat;
   background-position: center center;
   background-size: cover;
-  color: #333333;
+  color: #444444;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -1491,7 +1491,7 @@ exports[`Box basis renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1986,7 +1986,7 @@ exports[`Box border renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2002,7 +2002,7 @@ exports[`Box border renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border: solid 1px rgba(0,0,0,0.15);
+  border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -2019,8 +2019,8 @@ exports[`Box border renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.15);
-  border-bottom: solid 1px rgba(0,0,0,0.15);
+  border-top: solid 1px rgba(0,0,0,0.33);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -2037,8 +2037,8 @@ exports[`Box border renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 1px rgba(0,0,0,0.15);
-  border-right: solid 1px rgba(0,0,0,0.15);
+  border-left: solid 1px rgba(0,0,0,0.33);
+  border-right: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -2055,7 +2055,7 @@ exports[`Box border renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-top: solid 1px rgba(0,0,0,0.15);
+  border-top: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -2072,7 +2072,7 @@ exports[`Box border renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-left: solid 1px rgba(0,0,0,0.15);
+  border-left: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -2089,7 +2089,7 @@ exports[`Box border renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-bottom: solid 1px rgba(0,0,0,0.15);
+  border-bottom: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -2106,7 +2106,7 @@ exports[`Box border renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border-right: solid 1px rgba(0,0,0,0.15);
+  border-right: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -2123,7 +2123,7 @@ exports[`Box border renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border: solid 1px #00CCEB;
+  border: solid 1px #FD6FFF;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -2140,7 +2140,7 @@ exports[`Box border renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border: solid 2px rgba(0,0,0,0.15);
+  border: solid 2px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -2157,7 +2157,7 @@ exports[`Box border renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border: solid 4px rgba(0,0,0,0.15);
+  border: solid 4px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -2174,7 +2174,7 @@ exports[`Box border renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border: solid 12px rgba(0,0,0,0.15);
+  border: solid 12px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -2191,7 +2191,7 @@ exports[`Box border renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  border: solid 24px rgba(0,0,0,0.15);
+  border: solid 24px rgba(0,0,0,0.33);
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -2202,7 +2202,7 @@ exports[`Box border renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    border: solid 1px rgba(0,0,0,0.15);
+    border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2220,8 +2220,8 @@ exports[`Box border renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c2 {
-    border-top: solid 1px rgba(0,0,0,0.15);
-    border-bottom: solid 1px rgba(0,0,0,0.15);
+    border-top: solid 1px rgba(0,0,0,0.33);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2239,8 +2239,8 @@ exports[`Box border renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c3 {
-    border-left: solid 1px rgba(0,0,0,0.15);
-    border-right: solid 1px rgba(0,0,0,0.15);
+    border-left: solid 1px rgba(0,0,0,0.33);
+    border-right: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2258,7 +2258,7 @@ exports[`Box border renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
-    border-top: solid 1px rgba(0,0,0,0.15);
+    border-top: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2276,7 +2276,7 @@ exports[`Box border renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c5 {
-    border-left: solid 1px rgba(0,0,0,0.15);
+    border-left: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2294,7 +2294,7 @@ exports[`Box border renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    border-bottom: solid 1px rgba(0,0,0,0.15);
+    border-bottom: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2312,7 +2312,7 @@ exports[`Box border renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c7 {
-    border-right: solid 1px rgba(0,0,0,0.15);
+    border-right: solid 1px rgba(0,0,0,0.33);
   }
 }
 
@@ -2330,7 +2330,7 @@ exports[`Box border renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c8 {
-    border: solid 1px #00CCEB;
+    border: solid 1px #FD6FFF;
   }
 }
 
@@ -2348,7 +2348,7 @@ exports[`Box border renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c9 {
-    border: solid 2px rgba(0,0,0,0.15);
+    border: solid 2px rgba(0,0,0,0.33);
   }
 }
 
@@ -2366,7 +2366,7 @@ exports[`Box border renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c10 {
-    border: solid 4px rgba(0,0,0,0.15);
+    border: solid 4px rgba(0,0,0,0.33);
   }
 }
 
@@ -2384,7 +2384,7 @@ exports[`Box border renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c11 {
-    border: solid 6px rgba(0,0,0,0.15);
+    border: solid 6px rgba(0,0,0,0.33);
   }
 }
 
@@ -2402,7 +2402,7 @@ exports[`Box border renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c12 {
-    border: solid 12px rgba(0,0,0,0.15);
+    border: solid 12px rgba(0,0,0,0.33);
   }
 }
 
@@ -2500,7 +2500,7 @@ exports[`Box direction renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2548,9 +2548,9 @@ exports[`Box direction renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  -webkit-flex-direction: row-responsive;
-  -ms-flex-direction: row-responsive;
-  flex-direction: row-responsive;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   margin: 0;
   padding: 0;
 }
@@ -2636,7 +2636,7 @@ exports[`Box elevation renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2865,7 +2865,7 @@ exports[`Box fill renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3026,7 +3026,7 @@ exports[`Box flex renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3223,7 +3223,7 @@ exports[`Box gap renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3342,7 +3342,7 @@ exports[`Box gridArea renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3395,7 +3395,7 @@ exports[`Box justify renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3562,7 +3562,7 @@ exports[`Box justifySelf renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3629,7 +3629,7 @@ exports[`Box margin renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3949,7 +3949,7 @@ exports[`Box pad renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4269,7 +4269,7 @@ exports[`Box renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4321,7 +4321,7 @@ exports[`Box responsive renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4394,7 +4394,7 @@ exports[`Box round renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4613,7 +4613,7 @@ exports[`Box tag renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -4665,7 +4665,7 @@ exports[`Box wrap renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;

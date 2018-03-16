@@ -6,6 +6,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { DropButton } from '../DropButton';
+import { Text } from '../Text';
 
 import { withTheme } from '../hocs';
 
@@ -81,6 +82,7 @@ class Menu extends Component {
       label,
       messages,
       onKeyDown,
+      size,
       theme,
       ...rest
     } = this.props;
@@ -96,8 +98,8 @@ class Menu extends Component {
         pad='small'
         gap='small'
       >
-        {label}
-        <MenuIcon />
+        <Text size={size}>{label}</Text>
+        <MenuIcon color='brand' size={size} />
       </Box>
     );
 

@@ -39,7 +39,7 @@ exports[`Video autoPlay renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -59,7 +59,7 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(68,68,68,0.8);
+  background-color: rgba(68,68,68,0.1);
   color: #FFFFFF;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -187,6 +187,15 @@ exports[`Video autoPlay renders 1`] = `
   vertical-align: bottom;
 }
 
+.c14 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .c11 {
   max-width: 100%;
 }
@@ -198,15 +207,6 @@ exports[`Video autoPlay renders 1`] = `
 
 .c10 {
   position: relative;
-}
-
-.c14 {
-  font-size: 16px;
-  line-height: 1.375;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 .c2 {
@@ -593,7 +593,7 @@ exports[`Video controls renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -613,7 +613,7 @@ exports[`Video controls renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(68,68,68,0.8);
+  background-color: rgba(68,68,68,0.1);
   color: #FFFFFF;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -765,6 +765,15 @@ exports[`Video controls renders 1`] = `
   vertical-align: bottom;
 }
 
+.c14 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .c11 {
   max-width: 100%;
 }
@@ -776,15 +785,6 @@ exports[`Video controls renders 1`] = `
 
 .c10 {
   position: relative;
-}
-
-.c14 {
-  font-size: 16px;
-  line-height: 1.375;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 .c2 {
@@ -1362,7 +1362,7 @@ exports[`Video fit renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -1382,7 +1382,7 @@ exports[`Video fit renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(68,68,68,0.8);
+  background-color: rgba(68,68,68,0.1);
   color: #FFFFFF;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -1510,6 +1510,15 @@ exports[`Video fit renders 1`] = `
   vertical-align: bottom;
 }
 
+.c14 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .c11 {
   max-width: 100%;
 }
@@ -1521,15 +1530,6 @@ exports[`Video fit renders 1`] = `
 
 .c10 {
   position: relative;
-}
-
-.c14 {
-  font-size: 16px;
-  line-height: 1.375;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 .c2 {
@@ -2105,7 +2105,7 @@ exports[`Video loop renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2125,7 +2125,7 @@ exports[`Video loop renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(68,68,68,0.8);
+  background-color: rgba(68,68,68,0.1);
   color: #FFFFFF;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -2253,6 +2253,15 @@ exports[`Video loop renders 1`] = `
   vertical-align: bottom;
 }
 
+.c14 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .c11 {
   max-width: 100%;
 }
@@ -2264,15 +2273,6 @@ exports[`Video loop renders 1`] = `
 
 .c10 {
   position: relative;
-}
-
-.c14 {
-  font-size: 16px;
-  line-height: 1.375;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 .c2 {
@@ -2627,7 +2627,7 @@ exports[`Video mute renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -2647,7 +2647,7 @@ exports[`Video mute renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(68,68,68,0.8);
+  background-color: rgba(68,68,68,0.1);
   color: #FFFFFF;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -2775,6 +2775,15 @@ exports[`Video mute renders 1`] = `
   vertical-align: bottom;
 }
 
+.c14 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .c11 {
   max-width: 100%;
 }
@@ -2786,15 +2795,6 @@ exports[`Video mute renders 1`] = `
 
 .c10 {
   position: relative;
-}
-
-.c14 {
-  font-size: 16px;
-  line-height: 1.375;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 .c2 {
@@ -3149,7 +3149,7 @@ exports[`Video renders 1`] = `
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #333333;
+  color: #444444;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3169,7 +3169,7 @@ exports[`Video renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: rgba(68,68,68,0.8);
+  background-color: rgba(68,68,68,0.1);
   color: #FFFFFF;
   min-height: 0;
   -webkit-flex-direction: row;
@@ -3297,6 +3297,15 @@ exports[`Video renders 1`] = `
   vertical-align: bottom;
 }
 
+.c14 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .c11 {
   max-width: 100%;
 }
@@ -3308,15 +3317,6 @@ exports[`Video renders 1`] = `
 
 .c10 {
   position: relative;
-}
-
-.c14 {
-  font-size: 16px;
-  line-height: 1.375;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 .c2 {

@@ -101,7 +101,7 @@ class FormField extends Component {
             margin={{ vertical: 'xsmall', horizontal: 'small' }}
             gap='xsmall'
           >
-            {label ? <Text><strong>{label}</strong></Text> : undefined}
+            {label ? <Text>{label}</Text> : undefined}
             {help ? <Text color='dark-5'>{help}</Text> : undefined}
           </Box>
         ) : undefined}
