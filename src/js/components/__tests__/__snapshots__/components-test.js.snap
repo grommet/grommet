@@ -29,6 +29,7 @@ Object {
   "Paragraph": [Function],
   "RadioButton": [Function],
   "RangeInput": [Function],
+  "RangeSelector": [Function],
   "Responsive": [Function],
   "RoutedAnchor": [Function],
   "RoutedButton": [Function],

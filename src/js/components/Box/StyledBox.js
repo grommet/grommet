@@ -49,7 +49,7 @@ const BASIS_MAP = {
 };
 
 const basisStyle = css`
-  flex-basis: ${props => BASIS_MAP[props.basis] || props.theme.global.size[props.basis]};
+  flex-basis: ${props => BASIS_MAP[props.basis] || props.theme.global.size[props.basis] || props.basis};
 `;
 
 // min-width and min-height needed because of this

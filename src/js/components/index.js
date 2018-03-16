@@ -23,6 +23,7 @@ export * from './Meter';
 export * from './Paragraph';
 export * from './RadioButton';
 export * from './RangeInput';
+export * from './RangeSelector';
 export * from './Responsive';
 export * from './Select';
 export * from './SkipLinks';
