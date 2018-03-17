@@ -153,9 +153,98 @@ describe('Select', () => {
     expect(preventDefault).toBeCalled();
     Simulate.keyDown(
       document.getElementById('test-select__select-drop'),
+      { key: 'Up', keyCode: 38, which: 38, preventDefault },
+    );
+    expect(preventDefault).toBeCalled();
+    Simulate.keyDown(
+      document.getElementById('test-select__select-drop'),
       { key: 'Enter', keyCode: 13, which: 13, preventDefault },
     );
     expect(preventDefault).toBeCalled();
+    expect(onChange).toBeCalled();
+  });
+
+  test('renders multiple', () => {
+    const component = mount(
+      <Select
+        id='test-select'
+        multiple={true}
+        options={['one', 'two']}
+        selected={[]}
+        value={[]}
+      />, {
+        attachTo: document.body.firstChild,
+      }
+    );
+    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
+
+  test('mounts multiple', (done) => {
+    const component = mount(
+      <Select
+        id='test-select'
+        multiple={true}
+        options={['one', 'two']}
+        selected={[0, 1]}
+        value={['one', 'two']}
+      />
+    );
+    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(document.getElementById('test-select__drop')).toBeNull();
+
+    component.simulate('click');
+
+    expect(component.getDOMNode()).toMatchSnapshot();
+    expectPortal('test-select__drop').toMatchSnapshot();
+
+    setTimeout(() => {
+      expect(document.activeElement).toMatchSnapshot();
+      done();
+    }, 100);
+  });
+
+  test('selects another option', () => {
+    const onChange = jest.fn();
+    const component = mount(
+      <Select
+        id='test-select'
+        multiple={true}
+        options={['one', 'two']}
+        onChange={onChange}
+        value={['two']}
+        selected={[1]}
+      />
+    );
+
+    component.simulate('click');
+
+    // pressing enter here nothing will happen
+    Simulate.click(
+      document.getElementById('test-select__drop').querySelector('button')
+    );
+    expect(onChange).toBeCalled();
+  });
+
+  test('deselects an option', () => {
+    const onChange = jest.fn();
+    const component = mount(
+      <Select
+        id='test-select'
+        multiple={true}
+        options={['one', 'two']}
+        onChange={onChange}
+        value={['one']}
+        selected={[0]}
+      />
+    );
+
+    component.simulate('click');
+
+    // pressing enter here nothing will happen
+    Simulate.click(
+      document.getElementById('test-select__drop').querySelector('button')
+    );
     expect(onChange).toBeCalled();
   });
 });

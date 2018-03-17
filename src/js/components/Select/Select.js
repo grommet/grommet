@@ -14,6 +14,7 @@ import doc from './doc';
 class Select extends Component {
   static defaultProps = {
     dropAlign: { top: 'bottom', left: 'left' },
+    messages: { multiple: 'multiple' },
   }
 
   state = { open: false }
@@ -37,6 +38,7 @@ class Select extends Component {
       disabled,
       dropAlign,
       dropTarget,
+      messages,
       onChange,
       onClose,
       placeholder,
@@ -55,6 +57,27 @@ class Select extends Component {
     };
 
     const SelectIcon = theme.select.icons.down;
+    let selectValue;
+    let textValue;
+    if (!React.isValidElement(value)) {
+      if (Array.isArray(value)) {
+        if (value.length > 1) {
+          textValue = messages.multiple;
+        } else if (value.length === 1) {
+          if (React.isValidElement(value[0])) {
+            selectValue = value[0];
+          } else {
+            textValue = value[0];
+          }
+        } else {
+          textValue = '';
+        }
+      } else {
+        textValue = value;
+      }
+    } else {
+      selectValue = value;
+    }
 
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
@@ -76,7 +99,7 @@ class Select extends Component {
             direction='row'
             justify='between'
           >
-            {React.isValidElement(value) ? value : (
+            {selectValue || (
               <TextInput
                 style={{ cursor: 'pointer' }}
                 ref={(ref) => { this.inputRef = ref; }}
@@ -86,7 +109,7 @@ class Select extends Component {
                 placeholder={placeholder}
                 plain={true}
                 readOnly={true}
-                value={value}
+                value={textValue}
               />
             )}
             <Box
