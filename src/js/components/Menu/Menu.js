@@ -75,6 +75,7 @@ class Menu extends Component {
 
   render() {
     const {
+      disabled,
       dropAlign,
       dropBackground,
       dropTarget,
@@ -128,6 +129,7 @@ class Menu extends Component {
             {...rest}
             theme={theme}
             a11yTitle={messages.openMenu || 'Open Menu'}
+            disabled={disabled}
             dropAlign={dropAlign}
             dropTarget={dropTarget}
             open={open}

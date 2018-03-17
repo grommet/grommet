@@ -259,4 +259,27 @@ describe('Menu', () => {
 
     expectPortal('test-menu__drop').toMatchSnapshot();
   });
+
+  test('mounts disabled', () => {
+    const component = mount(
+      <Menu
+        id='test-menu'
+        disabled={true}
+        label='Test'
+        items={[
+          { label: 'Item 1' },
+          { label: 'Item 2', onClick: () => {} },
+          { label: 'Item 3', href: '/test' },
+        ]}
+      />, {
+        attachTo: document.body.firstChild,
+      }
+    );
+
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+
+    component.find('button').first().simulate('click');
+
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
 });

@@ -22,6 +22,14 @@ Custom title to be used by screen readers.
 string
 ```
 
+**disabled**
+
+Whether the button should be disabled.
+
+```
+boolean
+```
+
 **dropAlign**
 
 How to align the drop with respect to the button. Defaults to `{

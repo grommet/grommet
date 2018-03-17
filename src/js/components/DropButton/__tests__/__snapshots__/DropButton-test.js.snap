@@ -97,3 +97,19 @@ exports[`DropButton mounts 6`] = `
   }
 }"
 `;
+
+exports[`DropButton mounts disabled 1`] = `
+<button
+  class="StyledButton-gXzblK cJvOXL"
+  aria-label="Open Drop"
+  disabled=""
+  label="Dropper"
+  type="button"
+>
+  <span
+    class="StyledButton__StyledLabel-XZHBZ kthNMI"
+  >
+    Dropper
+  </span>
+</button>
+`;

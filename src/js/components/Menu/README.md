@@ -12,6 +12,14 @@ import { Menu } from 'grommet';
 
 ## Properties
 
+**disabled**
+
+Whether the menu should be disabled.
+
+```
+boolean
+```
+
 **dropAlign**
 
 Where to place the drop down. The keys correspond to a side of the drop down.

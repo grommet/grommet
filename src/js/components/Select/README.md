@@ -35,6 +35,14 @@ Function that will be called when each option is rendered.
 function
 ```
 
+**disabled**
+
+Whether the select should be disabled.
+
+```
+boolean
+```
+
 **dropAlign**
 
 How to align the drop. Defaults to `{
