@@ -54,7 +54,7 @@ exports[`Menu opens and closes on click 1`] = `
       direction="column"
     >
       <button
-        class="StyledButton-gXzblK dDrPei"
+        class="StyledButton-gXzblK gqMHaF"
         disabled=""
         type="button"
       >
@@ -151,7 +151,7 @@ exports[`Menu opens and closes on click 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .dDrPei {
+  .gqMHaF {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -310,7 +310,7 @@ exports[`Menu with dropAlign renders 1`] = `
       direction="column"
     >
       <button
-        class="StyledButton-gXzblK dDrPei"
+        class="StyledButton-gXzblK gqMHaF"
         disabled=""
         type="button"
       >
@@ -322,7 +322,7 @@ exports[`Menu with dropAlign renders 1`] = `
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK dDrPei"
+        class="StyledButton-gXzblK gqMHaF"
         disabled=""
         type="button"
       >
@@ -397,7 +397,7 @@ exports[`Menu with dropAlign renders 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .dDrPei {
+  .gqMHaF {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

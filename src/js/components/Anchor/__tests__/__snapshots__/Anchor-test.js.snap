@@ -188,6 +188,9 @@ exports[`Anchor icon label renders 1`] = `
                   [Function],
                 ],
               },
+              "disabled": Object {
+                "opacity": 0.3,
+              },
               "maxWidth": "384px",
               "minWidth": "96px",
               "padding": Object {
@@ -1018,6 +1021,9 @@ exports[`Anchor reverse icon label renders 1`] = `
                   [Function],
                 ],
               },
+              "disabled": Object {
+                "opacity": 0.3,
+              },
               "maxWidth": "384px",
               "minWidth": "96px",
               "padding": Object {
@@ -1690,6 +1696,9 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "text": Array [
                   [Function],
                 ],
+              },
+              "disabled": Object {
+                "opacity": 0.3,
               },
               "maxWidth": "384px",
               "minWidth": "96px",
