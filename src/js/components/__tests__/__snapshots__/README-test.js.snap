@@ -2510,14 +2510,6 @@ Custom title to be used by screen readers.
 string
 \`\`\`
 
-**activeOptionIndex**
-
-Highlight a given option at the provided index.
-
-\`\`\`
-number
-\`\`\`
-
 **children**
 
 Function that will be called when each option is rendered.
@@ -2592,6 +2584,24 @@ Whether when 'plain' it should receive a focus outline.
 boolean
 \`\`\`
 
+**messages**
+
+Custom messages.
+
+\`\`\`
+{
+  multiple: string
+}
+\`\`\`
+
+**multiple**
+
+Whether to allow multiple options to be selected.
+
+\`\`\`
+boolean
+\`\`\`
+
 **onChange**
 
 Function that will be called when the user selects an option.
@@ -2611,7 +2621,7 @@ function
 **onSearch**
 
 Function that will be called when the user types in the search input.
-If this property is not provided, no search field will be rendered.
+      If this property is not provided, no search field will be rendered.
 
 \`\`\`
 function
@@ -2619,8 +2629,8 @@ function
 
 **options**
 
-Required. Options can be either a string or an object. If an object is used, use children callback
-in order to render anything based on the current item.
+Required. Options can be either a string or an object. If an object is used, use
+      children callback in order to render anything based on the current item.
 
 \`\`\`
 [
@@ -2654,14 +2664,30 @@ Placeholder text to use in the search box when the search input is empty.
 string
 \`\`\`
 
+**selected**
+
+Index of the currently selected option. When multiple, the set of
+      options selected. This property is required when multiple.
+
+\`\`\`
+number
+[number]
+\`\`\`
+
 **value**
 
-Currently selected value.
+Currently selected value. This will be an array
+      when multiple.
 
 \`\`\`
 string
 element
 object
+[
+  string
+  element
+  object
+]
 \`\`\`
   ",
   "SkipLinks": "## SkipLinks
