@@ -84,4 +84,14 @@ is too long to all fit.
 ```
 boolean
 ```
+
+**weight**
+
+Font weight
+
+```
+normal
+bold
+number
+```
   

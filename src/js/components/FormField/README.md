@@ -11,49 +11,27 @@ import { FormField } from 'grommet';
 
 ## Properties
 
-**border**
-
-What sort of border to use. Setting this to false
-      will not show any border and will leave the focus indicator to
-      the children. Defaults to `{
-  "color": "border",
-  "position": "inner",
-  "side": "bottom"
-}`.
-
-```
-boolean
-{
-  color: string,
-  position: 
-    outer
-    inner,
-  side: 
-    top
-    left
-    bottom
-    right
-    horizontal
-    vertical
-    all,
-  size: 
-    small
-    medium
-    large
-}
-```
-
 **error**
 
 Any error text describing issues with the field
 
 ```
 string
+node
 ```
 
 **help**
 
 Any help text describing how the field works
+
+```
+string
+node
+```
+
+**htmlFor**
+
+The id of the input element contained in this field
 
 ```
 string
@@ -65,5 +43,6 @@ A short label describing the field
 
 ```
 string
+node
 ```
   

@@ -330,6 +330,23 @@ exports[`Anchor icon label renders 1`] = `
                 },
               },
             },
+            "formField": Object {
+              "border": Object {
+                "color": "border",
+                "error": Object {
+                  "color": "status-critical",
+                },
+                "position": "inner",
+                "side": "bottom",
+              },
+              "error": Object {
+                "color": "status-critical",
+              },
+              "help": Object {
+                "color": "dark-5",
+              },
+              "label": Object {},
+            },
             "global": Object {
               "animation": Object {
                 "duration": "1s",
@@ -1160,6 +1177,23 @@ exports[`Anchor reverse icon label renders 1`] = `
                 },
               },
             },
+            "formField": Object {
+              "border": Object {
+                "color": "border",
+                "error": Object {
+                  "color": "status-critical",
+                },
+                "position": "inner",
+                "side": "bottom",
+              },
+              "error": Object {
+                "color": "status-critical",
+              },
+              "help": Object {
+                "color": "dark-5",
+              },
+              "label": Object {},
+            },
             "global": Object {
               "animation": Object {
                 "duration": "1s",
@@ -1832,6 +1866,23 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   },
                 },
               },
+            },
+            "formField": Object {
+              "border": Object {
+                "color": "border",
+                "error": Object {
+                  "color": "status-critical",
+                },
+                "position": "inner",
+                "side": "bottom",
+              },
+              "error": Object {
+                "color": "status-critical",
+              },
+              "help": Object {
+                "color": "dark-5",
+              },
+              "label": Object {},
             },
             "global": Object {
               "animation": Object {
