@@ -75,10 +75,12 @@ class Menu extends Component {
 
   render() {
     const {
+      children,
       disabled,
       dropAlign,
       dropBackground,
       dropTarget,
+      icon,
       items,
       label,
       messages,
@@ -91,16 +93,18 @@ class Menu extends Component {
 
     const MenuIcon = theme.menu.icons.down;
 
-    const content = (
+    const content = children || (
       <Box
         direction='row'
         justify='start'
         align='center'
         pad='small'
-        gap='small'
+        gap={(label && icon !== false) ? 'small' : undefined}
       >
         <Text size={size}>{label}</Text>
-        <MenuIcon color='brand' size={size} />
+        {(icon !== false) ?
+          ((icon !== true && icon) || <MenuIcon color='brand' size={size} />)
+          : null}
       </Box>
     );
 

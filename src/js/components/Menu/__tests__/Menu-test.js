@@ -16,6 +16,7 @@ describe('Menu', () => {
     const component = mount(
       <Menu
         icon={<svg />}
+        label='Test Menu'
         id='test-menu'
         items={[
           { label: 'Item 1' },

@@ -1774,7 +1774,7 @@ exports[`Select renders multiple 1`] = `
 
 exports[`mounts disabled 1`] = `
 <button
-  class="StyledButton-gXzblK dDrPei"
+  class="StyledButton-gXzblK gqMHaF"
   id="test-select"
   aria-label="undefined"
   disabled=""
@@ -1827,7 +1827,7 @@ exports[`mounts disabled 1`] = `
 
 exports[`mounts disabled 2`] = `
 <button
-  class="StyledButton-gXzblK dDrPei"
+  class="StyledButton-gXzblK gqMHaF"
   id="test-select"
   aria-label="undefined"
   disabled=""

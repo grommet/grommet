@@ -100,7 +100,7 @@ exports[`DropButton mounts 6`] = `
 
 exports[`DropButton mounts disabled 1`] = `
 <button
-  class="StyledButton-gXzblK cJvOXL"
+  class="StyledButton-gXzblK dUzCdF"
   aria-label="Open Drop"
   disabled=""
   label="Dropper"
