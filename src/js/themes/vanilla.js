@@ -242,6 +242,9 @@ export default deepFreeze({
       secondary: css`${props => colorForName('neutral-2', props.theme)}`,
       text: css`${props => props.theme.global.colors.text}`,
     },
+    disabled: {
+      opacity: 0.3,
+    },
     minWidth: `${baseSpacing * 4}px`,
     maxWidth: `${baseSpacing * 16}px`,
     padding: {

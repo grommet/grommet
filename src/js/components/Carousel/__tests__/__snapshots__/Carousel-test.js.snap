@@ -50,7 +50,7 @@ exports[`play renders 1`] = `
         direction="column"
       >
         <button
-          class="StyledButton-gXzblK jZsiZy"
+          class="StyledButton-gXzblK erxOgR"
           disabled=""
           type="button"
         >
@@ -326,7 +326,7 @@ exports[`play renders 2`] = `
         direction="column"
       >
         <button
-          class="StyledButton-gXzblK jZsiZy"
+          class="StyledButton-gXzblK erxOgR"
           type="button"
           disabled=""
         >
