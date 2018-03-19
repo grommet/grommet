@@ -164,6 +164,22 @@ describe('Select', () => {
     expect(onChange).toBeCalled();
   });
 
+  test('renders size', () => {
+    const component = mount(
+      <Select
+        id='test-select'
+        size='large'
+        options={['one', 'two']}
+        selected={[]}
+        value={[]}
+      />, {
+        attachTo: document.body.firstChild,
+      }
+    );
+    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(document.getElementById('test-menu__drop')).toBeNull();
+  });
+
   test('renders multiple', () => {
     const component = mount(
       <Select
@@ -247,17 +263,17 @@ describe('Select', () => {
     );
     expect(onChange).toBeCalled();
   });
-});
 
-test('mounts disabled', () => {
-  const component = mount(
-    <Select id='test-select' disabled={true} options={['one', 'two']} />
-  );
-  expect(component.getDOMNode()).toMatchSnapshot();
-  expect(document.getElementById('test-select__drop')).toBeNull();
+  test('mounts disabled', () => {
+    const component = mount(
+      <Select id='test-select' disabled={true} options={['one', 'two']} />
+    );
+    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(document.getElementById('test-select__drop')).toBeNull();
 
-  component.simulate('click');
+    component.simulate('click');
 
-  expect(component.getDOMNode()).toMatchSnapshot();
-  expect(document.getElementById('test-select__drop')).toBeNull();
+    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(document.getElementById('test-select__drop')).toBeNull();
+  });
 });

@@ -116,5 +116,6 @@ The size of the menu.
 small
 medium
 large
+xlarge
 ```
   

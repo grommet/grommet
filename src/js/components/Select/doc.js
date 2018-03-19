@@ -77,6 +77,9 @@ export default (Select) => {
       `Index of the currently selected option. When multiple, the set of
       options selected. This property is required when multiple.`
     ),
+    size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']).description(
+      'The size of the select.'
+    ),
     value: PropTypes.oneOfType([
       PropTypes.string, PropTypes.element, PropTypes.object,
       PropTypes.arrayOf(PropTypes.oneOfType([
