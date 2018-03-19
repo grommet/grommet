@@ -248,3 +248,16 @@ describe('Select', () => {
     expect(onChange).toBeCalled();
   });
 });
+
+test('mounts disabled', () => {
+  const component = mount(
+    <Select id='test-select' disabled={true} options={['one', 'two']} />
+  );
+  expect(component.getDOMNode()).toMatchSnapshot();
+  expect(document.getElementById('test-select__drop')).toBeNull();
+
+  component.simulate('click');
+
+  expect(component.getDOMNode()).toMatchSnapshot();
+  expect(document.getElementById('test-select__drop')).toBeNull();
+});

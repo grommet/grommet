@@ -17,6 +17,8 @@ export default (Menu) => {
     );
 
   DocumentedMenu.propTypes = {
+    disabled: PropTypes.bool
+      .description('Whether the menu should be disabled.'),
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),
       bottom: PropTypes.oneOf(VERTICAL_ALIGN_OPTIONS),

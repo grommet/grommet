@@ -1771,3 +1771,109 @@ exports[`Select renders multiple 1`] = `
   </div>
 </button>
 `;
+
+exports[`mounts disabled 1`] = `
+<button
+  class="StyledButton-gXzblK dDrPei"
+  id="test-select"
+  aria-label="undefined"
+  disabled=""
+  type="button"
+>
+  <div
+    class="StyledBox-bStriS iiEOir"
+    direction="row"
+    aria-hidden="true"
+  >
+    <div
+      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+    >
+      <input
+        type="text"
+        class="StyledTextInput-bzOzsW bhNKQj"
+        id="test-select"
+        autocomplete="off"
+        style="cursor: pointer;"
+        tabindex="-1"
+        readonly=""
+      />
+    </div>
+    <div
+      class="StyledBox-bStriS kzhXNn"
+      direction="column"
+      style="min-width: auto;"
+    >
+      <svg
+        class="StyledIcon-gTfjEw htxeRg"
+        width="24px"
+        height="24px"
+        viewBox="0 0 24 24"
+        version="1.1"
+        role="img"
+        aria-label="FormDown"
+        color="brand"
+      >
+        <polyline
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+          points="18 9 12 15 6 9"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`mounts disabled 2`] = `
+<button
+  class="StyledButton-gXzblK dDrPei"
+  id="test-select"
+  aria-label="undefined"
+  disabled=""
+  type="button"
+>
+  <div
+    class="StyledBox-bStriS iiEOir"
+    direction="row"
+    aria-hidden="true"
+  >
+    <div
+      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+    >
+      <input
+        type="text"
+        class="StyledTextInput-bzOzsW bhNKQj"
+        id="test-select"
+        autocomplete="off"
+        style="cursor: pointer;"
+        tabindex="-1"
+        readonly=""
+      />
+    </div>
+    <div
+      class="StyledBox-bStriS kzhXNn"
+      direction="column"
+      style="min-width: auto;"
+    >
+      <svg
+        class="StyledIcon-gTfjEw htxeRg"
+        width="24px"
+        height="24px"
+        viewBox="0 0 24 24"
+        version="1.1"
+        role="img"
+        aria-label="FormDown"
+        color="brand"
+      >
+        <polyline
+          fill="none"
+          stroke="#000"
+          stroke-width="2"
+          points="18 9 12 15 6 9"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;

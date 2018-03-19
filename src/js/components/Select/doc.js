@@ -17,6 +17,8 @@ export default (Select) => {
     children: PropTypes.func.description(
       'Function that will be called when each option is rendered.'
     ),
+    disabled: PropTypes.bool
+      .description('Whether the select should be disabled.'),
     dropAlign: PropTypes.shape({
       top: PropTypes.oneOf(['top', 'bottom']),
       bottom: PropTypes.oneOf(['top', 'bottom']),

@@ -35,6 +35,7 @@ class Select extends Component {
     const {
       a11yTitle,
       children,
+      disabled,
       dropAlign,
       dropTarget,
       messages,
@@ -81,6 +82,7 @@ class Select extends Component {
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
         <DropButton
+          disabled={disabled}
           dropAlign={dropAlign}
           dropTarget={dropTarget}
           {...rest}
