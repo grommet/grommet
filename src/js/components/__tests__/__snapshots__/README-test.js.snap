@@ -1267,6 +1267,14 @@ Custom title to be used by screen readers.
 string
 \`\`\`
 
+**disabled**
+
+Whether the button should be disabled.
+
+\`\`\`
+boolean
+\`\`\`
+
 **dropAlign**
 
 How to align the drop with respect to the button. Defaults to \`{
@@ -1936,6 +1944,14 @@ import { Menu } from 'grommet';
 
 ## Properties
 
+**disabled**
+
+Whether the menu should be disabled.
+
+\`\`\`
+boolean
+\`\`\`
+
 **dropAlign**
 
 Where to place the drop down. The keys correspond to a side of the drop down.
@@ -2495,6 +2511,14 @@ Function that will be called when each option is rendered.
 
 \`\`\`
 function
+\`\`\`
+
+**disabled**
+
+Whether the select should be disabled.
+
+\`\`\`
+boolean
 \`\`\`
 
 **dropAlign**

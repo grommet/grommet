@@ -24,8 +24,8 @@ const primaryStyle = props => css`
   }
 `;
 
-const disabledStyle = `
-  opacity: 0.3;
+const disabledStyle = css`
+  opacity: ${props => props.theme.button.disabled.opacity};
   cursor: default;
 `;
 

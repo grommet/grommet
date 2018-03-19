@@ -63,4 +63,23 @@ describe('DropButton', () => {
     expect(onClose).toBeCalled();
     expect(document.getElementById('drop-contents')).toBeNull();
   });
+
+  test('mounts disabled', () => {
+    const component = mount(
+      <DropButton
+        disabled={true}
+        label='Dropper'
+        dropContent={<div id='drop-contents'>drop contents</div>}
+      />, {
+        attachTo: document.body.firstChild,
+      }
+    );
+
+    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(document.getElementById('drop-contents')).toBeNull();
+
+    component.simulate('click');
+
+    expect(document.getElementById('drop-contents')).toBeNull();
+  });
 });

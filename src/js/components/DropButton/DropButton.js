@@ -53,7 +53,9 @@ class DropButton extends Component {
   }
 
   render() {
-    const { dropAlign, dropContent, dropTarget, id, open, theme, ...rest } = this.props;
+    const {
+      disabled, dropAlign, dropContent, dropTarget, id, open, theme, ...rest
+    } = this.props;
     const { show } = this.state;
 
     let drop;
@@ -79,7 +81,7 @@ class DropButton extends Component {
         key='button'
         id={id}
         ref={(ref) => { this.buttonRef = ref; }}
-        onClick={this.onToggle}
+        onClick={disabled ? undefined : this.onToggle}
         {...rest}
       />,
       drop,
