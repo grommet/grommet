@@ -5,7 +5,7 @@ import 'jest-styled-components';
 import { Grommet } from '../../Grommet';
 import { Text } from '../';
 
-test('Text renders', () => {
+test('renders', () => {
   const component = renderer.create(
     <Grommet>
       <Text>text</Text>
@@ -15,7 +15,7 @@ test('Text renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Text size renders', () => {
+test('renders size', () => {
   const component = renderer.create(
     <Grommet>
       <Text size='xsmall' />
@@ -30,7 +30,7 @@ test('Text size renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Text textAlign renders', () => {
+test('renders textAlign', () => {
   const component = renderer.create(
     <Grommet>
       <Text textAlign='start' />
@@ -42,7 +42,7 @@ test('Text textAlign renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Text margin renders', () => {
+test('renders margin', () => {
   const component = renderer.create(
     <Grommet>
       <Text margin='small' />
@@ -63,7 +63,7 @@ test('Text margin renders', () => {
 
 const LONG = 'a b c d e f g h i j k l m n o p q r s t u v w x y z';
 
-test('Text truncate renders', () => {
+test('renders truncate', () => {
   const component = renderer.create(
     <Grommet>
       <Text truncate={false}>{LONG}</Text>
@@ -74,7 +74,7 @@ test('Text truncate renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Text color renders', () => {
+test('renders color', () => {
   const component = renderer.create(
     <Grommet>
       <Text color='status-critical' />
@@ -84,10 +84,21 @@ test('Text color renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Text tag renders', () => {
+test('renders tag', () => {
   const component = renderer.create(
     <Grommet>
       <Text tag='div' />
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('renders weight', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Text weight='normal' />
+      <Text weight='bold' />
     </Grommet>
   );
   const tree = component.toJSON();

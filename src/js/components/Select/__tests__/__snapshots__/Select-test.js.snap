@@ -34,7 +34,7 @@ exports[`Select closes drop on esc 1`] = `
             direction="column"
           >
             <span
-              class="StyledText-eJMSZI bUVmvh"
+              class="StyledText-eJMSZI eCycNH"
             >
               one
             </span>
@@ -50,7 +50,7 @@ exports[`Select closes drop on esc 1`] = `
             direction="column"
           >
             <span
-              class="StyledText-eJMSZI bUVmvh"
+              class="StyledText-eJMSZI eCycNH"
             >
               two
             </span>
@@ -441,7 +441,7 @@ exports[`Select mounts 3`] = `
             direction="column"
           >
             <span
-              class="StyledText-eJMSZI bUVmvh"
+              class="StyledText-eJMSZI eCycNH"
             >
               one
             </span>
@@ -457,7 +457,7 @@ exports[`Select mounts 3`] = `
             direction="column"
           >
             <span
-              class="StyledText-eJMSZI bUVmvh"
+              class="StyledText-eJMSZI eCycNH"
             >
               two
             </span>
@@ -611,7 +611,7 @@ exports[`Select mounts 5`] = `
       direction="column"
     >
       <span
-        class="StyledText-eJMSZI bUVmvh"
+        class="StyledText-eJMSZI eCycNH"
       >
         one
       </span>
@@ -627,7 +627,7 @@ exports[`Select mounts 5`] = `
       direction="column"
     >
       <span
-        class="StyledText-eJMSZI bUVmvh"
+        class="StyledText-eJMSZI eCycNH"
       >
         two
       </span>
@@ -778,7 +778,7 @@ exports[`Select mounts multiple 3`] = `
             direction="column"
           >
             <span
-              class="StyledText-eJMSZI bUVmvh"
+              class="StyledText-eJMSZI eCycNH"
             >
               one
             </span>
@@ -794,7 +794,7 @@ exports[`Select mounts multiple 3`] = `
             direction="column"
           >
             <span
-              class="StyledText-eJMSZI bUVmvh"
+              class="StyledText-eJMSZI eCycNH"
             >
               two
             </span>
@@ -979,7 +979,7 @@ exports[`Select mounts multiple 5`] = `
       direction="column"
     >
       <span
-        class="StyledText-eJMSZI bUVmvh"
+        class="StyledText-eJMSZI eCycNH"
       >
         one
       </span>
@@ -995,7 +995,7 @@ exports[`Select mounts multiple 5`] = `
       direction="column"
     >
       <span
-        class="StyledText-eJMSZI bUVmvh"
+        class="StyledText-eJMSZI eCycNH"
       >
         two
       </span>
@@ -1330,7 +1330,7 @@ exports[`Select mounts with search 1`] = `
             direction="column"
           >
             <span
-              class="StyledText-eJMSZI bUVmvh"
+              class="StyledText-eJMSZI eCycNH"
             >
               one
             </span>
@@ -1346,7 +1346,7 @@ exports[`Select mounts with search 1`] = `
             direction="column"
           >
             <span
-              class="StyledText-eJMSZI bUVmvh"
+              class="StyledText-eJMSZI eCycNH"
             >
               two
             </span>
@@ -1553,7 +1553,7 @@ exports[`Select mounts with search 4`] = `
             direction="column"
           >
             <span
-              class="StyledText-eJMSZI bUVmvh"
+              class="StyledText-eJMSZI eCycNH"
             >
               one
             </span>
@@ -1569,7 +1569,7 @@ exports[`Select mounts with search 4`] = `
             direction="column"
           >
             <span
-              class="StyledText-eJMSZI bUVmvh"
+              class="StyledText-eJMSZI eCycNH"
             >
               two
             </span>
@@ -1774,7 +1774,7 @@ exports[`Select renders multiple 1`] = `
 
 exports[`mounts disabled 1`] = `
 <button
-  class="StyledButton-gXzblK dDrPei"
+  class="StyledButton-gXzblK gqMHaF"
   id="test-select"
   aria-label="undefined"
   disabled=""
@@ -1827,7 +1827,7 @@ exports[`mounts disabled 1`] = `
 
 exports[`mounts disabled 2`] = `
 <button
-  class="StyledButton-gXzblK dDrPei"
+  class="StyledButton-gXzblK gqMHaF"
   id="test-select"
   aria-label="undefined"
   disabled=""

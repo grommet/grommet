@@ -12,15 +12,13 @@ import { withTheme } from '../hocs';
 import doc from './doc';
 
 class FormField extends Component {
-  static defaultProps = {
-    border: { color: 'border', position: 'inner', side: 'bottom' },
-  }
-
   state = {};
 
   render() {
-    const { border, children, error, help, label, style, theme,
+    const { children, error, help, htmlFor, label, style, theme,
       ...rest } = this.props;
+    const { formField } = theme;
+    const { border } = formField;
     const { focus } = this.state;
 
     let contents = children;
@@ -36,9 +34,9 @@ class FormField extends Component {
     };
     let borderColor;
     if (focus) {
-      borderColor = 'accent-1';
+      borderColor = theme.global.focus.border.color;
     } else if (error) {
-      borderColor = 'status-critical';
+      borderColor = formField.border.error.color || 'status-critical';
     } else {
       borderColor = (border ? (border.color || 'border') : 'border');
     }
@@ -101,17 +99,20 @@ class FormField extends Component {
             margin={{ vertical: 'xsmall', horizontal: 'small' }}
             gap='xsmall'
           >
-            {label ? <Text>{label}</Text> : undefined}
-            {help ? <Text color='dark-5'>{help}</Text> : undefined}
+            {label ? (
+              <Text tag='label' htmlFor={htmlFor} {...formField.label}>
+                {label}
+              </Text>
+            ) : undefined}
+            {help ? (
+              <Text {...formField.help}>{help}</Text>
+            ) : undefined}
           </Box>
         ) : undefined}
         {contents}
         {error ? (
-          <Box
-            justify='between'
-            margin={{ vertical: 'xsmall', horizontal: 'small' }}
-          >
-            <Text color='status-critical'>{error}</Text>
+          <Box margin={{ vertical: 'xsmall', horizontal: 'small' }} >
+            <Text {...formField.error}>{error}</Text>
           </Box>
         ) : undefined}
       </Box>
