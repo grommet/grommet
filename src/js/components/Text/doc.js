@@ -42,6 +42,10 @@ adjustments.`
       `Restrict the text to a single line and truncate with ellipsis if it
 is too long to all fit.`
     ),
+    weight: PropTypes.oneOfType([
+      PropTypes.oneOf(['normal', 'bold']),
+      PropTypes.number,
+    ]).description('Font weight'),
   };
 
   return DocumentedText;

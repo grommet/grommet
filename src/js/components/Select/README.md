@@ -191,6 +191,17 @@ number
 [number]
 ```
 
+**size**
+
+The size of the select.
+
+```
+small
+medium
+large
+xlarge
+```
+
 **value**
 
 Currently selected value. This will be an array

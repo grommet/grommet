@@ -20,7 +20,7 @@ exports[`Tabs changes active index 1`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI ehbxjF"
+          class="StyledText-eJMSZI WtHkG"
         >
           <strong>
             Tab 1
@@ -40,7 +40,7 @@ exports[`Tabs changes active index 1`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI beGKeC"
+          class="StyledText-eJMSZI cQGInD"
           color="dark-4"
         >
           Tab 2
@@ -94,7 +94,7 @@ exports[`Tabs changes to second tab 1`] = `
           direction="column"
         >
           <span
-            className="StyledText-eJMSZI beGKeC"
+            className="StyledText-eJMSZI cQGInD"
             color="dark-4"
           >
             Tab 1
@@ -126,7 +126,7 @@ exports[`Tabs changes to second tab 1`] = `
           direction="column"
         >
           <span
-            className="StyledText-eJMSZI ehbxjF"
+            className="StyledText-eJMSZI WtHkG"
           >
             <strong>
               Tab 2
@@ -263,7 +263,7 @@ exports[`Tabs renders with Tab 1`] = `
           direction="column"
         >
           <span
-            className="StyledText-eJMSZI ehbxjF"
+            className="StyledText-eJMSZI WtHkG"
           >
             <strong>
               Tab 1
@@ -296,7 +296,7 @@ exports[`Tabs renders with Tab 1`] = `
           direction="column"
         >
           <span
-            className="StyledText-eJMSZI beGKeC"
+            className="StyledText-eJMSZI cQGInD"
             color="dark-4"
           >
             Tab 2
@@ -354,7 +354,7 @@ exports[`Tabs sets on hover 1`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI ehbxjF"
+          class="StyledText-eJMSZI WtHkG"
         >
           <strong>
             Tab 1
@@ -374,7 +374,7 @@ exports[`Tabs sets on hover 1`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI beGKeC"
+          class="StyledText-eJMSZI cQGInD"
           color="dark-4"
         >
           Tab 2
@@ -411,7 +411,7 @@ exports[`Tabs sets on hover 2`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI ehbxjF"
+          class="StyledText-eJMSZI WtHkG"
         >
           <strong>
             Tab 1
@@ -431,7 +431,7 @@ exports[`Tabs sets on hover 2`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI beGKeC"
+          class="StyledText-eJMSZI cQGInD"
           color="dark-4"
         >
           Tab 2
@@ -468,7 +468,7 @@ exports[`Tabs sets on hover 3`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI ehbxjF"
+          class="StyledText-eJMSZI WtHkG"
         >
           <strong>
             Tab 1
@@ -488,7 +488,7 @@ exports[`Tabs sets on hover 3`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI beGKeC"
+          class="StyledText-eJMSZI cQGInD"
           color="dark-4"
         >
           Tab 2
@@ -525,7 +525,7 @@ exports[`Tabs sets on hover 4`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI ehbxjF"
+          class="StyledText-eJMSZI WtHkG"
         >
           <strong>
             Tab 1
@@ -545,7 +545,7 @@ exports[`Tabs sets on hover 4`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI beGKeC"
+          class="StyledText-eJMSZI cQGInD"
           color="dark-4"
         >
           Tab 2
