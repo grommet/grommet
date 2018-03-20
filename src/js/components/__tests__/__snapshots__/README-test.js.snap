@@ -2048,6 +2048,7 @@ The size of the menu.
 small
 medium
 large
+xlarge
 \`\`\`
   ",
   "Meter": "## Meter
@@ -2675,6 +2676,17 @@ Index of the currently selected option. When multiple, the set of
 \`\`\`
 number
 [number]
+\`\`\`
+
+**size**
+
+The size of the select.
+
+\`\`\`
+small
+medium
+large
+xlarge
 \`\`\`
 
 **value**
