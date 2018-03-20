@@ -66,6 +66,10 @@ class Diagram extends Component {
     this.onResize();
   }
 
+  componentWillReceiveProps() {
+    this.setState({ connectionPoints: undefined });
+  }
+
   componentDidUpdate() {
     this.onResize();
   }
@@ -75,60 +79,81 @@ class Diagram extends Component {
   }
 
   onResize = () => {
-    const { width, height } = this.state;
+    const { connectionPoints, width, height } = this.state;
     const parent = findDOMNode(this.containerRef).parentNode;
     if (parent) {
       const rect = parent.getBoundingClientRect();
       if (rect.width !== width || rect.height !== height) {
-        this.setState({ width: rect.width, height: rect.height });
+        this.setState({
+          width: rect.width,
+          height: rect.height,
+          connectionPoints: undefined,
+        });
+      } else if (!connectionPoints) {
+        this.placeConnections();
       }
     }
   }
 
+  placeConnections() {
+    const { connections } = this.props;
+    const containerRect =
+      findDOMNode(this.containerRef).getBoundingClientRect();
+    const connectionPoints = connections.map(({ fromTarget, toTarget }) => {
+      let points;
+      const fromElement = findTarget(fromTarget);
+      const toElement = findTarget(toTarget);
+      if (!fromElement) {
+        console.warn(`Diagram cannot find ${fromTarget}`);
+      }
+      if (!toElement) {
+        console.warn(`Diagram cannot find ${toTarget}`);
+      }
+
+      if (fromElement && toElement) {
+        const fromRect = fromElement.getBoundingClientRect();
+        const toRect = toElement.getBoundingClientRect();
+        const fromPoint = [
+          (fromRect.x - containerRect.x) + (fromRect.width / 2),
+          (fromRect.y - containerRect.y) + (fromRect.height / 2),
+        ];
+        const toPoint = [
+          (toRect.x - containerRect.x) + (toRect.width / 2),
+          (toRect.y - containerRect.y) + (toRect.height / 2),
+        ];
+        points = [fromPoint, toPoint];
+      }
+
+      return points;
+    });
+    this.setState({ connectionPoints });
+  }
+
   render() {
     const { connections, theme, ...rest } = this.props;
-    const { height, width } = this.state;
+    const { connectionPoints, height, width } = this.state;
 
     let paths;
-    if (this.containerRef) {
+    if (connectionPoints) {
       paths = connections.map(({
-        fromTarget, toTarget, color, offset, round, thickness, type,
-        ...connectionRest
+        color, offset, round, thickness, type, ...connectionRest
       }, index) => {
-        const containerRect =
-          findDOMNode(this.containerRef).getBoundingClientRect();
-        const fromElement = findTarget(fromTarget);
-        const toElement = findTarget(toTarget);
-        if (!fromElement) {
-          console.warn(`Diagram cannot find ${fromTarget}`);
-        }
-        if (!toElement) {
-          console.warn(`Diagram cannot find ${toTarget}`);
-        }
-
         let path;
-        if (fromElement && toElement) {
-          const fromRect = fromElement.getBoundingClientRect();
-          const toRect = toElement.getBoundingClientRect();
-          const fromPoint = [
-            (fromRect.x - containerRect.x) + (fromRect.width / 2),
-            (fromRect.y - containerRect.y) + (fromRect.height / 2),
-          ];
-          const toPoint = [
-            (toRect.x - containerRect.x) + (toRect.width / 2),
-            (toRect.y - containerRect.y) + (toRect.height / 2),
-          ];
-
+        const cleanedRest = { ...connectionRest };
+        delete cleanedRest.fromTarget;
+        delete cleanedRest.toTarget;
+        const points = connectionPoints[index];
+        if (points) {
           const offsetWidth = offset ?
             parseMetricToNum(theme.global.edgeSize[offset]) : 0;
-          const d = COMMANDS[type || 'curved'](fromPoint, toPoint, offsetWidth);
+          const d = COMMANDS[type || 'curved'](points[0], points[1], offsetWidth);
           const strokeWidth = thickness ?
             parseMetricToNum(theme.global.edgeSize[thickness]) : 1;
 
           path = (
             <path
               key={index}
-              {...connectionRest}
+              {...cleanedRest}
               stroke={colorForName(color, theme)}
               strokeWidth={strokeWidth}
               strokeLinecap={round ? 'round' : 'butt'}

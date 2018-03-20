@@ -22,81 +22,83 @@ const Context = ({ children }) => (
   </Grommet>
 );
 
-test('Diagram renders', (done) => {
-  const component = mount(
-    <Context>
-      <Diagram
-        connections={[{ fromId: '1', toId: '2' }]}
-      />
-    </Context>
-  );
-  // delay a bit so we can render twice
-  setTimeout(() => {
+describe('Diagram', () => {
+  test('renders', (done) => {
+    const component = mount(
+      <Context>
+        <Diagram
+          connections={[{ fromTarget: '1', toTarget: '2' }]}
+        />
+      </Context>
+    );
+    // delay a bit so we can render twice
+    setTimeout(() => {
+      expect(component.getDOMNode()).toMatchSnapshot();
+      component.unmount();
+      done();
+    }, 10);
+  });
+
+  test('type renders', () => {
+    const component = mount(
+      <Context>
+        <Diagram
+          connections={[
+            { fromTarget: '1', toTarget: '2', type: 'direct' },
+            { fromTarget: '1', toTarget: '2', type: 'curved' },
+            { fromTarget: '1', toTarget: '2', type: 'rectilinear' },
+          ]}
+        />
+      </Context>
+    );
     expect(component.getDOMNode()).toMatchSnapshot();
-    component.unmount();
-    done();
-  }, 10);
-});
+  });
 
-test('Diagram type renders', () => {
-  const component = mount(
-    <Context>
-      <Diagram
-        connections={[
-          { fromId: '1', toId: '2', type: 'direct' },
-          { fromId: '1', toId: '2', type: 'curved' },
-          { fromId: '1', toId: '2', type: 'rectilinear' },
-        ]}
-      />
-    </Context>
-  );
-  expect(component.getDOMNode()).toMatchSnapshot();
-});
-
-test('Diagram color renders', () => {
-  const component = mount(
-    <Context>
-      <Diagram
-        connections={[
-          { fromId: '1', toId: '2', color: 'brand' },
-        ]}
-      />
-    </Context>
-  );
-  expect(component.getDOMNode()).toMatchSnapshot();
-});
-
-test('Diagram offset renders', (done) => {
-  const component = mount(
-    <Context>
-      <Diagram
-        connections={[
-          { fromId: '1', toId: '2', offset: 'xsmall' },
-          { fromId: '1', toId: '2', offset: 'small' },
-          { fromId: '1', toId: '2', offset: 'medium' },
-        ]}
-      />
-    </Context>
-  );
-  // delay a bit so we can render twice
-  setTimeout(() => {
+  test('color renders', () => {
+    const component = mount(
+      <Context>
+        <Diagram
+          connections={[
+            { fromTarget: '1', toTarget: '2', color: 'brand' },
+          ]}
+        />
+      </Context>
+    );
     expect(component.getDOMNode()).toMatchSnapshot();
-    component.unmount();
-    done();
-  }, 10);
-});
+  });
 
-test('Diagram thickness renders', () => {
-  const component = mount(
-    <Context>
-      <Diagram
-        connections={[
-          { fromId: '1', toId: '2', thickness: 'xsmall' },
-          { fromId: '1', toId: '2', thickness: 'small' },
-          { fromId: '1', toId: '2', thickness: 'medium' },
-        ]}
-      />
-    </Context>
-  );
-  expect(component.getDOMNode()).toMatchSnapshot();
+  test('offset renders', (done) => {
+    const component = mount(
+      <Context>
+        <Diagram
+          connections={[
+            { fromTarget: '1', toTarget: '2', offset: 'xsmall' },
+            { fromTarget: '1', toTarget: '2', offset: 'small' },
+            { fromTarget: '1', toTarget: '2', offset: 'medium' },
+          ]}
+        />
+      </Context>
+    );
+    // delay a bit so we can render twice
+    setTimeout(() => {
+      expect(component.getDOMNode()).toMatchSnapshot();
+      component.unmount();
+      done();
+    }, 10);
+  });
+
+  test('thickness renders', () => {
+    const component = mount(
+      <Context>
+        <Diagram
+          connections={[
+            { fromTarget: '1', toTarget: '2', thickness: 'xsmall' },
+            { fromTarget: '1', toTarget: '2', thickness: 'small' },
+            { fromTarget: '1', toTarget: '2', thickness: 'medium' },
+          ]}
+        />
+      </Context>
+    );
+    expect(component.getDOMNode()).toMatchSnapshot();
+  });
 });
