@@ -248,7 +248,7 @@ class Video extends Component {
       percentagePlayed, playing, scrubTime, volume,
     } = this.state;
     const over = controls === 'over';
-    const background = over ? { color: 'dark-2', opacity: 'weak' } : undefined;
+    const background = over ? { color: 'dark-2', opacity: 'strong' } : undefined;
     const iconColor = over ? 'light-1' : undefined;
 
     const formattedTime = formatTime(scrubTime || currentTime || duration);

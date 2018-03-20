@@ -45,7 +45,10 @@ one of top or bottom should be specified.`
       `Target where the drop will be aligned to. This should be
       a React reference. Typically, this is not required as the drop will be
       aligned to the Menu itself by default.`),
-    icon: PropTypes.node.description('Indicates the icon shown as a control to open it.'),
+    icon: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.node,
+    ]).description('Indicates the icon shown as a control to open it.'),
     items: PropTypes.arrayOf(PropTypes.object).description(
       `Menu items to be placed inside the drop down.
 The object values can be any Button prop, for example: label and onClick.`
