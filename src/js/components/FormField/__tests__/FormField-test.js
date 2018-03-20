@@ -47,16 +47,10 @@ test('renders error', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('renders border', () => {
+test('renders htmlFor', () => {
   const component = renderer.create(
     <Grommet>
-      {['inner', 'outer'].map(position =>
-        ['all', 'bottom', 'left', 'vertical'].map(side =>
-          ['xsmall', 'small', 'medium', 'large'].map(size => (
-            <FormField border={{ position, side, size }} />
-          ))
-        )
-      )}
+      <FormField htmlFor='test-id' />
     </Grommet>
   );
   const tree = component.toJSON();

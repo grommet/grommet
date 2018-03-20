@@ -43,6 +43,7 @@ class Select extends Component {
       onClose,
       placeholder,
       plain,
+      size,
       theme,
       value,
       ...rest
@@ -108,6 +109,7 @@ class Select extends Component {
                 type='text'
                 placeholder={placeholder}
                 plain={true}
+                size={size}
                 readOnly={true}
                 value={textValue}
               />
@@ -117,7 +119,7 @@ class Select extends Component {
               flex={false}
               style={{ minWidth: 'auto' }}
             >
-              <SelectIcon color='brand' />
+              <SelectIcon color='brand' size={size} />
             </Box>
           </Box>
         </DropButton>

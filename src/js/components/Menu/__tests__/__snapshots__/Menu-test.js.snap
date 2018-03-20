@@ -22,7 +22,7 @@ exports[`Menu opens and closes on click 1`] = `
         direction="row"
       >
         <span
-          class="StyledText-eJMSZI ehbxjF"
+          class="StyledText-eJMSZI WtHkG"
         >
           Test
         </span>
@@ -201,7 +201,7 @@ exports[`Menu renders 1`] = `
       direction="row"
     >
       <span
-        class="StyledText-eJMSZI ehbxjF"
+        class="StyledText-eJMSZI WtHkG"
       >
         Test Menu
       </span>
@@ -227,7 +227,7 @@ exports[`Menu with custom message renders 1`] = `
       direction="row"
     >
       <span
-        class="StyledText-eJMSZI ehbxjF"
+        class="StyledText-eJMSZI WtHkG"
       >
         Test Menu
       </span>
@@ -279,7 +279,7 @@ exports[`Menu with dropAlign renders 1`] = `
         direction="row"
       >
         <span
-          class="StyledText-eJMSZI ehbxjF"
+          class="StyledText-eJMSZI WtHkG"
         >
           Test
         </span>
