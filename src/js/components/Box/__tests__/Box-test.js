@@ -339,7 +339,7 @@ test('Box animation renders', () => {
     <Grommet>
       {['fadeIn', 'fadeOut', 'jiggle', 'pulse',
         'slideUp', 'slideDown', 'slideLeft', 'slideRight',
-        'zoomIn', 'zoomOut'].map(type => <Box animation={type} />)}
+        'zoomIn', 'zoomOut'].map(type => <Box key={type} animation={type} />)}
       <Box animation={['fadeIn', 'slideUp']} />
       <Box animation={{ type: 'fadeIn', duration: 1000, delay: 500 }} />
       <Box

@@ -30,20 +30,22 @@ exports[`RoutedAnchor renders 1`] = `
 <div
   className="c0"
 >
-  <a
-    aria-label={undefined}
-    className="c1"
-    disabled={undefined}
-    href="/"
-    icon={undefined}
-    label="Test"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
-  >
-    Test
-  </a>
+  <div>
+    <a
+      aria-label={undefined}
+      className="c1"
+      disabled={undefined}
+      href="/"
+      icon={undefined}
+      label="Test"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+    >
+      Test
+    </a>
+  </div>
 </div>
 `;
