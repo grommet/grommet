@@ -6,7 +6,8 @@ cache:
   directories:
   - node_modules
 script:
-- npm run check
+- npm run lint
+- npm run test
 - |
   if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "$TRAVIS_BRANCH" = "NEXT" ]; then
     git config --global user.name "Grommet Community Bot"
