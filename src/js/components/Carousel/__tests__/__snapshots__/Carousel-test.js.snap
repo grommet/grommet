@@ -42,8 +42,8 @@ exports[`play renders 1`] = `
     <div
       class="StyledBox-bStriS eBXrgH"
       direction="row"
-      tabindex="0"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+      tabindex="0"
     >
       <div
         class="StyledBox-bStriS jsbzAg"
@@ -59,19 +59,19 @@ exports[`play renders 1`] = `
             direction="column"
           >
             <svg
-              class="StyledIcon-gTfjEw iIdMpR"
-              width="24px"
-              height="24px"
-              viewBox="0 0 24 24"
-              version="1.1"
-              role="img"
               aria-label="Previous"
+              class="StyledIcon-gTfjEw iIdMpR"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
             >
               <polyline
                 fill="none"
+                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                points="7 2 17 12 7 22"
                 transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
@@ -92,24 +92,24 @@ exports[`play renders 1`] = `
             type="button"
           >
             <span
-              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
               aria-hidden="true"
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
             >
               <svg
-                class="StyledIcon-gTfjEw cbaxjc"
-                width="24px"
-                height="24px"
-                viewBox="0 0 24 24"
-                version="1.1"
-                role="img"
                 aria-label="Subtract"
+                class="StyledIcon-gTfjEw cbaxjc"
                 color="brand"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
               >
                 <path
+                  d="M2,12 L22,12"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
-                  d="M2,12 L22,12"
                 />
               </svg>
             </span>
@@ -120,23 +120,23 @@ exports[`play renders 1`] = `
             type="button"
           >
             <span
-              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
               aria-hidden="true"
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
             >
               <svg
-                class="StyledIcon-gTfjEw iIdMpR"
-                width="24px"
-                height="24px"
-                viewBox="0 0 24 24"
-                version="1.1"
-                role="img"
                 aria-label="Subtract"
+                class="StyledIcon-gTfjEw iIdMpR"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
               >
                 <path
+                  d="M2,12 L22,12"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
-                  d="M2,12 L22,12"
                 />
               </svg>
             </span>
@@ -156,19 +156,19 @@ exports[`play renders 1`] = `
             direction="column"
           >
             <svg
-              class="StyledIcon-gTfjEw iIdMpR"
-              width="24px"
-              height="24px"
-              viewBox="0 0 24 24"
-              version="1.1"
-              role="img"
               aria-label="Next"
+              class="StyledIcon-gTfjEw iIdMpR"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
             >
               <polyline
                 fill="none"
+                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                points="7 2 17 12 7 22"
               />
             </svg>
           </div>
@@ -221,8 +221,8 @@ exports[`play renders 2`] = `
     <div
       class="StyledBox-bStriS eBXrgH"
       direction="row"
-      tabindex="0"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+      tabindex="0"
     >
       <div
         class="StyledBox-bStriS jsbzAg"
@@ -237,19 +237,19 @@ exports[`play renders 2`] = `
             direction="column"
           >
             <svg
-              class="StyledIcon-gTfjEw iIdMpR"
-              width="24px"
-              height="24px"
-              viewBox="0 0 24 24"
-              version="1.1"
-              role="img"
               aria-label="Previous"
+              class="StyledIcon-gTfjEw iIdMpR"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
             >
               <polyline
                 fill="none"
+                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                points="7 2 17 12 7 22"
                 transform="matrix(-1 0 0 1 24 0)"
               />
             </svg>
@@ -270,23 +270,23 @@ exports[`play renders 2`] = `
             type="button"
           >
             <span
-              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
               aria-hidden="true"
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
             >
               <svg
-                class="StyledIcon-gTfjEw iIdMpR"
-                width="24px"
-                height="24px"
-                viewBox="0 0 24 24"
-                version="1.1"
-                role="img"
                 aria-label="Subtract"
+                class="StyledIcon-gTfjEw iIdMpR"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
               >
                 <path
+                  d="M2,12 L22,12"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
-                  d="M2,12 L22,12"
                 />
               </svg>
             </span>
@@ -297,24 +297,24 @@ exports[`play renders 2`] = `
             type="button"
           >
             <span
-              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
               aria-hidden="true"
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
             >
               <svg
-                class="StyledIcon-gTfjEw cbaxjc"
-                width="24px"
-                height="24px"
-                viewBox="0 0 24 24"
-                version="1.1"
-                role="img"
                 aria-label="Subtract"
+                class="StyledIcon-gTfjEw cbaxjc"
                 color="brand"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
               >
                 <path
+                  d="M2,12 L22,12"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
-                  d="M2,12 L22,12"
                 />
               </svg>
             </span>
@@ -327,27 +327,27 @@ exports[`play renders 2`] = `
       >
         <button
           class="StyledButton-gXzblK erxOgR"
-          type="button"
           disabled=""
+          type="button"
         >
           <div
             class="StyledBox-bStriS gWhpfl"
             direction="column"
           >
             <svg
-              class="StyledIcon-gTfjEw iIdMpR"
-              width="24px"
-              height="24px"
-              viewBox="0 0 24 24"
-              version="1.1"
-              role="img"
               aria-label="Next"
+              class="StyledIcon-gTfjEw iIdMpR"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
             >
               <polyline
                 fill="none"
+                points="7 2 17 12 7 22"
                 stroke="#000"
                 stroke-width="2"
-                points="7 2 17 12 7 22"
               />
             </svg>
           </div>

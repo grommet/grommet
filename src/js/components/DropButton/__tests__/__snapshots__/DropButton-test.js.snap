@@ -2,8 +2,8 @@
 
 exports[`DropButton closes 1`] = `
 <button
-  class="StyledButton-gXzblK dZIZPB"
   aria-label="Open Drop"
+  class="StyledButton-gXzblK dZIZPB"
   label="Dropper"
   type="button"
 >
@@ -34,8 +34,8 @@ exports[`DropButton closes 3`] = `
 
 exports[`DropButton mounts 1`] = `
 <button
-  class="StyledButton-gXzblK dZIZPB"
   aria-label="Open Drop"
+  class="StyledButton-gXzblK dZIZPB"
   label="Dropper"
   type="button"
 >
@@ -66,12 +66,12 @@ exports[`DropButton mounts 3`] = `
 
 exports[`DropButton mounts 4`] = `
 <button
-  class="StyledButton-gXzblK dZIZPB"
   aria-label="Open Drop"
-  label="Dropper"
-  type="button"
-  tabindex="-1"
+  class="StyledButton-gXzblK dZIZPB"
   id="test"
+  label="Dropper"
+  tabindex="-1"
+  type="button"
 >
   <span
     class="StyledButton__StyledLabel-XZHBZ kthNMI"
@@ -100,8 +100,8 @@ exports[`DropButton mounts 6`] = `
 
 exports[`DropButton mounts disabled 1`] = `
 <button
-  class="StyledButton-gXzblK dUzCdF"
   aria-label="Open Drop"
+  class="StyledButton-gXzblK dUzCdF"
   disabled=""
   label="Dropper"
   type="button"

@@ -3,10 +3,10 @@
 exports[`TextInput closes suggestion drop 1`] = `
 <div
   class="StyledDrop-bCWxPe eTlFvx"
-  tabindex="-1"
   id="text-input-drop__item"
-  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+  target="[object Object]"
 >
   <ol
     class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
@@ -100,9 +100,9 @@ exports[`TextInput closes suggestion drop 3`] = `
     class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
   >
     <input
+      autocomplete="off"
       class="StyledTextInput-bzOzsW humfzt"
       id="item"
-      autocomplete="off"
       name="item"
     />
   </div>
@@ -117,9 +117,9 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
     class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
   >
     <input
+      autocomplete="off"
       class="StyledTextInput-bzOzsW humfzt"
       id="item"
-      autocomplete="off"
       name="item"
     />
   </div>
@@ -131,8 +131,8 @@ exports[`TextInput mounts 1`] = `
   class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
 >
   <input
-    class="StyledTextInput-bzOzsW humfzt"
     autocomplete="off"
+    class="StyledTextInput-bzOzsW humfzt"
     name="item"
   />
 </div>
@@ -141,10 +141,10 @@ exports[`TextInput mounts 1`] = `
 exports[`TextInput mounts with complex suggestions 1`] = `
 <div
   class="StyledDrop-bCWxPe eTlFvx"
-  tabindex="-1"
   id="text-input-drop__item"
-  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+  target="[object Object]"
 >
   <ol
     class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
@@ -233,10 +233,10 @@ exports[`TextInput mounts with complex suggestions 2`] = `
 exports[`TextInput mounts with suggestions 1`] = `
 <div
   class="StyledDrop-bCWxPe eTlFvx"
-  tabindex="-1"
   id="text-input-drop__item"
-  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+  target="[object Object]"
 >
   <ol
     class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
@@ -325,10 +325,10 @@ exports[`TextInput mounts with suggestions 2`] = `
 exports[`TextInput selects suggestion 1`] = `
 <div
   class="StyledDrop-bCWxPe eTlFvx"
-  tabindex="-1"
   id="text-input-drop__item"
-  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+  target="[object Object]"
 >
   <ol
     class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
@@ -422,9 +422,9 @@ exports[`TextInput selects suggestion 3`] = `
     class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
   >
     <input
+      autocomplete="off"
       class="StyledTextInput-bzOzsW hjHbnR"
       id="item"
-      autocomplete="off"
       name="item"
     />
   </div>

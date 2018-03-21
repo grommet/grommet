@@ -3,10 +3,10 @@
 exports[`Select closes drop on esc 1`] = `
 <div
   class="StyledDrop-bCWxPe eTlFvx"
-  tabindex="-1"
   id="test-select__drop"
-  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+  target="[object Object]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -201,27 +201,27 @@ exports[`Select closes drop on esc 2`] = `
 
 exports[`Select closes drop on esc 3`] = `
 <button
+  aria-label="undefined"
   class="StyledButton-gXzblK kGZImI"
   id="test-select"
-  aria-label="undefined"
   type="button"
 >
   <div
+    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
     direction="row"
-    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
-        type="text"
+        autocomplete="off"
         class="StyledTextInput-bzOzsW bhNKQj"
         id="test-select"
-        autocomplete="off"
+        readonly=""
         style="cursor: pointer;"
         tabindex="-1"
-        readonly=""
+        type="text"
       />
     </div>
     <div
@@ -230,20 +230,20 @@ exports[`Select closes drop on esc 3`] = `
       style="min-width: auto;"
     >
       <svg
-        class="StyledIcon-gTfjEw htxeRg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        version="1.1"
-        role="img"
         aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
         color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
       >
         <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
-          points="18 9 12 15 6 9"
         />
       </svg>
     </div>
@@ -253,27 +253,27 @@ exports[`Select closes drop on esc 3`] = `
 
 exports[`Select closes drop on esc 4`] = `
 <button
+  aria-label="undefined"
   class="StyledButton-gXzblK kGZImI"
   id="test-select"
-  aria-label="undefined"
   type="button"
 >
   <div
+    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
     direction="row"
-    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
-        type="text"
+        autocomplete="off"
         class="StyledTextInput-bzOzsW bhNKQj"
         id="test-select"
-        autocomplete="off"
+        readonly=""
         style="cursor: pointer;"
         tabindex="-1"
-        readonly=""
+        type="text"
       />
     </div>
     <div
@@ -282,20 +282,20 @@ exports[`Select closes drop on esc 4`] = `
       style="min-width: auto;"
     >
       <svg
-        class="StyledIcon-gTfjEw htxeRg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        version="1.1"
-        role="img"
         aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
         color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
       >
         <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
-          points="18 9 12 15 6 9"
         />
       </svg>
     </div>
@@ -305,27 +305,27 @@ exports[`Select closes drop on esc 4`] = `
 
 exports[`Select mounts 1`] = `
 <button
+  aria-label="undefined"
   class="StyledButton-gXzblK kGZImI"
   id="test-select"
-  aria-label="undefined"
   type="button"
 >
   <div
+    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
     direction="row"
-    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
-        type="text"
+        autocomplete="off"
         class="StyledTextInput-bzOzsW bhNKQj"
         id="test-select"
-        autocomplete="off"
+        readonly=""
         style="cursor: pointer;"
         tabindex="-1"
-        readonly=""
+        type="text"
       />
     </div>
     <div
@@ -334,20 +334,20 @@ exports[`Select mounts 1`] = `
       style="min-width: auto;"
     >
       <svg
-        class="StyledIcon-gTfjEw htxeRg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        version="1.1"
-        role="img"
         aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
         color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
       >
         <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
-          points="18 9 12 15 6 9"
         />
       </svg>
     </div>
@@ -357,27 +357,27 @@ exports[`Select mounts 1`] = `
 
 exports[`Select mounts 2`] = `
 <button
+  aria-label="undefined"
   class="StyledButton-gXzblK kGZImI"
   id="test-select"
-  aria-label="undefined"
   type="button"
 >
   <div
+    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
     direction="row"
-    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
-        type="text"
+        autocomplete="off"
         class="StyledTextInput-bzOzsW bhNKQj"
         id="test-select"
-        autocomplete="off"
+        readonly=""
         style="cursor: pointer;"
         tabindex="-1"
-        readonly=""
+        type="text"
       />
     </div>
     <div
@@ -386,20 +386,20 @@ exports[`Select mounts 2`] = `
       style="min-width: auto;"
     >
       <svg
-        class="StyledIcon-gTfjEw htxeRg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        version="1.1"
-        role="img"
         aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
         color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
       >
         <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
-          points="18 9 12 15 6 9"
         />
       </svg>
     </div>
@@ -410,10 +410,10 @@ exports[`Select mounts 2`] = `
 exports[`Select mounts 3`] = `
 <div
   class="StyledDrop-bCWxPe eTlFvx"
-  tabindex="-1"
   id="test-select__drop"
-  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+  target="[object Object]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -638,28 +638,28 @@ exports[`Select mounts 5`] = `
 
 exports[`Select mounts disabled 1`] = `
 <button
-  class="StyledButton-gXzblK gqMHaF"
-  id="test-select"
   aria-label="undefined"
+  class="StyledButton-gXzblK gqMHaF"
   disabled=""
+  id="test-select"
   type="button"
 >
   <div
+    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
     direction="row"
-    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
-        type="text"
+        autocomplete="off"
         class="StyledTextInput-bzOzsW bhNKQj"
         id="test-select"
-        autocomplete="off"
+        readonly=""
         style="cursor: pointer;"
         tabindex="-1"
-        readonly=""
+        type="text"
       />
     </div>
     <div
@@ -668,20 +668,20 @@ exports[`Select mounts disabled 1`] = `
       style="min-width: auto;"
     >
       <svg
-        class="StyledIcon-gTfjEw htxeRg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        version="1.1"
-        role="img"
         aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
         color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
       >
         <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
-          points="18 9 12 15 6 9"
         />
       </svg>
     </div>
@@ -691,28 +691,28 @@ exports[`Select mounts disabled 1`] = `
 
 exports[`Select mounts disabled 2`] = `
 <button
-  class="StyledButton-gXzblK gqMHaF"
-  id="test-select"
   aria-label="undefined"
+  class="StyledButton-gXzblK gqMHaF"
   disabled=""
+  id="test-select"
   type="button"
 >
   <div
+    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
     direction="row"
-    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
-        type="text"
+        autocomplete="off"
         class="StyledTextInput-bzOzsW bhNKQj"
         id="test-select"
-        autocomplete="off"
+        readonly=""
         style="cursor: pointer;"
         tabindex="-1"
-        readonly=""
+        type="text"
       />
     </div>
     <div
@@ -721,20 +721,20 @@ exports[`Select mounts disabled 2`] = `
       style="min-width: auto;"
     >
       <svg
-        class="StyledIcon-gTfjEw htxeRg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        version="1.1"
-        role="img"
         aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
         color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
       >
         <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
-          points="18 9 12 15 6 9"
         />
       </svg>
     </div>
@@ -744,28 +744,28 @@ exports[`Select mounts disabled 2`] = `
 
 exports[`Select mounts multiple 1`] = `
 <button
+  aria-label="undefined"
   class="StyledButton-gXzblK kGZImI"
   id="test-select"
-  aria-label="undefined"
   type="button"
 >
   <div
+    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
     direction="row"
-    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
-        type="text"
+        autocomplete="off"
         class="StyledTextInput-bzOzsW bhNKQj"
         id="test-select"
-        autocomplete="off"
-        style="cursor: pointer;"
         multiple=""
-        tabindex="-1"
         readonly=""
+        style="cursor: pointer;"
+        tabindex="-1"
+        type="text"
         value="multiple"
       />
     </div>
@@ -775,20 +775,20 @@ exports[`Select mounts multiple 1`] = `
       style="min-width: auto;"
     >
       <svg
-        class="StyledIcon-gTfjEw htxeRg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        version="1.1"
-        role="img"
         aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
         color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
       >
         <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
-          points="18 9 12 15 6 9"
         />
       </svg>
     </div>
@@ -798,28 +798,28 @@ exports[`Select mounts multiple 1`] = `
 
 exports[`Select mounts multiple 2`] = `
 <button
+  aria-label="undefined"
   class="StyledButton-gXzblK kGZImI"
   id="test-select"
-  aria-label="undefined"
   type="button"
 >
   <div
+    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
     direction="row"
-    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
-        type="text"
+        autocomplete="off"
         class="StyledTextInput-bzOzsW bhNKQj"
         id="test-select"
-        autocomplete="off"
-        style="cursor: pointer;"
         multiple=""
-        tabindex="-1"
         readonly=""
+        style="cursor: pointer;"
+        tabindex="-1"
+        type="text"
         value="multiple"
       />
     </div>
@@ -829,20 +829,20 @@ exports[`Select mounts multiple 2`] = `
       style="min-width: auto;"
     >
       <svg
-        class="StyledIcon-gTfjEw htxeRg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        version="1.1"
-        role="img"
         aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
         color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
       >
         <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
-          points="18 9 12 15 6 9"
         />
       </svg>
     </div>
@@ -853,10 +853,10 @@ exports[`Select mounts multiple 2`] = `
 exports[`Select mounts multiple 3`] = `
 <div
   class="StyledDrop-bCWxPe eTlFvx"
-  tabindex="-1"
   id="test-select__drop"
-  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+  target="[object Object]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -1112,27 +1112,27 @@ exports[`Select mounts multiple 5`] = `
 
 exports[`Select mounts with complex options and children 1`] = `
 <button
+  aria-label="undefined"
   class="StyledButton-gXzblK kGZImI"
   id="test-select"
-  aria-label="undefined"
   type="button"
 >
   <div
+    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
     direction="row"
-    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
-        type="text"
+        autocomplete="off"
         class="StyledTextInput-bzOzsW bhNKQj"
         id="test-select"
-        autocomplete="off"
+        readonly=""
         style="cursor: pointer;"
         tabindex="-1"
-        readonly=""
+        type="text"
       />
     </div>
     <div
@@ -1141,20 +1141,20 @@ exports[`Select mounts with complex options and children 1`] = `
       style="min-width: auto;"
     >
       <svg
-        class="StyledIcon-gTfjEw htxeRg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        version="1.1"
-        role="img"
         aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
         color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
       >
         <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
-          points="18 9 12 15 6 9"
         />
       </svg>
     </div>
@@ -1164,27 +1164,27 @@ exports[`Select mounts with complex options and children 1`] = `
 
 exports[`Select mounts with complex options and children 2`] = `
 <button
+  aria-label="undefined"
   class="StyledButton-gXzblK kGZImI"
   id="test-select"
-  aria-label="undefined"
   type="button"
 >
   <div
+    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
     direction="row"
-    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
-        type="text"
+        autocomplete="off"
         class="StyledTextInput-bzOzsW bhNKQj"
         id="test-select"
-        autocomplete="off"
+        readonly=""
         style="cursor: pointer;"
         tabindex="-1"
-        readonly=""
+        type="text"
       />
     </div>
     <div
@@ -1193,20 +1193,20 @@ exports[`Select mounts with complex options and children 2`] = `
       style="min-width: auto;"
     >
       <svg
-        class="StyledIcon-gTfjEw htxeRg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        version="1.1"
-        role="img"
         aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
         color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
       >
         <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
-          points="18 9 12 15 6 9"
         />
       </svg>
     </div>
@@ -1217,10 +1217,10 @@ exports[`Select mounts with complex options and children 2`] = `
 exports[`Select mounts with complex options and children 3`] = `
 <div
   class="StyledDrop-bCWxPe eTlFvx"
-  tabindex="-1"
   id="test-select__drop"
-  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+  target="[object Object]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -1390,10 +1390,10 @@ exports[`Select mounts with complex options and children 4`] = `
 exports[`Select mounts with search 1`] = `
 <div
   class="StyledDrop-bCWxPe eTlFvx"
-  tabindex="-1"
   id="test-select__drop"
-  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+  target="[object Object]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -1408,9 +1408,9 @@ exports[`Select mounts with search 1`] = `
         class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
       >
         <input
-          type="search"
-          class="StyledTextInput-bzOzsW ldldTo"
           autocomplete="off"
+          class="StyledTextInput-bzOzsW ldldTo"
+          type="search"
           value=""
         />
       </div>
@@ -1603,9 +1603,9 @@ exports[`Select mounts with search 2`] = `
 
 exports[`Select mounts with search 3`] = `
 <input
-  type="search"
-  class="StyledTextInput-bzOzsW ldldTo"
   autocomplete="off"
+  class="StyledTextInput-bzOzsW ldldTo"
+  type="search"
   value=""
 />
 `;
@@ -1613,10 +1613,10 @@ exports[`Select mounts with search 3`] = `
 exports[`Select mounts with search 4`] = `
 <div
   class="StyledDrop-bCWxPe eTlFvx"
-  tabindex="-1"
   id="test-select__drop"
-  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+  target="[object Object]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -1631,9 +1631,9 @@ exports[`Select mounts with search 4`] = `
         class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
       >
         <input
-          type="search"
-          class="StyledTextInput-bzOzsW ldldTo"
           autocomplete="off"
+          class="StyledTextInput-bzOzsW ldldTo"
+          type="search"
           value="a"
         />
       </div>
@@ -1826,28 +1826,28 @@ exports[`Select mounts with search 5`] = `
 
 exports[`Select renders multiple 1`] = `
 <button
+  aria-label="undefined"
   class="StyledButton-gXzblK kGZImI"
   id="test-select"
-  aria-label="undefined"
   type="button"
 >
   <div
+    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
     direction="row"
-    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
-        type="text"
+        autocomplete="off"
         class="StyledTextInput-bzOzsW bhNKQj"
         id="test-select"
-        autocomplete="off"
-        style="cursor: pointer;"
         multiple=""
-        tabindex="-1"
         readonly=""
+        style="cursor: pointer;"
+        tabindex="-1"
+        type="text"
         value=""
       />
     </div>
@@ -1857,20 +1857,20 @@ exports[`Select renders multiple 1`] = `
       style="min-width: auto;"
     >
       <svg
-        class="StyledIcon-gTfjEw htxeRg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        version="1.1"
-        role="img"
         aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
         color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
       >
         <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
-          points="18 9 12 15 6 9"
         />
       </svg>
     </div>
@@ -1880,27 +1880,27 @@ exports[`Select renders multiple 1`] = `
 
 exports[`Select renders size 1`] = `
 <button
+  aria-label="undefined"
   class="StyledButton-gXzblK kGZImI"
   id="test-select"
-  aria-label="undefined"
   type="button"
 >
   <div
+    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
     direction="row"
-    aria-hidden="true"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
     >
       <input
-        type="text"
+        autocomplete="off"
         class="StyledTextInput-bzOzsW hjHbnR"
         id="test-select"
-        autocomplete="off"
+        readonly=""
         style="cursor: pointer;"
         tabindex="-1"
-        readonly=""
+        type="text"
         value=""
       />
     </div>
@@ -1910,20 +1910,20 @@ exports[`Select renders size 1`] = `
       style="min-width: auto;"
     >
       <svg
-        class="StyledIcon-gTfjEw cKOunL"
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        version="1.1"
-        role="img"
         aria-label="FormDown"
+        class="StyledIcon-gTfjEw cKOunL"
         color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
       >
         <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
-          points="18 9 12 15 6 9"
         />
       </svg>
     </div>

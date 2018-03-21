@@ -3,18 +3,18 @@
 exports[`Menu opens and closes on click 1`] = `
 <div
   class="StyledDrop-bCWxPe eTlFvx"
-  tabindex="-1"
   id="test-menu__drop"
-  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+  target="[object Object]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
     direction="column"
   >
     <button
-      class="StyledButton-gXzblK eCeZBH"
       aria-label="Close Menu"
+      class="StyledButton-gXzblK eCeZBH"
       type="button"
     >
       <div
@@ -31,20 +31,20 @@ exports[`Menu opens and closes on click 1`] = `
           direction="row"
         />
         <svg
-          class="StyledIcon-gTfjEw htxeRg"
-          width="24px"
-          height="24px"
-          viewBox="0 0 24 24"
-          version="1.1"
-          role="img"
           aria-label="FormDown"
+          class="StyledIcon-gTfjEw htxeRg"
           color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
         >
           <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
-            points="18 9 12 15 6 9"
           />
         </svg>
       </div>
@@ -191,9 +191,9 @@ exports[`Menu opens and closes on click 2`] = `
 exports[`Menu renders 1`] = `
 <div>
   <button
+    aria-label="Open Menu"
     class="StyledButton-gXzblK kGZImI"
     id="test-menu"
-    aria-label="Open Menu"
     type="button"
   >
     <div
@@ -218,8 +218,8 @@ exports[`Menu renders 1`] = `
 exports[`Menu with custom message renders 1`] = `
 <div>
   <button
-    class="StyledButton-gXzblK kGZImI"
     aria-label="Abrir Menu"
+    class="StyledButton-gXzblK kGZImI"
     type="button"
   >
     <div
@@ -236,20 +236,20 @@ exports[`Menu with custom message renders 1`] = `
         direction="row"
       />
       <svg
-        class="StyledIcon-gTfjEw htxeRg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-        version="1.1"
-        role="img"
         aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
         color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
       >
         <polyline
           fill="none"
+          points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
-          points="18 9 12 15 6 9"
         />
       </svg>
     </div>
@@ -260,18 +260,18 @@ exports[`Menu with custom message renders 1`] = `
 exports[`Menu with dropAlign renders 1`] = `
 <div
   class="StyledDrop-bCWxPe dRgAcx"
-  tabindex="-1"
   id="test-menu__drop"
-  target="[object Object]"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+  target="[object Object]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
     direction="column"
   >
     <button
-      class="StyledButton-gXzblK eCeZBH"
       aria-label="Close Menu"
+      class="StyledButton-gXzblK eCeZBH"
       type="button"
     >
       <div
@@ -288,20 +288,20 @@ exports[`Menu with dropAlign renders 1`] = `
           direction="row"
         />
         <svg
-          class="StyledIcon-gTfjEw htxeRg"
-          width="24px"
-          height="24px"
-          viewBox="0 0 24 24"
-          version="1.1"
-          role="img"
           aria-label="FormDown"
+          class="StyledIcon-gTfjEw htxeRg"
           color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
         >
           <polyline
             fill="none"
+            points="18 9 12 15 6 9"
             stroke="#000"
             stroke-width="2"
-            points="18 9 12 15 6 9"
           />
         </svg>
       </div>

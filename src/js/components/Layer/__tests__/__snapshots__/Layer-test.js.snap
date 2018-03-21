@@ -5174,8 +5174,8 @@ exports[`Layer is accessible 1`] = `
     tabindex="-1"
   />
   <input
-    tabindex="-1"
     data-g-tabindex="10"
+    tabindex="-1"
   />
 </div>
 `;

@@ -37,7 +37,7 @@ exports[`Distribution gap renders 1`] = `
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-ixLlSs cCJaMC"
+        class="StyledBox__StyledBoxGap-ixLlSs kRHhPs"
         direction="column"
       />
       <div
@@ -84,7 +84,7 @@ exports[`Distribution gap renders 1`] = `
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-ixLlSs gOraFk"
+        class="StyledBox__StyledBoxGap-ixLlSs bOKiWh"
         direction="column"
       />
       <div
@@ -131,7 +131,7 @@ exports[`Distribution gap renders 1`] = `
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-ixLlSs fBVXBT"
+        class="StyledBox__StyledBoxGap-ixLlSs EcUVN"
         direction="column"
       />
       <div
@@ -178,7 +178,7 @@ exports[`Distribution gap renders 1`] = `
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-ixLlSs dFmack"
+        class="StyledBox__StyledBoxGap-ixLlSs czDOkn"
         direction="column"
       />
       <div
@@ -238,7 +238,7 @@ exports[`Distribution values renders 1`] = `
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-ixLlSs cCJaMC"
+        class="StyledBox__StyledBoxGap-ixLlSs kRHhPs"
         direction="column"
       />
       <div

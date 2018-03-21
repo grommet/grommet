@@ -90,7 +90,9 @@ exports[`Markdown renders 1`] = `
 <div
   className="c0"
 >
-  <div>
+  <div
+    className={undefined}
+  >
     <h1
       className="c1"
     >

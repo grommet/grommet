@@ -18,8 +18,8 @@ exports[`handles keyboard 1`] = `
       overflow="visible"
     >
       <div
-        class="StyledBox-bStriS eTKZde"
         aria-label="Lower Bounds"
+        class="StyledBox-bStriS eTKZde"
         direction="column"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
@@ -29,15 +29,15 @@ exports[`handles keyboard 1`] = `
           direction="column"
         >
           <svg
+            height="12"
             viewBox="0 0 12 12"
             width="12"
-            height="12"
           >
             <circle
               cx="6"
               cy="6"
-              r="6"
               fill="#865CD6"
+              r="6"
             />
           </svg>
         </div>
@@ -54,8 +54,8 @@ exports[`handles keyboard 1`] = `
       overflow="visible"
     >
       <div
-        class="StyledBox-bStriS eTKZde"
         aria-label="Upper Bounds"
+        class="StyledBox-bStriS eTKZde"
         direction="column"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
@@ -65,15 +65,15 @@ exports[`handles keyboard 1`] = `
           direction="column"
         >
           <svg
+            height="12"
             viewBox="0 0 12 12"
             width="12"
-            height="12"
           >
             <circle
               cx="6"
               cy="6"
-              r="6"
               fill="#865CD6"
+              r="6"
             />
           </svg>
         </div>
@@ -105,8 +105,8 @@ exports[`handles mouse 1`] = `
       overflow="visible"
     >
       <div
-        class="StyledBox-bStriS eTKZde"
         aria-label="Lower Bounds"
+        class="StyledBox-bStriS eTKZde"
         direction="column"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
@@ -116,15 +116,15 @@ exports[`handles mouse 1`] = `
           direction="column"
         >
           <svg
+            height="12"
             viewBox="0 0 12 12"
             width="12"
-            height="12"
           >
             <circle
               cx="6"
               cy="6"
-              r="6"
               fill="#865CD6"
+              r="6"
             />
           </svg>
         </div>
@@ -141,8 +141,8 @@ exports[`handles mouse 1`] = `
       overflow="visible"
     >
       <div
-        class="StyledBox-bStriS eTKZde"
         aria-label="Upper Bounds"
+        class="StyledBox-bStriS eTKZde"
         direction="column"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
@@ -152,15 +152,15 @@ exports[`handles mouse 1`] = `
           direction="column"
         >
           <svg
+            height="12"
             viewBox="0 0 12 12"
             width="12"
-            height="12"
           >
             <circle
               cx="6"
               cy="6"
-              r="6"
               fill="#865CD6"
+              r="6"
             />
           </svg>
         </div>
