@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfiniteScroll renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+>
+  <div>
+    0
+  </div>
+  <div>
+    1
+  </div>
+  <div>
+    2
+  </div>
+  <div>
+    3
+  </div>
+</div>
+`;
+
+exports[`InfiniteScroll step renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+>
+  <div>
+    0
+  </div>
+  <div>
+    1
+  </div>
+  <span
+    style={
+      Object {
+        "fontSize": 0,
+      }
+    }
+  />
+</div>
+`;

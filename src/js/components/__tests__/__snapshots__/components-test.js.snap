@@ -20,6 +20,7 @@ Object {
   "Grommet": [Function],
   "Heading": [Function],
   "Image": [Function],
+  "InfiniteScroll": [Function],
   "Keyboard": [Function],
   "Layer": [Function],
   "LayerContainer": [Function],

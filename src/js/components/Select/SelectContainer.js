@@ -5,6 +5,7 @@ import { debounce } from '../../utils';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
@@ -110,7 +111,6 @@ class SelectContainer extends Component {
     const {
       children,
       dropBackground,
-      dropSize,
       id,
       name,
       onKeyDown,
@@ -137,7 +137,6 @@ class SelectContainer extends Component {
             <Box pad='xsmall'>
               <TextInput
                 focusIndicator={true}
-                plain={true}
                 size='small'
                 ref={(ref) => { this.searchRef = ref; }}
                 type='search'
@@ -148,14 +147,14 @@ class SelectContainer extends Component {
             </Box>
           ) : undefined}
 
-          <Box basis={dropSize} overflow='auto'>
-            <Box
-              flex={false}
-              role='menubar'
-              tabIndex='-1'
-              ref={(ref) => { this.selectRef = ref; }}
-            >
-              {options.map((option, index) => (
+          <Box
+            flex={false}
+            role='menubar'
+            tabIndex='-1'
+            ref={(ref) => { this.selectRef = ref; }}
+          >
+            <InfiniteScroll items={options} step={20}>
+              {(option, index) => (
                 <Button
                   role='menuitem'
                   ref={(ref) => { this.optionsRef[index] = ref; }}
@@ -172,12 +171,15 @@ class SelectContainer extends Component {
                 >
                   {children ? children(option, index, options) : (
                     <Box align='start' pad='small'>
-                      <Text margin='none'>{option ? option.toString() : undefined}</Text>
+                      <Text margin='none'>
+                        {(option !== null && option !== undefined) ?
+                          option.toString() : undefined}
+                      </Text>
                     </Box>
                   )}
                 </Button>
-              ))}
-            </Box>
+              )}
+            </InfiniteScroll>
           </Box>
         </Box>
       </Keyboard>

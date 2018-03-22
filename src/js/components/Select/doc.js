@@ -29,9 +29,6 @@ export default (Select) => {
       left: 'left',
     }),
     dropBackground: backgroundPropType,
-    dropSize: PropTypes.string.description(
-      'Size of the options container inside the Select drop.'
-    ),
     dropTarget: PropTypes.object.description(
       `Target where the options drop will be aligned to. This should be
       a React reference. Typically, this is not required as the drop will be
