@@ -35,6 +35,7 @@ const lightColors = ['#F6F6F6', '#EEEEEE', '#DDDDDD', '#CCCCCC', '#BBBBBB', '#AA
 const backgroundColor = '#FFFFFF';
 const textColor = '#444444';
 const borderColor = 'rgba(0, 0, 0, 0.33)';
+const focusColor = accentColors[0];
 const activeColor = rgba('#DDDDDD', 0.5);
 const workSansPath = 'https://fonts.gstatic.com/s/worksans/v2';
 
@@ -78,6 +79,7 @@ export default deepFreeze({
       darkBackground: {
         text: '#FFFFFF',
       },
+      focus: focusColor,
       light: lightColors,
       neutral: neutralColors,
       placeholder: '#AAAAAA',
@@ -128,7 +130,7 @@ export default deepFreeze({
     },
     focus: {
       border: {
-        color: css`${props => colorForName('accent-1', props.theme)}`,
+        color: css`${props => colorForName('focus', props.theme)}`,
         width: '2px',
       },
     },
