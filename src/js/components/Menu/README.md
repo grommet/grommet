@@ -76,6 +76,7 @@ object
 Indicates the icon shown as a control to open it.
 
 ```
+boolean
 node
 ```
 

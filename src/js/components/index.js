@@ -15,6 +15,7 @@ export * from './Grid';
 export * from './Grommet';
 export * from './Heading';
 export * from './Image';
+export * from './InfiniteScroll';
 export * from './Keyboard';
 export * from './Layer';
 export * from './Markdown';
