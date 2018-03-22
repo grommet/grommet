@@ -89,9 +89,9 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 1 0;
-  -ms-flex: 1 0;
-  flex: 1 0;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
   margin: 0;
   padding: 0;
 }
@@ -684,9 +684,9 @@ exports[`Video controls renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 1 0;
-  -ms-flex: 1 0;
-  flex: 1 0;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
   margin: 0;
   padding: 0;
 }
@@ -1495,9 +1495,9 @@ exports[`Video fit renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 1 0;
-  -ms-flex: 1 0;
-  flex: 1 0;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
   margin: 0;
   padding: 0;
 }
@@ -2280,9 +2280,9 @@ exports[`Video loop renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 1 0;
-  -ms-flex: 1 0;
-  flex: 1 0;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
   margin: 0;
   padding: 0;
 }
@@ -2843,9 +2843,9 @@ exports[`Video mute renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 1 0;
-  -ms-flex: 1 0;
-  flex: 1 0;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
   margin: 0;
   padding: 0;
 }
@@ -3406,9 +3406,9 @@ exports[`Video renders 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex: 1 0;
-  -ms-flex: 1 0;
-  flex: 1 0;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
   margin: 0;
   padding: 0;
 }

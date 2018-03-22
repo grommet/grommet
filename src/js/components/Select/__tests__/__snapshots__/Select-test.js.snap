@@ -14,7 +14,7 @@ exports[`Select closes drop on esc 1`] = `
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS hnAWDO"
+      class="StyledBox-bStriS cwOEFa"
       direction="column"
       role="menubar"
       tabindex="-1"
@@ -76,14 +76,14 @@ exports[`Select closes drop on esc 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kzhXNn {
+  .hAGfCP {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kzhXNn {
+  .hAGfCP {
     padding: 0;
   }
 }
@@ -101,13 +101,13 @@ exports[`Select closes drop on esc 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hnAWDO {
+  .cwOEFa {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hnAWDO {
+  .cwOEFa {
     padding: 0;
   }
 }
@@ -207,7 +207,7 @@ exports[`Select closes drop on esc 3`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS kzhXNn"
+      class="StyledBox-bStriS hAGfCP"
       direction="column"
       style="min-width: auto;"
     >
@@ -259,7 +259,7 @@ exports[`Select closes drop on esc 4`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS kzhXNn"
+      class="StyledBox-bStriS hAGfCP"
       direction="column"
       style="min-width: auto;"
     >
@@ -311,7 +311,7 @@ exports[`Select mounts 1`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS kzhXNn"
+      class="StyledBox-bStriS hAGfCP"
       direction="column"
       style="min-width: auto;"
     >
@@ -363,7 +363,7 @@ exports[`Select mounts 2`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS kzhXNn"
+      class="StyledBox-bStriS hAGfCP"
       direction="column"
       style="min-width: auto;"
     >
@@ -403,7 +403,7 @@ exports[`Select mounts 3`] = `
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS hnAWDO"
+      class="StyledBox-bStriS cwOEFa"
       direction="column"
       role="menubar"
       tabindex="-1"
@@ -465,14 +465,14 @@ exports[`Select mounts 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kzhXNn {
+  .hAGfCP {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kzhXNn {
+  .hAGfCP {
     padding: 0;
   }
 }
@@ -490,13 +490,13 @@ exports[`Select mounts 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hnAWDO {
+  .cwOEFa {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hnAWDO {
+  .cwOEFa {
     padding: 0;
   }
 }
@@ -560,7 +560,7 @@ exports[`Select mounts 4`] = `
 
 exports[`Select mounts 5`] = `
 <div
-  class="StyledBox-bStriS hnAWDO"
+  class="StyledBox-bStriS cwOEFa"
   direction="column"
   role="menubar"
   tabindex="-1"
@@ -627,7 +627,7 @@ exports[`Select mounts disabled 1`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS kzhXNn"
+      class="StyledBox-bStriS hAGfCP"
       direction="column"
       style="min-width: auto;"
     >
@@ -680,7 +680,7 @@ exports[`Select mounts disabled 2`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS kzhXNn"
+      class="StyledBox-bStriS hAGfCP"
       direction="column"
       style="min-width: auto;"
     >
@@ -734,7 +734,7 @@ exports[`Select mounts multiple 1`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS kzhXNn"
+      class="StyledBox-bStriS hAGfCP"
       direction="column"
       style="min-width: auto;"
     >
@@ -788,7 +788,7 @@ exports[`Select mounts multiple 2`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS kzhXNn"
+      class="StyledBox-bStriS hAGfCP"
       direction="column"
       style="min-width: auto;"
     >
@@ -828,7 +828,7 @@ exports[`Select mounts multiple 3`] = `
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS hnAWDO"
+      class="StyledBox-bStriS cwOEFa"
       direction="column"
       role="menubar"
       tabindex="-1"
@@ -890,14 +890,14 @@ exports[`Select mounts multiple 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kzhXNn {
+  .hAGfCP {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kzhXNn {
+  .hAGfCP {
     padding: 0;
   }
 }
@@ -915,13 +915,13 @@ exports[`Select mounts multiple 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hnAWDO {
+  .cwOEFa {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hnAWDO {
+  .cwOEFa {
     padding: 0;
   }
 }
@@ -1016,7 +1016,7 @@ exports[`Select mounts multiple 4`] = `
 
 exports[`Select mounts multiple 5`] = `
 <div
-  class="StyledBox-bStriS hnAWDO"
+  class="StyledBox-bStriS cwOEFa"
   direction="column"
   role="menubar"
   tabindex="-1"
@@ -1082,7 +1082,7 @@ exports[`Select mounts with complex options and children 1`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS kzhXNn"
+      class="StyledBox-bStriS hAGfCP"
       direction="column"
       style="min-width: auto;"
     >
@@ -1134,7 +1134,7 @@ exports[`Select mounts with complex options and children 2`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS kzhXNn"
+      class="StyledBox-bStriS hAGfCP"
       direction="column"
       style="min-width: auto;"
     >
@@ -1174,7 +1174,7 @@ exports[`Select mounts with complex options and children 3`] = `
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS hnAWDO"
+      class="StyledBox-bStriS cwOEFa"
       direction="column"
       role="menubar"
       tabindex="-1"
@@ -1222,14 +1222,14 @@ exports[`Select mounts with complex options and children 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kzhXNn {
+  .hAGfCP {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kzhXNn {
+  .hAGfCP {
     padding: 0;
   }
 }
@@ -1247,13 +1247,13 @@ exports[`Select mounts with complex options and children 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hnAWDO {
+  .cwOEFa {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hnAWDO {
+  .cwOEFa {
     padding: 0;
   }
 }
@@ -1344,7 +1344,7 @@ exports[`Select mounts with search 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS hnAWDO"
+      class="StyledBox-bStriS cwOEFa"
       direction="column"
       role="menubar"
       tabindex="-1"
@@ -1406,14 +1406,14 @@ exports[`Select mounts with search 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kzhXNn {
+  .hAGfCP {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kzhXNn {
+  .hAGfCP {
     padding: 0;
   }
 }
@@ -1431,13 +1431,13 @@ exports[`Select mounts with search 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hnAWDO {
+  .cwOEFa {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hnAWDO {
+  .cwOEFa {
     padding: 0;
   }
 }
@@ -1549,7 +1549,7 @@ exports[`Select mounts with search 4`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS hnAWDO"
+      class="StyledBox-bStriS cwOEFa"
       direction="column"
       role="menubar"
       tabindex="-1"
@@ -1611,14 +1611,14 @@ exports[`Select mounts with search 5`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .kzhXNn {
+  .hAGfCP {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kzhXNn {
+  .hAGfCP {
     padding: 0;
   }
 }
@@ -1636,13 +1636,13 @@ exports[`Select mounts with search 5`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .hnAWDO {
+  .cwOEFa {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hnAWDO {
+  .cwOEFa {
     padding: 0;
   }
 }
@@ -1744,7 +1744,7 @@ exports[`Select renders multiple 1`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS kzhXNn"
+      class="StyledBox-bStriS hAGfCP"
       direction="column"
       style="min-width: auto;"
     >
@@ -1797,7 +1797,7 @@ exports[`Select renders size 1`] = `
       />
     </div>
     <div
-      class="StyledBox-bStriS kzhXNn"
+      class="StyledBox-bStriS hAGfCP"
       direction="column"
       style="min-width: auto;"
     >
