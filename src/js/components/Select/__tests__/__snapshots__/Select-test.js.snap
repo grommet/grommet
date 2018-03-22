@@ -14,49 +14,43 @@ exports[`Select closes drop on esc 1`] = `
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS gTzfUh"
+      class="StyledBox-bStriS hnAWDO"
       direction="column"
-      overflow="auto"
+      role="menubar"
+      tabindex="-1"
     >
-      <div
-        class="StyledBox-bStriS hnAWDO"
-        direction="column"
-        role="menubar"
-        tabindex="-1"
+      <button
+        class="StyledButton-gXzblK faBScD"
+        role="menuitem"
+        type="button"
       >
-        <button
-          class="StyledButton-gXzblK faBScD"
-          role="menuitem"
-          type="button"
+        <div
+          class="StyledBox-bStriS jXXAwE"
+          direction="column"
         >
-          <div
-            class="StyledBox-bStriS jXXAwE"
-            direction="column"
+          <span
+            class="StyledText-eJMSZI eCycNH"
           >
-            <span
-              class="StyledText-eJMSZI eCycNH"
-            >
-              one
-            </span>
-          </div>
-        </button>
-        <button
-          class="StyledButton-gXzblK faBScD"
-          role="menuitem"
-          type="button"
+            one
+          </span>
+        </div>
+      </button>
+      <button
+        class="StyledButton-gXzblK faBScD"
+        role="menuitem"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS jXXAwE"
+          direction="column"
         >
-          <div
-            class="StyledBox-bStriS jXXAwE"
-            direction="column"
+          <span
+            class="StyledText-eJMSZI eCycNH"
           >
-            <span
-              class="StyledText-eJMSZI eCycNH"
-            >
-              two
-            </span>
-          </div>
-        </button>
-      </div>
+            two
+          </span>
+        </div>
+      </button>
     </div>
   </div>
 </div>
@@ -102,18 +96,6 @@ exports[`Select closes drop on esc 2`] = `
 
 @media only screen and (max-width:699px) {
   .dFjuei {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .gTzfUh {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .gTzfUh {
     padding: 0;
   }
 }
@@ -421,49 +403,43 @@ exports[`Select mounts 3`] = `
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS gTzfUh"
+      class="StyledBox-bStriS hnAWDO"
       direction="column"
-      overflow="auto"
+      role="menubar"
+      tabindex="-1"
     >
-      <div
-        class="StyledBox-bStriS hnAWDO"
-        direction="column"
-        role="menubar"
-        tabindex="-1"
+      <button
+        class="StyledButton-gXzblK faBScD"
+        role="menuitem"
+        type="button"
       >
-        <button
-          class="StyledButton-gXzblK faBScD"
-          role="menuitem"
-          type="button"
+        <div
+          class="StyledBox-bStriS jXXAwE"
+          direction="column"
         >
-          <div
-            class="StyledBox-bStriS jXXAwE"
-            direction="column"
+          <span
+            class="StyledText-eJMSZI eCycNH"
           >
-            <span
-              class="StyledText-eJMSZI eCycNH"
-            >
-              one
-            </span>
-          </div>
-        </button>
-        <button
-          class="StyledButton-gXzblK faBScD"
-          role="menuitem"
-          type="button"
+            one
+          </span>
+        </div>
+      </button>
+      <button
+        class="StyledButton-gXzblK faBScD"
+        role="menuitem"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS jXXAwE"
+          direction="column"
         >
-          <div
-            class="StyledBox-bStriS jXXAwE"
-            direction="column"
+          <span
+            class="StyledText-eJMSZI eCycNH"
           >
-            <span
-              class="StyledText-eJMSZI eCycNH"
-            >
-              two
-            </span>
-          </div>
-        </button>
-      </div>
+            two
+          </span>
+        </div>
+      </button>
     </div>
   </div>
 </div>
@@ -509,18 +485,6 @@ exports[`Select mounts 4`] = `
 
 @media only screen and (max-width:699px) {
   .dFjuei {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .gTzfUh {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .gTzfUh {
     padding: 0;
   }
 }
@@ -864,49 +828,43 @@ exports[`Select mounts multiple 3`] = `
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS gTzfUh"
+      class="StyledBox-bStriS hnAWDO"
       direction="column"
-      overflow="auto"
+      role="menubar"
+      tabindex="-1"
     >
-      <div
-        class="StyledBox-bStriS hnAWDO"
-        direction="column"
-        role="menubar"
-        tabindex="-1"
+      <button
+        class="StyledButton-gXzblK kZkhbU"
+        role="menuitem"
+        type="button"
       >
-        <button
-          class="StyledButton-gXzblK kZkhbU"
-          role="menuitem"
-          type="button"
+        <div
+          class="StyledBox-bStriS jXXAwE"
+          direction="column"
         >
-          <div
-            class="StyledBox-bStriS jXXAwE"
-            direction="column"
+          <span
+            class="StyledText-eJMSZI eCycNH"
           >
-            <span
-              class="StyledText-eJMSZI eCycNH"
-            >
-              one
-            </span>
-          </div>
-        </button>
-        <button
-          class="StyledButton-gXzblK kZkhbU"
-          role="menuitem"
-          type="button"
+            one
+          </span>
+        </div>
+      </button>
+      <button
+        class="StyledButton-gXzblK kZkhbU"
+        role="menuitem"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS jXXAwE"
+          direction="column"
         >
-          <div
-            class="StyledBox-bStriS jXXAwE"
-            direction="column"
+          <span
+            class="StyledText-eJMSZI eCycNH"
           >
-            <span
-              class="StyledText-eJMSZI eCycNH"
-            >
-              two
-            </span>
-          </div>
-        </button>
-      </div>
+            two
+          </span>
+        </div>
+      </button>
     </div>
   </div>
 </div>
@@ -952,18 +910,6 @@ exports[`Select mounts multiple 4`] = `
 
 @media only screen and (max-width:699px) {
   .dFjuei {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .gTzfUh {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .gTzfUh {
     padding: 0;
   }
 }
@@ -1228,35 +1174,29 @@ exports[`Select mounts with complex options and children 3`] = `
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS gTzfUh"
+      class="StyledBox-bStriS hnAWDO"
       direction="column"
-      overflow="auto"
+      role="menubar"
+      tabindex="-1"
     >
-      <div
-        class="StyledBox-bStriS hnAWDO"
-        direction="column"
-        role="menubar"
-        tabindex="-1"
+      <button
+        class="StyledButton-gXzblK faBScD"
+        role="menuitem"
+        type="button"
       >
-        <button
-          class="StyledButton-gXzblK faBScD"
-          role="menuitem"
-          type="button"
-        >
-          <span>
-            one
-          </span>
-        </button>
-        <button
-          class="StyledButton-gXzblK faBScD"
-          role="menuitem"
-          type="button"
-        >
-          <span>
-            two
-          </span>
-        </button>
-      </div>
+        <span>
+          one
+        </span>
+      </button>
+      <button
+        class="StyledButton-gXzblK faBScD"
+        role="menuitem"
+        type="button"
+      >
+        <span>
+          two
+        </span>
+      </button>
     </div>
   </div>
 </div>
@@ -1302,18 +1242,6 @@ exports[`Select mounts with complex options and children 4`] = `
 
 @media only screen and (max-width:699px) {
   .dFjuei {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .gTzfUh {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .gTzfUh {
     padding: 0;
   }
 }
@@ -1409,56 +1337,50 @@ exports[`Select mounts with search 1`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-bzOzsW ldldTo"
+          class="StyledTextInput-bzOzsW kCBBl"
           type="search"
           value=""
         />
       </div>
     </div>
     <div
-      class="StyledBox-bStriS gTzfUh"
+      class="StyledBox-bStriS hnAWDO"
       direction="column"
-      overflow="auto"
+      role="menubar"
+      tabindex="-1"
     >
-      <div
-        class="StyledBox-bStriS hnAWDO"
-        direction="column"
-        role="menubar"
-        tabindex="-1"
+      <button
+        class="StyledButton-gXzblK faBScD"
+        role="menuitem"
+        type="button"
       >
-        <button
-          class="StyledButton-gXzblK faBScD"
-          role="menuitem"
-          type="button"
+        <div
+          class="StyledBox-bStriS jXXAwE"
+          direction="column"
         >
-          <div
-            class="StyledBox-bStriS jXXAwE"
-            direction="column"
+          <span
+            class="StyledText-eJMSZI eCycNH"
           >
-            <span
-              class="StyledText-eJMSZI eCycNH"
-            >
-              one
-            </span>
-          </div>
-        </button>
-        <button
-          class="StyledButton-gXzblK faBScD"
-          role="menuitem"
-          type="button"
+            one
+          </span>
+        </div>
+      </button>
+      <button
+        class="StyledButton-gXzblK faBScD"
+        role="menuitem"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS jXXAwE"
+          direction="column"
         >
-          <div
-            class="StyledBox-bStriS jXXAwE"
-            direction="column"
+          <span
+            class="StyledText-eJMSZI eCycNH"
           >
-            <span
-              class="StyledText-eJMSZI eCycNH"
-            >
-              two
-            </span>
-          </div>
-        </button>
-      </div>
+            two
+          </span>
+        </div>
+      </button>
     </div>
   </div>
 </div>
@@ -1504,18 +1426,6 @@ exports[`Select mounts with search 2`] = `
 
 @media only screen and (max-width:699px) {
   .dFjuei {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .gTzfUh {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .gTzfUh {
     padding: 0;
   }
 }
@@ -1604,7 +1514,7 @@ exports[`Select mounts with search 2`] = `
 exports[`Select mounts with search 3`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-bzOzsW ldldTo"
+  class="StyledTextInput-bzOzsW kCBBl"
   type="search"
   value=""
 />
@@ -1632,56 +1542,50 @@ exports[`Select mounts with search 4`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-bzOzsW ldldTo"
+          class="StyledTextInput-bzOzsW kCBBl"
           type="search"
           value="a"
         />
       </div>
     </div>
     <div
-      class="StyledBox-bStriS gTzfUh"
+      class="StyledBox-bStriS hnAWDO"
       direction="column"
-      overflow="auto"
+      role="menubar"
+      tabindex="-1"
     >
-      <div
-        class="StyledBox-bStriS hnAWDO"
-        direction="column"
-        role="menubar"
-        tabindex="-1"
+      <button
+        class="StyledButton-gXzblK faBScD"
+        role="menuitem"
+        type="button"
       >
-        <button
-          class="StyledButton-gXzblK faBScD"
-          role="menuitem"
-          type="button"
+        <div
+          class="StyledBox-bStriS jXXAwE"
+          direction="column"
         >
-          <div
-            class="StyledBox-bStriS jXXAwE"
-            direction="column"
+          <span
+            class="StyledText-eJMSZI eCycNH"
           >
-            <span
-              class="StyledText-eJMSZI eCycNH"
-            >
-              one
-            </span>
-          </div>
-        </button>
-        <button
-          class="StyledButton-gXzblK faBScD"
-          role="menuitem"
-          type="button"
+            one
+          </span>
+        </div>
+      </button>
+      <button
+        class="StyledButton-gXzblK faBScD"
+        role="menuitem"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS jXXAwE"
+          direction="column"
         >
-          <div
-            class="StyledBox-bStriS jXXAwE"
-            direction="column"
+          <span
+            class="StyledText-eJMSZI eCycNH"
           >
-            <span
-              class="StyledText-eJMSZI eCycNH"
-            >
-              two
-            </span>
-          </div>
-        </button>
-      </div>
+            two
+          </span>
+        </div>
+      </button>
     </div>
   </div>
 </div>
@@ -1727,18 +1631,6 @@ exports[`Select mounts with search 5`] = `
 
 @media only screen and (max-width:699px) {
   .dFjuei {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .gTzfUh {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .gTzfUh {
     padding: 0;
   }
 }

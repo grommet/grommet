@@ -75,14 +75,6 @@ string
 }
 ```
 
-**dropSize**
-
-Size of the options container inside the Select drop.
-
-```
-string
-```
-
 **dropTarget**
 
 Target where the options drop will be aligned to. This should be
