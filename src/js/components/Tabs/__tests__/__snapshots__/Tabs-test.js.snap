@@ -9,10 +9,10 @@ exports[`Tabs changes active index 1`] = `
     direction="row"
   >
     <button
+      aria-expanded="true"
+      aria-selected="true"
       class="StyledButton-gXzblK kGZImI"
       role="tab"
-      aria-selected="true"
-      aria-expanded="true"
       type="button"
     >
       <div
@@ -29,10 +29,10 @@ exports[`Tabs changes active index 1`] = `
       </div>
     </button>
     <button
+      aria-expanded="false"
+      aria-selected="false"
       class="StyledButton-gXzblK kGZImI"
       role="tab"
-      aria-selected="false"
-      aria-expanded="false"
       type="button"
     >
       <div
@@ -343,10 +343,10 @@ exports[`Tabs sets on hover 1`] = `
     direction="row"
   >
     <button
+      aria-expanded="true"
+      aria-selected="true"
       class="StyledButton-gXzblK kGZImI"
       role="tab"
-      aria-selected="true"
-      aria-expanded="true"
       type="button"
     >
       <div
@@ -363,10 +363,10 @@ exports[`Tabs sets on hover 1`] = `
       </div>
     </button>
     <button
+      aria-expanded="false"
+      aria-selected="false"
       class="StyledButton-gXzblK kGZImI"
       role="tab"
-      aria-selected="false"
-      aria-expanded="false"
       type="button"
     >
       <div
@@ -400,10 +400,10 @@ exports[`Tabs sets on hover 2`] = `
     direction="row"
   >
     <button
+      aria-expanded="true"
+      aria-selected="true"
       class="StyledButton-gXzblK kGZImI"
       role="tab"
-      aria-selected="true"
-      aria-expanded="true"
       type="button"
     >
       <div
@@ -420,10 +420,10 @@ exports[`Tabs sets on hover 2`] = `
       </div>
     </button>
     <button
+      aria-expanded="false"
+      aria-selected="false"
       class="StyledButton-gXzblK kGZImI"
       role="tab"
-      aria-selected="false"
-      aria-expanded="false"
       type="button"
     >
       <div
@@ -457,10 +457,10 @@ exports[`Tabs sets on hover 3`] = `
     direction="row"
   >
     <button
+      aria-expanded="true"
+      aria-selected="true"
       class="StyledButton-gXzblK kGZImI"
       role="tab"
-      aria-selected="true"
-      aria-expanded="true"
       type="button"
     >
       <div
@@ -477,10 +477,10 @@ exports[`Tabs sets on hover 3`] = `
       </div>
     </button>
     <button
+      aria-expanded="false"
+      aria-selected="false"
       class="StyledButton-gXzblK kGZImI"
       role="tab"
-      aria-selected="false"
-      aria-expanded="false"
       type="button"
     >
       <div
@@ -514,10 +514,10 @@ exports[`Tabs sets on hover 4`] = `
     direction="row"
   >
     <button
+      aria-expanded="true"
+      aria-selected="true"
       class="StyledButton-gXzblK kGZImI"
       role="tab"
-      aria-selected="true"
-      aria-expanded="true"
       type="button"
     >
       <div
@@ -534,10 +534,10 @@ exports[`Tabs sets on hover 4`] = `
       </div>
     </button>
     <button
+      aria-expanded="false"
+      aria-selected="false"
       class="StyledButton-gXzblK kGZImI"
       role="tab"
-      aria-selected="false"
-      aria-expanded="false"
       type="button"
     >
       <div

@@ -25,11 +25,11 @@ exports[`Diagram color renders 1`] = `
     </div>
     <svg
       class="StyledDiagram-fAdbMP bwxUiT"
-      viewBox="0 0 0 0"
-      preserveAspectRatio="xMinYMin meet"
-      width="0"
       height="0"
+      preserveAspectRatio="xMinYMin meet"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+      viewBox="0 0 0 0"
+      width="0"
     >
       <g />
     </svg>
@@ -62,11 +62,11 @@ exports[`Diagram offset renders 1`] = `
     </div>
     <svg
       class="StyledDiagram-fAdbMP bwxUiT"
-      viewBox="0 0 0 0"
-      preserveAspectRatio="xMinYMin meet"
-      width="0"
       height="0"
+      preserveAspectRatio="xMinYMin meet"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+      viewBox="0 0 0 0"
+      width="0"
     >
       <g />
     </svg>
@@ -99,11 +99,11 @@ exports[`Diagram renders 1`] = `
     </div>
     <svg
       class="StyledDiagram-fAdbMP bwxUiT"
-      viewBox="0 0 0 0"
-      preserveAspectRatio="xMinYMin meet"
-      width="0"
       height="0"
+      preserveAspectRatio="xMinYMin meet"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+      viewBox="0 0 0 0"
+      width="0"
     >
       <g />
     </svg>
@@ -136,11 +136,11 @@ exports[`Diagram thickness renders 1`] = `
     </div>
     <svg
       class="StyledDiagram-fAdbMP bwxUiT"
-      viewBox="0 0 0 0"
-      preserveAspectRatio="xMinYMin meet"
-      width="0"
       height="0"
+      preserveAspectRatio="xMinYMin meet"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+      viewBox="0 0 0 0"
+      width="0"
     >
       <g />
     </svg>
@@ -173,11 +173,11 @@ exports[`Diagram type renders 1`] = `
     </div>
     <svg
       class="StyledDiagram-fAdbMP bwxUiT"
-      viewBox="0 0 0 0"
-      preserveAspectRatio="xMinYMin meet"
-      width="0"
       height="0"
+      preserveAspectRatio="xMinYMin meet"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+      viewBox="0 0 0 0"
+      width="0"
     >
       <g />
     </svg>

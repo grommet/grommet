@@ -57,8 +57,13 @@ describe('TextInput', () => {
         />
       </Grommet>
     );
-    component.find('input').first().simulate('input');
+    const input = component.find('input').first();
+    input.simulate('input');
     expectPortal('text-input-drop__item').toMatchSnapshot();
+
+    global.document.dispatchEvent(new Event('click'));
+
+    expect(document.getElementById('text-input-drop__item')).toBeNull();
   });
 
   test('closes suggestion drop', () => {

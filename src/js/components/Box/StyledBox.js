@@ -350,23 +350,25 @@ export default StyledBox.extend`
   ${props => props.theme.box && props.theme.box.extend}
 `;
 
-const gapStyle = css`
-  ${({ direction, gap, responsive, theme: { global: { edgeSize } } }) =>
-    (direction === 'column' ? `
-      height: ${edgeSize[gap]};
-      ${responsive ? palm(`
-        height: ${edgeSize.narrow[gap]};
-      `) : ''}
-    ` : `
-      width: ${edgeSize[gap]};
-      ${(direction === 'row-responsive') ? palm(`
+const gapStyle = (direction, gap, responsive, { global: { edgeSize } }) => {
+  const styles = [];
+  if (direction === 'column') {
+    styles.push(css`height: ${edgeSize[gap]};`);
+    if (responsive) {
+      styles.push(palm(`height: ${edgeSize.narrow[gap]};`));
+    }
+  } else {
+    styles.push(`width: ${edgeSize[gap]};`);
+    if (responsive && direction === 'row-responsive') {
+      styles.push(palm(`
         width: auto;
         height: ${edgeSize.narrow[gap]};
-      `) : ''}
-    `)
+      `));
+    }
   }
-`;
+  return styles;
+};
 
 export const StyledBoxGap = styled.div`
-  ${props => props.gap && gapStyle};
+  ${props => props.gap && gapStyle(props.direction, props.gap, props.responsive, props.theme)};
 `;

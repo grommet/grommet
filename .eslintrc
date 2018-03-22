@@ -46,6 +46,12 @@
     "react/no-array-index-key": 0,
     "import/no-extraneous-dependencies": 0,
     "no-alert": 0,
-    "jsx-a11y/href-no-hash": 0
+    "jsx-a11y/href-no-hash": 0,
+    // clean up the code for these
+    "function-paren-newline": 0,
+    "object-curly-newline": 0,
+    "prefer-destructuring": 0,
+    "react/no-unused-state": 0,
+    "jsx-a11y/mouse-events-have-key-events": 0,
   }
 }

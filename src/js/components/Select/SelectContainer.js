@@ -26,7 +26,7 @@ class SelectContainer extends Component {
     setTimeout(() => {
       if (onSearch) {
         findDOMNode(this.searchRef).querySelector('input').focus();
-      } else {
+      } else if (this.selectRef) {
         findDOMNode(this.selectRef).focus();
       }
     }, 0);

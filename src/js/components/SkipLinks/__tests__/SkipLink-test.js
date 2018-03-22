@@ -23,11 +23,11 @@ describe('SkipLink', () => {
         <div>
           <SkipLinkTarget id='main' />
           Main Content
-          <input type='text' value='main content' />
+          <input type='text' value='main content' onChange={() => {}} />
         </div>
         <footer>
           <SkipLinkTarget id='footer' />
-          <input type='text' value='footer' />
+          <input type='text' value='footer' onChange={() => {}} />
         </footer>
       </div>
     );

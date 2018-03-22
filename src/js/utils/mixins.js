@@ -20,13 +20,13 @@ export function fontSize(size, lineHeight) {
 
 export function lapAndUp(content) {
   return css`
-    @media only screen and (min-width:${props => `${props.theme.global.breakpoints.narrow + 1}px`}) { ${content} }
+    @media only screen and (min-width: ${props => `${props.theme.global.breakpoints.narrow + 1}px`}) { ${content} }
   `;
 }
 
 export function palm(content) {
   return css`
-    @media only screen and (max-width:${props => `${props.theme.global.breakpoints.narrow}px`}) { ${content} }
+    @media only screen and (max-width: ${props => `${props.theme.global.breakpoints.narrow}px`}) { ${content} }
   `;
 }
 

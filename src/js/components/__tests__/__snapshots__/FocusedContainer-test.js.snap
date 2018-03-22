@@ -51,8 +51,8 @@ exports[`FocusedContainer mounts 2`] = `
 
 exports[`FocusedContainer mounts 3`] = `
 <div
-  id="container"
   hidden=""
+  id="container"
 >
   test focused container
 </div>

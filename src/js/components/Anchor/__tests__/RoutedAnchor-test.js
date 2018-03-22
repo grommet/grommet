@@ -8,118 +8,117 @@ import { findAllByType } from '../../../utils';
 import { Grommet } from '../../Grommet';
 import { RoutedAnchor } from '../';
 
-
-test('RoutedAnchor renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <RoutedAnchor label='Test' path='/' />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('RoutedAnchor is clickable', () => {
-  const onClick = jest.fn();
-  const component = renderer.create(
-    <Grommet>
-      <RoutedAnchor label='Test' onClick={onClick} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-
-  const anchor = findAllByType(tree, 'a');
-  anchor[0].props.onClick();
-  expect(onClick).toBeCalled();
-});
-
-test('RoutedAnchor skips onClick if right clicked', () => {
-  const onClick = jest.fn();
-  const component = renderer.create(
-    <Grommet>
-      <RoutedAnchor label='Test' onClick={onClick} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-
-  const anchor = findAllByType(tree, 'a');
-  anchor[0].props.onClick({
-    ctrlKey: true,
-  });
-  anchor[0].props.onClick({
-    metaKey: true,
-  });
-  expect(onClick).not.toBeCalled();
-});
-
-test('RoutedAnchor calls router context push', () => {
-  const preventDefault = jest.fn();
-  const push = jest.fn();
-  class FakeRouter extends Component {
-    static childContextTypes = {
-      router: PropTypes.object,
-    }
-    getChildContext() {
-      return {
-        router: {
-          history: {
-            push,
-          },
-        },
-      };
-    }
-    render() {
-      return <div>{this.props.children}</div>;
-    }
+class FakeRouter extends Component {
+  static childContextTypes = {
+    router: PropTypes.object,
   }
-  const component = renderer.create(
-    <Grommet>
-      <FakeRouter>
-        <RoutedAnchor label='Test' path='/' />
-      </FakeRouter>
-    </Grommet>
-  );
-  const tree = component.toJSON();
-
-  const anchor = findAllByType(tree, 'a');
-  anchor[0].props.onClick({
-    preventDefault,
-  });
-  expect(preventDefault).toBeCalled();
-  expect(push).toBeCalledWith('/');
-});
-
-test('RoutedAnchor calls router context replace', () => {
-  const preventDefault = jest.fn();
-  const replace = jest.fn();
-  class FakeRouter extends Component {
-    static childContextTypes = {
-      router: PropTypes.object,
-    }
-    getChildContext() {
-      return {
-        router: {
+  getChildContext() {
+    const { push, replace } = this.props;
+    return {
+      router: {
+        history: {
+          push,
           replace,
         },
-      };
-    }
-    render() {
-      return <div>{this.props.children}</div>;
-    }
+      },
+    };
   }
-  const component = renderer.create(
-    <Grommet>
-      <FakeRouter>
-        <RoutedAnchor label='Test' path='/' method='replace' />
-      </FakeRouter>
-    </Grommet>
-  );
-  const tree = component.toJSON();
+  render() {
+    return <div>{this.props.children}</div>;
+  }
+}
 
-  const anchor = findAllByType(tree, 'a');
-  anchor[0].props.onClick({
-    preventDefault,
+describe('RoutedAnchor', () => {
+  test('renders', () => {
+    const component = renderer.create(
+      <Grommet>
+        <FakeRouter>
+          <RoutedAnchor label='Test' path='/' />
+        </FakeRouter>
+      </Grommet>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
   });
-  expect(preventDefault).toBeCalled();
-  expect(replace).toBeCalledWith('/');
+
+  test('is clickable', () => {
+    const preventDefault = jest.fn();
+    const push = jest.fn();
+    const onClick = jest.fn();
+    const component = renderer.create(
+      <Grommet>
+        <FakeRouter push={push}>
+          <RoutedAnchor label='Test' onClick={onClick} />
+        </FakeRouter>
+      </Grommet>
+    );
+    const tree = component.toJSON();
+
+    const anchor = findAllByType(tree, 'a');
+    anchor[0].props.onClick({ preventDefault });
+    expect(onClick).toBeCalled();
+    expect(push).toBeCalled();
+    expect(preventDefault).toBeCalled();
+  });
+
+  test('skips onClick if right clicked', () => {
+    const onClick = jest.fn();
+    const component = renderer.create(
+      <Grommet>
+        <FakeRouter>
+          <RoutedAnchor label='Test' onClick={onClick} />
+        </FakeRouter>
+      </Grommet>
+    );
+    const tree = component.toJSON();
+
+    const anchor = findAllByType(tree, 'a');
+    anchor[0].props.onClick({
+      ctrlKey: true,
+    });
+    anchor[0].props.onClick({
+      metaKey: true,
+    });
+    expect(onClick).not.toBeCalled();
+  });
+
+  test('calls router context push', () => {
+    const preventDefault = jest.fn();
+    const push = jest.fn();
+    const component = renderer.create(
+      <Grommet>
+        <FakeRouter push={push}>
+          <RoutedAnchor label='Test' path='/' />
+        </FakeRouter>
+      </Grommet>
+    );
+    const tree = component.toJSON();
+
+    const anchor = findAllByType(tree, 'a');
+    anchor[0].props.onClick({
+      preventDefault,
+    });
+    expect(preventDefault).toBeCalled();
+    expect(push).toBeCalledWith('/');
+  });
+
+  test('calls router context replace', () => {
+    const preventDefault = jest.fn();
+    const replace = jest.fn();
+    const component = renderer.create(
+      <Grommet>
+        <FakeRouter replace={replace}>
+          <RoutedAnchor label='Test' path='/' method='replace' />
+        </FakeRouter>
+      </Grommet>
+    );
+    const tree = component.toJSON();
+
+    const anchor = findAllByType(tree, 'a');
+    anchor[0].props.onClick({
+      preventDefault,
+    });
+    expect(preventDefault).toBeCalled();
+    expect(replace).toBeCalledWith('/');
+  });
 });

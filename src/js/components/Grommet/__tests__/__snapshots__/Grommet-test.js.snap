@@ -12,8 +12,8 @@ exports[`Grommet announces 1`] = `
 
 exports[`Grommet announces 2`] = `
 <div
-  style="left: -100%; right: 100%; position: fixed; z-index: -1;"
   aria-live="assertive"
+  style="left: -100%; right: 100%; position: fixed; z-index: -1;"
 >
   hello
 </div>
@@ -21,8 +21,8 @@ exports[`Grommet announces 2`] = `
 
 exports[`Grommet announces 3`] = `
 <div
-  style="left: -100%; right: 100%; position: fixed; z-index: -1;"
   aria-live="assertive"
+  style="left: -100%; right: 100%; position: fixed; z-index: -1;"
 />
 `;
 
