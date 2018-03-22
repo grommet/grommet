@@ -12,6 +12,5 @@ script:
   if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "$TRAVIS_BRANCH" = "NEXT" ]; then
     git config --global user.name "Grommet Community Bot"
     git config --global user.email "grommet@hpe.com"
-    npm run dist
-    npm run release-stable
+    npm run dist && npm run release-stable
   fi
