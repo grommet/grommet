@@ -397,6 +397,7 @@ exports[`Anchor icon label renders 1`] = `
                 "darkBackground": Object {
                   "text": "#FFFFFF",
                 },
+                "focus": "#FD6FFF",
                 "light": Array [
                   "#F6F6F6",
                   "#EEEEEE",
@@ -1247,6 +1248,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "darkBackground": Object {
                   "text": "#FFFFFF",
                 },
+                "focus": "#FD6FFF",
                 "light": Array [
                   "#F6F6F6",
                   "#EEEEEE",
@@ -1940,6 +1942,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "darkBackground": Object {
                   "text": "#FFFFFF",
                 },
+                "focus": "#FD6FFF",
                 "light": Array [
                   "#F6F6F6",
                   "#EEEEEE",

@@ -34,7 +34,7 @@ class FormField extends Component {
     };
     let borderColor;
     if (focus) {
-      borderColor = theme.global.focus.border.color;
+      borderColor = 'focus';
     } else if (error) {
       borderColor = formField.border.error.color || 'status-critical';
     } else {
