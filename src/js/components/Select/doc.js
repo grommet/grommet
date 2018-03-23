@@ -80,10 +80,11 @@ export default (Select) => {
     value: PropTypes.oneOfType([
       PropTypes.string, PropTypes.element, PropTypes.object,
       PropTypes.arrayOf(PropTypes.oneOfType([
-        PropTypes.string, PropTypes.element, PropTypes.object,
+        PropTypes.string, PropTypes.object,
       ])),
-    ]).description(`Currently selected value. This will be an array
-      when multiple.`),
+    ]).description(`Currently selected value. This can be an array
+      when multiple. Passing an element allows the caller to control how
+      the value is rendered.`),
   };
 
   return DocumentedSelect;
