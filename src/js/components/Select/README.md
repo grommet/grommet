@@ -196,8 +196,9 @@ xlarge
 
 **value**
 
-Currently selected value. This will be an array
-      when multiple.
+Currently selected value. This can be an array
+      when multiple. Passing an element allows the caller to control how
+      the value is rendered.
 
 ```
 string
@@ -205,7 +206,6 @@ element
 object
 [
   string
-  element
   object
 ]
 ```
