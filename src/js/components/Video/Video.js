@@ -44,6 +44,7 @@ class Video extends Component {
   }
 
   state = {
+    captions: [],
     mouseActive: false,
   }
 
@@ -67,6 +68,8 @@ class Video extends Component {
     for (let i = 0; i < textTracks.length; i += 1) {
       textTracks[i].mode = 'hidden';
     }
+
+    this.restate();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -82,6 +85,10 @@ class Video extends Component {
     //   #the-source-element
     // Using forceUpdate to force redraw of video when receiving new <source>
     this.forceUpdate();
+  }
+
+  componentDidUpdate() {
+    this.restate();
   }
 
   componentWillUnmount() {
@@ -241,10 +248,58 @@ class Video extends Component {
     }
   }
 
+  restate = () => {
+    const { captions, height, width } = this.state;
+    const video = findDOMNode(this.videoRef);
+
+    if (video.videoHeight) {
+      // set the size based on the video aspect ratio
+      const rect = video.getBoundingClientRect();
+      const ratio = rect.width / rect.height;
+      const videoRatio = video.videoWidth / video.videoHeight;
+      if (videoRatio > ratio) {
+        const nextHeight = rect.width / videoRatio;
+        if (nextHeight !== height) {
+          this.setState({ height: nextHeight, width: undefined });
+        }
+      } else {
+        const nextWidth = rect.height * videoRatio;
+        if (nextWidth !== width) {
+          this.setState({ height: undefined, width: nextWidth });
+        }
+      }
+    }
+
+    // remember the state of the text tracks for subsequent rendering
+    const textTracks = video.textTracks;
+    if (textTracks.length > 0) {
+      if (textTracks.length === 1) {
+        const active = textTracks[0].mode === 'showing';
+        if (!captions || !captions[0] || captions[0].active !== active) {
+          this.setState({ captions: [{ active }] });
+        }
+      } else {
+        const nextCaptions = [];
+        let set = false;
+        for (let i = 0; i < textTracks.length; i += 1) {
+          const track = textTracks[i];
+          const active = track.mode === 'showing';
+          nextCaptions.push({ label: track.label, active });
+          if (!captions || !captions[i] || captions[i].active !== active) {
+            set = true;
+          }
+        }
+        if (set) {
+          this.setState({ captions: nextCaptions });
+        }
+      }
+    }
+  }
+
   renderControls() {
     const { controls, theme } = this.props;
     const {
-      currentTime, duration, interacting,
+      captions, currentTime, duration, interacting,
       percentagePlayed, playing, scrubTime, volume,
     } = this.state;
     const over = controls === 'over';
@@ -263,30 +318,12 @@ class Video extends Component {
       Volume: theme.video.icons.volume,
     };
 
-    const captionControls = [];
-    if (this.videoRef) {
-      const textTracks = findDOMNode(this.videoRef).textTracks;
-      if (textTracks.length > 0) {
-        if (textTracks.length === 1) {
-          const active = textTracks[0].mode === 'showing';
-          captionControls.push({
-            icon: <Icons.ClosedCaption color={iconColor} />,
-            active,
-            onClick: () => this.showCaptions(active ? -1 : 0),
-          });
-        } else {
-          for (let i = 0; i < textTracks.length; i += 1) {
-            const track = textTracks[i];
-            const active = track.mode === 'showing';
-            captionControls.push({
-              label: track.label,
-              active,
-              onClick: () => this.showCaptions(active ? -1 : i),
-            });
-          }
-        }
-      }
-    }
+    const captionControls = captions.map(caption => ({
+      icon: caption.label ? undefined : <Icons.ClosedCaption color={iconColor} />,
+      label: caption.label,
+      active: caption.active,
+      onClick: () => this.showCaptions(caption.active ? -1 : 0),
+    }));
 
     return (
       <StyledVideoControls
@@ -304,7 +341,7 @@ class Video extends Component {
             hoverIndicator='background'
             onClick={playing ? this.pause : this.play}
           />
-          <Box direction='row' align='center' flex='grow'>
+          <Box direction='row' align='center' flex={true}>
             <Box flex={true}>
               <Stack>
                 <Meter
@@ -359,6 +396,7 @@ class Video extends Component {
 
   render() {
     const { autoPlay, children, controls, loop, ...rest } = this.props;
+    const { height, width } = this.state;
 
     const controlsElement = (controls ? this.renderControls() : undefined);
 
@@ -372,19 +410,12 @@ class Video extends Component {
     }
 
     let style;
-    if (rest.fit === 'contain' && controls === 'over' && this.videoRef) {
+    if (rest.fit === 'contain' && controls === 'over') {
       // constrain the size to fit the aspect ratio so the controls overlap correctly
-      const video = findDOMNode(this.videoRef);
-      if (video.videoHeight) {
-        const rect = video.getBoundingClientRect();
-        const ratio = rect.width / rect.height;
-        const videoRatio = video.videoWidth / video.videoHeight;
-        style = {};
-        if (videoRatio > ratio) {
-          style.height = rect.width / videoRatio;
-        } else {
-          style.width = rect.height * videoRatio;
-        }
+      if (width) {
+        style = { width };
+      } else if (height) {
+        style = { height };
       }
     }
 
