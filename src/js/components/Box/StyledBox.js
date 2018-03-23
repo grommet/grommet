@@ -82,7 +82,9 @@ const FLEX_MAP = {
 };
 
 const flexStyle = css`
-  flex: ${props => FLEX_MAP[props.flex]};
+  flex: ${props =>
+    `${FLEX_MAP[props.flex]}${(props.flex !== true && !props.basis) ? ' auto' : ''}`
+  };
 `;
 
 const fillStyle = (fill) => {
