@@ -93,7 +93,9 @@ export default (Box) => {
     fill: PropTypes.oneOf(['horizontal', 'vertical', true, false])
       .description('Whether the width and/or height should fill the container.'),
     gap: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge'])
-      .description('The amount of spacing between child elements.'),
+      .description(`The amount of spacing between child elements. This
+        should not be used in conjunction with 'wrap' as the gap elements
+        will not wrap gracefully.`),
     gridArea: PropTypes.string.description(`The name of the area to place
       this Box in inside a parent Grid.`),
     justify: PropTypes.oneOf(['start', 'center', 'between', 'end'])
