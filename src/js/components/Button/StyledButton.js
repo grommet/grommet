@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
-import { activeStyle, backgroundStyle, colorForName, focusStyle, fontSize, lapAndUp } from '../../utils';
+import { activeStyle, backgroundStyle, colorForName, colorIsDark, focusStyle, fontSize, lapAndUp } from '../../utils';
 
 const basicStyle = props => css`
   border: ${props.theme.button.border.width} solid ${props.color ? colorForName(props.color, props.theme) : props.theme.button.border.color};
@@ -18,8 +18,12 @@ const primaryStyle = props => css`
 
   // TODO: revisit this
   svg {
-    fill: ${props.theme.global.colors.white};
-    stroke: ${props.theme.global.colors.white};
+    fill: ${colorIsDark(colorForName('brand', props.theme)) ?
+      props.theme.global.colors.darkBackground.text :
+      props.theme.global.colors.lightBackground.text};
+    stroke: ${colorIsDark(colorForName('brand', props.theme)) ?
+      props.theme.global.colors.darkBackground.text :
+      props.theme.global.colors.lightBackground.text};
     transition: none;
   }
 `;
