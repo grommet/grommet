@@ -2,7 +2,7 @@
 
 exports[`SkipLink mounts 1`] = `
 <div
-  class="StyledLayer-ceZzeh wJdSV"
+  class="StyledLayer-ceZzeh cvbgCP"
   id="skip-links"
   tabindex="-1"
 >
@@ -106,7 +106,7 @@ exports[`SkipLink mounts 2`] = `
 
 
 
-.wJdSV {
+.cvbgCP {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -116,6 +116,7 @@ exports[`SkipLink mounts 2`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  background-color: unset;
   position: relative;
   z-index: 10;
   overflow: auto;
@@ -127,7 +128,7 @@ exports[`SkipLink mounts 2`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .wJdSV {
+  .cvbgCP {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -160,7 +161,7 @@ exports[`SkipLink mounts 2`] = `
 
 exports[`SkipLink mounts 3`] = `
 <div
-  class="StyledLayer-ceZzeh cAYRbG"
+  class="StyledLayer-ceZzeh eAzHoj"
   id="skip-links"
   tabindex="-1"
 >
@@ -265,14 +266,14 @@ exports[`SkipLink mounts 4`] = `
 
 
 @media only screen and (max-width:699px) {
-  .wJdSV {
+  .cvbgCP {
     position: absolute;
     height: 100%;
     width: 100%;
   }
 }
 
-.cAYRbG {
+.eAzHoj {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -282,6 +283,7 @@ exports[`SkipLink mounts 4`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  background-color: unset;
   position: relative;
   z-index: 10;
   overflow: auto;
@@ -289,7 +291,7 @@ exports[`SkipLink mounts 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cAYRbG {
+  .eAzHoj {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -297,7 +299,7 @@ exports[`SkipLink mounts 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .cAYRbG {
+  .eAzHoj {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -365,7 +367,7 @@ exports[`SkipLink mounts 5`] = `
       hidden=""
     >
       <div
-        class="StyledLayer-ceZzeh wJdSV"
+        class="StyledLayer-ceZzeh cvbgCP"
         id="skip-links"
         tabindex="-1"
       >

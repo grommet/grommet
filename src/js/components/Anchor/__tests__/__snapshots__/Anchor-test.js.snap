@@ -406,6 +406,9 @@ exports[`Anchor icon label renders 1`] = `
                   "#BBBBBB",
                   "#AAAAAA",
                 ],
+                "lightBackground": Object {
+                  "text": "#444444",
+                },
                 "neutral": Array [
                   "#EB6060",
                   "#01C781",
@@ -1257,6 +1260,9 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "#BBBBBB",
                   "#AAAAAA",
                 ],
+                "lightBackground": Object {
+                  "text": "#444444",
+                },
                 "neutral": Array [
                   "#EB6060",
                   "#01C781",
@@ -1951,6 +1957,9 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "#BBBBBB",
                   "#AAAAAA",
                 ],
+                "lightBackground": Object {
+                  "text": "#444444",
+                },
                 "neutral": Array [
                   "#EB6060",
                   "#01C781",

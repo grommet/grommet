@@ -13,7 +13,7 @@ export const backgroundStyle = (background, theme) => {
     if (background.image) {
       let color;
       if (background.dark === false) {
-        color = theme.global.colors.text;
+        color = theme.global.colors.lightBackground.text;
       } else if (background.dark) {
         color = theme.global.colors.darkBackground.text;
       } else {
@@ -39,13 +39,15 @@ export const backgroundStyle = (background, theme) => {
         return css`
           background-color: ${rgba};
           color: ${
-            colorIsDark(rgba) ? theme.global.colors.darkBackground.text : theme.global.colors.text
+            colorIsDark(rgba) ?
+            theme.global.colors.darkBackground.text :
+            theme.global.colors.lightBackground.text
           };
         `;
       }
     } else if (background.dark === false) {
       return css`
-        color: ${theme.global.colors.text};
+        color: ${theme.global.colors.lightBackground.text};
       `;
     } else if (background.dark) {
       return css`
@@ -66,7 +68,8 @@ export const backgroundStyle = (background, theme) => {
       return css`
         background-color: ${color};
         color: ${colorIsDark(color) ?
-          theme.global.colors.darkBackground.text : theme.global.colors.text};
+          theme.global.colors.darkBackground.text :
+          theme.global.colors.lightBackground.text};
       `;
     }
   }

@@ -11,6 +11,7 @@ const hiddenPositionStyle = css`
 
 const StyledLayer = styled.div`
   ${baseStyle}
+  background-color: unset;
 
   position: relative;
   z-index: 10;
