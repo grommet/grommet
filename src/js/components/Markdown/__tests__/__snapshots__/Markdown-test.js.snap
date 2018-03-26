@@ -95,6 +95,7 @@ exports[`Markdown renders 1`] = `
   >
     <h1
       className="c1"
+      id="h1"
     >
       H1
     </h1>
@@ -105,16 +106,19 @@ exports[`Markdown renders 1`] = `
     </p>
     <h2
       className="c3"
+      id="h2"
     >
       H2
     </h2>
     <h3
       className="c4"
+      id="h3"
     >
       H3
     </h3>
     <h4
       className="c5"
+      id="h4"
     >
       H4
     </h4>
