@@ -75,12 +75,31 @@ export const withTheme = (WrappedComponent) => {
     static contextTypes = {
       theme: PropTypes.object,
     }
-    render() {
-      const { theme, ...rest } = this.props;
-      const { theme: contextTheme } = this.context;
+
+    constructor(props, context) {
+      super(props, context);
+      this.buildTheme(props, context);
+    }
+
+    componentWillReceiveProps(nextProps) {
+      // only merge on existence changes
+      if ((nextProps.theme && !this.props.theme) ||
+        (!nextProps.theme && this.props.theme)) {
+        this.buildTheme(nextProps, this.context);
+      }
+    }
+
+    buildTheme = (props, context) => {
+      const { theme } = props;
+      const { theme: contextTheme } = context;
       const localTheme = deepMerge(baseTheme, contextTheme, theme);
+      this.state = { theme: localTheme };
+    }
+
+    render() {
+      const { theme } = this.state;
       return (
-        <WrappedComponent theme={localTheme} {...rest} />
+        <WrappedComponent {...this.props} theme={theme} />
       );
     }
   }
