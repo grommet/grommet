@@ -437,12 +437,18 @@ exports[`Anchor icon label renders 1`] = `
                 },
               },
               "drop": Object {
-                "backgroundColor": "#f8f8f8",
+                "backgroundColor": Object {
+                  "dark": "#222222",
+                  "light": "#f8f8f8",
+                },
                 "border": Object {
                   "radius": "0px",
                   "width": "0px",
                 },
-                "shadow": "0px 3px 8px rgba(100, 100, 100, 0.50)",
+                "shadow": Object {
+                  "dark": "0px 3px 8px rgba(255, 255, 255, 0.40)",
+                  "light": "0px 3px 8px rgba(100, 100, 100, 0.50)",
+                },
               },
               "edgeSize": Object {
                 "large": "48px",
@@ -461,12 +467,22 @@ exports[`Anchor icon label renders 1`] = `
                 "xsmall": "6px",
               },
               "elevation": Object {
-                "large": "0px 6px 12px rgba(100, 100, 100, 0.50)",
-                "medium": "0px 3px 8px rgba(100, 100, 100, 0.50)",
-                "none": "none",
-                "small": "0px 2px 4px rgba(100, 100, 100, 0.50)",
-                "xlarge": "0px 8px 16px rgba(100, 100, 100, 0.50)",
-                "xsmall": "0px 1px 2px rgba(100, 100, 100, 0.50)",
+                "dark": Object {
+                  "large": "0px 8px 16px rgba(255, 255, 255, 0.40)",
+                  "medium": "0px 6px 8px rgba(255, 255, 255, 0.40)",
+                  "none": "none",
+                  "small": "0px 4px 4px rgba(255, 255, 255, 0.40)",
+                  "xlarge": "0px 10px 24px rgba(255, 255, 255, 0.40)",
+                  "xsmall": "0px 2px 2px rgba(255, 255, 255, 0.40)",
+                },
+                "light": Object {
+                  "large": "0px 6px 12px rgba(100, 100, 100, 0.50)",
+                  "medium": "0px 3px 8px rgba(100, 100, 100, 0.50)",
+                  "none": "none",
+                  "small": "0px 2px 4px rgba(100, 100, 100, 0.50)",
+                  "xlarge": "0px 8px 16px rgba(100, 100, 100, 0.50)",
+                  "xsmall": "0px 1px 2px rgba(100, 100, 100, 0.50)",
+                },
               },
               "focus": Object {
                 "border": Object {
@@ -1291,12 +1307,18 @@ exports[`Anchor reverse icon label renders 1`] = `
                 },
               },
               "drop": Object {
-                "backgroundColor": "#f8f8f8",
+                "backgroundColor": Object {
+                  "dark": "#222222",
+                  "light": "#f8f8f8",
+                },
                 "border": Object {
                   "radius": "0px",
                   "width": "0px",
                 },
-                "shadow": "0px 3px 8px rgba(100, 100, 100, 0.50)",
+                "shadow": Object {
+                  "dark": "0px 3px 8px rgba(255, 255, 255, 0.40)",
+                  "light": "0px 3px 8px rgba(100, 100, 100, 0.50)",
+                },
               },
               "edgeSize": Object {
                 "large": "48px",
@@ -1315,12 +1337,22 @@ exports[`Anchor reverse icon label renders 1`] = `
                 "xsmall": "6px",
               },
               "elevation": Object {
-                "large": "0px 6px 12px rgba(100, 100, 100, 0.50)",
-                "medium": "0px 3px 8px rgba(100, 100, 100, 0.50)",
-                "none": "none",
-                "small": "0px 2px 4px rgba(100, 100, 100, 0.50)",
-                "xlarge": "0px 8px 16px rgba(100, 100, 100, 0.50)",
-                "xsmall": "0px 1px 2px rgba(100, 100, 100, 0.50)",
+                "dark": Object {
+                  "large": "0px 8px 16px rgba(255, 255, 255, 0.40)",
+                  "medium": "0px 6px 8px rgba(255, 255, 255, 0.40)",
+                  "none": "none",
+                  "small": "0px 4px 4px rgba(255, 255, 255, 0.40)",
+                  "xlarge": "0px 10px 24px rgba(255, 255, 255, 0.40)",
+                  "xsmall": "0px 2px 2px rgba(255, 255, 255, 0.40)",
+                },
+                "light": Object {
+                  "large": "0px 6px 12px rgba(100, 100, 100, 0.50)",
+                  "medium": "0px 3px 8px rgba(100, 100, 100, 0.50)",
+                  "none": "none",
+                  "small": "0px 2px 4px rgba(100, 100, 100, 0.50)",
+                  "xlarge": "0px 8px 16px rgba(100, 100, 100, 0.50)",
+                  "xsmall": "0px 1px 2px rgba(100, 100, 100, 0.50)",
+                },
               },
               "focus": Object {
                 "border": Object {
@@ -1988,12 +2020,18 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 },
               },
               "drop": Object {
-                "backgroundColor": "#f8f8f8",
+                "backgroundColor": Object {
+                  "dark": "#222222",
+                  "light": "#f8f8f8",
+                },
                 "border": Object {
                   "radius": "0px",
                   "width": "0px",
                 },
-                "shadow": "0px 3px 8px rgba(100, 100, 100, 0.50)",
+                "shadow": Object {
+                  "dark": "0px 3px 8px rgba(255, 255, 255, 0.40)",
+                  "light": "0px 3px 8px rgba(100, 100, 100, 0.50)",
+                },
               },
               "edgeSize": Object {
                 "large": "48px",
@@ -2012,12 +2050,22 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 "xsmall": "6px",
               },
               "elevation": Object {
-                "large": "0px 6px 12px rgba(100, 100, 100, 0.50)",
-                "medium": "0px 3px 8px rgba(100, 100, 100, 0.50)",
-                "none": "none",
-                "small": "0px 2px 4px rgba(100, 100, 100, 0.50)",
-                "xlarge": "0px 8px 16px rgba(100, 100, 100, 0.50)",
-                "xsmall": "0px 1px 2px rgba(100, 100, 100, 0.50)",
+                "dark": Object {
+                  "large": "0px 8px 16px rgba(255, 255, 255, 0.40)",
+                  "medium": "0px 6px 8px rgba(255, 255, 255, 0.40)",
+                  "none": "none",
+                  "small": "0px 4px 4px rgba(255, 255, 255, 0.40)",
+                  "xlarge": "0px 10px 24px rgba(255, 255, 255, 0.40)",
+                  "xsmall": "0px 2px 2px rgba(255, 255, 255, 0.40)",
+                },
+                "light": Object {
+                  "large": "0px 6px 12px rgba(100, 100, 100, 0.50)",
+                  "medium": "0px 3px 8px rgba(100, 100, 100, 0.50)",
+                  "none": "none",
+                  "small": "0px 2px 4px rgba(100, 100, 100, 0.50)",
+                  "xlarge": "0px 8px 16px rgba(100, 100, 100, 0.50)",
+                  "xsmall": "0px 1px 2px rgba(100, 100, 100, 0.50)",
+                },
               },
               "focus": Object {
                 "border": Object {

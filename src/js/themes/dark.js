@@ -46,22 +46,6 @@ export default deepFreeze({
       text: textColor,
       white: '#FFFFFF',
     },
-    drop: {
-      backgroundColor: '#333333',
-      border: {
-        width: '0px',
-        radius: '0px',
-      },
-      shadow: '0px 3px 8px rgba(100, 100, 100, 0.50)',
-    },
-    elevation: {
-      none: 'none',
-      xsmall: '0px 1px 2px rgba(100, 100, 100, 0.50)',
-      small: '0px 2px 4px rgba(100, 100, 100, 0.50)',
-      medium: '0px 3px 8px rgba(100, 100, 100, 0.50)',
-      large: '0px 6px 12px rgba(100, 100, 100, 0.50)',
-      xlarge: '0px 8px 16px rgba(100, 100, 100, 0.50)',
-    },
     focus: {
       border: {
         color: css`${props => colorForName('focus', props.theme)}`,

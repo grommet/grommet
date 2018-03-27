@@ -1,6 +1,7 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { backgroundStyle, colorForName, edgeStyle, palm, focusStyle } from '../../utils';
+import { backgroundStyle, colorForName, edgeStyle, palm,
+  focusStyle } from '../../utils';
 
 const ALIGN_MAP = {
   baseline: 'baseline',
@@ -49,7 +50,8 @@ const BASIS_MAP = {
 };
 
 const basisStyle = css`
-  flex-basis: ${props => BASIS_MAP[props.basis] || props.theme.global.size[props.basis] || props.basis};
+  flex-basis: ${props =>
+    BASIS_MAP[props.basis] || props.theme.global.size[props.basis] || props.basis};
 `;
 
 // min-width and min-height needed because of this
@@ -71,7 +73,8 @@ const directionStyle = css`
 `;
 
 const elevationStyle = css`
-  box-shadow: ${props => props.theme.global.elevation[props.elevation]};
+  box-shadow: ${props =>
+    props.theme.global.elevation[props.grommet.dark ? 'dark' : 'light'][props.elevation]};
 `;
 
 const FLEX_MAP = {
@@ -168,7 +171,8 @@ const ROUND_MAP = {
 };
 
 const roundStyle = css`
-  border-radius: ${props => ROUND_MAP[props.round] || props.theme.global.edgeSize[props.round]};
+  border-radius: ${props =>
+    ROUND_MAP[props.round] || props.theme.global.edgeSize[props.round]};
   ${props => (props.responsive ? palm(`
     border-radius: ${ROUND_MAP[props.round] || props.theme.global.edgeSize.narrow[props.round]};
   `) : '')}
@@ -331,15 +335,18 @@ const StyledBox = styled.div`
   ${props => props.alignContent && alignContentStyle}
   ${props => props.alignSelf && alignSelfStyle}
   ${props => props.background && backgroundStyle(props.background, props.theme)}
-  ${props => props.border && borderStyle(props.border, props.responsive, props.theme)}
+  ${props => props.border &&
+    borderStyle(props.border, props.responsive, props.theme)}
   ${props => props.direction && directionStyle}
   ${props => props.flex !== undefined && flexStyle}
   ${props => props.basis && basisStyle}
   ${props => props.fillContainer && fillStyle(props.fillContainer)}
   ${props => props.gridArea && gridAreaStyle}
   ${props => props.justify && justifyStyle}
-  ${props => (props.margin && edgeStyle('margin', props.margin, props.responsive, props.theme))}
-  ${props => (props.pad && edgeStyle('padding', props.pad, props.responsive, props.theme))}
+  ${props => (props.margin &&
+    edgeStyle('margin', props.margin, props.responsive, props.theme))}
+  ${props => (props.pad &&
+    edgeStyle('padding', props.pad, props.responsive, props.theme))}
   ${props => props.round && roundStyle}
   ${props => props.wrapContents && wrapStyle}
   ${props => props.overflow && `overflow: ${props.overflow};`}
@@ -372,5 +379,6 @@ const gapStyle = (direction, gap, responsive, { global: { edgeSize } }) => {
 };
 
 export const StyledBoxGap = styled.div`
-  ${props => props.gap && gapStyle(props.direction, props.gap, props.responsive, props.theme)};
+  ${props => props.gap &&
+    gapStyle(props.direction, props.gap, props.responsive, props.theme)};
 `;

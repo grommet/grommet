@@ -64,6 +64,7 @@ class Box extends Component {
       wrap, // munged to avoid styled-components putting it in the DOM
       ...rest
     } = this.props;
+    const { grommet } = this.context;
 
     let StyledComponent = styledComponents[tag];
     if (!StyledComponent) {
@@ -103,6 +104,7 @@ class Box extends Component {
         wrapContents={wrap}
         responsive={responsive}
         theme={theme}
+        grommet={grommet}
         {...rest}
       >
         {contents}
