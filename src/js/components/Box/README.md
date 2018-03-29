@@ -247,7 +247,9 @@ false
 
 **gap**
 
-The amount of spacing between child elements.
+The amount of spacing between child elements. This
+        should not be used in conjunction with 'wrap' as the gap elements
+        will not wrap gracefully.
 
 ```
 xsmall

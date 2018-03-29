@@ -39,6 +39,18 @@ Use this to indicate that 'items' doesn't contain all that it could.
 function
 ```
 
+**renderMarker**
+
+Function that will be called to render the marker element that
+      is inserted into the DOM to track when scrolling nears the end of the
+      rendered items. It will be called with a single element that should
+      be wrapped appropriately. This is needed when the default
+      element, a <span>, isn't sufficient, such as a row of a table body.
+
+```
+function
+```
+
 **step**
 
 How many items to render at a time. Defaults to `50`.
