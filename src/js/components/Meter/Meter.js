@@ -15,14 +15,34 @@ class Meter extends Component {
     type: 'bar',
   };
 
+  state = {}
+
+  componentWillMount() {
+    this.deriveMax(this.props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.deriveMax(nextProps);
+  }
+
+  deriveMax = (props) => {
+    let max = 100;
+    if (props.values && props.values.length > 1) {
+      max = 0;
+      props.values.forEach((v) => { max += v.value; });
+    }
+    this.setState({ max });
+  }
+
   render() {
     const { type, ...rest } = this.props;
+    const { max } = this.state;
 
     let content;
     if (type === 'bar') {
-      content = <Bar {...rest} />;
+      content = <Bar max={max} {...rest} />;
     } else if (type === 'circle') {
-      content = <Circle {...rest} />;
+      content = <Circle max={max} {...rest} />;
     }
 
     return content;

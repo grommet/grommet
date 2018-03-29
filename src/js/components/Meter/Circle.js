@@ -7,12 +7,11 @@ import { strokeProps } from './utils';
 
 export default class Circle extends Component {
   render() {
-    const { background, round, size, theme, thickness, values, ...rest } = this.props;
+    const { background, max, round, size, theme, thickness, values, ...rest } = this.props;
     const width = (size === 'full' ? 288 : parseMetricToNum(theme.global.size[size]));
     const height = parseMetricToNum(theme.global.edgeSize[thickness]);
     const mid = width / 2;
     const radius = (width / 2) - (height / 2);
-    const max = 100;
     const anglePer = (360 / max);
     const someHighlight = (values || []).some(v => v.highlight);
 
