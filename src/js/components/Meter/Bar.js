@@ -11,13 +11,12 @@ export default class Bar extends Component {
   };
 
   render() {
-    const { background, round, size, theme, thickness, values, ...rest } = this.props;
+    const { background, max, round, size, theme, thickness, values, ...rest } = this.props;
     const width = (size === 'full' ? 288 : parseMetricToNum(theme.global.size[size]));
     const height = parseMetricToNum(theme.global.edgeSize[thickness]);
     // account for the round cap, if any
     const capOffset = (round ? (height / 2) : 0);
     const mid = height / 2;
-    const max = 100;
     const someHighlight = (values || []).some(v => v.highlight);
 
     let start = capOffset;
