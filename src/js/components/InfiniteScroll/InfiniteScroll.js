@@ -23,22 +23,29 @@ export default class InfiniteScroll extends Component {
   }
 
   render() {
-    const { children, items, step } = this.props;
+    const { children, items, renderMarker, step } = this.props;
     const { count } = this.state;
     const displayCount = step * count;
     const waypointAt = displayCount - (step / 2);
+
+    let marker = (
+      <Waypoint
+        key='marker'
+        onEnter={this.increaseOffset}
+        bottomOffsetX='-96px'
+      />
+    );
+    if (renderMarker) {
+      // need to give it a key
+      marker = React.cloneElement(renderMarker(marker), { key: 'marker' });
+    }
+
     return (
       items
         .slice(0, displayCount)
         .map((item, index) => [
           children(item, index),
-          (index === waypointAt && (
-            <Waypoint
-              key='waypoint-trigger'
-              onEnter={this.increaseOffset}
-              bottomOffsetX='-96px'
-            />
-          )),
+          (index === waypointAt && marker),
         ])
     );
   }

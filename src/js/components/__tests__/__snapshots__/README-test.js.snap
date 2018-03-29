@@ -323,7 +323,9 @@ false
 
 **gap**
 
-The amount of spacing between child elements.
+The amount of spacing between child elements. This
+        should not be used in conjunction with 'wrap' as the gap elements
+        will not wrap gracefully.
 
 \`\`\`
 xsmall
@@ -1728,6 +1730,18 @@ Use this to indicate that 'items' doesn't contain all that it could.
       This might be used when the total number of items that could be retrieved
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed.
+
+\`\`\`
+function
+\`\`\`
+
+**renderMarker**
+
+Function that will be called to render the marker element that
+      is inserted into the DOM to track when scrolling nears the end of the
+      rendered items. It will be called with a single element that should
+      be wrapped appropriately. This is needed when the default
+      element, a <span>, isn't sufficient, such as a row of a table body.
 
 \`\`\`
 function

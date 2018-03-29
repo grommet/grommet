@@ -25,6 +25,13 @@ export default (InfiniteScroll) => {
       is more than you'd want to load into the browser. 'onMore' allows you
       to lazily fetch more from the server only when needed.`
     ),
+    renderMarker: PropTypes.func.description(
+      `Function that will be called to render the marker element that
+      is inserted into the DOM to track when scrolling nears the end of the
+      rendered items. It will be called with a single element that should
+      be wrapped appropriately. This is needed when the default
+      element, a <span>, isn't sufficient, such as a row of a table body.`
+    ),
     step: PropTypes.number.description(
       'How many items to render at a time.'
     ).defaultValue(50),

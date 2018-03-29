@@ -33,4 +33,16 @@ describe('InfiniteScroll', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test('renderMarker renders', () => {
+    const component = renderer.create(
+      <Grommet>
+        <InfiniteScroll items={items} step={2} renderMarker={m => <div>{m}</div>}>
+          {(item, index) => <div key={index}>{item}</div>}
+        </InfiniteScroll>
+      </Grommet>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });
