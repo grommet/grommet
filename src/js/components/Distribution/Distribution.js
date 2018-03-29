@@ -34,7 +34,7 @@ class Distribution extends Component {
       let subIndex;
       values.some((v, index) => {
         subTotal += v.value;
-        if (subTotal > (total * 0.4)) {
+        if (subTotal >= (total * 0.4)) {
           subIndex = index + 1;
           return true;
         }
@@ -51,7 +51,7 @@ class Distribution extends Component {
         childBasis = ['3/4', '1/4'];
       } else if (subTotal > (total * 0.6)) {
         childBasis = ['2/3', '1/3'];
-      } else if (subTotal > (total * 0.4)) {
+      } else {
         childBasis = ['1/2', '1/2'];
       }
 
