@@ -27,7 +27,7 @@ exports[`Menu opens and closes on click 1`] = `
           Test
         </span>
         <div
-          class="StyledBox__StyledBoxGap-ixLlSs laXbkr"
+          class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
           direction="row"
         />
         <svg
@@ -206,7 +206,7 @@ exports[`Menu renders 1`] = `
         Test Menu
       </span>
       <div
-        class="StyledBox__StyledBoxGap-ixLlSs laXbkr"
+        class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
         direction="row"
       />
       <svg />
@@ -232,7 +232,7 @@ exports[`Menu with custom message renders 1`] = `
         Test Menu
       </span>
       <div
-        class="StyledBox__StyledBoxGap-ixLlSs laXbkr"
+        class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
         direction="row"
       />
       <svg
@@ -284,7 +284,7 @@ exports[`Menu with dropAlign renders 1`] = `
           Test
         </span>
         <div
-          class="StyledBox__StyledBoxGap-ixLlSs laXbkr"
+          class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
           direction="row"
         />
         <svg
