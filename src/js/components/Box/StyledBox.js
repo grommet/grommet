@@ -379,6 +379,7 @@ const gapStyle = (direction, gap, responsive, { global: { edgeSize } }) => {
 };
 
 export const StyledBoxGap = styled.div`
+  flex: 0 0 auto;
   ${props => props.gap &&
     gapStyle(props.direction, props.gap, props.responsive, props.theme)};
 `;
