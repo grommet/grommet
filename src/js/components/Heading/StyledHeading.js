@@ -75,7 +75,7 @@ const truncateStyle = `
 `;
 
 const colorStyle = css`
-  color: ${props => colorForName(props.color, props.theme)}
+  color: ${props => colorForName(props.color, props.theme)};
 `;
 
 const StyledHeading = styled.h1`
