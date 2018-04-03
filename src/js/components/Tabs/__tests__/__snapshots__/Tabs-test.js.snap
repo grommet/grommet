@@ -40,7 +40,7 @@ exports[`Tabs changes active index 1`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI cQGInD"
+          class="StyledText-eJMSZI guglNP"
           color="dark-4"
         >
           Tab 2
@@ -94,7 +94,7 @@ exports[`Tabs changes to second tab 1`] = `
           direction="column"
         >
           <span
-            className="StyledText-eJMSZI cQGInD"
+            className="StyledText-eJMSZI guglNP"
             color="dark-4"
           >
             Tab 1
@@ -296,7 +296,7 @@ exports[`Tabs renders with Tab 1`] = `
           direction="column"
         >
           <span
-            className="StyledText-eJMSZI cQGInD"
+            className="StyledText-eJMSZI guglNP"
             color="dark-4"
           >
             Tab 2
@@ -374,7 +374,7 @@ exports[`Tabs sets on hover 1`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI cQGInD"
+          class="StyledText-eJMSZI guglNP"
           color="dark-4"
         >
           Tab 2
@@ -431,7 +431,7 @@ exports[`Tabs sets on hover 2`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI cQGInD"
+          class="StyledText-eJMSZI guglNP"
           color="dark-4"
         >
           Tab 2
@@ -488,7 +488,7 @@ exports[`Tabs sets on hover 3`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI cQGInD"
+          class="StyledText-eJMSZI guglNP"
           color="dark-4"
         >
           Tab 2
@@ -545,7 +545,7 @@ exports[`Tabs sets on hover 4`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI cQGInD"
+          class="StyledText-eJMSZI guglNP"
           color="dark-4"
         >
           Tab 2

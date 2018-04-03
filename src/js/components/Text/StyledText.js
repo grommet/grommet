@@ -66,11 +66,11 @@ const truncateStyle = `
 `;
 
 const colorStyle = css`
-  color: ${props => colorForName(props.color, props.theme)}
+  color: ${props => colorForName(props.color, props.theme)};
 `;
 
 const weightStyle = css`
-  font-weight: ${props => props.weight}
+  font-weight: ${props => props.weight};
 `;
 
 const StyledText = styled.span`
