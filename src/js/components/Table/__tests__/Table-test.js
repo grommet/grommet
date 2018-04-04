@@ -160,6 +160,24 @@ test('TableCell size renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('TableCell verticalAlign renders', () => {
+  const component = renderer.create(
+    <Grommet>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableCell verticalAlign='top' />
+            <TableCell verticalAlign='middle' />
+            <TableCell verticalAlign='bottom' />
+          </TableRow>
+        </TableHeader>
+      </Table>
+    </Grommet>
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('TableCell plain renders', () => {
   const component = renderer.create(
     <Grommet>
