@@ -22,6 +22,8 @@ export const docTableCell = (TableCell) => {
         '1/2', '1/3', '2/3', '1/4', '3/4']
     ).description(`What size the cell should be. Typically, this is not needed
       unless you are trying to align multiple tables.`),
+    verticalAlign: PropTypes.oneOf(['top', 'middle', 'bottom'])
+      .description('How to align the contents vertically.'),
   };
 
   return DocumentedTableCell;

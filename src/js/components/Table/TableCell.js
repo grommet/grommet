@@ -8,7 +8,7 @@ import { withTheme } from '../hocs';
 import { StyledTableCell } from './StyledTable';
 import { docTableCell } from './doc';
 
-const TableCell = ({ children, plain, scope, size, ...rest }, { grommet }) => {
+const TableCell = ({ children, plain, scope, size, verticalAlign, ...rest }, { grommet }) => {
   const Cell = (scope ? StyledTableCell.withComponent('th') : StyledTableCell);
   return (
     <Cell
@@ -16,6 +16,7 @@ const TableCell = ({ children, plain, scope, size, ...rest }, { grommet }) => {
       size={size}
       tableContext={(grommet || {}).tableContext}
       theme={rest.theme}
+      verticalAlign={verticalAlign}
     >
       {plain ? children : <Box {...rest}>{children}</Box>}
     </Cell>

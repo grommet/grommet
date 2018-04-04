@@ -21,8 +21,9 @@ export const StyledTableCell = styled.td`
   text-align: inherit;
 
   ${props => props.size && sizeStyle}
-  ${props => props.tableContext === 'header' && 'vertical-align: bottom;'}
-  ${props => props.tableContext === 'footer' && 'vertical-align: top;'}
+  ${props => props.verticalAlign && `vertical-align: ${props.verticalAlign};`}
+  ${props => !props.verticalAlign && props.tableContext === 'header' && 'vertical-align: bottom;'}
+  ${props => !props.verticalAlign && props.tableContext === 'footer' && 'vertical-align: top;'}
 `;
 
 export const StyledTableDataCaption = styled.caption`

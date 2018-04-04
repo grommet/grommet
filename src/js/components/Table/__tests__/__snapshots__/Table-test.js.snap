@@ -710,6 +710,143 @@ exports[`TableCell size renders 1`] = `
 </div>
 `;
 
+exports[`TableCell verticalAlign renders 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.c2 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  vertical-align: top;
+}
+
+.c4 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  vertical-align: middle;
+}
+
+.c5 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  vertical-align: bottom;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+<div
+  className="c0"
+>
+  <table
+    className="c1"
+    data={Array []}
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <td
+          className="c2"
+          scope={undefined}
+          size={undefined}
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </td>
+        <td
+          className="c4"
+          scope={undefined}
+          size={undefined}
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </td>
+        <td
+          className="c5"
+          scope={undefined}
+          size={undefined}
+        >
+          <div
+            aria-label={undefined}
+            className="c3"
+            direction="column"
+          />
+        </td>
+      </tr>
+    </thead>
+  </table>
+</div>
+`;
+
 exports[`TableFooter renders 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
