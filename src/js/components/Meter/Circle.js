@@ -57,7 +57,8 @@ export default class Circle extends Component {
         );
 
         // To handle situations where the last values are small, redraw
-        // a dot at the end.
+        // a dot at the end. Give just a bit of angle to avoid anti-aliasing
+        // leakage around the edge.
         const d2 =
           arcCommands(width / 2, width / 2, radius, endAngle - 0.5, endAngle);
         const pathCap = (
