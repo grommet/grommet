@@ -59,13 +59,13 @@ export default class Circle extends Component {
         // To handle situations where the last values are small, redraw
         // a dot at the end.
         const d2 =
-          arcCommands(width / 2, width / 2, radius, endAngle, endAngle);
+          arcCommands(width / 2, width / 2, radius, endAngle - 0.5, endAngle);
         const pathCap = (
           <path
             key={`${key}-`}
             d={d2}
             fill='none'
-            stroke={stroke}
+            {...stroke}
             strokeWidth={height}
             strokeLinecap='round'
             {...hoverProps}
