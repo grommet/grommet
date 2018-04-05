@@ -283,15 +283,11 @@ exports[`Meter round renders 1`] = `
       strokeWidth={24}
     />
     <path
-      d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 363.1901729331 136.3769410125"
+      d="M 363.1901729331 136.3769410125 A 180.0000000000 180.0000000000 0 0 0 362.6982579371 134.8851618471"
       fill="none"
       onMouseLeave={[Function]}
       onMouseOver={[Function]}
-      stroke={
-        Object {
-          "stroke": "#FD6FFF",
-        }
-      }
+      stroke="#FD6FFF"
       strokeLinecap="round"
       strokeWidth={24}
     />
