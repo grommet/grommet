@@ -1,4 +1,4 @@
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+// (C) Copyright 2014-2018 Hewlett Packard Enterprise Development LP
 
 // We use mixins for some text styles to make it easier to modularize the
 // CSS. For example `.grommet p` uses the same styles as
@@ -73,4 +73,36 @@
 @mixin h6() {
   font-size: $h6-font-size;
   line-height: $h6-line-height;
+}
+
+@mixin anchor-style() {
+  color: $link-color;
+  text-decoration: $brand-link-text-decoration;
+  cursor: pointer;
+
+  &.plain
+  &.#{$grommet-namespace}button {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:visited {
+    color: $link-color;
+  }
+
+  &.active {
+    color: $text-color;
+  }
+
+  // While it's tempting to use :not(.anchor--disabled) here, that makes it
+  // messier for things like Menu to adjust styling in its context.
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+
+  @include background-context-color($link-color, $link-hover-color);
 }

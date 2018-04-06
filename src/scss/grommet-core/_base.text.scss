@@ -1,5 +1,13 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
+.grommet a:not(.#{$grommet-namespace}anchor):not(.#{$grommet-namespace}button) {
+  @include anchor-style;
+}
+
+a:not(.#{$grommet-namespace}anchor):not(.#{$grommet-namespace}button) {
+  @include background-context-color($link-color, $link-hover-color);
+}
+
 .grommet {
   @include inuit-font-size($content-font-size, $inuit-base-spacing-unit);
 
