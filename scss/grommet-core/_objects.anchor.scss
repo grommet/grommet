@@ -1,44 +1,4 @@
-// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
-
-@mixin anchor-style() {
-  color: $link-color;
-  text-decoration: $brand-link-text-decoration;
-  cursor: pointer;
-
-  &.plain
-  &.#{$grommet-namespace}button {
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
-  &:visited {
-    color: $link-color;
-  }
-
-  &.active {
-    color: $text-color;
-  }
-
-  // While it's tempting to use :not(.anchor--disabled) here, that makes it
-  // messier for things like Menu to adjust styling in its context.
-  &:hover {
-    color: $link-hover-color;
-    text-decoration: underline;
-  }
-
-  @include background-context-color($link-color, $link-hover-color);
-}
-
-.grommet a:not(.#{$grommet-namespace}anchor):not(.#{$grommet-namespace}button) {
-  @include anchor-style;
-}
-
-a:not(.#{$grommet-namespace}anchor):not(.#{$grommet-namespace}button) {
-  @include background-context-color($link-color, $link-hover-color);
-}
+// (C) Copyright 2014-2018 Hewlett Packard Enterprise Development LP
 
 .#{$grommet-namespace}anchor {
   @include anchor-style;

@@ -1,8 +1,6 @@
 // (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
 
 .grommet {
-  @include inuit-font-size($content-font-size, $inuit-base-spacing-unit);
-
   h1:not(.#{$grommet-namespace}heading) {
     @include h1();
   }
@@ -69,35 +67,10 @@
     font-family: $code-font-family;
   }
 
-  .large-number-font {
-    font-family: $brand-large-number-font-family;
-  }
-
-  .secondary {
-    color: $secondary-text-color;
-  }
-
-  .error {
-    color: map-get($brand-status-colors, critical);
-  }
-
-  // Removed as this was causing issues with icons inside table cells.
-  // svg {
-  //   max-width: 100%;
-  // }
-
   #{$dark-background} {
     p:not(.#{$grommet-namespace}paragraph),
     dd {
       color: $colored-text-color;
-    }
-
-    .secondary {
-      color: $colored-text-color;
-    }
-
-    .error {
-      color: $brand-error-colored-color;
     }
   }
 
@@ -105,14 +78,6 @@
     p:not(.#{$grommet-namespace}paragraph),
     dd {
       color: $text-color;
-    }
-
-    .secondary {
-      color: $secondary-text-color;
-    }
-
-    .error {
-      color: map-get($brand-status-colors, critical);
     }
   }
 }
