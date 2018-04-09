@@ -13,6 +13,14 @@
   overflow: visible;
 }
 
+.grommet a:not(.#{$grommet-namespace}anchor):not(.#{$grommet-namespace}button) {
+  @include anchor-style;
+}
+
+a:not(.#{$grommet-namespace}anchor):not(.#{$grommet-namespace}button) {
+  @include background-context-color($link-color, $link-hover-color);
+}
+
 .grommet {
   input:not(.#{$grommet-namespace}input):not(.#{$grommet-namespace}check-box__input),
   select,

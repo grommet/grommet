@@ -153,3 +153,11 @@
   // used to add full height for button inside a flex container
   flex-grow: 1;
 }
+
+a.#{$grommet-namespace}button {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
