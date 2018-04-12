@@ -129,52 +129,50 @@ class Menu extends Component {
         onTab={this.onDropClose}
         onKeyDown={onKeyDown}
       >
-        <div>
-          <DropButton
-            {...rest}
-            theme={theme}
-            a11yTitle={messages.openMenu || 'Open Menu'}
-            disabled={disabled}
-            dropAlign={dropAlign}
-            dropTarget={dropTarget}
-            open={open}
-            onOpen={() => this.setState({ open: true })}
-            onClose={() => this.setState({ open: false })}
-            dropContent={
-              <Box background={dropBackground}>
-                {dropAlign.top === 'top' ? controlMirror : undefined}
-                <Box>
-                  {items.map(
-                    (item, index) => (
-                      <Button
-                        ref={(ref) => {
-                          this.buttonRefs[index] = ref;
-                        }}
-                        active={activeItemIndex === index}
-                        key={`menuItem_${index}`}
-                        hoverIndicator='background'
-                        onClick={item.onClick ? (...args) => {
-                          item.onClick(...args);
-                          if (item.close !== false) {
-                            this.onDropClose();
-                          }
-                        } : undefined}
-                        href={item.href}
-                      >
-                        <Box align='start' pad='small' direction='row'>
-                          {item.icon}{item.label}
-                        </Box>
-                      </Button>
-                    )
-                  )}
-                </Box>
-                {dropAlign.bottom === 'bottom' ? controlMirror : undefined }
+        <DropButton
+          {...rest}
+          theme={theme}
+          a11yTitle={messages.openMenu || 'Open Menu'}
+          disabled={disabled}
+          dropAlign={dropAlign}
+          dropTarget={dropTarget}
+          open={open}
+          onOpen={() => this.setState({ open: true })}
+          onClose={() => this.setState({ open: false })}
+          dropContent={
+            <Box background={dropBackground}>
+              {dropAlign.top === 'top' ? controlMirror : undefined}
+              <Box>
+                {items.map(
+                  (item, index) => (
+                    <Button
+                      ref={(ref) => {
+                        this.buttonRefs[index] = ref;
+                      }}
+                      active={activeItemIndex === index}
+                      key={`menuItem_${index}`}
+                      hoverIndicator='background'
+                      onClick={item.onClick ? (...args) => {
+                        item.onClick(...args);
+                        if (item.close !== false) {
+                          this.onDropClose();
+                        }
+                      } : undefined}
+                      href={item.href}
+                    >
+                      <Box align='start' pad='small' direction='row'>
+                        {item.icon}{item.label}
+                      </Box>
+                    </Button>
+                  )
+                )}
               </Box>
-            }
-          >
-            {content}
-          </DropButton>
-        </div>
+              {dropAlign.bottom === 'bottom' ? controlMirror : undefined }
+            </Box>
+          }
+        >
+          {content}
+        </DropButton>
       </Keyboard>
     );
   }

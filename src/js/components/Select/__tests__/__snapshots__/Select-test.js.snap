@@ -204,6 +204,7 @@ exports[`Select closes drop on esc 3`] = `
         style="cursor: pointer;"
         tabindex="-1"
         type="text"
+        value=""
       />
     </div>
     <div
@@ -256,6 +257,7 @@ exports[`Select closes drop on esc 4`] = `
         style="cursor: pointer;"
         tabindex="-1"
         type="text"
+        value=""
       />
     </div>
     <div
@@ -308,6 +310,7 @@ exports[`Select mounts 1`] = `
         style="cursor: pointer;"
         tabindex="-1"
         type="text"
+        value=""
       />
     </div>
     <div
@@ -360,6 +363,7 @@ exports[`Select mounts 2`] = `
         style="cursor: pointer;"
         tabindex="-1"
         type="text"
+        value=""
       />
     </div>
     <div
@@ -624,6 +628,7 @@ exports[`Select mounts disabled 1`] = `
         style="cursor: pointer;"
         tabindex="-1"
         type="text"
+        value=""
       />
     </div>
     <div
@@ -677,6 +682,7 @@ exports[`Select mounts disabled 2`] = `
         style="cursor: pointer;"
         tabindex="-1"
         type="text"
+        value=""
       />
     </div>
     <div
@@ -1079,6 +1085,7 @@ exports[`Select mounts with complex options and children 1`] = `
         style="cursor: pointer;"
         tabindex="-1"
         type="text"
+        value=""
       />
     </div>
     <div
@@ -1131,6 +1138,7 @@ exports[`Select mounts with complex options and children 2`] = `
         style="cursor: pointer;"
         tabindex="-1"
         type="text"
+        value=""
       />
     </div>
     <div
