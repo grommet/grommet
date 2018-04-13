@@ -360,7 +360,7 @@ exports[`SkipLink mounts 4`] = `
 
 exports[`SkipLink mounts 5`] = `
 <body
-  style="overflow: scroll;"
+  style=""
 >
   <div>
     <div

@@ -45,7 +45,7 @@ export default class FocusedContainer extends Component {
       .filter(isNotAncestorOf(child))
       .forEach(makeNodeFocusable);
     if (restrictScroll) {
-      document.body.style.overflow = 'scroll';
+      document.body.style.overflow = this.bodyOverflowStyle;
     }
   }
 
@@ -57,6 +57,7 @@ export default class FocusedContainer extends Component {
       .forEach(makeNodeUnfocusable);
 
     if (restrictScroll) {
+      this.bodyOverflowStyle = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
     }
   }

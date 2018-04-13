@@ -97,4 +97,4 @@ exports[`FocusedContainer restrict scroll 1`] = `
 
 exports[`FocusedContainer restrict scroll 2`] = `"hidden"`;
 
-exports[`FocusedContainer restrict scroll 3`] = `"scroll"`;
+exports[`FocusedContainer restrict scroll 3`] = `""`;
