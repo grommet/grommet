@@ -93,6 +93,14 @@ Whether when 'plain' it should receive a focus outline.
 boolean
 ```
 
+**label**
+
+A function to render/edit the selected items. `({ placeholder, value, onChange }) => {}`
+
+```
+function
+```
+
 **messages**
 
 Custom messages.
