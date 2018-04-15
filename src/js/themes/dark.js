@@ -1,7 +1,7 @@
 import { rgba } from 'polished';
 import { css } from 'styled-components';
 
-import { colorForName, deepFreeze } from '../utils';
+import { colorForName, deepFreeze, colorIsDark } from '../utils';
 
 const brandColor = '#FFCA58';
 const accentColors = ['#FD6FFF', '#60EB9F', '#60EBE1', '#FFCA58'];
@@ -18,7 +18,7 @@ const lightColors = ['#333333', '#444444', '#555555', '#666666', '#777777', '#99
 const darkColors = ['#F6F6F6', '#EEEEEE', '#DDDDDD', '#CCCCCC', '#BBBBBB', '#AAAAAA'];
 const backgroundColor = '#111111';
 const textColor = '#eeeeee';
-const borderColor = 'rgba(255, 255, 255, 0.33)';
+const borderColor = 'rgba(255, 255, 255, 0.50)';
 const focusColor = accentColors[0];
 const activeColor = rgba('#666666', 0.5);
 
@@ -66,7 +66,26 @@ export default deepFreeze({
     },
   },
   icon: {
-    color: textColor,
+    extend: css`
+      ${(props) => {
+    if (props.color && props.color !== 'plain') {
+      let color = colorForName(props.color, props.theme);
+      if (props.dark === colorIsDark(color)) {
+        color = props.dark ?
+          props.theme.global.colors.darkBackground.text :
+          props.theme.global.colors.lightBackground.text;
+      }
+      return `
+            fill: ${color};
+            stroke: ${color};
+      `;
+    }
+    return null;
+  }}
+    `,
+  },
+  anchor: {
+    color: '#2b4369',
   },
   layer: {
     backgroundColor,
