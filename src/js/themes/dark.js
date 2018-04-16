@@ -67,19 +67,19 @@ export default deepFreeze({
   },
   icon: {
     extend: css`${(props) => {
+      let { color } = props.theme.icon;
       if (props.color && props.color !== 'plain') {
-        let color = colorForName(props.color, props.theme);
-        if (props.dark === colorIsDark(color)) {
-          color = props.dark ?
+        color = colorForName(props.color, props.theme);
+      }
+      if (props.dark === colorIsDark(color)) {
+        color = props.dark ?
           props.theme.global.colors.darkBackground.text :
           props.theme.global.colors.lightBackground.text;
-        }
-        return `
-            fill: ${color};
-            stroke: ${color};
-      `;
       }
-      return null;
+      return `
+        fill: ${color};
+        stroke: ${color};
+      `;
     }
 } `,
   },
