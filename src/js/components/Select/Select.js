@@ -46,7 +46,6 @@ class Select extends Component {
       size,
       theme,
       value,
-      label,
       ...rest
     } = this.props;
     const { open } = this.state;
@@ -62,9 +61,7 @@ class Select extends Component {
     let selectValue;
     let textValue;
     if (!React.isValidElement(value)) {
-      if (typeof label === 'function') {
-        selectValue = label({ placeholder, value, onChange });
-      } else if (Array.isArray(value)) {
+      if (Array.isArray(value)) {
         if (value.length > 1) {
           textValue = messages.multiple;
         } else if (value.length === 1) {

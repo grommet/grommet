@@ -36,7 +36,6 @@ export default (Select) => {
     focusIndicator: PropTypes.bool.description(
       'Whether when \'plain\' it should receive a focus outline.'
     ),
-    label: PropTypes.func.description('A function to render/edit the selected items. `({ placeholder, value, onChange }) => {}`'),
     messages: PropTypes.shape({
       multiple: PropTypes.string,
     }).description(
