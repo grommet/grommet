@@ -32,6 +32,19 @@ export default (InfiniteScroll) => {
       be wrapped appropriately. This is needed when the default
       element, a <span>, isn't sufficient, such as a row of a table body.`
     ),
+    scrollableAncestor: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.oneOf(['window']),
+    ]).description(
+      `A custom ancestor to determine if the makert is visible in it.
+      This is useful in cases where you do not want the immediate
+      scrollable ancestor to be the container. For example, when your
+      marker is in a div that has overflow auto but you are detecting
+      visibility based on the window.
+      This should typically be a reference to a DOM node, but it will
+      also work to pass it the string "window" if you are using server
+      rendering.`
+    ),
     step: PropTypes.number.description(
       'How many items to render at a time.'
     ).defaultValue(50),
