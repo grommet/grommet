@@ -36,7 +36,7 @@ export default (InfiniteScroll) => {
       PropTypes.node,
       PropTypes.oneOf(['window']),
     ]).description(
-      `A custom ancestor to determine if the makert is visible in it.
+      `A custom ancestor to determine if the marker is visible in it.
       This is useful in cases where you do not want the immediate
       scrollable ancestor to be the container. For example, when your
       marker is in a div that has overflow auto but you are detecting
