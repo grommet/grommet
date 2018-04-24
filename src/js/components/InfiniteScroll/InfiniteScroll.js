@@ -23,7 +23,7 @@ export default class InfiniteScroll extends Component {
   }
 
   render() {
-    const { children, items, renderMarker, step } = this.props;
+    const { children, items, renderMarker, scrollableAncestor, step } = this.props;
     const { count } = this.state;
     const displayCount = step * count;
     const waypointAt = displayCount - (step / 2);
@@ -33,6 +33,7 @@ export default class InfiniteScroll extends Component {
         key='marker'
         onEnter={this.increaseOffset}
         bottomOffsetX='-96px'
+        scrollableAncestor={scrollableAncestor}
       />
     );
     if (renderMarker) {
