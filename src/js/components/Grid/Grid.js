@@ -17,6 +17,8 @@ class Grid extends Component {
 
   render() {
     const {
+      fill, // munged to avoid styled-components putting it in the DOM
+      rows, // munged to avoid styled-components putting it in the DOM
       tag,
       ...rest
     } = this.props;
@@ -28,7 +30,11 @@ class Grid extends Component {
     }
 
     return (
-      <StyledComponent {...rest} />
+      <StyledComponent
+        fillContainer={fill}
+        rowsProp={rows}
+        {...rest}
+      />
     );
   }
 }
