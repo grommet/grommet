@@ -6,6 +6,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Heading } from '../Heading';
+import { Text } from '../Text';
 
 import { withTheme } from '../hocs';
 
@@ -181,7 +182,7 @@ class Calendar extends Component {
       const dayDisabled = withinDates(day, disabled);
       if (selected) {
         background = 'brand';
-        content = <strong>{content}</strong>;
+        content = <Text weight='bold'>{content}</Text>;
       } else if (inRange) {
         background = { color: 'brand', opacity: 'weak' };
       }
@@ -244,7 +245,7 @@ class Calendar extends Component {
           <Box>
             <Box direction='row' justify='between' align='center'>
               <Heading level={3} size={size} margin='none'>
-                <strong>{reference.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}</strong>
+                {reference.toLocaleDateString(locale, { month: 'long', year: 'numeric' })}
               </Heading>
               <Box direction='row' align='center'>
                 <Button

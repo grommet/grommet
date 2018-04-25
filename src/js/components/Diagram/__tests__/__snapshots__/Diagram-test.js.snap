@@ -2,7 +2,7 @@
 
 exports[`Diagram color renders 1`] = `
 <div
-  class="StyledGrommet-gGRXwz hSKpsq"
+  class="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
     class="StyledStack-jqCQsC ewABiA"
@@ -39,7 +39,7 @@ exports[`Diagram color renders 1`] = `
 
 exports[`Diagram offset renders 1`] = `
 <div
-  class="StyledGrommet-gGRXwz hSKpsq"
+  class="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
     class="StyledStack-jqCQsC ewABiA"
@@ -76,7 +76,7 @@ exports[`Diagram offset renders 1`] = `
 
 exports[`Diagram renders 1`] = `
 <div
-  class="StyledGrommet-gGRXwz hSKpsq"
+  class="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
     class="StyledStack-jqCQsC ewABiA"
@@ -113,7 +113,7 @@ exports[`Diagram renders 1`] = `
 
 exports[`Diagram thickness renders 1`] = `
 <div
-  class="StyledGrommet-gGRXwz hSKpsq"
+  class="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
     class="StyledStack-jqCQsC ewABiA"
@@ -150,7 +150,7 @@ exports[`Diagram thickness renders 1`] = `
 
 exports[`Diagram type renders 1`] = `
 <div
-  class="StyledGrommet-gGRXwz hSKpsq"
+  class="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
     class="StyledStack-jqCQsC ewABiA"

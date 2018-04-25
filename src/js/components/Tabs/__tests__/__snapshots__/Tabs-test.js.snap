@@ -20,11 +20,9 @@ exports[`Tabs changes active index 1`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI WtHkG"
+          class="StyledText-eJMSZI bxnpJv"
         >
-          <strong>
-            Tab 1
-          </strong>
+          Tab 1
         </span>
       </div>
     </button>
@@ -59,7 +57,7 @@ exports[`Tabs changes active index 1`] = `
 
 exports[`Tabs changes to second tab 1`] = `
 <div
-  className="StyledGrommet-gGRXwz hSKpsq"
+  className="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
     role="tablist"
@@ -126,11 +124,9 @@ exports[`Tabs changes to second tab 1`] = `
           direction="column"
         >
           <span
-            className="StyledText-eJMSZI WtHkG"
+            className="StyledText-eJMSZI bxnpJv"
           >
-            <strong>
-              Tab 2
-            </strong>
+            Tab 2
           </span>
         </div>
       </button>
@@ -147,7 +143,7 @@ exports[`Tabs changes to second tab 1`] = `
 
 exports[`Tabs renders complex Tab title 1`] = `
 <div
-  className="StyledGrommet-gGRXwz hSKpsq"
+  className="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
     role="tablist"
@@ -228,7 +224,7 @@ exports[`Tabs renders complex Tab title 1`] = `
 
 exports[`Tabs renders with Tab 1`] = `
 <div
-  className="StyledGrommet-gGRXwz hSKpsq"
+  className="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
     role="tablist"
@@ -263,11 +259,9 @@ exports[`Tabs renders with Tab 1`] = `
           direction="column"
         >
           <span
-            className="StyledText-eJMSZI WtHkG"
+            className="StyledText-eJMSZI bxnpJv"
           >
-            <strong>
-              Tab 1
-            </strong>
+            Tab 1
           </span>
         </div>
       </button>
@@ -316,7 +310,7 @@ exports[`Tabs renders with Tab 1`] = `
 
 exports[`Tabs renders without Tab 1`] = `
 <div
-  className="StyledGrommet-gGRXwz hSKpsq"
+  className="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
     role="tablist"
@@ -354,11 +348,9 @@ exports[`Tabs sets on hover 1`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI WtHkG"
+          class="StyledText-eJMSZI bxnpJv"
         >
-          <strong>
-            Tab 1
-          </strong>
+          Tab 1
         </span>
       </div>
     </button>
@@ -411,11 +403,9 @@ exports[`Tabs sets on hover 2`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI WtHkG"
+          class="StyledText-eJMSZI bxnpJv"
         >
-          <strong>
-            Tab 1
-          </strong>
+          Tab 1
         </span>
       </div>
     </button>
@@ -468,11 +458,9 @@ exports[`Tabs sets on hover 3`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI WtHkG"
+          class="StyledText-eJMSZI bxnpJv"
         >
-          <strong>
-            Tab 1
-          </strong>
+          Tab 1
         </span>
       </div>
     </button>
@@ -525,11 +513,9 @@ exports[`Tabs sets on hover 4`] = `
         direction="column"
       >
         <span
-          class="StyledText-eJMSZI WtHkG"
+          class="StyledText-eJMSZI bxnpJv"
         >
-          <strong>
-            Tab 1
-          </strong>
+          Tab 1
         </span>
       </div>
     </button>

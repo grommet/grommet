@@ -38,6 +38,7 @@ const borderColor = 'rgba(0, 0, 0, 0.33)';
 const focusColor = accentColors[0];
 const activeColor = rgba('#DDDDDD', 0.5);
 const workSansPath = 'https://fonts.gstatic.com/s/worksans/v2';
+const zillaSlabPath = 'https://fonts.gstatic.com/s/zillaslab/v3';
 
 const baseSpacing = 24;
 
@@ -68,7 +69,6 @@ export default deepFreeze({
     breakpoints: {
       narrow: 699,
     },
-    centerColumnWidth: `${baseSpacing * 48}px`,
     colors: {
       active: activeColor,
       accent: accentColors,
@@ -159,31 +159,11 @@ export default deepFreeze({
         @font-face {
           font-family: 'Work Sans';
           font-style: normal;
-          font-weight: 300;
-          src:
-            local('Work Sans Light'),
-            local('WorkSans-Light'),
-            url("${workSansPath}/FD_Udbezj8EHXbdsqLUplxampu5_7CjHW5spxoeN3Vs.woff2") format('woff2');
-        }
-
-        @font-face {
-          font-family: 'Work Sans';
-          font-style: normal;
           font-weight: 400;
           src:
             local('Work Sans'),
             local('WorkSans-Regular'),
             url("${workSansPath}/ElUAY9q6T0Ayx4zWzW63VJBw1xU1rKptJj_0jans920.woff2") format('woff2');
-        }
-
-        @font-face {
-          font-family: 'Work Sans';
-          font-style: normal;
-          font-weight: 500;
-          src:
-            local('Work Sans Medium'),
-            local('WorkSans-Medium'),
-            url("${workSansPath}/Nbre-U_bp6Xktt8cpgwaJBampu5_7CjHW5spxoeN3Vs.woff2") format('woff2');
         }
 
         @font-face {
@@ -197,13 +177,23 @@ export default deepFreeze({
         }
 
         @font-face {
-          font-family: 'Work Sans';
+          font-family: 'Zilla Slab';
           font-style: normal;
-          font-weight: 700;
+          font-weight: 400;
           src:
-            local('Work Sans Bold'),
-            local('WorkSans-Bold'),
-            url("${workSansPath}/4udXuXg54JlPEP5iKO5AmRampu5_7CjHW5spxoeN3Vs.woff2") format('woff2');
+            local('Zilla Slab Regular'),
+            local('ZillaSlab-Regular'),
+            url("${zillaSlabPath}/dFa6ZfeM_74wlPZtksIFajo6_V6LVlA.woff2") format('woff2');
+        }
+
+        @font-face {
+          font-family: 'Zilla Slab';
+          font-style: normal;
+          font-weight: 600;
+          src:
+            local('Zilla Slab SemiBold'),
+            local('ZillaSlab-SemiBold'),
+            url("${zillaSlabPath}/dFa5ZfeM_74wlPZtksIFYuUe6HOpW3pwfa0.woff2") format('woff2');
         }
       `,
       size: '16px',
@@ -218,7 +208,7 @@ export default deepFreeze({
         radius: '4px',
         color: css`${props => props.theme.global.colors.border}`,
       },
-      weight: 700,
+      weight: 600,
     },
     lineHeight: '24px',
     opacity: {
@@ -393,27 +383,6 @@ export default deepFreeze({
   heading: {
     font: {
       family: "'Zilla Slab', 'Work Sans', Arial, sans-serif",
-      face: `
-        @font-face {
-          font-family: 'Zilla Slab';
-          font-style: normal;
-          font-weight: 400;
-          src:
-            local('Zilla Slab Regular'),
-            local('ZillaSlab-Regular'),
-            url("https://s3.amazonaws.com/grommetfonts/ZillaSlab-Regular.ttf") format('ttf');
-        }
-
-        @font-face {
-          font-family: 'Zilla Slab';
-          font-style: normal;
-          font-weight: 600;
-          src:
-            local('Zilla Slab SemiBold'),
-            local('ZillaSlab-SemiBold'),
-            url("https://s3.amazonaws.com/grommetfonts/ZillaSlab-SemiBold.ttf") format('ttf');
-        }
-      `,
     },
     // maxWidth chosen to be ~50 characters wide
     // see: https://ux.stackexchange.com/a/34125

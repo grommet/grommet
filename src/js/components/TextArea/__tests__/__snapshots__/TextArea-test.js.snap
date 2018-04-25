@@ -22,7 +22,7 @@ exports[`TextArea focusIndicator renders 1`] = `
   background-color: transparent;
   color: inherit;
   font: inherit;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
   width: 100%;
 }
@@ -92,7 +92,7 @@ exports[`TextArea placeholder renders 1`] = `
   background-color: transparent;
   color: inherit;
   font: inherit;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
   width: 100%;
 }
@@ -163,7 +163,7 @@ exports[`TextArea plain renders 1`] = `
   background-color: transparent;
   color: inherit;
   font: inherit;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
   width: 100%;
   border: none;
@@ -221,7 +221,7 @@ exports[`TextArea renders 1`] = `
   background-color: transparent;
   color: inherit;
   font: inherit;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
   width: 100%;
 }

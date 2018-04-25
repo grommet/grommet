@@ -166,7 +166,7 @@ exports[`Clock hourLimit renders 1`] = `
 
 exports[`Clock run renders 1`] = `
 <div
-  class="StyledGrommet-gGRXwz hSKpsq"
+  class="StyledGrommet-gGRXwz fDhYVV"
 >
   <svg
     class="StyledClock__StyledAnalog-kCjIyz jfIdlP"
@@ -335,7 +335,7 @@ exports[`Clock run renders 1`] = `
 
 exports[`Clock run renders 2`] = `
 <div
-  class="StyledGrommet-gGRXwz hSKpsq"
+  class="StyledGrommet-gGRXwz fDhYVV"
 >
   <svg
     class="StyledClock__StyledAnalog-kCjIyz jfIdlP"

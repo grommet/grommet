@@ -198,7 +198,7 @@ exports[`Select closes drop on esc 3`] = `
     >
       <input
         autocomplete="off"
-        class="StyledTextInput-bzOzsW bhNKQj"
+        class="StyledTextInput-bzOzsW kxIdRO"
         id="test-select"
         readonly=""
         style="cursor: pointer;"
@@ -250,7 +250,7 @@ exports[`Select closes drop on esc 4`] = `
     >
       <input
         autocomplete="off"
-        class="StyledTextInput-bzOzsW bhNKQj"
+        class="StyledTextInput-bzOzsW kxIdRO"
         id="test-select"
         readonly=""
         style="cursor: pointer;"
@@ -302,7 +302,7 @@ exports[`Select mounts 1`] = `
     >
       <input
         autocomplete="off"
-        class="StyledTextInput-bzOzsW bhNKQj"
+        class="StyledTextInput-bzOzsW kxIdRO"
         id="test-select"
         readonly=""
         style="cursor: pointer;"
@@ -354,7 +354,7 @@ exports[`Select mounts 2`] = `
     >
       <input
         autocomplete="off"
-        class="StyledTextInput-bzOzsW bhNKQj"
+        class="StyledTextInput-bzOzsW kxIdRO"
         id="test-select"
         readonly=""
         style="cursor: pointer;"
@@ -618,7 +618,7 @@ exports[`Select mounts disabled 1`] = `
     >
       <input
         autocomplete="off"
-        class="StyledTextInput-bzOzsW bhNKQj"
+        class="StyledTextInput-bzOzsW kxIdRO"
         id="test-select"
         readonly=""
         style="cursor: pointer;"
@@ -671,7 +671,7 @@ exports[`Select mounts disabled 2`] = `
     >
       <input
         autocomplete="off"
-        class="StyledTextInput-bzOzsW bhNKQj"
+        class="StyledTextInput-bzOzsW kxIdRO"
         id="test-select"
         readonly=""
         style="cursor: pointer;"
@@ -723,7 +723,7 @@ exports[`Select mounts multiple 1`] = `
     >
       <input
         autocomplete="off"
-        class="StyledTextInput-bzOzsW bhNKQj"
+        class="StyledTextInput-bzOzsW kxIdRO"
         id="test-select"
         multiple=""
         readonly=""
@@ -777,7 +777,7 @@ exports[`Select mounts multiple 2`] = `
     >
       <input
         autocomplete="off"
-        class="StyledTextInput-bzOzsW bhNKQj"
+        class="StyledTextInput-bzOzsW kxIdRO"
         id="test-select"
         multiple=""
         readonly=""
@@ -1073,7 +1073,7 @@ exports[`Select mounts with complex options and children 1`] = `
     >
       <input
         autocomplete="off"
-        class="StyledTextInput-bzOzsW bhNKQj"
+        class="StyledTextInput-bzOzsW kxIdRO"
         id="test-select"
         readonly=""
         style="cursor: pointer;"
@@ -1125,7 +1125,7 @@ exports[`Select mounts with complex options and children 2`] = `
     >
       <input
         autocomplete="off"
-        class="StyledTextInput-bzOzsW bhNKQj"
+        class="StyledTextInput-bzOzsW kxIdRO"
         id="test-select"
         readonly=""
         style="cursor: pointer;"
@@ -1337,7 +1337,7 @@ exports[`Select mounts with search 1`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-bzOzsW kCBBl"
+          class="StyledTextInput-bzOzsW hjbdek"
           type="search"
           value=""
         />
@@ -1514,7 +1514,7 @@ exports[`Select mounts with search 2`] = `
 exports[`Select mounts with search 3`] = `
 <input
   autocomplete="off"
-  class="StyledTextInput-bzOzsW kCBBl"
+  class="StyledTextInput-bzOzsW hjbdek"
   type="search"
   value=""
 />
@@ -1542,7 +1542,7 @@ exports[`Select mounts with search 4`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-bzOzsW kCBBl"
+          class="StyledTextInput-bzOzsW hjbdek"
           type="search"
           value="a"
         />
@@ -1733,7 +1733,7 @@ exports[`Select renders multiple 1`] = `
     >
       <input
         autocomplete="off"
-        class="StyledTextInput-bzOzsW bhNKQj"
+        class="StyledTextInput-bzOzsW kxIdRO"
         id="test-select"
         multiple=""
         readonly=""
@@ -1787,7 +1787,7 @@ exports[`Select renders size 1`] = `
     >
       <input
         autocomplete="off"
-        class="StyledTextInput-bzOzsW hjHbnR"
+        class="StyledTextInput-bzOzsW ihXnnm"
         id="test-select"
         readonly=""
         style="cursor: pointer;"
