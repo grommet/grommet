@@ -104,6 +104,7 @@ exports[`TextInput closes suggestion drop 3`] = `
       class="StyledTextInput-bzOzsW humfzt"
       id="item"
       name="item"
+      value=""
     />
   </div>
 </div>
@@ -121,6 +122,7 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
       class="StyledTextInput-bzOzsW humfzt"
       id="item"
       name="item"
+      value=""
     />
   </div>
 </div>
@@ -134,6 +136,7 @@ exports[`TextInput mounts 1`] = `
     autocomplete="off"
     class="StyledTextInput-bzOzsW humfzt"
     name="item"
+    value=""
   />
 </div>
 `;
@@ -426,6 +429,7 @@ exports[`TextInput selects suggestion 3`] = `
       class="StyledTextInput-bzOzsW hjHbnR"
       id="item"
       name="item"
+      value=""
     />
   </div>
 </div>
