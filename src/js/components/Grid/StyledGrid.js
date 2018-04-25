@@ -48,7 +48,7 @@ const JUSTIFY_MAP = {
 };
 
 const justifyStyle = css`
-  justify-content: ${props => JUSTIFY_MAP[props.justify]};
+  justify-items: ${props => JUSTIFY_MAP[props.justify]};
 `;
 
 const JUSTIFY_CONTENT_MAP = {

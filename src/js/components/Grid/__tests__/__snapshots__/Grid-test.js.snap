@@ -409,37 +409,25 @@ exports[`Grid justify renders 1`] = `
 .c1 {
   display: grid;
   box-sizing: border-box;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+  justify-items: flex-start;
 }
 
 .c2 {
   display: grid;
   box-sizing: border-box;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  justify-items: center;
 }
 
 .c3 {
   display: grid;
   box-sizing: border-box;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  justify-items: flex-end;
 }
 
 .c4 {
   display: grid;
   box-sizing: border-box;
-  -webkit-box-pack: stretch;
-  -webkit-justify-content: stretch;
-  -ms-flex-pack: stretch;
-  justify-content: stretch;
+  justify-items: stretch;
 }
 
 <div
