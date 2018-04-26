@@ -41,7 +41,7 @@ class Tab extends Component {
     const dark = grommet && grommet.dark;
 
     const activeTitle = typeof title === 'string' ? (
-      <Text><strong>{title}</strong></Text>
+      <Text weight='bold'>{title}</Text>
     ) : title;
 
     const inactiveTitle = typeof title === 'string' ? (

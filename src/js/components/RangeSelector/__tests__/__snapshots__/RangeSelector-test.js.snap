@@ -2,7 +2,7 @@
 
 exports[`handles keyboard 1`] = `
 <div
-  class="StyledGrommet-gGRXwz hSKpsq"
+  class="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
     class="StyledBox-bStriS cDPnPm"
@@ -89,7 +89,7 @@ exports[`handles keyboard 1`] = `
 
 exports[`handles mouse 1`] = `
 <div
-  class="StyledGrommet-gGRXwz hSKpsq"
+  class="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
     class="StyledBox-bStriS cDPnPm"

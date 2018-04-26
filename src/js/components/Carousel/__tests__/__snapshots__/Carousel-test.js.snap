@@ -2,7 +2,7 @@
 
 exports[`play renders 1`] = `
 <div
-  class="StyledGrommet-gGRXwz hSKpsq"
+  class="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
     class="StyledStack-jqCQsC ewABiA"
@@ -181,7 +181,7 @@ exports[`play renders 1`] = `
 
 exports[`play renders 2`] = `
 <div
-  class="StyledGrommet-gGRXwz hSKpsq"
+  class="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
     class="StyledStack-jqCQsC ewABiA"

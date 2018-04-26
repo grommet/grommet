@@ -94,14 +94,14 @@ exports[`TextInput closes suggestion drop 2`] = `
 
 exports[`TextInput closes suggestion drop 3`] = `
 <div
-  class="StyledGrommet-gGRXwz hSKpsq"
+  class="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW humfzt"
+      class="StyledTextInput-bzOzsW kZINoq"
       id="item"
       name="item"
     />
@@ -111,14 +111,14 @@ exports[`TextInput closes suggestion drop 3`] = `
 
 exports[`TextInput handles next and previous without suggestion 1`] = `
 <div
-  class="StyledGrommet-gGRXwz hSKpsq"
+  class="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW humfzt"
+      class="StyledTextInput-bzOzsW kZINoq"
       id="item"
       name="item"
     />
@@ -132,7 +132,7 @@ exports[`TextInput mounts 1`] = `
 >
   <input
     autocomplete="off"
-    class="StyledTextInput-bzOzsW humfzt"
+    class="StyledTextInput-bzOzsW kZINoq"
     name="item"
   />
 </div>
@@ -416,14 +416,14 @@ exports[`TextInput selects suggestion 2`] = `
 
 exports[`TextInput selects suggestion 3`] = `
 <div
-  class="StyledGrommet-gGRXwz hSKpsq"
+  class="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
     class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW hjHbnR"
+      class="StyledTextInput-bzOzsW ihXnnm"
       id="item"
       name="item"
     />
