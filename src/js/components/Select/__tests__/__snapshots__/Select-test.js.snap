@@ -20,7 +20,7 @@ exports[`Select closes drop on esc 1`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK faBScD"
+        class="StyledButton-gXzblK fWHUwZ"
         role="menuitem"
         type="button"
       >
@@ -36,7 +36,7 @@ exports[`Select closes drop on esc 1`] = `
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK faBScD"
+        class="StyledButton-gXzblK fWHUwZ"
         role="menuitem"
         type="button"
       >
@@ -137,14 +137,14 @@ exports[`Select closes drop on esc 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .kGZImI {
+  .fYUIhN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .faBScD {
+  .fWHUwZ {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -184,7 +184,7 @@ exports[`Select closes drop on esc 2`] = `
 exports[`Select closes drop on esc 3`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK kGZImI"
+  class="StyledButton-gXzblK fYUIhN"
   id="test-select"
   type="button"
 >
@@ -236,7 +236,7 @@ exports[`Select closes drop on esc 3`] = `
 exports[`Select closes drop on esc 4`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK kGZImI"
+  class="StyledButton-gXzblK fYUIhN"
   id="test-select"
   type="button"
 >
@@ -288,7 +288,7 @@ exports[`Select closes drop on esc 4`] = `
 exports[`Select mounts 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK kGZImI"
+  class="StyledButton-gXzblK fYUIhN"
   id="test-select"
   type="button"
 >
@@ -340,7 +340,7 @@ exports[`Select mounts 1`] = `
 exports[`Select mounts 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK kGZImI"
+  class="StyledButton-gXzblK fYUIhN"
   id="test-select"
   type="button"
 >
@@ -409,7 +409,7 @@ exports[`Select mounts 3`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK faBScD"
+        class="StyledButton-gXzblK fWHUwZ"
         role="menuitem"
         type="button"
       >
@@ -425,7 +425,7 @@ exports[`Select mounts 3`] = `
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK faBScD"
+        class="StyledButton-gXzblK fWHUwZ"
         role="menuitem"
         type="button"
       >
@@ -514,14 +514,14 @@ exports[`Select mounts 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .kGZImI {
+  .fYUIhN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .faBScD {
+  .fWHUwZ {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -566,7 +566,7 @@ exports[`Select mounts 5`] = `
   tabindex="-1"
 >
   <button
-    class="StyledButton-gXzblK faBScD"
+    class="StyledButton-gXzblK fWHUwZ"
     role="menuitem"
     type="button"
   >
@@ -582,7 +582,7 @@ exports[`Select mounts 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-gXzblK faBScD"
+    class="StyledButton-gXzblK fWHUwZ"
     role="menuitem"
     type="button"
   >
@@ -603,7 +603,7 @@ exports[`Select mounts 5`] = `
 exports[`Select mounts disabled 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK gqMHaF"
+  class="StyledButton-gXzblK cDmTYk"
   disabled=""
   id="test-select"
   type="button"
@@ -656,7 +656,7 @@ exports[`Select mounts disabled 1`] = `
 exports[`Select mounts disabled 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK gqMHaF"
+  class="StyledButton-gXzblK cDmTYk"
   disabled=""
   id="test-select"
   type="button"
@@ -709,7 +709,7 @@ exports[`Select mounts disabled 2`] = `
 exports[`Select mounts multiple 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK kGZImI"
+  class="StyledButton-gXzblK fYUIhN"
   id="test-select"
   type="button"
 >
@@ -763,7 +763,7 @@ exports[`Select mounts multiple 1`] = `
 exports[`Select mounts multiple 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK kGZImI"
+  class="StyledButton-gXzblK fYUIhN"
   id="test-select"
   type="button"
 >
@@ -834,7 +834,7 @@ exports[`Select mounts multiple 3`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK kZkhbU"
+        class="StyledButton-gXzblK dQbnPv"
         role="menuitem"
         type="button"
       >
@@ -850,7 +850,7 @@ exports[`Select mounts multiple 3`] = `
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK kZkhbU"
+        class="StyledButton-gXzblK dQbnPv"
         role="menuitem"
         type="button"
       >
@@ -963,21 +963,21 @@ exports[`Select mounts multiple 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .kGZImI {
+  .fYUIhN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .faBScD {
+  .fWHUwZ {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kZkhbU {
+  .dQbnPv {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1022,7 +1022,7 @@ exports[`Select mounts multiple 5`] = `
   tabindex="-1"
 >
   <button
-    class="StyledButton-gXzblK kZkhbU"
+    class="StyledButton-gXzblK dQbnPv"
     role="menuitem"
     type="button"
   >
@@ -1038,7 +1038,7 @@ exports[`Select mounts multiple 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-gXzblK kZkhbU"
+    class="StyledButton-gXzblK dQbnPv"
     role="menuitem"
     type="button"
   >
@@ -1059,7 +1059,7 @@ exports[`Select mounts multiple 5`] = `
 exports[`Select mounts with complex options and children 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK kGZImI"
+  class="StyledButton-gXzblK fYUIhN"
   id="test-select"
   type="button"
 >
@@ -1111,7 +1111,7 @@ exports[`Select mounts with complex options and children 1`] = `
 exports[`Select mounts with complex options and children 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK kGZImI"
+  class="StyledButton-gXzblK fYUIhN"
   id="test-select"
   type="button"
 >
@@ -1180,7 +1180,7 @@ exports[`Select mounts with complex options and children 3`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK faBScD"
+        class="StyledButton-gXzblK fWHUwZ"
         role="menuitem"
         type="button"
       >
@@ -1189,7 +1189,7 @@ exports[`Select mounts with complex options and children 3`] = `
         </span>
       </button>
       <button
-        class="StyledButton-gXzblK faBScD"
+        class="StyledButton-gXzblK fWHUwZ"
         role="menuitem"
         type="button"
       >
@@ -1271,14 +1271,14 @@ exports[`Select mounts with complex options and children 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .kGZImI {
+  .fYUIhN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .faBScD {
+  .fWHUwZ {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1350,7 +1350,7 @@ exports[`Select mounts with search 1`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK faBScD"
+        class="StyledButton-gXzblK fWHUwZ"
         role="menuitem"
         type="button"
       >
@@ -1366,7 +1366,7 @@ exports[`Select mounts with search 1`] = `
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK faBScD"
+        class="StyledButton-gXzblK fWHUwZ"
         role="menuitem"
         type="button"
       >
@@ -1467,14 +1467,14 @@ exports[`Select mounts with search 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .kGZImI {
+  .fYUIhN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .faBScD {
+  .fWHUwZ {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1555,7 +1555,7 @@ exports[`Select mounts with search 4`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK faBScD"
+        class="StyledButton-gXzblK fWHUwZ"
         role="menuitem"
         type="button"
       >
@@ -1571,7 +1571,7 @@ exports[`Select mounts with search 4`] = `
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK faBScD"
+        class="StyledButton-gXzblK fWHUwZ"
         role="menuitem"
         type="button"
       >
@@ -1672,14 +1672,14 @@ exports[`Select mounts with search 5`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .kGZImI {
+  .fYUIhN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .faBScD {
+  .fWHUwZ {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1719,7 +1719,7 @@ exports[`Select mounts with search 5`] = `
 exports[`Select renders multiple 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK kGZImI"
+  class="StyledButton-gXzblK fYUIhN"
   id="test-select"
   type="button"
 >
@@ -1773,7 +1773,7 @@ exports[`Select renders multiple 1`] = `
 exports[`Select renders size 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK kGZImI"
+  class="StyledButton-gXzblK fYUIhN"
   id="test-select"
   type="button"
 >

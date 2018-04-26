@@ -13,7 +13,7 @@ exports[`TextInput closes suggestion drop 1`] = `
   >
     <li>
       <button
-        class="StyledButton-gXzblK djbfBD"
+        class="StyledButton-gXzblK fdbYpb"
         type="button"
       >
         <div
@@ -26,7 +26,7 @@ exports[`TextInput closes suggestion drop 1`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK djbfBD"
+        class="StyledButton-gXzblK fdbYpb"
         type="button"
       >
         <div
@@ -55,7 +55,7 @@ exports[`TextInput closes suggestion drop 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .djbfBD {
+  .fdbYpb {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -151,7 +151,7 @@ exports[`TextInput mounts with complex suggestions 1`] = `
   >
     <li>
       <button
-        class="StyledButton-gXzblK djbfBD"
+        class="StyledButton-gXzblK fdbYpb"
         type="button"
       >
         <div
@@ -164,7 +164,7 @@ exports[`TextInput mounts with complex suggestions 1`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK djbfBD"
+        class="StyledButton-gXzblK fdbYpb"
         type="button"
       >
         <div
@@ -193,7 +193,7 @@ exports[`TextInput mounts with complex suggestions 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .djbfBD {
+  .fdbYpb {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -243,7 +243,7 @@ exports[`TextInput mounts with suggestions 1`] = `
   >
     <li>
       <button
-        class="StyledButton-gXzblK djbfBD"
+        class="StyledButton-gXzblK fdbYpb"
         type="button"
       >
         <div
@@ -256,7 +256,7 @@ exports[`TextInput mounts with suggestions 1`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK djbfBD"
+        class="StyledButton-gXzblK fdbYpb"
         type="button"
       >
         <div
@@ -285,7 +285,7 @@ exports[`TextInput mounts with suggestions 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .djbfBD {
+  .fdbYpb {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -335,7 +335,7 @@ exports[`TextInput selects suggestion 1`] = `
   >
     <li>
       <button
-        class="StyledButton-gXzblK djbfBD"
+        class="StyledButton-gXzblK fdbYpb"
         type="button"
       >
         <div
@@ -348,7 +348,7 @@ exports[`TextInput selects suggestion 1`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK djbfBD"
+        class="StyledButton-gXzblK fdbYpb"
         type="button"
       >
         <div
@@ -377,7 +377,7 @@ exports[`TextInput selects suggestion 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .djbfBD {
+  .fdbYpb {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

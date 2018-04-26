@@ -50,7 +50,7 @@ exports[`play renders 1`] = `
         direction="column"
       >
         <button
-          class="StyledButton-gXzblK erxOgR"
+          class="StyledButton-gXzblK gpCJao"
           disabled=""
           type="button"
         >
@@ -87,7 +87,7 @@ exports[`play renders 1`] = `
           direction="row"
         >
           <button
-            class="StyledButton-gXzblK etLvGo"
+            class="StyledButton-gXzblK kANibo"
             icon="[object Object]"
             type="button"
           >
@@ -115,7 +115,7 @@ exports[`play renders 1`] = `
             </span>
           </button>
           <button
-            class="StyledButton-gXzblK etLvGo"
+            class="StyledButton-gXzblK kANibo"
             icon="[object Object]"
             type="button"
           >
@@ -148,7 +148,7 @@ exports[`play renders 1`] = `
         direction="column"
       >
         <button
-          class="StyledButton-gXzblK djbfBD"
+          class="StyledButton-gXzblK fdbYpb"
           type="button"
         >
           <div
@@ -229,7 +229,7 @@ exports[`play renders 2`] = `
         direction="column"
       >
         <button
-          class="StyledButton-gXzblK djbfBD"
+          class="StyledButton-gXzblK fdbYpb"
           type="button"
         >
           <div
@@ -265,7 +265,7 @@ exports[`play renders 2`] = `
           direction="row"
         >
           <button
-            class="StyledButton-gXzblK etLvGo"
+            class="StyledButton-gXzblK kANibo"
             icon="[object Object]"
             type="button"
           >
@@ -292,7 +292,7 @@ exports[`play renders 2`] = `
             </span>
           </button>
           <button
-            class="StyledButton-gXzblK etLvGo"
+            class="StyledButton-gXzblK kANibo"
             icon="[object Object]"
             type="button"
           >
@@ -326,7 +326,7 @@ exports[`play renders 2`] = `
         direction="column"
       >
         <button
-          class="StyledButton-gXzblK erxOgR"
+          class="StyledButton-gXzblK gpCJao"
           disabled=""
           type="button"
         >
@@ -595,17 +595,16 @@ exports[`renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  opacity: 0.3;
-  cursor: default;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
   width: 100%;
   height: 100%;
   max-width: none;
@@ -622,7 +621,6 @@ exports[`renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -641,7 +639,6 @@ exports[`renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;

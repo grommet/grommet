@@ -20,7 +20,6 @@ exports[`Button color renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -56,7 +55,6 @@ exports[`Button color renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -172,7 +170,6 @@ exports[`Button disabled renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -239,7 +236,6 @@ exports[`Button focus renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -326,7 +322,6 @@ exports[`Button hoverIndicator as object renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -391,7 +386,6 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -456,7 +450,6 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -521,7 +514,6 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -586,7 +578,6 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -651,7 +642,6 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -716,7 +706,6 @@ exports[`Button hoverIndicator renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -781,7 +770,6 @@ exports[`Button href renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -857,7 +845,6 @@ exports[`Button icon label renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -961,7 +948,6 @@ exports[`Button primary renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -1048,7 +1034,6 @@ exports[`Button renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -1134,7 +1119,6 @@ exports[`Button reverse icon label renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -1238,7 +1222,6 @@ exports[`Button warns about invalid icon render 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -1316,7 +1299,6 @@ exports[`Button warns about invalid label render 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;

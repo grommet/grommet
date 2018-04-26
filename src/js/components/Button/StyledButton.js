@@ -1,7 +1,10 @@
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
-import { activeStyle, backgroundStyle, colorForName, colorIsDark, focusStyle, fontSize, lapAndUp } from '../../utils';
+import {
+  activeStyle, backgroundStyle, colorForName, colorIsDark, focusStyle,
+  fontSize, lapAndUp,
+} from '../../utils';
 
 const basicStyle = props => css`
   border: ${props.theme.button.border.width} solid ${props.color ? colorForName(props.color, props.theme) : props.theme.button.border.color};
@@ -129,12 +132,12 @@ const StyledButton = styled.button`
   outline: none;
   font: inherit;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
 
+  ${props => props.plain && plainStyle}
   ${props => !props.plain && css`
     text-align: center;
     display: inline-block;
@@ -143,7 +146,7 @@ const StyledButton = styled.button`
     font-weight: ${props.theme.global.control.font.weight};
   `}
   ${props => !props.plain && !props.primary && basicStyle(props)}
-  ${props => !props.plain && props.primary && primaryStyle(props)}
+  ${props => props.primary && primaryStyle(props)}
 
   ${props => (
     !props.disabled && !props.focus && hoverStyle
@@ -166,7 +169,6 @@ const StyledButton = styled.button`
   ${lapAndUp(`
     transition: 0.1s ease-in-out;
   `)}
-  ${props => props.plain && plainStyle}
   ${props => props.fillContainer && fillStyle}
   ${props => props.icon && !props.label && `
     padding: ${props.theme.global.edgeSize.small};

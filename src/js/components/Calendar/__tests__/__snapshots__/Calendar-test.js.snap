@@ -112,17 +112,16 @@ exports[`Calendar date renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  opacity: 0.3;
-  cursor: default;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
   padding: 12px;
 }
 
@@ -133,7 +132,6 @@ exports[`Calendar date renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -156,17 +154,16 @@ exports[`Calendar date renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.5);
-  color: #000000;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
+  background-color: rgba(221,221,221,0.5);
+  color: #000000;
 }
 
 .c16:hover {
@@ -1692,17 +1689,16 @@ exports[`Calendar dates renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  opacity: 0.3;
-  cursor: default;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
   padding: 12px;
 }
 
@@ -1713,7 +1709,6 @@ exports[`Calendar dates renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -1736,17 +1731,16 @@ exports[`Calendar dates renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.5);
-  color: #000000;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
+  background-color: rgba(221,221,221,0.5);
+  color: #000000;
 }
 
 .c17:hover {
@@ -3274,17 +3268,16 @@ exports[`Calendar disabled renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  opacity: 0.3;
-  cursor: default;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
   padding: 12px;
 }
 
@@ -3295,7 +3288,6 @@ exports[`Calendar disabled renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -3318,17 +3310,16 @@ exports[`Calendar disabled renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.5);
-  color: #000000;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
+  background-color: rgba(221,221,221,0.5);
+  color: #000000;
 }
 
 .c17:hover {
@@ -4856,17 +4847,16 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  opacity: 0.3;
-  cursor: default;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
   padding: 12px;
 }
 
@@ -4877,7 +4867,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -4900,17 +4889,16 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.5);
-  color: #000000;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
+  background-color: rgba(221,221,221,0.5);
+  color: #000000;
 }
 
 .c16:hover {
@@ -7653,17 +7641,16 @@ exports[`Calendar renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  opacity: 0.3;
-  cursor: default;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
   padding: 12px;
 }
 
@@ -7674,7 +7661,6 @@ exports[`Calendar renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -7697,17 +7683,16 @@ exports[`Calendar renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.5);
-  color: #000000;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
+  background-color: rgba(221,221,221,0.5);
+  color: #000000;
 }
 
 .c16:hover {
@@ -9267,17 +9252,16 @@ exports[`Calendar size renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  opacity: 0.3;
-  cursor: default;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
+  opacity: 0.3;
+  cursor: default;
   padding: 12px;
 }
 
@@ -9288,7 +9272,6 @@ exports[`Calendar size renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
@@ -9311,17 +9294,16 @@ exports[`Calendar size renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  background-color: rgba(221,221,221,0.5);
-  color: #000000;
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
+  background-color: rgba(221,221,221,0.5);
+  color: #000000;
 }
 
 .c16:hover {

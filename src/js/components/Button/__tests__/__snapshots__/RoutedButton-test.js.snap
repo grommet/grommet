@@ -20,7 +20,6 @@ exports[`RoutedButton renders 1`] = `
   font: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
-  font: inherit;
   margin: 0;
   background-color: transparent;
   overflow: visible;
