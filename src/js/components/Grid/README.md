@@ -3,6 +3,8 @@ A grid system for laying out content. To use, define the
 rows and columns, create area names for adjacent cells, and then
 place Box components inside those areas using the Box.gridArea property.
 See https://css-tricks.com/snippets/css/complete-guide-grid/.
+The availability of Grid can be tested via 'Grid.available'. Use this
+to create fallback rendering for older browsers, like ie11.
 
 [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=grid&module=%2Fsrc%2FGrid.js)
 ## Usage
@@ -54,9 +56,28 @@ Area names and column,row coordinates.
 **columns**
 
 Column sizes.
+      If an array value is an array, the inner array indicates the
+      minimum and maximum sizes for the column.
+      Specifying a single string will repeat multiple columns
+      of that size, as long as there is room for more.
+      Specifying an object allows indicating how the columns
+      stretch to fit the available space.
 
 ```
-[xsmall
+[
+  xsmall
+  small
+  medium
+  large
+  xlarge
+  full
+  1/2
+  1/3
+  2/3
+  1/4
+  3/4
+  flex
+  [xsmall
 small
 medium
 large
@@ -68,6 +89,46 @@ full
 1/4
 3/4
 flex]
+]
+xsmall
+small
+medium
+large
+xlarge
+{
+  count: 
+    fit
+    fill,
+  size: 
+    xsmall
+    small
+    medium
+    large
+    xlarge
+    [xsmall
+small
+medium
+large
+xlarge
+full
+1/2
+1/3
+2/3
+1/4
+3/4
+flex]
+}
+```
+
+**fill**
+
+Whether the width and/or height should fill the container.
+
+```
+horizontal
+vertical
+true
+false
 ```
 
 **gap**
@@ -80,12 +141,12 @@ medium
 large
 none
 {
-  horizontal: 
+  row: 
     small
     medium
     large
     none,
-  vertical: 
+  column: 
     small
     medium
     large
@@ -121,9 +182,26 @@ stretch
 **rows**
 
 Row sizes.
+      If an array value is an array, the inner array indicates the
+      minimum and maximum sizes for the row.
+      Specifying a single string will cause automatically added rows to be
+      the specified size.
 
 ```
-[xsmall
+[
+  xsmall
+  small
+  medium
+  large
+  xlarge
+  full
+  1/2
+  1/3
+  2/3
+  1/4
+  3/4
+  flex
+  [xsmall
 small
 medium
 large
@@ -135,6 +213,12 @@ full
 1/4
 3/4
 flex]
+]
+xsmall
+small
+medium
+large
+xlarge
 ```
 
 **tag**
