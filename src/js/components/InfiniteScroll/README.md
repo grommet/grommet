@@ -51,6 +51,22 @@ Function that will be called to render the marker element that
 function
 ```
 
+**scrollableAncestor**
+
+A custom ancestor to determine if the marker is visible in it.
+      This is useful in cases where you do not want the immediate
+      scrollable ancestor to be the container. For example, when your
+      marker is in a div that has overflow auto but you are detecting
+      visibility based on the window.
+      This should typically be a reference to a DOM node, but it will
+      also work to pass it the string "window" if you are using server
+      rendering.
+
+```
+node
+window
+```
+
 **step**
 
 How many items to render at a time. Defaults to `50`.

@@ -14,7 +14,9 @@ export default (Grid) => {
       `A grid system for laying out content. To use, define the
 rows and columns, create area names for adjacent cells, and then
 place Box components inside those areas using the Box.gridArea property.
-See https://css-tricks.com/snippets/css/complete-guide-grid/.`
+See https://css-tricks.com/snippets/css/complete-guide-grid/.
+The availability of Grid can be tested via 'Grid.available'. Use this
+to create fallback rendering for older browsers, like ie11.`
     ).usage(
       `import { Grid } from 'grommet';
 <Grid />`

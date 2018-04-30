@@ -119,13 +119,13 @@ test('Grid gap renders', () => {
       <Grid gap='small' />
       <Grid gap='medium' />
       <Grid gap='large' />
-      <Grid gap={{ horizontal: 'small' }} />
-      <Grid gap={{ horizontal: 'medium' }} />
-      <Grid gap={{ horizontal: 'large' }} />
-      <Grid gap={{ vertical: 'small' }} />
-      <Grid gap={{ vertical: 'medium' }} />
-      <Grid gap={{ vertical: 'large' }} />
-      <Grid gap={{ horizontal: 'small', vertical: 'medium' }} />
+      <Grid gap={{ row: 'small' }} />
+      <Grid gap={{ row: 'medium' }} />
+      <Grid gap={{ row: 'large' }} />
+      <Grid gap={{ column: 'small' }} />
+      <Grid gap={{ column: 'medium' }} />
+      <Grid gap={{ column: 'large' }} />
+      <Grid gap={{ row: 'small', column: 'medium' }} />
     </Grommet>
   );
   const tree = component.toJSON();

@@ -85,23 +85,6 @@ const gapStyle = (props) => {
       grid-column-gap: ${props.theme.global.edgeSize[props.gap.column]};
     `;
   }
-  // horizontal and vertical are deprecated, remove before 2.0.0
-  if (props.gap.horizontal && props.gap.vertical) {
-    return `
-      grid-row-gap: ${props.theme.global.edgeSize[props.gap.horizontal]};
-      grid-column-gap: ${props.theme.global.edgeSize[props.gap.vertical]};
-    `;
-  }
-  if (props.gap.horizontal) {
-    return `
-      grid-row-gap: ${props.theme.global.edgeSize[props.gap.horizontal]};
-    `;
-  }
-  if (props.gap.vertical) {
-    return `
-      grid-column-gap: ${props.theme.global.edgeSize[props.gap.vertical]};
-    `;
-  }
   return '';
 };
 
