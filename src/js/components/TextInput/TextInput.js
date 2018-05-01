@@ -21,6 +21,16 @@ function renderLabel(suggestion) {
   return suggestion;
 }
 
+function stringLabel(suggestion) {
+  if (suggestion && typeof suggestion === 'object') {
+    if (suggestion.label && typeof suggestion.label === 'string') {
+      return suggestion.label;
+    }
+    return suggestion.value;
+  }
+  return suggestion;
+}
+
 class TextInput extends Component {
   static contextTypes = {
     grommet: PropTypes.object,
@@ -70,7 +80,7 @@ class TextInput extends Component {
   announceSuggestion(index) {
     const { suggestions, messages: { enterSelect } } = this.props;
     if (suggestions && suggestions.length > 0) {
-      const labelMessage = renderLabel(suggestions[index]);
+      const labelMessage = stringLabel(suggestions[index]);
       this.announce(`${labelMessage} ${enterSelect}`);
     }
   }
@@ -170,7 +180,7 @@ class TextInput extends Component {
     let items;
     if (suggestions && suggestions.length > 0) {
       items = suggestions.map((suggestion, index) => (
-        <li key={renderLabel(suggestion)}>
+        <li key={`${stringLabel(suggestion)}-${index}`}>
           <Button
             active={
               activeSuggestionIndex === index ||
