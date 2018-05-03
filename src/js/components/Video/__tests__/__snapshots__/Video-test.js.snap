@@ -398,7 +398,6 @@ exports[`Video autoPlay renders 1`] = `
       <div
         aria-label={undefined}
         className="c4"
-        direction="row"
       >
         <button
           aria-label={undefined}
@@ -444,12 +443,10 @@ exports[`Video autoPlay renders 1`] = `
         <div
           aria-label={undefined}
           className="c8"
-          direction="row"
         >
           <div
             aria-label={undefined}
             className="c9"
-            direction="column"
           >
             <div
               className="c10"
@@ -499,7 +496,6 @@ exports[`Video autoPlay renders 1`] = `
           <div
             aria-label={undefined}
             className="c13"
-            direction="column"
           >
             <span
               className="c14"
@@ -529,7 +525,6 @@ exports[`Video autoPlay renders 1`] = `
             <div
               aria-label={undefined}
               className="c16"
-              direction="row"
             >
               <span
                 className="c17"
@@ -1037,7 +1032,6 @@ exports[`Video controls renders 1`] = `
       <div
         aria-label={undefined}
         className="c4"
-        direction="row"
       >
         <button
           aria-label={undefined}
@@ -1083,12 +1077,10 @@ exports[`Video controls renders 1`] = `
         <div
           aria-label={undefined}
           className="c8"
-          direction="row"
         >
           <div
             aria-label={undefined}
             className="c9"
-            direction="column"
           >
             <div
               className="c10"
@@ -1138,7 +1130,6 @@ exports[`Video controls renders 1`] = `
           <div
             aria-label={undefined}
             className="c13"
-            direction="column"
           >
             <span
               className="c14"
@@ -1168,7 +1159,6 @@ exports[`Video controls renders 1`] = `
             <div
               aria-label={undefined}
               className="c16"
-              direction="row"
             >
               <span
                 className="c17"
@@ -1238,7 +1228,6 @@ exports[`Video controls renders 1`] = `
       <div
         aria-label={undefined}
         className="c19"
-        direction="row"
       >
         <button
           aria-label={undefined}
@@ -1284,12 +1273,10 @@ exports[`Video controls renders 1`] = `
         <div
           aria-label={undefined}
           className="c8"
-          direction="row"
         >
           <div
             aria-label={undefined}
             className="c9"
-            direction="column"
           >
             <div
               className="c10"
@@ -1340,7 +1327,6 @@ exports[`Video controls renders 1`] = `
           <div
             aria-label={undefined}
             className="c13"
-            direction="column"
           >
             <span
               className="c14"
@@ -1370,7 +1356,6 @@ exports[`Video controls renders 1`] = `
             <div
               aria-label={undefined}
               className="c16"
-              direction="row"
             >
               <span
                 className="c17"
@@ -1818,7 +1803,6 @@ exports[`Video fit renders 1`] = `
       <div
         aria-label={undefined}
         className="c4"
-        direction="row"
       >
         <button
           aria-label={undefined}
@@ -1864,12 +1848,10 @@ exports[`Video fit renders 1`] = `
         <div
           aria-label={undefined}
           className="c8"
-          direction="row"
         >
           <div
             aria-label={undefined}
             className="c9"
-            direction="column"
           >
             <div
               className="c10"
@@ -1919,7 +1901,6 @@ exports[`Video fit renders 1`] = `
           <div
             aria-label={undefined}
             className="c13"
-            direction="column"
           >
             <span
               className="c14"
@@ -1949,7 +1930,6 @@ exports[`Video fit renders 1`] = `
             <div
               aria-label={undefined}
               className="c16"
-              direction="row"
             >
               <span
                 className="c17"
@@ -2022,7 +2002,6 @@ exports[`Video fit renders 1`] = `
       <div
         aria-label={undefined}
         className="c4"
-        direction="row"
       >
         <button
           aria-label={undefined}
@@ -2068,12 +2047,10 @@ exports[`Video fit renders 1`] = `
         <div
           aria-label={undefined}
           className="c8"
-          direction="row"
         >
           <div
             aria-label={undefined}
             className="c9"
-            direction="column"
           >
             <div
               className="c10"
@@ -2123,7 +2100,6 @@ exports[`Video fit renders 1`] = `
           <div
             aria-label={undefined}
             className="c13"
-            direction="column"
           >
             <span
               className="c14"
@@ -2153,7 +2129,6 @@ exports[`Video fit renders 1`] = `
             <div
               aria-label={undefined}
               className="c16"
-              direction="row"
             >
               <span
                 className="c17"
@@ -2583,7 +2558,6 @@ exports[`Video loop renders 1`] = `
       <div
         aria-label={undefined}
         className="c4"
-        direction="row"
       >
         <button
           aria-label={undefined}
@@ -2629,12 +2603,10 @@ exports[`Video loop renders 1`] = `
         <div
           aria-label={undefined}
           className="c8"
-          direction="row"
         >
           <div
             aria-label={undefined}
             className="c9"
-            direction="column"
           >
             <div
               className="c10"
@@ -2684,7 +2656,6 @@ exports[`Video loop renders 1`] = `
           <div
             aria-label={undefined}
             className="c13"
-            direction="column"
           >
             <span
               className="c14"
@@ -2714,7 +2685,6 @@ exports[`Video loop renders 1`] = `
             <div
               aria-label={undefined}
               className="c16"
-              direction="row"
             >
               <span
                 className="c17"
@@ -3144,7 +3114,6 @@ exports[`Video mute renders 1`] = `
       <div
         aria-label={undefined}
         className="c4"
-        direction="row"
       >
         <button
           aria-label={undefined}
@@ -3190,12 +3159,10 @@ exports[`Video mute renders 1`] = `
         <div
           aria-label={undefined}
           className="c8"
-          direction="row"
         >
           <div
             aria-label={undefined}
             className="c9"
-            direction="column"
           >
             <div
               className="c10"
@@ -3245,7 +3212,6 @@ exports[`Video mute renders 1`] = `
           <div
             aria-label={undefined}
             className="c13"
-            direction="column"
           >
             <span
               className="c14"
@@ -3275,7 +3241,6 @@ exports[`Video mute renders 1`] = `
             <div
               aria-label={undefined}
               className="c16"
-              direction="row"
             >
               <span
                 className="c17"
@@ -3705,7 +3670,6 @@ exports[`Video renders 1`] = `
       <div
         aria-label={undefined}
         className="c4"
-        direction="row"
       >
         <button
           aria-label={undefined}
@@ -3751,12 +3715,10 @@ exports[`Video renders 1`] = `
         <div
           aria-label={undefined}
           className="c8"
-          direction="row"
         >
           <div
             aria-label={undefined}
             className="c9"
-            direction="column"
           >
             <div
               className="c10"
@@ -3806,7 +3768,6 @@ exports[`Video renders 1`] = `
           <div
             aria-label={undefined}
             className="c13"
-            direction="column"
           >
             <span
               className="c14"
@@ -3836,7 +3797,6 @@ exports[`Video renders 1`] = `
             <div
               aria-label={undefined}
               className="c16"
-              direction="row"
             >
               <span
                 className="c17"

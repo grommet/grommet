@@ -18,7 +18,6 @@ exports[`TextInput closes suggestion drop 1`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           test
         </div>
@@ -31,7 +30,6 @@ exports[`TextInput closes suggestion drop 1`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           test1
         </div>
@@ -159,7 +157,6 @@ exports[`TextInput mounts with complex suggestions 1`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           test
         </div>
@@ -172,7 +169,6 @@ exports[`TextInput mounts with complex suggestions 1`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           test1
         </div>
@@ -251,7 +247,6 @@ exports[`TextInput mounts with suggestions 1`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           test
         </div>
@@ -264,7 +259,6 @@ exports[`TextInput mounts with suggestions 1`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           test1
         </div>
@@ -343,7 +337,6 @@ exports[`TextInput selects suggestion 1`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           test
         </div>
@@ -356,7 +349,6 @@ exports[`TextInput selects suggestion 1`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           test1
         </div>

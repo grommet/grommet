@@ -10,7 +10,6 @@ exports[`Menu opens and closes on click 1`] = `
 >
   <div
     class="StyledBox-bStriS dFjuei"
-    direction="column"
   >
     <button
       aria-label="Close Menu"
@@ -19,7 +18,6 @@ exports[`Menu opens and closes on click 1`] = `
     >
       <div
         class="StyledBox-bStriS kMKXvj"
-        direction="row"
       >
         <span
           class="StyledText-eJMSZI WtHkG"
@@ -51,7 +49,6 @@ exports[`Menu opens and closes on click 1`] = `
     </button>
     <div
       class="StyledBox-bStriS dFjuei"
-      direction="column"
     >
       <button
         class="StyledButton-gXzblK cDmTYk"
@@ -60,7 +57,6 @@ exports[`Menu opens and closes on click 1`] = `
       >
         <div
           class="StyledBox-bStriS qtlmp"
-          direction="row"
         >
           Item 1
         </div>
@@ -71,7 +67,6 @@ exports[`Menu opens and closes on click 1`] = `
       >
         <div
           class="StyledBox-bStriS qtlmp"
-          direction="row"
         >
           Item 2
         </div>
@@ -82,7 +77,6 @@ exports[`Menu opens and closes on click 1`] = `
       >
         <div
           class="StyledBox-bStriS qtlmp"
-          direction="row"
         >
           Item 3
         </div>
@@ -198,7 +192,6 @@ exports[`Menu renders 1`] = `
   >
     <div
       class="StyledBox-bStriS kMKXvj"
-      direction="row"
     >
       <span
         class="StyledText-eJMSZI WtHkG"
@@ -224,7 +217,6 @@ exports[`Menu with custom message renders 1`] = `
   >
     <div
       class="StyledBox-bStriS kMKXvj"
-      direction="row"
     >
       <span
         class="StyledText-eJMSZI WtHkG"
@@ -267,7 +259,6 @@ exports[`Menu with dropAlign renders 1`] = `
 >
   <div
     class="StyledBox-bStriS dFjuei"
-    direction="column"
   >
     <button
       aria-label="Close Menu"
@@ -276,7 +267,6 @@ exports[`Menu with dropAlign renders 1`] = `
     >
       <div
         class="StyledBox-bStriS kMKXvj"
-        direction="row"
       >
         <span
           class="StyledText-eJMSZI WtHkG"
@@ -308,7 +298,6 @@ exports[`Menu with dropAlign renders 1`] = `
     </button>
     <div
       class="StyledBox-bStriS dFjuei"
-      direction="column"
     >
       <button
         class="StyledButton-gXzblK cDmTYk"
@@ -317,7 +306,6 @@ exports[`Menu with dropAlign renders 1`] = `
       >
         <div
           class="StyledBox-bStriS qtlmp"
-          direction="row"
         >
           Item 1
         </div>
@@ -329,7 +317,6 @@ exports[`Menu with dropAlign renders 1`] = `
       >
         <div
           class="StyledBox-bStriS qtlmp"
-          direction="row"
         >
           Item 2
         </div>

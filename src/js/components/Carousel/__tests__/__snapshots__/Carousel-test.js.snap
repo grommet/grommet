@@ -9,13 +9,10 @@ exports[`play renders 1`] = `
   >
     <div
       class="StyledBox-bStriS fTyZvg"
-      direction="column"
-      overflow="hidden"
       style="position: relative;"
     >
       <div
         class="StyledBox-bStriS dFjuei"
-        direction="column"
       >
         <img
           class="StyledImage-iWJlTu ealRJb"
@@ -25,13 +22,10 @@ exports[`play renders 1`] = `
     </div>
     <div
       class="StyledBox-bStriS fTyZvg"
-      direction="column"
-      overflow="hidden"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
     >
       <div
         class="StyledBox-bStriS fRWMzb"
-        direction="column"
       >
         <img
           class="StyledImage-iWJlTu ealRJb"
@@ -41,13 +35,11 @@ exports[`play renders 1`] = `
     </div>
     <div
       class="StyledBox-bStriS eBXrgH"
-      direction="row"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
       tabindex="0"
     >
       <div
         class="StyledBox-bStriS jsbzAg"
-        direction="column"
       >
         <button
           class="StyledButton-gXzblK gpCJao"
@@ -56,7 +48,6 @@ exports[`play renders 1`] = `
         >
           <div
             class="StyledBox-bStriS gWhpfl"
-            direction="column"
           >
             <svg
               aria-label="Previous"
@@ -80,11 +71,9 @@ exports[`play renders 1`] = `
       </div>
       <div
         class="StyledBox-bStriS jxymSV"
-        direction="column"
       >
         <div
           class="StyledBox-bStriS lcWWay"
-          direction="row"
         >
           <button
             class="StyledButton-gXzblK kANibo"
@@ -145,7 +134,6 @@ exports[`play renders 1`] = `
       </div>
       <div
         class="StyledBox-bStriS jsbzAg"
-        direction="column"
       >
         <button
           class="StyledButton-gXzblK fdbYpb"
@@ -153,7 +141,6 @@ exports[`play renders 1`] = `
         >
           <div
             class="StyledBox-bStriS gWhpfl"
-            direction="column"
           >
             <svg
               aria-label="Next"
@@ -188,13 +175,10 @@ exports[`play renders 2`] = `
   >
     <div
       class="StyledBox-bStriS fTyZvg"
-      direction="column"
-      overflow="hidden"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
     >
       <div
         class="StyledBox-bStriS fRWMzb"
-        direction="column"
       >
         <img
           class="StyledImage-iWJlTu ealRJb"
@@ -204,13 +188,10 @@ exports[`play renders 2`] = `
     </div>
     <div
       class="StyledBox-bStriS fTyZvg"
-      direction="column"
-      overflow="hidden"
       style="position: relative;"
     >
       <div
         class="StyledBox-bStriS jMrMHL"
-        direction="column"
       >
         <img
           class="StyledImage-iWJlTu ealRJb"
@@ -220,13 +201,11 @@ exports[`play renders 2`] = `
     </div>
     <div
       class="StyledBox-bStriS eBXrgH"
-      direction="row"
       style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
       tabindex="0"
     >
       <div
         class="StyledBox-bStriS jsbzAg"
-        direction="column"
       >
         <button
           class="StyledButton-gXzblK fdbYpb"
@@ -234,7 +213,6 @@ exports[`play renders 2`] = `
         >
           <div
             class="StyledBox-bStriS gWhpfl"
-            direction="column"
           >
             <svg
               aria-label="Previous"
@@ -258,11 +236,9 @@ exports[`play renders 2`] = `
       </div>
       <div
         class="StyledBox-bStriS jxymSV"
-        direction="column"
       >
         <div
           class="StyledBox-bStriS lcWWay"
-          direction="row"
         >
           <button
             class="StyledButton-gXzblK kANibo"
@@ -323,7 +299,6 @@ exports[`play renders 2`] = `
       </div>
       <div
         class="StyledBox-bStriS jsbzAg"
-        direction="column"
       >
         <button
           class="StyledButton-gXzblK gpCJao"
@@ -332,7 +307,6 @@ exports[`play renders 2`] = `
         >
           <div
             class="StyledBox-bStriS gWhpfl"
-            direction="column"
           >
             <svg
               aria-label="Next"
@@ -808,8 +782,6 @@ exports[`renders 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
-      overflow="hidden"
       style={
         Object {
           "position": "relative",
@@ -819,7 +791,6 @@ exports[`renders 1`] = `
       <div
         aria-label={undefined}
         className="c3"
-        direction="column"
       >
         <img
           className=""
@@ -830,8 +801,6 @@ exports[`renders 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
-      overflow="hidden"
       style={
         Object {
           "bottom": 0,
@@ -846,7 +815,6 @@ exports[`renders 1`] = `
       <div
         aria-label={undefined}
         className="c4"
-        direction="column"
       >
         <img
           className=""
@@ -857,7 +825,6 @@ exports[`renders 1`] = `
     <div
       aria-label={undefined}
       className="c5"
-      direction="row"
       style={
         Object {
           "bottom": 0,
@@ -873,7 +840,6 @@ exports[`renders 1`] = `
       <div
         aria-label={undefined}
         className="c6"
-        direction="column"
       >
         <button
           aria-label={undefined}
@@ -892,7 +858,6 @@ exports[`renders 1`] = `
           <div
             aria-label={undefined}
             className="c8"
-            direction="column"
           >
             <svg
               aria-label="Previous"
@@ -917,12 +882,10 @@ exports[`renders 1`] = `
       <div
         aria-label={undefined}
         className="c10"
-        direction="column"
       >
         <div
           aria-label={undefined}
           className="c11"
-          direction="row"
         >
           <button
             aria-label={undefined}
@@ -1011,7 +974,6 @@ exports[`renders 1`] = `
       <div
         aria-label={undefined}
         className="c6"
-        direction="column"
       >
         <button
           aria-label={undefined}
@@ -1030,7 +992,6 @@ exports[`renders 1`] = `
           <div
             aria-label={undefined}
             className="c8"
-            direction="column"
           >
             <svg
               aria-label="Next"

@@ -10,12 +10,10 @@ exports[`Select closes drop on esc 1`] = `
 >
   <div
     class="StyledBox-bStriS dFjuei"
-    direction="column"
     id="test-select__select-drop"
   >
     <div
       class="StyledBox-bStriS cwOEFa"
-      direction="column"
       role="menubar"
       tabindex="-1"
     >
@@ -26,7 +24,6 @@ exports[`Select closes drop on esc 1`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           <span
             class="StyledText-eJMSZI eCycNH"
@@ -42,7 +39,6 @@ exports[`Select closes drop on esc 1`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           <span
             class="StyledText-eJMSZI eCycNH"
@@ -191,7 +187,6 @@ exports[`Select closes drop on esc 3`] = `
   <div
     aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
-    direction="row"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -209,7 +204,6 @@ exports[`Select closes drop on esc 3`] = `
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
-      direction="column"
       style="min-width: auto;"
     >
       <svg
@@ -244,7 +238,6 @@ exports[`Select closes drop on esc 4`] = `
   <div
     aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
-    direction="row"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -262,7 +255,6 @@ exports[`Select closes drop on esc 4`] = `
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
-      direction="column"
       style="min-width: auto;"
     >
       <svg
@@ -297,7 +289,6 @@ exports[`Select mounts 1`] = `
   <div
     aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
-    direction="row"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -315,7 +306,6 @@ exports[`Select mounts 1`] = `
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
-      direction="column"
       style="min-width: auto;"
     >
       <svg
@@ -350,7 +340,6 @@ exports[`Select mounts 2`] = `
   <div
     aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
-    direction="row"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -368,7 +357,6 @@ exports[`Select mounts 2`] = `
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
-      direction="column"
       style="min-width: auto;"
     >
       <svg
@@ -403,12 +391,10 @@ exports[`Select mounts 3`] = `
 >
   <div
     class="StyledBox-bStriS dFjuei"
-    direction="column"
     id="test-select__select-drop"
   >
     <div
       class="StyledBox-bStriS cwOEFa"
-      direction="column"
       role="menubar"
       tabindex="-1"
     >
@@ -419,7 +405,6 @@ exports[`Select mounts 3`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           <span
             class="StyledText-eJMSZI eCycNH"
@@ -435,7 +420,6 @@ exports[`Select mounts 3`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           <span
             class="StyledText-eJMSZI eCycNH"
@@ -565,7 +549,6 @@ exports[`Select mounts 4`] = `
 exports[`Select mounts 5`] = `
 <div
   class="StyledBox-bStriS cwOEFa"
-  direction="column"
   role="menubar"
   tabindex="-1"
 >
@@ -576,7 +559,6 @@ exports[`Select mounts 5`] = `
   >
     <div
       class="StyledBox-bStriS jXXAwE"
-      direction="column"
     >
       <span
         class="StyledText-eJMSZI eCycNH"
@@ -592,7 +574,6 @@ exports[`Select mounts 5`] = `
   >
     <div
       class="StyledBox-bStriS jXXAwE"
-      direction="column"
     >
       <span
         class="StyledText-eJMSZI eCycNH"
@@ -615,7 +596,6 @@ exports[`Select mounts disabled 1`] = `
   <div
     aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
-    direction="row"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -633,7 +613,6 @@ exports[`Select mounts disabled 1`] = `
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
-      direction="column"
       style="min-width: auto;"
     >
       <svg
@@ -669,7 +648,6 @@ exports[`Select mounts disabled 2`] = `
   <div
     aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
-    direction="row"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -687,7 +665,6 @@ exports[`Select mounts disabled 2`] = `
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
-      direction="column"
       style="min-width: auto;"
     >
       <svg
@@ -722,7 +699,6 @@ exports[`Select mounts multiple 1`] = `
   <div
     aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
-    direction="row"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -741,7 +717,6 @@ exports[`Select mounts multiple 1`] = `
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
-      direction="column"
       style="min-width: auto;"
     >
       <svg
@@ -776,7 +751,6 @@ exports[`Select mounts multiple 2`] = `
   <div
     aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
-    direction="row"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -795,7 +769,6 @@ exports[`Select mounts multiple 2`] = `
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
-      direction="column"
       style="min-width: auto;"
     >
       <svg
@@ -830,12 +803,10 @@ exports[`Select mounts multiple 3`] = `
 >
   <div
     class="StyledBox-bStriS dFjuei"
-    direction="column"
     id="test-select__select-drop"
   >
     <div
       class="StyledBox-bStriS cwOEFa"
-      direction="column"
       role="menubar"
       tabindex="-1"
     >
@@ -846,7 +817,6 @@ exports[`Select mounts multiple 3`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           <span
             class="StyledText-eJMSZI eCycNH"
@@ -862,7 +832,6 @@ exports[`Select mounts multiple 3`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           <span
             class="StyledText-eJMSZI eCycNH"
@@ -1023,7 +992,6 @@ exports[`Select mounts multiple 4`] = `
 exports[`Select mounts multiple 5`] = `
 <div
   class="StyledBox-bStriS cwOEFa"
-  direction="column"
   role="menubar"
   tabindex="-1"
 >
@@ -1034,7 +1002,6 @@ exports[`Select mounts multiple 5`] = `
   >
     <div
       class="StyledBox-bStriS jXXAwE"
-      direction="column"
     >
       <span
         class="StyledText-eJMSZI eCycNH"
@@ -1050,7 +1017,6 @@ exports[`Select mounts multiple 5`] = `
   >
     <div
       class="StyledBox-bStriS jXXAwE"
-      direction="column"
     >
       <span
         class="StyledText-eJMSZI eCycNH"
@@ -1072,7 +1038,6 @@ exports[`Select mounts with complex options and children 1`] = `
   <div
     aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
-    direction="row"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -1090,7 +1055,6 @@ exports[`Select mounts with complex options and children 1`] = `
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
-      direction="column"
       style="min-width: auto;"
     >
       <svg
@@ -1125,7 +1089,6 @@ exports[`Select mounts with complex options and children 2`] = `
   <div
     aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
-    direction="row"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -1143,7 +1106,6 @@ exports[`Select mounts with complex options and children 2`] = `
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
-      direction="column"
       style="min-width: auto;"
     >
       <svg
@@ -1178,12 +1140,10 @@ exports[`Select mounts with complex options and children 3`] = `
 >
   <div
     class="StyledBox-bStriS dFjuei"
-    direction="column"
     id="test-select__select-drop"
   >
     <div
       class="StyledBox-bStriS cwOEFa"
-      direction="column"
       role="menubar"
       tabindex="-1"
     >
@@ -1333,12 +1293,10 @@ exports[`Select mounts with search 1`] = `
 >
   <div
     class="StyledBox-bStriS dFjuei"
-    direction="column"
     id="test-select__select-drop"
   >
     <div
       class="StyledBox-bStriS hkehWd"
-      direction="column"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -1353,7 +1311,6 @@ exports[`Select mounts with search 1`] = `
     </div>
     <div
       class="StyledBox-bStriS cwOEFa"
-      direction="column"
       role="menubar"
       tabindex="-1"
     >
@@ -1364,7 +1321,6 @@ exports[`Select mounts with search 1`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           <span
             class="StyledText-eJMSZI eCycNH"
@@ -1380,7 +1336,6 @@ exports[`Select mounts with search 1`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           <span
             class="StyledText-eJMSZI eCycNH"
@@ -1538,12 +1493,10 @@ exports[`Select mounts with search 4`] = `
 >
   <div
     class="StyledBox-bStriS dFjuei"
-    direction="column"
     id="test-select__select-drop"
   >
     <div
       class="StyledBox-bStriS hkehWd"
-      direction="column"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -1558,7 +1511,6 @@ exports[`Select mounts with search 4`] = `
     </div>
     <div
       class="StyledBox-bStriS cwOEFa"
-      direction="column"
       role="menubar"
       tabindex="-1"
     >
@@ -1569,7 +1521,6 @@ exports[`Select mounts with search 4`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           <span
             class="StyledText-eJMSZI eCycNH"
@@ -1585,7 +1536,6 @@ exports[`Select mounts with search 4`] = `
       >
         <div
           class="StyledBox-bStriS jXXAwE"
-          direction="column"
         >
           <span
             class="StyledText-eJMSZI eCycNH"
@@ -1734,7 +1684,6 @@ exports[`Select renders multiple 1`] = `
   <div
     aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
-    direction="row"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -1753,7 +1702,6 @@ exports[`Select renders multiple 1`] = `
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
-      direction="column"
       style="min-width: auto;"
     >
       <svg
@@ -1788,7 +1736,6 @@ exports[`Select renders size 1`] = `
   <div
     aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
-    direction="row"
   >
     <div
       class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
@@ -1806,7 +1753,6 @@ exports[`Select renders size 1`] = `
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
-      direction="column"
       style="min-width: auto;"
     >
       <svg
