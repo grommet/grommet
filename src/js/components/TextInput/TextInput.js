@@ -49,7 +49,6 @@ class TextInput extends Component {
 
   state = {
     activeSuggestionIndex: -1,
-    announceChange: false,
     showDrop: false,
   }
 
@@ -91,7 +90,6 @@ class TextInput extends Component {
     if (suggestions && suggestions.length) {
       this.setState({
         activeSuggestionIndex: -1,
-        announceChange: true,
         showDrop: true,
         selectedSuggestionIndex: -1,
       }, this.announceSuggestionsCount);
@@ -146,7 +144,7 @@ class TextInput extends Component {
 
   onClickSuggestion = (suggestion) => {
     const { onSelect } = this.props;
-    this.setState({ value: suggestion, showDrop: false });
+    this.setState({ showDrop: false });
     if (onSelect) {
       onSelect({
         target: this.componentRef, suggestion,
@@ -161,7 +159,6 @@ class TextInput extends Component {
     if (activeSuggestionIndex >= 0) {
       event.preventDefault(); // prevent submitting forms
       const suggestion = suggestions[activeSuggestionIndex];
-      this.setState({ value: suggestion });
       if (onSelect) {
         onSelect({
           target: this.componentRef, suggestion,
