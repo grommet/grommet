@@ -87,7 +87,7 @@ class Box extends Component {
               <StyledBoxGap
                 key={index}
                 gap={gap}
-                direction={direction}
+                directionProp={direction}
                 responsive={responsive}
                 theme={theme}
               />

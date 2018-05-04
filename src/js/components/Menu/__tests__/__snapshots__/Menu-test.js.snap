@@ -26,7 +26,6 @@ exports[`Menu opens and closes on click 1`] = `
         </span>
         <div
           class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
-          direction="row"
         />
         <svg
           aria-label="FormDown"
@@ -200,7 +199,6 @@ exports[`Menu renders 1`] = `
       </span>
       <div
         class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
-        direction="row"
       />
       <svg />
     </div>
@@ -225,7 +223,6 @@ exports[`Menu with custom message renders 1`] = `
       </span>
       <div
         class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
-        direction="row"
       />
       <svg
         aria-label="FormDown"
@@ -275,7 +272,6 @@ exports[`Menu with dropAlign renders 1`] = `
         </span>
         <div
           class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
-          direction="row"
         />
         <svg
           aria-label="FormDown"
