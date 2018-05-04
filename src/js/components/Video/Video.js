@@ -43,10 +43,7 @@ class Video extends Component {
     controls: 'over',
   }
 
-  state = {
-    captions: [],
-    mouseActive: false,
-  }
+  state = { captions: [] }
 
   hasPlayed = false;
 
@@ -151,21 +148,21 @@ class Video extends Component {
     this.setState({
       duration: video.duration,
       currentTime: video.currentTime,
-      buffered: video.buffered,
-      paused: video.paused,
-      muted: video.muted,
+      // buffered: video.buffered,
+      // paused: video.paused,
+      // muted: video.muted,
       volume: video.volume,
-      ended: video.ended,
-      readyState: video.readyState,
+      // ended: video.ended,
+      // readyState: video.readyState,
       interacting,
       // computed values
-      hasPlayed: this.hasPlayed,
+      // hasPlayed: this.hasPlayed,
       playing: !video.paused && !video.loading,
-      percentageBuffered: video.buffered.length &&
-        (video.buffered.end(video.buffered.length - 1) /
-        video.duration) * 100,
+      // percentageBuffered: video.buffered.length &&
+      //   (video.buffered.end(video.buffered.length - 1) /
+      //   video.duration) * 100,
       percentagePlayed: (video.currentTime / video.duration) * 100,
-      loading: video.readyState < video.HAVE_ENOUGH_DATA,
+      // loading: video.readyState < video.HAVE_ENOUGH_DATA,
     });
   }
 

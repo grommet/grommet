@@ -43,7 +43,7 @@ class SelectContainer extends Component {
 
   onInput = (event) => {
     this.setState(
-      { search: event.target.value, selected: undefined },
+      { search: event.target.value },
       () => this.onSearch(this.state.search)
     );
   }
