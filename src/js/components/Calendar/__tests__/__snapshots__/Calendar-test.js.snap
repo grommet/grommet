@@ -370,13 +370,11 @@ exports[`Calendar date renders 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       onKeyDown={[Function]}
     >
       <div
         aria-label={undefined}
         className="c3"
-        direction="row"
       >
         <h3
           className="c4"
@@ -387,7 +385,6 @@ exports[`Calendar date renders 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="row"
         >
           <button
             aria-label="December 2016"
@@ -1953,13 +1950,11 @@ exports[`Calendar dates renders 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       onKeyDown={[Function]}
     >
       <div
         aria-label={undefined}
         className="c3"
-        direction="row"
       >
         <h3
           className="c4"
@@ -1970,7 +1965,6 @@ exports[`Calendar dates renders 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="row"
         >
           <button
             aria-label="December 2016"
@@ -3540,13 +3534,11 @@ exports[`Calendar disabled renders 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       onKeyDown={[Function]}
     >
       <div
         aria-label={undefined}
         className="c3"
-        direction="row"
       >
         <h3
           className="c4"
@@ -3557,7 +3549,6 @@ exports[`Calendar disabled renders 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="row"
         >
           <button
             aria-label="December 2016"
@@ -5127,13 +5118,11 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       onKeyDown={[Function]}
     >
       <div
         aria-label={undefined}
         className="c3"
-        direction="row"
       >
         <h3
           className="c4"
@@ -5144,7 +5133,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="row"
         >
           <button
             aria-label="December 2016"
@@ -6344,13 +6332,11 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       onKeyDown={[Function]}
     >
       <div
         aria-label={undefined}
         className="c3"
-        direction="row"
       >
         <h3
           className="c4"
@@ -6361,7 +6347,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="row"
         >
           <button
             aria-label="December 2016"
@@ -7927,13 +7912,11 @@ exports[`Calendar renders 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       onKeyDown={[Function]}
     >
       <div
         aria-label={undefined}
         className="c3"
-        direction="row"
       >
         <h3
           className="c4"
@@ -7944,7 +7927,6 @@ exports[`Calendar renders 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="row"
         >
           <button
             aria-label="December 2016"
@@ -9726,13 +9708,11 @@ exports[`Calendar size renders 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       onKeyDown={[Function]}
     >
       <div
         aria-label={undefined}
         className="c3"
-        direction="row"
       >
         <h3
           className="c4"
@@ -9743,7 +9723,6 @@ exports[`Calendar size renders 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="row"
         >
           <button
             aria-label="December 2016"
@@ -10943,13 +10922,11 @@ exports[`Calendar size renders 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       onKeyDown={[Function]}
     >
       <div
         aria-label={undefined}
         className="c3"
-        direction="row"
       >
         <h3
           className="c20"
@@ -10960,7 +10937,6 @@ exports[`Calendar size renders 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="row"
         >
           <button
             aria-label="December 2016"
@@ -12160,13 +12136,11 @@ exports[`Calendar size renders 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       onKeyDown={[Function]}
     >
       <div
         aria-label={undefined}
         className="c3"
-        direction="row"
       >
         <h3
           className="c26"
@@ -12177,7 +12151,6 @@ exports[`Calendar size renders 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="row"
         >
           <button
             aria-label="December 2016"

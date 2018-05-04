@@ -179,27 +179,22 @@ exports[`Box align renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c2"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c3"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c4"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c5"
-    direction="column"
   />
 </div>
 `;
@@ -409,32 +404,26 @@ exports[`Box alignContent renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c2"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c3"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c4"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c5"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c6"
-    direction="column"
   />
 </div>
 `;
@@ -582,22 +571,18 @@ exports[`Box alignSelf renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c2"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c3"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c4"
-    direction="column"
   />
 </div>
 `;
@@ -1046,67 +1031,54 @@ exports[`Box animation renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c2"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c3"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c4"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c5"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c6"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c7"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c8"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c9"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c10"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c11"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c12"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c13"
-    direction="column"
   />
 </div>
 `;
@@ -1436,52 +1408,42 @@ exports[`Box background renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c2"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c3"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c4"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c5"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c6"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c7"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c8"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c9"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c10"
-    direction="column"
   />
 </div>
 `;
@@ -1891,91 +1853,74 @@ exports[`Box basis renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
     />
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
     />
     <div
       aria-label={undefined}
       className="c4"
-      direction="column"
     />
     <div
       aria-label={undefined}
       className="c5"
-      direction="column"
     />
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
     />
   </div>
   <div
     aria-label={undefined}
     className="c7"
-    direction="row"
   >
     <div
       aria-label={undefined}
       className="c8"
-      direction="column"
     />
   </div>
   <div
     aria-label={undefined}
     className="c7"
-    direction="row"
   >
     <div
       aria-label={undefined}
       className="c9"
-      direction="column"
     />
     <div
       aria-label={undefined}
       className="c9"
-      direction="column"
     />
   </div>
   <div
     aria-label={undefined}
     className="c7"
-    direction="row"
   >
     <div
       aria-label={undefined}
       className="c10"
-      direction="column"
     />
     <div
       aria-label={undefined}
       className="c11"
-      direction="column"
     />
   </div>
   <div
     aria-label={undefined}
     className="c7"
-    direction="row"
   >
     <div
       aria-label={undefined}
       className="c12"
-      direction="column"
     />
     <div
       aria-label={undefined}
       className="c13"
-      direction="column"
     />
   </div>
 </div>
@@ -2424,73 +2369,59 @@ exports[`Box border renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c2"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c3"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c4"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c5"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c6"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c7"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c8"
-    direction="column"
   />
   ,
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c9"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c10"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c11"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c12"
-    direction="column"
   />
 </div>
 `;
@@ -2616,17 +2547,14 @@ exports[`Box direction renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
   />
   <div
     aria-label={undefined}
     className="c2"
-    direction="row-responsive"
   />
   <div
     aria-label={undefined}
     className="c3"
-    direction="column"
   />
 </div>
 `;
@@ -2824,38 +2752,26 @@ exports[`Box elevation renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
-    elevation="none"
   />
   <div
     aria-label={undefined}
     className="c2"
-    direction="column"
-    elevation="xsmall"
   />
   <div
     aria-label={undefined}
     className="c3"
-    direction="column"
-    elevation="small"
   />
   <div
     aria-label={undefined}
     className="c4"
-    direction="column"
-    elevation="medium"
   />
   <div
     aria-label={undefined}
     className="c5"
-    direction="column"
-    elevation="large"
   />
   <div
     aria-label={undefined}
     className="c6"
-    direction="column"
-    elevation="xlarge"
   />
 </div>
 `;
@@ -2995,27 +2911,22 @@ exports[`Box fill renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
     />
     <div
       aria-label={undefined}
       className="c1"
-      direction="column"
     />
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
     />
     <div
       aria-label={undefined}
       className="c4"
-      direction="column"
     />
   </div>
 </div>
@@ -3192,27 +3103,22 @@ exports[`Box flex renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
     />
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
     />
     <div
       aria-label={undefined}
       className="c4"
-      direction="column"
     />
     <div
       aria-label={undefined}
       className="c5"
-      direction="column"
     />
   </div>
 </div>
@@ -3293,45 +3199,37 @@ exports[`Box gap renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
     />
   </div>
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
     />
   </div>
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
     />
   </div>
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
     />
   </div>
 </div>
@@ -3385,7 +3283,6 @@ exports[`Box gridArea renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
 </div>
 `;
@@ -3537,22 +3434,18 @@ exports[`Box justify renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c2"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c3"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c4"
-    direction="column"
   />
 </div>
 `;
@@ -3604,22 +3497,18 @@ exports[`Box justifySelf renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
 </div>
 `;
@@ -3899,47 +3788,38 @@ exports[`Box margin renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c2"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c3"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c4"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c5"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c6"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c7"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c8"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c9"
-    direction="column"
   />
 </div>
 `;
@@ -4219,47 +4099,38 @@ exports[`Box pad renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c2"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c3"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c4"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c5"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c6"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c7"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c8"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c9"
-    direction="column"
   />
 </div>
 `;
@@ -4311,7 +4182,6 @@ exports[`Box renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
 </div>
 `;
@@ -4379,12 +4249,10 @@ exports[`Box responsive renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c2"
-    direction="column"
   />
 </div>
 `;
@@ -4583,27 +4451,22 @@ exports[`Box round renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c2"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c3"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c4"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c5"
-    direction="column"
   />
 </div>
 `;
@@ -4655,7 +4518,6 @@ exports[`Box tag renders 1`] = `
   <header
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
 </div>
 `;
@@ -4738,12 +4600,10 @@ exports[`Box wrap renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
   />
   <div
     aria-label={undefined}
     className="c2"
-    direction="column"
   />
 </div>
 `;

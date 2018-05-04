@@ -9,17 +9,14 @@ exports[`Diagram color renders 1`] = `
   >
     <div
       class="StyledBox-bStriS hLRcnS"
-      direction="row"
       style="position: relative;"
     >
       <div
         class="StyledBox-bStriS bPvtii"
-        direction="column"
         id="1"
       />
       <div
         class="StyledBox-bStriS bPvtii"
-        direction="column"
         id="2"
       />
     </div>
@@ -46,17 +43,14 @@ exports[`Diagram offset renders 1`] = `
   >
     <div
       class="StyledBox-bStriS hLRcnS"
-      direction="row"
       style="position: relative;"
     >
       <div
         class="StyledBox-bStriS bPvtii"
-        direction="column"
         id="1"
       />
       <div
         class="StyledBox-bStriS bPvtii"
-        direction="column"
         id="2"
       />
     </div>
@@ -83,17 +77,14 @@ exports[`Diagram renders 1`] = `
   >
     <div
       class="StyledBox-bStriS hLRcnS"
-      direction="row"
       style="position: relative;"
     >
       <div
         class="StyledBox-bStriS bPvtii"
-        direction="column"
         id="1"
       />
       <div
         class="StyledBox-bStriS bPvtii"
-        direction="column"
         id="2"
       />
     </div>
@@ -120,17 +111,14 @@ exports[`Diagram thickness renders 1`] = `
   >
     <div
       class="StyledBox-bStriS hLRcnS"
-      direction="row"
       style="position: relative;"
     >
       <div
         class="StyledBox-bStriS bPvtii"
-        direction="column"
         id="1"
       />
       <div
         class="StyledBox-bStriS bPvtii"
-        direction="column"
         id="2"
       />
     </div>
@@ -157,17 +145,14 @@ exports[`Diagram type renders 1`] = `
   >
     <div
       class="StyledBox-bStriS hLRcnS"
-      direction="row"
       style="position: relative;"
     >
       <div
         class="StyledBox-bStriS bPvtii"
-        direction="column"
         id="1"
       />
       <div
         class="StyledBox-bStriS bPvtii"
-        direction="column"
         id="2"
       />
     </div>

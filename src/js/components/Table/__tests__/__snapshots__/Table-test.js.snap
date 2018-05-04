@@ -253,7 +253,6 @@ exports[`TableCell renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </td>
       </tr>
@@ -272,7 +271,6 @@ exports[`TableCell renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </td>
       </tr>
@@ -291,7 +289,6 @@ exports[`TableCell renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </td>
       </tr>
@@ -397,7 +394,6 @@ exports[`TableCell scope renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </th>
       </tr>
@@ -416,7 +412,6 @@ exports[`TableCell scope renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </th>
       </tr>
@@ -587,7 +582,6 @@ exports[`TableCell size renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </td>
         <td
@@ -598,7 +592,6 @@ exports[`TableCell size renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </td>
         <td
@@ -609,7 +602,6 @@ exports[`TableCell size renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </td>
         <td
@@ -620,7 +612,6 @@ exports[`TableCell size renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </td>
       </tr>
@@ -644,7 +635,6 @@ exports[`TableCell size renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </td>
         <td
@@ -655,7 +645,6 @@ exports[`TableCell size renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </td>
         <td
@@ -666,7 +655,6 @@ exports[`TableCell size renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </td>
       </tr>
@@ -690,7 +678,6 @@ exports[`TableCell size renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </td>
         <td
@@ -701,7 +688,6 @@ exports[`TableCell size renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </td>
       </tr>
@@ -816,7 +802,6 @@ exports[`TableCell verticalAlign renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </td>
         <td
@@ -827,7 +812,6 @@ exports[`TableCell verticalAlign renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </td>
         <td
@@ -838,7 +822,6 @@ exports[`TableCell verticalAlign renders 1`] = `
           <div
             aria-label={undefined}
             className="c3"
-            direction="column"
           />
         </td>
       </tr>

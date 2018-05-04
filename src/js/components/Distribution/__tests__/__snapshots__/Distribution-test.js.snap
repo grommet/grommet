@@ -6,13 +6,9 @@ exports[`Distribution gap renders 1`] = `
 >
   <div
     class="StyledBox-bStriS gQTNhE"
-    direction="row"
-    overflow="hidden"
   >
     <div
       class="StyledBox-bStriS bmUrZC"
-      direction="column"
-      overflow="hidden"
     >
       <span>
         3
@@ -24,26 +20,20 @@ exports[`Distribution gap renders 1`] = `
     />
     <div
       class="StyledBox-bStriS bmUrZC"
-      direction="column"
-      overflow="hidden"
     >
       <div
         class="StyledBox-bStriS bBXCcb"
-        direction="column"
-        overflow="hidden"
       >
         <span>
           2
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-ixLlSs iswUbf"
+        class="StyledBox__StyledBoxGap-ixLlSs ebfbnM"
         direction="column"
       />
       <div
         class="StyledBox-bStriS hsWcIa"
-        direction="column"
-        overflow="hidden"
       >
         <span>
           1
@@ -53,13 +43,9 @@ exports[`Distribution gap renders 1`] = `
   </div>
   <div
     class="StyledBox-bStriS gQTNhE"
-    direction="row"
-    overflow="hidden"
   >
     <div
       class="StyledBox-bStriS bmUrZC"
-      direction="column"
-      overflow="hidden"
     >
       <span>
         3
@@ -71,26 +57,20 @@ exports[`Distribution gap renders 1`] = `
     />
     <div
       class="StyledBox-bStriS bmUrZC"
-      direction="column"
-      overflow="hidden"
     >
       <div
         class="StyledBox-bStriS bBXCcb"
-        direction="column"
-        overflow="hidden"
       >
         <span>
           2
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-ixLlSs jrJmqe"
+        class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
         direction="column"
       />
       <div
         class="StyledBox-bStriS hsWcIa"
-        direction="column"
-        overflow="hidden"
       >
         <span>
           1
@@ -100,13 +80,9 @@ exports[`Distribution gap renders 1`] = `
   </div>
   <div
     class="StyledBox-bStriS gQTNhE"
-    direction="row"
-    overflow="hidden"
   >
     <div
       class="StyledBox-bStriS bmUrZC"
-      direction="column"
-      overflow="hidden"
     >
       <span>
         3
@@ -118,26 +94,20 @@ exports[`Distribution gap renders 1`] = `
     />
     <div
       class="StyledBox-bStriS bmUrZC"
-      direction="column"
-      overflow="hidden"
     >
       <div
         class="StyledBox-bStriS bBXCcb"
-        direction="column"
-        overflow="hidden"
       >
         <span>
           2
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-ixLlSs cbEIii"
+        class="StyledBox__StyledBoxGap-ixLlSs cCIVcT"
         direction="column"
       />
       <div
         class="StyledBox-bStriS hsWcIa"
-        direction="column"
-        overflow="hidden"
       >
         <span>
           1
@@ -147,13 +117,9 @@ exports[`Distribution gap renders 1`] = `
   </div>
   <div
     class="StyledBox-bStriS gQTNhE"
-    direction="row"
-    overflow="hidden"
   >
     <div
       class="StyledBox-bStriS bmUrZC"
-      direction="column"
-      overflow="hidden"
     >
       <span>
         3
@@ -165,26 +131,20 @@ exports[`Distribution gap renders 1`] = `
     />
     <div
       class="StyledBox-bStriS bmUrZC"
-      direction="column"
-      overflow="hidden"
     >
       <div
         class="StyledBox-bStriS bBXCcb"
-        direction="column"
-        overflow="hidden"
       >
         <span>
           2
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-ixLlSs iTpocx"
+        class="StyledBox__StyledBoxGap-ixLlSs edutSJ"
         direction="column"
       />
       <div
         class="StyledBox-bStriS hsWcIa"
-        direction="column"
-        overflow="hidden"
       >
         <span>
           1
@@ -207,13 +167,9 @@ exports[`Distribution values renders 1`] = `
 >
   <div
     class="StyledBox-bStriS gQTNhE"
-    direction="row"
-    overflow="hidden"
   >
     <div
       class="StyledBox-bStriS iUsjod"
-      direction="column"
-      overflow="hidden"
     >
       <span>
         20
@@ -225,31 +181,23 @@ exports[`Distribution values renders 1`] = `
     />
     <div
       class="StyledBox-bStriS bWrCtE"
-      direction="column"
-      overflow="hidden"
     >
       <div
         class="StyledBox-bStriS bmUrZC"
-        direction="column"
-        overflow="hidden"
       >
         <span>
           3
         </span>
       </div>
       <div
-        class="StyledBox__StyledBoxGap-ixLlSs iswUbf"
+        class="StyledBox__StyledBoxGap-ixLlSs ebfbnM"
         direction="column"
       />
       <div
         class="StyledBox-bStriS okMhX"
-        direction="row"
-        overflow="hidden"
       >
         <div
           class="StyledBox-bStriS bBXCcb"
-          direction="column"
-          overflow="hidden"
         >
           <span>
             2
@@ -261,8 +209,6 @@ exports[`Distribution values renders 1`] = `
         />
         <div
           class="StyledBox-bStriS hsWcIa"
-          direction="column"
-          overflow="hidden"
         >
           <span>
             1

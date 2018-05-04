@@ -59,11 +59,11 @@ const basisStyle = css`
 // we assume we are in the context of a Box going the other direction
 // TODO: revisit this
 const directionStyle = css`
-  ${props => props.direction === 'row' && 'min-height: 0;'}
-  ${props => props.direction === 'column' && 'min-width: 0;'}
+  ${props => props.directionProp === 'row' && 'min-height: 0;'}
+  ${props => props.directionProp === 'column' && 'min-width: 0;'}
   flex-direction: ${props =>
-    (props.direction === 'row-responsive' ? 'row' : props.direction)};
-  ${props => (props.direction === 'row-responsive' ? palm(`
+    (props.directionProp === 'row-responsive' ? 'row' : props.directionProp)};
+  ${props => (props.directionProp === 'row-responsive' ? palm(`
     flex-direction: column;
     flex-basis: auto;
     justify-content: flex-start;
@@ -74,7 +74,7 @@ const directionStyle = css`
 
 const elevationStyle = css`
   box-shadow: ${props =>
-    props.theme.global.elevation[props.grommet.dark ? 'dark' : 'light'][props.elevation]};
+    props.theme.global.elevation[props.grommet.dark ? 'dark' : 'light'][props.elevationProp]};
 `;
 
 const FLEX_MAP = {
@@ -90,14 +90,14 @@ const flexStyle = css`
   };
 `;
 
-const fillStyle = (fill) => {
-  if (fill === 'horizontal') {
+const fillStyle = (fillProp) => {
+  if (fillProp === 'horizontal') {
     return 'width: 100%;';
   }
-  if (fill === 'vertical') {
+  if (fillProp === 'vertical') {
     return 'height: 100%;';
   }
-  if (fill) {
+  if (fillProp) {
     return `
       width: 100%;
       height: 100%;
@@ -337,10 +337,10 @@ const StyledBox = styled.div`
   ${props => props.background && backgroundStyle(props.background, props.theme)}
   ${props => props.border &&
     borderStyle(props.border, props.responsive, props.theme)}
-  ${props => props.direction && directionStyle}
+  ${props => props.directionProp && directionStyle}
   ${props => props.flex !== undefined && flexStyle}
   ${props => props.basis && basisStyle}
-  ${props => props.fillContainer && fillStyle(props.fillContainer)}
+  ${props => props.fillProp && fillStyle(props.fillProp)}
   ${props => props.gridArea && gridAreaStyle}
   ${props => props.justify && justifyStyle}
   ${props => (props.margin &&
@@ -348,9 +348,9 @@ const StyledBox = styled.div`
   ${props => (props.pad &&
     edgeStyle('padding', props.pad, props.responsive, props.theme))}
   ${props => props.round && roundStyle}
-  ${props => props.wrapContents && wrapStyle}
-  ${props => props.overflow && `overflow: ${props.overflow};`}
-  ${props => props.elevation && elevationStyle}
+  ${props => props.wrapProp && wrapStyle}
+  ${props => props.overflowProp && `overflow: ${props.overflowProp};`}
+  ${props => props.elevationProp && elevationStyle}
   ${props => props.animation && animationStyle}
   ${props => props.focus && focusStyle}
 `;
@@ -359,16 +359,16 @@ export default StyledBox.extend`
   ${props => props.theme.box && props.theme.box.extend}
 `;
 
-const gapStyle = (direction, gap, responsive, { global: { edgeSize } }) => {
+const gapStyle = (directionProp, gap, responsive, { global: { edgeSize } }) => {
   const styles = [];
-  if (direction === 'column') {
+  if (directionProp === 'column') {
     styles.push(css`height: ${edgeSize[gap]};`);
     if (responsive) {
       styles.push(palm(`height: ${edgeSize.narrow[gap]};`));
     }
   } else {
     styles.push(`width: ${edgeSize[gap]};`);
-    if (responsive && direction === 'row-responsive') {
+    if (responsive && directionProp === 'row-responsive') {
       styles.push(palm(`
         width: auto;
         height: ${edgeSize.narrow[gap]};
@@ -381,5 +381,5 @@ const gapStyle = (direction, gap, responsive, { global: { edgeSize } }) => {
 export const StyledBoxGap = styled.div`
   flex: 0 0 auto;
   ${props => props.gap &&
-    gapStyle(props.direction, props.gap, props.responsive, props.theme)};
+    gapStyle(props.directionProp, props.gap, props.responsive, props.theme)};
 `;

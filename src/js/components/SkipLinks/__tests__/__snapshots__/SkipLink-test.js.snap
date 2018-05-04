@@ -15,7 +15,6 @@ exports[`SkipLink mounts 1`] = `
   >
     <div
       class="StyledBox-bStriS irmyDL"
-      direction="column"
     >
       <h2
         class="StyledHeading-NQveS wwSdV"
@@ -25,11 +24,9 @@ exports[`SkipLink mounts 1`] = `
       </h2>
       <div
         class="StyledBox-bStriS kOykGg"
-        direction="row"
       >
         <div
           class="StyledBox-bStriS hOqGji"
-          direction="column"
         >
           <a
             class="StyledAnchor-hcnTIZ kwSIan"
@@ -41,7 +38,6 @@ exports[`SkipLink mounts 1`] = `
         </div>
         <div
           class="StyledBox-bStriS hOqGji"
-          direction="column"
         >
           <a
             class="StyledAnchor-hcnTIZ kwSIan"
@@ -174,7 +170,6 @@ exports[`SkipLink mounts 3`] = `
   >
     <div
       class="StyledBox-bStriS irmyDL"
-      direction="column"
     >
       <h2
         class="StyledHeading-NQveS wwSdV"
@@ -184,11 +179,9 @@ exports[`SkipLink mounts 3`] = `
       </h2>
       <div
         class="StyledBox-bStriS kOykGg"
-        direction="row"
       >
         <div
           class="StyledBox-bStriS hOqGji"
-          direction="column"
         >
           <a
             class="StyledAnchor-hcnTIZ fMCzwf"
@@ -200,7 +193,6 @@ exports[`SkipLink mounts 3`] = `
         </div>
         <div
           class="StyledBox-bStriS hOqGji"
-          direction="column"
         >
           <a
             class="StyledAnchor-hcnTIZ kwSIan"
@@ -380,7 +372,6 @@ exports[`SkipLink mounts 5`] = `
         >
           <div
             class="StyledBox-bStriS irmyDL"
-            direction="column"
           >
             <h2
               class="StyledHeading-NQveS wwSdV"
@@ -390,11 +381,9 @@ exports[`SkipLink mounts 5`] = `
             </h2>
             <div
               class="StyledBox-bStriS kOykGg"
-              direction="row"
             >
               <div
                 class="StyledBox-bStriS hOqGji"
-                direction="column"
               >
                 <a
                   class="StyledAnchor-hcnTIZ kwSIan"
@@ -406,7 +395,6 @@ exports[`SkipLink mounts 5`] = `
               </div>
               <div
                 class="StyledBox-bStriS hOqGji"
-                direction="column"
               >
                 <a
                   class="StyledAnchor-hcnTIZ kwSIan"

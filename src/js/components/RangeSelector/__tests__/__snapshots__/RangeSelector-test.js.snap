@@ -6,27 +6,21 @@ exports[`handles keyboard 1`] = `
 >
   <div
     class="StyledBox-bStriS cDPnPm"
-    direction="row"
   >
     <div
       class="StyledBox-bStriS jsbzAg"
-      direction="column"
     />
     <div
       class="StyledBox-bStriS bAJywf"
-      direction="column"
-      overflow="visible"
     >
       <div
         aria-label="Lower Bounds"
         class="StyledBox-bStriS eTKZde"
-        direction="column"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
           class="StyledBox-bStriS iKNwZE"
-          direction="column"
         >
           <svg
             height="12"
@@ -45,24 +39,19 @@ exports[`handles keyboard 1`] = `
     </div>
     <div
       class="StyledBox-bStriS IBmMJ"
-      direction="column"
       style="cursor: ew-resize;"
     />
     <div
       class="StyledBox-bStriS bAJywf"
-      direction="column"
-      overflow="visible"
     >
       <div
         aria-label="Upper Bounds"
         class="StyledBox-bStriS eTKZde"
-        direction="column"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
           class="StyledBox-bStriS iKNwZE"
-          direction="column"
         >
           <svg
             height="12"
@@ -81,7 +70,6 @@ exports[`handles keyboard 1`] = `
     </div>
     <div
       class="StyledBox-bStriS jsbzAg"
-      direction="column"
     />
   </div>
 </div>
@@ -93,27 +81,21 @@ exports[`handles mouse 1`] = `
 >
   <div
     class="StyledBox-bStriS cDPnPm"
-    direction="row"
   >
     <div
       class="StyledBox-bStriS jsbzAg"
-      direction="column"
     />
     <div
       class="StyledBox-bStriS bAJywf"
-      direction="column"
-      overflow="visible"
     >
       <div
         aria-label="Lower Bounds"
         class="StyledBox-bStriS eTKZde"
-        direction="column"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
           class="StyledBox-bStriS iKNwZE"
-          direction="column"
         >
           <svg
             height="12"
@@ -132,24 +114,19 @@ exports[`handles mouse 1`] = `
     </div>
     <div
       class="StyledBox-bStriS IBmMJ"
-      direction="column"
       style="cursor: ew-resize;"
     />
     <div
       class="StyledBox-bStriS bAJywf"
-      direction="column"
-      overflow="visible"
     >
       <div
         aria-label="Upper Bounds"
         class="StyledBox-bStriS eTKZde"
-        direction="column"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
           class="StyledBox-bStriS iKNwZE"
-          direction="column"
         >
           <svg
             height="12"
@@ -168,7 +145,6 @@ exports[`handles mouse 1`] = `
     </div>
     <div
       class="StyledBox-bStriS jsbzAg"
-      direction="column"
     />
   </div>
 </div>
@@ -387,13 +363,11 @@ exports[`renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -403,9 +377,7 @@ exports[`renders 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -415,7 +387,6 @@ exports[`renders 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -432,7 +403,6 @@ exports[`renders 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -452,7 +422,6 @@ exports[`renders 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -464,9 +433,7 @@ exports[`renders 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -476,7 +443,6 @@ exports[`renders 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -493,7 +459,6 @@ exports[`renders 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -513,7 +478,6 @@ exports[`renders 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -737,13 +701,11 @@ exports[`renders color 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -753,9 +715,7 @@ exports[`renders color 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -765,7 +725,6 @@ exports[`renders color 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -782,7 +741,6 @@ exports[`renders color 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -802,7 +760,6 @@ exports[`renders color 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -814,9 +771,7 @@ exports[`renders color 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -826,7 +781,6 @@ exports[`renders color 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -843,7 +797,6 @@ exports[`renders color 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -863,7 +816,6 @@ exports[`renders color 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -1252,13 +1204,11 @@ exports[`renders direction 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -1268,9 +1218,7 @@ exports[`renders direction 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -1280,7 +1228,6 @@ exports[`renders direction 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -1297,7 +1244,6 @@ exports[`renders direction 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -1317,7 +1263,6 @@ exports[`renders direction 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -1329,9 +1274,7 @@ exports[`renders direction 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -1341,7 +1284,6 @@ exports[`renders direction 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -1358,7 +1300,6 @@ exports[`renders direction 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -1378,7 +1319,6 @@ exports[`renders direction 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -1389,13 +1329,11 @@ exports[`renders direction 1`] = `
   <div
     aria-label={undefined}
     className="c7"
-    direction="column"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c7"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -1405,9 +1343,7 @@ exports[`renders direction 1`] = `
     <div
       aria-label={undefined}
       className="c8"
-      direction="row"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -1417,7 +1353,6 @@ exports[`renders direction 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c9"
-        direction="row"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -1434,7 +1369,6 @@ exports[`renders direction 1`] = `
         <div
           aria-label={undefined}
           className="c10"
-          direction="row"
         >
           <svg
             height={12}
@@ -1454,7 +1388,6 @@ exports[`renders direction 1`] = `
     <div
       aria-label={undefined}
       className="c11"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -1466,9 +1399,7 @@ exports[`renders direction 1`] = `
     <div
       aria-label={undefined}
       className="c8"
-      direction="row"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -1478,7 +1409,6 @@ exports[`renders direction 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c9"
-        direction="row"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -1495,7 +1425,6 @@ exports[`renders direction 1`] = `
         <div
           aria-label={undefined}
           className="c10"
-          direction="row"
         >
           <svg
             height={12}
@@ -1515,7 +1444,6 @@ exports[`renders direction 1`] = `
     <div
       aria-label={undefined}
       className="c7"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -1770,13 +1698,11 @@ exports[`renders invert 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -1786,9 +1712,7 @@ exports[`renders invert 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -1798,7 +1722,6 @@ exports[`renders invert 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -1815,7 +1738,6 @@ exports[`renders invert 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -1835,7 +1757,6 @@ exports[`renders invert 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -1847,9 +1768,7 @@ exports[`renders invert 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -1859,7 +1778,6 @@ exports[`renders invert 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -1876,7 +1794,6 @@ exports[`renders invert 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -1896,7 +1813,6 @@ exports[`renders invert 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -1907,13 +1823,11 @@ exports[`renders invert 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -1923,9 +1837,7 @@ exports[`renders invert 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -1935,7 +1847,6 @@ exports[`renders invert 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -1952,7 +1863,6 @@ exports[`renders invert 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -1972,7 +1882,6 @@ exports[`renders invert 1`] = `
     <div
       aria-label={undefined}
       className="c7"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -1984,9 +1893,7 @@ exports[`renders invert 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -1996,7 +1903,6 @@ exports[`renders invert 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -2013,7 +1919,6 @@ exports[`renders invert 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -2033,7 +1938,6 @@ exports[`renders invert 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -2257,13 +2161,11 @@ exports[`renders max 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.6078431372549 0 0",
@@ -2273,9 +2175,7 @@ exports[`renders max 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -2285,7 +2185,6 @@ exports[`renders max 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -2302,7 +2201,6 @@ exports[`renders max 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -2322,7 +2220,6 @@ exports[`renders max 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -2334,9 +2231,7 @@ exports[`renders max 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -2346,7 +2241,6 @@ exports[`renders max 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -2363,7 +2257,6 @@ exports[`renders max 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -2383,7 +2276,6 @@ exports[`renders max 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.6078431372549 0 0",
@@ -2607,13 +2499,11 @@ exports[`renders min 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "9.89010989010989 0 0",
@@ -2623,9 +2513,7 @@ exports[`renders min 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -2635,7 +2523,6 @@ exports[`renders min 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -2652,7 +2539,6 @@ exports[`renders min 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -2672,7 +2558,6 @@ exports[`renders min 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -2684,9 +2569,7 @@ exports[`renders min 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -2696,7 +2579,6 @@ exports[`renders min 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -2713,7 +2595,6 @@ exports[`renders min 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -2733,7 +2614,6 @@ exports[`renders min 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "69.23076923076923 0 0",
@@ -3019,13 +2899,11 @@ exports[`renders opacity 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -3035,9 +2913,7 @@ exports[`renders opacity 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -3047,7 +2923,6 @@ exports[`renders opacity 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -3064,7 +2939,6 @@ exports[`renders opacity 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -3084,7 +2958,6 @@ exports[`renders opacity 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -3096,9 +2969,7 @@ exports[`renders opacity 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -3108,7 +2979,6 @@ exports[`renders opacity 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -3125,7 +2995,6 @@ exports[`renders opacity 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -3145,7 +3014,6 @@ exports[`renders opacity 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -3156,13 +3024,11 @@ exports[`renders opacity 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -3172,9 +3038,7 @@ exports[`renders opacity 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -3184,7 +3048,6 @@ exports[`renders opacity 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -3201,7 +3064,6 @@ exports[`renders opacity 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -3221,7 +3083,6 @@ exports[`renders opacity 1`] = `
     <div
       aria-label={undefined}
       className="c7"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -3233,9 +3094,7 @@ exports[`renders opacity 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -3245,7 +3104,6 @@ exports[`renders opacity 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -3262,7 +3120,6 @@ exports[`renders opacity 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -3282,7 +3139,6 @@ exports[`renders opacity 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -3293,13 +3149,11 @@ exports[`renders opacity 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -3309,9 +3163,7 @@ exports[`renders opacity 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -3321,7 +3173,6 @@ exports[`renders opacity 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -3338,7 +3189,6 @@ exports[`renders opacity 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -3358,7 +3208,6 @@ exports[`renders opacity 1`] = `
     <div
       aria-label={undefined}
       className="c8"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -3370,9 +3219,7 @@ exports[`renders opacity 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -3382,7 +3229,6 @@ exports[`renders opacity 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -3399,7 +3245,6 @@ exports[`renders opacity 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -3419,7 +3264,6 @@ exports[`renders opacity 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -3953,13 +3797,11 @@ exports[`renders round 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -3969,9 +3811,7 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -3981,7 +3821,6 @@ exports[`renders round 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -3998,7 +3837,6 @@ exports[`renders round 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -4018,7 +3856,6 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -4030,9 +3867,7 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -4042,7 +3877,6 @@ exports[`renders round 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -4059,7 +3893,6 @@ exports[`renders round 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -4079,7 +3912,6 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -4090,13 +3922,11 @@ exports[`renders round 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c7"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -4106,9 +3936,7 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -4118,7 +3946,6 @@ exports[`renders round 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -4135,7 +3962,6 @@ exports[`renders round 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -4155,7 +3981,6 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c8"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -4167,9 +3992,7 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -4179,7 +4002,6 @@ exports[`renders round 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -4196,7 +4018,6 @@ exports[`renders round 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -4216,7 +4037,6 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c7"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -4227,13 +4047,11 @@ exports[`renders round 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c9"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -4243,9 +4061,7 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -4255,7 +4071,6 @@ exports[`renders round 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -4272,7 +4087,6 @@ exports[`renders round 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -4292,7 +4106,6 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c10"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -4304,9 +4117,7 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -4316,7 +4127,6 @@ exports[`renders round 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -4333,7 +4143,6 @@ exports[`renders round 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -4353,7 +4162,6 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c9"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -4364,13 +4172,11 @@ exports[`renders round 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c11"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -4380,9 +4186,7 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -4392,7 +4196,6 @@ exports[`renders round 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -4409,7 +4212,6 @@ exports[`renders round 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -4429,7 +4231,6 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c12"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -4441,9 +4242,7 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -4453,7 +4252,6 @@ exports[`renders round 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -4470,7 +4268,6 @@ exports[`renders round 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -4490,7 +4287,6 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c11"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -4501,13 +4297,11 @@ exports[`renders round 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c13"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -4517,9 +4311,7 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -4529,7 +4321,6 @@ exports[`renders round 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -4546,7 +4337,6 @@ exports[`renders round 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -4566,7 +4356,6 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c14"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -4578,9 +4367,7 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -4590,7 +4377,6 @@ exports[`renders round 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -4607,7 +4393,6 @@ exports[`renders round 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -4627,7 +4412,6 @@ exports[`renders round 1`] = `
     <div
       aria-label={undefined}
       className="c13"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -4851,13 +4635,11 @@ exports[`renders size 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -4867,9 +4649,7 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -4879,7 +4659,6 @@ exports[`renders size 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -4896,7 +4675,6 @@ exports[`renders size 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -4916,7 +4694,6 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -4928,9 +4705,7 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -4940,7 +4715,6 @@ exports[`renders size 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -4957,7 +4731,6 @@ exports[`renders size 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -4977,7 +4750,6 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -4988,13 +4760,11 @@ exports[`renders size 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -5004,9 +4774,7 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -5016,7 +4784,6 @@ exports[`renders size 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -5033,7 +4800,6 @@ exports[`renders size 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -5053,7 +4819,6 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -5065,9 +4830,7 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -5077,7 +4840,6 @@ exports[`renders size 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -5094,7 +4856,6 @@ exports[`renders size 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -5114,7 +4875,6 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -5125,13 +4885,11 @@ exports[`renders size 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -5141,9 +4899,7 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -5153,7 +4909,6 @@ exports[`renders size 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -5170,7 +4925,6 @@ exports[`renders size 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -5190,7 +4944,6 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -5202,9 +4955,7 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -5214,7 +4965,6 @@ exports[`renders size 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -5231,7 +4981,6 @@ exports[`renders size 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -5251,7 +5000,6 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -5262,13 +5010,11 @@ exports[`renders size 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -5278,9 +5024,7 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -5290,7 +5034,6 @@ exports[`renders size 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -5307,7 +5050,6 @@ exports[`renders size 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -5327,7 +5069,6 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -5339,9 +5080,7 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -5351,7 +5090,6 @@ exports[`renders size 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -5368,7 +5106,6 @@ exports[`renders size 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -5388,7 +5125,6 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -5399,13 +5135,11 @@ exports[`renders size 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -5415,9 +5149,7 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -5427,7 +5159,6 @@ exports[`renders size 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -5444,7 +5175,6 @@ exports[`renders size 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -5464,7 +5194,6 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -5476,9 +5205,7 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -5488,7 +5215,6 @@ exports[`renders size 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -5505,7 +5231,6 @@ exports[`renders size 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -5525,7 +5250,6 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -5536,13 +5260,11 @@ exports[`renders size 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -5552,9 +5274,7 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -5564,7 +5284,6 @@ exports[`renders size 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -5581,7 +5300,6 @@ exports[`renders size 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -5601,7 +5319,6 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -5613,9 +5330,7 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -5625,7 +5340,6 @@ exports[`renders size 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -5642,7 +5356,6 @@ exports[`renders size 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -5662,7 +5375,6 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -5673,13 +5385,11 @@ exports[`renders size 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "19.801980198019802 0 0",
@@ -5689,9 +5399,7 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -5701,7 +5409,6 @@ exports[`renders size 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -5718,7 +5425,6 @@ exports[`renders size 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -5738,7 +5444,6 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -5750,9 +5455,7 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -5762,7 +5465,6 @@ exports[`renders size 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -5779,7 +5481,6 @@ exports[`renders size 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -5799,7 +5500,6 @@ exports[`renders size 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "69.3069306930693 0 0",
@@ -6023,13 +5723,11 @@ exports[`renders step 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="row"
     onClick={undefined}
   >
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "18.18181818181818 0 0",
@@ -6039,9 +5737,7 @@ exports[`renders step 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -6051,7 +5747,6 @@ exports[`renders step 1`] = `
       <div
         aria-label="Lower Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -6068,7 +5763,6 @@ exports[`renders step 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -6088,7 +5782,6 @@ exports[`renders step 1`] = `
     <div
       aria-label={undefined}
       className="c6"
-      direction="column"
       onMouseDown={undefined}
       style={
         Object {
@@ -6100,9 +5793,7 @@ exports[`renders step 1`] = `
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
       onKeyDown={[Function]}
-      overflow="visible"
       style={
         Object {
           "flex": "0 0 1px",
@@ -6112,7 +5803,6 @@ exports[`renders step 1`] = `
       <div
         aria-label="Upper Bounds"
         className="c4"
-        direction="column"
         onBlur={[Function]}
         onFocus={[Function]}
         onMouseDown={undefined}
@@ -6129,7 +5819,6 @@ exports[`renders step 1`] = `
         <div
           aria-label={undefined}
           className="c5"
-          direction="column"
         >
           <svg
             height={12}
@@ -6149,7 +5838,6 @@ exports[`renders step 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
       style={
         Object {
           "flex": "63.63636363636363 0 0",

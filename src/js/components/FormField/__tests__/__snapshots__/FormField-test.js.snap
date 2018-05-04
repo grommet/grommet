@@ -120,7 +120,6 @@ exports[`renders 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -129,13 +128,11 @@ exports[`renders 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
     />
   </div>
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -144,7 +141,6 @@ exports[`renders 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
     >
       <div
         className="c3"
@@ -292,7 +288,6 @@ exports[`renders error 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -301,12 +296,10 @@ exports[`renders error 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
     />
     <div
       aria-label={undefined}
       className="c3"
-      direction="column"
     >
       <span
         className="c4"
@@ -446,7 +439,6 @@ exports[`renders help 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -455,7 +447,6 @@ exports[`renders help 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
     >
       <span
         className="c3"
@@ -467,7 +458,6 @@ exports[`renders help 1`] = `
     <div
       aria-label={undefined}
       className="c4"
-      direction="column"
     />
   </div>
 </div>
@@ -555,7 +545,6 @@ exports[`renders htmlFor 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -564,7 +553,6 @@ exports[`renders htmlFor 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
     />
   </div>
 </div>
@@ -696,7 +684,6 @@ exports[`renders label 1`] = `
   <div
     aria-label={undefined}
     className="c1"
-    direction="column"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -705,7 +692,6 @@ exports[`renders label 1`] = `
     <div
       aria-label={undefined}
       className="c2"
-      direction="column"
     >
       <label
         className="c3"
@@ -717,7 +703,6 @@ exports[`renders label 1`] = `
     <div
       aria-label={undefined}
       className="c4"
-      direction="column"
     />
   </div>
 </div>
