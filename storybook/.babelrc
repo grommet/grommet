@@ -1,0 +1,11 @@
+{
+  "presets": [
+    "env",
+    "stage-1",
+    "react"
+  ],
+  "plugins": [
+    ["grommet"],
+    ["styled-components", { "useDisplayName": false }]
+  ]
+}

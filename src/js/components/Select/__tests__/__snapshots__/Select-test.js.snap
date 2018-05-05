@@ -72,6 +72,18 @@ exports[`Select closes drop on esc 2`] = `
 }
 
 @media only screen and (max-width:699px) {
+  .ktPzMF {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .ktPzMF {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .hAGfCP {
     margin-left: 6px;
     margin-right: 6px;
@@ -133,7 +145,7 @@ exports[`Select closes drop on esc 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .fYUIhN {
+  .cfZmJV {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -180,27 +192,30 @@ exports[`Select closes drop on esc 2`] = `
 exports[`Select closes drop on esc 3`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK cfZmJV"
   id="test-select"
   type="button"
 >
   <div
-    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      class="StyledBox-bStriS ktPzMF"
     >
-      <input
-        autocomplete="off"
-        class="StyledTextInput-bzOzsW kxIdRO"
-        id="test-select"
-        readonly=""
-        style="cursor: pointer;"
-        tabindex="-1"
-        type="text"
-        value=""
-      />
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="StyledTextInput-bzOzsW enFJba"
+          id="test-select"
+          readonly=""
+          style="cursor: pointer;"
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
@@ -231,27 +246,30 @@ exports[`Select closes drop on esc 3`] = `
 exports[`Select closes drop on esc 4`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK cfZmJV"
   id="test-select"
   type="button"
 >
   <div
-    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      class="StyledBox-bStriS ktPzMF"
     >
-      <input
-        autocomplete="off"
-        class="StyledTextInput-bzOzsW kxIdRO"
-        id="test-select"
-        readonly=""
-        style="cursor: pointer;"
-        tabindex="-1"
-        type="text"
-        value=""
-      />
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="StyledTextInput-bzOzsW enFJba"
+          id="test-select"
+          readonly=""
+          style="cursor: pointer;"
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
@@ -282,27 +300,30 @@ exports[`Select closes drop on esc 4`] = `
 exports[`Select mounts 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK cfZmJV"
   id="test-select"
   type="button"
 >
   <div
-    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      class="StyledBox-bStriS ktPzMF"
     >
-      <input
-        autocomplete="off"
-        class="StyledTextInput-bzOzsW kxIdRO"
-        id="test-select"
-        readonly=""
-        style="cursor: pointer;"
-        tabindex="-1"
-        type="text"
-        value=""
-      />
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="StyledTextInput-bzOzsW enFJba"
+          id="test-select"
+          readonly=""
+          style="cursor: pointer;"
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
@@ -333,27 +354,30 @@ exports[`Select mounts 1`] = `
 exports[`Select mounts 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK cfZmJV"
   id="test-select"
   type="button"
 >
   <div
-    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      class="StyledBox-bStriS ktPzMF"
     >
-      <input
-        autocomplete="off"
-        class="StyledTextInput-bzOzsW kxIdRO"
-        id="test-select"
-        readonly=""
-        style="cursor: pointer;"
-        tabindex="-1"
-        type="text"
-        value=""
-      />
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="StyledTextInput-bzOzsW enFJba"
+          id="test-select"
+          readonly=""
+          style="cursor: pointer;"
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
@@ -453,6 +477,18 @@ exports[`Select mounts 4`] = `
 }
 
 @media only screen and (max-width:699px) {
+  .ktPzMF {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .ktPzMF {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .hAGfCP {
     margin-left: 6px;
     margin-right: 6px;
@@ -502,7 +538,7 @@ exports[`Select mounts 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .fYUIhN {
+  .cfZmJV {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -588,28 +624,31 @@ exports[`Select mounts 5`] = `
 exports[`Select mounts disabled 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK cDmTYk"
+  class="StyledButton-gXzblK gpCJao"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      class="StyledBox-bStriS ktPzMF"
     >
-      <input
-        autocomplete="off"
-        class="StyledTextInput-bzOzsW kxIdRO"
-        id="test-select"
-        readonly=""
-        style="cursor: pointer;"
-        tabindex="-1"
-        type="text"
-        value=""
-      />
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="StyledTextInput-bzOzsW enFJba"
+          id="test-select"
+          readonly=""
+          style="cursor: pointer;"
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
@@ -640,28 +679,31 @@ exports[`Select mounts disabled 1`] = `
 exports[`Select mounts disabled 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK cDmTYk"
+  class="StyledButton-gXzblK gpCJao"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      class="StyledBox-bStriS ktPzMF"
     >
-      <input
-        autocomplete="off"
-        class="StyledTextInput-bzOzsW kxIdRO"
-        id="test-select"
-        readonly=""
-        style="cursor: pointer;"
-        tabindex="-1"
-        type="text"
-        value=""
-      />
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="StyledTextInput-bzOzsW enFJba"
+          id="test-select"
+          readonly=""
+          style="cursor: pointer;"
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
@@ -692,28 +734,31 @@ exports[`Select mounts disabled 2`] = `
 exports[`Select mounts multiple 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK cfZmJV"
   id="test-select"
   type="button"
 >
   <div
-    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      class="StyledBox-bStriS ktPzMF"
     >
-      <input
-        autocomplete="off"
-        class="StyledTextInput-bzOzsW kxIdRO"
-        id="test-select"
-        multiple=""
-        readonly=""
-        style="cursor: pointer;"
-        tabindex="-1"
-        type="text"
-        value="multiple"
-      />
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="StyledTextInput-bzOzsW enFJba"
+          id="test-select"
+          multiple=""
+          readonly=""
+          style="cursor: pointer;"
+          tabindex="-1"
+          type="text"
+          value="multiple"
+        />
+      </div>
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
@@ -744,28 +789,31 @@ exports[`Select mounts multiple 1`] = `
 exports[`Select mounts multiple 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK cfZmJV"
   id="test-select"
   type="button"
 >
   <div
-    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      class="StyledBox-bStriS ktPzMF"
     >
-      <input
-        autocomplete="off"
-        class="StyledTextInput-bzOzsW kxIdRO"
-        id="test-select"
-        multiple=""
-        readonly=""
-        style="cursor: pointer;"
-        tabindex="-1"
-        type="text"
-        value="multiple"
-      />
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="StyledTextInput-bzOzsW enFJba"
+          id="test-select"
+          multiple=""
+          readonly=""
+          style="cursor: pointer;"
+          tabindex="-1"
+          type="text"
+          value="multiple"
+        />
+      </div>
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
@@ -865,6 +913,18 @@ exports[`Select mounts multiple 4`] = `
 }
 
 @media only screen and (max-width:699px) {
+  .ktPzMF {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .ktPzMF {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .hAGfCP {
     margin-left: 6px;
     margin-right: 6px;
@@ -938,7 +998,7 @@ exports[`Select mounts multiple 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .fYUIhN {
+  .cfZmJV {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1031,27 +1091,30 @@ exports[`Select mounts multiple 5`] = `
 exports[`Select mounts with complex options and children 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK cfZmJV"
   id="test-select"
   type="button"
 >
   <div
-    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      class="StyledBox-bStriS ktPzMF"
     >
-      <input
-        autocomplete="off"
-        class="StyledTextInput-bzOzsW kxIdRO"
-        id="test-select"
-        readonly=""
-        style="cursor: pointer;"
-        tabindex="-1"
-        type="text"
-        value=""
-      />
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="StyledTextInput-bzOzsW enFJba"
+          id="test-select"
+          readonly=""
+          style="cursor: pointer;"
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
@@ -1082,27 +1145,30 @@ exports[`Select mounts with complex options and children 1`] = `
 exports[`Select mounts with complex options and children 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK cfZmJV"
   id="test-select"
   type="button"
 >
   <div
-    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      class="StyledBox-bStriS ktPzMF"
     >
-      <input
-        autocomplete="off"
-        class="StyledTextInput-bzOzsW kxIdRO"
-        id="test-select"
-        readonly=""
-        style="cursor: pointer;"
-        tabindex="-1"
-        type="text"
-        value=""
-      />
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="StyledTextInput-bzOzsW enFJba"
+          id="test-select"
+          readonly=""
+          style="cursor: pointer;"
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
@@ -1190,6 +1256,18 @@ exports[`Select mounts with complex options and children 4`] = `
 }
 
 @media only screen and (max-width:699px) {
+  .ktPzMF {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .ktPzMF {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .hAGfCP {
     margin-left: 6px;
     margin-right: 6px;
@@ -1239,7 +1317,7 @@ exports[`Select mounts with complex options and children 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .fYUIhN {
+  .cfZmJV {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1369,6 +1447,18 @@ exports[`Select mounts with search 2`] = `
 }
 
 @media only screen and (max-width:699px) {
+  .ktPzMF {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .ktPzMF {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .hAGfCP {
     margin-left: 6px;
     margin-right: 6px;
@@ -1430,7 +1520,7 @@ exports[`Select mounts with search 2`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .fYUIhN {
+  .cfZmJV {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1569,6 +1659,18 @@ exports[`Select mounts with search 5`] = `
 }
 
 @media only screen and (max-width:699px) {
+  .ktPzMF {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .ktPzMF {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .hAGfCP {
     margin-left: 6px;
     margin-right: 6px;
@@ -1630,7 +1732,7 @@ exports[`Select mounts with search 5`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .fYUIhN {
+  .cfZmJV {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1677,28 +1779,31 @@ exports[`Select mounts with search 5`] = `
 exports[`Select renders multiple 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK cfZmJV"
   id="test-select"
   type="button"
 >
   <div
-    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      class="StyledBox-bStriS ktPzMF"
     >
-      <input
-        autocomplete="off"
-        class="StyledTextInput-bzOzsW kxIdRO"
-        id="test-select"
-        multiple=""
-        readonly=""
-        style="cursor: pointer;"
-        tabindex="-1"
-        type="text"
-        value=""
-      />
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="StyledTextInput-bzOzsW enFJba"
+          id="test-select"
+          multiple=""
+          readonly=""
+          style="cursor: pointer;"
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"
@@ -1729,27 +1834,30 @@ exports[`Select renders multiple 1`] = `
 exports[`Select renders size 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK cfZmJV"
   id="test-select"
   type="button"
 >
   <div
-    aria-hidden="true"
     class="StyledBox-bStriS iiEOir"
   >
     <div
-      class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      class="StyledBox-bStriS ktPzMF"
     >
-      <input
-        autocomplete="off"
-        class="StyledTextInput-bzOzsW ihXnnm"
-        id="test-select"
-        readonly=""
-        style="cursor: pointer;"
-        tabindex="-1"
-        type="text"
-        value=""
-      />
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="StyledTextInput-bzOzsW dGDNWv"
+          id="test-select"
+          readonly=""
+          style="cursor: pointer;"
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
     <div
       class="StyledBox-bStriS hAGfCP"

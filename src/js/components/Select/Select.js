@@ -63,7 +63,11 @@ class Select extends Component {
     if (!React.isValidElement(value)) {
       if (Array.isArray(value)) {
         if (value.length > 1) {
-          textValue = messages.multiple;
+          if (React.isValidElement(value[0])) {
+            selectValue = value;
+          } else {
+            textValue = messages.multiple;
+          }
         } else if (value.length === 1) {
           if (React.isValidElement(value[0])) {
             selectValue = value[0];
@@ -92,28 +96,30 @@ class Select extends Component {
           onClose={this.onClose}
           a11yTitle={`${a11yTitle}${typeof value === 'string' ? `, ${value}` : ''}`}
           dropContent={<SelectContainer {...this.props} onChange={onSelectChange} />}
+          fill={true}
         >
           <Box
-            aria-hidden={true}
             align='center'
             border={!plain ? 'all' : undefined}
             direction='row'
             justify='between'
           >
-            {selectValue || (
-              <TextInput
-                style={{ cursor: 'pointer' }}
-                ref={(ref) => { this.inputRef = ref; }}
-                {...rest}
-                tabIndex='-1'
-                type='text'
-                placeholder={placeholder}
-                plain={true}
-                size={size}
-                readOnly={true}
-                value={textValue}
-              />
-            )}
+            <Box direction='row' flex={true}>
+              {selectValue || (
+                <TextInput
+                  style={{ cursor: 'pointer' }}
+                  ref={(ref) => { this.inputRef = ref; }}
+                  {...rest}
+                  tabIndex='-1'
+                  type='text'
+                  placeholder={placeholder}
+                  plain={true}
+                  readOnly={true}
+                  value={textValue}
+                  size={size}
+                />
+              )}
+            </Box>
             <Box
               margin={{ horizontal: 'small' }}
               flex={false}
