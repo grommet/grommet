@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
+import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
@@ -10,6 +11,8 @@ import { withTheme } from '../hocs';
 
 import SelectContainer from './SelectContainer';
 import doc from './doc';
+
+const SelectTextInput = styled(TextInput)`cursor: pointer;`;
 
 class Select extends Component {
   static defaultProps = {
@@ -96,7 +99,6 @@ class Select extends Component {
           onClose={this.onClose}
           a11yTitle={`${a11yTitle}${typeof value === 'string' ? `, ${value}` : ''}`}
           dropContent={<SelectContainer {...this.props} onChange={onSelectChange} />}
-          fill={true}
         >
           <Box
             align='center'
@@ -106,8 +108,7 @@ class Select extends Component {
           >
             <Box direction='row' flex={true}>
               {selectValue || (
-                <TextInput
-                  style={{ cursor: 'pointer' }}
+                <SelectTextInput
                   ref={(ref) => { this.inputRef = ref; }}
                   {...rest}
                   tabIndex='-1'

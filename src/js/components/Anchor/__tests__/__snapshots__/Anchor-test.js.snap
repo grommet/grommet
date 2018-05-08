@@ -39,8 +39,6 @@ exports[`Anchor disabled renders 1`] = `
     onBlur={[Function]}
     onClick={undefined}
     onFocus={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
   />
 </div>
 `;
@@ -97,8 +95,6 @@ exports[`Anchor focus renders 1`] = `
     onBlur={[Function]}
     onClick={undefined}
     onFocus={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
   >
     Test
   </a>
@@ -784,8 +780,6 @@ exports[`Anchor icon label renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
   >
     <span
       className="c2"
@@ -841,8 +835,6 @@ exports[`Anchor primary renders 1`] = `
     onBlur={[Function]}
     onClick={undefined}
     onFocus={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
   >
     Test
   </a>
@@ -889,8 +881,6 @@ exports[`Anchor renders 1`] = `
     onBlur={[Function]}
     onClick={undefined}
     onFocus={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
   />
 </div>
 `;
@@ -935,8 +925,6 @@ exports[`Anchor renders with children 1`] = `
     onBlur={[Function]}
     onClick={undefined}
     onFocus={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
   >
     children
   </a>
@@ -1622,8 +1610,6 @@ exports[`Anchor reverse icon label renders 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
   >
     Test
     <span
@@ -2303,8 +2289,6 @@ exports[`Anchor warns about invalid icon render 1`] = `
     onBlur={[Function]}
     onClick={undefined}
     onFocus={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
   >
     invalid
   </a>
@@ -2351,8 +2335,6 @@ exports[`Anchor warns about invalid label render 1`] = `
     onBlur={[Function]}
     onClick={undefined}
     onFocus={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
   >
     invalid
   </a>

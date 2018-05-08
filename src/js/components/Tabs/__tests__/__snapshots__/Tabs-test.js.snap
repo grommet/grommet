@@ -75,10 +75,8 @@ exports[`Tabs changes to second tab 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
-        onMouseDown={[Function]}
         onMouseOut={[Function]}
         onMouseOver={[Function]}
-        onMouseUp={[Function]}
         role="tab"
         type="button"
       >
@@ -106,10 +104,8 @@ exports[`Tabs changes to second tab 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
-        onMouseDown={[Function]}
         onMouseOut={[Function]}
         onMouseOver={[Function]}
-        onMouseUp={[Function]}
         role="tab"
         type="button"
       >
@@ -158,10 +154,8 @@ exports[`Tabs renders complex Tab title 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
-        onMouseDown={[Function]}
         onMouseOut={[Function]}
         onMouseOver={[Function]}
-        onMouseUp={[Function]}
         role="tab"
         type="button"
       >
@@ -186,10 +180,8 @@ exports[`Tabs renders complex Tab title 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
-        onMouseDown={[Function]}
         onMouseOut={[Function]}
         onMouseOver={[Function]}
-        onMouseUp={[Function]}
         role="tab"
         type="button"
       >
@@ -236,10 +228,8 @@ exports[`Tabs renders with Tab 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
-        onMouseDown={[Function]}
         onMouseOut={[Function]}
         onMouseOver={[Function]}
-        onMouseUp={[Function]}
         role="tab"
         type="button"
       >
@@ -266,10 +256,8 @@ exports[`Tabs renders with Tab 1`] = `
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
-        onMouseDown={[Function]}
         onMouseOut={[Function]}
         onMouseOver={[Function]}
-        onMouseUp={[Function]}
         role="tab"
         type="button"
       >

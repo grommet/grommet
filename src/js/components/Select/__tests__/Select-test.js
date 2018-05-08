@@ -46,7 +46,8 @@ describe('Select', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
   });
 
-  test('mounts with search', (done) => {
+  test('mounts with search', () => {
+    jest.useFakeTimers();
     const onSearch = jest.fn();
     const component = mount(
       <Select id='test-select' options={['one', 'two']} onSearch={onSearch} />
@@ -56,19 +57,16 @@ describe('Select', () => {
     expectPortal('test-select__drop').toMatchSnapshot();
 
     setTimeout(() => {
+      jest.runAllTimers();
+
       expect(document.activeElement).toMatchSnapshot();
 
       document.activeElement.value = 'a';
 
       Simulate.input(document.activeElement);
 
-      // wait for debounce to kick in
-      setTimeout(() => {
-        expect(onSearch).toBeCalledWith('a');
-        expectPortal('test-select__drop').toMatchSnapshot();
-        done();
-      }, 200);
-    }, 100);
+      expect(onSearch).toBeCalledWith('a');
+    }, 200);
   });
 
   test('closes drop on esc', () => {
@@ -196,7 +194,7 @@ describe('Select', () => {
     expect(document.getElementById('test-menu__drop')).toBeNull();
   });
 
-  test('mounts multiple', (done) => {
+  test('mounts multiple', () => {
     const component = mount(
       <Select
         id='test-select'
@@ -213,11 +211,6 @@ describe('Select', () => {
 
     expect(component.getDOMNode()).toMatchSnapshot();
     expectPortal('test-select__drop').toMatchSnapshot();
-
-    setTimeout(() => {
-      expect(document.activeElement).toMatchSnapshot();
-      done();
-    }, 100);
   });
 
   test('selects another option', () => {

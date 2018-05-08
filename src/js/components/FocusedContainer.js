@@ -19,19 +19,14 @@ export default class FocusedContainer extends Component {
 
   componentDidMount() {
     const { hidden } = this.props;
-    if (!hidden) {
-      this.trapFocus();
-    }
-  }
-
-  componentWillReceiveProps({ hidden }) {
-    if (hidden !== this.props.hidden) {
+    // making sure trap focus always execute
+    // after removeTrap for the case where two drops
+    // are open at the same time
+    setTimeout(() => {
       if (!hidden) {
         this.trapFocus();
-      } else {
-        this.removeTrap();
       }
-    }
+    }, 0);
   }
 
   componentWillUnmount() {

@@ -73,8 +73,6 @@ exports[`RoutedButton renders 1`] = `
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
-      onMouseDown={[Function]}
-      onMouseUp={[Function]}
       type={undefined}
     >
       <span

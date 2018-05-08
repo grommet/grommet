@@ -13,7 +13,8 @@ Enzyme.configure({ adapter: new Adapter() });
 describe('SkipLink', () => {
   beforeEach(createPortal);
 
-  test('mounts', (done) => {
+  test('mounts', () => {
+    jest.useFakeTimers();
     mount(
       <div>
         <SkipLinks id='skip-links'>
@@ -41,8 +42,8 @@ describe('SkipLink', () => {
     document.getElementById('skip-links').querySelector('a').blur();
 
     setTimeout(() => {
+      jest.runAllTimers();
       expect(document.activeElement).toMatchSnapshot();
-      done();
     }, 50);
   });
 });

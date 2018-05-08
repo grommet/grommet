@@ -776,8 +776,6 @@ exports[`renders 1`] = `
     onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
   >
     <div
       aria-label={undefined}
@@ -851,8 +849,6 @@ exports[`renders 1`] = `
           onBlur={[Function]}
           onClick={undefined}
           onFocus={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
           type="button"
         >
           <div
@@ -901,8 +897,6 @@ exports[`renders 1`] = `
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
             type="button"
           >
             <span
@@ -942,8 +936,6 @@ exports[`renders 1`] = `
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
             type="button"
           >
             <span
@@ -985,8 +977,6 @@ exports[`renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
           type="button"
         >
           <div

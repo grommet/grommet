@@ -29,13 +29,13 @@ test('withFocus skip focus when mouse active', () => {
   expect(tree).toMatchSnapshot();
 
   const container = findAllByType(tree, 'div');
-  container[0].props.onMouseDown();
+  global.document.dispatchEvent(new Event('mousedown'));
   container[0].props.onFocus();
 
   tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 
-  container[0].props.onMouseUp();
+  global.document.dispatchEvent(new Event('mouseup'));
   container[0].props.onFocus();
 
   tree = component.toJSON();
@@ -50,14 +50,10 @@ test('withFocus skip focus when mouse active', () => {
 test('withFocus calls callback', () => {
   const onFocus = jest.fn();
   const onBlur = jest.fn();
-  const onMouseDown = jest.fn();
-  const onMouseUp = jest.fn();
   const component = renderer.create(
     <Test
       onFocus={onFocus}
       onBlur={onBlur}
-      onMouseDown={onMouseDown}
-      onMouseUp={onMouseUp}
     />
   );
   const tree = component.toJSON();
@@ -65,12 +61,8 @@ test('withFocus calls callback', () => {
   const container = findAllByType(tree, 'div');
   container[0].props.onFocus();
   container[0].props.onBlur();
-  container[0].props.onMouseDown();
-  container[0].props.onMouseUp();
 
   expect(onFocus).toBeCalled();
   expect(onBlur).toBeCalled();
-  expect(onMouseDown).toBeCalled();
-  expect(onMouseUp).toBeCalled();
 });
 

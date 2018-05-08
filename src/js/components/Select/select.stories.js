@@ -83,7 +83,7 @@ class SeasonsSelect extends Component {
               value={
                 selectedSeasons && selectedSeasons.length
                   ? (
-                    <Box wrap={true} direction='row'>
+                    <Box wrap={true} direction='row' style={{ width: '208px' }}>
                       {selectedSeasons.map(this.renderSeason)}
                     </Box>
                   )

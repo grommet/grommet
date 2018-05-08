@@ -25,11 +25,7 @@ class Drop extends Component {
     const { restrictFocus } = this.props;
     if (restrictFocus && this.originalFocusedElement) {
       if (this.originalFocusedElement.focus) {
-        // wait for the fixed positioning to come back to normal
-        // see layer styling for reference
-        setTimeout(() => {
-          this.originalFocusedElement.focus();
-        }, 0);
+        this.originalFocusedElement.focus();
       } else if (this.originalFocusedElement.parentNode &&
         this.originalFocusedElement.parentNode.focus) {
         // required for IE11 and Edge
