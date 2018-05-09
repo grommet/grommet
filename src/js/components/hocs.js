@@ -19,6 +19,11 @@ export const withFocus = (WrappedComponent) => {
     }
     componentDidMount() {
       window.addEventListener('mousedown', this.handleActiveMouse);
+
+      // we could be using onFocus in the wrapper node itself
+      // but react does not invoke it if you programically
+      // call wrapperNode.focus() inside componentWillUnmount
+      // see Drop "this.originalFocusedElement.focus();" for reference
       const wrapperNode = findDOMNode(this.wrapperRef);
       if (wrapperNode && wrapperNode.addEventListener) {
         wrapperNode.addEventListener('focus', this.setFocus);
@@ -40,6 +45,9 @@ export const withFocus = (WrappedComponent) => {
         if (this.mouseTimer) {
           clearTimeout(this.mouseTimer);
         }
+
+        // empirical number to reset mouseActive after
+        // some time has passed without mousedown
         this.mouseTimer = setTimeout(() => {
           this.setState({ mouseActive: false });
         }, 300);
