@@ -29,9 +29,13 @@ Before opening an issue or pull request, please read the [Contributing](https://
 
   Detailed instructions are on the [Get Started](https://grommet.github.io/docs/get-started) page.
 
-### Build
+### Explore
 
-  Refer to the [Grommet Build Wiki](https://github.com/grommet/grommet/wiki/Building-Grommet) for instructions on how to install your local copy of Grommet.
+  We have a few examples on Storybook, you can see them by running:
+
+  ```
+    $ npm run storybook
+  ```
 
 ### Release History
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import getDisplayName from 'recompose/getDisplayName';
 
@@ -7,15 +8,50 @@ import { deepMerge } from '../utils';
 
 export const withFocus = (WrappedComponent) => {
   class FocusableComponent extends Component {
-    state = {
-      mouseActive: false,
-      focus: false,
+    constructor() {
+      super();
+      this.handleActiveMouse = this.handleActiveMouse.bind(this);
+      this.setFocus = this.setFocus.bind(this);
+      this.state = {
+        mouseActive: false,
+        focus: false,
+      };
     }
-    setMouseActive() {
-      this.setState({ mouseActive: true });
+    componentDidMount() {
+      window.addEventListener('mousedown', this.handleActiveMouse);
+
+      // we could be using onFocus in the wrapper node itself
+      // but react does not invoke it if you programically
+      // call wrapperNode.focus() inside componentWillUnmount
+      // see Drop "this.originalFocusedElement.focus();" for reference
+      const wrapperNode = findDOMNode(this.wrapperRef);
+      if (wrapperNode && wrapperNode.addEventListener) {
+        wrapperNode.addEventListener('focus', this.setFocus);
+      }
     }
-    resetMouseActive() {
-      this.setState({ mouseActive: false });
+    componentWillUnmount() {
+      if (this.mouseTimer) {
+        clearTimeout(this.mouseTimer);
+      }
+      window.removeEventListener('mousedown', this.handleActiveMouse);
+      const wrapperNode = findDOMNode(this.wrapperRef);
+      if (wrapperNode && wrapperNode.addEventListener) {
+        wrapperNode.removeEventListener('focus', this.setFocus);
+      }
+    }
+    handleActiveMouse() {
+      this.setState({ mouseActive: true }, () => {
+        // this avoids showing focus when clicking around
+        if (this.mouseTimer) {
+          clearTimeout(this.mouseTimer);
+        }
+
+        // empirical number to reset mouseActive after
+        // some time has passed without mousedown
+        this.mouseTimer = setTimeout(() => {
+          this.setState({ mouseActive: false });
+        }, 300);
+      });
     }
     setFocus() {
       const { mouseActive } = this.state;
@@ -30,22 +66,11 @@ export const withFocus = (WrappedComponent) => {
       const { focus } = this.state;
       return (
         <WrappedComponent
+          ref={(ref) => {
+            this.wrapperRef = ref;
+          }}
           focus={focus}
           {...this.props}
-          onMouseDown={(event) => {
-            this.setMouseActive();
-            const { onMouseDown } = this.props;
-            if (onMouseDown) {
-              onMouseDown(event);
-            }
-          }}
-          onMouseUp={(event) => {
-            this.resetMouseActive();
-            const { onMouseUp } = this.props;
-            if (onMouseUp) {
-              onMouseUp(event);
-            }
-          }}
           onFocus={(event) => {
             this.setFocus();
             const { onFocus } = this.props;

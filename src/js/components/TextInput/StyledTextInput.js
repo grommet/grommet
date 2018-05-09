@@ -16,7 +16,6 @@ const sizeStyle = (props) => {
 
 const plainStyle = css`
   border: none;
-  width: 100%;
   -webkit-appearance: none;
 `;
 

@@ -31,7 +31,8 @@
     "test": "jest",
     "test-update": "jest --updateSnapshot",
     "test-watch": "jest --watchAll",
-    "pack": "babel-node ./tools/pack"
+    "pack": "babel-node ./tools/pack",
+    "storybook": "start-storybook -p 9001 -c storybook"
   },
   "peerDependencies": {
     "react": ">= 15.3.0 < 16 || 16.x",
@@ -50,6 +51,7 @@
     "recompose": "^0.26.0"
   },
   "devDependencies": {
+    "@storybook/react": "^4.0.0-alpha.4",
     "babel-cli": "^6.22.2",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",

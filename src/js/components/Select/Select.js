@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
+import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
@@ -10,6 +11,8 @@ import { withTheme } from '../hocs';
 
 import SelectContainer from './SelectContainer';
 import doc from './doc';
+
+const SelectTextInput = styled(TextInput)`cursor: pointer;`;
 
 class Select extends Component {
   static defaultProps = {
@@ -63,7 +66,11 @@ class Select extends Component {
     if (!React.isValidElement(value)) {
       if (Array.isArray(value)) {
         if (value.length > 1) {
-          textValue = messages.multiple;
+          if (React.isValidElement(value[0])) {
+            selectValue = value;
+          } else {
+            textValue = messages.multiple;
+          }
         } else if (value.length === 1) {
           if (React.isValidElement(value[0])) {
             selectValue = value[0];
@@ -94,26 +101,26 @@ class Select extends Component {
           dropContent={<SelectContainer {...this.props} onChange={onSelectChange} />}
         >
           <Box
-            aria-hidden={true}
             align='center'
             border={!plain ? 'all' : undefined}
             direction='row'
             justify='between'
           >
-            {selectValue || (
-              <TextInput
-                style={{ cursor: 'pointer' }}
-                ref={(ref) => { this.inputRef = ref; }}
-                {...rest}
-                tabIndex='-1'
-                type='text'
-                placeholder={placeholder}
-                plain={true}
-                size={size}
-                readOnly={true}
-                value={textValue}
-              />
-            )}
+            <Box direction='row' flex={true}>
+              {selectValue || (
+                <SelectTextInput
+                  ref={(ref) => { this.inputRef = ref; }}
+                  {...rest}
+                  tabIndex='-1'
+                  type='text'
+                  placeholder={placeholder}
+                  plain={true}
+                  readOnly={true}
+                  value={textValue}
+                  size={size}
+                />
+              )}
+            </Box>
             <Box
               margin={{ horizontal: 'small' }}
               flex={false}

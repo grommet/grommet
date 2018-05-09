@@ -111,19 +111,11 @@ const fillStyle = `
   flex-grow: 1;
 `;
 
-const plainFocusStyle = css`
-  box-shadow: 0 0 ${props => props.theme.global.focus.border.width} ${props => props.theme.global.focus.border.width} ${
-    props => props.theme.global.focus.border.color
-  };
-`;
-
 const plainStyle = css`
   color: inherit;
   border: none;
   padding: 0;
   text-align: inherit;
-
-  ${props => props.focus && props.focusIndicator && plainFocusStyle}
 `;
 
 const StyledButton = styled.button`

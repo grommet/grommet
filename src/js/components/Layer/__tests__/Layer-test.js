@@ -110,6 +110,7 @@ describe('Layer', () => {
   });
 
   test('is accessible', () => {
+    jest.useFakeTimers();
     // make sure to remove all body children
     document.body.innerHTML = '';
     document.body.appendChild(document.createElement('div'));
@@ -125,6 +126,8 @@ describe('Layer', () => {
       }
     );
     /* eslint-enable jsx-a11y/tabindex-no-positive */
+
+    jest.runAllTimers();
 
     let bodyNode = component.find('#body-node').getDOMNode();
     const layerNode = document.getElementById('layer-node');

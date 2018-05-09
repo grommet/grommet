@@ -136,8 +136,6 @@ exports[`RangeInput renders 1`] = `
     className="c1"
     onBlur={[Function]}
     onFocus={[Function]}
-    onMouseDown={[Function]}
-    onMouseUp={[Function]}
     type="range"
     value="50"
   />

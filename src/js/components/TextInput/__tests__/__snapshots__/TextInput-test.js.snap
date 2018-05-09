@@ -418,7 +418,7 @@ exports[`TextInput selects suggestion 3`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW ihXnnm"
+      class="StyledTextInput-bzOzsW dGDNWv"
       id="item"
       name="item"
       value=""

@@ -49,44 +49,6 @@ exports[`FocusedContainer mounts 2`] = `
 </div>
 `;
 
-exports[`FocusedContainer mounts 3`] = `
-<div
-  hidden=""
-  id="container"
->
-  test focused container
-</div>
-`;
-
-exports[`FocusedContainer mounts 4`] = `
-<div
-  id="focus-trap-test"
->
-  <input
-    id="test"
-  />
-</div>
-`;
-
-exports[`FocusedContainer mounts 5`] = `
-<div
-  id="container"
->
-  test focused container
-</div>
-`;
-
-exports[`FocusedContainer mounts 6`] = `
-<div
-  id="focus-trap-test"
->
-  <input
-    id="test"
-    tabindex="-1"
-  />
-</div>
-`;
-
 exports[`FocusedContainer restrict scroll 1`] = `
 <div
   id="container"

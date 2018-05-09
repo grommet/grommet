@@ -413,8 +413,6 @@ exports[`Video autoPlay renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
           type="button"
         >
           <span
@@ -518,8 +516,6 @@ exports[`Video autoPlay renders 1`] = `
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
             type="button"
           >
             <div
@@ -1047,8 +1043,6 @@ exports[`Video controls renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
           type="button"
         >
           <span
@@ -1152,8 +1146,6 @@ exports[`Video controls renders 1`] = `
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
             type="button"
           >
             <div
@@ -1243,8 +1235,6 @@ exports[`Video controls renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
           type="button"
         >
           <span
@@ -1349,8 +1339,6 @@ exports[`Video controls renders 1`] = `
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
             type="button"
           >
             <div
@@ -1818,8 +1806,6 @@ exports[`Video fit renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
           type="button"
         >
           <span
@@ -1923,8 +1909,6 @@ exports[`Video fit renders 1`] = `
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
             type="button"
           >
             <div
@@ -2017,8 +2001,6 @@ exports[`Video fit renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
           type="button"
         >
           <span
@@ -2122,8 +2104,6 @@ exports[`Video fit renders 1`] = `
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
             type="button"
           >
             <div
@@ -2573,8 +2553,6 @@ exports[`Video loop renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
           type="button"
         >
           <span
@@ -2678,8 +2656,6 @@ exports[`Video loop renders 1`] = `
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
             type="button"
           >
             <div
@@ -3129,8 +3105,6 @@ exports[`Video mute renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
           type="button"
         >
           <span
@@ -3234,8 +3208,6 @@ exports[`Video mute renders 1`] = `
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
             type="button"
           >
             <div
@@ -3685,8 +3657,6 @@ exports[`Video renders 1`] = `
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
-          onMouseDown={[Function]}
-          onMouseUp={[Function]}
           type="button"
         >
           <span
@@ -3790,8 +3760,6 @@ exports[`Video renders 1`] = `
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
             type="button"
           >
             <div

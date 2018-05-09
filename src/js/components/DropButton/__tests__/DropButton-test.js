@@ -13,6 +13,7 @@ describe('DropButton', () => {
   beforeEach(createPortal);
 
   test('mounts', () => {
+    jest.useFakeTimers();
     const component = mount(
       <DropButton
         label='Dropper'
@@ -26,6 +27,8 @@ describe('DropButton', () => {
     expect(document.getElementById('drop-contents')).toBeNull();
 
     component.simulate('click');
+
+    jest.runAllTimers();
 
     expectPortal('drop-contents').toMatchSnapshot();
 

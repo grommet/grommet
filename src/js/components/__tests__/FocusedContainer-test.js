@@ -19,6 +19,7 @@ describe('FocusedContainer', () => {
   });
 
   test('mounts', () => {
+    jest.useFakeTimers();
     mount(
       <div id='focus-trap-test'><input id='test' /></div>, {
         attachTo: document.body.firstChild,
@@ -31,15 +32,8 @@ describe('FocusedContainer', () => {
         attachTo: element,
       }
     );
-    expect(component.getDOMNode()).toMatchSnapshot();
-    expect(document.getElementById('focus-trap-test')).toMatchSnapshot();
 
-    component.setProps({ hidden: true });
-
-    expect(component.getDOMNode()).toMatchSnapshot();
-    expect(document.getElementById('focus-trap-test')).toMatchSnapshot();
-
-    component.setProps({ hidden: false });
+    jest.runAllTimers();
 
     expect(component.getDOMNode()).toMatchSnapshot();
     expect(document.getElementById('focus-trap-test')).toMatchSnapshot();
@@ -48,6 +42,7 @@ describe('FocusedContainer', () => {
   });
 
   test('restrict scroll', () => {
+    jest.useFakeTimers();
     const component = mount(
       <FocusedContainer id='container' restrictScroll={true}>
         test focused container
@@ -55,6 +50,9 @@ describe('FocusedContainer', () => {
         attachTo: document.body.firstChild,
       }
     );
+
+    jest.runAllTimers();
+
     expect(component.getDOMNode()).toMatchSnapshot();
     expect(document.body.style.overflow).toMatchSnapshot();
 
@@ -65,6 +63,7 @@ describe('FocusedContainer', () => {
   });
 
   test('blurs', () => {
+    jest.useFakeTimers();
     mount(
       <div id='focus-trap-test'><input id='test' /></div>, {
         attachTo: document.body.firstChild,
@@ -77,6 +76,9 @@ describe('FocusedContainer', () => {
         attachTo: element,
       }
     );
+
+    jest.runAllTimers();
+
     expect(component.getDOMNode()).toMatchSnapshot();
     expect(document.getElementById('focus-trap-test')).toMatchSnapshot();
 
