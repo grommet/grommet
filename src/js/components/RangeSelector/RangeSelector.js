@@ -183,6 +183,9 @@ if (process.env.NODE_ENV !== 'production') {
   doc(RangeSelector);
 }
 
-export default compose(
+const WrappedRangeSelector = compose(
   withTheme,
 )(RangeSelector);
+
+export default React.forwardRef((props, ref) =>
+  <WrappedRangeSelector innerRef={ref} {...props} />);

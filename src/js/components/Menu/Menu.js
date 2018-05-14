@@ -84,6 +84,7 @@ class Menu extends Component {
       icon,
       items,
       label,
+      menuRef,
       messages,
       onKeyDown,
       size,
@@ -131,6 +132,7 @@ class Menu extends Component {
       >
         <div>
           <DropButton
+            ref={menuRef}
             {...rest}
             theme={theme}
             a11yTitle={messages.openMenu || 'Open Menu'}
@@ -184,6 +186,9 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Menu);
 }
 
-export default compose(
+const WrappedMenu = compose(
   withTheme,
 )(Menu);
+
+export default React.forwardRef((props, ref) =>
+  <WrappedMenu menuRef={ref} {...props} />);

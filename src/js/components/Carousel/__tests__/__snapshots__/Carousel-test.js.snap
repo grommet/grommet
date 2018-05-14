@@ -1,338 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`play renders 1`] = `
-<div
-  class="StyledGrommet-gGRXwz fDhYVV"
->
-  <div
-    class="StyledStack-jqCQsC ewABiA"
-  >
-    <div
-      class="StyledBox-bStriS fTyZvg"
-      style="position: relative;"
-    >
-      <div
-        class="StyledBox-bStriS dFjuei"
-      >
-        <img
-          class="StyledImage-iWJlTu ealRJb"
-          src="//v2.grommet.io/assets/IMG_4245.jpg"
-        />
-      </div>
-    </div>
-    <div
-      class="StyledBox-bStriS fTyZvg"
-      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
-    >
-      <div
-        class="StyledBox-bStriS fRWMzb"
-      >
-        <img
-          class="StyledImage-iWJlTu ealRJb"
-          src="//v2.grommet.io/assets/IMG_4210.jpg"
-        />
-      </div>
-    </div>
-    <div
-      class="StyledBox-bStriS eBXrgH"
-      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
-      tabindex="0"
-    >
-      <div
-        class="StyledBox-bStriS jsbzAg"
-      >
-        <button
-          class="StyledButton-gXzblK gpCJao"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="StyledBox-bStriS gWhpfl"
-          >
-            <svg
-              aria-label="Previous"
-              class="StyledIcon-gTfjEw iIdMpR"
-              height="24px"
-              role="img"
-              version="1.1"
-              viewBox="0 0 24 24"
-              width="24px"
-            >
-              <polyline
-                fill="none"
-                points="7 2 17 12 7 22"
-                stroke="#000"
-                stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
-              />
-            </svg>
-          </div>
-        </button>
-      </div>
-      <div
-        class="StyledBox-bStriS jxymSV"
-      >
-        <div
-          class="StyledBox-bStriS lcWWay"
-        >
-          <button
-            class="StyledButton-gXzblK kANibo"
-            icon="[object Object]"
-            type="button"
-          >
-            <span
-              aria-hidden="true"
-              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
-            >
-              <svg
-                aria-label="Subtract"
-                class="StyledIcon-gTfjEw cbaxjc"
-                color="brand"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </span>
-          </button>
-          <button
-            class="StyledButton-gXzblK kANibo"
-            icon="[object Object]"
-            type="button"
-          >
-            <span
-              aria-hidden="true"
-              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
-            >
-              <svg
-                aria-label="Subtract"
-                class="StyledIcon-gTfjEw iIdMpR"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
-      </div>
-      <div
-        class="StyledBox-bStriS jsbzAg"
-      >
-        <button
-          class="StyledButton-gXzblK fdbYpb"
-          type="button"
-        >
-          <div
-            class="StyledBox-bStriS gWhpfl"
-          >
-            <svg
-              aria-label="Next"
-              class="StyledIcon-gTfjEw iIdMpR"
-              height="24px"
-              role="img"
-              version="1.1"
-              viewBox="0 0 24 24"
-              width="24px"
-            >
-              <polyline
-                fill="none"
-                points="7 2 17 12 7 22"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`play renders 2`] = `
-<div
-  class="StyledGrommet-gGRXwz fDhYVV"
->
-  <div
-    class="StyledStack-jqCQsC ewABiA"
-  >
-    <div
-      class="StyledBox-bStriS fTyZvg"
-      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
-    >
-      <div
-        class="StyledBox-bStriS fRWMzb"
-      >
-        <img
-          class="StyledImage-iWJlTu ealRJb"
-          src="//v2.grommet.io/assets/IMG_4245.jpg"
-        />
-      </div>
-    </div>
-    <div
-      class="StyledBox-bStriS fTyZvg"
-      style="position: relative;"
-    >
-      <div
-        class="StyledBox-bStriS jMrMHL"
-      >
-        <img
-          class="StyledImage-iWJlTu ealRJb"
-          src="//v2.grommet.io/assets/IMG_4210.jpg"
-        />
-      </div>
-    </div>
-    <div
-      class="StyledBox-bStriS eBXrgH"
-      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
-      tabindex="0"
-    >
-      <div
-        class="StyledBox-bStriS jsbzAg"
-      >
-        <button
-          class="StyledButton-gXzblK fdbYpb"
-          type="button"
-        >
-          <div
-            class="StyledBox-bStriS gWhpfl"
-          >
-            <svg
-              aria-label="Previous"
-              class="StyledIcon-gTfjEw iIdMpR"
-              height="24px"
-              role="img"
-              version="1.1"
-              viewBox="0 0 24 24"
-              width="24px"
-            >
-              <polyline
-                fill="none"
-                points="7 2 17 12 7 22"
-                stroke="#000"
-                stroke-width="2"
-                transform="matrix(-1 0 0 1 24 0)"
-              />
-            </svg>
-          </div>
-        </button>
-      </div>
-      <div
-        class="StyledBox-bStriS jxymSV"
-      >
-        <div
-          class="StyledBox-bStriS lcWWay"
-        >
-          <button
-            class="StyledButton-gXzblK kANibo"
-            icon="[object Object]"
-            type="button"
-          >
-            <span
-              aria-hidden="true"
-              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
-            >
-              <svg
-                aria-label="Subtract"
-                class="StyledIcon-gTfjEw iIdMpR"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </span>
-          </button>
-          <button
-            class="StyledButton-gXzblK kANibo"
-            icon="[object Object]"
-            type="button"
-          >
-            <span
-              aria-hidden="true"
-              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
-            >
-              <svg
-                aria-label="Subtract"
-                class="StyledIcon-gTfjEw cbaxjc"
-                color="brand"
-                height="24px"
-                role="img"
-                version="1.1"
-                viewBox="0 0 24 24"
-                width="24px"
-              >
-                <path
-                  d="M2,12 L22,12"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
-      </div>
-      <div
-        class="StyledBox-bStriS jsbzAg"
-      >
-        <button
-          class="StyledButton-gXzblK gpCJao"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="StyledBox-bStriS gWhpfl"
-          >
-            <svg
-              aria-label="Next"
-              class="StyledIcon-gTfjEw iIdMpR"
-              height="24px"
-              role="img"
-              version="1.1"
-              viewBox="0 0 24 24"
-              width="24px"
-            >
-              <polyline
-                fill="none"
-                points="7 2 17 12 7 22"
-                stroke="#000"
-                stroke-width="2"
-              />
-            </svg>
-          </div>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`renders 1`] = `
+exports[`Carousel basic 1`] = `
 .c9 {
   display: inline-block;
   -webkit-flex: 0 0 auto;
@@ -997,6 +665,839 @@ exports[`renders 1`] = `
                 points="7 2 17 12 7 22"
                 stroke="#000"
                 strokeWidth="2"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel navigate 1`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    class="StyledStack-jqCQsC ewABiA"
+    data-testid="test-carousel"
+  >
+    <div
+      class="StyledBox-bStriS fTyZvg"
+      style="position: relative;"
+    >
+      <div
+        class="StyledBox-bStriS dFjuei"
+      >
+        <img
+          class="StyledImage-iWJlTu ealRJb"
+          src="//v2.grommet.io/assets/IMG_4245.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS fTyZvg"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+    >
+      <div
+        class="StyledBox-bStriS fRWMzb"
+      >
+        <img
+          class="StyledImage-iWJlTu ealRJb"
+          src="//v2.grommet.io/assets/IMG_4210.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS eBXrgH"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+      tabindex="0"
+    >
+      <div
+        class="StyledBox-bStriS jsbzAg"
+      >
+        <button
+          class="StyledButton-gXzblK gpCJao"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="StyledBox-bStriS gWhpfl"
+          >
+            <svg
+              aria-label="Previous"
+              class="StyledIcon-gTfjEw iIdMpR"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
+        class="StyledBox-bStriS jxymSV"
+      >
+        <div
+          class="StyledBox-bStriS lcWWay"
+        >
+          <button
+            class="StyledButton-gXzblK kANibo"
+            icon="[object Object]"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+            >
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-gTfjEw cbaxjc"
+                color="brand"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            class="StyledButton-gXzblK kANibo"
+            icon="[object Object]"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+            >
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-gTfjEw iIdMpR"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="StyledBox-bStriS jsbzAg"
+      >
+        <button
+          class="StyledButton-gXzblK fdbYpb"
+          type="button"
+        >
+          <div
+            class="StyledBox-bStriS gWhpfl"
+          >
+            <svg
+              aria-label="Next"
+              class="StyledIcon-gTfjEw iIdMpR"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel navigate 2`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    class="StyledStack-jqCQsC ewABiA"
+    data-testid="test-carousel"
+  >
+    <div
+      class="StyledBox-bStriS fTyZvg"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+    >
+      <div
+        class="StyledBox-bStriS fRWMzb"
+      >
+        <img
+          class="StyledImage-iWJlTu ealRJb"
+          src="//v2.grommet.io/assets/IMG_4245.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS fTyZvg"
+      style="position: relative;"
+    >
+      <div
+        class="StyledBox-bStriS jMrMHL"
+      >
+        <img
+          class="StyledImage-iWJlTu ealRJb"
+          src="//v2.grommet.io/assets/IMG_4210.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS eBXrgH"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+      tabindex="0"
+    >
+      <div
+        class="StyledBox-bStriS jsbzAg"
+      >
+        <button
+          class="StyledButton-gXzblK fdbYpb"
+          type="button"
+        >
+          <div
+            class="StyledBox-bStriS gWhpfl"
+          >
+            <svg
+              aria-label="Previous"
+              class="StyledIcon-gTfjEw iIdMpR"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
+        class="StyledBox-bStriS jxymSV"
+      >
+        <div
+          class="StyledBox-bStriS lcWWay"
+        >
+          <button
+            class="StyledButton-gXzblK kANibo"
+            icon="[object Object]"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+            >
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-gTfjEw iIdMpR"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            class="StyledButton-gXzblK kANibo"
+            icon="[object Object]"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+            >
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-gTfjEw cbaxjc"
+                color="brand"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="StyledBox-bStriS jsbzAg"
+      >
+        <button
+          class="StyledButton-gXzblK gpCJao"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="StyledBox-bStriS gWhpfl"
+          >
+            <svg
+              aria-label="Next"
+              class="StyledIcon-gTfjEw iIdMpR"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel navigate 3`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    class="StyledStack-jqCQsC ewABiA"
+    data-testid="test-carousel"
+  >
+    <div
+      class="StyledBox-bStriS fTyZvg"
+      style="position: relative;"
+    >
+      <div
+        class="StyledBox-bStriS eWdGeH"
+      >
+        <img
+          class="StyledImage-iWJlTu ealRJb"
+          src="//v2.grommet.io/assets/IMG_4245.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS fTyZvg"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+    >
+      <div
+        class="StyledBox-bStriS fRWMzb"
+      >
+        <img
+          class="StyledImage-iWJlTu ealRJb"
+          src="//v2.grommet.io/assets/IMG_4210.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS eBXrgH"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+      tabindex="0"
+    >
+      <div
+        class="StyledBox-bStriS jsbzAg"
+      >
+        <button
+          class="StyledButton-gXzblK gpCJao"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="StyledBox-bStriS gWhpfl"
+          >
+            <svg
+              aria-label="Previous"
+              class="StyledIcon-gTfjEw iIdMpR"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
+        class="StyledBox-bStriS jxymSV"
+      >
+        <div
+          class="StyledBox-bStriS lcWWay"
+        >
+          <button
+            class="StyledButton-gXzblK kANibo"
+            icon="[object Object]"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+            >
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-gTfjEw cbaxjc"
+                color="brand"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            class="StyledButton-gXzblK kANibo"
+            icon="[object Object]"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+            >
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-gTfjEw iIdMpR"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="StyledBox-bStriS jsbzAg"
+      >
+        <button
+          class="StyledButton-gXzblK fdbYpb"
+          type="button"
+        >
+          <div
+            class="StyledBox-bStriS gWhpfl"
+          >
+            <svg
+              aria-label="Next"
+              class="StyledIcon-gTfjEw iIdMpR"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel play 1`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    class="StyledStack-jqCQsC ewABiA"
+  >
+    <div
+      class="StyledBox-bStriS fTyZvg"
+      style="position: relative;"
+    >
+      <div
+        class="StyledBox-bStriS dFjuei"
+      >
+        <img
+          class="StyledImage-iWJlTu ealRJb"
+          src="//v2.grommet.io/assets/IMG_4245.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS fTyZvg"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+    >
+      <div
+        class="StyledBox-bStriS fRWMzb"
+      >
+        <img
+          class="StyledImage-iWJlTu ealRJb"
+          src="//v2.grommet.io/assets/IMG_4210.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS eBXrgH"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+      tabindex="0"
+    >
+      <div
+        class="StyledBox-bStriS jsbzAg"
+      >
+        <button
+          class="StyledButton-gXzblK gpCJao"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="StyledBox-bStriS gWhpfl"
+          >
+            <svg
+              aria-label="Previous"
+              class="StyledIcon-gTfjEw iIdMpR"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
+        class="StyledBox-bStriS jxymSV"
+      >
+        <div
+          class="StyledBox-bStriS lcWWay"
+        >
+          <button
+            class="StyledButton-gXzblK kANibo"
+            icon="[object Object]"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+            >
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-gTfjEw cbaxjc"
+                color="brand"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            class="StyledButton-gXzblK kANibo"
+            icon="[object Object]"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+            >
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-gTfjEw iIdMpR"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="StyledBox-bStriS jsbzAg"
+      >
+        <button
+          class="StyledButton-gXzblK fdbYpb"
+          type="button"
+        >
+          <div
+            class="StyledBox-bStriS gWhpfl"
+          >
+            <svg
+              aria-label="Next"
+              class="StyledIcon-gTfjEw iIdMpR"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel play 2`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    class="StyledStack-jqCQsC ewABiA"
+  >
+    <div
+      class="StyledBox-bStriS fTyZvg"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+    >
+      <div
+        class="StyledBox-bStriS fRWMzb"
+      >
+        <img
+          class="StyledImage-iWJlTu ealRJb"
+          src="//v2.grommet.io/assets/IMG_4245.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS fTyZvg"
+      style="position: relative;"
+    >
+      <div
+        class="StyledBox-bStriS jMrMHL"
+      >
+        <img
+          class="StyledImage-iWJlTu ealRJb"
+          src="//v2.grommet.io/assets/IMG_4210.jpg"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS eBXrgH"
+      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+      tabindex="0"
+    >
+      <div
+        class="StyledBox-bStriS jsbzAg"
+      >
+        <button
+          class="StyledButton-gXzblK fdbYpb"
+          type="button"
+        >
+          <div
+            class="StyledBox-bStriS gWhpfl"
+          >
+            <svg
+              aria-label="Previous"
+              class="StyledIcon-gTfjEw iIdMpR"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
+                transform="matrix(-1 0 0 1 24 0)"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div
+        class="StyledBox-bStriS jxymSV"
+      >
+        <div
+          class="StyledBox-bStriS lcWWay"
+        >
+          <button
+            class="StyledButton-gXzblK kANibo"
+            icon="[object Object]"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+            >
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-gTfjEw iIdMpR"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </span>
+          </button>
+          <button
+            class="StyledButton-gXzblK kANibo"
+            icon="[object Object]"
+            type="button"
+          >
+            <span
+              aria-hidden="true"
+              class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+            >
+              <svg
+                aria-label="Subtract"
+                class="StyledIcon-gTfjEw cbaxjc"
+                color="brand"
+                height="24px"
+                role="img"
+                version="1.1"
+                viewBox="0 0 24 24"
+                width="24px"
+              >
+                <path
+                  d="M2,12 L22,12"
+                  fill="none"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="StyledBox-bStriS jsbzAg"
+      >
+        <button
+          class="StyledButton-gXzblK gpCJao"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="StyledBox-bStriS gWhpfl"
+          >
+            <svg
+              aria-label="Next"
+              class="StyledIcon-gTfjEw iIdMpR"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="7 2 17 12 7 22"
+                stroke="#000"
+                stroke-width="2"
               />
             </svg>
           </div>

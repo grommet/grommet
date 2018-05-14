@@ -1,156 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`handles keyboard 1`] = `
-<div
-  class="StyledGrommet-gGRXwz fDhYVV"
->
-  <div
-    class="StyledBox-bStriS cDPnPm"
-  >
-    <div
-      class="StyledBox-bStriS jsbzAg"
-    />
-    <div
-      class="StyledBox-bStriS bAJywf"
-    >
-      <div
-        aria-label="Lower Bounds"
-        class="StyledBox-bStriS eTKZde"
-        style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
-        tabindex="0"
-      >
-        <div
-          class="StyledBox-bStriS iKNwZE"
-        >
-          <svg
-            height="12"
-            viewBox="0 0 12 12"
-            width="12"
-          >
-            <circle
-              cx="6"
-              cy="6"
-              fill="#865CD6"
-              r="6"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="StyledBox-bStriS IBmMJ"
-      style="cursor: ew-resize;"
-    />
-    <div
-      class="StyledBox-bStriS bAJywf"
-    >
-      <div
-        aria-label="Upper Bounds"
-        class="StyledBox-bStriS eTKZde"
-        style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
-        tabindex="0"
-      >
-        <div
-          class="StyledBox-bStriS iKNwZE"
-        >
-          <svg
-            height="12"
-            viewBox="0 0 12 12"
-            width="12"
-          >
-            <circle
-              cx="6"
-              cy="6"
-              fill="#865CD6"
-              r="6"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="StyledBox-bStriS jsbzAg"
-    />
-  </div>
-</div>
-`;
-
-exports[`handles mouse 1`] = `
-<div
-  class="StyledGrommet-gGRXwz fDhYVV"
->
-  <div
-    class="StyledBox-bStriS cDPnPm"
-  >
-    <div
-      class="StyledBox-bStriS jsbzAg"
-    />
-    <div
-      class="StyledBox-bStriS bAJywf"
-    >
-      <div
-        aria-label="Lower Bounds"
-        class="StyledBox-bStriS eTKZde"
-        style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
-        tabindex="0"
-      >
-        <div
-          class="StyledBox-bStriS iKNwZE"
-        >
-          <svg
-            height="12"
-            viewBox="0 0 12 12"
-            width="12"
-          >
-            <circle
-              cx="6"
-              cy="6"
-              fill="#865CD6"
-              r="6"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="StyledBox-bStriS IBmMJ"
-      style="cursor: ew-resize;"
-    />
-    <div
-      class="StyledBox-bStriS bAJywf"
-    >
-      <div
-        aria-label="Upper Bounds"
-        class="StyledBox-bStriS eTKZde"
-        style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
-        tabindex="0"
-      >
-        <div
-          class="StyledBox-bStriS iKNwZE"
-        >
-          <svg
-            height="12"
-            viewBox="0 0 12 12"
-            width="12"
-          >
-            <circle
-              cx="6"
-              cy="6"
-              fill="#865CD6"
-              r="6"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="StyledBox-bStriS jsbzAg"
-    />
-  </div>
-</div>
-`;
-
-exports[`renders 1`] = `
+exports[`TextInput basic 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -488,7 +338,7 @@ exports[`renders 1`] = `
 </div>
 `;
 
-exports[`renders color 1`] = `
+exports[`TextInput color 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -826,7 +676,7 @@ exports[`renders color 1`] = `
 </div>
 `;
 
-exports[`renders direction 1`] = `
+exports[`TextInput direction 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -1454,7 +1304,157 @@ exports[`renders direction 1`] = `
 </div>
 `;
 
-exports[`renders invert 1`] = `
+exports[`TextInput handle keyboard 1`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    class="StyledBox-bStriS cDPnPm"
+  >
+    <div
+      class="StyledBox-bStriS jsbzAg"
+    />
+    <div
+      class="StyledBox-bStriS bAJywf"
+    >
+      <div
+        aria-label="Lower Bounds"
+        class="StyledBox-bStriS eTKZde"
+        style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
+        tabindex="0"
+      >
+        <div
+          class="StyledBox-bStriS iKNwZE"
+        >
+          <svg
+            height="12"
+            viewBox="0 0 12 12"
+            width="12"
+          >
+            <circle
+              cx="6"
+              cy="6"
+              fill="#865CD6"
+              r="6"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS IBmMJ"
+      style="cursor: ew-resize;"
+    />
+    <div
+      class="StyledBox-bStriS bAJywf"
+    >
+      <div
+        aria-label="Upper Bounds"
+        class="StyledBox-bStriS eTKZde"
+        style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
+        tabindex="0"
+      >
+        <div
+          class="StyledBox-bStriS iKNwZE"
+        >
+          <svg
+            height="12"
+            viewBox="0 0 12 12"
+            width="12"
+          >
+            <circle
+              cx="6"
+              cy="6"
+              fill="#865CD6"
+              r="6"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS jsbzAg"
+    />
+  </div>
+</div>
+`;
+
+exports[`TextInput handle mouse 1`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    class="StyledBox-bStriS cDPnPm"
+  >
+    <div
+      class="StyledBox-bStriS jsbzAg"
+    />
+    <div
+      class="StyledBox-bStriS bAJywf"
+    >
+      <div
+        aria-label="Lower Bounds"
+        class="StyledBox-bStriS eTKZde"
+        style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
+        tabindex="0"
+      >
+        <div
+          class="StyledBox-bStriS iKNwZE"
+        >
+          <svg
+            height="12"
+            viewBox="0 0 12 12"
+            width="12"
+          >
+            <circle
+              cx="6"
+              cy="6"
+              fill="#865CD6"
+              r="6"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS IBmMJ"
+      style="cursor: ew-resize;"
+    />
+    <div
+      class="StyledBox-bStriS bAJywf"
+    >
+      <div
+        aria-label="Upper Bounds"
+        class="StyledBox-bStriS eTKZde"
+        style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
+        tabindex="0"
+      >
+        <div
+          class="StyledBox-bStriS iKNwZE"
+        >
+          <svg
+            height="12"
+            viewBox="0 0 12 12"
+            width="12"
+          >
+            <circle
+              cx="6"
+              cy="6"
+              fill="#865CD6"
+              r="6"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS jsbzAg"
+    />
+  </div>
+</div>
+`;
+
+exports[`TextInput invert 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -1948,7 +1948,7 @@ exports[`renders invert 1`] = `
 </div>
 `;
 
-exports[`renders max 1`] = `
+exports[`TextInput max 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -2286,7 +2286,7 @@ exports[`renders max 1`] = `
 </div>
 `;
 
-exports[`renders min 1`] = `
+exports[`TextInput min 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -2624,7 +2624,7 @@ exports[`renders min 1`] = `
 </div>
 `;
 
-exports[`renders opacity 1`] = `
+exports[`TextInput opacity 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -3274,7 +3274,7 @@ exports[`renders opacity 1`] = `
 </div>
 `;
 
-exports[`renders round 1`] = `
+exports[`TextInput round 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -4422,7 +4422,7 @@ exports[`renders round 1`] = `
 </div>
 `;
 
-exports[`renders size 1`] = `
+exports[`TextInput size 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -5510,7 +5510,7 @@ exports[`renders size 1`] = `
 </div>
 `;
 
-exports[`renders step 1`] = `
+exports[`TextInput step 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;

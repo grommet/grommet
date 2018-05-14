@@ -1,89 +1,63 @@
 import React from 'react';
 import 'jest-styled-components';
-import Enzyme, { mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { cleanup, renderIntoDocument, Simulate } from 'react-testing-library';
 
 import FocusedContainer from '../FocusedContainer';
 
-Enzyme.configure({ adapter: new Adapter() });
-
-const createContainer = () => {
-  document.body.appendChild(document.createElement('div'));
-};
-
 describe('FocusedContainer', () => {
-  beforeEach(() => {
-    // make sure to remove all body children
-    document.body.innerHTML = '';
-    createContainer();
-  });
+  afterEach(cleanup);
 
-  test('mounts', () => {
+  test('basic', () => {
     jest.useFakeTimers();
-    mount(
-      <div id='focus-trap-test'><input id='test' /></div>, {
-        attachTo: document.body.firstChild,
-      }
+    const { container: trapped } = renderIntoDocument(
+      <div id='focus-trap-test'><input id='test' /></div>
     );
-    const element = document.createElement('div');
-    document.body.appendChild(element);
-    const component = mount(
-      <FocusedContainer id='container'>test focused container</FocusedContainer>, {
-        attachTo: element,
-      }
+    const { container: focuser } = renderIntoDocument(
+      <FocusedContainer id='container'>test focused container</FocusedContainer>
     );
-
     jest.runAllTimers();
-
-    expect(component.getDOMNode()).toMatchSnapshot();
-    expect(document.getElementById('focus-trap-test')).toMatchSnapshot();
+    expect(focuser.firstChild).toMatchSnapshot();
+    expect(trapped.firstChild).toMatchSnapshot(); // should have tabIndex="-1"
 
     document.getElementById('test').focus();
+
+    expect(trapped.firstChild).toMatchSnapshot();
   });
 
   test('restrict scroll', () => {
     jest.useFakeTimers();
-    const component = mount(
+    const { container } = renderIntoDocument(
       <FocusedContainer id='container' restrictScroll={true}>
         test focused container
-      </FocusedContainer>, {
-        attachTo: document.body.firstChild,
-      }
+      </FocusedContainer>
     );
 
     jest.runAllTimers();
 
-    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
     expect(document.body.style.overflow).toMatchSnapshot();
 
-    component.unmount();
+    cleanup();
 
-    expect(component.getDOMNode()).toBeNull();
     expect(document.body.style.overflow).toMatchSnapshot();
   });
 
   test('blurs', () => {
     jest.useFakeTimers();
-    mount(
-      <div id='focus-trap-test'><input id='test' /></div>, {
-        attachTo: document.body.firstChild,
-      }
+    const { container: trapped } = renderIntoDocument(
+      <div id='focus-trap-test'><input id='test' /></div>
     );
-    const element = document.createElement('div');
-    document.body.appendChild(element);
-    const component = mount(
-      <FocusedContainer id='container'>test focused container</FocusedContainer>, {
-        attachTo: element,
-      }
+    const { container: focuser } = renderIntoDocument(
+      <FocusedContainer id='container'>test focused container</FocusedContainer>
     );
 
     jest.runAllTimers();
 
-    expect(component.getDOMNode()).toMatchSnapshot();
-    expect(document.getElementById('focus-trap-test')).toMatchSnapshot();
+    expect(focuser.firstChild).toMatchSnapshot();
+    expect(trapped.firstChild).toMatchSnapshot(); // should have tabIndex="-1"
 
-    component.simulate('blur');
+    Simulate.blur(focuser);
 
-    expect(document.getElementById('focus-trap-test')).toMatchSnapshot();
+    expect(trapped.firstChild).toMatchSnapshot();
   });
 });

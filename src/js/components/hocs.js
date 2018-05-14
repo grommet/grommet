@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import getDisplayName from 'recompose/getDisplayName';
 
@@ -10,36 +9,25 @@ export const withFocus = (WrappedComponent) => {
   class FocusableComponent extends Component {
     constructor() {
       super();
-      this.handleActiveMouse = this.handleActiveMouse.bind(this);
       this.setFocus = this.setFocus.bind(this);
       this.state = {
         mouseActive: false,
         focus: false,
       };
     }
-    componentDidMount() {
-      window.addEventListener('mousedown', this.handleActiveMouse);
 
-      // we could be using onFocus in the wrapper node itself
-      // but react does not invoke it if you programically
-      // call wrapperNode.focus() inside componentWillUnmount
-      // see Drop "this.originalFocusedElement.focus();" for reference
-      const wrapperNode = findDOMNode(this.wrapperRef);
-      if (wrapperNode && wrapperNode.addEventListener) {
-        wrapperNode.addEventListener('focus', this.setFocus);
-      }
+    componentDidMount = () => {
+      window.addEventListener('mousedown', this.handleActiveMouse);
     }
-    componentWillUnmount() {
+
+    componentWillUnmount = () => {
       if (this.mouseTimer) {
         clearTimeout(this.mouseTimer);
       }
       window.removeEventListener('mousedown', this.handleActiveMouse);
-      const wrapperNode = findDOMNode(this.wrapperRef);
-      if (wrapperNode && wrapperNode.addEventListener) {
-        wrapperNode.removeEventListener('focus', this.setFocus);
-      }
     }
-    handleActiveMouse() {
+
+    handleActiveMouse = () => {
       this.setState({ mouseActive: true }, () => {
         // this avoids showing focus when clicking around
         if (this.mouseTimer) {
@@ -53,34 +41,34 @@ export const withFocus = (WrappedComponent) => {
         }, 300);
       });
     }
-    setFocus() {
+
+    setFocus = () => {
       const { mouseActive } = this.state;
       if (mouseActive === false) {
         this.setState({ focus: true });
       }
     }
+
     resetFocus() {
       this.setState({ focus: false });
     }
+
     render() {
+      const { withFocusRef, onFocus, onBlur, ...rest } = this.props;
       const { focus } = this.state;
       return (
         <WrappedComponent
-          ref={(ref) => {
-            this.wrapperRef = ref;
-          }}
+          ref={withFocusRef}
           focus={focus}
-          {...this.props}
+          {...rest}
           onFocus={(event) => {
             this.setFocus();
-            const { onFocus } = this.props;
             if (onFocus) {
               onFocus(event);
             }
           }}
           onBlur={(event) => {
             this.resetFocus();
-            const { onBlur } = this.props;
             if (onBlur) {
               onBlur(event);
             }
@@ -92,7 +80,8 @@ export const withFocus = (WrappedComponent) => {
 
   FocusableComponent.displayName = getDisplayName(WrappedComponent);
 
-  return FocusableComponent;
+  return React.forwardRef((props, ref) =>
+    <FocusableComponent {...props} withFocusRef={ref} />);
 };
 
 export const withTheme = (WrappedComponent) => {
@@ -122,16 +111,18 @@ export const withTheme = (WrappedComponent) => {
     }
 
     render() {
+      const { withThemeRef, ...rest } = this.props;
       const { theme } = this.state;
       return (
-        <WrappedComponent {...this.props} theme={theme} />
+        <WrappedComponent ref={withThemeRef} {...rest} theme={theme} />
       );
     }
   }
 
   ThemedComponent.displayName = getDisplayName(WrappedComponent);
 
-  return ThemedComponent;
+  return React.forwardRef((props, ref) =>
+    <ThemedComponent {...props} withThemeRef={ref} />);
 };
 
 export default { withFocus, withTheme };

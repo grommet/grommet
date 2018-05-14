@@ -53,6 +53,9 @@ if (process.env.NODE_ENV !== 'production') {
   doc(RadioButton);
 }
 
-export default compose(
+const WrappedRadioButton = compose(
   withTheme,
 )(RadioButton);
+
+export default React.forwardRef((props, ref) =>
+  <WrappedRadioButton innerRef={ref} {...props} />);

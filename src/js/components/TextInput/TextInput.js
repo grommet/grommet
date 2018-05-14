@@ -271,6 +271,9 @@ if (process.env.NODE_ENV !== 'production') {
   doc(TextInput);
 }
 
-export default compose(
+const WrappedTextInput = compose(
   withTheme,
 )(TextInput);
+
+export default React.forwardRef((props, ref) =>
+  <WrappedTextInput innerRef={ref} {...props} />);

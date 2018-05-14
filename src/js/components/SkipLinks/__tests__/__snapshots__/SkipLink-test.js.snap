@@ -1,351 +1,97 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SkipLink mounts 1`] = `
-<div
-  class="StyledLayer-ceZzeh cvbgCP"
-  id="skip-links"
-  tabindex="-1"
->
-  <div
-    class="StyledLayer__StyledOverlay-hhVyjc hewshY"
-  />
-  <div
-    class="StyledLayer__StyledContainer-gBGbkw iDAhwe"
-    id="skip-links"
-  >
-    <div
-      class="StyledBox-bStriS irmyDL"
-    >
-      <h2
-        class="StyledHeading-NQveS wwSdV"
-      >
-        Skip To
-        :
-      </h2>
-      <div
-        class="StyledBox-bStriS kOykGg"
-      >
-        <div
-          class="StyledBox-bStriS hOqGji"
-        >
-          <a
-            class="StyledAnchor-hcnTIZ kwSIan"
-            href="#main"
-            label="Main Content"
-          >
-            Main Content
-          </a>
-        </div>
-        <div
-          class="StyledBox-bStriS hOqGji"
-        >
-          <a
-            class="StyledAnchor-hcnTIZ kwSIan"
-            href="#footer"
-            label="Footer"
-          >
-            Footer
-          </a>
-        </div>
-      </div>
-    </div>
+exports[`SkipLink basic 1`] = `
+<div>
+  <div>
+    <a
+      aria-hidden="true"
+      class="StyledAnchor-hcnTIZ kwSIan"
+      id="main"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
+    Main Content
+    <input
+      type="text"
+      value="main content"
+    />
   </div>
+  <footer>
+    <a
+      aria-hidden="true"
+      class="StyledAnchor-hcnTIZ kwSIan"
+      id="footer"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
+    <input
+      type="text"
+      value="footer"
+    />
+  </footer>
 </div>
 `;
 
-exports[`SkipLink mounts 2`] = `
-"@media only screen and (max-width:699px) {
-  .irmyDL {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .irmyDL {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .kOykGg {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .kOykGg {
-    padding-bottom: 12px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .hOqGji {
-    margin: 6px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .hOqGji {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .wwSdV {
-    font-size: 24px;
-    line-height: 1.333;
-    max-width: 576px;
-    font-weight: 600;
-  }
-}
-
-
-
-.cvbgCP {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background-color: unset;
-  position: relative;
-  z-index: 10;
-  overflow: auto;
-  pointer-events: none;
-  left: -100%;
-  right: 100%;
-  z-index: -1;
-  position: fixed;
-}
-
-@media only screen and (max-width:699px) {
-  .cvbgCP {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .hewshY {
-    position: absolute;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .iDAhwe {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .iDAhwe {
-    position: fixed;
-    max-height: 100%;
-    max-width: 100%;
-    overflow: auto;
-    border-radius: 4px;
-  }
-}"
-`;
-
-exports[`SkipLink mounts 3`] = `
-<div
-  class="StyledLayer-ceZzeh eAzHoj"
-  id="skip-links"
-  tabindex="-1"
->
-  <div
-    class="StyledLayer__StyledOverlay-hhVyjc hewshY"
-  />
-  <div
-    class="StyledLayer__StyledContainer-gBGbkw gejwyv"
-    id="skip-links"
-  >
-    <div
-      class="StyledBox-bStriS irmyDL"
-    >
-      <h2
-        class="StyledHeading-NQveS wwSdV"
-      >
-        Skip To
-        :
-      </h2>
-      <div
-        class="StyledBox-bStriS kOykGg"
-      >
-        <div
-          class="StyledBox-bStriS hOqGji"
-        >
-          <a
-            class="StyledAnchor-hcnTIZ fMCzwf"
-            href="#main"
-            label="Main Content"
-          >
-            Main Content
-          </a>
-        </div>
-        <div
-          class="StyledBox-bStriS hOqGji"
-        >
-          <a
-            class="StyledAnchor-hcnTIZ kwSIan"
-            href="#footer"
-            label="Footer"
-          >
-            Footer
-          </a>
-        </div>
-      </div>
-    </div>
+exports[`SkipLink basic 2`] = `
+<div>
+  <div>
+    <a
+      aria-hidden="true"
+      class="StyledAnchor-hcnTIZ kwSIan"
+      id="main"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
+    Main Content
+    <input
+      type="text"
+      value="main content"
+    />
   </div>
+  <footer>
+    <a
+      aria-hidden="true"
+      class="StyledAnchor-hcnTIZ kwSIan"
+      id="footer"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
+    <input
+      type="text"
+      value="footer"
+    />
+  </footer>
 </div>
 `;
 
-exports[`SkipLink mounts 4`] = `
-"@media only screen and (max-width:699px) {
-  .irmyDL {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .irmyDL {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .kOykGg {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .kOykGg {
-    padding-bottom: 12px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .hOqGji {
-    margin: 6px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .hOqGji {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .wwSdV {
-    font-size: 24px;
-    line-height: 1.333;
-    max-width: 576px;
-    font-weight: 600;
-  }
-}
-
-
-
-@media only screen and (max-width:699px) {
-  .cvbgCP {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-  }
-}
-
-.eAzHoj {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background-color: unset;
-  position: relative;
-  z-index: 10;
-  overflow: auto;
-  pointer-events: none;
-}
-
-@media only screen and (max-width:699px) {
-  .eAzHoj {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .eAzHoj {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .hewshY {
-    position: absolute;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .iDAhwe {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .iDAhwe {
-    position: fixed;
-    max-height: 100%;
-    max-width: 100%;
-    overflow: auto;
-    border-radius: 4px;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .gejwyv {
-    min-height: 100%;
-    min-width: 100%;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .gejwyv {
-    position: fixed;
-    max-height: 100%;
-    max-width: 100%;
-    overflow: auto;
-    border-radius: 4px;
-    top: 0;
-    left: 50%;
-    -webkit-transform: translate(-50%,0);
-    -ms-transform: translate(-50%,0);
-    transform: translate(-50%,0);
-    -webkit-animation: bAkQbM 0.2s ease-in-out forwards;
-    animation: bAkQbM 0.2s ease-in-out forwards;
-  }
-}"
+exports[`SkipLink basic 3`] = `
+<div>
+  <div>
+    <a
+      aria-hidden="true"
+      class="StyledAnchor-hcnTIZ kwSIan"
+      id="main"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
+    Main Content
+    <input
+      type="text"
+      value="main content"
+    />
+  </div>
+  <footer>
+    <a
+      aria-hidden="true"
+      class="StyledAnchor-hcnTIZ kwSIan"
+      id="footer"
+      style="width: 0px; height: 0px; overflow: hidden; position: absolute;"
+      tabindex="-1"
+    />
+    <input
+      type="text"
+      value="footer"
+    />
+  </footer>
+</div>
 `;

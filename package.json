@@ -35,20 +35,20 @@
     "storybook": "start-storybook -p 9001 -c storybook"
   },
   "peerDependencies": {
-    "react": ">= 15.3.0 < 16 || 16.x",
-    "react-dom": ">= 15.3.0 < 16 || 16.x",
-    "styled-components": ">= 2.1.1"
+    "react": ">= 16.3.2",
+    "react-dom": ">= 16.3.2",
+    "styled-components": ">= 3.2.6"
   },
   "dependencies": {
     "babel-plugin-grommet": "^0.5.1",
     "grommet-icons": "^0.16.0",
-    "markdown-to-jsx": "^6.5.2",
+    "markdown-to-jsx": "^6.6.2",
     "node-emoji": "^1.8.1",
     "polished": "^1.3.0",
     "prop-types": "^15.5.10",
     "react-desc": "^3.2.0",
     "react-waypoint": "^8.0.1",
-    "recompose": "^0.26.0"
+    "recompose": "^0.27.0"
   },
   "devDependencies": {
     "@storybook/react": "^4.0.0-alpha.4",
@@ -63,34 +63,33 @@
     "babel-preset-stage-1": "^6.24.1",
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^5.0.1",
-    "css": "^2.2.1",
+    "css": "^2.2.3",
     "del": "^3.0.0",
-    "enzyme": "^3.0.0",
-    "enzyme-adapter-react-16": "^1.1.0",
     "eslint": "^4.3.0",
     "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-class-property": "^1.0.6",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.1.0",
-    "fs-extra": "^5.0.0",
+    "fs-extra": "^6.0.0",
     "grommet-cli": "5.1.2",
     "jest": "^22.4.2",
     "jest-cli": "^23.0.0-alpha.0",
     "jest-styled-components": "^5.0.0",
     "pre-commit": "^1.2.2",
-    "react": "^16.0.0",
+    "react": "^16.3.2",
     "react-dev-utils": "^5.0.0",
-    "react-dom": "^16.0.0",
+    "react-dom": "^16.3.2",
     "react-test-renderer": "^16.1.0",
+    "react-testing-library": "^3.0.2",
     "regenerator-runtime": "^0.11.1",
     "require-reload": "^0.2.2",
     "simple-git": "^1.74.1",
-    "styled-components": "^3.2.3",
+    "styled-components": "^3.2.6",
     "tarball-extract": "^0.0.6",
-    "webpack": "^4.2.0",
-    "webpack-cli": "^2.0.12"
+    "webpack": "^4.8.1",
+    "webpack-cli": "^2.1.3"
   },
   "jest": {
     "collectCoverage": true,
@@ -99,7 +98,8 @@
     ],
     "collectCoverageFrom": [
       "src/js/components/**/*.{js}",
-      "src/js/theme/**/*.{js}"
+      "src/js/theme/**/*.{js}",
+      "!src/js/components/**/*.{stories.js}"
     ],
     "modulePathIgnorePatterns": [
       "<rootDir>/dist/"

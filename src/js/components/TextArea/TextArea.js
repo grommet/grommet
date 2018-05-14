@@ -18,6 +18,9 @@ if (process.env.NODE_ENV !== 'production') {
   doc(TextArea);
 }
 
-export default compose(
+const WrappedTextArea = compose(
   withTheme,
 )(TextArea);
+
+export default React.forwardRef((props, ref) =>
+  <WrappedTextArea innerRef={ref} {...props} />);

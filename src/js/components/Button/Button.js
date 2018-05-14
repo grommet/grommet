@@ -31,6 +31,7 @@ class Button extends Component {
   render() {
     const {
       a11yTitle,
+      buttonRef,
       children,
       icon,
       fill, // munged to avoid styled-components putting it in the DOM
@@ -71,6 +72,7 @@ class Button extends Component {
     return (
       <Tag
         {...rest}
+        innerRef={buttonRef}
         aria-label={a11yTitle}
         disabled={disabled}
         icon={icon}
@@ -94,7 +96,10 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Button);
 }
 
-export default compose(
+const WrappedButton = compose(
   withFocus,
   withTheme,
 )(Button);
+
+export default React.forwardRef((props, ref) =>
+  <WrappedButton buttonRef={ref} {...props} />);

@@ -46,6 +46,7 @@ class Select extends Component {
       onClose,
       placeholder,
       plain,
+      selectRef,
       size,
       theme,
       value,
@@ -90,6 +91,7 @@ class Select extends Component {
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
         <DropButton
+          ref={selectRef}
           disabled={disabled}
           dropAlign={dropAlign}
           dropTarget={dropTarget}
@@ -139,6 +141,9 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Select);
 }
 
-export default compose(
+const WrappedSelect = compose(
   withTheme,
 )(Select);
+
+export default React.forwardRef((props, ref) =>
+  <WrappedSelect selectRef={ref} {...props} />);

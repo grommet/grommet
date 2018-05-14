@@ -72,6 +72,9 @@ if (process.env.NODE_ENV !== 'production') {
   doc(CheckBox);
 }
 
-export default compose(
+const WrappedCheckBox = compose(
   withTheme,
 )(CheckBox);
+
+export default React.forwardRef((props, ref) =>
+  <WrappedCheckBox innerRef={ref} {...props} />);

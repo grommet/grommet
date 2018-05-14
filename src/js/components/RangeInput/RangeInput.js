@@ -24,7 +24,10 @@ if (process.env.NODE_ENV !== 'production') {
   doc(RangeInput);
 }
 
-export default compose(
+const WrappedRangeInput = compose(
   withFocus,
   withTheme,
 )(RangeInput);
+
+export default React.forwardRef((props, ref) =>
+  <WrappedRangeInput innerRef={ref} {...props} />);

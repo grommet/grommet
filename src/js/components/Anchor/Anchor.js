@@ -89,7 +89,10 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Anchor);
 }
 
-export default compose(
+const WrappedAnchor = compose(
   withFocus,
   withTheme,
 )(Anchor);
+
+export default React.forwardRef((props, ref) =>
+  <WrappedAnchor innerRef={ref} {...props} />);

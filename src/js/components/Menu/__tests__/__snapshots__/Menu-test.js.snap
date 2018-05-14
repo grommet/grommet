@@ -1,12 +1,744 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Menu opens and closes on click 1`] = `
+exports[`Menu basic 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 12px;
+}
+
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c0 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c2 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c0 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<div
+  onKeyDown={[Function]}
+>
+  <button
+    aria-label="Open Menu"
+    className="c0"
+    disabled={false}
+    href={undefined}
+    icon={undefined}
+    id="test-menu"
+    label={undefined}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="button"
+  >
+    <div
+      aria-label={undefined}
+      className="c1"
+    >
+      <span
+        className="c2"
+        size={undefined}
+      >
+        Test Menu
+      </span>
+      <div
+        className="c3"
+      />
+      <svg />
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu close by clicking outside 1`] = `
+<div>
+  <button
+    aria-label="Open Menu"
+    class="StyledButton-gXzblK fYUIhN"
+    id="test-menu"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS kMKXvj"
+    >
+      <span
+        class="StyledText-eJMSZI WtHkG"
+      >
+        Test
+      </span>
+      <div
+        class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
+      />
+      <svg
+        aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
+        color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu close by clicking outside 2`] = `
 <div
   class="StyledDrop-bCWxPe eTlFvx"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object Object]"
+  target="[object HTMLButtonElement]"
+>
+  <div
+    class="StyledBox-bStriS dFjuei"
+  >
+    <button
+      aria-label="Close Menu"
+      class="StyledButton-gXzblK cfZmJV"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS kMKXvj"
+      >
+        <span
+          class="StyledText-eJMSZI WtHkG"
+        >
+          Test
+        </span>
+        <div
+          class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
+        />
+        <svg
+          aria-label="FormDown"
+          class="StyledIcon-gTfjEw htxeRg"
+          color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS dFjuei"
+    >
+      <button
+        class="StyledButton-gXzblK cDmTYk"
+        disabled=""
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS qtlmp"
+        >
+          Item 1
+        </div>
+      </button>
+      <button
+        class="StyledButton-gXzblK cDmTYk"
+        disabled=""
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS qtlmp"
+        >
+          Item 2
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Menu close by clicking outside 3`] = `
+"@media only screen and (max-width:699px) {
+  .kMKXvj {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .kMKXvj {
+    padding: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dFjuei {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .dFjuei {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .qtlmp {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .qtlmp {
+    padding: 6px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .fYUIhN {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cfZmJV {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .cDmTYk {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .fWHUwZ {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .kaHtmF {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+
+
+.eTlFvx {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
+  position: fixed;
+  z-index: 20;
+  overflow: auto;
+  outline: none;
+  background-color: #f8f8f8;
+  color: #444444;
+  opacity: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-animation: jNdvGQ 0.1s forwards;
+  animation: jNdvGQ 0.1s forwards;
+  -webkit-animation-delay: 0.01s;
+  animation-delay: 0.01s;
+}"
+`;
+
+exports[`Menu close on esc 1`] = `
+<div>
+  <button
+    aria-label="Open Menu"
+    class="StyledButton-gXzblK fYUIhN"
+    id="test-menu"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS kMKXvj"
+    >
+      <span
+        class="StyledText-eJMSZI WtHkG"
+      >
+        Test
+      </span>
+      <div
+        class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
+      />
+      <svg
+        aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
+        color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu close on tab 1`] = `
+<div>
+  <button
+    aria-label="Open Menu"
+    class="StyledButton-gXzblK fYUIhN"
+    id="test-menu"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS kMKXvj"
+    >
+      <span
+        class="StyledText-eJMSZI WtHkG"
+      >
+        Test
+      </span>
+      <div
+        class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
+      />
+      <svg
+        aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
+        color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu custom message 1`] = `
+.c4 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c4 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c4 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c4 *[stroke*="#"],
+.c4 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c4 *[fill-rule],
+.c4 *[FILL-RULE],
+.c4 *[fill*="#"],
+.c4 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 12px;
+}
+
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c0 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c2 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 6px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c0 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<div
+  onKeyDown={[Function]}
+>
+  <button
+    aria-label="Abrir Menu"
+    className="c0"
+    disabled={false}
+    href={undefined}
+    icon={undefined}
+    id={undefined}
+    label={undefined}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    type="button"
+  >
+    <div
+      aria-label={undefined}
+      className="c1"
+    >
+      <span
+        className="c2"
+        size={undefined}
+      >
+        Test Menu
+      </span>
+      <div
+        className="c3"
+      />
+      <svg
+        aria-label="FormDown"
+        className="c4"
+        color="brand"
+        height="24px"
+        role="img"
+        size={undefined}
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu disabled 1`] = `
+<div>
+  <button
+    aria-label="Open Menu"
+    class="StyledButton-gXzblK cDmTYk"
+    disabled=""
+    id="test-menu"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS kMKXvj"
+    >
+      <span
+        class="StyledText-eJMSZI WtHkG"
+      >
+        Test
+      </span>
+      <div
+        class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
+      />
+      <svg
+        aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
+        color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu navigate through suggestions and select 1`] = `
+<div>
+  <button
+    aria-label="Open Menu"
+    class="StyledButton-gXzblK fYUIhN"
+    id="test-menu"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS kMKXvj"
+    >
+      <span
+        class="StyledText-eJMSZI WtHkG"
+      >
+        Test
+      </span>
+      <div
+        class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
+      />
+      <svg
+        aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
+        color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu open and close on click 1`] = `
+<div>
+  <button
+    aria-label="Open Menu"
+    class="StyledButton-gXzblK fYUIhN"
+    id="test-menu"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS kMKXvj"
+    >
+      <span
+        class="StyledText-eJMSZI WtHkG"
+      >
+        Test
+      </span>
+      <div
+        class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
+      />
+      <svg
+        aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
+        color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu open and close on click 2`] = `
+<div>
+  <button
+    aria-label="Open Menu"
+    class="StyledButton-gXzblK fYUIhN"
+    id="test-menu"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS kMKXvj"
+    >
+      <span
+        class="StyledText-eJMSZI WtHkG"
+      >
+        Test
+      </span>
+      <div
+        class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
+      />
+      <svg
+        aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
+        color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu open and close on click 3`] = `
+<div
+  class="StyledDrop-bCWxPe eTlFvx"
+  id="test-menu__drop"
+  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
+  tabindex="-1"
+  target="[object HTMLButtonElement]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -85,7 +817,7 @@ exports[`Menu opens and closes on click 1`] = `
 </div>
 `;
 
-exports[`Menu opens and closes on click 2`] = `
+exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width:699px) {
   .kMKXvj {
     margin: 0;
@@ -181,7 +913,7 @@ exports[`Menu opens and closes on click 2`] = `
 }"
 `;
 
-exports[`Menu renders 1`] = `
+exports[`Menu select an item 1`] = `
 <div>
   <button
     aria-label="Open Menu"
@@ -195,31 +927,7 @@ exports[`Menu renders 1`] = `
       <span
         class="StyledText-eJMSZI WtHkG"
       >
-        Test Menu
-      </span>
-      <div
-        class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
-      />
-      <svg />
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Menu with custom message renders 1`] = `
-<div>
-  <button
-    aria-label="Abrir Menu"
-    class="StyledButton-gXzblK fYUIhN"
-    type="button"
-  >
-    <div
-      class="StyledBox-bStriS kMKXvj"
-    >
-      <span
-        class="StyledText-eJMSZI WtHkG"
-      >
-        Test Menu
+        Test
       </span>
       <div
         class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
@@ -247,12 +955,53 @@ exports[`Menu with custom message renders 1`] = `
 `;
 
 exports[`Menu with dropAlign renders 1`] = `
+<div>
+  <button
+    aria-label="Open Menu"
+    class="StyledButton-gXzblK fYUIhN"
+    id="test-menu"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS kMKXvj"
+    >
+      <span
+        class="StyledText-eJMSZI WtHkG"
+      >
+        Test
+      </span>
+      <div
+        class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
+      />
+      <svg
+        aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
+        color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Menu with dropAlign renders 2`] = `
 <div
   class="StyledDrop-bCWxPe dRgAcx"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object Object]"
+  target="[object HTMLButtonElement]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -322,7 +1071,7 @@ exports[`Menu with dropAlign renders 1`] = `
 </div>
 `;
 
-exports[`Menu with dropAlign renders 2`] = `
+exports[`Menu with dropAlign renders 3`] = `
 "@media only screen and (max-width:699px) {
   .kMKXvj {
     margin: 0;
@@ -382,6 +1131,13 @@ exports[`Menu with dropAlign renders 2`] = `
 
 @media only screen and (min-width:700px) {
   .fWHUwZ {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .kaHtmF {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

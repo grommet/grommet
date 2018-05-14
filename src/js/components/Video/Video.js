@@ -437,6 +437,9 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Video);
 }
 
-export default compose(
+const WrappedVideo = compose(
   withTheme,
 )(Video);
+
+export default React.forwardRef((props, ref) =>
+  <WrappedVideo innerRef={ref} {...props} />);
