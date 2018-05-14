@@ -38,7 +38,7 @@ class DropContainer extends Component {
 
   addScrollListener = () => {
     const { target } = this.props;
-    this.scrollParents = findScrollParents(target);
+    this.scrollParents = findScrollParents(findDOMNode(target));
     this.scrollParents.forEach(scrollParent => scrollParent.addEventListener('scroll', this.place));
   }
 

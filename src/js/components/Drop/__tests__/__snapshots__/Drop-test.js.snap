@@ -540,41 +540,4 @@ exports[`Drop restrict focus 3`] = `
 }"
 `;
 
-exports[`Drop restrict focus 4`] = `
-<body>
-  <div />
-  <div
-    aria-hidden="false"
-  />
-  <div
-    aria-hidden="false"
-  />
-  <div
-    aria-hidden="false"
-  />
-  <div
-    aria-hidden="false"
-  />
-  <div
-    aria-hidden="false"
-  />
-  <div
-    aria-hidden="false"
-  />
-  <div
-    aria-hidden="false"
-  />
-  <div
-    aria-hidden="false"
-  />
-  <div
-    aria-hidden="false"
-  />
-  <div
-    aria-hidden="false"
-  />
-  <div
-    aria-hidden="false"
-  />
-</body>
-`;
+exports[`Drop restrict focus 4`] = `<body />`;

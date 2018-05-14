@@ -69,6 +69,13 @@ export const getNewContainer = () => {
   return container;
 };
 
+export const setFocusWithoutScroll = (element) => {
+  const x = window.scrollX;
+  const y = window.scrollY;
+  element.focus();
+  window.scrollTo(x, y); // this doesn't work in unit tests :(
+};
+
 export const setTabIndex = tabIndex => (element) => {
   element.setAttribute('tabindex', tabIndex);
 };
@@ -139,6 +146,7 @@ export default {
   getNewContainer,
   makeNodeFocusable,
   makeNodeUnfocusable,
+  setFocusWithoutScroll,
   setTabIndex,
   unsetTabIndex,
 };

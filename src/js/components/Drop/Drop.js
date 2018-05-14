@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { createPortal } from 'react-dom';
 
-import { getNewContainer } from '../../utils';
+import { getNewContainer, setFocusWithoutScroll } from '../../utils';
 
 import { withTheme } from '../hocs';
 
@@ -16,28 +16,24 @@ class Drop extends Component {
     },
   }
 
-  dropContainer = getNewContainer()
+  componentWillMount() {
+    this.originalFocusedElement = document.activeElement;
+    this.dropContainer = getNewContainer();
+  }
 
-  // getSnapshotBeforeUpdate() {
-  //   if (!this.originalFocusedElement) {
-  //     this.originalFocusedElement = document.activeElement;
-  //   }
-  //   return null;
-  // }
-
-  // componentWillUnmount() {
-  //   const { restrictFocus } = this.props;
-  //   if (restrictFocus && this.originalFocusedElement) {
-  //     if (this.originalFocusedElement.focus) {
-  //       this.originalFocusedElement.focus();
-  //     } else if (this.originalFocusedElement.parentNode &&
-  //       this.originalFocusedElement.parentNode.focus) {
-  //       // required for IE11 and Edge
-  //       this.originalFocusedElement.parentNode.focus();
-  //     }
-  //   }
-  //   document.body.removeChild(this.dropContainer);
-  // }
+  componentWillUnmount() {
+    const { restrictFocus } = this.props;
+    if (restrictFocus && this.originalFocusedElement) {
+      if (this.originalFocusedElement.focus) {
+        setFocusWithoutScroll(this.originalFocusedElement);
+      } else if (this.originalFocusedElement.parentNode &&
+        this.originalFocusedElement.parentNode.focus) {
+        // required for IE11 and Edge
+        setFocusWithoutScroll(this.originalFocusedElement.parentNode);
+      }
+    }
+    document.body.removeChild(this.dropContainer);
+  }
 
   render() {
     return createPortal(
