@@ -8,15 +8,11 @@
 
 ### Documentation
 
-Visit the [grommet.github.io](https://grommet.github.io/) website for more information.
+Visit the [Grommet v2](https://v2.grommet.io/) website for more information.
 
 ### Support / Contributing
 
 Before opening an issue or pull request, please read the [Contributing](https://github.com/grommet/grommet/blob/master/CONTRIBUTING.md) guide.
-
-### Hello World
-
-  The quickest way to get started is to access the [Hello World](https://grommet.github.io/docs/hello-world) page.
 
 ### Install
 
@@ -24,10 +20,10 @@ Before opening an issue or pull request, please read the [Contributing](https://
 
   For NPM users:
   ```
-    $ npm install grommet
+    $ npm install grommet@next
   ```
 
-  Detailed instructions are on the [Get Started](https://grommet.github.io/docs/get-started) page.
+  Detailed instructions are on the [Get Started](https://v2.grommet.io/use) page.
 
 ### Explore
 
