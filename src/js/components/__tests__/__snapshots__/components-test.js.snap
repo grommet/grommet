@@ -2,56 +2,168 @@
 
 exports[`Components loads 1`] = `
 Object {
-  "Anchor": [Function],
-  "Box": [Function],
-  "Button": [Function],
-  "Calendar": [Function],
-  "Carousel": [Function],
-  "Chart": [Function],
-  "CheckBox": [Function],
-  "Clock": [Function],
-  "Diagram": [Function],
-  "Distribution": [Function],
-  "Drop": [Function],
-  "DropButton": [Function],
+  "Anchor": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Box": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Button": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Calendar": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Carousel": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Chart": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "CheckBox": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Clock": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Diagram": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Distribution": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Drop": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "DropButton": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "DropContainer": [Function],
-  "FormField": [Function],
-  "Grid": [Function],
+  "FormField": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Grid": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "available": undefined,
+    "render": [Function],
+  },
   "Grommet": [Function],
-  "Heading": [Function],
-  "Image": [Function],
+  "Heading": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Image": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "InfiniteScroll": [Function],
   "Keyboard": [Function],
-  "Layer": [Function],
-  "LayerContainer": [Function],
-  "Markdown": [Function],
-  "Menu": [Function],
-  "Meter": [Function],
-  "Paragraph": [Function],
-  "RadioButton": [Function],
-  "RangeInput": [Function],
-  "RangeSelector": [Function],
-  "Responsive": [Function],
+  "Layer": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "LayerContainer": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Markdown": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Menu": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Meter": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Paragraph": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "RadioButton": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "RangeInput": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "RangeSelector": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Responsive": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "RoutedAnchor": [Function],
   "RoutedButton": [Function],
-  "Select": [Function],
+  "Select": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "SkipLink": [Function],
   "SkipLinkTarget": [Function],
   "SkipLinks": [Function],
-  "Stack": [Function],
-  "Tab": [Function],
-  "Table": [Function],
+  "Stack": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Tab": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Table": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "TableBody": [Function],
-  "TableCell": [Function],
+  "TableCell": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "TableFooter": [Function],
   "TableHeader": [Function],
   "TableRow": [Function],
-  "Tabs": [Function],
-  "Text": [Function],
-  "TextArea": [Function],
-  "TextInput": [Function],
-  "Video": [Function],
-  "WorldMap": [Function],
+  "Tabs": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Text": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "TextArea": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "TextInput": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "Video": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "WorldMap": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "__esModule": true,
 }
 `;

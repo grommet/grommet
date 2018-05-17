@@ -36,8 +36,12 @@ class Drop extends Component {
   }
 
   render() {
+    const {
+      target: dropTarget, // avoid DOM leakage
+      ...rest
+    } = this.props;
     return createPortal(
-      <DropContainer {...this.props} />,
+      <DropContainer dropTarget={dropTarget} {...rest} />,
       this.dropContainer
     );
   }

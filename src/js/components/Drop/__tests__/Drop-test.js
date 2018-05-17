@@ -1,43 +1,37 @@
 import React, { Component } from 'react';
 import 'jest-styled-components';
-import Enzyme, { mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { cleanup, fireEvent, renderIntoDocument } from 'react-testing-library';
 
-import { createPortal, expectPortal } from '../../../utils/portal';
+import { expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../../Grommet';
 import { Drop } from '../';
 
-Enzyme.configure({ adapter: new Adapter() });
-
-class FakeInput extends Component {
+class TestInput extends Component {
   state = {
     showDrop: false,
   }
+
+  inputRef = React.createRef()
+
   componentDidMount() {
-    /* eslint-disable react/no-did-mount-set-state */
-    this.setState({ showDrop: true });
-    /* eslint-enable react/no-did-mount-set-state */
+    this.setState({ showDrop: true }); // eslint-disable-line
   }
+
   render() {
     const { inputProps, ...rest } = this.props;
     const { showDrop } = this.state;
     let drop;
     if (showDrop) {
       drop = (
-        <Drop id='drop-node' target={this.inputRef} {...rest}>
+        <Drop id='drop-node' target={this.inputRef.current} {...rest}>
           this is a test
         </Drop>
       );
     }
     return (
       <Grommet>
-        <input
-          ref={(ref) => {
-            this.inputRef = ref;
-          }}
-          {...inputProps}
-        />
+        <input ref={this.inputRef} {...inputProps} />
         {drop}
       </Grommet>
     );
@@ -45,127 +39,96 @@ class FakeInput extends Component {
 }
 
 describe('Drop', () => {
-  beforeEach(createPortal);
+  afterEach(cleanup);
 
-  test('mounts', () => {
-    mount(
-      <FakeInput />, {
-        attachTo: document.body.firstChild,
-      }
+  test('basic', () => {
+    window.scrollTo = jest.fn();
+    renderIntoDocument(<TestInput />);
+    expectPortal('drop-node').toMatchSnapshot();
+  });
+
+  test('align left right top bottom', () => {
+    renderIntoDocument(
+      <TestInput align={{ left: 'right', top: 'bottom' }} />
     );
 
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('aligns left right top bottom', () => {
-    mount(
-      <FakeInput align={{ left: 'right', top: 'bottom' }} />, {
-        attachTo: document.body.firstChild,
-      }
+  test('align right right bottom top', () => {
+    renderIntoDocument(
+      <TestInput align={{ right: 'right', bottom: 'top' }} />
     );
 
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('aligns right right bottom top', () => {
-    mount(
-      <FakeInput align={{ right: 'right', bottom: 'top' }} />, {
-        attachTo: document.body.firstChild,
-      }
+  test('align left random', () => {
+    renderIntoDocument(
+      <TestInput align={{ left: 'random', bottom: 'bottom' }} />
     );
-
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('aligns skips left random', () => {
-    mount(
-      <FakeInput align={{ left: 'random', bottom: 'bottom' }} />, {
-        attachTo: document.body.firstChild,
-      }
+  test('align right left top top', () => {
+    renderIntoDocument(
+      <TestInput align={{ right: 'left', top: 'top' }} />
     );
-
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('aligns right left top top', () => {
-    mount(
-      <FakeInput align={{ right: 'left', top: 'top' }} />, {
-        attachTo: document.body.firstChild,
-      }
+  test('align right right bottom top', () => {
+    renderIntoDocument(
+      <TestInput align={{ right: 'right', bottom: 'top' }} />
     );
-
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('aligns right right bottom top', () => {
-    mount(
-      <FakeInput align={{ right: 'right', bottom: 'top' }} />, {
-        attachTo: document.body.firstChild,
-      }
+  test('align right random', () => {
+    renderIntoDocument(
+      <TestInput align={{ right: 'random' }} />
     );
-
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('aligns skips right random', () => {
-    mount(
-      <FakeInput align={{ right: 'random' }} />, {
-        attachTo: document.body.firstChild,
-      }
+  test('invalid align', () => {
+    renderIntoDocument(
+      <TestInput align={{ whatever: 'right' }} />
     );
-
     expectPortal('drop-node').toMatchSnapshot();
   });
 
-  test('skips invalid align', () => {
-    mount(
-      <FakeInput align={{ whatever: 'right' }} />, {
-        attachTo: document.body.firstChild,
-      }
-    );
-
+  test('close', () => {
+    renderIntoDocument(<TestInput />);
     expectPortal('drop-node').toMatchSnapshot();
-  });
 
-  test('closes drop', () => {
-    const component = mount(<FakeInput />, {
-      attachTo: document.body.firstChild,
-    });
-    component.unmount();
+    cleanup();
     expect(document.getElementById('drop-node')).toBeNull();
   });
 
-  test('invokes onClickOutside', () => {
+  test('invoke onClickOutside', () => {
     const onClickOutside = jest.fn();
-    mount(<FakeInput onClickOutside={onClickOutside} />);
-    global.document.dispatchEvent(new Event('click'));
+    renderIntoDocument(<TestInput onClickOutside={onClickOutside} />);
+    expectPortal('drop-node').toMatchSnapshot();
+
+    fireEvent(document, new MouseEvent('click', { bubbles: true, cancelable: true }));
     expect(onClickOutside).toBeCalled();
   });
 
-  test('updates', () => {
-    const onClickOutside = jest.fn();
-    const component = mount(<FakeInput onClickOutside={onClickOutside} />);
-    component.setProps({ onClickOutside: undefined });
-    expect(component.getDOMNode()).toMatchSnapshot();
-  });
-
-  test('resizes', () => {
-    mount(<FakeInput id='test' />, {
-      attachTo: document.body.firstChild,
-    });
+  test('resize', () => {
+    renderIntoDocument(<TestInput />);
     global.window.innerWidth = 1000;
     global.window.innerHeight = 1000;
-    global.window.dispatchEvent(new Event('resize'));
-    expectPortal('test').toMatchSnapshot();
+    fireEvent(window, new Event('resize', { bubbles: true, cancelable: true }));
+    expectPortal('drop-node').toMatchSnapshot();
   });
 
   test('restrict focus', () => {
-    const component = mount(<FakeInput restrictFocus={true} />);
-
+    renderIntoDocument(<TestInput restrictFocus={true} />);
     expect(document.activeElement).toMatchSnapshot();
     expectPortal('drop-node').toMatchSnapshot();
 
-    component.unmount();
+    cleanup();
 
     expect(document.activeElement).toMatchSnapshot();
   });

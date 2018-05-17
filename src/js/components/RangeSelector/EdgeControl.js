@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { compose } from 'recompose';
 
 import { Box } from '../Box';
 import { Keyboard } from '../Keyboard';
 import { colorForName, parseMetricToNum } from '../../utils';
+import { withForwardRef } from '../hocs';
 
 const DIRECTION_PROPS = {
   horizontal: {
@@ -15,11 +17,13 @@ const DIRECTION_PROPS = {
   },
 };
 
-export default class extends Component {
+class EdgeControl extends Component {
   state = {}
 
   render() {
-    const { color, direction, edge, onDecrease, onIncrease, theme, ...rest } = this.props;
+    const {
+      color, direction, edge, forwardRef, onDecrease, onIncrease, theme, ...rest
+    } = this.props;
     const { focused } = this.state;
     const { cursor, fill } = DIRECTION_PROPS[direction];
     const size = parseMetricToNum(theme.global.spacing) / 2;
@@ -38,6 +42,7 @@ export default class extends Component {
           align='center'
         >
           <Box
+            ref={forwardRef}
             direction={boxDirection}
             justify='center'
             align='center'
@@ -68,3 +73,7 @@ export default class extends Component {
     );
   }
 }
+
+export default compose(
+  withForwardRef,
+)(EdgeControl);

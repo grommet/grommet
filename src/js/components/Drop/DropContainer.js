@@ -37,8 +37,8 @@ class DropContainer extends Component {
   }
 
   addScrollListener = () => {
-    const { target } = this.props;
-    this.scrollParents = findScrollParents(findDOMNode(target));
+    const { dropTarget } = this.props;
+    this.scrollParents = findScrollParents(findDOMNode(dropTarget));
     this.scrollParents.forEach(scrollParent => scrollParent.addEventListener('scroll', this.place));
   }
 
@@ -64,11 +64,11 @@ class DropContainer extends Component {
   }
 
   place = () => {
-    const { align, responsive } = this.props;
+    const { align, dropTarget, responsive } = this.props;
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
-    const target = findDOMNode(this.props.target);
+    const target = findDOMNode(dropTarget);
     const container = findDOMNode(this.dropRef);
     if (container && target) {
       // clear prior styling

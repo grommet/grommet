@@ -25,6 +25,7 @@
     "fail": true,
     "afterEach": true,
     "beforeEach": true,
+    "MouseEvent": true,
   },
   "rules": {
     "indent": "off",

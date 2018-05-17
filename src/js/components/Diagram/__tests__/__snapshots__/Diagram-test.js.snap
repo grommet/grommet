@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Diagram color renders 1`] = `
+exports[`Diagram basic 1`] = `
 <div
   class="StyledGrommet-gGRXwz fDhYVV"
 >
@@ -28,13 +28,22 @@ exports[`Diagram color renders 1`] = `
       viewBox="0 0 0 0"
       width="0"
     >
-      <g />
+      <g>
+        <path
+          d="M 0,0 Q 0,0 0,0 T 0,0"
+          fill="none"
+          stroke="#FD6FFF"
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-width="1"
+        />
+      </g>
     </svg>
   </div>
 </div>
 `;
 
-exports[`Diagram offset renders 1`] = `
+exports[`Diagram color 1`] = `
 <div
   class="StyledGrommet-gGRXwz fDhYVV"
 >
@@ -62,13 +71,22 @@ exports[`Diagram offset renders 1`] = `
       viewBox="0 0 0 0"
       width="0"
     >
-      <g />
+      <g>
+        <path
+          d="M 0,0 Q 0,0 0,0 T 0,0"
+          fill="none"
+          stroke="#865CD6"
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-width="1"
+        />
+      </g>
     </svg>
   </div>
 </div>
 `;
 
-exports[`Diagram renders 1`] = `
+exports[`Diagram offset 1`] = `
 <div
   class="StyledGrommet-gGRXwz fDhYVV"
 >
@@ -96,7 +114,32 @@ exports[`Diagram renders 1`] = `
       viewBox="0 0 0 0"
       width="0"
     >
-      <g />
+      <g>
+        <path
+          d="M 6,6 Q 6,6 6,6 T 6,6"
+          fill="none"
+          stroke="#FD6FFF"
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-width="1"
+        />
+        <path
+          d="M 12,12 Q 12,12 12,12 T 12,12"
+          fill="none"
+          stroke="#FD6FFF"
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-width="1"
+        />
+        <path
+          d="M 24,24 Q 24,24 24,24 T 24,24"
+          fill="none"
+          stroke="#FD6FFF"
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-width="1"
+        />
+      </g>
     </svg>
   </div>
 </div>
@@ -130,13 +173,38 @@ exports[`Diagram thickness renders 1`] = `
       viewBox="0 0 0 0"
       width="0"
     >
-      <g />
+      <g>
+        <path
+          d="M 0,0 Q 0,0 0,0 T 0,0"
+          fill="none"
+          stroke="#FD6FFF"
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-width="6"
+        />
+        <path
+          d="M 0,0 Q 0,0 0,0 T 0,0"
+          fill="none"
+          stroke="#FD6FFF"
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-width="12"
+        />
+        <path
+          d="M 0,0 Q 0,0 0,0 T 0,0"
+          fill="none"
+          stroke="#FD6FFF"
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-width="24"
+        />
+      </g>
     </svg>
   </div>
 </div>
 `;
 
-exports[`Diagram type renders 1`] = `
+exports[`Diagram type 1`] = `
 <div
   class="StyledGrommet-gGRXwz fDhYVV"
 >
@@ -164,7 +232,32 @@ exports[`Diagram type renders 1`] = `
       viewBox="0 0 0 0"
       width="0"
     >
-      <g />
+      <g>
+        <path
+          d="M 0,0 L 0,0"
+          fill="none"
+          stroke="#FD6FFF"
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-width="1"
+        />
+        <path
+          d="M 0,0 Q 0,0 0,0 T 0,0"
+          fill="none"
+          stroke="#FD6FFF"
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-width="1"
+        />
+        <path
+          d="M 0,0 L 0,0 L 0,0 L 0,0"
+          fill="none"
+          stroke="#FD6FFF"
+          stroke-linecap="butt"
+          stroke-linejoin="miter"
+          stroke-width="1"
+        />
+      </g>
     </svg>
   </div>
 </div>

@@ -1,30 +1,30 @@
 import React from 'react';
 import 'jest-styled-components';
-import Enzyme, { mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { cleanup, fireEvent, render, renderIntoDocument, Simulate } from 'react-testing-library';
+import { getByText } from 'dom-testing-library';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Grommet } from '../../Grommet';
 import { TextInput } from '../';
 
-Enzyme.configure({ adapter: new Adapter() });
-
 describe('TextInput', () => {
   beforeEach(createPortal);
+  afterEach(cleanup);
 
-  test('mounts', () => {
-    const component = mount(
+  test('basic', () => {
+    const { container } = render(
       <TextInput name='item' />
     );
-    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('mounts with suggestions', () => {
+  test('suggestions', () => {
     const onInput = jest.fn();
     const onFocus = jest.fn();
-    const component = mount(
+    const { getByTestId, container } = renderIntoDocument(
       <TextInput
+        data-testid='test-input'
         id='item'
         name='item'
         suggestions={['test', 'test1']}
@@ -32,22 +32,23 @@ describe('TextInput', () => {
         onFocus={onFocus}
       />
     );
-    const input = component.find('input').first();
-    input.simulate('input');
-    input.simulate('focus');
+    expect(container.firstChild).toMatchSnapshot();
+
+    Simulate.focus(getByTestId('test-input'));
+    Simulate.input(getByTestId('test-input'));
     expectPortal('text-input-drop__item').toMatchSnapshot();
     expect(onInput).toBeCalled();
     expect(onFocus).toBeCalled();
 
-    global.document.dispatchEvent(new Event('click'));
-
+    fireEvent(document, new MouseEvent('click', { bubbles: true, cancelable: true }));
     expect(document.getElementById('text-input-drop__item')).toBeNull();
   });
 
-  test('mounts with complex suggestions', () => {
-    const component = mount(
+  test('complex suggestions', () => {
+    const { getByTestId, container } = renderIntoDocument(
       <Grommet>
         <TextInput
+          data-testid='test-input'
           id='item'
           name='item'
           suggestions={[
@@ -57,42 +58,42 @@ describe('TextInput', () => {
         />
       </Grommet>
     );
-    const input = component.find('input').first();
-    input.simulate('input');
+    expect(container.firstChild).toMatchSnapshot();
+
+    Simulate.input(getByTestId('test-input'));
     expectPortal('text-input-drop__item').toMatchSnapshot();
 
-    global.document.dispatchEvent(new Event('click'));
-
+    fireEvent(document, new MouseEvent('click', { bubbles: true, cancelable: true }));
     expect(document.getElementById('text-input-drop__item')).toBeNull();
   });
 
-  test('closes suggestion drop', () => {
-    const component = mount(
+  test('close suggestion drop', () => {
+    const { getByTestId, container } = renderIntoDocument(
       <Grommet>
         <TextInput
+          data-testid='test-input'
           id='item'
           name='item'
           suggestions={['test', 'test1']}
         />
       </Grommet>
     );
+    expect(container.firstChild).toMatchSnapshot();
 
-    const input = component.find('input').first();
-    input.simulate('input');
-
+    Simulate.input(getByTestId('test-input'));
     expectPortal('text-input-drop__item').toMatchSnapshot();
 
-    input.simulate('keyDown', { key: 'Esc', keyCode: 27, which: 27 });
-
+    Simulate.keyDown(getByTestId('test-input'), { key: 'Esc', keyCode: 27, which: 27 });
     expect(document.getElementById('text-input-drop__item')).toBeNull();
-    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('selects suggestion', () => {
+  test('select suggestion', () => {
     const onSelect = jest.fn();
-    const component = mount(
+    const { getByTestId, container } = renderIntoDocument(
       <Grommet>
         <TextInput
+          data-testid='test-input'
           plain={true}
           size='large'
           id='item'
@@ -102,56 +103,45 @@ describe('TextInput', () => {
         />
       </Grommet>
     );
+    expect(container.firstChild).toMatchSnapshot();
 
-    const input = component.find('input').first();
-    input.simulate('input');
-
+    Simulate.input(getByTestId('test-input'));
     expectPortal('text-input-drop__item').toMatchSnapshot();
 
-    document.getElementById('text-input-drop__item').querySelector('button').click();
-
-    expect(component.getDOMNode()).toMatchSnapshot();
+    Simulate.click(getByText(document, 'test1'));
+    expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('text-input-drop__item')).toBeNull();
     expect(onSelect).toBeCalled();
   });
 
-  test('handles next and previous suggestions', () => {
-    const component = mount(
+  test('next and previous suggestions', () => {
+    const { getByTestId, container } = renderIntoDocument(
       <Grommet>
         <TextInput
+          data-testid='test-input'
           id='item'
           name='item'
           suggestions={['test', { value: 'test1' }]}
         />
       </Grommet>
     );
+    expect(container.firstChild).toMatchSnapshot();
 
-    const input = component.find('input').first();
+    const input = getByTestId('test-input');
     const preventDefault = jest.fn();
-    input.simulate('keyDown', {
-      keyCode: 40,
-      preventDefault,
-    });
-    input.simulate('keyDown', {
-      keyCode: 40,
-      preventDefault,
-    });
-    input.simulate('keyDown', {
-      keyCode: 40,
-      preventDefault,
-    });
-    input.simulate('keyDown', {
-      keyCode: 38,
-      preventDefault,
-    });
+    Simulate.keyDown(input, { keyCode: 40, preventDefault });
+    Simulate.keyDown(input, { keyCode: 40, preventDefault });
+    Simulate.keyDown(input, { keyCode: 40, preventDefault });
+    Simulate.keyDown(input, { keyCode: 38, preventDefault });
     expect(preventDefault).toBeCalled();
   });
 
-  test('selects a suggestion', () => {
+  test('select a suggestion', () => {
     const onSelect = jest.fn();
-    const component = mount(
+    const { getByTestId, container } = renderIntoDocument(
       <Grommet>
         <TextInput
+          data-testid='test-input'
           id='item'
           name='item'
           suggestions={['test', { value: 'test1' }]}
@@ -159,54 +149,37 @@ describe('TextInput', () => {
         />
       </Grommet>
     );
+    expect(container.firstChild).toMatchSnapshot();
 
-    const input = component.find('input').first();
+    const input = getByTestId('test-input');
     const preventDefault = jest.fn();
     // pressing enter here nothing will happen
-    input.simulate('keyDown', {
-      keyCode: 13,
-      preventDefault,
-    });
-    input.simulate('keyDown', {
-      keyCode: 40,
-      preventDefault,
-    });
-    input.simulate('keyDown', {
-      keyCode: 40,
-      preventDefault,
-    });
-    input.simulate('keyDown', {
-      keyCode: 13,
-      preventDefault,
-    });
+    Simulate.keyDown(input, { keyCode: 13, preventDefault });
+    Simulate.keyDown(input, { keyCode: 40, preventDefault });
+    Simulate.keyDown(input, { keyCode: 40, preventDefault });
+    Simulate.keyDown(input, { keyCode: 13, preventDefault });
     expect(preventDefault).toBeCalled();
     expect(onSelect).toBeCalled();
   });
 
   test('handles next and previous without suggestion', () => {
-    const component = mount(
+    const { getByTestId, container } = renderIntoDocument(
       <Grommet>
         <TextInput
+          data-testid='test-input'
           id='item'
           name='item'
         />
       </Grommet>
     );
-    const input = component.find('input').first();
+    expect(container.firstChild).toMatchSnapshot();
+
+    const input = getByTestId('test-input');
     const preventDefault = jest.fn();
-    input.simulate('keyDown', {
-      keyCode: 40,
-      preventDefault,
-    });
-    input.simulate('keyDown', {
-      keyCode: 40,
-      preventDefault,
-    });
-    input.simulate('keyDown', {
-      keyCode: 38,
-      preventDefault,
-    });
+    Simulate.keyDown(input, { keyCode: 40, preventDefault });
+    Simulate.keyDown(input, { keyCode: 40, preventDefault });
+    Simulate.keyDown(input, { keyCode: 38, preventDefault });
     expect(preventDefault).not.toBeCalled();
-    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Grommet announces 1`] = `
+exports[`Grommet announce 1`] = `
 <div
   class="StyledGrommet-gGRXwz fDhYVV"
 >
@@ -10,7 +10,7 @@ exports[`Grommet announces 1`] = `
 </div>
 `;
 
-exports[`Grommet announces 2`] = `
+exports[`Grommet announce 2`] = `
 <div
   aria-live="assertive"
   style="left: -100%; right: 100%; position: fixed; z-index: -1;"
@@ -19,14 +19,32 @@ exports[`Grommet announces 2`] = `
 </div>
 `;
 
-exports[`Grommet announces 3`] = `
+exports[`Grommet announce 3`] = `
 <div
   aria-live="assertive"
   style="left: -100%; right: 100%; position: fixed; z-index: -1;"
 />
 `;
 
-exports[`Grommet full renders 1`] = `
+exports[`Grommet basic 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Grommet full 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -48,7 +66,7 @@ exports[`Grommet full renders 1`] = `
 </div>
 `;
 
-exports[`Grommet hpe theme renders 1`] = `
+exports[`Grommet hpe theme 1`] = `
 .c0 {
   font-family: 'Metric',Arial,sans-serif;
   font-size: 1em;
@@ -66,22 +84,4 @@ exports[`Grommet hpe theme renders 1`] = `
 >
   Grommet App
 </div>
-`;
-
-exports[`Grommet renders 1`] = `
-.c0 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-<div
-  className="c0"
-/>
 `;

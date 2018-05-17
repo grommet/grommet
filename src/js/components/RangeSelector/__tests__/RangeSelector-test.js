@@ -1,165 +1,172 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import Enzyme, { mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { cleanup, render, Simulate } from 'react-testing-library';
 
 import { Grommet } from '../../Grommet';
 import { RangeSelector } from '../';
 
-Enzyme.configure({ adapter: new Adapter() });
+describe('TextInput', () => {
+  afterEach(cleanup);
 
-test('renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <RangeSelector values={[20, 30]} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('renders color', () => {
-  const component = renderer.create(
-    <Grommet>
-      <RangeSelector color='accent-1' values={[20, 30]} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('renders direction', () => {
-  const component = renderer.create(
-    <Grommet>
-      <RangeSelector direction='horizontal' values={[20, 30]} />
-      <RangeSelector direction='vertical' values={[20, 30]} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('renders invert', () => {
-  const component = renderer.create(
-    <Grommet>
-      <RangeSelector invert={true} values={[20, 30]} />
-      <RangeSelector invert={false} values={[20, 30]} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('renders max', () => {
-  const component = renderer.create(
-    <Grommet>
-      <RangeSelector max={50} values={[20, 30]} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('renders min', () => {
-  const component = renderer.create(
-    <Grommet>
-      <RangeSelector min={10} values={[20, 30]} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('renders opacity', () => {
-  const component = renderer.create(
-    <Grommet>
-      {['weak', 'medium', 'strong'].map(opacity => (
-        <RangeSelector key={opacity} opacity={opacity} values={[20, 30]} />
-      ))}
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('renders round', () => {
-  const component = renderer.create(
-    <Grommet>
-      {['xsmall', 'small', 'medium', 'large', 'full'].map(round => (
-        <RangeSelector key={round} round={round} values={[20, 30]} />
-      ))}
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('renders size', () => {
-  const component = renderer.create(
-    <Grommet>
-      {['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full'].map(size => (
-        <RangeSelector key={size} size={size} values={[20, 30]} />
-      ))}
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('renders step', () => {
-  const component = renderer.create(
-    <Grommet>
-      <RangeSelector step={10} values={[20, 30]} />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('handles keyboard', () => {
-  const onChange = jest.fn();
-  const component = mount(
-    <Grommet>
-      <RangeSelector values={[20, 30]} onChange={onChange} />
-    </Grommet>
-  );
-  expect(component.getDOMNode()).toMatchSnapshot();
-  const lowerControl = component.find('[aria-label="Lower Bounds"]').first();
-  lowerControl.simulate('keydown', { key: 'Left', keyCode: 37 });
-  expect(onChange).toBeCalled();
-  lowerControl.simulate('keydown', { key: 'Right', keyCode: 39 });
-  expect(onChange).toBeCalled();
-  const upperControl = component.find('[aria-label="Upper Bounds"]').first();
-  upperControl.simulate('keydown', { key: 'Right', keyCode: 39 });
-  expect(onChange).toBeCalled();
-  upperControl.simulate('keydown', { key: 'Left', keyCode: 37 });
-  expect(onChange).toBeCalled();
-});
-
-test('handles mouse', () => {
-  const onChange = jest.fn();
-  const component = mount(
-    <Grommet>
-      <RangeSelector values={[20, 30]} onChange={onChange} />
-    </Grommet>
-  );
-  expect(component.getDOMNode()).toMatchSnapshot();
-  component.find('div').at(1)
-    .simulate('click', { clientX: 0, clientY: 0 });
-  expect(onChange).toBeCalled();
-  const map = {};
-  window.addEventListener = jest.fn((event, cb) => {
-    map[event] = cb;
+  test('basic', () => {
+    const component = renderer.create(
+      <Grommet>
+        <RangeSelector values={[20, 30]} />
+      </Grommet>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
   });
-  component.find('[aria-label="Lower Bounds"]').first()
-    .simulate('mousedown');
-  map.mousemove({ clientX: 0, clientY: 0 });
-  expect(onChange).toBeCalled();
-  map.mouseup();
-  component.find('[aria-label="Upper Bounds"]').first()
-    .simulate('mousedown');
-  map.mousemove({ clientX: 0, clientY: 0 });
-  expect(onChange).toBeCalled();
-  map.mouseup();
+
+  test('color', () => {
+    const component = renderer.create(
+      <Grommet>
+        <RangeSelector color='accent-1' values={[20, 30]} />
+      </Grommet>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('direction', () => {
+    const component = renderer.create(
+      <Grommet>
+        <RangeSelector direction='horizontal' values={[20, 30]} />
+        <RangeSelector direction='vertical' values={[20, 30]} />
+      </Grommet>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('invert', () => {
+    const component = renderer.create(
+      <Grommet>
+        <RangeSelector invert={true} values={[20, 30]} />
+        <RangeSelector invert={false} values={[20, 30]} />
+      </Grommet>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('max', () => {
+    const component = renderer.create(
+      <Grommet>
+        <RangeSelector max={50} values={[20, 30]} />
+      </Grommet>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('min', () => {
+    const component = renderer.create(
+      <Grommet>
+        <RangeSelector min={10} values={[20, 30]} />
+      </Grommet>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('opacity', () => {
+    const component = renderer.create(
+      <Grommet>
+        {['weak', 'medium', 'strong'].map(opacity => (
+          <RangeSelector key={opacity} opacity={opacity} values={[20, 30]} />
+        ))}
+      </Grommet>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('round', () => {
+    const component = renderer.create(
+      <Grommet>
+        {['xsmall', 'small', 'medium', 'large', 'full'].map(round => (
+          <RangeSelector key={round} round={round} values={[20, 30]} />
+        ))}
+      </Grommet>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('size', () => {
+    const component = renderer.create(
+      <Grommet>
+        {['xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'full'].map(size => (
+          <RangeSelector key={size} size={size} values={[20, 30]} />
+        ))}
+      </Grommet>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('step', () => {
+    const component = renderer.create(
+      <Grommet>
+        <RangeSelector step={10} values={[20, 30]} />
+      </Grommet>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('handle keyboard', () => {
+    const onChange = jest.fn();
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <RangeSelector values={[20, 30]} onChange={onChange} />
+      </Grommet>
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    const lowerControl = getByLabelText('Lower Bounds');
+    Simulate.keyDown(lowerControl, { key: 'Left', keyCode: 37 });
+    expect(onChange).toBeCalled();
+
+    Simulate.keyDown(lowerControl, { key: 'Right', keyCode: 39 });
+    expect(onChange).toBeCalled();
+
+    const upperControl = getByLabelText('Upper Bounds');
+    Simulate.keyDown(upperControl, { key: 'Right', keyCode: 39 });
+    expect(onChange).toBeCalled();
+
+    Simulate.keyDown(upperControl, { key: 'Left', keyCode: 37 });
+    expect(onChange).toBeCalled();
+  });
+
+  test('handle mouse', () => {
+    const onChange = jest.fn();
+    const { container, getByLabelText } = render(
+      <Grommet>
+        <RangeSelector values={[20, 30]} onChange={onChange} />
+      </Grommet>
+    );
+    expect(container.firstChild).toMatchSnapshot();
+
+    Simulate.click(container.firstChild.firstChild, { clientX: 0, clientY: 0 });
+    expect(onChange).toBeCalled();
+
+    const map = {};
+    window.addEventListener = jest.fn((event, cb) => {
+      map[event] = cb;
+    });
+    const lowerControl = getByLabelText('Lower Bounds');
+    Simulate.mouseDown(lowerControl);
+    map.mousemove({ clientX: 0, clientY: 0 });
+    expect(onChange).toBeCalled();
+
+    map.mouseup();
+    const upperControl = getByLabelText('Upper Bounds');
+    Simulate.mouseDown(upperControl);
+    map.mousemove({ clientX: 0, clientY: 0 });
+    expect(onChange).toBeCalled();
+    map.mouseup();
+  });
 });

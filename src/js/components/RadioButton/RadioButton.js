@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
-import { withTheme } from '../hocs';
+import { withForwardRef, withTheme } from '../hocs';
 import { removeUndefined } from '../../utils/object';
 
 import StyledRadioButton, {
@@ -18,7 +18,9 @@ class RadioButton extends Component {
   }
 
   render() {
-    const { checked, disabled, id, label, name, onChange, theme, ...rest } = this.props;
+    const {
+      checked, disabled, forwardRef, id, label, name, onChange, theme, ...rest
+    } = this.props;
     const { grommet } = this.context;
 
     const normalizedLabel = (typeof label === 'string' ? <div>{label}</div> : label);
@@ -32,6 +34,7 @@ class RadioButton extends Component {
         <StyledRadioButton theme={theme}>
           <StyledRadioButtonInput
             {...rest}
+            innerRef={forwardRef}
             type='radio'
             {...removeUndefined({ id, name, checked, disabled, onChange })}
             theme={theme}
@@ -55,4 +58,5 @@ if (process.env.NODE_ENV !== 'production') {
 
 export default compose(
   withTheme,
+  withForwardRef
 )(RadioButton);

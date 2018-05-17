@@ -7,7 +7,7 @@ import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { TextInput } from '../TextInput';
 
-import { withTheme } from '../hocs';
+import { withForwardRef, withTheme } from '../hocs';
 
 import SelectContainer from './SelectContainer';
 import doc from './doc';
@@ -41,6 +41,7 @@ class Select extends Component {
       disabled,
       dropAlign,
       dropTarget,
+      forwardRef,
       messages,
       onChange,
       onClose,
@@ -90,6 +91,7 @@ class Select extends Component {
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
         <DropButton
+          ref={forwardRef}
           disabled={disabled}
           dropAlign={dropAlign}
           dropTarget={dropTarget}
@@ -141,4 +143,5 @@ if (process.env.NODE_ENV !== 'production') {
 
 export default compose(
   withTheme,
+  withForwardRef,
 )(Select);

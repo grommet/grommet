@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Layer hides 1`] = `
+exports[`Layer hidden 1`] = `
 <div
   class="StyledLayer-ceZzeh cvbgCP"
   id="hidden-test"
@@ -18,7 +18,7 @@ exports[`Layer hides 1`] = `
 </div>
 `;
 
-exports[`Layer hides 2`] = `
+exports[`Layer hidden 2`] = `
 "
 
 @media only screen and (max-width:699px) {
@@ -2584,9 +2584,9 @@ exports[`Layer hides 2`] = `
 }"
 `;
 
-exports[`Layer hides 3`] = `
+exports[`Layer hidden 3`] = `
 <div
-  class="StyledLayer-ceZzeh cvbgCP"
+  class="StyledLayer-ceZzeh eAzHoj"
   id="hidden-test"
   tabindex="-1"
 >
@@ -2594,7 +2594,7 @@ exports[`Layer hides 3`] = `
     class="StyledLayer__StyledOverlay-hhVyjc hewshY"
   />
   <div
-    class="StyledLayer__StyledContainer-gBGbkw iDAhwe"
+    class="StyledLayer__StyledContainer-gBGbkw bxvSHP"
     id="hidden-test"
   >
     This is a layer
@@ -2602,8 +2602,25 @@ exports[`Layer hides 3`] = `
 </div>
 `;
 
-exports[`Layer hides 4`] = `
+exports[`Layer hidden 4`] = `
 "
+
+.eAzHoj {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: unset;
+  position: relative;
+  z-index: 10;
+  overflow: auto;
+  pointer-events: none;
+}
 
 @media only screen and (max-width:699px) {
   .eAzHoj {
@@ -2623,27 +2640,6 @@ exports[`Layer hides 4`] = `
     width: 100vw;
     height: 100vh;
   }
-}
-
-.cvbgCP {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background-color: unset;
-  position: relative;
-  z-index: 10;
-  overflow: auto;
-  pointer-events: none;
-  left: -100%;
-  right: 100%;
-  z-index: -1;
-  position: fixed;
 }
 
 @media only screen and (max-width:699px) {
@@ -5170,35 +5166,32 @@ exports[`Layer hides 4`] = `
 
 exports[`Layer is accessible 1`] = `
 <div
-  id="body-node"
+  data-testid="test-body-node"
 >
+  <input />
   <input
-    tabindex="-1"
-  />
-  <input
-    data-g-tabindex="10"
-    tabindex="-1"
+    tabindex="10"
   />
 </div>
 `;
 
 exports[`Layer is accessible 2`] = `
 <div
-  id="layer-node"
+  data-testid="test-layer-node"
 >
   This is a layer
-  <input />
+  <input
+    data-testid="test-input"
+  />
 </div>
 `;
 
 exports[`Layer is accessible 3`] = `
 <div
-  id="body-node"
+  data-testid="test-body-node"
 >
   <input />
-  <input
-    tabindex="10"
-  />
+  <input />
 </div>
 `;
 
@@ -7805,7 +7798,7 @@ exports[`Layer non-modal renders 2`] = `
 }"
 `;
 
-exports[`Layer plain renders 1`] = `
+exports[`Layer plain 1`] = `
 <div
   class="StyledLayer-ceZzeh eAzHoj"
   id="plain-test"
@@ -7823,7 +7816,7 @@ exports[`Layer plain renders 1`] = `
 </div>
 `;
 
-exports[`Layer plain renders 2`] = `
+exports[`Layer plain 2`] = `
 "
 
 .eAzHoj {

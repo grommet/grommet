@@ -1,152 +1,184 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tabs changes active index 1`] = `
-<div
-  role="tablist"
->
-  <div
-    class="StyledBox-bStriS kZxJuf"
-  >
-    <button
-      aria-expanded="true"
-      aria-selected="true"
-      class="StyledButton-gXzblK fYUIhN"
-      role="tab"
-      type="button"
-    >
-      <div
-        class="StyledBox-bStriS gNLzjT"
-      >
-        <span
-          class="StyledText-eJMSZI bxnpJv"
-        >
-          Tab 1
-        </span>
-      </div>
-    </button>
-    <button
-      aria-expanded="false"
-      aria-selected="false"
-      class="StyledButton-gXzblK fYUIhN"
-      role="tab"
-      type="button"
-    >
-      <div
-        class="StyledBox-bStriS elvBnI"
-      >
-        <span
-          class="StyledText-eJMSZI guglNP"
-          color="dark-4"
-        >
-          Tab 2
-        </span>
-      </div>
-    </button>
-  </div>
-  <div
-    aria-label="Tab 1 Tab Contents"
-    role="tabpanel"
-  >
-    Tab body 1
-  </div>
-</div>
-`;
+exports[`Tabs Tab 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
 
-exports[`Tabs changes to second tab 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border-bottom: solid 4px #000000;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding-bottom: 6px;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border-bottom: solid 4px transparent;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding-bottom: 6px;
+}
+
+.c2 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c4 {
+  font-size: 16px;
+  line-height: 1.375;
+  font-weight: bold;
+}
+
+.c6 {
+  font-size: 16px;
+  line-height: 1.375;
+  color: #666666;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    border-bottom: solid 4px #000000;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    border-bottom: solid 4px transparent;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c2 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
 <div
-  className="StyledGrommet-gGRXwz fDhYVV"
+  className="c0"
 >
   <div
     role="tablist"
   >
     <div
       aria-label={undefined}
-      className="StyledBox-bStriS kZxJuf"
-    >
-      <button
-        aria-expanded={false}
-        aria-label={undefined}
-        aria-selected={false}
-        className="StyledButton-gXzblK fYUIhN"
-        disabled={false}
-        href={undefined}
-        icon={undefined}
-        label={undefined}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
-        role="tab"
-        type="button"
-      >
-        <div
-          aria-label={undefined}
-          className="StyledBox-bStriS elvBnI"
-        >
-          <span
-            className="StyledText-eJMSZI guglNP"
-            color="dark-4"
-          >
-            Tab 1
-          </span>
-        </div>
-      </button>
-      <button
-        aria-expanded={true}
-        aria-label={undefined}
-        aria-selected={true}
-        className="StyledButton-gXzblK fYUIhN"
-        disabled={false}
-        href={undefined}
-        icon={undefined}
-        label={undefined}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
-        role="tab"
-        type="button"
-      >
-        <div
-          aria-label={undefined}
-          className="StyledBox-bStriS gNLzjT"
-        >
-          <span
-            className="StyledText-eJMSZI bxnpJv"
-          >
-            Tab 2
-          </span>
-        </div>
-      </button>
-    </div>
-    <div
-      aria-label="Tab 2 Tab Contents"
-      role="tabpanel"
-    >
-      Tab body 2
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Tabs renders complex Tab title 1`] = `
-<div
-  className="StyledGrommet-gGRXwz fDhYVV"
->
-  <div
-    role="tablist"
-  >
-    <div
-      aria-label={undefined}
-      className="StyledBox-bStriS kZxJuf"
+      className="c1"
     >
       <button
         aria-expanded={true}
         aria-label={undefined}
         aria-selected={true}
-        className="StyledButton-gXzblK fYUIhN"
+        className="c2"
         disabled={false}
         href={undefined}
         icon={undefined}
@@ -161,84 +193,10 @@ exports[`Tabs renders complex Tab title 1`] = `
       >
         <div
           aria-label={undefined}
-          className="StyledBox-bStriS gNLzjT"
-        >
-          <div>
-            Tab 1
-          </div>
-        </div>
-      </button>
-      <button
-        aria-expanded={false}
-        aria-label={undefined}
-        aria-selected={false}
-        className="StyledButton-gXzblK fYUIhN"
-        disabled={false}
-        href={undefined}
-        icon={undefined}
-        label={undefined}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
-        role="tab"
-        type="button"
-      >
-        <div
-          aria-label={undefined}
-          className="StyledBox-bStriS elvBnI"
-        >
-          <div>
-            Tab 2
-          </div>
-        </div>
-      </button>
-    </div>
-    <div
-      aria-label="[object Object] Tab Contents"
-      role="tabpanel"
-    >
-      Tab body 1
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Tabs renders with Tab 1`] = `
-<div
-  className="StyledGrommet-gGRXwz fDhYVV"
->
-  <div
-    role="tablist"
-  >
-    <div
-      aria-label={undefined}
-      className="StyledBox-bStriS kZxJuf"
-    >
-      <button
-        aria-expanded={true}
-        aria-label={undefined}
-        aria-selected={true}
-        className="StyledButton-gXzblK fYUIhN"
-        disabled={false}
-        href={undefined}
-        icon={undefined}
-        label={undefined}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onMouseOut={[Function]}
-        onMouseOver={[Function]}
-        role="tab"
-        type="button"
-      >
-        <div
-          aria-label={undefined}
-          className="StyledBox-bStriS gNLzjT"
+          className="c3"
         >
           <span
-            className="StyledText-eJMSZI bxnpJv"
+            className="c4"
           >
             Tab 1
           </span>
@@ -248,7 +206,7 @@ exports[`Tabs renders with Tab 1`] = `
         aria-expanded={false}
         aria-label={undefined}
         aria-selected={false}
-        className="StyledButton-gXzblK fYUIhN"
+        className="c2"
         disabled={false}
         href={undefined}
         icon={undefined}
@@ -263,10 +221,10 @@ exports[`Tabs renders with Tab 1`] = `
       >
         <div
           aria-label={undefined}
-          className="StyledBox-bStriS elvBnI"
+          className="c5"
         >
           <span
-            className="StyledText-eJMSZI guglNP"
+            className="c6"
             color="dark-4"
           >
             Tab 2
@@ -284,16 +242,510 @@ exports[`Tabs renders with Tab 1`] = `
 </div>
 `;
 
-exports[`Tabs renders without Tab 1`] = `
+exports[`Tabs change active index 1`] = `
 <div
-  className="StyledGrommet-gGRXwz fDhYVV"
+  role="tablist"
+>
+  <div
+    class="StyledBox-bStriS kZxJuf"
+  >
+    <button
+      aria-expanded="false"
+      aria-selected="false"
+      class="StyledButton-gXzblK fYUIhN"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS elvBnI"
+      >
+        <span
+          class="StyledText-eJMSZI guglNP"
+          color="dark-4"
+        >
+          Tab 1
+        </span>
+      </div>
+    </button>
+    <button
+      aria-expanded="true"
+      aria-selected="true"
+      class="StyledButton-gXzblK fYUIhN"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS gNLzjT"
+      >
+        <span
+          class="StyledText-eJMSZI bxnpJv"
+        >
+          Tab 2
+        </span>
+      </div>
+    </button>
+  </div>
+  <div
+    aria-label="Tab 2 Tab Contents"
+    role="tabpanel"
+  >
+    Tab body 2
+  </div>
+</div>
+`;
+
+exports[`Tabs change active index 2`] = `
+<div
+  role="tablist"
+>
+  <div
+    class="StyledBox-bStriS kZxJuf"
+  >
+    <button
+      aria-expanded="false"
+      aria-selected="false"
+      class="StyledButton-gXzblK fYUIhN"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS elvBnI"
+      >
+        <span
+          class="StyledText-eJMSZI guglNP"
+          color="dark-4"
+        >
+          Tab 1
+        </span>
+      </div>
+    </button>
+    <button
+      aria-expanded="true"
+      aria-selected="true"
+      class="StyledButton-gXzblK fYUIhN"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS gNLzjT"
+      >
+        <span
+          class="StyledText-eJMSZI bxnpJv"
+        >
+          Tab 2
+        </span>
+      </div>
+    </button>
+  </div>
+  <div
+    aria-label="Tab 2 Tab Contents"
+    role="tabpanel"
+  >
+    Tab body 2
+  </div>
+</div>
+`;
+
+exports[`Tabs change to second tab 1`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    role="tablist"
+  >
+    <div
+      class="StyledBox-bStriS kZxJuf"
+    >
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-gXzblK fYUIhN"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS gNLzjT"
+        >
+          <span
+            class="StyledText-eJMSZI bxnpJv"
+          >
+            Tab 1
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-gXzblK fYUIhN"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS elvBnI"
+        >
+          <span
+            class="StyledText-eJMSZI guglNP"
+            color="dark-4"
+          >
+            Tab 2
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Tab 1 Tab Contents"
+      role="tabpanel"
+    >
+      Tab body 1
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs change to second tab 2`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    role="tablist"
+  >
+    <div
+      class="StyledBox-bStriS kZxJuf"
+    >
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-gXzblK fYUIhN"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS elvBnI"
+        >
+          <span
+            class="StyledText-eJMSZI guglNP"
+            color="dark-4"
+          >
+            Tab 1
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="true"
+        aria-selected="true"
+        class="StyledButton-gXzblK fYUIhN"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS gNLzjT"
+        >
+          <span
+            class="StyledText-eJMSZI bxnpJv"
+          >
+            Tab 2
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="Tab 2 Tab Contents"
+      role="tabpanel"
+    >
+      Tab body 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs complex title 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border-bottom: solid 4px #000000;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding-bottom: 6px;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border-bottom: solid 4px transparent;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding-bottom: 6px;
+}
+
+.c2 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    border-bottom: solid 4px #000000;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    border-bottom: solid 4px transparent;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding-bottom: 3px;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c2 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<div
+  className="c0"
 >
   <div
     role="tablist"
   >
     <div
       aria-label={undefined}
-      className="StyledBox-bStriS kZxJuf"
+      className="c1"
+    >
+      <button
+        aria-expanded={true}
+        aria-label={undefined}
+        aria-selected={true}
+        className="c2"
+        disabled={false}
+        href={undefined}
+        icon={undefined}
+        label={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          aria-label={undefined}
+          className="c3"
+        >
+          <div>
+            Tab 1
+          </div>
+        </div>
+      </button>
+      <button
+        aria-expanded={false}
+        aria-label={undefined}
+        aria-selected={false}
+        className="c2"
+        disabled={false}
+        href={undefined}
+        icon={undefined}
+        label={undefined}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          aria-label={undefined}
+          className="c4"
+        >
+          <div>
+            Tab 2
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      aria-label="[object Object] Tab Contents"
+      role="tabpanel"
+    >
+      Tab body 1
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tabs no Tab 1`] = `
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    role="tablist"
+  >
+    <div
+      aria-label={undefined}
+      className="c1"
     />
     <div
       aria-label=" Tab Contents"
@@ -303,7 +755,7 @@ exports[`Tabs renders without Tab 1`] = `
 </div>
 `;
 
-exports[`Tabs sets on hover 1`] = `
+exports[`Tabs set on hover 1`] = `
 <div
   role="tablist"
 >
@@ -355,7 +807,59 @@ exports[`Tabs sets on hover 1`] = `
 </div>
 `;
 
-exports[`Tabs sets on hover 2`] = `
+exports[`Tabs set on hover 2`] = `
+<div
+  role="tablist"
+>
+  <div
+    class="StyledBox-bStriS kZxJuf"
+  >
+    <button
+      aria-expanded="true"
+      aria-selected="true"
+      class="StyledButton-gXzblK fYUIhN"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS gNLzjT"
+      >
+        <span
+          class="StyledText-eJMSZI bxnpJv"
+        >
+          Tab 1
+        </span>
+      </div>
+    </button>
+    <button
+      aria-expanded="false"
+      aria-selected="false"
+      class="StyledButton-gXzblK fYUIhN"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS elvBnI"
+      >
+        <span
+          class="StyledText-eJMSZI guglNP"
+          color="dark-4"
+        >
+          Tab 2
+        </span>
+      </div>
+    </button>
+  </div>
+  <div
+    aria-label="Tab 1 Tab Contents"
+    role="tabpanel"
+  >
+    Tab body 1
+  </div>
+</div>
+`;
+
+exports[`Tabs set on hover 3`] = `
 <div
   role="tablist"
 >
@@ -407,7 +911,7 @@ exports[`Tabs sets on hover 2`] = `
 </div>
 `;
 
-exports[`Tabs sets on hover 3`] = `
+exports[`Tabs set on hover 4`] = `
 <div
   role="tablist"
 >
@@ -459,7 +963,7 @@ exports[`Tabs sets on hover 3`] = `
 </div>
 `;
 
-exports[`Tabs sets on hover 4`] = `
+exports[`Tabs set on hover 5`] = `
 <div
   role="tablist"
 >

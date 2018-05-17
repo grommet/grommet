@@ -3,7 +3,8 @@ import { compose } from 'recompose';
 
 import { Button } from '../Button';
 import { Drop } from '../Drop';
-import { withTheme } from '../hocs';
+import { withForwardRef, withTheme } from '../hocs';
+import { setFocusWithoutScroll } from '../../utils';
 
 import doc from './doc';
 
@@ -13,25 +14,37 @@ class DropButton extends Component {
     dropAlign: { top: 'top', left: 'left' },
   }
 
-  constructor(props, context) {
-    super(props, context);
-    this.state = { show: props.open };
-    this.checkRef = props.open;
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { forwardRef, open } = nextProps;
+    const { buttonRef, show } = prevState;
+    const nextButtonRef = forwardRef || buttonRef;
+    const reRenderOnMount = (show === undefined && open);
+    if (open !== undefined && open !== show) {
+      return { show: open, reRenderOnMount, buttonRef: nextButtonRef };
+    }
+    if (nextButtonRef !== buttonRef) {
+      return { buttonRef: nextButtonRef };
+    }
+    return null;
+  }
+
+  state = {
+    buttonRef: React.createRef(),
   }
 
   componentDidMount() {
+    const { buttonRef, reRenderOnMount } = this.state;
     // In case the caller starts with the drop open, before we have the
     // buttonRef, see if we have it now and re-render.
-    if (this.checkRef && this.buttonRef) {
-      this.checkRef = false;
-      this.forceUpdate();
+    if (reRenderOnMount && buttonRef.current) {
+      this.setState({ reRenderOnMount: false }); // eslint-disable-line
     }
   }
 
-  componentWillReceiveProps({ open }) {
-    const { show } = this.state;
-    if (open !== undefined && open !== show) {
-      this.setState({ show: open });
+  componentDidUpdate(prevProps, prevState) {
+    if (!this.state.show && prevState.show) {
+      // focus on the button if the drop is closed
+      setFocusWithoutScroll(this.state.buttonRef.current);
     }
   }
 
@@ -54,20 +67,19 @@ class DropButton extends Component {
 
   render() {
     const {
-      disabled, dropAlign, dropContent, dropTarget, id, open, theme, ...rest
+      disabled, dropAlign, forwardRef, dropContent, dropTarget, id, open,
+      theme, ...rest
     } = this.props;
-    const { show } = this.state;
+    const { buttonRef, show } = this.state;
 
     let drop;
-    if (show && this.buttonRef) {
+    if (show && buttonRef.current) {
       drop = (
         <Drop
-          key='drop'
-          ref={(ref) => { this.dropRef = ref; }}
           id={id ? `${id}__drop` : undefined}
           restrictFocus={true}
           align={dropAlign}
-          target={dropTarget || this.buttonRef}
+          target={dropTarget || buttonRef.current}
           onClickOutside={this.onDropClose}
           onEsc={this.onDropClose}
         >
@@ -76,16 +88,17 @@ class DropButton extends Component {
       );
     }
 
-    return [
-      <Button
-        key='button'
-        id={id}
-        ref={(ref) => { this.buttonRef = ref; }}
-        onClick={disabled ? undefined : this.onToggle}
-        {...rest}
-      />,
-      drop,
-    ];
+    return (
+      <React.Fragment>
+        <Button
+          id={id}
+          ref={buttonRef}
+          onClick={disabled ? undefined : this.onToggle}
+          {...rest}
+        />
+        {drop}
+      </React.Fragment>
+    );
   }
 }
 
@@ -95,4 +108,5 @@ if (process.env.NODE_ENV !== 'production') {
 
 export default compose(
   withTheme,
+  withForwardRef,
 )(DropButton);

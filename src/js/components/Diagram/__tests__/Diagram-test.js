@@ -1,14 +1,11 @@
 import React from 'react';
 import 'jest-styled-components';
-import Enzyme, { mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { cleanup, renderIntoDocument } from 'react-testing-library';
 
 import { Grommet } from '../../Grommet';
 import { Stack } from '../../Stack';
 import { Box } from '../../Box';
 import { Diagram } from '../';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 const Context = ({ children }) => (
   <Grommet>
@@ -23,24 +20,21 @@ const Context = ({ children }) => (
 );
 
 describe('Diagram', () => {
-  test('renders', (done) => {
-    const component = mount(
+  afterEach(cleanup);
+
+  test('basic', () => {
+    const { container } = renderIntoDocument(
       <Context>
         <Diagram
           connections={[{ fromTarget: '1', toTarget: '2' }]}
         />
       </Context>
     );
-    // delay a bit so we can render twice
-    setTimeout(() => {
-      expect(component.getDOMNode()).toMatchSnapshot();
-      component.unmount();
-      done();
-    }, 10);
+    expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('type renders', () => {
-    const component = mount(
+  test('type', () => {
+    const { container } = renderIntoDocument(
       <Context>
         <Diagram
           connections={[
@@ -51,11 +45,11 @@ describe('Diagram', () => {
         />
       </Context>
     );
-    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('color renders', () => {
-    const component = mount(
+  test('color', () => {
+    const { container } = renderIntoDocument(
       <Context>
         <Diagram
           connections={[
@@ -64,11 +58,11 @@ describe('Diagram', () => {
         />
       </Context>
     );
-    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('offset renders', (done) => {
-    const component = mount(
+  test('offset', () => {
+    const { container } = renderIntoDocument(
       <Context>
         <Diagram
           connections={[
@@ -79,16 +73,11 @@ describe('Diagram', () => {
         />
       </Context>
     );
-    // delay a bit so we can render twice
-    setTimeout(() => {
-      expect(component.getDOMNode()).toMatchSnapshot();
-      component.unmount();
-      done();
-    }, 10);
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   test('thickness renders', () => {
-    const component = mount(
+    const { container } = renderIntoDocument(
       <Context>
         <Diagram
           connections={[
@@ -99,6 +88,6 @@ describe('Diagram', () => {
         />
       </Context>
     );
-    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

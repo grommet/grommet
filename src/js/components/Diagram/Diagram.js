@@ -56,18 +56,12 @@ const findTarget = (target) => {
 class Diagram extends Component {
   static defaultProps = { connections: [] };
 
-  constructor(props, context) {
-    super(props, context);
-    this.state = { height: 0, width: 0 };
-  }
+  state = { height: 0, width: 0 }
+  containerRef = React.createRef();
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize);
     this.onResize();
-  }
-
-  componentWillReceiveProps() {
-    this.setState({ connectionPoints: undefined });
   }
 
   componentDidUpdate() {
@@ -80,7 +74,7 @@ class Diagram extends Component {
 
   onResize = () => {
     const { connectionPoints, width, height } = this.state;
-    const parent = findDOMNode(this.containerRef).parentNode;
+    const parent = findDOMNode(this.containerRef.current).parentNode;
     if (parent) {
       const rect = parent.getBoundingClientRect();
       if (rect.width !== width || rect.height !== height) {
@@ -98,7 +92,7 @@ class Diagram extends Component {
   placeConnections() {
     const { connections } = this.props;
     const containerRect =
-      findDOMNode(this.containerRef).getBoundingClientRect();
+      findDOMNode(this.containerRef.current).getBoundingClientRect();
     const connectionPoints = connections.map(({ fromTarget, toTarget }) => {
       let points;
       const fromElement = findTarget(fromTarget);
@@ -113,13 +107,14 @@ class Diagram extends Component {
       if (fromElement && toElement) {
         const fromRect = fromElement.getBoundingClientRect();
         const toRect = toElement.getBoundingClientRect();
+        // There is no x and y when unit testing.
         const fromPoint = [
-          (fromRect.x - containerRect.x) + (fromRect.width / 2),
-          (fromRect.y - containerRect.y) + (fromRect.height / 2),
+          (fromRect.x - containerRect.x) + (fromRect.width / 2) || 0,
+          (fromRect.y - containerRect.y) + (fromRect.height / 2) || 0,
         ];
         const toPoint = [
-          (toRect.x - containerRect.x) + (toRect.width / 2),
-          (toRect.y - containerRect.y) + (toRect.height / 2),
+          (toRect.x - containerRect.x) + (toRect.width / 2) || 0,
+          (toRect.y - containerRect.y) + (toRect.height / 2) || 0,
         ];
         points = [fromPoint, toPoint];
       }
@@ -154,7 +149,7 @@ class Diagram extends Component {
             <path
               key={index}
               {...cleanedRest}
-              stroke={colorForName(color, theme)}
+              stroke={colorForName(color || 'accent-1', theme)}
               strokeWidth={strokeWidth}
               strokeLinecap={round ? 'round' : 'butt'}
               strokeLinejoin={round ? 'round' : 'miter'}
@@ -170,7 +165,7 @@ class Diagram extends Component {
 
     return (
       <StyledDiagram
-        ref={(ref) => { this.containerRef = ref; }}
+        ref={this.containerRef}
         viewBox={`0 0 ${width} ${height}`}
         preserveAspectRatio='xMinYMin meet'
         width={width}

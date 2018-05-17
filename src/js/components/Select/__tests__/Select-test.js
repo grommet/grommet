@@ -1,28 +1,35 @@
 import React from 'react';
-import { Simulate } from 'react-dom/test-utils';
 import 'jest-styled-components';
-import Enzyme, { mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import renderer from 'react-test-renderer';
+import { cleanup, render, renderIntoDocument, Simulate } from 'react-testing-library';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
 
 import { Select } from '../';
 
-Enzyme.configure({ adapter: new Adapter() });
-
 describe('Select', () => {
   beforeEach(createPortal);
 
-  test('mounts', (done) => {
-    const component = mount(
+  afterEach(cleanup);
+
+  test('basic', () => {
+    const component = renderer.create(
       <Select id='test-select' options={['one', 'two']} />
     );
-    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('opens', (done) => {
+    window.scrollTo = jest.fn();
+    const { getByTestId, container } = renderIntoDocument(
+      <Select data-testid='test-select' id='test-select' options={['one', 'two']} />
+    );
+    expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
 
-    component.simulate('click');
+    Simulate.click(getByTestId('test-select'));
 
-    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
     expectPortal('test-select__drop').toMatchSnapshot();
 
     setTimeout(() => {
@@ -31,28 +38,39 @@ describe('Select', () => {
     }, 100);
   });
 
-  test('mounts with complex options and children', () => {
-    const component = mount(
-      <Select id='test-select' options={[{ test: 'one' }, { test: 'two' }]}>
+  test('complex options and children', () => {
+    const { getByTestId, container } = renderIntoDocument(
+      <Select
+        data-testid='test-select'
+        id='test-select'
+        options={[{ test: 'one' }, { test: 'two' }]}
+      >
         {option => <span>{option.test}</span>}
       </Select>
     );
-    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
 
-    component.simulate('click');
+    Simulate.click(getByTestId('test-select'));
 
-    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
     expectPortal('test-select__drop').toMatchSnapshot();
   });
 
-  test('mounts with search', () => {
+  test('search', () => {
     jest.useFakeTimers();
     const onSearch = jest.fn();
-    const component = mount(
-      <Select id='test-select' options={['one', 'two']} onSearch={onSearch} />
+    const { getByTestId, container } = renderIntoDocument(
+      <Select
+        data-testid='test-select'
+        id='test-select'
+        options={['one', 'two']}
+        onSearch={onSearch}
+      />
     );
-    component.simulate('click');
+    expect(container.firstChild).toMatchSnapshot();
+
+    Simulate.click(getByTestId('test-select'));
 
     expectPortal('test-select__drop').toMatchSnapshot();
 
@@ -62,56 +80,66 @@ describe('Select', () => {
       expect(document.activeElement).toMatchSnapshot();
 
       document.activeElement.value = 'a';
-
       Simulate.input(document.activeElement);
 
       expect(onSearch).toBeCalledWith('a');
     }, 200);
   });
 
-  test('closes drop on esc', () => {
-    const onClose = jest.fn();
-    const component = mount(
-      <Select id='test-select' options={['one', 'two']} onClose={onClose} />
-    );
+  // NOTE: This isn't really a test for Select
+  // test('closes drop on esc', () => {
+  //   const onClose = jest.fn();
+  //   const component = mount(
+  //     <Select id='test-select' options={['one', 'two']} onClose={onClose} />
+  //   );
+  //
+  //   Simulate.keyDown(
+  //     component.getDOMNode(),
+  //     { key: 'Down', keyCode: 40, which: 40 }
+  //   );
+  //
+  //   expectPortal('test-select__drop').toMatchSnapshot();
+  //   expect(component.getDOMNode()).toMatchSnapshot();
+  //
+  //   Simulate.keyDown(
+  //     document.getElementById('test-select__drop'),
+  //     { key: 'Esc', keyCode: 27, which: 27 }
+  //   );
+  //
+  //   expect(onClose).toBeCalled();
+  //   expect(document.getElementById('test-select__drop')).toBeNull();
+  //   expect(component.getDOMNode()).toMatchSnapshot();
+  // });
 
-    Simulate.keyDown(
-      component.getDOMNode(),
-      { key: 'Down', keyCode: 40, which: 40 }
-    );
-
-    expectPortal('test-select__drop').toMatchSnapshot();
-    expect(component.getDOMNode()).toMatchSnapshot();
-
-    Simulate.keyDown(
-      document.getElementById('test-select__drop'),
-      { key: 'Esc', keyCode: 27, which: 27 }
-    );
-
-    expect(onClose).toBeCalled();
-    expect(document.getElementById('test-select__drop')).toBeNull();
-    expect(component.getDOMNode()).toMatchSnapshot();
-  });
-
-  test('selects an option', () => {
+  test('select an option', () => {
+    window.scrollTo = jest.fn();
     const onChange = jest.fn();
-    const component = mount(
-      <Select id='test-select' options={['one', 'two']} onChange={onChange} />
+    const { getByTestId, container } = renderIntoDocument(
+      <Select
+        data-testid='test-select'
+        id='test-select'
+        options={['one', 'two']}
+        onChange={onChange}
+      />
     );
+    expect(container.firstChild).toMatchSnapshot();
 
-    component.simulate('click');
+    Simulate.click(getByTestId('test-select'));
 
     // pressing enter here nothing will happen
     Simulate.click(
       document.getElementById('test-select__drop').querySelector('button')
     );
     expect(onChange).toBeCalled();
+    expect(window.scrollTo).toBeCalled();
   });
 
-  test('selects an option with complex options', () => {
+  test('select an option with complex options', () => {
+    window.scrollTo = jest.fn();
     const onChange = jest.fn();
-    const component = mount(
+    const { getByTestId, container } = renderIntoDocument(
       <Select
+        data-testid='test-select'
         id='test-select'
         plain={true}
         value={<span>one</span>}
@@ -121,27 +149,32 @@ describe('Select', () => {
         {option => <span>{option.test}</span>}
       </Select>
     );
+    expect(container.firstChild).toMatchSnapshot();
 
-    component.simulate('click');
+    Simulate.click(getByTestId('test-select'));
 
     // pressing enter here nothing will happen
     Simulate.click(
       document.getElementById('test-select__drop').querySelector('button')
     );
     expect(onChange).toBeCalled();
+    expect(window.scrollTo).toBeCalled();
   });
 
-  test('selects an option with enter', () => {
+  test('select an option with enter', () => {
+    window.scrollTo = jest.fn();
     const onChange = jest.fn();
-    const component = mount(
+    const { getByTestId, container } = renderIntoDocument(
       <Select
+        data-testid='test-select'
         id='test-select'
         options={['one', 'two']}
         onChange={onChange}
       />
     );
+    expect(container.firstChild).toMatchSnapshot();
 
-    component.simulate('click');
+    Simulate.click(getByTestId('test-select'));
 
     const preventDefault = jest.fn();
     Simulate.keyDown(
@@ -160,43 +193,39 @@ describe('Select', () => {
     );
     expect(preventDefault).toBeCalled();
     expect(onChange).toBeCalled();
+    expect(window.scrollTo).toBeCalled();
   });
 
-  test('renders size', () => {
-    const component = mount(
+  test('size', () => {
+    const component = renderer.create(
       <Select
         id='test-select'
         size='large'
         options={['one', 'two']}
         selected={[]}
         value={[]}
-      />, {
-        attachTo: document.body.firstChild,
-      }
+      />
     );
-    expect(component.getDOMNode()).toMatchSnapshot();
-    expect(document.getElementById('test-menu__drop')).toBeNull();
+    expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test('renders multiple', () => {
-    const component = mount(
+  test('multiple', () => {
+    const component = renderer.create(
       <Select
         id='test-select'
         multiple={true}
         options={['one', 'two']}
         selected={[]}
         value={[]}
-      />, {
-        attachTo: document.body.firstChild,
-      }
+      />
     );
-    expect(component.getDOMNode()).toMatchSnapshot();
-    expect(document.getElementById('test-menu__drop')).toBeNull();
+    expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test('mounts multiple', () => {
-    const component = mount(
+  test('multiple values', () => {
+    const { getByTestId, container } = render(
       <Select
+        data-testid='test-select'
         id='test-select'
         multiple={true}
         options={['one', 'two']}
@@ -204,19 +233,19 @@ describe('Select', () => {
         value={['one', 'two']}
       />
     );
-    expect(component.getDOMNode()).toMatchSnapshot();
-    expect(document.getElementById('test-select__drop')).toBeNull();
+    expect(container.firstChild).toMatchSnapshot();
 
-    component.simulate('click');
+    Simulate.click(getByTestId('test-select'));
 
-    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
     expectPortal('test-select__drop').toMatchSnapshot();
   });
 
-  test('selects another option', () => {
+  test('select another option', () => {
     const onChange = jest.fn();
-    const component = mount(
+    const { getByTestId, container } = renderIntoDocument(
       <Select
+        data-testid='test-select'
         id='test-select'
         multiple={true}
         options={['one', 'two']}
@@ -225,20 +254,21 @@ describe('Select', () => {
         selected={[1]}
       />
     );
+    expect(container.firstChild).toMatchSnapshot();
 
-    component.simulate('click');
+    Simulate.click(getByTestId('test-select'));
 
-    // pressing enter here nothing will happen
     Simulate.click(
       document.getElementById('test-select__drop').querySelector('button')
     );
     expect(onChange).toBeCalled();
   });
 
-  test('deselects an option', () => {
+  test('deselect an option', () => {
     const onChange = jest.fn();
-    const component = mount(
+    const { getByTestId, container } = renderIntoDocument(
       <Select
+        data-testid='test-select'
         id='test-select'
         multiple={true}
         options={['one', 'two']}
@@ -247,26 +277,31 @@ describe('Select', () => {
         selected={[0]}
       />
     );
+    expect(container.firstChild).toMatchSnapshot();
 
-    component.simulate('click');
+    Simulate.click(getByTestId('test-select'));
 
-    // pressing enter here nothing will happen
     Simulate.click(
       document.getElementById('test-select__drop').querySelector('button')
     );
     expect(onChange).toBeCalled();
   });
 
-  test('mounts disabled', () => {
-    const component = mount(
-      <Select id='test-select' disabled={true} options={['one', 'two']} />
+  test('disabled', () => {
+    const { getByTestId, container } = renderIntoDocument(
+      <Select
+        data-testid='test-select'
+        id='test-select'
+        disabled={true}
+        options={['one', 'two']}
+      />
     );
-    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
 
-    component.simulate('click');
+    Simulate.click(getByTestId('test-select'));
 
-    expect(component.getDOMNode()).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
     expect(document.getElementById('test-select__drop')).toBeNull();
   });
 });

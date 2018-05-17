@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DropButton closes 1`] = `
+exports[`DropButton close by clicking outside 1`] = `
 <button
   aria-label="Open Drop"
   class="StyledButton-gXzblK gTFGea"
@@ -15,90 +15,99 @@ exports[`DropButton closes 1`] = `
 </button>
 `;
 
-exports[`DropButton closes 2`] = `
+exports[`DropButton close by clicking outside 2`] = `
 <div
   id="drop-contents"
 >
-  drop contents
+  Drop Contents
 </div>
 `;
 
-exports[`DropButton closes 3`] = `
+exports[`DropButton close by clicking outside 3`] = `
 "@media only screen and (min-width:700px) {
   .gTFGea {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .hWLqHn {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }"
 `;
 
-exports[`DropButton mounts 1`] = `
+exports[`DropButton closed 1`] = `
+.c0 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  text-align: center;
+  display: inline-block;
+  min-width: 96px;
+  max-width: 384px;
+  font-weight: 600;
+  border: 2px solid #865CD6;
+  border-radius: 24px;
+  color: #444444;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  padding: 10px 46px;
+}
+
+.c0:hover {
+  box-shadow: 0px 0px 0px 2px #865CD6;
+}
+
+.c0:hover svg {
+  fill: #000000;
+  stroke: #000000;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.c1:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+@media only screen and (min-width:700px) {
+  .c0 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
 <button
   aria-label="Open Drop"
-  class="StyledButton-gXzblK gTFGea"
+  className="c0"
+  disabled={false}
+  href={undefined}
+  icon={undefined}
+  id={undefined}
   label="Dropper"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
   type="button"
 >
   <span
-    class="StyledButton__StyledLabel-XZHBZ kthNMI"
+    className="c1"
   >
     Dropper
   </span>
 </button>
 `;
 
-exports[`DropButton mounts 2`] = `
-<div
-  id="drop-contents"
->
-  drop contents
-</div>
-`;
-
-exports[`DropButton mounts 3`] = `
-"@media only screen and (min-width:700px) {
-  .gTFGea {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}"
-`;
-
-exports[`DropButton mounts 4`] = `
-<button
-  aria-label="Open Drop"
-  class="StyledButton-gXzblK gTFGea"
-  id="test"
-  label="Dropper"
-  tabindex="-1"
-  type="button"
->
-  <span
-    class="StyledButton__StyledLabel-XZHBZ kthNMI"
-  >
-    Dropper
-  </span>
-</button>
-`;
-
-exports[`DropButton mounts 5`] = `
-<div
-  id="drop-contents"
->
-  drop contents
-</div>
-`;
-
-exports[`DropButton mounts 6`] = `
-"@media only screen and (min-width:700px) {
-  .gTFGea {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}"
-`;
-
-exports[`DropButton mounts disabled 1`] = `
+exports[`DropButton disabled 1`] = `
 <button
   aria-label="Open Drop"
   class="StyledButton-gXzblK gXena"
@@ -112,4 +121,150 @@ exports[`DropButton mounts disabled 1`] = `
     Dropper
   </span>
 </button>
+`;
+
+exports[`DropButton open and close 1`] = `
+<button
+  aria-label="Open Drop"
+  class="StyledButton-gXzblK gTFGea"
+  label="Dropper"
+  type="button"
+>
+  <span
+    class="StyledButton__StyledLabel-XZHBZ kthNMI"
+  >
+    Dropper
+  </span>
+</button>
+`;
+
+exports[`DropButton open and close 2`] = `
+<div
+  id="drop-contents"
+>
+  Drop Contents
+</div>
+`;
+
+exports[`DropButton open and close 3`] = `
+"@media only screen and (min-width:700px) {
+  .gTFGea {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}"
+`;
+
+exports[`DropButton opened 1`] = `
+.c0 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  text-align: center;
+  display: inline-block;
+  min-width: 96px;
+  max-width: 384px;
+  font-weight: 600;
+  border: 2px solid #865CD6;
+  border-radius: 24px;
+  color: #444444;
+  font-size: 1.1875rem;
+  line-height: 24px;
+  padding: 10px 46px;
+}
+
+.c0:hover {
+  box-shadow: 0px 0px 0px 2px #865CD6;
+}
+
+.c0:hover svg {
+  fill: #000000;
+  stroke: #000000;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.c1:first-child:not(:last-child) {
+  margin-right: 12px;
+}
+
+@media only screen and (min-width:700px) {
+  .c0 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<button
+  aria-label="Open Drop"
+  className="c0"
+  disabled={false}
+  href={undefined}
+  icon={undefined}
+  id={undefined}
+  label="Dropper"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  type="button"
+>
+  <span
+    className="c1"
+  >
+    Dropper
+  </span>
+</button>
+`;
+
+exports[`DropButton opened ref 1`] = `
+<button
+  aria-label="Open Drop"
+  class="StyledButton-gXzblK gTFGea"
+  label="Dropper"
+  type="button"
+>
+  <span
+    class="StyledButton__StyledLabel-XZHBZ kthNMI"
+  >
+    Dropper
+  </span>
+</button>
+`;
+
+exports[`DropButton opened ref 2`] = `
+<div
+  id="drop-contents"
+>
+  Drop Contents
+</div>
+`;
+
+exports[`DropButton opened ref 3`] = `
+"@media only screen and (min-width:700px) {
+  .gTFGea {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .hWLqHn {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .gXena {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}"
 `;

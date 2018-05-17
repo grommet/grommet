@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import renderer from 'react-test-renderer';
 
 import { findAllByType } from '../../utils';
 
 import { withFocus } from '../hocs';
 
-const Test = withFocus(({ focus, ...rest }) => (
-  <div {...rest}>
-    { focus ? 'focus' : 'no focus' }
-  </div>
-));
+class TestDiv extends Component {
+  render() {
+    const { focus, ...rest } = this.props;
+    return (
+      <div {...rest}>
+        { focus ? 'focus' : 'no focus' }
+      </div>
+    );
+  }
+}
+
+const Test = withFocus(TestDiv);
 
 test('withFocus set focus', () => {
   const component = renderer.create(<Test />);
@@ -65,4 +72,3 @@ test('withFocus calls callback', () => {
   expect(onFocus).toBeCalled();
   expect(onBlur).toBeCalled();
 });
-

@@ -3,7 +3,7 @@ import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
 import { Box } from '../Box';
-import { withTheme } from '../hocs';
+import { withForwardRef, withTheme } from '../hocs';
 
 import EdgeControl from './EdgeControl';
 import doc from './doc';
@@ -21,6 +21,8 @@ class RangeSelector extends Component {
 
   state = {}
 
+  containerRef = React.createRef()
+
   componentWillUnmount() {
     window.removeEventListener('mousemove', this.mouseMove);
     window.removeEventListener('mouseup', this.mouseMove);
@@ -28,7 +30,7 @@ class RangeSelector extends Component {
 
   valueForMouseCoord = (event) => {
     const { direction, max, min, step } = this.props;
-    const rect = findDOMNode(this.containerRef).getBoundingClientRect();
+    const rect = findDOMNode(this.containerRef.current).getBoundingClientRect();
     if (direction === 'vertical') {
       const y = event.clientY - (rect.y || 0); // unit test resilience
       const scaleY = (rect.height / ((max - min) + step)) || 1; // unit test resilience
@@ -102,8 +104,10 @@ class RangeSelector extends Component {
   }
 
   render() {
-    const { color, direction, invert, max, messages, min, onChange, opacity,
-      round, size, step, theme, values, ...rest } = this.props;
+    const {
+      color, direction, forwardRef, invert, max, messages, min,
+      onChange, opacity, round, size, step, theme, values, ...rest
+    } = this.props;
     const { nextLower, nextUpper } = this.state;
 
     const scale = (max - min) / ((max - min) + step);
@@ -113,7 +117,7 @@ class RangeSelector extends Component {
 
     return (
       <Box
-        ref={(ref) => { this.containerRef = ref; }}
+        ref={this.containerRef}
         direction={direction === 'vertical' ? 'column' : 'row'}
         fill={fill}
         {...rest}
@@ -129,6 +133,7 @@ class RangeSelector extends Component {
         <EdgeControl
           a11yTitle={messages.lower}
           tabIndex={0}
+          ref={forwardRef}
           color={color}
           direction={direction}
           edge='lower'
@@ -185,4 +190,5 @@ if (process.env.NODE_ENV !== 'production') {
 
 export default compose(
   withTheme,
+  withForwardRef,
 )(RangeSelector);

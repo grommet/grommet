@@ -1,32 +1,29 @@
 import React from 'react';
 import 'jest-styled-components';
-import Enzyme, { mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { cleanup, fireEvent, renderIntoDocument } from 'react-testing-library';
 
 import { Responsive } from '../';
 
-Enzyme.configure({ adapter: new Adapter() });
-
-test('Responsive renders', () => {
+test('Responsive basic', () => {
   const onChange = jest.fn();
-  const component = mount(
+  const { container } = renderIntoDocument(
     <Responsive onChange={onChange}>
       <span>hi</span>
     </Responsive>
   );
-  expect(component.getDOMNode()).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 
   global.window.innerWidth = 40;
   global.window.innerHeight = 40;
-  global.window.dispatchEvent(new Event('resize'));
+  fireEvent(window, new Event('resize', { bubbles: true, cancelable: true }));
 
   expect(onChange).toBeCalledWith('narrow');
 
   global.window.innerWidth = 2000;
   global.window.innerHeight = 2000;
-  global.window.dispatchEvent(new Event('resize'));
+  fireEvent(window, new Event('resize', { bubbles: true, cancelable: true }));
 
   expect(onChange).toBeCalledWith('wide');
 
-  component.unmount();
+  cleanup();
 });

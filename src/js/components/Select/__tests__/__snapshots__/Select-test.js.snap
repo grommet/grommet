@@ -1,12 +1,400 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Select closes drop on esc 1`] = `
+exports[`Select basic 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 1px rgba(0,0,0,0.33);
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  margin: 0;
+  padding: 0;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding: 0;
+}
+
+.c0 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c5 {
+  box-sizing: border-box;
+  padding: 11px;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  margin: 0;
+  width: 100%;
+  border: none;
+  -webkit-appearance: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c3 {
+  width: 100%;
+}
+
+.c4 {
+  cursor: pointer;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    border: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c0 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<button
+  aria-label="undefined"
+  className="c0"
+  disabled={false}
+  href={undefined}
+  icon={undefined}
+  id="test-select"
+  label={undefined}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  type="button"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <input
+          autoComplete="off"
+          className="c4 c5"
+          defaultValue={undefined}
+          id="test-select"
+          onFocus={[Function]}
+          onInput={[Function]}
+          onKeyDown={[Function]}
+          placeholder={undefined}
+          readOnly={true}
+          size={undefined}
+          tabIndex="-1"
+          type="text"
+          value={undefined}
+        />
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      style={
+        Object {
+          "minWidth": "auto",
+        }
+      }
+    >
+      <svg
+        aria-label="FormDown"
+        className="c7"
+        color="brand"
+        height="24px"
+        role="img"
+        size={undefined}
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          strokeWidth="2"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select complex options and children 1`] = `
+<button
+  aria-label="undefined"
+  class="StyledButton-gXzblK fYUIhN"
+  data-testid="test-select"
+  id="test-select"
+  type="button"
+>
+  <div
+    class="StyledBox-bStriS iiEOir"
+  >
+    <div
+      class="StyledBox-bStriS ktPzMF"
+    >
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          data-testid="test-select"
+          id="test-select"
+          readonly=""
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS hAGfCP"
+      style="min-width: auto;"
+    >
+      <svg
+        aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
+        color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select complex options and children 2`] = `
+<button
+  aria-label="undefined"
+  class="StyledButton-gXzblK fYUIhN"
+  data-testid="test-select"
+  id="test-select"
+  type="button"
+>
+  <div
+    class="StyledBox-bStriS iiEOir"
+  >
+    <div
+      class="StyledBox-bStriS ktPzMF"
+    >
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          data-testid="test-select"
+          id="test-select"
+          readonly=""
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS hAGfCP"
+      style="min-width: auto;"
+    >
+      <svg
+        aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
+        color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select complex options and children 3`] = `
 <div
   class="StyledDrop-bCWxPe eTlFvx"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object Object]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -22,37 +410,25 @@ exports[`Select closes drop on esc 1`] = `
         role="menuitem"
         type="button"
       >
-        <div
-          class="StyledBox-bStriS jXXAwE"
-        >
-          <span
-            class="StyledText-eJMSZI eCycNH"
-          >
-            one
-          </span>
-        </div>
+        <span>
+          one
+        </span>
       </button>
       <button
         class="StyledButton-gXzblK fWHUwZ"
         role="menuitem"
         type="button"
       >
-        <div
-          class="StyledBox-bStriS jXXAwE"
-        >
-          <span
-            class="StyledText-eJMSZI eCycNH"
-          >
-            two
-          </span>
-        </div>
+        <span>
+          two
+        </span>
       </button>
     </div>
   </div>
 </div>
 `;
 
-exports[`Select closes drop on esc 2`] = `
+exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width:699px) {
   .iiEOir {
     border: solid 1px rgba(0,0,0,0.33);
@@ -132,18 +508,6 @@ exports[`Select closes drop on esc 2`] = `
   }
 }
 
-@media only screen and (max-width:699px) {
-  .hkehWd {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .hkehWd {
-    padding: 3px;
-  }
-}
-
 @media only screen and (min-width:700px) {
   .fYUIhN {
     -webkit-transition: 0.1s ease-in-out;
@@ -189,10 +553,11 @@ exports[`Select closes drop on esc 2`] = `
 }"
 `;
 
-exports[`Select closes drop on esc 3`] = `
+exports[`Select deselect an option 1`] = `
 <button
   aria-label="undefined"
   class="StyledButton-gXzblK fYUIhN"
+  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -208,6 +573,64 @@ exports[`Select closes drop on esc 3`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          data-testid="test-select"
+          id="test-select"
+          multiple=""
+          readonly=""
+          tabindex="-1"
+          type="text"
+          value="one"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS hAGfCP"
+      style="min-width: auto;"
+    >
+      <svg
+        aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
+        color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select disabled 1`] = `
+<button
+  aria-label="undefined"
+  class="StyledButton-gXzblK cDmTYk"
+  data-testid="test-select"
+  disabled=""
+  id="test-select"
+  type="button"
+>
+  <div
+    class="StyledBox-bStriS iiEOir"
+  >
+    <div
+      class="StyledBox-bStriS ktPzMF"
+    >
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          data-testid="test-select"
           id="test-select"
           readonly=""
           tabindex="-1"
@@ -242,10 +665,12 @@ exports[`Select closes drop on esc 3`] = `
 </button>
 `;
 
-exports[`Select closes drop on esc 4`] = `
+exports[`Select disabled 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK cDmTYk"
+  data-testid="test-select"
+  disabled=""
   id="test-select"
   type="button"
 >
@@ -261,6 +686,7 @@ exports[`Select closes drop on esc 4`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          data-testid="test-select"
           id="test-select"
           readonly=""
           tabindex="-1"
@@ -295,366 +721,273 @@ exports[`Select closes drop on esc 4`] = `
 </button>
 `;
 
-exports[`Select mounts 1`] = `
-<button
-  aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
-  id="test-select"
-  type="button"
->
-  <div
-    class="StyledBox-bStriS iiEOir"
-  >
-    <div
-      class="StyledBox-bStriS ktPzMF"
-    >
-      <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
-      >
-        <input
-          autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
-          id="test-select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      class="StyledBox-bStriS hAGfCP"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
-        color="brand"
-        height="24px"
-        role="img"
-        version="1.1"
-        viewBox="0 0 24 24"
-        width="24px"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
-`;
+exports[`Select multiple 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #666666;
+  stroke: #666666;
+}
 
-exports[`Select mounts 2`] = `
-<button
-  aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
-  id="test-select"
-  type="button"
->
-  <div
-    class="StyledBox-bStriS iiEOir"
-  >
-    <div
-      class="StyledBox-bStriS ktPzMF"
-    >
-      <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
-      >
-        <input
-          autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
-          id="test-select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      class="StyledBox-bStriS hAGfCP"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
-        color="brand"
-        height="24px"
-        role="img"
-        version="1.1"
-        viewBox="0 0 24 24"
-        width="24px"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
-`;
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
 
-exports[`Select mounts 3`] = `
-<div
-  class="StyledDrop-bCWxPe eTlFvx"
-  id="test-select__drop"
-  style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
-  tabindex="-1"
-  target="[object Object]"
->
-  <div
-    class="StyledBox-bStriS dFjuei"
-    id="test-select__select-drop"
-  >
-    <div
-      class="StyledBox-bStriS cwOEFa"
-      role="menubar"
-      tabindex="-1"
-    >
-      <button
-        class="StyledButton-gXzblK fWHUwZ"
-        role="menuitem"
-        type="button"
-      >
-        <div
-          class="StyledBox-bStriS jXXAwE"
-        >
-          <span
-            class="StyledText-eJMSZI eCycNH"
-          >
-            one
-          </span>
-        </div>
-      </button>
-      <button
-        class="StyledButton-gXzblK fWHUwZ"
-        role="menuitem"
-        type="button"
-      >
-        <div
-          class="StyledBox-bStriS jXXAwE"
-        >
-          <span
-            class="StyledText-eJMSZI eCycNH"
-          >
-            two
-          </span>
-        </div>
-      </button>
-    </div>
-  </div>
-</div>
-`;
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
 
-exports[`Select mounts 4`] = `
-"@media only screen and (max-width:699px) {
-  .iiEOir {
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 1px rgba(0,0,0,0.33);
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  margin: 0;
+  padding: 0;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding: 0;
+}
+
+.c0 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c5 {
+  box-sizing: border-box;
+  padding: 11px;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  margin: 0;
+  width: 100%;
+  border: none;
+  -webkit-appearance: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c3 {
+  width: 100%;
+}
+
+.c4 {
+  cursor: pointer;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iiEOir {
+  .c1 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iiEOir {
+  .c1 {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ktPzMF {
+  .c2 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ktPzMF {
+  .c2 {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hAGfCP {
+  .c6 {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hAGfCP {
+  .c6 {
     padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .dFjuei {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .dFjuei {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .cwOEFa {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .cwOEFa {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .jXXAwE {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .jXXAwE {
-    padding: 6px;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fYUIhN {
+  .c0 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
-@media only screen and (min-width:700px) {
-  .fWHUwZ {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-
-
-.eTlFvx {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  border-radius: 0px;
-  box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
-  position: fixed;
-  z-index: 20;
-  overflow: auto;
-  outline: none;
-  background-color: #f8f8f8;
-  color: #444444;
-  opacity: 0;
-  -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  -webkit-animation: jNdvGQ 0.1s forwards;
-  animation: jNdvGQ 0.1s forwards;
-  -webkit-animation-delay: 0.01s;
-  animation-delay: 0.01s;
-}"
-`;
-
-exports[`Select mounts 5`] = `
-<div
-  class="StyledBox-bStriS cwOEFa"
-  role="menubar"
-  tabindex="-1"
->
-  <button
-    class="StyledButton-gXzblK fWHUwZ"
-    role="menuitem"
-    type="button"
-  >
-    <div
-      class="StyledBox-bStriS jXXAwE"
-    >
-      <span
-        class="StyledText-eJMSZI eCycNH"
-      >
-        one
-      </span>
-    </div>
-  </button>
-  <button
-    class="StyledButton-gXzblK fWHUwZ"
-    role="menuitem"
-    type="button"
-  >
-    <div
-      class="StyledBox-bStriS jXXAwE"
-    >
-      <span
-        class="StyledText-eJMSZI eCycNH"
-      >
-        two
-      </span>
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Select mounts disabled 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK cDmTYk"
-  disabled=""
+  className="c0"
+  disabled={false}
+  href={undefined}
+  icon={undefined}
   id="test-select"
+  label={undefined}
+  multiple={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  selected={Array []}
   type="button"
 >
   <div
-    class="StyledBox-bStriS iiEOir"
+    aria-label={undefined}
+    className="c1"
   >
     <div
-      class="StyledBox-bStriS ktPzMF"
+      aria-label={undefined}
+      className="c2"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+        className="c3"
       >
         <input
-          autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          autoComplete="off"
+          className="c4 c5"
+          defaultValue={undefined}
           id="test-select"
-          readonly=""
-          tabindex="-1"
+          multiple={true}
+          onFocus={[Function]}
+          onInput={[Function]}
+          onKeyDown={[Function]}
+          placeholder={undefined}
+          readOnly={true}
+          selected={Array []}
+          size={undefined}
+          tabIndex="-1"
           type="text"
           value=""
         />
       </div>
     </div>
     <div
-      class="StyledBox-bStriS hAGfCP"
-      style="min-width: auto;"
+      aria-label={undefined}
+      className="c6"
+      style={
+        Object {
+          "minWidth": "auto",
+        }
+      }
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
+        className="c7"
         color="brand"
         height="24px"
         role="img"
+        size={undefined}
         version="1.1"
         viewBox="0 0 24 24"
         width="24px"
@@ -663,7 +996,7 @@ exports[`Select mounts disabled 1`] = `
           fill="none"
           points="18 9 12 15 6 9"
           stroke="#000"
-          stroke-width="2"
+          strokeWidth="2"
         />
       </svg>
     </div>
@@ -671,64 +1004,11 @@ exports[`Select mounts disabled 1`] = `
 </button>
 `;
 
-exports[`Select mounts disabled 2`] = `
-<button
-  aria-label="undefined"
-  class="StyledButton-gXzblK cDmTYk"
-  disabled=""
-  id="test-select"
-  type="button"
->
-  <div
-    class="StyledBox-bStriS iiEOir"
-  >
-    <div
-      class="StyledBox-bStriS ktPzMF"
-    >
-      <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
-      >
-        <input
-          autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
-          id="test-select"
-          readonly=""
-          tabindex="-1"
-          type="text"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      class="StyledBox-bStriS hAGfCP"
-      style="min-width: auto;"
-    >
-      <svg
-        aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
-        color="brand"
-        height="24px"
-        role="img"
-        version="1.1"
-        viewBox="0 0 24 24"
-        width="24px"
-      >
-        <polyline
-          fill="none"
-          points="18 9 12 15 6 9"
-          stroke="#000"
-          stroke-width="2"
-        />
-      </svg>
-    </div>
-  </div>
-</button>
-`;
-
-exports[`Select mounts multiple 1`] = `
+exports[`Select multiple values 1`] = `
 <button
   aria-label="undefined"
   class="StyledButton-gXzblK fYUIhN"
+  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -744,6 +1024,7 @@ exports[`Select mounts multiple 1`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          data-testid="test-select"
           id="test-select"
           multiple=""
           readonly=""
@@ -779,10 +1060,11 @@ exports[`Select mounts multiple 1`] = `
 </button>
 `;
 
-exports[`Select mounts multiple 2`] = `
+exports[`Select multiple values 2`] = `
 <button
   aria-label="undefined"
   class="StyledButton-gXzblK fYUIhN"
+  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -798,6 +1080,7 @@ exports[`Select mounts multiple 2`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          data-testid="test-select"
           id="test-select"
           multiple=""
           readonly=""
@@ -833,13 +1116,12 @@ exports[`Select mounts multiple 2`] = `
 </button>
 `;
 
-exports[`Select mounts multiple 3`] = `
+exports[`Select multiple values 3`] = `
 <div
   class="StyledDrop-bCWxPe eTlFvx"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object Object]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -885,7 +1167,7 @@ exports[`Select mounts multiple 3`] = `
 </div>
 `;
 
-exports[`Select mounts multiple 4`] = `
+exports[`Select multiple values 4`] = `
 "@media only screen and (max-width:699px) {
   .iiEOir {
     border: solid 1px rgba(0,0,0,0.33);
@@ -998,6 +1280,13 @@ exports[`Select mounts multiple 4`] = `
 
 @media only screen and (min-width:700px) {
   .fWHUwZ {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .kaHtmF {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1041,10 +1330,11 @@ exports[`Select mounts multiple 4`] = `
 }"
 `;
 
-exports[`Select mounts with complex options and children 1`] = `
+exports[`Select opens 1`] = `
 <button
   aria-label="undefined"
   class="StyledButton-gXzblK fYUIhN"
+  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -1060,6 +1350,7 @@ exports[`Select mounts with complex options and children 1`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          data-testid="test-select"
           id="test-select"
           readonly=""
           tabindex="-1"
@@ -1094,10 +1385,11 @@ exports[`Select mounts with complex options and children 1`] = `
 </button>
 `;
 
-exports[`Select mounts with complex options and children 2`] = `
+exports[`Select opens 2`] = `
 <button
   aria-label="undefined"
   class="StyledButton-gXzblK fYUIhN"
+  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -1113,6 +1405,7 @@ exports[`Select mounts with complex options and children 2`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          data-testid="test-select"
           id="test-select"
           readonly=""
           tabindex="-1"
@@ -1147,13 +1440,12 @@ exports[`Select mounts with complex options and children 2`] = `
 </button>
 `;
 
-exports[`Select mounts with complex options and children 3`] = `
+exports[`Select opens 3`] = `
 <div
   class="StyledDrop-bCWxPe eTlFvx"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object Object]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -1169,25 +1461,37 @@ exports[`Select mounts with complex options and children 3`] = `
         role="menuitem"
         type="button"
       >
-        <span>
-          one
-        </span>
+        <div
+          class="StyledBox-bStriS jXXAwE"
+        >
+          <span
+            class="StyledText-eJMSZI eCycNH"
+          >
+            one
+          </span>
+        </div>
       </button>
       <button
         class="StyledButton-gXzblK fWHUwZ"
         role="menuitem"
         type="button"
       >
-        <span>
-          two
-        </span>
+        <div
+          class="StyledBox-bStriS jXXAwE"
+        >
+          <span
+            class="StyledText-eJMSZI eCycNH"
+          >
+            two
+          </span>
+        </div>
       </button>
     </div>
   </div>
 </div>
 `;
 
-exports[`Select mounts with complex options and children 4`] = `
+exports[`Select opens 4`] = `
 "@media only screen and (max-width:699px) {
   .iiEOir {
     border: solid 1px rgba(0,0,0,0.33);
@@ -1312,13 +1616,106 @@ exports[`Select mounts with complex options and children 4`] = `
 }"
 `;
 
-exports[`Select mounts with search 1`] = `
+exports[`Select opens 5`] = `
+<div
+  class="StyledBox-bStriS cwOEFa"
+  role="menubar"
+  tabindex="-1"
+>
+  <button
+    class="StyledButton-gXzblK fWHUwZ"
+    role="menuitem"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS jXXAwE"
+    >
+      <span
+        class="StyledText-eJMSZI eCycNH"
+      >
+        one
+      </span>
+    </div>
+  </button>
+  <button
+    class="StyledButton-gXzblK fWHUwZ"
+    role="menuitem"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS jXXAwE"
+    >
+      <span
+        class="StyledText-eJMSZI eCycNH"
+      >
+        two
+      </span>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Select search 1`] = `
+<button
+  aria-label="undefined"
+  class="StyledButton-gXzblK fYUIhN"
+  data-testid="test-select"
+  id="test-select"
+  type="button"
+>
+  <div
+    class="StyledBox-bStriS iiEOir"
+  >
+    <div
+      class="StyledBox-bStriS ktPzMF"
+    >
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          data-testid="test-select"
+          id="test-select"
+          readonly=""
+          tabindex="-1"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS hAGfCP"
+      style="min-width: auto;"
+    >
+      <svg
+        aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
+        color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select search 2`] = `
 <div
   class="StyledDrop-bCWxPe eTlFvx"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object Object]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -1378,7 +1775,7 @@ exports[`Select mounts with search 1`] = `
 </div>
 `;
 
-exports[`Select mounts with search 2`] = `
+exports[`Select search 3`] = `
 "@media only screen and (max-width:699px) {
   .iiEOir {
     border: solid 1px rgba(0,0,0,0.33);
@@ -1515,10 +1912,11 @@ exports[`Select mounts with search 2`] = `
 }"
 `;
 
-exports[`Select renders multiple 1`] = `
+exports[`Select select an option 1`] = `
 <button
   aria-label="undefined"
   class="StyledButton-gXzblK fYUIhN"
+  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -1534,8 +1932,8 @@ exports[`Select renders multiple 1`] = `
         <input
           autocomplete="off"
           class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          data-testid="test-select"
           id="test-select"
-          multiple=""
           readonly=""
           tabindex="-1"
           type="text"
@@ -1569,10 +1967,55 @@ exports[`Select renders multiple 1`] = `
 </button>
 `;
 
-exports[`Select renders size 1`] = `
+exports[`Select select an option with complex options 1`] = `
 <button
   aria-label="undefined"
   class="StyledButton-gXzblK fYUIhN"
+  data-testid="test-select"
+  id="test-select"
+  type="button"
+>
+  <div
+    class="StyledBox-bStriS jRztHH"
+  >
+    <div
+      class="StyledBox-bStriS ktPzMF"
+    >
+      <span>
+        one
+      </span>
+    </div>
+    <div
+      class="StyledBox-bStriS hAGfCP"
+      style="min-width: auto;"
+    >
+      <svg
+        aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
+        color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select select an option with enter 1`] = `
+<button
+  aria-label="undefined"
+  class="StyledButton-gXzblK fYUIhN"
+  data-testid="test-select"
   id="test-select"
   type="button"
 >
@@ -1587,7 +2030,8 @@ exports[`Select renders size 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW dGDNWv"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          data-testid="test-select"
           id="test-select"
           readonly=""
           tabindex="-1"
@@ -1602,7 +2046,7 @@ exports[`Select renders size 1`] = `
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-gTfjEw cKOunL"
+        class="StyledIcon-gTfjEw htxeRg"
         color="brand"
         height="24px"
         role="img"
@@ -1615,6 +2059,347 @@ exports[`Select renders size 1`] = `
           points="18 9 12 15 6 9"
           stroke="#000"
           stroke-width="2"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select select another option 1`] = `
+<button
+  aria-label="undefined"
+  class="StyledButton-gXzblK fYUIhN"
+  data-testid="test-select"
+  id="test-select"
+  type="button"
+>
+  <div
+    class="StyledBox-bStriS iiEOir"
+  >
+    <div
+      class="StyledBox-bStriS ktPzMF"
+    >
+      <div
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+      >
+        <input
+          autocomplete="off"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          data-testid="test-select"
+          id="test-select"
+          multiple=""
+          readonly=""
+          tabindex="-1"
+          type="text"
+          value="two"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledBox-bStriS hAGfCP"
+      style="min-width: auto;"
+    >
+      <svg
+        aria-label="FormDown"
+        class="StyledIcon-gTfjEw htxeRg"
+        color="brand"
+        height="24px"
+        role="img"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Select size 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  fill: #666666;
+  stroke: #666666;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: solid 1px rgba(0,0,0,0.33);
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  margin: 0;
+  padding: 0;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding: 0;
+}
+
+.c0 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+}
+
+.c5 {
+  box-sizing: border-box;
+  padding: 11px;
+  border: 1px solid rgba(0,0,0,0.33);
+  border-radius: 4px;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  margin: 0;
+  width: 100%;
+  font-size: 24px;
+  line-height: 1.167;
+  border: none;
+  -webkit-appearance: none;
+}
+
+.c5::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+.c5:-ms-input-placeholder {
+  color: #AAAAAA;
+}
+
+.c5::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.c3 {
+  width: 100%;
+}
+
+.c4 {
+  cursor: pointer;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    border: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c0 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<button
+  aria-label="undefined"
+  className="c0"
+  disabled={false}
+  href={undefined}
+  icon={undefined}
+  id="test-select"
+  label={undefined}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  selected={Array []}
+  type="button"
+>
+  <div
+    aria-label={undefined}
+    className="c1"
+  >
+    <div
+      aria-label={undefined}
+      className="c2"
+    >
+      <div
+        className="c3"
+      >
+        <input
+          autoComplete="off"
+          className="c4 c5"
+          defaultValue={undefined}
+          id="test-select"
+          onFocus={[Function]}
+          onInput={[Function]}
+          onKeyDown={[Function]}
+          placeholder={undefined}
+          readOnly={true}
+          selected={Array []}
+          size="large"
+          tabIndex="-1"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      aria-label={undefined}
+      className="c6"
+      style={
+        Object {
+          "minWidth": "auto",
+        }
+      }
+    >
+      <svg
+        aria-label="FormDown"
+        className="c7"
+        color="brand"
+        height="24px"
+        role="img"
+        size="large"
+        version="1.1"
+        viewBox="0 0 24 24"
+        width="24px"
+      >
+        <polyline
+          fill="none"
+          points="18 9 12 15 6 9"
+          stroke="#000"
+          strokeWidth="2"
         />
       </svg>
     </div>

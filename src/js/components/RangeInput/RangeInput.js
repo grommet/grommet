@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
-import { withFocus, withTheme } from '../hocs';
+import { withFocus, withForwardRef, withTheme } from '../hocs';
 
 import StyledRangeInput from './StyledRangeInput';
 import doc from './doc';
@@ -14,8 +14,14 @@ class RangeInput extends Component {
 
   render() {
     const { grommet } = this.context;
+    const { forwardRef, ...rest } = this.props;
     return (
-      <StyledRangeInput grommet={grommet} {...this.props} type='range' />
+      <StyledRangeInput
+        grommet={grommet}
+        {...rest}
+        innerRef={forwardRef}
+        type='range'
+      />
     );
   }
 }
@@ -27,4 +33,5 @@ if (process.env.NODE_ENV !== 'production') {
 export default compose(
   withFocus,
   withTheme,
+  withForwardRef,
 )(RangeInput);

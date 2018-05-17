@@ -12,20 +12,20 @@ import doc from './doc';
 
 class GrommetMarkdown extends Component {
   render() {
-    const { components, ...rest } = this.props;
+    const { components, theme, ...rest } = this.props;
 
     const heading = [1, 2, 3, 4]
       .reduce((obj, level) => {
         const result = { ...obj };
         result[`h${level}`] = {
           component: Heading,
-          props: { level },
+          props: { level, theme },
         };
         return result;
       }, {});
 
     const overrides = deepMerge({
-      p: { component: Paragraph },
+      p: { component: Paragraph, props: { theme } },
     }, heading, components);
 
     return (

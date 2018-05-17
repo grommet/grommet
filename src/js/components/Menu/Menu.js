@@ -8,7 +8,7 @@ import { Keyboard } from '../Keyboard';
 import { DropButton } from '../DropButton';
 import { Text } from '../Text';
 
-import { withTheme } from '../hocs';
+import { withForwardRef, withTheme } from '../hocs';
 
 import doc from './doc';
 
@@ -81,6 +81,7 @@ class Menu extends Component {
       dropAlign,
       dropBackground,
       dropTarget,
+      forwardRef,
       icon,
       items,
       label,
@@ -131,6 +132,7 @@ class Menu extends Component {
       >
         <div>
           <DropButton
+            ref={forwardRef}
             {...rest}
             theme={theme}
             a11yTitle={messages.openMenu || 'Open Menu'}
@@ -186,4 +188,5 @@ if (process.env.NODE_ENV !== 'production') {
 
 export default compose(
   withTheme,
+  withForwardRef,
 )(Menu);
