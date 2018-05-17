@@ -4,6 +4,7 @@ import { compose } from 'recompose';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { withForwardRef, withTheme } from '../hocs';
+import { setFocusWithoutScroll } from '../../utils';
 
 import doc from './doc';
 
@@ -43,7 +44,7 @@ class DropButton extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (!this.state.show && prevState.show) {
       // focus on the button if the drop is closed
-      this.state.buttonRef.current.focus();
+      setFocusWithoutScroll(this.state.buttonRef.current);
     }
   }
 

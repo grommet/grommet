@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import getDisplayName from 'recompose/getDisplayName';
 
@@ -7,24 +8,46 @@ import { deepMerge } from '../utils';
 
 export const withFocus = (WrappedComponent) => {
   class FocusableComponent extends Component {
-    constructor() {
-      super();
-      this.setFocus = this.setFocus.bind(this);
-      this.state = {
-        mouseActive: false,
-        focus: false,
-      };
+    static getDerivedStateFromProps(nextProps, prevState) {
+      const { withFocusRef } = nextProps;
+      const { wrappedRef } = prevState;
+      const nextWrappedRef = withFocusRef || wrappedRef;
+      if (nextWrappedRef !== wrappedRef) {
+        return { wrappedRef: nextWrappedRef };
+      }
+      return null;
+    }
+
+    state = {
+      mouseActive: false,
+      focus: false,
+      wrappedRef: React.createRef(),
     }
 
     componentDidMount = () => {
+      const { wrappedRef } = this.state;
       window.addEventListener('mousedown', this.handleActiveMouse);
+
+      // we could be using onFocus in the wrapper node itself
+      // but react does not invoke it if you programically
+      // call wrapperNode.focus() inside componentWillUnmount
+      // see Drop "this.originalFocusedElement.focus();" for reference
+      const wrapperNode = findDOMNode(wrappedRef.current);
+      if (wrapperNode && wrapperNode.addEventListener) {
+        wrapperNode.addEventListener('focus', this.setFocus);
+      }
     }
 
     componentWillUnmount = () => {
+      const { wrappedRef } = this.state;
       if (this.mouseTimer) {
         clearTimeout(this.mouseTimer);
       }
       window.removeEventListener('mousedown', this.handleActiveMouse);
+      const wrapperNode = findDOMNode(wrappedRef.current);
+      if (wrapperNode && wrapperNode.addEventListener) {
+        wrapperNode.removeEventListener('focus', this.setFocus);
+      }
     }
 
     handleActiveMouse = () => {
@@ -54,11 +77,11 @@ export const withFocus = (WrappedComponent) => {
     }
 
     render() {
-      const { withFocusRef, onFocus, onBlur, ...rest } = this.props;
-      const { focus } = this.state;
+      const { onFocus, onBlur, withFocusRef, ...rest } = this.props;
+      const { focus, wrappedRef } = this.state;
       return (
         <WrappedComponent
-          ref={withFocusRef}
+          ref={wrappedRef}
           focus={focus}
           {...rest}
           onFocus={(event) => {
