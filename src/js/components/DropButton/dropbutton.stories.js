@@ -48,7 +48,7 @@ class FocusedDropButton extends Component {
   state = {}
 
   componentDidMount() {
-    setTimeout(() => { this.ref.current.focus(); }, 0);
+    this.ref.current.focus();
   }
 
   onClose = () => {

@@ -125,4 +125,8 @@ export const withTheme = (WrappedComponent) => {
     <ThemedComponent {...props} withThemeRef={ref} />);
 };
 
-export default { withFocus, withTheme };
+export const withForwardRef = WrappedComponent =>
+  React.forwardRef((props, ref) =>
+    <WrappedComponent forwardRef={ref} {...props} />);
+
+export default { withFocus, withForwardRef, withTheme };

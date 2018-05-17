@@ -3,7 +3,7 @@ import { compose } from 'recompose';
 
 import { Button } from '../Button';
 import { Drop } from '../Drop';
-import { withTheme } from '../hocs';
+import { withForwardRef, withTheme } from '../hocs';
 
 import doc from './doc';
 
@@ -14,9 +14,9 @@ class DropButton extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    const { dropButtonRef, open } = nextProps;
+    const { forwardRef, open } = nextProps;
     const { buttonRef, show } = prevState;
-    const nextButtonRef = dropButtonRef || buttonRef;
+    const nextButtonRef = forwardRef || buttonRef;
     const reRenderOnMount = (show === undefined && open);
     if (open !== undefined && open !== show) {
       return { show: open, reRenderOnMount, buttonRef: nextButtonRef };
@@ -66,7 +66,7 @@ class DropButton extends Component {
 
   render() {
     const {
-      disabled, dropAlign, dropButtonRef, dropContent, dropTarget, id, open,
+      disabled, dropAlign, forwardRef, dropContent, dropTarget, id, open,
       theme, ...rest
     } = this.props;
     const { buttonRef, show } = this.state;
@@ -105,9 +105,7 @@ if (process.env.NODE_ENV !== 'production') {
   doc(DropButton);
 }
 
-const WrappedDropButton = compose(
+export default compose(
   withTheme,
+  withForwardRef,
 )(DropButton);
-
-export default React.forwardRef((props, ref) =>
-  <WrappedDropButton dropButtonRef={ref} {...props} />);

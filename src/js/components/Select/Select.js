@@ -7,7 +7,7 @@ import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
 import { TextInput } from '../TextInput';
 
-import { withTheme } from '../hocs';
+import { withForwardRef, withTheme } from '../hocs';
 
 import SelectContainer from './SelectContainer';
 import doc from './doc';
@@ -41,12 +41,12 @@ class Select extends Component {
       disabled,
       dropAlign,
       dropTarget,
+      forwardRef,
       messages,
       onChange,
       onClose,
       placeholder,
       plain,
-      selectRef,
       size,
       theme,
       value,
@@ -91,7 +91,7 @@ class Select extends Component {
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
         <DropButton
-          ref={selectRef}
+          ref={forwardRef}
           disabled={disabled}
           dropAlign={dropAlign}
           dropTarget={dropTarget}
@@ -141,9 +141,7 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Select);
 }
 
-const WrappedSelect = compose(
+export default compose(
   withTheme,
+  withForwardRef,
 )(Select);
-
-export default React.forwardRef((props, ref) =>
-  <WrappedSelect selectRef={ref} {...props} />);

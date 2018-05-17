@@ -4,7 +4,7 @@ import { compose } from 'recompose';
 
 import { colorForName, colorIsDark } from '../../utils';
 
-import { withTheme } from '../hocs';
+import { withForwardRef, withTheme } from '../hocs';
 
 import StyledBox, { StyledBoxGap } from './StyledBox';
 
@@ -58,6 +58,7 @@ class Box extends Component {
       direction,
       elevation, // munged to avoid styled-components putting it in the DOM
       fill, // munged to avoid styled-components putting it in the DOM
+      forwardRef,
       gap,
       overflow, // munged to avoid styled-components putting it in the DOM
       responsive,
@@ -101,6 +102,7 @@ class Box extends Component {
     return (
       <StyledComponent
         aria-label={a11yTitle}
+        innerRef={forwardRef}
         directionProp={direction}
         elevationProp={elevation}
         fillProp={fill}
@@ -123,4 +125,5 @@ if (process.env.NODE_ENV !== 'production') {
 
 export default compose(
   withTheme,
+  withForwardRef, // needed for RangeSelector
 )(Box);

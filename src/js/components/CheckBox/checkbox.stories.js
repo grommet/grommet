@@ -18,7 +18,7 @@ class FocusedCheckBox extends Component {
   ref = React.createRef()
 
   componentDidMount() {
-    setTimeout(() => { this.ref.current.focus(); }, 0);
+    this.ref.current.focus();
   }
 
   render() {

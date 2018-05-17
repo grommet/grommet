@@ -24,7 +24,7 @@ class FocusedRangeSelector extends Component {
   ref = React.createRef()
 
   componentDidMount() {
-    setTimeout(() => { this.ref.current.focus(); }, 0);
+    this.ref.current.focus();
   }
 
   onChange = values => this.setState({ values })

@@ -2,7 +2,7 @@ import React, { Children, Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
-import { withFocus, withTheme } from '../hocs';
+import { withFocus, withForwardRef, withTheme } from '../hocs';
 
 import StyledButton, { StyledLabel, StyledIcon } from './StyledButton';
 import doc from './doc';
@@ -31,7 +31,7 @@ class Button extends Component {
   render() {
     const {
       a11yTitle,
-      buttonRef,
+      forwardRef,
       children,
       icon,
       fill, // munged to avoid styled-components putting it in the DOM
@@ -72,7 +72,7 @@ class Button extends Component {
     return (
       <Tag
         {...rest}
-        innerRef={buttonRef}
+        innerRef={forwardRef}
         aria-label={a11yTitle}
         disabled={disabled}
         icon={icon}
@@ -96,10 +96,8 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Button);
 }
 
-const WrappedButton = compose(
+export default compose(
   withFocus,
   withTheme,
+  withForwardRef,
 )(Button);
-
-export default React.forwardRef((props, ref) =>
-  <WrappedButton buttonRef={ref} {...props} />);

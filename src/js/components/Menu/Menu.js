@@ -8,7 +8,7 @@ import { Keyboard } from '../Keyboard';
 import { DropButton } from '../DropButton';
 import { Text } from '../Text';
 
-import { withTheme } from '../hocs';
+import { withForwardRef, withTheme } from '../hocs';
 
 import doc from './doc';
 
@@ -81,10 +81,10 @@ class Menu extends Component {
       dropAlign,
       dropBackground,
       dropTarget,
+      forwardRef,
       icon,
       items,
       label,
-      menuRef,
       messages,
       onKeyDown,
       size,
@@ -132,7 +132,7 @@ class Menu extends Component {
       >
         <div>
           <DropButton
-            ref={menuRef}
+            ref={forwardRef}
             {...rest}
             theme={theme}
             a11yTitle={messages.openMenu || 'Open Menu'}
@@ -186,9 +186,7 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Menu);
 }
 
-const WrappedMenu = compose(
+export default compose(
   withTheme,
+  withForwardRef,
 )(Menu);
-
-export default React.forwardRef((props, ref) =>
-  <WrappedMenu menuRef={ref} {...props} />);

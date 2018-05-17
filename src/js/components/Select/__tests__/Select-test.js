@@ -20,6 +20,7 @@ describe('Select', () => {
   });
 
   test('opens', (done) => {
+    window.scrollTo = jest.fn();
     const { getByTestId, container } = renderIntoDocument(
       <Select data-testid='test-select' id='test-select' options={['one', 'two']} />
     );
@@ -111,6 +112,7 @@ describe('Select', () => {
   // });
 
   test('select an option', () => {
+    window.scrollTo = jest.fn();
     const onChange = jest.fn();
     const { getByTestId, container } = renderIntoDocument(
       <Select
@@ -129,9 +131,11 @@ describe('Select', () => {
       document.getElementById('test-select__drop').querySelector('button')
     );
     expect(onChange).toBeCalled();
+    expect(window.scrollTo).toBeCalled();
   });
 
   test('select an option with complex options', () => {
+    window.scrollTo = jest.fn();
     const onChange = jest.fn();
     const { getByTestId, container } = renderIntoDocument(
       <Select
@@ -154,9 +158,11 @@ describe('Select', () => {
       document.getElementById('test-select__drop').querySelector('button')
     );
     expect(onChange).toBeCalled();
+    expect(window.scrollTo).toBeCalled();
   });
 
   test('select an option with enter', () => {
+    window.scrollTo = jest.fn();
     const onChange = jest.fn();
     const { getByTestId, container } = renderIntoDocument(
       <Select
@@ -187,6 +193,7 @@ describe('Select', () => {
     );
     expect(preventDefault).toBeCalled();
     expect(onChange).toBeCalled();
+    expect(window.scrollTo).toBeCalled();
   });
 
   test('size', () => {

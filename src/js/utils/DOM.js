@@ -73,7 +73,7 @@ export const setFocusWithoutScroll = (element) => {
   const x = window.scrollX;
   const y = window.scrollY;
   element.focus();
-  window.scrollTo(x, y); // this doesn't work in unit tests :(
+  window.scrollTo(x, y);
 };
 
 export const setTabIndex = tabIndex => (element) => {

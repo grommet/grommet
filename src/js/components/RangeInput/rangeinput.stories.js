@@ -24,7 +24,7 @@ class FocusedRangeInput extends Component {
   ref = React.createRef()
 
   componentDidMount() {
-    setTimeout(() => { this.ref.current.focus(); }, 0);
+    this.ref.current.focus();
   }
 
   onChange = event => this.setState({ value: event.target.value })

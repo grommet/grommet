@@ -155,7 +155,6 @@ exports[`Menu close by clicking outside 2`] = `
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLButtonElement]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -738,7 +737,6 @@ exports[`Menu open and close on click 3`] = `
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLButtonElement]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -1001,7 +999,6 @@ exports[`Menu with dropAlign renders 2`] = `
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLButtonElement]"
 >
   <div
     class="StyledBox-bStriS dFjuei"

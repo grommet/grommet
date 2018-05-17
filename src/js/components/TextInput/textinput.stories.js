@@ -24,7 +24,7 @@ class FocusedTextInput extends Component {
   ref = React.createRef()
 
   componentDidMount() {
-    setTimeout(() => { this.ref.current.focus(); }, 0);
+    this.ref.current.focus();
   }
 
   onChange = event => this.setState({ value: event.target.value })
@@ -39,6 +39,29 @@ class FocusedTextInput extends Component {
   }
 }
 
+class SuggestionsTextInput extends Component {
+  state = { value: '' }
+
+  onChange = event => this.setState({ value: event.target.value })
+
+  onSelect = event => this.setState({ value: event.suggestion })
+
+  render() {
+    const { value } = this.state;
+    return (
+      <Grommet>
+        <TextInput
+          value={value}
+          onChange={this.onChange}
+          onSelect={this.onSelect}
+          suggestions={['First', 'Second', 'Third']}
+        />
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('TextInput', module)
   .add('Simple TextInput', () => <SimpleTextInput />)
-  .add('Focused TextInput', () => <FocusedTextInput />);
+  .add('Focused TextInput', () => <FocusedTextInput />)
+  .add('Suggestions TextInput', () => <SuggestionsTextInput />);

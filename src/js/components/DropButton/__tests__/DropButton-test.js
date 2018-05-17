@@ -34,6 +34,7 @@ describe('DropButton', () => {
   });
 
   test('open and close', () => {
+    window.scrollTo = jest.fn();
     const { getByText, container } = render(
       <DropButton
         label='Dropper'
@@ -48,6 +49,7 @@ describe('DropButton', () => {
 
     Simulate.click(getByText('Dropper'));
     expect(document.getElementById('drop-contents')).toBeNull();
+    expect(window.scrollTo).toBeCalled();
   });
 
   test('close by clicking outside', (done) => {

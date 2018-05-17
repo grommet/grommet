@@ -6,7 +6,7 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Drop } from '../Drop';
-import { withTheme } from '../hocs';
+import { withForwardRef, withTheme } from '../hocs';
 
 import StyledTextInput, {
   StyledTextInputContainer,
@@ -47,8 +47,19 @@ class TextInput extends Component {
     },
   }
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { forwardRef } = nextProps;
+    const { inputRef } = prevState;
+    const nextInputRef = forwardRef || inputRef;
+    if (nextInputRef !== inputRef) {
+      return { inputRef: nextInputRef };
+    }
+    return null;
+  }
+
   state = {
     activeSuggestionIndex: -1,
+    inputRef: React.createRef(),
     showDrop: false,
   }
 
@@ -144,25 +155,22 @@ class TextInput extends Component {
 
   onClickSuggestion = (suggestion) => {
     const { onSelect } = this.props;
+    const { inputRef } = this.state;
     this.setState({ showDrop: false });
     if (onSelect) {
-      onSelect({
-        target: this.componentRef, suggestion,
-      });
+      onSelect({ target: inputRef.current, suggestion });
     }
   }
 
   onSuggestionSelect = (event) => {
     const { onSelect, suggestions } = this.props;
-    const { activeSuggestionIndex } = this.state;
+    const { activeSuggestionIndex, inputRef } = this.state;
     this.setState({ showDrop: false });
     if (activeSuggestionIndex >= 0) {
       event.preventDefault(); // prevent submitting forms
       const suggestion = suggestions[activeSuggestionIndex];
       if (onSelect) {
-        onSelect({
-          target: this.componentRef, suggestion,
-        });
+        onSelect({ target: inputRef.current, suggestion });
       }
     }
   }
@@ -208,7 +216,7 @@ class TextInput extends Component {
       ...rest
     } = this.props;
     delete rest.onInput; // se we can manage in onInputChange()
-    const { showDrop } = this.state;
+    const { inputRef, showDrop } = this.state;
     // needed so that styled components does not invoke
     // onSelect when text input is clicked
     delete rest.onSelect;
@@ -219,7 +227,7 @@ class TextInput extends Component {
           id={id ? `text-input-drop__${id}` : undefined}
           align={dropAlign}
           responsive={false}
-          target={dropTarget || this.componentRef}
+          target={dropTarget || inputRef.current}
           onClickOutside={() => this.setState({ showDrop: false })}
           onEsc={() => this.setState({ showDrop: false })}
         >
@@ -239,9 +247,7 @@ class TextInput extends Component {
         >
           <StyledTextInput
             id={id}
-            ref={(ref) => {
-              this.componentRef = ref;
-            }}
+            innerRef={inputRef}
             autoComplete='off'
             plain={plain}
             {...rest}
@@ -271,9 +277,7 @@ if (process.env.NODE_ENV !== 'production') {
   doc(TextInput);
 }
 
-const WrappedTextInput = compose(
+export default compose(
   withTheme,
+  withForwardRef,
 )(TextInput);
-
-export default React.forwardRef((props, ref) =>
-  <WrappedTextInput innerRef={ref} {...props} />);

@@ -38,7 +38,6 @@ exports[`TextInput close suggestion drop 2`] = `
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object Object]"
 >
   <ol
     class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
@@ -166,7 +165,6 @@ exports[`TextInput complex suggestions 2`] = `
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object Object]"
 >
   <ol
     class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
@@ -351,7 +349,6 @@ exports[`TextInput select suggestion 2`] = `
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object Object]"
 >
   <ol
     class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
@@ -475,7 +472,6 @@ exports[`TextInput suggestions 2`] = `
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object Object]"
 >
   <ol
     class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"

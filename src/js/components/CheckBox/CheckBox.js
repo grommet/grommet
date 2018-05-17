@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
-import { withTheme } from '../hocs';
+import { withForwardRef, withTheme } from '../hocs';
 import { removeUndefined } from '../../utils/object';
 
 import StyledCheckBox, {
@@ -21,8 +21,8 @@ class CheckBox extends Component {
 
   render() {
     const {
-      checked, disabled, id, label, name, onChange, reverse, theme, toggle,
-      ...rest
+      checked, disabled, forwardRef, id, label, name, onChange,
+      reverse, theme, toggle, ...rest
     } = this.props;
     const { grommet } = this.context;
 
@@ -54,6 +54,7 @@ class CheckBox extends Component {
         <StyledCheckBox theme={theme}>
           <StyledCheckBoxInput
             {...rest}
+            innerRef={forwardRef}
             type='checkbox'
             {...removeUndefined({ id, name, checked, disabled, onChange })}
             theme={theme}
@@ -72,9 +73,7 @@ if (process.env.NODE_ENV !== 'production') {
   doc(CheckBox);
 }
 
-const WrappedCheckBox = compose(
+export default compose(
   withTheme,
+  withForwardRef,
 )(CheckBox);
-
-export default React.forwardRef((props, ref) =>
-  <WrappedCheckBox innerRef={ref} {...props} />);

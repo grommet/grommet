@@ -42,6 +42,7 @@ describe('Drop', () => {
   afterEach(cleanup);
 
   test('basic', () => {
+    window.scrollTo = jest.fn();
     renderIntoDocument(<TestInput />);
     expectPortal('drop-node').toMatchSnapshot();
   });

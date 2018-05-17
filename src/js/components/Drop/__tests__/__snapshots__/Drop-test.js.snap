@@ -6,7 +6,6 @@ exports[`Drop align left random 1`] = `
   id="drop-node"
   style="width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLInputElement]"
 >
   this is a test
 </div>
@@ -50,7 +49,6 @@ exports[`Drop align left right top bottom 1`] = `
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLInputElement]"
 >
   this is a test
 </div>
@@ -94,7 +92,6 @@ exports[`Drop align right left top top 1`] = `
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLInputElement]"
 >
   this is a test
 </div>
@@ -138,7 +135,6 @@ exports[`Drop align right random 1`] = `
   id="drop-node"
   style="width: 0.1px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLInputElement]"
 >
   this is a test
 </div>
@@ -182,7 +178,6 @@ exports[`Drop align right right bottom top 1`] = `
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLInputElement]"
 >
   this is a test
 </div>
@@ -226,7 +221,6 @@ exports[`Drop align right right bottom top 3`] = `
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLInputElement]"
 >
   this is a test
 </div>
@@ -270,7 +264,6 @@ exports[`Drop basic 1`] = `
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLInputElement]"
 >
   this is a test
 </div>
@@ -314,7 +307,6 @@ exports[`Drop close 1`] = `
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLInputElement]"
 >
   this is a test
 </div>
@@ -358,7 +350,6 @@ exports[`Drop invalid align 1`] = `
   id="drop-node"
   style="width: 0.1px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLInputElement]"
 >
   this is a test
 </div>
@@ -402,7 +393,6 @@ exports[`Drop invoke onClickOutside 1`] = `
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLInputElement]"
 >
   this is a test
 </div>
@@ -446,7 +436,6 @@ exports[`Drop resize 1`] = `
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
-  target="[object HTMLInputElement]"
 >
   this is a test
 </div>
@@ -490,7 +479,6 @@ exports[`Drop restrict focus 1`] = `
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
-  target="[object HTMLInputElement]"
 >
   this is a test
 </div>
@@ -502,7 +490,6 @@ exports[`Drop restrict focus 2`] = `
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
-  target="[object HTMLInputElement]"
 >
   this is a test
 </div>

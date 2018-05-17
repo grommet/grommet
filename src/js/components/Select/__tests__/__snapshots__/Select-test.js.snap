@@ -395,7 +395,6 @@ exports[`Select complex options and children 3`] = `
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLButtonElement]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -1123,7 +1122,6 @@ exports[`Select multiple values 3`] = `
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLButtonElement]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -1448,7 +1446,6 @@ exports[`Select opens 3`] = `
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLButtonElement]"
 >
   <div
     class="StyledBox-bStriS dFjuei"
@@ -1719,7 +1716,6 @@ exports[`Select search 2`] = `
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
-  target="[object HTMLButtonElement]"
 >
   <div
     class="StyledBox-bStriS dFjuei"

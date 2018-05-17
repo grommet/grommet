@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
-import { withFocus, withTheme } from '../hocs';
+import { withFocus, withForwardRef, withTheme } from '../hocs';
 
 import StyledAnchor, { StyledIcon } from './StyledAnchor';
 import doc from './doc';
@@ -26,6 +26,7 @@ class Anchor extends Component {
       a11yTitle,
       children,
       disabled,
+      forwardRef,
       href,
       icon,
       focus,
@@ -66,6 +67,7 @@ class Anchor extends Component {
     return (
       <StyledAnchor
         {...rest}
+        innerRef={forwardRef}
         aria-label={a11yTitle}
         disabled={disabled}
         icon={anchorIcon}
@@ -89,10 +91,8 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Anchor);
 }
 
-const WrappedAnchor = compose(
+export default compose(
   withFocus,
   withTheme,
+  withForwardRef,
 )(Anchor);
-
-export default React.forwardRef((props, ref) =>
-  <WrappedAnchor innerRef={ref} {...props} />);

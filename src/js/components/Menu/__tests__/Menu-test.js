@@ -43,6 +43,7 @@ describe('Menu', () => {
   });
 
   test('open and close on click', () => {
+    window.scrollTo = jest.fn();
     const { getByText, container } = renderIntoDocument(
       <Menu
         id='test-menu'
@@ -63,6 +64,7 @@ describe('Menu', () => {
 
     Simulate.click(getByText('Test'));
     expect(document.getElementById('test-menu__drop')).toBeNull();
+    expect(window.scrollTo).toBeCalled();
   });
 
   test('close by clicking outside', (done) => {
