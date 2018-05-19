@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import CheckBox from '../CheckBox/CheckBox';
+import Text from '../Text/Text';
 import Grommet from '../Grommet/Grommet';
 
-class SimpleCheckBox extends Component {
+class SimpleText extends Component {
   render() {
     return (
       <Grommet>
-        <CheckBox label='Choice' />
+        <Text>Some text</Text>
       </Grommet>
     );
   }
 }
 
-storiesOf('CheckBox', module)
-  .add('Simple CheckBox', () => <SimpleCheckBox />);
+storiesOf('Text', module)
+  .add('Simple Text', () => <SimpleText />);

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 
 import FocusedContainer from '../FocusedContainer';
@@ -11,10 +10,6 @@ import StyledDrop from './StyledDrop';
 class DropContainer extends Component {
   static defaultProps = {
     centered: true,
-  }
-
-  static contextTypes = {
-    grommet: PropTypes.object,
   }
 
   componentDidMount() {
@@ -188,7 +183,6 @@ class DropContainer extends Component {
       theme,
       ...rest
     } = this.props;
-    const { grommet } = this.context;
 
     return (
       <FocusedContainer>
@@ -199,7 +193,6 @@ class DropContainer extends Component {
               this.dropRef = ref;
             }}
             theme={theme}
-            grommet={grommet}
             {...rest}
           >
             {children}

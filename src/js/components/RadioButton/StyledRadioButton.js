@@ -20,7 +20,7 @@ export const StyledRadioButtonContainer = styled.label`
   }
 
   :hover input:not([disabled]) + div {
-    border-color: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.global.colors.black)};
+    border-color: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.global.colors.black)};
   }
 `;
 
@@ -40,7 +40,7 @@ export const StyledRadioButtonInput = styled.input`
   }
 
   :checked + div {
-    border-color: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color)};
+    border-color: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color)};
   }
 
   :checked + div > svg {
@@ -49,7 +49,7 @@ export const StyledRadioButtonInput = styled.input`
 
   :checked + span > span {
     left: ${props => props.theme.radioButton.size};
-    background-color: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color)};
+    background-color: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color)};
   }
 `;
 
@@ -63,7 +63,7 @@ export const StyledRadioButtonButton = styled.div`
   vertical-align: middle;
   background-color: inherit;
   border: ${props => props.theme.radioButton.border.width} solid;
-  border-color: ${props => props.theme.radioButton.border.color[props.grommet.dark ? 'dark' : 'light']};
+  border-color: ${props => props.theme.radioButton.border.color[props.theme.dark ? 'dark' : 'light']};
   border-radius: ${props => props.theme.radioButton.border.radius};
 
   > svg {
@@ -74,7 +74,7 @@ export const StyledRadioButtonButton = styled.div`
     display: none;
     width: ${props => props.theme.radioButton.size};
     height: ${props => props.theme.radioButton.size};
-    fill: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color)};
+    fill: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.radioButton.check.color)};
   }
 `;
 

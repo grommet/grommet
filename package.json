@@ -97,14 +97,16 @@
     ],
     "collectCoverageFrom": [
       "src/js/components/**/*.{js}",
-      "src/js/theme/**/*.{js}",
+      "src/js/contexts/**/*.{js}",
+      "src/js/themes/**/*.{js}",
+      "src/js/utils/**/*.{js}",
       "!src/js/components/**/*.{stories.js}"
     ],
     "modulePathIgnorePatterns": [
       "<rootDir>/dist/"
     ],
     "testPathIgnorePatterns": [
-      "<rootDir>[/\\\\](dist|templates|node_modules)[/\\\\]"
+      "<rootDir>[/\\\\](dist|node_modules)[/\\\\]"
     ]
   },
   "pre-commit": [

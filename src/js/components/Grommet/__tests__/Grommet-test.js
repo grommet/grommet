@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 import { cleanup, renderIntoDocument } from 'react-testing-library';
@@ -7,14 +6,11 @@ import { cleanup, renderIntoDocument } from 'react-testing-library';
 import { hpe as hpeTheme } from '../../../themes';
 
 import { Grommet } from '../';
+import { AnnounceContext } from '../../../contexts/AnnounceContext';
 
 class TestAnnouncer extends Component {
-  static contextTypes = {
-    grommet: PropTypes.object,
-  }
-
   componentDidMount() {
-    this.context.grommet.announce('hello', 'assertive');
+    this.props.announce('hello', 'assertive');
   }
 
   render() {
@@ -48,7 +44,11 @@ describe('Grommet', () => {
 
   test('announce', (done) => {
     const { container } = renderIntoDocument(
-      <Grommet><TestAnnouncer /></Grommet>
+      <Grommet>
+        <AnnounceContext.Consumer>
+          {announce => <TestAnnouncer announce={announce} />}
+        </AnnounceContext.Consumer>
+      </Grommet>
     );
     expect(container.firstChild).toMatchSnapshot();
 

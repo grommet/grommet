@@ -1,30 +1,30 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { Box } from '../Box';
 import { withTheme } from '../hocs';
 
+import TableContext from './TableContext';
 import { StyledTableCell } from './StyledTable';
 import { docTableCell } from './doc';
 
-const TableCell = ({ children, plain, scope, size, verticalAlign, ...rest }, { grommet }) => {
+const TableCell = ({ children, plain, scope, size, theme, verticalAlign, ...rest }) => {
   const Cell = (scope ? StyledTableCell.withComponent('th') : StyledTableCell);
   return (
-    <Cell
-      scope={scope}
-      size={size}
-      tableContext={(grommet || {}).tableContext}
-      theme={rest.theme}
-      verticalAlign={verticalAlign}
-    >
-      {plain ? children : <Box {...rest}>{children}</Box>}
-    </Cell>
+    <TableContext.Consumer>
+      {tableContext => (
+        <Cell
+          scope={scope}
+          size={size}
+          tableContext={tableContext}
+          theme={theme}
+          verticalAlign={verticalAlign}
+        >
+          {plain ? children : <Box {...rest}>{children}</Box>}
+        </Cell>
+      )}
+    </TableContext.Consumer>
   );
-};
-
-TableCell.contextTypes = {
-  grommet: PropTypes.object,
 };
 
 TableCell.defaultProps = {

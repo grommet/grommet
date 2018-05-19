@@ -19,26 +19,5 @@ class SimpleTextArea extends Component {
   }
 }
 
-class FocusedTextArea extends Component {
-  state = { value: '' }
-  ref = React.createRef()
-
-  componentDidMount() {
-    this.ref.current.focus();
-  }
-
-  onChange = event => this.setState({ value: event.target.value })
-
-  render() {
-    const { value } = this.state;
-    return (
-      <Grommet>
-        <TextArea ref={this.ref} value={value} onChange={this.onChange} />
-      </Grommet>
-    );
-  }
-}
-
 storiesOf('TextArea', module)
-  .add('Simple TextArea', () => <SimpleTextArea />)
-  .add('Focused TextArea', () => <FocusedTextArea />);
+  .add('Simple TextArea', () => <SimpleTextArea />);

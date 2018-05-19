@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withForwardRef, withTheme } from '../hocs';
@@ -15,16 +14,11 @@ import StyledCheckBox, {
 import doc from './doc';
 
 class CheckBox extends Component {
-  static contextTypes = {
-    grommet: PropTypes.object,
-  }
-
   render() {
     const {
       checked, disabled, forwardRef, id, label, name, onChange,
       reverse, theme, toggle, ...rest
     } = this.props;
-    const { grommet } = this.context;
 
     const normalizedLabel = (typeof label === 'string' ? <div>{label}</div> : label);
 
@@ -34,11 +28,11 @@ class CheckBox extends Component {
     }
 
     const control = (toggle ? (
-      <StyledCheckBoxToggle theme={theme} grommet={grommet}>
-        <StyledCheckBoxKnob theme={theme} grommet={grommet} />
+      <StyledCheckBoxToggle theme={theme}>
+        <StyledCheckBoxKnob theme={theme} />
       </StyledCheckBoxToggle>
     ) : (
-      <StyledCheckBoxBox theme={theme} grommet={grommet}>
+      <StyledCheckBoxBox theme={theme}>
         <svg viewBox='0 0 24 24' preserveAspectRatio='xMidYMid meet'>
           <path fill='none' d='M6,11.3 L10.3,16 L18,6.2' />
         </svg>
@@ -49,7 +43,6 @@ class CheckBox extends Component {
       <StyledCheckBoxContainer
         {...removeUndefined({ htmlFor: id, disabled, reverse })}
         theme={theme}
-        grommet={grommet}
       >
         <StyledCheckBox theme={theme}>
           <StyledCheckBoxInput
@@ -58,7 +51,6 @@ class CheckBox extends Component {
             type='checkbox'
             {...removeUndefined({ id, name, checked, disabled, onChange })}
             theme={theme}
-            grommet={grommet}
           />
           {control}
         </StyledCheckBox>

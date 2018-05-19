@@ -110,30 +110,5 @@ class SeasonsSelect extends Component {
   }
 }
 
-class FocusedSelect extends Component {
-  state = { value: '' }
-  ref = React.createRef()
-
-  componentDidMount() {
-    this.ref.current.focus();
-  }
-
-  render() {
-    const { value } = this.state;
-    return (
-      <Grommet>
-        <Select
-          ref={this.ref}
-          placeholder='Select an option'
-          options={['Option 1', 'Option 2']}
-          onChange={event => this.setState({ value: event.option })}
-          value={value}
-        />
-      </Grommet>
-    );
-  }
-}
-
 storiesOf('Select', module)
-  .add('Seasons Select', () => <SeasonsSelect />)
-  .add('Focused Select', () => <FocusedSelect />);
+  .add('Seasons Select', () => <SeasonsSelect />);

@@ -15,23 +15,5 @@ class SimpleRadioButton extends Component {
   }
 }
 
-class FocusedRadioButton extends Component {
-  ref = React.createRef()
-
-  componentDidMount() {
-    this.ref.current.focus();
-  }
-
-  render() {
-    return (
-      <Grommet>
-        <RadioButton ref={this.ref} label='Choice 1' name='radio' />
-        <RadioButton label='Choice 2' name='radio' />
-      </Grommet>
-    );
-  }
-}
-
 storiesOf('RadioButton', module)
-  .add('Simple RadioButton', () => <SimpleRadioButton />)
-  .add('Focused RadioButton', () => <FocusedRadioButton />);
+  .add('Simple RadioButton', () => <SimpleRadioButton />);

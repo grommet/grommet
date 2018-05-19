@@ -19,26 +19,5 @@ class SimpleRangeInput extends Component {
   }
 }
 
-class FocusedRangeInput extends Component {
-  state = { value: 5 }
-  ref = React.createRef()
-
-  componentDidMount() {
-    this.ref.current.focus();
-  }
-
-  onChange = event => this.setState({ value: event.target.value })
-
-  render() {
-    const { value } = this.state;
-    return (
-      <Grommet>
-        <RangeInput ref={this.ref} value={value} onChange={this.onChange} />
-      </Grommet>
-    );
-  }
-}
-
 storiesOf('RangeInput', module)
-  .add('Simple RangeInput', () => <SimpleRangeInput />)
-  .add('Focused RangeInput', () => <FocusedRangeInput />);
+  .add('Simple RangeInput', () => <SimpleRangeInput />);

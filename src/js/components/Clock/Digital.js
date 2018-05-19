@@ -5,15 +5,22 @@ import { Box } from '../Box';
 import { StyledDigitalDigit, StyledDigitalNext, StyledDigitalPrevious } from './StyledClock';
 
 class Digit extends Component {
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { number } = nextProps;
+    if (number !== prevState.number) {
+      return { previous: prevState.number, number };
+    }
+    return null;
+  }
+
   state = {}
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.number !== this.props.number) {
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.previous === undefined && this.state.previous !== undefined) {
       clearTimeout(this.timer);
       this.timer = setTimeout(() => {
         this.setState({ previous: undefined });
       }, 900);
-      this.setState({ previous: this.props.number });
     }
   }
 
@@ -22,8 +29,8 @@ class Digit extends Component {
   }
 
   render() {
-    const { number, run, size, theme } = this.props;
-    const { previous } = this.state;
+    const { run, size, theme } = this.props;
+    const { number, previous } = this.state;
     if (previous !== undefined) {
       const direction = (run === 'backward' ? 'down' : 'up');
       return (

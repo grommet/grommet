@@ -17,6 +17,8 @@ export default class FocusedContainer extends Component {
     restrictScroll: PropTypes.bool,
   }
 
+  ref = React.createRef();
+
   componentDidMount() {
     const { hidden } = this.props;
     // making sure trap focus always execute
@@ -35,7 +37,7 @@ export default class FocusedContainer extends Component {
 
   removeTrap = () => {
     const { restrictScroll } = this.props;
-    const child = findDOMNode(this.ref);
+    const child = findDOMNode(this.ref.current);
     getBodyChildElements()
       .filter(isNotAncestorOf(child))
       .forEach(makeNodeFocusable);
@@ -46,7 +48,7 @@ export default class FocusedContainer extends Component {
 
   trapFocus = () => {
     const { restrictScroll } = this.props;
-    const child = findDOMNode(this.ref);
+    const child = findDOMNode(this.ref.current);
     getBodyChildElements()
       .filter(isNotAncestorOf(child))
       .forEach(makeNodeUnfocusable);
@@ -61,7 +63,7 @@ export default class FocusedContainer extends Component {
     const { children, ...rest } = this.props;
     delete rest.restrictScroll;
     return (
-      <div ref={(ref) => { this.ref = ref; }} {...rest}>
+      <div ref={this.ref} {...rest}>
         {children}
       </div>
     );

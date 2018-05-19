@@ -14,24 +14,5 @@ class SimpleAnchor extends Component {
   }
 }
 
-class FocusedAnchor extends Component {
-  ref = React.createRef()
-
-  componentDidMount() {
-    this.ref.current.focus();
-  }
-
-  render() {
-    return (
-      <Grommet>
-        <Anchor ref={this.ref} href='#'>
-          Link
-        </Anchor>
-      </Grommet>
-    );
-  }
-}
-
 storiesOf('Anchor', module)
-  .add('Simple Anchor', () => <SimpleAnchor />)
-  .add('Focused Anchor', () => <FocusedAnchor />);
+  .add('Simple Anchor', () => <SimpleAnchor />);

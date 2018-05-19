@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withFocus, withForwardRef, withTheme } from '../hocs';
@@ -8,12 +7,8 @@ import StyledAnchor, { StyledIcon } from './StyledAnchor';
 import doc from './doc';
 
 class Anchor extends Component {
-  static contextTypes = {
-    grommet: PropTypes.object,
-  }
-
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
 
     const { children, icon, label } = props;
     if ((icon || label) && children) {
@@ -37,7 +32,6 @@ class Anchor extends Component {
       theme,
       ...rest
     } = this.props;
-    const { grommet } = this.context;
 
     let anchorIcon;
     if (icon) {
@@ -76,7 +70,6 @@ class Anchor extends Component {
         primary={primary}
         reverse={reverse}
         theme={theme}
-        grommet={grommet}
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
       >

@@ -24,7 +24,7 @@ export const StyledCheckBoxContainer = styled.label`
 
   :hover input:not([disabled]) + div,
   :hover input:not([disabled]) + span {
-    border-color: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.global.colors.black)};
+    border-color: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.global.colors.black)};
   }
 `;
 
@@ -44,7 +44,7 @@ export const StyledCheckBoxInput = styled.input`
   }
 
   :checked + div {
-    border-color: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color)};
+    border-color: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color)};
   }
 
   :checked + div > svg {
@@ -53,7 +53,7 @@ export const StyledCheckBoxInput = styled.input`
 
   :checked + span > span {
     left: ${props => props.theme.checkBox.size};
-    background-color: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color)};
+    background-color: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color)};
   }
 `;
 
@@ -67,7 +67,7 @@ export const StyledCheckBoxBox = styled.div`
   vertical-align: middle;
   background-color: inherit;
   border: ${props => props.theme.checkBox.border.width} solid;
-  border-color: ${props => props.theme.checkBox.border.color[props.grommet.dark ? 'dark' : 'light']};
+  border-color: ${props => props.theme.checkBox.border.color[props.theme.dark ? 'dark' : 'light']};
   border-radius: ${props => props.theme.checkBox.border.radius};
 
   > svg {
@@ -79,7 +79,7 @@ export const StyledCheckBoxBox = styled.div`
     width: ${props => props.theme.checkBox.size};
     height: ${props => props.theme.checkBox.size};
     stroke-width: ${props => props.theme.checkBox.check.width};
-    stroke: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color)};
+    stroke: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color)};
   }
 `;
 
@@ -91,7 +91,7 @@ export const StyledCheckBoxToggle = styled.span`
   width: ${props => props.theme.checkBox.toggle.size};
   height: ${props => props.theme.checkBox.size};
   border: ${props => props.theme.checkBox.border.width} solid;
-  border-color: ${props => props.theme.checkBox.border.color[props.grommet.dark ? 'dark' : 'light']};
+  border-color: ${props => props.theme.checkBox.border.color[props.theme.dark ? 'dark' : 'light']};
   border-radius: ${props => props.theme.checkBox.toggle.radius};
 `;
 

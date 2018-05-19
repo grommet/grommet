@@ -1,8 +1,11 @@
 
 export const colorForName = (name, theme) => {
+  let color = theme.global.colors[name];
+  if (color) {
+    return color;
+  }
   const [kind, index] = name.split('-');
   const colorSet = theme.global.colors[kind];
-  let color;
   if (Array.isArray(colorSet)) {
     color = colorSet[index - 1];
   } else if (typeof colorSet === 'object') {

@@ -42,36 +42,5 @@ class SimpleDropButton extends Component {
   }
 }
 
-class FocusedDropButton extends Component {
-  ref = React.createRef()
-
-  state = {}
-
-  componentDidMount() {
-    this.ref.current.focus();
-  }
-
-  onClose = () => {
-    this.setState({ open: false });
-    setTimeout(() => this.setState({ open: undefined }), 1);
-  }
-
-  render() {
-    const { open } = this.state;
-    return (
-      <Grommet>
-        <DropButton
-          ref={this.ref}
-          label='Open'
-          open={open}
-          onClose={() => this.setState({ open: undefined })}
-          dropContent={<DropContent onClose={this.onClose} />}
-        />
-      </Grommet>
-    );
-  }
-}
-
 storiesOf('DropButton', module)
-  .add('Simple DropButton', () => <SimpleDropButton />)
-  .add('Focused DropButton', () => <FocusedDropButton />);
+  .add('Simple DropButton', () => <SimpleDropButton />);

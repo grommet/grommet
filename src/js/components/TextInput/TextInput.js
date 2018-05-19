@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Drop } from '../Drop';
-import { withForwardRef, withTheme } from '../hocs';
+import { withAnnounce, withForwardRef, withTheme } from '../hocs';
 
 import StyledTextInput, {
   StyledTextInputContainer,
@@ -32,11 +31,6 @@ function stringLabel(suggestion) {
 }
 
 class TextInput extends Component {
-  static contextTypes = {
-    grommet: PropTypes.object,
-    theme: PropTypes.object,
-  }
-
   static defaultProps = {
     dropAlign: { top: 'bottom', left: 'left' },
     messages: {
@@ -64,10 +58,8 @@ class TextInput extends Component {
   }
 
   announce = (message, mode) => {
-    const { suggestions } = this.props;
-    const { grommet } = this.context;
-    const announce = grommet && grommet.announce;
-    if (announce && suggestions && suggestions.length > 0) {
+    const { announce, suggestions } = this.props;
+    if (suggestions && suggestions.length > 0) {
       announce(message, mode);
     }
   }
@@ -279,5 +271,6 @@ if (process.env.NODE_ENV !== 'production') {
 
 export default compose(
   withTheme,
+  withAnnounce,
   withForwardRef,
 )(TextInput);

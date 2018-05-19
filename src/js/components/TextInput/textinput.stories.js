@@ -19,26 +19,6 @@ class SimpleTextInput extends Component {
   }
 }
 
-class FocusedTextInput extends Component {
-  state = { value: '' }
-  ref = React.createRef()
-
-  componentDidMount() {
-    this.ref.current.focus();
-  }
-
-  onChange = event => this.setState({ value: event.target.value })
-
-  render() {
-    const { value } = this.state;
-    return (
-      <Grommet>
-        <TextInput ref={this.ref} value={value} onChange={this.onChange} />
-      </Grommet>
-    );
-  }
-}
-
 class SuggestionsTextInput extends Component {
   state = { value: '' }
 
@@ -63,5 +43,4 @@ class SuggestionsTextInput extends Component {
 
 storiesOf('TextInput', module)
   .add('Simple TextInput', () => <SimpleTextInput />)
-  .add('Focused TextInput', () => <FocusedTextInput />)
   .add('Suggestions TextInput', () => <SuggestionsTextInput />);
