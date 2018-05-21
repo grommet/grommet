@@ -6,8 +6,6 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #666666;
-  stroke: #666666;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
@@ -359,7 +357,6 @@ exports[`Video autoPlay renders 1`] = `
     onMouseEnter={[Function]}
     onMouseMove={[Function]}
     onTouchStart={[Function]}
-    style={undefined}
   >
     <video
       autoPlay={true}
@@ -396,20 +393,16 @@ exports[`Video autoPlay renders 1`] = `
       className="c3"
     >
       <div
-        aria-label={undefined}
         className="c4"
       >
         <button
-          aria-label={undefined}
           className="c5"
           disabled={false}
-          href={undefined}
           icon={
             <Play
               color="light-1"
             />
           }
-          label={undefined}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -439,11 +432,9 @@ exports[`Video autoPlay renders 1`] = `
           </span>
         </button>
         <div
-          aria-label={undefined}
           className="c8"
         >
           <div
-            aria-label={undefined}
             className="c9"
           >
             <div
@@ -487,12 +478,10 @@ exports[`Video autoPlay renders 1`] = `
                   }
                 }
                 tabIndex={0}
-                value={undefined}
               />
             </div>
           </div>
           <div
-            aria-label={undefined}
             className="c13"
           >
             <span
@@ -509,22 +498,16 @@ exports[`Video autoPlay renders 1`] = `
             aria-label="Open Menu"
             className="c15"
             disabled={false}
-            href={undefined}
-            icon={undefined}
-            id={undefined}
-            label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
             <div
-              aria-label={undefined}
               className="c16"
             >
               <span
                 className="c17"
-                size={undefined}
               />
               <svg
                 aria-label="Actions"
@@ -558,8 +541,6 @@ exports[`Video controls renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #666666;
-  stroke: #666666;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
@@ -989,7 +970,6 @@ exports[`Video controls renders 1`] = `
     onMouseEnter={[Function]}
     onMouseMove={[Function]}
     onTouchStart={[Function]}
-    style={undefined}
   >
     <video
       autoPlay={false}
@@ -1026,20 +1006,16 @@ exports[`Video controls renders 1`] = `
       className="c3"
     >
       <div
-        aria-label={undefined}
         className="c4"
       >
         <button
-          aria-label={undefined}
           className="c5"
           disabled={false}
-          href={undefined}
           icon={
             <Play
               color="light-1"
             />
           }
-          label={undefined}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1069,11 +1045,9 @@ exports[`Video controls renders 1`] = `
           </span>
         </button>
         <div
-          aria-label={undefined}
           className="c8"
         >
           <div
-            aria-label={undefined}
             className="c9"
           >
             <div
@@ -1117,12 +1091,10 @@ exports[`Video controls renders 1`] = `
                   }
                 }
                 tabIndex={0}
-                value={undefined}
               />
             </div>
           </div>
           <div
-            aria-label={undefined}
             className="c13"
           >
             <span
@@ -1139,22 +1111,16 @@ exports[`Video controls renders 1`] = `
             aria-label="Open Menu"
             className="c15"
             disabled={false}
-            href={undefined}
-            icon={undefined}
-            id={undefined}
-            label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
             <div
-              aria-label={undefined}
               className="c16"
             >
               <span
                 className="c17"
-                size={undefined}
               />
               <svg
                 aria-label="Actions"
@@ -1181,7 +1147,6 @@ exports[`Video controls renders 1`] = `
   </div>
   <div
     className="c1"
-    style={undefined}
   >
     <video
       autoPlay={false}
@@ -1218,20 +1183,12 @@ exports[`Video controls renders 1`] = `
       className="c18"
     >
       <div
-        aria-label={undefined}
         className="c19"
       >
         <button
-          aria-label={undefined}
           className="c5"
           disabled={false}
-          href={undefined}
-          icon={
-            <Play
-              color={undefined}
-            />
-          }
-          label={undefined}
+          icon={<Play />}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1244,7 +1201,6 @@ exports[`Video controls renders 1`] = `
             <svg
               aria-label="Play"
               className="c20"
-              color={undefined}
               height="24px"
               role="img"
               version="1.1"
@@ -1261,11 +1217,9 @@ exports[`Video controls renders 1`] = `
           </span>
         </button>
         <div
-          aria-label={undefined}
           className="c8"
         >
           <div
-            aria-label={undefined}
             className="c9"
           >
             <div
@@ -1310,12 +1264,10 @@ exports[`Video controls renders 1`] = `
                   }
                 }
                 tabIndex={0}
-                value={undefined}
               />
             </div>
           </div>
           <div
-            aria-label={undefined}
             className="c13"
           >
             <span
@@ -1332,27 +1284,20 @@ exports[`Video controls renders 1`] = `
             aria-label="Open Menu"
             className="c15"
             disabled={false}
-            href={undefined}
-            icon={undefined}
-            id={undefined}
-            label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
             <div
-              aria-label={undefined}
               className="c16"
             >
               <span
                 className="c17"
-                size={undefined}
               />
               <svg
                 aria-label="Actions"
                 className="c20"
-                color={undefined}
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1381,8 +1326,6 @@ exports[`Video fit renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #666666;
-  stroke: #666666;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
@@ -1752,7 +1695,6 @@ exports[`Video fit renders 1`] = `
     onMouseEnter={[Function]}
     onMouseMove={[Function]}
     onTouchStart={[Function]}
-    style={undefined}
   >
     <video
       autoPlay={false}
@@ -1789,20 +1731,16 @@ exports[`Video fit renders 1`] = `
       className="c3"
     >
       <div
-        aria-label={undefined}
         className="c4"
       >
         <button
-          aria-label={undefined}
           className="c5"
           disabled={false}
-          href={undefined}
           icon={
             <Play
               color="light-1"
             />
           }
-          label={undefined}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1832,11 +1770,9 @@ exports[`Video fit renders 1`] = `
           </span>
         </button>
         <div
-          aria-label={undefined}
           className="c8"
         >
           <div
-            aria-label={undefined}
             className="c9"
           >
             <div
@@ -1880,12 +1816,10 @@ exports[`Video fit renders 1`] = `
                   }
                 }
                 tabIndex={0}
-                value={undefined}
               />
             </div>
           </div>
           <div
-            aria-label={undefined}
             className="c13"
           >
             <span
@@ -1902,22 +1836,16 @@ exports[`Video fit renders 1`] = `
             aria-label="Open Menu"
             className="c15"
             disabled={false}
-            href={undefined}
-            icon={undefined}
-            id={undefined}
-            label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
             <div
-              aria-label={undefined}
               className="c16"
             >
               <span
                 className="c17"
-                size={undefined}
               />
               <svg
                 aria-label="Actions"
@@ -1947,7 +1875,6 @@ exports[`Video fit renders 1`] = `
     onMouseEnter={[Function]}
     onMouseMove={[Function]}
     onTouchStart={[Function]}
-    style={undefined}
   >
     <video
       autoPlay={false}
@@ -1984,20 +1911,16 @@ exports[`Video fit renders 1`] = `
       className="c3"
     >
       <div
-        aria-label={undefined}
         className="c4"
       >
         <button
-          aria-label={undefined}
           className="c5"
           disabled={false}
-          href={undefined}
           icon={
             <Play
               color="light-1"
             />
           }
-          label={undefined}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -2027,11 +1950,9 @@ exports[`Video fit renders 1`] = `
           </span>
         </button>
         <div
-          aria-label={undefined}
           className="c8"
         >
           <div
-            aria-label={undefined}
             className="c9"
           >
             <div
@@ -2075,12 +1996,10 @@ exports[`Video fit renders 1`] = `
                   }
                 }
                 tabIndex={0}
-                value={undefined}
               />
             </div>
           </div>
           <div
-            aria-label={undefined}
             className="c13"
           >
             <span
@@ -2097,22 +2016,16 @@ exports[`Video fit renders 1`] = `
             aria-label="Open Menu"
             className="c15"
             disabled={false}
-            href={undefined}
-            icon={undefined}
-            id={undefined}
-            label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
             <div
-              aria-label={undefined}
               className="c16"
             >
               <span
                 className="c17"
-                size={undefined}
               />
               <svg
                 aria-label="Actions"
@@ -2146,8 +2059,6 @@ exports[`Video loop renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #666666;
-  stroke: #666666;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
@@ -2499,7 +2410,6 @@ exports[`Video loop renders 1`] = `
     onMouseEnter={[Function]}
     onMouseMove={[Function]}
     onTouchStart={[Function]}
-    style={undefined}
   >
     <video
       autoPlay={false}
@@ -2536,20 +2446,16 @@ exports[`Video loop renders 1`] = `
       className="c3"
     >
       <div
-        aria-label={undefined}
         className="c4"
       >
         <button
-          aria-label={undefined}
           className="c5"
           disabled={false}
-          href={undefined}
           icon={
             <Play
               color="light-1"
             />
           }
-          label={undefined}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -2579,11 +2485,9 @@ exports[`Video loop renders 1`] = `
           </span>
         </button>
         <div
-          aria-label={undefined}
           className="c8"
         >
           <div
-            aria-label={undefined}
             className="c9"
           >
             <div
@@ -2627,12 +2531,10 @@ exports[`Video loop renders 1`] = `
                   }
                 }
                 tabIndex={0}
-                value={undefined}
               />
             </div>
           </div>
           <div
-            aria-label={undefined}
             className="c13"
           >
             <span
@@ -2649,22 +2551,16 @@ exports[`Video loop renders 1`] = `
             aria-label="Open Menu"
             className="c15"
             disabled={false}
-            href={undefined}
-            icon={undefined}
-            id={undefined}
-            label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
             <div
-              aria-label={undefined}
               className="c16"
             >
               <span
                 className="c17"
-                size={undefined}
               />
               <svg
                 aria-label="Actions"
@@ -2698,8 +2594,6 @@ exports[`Video mute renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #666666;
-  stroke: #666666;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
@@ -3051,7 +2945,6 @@ exports[`Video mute renders 1`] = `
     onMouseEnter={[Function]}
     onMouseMove={[Function]}
     onTouchStart={[Function]}
-    style={undefined}
   >
     <video
       autoPlay={false}
@@ -3088,20 +2981,16 @@ exports[`Video mute renders 1`] = `
       className="c3"
     >
       <div
-        aria-label={undefined}
         className="c4"
       >
         <button
-          aria-label={undefined}
           className="c5"
           disabled={false}
-          href={undefined}
           icon={
             <Play
               color="light-1"
             />
           }
-          label={undefined}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -3131,11 +3020,9 @@ exports[`Video mute renders 1`] = `
           </span>
         </button>
         <div
-          aria-label={undefined}
           className="c8"
         >
           <div
-            aria-label={undefined}
             className="c9"
           >
             <div
@@ -3179,12 +3066,10 @@ exports[`Video mute renders 1`] = `
                   }
                 }
                 tabIndex={0}
-                value={undefined}
               />
             </div>
           </div>
           <div
-            aria-label={undefined}
             className="c13"
           >
             <span
@@ -3201,22 +3086,16 @@ exports[`Video mute renders 1`] = `
             aria-label="Open Menu"
             className="c15"
             disabled={false}
-            href={undefined}
-            icon={undefined}
-            id={undefined}
-            label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
             <div
-              aria-label={undefined}
               className="c16"
             >
               <span
                 className="c17"
-                size={undefined}
               />
               <svg
                 aria-label="Actions"
@@ -3250,8 +3129,6 @@ exports[`Video renders 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #666666;
-  stroke: #666666;
   fill: #F6F6F6;
   stroke: #F6F6F6;
 }
@@ -3603,7 +3480,6 @@ exports[`Video renders 1`] = `
     onMouseEnter={[Function]}
     onMouseMove={[Function]}
     onTouchStart={[Function]}
-    style={undefined}
   >
     <video
       autoPlay={false}
@@ -3640,20 +3516,16 @@ exports[`Video renders 1`] = `
       className="c3"
     >
       <div
-        aria-label={undefined}
         className="c4"
       >
         <button
-          aria-label={undefined}
           className="c5"
           disabled={false}
-          href={undefined}
           icon={
             <Play
               color="light-1"
             />
           }
-          label={undefined}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -3683,11 +3555,9 @@ exports[`Video renders 1`] = `
           </span>
         </button>
         <div
-          aria-label={undefined}
           className="c8"
         >
           <div
-            aria-label={undefined}
             className="c9"
           >
             <div
@@ -3731,12 +3601,10 @@ exports[`Video renders 1`] = `
                   }
                 }
                 tabIndex={0}
-                value={undefined}
               />
             </div>
           </div>
           <div
-            aria-label={undefined}
             className="c13"
           >
             <span
@@ -3753,22 +3621,16 @@ exports[`Video renders 1`] = `
             aria-label="Open Menu"
             className="c15"
             disabled={false}
-            href={undefined}
-            icon={undefined}
-            id={undefined}
-            label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
             type="button"
           >
             <div
-              aria-label={undefined}
               className="c16"
             >
               <span
                 className="c17"
-                size={undefined}
               />
               <svg
                 aria-label="Actions"

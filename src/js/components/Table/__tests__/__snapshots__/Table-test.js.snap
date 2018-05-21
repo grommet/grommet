@@ -139,8 +139,6 @@ exports[`TableCell plain renders 1`] = `
       >
         <td
           className="c2"
-          scope={undefined}
-          size={undefined}
         />
       </tr>
     </thead>
@@ -247,11 +245,8 @@ exports[`TableCell renders 1`] = `
       >
         <td
           className="c2"
-          scope={undefined}
-          size={undefined}
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </td>
@@ -265,11 +260,8 @@ exports[`TableCell renders 1`] = `
       >
         <td
           className="c4"
-          scope={undefined}
-          size={undefined}
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </td>
@@ -283,11 +275,8 @@ exports[`TableCell renders 1`] = `
       >
         <td
           className="c5"
-          scope={undefined}
-          size={undefined}
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </td>
@@ -389,10 +378,8 @@ exports[`TableCell scope renders 1`] = `
         <th
           className="c2"
           scope="col"
-          size={undefined}
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </th>
@@ -407,10 +394,8 @@ exports[`TableCell scope renders 1`] = `
         <th
           className="c4"
           scope="row"
-          size={undefined}
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </th>
@@ -576,41 +561,33 @@ exports[`TableCell size renders 1`] = `
       >
         <td
           className="c2"
-          scope={undefined}
           size="xsmall"
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </td>
         <td
           className="c4"
-          scope={undefined}
           size="small"
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </td>
         <td
           className="c5"
-          scope={undefined}
           size="medium"
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </td>
         <td
           className="c6"
-          scope={undefined}
           size="large"
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </td>
@@ -629,31 +606,25 @@ exports[`TableCell size renders 1`] = `
       >
         <td
           className="c7"
-          scope={undefined}
           size="1/2"
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </td>
         <td
           className="c8"
-          scope={undefined}
           size="1/4"
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </td>
         <td
           className="c8"
-          scope={undefined}
           size="1/4"
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </td>
@@ -672,21 +643,17 @@ exports[`TableCell size renders 1`] = `
       >
         <td
           className="c9"
-          scope={undefined}
           size="1/3"
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </td>
         <td
           className="c10"
-          scope={undefined}
           size="2/3"
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </td>
@@ -796,31 +763,22 @@ exports[`TableCell verticalAlign renders 1`] = `
       >
         <td
           className="c2"
-          scope={undefined}
-          size={undefined}
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </td>
         <td
           className="c4"
-          scope={undefined}
-          size={undefined}
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </td>
         <td
           className="c5"
-          scope={undefined}
-          size={undefined}
         >
           <div
-            aria-label={undefined}
             className="c3"
           />
         </td>

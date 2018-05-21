@@ -54,7 +54,6 @@ exports[`Clock hourLimit 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -107,7 +106,6 @@ exports[`Clock hourLimit 1`] = `
     </div>
   </div>
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -446,18 +444,7 @@ exports[`Clock run 2`] = `
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
-      <div
-        class="StyledClock__StyledDigitalPrevious-eWaIAI iwxupl"
-        direction="up"
-      >
-        4
-      </div>
-      <div
-        class="StyledClock__StyledDigitalNext-kbpwaE dumeYI"
-        direction="up"
-      >
-        5
-      </div>
+      4
     </div>
   </div>
   <div
@@ -501,18 +488,7 @@ exports[`Clock run 2`] = `
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
-      <div
-        class="StyledClock__StyledDigitalPrevious-eWaIAI bqriXc"
-        direction="down"
-      >
-        4
-      </div>
-      <div
-        class="StyledClock__StyledDigitalNext-kbpwaE dSUGUb"
-        direction="down"
-      >
-        3
-      </div>
+      4
     </div>
   </div>
 </div>
@@ -572,7 +548,6 @@ exports[`Clock time 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -625,7 +600,6 @@ exports[`Clock time 1`] = `
     </div>
   </div>
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -678,7 +652,6 @@ exports[`Clock time 1`] = `
     </div>
   </div>
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -731,7 +704,6 @@ exports[`Clock time 1`] = `
     </div>
   </div>
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -1995,7 +1967,6 @@ exports[`Clock type digital precision hours size large 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2068,7 +2039,6 @@ exports[`Clock type digital precision hours size medium 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2141,7 +2111,6 @@ exports[`Clock type digital precision hours size small 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2214,7 +2183,6 @@ exports[`Clock type digital precision hours size xlarge 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2287,7 +2255,6 @@ exports[`Clock type digital precision hours size xsmall 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2360,7 +2327,6 @@ exports[`Clock type digital precision minutes size large 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2451,7 +2417,6 @@ exports[`Clock type digital precision minutes size medium 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2542,7 +2507,6 @@ exports[`Clock type digital precision minutes size small 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2633,7 +2597,6 @@ exports[`Clock type digital precision minutes size xlarge 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2724,7 +2687,6 @@ exports[`Clock type digital precision minutes size xsmall 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2815,7 +2777,6 @@ exports[`Clock type digital precision seconds size large 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2924,7 +2885,6 @@ exports[`Clock type digital precision seconds size medium 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -3033,7 +2993,6 @@ exports[`Clock type digital precision seconds size small 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -3142,7 +3101,6 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -3251,7 +3209,6 @@ exports[`Clock type digital precision seconds size xsmall 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div

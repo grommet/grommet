@@ -30,14 +30,9 @@ exports[`Anchor disabled renders 1`] = `
   className="c0"
 >
   <a
-    aria-label={undefined}
     className="c1"
     disabled={true}
-    href={undefined}
-    icon={undefined}
-    label={undefined}
     onBlur={[Function]}
-    onClick={undefined}
     onFocus={[Function]}
   />
 </div>
@@ -86,14 +81,10 @@ exports[`Anchor focus renders 1`] = `
   className="c0"
 >
   <a
-    aria-label={undefined}
     className="c1"
-    disabled={undefined}
     href="#"
-    icon={undefined}
     label="Test"
     onBlur={[Function]}
-    onClick={undefined}
     onFocus={[Function]}
   >
     Test
@@ -145,14 +136,10 @@ exports[`Anchor icon label renders 1`] = `
   className="c0"
 >
   <a
-    aria-label={undefined}
     className="c1"
-    disabled={undefined}
-    href={undefined}
     icon={
       <StyledAnchor__StyledIcon
         label="Test"
-        reverse={undefined}
         theme={
           Object {
             "anchor": Object {
@@ -329,6 +316,7 @@ exports[`Anchor icon label renders 1`] = `
                 },
               },
             },
+            "dark": false,
             "formField": Object {
               "border": Object {
                 "color": "border",
@@ -377,6 +365,10 @@ exports[`Anchor icon label renders 1`] = `
                   "#60EBE1",
                   "#FFCA58",
                 ],
+                "accent-1": "#FD6FFF",
+                "accent-2": "#60EB9F",
+                "accent-3": "#60EBE1",
+                "accent-4": "#FFCA58",
                 "active": "rgba(221,221,221,0.5)",
                 "black": "#000000",
                 "border": "rgba(0, 0, 0, 0.33)",
@@ -389,6 +381,12 @@ exports[`Anchor icon label renders 1`] = `
                   "#777777",
                   "#999999",
                 ],
+                "dark-1": "#333333",
+                "dark-2": "#444444",
+                "dark-3": "#555555",
+                "dark-4": "#666666",
+                "dark-5": "#777777",
+                "dark-6": "#999999",
                 "darkBackground": Object {
                   "text": "#FFFFFF",
                 },
@@ -401,6 +399,12 @@ exports[`Anchor icon label renders 1`] = `
                   "#BBBBBB",
                   "#AAAAAA",
                 ],
+                "light-1": "#F6F6F6",
+                "light-2": "#EEEEEE",
+                "light-3": "#DDDDDD",
+                "light-4": "#CCCCCC",
+                "light-5": "#BBBBBB",
+                "light-6": "#AAAAAA",
                 "lightBackground": Object {
                   "text": "#444444",
                 },
@@ -410,6 +414,10 @@ exports[`Anchor icon label renders 1`] = `
                   "#6095EB",
                   "#FFB200",
                 ],
+                "neutral-1": "#EB6060",
+                "neutral-2": "#01C781",
+                "neutral-3": "#6095EB",
+                "neutral-4": "#FFB200",
                 "placeholder": "#AAAAAA",
                 "status": Object {
                   "critical": "#E1746A",
@@ -419,6 +427,12 @@ exports[`Anchor icon label renders 1`] = `
                   "unknown": "#a8a8a8",
                   "warning": "#F7E464",
                 },
+                "status-critical": "#E1746A",
+                "status-disabled": "#a8a8a8",
+                "status-error": "#E1746A",
+                "status-ok": "#7DD892",
+                "status-unknown": "#a8a8a8",
+                "status-warning": "#F7E464",
                 "text": "#444444",
                 "white": "#FFFFFF",
               },
@@ -652,11 +666,184 @@ exports[`Anchor icon label renders 1`] = `
               "weight": 600,
             },
             "icon": Object {
-              "extend": Array [
-                [Function],
-                " ",
-                [Function],
-              ],
+              "color": "#666666",
+              "colors": Object {
+                "accent": Array [
+                  "#FD6FFF",
+                  "#60EB9F",
+                  "#60EBE1",
+                  "#FFCA58",
+                ],
+                "accent-1": "#FD6FFF",
+                "accent-2": "#60EB9F",
+                "accent-3": "#60EBE1",
+                "accent-4": "#FFCA58",
+                "active": "rgba(221,221,221,0.5)",
+                "black": "#000000",
+                "border": "rgba(0, 0, 0, 0.33)",
+                "brand": "#865CD6",
+                "dark": Array [
+                  "#333333",
+                  "#444444",
+                  "#555555",
+                  "#666666",
+                  "#777777",
+                  "#999999",
+                ],
+                "dark-1": "#333333",
+                "dark-2": "#444444",
+                "dark-3": "#555555",
+                "dark-4": "#666666",
+                "dark-5": "#777777",
+                "dark-6": "#999999",
+                "darkBackground": Object {
+                  "text": "#FFFFFF",
+                },
+                "focus": "#FD6FFF",
+                "light": Array [
+                  "#F6F6F6",
+                  "#EEEEEE",
+                  "#DDDDDD",
+                  "#CCCCCC",
+                  "#BBBBBB",
+                  "#AAAAAA",
+                ],
+                "light-1": "#F6F6F6",
+                "light-2": "#EEEEEE",
+                "light-3": "#DDDDDD",
+                "light-4": "#CCCCCC",
+                "light-5": "#BBBBBB",
+                "light-6": "#AAAAAA",
+                "lightBackground": Object {
+                  "text": "#444444",
+                },
+                "neutral": Array [
+                  "#EB6060",
+                  "#01C781",
+                  "#6095EB",
+                  "#FFB200",
+                ],
+                "neutral-1": "#EB6060",
+                "neutral-2": "#01C781",
+                "neutral-3": "#6095EB",
+                "neutral-4": "#FFB200",
+                "placeholder": "#AAAAAA",
+                "status": Object {
+                  "critical": "#E1746A",
+                  "disabled": "#a8a8a8",
+                  "error": "#E1746A",
+                  "ok": "#7DD892",
+                  "unknown": "#a8a8a8",
+                  "warning": "#F7E464",
+                },
+                "status-critical": "#E1746A",
+                "status-disabled": "#a8a8a8",
+                "status-error": "#E1746A",
+                "status-ok": "#7DD892",
+                "status-unknown": "#a8a8a8",
+                "status-warning": "#F7E464",
+                "text": "#444444",
+                "white": "#FFFFFF",
+              },
+              "size": Object {
+                "large": "48px",
+                "xlarge": "96px",
+              },
+            },
+            "iconThemes": Object {
+              "dark": Object {
+                "color": "#FFFFFF",
+                "colors": Object {},
+                "size": Object {
+                  "large": "48px",
+                  "xlarge": "96px",
+                },
+              },
+              "light": Object {
+                "color": "#666666",
+                "colors": Object {
+                  "accent": Array [
+                    "#FD6FFF",
+                    "#60EB9F",
+                    "#60EBE1",
+                    "#FFCA58",
+                  ],
+                  "accent-1": "#FD6FFF",
+                  "accent-2": "#60EB9F",
+                  "accent-3": "#60EBE1",
+                  "accent-4": "#FFCA58",
+                  "active": "rgba(221,221,221,0.5)",
+                  "black": "#000000",
+                  "border": "rgba(0, 0, 0, 0.33)",
+                  "brand": "#865CD6",
+                  "dark": Array [
+                    "#333333",
+                    "#444444",
+                    "#555555",
+                    "#666666",
+                    "#777777",
+                    "#999999",
+                  ],
+                  "dark-1": "#333333",
+                  "dark-2": "#444444",
+                  "dark-3": "#555555",
+                  "dark-4": "#666666",
+                  "dark-5": "#777777",
+                  "dark-6": "#999999",
+                  "darkBackground": Object {
+                    "text": "#FFFFFF",
+                  },
+                  "focus": "#FD6FFF",
+                  "light": Array [
+                    "#F6F6F6",
+                    "#EEEEEE",
+                    "#DDDDDD",
+                    "#CCCCCC",
+                    "#BBBBBB",
+                    "#AAAAAA",
+                  ],
+                  "light-1": "#F6F6F6",
+                  "light-2": "#EEEEEE",
+                  "light-3": "#DDDDDD",
+                  "light-4": "#CCCCCC",
+                  "light-5": "#BBBBBB",
+                  "light-6": "#AAAAAA",
+                  "lightBackground": Object {
+                    "text": "#444444",
+                  },
+                  "neutral": Array [
+                    "#EB6060",
+                    "#01C781",
+                    "#6095EB",
+                    "#FFB200",
+                  ],
+                  "neutral-1": "#EB6060",
+                  "neutral-2": "#01C781",
+                  "neutral-3": "#6095EB",
+                  "neutral-4": "#FFB200",
+                  "placeholder": "#AAAAAA",
+                  "status": Object {
+                    "critical": "#E1746A",
+                    "disabled": "#a8a8a8",
+                    "error": "#E1746A",
+                    "ok": "#7DD892",
+                    "unknown": "#a8a8a8",
+                    "warning": "#F7E464",
+                  },
+                  "status-critical": "#E1746A",
+                  "status-disabled": "#a8a8a8",
+                  "status-error": "#E1746A",
+                  "status-ok": "#7DD892",
+                  "status-unknown": "#a8a8a8",
+                  "status-warning": "#F7E464",
+                  "text": "#444444",
+                  "white": "#FFFFFF",
+                },
+                "size": Object {
+                  "large": "48px",
+                  "xlarge": "96px",
+                },
+              },
             },
             "layer": Object {
               "backgroundColor": "#FFFFFF",
@@ -826,14 +1013,10 @@ exports[`Anchor primary renders 1`] = `
   className="c0"
 >
   <a
-    aria-label={undefined}
     className="c1"
-    disabled={undefined}
     href="#"
-    icon={undefined}
     label="Test"
     onBlur={[Function]}
-    onClick={undefined}
     onFocus={[Function]}
   >
     Test
@@ -872,14 +1055,8 @@ exports[`Anchor renders 1`] = `
   className="c0"
 >
   <a
-    aria-label={undefined}
     className="c1"
-    disabled={undefined}
-    href={undefined}
-    icon={undefined}
-    label={undefined}
     onBlur={[Function]}
-    onClick={undefined}
     onFocus={[Function]}
   />
 </div>
@@ -916,14 +1093,9 @@ exports[`Anchor renders with children 1`] = `
   className="c0"
 >
   <a
-    aria-label={undefined}
     className="c1"
-    disabled={undefined}
     href="#"
-    icon={undefined}
-    label={undefined}
     onBlur={[Function]}
-    onClick={undefined}
     onFocus={[Function]}
   >
     children
@@ -975,10 +1147,7 @@ exports[`Anchor reverse icon label renders 1`] = `
   className="c0"
 >
   <a
-    aria-label={undefined}
     className="c1"
-    disabled={undefined}
-    href={undefined}
     icon={
       <StyledAnchor__StyledIcon
         label="Test"
@@ -1159,6 +1328,7 @@ exports[`Anchor reverse icon label renders 1`] = `
                 },
               },
             },
+            "dark": false,
             "formField": Object {
               "border": Object {
                 "color": "border",
@@ -1207,6 +1377,10 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "#60EBE1",
                   "#FFCA58",
                 ],
+                "accent-1": "#FD6FFF",
+                "accent-2": "#60EB9F",
+                "accent-3": "#60EBE1",
+                "accent-4": "#FFCA58",
                 "active": "rgba(221,221,221,0.5)",
                 "black": "#000000",
                 "border": "rgba(0, 0, 0, 0.33)",
@@ -1219,6 +1393,12 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "#777777",
                   "#999999",
                 ],
+                "dark-1": "#333333",
+                "dark-2": "#444444",
+                "dark-3": "#555555",
+                "dark-4": "#666666",
+                "dark-5": "#777777",
+                "dark-6": "#999999",
                 "darkBackground": Object {
                   "text": "#FFFFFF",
                 },
@@ -1231,6 +1411,12 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "#BBBBBB",
                   "#AAAAAA",
                 ],
+                "light-1": "#F6F6F6",
+                "light-2": "#EEEEEE",
+                "light-3": "#DDDDDD",
+                "light-4": "#CCCCCC",
+                "light-5": "#BBBBBB",
+                "light-6": "#AAAAAA",
                 "lightBackground": Object {
                   "text": "#444444",
                 },
@@ -1240,6 +1426,10 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "#6095EB",
                   "#FFB200",
                 ],
+                "neutral-1": "#EB6060",
+                "neutral-2": "#01C781",
+                "neutral-3": "#6095EB",
+                "neutral-4": "#FFB200",
                 "placeholder": "#AAAAAA",
                 "status": Object {
                   "critical": "#E1746A",
@@ -1249,6 +1439,12 @@ exports[`Anchor reverse icon label renders 1`] = `
                   "unknown": "#a8a8a8",
                   "warning": "#F7E464",
                 },
+                "status-critical": "#E1746A",
+                "status-disabled": "#a8a8a8",
+                "status-error": "#E1746A",
+                "status-ok": "#7DD892",
+                "status-unknown": "#a8a8a8",
+                "status-warning": "#F7E464",
                 "text": "#444444",
                 "white": "#FFFFFF",
               },
@@ -1482,11 +1678,184 @@ exports[`Anchor reverse icon label renders 1`] = `
               "weight": 600,
             },
             "icon": Object {
-              "extend": Array [
-                [Function],
-                " ",
-                [Function],
-              ],
+              "color": "#666666",
+              "colors": Object {
+                "accent": Array [
+                  "#FD6FFF",
+                  "#60EB9F",
+                  "#60EBE1",
+                  "#FFCA58",
+                ],
+                "accent-1": "#FD6FFF",
+                "accent-2": "#60EB9F",
+                "accent-3": "#60EBE1",
+                "accent-4": "#FFCA58",
+                "active": "rgba(221,221,221,0.5)",
+                "black": "#000000",
+                "border": "rgba(0, 0, 0, 0.33)",
+                "brand": "#865CD6",
+                "dark": Array [
+                  "#333333",
+                  "#444444",
+                  "#555555",
+                  "#666666",
+                  "#777777",
+                  "#999999",
+                ],
+                "dark-1": "#333333",
+                "dark-2": "#444444",
+                "dark-3": "#555555",
+                "dark-4": "#666666",
+                "dark-5": "#777777",
+                "dark-6": "#999999",
+                "darkBackground": Object {
+                  "text": "#FFFFFF",
+                },
+                "focus": "#FD6FFF",
+                "light": Array [
+                  "#F6F6F6",
+                  "#EEEEEE",
+                  "#DDDDDD",
+                  "#CCCCCC",
+                  "#BBBBBB",
+                  "#AAAAAA",
+                ],
+                "light-1": "#F6F6F6",
+                "light-2": "#EEEEEE",
+                "light-3": "#DDDDDD",
+                "light-4": "#CCCCCC",
+                "light-5": "#BBBBBB",
+                "light-6": "#AAAAAA",
+                "lightBackground": Object {
+                  "text": "#444444",
+                },
+                "neutral": Array [
+                  "#EB6060",
+                  "#01C781",
+                  "#6095EB",
+                  "#FFB200",
+                ],
+                "neutral-1": "#EB6060",
+                "neutral-2": "#01C781",
+                "neutral-3": "#6095EB",
+                "neutral-4": "#FFB200",
+                "placeholder": "#AAAAAA",
+                "status": Object {
+                  "critical": "#E1746A",
+                  "disabled": "#a8a8a8",
+                  "error": "#E1746A",
+                  "ok": "#7DD892",
+                  "unknown": "#a8a8a8",
+                  "warning": "#F7E464",
+                },
+                "status-critical": "#E1746A",
+                "status-disabled": "#a8a8a8",
+                "status-error": "#E1746A",
+                "status-ok": "#7DD892",
+                "status-unknown": "#a8a8a8",
+                "status-warning": "#F7E464",
+                "text": "#444444",
+                "white": "#FFFFFF",
+              },
+              "size": Object {
+                "large": "48px",
+                "xlarge": "96px",
+              },
+            },
+            "iconThemes": Object {
+              "dark": Object {
+                "color": "#FFFFFF",
+                "colors": Object {},
+                "size": Object {
+                  "large": "48px",
+                  "xlarge": "96px",
+                },
+              },
+              "light": Object {
+                "color": "#666666",
+                "colors": Object {
+                  "accent": Array [
+                    "#FD6FFF",
+                    "#60EB9F",
+                    "#60EBE1",
+                    "#FFCA58",
+                  ],
+                  "accent-1": "#FD6FFF",
+                  "accent-2": "#60EB9F",
+                  "accent-3": "#60EBE1",
+                  "accent-4": "#FFCA58",
+                  "active": "rgba(221,221,221,0.5)",
+                  "black": "#000000",
+                  "border": "rgba(0, 0, 0, 0.33)",
+                  "brand": "#865CD6",
+                  "dark": Array [
+                    "#333333",
+                    "#444444",
+                    "#555555",
+                    "#666666",
+                    "#777777",
+                    "#999999",
+                  ],
+                  "dark-1": "#333333",
+                  "dark-2": "#444444",
+                  "dark-3": "#555555",
+                  "dark-4": "#666666",
+                  "dark-5": "#777777",
+                  "dark-6": "#999999",
+                  "darkBackground": Object {
+                    "text": "#FFFFFF",
+                  },
+                  "focus": "#FD6FFF",
+                  "light": Array [
+                    "#F6F6F6",
+                    "#EEEEEE",
+                    "#DDDDDD",
+                    "#CCCCCC",
+                    "#BBBBBB",
+                    "#AAAAAA",
+                  ],
+                  "light-1": "#F6F6F6",
+                  "light-2": "#EEEEEE",
+                  "light-3": "#DDDDDD",
+                  "light-4": "#CCCCCC",
+                  "light-5": "#BBBBBB",
+                  "light-6": "#AAAAAA",
+                  "lightBackground": Object {
+                    "text": "#444444",
+                  },
+                  "neutral": Array [
+                    "#EB6060",
+                    "#01C781",
+                    "#6095EB",
+                    "#FFB200",
+                  ],
+                  "neutral-1": "#EB6060",
+                  "neutral-2": "#01C781",
+                  "neutral-3": "#6095EB",
+                  "neutral-4": "#FFB200",
+                  "placeholder": "#AAAAAA",
+                  "status": Object {
+                    "critical": "#E1746A",
+                    "disabled": "#a8a8a8",
+                    "error": "#E1746A",
+                    "ok": "#7DD892",
+                    "unknown": "#a8a8a8",
+                    "warning": "#F7E464",
+                  },
+                  "status-critical": "#E1746A",
+                  "status-disabled": "#a8a8a8",
+                  "status-error": "#E1746A",
+                  "status-ok": "#7DD892",
+                  "status-unknown": "#a8a8a8",
+                  "status-warning": "#F7E464",
+                  "text": "#444444",
+                  "white": "#FFFFFF",
+                },
+                "size": Object {
+                  "large": "48px",
+                  "xlarge": "96px",
+                },
+              },
             },
             "layer": Object {
               "backgroundColor": "#FFFFFF",
@@ -1654,14 +2023,10 @@ exports[`Anchor warns about invalid icon render 1`] = `
   className="c0"
 >
   <a
-    aria-label={undefined}
     className="c1"
-    disabled={undefined}
     href="#"
     icon={
       <StyledAnchor__StyledIcon
-        label={undefined}
-        reverse={undefined}
         theme={
           Object {
             "anchor": Object {
@@ -1838,6 +2203,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 },
               },
             },
+            "dark": false,
             "formField": Object {
               "border": Object {
                 "color": "border",
@@ -1886,6 +2252,10 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "#60EBE1",
                   "#FFCA58",
                 ],
+                "accent-1": "#FD6FFF",
+                "accent-2": "#60EB9F",
+                "accent-3": "#60EBE1",
+                "accent-4": "#FFCA58",
                 "active": "rgba(221,221,221,0.5)",
                 "black": "#000000",
                 "border": "rgba(0, 0, 0, 0.33)",
@@ -1898,6 +2268,12 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "#777777",
                   "#999999",
                 ],
+                "dark-1": "#333333",
+                "dark-2": "#444444",
+                "dark-3": "#555555",
+                "dark-4": "#666666",
+                "dark-5": "#777777",
+                "dark-6": "#999999",
                 "darkBackground": Object {
                   "text": "#FFFFFF",
                 },
@@ -1910,6 +2286,12 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "#BBBBBB",
                   "#AAAAAA",
                 ],
+                "light-1": "#F6F6F6",
+                "light-2": "#EEEEEE",
+                "light-3": "#DDDDDD",
+                "light-4": "#CCCCCC",
+                "light-5": "#BBBBBB",
+                "light-6": "#AAAAAA",
                 "lightBackground": Object {
                   "text": "#444444",
                 },
@@ -1919,6 +2301,10 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "#6095EB",
                   "#FFB200",
                 ],
+                "neutral-1": "#EB6060",
+                "neutral-2": "#01C781",
+                "neutral-3": "#6095EB",
+                "neutral-4": "#FFB200",
                 "placeholder": "#AAAAAA",
                 "status": Object {
                   "critical": "#E1746A",
@@ -1928,6 +2314,12 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   "unknown": "#a8a8a8",
                   "warning": "#F7E464",
                 },
+                "status-critical": "#E1746A",
+                "status-disabled": "#a8a8a8",
+                "status-error": "#E1746A",
+                "status-ok": "#7DD892",
+                "status-unknown": "#a8a8a8",
+                "status-warning": "#F7E464",
                 "text": "#444444",
                 "white": "#FFFFFF",
               },
@@ -2161,11 +2553,184 @@ exports[`Anchor warns about invalid icon render 1`] = `
               "weight": 600,
             },
             "icon": Object {
-              "extend": Array [
-                [Function],
-                " ",
-                [Function],
-              ],
+              "color": "#666666",
+              "colors": Object {
+                "accent": Array [
+                  "#FD6FFF",
+                  "#60EB9F",
+                  "#60EBE1",
+                  "#FFCA58",
+                ],
+                "accent-1": "#FD6FFF",
+                "accent-2": "#60EB9F",
+                "accent-3": "#60EBE1",
+                "accent-4": "#FFCA58",
+                "active": "rgba(221,221,221,0.5)",
+                "black": "#000000",
+                "border": "rgba(0, 0, 0, 0.33)",
+                "brand": "#865CD6",
+                "dark": Array [
+                  "#333333",
+                  "#444444",
+                  "#555555",
+                  "#666666",
+                  "#777777",
+                  "#999999",
+                ],
+                "dark-1": "#333333",
+                "dark-2": "#444444",
+                "dark-3": "#555555",
+                "dark-4": "#666666",
+                "dark-5": "#777777",
+                "dark-6": "#999999",
+                "darkBackground": Object {
+                  "text": "#FFFFFF",
+                },
+                "focus": "#FD6FFF",
+                "light": Array [
+                  "#F6F6F6",
+                  "#EEEEEE",
+                  "#DDDDDD",
+                  "#CCCCCC",
+                  "#BBBBBB",
+                  "#AAAAAA",
+                ],
+                "light-1": "#F6F6F6",
+                "light-2": "#EEEEEE",
+                "light-3": "#DDDDDD",
+                "light-4": "#CCCCCC",
+                "light-5": "#BBBBBB",
+                "light-6": "#AAAAAA",
+                "lightBackground": Object {
+                  "text": "#444444",
+                },
+                "neutral": Array [
+                  "#EB6060",
+                  "#01C781",
+                  "#6095EB",
+                  "#FFB200",
+                ],
+                "neutral-1": "#EB6060",
+                "neutral-2": "#01C781",
+                "neutral-3": "#6095EB",
+                "neutral-4": "#FFB200",
+                "placeholder": "#AAAAAA",
+                "status": Object {
+                  "critical": "#E1746A",
+                  "disabled": "#a8a8a8",
+                  "error": "#E1746A",
+                  "ok": "#7DD892",
+                  "unknown": "#a8a8a8",
+                  "warning": "#F7E464",
+                },
+                "status-critical": "#E1746A",
+                "status-disabled": "#a8a8a8",
+                "status-error": "#E1746A",
+                "status-ok": "#7DD892",
+                "status-unknown": "#a8a8a8",
+                "status-warning": "#F7E464",
+                "text": "#444444",
+                "white": "#FFFFFF",
+              },
+              "size": Object {
+                "large": "48px",
+                "xlarge": "96px",
+              },
+            },
+            "iconThemes": Object {
+              "dark": Object {
+                "color": "#FFFFFF",
+                "colors": Object {},
+                "size": Object {
+                  "large": "48px",
+                  "xlarge": "96px",
+                },
+              },
+              "light": Object {
+                "color": "#666666",
+                "colors": Object {
+                  "accent": Array [
+                    "#FD6FFF",
+                    "#60EB9F",
+                    "#60EBE1",
+                    "#FFCA58",
+                  ],
+                  "accent-1": "#FD6FFF",
+                  "accent-2": "#60EB9F",
+                  "accent-3": "#60EBE1",
+                  "accent-4": "#FFCA58",
+                  "active": "rgba(221,221,221,0.5)",
+                  "black": "#000000",
+                  "border": "rgba(0, 0, 0, 0.33)",
+                  "brand": "#865CD6",
+                  "dark": Array [
+                    "#333333",
+                    "#444444",
+                    "#555555",
+                    "#666666",
+                    "#777777",
+                    "#999999",
+                  ],
+                  "dark-1": "#333333",
+                  "dark-2": "#444444",
+                  "dark-3": "#555555",
+                  "dark-4": "#666666",
+                  "dark-5": "#777777",
+                  "dark-6": "#999999",
+                  "darkBackground": Object {
+                    "text": "#FFFFFF",
+                  },
+                  "focus": "#FD6FFF",
+                  "light": Array [
+                    "#F6F6F6",
+                    "#EEEEEE",
+                    "#DDDDDD",
+                    "#CCCCCC",
+                    "#BBBBBB",
+                    "#AAAAAA",
+                  ],
+                  "light-1": "#F6F6F6",
+                  "light-2": "#EEEEEE",
+                  "light-3": "#DDDDDD",
+                  "light-4": "#CCCCCC",
+                  "light-5": "#BBBBBB",
+                  "light-6": "#AAAAAA",
+                  "lightBackground": Object {
+                    "text": "#444444",
+                  },
+                  "neutral": Array [
+                    "#EB6060",
+                    "#01C781",
+                    "#6095EB",
+                    "#FFB200",
+                  ],
+                  "neutral-1": "#EB6060",
+                  "neutral-2": "#01C781",
+                  "neutral-3": "#6095EB",
+                  "neutral-4": "#FFB200",
+                  "placeholder": "#AAAAAA",
+                  "status": Object {
+                    "critical": "#E1746A",
+                    "disabled": "#a8a8a8",
+                    "error": "#E1746A",
+                    "ok": "#7DD892",
+                    "unknown": "#a8a8a8",
+                    "warning": "#F7E464",
+                  },
+                  "status-critical": "#E1746A",
+                  "status-disabled": "#a8a8a8",
+                  "status-error": "#E1746A",
+                  "status-ok": "#7DD892",
+                  "status-unknown": "#a8a8a8",
+                  "status-warning": "#F7E464",
+                  "text": "#444444",
+                  "white": "#FFFFFF",
+                },
+                "size": Object {
+                  "large": "48px",
+                  "xlarge": "96px",
+                },
+              },
             },
             "layer": Object {
               "backgroundColor": "#FFFFFF",
@@ -2285,9 +2850,7 @@ exports[`Anchor warns about invalid icon render 1`] = `
         <svg />
       </StyledAnchor__StyledIcon>
     }
-    label={undefined}
     onBlur={[Function]}
-    onClick={undefined}
     onFocus={[Function]}
   >
     invalid
@@ -2326,14 +2889,10 @@ exports[`Anchor warns about invalid label render 1`] = `
   className="c0"
 >
   <a
-    aria-label={undefined}
     className="c1"
-    disabled={undefined}
     href="#"
-    icon={undefined}
     label="Test"
     onBlur={[Function]}
-    onClick={undefined}
     onFocus={[Function]}
   >
     invalid

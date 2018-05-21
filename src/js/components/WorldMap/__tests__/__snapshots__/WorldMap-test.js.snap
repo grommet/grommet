@@ -296,7 +296,6 @@ exports[`WorldMap onSelectPlace renders 1`] = `
     className="c1"
     height={460}
     onMouseLeave={[Function]}
-    onMouseMove={undefined}
     onMouseOver={[Function]}
     preserveAspectRatio="xMinYMin meet"
     viewBox="0 0 940 460"

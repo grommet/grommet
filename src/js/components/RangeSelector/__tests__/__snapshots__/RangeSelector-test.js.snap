@@ -211,12 +211,9 @@ exports[`TextInput basic 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -225,7 +222,6 @@ exports[`TextInput basic 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -239,7 +235,6 @@ exports[`TextInput basic 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -251,7 +246,6 @@ exports[`TextInput basic 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -270,9 +264,7 @@ exports[`TextInput basic 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -281,7 +273,6 @@ exports[`TextInput basic 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -295,7 +286,6 @@ exports[`TextInput basic 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -307,7 +297,6 @@ exports[`TextInput basic 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -326,7 +315,6 @@ exports[`TextInput basic 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -549,12 +537,9 @@ exports[`TextInput color 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -563,7 +548,6 @@ exports[`TextInput color 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -577,7 +561,6 @@ exports[`TextInput color 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -589,7 +572,6 @@ exports[`TextInput color 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -608,9 +590,7 @@ exports[`TextInput color 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -619,7 +599,6 @@ exports[`TextInput color 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -633,7 +612,6 @@ exports[`TextInput color 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -645,7 +623,6 @@ exports[`TextInput color 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -664,7 +641,6 @@ exports[`TextInput color 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -1052,12 +1028,9 @@ exports[`TextInput direction 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -1066,7 +1039,6 @@ exports[`TextInput direction 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -1080,7 +1052,6 @@ exports[`TextInput direction 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -1092,7 +1063,6 @@ exports[`TextInput direction 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -1111,9 +1081,7 @@ exports[`TextInput direction 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -1122,7 +1090,6 @@ exports[`TextInput direction 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -1136,7 +1103,6 @@ exports[`TextInput direction 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -1148,7 +1114,6 @@ exports[`TextInput direction 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -1167,7 +1132,6 @@ exports[`TextInput direction 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -1177,12 +1141,9 @@ exports[`TextInput direction 1`] = `
     />
   </div>
   <div
-    aria-label={undefined}
     className="c7"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c7"
       style={
         Object {
@@ -1191,7 +1152,6 @@ exports[`TextInput direction 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c8"
       onKeyDown={[Function]}
       style={
@@ -1205,7 +1165,6 @@ exports[`TextInput direction 1`] = `
         className="c9"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "row-resize",
@@ -1217,7 +1176,6 @@ exports[`TextInput direction 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c10"
         >
           <svg
@@ -1236,9 +1194,7 @@ exports[`TextInput direction 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c11"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ns-resize",
@@ -1247,7 +1203,6 @@ exports[`TextInput direction 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c8"
       onKeyDown={[Function]}
       style={
@@ -1261,7 +1216,6 @@ exports[`TextInput direction 1`] = `
         className="c9"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "row-resize",
@@ -1273,7 +1227,6 @@ exports[`TextInput direction 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c10"
         >
           <svg
@@ -1292,7 +1245,6 @@ exports[`TextInput direction 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c7"
       style={
         Object {
@@ -1696,12 +1648,9 @@ exports[`TextInput invert 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -1710,7 +1659,6 @@ exports[`TextInput invert 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -1724,7 +1672,6 @@ exports[`TextInput invert 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -1736,7 +1683,6 @@ exports[`TextInput invert 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -1755,9 +1701,7 @@ exports[`TextInput invert 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -1766,7 +1710,6 @@ exports[`TextInput invert 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -1780,7 +1723,6 @@ exports[`TextInput invert 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -1792,7 +1734,6 @@ exports[`TextInput invert 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -1811,7 +1752,6 @@ exports[`TextInput invert 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -1821,12 +1761,9 @@ exports[`TextInput invert 1`] = `
     />
   </div>
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c6"
       style={
         Object {
@@ -1835,7 +1772,6 @@ exports[`TextInput invert 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -1849,7 +1785,6 @@ exports[`TextInput invert 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -1861,7 +1796,6 @@ exports[`TextInput invert 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -1880,9 +1814,7 @@ exports[`TextInput invert 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c7"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -1891,7 +1823,6 @@ exports[`TextInput invert 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -1905,7 +1836,6 @@ exports[`TextInput invert 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -1917,7 +1847,6 @@ exports[`TextInput invert 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -1936,7 +1865,6 @@ exports[`TextInput invert 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
       style={
         Object {
@@ -2159,12 +2087,9 @@ exports[`TextInput max 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -2173,7 +2098,6 @@ exports[`TextInput max 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -2187,7 +2111,6 @@ exports[`TextInput max 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -2199,7 +2122,6 @@ exports[`TextInput max 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -2218,9 +2140,7 @@ exports[`TextInput max 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -2229,7 +2149,6 @@ exports[`TextInput max 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -2243,7 +2162,6 @@ exports[`TextInput max 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -2255,7 +2173,6 @@ exports[`TextInput max 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -2274,7 +2191,6 @@ exports[`TextInput max 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -2497,12 +2413,9 @@ exports[`TextInput min 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -2511,7 +2424,6 @@ exports[`TextInput min 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -2525,7 +2437,6 @@ exports[`TextInput min 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -2537,7 +2448,6 @@ exports[`TextInput min 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -2556,9 +2466,7 @@ exports[`TextInput min 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -2567,7 +2475,6 @@ exports[`TextInput min 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -2581,7 +2488,6 @@ exports[`TextInput min 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -2593,7 +2499,6 @@ exports[`TextInput min 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -2612,7 +2517,6 @@ exports[`TextInput min 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -2897,12 +2801,9 @@ exports[`TextInput opacity 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -2911,7 +2812,6 @@ exports[`TextInput opacity 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -2925,7 +2825,6 @@ exports[`TextInput opacity 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -2937,7 +2836,6 @@ exports[`TextInput opacity 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -2956,9 +2854,7 @@ exports[`TextInput opacity 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -2967,7 +2863,6 @@ exports[`TextInput opacity 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -2981,7 +2876,6 @@ exports[`TextInput opacity 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -2993,7 +2887,6 @@ exports[`TextInput opacity 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -3012,7 +2905,6 @@ exports[`TextInput opacity 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -3022,12 +2914,9 @@ exports[`TextInput opacity 1`] = `
     />
   </div>
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -3036,7 +2925,6 @@ exports[`TextInput opacity 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -3050,7 +2938,6 @@ exports[`TextInput opacity 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -3062,7 +2949,6 @@ exports[`TextInput opacity 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -3081,9 +2967,7 @@ exports[`TextInput opacity 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c7"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -3092,7 +2976,6 @@ exports[`TextInput opacity 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -3106,7 +2989,6 @@ exports[`TextInput opacity 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -3118,7 +3000,6 @@ exports[`TextInput opacity 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -3137,7 +3018,6 @@ exports[`TextInput opacity 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -3147,12 +3027,9 @@ exports[`TextInput opacity 1`] = `
     />
   </div>
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -3161,7 +3038,6 @@ exports[`TextInput opacity 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -3175,7 +3051,6 @@ exports[`TextInput opacity 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -3187,7 +3062,6 @@ exports[`TextInput opacity 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -3206,9 +3080,7 @@ exports[`TextInput opacity 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c8"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -3217,7 +3089,6 @@ exports[`TextInput opacity 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -3231,7 +3102,6 @@ exports[`TextInput opacity 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -3243,7 +3113,6 @@ exports[`TextInput opacity 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -3262,7 +3131,6 @@ exports[`TextInput opacity 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -3795,12 +3663,9 @@ exports[`TextInput round 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -3809,7 +3674,6 @@ exports[`TextInput round 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -3823,7 +3687,6 @@ exports[`TextInput round 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -3835,7 +3698,6 @@ exports[`TextInput round 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -3854,9 +3716,7 @@ exports[`TextInput round 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -3865,7 +3725,6 @@ exports[`TextInput round 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -3879,7 +3738,6 @@ exports[`TextInput round 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -3891,7 +3749,6 @@ exports[`TextInput round 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -3910,7 +3767,6 @@ exports[`TextInput round 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -3920,12 +3776,9 @@ exports[`TextInput round 1`] = `
     />
   </div>
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c7"
       style={
         Object {
@@ -3934,7 +3787,6 @@ exports[`TextInput round 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -3948,7 +3800,6 @@ exports[`TextInput round 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -3960,7 +3811,6 @@ exports[`TextInput round 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -3979,9 +3829,7 @@ exports[`TextInput round 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c8"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -3990,7 +3838,6 @@ exports[`TextInput round 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -4004,7 +3851,6 @@ exports[`TextInput round 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -4016,7 +3862,6 @@ exports[`TextInput round 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -4035,7 +3880,6 @@ exports[`TextInput round 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c7"
       style={
         Object {
@@ -4045,12 +3889,9 @@ exports[`TextInput round 1`] = `
     />
   </div>
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c9"
       style={
         Object {
@@ -4059,7 +3900,6 @@ exports[`TextInput round 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -4073,7 +3913,6 @@ exports[`TextInput round 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -4085,7 +3924,6 @@ exports[`TextInput round 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -4104,9 +3942,7 @@ exports[`TextInput round 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c10"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -4115,7 +3951,6 @@ exports[`TextInput round 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -4129,7 +3964,6 @@ exports[`TextInput round 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -4141,7 +3975,6 @@ exports[`TextInput round 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -4160,7 +3993,6 @@ exports[`TextInput round 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c9"
       style={
         Object {
@@ -4170,12 +4002,9 @@ exports[`TextInput round 1`] = `
     />
   </div>
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c11"
       style={
         Object {
@@ -4184,7 +4013,6 @@ exports[`TextInput round 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -4198,7 +4026,6 @@ exports[`TextInput round 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -4210,7 +4037,6 @@ exports[`TextInput round 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -4229,9 +4055,7 @@ exports[`TextInput round 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c12"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -4240,7 +4064,6 @@ exports[`TextInput round 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -4254,7 +4077,6 @@ exports[`TextInput round 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -4266,7 +4088,6 @@ exports[`TextInput round 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -4285,7 +4106,6 @@ exports[`TextInput round 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c11"
       style={
         Object {
@@ -4295,12 +4115,9 @@ exports[`TextInput round 1`] = `
     />
   </div>
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c13"
       style={
         Object {
@@ -4309,7 +4126,6 @@ exports[`TextInput round 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -4323,7 +4139,6 @@ exports[`TextInput round 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -4335,7 +4150,6 @@ exports[`TextInput round 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -4354,9 +4168,7 @@ exports[`TextInput round 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c14"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -4365,7 +4177,6 @@ exports[`TextInput round 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -4379,7 +4190,6 @@ exports[`TextInput round 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -4391,7 +4201,6 @@ exports[`TextInput round 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -4410,7 +4219,6 @@ exports[`TextInput round 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c13"
       style={
         Object {
@@ -4633,12 +4441,9 @@ exports[`TextInput size 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -4647,7 +4452,6 @@ exports[`TextInput size 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -4661,7 +4465,6 @@ exports[`TextInput size 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -4673,7 +4476,6 @@ exports[`TextInput size 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -4692,9 +4494,7 @@ exports[`TextInput size 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -4703,7 +4503,6 @@ exports[`TextInput size 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -4717,7 +4516,6 @@ exports[`TextInput size 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -4729,7 +4527,6 @@ exports[`TextInput size 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -4748,7 +4545,6 @@ exports[`TextInput size 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -4758,12 +4554,9 @@ exports[`TextInput size 1`] = `
     />
   </div>
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -4772,7 +4565,6 @@ exports[`TextInput size 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -4786,7 +4578,6 @@ exports[`TextInput size 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -4798,7 +4589,6 @@ exports[`TextInput size 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -4817,9 +4607,7 @@ exports[`TextInput size 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -4828,7 +4616,6 @@ exports[`TextInput size 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -4842,7 +4629,6 @@ exports[`TextInput size 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -4854,7 +4640,6 @@ exports[`TextInput size 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -4873,7 +4658,6 @@ exports[`TextInput size 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -4883,12 +4667,9 @@ exports[`TextInput size 1`] = `
     />
   </div>
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -4897,7 +4678,6 @@ exports[`TextInput size 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -4911,7 +4691,6 @@ exports[`TextInput size 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -4923,7 +4702,6 @@ exports[`TextInput size 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -4942,9 +4720,7 @@ exports[`TextInput size 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -4953,7 +4729,6 @@ exports[`TextInput size 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -4967,7 +4742,6 @@ exports[`TextInput size 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -4979,7 +4753,6 @@ exports[`TextInput size 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -4998,7 +4771,6 @@ exports[`TextInput size 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -5008,12 +4780,9 @@ exports[`TextInput size 1`] = `
     />
   </div>
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -5022,7 +4791,6 @@ exports[`TextInput size 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -5036,7 +4804,6 @@ exports[`TextInput size 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -5048,7 +4815,6 @@ exports[`TextInput size 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -5067,9 +4833,7 @@ exports[`TextInput size 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -5078,7 +4842,6 @@ exports[`TextInput size 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -5092,7 +4855,6 @@ exports[`TextInput size 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -5104,7 +4866,6 @@ exports[`TextInput size 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -5123,7 +4884,6 @@ exports[`TextInput size 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -5133,12 +4893,9 @@ exports[`TextInput size 1`] = `
     />
   </div>
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -5147,7 +4904,6 @@ exports[`TextInput size 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -5161,7 +4917,6 @@ exports[`TextInput size 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -5173,7 +4928,6 @@ exports[`TextInput size 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -5192,9 +4946,7 @@ exports[`TextInput size 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -5203,7 +4955,6 @@ exports[`TextInput size 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -5217,7 +4968,6 @@ exports[`TextInput size 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -5229,7 +4979,6 @@ exports[`TextInput size 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -5248,7 +4997,6 @@ exports[`TextInput size 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -5258,12 +5006,9 @@ exports[`TextInput size 1`] = `
     />
   </div>
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -5272,7 +5017,6 @@ exports[`TextInput size 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -5286,7 +5030,6 @@ exports[`TextInput size 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -5298,7 +5041,6 @@ exports[`TextInput size 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -5317,9 +5059,7 @@ exports[`TextInput size 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -5328,7 +5068,6 @@ exports[`TextInput size 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -5342,7 +5081,6 @@ exports[`TextInput size 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -5354,7 +5092,6 @@ exports[`TextInput size 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -5373,7 +5110,6 @@ exports[`TextInput size 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -5383,12 +5119,9 @@ exports[`TextInput size 1`] = `
     />
   </div>
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -5397,7 +5130,6 @@ exports[`TextInput size 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -5411,7 +5143,6 @@ exports[`TextInput size 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -5423,7 +5154,6 @@ exports[`TextInput size 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -5442,9 +5172,7 @@ exports[`TextInput size 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -5453,7 +5181,6 @@ exports[`TextInput size 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -5467,7 +5194,6 @@ exports[`TextInput size 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -5479,7 +5205,6 @@ exports[`TextInput size 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -5498,7 +5223,6 @@ exports[`TextInput size 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -5721,12 +5445,9 @@ exports[`TextInput step 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
-    onClick={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -5735,7 +5456,6 @@ exports[`TextInput step 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -5749,7 +5469,6 @@ exports[`TextInput step 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -5761,7 +5480,6 @@ exports[`TextInput step 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -5780,9 +5498,7 @@ exports[`TextInput step 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
-      onMouseDown={undefined}
       style={
         Object {
           "cursor": "ew-resize",
@@ -5791,7 +5507,6 @@ exports[`TextInput step 1`] = `
       }
     />
     <div
-      aria-label={undefined}
       className="c3"
       onKeyDown={[Function]}
       style={
@@ -5805,7 +5520,6 @@ exports[`TextInput step 1`] = `
         className="c4"
         onBlur={[Function]}
         onFocus={[Function]}
-        onMouseDown={undefined}
         style={
           Object {
             "cursor": "col-resize",
@@ -5817,7 +5531,6 @@ exports[`TextInput step 1`] = `
         tabIndex={0}
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <svg
@@ -5836,7 +5549,6 @@ exports[`TextInput step 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {

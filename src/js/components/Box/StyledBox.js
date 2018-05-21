@@ -74,7 +74,7 @@ const directionStyle = css`
 
 const elevationStyle = css`
   box-shadow: ${props =>
-    props.theme.global.elevation[props.grommet.dark ? 'dark' : 'light'][props.elevationProp]};
+    props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][props.elevationProp]};
 `;
 
 const FLEX_MAP = {

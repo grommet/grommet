@@ -70,7 +70,7 @@ colorArray(darkColors, 'dark');
 colorArray(lightColors, 'light');
 colorArray(neutralColors, 'neutral');
 Object.keys(statusColors).forEach((color) => {
-  colors[`status-${color}`] = color;
+  colors[`status-${color}`] = statusColors[color];
 });
 
 const workSansPath = 'https://fonts.gstatic.com/s/worksans/v2';
