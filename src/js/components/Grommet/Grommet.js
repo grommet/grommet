@@ -16,7 +16,7 @@ class Grommet extends Component {
     const { theme: stateTheme, themeProp, iconThemeProp } = prevState;
 
     let nextTheme;
-    if (theme && theme !== themeProp && iconTheme !== iconThemeProp) {
+    if (theme && (theme !== themeProp || iconTheme !== iconThemeProp)) {
       nextTheme = deepMerge(baseTheme, theme);
     } else if (!theme && (themeProp || !stateTheme)) {
       nextTheme = baseTheme;
