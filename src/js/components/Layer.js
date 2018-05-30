@@ -69,6 +69,10 @@ class LayerContents extends Component {
       KeyboardAccelerators.stopListeningToKeyboard(
         this, this._keyboardHandlers
       );
+    } else {
+      KeyboardAccelerators.startListeningToKeyboard(
+        this, this._keyboardHandlers
+      );
     };
   }
 
