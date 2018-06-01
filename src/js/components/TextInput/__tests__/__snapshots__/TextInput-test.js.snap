@@ -6,7 +6,7 @@ exports[`TextInput basic 1`] = `
 >
   <input
     autocomplete="off"
-    class="StyledTextInput-bzOzsW kZINoq"
+    class="StyledTextInput-bzOzsW cowQZI"
     name="item"
     value=""
   />
@@ -22,7 +22,7 @@ exports[`TextInput close suggestion drop 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW kZINoq"
+      class="StyledTextInput-bzOzsW cowQZI"
       data-testid="test-input"
       id="item"
       name="item"
@@ -130,7 +130,7 @@ exports[`TextInput close suggestion drop 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW kZINoq"
+      class="StyledTextInput-bzOzsW cowQZI"
       data-testid="test-input"
       id="item"
       name="item"
@@ -149,7 +149,7 @@ exports[`TextInput complex suggestions 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW kZINoq"
+      class="StyledTextInput-bzOzsW cowQZI"
       data-testid="test-input"
       id="item"
       name="item"
@@ -257,7 +257,7 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW kZINoq"
+      class="StyledTextInput-bzOzsW cowQZI"
       data-testid="test-input"
       id="item"
       name="item"
@@ -276,7 +276,7 @@ exports[`TextInput handles next and previous without suggestion 2`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW kZINoq"
+      class="StyledTextInput-bzOzsW cowQZI"
       data-testid="test-input"
       id="item"
       name="item"
@@ -295,7 +295,7 @@ exports[`TextInput next and previous suggestions 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW kZINoq"
+      class="StyledTextInput-bzOzsW cowQZI"
       data-testid="test-input"
       id="item"
       name="item"
@@ -314,7 +314,7 @@ exports[`TextInput select a suggestion 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW kZINoq"
+      class="StyledTextInput-bzOzsW cowQZI"
       data-testid="test-input"
       id="item"
       name="item"
@@ -333,7 +333,7 @@ exports[`TextInput select suggestion 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW dGDNWv"
+      class="StyledTextInput-bzOzsW chYNBg"
       data-testid="test-input"
       id="item"
       name="item"
@@ -441,7 +441,7 @@ exports[`TextInput select suggestion 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW dGDNWv"
+      class="StyledTextInput-bzOzsW chYNBg"
       data-testid="test-input"
       id="item"
       name="item"
@@ -457,7 +457,7 @@ exports[`TextInput suggestions 1`] = `
 >
   <input
     autocomplete="off"
-    class="StyledTextInput-bzOzsW kZINoq"
+    class="StyledTextInput-bzOzsW cowQZI"
     data-testid="test-input"
     id="item"
     name="item"

@@ -126,6 +126,7 @@ exports[`Select basic 1`] = `
   font-weight: 600;
   margin: 0;
   width: 100%;
+  -webkit-appearance: textfield;
   border: none;
   -webkit-appearance: none;
 }
@@ -287,7 +288,7 @@ exports[`Select complex options and children 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -342,7 +343,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -561,7 +562,7 @@ exports[`Select deselect an option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -618,7 +619,7 @@ exports[`Select disabled 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -674,7 +675,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -836,6 +837,7 @@ exports[`Select multiple 1`] = `
   font-weight: 600;
   margin: 0;
   width: 100%;
+  -webkit-appearance: textfield;
   border: none;
   -webkit-appearance: none;
 }
@@ -1002,7 +1004,7 @@ exports[`Select multiple values 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -1058,7 +1060,7 @@ exports[`Select multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -1328,7 +1330,7 @@ exports[`Select opens 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1383,7 +1385,7 @@ exports[`Select opens 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1653,7 +1655,7 @@ exports[`Select search 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1708,7 +1710,7 @@ exports[`Select search 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-bzOzsW hjbdek"
+          class="StyledTextInput-bzOzsW gvXSaz"
           type="search"
           value=""
         />
@@ -1910,7 +1912,7 @@ exports[`Select select an option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -2009,7 +2011,7 @@ exports[`Select select an option with enter 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -2064,7 +2066,7 @@ exports[`Select select another option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW enFJba"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -2229,6 +2231,7 @@ exports[`Select size 1`] = `
   font-weight: 600;
   margin: 0;
   width: 100%;
+  -webkit-appearance: textfield;
   font-size: 24px;
   line-height: 1.167;
   border: none;
