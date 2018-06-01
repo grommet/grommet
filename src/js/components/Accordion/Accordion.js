@@ -39,15 +39,8 @@ class Accordion extends Component {
     return null;
   }
 
-  state = {}
-
-  constructor(props, context) {
-    super(props, context);
-
-    const { activeIndex } = props;
-    this.state = {
-      activeIndexes: activeAsArray(activeIndex) || [],
-    };
+  state = {
+    activeIndexes: [],
   }
 
   onPanelChange = (index) => {
