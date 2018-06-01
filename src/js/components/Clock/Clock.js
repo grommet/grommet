@@ -54,10 +54,22 @@ class Clock extends Component {
     type: 'analog',
   }
 
-  constructor(props) {
-    super(props);
-    this.state = { elements: parseTime(props.time, props.hourLimit) };
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { hourLimit, time } = nextProps;
+    const { elements } = prevState;
+    if (!elements || time) {
+      const nextElements = parseTime(time, hourLimit);
+      if (!elements) {
+        return { elements: nextElements };
+      }
+      if (Object.keys(nextElements).some(k => elements[k] !== nextElements[k])) {
+        return { elements: nextElements };
+      }
+    }
+    return null;
   }
+
+  state = {};
 
   componentDidMount() {
     if (this.props.run) {
@@ -65,9 +77,12 @@ class Clock extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.run) {
+  componentDidUpdate(prevProps) {
+    const { run } = this.props;
+    if (run && !prevProps.run) {
       this.run();
+    } else if (!run && prevProps.run) {
+      clearInterval(this.timer);
     }
   }
 

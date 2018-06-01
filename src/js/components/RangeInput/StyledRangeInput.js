@@ -8,7 +8,7 @@ const rangeTrackStyle = css`
   height: ${props => props.theme.global.focus.border.width};
   background-color: ${
     props => (
-      props.grommet.dark ? (
+      props.theme.dark ? (
         props.theme.global.colors.white
       ) : (
         props.theme.rangeInput.track.color
@@ -20,12 +20,12 @@ const rangeTrackStyle = css`
 const rangeThumbStyle = css`
   box-sizing: border-box;
   position: relative;
-  border: ${props => props.theme.global.control.border.width} solid ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.global.colors.brand)};
+  border: ${props => props.theme.global.control.border.width} solid ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.global.colors.brand)};
   border-radius: ${props => props.theme.global.spacing};
   height: ${props => props.theme.global.spacing};
   width: ${props => props.theme.global.spacing};
   overflow: visible;
-  background-color: ${props => (props.grommet.dark ? props.theme.global.colors.black : props.theme.global.colors.white)};
+  background-color: ${props => (props.theme.dark ? props.theme.global.colors.black : props.theme.global.colors.white)};
   -webkit-appearance: none;
   cursor: pointer;
 `;
@@ -72,7 +72,7 @@ const StyledRangeInput = styled.input`
 
     ${props => !props.disabled && css`
       &:hover {
-        border-color: ${props.grommet.dark ? props.theme.global.colors.white : props.theme.global.hover.textColor};
+        border-color: ${props.theme.dark ? props.theme.global.colors.white : props.theme.global.hover.textColor};
       }
     `}
   }
@@ -91,11 +91,11 @@ const StyledRangeInput = styled.input`
 
   ${props => !props.disabled && css`
     &:hover::-moz-range-thumb {
-      border-color: ${props.grommet.dark ? props.theme.global.colors.white : props.theme.global.hover.textColor};
+      border-color: ${props.theme.dark ? props.theme.global.colors.white : props.theme.global.hover.textColor};
     }
 
     &:hover::-ms-thumb {
-      border-color: ${props.grommet.dark ? props.theme.global.colors.white : props.theme.global.hover.textColor};
+      border-color: ${props.theme.dark ? props.theme.global.colors.white : props.theme.global.hover.textColor};
     }
   `}
 
@@ -106,12 +106,12 @@ const StyledRangeInput = styled.input`
   }
 
   &::-ms-fill-lower {
-    background: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.rangeInput.track.color)};
+    background: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.rangeInput.track.color)};
     border-color: transparent;
   }
 
   &::-ms-fill-upper {
-    background: ${props => (props.grommet.dark ? props.theme.global.colors.white : props.theme.rangeInput.track.color)};
+    background: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.rangeInput.track.color)};
     border-color: transparent;
   }
 

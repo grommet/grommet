@@ -38,8 +38,6 @@ exports[`Carousel basic 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #666666;
-  stroke: #666666;
   fill: #865CD6;
   stroke: #865CD6;
 }
@@ -446,7 +444,6 @@ exports[`Carousel basic 1`] = `
     onKeyDown={[Function]}
   >
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -455,7 +452,6 @@ exports[`Carousel basic 1`] = `
       }
     >
       <div
-        aria-label={undefined}
         className="c3"
       >
         <img
@@ -465,7 +461,6 @@ exports[`Carousel basic 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c2"
       style={
         Object {
@@ -479,7 +474,6 @@ exports[`Carousel basic 1`] = `
       }
     >
       <div
-        aria-label={undefined}
         className="c4"
       >
         <img
@@ -489,7 +483,6 @@ exports[`Carousel basic 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c5"
       style={
         Object {
@@ -504,23 +497,16 @@ exports[`Carousel basic 1`] = `
       tabIndex="0"
     >
       <div
-        aria-label={undefined}
         className="c6"
       >
         <button
-          aria-label={undefined}
           className="c7"
           disabled={true}
-          href={undefined}
-          icon={undefined}
-          label={undefined}
           onBlur={[Function]}
-          onClick={undefined}
           onFocus={[Function]}
           type="button"
         >
           <div
-            aria-label={undefined}
             className="c8"
           >
             <svg
@@ -544,24 +530,19 @@ exports[`Carousel basic 1`] = `
         </button>
       </div>
       <div
-        aria-label={undefined}
         className="c10"
       >
         <div
-          aria-label={undefined}
           className="c11"
         >
           <button
-            aria-label={undefined}
             className="c12"
             disabled={false}
-            href={undefined}
             icon={
               <Subtract
                 color="brand"
               />
             }
-            label={undefined}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -591,16 +572,9 @@ exports[`Carousel basic 1`] = `
             </span>
           </button>
           <button
-            aria-label={undefined}
             className="c12"
             disabled={false}
-            href={undefined}
-            icon={
-              <Subtract
-                color={undefined}
-              />
-            }
-            label={undefined}
+            icon={<Subtract />}
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -613,7 +587,6 @@ exports[`Carousel basic 1`] = `
               <svg
                 aria-label="Subtract"
                 className="c9"
-                color={undefined}
                 height="24px"
                 role="img"
                 version="1.1"
@@ -632,23 +605,17 @@ exports[`Carousel basic 1`] = `
         </div>
       </div>
       <div
-        aria-label={undefined}
         className="c6"
       >
         <button
-          aria-label={undefined}
           className="c15"
           disabled={false}
-          href={undefined}
-          icon={undefined}
-          label={undefined}
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
           type="button"
         >
           <div
-            aria-label={undefined}
             className="c8"
           >
             <svg
@@ -727,7 +694,7 @@ exports[`Carousel navigate 1`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-gTfjEw iIdMpR"
+              class="StyledIcon-gTfjEw htxeRg"
               height="24px"
               role="img"
               version="1.1"
@@ -762,7 +729,7 @@ exports[`Carousel navigate 1`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-gTfjEw cbaxjc"
+                class="StyledIcon-gTfjEw FYCct"
                 color="brand"
                 height="24px"
                 role="img"
@@ -790,7 +757,7 @@ exports[`Carousel navigate 1`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-gTfjEw iIdMpR"
+                class="StyledIcon-gTfjEw htxeRg"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -820,7 +787,7 @@ exports[`Carousel navigate 1`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-gTfjEw iIdMpR"
+              class="StyledIcon-gTfjEw htxeRg"
               height="24px"
               role="img"
               version="1.1"
@@ -893,7 +860,7 @@ exports[`Carousel navigate 2`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-gTfjEw iIdMpR"
+              class="StyledIcon-gTfjEw htxeRg"
               height="24px"
               role="img"
               version="1.1"
@@ -928,7 +895,7 @@ exports[`Carousel navigate 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-gTfjEw iIdMpR"
+                class="StyledIcon-gTfjEw htxeRg"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -955,7 +922,7 @@ exports[`Carousel navigate 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-gTfjEw cbaxjc"
+                class="StyledIcon-gTfjEw FYCct"
                 color="brand"
                 height="24px"
                 role="img"
@@ -987,7 +954,7 @@ exports[`Carousel navigate 2`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-gTfjEw iIdMpR"
+              class="StyledIcon-gTfjEw htxeRg"
               height="24px"
               role="img"
               version="1.1"
@@ -1061,7 +1028,7 @@ exports[`Carousel navigate 3`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-gTfjEw iIdMpR"
+              class="StyledIcon-gTfjEw htxeRg"
               height="24px"
               role="img"
               version="1.1"
@@ -1096,7 +1063,7 @@ exports[`Carousel navigate 3`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-gTfjEw cbaxjc"
+                class="StyledIcon-gTfjEw FYCct"
                 color="brand"
                 height="24px"
                 role="img"
@@ -1124,7 +1091,7 @@ exports[`Carousel navigate 3`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-gTfjEw iIdMpR"
+                class="StyledIcon-gTfjEw htxeRg"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1154,7 +1121,7 @@ exports[`Carousel navigate 3`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-gTfjEw iIdMpR"
+              class="StyledIcon-gTfjEw htxeRg"
               height="24px"
               role="img"
               version="1.1"
@@ -1227,7 +1194,7 @@ exports[`Carousel play 1`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-gTfjEw iIdMpR"
+              class="StyledIcon-gTfjEw htxeRg"
               height="24px"
               role="img"
               version="1.1"
@@ -1262,7 +1229,7 @@ exports[`Carousel play 1`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-gTfjEw cbaxjc"
+                class="StyledIcon-gTfjEw FYCct"
                 color="brand"
                 height="24px"
                 role="img"
@@ -1290,7 +1257,7 @@ exports[`Carousel play 1`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-gTfjEw iIdMpR"
+                class="StyledIcon-gTfjEw htxeRg"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1320,7 +1287,7 @@ exports[`Carousel play 1`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-gTfjEw iIdMpR"
+              class="StyledIcon-gTfjEw htxeRg"
               height="24px"
               role="img"
               version="1.1"
@@ -1392,7 +1359,7 @@ exports[`Carousel play 2`] = `
           >
             <svg
               aria-label="Previous"
-              class="StyledIcon-gTfjEw iIdMpR"
+              class="StyledIcon-gTfjEw htxeRg"
               height="24px"
               role="img"
               version="1.1"
@@ -1427,7 +1394,7 @@ exports[`Carousel play 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-gTfjEw iIdMpR"
+                class="StyledIcon-gTfjEw htxeRg"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1454,7 +1421,7 @@ exports[`Carousel play 2`] = `
             >
               <svg
                 aria-label="Subtract"
-                class="StyledIcon-gTfjEw cbaxjc"
+                class="StyledIcon-gTfjEw FYCct"
                 color="brand"
                 height="24px"
                 role="img"
@@ -1486,7 +1453,7 @@ exports[`Carousel play 2`] = `
           >
             <svg
               aria-label="Next"
-              class="StyledIcon-gTfjEw iIdMpR"
+              class="StyledIcon-gTfjEw htxeRg"
               height="24px"
               role="img"
               version="1.1"

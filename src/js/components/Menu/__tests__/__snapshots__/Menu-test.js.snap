@@ -80,22 +80,17 @@ exports[`Menu basic 1`] = `
     aria-label="Open Menu"
     className="c0"
     disabled={false}
-    href={undefined}
-    icon={undefined}
     id="test-menu"
-    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
     type="button"
   >
     <div
-      aria-label={undefined}
       className="c1"
     >
       <span
         className="c2"
-        size={undefined}
       >
         Test Menu
       </span>
@@ -521,22 +516,16 @@ exports[`Menu custom message 1`] = `
     aria-label="Abrir Menu"
     className="c0"
     disabled={false}
-    href={undefined}
-    icon={undefined}
-    id={undefined}
-    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
     type="button"
   >
     <div
-      aria-label={undefined}
       className="c1"
     >
       <span
         className="c2"
-        size={undefined}
       >
         Test Menu
       </span>
@@ -549,7 +538,6 @@ exports[`Menu custom message 1`] = `
         color="brand"
         height="24px"
         role="img"
-        size={undefined}
         version="1.1"
         viewBox="0 0 24 24"
         width="24px"

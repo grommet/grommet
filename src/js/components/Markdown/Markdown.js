@@ -19,13 +19,13 @@ class GrommetMarkdown extends Component {
         const result = { ...obj };
         result[`h${level}`] = {
           component: Heading,
-          props: { level, theme },
+          props: { level },
         };
         return result;
       }, {});
 
     const overrides = deepMerge({
-      p: { component: Paragraph, props: { theme } },
+      p: { component: Paragraph },
     }, heading, components);
 
     return (

@@ -1,9 +1,9 @@
 import React, { Children, Component } from 'react';
-import PropTypes from 'prop-types';
 import { compose } from 'recompose';
+import { ThemeContext as IconThemeContext } from 'grommet-icons';
 
+import ThemeContext from '../../contexts/ThemeContext';
 import { colorForName, colorIsDark } from '../../utils';
-
 import { withForwardRef, withTheme } from '../hocs';
 
 import StyledBox, { StyledBoxGap } from './StyledBox';
@@ -15,14 +15,6 @@ const styledComponents = {
 }; // tag -> styled component
 
 class Box extends Component {
-  static contextTypes = {
-    grommet: PropTypes.object,
-  }
-
-  static childContextTypes = {
-    grommet: PropTypes.object,
-  }
-
   static defaultProps = {
     direction: 'column',
     margin: 'none',
@@ -31,11 +23,13 @@ class Box extends Component {
     tag: 'div',
   };
 
-  getChildContext() {
-    const { grommet } = this.context;
-    const { background, theme } = this.props;
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { background, theme } = nextProps;
+    const { theme: stateTheme } = prevState;
+
+    let dark = theme.dark;
     if (background) {
-      let dark = false;
+      dark = false;
       if (typeof background === 'object') {
         dark = background.dark;
       } else {
@@ -44,12 +38,23 @@ class Box extends Component {
           dark = colorIsDark(color);
         }
       }
-      return {
-        grommet: { ...grommet, dark },
-      };
     }
-    return {};
+
+    if (dark !== theme.dark && (!stateTheme || dark !== stateTheme.dark)) {
+      return {
+        theme: {
+          ...theme,
+          dark,
+          icon: dark ? theme.iconThemes.dark : theme.iconThemes.light,
+        },
+      };
+    } else if (dark === theme.dark && stateTheme) {
+      return { theme: undefined };
+    }
+    return null;
   }
+
+  state = {}
 
   render() {
     const {
@@ -63,11 +68,12 @@ class Box extends Component {
       overflow, // munged to avoid styled-components putting it in the DOM
       responsive,
       tag,
-      theme,
+      theme: propsTheme,
       wrap, // munged to avoid styled-components putting it in the DOM
       ...rest
     } = this.props;
-    const { grommet } = this.context;
+    const { theme: stateTheme } = this.state;
+    const theme = stateTheme || propsTheme;
 
     let StyledComponent = styledComponents[tag];
     if (!StyledComponent) {
@@ -99,7 +105,7 @@ class Box extends Component {
       });
     }
 
-    return (
+    let content = (
       <StyledComponent
         aria-label={a11yTitle}
         innerRef={forwardRef}
@@ -110,12 +116,28 @@ class Box extends Component {
         wrapProp={wrap}
         responsive={responsive}
         theme={theme}
-        grommet={grommet}
         {...rest}
       >
         {contents}
       </StyledComponent>
     );
+
+    if (stateTheme) {
+      if (stateTheme.dark !== propsTheme.dark) {
+        content = (
+          <IconThemeContext.Provider value={stateTheme.icon}>
+            {content}
+          </IconThemeContext.Provider>
+        );
+      }
+      content = (
+        <ThemeContext.Provider value={stateTheme}>
+          {content}
+        </ThemeContext.Provider>
+      );
+    }
+
+    return content;
   }
 }
 

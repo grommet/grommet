@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Text } from '../Text';
 
-import { withTheme } from '../hocs';
+import { withForwardRef, withTheme } from '../hocs';
+import { colorForName } from '../../utils';
 
 class Tab extends Component {
-  static contextTypes = {
-    grommet: PropTypes.object,
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { active } = nextProps;
+    const { over } = prevState;
+    if (active && over) {
+      return { over: undefined };
+    }
+    return null;
   }
 
-  state = {
-    hover: undefined,
+  state = {}
+
+  onMouseOver = (event) => {
+    const { onMouseOver } = this.props;
+    this.setState({ over: true });
+    if (onMouseOver) {
+      onMouseOver(event);
+    }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.active !== nextProps.active && nextProps.active) {
-      this.setState({ hover: undefined });
+  onMouseOut = (event) => {
+    const { onMouseOut } = this.props;
+    this.setState({ over: undefined });
+    if (onMouseOut) {
+      onMouseOut(event);
     }
   }
 
@@ -32,55 +45,52 @@ class Tab extends Component {
   }
 
   render() {
-    const { active, title, onMouseOver, onMouseOut, ...rest } = this.props;
-    const { hover } = this.state;
-    const { grommet } = this.context;
+    const {
+      active, forwardRef, title, onMouseOver, onMouseOut, theme, ...rest
+    } = this.props;
+    const { over } = this.state;
 
     delete rest.onActivate;
 
-    const dark = grommet && grommet.dark;
+    let normalizedTitle;
+    if (typeof title !== 'string') {
+      normalizedTitle = title;
+    } else if (active) {
+      normalizedTitle = <Text weight='bold'>{title}</Text>;
+    } else {
+      const color = theme.dark ?
+        theme.global.colors.darkBackground.text :
+        theme.global.colors.lightBackground.text;
+      normalizedTitle = <Text color={color}>{title}</Text>;
+    }
 
-    const activeTitle = typeof title === 'string' ? (
-      <Text weight='bold'>{title}</Text>
-    ) : title;
-
-    const inactiveTitle = typeof title === 'string' ? (
-      <Text color={dark ? 'light-2' : 'dark-4'}>{title}</Text>
-    ) : title;
+    let borderColor;
+    if (active) {
+      borderColor = theme.dark ? 'white' : 'black';
+    } else if (over) {
+      borderColor = colorForName('border', theme);
+    } else {
+      borderColor = 'transparent';
+    }
 
     return (
       <Button
+        ref={forwardRef}
         plain={true}
         role='tab'
         aria-selected={active}
         aria-expanded={active}
-        onClick={this.onClickTab}
-        onMouseOver={(...args) => {
-          if (!active) {
-            this.setState({ hover: dark ? 'light-4' : 'border' });
-          }
-          if (onMouseOver) {
-            onMouseOver(args);
-          }
-        }}
-        onMouseOut={(...args) => {
-          if (!active) {
-            this.setState({ hover: undefined });
-          }
-          if (onMouseOut) {
-            onMouseOut(args);
-          }
-        }}
         {...rest}
+        onClick={this.onClickTab}
+        onMouseOver={this.onMouseOver}
+        onMouseOut={this.onMouseOut}
       >
         <Box
           pad={{ bottom: 'xsmall' }}
           margin={{ horizontal: 'small' }}
-          border={(active || hover) ? (
-            { side: 'bottom', size: 'medium', color: hover || (dark ? 'white' : 'black') }
-          ) : { side: 'bottom', size: 'medium', color: 'transparent' }}
+          border={{ side: 'bottom', size: 'medium', color: borderColor }}
         >
-          {active ? activeTitle : inactiveTitle}
+          {normalizedTitle}
         </Box>
       </Button>
     );
@@ -89,4 +99,5 @@ class Tab extends Component {
 
 export default compose(
   withTheme,
+  withForwardRef,
 )(Tab);

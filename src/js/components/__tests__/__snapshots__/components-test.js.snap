@@ -140,10 +140,7 @@ Object {
   "TableFooter": [Function],
   "TableHeader": [Function],
   "TableRow": [Function],
-  "Tabs": Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "render": [Function],
-  },
+  "Tabs": [Function],
   "Text": Object {
     "$$typeof": Symbol(react.forward_ref),
     "render": [Function],

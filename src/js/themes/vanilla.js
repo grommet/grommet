@@ -37,6 +37,42 @@ const textColor = '#444444';
 const borderColor = 'rgba(0, 0, 0, 0.33)';
 const focusColor = accentColors[0];
 const activeColor = rgba('#DDDDDD', 0.5);
+
+const colors = {
+  active: activeColor,
+  accent: accentColors, // deprecated
+  black: '#000000',
+  border: borderColor,
+  brand: brandColor,
+  dark: darkColors, // deprecated
+  darkBackground: {
+    text: '#FFFFFF',
+  },
+  focus: focusColor,
+  light: lightColors, // deprecated
+  lightBackground: {
+    text: textColor,
+  },
+  neutral: neutralColors, // deprecated
+  placeholder: '#AAAAAA',
+  status: statusColors, // deprecated
+  text: textColor,
+  white: '#FFFFFF',
+};
+
+const colorArray = (array, prefix) =>
+  array.forEach((color, index) => {
+    colors[`${prefix}-${index + 1}`] = color;
+  });
+
+colorArray(accentColors, 'accent');
+colorArray(darkColors, 'dark');
+colorArray(lightColors, 'light');
+colorArray(neutralColors, 'neutral');
+Object.keys(statusColors).forEach((color) => {
+  colors[`status-${color}`] = statusColors[color];
+});
+
 const workSansPath = 'https://fonts.gstatic.com/s/worksans/v2';
 const zillaSlabPath = 'https://fonts.gstatic.com/s/zillaslab/v3';
 
@@ -69,27 +105,7 @@ export default deepFreeze({
     breakpoints: {
       narrow: 699,
     },
-    colors: {
-      active: activeColor,
-      accent: accentColors,
-      black: '#000000',
-      border: borderColor,
-      brand: brandColor,
-      dark: darkColors,
-      darkBackground: {
-        text: '#FFFFFF',
-      },
-      focus: focusColor,
-      light: lightColors,
-      lightBackground: {
-        text: textColor,
-      },
-      neutral: neutralColors,
-      placeholder: '#AAAAAA',
-      status: statusColors,
-      text: textColor,
-      white: '#FFFFFF',
-    },
+    colors,
     control: {
       border: {
         width: '2px',
@@ -411,17 +427,7 @@ export default deepFreeze({
     weight: 600,
   },
   icon: {
-    extend: css`
-      ${props => props.color && props.color !== 'plain' && `
-        fill: ${colorForName(props.color, props.theme)};
-        stroke: ${colorForName(props.color, props.theme)};
-      `}
-
-      ${props => props.dark && `
-        fill: ${props.theme.global.colors.darkBackground.text};
-        stroke: ${props.theme.global.colors.darkBackground.text};
-      `}
-    `,
+    colors,
   },
   layer: {
     backgroundColor,

@@ -100,18 +100,18 @@ const renderArea = (values, bounds, scale, height, { color, onClick, onHover, th
   );
 };
 
-const normalizeBounds = (props) => {
-  let bounds = props.bounds;
-  if (!bounds) {
-    bounds = [[0, 1], [0, 1]];
-    (props.values || []).forEach((value) => {
-      bounds[0][0] = Math.min(bounds[0][0], value.value[0]);
-      bounds[0][1] = Math.max(bounds[0][1], value.value[0]);
-      bounds[1][0] = Math.min(bounds[1][0], value.value[1]);
-      bounds[1][1] = Math.max(bounds[1][1], value.value[1]);
+const normalizeBounds = (bounds, values) => {
+  let result = bounds;
+  if (!result) {
+    result = [[0, 1], [0, 1]];
+    (values || []).forEach((value) => {
+      result[0][0] = Math.min(result[0][0], value.value[0]);
+      result[0][1] = Math.max(result[0][1], value.value[0]);
+      result[1][0] = Math.min(result[1][0], value.value[1]);
+      result[1][1] = Math.max(result[1][1], value.value[1]);
     });
   }
-  return bounds;
+  return result;
 };
 
 class Chart extends Component {
@@ -122,18 +122,25 @@ class Chart extends Component {
     type: 'bar',
   };
 
-  constructor(props, context) {
-    super(props, context);
-    this.state = { bounds: normalizeBounds(props), containerWidth: 0, containerHeight: 0 };
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { bounds, values } = nextProps;
+    const { bounds: stateBounds } = prevState;
+    const nextBounds = normalizeBounds(bounds, values);
+    if (!stateBounds ||
+      nextBounds[0][0] !== stateBounds[0][0] ||
+      nextBounds[0][1] !== stateBounds[0][1] ||
+      nextBounds[1][0] !== stateBounds[1][0] ||
+      nextBounds[1][1] !== stateBounds[1][1]) {
+      return { bounds: nextBounds };
+    }
+    return null;
   }
+
+  state = { containerWidth: 0, containerHeight: 0 }
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize);
     this.onResize();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({ bounds: normalizeBounds(nextProps) });
   }
 
   componentWillUnmount() {

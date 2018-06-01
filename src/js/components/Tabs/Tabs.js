@@ -1,9 +1,6 @@
 import React, { cloneElement, Children, Component } from 'react';
-import { compose } from 'recompose';
 
 import { Box } from '../Box';
-
-import { withTheme } from '../hocs';
 
 import doc from './doc';
 
@@ -18,27 +15,24 @@ class Tabs extends Component {
     responsive: true,
   }
 
-  constructor(props, context) {
-    super(props, context);
-
-    this.state = {
-      activeIndex: props.activeIndex,
-    };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.activeIndex === (nextProps.activeIndex || 0) &&
-      this.state.activeIndex !== nextProps.activeIndex) {
-      this.setState({ activeIndex: nextProps.activeIndex });
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { activeIndex } = nextProps;
+    const { activeIndex: stateActiveIndex } = prevState;
+    if (stateActiveIndex !== activeIndex && activeIndex !== undefined) {
+      return { activeIndex };
     }
+    return null;
   }
+
+  state = {}
 
   activateTab = (index) => {
-    if (!this.props.activeIndex) {
+    const { activeIndex, onActive } = this.props;
+    if (!activeIndex) {
       this.setState({ activeIndex: index });
     }
-    if (this.props.onActive) {
-      this.props.onActive(index);
+    if (onActive) {
+      onActive(index);
     }
   }
 
@@ -69,9 +63,7 @@ class Tabs extends Component {
 
       return cloneElement(tab, {
         active: isTabActive,
-        onActivate: () => {
-          this.activateTab(index);
-        },
+        onActivate: () => this.activateTab(index),
       });
     }, this);
 
@@ -83,7 +75,6 @@ class Tabs extends Component {
           border='bottom'
           direction='row'
           justify={justify}
-          margin={{ vertical: 'small' }}
           {...rest}
         >
           {tabs}
@@ -100,6 +91,4 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Tabs);
 }
 
-export default compose(
-  withTheme,
-)(Tabs);
+export default Tabs;

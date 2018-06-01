@@ -209,10 +209,7 @@ exports[`Select basic 1`] = `
   aria-label="undefined"
   className="c0"
   disabled={false}
-  href={undefined}
-  icon={undefined}
   id="test-select"
-  label={undefined}
   onBlur={[Function]}
   onClick={[Function]}
   onFocus={[Function]}
@@ -220,11 +217,9 @@ exports[`Select basic 1`] = `
   type="button"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
-      aria-label={undefined}
       className="c2"
     >
       <div
@@ -233,22 +228,17 @@ exports[`Select basic 1`] = `
         <input
           autoComplete="off"
           className="c4 c5"
-          defaultValue={undefined}
           id="test-select"
           onFocus={[Function]}
           onInput={[Function]}
           onKeyDown={[Function]}
-          placeholder={undefined}
           readOnly={true}
-          size={undefined}
           tabIndex="-1"
           type="text"
-          value={undefined}
         />
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
       style={
         Object {
@@ -262,7 +252,6 @@ exports[`Select basic 1`] = `
         color="brand"
         height="24px"
         role="img"
-        size={undefined}
         version="1.1"
         viewBox="0 0 24 24"
         width="24px"
@@ -930,10 +919,7 @@ exports[`Select multiple 1`] = `
   aria-label="undefined"
   className="c0"
   disabled={false}
-  href={undefined}
-  icon={undefined}
   id="test-select"
-  label={undefined}
   multiple={true}
   onBlur={[Function]}
   onClick={[Function]}
@@ -943,11 +929,9 @@ exports[`Select multiple 1`] = `
   type="button"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
-      aria-label={undefined}
       className="c2"
     >
       <div
@@ -956,16 +940,13 @@ exports[`Select multiple 1`] = `
         <input
           autoComplete="off"
           className="c4 c5"
-          defaultValue={undefined}
           id="test-select"
           multiple={true}
           onFocus={[Function]}
           onInput={[Function]}
           onKeyDown={[Function]}
-          placeholder={undefined}
           readOnly={true}
           selected={Array []}
-          size={undefined}
           tabIndex="-1"
           type="text"
           value=""
@@ -973,7 +954,6 @@ exports[`Select multiple 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
       style={
         Object {
@@ -987,7 +967,6 @@ exports[`Select multiple 1`] = `
         color="brand"
         height="24px"
         role="img"
-        size={undefined}
         version="1.1"
         viewBox="0 0 24 24"
         width="24px"
@@ -2335,10 +2314,7 @@ exports[`Select size 1`] = `
   aria-label="undefined"
   className="c0"
   disabled={false}
-  href={undefined}
-  icon={undefined}
   id="test-select"
-  label={undefined}
   onBlur={[Function]}
   onClick={[Function]}
   onFocus={[Function]}
@@ -2347,11 +2323,9 @@ exports[`Select size 1`] = `
   type="button"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
-      aria-label={undefined}
       className="c2"
     >
       <div
@@ -2360,12 +2334,10 @@ exports[`Select size 1`] = `
         <input
           autoComplete="off"
           className="c4 c5"
-          defaultValue={undefined}
           id="test-select"
           onFocus={[Function]}
           onInput={[Function]}
           onKeyDown={[Function]}
-          placeholder={undefined}
           readOnly={true}
           selected={Array []}
           size="large"
@@ -2376,7 +2348,6 @@ exports[`Select size 1`] = `
       </div>
     </div>
     <div
-      aria-label={undefined}
       className="c6"
       style={
         Object {

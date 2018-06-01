@@ -15,6 +15,9 @@ class LayerContainer extends Component {
     position: 'center',
   }
 
+  containerRef = React.createRef()
+  layerRef = React.createRef()
+
   componentDidMount() {
     const { position } = this.props;
     if (position !== 'hidden') {
@@ -22,14 +25,15 @@ class LayerContainer extends Component {
     }
   }
 
-  componentWillReceiveProps({ position }) {
-    if (this.props.position !== position && position !== 'hidden') {
+  componentDidUpdate(prevProps) {
+    const { position } = this.props;
+    if (prevProps.position !== position && position !== 'hidden') {
       this.makeLayerVisible();
     }
   }
 
   makeLayerVisible = () => {
-    const node = findDOMNode(this.layerRef || this.containerRef);
+    const node = findDOMNode(this.layerRef.current || this.containerRef.current);
     if (node && node.scrollIntoView) {
       node.scrollIntoView();
     }
@@ -55,7 +59,7 @@ class LayerContainer extends Component {
         theme={theme}
         position={position}
         plain={plain}
-        ref={(ref) => { this.containerRef = ref; }}
+        ref={this.containerRef}
       >
         {children}
       </StyledContainer>
@@ -69,7 +73,7 @@ class LayerContainer extends Component {
           position={position}
           theme={theme}
           tabIndex='-1'
-          ref={(ref) => { this.layerRef = ref; }}
+          ref={this.layerRef}
         >
           <StyledOverlay onClick={onClickOutside} theme={theme} />
           {content}

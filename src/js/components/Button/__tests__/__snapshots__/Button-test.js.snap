@@ -106,12 +106,9 @@ exports[`Button color renders 1`] = `
   className="c0"
 >
   <button
-    aria-label={undefined}
     className="c1"
     color="accent-1"
     disabled={false}
-    href={undefined}
-    icon={undefined}
     label="Test"
     onBlur={[Function]}
     onClick={[Function]}
@@ -125,12 +122,9 @@ exports[`Button color renders 1`] = `
     </span>
   </button>
   <button
-    aria-label={undefined}
     className="c3"
     color="accent-1"
     disabled={false}
-    href={undefined}
-    icon={undefined}
     label="Test"
     onBlur={[Function]}
     onClick={[Function]}
@@ -196,14 +190,9 @@ exports[`Button disabled renders 1`] = `
   className="c0"
 >
   <button
-    aria-label={undefined}
     className="c1"
     disabled={true}
-    href={undefined}
-    icon={undefined}
-    label={undefined}
     onBlur={[Function]}
-    onClick={undefined}
     onFocus={[Function]}
     type="button"
   />
@@ -274,11 +263,8 @@ exports[`Button focus renders 1`] = `
   className="c0"
 >
   <button
-    aria-label={undefined}
     className="c1"
     disabled={false}
-    href={undefined}
-    icon={undefined}
     label="Test"
     onBlur={[Function]}
     onClick={[Function]}
@@ -340,12 +326,8 @@ exports[`Button hoverIndicator as object renders 1`] = `
   className="c0"
 >
   <button
-    aria-label={undefined}
     className="c1"
     disabled={false}
-    href={undefined}
-    icon={undefined}
-    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -402,12 +384,8 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
   className="c0"
 >
   <button
-    aria-label={undefined}
     className="c1"
     disabled={false}
-    href={undefined}
-    icon={undefined}
-    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -464,12 +442,8 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
   className="c0"
 >
   <button
-    aria-label={undefined}
     className="c1"
     disabled={false}
-    href={undefined}
-    icon={undefined}
-    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -526,12 +500,8 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
   className="c0"
 >
   <button
-    aria-label={undefined}
     className="c1"
     disabled={false}
-    href={undefined}
-    icon={undefined}
-    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -588,12 +558,8 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
   className="c0"
 >
   <button
-    aria-label={undefined}
     className="c1"
     disabled={false}
-    href={undefined}
-    icon={undefined}
-    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -650,12 +616,8 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
   className="c0"
 >
   <button
-    aria-label={undefined}
     className="c1"
     disabled={false}
-    href={undefined}
-    icon={undefined}
-    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -712,12 +674,8 @@ exports[`Button hoverIndicator renders 1`] = `
   className="c0"
 >
   <button
-    aria-label={undefined}
     className="c1"
     disabled={false}
-    href={undefined}
-    icon={undefined}
-    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -787,16 +745,11 @@ exports[`Button href renders 1`] = `
   className="c0"
 >
   <a
-    aria-label={undefined}
     className="c1"
     disabled={false}
     href="test"
-    icon={undefined}
-    label={undefined}
     onBlur={[Function]}
-    onClick={undefined}
     onFocus={[Function]}
-    type={undefined}
   />
 </div>
 `;
@@ -876,10 +829,8 @@ exports[`Button icon label renders 1`] = `
   className="c0"
 >
   <button
-    aria-label={undefined}
     className="c1"
     disabled={false}
-    href={undefined}
     icon={<svg />}
     label="Test"
     onBlur={[Function]}
@@ -966,11 +917,8 @@ exports[`Button primary renders 1`] = `
   className="c0"
 >
   <button
-    aria-label={undefined}
     className="c1"
     disabled={false}
-    href={undefined}
-    icon={undefined}
     label="Test"
     onBlur={[Function]}
     onClick={[Function]}
@@ -1049,11 +997,8 @@ exports[`Button renders 1`] = `
   className="c0"
 >
   <button
-    aria-label={undefined}
     className="c1"
     disabled={false}
-    href={undefined}
-    icon={undefined}
     label="Test"
     onBlur={[Function]}
     onClick={[Function]}
@@ -1144,10 +1089,8 @@ exports[`Button reverse icon label renders 1`] = `
   className="c0"
 >
   <button
-    aria-label={undefined}
     className="c1"
     disabled={false}
-    href={undefined}
     icon={<svg />}
     label="Test"
     onBlur={[Function]}
@@ -1224,12 +1167,9 @@ exports[`Button warns about invalid icon render 1`] = `
   className="c0"
 >
   <button
-    aria-label={undefined}
     className="c1"
     disabled={false}
-    href={undefined}
     icon={<svg />}
-    label={undefined}
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
@@ -1290,11 +1230,8 @@ exports[`Button warns about invalid label render 1`] = `
   className="c0"
 >
   <button
-    aria-label={undefined}
     className="c1"
     disabled={false}
-    href={undefined}
-    icon={undefined}
     label="Test"
     onBlur={[Function]}
     onClick={[Function]}

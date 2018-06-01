@@ -54,7 +54,6 @@ exports[`Clock hourLimit 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -107,7 +106,6 @@ exports[`Clock hourLimit 1`] = `
     </div>
   </div>
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -178,6 +176,7 @@ exports[`Clock run 1`] = `
       class="StyledClock__StyledSecond-oRaEs gRmybh"
       stroke="#000000"
       stroke-linecap="round"
+      style="transform: rotate(204deg);"
       x1="48"
       x2="48"
       y1="48"
@@ -187,6 +186,7 @@ exports[`Clock run 1`] = `
       class="StyledClock__StyledMinute-bDjMrZ iBkQhd"
       stroke="#000000"
       stroke-linecap="round"
+      style="transform: rotate(138deg);"
       x1="48"
       x2="48"
       y1="48"
@@ -196,6 +196,7 @@ exports[`Clock run 1`] = `
       class="StyledClock__StyledHour-fpyVuK gXICkX"
       stroke="#000000"
       stroke-linecap="round"
+      style="transform: rotate(191.5deg);"
       x1="48"
       x2="48"
       y1="48"
@@ -214,6 +215,7 @@ exports[`Clock run 1`] = `
       class="StyledClock__StyledSecond-oRaEs gRmybh"
       stroke="#000000"
       stroke-linecap="round"
+      style="transform: rotate(204deg);"
       x1="48"
       x2="48"
       y1="48"
@@ -223,6 +225,7 @@ exports[`Clock run 1`] = `
       class="StyledClock__StyledMinute-bDjMrZ iBkQhd"
       stroke="#000000"
       stroke-linecap="round"
+      style="transform: rotate(138deg);"
       x1="48"
       x2="48"
       y1="48"
@@ -232,6 +235,7 @@ exports[`Clock run 1`] = `
       class="StyledClock__StyledHour-fpyVuK gXICkX"
       stroke="#000000"
       stroke-linecap="round"
+      style="transform: rotate(191.5deg);"
       x1="48"
       x2="48"
       y1="48"
@@ -345,6 +349,7 @@ exports[`Clock run 2`] = `
       class="StyledClock__StyledSecond-oRaEs gRmybh"
       stroke="#000000"
       stroke-linecap="round"
+      style="transform: rotate(204deg);"
       x1="48"
       x2="48"
       y1="48"
@@ -354,6 +359,7 @@ exports[`Clock run 2`] = `
       class="StyledClock__StyledMinute-bDjMrZ iBkQhd"
       stroke="#000000"
       stroke-linecap="round"
+      style="transform: rotate(138deg);"
       x1="48"
       x2="48"
       y1="48"
@@ -363,6 +369,7 @@ exports[`Clock run 2`] = `
       class="StyledClock__StyledHour-fpyVuK gXICkX"
       stroke="#000000"
       stroke-linecap="round"
+      style="transform: rotate(191.5deg);"
       x1="48"
       x2="48"
       y1="48"
@@ -381,6 +388,7 @@ exports[`Clock run 2`] = `
       class="StyledClock__StyledSecond-oRaEs gRmybh"
       stroke="#000000"
       stroke-linecap="round"
+      style="transform: rotate(204deg);"
       x1="48"
       x2="48"
       y1="48"
@@ -390,6 +398,7 @@ exports[`Clock run 2`] = `
       class="StyledClock__StyledMinute-bDjMrZ iBkQhd"
       stroke="#000000"
       stroke-linecap="round"
+      style="transform: rotate(138deg);"
       x1="48"
       x2="48"
       y1="48"
@@ -399,6 +408,7 @@ exports[`Clock run 2`] = `
       class="StyledClock__StyledHour-fpyVuK gXICkX"
       stroke="#000000"
       stroke-linecap="round"
+      style="transform: rotate(191.5deg);"
       x1="48"
       x2="48"
       y1="48"
@@ -446,18 +456,7 @@ exports[`Clock run 2`] = `
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
-      <div
-        class="StyledClock__StyledDigitalPrevious-eWaIAI iwxupl"
-        direction="up"
-      >
-        4
-      </div>
-      <div
-        class="StyledClock__StyledDigitalNext-kbpwaE dumeYI"
-        direction="up"
-      >
-        5
-      </div>
+      4
     </div>
   </div>
   <div
@@ -501,18 +500,7 @@ exports[`Clock run 2`] = `
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
     >
-      <div
-        class="StyledClock__StyledDigitalPrevious-eWaIAI bqriXc"
-        direction="down"
-      >
-        4
-      </div>
-      <div
-        class="StyledClock__StyledDigitalNext-kbpwaE dSUGUb"
-        direction="down"
-      >
-        3
-      </div>
+      4
     </div>
   </div>
 </div>
@@ -572,7 +560,6 @@ exports[`Clock time 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -625,7 +612,6 @@ exports[`Clock time 1`] = `
     </div>
   </div>
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -678,7 +664,6 @@ exports[`Clock time 1`] = `
     </div>
   </div>
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -731,7 +716,6 @@ exports[`Clock time 1`] = `
     </div>
   </div>
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -1995,7 +1979,6 @@ exports[`Clock type digital precision hours size large 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2068,7 +2051,6 @@ exports[`Clock type digital precision hours size medium 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2141,7 +2123,6 @@ exports[`Clock type digital precision hours size small 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2214,7 +2195,6 @@ exports[`Clock type digital precision hours size xlarge 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2287,7 +2267,6 @@ exports[`Clock type digital precision hours size xsmall 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2360,7 +2339,6 @@ exports[`Clock type digital precision minutes size large 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2451,7 +2429,6 @@ exports[`Clock type digital precision minutes size medium 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2542,7 +2519,6 @@ exports[`Clock type digital precision minutes size small 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2633,7 +2609,6 @@ exports[`Clock type digital precision minutes size xlarge 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2724,7 +2699,6 @@ exports[`Clock type digital precision minutes size xsmall 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2815,7 +2789,6 @@ exports[`Clock type digital precision seconds size large 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -2924,7 +2897,6 @@ exports[`Clock type digital precision seconds size medium 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -3033,7 +3005,6 @@ exports[`Clock type digital precision seconds size small 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -3142,7 +3113,6 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div
@@ -3251,7 +3221,6 @@ exports[`Clock type digital precision seconds size xsmall 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
   >
     <div

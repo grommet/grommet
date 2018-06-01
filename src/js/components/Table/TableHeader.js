@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
+import TableContext from './TableContext';
 import { StyledTableHeader } from './StyledTable';
 import { docTableHeader } from './doc';
 
 class TableHeader extends Component {
-  static childContextTypes = {
-    grommet: PropTypes.object,
-  }
-
-  getChildContext() {
-    const { grommet } = this.context;
-    return { grommet: { ...grommet, tableContext: 'header' } };
-  }
-
   render() {
-    return <StyledTableHeader {...this.props} />;
+    return (
+      <TableContext.Provider value='header'>
+        <StyledTableHeader {...this.props} />
+      </TableContext.Provider>
+    );
   }
 }
 

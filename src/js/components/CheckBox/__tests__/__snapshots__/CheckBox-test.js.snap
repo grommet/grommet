@@ -328,7 +328,6 @@ exports[`CheckBox disabled renders 1`] = `
       </div>
     </div>
     <input
-      name={undefined}
       type="hidden"
       value="true"
     />

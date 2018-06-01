@@ -30,7 +30,7 @@ const StyledDrop = styled.div`
 
   border-radius: ${props => props.theme.global.drop.border.radius};
   box-shadow: ${props =>
-    props.theme.global.drop.shadow[(props.grommet && props.grommet.dark) ? 'dark' : 'light']};
+    props.theme.global.drop.shadow[props.theme.dark ? 'dark' : 'light']};
   position: fixed;
   z-index: 20;
 
@@ -38,7 +38,7 @@ const StyledDrop = styled.div`
   outline: none;
 
   ${props => backgroundStyle(
-    props.theme.global.drop.backgroundColor[(props.grommet && props.grommet.dark) ? 'dark' : 'light'],
+    props.theme.global.drop.backgroundColor[props.theme.dark ? 'dark' : 'light'],
     props.theme
   )}
 

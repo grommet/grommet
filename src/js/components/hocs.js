@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
-import PropTypes from 'prop-types';
 import getDisplayName from 'recompose/getDisplayName';
+import { ThemeContext as IconThemeContext } from 'grommet-icons';
 
-import baseTheme from '../themes/vanilla';
+import AnnounceContext from '../contexts/AnnounceContext';
+import ThemeContext from '../contexts/ThemeContext';
 import { deepMerge } from '../utils';
 
 export const withFocus = (WrappedComponent) => {
@@ -19,10 +20,11 @@ export const withFocus = (WrappedComponent) => {
     }
 
     state = {
-      mouseActive: false,
       focus: false,
       wrappedRef: React.createRef(),
     }
+
+    mouseActive = false // not in state because it doesn't affect rendering
 
     componentDidMount = () => {
       const { wrappedRef } = this.state;
@@ -40,34 +42,28 @@ export const withFocus = (WrappedComponent) => {
 
     componentWillUnmount = () => {
       const { wrappedRef } = this.state;
-      if (this.mouseTimer) {
-        clearTimeout(this.mouseTimer);
-      }
       window.removeEventListener('mousedown', this.handleActiveMouse);
       const wrapperNode = findDOMNode(wrappedRef.current);
       if (wrapperNode && wrapperNode.addEventListener) {
         wrapperNode.removeEventListener('focus', this.setFocus);
       }
+      clearTimeout(this.mouseTimer);
     }
 
     handleActiveMouse = () => {
-      this.setState({ mouseActive: true }, () => {
-        // this avoids showing focus when clicking around
-        if (this.mouseTimer) {
-          clearTimeout(this.mouseTimer);
-        }
+      this.mouseActive = true;
 
-        // empirical number to reset mouseActive after
-        // some time has passed without mousedown
-        this.mouseTimer = setTimeout(() => {
-          this.setState({ mouseActive: false });
-        }, 300);
-      });
+      // this avoids showing focus when clicking around
+      clearTimeout(this.mouseTimer);
+      // empirical number to reset mouseActive after
+      // some time has passed without mousedown
+      this.mouseTimer = setTimeout(() => {
+        this.mouseActive = false;
+      }, 300);
     }
 
     setFocus = () => {
-      const { mouseActive } = this.state;
-      if (mouseActive === false) {
+      if (this.mouseActive === false) {
         this.setState({ focus: true });
       }
     }
@@ -109,47 +105,64 @@ export const withFocus = (WrappedComponent) => {
 
 export const withTheme = (WrappedComponent) => {
   class ThemedComponent extends Component {
-    static contextTypes = {
-      theme: PropTypes.object,
-    }
-
-    constructor(props, context) {
-      super(props, context);
-      this.buildTheme(props, context);
-    }
-
-    componentWillReceiveProps(nextProps) {
-      // only merge on existence changes
-      if ((nextProps.theme && !this.props.theme) ||
-        (!nextProps.theme && this.props.theme)) {
-        this.buildTheme(nextProps, this.context);
+    static getDerivedStateFromProps(nextProps, prevState) {
+      const { themeContext, theme } = nextProps;
+      const { theme: stateTheme } = prevState;
+      if (theme && !stateTheme) {
+        return { theme: deepMerge(themeContext, theme) };
+      } else if (!theme && stateTheme) {
+        return { theme: undefined };
       }
+      return null;
     }
 
-    buildTheme = (props, context) => {
-      const { theme } = props;
-      const { theme: contextTheme } = context;
-      const localTheme = deepMerge(baseTheme, contextTheme, theme);
-      this.state = { theme: localTheme };
-    }
+    state = {}
 
     render() {
-      const { withThemeRef, ...rest } = this.props;
+      const { withThemeRef, themeContext, ...rest } = this.props;
       const { theme } = this.state;
-      return (
-        <WrappedComponent ref={withThemeRef} {...rest} theme={theme} />
+      let content = (
+        <WrappedComponent
+          ref={withThemeRef}
+          {...rest}
+          theme={theme || themeContext}
+        />
       );
+      if (theme) {
+        content = (
+          <ThemeContext.Consumer value={theme}>
+            {content}
+          </ThemeContext.Consumer>
+        );
+      }
+      return content;
     }
   }
 
   ThemedComponent.displayName = getDisplayName(WrappedComponent);
 
-  return React.forwardRef((props, ref) =>
-    <ThemedComponent {...props} withThemeRef={ref} />);
+  return React.forwardRef((props, ref) => (
+    <ThemeContext.Consumer>
+      {theme =>
+        <ThemedComponent {...props} themeContext={theme} withThemeRef={ref} />}
+    </ThemeContext.Consumer>
+  ));
 };
 
 export const withForwardRef = WrappedComponent =>
   React.forwardRef((props, ref) =>
     <WrappedComponent forwardRef={ref} {...props} />);
 
-export default { withFocus, withForwardRef, withTheme };
+export const withAnnounce = WrappedComponent => props => (
+  <AnnounceContext.Consumer>
+    {announce => <WrappedComponent {...props} announce={announce} />}
+  </AnnounceContext.Consumer>
+);
+
+export const withIconTheme = WrappedComponent => props => (
+  <IconThemeContext.Consumer>
+    {iconTheme => <WrappedComponent {...props} iconTheme={iconTheme} />}
+  </IconThemeContext.Consumer>
+);
+
+export default { withAnnounce, withFocus, withForwardRef, withIconTheme, withTheme };

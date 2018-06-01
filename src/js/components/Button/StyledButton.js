@@ -9,7 +9,7 @@ import {
 const basicStyle = props => css`
   border: ${props.theme.button.border.width} solid ${props.color ? colorForName(props.color, props.theme) : props.theme.button.border.color};
   border-radius: ${props.theme.button.border.radius};
-  color: ${(props.grommet && props.grommet.dark ?
+  color: ${(props.theme.dark ?
     props.theme.global.colors.darkBackground.text :
     props.theme.button.colors.text)};
 `;

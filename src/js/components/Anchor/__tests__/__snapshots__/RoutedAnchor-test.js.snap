@@ -32,11 +32,8 @@ exports[`RoutedAnchor renders 1`] = `
 >
   <div>
     <a
-      aria-label={undefined}
       className="c1"
-      disabled={undefined}
       href="/"
-      icon={undefined}
       label="Test"
       onBlur={[Function]}
       onClick={[Function]}

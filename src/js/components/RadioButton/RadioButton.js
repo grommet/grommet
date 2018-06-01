@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { compose } from 'recompose';
 
 import { withForwardRef, withTheme } from '../hocs';
@@ -13,15 +12,10 @@ import StyledRadioButton, {
 import doc from './doc';
 
 class RadioButton extends Component {
-  static contextTypes = {
-    grommet: PropTypes.object,
-  }
-
   render() {
     const {
       checked, disabled, forwardRef, id, label, name, onChange, theme, ...rest
     } = this.props;
-    const { grommet } = this.context;
 
     const normalizedLabel = (typeof label === 'string' ? <div>{label}</div> : label);
 
@@ -29,7 +23,6 @@ class RadioButton extends Component {
       <StyledRadioButtonContainer
         {...removeUndefined({ htmlFor: id, disabled })}
         theme={theme}
-        grommet={grommet}
       >
         <StyledRadioButton theme={theme}>
           <StyledRadioButtonInput
@@ -38,9 +31,8 @@ class RadioButton extends Component {
             type='radio'
             {...removeUndefined({ id, name, checked, disabled, onChange })}
             theme={theme}
-            grommet={grommet}
           />
-          <StyledRadioButtonButton theme={theme} grommet={grommet}>
+          <StyledRadioButtonButton theme={theme}>
             <svg viewBox='0 0 24 24' preserveAspectRatio='xMidYMid meet'>
               <circle cx={12} cy={12} r={6} />
             </svg>

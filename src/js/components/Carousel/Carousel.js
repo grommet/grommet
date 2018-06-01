@@ -19,11 +19,12 @@ class Carousel extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.play && !nextProps.play) {
-      clearInterval(this.timer);
-    } else if (nextProps.play && !this.props.play) {
+  componentDidUpdate(prevProps) {
+    const { play } = this.props;
+    if (play && (!prevProps.play || play !== prevProps.play)) {
       this.play();
+    } else if (!play && prevProps.play) {
+      clearInterval(this.timer);
     }
   }
 

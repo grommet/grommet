@@ -117,28 +117,22 @@ exports[`renders 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
-    style={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
     />
   </div>
   <div
-    aria-label={undefined}
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
-    style={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
     >
       <div
@@ -147,12 +141,9 @@ exports[`renders 1`] = `
         <input
           autoComplete="off"
           className="c4"
-          defaultValue={undefined}
-          id={undefined}
           onFocus={[Function]}
           onInput={[Function]}
           onKeyDown={[Function]}
-          value={undefined}
         />
       </div>
     </div>
@@ -285,19 +276,15 @@ exports[`renders error 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
-    style={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
     />
     <div
-      aria-label={undefined}
       className="c3"
     >
       <span
@@ -436,15 +423,12 @@ exports[`renders help 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
-    style={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
     >
       <span
@@ -455,7 +439,6 @@ exports[`renders help 1`] = `
       </span>
     </div>
     <div
-      aria-label={undefined}
       className="c4"
     />
   </div>
@@ -542,15 +525,12 @@ exports[`renders htmlFor 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
-    style={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
     />
   </div>
@@ -681,26 +661,21 @@ exports[`renders label 1`] = `
   className="c0"
 >
   <div
-    aria-label={undefined}
     className="c1"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
-    style={undefined}
   >
     <div
-      aria-label={undefined}
       className="c2"
     >
       <label
         className="c3"
-        htmlFor={undefined}
       >
         test label
       </label>
     </div>
     <div
-      aria-label={undefined}
       className="c4"
     />
   </div>

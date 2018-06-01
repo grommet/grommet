@@ -134,7 +134,6 @@ class Menu extends Component {
           <DropButton
             ref={forwardRef}
             {...rest}
-            theme={theme}
             a11yTitle={messages.openMenu || 'Open Menu'}
             disabled={disabled}
             dropAlign={dropAlign}

@@ -30,8 +30,7 @@ exports[`Tabs Tab 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin: 0;
   padding: 0;
 }
 
@@ -97,7 +96,7 @@ exports[`Tabs Tab 1`] = `
 .c6 {
   font-size: 16px;
   line-height: 1.375;
-  color: #666666;
+  color: #444444;
 }
 
 @media only screen and (max-width:699px) {
@@ -108,8 +107,7 @@ exports[`Tabs Tab 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin: 0;
   }
 }
 
@@ -171,18 +169,13 @@ exports[`Tabs Tab 1`] = `
     role="tablist"
   >
     <div
-      aria-label={undefined}
       className="c1"
     >
       <button
         aria-expanded={true}
-        aria-label={undefined}
         aria-selected={true}
         className="c2"
         disabled={false}
-        href={undefined}
-        icon={undefined}
-        label={undefined}
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -192,7 +185,6 @@ exports[`Tabs Tab 1`] = `
         type="button"
       >
         <div
-          aria-label={undefined}
           className="c3"
         >
           <span
@@ -204,13 +196,9 @@ exports[`Tabs Tab 1`] = `
       </button>
       <button
         aria-expanded={false}
-        aria-label={undefined}
         aria-selected={false}
         className="c2"
         disabled={false}
-        href={undefined}
-        icon={undefined}
-        label={undefined}
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -220,12 +208,11 @@ exports[`Tabs Tab 1`] = `
         type="button"
       >
         <div
-          aria-label={undefined}
           className="c5"
         >
           <span
             className="c6"
-            color="dark-4"
+            color="#444444"
           >
             Tab 2
           </span>
@@ -247,7 +234,7 @@ exports[`Tabs change active index 1`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS kZxJuf"
+    class="StyledBox-bStriS iCaSSF"
   >
     <button
       aria-expanded="false"
@@ -260,8 +247,8 @@ exports[`Tabs change active index 1`] = `
         class="StyledBox-bStriS elvBnI"
       >
         <span
-          class="StyledText-eJMSZI guglNP"
-          color="dark-4"
+          class="StyledText-eJMSZI eTujXF"
+          color="#444444"
         >
           Tab 1
         </span>
@@ -299,7 +286,7 @@ exports[`Tabs change active index 2`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS kZxJuf"
+    class="StyledBox-bStriS iCaSSF"
   >
     <button
       aria-expanded="false"
@@ -312,8 +299,8 @@ exports[`Tabs change active index 2`] = `
         class="StyledBox-bStriS elvBnI"
       >
         <span
-          class="StyledText-eJMSZI guglNP"
-          color="dark-4"
+          class="StyledText-eJMSZI eTujXF"
+          color="#444444"
         >
           Tab 1
         </span>
@@ -354,7 +341,7 @@ exports[`Tabs change to second tab 1`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-bStriS kZxJuf"
+      class="StyledBox-bStriS iCaSSF"
     >
       <button
         aria-expanded="true"
@@ -384,8 +371,8 @@ exports[`Tabs change to second tab 1`] = `
           class="StyledBox-bStriS elvBnI"
         >
           <span
-            class="StyledText-eJMSZI guglNP"
-            color="dark-4"
+            class="StyledText-eJMSZI eTujXF"
+            color="#444444"
           >
             Tab 2
           </span>
@@ -410,26 +397,8 @@ exports[`Tabs change to second tab 2`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-bStriS kZxJuf"
+      class="StyledBox-bStriS iCaSSF"
     >
-      <button
-        aria-expanded="false"
-        aria-selected="false"
-        class="StyledButton-gXzblK fYUIhN"
-        role="tab"
-        type="button"
-      >
-        <div
-          class="StyledBox-bStriS elvBnI"
-        >
-          <span
-            class="StyledText-eJMSZI guglNP"
-            color="dark-4"
-          >
-            Tab 1
-          </span>
-        </div>
-      </button>
       <button
         aria-expanded="true"
         aria-selected="true"
@@ -443,16 +412,34 @@ exports[`Tabs change to second tab 2`] = `
           <span
             class="StyledText-eJMSZI bxnpJv"
           >
+            Tab 1
+          </span>
+        </div>
+      </button>
+      <button
+        aria-expanded="false"
+        aria-selected="false"
+        class="StyledButton-gXzblK fYUIhN"
+        role="tab"
+        type="button"
+      >
+        <div
+          class="StyledBox-bStriS elvBnI"
+        >
+          <span
+            class="StyledText-eJMSZI eTujXF"
+            color="#444444"
+          >
             Tab 2
           </span>
         </div>
       </button>
     </div>
     <div
-      aria-label="Tab 2 Tab Contents"
+      aria-label="Tab 1 Tab Contents"
       role="tabpanel"
     >
-      Tab body 2
+      Tab body 1
     </div>
   </div>
 </div>
@@ -488,8 +475,7 @@ exports[`Tabs complex title 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin: 0;
   padding: 0;
 }
 
@@ -554,8 +540,7 @@ exports[`Tabs complex title 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin: 0;
   }
 }
 
@@ -617,18 +602,13 @@ exports[`Tabs complex title 1`] = `
     role="tablist"
   >
     <div
-      aria-label={undefined}
       className="c1"
     >
       <button
         aria-expanded={true}
-        aria-label={undefined}
         aria-selected={true}
         className="c2"
         disabled={false}
-        href={undefined}
-        icon={undefined}
-        label={undefined}
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -638,7 +618,6 @@ exports[`Tabs complex title 1`] = `
         type="button"
       >
         <div
-          aria-label={undefined}
           className="c3"
         >
           <div>
@@ -648,13 +627,9 @@ exports[`Tabs complex title 1`] = `
       </button>
       <button
         aria-expanded={false}
-        aria-label={undefined}
         aria-selected={false}
         className="c2"
         disabled={false}
-        href={undefined}
-        icon={undefined}
-        label={undefined}
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
@@ -664,7 +639,6 @@ exports[`Tabs complex title 1`] = `
         type="button"
       >
         <div
-          aria-label={undefined}
           className="c4"
         >
           <div>
@@ -713,8 +687,7 @@ exports[`Tabs no Tab 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin: 0;
   padding: 0;
 }
 
@@ -726,8 +699,7 @@ exports[`Tabs no Tab 1`] = `
 
 @media only screen and (max-width:699px) {
   .c1 {
-    margin-top: 6px;
-    margin-bottom: 6px;
+    margin: 0;
   }
 }
 
@@ -744,7 +716,6 @@ exports[`Tabs no Tab 1`] = `
     role="tablist"
   >
     <div
-      aria-label={undefined}
       className="c1"
     />
     <div
@@ -760,7 +731,7 @@ exports[`Tabs set on hover 1`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS kZxJuf"
+    class="StyledBox-bStriS iCaSSF"
   >
     <button
       aria-expanded="true"
@@ -790,8 +761,8 @@ exports[`Tabs set on hover 1`] = `
         class="StyledBox-bStriS elvBnI"
       >
         <span
-          class="StyledText-eJMSZI guglNP"
-          color="dark-4"
+          class="StyledText-eJMSZI eTujXF"
+          color="#444444"
         >
           Tab 2
         </span>
@@ -812,7 +783,7 @@ exports[`Tabs set on hover 2`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS kZxJuf"
+    class="StyledBox-bStriS iCaSSF"
   >
     <button
       aria-expanded="true"
@@ -842,8 +813,8 @@ exports[`Tabs set on hover 2`] = `
         class="StyledBox-bStriS elvBnI"
       >
         <span
-          class="StyledText-eJMSZI guglNP"
-          color="dark-4"
+          class="StyledText-eJMSZI eTujXF"
+          color="#444444"
         >
           Tab 2
         </span>
@@ -864,7 +835,7 @@ exports[`Tabs set on hover 3`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS kZxJuf"
+    class="StyledBox-bStriS iCaSSF"
   >
     <button
       aria-expanded="true"
@@ -894,8 +865,8 @@ exports[`Tabs set on hover 3`] = `
         class="StyledBox-bStriS cXdcRx"
       >
         <span
-          class="StyledText-eJMSZI guglNP"
-          color="dark-4"
+          class="StyledText-eJMSZI eTujXF"
+          color="#444444"
         >
           Tab 2
         </span>
@@ -916,7 +887,7 @@ exports[`Tabs set on hover 4`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS kZxJuf"
+    class="StyledBox-bStriS iCaSSF"
   >
     <button
       aria-expanded="true"
@@ -946,8 +917,8 @@ exports[`Tabs set on hover 4`] = `
         class="StyledBox-bStriS cXdcRx"
       >
         <span
-          class="StyledText-eJMSZI guglNP"
-          color="dark-4"
+          class="StyledText-eJMSZI eTujXF"
+          color="#444444"
         >
           Tab 2
         </span>
@@ -968,7 +939,7 @@ exports[`Tabs set on hover 5`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS kZxJuf"
+    class="StyledBox-bStriS iCaSSF"
   >
     <button
       aria-expanded="true"
@@ -998,8 +969,8 @@ exports[`Tabs set on hover 5`] = `
         class="StyledBox-bStriS elvBnI"
       >
         <span
-          class="StyledText-eJMSZI guglNP"
-          color="dark-4"
+          class="StyledText-eJMSZI eTujXF"
+          color="#444444"
         >
           Tab 2
         </span>

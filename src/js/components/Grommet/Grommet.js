@@ -1,70 +1,86 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { ThemeContext as IconThemeContext } from 'grommet-icons';
 
+import ThemeContext from '../../contexts/ThemeContext';
+import ResponsiveContext from '../../contexts/ResponsiveContext';
 import baseTheme from '../../themes/vanilla';
 import { colorIsDark, deepMerge } from '../../utils';
+import { withIconTheme } from '../hocs';
 
 import StyledGrommet from './StyledGrommet';
 import doc from './doc';
 
-const createAnnouncer = () => {
-  const announcer = document.createElement('div');
-  announcer.style.left = '-100%';
-  announcer.style.right = '100%';
-  announcer.style.position = 'fixed';
-  announcer.style['z-index'] = '-1';
-
-  document.body.insertBefore(announcer, document.body.firstChild);
-
-  return announcer;
-};
-
 class Grommet extends Component {
-  static childContextTypes = {
-    grommet: PropTypes.object,
-    theme: PropTypes.object,
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { iconTheme, theme } = nextProps;
+    const { theme: stateTheme, themeProp, iconThemeProp } = prevState;
+
+    let nextTheme;
+    if (theme && (theme !== themeProp || iconTheme !== iconThemeProp)) {
+      nextTheme = deepMerge(baseTheme, theme);
+    } else if (!theme && (themeProp || !stateTheme)) {
+      nextTheme = baseTheme;
+    }
+
+    if (nextTheme) {
+      const color = nextTheme.global.colors.background;
+      const dark = color ? colorIsDark(color) : false;
+      const iconThemes = {
+        dark: deepMerge(iconTheme, {
+          color: nextTheme.global.colors.darkBackground.text,
+        }),
+        light: deepMerge(iconTheme, nextTheme.icon),
+      };
+      return {
+        theme: {
+          ...nextTheme,
+          dark,
+          icon: dark ? iconThemes.dark : iconThemes.light,
+          iconThemes,
+        },
+        themeProp: theme,
+        iconThemeProp: iconTheme,
+      };
+    }
+    return null;
   }
 
-  getChildContext() {
-    const { theme } = this.props;
+  state = {}
 
-    const mergedTheme = deepMerge(baseTheme, theme);
-    const color = mergedTheme.global.colors.background;
-    const dark = color ? colorIsDark(color) : false;
-
-    return {
-      grommet: {
-        announce: this.announce,
-        dark,
-      },
-      theme: mergedTheme,
-    };
+  componentDidMount() {
+    window.addEventListener('resize', this.onResize);
   }
 
-  announce = (message, mode = 'polite') => {
-    // we only create a new container if we don't have one already
-    // we create a separate node so that grommet does not set aria-hidden to it
-    const announcer = document.body.querySelector('[aria-live]') || createAnnouncer();
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+  }
 
-    announcer.setAttribute('aria-live', 'off');
-    announcer.innerHTML = message;
-    announcer.setAttribute('aria-live', mode);
-    setTimeout(() => {
-      announcer.innerHTML = '';
-    }, 500);
+  onResize = () => {
+    const { theme, responsive } = this.state;
+    if (window.innerWidth > theme.global.breakpoints.narrow) {
+      if (responsive !== 'wide') {
+        this.setState({ responsive: 'wide' });
+      }
+    } else if (responsive !== 'narrow') {
+      this.setState({ responsive: 'narrow' });
+    }
   }
 
   render() {
-    const {
-      children,
-      theme,
-      ...rest
-    } = this.props;
+    const { children, ...rest } = this.props;
+    delete rest.theme;
+    const { responsive, theme } = this.state;
 
     return (
-      <StyledGrommet {...rest} theme={deepMerge(baseTheme, theme)}>
-        {children}
-      </StyledGrommet>
+      <ThemeContext.Provider value={theme}>
+        <IconThemeContext.Provider value={theme.icon}>
+          <ResponsiveContext.Provider value={responsive}>
+            <StyledGrommet {...rest} theme={theme}>
+              {children}
+            </StyledGrommet>
+          </ResponsiveContext.Provider>
+        </IconThemeContext.Provider>
+      </ThemeContext.Provider>
     );
   }
 }
@@ -73,4 +89,4 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Grommet);
 }
 
-export default Grommet;
+export default withIconTheme(Grommet);

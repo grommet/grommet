@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
+// import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
 import { Box } from '../Box';
@@ -43,9 +43,6 @@ const buildState = (props) => {
   } else {
     reference = new Date();
   }
-  // if (props.locale) {
-  //   reference.locale(props.locale);
-  // }
   return {
     ...buildStartEnd(reference, firstDayOfWeek),
     reference,
@@ -58,25 +55,26 @@ class Calendar extends Component {
     firstDayOfWeek: 0,
     size: 'medium',
     locale: 'en-US',
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = buildState(props);
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState(buildState(nextProps));
-  }
-
-  componentDidUpdate() {
-    if (this.setFocus) {
-      this.setFocus = false;
-      if (this.activeRef) {
-        findDOMNode(this.activeRef).focus();
-      }
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { reference } = prevState;
+    if (!reference) {
+      return buildState(nextProps);
     }
+    return null;
   }
+
+  state = {}
+
+  // componentDidUpdate() {
+  //   if (this.setFocus) {
+  //     this.setFocus = false;
+  //     // if (this.activeRef) {
+  //     //   findDOMNode(this.activeRef).focus();
+  //     // }
+  //   }
+  // }
 
   componentWillUnmount() {
     clearTimeout(this.timer);

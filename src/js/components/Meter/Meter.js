@@ -7,6 +7,15 @@ import Bar from './Bar';
 import Circle from './Circle';
 import doc from './doc';
 
+const deriveMax = (values) => {
+  let max = 100;
+  if (values && values.length > 1) {
+    max = 0;
+    values.forEach((v) => { max += v.value; });
+  }
+  return max;
+};
+
 class Meter extends Component {
   static defaultProps = {
     background: { color: 'light-1', opacity: 'medium' },
@@ -15,24 +24,16 @@ class Meter extends Component {
     type: 'bar',
   };
 
-  state = {}
-
-  componentWillMount() {
-    this.deriveMax(this.props);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.deriveMax(nextProps);
-  }
-
-  deriveMax = (props) => {
-    let max = 100;
-    if (props.values && props.values.length > 1) {
-      max = 0;
-      props.values.forEach((v) => { max += v.value; });
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { max } = prevState;
+    const nextMax = deriveMax(nextProps.values);
+    if (!max || nextMax !== max) {
+      return { max: nextMax };
     }
-    this.setState({ max });
+    return null;
   }
+
+  state = {}
 
   render() {
     const { type, ...rest } = this.props;

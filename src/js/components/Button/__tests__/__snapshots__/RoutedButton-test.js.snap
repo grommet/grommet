@@ -64,16 +64,13 @@ exports[`RoutedButton renders 1`] = `
 >
   <div>
     <a
-      aria-label={undefined}
       className="c1"
       disabled={false}
       href="/"
-      icon={undefined}
       label="Test"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
-      type={undefined}
     >
       <span
         className="c2"

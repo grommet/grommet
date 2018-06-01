@@ -14,22 +14,5 @@ class SimpleCheckBox extends Component {
   }
 }
 
-class FocusedCheckBox extends Component {
-  ref = React.createRef()
-
-  componentDidMount() {
-    this.ref.current.focus();
-  }
-
-  render() {
-    return (
-      <Grommet>
-        <CheckBox ref={this.ref} label='Choice' />
-      </Grommet>
-    );
-  }
-}
-
 storiesOf('CheckBox', module)
-  .add('Simple CheckBox', () => <SimpleCheckBox />)
-  .add('Focused CheckBox', () => <FocusedCheckBox />);
+  .add('Simple CheckBox', () => <SimpleCheckBox />);

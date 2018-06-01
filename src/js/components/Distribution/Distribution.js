@@ -20,7 +20,7 @@ class Distribution extends Component {
   }
 
   render() {
-    const { basis, children, direction, gap, values, ...rest } = this.props;
+    const { basis, children, direction, gap, theme, values, ...rest } = this.props;
     if (values.length === 1) {
       const value = values[0];
       return <Value value={value} basis={basis}>{children(value)}</Value>;

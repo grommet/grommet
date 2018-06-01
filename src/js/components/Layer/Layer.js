@@ -37,10 +37,9 @@ class Layer extends Component {
   }
 
   render() {
+    const { theme, ...rest } = this.props;
     return createPortal(
-      <LayerContainer
-        {...this.props}
-      />,
+      <LayerContainer {...rest} />,
       this.layerContainer
     );
   }

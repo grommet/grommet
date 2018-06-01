@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import { parseMetricToNum } from '../../utils';
 
@@ -19,7 +18,7 @@ const getClockDimensions = theme => (
   }
 );
 
-const getClockState = ({ elements: { hours, minutes, seconds } }) => {
+const getClockState = ({ hours, minutes, seconds }) => {
   const hour12 = hours > 12 ? hours - 12 : hours;
   const minuteAngle = minutes * ANGLE_UNIT;
 
@@ -32,25 +31,23 @@ const getClockState = ({ elements: { hours, minutes, seconds } }) => {
 };
 
 export default class Analog extends Component {
-  static contextTypes = {
-    grommet: PropTypes.object,
-  }
-
   static defaultProps = {
     size: 'medium',
   }
 
-  constructor(props, context) {
-    super(props, context);
-    this.state = getClockState(props);
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { elements } = nextProps;
+    const nextState = getClockState(elements);
+    if (prevState.hourAngle === undefined ||
+      Object.keys(nextState).some(k => prevState[k] !== nextState[k])) {
+      return nextState;
+    }
+    return null;
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState(getClockState(nextProps));
-  }
+  state = {}
 
   render() {
-    const { grommet } = this.context;
     const { precision, theme, ...rest } = this.props;
     const { hourAngle, minuteAngle, secondAngle } = this.state;
     const { size, secondSize, minuteSize, hourSize } = getClockDimensions(theme);
@@ -60,7 +57,6 @@ export default class Analog extends Component {
     if (precision === 'seconds') {
       secondHand = (
         <StyledSecond
-          grommet={grommet}
           theme={theme}
           x1={halfSize}
           y1={halfSize}
@@ -80,7 +76,6 @@ export default class Analog extends Component {
     if (precision === 'seconds' || precision === 'minutes') {
       minuteHand = (
         <StyledMinute
-          grommet={grommet}
           theme={theme}
           x1={halfSize}
           y1={halfSize}
@@ -109,7 +104,6 @@ export default class Analog extends Component {
         {secondHand}
         {minuteHand}
         <StyledHour
-          grommet={grommet}
           theme={theme}
           x1={halfSize}
           y1={halfSize}
