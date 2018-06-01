@@ -248,10 +248,9 @@ exports[`Carousel basic 1`] = `
   width: 100%;
   height: 100%;
   max-width: none;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .c12 {
@@ -290,10 +289,9 @@ exports[`Carousel basic 1`] = `
   width: 100%;
   height: 100%;
   max-width: none;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .c15:hover {
@@ -685,7 +683,7 @@ exports[`Carousel navigate 1`] = `
         class="StyledBox-bStriS jsbzAg"
       >
         <button
-          class="StyledButton-gXzblK gpCJao"
+          class="StyledButton-gXzblK dtZehH"
           disabled=""
           type="button"
         >
@@ -779,7 +777,7 @@ exports[`Carousel navigate 1`] = `
         class="StyledBox-bStriS jsbzAg"
       >
         <button
-          class="StyledButton-gXzblK fdbYpb"
+          class="StyledButton-gXzblK eowzfL"
           type="button"
         >
           <div
@@ -852,7 +850,7 @@ exports[`Carousel navigate 2`] = `
         class="StyledBox-bStriS jsbzAg"
       >
         <button
-          class="StyledButton-gXzblK fdbYpb"
+          class="StyledButton-gXzblK eowzfL"
           type="button"
         >
           <div
@@ -945,7 +943,7 @@ exports[`Carousel navigate 2`] = `
         class="StyledBox-bStriS jsbzAg"
       >
         <button
-          class="StyledButton-gXzblK gpCJao"
+          class="StyledButton-gXzblK dtZehH"
           disabled=""
           type="button"
         >
@@ -1019,7 +1017,7 @@ exports[`Carousel navigate 3`] = `
         class="StyledBox-bStriS jsbzAg"
       >
         <button
-          class="StyledButton-gXzblK gpCJao"
+          class="StyledButton-gXzblK dtZehH"
           disabled=""
           type="button"
         >
@@ -1113,7 +1111,7 @@ exports[`Carousel navigate 3`] = `
         class="StyledBox-bStriS jsbzAg"
       >
         <button
-          class="StyledButton-gXzblK fdbYpb"
+          class="StyledButton-gXzblK eowzfL"
           type="button"
         >
           <div
@@ -1185,7 +1183,7 @@ exports[`Carousel play 1`] = `
         class="StyledBox-bStriS jsbzAg"
       >
         <button
-          class="StyledButton-gXzblK gpCJao"
+          class="StyledButton-gXzblK dtZehH"
           disabled=""
           type="button"
         >
@@ -1279,7 +1277,7 @@ exports[`Carousel play 1`] = `
         class="StyledBox-bStriS jsbzAg"
       >
         <button
-          class="StyledButton-gXzblK fdbYpb"
+          class="StyledButton-gXzblK eowzfL"
           type="button"
         >
           <div
@@ -1351,7 +1349,7 @@ exports[`Carousel play 2`] = `
         class="StyledBox-bStriS jsbzAg"
       >
         <button
-          class="StyledButton-gXzblK fdbYpb"
+          class="StyledButton-gXzblK eowzfL"
           type="button"
         >
           <div
@@ -1444,7 +1442,7 @@ exports[`Carousel play 2`] = `
         class="StyledBox-bStriS jsbzAg"
       >
         <button
-          class="StyledButton-gXzblK gpCJao"
+          class="StyledButton-gXzblK dtZehH"
           disabled=""
           type="button"
         >

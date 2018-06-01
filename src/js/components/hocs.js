@@ -124,7 +124,21 @@ export const withTheme = (WrappedComponent) => {
     render() {
       const { withThemeRef, themeContext, ...rest } = this.props;
       const { theme } = this.state;
-      let content = (
+
+      if (!theme) {
+        return (
+          <ThemeContext.Consumer>
+            {contextTheme => (
+              <WrappedComponent
+                ref={withThemeRef}
+                {...rest}
+                theme={contextTheme}
+              />
+            )}
+          </ThemeContext.Consumer>
+        );
+      }
+      return (
         <WrappedComponent
           ref={withThemeRef}
           {...rest}

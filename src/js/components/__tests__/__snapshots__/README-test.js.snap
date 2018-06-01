@@ -2,6 +2,78 @@
 
 exports[`README is updated 1`] = `
 Object {
+  "Accordion": "## Accordion
+A collapsible accordion component.
+
+[![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=accordion&module=%2Fsrc%2FAccordion.js)
+## Usage
+
+\`\`\`javascript
+import { Accordion, AccordionPanel } from 'grommet';
+<Accordion>
+  <AccordionPanel title='Panel 1'>...</AccordionPanel>
+  <AccordionPanel title='Panek 2'>...</AccordionPanel>
+</Accordion>
+\`\`\`
+
+## Properties
+
+**activeIndex**
+
+Active panel index. If specified, Accordion will be a controlled component. This means that future
+panel changes will not work unless you subscribe to onActive function and update activeIndex
+accordingly.
+
+\`\`\`
+number
+[number]
+\`\`\`
+
+**animate**
+
+Transition content in & out with a slide down animation. Defaults to \`true\`.
+
+\`\`\`
+boolean
+\`\`\`
+
+**children**
+
+Required. Array of AccordionPanels.
+
+\`\`\`
+[new AccordionPanel(...)]
+\`\`\`
+
+**onActive**
+
+Function that will be called with the active panel index when the currently active
+accordion changes.
+
+\`\`\`
+function
+\`\`\`
+
+**multiple**
+
+Allow multiple panels to be opened at once.
+
+\`\`\`
+boolean
+\`\`\`
+
+**messages**
+
+Custom messages for Tabs. Used for accessibility by screen readers. Defaults to \`{
+  \\"tabContents\\": \\"Tab Contents\\"
+}\`.
+
+\`\`\`
+{
+  tabContents: string
+}
+\`\`\`
+  ",
   "Anchor": "## Anchor
 A text link. We have a separate component from the browser
 base so we can style it. You can either set the icon and/or label properties
@@ -1060,6 +1132,26 @@ What type of visualization to show. Defaults to \`analog\`.
 \`\`\`
 analog
 digital
+\`\`\`
+  ",
+  "Collapsible": "## Collapsible
+A react component that expand/collapse animation.
+
+## Usage
+
+\`\`\`javascript
+import { Collapsible } from 'grommet';
+<Collapsible open={true}>test</Collapsible>
+\`\`\`
+
+## Properties
+
+**open**
+
+Whether or not the component should be open.
+
+\`\`\`
+boolean
 \`\`\`
   ",
   "Diagram": "## Diagram
@@ -2806,6 +2898,7 @@ Placeholder text to use when no value is provided.
 
 \`\`\`
 string
+node
 \`\`\`
 
 **plain**
@@ -2996,7 +3089,7 @@ number
 Required. Array of Tab.
 
 \`\`\`
-[new ThemedComponent(...)]
+[new Tab(...)]
 \`\`\`
 
 **justify**

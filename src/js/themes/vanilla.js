@@ -8,6 +8,7 @@ import {
   FormDown,
   FormNext,
   FormPrevious,
+  FormUp,
   Next,
   Pause,
   Play,
@@ -251,6 +252,13 @@ export default deepFreeze({
         full: '100%',
       },
     },
+  },
+  accordion: {
+    icons: {
+      collapse: FormUp,
+      expand: FormDown,
+    },
+    iconColor: css`${props => props.theme.global.colors.brand}`,
   },
   anchor: {
     textDecoration: 'none',

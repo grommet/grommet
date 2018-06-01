@@ -2,6 +2,18 @@
 
 exports[`Components loads 1`] = `
 Object {
+  "Accordion": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "displayName": "Accordion",
+    "name": "Accordion",
+    "render": [Function],
+  },
+  "AccordionPanel": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "displayName": "AccordionPanel",
+    "name": "AccordionPanel",
+    "render": [Function],
+  },
   "Anchor": Object {
     "$$typeof": Symbol(react.forward_ref),
     "displayName": "Anchor",
@@ -49,6 +61,23 @@ Object {
     "displayName": "Clock",
     "name": "Clock",
     "render": [Function],
+  },
+  "Collapsible": [Function],
+  "CollapsibleContext": Object {
+    "$$typeof": Symbol(react.context),
+    "Consumer": [Circular],
+    "Provider": Object {
+      "$$typeof": Symbol(react.provider),
+      "_context": [Circular],
+    },
+    "_calculateChangedBits": null,
+    "_changedBits": 0,
+    "_changedBits2": 0,
+    "_currentRenderer": null,
+    "_currentRenderer2": null,
+    "_currentValue": Object {},
+    "_currentValue2": Object {},
+    "_defaultValue": Object {},
   },
   "Diagram": Object {
     "$$typeof": Symbol(react.forward_ref),

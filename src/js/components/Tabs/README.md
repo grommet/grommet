@@ -29,7 +29,7 @@ number
 Required. Array of Tab.
 
 ```
-[new ThemedComponent(...)]
+[new Tab(...)]
 ```
 
 **justify**
