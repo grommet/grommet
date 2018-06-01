@@ -22,6 +22,7 @@ const plainStyle = css`
 const StyledTextInput = styled.input`
   ${inputStyle}
   width: 100%;
+  -webkit-appearance: textfield;
 
   ${props => props.size && sizeStyle(props)}
   ${props => props.plain && plainStyle}
