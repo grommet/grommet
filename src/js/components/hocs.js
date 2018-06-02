@@ -130,9 +130,9 @@ export const withTheme = (WrappedComponent) => {
       );
       if (theme) {
         content = (
-          <ThemeContext.Consumer value={theme}>
+          <ThemeContext.Provider value={theme}>
             {content}
-          </ThemeContext.Consumer>
+          </ThemeContext.Provider>
         );
       }
       return content;
