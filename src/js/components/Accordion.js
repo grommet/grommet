@@ -68,6 +68,8 @@ export default class Accordion extends Component {
     );
 
     const accordionChildren = React.Children.map(children, (child, index) => {
+      if (!child) return null;
+      
       return React.cloneElement(child, {
         active: this.state.active.indexOf(index) > -1,
         onChange: () => {
