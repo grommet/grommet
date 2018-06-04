@@ -117,6 +117,8 @@ var Accordion = function (_Component) {
       var classes = (0, _classnames2.default)(CLASS_ROOT, className);
 
       var accordionChildren = _react2.default.Children.map(children, function (child, index) {
+        if (!child) return null;
+
         return _react2.default.cloneElement(child, {
           active: _this2.state.active.indexOf(index) > -1,
           onChange: function onChange() {
