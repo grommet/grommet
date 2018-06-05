@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { colorForName, palm } from '../../utils';
+import { baseStyle, colorForName, palm } from '../../utils';
 
 const marginStyle = (props) => {
   if (typeof props.margin === 'string') {
@@ -79,6 +79,7 @@ const colorStyle = css`
 `;
 
 const StyledHeading = styled.h1`
+  ${props => !props.theme.heading.font && baseStyle}
   ${props => props.theme.heading.font && css`
     font-family: ${props.theme.heading.font.family};
   `}

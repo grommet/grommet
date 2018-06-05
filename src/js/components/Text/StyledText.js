@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { colorForName } from '../../utils';
+import { baseStyle, colorForName } from '../../utils';
 
 const marginStyle = (props) => {
   if (typeof props.margin === 'string') {
@@ -74,6 +74,7 @@ const weightStyle = css`
 `;
 
 const StyledText = styled.span`
+  ${baseStyle}
   ${props => sizeStyle(props)}
   ${props => props.margin && marginStyle(props)}
   ${props => props.textAlign && textAlignStyle}

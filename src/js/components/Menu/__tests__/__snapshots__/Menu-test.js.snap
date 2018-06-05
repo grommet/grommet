@@ -50,6 +50,15 @@ exports[`Menu basic 1`] = `
 }
 
 .c2 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
 }
@@ -115,7 +124,7 @@ exports[`Menu close by clicking outside 1`] = `
       class="StyledBox-bStriS kMKXvj"
     >
       <span
-        class="StyledText-eJMSZI WtHkG"
+        class="StyledText-eJMSZI iwtOye"
       >
         Test
       </span>
@@ -163,7 +172,7 @@ exports[`Menu close by clicking outside 2`] = `
         class="StyledBox-bStriS kMKXvj"
       >
         <span
-          class="StyledText-eJMSZI WtHkG"
+          class="StyledText-eJMSZI iwtOye"
         >
           Test
         </span>
@@ -334,7 +343,7 @@ exports[`Menu close on esc 1`] = `
       class="StyledBox-bStriS kMKXvj"
     >
       <span
-        class="StyledText-eJMSZI WtHkG"
+        class="StyledText-eJMSZI iwtOye"
       >
         Test
       </span>
@@ -375,7 +384,7 @@ exports[`Menu close on tab 1`] = `
       class="StyledBox-bStriS kMKXvj"
     >
       <span
-        class="StyledText-eJMSZI WtHkG"
+        class="StyledText-eJMSZI iwtOye"
       >
         Test
       </span>
@@ -486,6 +495,15 @@ exports[`Menu custom message 1`] = `
 }
 
 .c2 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
 }
@@ -567,7 +585,7 @@ exports[`Menu disabled 1`] = `
       class="StyledBox-bStriS kMKXvj"
     >
       <span
-        class="StyledText-eJMSZI WtHkG"
+        class="StyledText-eJMSZI iwtOye"
       >
         Test
       </span>
@@ -608,7 +626,7 @@ exports[`Menu navigate through suggestions and select 1`] = `
       class="StyledBox-bStriS kMKXvj"
     >
       <span
-        class="StyledText-eJMSZI WtHkG"
+        class="StyledText-eJMSZI iwtOye"
       >
         Test
       </span>
@@ -649,7 +667,7 @@ exports[`Menu open and close on click 1`] = `
       class="StyledBox-bStriS kMKXvj"
     >
       <span
-        class="StyledText-eJMSZI WtHkG"
+        class="StyledText-eJMSZI iwtOye"
       >
         Test
       </span>
@@ -690,7 +708,7 @@ exports[`Menu open and close on click 2`] = `
       class="StyledBox-bStriS kMKXvj"
     >
       <span
-        class="StyledText-eJMSZI WtHkG"
+        class="StyledText-eJMSZI iwtOye"
       >
         Test
       </span>
@@ -738,7 +756,7 @@ exports[`Menu open and close on click 3`] = `
         class="StyledBox-bStriS kMKXvj"
       >
         <span
-          class="StyledText-eJMSZI WtHkG"
+          class="StyledText-eJMSZI iwtOye"
         >
           Test
         </span>
@@ -911,7 +929,7 @@ exports[`Menu select an item 1`] = `
       class="StyledBox-bStriS kMKXvj"
     >
       <span
-        class="StyledText-eJMSZI WtHkG"
+        class="StyledText-eJMSZI iwtOye"
       >
         Test
       </span>
@@ -952,7 +970,7 @@ exports[`Menu with dropAlign renders 1`] = `
       class="StyledBox-bStriS kMKXvj"
     >
       <span
-        class="StyledText-eJMSZI WtHkG"
+        class="StyledText-eJMSZI iwtOye"
       >
         Test
       </span>
@@ -1000,7 +1018,7 @@ exports[`Menu with dropAlign renders 2`] = `
         class="StyledBox-bStriS kMKXvj"
       >
         <span
-          class="StyledText-eJMSZI WtHkG"
+          class="StyledText-eJMSZI iwtOye"
         >
           Test
         </span>

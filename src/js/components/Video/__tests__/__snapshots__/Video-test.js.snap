@@ -207,6 +207,15 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c14 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
   margin-top: 0;
@@ -216,6 +225,15 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c17 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
 }
@@ -798,6 +816,15 @@ exports[`Video controls renders 1`] = `
 }
 
 .c14 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
   margin-top: 0;
@@ -807,6 +834,15 @@ exports[`Video controls renders 1`] = `
 }
 
 .c17 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
 }
@@ -1527,6 +1563,15 @@ exports[`Video fit renders 1`] = `
 }
 
 .c14 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
   margin-top: 0;
@@ -1536,6 +1581,15 @@ exports[`Video fit renders 1`] = `
 }
 
 .c17 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
 }
@@ -2260,6 +2314,15 @@ exports[`Video loop renders 1`] = `
 }
 
 .c14 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
   margin-top: 0;
@@ -2269,6 +2332,15 @@ exports[`Video loop renders 1`] = `
 }
 
 .c17 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
 }
@@ -2795,6 +2867,15 @@ exports[`Video mute renders 1`] = `
 }
 
 .c14 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
   margin-top: 0;
@@ -2804,6 +2885,15 @@ exports[`Video mute renders 1`] = `
 }
 
 .c17 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
 }
@@ -3330,6 +3420,15 @@ exports[`Video renders 1`] = `
 }
 
 .c14 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
   margin-top: 0;
@@ -3339,6 +3438,15 @@ exports[`Video renders 1`] = `
 }
 
 .c17 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
 }

@@ -181,7 +181,7 @@ export const focusStyle = css`
 `;
 
 export const inputStyle = css`
-  box-sizing: border-box;
+  ${baseStyle}
   padding: ${props => (
     (parseMetricToNum(props.theme.global.spacing) / 2) -
     parseMetricToNum(props.theme.global.input.border.width)
@@ -191,11 +191,12 @@ export const inputStyle = css`
   outline: none;
   background-color: transparent;
   color: inherit;
-  font: inherit;
   ${props => props.theme.global.input.weight && css`
     font-weight: ${props.theme.global.input.weight};
   `}
   margin: 0;
+
+  ${props => props.focus && (!props.plain || props.focusIndicator) && focusStyle}
 `;
 
 export default {

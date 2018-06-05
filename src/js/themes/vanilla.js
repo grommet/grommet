@@ -442,6 +442,7 @@ export default deepFreeze({
   icon: {
     colors,
   },
+  iconThemes: {},
   layer: {
     backgroundColor,
     border: {

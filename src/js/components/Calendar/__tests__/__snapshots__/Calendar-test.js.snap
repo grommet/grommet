@@ -194,6 +194,15 @@ exports[`Calendar date renders 1`] = `
 }
 
 .c18 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
   font-weight: bold;
@@ -1556,6 +1565,15 @@ exports[`Calendar dates renders 1`] = `
 }
 
 .c17 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
   font-weight: bold;
@@ -2922,6 +2940,15 @@ exports[`Calendar disabled renders 1`] = `
 }
 
 .c17 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
   font-weight: bold;
@@ -4288,6 +4315,15 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
 }
 
 .c18 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
   font-weight: bold;
@@ -6646,6 +6682,15 @@ exports[`Calendar renders 1`] = `
 }
 
 .c18 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
   font-weight: bold;
@@ -8062,6 +8107,15 @@ exports[`Calendar size renders 1`] = `
 }
 
 .c18 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
   font-weight: bold;
