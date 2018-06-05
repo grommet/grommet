@@ -97,10 +97,13 @@ export const withFocus = (WrappedComponent) => {
     }
   }
 
-  FocusableComponent.displayName = getDisplayName(WrappedComponent);
-
-  return React.forwardRef((props, ref) =>
+  const ForwardRef = React.forwardRef((props, ref) =>
     <FocusableComponent {...props} withFocusRef={ref} />);
+
+  ForwardRef.displayName = getDisplayName(WrappedComponent);
+  ForwardRef.name = ForwardRef.displayName;
+
+  return ForwardRef;
 };
 
 export const withTheme = (WrappedComponent) => {
@@ -139,30 +142,52 @@ export const withTheme = (WrappedComponent) => {
     }
   }
 
-  ThemedComponent.displayName = getDisplayName(WrappedComponent);
-
-  return React.forwardRef((props, ref) => (
+  const ForwardRef = React.forwardRef((props, ref) => (
     <ThemeContext.Consumer>
       {theme =>
         <ThemedComponent {...props} themeContext={theme} withThemeRef={ref} />}
     </ThemeContext.Consumer>
   ));
+
+  ForwardRef.displayName = getDisplayName(WrappedComponent);
+  ForwardRef.name = ForwardRef.displayName;
+
+  return ForwardRef;
 };
 
-export const withForwardRef = WrappedComponent =>
-  React.forwardRef((props, ref) =>
-    <WrappedComponent forwardRef={ref} {...props} />);
+export const withForwardRef = (WrappedComponent) => {
+  const ForwardRefComponent = (
+    React.forwardRef((props, ref) => <WrappedComponent forwardRef={ref} {...props} />)
+  );
 
-export const withAnnounce = WrappedComponent => props => (
-  <AnnounceContext.Consumer>
-    {announce => <WrappedComponent {...props} announce={announce} />}
-  </AnnounceContext.Consumer>
-);
+  ForwardRefComponent.displayName = getDisplayName(WrappedComponent);
+  ForwardRefComponent.name = ForwardRefComponent.displayName;
 
-export const withIconTheme = WrappedComponent => props => (
-  <IconThemeContext.Consumer>
-    {iconTheme => <WrappedComponent {...props} iconTheme={iconTheme} />}
-  </IconThemeContext.Consumer>
-);
+  return ForwardRefComponent;
+};
+
+export const withAnnounce = (WrappedComponent) => {
+  const AnnounceComponent = props => (
+    <AnnounceContext.Consumer>
+      {announce => <WrappedComponent {...props} announce={announce} />}
+    </AnnounceContext.Consumer>
+  );
+
+  AnnounceComponent.displayName = getDisplayName(WrappedComponent);
+
+  return AnnounceComponent;
+};
+
+export const withIconTheme = (WrappedComponent) => {
+  const IconThemeComponent = props => (
+    <IconThemeContext.Consumer>
+      {iconTheme => <WrappedComponent {...props} iconTheme={iconTheme} />}
+    </IconThemeContext.Consumer>
+  );
+
+  IconThemeComponent.displayName = getDisplayName(WrappedComponent);
+
+  return IconThemeComponent;
+};
 
 export default { withAnnounce, withFocus, withForwardRef, withIconTheme, withTheme };

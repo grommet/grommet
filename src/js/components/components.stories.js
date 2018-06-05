@@ -68,8 +68,8 @@ class Components extends Component {
             </Box>
             <Box gap='small'>
               <Select label='Select' options={['One', 'Two']} onChange={() => {}} />
-              <CheckBox checked={true} label='CheckBox' />
-              <RadioButton checked={true} label='RadioButton' />
+              <CheckBox checked={true} label='CheckBox' onChange={() => {}} />
+              <RadioButton checked={true} label='RadioButton' onChange={() => {}} />
               <TextInput placeholder='TextInput' />
               <TextArea placeholder='TextArea' />
               <RangeInput />
