@@ -2,39 +2,56 @@ import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import Transition from 'react-transition-group/Transition';
 
+import { withTheme } from '../hocs';
+
 import { Box } from '../Box';
 
 import CollapsibleContext from './CollapsibleContext';
 import doc from './doc';
 
-const BASE_HEIGHT = 500;
-const MIN_SPEED = 150;
+const getBaseStyle = (props) => {
+  const { theme: { collapsible: { minSpeed, baseHeight } } } = props;
+  const baseAnimation = {
+    transition: `max-height ${minSpeed}ms, visibility 50ms`,
+    visibility: 'hidden',
+    overflow: 'hidden',
+  };
 
-const baseAnimation = {
-  transition: `max-height ${MIN_SPEED}ms, visibility 50ms`,
-  visibility: 'hidden',
-  overflow: 'hidden',
-};
+  const baseTransitionStyles = {
+    entering: { visibility: 'hidden', overflow: 'hidden' },
+    entered: { visibility: 'visible', overflow: 'unset' },
+    exiting: { visibility: 'hidden', overflow: 'unset' },
+  };
 
-const baseTransitionStyles = {
-  entering: { visibility: 'hidden', overflow: 'hidden' },
-  entered: { visibility: 'visible', overflow: 'unset' },
-  exiting: { visibility: 'hidden', overflow: 'unset' },
-};
-
-const getBaseStyle = () => (
+  return (
   {
     animation: { ...baseAnimation },
     transitionStyles: { ...baseTransitionStyles },
+    containerHeight: undefined,
+    minSpeed,
+    baseHeight,
   }
-);
+  );
+};
 
 class Collapsible extends Component {
-  state = getBaseStyle()
+  state = {}
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { theme: { collapsible: { minSpeed, baseHeight } } } = nextProps;
+    if (
+      minSpeed !== prevState.minSpeed ||
+      baseHeight !== prevState.baseHeight
+    ) {
+      return getBaseStyle(nextProps);
+    }
+    return null;
+  }
 
   reset = () => {
+    const { containerHeight } = this.state;
     // preserve original height
-    this.setState({ forceClose: true, previousHeight: this.height });
+    this.setState({ forceClose: true, previousHeight: containerHeight });
   }
 
   componentDidUpdate() {
@@ -46,38 +63,44 @@ class Collapsible extends Component {
   }
 
   onEntering = () => {
-    const { previousHeight } = this.state;
+    const { previousHeight, baseHeight, minSpeed } = this.state;
 
-    this.height = findDOMNode(this.animateContainerRef).clientHeight;
-    this.speed = Math.max((this.height / BASE_HEIGHT) * MIN_SPEED, MIN_SPEED);
+    const height = findDOMNode(this.animateContainerRef).clientHeight;
+    const speed = Math.max((height / baseHeight) * minSpeed, minSpeed);
+
+    const baseStyle = getBaseStyle(this.props);
 
     this.setState({
+      containerHeight: height,
+      speed,
       animation: {
-        ...baseAnimation,
+        ...baseStyle.animation,
         transition: (
-          `max-height ${this.speed}ms, ${!previousHeight ? ', visibility 50ms' : ''}`
+          `max-height ${speed}ms, ${!previousHeight ? ', visibility 50ms' : ''}`
         ),
         maxHeight: 0,
       },
       transitionStyles: {
-        ...baseTransitionStyles,
+        ...baseStyle.transitionStyles,
         entering: {
-          ...baseTransitionStyles.entering,
+          ...baseStyle.transitionStyles.entering,
           maxHeight: previousHeight || 0,
         },
         entered: {
-          ...baseTransitionStyles.entered,
-          maxHeight: `${this.height}px`,
+          ...baseStyle.transitionStyles.entered,
+          maxHeight: `${height}px`,
         },
         exiting: {
-          ...baseTransitionStyles.exiting,
+          ...baseStyle.transitionStyles.exiting,
           maxHeight: 0,
         },
       },
     });
   }
 
-  onEnter = () => this.setState(getBaseStyle())
+  onEnter = () => {
+    this.setState(getBaseStyle(this.props));
+  }
 
   render() {
     const {
@@ -89,6 +112,7 @@ class Collapsible extends Component {
       forceClose,
       previousHeight,
       transitionStyles,
+      speed,
     } = this.state;
 
     return (
@@ -99,7 +123,8 @@ class Collapsible extends Component {
       >
         <Transition
           in={!forceClose && open}
-          timeout={{ enter: 0, exit: !previousHeight ? this.speed : 0 }}
+          appear={true}
+          timeout={{ enter: 0, exit: !previousHeight ? speed : 0 }}
           onEnter={this.onEnter}
           onEntering={this.onEntering}
           onEntered={() => this.setState({ previousHeight: undefined })}
@@ -129,4 +154,4 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Collapsible);
 }
 
-export default Collapsible;
+export default withTheme(Collapsible);

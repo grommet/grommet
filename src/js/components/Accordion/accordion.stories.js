@@ -268,8 +268,60 @@ class RichAccordion extends Component {
   }
 }
 
+const renderPanelHeader = (title, active) => (
+  <Box
+    direction='row'
+    align='center'
+    pad='medium'
+    gap='small'
+  >
+    <strong><Text>{title}</Text></strong>
+    <Text color='brand'>{ active ? '-' : '+'}</Text>
+  </Box>
+);
+
+class CustomHeaderAccordion extends Component {
+  state = {
+    activeIndex: 0,
+  }
+  render() {
+    const { activeIndex } = this.state;
+    return (
+      <Grommet>
+        <Accordion
+          activeIndex={activeIndex}
+          onActive={newActiveIndex => this.setState({ activeIndex: newActiveIndex })}
+        >
+          <AccordionPanel
+            header={renderPanelHeader('Panel 1', activeIndex === 0)}
+          >
+            <Box background='light-2' style={{ height: '800px' }}>
+              Panel 1 contents
+            </Box>
+          </AccordionPanel>
+          <AccordionPanel
+            header={renderPanelHeader('Panel 2', activeIndex === 1)}
+          >
+            <Box background='light-2' style={{ height: '50px' }}>
+              Panel 2 contents
+            </Box>
+          </AccordionPanel>
+          <AccordionPanel
+            header={renderPanelHeader('Panel 3', activeIndex === 2)}
+          >
+            <Box background='light-2' style={{ height: '300px' }}>
+              Panel 3 contents
+            </Box>
+          </AccordionPanel>
+        </Accordion>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Accordion', module)
   .add('Simple', () => <SimpleAccordion />)
   .add('Dark no animation', () => <SimpleAccordion animate={false} background='dark-2' />)
   .add('Multiple', () => <SimpleAccordion multiple={true} />)
-  .add('Rich', () => <RichAccordion />);
+  .add('Rich', () => <RichAccordion />)
+  .add('Custom Header', () => <CustomHeaderAccordion />);

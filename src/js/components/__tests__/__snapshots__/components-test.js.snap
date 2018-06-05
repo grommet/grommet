@@ -62,7 +62,12 @@ Object {
     "name": "Clock",
     "render": [Function],
   },
-  "Collapsible": [Function],
+  "Collapsible": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "displayName": "Collapsible",
+    "name": "Collapsible",
+    "render": [Function],
+  },
   "CollapsibleContext": Object {
     "$$typeof": Symbol(react.context),
     "Consumer": [Circular],

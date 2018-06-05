@@ -145,14 +145,6 @@ export const withTheme = (WrappedComponent) => {
           theme={theme || themeContext}
         />
       );
-      if (theme) {
-        content = (
-          <ThemeContext.Provider value={theme}>
-            {content}
-          </ThemeContext.Provider>
-        );
-      }
-      return content;
     }
   }
 

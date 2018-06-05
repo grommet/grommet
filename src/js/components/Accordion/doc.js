@@ -18,6 +18,9 @@ export function accordionPanel(Panel) {
     ]).description(
       'The panel title.'
     ).isRequired,
+    header: PropTypes.node.description(
+      'If specified, the entire panel header will be managed by the caller.'
+    ),
   };
   return DocumentedAccordionPanel;
 }
@@ -25,7 +28,7 @@ export function accordionPanel(Panel) {
 export default (Accordion) => {
   const DocumentedAccordion = describe(Accordion)
     .availableAt(getAvailableAtBadge('Accordion'))
-    .description('A collapsible accordion component.')
+    .description('An accordion containing collapsible panels.')
     .usage(
       `import { Accordion, AccordionPanel } from 'grommet';
 <Accordion>

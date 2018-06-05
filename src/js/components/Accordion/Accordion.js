@@ -26,16 +26,23 @@ class Accordion extends Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { activeIndex } = nextProps;
-    const { activeIndexes: stateActiveIndexes = [] } = prevState;
+    const {
+      activeIndexes: stateActiveIndexes = [],
+      activeIndex: stateActiveIndex,
+    } = prevState;
 
     const activeIndexes = activeAsArray(activeIndex) || [];
 
     if (
-      activeIndex &&
+      (
+        typeof activeIndex !== 'undefined' ||
+        activeIndex !== stateActiveIndex
+      ) &&
       activeIndexes.join() !== stateActiveIndexes.join()
     ) {
-      return { activeIndexes };
+      return { activeIndexes, activeIndex };
     }
+
     return null;
   }
 

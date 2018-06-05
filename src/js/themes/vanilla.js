@@ -259,6 +259,7 @@ export default deepFreeze({
       expand: FormDown,
     },
     iconColor: css`${props => props.theme.global.colors.brand}`,
+
   },
   anchor: {
     textDecoration: 'none',
@@ -389,6 +390,10 @@ export default deepFreeze({
         xxlarge: { size: '48px', height: 1.125 },
       },
     },
+  },
+  collapsible: {
+    minSpeed: 150,
+    baseHeight: 500,
   },
   formField: {
     border: {

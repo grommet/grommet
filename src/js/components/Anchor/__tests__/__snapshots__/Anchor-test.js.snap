@@ -325,6 +325,10 @@ exports[`Anchor icon label renders 1`] = `
                 },
               },
             },
+            "collapsible": Object {
+              "baseHeight": 500,
+              "minSpeed": 150,
+            },
             "dark": false,
             "formField": Object {
               "border": Object {
@@ -1423,6 +1427,10 @@ exports[`Anchor reverse icon label renders 1`] = `
                 },
               },
             },
+            "collapsible": Object {
+              "baseHeight": 500,
+              "minSpeed": 150,
+            },
             "dark": false,
             "formField": Object {
               "border": Object {
@@ -2383,6 +2391,10 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   },
                 },
               },
+            },
+            "collapsible": Object {
+              "baseHeight": 500,
+              "minSpeed": 150,
             },
             "dark": false,
             "formField": Object {

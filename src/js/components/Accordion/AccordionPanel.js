@@ -20,6 +20,7 @@ class AccordionPanel extends Component {
   render() {
     const {
       children,
+      header,
       title,
       theme,
       onMouseOut,
@@ -61,6 +62,7 @@ class AccordionPanel extends Component {
                   }
                 }}
               >
+                {header || (
                 <Box
                   flex={false}
                   align='center'
@@ -77,13 +79,14 @@ class AccordionPanel extends Component {
                         {title}
                       </Heading>
                     </Box>
-                  ) : title}
+                    ) : title}
                   {AccordionIcon && (
-                    <Box pad={{ horizontal: 'small' }}>
-                      <AccordionIcon color={dark ? 'light-3' : 'brand'} />
-                    </Box>
-                  )}
+                  <Box pad={{ horizontal: 'small' }}>
+                    <AccordionIcon color={dark ? 'light-3' : 'brand'} />
+                  </Box>
+                    )}
                 </Box>
+                )}
               </Button>
               <Box
                 flex={false}

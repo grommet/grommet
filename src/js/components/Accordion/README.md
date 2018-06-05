@@ -1,5 +1,5 @@
 ## Accordion
-A collapsible accordion component.
+An accordion containing collapsible panels.
 
 [![](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/grommet/grommet-sandbox?initialpath=accordion&module=%2Fsrc%2FAccordion.js)
 ## Usage
