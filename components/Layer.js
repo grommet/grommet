@@ -121,12 +121,17 @@ var LayerContents = function (_Component) {
       }
     }
   }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
       var hidden = this.props.hidden;
 
-      if (hidden) {
+
+      if (nextProps.hidden !== hidden) {
         _KeyboardAccelerators2.default.stopListeningToKeyboard(this, this._keyboardHandlers);
+
+        if (!nextProps.hidden) {
+          _KeyboardAccelerators2.default.startListeningToKeyboard(this, this._keyboardHandlers);
+        }
       };
     }
   }, {
