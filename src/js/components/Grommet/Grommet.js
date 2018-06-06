@@ -50,6 +50,7 @@ class Grommet extends Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize);
+    this.onResize();
   }
 
   componentWillUnmount() {
