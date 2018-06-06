@@ -1,0 +1,2759 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion AccordionPanel 1`] = `
+.c7 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #865CD6;
+  stroke: #865CD6;
+}
+
+.c7 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c7 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c7 *[stroke*="#"],
+.c7 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c7 *[fill-rule],
+.c7 *[FILL-RULE],
+.c7 *[fill*="#"],
+.c7 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c5 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 18px;
+  line-height: 1.333;
+  max-width: 432px;
+  font-weight: 600;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c9 {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c2 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    font-size: 18px;
+    line-height: 1.333;
+    max-width: 432px;
+    font-weight: 600;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    role="tablist"
+  >
+    <button
+      aria-expanded={false}
+      aria-selected={false}
+      className="c2"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      role="tab"
+      type="button"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <h4
+            className="c5"
+          >
+            Panel 1
+          </h4>
+        </div>
+        <div
+          className="c6"
+        >
+          <svg
+            aria-label="FormDown"
+            className="c7"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      className="c8"
+    >
+      <div
+        aria-hidden={true}
+        className="c9"
+        style={
+          Object {
+            "overflow": "hidden",
+            "transition": "max-height 150ms, visibility 50ms",
+            "visibility": "hidden",
+          }
+        }
+      />
+    </div>
+    <button
+      aria-expanded={false}
+      aria-selected={false}
+      className="c2"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      role="tab"
+      type="button"
+    >
+      <div
+        className="c3"
+      >
+        <div
+          className="c4"
+        >
+          <h4
+            className="c5"
+          >
+            Panel 2
+          </h4>
+        </div>
+        <div
+          className="c6"
+        >
+          <svg
+            aria-label="FormDown"
+            className="c7"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              strokeWidth="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      className="c8"
+    >
+      <div
+        aria-hidden={true}
+        className="c9"
+        style={
+          Object {
+            "overflow": "hidden",
+            "transition": "max-height 150ms, visibility 50ms",
+            "visibility": "hidden",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion change active index 1`] = `
+<div
+  class="StyledBox-bStriS gTzfUh"
+  role="tablist"
+>
+  <button
+    aria-expanded="false"
+    aria-selected="false"
+    class="StyledButton-gXzblK VmgEM"
+    role="tab"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS cfRcfZ"
+    >
+      <div
+        class="StyledBox-bStriS fRppQV"
+      >
+        <h4
+          class="StyledHeading-NQveS hUAlxd"
+        >
+          Panel 1
+        </h4>
+      </div>
+      <div
+        class="StyledBox-bStriS iykTGx"
+      >
+        <svg
+          aria-label="FormDown"
+          class="StyledIcon-gTfjEw htxeRg"
+          color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+  <div
+    class="StyledBox-bStriS cjZLWs"
+  />
+  <button
+    aria-expanded="true"
+    aria-selected="true"
+    class="StyledButton-gXzblK VmgEM"
+    role="tab"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS cfRcfZ"
+    >
+      <div
+        class="StyledBox-bStriS fRppQV"
+      >
+        <h4
+          class="StyledHeading-NQveS hUAlxd"
+        >
+          Panel 2
+        </h4>
+      </div>
+      <div
+        class="StyledBox-bStriS iykTGx"
+      >
+        <svg
+          aria-label="FormUp"
+          class="StyledIcon-gTfjEw htxeRg"
+          color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+            transform="matrix(1 0 0 -1 0 24)"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+  <div
+    class="StyledBox-bStriS cjZLWs"
+  >
+    Panel body 2
+  </div>
+</div>
+`;
+
+exports[`Accordion change active index 2`] = `
+<div
+  class="StyledBox-bStriS gTzfUh"
+  role="tablist"
+>
+  <button
+    aria-expanded="false"
+    aria-selected="false"
+    class="StyledButton-gXzblK VmgEM"
+    role="tab"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS cfRcfZ"
+    >
+      <div
+        class="StyledBox-bStriS fRppQV"
+      >
+        <h4
+          class="StyledHeading-NQveS hUAlxd"
+        >
+          Panel 1
+        </h4>
+      </div>
+      <div
+        class="StyledBox-bStriS iykTGx"
+      >
+        <svg
+          aria-label="FormDown"
+          class="StyledIcon-gTfjEw htxeRg"
+          color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+  <div
+    class="StyledBox-bStriS cjZLWs"
+  />
+  <button
+    aria-expanded="true"
+    aria-selected="true"
+    class="StyledButton-gXzblK VmgEM"
+    role="tab"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS cfRcfZ"
+    >
+      <div
+        class="StyledBox-bStriS fRppQV"
+      >
+        <h4
+          class="StyledHeading-NQveS hUAlxd"
+        >
+          Panel 2
+        </h4>
+      </div>
+      <div
+        class="StyledBox-bStriS iykTGx"
+      >
+        <svg
+          aria-label="FormUp"
+          class="StyledIcon-gTfjEw htxeRg"
+          color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+            transform="matrix(1 0 0 -1 0 24)"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+  <div
+    class="StyledBox-bStriS cjZLWs"
+  >
+    Panel body 2
+  </div>
+</div>
+`;
+
+exports[`Accordion change to second Panel 1`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    class="StyledBox-bStriS gTzfUh"
+    role="tablist"
+  >
+    <button
+      aria-expanded="false"
+      aria-selected="false"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 1
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    >
+      <div
+        aria-hidden="true"
+        class="StyledBox-bStriS cwOEFa"
+        style="visibility: hidden; overflow: hidden;"
+      />
+    </div>
+    <button
+      aria-expanded="false"
+      aria-selected="false"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 2
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    >
+      <div
+        aria-hidden="true"
+        class="StyledBox-bStriS cwOEFa"
+        style="visibility: hidden; overflow: hidden;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion change to second Panel 2`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    class="StyledBox-bStriS gTzfUh"
+    role="tablist"
+  >
+    <button
+      aria-expanded="false"
+      aria-selected="false"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 1
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    >
+      <div
+        aria-hidden="true"
+        class="StyledBox-bStriS cwOEFa"
+        style="visibility: hidden; overflow: hidden;"
+      />
+    </div>
+    <button
+      aria-expanded="true"
+      aria-selected="true"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 2
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+              transform="matrix(1 0 0 -1 0 24)"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    >
+      <div
+        aria-hidden="false"
+        class="StyledBox-bStriS cwOEFa"
+        style="visibility: visible; overflow: unset; max-height: 0px;"
+      >
+        Panel body 2
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion change to second Panel without onActive 1`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    class="StyledBox-bStriS gTzfUh"
+    role="tablist"
+  >
+    <button
+      aria-expanded="false"
+      aria-selected="false"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 1
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    />
+    <button
+      aria-expanded="false"
+      aria-selected="false"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 2
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    />
+  </div>
+</div>
+`;
+
+exports[`Accordion change to second Panel without onActive 2`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    class="StyledBox-bStriS gTzfUh"
+    role="tablist"
+  >
+    <button
+      aria-expanded="false"
+      aria-selected="false"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 1
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    />
+    <button
+      aria-expanded="true"
+      aria-selected="true"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 2
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+              transform="matrix(1 0 0 -1 0 24)"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    >
+      Panel body 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion complex header 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    border-bottom: solid 1px rgba(0,0,0,0.33);
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c2 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    role="tablist"
+  >
+    <button
+      aria-expanded={false}
+      aria-selected={false}
+      className="c2"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      role="tab"
+      type="button"
+    >
+      <div>
+        Panel 1 header
+      </div>
+    </button>
+    <div
+      className="c3"
+    />
+    <button
+      aria-expanded={true}
+      aria-selected={true}
+      className="c2"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+      role="tab"
+      type="button"
+    >
+      <div>
+        Panel 2 header
+      </div>
+    </button>
+    <div
+      className="c3"
+    >
+      Panel body 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion complex title 1`] = `
+.c6 {
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  fill: #DDDDDD;
+  stroke: #DDDDDD;
+}
+
+.c6 g {
+  fill: inherit;
+  stroke: inherit;
+}
+
+.c6 *:not([stroke])[fill="none"] {
+  stroke-width: 0;
+}
+
+.c6 *[stroke*="#"],
+.c6 *[STROKE*="#"] {
+  stroke: inherit;
+  fill: none;
+}
+
+.c6 *[fill-rule],
+.c6 *[FILL-RULE],
+.c6 *[fill*="#"],
+.c6 *[FILL*="#"] {
+  fill: inherit;
+  stroke: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: #333333;
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  border-bottom: solid 1px #BBBBBB;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  font: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin: 0;
+  background-color: transparent;
+  overflow: visible;
+  text-transform: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  text-align: inherit;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    border-bottom: solid 1px #BBBBBB;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c7 {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .c3 {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+      role="tablist"
+    >
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="c3"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="c4"
+        >
+          <div>
+            Panel 1 complex
+          </div>
+          <div
+            className="c5"
+          >
+            <svg
+              aria-label="FormDown"
+              className="c6"
+              color="light-3"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        className="c7"
+      >
+        <div
+          aria-hidden={true}
+          className="c8"
+          style={
+            Object {
+              "overflow": "hidden",
+              "transition": "max-height 150ms, visibility 50ms",
+              "visibility": "hidden",
+            }
+          }
+        />
+      </div>
+      <button
+        aria-expanded={false}
+        aria-selected={false}
+        className="c3"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseOut={[Function]}
+        onMouseOver={[Function]}
+        role="tab"
+        type="button"
+      >
+        <div
+          className="c4"
+        >
+          <div>
+            Panel 2 complex
+          </div>
+          <div
+            className="c5"
+          >
+            <svg
+              aria-label="FormDown"
+              className="c6"
+              color="light-3"
+              height="24px"
+              role="img"
+              version="1.1"
+              viewBox="0 0 24 24"
+              width="24px"
+            >
+              <polyline
+                fill="none"
+                points="18 9 12 15 6 9"
+                stroke="#000"
+                strokeWidth="2"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+      <div
+        className="c7"
+      >
+        <div
+          aria-hidden={true}
+          className="c8"
+          style={
+            Object {
+              "overflow": "hidden",
+              "transition": "max-height 150ms, visibility 50ms",
+              "visibility": "hidden",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion multiple panels 1`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    class="StyledBox-bStriS gTzfUh"
+    role="tablist"
+  >
+    <button
+      aria-expanded="false"
+      aria-selected="false"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 1
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    />
+    <button
+      aria-expanded="false"
+      aria-selected="false"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 2
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    />
+  </div>
+</div>
+`;
+
+exports[`Accordion multiple panels 2`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    class="StyledBox-bStriS gTzfUh"
+    role="tablist"
+  >
+    <button
+      aria-expanded="false"
+      aria-selected="false"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 1
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    />
+    <button
+      aria-expanded="true"
+      aria-selected="true"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 2
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+              transform="matrix(1 0 0 -1 0 24)"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    >
+      Panel body 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion multiple panels 3`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    class="StyledBox-bStriS gTzfUh"
+    role="tablist"
+  >
+    <button
+      aria-expanded="true"
+      aria-selected="true"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 1
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+              transform="matrix(1 0 0 -1 0 24)"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    >
+      Panel body 1
+    </div>
+    <button
+      aria-expanded="true"
+      aria-selected="true"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 2
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+              transform="matrix(1 0 0 -1 0 24)"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    >
+      Panel body 2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion multiple panels 4`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    class="StyledBox-bStriS gTzfUh"
+    role="tablist"
+  >
+    <button
+      aria-expanded="true"
+      aria-selected="true"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 1
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormUp"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+              transform="matrix(1 0 0 -1 0 24)"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    >
+      Panel body 1
+    </div>
+    <button
+      aria-expanded="false"
+      aria-selected="false"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 2
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    />
+  </div>
+</div>
+`;
+
+exports[`Accordion multiple panels 5`] = `
+<div
+  class="StyledGrommet-gGRXwz fDhYVV"
+>
+  <div
+    class="StyledBox-bStriS gTzfUh"
+    role="tablist"
+  >
+    <button
+      aria-expanded="false"
+      aria-selected="false"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 1
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    />
+    <button
+      aria-expanded="false"
+      aria-selected="false"
+      class="StyledButton-gXzblK VmgEM"
+      role="tab"
+      type="button"
+    >
+      <div
+        class="StyledBox-bStriS cfRcfZ"
+      >
+        <div
+          class="StyledBox-bStriS fRppQV"
+        >
+          <h4
+            class="StyledHeading-NQveS hUAlxd"
+          >
+            Panel 2
+          </h4>
+        </div>
+        <div
+          class="StyledBox-bStriS iykTGx"
+        >
+          <svg
+            aria-label="FormDown"
+            class="StyledIcon-gTfjEw FYCct"
+            color="brand"
+            height="24px"
+            role="img"
+            version="1.1"
+            viewBox="0 0 24 24"
+            width="24px"
+          >
+            <polyline
+              fill="none"
+              points="18 9 12 15 6 9"
+              stroke="#000"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+      </div>
+    </button>
+    <div
+      class="StyledBox-bStriS cjZLWs"
+    />
+  </div>
+</div>
+`;
+
+exports[`Accordion no AccordionPanel 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.c0 {
+  font-family: 'Work Sans',Arial,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #444444;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    role="tablist"
+  />
+</div>
+`;
+
+exports[`Accordion set on hover 1`] = `
+<div
+  class="StyledBox-bStriS gTzfUh"
+  role="tablist"
+>
+  <button
+    aria-expanded="false"
+    aria-selected="false"
+    class="StyledButton-gXzblK VmgEM"
+    role="tab"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS cfRcfZ"
+    >
+      <div
+        class="StyledBox-bStriS fRppQV"
+      >
+        <h4
+          class="StyledHeading-NQveS hUAlxd"
+        >
+          Panel 1
+        </h4>
+      </div>
+      <div
+        class="StyledBox-bStriS iykTGx"
+      >
+        <svg
+          aria-label="FormDown"
+          class="StyledIcon-gTfjEw htxeRg"
+          color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+  <div
+    class="StyledBox-bStriS cjZLWs"
+  >
+    <div
+      aria-hidden="true"
+      class="StyledBox-bStriS cwOEFa"
+      style="visibility: hidden; overflow: hidden;"
+    />
+  </div>
+  <button
+    aria-expanded="false"
+    aria-selected="false"
+    class="StyledButton-gXzblK VmgEM"
+    role="tab"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS cfRcfZ"
+    >
+      <div
+        class="StyledBox-bStriS fRppQV"
+      >
+        <h4
+          class="StyledHeading-NQveS hUAlxd"
+        >
+          Panel 2
+        </h4>
+      </div>
+      <div
+        class="StyledBox-bStriS iykTGx"
+      >
+        <svg
+          aria-label="FormDown"
+          class="StyledIcon-gTfjEw htxeRg"
+          color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+  <div
+    class="StyledBox-bStriS cjZLWs"
+  >
+    <div
+      aria-hidden="true"
+      class="StyledBox-bStriS cwOEFa"
+      style="visibility: hidden; overflow: hidden;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Accordion set on hover 2`] = `
+<div
+  class="StyledBox-bStriS gTzfUh"
+  role="tablist"
+>
+  <button
+    aria-expanded="false"
+    aria-selected="false"
+    class="StyledButton-gXzblK VmgEM"
+    role="tab"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS cfRcfZ"
+    >
+      <div
+        class="StyledBox-bStriS fRppQV"
+      >
+        <h4
+          class="StyledHeading-NQveS biyqIX"
+          color="dark-6"
+        >
+          Panel 1
+        </h4>
+      </div>
+      <div
+        class="StyledBox-bStriS iykTGx"
+      >
+        <svg
+          aria-label="FormDown"
+          class="StyledIcon-gTfjEw htxeRg"
+          color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+  <div
+    class="StyledBox-bStriS cjZLWs"
+  >
+    <div
+      aria-hidden="true"
+      class="StyledBox-bStriS cwOEFa"
+      style="visibility: hidden; overflow: hidden;"
+    />
+  </div>
+  <button
+    aria-expanded="false"
+    aria-selected="false"
+    class="StyledButton-gXzblK VmgEM"
+    role="tab"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS cfRcfZ"
+    >
+      <div
+        class="StyledBox-bStriS fRppQV"
+      >
+        <h4
+          class="StyledHeading-NQveS hUAlxd"
+        >
+          Panel 2
+        </h4>
+      </div>
+      <div
+        class="StyledBox-bStriS iykTGx"
+      >
+        <svg
+          aria-label="FormDown"
+          class="StyledIcon-gTfjEw htxeRg"
+          color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+  <div
+    class="StyledBox-bStriS cjZLWs"
+  >
+    <div
+      aria-hidden="true"
+      class="StyledBox-bStriS cwOEFa"
+      style="visibility: hidden; overflow: hidden;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Accordion set on hover 3`] = `
+<div
+  class="StyledBox-bStriS gTzfUh"
+  role="tablist"
+>
+  <button
+    aria-expanded="false"
+    aria-selected="false"
+    class="StyledButton-gXzblK VmgEM"
+    role="tab"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS cfRcfZ"
+    >
+      <div
+        class="StyledBox-bStriS fRppQV"
+      >
+        <h4
+          class="StyledHeading-NQveS biyqIX"
+          color="dark-6"
+        >
+          Panel 1
+        </h4>
+      </div>
+      <div
+        class="StyledBox-bStriS iykTGx"
+      >
+        <svg
+          aria-label="FormDown"
+          class="StyledIcon-gTfjEw htxeRg"
+          color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+  <div
+    class="StyledBox-bStriS cjZLWs"
+  >
+    <div
+      aria-hidden="true"
+      class="StyledBox-bStriS cwOEFa"
+      style="visibility: hidden; overflow: hidden;"
+    />
+  </div>
+  <button
+    aria-expanded="false"
+    aria-selected="false"
+    class="StyledButton-gXzblK VmgEM"
+    role="tab"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS cfRcfZ"
+    >
+      <div
+        class="StyledBox-bStriS fRppQV"
+      >
+        <h4
+          class="StyledHeading-NQveS biyqIX"
+          color="dark-6"
+        >
+          Panel 2
+        </h4>
+      </div>
+      <div
+        class="StyledBox-bStriS iykTGx"
+      >
+        <svg
+          aria-label="FormDown"
+          class="StyledIcon-gTfjEw htxeRg"
+          color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+  <div
+    class="StyledBox-bStriS cjZLWs"
+  >
+    <div
+      aria-hidden="true"
+      class="StyledBox-bStriS cwOEFa"
+      style="visibility: hidden; overflow: hidden;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Accordion set on hover 4`] = `
+<div
+  class="StyledBox-bStriS gTzfUh"
+  role="tablist"
+>
+  <button
+    aria-expanded="false"
+    aria-selected="false"
+    class="StyledButton-gXzblK VmgEM"
+    role="tab"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS cfRcfZ"
+    >
+      <div
+        class="StyledBox-bStriS fRppQV"
+      >
+        <h4
+          class="StyledHeading-NQveS hUAlxd"
+        >
+          Panel 1
+        </h4>
+      </div>
+      <div
+        class="StyledBox-bStriS iykTGx"
+      >
+        <svg
+          aria-label="FormDown"
+          class="StyledIcon-gTfjEw htxeRg"
+          color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+  <div
+    class="StyledBox-bStriS cjZLWs"
+  >
+    <div
+      aria-hidden="true"
+      class="StyledBox-bStriS cwOEFa"
+      style="visibility: hidden; overflow: hidden;"
+    />
+  </div>
+  <button
+    aria-expanded="false"
+    aria-selected="false"
+    class="StyledButton-gXzblK VmgEM"
+    role="tab"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS cfRcfZ"
+    >
+      <div
+        class="StyledBox-bStriS fRppQV"
+      >
+        <h4
+          class="StyledHeading-NQveS biyqIX"
+          color="dark-6"
+        >
+          Panel 2
+        </h4>
+      </div>
+      <div
+        class="StyledBox-bStriS iykTGx"
+      >
+        <svg
+          aria-label="FormDown"
+          class="StyledIcon-gTfjEw htxeRg"
+          color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+  <div
+    class="StyledBox-bStriS cjZLWs"
+  >
+    <div
+      aria-hidden="true"
+      class="StyledBox-bStriS cwOEFa"
+      style="visibility: hidden; overflow: hidden;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Accordion set on hover 5`] = `
+<div
+  class="StyledBox-bStriS gTzfUh"
+  role="tablist"
+>
+  <button
+    aria-expanded="false"
+    aria-selected="false"
+    class="StyledButton-gXzblK VmgEM"
+    role="tab"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS cfRcfZ"
+    >
+      <div
+        class="StyledBox-bStriS fRppQV"
+      >
+        <h4
+          class="StyledHeading-NQveS hUAlxd"
+        >
+          Panel 1
+        </h4>
+      </div>
+      <div
+        class="StyledBox-bStriS iykTGx"
+      >
+        <svg
+          aria-label="FormDown"
+          class="StyledIcon-gTfjEw htxeRg"
+          color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+  <div
+    class="StyledBox-bStriS cjZLWs"
+  >
+    <div
+      aria-hidden="true"
+      class="StyledBox-bStriS cwOEFa"
+      style="visibility: hidden; overflow: hidden;"
+    />
+  </div>
+  <button
+    aria-expanded="false"
+    aria-selected="false"
+    class="StyledButton-gXzblK VmgEM"
+    role="tab"
+    type="button"
+  >
+    <div
+      class="StyledBox-bStriS cfRcfZ"
+    >
+      <div
+        class="StyledBox-bStriS fRppQV"
+      >
+        <h4
+          class="StyledHeading-NQveS hUAlxd"
+        >
+          Panel 2
+        </h4>
+      </div>
+      <div
+        class="StyledBox-bStriS iykTGx"
+      >
+        <svg
+          aria-label="FormDown"
+          class="StyledIcon-gTfjEw htxeRg"
+          color="brand"
+          height="24px"
+          role="img"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <polyline
+            fill="none"
+            points="18 9 12 15 6 9"
+            stroke="#000"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+  <div
+    class="StyledBox-bStriS cjZLWs"
+  >
+    <div
+      aria-hidden="true"
+      class="StyledBox-bStriS cwOEFa"
+      style="visibility: hidden; overflow: hidden;"
+    />
+  </div>
+</div>
+`;

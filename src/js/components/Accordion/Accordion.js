@@ -27,7 +27,7 @@ class Accordion extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     const { activeIndex } = nextProps;
     const {
-      activeIndexes: stateActiveIndexes = [],
+      activeIndexes: stateActiveIndexes,
       activeIndex: stateActiveIndex,
     } = prevState;
 
