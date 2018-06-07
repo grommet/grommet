@@ -3,9 +3,9 @@
 @import "settings";
 
 // Generic
-@import "inuit-normalize/generic.normalize";
-@import "inuit-reset/generic.reset";
-@import "inuit-shared/generic.shared";
+@import "~inuit-normalize/generic.normalize";
+@import "~inuit-reset/generic.reset";
+@import "~inuit-shared/generic.shared";
 
 // Base
 @import "base";
