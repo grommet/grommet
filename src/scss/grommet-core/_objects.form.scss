@@ -73,4 +73,21 @@
 
 .#{$grommet-namespace}form--compact {
   max-width: $compact-form-width;
+
+  // Fixes a bug in Windows which causes overflow.
+  label.#{$grommet-namespace}check-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  label.#{$grommet-namespace}radio-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .#{$grommet-namespace}radio-button__control {
+      min-width: $inuit-base-spacing-unit;
+    }
+  }
 }
