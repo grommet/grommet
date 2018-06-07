@@ -254,11 +254,18 @@ export default class Drop {
       windowWidth
     );
 
+    // determine correction when controlRect.width<24 to fix drop dislocation
+    var locCorrection = 0;
+    if (controlRect.width<24) { 
+      locCorrection = Math.min( 
+      16, (Math.max(0, (containerRect.width-controlRect.width)/2)));
+    }
+
     // set left position
     let left;
     if (align.left) {
       if ('left' === align.left) {
-        left = controlRect.left;
+        left = controlRect.left - locCorrection;
       } else if ('right' === align.left) {
         left = controlRect.left - width;
       }
@@ -266,7 +273,7 @@ export default class Drop {
       if ('left' === align.right) {
         left = controlRect.left - width;
       } else if ('right' === align.right) {
-        left = (controlRect.left + controlRect.width) - width;
+        left = (controlRect.left + controlRect.width) - width + locCorrection;
       }
     }
 
