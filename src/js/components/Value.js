@@ -59,7 +59,7 @@ export default class Value extends Component {
       contentNode = (
         <div>
           <span className={`${CLASS_ROOT}__value`}>
-            {value}
+            {parseFloat(value.toFixed(2))}
           </span>
           {unitsSpan}
           {icon}
@@ -70,7 +70,7 @@ export default class Value extends Component {
         <div>
           {icon}
           <span className={`${CLASS_ROOT}__value`}>
-            {value}
+            {parseFloat(value.toFixed(2))}
           </span>
           {unitsSpan}
         </div>
