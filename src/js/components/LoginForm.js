@@ -110,7 +110,7 @@ export default class LoginForm extends Component {
 
     let titleNode;
     if (title) {
-      titleNode = <Heading strong={true}>{title}</Heading>;
+      titleNode = <Heading align='center' strong={true}>{title}</Heading>;
     }
 
     let secondaryTextNode;
