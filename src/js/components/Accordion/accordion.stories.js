@@ -37,17 +37,17 @@ class SimpleAccordion extends Component {
       <Grommet>
         <Box {...rest}>
           <Accordion animate={animate} multiple={multiple}>
-            <AccordionPanel title='Panel 1'>
+            <AccordionPanel label='Panel 1'>
               <Box background='light-2' style={{ height: '800px' }}>
                 Panel 1 contents
               </Box>
             </AccordionPanel>
-            <AccordionPanel title='Panel 2'>
+            <AccordionPanel label='Panel 2'>
               <Box background='light-2' style={{ height: '50px' }}>
                 Panel 2 contents
               </Box>
             </AccordionPanel>
-            <AccordionPanel title='Panel 3'>
+            <AccordionPanel label='Panel 3'>
               <Box background='light-2' style={{ height: '300px' }}>
                 Panel 3 contents
               </Box>
@@ -64,7 +64,7 @@ class RichPanel extends Component {
     hovering: false,
   }
   renderPanelTitle = () => {
-    const { icon, title } = this.props;
+    const { icon, label } = this.props;
     const { hovering } = this.state;
     return (
       <Box
@@ -75,7 +75,7 @@ class RichPanel extends Component {
       >
         {icon}
         <Heading level={4} color={hovering ? 'dark-1' : 'dark-5'}>
-          {title}
+          {label}
         </Heading>
       </Box>
     );
@@ -84,7 +84,7 @@ class RichPanel extends Component {
     const { children } = this.props;
     return (
       <AccordionPanel
-        title={this.renderPanelTitle()}
+        label={this.renderPanelTitle()}
         onMouseOver={() => this.setState({ hovering: true })}
         onMouseOut={() => this.setState({ hovering: false })}
       >
@@ -146,7 +146,7 @@ class RichAccordion extends Component {
                   }
                 }}
               >
-                <RichPanel icon={<CircleInformation />} title='Channel Details'>
+                <RichPanel icon={<CircleInformation />} label='Channel Details'>
                   <Box
                     pad={{ bottom: 'medium', horizontal: 'small', top: 'small' }}
                     gap='medium'
@@ -171,7 +171,7 @@ class RichAccordion extends Component {
                 </RichPanel>
                 <RichPanel
                   icon={<Bookmark color='accent-1' />}
-                  title='Highlights'
+                  label='Highlights'
                 >
                   <CollapsibleContext>
                     {({ reset }) => {
@@ -252,7 +252,7 @@ class RichAccordion extends Component {
                     }}
                   </CollapsibleContext>
                 </RichPanel>
-                <RichPanel icon={<User color='accent-2' />} title='2,000 members'>
+                <RichPanel icon={<User color='accent-2' />} label='2,000 members'>
                   <Box
                     pad={{ bottom: 'medium', horizontal: 'small', top: 'small' }}
                     gap='medium'
@@ -288,33 +288,35 @@ class CustomHeaderAccordion extends Component {
   render() {
     const { activeIndex } = this.state;
     return (
-      <Accordion
-        activeIndex={activeIndex}
-        onActive={newActiveIndex => this.setState({ activeIndex: newActiveIndex })}
-      >
-        <AccordionPanel
-          header={renderPanelHeader('Panel 1', activeIndex === 0)}
+      <Grommet>
+        <Accordion
+          activeIndex={activeIndex}
+          onActive={newActiveIndex => this.setState({ activeIndex: newActiveIndex })}
         >
-          <Box pad='medium' background='light-2' style={{ height: '800px' }}>
-            <Text>Panel 1 contents</Text>
-            <TextInput />
-          </Box>
-        </AccordionPanel>
-        <AccordionPanel
-          header={renderPanelHeader('Panel 2', activeIndex === 1)}
-        >
-          <Box pad='medium' background='light-2' style={{ height: '50px' }}>
-            <Text>Panel 2 contents</Text>
-          </Box>
-        </AccordionPanel>
-        <AccordionPanel
-          header={renderPanelHeader('Panel 3', activeIndex === 2)}
-        >
-          <Box pad='medium' background='light-2' style={{ height: '300px' }}>
-            <Text>Panel 3 contents</Text>
-          </Box>
-        </AccordionPanel>
-      </Accordion>
+          <AccordionPanel
+            header={renderPanelHeader('Panel 1', activeIndex === 0)}
+          >
+            <Box pad='medium' background='light-2' style={{ height: '800px' }}>
+              <Text>Panel 1 contents</Text>
+              <TextInput />
+            </Box>
+          </AccordionPanel>
+          <AccordionPanel
+            header={renderPanelHeader('Panel 2', activeIndex === 1)}
+          >
+            <Box pad='medium' background='light-2' style={{ height: '50px' }}>
+              <Text>Panel 2 contents</Text>
+            </Box>
+          </AccordionPanel>
+          <AccordionPanel
+            header={renderPanelHeader('Panel 3', activeIndex === 2)}
+          >
+            <Box pad='medium' background='light-2' style={{ height: '300px' }}>
+              <Text>Panel 3 contents</Text>
+            </Box>
+          </AccordionPanel>
+        </Accordion>
+      </Grommet>
     );
   }
 }

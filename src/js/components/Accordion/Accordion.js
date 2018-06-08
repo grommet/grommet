@@ -65,11 +65,7 @@ class Accordion extends Component {
 
     this.setState({ activeIndexes }, () => {
       if (onActive) {
-        if (!multiple) {
-          onActive(activeIndexes[0]);
-        } else {
-          onActive(activeIndexes);
-        }
+        onActive(activeIndexes);
       }
     });
   }

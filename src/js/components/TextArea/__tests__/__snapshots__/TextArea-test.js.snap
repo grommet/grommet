@@ -14,24 +14,6 @@ exports[`TextArea focusIndicator renders 1`] = `
 }
 
 .c1 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
@@ -100,24 +82,6 @@ exports[`TextArea placeholder renders 1`] = `
 }
 
 .c1 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
@@ -187,24 +151,6 @@ exports[`TextArea plain renders 1`] = `
 }
 
 .c1 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
@@ -261,24 +207,6 @@ exports[`TextArea renders 1`] = `
 }
 
 .c1 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;

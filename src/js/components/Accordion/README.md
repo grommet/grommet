@@ -7,8 +7,8 @@ An accordion containing collapsible panels.
 ```javascript
 import { Accordion, AccordionPanel } from 'grommet';
 <Accordion>
-  <AccordionPanel title='Panel 1'>...</AccordionPanel>
-  <AccordionPanel title='Panek 2'>...</AccordionPanel>
+  <AccordionPanel label='Panel 1'>...</AccordionPanel>
+  <AccordionPanel label='Panek 2'>...</AccordionPanel>
 </Accordion>
 ```
 
@@ -43,8 +43,8 @@ Required. Array of AccordionPanels.
 
 **onActive**
 
-Function that will be called with the active panel index when the currently active
-accordion changes.
+Function that will be called when the active index changes.
+It will always send an array with currently active panel indexes.
 
 ```
 function

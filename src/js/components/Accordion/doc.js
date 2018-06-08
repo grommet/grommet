@@ -12,11 +12,11 @@ export function accordionPanel(Panel) {
       'An Accordion panel.'
     );
   DocumentedAccordionPanel.propTypes = {
-    title: PropTypes.oneOfType([
+    label: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.node,
     ]).description(
-      'The panel title.'
+      'The panel label.'
     ).isRequired,
     header: PropTypes.node.description(
       'If specified, the entire panel header will be managed by the caller.'
@@ -32,8 +32,8 @@ export default (Accordion) => {
     .usage(
       `import { Accordion, AccordionPanel } from 'grommet';
 <Accordion>
-  <AccordionPanel title='Panel 1'>...</AccordionPanel>
-  <AccordionPanel title='Panek 2'>...</AccordionPanel>
+  <AccordionPanel label='Panel 1'>...</AccordionPanel>
+  <AccordionPanel label='Panek 2'>...</AccordionPanel>
 </Accordion>`
     );
 
@@ -53,8 +53,8 @@ accordingly.`
       'Array of AccordionPanels.'
     ).isRequired,
     onActive: PropTypes.func.description(
-      `Function that will be called with the active panel index when the currently active
-accordion changes.`
+      `Function that will be called when the active index changes.
+It will always send an array with currently active panel indexes.`
     ),
     multiple: PropTypes.bool.description(
       'Allow multiple panels to be opened at once.'

@@ -88,30 +88,12 @@ exports[`Tabs Tab 1`] = `
 }
 
 .c4 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
   font-weight: bold;
 }
 
 .c6 {
-  font-family: 'Work Sans',Arial,sans-serif;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #444444;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   font-size: 16px;
   line-height: 1.375;
   color: #444444;
@@ -265,7 +247,7 @@ exports[`Tabs change active index 1`] = `
         class="StyledBox-bStriS elvBnI"
       >
         <span
-          class="StyledText-eJMSZI GAlol"
+          class="StyledText-eJMSZI eTujXF"
           color="#444444"
         >
           Tab 1
@@ -283,7 +265,7 @@ exports[`Tabs change active index 1`] = `
         class="StyledBox-bStriS gNLzjT"
       >
         <span
-          class="StyledText-eJMSZI hDPFWm"
+          class="StyledText-eJMSZI bxnpJv"
         >
           Tab 2
         </span>
@@ -317,7 +299,7 @@ exports[`Tabs change active index 2`] = `
         class="StyledBox-bStriS elvBnI"
       >
         <span
-          class="StyledText-eJMSZI GAlol"
+          class="StyledText-eJMSZI eTujXF"
           color="#444444"
         >
           Tab 1
@@ -335,7 +317,7 @@ exports[`Tabs change active index 2`] = `
         class="StyledBox-bStriS gNLzjT"
       >
         <span
-          class="StyledText-eJMSZI hDPFWm"
+          class="StyledText-eJMSZI bxnpJv"
         >
           Tab 2
         </span>
@@ -372,7 +354,7 @@ exports[`Tabs change to second tab 1`] = `
           class="StyledBox-bStriS gNLzjT"
         >
           <span
-            class="StyledText-eJMSZI hDPFWm"
+            class="StyledText-eJMSZI bxnpJv"
           >
             Tab 1
           </span>
@@ -389,7 +371,7 @@ exports[`Tabs change to second tab 1`] = `
           class="StyledBox-bStriS elvBnI"
         >
           <span
-            class="StyledText-eJMSZI GAlol"
+            class="StyledText-eJMSZI eTujXF"
             color="#444444"
           >
             Tab 2
@@ -428,7 +410,7 @@ exports[`Tabs change to second tab 2`] = `
           class="StyledBox-bStriS gNLzjT"
         >
           <span
-            class="StyledText-eJMSZI hDPFWm"
+            class="StyledText-eJMSZI bxnpJv"
           >
             Tab 1
           </span>
@@ -445,7 +427,7 @@ exports[`Tabs change to second tab 2`] = `
           class="StyledBox-bStriS elvBnI"
         >
           <span
-            class="StyledText-eJMSZI GAlol"
+            class="StyledText-eJMSZI eTujXF"
             color="#444444"
           >
             Tab 2
@@ -762,7 +744,7 @@ exports[`Tabs set on hover 1`] = `
         class="StyledBox-bStriS gNLzjT"
       >
         <span
-          class="StyledText-eJMSZI hDPFWm"
+          class="StyledText-eJMSZI bxnpJv"
         >
           Tab 1
         </span>
@@ -779,7 +761,7 @@ exports[`Tabs set on hover 1`] = `
         class="StyledBox-bStriS elvBnI"
       >
         <span
-          class="StyledText-eJMSZI GAlol"
+          class="StyledText-eJMSZI eTujXF"
           color="#444444"
         >
           Tab 2
@@ -814,7 +796,7 @@ exports[`Tabs set on hover 2`] = `
         class="StyledBox-bStriS gNLzjT"
       >
         <span
-          class="StyledText-eJMSZI hDPFWm"
+          class="StyledText-eJMSZI bxnpJv"
         >
           Tab 1
         </span>
@@ -831,7 +813,7 @@ exports[`Tabs set on hover 2`] = `
         class="StyledBox-bStriS elvBnI"
       >
         <span
-          class="StyledText-eJMSZI GAlol"
+          class="StyledText-eJMSZI eTujXF"
           color="#444444"
         >
           Tab 2
@@ -866,7 +848,7 @@ exports[`Tabs set on hover 3`] = `
         class="StyledBox-bStriS gNLzjT"
       >
         <span
-          class="StyledText-eJMSZI hDPFWm"
+          class="StyledText-eJMSZI bxnpJv"
         >
           Tab 1
         </span>
@@ -883,7 +865,7 @@ exports[`Tabs set on hover 3`] = `
         class="StyledBox-bStriS cXdcRx"
       >
         <span
-          class="StyledText-eJMSZI GAlol"
+          class="StyledText-eJMSZI eTujXF"
           color="#444444"
         >
           Tab 2
@@ -918,7 +900,7 @@ exports[`Tabs set on hover 4`] = `
         class="StyledBox-bStriS gNLzjT"
       >
         <span
-          class="StyledText-eJMSZI hDPFWm"
+          class="StyledText-eJMSZI bxnpJv"
         >
           Tab 1
         </span>
@@ -935,7 +917,7 @@ exports[`Tabs set on hover 4`] = `
         class="StyledBox-bStriS cXdcRx"
       >
         <span
-          class="StyledText-eJMSZI GAlol"
+          class="StyledText-eJMSZI eTujXF"
           color="#444444"
         >
           Tab 2
@@ -970,7 +952,7 @@ exports[`Tabs set on hover 5`] = `
         class="StyledBox-bStriS gNLzjT"
       >
         <span
-          class="StyledText-eJMSZI hDPFWm"
+          class="StyledText-eJMSZI bxnpJv"
         >
           Tab 1
         </span>
@@ -987,7 +969,7 @@ exports[`Tabs set on hover 5`] = `
         class="StyledBox-bStriS elvBnI"
       >
         <span
-          class="StyledText-eJMSZI GAlol"
+          class="StyledText-eJMSZI eTujXF"
           color="#444444"
         >
           Tab 2

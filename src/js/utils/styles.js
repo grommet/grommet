@@ -181,7 +181,6 @@ export const focusStyle = css`
 `;
 
 export const inputStyle = css`
-  ${baseStyle}
   padding: ${props => (
     (parseMetricToNum(props.theme.global.spacing) / 2) -
     parseMetricToNum(props.theme.global.input.border.width)

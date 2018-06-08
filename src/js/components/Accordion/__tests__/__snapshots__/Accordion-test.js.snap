@@ -445,7 +445,7 @@ exports[`Accordion change active index 1`] = `
         class="StyledBox-bStriS fRppQV"
       >
         <h4
-          class="StyledHeading-NQveS hUAlxd"
+          class="StyledHeading-NQveS cvmgvq"
         >
           Panel 1
         </h4>
@@ -490,7 +490,7 @@ exports[`Accordion change active index 1`] = `
         class="StyledBox-bStriS fRppQV"
       >
         <h4
-          class="StyledHeading-NQveS hUAlxd"
+          class="StyledHeading-NQveS cvmgvq"
         >
           Panel 2
         </h4>
@@ -546,7 +546,7 @@ exports[`Accordion change active index 2`] = `
         class="StyledBox-bStriS fRppQV"
       >
         <h4
-          class="StyledHeading-NQveS hUAlxd"
+          class="StyledHeading-NQveS cvmgvq"
         >
           Panel 1
         </h4>
@@ -591,7 +591,7 @@ exports[`Accordion change active index 2`] = `
         class="StyledBox-bStriS fRppQV"
       >
         <h4
-          class="StyledHeading-NQveS hUAlxd"
+          class="StyledHeading-NQveS cvmgvq"
         >
           Panel 2
         </h4>
@@ -650,7 +650,7 @@ exports[`Accordion change to second Panel 1`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 1
           </h4>
@@ -701,7 +701,7 @@ exports[`Accordion change to second Panel 1`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 2
           </h4>
@@ -764,7 +764,7 @@ exports[`Accordion change to second Panel 2`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 1
           </h4>
@@ -815,7 +815,7 @@ exports[`Accordion change to second Panel 2`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 2
           </h4>
@@ -881,7 +881,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 1
           </h4>
@@ -926,7 +926,7 @@ exports[`Accordion change to second Panel without onActive 1`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 2
           </h4>
@@ -983,7 +983,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 1
           </h4>
@@ -1028,7 +1028,7 @@ exports[`Accordion change to second Panel without onActive 2`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 2
           </h4>
@@ -1652,7 +1652,7 @@ exports[`Accordion multiple panels 1`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 1
           </h4>
@@ -1697,7 +1697,7 @@ exports[`Accordion multiple panels 1`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 2
           </h4>
@@ -1754,7 +1754,7 @@ exports[`Accordion multiple panels 2`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 1
           </h4>
@@ -1799,7 +1799,7 @@ exports[`Accordion multiple panels 2`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 2
           </h4>
@@ -1859,7 +1859,7 @@ exports[`Accordion multiple panels 3`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 1
           </h4>
@@ -1907,7 +1907,7 @@ exports[`Accordion multiple panels 3`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 2
           </h4>
@@ -1967,7 +1967,7 @@ exports[`Accordion multiple panels 4`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 1
           </h4>
@@ -2015,7 +2015,7 @@ exports[`Accordion multiple panels 4`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 2
           </h4>
@@ -2072,7 +2072,7 @@ exports[`Accordion multiple panels 5`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 1
           </h4>
@@ -2117,7 +2117,7 @@ exports[`Accordion multiple panels 5`] = `
           class="StyledBox-bStriS fRppQV"
         >
           <h4
-            class="StyledHeading-NQveS hUAlxd"
+            class="StyledHeading-NQveS cvmgvq"
           >
             Panel 2
           </h4>
@@ -2223,7 +2223,7 @@ exports[`Accordion set on hover 1`] = `
         class="StyledBox-bStriS fRppQV"
       >
         <h4
-          class="StyledHeading-NQveS hUAlxd"
+          class="StyledHeading-NQveS cvmgvq"
         >
           Panel 1
         </h4>
@@ -2274,7 +2274,7 @@ exports[`Accordion set on hover 1`] = `
         class="StyledBox-bStriS fRppQV"
       >
         <h4
-          class="StyledHeading-NQveS hUAlxd"
+          class="StyledHeading-NQveS cvmgvq"
         >
           Panel 2
         </h4>
@@ -2333,7 +2333,7 @@ exports[`Accordion set on hover 2`] = `
         class="StyledBox-bStriS fRppQV"
       >
         <h4
-          class="StyledHeading-NQveS biyqIX"
+          class="StyledHeading-NQveS gWAgcR"
           color="dark-6"
         >
           Panel 1
@@ -2385,7 +2385,7 @@ exports[`Accordion set on hover 2`] = `
         class="StyledBox-bStriS fRppQV"
       >
         <h4
-          class="StyledHeading-NQveS hUAlxd"
+          class="StyledHeading-NQveS cvmgvq"
         >
           Panel 2
         </h4>
@@ -2444,7 +2444,7 @@ exports[`Accordion set on hover 3`] = `
         class="StyledBox-bStriS fRppQV"
       >
         <h4
-          class="StyledHeading-NQveS biyqIX"
+          class="StyledHeading-NQveS gWAgcR"
           color="dark-6"
         >
           Panel 1
@@ -2496,7 +2496,7 @@ exports[`Accordion set on hover 3`] = `
         class="StyledBox-bStriS fRppQV"
       >
         <h4
-          class="StyledHeading-NQveS biyqIX"
+          class="StyledHeading-NQveS gWAgcR"
           color="dark-6"
         >
           Panel 2
@@ -2556,7 +2556,7 @@ exports[`Accordion set on hover 4`] = `
         class="StyledBox-bStriS fRppQV"
       >
         <h4
-          class="StyledHeading-NQveS hUAlxd"
+          class="StyledHeading-NQveS cvmgvq"
         >
           Panel 1
         </h4>
@@ -2607,7 +2607,7 @@ exports[`Accordion set on hover 4`] = `
         class="StyledBox-bStriS fRppQV"
       >
         <h4
-          class="StyledHeading-NQveS biyqIX"
+          class="StyledHeading-NQveS gWAgcR"
           color="dark-6"
         >
           Panel 2
@@ -2667,7 +2667,7 @@ exports[`Accordion set on hover 5`] = `
         class="StyledBox-bStriS fRppQV"
       >
         <h4
-          class="StyledHeading-NQveS hUAlxd"
+          class="StyledHeading-NQveS cvmgvq"
         >
           Panel 1
         </h4>
@@ -2718,7 +2718,7 @@ exports[`Accordion set on hover 5`] = `
         class="StyledBox-bStriS fRppQV"
       >
         <h4
-          class="StyledHeading-NQveS hUAlxd"
+          class="StyledHeading-NQveS cvmgvq"
         >
           Panel 2
         </h4>

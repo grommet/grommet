@@ -21,7 +21,7 @@ class AccordionPanel extends Component {
     const {
       children,
       header,
-      title,
+      label,
       theme,
       onMouseOut,
       onMouseOver,
@@ -70,16 +70,16 @@ class AccordionPanel extends Component {
                   justify='between'
                   {...rest}
                 >
-                  {typeof title === 'string' ? (
+                  {typeof label === 'string' ? (
                     <Box pad={{ horizontal: 'xsmall' }}>
                       <Heading
                         level={4}
                         color={hover}
                       >
-                        {title}
+                        {label}
                       </Heading>
                     </Box>
-                    ) : title}
+                    ) : label}
                   {AccordionIcon && (
                   <Box pad={{ horizontal: 'small' }}>
                     <AccordionIcon color={dark ? 'light-3' : 'brand'} />
