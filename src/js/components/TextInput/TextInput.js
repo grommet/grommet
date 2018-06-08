@@ -208,6 +208,7 @@ class TextInput extends Component {
       ...rest
     } = this.props;
     delete rest.onInput; // se we can manage in onInputChange()
+    delete rest.forwardRef;
     const { inputRef, showDrop } = this.state;
     // needed so that styled components does not invoke
     // onSelect when text input is clicked
