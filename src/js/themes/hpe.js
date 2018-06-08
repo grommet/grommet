@@ -1,20 +1,38 @@
 import { deepFreeze } from '../utils';
 
+const accentColors = ['#2AD2C9', '#614767', '#ff8d6d'];
+const neutralColors = ['#425563', '#5F7A76', '#80746E', '#767676'];
+const statusColors = {
+  critical: '#F04953',
+  error: '#F04953',
+  warning: '#FFD144',
+  ok: '#01a982',
+  unknown: '#CCCCCC',
+  disabled: '#CCCCCC',
+};
+
+const colors = {
+  accent: accentColors,
+  brand: '#01a982',
+  focus: accentColors[0],
+  neutral: neutralColors,
+  status: statusColors,
+};
+
+const colorArray = (array, prefix) =>
+  array.forEach((color, index) => {
+    colors[`${prefix}-${index + 1}`] = color;
+  });
+
+colorArray(accentColors, 'accent');
+colorArray(neutralColors, 'neutral');
+Object.keys(statusColors).forEach((color) => {
+  colors[`status-${color}`] = statusColors[color];
+});
+
 export default deepFreeze({
   global: {
-    colors: {
-      accent: ['#2AD2C9', '#614767', '#ff8d6d'],
-      brand: '#01a982',
-      neutral: ['#425563', '#5F7A76', '#80746E', '#767676'],
-      status: {
-        critical: '#F04953',
-        error: '#F04953',
-        warning: '#FFD144',
-        ok: '#01a982',
-        unknown: '#CCCCCC',
-        disabled: '#CCCCCC',
-      },
-    },
+    colors,
     font: {
       family: "'Metric', Arial, sans-serif",
       face: `
