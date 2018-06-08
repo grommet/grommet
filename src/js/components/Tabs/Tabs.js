@@ -6,7 +6,6 @@ import doc from './doc';
 
 class Tabs extends Component {
   static defaultProps = {
-    children: [],
     activeIndex: 0,
     justify: 'center',
     messages: {

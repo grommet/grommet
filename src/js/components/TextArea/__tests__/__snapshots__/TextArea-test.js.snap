@@ -14,14 +14,12 @@ exports[`TextArea focusIndicator renders 1`] = `
 }
 
 .c1 {
-  box-sizing: border-box;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   background-color: transparent;
   color: inherit;
-  font: inherit;
   font-weight: 600;
   margin: 0;
   width: 100%;
@@ -84,14 +82,12 @@ exports[`TextArea placeholder renders 1`] = `
 }
 
 .c1 {
-  box-sizing: border-box;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   background-color: transparent;
   color: inherit;
-  font: inherit;
   font-weight: 600;
   margin: 0;
   width: 100%;
@@ -155,14 +151,12 @@ exports[`TextArea plain renders 1`] = `
 }
 
 .c1 {
-  box-sizing: border-box;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   background-color: transparent;
   color: inherit;
-  font: inherit;
   font-weight: 600;
   margin: 0;
   width: 100%;
@@ -213,14 +207,12 @@ exports[`TextArea renders 1`] = `
 }
 
 .c1 {
-  box-sizing: border-box;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   background-color: transparent;
   color: inherit;
-  font: inherit;
   font-weight: 600;
   margin: 0;
   width: 100%;

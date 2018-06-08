@@ -1,0 +1,72 @@
+import { describe, PropTypes } from 'react-desc';
+
+import {
+  getAvailableAtBadge,
+} from '../../utils';
+
+import AccordionPanel from './AccordionPanel';
+
+export function accordionPanel(Panel) {
+  const DocumentedAccordionPanel = describe(Panel)
+    .description(
+      'An Accordion panel.'
+    );
+  DocumentedAccordionPanel.propTypes = {
+    label: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.node,
+    ]).description(
+      'The panel label.'
+    ).isRequired,
+    header: PropTypes.node.description(
+      'If specified, the entire panel header will be managed by the caller.'
+    ),
+  };
+  return DocumentedAccordionPanel;
+}
+
+export default (Accordion) => {
+  const DocumentedAccordion = describe(Accordion)
+    .availableAt(getAvailableAtBadge('Accordion'))
+    .description('An accordion containing collapsible panels.')
+    .usage(
+      `import { Accordion, AccordionPanel } from 'grommet';
+<Accordion>
+  <AccordionPanel label='Panel 1'>...</AccordionPanel>
+  <AccordionPanel label='Panek 2'>...</AccordionPanel>
+</Accordion>`
+    );
+
+  DocumentedAccordion.propTypes = {
+    activeIndex: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.arrayOf(PropTypes.number),
+    ]).description(
+      `Active panel index. If specified, Accordion will be a controlled component. This means that future
+panel changes will not work unless you subscribe to onActive function and update activeIndex
+accordingly.`
+    ).defaultValue(0),
+    animate: PropTypes.bool.description(
+      'Transition content in & out with a slide down animation.'
+    ).defaultValue(true),
+    children: PropTypes.arrayOf(PropTypes.instanceOf(AccordionPanel)).description(
+      'Array of AccordionPanels.'
+    ).isRequired,
+    onActive: PropTypes.func.description(
+      `Function that will be called when the active index changes.
+It will always send an array with currently active panel indexes.`
+    ),
+    multiple: PropTypes.bool.description(
+      'Allow multiple panels to be opened at once.'
+    ).defaultValue(false),
+    messages: PropTypes.shape({
+      tabContents: PropTypes.string,
+    }).description(
+      'Custom messages for Tabs. Used for accessibility by screen readers.'
+    ).defaultValue({
+      tabContents: 'Tab Contents',
+    }),
+  };
+
+  return DocumentedAccordion;
+};

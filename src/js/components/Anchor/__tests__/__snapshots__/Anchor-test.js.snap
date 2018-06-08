@@ -142,6 +142,15 @@ exports[`Anchor icon label renders 1`] = `
         label="Test"
         theme={
           Object {
+            "accordion": Object {
+              "iconColor": Array [
+                [Function],
+              ],
+              "icons": Object {
+                "collapse": [Function],
+                "expand": [Function],
+              },
+            },
             "anchor": Object {
               "color": Array [
                 [Function],
@@ -315,6 +324,10 @@ exports[`Anchor icon label renders 1`] = `
                   },
                 },
               },
+            },
+            "collapsible": Object {
+              "baseHeight": 500,
+              "minSpeed": 150,
             },
             "dark": false,
             "formField": Object {
@@ -1231,6 +1244,15 @@ exports[`Anchor reverse icon label renders 1`] = `
         reverse={true}
         theme={
           Object {
+            "accordion": Object {
+              "iconColor": Array [
+                [Function],
+              ],
+              "icons": Object {
+                "collapse": [Function],
+                "expand": [Function],
+              },
+            },
             "anchor": Object {
               "color": Array [
                 [Function],
@@ -1404,6 +1426,10 @@ exports[`Anchor reverse icon label renders 1`] = `
                   },
                 },
               },
+            },
+            "collapsible": Object {
+              "baseHeight": 500,
+              "minSpeed": 150,
             },
             "dark": false,
             "formField": Object {
@@ -2183,6 +2209,15 @@ exports[`Anchor warns about invalid icon render 1`] = `
       <StyledAnchor__StyledIcon
         theme={
           Object {
+            "accordion": Object {
+              "iconColor": Array [
+                [Function],
+              ],
+              "icons": Object {
+                "collapse": [Function],
+                "expand": [Function],
+              },
+            },
             "anchor": Object {
               "color": Array [
                 [Function],
@@ -2356,6 +2391,10 @@ exports[`Anchor warns about invalid icon render 1`] = `
                   },
                 },
               },
+            },
+            "collapsible": Object {
+              "baseHeight": 500,
+              "minSpeed": 150,
             },
             "dark": false,
             "formField": Object {

@@ -47,14 +47,12 @@ exports[`renders 1`] = `
 }
 
 .c4 {
-  box-sizing: border-box;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   background-color: transparent;
   color: inherit;
-  font: inherit;
   font-weight: 600;
   margin: 0;
   width: 100%;
@@ -142,6 +140,7 @@ exports[`renders 1`] = `
         <input
           autoComplete="off"
           className="c4"
+          onBlur={[Function]}
           onFocus={[Function]}
           onInput={[Function]}
           onKeyDown={[Function]}

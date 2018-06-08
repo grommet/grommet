@@ -8,6 +8,7 @@ import {
   FormDown,
   FormNext,
   FormPrevious,
+  FormUp,
   Next,
   Pause,
   Play,
@@ -252,6 +253,14 @@ export default deepFreeze({
       },
     },
   },
+  accordion: {
+    icons: {
+      collapse: FormUp,
+      expand: FormDown,
+    },
+    iconColor: css`${props => props.theme.global.colors.brand}`,
+
+  },
   anchor: {
     textDecoration: 'none',
     fontWeight: 600,
@@ -382,6 +391,10 @@ export default deepFreeze({
       },
     },
   },
+  collapsible: {
+    minSpeed: 150,
+    baseHeight: 500,
+  },
   formField: {
     border: {
       color: 'border',
@@ -429,6 +442,7 @@ export default deepFreeze({
   icon: {
     colors,
   },
+  iconThemes: {},
   layer: {
     backgroundColor,
     border: {

@@ -156,7 +156,7 @@ exports[`Menu close by clicking outside 2`] = `
   >
     <button
       aria-label="Close Menu"
-      class="StyledButton-gXzblK cfZmJV"
+      class="StyledButton-gXzblK VmgEM"
       type="button"
     >
       <div
@@ -264,7 +264,7 @@ exports[`Menu close by clicking outside 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .cfZmJV {
+  .VmgEM {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -731,7 +731,7 @@ exports[`Menu open and close on click 3`] = `
   >
     <button
       aria-label="Close Menu"
-      class="StyledButton-gXzblK cfZmJV"
+      class="StyledButton-gXzblK VmgEM"
       type="button"
     >
       <div
@@ -848,7 +848,7 @@ exports[`Menu open and close on click 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .cfZmJV {
+  .VmgEM {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -993,7 +993,7 @@ exports[`Menu with dropAlign renders 2`] = `
   >
     <button
       aria-label="Close Menu"
-      class="StyledButton-gXzblK cfZmJV"
+      class="StyledButton-gXzblK VmgEM"
       type="button"
     >
       <div
@@ -1101,7 +1101,7 @@ exports[`Menu with dropAlign renders 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .cfZmJV {
+  .VmgEM {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

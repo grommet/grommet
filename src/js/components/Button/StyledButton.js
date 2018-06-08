@@ -108,7 +108,7 @@ const fillStyle = `
   width: 100%;
   height: 100%;
   max-width: none;
-  flex-grow: 1;
+  flex: 1 0 auto;
 `;
 
 const plainStyle = css`

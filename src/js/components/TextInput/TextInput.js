@@ -5,7 +5,12 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Drop } from '../Drop';
-import { withAnnounce, withForwardRef, withTheme } from '../hocs';
+import {
+  withAnnounce,
+  withFocus,
+  withForwardRef,
+  withTheme,
+} from '../hocs';
 
 import StyledTextInput, {
   StyledTextInputContainer,
@@ -270,6 +275,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 export default compose(
+  withFocus,
   withTheme,
   withAnnounce,
   withForwardRef,

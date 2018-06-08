@@ -47,11 +47,12 @@
     "polished": "^1.3.0",
     "prop-types": "^15.5.10",
     "react-desc": "^3.2.0",
+    "react-transition-group": "^2.3.1",
     "react-waypoint": "^8.0.1",
     "recompose": "^0.27.0"
   },
   "devDependencies": {
-    "@storybook/react": "^3.4.6",
+    "@storybook/react": "^4.0.0-alpha.8",
     "babel-cli": "^6.22.2",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",

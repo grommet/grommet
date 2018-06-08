@@ -115,14 +115,12 @@ exports[`Select basic 1`] = `
 }
 
 .c5 {
-  box-sizing: border-box;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   background-color: transparent;
   color: inherit;
-  font: inherit;
   font-weight: 600;
   margin: 0;
   width: 100%;
@@ -230,6 +228,7 @@ exports[`Select basic 1`] = `
           autoComplete="off"
           className="c4 c5"
           id="test-select"
+          onBlur={[Function]}
           onFocus={[Function]}
           onInput={[Function]}
           onKeyDown={[Function]}
@@ -288,7 +287,7 @@ exports[`Select complex options and children 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -343,7 +342,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -562,7 +561,7 @@ exports[`Select deselect an option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -619,7 +618,7 @@ exports[`Select disabled 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -675,7 +674,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -826,14 +825,12 @@ exports[`Select multiple 1`] = `
 }
 
 .c5 {
-  box-sizing: border-box;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   background-color: transparent;
   color: inherit;
-  font: inherit;
   font-weight: 600;
   margin: 0;
   width: 100%;
@@ -944,6 +941,7 @@ exports[`Select multiple 1`] = `
           className="c4 c5"
           id="test-select"
           multiple={true}
+          onBlur={[Function]}
           onFocus={[Function]}
           onInput={[Function]}
           onKeyDown={[Function]}
@@ -1004,7 +1002,7 @@ exports[`Select multiple values 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -1060,7 +1058,7 @@ exports[`Select multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -1330,7 +1328,7 @@ exports[`Select opens 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1385,7 +1383,7 @@ exports[`Select opens 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1655,7 +1653,7 @@ exports[`Select search 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1710,7 +1708,7 @@ exports[`Select search 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-bzOzsW gvXSaz"
+          class="StyledTextInput-bzOzsW eKZPkB"
           type="search"
           value=""
         />
@@ -1912,7 +1910,7 @@ exports[`Select select an option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -2011,7 +2009,7 @@ exports[`Select select an option with enter 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -2066,7 +2064,7 @@ exports[`Select select another option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW laePbP"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -2220,14 +2218,12 @@ exports[`Select size 1`] = `
 }
 
 .c5 {
-  box-sizing: border-box;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
   outline: none;
   background-color: transparent;
   color: inherit;
-  font: inherit;
   font-weight: 600;
   margin: 0;
   width: 100%;
@@ -2338,6 +2334,7 @@ exports[`Select size 1`] = `
           autoComplete="off"
           className="c4 c5"
           id="test-select"
+          onBlur={[Function]}
           onFocus={[Function]}
           onInput={[Function]}
           onKeyDown={[Function]}

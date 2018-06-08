@@ -155,6 +155,7 @@ Placeholder text to use when no value is provided.
 
 ```
 string
+node
 ```
 
 **plain**

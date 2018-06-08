@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { focusStyle, inputStyle } from '../../utils';
+import { inputStyle } from '../../utils';
 
 const placeholderColor = css`
   color: ${props => props.theme.global.colors.placeholder};
@@ -42,10 +42,6 @@ const StyledTextInput = styled.input`
   &::-moz-focus-inner {
     border: none;
     outline: none;
-  }
-
-  &:focus {
-    ${props => (!props.plain || props.focusIndicator) && focusStyle}
   }
 `;
 
