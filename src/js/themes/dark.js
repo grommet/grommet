@@ -22,30 +22,45 @@ const borderColor = 'rgba(255, 255, 255, 0.33)';
 const focusColor = accentColors[0];
 const activeColor = rgba('#666666', 0.5);
 
+const colors = {
+  active: activeColor,
+  accent: accentColors,
+  background: backgroundColor,
+  black: '#000000',
+  border: borderColor,
+  brand: brandColor,
+  dark: darkColors,
+  darkBackground: {
+    text: textColor,
+  },
+  focus: focusColor,
+  light: lightColors,
+  lightBackground: {
+    text: '#000000',
+  },
+  neutral: neutralColors,
+  placeholder: '#AAAAAA',
+  status: statusColors,
+  text: textColor,
+  white: '#FFFFFF',
+};
+
+const colorArray = (array, prefix) =>
+  array.forEach((color, index) => {
+    colors[`${prefix}-${index + 1}`] = color;
+  });
+
+colorArray(accentColors, 'accent');
+colorArray(darkColors, 'dark');
+colorArray(lightColors, 'light');
+colorArray(neutralColors, 'neutral');
+Object.keys(statusColors).forEach((color) => {
+  colors[`status-${color}`] = statusColors[color];
+});
+
 export default deepFreeze({
   global: {
-    colors: {
-      active: activeColor,
-      accent: accentColors,
-      background: backgroundColor,
-      black: '#000000',
-      border: borderColor,
-      brand: brandColor,
-      dark: darkColors,
-      darkBackground: {
-        text: textColor,
-      },
-      focus: focusColor,
-      light: lightColors,
-      lightBackground: {
-        text: '#000000',
-      },
-      neutral: neutralColors,
-      placeholder: '#AAAAAA',
-      status: statusColors,
-      text: textColor,
-      white: '#FFFFFF',
-    },
+    colors,
     focus: {
       border: {
         color: css`${props => colorForName('focus', props.theme)}`,
