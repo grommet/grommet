@@ -23,7 +23,7 @@ test('default renders', () => {
     <Grommet>
       {colors.map(color => (
         <Box key={color} background={color}>
-          <Text>test</Text>
+          <Text>{color}</Text>
         </Box>
       ))}
     </Grommet>
@@ -37,7 +37,7 @@ test('dark renders', () => {
     <Grommet theme={dark}>
       {colors.map(color => (
         <Box key={color} background={color}>
-          <Text>test</Text>
+          <Text>{color}</Text>
         </Box>
       ))}
     </Grommet>
@@ -51,7 +51,7 @@ test('hpe renders', () => {
     <Grommet theme={hpe}>
       {colors.map(color => (
         <Box key={color} background={color}>
-          <Text>test</Text>
+          <Text>{color}</Text>
         </Box>
       ))}
     </Grommet>

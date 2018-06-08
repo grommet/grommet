@@ -94,96 +94,6 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #333333;
-  color: #eeeeee;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background-color: #444444;
-  color: #eeeeee;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background-color: #555555;
-  color: #eeeeee;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background-color: #666666;
-  color: #eeeeee;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background-color: #777777;
-  color: #eeeeee;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
   background-color: #F6F6F6;
   color: #000000;
   min-width: 0;
@@ -194,7 +104,7 @@ exports[`dark renders 1`] = `
   padding: 0;
 }
 
-.c12 {
+.c7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -212,7 +122,7 @@ exports[`dark renders 1`] = `
   padding: 0;
 }
 
-.c13 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -230,7 +140,7 @@ exports[`dark renders 1`] = `
   padding: 0;
 }
 
-.c14 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -248,7 +158,7 @@ exports[`dark renders 1`] = `
   padding: 0;
 }
 
-.c15 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -258,6 +168,96 @@ exports[`dark renders 1`] = `
   max-width: 100%;
   background-color: #BBBBBB;
   color: #000000;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: #333333;
+  color: #eeeeee;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: #444444;
+  color: #eeeeee;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: #555555;
+  color: #eeeeee;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: #666666;
+  color: #eeeeee;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: #777777;
+  color: #eeeeee;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -328,8 +328,8 @@ exports[`dark renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #E1746A;
-  color: #000000;
+  background-color: #FF3333;
+  color: #eeeeee;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -658,7 +658,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      accent-1
     </span>
   </div>
   <div
@@ -667,7 +667,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      accent-2
     </span>
   </div>
   <div
@@ -676,7 +676,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      accent-3
     </span>
   </div>
   <div
@@ -685,7 +685,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      brand
     </span>
   </div>
   <div
@@ -694,7 +694,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      dark-1
     </span>
   </div>
   <div
@@ -703,7 +703,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      dark-2
     </span>
   </div>
   <div
@@ -712,7 +712,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      dark-3
     </span>
   </div>
   <div
@@ -721,7 +721,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      dark-4
     </span>
   </div>
   <div
@@ -730,7 +730,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      dark-5
     </span>
   </div>
   <div
@@ -739,7 +739,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      focus
     </span>
   </div>
   <div
@@ -748,7 +748,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      light-1
     </span>
   </div>
   <div
@@ -757,7 +757,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      light-2
     </span>
   </div>
   <div
@@ -766,7 +766,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      light-3
     </span>
   </div>
   <div
@@ -775,7 +775,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      light-4
     </span>
   </div>
   <div
@@ -784,7 +784,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      light-5
     </span>
   </div>
   <div
@@ -793,7 +793,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      neutral-1
     </span>
   </div>
   <div
@@ -802,7 +802,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      neutral-2
     </span>
   </div>
   <div
@@ -811,7 +811,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      neutral-3
     </span>
   </div>
   <div
@@ -820,7 +820,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      status-critical
     </span>
   </div>
   <div
@@ -829,7 +829,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      status-disabled
     </span>
   </div>
   <div
@@ -838,7 +838,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      status-ok
     </span>
   </div>
   <div
@@ -847,7 +847,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      status-unknown
     </span>
   </div>
   <div
@@ -856,7 +856,7 @@ exports[`dark renders 1`] = `
     <span
       className="c2"
     >
-      test
+      status-warning
     </span>
   </div>
 </div>
@@ -1519,7 +1519,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      accent-1
     </span>
   </div>
   <div
@@ -1528,7 +1528,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      accent-2
     </span>
   </div>
   <div
@@ -1537,7 +1537,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      accent-3
     </span>
   </div>
   <div
@@ -1546,7 +1546,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      brand
     </span>
   </div>
   <div
@@ -1555,7 +1555,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      dark-1
     </span>
   </div>
   <div
@@ -1564,7 +1564,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      dark-2
     </span>
   </div>
   <div
@@ -1573,7 +1573,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      dark-3
     </span>
   </div>
   <div
@@ -1582,7 +1582,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      dark-4
     </span>
   </div>
   <div
@@ -1591,7 +1591,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      dark-5
     </span>
   </div>
   <div
@@ -1600,7 +1600,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      focus
     </span>
   </div>
   <div
@@ -1609,7 +1609,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      light-1
     </span>
   </div>
   <div
@@ -1618,7 +1618,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      light-2
     </span>
   </div>
   <div
@@ -1627,7 +1627,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      light-3
     </span>
   </div>
   <div
@@ -1636,7 +1636,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      light-4
     </span>
   </div>
   <div
@@ -1645,7 +1645,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      light-5
     </span>
   </div>
   <div
@@ -1654,7 +1654,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      neutral-1
     </span>
   </div>
   <div
@@ -1663,7 +1663,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      neutral-2
     </span>
   </div>
   <div
@@ -1672,7 +1672,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      neutral-3
     </span>
   </div>
   <div
@@ -1681,7 +1681,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      status-critical
     </span>
   </div>
   <div
@@ -1690,7 +1690,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      status-disabled
     </span>
   </div>
   <div
@@ -1699,7 +1699,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      status-ok
     </span>
   </div>
   <div
@@ -1708,7 +1708,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      status-unknown
     </span>
   </div>
   <div
@@ -1717,7 +1717,7 @@ exports[`default renders 1`] = `
     <span
       className="c2"
     >
-      test
+      status-warning
     </span>
   </div>
 </div>
@@ -1734,60 +1734,6 @@ exports[`hpe renders 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-}
-
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background-color: #FD6FFF;
-  color: #444444;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background-color: #60EB9F;
-  color: #444444;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background-color: #60EBE1;
-  color: #444444;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
 }
 
 .c6 {
@@ -1970,7 +1916,7 @@ exports[`hpe renders 1`] = `
   padding: 0;
 }
 
-.c16 {
+.c1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1978,7 +1924,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #EB6060;
+  background-color: #2AD2C9;
   color: #444444;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -1988,7 +1934,7 @@ exports[`hpe renders 1`] = `
   padding: 0;
 }
 
-.c17 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1996,8 +1942,8 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #01C781;
-  color: #444444;
+  background-color: #614767;
+  color: #FFFFFF;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -2006,7 +1952,7 @@ exports[`hpe renders 1`] = `
   padding: 0;
 }
 
-.c18 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2014,79 +1960,7 @@ exports[`hpe renders 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
-  background-color: #6095EB;
-  color: #444444;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background-color: #E1746A;
-  color: #444444;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background-color: #a8a8a8;
-  color: #444444;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background-color: #7DD892;
-  color: #444444;
-  min-width: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.c22 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  box-sizing: border-box;
-  outline: none;
-  max-width: 100%;
-  background-color: #F7E464;
+  background-color: #ff8d6d;
   color: #444444;
   min-width: 0;
   -webkit-flex-direction: column;
@@ -2114,48 +1988,102 @@ exports[`hpe renders 1`] = `
   padding: 0;
 }
 
+.c16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: #425563;
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: #5F7A76;
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: #80746E;
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: #F04953;
+  color: #FFFFFF;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.c20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  background-color: #FFD144;
+  color: #444444;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
 .c2 {
   font-size: 16px;
   line-height: 1.375;
 }
 
 @media only screen and (max-width:699px) {
-  .c1 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c1 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c3 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c3 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c4 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c4 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
   .c6 {
     margin: 0;
   }
@@ -2276,6 +2204,54 @@ exports[`hpe renders 1`] = `
 }
 
 @media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c3 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c5 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .c16 {
     margin: 0;
   }
@@ -2331,42 +2307,6 @@ exports[`hpe renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c20 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c21 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c21 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c22 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c22 {
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c5 {
-    margin: 0;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c5 {
     padding: 0;
   }
 }
@@ -2380,7 +2320,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      accent-1
     </span>
   </div>
   <div
@@ -2389,7 +2329,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      accent-2
     </span>
   </div>
   <div
@@ -2398,7 +2338,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      accent-3
     </span>
   </div>
   <div
@@ -2407,7 +2347,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      brand
     </span>
   </div>
   <div
@@ -2416,7 +2356,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      dark-1
     </span>
   </div>
   <div
@@ -2425,7 +2365,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      dark-2
     </span>
   </div>
   <div
@@ -2434,7 +2374,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      dark-3
     </span>
   </div>
   <div
@@ -2443,7 +2383,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      dark-4
     </span>
   </div>
   <div
@@ -2452,7 +2392,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      dark-5
     </span>
   </div>
   <div
@@ -2461,7 +2401,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      focus
     </span>
   </div>
   <div
@@ -2470,7 +2410,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      light-1
     </span>
   </div>
   <div
@@ -2479,7 +2419,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      light-2
     </span>
   </div>
   <div
@@ -2488,7 +2428,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      light-3
     </span>
   </div>
   <div
@@ -2497,7 +2437,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      light-4
     </span>
   </div>
   <div
@@ -2506,7 +2446,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      light-5
     </span>
   </div>
   <div
@@ -2515,7 +2455,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      neutral-1
     </span>
   </div>
   <div
@@ -2524,7 +2464,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      neutral-2
     </span>
   </div>
   <div
@@ -2533,7 +2473,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      neutral-3
     </span>
   </div>
   <div
@@ -2542,7 +2482,34 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
+      status-critical
+    </span>
+  </div>
+  <div
+    className="c14"
+  >
+    <span
+      className="c2"
+    >
+      status-disabled
+    </span>
+  </div>
+  <div
+    className="c5"
+  >
+    <span
+      className="c2"
+    >
+      status-ok
+    </span>
+  </div>
+  <div
+    className="c14"
+  >
+    <span
+      className="c2"
+    >
+      status-unknown
     </span>
   </div>
   <div
@@ -2551,34 +2518,7 @@ exports[`hpe renders 1`] = `
     <span
       className="c2"
     >
-      test
-    </span>
-  </div>
-  <div
-    className="c21"
-  >
-    <span
-      className="c2"
-    >
-      test
-    </span>
-  </div>
-  <div
-    className="c20"
-  >
-    <span
-      className="c2"
-    >
-      test
-    </span>
-  </div>
-  <div
-    className="c22"
-  >
-    <span
-      className="c2"
-    >
-      test
+      status-warning
     </span>
   </div>
 </div>
