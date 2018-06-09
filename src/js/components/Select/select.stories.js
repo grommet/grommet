@@ -9,6 +9,31 @@ import Grommet from '../Grommet/Grommet';
 import Select from '../Select/Select';
 import Text from '../Text/Text';
 
+const DEFAULT_OPTIONS = ['one', 'two', 'three'];
+
+class SearchSelect extends Component {
+  state = { options: DEFAULT_OPTIONS }
+
+  render() {
+    const { options, value } = this.state;
+    return (
+      <Grommet>
+        <Select
+          size='medium'
+          placeholder='Select'
+          value={value}
+          options={options}
+          onChange={({ option }) => this.setState({ value: option })}
+          onSearch={(text) => {
+            const exp = new RegExp(text, 'i');
+            this.setState({ options: DEFAULT_OPTIONS.filter(o => exp.test(o)) });
+          }}
+        />
+      </Grommet>
+    );
+  }
+}
+
 const allSeasons = ['S01', 'S02', 'S03', 'S04', 'S05', 'S06', 'S07', 'S08', 'S09', 'S10'];
 
 class SeasonsSelect extends Component {
@@ -111,4 +136,5 @@ class SeasonsSelect extends Component {
 }
 
 storiesOf('Select', module)
+  .add('Search Select', () => <SearchSelect />)
   .add('Seasons Select', () => <SeasonsSelect />);
