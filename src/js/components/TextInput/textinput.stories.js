@@ -7,13 +7,15 @@ import Grommet from '../Grommet/Grommet';
 class SimpleTextInput extends Component {
   state = { value: '' }
 
+  ref = React.createRef()
+
   onChange = event => this.setState({ value: event.target.value })
 
   render() {
     const { value } = this.state;
     return (
       <Grommet>
-        <TextInput value={value} onChange={this.onChange} />
+        <TextInput ref={this.ref} value={value} onChange={this.onChange} />
       </Grommet>
     );
   }

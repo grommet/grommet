@@ -167,15 +167,17 @@ export const withForwardRef = (WrappedComponent) => {
 };
 
 export const withAnnounce = (WrappedComponent) => {
-  const AnnounceComponent = props => (
+  const ForwardRef = React.forwardRef((props, ref) => (
     <AnnounceContext.Consumer>
-      {announce => <WrappedComponent {...props} announce={announce} />}
+      {announce =>
+        <WrappedComponent {...props} announce={announce} ref={ref} />}
     </AnnounceContext.Consumer>
-  );
+  ));
 
-  AnnounceComponent.displayName = getDisplayName(WrappedComponent);
+  ForwardRef.displayName = getDisplayName(WrappedComponent);
+  ForwardRef.name = ForwardRef.displayName;
 
-  return AnnounceComponent;
+  return ForwardRef;
 };
 
 export const withIconTheme = (WrappedComponent) => {
