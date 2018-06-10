@@ -81,3 +81,17 @@ export default (Chart) => {
 
   return DocumentedChart;
 };
+
+export const docCalcs = (calcs) => {
+  const DocumentedCalcs = describe(calcs)
+    .description(`
+      A function to help calculate values for bounds and axis. Use it via:
+      const data = calcs(<myValues>, { coarseness: 5, steps: [1, 1] });
+      where 'data' will contain 'bounds' and 'axis' properties.
+    `).usage(
+      `import { calcs } from 'grommet';
+const data = calcs(<values>, { coarseness: 5, steps: [1, 1] });`
+    );
+
+  return DocumentedCalcs;
+};
