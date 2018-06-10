@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { Grommet } from '../../Grommet';
-import { Chart } from '../';
+import { Chart, calcs } from '../';
 
 const VALUES = [
   { value: [1, 60], label: 'sixty' },
@@ -71,4 +71,9 @@ test('Chart cap renders', () => {
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+test('Chart calcs', () => {
+  const result = calcs([1, 2, 3]);
+  expect(result).toMatchSnapshot();
 });

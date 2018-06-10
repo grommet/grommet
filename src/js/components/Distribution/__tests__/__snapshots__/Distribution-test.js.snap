@@ -5,10 +5,10 @@ exports[`Distribution gap renders 1`] = `
   class="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
-    class="StyledBox-bStriS gQTNhE"
+    class="StyledBox-bStriS hfugtn"
   >
     <div
-      class="StyledBox-bStriS bmUrZC"
+      class="StyledBox-bStriS bPnMAf"
     >
       <span>
         3
@@ -18,10 +18,10 @@ exports[`Distribution gap renders 1`] = `
       class="StyledBox__StyledBoxGap-ixLlSs ebfbnM"
     />
     <div
-      class="StyledBox-bStriS bmUrZC"
+      class="StyledBox-bStriS bPnMAf"
     >
       <div
-        class="StyledBox-bStriS bBXCcb"
+        class="StyledBox-bStriS emBXpW"
       >
         <span>
           2
@@ -31,7 +31,7 @@ exports[`Distribution gap renders 1`] = `
         class="StyledBox__StyledBoxGap-ixLlSs iswUbf"
       />
       <div
-        class="StyledBox-bStriS hsWcIa"
+        class="StyledBox-bStriS fSVBlP"
       >
         <span>
           1
@@ -40,10 +40,10 @@ exports[`Distribution gap renders 1`] = `
     </div>
   </div>
   <div
-    class="StyledBox-bStriS gQTNhE"
+    class="StyledBox-bStriS hfugtn"
   >
     <div
-      class="StyledBox-bStriS bmUrZC"
+      class="StyledBox-bStriS bPnMAf"
     >
       <span>
         3
@@ -53,10 +53,10 @@ exports[`Distribution gap renders 1`] = `
       class="StyledBox__StyledBoxGap-ixLlSs jRRtxU"
     />
     <div
-      class="StyledBox-bStriS bmUrZC"
+      class="StyledBox-bStriS bPnMAf"
     >
       <div
-        class="StyledBox-bStriS bBXCcb"
+        class="StyledBox-bStriS emBXpW"
       >
         <span>
           2
@@ -66,7 +66,7 @@ exports[`Distribution gap renders 1`] = `
         class="StyledBox__StyledBoxGap-ixLlSs jrJmqe"
       />
       <div
-        class="StyledBox-bStriS hsWcIa"
+        class="StyledBox-bStriS fSVBlP"
       >
         <span>
           1
@@ -75,10 +75,10 @@ exports[`Distribution gap renders 1`] = `
     </div>
   </div>
   <div
-    class="StyledBox-bStriS gQTNhE"
+    class="StyledBox-bStriS hfugtn"
   >
     <div
-      class="StyledBox-bStriS bmUrZC"
+      class="StyledBox-bStriS bPnMAf"
     >
       <span>
         3
@@ -88,10 +88,10 @@ exports[`Distribution gap renders 1`] = `
       class="StyledBox__StyledBoxGap-ixLlSs cCIVcT"
     />
     <div
-      class="StyledBox-bStriS bmUrZC"
+      class="StyledBox-bStriS bPnMAf"
     >
       <div
-        class="StyledBox-bStriS bBXCcb"
+        class="StyledBox-bStriS emBXpW"
       >
         <span>
           2
@@ -101,7 +101,7 @@ exports[`Distribution gap renders 1`] = `
         class="StyledBox__StyledBoxGap-ixLlSs cbEIii"
       />
       <div
-        class="StyledBox-bStriS hsWcIa"
+        class="StyledBox-bStriS fSVBlP"
       >
         <span>
           1
@@ -110,10 +110,10 @@ exports[`Distribution gap renders 1`] = `
     </div>
   </div>
   <div
-    class="StyledBox-bStriS gQTNhE"
+    class="StyledBox-bStriS hfugtn"
   >
     <div
-      class="StyledBox-bStriS bmUrZC"
+      class="StyledBox-bStriS bPnMAf"
     >
       <span>
         3
@@ -123,10 +123,10 @@ exports[`Distribution gap renders 1`] = `
       class="StyledBox__StyledBoxGap-ixLlSs edutSJ"
     />
     <div
-      class="StyledBox-bStriS bmUrZC"
+      class="StyledBox-bStriS bPnMAf"
     >
       <div
-        class="StyledBox-bStriS bBXCcb"
+        class="StyledBox-bStriS emBXpW"
       >
         <span>
           2
@@ -136,7 +136,7 @@ exports[`Distribution gap renders 1`] = `
         class="StyledBox__StyledBoxGap-ixLlSs iTpocx"
       />
       <div
-        class="StyledBox-bStriS hsWcIa"
+        class="StyledBox-bStriS fSVBlP"
       >
         <span>
           1
@@ -158,10 +158,10 @@ exports[`Distribution values renders 1`] = `
   class="StyledGrommet-gGRXwz fDhYVV"
 >
   <div
-    class="StyledBox-bStriS gQTNhE"
+    class="StyledBox-bStriS hfugtn"
   >
     <div
-      class="StyledBox-bStriS iUsjod"
+      class="StyledBox-bStriS PbTUu"
     >
       <span>
         20
@@ -171,10 +171,10 @@ exports[`Distribution values renders 1`] = `
       class="StyledBox__StyledBoxGap-ixLlSs ebfbnM"
     />
     <div
-      class="StyledBox-bStriS bWrCtE"
+      class="StyledBox-bStriS gaARwK"
     >
       <div
-        class="StyledBox-bStriS bmUrZC"
+        class="StyledBox-bStriS bPnMAf"
       >
         <span>
           3
@@ -184,10 +184,10 @@ exports[`Distribution values renders 1`] = `
         class="StyledBox__StyledBoxGap-ixLlSs iswUbf"
       />
       <div
-        class="StyledBox-bStriS okMhX"
+        class="StyledBox-bStriS eztPhN"
       >
         <div
-          class="StyledBox-bStriS bBXCcb"
+          class="StyledBox-bStriS emBXpW"
         >
           <span>
             2
@@ -197,7 +197,7 @@ exports[`Distribution values renders 1`] = `
           class="StyledBox__StyledBoxGap-ixLlSs ebfbnM"
         />
         <div
-          class="StyledBox-bStriS hsWcIa"
+          class="StyledBox-bStriS fSVBlP"
         >
           <span>
             1
