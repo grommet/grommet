@@ -98,6 +98,10 @@ export default (Box) => {
         will not wrap gracefully.`),
     gridArea: PropTypes.string.description(`The name of the area to place
       this Box in inside a parent Grid.`),
+    height: PropTypes.oneOf([
+      'xsmall', 'small', 'medium', 'large', 'xlarge',
+    ])
+      .description('A fixed height.'),
     justify: PropTypes.oneOf(['start', 'center', 'between', 'end'])
       .description('How to align the contents along the main axis.'),
     justifySelf: PropTypes.oneOf(['start', 'center', 'end', 'stretch'])
@@ -141,6 +145,10 @@ export default (Box) => {
       .description('How much to round the corners.'),
     tag: PropTypes.string.description('The DOM tag to use for the element.')
       .defaultValue('div'),
+    width: PropTypes.oneOf([
+      'xsmall', 'small', 'medium', 'large', 'xlarge',
+    ])
+      .description('A fixed width.'),
     wrap: PropTypes.bool.description(`Whether children can wrap if they
       can't all fit.`),
   };

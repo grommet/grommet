@@ -112,7 +112,7 @@ exports[`Menu close by clicking outside 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-bStriS kMKXvj"
+      class="StyledBox-bStriS FJrzZ"
     >
       <span
         class="StyledText-eJMSZI WtHkG"
@@ -152,7 +152,7 @@ exports[`Menu close by clicking outside 2`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-bStriS dFjuei"
+    class="StyledBox-bStriS ivxbaN"
   >
     <button
       aria-label="Close Menu"
@@ -160,7 +160,7 @@ exports[`Menu close by clicking outside 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS kMKXvj"
+        class="StyledBox-bStriS FJrzZ"
       >
         <span
           class="StyledText-eJMSZI WtHkG"
@@ -190,7 +190,7 @@ exports[`Menu close by clicking outside 2`] = `
       </div>
     </button>
     <div
-      class="StyledBox-bStriS dFjuei"
+      class="StyledBox-bStriS ivxbaN"
     >
       <button
         class="StyledButton-gXzblK cDmTYk"
@@ -198,7 +198,7 @@ exports[`Menu close by clicking outside 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS qtlmp"
+          class="StyledBox-bStriS frjVSI"
         >
           Item 1
         </div>
@@ -209,7 +209,7 @@ exports[`Menu close by clicking outside 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS qtlmp"
+          class="StyledBox-bStriS frjVSI"
         >
           Item 2
         </div>
@@ -221,37 +221,37 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width:699px) {
-  .kMKXvj {
+  .FJrzZ {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kMKXvj {
+  .FJrzZ {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dFjuei {
+  .ivxbaN {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dFjuei {
+  .ivxbaN {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .qtlmp {
+  .frjVSI {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .qtlmp {
+  .frjVSI {
     padding: 6px;
   }
 }
@@ -331,7 +331,7 @@ exports[`Menu close on esc 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-bStriS kMKXvj"
+      class="StyledBox-bStriS FJrzZ"
     >
       <span
         class="StyledText-eJMSZI WtHkG"
@@ -372,7 +372,7 @@ exports[`Menu close on tab 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-bStriS kMKXvj"
+      class="StyledBox-bStriS FJrzZ"
     >
       <span
         class="StyledText-eJMSZI WtHkG"
@@ -564,7 +564,7 @@ exports[`Menu disabled 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-bStriS kMKXvj"
+      class="StyledBox-bStriS FJrzZ"
     >
       <span
         class="StyledText-eJMSZI WtHkG"
@@ -605,7 +605,7 @@ exports[`Menu navigate through suggestions and select 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-bStriS kMKXvj"
+      class="StyledBox-bStriS FJrzZ"
     >
       <span
         class="StyledText-eJMSZI WtHkG"
@@ -646,7 +646,7 @@ exports[`Menu open and close on click 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-bStriS kMKXvj"
+      class="StyledBox-bStriS FJrzZ"
     >
       <span
         class="StyledText-eJMSZI WtHkG"
@@ -687,7 +687,7 @@ exports[`Menu open and close on click 2`] = `
     type="button"
   >
     <div
-      class="StyledBox-bStriS kMKXvj"
+      class="StyledBox-bStriS FJrzZ"
     >
       <span
         class="StyledText-eJMSZI WtHkG"
@@ -727,7 +727,7 @@ exports[`Menu open and close on click 3`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-bStriS dFjuei"
+    class="StyledBox-bStriS ivxbaN"
   >
     <button
       aria-label="Close Menu"
@@ -735,7 +735,7 @@ exports[`Menu open and close on click 3`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS kMKXvj"
+        class="StyledBox-bStriS FJrzZ"
       >
         <span
           class="StyledText-eJMSZI WtHkG"
@@ -765,7 +765,7 @@ exports[`Menu open and close on click 3`] = `
       </div>
     </button>
     <div
-      class="StyledBox-bStriS dFjuei"
+      class="StyledBox-bStriS ivxbaN"
     >
       <button
         class="StyledButton-gXzblK cDmTYk"
@@ -773,7 +773,7 @@ exports[`Menu open and close on click 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS qtlmp"
+          class="StyledBox-bStriS frjVSI"
         >
           Item 1
         </div>
@@ -783,7 +783,7 @@ exports[`Menu open and close on click 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS qtlmp"
+          class="StyledBox-bStriS frjVSI"
         >
           Item 2
         </div>
@@ -793,7 +793,7 @@ exports[`Menu open and close on click 3`] = `
         href="/test"
       >
         <div
-          class="StyledBox-bStriS qtlmp"
+          class="StyledBox-bStriS frjVSI"
         >
           Item 3
         </div>
@@ -805,37 +805,37 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width:699px) {
-  .kMKXvj {
+  .FJrzZ {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kMKXvj {
+  .FJrzZ {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dFjuei {
+  .ivxbaN {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dFjuei {
+  .ivxbaN {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .qtlmp {
+  .frjVSI {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .qtlmp {
+  .frjVSI {
     padding: 6px;
   }
 }
@@ -908,7 +908,7 @@ exports[`Menu select an item 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-bStriS kMKXvj"
+      class="StyledBox-bStriS FJrzZ"
     >
       <span
         class="StyledText-eJMSZI WtHkG"
@@ -949,7 +949,7 @@ exports[`Menu with dropAlign renders 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-bStriS kMKXvj"
+      class="StyledBox-bStriS FJrzZ"
     >
       <span
         class="StyledText-eJMSZI WtHkG"
@@ -989,7 +989,7 @@ exports[`Menu with dropAlign renders 2`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-bStriS dFjuei"
+    class="StyledBox-bStriS ivxbaN"
   >
     <button
       aria-label="Close Menu"
@@ -997,7 +997,7 @@ exports[`Menu with dropAlign renders 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS kMKXvj"
+        class="StyledBox-bStriS FJrzZ"
       >
         <span
           class="StyledText-eJMSZI WtHkG"
@@ -1027,7 +1027,7 @@ exports[`Menu with dropAlign renders 2`] = `
       </div>
     </button>
     <div
-      class="StyledBox-bStriS dFjuei"
+      class="StyledBox-bStriS ivxbaN"
     >
       <button
         class="StyledButton-gXzblK cDmTYk"
@@ -1035,7 +1035,7 @@ exports[`Menu with dropAlign renders 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS qtlmp"
+          class="StyledBox-bStriS frjVSI"
         >
           Item 1
         </div>
@@ -1046,7 +1046,7 @@ exports[`Menu with dropAlign renders 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS qtlmp"
+          class="StyledBox-bStriS frjVSI"
         >
           Item 2
         </div>
@@ -1058,37 +1058,37 @@ exports[`Menu with dropAlign renders 2`] = `
 
 exports[`Menu with dropAlign renders 3`] = `
 "@media only screen and (max-width:699px) {
-  .kMKXvj {
+  .FJrzZ {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kMKXvj {
+  .FJrzZ {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dFjuei {
+  .ivxbaN {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dFjuei {
+  .ivxbaN {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .qtlmp {
+  .frjVSI {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .qtlmp {
+  .frjVSI {
     padding: 6px;
   }
 }

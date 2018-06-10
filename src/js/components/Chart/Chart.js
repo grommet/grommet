@@ -7,6 +7,7 @@ import { colorForName, parseMetricToNum } from '../../utils';
 import { withTheme } from '../hocs';
 
 import StyledChart from './StyledChart';
+import { normalizeValues, normalizeBounds } from './utils';
 
 import doc from './doc';
 
@@ -76,10 +77,12 @@ const renderArea = (values, bounds, scale, height, { color, onClick, onHover, th
   });
   (values || []).reverse().forEach(({ value }) => {
     const bottom = (value.length === 2 ? bounds[1][0] : value[1]);
-    d += ` L ${value[0] * scale[0]},` +
+    d += ` L ${(value[0] - bounds[0][0]) * scale[0]},` +
     `${height - ((bottom - bounds[1][0]) * scale[1])}`;
   });
-  d += ' Z';
+  if (d.length > 0) {
+    d += ' Z';
+  }
 
   let hoverProps;
   if (onHover) {
@@ -94,29 +97,16 @@ const renderArea = (values, bounds, scale, height, { color, onClick, onHover, th
   }
 
   return (
-    <g fill={colorForName(color, theme)}>
+    <g fill={colorForName(color.color || color, theme)}>
       <path d={d} {...hoverProps} {...clickProps} />
     </g>
   );
 };
 
-const normalizeBounds = (bounds, values) => {
-  let result = bounds;
-  if (!result) {
-    result = [[0, 1], [0, 1]];
-    (values || []).forEach((value) => {
-      result[0][0] = Math.min(result[0][0], value.value[0]);
-      result[0][1] = Math.max(result[0][1], value.value[0]);
-      result[1][0] = Math.min(result[1][0], value.value[1]);
-      result[1][1] = Math.max(result[1][1], value.value[1]);
-    });
-  }
-  return result;
-};
-
 class Chart extends Component {
   static defaultProps = {
     color: 'accent-1',
+    overflow: false,
     size: { width: 'medium', height: 'small' },
     thickness: 'medium',
     type: 'bar',
@@ -124,14 +114,11 @@ class Chart extends Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { bounds, values } = nextProps;
-    const { bounds: stateBounds } = prevState;
-    const nextBounds = normalizeBounds(bounds, values);
-    if (!stateBounds ||
-      nextBounds[0][0] !== stateBounds[0][0] ||
-      nextBounds[0][1] !== stateBounds[0][1] ||
-      nextBounds[1][0] !== stateBounds[1][0] ||
-      nextBounds[1][1] !== stateBounds[1][1]) {
-      return { bounds: nextBounds };
+    const { bounds: stateBounds, values: stateValues } = prevState;
+    if (!stateValues || values !== stateValues || bounds !== stateBounds) {
+      const nextValues = normalizeValues(values);
+      const nextBounds = normalizeBounds(bounds, nextValues);
+      return { bounds: nextBounds, values: nextValues };
     }
     return null;
   }
@@ -157,9 +144,11 @@ class Chart extends Component {
 
   render() {
     const {
-      color, onClick, onHover, round, size, theme, thickness, type, values, ...rest
+      color, onClick, onHover, overflow, round, size, theme, thickness, type,
+      ...rest
     } = this.props;
-    const { bounds, containerWidth, containerHeight } = this.state;
+    delete rest.values;
+    const { bounds, containerWidth, containerHeight, values } = this.state;
 
     const sizeWidth = (typeof size === 'string') ? size : size.width || 'medium';
     const sizeHeight = (typeof size === 'string') ? size : size.height || 'medium';
@@ -172,6 +161,10 @@ class Chart extends Component {
       (width / (bounds[0][1] - bounds[0][0])),
       (height / (bounds[1][1] - bounds[1][0])),
     ];
+    const viewBox = overflow ? `0 0 ${width} ${height}` :
+      `-${strokeWidth / 2} -${strokeWidth / 2} ${width + strokeWidth} ${height + strokeWidth}`;
+    const colorName = (typeof color === 'object' ? color.color : color);
+    const opacity = (color.opacity ? theme.global.opacity[color.opacity] : undefined);
 
     let contents;
     if (type === 'bar') {
@@ -185,18 +178,18 @@ class Chart extends Component {
     return (
       <StyledChart
         ref={(ref) => { this.containerRef = ref; }}
-        viewBox={`-${strokeWidth / 2} -${strokeWidth / 2}
-          ${width + strokeWidth} ${height + strokeWidth}`}
-        preserveAspectRatio='xMinYMin meet'
+        viewBox={viewBox}
+        preserveAspectRatio='none'
         width={size === 'full' ? '100%' : width}
         height={size === 'full' ? '100%' : height}
         {...rest}
       >
         <g
-          stroke={colorForName(color, theme)}
+          stroke={colorForName(colorName, theme)}
           strokeWidth={strokeWidth}
           strokeLinecap={round ? 'round' : 'butt'}
           strokeLinejoin={round ? 'round' : 'miter'}
+          opacity={opacity}
         >
           {contents}
         </g>

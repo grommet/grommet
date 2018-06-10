@@ -48,7 +48,7 @@ exports[`TextInput close suggestion drop 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS jXXAwE"
+          class="StyledBox-bStriS dNkCJq"
         >
           test
         </div>
@@ -60,7 +60,7 @@ exports[`TextInput close suggestion drop 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS jXXAwE"
+          class="StyledBox-bStriS dNkCJq"
         >
           test1
         </div>
@@ -72,13 +72,13 @@ exports[`TextInput close suggestion drop 2`] = `
 
 exports[`TextInput close suggestion drop 3`] = `
 "@media only screen and (max-width:699px) {
-  .jXXAwE {
+  .dNkCJq {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jXXAwE {
+  .dNkCJq {
     padding: 6px;
   }
 }
@@ -175,7 +175,7 @@ exports[`TextInput complex suggestions 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS jXXAwE"
+          class="StyledBox-bStriS dNkCJq"
         >
           test
         </div>
@@ -187,7 +187,7 @@ exports[`TextInput complex suggestions 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS jXXAwE"
+          class="StyledBox-bStriS dNkCJq"
         >
           test1
         </div>
@@ -199,13 +199,13 @@ exports[`TextInput complex suggestions 2`] = `
 
 exports[`TextInput complex suggestions 3`] = `
 "@media only screen and (max-width:699px) {
-  .jXXAwE {
+  .dNkCJq {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jXXAwE {
+  .dNkCJq {
     padding: 6px;
   }
 }
@@ -359,7 +359,7 @@ exports[`TextInput select suggestion 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS jXXAwE"
+          class="StyledBox-bStriS dNkCJq"
         >
           test
         </div>
@@ -371,7 +371,7 @@ exports[`TextInput select suggestion 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS jXXAwE"
+          class="StyledBox-bStriS dNkCJq"
         >
           test1
         </div>
@@ -383,13 +383,13 @@ exports[`TextInput select suggestion 2`] = `
 
 exports[`TextInput select suggestion 3`] = `
 "@media only screen and (max-width:699px) {
-  .jXXAwE {
+  .dNkCJq {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jXXAwE {
+  .dNkCJq {
     padding: 6px;
   }
 }
@@ -482,7 +482,7 @@ exports[`TextInput suggestions 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS jXXAwE"
+          class="StyledBox-bStriS dNkCJq"
         >
           test
         </div>
@@ -494,7 +494,7 @@ exports[`TextInput suggestions 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS jXXAwE"
+          class="StyledBox-bStriS dNkCJq"
         >
           test1
         </div>
@@ -506,13 +506,13 @@ exports[`TextInput suggestions 2`] = `
 
 exports[`TextInput suggestions 3`] = `
 "@media only screen and (max-width:699px) {
-  .jXXAwE {
+  .dNkCJq {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jXXAwE {
+  .dNkCJq {
     padding: 6px;
   }
 }

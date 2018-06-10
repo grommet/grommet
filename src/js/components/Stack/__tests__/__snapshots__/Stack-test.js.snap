@@ -17,6 +17,80 @@ exports[`anchor renders 1`] = `
   position: relative;
 }
 
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.c4 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.c5 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.c6 {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.c7 {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.c8 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.c9 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.c10 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c11 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 <div
   className="c0"
 >
@@ -24,230 +98,162 @@ exports[`anchor renders 1`] = `
     className="c1"
   >
     <div
-      style={
-        Object {
-          "position": "relative",
-        }
-      }
+      className="c2"
     >
-      first
+      <div>
+        first
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "left": "50%",
-          "overflow": "hidden",
-          "position": "absolute",
-          "top": "50%",
-          "transform": "translate(-50%, -50%)",
-        }
-      }
+      className="c3"
     >
-      second
+      <div>
+        second
+      </div>
     </div>
   </div>
   <div
     className="c1"
   >
     <div
-      style={
-        Object {
-          "position": "relative",
-        }
-      }
+      className="c2"
     >
-      first
+      <div>
+        first
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "left": "50%",
-          "overflow": "hidden",
-          "position": "absolute",
-          "top": "0",
-          "transform": "translateX(-50%)",
-        }
-      }
+      className="c4"
     >
-      second
+      <div>
+        second
+      </div>
     </div>
   </div>
   <div
     className="c1"
   >
     <div
-      style={
-        Object {
-          "position": "relative",
-        }
-      }
+      className="c2"
     >
-      first
+      <div>
+        first
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "left": "0",
-          "overflow": "hidden",
-          "position": "absolute",
-          "top": "50%",
-          "transform": "translateY(-50%)",
-        }
-      }
+      className="c5"
     >
-      second
+      <div>
+        second
+      </div>
     </div>
   </div>
   <div
     className="c1"
   >
     <div
-      style={
-        Object {
-          "position": "relative",
-        }
-      }
+      className="c2"
     >
-      first
+      <div>
+        first
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "bottom": "0",
-          "left": "50%",
-          "overflow": "hidden",
-          "position": "absolute",
-          "transform": "translateX(-50%)",
-        }
-      }
+      className="c6"
     >
-      second
+      <div>
+        second
+      </div>
     </div>
   </div>
   <div
     className="c1"
   >
     <div
-      style={
-        Object {
-          "position": "relative",
-        }
-      }
+      className="c2"
     >
-      first
+      <div>
+        first
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "overflow": "hidden",
-          "position": "absolute",
-          "right": "0",
-          "top": "50%",
-          "transform": "translateY(-50%)",
-        }
-      }
+      className="c7"
     >
-      second
+      <div>
+        second
+      </div>
     </div>
   </div>
   <div
     className="c1"
   >
     <div
-      style={
-        Object {
-          "position": "relative",
-        }
-      }
+      className="c2"
     >
-      first
+      <div>
+        first
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "left": "0",
-          "overflow": "hidden",
-          "position": "absolute",
-          "top": "0",
-        }
-      }
+      className="c8"
     >
-      second
+      <div>
+        second
+      </div>
     </div>
   </div>
   <div
     className="c1"
   >
     <div
-      style={
-        Object {
-          "position": "relative",
-        }
-      }
+      className="c2"
     >
-      first
+      <div>
+        first
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "bottom": "0",
-          "left": "0",
-          "overflow": "hidden",
-          "position": "absolute",
-        }
-      }
+      className="c9"
     >
-      second
+      <div>
+        second
+      </div>
     </div>
   </div>
   <div
     className="c1"
   >
     <div
-      style={
-        Object {
-          "position": "relative",
-        }
-      }
+      className="c2"
     >
-      first
+      <div>
+        first
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "overflow": "hidden",
-          "position": "absolute",
-          "right": "0",
-          "top": "0",
-        }
-      }
+      className="c10"
     >
-      second
+      <div>
+        second
+      </div>
     </div>
   </div>
   <div
     className="c1"
   >
     <div
-      style={
-        Object {
-          "position": "relative",
-        }
-      }
+      className="c2"
     >
-      first
+      <div>
+        first
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "bottom": "0",
-          "overflow": "hidden",
-          "position": "absolute",
-          "right": "0",
-        }
-      }
+      className="c11"
     >
-      second
+      <div>
+        second
+      </div>
     </div>
   </div>
 </div>
@@ -266,7 +272,7 @@ exports[`fill renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
-.c2 {
+.c4 {
   position: relative;
 }
 
@@ -285,6 +291,19 @@ exports[`fill renders 1`] = `
   display: flex;
 }
 
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 <div
   className="c0"
 >
@@ -292,55 +311,36 @@ exports[`fill renders 1`] = `
     className="c1"
   >
     <div
-      style={
-        Object {
-          "flex": "1 1",
-          "position": "relative",
-        }
-      }
+      className="c2"
     >
-      first
+      <div>
+        first
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "overflow": "hidden",
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        }
-      }
+      className="c3"
     >
-      second
+      <div>
+        second
+      </div>
     </div>
   </div>
   <div
-    className="c2"
+    className="c4"
   >
     <div
-      style={
-        Object {
-          "position": "relative",
-        }
-      }
+      className="c2"
     >
-      first
+      <div>
+        first
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "overflow": "hidden",
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        }
-      }
+      className="c3"
     >
-      second
+      <div>
+        second
+      </div>
     </div>
   </div>
 </div>
@@ -363,6 +363,19 @@ exports[`guidingChild renders 1`] = `
   position: relative;
 }
 
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 <div
   className="c0"
 >
@@ -370,81 +383,54 @@ exports[`guidingChild renders 1`] = `
     className="c1"
   >
     <div
-      style={
-        Object {
-          "position": "relative",
-        }
-      }
+      className="c2"
     >
-      first
+      <div>
+        first
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "overflow": "hidden",
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        }
-      }
+      className="c3"
     >
-      second
+      <div>
+        second
+      </div>
     </div>
   </div>
   <div
     className="c1"
   >
     <div
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "overflow": "hidden",
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        }
-      }
+      className="c3"
     >
-      first
+      <div>
+        first
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "position": "relative",
-        }
-      }
+      className="c2"
     >
-      second
+      <div>
+        second
+      </div>
     </div>
   </div>
   <div
     className="c1"
   >
     <div
-      style={
-        Object {
-          "position": "relative",
-        }
-      }
+      className="c2"
     >
-      first
+      <div>
+        first
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "overflow": "hidden",
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        }
-      }
+      className="c3"
     >
-      second
+      <div>
+        second
+      </div>
     </div>
   </div>
 </div>
@@ -467,6 +453,19 @@ exports[`renders 1`] = `
   position: relative;
 }
 
+.c2 {
+  position: relative;
+  display: block;
+}
+
+.c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 <div
   className="c0"
 >
@@ -474,27 +473,18 @@ exports[`renders 1`] = `
     className="c1"
   >
     <div
-      style={
-        Object {
-          "position": "relative",
-        }
-      }
+      className="c2"
     >
-      first
+      <div>
+        first
+      </div>
     </div>
     <div
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "overflow": "hidden",
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        }
-      }
+      className="c3"
     >
-      second
+      <div>
+        second
+      </div>
     </div>
   </div>
 </div>

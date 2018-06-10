@@ -268,5 +268,6 @@ Object {
     "render": [Function],
   },
   "__esModule": true,
+  "calcs": [Function],
 }
 `;

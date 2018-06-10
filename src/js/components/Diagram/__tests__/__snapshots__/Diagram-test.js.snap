@@ -8,37 +8,43 @@ exports[`Diagram basic 1`] = `
     class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-bStriS hLRcnS"
-      style="position: relative;"
+      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
     >
       <div
-        class="StyledBox-bStriS bPvtii"
-        id="1"
-      />
-      <div
-        class="StyledBox-bStriS bPvtii"
-        id="2"
-      />
-    </div>
-    <svg
-      class="StyledDiagram-fAdbMP bwxUiT"
-      height="0"
-      preserveAspectRatio="xMinYMin meet"
-      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
-      viewBox="0 0 0 0"
-      width="0"
-    >
-      <g>
-        <path
-          d="M 0,0 Q 0,0 0,0 T 0,0"
-          fill="none"
-          stroke="#FD6FFF"
-          stroke-linecap="butt"
-          stroke-linejoin="miter"
-          stroke-width="1"
+        class="StyledBox-bStriS fGuGjB"
+      >
+        <div
+          class="StyledBox-bStriS hhNwgv"
+          id="1"
         />
-      </g>
-    </svg>
+        <div
+          class="StyledBox-bStriS hhNwgv"
+          id="2"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+    >
+      <svg
+        class="StyledDiagram-fAdbMP bwxUiT"
+        height="0"
+        preserveAspectRatio="xMinYMin meet"
+        viewBox="0 0 0 0"
+        width="0"
+      >
+        <g>
+          <path
+            d="M 0,0 Q 0,0 0,0 T 0,0"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="1"
+          />
+        </g>
+      </svg>
+    </div>
   </div>
 </div>
 `;
@@ -51,37 +57,43 @@ exports[`Diagram color 1`] = `
     class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-bStriS hLRcnS"
-      style="position: relative;"
+      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
     >
       <div
-        class="StyledBox-bStriS bPvtii"
-        id="1"
-      />
-      <div
-        class="StyledBox-bStriS bPvtii"
-        id="2"
-      />
-    </div>
-    <svg
-      class="StyledDiagram-fAdbMP bwxUiT"
-      height="0"
-      preserveAspectRatio="xMinYMin meet"
-      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
-      viewBox="0 0 0 0"
-      width="0"
-    >
-      <g>
-        <path
-          d="M 0,0 Q 0,0 0,0 T 0,0"
-          fill="none"
-          stroke="#865CD6"
-          stroke-linecap="butt"
-          stroke-linejoin="miter"
-          stroke-width="1"
+        class="StyledBox-bStriS fGuGjB"
+      >
+        <div
+          class="StyledBox-bStriS hhNwgv"
+          id="1"
         />
-      </g>
-    </svg>
+        <div
+          class="StyledBox-bStriS hhNwgv"
+          id="2"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+    >
+      <svg
+        class="StyledDiagram-fAdbMP bwxUiT"
+        height="0"
+        preserveAspectRatio="xMinYMin meet"
+        viewBox="0 0 0 0"
+        width="0"
+      >
+        <g>
+          <path
+            d="M 0,0 Q 0,0 0,0 T 0,0"
+            fill="none"
+            stroke="#865CD6"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="1"
+          />
+        </g>
+      </svg>
+    </div>
   </div>
 </div>
 `;
@@ -94,53 +106,59 @@ exports[`Diagram offset 1`] = `
     class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-bStriS hLRcnS"
-      style="position: relative;"
+      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
     >
       <div
-        class="StyledBox-bStriS bPvtii"
-        id="1"
-      />
-      <div
-        class="StyledBox-bStriS bPvtii"
-        id="2"
-      />
+        class="StyledBox-bStriS fGuGjB"
+      >
+        <div
+          class="StyledBox-bStriS hhNwgv"
+          id="1"
+        />
+        <div
+          class="StyledBox-bStriS hhNwgv"
+          id="2"
+        />
+      </div>
     </div>
-    <svg
-      class="StyledDiagram-fAdbMP bwxUiT"
-      height="0"
-      preserveAspectRatio="xMinYMin meet"
-      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
-      viewBox="0 0 0 0"
-      width="0"
+    <div
+      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
     >
-      <g>
-        <path
-          d="M 6,6 Q 6,6 6,6 T 6,6"
-          fill="none"
-          stroke="#FD6FFF"
-          stroke-linecap="butt"
-          stroke-linejoin="miter"
-          stroke-width="1"
-        />
-        <path
-          d="M 12,12 Q 12,12 12,12 T 12,12"
-          fill="none"
-          stroke="#FD6FFF"
-          stroke-linecap="butt"
-          stroke-linejoin="miter"
-          stroke-width="1"
-        />
-        <path
-          d="M 24,24 Q 24,24 24,24 T 24,24"
-          fill="none"
-          stroke="#FD6FFF"
-          stroke-linecap="butt"
-          stroke-linejoin="miter"
-          stroke-width="1"
-        />
-      </g>
-    </svg>
+      <svg
+        class="StyledDiagram-fAdbMP bwxUiT"
+        height="0"
+        preserveAspectRatio="xMinYMin meet"
+        viewBox="0 0 0 0"
+        width="0"
+      >
+        <g>
+          <path
+            d="M 6,6 Q 6,6 6,6 T 6,6"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="1"
+          />
+          <path
+            d="M 12,12 Q 12,12 12,12 T 12,12"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="1"
+          />
+          <path
+            d="M 24,24 Q 24,24 24,24 T 24,24"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="1"
+          />
+        </g>
+      </svg>
+    </div>
   </div>
 </div>
 `;
@@ -153,53 +171,59 @@ exports[`Diagram thickness renders 1`] = `
     class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-bStriS hLRcnS"
-      style="position: relative;"
+      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
     >
       <div
-        class="StyledBox-bStriS bPvtii"
-        id="1"
-      />
-      <div
-        class="StyledBox-bStriS bPvtii"
-        id="2"
-      />
+        class="StyledBox-bStriS fGuGjB"
+      >
+        <div
+          class="StyledBox-bStriS hhNwgv"
+          id="1"
+        />
+        <div
+          class="StyledBox-bStriS hhNwgv"
+          id="2"
+        />
+      </div>
     </div>
-    <svg
-      class="StyledDiagram-fAdbMP bwxUiT"
-      height="0"
-      preserveAspectRatio="xMinYMin meet"
-      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
-      viewBox="0 0 0 0"
-      width="0"
+    <div
+      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
     >
-      <g>
-        <path
-          d="M 0,0 Q 0,0 0,0 T 0,0"
-          fill="none"
-          stroke="#FD6FFF"
-          stroke-linecap="butt"
-          stroke-linejoin="miter"
-          stroke-width="6"
-        />
-        <path
-          d="M 0,0 Q 0,0 0,0 T 0,0"
-          fill="none"
-          stroke="#FD6FFF"
-          stroke-linecap="butt"
-          stroke-linejoin="miter"
-          stroke-width="12"
-        />
-        <path
-          d="M 0,0 Q 0,0 0,0 T 0,0"
-          fill="none"
-          stroke="#FD6FFF"
-          stroke-linecap="butt"
-          stroke-linejoin="miter"
-          stroke-width="24"
-        />
-      </g>
-    </svg>
+      <svg
+        class="StyledDiagram-fAdbMP bwxUiT"
+        height="0"
+        preserveAspectRatio="xMinYMin meet"
+        viewBox="0 0 0 0"
+        width="0"
+      >
+        <g>
+          <path
+            d="M 0,0 Q 0,0 0,0 T 0,0"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="6"
+          />
+          <path
+            d="M 0,0 Q 0,0 0,0 T 0,0"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="12"
+          />
+          <path
+            d="M 0,0 Q 0,0 0,0 T 0,0"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="24"
+          />
+        </g>
+      </svg>
+    </div>
   </div>
 </div>
 `;
@@ -212,53 +236,59 @@ exports[`Diagram type 1`] = `
     class="StyledStack-jqCQsC ewABiA"
   >
     <div
-      class="StyledBox-bStriS hLRcnS"
-      style="position: relative;"
+      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
     >
       <div
-        class="StyledBox-bStriS bPvtii"
-        id="1"
-      />
-      <div
-        class="StyledBox-bStriS bPvtii"
-        id="2"
-      />
+        class="StyledBox-bStriS fGuGjB"
+      >
+        <div
+          class="StyledBox-bStriS hhNwgv"
+          id="1"
+        />
+        <div
+          class="StyledBox-bStriS hhNwgv"
+          id="2"
+        />
+      </div>
     </div>
-    <svg
-      class="StyledDiagram-fAdbMP bwxUiT"
-      height="0"
-      preserveAspectRatio="xMinYMin meet"
-      style="position: absolute; overflow: hidden; top: 0px; left: 0px; bottom: 0px; right: 0px;"
-      viewBox="0 0 0 0"
-      width="0"
+    <div
+      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
     >
-      <g>
-        <path
-          d="M 0,0 L 0,0"
-          fill="none"
-          stroke="#FD6FFF"
-          stroke-linecap="butt"
-          stroke-linejoin="miter"
-          stroke-width="1"
-        />
-        <path
-          d="M 0,0 Q 0,0 0,0 T 0,0"
-          fill="none"
-          stroke="#FD6FFF"
-          stroke-linecap="butt"
-          stroke-linejoin="miter"
-          stroke-width="1"
-        />
-        <path
-          d="M 0,0 L 0,0 L 0,0 L 0,0"
-          fill="none"
-          stroke="#FD6FFF"
-          stroke-linecap="butt"
-          stroke-linejoin="miter"
-          stroke-width="1"
-        />
-      </g>
-    </svg>
+      <svg
+        class="StyledDiagram-fAdbMP bwxUiT"
+        height="0"
+        preserveAspectRatio="xMinYMin meet"
+        viewBox="0 0 0 0"
+        width="0"
+      >
+        <g>
+          <path
+            d="M 0,0 L 0,0"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="1"
+          />
+          <path
+            d="M 0,0 Q 0,0 0,0 T 0,0"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="1"
+          />
+          <path
+            d="M 0,0 L 0,0 L 0,0 L 0,0"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="1"
+          />
+        </g>
+      </svg>
+    </div>
   </div>
 </div>
 `;

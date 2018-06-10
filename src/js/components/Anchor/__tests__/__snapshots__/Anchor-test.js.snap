@@ -473,9 +473,11 @@ exports[`Anchor icon label renders 1`] = `
                 },
               },
               "edgeSize": Object {
+                "hair": "1px",
                 "large": "48px",
                 "medium": "24px",
                 "narrow": Object {
+                  "hair": "1px",
                   "large": "24px",
                   "medium": "12px",
                   "none": "0",
@@ -1575,9 +1577,11 @@ exports[`Anchor reverse icon label renders 1`] = `
                 },
               },
               "edgeSize": Object {
+                "hair": "1px",
                 "large": "48px",
                 "medium": "24px",
                 "narrow": Object {
+                  "hair": "1px",
                   "large": "24px",
                   "medium": "12px",
                   "none": "0",
@@ -2540,9 +2544,11 @@ exports[`Anchor warns about invalid icon render 1`] = `
                 },
               },
               "edgeSize": Object {
+                "hair": "1px",
                 "large": "48px",
                 "medium": "24px",
                 "narrow": Object {
+                  "hair": "1px",
                   "large": "24px",
                   "medium": "12px",
                   "none": "0",
