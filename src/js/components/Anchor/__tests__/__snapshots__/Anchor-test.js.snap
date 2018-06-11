@@ -51,6 +51,31 @@ exports[`Anchor focus renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c1 {
   box-sizing: border-box;
   color: #865CD6;
@@ -77,6 +102,18 @@ exports[`Anchor focus renders 1`] = `
   outline: #FD6FFF solid 2px;
 }
 
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
 <div
   className="c0"
 >
@@ -87,7 +124,17 @@ exports[`Anchor focus renders 1`] = `
     onBlur={[Function]}
     onFocus={[Function]}
   >
-    Test
+    <div
+      className="c2"
+    >
+      <span
+        className="c3"
+      >
+        <strong>
+          Test
+        </strong>
+      </span>
+    </div>
   </a>
 </div>
 `;
@@ -105,6 +152,38 @@ exports[`Anchor icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c4 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c1 {
   box-sizing: border-box;
   color: #865CD6;
@@ -112,9 +191,6 @@ exports[`Anchor icon label renders 1`] = `
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  font-size: 1.1875rem;
-  line-height: 24px;
-  font-weight: 600;
   color: #444444;
 }
 
@@ -123,13 +199,16 @@ exports[`Anchor icon label renders 1`] = `
   text-decoration: underline;
 }
 
-.c2 {
-  display: inline-block;
-  margin-right: 12px;
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
 }
 
-.c2 > * {
-  vertical-align: bottom;
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
 }
 
 <div
@@ -137,936 +216,27 @@ exports[`Anchor icon label renders 1`] = `
 >
   <a
     className="c1"
-    icon={
-      <StyledAnchor__StyledIcon
-        label="Test"
-        theme={
-          Object {
-            "accordion": Object {
-              "iconColor": Array [
-                [Function],
-              ],
-              "icons": Object {
-                "collapse": [Function],
-                "expand": [Function],
-              },
-            },
-            "anchor": Object {
-              "color": Array [
-                [Function],
-              ],
-              "fontWeight": 600,
-              "textDecoration": "none",
-            },
-            "button": Object {
-              "border": Object {
-                "color": Array [
-                  [Function],
-                ],
-                "radius": "24px",
-                "width": "2px",
-              },
-              "colors": Object {
-                "accent": Array [
-                  [Function],
-                ],
-                "critical": Array [
-                  [Function],
-                ],
-                "secondary": Array [
-                  [Function],
-                ],
-                "text": Array [
-                  [Function],
-                ],
-              },
-              "disabled": Object {
-                "opacity": 0.3,
-              },
-              "maxWidth": "384px",
-              "minWidth": "96px",
-              "padding": Object {
-                "horizontal": "46px",
-                "vertical": "10px",
-              },
-            },
-            "calendar": Object {
-              "icons": Object {
-                "next": [Function],
-                "previous": [Function],
-                "small": Object {
-                  "next": [Function],
-                  "previous": [Function],
-                },
-              },
-              "large": Object {
-                "daySize": "109.71428571428571px",
-                "fontSize": "36px",
-                "lineHeight": 1.11,
-                "slideDuration": "0.8s",
-              },
-              "medium": Object {
-                "daySize": "54.857142857142854px",
-                "fontSize": "22px",
-                "lineHeight": 1.45,
-                "slideDuration": "0.5s",
-              },
-              "small": Object {
-                "daySize": "27.428571428571427px",
-                "fontSize": "16px",
-                "lineHeight": 1.375,
-                "slideDuration": "0.2s",
-              },
-            },
-            "carousel": Object {
-              "icons": Object {
-                "current": [Function],
-                "next": [Function],
-                "previous": [Function],
-              },
-            },
-            "checkBox": Object {
-              "border": Object {
-                "color": Object {
-                  "dark": "rgba(255, 255, 255, 0.5)",
-                  "light": "rgba(0, 0, 0, 0.15)",
-                },
-                "radius": "4px",
-                "width": "2px",
-              },
-              "check": Object {
-                "color": Array [
-                  [Function],
-                ],
-                "width": "4px",
-              },
-              "size": "24px",
-              "toggle": Object {
-                "color": "#d9d9d9",
-                "radius": "24px",
-                "size": "48px",
-              },
-            },
-            "clock": Object {
-              "analog": Object {
-                "hour": Object {
-                  "color": Object {
-                    "dark": Array [
-                      [Function],
-                    ],
-                    "light": Array [
-                      [Function],
-                    ],
-                  },
-                  "shape": "round",
-                  "size": "24px",
-                  "width": "8px",
-                },
-                "minute": Object {
-                  "color": Object {
-                    "dark": Array [
-                      [Function],
-                    ],
-                    "light": Array [
-                      [Function],
-                    ],
-                  },
-                  "shape": "round",
-                  "size": "12px",
-                  "width": "4px",
-                },
-                "second": Object {
-                  "color": Object {
-                    "dark": Array [
-                      [Function],
-                    ],
-                    "light": Array [
-                      [Function],
-                    ],
-                  },
-                  "shape": "round",
-                  "size": "9px",
-                  "width": "3px",
-                },
-                "size": Object {
-                  "huge": "288px",
-                  "large": "144px",
-                  "medium": "96px",
-                  "small": "72px",
-                  "xlarge": "216px",
-                },
-              },
-              "digital": Object {
-                "text": Object {
-                  "large": Object {
-                    "height": 1.167,
-                    "size": "24px",
-                  },
-                  "medium": Object {
-                    "height": 1.375,
-                    "size": "16px",
-                  },
-                  "small": Object {
-                    "height": 1.43,
-                    "size": "14px",
-                  },
-                  "xlarge": Object {
-                    "height": 1.1875,
-                    "size": "32px",
-                  },
-                  "xsmall": Object {
-                    "height": 1.5,
-                    "size": "12px",
-                  },
-                  "xxlarge": Object {
-                    "height": 1.125,
-                    "size": "48px",
-                  },
-                },
-              },
-            },
-            "collapsible": Object {
-              "baseHeight": 500,
-              "minSpeed": 150,
-            },
-            "dark": false,
-            "formField": Object {
-              "border": Object {
-                "color": "border",
-                "error": Object {
-                  "color": "status-critical",
-                },
-                "position": "inner",
-                "side": "bottom",
-              },
-              "error": Object {
-                "color": "status-critical",
-              },
-              "help": Object {
-                "color": "dark-5",
-              },
-              "label": Object {},
-            },
-            "global": Object {
-              "animation": Object {
-                "duration": "1s",
-                "jiggle": Object {
-                  "duration": "0.1s",
-                },
-              },
-              "borderSize": Object {
-                "large": "12px",
-                "medium": "4px",
-                "narrow": Object {
-                  "large": "6px",
-                  "medium": "4px",
-                  "small": "2px",
-                  "xlarge": "12px",
-                  "xsmall": "1px",
-                },
-                "small": "2px",
-                "xlarge": "24px",
-                "xsmall": "1px",
-              },
-              "breakpoints": Object {
-                "narrow": 699,
-              },
-              "colors": Object {
-                "accent": Array [
-                  "#FD6FFF",
-                  "#60EB9F",
-                  "#60EBE1",
-                  "#FFCA58",
-                ],
-                "accent-1": "#FD6FFF",
-                "accent-2": "#60EB9F",
-                "accent-3": "#60EBE1",
-                "accent-4": "#FFCA58",
-                "active": "rgba(221,221,221,0.5)",
-                "black": "#000000",
-                "border": "rgba(0, 0, 0, 0.33)",
-                "brand": "#865CD6",
-                "dark": Array [
-                  "#333333",
-                  "#444444",
-                  "#555555",
-                  "#666666",
-                  "#777777",
-                  "#999999",
-                ],
-                "dark-1": "#333333",
-                "dark-2": "#444444",
-                "dark-3": "#555555",
-                "dark-4": "#666666",
-                "dark-5": "#777777",
-                "dark-6": "#999999",
-                "darkBackground": Object {
-                  "text": "#FFFFFF",
-                },
-                "focus": "#FD6FFF",
-                "light": Array [
-                  "#F6F6F6",
-                  "#EEEEEE",
-                  "#DDDDDD",
-                  "#CCCCCC",
-                  "#BBBBBB",
-                  "#AAAAAA",
-                ],
-                "light-1": "#F6F6F6",
-                "light-2": "#EEEEEE",
-                "light-3": "#DDDDDD",
-                "light-4": "#CCCCCC",
-                "light-5": "#BBBBBB",
-                "light-6": "#AAAAAA",
-                "lightBackground": Object {
-                  "text": "#444444",
-                },
-                "neutral": Array [
-                  "#EB6060",
-                  "#01C781",
-                  "#6095EB",
-                  "#FFB200",
-                ],
-                "neutral-1": "#EB6060",
-                "neutral-2": "#01C781",
-                "neutral-3": "#6095EB",
-                "neutral-4": "#FFB200",
-                "placeholder": "#AAAAAA",
-                "status": Object {
-                  "critical": "#E1746A",
-                  "disabled": "#a8a8a8",
-                  "error": "#E1746A",
-                  "ok": "#7DD892",
-                  "unknown": "#a8a8a8",
-                  "warning": "#F7E464",
-                },
-                "status-critical": "#E1746A",
-                "status-disabled": "#a8a8a8",
-                "status-error": "#E1746A",
-                "status-ok": "#7DD892",
-                "status-unknown": "#a8a8a8",
-                "status-warning": "#F7E464",
-                "text": "#444444",
-                "white": "#FFFFFF",
-              },
-              "control": Object {
-                "border": Object {
-                  "width": "2px",
-                },
-                "font": Object {
-                  "size": "19px",
-                  "weight": 600,
-                },
-              },
-              "drop": Object {
-                "backgroundColor": Object {
-                  "dark": "#222222",
-                  "light": "#f8f8f8",
-                },
-                "border": Object {
-                  "radius": "0px",
-                  "width": "0px",
-                },
-                "shadow": Object {
-                  "dark": "0px 3px 8px rgba(255, 255, 255, 0.40)",
-                  "light": "0px 3px 8px rgba(100, 100, 100, 0.50)",
-                },
-              },
-              "edgeSize": Object {
-                "hair": "1px",
-                "large": "48px",
-                "medium": "24px",
-                "narrow": Object {
-                  "hair": "1px",
-                  "large": "24px",
-                  "medium": "12px",
-                  "none": "0",
-                  "small": "6px",
-                  "xlarge": "48px",
-                  "xsmall": "3px",
-                },
-                "none": "0",
-                "small": "12px",
-                "xlarge": "96px",
-                "xsmall": "6px",
-              },
-              "elevation": Object {
-                "dark": Object {
-                  "large": "0px 8px 16px rgba(255, 255, 255, 0.40)",
-                  "medium": "0px 6px 8px rgba(255, 255, 255, 0.40)",
-                  "none": "none",
-                  "small": "0px 4px 4px rgba(255, 255, 255, 0.40)",
-                  "xlarge": "0px 10px 24px rgba(255, 255, 255, 0.40)",
-                  "xsmall": "0px 2px 2px rgba(255, 255, 255, 0.40)",
-                },
-                "light": Object {
-                  "large": "0px 6px 12px rgba(100, 100, 100, 0.50)",
-                  "medium": "0px 3px 8px rgba(100, 100, 100, 0.50)",
-                  "none": "none",
-                  "small": "0px 2px 4px rgba(100, 100, 100, 0.50)",
-                  "xlarge": "0px 8px 16px rgba(100, 100, 100, 0.50)",
-                  "xsmall": "0px 1px 2px rgba(100, 100, 100, 0.50)",
-                },
-              },
-              "focus": Object {
-                "border": Object {
-                  "color": Array [
-                    [Function],
-                  ],
-                  "width": "2px",
-                },
-              },
-              "font": Object {
-                "face": "
-        @font-face {
-          font-family: 'Work Sans';
-          font-style: normal;
-          font-weight: 400;
-          src:
-            local('Work Sans'),
-            local('WorkSans-Regular'),
-            url(\\"https://fonts.gstatic.com/s/worksans/v2/ElUAY9q6T0Ayx4zWzW63VJBw1xU1rKptJj_0jans920.woff2\\") format('woff2');
-        }
-
-        @font-face {
-          font-family: 'Work Sans';
-          font-style: normal;
-          font-weight: 600;
-          src:
-            local('Work Sans SemiBold'),
-            local('WorkSans-SemiBold'),
-            url(\\"https://fonts.gstatic.com/s/worksans/v2/z9rX03Xuz9ZNHTMg1_ghGRampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
-        }
-
-        @font-face {
-          font-family: 'Zilla Slab';
-          font-style: normal;
-          font-weight: 400;
-          src:
-            local('Zilla Slab Regular'),
-            local('ZillaSlab-Regular'),
-            url(\\"https://fonts.gstatic.com/s/zillaslab/v3/dFa6ZfeM_74wlPZtksIFajo6_V6LVlA.woff2\\") format('woff2');
-        }
-
-        @font-face {
-          font-family: 'Zilla Slab';
-          font-style: normal;
-          font-weight: 600;
-          src:
-            local('Zilla Slab SemiBold'),
-            local('ZillaSlab-SemiBold'),
-            url(\\"https://fonts.gstatic.com/s/zillaslab/v3/dFa5ZfeM_74wlPZtksIFYuUe6HOpW3pwfa0.woff2\\") format('woff2');
-        }
-      ",
-                "family": "'Work Sans', Arial, sans-serif",
-                "size": "16px",
-              },
-              "hover": Object {
-                "backgroundColor": Array [
-                  [Function],
-                ],
-                "textColor": "#000000",
-              },
-              "input": Object {
-                "border": Object {
-                  "color": Array [
-                    [Function],
-                  ],
-                  "radius": "4px",
-                  "width": "1px",
-                },
-                "weight": 600,
-              },
-              "lineHeight": "24px",
-              "opacity": Object {
-                "medium": "0.4",
-                "strong": "0.8",
-                "weak": "0.1",
-              },
-              "size": Object {
-                "full": "100%",
-                "large": "768px",
-                "medium": "384px",
-                "narrow": Object {
-                  "full": "100%",
-                  "large": "384px",
-                  "medium": "192px",
-                  "small": "96px",
-                  "xlarge": "768px",
-                  "xsmall": "48px",
-                  "xxsmall": "24px",
-                },
-                "small": "192px",
-                "xlarge": "1152px",
-                "xsmall": "96px",
-                "xxsmall": "48px",
-              },
-              "spacing": "24px",
-            },
-            "grommet": Object {},
-            "heading": Object {
-              "font": Object {
-                "family": "'Zilla Slab', 'Work Sans', Arial, sans-serif",
-              },
-              "level": Object {
-                "1": Object {
-                  "large": Object {
-                    "height": 1.125,
-                    "maxWidth": "2304px",
-                    "size": "96px",
-                  },
-                  "medium": Object {
-                    "height": 1.125,
-                    "maxWidth": "1152px",
-                    "size": "48px",
-                  },
-                  "small": Object {
-                    "height": 1.333,
-                    "maxWidth": "576px",
-                    "size": "24px",
-                  },
-                },
-                "2": Object {
-                  "large": Object {
-                    "height": 1.125,
-                    "maxWidth": "1152px",
-                    "size": "48px",
-                  },
-                  "medium": Object {
-                    "height": 1.23,
-                    "maxWidth": "864px",
-                    "size": "36px",
-                  },
-                  "small": Object {
-                    "height": 1.333,
-                    "maxWidth": "432px",
-                    "size": "18px",
-                  },
-                },
-                "3": Object {
-                  "large": Object {
-                    "height": 1.23,
-                    "maxWidth": "864px",
-                    "size": "36px",
-                  },
-                  "medium": Object {
-                    "height": 1.333,
-                    "maxWidth": "576px",
-                    "size": "24px",
-                  },
-                  "small": Object {
-                    "height": 1.333,
-                    "maxWidth": "432px",
-                    "size": "18px",
-                  },
-                },
-                "4": Object {
-                  "large": Object {
-                    "height": 1.333,
-                    "maxWidth": "576px",
-                    "size": "24px",
-                  },
-                  "medium": Object {
-                    "height": 1.333,
-                    "maxWidth": "432px",
-                    "size": "18px",
-                  },
-                  "small": Object {
-                    "height": 1.375,
-                    "maxWidth": "384px",
-                    "size": "16px",
-                  },
-                },
-              },
-              "weight": 600,
-            },
-            "icon": Object {
-              "color": "#666666",
-              "colors": Object {
-                "accent": Array [
-                  "#FD6FFF",
-                  "#60EB9F",
-                  "#60EBE1",
-                  "#FFCA58",
-                ],
-                "accent-1": "#FD6FFF",
-                "accent-2": "#60EB9F",
-                "accent-3": "#60EBE1",
-                "accent-4": "#FFCA58",
-                "active": "rgba(221,221,221,0.5)",
-                "black": "#000000",
-                "border": "rgba(0, 0, 0, 0.33)",
-                "brand": "#865CD6",
-                "dark": Array [
-                  "#333333",
-                  "#444444",
-                  "#555555",
-                  "#666666",
-                  "#777777",
-                  "#999999",
-                ],
-                "dark-1": "#333333",
-                "dark-2": "#444444",
-                "dark-3": "#555555",
-                "dark-4": "#666666",
-                "dark-5": "#777777",
-                "dark-6": "#999999",
-                "darkBackground": Object {
-                  "text": "#FFFFFF",
-                },
-                "focus": "#FD6FFF",
-                "light": Array [
-                  "#F6F6F6",
-                  "#EEEEEE",
-                  "#DDDDDD",
-                  "#CCCCCC",
-                  "#BBBBBB",
-                  "#AAAAAA",
-                ],
-                "light-1": "#F6F6F6",
-                "light-2": "#EEEEEE",
-                "light-3": "#DDDDDD",
-                "light-4": "#CCCCCC",
-                "light-5": "#BBBBBB",
-                "light-6": "#AAAAAA",
-                "lightBackground": Object {
-                  "text": "#444444",
-                },
-                "neutral": Array [
-                  "#EB6060",
-                  "#01C781",
-                  "#6095EB",
-                  "#FFB200",
-                ],
-                "neutral-1": "#EB6060",
-                "neutral-2": "#01C781",
-                "neutral-3": "#6095EB",
-                "neutral-4": "#FFB200",
-                "placeholder": "#AAAAAA",
-                "status": Object {
-                  "critical": "#E1746A",
-                  "disabled": "#a8a8a8",
-                  "error": "#E1746A",
-                  "ok": "#7DD892",
-                  "unknown": "#a8a8a8",
-                  "warning": "#F7E464",
-                },
-                "status-critical": "#E1746A",
-                "status-disabled": "#a8a8a8",
-                "status-error": "#E1746A",
-                "status-ok": "#7DD892",
-                "status-unknown": "#a8a8a8",
-                "status-warning": "#F7E464",
-                "text": "#444444",
-                "white": "#FFFFFF",
-              },
-              "size": Object {
-                "large": "48px",
-                "xlarge": "96px",
-              },
-            },
-            "iconThemes": Object {
-              "dark": Object {
-                "color": "#FFFFFF",
-                "colors": Object {
-                  "accent": Array [
-                    "#FD6FFF",
-                    "#60EB9F",
-                    "#60EBE1",
-                    "#FFCA58",
-                  ],
-                  "accent-1": "#FD6FFF",
-                  "accent-2": "#60EB9F",
-                  "accent-3": "#60EBE1",
-                  "accent-4": "#FFCA58",
-                  "active": "rgba(221,221,221,0.5)",
-                  "black": "#000000",
-                  "border": "rgba(0, 0, 0, 0.33)",
-                  "brand": "#865CD6",
-                  "dark": Array [
-                    "#333333",
-                    "#444444",
-                    "#555555",
-                    "#666666",
-                    "#777777",
-                    "#999999",
-                  ],
-                  "dark-1": "#333333",
-                  "dark-2": "#444444",
-                  "dark-3": "#555555",
-                  "dark-4": "#666666",
-                  "dark-5": "#777777",
-                  "dark-6": "#999999",
-                  "darkBackground": Object {
-                    "text": "#FFFFFF",
-                  },
-                  "focus": "#FD6FFF",
-                  "light": Array [
-                    "#F6F6F6",
-                    "#EEEEEE",
-                    "#DDDDDD",
-                    "#CCCCCC",
-                    "#BBBBBB",
-                    "#AAAAAA",
-                  ],
-                  "light-1": "#F6F6F6",
-                  "light-2": "#EEEEEE",
-                  "light-3": "#DDDDDD",
-                  "light-4": "#CCCCCC",
-                  "light-5": "#BBBBBB",
-                  "light-6": "#AAAAAA",
-                  "lightBackground": Object {
-                    "text": "#444444",
-                  },
-                  "neutral": Array [
-                    "#EB6060",
-                    "#01C781",
-                    "#6095EB",
-                    "#FFB200",
-                  ],
-                  "neutral-1": "#EB6060",
-                  "neutral-2": "#01C781",
-                  "neutral-3": "#6095EB",
-                  "neutral-4": "#FFB200",
-                  "placeholder": "#AAAAAA",
-                  "status": Object {
-                    "critical": "#E1746A",
-                    "disabled": "#a8a8a8",
-                    "error": "#E1746A",
-                    "ok": "#7DD892",
-                    "unknown": "#a8a8a8",
-                    "warning": "#F7E464",
-                  },
-                  "status-critical": "#E1746A",
-                  "status-disabled": "#a8a8a8",
-                  "status-error": "#E1746A",
-                  "status-ok": "#7DD892",
-                  "status-unknown": "#a8a8a8",
-                  "status-warning": "#F7E464",
-                  "text": "#444444",
-                  "white": "#FFFFFF",
-                },
-                "size": Object {
-                  "large": "48px",
-                  "xlarge": "96px",
-                },
-              },
-              "light": Object {
-                "color": "#666666",
-                "colors": Object {
-                  "accent": Array [
-                    "#FD6FFF",
-                    "#60EB9F",
-                    "#60EBE1",
-                    "#FFCA58",
-                  ],
-                  "accent-1": "#FD6FFF",
-                  "accent-2": "#60EB9F",
-                  "accent-3": "#60EBE1",
-                  "accent-4": "#FFCA58",
-                  "active": "rgba(221,221,221,0.5)",
-                  "black": "#000000",
-                  "border": "rgba(0, 0, 0, 0.33)",
-                  "brand": "#865CD6",
-                  "dark": Array [
-                    "#333333",
-                    "#444444",
-                    "#555555",
-                    "#666666",
-                    "#777777",
-                    "#999999",
-                  ],
-                  "dark-1": "#333333",
-                  "dark-2": "#444444",
-                  "dark-3": "#555555",
-                  "dark-4": "#666666",
-                  "dark-5": "#777777",
-                  "dark-6": "#999999",
-                  "darkBackground": Object {
-                    "text": "#FFFFFF",
-                  },
-                  "focus": "#FD6FFF",
-                  "light": Array [
-                    "#F6F6F6",
-                    "#EEEEEE",
-                    "#DDDDDD",
-                    "#CCCCCC",
-                    "#BBBBBB",
-                    "#AAAAAA",
-                  ],
-                  "light-1": "#F6F6F6",
-                  "light-2": "#EEEEEE",
-                  "light-3": "#DDDDDD",
-                  "light-4": "#CCCCCC",
-                  "light-5": "#BBBBBB",
-                  "light-6": "#AAAAAA",
-                  "lightBackground": Object {
-                    "text": "#444444",
-                  },
-                  "neutral": Array [
-                    "#EB6060",
-                    "#01C781",
-                    "#6095EB",
-                    "#FFB200",
-                  ],
-                  "neutral-1": "#EB6060",
-                  "neutral-2": "#01C781",
-                  "neutral-3": "#6095EB",
-                  "neutral-4": "#FFB200",
-                  "placeholder": "#AAAAAA",
-                  "status": Object {
-                    "critical": "#E1746A",
-                    "disabled": "#a8a8a8",
-                    "error": "#E1746A",
-                    "ok": "#7DD892",
-                    "unknown": "#a8a8a8",
-                    "warning": "#F7E464",
-                  },
-                  "status-critical": "#E1746A",
-                  "status-disabled": "#a8a8a8",
-                  "status-error": "#E1746A",
-                  "status-ok": "#7DD892",
-                  "status-unknown": "#a8a8a8",
-                  "status-warning": "#F7E464",
-                  "text": "#444444",
-                  "white": "#FFFFFF",
-                },
-                "size": Object {
-                  "large": "48px",
-                  "xlarge": "96px",
-                },
-              },
-            },
-            "layer": Object {
-              "backgroundColor": "#FFFFFF",
-              "border": Object {
-                "radius": "4px",
-              },
-              "overlayBackgroundColor": "rgba(0, 0, 0, 0.5)",
-            },
-            "menu": Object {
-              "icons": Object {
-                "down": [Function],
-              },
-            },
-            "paragraph": Object {
-              "large": Object {
-                "height": 1.333,
-                "maxWidth": "576px",
-                "size": "24px",
-              },
-              "medium": Object {
-                "height": 1.375,
-                "maxWidth": "384px",
-                "size": "16px",
-              },
-              "small": Object {
-                "height": 1.43,
-                "maxWidth": "336px",
-                "size": "14px",
-              },
-              "xlarge": Object {
-                "height": 1.1875,
-                "maxWidth": "768px",
-                "size": "32px",
-              },
-            },
-            "radioButton": Object {
-              "border": Object {
-                "color": Object {
-                  "dark": "rgba(255, 255, 255, 0.5)",
-                  "light": "rgba(0, 0, 0, 0.15)",
-                },
-                "radius": "100%",
-                "width": "2px",
-              },
-              "check": Object {
-                "color": Array [
-                  [Function],
-                ],
-              },
-              "size": "24px",
-            },
-            "rangeInput": Object {
-              "track": Object {
-                "color": Array [
-                  [Function],
-                ],
-              },
-            },
-            "select": Object {
-              "icons": Object {
-                "down": [Function],
-              },
-            },
-            "text": Object {
-              "large": Object {
-                "height": 1.167,
-                "size": "24px",
-              },
-              "medium": Object {
-                "height": 1.375,
-                "size": "16px",
-              },
-              "small": Object {
-                "height": 1.43,
-                "size": "14px",
-              },
-              "xlarge": Object {
-                "height": 1.1875,
-                "size": "32px",
-              },
-              "xsmall": Object {
-                "height": 1.5,
-                "size": "12px",
-              },
-              "xxlarge": Object {
-                "height": 1.125,
-                "size": "48px",
-              },
-            },
-            "video": Object {
-              "captions": Object {
-                "background": "rgba(0,0,0,0.7)",
-              },
-              "icons": Object {
-                "closedCaption": [Function],
-                "configure": [Function],
-                "fullScreen": [Function],
-                "pause": [Function],
-                "play": [Function],
-                "reduceVolume": [Function],
-                "volume": [Function],
-              },
-            },
-            "worldMap": Object {
-              "continent": Object {
-                "active": "8px",
-                "base": "6px",
-              },
-              "place": Object {
-                "active": "20px",
-                "base": "8px",
-              },
-            },
-          }
-        }
-      >
-        <svg />
-      </StyledAnchor__StyledIcon>
-    }
+    icon={<svg />}
     label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
   >
-    <span
+    <div
       className="c2"
-      label="Test"
     >
       <svg />
-    </span>
-    Test
+      <div
+        className="c3"
+      />
+      <span
+        className="c4"
+      >
+        <strong>
+          Test
+        </strong>
+      </span>
+    </div>
   </a>
 </div>
 `;
@@ -1084,6 +254,31 @@ exports[`Anchor primary renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c1 {
   box-sizing: border-box;
   color: #865CD6;
@@ -1091,14 +286,23 @@ exports[`Anchor primary renders 1`] = `
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  font-size: 1.1875rem;
-  line-height: 24px;
-  font-weight: 600;
 }
 
 .c1:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
 }
 
 <div
@@ -1111,7 +315,17 @@ exports[`Anchor primary renders 1`] = `
     onBlur={[Function]}
     onFocus={[Function]}
   >
-    Test
+    <div
+      className="c2"
+    >
+      <span
+        className="c3"
+      >
+        <strong>
+          Test
+        </strong>
+      </span>
+    </div>
   </a>
 </div>
 `;
@@ -1208,6 +422,38 @@ exports[`Anchor reverse icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c1 {
   box-sizing: border-box;
   color: #865CD6;
@@ -1215,9 +461,6 @@ exports[`Anchor reverse icon label renders 1`] = `
   text-decoration: none;
   cursor: pointer;
   outline: none;
-  font-size: 1.1875rem;
-  line-height: 24px;
-  font-weight: 600;
   color: #444444;
 }
 
@@ -1226,13 +469,16 @@ exports[`Anchor reverse icon label renders 1`] = `
   text-decoration: underline;
 }
 
-.c2 {
-  display: inline-block;
-  margin-left: 12px;
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
 }
 
-.c2 > * {
-  vertical-align: bottom;
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
 }
 
 <div
@@ -1240,937 +486,27 @@ exports[`Anchor reverse icon label renders 1`] = `
 >
   <a
     className="c1"
-    icon={
-      <StyledAnchor__StyledIcon
-        label="Test"
-        reverse={true}
-        theme={
-          Object {
-            "accordion": Object {
-              "iconColor": Array [
-                [Function],
-              ],
-              "icons": Object {
-                "collapse": [Function],
-                "expand": [Function],
-              },
-            },
-            "anchor": Object {
-              "color": Array [
-                [Function],
-              ],
-              "fontWeight": 600,
-              "textDecoration": "none",
-            },
-            "button": Object {
-              "border": Object {
-                "color": Array [
-                  [Function],
-                ],
-                "radius": "24px",
-                "width": "2px",
-              },
-              "colors": Object {
-                "accent": Array [
-                  [Function],
-                ],
-                "critical": Array [
-                  [Function],
-                ],
-                "secondary": Array [
-                  [Function],
-                ],
-                "text": Array [
-                  [Function],
-                ],
-              },
-              "disabled": Object {
-                "opacity": 0.3,
-              },
-              "maxWidth": "384px",
-              "minWidth": "96px",
-              "padding": Object {
-                "horizontal": "46px",
-                "vertical": "10px",
-              },
-            },
-            "calendar": Object {
-              "icons": Object {
-                "next": [Function],
-                "previous": [Function],
-                "small": Object {
-                  "next": [Function],
-                  "previous": [Function],
-                },
-              },
-              "large": Object {
-                "daySize": "109.71428571428571px",
-                "fontSize": "36px",
-                "lineHeight": 1.11,
-                "slideDuration": "0.8s",
-              },
-              "medium": Object {
-                "daySize": "54.857142857142854px",
-                "fontSize": "22px",
-                "lineHeight": 1.45,
-                "slideDuration": "0.5s",
-              },
-              "small": Object {
-                "daySize": "27.428571428571427px",
-                "fontSize": "16px",
-                "lineHeight": 1.375,
-                "slideDuration": "0.2s",
-              },
-            },
-            "carousel": Object {
-              "icons": Object {
-                "current": [Function],
-                "next": [Function],
-                "previous": [Function],
-              },
-            },
-            "checkBox": Object {
-              "border": Object {
-                "color": Object {
-                  "dark": "rgba(255, 255, 255, 0.5)",
-                  "light": "rgba(0, 0, 0, 0.15)",
-                },
-                "radius": "4px",
-                "width": "2px",
-              },
-              "check": Object {
-                "color": Array [
-                  [Function],
-                ],
-                "width": "4px",
-              },
-              "size": "24px",
-              "toggle": Object {
-                "color": "#d9d9d9",
-                "radius": "24px",
-                "size": "48px",
-              },
-            },
-            "clock": Object {
-              "analog": Object {
-                "hour": Object {
-                  "color": Object {
-                    "dark": Array [
-                      [Function],
-                    ],
-                    "light": Array [
-                      [Function],
-                    ],
-                  },
-                  "shape": "round",
-                  "size": "24px",
-                  "width": "8px",
-                },
-                "minute": Object {
-                  "color": Object {
-                    "dark": Array [
-                      [Function],
-                    ],
-                    "light": Array [
-                      [Function],
-                    ],
-                  },
-                  "shape": "round",
-                  "size": "12px",
-                  "width": "4px",
-                },
-                "second": Object {
-                  "color": Object {
-                    "dark": Array [
-                      [Function],
-                    ],
-                    "light": Array [
-                      [Function],
-                    ],
-                  },
-                  "shape": "round",
-                  "size": "9px",
-                  "width": "3px",
-                },
-                "size": Object {
-                  "huge": "288px",
-                  "large": "144px",
-                  "medium": "96px",
-                  "small": "72px",
-                  "xlarge": "216px",
-                },
-              },
-              "digital": Object {
-                "text": Object {
-                  "large": Object {
-                    "height": 1.167,
-                    "size": "24px",
-                  },
-                  "medium": Object {
-                    "height": 1.375,
-                    "size": "16px",
-                  },
-                  "small": Object {
-                    "height": 1.43,
-                    "size": "14px",
-                  },
-                  "xlarge": Object {
-                    "height": 1.1875,
-                    "size": "32px",
-                  },
-                  "xsmall": Object {
-                    "height": 1.5,
-                    "size": "12px",
-                  },
-                  "xxlarge": Object {
-                    "height": 1.125,
-                    "size": "48px",
-                  },
-                },
-              },
-            },
-            "collapsible": Object {
-              "baseHeight": 500,
-              "minSpeed": 150,
-            },
-            "dark": false,
-            "formField": Object {
-              "border": Object {
-                "color": "border",
-                "error": Object {
-                  "color": "status-critical",
-                },
-                "position": "inner",
-                "side": "bottom",
-              },
-              "error": Object {
-                "color": "status-critical",
-              },
-              "help": Object {
-                "color": "dark-5",
-              },
-              "label": Object {},
-            },
-            "global": Object {
-              "animation": Object {
-                "duration": "1s",
-                "jiggle": Object {
-                  "duration": "0.1s",
-                },
-              },
-              "borderSize": Object {
-                "large": "12px",
-                "medium": "4px",
-                "narrow": Object {
-                  "large": "6px",
-                  "medium": "4px",
-                  "small": "2px",
-                  "xlarge": "12px",
-                  "xsmall": "1px",
-                },
-                "small": "2px",
-                "xlarge": "24px",
-                "xsmall": "1px",
-              },
-              "breakpoints": Object {
-                "narrow": 699,
-              },
-              "colors": Object {
-                "accent": Array [
-                  "#FD6FFF",
-                  "#60EB9F",
-                  "#60EBE1",
-                  "#FFCA58",
-                ],
-                "accent-1": "#FD6FFF",
-                "accent-2": "#60EB9F",
-                "accent-3": "#60EBE1",
-                "accent-4": "#FFCA58",
-                "active": "rgba(221,221,221,0.5)",
-                "black": "#000000",
-                "border": "rgba(0, 0, 0, 0.33)",
-                "brand": "#865CD6",
-                "dark": Array [
-                  "#333333",
-                  "#444444",
-                  "#555555",
-                  "#666666",
-                  "#777777",
-                  "#999999",
-                ],
-                "dark-1": "#333333",
-                "dark-2": "#444444",
-                "dark-3": "#555555",
-                "dark-4": "#666666",
-                "dark-5": "#777777",
-                "dark-6": "#999999",
-                "darkBackground": Object {
-                  "text": "#FFFFFF",
-                },
-                "focus": "#FD6FFF",
-                "light": Array [
-                  "#F6F6F6",
-                  "#EEEEEE",
-                  "#DDDDDD",
-                  "#CCCCCC",
-                  "#BBBBBB",
-                  "#AAAAAA",
-                ],
-                "light-1": "#F6F6F6",
-                "light-2": "#EEEEEE",
-                "light-3": "#DDDDDD",
-                "light-4": "#CCCCCC",
-                "light-5": "#BBBBBB",
-                "light-6": "#AAAAAA",
-                "lightBackground": Object {
-                  "text": "#444444",
-                },
-                "neutral": Array [
-                  "#EB6060",
-                  "#01C781",
-                  "#6095EB",
-                  "#FFB200",
-                ],
-                "neutral-1": "#EB6060",
-                "neutral-2": "#01C781",
-                "neutral-3": "#6095EB",
-                "neutral-4": "#FFB200",
-                "placeholder": "#AAAAAA",
-                "status": Object {
-                  "critical": "#E1746A",
-                  "disabled": "#a8a8a8",
-                  "error": "#E1746A",
-                  "ok": "#7DD892",
-                  "unknown": "#a8a8a8",
-                  "warning": "#F7E464",
-                },
-                "status-critical": "#E1746A",
-                "status-disabled": "#a8a8a8",
-                "status-error": "#E1746A",
-                "status-ok": "#7DD892",
-                "status-unknown": "#a8a8a8",
-                "status-warning": "#F7E464",
-                "text": "#444444",
-                "white": "#FFFFFF",
-              },
-              "control": Object {
-                "border": Object {
-                  "width": "2px",
-                },
-                "font": Object {
-                  "size": "19px",
-                  "weight": 600,
-                },
-              },
-              "drop": Object {
-                "backgroundColor": Object {
-                  "dark": "#222222",
-                  "light": "#f8f8f8",
-                },
-                "border": Object {
-                  "radius": "0px",
-                  "width": "0px",
-                },
-                "shadow": Object {
-                  "dark": "0px 3px 8px rgba(255, 255, 255, 0.40)",
-                  "light": "0px 3px 8px rgba(100, 100, 100, 0.50)",
-                },
-              },
-              "edgeSize": Object {
-                "hair": "1px",
-                "large": "48px",
-                "medium": "24px",
-                "narrow": Object {
-                  "hair": "1px",
-                  "large": "24px",
-                  "medium": "12px",
-                  "none": "0",
-                  "small": "6px",
-                  "xlarge": "48px",
-                  "xsmall": "3px",
-                },
-                "none": "0",
-                "small": "12px",
-                "xlarge": "96px",
-                "xsmall": "6px",
-              },
-              "elevation": Object {
-                "dark": Object {
-                  "large": "0px 8px 16px rgba(255, 255, 255, 0.40)",
-                  "medium": "0px 6px 8px rgba(255, 255, 255, 0.40)",
-                  "none": "none",
-                  "small": "0px 4px 4px rgba(255, 255, 255, 0.40)",
-                  "xlarge": "0px 10px 24px rgba(255, 255, 255, 0.40)",
-                  "xsmall": "0px 2px 2px rgba(255, 255, 255, 0.40)",
-                },
-                "light": Object {
-                  "large": "0px 6px 12px rgba(100, 100, 100, 0.50)",
-                  "medium": "0px 3px 8px rgba(100, 100, 100, 0.50)",
-                  "none": "none",
-                  "small": "0px 2px 4px rgba(100, 100, 100, 0.50)",
-                  "xlarge": "0px 8px 16px rgba(100, 100, 100, 0.50)",
-                  "xsmall": "0px 1px 2px rgba(100, 100, 100, 0.50)",
-                },
-              },
-              "focus": Object {
-                "border": Object {
-                  "color": Array [
-                    [Function],
-                  ],
-                  "width": "2px",
-                },
-              },
-              "font": Object {
-                "face": "
-        @font-face {
-          font-family: 'Work Sans';
-          font-style: normal;
-          font-weight: 400;
-          src:
-            local('Work Sans'),
-            local('WorkSans-Regular'),
-            url(\\"https://fonts.gstatic.com/s/worksans/v2/ElUAY9q6T0Ayx4zWzW63VJBw1xU1rKptJj_0jans920.woff2\\") format('woff2');
-        }
-
-        @font-face {
-          font-family: 'Work Sans';
-          font-style: normal;
-          font-weight: 600;
-          src:
-            local('Work Sans SemiBold'),
-            local('WorkSans-SemiBold'),
-            url(\\"https://fonts.gstatic.com/s/worksans/v2/z9rX03Xuz9ZNHTMg1_ghGRampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
-        }
-
-        @font-face {
-          font-family: 'Zilla Slab';
-          font-style: normal;
-          font-weight: 400;
-          src:
-            local('Zilla Slab Regular'),
-            local('ZillaSlab-Regular'),
-            url(\\"https://fonts.gstatic.com/s/zillaslab/v3/dFa6ZfeM_74wlPZtksIFajo6_V6LVlA.woff2\\") format('woff2');
-        }
-
-        @font-face {
-          font-family: 'Zilla Slab';
-          font-style: normal;
-          font-weight: 600;
-          src:
-            local('Zilla Slab SemiBold'),
-            local('ZillaSlab-SemiBold'),
-            url(\\"https://fonts.gstatic.com/s/zillaslab/v3/dFa5ZfeM_74wlPZtksIFYuUe6HOpW3pwfa0.woff2\\") format('woff2');
-        }
-      ",
-                "family": "'Work Sans', Arial, sans-serif",
-                "size": "16px",
-              },
-              "hover": Object {
-                "backgroundColor": Array [
-                  [Function],
-                ],
-                "textColor": "#000000",
-              },
-              "input": Object {
-                "border": Object {
-                  "color": Array [
-                    [Function],
-                  ],
-                  "radius": "4px",
-                  "width": "1px",
-                },
-                "weight": 600,
-              },
-              "lineHeight": "24px",
-              "opacity": Object {
-                "medium": "0.4",
-                "strong": "0.8",
-                "weak": "0.1",
-              },
-              "size": Object {
-                "full": "100%",
-                "large": "768px",
-                "medium": "384px",
-                "narrow": Object {
-                  "full": "100%",
-                  "large": "384px",
-                  "medium": "192px",
-                  "small": "96px",
-                  "xlarge": "768px",
-                  "xsmall": "48px",
-                  "xxsmall": "24px",
-                },
-                "small": "192px",
-                "xlarge": "1152px",
-                "xsmall": "96px",
-                "xxsmall": "48px",
-              },
-              "spacing": "24px",
-            },
-            "grommet": Object {},
-            "heading": Object {
-              "font": Object {
-                "family": "'Zilla Slab', 'Work Sans', Arial, sans-serif",
-              },
-              "level": Object {
-                "1": Object {
-                  "large": Object {
-                    "height": 1.125,
-                    "maxWidth": "2304px",
-                    "size": "96px",
-                  },
-                  "medium": Object {
-                    "height": 1.125,
-                    "maxWidth": "1152px",
-                    "size": "48px",
-                  },
-                  "small": Object {
-                    "height": 1.333,
-                    "maxWidth": "576px",
-                    "size": "24px",
-                  },
-                },
-                "2": Object {
-                  "large": Object {
-                    "height": 1.125,
-                    "maxWidth": "1152px",
-                    "size": "48px",
-                  },
-                  "medium": Object {
-                    "height": 1.23,
-                    "maxWidth": "864px",
-                    "size": "36px",
-                  },
-                  "small": Object {
-                    "height": 1.333,
-                    "maxWidth": "432px",
-                    "size": "18px",
-                  },
-                },
-                "3": Object {
-                  "large": Object {
-                    "height": 1.23,
-                    "maxWidth": "864px",
-                    "size": "36px",
-                  },
-                  "medium": Object {
-                    "height": 1.333,
-                    "maxWidth": "576px",
-                    "size": "24px",
-                  },
-                  "small": Object {
-                    "height": 1.333,
-                    "maxWidth": "432px",
-                    "size": "18px",
-                  },
-                },
-                "4": Object {
-                  "large": Object {
-                    "height": 1.333,
-                    "maxWidth": "576px",
-                    "size": "24px",
-                  },
-                  "medium": Object {
-                    "height": 1.333,
-                    "maxWidth": "432px",
-                    "size": "18px",
-                  },
-                  "small": Object {
-                    "height": 1.375,
-                    "maxWidth": "384px",
-                    "size": "16px",
-                  },
-                },
-              },
-              "weight": 600,
-            },
-            "icon": Object {
-              "color": "#666666",
-              "colors": Object {
-                "accent": Array [
-                  "#FD6FFF",
-                  "#60EB9F",
-                  "#60EBE1",
-                  "#FFCA58",
-                ],
-                "accent-1": "#FD6FFF",
-                "accent-2": "#60EB9F",
-                "accent-3": "#60EBE1",
-                "accent-4": "#FFCA58",
-                "active": "rgba(221,221,221,0.5)",
-                "black": "#000000",
-                "border": "rgba(0, 0, 0, 0.33)",
-                "brand": "#865CD6",
-                "dark": Array [
-                  "#333333",
-                  "#444444",
-                  "#555555",
-                  "#666666",
-                  "#777777",
-                  "#999999",
-                ],
-                "dark-1": "#333333",
-                "dark-2": "#444444",
-                "dark-3": "#555555",
-                "dark-4": "#666666",
-                "dark-5": "#777777",
-                "dark-6": "#999999",
-                "darkBackground": Object {
-                  "text": "#FFFFFF",
-                },
-                "focus": "#FD6FFF",
-                "light": Array [
-                  "#F6F6F6",
-                  "#EEEEEE",
-                  "#DDDDDD",
-                  "#CCCCCC",
-                  "#BBBBBB",
-                  "#AAAAAA",
-                ],
-                "light-1": "#F6F6F6",
-                "light-2": "#EEEEEE",
-                "light-3": "#DDDDDD",
-                "light-4": "#CCCCCC",
-                "light-5": "#BBBBBB",
-                "light-6": "#AAAAAA",
-                "lightBackground": Object {
-                  "text": "#444444",
-                },
-                "neutral": Array [
-                  "#EB6060",
-                  "#01C781",
-                  "#6095EB",
-                  "#FFB200",
-                ],
-                "neutral-1": "#EB6060",
-                "neutral-2": "#01C781",
-                "neutral-3": "#6095EB",
-                "neutral-4": "#FFB200",
-                "placeholder": "#AAAAAA",
-                "status": Object {
-                  "critical": "#E1746A",
-                  "disabled": "#a8a8a8",
-                  "error": "#E1746A",
-                  "ok": "#7DD892",
-                  "unknown": "#a8a8a8",
-                  "warning": "#F7E464",
-                },
-                "status-critical": "#E1746A",
-                "status-disabled": "#a8a8a8",
-                "status-error": "#E1746A",
-                "status-ok": "#7DD892",
-                "status-unknown": "#a8a8a8",
-                "status-warning": "#F7E464",
-                "text": "#444444",
-                "white": "#FFFFFF",
-              },
-              "size": Object {
-                "large": "48px",
-                "xlarge": "96px",
-              },
-            },
-            "iconThemes": Object {
-              "dark": Object {
-                "color": "#FFFFFF",
-                "colors": Object {
-                  "accent": Array [
-                    "#FD6FFF",
-                    "#60EB9F",
-                    "#60EBE1",
-                    "#FFCA58",
-                  ],
-                  "accent-1": "#FD6FFF",
-                  "accent-2": "#60EB9F",
-                  "accent-3": "#60EBE1",
-                  "accent-4": "#FFCA58",
-                  "active": "rgba(221,221,221,0.5)",
-                  "black": "#000000",
-                  "border": "rgba(0, 0, 0, 0.33)",
-                  "brand": "#865CD6",
-                  "dark": Array [
-                    "#333333",
-                    "#444444",
-                    "#555555",
-                    "#666666",
-                    "#777777",
-                    "#999999",
-                  ],
-                  "dark-1": "#333333",
-                  "dark-2": "#444444",
-                  "dark-3": "#555555",
-                  "dark-4": "#666666",
-                  "dark-5": "#777777",
-                  "dark-6": "#999999",
-                  "darkBackground": Object {
-                    "text": "#FFFFFF",
-                  },
-                  "focus": "#FD6FFF",
-                  "light": Array [
-                    "#F6F6F6",
-                    "#EEEEEE",
-                    "#DDDDDD",
-                    "#CCCCCC",
-                    "#BBBBBB",
-                    "#AAAAAA",
-                  ],
-                  "light-1": "#F6F6F6",
-                  "light-2": "#EEEEEE",
-                  "light-3": "#DDDDDD",
-                  "light-4": "#CCCCCC",
-                  "light-5": "#BBBBBB",
-                  "light-6": "#AAAAAA",
-                  "lightBackground": Object {
-                    "text": "#444444",
-                  },
-                  "neutral": Array [
-                    "#EB6060",
-                    "#01C781",
-                    "#6095EB",
-                    "#FFB200",
-                  ],
-                  "neutral-1": "#EB6060",
-                  "neutral-2": "#01C781",
-                  "neutral-3": "#6095EB",
-                  "neutral-4": "#FFB200",
-                  "placeholder": "#AAAAAA",
-                  "status": Object {
-                    "critical": "#E1746A",
-                    "disabled": "#a8a8a8",
-                    "error": "#E1746A",
-                    "ok": "#7DD892",
-                    "unknown": "#a8a8a8",
-                    "warning": "#F7E464",
-                  },
-                  "status-critical": "#E1746A",
-                  "status-disabled": "#a8a8a8",
-                  "status-error": "#E1746A",
-                  "status-ok": "#7DD892",
-                  "status-unknown": "#a8a8a8",
-                  "status-warning": "#F7E464",
-                  "text": "#444444",
-                  "white": "#FFFFFF",
-                },
-                "size": Object {
-                  "large": "48px",
-                  "xlarge": "96px",
-                },
-              },
-              "light": Object {
-                "color": "#666666",
-                "colors": Object {
-                  "accent": Array [
-                    "#FD6FFF",
-                    "#60EB9F",
-                    "#60EBE1",
-                    "#FFCA58",
-                  ],
-                  "accent-1": "#FD6FFF",
-                  "accent-2": "#60EB9F",
-                  "accent-3": "#60EBE1",
-                  "accent-4": "#FFCA58",
-                  "active": "rgba(221,221,221,0.5)",
-                  "black": "#000000",
-                  "border": "rgba(0, 0, 0, 0.33)",
-                  "brand": "#865CD6",
-                  "dark": Array [
-                    "#333333",
-                    "#444444",
-                    "#555555",
-                    "#666666",
-                    "#777777",
-                    "#999999",
-                  ],
-                  "dark-1": "#333333",
-                  "dark-2": "#444444",
-                  "dark-3": "#555555",
-                  "dark-4": "#666666",
-                  "dark-5": "#777777",
-                  "dark-6": "#999999",
-                  "darkBackground": Object {
-                    "text": "#FFFFFF",
-                  },
-                  "focus": "#FD6FFF",
-                  "light": Array [
-                    "#F6F6F6",
-                    "#EEEEEE",
-                    "#DDDDDD",
-                    "#CCCCCC",
-                    "#BBBBBB",
-                    "#AAAAAA",
-                  ],
-                  "light-1": "#F6F6F6",
-                  "light-2": "#EEEEEE",
-                  "light-3": "#DDDDDD",
-                  "light-4": "#CCCCCC",
-                  "light-5": "#BBBBBB",
-                  "light-6": "#AAAAAA",
-                  "lightBackground": Object {
-                    "text": "#444444",
-                  },
-                  "neutral": Array [
-                    "#EB6060",
-                    "#01C781",
-                    "#6095EB",
-                    "#FFB200",
-                  ],
-                  "neutral-1": "#EB6060",
-                  "neutral-2": "#01C781",
-                  "neutral-3": "#6095EB",
-                  "neutral-4": "#FFB200",
-                  "placeholder": "#AAAAAA",
-                  "status": Object {
-                    "critical": "#E1746A",
-                    "disabled": "#a8a8a8",
-                    "error": "#E1746A",
-                    "ok": "#7DD892",
-                    "unknown": "#a8a8a8",
-                    "warning": "#F7E464",
-                  },
-                  "status-critical": "#E1746A",
-                  "status-disabled": "#a8a8a8",
-                  "status-error": "#E1746A",
-                  "status-ok": "#7DD892",
-                  "status-unknown": "#a8a8a8",
-                  "status-warning": "#F7E464",
-                  "text": "#444444",
-                  "white": "#FFFFFF",
-                },
-                "size": Object {
-                  "large": "48px",
-                  "xlarge": "96px",
-                },
-              },
-            },
-            "layer": Object {
-              "backgroundColor": "#FFFFFF",
-              "border": Object {
-                "radius": "4px",
-              },
-              "overlayBackgroundColor": "rgba(0, 0, 0, 0.5)",
-            },
-            "menu": Object {
-              "icons": Object {
-                "down": [Function],
-              },
-            },
-            "paragraph": Object {
-              "large": Object {
-                "height": 1.333,
-                "maxWidth": "576px",
-                "size": "24px",
-              },
-              "medium": Object {
-                "height": 1.375,
-                "maxWidth": "384px",
-                "size": "16px",
-              },
-              "small": Object {
-                "height": 1.43,
-                "maxWidth": "336px",
-                "size": "14px",
-              },
-              "xlarge": Object {
-                "height": 1.1875,
-                "maxWidth": "768px",
-                "size": "32px",
-              },
-            },
-            "radioButton": Object {
-              "border": Object {
-                "color": Object {
-                  "dark": "rgba(255, 255, 255, 0.5)",
-                  "light": "rgba(0, 0, 0, 0.15)",
-                },
-                "radius": "100%",
-                "width": "2px",
-              },
-              "check": Object {
-                "color": Array [
-                  [Function],
-                ],
-              },
-              "size": "24px",
-            },
-            "rangeInput": Object {
-              "track": Object {
-                "color": Array [
-                  [Function],
-                ],
-              },
-            },
-            "select": Object {
-              "icons": Object {
-                "down": [Function],
-              },
-            },
-            "text": Object {
-              "large": Object {
-                "height": 1.167,
-                "size": "24px",
-              },
-              "medium": Object {
-                "height": 1.375,
-                "size": "16px",
-              },
-              "small": Object {
-                "height": 1.43,
-                "size": "14px",
-              },
-              "xlarge": Object {
-                "height": 1.1875,
-                "size": "32px",
-              },
-              "xsmall": Object {
-                "height": 1.5,
-                "size": "12px",
-              },
-              "xxlarge": Object {
-                "height": 1.125,
-                "size": "48px",
-              },
-            },
-            "video": Object {
-              "captions": Object {
-                "background": "rgba(0,0,0,0.7)",
-              },
-              "icons": Object {
-                "closedCaption": [Function],
-                "configure": [Function],
-                "fullScreen": [Function],
-                "pause": [Function],
-                "play": [Function],
-                "reduceVolume": [Function],
-                "volume": [Function],
-              },
-            },
-            "worldMap": Object {
-              "continent": Object {
-                "active": "8px",
-                "base": "6px",
-              },
-              "place": Object {
-                "active": "20px",
-                "base": "8px",
-              },
-            },
-          }
-        }
-      >
-        <svg />
-      </StyledAnchor__StyledIcon>
-    }
+    icon={<svg />}
     label="Test"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
   >
-    Test
-    <span
+    <div
       className="c2"
-      label="Test"
     >
+      <span
+        className="c3"
+      >
+        <strong>
+          Test
+        </strong>
+      </span>
+      <div
+        className="c4"
+      />
       <svg />
-    </span>
+    </div>
   </a>
 </div>
 `;
@@ -2188,6 +524,26 @@ exports[`Anchor warns about invalid icon render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
 .c1 {
   box-sizing: border-box;
   color: #865CD6;
@@ -2203,933 +559,33 @@ exports[`Anchor warns about invalid icon render 1`] = `
   text-decoration: underline;
 }
 
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
 <div
   className="c0"
 >
   <a
     className="c1"
     href="#"
-    icon={
-      <StyledAnchor__StyledIcon
-        theme={
-          Object {
-            "accordion": Object {
-              "iconColor": Array [
-                [Function],
-              ],
-              "icons": Object {
-                "collapse": [Function],
-                "expand": [Function],
-              },
-            },
-            "anchor": Object {
-              "color": Array [
-                [Function],
-              ],
-              "fontWeight": 600,
-              "textDecoration": "none",
-            },
-            "button": Object {
-              "border": Object {
-                "color": Array [
-                  [Function],
-                ],
-                "radius": "24px",
-                "width": "2px",
-              },
-              "colors": Object {
-                "accent": Array [
-                  [Function],
-                ],
-                "critical": Array [
-                  [Function],
-                ],
-                "secondary": Array [
-                  [Function],
-                ],
-                "text": Array [
-                  [Function],
-                ],
-              },
-              "disabled": Object {
-                "opacity": 0.3,
-              },
-              "maxWidth": "384px",
-              "minWidth": "96px",
-              "padding": Object {
-                "horizontal": "46px",
-                "vertical": "10px",
-              },
-            },
-            "calendar": Object {
-              "icons": Object {
-                "next": [Function],
-                "previous": [Function],
-                "small": Object {
-                  "next": [Function],
-                  "previous": [Function],
-                },
-              },
-              "large": Object {
-                "daySize": "109.71428571428571px",
-                "fontSize": "36px",
-                "lineHeight": 1.11,
-                "slideDuration": "0.8s",
-              },
-              "medium": Object {
-                "daySize": "54.857142857142854px",
-                "fontSize": "22px",
-                "lineHeight": 1.45,
-                "slideDuration": "0.5s",
-              },
-              "small": Object {
-                "daySize": "27.428571428571427px",
-                "fontSize": "16px",
-                "lineHeight": 1.375,
-                "slideDuration": "0.2s",
-              },
-            },
-            "carousel": Object {
-              "icons": Object {
-                "current": [Function],
-                "next": [Function],
-                "previous": [Function],
-              },
-            },
-            "checkBox": Object {
-              "border": Object {
-                "color": Object {
-                  "dark": "rgba(255, 255, 255, 0.5)",
-                  "light": "rgba(0, 0, 0, 0.15)",
-                },
-                "radius": "4px",
-                "width": "2px",
-              },
-              "check": Object {
-                "color": Array [
-                  [Function],
-                ],
-                "width": "4px",
-              },
-              "size": "24px",
-              "toggle": Object {
-                "color": "#d9d9d9",
-                "radius": "24px",
-                "size": "48px",
-              },
-            },
-            "clock": Object {
-              "analog": Object {
-                "hour": Object {
-                  "color": Object {
-                    "dark": Array [
-                      [Function],
-                    ],
-                    "light": Array [
-                      [Function],
-                    ],
-                  },
-                  "shape": "round",
-                  "size": "24px",
-                  "width": "8px",
-                },
-                "minute": Object {
-                  "color": Object {
-                    "dark": Array [
-                      [Function],
-                    ],
-                    "light": Array [
-                      [Function],
-                    ],
-                  },
-                  "shape": "round",
-                  "size": "12px",
-                  "width": "4px",
-                },
-                "second": Object {
-                  "color": Object {
-                    "dark": Array [
-                      [Function],
-                    ],
-                    "light": Array [
-                      [Function],
-                    ],
-                  },
-                  "shape": "round",
-                  "size": "9px",
-                  "width": "3px",
-                },
-                "size": Object {
-                  "huge": "288px",
-                  "large": "144px",
-                  "medium": "96px",
-                  "small": "72px",
-                  "xlarge": "216px",
-                },
-              },
-              "digital": Object {
-                "text": Object {
-                  "large": Object {
-                    "height": 1.167,
-                    "size": "24px",
-                  },
-                  "medium": Object {
-                    "height": 1.375,
-                    "size": "16px",
-                  },
-                  "small": Object {
-                    "height": 1.43,
-                    "size": "14px",
-                  },
-                  "xlarge": Object {
-                    "height": 1.1875,
-                    "size": "32px",
-                  },
-                  "xsmall": Object {
-                    "height": 1.5,
-                    "size": "12px",
-                  },
-                  "xxlarge": Object {
-                    "height": 1.125,
-                    "size": "48px",
-                  },
-                },
-              },
-            },
-            "collapsible": Object {
-              "baseHeight": 500,
-              "minSpeed": 150,
-            },
-            "dark": false,
-            "formField": Object {
-              "border": Object {
-                "color": "border",
-                "error": Object {
-                  "color": "status-critical",
-                },
-                "position": "inner",
-                "side": "bottom",
-              },
-              "error": Object {
-                "color": "status-critical",
-              },
-              "help": Object {
-                "color": "dark-5",
-              },
-              "label": Object {},
-            },
-            "global": Object {
-              "animation": Object {
-                "duration": "1s",
-                "jiggle": Object {
-                  "duration": "0.1s",
-                },
-              },
-              "borderSize": Object {
-                "large": "12px",
-                "medium": "4px",
-                "narrow": Object {
-                  "large": "6px",
-                  "medium": "4px",
-                  "small": "2px",
-                  "xlarge": "12px",
-                  "xsmall": "1px",
-                },
-                "small": "2px",
-                "xlarge": "24px",
-                "xsmall": "1px",
-              },
-              "breakpoints": Object {
-                "narrow": 699,
-              },
-              "colors": Object {
-                "accent": Array [
-                  "#FD6FFF",
-                  "#60EB9F",
-                  "#60EBE1",
-                  "#FFCA58",
-                ],
-                "accent-1": "#FD6FFF",
-                "accent-2": "#60EB9F",
-                "accent-3": "#60EBE1",
-                "accent-4": "#FFCA58",
-                "active": "rgba(221,221,221,0.5)",
-                "black": "#000000",
-                "border": "rgba(0, 0, 0, 0.33)",
-                "brand": "#865CD6",
-                "dark": Array [
-                  "#333333",
-                  "#444444",
-                  "#555555",
-                  "#666666",
-                  "#777777",
-                  "#999999",
-                ],
-                "dark-1": "#333333",
-                "dark-2": "#444444",
-                "dark-3": "#555555",
-                "dark-4": "#666666",
-                "dark-5": "#777777",
-                "dark-6": "#999999",
-                "darkBackground": Object {
-                  "text": "#FFFFFF",
-                },
-                "focus": "#FD6FFF",
-                "light": Array [
-                  "#F6F6F6",
-                  "#EEEEEE",
-                  "#DDDDDD",
-                  "#CCCCCC",
-                  "#BBBBBB",
-                  "#AAAAAA",
-                ],
-                "light-1": "#F6F6F6",
-                "light-2": "#EEEEEE",
-                "light-3": "#DDDDDD",
-                "light-4": "#CCCCCC",
-                "light-5": "#BBBBBB",
-                "light-6": "#AAAAAA",
-                "lightBackground": Object {
-                  "text": "#444444",
-                },
-                "neutral": Array [
-                  "#EB6060",
-                  "#01C781",
-                  "#6095EB",
-                  "#FFB200",
-                ],
-                "neutral-1": "#EB6060",
-                "neutral-2": "#01C781",
-                "neutral-3": "#6095EB",
-                "neutral-4": "#FFB200",
-                "placeholder": "#AAAAAA",
-                "status": Object {
-                  "critical": "#E1746A",
-                  "disabled": "#a8a8a8",
-                  "error": "#E1746A",
-                  "ok": "#7DD892",
-                  "unknown": "#a8a8a8",
-                  "warning": "#F7E464",
-                },
-                "status-critical": "#E1746A",
-                "status-disabled": "#a8a8a8",
-                "status-error": "#E1746A",
-                "status-ok": "#7DD892",
-                "status-unknown": "#a8a8a8",
-                "status-warning": "#F7E464",
-                "text": "#444444",
-                "white": "#FFFFFF",
-              },
-              "control": Object {
-                "border": Object {
-                  "width": "2px",
-                },
-                "font": Object {
-                  "size": "19px",
-                  "weight": 600,
-                },
-              },
-              "drop": Object {
-                "backgroundColor": Object {
-                  "dark": "#222222",
-                  "light": "#f8f8f8",
-                },
-                "border": Object {
-                  "radius": "0px",
-                  "width": "0px",
-                },
-                "shadow": Object {
-                  "dark": "0px 3px 8px rgba(255, 255, 255, 0.40)",
-                  "light": "0px 3px 8px rgba(100, 100, 100, 0.50)",
-                },
-              },
-              "edgeSize": Object {
-                "hair": "1px",
-                "large": "48px",
-                "medium": "24px",
-                "narrow": Object {
-                  "hair": "1px",
-                  "large": "24px",
-                  "medium": "12px",
-                  "none": "0",
-                  "small": "6px",
-                  "xlarge": "48px",
-                  "xsmall": "3px",
-                },
-                "none": "0",
-                "small": "12px",
-                "xlarge": "96px",
-                "xsmall": "6px",
-              },
-              "elevation": Object {
-                "dark": Object {
-                  "large": "0px 8px 16px rgba(255, 255, 255, 0.40)",
-                  "medium": "0px 6px 8px rgba(255, 255, 255, 0.40)",
-                  "none": "none",
-                  "small": "0px 4px 4px rgba(255, 255, 255, 0.40)",
-                  "xlarge": "0px 10px 24px rgba(255, 255, 255, 0.40)",
-                  "xsmall": "0px 2px 2px rgba(255, 255, 255, 0.40)",
-                },
-                "light": Object {
-                  "large": "0px 6px 12px rgba(100, 100, 100, 0.50)",
-                  "medium": "0px 3px 8px rgba(100, 100, 100, 0.50)",
-                  "none": "none",
-                  "small": "0px 2px 4px rgba(100, 100, 100, 0.50)",
-                  "xlarge": "0px 8px 16px rgba(100, 100, 100, 0.50)",
-                  "xsmall": "0px 1px 2px rgba(100, 100, 100, 0.50)",
-                },
-              },
-              "focus": Object {
-                "border": Object {
-                  "color": Array [
-                    [Function],
-                  ],
-                  "width": "2px",
-                },
-              },
-              "font": Object {
-                "face": "
-        @font-face {
-          font-family: 'Work Sans';
-          font-style: normal;
-          font-weight: 400;
-          src:
-            local('Work Sans'),
-            local('WorkSans-Regular'),
-            url(\\"https://fonts.gstatic.com/s/worksans/v2/ElUAY9q6T0Ayx4zWzW63VJBw1xU1rKptJj_0jans920.woff2\\") format('woff2');
-        }
-
-        @font-face {
-          font-family: 'Work Sans';
-          font-style: normal;
-          font-weight: 600;
-          src:
-            local('Work Sans SemiBold'),
-            local('WorkSans-SemiBold'),
-            url(\\"https://fonts.gstatic.com/s/worksans/v2/z9rX03Xuz9ZNHTMg1_ghGRampu5_7CjHW5spxoeN3Vs.woff2\\") format('woff2');
-        }
-
-        @font-face {
-          font-family: 'Zilla Slab';
-          font-style: normal;
-          font-weight: 400;
-          src:
-            local('Zilla Slab Regular'),
-            local('ZillaSlab-Regular'),
-            url(\\"https://fonts.gstatic.com/s/zillaslab/v3/dFa6ZfeM_74wlPZtksIFajo6_V6LVlA.woff2\\") format('woff2');
-        }
-
-        @font-face {
-          font-family: 'Zilla Slab';
-          font-style: normal;
-          font-weight: 600;
-          src:
-            local('Zilla Slab SemiBold'),
-            local('ZillaSlab-SemiBold'),
-            url(\\"https://fonts.gstatic.com/s/zillaslab/v3/dFa5ZfeM_74wlPZtksIFYuUe6HOpW3pwfa0.woff2\\") format('woff2');
-        }
-      ",
-                "family": "'Work Sans', Arial, sans-serif",
-                "size": "16px",
-              },
-              "hover": Object {
-                "backgroundColor": Array [
-                  [Function],
-                ],
-                "textColor": "#000000",
-              },
-              "input": Object {
-                "border": Object {
-                  "color": Array [
-                    [Function],
-                  ],
-                  "radius": "4px",
-                  "width": "1px",
-                },
-                "weight": 600,
-              },
-              "lineHeight": "24px",
-              "opacity": Object {
-                "medium": "0.4",
-                "strong": "0.8",
-                "weak": "0.1",
-              },
-              "size": Object {
-                "full": "100%",
-                "large": "768px",
-                "medium": "384px",
-                "narrow": Object {
-                  "full": "100%",
-                  "large": "384px",
-                  "medium": "192px",
-                  "small": "96px",
-                  "xlarge": "768px",
-                  "xsmall": "48px",
-                  "xxsmall": "24px",
-                },
-                "small": "192px",
-                "xlarge": "1152px",
-                "xsmall": "96px",
-                "xxsmall": "48px",
-              },
-              "spacing": "24px",
-            },
-            "grommet": Object {},
-            "heading": Object {
-              "font": Object {
-                "family": "'Zilla Slab', 'Work Sans', Arial, sans-serif",
-              },
-              "level": Object {
-                "1": Object {
-                  "large": Object {
-                    "height": 1.125,
-                    "maxWidth": "2304px",
-                    "size": "96px",
-                  },
-                  "medium": Object {
-                    "height": 1.125,
-                    "maxWidth": "1152px",
-                    "size": "48px",
-                  },
-                  "small": Object {
-                    "height": 1.333,
-                    "maxWidth": "576px",
-                    "size": "24px",
-                  },
-                },
-                "2": Object {
-                  "large": Object {
-                    "height": 1.125,
-                    "maxWidth": "1152px",
-                    "size": "48px",
-                  },
-                  "medium": Object {
-                    "height": 1.23,
-                    "maxWidth": "864px",
-                    "size": "36px",
-                  },
-                  "small": Object {
-                    "height": 1.333,
-                    "maxWidth": "432px",
-                    "size": "18px",
-                  },
-                },
-                "3": Object {
-                  "large": Object {
-                    "height": 1.23,
-                    "maxWidth": "864px",
-                    "size": "36px",
-                  },
-                  "medium": Object {
-                    "height": 1.333,
-                    "maxWidth": "576px",
-                    "size": "24px",
-                  },
-                  "small": Object {
-                    "height": 1.333,
-                    "maxWidth": "432px",
-                    "size": "18px",
-                  },
-                },
-                "4": Object {
-                  "large": Object {
-                    "height": 1.333,
-                    "maxWidth": "576px",
-                    "size": "24px",
-                  },
-                  "medium": Object {
-                    "height": 1.333,
-                    "maxWidth": "432px",
-                    "size": "18px",
-                  },
-                  "small": Object {
-                    "height": 1.375,
-                    "maxWidth": "384px",
-                    "size": "16px",
-                  },
-                },
-              },
-              "weight": 600,
-            },
-            "icon": Object {
-              "color": "#666666",
-              "colors": Object {
-                "accent": Array [
-                  "#FD6FFF",
-                  "#60EB9F",
-                  "#60EBE1",
-                  "#FFCA58",
-                ],
-                "accent-1": "#FD6FFF",
-                "accent-2": "#60EB9F",
-                "accent-3": "#60EBE1",
-                "accent-4": "#FFCA58",
-                "active": "rgba(221,221,221,0.5)",
-                "black": "#000000",
-                "border": "rgba(0, 0, 0, 0.33)",
-                "brand": "#865CD6",
-                "dark": Array [
-                  "#333333",
-                  "#444444",
-                  "#555555",
-                  "#666666",
-                  "#777777",
-                  "#999999",
-                ],
-                "dark-1": "#333333",
-                "dark-2": "#444444",
-                "dark-3": "#555555",
-                "dark-4": "#666666",
-                "dark-5": "#777777",
-                "dark-6": "#999999",
-                "darkBackground": Object {
-                  "text": "#FFFFFF",
-                },
-                "focus": "#FD6FFF",
-                "light": Array [
-                  "#F6F6F6",
-                  "#EEEEEE",
-                  "#DDDDDD",
-                  "#CCCCCC",
-                  "#BBBBBB",
-                  "#AAAAAA",
-                ],
-                "light-1": "#F6F6F6",
-                "light-2": "#EEEEEE",
-                "light-3": "#DDDDDD",
-                "light-4": "#CCCCCC",
-                "light-5": "#BBBBBB",
-                "light-6": "#AAAAAA",
-                "lightBackground": Object {
-                  "text": "#444444",
-                },
-                "neutral": Array [
-                  "#EB6060",
-                  "#01C781",
-                  "#6095EB",
-                  "#FFB200",
-                ],
-                "neutral-1": "#EB6060",
-                "neutral-2": "#01C781",
-                "neutral-3": "#6095EB",
-                "neutral-4": "#FFB200",
-                "placeholder": "#AAAAAA",
-                "status": Object {
-                  "critical": "#E1746A",
-                  "disabled": "#a8a8a8",
-                  "error": "#E1746A",
-                  "ok": "#7DD892",
-                  "unknown": "#a8a8a8",
-                  "warning": "#F7E464",
-                },
-                "status-critical": "#E1746A",
-                "status-disabled": "#a8a8a8",
-                "status-error": "#E1746A",
-                "status-ok": "#7DD892",
-                "status-unknown": "#a8a8a8",
-                "status-warning": "#F7E464",
-                "text": "#444444",
-                "white": "#FFFFFF",
-              },
-              "size": Object {
-                "large": "48px",
-                "xlarge": "96px",
-              },
-            },
-            "iconThemes": Object {
-              "dark": Object {
-                "color": "#FFFFFF",
-                "colors": Object {
-                  "accent": Array [
-                    "#FD6FFF",
-                    "#60EB9F",
-                    "#60EBE1",
-                    "#FFCA58",
-                  ],
-                  "accent-1": "#FD6FFF",
-                  "accent-2": "#60EB9F",
-                  "accent-3": "#60EBE1",
-                  "accent-4": "#FFCA58",
-                  "active": "rgba(221,221,221,0.5)",
-                  "black": "#000000",
-                  "border": "rgba(0, 0, 0, 0.33)",
-                  "brand": "#865CD6",
-                  "dark": Array [
-                    "#333333",
-                    "#444444",
-                    "#555555",
-                    "#666666",
-                    "#777777",
-                    "#999999",
-                  ],
-                  "dark-1": "#333333",
-                  "dark-2": "#444444",
-                  "dark-3": "#555555",
-                  "dark-4": "#666666",
-                  "dark-5": "#777777",
-                  "dark-6": "#999999",
-                  "darkBackground": Object {
-                    "text": "#FFFFFF",
-                  },
-                  "focus": "#FD6FFF",
-                  "light": Array [
-                    "#F6F6F6",
-                    "#EEEEEE",
-                    "#DDDDDD",
-                    "#CCCCCC",
-                    "#BBBBBB",
-                    "#AAAAAA",
-                  ],
-                  "light-1": "#F6F6F6",
-                  "light-2": "#EEEEEE",
-                  "light-3": "#DDDDDD",
-                  "light-4": "#CCCCCC",
-                  "light-5": "#BBBBBB",
-                  "light-6": "#AAAAAA",
-                  "lightBackground": Object {
-                    "text": "#444444",
-                  },
-                  "neutral": Array [
-                    "#EB6060",
-                    "#01C781",
-                    "#6095EB",
-                    "#FFB200",
-                  ],
-                  "neutral-1": "#EB6060",
-                  "neutral-2": "#01C781",
-                  "neutral-3": "#6095EB",
-                  "neutral-4": "#FFB200",
-                  "placeholder": "#AAAAAA",
-                  "status": Object {
-                    "critical": "#E1746A",
-                    "disabled": "#a8a8a8",
-                    "error": "#E1746A",
-                    "ok": "#7DD892",
-                    "unknown": "#a8a8a8",
-                    "warning": "#F7E464",
-                  },
-                  "status-critical": "#E1746A",
-                  "status-disabled": "#a8a8a8",
-                  "status-error": "#E1746A",
-                  "status-ok": "#7DD892",
-                  "status-unknown": "#a8a8a8",
-                  "status-warning": "#F7E464",
-                  "text": "#444444",
-                  "white": "#FFFFFF",
-                },
-                "size": Object {
-                  "large": "48px",
-                  "xlarge": "96px",
-                },
-              },
-              "light": Object {
-                "color": "#666666",
-                "colors": Object {
-                  "accent": Array [
-                    "#FD6FFF",
-                    "#60EB9F",
-                    "#60EBE1",
-                    "#FFCA58",
-                  ],
-                  "accent-1": "#FD6FFF",
-                  "accent-2": "#60EB9F",
-                  "accent-3": "#60EBE1",
-                  "accent-4": "#FFCA58",
-                  "active": "rgba(221,221,221,0.5)",
-                  "black": "#000000",
-                  "border": "rgba(0, 0, 0, 0.33)",
-                  "brand": "#865CD6",
-                  "dark": Array [
-                    "#333333",
-                    "#444444",
-                    "#555555",
-                    "#666666",
-                    "#777777",
-                    "#999999",
-                  ],
-                  "dark-1": "#333333",
-                  "dark-2": "#444444",
-                  "dark-3": "#555555",
-                  "dark-4": "#666666",
-                  "dark-5": "#777777",
-                  "dark-6": "#999999",
-                  "darkBackground": Object {
-                    "text": "#FFFFFF",
-                  },
-                  "focus": "#FD6FFF",
-                  "light": Array [
-                    "#F6F6F6",
-                    "#EEEEEE",
-                    "#DDDDDD",
-                    "#CCCCCC",
-                    "#BBBBBB",
-                    "#AAAAAA",
-                  ],
-                  "light-1": "#F6F6F6",
-                  "light-2": "#EEEEEE",
-                  "light-3": "#DDDDDD",
-                  "light-4": "#CCCCCC",
-                  "light-5": "#BBBBBB",
-                  "light-6": "#AAAAAA",
-                  "lightBackground": Object {
-                    "text": "#444444",
-                  },
-                  "neutral": Array [
-                    "#EB6060",
-                    "#01C781",
-                    "#6095EB",
-                    "#FFB200",
-                  ],
-                  "neutral-1": "#EB6060",
-                  "neutral-2": "#01C781",
-                  "neutral-3": "#6095EB",
-                  "neutral-4": "#FFB200",
-                  "placeholder": "#AAAAAA",
-                  "status": Object {
-                    "critical": "#E1746A",
-                    "disabled": "#a8a8a8",
-                    "error": "#E1746A",
-                    "ok": "#7DD892",
-                    "unknown": "#a8a8a8",
-                    "warning": "#F7E464",
-                  },
-                  "status-critical": "#E1746A",
-                  "status-disabled": "#a8a8a8",
-                  "status-error": "#E1746A",
-                  "status-ok": "#7DD892",
-                  "status-unknown": "#a8a8a8",
-                  "status-warning": "#F7E464",
-                  "text": "#444444",
-                  "white": "#FFFFFF",
-                },
-                "size": Object {
-                  "large": "48px",
-                  "xlarge": "96px",
-                },
-              },
-            },
-            "layer": Object {
-              "backgroundColor": "#FFFFFF",
-              "border": Object {
-                "radius": "4px",
-              },
-              "overlayBackgroundColor": "rgba(0, 0, 0, 0.5)",
-            },
-            "menu": Object {
-              "icons": Object {
-                "down": [Function],
-              },
-            },
-            "paragraph": Object {
-              "large": Object {
-                "height": 1.333,
-                "maxWidth": "576px",
-                "size": "24px",
-              },
-              "medium": Object {
-                "height": 1.375,
-                "maxWidth": "384px",
-                "size": "16px",
-              },
-              "small": Object {
-                "height": 1.43,
-                "maxWidth": "336px",
-                "size": "14px",
-              },
-              "xlarge": Object {
-                "height": 1.1875,
-                "maxWidth": "768px",
-                "size": "32px",
-              },
-            },
-            "radioButton": Object {
-              "border": Object {
-                "color": Object {
-                  "dark": "rgba(255, 255, 255, 0.5)",
-                  "light": "rgba(0, 0, 0, 0.15)",
-                },
-                "radius": "100%",
-                "width": "2px",
-              },
-              "check": Object {
-                "color": Array [
-                  [Function],
-                ],
-              },
-              "size": "24px",
-            },
-            "rangeInput": Object {
-              "track": Object {
-                "color": Array [
-                  [Function],
-                ],
-              },
-            },
-            "select": Object {
-              "icons": Object {
-                "down": [Function],
-              },
-            },
-            "text": Object {
-              "large": Object {
-                "height": 1.167,
-                "size": "24px",
-              },
-              "medium": Object {
-                "height": 1.375,
-                "size": "16px",
-              },
-              "small": Object {
-                "height": 1.43,
-                "size": "14px",
-              },
-              "xlarge": Object {
-                "height": 1.1875,
-                "size": "32px",
-              },
-              "xsmall": Object {
-                "height": 1.5,
-                "size": "12px",
-              },
-              "xxlarge": Object {
-                "height": 1.125,
-                "size": "48px",
-              },
-            },
-            "video": Object {
-              "captions": Object {
-                "background": "rgba(0,0,0,0.7)",
-              },
-              "icons": Object {
-                "closedCaption": [Function],
-                "configure": [Function],
-                "fullScreen": [Function],
-                "pause": [Function],
-                "play": [Function],
-                "reduceVolume": [Function],
-                "volume": [Function],
-              },
-            },
-            "worldMap": Object {
-              "continent": Object {
-                "active": "8px",
-                "base": "6px",
-              },
-              "place": Object {
-                "active": "20px",
-                "base": "8px",
-              },
-            },
-          }
-        }
-      >
-        <svg />
-      </StyledAnchor__StyledIcon>
-    }
+    icon={<svg />}
     onBlur={[Function]}
     onFocus={[Function]}
   >
-    invalid
+    <div
+      className="c2"
+    >
+      <svg />
+    </div>
   </a>
 </div>
 `;
@@ -3147,6 +603,31 @@ exports[`Anchor warns about invalid label render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c1 {
   box-sizing: border-box;
   color: #865CD6;
@@ -3161,6 +642,18 @@ exports[`Anchor warns about invalid label render 1`] = `
   text-decoration: underline;
 }
 
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
+}
+
 <div
   className="c0"
 >
@@ -3171,7 +664,17 @@ exports[`Anchor warns about invalid label render 1`] = `
     onBlur={[Function]}
     onFocus={[Function]}
   >
-    invalid
+    <div
+      className="c2"
+    >
+      <span
+        className="c3"
+      >
+        <strong>
+          Test
+        </strong>
+      </span>
+    </div>
   </a>
 </div>
 `;

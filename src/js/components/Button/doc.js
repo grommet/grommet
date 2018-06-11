@@ -58,6 +58,9 @@ with plain Buttons.`,
       `Click handler. Not setting this property and not specifying a href
 causes the Button to be disabled.`
     ),
+    plain: PropTypes.bool.description(
+      'Whether this is a plain button with no border or padding.'
+    ),
     primary: PropTypes.bool.description(
       'Whether this is a primary button. There should be at most one per page or screen.'
     ),

@@ -51,6 +51,9 @@ particular side of the layer`
     position: PropTypes.oneOf(['bottom', 'center', 'hidden', 'left', 'right', 'top']).description(
       'Position of the layer content.'
     ).defaultValue('center'),
+    responsive: PropTypes.bool.description(
+      'Whether the layer should take full width and height on mobile'
+    ).defaultValue(true),
   };
 
   return DocumentedLayer;

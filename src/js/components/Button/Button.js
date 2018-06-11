@@ -1,9 +1,12 @@
 import React, { Children, Component } from 'react';
 import { compose } from 'recompose';
 
+import Box from '../Box/Box';
+import Text from '../Text/Text';
+
 import { withFocus, withForwardRef, withTheme } from '../hocs';
 
-import StyledButton, { StyledLabel, StyledIcon } from './StyledButton';
+import StyledButton from './StyledButton';
 import doc from './doc';
 
 const AnchorStyledButton = StyledButton.withComponent('a');
@@ -34,6 +37,7 @@ class Button extends Component {
       href,
       label,
       onClick,
+      plain,
       reverse,
       theme,
       type,
@@ -42,20 +46,14 @@ class Button extends Component {
 
     const Tag = href ? AnchorStyledButton : StyledButton;
 
-    let buttonIcon;
-    if (icon) {
-      buttonIcon = (
-        <StyledIcon aria-hidden={true} key='styled-icon' theme={theme}>{icon}</StyledIcon>
-      );
-    }
+    const buttonLabel = typeof label === 'string' ? (
+      <Text>
+        <strong>{label}</strong>
+      </Text>
+    ) : label;
 
-    let buttonLabel;
-    if (label) {
-      buttonLabel = <StyledLabel key='styled-label' theme={theme}>{label}</StyledLabel>;
-    }
-
-    const first = reverse ? buttonLabel : buttonIcon;
-    const second = reverse ? buttonIcon : buttonLabel;
+    const first = reverse ? buttonLabel : icon;
+    const second = reverse ? icon : buttonLabel;
 
     const disabled = (
       !href &&
@@ -75,11 +73,19 @@ class Button extends Component {
         href={href}
         label={label}
         onClick={onClick}
-        plain={Children.count(children) > 0 || (icon && !label)}
+        plain={typeof plain !== 'undefined' ? (
+          plain
+        ) : (
+          (Children.count(children) > 0 || (icon && !label))
+        )}
         theme={theme}
         type={!href ? type : undefined}
       >
-        {(first || second) ? [first, second] : children}
+        {(first || second) ? (
+          <Box direction='row' align='center' gap='small'>
+            {[first, second]}
+          </Box>
+        ) : children}
       </Tag>
     );
   }

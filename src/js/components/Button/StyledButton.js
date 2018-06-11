@@ -2,8 +2,12 @@ import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
 import {
-  activeStyle, backgroundStyle, colorForName, colorIsDark, focusStyle,
-  fontSize, lapAndUp,
+  activeStyle,
+  backgroundStyle,
+  colorForName,
+  colorIsDark,
+  focusStyle,
+  lapAndUp,
 } from '../../utils';
 
 const basicStyle = props => css`
@@ -16,7 +20,6 @@ const basicStyle = props => css`
 
 const primaryStyle = props => css`
   ${backgroundStyle(props.color || 'brand', props.theme)}
-  border: none;
   border-radius: ${props.theme.button.border.radius};
 
   // TODO: revisit this
@@ -130,14 +133,7 @@ const StyledButton = styled.button`
   text-transform: none;
 
   ${props => props.plain && plainStyle}
-  ${props => !props.plain && css`
-    text-align: center;
-    display: inline-block;
-    min-width: ${props.theme.button.minWidth};
-    max-width: ${props.theme.button.maxWidth};
-    font-weight: ${props.theme.global.control.font.weight};
-  `}
-  ${props => !props.plain && !props.primary && basicStyle(props)}
+  ${props => !props.plain && basicStyle(props)}
   ${props => props.primary && primaryStyle(props)}
 
   ${props => (
@@ -149,11 +145,6 @@ const StyledButton = styled.button`
 
   ${props => (
     !props.plain && (
-      fontSize(props.theme.global.control.font.size, props.theme.global.spacing)
-    )
-  )}
-  ${props => (
-    !props.plain && (
       `padding: ${props.theme.button.padding.vertical} ${props.theme.button.padding.horizontal};`
     )
   )}
@@ -162,27 +153,9 @@ const StyledButton = styled.button`
     transition: 0.1s ease-in-out;
   `)}
   ${props => props.fillContainer && fillStyle}
-  ${props => props.icon && !props.label && `
+  ${props => props.icon && !props.label && !props.plain && `
     padding: ${props.theme.global.edgeSize.small};
   `}
-`;
-
-export const StyledLabel = styled.span`
-  &:first-child:not(:last-child) {
-    margin-right: ${props => props.theme.global.edgeSize.small};
-  }
-`;
-
-export const StyledIcon = styled.span`
-  display: inline-block;
-
-  &:first-child:not(:last-child) {
-    margin-right: ${props => props.theme.global.edgeSize.small};
-  }
-
-  > * {
-    vertical-align: bottom;
-  }
 `;
 
 export default StyledButton.extend`

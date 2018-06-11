@@ -1,11 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-import { focusStyle, fontSize } from '../../utils';
-
-const primaryIconLabelStyle = css`
-  ${props => fontSize(props.theme.global.control.font.size, props.theme.global.spacing)}
-  font-weight: ${props => props.theme.global.control.font.weight};
-`;
+import { focusStyle } from '../../utils';
 
 const disabledStyle = `
   opacity: 0.3;
@@ -28,7 +23,6 @@ const StyledAnchor = styled.a`
     }
   `}
 
-  ${props => (props.primary || (props.icon && props.label)) && primaryIconLabelStyle}
   ${props => !props.primary && props.icon && props.label && `
     color: ${props.theme.global.colors.text};
   `}
@@ -38,21 +32,6 @@ const StyledAnchor = styled.a`
 
   ${props => props.disabled && disabledStyle}
   ${props => props.focus && focusStyle}
-`;
-
-export const StyledIcon = styled.span`
-  display: inline-block;
-  ${props => props.label && `
-    ${props.reverse ? `
-      margin-left: ${props.theme.global.edgeSize.small};
-    ` : `
-      margin-right: ${props.theme.global.edgeSize.small};
-    `}
-  `}
-
-  > * {
-    vertical-align: bottom;
-  }
 `;
 
 export default StyledAnchor.extend`

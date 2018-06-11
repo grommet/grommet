@@ -71,6 +71,26 @@ exports[`Video autoPlay renders 1`] = `
   padding: 0;
 }
 
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
 .c8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -154,6 +174,20 @@ exports[`Video autoPlay renders 1`] = `
   padding: 12px;
 }
 
+.c16 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.c19 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c5 {
   box-sizing: border-box;
   cursor: pointer;
@@ -169,7 +203,6 @@ exports[`Video autoPlay renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  padding: 12px;
 }
 
 .c5:hover {
@@ -192,32 +225,6 @@ exports[`Video autoPlay renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c6 {
-  display: inline-block;
-}
-
-.c6:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c6 > * {
-  vertical-align: bottom;
-}
-
-.c16 {
-  font-size: 16px;
-  line-height: 1.375;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.c19 {
-  font-size: 16px;
-  line-height: 1.375;
 }
 
 .c12 {
@@ -295,6 +302,18 @@ exports[`Video autoPlay renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
     padding: 0;
   }
 }
@@ -421,8 +440,7 @@ exports[`Video autoPlay renders 1`] = `
           onFocus={[Function]}
           type="button"
         >
-          <span
-            aria-hidden={true}
+          <div
             className="c6"
           >
             <svg
@@ -442,7 +460,7 @@ exports[`Video autoPlay renders 1`] = `
                 strokeWidth="2"
               />
             </svg>
-          </span>
+          </div>
         </button>
         <div
           className="c8"
@@ -644,6 +662,26 @@ exports[`Video controls renders 1`] = `
   padding: 0;
 }
 
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
 .c8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -751,6 +789,20 @@ exports[`Video controls renders 1`] = `
   padding: 0;
 }
 
+.c16 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.c19 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c5 {
   box-sizing: border-box;
   cursor: pointer;
@@ -766,7 +818,6 @@ exports[`Video controls renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  padding: 12px;
 }
 
 .c5:hover {
@@ -789,32 +840,6 @@ exports[`Video controls renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c6 {
-  display: inline-block;
-}
-
-.c6:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c6 > * {
-  vertical-align: bottom;
-}
-
-.c16 {
-  font-size: 16px;
-  line-height: 1.375;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.c19 {
-  font-size: 16px;
-  line-height: 1.375;
 }
 
 .c12 {
@@ -902,6 +927,18 @@ exports[`Video controls renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
     padding: 0;
   }
 }
@@ -1040,8 +1077,7 @@ exports[`Video controls renders 1`] = `
           onFocus={[Function]}
           type="button"
         >
-          <span
-            aria-hidden={true}
+          <div
             className="c6"
           >
             <svg
@@ -1061,7 +1097,7 @@ exports[`Video controls renders 1`] = `
                 strokeWidth="2"
               />
             </svg>
-          </span>
+          </div>
         </button>
         <div
           className="c8"
@@ -1206,8 +1242,7 @@ exports[`Video controls renders 1`] = `
           onFocus={[Function]}
           type="button"
         >
-          <span
-            aria-hidden={true}
+          <div
             className="c6"
           >
             <svg
@@ -1226,7 +1261,7 @@ exports[`Video controls renders 1`] = `
                 strokeWidth="2"
               />
             </svg>
-          </span>
+          </div>
         </button>
         <div
           className="c8"
@@ -1396,6 +1431,26 @@ exports[`Video fit renders 1`] = `
   padding: 0;
 }
 
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
 .c8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1479,6 +1534,20 @@ exports[`Video fit renders 1`] = `
   padding: 12px;
 }
 
+.c16 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.c19 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c5 {
   box-sizing: border-box;
   cursor: pointer;
@@ -1494,7 +1563,6 @@ exports[`Video fit renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  padding: 12px;
 }
 
 .c5:hover {
@@ -1517,32 +1585,6 @@ exports[`Video fit renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c6 {
-  display: inline-block;
-}
-
-.c6:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c6 > * {
-  vertical-align: bottom;
-}
-
-.c16 {
-  font-size: 16px;
-  line-height: 1.375;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.c19 {
-  font-size: 16px;
-  line-height: 1.375;
 }
 
 .c12 {
@@ -1638,6 +1680,18 @@ exports[`Video fit renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
     padding: 0;
   }
 }
@@ -1764,8 +1818,7 @@ exports[`Video fit renders 1`] = `
           onFocus={[Function]}
           type="button"
         >
-          <span
-            aria-hidden={true}
+          <div
             className="c6"
           >
             <svg
@@ -1785,7 +1838,7 @@ exports[`Video fit renders 1`] = `
                 strokeWidth="2"
               />
             </svg>
-          </span>
+          </div>
         </button>
         <div
           className="c8"
@@ -1937,8 +1990,7 @@ exports[`Video fit renders 1`] = `
           onFocus={[Function]}
           type="button"
         >
-          <span
-            aria-hidden={true}
+          <div
             className="c6"
           >
             <svg
@@ -1958,7 +2010,7 @@ exports[`Video fit renders 1`] = `
                 strokeWidth="2"
               />
             </svg>
-          </span>
+          </div>
         </button>
         <div
           className="c8"
@@ -2128,6 +2180,26 @@ exports[`Video loop renders 1`] = `
   padding: 0;
 }
 
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
 .c8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2211,6 +2283,20 @@ exports[`Video loop renders 1`] = `
   padding: 12px;
 }
 
+.c16 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.c19 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c5 {
   box-sizing: border-box;
   cursor: pointer;
@@ -2226,7 +2312,6 @@ exports[`Video loop renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  padding: 12px;
 }
 
 .c5:hover {
@@ -2249,32 +2334,6 @@ exports[`Video loop renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c6 {
-  display: inline-block;
-}
-
-.c6:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c6 > * {
-  vertical-align: bottom;
-}
-
-.c16 {
-  font-size: 16px;
-  line-height: 1.375;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.c19 {
-  font-size: 16px;
-  line-height: 1.375;
 }
 
 .c12 {
@@ -2352,6 +2411,18 @@ exports[`Video loop renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
     padding: 0;
   }
 }
@@ -2478,8 +2549,7 @@ exports[`Video loop renders 1`] = `
           onFocus={[Function]}
           type="button"
         >
-          <span
-            aria-hidden={true}
+          <div
             className="c6"
           >
             <svg
@@ -2499,7 +2569,7 @@ exports[`Video loop renders 1`] = `
                 strokeWidth="2"
               />
             </svg>
-          </span>
+          </div>
         </button>
         <div
           className="c8"
@@ -2669,6 +2739,26 @@ exports[`Video mute renders 1`] = `
   padding: 0;
 }
 
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
 .c8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2752,6 +2842,20 @@ exports[`Video mute renders 1`] = `
   padding: 12px;
 }
 
+.c16 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.c19 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c5 {
   box-sizing: border-box;
   cursor: pointer;
@@ -2767,7 +2871,6 @@ exports[`Video mute renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  padding: 12px;
 }
 
 .c5:hover {
@@ -2790,32 +2893,6 @@ exports[`Video mute renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c6 {
-  display: inline-block;
-}
-
-.c6:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c6 > * {
-  vertical-align: bottom;
-}
-
-.c16 {
-  font-size: 16px;
-  line-height: 1.375;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.c19 {
-  font-size: 16px;
-  line-height: 1.375;
 }
 
 .c12 {
@@ -2893,6 +2970,18 @@ exports[`Video mute renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
     padding: 0;
   }
 }
@@ -3019,8 +3108,7 @@ exports[`Video mute renders 1`] = `
           onFocus={[Function]}
           type="button"
         >
-          <span
-            aria-hidden={true}
+          <div
             className="c6"
           >
             <svg
@@ -3040,7 +3128,7 @@ exports[`Video mute renders 1`] = `
                 strokeWidth="2"
               />
             </svg>
-          </span>
+          </div>
         </button>
         <div
           className="c8"
@@ -3210,6 +3298,26 @@ exports[`Video renders 1`] = `
   padding: 0;
 }
 
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
 .c8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3293,6 +3401,20 @@ exports[`Video renders 1`] = `
   padding: 12px;
 }
 
+.c16 {
+  font-size: 16px;
+  line-height: 1.375;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.c19 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c5 {
   box-sizing: border-box;
   cursor: pointer;
@@ -3308,7 +3430,6 @@ exports[`Video renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  padding: 12px;
 }
 
 .c5:hover {
@@ -3331,32 +3452,6 @@ exports[`Video renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-}
-
-.c6 {
-  display: inline-block;
-}
-
-.c6:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c6 > * {
-  vertical-align: bottom;
-}
-
-.c16 {
-  font-size: 16px;
-  line-height: 1.375;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.c19 {
-  font-size: 16px;
-  line-height: 1.375;
 }
 
 .c12 {
@@ -3434,6 +3529,18 @@ exports[`Video renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c4 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c6 {
     padding: 0;
   }
 }
@@ -3560,8 +3667,7 @@ exports[`Video renders 1`] = `
           onFocus={[Function]}
           type="button"
         >
-          <span
-            aria-hidden={true}
+          <div
             className="c6"
           >
             <svg
@@ -3581,7 +3687,7 @@ exports[`Video renders 1`] = `
                 strokeWidth="2"
               />
             </svg>
-          </span>
+          </div>
         </button>
         <div
           className="c8"

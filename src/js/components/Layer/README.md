@@ -112,4 +112,12 @@ left
 right
 top
 ```
+
+**responsive**
+
+Whether the layer should take full width and height on mobile Defaults to `true`.
+
+```
+boolean
+```
   

@@ -27,6 +27,14 @@ A color identifier to use for the graphic color. Defaults to `accent-1`.
 
 ```
 string
+{
+  color: string,
+  opacity: 
+    weak
+    medium
+    strong
+    boolean
+}
 ```
 
 **onClick**
@@ -46,6 +54,17 @@ Called with a boolean argument
 
 ```
 function
+```
+
+**overflow**
+
+Whether the chart strokes should overflow the component. Set this
+      to true for precise positioning when stacking charts or including
+      precise axes. Set this to false to have the graphical elements
+      align with the component boundaries.
+
+```
+boolean
 ```
 
 **round**
@@ -96,6 +115,7 @@ full
 The width of the stroke. Defaults to `medium`.
 
 ```
+hair
 xsmall
 small
 medium
@@ -123,11 +143,17 @@ Required. Array of value objects describing the data.
       'onHover' and 'onClick' only work when type='bar'.
 
 ```
-[{
-  label: string,
-  onClick: function,
-  onHover: function,
-  value: [number]
-}]
+[
+  number
+  [number]
+  {
+    label: string,
+    onClick: function,
+    onHover: function,
+    value: 
+      number
+      [number]
+  }
+]
 ```
   

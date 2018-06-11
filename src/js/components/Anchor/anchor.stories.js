@@ -1,18 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Anchor from '../Anchor/Anchor';
-import Grommet from '../Grommet/Grommet';
+import { Add } from 'grommet-icons';
 
-class SimpleAnchor extends Component {
-  render() {
-    return (
-      <Grommet>
-        <Anchor>Link</Anchor>
-      </Grommet>
-    );
-  }
-}
+import { Anchor, Grommet } from '../';
 
 storiesOf('Anchor', module)
-  .add('Simple Anchor', () => <SimpleAnchor />);
+  .add('Default', () => <Grommet><Anchor href='#'>Link</Anchor></Grommet>)
+  .add('Icon', () => <Grommet><Anchor icon={<Add />} label='Add' href='#' /></Grommet>);

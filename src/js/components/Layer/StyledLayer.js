@@ -9,6 +9,16 @@ const hiddenPositionStyle = css`
   position: fixed;
 `;
 
+const desktopLayerStyle = `
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 100vh;
+`;
+
 const StyledLayer = styled.div`
   ${baseStyle}
   background-color: unset;
@@ -17,22 +27,22 @@ const StyledLayer = styled.div`
   z-index: 10;
   overflow: auto;
   pointer-events: none;
+  outline: none;
 
-  ${palm(`
+  ${props => props.responsive && palm(`
     position: absolute;
     height: 100%;
     width: 100%;
   `)}
 
-  ${props => (props.position === 'hidden' ? hiddenPositionStyle : lapAndUp(`
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100vw;
-    height: 100vh;
-  `))}
+  ${(props) => {
+    if (props.position === 'hidden') {
+      return hiddenPositionStyle;
+    } else if (props.responsive) {
+      return lapAndUp(desktopLayerStyle);
+    }
+    return desktopLayerStyle;
+  }}
 `;
 
 export const StyledOverlay = styled.div`
@@ -313,6 +323,16 @@ const POSITIONS = {
   },
 };
 
+const desktopContainerStyle = css`
+position: ${props => (props.modal ? 'absolute' : 'fixed')};
+max-height: 100%;
+max-width: 100%;
+overflow: auto;
+border-radius: ${props => (props.plain ? 'none' : props.theme.layer.border.radius)};
+${props => (props.position !== 'hidden' &&
+  POSITIONS[props.position][props.full](props.margin, props.theme)) || ''}
+`;
+
 export const StyledContainer = styled.div`
   ${props => (!props.modal ? baseStyle : '')}
   display: flex;
@@ -323,20 +343,12 @@ export const StyledContainer = styled.div`
   pointer-events: all;
   z-index: 15;
 
-  ${palm(`
+  ${props => props.responsive && palm(`
     min-height: 100%;
     min-width: 100%;
   `)}
 
-  ${lapAndUp(css`
-    position: ${props => (props.modal ? 'absolute' : 'fixed')};
-    max-height: 100%;
-    max-width: 100%;
-    overflow: auto;
-    border-radius: ${props => (props.plain ? 'none' : props.theme.layer.border.radius)};
-    ${props => (props.position !== 'hidden' &&
-      POSITIONS[props.position][props.full](props.margin, props.theme)) || ''}
-  `)}
+  ${props => (props.responsive ? lapAndUp(desktopContainerStyle) : desktopContainerStyle)}
 `;
 
 // ${props => props.full && fullStyle(props.full, props.margin, props.theme)}
