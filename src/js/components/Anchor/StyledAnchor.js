@@ -10,6 +10,8 @@ const disabledStyle = `
 
 const StyledAnchor = styled.a`
   box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
   color: ${props =>
     (props.theme.dark ? props.theme.global.colors.darkBackground.text
       : props.theme.anchor.color)};

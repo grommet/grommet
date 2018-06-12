@@ -61,8 +61,9 @@ class Anchor extends Component {
         onClick={!disabled ? onClick : undefined}
       >
         {(first || second) ? (
-          <Box direction='row' align='center' gap='small'>
-            {[first, second]}
+          <Box tag='span' direction='row' align='center' gap='small' style={{ display: 'inline-flex' }}>
+            {first}
+            {second}
           </Box>
         ) : children}
       </StyledAnchor>

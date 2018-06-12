@@ -15,6 +15,8 @@ exports[`Anchor disabled renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
   color: #865CD6;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -78,6 +80,8 @@ exports[`Anchor focus renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
   color: #865CD6;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -124,8 +128,13 @@ exports[`Anchor focus renders 1`] = `
     onBlur={[Function]}
     onFocus={[Function]}
   >
-    <div
+    <span
       className="c2"
+      style={
+        Object {
+          "display": "inline-flex",
+        }
+      }
     >
       <span
         className="c3"
@@ -134,7 +143,7 @@ exports[`Anchor focus renders 1`] = `
           Test
         </strong>
       </span>
-    </div>
+    </span>
   </a>
 </div>
 `;
@@ -186,6 +195,8 @@ exports[`Anchor icon label renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
   color: #865CD6;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -222,8 +233,13 @@ exports[`Anchor icon label renders 1`] = `
     onClick={[Function]}
     onFocus={[Function]}
   >
-    <div
+    <span
       className="c2"
+      style={
+        Object {
+          "display": "inline-flex",
+        }
+      }
     >
       <svg />
       <div
@@ -236,7 +252,7 @@ exports[`Anchor icon label renders 1`] = `
           Test
         </strong>
       </span>
-    </div>
+    </span>
   </a>
 </div>
 `;
@@ -281,6 +297,8 @@ exports[`Anchor primary renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
   color: #865CD6;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -315,8 +333,13 @@ exports[`Anchor primary renders 1`] = `
     onBlur={[Function]}
     onFocus={[Function]}
   >
-    <div
+    <span
       className="c2"
+      style={
+        Object {
+          "display": "inline-flex",
+        }
+      }
     >
       <span
         className="c3"
@@ -325,7 +348,7 @@ exports[`Anchor primary renders 1`] = `
           Test
         </strong>
       </span>
-    </div>
+    </span>
   </a>
 </div>
 `;
@@ -345,6 +368,8 @@ exports[`Anchor renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
   color: #865CD6;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -383,6 +408,8 @@ exports[`Anchor renders with children 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
   color: #865CD6;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -456,6 +483,8 @@ exports[`Anchor reverse icon label renders 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
   color: #865CD6;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -492,8 +521,13 @@ exports[`Anchor reverse icon label renders 1`] = `
     onClick={[Function]}
     onFocus={[Function]}
   >
-    <div
+    <span
       className="c2"
+      style={
+        Object {
+          "display": "inline-flex",
+        }
+      }
     >
       <span
         className="c3"
@@ -506,7 +540,7 @@ exports[`Anchor reverse icon label renders 1`] = `
         className="c4"
       />
       <svg />
-    </div>
+    </span>
   </a>
 </div>
 `;
@@ -546,6 +580,8 @@ exports[`Anchor warns about invalid icon render 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
   color: #865CD6;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -581,11 +617,16 @@ exports[`Anchor warns about invalid icon render 1`] = `
     onBlur={[Function]}
     onFocus={[Function]}
   >
-    <div
+    <span
       className="c2"
+      style={
+        Object {
+          "display": "inline-flex",
+        }
+      }
     >
       <svg />
-    </div>
+    </span>
   </a>
 </div>
 `;
@@ -630,6 +671,8 @@ exports[`Anchor warns about invalid label render 1`] = `
 
 .c1 {
   box-sizing: border-box;
+  font-size: inherit;
+  line-height: inherit;
   color: #865CD6;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -664,8 +707,13 @@ exports[`Anchor warns about invalid label render 1`] = `
     onBlur={[Function]}
     onFocus={[Function]}
   >
-    <div
+    <span
       className="c2"
+      style={
+        Object {
+          "display": "inline-flex",
+        }
+      }
     >
       <span
         className="c3"
@@ -674,7 +722,7 @@ exports[`Anchor warns about invalid label render 1`] = `
           Test
         </strong>
       </span>
-    </div>
+    </span>
   </a>
 </div>
 `;

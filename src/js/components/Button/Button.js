@@ -83,7 +83,8 @@ class Button extends Component {
       >
         {(first || second) ? (
           <Box direction='row' align='center' gap='small'>
-            {[first, second]}
+            {first}
+            {second}
           </Box>
         ) : children}
       </Tag>
