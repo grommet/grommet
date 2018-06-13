@@ -13,6 +13,31 @@ exports[`Button color renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c1 {
   box-sizing: border-box;
   cursor: pointer;
@@ -24,16 +49,9 @@ exports[`Button color renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  text-align: center;
-  display: inline-block;
-  min-width: 96px;
-  max-width: 384px;
-  font-weight: 600;
   border: 2px solid #FD6FFF;
   border-radius: 24px;
   color: #444444;
-  font-size: 1.1875rem;
-  line-height: 24px;
   padding: 10px 46px;
 }
 
@@ -48,7 +66,7 @@ exports[`Button color renders 1`] = `
   transition: none;
 }
 
-.c3 {
+.c4 {
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -59,33 +77,36 @@ exports[`Button color renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  text-align: center;
-  display: inline-block;
-  min-width: 96px;
-  max-width: 384px;
-  font-weight: 600;
+  border: 2px solid #FD6FFF;
+  border-radius: 24px;
+  color: #444444;
   background-color: #FD6FFF;
   color: #444444;
-  border: none;
   border-radius: 24px;
-  font-size: 1.1875rem;
-  line-height: 24px;
   padding: 10px 46px;
 }
 
-.c3 svg {
+.c4 svg {
   fill: #FFFFFF;
   stroke: #FFFFFF;
   -webkit-transition: none;
   transition: none;
 }
 
-.c3:hover {
+.c4:hover {
   box-shadow: 0px 0px 0px 2px #FD6FFF;
 }
 
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width:700px) {
@@ -96,7 +117,7 @@ exports[`Button color renders 1`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .c3 {
+  .c4 {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -115,14 +136,20 @@ exports[`Button color renders 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <span
+    <div
       className="c2"
     >
-      Test
-    </span>
+      <span
+        className="c3"
+      >
+        <strong>
+          Test
+        </strong>
+      </span>
+    </div>
   </button>
   <button
-    className="c3"
+    className="c4"
     color="accent-1"
     disabled={false}
     label="Test"
@@ -131,11 +158,17 @@ exports[`Button color renders 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <span
+    <div
       className="c2"
     >
-      Test
-    </span>
+      <span
+        className="c3"
+      >
+        <strong>
+          Test
+        </strong>
+      </span>
+    </div>
   </button>
 </div>
 `;
@@ -164,18 +197,11 @@ exports[`Button disabled renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  text-align: center;
-  display: inline-block;
-  min-width: 96px;
-  max-width: 384px;
-  font-weight: 600;
   border: 2px solid #865CD6;
   border-radius: 24px;
   color: #444444;
   opacity: 0.3;
   cursor: default;
-  font-size: 1.1875rem;
-  line-height: 24px;
   padding: 10px 46px;
 }
 
@@ -212,6 +238,31 @@ exports[`Button focus renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c1 {
   box-sizing: border-box;
   cursor: pointer;
@@ -223,16 +274,9 @@ exports[`Button focus renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  text-align: center;
-  display: inline-block;
-  min-width: 96px;
-  max-width: 384px;
-  font-weight: 600;
   border: 2px solid #865CD6;
   border-radius: 24px;
   color: #444444;
-  font-size: 1.1875rem;
-  line-height: 24px;
   padding: 10px 46px;
   border-color: #FD6FFF;
   box-shadow: 0 0 2px 2px #FD6FFF;
@@ -248,8 +292,16 @@ exports[`Button focus renders 1`] = `
   outline: #FD6FFF solid 2px;
 }
 
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width:700px) {
@@ -271,11 +323,17 @@ exports[`Button focus renders 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <span
+    <div
       className="c2"
     >
-      Test
-    </span>
+      <span
+        className="c3"
+      >
+        <strong>
+          Test
+        </strong>
+      </span>
+    </div>
   </button>
 </div>
 `;
@@ -710,16 +768,9 @@ exports[`Button href renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  text-align: center;
-  display: inline-block;
-  min-width: 96px;
-  max-width: 384px;
-  font-weight: 600;
   border: 2px solid #865CD6;
   border-radius: 24px;
   color: #444444;
-  font-size: 1.1875rem;
-  line-height: 24px;
   padding: 10px 46px;
 }
 
@@ -767,6 +818,38 @@ exports[`Button icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c4 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c1 {
   box-sizing: border-box;
   cursor: pointer;
@@ -778,16 +861,9 @@ exports[`Button icon label renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  text-align: center;
-  display: inline-block;
-  min-width: 96px;
-  max-width: 384px;
-  font-weight: 600;
   border: 2px solid #865CD6;
   border-radius: 24px;
   color: #444444;
-  font-size: 1.1875rem;
-  line-height: 24px;
   padding: 10px 46px;
 }
 
@@ -802,20 +878,16 @@ exports[`Button icon label renders 1`] = `
   transition: none;
 }
 
-.c3:first-child:not(:last-child) {
-  margin-right: 12px;
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
 }
 
-.c2 {
-  display: inline-block;
-}
-
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c2 > * {
-  vertical-align: bottom;
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width:700px) {
@@ -838,17 +910,21 @@ exports[`Button icon label renders 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <span
-      aria-hidden={true}
+    <div
       className="c2"
     >
       <svg />
-    </span>
-    <span
-      className="c3"
-    >
-      Test
-    </span>
+      <div
+        className="c3"
+      />
+      <span
+        className="c4"
+      >
+        <strong>
+          Test
+        </strong>
+      </span>
+    </div>
   </button>
 </div>
 `;
@@ -866,6 +942,31 @@ exports[`Button primary renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c1 {
   box-sizing: border-box;
   cursor: pointer;
@@ -877,17 +978,12 @@ exports[`Button primary renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  text-align: center;
-  display: inline-block;
-  min-width: 96px;
-  max-width: 384px;
-  font-weight: 600;
+  border: 2px solid #865CD6;
+  border-radius: 24px;
+  color: #444444;
   background-color: #865CD6;
   color: #FFFFFF;
-  border: none;
   border-radius: 24px;
-  font-size: 1.1875rem;
-  line-height: 24px;
   padding: 10px 46px;
 }
 
@@ -902,8 +998,16 @@ exports[`Button primary renders 1`] = `
   box-shadow: 0px 0px 0px 2px #865CD6;
 }
 
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width:700px) {
@@ -925,11 +1029,17 @@ exports[`Button primary renders 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <span
+    <div
       className="c2"
     >
-      Test
-    </span>
+      <span
+        className="c3"
+      >
+        <strong>
+          Test
+        </strong>
+      </span>
+    </div>
   </button>
 </div>
 `;
@@ -947,6 +1057,31 @@ exports[`Button renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c1 {
   box-sizing: border-box;
   cursor: pointer;
@@ -958,16 +1093,9 @@ exports[`Button renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  text-align: center;
-  display: inline-block;
-  min-width: 96px;
-  max-width: 384px;
-  font-weight: 600;
   border: 2px solid #865CD6;
   border-radius: 24px;
   color: #444444;
-  font-size: 1.1875rem;
-  line-height: 24px;
   padding: 10px 46px;
 }
 
@@ -982,8 +1110,16 @@ exports[`Button renders 1`] = `
   transition: none;
 }
 
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width:700px) {
@@ -1005,11 +1141,17 @@ exports[`Button renders 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <span
+    <div
       className="c2"
     >
-      Test
-    </span>
+      <span
+        className="c3"
+      >
+        <strong>
+          Test
+        </strong>
+      </span>
+    </div>
   </button>
 </div>
 `;
@@ -1027,6 +1169,38 @@ exports[`Button reverse icon label renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.c4 {
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 12px;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c1 {
   box-sizing: border-box;
   cursor: pointer;
@@ -1038,16 +1212,9 @@ exports[`Button reverse icon label renders 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  text-align: center;
-  display: inline-block;
-  min-width: 96px;
-  max-width: 384px;
-  font-weight: 600;
   border: 2px solid #865CD6;
   border-radius: 24px;
   color: #444444;
-  font-size: 1.1875rem;
-  line-height: 24px;
   padding: 10px 46px;
 }
 
@@ -1062,20 +1229,16 @@ exports[`Button reverse icon label renders 1`] = `
   transition: none;
 }
 
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
 }
 
-.c3 {
-  display: inline-block;
-}
-
-.c3:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c3 > * {
-  vertical-align: bottom;
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width:700px) {
@@ -1098,17 +1261,21 @@ exports[`Button reverse icon label renders 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <span
+    <div
       className="c2"
     >
-      Test
-    </span>
-    <span
-      aria-hidden={true}
-      className="c3"
-    >
+      <span
+        className="c3"
+      >
+        <strong>
+          Test
+        </strong>
+      </span>
+      <div
+        className="c4"
+      />
       <svg />
-    </span>
+    </div>
   </button>
 </div>
 `;
@@ -1126,6 +1293,26 @@ exports[`Button warns about invalid icon render 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
 .c1 {
   box-sizing: border-box;
   cursor: pointer;
@@ -1141,19 +1328,18 @@ exports[`Button warns about invalid icon render 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  padding: 12px;
 }
 
-.c2 {
-  display: inline-block;
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
 }
 
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c2 > * {
-  vertical-align: bottom;
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width:700px) {
@@ -1175,12 +1361,11 @@ exports[`Button warns about invalid icon render 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <span
-      aria-hidden={true}
+    <div
       className="c2"
     >
       <svg />
-    </span>
+    </div>
   </button>
 </div>
 `;
@@ -1196,6 +1381,31 @@ exports[`Button warns about invalid label render 1`] = `
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.c3 {
+  font-size: 16px;
+  line-height: 1.375;
 }
 
 .c1 {
@@ -1215,8 +1425,16 @@ exports[`Button warns about invalid label render 1`] = `
   text-align: inherit;
 }
 
-.c2:first-child:not(:last-child) {
-  margin-right: 12px;
+@media only screen and (max-width:699px) {
+  .c2 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c2 {
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width:700px) {
@@ -1238,11 +1456,17 @@ exports[`Button warns about invalid label render 1`] = `
     onFocus={[Function]}
     type="button"
   >
-    <span
+    <div
       className="c2"
     >
-      Test
-    </span>
+      <span
+        className="c3"
+      >
+        <strong>
+          Test
+        </strong>
+      </span>
+    </div>
   </button>
 </div>
 `;

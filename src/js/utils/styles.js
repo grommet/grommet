@@ -181,6 +181,8 @@ export const focusStyle = css`
 `;
 
 export const inputStyle = css`
+  box-sizing: border-box;
+  font-size: inherit;
   padding: ${props => (
     (parseMetricToNum(props.theme.global.spacing) / 2) -
     parseMetricToNum(props.theme.global.input.border.width)

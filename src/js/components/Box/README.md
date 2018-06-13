@@ -268,6 +268,18 @@ The name of the area to place
 string
 ```
 
+**height**
+
+A fixed height.
+
+```
+xsmall
+small
+medium
+large
+xlarge
+```
+
 **justify**
 
 How to align the contents along the main axis.
@@ -419,6 +431,18 @@ The DOM tag to use for the element. Defaults to `div`.
 
 ```
 string
+```
+
+**width**
+
+A fixed width.
+
+```
+xsmall
+small
+medium
+large
+xlarge
 ```
 
 **wrap**

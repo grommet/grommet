@@ -24,7 +24,7 @@
   },
   "scripts": {
     "postinstall": "node ./tools/warn-beta",
-    "generate-readme": "babel-node ./tools/generate-readme",
+    "generate-readme": "cross-env NODE_ENV=production babel-node ./tools/generate-readme",
     "build": "webpack --mode production && babel ./src/js/ --ignore '__tests__' --out-dir ./dist && cross-env BABEL_ENV=es6 babel ./src/js/ --ignore '__tests__' --out-dir ./dist/es6",
     "release-stable": "babel-node ./tools/release-stable",
     "lint": "eslint src",

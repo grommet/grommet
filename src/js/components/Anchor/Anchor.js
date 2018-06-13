@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
+import Box from '../Box/Box';
+import Text from '../Text/Text';
+
 import { withFocus, withForwardRef, withTheme } from '../hocs';
 
-import StyledAnchor, { StyledIcon } from './StyledAnchor';
+import StyledAnchor from './StyledAnchor';
 import doc from './doc';
 
 class Anchor extends Component {
@@ -33,30 +36,14 @@ class Anchor extends Component {
       ...rest
     } = this.props;
 
-    let anchorIcon;
-    if (icon) {
-      anchorIcon = icon;
-    }
+    const anchorLabel = typeof label === 'string' ? (
+      <Text>
+        <strong>{label}</strong>
+      </Text>
+    ) : label;
 
-    if (anchorIcon) {
-      anchorIcon = (
-        <StyledIcon reverse={reverse} label={label} theme={theme}>
-          {anchorIcon}
-        </StyledIcon>
-      );
-    }
-
-    let first;
-    let second;
-    if (children) {
-      first = children;
-    } else if (reverse) {
-      first = label || null;
-      second = anchorIcon || null;
-    } else {
-      first = anchorIcon || null;
-      second = label || null;
-    }
+    const first = reverse ? anchorLabel : icon;
+    const second = reverse ? icon : anchorLabel;
 
     return (
       <StyledAnchor
@@ -64,7 +51,7 @@ class Anchor extends Component {
         innerRef={forwardRef}
         aria-label={a11yTitle}
         disabled={disabled}
-        icon={anchorIcon}
+        icon={icon}
         focus={focus}
         label={label}
         primary={primary}
@@ -73,8 +60,12 @@ class Anchor extends Component {
         href={!disabled ? href : undefined}
         onClick={!disabled ? onClick : undefined}
       >
-        {first}
-        {second}
+        {(first || second) ? (
+          <Box tag='span' direction='row' align='center' gap='small' style={{ display: 'inline-flex' }}>
+            {first}
+            {second}
+          </Box>
+        ) : children}
       </StyledAnchor>
     );
   }

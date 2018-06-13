@@ -115,6 +115,8 @@ exports[`Select basic 1`] = `
 }
 
 .c5 {
+  box-sizing: border-box;
+  font-size: inherit;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
@@ -271,7 +273,7 @@ exports[`Select basic 1`] = `
 exports[`Select complex options and children 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK bbflvf"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -287,7 +289,7 @@ exports[`Select complex options and children 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -326,7 +328,7 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK bbflvf"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -342,7 +344,7 @@ exports[`Select complex options and children 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -395,7 +397,7 @@ exports[`Select complex options and children 3`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK fWHUwZ"
+        class="StyledButton-gXzblK hXpLNm"
         role="menuitem"
         type="button"
       >
@@ -404,7 +406,7 @@ exports[`Select complex options and children 3`] = `
         </span>
       </button>
       <button
-        class="StyledButton-gXzblK fWHUwZ"
+        class="StyledButton-gXzblK hXpLNm"
         role="menuitem"
         type="button"
       >
@@ -498,14 +500,14 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .fYUIhN {
+  .bbflvf {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fWHUwZ {
+  .hXpLNm {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -545,7 +547,7 @@ exports[`Select complex options and children 4`] = `
 exports[`Select deselect an option 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK bbflvf"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -561,7 +563,7 @@ exports[`Select deselect an option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -601,7 +603,7 @@ exports[`Select deselect an option 1`] = `
 exports[`Select disabled 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK cDmTYk"
+  class="StyledButton-gXzblK kTMZEr"
   data-testid="test-select"
   disabled=""
   id="test-select"
@@ -618,7 +620,7 @@ exports[`Select disabled 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -657,7 +659,7 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK cDmTYk"
+  class="StyledButton-gXzblK kTMZEr"
   data-testid="test-select"
   disabled=""
   id="test-select"
@@ -674,7 +676,7 @@ exports[`Select disabled 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -825,6 +827,8 @@ exports[`Select multiple 1`] = `
 }
 
 .c5 {
+  box-sizing: border-box;
+  font-size: inherit;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;
@@ -986,7 +990,7 @@ exports[`Select multiple 1`] = `
 exports[`Select multiple values 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK bbflvf"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1002,7 +1006,7 @@ exports[`Select multiple values 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -1042,7 +1046,7 @@ exports[`Select multiple values 1`] = `
 exports[`Select multiple values 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK bbflvf"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1058,7 +1062,7 @@ exports[`Select multiple values 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -1112,7 +1116,7 @@ exports[`Select multiple values 3`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK dQbnPv"
+        class="StyledButton-gXzblK jQTipY"
         role="menuitem"
         type="button"
       >
@@ -1127,7 +1131,7 @@ exports[`Select multiple values 3`] = `
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK dQbnPv"
+        class="StyledButton-gXzblK jQTipY"
         role="menuitem"
         type="button"
       >
@@ -1251,28 +1255,28 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .fYUIhN {
+  .bbflvf {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fWHUwZ {
+  .hXpLNm {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kaHtmF {
+  .kDqGrZ {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .dQbnPv {
+  .jQTipY {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1312,7 +1316,7 @@ exports[`Select multiple values 4`] = `
 exports[`Select opens 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK bbflvf"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1328,7 +1332,7 @@ exports[`Select opens 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1367,7 +1371,7 @@ exports[`Select opens 1`] = `
 exports[`Select opens 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK bbflvf"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1383,7 +1387,7 @@ exports[`Select opens 2`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1436,7 +1440,7 @@ exports[`Select opens 3`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK fWHUwZ"
+        class="StyledButton-gXzblK hXpLNm"
         role="menuitem"
         type="button"
       >
@@ -1451,7 +1455,7 @@ exports[`Select opens 3`] = `
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK fWHUwZ"
+        class="StyledButton-gXzblK hXpLNm"
         role="menuitem"
         type="button"
       >
@@ -1551,14 +1555,14 @@ exports[`Select opens 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .fYUIhN {
+  .bbflvf {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fWHUwZ {
+  .hXpLNm {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1602,7 +1606,7 @@ exports[`Select opens 5`] = `
   tabindex="-1"
 >
   <button
-    class="StyledButton-gXzblK fWHUwZ"
+    class="StyledButton-gXzblK hXpLNm"
     role="menuitem"
     type="button"
   >
@@ -1617,7 +1621,7 @@ exports[`Select opens 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-gXzblK fWHUwZ"
+    class="StyledButton-gXzblK hXpLNm"
     role="menuitem"
     type="button"
   >
@@ -1637,7 +1641,7 @@ exports[`Select opens 5`] = `
 exports[`Select search 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK bbflvf"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1653,7 +1657,7 @@ exports[`Select search 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1708,7 +1712,7 @@ exports[`Select search 2`] = `
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-bzOzsW eKZPkB"
+          class="StyledTextInput-bzOzsW boIFRt"
           type="search"
           value=""
         />
@@ -1720,7 +1724,7 @@ exports[`Select search 2`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK fWHUwZ"
+        class="StyledButton-gXzblK hXpLNm"
         role="menuitem"
         type="button"
       >
@@ -1735,7 +1739,7 @@ exports[`Select search 2`] = `
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK fWHUwZ"
+        class="StyledButton-gXzblK hXpLNm"
         role="menuitem"
         type="button"
       >
@@ -1847,14 +1851,14 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .fYUIhN {
+  .bbflvf {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fWHUwZ {
+  .hXpLNm {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1894,7 +1898,7 @@ exports[`Select search 3`] = `
 exports[`Select select an option 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK bbflvf"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1910,7 +1914,7 @@ exports[`Select select an option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1949,7 +1953,7 @@ exports[`Select select an option 1`] = `
 exports[`Select select an option with complex options 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK bbflvf"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1993,7 +1997,7 @@ exports[`Select select an option with complex options 1`] = `
 exports[`Select select an option with enter 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK bbflvf"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -2009,7 +2013,7 @@ exports[`Select select an option with enter 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -2048,7 +2052,7 @@ exports[`Select select an option with enter 1`] = `
 exports[`Select select another option 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK fYUIhN"
+  class="StyledButton-gXzblK bbflvf"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -2064,7 +2068,7 @@ exports[`Select select another option 1`] = `
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW ghQowV"
+          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -2218,6 +2222,8 @@ exports[`Select size 1`] = `
 }
 
 .c5 {
+  box-sizing: border-box;
+  font-size: inherit;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;

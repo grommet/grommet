@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'jest-styled-components';
-import { cleanup, renderIntoDocument, Simulate } from 'react-testing-library';
+import { cleanup, renderIntoDocument } from 'react-testing-library';
 import { getByTestId, queryByTestId } from 'dom-testing-library';
 
 import { createPortal, expectPortal } from '../../../utils/portal';
@@ -86,6 +86,11 @@ describe('Layer', () => {
   });
 
   test('invokes onEsc', () => {
+    const map = {};
+    document.addEventListener = jest.fn((event, cb) => {
+      map[event] = cb;
+    });
+
     const onEsc = jest.fn();
     renderIntoDocument(
       <Grommet>
@@ -95,12 +100,16 @@ describe('Layer', () => {
       </Grommet>
     );
 
-    const input = getByTestId(document, 'test-input');
-    Simulate.keyDown(input, { key: 'Esc', keyCode: 27, which: 27 });
+    map.keydown({ key: 'Esc', keyCode: 27, which: 27 });
     expect(onEsc).toBeCalled();
   });
 
   test('is accessible', () => {
+    const map = {};
+    document.addEventListener = jest.fn((event, cb) => {
+      map[event] = cb;
+    });
+
     /* eslint-disable jsx-a11y/tabindex-no-positive */
     renderIntoDocument(
       <FakeLayer>
@@ -117,8 +126,7 @@ describe('Layer', () => {
     expect(bodyNode).toMatchSnapshot();
     expect(layerNode).toMatchSnapshot();
 
-    const input = getByTestId(document, 'test-input');
-    Simulate.keyDown(input, { key: 'Esc', keyCode: 27, which: 27 });
+    map.keydown({ key: 'Esc', keyCode: 27, which: 27 });
     bodyNode = getByTestId(document, 'test-body-node');
     expect(bodyNode).toMatchSnapshot();
     expect(queryByTestId(document, 'test-layer-node')).toBeNull();

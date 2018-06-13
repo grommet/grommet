@@ -47,6 +47,8 @@ exports[`renders 1`] = `
 }
 
 .c4 {
+  box-sizing: border-box;
+  font-size: inherit;
   padding: 11px;
   border: 1px solid rgba(0,0,0,0.33);
   border-radius: 4px;

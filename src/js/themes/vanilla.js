@@ -111,10 +111,6 @@ export default deepFreeze({
       border: {
         width: '2px',
       },
-      font: {
-        weight: 600,
-        size: '19px',
-      },
     },
     drop: {
       backgroundColor: {

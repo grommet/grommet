@@ -3,15 +3,21 @@
 exports[`DropButton close by clicking outside 1`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-gXzblK gTFGea"
+  class="StyledButton-gXzblK eVJqlx"
   label="Dropper"
   type="button"
 >
-  <span
-    class="StyledButton__StyledLabel-XZHBZ kthNMI"
+  <div
+    class="StyledBox-bStriS jvHfNb"
   >
-    Dropper
-  </span>
+    <span
+      class="StyledText-eJMSZI WtHkG"
+    >
+      <strong>
+        Dropper
+      </strong>
+    </span>
+  </div>
 </button>
 `;
 
@@ -24,15 +30,27 @@ exports[`DropButton close by clicking outside 2`] = `
 `;
 
 exports[`DropButton close by clicking outside 3`] = `
-"@media only screen and (min-width:700px) {
-  .gTFGea {
+"@media only screen and (max-width:699px) {
+  .jvHfNb {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jvHfNb {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .eVJqlx {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hWLqHn {
+  .hRAEFm {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -40,6 +58,31 @@ exports[`DropButton close by clicking outside 3`] = `
 `;
 
 exports[`DropButton closed 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c0 {
   box-sizing: border-box;
   cursor: pointer;
@@ -51,16 +94,9 @@ exports[`DropButton closed 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  text-align: center;
-  display: inline-block;
-  min-width: 96px;
-  max-width: 384px;
-  font-weight: 600;
   border: 2px solid #865CD6;
   border-radius: 24px;
   color: #444444;
-  font-size: 1.1875rem;
-  line-height: 24px;
   padding: 10px 46px;
 }
 
@@ -75,8 +111,16 @@ exports[`DropButton closed 1`] = `
   transition: none;
 }
 
-.c1:first-child:not(:last-child) {
-  margin-right: 12px;
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width:700px) {
@@ -96,42 +140,60 @@ exports[`DropButton closed 1`] = `
   onFocus={[Function]}
   type="button"
 >
-  <span
+  <div
     className="c1"
   >
-    Dropper
-  </span>
+    <span
+      className="c2"
+    >
+      <strong>
+        Dropper
+      </strong>
+    </span>
+  </div>
 </button>
 `;
 
 exports[`DropButton disabled 1`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-gXzblK gXena"
+  class="StyledButton-gXzblK cuTbzL"
   disabled=""
   label="Dropper"
   type="button"
 >
-  <span
-    class="StyledButton__StyledLabel-XZHBZ kthNMI"
+  <div
+    class="StyledBox-bStriS jvHfNb"
   >
-    Dropper
-  </span>
+    <span
+      class="StyledText-eJMSZI WtHkG"
+    >
+      <strong>
+        Dropper
+      </strong>
+    </span>
+  </div>
 </button>
 `;
 
 exports[`DropButton open and close 1`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-gXzblK gTFGea"
+  class="StyledButton-gXzblK eVJqlx"
   label="Dropper"
   type="button"
 >
-  <span
-    class="StyledButton__StyledLabel-XZHBZ kthNMI"
+  <div
+    class="StyledBox-bStriS jvHfNb"
   >
-    Dropper
-  </span>
+    <span
+      class="StyledText-eJMSZI WtHkG"
+    >
+      <strong>
+        Dropper
+      </strong>
+    </span>
+  </div>
 </button>
 `;
 
@@ -144,8 +206,20 @@ exports[`DropButton open and close 2`] = `
 `;
 
 exports[`DropButton open and close 3`] = `
-"@media only screen and (min-width:700px) {
-  .gTFGea {
+"@media only screen and (max-width:699px) {
+  .jvHfNb {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jvHfNb {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .eVJqlx {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -153,6 +227,31 @@ exports[`DropButton open and close 3`] = `
 `;
 
 exports[`DropButton opened 1`] = `
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
+.c2 {
+  font-size: 16px;
+  line-height: 1.375;
+}
+
 .c0 {
   box-sizing: border-box;
   cursor: pointer;
@@ -164,16 +263,9 @@ exports[`DropButton opened 1`] = `
   background-color: transparent;
   overflow: visible;
   text-transform: none;
-  text-align: center;
-  display: inline-block;
-  min-width: 96px;
-  max-width: 384px;
-  font-weight: 600;
   border: 2px solid #865CD6;
   border-radius: 24px;
   color: #444444;
-  font-size: 1.1875rem;
-  line-height: 24px;
   padding: 10px 46px;
 }
 
@@ -188,8 +280,16 @@ exports[`DropButton opened 1`] = `
   transition: none;
 }
 
-.c1:first-child:not(:last-child) {
-  margin-right: 12px;
+@media only screen and (max-width:699px) {
+  .c1 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c1 {
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width:700px) {
@@ -209,26 +309,38 @@ exports[`DropButton opened 1`] = `
   onFocus={[Function]}
   type="button"
 >
-  <span
+  <div
     className="c1"
   >
-    Dropper
-  </span>
+    <span
+      className="c2"
+    >
+      <strong>
+        Dropper
+      </strong>
+    </span>
+  </div>
 </button>
 `;
 
 exports[`DropButton opened ref 1`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-gXzblK gTFGea"
+  class="StyledButton-gXzblK eVJqlx"
   label="Dropper"
   type="button"
 >
-  <span
-    class="StyledButton__StyledLabel-XZHBZ kthNMI"
+  <div
+    class="StyledBox-bStriS jvHfNb"
   >
-    Dropper
-  </span>
+    <span
+      class="StyledText-eJMSZI WtHkG"
+    >
+      <strong>
+        Dropper
+      </strong>
+    </span>
+  </div>
 </button>
 `;
 
@@ -241,22 +353,34 @@ exports[`DropButton opened ref 2`] = `
 `;
 
 exports[`DropButton opened ref 3`] = `
-"@media only screen and (min-width:700px) {
-  .gTFGea {
+"@media only screen and (max-width:699px) {
+  .jvHfNb {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jvHfNb {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .eVJqlx {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hWLqHn {
+  .hRAEFm {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .gXena {
+  .cuTbzL {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

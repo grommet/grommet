@@ -6,7 +6,7 @@ exports[`TextInput basic 1`] = `
 >
   <input
     autocomplete="off"
-    class="StyledTextInput-bzOzsW hFMVjz"
+    class="StyledTextInput-bzOzsW icIdba"
     name="item"
     value=""
   />
@@ -22,7 +22,7 @@ exports[`TextInput close suggestion drop 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW hFMVjz"
+      class="StyledTextInput-bzOzsW icIdba"
       data-testid="test-input"
       id="item"
       name="item"
@@ -44,7 +44,7 @@ exports[`TextInput close suggestion drop 2`] = `
   >
     <li>
       <button
-        class="StyledButton-gXzblK eowzfL"
+        class="StyledButton-gXzblK jrAGpP"
         type="button"
       >
         <div
@@ -56,7 +56,7 @@ exports[`TextInput close suggestion drop 2`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK eowzfL"
+        class="StyledButton-gXzblK jrAGpP"
         type="button"
       >
         <div
@@ -84,7 +84,7 @@ exports[`TextInput close suggestion drop 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .eowzfL {
+  .jrAGpP {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -130,7 +130,7 @@ exports[`TextInput close suggestion drop 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW hFMVjz"
+      class="StyledTextInput-bzOzsW icIdba"
       data-testid="test-input"
       id="item"
       name="item"
@@ -149,7 +149,7 @@ exports[`TextInput complex suggestions 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW hFMVjz"
+      class="StyledTextInput-bzOzsW icIdba"
       data-testid="test-input"
       id="item"
       name="item"
@@ -171,7 +171,7 @@ exports[`TextInput complex suggestions 2`] = `
   >
     <li>
       <button
-        class="StyledButton-gXzblK eowzfL"
+        class="StyledButton-gXzblK jrAGpP"
         type="button"
       >
         <div
@@ -183,7 +183,7 @@ exports[`TextInput complex suggestions 2`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK eowzfL"
+        class="StyledButton-gXzblK jrAGpP"
         type="button"
       >
         <div
@@ -211,7 +211,7 @@ exports[`TextInput complex suggestions 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .eowzfL {
+  .jrAGpP {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -257,7 +257,7 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW hFMVjz"
+      class="StyledTextInput-bzOzsW icIdba"
       data-testid="test-input"
       id="item"
       name="item"
@@ -276,7 +276,7 @@ exports[`TextInput handles next and previous without suggestion 2`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW hFMVjz"
+      class="StyledTextInput-bzOzsW icIdba"
       data-testid="test-input"
       id="item"
       name="item"
@@ -295,7 +295,7 @@ exports[`TextInput next and previous suggestions 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW hFMVjz"
+      class="StyledTextInput-bzOzsW icIdba"
       data-testid="test-input"
       id="item"
       name="item"
@@ -314,7 +314,7 @@ exports[`TextInput select a suggestion 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW hFMVjz"
+      class="StyledTextInput-bzOzsW icIdba"
       data-testid="test-input"
       id="item"
       name="item"
@@ -333,7 +333,7 @@ exports[`TextInput select suggestion 1`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW irgrRk"
+      class="StyledTextInput-bzOzsW kelNQg"
       data-testid="test-input"
       id="item"
       name="item"
@@ -355,7 +355,7 @@ exports[`TextInput select suggestion 2`] = `
   >
     <li>
       <button
-        class="StyledButton-gXzblK eowzfL"
+        class="StyledButton-gXzblK jrAGpP"
         type="button"
       >
         <div
@@ -367,7 +367,7 @@ exports[`TextInput select suggestion 2`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK eowzfL"
+        class="StyledButton-gXzblK jrAGpP"
         type="button"
       >
         <div
@@ -395,7 +395,7 @@ exports[`TextInput select suggestion 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .eowzfL {
+  .jrAGpP {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -441,7 +441,7 @@ exports[`TextInput select suggestion 4`] = `
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW irgrRk"
+      class="StyledTextInput-bzOzsW kelNQg"
       data-testid="test-input"
       id="item"
       name="item"
@@ -457,7 +457,7 @@ exports[`TextInput suggestions 1`] = `
 >
   <input
     autocomplete="off"
-    class="StyledTextInput-bzOzsW hFMVjz"
+    class="StyledTextInput-bzOzsW icIdba"
     data-testid="test-input"
     id="item"
     name="item"
@@ -478,7 +478,7 @@ exports[`TextInput suggestions 2`] = `
   >
     <li>
       <button
-        class="StyledButton-gXzblK eowzfL"
+        class="StyledButton-gXzblK jrAGpP"
         type="button"
       >
         <div
@@ -490,7 +490,7 @@ exports[`TextInput suggestions 2`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK eowzfL"
+        class="StyledButton-gXzblK jrAGpP"
         type="button"
       >
         <div
@@ -518,7 +518,7 @@ exports[`TextInput suggestions 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .eowzfL {
+  .jrAGpP {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

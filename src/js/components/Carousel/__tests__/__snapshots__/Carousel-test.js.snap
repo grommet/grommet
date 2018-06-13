@@ -228,6 +228,26 @@ exports[`Carousel basic 1`] = `
   padding: 0;
 }
 
+.c15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  outline: none;
+  max-width: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
 .c9 {
   box-sizing: border-box;
   cursor: pointer;
@@ -268,7 +288,6 @@ exports[`Carousel basic 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  padding: 12px;
 }
 
 .c17 {
@@ -297,18 +316,6 @@ exports[`Carousel basic 1`] = `
 .c17:hover {
   background-color: rgba(221,221,221,0.5);
   color: #000000;
-}
-
-.c15 {
-  display: inline-block;
-}
-
-.c15:first-child:not(:last-child) {
-  margin-right: 12px;
-}
-
-.c15 > * {
-  vertical-align: bottom;
 }
 
 .c1 {
@@ -420,6 +427,18 @@ exports[`Carousel basic 1`] = `
 
 @media only screen and (max-width:699px) {
   .c13 {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c15 {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c15 {
     padding: 0;
   }
 }
@@ -545,8 +564,7 @@ exports[`Carousel basic 1`] = `
               onFocus={[Function]}
               type="button"
             >
-              <span
-                aria-hidden={true}
+              <div
                 className="c15"
               >
                 <svg
@@ -566,7 +584,7 @@ exports[`Carousel basic 1`] = `
                     strokeWidth="2"
                   />
                 </svg>
-              </span>
+              </div>
             </button>
             <button
               className="c14"
@@ -577,8 +595,7 @@ exports[`Carousel basic 1`] = `
               onFocus={[Function]}
               type="button"
             >
-              <span
-                aria-hidden={true}
+              <div
                 className="c15"
               >
                 <svg
@@ -597,7 +614,7 @@ exports[`Carousel basic 1`] = `
                     strokeWidth="2"
                   />
                 </svg>
-              </span>
+              </div>
             </button>
           </div>
         </div>
@@ -691,7 +708,7 @@ exports[`Carousel navigate 1`] = `
           class="StyledBox-bStriS pjdh"
         >
           <button
-            class="StyledButton-gXzblK dtZehH"
+            class="StyledButton-gXzblK bWsUxq"
             disabled=""
             type="button"
           >
@@ -725,13 +742,12 @@ exports[`Carousel navigate 1`] = `
             class="StyledBox-bStriS clqYXe"
           >
             <button
-              class="StyledButton-gXzblK kANibo"
+              class="StyledButton-gXzblK bbflvf"
               icon="[object Object]"
               type="button"
             >
-              <span
-                aria-hidden="true"
-                class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+              <div
+                class="StyledBox-bStriS jvHfNb"
               >
                 <svg
                   aria-label="Subtract"
@@ -750,16 +766,15 @@ exports[`Carousel navigate 1`] = `
                     stroke-width="2"
                   />
                 </svg>
-              </span>
+              </div>
             </button>
             <button
-              class="StyledButton-gXzblK kANibo"
+              class="StyledButton-gXzblK bbflvf"
               icon="[object Object]"
               type="button"
             >
-              <span
-                aria-hidden="true"
-                class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+              <div
+                class="StyledBox-bStriS jvHfNb"
               >
                 <svg
                   aria-label="Subtract"
@@ -777,7 +792,7 @@ exports[`Carousel navigate 1`] = `
                     stroke-width="2"
                   />
                 </svg>
-              </span>
+              </div>
             </button>
           </div>
         </div>
@@ -785,7 +800,7 @@ exports[`Carousel navigate 1`] = `
           class="StyledBox-bStriS pjdh"
         >
           <button
-            class="StyledButton-gXzblK eowzfL"
+            class="StyledButton-gXzblK jrAGpP"
             type="button"
           >
             <div
@@ -867,7 +882,7 @@ exports[`Carousel navigate 2`] = `
           class="StyledBox-bStriS pjdh"
         >
           <button
-            class="StyledButton-gXzblK eowzfL"
+            class="StyledButton-gXzblK jrAGpP"
             type="button"
           >
             <div
@@ -900,13 +915,12 @@ exports[`Carousel navigate 2`] = `
             class="StyledBox-bStriS clqYXe"
           >
             <button
-              class="StyledButton-gXzblK kANibo"
+              class="StyledButton-gXzblK bbflvf"
               icon="[object Object]"
               type="button"
             >
-              <span
-                aria-hidden="true"
-                class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+              <div
+                class="StyledBox-bStriS jvHfNb"
               >
                 <svg
                   aria-label="Subtract"
@@ -924,16 +938,15 @@ exports[`Carousel navigate 2`] = `
                     stroke-width="2"
                   />
                 </svg>
-              </span>
+              </div>
             </button>
             <button
-              class="StyledButton-gXzblK kANibo"
+              class="StyledButton-gXzblK bbflvf"
               icon="[object Object]"
               type="button"
             >
-              <span
-                aria-hidden="true"
-                class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+              <div
+                class="StyledBox-bStriS jvHfNb"
               >
                 <svg
                   aria-label="Subtract"
@@ -952,7 +965,7 @@ exports[`Carousel navigate 2`] = `
                     stroke-width="2"
                   />
                 </svg>
-              </span>
+              </div>
             </button>
           </div>
         </div>
@@ -960,7 +973,7 @@ exports[`Carousel navigate 2`] = `
           class="StyledBox-bStriS pjdh"
         >
           <button
-            class="StyledButton-gXzblK dtZehH"
+            class="StyledButton-gXzblK bWsUxq"
             disabled=""
             type="button"
           >
@@ -1043,7 +1056,7 @@ exports[`Carousel navigate 3`] = `
           class="StyledBox-bStriS pjdh"
         >
           <button
-            class="StyledButton-gXzblK dtZehH"
+            class="StyledButton-gXzblK bWsUxq"
             disabled=""
             type="button"
           >
@@ -1077,13 +1090,12 @@ exports[`Carousel navigate 3`] = `
             class="StyledBox-bStriS clqYXe"
           >
             <button
-              class="StyledButton-gXzblK kANibo"
+              class="StyledButton-gXzblK bbflvf"
               icon="[object Object]"
               type="button"
             >
-              <span
-                aria-hidden="true"
-                class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+              <div
+                class="StyledBox-bStriS jvHfNb"
               >
                 <svg
                   aria-label="Subtract"
@@ -1102,16 +1114,15 @@ exports[`Carousel navigate 3`] = `
                     stroke-width="2"
                   />
                 </svg>
-              </span>
+              </div>
             </button>
             <button
-              class="StyledButton-gXzblK kANibo"
+              class="StyledButton-gXzblK bbflvf"
               icon="[object Object]"
               type="button"
             >
-              <span
-                aria-hidden="true"
-                class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+              <div
+                class="StyledBox-bStriS jvHfNb"
               >
                 <svg
                   aria-label="Subtract"
@@ -1129,7 +1140,7 @@ exports[`Carousel navigate 3`] = `
                     stroke-width="2"
                   />
                 </svg>
-              </span>
+              </div>
             </button>
           </div>
         </div>
@@ -1137,7 +1148,7 @@ exports[`Carousel navigate 3`] = `
           class="StyledBox-bStriS pjdh"
         >
           <button
-            class="StyledButton-gXzblK eowzfL"
+            class="StyledButton-gXzblK jrAGpP"
             type="button"
           >
             <div
@@ -1218,7 +1229,7 @@ exports[`Carousel play 1`] = `
           class="StyledBox-bStriS pjdh"
         >
           <button
-            class="StyledButton-gXzblK dtZehH"
+            class="StyledButton-gXzblK bWsUxq"
             disabled=""
             type="button"
           >
@@ -1252,13 +1263,12 @@ exports[`Carousel play 1`] = `
             class="StyledBox-bStriS clqYXe"
           >
             <button
-              class="StyledButton-gXzblK kANibo"
+              class="StyledButton-gXzblK bbflvf"
               icon="[object Object]"
               type="button"
             >
-              <span
-                aria-hidden="true"
-                class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+              <div
+                class="StyledBox-bStriS jvHfNb"
               >
                 <svg
                   aria-label="Subtract"
@@ -1277,16 +1287,15 @@ exports[`Carousel play 1`] = `
                     stroke-width="2"
                   />
                 </svg>
-              </span>
+              </div>
             </button>
             <button
-              class="StyledButton-gXzblK kANibo"
+              class="StyledButton-gXzblK bbflvf"
               icon="[object Object]"
               type="button"
             >
-              <span
-                aria-hidden="true"
-                class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+              <div
+                class="StyledBox-bStriS jvHfNb"
               >
                 <svg
                   aria-label="Subtract"
@@ -1304,7 +1313,7 @@ exports[`Carousel play 1`] = `
                     stroke-width="2"
                   />
                 </svg>
-              </span>
+              </div>
             </button>
           </div>
         </div>
@@ -1312,7 +1321,7 @@ exports[`Carousel play 1`] = `
           class="StyledBox-bStriS pjdh"
         >
           <button
-            class="StyledButton-gXzblK eowzfL"
+            class="StyledButton-gXzblK jrAGpP"
             type="button"
           >
             <div
@@ -1393,7 +1402,7 @@ exports[`Carousel play 2`] = `
           class="StyledBox-bStriS pjdh"
         >
           <button
-            class="StyledButton-gXzblK eowzfL"
+            class="StyledButton-gXzblK jrAGpP"
             type="button"
           >
             <div
@@ -1426,13 +1435,12 @@ exports[`Carousel play 2`] = `
             class="StyledBox-bStriS clqYXe"
           >
             <button
-              class="StyledButton-gXzblK kANibo"
+              class="StyledButton-gXzblK bbflvf"
               icon="[object Object]"
               type="button"
             >
-              <span
-                aria-hidden="true"
-                class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+              <div
+                class="StyledBox-bStriS jvHfNb"
               >
                 <svg
                   aria-label="Subtract"
@@ -1450,16 +1458,15 @@ exports[`Carousel play 2`] = `
                     stroke-width="2"
                   />
                 </svg>
-              </span>
+              </div>
             </button>
             <button
-              class="StyledButton-gXzblK kANibo"
+              class="StyledButton-gXzblK bbflvf"
               icon="[object Object]"
               type="button"
             >
-              <span
-                aria-hidden="true"
-                class="StyledButton__StyledIcon-kzdZcp bhmqMt"
+              <div
+                class="StyledBox-bStriS jvHfNb"
               >
                 <svg
                   aria-label="Subtract"
@@ -1478,7 +1485,7 @@ exports[`Carousel play 2`] = `
                     stroke-width="2"
                   />
                 </svg>
-              </span>
+              </div>
             </button>
           </div>
         </div>
@@ -1486,7 +1493,7 @@ exports[`Carousel play 2`] = `
           class="StyledBox-bStriS pjdh"
         >
           <button
-            class="StyledButton-gXzblK dtZehH"
+            class="StyledButton-gXzblK bWsUxq"
             disabled=""
             type="button"
           >

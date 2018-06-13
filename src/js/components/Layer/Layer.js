@@ -14,6 +14,7 @@ class Layer extends Component {
     margin: 'none',
     modal: true,
     position: 'center',
+    responsive: true,
   }
 
   originalFocusedElement = document.activeElement;

@@ -48,6 +48,7 @@ class LayerContainer extends Component {
       onEsc,
       plain,
       position,
+      responsive,
       theme,
       ...rest
     } = this.props;
@@ -59,6 +60,7 @@ class LayerContainer extends Component {
         theme={theme}
         position={position}
         plain={plain}
+        responsive={responsive}
         ref={this.containerRef}
       >
         {children}
@@ -72,6 +74,7 @@ class LayerContainer extends Component {
           plain={plain}
           position={position}
           theme={theme}
+          responsive={responsive}
           tabIndex='-1'
           ref={this.layerRef}
         >
@@ -83,7 +86,7 @@ class LayerContainer extends Component {
 
     if (onEsc) {
       content = (
-        <Keyboard onEsc={onEsc}>
+        <Keyboard target='document' onEsc={onEsc}>
           {content}
         </Keyboard>
       );

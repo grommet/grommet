@@ -100,6 +100,14 @@ causes the Button to be disabled.
 function
 ```
 
+**plain**
+
+Whether this is a plain button with no border or padding.
+
+```
+boolean
+```
+
 **primary**
 
 Whether this is a primary button. There should be at most one per page or screen.

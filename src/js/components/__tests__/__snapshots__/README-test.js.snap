@@ -416,6 +416,18 @@ The name of the area to place
 string
 \`\`\`
 
+**height**
+
+A fixed height.
+
+\`\`\`
+xsmall
+small
+medium
+large
+xlarge
+\`\`\`
+
 **justify**
 
 How to align the contents along the main axis.
@@ -569,6 +581,18 @@ The DOM tag to use for the element. Defaults to \`div\`.
 string
 \`\`\`
 
+**width**
+
+A fixed width.
+
+\`\`\`
+xsmall
+small
+medium
+large
+xlarge
+\`\`\`
+
 **wrap**
 
 Whether children can wrap if they
@@ -678,6 +702,14 @@ causes the Button to be disabled.
 
 \`\`\`
 function
+\`\`\`
+
+**plain**
+
+Whether this is a plain button with no border or padding.
+
+\`\`\`
+boolean
 \`\`\`
 
 **primary**
@@ -865,6 +897,14 @@ A color identifier to use for the graphic color. Defaults to \`accent-1\`.
 
 \`\`\`
 string
+{
+  color: string,
+  opacity: 
+    weak
+    medium
+    strong
+    boolean
+}
 \`\`\`
 
 **onClick**
@@ -884,6 +924,17 @@ Called with a boolean argument
 
 \`\`\`
 function
+\`\`\`
+
+**overflow**
+
+Whether the chart strokes should overflow the component. Set this
+      to true for precise positioning when stacking charts or including
+      precise axes. Set this to false to have the graphical elements
+      align with the component boundaries.
+
+\`\`\`
+boolean
 \`\`\`
 
 **round**
@@ -934,6 +985,7 @@ full
 The width of the stroke. Defaults to \`medium\`.
 
 \`\`\`
+hair
 xsmall
 small
 medium
@@ -961,12 +1013,18 @@ Required. Array of value objects describing the data.
       'onHover' and 'onClick' only work when type='bar'.
 
 \`\`\`
-[{
-  label: string,
-  onClick: function,
-  onHover: function,
-  value: [number]
-}]
+[
+  number
+  [number]
+  {
+    label: string,
+    onClick: function,
+    onHover: function,
+    value: 
+      number
+      [number]
+  }
+]
 \`\`\`
   ",
   "CheckBox": "## CheckBox
@@ -2169,6 +2227,14 @@ hidden
 left
 right
 top
+\`\`\`
+
+**responsive**
+
+Whether the layer should take full width and height on mobile Defaults to \`true\`.
+
+\`\`\`
+boolean
 \`\`\`
   ",
   "Markdown": "## GrommetMarkdown
