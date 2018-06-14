@@ -82,7 +82,12 @@ class Button extends Component {
         type={!href ? type : undefined}
       >
         {(first || second) ? (
-          <Box direction='row' align='center' gap='small'>
+          <Box
+            direction='row'
+            align='center'
+            gap='small'
+            pad={icon && !plain ? 'small' : undefined}
+          >
             {first}
             {second}
           </Box>
