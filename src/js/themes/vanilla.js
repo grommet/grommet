@@ -271,9 +271,7 @@ export default deepFreeze({
       radius: `${baseSpacing}px`,
     },
     colors: {
-      accent: css`${props => colorForName('accent-1', props.theme)}`,
-      critical: css`${props => props.theme.global.colors.status.critical}`,
-      secondary: css`${props => colorForName('neutral-2', props.theme)}`,
+      primary: undefined,
       text: css`${props => props.theme.global.colors.text}`,
     },
     disabled: {
