@@ -271,7 +271,7 @@ export default deepFreeze({
       radius: `${baseSpacing}px`,
     },
     colors: {
-      primary: undefined,
+      // primary: undefined,
       text: css`${props => props.theme.global.colors.text}`,
     },
     disabled: {
