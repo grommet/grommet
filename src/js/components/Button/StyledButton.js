@@ -19,7 +19,16 @@ const basicStyle = props => css`
 `;
 
 const primaryStyle = props => css`
-  ${backgroundStyle(props.color || 'brand', props.theme)}
+  ${
+    backgroundStyle(
+      (
+        props.color ||
+        props.theme.button.colors.primary ||
+        'brand'
+      ),
+      props.theme
+    )
+  }
   border-radius: ${props.theme.button.border.radius};
 
   // TODO: revisit this
