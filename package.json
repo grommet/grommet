@@ -32,7 +32,8 @@
     "test-update": "jest --updateSnapshot",
     "test-watch": "jest --watchAll",
     "pack": "babel-node ./tools/pack",
-    "storybook": "start-storybook -p 9001 -c storybook"
+    "storybook": "start-storybook -p 9001 -c storybook",
+    "build-storybook": "build-storybook -c storybook -o storybook-static"
   },
   "peerDependencies": {
     "grommet-icons": "^1.0.0",

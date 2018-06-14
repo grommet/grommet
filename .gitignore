@@ -1,6 +1,7 @@
 .idea/**
 node_modules/**
 dist/**
+storybook-static/**
 .eslintcache
 coverage
 .vscode
