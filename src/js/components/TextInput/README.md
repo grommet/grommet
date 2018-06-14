@@ -106,10 +106,10 @@ function
 
 **placeholder**
 
-Placeholder text to use when no value is provided.
+Placeholder to use when no value is provided.
 
 ```
-string
+node
 ```
 
 **plain**

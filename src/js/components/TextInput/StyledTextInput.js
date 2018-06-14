@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { inputStyle } from '../../utils';
+import { inputStyle, parseMetricToNum } from '../../utils';
 
 const placeholderColor = css`
   color: ${props => props.theme.global.colors.placeholder};
@@ -46,7 +46,20 @@ const StyledTextInput = styled.input`
 `;
 
 export const StyledTextInputContainer = styled.div`
+  position: relative;
   width: 100%;
+`;
+
+export const StyledPlaceholder = styled.div`
+  position: absolute;
+  left: ${props => (
+    (parseMetricToNum(props.theme.global.spacing) / 2) -
+    parseMetricToNum(props.theme.global.input.border.width)
+  )}px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
 `;
 
 export const StyledSuggestions = styled.ol`
