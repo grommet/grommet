@@ -7,9 +7,9 @@ import Grommet from '../Grommet/Grommet';
 import Box from '../Box/Box';
 import Text from '../Text/Text';
 
-const SimpleButton = () => (
+const SimpleButton = props => (
   <Grommet>
-    <Button label='Submit' onClick={() => {}} />
+    <Button label='Submit' onClick={() => {}} {...props} />
   </Grommet>
 );
 
@@ -30,7 +30,48 @@ const PlainButton = () => (
   </Grommet>
 );
 
+const customTheme = {
+  button: {
+    border: {
+      radius: undefined,
+      color: '#2196f3',
+    },
+    padding: {
+      vertical: '12px',
+      horizontal: '24px',
+    },
+    colors: {
+      primary: '#2196f3',
+    },
+    extend: (props) => {
+      let extraStyles = '';
+      if (props.primary) {
+        extraStyles = `
+          text-transform: uppercase;
+        `;
+      }
+      return `
+        color: white;
+
+        span {
+          font-size: 12px;
+        }
+
+        ${extraStyles}
+      `;
+    },
+  },
+};
+
+const CustomThemeButton = () => (
+  <Grommet theme={customTheme}>
+    <Button label='Submit' onClick={() => {}} primary={true} />
+  </Grommet>
+);
+
 storiesOf('Button', module)
-  .add('Simple Button', () => <SimpleButton />)
-  .add('Icon Button', () => <IconButton />)
-  .add('Plain Button', () => <PlainButton />);
+  .add('Default', () => <SimpleButton />)
+  .add('Primary', () => <SimpleButton primary={true} />)
+  .add('Icon', () => <IconButton />)
+  .add('Plain', () => <PlainButton />)
+  .add('Custom theme', () => <CustomThemeButton />);
