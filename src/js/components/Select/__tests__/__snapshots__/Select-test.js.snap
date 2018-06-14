@@ -149,6 +149,7 @@ exports[`Select basic 1`] = `
 }
 
 .c3 {
+  position: relative;
   width: 100%;
 }
 
@@ -285,7 +286,7 @@ exports[`Select complex options and children 1`] = `
       class="StyledBox-bStriS brkqQP"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
       >
         <input
           autocomplete="off"
@@ -340,7 +341,7 @@ exports[`Select complex options and children 2`] = `
       class="StyledBox-bStriS brkqQP"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
       >
         <input
           autocomplete="off"
@@ -559,7 +560,7 @@ exports[`Select deselect an option 1`] = `
       class="StyledBox-bStriS brkqQP"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
       >
         <input
           autocomplete="off"
@@ -616,7 +617,7 @@ exports[`Select disabled 1`] = `
       class="StyledBox-bStriS brkqQP"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
       >
         <input
           autocomplete="off"
@@ -672,7 +673,7 @@ exports[`Select disabled 2`] = `
       class="StyledBox-bStriS brkqQP"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
       >
         <input
           autocomplete="off"
@@ -861,6 +862,7 @@ exports[`Select multiple 1`] = `
 }
 
 .c3 {
+  position: relative;
   width: 100%;
 }
 
@@ -1002,7 +1004,7 @@ exports[`Select multiple values 1`] = `
       class="StyledBox-bStriS brkqQP"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
       >
         <input
           autocomplete="off"
@@ -1058,7 +1060,7 @@ exports[`Select multiple values 2`] = `
       class="StyledBox-bStriS brkqQP"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
       >
         <input
           autocomplete="off"
@@ -1328,7 +1330,7 @@ exports[`Select opens 1`] = `
       class="StyledBox-bStriS brkqQP"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
       >
         <input
           autocomplete="off"
@@ -1383,7 +1385,7 @@ exports[`Select opens 2`] = `
       class="StyledBox-bStriS brkqQP"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
       >
         <input
           autocomplete="off"
@@ -1653,7 +1655,7 @@ exports[`Select search 1`] = `
       class="StyledBox-bStriS brkqQP"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
       >
         <input
           autocomplete="off"
@@ -1708,7 +1710,7 @@ exports[`Select search 2`] = `
       class="StyledBox-bStriS eOHdQI"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
       >
         <input
           autocomplete="off"
@@ -1910,7 +1912,7 @@ exports[`Select select an option 1`] = `
       class="StyledBox-bStriS brkqQP"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
       >
         <input
           autocomplete="off"
@@ -2009,7 +2011,7 @@ exports[`Select select an option with enter 1`] = `
       class="StyledBox-bStriS brkqQP"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
       >
         <input
           autocomplete="off"
@@ -2064,7 +2066,7 @@ exports[`Select select another option 1`] = `
       class="StyledBox-bStriS brkqQP"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl hasTun"
+        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
       >
         <input
           autocomplete="off"
@@ -2258,6 +2260,7 @@ exports[`Select size 1`] = `
 }
 
 .c3 {
+  position: relative;
   width: 100%;
 }
 
