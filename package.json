@@ -36,8 +36,8 @@
   },
   "peerDependencies": {
     "grommet-icons": "^1.0.0",
-    "react": ">= 16.3.2",
-    "react-dom": ">= 16.3.2",
+    "react": ">= 16.4.1",
+    "react-dom": ">= 16.4.1",
     "styled-components": ">= 3.2.6"
   },
   "dependencies": {
