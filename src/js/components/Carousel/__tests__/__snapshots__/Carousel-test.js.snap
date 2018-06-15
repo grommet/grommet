@@ -245,7 +245,7 @@ exports[`Carousel basic 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   margin: 0;
-  padding: 0;
+  padding: 12px;
 }
 
 .c9 {
@@ -439,7 +439,7 @@ exports[`Carousel basic 1`] = `
 
 @media only screen and (max-width:699px) {
   .c15 {
-    padding: 0;
+    padding: 6px;
   }
 }
 
@@ -747,7 +747,7 @@ exports[`Carousel navigate 1`] = `
               type="button"
             >
               <div
-                class="StyledBox-bStriS jvHfNb"
+                class="StyledBox-bStriS kLJiMm"
               >
                 <svg
                   aria-label="Subtract"
@@ -774,7 +774,7 @@ exports[`Carousel navigate 1`] = `
               type="button"
             >
               <div
-                class="StyledBox-bStriS jvHfNb"
+                class="StyledBox-bStriS kLJiMm"
               >
                 <svg
                   aria-label="Subtract"
@@ -920,7 +920,7 @@ exports[`Carousel navigate 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-bStriS jvHfNb"
+                class="StyledBox-bStriS kLJiMm"
               >
                 <svg
                   aria-label="Subtract"
@@ -946,7 +946,7 @@ exports[`Carousel navigate 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-bStriS jvHfNb"
+                class="StyledBox-bStriS kLJiMm"
               >
                 <svg
                   aria-label="Subtract"
@@ -1095,7 +1095,7 @@ exports[`Carousel navigate 3`] = `
               type="button"
             >
               <div
-                class="StyledBox-bStriS jvHfNb"
+                class="StyledBox-bStriS kLJiMm"
               >
                 <svg
                   aria-label="Subtract"
@@ -1122,7 +1122,7 @@ exports[`Carousel navigate 3`] = `
               type="button"
             >
               <div
-                class="StyledBox-bStriS jvHfNb"
+                class="StyledBox-bStriS kLJiMm"
               >
                 <svg
                   aria-label="Subtract"
@@ -1268,7 +1268,7 @@ exports[`Carousel play 1`] = `
               type="button"
             >
               <div
-                class="StyledBox-bStriS jvHfNb"
+                class="StyledBox-bStriS kLJiMm"
               >
                 <svg
                   aria-label="Subtract"
@@ -1295,7 +1295,7 @@ exports[`Carousel play 1`] = `
               type="button"
             >
               <div
-                class="StyledBox-bStriS jvHfNb"
+                class="StyledBox-bStriS kLJiMm"
               >
                 <svg
                   aria-label="Subtract"
@@ -1440,7 +1440,7 @@ exports[`Carousel play 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-bStriS jvHfNb"
+                class="StyledBox-bStriS kLJiMm"
               >
                 <svg
                   aria-label="Subtract"
@@ -1466,7 +1466,7 @@ exports[`Carousel play 2`] = `
               type="button"
             >
               <div
-                class="StyledBox-bStriS jvHfNb"
+                class="StyledBox-bStriS kLJiMm"
               >
                 <svg
                   aria-label="Subtract"

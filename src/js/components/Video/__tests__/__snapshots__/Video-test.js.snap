@@ -88,7 +88,7 @@ exports[`Video autoPlay renders 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   margin: 0;
-  padding: 0;
+  padding: 12px;
 }
 
 .c8 {
@@ -314,7 +314,7 @@ exports[`Video autoPlay renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    padding: 0;
+    padding: 6px;
   }
 }
 
@@ -679,7 +679,7 @@ exports[`Video controls renders 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   margin: 0;
-  padding: 0;
+  padding: 12px;
 }
 
 .c8 {
@@ -939,7 +939,7 @@ exports[`Video controls renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    padding: 0;
+    padding: 6px;
   }
 }
 
@@ -1448,7 +1448,7 @@ exports[`Video fit renders 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   margin: 0;
-  padding: 0;
+  padding: 12px;
 }
 
 .c8 {
@@ -1692,7 +1692,7 @@ exports[`Video fit renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    padding: 0;
+    padding: 6px;
   }
 }
 
@@ -2197,7 +2197,7 @@ exports[`Video loop renders 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   margin: 0;
-  padding: 0;
+  padding: 12px;
 }
 
 .c8 {
@@ -2423,7 +2423,7 @@ exports[`Video loop renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    padding: 0;
+    padding: 6px;
   }
 }
 
@@ -2756,7 +2756,7 @@ exports[`Video mute renders 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   margin: 0;
-  padding: 0;
+  padding: 12px;
 }
 
 .c8 {
@@ -2982,7 +2982,7 @@ exports[`Video mute renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    padding: 0;
+    padding: 6px;
   }
 }
 
@@ -3315,7 +3315,7 @@ exports[`Video renders 1`] = `
   -ms-flex-direction: row;
   flex-direction: row;
   margin: 0;
-  padding: 0;
+  padding: 12px;
 }
 
 .c8 {
@@ -3541,7 +3541,7 @@ exports[`Video renders 1`] = `
 
 @media only screen and (max-width:699px) {
   .c6 {
-    padding: 0;
+    padding: 6px;
   }
 }
 
