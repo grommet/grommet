@@ -25,6 +25,10 @@ class DropContainer extends Component {
     }
   }
 
+  componentDidUpdate() {
+    this.place();
+  }
+
   componentWillUnmount() {
     this.removeScrollListener();
     window.removeEventListener('resize', this.onResize);
