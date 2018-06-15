@@ -84,6 +84,12 @@ Object {
     "_currentValue2": Object {},
     "_defaultValue": Object {},
   },
+  "DataTable": Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "displayName": "DataTable",
+    "name": "DataTable",
+    "render": [Function],
+  },
   "Diagram": Object {
     "$$typeof": Symbol(react.forward_ref),
     "displayName": "Diagram",

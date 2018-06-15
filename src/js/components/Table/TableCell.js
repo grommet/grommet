@@ -8,7 +8,9 @@ import TableContext from './TableContext';
 import { StyledTableCell } from './StyledTable';
 import { docTableCell } from './doc';
 
-const TableCell = ({ children, plain, scope, size, theme, verticalAlign, ...rest }) => {
+const TableCell = ({
+  children, plain, scope, size, theme, verticalAlign, ...rest
+}) => {
   const Cell = (scope ? StyledTableCell.withComponent('th') : StyledTableCell);
   return (
     <TableContext.Consumer>
@@ -19,6 +21,7 @@ const TableCell = ({ children, plain, scope, size, theme, verticalAlign, ...rest
           tableContext={tableContext}
           theme={theme}
           verticalAlign={verticalAlign}
+          {...(plain ? rest : {})}
         >
           {plain ? children : <Box {...rest}>{children}</Box>}
         </Cell>
