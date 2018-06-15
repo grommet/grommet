@@ -14,6 +14,7 @@ import {
 
 import StyledTextInput, {
   StyledTextInputContainer,
+  StyledPlaceholder,
   StyledSuggestions,
 } from './StyledTextInput';
 import doc from './doc';
@@ -209,7 +210,8 @@ class TextInput extends Component {
 
   render() {
     const {
-      defaultValue, dropAlign, dropTarget, id, plain, value, onFocus, onInput, onKeyDown,
+      defaultValue, dropAlign, dropTarget, id, placeholder, plain, theme, value,
+      onFocus, onInput, onKeyDown,
       ...rest
     } = this.props;
     delete rest.onInput; // se we can manage in onInputChange()
@@ -235,6 +237,9 @@ class TextInput extends Component {
     }
     return (
       <StyledTextInputContainer plain={plain}>
+        {placeholder && typeof placeholder !== 'string' && !value ? (
+          <StyledPlaceholder theme={theme}>{placeholder}</StyledPlaceholder>
+        ) : null}
         <Keyboard
           onEnter={this.onSuggestionSelect}
           onEsc={this.onDropClose}
@@ -248,6 +253,8 @@ class TextInput extends Component {
             innerRef={inputRef}
             autoComplete='off'
             plain={plain}
+            placeholder={typeof placeholder === 'string' ? placeholder : undefined}
+            theme={theme}
             {...rest}
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}

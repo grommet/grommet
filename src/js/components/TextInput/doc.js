@@ -51,8 +51,11 @@ export default (TextInput) => {
       `Function that will be called when the user selects a suggestion.
 The suggestion contains the object chosen from the supplied suggestions.`
     ),
-    placeholder: PropTypes.string.description(
-      'Placeholder text to use when no value is provided.'
+    placeholder: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.node,
+    ]).description(
+      'Placeholder to use when no value is provided.'
     ),
     plain: PropTypes.bool.description(
       `Whether this is a plain input with no border or padding.
