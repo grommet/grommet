@@ -42,7 +42,7 @@
     "styled-components": ">= 3.2.6"
   },
   "dependencies": {
-    "babel-plugin-grommet": "^0.5.1",
+    "babel-plugin-grommet": "^0.5.3",
     "markdown-to-jsx": "^6.6.6",
     "node-emoji": "^1.8.1",
     "polished": "^1.3.0",
@@ -91,7 +91,7 @@
     "styled-components": "^3.3.2",
     "tarball-extract": "^0.0.6",
     "webpack": "^4.10.2",
-    "webpack-cli": "^3.0.2"
+    "webpack-cli": "^3.0.7"
   },
   "jest": {
     "collectCoverage": true,
