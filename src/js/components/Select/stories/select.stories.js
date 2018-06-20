@@ -166,6 +166,30 @@ const allContentPartners = [
     name: 'Test Partner 5',
     id: '32131272',
   },
+  {
+    name: 'Test Partner 6',
+    id: '32131231',
+  },
+  {
+    name: 'Test Partner 7',
+    id: '32131234',
+  },
+  {
+    name: 'Test Partner 8',
+    id: '32131245',
+  },
+  {
+    name: 'Test Partner 9',
+    id: '32131256',
+  },
+  {
+    name: 'Test Partner 10',
+    id: '32131269',
+  },
+  {
+    name: 'Test Partner 11',
+    id: '32131244',
+  },
 ];
 
 class CustomSearchSelect extends Component {
@@ -248,7 +272,6 @@ class CustomSearchSelect extends Component {
       <Grommet theme={customSearchTheme}>
         <Box align='start' width='medium' direction='row'>
           <Select
-            loading={true}
             ref={this.selectRef}
             fill={true}
             closeOnChange={false}

@@ -494,6 +494,9 @@ export default deepFreeze({
       down: FormDown,
     },
     // searchInput: undefined,
+    drop: {
+      maxHeight: '384px',
+    },
   },
   text: {
     medium: { size: '16px', height: 1.375 },

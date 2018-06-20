@@ -1,7 +1,12 @@
 import React, { createRef, Component } from 'react';
 import { findDOMNode } from 'react-dom';
 
-import { debounce, setFocusWithoutScroll } from '../../utils';
+import {
+  debounce,
+  isNodeAfterScroll,
+  isNodeBeforeScroll,
+  setFocusWithoutScroll,
+} from '../../utils';
 
 import { withTheme } from '../hocs';
 
@@ -20,6 +25,8 @@ class SelectContainer extends Component {
   static defaultProps = {
     value: '',
   }
+
+  containerRef = createRef()
   optionsRef = {}
   searchRef = createRef()
   selectRef = createRef()
@@ -38,14 +45,6 @@ class SelectContainer extends Component {
         setFocusWithoutScroll(findDOMNode(this.selectRef.current));
       }
     }, 0);
-  }
-
-  componentDidUpdate() {
-    const { activeIndex } = this.state;
-    const buttonNode = findDOMNode(this.optionsRef[activeIndex]);
-    if (activeIndex >= 0 && buttonNode && buttonNode.scrollIntoView) {
-      buttonNode.scrollIntoView();
-    }
   }
 
   onInput = (event) => {
@@ -95,14 +94,28 @@ class SelectContainer extends Component {
     const { activeIndex } = this.state;
     event.preventDefault();
     const index = Math.min(activeIndex + 1, options.length - 1);
-    this.setState({ activeIndex: index });
+    this.setState({ activeIndex: index }, () => {
+      const buttonNode = findDOMNode(this.optionsRef[index]);
+      const containerNode = findDOMNode(this.containerRef.current);
+
+      if (isNodeAfterScroll(buttonNode, containerNode) && containerNode.scrollBy) {
+        containerNode.scrollBy(0, buttonNode.getBoundingClientRect().height);
+      }
+    });
   }
 
   onPreviousOption = (event) => {
     const { activeIndex } = this.state;
     event.preventDefault();
     const index = Math.max(activeIndex - 1, 0);
-    this.setState({ activeIndex: index });
+    this.setState({ activeIndex: index }, () => {
+      const buttonNode = findDOMNode(this.optionsRef[index]);
+      const containerNode = findDOMNode(this.containerRef.current);
+
+      if (isNodeBeforeScroll(buttonNode, containerNode) && containerNode.scrollBy) {
+        containerNode.scrollBy(0, -buttonNode.getBoundingClientRect().height);
+      }
+    });
   }
 
   onSelectOption = (event) => {
@@ -140,10 +153,16 @@ class SelectContainer extends Component {
         onKeyDown={onKeyDown}
       >
         <Box
+          ref={this.containerRef}
+          style={{
+            maxHeight: theme.select.drop.maxHeight,
+            scrollBehavior: 'smooth',
+          }}
+          overflow='auto'
           id={id ? `${id}__select-drop` : undefined}
         >
           {onSearch && (
-            <Box pad={!customSearchInput ? 'xsmall' : undefined}>
+            <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
               <SelectTextInput
                 focusIndicator={!customSearchInput}
                 size='small'
@@ -155,7 +174,6 @@ class SelectContainer extends Component {
               />
             </Box>
           )}
-
           <Box
             flex={false}
             role='menubar'

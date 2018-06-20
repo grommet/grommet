@@ -392,8 +392,9 @@ exports[`Select complex options and children 3`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-bStriS dIoGZN"
+    class="StyledBox-bStriS jzTBJZ"
     id="test-select__select-drop"
+    style="max-height: 384px;"
   >
     <div
       class="StyledBox-bStriS bdXjzm"
@@ -468,13 +469,13 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .dIoGZN {
+  .jzTBJZ {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dIoGZN {
+  .jzTBJZ {
     padding: 0;
   }
 }
@@ -1115,8 +1116,9 @@ exports[`Select multiple values 3`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-bStriS dIoGZN"
+    class="StyledBox-bStriS jzTBJZ"
     id="test-select__select-drop"
+    style="max-height: 384px;"
   >
     <div
       class="StyledBox-bStriS bdXjzm"
@@ -1203,13 +1205,13 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .dIoGZN {
+  .jzTBJZ {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dIoGZN {
+  .jzTBJZ {
     padding: 0;
   }
 }
@@ -1239,13 +1241,13 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cjMmqW {
+  .bXdyDt {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .cjMmqW {
+  .bXdyDt {
     padding: 3px;
   }
 }
@@ -1432,8 +1434,9 @@ exports[`Select opens 3`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-bStriS dIoGZN"
+    class="StyledBox-bStriS jzTBJZ"
     id="test-select__select-drop"
+    style="max-height: 384px;"
   >
     <div
       class="StyledBox-bStriS bdXjzm"
@@ -1520,13 +1523,13 @@ exports[`Select opens 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .dIoGZN {
+  .jzTBJZ {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dIoGZN {
+  .jzTBJZ {
     padding: 0;
   }
 }
@@ -1702,11 +1705,12 @@ exports[`Select search 2`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-bStriS dIoGZN"
+    class="StyledBox-bStriS jzTBJZ"
     id="test-select__select-drop"
+    style="max-height: 384px;"
   >
     <div
-      class="StyledBox-bStriS cjMmqW"
+      class="StyledBox-bStriS bXdyDt"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
@@ -1804,13 +1808,13 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .dIoGZN {
+  .jzTBJZ {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dIoGZN {
+  .jzTBJZ {
     padding: 0;
   }
 }
@@ -1840,13 +1844,13 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .cjMmqW {
+  .bXdyDt {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .cjMmqW {
+  .bXdyDt {
     padding: 3px;
   }
 }
