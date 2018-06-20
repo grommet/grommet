@@ -205,7 +205,7 @@ class CustomSearchSelect extends Component {
   renderOption = ({ name }) => {
     const { selectedContentPartners } = this.state;
     return (
-      <Box direction='row' align='center' pad='small'>
+      <Box direction='row' align='center' pad='small' flex={false}>
         <CheckBox
           tabIndex='-1'
           checked={selectedContentPartners.some(
@@ -231,10 +231,10 @@ class CustomSearchSelect extends Component {
       >
         <Box
           background='brand'
-          round='full'
+          round='medium'
           align='center'
           justify='center'
-          style={{ width: '18px', height: '18px' }}
+          pad={{ horizontal: 'xsmall' }}
         >
           <Text size='small'>
             {selectedContentPartners.length}

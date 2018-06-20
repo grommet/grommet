@@ -26,7 +26,6 @@ class SelectContainer extends Component {
     value: '',
   }
 
-  containerRef = createRef()
   optionsRef = {}
   searchRef = createRef()
   selectRef = createRef()
@@ -96,10 +95,10 @@ class SelectContainer extends Component {
     const index = Math.min(activeIndex + 1, options.length - 1);
     this.setState({ activeIndex: index }, () => {
       const buttonNode = findDOMNode(this.optionsRef[index]);
-      const containerNode = findDOMNode(this.containerRef.current);
+      const selectNode = findDOMNode(this.selectRef.current);
 
-      if (isNodeAfterScroll(buttonNode, containerNode) && containerNode.scrollBy) {
-        containerNode.scrollBy(0, buttonNode.getBoundingClientRect().height);
+      if (isNodeAfterScroll(buttonNode, selectNode) && selectNode.scrollBy) {
+        selectNode.scrollBy(0, buttonNode.getBoundingClientRect().height);
       }
     });
   }
@@ -110,10 +109,10 @@ class SelectContainer extends Component {
     const index = Math.max(activeIndex - 1, 0);
     this.setState({ activeIndex: index }, () => {
       const buttonNode = findDOMNode(this.optionsRef[index]);
-      const containerNode = findDOMNode(this.containerRef.current);
+      const selectNode = findDOMNode(this.selectRef.current);
 
-      if (isNodeBeforeScroll(buttonNode, containerNode) && containerNode.scrollBy) {
-        containerNode.scrollBy(0, -buttonNode.getBoundingClientRect().height);
+      if (isNodeBeforeScroll(buttonNode, selectNode) && selectNode.scrollBy) {
+        selectNode.scrollBy(0, -buttonNode.getBoundingClientRect().height);
       }
     });
   }
@@ -153,12 +152,6 @@ class SelectContainer extends Component {
         onKeyDown={onKeyDown}
       >
         <Box
-          ref={this.containerRef}
-          style={{
-            maxHeight: theme.select.drop.maxHeight,
-            scrollBehavior: 'smooth',
-          }}
-          overflow='auto'
           id={id ? `${id}__select-drop` : undefined}
         >
           {onSearch && (
@@ -175,14 +168,20 @@ class SelectContainer extends Component {
             </Box>
           )}
           <Box
-            flex={false}
+            flex={true}
             role='menubar'
             tabIndex='-1'
             ref={this.selectRef}
+            style={{
+              maxHeight: theme.select.drop.maxHeight,
+              scrollBehavior: 'smooth',
+            }}
+            overflow='auto'
           >
             <InfiniteScroll items={options} step={20}>
               {(option, index) => (
                 <Button
+                  fill={true}
                   role='menuitem'
                   ref={(ref) => { this.optionsRef[index] = ref; }}
                   active={

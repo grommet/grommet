@@ -392,17 +392,17 @@ exports[`Select complex options and children 3`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-bStriS jzTBJZ"
+    class="StyledBox-bStriS dIoGZN"
     id="test-select__select-drop"
-    style="max-height: 384px;"
   >
     <div
-      class="StyledBox-bStriS bdXjzm"
+      class="StyledBox-bStriS kRbxno"
       role="menubar"
+      style="max-height: 384px;"
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK hXpLNm"
+        class="StyledButton-gXzblK jrAGpP"
         role="menuitem"
         type="button"
       >
@@ -411,7 +411,7 @@ exports[`Select complex options and children 3`] = `
         </span>
       </button>
       <button
-        class="StyledButton-gXzblK hXpLNm"
+        class="StyledButton-gXzblK jrAGpP"
         role="menuitem"
         type="button"
       >
@@ -469,25 +469,25 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jzTBJZ {
+  .dIoGZN {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jzTBJZ {
+  .dIoGZN {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bdXjzm {
+  .kRbxno {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bdXjzm {
+  .kRbxno {
     padding: 0;
   }
 }
@@ -512,7 +512,7 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hXpLNm {
+  .jrAGpP {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1116,17 +1116,17 @@ exports[`Select multiple values 3`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-bStriS jzTBJZ"
+    class="StyledBox-bStriS dIoGZN"
     id="test-select__select-drop"
-    style="max-height: 384px;"
   >
     <div
-      class="StyledBox-bStriS bdXjzm"
+      class="StyledBox-bStriS kRbxno"
       role="menubar"
+      style="max-height: 384px;"
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK jQTipY"
+        class="StyledButton-gXzblK KxvTV"
         role="menuitem"
         type="button"
       >
@@ -1141,7 +1141,7 @@ exports[`Select multiple values 3`] = `
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK jQTipY"
+        class="StyledButton-gXzblK KxvTV"
         role="menuitem"
         type="button"
       >
@@ -1205,25 +1205,25 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jzTBJZ {
+  .dIoGZN {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jzTBJZ {
+  .dIoGZN {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bdXjzm {
+  .kRbxno {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bdXjzm {
+  .kRbxno {
     padding: 0;
   }
 }
@@ -1272,14 +1272,14 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hXpLNm {
+  .jrAGpP {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jQTipY {
+  .KxvTV {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1434,17 +1434,17 @@ exports[`Select opens 3`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-bStriS jzTBJZ"
+    class="StyledBox-bStriS dIoGZN"
     id="test-select__select-drop"
-    style="max-height: 384px;"
   >
     <div
-      class="StyledBox-bStriS bdXjzm"
+      class="StyledBox-bStriS kRbxno"
       role="menubar"
+      style="max-height: 384px;"
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK hXpLNm"
+        class="StyledButton-gXzblK jrAGpP"
         role="menuitem"
         type="button"
       >
@@ -1459,7 +1459,7 @@ exports[`Select opens 3`] = `
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK hXpLNm"
+        class="StyledButton-gXzblK jrAGpP"
         role="menuitem"
         type="button"
       >
@@ -1523,25 +1523,25 @@ exports[`Select opens 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jzTBJZ {
+  .dIoGZN {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jzTBJZ {
+  .dIoGZN {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bdXjzm {
+  .kRbxno {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bdXjzm {
+  .kRbxno {
     padding: 0;
   }
 }
@@ -1566,7 +1566,7 @@ exports[`Select opens 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hXpLNm {
+  .jrAGpP {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1605,12 +1605,13 @@ exports[`Select opens 4`] = `
 
 exports[`Select opens 5`] = `
 <div
-  class="StyledBox-bStriS bdXjzm"
+  class="StyledBox-bStriS kRbxno"
   role="menubar"
+  style="max-height: 384px;"
   tabindex="-1"
 >
   <button
-    class="StyledButton-gXzblK hXpLNm"
+    class="StyledButton-gXzblK jrAGpP"
     role="menuitem"
     type="button"
   >
@@ -1625,7 +1626,7 @@ exports[`Select opens 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-gXzblK hXpLNm"
+    class="StyledButton-gXzblK jrAGpP"
     role="menuitem"
     type="button"
   >
@@ -1705,9 +1706,8 @@ exports[`Select search 2`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-bStriS jzTBJZ"
+    class="StyledBox-bStriS dIoGZN"
     id="test-select__select-drop"
-    style="max-height: 384px;"
   >
     <div
       class="StyledBox-bStriS bXdyDt"
@@ -1724,12 +1724,13 @@ exports[`Select search 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS bdXjzm"
+      class="StyledBox-bStriS kRbxno"
       role="menubar"
+      style="max-height: 384px;"
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK hXpLNm"
+        class="StyledButton-gXzblK jrAGpP"
         role="menuitem"
         type="button"
       >
@@ -1744,7 +1745,7 @@ exports[`Select search 2`] = `
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK hXpLNm"
+        class="StyledButton-gXzblK jrAGpP"
         role="menuitem"
         type="button"
       >
@@ -1808,25 +1809,25 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .jzTBJZ {
+  .dIoGZN {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jzTBJZ {
+  .dIoGZN {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bdXjzm {
+  .kRbxno {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bdXjzm {
+  .kRbxno {
     padding: 0;
   }
 }
@@ -1863,7 +1864,7 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .hXpLNm {
+  .jrAGpP {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
