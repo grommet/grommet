@@ -17,6 +17,9 @@ export default (Select) => {
     children: PropTypes.func.description(
       'Function that will be called when each option is rendered.'
     ),
+    closeOnChange: PropTypes.bool.description(
+      'Wether to close the drop when a selection is made.'
+    ).defaultValue(true),
     disabled: PropTypes.bool
       .description('Whether the select should be disabled.'),
     dropAlign: PropTypes.shape({

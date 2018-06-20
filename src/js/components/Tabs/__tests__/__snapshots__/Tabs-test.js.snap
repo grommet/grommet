@@ -22,6 +22,7 @@ exports[`Tabs Tab 1`] = `
   outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -44,6 +45,7 @@ exports[`Tabs Tab 1`] = `
   max-width: 100%;
   border-bottom: solid 4px #000000;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -62,6 +64,7 @@ exports[`Tabs Tab 1`] = `
   max-width: 100%;
   border-bottom: solid 4px transparent;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -234,7 +237,7 @@ exports[`Tabs change active index 1`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS bCwgvP"
+    class="StyledBox-bStriS gjsTkF"
   >
     <button
       aria-expanded="false"
@@ -244,7 +247,7 @@ exports[`Tabs change active index 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS kcGRJr"
+        class="StyledBox-bStriS bwOoKz"
       >
         <span
           class="StyledText-eJMSZI eTujXF"
@@ -262,7 +265,7 @@ exports[`Tabs change active index 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS ZPzfR"
+        class="StyledBox-bStriS YWSet"
       >
         <span
           class="StyledText-eJMSZI bxnpJv"
@@ -286,7 +289,7 @@ exports[`Tabs change active index 2`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS bCwgvP"
+    class="StyledBox-bStriS gjsTkF"
   >
     <button
       aria-expanded="false"
@@ -296,7 +299,7 @@ exports[`Tabs change active index 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS kcGRJr"
+        class="StyledBox-bStriS bwOoKz"
       >
         <span
           class="StyledText-eJMSZI eTujXF"
@@ -314,7 +317,7 @@ exports[`Tabs change active index 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS ZPzfR"
+        class="StyledBox-bStriS YWSet"
       >
         <span
           class="StyledText-eJMSZI bxnpJv"
@@ -341,7 +344,7 @@ exports[`Tabs change to second tab 1`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-bStriS bCwgvP"
+      class="StyledBox-bStriS gjsTkF"
     >
       <button
         aria-expanded="true"
@@ -351,7 +354,7 @@ exports[`Tabs change to second tab 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS ZPzfR"
+          class="StyledBox-bStriS YWSet"
         >
           <span
             class="StyledText-eJMSZI bxnpJv"
@@ -368,7 +371,7 @@ exports[`Tabs change to second tab 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS kcGRJr"
+          class="StyledBox-bStriS bwOoKz"
         >
           <span
             class="StyledText-eJMSZI eTujXF"
@@ -397,7 +400,7 @@ exports[`Tabs change to second tab 2`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-bStriS bCwgvP"
+      class="StyledBox-bStriS gjsTkF"
     >
       <button
         aria-expanded="true"
@@ -407,7 +410,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS ZPzfR"
+          class="StyledBox-bStriS YWSet"
         >
           <span
             class="StyledText-eJMSZI bxnpJv"
@@ -424,7 +427,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-bStriS kcGRJr"
+          class="StyledBox-bStriS bwOoKz"
         >
           <span
             class="StyledText-eJMSZI eTujXF"
@@ -467,6 +470,7 @@ exports[`Tabs complex title 1`] = `
   outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -489,6 +493,7 @@ exports[`Tabs complex title 1`] = `
   max-width: 100%;
   border-bottom: solid 4px #000000;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -507,6 +512,7 @@ exports[`Tabs complex title 1`] = `
   max-width: 100%;
   border-bottom: solid 4px transparent;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -679,6 +685,7 @@ exports[`Tabs no Tab 1`] = `
   outline: none;
   max-width: 100%;
   border-bottom: solid 1px rgba(0,0,0,0.33);
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -731,7 +738,7 @@ exports[`Tabs set on hover 1`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS bCwgvP"
+    class="StyledBox-bStriS gjsTkF"
   >
     <button
       aria-expanded="true"
@@ -741,7 +748,7 @@ exports[`Tabs set on hover 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS ZPzfR"
+        class="StyledBox-bStriS YWSet"
       >
         <span
           class="StyledText-eJMSZI bxnpJv"
@@ -758,7 +765,7 @@ exports[`Tabs set on hover 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS kcGRJr"
+        class="StyledBox-bStriS bwOoKz"
       >
         <span
           class="StyledText-eJMSZI eTujXF"
@@ -783,7 +790,7 @@ exports[`Tabs set on hover 2`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS bCwgvP"
+    class="StyledBox-bStriS gjsTkF"
   >
     <button
       aria-expanded="true"
@@ -793,7 +800,7 @@ exports[`Tabs set on hover 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS ZPzfR"
+        class="StyledBox-bStriS YWSet"
       >
         <span
           class="StyledText-eJMSZI bxnpJv"
@@ -810,7 +817,7 @@ exports[`Tabs set on hover 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS kcGRJr"
+        class="StyledBox-bStriS bwOoKz"
       >
         <span
           class="StyledText-eJMSZI eTujXF"
@@ -835,7 +842,7 @@ exports[`Tabs set on hover 3`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS bCwgvP"
+    class="StyledBox-bStriS gjsTkF"
   >
     <button
       aria-expanded="true"
@@ -845,7 +852,7 @@ exports[`Tabs set on hover 3`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS ZPzfR"
+        class="StyledBox-bStriS YWSet"
       >
         <span
           class="StyledText-eJMSZI bxnpJv"
@@ -862,7 +869,7 @@ exports[`Tabs set on hover 3`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS fBYxIS"
+        class="StyledBox-bStriS yOGUO"
       >
         <span
           class="StyledText-eJMSZI eTujXF"
@@ -887,7 +894,7 @@ exports[`Tabs set on hover 4`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS bCwgvP"
+    class="StyledBox-bStriS gjsTkF"
   >
     <button
       aria-expanded="true"
@@ -897,7 +904,7 @@ exports[`Tabs set on hover 4`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS ZPzfR"
+        class="StyledBox-bStriS YWSet"
       >
         <span
           class="StyledText-eJMSZI bxnpJv"
@@ -914,7 +921,7 @@ exports[`Tabs set on hover 4`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS fBYxIS"
+        class="StyledBox-bStriS yOGUO"
       >
         <span
           class="StyledText-eJMSZI eTujXF"
@@ -939,7 +946,7 @@ exports[`Tabs set on hover 5`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-bStriS bCwgvP"
+    class="StyledBox-bStriS gjsTkF"
   >
     <button
       aria-expanded="true"
@@ -949,7 +956,7 @@ exports[`Tabs set on hover 5`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS ZPzfR"
+        class="StyledBox-bStriS YWSet"
       >
         <span
           class="StyledText-eJMSZI bxnpJv"
@@ -966,7 +973,7 @@ exports[`Tabs set on hover 5`] = `
       type="button"
     >
       <div
-        class="StyledBox-bStriS kcGRJr"
+        class="StyledBox-bStriS bwOoKz"
       >
         <span
           class="StyledText-eJMSZI eTujXF"

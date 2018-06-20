@@ -25,6 +25,7 @@ exports[`Button color renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -250,6 +251,7 @@ exports[`Button focus renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -830,6 +832,7 @@ exports[`Button icon label renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -954,6 +957,7 @@ exports[`Button primary renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -1069,6 +1073,7 @@ exports[`Button renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -1181,6 +1186,7 @@ exports[`Button reverse icon label renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -1305,6 +1311,7 @@ exports[`Button warns about invalid icon render 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -1395,6 +1402,7 @@ exports[`Button warns about invalid label render 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;

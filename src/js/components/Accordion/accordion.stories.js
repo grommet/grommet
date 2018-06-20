@@ -283,7 +283,7 @@ const renderPanelHeader = (title, active) => (
 
 class CustomHeaderAccordion extends Component {
   state = {
-    activeIndex: 0,
+    activeIndex: [0],
   }
   render() {
     const { activeIndex } = this.state;
@@ -294,7 +294,7 @@ class CustomHeaderAccordion extends Component {
           onActive={newActiveIndex => this.setState({ activeIndex: newActiveIndex })}
         >
           <AccordionPanel
-            header={renderPanelHeader('Panel 1', activeIndex === 0)}
+            header={renderPanelHeader('Panel 1', activeIndex.includes(0))}
           >
             <Box pad='medium' background='light-2' style={{ height: '800px' }}>
               <Text>Panel 1 contents</Text>
@@ -302,14 +302,14 @@ class CustomHeaderAccordion extends Component {
             </Box>
           </AccordionPanel>
           <AccordionPanel
-            header={renderPanelHeader('Panel 2', activeIndex === 1)}
+            header={renderPanelHeader('Panel 2', activeIndex.includes(1))}
           >
             <Box pad='medium' background='light-2' style={{ height: '50px' }}>
               <Text>Panel 2 contents</Text>
             </Box>
           </AccordionPanel>
           <AccordionPanel
-            header={renderPanelHeader('Panel 3', activeIndex === 2)}
+            header={renderPanelHeader('Panel 3', activeIndex.includes(2))}
           >
             <Box pad='medium' background='light-2' style={{ height: '300px' }}>
               <Text>Panel 3 contents</Text>

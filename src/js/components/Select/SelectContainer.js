@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React, { createRef, Component } from 'react';
 import { findDOMNode } from 'react-dom';
 
-import { debounce } from '../../utils';
+import { debounce, setFocusWithoutScroll } from '../../utils';
+
+import { withTheme } from '../hocs';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -19,6 +21,8 @@ class SelectContainer extends Component {
     value: '',
   }
   optionsRef = {}
+  searchRef = createRef()
+  selectRef = createRef()
 
   componentDidMount() {
     const { onSearch } = this.props;
@@ -26,9 +30,12 @@ class SelectContainer extends Component {
     // to be available
     setTimeout(() => {
       if (onSearch) {
-        findDOMNode(this.searchRef).querySelector('input').focus();
+        const input = findDOMNode(this.searchRef.current);
+        if (input && input.focus) {
+          setFocusWithoutScroll(input);
+        }
       } else if (this.selectRef) {
-        findDOMNode(this.selectRef).focus();
+        setFocusWithoutScroll(findDOMNode(this.selectRef.current));
       }
     }, 0);
   }
@@ -75,7 +82,7 @@ class SelectContainer extends Component {
       }
 
       onChange({
-        target: findDOMNode(this.inputRef),
+        target: findDOMNode(this.searchRef.current),
         option,
         value: nextValue,
         selected: nextSelected,
@@ -110,7 +117,6 @@ class SelectContainer extends Component {
   render() {
     const {
       children,
-      dropBackground,
       id,
       name,
       onKeyDown,
@@ -118,9 +124,13 @@ class SelectContainer extends Component {
       options,
       searchPlaceholder,
       selected,
+      theme,
       value,
     } = this.props;
     const { activeIndex, search } = this.state;
+
+    const customSearchInput = theme.select.searchInput;
+    const SelectTextInput = customSearchInput || TextInput;
 
     return (
       <Keyboard
@@ -131,27 +141,26 @@ class SelectContainer extends Component {
       >
         <Box
           id={id ? `${id}__select-drop` : undefined}
-          background={dropBackground}
         >
-          {onSearch ? (
-            <Box pad='xsmall'>
-              <TextInput
-                focusIndicator={true}
+          {onSearch && (
+            <Box pad={!customSearchInput ? 'xsmall' : undefined}>
+              <SelectTextInput
+                focusIndicator={!customSearchInput}
                 size='small'
-                ref={(ref) => { this.searchRef = ref; }}
+                ref={this.searchRef}
                 type='search'
                 value={search}
                 placeholder={searchPlaceholder}
                 onInput={this.onInput}
               />
             </Box>
-          ) : undefined}
+          )}
 
           <Box
             flex={false}
             role='menubar'
             tabIndex='-1'
-            ref={(ref) => { this.selectRef = ref; }}
+            ref={this.selectRef}
           >
             <InfiniteScroll items={options} step={20}>
               {(option, index) => (
@@ -187,4 +196,4 @@ class SelectContainer extends Component {
   }
 }
 
-export default SelectContainer;
+export default withTheme(SelectContainer);
