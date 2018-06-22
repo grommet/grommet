@@ -4,7 +4,8 @@ import { findDOMNode } from 'react-dom';
 
 import TextInput from '../../../TextInput/TextInput';
 
-import FocusBorderBox from './FocusBorderBox';
+import SearchBorderBox from './SearchBorderBox';
+import SearchInputContext from './SearchInputContext';
 
 export default class SearchInput extends Component {
   textInputRef = createRef()
@@ -17,13 +18,17 @@ export default class SearchInput extends Component {
 
   render() {
     return (
-      <FocusBorderBox>
-        <TextInput
-          {...this.props}
-          plain={true}
-          ref={this.textInputRef}
-        />
-      </FocusBorderBox>
+      <SearchInputContext.Consumer>
+        {({ searching }) => (
+          <SearchBorderBox searching={searching}>
+            <TextInput
+              {...this.props}
+              plain={true}
+              ref={this.textInputRef}
+            />
+          </SearchBorderBox>
+        )}
+      </SearchInputContext.Consumer>
     );
   }
 }

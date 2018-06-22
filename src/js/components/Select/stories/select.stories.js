@@ -14,6 +14,7 @@ import {
 } from '../../';
 
 import customSearchTheme from './theme';
+import SearchInputContext from './components/SearchInputContext';
 
 const DEFAULT_OPTIONS = ['one', 'two', 'three'];
 
@@ -196,6 +197,7 @@ class CustomSearchSelect extends Component {
   state = {
     contentPartners: allContentPartners,
     selectedContentPartners: [],
+    searching: false,
   };
 
   selectRef = createRef()
@@ -264,58 +266,72 @@ class CustomSearchSelect extends Component {
   }
 
   render() {
-    const { contentPartners, selectedContentPartners } = this.state;
+    const {
+      contentPartners, searching, selectedContentPartners,
+    } = this.state;
 
     const selectedPartnerNames = selectedContentPartners.map(({ name }) => name);
 
     return (
       <Grommet theme={customSearchTheme}>
         <Box align='start' width='medium' direction='row'>
-          <Select
-            ref={this.selectRef}
-            fill={true}
-            closeOnChange={false}
-            placeholder='Select Content Partners'
-            searchPlaceholder='Search Content Partners'
-            multiple={true}
-            value={selectedContentPartners.length ? this.renderContentPartners() : undefined}
-            options={contentPartners}
-            onChange={({ option }) => {
-              const newSelectedPartners = [...this.state.selectedContentPartners];
-              const seasonIndex = newSelectedPartners.map(({ name }) => name).indexOf(option.name);
-              if (seasonIndex >= 0) {
-                newSelectedPartners.splice(seasonIndex, 1);
-              } else {
-                newSelectedPartners.push(option);
-              }
-              this.setState({ selectedContentPartners: newSelectedPartners });
-            }}
-            onClose={() => this.setState({
-              contentPartners: allContentPartners.sort((p1, p2) => {
-                const p1Exists = selectedPartnerNames.includes(p1.name);
-                const p2Exists = selectedPartnerNames.includes(p2.name);
+          <SearchInputContext.Provider value={{ searching }}>
+            <Select
+              ref={this.selectRef}
+              fill={true}
+              closeOnChange={false}
+              placeholder='Select Content Partners'
+              searchPlaceholder='Search Content Partners'
+              multiple={true}
+              value={selectedContentPartners.length ? this.renderContentPartners() : undefined}
+              options={contentPartners}
+              onChange={({ option }) => {
+                const newSelectedPartners = [...this.state.selectedContentPartners];
+                const seasonIndex = newSelectedPartners.map(
+                  ({ name }) => name
+                ).indexOf(option.name);
+                if (seasonIndex >= 0) {
+                  newSelectedPartners.splice(seasonIndex, 1);
+                } else {
+                  newSelectedPartners.push(option);
+                }
+                this.setState({ selectedContentPartners: newSelectedPartners });
+              }}
+              onClose={() => this.setState({
+                contentPartners: allContentPartners.sort((p1, p2) => {
+                  const p1Exists = selectedPartnerNames.includes(p1.name);
+                  const p2Exists = selectedPartnerNames.includes(p2.name);
 
-                if (!p1Exists && p2Exists) {
+                  if (!p1Exists && p2Exists) {
+                    return 1;
+                  } else if (p1Exists && !p2Exists) {
+                    return -1;
+                  } else if (p1.name.toLowerCase() < p2.name.toLowerCase()) {
+                    return -1;
+                  }
                   return 1;
-                } else if (p1Exists && !p2Exists) {
-                  return -1;
-                } else if (p1.name.toLowerCase() < p2.name.toLowerCase()) {
-                  return -1;
+                }),
+              })}
+              onSearch={
+                (query) => {
+                  this.setState({ searching: true }, () => {
+                    setTimeout(() => {
+                      this.setState(
+                        {
+                          searching: false,
+                          contentPartners: allContentPartners.filter(
+                            s => s.name.toLowerCase().indexOf(query.toLowerCase()) >= 0
+                          ),
+                        }
+                      );
+                    }, 500);
+                  });
                 }
-                return 1;
-              }),
-            })}
-            onSearch={
-              query => this.setState(
-                { contentPartners: allContentPartners.filter(
-                    s => s.name.toLowerCase().indexOf(query.toLowerCase()) >= 0
-                  ),
-                }
-              )
-            }
-          >
-            {this.renderOption}
-          </Select>
+              }
+            >
+              {this.renderOption}
+            </Select>
+          </SearchInputContext.Provider>
         </Box>
       </Grommet>
     );
