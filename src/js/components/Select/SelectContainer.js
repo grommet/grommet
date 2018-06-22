@@ -53,7 +53,7 @@ class SelectContainer extends Component {
     );
   }
 
-  onSearch = debounce(search => this.props.onSearch(search), 150)
+  onSearch = debounce(search => this.props.onSearch(search), 300)
 
   selectOption = (option, index) => {
     const { multiple, onChange, options, selected } = this.props;
