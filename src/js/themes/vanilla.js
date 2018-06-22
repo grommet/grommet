@@ -497,6 +497,7 @@ export default deepFreeze({
     drop: {
       maxHeight: '384px',
     },
+    step: 20,
   },
   text: {
     medium: { size: '16px', height: 1.375 },

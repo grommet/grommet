@@ -237,6 +237,7 @@ class CustomSearchSelect extends Component {
           align='center'
           justify='center'
           pad={{ horizontal: 'xsmall' }}
+          style={{ minWidth: '21px' }}
         >
           <Text size='small'>
             {selectedContentPartners.length}

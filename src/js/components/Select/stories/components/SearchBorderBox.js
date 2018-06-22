@@ -26,11 +26,11 @@ const searchingStyle = css`
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 70%;
+    width: 80%;
     height: 2px;
     will-change: left, right;
     background: ${props => colorForName('brand', props.theme)};
-    animation: progress 1.5s ease-out infinite;
+    animation: progress 1s ease-out infinite;
   }
 
   @keyframes progress {

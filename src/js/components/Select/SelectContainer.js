@@ -178,7 +178,7 @@ class SelectContainer extends Component {
             }}
             overflow='auto'
           >
-            <InfiniteScroll items={options} step={20}>
+            <InfiniteScroll items={options} step={theme.select.step}>
               {(option, index) => (
                 <Button
                   fill={true}
