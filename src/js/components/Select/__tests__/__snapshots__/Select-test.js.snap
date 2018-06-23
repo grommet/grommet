@@ -396,9 +396,8 @@ exports[`Select complex options and children 3`] = `
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS kRbxno"
+      class="SelectContainer__SelectContainerBox-bVzwkD kRqmwH StyledBox-bStriS kRbxno"
       role="menubar"
-      style="max-height: 384px;"
       tabindex="-1"
     >
       <button
@@ -1120,9 +1119,8 @@ exports[`Select multiple values 3`] = `
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS kRbxno"
+      class="SelectContainer__SelectContainerBox-bVzwkD kRqmwH StyledBox-bStriS kRbxno"
       role="menubar"
-      style="max-height: 384px;"
       tabindex="-1"
     >
       <button
@@ -1438,9 +1436,8 @@ exports[`Select opens 3`] = `
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS kRbxno"
+      class="SelectContainer__SelectContainerBox-bVzwkD kRqmwH StyledBox-bStriS kRbxno"
       role="menubar"
-      style="max-height: 384px;"
       tabindex="-1"
     >
       <button
@@ -1605,9 +1602,8 @@ exports[`Select opens 4`] = `
 
 exports[`Select opens 5`] = `
 <div
-  class="StyledBox-bStriS kRbxno"
+  class="SelectContainer__SelectContainerBox-bVzwkD kRqmwH StyledBox-bStriS kRbxno"
   role="menubar"
-  style="max-height: 384px;"
   tabindex="-1"
 >
   <button
@@ -1724,9 +1720,8 @@ exports[`Select search 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS kRbxno"
+      class="SelectContainer__SelectContainerBox-bVzwkD kRqmwH StyledBox-bStriS kRbxno"
       role="menubar"
-      style="max-height: 384px;"
       tabindex="-1"
     >
       <button

@@ -1,5 +1,6 @@
 import React, { createRef, Component } from 'react';
 import { findDOMNode } from 'react-dom';
+import styled from 'styled-components';
 
 import {
   debounce,
@@ -16,6 +17,11 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
+
+const SelectContainerBox = styled(Box)`
+  max-height: ${props => props.theme.select.drop.maxHeight};
+  scroll-behavior: 'smooth';
+`;
 
 class SelectContainer extends Component {
   state = {
@@ -53,6 +59,8 @@ class SelectContainer extends Component {
     );
   }
 
+  // wait 300ms of idle time before notifying that the search changed
+  // 300ms seems like the right amount to wait for after the used stopped typing
   onSearch = debounce(search => this.props.onSearch(search), 300)
 
   selectOption = (option, index) => {
@@ -167,16 +175,13 @@ class SelectContainer extends Component {
               />
             </Box>
           )}
-          <Box
+          <SelectContainerBox
             flex={true}
             role='menubar'
             tabIndex='-1'
             ref={this.selectRef}
-            style={{
-              maxHeight: theme.select.drop.maxHeight,
-              scrollBehavior: 'smooth',
-            }}
             overflow='auto'
+            theme={theme}
           >
             <InfiniteScroll items={options} step={theme.select.step}>
               {(option, index) => (
@@ -206,7 +211,7 @@ class SelectContainer extends Component {
                 </Button>
               )}
             </InfiniteScroll>
-          </Box>
+          </SelectContainerBox>
         </Box>
       </Keyboard>
     );
