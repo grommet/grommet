@@ -22,6 +22,10 @@ Required. Array of objects describing the connections.
 
 ```
 [{
+  anchor: 
+    center
+    vertical
+    horizontal,
   color: string,
   fromTarget: 
     string

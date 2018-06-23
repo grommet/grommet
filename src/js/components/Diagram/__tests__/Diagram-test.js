@@ -76,7 +76,7 @@ describe('Diagram', () => {
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('thickness renders', () => {
+  test('thickness', () => {
     const { container } = renderIntoDocument(
       <Context>
         <Diagram
@@ -87,6 +87,21 @@ describe('Diagram', () => {
             { fromTarget: '1', toTarget: '2', thickness: 'small' },
             { fromTarget: '1', toTarget: '2', thickness: 'medium' },
             { fromTarget: '1', toTarget: '2', thickness: '5px' },
+          ]}
+        />
+      </Context>
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test('anchor', () => {
+    const { container } = renderIntoDocument(
+      <Context>
+        <Diagram
+          connections={[
+            { fromTarget: '1', toTarget: '2', anchor: 'center' },
+            { fromTarget: '1', toTarget: '2', anchor: 'horizontal' },
+            { fromTarget: '1', toTarget: '2', anchor: 'vertical' },
           ]}
         />
       </Context>
