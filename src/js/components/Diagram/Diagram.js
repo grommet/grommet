@@ -57,7 +57,7 @@ class Diagram extends Component {
   static defaultProps = { connections: [] };
 
   state = { height: 0, width: 0 }
-  containerRef = React.createRef();
+  svgRef = React.createRef();
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize);
@@ -74,9 +74,9 @@ class Diagram extends Component {
 
   onResize = () => {
     const { connectionPoints, width, height } = this.state;
-    const parent = findDOMNode(this.containerRef.current).parentNode;
-    if (parent) {
-      const rect = parent.getBoundingClientRect();
+    const svg = findDOMNode(this.svgRef.current);
+    if (svg) {
+      const rect = svg.getBoundingClientRect();
       if (rect.width !== width || rect.height !== height) {
         this.setState({
           width: rect.width,
@@ -92,7 +92,7 @@ class Diagram extends Component {
   placeConnections() {
     const { connections } = this.props;
     const containerRect =
-      findDOMNode(this.containerRef.current).getBoundingClientRect();
+      findDOMNode(this.svgRef.current).getBoundingClientRect();
     const connectionPoints = connections.map(({ fromTarget, toTarget }) => {
       let points;
       const fromElement = findTarget(fromTarget);
@@ -165,11 +165,9 @@ class Diagram extends Component {
 
     return (
       <StyledDiagram
-        ref={this.containerRef}
+        ref={this.svgRef}
         viewBox={`0 0 ${width} ${height}`}
         preserveAspectRatio='xMinYMin meet'
-        width={width}
-        height={height}
         {...rest}
       >
         <g>
