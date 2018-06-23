@@ -11,14 +11,14 @@ exports[`Diagram basic 1`] = `
       class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
     >
       <div
-        class="StyledBox-bStriS fGuGjB"
+        class="StyledBox-bStriS djbAkW"
       >
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-bStriS jGhOhz"
           id="1"
         />
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-bStriS jGhOhz"
           id="2"
         />
       </div>
@@ -60,14 +60,14 @@ exports[`Diagram color 1`] = `
       class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
     >
       <div
-        class="StyledBox-bStriS fGuGjB"
+        class="StyledBox-bStriS djbAkW"
       >
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-bStriS jGhOhz"
           id="1"
         />
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-bStriS jGhOhz"
           id="2"
         />
       </div>
@@ -109,14 +109,14 @@ exports[`Diagram offset 1`] = `
       class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
     >
       <div
-        class="StyledBox-bStriS fGuGjB"
+        class="StyledBox-bStriS djbAkW"
       >
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-bStriS jGhOhz"
           id="1"
         />
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-bStriS jGhOhz"
           id="2"
         />
       </div>
@@ -174,14 +174,14 @@ exports[`Diagram thickness renders 1`] = `
       class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
     >
       <div
-        class="StyledBox-bStriS fGuGjB"
+        class="StyledBox-bStriS djbAkW"
       >
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-bStriS jGhOhz"
           id="1"
         />
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-bStriS jGhOhz"
           id="2"
         />
       </div>
@@ -239,14 +239,14 @@ exports[`Diagram type 1`] = `
       class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
     >
       <div
-        class="StyledBox-bStriS fGuGjB"
+        class="StyledBox-bStriS djbAkW"
       >
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-bStriS jGhOhz"
           id="1"
         />
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-bStriS jGhOhz"
           id="2"
         />
       </div>
