@@ -24,8 +24,12 @@ class CenterLayer extends Component {
 
   onClose = () => this.setState({ open: undefined })
 
+  onOpen2 = () => this.setState({ open2: true })
+
+  onClose2 = () => this.setState({ open2: undefined })
+
   render() {
-    const { open } = this.state;
+    const { open, open2 } = this.state;
     return (
       <Grommet>
         <Button
@@ -53,8 +57,8 @@ class CenterLayer extends Component {
                 pad={{ top: 'medium', bottom: 'small' }}
               >
                 <Button
-                  label='Cancel'
-                  onClick={this.onClose}
+                  label='Open 2'
+                  onClick={this.onOpen2}
                   color='dark-6'
                 />
                 <Button
@@ -66,6 +70,32 @@ class CenterLayer extends Component {
                   onClick={this.onClose}
                   primary={true}
                   color='status-critical'
+                />
+              </Box>
+            </Box>
+          </Layer>
+        )}
+        {open2 && (
+          <Layer
+            position='top'
+            modal={true}
+            onClickOutside={this.onClose2}
+            onEsc={this.onClose2}
+          >
+            <Box pad='medium' gap='small' width='medium'>
+              <Heading level={3} margin='none'>Confirm 2</Heading>
+              <Box
+                tag='footer'
+                gap='small'
+                direction='row'
+                align='center'
+                justify='end'
+                pad={{ top: 'medium', bottom: 'small' }}
+              >
+                <Button
+                  label='Close'
+                  onClick={this.onClose2}
+                  color='dark-6'
                 />
               </Box>
             </Box>

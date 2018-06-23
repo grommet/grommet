@@ -65,7 +65,7 @@ export const getBodyChildElements = () => {
 export const getNewContainer = () => {
   // setup DOM
   const container = document.createElement('div');
-  document.body.insertBefore(container, document.body.firstChild);
+  document.body.appendChild(container);
   return container;
 };
 

@@ -43,18 +43,36 @@ describe('Layer', () => {
   afterEach(cleanup);
 
   ['top', 'bottom', 'left', 'right', 'center'].forEach(position => (
-    [true, false, 'horizontal', 'vertical'].forEach(full => (
-      ['none', 'xsmall', 'small', 'medium', 'large'].forEach(margin => (
-        test(`position ${position} full ${full} margin ${margin}`, () => {
-          renderIntoDocument(
-            <Layer id='position-test' position={position} full={full} margin={margin}>
-              This is a layer
-            </Layer>
-          );
-          expectPortal('position-test').toMatchSnapshot();
-        })
-      ))
-    ))
+    test(`position ${position}`, () => {
+      renderIntoDocument(
+        <Layer id='position-test' position={position}>
+          This is a layer
+        </Layer>
+      );
+      expectPortal('position-test').toMatchSnapshot();
+    })
+  ));
+
+  [true, false, 'horizontal', 'vertical'].forEach(full => (
+    test(`full ${full}`, () => {
+      renderIntoDocument(
+        <Layer id='full-test' full={full}>
+          This is a layer
+        </Layer>
+      );
+      expectPortal('full-test').toMatchSnapshot();
+    })
+  ));
+
+  ['none', 'xsmall', 'small', 'medium', 'large'].forEach(margin => (
+    test(`margin ${margin}`, () => {
+      renderIntoDocument(
+        <Layer id='margin-test' margin={margin}>
+          This is a layer
+        </Layer>
+      );
+      expectPortal('margin-test').toMatchSnapshot();
+    })
   ));
 
   test('hidden', () => {
