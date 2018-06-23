@@ -143,7 +143,7 @@ class Diagram extends Component {
             parseMetricToNum(theme.global.edgeSize[offset]) : 0;
           const d = COMMANDS[type || 'curved'](points[0], points[1], offsetWidth);
           const strokeWidth = thickness ?
-            parseMetricToNum(theme.global.edgeSize[thickness]) : 1;
+            parseMetricToNum(theme.global.edgeSize[thickness] || thickness) : 1;
 
           path = (
             <path

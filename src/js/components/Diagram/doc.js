@@ -18,7 +18,7 @@ export default (Diagram) => {
       ]).isRequired,
       label: PropTypes.string, // for accessibility
       offset: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
-      thickness: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
+      thickness: PropTypes.oneOf(['hair', 'xxsmall', 'xsmall', 'small', 'medium', 'large']),
       toTarget: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.object,

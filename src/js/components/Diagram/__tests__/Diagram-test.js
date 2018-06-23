@@ -81,9 +81,12 @@ describe('Diagram', () => {
       <Context>
         <Diagram
           connections={[
+            { fromTarget: '1', toTarget: '2', thickness: 'hair' },
+            { fromTarget: '1', toTarget: '2', thickness: 'xxsmall' },
             { fromTarget: '1', toTarget: '2', thickness: 'xsmall' },
             { fromTarget: '1', toTarget: '2', thickness: 'small' },
             { fromTarget: '1', toTarget: '2', thickness: 'medium' },
+            { fromTarget: '1', toTarget: '2', thickness: '5px' },
           ]}
         />
       </Context>

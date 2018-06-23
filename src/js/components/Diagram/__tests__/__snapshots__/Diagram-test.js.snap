@@ -195,6 +195,22 @@ exports[`Diagram thickness renders 1`] = `
             stroke="#FD6FFF"
             stroke-linecap="butt"
             stroke-linejoin="miter"
+            stroke-width="1"
+          />
+          <path
+            d="M 0,0 Q 0,0 0,0 T 0,0"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="3"
+          />
+          <path
+            d="M 0,0 Q 0,0 0,0 T 0,0"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
             stroke-width="6"
           />
           <path
@@ -212,6 +228,14 @@ exports[`Diagram thickness renders 1`] = `
             stroke-linecap="butt"
             stroke-linejoin="miter"
             stroke-width="24"
+          />
+          <path
+            d="M 0,0 Q 0,0 0,0 T 0,0"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="5"
           />
         </g>
       </svg>

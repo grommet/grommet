@@ -33,6 +33,8 @@ Required. Array of objects describing the connections.
     medium
     large,
   thickness: 
+    hair
+    xxsmall
     xsmall
     small
     medium
