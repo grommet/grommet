@@ -8,7 +8,7 @@ exports[`DropButton close by clicking outside 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-bStriS jvHfNb"
+    class="StyledBox-bStriS lnphCz"
   >
     <span
       class="StyledText-eJMSZI WtHkG"
@@ -31,26 +31,19 @@ exports[`DropButton close by clicking outside 2`] = `
 
 exports[`DropButton close by clicking outside 3`] = `
 "@media only screen and (max-width:699px) {
-  .jvHfNb {
+  .lnphCz {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jvHfNb {
+  .lnphCz {
     padding: 0;
   }
 }
 
 @media only screen and (min-width:700px) {
   .eVJqlx {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .hRAEFm {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -70,6 +63,7 @@ exports[`DropButton closed 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -163,7 +157,7 @@ exports[`DropButton disabled 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-bStriS jvHfNb"
+    class="StyledBox-bStriS lnphCz"
   >
     <span
       class="StyledText-eJMSZI WtHkG"
@@ -184,7 +178,7 @@ exports[`DropButton open and close 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-bStriS jvHfNb"
+    class="StyledBox-bStriS lnphCz"
   >
     <span
       class="StyledText-eJMSZI WtHkG"
@@ -207,13 +201,13 @@ exports[`DropButton open and close 2`] = `
 
 exports[`DropButton open and close 3`] = `
 "@media only screen and (max-width:699px) {
-  .jvHfNb {
+  .lnphCz {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jvHfNb {
+  .lnphCz {
     padding: 0;
   }
 }
@@ -239,6 +233,7 @@ exports[`DropButton opened 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -331,7 +326,7 @@ exports[`DropButton opened ref 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-bStriS jvHfNb"
+    class="StyledBox-bStriS lnphCz"
   >
     <span
       class="StyledText-eJMSZI WtHkG"
@@ -354,26 +349,19 @@ exports[`DropButton opened ref 2`] = `
 
 exports[`DropButton opened ref 3`] = `
 "@media only screen and (max-width:699px) {
-  .jvHfNb {
+  .lnphCz {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jvHfNb {
+  .lnphCz {
     padding: 0;
   }
 }
 
 @media only screen and (min-width:700px) {
   .eVJqlx {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .hRAEFm {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

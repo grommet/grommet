@@ -320,10 +320,6 @@ export default deepFreeze({
     },
   },
   checkBox: {
-    check: {
-      color: css`${props => props.theme.global.colors.brand}`,
-      width: '4px',
-    },
     border: {
       color: {
         dark: 'rgba(255, 255, 255, 0.5)',
@@ -331,6 +327,21 @@ export default deepFreeze({
       },
       radius: '4px',
       width: '2px',
+    },
+    check: {
+      color: css`${props => props.theme.global.colors.brand}`,
+      width: '4px',
+    },
+    icons: {
+      // checked: undefined,
+    },
+    hover: {
+      border: {
+        color: {
+          dark: css`${props => colorForName('white', props.theme)}`,
+          light: css`${props => colorForName('black', props.theme)}`,
+        },
+      },
     },
     size: `${baseSpacing}px`,
     toggle: {
@@ -482,6 +493,11 @@ export default deepFreeze({
     icons: {
       down: FormDown,
     },
+    // searchInput: undefined,
+    drop: {
+      maxHeight: '384px',
+    },
+    step: 20,
   },
   text: {
     medium: { size: '16px', height: 1.375 },
@@ -491,6 +507,9 @@ export default deepFreeze({
     xlarge: { size: '32px', height: 1.1875 },
     xxlarge: { size: '48px', height: 1.125 },
   },
+  // textInput: {
+  //   extend: undefined,
+  // },
   video: {
     captions: {
       background: rgba(0, 0, 0, 0.7),

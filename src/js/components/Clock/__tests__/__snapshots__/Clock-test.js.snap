@@ -30,6 +30,7 @@ exports[`Clock hourLimit 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -243,7 +244,7 @@ exports[`Clock run 1`] = `
     />
   </svg>
   <div
-    class="StyledBox-bStriS fGuGjB"
+    class="StyledBox-bStriS djbAkW"
   >
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
@@ -287,7 +288,7 @@ exports[`Clock run 1`] = `
     </div>
   </div>
   <div
-    class="StyledBox-bStriS fGuGjB"
+    class="StyledBox-bStriS djbAkW"
   >
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
@@ -416,7 +417,7 @@ exports[`Clock run 2`] = `
     />
   </svg>
   <div
-    class="StyledBox-bStriS fGuGjB"
+    class="StyledBox-bStriS djbAkW"
   >
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
@@ -460,7 +461,7 @@ exports[`Clock run 2`] = `
     </div>
   </div>
   <div
-    class="StyledBox-bStriS fGuGjB"
+    class="StyledBox-bStriS djbAkW"
   >
     <div
       class="StyledClock__StyledDigitalDigit-gzYAKe iDylXN"
@@ -536,6 +537,7 @@ exports[`Clock time 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -1955,6 +1957,7 @@ exports[`Clock type digital precision hours size large 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2027,6 +2030,7 @@ exports[`Clock type digital precision hours size medium 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2099,6 +2103,7 @@ exports[`Clock type digital precision hours size small 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2171,6 +2176,7 @@ exports[`Clock type digital precision hours size xlarge 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2243,6 +2249,7 @@ exports[`Clock type digital precision hours size xsmall 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2315,6 +2322,7 @@ exports[`Clock type digital precision minutes size large 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2405,6 +2413,7 @@ exports[`Clock type digital precision minutes size medium 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2495,6 +2504,7 @@ exports[`Clock type digital precision minutes size small 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2585,6 +2595,7 @@ exports[`Clock type digital precision minutes size xlarge 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2675,6 +2686,7 @@ exports[`Clock type digital precision minutes size xsmall 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2765,6 +2777,7 @@ exports[`Clock type digital precision seconds size large 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2873,6 +2886,7 @@ exports[`Clock type digital precision seconds size medium 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2981,6 +2995,7 @@ exports[`Clock type digital precision seconds size small 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -3089,6 +3104,7 @@ exports[`Clock type digital precision seconds size xlarge 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -3197,6 +3213,7 @@ exports[`Clock type digital precision seconds size xsmall 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;

@@ -59,8 +59,8 @@ const basisStyle = css`
 // we assume we are in the context of a Box going the other direction
 // TODO: revisit this
 const directionStyle = css`
-  ${props => props.directionProp === 'row' && 'min-height: 0;'}
-  ${props => props.directionProp === 'column' && 'min-width: 0;'}
+  min-width: 0;
+  min-height: 0;
   flex-direction: ${props =>
     (props.directionProp === 'row-responsive' ? 'row' : props.directionProp)};
   ${props => (props.directionProp === 'row-responsive' ? palm(`

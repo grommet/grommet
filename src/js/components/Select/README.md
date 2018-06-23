@@ -27,6 +27,14 @@ Function that will be called when each option is rendered.
 function
 ```
 
+**closeOnChange**
+
+Wether to close the drop when a selection is made. Defaults to `true`.
+
+```
+boolean
+```
+
 **disabled**
 
 Whether the select should be disabled.

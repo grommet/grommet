@@ -1,7 +1,15 @@
-import React, { Component } from 'react';
+import React, { createRef, Component } from 'react';
 import { findDOMNode } from 'react-dom';
+import styled from 'styled-components';
 
-import { debounce } from '../../utils';
+import {
+  debounce,
+  isNodeAfterScroll,
+  isNodeBeforeScroll,
+  setFocusWithoutScroll,
+} from '../../utils';
+
+import { withTheme } from '../hocs';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
@@ -9,6 +17,11 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
+
+const SelectContainerBox = styled(Box)`
+  max-height: ${props => props.theme.select.drop.maxHeight};
+  scroll-behavior: 'smooth';
+`;
 
 class SelectContainer extends Component {
   state = {
@@ -18,7 +31,10 @@ class SelectContainer extends Component {
   static defaultProps = {
     value: '',
   }
+
   optionsRef = {}
+  searchRef = createRef()
+  selectRef = createRef()
 
   componentDidMount() {
     const { onSearch } = this.props;
@@ -26,19 +42,14 @@ class SelectContainer extends Component {
     // to be available
     setTimeout(() => {
       if (onSearch) {
-        findDOMNode(this.searchRef).querySelector('input').focus();
+        const input = findDOMNode(this.searchRef.current);
+        if (input && input.focus) {
+          setFocusWithoutScroll(input);
+        }
       } else if (this.selectRef) {
-        findDOMNode(this.selectRef).focus();
+        setFocusWithoutScroll(findDOMNode(this.selectRef.current));
       }
     }, 0);
-  }
-
-  componentDidUpdate() {
-    const { activeIndex } = this.state;
-    const buttonNode = findDOMNode(this.optionsRef[activeIndex]);
-    if (activeIndex >= 0 && buttonNode && buttonNode.scrollIntoView) {
-      buttonNode.scrollIntoView();
-    }
   }
 
   onInput = (event) => {
@@ -48,7 +59,9 @@ class SelectContainer extends Component {
     );
   }
 
-  onSearch = debounce(search => this.props.onSearch(search), 150)
+  // wait 300ms of idle time before notifying that the search changed
+  // 300ms seems like the right amount to wait for after the used stopped typing
+  onSearch = debounce(search => this.props.onSearch(search), 300)
 
   selectOption = (option, index) => {
     const { multiple, onChange, options, selected } = this.props;
@@ -75,7 +88,7 @@ class SelectContainer extends Component {
       }
 
       onChange({
-        target: findDOMNode(this.inputRef),
+        target: findDOMNode(this.searchRef.current),
         option,
         value: nextValue,
         selected: nextSelected,
@@ -88,14 +101,28 @@ class SelectContainer extends Component {
     const { activeIndex } = this.state;
     event.preventDefault();
     const index = Math.min(activeIndex + 1, options.length - 1);
-    this.setState({ activeIndex: index });
+    this.setState({ activeIndex: index }, () => {
+      const buttonNode = findDOMNode(this.optionsRef[index]);
+      const selectNode = findDOMNode(this.selectRef.current);
+
+      if (isNodeAfterScroll(buttonNode, selectNode) && selectNode.scrollBy) {
+        selectNode.scrollBy(0, buttonNode.getBoundingClientRect().height);
+      }
+    });
   }
 
   onPreviousOption = (event) => {
     const { activeIndex } = this.state;
     event.preventDefault();
     const index = Math.max(activeIndex - 1, 0);
-    this.setState({ activeIndex: index });
+    this.setState({ activeIndex: index }, () => {
+      const buttonNode = findDOMNode(this.optionsRef[index]);
+      const selectNode = findDOMNode(this.selectRef.current);
+
+      if (isNodeBeforeScroll(buttonNode, selectNode) && selectNode.scrollBy) {
+        selectNode.scrollBy(0, -buttonNode.getBoundingClientRect().height);
+      }
+    });
   }
 
   onSelectOption = (event) => {
@@ -110,7 +137,6 @@ class SelectContainer extends Component {
   render() {
     const {
       children,
-      dropBackground,
       id,
       name,
       onKeyDown,
@@ -118,9 +144,13 @@ class SelectContainer extends Component {
       options,
       searchPlaceholder,
       selected,
+      theme,
       value,
     } = this.props;
     const { activeIndex, search } = this.state;
+
+    const customSearchInput = theme.select.searchInput;
+    const SelectTextInput = customSearchInput || TextInput;
 
     return (
       <Keyboard
@@ -131,31 +161,32 @@ class SelectContainer extends Component {
       >
         <Box
           id={id ? `${id}__select-drop` : undefined}
-          background={dropBackground}
         >
-          {onSearch ? (
-            <Box pad='xsmall'>
-              <TextInput
-                focusIndicator={true}
+          {onSearch && (
+            <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
+              <SelectTextInput
+                focusIndicator={!customSearchInput}
                 size='small'
-                ref={(ref) => { this.searchRef = ref; }}
+                ref={this.searchRef}
                 type='search'
                 value={search}
                 placeholder={searchPlaceholder}
                 onInput={this.onInput}
               />
             </Box>
-          ) : undefined}
-
-          <Box
-            flex={false}
+          )}
+          <SelectContainerBox
+            flex={true}
             role='menubar'
             tabIndex='-1'
-            ref={(ref) => { this.selectRef = ref; }}
+            ref={this.selectRef}
+            overflow='auto'
+            theme={theme}
           >
-            <InfiniteScroll items={options} step={20}>
+            <InfiniteScroll items={options} step={theme.select.step}>
               {(option, index) => (
                 <Button
+                  fill={true}
                   role='menuitem'
                   ref={(ref) => { this.optionsRef[index] = ref; }}
                   active={
@@ -180,11 +211,11 @@ class SelectContainer extends Component {
                 </Button>
               )}
             </InfiniteScroll>
-          </Box>
+          </SelectContainerBox>
         </Box>
       </Keyboard>
     );
   }
 }
 
-export default SelectContainer;
+export default withTheme(SelectContainer);
