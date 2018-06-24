@@ -256,10 +256,14 @@ const buildInteractiveProps =
 });
 
 class WorldMap extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = updateState(buildState(), props);
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (!prevState.continents) {
+      return updateState(buildState(), nextProps);
+    }
+    return updateState(prevState, nextProps);
   }
+
+  state = {}
 
   onMouseOver = () => {
     // track when we're over the map to avoid dealing with mouse moves
