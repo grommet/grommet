@@ -22,6 +22,10 @@ Required. Array of objects describing the connections.
 
 ```
 [{
+  anchor: 
+    center
+    vertical
+    horizontal,
   color: string,
   fromTarget: 
     string
@@ -33,6 +37,8 @@ Required. Array of objects describing the connections.
     medium
     large,
   thickness: 
+    hair
+    xxsmall
     xsmall
     small
     medium

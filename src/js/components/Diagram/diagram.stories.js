@@ -21,6 +21,7 @@ const Node = ({ id, ...rest }) => (
 const connection = (fromTarget, toTarget, { color, ...rest } = {}) => ({
   fromTarget,
   toTarget,
+  anchor: 'vertical',
   color: (color || 'accent-1'),
   thickness: 'xsmall',
   round: true,
@@ -35,19 +36,20 @@ class SimpleDiagram extends Component {
         <Stack>
           <Box>
             <Box direction='row'>
-              {[1, 2].map(id => (
+              {[1, 2, 3].map(id => (
                 <Node key={id} id={id} />
               ))}
             </Box>
             <Box direction='row'>
-              {[3, 4].map(id => (
+              {[4, 5].map(id => (
                 <Node key={id} id={id} background='neutral-2' />
               ))}
             </Box>
           </Box>
           <Diagram
             connections={[
-              connection('1', '4', { color: 'accent-2' }),
+              connection('1', '5', { color: 'accent-2' }),
+              connection('3', '5', { color: 'accent-2', anchor: 'horizontal' }),
             ]}
           />
         </Stack>

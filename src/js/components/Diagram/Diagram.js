@@ -22,27 +22,43 @@ const computeMidPoint = (fromPoint, toPoint) => ([
 ]);
 
 const COMMANDS = {
-  curved: (fromPoint, toPoint, offset) => {
+  curved: (fromPoint, toPoint, offset, anchor) => {
     const midPoint = computeMidPoint(fromPoint, toPoint);
-    return (
-      `M ${fromPoint[0] + offset},${fromPoint[1] + offset} ` +
-      `Q ${fromPoint[0] + offset},${midPoint[1] + offset} ` +
-      `${midPoint[0] + offset},${midPoint[1] + offset} ` +
-      `T ${toPoint[0] + offset},${toPoint[1] + offset}`
-    );
+    let cmds = `M ${fromPoint[0] + offset},${fromPoint[1] + offset} `;
+    if (anchor === 'horizontal') {
+      cmds += (
+        `Q ${midPoint[0] + offset},${fromPoint[1] + offset} ` +
+        `${midPoint[0] + offset},${midPoint[1] + offset} `
+      );
+    } else {
+      cmds += (
+        `Q ${fromPoint[0] + offset},${midPoint[1] + offset} ` +
+        `${midPoint[0] + offset},${midPoint[1] + offset} `
+      );
+    }
+    cmds += `T ${toPoint[0] + offset},${toPoint[1] + offset}`;
+    return cmds;
   },
   direct: (fromPoint, toPoint, offset) => (
     `M ${fromPoint[0] + offset},${fromPoint[1] + offset} ` +
     `L ${toPoint[0] + offset},${toPoint[1] + offset}`
   ),
-  rectilinear: (fromPoint, toPoint, offset) => {
+  rectilinear: (fromPoint, toPoint, offset, anchor) => {
     const midPoint = computeMidPoint(fromPoint, toPoint);
-    return (
-      `M ${fromPoint[0] + offset},${fromPoint[1] + offset} ` +
-      `L ${fromPoint[0] + offset},${midPoint[1] + offset} ` +
-      `L ${toPoint[0] + offset},${midPoint[1] + offset} ` +
-      `L ${toPoint[0] + offset},${toPoint[1] + offset}`
-    );
+    let cmds = `M ${fromPoint[0] + offset},${fromPoint[1] + offset} `;
+    if (anchor === 'horizontal') {
+      cmds += (
+        `L ${midPoint[0] + offset},${fromPoint[1] + offset} ` +
+        `L ${midPoint[0] + offset},${toPoint[1] + offset} `
+      );
+    } else {
+      cmds += (
+        `L ${fromPoint[0] + offset},${midPoint[1] + offset} ` +
+        `L ${toPoint[0] + offset},${midPoint[1] + offset} `
+      );
+    }
+    cmds += `L ${toPoint[0] + offset},${toPoint[1] + offset}`;
+    return cmds;
   },
 };
 
@@ -57,7 +73,7 @@ class Diagram extends Component {
   static defaultProps = { connections: [] };
 
   state = { height: 0, width: 0 }
-  containerRef = React.createRef();
+  svgRef = React.createRef();
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize);
@@ -74,9 +90,9 @@ class Diagram extends Component {
 
   onResize = () => {
     const { connectionPoints, width, height } = this.state;
-    const parent = findDOMNode(this.containerRef.current).parentNode;
-    if (parent) {
-      const rect = parent.getBoundingClientRect();
+    const svg = findDOMNode(this.svgRef.current);
+    if (svg) {
+      const rect = svg.getBoundingClientRect();
       if (rect.width !== width || rect.height !== height) {
         this.setState({
           width: rect.width,
@@ -92,8 +108,8 @@ class Diagram extends Component {
   placeConnections() {
     const { connections } = this.props;
     const containerRect =
-      findDOMNode(this.containerRef.current).getBoundingClientRect();
-    const connectionPoints = connections.map(({ fromTarget, toTarget }) => {
+      findDOMNode(this.svgRef.current).getBoundingClientRect();
+    const connectionPoints = connections.map(({ anchor, fromTarget, toTarget }) => {
       let points;
       const fromElement = findTarget(fromTarget);
       const toElement = findTarget(toTarget);
@@ -109,13 +125,35 @@ class Diagram extends Component {
         const toRect = toElement.getBoundingClientRect();
         // There is no x and y when unit testing.
         const fromPoint = [
-          (fromRect.x - containerRect.x) + (fromRect.width / 2) || 0,
-          (fromRect.y - containerRect.y) + (fromRect.height / 2) || 0,
+          (fromRect.x - containerRect.x) || 0,
+          (fromRect.y - containerRect.y) || 0,
         ];
         const toPoint = [
-          (toRect.x - containerRect.x) + (toRect.width / 2) || 0,
-          (toRect.y - containerRect.y) + (toRect.height / 2) || 0,
+          (toRect.x - containerRect.x) || 0,
+          (toRect.y - containerRect.y) || 0,
         ];
+        if (anchor === 'vertical') {
+          fromPoint[0] += (fromRect.width / 2);
+          toPoint[0] += (toRect.width / 2);
+          if (fromRect.y < toRect.y) {
+            fromPoint[1] += fromRect.height;
+          } else {
+            toPoint[1] += toRect.height;
+          }
+        } else if (anchor === 'horizontal') {
+          fromPoint[1] += (fromRect.height / 2);
+          toPoint[1] += (toRect.height / 2);
+          if (fromRect.x < toRect.x) {
+            fromPoint[0] += fromRect.width;
+          } else {
+            toPoint[0] += toRect.width;
+          }
+        } else { // center
+          fromPoint[0] += (fromRect.width / 2);
+          fromPoint[1] += (fromRect.height / 2);
+          toPoint[0] += (toRect.width / 2);
+          toPoint[1] += (toRect.height / 2);
+        }
         points = [fromPoint, toPoint];
       }
 
@@ -131,7 +169,7 @@ class Diagram extends Component {
     let paths;
     if (connectionPoints) {
       paths = connections.map(({
-        color, offset, round, thickness, type, ...connectionRest
+        anchor, color, offset, round, thickness, type, ...connectionRest
       }, index) => {
         let path;
         const cleanedRest = { ...connectionRest };
@@ -141,9 +179,10 @@ class Diagram extends Component {
         if (points) {
           const offsetWidth = offset ?
             parseMetricToNum(theme.global.edgeSize[offset]) : 0;
-          const d = COMMANDS[type || 'curved'](points[0], points[1], offsetWidth);
+          const d =
+            COMMANDS[type || 'curved'](points[0], points[1], offsetWidth, anchor);
           const strokeWidth = thickness ?
-            parseMetricToNum(theme.global.edgeSize[thickness]) : 1;
+            parseMetricToNum(theme.global.edgeSize[thickness] || thickness) : 1;
 
           path = (
             <path
@@ -165,11 +204,9 @@ class Diagram extends Component {
 
     return (
       <StyledDiagram
-        ref={this.containerRef}
+        ref={this.svgRef}
         viewBox={`0 0 ${width} ${height}`}
         preserveAspectRatio='xMinYMin meet'
-        width={width}
-        height={height}
         {...rest}
       >
         <g>

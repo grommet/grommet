@@ -19,5 +19,5 @@ components(FOLDER).forEach((component) => {
 
   const destination = path.join(FOLDER, component, 'README.md');
 
-  del(destination).then(() => fs.writeFile(destination, doc(Component).toMarkdown()));
+  del(destination).then(() => fs.writeFileSync(destination, doc(Component).toMarkdown()));
 });
