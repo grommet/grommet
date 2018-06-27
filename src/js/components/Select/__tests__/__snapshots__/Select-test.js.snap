@@ -396,7 +396,7 @@ exports[`Select complex options and children 3`] = `
     id="test-select__select-drop"
   >
     <div
-      class="SelectContainer__SelectContainerBox-bVzwkD kRqmwH StyledBox-bStriS kRbxno"
+      class="SelectContainer__SelectContainerBox-bVzwkD fjNCpU StyledBox-bStriS kRbxno"
       role="menubar"
       tabindex="-1"
     >
@@ -1119,7 +1119,7 @@ exports[`Select multiple values 3`] = `
     id="test-select__select-drop"
   >
     <div
-      class="SelectContainer__SelectContainerBox-bVzwkD kRqmwH StyledBox-bStriS kRbxno"
+      class="SelectContainer__SelectContainerBox-bVzwkD fjNCpU StyledBox-bStriS kRbxno"
       role="menubar"
       tabindex="-1"
     >
@@ -1436,7 +1436,7 @@ exports[`Select opens 3`] = `
     id="test-select__select-drop"
   >
     <div
-      class="SelectContainer__SelectContainerBox-bVzwkD kRqmwH StyledBox-bStriS kRbxno"
+      class="SelectContainer__SelectContainerBox-bVzwkD fjNCpU StyledBox-bStriS kRbxno"
       role="menubar"
       tabindex="-1"
     >
@@ -1602,7 +1602,7 @@ exports[`Select opens 4`] = `
 
 exports[`Select opens 5`] = `
 <div
-  class="SelectContainer__SelectContainerBox-bVzwkD kRqmwH StyledBox-bStriS kRbxno"
+  class="SelectContainer__SelectContainerBox-bVzwkD fjNCpU StyledBox-bStriS kRbxno"
   role="menubar"
   tabindex="-1"
 >
@@ -1720,7 +1720,7 @@ exports[`Select search 2`] = `
       </div>
     </div>
     <div
-      class="SelectContainer__SelectContainerBox-bVzwkD kRqmwH StyledBox-bStriS kRbxno"
+      class="SelectContainer__SelectContainerBox-bVzwkD fjNCpU StyledBox-bStriS kRbxno"
       role="menubar"
       tabindex="-1"
     >
