@@ -20,7 +20,7 @@ import { TextInput } from '../TextInput';
 
 const SelectContainerBox = styled(Box)`
   max-height: ${props => props.theme.select.drop.maxHeight};
-  scroll-behavior: 'smooth';
+  scroll-behavior: smooth;
 `;
 
 class SelectContainer extends Component {
