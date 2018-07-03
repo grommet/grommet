@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
 import { Box } from '../Box';
@@ -228,7 +229,13 @@ class TextInput extends Component {
           align={dropAlign}
           responsive={false}
           target={dropTarget || inputRef.current}
-          onClickOutside={() => this.setState({ showDrop: false })}
+          onClickOutside={(event) => {
+            if (findDOMNode(inputRef.current).contains(event.target)) {
+              // The input was clicked. Do not hide the drop.
+              return;
+            }
+            this.setState({ showDrop: false });
+          }}
           onEsc={() => this.setState({ showDrop: false })}
         >
           {this.renderSuggestions()}
@@ -260,6 +267,7 @@ class TextInput extends Component {
             value={renderLabel(value)}
             onFocus={(event) => {
               this.announceSuggestionsExist();
+              this.resetSuggestions();
               if (onFocus) {
                 onFocus(event);
               }

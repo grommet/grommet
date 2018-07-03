@@ -51,7 +51,7 @@ class DropContainer extends Component {
     const { onClickOutside } = this.props;
     if (!findDOMNode(this.dropRef).contains(event.target)) {
       if (onClickOutside) {
-        onClickOutside();
+        onClickOutside(event);
       }
     }
   }
