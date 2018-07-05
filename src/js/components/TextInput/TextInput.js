@@ -260,6 +260,7 @@ class TextInput extends Component {
             value={renderLabel(value)}
             onFocus={(event) => {
               this.announceSuggestionsExist();
+              this.resetSuggestions();
               if (onFocus) {
                 onFocus(event);
               }
