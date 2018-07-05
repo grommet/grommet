@@ -324,6 +324,11 @@ exports[`TableCell scope renders 1`] = `
   padding-bottom: 6px;
 }
 
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
 .c2 {
   margin: 0;
   padding: 0;
@@ -337,11 +342,6 @@ exports[`TableCell scope renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-}
-
-.c1 {
-  border-spacing: 0;
-  border-collapse: collapse;
 }
 
 @media only screen and (max-width:699px) {
