@@ -291,17 +291,6 @@ between
 end
 ```
 
-**justifySelf**
-
-How to align along the row axis when contained in a Grid.
-
-```
-start
-center
-end
-stretch
-```
-
 **margin**
 
 The amount of margin around the box. An object can
