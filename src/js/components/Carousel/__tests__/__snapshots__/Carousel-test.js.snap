@@ -668,65 +668,65 @@ exports[`Carousel basic 1`] = `
 
 exports[`Carousel navigate 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledStack-jqCQsC ewABiA"
+    class="StyledStack-jtPAMP bgKQVO"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-bStriS dEjxGL"
+        class="StyledBox-YaZNy hJvMaG"
       >
         <div
-          class="StyledBox-bStriS dIoGZN"
+          class="StyledBox-YaZNy hQeqTY"
         >
           <img
-            class="StyledImage-iWJlTu ealRJb"
+            class="StyledImage-dKPlqa cdkiLG"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <div
-        class="StyledBox-bStriS dEjxGL"
+        class="StyledBox-YaZNy hJvMaG"
       >
         <div
-          class="StyledBox-bStriS dLaQOg"
+          class="StyledBox-YaZNy kYhseN"
         >
           <img
-            class="StyledImage-iWJlTu ealRJb"
+            class="StyledImage-dKPlqa cdkiLG"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <div
-        class="StyledBox-bStriS kTBecz"
+        class="StyledBox-YaZNy eUXrhB"
         tabindex="0"
       >
         <div
-          class="StyledBox-bStriS jMLBlZ"
+          class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-gXzblK bWsUxq"
+            class="StyledButton-qbvYY keldPn"
             disabled=""
             type="button"
           >
             <div
-              class="StyledBox-bStriS bqcypy"
+              class="StyledBox-YaZNy lckMqu"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-gTfjEw htxeRg"
+                class="StyledIcon-hcpUvT fAeuhQ"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -745,22 +745,22 @@ exports[`Carousel navigate 1`] = `
           </button>
         </div>
         <div
-          class="StyledBox-bStriS dWwotI"
+          class="StyledBox-YaZNy rlMvG"
         >
           <div
-            class="StyledBox-bStriS klNMGC"
+            class="StyledBox-YaZNy hPUIyd"
           >
             <button
-              class="StyledButton-gXzblK bbflvf"
+              class="StyledButton-qbvYY kidNzX"
               icon="[object Object]"
               type="button"
             >
               <div
-                class="StyledBox-bStriS bcqBYJ"
+                class="StyledBox-YaZNy kUUEIY"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-gTfjEw FYCct"
+                  class="StyledIcon-hcpUvT bAonn"
                   color="brand"
                   height="24px"
                   role="img"
@@ -778,16 +778,16 @@ exports[`Carousel navigate 1`] = `
               </div>
             </button>
             <button
-              class="StyledButton-gXzblK bbflvf"
+              class="StyledButton-qbvYY kidNzX"
               icon="[object Object]"
               type="button"
             >
               <div
-                class="StyledBox-bStriS bcqBYJ"
+                class="StyledBox-YaZNy kUUEIY"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-gTfjEw htxeRg"
+                  class="StyledIcon-hcpUvT fAeuhQ"
                   height="24px"
                   role="img"
                   version="1.1"
@@ -806,18 +806,18 @@ exports[`Carousel navigate 1`] = `
           </div>
         </div>
         <div
-          class="StyledBox-bStriS jMLBlZ"
+          class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-gXzblK jrAGpP"
+            class="StyledButton-qbvYY jYTBlN"
             type="button"
           >
             <div
-              class="StyledBox-bStriS bqcypy"
+              class="StyledBox-YaZNy lckMqu"
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-gTfjEw htxeRg"
+                class="StyledIcon-hcpUvT fAeuhQ"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -842,64 +842,64 @@ exports[`Carousel navigate 1`] = `
 
 exports[`Carousel navigate 2`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledStack-jqCQsC ewABiA"
+    class="StyledStack-jtPAMP bgKQVO"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <div
-        class="StyledBox-bStriS dEjxGL"
+        class="StyledBox-YaZNy hJvMaG"
       >
         <div
-          class="StyledBox-bStriS dLaQOg"
+          class="StyledBox-YaZNy kYhseN"
         >
           <img
-            class="StyledImage-iWJlTu ealRJb"
+            class="StyledImage-dKPlqa cdkiLG"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-bStriS dEjxGL"
+        class="StyledBox-YaZNy hJvMaG"
       >
         <div
-          class="StyledBox-bStriS kmekUU"
+          class="StyledBox-YaZNy iyAZEu"
         >
           <img
-            class="StyledImage-iWJlTu ealRJb"
+            class="StyledImage-dKPlqa cdkiLG"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <div
-        class="StyledBox-bStriS kTBecz"
+        class="StyledBox-YaZNy eUXrhB"
         tabindex="0"
       >
         <div
-          class="StyledBox-bStriS jMLBlZ"
+          class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-gXzblK jrAGpP"
+            class="StyledButton-qbvYY jYTBlN"
             type="button"
           >
             <div
-              class="StyledBox-bStriS bqcypy"
+              class="StyledBox-YaZNy lckMqu"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-gTfjEw htxeRg"
+                class="StyledIcon-hcpUvT fAeuhQ"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -918,22 +918,22 @@ exports[`Carousel navigate 2`] = `
           </button>
         </div>
         <div
-          class="StyledBox-bStriS dWwotI"
+          class="StyledBox-YaZNy rlMvG"
         >
           <div
-            class="StyledBox-bStriS klNMGC"
+            class="StyledBox-YaZNy hPUIyd"
           >
             <button
-              class="StyledButton-gXzblK bbflvf"
+              class="StyledButton-qbvYY kidNzX"
               icon="[object Object]"
               type="button"
             >
               <div
-                class="StyledBox-bStriS bcqBYJ"
+                class="StyledBox-YaZNy kUUEIY"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-gTfjEw htxeRg"
+                  class="StyledIcon-hcpUvT fAeuhQ"
                   height="24px"
                   role="img"
                   version="1.1"
@@ -950,16 +950,16 @@ exports[`Carousel navigate 2`] = `
               </div>
             </button>
             <button
-              class="StyledButton-gXzblK bbflvf"
+              class="StyledButton-qbvYY kidNzX"
               icon="[object Object]"
               type="button"
             >
               <div
-                class="StyledBox-bStriS bcqBYJ"
+                class="StyledBox-YaZNy kUUEIY"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-gTfjEw FYCct"
+                  class="StyledIcon-hcpUvT bAonn"
                   color="brand"
                   height="24px"
                   role="img"
@@ -979,19 +979,19 @@ exports[`Carousel navigate 2`] = `
           </div>
         </div>
         <div
-          class="StyledBox-bStriS jMLBlZ"
+          class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-gXzblK bWsUxq"
+            class="StyledButton-qbvYY keldPn"
             disabled=""
             type="button"
           >
             <div
-              class="StyledBox-bStriS bqcypy"
+              class="StyledBox-YaZNy lckMqu"
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-gTfjEw htxeRg"
+                class="StyledIcon-hcpUvT fAeuhQ"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1016,65 +1016,65 @@ exports[`Carousel navigate 2`] = `
 
 exports[`Carousel navigate 3`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledStack-jqCQsC ewABiA"
+    class="StyledStack-jtPAMP bgKQVO"
     data-testid="test-carousel"
   >
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-bStriS dEjxGL"
+        class="StyledBox-YaZNy hJvMaG"
       >
         <div
-          class="StyledBox-bStriS jxJAxx"
+          class="StyledBox-YaZNy bsrQqJ"
         >
           <img
-            class="StyledImage-iWJlTu ealRJb"
+            class="StyledImage-dKPlqa cdkiLG"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <div
-        class="StyledBox-bStriS dEjxGL"
+        class="StyledBox-YaZNy hJvMaG"
       >
         <div
-          class="StyledBox-bStriS dLaQOg"
+          class="StyledBox-YaZNy kYhseN"
         >
           <img
-            class="StyledImage-iWJlTu ealRJb"
+            class="StyledImage-dKPlqa cdkiLG"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <div
-        class="StyledBox-bStriS kTBecz"
+        class="StyledBox-YaZNy eUXrhB"
         tabindex="0"
       >
         <div
-          class="StyledBox-bStriS jMLBlZ"
+          class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-gXzblK bWsUxq"
+            class="StyledButton-qbvYY keldPn"
             disabled=""
             type="button"
           >
             <div
-              class="StyledBox-bStriS bqcypy"
+              class="StyledBox-YaZNy lckMqu"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-gTfjEw htxeRg"
+                class="StyledIcon-hcpUvT fAeuhQ"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1093,22 +1093,22 @@ exports[`Carousel navigate 3`] = `
           </button>
         </div>
         <div
-          class="StyledBox-bStriS dWwotI"
+          class="StyledBox-YaZNy rlMvG"
         >
           <div
-            class="StyledBox-bStriS klNMGC"
+            class="StyledBox-YaZNy hPUIyd"
           >
             <button
-              class="StyledButton-gXzblK bbflvf"
+              class="StyledButton-qbvYY kidNzX"
               icon="[object Object]"
               type="button"
             >
               <div
-                class="StyledBox-bStriS bcqBYJ"
+                class="StyledBox-YaZNy kUUEIY"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-gTfjEw FYCct"
+                  class="StyledIcon-hcpUvT bAonn"
                   color="brand"
                   height="24px"
                   role="img"
@@ -1126,16 +1126,16 @@ exports[`Carousel navigate 3`] = `
               </div>
             </button>
             <button
-              class="StyledButton-gXzblK bbflvf"
+              class="StyledButton-qbvYY kidNzX"
               icon="[object Object]"
               type="button"
             >
               <div
-                class="StyledBox-bStriS bcqBYJ"
+                class="StyledBox-YaZNy kUUEIY"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-gTfjEw htxeRg"
+                  class="StyledIcon-hcpUvT fAeuhQ"
                   height="24px"
                   role="img"
                   version="1.1"
@@ -1154,18 +1154,18 @@ exports[`Carousel navigate 3`] = `
           </div>
         </div>
         <div
-          class="StyledBox-bStriS jMLBlZ"
+          class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-gXzblK jrAGpP"
+            class="StyledButton-qbvYY jYTBlN"
             type="button"
           >
             <div
-              class="StyledBox-bStriS bqcypy"
+              class="StyledBox-YaZNy lckMqu"
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-gTfjEw htxeRg"
+                class="StyledIcon-hcpUvT fAeuhQ"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1190,64 +1190,64 @@ exports[`Carousel navigate 3`] = `
 
 exports[`Carousel play 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledStack-jqCQsC ewABiA"
+    class="StyledStack-jtPAMP bgKQVO"
   >
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-bStriS dEjxGL"
+        class="StyledBox-YaZNy hJvMaG"
       >
         <div
-          class="StyledBox-bStriS dIoGZN"
+          class="StyledBox-YaZNy hQeqTY"
         >
           <img
-            class="StyledImage-iWJlTu ealRJb"
+            class="StyledImage-dKPlqa cdkiLG"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <div
-        class="StyledBox-bStriS dEjxGL"
+        class="StyledBox-YaZNy hJvMaG"
       >
         <div
-          class="StyledBox-bStriS dLaQOg"
+          class="StyledBox-YaZNy kYhseN"
         >
           <img
-            class="StyledImage-iWJlTu ealRJb"
+            class="StyledImage-dKPlqa cdkiLG"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <div
-        class="StyledBox-bStriS kTBecz"
+        class="StyledBox-YaZNy eUXrhB"
         tabindex="0"
       >
         <div
-          class="StyledBox-bStriS jMLBlZ"
+          class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-gXzblK bWsUxq"
+            class="StyledButton-qbvYY keldPn"
             disabled=""
             type="button"
           >
             <div
-              class="StyledBox-bStriS bqcypy"
+              class="StyledBox-YaZNy lckMqu"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-gTfjEw htxeRg"
+                class="StyledIcon-hcpUvT fAeuhQ"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1266,22 +1266,22 @@ exports[`Carousel play 1`] = `
           </button>
         </div>
         <div
-          class="StyledBox-bStriS dWwotI"
+          class="StyledBox-YaZNy rlMvG"
         >
           <div
-            class="StyledBox-bStriS klNMGC"
+            class="StyledBox-YaZNy hPUIyd"
           >
             <button
-              class="StyledButton-gXzblK bbflvf"
+              class="StyledButton-qbvYY kidNzX"
               icon="[object Object]"
               type="button"
             >
               <div
-                class="StyledBox-bStriS bcqBYJ"
+                class="StyledBox-YaZNy kUUEIY"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-gTfjEw FYCct"
+                  class="StyledIcon-hcpUvT bAonn"
                   color="brand"
                   height="24px"
                   role="img"
@@ -1299,16 +1299,16 @@ exports[`Carousel play 1`] = `
               </div>
             </button>
             <button
-              class="StyledButton-gXzblK bbflvf"
+              class="StyledButton-qbvYY kidNzX"
               icon="[object Object]"
               type="button"
             >
               <div
-                class="StyledBox-bStriS bcqBYJ"
+                class="StyledBox-YaZNy kUUEIY"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-gTfjEw htxeRg"
+                  class="StyledIcon-hcpUvT fAeuhQ"
                   height="24px"
                   role="img"
                   version="1.1"
@@ -1327,18 +1327,18 @@ exports[`Carousel play 1`] = `
           </div>
         </div>
         <div
-          class="StyledBox-bStriS jMLBlZ"
+          class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-gXzblK jrAGpP"
+            class="StyledButton-qbvYY jYTBlN"
             type="button"
           >
             <div
-              class="StyledBox-bStriS bqcypy"
+              class="StyledBox-YaZNy lckMqu"
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-gTfjEw htxeRg"
+                class="StyledIcon-hcpUvT fAeuhQ"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1363,63 +1363,63 @@ exports[`Carousel play 1`] = `
 
 exports[`Carousel play 2`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledStack-jqCQsC ewABiA"
+    class="StyledStack-jtPAMP bgKQVO"
   >
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <div
-        class="StyledBox-bStriS dEjxGL"
+        class="StyledBox-YaZNy hJvMaG"
       >
         <div
-          class="StyledBox-bStriS dLaQOg"
+          class="StyledBox-YaZNy kYhseN"
         >
           <img
-            class="StyledImage-iWJlTu ealRJb"
+            class="StyledImage-dKPlqa cdkiLG"
             src="//v2.grommet.io/assets/IMG_4245.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-bStriS dEjxGL"
+        class="StyledBox-YaZNy hJvMaG"
       >
         <div
-          class="StyledBox-bStriS kmekUU"
+          class="StyledBox-YaZNy iyAZEu"
         >
           <img
-            class="StyledImage-iWJlTu ealRJb"
+            class="StyledImage-dKPlqa cdkiLG"
             src="//v2.grommet.io/assets/IMG_4210.jpg"
           />
         </div>
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <div
-        class="StyledBox-bStriS kTBecz"
+        class="StyledBox-YaZNy eUXrhB"
         tabindex="0"
       >
         <div
-          class="StyledBox-bStriS jMLBlZ"
+          class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-gXzblK jrAGpP"
+            class="StyledButton-qbvYY jYTBlN"
             type="button"
           >
             <div
-              class="StyledBox-bStriS bqcypy"
+              class="StyledBox-YaZNy lckMqu"
             >
               <svg
                 aria-label="Previous"
-                class="StyledIcon-gTfjEw htxeRg"
+                class="StyledIcon-hcpUvT fAeuhQ"
                 height="24px"
                 role="img"
                 version="1.1"
@@ -1438,22 +1438,22 @@ exports[`Carousel play 2`] = `
           </button>
         </div>
         <div
-          class="StyledBox-bStriS dWwotI"
+          class="StyledBox-YaZNy rlMvG"
         >
           <div
-            class="StyledBox-bStriS klNMGC"
+            class="StyledBox-YaZNy hPUIyd"
           >
             <button
-              class="StyledButton-gXzblK bbflvf"
+              class="StyledButton-qbvYY kidNzX"
               icon="[object Object]"
               type="button"
             >
               <div
-                class="StyledBox-bStriS bcqBYJ"
+                class="StyledBox-YaZNy kUUEIY"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-gTfjEw htxeRg"
+                  class="StyledIcon-hcpUvT fAeuhQ"
                   height="24px"
                   role="img"
                   version="1.1"
@@ -1470,16 +1470,16 @@ exports[`Carousel play 2`] = `
               </div>
             </button>
             <button
-              class="StyledButton-gXzblK bbflvf"
+              class="StyledButton-qbvYY kidNzX"
               icon="[object Object]"
               type="button"
             >
               <div
-                class="StyledBox-bStriS bcqBYJ"
+                class="StyledBox-YaZNy kUUEIY"
               >
                 <svg
                   aria-label="Subtract"
-                  class="StyledIcon-gTfjEw FYCct"
+                  class="StyledIcon-hcpUvT bAonn"
                   color="brand"
                   height="24px"
                   role="img"
@@ -1499,19 +1499,19 @@ exports[`Carousel play 2`] = `
           </div>
         </div>
         <div
-          class="StyledBox-bStriS jMLBlZ"
+          class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-gXzblK bWsUxq"
+            class="StyledButton-qbvYY keldPn"
             disabled=""
             type="button"
           >
             <div
-              class="StyledBox-bStriS bqcypy"
+              class="StyledBox-YaZNy lckMqu"
             >
               <svg
                 aria-label="Next"
-                class="StyledIcon-gTfjEw htxeRg"
+                class="StyledIcon-hcpUvT fAeuhQ"
                 height="24px"
                 role="img"
                 version="1.1"

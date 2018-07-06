@@ -1281,25 +1281,25 @@ exports[`TextInput direction 1`] = `
 
 exports[`TextInput handle keyboard 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledBox-bStriS hWjhqW"
+    class="StyledBox-YaZNy ftRJis"
   >
     <div
-      class="StyledBox-bStriS jMLBlZ"
+      class="StyledBox-YaZNy iLfhNe"
     />
     <div
-      class="StyledBox-bStriS iKeDii"
+      class="StyledBox-YaZNy lfjrUc"
     >
       <div
         aria-label="Lower Bounds"
-        class="StyledBox-bStriS dYznPy"
+        class="StyledBox-YaZNy kjTuna"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
-          class="StyledBox-bStriS cyQiRg"
+          class="StyledBox-YaZNy jKtfA"
         >
           <svg
             height="12"
@@ -1317,20 +1317,20 @@ exports[`TextInput handle keyboard 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS gHVGQT"
+      class="StyledBox-YaZNy inkIZG"
       style="cursor: ew-resize;"
     />
     <div
-      class="StyledBox-bStriS iKeDii"
+      class="StyledBox-YaZNy lfjrUc"
     >
       <div
         aria-label="Upper Bounds"
-        class="StyledBox-bStriS dYznPy"
+        class="StyledBox-YaZNy kjTuna"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
-          class="StyledBox-bStriS cyQiRg"
+          class="StyledBox-YaZNy jKtfA"
         >
           <svg
             height="12"
@@ -1348,7 +1348,7 @@ exports[`TextInput handle keyboard 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS jMLBlZ"
+      class="StyledBox-YaZNy iLfhNe"
     />
   </div>
 </div>
@@ -1356,25 +1356,25 @@ exports[`TextInput handle keyboard 1`] = `
 
 exports[`TextInput handle mouse 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledBox-bStriS hWjhqW"
+    class="StyledBox-YaZNy ftRJis"
   >
     <div
-      class="StyledBox-bStriS jMLBlZ"
+      class="StyledBox-YaZNy iLfhNe"
     />
     <div
-      class="StyledBox-bStriS iKeDii"
+      class="StyledBox-YaZNy lfjrUc"
     >
       <div
         aria-label="Lower Bounds"
-        class="StyledBox-bStriS dYznPy"
+        class="StyledBox-YaZNy kjTuna"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
-          class="StyledBox-bStriS cyQiRg"
+          class="StyledBox-YaZNy jKtfA"
         >
           <svg
             height="12"
@@ -1392,20 +1392,20 @@ exports[`TextInput handle mouse 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS gHVGQT"
+      class="StyledBox-YaZNy inkIZG"
       style="cursor: ew-resize;"
     />
     <div
-      class="StyledBox-bStriS iKeDii"
+      class="StyledBox-YaZNy lfjrUc"
     >
       <div
         aria-label="Upper Bounds"
-        class="StyledBox-bStriS dYznPy"
+        class="StyledBox-YaZNy kjTuna"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
-          class="StyledBox-bStriS cyQiRg"
+          class="StyledBox-YaZNy jKtfA"
         >
           <svg
             height="12"
@@ -1423,7 +1423,7 @@ exports[`TextInput handle mouse 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS jMLBlZ"
+      class="StyledBox-YaZNy iLfhNe"
     />
   </div>
 </div>

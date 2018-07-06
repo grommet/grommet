@@ -2,32 +2,32 @@
 
 exports[`Diagram anchor 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledStack-jqCQsC ewABiA"
+    class="StyledStack-jtPAMP bgKQVO"
   >
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-bStriS djbAkW"
+        class="StyledBox-YaZNy htiNkm"
       >
         <div
-          class="StyledBox-bStriS jGhOhz"
+          class="StyledBox-YaZNy eOYTpl"
           id="1"
         />
         <div
-          class="StyledBox-bStriS jGhOhz"
+          class="StyledBox-YaZNy eOYTpl"
           id="2"
         />
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <svg
-        class="StyledDiagram-fAdbMP cQZOVh"
+        class="StyledDiagram-hhOVAv jyCpfr"
         preserveAspectRatio="xMinYMin meet"
         viewBox="0 0 0 0"
       >
@@ -65,32 +65,32 @@ exports[`Diagram anchor 1`] = `
 
 exports[`Diagram basic 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledStack-jqCQsC ewABiA"
+    class="StyledStack-jtPAMP bgKQVO"
   >
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-bStriS djbAkW"
+        class="StyledBox-YaZNy htiNkm"
       >
         <div
-          class="StyledBox-bStriS jGhOhz"
+          class="StyledBox-YaZNy eOYTpl"
           id="1"
         />
         <div
-          class="StyledBox-bStriS jGhOhz"
+          class="StyledBox-YaZNy eOYTpl"
           id="2"
         />
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <svg
-        class="StyledDiagram-fAdbMP cQZOVh"
+        class="StyledDiagram-hhOVAv jyCpfr"
         preserveAspectRatio="xMinYMin meet"
         viewBox="0 0 0 0"
       >
@@ -112,32 +112,32 @@ exports[`Diagram basic 1`] = `
 
 exports[`Diagram color 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledStack-jqCQsC ewABiA"
+    class="StyledStack-jtPAMP bgKQVO"
   >
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-bStriS djbAkW"
+        class="StyledBox-YaZNy htiNkm"
       >
         <div
-          class="StyledBox-bStriS jGhOhz"
+          class="StyledBox-YaZNy eOYTpl"
           id="1"
         />
         <div
-          class="StyledBox-bStriS jGhOhz"
+          class="StyledBox-YaZNy eOYTpl"
           id="2"
         />
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <svg
-        class="StyledDiagram-fAdbMP cQZOVh"
+        class="StyledDiagram-hhOVAv jyCpfr"
         preserveAspectRatio="xMinYMin meet"
         viewBox="0 0 0 0"
       >
@@ -159,32 +159,32 @@ exports[`Diagram color 1`] = `
 
 exports[`Diagram offset 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledStack-jqCQsC ewABiA"
+    class="StyledStack-jtPAMP bgKQVO"
   >
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-bStriS djbAkW"
+        class="StyledBox-YaZNy htiNkm"
       >
         <div
-          class="StyledBox-bStriS jGhOhz"
+          class="StyledBox-YaZNy eOYTpl"
           id="1"
         />
         <div
-          class="StyledBox-bStriS jGhOhz"
+          class="StyledBox-YaZNy eOYTpl"
           id="2"
         />
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <svg
-        class="StyledDiagram-fAdbMP cQZOVh"
+        class="StyledDiagram-hhOVAv jyCpfr"
         preserveAspectRatio="xMinYMin meet"
         viewBox="0 0 0 0"
       >
@@ -222,32 +222,32 @@ exports[`Diagram offset 1`] = `
 
 exports[`Diagram thickness 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledStack-jqCQsC ewABiA"
+    class="StyledStack-jtPAMP bgKQVO"
   >
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-bStriS djbAkW"
+        class="StyledBox-YaZNy htiNkm"
       >
         <div
-          class="StyledBox-bStriS jGhOhz"
+          class="StyledBox-YaZNy eOYTpl"
           id="1"
         />
         <div
-          class="StyledBox-bStriS jGhOhz"
+          class="StyledBox-YaZNy eOYTpl"
           id="2"
         />
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <svg
-        class="StyledDiagram-fAdbMP cQZOVh"
+        class="StyledDiagram-hhOVAv jyCpfr"
         preserveAspectRatio="xMinYMin meet"
         viewBox="0 0 0 0"
       >
@@ -309,32 +309,32 @@ exports[`Diagram thickness 1`] = `
 
 exports[`Diagram type 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledStack-jqCQsC ewABiA"
+    class="StyledStack-jtPAMP bgKQVO"
   >
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-bStriS djbAkW"
+        class="StyledBox-YaZNy htiNkm"
       >
         <div
-          class="StyledBox-bStriS jGhOhz"
+          class="StyledBox-YaZNy eOYTpl"
           id="1"
         />
         <div
-          class="StyledBox-bStriS jGhOhz"
+          class="StyledBox-YaZNy eOYTpl"
           id="2"
         />
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <svg
-        class="StyledDiagram-fAdbMP cQZOVh"
+        class="StyledDiagram-hhOVAv jyCpfr"
         preserveAspectRatio="xMinYMin meet"
         viewBox="0 0 0 0"
       >
