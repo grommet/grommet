@@ -16,7 +16,7 @@ import {
 import customSearchTheme from './theme';
 import SearchInputContext from './components/SearchInputContext';
 
-const DEFAULT_OPTIONS = ['one', 'two', 'three'];
+const DEFAULT_OPTIONS = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
 
 class SearchSelect extends Component {
   state = { options: DEFAULT_OPTIONS }
