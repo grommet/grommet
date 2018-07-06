@@ -186,7 +186,6 @@ class SelectContainer extends Component {
             <InfiniteScroll items={options} step={theme.select.step}>
               {(option, index) => (
                 <Button
-                  fill={true}
                   role='menuitem'
                   ref={(ref) => { this.optionsRef[index] = ref; }}
                   active={

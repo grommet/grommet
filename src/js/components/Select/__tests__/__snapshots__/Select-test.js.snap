@@ -401,7 +401,7 @@ exports[`Select complex options and children 3`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-qbvYY jYTBlN"
+        class="StyledButton-qbvYY ktbLOR"
         role="menuitem"
         type="button"
       >
@@ -410,7 +410,7 @@ exports[`Select complex options and children 3`] = `
         </span>
       </button>
       <button
-        class="StyledButton-qbvYY jYTBlN"
+        class="StyledButton-qbvYY ktbLOR"
         role="menuitem"
         type="button"
       >
@@ -511,7 +511,7 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .jYTBlN {
+  .ktbLOR {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1124,7 +1124,7 @@ exports[`Select multiple values 3`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-qbvYY gfUHck"
+        class="StyledButton-qbvYY fZEyyA"
         role="menuitem"
         type="button"
       >
@@ -1139,7 +1139,7 @@ exports[`Select multiple values 3`] = `
         </div>
       </button>
       <button
-        class="StyledButton-qbvYY gfUHck"
+        class="StyledButton-qbvYY fZEyyA"
         role="menuitem"
         type="button"
       >
@@ -1270,14 +1270,14 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .jYTBlN {
+  .ktbLOR {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .gfUHck {
+  .fZEyyA {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1441,7 +1441,7 @@ exports[`Select opens 3`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-qbvYY jYTBlN"
+        class="StyledButton-qbvYY ktbLOR"
         role="menuitem"
         type="button"
       >
@@ -1456,7 +1456,7 @@ exports[`Select opens 3`] = `
         </div>
       </button>
       <button
-        class="StyledButton-qbvYY jYTBlN"
+        class="StyledButton-qbvYY ktbLOR"
         role="menuitem"
         type="button"
       >
@@ -1563,7 +1563,7 @@ exports[`Select opens 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .jYTBlN {
+  .ktbLOR {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1607,7 +1607,7 @@ exports[`Select opens 5`] = `
   tabindex="-1"
 >
   <button
-    class="StyledButton-qbvYY jYTBlN"
+    class="StyledButton-qbvYY ktbLOR"
     role="menuitem"
     type="button"
   >
@@ -1622,7 +1622,7 @@ exports[`Select opens 5`] = `
     </div>
   </button>
   <button
-    class="StyledButton-qbvYY jYTBlN"
+    class="StyledButton-qbvYY ktbLOR"
     role="menuitem"
     type="button"
   >
@@ -1725,7 +1725,7 @@ exports[`Select search 2`] = `
       tabindex="-1"
     >
       <button
-        class="StyledButton-qbvYY jYTBlN"
+        class="StyledButton-qbvYY ktbLOR"
         role="menuitem"
         type="button"
       >
@@ -1740,7 +1740,7 @@ exports[`Select search 2`] = `
         </div>
       </button>
       <button
-        class="StyledButton-qbvYY jYTBlN"
+        class="StyledButton-qbvYY ktbLOR"
         role="menuitem"
         type="button"
       >
@@ -1859,7 +1859,7 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .jYTBlN {
+  .ktbLOR {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
