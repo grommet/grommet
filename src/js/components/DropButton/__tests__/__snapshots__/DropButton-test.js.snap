@@ -8,7 +8,7 @@ exports[`DropButton close by clicking outside 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy jsimzC"
+    class="StyledBox-YaZNy dRDGjF"
   >
     <span
       class="StyledText-dmaDlZ iiuQkH"
@@ -31,13 +31,13 @@ exports[`DropButton close by clicking outside 2`] = `
 
 exports[`DropButton close by clicking outside 3`] = `
 "@media only screen and (max-width:699px) {
-  .jsimzC {
+  .dRDGjF {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jsimzC {
+  .dRDGjF {
     padding: 0;
   }
 }
@@ -68,6 +68,10 @@ exports[`DropButton closed 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
 }
@@ -157,7 +161,7 @@ exports[`DropButton disabled 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy jsimzC"
+    class="StyledBox-YaZNy dRDGjF"
   >
     <span
       class="StyledText-dmaDlZ iiuQkH"
@@ -178,7 +182,7 @@ exports[`DropButton open and close 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy jsimzC"
+    class="StyledBox-YaZNy dRDGjF"
   >
     <span
       class="StyledText-dmaDlZ iiuQkH"
@@ -201,13 +205,13 @@ exports[`DropButton open and close 2`] = `
 
 exports[`DropButton open and close 3`] = `
 "@media only screen and (max-width:699px) {
-  .jsimzC {
+  .dRDGjF {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jsimzC {
+  .dRDGjF {
     padding: 0;
   }
 }
@@ -238,6 +242,10 @@ exports[`DropButton opened 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
 }
@@ -326,7 +334,7 @@ exports[`DropButton opened ref 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy jsimzC"
+    class="StyledBox-YaZNy dRDGjF"
   >
     <span
       class="StyledText-dmaDlZ iiuQkH"
@@ -349,13 +357,13 @@ exports[`DropButton opened ref 2`] = `
 
 exports[`DropButton opened ref 3`] = `
 "@media only screen and (max-width:699px) {
-  .jsimzC {
+  .dRDGjF {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jsimzC {
+  .dRDGjF {
     padding: 0;
   }
 }
