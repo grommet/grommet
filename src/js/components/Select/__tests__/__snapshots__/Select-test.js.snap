@@ -117,6 +117,11 @@ exports[`Select basic 1`] = `
   text-align: inherit;
 }
 
+.c3 {
+  position: relative;
+  width: 100%;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -149,11 +154,6 @@ exports[`Select basic 1`] = `
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c3 {
-  position: relative;
-  width: 100%;
 }
 
 .c4 {
@@ -277,23 +277,23 @@ exports[`Select basic 1`] = `
 exports[`Select complex options and children 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK bbflvf"
+  class="StyledButton-qbvYY kidNzX"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-bStriS iHDUnZ"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
-      class="StyledBox-bStriS fGlIpq"
+      class="StyledBox-YaZNy kuPMvF"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+        class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -304,12 +304,12 @@ exports[`Select complex options and children 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS huQMzG"
+      class="StyledBox-YaZNy ivAcfG"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
+        class="StyledIcon-hcpUvT fAeuhQ"
         color="brand"
         height="24px"
         role="img"
@@ -332,23 +332,23 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK bbflvf"
+  class="StyledButton-qbvYY kidNzX"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-bStriS iHDUnZ"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
-      class="StyledBox-bStriS fGlIpq"
+      class="StyledBox-YaZNy kuPMvF"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+        class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -359,12 +359,12 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS huQMzG"
+      class="StyledBox-YaZNy ivAcfG"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
+        class="StyledIcon-hcpUvT fAeuhQ"
         color="brand"
         height="24px"
         role="img"
@@ -386,22 +386,22 @@ exports[`Select complex options and children 2`] = `
 
 exports[`Select complex options and children 3`] = `
 <div
-  class="StyledDrop-bCWxPe eTlFvx"
+  class="StyledDrop-czaYBK igFhFE"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-bStriS dIoGZN"
+    class="StyledBox-YaZNy hQeqTY"
     id="test-select__select-drop"
   >
     <div
-      class="SelectContainer__SelectContainerBox-bVzwkD fjNCpU StyledBox-bStriS kRbxno"
+      class="SelectContainer__SelectContainerBox-dqwAiO bNTcOA StyledBox-YaZNy fvEbPE"
       role="menubar"
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK jrAGpP"
+        class="StyledButton-qbvYY jYTBlN"
         role="menuitem"
         type="button"
       >
@@ -410,7 +410,7 @@ exports[`Select complex options and children 3`] = `
         </span>
       </button>
       <button
-        class="StyledButton-gXzblK jrAGpP"
+        class="StyledButton-qbvYY jYTBlN"
         role="menuitem"
         type="button"
       >
@@ -425,93 +425,93 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width:699px) {
-  .iHDUnZ {
+  .filaRb {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iHDUnZ {
+  .filaRb {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iHDUnZ {
+  .filaRb {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .fGlIpq {
+  .kuPMvF {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .fGlIpq {
+  .kuPMvF {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .huQMzG {
+  .ivAcfG {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .huQMzG {
+  .ivAcfG {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dIoGZN {
+  .hQeqTY {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dIoGZN {
+  .hQeqTY {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kRbxno {
+  .fvEbPE {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kRbxno {
+  .fvEbPE {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dVfpww {
+  .hZNqBU {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dVfpww {
+  .hZNqBU {
     padding: 6px;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bbflvf {
+  .kidNzX {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jrAGpP {
+  .jYTBlN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -519,7 +519,7 @@ exports[`Select complex options and children 4`] = `
 
 
 
-.eTlFvx {
+.igFhFE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -551,23 +551,23 @@ exports[`Select complex options and children 4`] = `
 exports[`Select deselect an option 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK bbflvf"
+  class="StyledButton-qbvYY kidNzX"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-bStriS iHDUnZ"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
-      class="StyledBox-bStriS fGlIpq"
+      class="StyledBox-YaZNy kuPMvF"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+        class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -579,12 +579,12 @@ exports[`Select deselect an option 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS huQMzG"
+      class="StyledBox-YaZNy ivAcfG"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
+        class="StyledIcon-hcpUvT fAeuhQ"
         color="brand"
         height="24px"
         role="img"
@@ -607,24 +607,24 @@ exports[`Select deselect an option 1`] = `
 exports[`Select disabled 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK kTMZEr"
+  class="StyledButton-qbvYY fccVcn"
   data-testid="test-select"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-bStriS iHDUnZ"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
-      class="StyledBox-bStriS fGlIpq"
+      class="StyledBox-YaZNy kuPMvF"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+        class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -635,12 +635,12 @@ exports[`Select disabled 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS huQMzG"
+      class="StyledBox-YaZNy ivAcfG"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
+        class="StyledIcon-hcpUvT fAeuhQ"
         color="brand"
         height="24px"
         role="img"
@@ -663,24 +663,24 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK kTMZEr"
+  class="StyledButton-qbvYY fccVcn"
   data-testid="test-select"
   disabled=""
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-bStriS iHDUnZ"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
-      class="StyledBox-bStriS fGlIpq"
+      class="StyledBox-YaZNy kuPMvF"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+        class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -691,12 +691,12 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS huQMzG"
+      class="StyledBox-YaZNy ivAcfG"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
+        class="StyledIcon-hcpUvT fAeuhQ"
         color="brand"
         height="24px"
         role="img"
@@ -833,6 +833,11 @@ exports[`Select multiple 1`] = `
   text-align: inherit;
 }
 
+.c3 {
+  position: relative;
+  width: 100%;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -865,11 +870,6 @@ exports[`Select multiple 1`] = `
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c3 {
-  position: relative;
-  width: 100%;
 }
 
 .c4 {
@@ -998,23 +998,23 @@ exports[`Select multiple 1`] = `
 exports[`Select multiple values 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK bbflvf"
+  class="StyledButton-qbvYY kidNzX"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-bStriS iHDUnZ"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
-      class="StyledBox-bStriS fGlIpq"
+      class="StyledBox-YaZNy kuPMvF"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+        class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -1026,12 +1026,12 @@ exports[`Select multiple values 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS huQMzG"
+      class="StyledBox-YaZNy ivAcfG"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
+        class="StyledIcon-hcpUvT fAeuhQ"
         color="brand"
         height="24px"
         role="img"
@@ -1054,23 +1054,23 @@ exports[`Select multiple values 1`] = `
 exports[`Select multiple values 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK bbflvf"
+  class="StyledButton-qbvYY kidNzX"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-bStriS iHDUnZ"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
-      class="StyledBox-bStriS fGlIpq"
+      class="StyledBox-YaZNy kuPMvF"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+        class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -1082,12 +1082,12 @@ exports[`Select multiple values 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS huQMzG"
+      class="StyledBox-YaZNy ivAcfG"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
+        class="StyledIcon-hcpUvT fAeuhQ"
         color="brand"
         height="24px"
         role="img"
@@ -1109,45 +1109,45 @@ exports[`Select multiple values 2`] = `
 
 exports[`Select multiple values 3`] = `
 <div
-  class="StyledDrop-bCWxPe eTlFvx"
+  class="StyledDrop-czaYBK igFhFE"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-bStriS dIoGZN"
+    class="StyledBox-YaZNy hQeqTY"
     id="test-select__select-drop"
   >
     <div
-      class="SelectContainer__SelectContainerBox-bVzwkD fjNCpU StyledBox-bStriS kRbxno"
+      class="SelectContainer__SelectContainerBox-dqwAiO bNTcOA StyledBox-YaZNy fvEbPE"
       role="menubar"
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK KxvTV"
+        class="StyledButton-qbvYY gfUHck"
         role="menuitem"
         type="button"
       >
         <div
-          class="StyledBox-bStriS dVfpww"
+          class="StyledBox-YaZNy hZNqBU"
         >
           <span
-            class="StyledText-eJMSZI eCycNH"
+            class="StyledText-dmaDlZ iRQiFb"
           >
             one
           </span>
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK KxvTV"
+        class="StyledButton-qbvYY gfUHck"
         role="menuitem"
         type="button"
       >
         <div
-          class="StyledBox-bStriS dVfpww"
+          class="StyledBox-YaZNy hZNqBU"
         >
           <span
-            class="StyledText-eJMSZI eCycNH"
+            class="StyledText-dmaDlZ iRQiFb"
           >
             two
           </span>
@@ -1160,124 +1160,124 @@ exports[`Select multiple values 3`] = `
 
 exports[`Select multiple values 4`] = `
 "@media only screen and (max-width:699px) {
-  .iHDUnZ {
+  .filaRb {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iHDUnZ {
+  .filaRb {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iHDUnZ {
+  .filaRb {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .fGlIpq {
+  .kuPMvF {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .fGlIpq {
+  .kuPMvF {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .huQMzG {
+  .ivAcfG {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .huQMzG {
+  .ivAcfG {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dIoGZN {
+  .hQeqTY {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dIoGZN {
+  .hQeqTY {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kRbxno {
+  .fvEbPE {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kRbxno {
+  .fvEbPE {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dVfpww {
+  .hZNqBU {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dVfpww {
+  .hZNqBU {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bXdyDt {
+  .gynikh {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bXdyDt {
+  .gynikh {
     padding: 3px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eymlIe {
+  .flHrpn {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eymlIe {
+  .flHrpn {
     padding: 0;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bbflvf {
+  .kidNzX {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jrAGpP {
+  .jYTBlN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .KxvTV {
+  .gfUHck {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1285,7 +1285,7 @@ exports[`Select multiple values 4`] = `
 
 
 
-.eTlFvx {
+.igFhFE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1317,23 +1317,23 @@ exports[`Select multiple values 4`] = `
 exports[`Select opens 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK bbflvf"
+  class="StyledButton-qbvYY kidNzX"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-bStriS iHDUnZ"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
-      class="StyledBox-bStriS fGlIpq"
+      class="StyledBox-YaZNy kuPMvF"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+        class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1344,12 +1344,12 @@ exports[`Select opens 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS huQMzG"
+      class="StyledBox-YaZNy ivAcfG"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
+        class="StyledIcon-hcpUvT fAeuhQ"
         color="brand"
         height="24px"
         role="img"
@@ -1372,23 +1372,23 @@ exports[`Select opens 1`] = `
 exports[`Select opens 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK bbflvf"
+  class="StyledButton-qbvYY kidNzX"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-bStriS iHDUnZ"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
-      class="StyledBox-bStriS fGlIpq"
+      class="StyledBox-YaZNy kuPMvF"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+        class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1399,12 +1399,12 @@ exports[`Select opens 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS huQMzG"
+      class="StyledBox-YaZNy ivAcfG"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
+        class="StyledIcon-hcpUvT fAeuhQ"
         color="brand"
         height="24px"
         role="img"
@@ -1426,45 +1426,45 @@ exports[`Select opens 2`] = `
 
 exports[`Select opens 3`] = `
 <div
-  class="StyledDrop-bCWxPe eTlFvx"
+  class="StyledDrop-czaYBK igFhFE"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-bStriS dIoGZN"
+    class="StyledBox-YaZNy hQeqTY"
     id="test-select__select-drop"
   >
     <div
-      class="SelectContainer__SelectContainerBox-bVzwkD fjNCpU StyledBox-bStriS kRbxno"
+      class="SelectContainer__SelectContainerBox-dqwAiO bNTcOA StyledBox-YaZNy fvEbPE"
       role="menubar"
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK jrAGpP"
+        class="StyledButton-qbvYY jYTBlN"
         role="menuitem"
         type="button"
       >
         <div
-          class="StyledBox-bStriS dVfpww"
+          class="StyledBox-YaZNy hZNqBU"
         >
           <span
-            class="StyledText-eJMSZI eCycNH"
+            class="StyledText-dmaDlZ iRQiFb"
           >
             one
           </span>
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK jrAGpP"
+        class="StyledButton-qbvYY jYTBlN"
         role="menuitem"
         type="button"
       >
         <div
-          class="StyledBox-bStriS dVfpww"
+          class="StyledBox-YaZNy hZNqBU"
         >
           <span
-            class="StyledText-eJMSZI eCycNH"
+            class="StyledText-dmaDlZ iRQiFb"
           >
             two
           </span>
@@ -1477,93 +1477,93 @@ exports[`Select opens 3`] = `
 
 exports[`Select opens 4`] = `
 "@media only screen and (max-width:699px) {
-  .iHDUnZ {
+  .filaRb {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iHDUnZ {
+  .filaRb {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iHDUnZ {
+  .filaRb {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .fGlIpq {
+  .kuPMvF {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .fGlIpq {
+  .kuPMvF {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .huQMzG {
+  .ivAcfG {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .huQMzG {
+  .ivAcfG {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dIoGZN {
+  .hQeqTY {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dIoGZN {
+  .hQeqTY {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kRbxno {
+  .fvEbPE {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kRbxno {
+  .fvEbPE {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dVfpww {
+  .hZNqBU {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dVfpww {
+  .hZNqBU {
     padding: 6px;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bbflvf {
+  .kidNzX {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jrAGpP {
+  .jYTBlN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1571,7 +1571,7 @@ exports[`Select opens 4`] = `
 
 
 
-.eTlFvx {
+.igFhFE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1602,35 +1602,35 @@ exports[`Select opens 4`] = `
 
 exports[`Select opens 5`] = `
 <div
-  class="SelectContainer__SelectContainerBox-bVzwkD fjNCpU StyledBox-bStriS kRbxno"
+  class="SelectContainer__SelectContainerBox-dqwAiO bNTcOA StyledBox-YaZNy fvEbPE"
   role="menubar"
   tabindex="-1"
 >
   <button
-    class="StyledButton-gXzblK jrAGpP"
+    class="StyledButton-qbvYY jYTBlN"
     role="menuitem"
     type="button"
   >
     <div
-      class="StyledBox-bStriS dVfpww"
+      class="StyledBox-YaZNy hZNqBU"
     >
       <span
-        class="StyledText-eJMSZI eCycNH"
+        class="StyledText-dmaDlZ iRQiFb"
       >
         one
       </span>
     </div>
   </button>
   <button
-    class="StyledButton-gXzblK jrAGpP"
+    class="StyledButton-qbvYY jYTBlN"
     role="menuitem"
     type="button"
   >
     <div
-      class="StyledBox-bStriS dVfpww"
+      class="StyledBox-YaZNy hZNqBU"
     >
       <span
-        class="StyledText-eJMSZI eCycNH"
+        class="StyledText-dmaDlZ iRQiFb"
       >
         two
       </span>
@@ -1642,23 +1642,23 @@ exports[`Select opens 5`] = `
 exports[`Select search 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK bbflvf"
+  class="StyledButton-qbvYY kidNzX"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-bStriS iHDUnZ"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
-      class="StyledBox-bStriS fGlIpq"
+      class="StyledBox-YaZNy kuPMvF"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+        class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1669,12 +1669,12 @@ exports[`Select search 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS huQMzG"
+      class="StyledBox-YaZNy ivAcfG"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
+        class="StyledIcon-hcpUvT fAeuhQ"
         color="brand"
         height="24px"
         role="img"
@@ -1696,59 +1696,59 @@ exports[`Select search 1`] = `
 
 exports[`Select search 2`] = `
 <div
-  class="StyledDrop-bCWxPe eTlFvx"
+  class="StyledDrop-czaYBK igFhFE"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-bStriS dIoGZN"
+    class="StyledBox-YaZNy hQeqTY"
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-bStriS bXdyDt"
+      class="StyledBox-YaZNy gynikh"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+        class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
       >
         <input
           autocomplete="off"
-          class="StyledTextInput-bzOzsW boIFRt"
+          class="StyledTextInput-bqUxsy gXwsLf"
           type="search"
           value=""
         />
       </div>
     </div>
     <div
-      class="SelectContainer__SelectContainerBox-bVzwkD fjNCpU StyledBox-bStriS kRbxno"
+      class="SelectContainer__SelectContainerBox-dqwAiO bNTcOA StyledBox-YaZNy fvEbPE"
       role="menubar"
       tabindex="-1"
     >
       <button
-        class="StyledButton-gXzblK jrAGpP"
+        class="StyledButton-qbvYY jYTBlN"
         role="menuitem"
         type="button"
       >
         <div
-          class="StyledBox-bStriS dVfpww"
+          class="StyledBox-YaZNy hZNqBU"
         >
           <span
-            class="StyledText-eJMSZI eCycNH"
+            class="StyledText-dmaDlZ iRQiFb"
           >
             one
           </span>
         </div>
       </button>
       <button
-        class="StyledButton-gXzblK jrAGpP"
+        class="StyledButton-qbvYY jYTBlN"
         role="menuitem"
         type="button"
       >
         <div
-          class="StyledBox-bStriS dVfpww"
+          class="StyledBox-YaZNy hZNqBU"
         >
           <span
-            class="StyledText-eJMSZI eCycNH"
+            class="StyledText-dmaDlZ iRQiFb"
           >
             two
           </span>
@@ -1761,105 +1761,105 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width:699px) {
-  .iHDUnZ {
+  .filaRb {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iHDUnZ {
+  .filaRb {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .iHDUnZ {
+  .filaRb {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .fGlIpq {
+  .kuPMvF {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .fGlIpq {
+  .kuPMvF {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .huQMzG {
+  .ivAcfG {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .huQMzG {
+  .ivAcfG {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dIoGZN {
+  .hQeqTY {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dIoGZN {
+  .hQeqTY {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kRbxno {
+  .fvEbPE {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .kRbxno {
+  .fvEbPE {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dVfpww {
+  .hZNqBU {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dVfpww {
+  .hZNqBU {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bXdyDt {
+  .gynikh {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .bXdyDt {
+  .gynikh {
     padding: 3px;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .bbflvf {
+  .kidNzX {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jrAGpP {
+  .jYTBlN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1867,7 +1867,7 @@ exports[`Select search 3`] = `
 
 
 
-.eTlFvx {
+.igFhFE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1899,23 +1899,23 @@ exports[`Select search 3`] = `
 exports[`Select select an option 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK bbflvf"
+  class="StyledButton-qbvYY kidNzX"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-bStriS iHDUnZ"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
-      class="StyledBox-bStriS fGlIpq"
+      class="StyledBox-YaZNy kuPMvF"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+        class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -1926,12 +1926,12 @@ exports[`Select select an option 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS huQMzG"
+      class="StyledBox-YaZNy ivAcfG"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
+        class="StyledIcon-hcpUvT fAeuhQ"
         color="brand"
         height="24px"
         role="img"
@@ -1954,28 +1954,28 @@ exports[`Select select an option 1`] = `
 exports[`Select select an option with complex options 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK bbflvf"
+  class="StyledButton-qbvYY kidNzX"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-bStriS eymlIe"
+    class="StyledBox-YaZNy flHrpn"
   >
     <div
-      class="StyledBox-bStriS fGlIpq"
+      class="StyledBox-YaZNy kuPMvF"
     >
       <span>
         one
       </span>
     </div>
     <div
-      class="StyledBox-bStriS huQMzG"
+      class="StyledBox-YaZNy ivAcfG"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
+        class="StyledIcon-hcpUvT fAeuhQ"
         color="brand"
         height="24px"
         role="img"
@@ -1998,23 +1998,23 @@ exports[`Select select an option with complex options 1`] = `
 exports[`Select select an option with enter 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK bbflvf"
+  class="StyledButton-qbvYY kidNzX"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-bStriS iHDUnZ"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
-      class="StyledBox-bStriS fGlIpq"
+      class="StyledBox-YaZNy kuPMvF"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+        class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
           data-testid="test-select"
           id="test-select"
           readonly=""
@@ -2025,12 +2025,12 @@ exports[`Select select an option with enter 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS huQMzG"
+      class="StyledBox-YaZNy ivAcfG"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
+        class="StyledIcon-hcpUvT fAeuhQ"
         color="brand"
         height="24px"
         role="img"
@@ -2053,23 +2053,23 @@ exports[`Select select an option with enter 1`] = `
 exports[`Select select another option 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-gXzblK bbflvf"
+  class="StyledButton-qbvYY kidNzX"
   data-testid="test-select"
   id="test-select"
   type="button"
 >
   <div
-    class="StyledBox-bStriS iHDUnZ"
+    class="StyledBox-YaZNy filaRb"
   >
     <div
-      class="StyledBox-bStriS fGlIpq"
+      class="StyledBox-YaZNy kuPMvF"
     >
       <div
-        class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+        class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
       >
         <input
           autocomplete="off"
-          class="Select__SelectTextInput-lnXFDk LQZdV StyledTextInput-bzOzsW iJixLn"
+          class="Select__SelectTextInput-eJgcSa nKUgh StyledTextInput-bqUxsy bRMEIv"
           data-testid="test-select"
           id="test-select"
           multiple=""
@@ -2081,12 +2081,12 @@ exports[`Select select another option 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS huQMzG"
+      class="StyledBox-YaZNy ivAcfG"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-gTfjEw htxeRg"
+        class="StyledIcon-hcpUvT fAeuhQ"
         color="brand"
         height="24px"
         role="img"
@@ -2225,6 +2225,11 @@ exports[`Select size 1`] = `
   text-align: inherit;
 }
 
+.c3 {
+  position: relative;
+  width: 100%;
+}
+
 .c5 {
   box-sizing: border-box;
   font-size: inherit;
@@ -2259,11 +2264,6 @@ exports[`Select size 1`] = `
 .c5::-moz-focus-inner {
   border: none;
   outline: none;
-}
-
-.c3 {
-  position: relative;
-  width: 100%;
 }
 
 .c4 {

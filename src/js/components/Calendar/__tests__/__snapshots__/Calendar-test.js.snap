@@ -204,22 +204,6 @@ exports[`Calendar date renders 1`] = `
   color: #000000;
 }
 
-.c4 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c1 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
-}
-
 .c9 {
   overflow: hidden;
   height: 329.1428571428571px;
@@ -300,6 +284,22 @@ exports[`Calendar date renders 1`] = `
   height: 54.857142857142854px;
   background-color: #865CD6;
   color: #FFFFFF;
+}
+
+.c1 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width:699px) {
@@ -1591,22 +1591,6 @@ exports[`Calendar dates renders 1`] = `
   color: #000000;
 }
 
-.c4 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c1 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
-}
-
 .c9 {
   overflow: hidden;
   height: 329.1428571428571px;
@@ -1687,6 +1671,22 @@ exports[`Calendar dates renders 1`] = `
   height: 54.857142857142854px;
   background-color: #865CD6;
   color: #FFFFFF;
+}
+
+.c1 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width:699px) {
@@ -2982,22 +2982,6 @@ exports[`Calendar disabled renders 1`] = `
   color: #000000;
 }
 
-.c4 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c1 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
-}
-
 .c9 {
   overflow: hidden;
   height: 329.1428571428571px;
@@ -3078,6 +3062,22 @@ exports[`Calendar disabled renders 1`] = `
   height: 54.857142857142854px;
   background-color: #865CD6;
   color: #FFFFFF;
+}
+
+.c1 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width:699px) {
@@ -4373,22 +4373,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   color: #000000;
 }
 
-.c4 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c1 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
-}
-
 .c9 {
   overflow: hidden;
   height: 329.1428571428571px;
@@ -4469,6 +4453,22 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   height: 54.857142857142854px;
   background-color: #865CD6;
   color: #FFFFFF;
+}
+
+.c1 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width:699px) {
@@ -6754,22 +6754,6 @@ exports[`Calendar renders 1`] = `
   color: #000000;
 }
 
-.c4 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c1 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
-}
-
 .c9 {
   overflow: hidden;
   height: 329.1428571428571px;
@@ -6850,6 +6834,22 @@ exports[`Calendar renders 1`] = `
   height: 54.857142857142854px;
   background-color: #865CD6;
   color: #FFFFFF;
+}
+
+.c1 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width:699px) {
@@ -8175,54 +8175,6 @@ exports[`Calendar size renders 1`] = `
   color: #000000;
 }
 
-.c20 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c4 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 18px;
-  line-height: 1.333;
-  max-width: 432px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c26 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 36px;
-  line-height: 1.23;
-  max-width: 864px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c19 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
-}
-
-.c1 {
-  font-size: 16px;
-  line-height: 1.375;
-  width: 192px;
-}
-
-.c25 {
-  font-size: 36px;
-  line-height: 1.11;
-  width: 768px;
-}
-
 .c21 {
   overflow: hidden;
   height: 329.1428571428571px;
@@ -8421,6 +8373,54 @@ exports[`Calendar size renders 1`] = `
   height: 109.71428571428571px;
   background-color: #865CD6;
   color: #FFFFFF;
+}
+
+.c19 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c1 {
+  font-size: 16px;
+  line-height: 1.375;
+  width: 192px;
+}
+
+.c25 {
+  font-size: 36px;
+  line-height: 1.11;
+  width: 768px;
+}
+
+.c20 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 18px;
+  line-height: 1.333;
+  max-width: 432px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c26 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 36px;
+  line-height: 1.23;
+  max-width: 864px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width:699px) {

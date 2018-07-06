@@ -2,7 +2,7 @@
 
 exports[`Drop align left random 1`] = `
 <div
-  class="StyledDrop-bCWxPe eASVTC"
+  class="StyledDrop-czaYBK jxdrKb"
   id="drop-node"
   style="width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -14,7 +14,7 @@ exports[`Drop align left random 1`] = `
 exports[`Drop align left random 2`] = `
 "
 
-.eASVTC {
+.jxdrKb {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -45,7 +45,7 @@ exports[`Drop align left random 2`] = `
 
 exports[`Drop align left right top bottom 1`] = `
 <div
-  class="StyledDrop-bCWxPe eTlFvx"
+  class="StyledDrop-czaYBK igFhFE"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -57,7 +57,7 @@ exports[`Drop align left right top bottom 1`] = `
 exports[`Drop align left right top bottom 2`] = `
 "
 
-.eTlFvx {
+.igFhFE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -88,7 +88,7 @@ exports[`Drop align left right top bottom 2`] = `
 
 exports[`Drop align right left top top 1`] = `
 <div
-  class="StyledDrop-bCWxPe dRgAcx"
+  class="StyledDrop-czaYBK gdDJrs"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -100,7 +100,7 @@ exports[`Drop align right left top top 1`] = `
 exports[`Drop align right left top top 2`] = `
 "
 
-.dRgAcx {
+.gdDJrs {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -131,7 +131,7 @@ exports[`Drop align right left top top 2`] = `
 
 exports[`Drop align right random 1`] = `
 <div
-  class="StyledDrop-bCWxPe dRgAcx"
+  class="StyledDrop-czaYBK gdDJrs"
   id="drop-node"
   style="width: 0.1px; max-height: 768px;"
   tabindex="-1"
@@ -143,7 +143,7 @@ exports[`Drop align right random 1`] = `
 exports[`Drop align right random 2`] = `
 "
 
-.dRgAcx {
+.gdDJrs {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -174,7 +174,7 @@ exports[`Drop align right random 2`] = `
 
 exports[`Drop align right right bottom top 1`] = `
 <div
-  class="StyledDrop-bCWxPe evXUUL"
+  class="StyledDrop-czaYBK hThgnU"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -186,7 +186,7 @@ exports[`Drop align right right bottom top 1`] = `
 exports[`Drop align right right bottom top 2`] = `
 "
 
-.evXUUL {
+.hThgnU {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -217,7 +217,7 @@ exports[`Drop align right right bottom top 2`] = `
 
 exports[`Drop align right right bottom top 3`] = `
 <div
-  class="StyledDrop-bCWxPe evXUUL"
+  class="StyledDrop-czaYBK hThgnU"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -229,7 +229,7 @@ exports[`Drop align right right bottom top 3`] = `
 exports[`Drop align right right bottom top 4`] = `
 "
 
-.evXUUL {
+.hThgnU {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -260,7 +260,7 @@ exports[`Drop align right right bottom top 4`] = `
 
 exports[`Drop basic 1`] = `
 <div
-  class="StyledDrop-bCWxPe eTlFvx"
+  class="StyledDrop-czaYBK igFhFE"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -272,7 +272,7 @@ exports[`Drop basic 1`] = `
 exports[`Drop basic 2`] = `
 "
 
-.eTlFvx {
+.igFhFE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -303,7 +303,7 @@ exports[`Drop basic 2`] = `
 
 exports[`Drop close 1`] = `
 <div
-  class="StyledDrop-bCWxPe eTlFvx"
+  class="StyledDrop-czaYBK igFhFE"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -315,7 +315,7 @@ exports[`Drop close 1`] = `
 exports[`Drop close 2`] = `
 "
 
-.eTlFvx {
+.igFhFE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -346,7 +346,7 @@ exports[`Drop close 2`] = `
 
 exports[`Drop invalid align 1`] = `
 <div
-  class="StyledDrop-bCWxPe eTlFvx"
+  class="StyledDrop-czaYBK igFhFE"
   id="drop-node"
   style="width: 0.1px; max-height: 768px;"
   tabindex="-1"
@@ -358,7 +358,7 @@ exports[`Drop invalid align 1`] = `
 exports[`Drop invalid align 2`] = `
 "
 
-.eTlFvx {
+.igFhFE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -389,7 +389,7 @@ exports[`Drop invalid align 2`] = `
 
 exports[`Drop invoke onClickOutside 1`] = `
 <div
-  class="StyledDrop-bCWxPe eTlFvx"
+  class="StyledDrop-czaYBK igFhFE"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -401,7 +401,7 @@ exports[`Drop invoke onClickOutside 1`] = `
 exports[`Drop invoke onClickOutside 2`] = `
 "
 
-.eTlFvx {
+.igFhFE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -432,7 +432,7 @@ exports[`Drop invoke onClickOutside 2`] = `
 
 exports[`Drop resize 1`] = `
 <div
-  class="StyledDrop-bCWxPe eTlFvx"
+  class="StyledDrop-czaYBK igFhFE"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -444,7 +444,7 @@ exports[`Drop resize 1`] = `
 exports[`Drop resize 2`] = `
 "
 
-.eTlFvx {
+.igFhFE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -475,7 +475,7 @@ exports[`Drop resize 2`] = `
 
 exports[`Drop restrict focus 1`] = `
 <div
-  class="StyledDrop-bCWxPe eTlFvx"
+  class="StyledDrop-czaYBK igFhFE"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -486,7 +486,7 @@ exports[`Drop restrict focus 1`] = `
 
 exports[`Drop restrict focus 2`] = `
 <div
-  class="StyledDrop-bCWxPe eTlFvx"
+  class="StyledDrop-czaYBK igFhFE"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -498,7 +498,7 @@ exports[`Drop restrict focus 2`] = `
 exports[`Drop restrict focus 3`] = `
 "
 
-.eTlFvx {
+.igFhFE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;

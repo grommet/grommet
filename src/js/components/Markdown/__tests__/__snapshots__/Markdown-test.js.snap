@@ -13,6 +13,12 @@ exports[`Markdown renders 1`] = `
   -webkit-font-smoothing: antialiased;
 }
 
+.c2 {
+  font-size: 16px;
+  line-height: 1.375;
+  max-width: 384px;
+}
+
 .c1 {
   font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 48px;
@@ -43,12 +49,6 @@ exports[`Markdown renders 1`] = `
   line-height: 1.333;
   max-width: 432px;
   font-weight: 600;
-}
-
-.c2 {
-  font-size: 16px;
-  line-height: 1.375;
-  max-width: 384px;
 }
 
 @media only screen and (max-width:699px) {
