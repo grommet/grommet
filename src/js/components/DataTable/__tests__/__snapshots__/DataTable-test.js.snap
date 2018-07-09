@@ -21,6 +21,7 @@ exports[`DataTable aggregate 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -44,6 +45,7 @@ exports[`DataTable aggregate 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -55,7 +57,7 @@ exports[`DataTable aggregate 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -68,6 +70,7 @@ exports[`DataTable aggregate 1`] = `
   -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -78,22 +81,14 @@ exports[`DataTable aggregate 1`] = `
   padding-bottom: 6px;
 }
 
-.c2 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  vertical-align: bottom;
-}
-
-.c6 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
 }
 
-.c8 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -109,6 +104,22 @@ exports[`DataTable aggregate 1`] = `
 .c5 {
   font-size: 16px;
   line-height: 1.375;
+}
+
+.c2 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  vertical-align: bottom;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  vertical-align: bottom;
 }
 
 @media only screen and (max-width:699px) {
@@ -144,20 +155,20 @@ exports[`DataTable aggregate 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c8 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c8 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c8 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -195,7 +206,7 @@ exports[`DataTable aggregate 1`] = `
           </div>
         </th>
         <th
-          className="c2"
+          className="c6"
           scope="col"
         >
           <div
@@ -221,10 +232,10 @@ exports[`DataTable aggregate 1`] = `
         className=""
       >
         <td
-          className="c6"
+          className="c7"
         >
           <div
-            className="c7"
+            className="c8"
           >
             <span
               className="c5"
@@ -234,10 +245,10 @@ exports[`DataTable aggregate 1`] = `
           </div>
         </td>
         <td
-          className="c6"
+          className="c7"
         >
           <div
-            className="c7"
+            className="c8"
           >
             <span
               className="c5"
@@ -251,10 +262,10 @@ exports[`DataTable aggregate 1`] = `
         className=""
       >
         <td
-          className="c6"
+          className="c7"
         >
           <div
-            className="c7"
+            className="c8"
           >
             <span
               className="c5"
@@ -264,10 +275,10 @@ exports[`DataTable aggregate 1`] = `
           </div>
         </td>
         <td
-          className="c6"
+          className="c7"
         >
           <div
-            className="c7"
+            className="c8"
           >
             <span
               className="c5"
@@ -285,17 +296,17 @@ exports[`DataTable aggregate 1`] = `
         className=""
       >
         <td
-          className="c8"
+          className="c9"
         >
           <div
-            className="c7"
+            className="c8"
           />
         </td>
         <td
-          className="c8"
+          className="c9"
         >
           <div
-            className="c7"
+            className="c8"
           >
             <span
               className="c5"
@@ -331,6 +342,7 @@ exports[`DataTable basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -354,6 +366,7 @@ exports[`DataTable basic 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -365,7 +378,7 @@ exports[`DataTable basic 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -378,6 +391,7 @@ exports[`DataTable basic 1`] = `
   -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -386,6 +400,23 @@ exports[`DataTable basic 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c7 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.c5 {
+  font-size: 16px;
+  line-height: 1.375;
 }
 
 .c2 {
@@ -401,16 +432,7 @@ exports[`DataTable basic 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-}
-
-.c1 {
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-.c5 {
-  font-size: 16px;
-  line-height: 1.375;
+  vertical-align: bottom;
 }
 
 @media only screen and (max-width:699px) {
@@ -446,20 +468,20 @@ exports[`DataTable basic 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c8 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c8 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c8 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -497,7 +519,7 @@ exports[`DataTable basic 1`] = `
           </div>
         </th>
         <th
-          className="c2"
+          className="c6"
           scope="col"
         >
           <div
@@ -523,10 +545,10 @@ exports[`DataTable basic 1`] = `
         className=""
       >
         <td
-          className="c6"
+          className="c7"
         >
           <div
-            className="c7"
+            className="c8"
           >
             <span
               className="c5"
@@ -536,10 +558,10 @@ exports[`DataTable basic 1`] = `
           </div>
         </td>
         <td
-          className="c6"
+          className="c7"
         >
           <div
-            className="c7"
+            className="c8"
           >
             <span
               className="c5"
@@ -553,10 +575,10 @@ exports[`DataTable basic 1`] = `
         className=""
       >
         <td
-          className="c6"
+          className="c7"
         >
           <div
-            className="c7"
+            className="c8"
           >
             <span
               className="c5"
@@ -566,10 +588,10 @@ exports[`DataTable basic 1`] = `
           </div>
         </td>
         <td
-          className="c6"
+          className="c7"
         >
           <div
-            className="c7"
+            className="c8"
           >
             <span
               className="c5"
@@ -644,6 +666,7 @@ exports[`DataTable footer 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -667,6 +690,7 @@ exports[`DataTable footer 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -678,7 +702,7 @@ exports[`DataTable footer 1`] = `
   padding-bottom: 6px;
 }
 
-.c7 {
+.c8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -691,6 +715,7 @@ exports[`DataTable footer 1`] = `
   -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -701,22 +726,14 @@ exports[`DataTable footer 1`] = `
   padding-bottom: 6px;
 }
 
-.c2 {
-  margin: 0;
-  padding: 0;
-  font-weight: inherit;
-  text-align: inherit;
-  vertical-align: bottom;
-}
-
-.c6 {
+.c7 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
 }
 
-.c8 {
+.c9 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -732,6 +749,22 @@ exports[`DataTable footer 1`] = `
 .c5 {
   font-size: 16px;
   line-height: 1.375;
+}
+
+.c2 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  vertical-align: bottom;
+}
+
+.c6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  vertical-align: bottom;
 }
 
 @media only screen and (max-width:699px) {
@@ -767,20 +800,20 @@ exports[`DataTable footer 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c8 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c8 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c7 {
+  .c8 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -818,7 +851,7 @@ exports[`DataTable footer 1`] = `
           </div>
         </th>
         <th
-          className="c2"
+          className="c6"
           scope="col"
         >
           <div
@@ -844,10 +877,10 @@ exports[`DataTable footer 1`] = `
         className=""
       >
         <td
-          className="c6"
+          className="c7"
         >
           <div
-            className="c7"
+            className="c8"
           >
             <span
               className="c5"
@@ -857,10 +890,10 @@ exports[`DataTable footer 1`] = `
           </div>
         </td>
         <td
-          className="c6"
+          className="c7"
         >
           <div
-            className="c7"
+            className="c8"
           >
             <span
               className="c5"
@@ -874,10 +907,10 @@ exports[`DataTable footer 1`] = `
         className=""
       >
         <td
-          className="c6"
+          className="c7"
         >
           <div
-            className="c7"
+            className="c8"
           >
             <span
               className="c5"
@@ -887,10 +920,10 @@ exports[`DataTable footer 1`] = `
           </div>
         </td>
         <td
-          className="c6"
+          className="c7"
         >
           <div
-            className="c7"
+            className="c8"
           >
             <span
               className="c5"
@@ -908,10 +941,10 @@ exports[`DataTable footer 1`] = `
         className=""
       >
         <td
-          className="c8"
+          className="c9"
         >
           <div
-            className="c7"
+            className="c8"
           >
             <span
               className="c5"
@@ -921,10 +954,10 @@ exports[`DataTable footer 1`] = `
           </div>
         </td>
         <td
-          className="c8"
+          className="c9"
         >
           <div
-            className="c7"
+            className="c8"
           />
         </td>
       </tr>
@@ -935,32 +968,32 @@ exports[`DataTable footer 1`] = `
 
 exports[`DataTable groupBy 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <table
-    class="StyledTable-libuXx hKopwD"
+    class="StyledTable-cCvVmV eINWiq"
     data=""
   >
     <thead
-      class="StyledTable__StyledTableHeader-hzDkin hxtwdJ"
+      class="StyledTable__StyledTableHeader-gJGITQ fimqah"
     >
       <tr
-        class="StyledTable__StyledTableRow-jdLEFc eSeMGW"
+        class="StyledTable__StyledTableRow-dVoQlF haFISX"
       >
         <td
-          class="StyledTable__StyledTableCell-gsxoIT iAAXnK"
+          class="StyledTable__StyledTableCell-KsYQQ grrSkY"
         >
           <button
             aria-label="expand"
-            class="StyledButton-gXzblK jrAGpP"
+            class="StyledButton-qbvYY jYTBlN"
             type="button"
           >
             <div
-              class="StyledBox-bStriS eOHdQI"
+              class="StyledBox-YaZNy ifVFVU"
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-gTfjEw nUSQt"
+                class="StyledIcon-hcpUvT cTFqgz"
                 color="border"
                 height="24px"
                 role="img"
@@ -979,17 +1012,17 @@ exports[`DataTable groupBy 1`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-gsxoIT fpWwOg"
+          class="StyledTable__StyledTableCell-lbpJOV iJYLPd"
           scope="col"
         >
           <div
-            class="StyledBox-bStriS brkqQP"
+            class="StyledBox-YaZNy kuPMvF"
           >
             <div
-              class="StyledBox-bStriS bQYHbY"
+              class="StyledBox-YaZNy bLykvt"
             >
               <span
-                class="StyledText-eJMSZI WtHkG"
+                class="StyledText-dmaDlZ iiuQkH"
               >
                 A
               </span>
@@ -997,17 +1030,17 @@ exports[`DataTable groupBy 1`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-gsxoIT fpWwOg"
+          class="StyledTable__StyledTableCell-gxerXr dpUkDp"
           scope="col"
         >
           <div
-            class="StyledBox-bStriS brkqQP"
+            class="StyledBox-YaZNy kuPMvF"
           >
             <div
-              class="StyledBox-bStriS bQYHbY"
+              class="StyledBox-YaZNy bLykvt"
             >
               <span
-                class="StyledText-eJMSZI WtHkG"
+                class="StyledText-dmaDlZ iiuQkH"
               >
                 B
               </span>
@@ -1017,25 +1050,25 @@ exports[`DataTable groupBy 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-bIxGAk cWPBrj"
+      class="StyledTable__StyledTableBody-jNGFki gFvTmc"
     >
       <tr
-        class="StyledTable__StyledTableRow-jdLEFc eSeMGW"
+        class="StyledTable__StyledTableRow-dVoQlF haFISX"
       >
         <td
-          class="StyledTable__StyledTableCell-gsxoIT iAAXnK"
+          class="StyledTable__StyledTableCell-KsYQQ grrSkY"
         >
           <button
             aria-label="expand"
-            class="StyledButton-gXzblK jrAGpP"
+            class="StyledButton-qbvYY jYTBlN"
             type="button"
           >
             <div
-              class="StyledBox-bStriS eOHdQI"
+              class="StyledBox-YaZNy ifVFVU"
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-gTfjEw nUSQt"
+                class="StyledIcon-hcpUvT cTFqgz"
                 color="border"
                 height="24px"
                 role="img"
@@ -1054,14 +1087,14 @@ exports[`DataTable groupBy 1`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-gsxoIT bARASD"
+          class="StyledTable__StyledTableCell-gXoyl gInriF"
           scope="row"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           >
             <span
-              class="StyledText-eJMSZI WtHkG"
+              class="StyledText-dmaDlZ iiuQkH"
             >
               <strong>
                 one
@@ -1070,30 +1103,30 @@ exports[`DataTable groupBy 1`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-gsxoIT bARASD"
+          class="StyledTable__StyledTableCell-KsYQQ jCRVkh"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           />
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-jdLEFc eSeMGW"
+        class="StyledTable__StyledTableRow-dVoQlF haFISX"
       >
         <td
-          class="StyledTable__StyledTableCell-gsxoIT iAAXnK"
+          class="StyledTable__StyledTableCell-KsYQQ grrSkY"
         >
           <button
             aria-label="expand"
-            class="StyledButton-gXzblK jrAGpP"
+            class="StyledButton-qbvYY jYTBlN"
             type="button"
           >
             <div
-              class="StyledBox-bStriS eOHdQI"
+              class="StyledBox-YaZNy ifVFVU"
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-gTfjEw nUSQt"
+                class="StyledIcon-hcpUvT cTFqgz"
                 color="border"
                 height="24px"
                 role="img"
@@ -1112,14 +1145,14 @@ exports[`DataTable groupBy 1`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-gsxoIT bARASD"
+          class="StyledTable__StyledTableCell-hwKlLZ ixyemy"
           scope="row"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           >
             <span
-              class="StyledText-eJMSZI WtHkG"
+              class="StyledText-dmaDlZ iiuQkH"
             >
               <strong>
                 two
@@ -1128,10 +1161,10 @@ exports[`DataTable groupBy 1`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-gsxoIT bARASD"
+          class="StyledTable__StyledTableCell-KsYQQ jCRVkh"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           />
         </td>
       </tr>
@@ -1142,32 +1175,32 @@ exports[`DataTable groupBy 1`] = `
 
 exports[`DataTable groupBy 2`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <table
-    class="StyledTable-libuXx hKopwD"
+    class="StyledTable-cCvVmV eINWiq"
     data=""
   >
     <thead
-      class="StyledTable__StyledTableHeader-hzDkin hxtwdJ"
+      class="StyledTable__StyledTableHeader-gJGITQ fimqah"
     >
       <tr
-        class="StyledTable__StyledTableRow-jdLEFc eSeMGW"
+        class="StyledTable__StyledTableRow-dVoQlF haFISX"
       >
         <td
-          class="StyledTable__StyledTableCell-gsxoIT iAAXnK"
+          class="StyledTable__StyledTableCell-KsYQQ grrSkY"
         >
           <button
             aria-label="expand"
-            class="StyledButton-gXzblK jrAGpP"
+            class="StyledButton-qbvYY jYTBlN"
             type="button"
           >
             <div
-              class="StyledBox-bStriS eOHdQI"
+              class="StyledBox-YaZNy ifVFVU"
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-gTfjEw nUSQt"
+                class="StyledIcon-hcpUvT cTFqgz"
                 color="border"
                 height="24px"
                 role="img"
@@ -1186,17 +1219,17 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-gsxoIT fpWwOg"
+          class="StyledTable__StyledTableCell-lbpJOV iJYLPd"
           scope="col"
         >
           <div
-            class="StyledBox-bStriS brkqQP"
+            class="StyledBox-YaZNy kuPMvF"
           >
             <div
-              class="StyledBox-bStriS bQYHbY"
+              class="StyledBox-YaZNy bLykvt"
             >
               <span
-                class="StyledText-eJMSZI WtHkG"
+                class="StyledText-dmaDlZ iiuQkH"
               >
                 A
               </span>
@@ -1204,17 +1237,17 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-gsxoIT fpWwOg"
+          class="StyledTable__StyledTableCell-gxerXr dpUkDp"
           scope="col"
         >
           <div
-            class="StyledBox-bStriS brkqQP"
+            class="StyledBox-YaZNy kuPMvF"
           >
             <div
-              class="StyledBox-bStriS bQYHbY"
+              class="StyledBox-YaZNy bLykvt"
             >
               <span
-                class="StyledText-eJMSZI WtHkG"
+                class="StyledText-dmaDlZ iiuQkH"
               >
                 B
               </span>
@@ -1224,25 +1257,25 @@ exports[`DataTable groupBy 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-bIxGAk cWPBrj"
+      class="StyledTable__StyledTableBody-jNGFki gFvTmc"
     >
       <tr
-        class="StyledTable__StyledTableRow-jdLEFc eSeMGW"
+        class="StyledTable__StyledTableRow-dVoQlF haFISX"
       >
         <td
-          class="StyledTable__StyledTableCell-gsxoIT iAAXnK"
+          class="StyledTable__StyledTableCell-KsYQQ grrSkY"
         >
           <button
             aria-label="expand"
-            class="StyledButton-gXzblK jrAGpP"
+            class="StyledButton-qbvYY jYTBlN"
             type="button"
           >
             <div
-              class="StyledBox-bStriS eOHdQI"
+              class="StyledBox-YaZNy ifVFVU"
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-gTfjEw nUSQt"
+                class="StyledIcon-hcpUvT cTFqgz"
                 color="border"
                 height="24px"
                 role="img"
@@ -1261,14 +1294,14 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-gsxoIT bARASD"
+          class="StyledTable__StyledTableCell-gXoyl gInriF"
           scope="row"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           >
             <span
-              class="StyledText-eJMSZI WtHkG"
+              class="StyledText-dmaDlZ iiuQkH"
             >
               <strong>
                 one
@@ -1277,30 +1310,30 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-gsxoIT bARASD"
+          class="StyledTable__StyledTableCell-KsYQQ jCRVkh"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           />
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-jdLEFc eSeMGW"
+        class="StyledTable__StyledTableRow-dVoQlF haFISX"
       >
         <td
-          class="StyledTable__StyledTableCell-gsxoIT iAAXnK"
+          class="StyledTable__StyledTableCell-KsYQQ grrSkY"
         >
           <button
             aria-label="expand"
-            class="StyledButton-gXzblK jrAGpP"
+            class="StyledButton-qbvYY jYTBlN"
             type="button"
           >
             <div
-              class="StyledBox-bStriS eOHdQI"
+              class="StyledBox-YaZNy ifVFVU"
             >
               <svg
                 aria-label="FormDown"
-                class="StyledIcon-gTfjEw nUSQt"
+                class="StyledIcon-hcpUvT cTFqgz"
                 color="border"
                 height="24px"
                 role="img"
@@ -1319,14 +1352,14 @@ exports[`DataTable groupBy 2`] = `
           </button>
         </td>
         <th
-          class="StyledTable__StyledTableCell-gsxoIT bARASD"
+          class="StyledTable__StyledTableCell-hwKlLZ ixyemy"
           scope="row"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           >
             <span
-              class="StyledText-eJMSZI WtHkG"
+              class="StyledText-dmaDlZ iiuQkH"
             >
               <strong>
                 two
@@ -1335,10 +1368,10 @@ exports[`DataTable groupBy 2`] = `
           </div>
         </th>
         <td
-          class="StyledTable__StyledTableCell-gsxoIT bARASD"
+          class="StyledTable__StyledTableCell-KsYQQ jCRVkh"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           />
         </td>
       </tr>
@@ -1368,6 +1401,7 @@ exports[`DataTable resizeable 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -1391,6 +1425,7 @@ exports[`DataTable resizeable 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -1402,7 +1437,7 @@ exports[`DataTable resizeable 1`] = `
   padding-bottom: 6px;
 }
 
-.c8 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1415,6 +1450,7 @@ exports[`DataTable resizeable 1`] = `
   -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1434,11 +1470,29 @@ exports[`DataTable resizeable 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
   margin: 0;
   padding-right: 6px;
+}
+
+.c8 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  text-align: inherit;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.c5 {
+  font-size: 16px;
+  line-height: 1.375;
 }
 
 .c2 {
@@ -1454,16 +1508,7 @@ exports[`DataTable resizeable 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-}
-
-.c1 {
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-.c5 {
-  font-size: 16px;
-  line-height: 1.375;
+  vertical-align: bottom;
 }
 
 @media only screen and (max-width:699px) {
@@ -1499,20 +1544,20 @@ exports[`DataTable resizeable 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c8 {
+  .c9 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c8 {
+  .c9 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c8 {
+  .c9 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -1575,7 +1620,7 @@ exports[`DataTable resizeable 1`] = `
           </div>
         </th>
         <th
-          className="c2"
+          className="c7"
           scope="col"
         >
           <div
@@ -1614,10 +1659,10 @@ exports[`DataTable resizeable 1`] = `
         className=""
       >
         <td
-          className="c7"
+          className="c8"
         >
           <div
-            className="c8"
+            className="c9"
           >
             <span
               className="c5"
@@ -1627,10 +1672,10 @@ exports[`DataTable resizeable 1`] = `
           </div>
         </td>
         <td
-          className="c7"
+          className="c8"
         >
           <div
-            className="c8"
+            className="c9"
           >
             <span
               className="c5"
@@ -1644,10 +1689,10 @@ exports[`DataTable resizeable 1`] = `
         className=""
       >
         <td
-          className="c7"
+          className="c8"
         >
           <div
-            className="c8"
+            className="c9"
           >
             <span
               className="c5"
@@ -1657,10 +1702,10 @@ exports[`DataTable resizeable 1`] = `
           </div>
         </td>
         <td
-          className="c7"
+          className="c8"
         >
           <div
-            className="c8"
+            className="c9"
           >
             <span
               className="c5"
@@ -1677,34 +1722,34 @@ exports[`DataTable resizeable 1`] = `
 
 exports[`DataTable sort 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <table
-    class="StyledTable-libuXx hKopwD"
+    class="StyledTable-cCvVmV eINWiq"
     data=""
   >
     <thead
-      class="StyledTable__StyledTableHeader-hzDkin hxtwdJ"
+      class="StyledTable__StyledTableHeader-gJGITQ fimqah"
     >
       <tr
-        class="StyledTable__StyledTableRow-jdLEFc eSeMGW"
+        class="StyledTable__StyledTableRow-dVoQlF haFISX"
       >
         <th
-          class="StyledTable__StyledTableCell-gsxoIT fpWwOg"
+          class="StyledTable__StyledTableCell-hvERU eEXNfE"
           scope="col"
         >
           <div
-            class="StyledBox-bStriS brkqQP"
+            class="StyledBox-YaZNy kuPMvF"
           >
             <button
-              class="StyledButton-gXzblK jrAGpP"
+              class="StyledButton-qbvYY jYTBlN"
               type="button"
             >
               <div
-                class="StyledBox-bStriS bQYHbY"
+                class="StyledBox-YaZNy bLykvt"
               >
                 <span
-                  class="StyledText-eJMSZI WtHkG"
+                  class="StyledText-dmaDlZ iiuQkH"
                 >
                   A
                 </span>
@@ -1713,21 +1758,21 @@ exports[`DataTable sort 1`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-gsxoIT fpWwOg"
+          class="StyledTable__StyledTableCell-jGOvXo bfGGGS"
           scope="col"
         >
           <div
-            class="StyledBox-bStriS brkqQP"
+            class="StyledBox-YaZNy kuPMvF"
           >
             <button
-              class="StyledButton-gXzblK jrAGpP"
+              class="StyledButton-qbvYY jYTBlN"
               type="button"
             >
               <div
-                class="StyledBox-bStriS bQYHbY"
+                class="StyledBox-YaZNy bLykvt"
               >
                 <span
-                  class="StyledText-eJMSZI WtHkG"
+                  class="StyledText-dmaDlZ iiuQkH"
                 >
                   B
                 </span>
@@ -1738,32 +1783,32 @@ exports[`DataTable sort 1`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-bIxGAk cWPBrj"
+      class="StyledTable__StyledTableBody-jNGFki gFvTmc"
     >
       <tr
-        class="StyledTable__StyledTableRow-jdLEFc eSeMGW"
+        class="StyledTable__StyledTableRow-dVoQlF haFISX"
       >
         <td
-          class="StyledTable__StyledTableCell-gsxoIT gQLyho"
+          class="StyledTable__StyledTableCell-KsYQQ kIdGcV"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           >
             <span
-              class="StyledText-eJMSZI WtHkG"
+              class="StyledText-dmaDlZ iiuQkH"
             >
               zero
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-gsxoIT gQLyho"
+          class="StyledTable__StyledTableCell-KsYQQ kIdGcV"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           >
             <span
-              class="StyledText-eJMSZI WtHkG"
+              class="StyledText-dmaDlZ iiuQkH"
             >
               0
             </span>
@@ -1771,29 +1816,29 @@ exports[`DataTable sort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-jdLEFc eSeMGW"
+        class="StyledTable__StyledTableRow-dVoQlF haFISX"
       >
         <td
-          class="StyledTable__StyledTableCell-gsxoIT gQLyho"
+          class="StyledTable__StyledTableCell-KsYQQ kIdGcV"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           >
             <span
-              class="StyledText-eJMSZI WtHkG"
+              class="StyledText-dmaDlZ iiuQkH"
             >
               one
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-gsxoIT gQLyho"
+          class="StyledTable__StyledTableCell-KsYQQ kIdGcV"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           >
             <span
-              class="StyledText-eJMSZI WtHkG"
+              class="StyledText-dmaDlZ iiuQkH"
             >
               1
             </span>
@@ -1801,29 +1846,29 @@ exports[`DataTable sort 1`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-jdLEFc eSeMGW"
+        class="StyledTable__StyledTableRow-dVoQlF haFISX"
       >
         <td
-          class="StyledTable__StyledTableCell-gsxoIT gQLyho"
+          class="StyledTable__StyledTableCell-KsYQQ kIdGcV"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           >
             <span
-              class="StyledText-eJMSZI WtHkG"
+              class="StyledText-dmaDlZ iiuQkH"
             >
               two
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-gsxoIT gQLyho"
+          class="StyledTable__StyledTableCell-KsYQQ kIdGcV"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           >
             <span
-              class="StyledText-eJMSZI WtHkG"
+              class="StyledText-dmaDlZ iiuQkH"
             >
               2
             </span>
@@ -1837,43 +1882,43 @@ exports[`DataTable sort 1`] = `
 
 exports[`DataTable sort 2`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <table
-    class="StyledTable-libuXx hKopwD"
+    class="StyledTable-cCvVmV eINWiq"
     data=""
   >
     <thead
-      class="StyledTable__StyledTableHeader-hzDkin hxtwdJ"
+      class="StyledTable__StyledTableHeader-gJGITQ fimqah"
     >
       <tr
-        class="StyledTable__StyledTableRow-jdLEFc eSeMGW"
+        class="StyledTable__StyledTableRow-dVoQlF haFISX"
       >
         <th
-          class="StyledTable__StyledTableCell-gsxoIT fpWwOg"
+          class="StyledTable__StyledTableCell-jCdKZQ eRmXcg"
           scope="col"
         >
           <div
-            class="StyledBox-bStriS brkqQP"
+            class="StyledBox-YaZNy kuPMvF"
           >
             <button
-              class="StyledButton-gXzblK jrAGpP"
+              class="StyledButton-qbvYY jYTBlN"
               type="button"
             >
               <div
-                class="StyledBox-bStriS bQYHbY"
+                class="StyledBox-YaZNy bLykvt"
               >
                 <span
-                  class="StyledText-eJMSZI WtHkG"
+                  class="StyledText-dmaDlZ iiuQkH"
                 >
                   A
                 </span>
                 <div
-                  class="StyledBox__StyledBoxGap-ixLlSs ebfbnM"
+                  class="StyledBox__StyledBoxGap-eHDBek cXBKdA"
                 />
                 <svg
                   aria-label="FormDown"
-                  class="StyledIcon-gTfjEw htxeRg"
+                  class="StyledIcon-hcpUvT fAeuhQ"
                   height="24px"
                   role="img"
                   version="1.1"
@@ -1892,21 +1937,21 @@ exports[`DataTable sort 2`] = `
           </div>
         </th>
         <th
-          class="StyledTable__StyledTableCell-gsxoIT fpWwOg"
+          class="StyledTable__StyledTableCell-jcjgiI gsQpIP"
           scope="col"
         >
           <div
-            class="StyledBox-bStriS brkqQP"
+            class="StyledBox-YaZNy kuPMvF"
           >
             <button
-              class="StyledButton-gXzblK jrAGpP"
+              class="StyledButton-qbvYY jYTBlN"
               type="button"
             >
               <div
-                class="StyledBox-bStriS bQYHbY"
+                class="StyledBox-YaZNy bLykvt"
               >
                 <span
-                  class="StyledText-eJMSZI WtHkG"
+                  class="StyledText-dmaDlZ iiuQkH"
                 >
                   B
                 </span>
@@ -1917,32 +1962,32 @@ exports[`DataTable sort 2`] = `
       </tr>
     </thead>
     <tbody
-      class="StyledTable__StyledTableBody-bIxGAk cWPBrj"
+      class="StyledTable__StyledTableBody-jNGFki gFvTmc"
     >
       <tr
-        class="StyledTable__StyledTableRow-jdLEFc eSeMGW"
+        class="StyledTable__StyledTableRow-dVoQlF haFISX"
       >
         <td
-          class="StyledTable__StyledTableCell-gsxoIT gQLyho"
+          class="StyledTable__StyledTableCell-KsYQQ kIdGcV"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           >
             <span
-              class="StyledText-eJMSZI WtHkG"
+              class="StyledText-dmaDlZ iiuQkH"
             >
               one
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-gsxoIT gQLyho"
+          class="StyledTable__StyledTableCell-KsYQQ kIdGcV"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           >
             <span
-              class="StyledText-eJMSZI WtHkG"
+              class="StyledText-dmaDlZ iiuQkH"
             >
               1
             </span>
@@ -1950,29 +1995,29 @@ exports[`DataTable sort 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-jdLEFc eSeMGW"
+        class="StyledTable__StyledTableRow-dVoQlF haFISX"
       >
         <td
-          class="StyledTable__StyledTableCell-gsxoIT gQLyho"
+          class="StyledTable__StyledTableCell-KsYQQ kIdGcV"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           >
             <span
-              class="StyledText-eJMSZI WtHkG"
+              class="StyledText-dmaDlZ iiuQkH"
             >
               two
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-gsxoIT gQLyho"
+          class="StyledTable__StyledTableCell-KsYQQ kIdGcV"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           >
             <span
-              class="StyledText-eJMSZI WtHkG"
+              class="StyledText-dmaDlZ iiuQkH"
             >
               2
             </span>
@@ -1980,29 +2025,29 @@ exports[`DataTable sort 2`] = `
         </td>
       </tr>
       <tr
-        class="StyledTable__StyledTableRow-jdLEFc eSeMGW"
+        class="StyledTable__StyledTableRow-dVoQlF haFISX"
       >
         <td
-          class="StyledTable__StyledTableCell-gsxoIT gQLyho"
+          class="StyledTable__StyledTableCell-KsYQQ kIdGcV"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           >
             <span
-              class="StyledText-eJMSZI WtHkG"
+              class="StyledText-dmaDlZ iiuQkH"
             >
               zero
             </span>
           </div>
         </td>
         <td
-          class="StyledTable__StyledTableCell-gsxoIT gQLyho"
+          class="StyledTable__StyledTableCell-KsYQQ kIdGcV"
         >
           <div
-            class="StyledBox-bStriS jeEKYY"
+            class="StyledBox-YaZNy bsZGOH"
           >
             <span
-              class="StyledText-eJMSZI WtHkG"
+              class="StyledText-dmaDlZ iiuQkH"
             >
               0
             </span>
