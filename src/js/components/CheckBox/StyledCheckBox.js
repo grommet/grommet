@@ -1,10 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { focusStyle } from '../../utils';
 
 const disabledStyle = `
   opacity: 0.5;
   cursor: default;
+`;
+
+const hoverStyle = css`
+  :hover input:not([disabled]) + div,
+  :hover input:not([disabled]) + span {
+    border-color: ${props => (props.theme.dark ? props.theme.checkBox.hover.border.color.dark : props.theme.checkBox.hover.border.color.light)};
+  }
 `;
 
 export const StyledCheckBoxContainer = styled.label`
@@ -22,10 +29,7 @@ export const StyledCheckBoxContainer = styled.label`
     )}
   }
 
-  :hover input:not([disabled]) + div,
-  :hover input:not([disabled]) + span {
-    border-color: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.global.colors.black)};
-  }
+  ${props => props.theme.checkBox.hover.border.color && hoverStyle}
 `;
 
 export const StyledCheckBoxInput = styled.input`
@@ -37,11 +41,7 @@ export const StyledCheckBoxInput = styled.input`
   height: 100%;
   margin: 0;
   z-index: 1;
-
-  :focus + div,
-  :focus + span {
-    ${focusStyle}
-  }
+  cursor: pointer;
 
   :checked + div {
     border-color: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color)};
@@ -81,6 +81,8 @@ export const StyledCheckBoxBox = styled.div`
     stroke-width: ${props => props.theme.checkBox.check.width};
     stroke: ${props => (props.theme.dark ? props.theme.global.colors.white : props.theme.checkBox.check.color)};
   }
+
+  ${props => props.focus && focusStyle};
 `;
 
 export const StyledCheckBoxToggle = styled.span`
@@ -93,6 +95,8 @@ export const StyledCheckBoxToggle = styled.span`
   border: ${props => props.theme.checkBox.border.width} solid;
   border-color: ${props => props.theme.checkBox.border.color[props.theme.dark ? 'dark' : 'light']};
   border-radius: ${props => props.theme.checkBox.toggle.radius};
+
+  ${props => props.focus && focusStyle};
 `;
 
 export const StyledCheckBoxKnob = styled.span`

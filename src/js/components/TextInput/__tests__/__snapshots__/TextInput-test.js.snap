@@ -2,11 +2,11 @@
 
 exports[`TextInput basic 1`] = `
 <div
-  class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+  class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
 >
   <input
     autocomplete="off"
-    class="StyledTextInput-bzOzsW icIdba"
+    class="StyledTextInput-bqUxsy bXaJkI"
     name="item"
     value=""
   />
@@ -15,14 +15,14 @@ exports[`TextInput basic 1`] = `
 
 exports[`TextInput close suggestion drop 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+    class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW icIdba"
+      class="StyledTextInput-bqUxsy bXaJkI"
       data-testid="test-input"
       id="item"
       name="item"
@@ -34,21 +34,21 @@ exports[`TextInput close suggestion drop 1`] = `
 
 exports[`TextInput close suggestion drop 2`] = `
 <div
-  class="StyledDrop-bCWxPe eTlFvx"
+  class="StyledDrop-czaYBK igFhFE"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <ol
-    class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
+    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
   >
     <li>
       <button
-        class="StyledButton-gXzblK jrAGpP"
+        class="StyledButton-qbvYY jYTBlN"
         type="button"
       >
         <div
-          class="StyledBox-bStriS dNkCJq"
+          class="StyledBox-YaZNy hZNqBU"
         >
           test
         </div>
@@ -56,11 +56,11 @@ exports[`TextInput close suggestion drop 2`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK jrAGpP"
+        class="StyledButton-qbvYY jYTBlN"
         type="button"
       >
         <div
-          class="StyledBox-bStriS dNkCJq"
+          class="StyledBox-YaZNy hZNqBU"
         >
           test1
         </div>
@@ -72,19 +72,19 @@ exports[`TextInput close suggestion drop 2`] = `
 
 exports[`TextInput close suggestion drop 3`] = `
 "@media only screen and (max-width:699px) {
-  .dNkCJq {
+  .hZNqBU {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dNkCJq {
+  .hZNqBU {
     padding: 6px;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jrAGpP {
+  .jYTBlN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -92,7 +92,7 @@ exports[`TextInput close suggestion drop 3`] = `
 
 
 
-.eTlFvx {
+.igFhFE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -123,14 +123,14 @@ exports[`TextInput close suggestion drop 3`] = `
 
 exports[`TextInput close suggestion drop 4`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+    class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW icIdba"
+      class="StyledTextInput-bqUxsy bXaJkI"
       data-testid="test-input"
       id="item"
       name="item"
@@ -142,14 +142,14 @@ exports[`TextInput close suggestion drop 4`] = `
 
 exports[`TextInput complex suggestions 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+    class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW icIdba"
+      class="StyledTextInput-bqUxsy bXaJkI"
       data-testid="test-input"
       id="item"
       name="item"
@@ -161,21 +161,21 @@ exports[`TextInput complex suggestions 1`] = `
 
 exports[`TextInput complex suggestions 2`] = `
 <div
-  class="StyledDrop-bCWxPe eTlFvx"
+  class="StyledDrop-czaYBK igFhFE"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <ol
-    class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
+    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
   >
     <li>
       <button
-        class="StyledButton-gXzblK jrAGpP"
+        class="StyledButton-qbvYY jYTBlN"
         type="button"
       >
         <div
-          class="StyledBox-bStriS dNkCJq"
+          class="StyledBox-YaZNy hZNqBU"
         >
           test
         </div>
@@ -183,11 +183,11 @@ exports[`TextInput complex suggestions 2`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK jrAGpP"
+        class="StyledButton-qbvYY jYTBlN"
         type="button"
       >
         <div
-          class="StyledBox-bStriS dNkCJq"
+          class="StyledBox-YaZNy hZNqBU"
         >
           test1
         </div>
@@ -199,19 +199,19 @@ exports[`TextInput complex suggestions 2`] = `
 
 exports[`TextInput complex suggestions 3`] = `
 "@media only screen and (max-width:699px) {
-  .dNkCJq {
+  .hZNqBU {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dNkCJq {
+  .hZNqBU {
     padding: 6px;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jrAGpP {
+  .jYTBlN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -219,7 +219,7 @@ exports[`TextInput complex suggestions 3`] = `
 
 
 
-.eTlFvx {
+.igFhFE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -250,14 +250,14 @@ exports[`TextInput complex suggestions 3`] = `
 
 exports[`TextInput handles next and previous without suggestion 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+    class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW icIdba"
+      class="StyledTextInput-bqUxsy bXaJkI"
       data-testid="test-input"
       id="item"
       name="item"
@@ -269,14 +269,14 @@ exports[`TextInput handles next and previous without suggestion 1`] = `
 
 exports[`TextInput handles next and previous without suggestion 2`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+    class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW icIdba"
+      class="StyledTextInput-bqUxsy bXaJkI"
       data-testid="test-input"
       id="item"
       name="item"
@@ -288,14 +288,14 @@ exports[`TextInput handles next and previous without suggestion 2`] = `
 
 exports[`TextInput next and previous suggestions 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+    class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW icIdba"
+      class="StyledTextInput-bqUxsy bXaJkI"
       data-testid="test-input"
       id="item"
       name="item"
@@ -307,14 +307,14 @@ exports[`TextInput next and previous suggestions 1`] = `
 
 exports[`TextInput select a suggestion 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+    class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW icIdba"
+      class="StyledTextInput-bqUxsy bXaJkI"
       data-testid="test-input"
       id="item"
       name="item"
@@ -326,14 +326,14 @@ exports[`TextInput select a suggestion 1`] = `
 
 exports[`TextInput select suggestion 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+    class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW kelNQg"
+      class="StyledTextInput-bqUxsy kynUdO"
       data-testid="test-input"
       id="item"
       name="item"
@@ -345,21 +345,21 @@ exports[`TextInput select suggestion 1`] = `
 
 exports[`TextInput select suggestion 2`] = `
 <div
-  class="StyledDrop-bCWxPe eTlFvx"
+  class="StyledDrop-czaYBK igFhFE"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <ol
-    class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
+    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
   >
     <li>
       <button
-        class="StyledButton-gXzblK jrAGpP"
+        class="StyledButton-qbvYY jYTBlN"
         type="button"
       >
         <div
-          class="StyledBox-bStriS dNkCJq"
+          class="StyledBox-YaZNy hZNqBU"
         >
           test
         </div>
@@ -367,11 +367,11 @@ exports[`TextInput select suggestion 2`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK jrAGpP"
+        class="StyledButton-qbvYY jYTBlN"
         type="button"
       >
         <div
-          class="StyledBox-bStriS dNkCJq"
+          class="StyledBox-YaZNy hZNqBU"
         >
           test1
         </div>
@@ -383,19 +383,19 @@ exports[`TextInput select suggestion 2`] = `
 
 exports[`TextInput select suggestion 3`] = `
 "@media only screen and (max-width:699px) {
-  .dNkCJq {
+  .hZNqBU {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dNkCJq {
+  .hZNqBU {
     padding: 6px;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jrAGpP {
+  .jYTBlN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -403,7 +403,7 @@ exports[`TextInput select suggestion 3`] = `
 
 
 
-.eTlFvx {
+.igFhFE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -434,14 +434,14 @@ exports[`TextInput select suggestion 3`] = `
 
 exports[`TextInput select suggestion 4`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+    class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
   >
     <input
       autocomplete="off"
-      class="StyledTextInput-bzOzsW kelNQg"
+      class="StyledTextInput-bqUxsy kynUdO"
       data-testid="test-input"
       id="item"
       name="item"
@@ -453,11 +453,11 @@ exports[`TextInput select suggestion 4`] = `
 
 exports[`TextInput suggestions 1`] = `
 <div
-  class="StyledTextInput__StyledTextInputContainer-bPTWQl jlNyys"
+  class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
 >
   <input
     autocomplete="off"
-    class="StyledTextInput-bzOzsW icIdba"
+    class="StyledTextInput-bqUxsy bXaJkI"
     data-testid="test-input"
     id="item"
     name="item"
@@ -468,21 +468,21 @@ exports[`TextInput suggestions 1`] = `
 
 exports[`TextInput suggestions 2`] = `
 <div
-  class="StyledDrop-bCWxPe eTlFvx"
+  class="StyledDrop-czaYBK igFhFE"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <ol
-    class="StyledTextInput__StyledSuggestions-bNrBob bCeRym"
+    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
   >
     <li>
       <button
-        class="StyledButton-gXzblK jrAGpP"
+        class="StyledButton-qbvYY jYTBlN"
         type="button"
       >
         <div
-          class="StyledBox-bStriS dNkCJq"
+          class="StyledBox-YaZNy hZNqBU"
         >
           test
         </div>
@@ -490,11 +490,11 @@ exports[`TextInput suggestions 2`] = `
     </li>
     <li>
       <button
-        class="StyledButton-gXzblK jrAGpP"
+        class="StyledButton-qbvYY jYTBlN"
         type="button"
       >
         <div
-          class="StyledBox-bStriS dNkCJq"
+          class="StyledBox-YaZNy hZNqBU"
         >
           test1
         </div>
@@ -506,19 +506,19 @@ exports[`TextInput suggestions 2`] = `
 
 exports[`TextInput suggestions 3`] = `
 "@media only screen and (max-width:699px) {
-  .dNkCJq {
+  .hZNqBU {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dNkCJq {
+  .hZNqBU {
     padding: 6px;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .jrAGpP {
+  .jYTBlN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -526,7 +526,7 @@ exports[`TextInput suggestions 3`] = `
 
 
 
-.eTlFvx {
+.igFhFE {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;

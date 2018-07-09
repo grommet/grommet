@@ -3,15 +3,15 @@
 exports[`DropButton close by clicking outside 1`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-gXzblK eVJqlx"
+  class="StyledButton-qbvYY knoMRI"
   label="Dropper"
   type="button"
 >
   <div
-    class="StyledBox-bStriS jvHfNb"
+    class="StyledBox-YaZNy dRDGjF"
   >
     <span
-      class="StyledText-eJMSZI WtHkG"
+      class="StyledText-dmaDlZ iiuQkH"
     >
       <strong>
         Dropper
@@ -31,26 +31,19 @@ exports[`DropButton close by clicking outside 2`] = `
 
 exports[`DropButton close by clicking outside 3`] = `
 "@media only screen and (max-width:699px) {
-  .jvHfNb {
+  .dRDGjF {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jvHfNb {
+  .dRDGjF {
     padding: 0;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .eVJqlx {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .hRAEFm {
+  .knoMRI {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -70,10 +63,15 @@ exports[`DropButton closed 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
 }
@@ -157,16 +155,16 @@ exports[`DropButton closed 1`] = `
 exports[`DropButton disabled 1`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-gXzblK cuTbzL"
+  class="StyledButton-qbvYY kEoHzt"
   disabled=""
   label="Dropper"
   type="button"
 >
   <div
-    class="StyledBox-bStriS jvHfNb"
+    class="StyledBox-YaZNy dRDGjF"
   >
     <span
-      class="StyledText-eJMSZI WtHkG"
+      class="StyledText-dmaDlZ iiuQkH"
     >
       <strong>
         Dropper
@@ -179,15 +177,15 @@ exports[`DropButton disabled 1`] = `
 exports[`DropButton open and close 1`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-gXzblK eVJqlx"
+  class="StyledButton-qbvYY knoMRI"
   label="Dropper"
   type="button"
 >
   <div
-    class="StyledBox-bStriS jvHfNb"
+    class="StyledBox-YaZNy dRDGjF"
   >
     <span
-      class="StyledText-eJMSZI WtHkG"
+      class="StyledText-dmaDlZ iiuQkH"
     >
       <strong>
         Dropper
@@ -207,19 +205,19 @@ exports[`DropButton open and close 2`] = `
 
 exports[`DropButton open and close 3`] = `
 "@media only screen and (max-width:699px) {
-  .jvHfNb {
+  .dRDGjF {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jvHfNb {
+  .dRDGjF {
     padding: 0;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .eVJqlx {
+  .knoMRI {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -239,10 +237,15 @@ exports[`DropButton opened 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
 }
@@ -326,15 +329,15 @@ exports[`DropButton opened 1`] = `
 exports[`DropButton opened ref 1`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-gXzblK eVJqlx"
+  class="StyledButton-qbvYY knoMRI"
   label="Dropper"
   type="button"
 >
   <div
-    class="StyledBox-bStriS jvHfNb"
+    class="StyledBox-YaZNy dRDGjF"
   >
     <span
-      class="StyledText-eJMSZI WtHkG"
+      class="StyledText-dmaDlZ iiuQkH"
     >
       <strong>
         Dropper
@@ -354,33 +357,26 @@ exports[`DropButton opened ref 2`] = `
 
 exports[`DropButton opened ref 3`] = `
 "@media only screen and (max-width:699px) {
-  .jvHfNb {
+  .dRDGjF {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jvHfNb {
+  .dRDGjF {
     padding: 0;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .eVJqlx {
+  .knoMRI {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hRAEFm {
-    -webkit-transition: 0.1s ease-in-out;
-    transition: 0.1s ease-in-out;
-  }
-}
-
-@media only screen and (min-width:700px) {
-  .cuTbzL {
+  .kEoHzt {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

@@ -16,10 +16,8 @@ class Drop extends Component {
     },
   }
 
-  componentWillMount() {
-    this.originalFocusedElement = document.activeElement;
-    this.dropContainer = getNewContainer();
-  }
+  originalFocusedElement = document.activeElement;
+  dropContainer = getNewContainer();
 
   componentWillUnmount() {
     const { restrictFocus } = this.props;

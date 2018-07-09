@@ -172,6 +172,7 @@ exports[`TableCell renders 1`] = `
   -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -312,6 +313,7 @@ exports[`TableCell scope renders 1`] = `
   -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -320,6 +322,11 @@ exports[`TableCell scope renders 1`] = `
   padding-right: 12px;
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.c1 {
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 
 .c2 {
@@ -335,11 +342,6 @@ exports[`TableCell scope renders 1`] = `
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
-}
-
-.c1 {
-  border-spacing: 0;
-  border-collapse: collapse;
 }
 
 @media only screen and (max-width:699px) {
@@ -431,6 +433,7 @@ exports[`TableCell size renders 1`] = `
   -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -689,6 +692,7 @@ exports[`TableCell verticalAlign renders 1`] = `
   -ms-flex-align: flex-start;
   align-items: flex-start;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;

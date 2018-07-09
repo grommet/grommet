@@ -9,7 +9,7 @@ import Text from '../Text/Text';
 
 const SimpleButton = props => (
   <Grommet>
-    <Button label='Submit' onClick={() => {}} {...props} />
+    <Button fill={true} label='Submit' onClick={() => {}} {...props} />
   </Grommet>
 );
 

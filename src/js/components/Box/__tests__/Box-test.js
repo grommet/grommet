@@ -104,19 +104,6 @@ test('Box alignSelf renders', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Box justifySelf renders', () => {
-  const component = renderer.create(
-    <Grommet>
-      <Box justifySelf='start' />
-      <Box justifySelf='center' />
-      <Box justifySelf='stretch' />
-      <Box justifySelf='end' />
-    </Grommet>
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
 test('Box background renders', () => {
   const component = renderer.create(
     <Grommet>

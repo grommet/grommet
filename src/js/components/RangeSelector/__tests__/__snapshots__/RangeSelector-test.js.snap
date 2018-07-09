@@ -21,6 +21,7 @@ exports[`TextInput basic 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -39,6 +40,7 @@ exports[`TextInput basic 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -60,6 +62,7 @@ exports[`TextInput basic 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -81,6 +84,7 @@ exports[`TextInput basic 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -102,6 +106,7 @@ exports[`TextInput basic 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -121,6 +126,7 @@ exports[`TextInput basic 1`] = `
   background-color: rgba(134,92,214,0.4);
   color: #FFFFFF;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -347,6 +353,7 @@ exports[`TextInput color 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -365,6 +372,7 @@ exports[`TextInput color 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -386,6 +394,7 @@ exports[`TextInput color 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -407,6 +416,7 @@ exports[`TextInput color 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -428,6 +438,7 @@ exports[`TextInput color 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -447,6 +458,7 @@ exports[`TextInput color 1`] = `
   background-color: rgba(253,111,255,0.4);
   color: #444444;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -673,6 +685,7 @@ exports[`TextInput direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -691,6 +704,7 @@ exports[`TextInput direction 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -712,6 +726,7 @@ exports[`TextInput direction 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -733,6 +748,7 @@ exports[`TextInput direction 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -754,6 +770,7 @@ exports[`TextInput direction 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -773,6 +790,7 @@ exports[`TextInput direction 1`] = `
   background-color: rgba(134,92,214,0.4);
   color: #FFFFFF;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -790,6 +808,7 @@ exports[`TextInput direction 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -810,6 +829,7 @@ exports[`TextInput direction 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -831,6 +851,7 @@ exports[`TextInput direction 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -852,6 +873,7 @@ exports[`TextInput direction 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -872,6 +894,7 @@ exports[`TextInput direction 1`] = `
   background-color: rgba(134,92,214,0.4);
   color: #FFFFFF;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1258,25 +1281,25 @@ exports[`TextInput direction 1`] = `
 
 exports[`TextInput handle keyboard 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledBox-bStriS dDycFE"
+    class="StyledBox-YaZNy ftRJis"
   >
     <div
-      class="StyledBox-bStriS pjdh"
+      class="StyledBox-YaZNy iLfhNe"
     />
     <div
-      class="StyledBox-bStriS hEvUpu"
+      class="StyledBox-YaZNy lfjrUc"
     >
       <div
         aria-label="Lower Bounds"
-        class="StyledBox-bStriS jDtNIb"
+        class="StyledBox-YaZNy kjTuna"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
-          class="StyledBox-bStriS huCjFn"
+          class="StyledBox-YaZNy jKtfA"
         >
           <svg
             height="12"
@@ -1294,20 +1317,20 @@ exports[`TextInput handle keyboard 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS fqEpXn"
+      class="StyledBox-YaZNy inkIZG"
       style="cursor: ew-resize;"
     />
     <div
-      class="StyledBox-bStriS hEvUpu"
+      class="StyledBox-YaZNy lfjrUc"
     >
       <div
         aria-label="Upper Bounds"
-        class="StyledBox-bStriS jDtNIb"
+        class="StyledBox-YaZNy kjTuna"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
-          class="StyledBox-bStriS huCjFn"
+          class="StyledBox-YaZNy jKtfA"
         >
           <svg
             height="12"
@@ -1325,7 +1348,7 @@ exports[`TextInput handle keyboard 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS pjdh"
+      class="StyledBox-YaZNy iLfhNe"
     />
   </div>
 </div>
@@ -1333,25 +1356,25 @@ exports[`TextInput handle keyboard 1`] = `
 
 exports[`TextInput handle mouse 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledBox-bStriS dDycFE"
+    class="StyledBox-YaZNy ftRJis"
   >
     <div
-      class="StyledBox-bStriS pjdh"
+      class="StyledBox-YaZNy iLfhNe"
     />
     <div
-      class="StyledBox-bStriS hEvUpu"
+      class="StyledBox-YaZNy lfjrUc"
     >
       <div
         aria-label="Lower Bounds"
-        class="StyledBox-bStriS jDtNIb"
+        class="StyledBox-YaZNy kjTuna"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
-          class="StyledBox-bStriS huCjFn"
+          class="StyledBox-YaZNy jKtfA"
         >
           <svg
             height="12"
@@ -1369,20 +1392,20 @@ exports[`TextInput handle mouse 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS fqEpXn"
+      class="StyledBox-YaZNy inkIZG"
       style="cursor: ew-resize;"
     />
     <div
-      class="StyledBox-bStriS hEvUpu"
+      class="StyledBox-YaZNy lfjrUc"
     >
       <div
         aria-label="Upper Bounds"
-        class="StyledBox-bStriS jDtNIb"
+        class="StyledBox-YaZNy kjTuna"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
-          class="StyledBox-bStriS huCjFn"
+          class="StyledBox-YaZNy jKtfA"
         >
           <svg
             height="12"
@@ -1400,7 +1423,7 @@ exports[`TextInput handle mouse 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-bStriS pjdh"
+      class="StyledBox-YaZNy iLfhNe"
     />
   </div>
 </div>
@@ -1427,6 +1450,7 @@ exports[`TextInput invert 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -1445,6 +1469,7 @@ exports[`TextInput invert 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1466,6 +1491,7 @@ exports[`TextInput invert 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1487,6 +1513,7 @@ exports[`TextInput invert 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1508,6 +1535,7 @@ exports[`TextInput invert 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1527,6 +1555,7 @@ exports[`TextInput invert 1`] = `
   background-color: rgba(134,92,214,0.4);
   color: #FFFFFF;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1546,6 +1575,7 @@ exports[`TextInput invert 1`] = `
   background-color: rgba(204,204,204,0.4);
   color: #444444;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1897,6 +1927,7 @@ exports[`TextInput max 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -1915,6 +1946,7 @@ exports[`TextInput max 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1936,6 +1968,7 @@ exports[`TextInput max 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1957,6 +1990,7 @@ exports[`TextInput max 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1978,6 +2012,7 @@ exports[`TextInput max 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1997,6 +2032,7 @@ exports[`TextInput max 1`] = `
   background-color: rgba(134,92,214,0.4);
   color: #FFFFFF;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2223,6 +2259,7 @@ exports[`TextInput min 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2241,6 +2278,7 @@ exports[`TextInput min 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2262,6 +2300,7 @@ exports[`TextInput min 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2283,6 +2322,7 @@ exports[`TextInput min 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2304,6 +2344,7 @@ exports[`TextInput min 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2323,6 +2364,7 @@ exports[`TextInput min 1`] = `
   background-color: rgba(134,92,214,0.4);
   color: #FFFFFF;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2549,6 +2591,7 @@ exports[`TextInput opacity 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2567,6 +2610,7 @@ exports[`TextInput opacity 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2588,6 +2632,7 @@ exports[`TextInput opacity 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2609,6 +2654,7 @@ exports[`TextInput opacity 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2630,6 +2676,7 @@ exports[`TextInput opacity 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2649,6 +2696,7 @@ exports[`TextInput opacity 1`] = `
   background-color: rgba(134,92,214,0.4);
   color: #FFFFFF;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2668,6 +2716,7 @@ exports[`TextInput opacity 1`] = `
   background-color: rgba(134,92,214,0.1);
   color: #FFFFFF;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2687,6 +2736,7 @@ exports[`TextInput opacity 1`] = `
   background-color: rgba(134,92,214,0.8);
   color: #FFFFFF;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3163,6 +3213,7 @@ exports[`TextInput round 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -3185,6 +3236,7 @@ exports[`TextInput round 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3206,6 +3258,7 @@ exports[`TextInput round 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3227,6 +3280,7 @@ exports[`TextInput round 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3244,6 +3298,7 @@ exports[`TextInput round 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3264,6 +3319,7 @@ exports[`TextInput round 1`] = `
   background-color: rgba(134,92,214,0.4);
   color: #FFFFFF;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3282,6 +3338,7 @@ exports[`TextInput round 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3302,6 +3359,7 @@ exports[`TextInput round 1`] = `
   background-color: rgba(134,92,214,0.4);
   color: #FFFFFF;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3320,6 +3378,7 @@ exports[`TextInput round 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3340,6 +3399,7 @@ exports[`TextInput round 1`] = `
   background-color: rgba(134,92,214,0.4);
   color: #FFFFFF;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3358,6 +3418,7 @@ exports[`TextInput round 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3378,6 +3439,7 @@ exports[`TextInput round 1`] = `
   background-color: rgba(134,92,214,0.4);
   color: #FFFFFF;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3396,6 +3458,7 @@ exports[`TextInput round 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3416,6 +3479,7 @@ exports[`TextInput round 1`] = `
   background-color: rgba(134,92,214,0.4);
   color: #FFFFFF;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -4251,6 +4315,7 @@ exports[`TextInput size 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -4269,6 +4334,7 @@ exports[`TextInput size 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -4290,6 +4356,7 @@ exports[`TextInput size 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -4311,6 +4378,7 @@ exports[`TextInput size 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -4332,6 +4400,7 @@ exports[`TextInput size 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -4351,6 +4420,7 @@ exports[`TextInput size 1`] = `
   background-color: rgba(134,92,214,0.4);
   color: #FFFFFF;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -5255,6 +5325,7 @@ exports[`TextInput step 1`] = `
   box-sizing: border-box;
   outline: none;
   max-width: 100%;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -5273,6 +5344,7 @@ exports[`TextInput step 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -5294,6 +5366,7 @@ exports[`TextInput step 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -5315,6 +5388,7 @@ exports[`TextInput step 1`] = `
   -ms-flex-align: center;
   align-items: center;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -5336,6 +5410,7 @@ exports[`TextInput step 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -5355,6 +5430,7 @@ exports[`TextInput step 1`] = `
   background-color: rgba(134,92,214,0.4);
   color: #FFFFFF;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;

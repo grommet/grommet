@@ -16,6 +16,7 @@ const SelectTextInput = styled(TextInput)`cursor: pointer;`;
 
 class Select extends Component {
   static defaultProps = {
+    closeOnChange: true,
     dropAlign: { top: 'bottom', left: 'left' },
     messages: { multiple: 'multiple' },
   }
@@ -23,21 +24,28 @@ class Select extends Component {
   state = { open: false }
 
   onOpen = () => {
-    this.setState({ open: true });
+    const { onOpen } = this.props;
+    this.setState({ open: true }, () => {
+      if (onOpen) {
+        onOpen();
+      }
+    });
   }
 
   onClose = () => {
     const { onClose } = this.props;
-    this.setState({ open: false });
-    if (onClose) {
-      onClose();
-    }
+    this.setState({ open: false }, () => {
+      if (onClose) {
+        onClose();
+      }
+    });
   }
 
   render() {
     const {
       a11yTitle,
       children,
+      closeOnChange,
       disabled,
       dropAlign,
       dropTarget,
@@ -55,7 +63,9 @@ class Select extends Component {
     const { open } = this.state;
 
     const onSelectChange = (event, ...args) => {
-      this.onClose();
+      if (closeOnChange) {
+        this.onClose();
+      }
       if (onChange) {
         onChange(event, ...args);
       }

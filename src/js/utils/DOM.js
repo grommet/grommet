@@ -65,7 +65,7 @@ export const getBodyChildElements = () => {
 export const getNewContainer = () => {
   // setup DOM
   const container = document.createElement('div');
-  document.body.insertBefore(container, document.body.firstChild);
+  document.body.appendChild(container);
   return container;
 };
 
@@ -136,11 +136,25 @@ export const findVisibleParent = (element) => {
   return undefined;
 };
 
+export const isNodeAfterScroll = (node, target = window) => {
+  const { bottom } = node.getBoundingClientRect();
+  const { height } = target.getBoundingClientRect();
+  return bottom >= height;
+};
+
+export const isNodeBeforeScroll = (node, target = window) => {
+  const { top } = node.getBoundingClientRect();
+  const { top: targetTop } = target.getBoundingClientRect();
+  return top <= targetTop;
+};
+
 export default {
   copyAttribute,
   filterByFocusable,
   findScrollParents,
   findVisibleParent,
+  isNodeAfterScroll,
+  isNodeBeforeScroll,
   getBodyChildElements,
   getFirstFocusableDescendant,
   getNewContainer,

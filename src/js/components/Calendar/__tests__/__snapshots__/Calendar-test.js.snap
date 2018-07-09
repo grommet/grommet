@@ -54,6 +54,7 @@ exports[`Calendar date renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -73,6 +74,7 @@ exports[`Calendar date renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -97,6 +99,7 @@ exports[`Calendar date renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -117,10 +120,15 @@ exports[`Calendar date renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 12px;
 }
@@ -194,22 +202,6 @@ exports[`Calendar date renders 1`] = `
 .c16:hover {
   background-color: rgba(221,221,221,0.5);
   color: #000000;
-}
-
-.c4 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c1 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
 }
 
 .c9 {
@@ -292,6 +284,22 @@ exports[`Calendar date renders 1`] = `
   height: 54.857142857142854px;
   background-color: #865CD6;
   color: #FFFFFF;
+}
+
+.c1 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width:699px) {
@@ -1433,6 +1441,7 @@ exports[`Calendar dates renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1452,6 +1461,7 @@ exports[`Calendar dates renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -1476,6 +1486,7 @@ exports[`Calendar dates renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -1496,10 +1507,15 @@ exports[`Calendar dates renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 12px;
 }
@@ -1573,22 +1589,6 @@ exports[`Calendar dates renders 1`] = `
 .c18:hover {
   background-color: rgba(221,221,221,0.5);
   color: #000000;
-}
-
-.c4 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c1 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
 }
 
 .c9 {
@@ -1671,6 +1671,22 @@ exports[`Calendar dates renders 1`] = `
   height: 54.857142857142854px;
   background-color: #865CD6;
   color: #FFFFFF;
+}
+
+.c1 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width:699px) {
@@ -2816,6 +2832,7 @@ exports[`Calendar disabled renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2835,6 +2852,7 @@ exports[`Calendar disabled renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2859,6 +2877,7 @@ exports[`Calendar disabled renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2879,10 +2898,15 @@ exports[`Calendar disabled renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 12px;
 }
@@ -2956,22 +2980,6 @@ exports[`Calendar disabled renders 1`] = `
 .c18:hover {
   background-color: rgba(221,221,221,0.5);
   color: #000000;
-}
-
-.c4 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c1 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
 }
 
 .c9 {
@@ -3054,6 +3062,22 @@ exports[`Calendar disabled renders 1`] = `
   height: 54.857142857142854px;
   background-color: #865CD6;
   color: #FFFFFF;
+}
+
+.c1 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width:699px) {
@@ -4199,6 +4223,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -4218,6 +4243,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -4242,6 +4268,7 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -4262,10 +4289,15 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 12px;
 }
@@ -4339,22 +4371,6 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
 .c16:hover {
   background-color: rgba(221,221,221,0.5);
   color: #000000;
-}
-
-.c4 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c1 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
 }
 
 .c9 {
@@ -4437,6 +4453,22 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   height: 54.857142857142854px;
   background-color: #865CD6;
   color: #FFFFFF;
+}
+
+.c1 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width:699px) {
@@ -6572,6 +6604,7 @@ exports[`Calendar renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -6591,6 +6624,7 @@ exports[`Calendar renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -6615,6 +6649,7 @@ exports[`Calendar renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -6635,10 +6670,15 @@ exports[`Calendar renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 12px;
 }
@@ -6712,22 +6752,6 @@ exports[`Calendar renders 1`] = `
 .c16:hover {
   background-color: rgba(221,221,221,0.5);
   color: #000000;
-}
-
-.c4 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c1 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
 }
 
 .c9 {
@@ -6810,6 +6834,22 @@ exports[`Calendar renders 1`] = `
   height: 54.857142857142854px;
   background-color: #865CD6;
   color: #FFFFFF;
+}
+
+.c1 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width:699px) {
@@ -7985,6 +8025,7 @@ exports[`Calendar size renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -8004,6 +8045,7 @@ exports[`Calendar size renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -8028,6 +8070,7 @@ exports[`Calendar size renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -8048,10 +8091,15 @@ exports[`Calendar size renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 12px;
 }
@@ -8125,54 +8173,6 @@ exports[`Calendar size renders 1`] = `
 .c16:hover {
   background-color: rgba(221,221,221,0.5);
   color: #000000;
-}
-
-.c20 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 24px;
-  line-height: 1.333;
-  max-width: 576px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c4 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 18px;
-  line-height: 1.333;
-  max-width: 432px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c26 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 36px;
-  line-height: 1.23;
-  max-width: 864px;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.c19 {
-  font-size: 22px;
-  line-height: 1.45;
-  width: 384px;
-}
-
-.c1 {
-  font-size: 16px;
-  line-height: 1.375;
-  width: 192px;
-}
-
-.c25 {
-  font-size: 36px;
-  line-height: 1.11;
-  width: 768px;
 }
 
 .c21 {
@@ -8373,6 +8373,54 @@ exports[`Calendar size renders 1`] = `
   height: 109.71428571428571px;
   background-color: #865CD6;
   color: #FFFFFF;
+}
+
+.c19 {
+  font-size: 22px;
+  line-height: 1.45;
+  width: 384px;
+}
+
+.c1 {
+  font-size: 16px;
+  line-height: 1.375;
+  width: 192px;
+}
+
+.c25 {
+  font-size: 36px;
+  line-height: 1.11;
+  width: 768px;
+}
+
+.c20 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c4 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 18px;
+  line-height: 1.333;
+  max-width: 432px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.c26 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 36px;
+  line-height: 1.23;
+  max-width: 864px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media only screen and (max-width:699px) {

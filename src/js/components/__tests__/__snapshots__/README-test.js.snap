@@ -439,17 +439,6 @@ between
 end
 \`\`\`
 
-**justifySelf**
-
-How to align along the row axis when contained in a Grid.
-
-\`\`\`
-start
-center
-end
-stretch
-\`\`\`
-
 **margin**
 
 The amount of margin around the box. An object can
@@ -1352,6 +1341,10 @@ Required. Array of objects describing the connections.
 
 \`\`\`
 [{
+  anchor: 
+    center
+    vertical
+    horizontal,
   color: string,
   fromTarget: 
     string
@@ -1363,6 +1356,8 @@ Required. Array of objects describing the connections.
     medium
     large,
   thickness: 
+    hair
+    xxsmall
     xsmall
     small
     medium
@@ -2950,6 +2945,14 @@ Function that will be called when each option is rendered.
 
 \`\`\`
 function
+\`\`\`
+
+**closeOnChange**
+
+Wether to close the drop when a selection is made. Defaults to \`true\`.
+
+\`\`\`
+boolean
 \`\`\`
 
 **disabled**

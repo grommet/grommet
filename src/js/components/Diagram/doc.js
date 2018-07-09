@@ -11,6 +11,7 @@ export default (Diagram) => {
 
   DocumentedDiagram.propTypes = {
     connections: PropTypes.arrayOf(PropTypes.shape({
+      anchor: PropTypes.oneOf(['center', 'vertical', 'horizontal']),
       color: PropTypes.string,
       fromTarget: PropTypes.oneOfType([
         PropTypes.string,
@@ -18,7 +19,7 @@ export default (Diagram) => {
       ]).isRequired,
       label: PropTypes.string, // for accessibility
       offset: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
-      thickness: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large']),
+      thickness: PropTypes.oneOf(['hair', 'xxsmall', 'xsmall', 'small', 'medium', 'large']),
       toTarget: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.object,

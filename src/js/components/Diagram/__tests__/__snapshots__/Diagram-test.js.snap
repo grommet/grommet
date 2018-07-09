@@ -1,37 +1,98 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Diagram basic 1`] = `
+exports[`Diagram anchor 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledStack-jqCQsC ewABiA"
+    class="StyledStack-jtPAMP bgKQVO"
   >
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-bStriS fGuGjB"
+        class="StyledBox-YaZNy htiNkm"
       >
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-YaZNy eOYTpl"
           id="1"
         />
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-YaZNy eOYTpl"
           id="2"
         />
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <svg
-        class="StyledDiagram-fAdbMP bwxUiT"
-        height="0"
+        class="StyledDiagram-hhOVAv jyCpfr"
         preserveAspectRatio="xMinYMin meet"
         viewBox="0 0 0 0"
-        width="0"
+      >
+        <g>
+          <path
+            d="M 0,0 Q 0,0 0,0 T 0,0"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="1"
+          />
+          <path
+            d="M 0,0 Q 0,0 0,0 T 0,0"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="1"
+          />
+          <path
+            d="M 0,0 Q 0,0 0,0 T 0,0"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="1"
+          />
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Diagram basic 1`] = `
+<div
+  class="StyledGrommet-gKbdxL iuxDFS"
+>
+  <div
+    class="StyledStack-jtPAMP bgKQVO"
+  >
+    <div
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
+    >
+      <div
+        class="StyledBox-YaZNy htiNkm"
+      >
+        <div
+          class="StyledBox-YaZNy eOYTpl"
+          id="1"
+        />
+        <div
+          class="StyledBox-YaZNy eOYTpl"
+          id="2"
+        />
+      </div>
+    </div>
+    <div
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
+    >
+      <svg
+        class="StyledDiagram-hhOVAv jyCpfr"
+        preserveAspectRatio="xMinYMin meet"
+        viewBox="0 0 0 0"
       >
         <g>
           <path
@@ -51,36 +112,34 @@ exports[`Diagram basic 1`] = `
 
 exports[`Diagram color 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledStack-jqCQsC ewABiA"
+    class="StyledStack-jtPAMP bgKQVO"
   >
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-bStriS fGuGjB"
+        class="StyledBox-YaZNy htiNkm"
       >
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-YaZNy eOYTpl"
           id="1"
         />
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-YaZNy eOYTpl"
           id="2"
         />
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <svg
-        class="StyledDiagram-fAdbMP bwxUiT"
-        height="0"
+        class="StyledDiagram-hhOVAv jyCpfr"
         preserveAspectRatio="xMinYMin meet"
         viewBox="0 0 0 0"
-        width="0"
       >
         <g>
           <path
@@ -100,36 +159,34 @@ exports[`Diagram color 1`] = `
 
 exports[`Diagram offset 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledStack-jqCQsC ewABiA"
+    class="StyledStack-jtPAMP bgKQVO"
   >
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-bStriS fGuGjB"
+        class="StyledBox-YaZNy htiNkm"
       >
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-YaZNy eOYTpl"
           id="1"
         />
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-YaZNy eOYTpl"
           id="2"
         />
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <svg
-        class="StyledDiagram-fAdbMP bwxUiT"
-        height="0"
+        class="StyledDiagram-hhOVAv jyCpfr"
         preserveAspectRatio="xMinYMin meet"
         viewBox="0 0 0 0"
-        width="0"
       >
         <g>
           <path
@@ -163,40 +220,54 @@ exports[`Diagram offset 1`] = `
 </div>
 `;
 
-exports[`Diagram thickness renders 1`] = `
+exports[`Diagram thickness 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledStack-jqCQsC ewABiA"
+    class="StyledStack-jtPAMP bgKQVO"
   >
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-bStriS fGuGjB"
+        class="StyledBox-YaZNy htiNkm"
       >
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-YaZNy eOYTpl"
           id="1"
         />
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-YaZNy eOYTpl"
           id="2"
         />
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <svg
-        class="StyledDiagram-fAdbMP bwxUiT"
-        height="0"
+        class="StyledDiagram-hhOVAv jyCpfr"
         preserveAspectRatio="xMinYMin meet"
         viewBox="0 0 0 0"
-        width="0"
       >
         <g>
+          <path
+            d="M 0,0 Q 0,0 0,0 T 0,0"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="1"
+          />
+          <path
+            d="M 0,0 Q 0,0 0,0 T 0,0"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="3"
+          />
           <path
             d="M 0,0 Q 0,0 0,0 T 0,0"
             fill="none"
@@ -221,6 +292,14 @@ exports[`Diagram thickness renders 1`] = `
             stroke-linejoin="miter"
             stroke-width="24"
           />
+          <path
+            d="M 0,0 Q 0,0 0,0 T 0,0"
+            fill="none"
+            stroke="#FD6FFF"
+            stroke-linecap="butt"
+            stroke-linejoin="miter"
+            stroke-width="5"
+          />
         </g>
       </svg>
     </div>
@@ -230,36 +309,34 @@ exports[`Diagram thickness renders 1`] = `
 
 exports[`Diagram type 1`] = `
 <div
-  class="StyledGrommet-gGRXwz fDhYVV"
+  class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledStack-jqCQsC ewABiA"
+    class="StyledStack-jtPAMP bgKQVO"
   >
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC NdcUi"
+      class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-bStriS fGuGjB"
+        class="StyledBox-YaZNy htiNkm"
       >
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-YaZNy eOYTpl"
           id="1"
         />
         <div
-          class="StyledBox-bStriS hhNwgv"
+          class="StyledBox-YaZNy eOYTpl"
           id="2"
         />
       </div>
     </div>
     <div
-      class="StyledStack__StyledStackLayer-jgYgfC kuRNII"
+      class="StyledStack__StyledStackLayer-cofHih eyVbLW"
     >
       <svg
-        class="StyledDiagram-fAdbMP bwxUiT"
-        height="0"
+        class="StyledDiagram-hhOVAv jyCpfr"
         preserveAspectRatio="xMinYMin meet"
         viewBox="0 0 0 0"
-        width="0"
       >
         <g>
           <path

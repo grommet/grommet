@@ -50,29 +50,7 @@ exports[`CheckBox checked renders 1`] = `
   height: 100%;
   margin: 0;
   z-index: 1;
-}
-
-.c3:focus + div,
-.c3:focus + span {
-  border-color: #FD6FFF;
-  box-shadow: 0 0 2px 2px #FD6FFF;
-}
-
-.c3:focus + div > circle,
-.c3:focus + span > circle,
-.c3:focus + div > ellipse,
-.c3:focus + span > ellipse,
-.c3:focus + div > line,
-.c3:focus + span > line,
-.c3:focus + div > path,
-.c3:focus + span > path,
-.c3:focus + div > polygon,
-.c3:focus + span > polygon,
-.c3:focus + div > polyline,
-.c3:focus + span > polyline,
-.c3:focus + div > rect,
-.c3:focus + span > rect {
-  outline: #FD6FFF solid 2px;
+  cursor: pointer;
 }
 
 .c3:checked + div {
@@ -130,6 +108,8 @@ exports[`CheckBox checked renders 1`] = `
       <input
         checked={true}
         className="c3"
+        onBlur={[Function]}
+        onFocus={[Function]}
         type="checkbox"
       />
       <div
@@ -202,29 +182,7 @@ exports[`CheckBox disabled renders 1`] = `
   height: 100%;
   margin: 0;
   z-index: 1;
-}
-
-.c3:focus + div,
-.c3:focus + span {
-  border-color: #FD6FFF;
-  box-shadow: 0 0 2px 2px #FD6FFF;
-}
-
-.c3:focus + div > circle,
-.c3:focus + span > circle,
-.c3:focus + div > ellipse,
-.c3:focus + span > ellipse,
-.c3:focus + div > line,
-.c3:focus + span > line,
-.c3:focus + div > path,
-.c3:focus + span > path,
-.c3:focus + div > polygon,
-.c3:focus + span > polygon,
-.c3:focus + div > polyline,
-.c3:focus + span > polyline,
-.c3:focus + div > rect,
-.c3:focus + span > rect {
-  outline: #FD6FFF solid 2px;
+  cursor: pointer;
 }
 
 .c3:checked + div {
@@ -283,6 +241,8 @@ exports[`CheckBox disabled renders 1`] = `
       <input
         className="c3"
         disabled={true}
+        onBlur={[Function]}
+        onFocus={[Function]}
         type="checkbox"
       />
       <div
@@ -311,6 +271,8 @@ exports[`CheckBox disabled renders 1`] = `
         checked={true}
         className="c3"
         disabled={true}
+        onBlur={[Function]}
+        onFocus={[Function]}
         type="checkbox"
       />
       <div
@@ -385,29 +347,7 @@ exports[`CheckBox label renders 1`] = `
   height: 100%;
   margin: 0;
   z-index: 1;
-}
-
-.c3:focus + div,
-.c3:focus + span {
-  border-color: #FD6FFF;
-  box-shadow: 0 0 2px 2px #FD6FFF;
-}
-
-.c3:focus + div > circle,
-.c3:focus + span > circle,
-.c3:focus + div > ellipse,
-.c3:focus + span > ellipse,
-.c3:focus + div > line,
-.c3:focus + span > line,
-.c3:focus + div > path,
-.c3:focus + span > path,
-.c3:focus + div > polygon,
-.c3:focus + span > polygon,
-.c3:focus + div > polyline,
-.c3:focus + span > polyline,
-.c3:focus + div > rect,
-.c3:focus + span > rect {
-  outline: #FD6FFF solid 2px;
+  cursor: pointer;
 }
 
 .c3:checked + div {
@@ -464,6 +404,8 @@ exports[`CheckBox label renders 1`] = `
     >
       <input
         className="c3"
+        onBlur={[Function]}
+        onFocus={[Function]}
         type="checkbox"
       />
       <div
@@ -492,6 +434,8 @@ exports[`CheckBox label renders 1`] = `
     >
       <input
         className="c3"
+        onBlur={[Function]}
+        onFocus={[Function]}
         type="checkbox"
       />
       <div
@@ -565,29 +509,7 @@ exports[`CheckBox renders 1`] = `
   height: 100%;
   margin: 0;
   z-index: 1;
-}
-
-.c3:focus + div,
-.c3:focus + span {
-  border-color: #FD6FFF;
-  box-shadow: 0 0 2px 2px #FD6FFF;
-}
-
-.c3:focus + div > circle,
-.c3:focus + span > circle,
-.c3:focus + div > ellipse,
-.c3:focus + span > ellipse,
-.c3:focus + div > line,
-.c3:focus + span > line,
-.c3:focus + div > path,
-.c3:focus + span > path,
-.c3:focus + div > polygon,
-.c3:focus + span > polygon,
-.c3:focus + div > polyline,
-.c3:focus + span > polyline,
-.c3:focus + div > rect,
-.c3:focus + span > rect {
-  outline: #FD6FFF solid 2px;
+  cursor: pointer;
 }
 
 .c3:checked + div {
@@ -644,6 +566,8 @@ exports[`CheckBox renders 1`] = `
     >
       <input
         className="c3"
+        onBlur={[Function]}
+        onFocus={[Function]}
         type="checkbox"
       />
       <div
@@ -672,6 +596,8 @@ exports[`CheckBox renders 1`] = `
         className="c3"
         id="test id"
         name="test name"
+        onBlur={[Function]}
+        onFocus={[Function]}
         type="checkbox"
       />
       <div
@@ -742,29 +668,7 @@ exports[`CheckBox reverse renders 1`] = `
   height: 100%;
   margin: 0;
   z-index: 1;
-}
-
-.c3:focus + div,
-.c3:focus + span {
-  border-color: #FD6FFF;
-  box-shadow: 0 0 2px 2px #FD6FFF;
-}
-
-.c3:focus + div > circle,
-.c3:focus + span > circle,
-.c3:focus + div > ellipse,
-.c3:focus + span > ellipse,
-.c3:focus + div > line,
-.c3:focus + span > line,
-.c3:focus + div > path,
-.c3:focus + span > path,
-.c3:focus + div > polygon,
-.c3:focus + span > polygon,
-.c3:focus + div > polyline,
-.c3:focus + span > polyline,
-.c3:focus + div > rect,
-.c3:focus + span > rect {
-  outline: #FD6FFF solid 2px;
+  cursor: pointer;
 }
 
 .c3:checked + div {
@@ -821,6 +725,8 @@ exports[`CheckBox reverse renders 1`] = `
     >
       <input
         className="c3"
+        onBlur={[Function]}
+        onFocus={[Function]}
         type="checkbox"
       />
       <div
@@ -894,29 +800,7 @@ exports[`CheckBox toggle renders 1`] = `
   height: 100%;
   margin: 0;
   z-index: 1;
-}
-
-.c3:focus + div,
-.c3:focus + span {
-  border-color: #FD6FFF;
-  box-shadow: 0 0 2px 2px #FD6FFF;
-}
-
-.c3:focus + div > circle,
-.c3:focus + span > circle,
-.c3:focus + div > ellipse,
-.c3:focus + span > ellipse,
-.c3:focus + div > line,
-.c3:focus + span > line,
-.c3:focus + div > path,
-.c3:focus + span > path,
-.c3:focus + div > polygon,
-.c3:focus + span > polygon,
-.c3:focus + div > polyline,
-.c3:focus + span > polyline,
-.c3:focus + div > rect,
-.c3:focus + span > rect {
-  outline: #FD6FFF solid 2px;
+  cursor: pointer;
 }
 
 .c3:checked + div {
@@ -972,6 +856,8 @@ exports[`CheckBox toggle renders 1`] = `
     >
       <input
         className="c3"
+        onBlur={[Function]}
+        onFocus={[Function]}
         type="checkbox"
       />
       <span
@@ -992,6 +878,8 @@ exports[`CheckBox toggle renders 1`] = `
       <input
         checked={true}
         className="c3"
+        onBlur={[Function]}
+        onFocus={[Function]}
         type="checkbox"
       />
       <span
@@ -1011,6 +899,8 @@ exports[`CheckBox toggle renders 1`] = `
     >
       <input
         className="c3"
+        onBlur={[Function]}
+        onFocus={[Function]}
         type="checkbox"
       />
       <span

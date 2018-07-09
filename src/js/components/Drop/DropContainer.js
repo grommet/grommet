@@ -25,6 +25,10 @@ class DropContainer extends Component {
     }
   }
 
+  componentDidUpdate() {
+    this.place();
+  }
+
   componentWillUnmount() {
     this.removeScrollListener();
     window.removeEventListener('resize', this.onResize);
@@ -44,11 +48,15 @@ class DropContainer extends Component {
   }
 
   onClickDocument = (event) => {
-    const { onClickOutside } = this.props;
-    if (!findDOMNode(this.dropRef).contains(event.target)) {
-      if (onClickOutside) {
-        onClickOutside();
-      }
+    const { dropTarget, onClickOutside } = this.props;
+    const dropTargetNode = findDOMNode(dropTarget);
+    const dropNode = findDOMNode(this.dropRef);
+    if (
+      onClickOutside &&
+      !dropTargetNode.contains(event.target) &&
+      !dropNode.contains(event.target)
+    ) {
+      onClickOutside();
     }
   }
 

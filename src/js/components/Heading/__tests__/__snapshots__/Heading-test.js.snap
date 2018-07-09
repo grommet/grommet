@@ -443,27 +443,11 @@ exports[`Heading size renders 1`] = `
   font-weight: 600;
 }
 
-.c5 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 36px;
-  line-height: 1.23;
-  max-width: 864px;
-  font-weight: 600;
-}
-
 .c1 {
   font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 24px;
   line-height: 1.333;
   max-width: 576px;
-  font-weight: 600;
-}
-
-.c4 {
-  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
-  font-size: 18px;
-  line-height: 1.333;
-  max-width: 432px;
   font-weight: 600;
 }
 
@@ -475,7 +459,15 @@ exports[`Heading size renders 1`] = `
   font-weight: 600;
 }
 
-.c6 {
+.c5 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 36px;
+  line-height: 1.23;
+  max-width: 864px;
+  font-weight: 600;
+}
+
+.c4 {
   font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 18px;
   line-height: 1.333;
@@ -483,7 +475,47 @@ exports[`Heading size renders 1`] = `
   font-weight: 600;
 }
 
+.c6 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 48px;
+  line-height: 1.125;
+  max-width: 1152px;
+  font-weight: 600;
+}
+
+.c8 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 24px;
+  line-height: 1.333;
+  max-width: 576px;
+  font-weight: 600;
+}
+
 .c7 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 18px;
+  line-height: 1.333;
+  max-width: 432px;
+  font-weight: 600;
+}
+
+.c9 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 36px;
+  line-height: 1.23;
+  max-width: 864px;
+  font-weight: 600;
+}
+
+.c11 {
+  font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
+  font-size: 18px;
+  line-height: 1.333;
+  max-width: 432px;
+  font-weight: 600;
+}
+
+.c10 {
   font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 16px;
   line-height: 1.375;
@@ -491,7 +523,7 @@ exports[`Heading size renders 1`] = `
   font-weight: 600;
 }
 
-.c8 {
+.c12 {
   font-family: 'Zilla Slab','Work Sans',Arial,sans-serif;
   font-size: 24px;
   line-height: 1.333;
@@ -509,25 +541,7 @@ exports[`Heading size renders 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c5 {
-    font-size: 24px;
-    line-height: 1.333;
-    max-width: 576px;
-    font-weight: 600;
-  }
-}
-
-@media only screen and (max-width:699px) {
   .c1 {
-    font-size: 18px;
-    line-height: 1.333;
-    max-width: 432px;
-    font-weight: 600;
-  }
-}
-
-@media only screen and (max-width:699px) {
-  .c4 {
     font-size: 18px;
     line-height: 1.333;
     max-width: 432px;
@@ -545,10 +559,37 @@ exports[`Heading size renders 1`] = `
 }
 
 @media only screen and (max-width:699px) {
+  .c5 {
+    font-size: 24px;
+    line-height: 1.333;
+    max-width: 576px;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c4 {
+    font-size: 18px;
+    line-height: 1.333;
+    max-width: 432px;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .c6 {
-    font-size: 16px;
-    line-height: 1.375;
-    max-width: 384px;
+    font-size: 36px;
+    line-height: 1.23;
+    max-width: 864px;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c8 {
+    font-size: 18px;
+    line-height: 1.333;
+    max-width: 432px;
     font-weight: 600;
   }
 }
@@ -563,7 +604,34 @@ exports[`Heading size renders 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c8 {
+  .c9 {
+    font-size: 24px;
+    line-height: 1.333;
+    max-width: 576px;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c11 {
+    font-size: 18px;
+    line-height: 1.333;
+    max-width: 432px;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c10 {
+    font-size: 16px;
+    line-height: 1.375;
+    max-width: 384px;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .c12 {
     font-size: 24px;
     line-height: 1.333;
     max-width: 576px;
@@ -595,31 +663,31 @@ exports[`Heading size renders 1`] = `
     size="medium"
   />
   <h2
-    className="c2"
-    size="large"
-  />
-  <h3
     className="c6"
-    size="small"
-  />
-  <h3
-    className="c1"
-    size="medium"
-  />
-  <h3
-    className="c5"
     size="large"
   />
-  <h4
+  <h3
     className="c7"
     size="small"
   />
+  <h3
+    className="c8"
+    size="medium"
+  />
+  <h3
+    className="c9"
+    size="large"
+  />
   <h4
-    className="c4"
+    className="c10"
+    size="small"
+  />
+  <h4
+    className="c11"
     size="medium"
   />
   <h4
-    className="c8"
+    className="c12"
     size="large"
   />
 </div>

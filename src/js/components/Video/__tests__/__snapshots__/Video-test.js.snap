@@ -59,6 +59,7 @@ exports[`Video autoPlay renders 1`] = `
   align-items: center;
   background-color: rgba(68,68,68,0.8);
   color: #FFFFFF;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -83,10 +84,15 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 12px;
 }
@@ -103,6 +109,7 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -123,6 +130,7 @@ exports[`Video autoPlay renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -142,6 +150,7 @@ exports[`Video autoPlay renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -162,6 +171,7 @@ exports[`Video autoPlay renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -253,14 +263,6 @@ exports[`Video autoPlay renders 1`] = `
   right: 0;
 }
 
-.c2 {
-  max-width: 100%;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
-}
-
 .c1 {
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
@@ -292,6 +294,14 @@ exports[`Video autoPlay renders 1`] = `
 
 .c14 {
   cursor: pointer;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (max-width:699px) {
@@ -650,6 +660,7 @@ exports[`Video controls renders 1`] = `
   align-items: center;
   background-color: rgba(68,68,68,0.8);
   color: #FFFFFF;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -674,10 +685,15 @@ exports[`Video controls renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 12px;
 }
@@ -694,6 +710,7 @@ exports[`Video controls renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -714,6 +731,7 @@ exports[`Video controls renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -733,6 +751,7 @@ exports[`Video controls renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -753,6 +772,7 @@ exports[`Video controls renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -777,6 +797,7 @@ exports[`Video controls renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -868,14 +889,6 @@ exports[`Video controls renders 1`] = `
   right: 0;
 }
 
-.c2 {
-  max-width: 100%;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
-}
-
 .c1 {
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
@@ -917,6 +930,14 @@ exports[`Video controls renders 1`] = `
 
 .c14 {
   cursor: pointer;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (max-width:699px) {
@@ -1419,6 +1440,7 @@ exports[`Video fit renders 1`] = `
   align-items: center;
   background-color: rgba(68,68,68,0.8);
   color: #FFFFFF;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -1443,10 +1465,15 @@ exports[`Video fit renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 12px;
 }
@@ -1463,6 +1490,7 @@ exports[`Video fit renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -1483,6 +1511,7 @@ exports[`Video fit renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1502,6 +1531,7 @@ exports[`Video fit renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1522,6 +1552,7 @@ exports[`Video fit renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -1613,32 +1644,6 @@ exports[`Video fit renders 1`] = `
   right: 0;
 }
 
-.c2 {
-  max-width: 100%;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  min-height: 0;
-  object-fit: cover;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
-}
-
-.c20 {
-  max-width: 100%;
-  -webkit-flex: 1 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  min-height: 0;
-  object-fit: contain;
-}
-
-.c20::cue {
-  background: rgba(0,0,0,0.7);
-}
-
 .c1 {
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
@@ -1670,6 +1675,32 @@ exports[`Video fit renders 1`] = `
 
 .c14 {
   cursor: pointer;
+}
+
+.c2 {
+  max-width: 100%;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  min-height: 0;
+  object-fit: cover;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
+}
+
+.c20 {
+  max-width: 100%;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  min-height: 0;
+  object-fit: contain;
+}
+
+.c20::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (max-width:699px) {
@@ -2168,6 +2199,7 @@ exports[`Video loop renders 1`] = `
   align-items: center;
   background-color: rgba(68,68,68,0.8);
   color: #FFFFFF;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2192,10 +2224,15 @@ exports[`Video loop renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 12px;
 }
@@ -2212,6 +2249,7 @@ exports[`Video loop renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2232,6 +2270,7 @@ exports[`Video loop renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2251,6 +2290,7 @@ exports[`Video loop renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2271,6 +2311,7 @@ exports[`Video loop renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2362,14 +2403,6 @@ exports[`Video loop renders 1`] = `
   right: 0;
 }
 
-.c2 {
-  max-width: 100%;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
-}
-
 .c1 {
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
@@ -2401,6 +2434,14 @@ exports[`Video loop renders 1`] = `
 
 .c14 {
   cursor: pointer;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (max-width:699px) {
@@ -2727,6 +2768,7 @@ exports[`Video mute renders 1`] = `
   align-items: center;
   background-color: rgba(68,68,68,0.8);
   color: #FFFFFF;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2751,10 +2793,15 @@ exports[`Video mute renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 12px;
 }
@@ -2771,6 +2818,7 @@ exports[`Video mute renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2791,6 +2839,7 @@ exports[`Video mute renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2810,6 +2859,7 @@ exports[`Video mute renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -2830,6 +2880,7 @@ exports[`Video mute renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -2921,14 +2972,6 @@ exports[`Video mute renders 1`] = `
   right: 0;
 }
 
-.c2 {
-  max-width: 100%;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
-}
-
 .c1 {
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
@@ -2960,6 +3003,14 @@ exports[`Video mute renders 1`] = `
 
 .c14 {
   cursor: pointer;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (max-width:699px) {
@@ -3286,6 +3337,7 @@ exports[`Video renders 1`] = `
   align-items: center;
   background-color: rgba(68,68,68,0.8);
   color: #FFFFFF;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -3310,10 +3362,15 @@ exports[`Video renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 0;
   padding: 12px;
 }
@@ -3330,6 +3387,7 @@ exports[`Video renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -3350,6 +3408,7 @@ exports[`Video renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3369,6 +3428,7 @@ exports[`Video renders 1`] = `
   outline: none;
   max-width: 100%;
   min-width: 0;
+  min-height: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -3389,6 +3449,7 @@ exports[`Video renders 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  min-width: 0;
   min-height: 0;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -3480,14 +3541,6 @@ exports[`Video renders 1`] = `
   right: 0;
 }
 
-.c2 {
-  max-width: 100%;
-}
-
-.c2::cue {
-  background: rgba(0,0,0,0.7);
-}
-
 .c1 {
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
@@ -3519,6 +3572,14 @@ exports[`Video renders 1`] = `
 
 .c14 {
   cursor: pointer;
+}
+
+.c2 {
+  max-width: 100%;
+}
+
+.c2::cue {
+  background: rgba(0,0,0,0.7);
 }
 
 @media only screen and (max-width:699px) {

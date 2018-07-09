@@ -85,6 +85,7 @@ class Button extends Component {
           <Box
             direction='row'
             align='center'
+            justify='center'
             gap='small'
             pad={icon && !plain ? 'small' : undefined}
           >

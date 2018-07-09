@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "2.0.0-beta.3",
+  "version": "2.0.0-beta.4",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -56,7 +56,7 @@
     "@storybook/react": "^4.0.0-alpha.8",
     "babel-cli": "^6.22.2",
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
+    "babel-eslint": "^7.2.3",
     "babel-jest": "^23.0.1",
     "babel-loader": "^7.1.1",
     "babel-plugin-styled-components": "^1.1.7",
