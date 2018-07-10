@@ -1,86 +1,80 @@
 import React from 'react';
-import { FormSearch } from 'grommet-icons';
 
-import { TableRow, TableHeader, TableCell } from '../Table';
+import { TableCell } from '../Table';
 import { Text } from '../Text';
 import { Box } from '../Box';
-import { TextInput } from '../TextInput';
 
 import Resizer from './Resizer';
+import Searcher from './Searcher';
 import Sorter from './Sorter';
 import ExpanderCell from './ExpanderCell';
+import { StyledDataTableHeader, StyledDataTableRow } from './StyledDataTable';
 
 const Header = ({
-  columns, filters, groups, groupState, headerProps,
-  onFilter, onResize, onSort, onToggle,
-  sort, widths,
+  columns, filtering, filters, groups, groupState,
+  onFilter, onFiltering, onResize, onSort, onToggle,
+  sort, theme, widths, ...rest
 }) => (
-  <TableHeader>
-    <TableRow>
+  <StyledDataTableHeader {...rest}>
+    <StyledDataTableRow>
 
       {groups ? (
         <ExpanderCell
-          {...headerProps}
-          verticalAlign='bottom'
+          context='header'
           expanded={Object.keys(groupState)
             .filter(k => !groupState[k].expanded).length === 0}
+          theme={theme}
           onToggle={onToggle}
         />
       ) : null}
 
-      {columns.map(({ property, label, align }) => (
+      {columns.map(({ property, header, align, search }) => (
         <TableCell
           key={property}
           scope='col'
           plain={true}
+          verticalAlign='bottom'
           style={widths && widths[property] ?
             { width: widths[property] } : undefined}
         >
-          <Resizer property={property} onResize={onResize}>
-            <Box
-              flex={true}
-              {...headerProps}
-              direction='row'
-              justify={align}
-            >
-              <Sorter
-                align={align}
-                property={property}
-                onSort={onSort}
-                sort={sort}
+          <Resizer property={property} onResize={onResize} theme={theme}>
+            <Box flex={true}>
+              <Box
+                flex={true}
+                direction='row'
+                justify='between'
+                align='center'
+                {...theme.dataTable.header}
+                pad={undefined}
               >
-                <Text>{label}</Text>
-              </Sorter>
+                <Sorter
+                  align={align}
+                  property={property}
+                  onSort={onSort}
+                  sort={sort}
+                  theme={theme}
+                >
+                  {typeof header === 'string' ? (
+                    <Text>{header}</Text>
+                  ) : header}
+                </Sorter>
+                {filters && search ? (
+                  <Searcher
+                    filtering={filtering}
+                    filters={filters}
+                    property={property}
+                    onFilter={onFilter}
+                    onFiltering={onFiltering}
+                  />
+                ) : null}
+              </Box>
             </Box>
           </Resizer>
         </TableCell>
       ))}
 
-    </TableRow>
-
-    {filters ? (
-      <TableRow>
-        {groups ? (
-          <TableCell size='xxsmall' {...headerProps} />
-        ) : null}
-        {columns.map(({ property, search }) => (
-          <TableCell key={property} plain={true}>
-            <Box {...headerProps}>
-              {search ? (
-                <TextInput
-                  plain={true}
-                  placeholder={<FormSearch color='border' />}
-                  value={filters[property]}
-                  onChange={event => onFilter(property, event.target.value)}
-                />
-              ) : null}
-            </Box>
-          </TableCell>
-        ))}
-      </TableRow>
-    ) : null}
-
-  </TableHeader>
+    </StyledDataTableRow>
+  </StyledDataTableHeader>
 );
 
 export default Header;

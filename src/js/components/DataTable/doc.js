@@ -12,26 +12,30 @@ export default (DataTable) => {
       );
 
   DocumentedDataTable.propTypes = {
-    bodyProps: PropTypes.shape({})
-      .description('Properties to pass to configure body cells.'),
     columns: PropTypes.arrayOf(PropTypes.shape({
-      property: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      render: PropTypes.func,
       align: PropTypes.oneOf(['center', 'start', 'end']),
       aggregate: PropTypes.oneOf(['avg', 'max', 'min', 'sum']),
       footer: PropTypes.oneOfType([
-        PropTypes.string,
+        PropTypes.node,
         PropTypes.shape({
           aggregate: PropTypes.bool,
         }),
       ]),
+      header: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.node,
+        PropTypes.shape({
+          aggregate: PropTypes.bool,
+        }),
+      ]),
+      property: PropTypes.string.isRequired,
+      render: PropTypes.func,
       search: PropTypes.bool,
     }))
     .description(`
       A description of the data. The order controls the column order.
       'property' indicates which property in the data objects to associate
-      the column with. 'label' indicates what to display in the column
+      the column with. 'header' indicates what to display in the column
       header. 'render' allows for custom rendering of body cells. Use 'render'
       for custom formatting for things like currency and date or to
       display rich content like Meters. 'align' indicates how the cells in
@@ -43,14 +47,18 @@ export default (DataTable) => {
     `),
     data: PropTypes.arrayOf(PropTypes.shape({}))
       .description('Array of data objects.'),
-    footerProps: PropTypes.shape({})
-      .description('Properties to pass to configure footer cells.'),
     groupBy: PropTypes.string
       .description('Property to group data by.'),
-    headerProps: PropTypes.shape({})
-      .description('Properties to pass to configure header cells.'),
     resizeable: PropTypes.string
       .description('Whether to allow the user to resize column widths.'),
+    size: PropTypes.oneOf(
+      ['small', 'medium', 'large', 'xlarge']
+    ).description(`
+      The height of the table body. If set, the table body will have a fixed
+      height and the rows will be scrollable within it. In order to preserve
+      header and footer cell alignment, all cells will have the same
+      width. This cannot be used in combination with 'resizeable'.
+    `),
     sortable: PropTypes.string
       .description('Whether to allow the user to sort columns.'),
   };

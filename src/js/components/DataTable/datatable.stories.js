@@ -5,6 +5,7 @@ import DataTable from './DataTable';
 import Grommet from '../Grommet/Grommet';
 import Meter from '../Meter/Meter';
 import Box from '../Box/Box';
+import Text from '../Text/Text';
 
 const amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -12,39 +13,35 @@ const amountFormatter = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 2,
 });
 
-const COLUMNS = [
+const columns = [
   {
     property: 'name',
-    label: 'Name',
+    header: <Text>Name</Text>,
     primary: true,
     footer: 'Total',
-    search: true,
   },
   {
     property: 'location',
-    label: 'Location',
-    search: true,
+    header: 'Location',
   },
   {
     property: 'date',
-    label: 'Date',
+    header: 'Date',
     render: datum => (new Date(datum.date)).toLocaleDateString('en-US'),
     align: 'end',
-    search: true,
   },
   {
     property: 'percent',
-    label: 'Percent Complete',
+    header: 'Percent Complete',
     render: datum => (
       <Box pad={{ vertical: 'xsmall' }}>
         <Meter values={[{ value: datum.percent }]} thickness='small' size='small' />
       </Box>
     ),
-    align: 'end',
   },
   {
     property: 'paid',
-    label: 'Paid',
+    header: 'Paid',
     render: datum => amountFormatter.format(datum.paid / 100),
     align: 'end',
     aggregate: 'sum',
@@ -52,6 +49,17 @@ const COLUMNS = [
   },
 ];
 
+const locations = ['Boise', 'Fort Collins', 'Los Gatos', 'Palo Alto', 'San Francisco'];
+const data = [];
+for (let i = 0; i < 40; i += 1) {
+  data.push({
+    name: `Name ${i + 1}`,
+    location: locations[i % locations.length],
+    date: `2018-07-${(i % 30) + 1}`,
+    percent: (i % 11) * 10,
+    paid: ((i + 1) * 17) % 1000,
+  });
+}
 const DATA = [
   { name: 'Alan', location: 'Los Gatos', date: '2018-06-11', percent: 20, paid: 2345 },
   { name: 'Bryan', location: 'Fort Collins', date: '2018-06-10', percent: 30, paid: 1234 },
@@ -68,11 +76,35 @@ class SimpleDataTable extends Component {
     return (
       <Grommet>
         <DataTable
-          columns={COLUMNS}
+          columns={columns}
           data={DATA}
-          headerProps={{ border: { side: 'bottom', size: 'small' } }}
-          footerProps={{ border: { side: 'top', size: 'small' } }}
-          groupBy='location'
+        />
+      </Grommet>
+    );
+  }
+}
+
+class SizedDataTable extends Component {
+  render() {
+    return (
+      <Grommet>
+        <DataTable
+          columns={columns}
+          data={data}
+          size='medium'
+        />
+      </Grommet>
+    );
+  }
+}
+
+class TunableDataTable extends Component {
+  render() {
+    return (
+      <Grommet>
+        <DataTable
+          columns={columns.map(c => ({ ...c, search: c.property === 'name' || c.property === 'location' }))}
+          data={DATA}
           sortable={true}
           resizeable={true}
         />
@@ -81,5 +113,30 @@ class SimpleDataTable extends Component {
   }
 }
 
+const groupColumns = [...columns];
+const first = groupColumns[0];
+groupColumns[0] = { ...groupColumns[1] };
+groupColumns[1] = { ...first };
+groupColumns[0].footer = groupColumns[1].footer;
+delete groupColumns[1].footer;
+
+class GroupedDataTable extends Component {
+  render() {
+    return (
+      <Grommet>
+        <DataTable
+          columns={groupColumns}
+          data={DATA}
+          groupBy='location'
+          sortable={true}
+        />
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('DataTable', module)
-  .add('Simple DataTable', () => <SimpleDataTable />);
+  .add('Simple DataTable', () => <SimpleDataTable />)
+  .add('Sized DataTable', () => <SizedDataTable />)
+  .add('Tunable DataTable', () => <TunableDataTable />)
+  .add('Grouped DataTable', () => <GroupedDataTable />);

@@ -1,22 +1,34 @@
 import React from 'react';
+import { compose } from 'recompose';
 
-import { TableRow, TableFooter, TableCell } from '../Table';
+import { TableRow, TableCell } from '../Table';
+import { Box } from '../Box';
+import { withTheme } from '../hocs';
 
-import CellContent from './CellContent';
+import Cell from './Cell';
+import { StyledDataTableFooter } from './StyledDataTable';
 
-const Footer = ({ columns, footerProps, footerValues, groups }) => (
-  <TableFooter>
+const Footer = ({ columns, footerValues, groups, theme, ...rest }) => (
+  <StyledDataTableFooter {...rest}>
     <TableRow>
-      {groups ? <TableCell size='xxsmall' {...footerProps} /> : null}
-      {columns.map(({ property, footer, render, align }) => (
-        <TableCell key={property} {...footerProps} align={align}>
-          {footer ?
-            <CellContent datum={footerValues} property={property} render={render} />
-          : null}
+      {groups ? (
+        <TableCell size='xxsmall' plain={true} verticalAlign='top'>
+          <Box {...theme.dataTable.footer} />
         </TableCell>
+      ) : null}
+      {columns.map(column => (
+        <Cell
+          key={column.property}
+          context='footer'
+          column={column}
+          datum={footerValues}
+          theme={theme}
+        />
       ))}
     </TableRow>
-  </TableFooter>
+  </StyledDataTableFooter>
 );
 
-export default Footer;
+export default compose(
+  withTheme,
+)(Footer);

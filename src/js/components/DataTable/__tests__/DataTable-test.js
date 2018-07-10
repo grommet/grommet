@@ -24,8 +24,8 @@ describe('DataTable', () => {
       <Grommet>
         <DataTable
           columns={[
-            { property: 'a', label: 'A' },
-            { property: 'b', label: 'B' },
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
           ]}
           data={[
             { a: 'one', b: 1 },
@@ -43,8 +43,8 @@ describe('DataTable', () => {
       <Grommet>
         <DataTable
           columns={[
-            { property: 'a', label: 'A', footer: 'Total' },
-            { property: 'b', label: 'B' },
+            { property: 'a', header: 'A', footer: 'Total' },
+            { property: 'b', header: 'B' },
           ]}
           data={[
             { a: 'one', b: 1 },
@@ -62,8 +62,8 @@ describe('DataTable', () => {
       <Grommet>
         <DataTable
           columns={[
-            { property: 'a', label: 'A' },
-            { property: 'b', label: 'B' },
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
           ]}
           data={[
             { a: 'zero', b: 0 },
@@ -86,8 +86,8 @@ describe('DataTable', () => {
       <Grommet>
         <DataTable
           columns={[
-            { property: 'a', label: 'A' },
-            { property: 'b', label: 'B' },
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
           ]}
           data={[
             { a: 'one', b: 1 },
@@ -106,8 +106,8 @@ describe('DataTable', () => {
       <Grommet>
         <DataTable
           columns={[
-            { property: 'a', label: 'A' },
-            { property: 'b', label: 'B', aggregate: 'sum', footer: { aggregate: true } },
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B', aggregate: 'sum', footer: { aggregate: true } },
           ]}
           data={[
             { a: 'one', b: 1 },
@@ -125,8 +125,8 @@ describe('DataTable', () => {
       <Grommet>
         <DataTable
           columns={[
-            { property: 'a', label: 'A' },
-            { property: 'b', label: 'B' },
+            { property: 'a', header: 'A' },
+            { property: 'b', header: 'B' },
           ]}
           data={[
             { a: 'one', b: 1.1 },

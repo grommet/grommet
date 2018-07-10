@@ -24,6 +24,10 @@ class DataTable extends Component {
     return buildState(nextProps, prevState);
   }
 
+  onFiltering = (property) => {
+    this.setState({ filtering: property });
+  }
+
   onFilter = (property, value) => {
     const nextFilters = { ...this.state.filters };
     nextFilters[property] = value;
@@ -63,23 +67,30 @@ class DataTable extends Component {
 
   render() {
     const {
-      columns, bodyProps, footerProps, groupBy, headerProps, resizeable, sortable,
+      columns, groupBy, resizeable, size, sortable, theme,
      } = this.props;
     const {
-      data, filters, footerValues, groups, groupState, primaryProperty,
+      data, filtering, filters, footerValues, groups, groupState, primaryProperty,
       showFooter, sort, widths,
     } = this.state;
+
+    if (size && resizeable) {
+      console.warn('DataTable cannot combine "size" and "resizeble".');
+    }
 
     return (
       <Table>
         <Header
           columns={columns}
+          filtering={filtering}
           filters={filters}
           groups={groups}
           groupState={groupState}
-          headerProps={headerProps}
+          size={size}
           sort={sort}
+          theme={theme}
           widths={widths}
+          onFiltering={this.onFiltering}
           onFilter={this.onFilter}
           onResize={resizeable ? this.onResize : undefined}
           onSort={sortable ? this.onSort : undefined}
@@ -87,28 +98,30 @@ class DataTable extends Component {
         />
         {groups ?
           <GroupedBody
-            bodyProps={bodyProps}
             columns={columns}
             groupBy={groupBy}
             groups={groups}
             groupState={groupState}
             primaryProperty={primaryProperty}
+            theme={theme}
             onToggle={this.onToggleGroup}
           />
           :
           <Body
-            bodyProps={bodyProps}
             columns={columns}
             data={data}
             primaryProperty={primaryProperty}
+            size={size}
+            theme={theme}
           />
         }
         {showFooter ? (
           <Footer
             columns={columns}
-            footerProps={footerProps}
             footerValues={footerValues}
             groups={groups}
+            size={size}
+            theme={theme}
           />
         ) : null}
       </Table>

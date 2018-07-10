@@ -1,18 +1,19 @@
 import React from 'react';
-import { FormDown, FormUp } from 'grommet-icons';
+import { compose } from 'recompose';
 
 import { TableCell } from '../Table';
 import { Button } from '../Button';
 import { Box } from '../Box';
+import { withTheme } from '../hocs';
 
-const ExpanderCell = ({ expanded, onToggle, ...rest }) => {
-  const ExpandIcon = expanded ? FormUp : FormDown;
+const ExpanderCell = ({ context, expanded, onToggle, theme, ...rest }) => {
+  const ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];
   if (onToggle) {
     return (
       <TableCell
         size='xxsmall'
-        verticalAlign='top'
         plain={true}
+        verticalAlign='top'
       >
         <Button
           fill={true}
@@ -20,7 +21,7 @@ const ExpanderCell = ({ expanded, onToggle, ...rest }) => {
           hoverIndicator={true}
           onClick={onToggle}
         >
-          <Box {...rest} pad='xsmall'>
+          <Box {...theme.dataTable[context]} {...rest} pad='xsmall'>
             <ExpandIcon color='border' />
           </Box>
         </Button>
@@ -28,8 +29,10 @@ const ExpanderCell = ({ expanded, onToggle, ...rest }) => {
     );
   }
   return (
-    <TableCell size='xxsmall' verticalAlign='top' {...rest} />
+    <TableCell size='xxsmall' verticalAlign='top' />
   );
 };
 
-export default ExpanderCell;
+export default compose(
+  withTheme,
+)(ExpanderCell);

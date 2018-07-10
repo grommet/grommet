@@ -1,31 +1,36 @@
 import React from 'react';
 
-import { TableRow, TableBody, TableCell } from '../Table';
+import { TableRow, TableCell } from '../Table';
+import { InfiniteScroll } from '../InfiniteScroll';
 
-import CellContent from './CellContent';
+import Cell from './Cell';
+import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 
-const Body = ({ bodyProps, columns, data, primaryProperty }) => (
-  <TableBody>
-    {data.map(datum => (
-      <TableRow key={datum[primaryProperty]}>
-        {columns.map(({ property, primary, render, align }) => (
-          <TableCell
-            key={property}
-            scope={primary ? 'row' : undefined}
-            align={align}
-            {...bodyProps}
-          >
-            <CellContent
+const Body = ({ columns, data, primaryProperty, size, theme, ...rest }) => (
+  <StyledDataTableBody size={size} theme={theme} {...rest}>
+    <InfiniteScroll
+      items={data}
+      scrollableAncestor='window'
+      renderMarker={marker => (
+        <TableRow><TableCell>{marker}</TableCell></TableRow>
+      )}
+    >
+      {datum => (
+        <StyledDataTableRow key={datum[primaryProperty]} size={size}>
+          {columns.map(column => (
+            <Cell
+              key={column.property}
+              context='body'
+              column={column}
               datum={datum}
-              property={property}
-              render={render}
-              primary={primary}
+              scope={column.primary ? 'row' : undefined}
+              theme={theme}
             />
-          </TableCell>
-        ))}
-      </TableRow>
-    ))}
-  </TableBody>
+          ))}
+        </StyledDataTableRow>
+      )}
+    </InfiniteScroll>
+  </StyledDataTableBody>
 );
 
 export default Body;

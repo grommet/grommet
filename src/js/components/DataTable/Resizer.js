@@ -33,15 +33,15 @@ export default class Resizer extends Component {
   }
 
   render() {
-    const { children, onResize } = this.props;
+    const { children, onResize, theme } = this.props;
     const { start } = this.state;
     if (onResize) {
       return (
-        <Box ref={this.ref} flex={true} direction='row'>
+        <Box ref={this.ref} direction='row' flex={true} style={{ height: '100%' }}>
           {children}
           <Box
-            pad={{ right: 'xsmall' }}
-            backgroundX='light-2'
+            flex={false}
+            {...theme.dataTable.resize}
             onMouseDown={this.onMouseDown}
             onMouseMove={start ? this.onMouseMove : undefined}
             onMouseUp={start ? this.onMouseUp : undefined}

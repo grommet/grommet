@@ -1,21 +1,25 @@
 import React from 'react';
-import { FormUp, FormDown } from 'grommet-icons';
 
 import { Button } from '../Button';
 import { Box } from '../Box';
 
-const Sorter = ({ align, children, onSort, property, sort }) => {
+const Sorter = ({ align, children, onSort, property, sort, theme }) => {
   let icon;
   if (sort && sort.property === property) {
-    icon = sort.ascending ? <FormDown /> : <FormUp />;
+    const Icon = theme.dataTable.icons[sort.ascending ? 'ascending' : 'descending'];
+    icon = <Icon />;
   }
   let content = (
     <Box
-      pad={{ horizontal: 'small', vertical: 'xsmall' }}
+      flex={true}
       direction='row'
       justify={align}
       align='center'
       gap='xsmall'
+      style={{ height: '100%' }}
+      {...theme.dataTable.header}
+      border={undefined}
+      background={undefined}
     >
       {children}
       {icon}
@@ -23,7 +27,12 @@ const Sorter = ({ align, children, onSort, property, sort }) => {
   );
   if (onSort) {
     content = (
-      <Button fill={true} hoverIndicator={true} onClick={onSort(property)}>
+      <Button
+        fill={true}
+        hoverIndicator={true}
+        onClick={onSort(property)}
+        style={{ flexShrink: 1 }}
+      >
         {content}
       </Button>
     );
