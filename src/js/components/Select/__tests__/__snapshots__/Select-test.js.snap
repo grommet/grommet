@@ -115,6 +115,9 @@ exports[`Select basic 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
 }
 
 .c3 {
@@ -277,7 +280,7 @@ exports[`Select basic 1`] = `
 exports[`Select complex options and children 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY guZoqh"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -332,7 +335,7 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY guZoqh"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -524,14 +527,14 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .kidNzX {
+  .guZoqh {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ktbLOR {
+  .jnPFNP {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -570,7 +573,7 @@ exports[`Select complex options and children 4`] = `
 exports[`Select deselect an option 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY guZoqh"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -626,7 +629,7 @@ exports[`Select deselect an option 1`] = `
 exports[`Select disabled 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY fccVcn"
+  class="StyledButton-qbvYY fjzGgI"
   data-testid="test-select"
   disabled=""
   id="test-select"
@@ -682,7 +685,7 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY fccVcn"
+  class="StyledButton-qbvYY fjzGgI"
   data-testid="test-select"
   disabled=""
   id="test-select"
@@ -850,6 +853,9 @@ exports[`Select multiple 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
 }
 
 .c3 {
@@ -1017,7 +1023,7 @@ exports[`Select multiple 1`] = `
 exports[`Select multiple values 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY guZoqh"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1073,7 +1079,7 @@ exports[`Select multiple values 1`] = `
 exports[`Select multiple values 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY guZoqh"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1302,21 +1308,21 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .kidNzX {
+  .guZoqh {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ktbLOR {
+  .jnPFNP {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fZEyyA {
+  .cVHjXP {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1355,7 +1361,7 @@ exports[`Select multiple values 4`] = `
 exports[`Select opens 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY guZoqh"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1410,7 +1416,7 @@ exports[`Select opens 1`] = `
 exports[`Select opens 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY guZoqh"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1614,14 +1620,14 @@ exports[`Select opens 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .kidNzX {
+  .guZoqh {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ktbLOR {
+  .jnPFNP {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1707,7 +1713,7 @@ exports[`Select opens 5`] = `
 exports[`Select search 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY guZoqh"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1937,14 +1943,14 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .kidNzX {
+  .guZoqh {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ktbLOR {
+  .jnPFNP {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1983,7 +1989,7 @@ exports[`Select search 3`] = `
 exports[`Select select an option 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY guZoqh"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -2038,7 +2044,7 @@ exports[`Select select an option 1`] = `
 exports[`Select select an option with complex options 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY guZoqh"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -2082,7 +2088,7 @@ exports[`Select select an option with complex options 1`] = `
 exports[`Select select an option with enter 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY guZoqh"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -2137,7 +2143,7 @@ exports[`Select select an option with enter 1`] = `
 exports[`Select select another option 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY guZoqh"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -2307,6 +2313,9 @@ exports[`Select size 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
 }
 
 .c3 {

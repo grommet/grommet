@@ -19,7 +19,10 @@ import SearchInputContext from './components/SearchInputContext';
 const DEFAULT_OPTIONS = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
 
 class SearchSelect extends Component {
-  state = { options: DEFAULT_OPTIONS }
+  state = {
+    options: DEFAULT_OPTIONS,
+    value: '',
+  }
 
   render() {
     const { options, value } = this.state;
@@ -31,6 +34,7 @@ class SearchSelect extends Component {
           value={value}
           options={options}
           onChange={({ option }) => this.setState({ value: option })}
+          onClose={() => this.setState({ options: DEFAULT_OPTIONS })}
           onSearch={(text) => {
             const exp = new RegExp(text, 'i');
             this.setState({ options: DEFAULT_OPTIONS.filter(o => exp.test(o)) });

@@ -154,6 +154,9 @@ exports[`Calendar date renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
   opacity: 0.3;
   cursor: default;
 }
@@ -173,6 +176,9 @@ exports[`Calendar date renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
 }
 
 .c13:hover {
@@ -195,6 +201,9 @@ exports[`Calendar date renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
   background-color: rgba(221,221,221,0.5);
   color: #000000;
 }
@@ -1541,6 +1550,9 @@ exports[`Calendar dates renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
   opacity: 0.3;
   cursor: default;
 }
@@ -1560,6 +1572,9 @@ exports[`Calendar dates renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
 }
 
 .c13:hover {
@@ -1582,6 +1597,9 @@ exports[`Calendar dates renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
   background-color: rgba(221,221,221,0.5);
   color: #000000;
 }
@@ -2932,6 +2950,9 @@ exports[`Calendar disabled renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
   opacity: 0.3;
   cursor: default;
 }
@@ -2951,6 +2972,9 @@ exports[`Calendar disabled renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
 }
 
 .c13:hover {
@@ -2973,6 +2997,9 @@ exports[`Calendar disabled renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
   background-color: rgba(221,221,221,0.5);
   color: #000000;
 }
@@ -4323,6 +4350,9 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
   opacity: 0.3;
   cursor: default;
 }
@@ -4342,6 +4372,9 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
 }
 
 .c13:hover {
@@ -4364,6 +4397,9 @@ exports[`Calendar firstDayOfWeek renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
   background-color: rgba(221,221,221,0.5);
   color: #000000;
 }
@@ -6704,6 +6740,9 @@ exports[`Calendar renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
   opacity: 0.3;
   cursor: default;
 }
@@ -6723,6 +6762,9 @@ exports[`Calendar renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
 }
 
 .c13:hover {
@@ -6745,6 +6787,9 @@ exports[`Calendar renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
   background-color: rgba(221,221,221,0.5);
   color: #000000;
 }
@@ -8125,6 +8170,9 @@ exports[`Calendar size renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
   opacity: 0.3;
   cursor: default;
 }
@@ -8144,6 +8192,9 @@ exports[`Calendar size renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
 }
 
 .c13:hover {
@@ -8166,6 +8217,9 @@ exports[`Calendar size renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
   background-color: rgba(221,221,221,0.5);
   color: #000000;
 }
