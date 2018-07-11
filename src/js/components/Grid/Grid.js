@@ -43,6 +43,12 @@ if (process.env.NODE_ENV !== 'production') {
   doc(Grid);
 }
 
-export default compose(
+const WrappedGrid = compose(
   withTheme,
 )(Grid);
+
+WrappedGrid.available = (typeof window !== 'undefined') &&
+  window.CSS && window.CSS.supports &&
+  window.CSS.supports('display', 'grid');
+
+export default WrappedGrid;
