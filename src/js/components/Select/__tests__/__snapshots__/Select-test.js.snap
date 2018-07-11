@@ -1159,6 +1159,7 @@ exports[`Select multiple values 3`] = `
           <div
             class="StyledBox-YaZNy hZNqBU"
           >
+<<<<<<< HEAD
             <span
               class="StyledText-dmaDlZ iRQiFb"
             >
@@ -1169,6 +1170,16 @@ exports[`Select multiple values 3`] = `
       </div>
       <div
         class="StyledBox-YaZNy ckMYwJ"
+=======
+            one
+          </span>
+        </div>
+      </button>
+      <button
+        class="StyledButton-qbvYY jnPFNP"
+        role="menuitem"
+        type="button"
+>>>>>>> Fixed active index with search
       >
         <button
           class="StyledButton-qbvYY fZEyyA"

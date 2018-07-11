@@ -39,7 +39,7 @@ class SelectContainer extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     const { options, value } = nextProps;
 
-    if (prevState.activeIndex === -1 && options && value) {
+    if (prevState.activeIndex === -1 && prevState.search === '' && options && value) {
       const optionValue = Array.isArray(value) && value.length ? value[0] : value;
       const activeIndex = options.indexOf(optionValue);
       return {
@@ -61,9 +61,11 @@ class SelectContainer extends Component {
 
   componentDidMount() {
     const { onSearch } = this.props;
+    const { activeIndex } = this.state;
     // timeout need to send the operation through event loop and allow time to the portal
     // to be available
     setTimeout(() => {
+      const selectNode = findDOMNode(this.selectRef.current);
       if (onSearch) {
         const input = findDOMNode(this.searchRef.current);
         if (input && input.focus) {
@@ -71,6 +73,17 @@ class SelectContainer extends Component {
         }
       } else if (this.selectRef) {
         setFocusWithoutScroll(findDOMNode(this.selectRef.current));
+      }
+
+      // scroll to active option if it is below the fold
+      if (activeIndex >= 0) {
+        const optionNode = findDOMNode(this.optionsRef[activeIndex]);
+        const { bottom: containerBottom } = selectNode.getBoundingClientRect();
+        const { bottom: optionTop } = optionNode.getBoundingClientRect();
+
+        if (containerBottom < optionTop) {
+          optionNode.scrollIntoView();
+        }
       }
     }, 0);
   }
