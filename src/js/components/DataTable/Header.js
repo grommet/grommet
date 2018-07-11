@@ -38,7 +38,7 @@ const Header = ({
             { width: widths[property] } : undefined}
         >
           <Resizer property={property} onResize={onResize} theme={theme}>
-            <Box flex={true}>
+            <Box flex={true} fill='vertical'>
               <Box
                 flex={true}
                 direction='row'

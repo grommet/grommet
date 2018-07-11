@@ -29,6 +29,7 @@ exports[`DataTable aggregate 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -456,6 +457,7 @@ exports[`DataTable basic 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -850,6 +852,7 @@ exports[`DataTable footer 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -1298,7 +1301,7 @@ exports[`DataTable groupBy 1`] = `
           scope="col"
         >
           <div
-            class="StyledBox-YaZNy iVsyvl"
+            class="StyledBox-YaZNy cClRkK"
           >
             <div
               class="StyledBox-YaZNy jeKywg"
@@ -1320,7 +1323,7 @@ exports[`DataTable groupBy 1`] = `
           scope="col"
         >
           <div
-            class="StyledBox-YaZNy iVsyvl"
+            class="StyledBox-YaZNy cClRkK"
           >
             <div
               class="StyledBox-YaZNy jeKywg"
@@ -1509,7 +1512,7 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-YaZNy iVsyvl"
+            class="StyledBox-YaZNy cClRkK"
           >
             <div
               class="StyledBox-YaZNy jeKywg"
@@ -1531,7 +1534,7 @@ exports[`DataTable groupBy 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-YaZNy iVsyvl"
+            class="StyledBox-YaZNy cClRkK"
           >
             <div
               class="StyledBox-YaZNy jeKywg"
@@ -1699,6 +1702,7 @@ exports[`DataTable resizeable 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -2132,7 +2136,7 @@ exports[`DataTable sort 1`] = `
           scope="col"
         >
           <div
-            class="StyledBox-YaZNy iVsyvl"
+            class="StyledBox-YaZNy cClRkK"
           >
             <div
               class="StyledBox-YaZNy jeKywg"
@@ -2159,7 +2163,7 @@ exports[`DataTable sort 1`] = `
           scope="col"
         >
           <div
-            class="StyledBox-YaZNy iVsyvl"
+            class="StyledBox-YaZNy cClRkK"
           >
             <div
               class="StyledBox-YaZNy jeKywg"
@@ -2294,7 +2298,7 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-YaZNy iVsyvl"
+            class="StyledBox-YaZNy cClRkK"
           >
             <div
               class="StyledBox-YaZNy jeKywg"
@@ -2340,7 +2344,7 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <div
-            class="StyledBox-YaZNy iVsyvl"
+            class="StyledBox-YaZNy cClRkK"
           >
             <div
               class="StyledBox-YaZNy jeKywg"
