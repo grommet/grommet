@@ -85,4 +85,7 @@ export default deepFreeze({
   heading: {
     font: false,
   },
+  icon: {
+    colors,
+  },
 });
