@@ -60,10 +60,10 @@ function findHead(children) {
   let head;
   childElements.some((child) => {
     if (child.type && (
-        child.type === 'thead' ||
-        child.type === TableHeader ||
-        child.type.displayName === TableHeader.displayName
-      )) {
+      child.type === 'thead' ||
+      child.type === TableHeader ||
+      child.type.displayName === TableHeader.displayName
+    )) {
       head = child;
       return true;
     } else if (child.props && child.props.children) {
@@ -495,7 +495,7 @@ export default class Table extends Component {
       const head = findHead(children);
       mirror = (
         <table ref={ref => this.mirrorRef = ref}
-               className={`${CLASS_ROOT}__mirror`}>
+          className={`${CLASS_ROOT}__mirror`}>
           {head}
         </table>
       );
