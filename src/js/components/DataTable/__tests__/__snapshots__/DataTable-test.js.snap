@@ -84,6 +84,7 @@ exports[`DataTable aggregate 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  height: 100%;
   margin: 0;
   padding-left: 12px;
   padding-right: 12px;
@@ -104,6 +105,7 @@ exports[`DataTable aggregate 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  height: 100%;
   margin: 0;
   padding-left: 12px;
   padding-right: 12px;
@@ -125,6 +127,7 @@ exports[`DataTable aggregate 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  height: 100%;
   margin: 0;
   padding-left: 12px;
   padding-right: 12px;
@@ -294,11 +297,6 @@ exports[`DataTable aggregate 1`] = `
             >
               <div
                 className="c6"
-                style={
-                  Object {
-                    "height": "100%",
-                  }
-                }
               >
                 <span
                   className="c7"
@@ -321,11 +319,6 @@ exports[`DataTable aggregate 1`] = `
             >
               <div
                 className="c6"
-                style={
-                  Object {
-                    "height": "100%",
-                  }
-                }
               >
                 <span
                   className="c7"
@@ -349,11 +342,6 @@ exports[`DataTable aggregate 1`] = `
         >
           <div
             className="c10"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           >
             <span
               className="c7"
@@ -367,11 +355,6 @@ exports[`DataTable aggregate 1`] = `
         >
           <div
             className="c10"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           >
             <span
               className="c7"
@@ -389,11 +372,6 @@ exports[`DataTable aggregate 1`] = `
         >
           <div
             className="c10"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           >
             <span
               className="c7"
@@ -407,11 +385,6 @@ exports[`DataTable aggregate 1`] = `
         >
           <div
             className="c10"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           >
             <span
               className="c7"
@@ -433,11 +406,6 @@ exports[`DataTable aggregate 1`] = `
         >
           <div
             className="c11"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           />
         </td>
         <td
@@ -445,11 +413,6 @@ exports[`DataTable aggregate 1`] = `
         >
           <div
             className="c11"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           >
             <span
               className="c7"
@@ -548,6 +511,7 @@ exports[`DataTable basic 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  height: 100%;
   margin: 0;
   padding-left: 12px;
   padding-right: 12px;
@@ -568,6 +532,7 @@ exports[`DataTable basic 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  height: 100%;
   margin: 0;
   padding-left: 12px;
   padding-right: 12px;
@@ -711,11 +676,6 @@ exports[`DataTable basic 1`] = `
             >
               <div
                 className="c6"
-                style={
-                  Object {
-                    "height": "100%",
-                  }
-                }
               >
                 <span
                   className="c7"
@@ -738,11 +698,6 @@ exports[`DataTable basic 1`] = `
             >
               <div
                 className="c6"
-                style={
-                  Object {
-                    "height": "100%",
-                  }
-                }
               >
                 <span
                   className="c7"
@@ -766,11 +721,6 @@ exports[`DataTable basic 1`] = `
         >
           <div
             className="c10"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           >
             <span
               className="c7"
@@ -784,11 +734,6 @@ exports[`DataTable basic 1`] = `
         >
           <div
             className="c10"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           >
             <span
               className="c7"
@@ -806,11 +751,6 @@ exports[`DataTable basic 1`] = `
         >
           <div
             className="c10"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           >
             <span
               className="c7"
@@ -824,11 +764,6 @@ exports[`DataTable basic 1`] = `
         >
           <div
             className="c10"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           >
             <span
               className="c7"
@@ -970,6 +905,7 @@ exports[`DataTable footer 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  height: 100%;
   margin: 0;
   padding-left: 12px;
   padding-right: 12px;
@@ -990,6 +926,7 @@ exports[`DataTable footer 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  height: 100%;
   margin: 0;
   padding-left: 12px;
   padding-right: 12px;
@@ -1011,6 +948,7 @@ exports[`DataTable footer 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  height: 100%;
   margin: 0;
   padding-left: 12px;
   padding-right: 12px;
@@ -1180,11 +1118,6 @@ exports[`DataTable footer 1`] = `
             >
               <div
                 className="c6"
-                style={
-                  Object {
-                    "height": "100%",
-                  }
-                }
               >
                 <span
                   className="c7"
@@ -1207,11 +1140,6 @@ exports[`DataTable footer 1`] = `
             >
               <div
                 className="c6"
-                style={
-                  Object {
-                    "height": "100%",
-                  }
-                }
               >
                 <span
                   className="c7"
@@ -1235,11 +1163,6 @@ exports[`DataTable footer 1`] = `
         >
           <div
             className="c10"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           >
             <span
               className="c7"
@@ -1253,11 +1176,6 @@ exports[`DataTable footer 1`] = `
         >
           <div
             className="c10"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           >
             <span
               className="c7"
@@ -1275,11 +1193,6 @@ exports[`DataTable footer 1`] = `
         >
           <div
             className="c10"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           >
             <span
               className="c7"
@@ -1293,11 +1206,6 @@ exports[`DataTable footer 1`] = `
         >
           <div
             className="c10"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           >
             <span
               className="c7"
@@ -1319,11 +1227,6 @@ exports[`DataTable footer 1`] = `
         >
           <div
             className="c11"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           >
             <span
               className="c7"
@@ -1337,11 +1240,6 @@ exports[`DataTable footer 1`] = `
         >
           <div
             className="c11"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           />
         </td>
       </tr>
@@ -1406,8 +1304,7 @@ exports[`DataTable groupBy 1`] = `
               class="StyledBox-YaZNy jeKywg"
             >
               <div
-                class="StyledBox-YaZNy jDXram"
-                style="height: 100%;"
+                class="StyledBox-YaZNy ecDxGw"
               >
                 <span
                   class="StyledText-dmaDlZ iiuQkH"
@@ -1429,8 +1326,7 @@ exports[`DataTable groupBy 1`] = `
               class="StyledBox-YaZNy jeKywg"
             >
               <div
-                class="StyledBox-YaZNy jDXram"
-                style="height: 100%;"
+                class="StyledBox-YaZNy ecDxGw"
               >
                 <span
                   class="StyledText-dmaDlZ iiuQkH"
@@ -1485,8 +1381,7 @@ exports[`DataTable groupBy 1`] = `
           scope="row"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -1499,8 +1394,7 @@ exports[`DataTable groupBy 1`] = `
           class="StyledTable__StyledTableCell-KsYQQ cldKKw"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           />
         </td>
       </tr>
@@ -1543,8 +1437,7 @@ exports[`DataTable groupBy 1`] = `
           scope="row"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -1557,8 +1450,7 @@ exports[`DataTable groupBy 1`] = `
           class="StyledTable__StyledTableCell-KsYQQ cldKKw"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           />
         </td>
       </tr>
@@ -1623,8 +1515,7 @@ exports[`DataTable groupBy 2`] = `
               class="StyledBox-YaZNy jeKywg"
             >
               <div
-                class="StyledBox-YaZNy jDXram"
-                style="height: 100%;"
+                class="StyledBox-YaZNy ecDxGw"
               >
                 <span
                   class="StyledText-dmaDlZ iiuQkH"
@@ -1646,8 +1537,7 @@ exports[`DataTable groupBy 2`] = `
               class="StyledBox-YaZNy jeKywg"
             >
               <div
-                class="StyledBox-YaZNy jDXram"
-                style="height: 100%;"
+                class="StyledBox-YaZNy ecDxGw"
               >
                 <span
                   class="StyledText-dmaDlZ iiuQkH"
@@ -1702,8 +1592,7 @@ exports[`DataTable groupBy 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -1716,8 +1605,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-KsYQQ cldKKw"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           />
         </td>
       </tr>
@@ -1760,8 +1648,7 @@ exports[`DataTable groupBy 2`] = `
           scope="row"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -1774,8 +1661,7 @@ exports[`DataTable groupBy 2`] = `
           class="StyledTable__StyledTableCell-KsYQQ cldKKw"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           />
         </td>
       </tr>
@@ -1868,6 +1754,7 @@ exports[`DataTable resizeable 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  height: 100%;
   margin: 0;
   padding-left: 12px;
   padding-right: 12px;
@@ -1875,7 +1762,7 @@ exports[`DataTable resizeable 1`] = `
   padding-bottom: 6px;
 }
 
-.c12 {
+.c13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1888,6 +1775,7 @@ exports[`DataTable resizeable 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
+  height: 100%;
   margin: 0;
   padding-left: 12px;
   padding-right: 12px;
@@ -1911,11 +1799,12 @@ exports[`DataTable resizeable 1`] = `
   -webkit-flex: 1 1;
   -ms-flex: 1 1;
   flex: 1 1;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
-.c9 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1936,7 +1825,7 @@ exports[`DataTable resizeable 1`] = `
   padding: 0;
 }
 
-.c11 {
+.c12 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -1955,6 +1844,10 @@ exports[`DataTable resizeable 1`] = `
   line-height: 1.375;
 }
 
+.c9 {
+  cursor: col-resize;
+}
+
 .c2 {
   height: 1px;
 }
@@ -1968,7 +1861,7 @@ exports[`DataTable resizeable 1`] = `
   vertical-align: bottom;
 }
 
-.c10 {
+.c11 {
   margin: 0;
   padding: 0;
   font-weight: inherit;
@@ -2028,20 +1921,20 @@ exports[`DataTable resizeable 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c12 {
+  .c13 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c12 {
+  .c13 {
     padding-left: 6px;
     padding-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c12 {
+  .c13 {
     padding-top: 3px;
     padding-bottom: 3px;
   }
@@ -2060,19 +1953,19 @@ exports[`DataTable resizeable 1`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .c9 {
+  .c10 {
     border-right: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c9 {
+  .c10 {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .c9 {
+  .c10 {
     padding: 0;
   }
 }
@@ -2096,11 +1989,6 @@ exports[`DataTable resizeable 1`] = `
         >
           <div
             className="c4"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           >
             <div
               className="c5"
@@ -2110,11 +1998,6 @@ exports[`DataTable resizeable 1`] = `
               >
                 <div
                   className="c7"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
                 >
                   <span
                     className="c8"
@@ -2125,27 +2008,17 @@ exports[`DataTable resizeable 1`] = `
               </div>
             </div>
             <div
-              className="c9"
+              className="c9 c10"
               onMouseDown={[Function]}
-              style={
-                Object {
-                  "cursor": "col-resize",
-                }
-              }
             />
           </div>
         </th>
         <th
-          className="c10"
+          className="c11"
           scope="col"
         >
           <div
             className="c4"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
           >
             <div
               className="c5"
@@ -2155,11 +2028,6 @@ exports[`DataTable resizeable 1`] = `
               >
                 <div
                   className="c7"
-                  style={
-                    Object {
-                      "height": "100%",
-                    }
-                  }
                 >
                   <span
                     className="c8"
@@ -2170,13 +2038,8 @@ exports[`DataTable resizeable 1`] = `
               </div>
             </div>
             <div
-              className="c9"
+              className="c9 c10"
               onMouseDown={[Function]}
-              style={
-                Object {
-                  "cursor": "col-resize",
-                }
-              }
             />
           </div>
         </th>
@@ -2189,15 +2052,10 @@ exports[`DataTable resizeable 1`] = `
         className="c2"
       >
         <td
-          className="c11"
+          className="c12"
         >
           <div
-            className="c12"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
+            className="c13"
           >
             <span
               className="c8"
@@ -2207,15 +2065,10 @@ exports[`DataTable resizeable 1`] = `
           </div>
         </td>
         <td
-          className="c11"
+          className="c12"
         >
           <div
-            className="c12"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
+            className="c13"
           >
             <span
               className="c8"
@@ -2229,15 +2082,10 @@ exports[`DataTable resizeable 1`] = `
         className="c2"
       >
         <td
-          className="c11"
+          className="c12"
         >
           <div
-            className="c12"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
+            className="c13"
           >
             <span
               className="c8"
@@ -2247,15 +2095,10 @@ exports[`DataTable resizeable 1`] = `
           </div>
         </td>
         <td
-          className="c11"
+          className="c12"
         >
           <div
-            className="c12"
-            style={
-              Object {
-                "height": "100%",
-              }
-            }
+            className="c13"
           >
             <span
               className="c8"
@@ -2295,12 +2138,11 @@ exports[`DataTable sort 1`] = `
               class="StyledBox-YaZNy jeKywg"
             >
               <button
-                class="StyledButton-qbvYY jYTBlN"
+                class="Sorter__SorterButton-hLSXcM cwiGEI StyledButton-qbvYY jYTBlN"
                 type="button"
               >
                 <div
-                  class="StyledBox-YaZNy jDXram"
-                  style="height: 100%;"
+                  class="StyledBox-YaZNy ecDxGw"
                 >
                   <span
                     class="StyledText-dmaDlZ iiuQkH"
@@ -2323,12 +2165,11 @@ exports[`DataTable sort 1`] = `
               class="StyledBox-YaZNy jeKywg"
             >
               <button
-                class="StyledButton-qbvYY jYTBlN"
+                class="Sorter__SorterButton-hLSXcM cwiGEI StyledButton-qbvYY jYTBlN"
                 type="button"
               >
                 <div
-                  class="StyledBox-YaZNy jDXram"
-                  style="height: 100%;"
+                  class="StyledBox-YaZNy ecDxGw"
                 >
                   <span
                     class="StyledText-dmaDlZ iiuQkH"
@@ -2352,8 +2193,7 @@ exports[`DataTable sort 1`] = `
           class="StyledTable__StyledTableCell-KsYQQ cldKKw"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -2366,8 +2206,7 @@ exports[`DataTable sort 1`] = `
           class="StyledTable__StyledTableCell-KsYQQ cldKKw"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           />
         </td>
       </tr>
@@ -2378,8 +2217,7 @@ exports[`DataTable sort 1`] = `
           class="StyledTable__StyledTableCell-KsYQQ cldKKw"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -2392,8 +2230,7 @@ exports[`DataTable sort 1`] = `
           class="StyledTable__StyledTableCell-KsYQQ cldKKw"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -2410,8 +2247,7 @@ exports[`DataTable sort 1`] = `
           class="StyledTable__StyledTableCell-KsYQQ cldKKw"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -2424,8 +2260,7 @@ exports[`DataTable sort 1`] = `
           class="StyledTable__StyledTableCell-KsYQQ cldKKw"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -2465,12 +2300,11 @@ exports[`DataTable sort 2`] = `
               class="StyledBox-YaZNy jeKywg"
             >
               <button
-                class="StyledButton-qbvYY jYTBlN"
+                class="Sorter__SorterButton-hLSXcM cwiGEI StyledButton-qbvYY jYTBlN"
                 type="button"
               >
                 <div
-                  class="StyledBox-YaZNy jDXram"
-                  style="height: 100%;"
+                  class="StyledBox-YaZNy ecDxGw"
                 >
                   <span
                     class="StyledText-dmaDlZ iiuQkH"
@@ -2512,12 +2346,11 @@ exports[`DataTable sort 2`] = `
               class="StyledBox-YaZNy jeKywg"
             >
               <button
-                class="StyledButton-qbvYY jYTBlN"
+                class="Sorter__SorterButton-hLSXcM cwiGEI StyledButton-qbvYY jYTBlN"
                 type="button"
               >
                 <div
-                  class="StyledBox-YaZNy jDXram"
-                  style="height: 100%;"
+                  class="StyledBox-YaZNy ecDxGw"
                 >
                   <span
                     class="StyledText-dmaDlZ iiuQkH"
@@ -2541,8 +2374,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-KsYQQ cldKKw"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -2555,8 +2387,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-KsYQQ cldKKw"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -2573,8 +2404,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-KsYQQ cldKKw"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -2587,8 +2417,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-KsYQQ cldKKw"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -2605,8 +2434,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-KsYQQ cldKKw"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           >
             <span
               class="StyledText-dmaDlZ iiuQkH"
@@ -2619,8 +2447,7 @@ exports[`DataTable sort 2`] = `
           class="StyledTable__StyledTableCell-KsYQQ cldKKw"
         >
           <div
-            class="StyledBox-YaZNy eBDXSD"
-            style="height: 100%;"
+            class="StyledBox-YaZNy ilPJMQ"
           />
         </td>
       </tr>

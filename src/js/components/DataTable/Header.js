@@ -18,7 +18,7 @@ const Header = ({
   <StyledDataTableHeader {...rest}>
     <StyledDataTableRow>
 
-      {groups ? (
+      {groups && (
         <ExpanderCell
           context='header'
           expanded={Object.keys(groupState)
@@ -26,7 +26,7 @@ const Header = ({
           theme={theme}
           onToggle={onToggle}
         />
-      ) : null}
+      )}
 
       {columns.map(({ property, header, align, search }) => (
         <TableCell
@@ -58,7 +58,7 @@ const Header = ({
                     <Text>{header}</Text>
                   ) : header}
                 </Sorter>
-                {filters && search ? (
+                {filters && search && (
                   <Searcher
                     filtering={filtering}
                     filters={filters}
@@ -66,7 +66,7 @@ const Header = ({
                     onFilter={onFilter}
                     onFiltering={onFiltering}
                   />
-                ) : null}
+                )}
               </Box>
             </Box>
           </Resizer>

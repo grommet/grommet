@@ -67,7 +67,7 @@ class DataTable extends Component {
 
   render() {
     const {
-      columns, groupBy, resizeable, size, sortable, theme,
+      columns, groupBy, onMore, resizeable, size, sortable, theme,
      } = this.props;
     const {
       data, filtering, filters, footerValues, groups, groupState, primaryProperty,
@@ -110,12 +110,13 @@ class DataTable extends Component {
           <Body
             columns={columns}
             data={data}
+            onMore={onMore}
             primaryProperty={primaryProperty}
             size={size}
             theme={theme}
           />
         }
-        {showFooter ? (
+        {showFooter && (
           <Footer
             columns={columns}
             footerValues={footerValues}
@@ -123,7 +124,7 @@ class DataTable extends Component {
             size={size}
             theme={theme}
           />
-        ) : null}
+        )}
       </Table>
     );
   }

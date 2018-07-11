@@ -49,6 +49,15 @@ export default (DataTable) => {
       .description('Array of data objects.'),
     groupBy: PropTypes.string
       .description('Property to group data by.'),
+    onMore: PropTypes.func.description(
+      `Use this to indicate that 'data' doesn't contain all that it could.
+      It will be called when all of the data rows have been rendered.
+      This might be used when the total number of items that could be retrieved
+      is more than you'd want to load into the browser. 'onMore' allows you
+      to lazily fetch more from the server only when needed. This cannot
+      be combined with properties that expect all data to be present in the
+      browser, such as searching, sorting, grouping, or aggregating.`
+    ),
     resizeable: PropTypes.string
       .description('Whether to allow the user to resize column widths.'),
     size: PropTypes.oneOf(

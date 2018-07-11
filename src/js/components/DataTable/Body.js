@@ -6,10 +6,11 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import Cell from './Cell';
 import { StyledDataTableBody, StyledDataTableRow } from './StyledDataTable';
 
-const Body = ({ columns, data, primaryProperty, size, theme, ...rest }) => (
+const Body = ({ columns, data, onMore, primaryProperty, size, theme, ...rest }) => (
   <StyledDataTableBody size={size} theme={theme} {...rest}>
     <InfiniteScroll
       items={data}
+      onMore={onMore}
       scrollableAncestor='window'
       renderMarker={marker => (
         <TableRow><TableCell>{marker}</TableCell></TableRow>

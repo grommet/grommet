@@ -11,11 +11,11 @@ import { StyledDataTableFooter } from './StyledDataTable';
 const Footer = ({ columns, footerValues, groups, theme, ...rest }) => (
   <StyledDataTableFooter {...rest}>
     <TableRow>
-      {groups ? (
+      {groups && (
         <TableCell size='xxsmall' plain={true} verticalAlign='top'>
           <Box {...theme.dataTable.footer} />
         </TableCell>
-      ) : null}
+      )}
       {columns.map(column => (
         <Cell
           key={column.property}

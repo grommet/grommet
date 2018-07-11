@@ -1,7 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import { Button } from '../Button';
 import { Box } from '../Box';
+
+const SorterButton = styled(Button)`
+  flex-shrink: 1;
+`;
 
 const Sorter = ({ align, children, onSort, property, sort, theme }) => {
   let icon;
@@ -16,7 +21,7 @@ const Sorter = ({ align, children, onSort, property, sort, theme }) => {
       justify={align}
       align='center'
       gap='xsmall'
-      style={{ height: '100%' }}
+      fill='vertical'
       {...theme.dataTable.header}
       border={undefined}
       background={undefined}
@@ -27,14 +32,14 @@ const Sorter = ({ align, children, onSort, property, sort, theme }) => {
   );
   if (onSort) {
     content = (
-      <Button
+      <SorterButton
         fill={true}
         hoverIndicator={true}
         onClick={onSort(property)}
         style={{ flexShrink: 1 }}
       >
         {content}
-      </Button>
+      </SorterButton>
     );
   }
 

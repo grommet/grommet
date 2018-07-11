@@ -29,7 +29,7 @@ const Cell = ({
       <Box
         direction='row'
         justify={align}
-        style={{ height: '100%' }}
+        fill='vertical'
         {...theme.dataTable[context]}
         {...rest}
       >
@@ -41,7 +41,7 @@ const Cell = ({
   return (
     <TableCell
       scope={scope}
-      plain={theme.dataTable[context] && true}
+      plain={!!theme.dataTable[context]}
       verticalAlign={context === 'header' ? 'bottom' : 'top'}
     >
       {content}
