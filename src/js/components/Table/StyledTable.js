@@ -19,6 +19,7 @@ export const StyledTableCell = styled.td`
   padding: 0;
   font-weight: inherit;
   text-align: inherit;
+  height: inherit;
 
   ${props => props.size && sizeStyle}
   ${props => props.verticalAlign && `vertical-align: ${props.verticalAlign};`}
