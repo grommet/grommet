@@ -60,10 +60,10 @@ function findHead(children) {
   let head;
   childElements.some((child) => {
     if (child.type && (
-      child.type === 'thead' ||
-      child.type === TableHeader ||
-      child.type.displayName === TableHeader.displayName
-    )) {
+        child.type === 'thead' ||
+        child.type === TableHeader ||
+        child.type.displayName === TableHeader.displayName
+      )) {
       head = child;
       return true;
     } else if (child.props && child.props.children) {
@@ -104,15 +104,16 @@ export default class Table extends Component {
   }
 
   componentDidMount () {
-    const { onMore, selectable, scrollable } = this.props;
+    const { onMore, onMoreAbove, selectable, scrollable } = this.props;
     const { columnMode, small } = this.state;
     this._setSelection();
     if (scrollable && !columnMode && !small) {
       this._alignMirror();
     }
-    if (this.props.onMore) {
+    if (onMore || onMoreAbove) {
       this._scroll = InfiniteScroll.startListeningForScroll(
-        this.moreRef, onMore
+        this.moreRef, onMore,
+        this.moreAboveRef, onMoreAbove
       );
     }
     this._adjustBodyCells();
@@ -150,7 +151,7 @@ export default class Table extends Component {
   }
 
   componentDidUpdate (prevProps, prevState) {
-    const { onMore, selectable, scrollable } = this.props;
+    const { onMore, onMoreAbove, selectable, scrollable } = this.props;
     const { columnMode, selected, small } = this.state;
     if (JSON.stringify(selected) !==
       JSON.stringify(prevState.selected)) {
@@ -159,9 +160,10 @@ export default class Table extends Component {
     if (scrollable && !columnMode && !small) {
       this._alignMirror();
     }
-    if (onMore && !this._scroll) {
+    if ((onMore || onMoreAbove) && !this._scroll) {
       this._scroll = InfiniteScroll.startListeningForScroll(
-        this.moreRef, onMore
+        this.moreRef, onMore,
+        this.moreAboveRef, onMoreAbove
       );
     }
     this._adjustBodyCells();
@@ -411,7 +413,7 @@ export default class Table extends Component {
                 headerCells[headerIndex].textContent
               ));
             }
-            
+
             incrementCount++;
             if (incrementCount === increments[headerIndex]) {
               incrementCount = 0;
@@ -449,11 +451,11 @@ export default class Table extends Component {
         const cells = immediateTableChildOnly(
           tableElement.querySelectorAll('thead tr th'), tableElement
         );
-        
+
         let rect = tableElement.getBoundingClientRect();
         mirrorElement.style.width =
           '' + Math.floor(rect.right - rect.left) + 'px';
-  
+
         let height = 0;
         for (let i = 0; i < cells.length; i++) {
           rect = cells[i].getBoundingClientRect();
@@ -470,7 +472,8 @@ export default class Table extends Component {
 
   render () {
     const {
-      a11yTitle, children, className, onBlur, onFocus, onMore, onMouseDown,
+      a11yTitle, children, className, onBlur, onFocus,
+      onMore, onMoreAbove, onMouseDown,
       onMouseUp, responsive, scrollable, selectable, ...props
     } = this.props;
     delete props.onSelect;
@@ -492,7 +495,7 @@ export default class Table extends Component {
       const head = findHead(children);
       mirror = (
         <table ref={ref => this.mirrorRef = ref}
-          className={`${CLASS_ROOT}__mirror`}>
+               className={`${CLASS_ROOT}__mirror`}>
           {head}
         </table>
       );
@@ -503,6 +506,16 @@ export default class Table extends Component {
       more = (
         <div ref={ref => this.moreRef = ref} className={`${CLASS_ROOT}__more`}>
           <SpinningIcon />
+        </div>
+      );
+    }
+
+    let moreAbove;
+    if (onMoreAbove) {
+      moreAbove = (
+        <div ref={ref => this.moreAboveRef = ref}
+             className={`${CLASS_ROOT}__more`}>
+          <SpinningIcon/>
         </div>
       );
     }
@@ -563,8 +576,9 @@ export default class Table extends Component {
     return (
       <div ref={ref => this.containerRef = ref} {...props} className={classes}>
         {mirror}
+        {moreAbove}
         <table ref={ref => this.tableRef = ref} {...selectableProps}
-          className={tableClasses}>
+               className={tableClasses}>
           {children}
         </table>
         {more}
@@ -580,6 +594,7 @@ Table.contextTypes = {
 Table.propTypes = {
   a11yTitle: PropTypes.string,
   onMore: PropTypes.func,
+  onMoreAbove: PropTypes.func,
   onSelect: PropTypes.func,
   responsive: PropTypes.bool,
   scrollable: PropTypes.bool,
