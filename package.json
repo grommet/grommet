@@ -1,6 +1,6 @@
 {
   "name": "grommet",
-  "version": "1.10.1",
+  "version": "1.11.0",
   "main": "src/js/index.js",
   "description": "The most advanced UX framework for enterprise applications.",
   "authors": [
