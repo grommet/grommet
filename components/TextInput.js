@@ -63,6 +63,18 @@ var TextInput = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (TextInput.__proto__ || Object.getPrototypeOf(TextInput)).call(this, props, context));
 
+    _this.activeKeyboardHandlers = {
+      esc: _this._onRemoveDrop,
+      tab: _this._onRemoveDrop,
+      up: _this._onPreviousSuggestion,
+      down: _this._onNextSuggestion,
+      enter: _this._onEnter
+    };
+    _this.focusedKeyboardHandlers = {
+      down: _this._onAddDrop
+    };
+
+
     _this._onInputChange = _this._onInputChange.bind(_this);
     _this._onAddDrop = _this._onAddDrop.bind(_this);
     _this._onRemoveDrop = _this._onRemoveDrop.bind(_this);
@@ -92,19 +104,8 @@ var TextInput = function (_Component) {
           dropActive = _state.dropActive,
           focused = _state.focused;
       var intl = this.context.intl;
-      // Set up keyboard listeners appropriate to the current state.
-
-      var activeKeyboardHandlers = {
-        esc: this._onRemoveDrop,
-        tab: this._onRemoveDrop,
-        up: this._onPreviousSuggestion,
-        down: this._onNextSuggestion,
-        enter: this._onEnter
-      };
-      var focusedKeyboardHandlers = {
-        down: this._onAddDrop
-      };
-
+      var activeKeyboardHandlers = this.activeKeyboardHandlers,
+          focusedKeyboardHandlers = this.focusedKeyboardHandlers;
       // the order here is important, need to turn off keys before turning on
 
       if (!focused && prevState.focused) {
@@ -153,6 +154,14 @@ var TextInput = function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
+      var activeKeyboardHandlers = this.activeKeyboardHandlers,
+          focusedKeyboardHandlers = this.focusedKeyboardHandlers;
+
+
+      _KeyboardAccelerators2.default.stopListeningToKeyboard(this, focusedKeyboardHandlers);
+
+      _KeyboardAccelerators2.default.stopListeningToKeyboard(this, activeKeyboardHandlers);
+
       document.removeEventListener('click', this._onRemoveDrop);
       if (this._drop) {
         this._drop.remove();
