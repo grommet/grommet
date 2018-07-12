@@ -2,7 +2,7 @@
 
 exports[`Drop align left random 1`] = `
 <div
-  class="StyledDrop-czaYBK jxdrKb"
+  class="StyledDrop-czaYBK bQLOYY"
   id="drop-node"
   style="width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -14,7 +14,7 @@ exports[`Drop align left random 1`] = `
 exports[`Drop align left random 2`] = `
 "
 
-.jxdrKb {
+.bQLOYY {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -28,7 +28,6 @@ exports[`Drop align left random 2`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -45,7 +44,7 @@ exports[`Drop align left random 2`] = `
 
 exports[`Drop align left right top bottom 1`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -57,7 +56,7 @@ exports[`Drop align left right top bottom 1`] = `
 exports[`Drop align left right top bottom 2`] = `
 "
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -71,7 +70,6 @@ exports[`Drop align left right top bottom 2`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -88,7 +86,7 @@ exports[`Drop align left right top bottom 2`] = `
 
 exports[`Drop align right left top top 1`] = `
 <div
-  class="StyledDrop-czaYBK gdDJrs"
+  class="StyledDrop-czaYBK cGZHRZ"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -100,7 +98,7 @@ exports[`Drop align right left top top 1`] = `
 exports[`Drop align right left top top 2`] = `
 "
 
-.gdDJrs {
+.cGZHRZ {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -114,7 +112,6 @@ exports[`Drop align right left top top 2`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -131,7 +128,7 @@ exports[`Drop align right left top top 2`] = `
 
 exports[`Drop align right random 1`] = `
 <div
-  class="StyledDrop-czaYBK gdDJrs"
+  class="StyledDrop-czaYBK cGZHRZ"
   id="drop-node"
   style="width: 0.1px; max-height: 768px;"
   tabindex="-1"
@@ -143,7 +140,7 @@ exports[`Drop align right random 1`] = `
 exports[`Drop align right random 2`] = `
 "
 
-.gdDJrs {
+.cGZHRZ {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -157,7 +154,6 @@ exports[`Drop align right random 2`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -174,7 +170,7 @@ exports[`Drop align right random 2`] = `
 
 exports[`Drop align right right bottom top 1`] = `
 <div
-  class="StyledDrop-czaYBK hThgnU"
+  class="StyledDrop-czaYBK gAVfkz"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -186,7 +182,7 @@ exports[`Drop align right right bottom top 1`] = `
 exports[`Drop align right right bottom top 2`] = `
 "
 
-.hThgnU {
+.gAVfkz {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -200,7 +196,6 @@ exports[`Drop align right right bottom top 2`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -217,7 +212,7 @@ exports[`Drop align right right bottom top 2`] = `
 
 exports[`Drop align right right bottom top 3`] = `
 <div
-  class="StyledDrop-czaYBK hThgnU"
+  class="StyledDrop-czaYBK gAVfkz"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -229,7 +224,7 @@ exports[`Drop align right right bottom top 3`] = `
 exports[`Drop align right right bottom top 4`] = `
 "
 
-.hThgnU {
+.gAVfkz {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -243,7 +238,6 @@ exports[`Drop align right right bottom top 4`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -260,7 +254,7 @@ exports[`Drop align right right bottom top 4`] = `
 
 exports[`Drop basic 1`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -272,7 +266,7 @@ exports[`Drop basic 1`] = `
 exports[`Drop basic 2`] = `
 "
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -286,7 +280,6 @@ exports[`Drop basic 2`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -303,7 +296,7 @@ exports[`Drop basic 2`] = `
 
 exports[`Drop close 1`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -315,7 +308,7 @@ exports[`Drop close 1`] = `
 exports[`Drop close 2`] = `
 "
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -329,7 +322,6 @@ exports[`Drop close 2`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -346,7 +338,7 @@ exports[`Drop close 2`] = `
 
 exports[`Drop invalid align 1`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="drop-node"
   style="width: 0.1px; max-height: 768px;"
   tabindex="-1"
@@ -358,7 +350,7 @@ exports[`Drop invalid align 1`] = `
 exports[`Drop invalid align 2`] = `
 "
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -372,7 +364,6 @@ exports[`Drop invalid align 2`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -389,7 +380,7 @@ exports[`Drop invalid align 2`] = `
 
 exports[`Drop invoke onClickOutside 1`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -401,7 +392,7 @@ exports[`Drop invoke onClickOutside 1`] = `
 exports[`Drop invoke onClickOutside 2`] = `
 "
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -415,7 +406,6 @@ exports[`Drop invoke onClickOutside 2`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -432,7 +422,7 @@ exports[`Drop invoke onClickOutside 2`] = `
 
 exports[`Drop resize 1`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -444,7 +434,7 @@ exports[`Drop resize 1`] = `
 exports[`Drop resize 2`] = `
 "
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -458,7 +448,6 @@ exports[`Drop resize 2`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -475,7 +464,7 @@ exports[`Drop resize 2`] = `
 
 exports[`Drop restrict focus 1`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -486,7 +475,7 @@ exports[`Drop restrict focus 1`] = `
 
 exports[`Drop restrict focus 2`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="drop-node"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 1000px;"
   tabindex="-1"
@@ -498,7 +487,7 @@ exports[`Drop restrict focus 2`] = `
 exports[`Drop restrict focus 3`] = `
 "
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -512,7 +501,6 @@ exports[`Drop restrict focus 3`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;

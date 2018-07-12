@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import {
   Add,
+  Close,
   FormClose,
   StatusGood,
   Trash,
@@ -11,10 +12,12 @@ import {
 import {
   Box,
   Button,
+  FormField,
   Grommet,
   Heading,
   Layer,
   Text,
+  TextInput,
 } from '../';
 
 class CenterLayer extends Component {
@@ -106,6 +109,72 @@ class CenterLayer extends Component {
   }
 }
 
+class FormLayer extends Component {
+  state = {}
+
+  onOpen = () => this.setState({ open: true })
+
+  onClose = () => this.setState({ open: undefined })
+
+  render() {
+    const { open } = this.state;
+    return (
+      <Grommet>
+        <Button
+          icon={<Add />}
+          label='Add'
+          onClick={this.onOpen}
+        />
+        {open && (
+          <Layer
+            position='right'
+            full='vertical'
+            modal={true}
+            onClickOutside={this.onClose}
+            onEsc={this.onClose}
+          >
+            <Box
+              tag='form'
+              fill='vertical'
+              overflow='auto'
+              width='medium'
+              pad='medium'
+              onSubmit={this.onClose}
+            >
+              <Box flex={false} direction='row' justify='between'>
+                <Heading level={2} margin='none'>Add</Heading>
+                <Button icon={<Close />} onClick={this.onClose} />
+              </Box>
+              <Box flex='grow' overflow={true} pad={{ vertical: 'medium' }}>
+                <FormField label='First'>
+                  <TextInput />
+                </FormField>
+                <FormField label='Second'>
+                  <TextInput />
+                </FormField>
+                <FormField label='Third'>
+                  <TextInput />
+                </FormField>
+                <FormField label='Fourth'>
+                  <TextInput />
+                </FormField>
+              </Box>
+              <Box flex={false} tag='footer' align='start'>
+                <Button
+                  type='submit'
+                  label='Submit'
+                  onClick={this.onClose}
+                  primary={true}
+                />
+              </Box>
+            </Box>
+          </Layer>
+        )}
+      </Grommet>
+    );
+  }
+}
+
 class NotificationLayer extends Component {
   state = {}
 
@@ -158,4 +227,5 @@ class NotificationLayer extends Component {
 
 storiesOf('Layer', module)
   .add('Center', () => <CenterLayer />)
+  .add('Form', () => <FormLayer />)
   .add('Notification', () => <NotificationLayer />);

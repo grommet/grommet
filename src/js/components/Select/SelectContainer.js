@@ -18,8 +18,12 @@ import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
-const SelectContainerBox = styled(Box)`
-  max-height: ${props => props.theme.select.drop.maxHeight};
+const ContainerBox = styled(Box)`
+  height: ${props => props.theme.select.drop.maxHeight};
+  max-height: inherit;
+`;
+
+const OptionsBox = styled(Box)`
   scroll-behavior: smooth;
 `;
 
@@ -159,8 +163,9 @@ class SelectContainer extends Component {
         onDown={this.onNextOption}
         onKeyDown={onKeyDown}
       >
-        <Box
+        <ContainerBox
           id={id ? `${id}__select-drop` : undefined}
+          theme={theme}
         >
           {onSearch && (
             <Box pad={!customSearchInput ? 'xsmall' : undefined} flex={false}>
@@ -175,7 +180,7 @@ class SelectContainer extends Component {
               />
             </Box>
           )}
-          <SelectContainerBox
+          <OptionsBox
             flex={true}
             role='menubar'
             tabIndex='-1'
@@ -185,33 +190,34 @@ class SelectContainer extends Component {
           >
             <InfiniteScroll items={options} step={theme.select.step}>
               {(option, index) => (
-                <Button
-                  role='menuitem'
-                  ref={(ref) => { this.optionsRef[index] = ref; }}
-                  active={
-                    selected === index ||
-                    (Array.isArray(selected) && selected.indexOf(index) !== -1) ||
-                    activeIndex === index ||
-                    (option && option === value) ||
-                    (option && Array.isArray(value) && value.indexOf(option) !== -1)
-                  }
-                  key={`option_${name || ''}_${index}`}
-                  onClick={() => this.selectOption(option, index)}
-                  hoverIndicator='background'
-                >
-                  {children ? children(option, index, options) : (
-                    <Box align='start' pad='small'>
-                      <Text margin='none'>
-                        {(option !== null && option !== undefined) ?
-                          option.toString() : undefined}
-                      </Text>
-                    </Box>
-                  )}
-                </Button>
+                <Box key={`option_${name || ''}_${index}`} flex={false}>
+                  <Button
+                    role='menuitem'
+                    ref={(ref) => { this.optionsRef[index] = ref; }}
+                    active={
+                      selected === index ||
+                      (Array.isArray(selected) && selected.indexOf(index) !== -1) ||
+                      activeIndex === index ||
+                      (option && option === value) ||
+                      (option && Array.isArray(value) && value.indexOf(option) !== -1)
+                    }
+                    onClick={() => this.selectOption(option, index)}
+                    hoverIndicator='background'
+                  >
+                    {children ? children(option, index, options) : (
+                      <Box align='start' pad='small'>
+                        <Text margin='none'>
+                          {(option !== null && option !== undefined) ?
+                            option.toString() : undefined}
+                        </Text>
+                      </Box>
+                    )}
+                  </Button>
+                </Box>
               )}
             </InfiniteScroll>
-          </SelectContainerBox>
-        </Box>
+          </OptionsBox>
+        </ContainerBox>
       </Keyboard>
     );
   }

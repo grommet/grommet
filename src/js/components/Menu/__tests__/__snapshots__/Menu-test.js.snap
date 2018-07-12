@@ -147,7 +147,7 @@ exports[`Menu close by clicking outside 1`] = `
 
 exports[`Menu close by clicking outside 2`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -294,7 +294,7 @@ exports[`Menu close by clicking outside 3`] = `
 
 
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -308,7 +308,6 @@ exports[`Menu close by clicking outside 3`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -723,7 +722,7 @@ exports[`Menu open and close on click 2`] = `
 
 exports[`Menu open and close on click 3`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -879,7 +878,7 @@ exports[`Menu open and close on click 4`] = `
 
 
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -893,7 +892,6 @@ exports[`Menu open and close on click 4`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -992,7 +990,7 @@ exports[`Menu with dropAlign renders 1`] = `
 
 exports[`Menu with dropAlign renders 2`] = `
 <div
-  class="StyledDrop-czaYBK gdDJrs"
+  class="StyledDrop-czaYBK cGZHRZ"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1146,7 +1144,7 @@ exports[`Menu with dropAlign renders 3`] = `
 
 
 
-.gdDJrs {
+.cGZHRZ {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1160,7 +1158,6 @@ exports[`Menu with dropAlign renders 3`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
