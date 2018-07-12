@@ -28,10 +28,6 @@ const OptionsBox = styled(Box)`
 `;
 
 class SelectContainer extends Component {
-  state = {
-    activeIndex: -1, // for tracking keyboard interaction
-    search: '',
-  }
   static defaultProps = {
     value: '',
   }
@@ -40,11 +36,36 @@ class SelectContainer extends Component {
   searchRef = createRef()
   selectRef = createRef()
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { options, value } = nextProps;
+
+    if (prevState.activeIndex === -1 && prevState.search === '' && options && value) {
+      const optionValue = Array.isArray(value) && value.length ? value[0] : value;
+      const activeIndex = options.indexOf(optionValue);
+      return {
+        activeIndex,
+      };
+    } else if (prevState.activeIndex === -1 && prevState.search !== '') {
+      return {
+        activeIndex: 0,
+      };
+    }
+
+    return null;
+  }
+
+  state = {
+    search: '',
+    activeIndex: -1,
+  }
+
   componentDidMount() {
     const { onSearch } = this.props;
+    const { activeIndex } = this.state;
     // timeout need to send the operation through event loop and allow time to the portal
     // to be available
     setTimeout(() => {
+      const selectNode = findDOMNode(this.selectRef.current);
       if (onSearch) {
         const input = findDOMNode(this.searchRef.current);
         if (input && input.focus) {
@@ -53,12 +74,26 @@ class SelectContainer extends Component {
       } else if (this.selectRef) {
         setFocusWithoutScroll(findDOMNode(this.selectRef.current));
       }
+
+      // scroll to active option if it is below the fold
+      if (activeIndex >= 0) {
+        const optionNode = findDOMNode(this.optionsRef[activeIndex]);
+        const { bottom: containerBottom } = selectNode.getBoundingClientRect();
+        const { bottom: optionTop } = optionNode.getBoundingClientRect();
+
+        if (containerBottom < optionTop) {
+          optionNode.scrollIntoView();
+        }
+      }
     }, 0);
   }
 
   onInput = (event) => {
     this.setState(
-      { search: event.target.value },
+      {
+        search: event.target.value,
+        activeIndex: -1,
+      },
       () => this.onSearch(this.state.search)
     );
   }
