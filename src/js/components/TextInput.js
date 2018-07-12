@@ -15,6 +15,18 @@ const INPUT = CSSClassnames.INPUT;
 
 export default class TextInput extends Component {
 
+  activeKeyboardHandlers = {
+    esc: this._onRemoveDrop,
+    tab: this._onRemoveDrop,
+    up: this._onPreviousSuggestion,
+    down: this._onNextSuggestion,
+    enter: this._onEnter
+  };
+
+  focusedKeyboardHandlers = {
+    down: this._onAddDrop
+  };
+
   constructor(props, context) {
     super(props, context);
 
@@ -41,18 +53,7 @@ export default class TextInput extends Component {
     const { suggestions } = this.props;
     const { announceChange, dropActive, focused } = this.state;
     const { intl } = this.context;
-    // Set up keyboard listeners appropriate to the current state.
-    const activeKeyboardHandlers = {
-      esc: this._onRemoveDrop,
-      tab: this._onRemoveDrop,
-      up: this._onPreviousSuggestion,
-      down: this._onNextSuggestion,
-      enter: this._onEnter
-    };
-    const focusedKeyboardHandlers = {
-      down: this._onAddDrop
-    };
-
+    const { activeKeyboardHandlers, focusedKeyboardHandlers } = this;
     // the order here is important, need to turn off keys before turning on
 
     if (! focused && prevState.focused) {
@@ -107,13 +108,21 @@ export default class TextInput extends Component {
   }
 
   componentWillUnmount () {
+    const { activeKeyboardHandlers, focusedKeyboardHandlers } = this;
+
+    KeyboardAccelerators.stopListeningToKeyboard(this,
+      focusedKeyboardHandlers);
+
+    KeyboardAccelerators.stopListeningToKeyboard(this,
+      activeKeyboardHandlers);
+
     document.removeEventListener('click', this._onRemoveDrop);
     if (this._drop) {
       this._drop.remove();
     }
   }
 
-  _stopPropagation () {
+  _stopPropagation() {
     if (document.activeElement === this.componentRef) {
       return true;
     }
