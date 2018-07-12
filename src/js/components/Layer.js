@@ -127,7 +127,7 @@ class LayerContents extends Component {
   }
 
   render () {
-    const { a11yTitle, children, closer, onClose } = this.props;
+    const { a11yTitle, children, closer, onClose, style } = this.props;
     const { intl } = this.context;
 
     let closerNode;
@@ -150,7 +150,7 @@ class LayerContents extends Component {
 
     return (
       <div ref={ref => this.containerRef = ref}
-        className={`${CLASS_ROOT}__container`}>
+        className={`${CLASS_ROOT}__container`} style={style}>
         <a tabIndex="-1" aria-hidden='true' style={{ outline: 'none' }}
           ref={ref => this.anchorStepRef = ref} />
         {closerNode}
