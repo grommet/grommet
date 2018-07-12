@@ -53,7 +53,7 @@ export default class TextInput extends Component {
     const { suggestions } = this.props;
     const { announceChange, dropActive, focused } = this.state;
     const { intl } = this.context;
-    const {activeKeyboardHandlers, focusedKeyboardHandlers} = this;
+    const { activeKeyboardHandlers, focusedKeyboardHandlers } = this;
     // the order here is important, need to turn off keys before turning on
 
     if (! focused && prevState.focused) {
@@ -108,7 +108,7 @@ export default class TextInput extends Component {
   }
 
   componentWillUnmount () {
-    const {activeKeyboardHandlers, focusedKeyboardHandlers} = this;
+    const { activeKeyboardHandlers, focusedKeyboardHandlers } = this;
 
     KeyboardAccelerators.stopListeningToKeyboard(this,
       focusedKeyboardHandlers);
