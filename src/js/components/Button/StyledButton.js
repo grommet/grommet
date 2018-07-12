@@ -128,7 +128,6 @@ const plainStyle = css`
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: min-content;
 `;
 
 const StyledButton = styled.button`

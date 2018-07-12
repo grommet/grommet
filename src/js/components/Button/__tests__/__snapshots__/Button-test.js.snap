@@ -376,9 +376,6 @@ exports[`Button hoverIndicator as object renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c1:hover {
@@ -437,9 +434,6 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c1:hover {
@@ -498,9 +492,6 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c1:hover {
@@ -559,9 +550,6 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c1:hover {
@@ -620,9 +608,6 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c1:hover {
@@ -681,9 +666,6 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c1:hover {
@@ -742,9 +724,6 @@ exports[`Button hoverIndicator renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c1:hover {
@@ -1384,9 +1363,6 @@ exports[`Button warns about invalid icon render 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 @media only screen and (max-width:699px) {
@@ -1487,9 +1463,6 @@ exports[`Button warns about invalid label render 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 @media only screen and (max-width:699px) {

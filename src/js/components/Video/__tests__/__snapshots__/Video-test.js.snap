@@ -213,9 +213,6 @@ exports[`Video autoPlay renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c5:hover {
@@ -238,9 +235,6 @@ exports[`Video autoPlay renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c12 {
@@ -845,9 +839,6 @@ exports[`Video controls renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c5:hover {
@@ -870,9 +861,6 @@ exports[`Video controls renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c12 {
@@ -1606,9 +1594,6 @@ exports[`Video fit renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c5:hover {
@@ -1631,9 +1616,6 @@ exports[`Video fit renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c12 {
@@ -2371,9 +2353,6 @@ exports[`Video loop renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c5:hover {
@@ -2396,9 +2375,6 @@ exports[`Video loop renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c12 {
@@ -2946,9 +2922,6 @@ exports[`Video mute renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c5:hover {
@@ -2971,9 +2944,6 @@ exports[`Video mute renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c12 {
@@ -3521,9 +3491,6 @@ exports[`Video renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c5:hover {
@@ -3546,9 +3513,6 @@ exports[`Video renders 1`] = `
   border: none;
   padding: 0;
   text-align: inherit;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
 }
 
 .c12 {
