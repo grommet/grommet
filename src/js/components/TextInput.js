@@ -15,6 +15,18 @@ const INPUT = CSSClassnames.INPUT;
 
 export default class TextInput extends Component {
 
+  activeKeyboardHandlers = {
+    esc: this._onRemoveDrop,
+    tab: this._onRemoveDrop,
+    up: this._onPreviousSuggestion,
+    down: this._onNextSuggestion,
+    enter: this._onEnter
+  };
+
+  focusedKeyboardHandlers = {
+    down: this._onAddDrop
+  };
+
   constructor(props, context) {
     super(props, context);
 
@@ -110,24 +122,7 @@ export default class TextInput extends Component {
     }
   }
 
-  get activeKeyboardHandlers() {
-    // Set up keyboard listeners appropriate to the current state.
-    return  {
-      esc: this._onRemoveDrop,
-      tab: this._onRemoveDrop,
-      up: this._onPreviousSuggestion,
-      down: this._onNextSuggestion,
-      enter: this._onEnter
-    };
-  }
-
-  get focusedKeyboardHandlers() {
-    return {
-      down: this._onAddDrop
-    };
-  }
-
-  _stopPropagation () {
+  _stopPropagation() {
     if (document.activeElement === this.componentRef) {
       return true;
     }
