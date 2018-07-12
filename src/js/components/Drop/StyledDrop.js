@@ -33,8 +33,6 @@ const StyledDrop = styled.div`
     props.theme.global.drop.shadow[props.theme.dark ? 'dark' : 'light']};
   position: fixed;
   z-index: 20;
-
-  overflow: auto;
   outline: none;
 
   ${props => backgroundStyle(

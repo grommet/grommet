@@ -34,7 +34,7 @@ exports[`TextInput close suggestion drop 1`] = `
 
 exports[`TextInput close suggestion drop 2`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -92,7 +92,7 @@ exports[`TextInput close suggestion drop 3`] = `
 
 
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -106,7 +106,6 @@ exports[`TextInput close suggestion drop 3`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -161,7 +160,7 @@ exports[`TextInput complex suggestions 1`] = `
 
 exports[`TextInput complex suggestions 2`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -219,7 +218,7 @@ exports[`TextInput complex suggestions 3`] = `
 
 
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -233,7 +232,6 @@ exports[`TextInput complex suggestions 3`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -345,7 +343,7 @@ exports[`TextInput select suggestion 1`] = `
 
 exports[`TextInput select suggestion 2`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -403,7 +401,7 @@ exports[`TextInput select suggestion 3`] = `
 
 
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -417,7 +415,6 @@ exports[`TextInput select suggestion 3`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -468,7 +465,7 @@ exports[`TextInput suggestions 1`] = `
 
 exports[`TextInput suggestions 2`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="text-input-drop__item"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -526,7 +523,7 @@ exports[`TextInput suggestions 3`] = `
 
 
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -540,7 +537,6 @@ exports[`TextInput suggestions 3`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;

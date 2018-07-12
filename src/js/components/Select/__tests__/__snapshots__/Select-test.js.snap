@@ -386,38 +386,46 @@ exports[`Select complex options and children 2`] = `
 
 exports[`Select complex options and children 3`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-YaZNy hQeqTY"
+    class="SelectContainer__ContainerBox-cmlGXd cMIoSE StyledBox-YaZNy hQeqTY"
     id="test-select__select-drop"
   >
     <div
-      class="SelectContainer__SelectContainerBox-dqwAiO bNTcOA StyledBox-YaZNy fvEbPE"
+      class="SelectContainer__OptionsBox-ivZYuf dsVoEJ StyledBox-YaZNy fvEbPE"
       role="menubar"
       tabindex="-1"
     >
-      <button
-        class="StyledButton-qbvYY ktbLOR"
-        role="menuitem"
-        type="button"
+      <div
+        class="StyledBox-YaZNy ckMYwJ"
       >
-        <span>
-          one
-        </span>
-      </button>
-      <button
-        class="StyledButton-qbvYY ktbLOR"
-        role="menuitem"
-        type="button"
+        <button
+          class="StyledButton-qbvYY ktbLOR"
+          role="menuitem"
+          type="button"
+        >
+          <span>
+            one
+          </span>
+        </button>
+      </div>
+      <div
+        class="StyledBox-YaZNy ckMYwJ"
       >
-        <span>
-          two
-        </span>
-      </button>
+        <button
+          class="StyledButton-qbvYY ktbLOR"
+          role="menuitem"
+          type="button"
+        >
+          <span>
+            two
+          </span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -492,6 +500,18 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media only screen and (max-width:699px) {
+  .ckMYwJ {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .ckMYwJ {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .hZNqBU {
     margin: 0;
   }
@@ -519,7 +539,7 @@ exports[`Select complex options and children 4`] = `
 
 
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -533,7 +553,6 @@ exports[`Select complex options and children 4`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -1109,50 +1128,58 @@ exports[`Select multiple values 2`] = `
 
 exports[`Select multiple values 3`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-YaZNy hQeqTY"
+    class="SelectContainer__ContainerBox-cmlGXd cMIoSE StyledBox-YaZNy hQeqTY"
     id="test-select__select-drop"
   >
     <div
-      class="SelectContainer__SelectContainerBox-dqwAiO bNTcOA StyledBox-YaZNy fvEbPE"
+      class="SelectContainer__OptionsBox-ivZYuf dsVoEJ StyledBox-YaZNy fvEbPE"
       role="menubar"
       tabindex="-1"
     >
-      <button
-        class="StyledButton-qbvYY fZEyyA"
-        role="menuitem"
-        type="button"
+      <div
+        class="StyledBox-YaZNy ckMYwJ"
       >
-        <div
-          class="StyledBox-YaZNy hZNqBU"
+        <button
+          class="StyledButton-qbvYY fZEyyA"
+          role="menuitem"
+          type="button"
         >
-          <span
-            class="StyledText-dmaDlZ iRQiFb"
+          <div
+            class="StyledBox-YaZNy hZNqBU"
           >
-            one
-          </span>
-        </div>
-      </button>
-      <button
-        class="StyledButton-qbvYY fZEyyA"
-        role="menuitem"
-        type="button"
+            <span
+              class="StyledText-dmaDlZ iRQiFb"
+            >
+              one
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="StyledBox-YaZNy ckMYwJ"
       >
-        <div
-          class="StyledBox-YaZNy hZNqBU"
+        <button
+          class="StyledButton-qbvYY fZEyyA"
+          role="menuitem"
+          type="button"
         >
-          <span
-            class="StyledText-dmaDlZ iRQiFb"
+          <div
+            class="StyledBox-YaZNy hZNqBU"
           >
-            two
-          </span>
-        </div>
-      </button>
+            <span
+              class="StyledText-dmaDlZ iRQiFb"
+            >
+              two
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -1227,6 +1254,18 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (max-width:699px) {
+  .ckMYwJ {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .ckMYwJ {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .hZNqBU {
     margin: 0;
   }
@@ -1285,7 +1324,7 @@ exports[`Select multiple values 4`] = `
 
 
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1299,7 +1338,6 @@ exports[`Select multiple values 4`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -1426,50 +1464,58 @@ exports[`Select opens 2`] = `
 
 exports[`Select opens 3`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-YaZNy hQeqTY"
+    class="SelectContainer__ContainerBox-cmlGXd cMIoSE StyledBox-YaZNy hQeqTY"
     id="test-select__select-drop"
   >
     <div
-      class="SelectContainer__SelectContainerBox-dqwAiO bNTcOA StyledBox-YaZNy fvEbPE"
+      class="SelectContainer__OptionsBox-ivZYuf dsVoEJ StyledBox-YaZNy fvEbPE"
       role="menubar"
       tabindex="-1"
     >
-      <button
-        class="StyledButton-qbvYY ktbLOR"
-        role="menuitem"
-        type="button"
+      <div
+        class="StyledBox-YaZNy ckMYwJ"
       >
-        <div
-          class="StyledBox-YaZNy hZNqBU"
+        <button
+          class="StyledButton-qbvYY ktbLOR"
+          role="menuitem"
+          type="button"
         >
-          <span
-            class="StyledText-dmaDlZ iRQiFb"
+          <div
+            class="StyledBox-YaZNy hZNqBU"
           >
-            one
-          </span>
-        </div>
-      </button>
-      <button
-        class="StyledButton-qbvYY ktbLOR"
-        role="menuitem"
-        type="button"
+            <span
+              class="StyledText-dmaDlZ iRQiFb"
+            >
+              one
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="StyledBox-YaZNy ckMYwJ"
       >
-        <div
-          class="StyledBox-YaZNy hZNqBU"
+        <button
+          class="StyledButton-qbvYY ktbLOR"
+          role="menuitem"
+          type="button"
         >
-          <span
-            class="StyledText-dmaDlZ iRQiFb"
+          <div
+            class="StyledBox-YaZNy hZNqBU"
           >
-            two
-          </span>
-        </div>
-      </button>
+            <span
+              class="StyledText-dmaDlZ iRQiFb"
+            >
+              two
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -1544,6 +1590,18 @@ exports[`Select opens 4`] = `
 }
 
 @media only screen and (max-width:699px) {
+  .ckMYwJ {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .ckMYwJ {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .hZNqBU {
     margin: 0;
   }
@@ -1571,7 +1629,7 @@ exports[`Select opens 4`] = `
 
 
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1585,7 +1643,6 @@ exports[`Select opens 4`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;
@@ -1602,40 +1659,48 @@ exports[`Select opens 4`] = `
 
 exports[`Select opens 5`] = `
 <div
-  class="SelectContainer__SelectContainerBox-dqwAiO bNTcOA StyledBox-YaZNy fvEbPE"
+  class="SelectContainer__OptionsBox-ivZYuf dsVoEJ StyledBox-YaZNy fvEbPE"
   role="menubar"
   tabindex="-1"
 >
-  <button
-    class="StyledButton-qbvYY ktbLOR"
-    role="menuitem"
-    type="button"
+  <div
+    class="StyledBox-YaZNy ckMYwJ"
   >
-    <div
-      class="StyledBox-YaZNy hZNqBU"
+    <button
+      class="StyledButton-qbvYY ktbLOR"
+      role="menuitem"
+      type="button"
     >
-      <span
-        class="StyledText-dmaDlZ iRQiFb"
+      <div
+        class="StyledBox-YaZNy hZNqBU"
       >
-        one
-      </span>
-    </div>
-  </button>
-  <button
-    class="StyledButton-qbvYY ktbLOR"
-    role="menuitem"
-    type="button"
+        <span
+          class="StyledText-dmaDlZ iRQiFb"
+        >
+          one
+        </span>
+      </div>
+    </button>
+  </div>
+  <div
+    class="StyledBox-YaZNy ckMYwJ"
   >
-    <div
-      class="StyledBox-YaZNy hZNqBU"
+    <button
+      class="StyledButton-qbvYY ktbLOR"
+      role="menuitem"
+      type="button"
     >
-      <span
-        class="StyledText-dmaDlZ iRQiFb"
+      <div
+        class="StyledBox-YaZNy hZNqBU"
       >
-        two
-      </span>
-    </div>
-  </button>
+        <span
+          class="StyledText-dmaDlZ iRQiFb"
+        >
+          two
+        </span>
+      </div>
+    </button>
+  </div>
 </div>
 `;
 
@@ -1696,13 +1761,13 @@ exports[`Select search 1`] = `
 
 exports[`Select search 2`] = `
 <div
-  class="StyledDrop-czaYBK igFhFE"
+  class="StyledDrop-czaYBK iNJpQg"
   id="test-select__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
   <div
-    class="StyledBox-YaZNy hQeqTY"
+    class="SelectContainer__ContainerBox-cmlGXd cMIoSE StyledBox-YaZNy hQeqTY"
     id="test-select__select-drop"
   >
     <div
@@ -1720,40 +1785,48 @@ exports[`Select search 2`] = `
       </div>
     </div>
     <div
-      class="SelectContainer__SelectContainerBox-dqwAiO bNTcOA StyledBox-YaZNy fvEbPE"
+      class="SelectContainer__OptionsBox-ivZYuf dsVoEJ StyledBox-YaZNy fvEbPE"
       role="menubar"
       tabindex="-1"
     >
-      <button
-        class="StyledButton-qbvYY ktbLOR"
-        role="menuitem"
-        type="button"
+      <div
+        class="StyledBox-YaZNy ckMYwJ"
       >
-        <div
-          class="StyledBox-YaZNy hZNqBU"
+        <button
+          class="StyledButton-qbvYY ktbLOR"
+          role="menuitem"
+          type="button"
         >
-          <span
-            class="StyledText-dmaDlZ iRQiFb"
+          <div
+            class="StyledBox-YaZNy hZNqBU"
           >
-            one
-          </span>
-        </div>
-      </button>
-      <button
-        class="StyledButton-qbvYY ktbLOR"
-        role="menuitem"
-        type="button"
+            <span
+              class="StyledText-dmaDlZ iRQiFb"
+            >
+              one
+            </span>
+          </div>
+        </button>
+      </div>
+      <div
+        class="StyledBox-YaZNy ckMYwJ"
       >
-        <div
-          class="StyledBox-YaZNy hZNqBU"
+        <button
+          class="StyledButton-qbvYY ktbLOR"
+          role="menuitem"
+          type="button"
         >
-          <span
-            class="StyledText-dmaDlZ iRQiFb"
+          <div
+            class="StyledBox-YaZNy hZNqBU"
           >
-            two
-          </span>
-        </div>
-      </button>
+            <span
+              class="StyledText-dmaDlZ iRQiFb"
+            >
+              two
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -1828,6 +1901,18 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (max-width:699px) {
+  .ckMYwJ {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .ckMYwJ {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .hZNqBU {
     margin: 0;
   }
@@ -1867,7 +1952,7 @@ exports[`Select search 3`] = `
 
 
 
-.igFhFE {
+.iNJpQg {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1881,7 +1966,6 @@ exports[`Select search 3`] = `
   box-shadow: 0px 3px 8px rgba(100,100,100,0.50);
   position: fixed;
   z-index: 20;
-  overflow: auto;
   outline: none;
   background-color: #f8f8f8;
   color: #444444;

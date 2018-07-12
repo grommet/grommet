@@ -22,10 +22,8 @@ const desktopLayerStyle = `
 const StyledLayer = styled.div`
   ${baseStyle}
   background-color: unset;
-
   position: relative;
   z-index: 10;
-  overflow: auto;
   pointer-events: none;
   outline: none;
 
@@ -33,7 +31,8 @@ const StyledLayer = styled.div`
     position: absolute;
     height: 100%;
     width: 100%;
-  `)}
+    overflow: auto;
+    `)}
 
   ${(props) => {
     if (props.position === 'hidden') {
@@ -324,13 +323,12 @@ const POSITIONS = {
 };
 
 const desktopContainerStyle = css`
-position: ${props => (props.modal ? 'absolute' : 'fixed')};
-max-height: 100%;
-max-width: 100%;
-overflow: auto;
-border-radius: ${props => (props.plain ? 'none' : props.theme.layer.border.radius)};
-${props => (props.position !== 'hidden' &&
-  POSITIONS[props.position][props.full](props.margin, props.theme)) || ''}
+  position: ${props => (props.modal ? 'absolute' : 'fixed')};
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: ${props => (props.plain ? 'none' : props.theme.layer.border.radius)};
+  ${props => (props.position !== 'hidden' &&
+    POSITIONS[props.position][props.full](props.margin, props.theme)) || ''}
 `;
 
 export const StyledContainer = styled.div`
