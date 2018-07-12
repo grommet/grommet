@@ -55,6 +55,7 @@
     "babel-core": "^6.21.0",
     "babel-eslint": "^8.0.1",
     "babel-plugin-add-module-exports": "^0.2.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.3.13",
     "babel-plugin-transform-react-es6-displayname": "^1.0.0-beta1.4",
