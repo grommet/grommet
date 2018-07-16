@@ -392,7 +392,7 @@ exports[`Select complex options and children 3`] = `
   tabindex="-1"
 >
   <div
-    class="SelectContainer__ContainerBox-cmlGXd cMIoSE StyledBox-YaZNy hQeqTY"
+    class="SelectContainer__ContainerBox-cmlGXd hUmSXV StyledBox-YaZNy hQeqTY"
     id="test-select__select-drop"
   >
     <div
@@ -1134,7 +1134,7 @@ exports[`Select multiple values 3`] = `
   tabindex="-1"
 >
   <div
-    class="SelectContainer__ContainerBox-cmlGXd cMIoSE StyledBox-YaZNy hQeqTY"
+    class="SelectContainer__ContainerBox-cmlGXd hUmSXV StyledBox-YaZNy hQeqTY"
     id="test-select__select-drop"
   >
     <div
@@ -1470,7 +1470,7 @@ exports[`Select opens 3`] = `
   tabindex="-1"
 >
   <div
-    class="SelectContainer__ContainerBox-cmlGXd cMIoSE StyledBox-YaZNy hQeqTY"
+    class="SelectContainer__ContainerBox-cmlGXd hUmSXV StyledBox-YaZNy hQeqTY"
     id="test-select__select-drop"
   >
     <div
@@ -1767,7 +1767,7 @@ exports[`Select search 2`] = `
   tabindex="-1"
 >
   <div
-    class="SelectContainer__ContainerBox-cmlGXd cMIoSE StyledBox-YaZNy hQeqTY"
+    class="SelectContainer__ContainerBox-cmlGXd hUmSXV StyledBox-YaZNy hQeqTY"
     id="test-select__select-drop"
   >
     <div

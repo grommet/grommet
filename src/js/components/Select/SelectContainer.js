@@ -19,7 +19,6 @@ import { Text } from '../Text';
 import { TextInput } from '../TextInput';
 
 const ContainerBox = styled(Box)`
-  height: ${props => props.theme.select.drop.maxHeight};
   max-height: inherit;
 `;
 
