@@ -6,9 +6,10 @@ import { Box } from '../Box';
 
 const SorterButton = styled(Button)`
   flex-shrink: 1;
+  height: 100%;
 `;
 
-const Sorter = ({ align, children, onSort, property, sort, theme }) => {
+const Sorter = ({ align, children, fill, onSort, property, sort, theme, themeProps }) => {
   let icon;
   if (sort && sort.property === property) {
     const Icon = theme.dataTable.icons[sort.ascending ? 'ascending' : 'descending'];
@@ -16,15 +17,13 @@ const Sorter = ({ align, children, onSort, property, sort, theme }) => {
   }
   let content = (
     <Box
-      flex={true}
+      flex='shrink'
       direction='row'
       justify={align}
       align='center'
       gap='xsmall'
-      fill='vertical'
-      {...theme.dataTable.header}
-      border={undefined}
-      background={undefined}
+      fill={fill}
+      {...themeProps}
     >
       {children}
       {icon}
@@ -33,10 +32,9 @@ const Sorter = ({ align, children, onSort, property, sort, theme }) => {
   if (onSort) {
     content = (
       <SorterButton
-        fill={true}
+        fill={fill}
         hoverIndicator={true}
         onClick={onSort(property)}
-        style={{ flexShrink: 1 }}
       >
         {content}
       </SorterButton>

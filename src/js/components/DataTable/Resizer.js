@@ -44,7 +44,7 @@ export default class Resizer extends Component {
     const { start } = this.state;
     if (onResize) {
       return (
-        <Box ref={this.ref} direction='row' flex={true} fill='vertical'>
+        <Box ref={this.ref} direction='row' fill={true}>
           {children}
           <ResizerBox
             flex={false}

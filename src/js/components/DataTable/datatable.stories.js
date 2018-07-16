@@ -16,7 +16,7 @@ const amountFormatter = new Intl.NumberFormat('en-US', {
 const columns = [
   {
     property: 'name',
-    header: <Text>Name</Text>,
+    header: <Text>Name with extra</Text>,
     primary: true,
     footer: 'Total',
   },
@@ -63,7 +63,7 @@ for (let i = 0; i < 40; i += 1) {
 const DATA = [
   { name: 'Alan', location: 'Los Gatos', date: '2018-06-11', percent: 20, paid: 2345 },
   { name: 'Bryan', location: 'Fort Collins', date: '2018-06-10', percent: 30, paid: 1234 },
-  { name: 'Chris', location: 'Palo Alto', date: '2018-06-9', percent: 40, paid: 2345 },
+  { name: 'Chris', location: 'Palo Alto', date: '2018-06-09', percent: 40, paid: 2345 },
   { name: 'Eric', location: 'Palo Alto', date: '2018-06-11', percent: 80, paid: 3456 },
   { name: 'Doug', location: 'Fort Collins', date: '2018-06-10', percent: 60, paid: 1234 },
   { name: 'Jet', location: 'Palo Alto', date: '2018-06-09', percent: 40, paid: 3456 },
@@ -75,10 +75,7 @@ class SimpleDataTable extends Component {
   render() {
     return (
       <Grommet>
-        <DataTable
-          columns={columns}
-          data={DATA}
-        />
+        <DataTable columns={columns} data={DATA} />
       </Grommet>
     );
   }
@@ -88,11 +85,7 @@ class SizedDataTable extends Component {
   render() {
     return (
       <Grommet>
-        <DataTable
-          columns={columns}
-          data={data}
-          size='medium'
-        />
+        <DataTable columns={columns} data={data} size='medium' />
       </Grommet>
     );
   }
@@ -103,7 +96,8 @@ class TunableDataTable extends Component {
     return (
       <Grommet>
         <DataTable
-          columns={columns.map(c => ({ ...c, search: c.property === 'name' || c.property === 'location' }))}
+          columns={columns.map(c =>
+            ({ ...c, search: c.property === 'name' || c.property === 'location' }))}
           data={DATA}
           sortable={true}
           resizeable={true}

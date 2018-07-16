@@ -22,7 +22,7 @@ export default class Searcher extends Component {
     if (filtering === property) {
       return (
         <Keyboard onEsc={() => onFiltering(undefined)}>
-          <Box flex={false} pad={{ horizontal: 'small' }}>
+          <Box flex={true} pad={{ horizontal: 'small' }}>
             <TextInput
               ref={this.inputRef}
               value={filters[property]}
