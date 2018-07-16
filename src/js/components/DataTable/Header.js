@@ -14,67 +14,112 @@ const Header = ({
   columns, filtering, filters, groups, groupState,
   onFilter, onFiltering, onResize, onSort, onToggle,
   sort, theme, widths, ...rest
-}) => (
-  <StyledDataTableHeader {...rest}>
-    <StyledDataTableRow>
+}) => {
+  // The tricky part here is that we need to manage the theme styling
+  // to make sure that the background, border, and padding are applied
+  // at the right places depending on the mix of controls in each header cell.
+  const outerThemeProps = (({ border, background }) =>
+    ({ border, background }))(theme.dataTable.header);
+  const { border, background, ...innerThemeProps } = theme.dataTable.header;
+  return (
+    <StyledDataTableHeader {...rest}>
+      <StyledDataTableRow>
 
-      {groups && (
-        <ExpanderCell
-          context='header'
-          expanded={Object.keys(groupState)
-            .filter(k => !groupState[k].expanded).length === 0}
-          theme={theme}
-          onToggle={onToggle}
-        />
-      )}
+        {groups && (
+          <ExpanderCell
+            context='header'
+            expanded={Object.keys(groupState)
+              .filter(k => !groupState[k].expanded).length === 0}
+            theme={theme}
+            onToggle={onToggle}
+          />
+        )}
 
-      {columns.map(({ property, header, align, search }) => (
-        <TableCell
-          key={property}
-          scope='col'
-          plain={true}
-          verticalAlign='bottom'
-          style={widths && widths[property] ?
-            { width: widths[property] } : undefined}
-        >
-          <Resizer property={property} onResize={onResize} theme={theme}>
-            <Box flex={true} fill='vertical'>
+        {columns.map(({ property, header, align, search }) => {
+          let content = (typeof header === 'string' ? (
+            <Text>{header}</Text>
+          ) : header);
+
+          if (onSort) {
+            content = (
+              <Sorter
+                align={align}
+                fill={!search}
+                property={property}
+                onSort={onSort}
+                sort={sort}
+                theme={theme}
+                themeProps={search ? innerThemeProps : theme.dataTable.header}
+              >
+                {content}
+              </Sorter>
+            );
+          }
+
+          if (search && filters) {
+            if (!onSort) {
+              content = (
+                <Box justify='center' align={align} {...innerThemeProps}>
+                  {content}
+                </Box>
+              );
+            }
+            content = (
               <Box
-                flex={true}
+                fill={true}
                 direction='row'
                 justify='between'
                 align='center'
-                {...theme.dataTable.header}
-                pad={undefined}
+                {...outerThemeProps}
               >
-                <Sorter
-                  align={align}
+                {content}
+                <Searcher
+                  filtering={filtering}
+                  filters={filters}
                   property={property}
-                  onSort={onSort}
-                  sort={sort}
-                  theme={theme}
-                >
-                  {typeof header === 'string' ? (
-                    <Text>{header}</Text>
-                  ) : header}
-                </Sorter>
-                {filters && search && (
-                  <Searcher
-                    filtering={filtering}
-                    filters={filters}
-                    property={property}
-                    onFilter={onFilter}
-                    onFiltering={onFiltering}
-                  />
-                )}
+                  onFilter={onFilter}
+                  onFiltering={onFiltering}
+                />
               </Box>
-            </Box>
-          </Resizer>
-        </TableCell>
-      ))}
+            );
+          } else if (!onSort) {
+            content = (
+              <Box
+                fill={true}
+                justify='center'
+                align={align}
+                {...theme.dataTable.header}
+              >
+                {content}
+              </Box>
+            );
+          }
 
-    </StyledDataTableRow>
-  </StyledDataTableHeader>
-);
+          if (onResize) {
+            content = (
+              <Resizer property={property} onResize={onResize} theme={theme}>
+                {content}
+              </Resizer>
+            );
+          }
+
+          return (
+            <TableCell
+              key={property}
+              scope='col'
+              plain={true}
+              verticalAlign='bottom'
+              style={widths && widths[property] ?
+                { width: widths[property] } : undefined}
+            >
+              {content}
+            </TableCell>
+          );
+        })}
+
+      </StyledDataTableRow>
+    </StyledDataTableHeader>
+  );
+};
 
 export default Header;

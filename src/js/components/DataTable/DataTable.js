@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
 
-import { Table } from '../Table';
-
 import { withTheme } from '../hocs';
 
 import Header from './Header';
@@ -11,6 +9,7 @@ import Body from './Body';
 import GroupedBody from './GroupedBody';
 import buildState from './buildState';
 import doc from './doc';
+import { StyledDataTable } from './StyledDataTable';
 
 class DataTable extends Component {
   static defaultProps = {
@@ -79,7 +78,7 @@ class DataTable extends Component {
     }
 
     return (
-      <Table>
+      <StyledDataTable>
         <Header
           columns={columns}
           filtering={filtering}
@@ -125,7 +124,7 @@ class DataTable extends Component {
             theme={theme}
           />
         )}
-      </Table>
+      </StyledDataTable>
     );
   }
 }
