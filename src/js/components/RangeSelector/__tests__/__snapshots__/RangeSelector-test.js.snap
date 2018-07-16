@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextInput basic 1`] = `
+exports[`RangeSelector basic 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -332,7 +332,7 @@ exports[`TextInput basic 1`] = `
 </div>
 `;
 
-exports[`TextInput color 1`] = `
+exports[`RangeSelector color 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -664,7 +664,7 @@ exports[`TextInput color 1`] = `
 </div>
 `;
 
-exports[`TextInput direction 1`] = `
+exports[`RangeSelector direction 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -1279,7 +1279,7 @@ exports[`TextInput direction 1`] = `
 </div>
 `;
 
-exports[`TextInput handle keyboard 1`] = `
+exports[`RangeSelector handle keyboard 1`] = `
 <div
   class="StyledGrommet-gKbdxL iuxDFS"
 >
@@ -1317,7 +1317,7 @@ exports[`TextInput handle keyboard 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy inkIZG"
+      class="StyledBox-YaZNy hIUlFR"
       style="cursor: ew-resize;"
     />
     <div
@@ -1354,7 +1354,7 @@ exports[`TextInput handle keyboard 1`] = `
 </div>
 `;
 
-exports[`TextInput handle mouse 1`] = `
+exports[`RangeSelector handle mouse 1`] = `
 <div
   class="StyledGrommet-gKbdxL iuxDFS"
 >
@@ -1392,7 +1392,7 @@ exports[`TextInput handle mouse 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy inkIZG"
+      class="StyledBox-YaZNy hIUlFR"
       style="cursor: ew-resize;"
     />
     <div
@@ -1429,7 +1429,7 @@ exports[`TextInput handle mouse 1`] = `
 </div>
 `;
 
-exports[`TextInput invert 1`] = `
+exports[`RangeSelector invert 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -1906,7 +1906,7 @@ exports[`TextInput invert 1`] = `
 </div>
 `;
 
-exports[`TextInput max 1`] = `
+exports[`RangeSelector max 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -2238,7 +2238,7 @@ exports[`TextInput max 1`] = `
 </div>
 `;
 
-exports[`TextInput min 1`] = `
+exports[`RangeSelector min 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -2570,7 +2570,7 @@ exports[`TextInput min 1`] = `
 </div>
 `;
 
-exports[`TextInput opacity 1`] = `
+exports[`RangeSelector opacity 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -2714,7 +2714,6 @@ exports[`TextInput opacity 1`] = `
   outline: none;
   max-width: 100%;
   background-color: rgba(134,92,214,0.1);
-  color: #FFFFFF;
   min-width: 0;
   min-height: 0;
   -webkit-flex-direction: column;
@@ -3192,7 +3191,7 @@ exports[`TextInput opacity 1`] = `
 </div>
 `;
 
-exports[`TextInput round 1`] = `
+exports[`RangeSelector round 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -4294,7 +4293,7 @@ exports[`TextInput round 1`] = `
 </div>
 `;
 
-exports[`TextInput size 1`] = `
+exports[`RangeSelector size 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
@@ -5304,7 +5303,7 @@ exports[`TextInput size 1`] = `
 </div>
 `;
 
-exports[`TextInput step 1`] = `
+exports[`RangeSelector step 1`] = `
 .c0 {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;

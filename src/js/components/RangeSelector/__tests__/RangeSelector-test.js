@@ -6,7 +6,7 @@ import { cleanup, render, Simulate } from 'react-testing-library';
 import { Grommet } from '../../Grommet';
 import { RangeSelector } from '../';
 
-describe('TextInput', () => {
+describe('RangeSelector', () => {
   afterEach(cleanup);
 
   test('basic', () => {

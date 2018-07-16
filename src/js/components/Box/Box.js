@@ -29,9 +29,17 @@ class Box extends Component {
 
     let dark = theme.dark;
     if (background) {
-      dark = false;
       if (typeof background === 'object') {
-        dark = background.dark;
+        if (background.dark !== undefined) {
+          dark = background.dark;
+        } else if (background.color &&
+          // weak opacity means we keep the existing darkness
+          (!background.opacity || background.opacity !== 'weak')) {
+          const color = colorForName(background.color, theme);
+          if (color) {
+            dark = colorIsDark(color);
+          }
+        }
       } else {
         const color = colorForName(background, theme);
         if (color) {
