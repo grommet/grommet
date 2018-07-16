@@ -43,7 +43,7 @@ export const StyledWeek = styled.div`
 `;
 
 export const StyledDayContainer = styled.div`
-  flex: 0 0;
+  flex: 0 0 auto;
 `;
 
 const daySizeStyle = (props) => {
@@ -59,8 +59,11 @@ export const StyledDay = styled.div`
   justify-content: center;
   align-items: center;
   ${props => daySizeStyle(props)}
-  ${props => props.background && backgroundStyle(props.background, props.theme)}
+  ${props => (props.isSelected && backgroundStyle('brand', props.theme)) ||
+    (props.inRange &&
+      backgroundStyle({ color: 'brand', opacity: 'weak' }, props.theme))}
   ${props => props.otherMonth && 'opacity: 0.5;'}
+  ${props => props.isSelected && 'font-weight: bold;'}
 `;
 
 export default StyledCalendar.extend`

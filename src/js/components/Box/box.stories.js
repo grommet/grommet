@@ -19,13 +19,21 @@ class SimpleBox extends Component {
           pad='xlarge'
           background='dark-2'
         >
-          <Box pad='xlarge' align='center' background='white-2'>
+          <Box
+            pad='xlarge'
+            align='center'
+            background={{ color: 'white-2', opacity: 'strong' }}
+          >
             <Attraction size='xlarge' />
             <Text>Party</Text>
             <Anchor href='' label='Link' />
             <Button label='Button' onClick={() => {}} />
           </Box>
-          <Box pad='xlarge' align='center' background='accent-2'>
+          <Box
+            pad='xlarge'
+            align='center'
+            background={{ color: 'accent-2', opacity: 'weak' }}
+          >
             <TreeOption size='xlarge' />
             <Text>Nature</Text>
             <Anchor href='' label='Link' />

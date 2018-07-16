@@ -92,15 +92,15 @@ export default deepFreeze({
     borderSize: {
       xsmall: '1px',
       small: '2px',
-      medium: `${baseSpacing / 6}px`,
-      large: `${baseSpacing / 2}px`,
-      xlarge: `${baseSpacing}px`,
+      medium: `${baseSpacing / 6}px`, // 4
+      large: `${baseSpacing / 2}px`, // 12
+      xlarge: `${baseSpacing}px`, // 24
       narrow: {
         xsmall: '1px',
         small: '2px',
-        medium: `${baseSpacing / 6}px`,
-        large: `${baseSpacing / 4}px`,
-        xlarge: `${baseSpacing / 2}px`,
+        medium: `${baseSpacing / 6}px`, // 4
+        large: `${baseSpacing / 4}px`, // 6
+        xlarge: `${baseSpacing / 2}px`, // 12
       },
     },
     breakpoints: {
@@ -129,21 +129,21 @@ export default deepFreeze({
     edgeSize: {
       none: '0',
       hair: '1px', // for Chart
-      xxsmall: `${baseSpacing / 8}px`,
-      xsmall: `${baseSpacing / 4}px`,
-      small: `${baseSpacing / 2}px`,
-      medium: `${baseSpacing}px`,
-      large: `${baseSpacing * 2}px`,
-      xlarge: `${baseSpacing * 4}px`,
+      xxsmall: `${baseSpacing / 8}px`, // 3
+      xsmall: `${baseSpacing / 4}px`, // 6
+      small: `${baseSpacing / 2}px`, // 12
+      medium: `${baseSpacing}px`, // 24
+      large: `${baseSpacing * 2}px`, // 48
+      xlarge: `${baseSpacing * 4}px`, // 96
       narrow: {
         none: '0',
         hair: '1px', // for Chart
         xxsmall: '2px',
-        xsmall: `${baseSpacing / 8}px`,
-        small: `${baseSpacing / 4}px`,
-        medium: `${baseSpacing / 2}px`,
-        large: `${baseSpacing}px`,
-        xlarge: `${baseSpacing * 2}px`,
+        xsmall: `${baseSpacing / 8}px`, // 3
+        small: `${baseSpacing / 4}px`, // 6
+        medium: `${baseSpacing / 2}px`, // 12
+        large: `${baseSpacing}px`, // 24
+        xlarge: `${baseSpacing * 2}px`, // 48
       },
     },
     elevation: {
@@ -287,6 +287,7 @@ export default deepFreeze({
     },
   },
   calendar: {
+    // daySize must align with global.size
     small: {
       fontSize: '16px',
       lineHeight: 1.375,
@@ -391,9 +392,9 @@ export default deepFreeze({
     },
     digital: {
       text: {
-        medium: { size: '16px', height: 1.375 },
         xsmall: { size: '12px', height: 1.5 },
         small: { size: '14px', height: 1.43 },
+        medium: { size: '16px', height: 1.375 },
         large: { size: '24px', height: 1.167 },
         xlarge: { size: '32px', height: 1.1875 },
         xxlarge: { size: '48px', height: 1.125 },
@@ -495,8 +496,8 @@ export default deepFreeze({
   paragraph: {
     // maxWidth chosen to be ~50 characters wide
     // see: https://ux.stackexchange.com/a/34125
-    medium: { size: '16px', height: 1.375, maxWidth: `${baseSpacing * 16}px` },
     small: { size: '14px', height: 1.43, maxWidth: `${baseSpacing * 14}px` },
+    medium: { size: '16px', height: 1.375, maxWidth: `${baseSpacing * 16}px` },
     large: { size: '24px', height: 1.333, maxWidth: `${baseSpacing * 24}px` },
     xlarge: { size: '32px', height: 1.1875, maxWidth: `${baseSpacing * 32}px` },
   },
@@ -530,9 +531,9 @@ export default deepFreeze({
     step: 20,
   },
   text: {
-    medium: { size: '16px', height: 1.375 },
     xsmall: { size: '12px', height: 1.5 },
     small: { size: '14px', height: 1.43 },
+    medium: { size: '16px', height: 1.375 },
     large: { size: '24px', height: 1.167 },
     xlarge: { size: '32px', height: 1.1875 },
     xxlarge: { size: '48px', height: 1.125 },

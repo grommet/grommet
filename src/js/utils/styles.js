@@ -38,11 +38,13 @@ export const backgroundStyle = (background, theme) => {
       if (rgba) {
         return css`
           background-color: ${rgba};
-          color: ${
-            colorIsDark(rgba) ?
-            theme.global.colors.darkBackground.text :
-            theme.global.colors.lightBackground.text
-          };
+          ${(!background.opacity || background.opacity !== 'weak') &&
+            `color: ${
+              colorIsDark(rgba) ?
+              theme.global.colors.darkBackground.text :
+              theme.global.colors.lightBackground.text
+            };`
+          }
         `;
       }
     } else if (background.dark === false) {

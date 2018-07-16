@@ -6,7 +6,6 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Heading } from '../Heading';
-import { Text } from '../Text';
 
 import { withTheme } from '../hocs';
 
@@ -165,11 +164,9 @@ class Calendar extends Component {
       }
 
       const dateString = day.toISOString();
-      let content = day.getDate();
       const isActive = active && sameDay(day, active);
       let selected = false;
       let inRange = false;
-      let background;
 
       const selectedState = withinDates(day, date || dates);
       if (selectedState === 2) {
@@ -178,12 +175,6 @@ class Calendar extends Component {
         inRange = true;
       }
       const dayDisabled = withinDates(day, disabled);
-      if (selected) {
-        background = 'brand';
-        content = <Text weight='bold'>{content}</Text>;
-      } else if (inRange) {
-        background = { color: 'brand', opacity: 'weak' };
-      }
 
       days.push(
         <StyledDayContainer key={day.getTime()} size={size} theme={theme}>
@@ -198,12 +189,13 @@ class Calendar extends Component {
             onClick={dayDisabled ? undefined : this.onClickDay(dateString)}
           >
             <StyledDay
-              background={background}
+              inRange={inRange}
               otherMonth={day.getMonth() !== reference.getMonth()}
+              isSelected={selected}
               size={size}
               theme={theme}
             >
-              {content}
+              {day.getDate()}
             </StyledDay>
           </Button>
         </StyledDayContainer>
