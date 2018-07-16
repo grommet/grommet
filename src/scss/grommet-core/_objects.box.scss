@@ -205,7 +205,7 @@
 .#{$grommet-namespace}box--flex-grow {
   flex: 1 0;
 
-  &:not([class^=".#{$grommet-namespace}box--basis"]) {
+  &:not([class*="#{$grommet-namespace}box--basis"]) {
     flex-basis: auto;
   }
 
