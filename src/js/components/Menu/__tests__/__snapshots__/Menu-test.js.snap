@@ -147,7 +147,7 @@ exports[`Menu close by clicking outside 1`] = `
 
 exports[`Menu close by clicking outside 2`] = `
 <div
-  class="StyledDrop-czaYBK iNJpQg"
+  class="StyledDrop-czaYBK lavWGj"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -294,7 +294,7 @@ exports[`Menu close by clicking outside 3`] = `
 
 
 
-.iNJpQg {
+.lavWGj {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -319,6 +319,19 @@ exports[`Menu close by clicking outside 3`] = `
   animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .lavWGj {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
 }"
 `;
 
@@ -722,7 +735,7 @@ exports[`Menu open and close on click 2`] = `
 
 exports[`Menu open and close on click 3`] = `
 <div
-  class="StyledDrop-czaYBK iNJpQg"
+  class="StyledDrop-czaYBK lavWGj"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -878,7 +891,7 @@ exports[`Menu open and close on click 4`] = `
 
 
 
-.iNJpQg {
+.lavWGj {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -903,6 +916,19 @@ exports[`Menu open and close on click 4`] = `
   animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .lavWGj {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
 }"
 `;
 
@@ -990,7 +1016,7 @@ exports[`Menu with dropAlign renders 1`] = `
 
 exports[`Menu with dropAlign renders 2`] = `
 <div
-  class="StyledDrop-czaYBK cGZHRZ"
+  class="StyledDrop-czaYBK ksHyTq"
   id="test-menu__drop"
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
@@ -1144,7 +1170,20 @@ exports[`Menu with dropAlign renders 3`] = `
 
 
 
-.cGZHRZ {
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .lavWGj {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+}
+
+.ksHyTq {
   font-family: 'Work Sans',Arial,sans-serif;
   font-size: 1em;
   line-height: 1.5;
@@ -1169,5 +1208,18 @@ exports[`Menu with dropAlign renders 3`] = `
   animation: jNdvGQ 0.1s forwards;
   -webkit-animation-delay: 0.01s;
   animation-delay: 0.01s;
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .ksHyTq {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
 }"
 `;

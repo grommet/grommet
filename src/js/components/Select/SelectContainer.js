@@ -20,6 +20,11 @@ import { TextInput } from '../TextInput';
 
 const ContainerBox = styled(Box)`
   max-height: inherit;
+
+  /* IE11 hack to get drop contents to not overflow */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    width: 100%;
+  }
 `;
 
 const OptionsBox = styled(Box)`
@@ -215,7 +220,7 @@ class SelectContainer extends Component {
             </Box>
           )}
           <OptionsBox
-            flex={true}
+            flex='shrink'
             role='menubar'
             tabIndex='-1'
             ref={this.selectRef}

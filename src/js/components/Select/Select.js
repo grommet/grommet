@@ -118,7 +118,7 @@ class Select extends Component {
             direction='row'
             justify='between'
           >
-            <Box direction='row' flex={true}>
+            <Box direction='row' flex={true} basis='auto'>
               {selectValue || (
                 <SelectTextInput
                   ref={(ref) => { this.inputRef = ref; }}
