@@ -47,6 +47,19 @@ exports[`DropButton close by clicking outside 3`] = `
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .lavWGj {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
 }"
 `;
 
@@ -221,6 +234,19 @@ exports[`DropButton open and close 3`] = `
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .lavWGj {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
 }"
 `;
 
@@ -379,6 +405,19 @@ exports[`DropButton opened ref 3`] = `
   .kEoHzt {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .lavWGj {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
   }
 }"
 `;

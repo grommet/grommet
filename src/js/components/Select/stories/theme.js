@@ -58,6 +58,9 @@ export default {
       }
     `,
   },
+  drop: {
+    maxHeight: '384px',
+  },
   select: {
     icons: {
       down: ArrowDown,

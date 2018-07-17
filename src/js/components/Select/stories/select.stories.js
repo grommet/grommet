@@ -16,6 +16,27 @@ import {
 import customSearchTheme from './theme';
 import SearchInputContext from './components/SearchInputContext';
 
+class SimpleSelect extends Component {
+  state = {
+    options: ['one', 'two'],
+    value: '',
+  }
+
+  render() {
+    const { options, value } = this.state;
+    return (
+      <Grommet>
+        <Select
+          placeholder='Select'
+          value={value}
+          options={options}
+          onChange={({ option }) => this.setState({ value: option })}
+        />
+      </Grommet>
+    );
+  }
+}
+
 const DEFAULT_OPTIONS = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
 
 class SearchSelect extends Component {
@@ -344,6 +365,7 @@ class CustomSearchSelect extends Component {
 }
 
 storiesOf('Select', module)
+  .add('Simple Select', () => <SimpleSelect />)
   .add('Search Select', () => <SearchSelect />)
   .add('Seasons Select', () => <SeasonsSelect />)
   .add('Custom Search', () => <CustomSearchSelect />);

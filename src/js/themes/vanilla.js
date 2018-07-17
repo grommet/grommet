@@ -433,6 +433,9 @@ export default deepFreeze({
       border: { side: 'right', color: 'border' },
     },
   },
+  // drop: {
+  //   maxHeight: undefined,
+  // },
   formField: {
     border: {
       color: 'border',
@@ -525,9 +528,6 @@ export default deepFreeze({
       down: FormDown,
     },
     // searchInput: undefined,
-    drop: {
-      maxHeight: '384px',
-    },
     step: 20,
   },
   text: {
