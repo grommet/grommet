@@ -37,7 +37,8 @@ class SimpleSelect extends Component {
   }
 }
 
-const DEFAULT_OPTIONS = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+const DEFAULT_OPTIONS = [];
+for (let i = 1; i <= 200; i += 1) DEFAULT_OPTIONS.push(`option ${i}`);
 
 class SearchSelect extends Component {
   state = {
