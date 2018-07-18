@@ -107,7 +107,7 @@ class SelectContainer extends Component {
   onSearch = debounce(search => this.props.onSearch(search), 300)
 
   selectOption = (option, index) => {
-    const { multiple, onChange, options, selected } = this.props;
+    const { multiple, onChange, options, selected, value } = this.props;
 
     if (onChange) {
       let nextValue = option;
@@ -116,7 +116,15 @@ class SelectContainer extends Component {
         nextValue = [];
         nextSelected = [];
         let removed = false;
-        (selected || []).forEach((selectedIndex) => {
+        let selectedIndexes = [];
+
+        if (Array.isArray(selected)) {
+          selectedIndexes = selected;
+        } else if (Array.isArray(value)) {
+          selectedIndexes = value.map(v => options.indexOf(v));
+        }
+
+        selectedIndexes.forEach((selectedIndex) => {
           if (selectedIndex === index) {
             removed = true;
           } else {
