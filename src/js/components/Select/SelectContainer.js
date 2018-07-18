@@ -116,15 +116,15 @@ class SelectContainer extends Component {
         nextValue = [];
         nextSelected = [];
         let removed = false;
-        let selectedValuesIx = [];
+        let selectedIndexes = [];
         
         if (Array.isArray(selected)) {
-          selectedValuesIx = selected;
+          selectedIndexes = selected;
         } else if (Array.isArray(value) && Array.isArray(options)) {
-          selectedValuesIx = value.map(v => options.indexOf(v));
+          selectedIndexes = value.map(v => options.indexOf(v));
         }
         
-        (selectedValuesIx || []).forEach((selectedIndex) => {
+        selectedIndexes.forEach((selectedIndex) => {
           if (selectedIndex === index) {
             removed = true;
           } else {
