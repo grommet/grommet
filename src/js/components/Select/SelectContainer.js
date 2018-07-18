@@ -120,7 +120,7 @@ class SelectContainer extends Component {
         
         if (Array.isArray(selected)) {
           selectedIndexes = selected;
-        } else if (Array.isArray(value) && Array.isArray(options)) {
+        } else if (Array.isArray(value)) {
           selectedIndexes = value.map(v => options.indexOf(v));
         }
         
