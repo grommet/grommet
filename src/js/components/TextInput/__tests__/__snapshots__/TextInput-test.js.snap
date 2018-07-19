@@ -39,39 +39,55 @@ exports[`TextInput close suggestion drop 2`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
-  <ol
-    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+  <div
+    class="TextInput__ContainerBox-fLyVAb kiFeIx StyledBox-YaZNy jLqfV"
   >
-    <li>
-      <button
-        class="StyledButton-qbvYY jYTBlN"
-        type="button"
-      >
-        <div
-          class="StyledBox-YaZNy hZNqBU"
+    <ol
+      class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+    >
+      <li>
+        <button
+          class="StyledButton-qbvYY jYTBlN"
+          type="button"
         >
-          test
-        </div>
-      </button>
-    </li>
-    <li>
-      <button
-        class="StyledButton-qbvYY jYTBlN"
-        type="button"
-      >
-        <div
-          class="StyledBox-YaZNy hZNqBU"
+          <div
+            class="StyledBox-YaZNy hZNqBU"
+          >
+            test
+          </div>
+        </button>
+      </li>
+      <li>
+        <button
+          class="StyledButton-qbvYY jYTBlN"
+          type="button"
         >
-          test1
-        </div>
-      </button>
-    </li>
-  </ol>
+          <div
+            class="StyledBox-YaZNy hZNqBU"
+          >
+            test1
+          </div>
+        </button>
+      </li>
+    </ol>
+  </div>
 </div>
 `;
 
 exports[`TextInput close suggestion drop 3`] = `
 "@media only screen and (max-width:699px) {
+  .jLqfV {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jLqfV {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .hZNqBU {
     margin: 0;
   }
@@ -129,6 +145,12 @@ exports[`TextInput close suggestion drop 3`] = `
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .kiFeIx {
+    width: 100%;
   }
 }"
 `;
@@ -178,39 +200,55 @@ exports[`TextInput complex suggestions 2`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
-  <ol
-    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+  <div
+    class="TextInput__ContainerBox-fLyVAb kiFeIx StyledBox-YaZNy jLqfV"
   >
-    <li>
-      <button
-        class="StyledButton-qbvYY jYTBlN"
-        type="button"
-      >
-        <div
-          class="StyledBox-YaZNy hZNqBU"
+    <ol
+      class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+    >
+      <li>
+        <button
+          class="StyledButton-qbvYY jYTBlN"
+          type="button"
         >
-          test
-        </div>
-      </button>
-    </li>
-    <li>
-      <button
-        class="StyledButton-qbvYY jYTBlN"
-        type="button"
-      >
-        <div
-          class="StyledBox-YaZNy hZNqBU"
+          <div
+            class="StyledBox-YaZNy hZNqBU"
+          >
+            test
+          </div>
+        </button>
+      </li>
+      <li>
+        <button
+          class="StyledButton-qbvYY jYTBlN"
+          type="button"
         >
-          test1
-        </div>
-      </button>
-    </li>
-  </ol>
+          <div
+            class="StyledBox-YaZNy hZNqBU"
+          >
+            test1
+          </div>
+        </button>
+      </li>
+    </ol>
+  </div>
 </div>
 `;
 
 exports[`TextInput complex suggestions 3`] = `
 "@media only screen and (max-width:699px) {
+  .jLqfV {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jLqfV {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .hZNqBU {
     margin: 0;
   }
@@ -268,6 +306,12 @@ exports[`TextInput complex suggestions 3`] = `
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .kiFeIx {
+    width: 100%;
   }
 }"
 `;
@@ -374,39 +418,55 @@ exports[`TextInput select suggestion 2`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
-  <ol
-    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+  <div
+    class="TextInput__ContainerBox-fLyVAb kiFeIx StyledBox-YaZNy jLqfV"
   >
-    <li>
-      <button
-        class="StyledButton-qbvYY jYTBlN"
-        type="button"
-      >
-        <div
-          class="StyledBox-YaZNy hZNqBU"
+    <ol
+      class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+    >
+      <li>
+        <button
+          class="StyledButton-qbvYY jYTBlN"
+          type="button"
         >
-          test
-        </div>
-      </button>
-    </li>
-    <li>
-      <button
-        class="StyledButton-qbvYY jYTBlN"
-        type="button"
-      >
-        <div
-          class="StyledBox-YaZNy hZNqBU"
+          <div
+            class="StyledBox-YaZNy hZNqBU"
+          >
+            test
+          </div>
+        </button>
+      </li>
+      <li>
+        <button
+          class="StyledButton-qbvYY jYTBlN"
+          type="button"
         >
-          test1
-        </div>
-      </button>
-    </li>
-  </ol>
+          <div
+            class="StyledBox-YaZNy hZNqBU"
+          >
+            test1
+          </div>
+        </button>
+      </li>
+    </ol>
+  </div>
 </div>
 `;
 
 exports[`TextInput select suggestion 3`] = `
 "@media only screen and (max-width:699px) {
+  .jLqfV {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jLqfV {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .hZNqBU {
     margin: 0;
   }
@@ -464,6 +524,12 @@ exports[`TextInput select suggestion 3`] = `
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .kiFeIx {
+    width: 100%;
   }
 }"
 `;
@@ -509,39 +575,55 @@ exports[`TextInput suggestions 2`] = `
   style="left: 0px; width: 0.1px; top: 0px; max-height: 768px;"
   tabindex="-1"
 >
-  <ol
-    class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+  <div
+    class="TextInput__ContainerBox-fLyVAb kiFeIx StyledBox-YaZNy jLqfV"
   >
-    <li>
-      <button
-        class="StyledButton-qbvYY jYTBlN"
-        type="button"
-      >
-        <div
-          class="StyledBox-YaZNy hZNqBU"
+    <ol
+      class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
+    >
+      <li>
+        <button
+          class="StyledButton-qbvYY jYTBlN"
+          type="button"
         >
-          test
-        </div>
-      </button>
-    </li>
-    <li>
-      <button
-        class="StyledButton-qbvYY jYTBlN"
-        type="button"
-      >
-        <div
-          class="StyledBox-YaZNy hZNqBU"
+          <div
+            class="StyledBox-YaZNy hZNqBU"
+          >
+            test
+          </div>
+        </button>
+      </li>
+      <li>
+        <button
+          class="StyledButton-qbvYY jYTBlN"
+          type="button"
         >
-          test1
-        </div>
-      </button>
-    </li>
-  </ol>
+          <div
+            class="StyledBox-YaZNy hZNqBU"
+          >
+            test1
+          </div>
+        </button>
+      </li>
+    </ol>
+  </div>
 </div>
 `;
 
 exports[`TextInput suggestions 3`] = `
 "@media only screen and (max-width:699px) {
+  .jLqfV {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
+  .jLqfV {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width:699px) {
   .hZNqBU {
     margin: 0;
   }
@@ -599,6 +681,12 @@ exports[`TextInput suggestions 3`] = `
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
+  }
+}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
+  .kiFeIx {
+    width: 100%;
   }
 }"
 `;
