@@ -163,7 +163,6 @@ class TextInput extends Component {
   }
 
   onClickSuggestion = (suggestion) => {
-    console.log('!!! onClickSuggestion');
     const { onSelect } = this.props;
     const { inputRef } = this.state;
     this.setState({ showDrop: false });
