@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
+import styled from 'styled-components';
 
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Drop } from '../Drop';
 import {
@@ -35,6 +37,15 @@ function stringLabel(suggestion) {
   }
   return suggestion;
 }
+
+const ContainerBox = styled(Box)`
+  max-height: inherit;
+
+  /* IE11 hack to get drop contents to not overflow */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    width: 100%;
+  }
+`;
 
 class TextInput extends Component {
   static defaultProps = {
@@ -152,6 +163,7 @@ class TextInput extends Component {
   }
 
   onClickSuggestion = (suggestion) => {
+    console.log('!!! onClickSuggestion');
     const { onSelect } = this.props;
     const { inputRef } = this.state;
     this.setState({ showDrop: false });
@@ -180,30 +192,28 @@ class TextInput extends Component {
   renderSuggestions = () => {
     const { suggestions, theme } = this.props;
     const { activeSuggestionIndex, selectedSuggestionIndex } = this.state;
-    let items;
-    if (suggestions && suggestions.length > 0) {
-      items = suggestions.map((suggestion, index) => (
-        <li key={`${stringLabel(suggestion)}-${index}`}>
-          <Button
-            active={
-              activeSuggestionIndex === index ||
-              selectedSuggestionIndex === index
-            }
-            fill={true}
-            hoverIndicator='background'
-            onClick={() => this.onClickSuggestion(suggestion)}
-          >
-            <Box align='start' pad='small'>
-              {renderLabel(suggestion)}
-            </Box>
-          </Button>
-        </li>
-      ));
-    }
 
     return (
       <StyledSuggestions theme={theme}>
-        {items}
+        <InfiniteScroll items={suggestions} step={theme.select.step}>
+          {(suggestion, index) => (
+            <li key={`${stringLabel(suggestion)}-${index}`}>
+              <Button
+                active={
+                  activeSuggestionIndex === index ||
+                  selectedSuggestionIndex === index
+                }
+                fill={true}
+                hoverIndicator='background'
+                onClick={() => this.onClickSuggestion(suggestion)}
+              >
+                <Box align='start' pad='small'>
+                  {renderLabel(suggestion)}
+                </Box>
+              </Button>
+            </li>
+          )}
+        </InfiniteScroll>
       </StyledSuggestions>
     );
   }
@@ -231,7 +241,9 @@ class TextInput extends Component {
           onClickOutside={() => this.setState({ showDrop: false })}
           onEsc={() => this.setState({ showDrop: false })}
         >
-          {this.renderSuggestions()}
+          <ContainerBox overflow='auto'>
+            {this.renderSuggestions()}
+          </ContainerBox>
         </Drop>
       );
     }
