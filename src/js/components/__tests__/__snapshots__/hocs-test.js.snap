@@ -14,7 +14,7 @@ exports[`withFocus set focus 2`] = `
   onBlur={[Function]}
   onFocus={[Function]}
 >
-  no focus
+  focus
 </div>
 `;
 
@@ -32,7 +32,7 @@ exports[`withFocus skip focus when mouse active 2`] = `
   onBlur={[Function]}
   onFocus={[Function]}
 >
-  no focus
+  focus
 </div>
 `;
 
@@ -41,7 +41,7 @@ exports[`withFocus skip focus when mouse active 3`] = `
   onBlur={[Function]}
   onFocus={[Function]}
 >
-  no focus
+  focus
 </div>
 `;
 
