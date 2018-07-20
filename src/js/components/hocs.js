@@ -51,25 +51,27 @@ export const withFocus = (WrappedComponent) => {
     }
 
     handleActiveMouse = () => {
-      window.mouseActive = true;
+      this.mouseActive = true;
 
       // this avoids showing focus when clicking around
       clearTimeout(this.mouseTimer);
       // empirical number to reset mouseActive after
       // some time has passed without mousedown
       this.mouseTimer = setTimeout(() => {
-        window.mouseActive = false;
+        this.mouseActive = false;
       }, 300);
     }
 
     setFocus = () => {
-      if (window.mouseActive === false) {
+      if (this.mouseActive === false) {
         this.setState({ focus: true });
       }
     }
 
-    resetFocus() {
-      this.setState({ focus: false });
+    resetFocus = () => {
+      if (this.state.focus) {
+        this.setState({ focus: false });
+      }
     }
 
     render() {

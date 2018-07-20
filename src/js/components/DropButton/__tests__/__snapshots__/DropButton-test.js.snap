@@ -49,6 +49,13 @@ exports[`DropButton close by clicking outside 3`] = `
   }
 }
 
+@media only screen and (min-width:700px) {
+  .gWkVpr {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
 @media screen and (-ms-high-contrast:active),(-ms-high-contrast:none) {
   .lavWGj {
     display: -webkit-box;
@@ -396,6 +403,13 @@ exports[`DropButton opened ref 3`] = `
 
 @media only screen and (min-width:700px) {
   .knoMRI {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
+  .gWkVpr {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

@@ -1339,6 +1339,13 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (min-width:700px) {
+  .hinCZh {
+    -webkit-transition: 0.1s ease-in-out;
+    transition: 0.1s ease-in-out;
+  }
+}
+
+@media only screen and (min-width:700px) {
   .fZEyyA {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
