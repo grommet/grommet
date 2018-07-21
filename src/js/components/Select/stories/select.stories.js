@@ -365,8 +365,32 @@ class CustomSearchSelect extends Component {
   }
 }
 
+class DarkSelect extends Component {
+  state = {
+    options: ['one', 'two'],
+    value: '',
+  }
+
+  render() {
+    const { options, value } = this.state;
+    return (
+      <Grommet full={true}>
+        <Box fill={true} background='dark-1' align='center' justify='center'>
+          <Select
+            placeholder='Select'
+            value={value}
+            options={options}
+            onChange={({ option }) => this.setState({ value: option })}
+          />
+        </Box>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('Select', module)
   .add('Simple Select', () => <SimpleSelect />)
   .add('Search Select', () => <SearchSelect />)
   .add('Seasons Select', () => <SeasonsSelect />)
-  .add('Custom Search', () => <CustomSearchSelect />);
+  .add('Custom Search', () => <CustomSearchSelect />)
+  .add('Dark', () => <DarkSelect />);

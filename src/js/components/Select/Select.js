@@ -117,6 +117,7 @@ class Select extends Component {
             border={!plain ? 'all' : undefined}
             direction='row'
             justify='between'
+            background={theme.select.backgroundColor}
           >
             <Box direction='row' flex={true} basis='auto'>
               {selectValue || (

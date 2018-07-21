@@ -45,6 +45,8 @@ exports[`Select basic 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background-color: #ffffff;
+  color: #444444;
   border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -285,7 +287,7 @@ exports[`Select complex options and children 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy eVmkkr"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -340,7 +342,7 @@ exports[`Select complex options and children 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy eVmkkr"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -435,19 +437,19 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width:699px) {
-  .filaRb {
+  .eVmkkr {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .eVmkkr {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .eVmkkr {
     padding: 0;
   }
 }
@@ -597,7 +599,7 @@ exports[`Select deselect an option 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy eVmkkr"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -654,7 +656,7 @@ exports[`Select disabled 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy eVmkkr"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -710,7 +712,7 @@ exports[`Select disabled 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy eVmkkr"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -801,6 +803,8 @@ exports[`Select multiple 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background-color: #ffffff;
+  color: #444444;
   border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;
@@ -1046,7 +1050,7 @@ exports[`Select multiple values 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy eVmkkr"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1102,7 +1106,7 @@ exports[`Select multiple values 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy eVmkkr"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1210,19 +1214,19 @@ exports[`Select multiple values 3`] = `
 
 exports[`Select multiple values 4`] = `
 "@media only screen and (max-width:699px) {
-  .filaRb {
+  .eVmkkr {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .eVmkkr {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .eVmkkr {
     padding: 0;
   }
 }
@@ -1313,13 +1317,13 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (max-width:699px) {
-  .flHrpn {
+  .dfWhFv {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .flHrpn {
+  .dfWhFv {
     padding: 0;
   }
 }
@@ -1410,7 +1414,7 @@ exports[`Select opens 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy eVmkkr"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1465,7 +1469,7 @@ exports[`Select opens 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy eVmkkr"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1572,19 +1576,19 @@ exports[`Select opens 3`] = `
 
 exports[`Select opens 4`] = `
 "@media only screen and (max-width:699px) {
-  .filaRb {
+  .eVmkkr {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .eVmkkr {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .eVmkkr {
     padding: 0;
   }
 }
@@ -1781,7 +1785,7 @@ exports[`Select search 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy eVmkkr"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -1902,19 +1906,19 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width:699px) {
-  .filaRb {
+  .eVmkkr {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .eVmkkr {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .eVmkkr {
     padding: 0;
   }
 }
@@ -2076,7 +2080,7 @@ exports[`Select select an option 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy eVmkkr"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -2131,7 +2135,7 @@ exports[`Select select an option with complex options 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy flHrpn"
+    class="StyledBox-YaZNy dfWhFv"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -2175,7 +2179,7 @@ exports[`Select select an option with enter 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy eVmkkr"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -2230,7 +2234,7 @@ exports[`Select select another option 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy eVmkkr"
   >
     <div
       class="StyledBox-YaZNy eMTjTC"
@@ -2324,6 +2328,8 @@ exports[`Select size 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background-color: #ffffff;
+  color: #444444;
   border: solid 1px rgba(0,0,0,0.33);
   min-width: 0;
   min-height: 0;

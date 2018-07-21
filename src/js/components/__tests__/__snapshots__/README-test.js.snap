@@ -2992,22 +2992,6 @@ How to align the drop. Defaults to \`{
 }
 \`\`\`
 
-**dropBackground**
-
-Background color
-
-\`\`\`
-string
-{
-  color: string,
-  opacity: 
-    weak
-    medium
-    strong
-    boolean
-}
-\`\`\`
-
 **dropTarget**
 
 Target where the options drop will be aligned to. This should be

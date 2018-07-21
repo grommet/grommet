@@ -113,10 +113,7 @@ export default deepFreeze({
       },
     },
     drop: {
-      backgroundColor: {
-        light: '#f8f8f8',
-        dark: '#222222',
-      },
+      backgroundColor: '#f8f8f8',
       border: {
         width: '0px',
         radius: '0px',
@@ -524,6 +521,7 @@ export default deepFreeze({
     },
   },
   select: {
+    backgroundColor: '#ffffff',
     icons: {
       down: FormDown,
     },

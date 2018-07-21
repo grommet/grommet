@@ -36,7 +36,7 @@ const StyledDrop = styled.div`
   outline: none;
 
   ${props => backgroundStyle(
-    props.theme.global.drop.backgroundColor[props.theme.dark ? 'dark' : 'light'],
+    props.theme.global.drop.backgroundColor,
     props.theme
   )}
 
