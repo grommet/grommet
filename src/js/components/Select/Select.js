@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { compose } from 'recompose';
 import styled from 'styled-components';
 
+import { ThemeContext } from 'grommet-icons';
+
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
@@ -9,6 +11,7 @@ import { TextInput } from '../TextInput';
 
 import { withForwardRef, withTheme } from '../hocs';
 
+import { colorForName } from '../../utils';
 import SelectContainer from './SelectContainer';
 import doc from './doc';
 
@@ -139,7 +142,11 @@ class Select extends Component {
               flex={false}
               style={{ minWidth: 'auto' }}
             >
-              <SelectIcon color='brand' size={size} />
+              <ThemeContext.Extend
+                value={{ color: theme.select.iconColor || colorForName('brand', theme) }}
+              >
+                <SelectIcon size={size} />
+              </ThemeContext.Extend>
             </Box>
           </Box>
         </DropButton>

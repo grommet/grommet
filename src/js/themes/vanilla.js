@@ -256,7 +256,6 @@ export default deepFreeze({
       expand: FormDown,
     },
     iconColor: css`${props => props.theme.global.colors.brand}`,
-
   },
   anchor: {
     textDecoration: 'none',
@@ -522,6 +521,7 @@ export default deepFreeze({
   },
   select: {
     backgroundColor: '#ffffff',
+    // iconColor: undefined,
     icons: {
       down: FormDown,
     },

@@ -374,7 +374,7 @@ class DarkSelect extends Component {
   render() {
     const { options, value } = this.state;
     return (
-      <Grommet full={true}>
+      <Grommet full={true} {...this.props}>
         <Box fill={true} background='dark-1' align='center' justify='center'>
           <Select
             placeholder='Select'
@@ -393,4 +393,7 @@ storiesOf('Select', module)
   .add('Search Select', () => <SearchSelect />)
   .add('Seasons Select', () => <SeasonsSelect />)
   .add('Custom Search', () => <CustomSearchSelect />)
-  .add('Dark', () => <DarkSelect />);
+  .add('Dark', () => <DarkSelect />)
+  .add('Custom Colors', () => (
+    <DarkSelect theme={{ select: { backgroundColor: '#000000', iconColor: '#d3d3d3' } }} />
+  ));
