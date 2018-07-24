@@ -53,9 +53,23 @@ const FormFieldSelect = props => (
   </Grommet>
 );
 
+const FormFieldHelpError = props => (
+  <Grommet>
+    <FormField
+      label='Label'
+      {...props}
+      help='Text to help the user know what is possible'
+      error='Text to call attention to an issue with this field'
+    >
+      <TextInput placeholder='placeholder' value='Value' />
+    </FormField>
+  </Grommet>
+);
+
 storiesOf('FormField', module)
   .add('TextInput', () => <FormFieldTextInput />)
   .add('TextArea', () => <FormFieldTextArea />)
   .add('Select', () => <FormFieldSelect />)
   .add('CheckBox', () => <FormFieldCheckBox />)
-  .add('Toggle', () => <FormFieldToggle />);
+  .add('Toggle', () => <FormFieldToggle />)
+  .add('Help and error', () => <FormFieldHelpError />);
