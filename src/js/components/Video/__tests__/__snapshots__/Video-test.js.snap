@@ -199,6 +199,7 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c5 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -221,6 +222,7 @@ exports[`Video autoPlay renders 1`] = `
 }
 
 .c17 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -825,6 +827,7 @@ exports[`Video controls renders 1`] = `
 }
 
 .c5 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -847,6 +850,7 @@ exports[`Video controls renders 1`] = `
 }
 
 .c17 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -1580,6 +1584,7 @@ exports[`Video fit renders 1`] = `
 }
 
 .c5 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -1602,6 +1607,7 @@ exports[`Video fit renders 1`] = `
 }
 
 .c17 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -2339,6 +2345,7 @@ exports[`Video loop renders 1`] = `
 }
 
 .c5 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -2361,6 +2368,7 @@ exports[`Video loop renders 1`] = `
 }
 
 .c17 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -2908,6 +2916,7 @@ exports[`Video mute renders 1`] = `
 }
 
 .c5 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -2930,6 +2939,7 @@ exports[`Video mute renders 1`] = `
 }
 
 .c17 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -3477,6 +3487,7 @@ exports[`Video renders 1`] = `
 }
 
 .c5 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -3499,6 +3510,7 @@ exports[`Video renders 1`] = `
 }
 
 .c17 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;

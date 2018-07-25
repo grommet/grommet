@@ -131,6 +131,7 @@ const plainStyle = css`
 `;
 
 const StyledButton = styled.button`
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;

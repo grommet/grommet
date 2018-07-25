@@ -44,6 +44,7 @@ exports[`RoutedButton renders 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;

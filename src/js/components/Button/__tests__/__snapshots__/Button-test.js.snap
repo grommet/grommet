@@ -44,6 +44,7 @@ exports[`Button color renders 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -72,6 +73,7 @@ exports[`Button color renders 1`] = `
 }
 
 .c4 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -192,6 +194,7 @@ exports[`Button disabled renders 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -274,6 +277,7 @@ exports[`Button focus renders 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -362,6 +366,7 @@ exports[`Button hoverIndicator as object renders 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -420,6 +425,7 @@ exports[`Button hoverIndicator as object with color renders 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -478,6 +484,7 @@ exports[`Button hoverIndicator as object with colorIndex renders 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -536,6 +543,7 @@ exports[`Button hoverIndicator as object with invalid color renders 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -594,6 +602,7 @@ exports[`Button hoverIndicator as object with invalid color renders 2`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -652,6 +661,7 @@ exports[`Button hoverIndicator as object with invalid colorIndex renders 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -710,6 +720,7 @@ exports[`Button hoverIndicator renders 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -768,6 +779,7 @@ exports[`Button href renders 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -866,6 +878,7 @@ exports[`Button icon label renders 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -988,6 +1001,7 @@ exports[`Button primary renders 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -1108,6 +1122,7 @@ exports[`Button renders 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -1232,6 +1247,7 @@ exports[`Button reverse icon label renders 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -1349,6 +1365,7 @@ exports[`Button warns about invalid icon render 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -1449,6 +1466,7 @@ exports[`Button warns about invalid label render 1`] = `
 }
 
 .c1 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;

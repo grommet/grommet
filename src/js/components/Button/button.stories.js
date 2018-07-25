@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Add } from 'grommet-icons';
 
 import Button from '../Button/Button';
+import RoutedButton from '../Button/RoutedButton';
 import Grommet from '../Grommet/Grommet';
 import Box from '../Box/Box';
 import Text from '../Text/Text';
@@ -27,6 +28,18 @@ const PlainButton = () => (
         <Text>Add</Text>
       </Box>
     </Button>
+  </Grommet>
+);
+
+const AnchorButton = () => (
+  <Grommet>
+    <Button label='Go' href='#' />
+  </Grommet>
+);
+
+const RouteButton = () => (
+  <Grommet>
+    <RoutedButton label='Go' path='/' />
   </Grommet>
 );
 
@@ -74,4 +87,6 @@ storiesOf('Button', module)
   .add('Primary', () => <SimpleButton primary={true} />)
   .add('Icon', () => <IconButton />)
   .add('Plain', () => <PlainButton />)
+  .add('Anchor', () => <AnchorButton />)
+  .add('RoutedButton', () => <RouteButton />)
   .add('Custom theme', () => <CustomThemeButton />);
