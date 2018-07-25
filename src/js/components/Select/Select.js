@@ -11,7 +11,7 @@ import { TextInput } from '../TextInput';
 
 import { withForwardRef, withTheme } from '../hocs';
 
-import { colorForName } from '../../utils';
+import { colorIsDark, colorForName } from '../../utils';
 import SelectContainer from './SelectContainer';
 import doc from './doc';
 
@@ -143,7 +143,11 @@ class Select extends Component {
               style={{ minWidth: 'auto' }}
             >
               <ThemeContext.Extend
-                value={{ color: theme.select.iconColor || colorForName('brand', theme) }}
+                value={{ color: colorIsDark(theme.select.backgroundColor) ? (
+                  theme.select.icons.color.dark || colorForName('light-4', theme)
+                ) : (
+                  theme.select.icons.color.light || colorForName('brand', theme)
+                ) }}
               >
                 <SelectIcon size={size} />
               </ThemeContext.Extend>

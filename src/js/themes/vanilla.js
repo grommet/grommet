@@ -521,8 +521,11 @@ export default deepFreeze({
   },
   select: {
     backgroundColor: '#ffffff',
-    // iconColor: undefined,
     icons: {
+      color: {
+        // light: undefined,
+        // dark: undefined,
+      },
       down: FormDown,
     },
     // searchInput: undefined,
