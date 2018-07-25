@@ -103,6 +103,7 @@ exports[`Select basic 1`] = `
 }
 
 .c0 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -279,7 +280,7 @@ exports[`Select basic 1`] = `
 exports[`Select complex options and children 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY gdtSRN"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -334,7 +335,7 @@ exports[`Select complex options and children 1`] = `
 exports[`Select complex options and children 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY gdtSRN"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -406,7 +407,7 @@ exports[`Select complex options and children 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY ktbLOR"
+          class="StyledButton-qbvYY hksRZC"
           role="menuitem"
           type="button"
         >
@@ -419,7 +420,7 @@ exports[`Select complex options and children 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY ktbLOR"
+          class="StyledButton-qbvYY hksRZC"
           role="menuitem"
           type="button"
         >
@@ -526,14 +527,14 @@ exports[`Select complex options and children 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .kidNzX {
+  .gdtSRN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ktbLOR {
+  .hksRZC {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -591,7 +592,7 @@ exports[`Select complex options and children 4`] = `
 exports[`Select deselect an option 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY gdtSRN"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -647,7 +648,7 @@ exports[`Select deselect an option 1`] = `
 exports[`Select disabled 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY fccVcn"
+  class="StyledButton-qbvYY ipHWmi"
   data-testid="test-select"
   disabled=""
   id="test-select"
@@ -703,7 +704,7 @@ exports[`Select disabled 1`] = `
 exports[`Select disabled 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY fccVcn"
+  class="StyledButton-qbvYY ipHWmi"
   data-testid="test-select"
   disabled=""
   id="test-select"
@@ -859,6 +860,7 @@ exports[`Select multiple 1`] = `
 }
 
 .c0 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -1040,7 +1042,7 @@ exports[`Select multiple 1`] = `
 exports[`Select multiple values 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY gdtSRN"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1096,7 +1098,7 @@ exports[`Select multiple values 1`] = `
 exports[`Select multiple values 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY gdtSRN"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1169,7 +1171,7 @@ exports[`Select multiple values 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY fZEyyA"
+          class="StyledButton-qbvYY edpIJr"
           role="menuitem"
           type="button"
         >
@@ -1188,7 +1190,7 @@ exports[`Select multiple values 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY fZEyyA"
+          class="StyledButton-qbvYY edpIJr"
           role="menuitem"
           type="button"
         >
@@ -1325,28 +1327,28 @@ exports[`Select multiple values 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .kidNzX {
+  .gdtSRN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ktbLOR {
+  .hksRZC {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .hinCZh {
+  .jhnKhC {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .fZEyyA {
+  .edpIJr {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1404,7 +1406,7 @@ exports[`Select multiple values 4`] = `
 exports[`Select opens 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY gdtSRN"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1459,7 +1461,7 @@ exports[`Select opens 1`] = `
 exports[`Select opens 2`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY gdtSRN"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1531,7 +1533,7 @@ exports[`Select opens 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY ktbLOR"
+          class="StyledButton-qbvYY hksRZC"
           role="menuitem"
           type="button"
         >
@@ -1550,7 +1552,7 @@ exports[`Select opens 3`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY ktbLOR"
+          class="StyledButton-qbvYY hksRZC"
           role="menuitem"
           type="button"
         >
@@ -1663,14 +1665,14 @@ exports[`Select opens 4`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .kidNzX {
+  .gdtSRN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ktbLOR {
+  .hksRZC {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -1735,7 +1737,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-YaZNy ckMYwJ"
   >
     <button
-      class="StyledButton-qbvYY ktbLOR"
+      class="StyledButton-qbvYY hksRZC"
       role="menuitem"
       type="button"
     >
@@ -1754,7 +1756,7 @@ exports[`Select opens 5`] = `
     class="StyledBox-YaZNy ckMYwJ"
   >
     <button
-      class="StyledButton-qbvYY ktbLOR"
+      class="StyledButton-qbvYY hksRZC"
       role="menuitem"
       type="button"
     >
@@ -1775,7 +1777,7 @@ exports[`Select opens 5`] = `
 exports[`Select search 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY gdtSRN"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -1861,7 +1863,7 @@ exports[`Select search 2`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY ktbLOR"
+          class="StyledButton-qbvYY hksRZC"
           role="menuitem"
           type="button"
         >
@@ -1880,7 +1882,7 @@ exports[`Select search 2`] = `
         class="StyledBox-YaZNy ckMYwJ"
       >
         <button
-          class="StyledButton-qbvYY ktbLOR"
+          class="StyledButton-qbvYY hksRZC"
           role="menuitem"
           type="button"
         >
@@ -2005,14 +2007,14 @@ exports[`Select search 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .kidNzX {
+  .gdtSRN {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .ktbLOR {
+  .hksRZC {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -2070,7 +2072,7 @@ exports[`Select search 3`] = `
 exports[`Select select an option 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY gdtSRN"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -2125,7 +2127,7 @@ exports[`Select select an option 1`] = `
 exports[`Select select an option with complex options 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY gdtSRN"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -2169,7 +2171,7 @@ exports[`Select select an option with complex options 1`] = `
 exports[`Select select an option with enter 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY gdtSRN"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -2224,7 +2226,7 @@ exports[`Select select an option with enter 1`] = `
 exports[`Select select another option 1`] = `
 <button
   aria-label="undefined"
-  class="StyledButton-qbvYY kidNzX"
+  class="StyledButton-qbvYY gdtSRN"
   data-testid="test-select"
   id="test-select"
   type="button"
@@ -2382,6 +2384,7 @@ exports[`Select size 1`] = `
 }
 
 .c0 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;

@@ -1036,7 +1036,7 @@ exports[`DataTable groupBy 1`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY jYTBlN"
+            class="StyledButton-qbvYY hLxYwU"
             type="button"
           >
             <div
@@ -1103,7 +1103,7 @@ exports[`DataTable groupBy 1`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY jYTBlN"
+            class="StyledButton-qbvYY hLxYwU"
             type="button"
           >
             <div
@@ -1159,7 +1159,7 @@ exports[`DataTable groupBy 1`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY jYTBlN"
+            class="StyledButton-qbvYY hLxYwU"
             type="button"
           >
             <div
@@ -1230,7 +1230,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY jYTBlN"
+            class="StyledButton-qbvYY hLxYwU"
             type="button"
           >
             <div
@@ -1297,7 +1297,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY jYTBlN"
+            class="StyledButton-qbvYY hLxYwU"
             type="button"
           >
             <div
@@ -1353,7 +1353,7 @@ exports[`DataTable groupBy 2`] = `
         >
           <button
             aria-label="expand"
-            class="StyledButton-qbvYY jYTBlN"
+            class="StyledButton-qbvYY hLxYwU"
             type="button"
           >
             <div
@@ -1783,7 +1783,7 @@ exports[`DataTable sort 1`] = `
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY jYTBlN"
+            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY hLxYwU"
             type="button"
           >
             <div
@@ -1802,7 +1802,7 @@ exports[`DataTable sort 1`] = `
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY jYTBlN"
+            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY hLxYwU"
             type="button"
           >
             <div
@@ -1928,7 +1928,7 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY jYTBlN"
+            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY hLxYwU"
             type="button"
           >
             <div
@@ -1966,7 +1966,7 @@ exports[`DataTable sort 2`] = `
           scope="col"
         >
           <button
-            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY jYTBlN"
+            class="Sorter__SorterButton-hLSXcM iMMGVc StyledButton-qbvYY hLxYwU"
             type="button"
           >
             <div

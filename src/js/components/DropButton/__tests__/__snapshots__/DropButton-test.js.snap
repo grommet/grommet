@@ -3,7 +3,7 @@
 exports[`DropButton close by clicking outside 1`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-qbvYY knoMRI"
+  class="StyledButton-qbvYY keaqZn"
   label="Dropper"
   type="button"
 >
@@ -43,14 +43,14 @@ exports[`DropButton close by clicking outside 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .knoMRI {
+  .keaqZn {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .gWkVpr {
+  .jAOdjK {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -102,6 +102,7 @@ exports[`DropButton closed 1`] = `
 }
 
 .c0 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -175,7 +176,7 @@ exports[`DropButton closed 1`] = `
 exports[`DropButton disabled 1`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-qbvYY kEoHzt"
+  class="StyledButton-qbvYY dNApea"
   disabled=""
   label="Dropper"
   type="button"
@@ -197,7 +198,7 @@ exports[`DropButton disabled 1`] = `
 exports[`DropButton open and close 1`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-qbvYY knoMRI"
+  class="StyledButton-qbvYY keaqZn"
   label="Dropper"
   type="button"
 >
@@ -237,7 +238,7 @@ exports[`DropButton open and close 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .knoMRI {
+  .keaqZn {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
@@ -289,6 +290,7 @@ exports[`DropButton opened 1`] = `
 }
 
 .c0 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -362,7 +364,7 @@ exports[`DropButton opened 1`] = `
 exports[`DropButton opened ref 1`] = `
 <button
   aria-label="Open Drop"
-  class="StyledButton-qbvYY knoMRI"
+  class="StyledButton-qbvYY keaqZn"
   label="Dropper"
   type="button"
 >
@@ -402,21 +404,21 @@ exports[`DropButton opened ref 3`] = `
 }
 
 @media only screen and (min-width:700px) {
-  .knoMRI {
+  .keaqZn {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .gWkVpr {
+  .jAOdjK {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }
 }
 
 @media only screen and (min-width:700px) {
-  .kEoHzt {
+  .dNApea {
     -webkit-transition: 0.1s ease-in-out;
     transition: 0.1s ease-in-out;
   }

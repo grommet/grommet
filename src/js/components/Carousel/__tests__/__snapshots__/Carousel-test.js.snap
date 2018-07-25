@@ -262,6 +262,7 @@ exports[`Carousel basic 1`] = `
 }
 
 .c9 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -287,6 +288,7 @@ exports[`Carousel basic 1`] = `
 }
 
 .c14 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -304,6 +306,7 @@ exports[`Carousel basic 1`] = `
 }
 
 .c17 {
+  display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
   outline: none;
@@ -721,7 +724,7 @@ exports[`Carousel navigate 1`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY keldPn"
+            class="StyledButton-qbvYY jrGxir"
             disabled=""
             type="button"
           >
@@ -755,7 +758,7 @@ exports[`Carousel navigate 1`] = `
             class="StyledBox-YaZNy hPUIyd"
           >
             <button
-              class="StyledButton-qbvYY kidNzX"
+              class="StyledButton-qbvYY gdtSRN"
               icon="[object Object]"
               type="button"
             >
@@ -782,7 +785,7 @@ exports[`Carousel navigate 1`] = `
               </div>
             </button>
             <button
-              class="StyledButton-qbvYY kidNzX"
+              class="StyledButton-qbvYY gdtSRN"
               icon="[object Object]"
               type="button"
             >
@@ -813,7 +816,7 @@ exports[`Carousel navigate 1`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY jYTBlN"
+            class="StyledButton-qbvYY hLxYwU"
             type="button"
           >
             <div
@@ -895,7 +898,7 @@ exports[`Carousel navigate 2`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY jYTBlN"
+            class="StyledButton-qbvYY hLxYwU"
             type="button"
           >
             <div
@@ -928,7 +931,7 @@ exports[`Carousel navigate 2`] = `
             class="StyledBox-YaZNy hPUIyd"
           >
             <button
-              class="StyledButton-qbvYY kidNzX"
+              class="StyledButton-qbvYY gdtSRN"
               icon="[object Object]"
               type="button"
             >
@@ -954,7 +957,7 @@ exports[`Carousel navigate 2`] = `
               </div>
             </button>
             <button
-              class="StyledButton-qbvYY kidNzX"
+              class="StyledButton-qbvYY gdtSRN"
               icon="[object Object]"
               type="button"
             >
@@ -986,7 +989,7 @@ exports[`Carousel navigate 2`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY keldPn"
+            class="StyledButton-qbvYY jrGxir"
             disabled=""
             type="button"
           >
@@ -1069,7 +1072,7 @@ exports[`Carousel navigate 3`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY keldPn"
+            class="StyledButton-qbvYY jrGxir"
             disabled=""
             type="button"
           >
@@ -1103,7 +1106,7 @@ exports[`Carousel navigate 3`] = `
             class="StyledBox-YaZNy hPUIyd"
           >
             <button
-              class="StyledButton-qbvYY kidNzX"
+              class="StyledButton-qbvYY gdtSRN"
               icon="[object Object]"
               type="button"
             >
@@ -1130,7 +1133,7 @@ exports[`Carousel navigate 3`] = `
               </div>
             </button>
             <button
-              class="StyledButton-qbvYY kidNzX"
+              class="StyledButton-qbvYY gdtSRN"
               icon="[object Object]"
               type="button"
             >
@@ -1161,7 +1164,7 @@ exports[`Carousel navigate 3`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY jYTBlN"
+            class="StyledButton-qbvYY hLxYwU"
             type="button"
           >
             <div
@@ -1242,7 +1245,7 @@ exports[`Carousel play 1`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY keldPn"
+            class="StyledButton-qbvYY jrGxir"
             disabled=""
             type="button"
           >
@@ -1276,7 +1279,7 @@ exports[`Carousel play 1`] = `
             class="StyledBox-YaZNy hPUIyd"
           >
             <button
-              class="StyledButton-qbvYY kidNzX"
+              class="StyledButton-qbvYY gdtSRN"
               icon="[object Object]"
               type="button"
             >
@@ -1303,7 +1306,7 @@ exports[`Carousel play 1`] = `
               </div>
             </button>
             <button
-              class="StyledButton-qbvYY kidNzX"
+              class="StyledButton-qbvYY gdtSRN"
               icon="[object Object]"
               type="button"
             >
@@ -1334,7 +1337,7 @@ exports[`Carousel play 1`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY jYTBlN"
+            class="StyledButton-qbvYY hLxYwU"
             type="button"
           >
             <div
@@ -1415,7 +1418,7 @@ exports[`Carousel play 2`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY jYTBlN"
+            class="StyledButton-qbvYY hLxYwU"
             type="button"
           >
             <div
@@ -1448,7 +1451,7 @@ exports[`Carousel play 2`] = `
             class="StyledBox-YaZNy hPUIyd"
           >
             <button
-              class="StyledButton-qbvYY kidNzX"
+              class="StyledButton-qbvYY gdtSRN"
               icon="[object Object]"
               type="button"
             >
@@ -1474,7 +1477,7 @@ exports[`Carousel play 2`] = `
               </div>
             </button>
             <button
-              class="StyledButton-qbvYY kidNzX"
+              class="StyledButton-qbvYY gdtSRN"
               icon="[object Object]"
               type="button"
             >
@@ -1506,7 +1509,7 @@ exports[`Carousel play 2`] = `
           class="StyledBox-YaZNy iLfhNe"
         >
           <button
-            class="StyledButton-qbvYY keldPn"
+            class="StyledButton-qbvYY jrGxir"
             disabled=""
             type="button"
           >
