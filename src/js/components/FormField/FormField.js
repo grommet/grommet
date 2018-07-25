@@ -11,8 +11,42 @@ import { withTheme } from '../hocs';
 
 import doc from './doc';
 
+// empirically determined via interaction with story, post IE11 '1' is enough.
+const FOCUS_DELAY = 20;
+
 class FormField extends Component {
   state = {};
+
+  componentWillUnmount() {
+    clearTimeout(this.focusTimer);
+  }
+
+  onClick = () => {
+    // set focus on focusable descendant
+    const container = findDOMNode(this.childContainerRef);
+    const element = getFirstFocusableDescendant(container);
+    if (element) {
+      element.focus();
+    }
+  }
+
+  onFocus = () => {
+    // delay to prevent re-rendering children before their events are delivered
+    clearTimeout(this.focusTimer);
+    this.focusTimer = setTimeout(() => {
+      this.focusTimer = undefined;
+      this.setState({ focus: true });
+    }, FOCUS_DELAY);
+  }
+
+  onBlur = () => {
+    // delay to prevent re-rendering children before their events are delivered
+    clearTimeout(this.focusTimer);
+    this.focusTimer = setTimeout(() => {
+      this.focusTimer = undefined;
+      this.setState({ focus: false });
+    }, FOCUS_DELAY);
+  }
 
   render() {
     const { children, error, help, htmlFor, label, style, theme,
@@ -22,16 +56,12 @@ class FormField extends Component {
     const { focus } = this.state;
 
     let contents = children;
-    const focusHandlers = {
-      onClick: () => {
-        // set focus on focusable descendant
-        const container = findDOMNode(this.childContainerRef);
-        const element = getFirstFocusableDescendant(container);
-        if (element) {
-          element.focus();
-        }
-      },
-    };
+    const handlers = {};
+
+    if (!focus && !this.focusTimer) {
+      handlers.onClick = this.onClick;
+    }
+
     let borderColor;
     if (focus) {
       borderColor = 'focus';
@@ -63,8 +93,8 @@ class FormField extends Component {
         </Box>
       );
 
-      focusHandlers.onFocus = () => this.setState({ focus: true });
-      focusHandlers.onBlur = () => this.setState({ focus: false });
+      handlers.onFocus = this.onFocus;
+      handlers.onBlur = this.onBlur;
 
       abut = (border.position === 'outer' &&
         (border.side === 'all' || border.side === 'horizontal' || !border.side));
@@ -90,7 +120,7 @@ class FormField extends Component {
           { ...border, color: borderColor } : undefined
         }
         margin={abut ? undefined : { bottom: 'small' }}
-        {...focusHandlers}
+        {...handlers}
         style={outerStyle}
         {...rest}
       >

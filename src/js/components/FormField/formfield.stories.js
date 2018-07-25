@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import FormField from '../FormField/FormField';
@@ -9,13 +9,32 @@ import Select from '../Select/Select';
 import CheckBox from '../CheckBox/CheckBox';
 import Box from '../Box/Box';
 
-const FormFieldTextInput = props => (
-  <Grommet>
-    <FormField label='Label' {...props}>
-      <TextInput placeholder='placeholder' />
-    </FormField>
-  </Grommet>
-);
+const suggestions = Array(100).fill().map((_, i) => `suggestion ${i + 1}`);
+
+class FormFieldTextInput extends Component {
+  state = { value: '' }
+
+  onChange = event => this.setState({ value: event.target.value })
+
+  onSelect = event => this.setState({ value: event.suggestion })
+
+  render() {
+    const { value } = this.state;
+    return (
+      <Grommet>
+        <FormField label='Label' {...this.props}>
+          <TextInput
+            placeholder='placeholder'
+            value={value}
+            onChange={this.onChange}
+            onSelect={this.onSelect}
+            suggestions={suggestions}
+          />
+        </FormField>
+      </Grommet>
+    );
+  }
+}
 
 const FormFieldTextArea = props => (
   <Grommet>

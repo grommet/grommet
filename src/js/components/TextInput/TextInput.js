@@ -184,6 +184,23 @@ class TextInput extends Component {
     }
   }
 
+  onFocus = (event) => {
+    const { onFocus } = this.props;
+    this.announceSuggestionsExist();
+    this.resetSuggestions();
+    if (onFocus) {
+      onFocus(event);
+    }
+  }
+
+  onInput = (event) => {
+    const { onInput } = this.props;
+    this.resetSuggestions();
+    if (onInput) {
+      onInput(event);
+    }
+  }
+
   onDropClose = () => {
     this.setState({ showDrop: false });
   }
@@ -220,7 +237,7 @@ class TextInput extends Component {
   render() {
     const {
       defaultValue, dropAlign, dropTarget, id, placeholder, plain, theme, value,
-      onFocus, onInput, onKeyDown,
+      onKeyDown,
       ...rest
     } = this.props;
     delete rest.onInput; // se we can manage in onInputChange()
@@ -269,19 +286,8 @@ class TextInput extends Component {
             {...rest}
             defaultValue={renderLabel(defaultValue)}
             value={renderLabel(value)}
-            onFocus={(event) => {
-              this.announceSuggestionsExist();
-              this.resetSuggestions();
-              if (onFocus) {
-                onFocus(event);
-              }
-            }}
-            onInput={(event) => {
-              this.resetSuggestions();
-              if (onInput) {
-                onInput(event);
-              }
-            }}
+            onFocus={this.onFocus}
+            onInput={this.onInput}
           />
         </Keyboard>
         {drop}
