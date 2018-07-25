@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Close } from 'grommet-icons';
+import { Close, FormDown } from 'grommet-icons';
 
 import DropButton from '../DropButton/DropButton';
 import Grommet from '../Grommet/Grommet';
@@ -8,6 +8,7 @@ import Box from '../Box/Box';
 import Heading from '../Heading/Heading';
 import Button from '../Button/Button';
 import Text from '../Text/Text';
+import Calendar from '../Calendar/Calendar';
 
 const DropContent = ({ onClose }) => (
   <Box pad='small'>
@@ -42,5 +43,38 @@ class SimpleDropButton extends Component {
   }
 }
 
+class CalendarDropButton extends Component {
+  state = { date: undefined }
+
+  onClose = () => {
+    this.setState({ open: false });
+    setTimeout(() => this.setState({ open: undefined }), 1);
+  }
+
+  onSelect = date => this.setState({ date, open: false })
+
+  render() {
+    const { date, open } = this.state;
+    return (
+      <Grommet>
+        <DropButton
+          open={open}
+          onClose={() => this.setState({ open: false })}
+          onOpen={() => this.setState({ open: true })}
+          dropContent={(
+            <Calendar date={date} onSelect={this.onSelect} />
+          )}
+        >
+          <Box direction='row' gap='medium' align='center' pad='small'>
+            <Text>{date ? (new Date(date)).toLocaleDateString() : 'Select date'}</Text>
+            <FormDown color='brand' />
+          </Box>
+        </DropButton>
+      </Grommet>
+    );
+  }
+}
+
 storiesOf('DropButton', module)
-  .add('Simple DropButton', () => <SimpleDropButton />);
+  .add('Simple', () => <SimpleDropButton />)
+  .add('Calendar', () => <CalendarDropButton />);
