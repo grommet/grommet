@@ -26,21 +26,23 @@ const searchingStyle = css`
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 80%;
+    width: 100%;
     height: 2px;
     will-change: left, right;
     background: ${props => colorForName('brand', props.theme)};
-    animation: progress 1s ease-out infinite;
+    animation: progress 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    transform: translateX(-50%) scaleX(0);
   }
 
   @keyframes progress {
     0% {
-      left: -100%;
-      right: 100%;
+      transform: translateX(-50%) scaleX(0);
+    }
+    50% {
+      transform: translateX(12.5%) scaleX(.75);
     }
     100% {
-      left: 100%;
-      right: -50%;
+      transform: translateX(50%) scaleX(0);
     }
   }
 `;
