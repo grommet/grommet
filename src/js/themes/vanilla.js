@@ -113,7 +113,7 @@ export default deepFreeze({
       },
     },
     drop: {
-      backgroundColor: '#f8f8f8',
+      background: '#f8f8f8',
       border: {
         width: '0px',
         radius: '0px',
@@ -520,7 +520,7 @@ export default deepFreeze({
     },
   },
   select: {
-    backgroundColor: '#ffffff',
+    background: '#ffffff',
     icons: {
       color: {
         // light: undefined,

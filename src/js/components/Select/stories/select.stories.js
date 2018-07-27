@@ -395,5 +395,5 @@ storiesOf('Select', module)
   .add('Custom Search', () => <CustomSearchSelect />)
   .add('Dark', () => <DarkSelect />)
   .add('Custom Colors', () => (
-    <DarkSelect theme={{ select: { backgroundColor: '#000000', iconColor: '#d3d3d3' } }} />
+    <DarkSelect theme={{ select: { background: '#000000', iconColor: '#d3d3d3' } }} />
   ));

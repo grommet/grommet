@@ -259,6 +259,7 @@ exports[`Select basic 1`] = `
       <svg
         aria-label="FormDown"
         className="c7"
+        color="#865CD6"
         height="24px"
         role="img"
         version="1.1"
@@ -313,6 +314,7 @@ exports[`Select complex options and children 1`] = `
       <svg
         aria-label="FormDown"
         class="StyledIcon-hcpUvT bAonn"
+        color="#865CD6"
         height="24px"
         role="img"
         version="1.1"
@@ -367,6 +369,7 @@ exports[`Select complex options and children 2`] = `
       <svg
         aria-label="FormDown"
         class="StyledIcon-hcpUvT bAonn"
+        color="#865CD6"
         height="24px"
         role="img"
         version="1.1"
@@ -624,6 +627,7 @@ exports[`Select deselect an option 1`] = `
       <svg
         aria-label="FormDown"
         class="StyledIcon-hcpUvT bAonn"
+        color="#865CD6"
         height="24px"
         role="img"
         version="1.1"
@@ -679,6 +683,7 @@ exports[`Select disabled 1`] = `
       <svg
         aria-label="FormDown"
         class="StyledIcon-hcpUvT bAonn"
+        color="#865CD6"
         height="24px"
         role="img"
         version="1.1"
@@ -734,6 +739,7 @@ exports[`Select disabled 2`] = `
       <svg
         aria-label="FormDown"
         class="StyledIcon-hcpUvT bAonn"
+        color="#865CD6"
         height="24px"
         role="img"
         version="1.1"
@@ -1016,6 +1022,7 @@ exports[`Select multiple 1`] = `
       <svg
         aria-label="FormDown"
         className="c7"
+        color="#865CD6"
         height="24px"
         role="img"
         version="1.1"
@@ -1071,6 +1078,7 @@ exports[`Select multiple values 1`] = `
       <svg
         aria-label="FormDown"
         class="StyledIcon-hcpUvT bAonn"
+        color="#865CD6"
         height="24px"
         role="img"
         version="1.1"
@@ -1126,6 +1134,7 @@ exports[`Select multiple values 2`] = `
       <svg
         aria-label="FormDown"
         class="StyledIcon-hcpUvT bAonn"
+        color="#865CD6"
         height="24px"
         role="img"
         version="1.1"
@@ -1432,6 +1441,7 @@ exports[`Select opens 1`] = `
       <svg
         aria-label="FormDown"
         class="StyledIcon-hcpUvT bAonn"
+        color="#865CD6"
         height="24px"
         role="img"
         version="1.1"
@@ -1486,6 +1496,7 @@ exports[`Select opens 2`] = `
       <svg
         aria-label="FormDown"
         class="StyledIcon-hcpUvT bAonn"
+        color="#865CD6"
         height="24px"
         role="img"
         version="1.1"
@@ -1801,6 +1812,7 @@ exports[`Select search 1`] = `
       <svg
         aria-label="FormDown"
         class="StyledIcon-hcpUvT bAonn"
+        color="#865CD6"
         height="24px"
         role="img"
         version="1.1"
@@ -2095,6 +2107,7 @@ exports[`Select select an option 1`] = `
       <svg
         aria-label="FormDown"
         class="StyledIcon-hcpUvT bAonn"
+        color="#865CD6"
         height="24px"
         role="img"
         version="1.1"
@@ -2138,6 +2151,7 @@ exports[`Select select an option with complex options 1`] = `
       <svg
         aria-label="FormDown"
         class="StyledIcon-hcpUvT bAonn"
+        color="#865CD6"
         height="24px"
         role="img"
         version="1.1"
@@ -2192,6 +2206,7 @@ exports[`Select select an option with enter 1`] = `
       <svg
         aria-label="FormDown"
         class="StyledIcon-hcpUvT bAonn"
+        color="#865CD6"
         height="24px"
         role="img"
         version="1.1"
@@ -2247,6 +2262,7 @@ exports[`Select select another option 1`] = `
       <svg
         aria-label="FormDown"
         class="StyledIcon-hcpUvT bAonn"
+        color="#865CD6"
         height="24px"
         role="img"
         version="1.1"
@@ -2532,6 +2548,7 @@ exports[`Select size 1`] = `
       <svg
         aria-label="FormDown"
         className="c7"
+        color="#865CD6"
         height="24px"
         role="img"
         size="large"

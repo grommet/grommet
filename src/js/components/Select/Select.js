@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { compose } from 'recompose';
 import styled from 'styled-components';
 
-import { ThemeContext } from 'grommet-icons';
-
 import { Box } from '../Box';
 import { DropButton } from '../DropButton';
 import { Keyboard } from '../Keyboard';
@@ -101,6 +99,12 @@ class Select extends Component {
       selectValue = value;
     }
 
+    const iconColor = colorIsDark(theme.select.background) ? (
+      theme.select.icons.color.dark || colorForName('light-4', theme)
+    ) : (
+      theme.select.icons.color.light || colorForName('brand', theme)
+    );
+
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
         <DropButton
@@ -120,7 +124,7 @@ class Select extends Component {
             border={!plain ? 'all' : undefined}
             direction='row'
             justify='between'
-            background={theme.select.backgroundColor}
+            background={theme.select.background}
           >
             <Box direction='row' flex={true} basis='auto'>
               {selectValue || (
@@ -142,15 +146,7 @@ class Select extends Component {
               flex={false}
               style={{ minWidth: 'auto' }}
             >
-              <ThemeContext.Extend
-                value={{ color: colorIsDark(theme.select.backgroundColor) ? (
-                  theme.select.icons.color.dark || colorForName('light-4', theme)
-                ) : (
-                  theme.select.icons.color.light || colorForName('brand', theme)
-                ) }}
-              >
-                <SelectIcon size={size} />
-              </ThemeContext.Extend>
+              <SelectIcon color={iconColor} size={size} />
             </Box>
           </Box>
         </DropButton>
