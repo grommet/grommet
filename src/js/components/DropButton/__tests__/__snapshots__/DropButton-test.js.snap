@@ -8,7 +8,7 @@ exports[`DropButton close by clicking outside 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy dRDGjF"
+    class="StyledBox-YaZNy dFwWLR"
   >
     <span
       class="StyledText-dmaDlZ iiuQkH"
@@ -31,13 +31,13 @@ exports[`DropButton close by clicking outside 2`] = `
 
 exports[`DropButton close by clicking outside 3`] = `
 "@media only screen and (max-width:699px) {
-  .dRDGjF {
+  .dFwWLR {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dRDGjF {
+  .dFwWLR {
     padding: 0;
   }
 }
@@ -181,7 +181,7 @@ exports[`DropButton disabled 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy dRDGjF"
+    class="StyledBox-YaZNy dFwWLR"
   >
     <span
       class="StyledText-dmaDlZ iiuQkH"
@@ -202,7 +202,7 @@ exports[`DropButton open and close 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy dRDGjF"
+    class="StyledBox-YaZNy dFwWLR"
   >
     <span
       class="StyledText-dmaDlZ iiuQkH"
@@ -225,13 +225,13 @@ exports[`DropButton open and close 2`] = `
 
 exports[`DropButton open and close 3`] = `
 "@media only screen and (max-width:699px) {
-  .dRDGjF {
+  .dFwWLR {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dRDGjF {
+  .dFwWLR {
     padding: 0;
   }
 }
@@ -367,7 +367,7 @@ exports[`DropButton opened ref 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy dRDGjF"
+    class="StyledBox-YaZNy dFwWLR"
   >
     <span
       class="StyledText-dmaDlZ iiuQkH"
@@ -390,13 +390,13 @@ exports[`DropButton opened ref 2`] = `
 
 exports[`DropButton opened ref 3`] = `
 "@media only screen and (max-width:699px) {
-  .dRDGjF {
+  .dFwWLR {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .dRDGjF {
+  .dFwWLR {
     padding: 0;
   }
 }

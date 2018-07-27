@@ -1,26 +1,31 @@
 import React, { Children, cloneElement, Component } from 'react';
+import styled from 'styled-components';
 import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
-import { parseMetricToNum, getFirstFocusableDescendant } from '../../utils';
+import { colorForName, parseMetricToNum, getFirstFocusableDescendant } from '../../utils';
 
 import { Box } from '../Box';
+import { Button } from '../Button';
 import { Text } from '../Text';
 
 import { withTheme } from '../hocs';
 
 import doc from './doc';
 
-// empirically determined via interaction with story, post IE11 '1' is enough.
-const FOCUS_DELAY = 20;
+const FormFieldBox = styled(Box)`
+  :focus-within {
+    border-color: ${props => colorForName('focus', props.theme)};
+  }
+`;
+
+const PointerBox = styled(Box)`
+  > * {
+    cursor: pointer;
+  }
+`;
 
 class FormField extends Component {
-  state = {};
-
-  componentWillUnmount() {
-    clearTimeout(this.focusTimer);
-  }
-
   onClick = () => {
     // set focus on focusable descendant
     const container = findDOMNode(this.childContainerRef);
@@ -30,42 +35,25 @@ class FormField extends Component {
     }
   }
 
-  onFocus = () => {
-    // delay to prevent re-rendering children before their events are delivered
-    clearTimeout(this.focusTimer);
-    this.focusTimer = setTimeout(() => {
-      this.focusTimer = undefined;
-      this.setState({ focus: true });
-    }, FOCUS_DELAY);
-  }
-
-  onBlur = () => {
-    // delay to prevent re-rendering children before their events are delivered
-    clearTimeout(this.focusTimer);
-    this.focusTimer = setTimeout(() => {
-      this.focusTimer = undefined;
-      this.setState({ focus: false });
-    }, FOCUS_DELAY);
-  }
-
   render() {
-    const { children, error, help, htmlFor, label, style, theme,
-      ...rest } = this.props;
+    const {
+      children,
+      error,
+      focus,
+      help,
+      htmlFor,
+      label,
+      style,
+      theme,
+      ...rest
+    } = this.props;
     const { formField } = theme;
     const { border } = formField;
-    const { focus } = this.state;
 
     let contents = children;
-    const handlers = {};
-
-    if (!focus && !this.focusTimer) {
-      handlers.onClick = this.onClick;
-    }
 
     let borderColor;
-    if (focus) {
-      borderColor = 'focus';
-    } else if (error) {
+    if (error) {
       borderColor = formField.border.error.color || 'status-critical';
     } else {
       borderColor = (border ? (border.color || 'border') : 'border');
@@ -82,7 +70,8 @@ class FormField extends Component {
       });
 
       contents = (
-        <Box
+        <FormFieldBox
+          theme={theme}
           ref={(ref) => { this.childContainerRef = ref; }}
           border={border.position === 'inner' ?
             { ...border, side: (border.side || 'bottom'), color: borderColor }
@@ -90,11 +79,8 @@ class FormField extends Component {
           }
         >
           {normalizedChildren}
-        </Box>
+        </FormFieldBox>
       );
-
-      handlers.onFocus = this.onFocus;
-      handlers.onBlur = this.onBlur;
 
       abut = (border.position === 'outer' &&
         (border.side === 'all' || border.side === 'horizontal' || !border.side));
@@ -115,37 +101,42 @@ class FormField extends Component {
     }
 
     return (
-      <Box
+      <FormFieldBox
+        theme={theme}
         border={(border && border.position === 'outer') ?
           { ...border, color: borderColor } : undefined
         }
         margin={abut ? undefined : { bottom: 'small' }}
-        {...handlers}
         style={outerStyle}
         {...rest}
       >
-        {(label || help) ? (
-          <Box
-            margin={{ vertical: 'xsmall', horizontal: 'small' }}
-            gap='xsmall'
-          >
-            {label ? (
-              <Text tag='label' htmlFor={htmlFor} {...formField.label}>
-                {label}
-              </Text>
-            ) : undefined}
-            {help ? (
-              <Text {...formField.help}>{help}</Text>
-            ) : undefined}
-          </Box>
-        ) : undefined}
+        <Button
+          onClick={this.onClick}
+          tabIndex='-1'
+        >
+          {(label || help) ? (
+            <PointerBox
+              margin={{ vertical: 'xsmall', horizontal: 'small' }}
+              gap='xsmall'
+            >
+              {label ? (
+                <Text tag='label' htmlFor={htmlFor} {...formField.label}>
+                  {label}
+                </Text>
+              ) : undefined}
+              {help ? (
+                <Text {...formField.help}>{help}</Text>
+              ) : undefined}
+            </PointerBox>
+          ) : undefined}
+        </Button>
         {contents}
         {error ? (
           <Box margin={{ vertical: 'xsmall', horizontal: 'small' }} >
             <Text {...formField.error}>{error}</Text>
           </Box>
         ) : undefined}
-      </Box>
+      </FormFieldBox>
     );
   }
 }

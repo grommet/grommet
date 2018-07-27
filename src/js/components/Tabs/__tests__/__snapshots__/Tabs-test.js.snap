@@ -237,7 +237,7 @@ exports[`Tabs change active index 1`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-YaZNy daywdA"
+    class="StyledBox-YaZNy bFuKKR"
   >
     <button
       aria-expanded="false"
@@ -247,7 +247,7 @@ exports[`Tabs change active index 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy rlJRB"
+        class="StyledBox-YaZNy lifkgl"
       >
         <span
           class="StyledText-dmaDlZ fNDpmE"
@@ -265,7 +265,7 @@ exports[`Tabs change active index 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy qYBNm"
+        class="StyledBox-YaZNy iqmdaU"
       >
         <span
           class="StyledText-dmaDlZ jDOIeV"
@@ -289,7 +289,7 @@ exports[`Tabs change active index 2`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-YaZNy daywdA"
+    class="StyledBox-YaZNy bFuKKR"
   >
     <button
       aria-expanded="false"
@@ -299,7 +299,7 @@ exports[`Tabs change active index 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy rlJRB"
+        class="StyledBox-YaZNy lifkgl"
       >
         <span
           class="StyledText-dmaDlZ fNDpmE"
@@ -317,7 +317,7 @@ exports[`Tabs change active index 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy qYBNm"
+        class="StyledBox-YaZNy iqmdaU"
       >
         <span
           class="StyledText-dmaDlZ jDOIeV"
@@ -344,7 +344,7 @@ exports[`Tabs change to second tab 1`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-YaZNy daywdA"
+      class="StyledBox-YaZNy bFuKKR"
     >
       <button
         aria-expanded="true"
@@ -354,7 +354,7 @@ exports[`Tabs change to second tab 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy qYBNm"
+          class="StyledBox-YaZNy iqmdaU"
         >
           <span
             class="StyledText-dmaDlZ jDOIeV"
@@ -371,7 +371,7 @@ exports[`Tabs change to second tab 1`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy rlJRB"
+          class="StyledBox-YaZNy lifkgl"
         >
           <span
             class="StyledText-dmaDlZ fNDpmE"
@@ -400,7 +400,7 @@ exports[`Tabs change to second tab 2`] = `
     role="tablist"
   >
     <div
-      class="StyledBox-YaZNy daywdA"
+      class="StyledBox-YaZNy bFuKKR"
     >
       <button
         aria-expanded="true"
@@ -410,7 +410,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy qYBNm"
+          class="StyledBox-YaZNy iqmdaU"
         >
           <span
             class="StyledText-dmaDlZ jDOIeV"
@@ -427,7 +427,7 @@ exports[`Tabs change to second tab 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy rlJRB"
+          class="StyledBox-YaZNy lifkgl"
         >
           <span
             class="StyledText-dmaDlZ fNDpmE"
@@ -738,7 +738,7 @@ exports[`Tabs set on hover 1`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-YaZNy daywdA"
+    class="StyledBox-YaZNy bFuKKR"
   >
     <button
       aria-expanded="true"
@@ -748,7 +748,7 @@ exports[`Tabs set on hover 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy qYBNm"
+        class="StyledBox-YaZNy iqmdaU"
       >
         <span
           class="StyledText-dmaDlZ jDOIeV"
@@ -765,7 +765,7 @@ exports[`Tabs set on hover 1`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy rlJRB"
+        class="StyledBox-YaZNy lifkgl"
       >
         <span
           class="StyledText-dmaDlZ fNDpmE"
@@ -790,7 +790,7 @@ exports[`Tabs set on hover 2`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-YaZNy daywdA"
+    class="StyledBox-YaZNy bFuKKR"
   >
     <button
       aria-expanded="true"
@@ -800,7 +800,7 @@ exports[`Tabs set on hover 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy qYBNm"
+        class="StyledBox-YaZNy iqmdaU"
       >
         <span
           class="StyledText-dmaDlZ jDOIeV"
@@ -817,7 +817,7 @@ exports[`Tabs set on hover 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy rlJRB"
+        class="StyledBox-YaZNy lifkgl"
       >
         <span
           class="StyledText-dmaDlZ fNDpmE"
@@ -842,7 +842,7 @@ exports[`Tabs set on hover 3`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-YaZNy daywdA"
+    class="StyledBox-YaZNy bFuKKR"
   >
     <button
       aria-expanded="true"
@@ -852,7 +852,7 @@ exports[`Tabs set on hover 3`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy qYBNm"
+        class="StyledBox-YaZNy iqmdaU"
       >
         <span
           class="StyledText-dmaDlZ jDOIeV"
@@ -869,7 +869,7 @@ exports[`Tabs set on hover 3`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy bilzhM"
+        class="StyledBox-YaZNy ccFiUc"
       >
         <span
           class="StyledText-dmaDlZ fNDpmE"
@@ -894,7 +894,7 @@ exports[`Tabs set on hover 4`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-YaZNy daywdA"
+    class="StyledBox-YaZNy bFuKKR"
   >
     <button
       aria-expanded="true"
@@ -904,7 +904,7 @@ exports[`Tabs set on hover 4`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy qYBNm"
+        class="StyledBox-YaZNy iqmdaU"
       >
         <span
           class="StyledText-dmaDlZ jDOIeV"
@@ -921,7 +921,7 @@ exports[`Tabs set on hover 4`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy bilzhM"
+        class="StyledBox-YaZNy ccFiUc"
       >
         <span
           class="StyledText-dmaDlZ fNDpmE"
@@ -946,7 +946,7 @@ exports[`Tabs set on hover 5`] = `
   role="tablist"
 >
   <div
-    class="StyledBox-YaZNy daywdA"
+    class="StyledBox-YaZNy bFuKKR"
   >
     <button
       aria-expanded="true"
@@ -956,7 +956,7 @@ exports[`Tabs set on hover 5`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy qYBNm"
+        class="StyledBox-YaZNy iqmdaU"
       >
         <span
           class="StyledText-dmaDlZ jDOIeV"
@@ -973,7 +973,7 @@ exports[`Tabs set on hover 5`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy rlJRB"
+        class="StyledBox-YaZNy lifkgl"
       >
         <span
           class="StyledText-dmaDlZ fNDpmE"
