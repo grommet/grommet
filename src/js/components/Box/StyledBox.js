@@ -1,7 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { backgroundStyle, colorForName, edgeStyle, palm,
-  focusStyle } from '../../utils';
+import { backgroundStyle, colorForName, edgeStyle, palm } from '../../utils';
 
 const ALIGN_MAP = {
   baseline: 'baseline',
@@ -356,7 +355,6 @@ const StyledBox = styled.div`
   ${props => props.overflowProp && `overflow: ${props.overflowProp};`}
   ${props => props.elevationProp && elevationStyle}
   ${props => props.animation && animationStyle}
-  ${props => props.focus && focusStyle}
 `;
 
 export default StyledBox.extend`

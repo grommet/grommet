@@ -113,7 +113,7 @@ exports[`Menu close by clicking outside 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-YaZNy jyWPQv"
+      class="StyledBox-YaZNy jumoKl"
     >
       <span
         class="StyledText-dmaDlZ iiuQkH"
@@ -125,7 +125,7 @@ exports[`Menu close by clicking outside 1`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -153,7 +153,7 @@ exports[`Menu close by clicking outside 2`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-YaZNy hQeqTY"
+    class="StyledBox-YaZNy gmORNl"
   >
     <button
       aria-label="Close Menu"
@@ -161,7 +161,7 @@ exports[`Menu close by clicking outside 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy jyWPQv"
+        class="StyledBox-YaZNy jumoKl"
       >
         <span
           class="StyledText-dmaDlZ iiuQkH"
@@ -173,7 +173,7 @@ exports[`Menu close by clicking outside 2`] = `
         />
         <svg
           aria-label="FormDown"
-          class="StyledIcon-hcpUvT fAeuhQ"
+          class="StyledIcon-hcpUvT iKWCCU"
           color="brand"
           height="24px"
           role="img"
@@ -191,7 +191,7 @@ exports[`Menu close by clicking outside 2`] = `
       </div>
     </button>
     <div
-      class="StyledBox-YaZNy hQeqTY"
+      class="StyledBox-YaZNy gmORNl"
     >
       <button
         class="StyledButton-qbvYY fccVcn"
@@ -199,7 +199,7 @@ exports[`Menu close by clicking outside 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy PasVd"
+          class="StyledBox-YaZNy hVRCvC"
         >
           Item 1
         </div>
@@ -210,7 +210,7 @@ exports[`Menu close by clicking outside 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy PasVd"
+          class="StyledBox-YaZNy hVRCvC"
         >
           Item 2
         </div>
@@ -222,37 +222,37 @@ exports[`Menu close by clicking outside 2`] = `
 
 exports[`Menu close by clicking outside 3`] = `
 "@media only screen and (max-width:699px) {
-  .jyWPQv {
+  .jumoKl {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jyWPQv {
+  .jumoKl {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hQeqTY {
+  .gmORNl {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hQeqTY {
+  .gmORNl {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .PasVd {
+  .hVRCvC {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .PasVd {
+  .hVRCvC {
     padding: 6px;
   }
 }
@@ -351,7 +351,7 @@ exports[`Menu close on esc 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-YaZNy jyWPQv"
+      class="StyledBox-YaZNy jumoKl"
     >
       <span
         class="StyledText-dmaDlZ iiuQkH"
@@ -363,7 +363,7 @@ exports[`Menu close on esc 1`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -392,7 +392,7 @@ exports[`Menu close on tab 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-YaZNy jyWPQv"
+      class="StyledBox-YaZNy jumoKl"
     >
       <span
         class="StyledText-dmaDlZ iiuQkH"
@@ -404,7 +404,7 @@ exports[`Menu close on tab 1`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -430,8 +430,8 @@ exports[`Menu custom message 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #666666;
-  stroke: #666666;
+  fill: brand;
+  stroke: brand;
 }
 
 .c4 g {
@@ -585,7 +585,7 @@ exports[`Menu disabled 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-YaZNy jyWPQv"
+      class="StyledBox-YaZNy jumoKl"
     >
       <span
         class="StyledText-dmaDlZ iiuQkH"
@@ -597,7 +597,7 @@ exports[`Menu disabled 1`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -626,7 +626,7 @@ exports[`Menu navigate through suggestions and select 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-YaZNy jyWPQv"
+      class="StyledBox-YaZNy jumoKl"
     >
       <span
         class="StyledText-dmaDlZ iiuQkH"
@@ -638,7 +638,7 @@ exports[`Menu navigate through suggestions and select 1`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -667,7 +667,7 @@ exports[`Menu open and close on click 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-YaZNy jyWPQv"
+      class="StyledBox-YaZNy jumoKl"
     >
       <span
         class="StyledText-dmaDlZ iiuQkH"
@@ -679,7 +679,7 @@ exports[`Menu open and close on click 1`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -708,7 +708,7 @@ exports[`Menu open and close on click 2`] = `
     type="button"
   >
     <div
-      class="StyledBox-YaZNy jyWPQv"
+      class="StyledBox-YaZNy jumoKl"
     >
       <span
         class="StyledText-dmaDlZ iiuQkH"
@@ -720,7 +720,7 @@ exports[`Menu open and close on click 2`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -748,7 +748,7 @@ exports[`Menu open and close on click 3`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-YaZNy hQeqTY"
+    class="StyledBox-YaZNy gmORNl"
   >
     <button
       aria-label="Close Menu"
@@ -756,7 +756,7 @@ exports[`Menu open and close on click 3`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy jyWPQv"
+        class="StyledBox-YaZNy jumoKl"
       >
         <span
           class="StyledText-dmaDlZ iiuQkH"
@@ -768,7 +768,7 @@ exports[`Menu open and close on click 3`] = `
         />
         <svg
           aria-label="FormDown"
-          class="StyledIcon-hcpUvT fAeuhQ"
+          class="StyledIcon-hcpUvT iKWCCU"
           color="brand"
           height="24px"
           role="img"
@@ -786,7 +786,7 @@ exports[`Menu open and close on click 3`] = `
       </div>
     </button>
     <div
-      class="StyledBox-YaZNy hQeqTY"
+      class="StyledBox-YaZNy gmORNl"
     >
       <button
         class="StyledButton-qbvYY fccVcn"
@@ -794,7 +794,7 @@ exports[`Menu open and close on click 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy PasVd"
+          class="StyledBox-YaZNy hVRCvC"
         >
           Item 1
         </div>
@@ -804,7 +804,7 @@ exports[`Menu open and close on click 3`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy PasVd"
+          class="StyledBox-YaZNy hVRCvC"
         >
           Item 2
         </div>
@@ -814,7 +814,7 @@ exports[`Menu open and close on click 3`] = `
         href="/test"
       >
         <div
-          class="StyledBox-YaZNy PasVd"
+          class="StyledBox-YaZNy hVRCvC"
         >
           Item 3
         </div>
@@ -826,37 +826,37 @@ exports[`Menu open and close on click 3`] = `
 
 exports[`Menu open and close on click 4`] = `
 "@media only screen and (max-width:699px) {
-  .jyWPQv {
+  .jumoKl {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jyWPQv {
+  .jumoKl {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hQeqTY {
+  .gmORNl {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hQeqTY {
+  .gmORNl {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .PasVd {
+  .hVRCvC {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .PasVd {
+  .hVRCvC {
     padding: 6px;
   }
 }
@@ -948,7 +948,7 @@ exports[`Menu select an item 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-YaZNy jyWPQv"
+      class="StyledBox-YaZNy jumoKl"
     >
       <span
         class="StyledText-dmaDlZ iiuQkH"
@@ -960,7 +960,7 @@ exports[`Menu select an item 1`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -989,7 +989,7 @@ exports[`Menu with dropAlign renders 1`] = `
     type="button"
   >
     <div
-      class="StyledBox-YaZNy jyWPQv"
+      class="StyledBox-YaZNy jumoKl"
     >
       <span
         class="StyledText-dmaDlZ iiuQkH"
@@ -1001,7 +1001,7 @@ exports[`Menu with dropAlign renders 1`] = `
       />
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -1029,7 +1029,7 @@ exports[`Menu with dropAlign renders 2`] = `
   tabindex="-1"
 >
   <div
-    class="StyledBox-YaZNy hQeqTY"
+    class="StyledBox-YaZNy gmORNl"
   >
     <button
       aria-label="Close Menu"
@@ -1037,7 +1037,7 @@ exports[`Menu with dropAlign renders 2`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy jyWPQv"
+        class="StyledBox-YaZNy jumoKl"
       >
         <span
           class="StyledText-dmaDlZ iiuQkH"
@@ -1049,7 +1049,7 @@ exports[`Menu with dropAlign renders 2`] = `
         />
         <svg
           aria-label="FormDown"
-          class="StyledIcon-hcpUvT fAeuhQ"
+          class="StyledIcon-hcpUvT iKWCCU"
           color="brand"
           height="24px"
           role="img"
@@ -1067,7 +1067,7 @@ exports[`Menu with dropAlign renders 2`] = `
       </div>
     </button>
     <div
-      class="StyledBox-YaZNy hQeqTY"
+      class="StyledBox-YaZNy gmORNl"
     >
       <button
         class="StyledButton-qbvYY fccVcn"
@@ -1075,7 +1075,7 @@ exports[`Menu with dropAlign renders 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy PasVd"
+          class="StyledBox-YaZNy hVRCvC"
         >
           Item 1
         </div>
@@ -1086,7 +1086,7 @@ exports[`Menu with dropAlign renders 2`] = `
         type="button"
       >
         <div
-          class="StyledBox-YaZNy PasVd"
+          class="StyledBox-YaZNy hVRCvC"
         >
           Item 2
         </div>
@@ -1098,37 +1098,37 @@ exports[`Menu with dropAlign renders 2`] = `
 
 exports[`Menu with dropAlign renders 3`] = `
 "@media only screen and (max-width:699px) {
-  .jyWPQv {
+  .jumoKl {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jyWPQv {
+  .jumoKl {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hQeqTY {
+  .gmORNl {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hQeqTY {
+  .gmORNl {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .PasVd {
+  .hVRCvC {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .PasVd {
+  .hVRCvC {
     padding: 6px;
   }
 }

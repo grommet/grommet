@@ -6,8 +6,8 @@ exports[`Select basic 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #666666;
-  stroke: #666666;
+  fill: brand;
+  stroke: brand;
 }
 
 .c7 g {
@@ -285,10 +285,10 @@ exports[`Select complex options and children 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy cuRMWQ"
   >
     <div
-      class="StyledBox-YaZNy eMTjTC"
+      class="StyledBox-YaZNy kGvzg"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
@@ -306,12 +306,12 @@ exports[`Select complex options and children 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy ivAcfG"
+      class="StyledBox-YaZNy ceItBD"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -340,10 +340,10 @@ exports[`Select complex options and children 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy cuRMWQ"
   >
     <div
-      class="StyledBox-YaZNy eMTjTC"
+      class="StyledBox-YaZNy kGvzg"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
@@ -361,12 +361,12 @@ exports[`Select complex options and children 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy ivAcfG"
+      class="StyledBox-YaZNy ceItBD"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -394,16 +394,16 @@ exports[`Select complex options and children 3`] = `
   tabindex="-1"
 >
   <div
-    class="SelectContainer__ContainerBox-cmlGXd bCcYNq StyledBox-YaZNy hQeqTY"
+    class="SelectContainer__ContainerBox-cmlGXd bCcYNq StyledBox-YaZNy gmORNl"
     id="test-select__select-drop"
   >
     <div
-      class="SelectContainer__OptionsBox-ivZYuf dsVoEJ StyledBox-YaZNy biNMpn"
+      class="SelectContainer__OptionsBox-ivZYuf dsVoEJ StyledBox-YaZNy eRJpbF"
       role="menubar"
       tabindex="-1"
     >
       <div
-        class="StyledBox-YaZNy ckMYwJ"
+        class="StyledBox-YaZNy dyVXcg"
       >
         <button
           class="StyledButton-qbvYY ktbLOR"
@@ -416,7 +416,7 @@ exports[`Select complex options and children 3`] = `
         </button>
       </div>
       <div
-        class="StyledBox-YaZNy ckMYwJ"
+        class="StyledBox-YaZNy dyVXcg"
       >
         <button
           class="StyledButton-qbvYY ktbLOR"
@@ -435,92 +435,92 @@ exports[`Select complex options and children 3`] = `
 
 exports[`Select complex options and children 4`] = `
 "@media only screen and (max-width:699px) {
-  .filaRb {
+  .cuRMWQ {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .cuRMWQ {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .cuRMWQ {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eMTjTC {
+  .kGvzg {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eMTjTC {
+  .kGvzg {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ivAcfG {
+  .ceItBD {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ivAcfG {
+  .ceItBD {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hQeqTY {
+  .gmORNl {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hQeqTY {
+  .gmORNl {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .biNMpn {
+  .eRJpbF {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .biNMpn {
+  .eRJpbF {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ckMYwJ {
+  .dyVXcg {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ckMYwJ {
+  .dyVXcg {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hZNqBU {
+  .kmhKUS {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hZNqBU {
+  .kmhKUS {
     padding: 6px;
   }
 }
@@ -597,10 +597,10 @@ exports[`Select deselect an option 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy cuRMWQ"
   >
     <div
-      class="StyledBox-YaZNy eMTjTC"
+      class="StyledBox-YaZNy kGvzg"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
@@ -619,12 +619,12 @@ exports[`Select deselect an option 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy ivAcfG"
+      class="StyledBox-YaZNy ceItBD"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -654,10 +654,10 @@ exports[`Select disabled 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy cuRMWQ"
   >
     <div
-      class="StyledBox-YaZNy eMTjTC"
+      class="StyledBox-YaZNy kGvzg"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
@@ -675,12 +675,12 @@ exports[`Select disabled 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy ivAcfG"
+      class="StyledBox-YaZNy ceItBD"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -710,10 +710,10 @@ exports[`Select disabled 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy cuRMWQ"
   >
     <div
-      class="StyledBox-YaZNy eMTjTC"
+      class="StyledBox-YaZNy kGvzg"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
@@ -731,12 +731,12 @@ exports[`Select disabled 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy ivAcfG"
+      class="StyledBox-YaZNy ceItBD"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -762,8 +762,8 @@ exports[`Select multiple 1`] = `
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  fill: #666666;
-  stroke: #666666;
+  fill: brand;
+  stroke: brand;
 }
 
 .c7 g {
@@ -1046,10 +1046,10 @@ exports[`Select multiple values 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy cuRMWQ"
   >
     <div
-      class="StyledBox-YaZNy eMTjTC"
+      class="StyledBox-YaZNy kGvzg"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
@@ -1068,12 +1068,12 @@ exports[`Select multiple values 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy ivAcfG"
+      class="StyledBox-YaZNy ceItBD"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -1102,10 +1102,10 @@ exports[`Select multiple values 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy cuRMWQ"
   >
     <div
-      class="StyledBox-YaZNy eMTjTC"
+      class="StyledBox-YaZNy kGvzg"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
@@ -1124,12 +1124,12 @@ exports[`Select multiple values 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy ivAcfG"
+      class="StyledBox-YaZNy ceItBD"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -1157,16 +1157,16 @@ exports[`Select multiple values 3`] = `
   tabindex="-1"
 >
   <div
-    class="SelectContainer__ContainerBox-cmlGXd bCcYNq StyledBox-YaZNy hQeqTY"
+    class="SelectContainer__ContainerBox-cmlGXd bCcYNq StyledBox-YaZNy gmORNl"
     id="test-select__select-drop"
   >
     <div
-      class="SelectContainer__OptionsBox-ivZYuf dsVoEJ StyledBox-YaZNy biNMpn"
+      class="SelectContainer__OptionsBox-ivZYuf dsVoEJ StyledBox-YaZNy eRJpbF"
       role="menubar"
       tabindex="-1"
     >
       <div
-        class="StyledBox-YaZNy ckMYwJ"
+        class="StyledBox-YaZNy dyVXcg"
       >
         <button
           class="StyledButton-qbvYY fZEyyA"
@@ -1174,7 +1174,7 @@ exports[`Select multiple values 3`] = `
           type="button"
         >
           <div
-            class="StyledBox-YaZNy hZNqBU"
+            class="StyledBox-YaZNy kmhKUS"
           >
             <span
               class="StyledText-dmaDlZ iRQiFb"
@@ -1185,7 +1185,7 @@ exports[`Select multiple values 3`] = `
         </button>
       </div>
       <div
-        class="StyledBox-YaZNy ckMYwJ"
+        class="StyledBox-YaZNy dyVXcg"
       >
         <button
           class="StyledButton-qbvYY fZEyyA"
@@ -1193,7 +1193,7 @@ exports[`Select multiple values 3`] = `
           type="button"
         >
           <div
-            class="StyledBox-YaZNy hZNqBU"
+            class="StyledBox-YaZNy kmhKUS"
           >
             <span
               class="StyledText-dmaDlZ iRQiFb"
@@ -1210,116 +1210,116 @@ exports[`Select multiple values 3`] = `
 
 exports[`Select multiple values 4`] = `
 "@media only screen and (max-width:699px) {
-  .filaRb {
+  .cuRMWQ {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .cuRMWQ {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .cuRMWQ {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eMTjTC {
+  .kGvzg {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eMTjTC {
+  .kGvzg {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ivAcfG {
+  .ceItBD {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ivAcfG {
+  .ceItBD {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hQeqTY {
+  .gmORNl {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hQeqTY {
+  .gmORNl {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .biNMpn {
+  .eRJpbF {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .biNMpn {
+  .eRJpbF {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ckMYwJ {
+  .dyVXcg {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ckMYwJ {
+  .dyVXcg {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hZNqBU {
+  .kmhKUS {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hZNqBU {
+  .kmhKUS {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .gynikh {
+  .lYvHl {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .gynikh {
+  .lYvHl {
     padding: 3px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .flHrpn {
+  .lkuyCP {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .flHrpn {
+  .lkuyCP {
     padding: 0;
   }
 }
@@ -1410,10 +1410,10 @@ exports[`Select opens 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy cuRMWQ"
   >
     <div
-      class="StyledBox-YaZNy eMTjTC"
+      class="StyledBox-YaZNy kGvzg"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
@@ -1431,12 +1431,12 @@ exports[`Select opens 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy ivAcfG"
+      class="StyledBox-YaZNy ceItBD"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -1465,10 +1465,10 @@ exports[`Select opens 2`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy cuRMWQ"
   >
     <div
-      class="StyledBox-YaZNy eMTjTC"
+      class="StyledBox-YaZNy kGvzg"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
@@ -1486,12 +1486,12 @@ exports[`Select opens 2`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy ivAcfG"
+      class="StyledBox-YaZNy ceItBD"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -1519,16 +1519,16 @@ exports[`Select opens 3`] = `
   tabindex="-1"
 >
   <div
-    class="SelectContainer__ContainerBox-cmlGXd bCcYNq StyledBox-YaZNy hQeqTY"
+    class="SelectContainer__ContainerBox-cmlGXd bCcYNq StyledBox-YaZNy gmORNl"
     id="test-select__select-drop"
   >
     <div
-      class="SelectContainer__OptionsBox-ivZYuf dsVoEJ StyledBox-YaZNy biNMpn"
+      class="SelectContainer__OptionsBox-ivZYuf dsVoEJ StyledBox-YaZNy eRJpbF"
       role="menubar"
       tabindex="-1"
     >
       <div
-        class="StyledBox-YaZNy ckMYwJ"
+        class="StyledBox-YaZNy dyVXcg"
       >
         <button
           class="StyledButton-qbvYY ktbLOR"
@@ -1536,7 +1536,7 @@ exports[`Select opens 3`] = `
           type="button"
         >
           <div
-            class="StyledBox-YaZNy hZNqBU"
+            class="StyledBox-YaZNy kmhKUS"
           >
             <span
               class="StyledText-dmaDlZ iRQiFb"
@@ -1547,7 +1547,7 @@ exports[`Select opens 3`] = `
         </button>
       </div>
       <div
-        class="StyledBox-YaZNy ckMYwJ"
+        class="StyledBox-YaZNy dyVXcg"
       >
         <button
           class="StyledButton-qbvYY ktbLOR"
@@ -1555,7 +1555,7 @@ exports[`Select opens 3`] = `
           type="button"
         >
           <div
-            class="StyledBox-YaZNy hZNqBU"
+            class="StyledBox-YaZNy kmhKUS"
           >
             <span
               class="StyledText-dmaDlZ iRQiFb"
@@ -1572,92 +1572,92 @@ exports[`Select opens 3`] = `
 
 exports[`Select opens 4`] = `
 "@media only screen and (max-width:699px) {
-  .filaRb {
+  .cuRMWQ {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .cuRMWQ {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .cuRMWQ {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eMTjTC {
+  .kGvzg {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eMTjTC {
+  .kGvzg {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ivAcfG {
+  .ceItBD {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ivAcfG {
+  .ceItBD {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hQeqTY {
+  .gmORNl {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hQeqTY {
+  .gmORNl {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .biNMpn {
+  .eRJpbF {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .biNMpn {
+  .eRJpbF {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ckMYwJ {
+  .dyVXcg {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ckMYwJ {
+  .dyVXcg {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hZNqBU {
+  .kmhKUS {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hZNqBU {
+  .kmhKUS {
     padding: 6px;
   }
 }
@@ -1727,12 +1727,12 @@ exports[`Select opens 4`] = `
 
 exports[`Select opens 5`] = `
 <div
-  class="SelectContainer__OptionsBox-ivZYuf dsVoEJ StyledBox-YaZNy biNMpn"
+  class="SelectContainer__OptionsBox-ivZYuf dsVoEJ StyledBox-YaZNy eRJpbF"
   role="menubar"
   tabindex="-1"
 >
   <div
-    class="StyledBox-YaZNy ckMYwJ"
+    class="StyledBox-YaZNy dyVXcg"
   >
     <button
       class="StyledButton-qbvYY ktbLOR"
@@ -1740,7 +1740,7 @@ exports[`Select opens 5`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy hZNqBU"
+        class="StyledBox-YaZNy kmhKUS"
       >
         <span
           class="StyledText-dmaDlZ iRQiFb"
@@ -1751,7 +1751,7 @@ exports[`Select opens 5`] = `
     </button>
   </div>
   <div
-    class="StyledBox-YaZNy ckMYwJ"
+    class="StyledBox-YaZNy dyVXcg"
   >
     <button
       class="StyledButton-qbvYY ktbLOR"
@@ -1759,7 +1759,7 @@ exports[`Select opens 5`] = `
       type="button"
     >
       <div
-        class="StyledBox-YaZNy hZNqBU"
+        class="StyledBox-YaZNy kmhKUS"
       >
         <span
           class="StyledText-dmaDlZ iRQiFb"
@@ -1781,10 +1781,10 @@ exports[`Select search 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy cuRMWQ"
   >
     <div
-      class="StyledBox-YaZNy eMTjTC"
+      class="StyledBox-YaZNy kGvzg"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
@@ -1802,12 +1802,12 @@ exports[`Select search 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy ivAcfG"
+      class="StyledBox-YaZNy ceItBD"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -1835,11 +1835,11 @@ exports[`Select search 2`] = `
   tabindex="-1"
 >
   <div
-    class="SelectContainer__ContainerBox-cmlGXd bCcYNq StyledBox-YaZNy hQeqTY"
+    class="SelectContainer__ContainerBox-cmlGXd bCcYNq StyledBox-YaZNy gmORNl"
     id="test-select__select-drop"
   >
     <div
-      class="StyledBox-YaZNy gynikh"
+      class="StyledBox-YaZNy lYvHl"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
@@ -1853,12 +1853,12 @@ exports[`Select search 2`] = `
       </div>
     </div>
     <div
-      class="SelectContainer__OptionsBox-ivZYuf dsVoEJ StyledBox-YaZNy biNMpn"
+      class="SelectContainer__OptionsBox-ivZYuf dsVoEJ StyledBox-YaZNy eRJpbF"
       role="menubar"
       tabindex="-1"
     >
       <div
-        class="StyledBox-YaZNy ckMYwJ"
+        class="StyledBox-YaZNy dyVXcg"
       >
         <button
           class="StyledButton-qbvYY ktbLOR"
@@ -1866,7 +1866,7 @@ exports[`Select search 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-YaZNy hZNqBU"
+            class="StyledBox-YaZNy kmhKUS"
           >
             <span
               class="StyledText-dmaDlZ iRQiFb"
@@ -1877,7 +1877,7 @@ exports[`Select search 2`] = `
         </button>
       </div>
       <div
-        class="StyledBox-YaZNy ckMYwJ"
+        class="StyledBox-YaZNy dyVXcg"
       >
         <button
           class="StyledButton-qbvYY ktbLOR"
@@ -1885,7 +1885,7 @@ exports[`Select search 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-YaZNy hZNqBU"
+            class="StyledBox-YaZNy kmhKUS"
           >
             <span
               class="StyledText-dmaDlZ iRQiFb"
@@ -1902,104 +1902,104 @@ exports[`Select search 2`] = `
 
 exports[`Select search 3`] = `
 "@media only screen and (max-width:699px) {
-  .filaRb {
+  .cuRMWQ {
     border: solid 1px rgba(0,0,0,0.33);
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .cuRMWQ {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .filaRb {
+  .cuRMWQ {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eMTjTC {
+  .kGvzg {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .eMTjTC {
+  .kGvzg {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ivAcfG {
+  .ceItBD {
     margin-left: 6px;
     margin-right: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ivAcfG {
+  .ceItBD {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hQeqTY {
+  .gmORNl {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hQeqTY {
+  .gmORNl {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .biNMpn {
+  .eRJpbF {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .biNMpn {
+  .eRJpbF {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ckMYwJ {
+  .dyVXcg {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .ckMYwJ {
+  .dyVXcg {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hZNqBU {
+  .kmhKUS {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hZNqBU {
+  .kmhKUS {
     padding: 6px;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .gynikh {
+  .lYvHl {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .gynikh {
+  .lYvHl {
     padding: 3px;
   }
 }
@@ -2076,10 +2076,10 @@ exports[`Select select an option 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy cuRMWQ"
   >
     <div
-      class="StyledBox-YaZNy eMTjTC"
+      class="StyledBox-YaZNy kGvzg"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
@@ -2097,12 +2097,12 @@ exports[`Select select an option 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy ivAcfG"
+      class="StyledBox-YaZNy ceItBD"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -2131,22 +2131,22 @@ exports[`Select select an option with complex options 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy flHrpn"
+    class="StyledBox-YaZNy lkuyCP"
   >
     <div
-      class="StyledBox-YaZNy eMTjTC"
+      class="StyledBox-YaZNy kGvzg"
     >
       <span>
         one
       </span>
     </div>
     <div
-      class="StyledBox-YaZNy ivAcfG"
+      class="StyledBox-YaZNy ceItBD"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -2175,10 +2175,10 @@ exports[`Select select an option with enter 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy cuRMWQ"
   >
     <div
-      class="StyledBox-YaZNy eMTjTC"
+      class="StyledBox-YaZNy kGvzg"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
@@ -2196,12 +2196,12 @@ exports[`Select select an option with enter 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy ivAcfG"
+      class="StyledBox-YaZNy ceItBD"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -2230,10 +2230,10 @@ exports[`Select select another option 1`] = `
   type="button"
 >
   <div
-    class="StyledBox-YaZNy filaRb"
+    class="StyledBox-YaZNy cuRMWQ"
   >
     <div
-      class="StyledBox-YaZNy eMTjTC"
+      class="StyledBox-YaZNy kGvzg"
     >
       <div
         class="StyledTextInput__StyledTextInputContainer-gOoAsL egTPoR"
@@ -2252,12 +2252,12 @@ exports[`Select select another option 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy ivAcfG"
+      class="StyledBox-YaZNy ceItBD"
       style="min-width: auto;"
     >
       <svg
         aria-label="FormDown"
-        class="StyledIcon-hcpUvT fAeuhQ"
+        class="StyledIcon-hcpUvT iKWCCU"
         color="brand"
         height="24px"
         role="img"
@@ -2285,8 +2285,8 @@ exports[`Select size 1`] = `
   flex: 0 0 auto;
   width: 48px;
   height: 48px;
-  fill: #666666;
-  stroke: #666666;
+  fill: brand;
+  stroke: brand;
 }
 
 .c7 g {

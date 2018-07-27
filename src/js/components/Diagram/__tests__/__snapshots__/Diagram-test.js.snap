@@ -11,14 +11,14 @@ exports[`Diagram anchor 1`] = `
       class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-YaZNy htiNkm"
+        class="StyledBox-YaZNy kaPOLT"
       >
         <div
-          class="StyledBox-YaZNy eOYTpl"
+          class="StyledBox-YaZNy hvEBCe"
           id="1"
         />
         <div
-          class="StyledBox-YaZNy eOYTpl"
+          class="StyledBox-YaZNy hvEBCe"
           id="2"
         />
       </div>
@@ -74,14 +74,14 @@ exports[`Diagram basic 1`] = `
       class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-YaZNy htiNkm"
+        class="StyledBox-YaZNy kaPOLT"
       >
         <div
-          class="StyledBox-YaZNy eOYTpl"
+          class="StyledBox-YaZNy hvEBCe"
           id="1"
         />
         <div
-          class="StyledBox-YaZNy eOYTpl"
+          class="StyledBox-YaZNy hvEBCe"
           id="2"
         />
       </div>
@@ -121,14 +121,14 @@ exports[`Diagram color 1`] = `
       class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-YaZNy htiNkm"
+        class="StyledBox-YaZNy kaPOLT"
       >
         <div
-          class="StyledBox-YaZNy eOYTpl"
+          class="StyledBox-YaZNy hvEBCe"
           id="1"
         />
         <div
-          class="StyledBox-YaZNy eOYTpl"
+          class="StyledBox-YaZNy hvEBCe"
           id="2"
         />
       </div>
@@ -168,14 +168,14 @@ exports[`Diagram offset 1`] = `
       class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-YaZNy htiNkm"
+        class="StyledBox-YaZNy kaPOLT"
       >
         <div
-          class="StyledBox-YaZNy eOYTpl"
+          class="StyledBox-YaZNy hvEBCe"
           id="1"
         />
         <div
-          class="StyledBox-YaZNy eOYTpl"
+          class="StyledBox-YaZNy hvEBCe"
           id="2"
         />
       </div>
@@ -231,14 +231,14 @@ exports[`Diagram thickness 1`] = `
       class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-YaZNy htiNkm"
+        class="StyledBox-YaZNy kaPOLT"
       >
         <div
-          class="StyledBox-YaZNy eOYTpl"
+          class="StyledBox-YaZNy hvEBCe"
           id="1"
         />
         <div
-          class="StyledBox-YaZNy eOYTpl"
+          class="StyledBox-YaZNy hvEBCe"
           id="2"
         />
       </div>
@@ -318,14 +318,14 @@ exports[`Diagram type 1`] = `
       class="StyledStack__StyledStackLayer-cofHih jgyIuE"
     >
       <div
-        class="StyledBox-YaZNy htiNkm"
+        class="StyledBox-YaZNy kaPOLT"
       >
         <div
-          class="StyledBox-YaZNy eOYTpl"
+          class="StyledBox-YaZNy hvEBCe"
           id="1"
         />
         <div
-          class="StyledBox-YaZNy eOYTpl"
+          class="StyledBox-YaZNy hvEBCe"
           id="2"
         />
       </div>

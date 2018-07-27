@@ -40,7 +40,7 @@ exports[`TextInput close suggestion drop 2`] = `
   tabindex="-1"
 >
   <div
-    class="TextInput__ContainerBox-fLyVAb kiFeIx StyledBox-YaZNy jLqfV"
+    class="TextInput__ContainerBox-fLyVAb kiFeIx StyledBox-YaZNy jOeROs"
   >
     <ol
       class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
@@ -51,7 +51,7 @@ exports[`TextInput close suggestion drop 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-YaZNy hZNqBU"
+            class="StyledBox-YaZNy kmhKUS"
           >
             test
           </div>
@@ -63,7 +63,7 @@ exports[`TextInput close suggestion drop 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-YaZNy hZNqBU"
+            class="StyledBox-YaZNy kmhKUS"
           >
             test1
           </div>
@@ -76,25 +76,25 @@ exports[`TextInput close suggestion drop 2`] = `
 
 exports[`TextInput close suggestion drop 3`] = `
 "@media only screen and (max-width:699px) {
-  .jLqfV {
+  .jOeROs {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jLqfV {
+  .jOeROs {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hZNqBU {
+  .kmhKUS {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hZNqBU {
+  .kmhKUS {
     padding: 6px;
   }
 }
@@ -201,7 +201,7 @@ exports[`TextInput complex suggestions 2`] = `
   tabindex="-1"
 >
   <div
-    class="TextInput__ContainerBox-fLyVAb kiFeIx StyledBox-YaZNy jLqfV"
+    class="TextInput__ContainerBox-fLyVAb kiFeIx StyledBox-YaZNy jOeROs"
   >
     <ol
       class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
@@ -212,7 +212,7 @@ exports[`TextInput complex suggestions 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-YaZNy hZNqBU"
+            class="StyledBox-YaZNy kmhKUS"
           >
             test
           </div>
@@ -224,7 +224,7 @@ exports[`TextInput complex suggestions 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-YaZNy hZNqBU"
+            class="StyledBox-YaZNy kmhKUS"
           >
             test1
           </div>
@@ -237,25 +237,25 @@ exports[`TextInput complex suggestions 2`] = `
 
 exports[`TextInput complex suggestions 3`] = `
 "@media only screen and (max-width:699px) {
-  .jLqfV {
+  .jOeROs {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jLqfV {
+  .jOeROs {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hZNqBU {
+  .kmhKUS {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hZNqBU {
+  .kmhKUS {
     padding: 6px;
   }
 }
@@ -419,7 +419,7 @@ exports[`TextInput select suggestion 2`] = `
   tabindex="-1"
 >
   <div
-    class="TextInput__ContainerBox-fLyVAb kiFeIx StyledBox-YaZNy jLqfV"
+    class="TextInput__ContainerBox-fLyVAb kiFeIx StyledBox-YaZNy jOeROs"
   >
     <ol
       class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
@@ -430,7 +430,7 @@ exports[`TextInput select suggestion 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-YaZNy hZNqBU"
+            class="StyledBox-YaZNy kmhKUS"
           >
             test
           </div>
@@ -442,7 +442,7 @@ exports[`TextInput select suggestion 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-YaZNy hZNqBU"
+            class="StyledBox-YaZNy kmhKUS"
           >
             test1
           </div>
@@ -455,25 +455,25 @@ exports[`TextInput select suggestion 2`] = `
 
 exports[`TextInput select suggestion 3`] = `
 "@media only screen and (max-width:699px) {
-  .jLqfV {
+  .jOeROs {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jLqfV {
+  .jOeROs {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hZNqBU {
+  .kmhKUS {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hZNqBU {
+  .kmhKUS {
     padding: 6px;
   }
 }
@@ -576,7 +576,7 @@ exports[`TextInput suggestions 2`] = `
   tabindex="-1"
 >
   <div
-    class="TextInput__ContainerBox-fLyVAb kiFeIx StyledBox-YaZNy jLqfV"
+    class="TextInput__ContainerBox-fLyVAb kiFeIx StyledBox-YaZNy jOeROs"
   >
     <ol
       class="StyledTextInput__StyledSuggestions-goNSYK buRCAN"
@@ -587,7 +587,7 @@ exports[`TextInput suggestions 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-YaZNy hZNqBU"
+            class="StyledBox-YaZNy kmhKUS"
           >
             test
           </div>
@@ -599,7 +599,7 @@ exports[`TextInput suggestions 2`] = `
           type="button"
         >
           <div
-            class="StyledBox-YaZNy hZNqBU"
+            class="StyledBox-YaZNy kmhKUS"
           >
             test1
           </div>
@@ -612,25 +612,25 @@ exports[`TextInput suggestions 2`] = `
 
 exports[`TextInput suggestions 3`] = `
 "@media only screen and (max-width:699px) {
-  .jLqfV {
+  .jOeROs {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .jLqfV {
+  .jOeROs {
     padding: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hZNqBU {
+  .kmhKUS {
     margin: 0;
   }
 }
 
 @media only screen and (max-width:699px) {
-  .hZNqBU {
+  .kmhKUS {
     padding: 6px;
   }
 }

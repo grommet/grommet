@@ -1284,22 +1284,22 @@ exports[`RangeSelector handle keyboard 1`] = `
   class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledBox-YaZNy ftRJis"
+    class="StyledBox-YaZNy bUQzkI"
   >
     <div
-      class="StyledBox-YaZNy iLfhNe"
+      class="StyledBox-YaZNy cjgBtZ"
     />
     <div
-      class="StyledBox-YaZNy lfjrUc"
+      class="StyledBox-YaZNy jfplAa"
     >
       <div
         aria-label="Lower Bounds"
-        class="StyledBox-YaZNy kjTuna"
+        class="StyledBox-YaZNy hDGmFo"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
-          class="StyledBox-YaZNy jKtfA"
+          class="StyledBox-YaZNy gZDduv"
         >
           <svg
             height="12"
@@ -1317,20 +1317,20 @@ exports[`RangeSelector handle keyboard 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy hIUlFR"
+      class="StyledBox-YaZNy exSwdu"
       style="cursor: ew-resize;"
     />
     <div
-      class="StyledBox-YaZNy lfjrUc"
+      class="StyledBox-YaZNy jfplAa"
     >
       <div
         aria-label="Upper Bounds"
-        class="StyledBox-YaZNy kjTuna"
+        class="StyledBox-YaZNy hDGmFo"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
-          class="StyledBox-YaZNy jKtfA"
+          class="StyledBox-YaZNy gZDduv"
         >
           <svg
             height="12"
@@ -1348,7 +1348,7 @@ exports[`RangeSelector handle keyboard 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy iLfhNe"
+      class="StyledBox-YaZNy cjgBtZ"
     />
   </div>
 </div>
@@ -1359,22 +1359,22 @@ exports[`RangeSelector handle mouse 1`] = `
   class="StyledGrommet-gKbdxL iuxDFS"
 >
   <div
-    class="StyledBox-YaZNy ftRJis"
+    class="StyledBox-YaZNy bUQzkI"
   >
     <div
-      class="StyledBox-YaZNy iLfhNe"
+      class="StyledBox-YaZNy cjgBtZ"
     />
     <div
-      class="StyledBox-YaZNy lfjrUc"
+      class="StyledBox-YaZNy jfplAa"
     >
       <div
         aria-label="Lower Bounds"
-        class="StyledBox-YaZNy kjTuna"
+        class="StyledBox-YaZNy hDGmFo"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
-          class="StyledBox-YaZNy jKtfA"
+          class="StyledBox-YaZNy gZDduv"
         >
           <svg
             height="12"
@@ -1392,20 +1392,20 @@ exports[`RangeSelector handle mouse 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy hIUlFR"
+      class="StyledBox-YaZNy exSwdu"
       style="cursor: ew-resize;"
     />
     <div
-      class="StyledBox-YaZNy lfjrUc"
+      class="StyledBox-YaZNy jfplAa"
     >
       <div
         aria-label="Upper Bounds"
-        class="StyledBox-YaZNy kjTuna"
+        class="StyledBox-YaZNy hDGmFo"
         style="cursor: col-resize; min-width: 12px; min-height: 12px; z-index: 10;"
         tabindex="0"
       >
         <div
-          class="StyledBox-YaZNy jKtfA"
+          class="StyledBox-YaZNy gZDduv"
         >
           <svg
             height="12"
@@ -1423,7 +1423,7 @@ exports[`RangeSelector handle mouse 1`] = `
       </div>
     </div>
     <div
-      class="StyledBox-YaZNy iLfhNe"
+      class="StyledBox-YaZNy cjgBtZ"
     />
   </div>
 </div>
