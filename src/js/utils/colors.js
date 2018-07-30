@@ -42,12 +42,36 @@ export const colorIsDark = (color) => {
   return (brightness < 125);
 };
 
-export function getRGBA(color, opacity) {
+export const getRGBA = (color, opacity) => {
   if (color) {
     const [red, green, blue] = getRGBArray(color);
     return `rgba(${red}, ${green}, ${blue}, ${opacity || 1})`;
   }
   return undefined;
-}
+};
 
-export default { colorForName, colorIsDark, getRGBA };
+export const backgroundIsDark = (background, theme) => {
+  let dark;
+  if (background) {
+    if (typeof background === 'object') {
+      if (background.dark !== undefined) {
+        dark = background.dark;
+      } else if (background.color &&
+        // weak opacity means we keep the existing darkness
+        (!background.opacity || background.opacity !== 'weak')) {
+        const color = colorForName(background.color, theme);
+        if (color) {
+          dark = colorIsDark(color);
+        }
+      }
+    } else {
+      const color = colorForName(background, theme);
+      if (color) {
+        dark = colorIsDark(color);
+      }
+    }
+  }
+  return dark;
+};
+
+export default { backgroundIsDark, colorForName, colorIsDark, getRGBA };

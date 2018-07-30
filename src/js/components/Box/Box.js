@@ -3,7 +3,7 @@ import { compose } from 'recompose';
 import { ThemeContext as IconThemeContext } from 'grommet-icons';
 
 import ThemeContext from '../../contexts/ThemeContext';
-import { colorForName, colorIsDark } from '../../utils';
+import { backgroundIsDark } from '../../utils';
 import { withForwardRef, withTheme } from '../hocs';
 
 import StyledBox, { StyledBoxGap } from './StyledBox';
@@ -29,23 +29,7 @@ class Box extends Component {
 
     let dark = theme.dark;
     if (background) {
-      if (typeof background === 'object') {
-        if (background.dark !== undefined) {
-          dark = background.dark;
-        } else if (background.color &&
-          // weak opacity means we keep the existing darkness
-          (!background.opacity || background.opacity !== 'weak')) {
-          const color = colorForName(background.color, theme);
-          if (color) {
-            dark = colorIsDark(color);
-          }
-        }
-      } else {
-        const color = colorForName(background, theme);
-        if (color) {
-          dark = colorIsDark(color);
-        }
-      }
+      dark = backgroundIsDark(background, theme);
     }
 
     if (dark !== theme.dark && (!stateTheme || dark !== stateTheme.dark)) {

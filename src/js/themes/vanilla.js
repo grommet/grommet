@@ -33,7 +33,6 @@ const statusColors = {
 };
 const darkColors = ['#333333', '#444444', '#555555', '#666666', '#777777', '#999999'];
 const lightColors = ['#F6F6F6', '#EEEEEE', '#DDDDDD', '#CCCCCC', '#BBBBBB', '#AAAAAA'];
-const backgroundColor = '#FFFFFF';
 const textColor = '#444444';
 const borderColor = 'rgba(0, 0, 0, 0.33)';
 const focusColor = accentColors[0];
@@ -485,7 +484,7 @@ export default deepFreeze({
   },
   iconThemes: {},
   layer: {
-    backgroundColor,
+    background: 'white',
     border: {
       radius: '4px',
     },

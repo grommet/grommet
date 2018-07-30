@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
+import { ThemeContext as IconThemeContext } from 'grommet-icons';
 
 import FocusedContainer from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
 import { withTheme } from '../hocs';
+import { backgroundIsDark } from '../../utils';
 
 import StyledLayer, { StyledContainer, StyledOverlay } from './StyledLayer';
 
@@ -13,6 +15,32 @@ class LayerContainer extends Component {
     margin: 'none',
     modal: true,
     position: 'center',
+  }
+
+  state = {}
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { theme } = nextProps;
+    const { theme: stateTheme } = prevState;
+    // set dark context based on layer background, not Layer's container.
+    let dark = theme.dark;
+    if (theme.layer.background) {
+      dark = backgroundIsDark(theme.layer.background, theme);
+    }
+    if (!dark !== !theme.dark) {
+      if (!stateTheme || dark !== stateTheme.dark) {
+        return {
+          theme: {
+            ...theme,
+            dark,
+            icon: dark ? theme.iconThemes.dark : theme.iconThemes.light,
+          },
+        };
+      }
+    } else if (stateTheme) {
+      return { theme: undefined };
+    }
+    return null;
   }
 
   containerRef = React.createRef()
@@ -49,9 +77,11 @@ class LayerContainer extends Component {
       plain,
       position,
       responsive,
-      theme,
+      theme: propsTheme,
       ...rest
     } = this.props;
+    const { theme: stateTheme } = this.state;
+    const theme = stateTheme || propsTheme;
 
     let content = (
       <StyledContainer
@@ -95,7 +125,9 @@ class LayerContainer extends Component {
     if (modal) {
       content = (
         <FocusedContainer hidden={position === 'hidden'} restrictScroll={true}>
-          {content}
+          <IconThemeContext.Provider value={theme.icon}>
+            {content}
+          </IconThemeContext.Provider>
         </FocusedContainer>
       );
     }
