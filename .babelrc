@@ -1,7 +1,4 @@
 {
-  "plugins": [
-    ["grommet"]
-  ],
   "presets": [
     "./tools/grommet-babel-preset-es2015",
     "stage-1",

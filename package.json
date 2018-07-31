@@ -75,7 +75,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
     "fs-extra": "^6.0.0",
-    "grommet-icons": "^1.0.0",
+    "grommet-icons": "^2.0.0",
     "jest": "^23.1.0",
     "jest-cli": "^23.1.0",
     "jest-styled-components": "^5.0.0",

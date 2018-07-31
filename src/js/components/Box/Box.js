@@ -131,7 +131,7 @@ class Box extends Component {
     );
 
     if (stateTheme) {
-      if (stateTheme.dark !== propsTheme.dark) {
+      if (stateTheme.dark !== propsTheme.dark && stateTheme.icon) {
         content = (
           <IconThemeContext.Provider value={stateTheme.icon}>
             {content}
