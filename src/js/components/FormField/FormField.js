@@ -1,37 +1,22 @@
 import React, { Children, cloneElement, Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
-import { parseMetricToNum, getFirstFocusableDescendant } from '../../utils';
-
+import { parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
 import { Text } from '../Text';
-
-import { withTheme } from '../hocs';
+import { withFocus, withTheme } from '../hocs';
 
 import doc from './doc';
 
 class FormField extends Component {
-  state = {};
-
   render() {
-    const { children, error, help, htmlFor, label, style, theme,
+    const { children, error, focus, help, htmlFor, label, style, theme,
       ...rest } = this.props;
     const { formField } = theme;
     const { border } = formField;
-    const { focus } = this.state;
 
     let contents = children;
-    const focusHandlers = {
-      onClick: () => {
-        // set focus on focusable descendant
-        const container = findDOMNode(this.childContainerRef);
-        const element = getFirstFocusableDescendant(container);
-        if (element) {
-          element.focus();
-        }
-      },
-    };
+
     let borderColor;
     if (focus) {
       borderColor = 'focus';
@@ -63,9 +48,6 @@ class FormField extends Component {
         </Box>
       );
 
-      focusHandlers.onFocus = () => this.setState({ focus: true });
-      focusHandlers.onBlur = () => this.setState({ focus: false });
-
       abut = (border.position === 'outer' &&
         (border.side === 'all' || border.side === 'horizontal' || !border.side));
       if (abut) {
@@ -90,7 +72,6 @@ class FormField extends Component {
           { ...border, color: borderColor } : undefined
         }
         margin={abut ? undefined : { bottom: 'small' }}
-        {...focusHandlers}
         style={outerStyle}
         {...rest}
       >
@@ -125,5 +106,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 export default compose(
+  withFocus,
   withTheme,
 )(FormField);

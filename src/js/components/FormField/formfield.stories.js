@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import FormField from '../FormField/FormField';
@@ -9,27 +9,52 @@ import Select from '../Select/Select';
 import CheckBox from '../CheckBox/CheckBox';
 import Box from '../Box/Box';
 
-const FormFieldTextInput = props => (
-  <Grommet>
-    <FormField label='Label' {...props}>
-      <TextInput placeholder='placeholder' />
-    </FormField>
-  </Grommet>
-);
+const allSuggestions = Array(100).fill().map((_, i) => `suggestion ${i + 1}`);
+
+class FormFieldTextInput extends Component {
+  state = { value: '', suggestions: allSuggestions }
+
+  onChange = (event) => {
+    const value = event.target.value;
+    const exp = new RegExp(value, 'i');
+    const suggestions = allSuggestions.filter(s => exp.test(s));
+    this.setState({ value, suggestions });
+  }
+
+  onSelect = event => this.setState({ value: event.suggestion })
+
+  render() {
+    const { value, suggestions } = this.state;
+    return (
+      <Grommet>
+        <FormField label='Label' htmlFor='text-input' {...this.props}>
+          <TextInput
+            id='text-input'
+            placeholder='placeholder'
+            value={value}
+            onChange={this.onChange}
+            onSelect={this.onSelect}
+            suggestions={suggestions}
+          />
+        </FormField>
+      </Grommet>
+    );
+  }
+}
 
 const FormFieldTextArea = props => (
   <Grommet>
-    <FormField label='Label' {...props}>
-      <TextArea placeholder='placeholder' />
+    <FormField label='Label' htmlFor='text-area' {...props}>
+      <TextArea id='text-area' placeholder='placeholder' />
     </FormField>
   </Grommet>
 );
 
 const FormFieldCheckBox = props => (
   <Grommet>
-    <FormField label='Label' {...props}>
+    <FormField label='Label' htmlFor='check-box' {...props}>
       <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-        <CheckBox label='CheckBox' />
+        <CheckBox id='check-box' label='CheckBox' />
       </Box>
     </FormField>
   </Grommet>
@@ -37,9 +62,9 @@ const FormFieldCheckBox = props => (
 
 const FormFieldToggle = props => (
   <Grommet>
-    <FormField label='Label' {...props}>
+    <FormField label='Label' htmlFor='check-box' {...props}>
       <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-        <CheckBox label='CheckBox' toggle={true} />
+        <CheckBox id='check-box' label='CheckBox' toggle={true} />
       </Box>
     </FormField>
   </Grommet>
@@ -47,8 +72,8 @@ const FormFieldToggle = props => (
 
 const FormFieldSelect = props => (
   <Grommet>
-    <FormField label='Label' {...props}>
-      <Select placeholder='placeholder' options={['one', 'two']} />
+    <FormField label='Label' htmlFor='select' {...props}>
+      <Select id='select' placeholder='placeholder' options={['one', 'two']} />
     </FormField>
   </Grommet>
 );
@@ -57,11 +82,12 @@ const FormFieldHelpError = props => (
   <Grommet>
     <FormField
       label='Label'
+      htmlFor='text-input'
       {...props}
       help='Text to help the user know what is possible'
       error='Text to call attention to an issue with this field'
     >
-      <TextInput placeholder='placeholder' value='Value' />
+      <TextInput id='text-input' placeholder='placeholder' value='Value' />
     </FormField>
   </Grommet>
 );

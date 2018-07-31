@@ -123,7 +123,6 @@ exports[`renders 1`] = `
   <div
     className="c1"
     onBlur={[Function]}
-    onClick={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -133,7 +132,6 @@ exports[`renders 1`] = `
   <div
     className="c1"
     onBlur={[Function]}
-    onClick={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -286,7 +284,6 @@ exports[`renders error 1`] = `
   <div
     className="c1"
     onBlur={[Function]}
-    onClick={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -436,7 +433,6 @@ exports[`renders help 1`] = `
   <div
     className="c1"
     onBlur={[Function]}
-    onClick={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -540,7 +536,6 @@ exports[`renders htmlFor 1`] = `
   <div
     className="c1"
     onBlur={[Function]}
-    onClick={[Function]}
     onFocus={[Function]}
   >
     <div
@@ -679,7 +674,6 @@ exports[`renders label 1`] = `
   <div
     className="c1"
     onBlur={[Function]}
-    onClick={[Function]}
     onFocus={[Function]}
   >
     <div
