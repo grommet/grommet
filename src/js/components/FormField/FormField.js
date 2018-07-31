@@ -16,7 +16,6 @@ class FormField extends Component {
     const { border } = formField;
 
     let contents = children;
-    const handlers = {};
 
     let borderColor;
     if (focus) {
@@ -73,8 +72,6 @@ class FormField extends Component {
           { ...border, color: borderColor } : undefined
         }
         margin={abut ? undefined : { bottom: 'small' }}
-        {...handlers}
-        tabIndex='-1'
         style={outerStyle}
         {...rest}
       >
