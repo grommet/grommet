@@ -9,17 +9,22 @@ import Select from '../Select/Select';
 import CheckBox from '../CheckBox/CheckBox';
 import Box from '../Box/Box';
 
-const suggestions = Array(100).fill().map((_, i) => `suggestion ${i + 1}`);
+const allSuggestions = Array(100).fill().map((_, i) => `suggestion ${i + 1}`);
 
 class FormFieldTextInput extends Component {
-  state = { value: '' }
+  state = { value: '', suggestions: allSuggestions }
 
-  onChange = event => this.setState({ value: event.target.value })
+  onChange = (event) => {
+    const value = event.target.value;
+    const exp = new RegExp(value, 'i');
+    const suggestions = allSuggestions.filter(s => exp.test(s));
+    this.setState({ value, suggestions });
+  }
 
   onSelect = event => this.setState({ value: event.suggestion })
 
   render() {
-    const { value } = this.state;
+    const { value, suggestions } = this.state;
     return (
       <Grommet>
         <FormField label='Label' htmlFor='text-input' {...this.props}>

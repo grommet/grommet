@@ -2,48 +2,18 @@ import React, { Children, cloneElement, Component } from 'react';
 import { compose } from 'recompose';
 
 import { parseMetricToNum } from '../../utils';
-
 import { Box } from '../Box';
 import { Text } from '../Text';
-
-import { withTheme } from '../hocs';
+import { withFocus, withTheme } from '../hocs';
 
 import doc from './doc';
 
-// empirically determined via interaction with story, post IE11 '1' is enough.
-const FOCUS_DELAY = 20;
-
 class FormField extends Component {
-  state = {};
-
-  componentWillUnmount() {
-    clearTimeout(this.focusTimer);
-  }
-
-  onFocus = () => {
-    // delay to prevent re-rendering children before their events are delivered
-    clearTimeout(this.focusTimer);
-    this.focusTimer = setTimeout(() => {
-      this.focusTimer = undefined;
-      this.setState({ focus: true });
-    }, FOCUS_DELAY);
-  }
-
-  onBlur = () => {
-    // delay to prevent re-rendering children before their events are delivered
-    clearTimeout(this.focusTimer);
-    this.focusTimer = setTimeout(() => {
-      this.focusTimer = undefined;
-      this.setState({ focus: false });
-    }, FOCUS_DELAY);
-  }
-
   render() {
-    const { children, error, help, htmlFor, label, style, theme,
+    const { children, error, focus, help, htmlFor, label, style, theme,
       ...rest } = this.props;
     const { formField } = theme;
     const { border } = formField;
-    const { focus } = this.state;
 
     let contents = children;
     const handlers = {};
@@ -78,9 +48,6 @@ class FormField extends Component {
           {normalizedChildren}
         </Box>
       );
-
-      handlers.onFocus = this.onFocus;
-      handlers.onBlur = this.onBlur;
 
       abut = (border.position === 'outer' &&
         (border.side === 'all' || border.side === 'horizontal' || !border.side));
@@ -142,5 +109,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 export default compose(
+  withFocus,
   withTheme,
 )(FormField);
