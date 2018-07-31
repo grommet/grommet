@@ -22,8 +22,9 @@ class FormFieldTextInput extends Component {
     const { value } = this.state;
     return (
       <Grommet>
-        <FormField label='Label' {...this.props}>
+        <FormField label='Label' htmlFor='text-input' {...this.props}>
           <TextInput
+            id='text-input'
             placeholder='placeholder'
             value={value}
             onChange={this.onChange}
@@ -38,17 +39,17 @@ class FormFieldTextInput extends Component {
 
 const FormFieldTextArea = props => (
   <Grommet>
-    <FormField label='Label' {...props}>
-      <TextArea placeholder='placeholder' />
+    <FormField label='Label' htmlFor='text-area' {...props}>
+      <TextArea id='text-area' placeholder='placeholder' />
     </FormField>
   </Grommet>
 );
 
 const FormFieldCheckBox = props => (
   <Grommet>
-    <FormField label='Label' {...props}>
+    <FormField label='Label' htmlFor='check-box' {...props}>
       <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-        <CheckBox label='CheckBox' />
+        <CheckBox id='check-box' label='CheckBox' />
       </Box>
     </FormField>
   </Grommet>
@@ -56,9 +57,9 @@ const FormFieldCheckBox = props => (
 
 const FormFieldToggle = props => (
   <Grommet>
-    <FormField label='Label' {...props}>
+    <FormField label='Label' htmlFor='check-box' {...props}>
       <Box pad={{ horizontal: 'small', vertical: 'xsmall' }}>
-        <CheckBox label='CheckBox' toggle={true} />
+        <CheckBox id='check-box' label='CheckBox' toggle={true} />
       </Box>
     </FormField>
   </Grommet>
@@ -66,8 +67,8 @@ const FormFieldToggle = props => (
 
 const FormFieldSelect = props => (
   <Grommet>
-    <FormField label='Label' {...props}>
-      <Select placeholder='placeholder' options={['one', 'two']} />
+    <FormField label='Label' htmlFor='select' {...props}>
+      <Select id='select' placeholder='placeholder' options={['one', 'two']} />
     </FormField>
   </Grommet>
 );
@@ -76,11 +77,12 @@ const FormFieldHelpError = props => (
   <Grommet>
     <FormField
       label='Label'
+      htmlFor='text-input'
       {...props}
       help='Text to help the user know what is possible'
       error='Text to call attention to an issue with this field'
     >
-      <TextInput placeholder='placeholder' value='Value' />
+      <TextInput id='text-input' placeholder='placeholder' value='Value' />
     </FormField>
   </Grommet>
 );

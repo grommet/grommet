@@ -1,8 +1,7 @@
 import React, { Children, cloneElement, Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import { compose } from 'recompose';
 
-import { parseMetricToNum, getFirstFocusableDescendant } from '../../utils';
+import { parseMetricToNum } from '../../utils';
 
 import { Box } from '../Box';
 import { Text } from '../Text';
@@ -19,15 +18,6 @@ class FormField extends Component {
 
   componentWillUnmount() {
     clearTimeout(this.focusTimer);
-  }
-
-  onClick = () => {
-    // set focus on focusable descendant
-    const container = findDOMNode(this.childContainerRef);
-    const element = getFirstFocusableDescendant(container);
-    if (element) {
-      element.focus();
-    }
   }
 
   onFocus = () => {
@@ -57,10 +47,6 @@ class FormField extends Component {
 
     let contents = children;
     const handlers = {};
-
-    if (!focus && !this.focusTimer) {
-      handlers.onClick = this.onClick;
-    }
 
     let borderColor;
     if (focus) {
@@ -121,6 +107,7 @@ class FormField extends Component {
         }
         margin={abut ? undefined : { bottom: 'small' }}
         {...handlers}
+        tabIndex='-1'
         style={outerStyle}
         {...rest}
       >
