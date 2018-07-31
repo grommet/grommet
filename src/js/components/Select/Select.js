@@ -9,6 +9,7 @@ import { TextInput } from '../TextInput';
 
 import { withForwardRef, withTheme } from '../hocs';
 
+import { colorIsDark, colorForName } from '../../utils';
 import SelectContainer from './SelectContainer';
 import doc from './doc';
 
@@ -98,6 +99,12 @@ class Select extends Component {
       selectValue = value;
     }
 
+    const iconColor = colorIsDark(theme.select.background) ? (
+      theme.select.icons.color.dark || colorForName('light-4', theme)
+    ) : (
+      theme.select.icons.color.light || colorForName('brand', theme)
+    );
+
     return (
       <Keyboard onDown={this.onOpen} onUp={this.onOpen}>
         <DropButton
@@ -117,6 +124,7 @@ class Select extends Component {
             border={!plain ? 'all' : undefined}
             direction='row'
             justify='between'
+            background={theme.select.background}
           >
             <Box direction='row' flex={true} basis='auto'>
               {selectValue || (
@@ -138,7 +146,7 @@ class Select extends Component {
               flex={false}
               style={{ minWidth: 'auto' }}
             >
-              <SelectIcon color='brand' size={size} />
+              <SelectIcon color={iconColor} size={size} />
             </Box>
           </Box>
         </DropButton>

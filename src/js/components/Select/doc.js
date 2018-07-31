@@ -1,6 +1,6 @@
 import { describe, PropTypes } from 'react-desc';
 
-import { a11yTitlePropType, backgroundPropType, getAvailableAtBadge } from '../../utils';
+import { a11yTitlePropType, getAvailableAtBadge } from '../../utils';
 
 export default (Select) => {
   const DocumentedSelect = describe(Select)
@@ -31,7 +31,6 @@ export default (Select) => {
       top: 'top',
       left: 'left',
     }),
-    dropBackground: backgroundPropType,
     dropTarget: PropTypes.object.description(
       `Target where the options drop will be aligned to. This should be
       a React reference. Typically, this is not required as the drop will be

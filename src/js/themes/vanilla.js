@@ -113,10 +113,7 @@ export default deepFreeze({
       },
     },
     drop: {
-      backgroundColor: {
-        light: '#f8f8f8',
-        dark: '#222222',
-      },
+      background: '#f8f8f8',
       border: {
         width: '0px',
         radius: '0px',
@@ -259,7 +256,6 @@ export default deepFreeze({
       expand: FormDown,
     },
     iconColor: css`${props => props.theme.global.colors.brand}`,
-
   },
   anchor: {
     textDecoration: 'none',
@@ -524,7 +520,12 @@ export default deepFreeze({
     },
   },
   select: {
+    background: '#ffffff',
     icons: {
+      color: {
+        // light: undefined,
+        // dark: undefined,
+      },
       down: FormDown,
     },
     // searchInput: undefined,
