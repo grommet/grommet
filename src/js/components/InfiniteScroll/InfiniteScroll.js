@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
 import Waypoint from 'react-waypoint';
 
 import doc from './doc';
@@ -9,9 +10,39 @@ export default class InfiniteScroll extends Component {
     step: 50,
   }
 
-  constructor(props, context) {
-    super(props, context);
-    this.state = { count: 1 };
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { show, step } = nextProps;
+    if (!prevState.count ||
+      (show && show < (step * prevState.count))) {
+      let count = prevState.count || 1;
+      if (show && show > (step * count)) {
+        count = (show + step) / step;
+      }
+      return { count };
+    }
+    return null;
+  }
+
+  state = {}
+  showRef = React.createRef()
+  initialScroll = false
+
+  componentDidMount() {
+    this.scrollShow();
+  }
+
+  componentDidUpdate() {
+    this.scrollShow();
+  }
+
+  scrollShow() {
+    const { show } = this.props;
+    if (show && !this.initialScroll && this.showRef.current) {
+      this.initialScroll = true;
+      // on initial render, scroll to any 'show'
+      const element = findDOMNode(this.showRef.current);
+      element.scrollIntoView();
+    }
   }
 
   increaseOffset = () => {
@@ -23,7 +54,7 @@ export default class InfiniteScroll extends Component {
   }
 
   render() {
-    const { children, items, renderMarker, scrollableAncestor, step } = this.props;
+    const { children, items, renderMarker, scrollableAncestor, show, step } = this.props;
     const { count } = this.state;
     const displayCount = step * count;
     const waypointAt = displayCount - (step / 2);
@@ -44,10 +75,16 @@ export default class InfiniteScroll extends Component {
     return (
       items
         .slice(0, displayCount)
-        .map((item, index) => [
-          children(item, index),
-          (index === waypointAt && marker),
-        ])
+        .map((item, index) => {
+          let child = children(item, index);
+          if (show && show === index) {
+            child = React.cloneElement(child, { key: 'show', ref: this.showRef });
+          }
+          if (index === waypointAt) {
+            return [child, marker];
+          }
+          return child;
+        })
     );
   }
 }

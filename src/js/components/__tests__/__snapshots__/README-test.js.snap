@@ -2113,6 +2113,14 @@ node
 window
 \`\`\`
 
+**show**
+
+Ensure that the item at this index is visible initially.
+
+\`\`\`
+number
+\`\`\`
+
 **step**
 
 How many items to render at a time. Defaults to \`50\`.
