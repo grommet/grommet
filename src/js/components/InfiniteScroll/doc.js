@@ -45,8 +45,11 @@ export default (InfiniteScroll) => {
       also work to pass it the string "window" if you are using server
       rendering.`
     ),
+    show: PropTypes.number.description(
+      'Ensure that the item at this index is visible initially.'
+    ),
     step: PropTypes.number.description(
-      'How many items to render at a time.'
+      'How many items to render at a time. Default value is 50.'
     ).defaultValue(50),
   };
 

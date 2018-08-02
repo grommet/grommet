@@ -9,7 +9,7 @@ describe('InfiniteScroll', () => {
   const items = [];
   while (items.length < 4) items.push(items.length);
 
-  test('renders', () => {
+  test('basic', () => {
     const component = renderer.create(
       <Grommet>
         <InfiniteScroll />
@@ -22,7 +22,7 @@ describe('InfiniteScroll', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('step renders', () => {
+  test('step', () => {
     const component = renderer.create(
       <Grommet>
         <InfiniteScroll items={items} step={2}>
@@ -34,7 +34,19 @@ describe('InfiniteScroll', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('renderMarker renders', () => {
+  test('show', () => {
+    const component = renderer.create(
+      <Grommet>
+        <InfiniteScroll items={items} step={2} show={3}>
+          {(item, index) => <div key={index}>{item}</div>}
+        </InfiniteScroll>
+      </Grommet>
+    );
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test('renderMarker', () => {
     const component = renderer.create(
       <Grommet>
         <InfiniteScroll items={items} step={2} renderMarker={m => <div>{m}</div>}>
